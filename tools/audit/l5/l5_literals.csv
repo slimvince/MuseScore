@@ -1,0 +1,773 @@
+file,line,value,func,context
+src/composing/analysis/function/forwardoverride.cpp,32,0.0,overrideBar,if (c < 0.0) {
+src/composing/analysis/function/forwardoverride.cpp,33,0.0,overrideBar,c = 0.0;
+src/composing/analysis/function/forwardoverride.cpp,34,1.0,overrideBar,} else if (c > 1.0) {
+src/composing/analysis/function/forwardoverride.cpp,35,1.0,overrideBar,c = 1.0;
+src/composing/analysis/function/forwardoverride.h,81,1.0,<file-scope>,double baseBar         = 1.0;  ///< contradiction strength required at zero earlier-confidence
+src/composing/analysis/function/forwardoverride.h,82,1.0,<file-scope>,"double confidenceScale = 1.0;  ///< extra bar per unit of earlier-layer confidence [0,1]"
+src/composing/analysis/function/functioncadence.cpp,34,12,norm,return ((pitch % 12) + 12) % 12;
+src/composing/analysis/function/functioncadence.cpp,34,12,norm,return ((pitch % 12) + 12) % 12;
+src/composing/analysis/function/functioncadence.cpp,34,12,norm,return ((pitch % 12) + 12) % 12;
+src/composing/analysis/function/functioncadence.cpp,74,11,dominantTritonePresent,"return eventHasPc(dom, tonicPc + 11) && eventHasPc(dom, tonicPc + 5);"
+src/composing/analysis/function/functioncadence.cpp,74,5,dominantTritonePresent,"return eventHasPc(dom, tonicPc + 11) && eventHasPc(dom, tonicPc + 5);"
+src/composing/analysis/function/functioncadence.cpp,88,5,isPredominant,if (r == 5 || r == 2 || r == 1 || r == 8) {
+src/composing/analysis/function/functioncadence.cpp,88,2,isPredominant,if (r == 5 || r == 2 || r == 1 || r == 8) {
+src/composing/analysis/function/functioncadence.cpp,88,8,isPredominant,if (r == 5 || r == 2 || r == 1 || r == 8) {
+src/composing/analysis/function/functioncadence.cpp,114,7,isSecondInversionTonicTriad,return e.bassPc == norm(e.rootPc + 7);
+src/composing/analysis/function/functioncadence.cpp,123,11,leadingToneResolves,"return voiceMovesFromTo(dom, arr, tonicPc + 11, tonicPc);"
+src/composing/analysis/function/functioncadence.cpp,133,10,dominantSeventhPresent,"return eventHasPc(dom, dom.rootPc + 10);"
+src/composing/analysis/function/functioncadence.cpp,149,3,isGenuineDominant,const int thirdPc = (arr.quality == ChordQuality::Minor) ? norm(tonicPc + 3)
+src/composing/analysis/function/functioncadence.cpp,150,4,isGenuineDominant,: norm(tonicPc + 4);
+src/composing/analysis/function/functioncadence.cpp,152,5,isGenuineDominant,"&& voiceMovesFromTo(dom, arr, tonicPc + 5, thirdPc)) {"
+src/composing/analysis/function/functioncadence.cpp,196,0.0,cadenceTonicVote,return v < 0.0 ? 0.0 : v;
+src/composing/analysis/function/functioncadence.cpp,196,0.0,cadenceTonicVote,return v < 0.0 ? 0.0 : v;
+src/composing/analysis/function/functioncadence.cpp,236,7,tryAuthentic,&& (dom.rootPc == norm(tonicPc + 7));
+src/composing/analysis/function/functioncadence.cpp,238,11,tryAuthentic,&& (dom.rootPc == norm(tonicPc + 11));
+src/composing/analysis/function/functioncadence.cpp,301,7,tryDeceptive,const int tonicPc = norm(dom.rootPc - 7);
+src/composing/analysis/function/functioncadence.cpp,305,9,tryDeceptive,const bool viMajorKey = (arr.rootPc == norm(tonicPc + 9))
+src/composing/analysis/function/functioncadence.cpp,307,8,tryDeceptive,const bool bVIminorKey = (arr.rootPc == norm(tonicPc + 8))
+src/composing/analysis/function/functioncadence.cpp,316,11,tryDeceptive,const int ltPc = norm(tonicPc + 11);
+src/composing/analysis/function/functioncadence.cpp,358,7,tryHalf,const int tonicPc = norm(arr.rootPc - 7);
+src/composing/analysis/function/functioncadence.cpp,368,8,tryHalf,&& pred.bassPc == norm(tonicPc + 8)
+src/composing/analysis/function/functioncadence.cpp,369,7,tryHalf,&& arr.bassPc == norm(tonicPc + 7)
+src/composing/analysis/function/functioncadence.cpp,370,11,tryHalf,&& norm(arr.bassPc - pred.bassPc) == 11) {
+src/composing/analysis/function/functioncadence.cpp,383,5,tryHalf,|| (predDegree == 5 && pred.quality == ChordQuality::Minor)
+src/composing/analysis/function/functioncadence.cpp,384,2,tryHalf,|| (predDegree == 2 && pred.quality == ChordQuality::Diminished);
+src/composing/analysis/function/functioncadence.cpp,416,5,tryPlagal,if (r != 5 && r != 2 && r != 8) {
+src/composing/analysis/function/functioncadence.cpp,416,2,tryPlagal,if (r != 5 && r != 2 && r != 8) {
+src/composing/analysis/function/functioncadence.cpp,416,8,tryPlagal,if (r != 5 && r != 2 && r != 8) {
+src/composing/analysis/function/functioncadence.cpp,450,7,tryEvaded,const int tonicPc = norm(dom.rootPc - 7);
+src/composing/analysis/function/functioncadence.cpp,453,11,tryEvaded,"if (!eventHasPc(dom, norm(tonicPc + 11))) {"
+src/composing/analysis/function/functioncadence.cpp,470,9,tryEvaded,const bool isSubmediant = (arr.rootPc == norm(tonicPc + 9))
+src/composing/analysis/function/functioncadence.cpp,471,8,tryEvaded,|| (arr.rootPc == norm(tonicPc + 8));
+src/composing/analysis/function/functioncadence.cpp,473,7,tryEvaded,&& (arr.rootPc == norm(tonicPc + 7));
+src/composing/analysis/function/functioncadence.cpp,499,2,detectFunctionalCadences,if (events.size() < 2) {
+src/composing/analysis/function/functioncadence.h,128,12,pc,int pc() const { return ((pitch % 12) + 12) % 12; }
+src/composing/analysis/function/functioncadence.h,128,12,pc,int pc() const { return ((pitch % 12) + 12) % 12; }
+src/composing/analysis/function/functioncadence.h,128,12,pc,int pc() const { return ((pitch % 12) + 12) % 12; }
+src/composing/analysis/function/functioncadence.h,143,1.0,<file-scope>,"double metricWeight = 1.0;   ///< §3 metric weight of the event's onset [0.5,1.0]; higher = stronger"
+src/composing/analysis/function/functioncadence.h,178,0.0,<file-scope>,double tonicVote = 0.0;      ///< the §5.2 weighted tonic vote (firewall seeds; direction fixed)
+src/composing/analysis/function/functioncadence.h,195,1.0,<file-scope>,double wBase            = 1.0;   ///< every admitted cadence
+src/composing/analysis/function/functioncadence.h,196,1.0,<file-scope>,double wBassFiveToOne   = 1.0;   ///< evidence: bass 5̂→1̂
+src/composing/analysis/function/functioncadence.h,197,1.0,<file-scope>,double wLeadingTone     = 1.0;   ///< evidence: leading-tone resolution
+src/composing/analysis/function/functioncadence.h,198,1.0,<file-scope>,double wSeventh         = 1.0;   ///< evidence: genuine dominant (seventh / resolving tritone)
+src/composing/analysis/function/functioncadence.h,199,1.0,<file-scope>,"double wMetric          = 1.0;   ///< salience: multiplied by the event metric weight [0.5,1.0]"
+src/composing/analysis/function/functioncadence.h,200,2.0,<file-scope>,double wPhraseBoundary  = 2.0;   ///< salience: fermata / section end (the structural primary)
+src/composing/analysis/function/functioncadence.h,201,1.0,<file-scope>,double wFinalBar        = 1.0;   ///< salience: the final bar
+src/composing/analysis/function/functioncadence.h,203,0.5,<file-scope>,double discountHalf     = 0.5;   ///< half is the weakest reading — held lower by rule
+src/composing/analysis/function/functioncadence.h,204,0.5,<file-scope>,double discountPlagal   = 0.5;   ///< plagal is a possible post-cadential prolongation — lower by rule
+src/composing/analysis/function/functioncadence.h,205,0.5,<file-scope>,double discountEvaded   = 0.5;   ///< evaded — lower by rule
+src/composing/analysis/function/functionmodulation.cpp,51,0.0,decideTonicizationVsModulation,double cadentialWeight = 0.0;
+src/composing/analysis/function/functionmodulation.cpp,77,1.0,decideTonicizationVsModulation,+ params.wSpelling * (d.spellingSupport ? 1.0 : 0.0);
+src/composing/analysis/function/functionmodulation.cpp,77,0.0,decideTonicizationVsModulation,+ params.wSpelling * (d.spellingSupport ? 1.0 : 0.0);
+src/composing/analysis/function/functionmodulation.h,111,1.0,<file-scope>,double baseChangeCost   = 1.0;  ///< the cost to commit a key change at zero persistence evidence
+src/composing/analysis/function/functionmodulation.h,112,1.0,<file-scope>,double wDuration        = 1.0;  ///< evidence per whole-note of cadence-confirmed candidate-area duration
+src/composing/analysis/function/functionmodulation.h,113,1.0,<file-scope>,double wCadentialWeight = 1.0;  ///< evidence per unit of accumulated §5.2 cadential vote inside the area
+src/composing/analysis/function/functionmodulation.h,114,0.5,<file-scope>,"double wSpelling        = 0.5;  ///< §5.3 notated-spelling support (function-gated), SOFT — one input to (b)"
+src/composing/analysis/function/functionmodulation.h,128,1920.0,<file-scope>,inline constexpr double kTicksPerWholeNote = 1920.0;
+src/composing/analysis/function/functionmodulation.h,145,0.0,<file-scope>,double cadentialWeight = 0.0;      ///< §5.3 (b): the summed §5.2 tonic-votes of those cadences
+src/composing/analysis/function/functionmodulation.h,146,0.0,<file-scope>,double durationWholeNotes = 0.0;   ///< §5.3 (b): the candidate area's duration in whole notes
+src/composing/analysis/function/functionmodulation.h,149,0.0,<file-scope>,double persistenceEvidence = 0.0;  ///< §5.3 (b): wDuration·dur + wCadentialWeight·weight + wSpelling·spelling
+src/composing/analysis/function/functionmodulation.h,150,0.0,<file-scope>,double changeCost = 0.0;           ///< §5.3 (b): the change-cost the evidence is tested against (baseChangeCost)
+src/composing/analysis/function/functionoutput.cpp,36,0.0,cadenceVoteForUnit,double best = 0.0;
+src/composing/analysis/function/functionoutput.cpp,54,0.0,licensedFitForUnit,return 0.0;
+src/composing/analysis/function/functionoutput.cpp,58,1.0,licensedFitForUnit,"return isLicensedProgression(units[j].chord, units[i].chord) ? 1.0 : 0.0;"
+src/composing/analysis/function/functionoutput.cpp,58,0.0,licensedFitForUnit,"return isLicensedProgression(units[j].chord, units[i].chord) ? 1.0 : 0.0;"
+src/composing/analysis/function/functionoutput.cpp,61,0.0,licensedFitForUnit,return 0.0;  // no preceding committed harmony — the motion into the first unit is unscored
+src/composing/analysis/function/functionoutput.h,86,0.0,<file-scope>,double cadenceVoteWeight = 0.0;       ///< §5.2: the tonic-vote of the cadence anchoring this unit (0 if none)
+src/composing/analysis/function/functionoutput.h,87,0.0,<file-scope>,double licensedProgressionFit = 0.0;  ///< §5.0: 1.0 when the motion INTO this unit is a licensed progression
+src/composing/analysis/function/functionoutput.h,88,0.0,<file-scope>,double nextBestMargin = 0.0;          ///< §5.5: the resolver's margin-to-next-best (its functionConfidence)
+src/composing/analysis/function/functionoutput.h,89,0.0,<file-scope>,double combined = 0.0;                ///< the default-weighted combination (firewall — weights precision-phase)
+src/composing/analysis/function/functionoutput.h,98,0.0,<file-scope>,"double combinedBoundary = 0.0;        ///< combined / (combined + kBoundary) ∈ [0,1) — the U2 boundary form"
+src/composing/analysis/function/functionoutput.h,103,1.0,<file-scope>,double wCadenceVote    = 1.0;   ///< weight of the §5.2 cadence-vote component
+src/composing/analysis/function/functionoutput.h,104,1.0,<file-scope>,double wLicensedFit    = 1.0;   ///< weight of the §5.0 licensed-progression-fit component
+src/composing/analysis/function/functionoutput.h,105,1.0,<file-scope>,double wNextBestMargin = 1.0;   ///< weight of the §5.5 margin component
+src/composing/analysis/function/functionoutput.h,108,1.0,<file-scope>,double kBoundary       = 1.0;
+src/composing/analysis/function/functionoutput.h,166,0.0,<file-scope>,double resolverConfidence = 0.0;      ///< the resolver's functionConfidence (the §7 margin-to-next-best component)
+src/composing/analysis/function/functionprogression.cpp,35,12,rootMotion,return ((toPc - fromPc) % 12 + 12) % 12;
+src/composing/analysis/function/functionprogression.cpp,35,12,rootMotion,return ((toPc - fromPc) % 12 + 12) % 12;
+src/composing/analysis/function/functionprogression.cpp,35,12,rootMotion,return ((toPc - fromPc) % 12 + 12) % 12;
+src/composing/analysis/function/functionprogression.cpp,44,5,isDescendingFifth,"return rootMotion(fromRootPc, toRootPc) == 5;"
+src/composing/analysis/function/functionprogression.cpp,51,8,isDescendingThird,return delta == 8 || delta == 9;
+src/composing/analysis/function/functionprogression.cpp,51,9,isDescendingThird,return delta == 8 || delta == 9;
+src/composing/analysis/function/functionprogression.cpp,59,2,isAscendingSecond,return delta == 1 || delta == 2;
+src/composing/analysis/function/functionprogression.cpp,68,7,isAscendingFifth,"return rootMotion(fromRootPc, toRootPc) == 7;"
+src/composing/analysis/function/functionprogression.cpp,77,10,isDescendingSecond,return delta == 10 || delta == 11;
+src/composing/analysis/function/functionprogression.cpp,77,11,isDescendingSecond,return delta == 10 || delta == 11;
+src/composing/analysis/function/functionprogression.cpp,87,6,isDiatonicDiminishedFifth,"return rootMotion(from.rootPc, to.rootPc) == 6"
+src/composing/analysis/function/functionprogression.cpp,100,5,isAppliedResolution,if (from.quality == ChordQuality::Major && delta == 5) {
+src/composing/analysis/function/functionprogression.cpp,116,5,isAppliedResolution,&& delta == 5) {
+src/composing/analysis/function/functionprogression.h,141,1.0,<file-scope>,double metricWeight = 1.0;    ///< slice metric weight (§3); higher == metrically stronger
+src/composing/analysis/function/functionrelationallabel.cpp,81,10,augSixthSpellingSign,const int targetPc = normalizePc(in.identity.rootPc + 10);
+src/composing/analysis/function/functionrelationallabel.cpp,89,7,augSixthSpellingSign,if (normalizePc(lof * 7) != targetPc) {
+src/composing/analysis/function/functionrelationallabel.cpp,93,10,augSixthSpellingSign,if (dist == 10) {
+src/composing/analysis/function/functionrelationallabel.cpp,96,2,augSixthSpellingSign,if (dist == -2) {
+src/composing/analysis/function/functionrelationallabel.cpp,118,8,tryAugmentedSixth,if (root != normalizePc(in.keyTonicPc + 8)) {
+src/composing/analysis/function/functionrelationallabel.cpp,159,7,<file-scope>,"constexpr std::array<ChordQuality, 7> kMajorKeyTriadQuality = {"
+src/composing/analysis/function/functionrelationallabel.cpp,196,7,tryModalMixture,} else if (in.keyMode == KeySigMode::Ionian && degree < 7) {
+src/composing/analysis/function/functionrelationallabel.cpp,230,2,emitAppliedLabel,std::vector<TonicizationRegionInput> pair(2);
+src/composing/analysis/function/functionrelationallabel.cpp,273,7,emitAppliedLabel,const bool dominantRel = isDominantFn && id.rootPc == normalizePc(in.nextRootPc + 7);
+src/composing/analysis/function/functionrelationallabel.cpp,274,11,emitAppliedLabel,const bool leadingToneRel = isLeadingToneFn && id.rootPc == normalizePc(in.nextRootPc + 11);
+src/composing/analysis/function/functionresolver.cpp,38,12,normPc,return ((pc % 12) + 12) % 12;
+src/composing/analysis/function/functionresolver.cpp,38,12,normPc,return ((pc % 12) + 12) % 12;
+src/composing/analysis/function/functionresolver.cpp,38,12,normPc,return ((pc % 12) + 12) % 12;
+src/composing/analysis/function/functionresolver.cpp,75,0.0,cadenceVoteFor,return 0.0;
+src/composing/analysis/function/functionresolver.cpp,77,0.0,cadenceVoteFor,double v = 0.0;
+src/composing/analysis/function/functionresolver.cpp,96,0.0,plausibility,double p = 0.0;
+src/composing/analysis/function/functionresolver.cpp,103,0.0,plausibility,"if (cadenceVoteFor(reading.rootPc, cadences) > 0.0) {"
+src/composing/analysis/function/functionresolver.cpp,118,2,degreeFunctionalBias,"case 0: case 2: return FunctionalBias::Tonic;        // 1̂, 3̂"
+src/composing/analysis/function/functionresolver.cpp,119,3,degreeFunctionalBias,"case 1: case 3: return FunctionalBias::Predominant;  // 2̂, 4̂"
+src/composing/analysis/function/functionresolver.cpp,120,4,degreeFunctionalBias,"case 4: case 6: return FunctionalBias::Dominant;     // 5̂, 7̂"
+src/composing/analysis/function/functionresolver.cpp,120,6,degreeFunctionalBias,"case 4: case 6: return FunctionalBias::Dominant;     // 5̂, 7̂"
+src/composing/analysis/function/functionresolver.cpp,185,0.0,resolveAbstained,r.functionConfidence = 0.0;
+src/composing/analysis/function/functionresolver.cpp,210,0.25,resolveAbstained,"return pick(aMatch ? readA : readB, ResolutionBasis::BassDegreePrior, 0.25);"
+src/composing/analysis/function/functionresolver.cpp,225,1.0,resolveAbstained,"return pick(aIn ? readA : readB, ResolutionBasis::Progression, 1.0);"
+src/composing/analysis/function/functionresolver.cpp,232,0.5,resolveAbstained,"return pick(aPrev ? readA : readB, ResolutionBasis::NeighbourHarmony, 0.5);"
+src/composing/analysis/function/functionresolver.cpp,246,1.0,resolveAbstained,"return pick(aIn ? readA : readB, ResolutionBasis::Progression, 1.0);"
+src/composing/analysis/function/functionresolver.cpp,322,1.0,resolveAbstained,"return pick(appliedPick, ResolutionBasis::Progression, 1.0);"
+src/composing/analysis/function/functionresolver.cpp,338,1.0,resolveAbstained,"return pick(pinPick, ResolutionBasis::CadenceVote, 1.0);"
+src/composing/analysis/function/functionresolver.cpp,368,0.0,carryThrough,r.functionConfidence = 0.0;
+src/composing/analysis/function/functionresolver.cpp,433,0.0,attemptFineGrainOverride,double bestPlaus = 0.0;
+src/composing/analysis/function/functionresolver.cpp,451,0.0,attemptFineGrainOverride,if (contradictionStrength <= 0.0) {
+src/composing/analysis/function/functionresolver.cpp,628,4,resolveCarriedReadingsExtending,"const int roundCap = std::max(1, ext.maxForwardExtendSlices) + 4;   // never-terminates backstop"
+src/composing/analysis/function/functionresolver.h,125,1.0,<file-scope>,double metricWeight = 1.0;     ///< slice metric weight (§3); higher == metrically stronger
+src/composing/analysis/function/functionresolver.h,176,0.0,<file-scope>,double functionConfidence = 0.0;             ///< §7 confidence from the deciding evidence (seed; firewall)
+src/composing/analysis/function/functionresolver.h,211,1.0,<file-scope>,double wLicensedOut   = 1.0;   ///< §5.5: a licensed progression OUT of the prevailing harmony
+src/composing/analysis/function/functionresolver.h,212,1.0,<file-scope>,double wLicensedIn    = 1.0;   ///< §5.5: a licensed progression INTO the established next function
+src/composing/analysis/function/functionresolver.h,213,1.0,<file-scope>,double wCadentialFit  = 1.0;   ///< §5.5: the reading's root receives a cadence tonic-vote
+src/composing/analysis/function/functionresolver.h,214,0.5,<file-scope>,double decidingMargin = 0.5;   ///< §5.5: min plausibility margin to decide (below ⇒ tie ⇒ prior/open)
+src/composing/analysis/function/functionresolver.h,272,8,<file-scope>,int  maxForwardExtendSlices = 8;       ///< K — the decision-context span's hard bound in slices
+src/composing/analysis/function/tonicizationlabeler.cpp,44,7,keyScale,"inline bool keyScale(int tonicPc, uint16_t collMask, std::array<int, 7>& out) noexcept"
+src/composing/analysis/function/tonicizationlabeler.cpp,50,12,keyScale,for (int step = 0; step < 12 && idx < 7; ++step) {
+src/composing/analysis/function/tonicizationlabeler.cpp,50,7,keyScale,for (int step = 0; step < 12 && idx < 7; ++step) {
+src/composing/analysis/function/tonicizationlabeler.cpp,56,7,keyScale,return idx == 7;
+src/composing/analysis/function/tonicizationlabeler.cpp,59,7,<file-scope>,"static constexpr const char* kUpper[7] = { ""I"", ""II"", ""III"", ""IV"", ""V"", ""VI"", ""VII"" };"
+src/composing/analysis/function/tonicizationlabeler.cpp,60,7,<file-scope>,"static constexpr const char* kLower[7] = { ""i"", ""ii"", ""iii"", ""iv"", ""v"", ""vi"", ""vii"" };"
+src/composing/analysis/function/tonicizationlabeler.cpp,70,2,labelTonicizations,if (regions.size() < 2) {
+src/composing/analysis/function/tonicizationlabeler.cpp,91,7,labelTonicizations,"std::array<int, 7> scale{};"
+src/composing/analysis/function/tonicizationlabeler.cpp,96,7,labelTonicizations,for (int s = 0; s < 7; ++s) {
+src/composing/analysis/function/tonicizationlabeler.cpp,112,11,labelTonicizations,const int lt = normalizePc(d + 11);
+src/composing/analysis/function/tonicizationlabeler.cpp,123,7,labelTonicizations,"if (a.rootPc == normalizePc(d + 7) && pcInMask(a.pitchClassMask, lt)) {"
+src/composing/analysis/function/tonicizationlabeler.cpp,144,2,labelTonicizations,const int thirdPc = scale[(degree + 2) % 7];
+src/composing/analysis/function/tonicizationlabeler.cpp,144,7,labelTonicizations,const int thirdPc = scale[(degree + 2) % 7];
+src/composing/analysis/function/tonicizationlabeler.cpp,145,4,labelTonicizations,const bool degMajorThird = (normalizePc(thirdPc - d) == 4);
+src/composing/analysis/progression/progressionrecognizer.cpp,43,0.0,maxWeightOverIdioms,double best = 0.0;
+src/composing/analysis/progression/progressionrecognizer.cpp,53,0.0,maxWeightOverIdioms,"return any ? best : 0.0;  // §4.5: the MAX over the set, never the sum; empty set → 0"
+src/composing/analysis/progression/progressionrecognizer.cpp,63,0.0,normaliseToUnit,double sum = 0.0;
+src/composing/analysis/progression/progressionrecognizer.cpp,67,0.0,normaliseToUnit,if (sum <= 0.0) {
+src/composing/analysis/progression/progressionrecognizer.cpp,85,0.0,blendIdiomWeights,"double evidence = 0.0;  // E — the total idiom-evidence mass (raw, pre-normalisation)"
+src/composing/analysis/progression/progressionrecognizer.cpp,89,0.0,blendIdiomWeights,if (evidence <= 0.0) {
+src/composing/analysis/progression/progressionrecognizer.cpp,95,0.0,blendIdiomWeights,const double alpha = (blendRate > 0.0) ? evidence / (evidence + blendRate) : 1.0;
+src/composing/analysis/progression/progressionrecognizer.cpp,95,1.0,blendIdiomWeights,const double alpha = (blendRate > 0.0) ? evidence / (evidence + blendRate) : 1.0;
+src/composing/analysis/progression/progressionrecognizer.cpp,100,1.0,blendIdiomWeights,w[i] = (1.0 - alpha) * seedNorm[i] + alpha * histNorm[i];
+src/composing/analysis/progression/progressionrecognizer.cpp,164,12,pcMod12,return ((pc % 12) + 12) % 12;
+src/composing/analysis/progression/progressionrecognizer.cpp,164,12,pcMod12,return ((pc % 12) + 12) % 12;
+src/composing/analysis/progression/progressionrecognizer.cpp,164,12,pcMod12,return ((pc % 12) + 12) % 12;
+src/composing/analysis/progression/progressionrecognizer.cpp,183,0.0,<file-scope>,double prior = 0.0;
+src/composing/analysis/progression/progressionrecognizer.h,90,5,<file-scope>,inline constexpr std::size_t kIdiomCount = 5;
+src/composing/analysis/progression/progressionrecognizer.h,97,0.2,<file-scope>,"inline constexpr IdiomWeights kEqualSeed = { 0.2, 0.2, 0.2, 0.2, 0.2 };"
+src/composing/analysis/progression/progressionrecognizer.h,97,0.2,<file-scope>,"inline constexpr IdiomWeights kEqualSeed = { 0.2, 0.2, 0.2, 0.2, 0.2 };"
+src/composing/analysis/progression/progressionrecognizer.h,97,0.2,<file-scope>,"inline constexpr IdiomWeights kEqualSeed = { 0.2, 0.2, 0.2, 0.2, 0.2 };"
+src/composing/analysis/progression/progressionrecognizer.h,97,0.2,<file-scope>,"inline constexpr IdiomWeights kEqualSeed = { 0.2, 0.2, 0.2, 0.2, 0.2 };"
+src/composing/analysis/progression/progressionrecognizer.h,97,0.2,<file-scope>,"inline constexpr IdiomWeights kEqualSeed = { 0.2, 0.2, 0.2, 0.2, 0.2 };"
+src/composing/analysis/progression/progressionrecognizer.h,115,1.0,<file-scope>,double blendRate = 1.0;
+src/composing/analysis/progression/progressionrecognizer.h,120,0.0,<file-scope>,double admissionThreshold = 0.0;
+src/composing/analysis/progression/progressionrecognizer.h,126,0.5,<file-scope>,double modeCueFactor = 0.5;
+src/composing/analysis/progression/progressionrecognizer.h,132,0.5,<file-scope>,double chordsOnlyFactor = 0.5;
+src/composing/analysis/progression/progressionrecognizer.h,153,0.0,<file-scope>,"double functionalPlausibility = 0.0;  ///< the §5.5 ""close""-rule score for this reading"
+src/composing/analysis/progression/progressionrecognizer.h,168,1.0,<file-scope>,"double compositeConfidence = 1.0;         ///< L4's [0,1] composite confidence — the §8 threshold-scaling input"
+src/composing/analysis/progression/progressionrecognizer.h,196,0.0,<file-scope>,"double matchScore = 0.0;                  ///< the Vocabulary's match score (v1: 1.0, an exact realisation)"
+src/composing/analysis/progression/progressionrecognizer.h,197,0.0,<file-scope>,double priorStrength = 0.0;               ///< §4.5 prior strength (this span passed admission)
+src/composing/analysis/progression/progressionrecognizer.h,215,0.0,<file-scope>,double weight = 0.0;                      ///< = the recognition's prior strength (the feature weight)
+src/composing/analysis/progression/progressionrecognizer.h,241,0.0,<file-scope>,double priorStrength = 0.0;               ///< enters the F-B contradiction quantity
+src/composing/analysis/progression/progressionrecognizer.h,242,0.0,<file-scope>,double compositeConfidence = 0.0;         ///< the committed reading's confidence (the §8 threshold-scaling input)
+src/composing/analysis/progression/progressionrecognizer.h,261,0.0,<file-scope>,double priorStrength = 0.0;               ///< the max prior strength among the repeated recognitions
+tools/a8_rebaseline_measure.py,89,4,_is_halfdim_or_min6_set,if len(pcs) != 4:
+tools/a8_rebaseline_measure.py,188,2,build_piece_grid,if len(bounds) < 2:
+tools/a8_rebaseline_measure.py,100,3,cell_class,"if len(pcs) >= 3 and _t_invariant(pcs, 3):      # dim7 (fully-diminished)"
+tools/a8_rebaseline_measure.py,100,3,cell_class,"if len(pcs) >= 3 and _t_invariant(pcs, 3):      # dim7 (fully-diminished)"
+tools/a8_rebaseline_measure.py,102,3,cell_class,"if len(pcs) >= 3 and _t_invariant(pcs, 4):      # augmented triad"
+tools/a8_rebaseline_measure.py,102,4,cell_class,"if len(pcs) >= 3 and _t_invariant(pcs, 4):      # augmented triad"
+tools/a8_rebaseline_measure.py,104,4,cell_class,"if len(pcs) >= 4 and _t_invariant(pcs, 2):      # whole-tone"
+tools/a8_rebaseline_measure.py,104,2,cell_class,"if len(pcs) >= 4 and _t_invariant(pcs, 2):      # whole-tone"
+tools/a8_rebaseline_measure.py,77,12,_pcs,return frozenset(i for i in range(12) if bitmap & (1 << i))
+tools/a8_rebaseline_measure.py,84,12,_t_invariant,return frozenset((p + k) % 12 for p in pcs) == pcs
+tools/a8_rebaseline_measure.py,92,12,_is_halfdim_or_min6_set,"if frozenset((r + d) % 12 for d in (0, 3, 6, 10)) == pcs:"
+tools/a8_rebaseline_measure.py,92,3,_is_halfdim_or_min6_set,"if frozenset((r + d) % 12 for d in (0, 3, 6, 10)) == pcs:"
+tools/a8_rebaseline_measure.py,92,6,_is_halfdim_or_min6_set,"if frozenset((r + d) % 12 for d in (0, 3, 6, 10)) == pcs:"
+tools/a8_rebaseline_measure.py,92,10,_is_halfdim_or_min6_set,"if frozenset((r + d) % 12 for d in (0, 3, 6, 10)) == pcs:"
+tools/analyze_inversion_errors.py,322,0.7,main,INVERSION_SUSPICION_MARGIN = 0.70
+tools/analyze_inversion_errors.py,253,8,main,"for q, cnt in alt_quality_counts.most_common(8):"
+tools/analyze_inversion_errors.py,259,2,main,"nc2  = note_counts.get(2, 0)"
+tools/analyze_inversion_errors.py,76,2,main,sys.exit(2)
+tools/analyze_inversion_errors.py,305,0.25,main,"bins = [(i*0.25, (i+1)*0.25) for i in range(12)]"
+tools/analyze_inversion_errors.py,305,0.25,main,"bins = [(i*0.25, (i+1)*0.25) for i in range(12)]"
+tools/analyze_inversion_errors.py,305,12,main,"bins = [(i*0.25, (i+1)*0.25) for i in range(12)]"
+tools/analyze_inversion_errors.py,92,2,main,sys.exit(2)
+tools/analyze_inversion_errors.py,204,70,main,"print(f""\n{'='*70}"")"
+tools/analyze_inversion_errors.py,206,70,main,"print(f""{'='*70}"")"
+tools/analyze_inversion_errors.py,210,0.25,main,lt_025 = sum(1 for m in margins if m < 0.25)
+tools/analyze_inversion_errors.py,211,0.5,main,lt_05  = sum(1 for m in margins if m < 0.5)
+tools/analyze_inversion_errors.py,213,1.5,main,lt_15  = sum(1 for m in margins if m < 1.5)
+tools/analyze_inversion_errors.py,214,2.0,main,lt_2   = sum(1 for m in margins if m < 2.0)
+tools/analyze_inversion_errors.py,215,2.0,main,gt_2   = sum(1 for m in margins if m >= 2.0)
+tools/analyze_inversion_errors.py,216,0.5,main,bt_05_2 = sum(1 for m in margins if 0.5 <= m < 2.0)
+tools/analyze_inversion_errors.py,216,2.0,main,bt_05_2 = sum(1 for m in margins if 0.5 <= m < 2.0)
+tools/analyze_inversion_errors.py,260,3,main,"nc3p = sum(v for k, v in note_counts.items() if k >= 3)"
+tools/analyze_inversion_errors.py,273,0.26,main,beat1 = sum(1 for b in beats if abs(b - 1.0) < 0.26)
+tools/analyze_inversion_errors.py,274,0.26,main,beat2 = sum(1 for b in beats if abs(b - 2.0) < 0.26)
+tools/analyze_inversion_errors.py,275,0.26,main,beat3 = sum(1 for b in beats if abs(b - 3.0) < 0.26)
+tools/analyze_inversion_errors.py,276,0.26,main,beat4 = sum(1 for b in beats if abs(b - 4.0) < 0.26)
+tools/analyze_inversion_errors.py,294,70,main,"print(f""\n{'='*70}"")"
+tools/analyze_inversion_errors.py,296,70,main,"print(f""{'='*70}"")"
+tools/analyze_inversion_errors.py,308,40,main,"bar = '█' * (cnt * 40 // max(1, n))"
+tools/analyze_inversion_errors.py,310,3.0,main,hi_cnt = sum(1 for m in margins if m >= 3.0)
+tools/analyze_inversion_errors.py,352,70,main,"print(f""\n{'='*70}"")"
+tools/analyze_inversion_errors.py,354,70,main,"print(f""{'='*70}"")"
+tools/analyze_inversion_errors.py,189,100,main,"print(f""  bassIsRoot=true:  {len(all_bir_errors_2way)} ({100*len(all_bir_errors_2way)/max(1,total_2way):.1f}%)"")"
+tools/analyze_inversion_errors.py,190,100,main,"print(f""  bassIsRoot=false: {len(all_nonbir_errors_2way)} ({100*len(all_nonbir_errors_2way)/max(1,total_2way):.1f}%)"")"
+tools/analyze_inversion_errors.py,219,100,main,"print(f""  margin < 0.25  (barely wins):           {lt_025:4d}  ({100*lt_025/n:.1f}%)"")"
+tools/analyze_inversion_errors.py,220,100,main,"print(f""  margin < 0.50  (low confidence):        {lt_05:4d}  ({100*lt_05/n:.1f}%)"")"
+tools/analyze_inversion_errors.py,221,100,main,"print(f""  margin < 1.00:                          {lt_1:4d}  ({100*lt_1/n:.1f}%)"")"
+tools/analyze_inversion_errors.py,222,100,main,"print(f""  margin < 1.50:                          {lt_15:4d}  ({100*lt_15/n:.1f}%)"")"
+tools/analyze_inversion_errors.py,223,100,main,"print(f""  0.5 ≤ margin < 2.0  (moderate):        {bt_05_2:4d}  ({100*bt_05_2/n:.1f}%)"")"
+tools/analyze_inversion_errors.py,224,100,main,"print(f""  margin >= 2.0  (wins convincingly):     {gt_2:4d}  ({100*gt_2/n:.1f}%)"")"
+tools/analyze_inversion_errors.py,249,100,main,"print(f""  Has clean triad/7th alt (fixable):  {has_clean_alt:4d}  ({100*has_clean_alt/n:.1f}%)"")"
+tools/analyze_inversion_errors.py,250,100,main,"print(f""  No alternatives listed:             {no_alt:4d}  ({100*no_alt/n:.1f}%)"")"
+tools/analyze_inversion_errors.py,251,100,main,"print(f""  Only non-clean alts:                {dirty_alt_only:4d}  ({100*dirty_alt_only/n:.1f}%)"")"
+tools/analyze_inversion_errors.py,266,100,main,"print(f""  noteCount=1 (arpeggio artifact):  {nc1:4d}  ({100*nc1/n:.1f}%)"")"
+tools/analyze_inversion_errors.py,267,100,main,"print(f""  noteCount=2 (ambiguous):          {nc2:4d}  ({100*nc2/n:.1f}%)"")"
+tools/analyze_inversion_errors.py,268,100,main,"print(f""  noteCount>=3 (genuine chord):     {nc3p:4d}  ({100*nc3p/n:.1f}%)"")"
+tools/analyze_inversion_errors.py,280,100,main,"print(f""  Beat 1 (downbeat): {beat1:4d}  ({100*beat1/n:.1f}%)"")"
+tools/analyze_inversion_errors.py,281,100,main,"print(f""  Beat 2:            {beat2:4d}  ({100*beat2/n:.1f}%)"")"
+tools/analyze_inversion_errors.py,282,100,main,"print(f""  Beat 3:            {beat3:4d}  ({100*beat3/n:.1f}%)"")"
+tools/analyze_inversion_errors.py,283,100,main,"print(f""  Beat 4:            {beat4:4d}  ({100*beat4/n:.1f}%)"")"
+tools/analyze_inversion_errors.py,284,100,main,"print(f""  Other (offbeats):  {other:4d}  ({100*other/n:.1f}%)"")"
+tools/analyze_inversion_errors.py,288,0.5,main,if (r.chord_score_margin or 0) < 0.5
+tools/analyze_inversion_errors.py,289,3,main,and (r.note_count or 0) >= 3)
+tools/analyze_inversion_errors.py,292,3,main,and (r.note_count or 0) >= 3)
+tools/analyze_inversion_errors.py,298,100,main,"print(f""Targetable at margin<0.5, noteCount>=3:        {targetable_margin}  ({100*targetable_margin/n:.1f}%)"")"
+tools/analyze_inversion_errors.py,299,100,main,"print(f""Targetable at margin<1.0, noteCount>=3:        {targetable_margin1}  ({100*targetable_margin1/n:.1f}%)"")"
+tools/analyze_inversion_errors.py,300,100,main,"print(f""Arpeggio artifacts (noteCount=1):              {nc1}  ({100*nc1/n:.1f}%)  -- need separate fix"")"
+tools/analyze_inversion_errors.py,301,100,main,"print(f""High-confidence bass-root (margin>=2.0):       {gt_2}  ({100*gt_2/n:.1f}%)  -- fix won't help, likely correct"")"
+tools/analyze_inversion_errors.py,356,100,main,"f""  {blocker_b:4d}  ({100*blocker_b/n:.1f}%)"")"
+tools/analyze_inversion_errors.py,358,100,main,"f""  {blocker_c:4d}  ({100*blocker_c/n:.1f}%)"")"
+tools/analyze_inversion_errors.py,360,100,main,"f""  {should_have_fired:4d}  ({100*should_have_fired/n:.1f}%)"")"
+tools/analyze_inversion_errors.py,193,100,main,"print(f""  bassIsRoot=true:  {len(genuine_bir_errors)} ({100*len(genuine_bir_errors)/max(1,total_genuine):.1f}%)"")"
+tools/analyze_inversion_errors.py,194,100,main,"print(f""  bassIsRoot=false: {len(genuine_nonbir_errors)} ({100*len(genuine_nonbir_errors)/max(1,total_genuine):.1f}%)"")"
+tools/analyze_inversion_errors.py,264,100,main,"print(f""  noteCount={nc}: {note_counts[nc]:4d}  ({100*note_counts[nc]/n:.1f}%)"")"
+tools/analyze_inversion_errors.py,274,2.0,main,beat2 = sum(1 for b in beats if abs(b - 2.0) < 0.26)
+tools/analyze_inversion_errors.py,275,3.0,main,beat3 = sum(1 for b in beats if abs(b - 3.0) < 0.26)
+tools/analyze_inversion_errors.py,276,4.0,main,beat4 = sum(1 for b in beats if abs(b - 4.0) < 0.26)
+tools/analyze_inversion_errors.py,363,100,main,"f""  {blocker_a:4d}  ({100*blocker_a/should_have_fired:.1f}%)"")"
+tools/analyze_inversion_errors.py,365,100,main,"f""  {other:4d}  ({100*other/should_have_fired:.1f}%)"")"
+tools/batch_analyze.cpp,142,8,jsonEscape,r.reserve(s.size() + 8);
+tools/batch_analyze.cpp,151,0x20,jsonEscape,if (c < 0x20) {
+tools/batch_analyze.cpp,152,8,jsonEscape,char buf[8];
+tools/batch_analyze.cpp,163,6,fmtDouble,"static std::string fmtDouble(double v, int precision = 6)"
+tools/batch_analyze.cpp,166,64,fmtDouble,char buf[64];
+tools/batch_analyze.cpp,196,1.20,applyPreset,prefs.modePriorIonian           =  1.20;
+tools/batch_analyze.cpp,197,0.50,applyPreset,prefs.modePriorDorian           = -0.50;
+tools/batch_analyze.cpp,198,1.50,applyPreset,prefs.modePriorPhrygian         = -1.50;
+tools/batch_analyze.cpp,199,0.00,applyPreset,prefs.modePriorLydian           =  0.00;
+tools/batch_analyze.cpp,200,0.20,applyPreset,prefs.modePriorMixolydian       = -0.20;
+tools/batch_analyze.cpp,201,1.00,applyPreset,prefs.modePriorAeolian          =  1.00;
+tools/batch_analyze.cpp,202,3.50,applyPreset,prefs.modePriorLocrian          = -3.50;
+tools/batch_analyze.cpp,203,0.50,applyPreset,prefs.modePriorMelodicMinor     = -0.50;
+tools/batch_analyze.cpp,204,1.50,applyPreset,prefs.modePriorDorianB2         = -1.50;
+tools/batch_analyze.cpp,205,1.00,applyPreset,prefs.modePriorLydianAugmented  = -1.00;
+tools/batch_analyze.cpp,206,0.30,applyPreset,prefs.modePriorLydianDominant   = -0.30;
+tools/batch_analyze.cpp,207,1.00,applyPreset,prefs.modePriorMixolydianB6     = -1.00;
+tools/batch_analyze.cpp,208,2.00,applyPreset,prefs.modePriorAeolianB5        = -2.00;
+tools/batch_analyze.cpp,209,3.50,applyPreset,prefs.modePriorAltered          = -3.50;
+tools/batch_analyze.cpp,210,0.30,applyPreset,prefs.modePriorHarmonicMinor    = -0.30;
+tools/batch_analyze.cpp,211,2.00,applyPreset,prefs.modePriorLocrianSharp6    = -2.00;
+tools/batch_analyze.cpp,212,1.50,applyPreset,prefs.modePriorIonianSharp5     = -1.50;
+tools/batch_analyze.cpp,213,1.50,applyPreset,prefs.modePriorDorianSharp4     = -1.50;
+tools/batch_analyze.cpp,214,0.80,applyPreset,prefs.modePriorPhrygianDominant = -0.80;
+tools/batch_analyze.cpp,215,2.00,applyPreset,prefs.modePriorLydianSharp2     = -2.00;
+tools/batch_analyze.cpp,216,3.50,applyPreset,prefs.modePriorAlteredDomBB7    = -3.50;
+tools/batch_analyze.cpp,424,12,pitchClassMask,mask |= static_cast<uint16_t>(1u << (t.pitch % 12));
+tools/batch_analyze.cpp,523,0.0,<file-scope>,double keySeqMargin = 0.0;
+tools/batch_analyze.cpp,597,0.25,analyzeScore,opts.onsetBoundaryThreshold          = 0.25;
+tools/batch_analyze.cpp,645,1.0,analyzeScore,ar.beat = 1.0 + static_cast<double>(tickInMeasure) / Constants::DIVISION;
+tools/batch_analyze.cpp,647,1.0,analyzeScore,ar.beat = 1.0;
+tools/batch_analyze.cpp,662,12,analyzeScore,ar.bassPc = bassTone->pitch % 12;
+tools/batch_analyze.cpp,667,3,analyzeScore,"analysis::appendCappedAlternatives(ar.alternatives, sr.alternatives, 3);"
+tools/batch_analyze.cpp,701,1.0,analyzeScore,ar.beat             = 1.0 + static_cast<double>(tickInMeasure) / Constants::DIVISION;
+tools/batch_analyze.cpp,713,12,analyzeScore,ar.bassPc = bassTone->pitch % 12;
+tools/batch_analyze.cpp,719,3,analyzeScore,"analysis::appendCappedAlternatives(ar.alternatives, hr.alternatives, 3);"
+tools/batch_analyze.cpp,743,12,convertNotationRegion,converted.bassPc = bassTone->pitch % 12;
+tools/batch_analyze.cpp,754,1.0,convertNotationRegion,converted.beat = 1.0 + static_cast<double>(tickInMeasure) / Constants::DIVISION;
+tools/batch_analyze.cpp,757,1.0,convertNotationRegion,converted.beat = 1.0;
+tools/batch_analyze.cpp,859,12,writeKeyCandidateDump,"static const char* PCNAME[12] = { ""C"",""Db"",""D"",""Eb"",""E"",""F"",""Gb"",""G"",""Ab"",""A"",""Bb"",""B"" };"
+tools/batch_analyze.cpp,905,12,writeKeyCandidateDump,"<< "", \""label\"": \"""" << PCNAME[(c.tonicPc % 12 + 12) % 12] << analysis::keyModeSuffix(m) << ""\"""""
+tools/batch_analyze.cpp,905,12,writeKeyCandidateDump,"<< "", \""label\"": \"""" << PCNAME[(c.tonicPc % 12 + 12) % 12] << analysis::keyModeSuffix(m) << ""\"""""
+tools/batch_analyze.cpp,905,12,writeKeyCandidateDump,"<< "", \""label\"": \"""" << PCNAME[(c.tonicPc % 12 + 12) % 12] << analysis::keyModeSuffix(m) << ""\"""""
+tools/batch_analyze.cpp,983,5,writeCadenceAnchorJson,"out << ""    \""confidence\"": ""  << fmtDouble(anchor.confidence, 5)      << "",\n"";"
+tools/batch_analyze.cpp,1146,5,writeJointKeyJson,"out << ""    \""anchorConfidence\"": "" << fmtDouble(jk.anchor.confidence, 5) << "",\n"";"
+tools/batch_analyze.cpp,1308,0.0,writeL5Json,u.resolverConfidence = 0.0;  // no resolver here (the override needs the L4-decoder carried contract)
+tools/batch_analyze.cpp,1386,6,writeRegionKeyMarginJson,"<< "", \""keySeqMargin\"": "" << fmtDouble(r.keySeqMargin, 6)"
+tools/batch_analyze.cpp,1387,6,writeRegionKeyMarginJson,"<< "", \""keySigmoid\"": "" << fmtDouble(r.key.normalizedConfidence, 6)"
+tools/batch_analyze.cpp,1388,1.0,writeRegionKeyMarginJson,"<< "", \""uncertain\"": "" << (r.keySeqMargin < 1.0 ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,1477,0.0,writeJson,? 0.0
+tools/batch_analyze.cpp,1482,12,writeJson,for (int bit = 0; bit < 12; ++bit) {
+tools/batch_analyze.cpp,1490,4,writeJson,"out << ""      \""beat\"": ""            << fmtDouble(r.beat, 4)                                 << "",\n"";"
+tools/batch_analyze.cpp,1493,6,writeJson,"out << ""      \""duration\"": ""        << fmtDouble(durationQn, 6)                             << "",\n"";"
+tools/batch_analyze.cpp,1498,5,writeJson,"out << ""      \""chordScore\"": ""      << fmtDouble(chordScore, 5)                             << "",\n"";"
+tools/batch_analyze.cpp,1499,5,writeJson,"out << ""      \""chordScoreMargin\"": ""<< fmtDouble(chordMargin, 5)                            << "",\n"";"
+tools/batch_analyze.cpp,1504,2,writeJson,if (r.keyRanked.size() >= 2) {
+tools/batch_analyze.cpp,1528,6,writeJson,"<< ""\""weight\"": "" << fmtDouble(tone.weight, 6) << "", """
+tools/batch_analyze.cpp,1554,5,writeJson,"<< ""\""score\"": ""          << fmtDouble(alt.identity.score, 5)"
+tools/batch_analyze.cpp,1615,12,diagPcName,static constexpr const char* SHARP[12] = {
+tools/batch_analyze.cpp,1618,12,diagPcName,static constexpr const char* FLAT[12] = {
+tools/batch_analyze.cpp,1621,12,diagPcName,pc = ((pc % 12) + 12) % 12;
+tools/batch_analyze.cpp,1621,12,diagPcName,pc = ((pc % 12) + 12) % 12;
+tools/batch_analyze.cpp,1621,12,diagPcName,pc = ((pc % 12) + 12) % 12;
+tools/batch_analyze.cpp,1691,3,diagContextBanner,"<< "", regionMetricWeight="" << fmtDouble(ctx->regionMetricWeight, 3)"
+tools/batch_analyze.cpp,1755,4,writeDiagnosticJson,"out << ""      \""beat\"": "" << fmtDouble(region->beat, 4) << "",\n"";"
+tools/batch_analyze.cpp,1766,12,writeDiagnosticJson,const int pc = t.pitch % 12;
+tools/batch_analyze.cpp,1771,6,writeDiagnosticJson,"<< ""\""weight\"": "" << fmtDouble(t.weight, 6) << "", """
+tools/batch_analyze.cpp,1786,12,writeDiagnosticJson,for (int pc = 0; pc < 12; ++pc) {
+tools/batch_analyze.cpp,1787,0.001,writeDiagnosticJson,if (diag.pcWeights[static_cast<size_t>(pc)] < 0.001) { continue; }
+tools/batch_analyze.cpp,1791,5,writeDiagnosticJson,"<< fmtDouble(diag.pcWeights[static_cast<size_t>(pc)], 5);"
+tools/batch_analyze.cpp,1806,5,writeDiagnosticJson,"<< ""\""score\"": "" << fmtDouble(w.score, 5) << "", """
+tools/batch_analyze.cpp,1819,0.0,writeDiagnosticJson,? 0.0
+tools/batch_analyze.cpp,1820,0.75,writeDiagnosticJson,: diag.oracleCells.front().verticalScore * 0.75;
+tools/batch_analyze.cpp,1834,5,writeDiagnosticJson,"<< ""\""vertical_score\"": "" << fmtDouble(c.verticalScore, 5) << "", """
+tools/batch_analyze.cpp,1835,5,writeDiagnosticJson,"<< ""\""basis_indep\"": "" << fmtDouble(c.basisIndep, 5) << "", """
+tools/batch_analyze.cpp,1836,5,writeDiagnosticJson,"<< ""\""basis_dep\"": "" << fmtDouble(c.basisDep, 5) << "", """
+tools/batch_analyze.cpp,1837,5,writeDiagnosticJson,"<< ""\""complexity_factor\"": "" << fmtDouble(c.complexityFactor, 5) << "", """
+tools/batch_analyze.cpp,1838,5,writeDiagnosticJson,"<< ""\""aug_factor\"": "" << fmtDouble(c.augFactor, 5) << "", """
+tools/batch_analyze.cpp,1839,5,writeDiagnosticJson,"<< ""\""w_complete\"": "" << fmtDouble(c.wCompleteBonus, 5) << "", """
+tools/batch_analyze.cpp,1840,5,writeDiagnosticJson,"<< ""\""applied_bass_bonus\"": "" << fmtDouble(c.appliedBassBonus, 5)"
+tools/batch_analyze.cpp,1859,5,writeDiagnosticJson,"<< ""\""competition_score\"": "" << fmtDouble(c.competitionScore, 5) << "", """
+tools/batch_analyze.cpp,1860,5,writeDiagnosticJson,"<< ""\""rcb\"": "" << fmtDouble(c.rootContinuityBonus, 5) << "", """
+tools/batch_analyze.cpp,1861,5,writeDiagnosticJson,"<< ""\""rcb_raw\"": "" << fmtDouble(c.rootContinuityBonusRaw, 5) << "", """
+tools/batch_analyze.cpp,1864,5,writeDiagnosticJson,"<< ""\""resolution\"": "" << fmtDouble(c.resolutionBonus, 5) << "", """
+tools/batch_analyze.cpp,1865,5,writeDiagnosticJson,"<< ""\""inversion_ctx\"": "" << fmtDouble(c.inversionContextBonus, 5) << "", """
+tools/batch_analyze.cpp,1866,5,writeDiagnosticJson,"<< ""\""w_seq\"": "" << fmtDouble(c.wSeqBonus, 5) << "", """
+tools/batch_analyze.cpp,1867,5,writeDiagnosticJson,"<< ""\""w_dim\"": "" << fmtDouble(c.wDimBonus, 5) << "", """
+tools/batch_analyze.cpp,1868,5,writeDiagnosticJson,"<< ""\""step_in\"": "" << fmtDouble(c.stepInBonus, 5) << "", """
+tools/batch_analyze.cpp,1869,5,writeDiagnosticJson,"<< ""\""step_out\"": "" << fmtDouble(c.stepOutBonus, 5)"
+tools/batch_analyze.cpp,1882,5,writeDiagnosticJson,"<< ""\""score\"": "" << fmtDouble(pg.competitionWinnerScore, 5) << ""}, """
+tools/batch_analyze.cpp,2230,2,runSliceValidation,if (bexp.size() < 2) {
+tools/batch_analyze.cpp,2414,6,runSliceValidation,"os << ""  \""sliceMs\"": "" << fmtDouble(sliceMs, 6) << "",\n"";"
+tools/batch_analyze.cpp,2477,1.0,runKeyModeDecode,? 1.0 + static_cast<double>(s - mi.measure->tick().ticks()) / Constants::DIVISION
+tools/batch_analyze.cpp,2478,1.0,runKeyModeDecode,: 1.0;
+tools/batch_analyze.cpp,2484,4,runKeyModeDecode,"<< "", \""beat\"": "" << fmtDouble(beat, 4)"
+tools/batch_analyze.cpp,2487,4,runKeyModeDecode,"<< "", \""duration\"": "" << fmtDouble(duration, 4)"
+tools/batch_analyze.cpp,2489,6,runKeyModeDecode,"<< "", \""keyConfidence\"": "" << fmtDouble(sk.confidence, 6)"
+tools/batch_analyze.cpp,2500,6,runKeyModeDecode,"<< "", \""keyEmission\"": "" << fmtDouble(sk.chosen.score, 6)"
+tools/batch_analyze.cpp,2506,6,runKeyModeDecode,"<< ""\"", \""confidence\"": "" << fmtDouble(sk.alternatives[0].score, 6) << "" }"";"
+tools/batch_analyze.cpp,2522,6,runKeyModeDecode,"<< ""\"", \""confidence\"": "" << fmtDouble(alt.score, 6) << "" }"";"
+tools/batch_analyze.cpp,2555,0.25,runReachBackAB,o.onsetBoundaryThreshold = 0.25;
+tools/batch_analyze.cpp,2565,24,runReachBackAB,for (const Measure* m = score->firstMeasure(); m && ranges.size() < 24;
+tools/batch_analyze.cpp,2589,0.0,runReachBackAB,"double offMsTotal = 0.0, onMsTotal = 0.0;"
+tools/batch_analyze.cpp,2589,0.0,runReachBackAB,"double offMsTotal = 0.0, onMsTotal = 0.0;"
+tools/batch_analyze.cpp,2596,8,runReachBackAB,on.reachBack.maxReachSteps = 8;             // hard bound
+tools/batch_analyze.cpp,2598,0.0,runReachBackAB,"on.reachBack.minOpeningConfidence = 0.0;    // the primary ""uncertain"" trigger only"
+tools/batch_analyze.cpp,2698,1.0,runChordDecode,? 1.0 + static_cast<double>(s - mi.measure->tick().ticks()) / Constants::DIVISION
+tools/batch_analyze.cpp,2699,1.0,runChordDecode,: 1.0;
+tools/batch_analyze.cpp,2710,12,runChordDecode,const int pc = ((t.pitch % 12) + 12) % 12;
+tools/batch_analyze.cpp,2710,12,runChordDecode,const int pc = ((t.pitch % 12) + 12) % 12;
+tools/batch_analyze.cpp,2710,12,runChordDecode,const int pc = ((t.pitch % 12) + 12) % 12;
+tools/batch_analyze.cpp,2723,4,runChordDecode,"<< "", \""beat\"": "" << fmtDouble(beat, 4)"
+tools/batch_analyze.cpp,2726,4,runChordDecode,"<< "", \""duration\"": "" << fmtDouble(duration, 4)"
+tools/batch_analyze.cpp,2735,0.0,runChordDecode,"<< "", \""chordScore\"": "" << fmtDouble(sc.hasChord ? sc.chosen.score : 0.0, 5)"
+tools/batch_analyze.cpp,2735,5,runChordDecode,"<< "", \""chordScore\"": "" << fmtDouble(sc.hasChord ? sc.chosen.score : 0.0, 5)"
+tools/batch_analyze.cpp,2736,5,runChordDecode,"<< "", \""chordScoreMargin\"": "" << fmtDouble(sc.confidence, 5)"
+tools/batch_analyze.cpp,2737,5,runChordDecode,"<< "", \""confidence\"": "" << fmtDouble(sc.confidence, 5)"
+tools/batch_analyze.cpp,2764,5,runChordDecode,"<< "", \""score\"": "" << fmtDouble(alt.score, 5) << "" }"";"
+tools/batch_analyze.cpp,2849,12,runVlDump,os.precision(12);
+tools/batch_analyze.cpp,3018,3,fsFifthsForTonic,const int t = minor ? (((tonicPc + 3) % 12) + 12) % 12 : (((tonicPc % 12) + 12) % 12);
+tools/batch_analyze.cpp,3018,12,fsFifthsForTonic,const int t = minor ? (((tonicPc + 3) % 12) + 12) % 12 : (((tonicPc % 12) + 12) % 12);
+tools/batch_analyze.cpp,3018,12,fsFifthsForTonic,const int t = minor ? (((tonicPc + 3) % 12) + 12) % 12 : (((tonicPc % 12) + 12) % 12);
+tools/batch_analyze.cpp,3018,12,fsFifthsForTonic,const int t = minor ? (((tonicPc + 3) % 12) + 12) % 12 : (((tonicPc % 12) + 12) % 12);
+tools/batch_analyze.cpp,3018,12,fsFifthsForTonic,const int t = minor ? (((tonicPc + 3) % 12) + 12) % 12 : (((tonicPc % 12) + 12) % 12);
+tools/batch_analyze.cpp,3018,12,fsFifthsForTonic,const int t = minor ? (((tonicPc + 3) % 12) + 12) % 12 : (((tonicPc % 12) + 12) % 12);
+tools/batch_analyze.cpp,3018,12,fsFifthsForTonic,const int t = minor ? (((tonicPc + 3) % 12) + 12) % 12 : (((tonicPc % 12) + 12) % 12);
+tools/batch_analyze.cpp,3019,7,fsFifthsForTonic,int f = (7 * t) % 12;
+tools/batch_analyze.cpp,3019,12,fsFifthsForTonic,int f = (7 * t) % 12;
+tools/batch_analyze.cpp,3020,6,fsFifthsForTonic,if (f > 6) { f -= 12; }
+tools/batch_analyze.cpp,3020,12,fsFifthsForTonic,if (f > 6) { f -= 12; }
+tools/batch_analyze.cpp,3054,4,fsGroupingJson,"<< "", \""confidence\"": "" << fmtDouble(k.confidence, 4)"
+tools/batch_analyze.cpp,3132,1.0,runFullSpine,double metricWeight = 1.0;
+tools/batch_analyze.cpp,3150,12,runFullSpine,c.pcMask |= static_cast<uint16_t>(1u << (((ne->pitch % 12) + 12) % 12));
+tools/batch_analyze.cpp,3150,12,runFullSpine,c.pcMask |= static_cast<uint16_t>(1u << (((ne->pitch % 12) + 12) % 12));
+tools/batch_analyze.cpp,3150,12,runFullSpine,c.pcMask |= static_cast<uint16_t>(1u << (((ne->pitch % 12) + 12) % 12));
+tools/batch_analyze.cpp,3267,1.0e9,runFullSpine,resolverParams.override.baseBar = 1.0e9;       // impassable ⇒ override never fires
+tools/batch_analyze.cpp,3322,0.0,runFullSpine,u.resolverConfidence = (i < res.readings.size()) ? res.readings[i].functionConfidence : 0.0;
+tools/batch_analyze.cpp,3408,3,runFullSpine,"os << ""  \""wallTimeLegacyMs\"": "" << fmtDouble(legacyMs, 3) << "",\n"";"
+tools/batch_analyze.cpp,3409,3,runFullSpine,"os << ""  \""wallTimeDecodeMs\"": "" << fmtDouble(decodeMs, 3) << "",\n"";"
+tools/batch_analyze.cpp,3431,6,runFullSpine,"os << (i ? "", "" : """") << fmtDouble(phraseProfile.textureStrength[i], 6);"
+tools/batch_analyze.cpp,3452,4,runFullSpine,"<< "", \""tonicVote\"": "" << fmtDouble(c.tonicVote, 4) << "" }"";"
+tools/batch_analyze.cpp,3464,4,runFullSpine,"<< "", \""cadentialWeight\"": "" << fmtDouble(m.cadentialWeight, 4)   // D-FS §5.4 contradiction quantity"
+tools/batch_analyze.cpp,3484,1.0,runFullSpine,? 1.0 + static_cast<double>(s - mi.measure->tick().ticks()) / Constants::DIVISION : 1.0;
+tools/batch_analyze.cpp,3484,1.0,runFullSpine,? 1.0 + static_cast<double>(s - mi.measure->tick().ticks()) / Constants::DIVISION : 1.0;
+tools/batch_analyze.cpp,3495,4,runFullSpine,"<< "", \""beat\"": "" << fmtDouble(beat, 4)"
+tools/batch_analyze.cpp,3497,4,runFullSpine,"<< "", \""duration\"": "" << fmtDouble(duration, 4)"
+tools/batch_analyze.cpp,3518,4,runFullSpine,"<< "", \""l4Composite\"": "" << fmtDouble(decoded[i].confidenceModel.composite, 4)"
+tools/batch_analyze.cpp,3519,4,runFullSpine,"<< "", \""l4Margin\"": "" << fmtDouble(decoded[i].confidenceModel.margin, 4)"
+tools/batch_analyze.cpp,3520,4,runFullSpine,"<< "", \""l4Sufficiency\"": "" << fmtDouble(decoded[i].confidenceModel.sufficiency, 4)"
+tools/batch_analyze.cpp,3521,4,runFullSpine,"<< "", \""l4Cleanliness\"": "" << fmtDouble(decoded[i].confidenceModel.membershipCleanliness, 4)"
+tools/batch_analyze.cpp,3535,4,runFullSpine,"<< "", \""l5CadenceVoteWeight\"": "" << fmtDouble(fc.cadenceVoteWeight, 4)"
+tools/batch_analyze.cpp,3536,4,runFullSpine,"<< "", \""l5LicensedFit\"": "" << fmtDouble(fc.licensedProgressionFit, 4)"
+tools/batch_analyze.cpp,3537,4,runFullSpine,"<< "", \""l5NextBestMargin\"": "" << fmtDouble(fc.nextBestMargin, 4)"
+tools/batch_analyze.cpp,3538,4,runFullSpine,"<< "", \""l5Combined\"": "" << fmtDouble(fc.combined, 4)"
+tools/batch_analyze.cpp,3539,6,runFullSpine,"<< "", \""l5CombinedBoundary\"": "" << fmtDouble(fc.combinedBoundary, 6)   // D-L5a boundary form ∈ [0,1)"
+tools/batch_analyze.cpp,3542,0.0,runFullSpine,"<< "", \""l5OverrideContradiction\"": "" << fmtDouble((rr.overrodeCommit ? rr.functionConfidence : 0.0), 4)"
+tools/batch_analyze.cpp,3542,4,runFullSpine,"<< "", \""l5OverrideContradiction\"": "" << fmtDouble((rr.overrodeCommit ? rr.functionConfidence : 0.0), 4)"
+tools/batch_analyze.cpp,3557,5,runFullSpine,"<< "", \""score\"": "" << fmtDouble(alt.score, 5) << "" }"";"
+tools/batch_analyze.cpp,3634,4,runFullSpine,"os << (k ? "", "" : """") << fmtDouble(rec.weights[k], 4);"
+tools/batch_analyze.cpp,3645,3,runFullSpine,"<< "", \""matchScore\"": "" << fmtDouble(sp.matchScore, 3)"
+tools/batch_analyze.cpp,3646,4,runFullSpine,"<< "", \""priorStrength\"": "" << fmtDouble(sp.priorStrength, 4)"
+tools/batch_analyze.cpp,3718,0.25,runJointProbe,opts.onsetBoundaryThreshold       = 0.25;
+tools/batch_analyze.cpp,3727,64,runJointProbe,"auto keyKey = [](int f, analysis::KeySigMode m) { return (static_cast<int>(m) * 64) + (f + 16); };"
+tools/batch_analyze.cpp,3727,16,runJointProbe,"auto keyKey = [](int f, analysis::KeySigMode m) { return (static_cast<int>(m) * 64) + (f + 16); };"
+tools/batch_analyze.cpp,3788,1.0,runJointProbe,? 1.0 + static_cast<double>(hr.startTick - regionMeasure.measure->tick().ticks()) / Constants::DIVISION
+tools/batch_analyze.cpp,3789,1.0,runJointProbe,: 1.0;
+tools/batch_analyze.cpp,3795,12,runJointProbe,if (const auto* bt = analysis::bassToneFromTones(hr.tones)) { bassPc = bt->pitch % 12; }
+tools/batch_analyze.cpp,3805,4,runJointProbe,"os << ""      \""beat\"": ""          << fmtDouble(beat, 4) << "",\n"";"
+tools/batch_analyze.cpp,3808,6,runJointProbe,"os << ""      \""duration\"": ""      << fmtDouble(durationQn, 6) << "",\n"";"
+tools/batch_analyze.cpp,3818,6,runJointProbe,"os << ""        \""keySeqMargin\"": "" << fmtDouble(hr.keyConfidence, 6) << "",\n"";"
+tools/batch_analyze.cpp,3846,6,runJointProbe,"<< "", \""keyConf\"": "" << fmtDouble(alt.normalizedConfidence, 6)"
+tools/batch_analyze.cpp,3869,2,main,if (args.size() < 2) {
+tools/batch_analyze.cpp,4220,0.125,main,double presetKWStepIn = 0.125;   // Default carrier (== the production/global initializer)
+tools/batch_analyze.cpp,4223,0.12,main,chordPrefs.extensionThreshold                    = 0.12;
+tools/batch_analyze.cpp,4226,0.20,main,chordPrefs.stepwiseBassInversionBonus            = 0.20;
+tools/batch_analyze.cpp,4227,0.20,main,chordPrefs.stepwiseBassLookaheadBonus            = 0.20;
+tools/batch_analyze.cpp,4228,0.15,main,chordPrefs.sameRootInversionBonus                = 0.15;
+tools/batch_analyze.cpp,4229,0.20,main,chordPrefs.completeTriadInversionBonus           = 0.20;
+tools/batch_analyze.cpp,4230,0.70,main,chordPrefs.bassNoteRootBonus                     = 0.70;   // O-9 Jazz carrier (pinned)
+tools/batch_analyze.cpp,4231,0.10,main,presetKWStepIn                                   = 0.10;   // O-9 Jazz carrier (PINNED 0.10; NOT adopted — 2.2e mandate 4c)
+tools/batch_analyze.cpp,4235,0.70,main,chordPrefs.bassNoteRootBonus                     = 0.70;   // O-9 Baroque carrier (idiom-#2 fit target)
+tools/batch_analyze.cpp,4236,0.125,main,presetKWStepIn                                   = 0.125;  // O-9 Baroque carrier (2.2e-ADOPTED idiom-#2 fit)
+tools/batch_analyze.cpp,4248,0.70,main,chordPrefs.bassNoteRootBonus                     = 0.70;   // O-9 Default carrier (== struct default)
+tools/batch_analyze.cpp,4249,0.125,main,presetKWStepIn                                   = 0.125;  // O-9 Default carrier (2.2e-ADOPTED == global initializer)
+tools/batch_analyze.cpp,4255,0.70,main,chordPrefs.bassNoteRootBonus                     = 0.70;   // O-9 Standard/Modal/Contemporary carrier
+tools/batch_analyze.cpp,4256,0.10,main,presetKWStepIn                                   = 0.10;   // O-9 Standard/Modal/Contemporary carrier (PINNED 0.10; NOT adopted — 2.2e mandate 4c)
+tools/batch_analyze.cpp,4277,0.01,main,"+ mu::composing::params::getRegisteredGlobal(""kWStepOut"") + 0.01);"
+tools/batch_analyze.cpp,4324,2,main,return ok ? 0 : 2;
+tools/c1_reliability.py,63,3.5,<module-scope>,SQUASH_K_CADENCE   = 3.5    # ~ the single-authentic-cadence tonicVote unit (declared; observed below)
+tools/c1_reliability.py,73,10,bin_curve,"def bin_curve(pairs, nbins=10):"
+tools/c1_reliability.py,354,78,main,"emit(""="" * 78)"
+tools/c1_reliability.py,357,78,main,"emit(""="" * 78)"
+tools/c1_reliability.py,110,1e-09,curve_diagnostics,"if prev is not None and r[""emp""] < prev[""emp""] - 1e-9:"
+tools/c1_reliability.py,112,3,curve_diagnostics,"viol_bins.append((prev[""bin""], r[""bin""], round(prev[""emp""], 3), round(r[""emp""], 3)))"
+tools/c1_reliability.py,112,3,curve_diagnostics,"viol_bins.append((prev[""bin""], r[""bin""], round(prev[""emp""], 3), round(r[""emp""], 3)))"
+tools/calibration_fit.py,219,0.05,fit_row,near_logistic = max_abs_diff < 0.05
+tools/calibration_fit.py,174,1000000.0,fit_platt,"lr = LogisticRegression(C=1e6, solver=""lbfgs"", max_iter=10000)"
+tools/calibration_fit.py,174,10000,fit_platt,"lr = LogisticRegression(C=1e6, solver=""lbfgs"", max_iter=10000)"
+tools/calibration_fit.py,199,50,fit_row,if len(fit_pairs) < 50 or len(hel_pairs) < 20:
+tools/calibration_fit.py,199,20,fit_row,if len(fit_pairs) < 50 or len(hel_pairs) < 20:
+tools/calibration_fit.py,215,100.0,fit_row,grid = [i / 100.0 for i in range(101)]
+tools/calibration_fit.py,226,100.0,fit_row,"low_grid = [i / 100.0 for i in range(0, 50)]"
+tools/calibration_fit.py,304,78,main,"print(""="" * 78)"
+tools/calibration_fit.py,307,78,main,"print(""="" * 78)"
+tools/calibration_fit.py,163,2,fit_isotonic,"w = np.array([p[2] for p in fit_pairs], float)"
+tools/calibration_fit.py,172,2,fit_platt,"w = np.array([p[2] for p in fit_pairs], float)"
+tools/calibration_fit.py,215,101,fit_row,grid = [i / 100.0 for i in range(101)]
+tools/calibration_fit.py,221,1e-06,fit_row,"and pl_post_hel[""ece""] <= iso_post_hel[""ece""] + 1e-6"
+tools/calibration_fit.py,226,50,fit_row,"low_grid = [i / 100.0 for i in range(0, 50)]"
+tools/characterise_bir_false.py,105,2,<module-scope>,"2:  ""M2 above DCML    γ (whole-tone)"","
+tools/characterise_bir_false.py,106,3,<module-scope>,"3:  ""m3 above DCML"","
+tools/characterise_bir_false.py,107,4,<module-scope>,"4:  ""M3 above DCML    (our root = M3 of DCML)"","
+tools/characterise_bir_false.py,108,5,<module-scope>,"5:  ""P4 above DCML    β (our root = 4th of DCML)"","
+tools/characterise_bir_false.py,109,6,<module-scope>,"6:  ""tritone above DCML"","
+tools/characterise_bir_false.py,110,7,<module-scope>,"7:  ""P5 above DCML    (our root = 5th of DCML; classic V-instead-of-I)"","
+tools/characterise_bir_false.py,111,8,<module-scope>,"8:  ""m6 above DCML"","
+tools/characterise_bir_false.py,112,9,<module-scope>,"9:  ""M6 above DCML    (our root = 6th of DCML)"","
+tools/characterise_bir_false.py,113,10,<module-scope>,"10: ""m7 above DCML    (our root = b7 of DCML)"","
+tools/characterise_bir_false.py,114,11,<module-scope>,"11: ""M7 above DCML    (our root = lead-tone of DCML)"","
+tools/characterise_bir_false.py,222,12,run,for d in range(12):
+tools/characterise_bir_false.py,250,2,run,for d in nonzero_sorted[:2]:
+tools/characterise_bir_false.py,254,5,run,"for d, lbl in [(5, ""β P4 above""), (2, ""γ M2 above"")]:"
+tools/characterise_bir_false.py,254,2,run,"for d, lbl in [(5, ""β P4 above""), (2, ""γ M2 above"")]:"
+tools/characterise_bir_false.py,118,12,pc_name,"return PC_NAMES[pc % 12] if pc is not None and pc >= 0 else ""?"""
+tools/characterise_bir_false.py,123,12,parse_pc_set,return {i for i in range(12) if bitmap & (1 << i)}
+tools/characterise_bir_false.py,177,12,run,delta = (our_root - dcml_root + 12) % 12
+tools/characterise_bir_false.py,294,2,main,sys.exit(2)
+tools/characterise_bir_false.py,177,12,run,delta = (our_root - dcml_root + 12) % 12
+tools/characterise_bir_false.py,255,2,run,"if d not in nonzero_sorted[:2] and delta_counts.get(d, 0) > 0:"
+tools/characterise_bir_false.py,182,99,run,"dcml_in_alts = any(int(alt.get(""rootPitchClass"", -99)) == dcml_root"
+tools/characterise_bir_false.py,209,4,run,for a in (our_r.alternatives or [])[:4]
+tools/compare_analyses.py,411,480.0,_infer_ticks_per_beat,return _median(samples) if samples else 480.0
+tools/compare_analyses.py,401,2,_median,return s[n // 2] if n % 2 else 0.5 * (s[n // 2 - 1] + s[n // 2])
+tools/compare_analyses.py,401,0.5,_median,return s[n // 2] if n % 2 else 0.5 * (s[n // 2 - 1] + s[n // 2])
+tools/compare_analyses.py,516,0.5,_best_dcml_match_by_overlap,if (best_ov / our_dur) >= 0.5 \
+tools/compare_analyses.py,945,20,print_report,if len(disagree) > 20:
+tools/compare_analyses.py,401,2,_median,return s[n // 2] if n % 2 else 0.5 * (s[n // 2 - 1] + s[n // 2])
+tools/compare_analyses.py,517,0.5,_best_dcml_match_by_overlap,or (best_their_dur > 0 and best_ov / best_their_dur >= 0.5):
+tools/compare_analyses.py,927,40,print_report,"bar = ""#"" * min(40, int(n * 40 / max(total, 1)))"
+tools/compare_analyses.py,939,20,print_report,for cr in disagree[:20]:
+tools/compare_analyses.py,216,0.5,align_regions,and ((best_overlap / our_dur) >= 0.5
+tools/compare_analyses.py,549,0.5,align_dcml_regions,if dist < best_dist and dist <= 0.5:
+tools/compare_analyses.py,739,100,dcml_anchored_summarize,"'coverage_pct':         100 * with_ours_coverage / total if total else 0.0,"
+tools/compare_analyses.py,740,100,dcml_anchored_summarize,"'agree_pct':            100 * agree / scoreable if scoreable else 0.0,"
+tools/compare_analyses.py,742,100,dcml_anchored_summarize,"'bass_is_root_pct_of_disagree': 100 * bir_in_disagree / disagree if disagree else 0.0,"
+tools/compare_analyses.py,746,100,dcml_anchored_summarize,"'rn_agree_pct':                 100 * rn_agree / rn_scoreable if rn_scoreable else 0.0,"
+tools/compare_analyses.py,792,100,dcml_direct_summarize,"'align_pct':       100 * aligned  / total    if total    else 0.0,"
+tools/compare_analyses.py,793,100,dcml_direct_summarize,"'agree_pct':       100 * agree    / aligned  if aligned  else 0.0,"
+tools/compare_analyses.py,794,100,dcml_direct_summarize,"'disagree_pct':    100 * disagree / aligned  if aligned  else 0.0,"
+tools/compare_analyses.py,796,100,dcml_direct_summarize,"'bass_is_root_pct_of_disagree':  100 * bir_in_disagree / disagree if disagree else 0.0,"
+tools/compare_analyses.py,800,100,dcml_direct_summarize,"'rn_agree_pct':                  100 * rn_agree / rn_scoreable if rn_scoreable else 0.0,"
+tools/compare_analyses.py,916,70,print_report,"print(f""\n{'='*70}"")"
+tools/compare_analyses.py,923,70,print_report,"print(f""{'='*70}\n"")"
+tools/compare_analyses.py,217,0.5,align_regions,or (best_their_dur > 0 and best_overlap / best_their_dur >= 0.5)):
+tools/compare_analyses.py,401,2,_median,return s[n // 2] if n % 2 else 0.5 * (s[n // 2 - 1] + s[n // 2])
+tools/compare_analyses.py,255,99,_matches_alternative,"if (int(alt.get(""rootPitchClass"", -99)) == theirs.root_pc"
+tools/compare_analyses.py,401,2,_median,return s[n // 2] if n % 2 else 0.5 * (s[n // 2 - 1] + s[n // 2])
+tools/compare_analyses.py,927,40,print_report,"bar = ""#"" * min(40, int(n * 40 / max(total, 1)))"
+tools/compare_analyses.py,946,20,print_report,"print(f""    … and {len(disagree) - 20} more"")"
+tools/compare_analyses.py,449,4,_dcml_tick_for,+ (measure - prev_m) * 4 * tpb
+tools/compare_analyses.py,453,4,_dcml_tick_for,- (next_m - measure) * 4 * tpb
+tools/compare_analyses.py,897,0.5,score_margin_by_category,low_conf = sum(1 for m in margins if m < 0.5) / len(margins)
+tools/compare_rn.py,222,2,<module-scope>,"_KB_NOTE_DCML = {'c': 0, 'd': 2, 'e': 4, 'f': 5, 'g': 7, 'a': 9, 'b': 11}"
+tools/compare_rn.py,222,4,<module-scope>,"_KB_NOTE_DCML = {'c': 0, 'd': 2, 'e': 4, 'f': 5, 'g': 7, 'a': 9, 'b': 11}"
+tools/compare_rn.py,222,5,<module-scope>,"_KB_NOTE_DCML = {'c': 0, 'd': 2, 'e': 4, 'f': 5, 'g': 7, 'a': 9, 'b': 11}"
+tools/compare_rn.py,222,7,<module-scope>,"_KB_NOTE_DCML = {'c': 0, 'd': 2, 'e': 4, 'f': 5, 'g': 7, 'a': 9, 'b': 11}"
+tools/compare_rn.py,222,9,<module-scope>,"_KB_NOTE_DCML = {'c': 0, 'd': 2, 'e': 4, 'f': 5, 'g': 7, 'a': 9, 'b': 11}"
+tools/compare_rn.py,222,11,<module-scope>,"_KB_NOTE_DCML = {'c': 0, 'd': 2, 'e': 4, 'f': 5, 'g': 7, 'a': 9, 'b': 11}"
+tools/compare_rn.py,223,2,<module-scope>,"_KB_NOTE_OURS = {'C': 0, 'D': 2, 'E': 4, 'F': 5, 'G': 7, 'A': 9, 'B': 11}"
+tools/compare_rn.py,223,4,<module-scope>,"_KB_NOTE_OURS = {'C': 0, 'D': 2, 'E': 4, 'F': 5, 'G': 7, 'A': 9, 'B': 11}"
+tools/compare_rn.py,223,5,<module-scope>,"_KB_NOTE_OURS = {'C': 0, 'D': 2, 'E': 4, 'F': 5, 'G': 7, 'A': 9, 'B': 11}"
+tools/compare_rn.py,223,7,<module-scope>,"_KB_NOTE_OURS = {'C': 0, 'D': 2, 'E': 4, 'F': 5, 'G': 7, 'A': 9, 'B': 11}"
+tools/compare_rn.py,223,9,<module-scope>,"_KB_NOTE_OURS = {'C': 0, 'D': 2, 'E': 4, 'F': 5, 'G': 7, 'A': 9, 'B': 11}"
+tools/compare_rn.py,223,11,<module-scope>,"_KB_NOTE_OURS = {'C': 0, 'D': 2, 'E': 4, 'F': 5, 'G': 7, 'A': 9, 'B': 11}"
+tools/compare_rn.py,735,10,format_report,"def format_report(label: str, stats: PieceStats, top_n: int = 10) -> str:"
+tools/compare_rn.py,768,20,_format_quality_breakdown,"top_rn: int = 20,"
+tools/compare_rn.py,626,2,grid_score_regions,if len(bounds) < 2:
+tools/compare_rn.py,268,2,_dcml_key_tonic,"letter, acc = m.group(1), m.group(2)"
+tools/compare_rn.py,270,12,_dcml_key_tonic,"return (pc % 12, letter.isupper())"
+tools/compare_rn.py,284,2,_our_key_tonic,"letter, acc, mode = m.group(1), m.group(2), m.group(3)"
+tools/compare_rn.py,284,3,_our_key_tonic,"letter, acc, mode = m.group(1), m.group(2), m.group(3)"
+tools/compare_rn.py,286,12,_our_key_tonic,"return (pc % 12, _mode_is_major(mode))"
+tools/compare_rn.py,862,10,main,"ap.add_argument(""--top-patterns"", type=int, default=10,"
+tools/compare_rn.py,257,3,_mode_is_major,return mode.lower()[:3] in _KB_MAJOR_MODE_PREFIXES
+tools/compare_rn.py,732,100.0,_pct,return 100.0 * num / denom if denom else 0.0
+tools/compare_rn.py,908,2,main,return 2
+tools/compare_rn.py,951,2,main,return 2
+tools/compare_rn.py,985,2,main,return 2
+tools/dcml_parser.py,30,480,<module-scope>,TICKS_PER_QUARTER = 480
+tools/dcml_parser.py,116,2,<module-scope>,"_DEGREE_SEMITONES_MAJOR = [0, 2, 4, 5, 7, 9, 11]  # I II III IV V VI VII"
+tools/dcml_parser.py,116,4,<module-scope>,"_DEGREE_SEMITONES_MAJOR = [0, 2, 4, 5, 7, 9, 11]  # I II III IV V VI VII"
+tools/dcml_parser.py,116,5,<module-scope>,"_DEGREE_SEMITONES_MAJOR = [0, 2, 4, 5, 7, 9, 11]  # I II III IV V VI VII"
+tools/dcml_parser.py,116,7,<module-scope>,"_DEGREE_SEMITONES_MAJOR = [0, 2, 4, 5, 7, 9, 11]  # I II III IV V VI VII"
+tools/dcml_parser.py,116,9,<module-scope>,"_DEGREE_SEMITONES_MAJOR = [0, 2, 4, 5, 7, 9, 11]  # I II III IV V VI VII"
+tools/dcml_parser.py,116,11,<module-scope>,"_DEGREE_SEMITONES_MAJOR = [0, 2, 4, 5, 7, 9, 11]  # I II III IV V VI VII"
+tools/dcml_parser.py,117,2,<module-scope>,"_DEGREE_SEMITONES_MINOR = [0, 2, 3, 5, 7, 8, 10]  # i ii bIII iv v bVI bVII"
+tools/dcml_parser.py,117,3,<module-scope>,"_DEGREE_SEMITONES_MINOR = [0, 2, 3, 5, 7, 8, 10]  # i ii bIII iv v bVI bVII"
+tools/dcml_parser.py,117,5,<module-scope>,"_DEGREE_SEMITONES_MINOR = [0, 2, 3, 5, 7, 8, 10]  # i ii bIII iv v bVI bVII"
+tools/dcml_parser.py,117,7,<module-scope>,"_DEGREE_SEMITONES_MINOR = [0, 2, 3, 5, 7, 8, 10]  # i ii bIII iv v bVI bVII"
+tools/dcml_parser.py,117,8,<module-scope>,"_DEGREE_SEMITONES_MINOR = [0, 2, 3, 5, 7, 8, 10]  # i ii bIII iv v bVI bVII"
+tools/dcml_parser.py,117,10,<module-scope>,"_DEGREE_SEMITONES_MINOR = [0, 2, 3, 5, 7, 8, 10]  # i ii bIII iv v bVI bVII"
+tools/dcml_parser.py,120,2,<module-scope>,"'I': 0, 'II': 1, 'III': 2, 'IV': 3, 'V': 4, 'VI': 5, 'VII': 6,"
+tools/dcml_parser.py,120,3,<module-scope>,"'I': 0, 'II': 1, 'III': 2, 'IV': 3, 'V': 4, 'VI': 5, 'VII': 6,"
+tools/dcml_parser.py,120,4,<module-scope>,"'I': 0, 'II': 1, 'III': 2, 'IV': 3, 'V': 4, 'VI': 5, 'VII': 6,"
+tools/dcml_parser.py,120,5,<module-scope>,"'I': 0, 'II': 1, 'III': 2, 'IV': 3, 'V': 4, 'VI': 5, 'VII': 6,"
+tools/dcml_parser.py,120,6,<module-scope>,"'I': 0, 'II': 1, 'III': 2, 'IV': 3, 'V': 4, 'VI': 5, 'VII': 6,"
+tools/dcml_parser.py,124,2,<module-scope>,"'C': 0, 'D': 2, 'E': 4, 'F': 5, 'G': 7, 'A': 9, 'B': 11,"
+tools/dcml_parser.py,124,4,<module-scope>,"'C': 0, 'D': 2, 'E': 4, 'F': 5, 'G': 7, 'A': 9, 'B': 11,"
+tools/dcml_parser.py,124,5,<module-scope>,"'C': 0, 'D': 2, 'E': 4, 'F': 5, 'G': 7, 'A': 9, 'B': 11,"
+tools/dcml_parser.py,124,7,<module-scope>,"'C': 0, 'D': 2, 'E': 4, 'F': 5, 'G': 7, 'A': 9, 'B': 11,"
+tools/dcml_parser.py,124,9,<module-scope>,"'C': 0, 'D': 2, 'E': 4, 'F': 5, 'G': 7, 'A': 9, 'B': 11,"
+tools/dcml_parser.py,124,11,<module-scope>,"'C': 0, 'D': 2, 'E': 4, 'F': 5, 'G': 7, 'A': 9, 'B': 11,"
+tools/dcml_parser.py,135,12,_key_to_tonic_pc,pc = (pc + suffix.count('#') - suffix.count('b')) % 12
+tools/dcml_parser.py,486,2,find_dcml_file,bwv_sub = bwv_match.group(2)  # may be None for standalone chorales
+tools/dcml_parser.py,166,12,_compute_root_pc,root_pc = (tonic_pc + semitones[degree_idx]) % 12
+tools/dcml_parser.py,432,12,_resolve_dcml_key,local_tonic_pc = (global_tonic + semitones[degree_idx]) % 12
+tools/dcml_parser.py,447,2,_resolve_dcml_key,"_PC_TO_NOTE = {0:'C', 1:'C#', 2:'D', 3:'Eb', 4:'E', 5:'F',"
+tools/dcml_parser.py,447,3,_resolve_dcml_key,"_PC_TO_NOTE = {0:'C', 1:'C#', 2:'D', 3:'Eb', 4:'E', 5:'F',"
+tools/dcml_parser.py,447,4,_resolve_dcml_key,"_PC_TO_NOTE = {0:'C', 1:'C#', 2:'D', 3:'Eb', 4:'E', 5:'F',"
+tools/dcml_parser.py,447,5,_resolve_dcml_key,"_PC_TO_NOTE = {0:'C', 1:'C#', 2:'D', 3:'Eb', 4:'E', 5:'F',"
+tools/dcml_parser.py,448,6,_resolve_dcml_key,"6:'F#', 7:'G', 8:'Ab', 9:'A', 10:'Bb', 11:'B'}"
+tools/dcml_parser.py,448,7,_resolve_dcml_key,"6:'F#', 7:'G', 8:'Ab', 9:'A', 10:'Bb', 11:'B'}"
+tools/dcml_parser.py,448,8,_resolve_dcml_key,"6:'F#', 7:'G', 8:'Ab', 9:'A', 10:'Bb', 11:'B'}"
+tools/dcml_parser.py,448,9,_resolve_dcml_key,"6:'F#', 7:'G', 8:'Ab', 9:'A', 10:'Bb', 11:'B'}"
+tools/dcml_parser.py,448,10,_resolve_dcml_key,"6:'F#', 7:'G', 8:'Ab', 9:'A', 10:'Bb', 11:'B'}"
+tools/dcml_parser.py,448,11,_resolve_dcml_key,"6:'F#', 7:'G', 8:'Ab', 9:'A', 10:'Bb', 11:'B'}"
+tools/dcml_parser.py,490,3,find_dcml_file,padded3 = 'bwv' + bwv_num.zfill(3)
+tools/dcml_parser.py,491,4,find_dcml_file,padded4 = 'bwv' + bwv_num.zfill(4)
+tools/dcml_parser.py,592,2,parse_rntxt_file,if measure_match.group(2):
+tools/dcml_parser.py,184,12,_compute_root_pc,root_pc = (root_pc - 1) % 12
+tools/dcml_parser.py,442,12,_resolve_dcml_key,local_tonic_pc = (local_tonic_pc - 1) % 12
+tools/dcml_parser.py,177,5,_compute_root_pc,"if is_minor and degree_idx in (5, 6):"
+tools/dcml_parser.py,177,6,_compute_root_pc,"if is_minor and degree_idx in (5, 6):"
+tools/dcml_parser.py,181,12,_compute_root_pc,root_pc = (root_pc + 1) % 12
+tools/dcml_parser.py,186,12,_compute_root_pc,root_pc = (root_pc + 1) % 12
+tools/dcml_parser.py,438,5,_resolve_dcml_key,"if global_minor and degree_idx in (5, 6):"
+tools/dcml_parser.py,438,6,_resolve_dcml_key,"if global_minor and degree_idx in (5, 6):"
+tools/dcml_parser.py,440,12,_resolve_dcml_key,local_tonic_pc = (local_tonic_pc + 1) % 12
+tools/dcml_parser.py,444,12,_resolve_dcml_key,local_tonic_pc = (local_tonic_pc + 1) % 12
+tools/dcml_parser.py,314,3,parse_abc_harmonies_file,"f""{local_skips[:3]}{' …' if len(local_skips) > 3 else ''}"","
+tools/dcml_parser.py,314,3,parse_abc_harmonies_file,"f""{local_skips[:3]}{' …' if len(local_skips) > 3 else ''}"","
+tools/music21_batch.py,71,480,<module-scope>,TICKS_PER_QUARTER = 480   # must match MuseScore's Constants::DIVISION
+tools/music21_batch.py,108,4,_is_bach_chorale,if len(score.parts) != 4:
+tools/music21_batch.py,193,4,analyze_chorale,fk_analyzer.numFlats = 4
+tools/music21_batch.py,194,4,analyze_chorale,fk_analyzer.numSharps = 4
+tools/music21_batch.py,269,4,analyze_chorale,"""keyConfidence"": round(key_confidence, 4),"
+tools/music21_batch.py,315,2,stem_from_corpus_path,"if len(parts) == 2 and parts[0] == ""bach"":"
+tools/music21_batch.py,251,6,analyze_chorale,"""duration"":       round(dur_ql, 6),"
+tools/music21_batch.py,300,2,stem_from_corpus_path,"if len(parts) == 2 and parts[0] == ""bach"":"
+tools/music21_batch.py,440,2,process_chorale,"json.dump(analysis, fh, indent=2)"
+tools/music21_batch.py,366,60,run_single,"print(f""\n{'='*60}"")"
+tools/music21_batch.py,370,60,run_single,"print(f""{'='*60}\n"")"
+tools/music21_batch.py,373,4,run_single,"print(f""  {'-'*4}  {'-'*5}  {'-'*12}  {'-'*4}  {'-'*15}  {'-'*12}  {'-'*8}  ---"")"
+tools/music21_batch.py,373,5,run_single,"print(f""  {'-'*4}  {'-'*5}  {'-'*12}  {'-'*4}  {'-'*15}  {'-'*12}  {'-'*8}  ---"")"
+tools/music21_batch.py,373,12,run_single,"print(f""  {'-'*4}  {'-'*5}  {'-'*12}  {'-'*4}  {'-'*15}  {'-'*12}  {'-'*8}  ---"")"
+tools/music21_batch.py,373,4,run_single,"print(f""  {'-'*4}  {'-'*5}  {'-'*12}  {'-'*4}  {'-'*15}  {'-'*12}  {'-'*8}  ---"")"
+tools/music21_batch.py,373,15,run_single,"print(f""  {'-'*4}  {'-'*5}  {'-'*12}  {'-'*4}  {'-'*15}  {'-'*12}  {'-'*8}  ---"")"
+tools/music21_batch.py,373,12,run_single,"print(f""  {'-'*4}  {'-'*5}  {'-'*12}  {'-'*4}  {'-'*15}  {'-'*12}  {'-'*8}  ---"")"
+tools/music21_batch.py,373,8,run_single,"print(f""  {'-'*4}  {'-'*5}  {'-'*12}  {'-'*4}  {'-'*15}  {'-'*12}  {'-'*8}  ---"")"
+tools/music21_batch.py,494,60,run_batch,"print(f""{'-'*60}"")"
+tools/music21_batch.py,503,60,run_batch,"print(f""{'-'*60}"")"
+tools/oracle_root_metric.py,111,2,parse_our_key,suf = m.group(2)
+tools/oracle_root_metric.py,140,2,parse_m21_key,acc = m.group(2)
+tools/oracle_root_metric.py,141,12,parse_m21_key,"pc = (base + acc.count(""#"") - acc.count(""-"") - acc.count(""b"")) % 12"
+tools/oracle_root_metric.py,229,2,classify_charged_event,if dcml_events_in_region >= 2:
+tools/oracle_root_metric.py,142,3,parse_m21_key,"return pc, m.group(3)"
+tools/oracle_root_metric.py,353,86,format_report,"L.append(""="" * 86)"
+tools/oracle_root_metric.py,356,86,format_report,"L.append(""="" * 86)"
+tools/oracle_root_metric.py,93,12,pcn,"return PC_NAMES[p % 12] if p is not None and p >= 0 else ""?"""
+tools/oracle_root_metric.py,317,6,run_preset,if len(examples[tier]) < 6:
+tools/oracle_root_metric.py,363,52,format_report,"L.append(""    "" + ""-"" * 52)"
+tools/oracle_root_metric.py,374,52,format_report,"L.append(""    "" + ""-"" * 52)"
+tools/oracle_root_metric.py,369,100,format_report,pct = 100 * n / rec if rec else 0.0
+tools/oracle_root_metric.py,435,2,main,sys.exit(2)
+tools/oracle_root_metric.py,365,100,format_report,"L.append(f""    {'KEY (aggregate)':<18} {key_rec:>8} {100*key_rec/rec:>8.1f}%"")"
+tools/oracle_root_metric.py,372,18,format_report,"L.append(f""{lead}{name:<{18 if not t.startswith('KEY-') else 16}} {n:>8} {pct:>8.1f}%   {idn:>10}"")"
+tools/oracle_root_metric.py,372,16,format_report,"L.append(f""{lead}{name:<{18 if not t.startswith('KEY-') else 16}} {n:>8} {pct:>8.1f}%   {idn:>10}"")"
+tools/robust_stop_diff.py,47,9600,<module-scope>,CLASS_A_INVESTIGATE_TICKS = 9600
+tools/robust_stop_diff.py,102,12,main,"ap.add_argument(""--show-runs"", type=int, default=12,"
+tools/robust_stop_diff.py,67,2,parse_runs,"if i < 2 or not ln.strip():          # title + count header, blank lines"
+tools/robust_stop_diff.py,74,8,parse_runs,"dur, orr, dr, cls = int(m.group(5)), int(m.group(6)), int(m.group(7)), m.group(8)"
+tools/robust_stop_diff.py,73,2,parse_runs,"stem, start = m.group(1), int(m.group(2))"
+tools/robust_stop_diff.py,74,5,parse_runs,"dur, orr, dr, cls = int(m.group(5)), int(m.group(6)), int(m.group(7)), m.group(8)"
+tools/robust_stop_diff.py,74,6,parse_runs,"dur, orr, dr, cls = int(m.group(5)), int(m.group(6)), int(m.group(7)), m.group(8)"
+tools/robust_stop_diff.py,74,7,parse_runs,"dur, orr, dr, cls = int(m.group(5)), int(m.group(6)), int(m.group(7)), m.group(8)"
+tools/robust_stop_diff.py,139,2,_fmt,"return f""{k[0]}@{k[1]}  our_root={k[2]} -> dcml_root={k[3]}  dur={dur} cls={cls}"""
+tools/robust_stop_diff.py,139,3,_fmt,"return f""{k[0]}@{k[1]}  our_root={k[2]} -> dcml_root={k[3]}  dur={dur} cls={cls}"""
+tools/run_bach_preset.py,140,2,_to_unix_path,if len(s) >= 2 and s[1] == ':':
+tools/run_bach_preset.py,124,2,_write_manifest,"json.dumps(manifest, indent=2, sort_keys=True), encoding=""utf-8"")"
+tools/run_bach_preset.py,220,120,_run_batch_analyze,"timeout=120, env=run_env)"
+tools/run_bach_preset.py,499,2,main,"}, indent=2), encoding='utf-8')"
+tools/run_bach_preset.py,529,65,main,"print(""!"" * 65, file=sys.stderr)"
+tools/run_bach_preset.py,68,4000,_detect_music21_version,"head = xml.read_text(encoding=""utf-8"", errors=""replace"")[:4000]"
+tools/run_bach_preset.py,141,2,_to_unix_path,s = '/' + s[0].lower() + s[2:]
+tools/run_bach_preset.py,471,65,main,"print(f""\n{'='*65}"")"
+tools/run_bach_preset.py,473,65,main,"print(f""{'='*65}"")"
+tools/run_bach_preset.py,519,65,main,"print(""\n"" + ""!"" * 65, file=sys.stderr)"
+tools/run_bach_preset.py,206,120,_run_batch_analyze,"stderr=subprocess.PIPE, timeout=120, env=run_env)"
+tools/run_bach_preset.py,477,100,main,"print(f""Chord identity agree : {total_agree} ({100*total_agree/total_chord:.1f}%)"")"
+tools/run_bach_preset.py,495,2,main,"'chord_identity_pct': round(100*total_agree/total_chord, 2) if total_chord else 0,"
+tools/run_bach_preset.py,496,2,main,"'mean_per_chorale_pct': round(100*agree_sum/compared_n, 2) if compared_n else 0,"
+tools/run_bach_preset.py,495,100,main,"'chord_identity_pct': round(100*total_agree/total_chord, 2) if total_chord else 0,"
+tools/run_bach_preset.py,496,100,main,"'mean_per_chorale_pct': round(100*agree_sum/compared_n, 2) if compared_n else 0,"
+tools/run_bach_preset.py,211,200,_run_batch_analyze,"print(f""    failed: {r.stderr.decode('utf-8','replace').strip()[:200]}"","
+tools/stage5_fit_driver.py,206,0.2,compute_split,def compute_split(held_frac=0.2):
+tools/stage5_fit_driver.py,214,2,compute_split,"step = max(2, round(1 / held_frac))"
+tools/stage5_fit_driver.py,367,0.05,perturbations_for,"step = round(0.10 * base, 6) if base > 1.0 else 0.05"
+tools/stage5_fit_driver.py,67,0.75,<module-scope>,"""kContradictionPenalty"":          dict(g=""G1"", fam=""continuous"", frozen=False, val=0.75),"
+tools/stage5_fit_driver.py,68,1.8,<module-scope>,"""kRootToneFactor"":                dict(g=""G1"", fam=""continuous"", frozen=False, val=1.8),"
+tools/stage5_fit_driver.py,69,1.2,<module-scope>,"""kSecondToneFactor"":              dict(g=""G1"", fam=""continuous"", frozen=False, val=1.2),"
+tools/stage5_fit_driver.py,71,3.0,<module-scope>,"""kTemplateToneWeightCap"":         dict(g=""G1"", fam=""continuous"", frozen=False, val=3.0),"
+tools/stage5_fit_driver.py,72,2.0,<module-scope>,"""kExtraNoteWeightCap"":            dict(g=""G1"", fam=""continuous"", frozen=False, val=2.0),"
+tools/stage5_fit_driver.py,73,0.45,<module-scope>,"""kExtensionFactor7th"":            dict(g=""G1"", fam=""continuous"", frozen=False, val=0.45),"
+tools/stage5_fit_driver.py,74,0.2,<module-scope>,"""kExtensionFactorFlat13"":         dict(g=""G1"", fam=""continuous"", frozen=False, val=0.20),"
+tools/stage5_fit_driver.py,75,0.35,<module-scope>,"""kExtensionFactorDefault"":        dict(g=""G1"", fam=""continuous"", frozen=False, val=0.35),"
+tools/stage5_fit_driver.py,76,0.45,<module-scope>,"""kForeignPenalty"":                dict(g=""G1"", fam=""continuous"", frozen=False, val=0.45),"
+tools/stage5_fit_driver.py,77,0.1,<module-scope>,"""kSus4FlatThirdFactor"":           dict(g=""G1"", fam=""continuous"", frozen=False, val=0.10),"
+tools/stage5_fit_driver.py,78,0.45,<module-scope>,"""kSus4SharpThirdFactor"":          dict(g=""G1"", fam=""continuous"", frozen=False, val=0.45),"
+tools/stage5_fit_driver.py,79,0.75,<module-scope>,"""kDim7CharacteristicBonus"":       dict(g=""G1"", fam=""continuous"", frozen=True,  val=0.75),"
+tools/stage5_fit_driver.py,80,0.35,<module-scope>,"""kNonBassPenalty"":                dict(g=""G1"", fam=""continuous"", frozen=False, val=0.35),"
+tools/stage5_fit_driver.py,81,0.7,<module-scope>,"""kSus4VariantMissing7th"":         dict(g=""G1"", fam=""continuous"", frozen=False, val=0.70),"
+tools/stage5_fit_driver.py,82,0.5,<module-scope>,"""kSus4Maj7MissingP5"":             dict(g=""G1"", fam=""continuous"", frozen=False, val=0.50),"
+tools/stage5_fit_driver.py,83,0.7,<module-scope>,"""kSus4MissingFourth"":             dict(g=""G1"", fam=""continuous"", frozen=False, val=0.70),"
+tools/stage5_fit_driver.py,84,0.5,<module-scope>,"""kSus4StructuralFourthThreshold"": dict(g=""G1"", fam=""abstention"",  frozen=True,  val=0.50),"
+tools/stage5_fit_driver.py,85,0.55,<module-scope>,"""kDom7FlatFiveTpcPenalty"":        dict(g=""G1"", fam=""continuous"", frozen=False, val=0.55),"
+tools/stage5_fit_driver.py,86,0.5,<module-scope>,"""kDom7FlatFiveMissing7th"":        dict(g=""G1"", fam=""continuous"", frozen=False, val=0.50),"
+tools/stage5_fit_driver.py,87,0.3,<module-scope>,"""kPowerChord3PcPenalty"":          dict(g=""G1"", fam=""continuous"", frozen=False, val=0.30),"
+tools/stage5_fit_driver.py,88,0.05,<module-scope>,"""kBassSupportPresenceThreshold"":  dict(g=""G1"", fam=""abstention"",  frozen=True,  val=0.05),"
+tools/stage5_fit_driver.py,89,0.12,<module-scope>,"""kSeventhThreshold"":              dict(g=""G1"", fam=""abstention"",  frozen=True,  val=0.12),"
+tools/stage5_fit_driver.py,90,0.2,<module-scope>,"""kExtensionThreshold"":            dict(g=""G1"", fam=""abstention"",  frozen=True,  val=0.20),"
+tools/stage5_fit_driver.py,91,0.5,<module-scope>,"""kWComplete"":                     dict(g=""G1"", fam=""continuous"", frozen=False, val=0.50),"
+tools/stage5_fit_driver.py,92,0.05,<module-scope>,"""kWCompletePresenceThreshold"":    dict(g=""G1"", fam=""abstention"",  frozen=True,  val=0.05),"
+tools/stage5_fit_driver.py,93,0.5,<module-scope>,"""kComplexityEvidenceFloor"":       dict(g=""G1"", fam=""continuous"", frozen=False, val=0.5),"
+tools/stage5_fit_driver.py,94,0.5,<module-scope>,"""kAugThinEvidenceFactor"":         dict(g=""G1"", fam=""continuous"", frozen=False, val=0.5),"
+tools/stage5_fit_driver.py,96,0.2,<module-scope>,"""kWSeq"":                          dict(g=""G6"", fam=""continuous"", frozen=False, val=0.20),"
+tools/stage5_fit_driver.py,97,0.15,<module-scope>,"""kWDim"":                          dict(g=""G6"", fam=""continuous"", frozen=False, val=0.15),"
+tools/stage5_fit_driver.py,103,0.1,<module-scope>,"""kWStepOut"":                      dict(g=""G6"", fam=""continuous"", frozen=False, val=0.10),"
+tools/stage5_fit_driver.py,107,0.45,<module-scope>,"""kGateIMargin"":                   dict(g=""G7"", fam=""threshold"",   frozen=False, val=0.45),"
+tools/stage5_fit_driver.py,112,0.35,<module-scope>,"""kGateLMargin"":                   dict(g=""G7"", fam=""threshold"",   frozen=False, val=0.35),"
+tools/stage5_fit_driver.py,113,0.55,<module-scope>,"""kHalfDimFirstInversionBonus"":    dict(g=""G7"", fam=""threshold"",   frozen=False, val=0.55),"
+tools/stage5_fit_driver.py,115,0.8,<module-scope>,"""kAnnotateKeyConfidenceThreshold"": dict(g=""G10"", fam=""abstention"", frozen=False, val=0.8),"
+tools/stage5_fit_driver.py,117,0.7,<module-scope>,"""bassNoteRootBonus"":              dict(g=""G2"", fam=""continuous"", frozen=False, val=0.70),"
+tools/stage5_fit_driver.py,118,0.3,<module-scope>,"""bassRootThirdOnlyMultiplier"":    dict(g=""G2"", fam=""continuous"", frozen=False, val=0.3),"
+tools/stage5_fit_driver.py,119,0.1,<module-scope>,"""bassRootAloneMultiplier"":        dict(g=""G2"", fam=""continuous"", frozen=False, val=0.1),"
+tools/stage5_fit_driver.py,120,0.3,<module-scope>,"""diatonicRootBonus"":              dict(g=""G2"", fam=""continuous"", frozen=False, val=0.30),"
+tools/stage5_fit_driver.py,121,0.2,<module-scope>,"""tpcConsistencyBonusPerTone"":     dict(g=""G2"", fam=""continuous"", frozen=False, val=0.20),"
+tools/stage5_fit_driver.py,122,0.4,<module-scope>,"""rootContinuityBonus"":            dict(g=""G2"", fam=""continuous"", frozen=False, val=0.40),"
+tools/stage5_fit_driver.py,123,0.35,<module-scope>,"""resolutionBonus"":                dict(g=""G2"", fam=""continuous"", frozen=False, val=0.35),"
+tools/stage5_fit_driver.py,133,2.0,<module-scope>,"""maxTotalInversionContextBonus"":  dict(g=""G3"", fam=""continuous"", frozen=True,  val=2.0),"
+tools/stage5_fit_driver.py,135,0.7,<module-scope>,"""inversionSuspicionMargin"":       dict(g=""G4"", fam=""threshold"",   frozen=False, val=0.70),"
+tools/stage5_fit_driver.py,139,3,<module-scope>,"""minDistinctPcsForCandidate"":     dict(g=""G4"", fam=""abstention"",  frozen=True,  kind=""int"", val=3),"
+tools/stage5_fit_driver.py,141,0.6,<module-scope>,"""harmonicBoundaryJaccardThreshold"": dict(g=""G5"", fam=""continuous"", frozen=False, val=0.6),"
+tools/stage5_fit_driver.py,142,0.3,<module-scope>,"""pedalTailWeightMultiplier"":      dict(g=""G5"", fam=""continuous"", frozen=False, val=0.3),"
+tools/stage5_fit_driver.py,143,0.05,<module-scope>,"""bassPassingToneMinWeightFraction"": dict(g=""G5"", fam=""abstention"", frozen=False, val=0.05),"
+tools/stage5_fit_driver.py,146,0.65,<module-scope>,"""pedalConfidenceThreshold"":       dict(g=""G5"", fam=""abstention"",  frozen=False, val=0.65),"
+tools/stage5_fit_driver.py,288,100,measure,"root = 100 * agg[""b_root_agree""] / (agg[""b_root_agree""] + agg[""b_root_dis""])"
+tools/stage5_fit_driver.py,289,100,measure,"rn = 100 * agg[""b_rn_agree""] / (agg[""b_rn_agree""] + agg[""b_rn_dis""])"
+tools/stage5_fit_driver.py,321,4,evaluate,"""objective_root_pct"": round(m[""root_pct""], 4),"
+tools/stage5_fit_driver.py,336,4,evaluate,"row[""objective_delta""] = round(m[""root_pct""] - baseline[""root_pct""], 4)"
+tools/stage5_fit_driver.py,367,6,perturbations_for,"step = round(0.10 * base, 6) if base > 1.0 else 0.05"
+tools/stage5_fit_driver.py,369,6,perturbations_for,"lo = max(0.0, round(base - step, 6))"
+tools/stage5_fit_driver.py,405,1.2,main,"ft.add_argument(""--hi"", type=float, default=1.2)"
+tools/stage5_fit_driver.py,406,9,main,"ft.add_argument(""--coarse-steps"", type=int, default=9)"
+tools/stage5_fit_driver.py,407,2,main,"ft.add_argument(""--refine-rounds"", type=int, default=2)"
+tools/stage5_fit_driver.py,456,4,main,"row[""baseline_root_pct""] = round(base_m[""root_pct""], 4)"
+tools/stage5_fit_driver.py,470,4,main,"base_root = round(base_m[""root_pct""], 4)"
+tools/stage5_fit_driver.py,516,2,main,step /= 2
+tools/stage5_fit_driver.py,564,4,main,"base_root = round(base_m[""root_pct""], 4)"
+tools/stage5_fit_driver.py,608,63.36,main,"RATIFIED = {""Baroque"": 63.36, ""Jazz"": 62.37, ""Default"": 63.25}"
+tools/stage5_fit_driver.py,608,62.37,main,"RATIFIED = {""Baroque"": 63.36, ""Jazz"": 62.37, ""Default"": 63.25}"
+tools/stage5_fit_driver.py,608,63.25,main,"RATIFIED = {""Baroque"": 63.36, ""Jazz"": 62.37, ""Default"": 63.25}"
+tools/stage5_fit_driver.py,657,4,main,"base_root = round(base_m[""root_pct""], 4)"
+tools/stage5_fit_driver.py,102,0.125,<module-scope>,"per_preset={""Baroque"": 0.125, ""Jazz"": 0.10, ""Default"": 0.125}),"
+tools/stage5_fit_driver.py,102,0.1,<module-scope>,"per_preset={""Baroque"": 0.125, ""Jazz"": 0.10, ""Default"": 0.125}),"
+tools/stage5_fit_driver.py,102,0.125,<module-scope>,"per_preset={""Baroque"": 0.125, ""Jazz"": 0.10, ""Default"": 0.125}),"
+tools/stage5_fit_driver.py,105,0.235,<module-scope>,"per_preset={""Baroque"": 0.235, ""Jazz"": 0.21, ""Default"": 0.235}),"
+tools/stage5_fit_driver.py,105,0.21,<module-scope>,"per_preset={""Baroque"": 0.235, ""Jazz"": 0.21, ""Default"": 0.235}),"
+tools/stage5_fit_driver.py,105,0.235,<module-scope>,"per_preset={""Baroque"": 0.235, ""Jazz"": 0.21, ""Default"": 0.235}),"
+tools/stage5_fit_driver.py,126,0.5,<module-scope>,"per_preset={""Baroque"": 0.5, ""Jazz"": 0.20, ""Default"": 0.5}),"
+tools/stage5_fit_driver.py,126,0.2,<module-scope>,"per_preset={""Baroque"": 0.5, ""Jazz"": 0.20, ""Default"": 0.5}),"
+tools/stage5_fit_driver.py,126,0.5,<module-scope>,"per_preset={""Baroque"": 0.5, ""Jazz"": 0.20, ""Default"": 0.5}),"
+tools/stage5_fit_driver.py,128,0.5,<module-scope>,"per_preset={""Baroque"": 0.5, ""Jazz"": 0.20, ""Default"": 0.5}),"
+tools/stage5_fit_driver.py,128,0.2,<module-scope>,"per_preset={""Baroque"": 0.5, ""Jazz"": 0.20, ""Default"": 0.5}),"
+tools/stage5_fit_driver.py,128,0.5,<module-scope>,"per_preset={""Baroque"": 0.5, ""Jazz"": 0.20, ""Default"": 0.5}),"
+tools/stage5_fit_driver.py,130,0.45,<module-scope>,"per_preset={""Baroque"": 0.45, ""Jazz"": 0.20, ""Default"": 0.45}),"
+tools/stage5_fit_driver.py,130,0.2,<module-scope>,"per_preset={""Baroque"": 0.45, ""Jazz"": 0.20, ""Default"": 0.45}),"
+tools/stage5_fit_driver.py,130,0.45,<module-scope>,"per_preset={""Baroque"": 0.45, ""Jazz"": 0.20, ""Default"": 0.45}),"
+tools/stage5_fit_driver.py,132,0.4,<module-scope>,"per_preset={""Baroque"": 0.4, ""Jazz"": 0.15, ""Default"": 0.4}),"
+tools/stage5_fit_driver.py,132,0.15,<module-scope>,"per_preset={""Baroque"": 0.4, ""Jazz"": 0.15, ""Default"": 0.4}),"
+tools/stage5_fit_driver.py,132,0.4,<module-scope>,"per_preset={""Baroque"": 0.4, ""Jazz"": 0.15, ""Default"": 0.4}),"
+tools/stage5_fit_driver.py,145,0.2,<module-scope>,"per_preset={""Baroque"": 0.20, ""Jazz"": 0.12, ""Default"": 0.20}),"
+tools/stage5_fit_driver.py,145,0.12,<module-scope>,"per_preset={""Baroque"": 0.20, ""Jazz"": 0.12, ""Default"": 0.20}),"
+tools/stage5_fit_driver.py,145,0.2,<module-scope>,"per_preset={""Baroque"": 0.20, ""Jazz"": 0.12, ""Default"": 0.20}),"
+tools/stage5_fit_driver.py,291,100,measure,"key = 100 * agg[""b_key_agree""] / kd if kd else 0.0"
+tools/stage5_fit_driver.py,322,4,evaluate,"""tracked"": {""rn_pct"": round(m[""rn_pct""], 4), ""key_pct"": round(m[""key_pct""], 4)},"
+tools/stage5_fit_driver.py,322,4,evaluate,"""tracked"": {""rn_pct"": round(m[""rn_pct""], 4), ""key_pct"": round(m[""key_pct""], 4)},"
+tools/stage5_fit_driver.py,367,0.1,perturbations_for,"step = round(0.10 * base, 6) if base > 1.0 else 0.05"
+tools/stage5_fit_driver.py,374,6,perturbations_for,"out.append((""up"", round(base + step, 6), f""+{step}""))"
+tools/stage5_fit_driver.py,474,6,eval_at,"v = round(raw, 6)"
+tools/stage5_fit_driver.py,499,6,main,"coarse = [round(lo + i * (hi - lo) / (n - 1), 6) for i in range(n)]"
+tools/stage5_fit_driver.py,533,1e-09,main,"elif best[""objective_delta""] <= 1e-9:"
+tools/stage5_fit_driver.py,620,0.005,main,"match = abs(m[""root_pct""] - RATIFIED[preset]) < 0.005"
+tools/stage5_fit_driver.py,633,0.9,main,"r1, _ = evaluate({""kContradictionPenalty"": 0.9}, ""Baroque"", scratch, a8_out, baseline=base_m)"
+tools/stage5_fit_driver.py,634,0.9,main,"r2, _ = evaluate({""kContradictionPenalty"": 0.9}, ""Baroque"", scratch, a8_out, baseline=base_m)"
+tools/stage5_fit_driver.py,519,6,main,"for cand in (round(best[""value""] - step, 6), round(best[""value""] + step, 6)):"
+tools/stage5_fit_driver.py,519,6,main,"for cand in (round(best[""value""] - step, 6), round(best[""value""] + step, 6)):"
+tools/stage5_fit_driver.py,440,100,main,"f""({100*tf/(tf+th):.1f}% / {100*th/(tf+th):.1f}%)"")"
+tools/stage5_fit_driver.py,440,100,main,"f""({100*tf/(tf+th):.1f}% / {100*th/(tf+th):.1f}%)"")"
+tools/stage5_fit_driver.py,272,400,regen,"raise RuntimeError(f""regen failed ({preset}): {r.stderr[-400:]}"")"
+tools/stage5_fit_driver.py,284,400,measure,"raise RuntimeError(f""a8 measure failed ({preset}): {r.stderr[-400:]}"")"

@@ -1,0 +1,29 @@
+file,line,type_owner,name,context
+src/composing/analysis/function/forwardoverride.h,118,OnePassClosure,markFinal,bool markFinal(int decisionId);
+src/composing/analysis/function/forwardoverride.h,140,OnePassClosure,void,const std::function<void(int /*sliceId*/)>& reread);
+src/composing/analysis/function/forwardoverride.h,146,OnePassClosure,closedCount,int closedCount() const noexcept { return static_cast<int>(m_closed.size()); }
+src/composing/analysis/function/forwardoverride.h,149,OnePassClosure,reset,void reset() noexcept;
+src/composing/analysis/function/functioncadence.h,214,<namespace>,isRootPosition,bool isRootPosition(const CadenceEvent& e) noexcept;
+src/composing/analysis/function/functioncadence.h,220,<namespace>,isSecondInversionTonicTriad,bool isSecondInversionTonicTriad(const CadenceEvent& e) noexcept;
+src/composing/analysis/function/functioncadence.h,227,<namespace>,leadingToneResolves,"bool leadingToneResolves(const CadenceEvent& dom, const CadenceEvent& arr, int tonicPc) noexcept;"
+src/composing/analysis/function/functioncadence.h,233,<namespace>,dominantSeventhPresent,bool dominantSeventhPresent(const CadenceEvent& dom) noexcept;
+src/composing/analysis/function/functioncadence.h,242,<namespace>,isGenuineDominant,"bool isGenuineDominant(const CadenceEvent& dom, const CadenceEvent& arr, int tonicPc) noexcept;"
+src/composing/analysis/function/functionprogression.h,154,<namespace>,isDescendingFifth,"bool isDescendingFifth(int fromRootPc, int toRootPc) noexcept;"
+src/composing/analysis/function/functionprogression.h,158,<namespace>,isDescendingThird,"bool isDescendingThird(int fromRootPc, int toRootPc) noexcept;"
+src/composing/analysis/function/functionprogression.h,162,<namespace>,isAscendingSecond,"bool isAscendingSecond(int fromRootPc, int toRootPc) noexcept;"
+src/composing/analysis/function/functionprogression.h,170,<namespace>,isAscendingFifth,"bool isAscendingFifth(int fromRootPc, int toRootPc) noexcept;"
+src/composing/analysis/function/functionprogression.h,175,<namespace>,isDescendingSecond,"bool isDescendingSecond(int fromRootPc, int toRootPc) noexcept;"
+src/composing/analysis/function/functionprogression.h,182,<namespace>,isDiatonicDiminishedFifth,"bool isDiatonicDiminishedFifth(const ProgressionChord& from, const ProgressionChord& to) noexcept;"
+src/composing/analysis/function/functionprogression.h,197,<namespace>,isAppliedResolution,"bool isAppliedResolution(const ProgressionChord& from, const ProgressionChord& to) noexcept;"
+src/composing/analysis/function/functionprogression.h,212,<namespace>,isLicensedProgression,"bool isLicensedProgression(const ProgressionChord& from, const ProgressionChord& to) noexcept;"
+src/composing/analysis/function/functionprogression.h,228,<namespace>,isMetricallyStrong,"bool isMetricallyStrong(const Progression& region, int sliceIndex) noexcept;"
+src/composing/analysis/function/functionprogression.h,235,<namespace>,prevailingHarmonyIndex,"int prevailingHarmonyIndex(const Progression& region, int sliceIndex) noexcept;"
+src/composing/analysis/function/functionprogression.h,242,<namespace>,establishedNextFunctionIndex,"int establishedNextFunctionIndex(const Progression& region, int sliceIndex) noexcept;"
+src/composing/analysis/function/functionrelationallabel.h,157,<namespace>,classifyRelationalLabel,RelationalLabel classifyRelationalLabel(const RelationalLabelInput& in);
+src/composing/analysis/function/functionrelationallabel.h,167,<namespace>,emitAppliedLabel,RelationalLabel emitAppliedLabel(const RelationalLabelInput& in);
+src/composing/analysis/function/functionresolver.h,232,<namespace>,degreeFunctionalBias,FunctionalBias degreeFunctionalBias(int degree) noexcept;
+src/composing/analysis/function/functionresolver.h,236,<namespace>,bassScaleDegreeBias,"FunctionalBias bassScaleDegreeBias(int bassPc, const ResolverKey& key);"
+src/composing/analysis/function/functionromannumeral.h,90,<namespace>,deriveBaseRomanNumeral,BaseRomanNumeral deriveBaseRomanNumeral(const BaseRomanNumeralInput& in);
+src/composing/analysis/function/tonicizationlabeler.h,154,<namespace>,labelTonicizations,labelTonicizations(const std::vector<TonicizationRegionInput>& regions);
+src/composing/analysis/progression/progressionrecognizer.h,101,<namespace>,idiomIndex,std::size_t idiomIndex(Idiom idiom);
+src/composing/analysis/progression/progressionrecognizer.h,106,<namespace>,maxWeightOverIdioms,"double maxWeightOverIdioms(const IdiomWeights& w, IdiomSet idioms);"

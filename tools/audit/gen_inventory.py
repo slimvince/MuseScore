@@ -5,9 +5,20 @@
 gen_inventory.py — the machine-generated audit inventory for the EG-7 layer
 certification audits (OI-84). ONE PASS-1 instrument, layer-selected by --layer
 (l1l2 default — the original L1/L2 audit; l3 — the Layer-3 key/mode audit; l4 — the
-Layer-4 chord audit). One path per concern (#6): the same enumeration + extraction
-serves every layer; --layer picks the deep-audited tag set, the output dir, and the
-per-layer tag refinement.
+Layer-4 chord audit; l5 — the Layer-5 function + measurement-instruments audit).
+One path per concern (#6): the same enumeration + extraction serves every layer;
+--layer picks the deep-audited tag set, the output dir, and the per-layer tag
+refinement.
+
+  --layer l5 adds a SECOND scope root beside src/composing: the measurement
+  INSTRUMENTS under tools/ (the regression-stop chain, the corpus generators/
+  validators, the ground-truth parser, the comparison/grading tools, the fit
+  manifest, and batch_analyze as the shared harness). Because most instruments are
+  PYTHON, l5 extraction routes each deep file by extension — the C++ scan (below)
+  for .cpp/.h, and a Python `ast` scan for .py (functions/literals/branches/class
+  fields/internal-imports/file-IO). One instrument, two language front-ends; the
+  row schema is shared. See L5_REFINE (the L5-source population tags) and
+  INSTRUMENT_RULES (the tools/ instrument enumeration).
 
 WHAT THIS IS (protocol P1, cowork_audit_protocol.md; #17(f) applied to audit SCOPE):
   The audit domain is generated MECHANICALLY from the code, never chosen by hand.
@@ -45,9 +56,10 @@ RUN:
   python tools/audit/gen_inventory.py                    # L1/L2 audit → tools/audit/l1l2/
   python tools/audit/gen_inventory.py --layer l3         # L3 audit    → tools/audit/l3/
   python tools/audit/gen_inventory.py --layer l4         # L4 audit    → tools/audit/l4/
+  python tools/audit/gen_inventory.py --layer l5         # L5+instr    → tools/audit/l5/
   python tools/audit/gen_inventory.py --self-check       # + per-file extraction counts
   python tools/audit/gen_inventory.py --out-dir <scratch># override the artifact dir (byte-id check)
-  (exit 0 iff every tracked file received a tag; nonzero on any untagged file — P1.)
+  (exit 0 iff every tracked file in scope received a tag; nonzero on any untagged file — P1.)
 """
 
 import csv
@@ -93,9 +105,20 @@ def _selected_layer(argv):
     return "l1l2"
 
 AUDIT_LAYER = _selected_layer(sys.argv)
-if AUDIT_LAYER not in ("l1l2", "l3", "l4"):
-    sys.stderr.write("unknown --layer %r (expected l1l2 | l3 | l4)\n" % AUDIT_LAYER)
+if AUDIT_LAYER not in ("l1l2", "l3", "l4", "l5"):
+    sys.stderr.write("unknown --layer %r (expected l1l2 | l3 | l4 | l5)\n" % AUDIT_LAYER)
     sys.exit(2)
+
+# ── The instruments scope (l5 only): a SECOND enumeration root beside src/composing ─
+# The measurement chain lives under tools/. The enumeration DOMAIN is mechanical and
+# total: TOP-LEVEL tracked tools/*.{py,cpp,json} + tools/tests/*.py. Subtrees that are
+# the audit's OWN artifacts or committed reference/fitted DATA (tools/audit/,
+# tools/robust_stop/, tools/calibration_maps/, tools/reports/, tools/refresh_divergence_*/,
+# tools/fonttools/, tools/jsdoc/, gitignored corpus dirs) are EXCLUDED — they are
+# instrument OUTPUTS or unrelated build tooling, not instruments under audit. The
+# exclusion is documented here so the boundary is auditable (nothing silently dropped).
+# NOTE: git pathspec `*` spans `/`, so the depth filter is applied in Python, not the glob.
+INSTRUMENT_SCOPE_EXTS = (".py", ".cpp", ".json")
 
 
 def _selected_out_dir(argv, default):
@@ -211,8 +234,15 @@ if AUDIT_LAYER == "l1l2":
     DEEP_TAGS = ("L1", "L2")
 elif AUDIT_LAYER == "l3":
     DEEP_TAGS = ("L3", "L3-MIXED")
-else:  # l4
+elif AUDIT_LAYER == "l4":
     DEEP_TAGS = ("L4-SCORER", "L4-DECODER", "L4-MIXED")
+else:  # l5
+    # L5-DORMANT = the dormant-but-surviving resolver pipeline (deep, C++);
+    # INSTRUMENT = the Python measurement chain (deep, Python);
+    # INSTRUMENT-HARNESS = batch_analyze.cpp (deep, C++).
+    # L5-RETIRES / DEFERRED / NON-INSTRUMENT / INSTRUMENT-MANIFEST / INSTRUMENT-TEST
+    # get file-level rows only (see L5_REFINE + INSTRUMENT_RULES for the reasons).
+    DEEP_TAGS = ("L5-DORMANT", "INSTRUMENT", "INSTRUMENT-HARNESS")
 
 # ── L3 (key/mode) tag refinement (applied over the base TAG_RULES iff --layer l3) ─
 # The base map coarsely tags the key/mode files L3+ ("deferred to the L3 audit").
@@ -377,6 +407,216 @@ def refine_l4(path, tag, reason):
             return l4tag, l4reason
     return tag, reason
 
+
+# ── L5 (function) tag refinement (applied over the base TAG_RULES iff --layer l5) ─
+# The base map coarsely tags the function/, progression/, section/ files L3+ ("deferred
+# to the L5 audit"). THIS audit refines them into the instruction's three populations —
+# each RE-VERIFIED at the code with call sites traced (a mis-tag is a finding, not
+# inherited):
+#   L5-DORMANT — (b) the DORMANT-but-surviving resolver pipeline (Phase-5c, built +
+#                unit-tested, NOT wired to production: no non-test .cpp/.h includes it;
+#                its only non-test reference is the batch_analyze --decode diagnostic).
+#                The engagement's clean target. Deep-audited.
+#   L5-RETIRES — (a) LIVE-now-and-retiring function machinery on the roadmap retirement
+#                map. File-level interpretation-check note only (NO deep rows), per the
+#                L4-RETIRES precedent.
+#   L5-MIXED   — a file whose L5-in-scope content sits beside another layer's (already
+#                audited) content; the L5 part is a RETIRES note, the rest is elsewhere.
+#                File-level note only.
+#   DEFERRED   — verified NOT in L5's deep scope: already deep-audited by the L3 audit
+#                (do not duplicate, #6), or belongs to the L6 audit.
+# Ordered; FIRST match wins; exact repo-relative paths (forward slash). Authority:
+# cowork_layer5_function_design.md (SIGNED) §1/§13; ARCHITECTURE.md §"Layer 5"/§"Layer 6";
+# roadmap retirement map R1/R2/R7 (docs/implementation_roadmap.md:138-145); the file
+# headers themselves (harmonicfunctionlayer.h:25 "Competition pipeline"); call-site trace
+# (detectCadences reached from src/notation/internal/notationcomposingbridge.cpp — LIVE).
+L5_REFINE = [
+    # ---- (a) RETIRES — legacy competition pipeline mis-named "function" (R1/R7) ----
+    ("src/composing/analysis/function/harmonicfunctionlayer.h", "L5-RETIRES",
+     "MIS-TAG (inherited 'function layer (L5)') — this is the LEGACY L4 CHORD-COMPETITION pipeline "
+     "(harmonicfunctionlayer.h:25 'Competition pipeline — the SINGLE owner of winner selection'; "
+     "applyHarmonicFunction runs the per-bass competition + winner selection, LIVE via chordanalyzer/"
+     "regionanalyzer), NOT the Layer-5 function machinery; its functional labeling is 'E4 (planned)'. "
+     "Retires R1 (legacy competition) + R7 (rename). #12-check on deletion: it is the SOLE owner of "
+     "winner selection + progression-signal application (pass-1 finding)"),
+    ("src/composing/analysis/function/harmonicfunctionlayer.cpp", "L5-RETIRES",
+     "MIS-TAG (see .h) — legacy L4 competition pipeline impl (applyHarmonicFunction winner selection); "
+     "retires R1/R7; #12-check the winner-selection + progression-signal ownership on deletion"),
+    ("src/composing/analysis/section/sectioncadencedetection.cpp", "L5-RETIRES",
+     "LIVE-and-retiring — the legacy KEY-DEPENDENT (circular) cadence + pivot detection "
+     "(detectCadences/detectPivotChords), reached from the notation bridge (notationcomposingbridge.cpp) "
+     "= production; roadmap R2 (legacy circular cadence detector) + the L6 rebuild target. The dormant "
+     "key-agnostic replacement is function/functioncadence. #12-check on deletion: the cadence-type + "
+     "pivot interpretations L5/L6 must consciously re-home (pass-1)"),
+    # ---- (a) MIXED — L3-audited file whose L5 cadence/pivot part is LIVE-and-retiring ----
+    ("src/composing/analysis/section/sectionanalyzer.h", "L5-MIXED",
+     "L3-audited (L3-MIXED) — its L5 content (detectCadences/detectPivotChords surface, LIVE via the "
+     "notation bridge) is the R2 legacy circular detector; file-level RETIRES note only, deep rows NOT "
+     "re-generated (the L3 audit already inventoried this file — #6 no-duplication)"),
+    ("src/composing/analysis/section/sectionanalyzer.cpp", "L5-MIXED",
+     "L3-audited (L3-MIXED) — its L5 cadence/pivot labeling (LIVE, R2-retiring) noted at file level; "
+     "deep rows NOT re-generated (#6; the L3 inventory holds this file's rows)"),
+    # ---- (b) DORMANT-but-surviving resolver pipeline — the engagement target (deep) ----
+    ("src/composing/analysis/function/forwardoverride.h", "L5-DORMANT",
+     "DORMANT §8/§9-D7 confidence-weighted forward-override mechanism surface (the ONE reusable "
+     "override the resolver + modulation recompute reuse); not wired"),
+    ("src/composing/analysis/function/forwardoverride.cpp", "L5-DORMANT",
+     "DORMANT forward-override impl (localized/forward/convergence-bounded recompute; one-pass closure)"),
+    ("src/composing/analysis/function/functioncadence.h", "L5-DORMANT",
+     "DORMANT §5.2 key-agnostic event-pair cadence DETECTOR surface (replaces the retiring "
+     "sectioncadencedetection); not wired"),
+    ("src/composing/analysis/function/functioncadence.cpp", "L5-DORMANT",
+     "DORMANT §5.2 cadence detector impl (cadential-6/4 collapse, family gate, phrase gate, tonic-vote)"),
+    ("src/composing/analysis/function/functionmodulation.h", "L5-DORMANT",
+     "DORMANT §5.3/§5.4 tonicization-vs-modulation + cadence-confirmed modulation recompute surface "
+     "(reuses the L3-audited localmodulationdetector substrate); not wired"),
+    ("src/composing/analysis/function/functionmodulation.cpp", "L5-DORMANT",
+     "DORMANT §5.3/§5.4 impl (persistence hysteresis over committed spans; §8 case-4 channel #1)"),
+    ("src/composing/analysis/function/functionoutput.h", "L5-DORMANT",
+     "DORMANT §7 output-assembly surface (Roman numeral + cadence + local-key markers + open marks); not wired"),
+    ("src/composing/analysis/function/functionoutput.cpp", "L5-DORMANT",
+     "DORMANT §7 output-assembly impl (additive over the L4 result; verbatim carried-identity emit)"),
+    ("src/composing/analysis/function/functionprogression.h", "L5-DORMANT",
+     "DORMANT §5.0 progression MODEL surface — the GRAMMAR owner isLicensedProgression (D5); not wired"),
+    ("src/composing/analysis/function/functionprogression.cpp", "L5-DORMANT",
+     "DORMANT §5.0 progression impl (licensed-motion test; §15-12 grammar-completion is spec-ahead-of-code)"),
+    ("src/composing/analysis/function/functionrelationallabel.h", "L5-DORMANT",
+     "DORMANT §5.6 relational labels (aug6/Neapolitan/applied/mixture precedence) + unified tonicization "
+     "emitter surface; not wired"),
+    ("src/composing/analysis/function/functionrelationallabel.cpp", "L5-DORMANT",
+     "DORMANT §5.6 relational-label impl (chromaticism trigger + false-positive guard; V/iv over-trigger is inference-deferred)"),
+    ("src/composing/analysis/function/functionresolver.h", "L5-DORMANT",
+     "DORMANT §5.5 RESOLVER surface (select-among-carried-readings by ambiguity kind) + §5.5/§10 "
+     "fine-grain override (§8 channel #2); not wired"),
+    ("src/composing/analysis/function/functionresolver.cpp", "L5-DORMANT",
+     "DORMANT §5.5 resolver impl (six ambiguity kinds; verbatim carried-identity selection; soft bass prior)"),
+    ("src/composing/analysis/function/functionromannumeral.h", "L5-DORMANT",
+     "DORMANT §5.1 base Roman-numeral derivation surface (degree/quality/inversion/chromatic alteration); not wired"),
+    ("src/composing/analysis/function/functionromannumeral.cpp", "L5-DORMANT",
+     "DORMANT §5.1 base Roman-numeral derivation impl (deterministic reading from key + committed chord)"),
+    ("src/composing/analysis/function/tonicizationlabeler.h", "L5-DORMANT",
+     "DORMANT applied-chord labeler (§13 the dormant tonicizationlabeler; Stage-6-tonic-i narrow slice; "
+     "the reused labeler §5.6 references); not wired"),
+    ("src/composing/analysis/function/tonicizationlabeler.cpp", "L5-DORMANT",
+     "DORMANT applied-chord labeler impl (secondary-dominant / applied-leading-tone recognition)"),
+    ("src/composing/analysis/progression/progressionrecognizer.h", "L5-DORMANT",
+     "DORMANT L5-consumer progression-schema recognizer surface (reads the Harmonic Vocabulary catalog; "
+     "one-way consistency test with the D5 grammar); batch_analyze --diagnostic only, no production consumer"),
+    ("src/composing/analysis/progression/progressionrecognizer.cpp", "L5-DORMANT",
+     "DORMANT progression-schema recognizer impl (multi-chord pattern/substitution recognition over the committed progression)"),
+    # ---- DEFERRED — already deep-audited elsewhere, or another layer's audit (NOT deep here) ----
+    ("src/composing/analysis/section/localmodulationdetector.h", "DEFERRED",
+     "ALREADY L3-AUDITED (L3 file table: 'L3 key-evidence: local-modulation detector') — it is ALSO the "
+     "dormant modulation-span substrate the L5 functionmodulation reuses (§13); the L5 SEAM (what "
+     "functionmodulation reads from it) is audited via functionmodulation's rows, the file internals NOT "
+     "re-audited here (#6 no-duplication)"),
+    ("src/composing/analysis/section/localmodulationdetector.cpp", "DEFERRED",
+     "ALREADY L3-AUDITED — L5-reused substrate; seam checked via functionmodulation (#6)"),
+    ("src/composing/analysis/grouping/groupinglayer.h", "DEFERRED",
+     "Layer 6 (grouping) — the design-only rebuild of the live cadence/pivot/KeyArea machinery; deferred to the L6 audit"),
+    ("src/composing/analysis/grouping/groupinglayer.cpp", "DEFERRED",
+     "Layer 6 (grouping) — deferred to the L6 audit"),
+]
+
+
+def refine_l5_source(path, tag, reason):
+    """In --layer l5 mode, override the base tag for the src/composing function/,
+    progression/, section/, grouping/ files. Returns the (possibly refined)
+    (tag, reason); base tag unchanged for files L5_REFINE omits."""
+    for matcher, l5tag, l5reason in L5_REFINE:
+        if path == matcher:
+            return l5tag, l5reason
+    return tag, reason
+
+
+# ── The INSTRUMENTS enumeration (l5 only; over the tools/ scope) ──────────────
+# The measurement chain the project's regression stops, corpus generation, ground-truth
+# parsing, and fitting depend on (guiding principle 19: what does each instrument measure,
+# what validates it, what would silently break it). The INSTRUMENT set is the IMPORT
+# CLOSURE of the named entry points (verified: `grep '^import' + import-chase`), plus
+# batch_analyze (the shared harness) and param_manifest.json (the fit manifest). Every
+# other tracked file in the INSTRUMENT_SCOPE_GLOBS domain is tagged NON-INSTRUMENT (a
+# one-off diagnostic / injection helper / registry / config) with a reason, so the domain
+# is TOTAL (P1) and the instrument boundary is auditable. Ordered; FIRST match wins.
+INSTRUMENT_RULES = [
+    # ---- the deep-audited measurement chain (Python) ----
+    ("tools/compare_analyses.py", "INSTRUMENT",
+     "base COMPARISON module — three-level batch_analyze-vs-music21 region compare; imported by ~all "
+     "the stops. Reads .ours.json + .music21.json; writes nothing (library)"),
+    ("tools/dcml_parser.py", "INSTRUMENT",
+     "the GROUND-TRUTH PARSER — DCML TSV + RomanText → WiR roots (the corrected-parser, 2026-06-13). "
+     "Reads .harmonies.tsv / DCML; writes nothing (library)"),
+    ("tools/compare_rn.py", "INSTRUMENT",
+     "the robust-unit ROMAN-NUMERAL grid compare (grid_score_regions; a8 self-validates variant-(b) "
+     "decomposition byte-identical to this). Reads .ours.json + DCML GT"),
+    ("tools/characterise_bir_false.py", "INSTRUMENT",
+     "the BATCH-STOP diagnostic + validate_corpus_dir (the corpus-integrity guard the a8 instrument "
+     "imports). Reads a per-preset corpus dir + its manifest; writes stdout characterization"),
+    ("tools/a8_rebaseline_measure.py", "INSTRUMENT",
+     "the ROBUST-STOP measurement instrument (variant-(b) root-fail enumerations; self-validates "
+     "grid==oracle per piece). Reads the corpus; writes tools/robust_stop/<preset>/* + summary/manifest"),
+    ("tools/robust_stop_diff.py", "INSTRUMENT",
+     "the ROBUST-STOP GATE (exit 0 iff every preset's class-(b) duration non-increases vs the committed "
+     "reference). Reads a candidate a8 dir + tools/robust_stop/ reference; writes the explained diff"),
+    ("tools/run_bach_preset.py", "INSTRUMENT",
+     "the CORPUS GENERATOR/VALIDATOR — clean-slates + regenerates a per-preset dir, stamps "
+     "corpus_manifest.json, exits nonzero unless complete. Runs batch_analyze; writes .ours.json + manifest"),
+    ("tools/analyze_inversion_errors.py", "INSTRUMENT",
+     "the SECONDARY bassIsRoot metric (three-way music21_dcml_agree split). Reads a validated per-preset dir"),
+    ("tools/music21_batch.py", "INSTRUMENT",
+     "the music21 GROUND-TRUTH GENERATOR — exports the corpus to MusicXML + .music21.json (v9.9.1 pin). "
+     "Reads music21 corpus; writes tools/corpus/*.xml + *.music21.json"),
+    ("tools/oracle_root_metric.py", "INSTRUMENT",
+     "the STANDING per-event tiered ORACLE-ROOT metric (reuses compare_analyses + dcml_parser + "
+     "validate_corpus_dir). Reads a validated per-preset dir + DCML GT"),
+    ("tools/calibration_fit.py", "INSTRUMENT",
+     "the FITTING instrument — Stage-5 Class-M→Class-P reliability maps (isotonic/logistic). Reads the "
+     "corpus + c1 substrate; writes tools/calibration_maps/*.json"),
+    ("tools/c1_reliability.py", "INSTRUMENT",
+     "the C1 reliability instrumentation primitives (cell-join + squash + PRESETS) reused by the fitter"),
+    ("tools/stage5_fit_driver.py", "INSTRUMENT",
+     "the Stage-5 FITTER HARNESS (fitter design §4.3/§7). Reads DCML GT; drives the calibration fit"),
+    # ---- the shared harness (C++) ----
+    ("tools/batch_analyze.cpp", "INSTRUMENT-HARNESS",
+     "the SHARED HARNESS — the standalone score→analysis driver every corpus run + diagnostic path uses "
+     "(--decode-chords, --section-level, --diagnose-measures, --dump-regions). Reads a score; writes .ours.json"),
+    # ---- the fit manifest (JSON; file-level, establishment-checked in Task 2) ----
+    ("tools/param_manifest.json", "INSTRUMENT-MANIFEST",
+     "the FIT MANIFEST — the param provenance ledger the constants ESTABLISHED/UNFIT/DEAD check reads "
+     "(CLAUDE.md). File-level row; its coverage of L5 + scorer constants is a Task-2 establishment check"),
+]
+
+# NON-INSTRUMENT sub-classification (reasons for the file-table; first prefix match wins).
+# Applied to any INSTRUMENT_SCOPE_GLOBS file NOT matched by INSTRUMENT_RULES, so the tools/
+# domain is totally tagged. These get file-level rows only.
+NONINSTRUMENT_PREFIX_REASONS = [
+    ("tools/tests/", "INSTRUMENT-TEST",
+     "regression test for a measurement instrument (dcml_parser / metric primitives / oracle_root_metric "
+     "/ snapshot sources) — the establishment cross-check; file-level"),
+    ("tools/diag_", "NON-INSTRUMENT", "one-off diagnostic script (per-iteration/gate triage) — not the standing measurement chain"),
+    ("tools/iter", "NON-INSTRUMENT", "one-off per-iteration diagnostic script — not the standing measurement chain"),
+    ("tools/analyze_", "NON-INSTRUMENT", "one-off analysis/triage script — not the standing measurement chain"),
+    ("tools/check_", "NON-INSTRUMENT", "one-off score/tick check script — not the standing measurement chain"),
+    ("tools/diff_", "NON-INSTRUMENT", "one-off classification-diff script — not the standing measurement chain"),
+    ("tools/compare_", "NON-INSTRUMENT", "corpus/oracle comparison helper — not in the core regression-stop import closure (own audit if promoted)"),
+    ("tools/cc_", "NON-INSTRUMENT", "a specific measurement-run driver (baseline / sweep / full-spine / step-M) — a run, not the standing chain"),
+    ("tools/decode_", "NON-INSTRUMENT", "dormant-decoder corpus run driver — a run, not the standing chain"),
+    ("tools/run_", "NON-INSTRUMENT", "per-corpus validation runner (composer-specific) — wraps the chain; not itself the stop"),
+    ("tools/inject_", "NON-INSTRUMENT", "ground-truth-injection helper (writes RN into scores for QA) — not a measurement instrument"),
+    ("tools/pdmx_", "NON-INSTRUMENT", "PDMX dataset candidate/spot-check helper — corpus acquisition, not measurement"),
+    ("tools/", "NON-INSTRUMENT", "tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"),
+]
+
+
+def resolve_instrument_tag(path):
+    for matcher, tag, reason in INSTRUMENT_RULES:
+        if path == matcher:
+            return tag, reason
+    for prefix, tag, reason in NONINSTRUMENT_PREFIX_REASONS:
+        if path.startswith(prefix):
+            return tag, reason
+    return "NON-INSTRUMENT", "tools/ file — out of instrument deep scope (file-level)"
+
 # control keywords that precede '(' but are NOT function names
 CTRL_KW = {"if", "for", "while", "switch", "catch", "return", "sizeof", "and", "or",
            "not", "do", "else", "case", "constexpr", "static_assert", "decltype",
@@ -391,6 +631,25 @@ def sh(args):
 def list_tracked():
     out = sh(["git", "ls-files", SCOPE_DIR])
     return [l.replace("\\", "/") for l in out.splitlines() if l.strip()]
+
+
+def list_instrument_scope():
+    """The tools/ instruments enumeration domain (l5 only): TOP-LEVEL tracked
+    tools/*.{py,cpp,json} + tools/tests/*.py. Mechanical + total over that domain (P1).
+    Depth is filtered in Python because a git pathspec `*` spans `/`."""
+    out = sh(["git", "ls-files", "tools/"])
+    files = []
+    for l in out.splitlines():
+        p = l.replace("\\", "/").strip()
+        if not p:
+            continue
+        rest = p[len("tools/"):]
+        ext = os.path.splitext(p)[1]
+        top_level = ("/" not in rest) and ext in INSTRUMENT_SCOPE_EXTS
+        tests_py = rest.startswith("tests/") and rest.count("/") == 1 and ext == ".py"
+        if top_level or tests_py:
+            files.append(p)
+    return sorted(set(files))
 
 
 def resolve_tag(path):
@@ -681,6 +940,127 @@ def extract_crosslayer(orig_text, path):
     return rows
 
 
+# ── Python extraction (l5 instruments): an `ast` scan, parallel to the C++ scan ──
+# Row schema shared with the C++ path: functions, literals (trivial 0/1 excluded),
+# branches, fields (class-body attributes = the Python analogue of visible struct
+# fields), crosslayer (internal-module imports = the instrument's dependency edges),
+# and — instrument-specific, per the instruction — an IO list (open()/json.load/
+# json.dump/glob/read_text/write_text calls = what each instrument reads and writes).
+# decls is C++-only (empty for Python). ESTABLISHED (#19): Python is PARSED (ast), not
+# regex-scanned, so the extraction is exact, not heuristic.
+import ast as _ast
+
+_PY_STDLIB_MODS = {
+    "os", "sys", "json", "re", "csv", "glob", "subprocess", "argparse", "collections",
+    "math", "pathlib", "typing", "itertools", "functools", "dataclasses", "io", "shutil",
+    "hashlib", "time", "random", "copy", "xml", "statistics", "struct", "tempfile",
+    "warnings", "abc", "enum", "fractions", "datetime", "traceback", "concurrent",
+    "multiprocessing", "__future__", "numpy", "np", "sklearn", "music21", "unittest",
+    "pytest", "textwrap", "operator", "bisect", "heapq", "decimal", "contextlib",
+}
+_PY_IO_CALLS = {"open", "load", "loads", "dump", "dumps", "glob", "iglob",
+                "read_text", "write_text", "read_bytes", "write_bytes",
+                "read_csv", "to_csv", "makedirs", "mkdir", "walk", "listdir"}
+
+
+def _py_enclosing(func_spans, ln):
+    best = None
+    for name, sl, el in func_spans:
+        if sl <= ln <= el:
+            if best is None or (el - sl) < (best[2] - best[1]):
+                best = (name, sl, el)
+    return best[0] if best else "<module-scope>"
+
+
+def extract_python(orig, path):
+    """ast scan of a Python instrument. Returns (funcs, lits, branches, fields, cross, io)."""
+    funcs, lits, branches, fields, cross, io = [], [], [], [], [], []
+    orig_lines = orig.split("\n")
+    try:
+        tree = _ast.parse(orig)
+    except SyntaxError as e:
+        sys.stderr.write("  PY-PARSE-FAIL %s: %s\n" % (path, e))
+        return funcs, lits, branches, fields, cross, io
+
+    func_spans = []
+    for node in _ast.walk(tree):
+        if isinstance(node, (_ast.FunctionDef, _ast.AsyncFunctionDef)):
+            el = getattr(node, "end_lineno", node.lineno)
+            func_spans.append((node.name, node.lineno, el))
+            funcs.append({"name": node.name, "start_line": node.lineno, "end_line": el})
+
+    def ctx(ln):
+        return orig_lines[ln - 1].strip()[:160] if 0 < ln <= len(orig_lines) else ""
+
+    # class-body attributes (visible fields) — track the enclosing class per node
+    for node in _ast.walk(tree):
+        if isinstance(node, _ast.ClassDef):
+            for stmt in node.body:
+                if isinstance(stmt, _ast.AnnAssign) and isinstance(stmt.target, _ast.Name):
+                    fields.append({"line": stmt.lineno, "type_owner": node.name,
+                                   "field_type": _ast.unparse(stmt.annotation)[:60]
+                                   if hasattr(_ast, "unparse") else "",
+                                   "name": stmt.target.id, "context": ctx(stmt.lineno)})
+                elif isinstance(stmt, _ast.Assign):
+                    for t in stmt.targets:
+                        if isinstance(t, _ast.Name):
+                            fields.append({"line": stmt.lineno, "type_owner": node.name,
+                                           "field_type": "", "name": t.id,
+                                           "context": ctx(stmt.lineno)})
+
+    for node in _ast.walk(tree):
+        # literals (exclude trivial 0/1 and booleans)
+        if isinstance(node, _ast.Constant) and isinstance(node.value, (int, float)) \
+                and not isinstance(node.value, bool):
+            if node.value in (0, 1):
+                continue
+            ln = getattr(node, "lineno", 0)
+            lits.append({"line": ln, "value": repr(node.value),
+                         "func": _py_enclosing(func_spans, ln), "context": ctx(ln)})
+        # branches
+        kind = None
+        if isinstance(node, _ast.If):
+            kind = "if"
+        elif isinstance(node, (_ast.For, _ast.AsyncFor)):
+            kind = "for"
+        elif isinstance(node, _ast.While):
+            kind = "while"
+        elif isinstance(node, _ast.IfExp):
+            kind = "ternary"
+        elif isinstance(node, _ast.Try):
+            kind = "try"
+        elif hasattr(_ast, "match_case") and isinstance(node, _ast.match_case):
+            kind = "case"
+        if kind:
+            ln = getattr(node, "lineno", 0)
+            branches.append({"line": ln, "kind": kind,
+                             "func": _py_enclosing(func_spans, ln), "context": ctx(ln)})
+        # internal-module imports (dependency edges = the instrument's crosslayer)
+        if isinstance(node, _ast.Import):
+            for a in node.names:
+                top = a.name.split(".")[0]
+                if top not in _PY_STDLIB_MODS:
+                    cross.append({"line": node.lineno, "include": a.name,
+                                  "resolved": "tools/%s.py" % top, "target_area": "instrument"})
+        elif isinstance(node, _ast.ImportFrom):
+            top = (node.module or "").split(".")[0]
+            if top and top not in _PY_STDLIB_MODS:
+                cross.append({"line": node.lineno, "include": node.module,
+                              "resolved": "tools/%s.py" % top, "target_area": "instrument"})
+        # file IO (reads/writes — the instrument's surface)
+        if isinstance(node, _ast.Call):
+            fname = None
+            if isinstance(node.func, _ast.Name):
+                fname = node.func.id
+            elif isinstance(node.func, _ast.Attribute):
+                fname = node.func.attr
+            if fname in _PY_IO_CALLS:
+                ln = getattr(node, "lineno", 0)
+                io.append({"line": ln, "call": fname,
+                           "func": _py_enclosing(func_spans, ln), "context": ctx(ln)})
+    return funcs, lits, branches, fields, cross, io
+
+
 def write_csv(path, rows, cols):
     with open(path, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=cols)
@@ -705,7 +1085,14 @@ def main():
             tag, reason = refine_l3(p, tag, reason)
         elif AUDIT_LAYER == "l4":
             tag, reason = refine_l4(p, tag, reason)
+        elif AUDIT_LAYER == "l5":
+            tag, reason = refine_l5_source(p, tag, reason)
         file_rows.append({"file": p, "tag": tag or "UNTAGGED", "reason": reason or ""})
+    # l5: the SECOND scope root — the tools/ instruments domain (mechanically total)
+    if AUDIT_LAYER == "l5":
+        for p in list_instrument_scope():
+            tag, reason = resolve_instrument_tag(p)
+            file_rows.append({"file": p, "tag": tag, "reason": reason})
     if untagged:
         sys.stderr.write("P1 TOTALITY FAILURE — untagged files (add a TAG_RULES entry):\n")
         for u in untagged:
@@ -718,17 +1105,24 @@ def main():
     deep = [r["file"] for r in file_rows if r["tag"] in DEEP_TAGS]
 
     all_funcs, all_lits, all_branches, all_fields, all_decls, all_cross = [], [], [], [], [], []
+    all_io = []   # l5-instruments: what each Python instrument reads/writes
     per_file = {}
     for p in deep:
         with open(os.path.join(REPO_ROOT, p), encoding="utf-8") as f:
             orig = f.read()
         orig_lines = orig.split("\n")
-        blanked = blank_code(orig)
-        funcs = extract_functions(blanked)
-        lits = extract_literals(blanked, orig_lines, funcs)
-        branches = extract_branches(blanked, orig_lines, funcs)
-        fields, decls = extract_fields_and_decls(blanked, orig_lines, p)
-        cross = extract_crosslayer(orig, p)
+        io = []
+        if p.endswith(".py"):
+            # Python instrument — exact ast scan (no C++ blanking/brace walk)
+            funcs, lits, branches, fields, cross, io = extract_python(orig, p)
+            decls = []
+        else:
+            blanked = blank_code(orig)
+            funcs = extract_functions(blanked)
+            lits = extract_literals(blanked, orig_lines, funcs)
+            branches = extract_branches(blanked, orig_lines, funcs)
+            fields, decls = extract_fields_and_decls(blanked, orig_lines, p)
+            cross = extract_crosslayer(orig, p)
         for f_ in funcs:
             all_funcs.append({"file": p, **f_})
         for r in lits:
@@ -741,9 +1135,11 @@ def main():
             all_decls.append({"file": p, **r})
         for r in cross:
             all_cross.append({"file": p, **r})
+        for r in io:
+            all_io.append({"file": p, **r})
         per_file[p] = {"functions": len(funcs), "literals": len(lits),
                        "branches": len(branches), "fields": len(fields),
-                       "decls": len(decls), "crosslayer": len(cross)}
+                       "decls": len(decls), "crosslayer": len(cross), "io": len(io)}
 
     write_csv(os.path.join(OUT_DIR, PREFIX + "_functions.csv"), all_funcs,
               ["file", "name", "start_line", "end_line"])
@@ -757,12 +1153,17 @@ def main():
               ["file", "line", "type_owner", "name", "context"])
     write_csv(os.path.join(OUT_DIR, PREFIX + "_crosslayer.csv"), all_cross,
               ["file", "line", "include", "resolved", "target_area"])
+    if AUDIT_LAYER == "l5":
+        write_csv(os.path.join(OUT_DIR, PREFIX + "_io.csv"), all_io,
+                  ["file", "line", "call", "func", "context"])
 
     inventory = {
         "file_table": file_rows,
         "functions": all_funcs, "literals": all_lits, "branches": all_branches,
         "fields": all_fields, "decls": all_decls, "crosslayer": all_cross,
     }
+    if AUDIT_LAYER == "l5":
+        inventory["io"] = all_io
     with open(os.path.join(OUT_DIR, "inventory.json"), "w", encoding="utf-8") as f:
         json.dump(inventory, f, indent=1)
 
@@ -779,15 +1180,22 @@ def main():
             "l1l2": "EG-7 L1/L2 certification, PASS 1 (blind enumerative)",
             "l3": "EG-7 Layer-3 (key/mode) certification, PASS 1 (blind enumerative)",
             "l4": "EG-7 Layer-4 (chord) certification, PASS 1 (blind enumerative)",
+            "l5": "EG-7 Layer-5 (function) + instruments certification, PASS 1 (blind enumerative)",
         }[AUDIT_LAYER],
         "audit_layer": AUDIT_LAYER,
         "head_commit": head,
         "script_blob_sha": script_sha,
         "corpus_hash": CORPUS_HASH,
-        "scope_dir": SCOPE_DIR,
-        "extraction_method": "regex/brace-depth scan over comment/string/preproc-blanked C++; heuristic, over-capture-biased; see module docstring",
+        "scope_dir": SCOPE_DIR if AUDIT_LAYER != "l5" else (SCOPE_DIR + " + tools/ (instruments)"),
+        # extraction_method + the io total are l5-conditional so prior-layer manifests
+        # regenerate byte-identically (only the self-referential script_blob_sha evolves).
+        "extraction_method": (
+            "regex/brace-depth scan over comment/string/preproc-blanked C++; heuristic, over-capture-biased; see module docstring"
+            if AUDIT_LAYER != "l5" else
+            "C++ (.cpp/.h): regex/brace-depth scan over comment/string/preproc-blanked source (heuristic, over-capture-biased). Python instruments (.py): exact `ast` scan (functions/literals/branches/class-fields/internal-imports/file-IO). See module docstring."
+        ),
         "totals": {
-            "tracked_files": len(files),
+            "tracked_files": len(files) + (len(list_instrument_scope()) if AUDIT_LAYER == "l5" else 0),
             "file_table_rows": len(file_rows),
             "tag_counts": tag_counts,
             "deep_audited_files": len(deep),
@@ -797,25 +1205,27 @@ def main():
             "fields": len(all_fields),
             "decls": len(all_decls),
             "crosslayer": len(all_cross),
+            **({"io": len(all_io)} if AUDIT_LAYER == "l5" else {}),
         },
         "deep_audited_file_list": deep,
     }
     with open(os.path.join(OUT_DIR, "manifest.json"), "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=1)
 
-    print("gen_inventory OK — %d tracked files, %d deep-audited (%s)" %
-          (len(files), len(deep), "/".join(DEEP_TAGS)))
+    n_tracked = len(files) + (len(list_instrument_scope()) if AUDIT_LAYER == "l5" else 0)
+    print("gen_inventory OK — %d tracked files in scope, %d deep-audited (%s)" %
+          (n_tracked, len(deep), "/".join(DEEP_TAGS)))
     print("  tag counts:", tag_counts)
-    print("  rows: funcs=%d lits=%d branches=%d fields=%d decls=%d cross=%d" %
+    print("  rows: funcs=%d lits=%d branches=%d fields=%d decls=%d cross=%d io=%d" %
           (len(all_funcs), len(all_lits), len(all_branches), len(all_fields),
-           len(all_decls), len(all_cross)))
+           len(all_decls), len(all_cross), len(all_io)))
     if self_check:
         print("\n-- per-file extraction counts (establish-the-instrument cross-check) --")
         for p in deep:
             c = per_file[p]
-            print("  %-62s f=%2d lit=%3d br=%3d fld=%2d dcl=%2d x=%2d" %
+            print("  %-62s f=%2d lit=%3d br=%3d fld=%2d dcl=%2d x=%2d io=%2d" %
                   (p, c["functions"], c["literals"], c["branches"], c["fields"],
-                   c["decls"], c["crosslayer"]))
+                   c["decls"], c["crosslayer"], c.get("io", 0)))
 
 
 if __name__ == "__main__":

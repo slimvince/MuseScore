@@ -1,0 +1,308 @@
+file,line,type_owner,field_type,name,context
+src/composing/analysis/function/forwardoverride.h,81,ForwardOverrideParams,double,baseBar,double baseBar         = 1.0;  ///< contradiction strength required at zero earlier-confidence
+src/composing/analysis/function/forwardoverride.h,82,ForwardOverrideParams,double,confidenceScale,"double confidenceScale = 1.0;  ///< extra bar per unit of earlier-layer confidence [0,1]"
+src/composing/analysis/function/forwardoverride.h,152,OnePassClosure,std::set<int>,m_closed,std::set<int> m_closed;        ///< the closed-decision ids (grows-only within a pass)
+src/composing/analysis/function/forwardoverride.h,153,OnePassClosure,bool,m_recomputing,bool m_recomputing = false;    ///< true during an active forwardRecompute sweep (no nesting)
+src/composing/analysis/function/functioncadence.h,125,CadenceVoiceNote,int,voice,int voice = 0;   ///< voice id (the resolution is tested per voice / melodically)
+src/composing/analysis/function/functioncadence.h,126,CadenceVoiceNote,int,pitch,int pitch = 0;   ///< MIDI pitch (ppitch)
+src/composing/analysis/function/functioncadence.h,137,CadenceEvent,int,rootPc,int rootPc = -1;                              ///< committed root pitch class (0–11); -1 = none
+src/composing/analysis/function/functioncadence.h,138,CadenceEvent,ChordQuality,quality,ChordQuality quality = ChordQuality::Unknown; ///< committed chord quality
+src/composing/analysis/function/functioncadence.h,139,CadenceEvent,int,bassPc,int bassPc = -1;                              ///< committed bass pitch class (0–11); -1 = none
+src/composing/analysis/function/functioncadence.h,141,CadenceEvent,std::vector<CadenceVoiceNote>,notes,"std::vector<CadenceVoiceNote> notes;          ///< the event's sounding notes, per voice"
+src/composing/analysis/function/functioncadence.h,143,CadenceEvent,double,metricWeight,"double metricWeight = 1.0;   ///< §3 metric weight of the event's onset [0.5,1.0]; higher = stronger"
+src/composing/analysis/function/functioncadence.h,144,CadenceEvent,int,startTick,int startTick = 0;           ///< event start tick (raw integer)
+src/composing/analysis/function/functioncadence.h,145,CadenceEvent,int,endTick,"int endTick = 0;             ///< event end tick, exclusive"
+src/composing/analysis/function/functioncadence.h,151,CadenceEvent,bool,endsPhrase,bool endsPhrase = false;
+src/composing/analysis/function/functioncadence.h,154,CadenceEvent,bool,isFinalBar,bool isFinalBar = false;
+src/composing/analysis/function/functioncadence.h,171,FunctionalCadence,FunctionalCadenceType,type,FunctionalCadenceType type = FunctionalCadenceType::None;
+src/composing/analysis/function/functioncadence.h,172,FunctionalCadence,int,approachTick,int approachTick = -1;       ///< startTick of the approach (dominant / pre-dominant) event
+src/composing/analysis/function/functioncadence.h,173,FunctionalCadence,int,arrivalTick,int arrivalTick = -1;        ///< startTick of the arrival event
+src/composing/analysis/function/functioncadence.h,175,FunctionalCadence,int,tonicPc,"int tonicPc = -1;            ///< the TONIC this cadence votes for (key-agnostic — derived, not read)"
+src/composing/analysis/function/functioncadence.h,176,FunctionalCadence,bool,minorMode,bool minorMode = false;      ///< the cadential tonic's mode (best-effort from the arrival/pre-dominant)
+src/composing/analysis/function/functioncadence.h,178,FunctionalCadence,double,tonicVote,double tonicVote = 0.0;      ///< the §5.2 weighted tonic vote (firewall seeds; direction fixed)
+src/composing/analysis/function/functioncadence.h,181,FunctionalCadence,bool,bassFiveToOne,bool bassFiveToOne = false;       ///< the bass moves scale-degree 5̂→1̂ (root-position cadential bass)
+src/composing/analysis/function/functioncadence.h,182,FunctionalCadence,bool,leadingToneResolves,bool leadingToneResolves = false; ///< the 7̂→1̂ same-voice resolution event fired across the boundary
+src/composing/analysis/function/functioncadence.h,183,FunctionalCadence,bool,genuineDominant,bool genuineDominant = false;     ///< the dominant carries a seventh or a resolving tritone
+src/composing/analysis/function/functioncadence.h,184,FunctionalCadence,bool,sixFourCollapsed,bool sixFourCollapsed = false;    ///< a cadential six-four was collapsed into this dominant approach
+src/composing/analysis/function/functioncadence.h,195,FunctionCadenceParams,double,wBase,double wBase            = 1.0;   ///< every admitted cadence
+src/composing/analysis/function/functioncadence.h,196,FunctionCadenceParams,double,wBassFiveToOne,double wBassFiveToOne   = 1.0;   ///< evidence: bass 5̂→1̂
+src/composing/analysis/function/functioncadence.h,197,FunctionCadenceParams,double,wLeadingTone,double wLeadingTone     = 1.0;   ///< evidence: leading-tone resolution
+src/composing/analysis/function/functioncadence.h,198,FunctionCadenceParams,double,wSeventh,double wSeventh         = 1.0;   ///< evidence: genuine dominant (seventh / resolving tritone)
+src/composing/analysis/function/functioncadence.h,199,FunctionCadenceParams,double,wMetric,"double wMetric          = 1.0;   ///< salience: multiplied by the event metric weight [0.5,1.0]"
+src/composing/analysis/function/functioncadence.h,200,FunctionCadenceParams,double,wPhraseBoundary,double wPhraseBoundary  = 2.0;   ///< salience: fermata / section end (the structural primary)
+src/composing/analysis/function/functioncadence.h,201,FunctionCadenceParams,double,wFinalBar,double wFinalBar        = 1.0;   ///< salience: the final bar
+src/composing/analysis/function/functioncadence.h,203,FunctionCadenceParams,double,discountHalf,double discountHalf     = 0.5;   ///< half is the weakest reading — held lower by rule
+src/composing/analysis/function/functioncadence.h,204,FunctionCadenceParams,double,discountPlagal,double discountPlagal   = 0.5;   ///< plagal is a possible post-cadential prolongation — lower by rule
+src/composing/analysis/function/functioncadence.h,205,FunctionCadenceParams,double,discountEvaded,double discountEvaded   = 0.5;   ///< evaded — lower by rule
+src/composing/analysis/function/functionmodulation.h,111,ModulationParams,double,baseChangeCost,double baseChangeCost   = 1.0;  ///< the cost to commit a key change at zero persistence evidence
+src/composing/analysis/function/functionmodulation.h,112,ModulationParams,double,wDuration,double wDuration        = 1.0;  ///< evidence per whole-note of cadence-confirmed candidate-area duration
+src/composing/analysis/function/functionmodulation.h,113,ModulationParams,double,wCadentialWeight,double wCadentialWeight = 1.0;  ///< evidence per unit of accumulated §5.2 cadential vote inside the area
+src/composing/analysis/function/functionmodulation.h,114,ModulationParams,double,wSpelling,"double wSpelling        = 0.5;  ///< §5.3 notated-spelling support (function-gated), SOFT — one input to (b)"
+src/composing/analysis/function/functionmodulation.h,117,ModulationParams,ForwardOverrideParams,override,ForwardOverrideParams override; ///< the cadence-strength-vs-key-confidence bar (firewall seeds)
+src/composing/analysis/function/functionmodulation.h,137,ModulationDecision,int,startTick,int startTick = 0;
+src/composing/analysis/function/functionmodulation.h,138,ModulationDecision,int,endTick,int endTick = 0;
+src/composing/analysis/function/functionmodulation.h,139,ModulationDecision,int,tonicPc,int tonicPc = -1;
+src/composing/analysis/function/functionmodulation.h,140,ModulationDecision,bool,minorMode,bool minorMode = false;
+src/composing/analysis/function/functionmodulation.h,142,ModulationDecision,bool,isHomeKey,bool isHomeKey = false;            ///< the span agrees with the key-agnostic home anchor (never a modulation)
+src/composing/analysis/function/functionmodulation.h,143,ModulationDecision,bool,cadenceConfirmed,bool cadenceConfirmed = false;     ///< §5.3 (a): a §5.2 cadence in the candidate key confirms it (necessary)
+src/composing/analysis/function/functionmodulation.h,144,ModulationDecision,int,confirmingCadenceCount,int  confirmingCadenceCount = 0;   ///< §5.2 cadences (any authentic/half) to this tonic inside the span
+src/composing/analysis/function/functionmodulation.h,145,ModulationDecision,double,cadentialWeight,double cadentialWeight = 0.0;      ///< §5.3 (b): the summed §5.2 tonic-votes of those cadences
+src/composing/analysis/function/functionmodulation.h,146,ModulationDecision,double,durationWholeNotes,double durationWholeNotes = 0.0;   ///< §5.3 (b): the candidate area's duration in whole notes
+src/composing/analysis/function/functionmodulation.h,147,ModulationDecision,bool,spellingSupport,bool spellingSupport = false;      ///< §5.3: the function-gated notated-spelling key signal (soft input to b)
+src/composing/analysis/function/functionmodulation.h,149,ModulationDecision,double,persistenceEvidence,double persistenceEvidence = 0.0;  ///< §5.3 (b): wDuration·dur + wCadentialWeight·weight + wSpelling·spelling
+src/composing/analysis/function/functionmodulation.h,150,ModulationDecision,double,changeCost,double changeCost = 0.0;           ///< §5.3 (b): the change-cost the evidence is tested against (baseChangeCost)
+src/composing/analysis/function/functionmodulation.h,152,ModulationDecision,bool,isModulation,bool isModulation = false;         ///< the §5.3 verdict — false ⇒ TONICIZATION (the default; break-even tonicizes)
+src/composing/analysis/function/functionmodulation.h,190,ModulationRecomputeResult,bool,fired,bool fired = false;        ///< the §8 override fired (the modulation overturned the *confident* home key)
+src/composing/analysis/function/functionmodulation.h,191,ModulationRecomputeResult,int,slicesReread,int slicesReread = 0;      ///< forwardRecompute's count (0 if not fired; -1 if the sweep was refused)
+src/composing/analysis/function/functionmodulation.h,192,ModulationRecomputeResult,int,newTonicPc,int newTonicPc = -1;       ///< the committed new local tonic (when fired)
+src/composing/analysis/function/functionmodulation.h,193,ModulationRecomputeResult,bool,newMinorMode,bool newMinorMode = false; ///< the committed new local mode (when fired)
+src/composing/analysis/function/functionoutput.h,86,FunctionConfidence,double,cadenceVoteWeight,double cadenceVoteWeight = 0.0;       ///< §5.2: the tonic-vote of the cadence anchoring this unit (0 if none)
+src/composing/analysis/function/functionoutput.h,87,FunctionConfidence,double,licensedProgressionFit,double licensedProgressionFit = 0.0;  ///< §5.0: 1.0 when the motion INTO this unit is a licensed progression
+src/composing/analysis/function/functionoutput.h,88,FunctionConfidence,double,nextBestMargin,double nextBestMargin = 0.0;          ///< §5.5: the resolver's margin-to-next-best (its functionConfidence)
+src/composing/analysis/function/functionoutput.h,89,FunctionConfidence,double,combined,double combined = 0.0;                ///< the default-weighted combination (firewall — weights precision-phase)
+src/composing/analysis/function/functionoutput.h,98,FunctionConfidence,double,combinedBoundary,"double combinedBoundary = 0.0;        ///< combined / (combined + kBoundary) ∈ [0,1) — the U2 boundary form"
+src/composing/analysis/function/functionoutput.h,103,FunctionOutputParams,double,wCadenceVote,double wCadenceVote    = 1.0;   ///< weight of the §5.2 cadence-vote component
+src/composing/analysis/function/functionoutput.h,104,FunctionOutputParams,double,wLicensedFit,double wLicensedFit    = 1.0;   ///< weight of the §5.0 licensed-progression-fit component
+src/composing/analysis/function/functionoutput.h,105,FunctionOutputParams,double,wNextBestMargin,double wNextBestMargin = 1.0;   ///< weight of the §5.5 margin component
+src/composing/analysis/function/functionoutput.h,108,FunctionOutputParams,double,kBoundary,double kBoundary       = 1.0;
+src/composing/analysis/function/functionoutput.h,116,FunctionAnalysisUnit,int,sliceIndex,int sliceIndex = -1;
+src/composing/analysis/function/functionoutput.h,117,FunctionAnalysisUnit,int,startTick,int startTick = 0;
+src/composing/analysis/function/functionoutput.h,118,FunctionAnalysisUnit,int,endTick,int endTick = 0;
+src/composing/analysis/function/functionoutput.h,120,FunctionAnalysisUnit,std::string,romanNumeral,"std::string romanNumeral;             ///< the FULL DCML numeral (base RN + relational label), no simplification"
+src/composing/analysis/function/functionoutput.h,121,FunctionAnalysisUnit,RelationalRole,relationalRole,RelationalRole relationalRole = RelationalRole::None;
+src/composing/analysis/function/functionoutput.h,123,FunctionAnalysisUnit,FunctionConfidence,confidence,FunctionConfidence confidence;        ///< §7 function confidence
+src/composing/analysis/function/functionoutput.h,124,FunctionAnalysisUnit,bool,openMark,"bool openMark = false;                ///< §7 honest open mark (genuinely undecided — carried, not a guess)"
+src/composing/analysis/function/functionoutput.h,126,FunctionAnalysisUnit,ChordIdentity,committedIdentity,"ChordIdentity committedIdentity;      ///< the L4 committed chord — carried, NOT replaced (additive §7)"
+src/composing/analysis/function/functionoutput.h,131,FunctionRegionMarkers,int,startTick,int startTick = 0;
+src/composing/analysis/function/functionoutput.h,132,FunctionRegionMarkers,int,endTick,int endTick = 0;
+src/composing/analysis/function/functionoutput.h,134,FunctionRegionMarkers,int,localTonicPc,int localTonicPc = -1;                ///< the region's local key tonic (possibly changed by a confirmed modulation)
+src/composing/analysis/function/functionoutput.h,135,FunctionRegionMarkers,bool,localMinorMode,bool localMinorMode = false;
+src/composing/analysis/function/functionoutput.h,136,FunctionRegionMarkers,bool,modulated,bool modulated = false;               ///< §5.4: a confirmed modulation changed the key from the home key
+src/composing/analysis/function/functionoutput.h,138,FunctionRegionMarkers,std::vector<FunctionalCadence>,cadences,"std::vector<FunctionalCadence> cadences;  ///< §5.2 cadence markers (type, location, salience)"
+src/composing/analysis/function/functionoutput.h,143,FunctionLayerOutput,std::vector<FunctionAnalysisUnit>,units,"std::vector<FunctionAnalysisUnit> units;   ///< the per-unit Roman numerals + confidence + open marks, in order"
+src/composing/analysis/function/functionoutput.h,144,FunctionLayerOutput,FunctionRegionMarkers,region,FunctionRegionMarkers region;              ///< the region's local key + cadence markers
+src/composing/analysis/function/functionoutput.h,155,FunctionUnitAssembly,int,startTick,int startTick = 0;
+src/composing/analysis/function/functionoutput.h,156,FunctionUnitAssembly,int,endTick,int endTick = 0;
+src/composing/analysis/function/functionoutput.h,158,FunctionUnitAssembly,ChordIdentity,committedIdentity,"ChordIdentity committedIdentity;      ///< L4's committed chord (carried, NOT replaced — additive §7)"
+src/composing/analysis/function/functionoutput.h,159,FunctionUnitAssembly,ProgressionChord,chord,"ProgressionChord chord;               ///< root + quality, for the §5.0 licensed-fit query"
+src/composing/analysis/function/functionoutput.h,160,FunctionUnitAssembly,bool,committed,bool committed = true;                ///< an L4 commit/inherit (vs an abstain) — drives the licensed-fit chain
+src/composing/analysis/function/functionoutput.h,162,FunctionUnitAssembly,RelationalLabel,relational,RelationalLabel relational;           ///< Step-5 relational label (its `.label` IS the full RN; `.role` the role)
+src/composing/analysis/function/functionoutput.h,165,FunctionUnitAssembly,bool,openMark,bool openMark = false;                ///< the honest open mark (§7)
+src/composing/analysis/function/functionoutput.h,166,FunctionUnitAssembly,double,resolverConfidence,double resolverConfidence = 0.0;      ///< the resolver's functionConfidence (the §7 margin-to-next-best component)
+src/composing/analysis/function/functionprogression.h,128,ProgressionChord,int,rootPc,int rootPc = -1;                              ///< committed root pitch class (0–11); -1 = none
+src/composing/analysis/function/functionprogression.h,129,ProgressionChord,ChordQuality,quality,ChordQuality quality = ChordQuality::Unknown; ///< committed chord quality
+src/composing/analysis/function/functionprogression.h,139,ProgressionSlice,ProgressionChord,chord,ProgressionChord chord;       ///< the committed chord (valid only when committed == true)
+src/composing/analysis/function/functionprogression.h,140,ProgressionSlice,bool,committed,"bool committed = false;       ///< a committed, non-abstained chord (L4 decision Commit/Inherit)"
+src/composing/analysis/function/functionprogression.h,141,ProgressionSlice,double,metricWeight,double metricWeight = 1.0;    ///< slice metric weight (§3); higher == metrically stronger
+src/composing/analysis/function/functionprogression.h,142,ProgressionSlice,int,startTick,int startTick = 0;            ///< slice start tick (raw integer)
+src/composing/analysis/function/functionprogression.h,143,ProgressionSlice,int,endTick,"int endTick = 0;              ///< slice end tick, exclusive"
+src/composing/analysis/function/functionrelationallabel.h,115,RelationalLabelInput,ChordIdentity,identity,ChordIdentity identity;
+src/composing/analysis/function/functionrelationallabel.h,117,RelationalLabelInput,int,keyFifths,"int keyFifths = 0;                       ///< prevailing key signature fifths (-7..+7, Ionian convention)"
+src/composing/analysis/function/functionrelationallabel.h,118,RelationalLabelInput,KeySigMode,keyMode,KeySigMode keyMode = KeySigMode::Ionian; ///< prevailing mode
+src/composing/analysis/function/functionrelationallabel.h,119,RelationalLabelInput,int,keyTonicPc,int keyTonicPc = 0;                      ///< prevailing tonic pitch class (0=C)
+src/composing/analysis/function/functionrelationallabel.h,125,RelationalLabelInput,int,nextRootPc,int nextRootPc = -1;
+src/composing/analysis/function/functionrelationallabel.h,131,RelationalLabelInput,std::vector<int>,noteTpcs,std::vector<int> noteTpcs;
+src/composing/analysis/function/functionrelationallabel.h,135,RelationalLabelInput,uint16_t,pitchClassMask,uint16_t pitchClassMask = 0;
+src/composing/analysis/function/functionrelationallabel.h,140,RelationalLabel,RelationalRole,role,RelationalRole role = RelationalRole::None;
+src/composing/analysis/function/functionrelationallabel.h,141,RelationalLabel,std::string,label,std::string label;               ///< the emitted RN string (from formatRomanNumeral / emitAppliedLabel)
+src/composing/analysis/function/functionrelationallabel.h,143,RelationalLabel,int,targetDegree,int targetDegree = -1;           ///< applied: 0..6 tonicized degree in the LOCAL key; else -1
+src/composing/analysis/function/functionrelationallabel.h,144,RelationalLabel,int,targetPc,int targetPc = -1;               ///< applied: pitch class of the tonicized degree; else -1
+src/composing/analysis/function/functionrelationallabel.h,146,RelationalLabel,bool,spellingConsulted,bool spellingConsulted = false;  ///< the aug6 path read the notated spelling (transparency)
+src/composing/analysis/function/functionrelationallabel.h,147,RelationalLabel,bool,spelledAsAugSixth,bool spelledAsAugSixth = false;  ///< the +10 tone is spelled as an augmented sixth (vs a minor seventh)
+src/composing/analysis/function/functionresolver.h,108,ResolverKey,int,keyFifths,int keyFifths = 0;
+src/composing/analysis/function/functionresolver.h,109,ResolverKey,KeySigMode,keyMode,KeySigMode keyMode = KeySigMode::Ionian;
+src/composing/analysis/function/functionresolver.h,110,ResolverKey,int,tonicPc,int tonicPc = 0;
+src/composing/analysis/function/functionresolver.h,123,FunctionSlice,ProgressionChord,chord,ProgressionChord chord;        ///< the committed chord (valid when committed == true)
+src/composing/analysis/function/functionresolver.h,124,FunctionSlice,bool,committed,bool committed = false;        ///< an L4 Commit/Inherit (non-abstained) chord
+src/composing/analysis/function/functionresolver.h,125,FunctionSlice,double,metricWeight,double metricWeight = 1.0;     ///< slice metric weight (§3); higher == metrically stronger
+src/composing/analysis/function/functionresolver.h,126,FunctionSlice,int,startTick,int startTick = 0;
+src/composing/analysis/function/functionresolver.h,127,FunctionSlice,int,endTick,int endTick = 0;
+src/composing/analysis/function/functionresolver.h,130,FunctionSlice,SliceDecision,decision,SliceDecision decision = SliceDecision::Commit;  ///< G1 Commit / Inherit / Abstain
+src/composing/analysis/function/functionresolver.h,131,FunctionSlice,OpenQuestionLabel,openQuestion,OpenQuestionLabel openQuestion;                  ///< named question + readingA / readingB (on abstain)
+src/composing/analysis/function/functionresolver.h,132,FunctionSlice,std::vector<ChordSliceCandidate>,alternatives,std::vector<ChordSliceCandidate> alternatives;   ///< the ranked carried alternatives
+src/composing/analysis/function/functionresolver.h,133,FunctionSlice,SliceConfidence,confidence,SliceConfidence confidence;                      ///< composite confidence (the §8 earlier-layer confidence)
+src/composing/analysis/function/functionresolver.h,147,FunctionSlice,ChordSliceCandidate,chosen,ChordSliceCandidate chosen;
+src/composing/analysis/function/functionresolver.h,167,ResolvedReading,int,sliceIndex,int sliceIndex = -1;
+src/composing/analysis/function/functionresolver.h,168,ResolvedReading,bool,wasAbstain,bool wasAbstain = false;       ///< the slice was an L4 abstain (case 2) vs a commit (case 4)
+src/composing/analysis/function/functionresolver.h,169,ResolvedReading,bool,resolved,bool resolved = false;         ///< an abstain was resolved (a reading selected)
+src/composing/analysis/function/functionresolver.h,170,ResolvedReading,bool,openMark,bool openMark = false;         ///< the honest open mark — genuinely undecidable (§7)
+src/composing/analysis/function/functionresolver.h,171,ResolvedReading,bool,overrodeCommit,bool overrodeCommit = false;   ///< the §8 case-4 fine-grain override fired on a commit
+src/composing/analysis/function/functionresolver.h,173,ResolvedReading,ChordSliceCandidate,reading,ChordSliceCandidate reading;   ///< the selected/corrected reading (else the committed chord)
+src/composing/analysis/function/functionresolver.h,174,ResolvedReading,AmbiguityKind,kind,"AmbiguityKind kind = AmbiguityKind::None;    ///< the L4 kind, echoed for transparency"
+src/composing/analysis/function/functionresolver.h,175,ResolvedReading,ResolutionBasis,basis,ResolutionBasis basis = ResolutionBasis::None;
+src/composing/analysis/function/functionresolver.h,176,ResolvedReading,double,functionConfidence,double functionConfidence = 0.0;             ///< §7 confidence from the deciding evidence (seed; firewall)
+src/composing/analysis/function/functionresolver.h,182,ResolvedReading,bool,clippedBySelectionEdge,bool clippedBySelectionEdge = false;   ///< the decision-context span was cut by the selection edge
+src/composing/analysis/function/functionresolver.h,183,ResolvedReading,bool,cueDenied,bool cueDenied = false;                ///< a forward-extension request was REFUSED (proceeds on truncated evidence)
+src/composing/analysis/function/functionresolver.h,197,ResolvedReading,bool,bothLicensed,bool bothLicensed = false;
+src/composing/analysis/function/functionresolver.h,202,ResolverResult,std::vector<ResolvedReading>,readings,"std::vector<ResolvedReading> readings;   ///< one per region slice, in order"
+src/composing/analysis/function/functionresolver.h,203,ResolverResult,OnePassClosure,closure,OnePassClosure closure;                  ///< the one-pass closure ledger after the pass (§8)
+src/composing/analysis/function/functionresolver.h,211,FunctionResolverParams,double,wLicensedOut,double wLicensedOut   = 1.0;   ///< §5.5: a licensed progression OUT of the prevailing harmony
+src/composing/analysis/function/functionresolver.h,212,FunctionResolverParams,double,wLicensedIn,double wLicensedIn    = 1.0;   ///< §5.5: a licensed progression INTO the established next function
+src/composing/analysis/function/functionresolver.h,213,FunctionResolverParams,double,wCadentialFit,double wCadentialFit  = 1.0;   ///< §5.5: the reading's root receives a cadence tonic-vote
+src/composing/analysis/function/functionresolver.h,214,FunctionResolverParams,double,decidingMargin,double decidingMargin = 0.5;   ///< §5.5: min plausibility margin to decide (below ⇒ tie ⇒ prior/open)
+src/composing/analysis/function/functionresolver.h,215,FunctionResolverParams,ForwardOverrideParams,override,ForwardOverrideParams override;///< §8: the fine-grain override threshold (firewall seeds)
+src/composing/analysis/function/functionresolver.h,271,L5ForwardExtensionParams,bool,enableForwardExtension,"bool enableForwardExtension = false;   ///< OFF ⇒ no request, byte-identical to resolveCarriedReadings"
+src/composing/analysis/function/functionresolver.h,272,L5ForwardExtensionParams,int,maxForwardExtendSlices,int  maxForwardExtendSlices = 8;       ///< K — the decision-context span's hard bound in slices
+src/composing/analysis/function/functionresolver.h,273,L5ForwardExtensionParams,int,maxForwardExtendBeats,int  maxForwardExtendBeats  = 0;       ///< B — the bound in beats (0 ⇒ slice bound only)
+src/composing/analysis/function/functionromannumeral.h,67,BaseRomanNumeralInput,ChordIdentity,identity,ChordIdentity identity;
+src/composing/analysis/function/functionromannumeral.h,69,BaseRomanNumeralInput,int,keyFifths,"int keyFifths = 0;                       ///< prevailing key signature fifths (-7..+7, Ionian convention)"
+src/composing/analysis/function/functionromannumeral.h,70,BaseRomanNumeralInput,KeySigMode,keyMode,KeySigMode keyMode = KeySigMode::Ionian; ///< prevailing mode
+src/composing/analysis/function/functionromannumeral.h,71,BaseRomanNumeralInput,int,keyTonicPc,int keyTonicPc = 0;                      ///< prevailing tonic pitch class (0=C)
+src/composing/analysis/function/functionromannumeral.h,77,BaseRomanNumeralInput,int,nextRootPc,int nextRootPc = -1;
+src/composing/analysis/function/functionromannumeral.h,82,BaseRomanNumeral,std::string,label,std::string label;        ///< the full numeral (formatRomanNumeral output); empty when undecidable
+src/composing/analysis/function/functionromannumeral.h,83,BaseRomanNumeral,int,degree,int degree = -1;          ///< 0..6 diatonic degree of the root in the key; -1 when chromatic
+src/composing/analysis/function/functionromannumeral.h,84,BaseRomanNumeral,bool,diatonicToKey,bool diatonicToKey = false;
+src/composing/analysis/function/tonicizationlabeler.h,73,TonicizationRegionInput,int,startTick,int startTick = 0;
+src/composing/analysis/function/tonicizationlabeler.h,74,TonicizationRegionInput,int,endTick,int endTick = 0;
+src/composing/analysis/function/tonicizationlabeler.h,78,TonicizationRegionInput,int,rootPc,int rootPc = -1;
+src/composing/analysis/function/tonicizationlabeler.h,81,TonicizationRegionInput,ChordQuality,quality,ChordQuality quality = ChordQuality::Unknown;
+src/composing/analysis/function/tonicizationlabeler.h,86,TonicizationRegionInput,bool,hasMinorSeventh,bool hasMinorSeventh = false;
+src/composing/analysis/function/tonicizationlabeler.h,87,TonicizationRegionInput,bool,hasDiminishedSeventh,bool hasDiminishedSeventh = false;
+src/composing/analysis/function/tonicizationlabeler.h,92,TonicizationRegionInput,uint16_t,pitchClassMask,uint16_t pitchClassMask = 0;
+src/composing/analysis/function/tonicizationlabeler.h,102,TonicizationRegionInput,int,keyTonicPc,int keyTonicPc = 0;
+src/composing/analysis/function/tonicizationlabeler.h,103,TonicizationRegionInput,bool,keyIsMajor,bool keyIsMajor = true;
+src/composing/analysis/function/tonicizationlabeler.h,104,TonicizationRegionInput,int,keySignatureFifths,int keySignatureFifths = 0;
+src/composing/analysis/function/tonicizationlabeler.h,117,TonicizationLabel,bool,isApplied,bool isApplied = false;            ///< true ⇒ this region is an applied chord of a degree d
+src/composing/analysis/function/tonicizationlabeler.h,118,TonicizationLabel,AppliedKind,kind,AppliedKind kind = AppliedKind::None;
+src/composing/analysis/function/tonicizationlabeler.h,120,TonicizationLabel,int,targetPc,int targetPc = -1;        ///< pitch class of the tonicized degree d (== next region root)
+src/composing/analysis/function/tonicizationlabeler.h,121,TonicizationLabel,int,targetDegree,int targetDegree = -1;    ///< 1..6 scale degree of d in the prevailing key (0=tonic excluded)
+src/composing/analysis/function/tonicizationlabeler.h,122,TonicizationLabel,bool,targetIsMajor,bool targetIsMajor = false; ///< the degree triad has a major third ⇒ uppercase degree token
+src/composing/analysis/function/tonicizationlabeler.h,123,TonicizationLabel,bool,hasSeventh,bool hasSeventh = false;  ///< the applied chord carries a seventh (V7 / viio7)
+src/composing/analysis/function/tonicizationlabeler.h,125,TonicizationLabel,int,leadingTonePc,"int leadingTonePc = -1;   ///< raised leading tone of d ((d+11) mod 12), the chromatic marker"
+src/composing/analysis/function/tonicizationlabeler.h,131,TonicizationLabel,std::string,label,std::string label;
+src/composing/analysis/progression/progressionrecognizer.h,115,RecognitionParams,double,blendRate,double blendRate = 1.0;
+src/composing/analysis/progression/progressionrecognizer.h,120,RecognitionParams,double,admissionThreshold,double admissionThreshold = 0.0;
+src/composing/analysis/progression/progressionrecognizer.h,126,RecognitionParams,double,modeCueFactor,double modeCueFactor = 0.5;
+src/composing/analysis/progression/progressionrecognizer.h,132,RecognitionParams,double,chordsOnlyFactor,double chordsOnlyFactor = 0.5;
+src/composing/analysis/progression/progressionrecognizer.h,150,CandidateReading,int,rootPc,int rootPc = -1;
+src/composing/analysis/progression/progressionrecognizer.h,151,CandidateReading,ChordQuality,quality,ChordQuality quality = ChordQuality::Unknown;
+src/composing/analysis/progression/progressionrecognizer.h,152,CandidateReading,uint32_t,extensions,uint32_t extensions = 0;
+src/composing/analysis/progression/progressionrecognizer.h,153,CandidateReading,double,functionalPlausibility,"double functionalPlausibility = 0.0;  ///< the §5.5 ""close""-rule score for this reading"
+src/composing/analysis/progression/progressionrecognizer.h,163,CommittedChord,SpanChord,chord,SpanChord chord;                          ///< the recognise-query chord (REUSED Vocabulary type)
+src/composing/analysis/progression/progressionrecognizer.h,164,CommittedChord,int,startTick,int startTick = 0;
+src/composing/analysis/progression/progressionrecognizer.h,165,CommittedChord,int,endTick,int endTick = 0;
+src/composing/analysis/progression/progressionrecognizer.h,167,CommittedChord,bool,committed,bool committed = true;                    ///< an L4 Commit/Inherit (vs an abstain) — §0/§4.3
+src/composing/analysis/progression/progressionrecognizer.h,168,CommittedChord,double,compositeConfidence,"double compositeConfidence = 1.0;         ///< L4's [0,1] composite confidence — the §8 threshold-scaling input"
+src/composing/analysis/progression/progressionrecognizer.h,170,CommittedChord,std::vector<CandidateReading>,rankedCandidates,std::vector<CandidateReading> rankedCandidates;  ///< §4.3 abstained: the readings to select among
+src/composing/analysis/progression/progressionrecognizer.h,180,SchemaSubstitution,int,position,int position = -1;                                    ///< committed-progression index
+src/composing/analysis/progression/progressionrecognizer.h,181,SchemaSubstitution,SubstitutionType,substitution,SubstitutionType substitution = SubstitutionType::TritoneSub;
+src/composing/analysis/progression/progressionrecognizer.h,182,SchemaSubstitution,std::string,readOut,"std::string readOut;                                  ///< e.g. ""♭II7 = subV7/I (tritone substitution)"""
+src/composing/analysis/progression/progressionrecognizer.h,190,ProgressionSchemaSpan,std::string,name,std::string name;                         ///< the recognised entry's conventional name
+src/composing/analysis/progression/progressionrecognizer.h,191,ProgressionSchemaSpan,IdiomSet,idioms,IdiomSet idioms = 0;                      ///< the entry's idiom set (multi-valued)
+src/composing/analysis/progression/progressionrecognizer.h,192,ProgressionSchemaSpan,int,startIndex,"int startIndex = 0;                       ///< covered position range [startIndex, endIndex)"
+src/composing/analysis/progression/progressionrecognizer.h,193,ProgressionSchemaSpan,int,endIndex,int endIndex = 0;
+src/composing/analysis/progression/progressionrecognizer.h,194,ProgressionSchemaSpan,int,startTick,int startTick = 0;                        ///< covered tick range (for the L6 host)
+src/composing/analysis/progression/progressionrecognizer.h,195,ProgressionSchemaSpan,int,endTick,int endTick = 0;
+src/composing/analysis/progression/progressionrecognizer.h,196,ProgressionSchemaSpan,double,matchScore,"double matchScore = 0.0;                  ///< the Vocabulary's match score (v1: 1.0, an exact realisation)"
+src/composing/analysis/progression/progressionrecognizer.h,197,ProgressionSchemaSpan,double,priorStrength,double priorStrength = 0.0;               ///< §4.5 prior strength (this span passed admission)
+src/composing/analysis/progression/progressionrecognizer.h,198,ProgressionSchemaSpan,bool,chordsOnly,"bool chordsOnly = false;                  ///< D7 — a voiceLeadingDefined entry, recognised by chords alone"
+src/composing/analysis/progression/progressionrecognizer.h,199,ProgressionSchemaSpan,std::vector<SchemaSubstitution>,substitutedMembers,std::vector<SchemaSubstitution> substitutedMembers;   ///< §4.2 the substituted-member read-outs (may be empty)
+src/composing/analysis/progression/progressionrecognizer.h,212,AbstainedFeature,int,position,int position = -1;                        ///< committed-progression index (Layer 4 abstained here)
+src/composing/analysis/progression/progressionrecognizer.h,213,AbstainedFeature,int,memberRootPc,int memberRootPc = -1;                    ///< the reading that fills the member (the surface realisation)
+src/composing/analysis/progression/progressionrecognizer.h,214,AbstainedFeature,ChordQuality,memberQuality,ChordQuality memberQuality = ChordQuality::Unknown;
+src/composing/analysis/progression/progressionrecognizer.h,215,AbstainedFeature,double,weight,double weight = 0.0;                      ///< = the recognition's prior strength (the feature weight)
+src/composing/analysis/progression/progressionrecognizer.h,216,AbstainedFeature,int,selectedCandidateIndex,"int selectedCandidateIndex = -1;          ///< the ranked candidate that fills the member, or -1 if none"
+src/composing/analysis/progression/progressionrecognizer.h,217,AbstainedFeature,std::string,schemaName,std::string schemaName;                   ///< the recognition supplying this feature
+src/composing/analysis/progression/progressionrecognizer.h,236,CommittedOverrideContribution,int,position,int position = -1;
+src/composing/analysis/progression/progressionrecognizer.h,237,CommittedOverrideContribution,int,committedRootPc,int committedRootPc = -1;                 ///< the L4 committed reading (differs from the member)
+src/composing/analysis/progression/progressionrecognizer.h,238,CommittedOverrideContribution,ChordQuality,committedQuality,ChordQuality committedQuality = ChordQuality::Unknown;
+src/composing/analysis/progression/progressionrecognizer.h,239,CommittedOverrideContribution,int,memberRootPc,int memberRootPc = -1;                    ///< the recognised member's demanded realisation (the selection)
+src/composing/analysis/progression/progressionrecognizer.h,240,CommittedOverrideContribution,ChordQuality,memberQuality,ChordQuality memberQuality = ChordQuality::Unknown;
+src/composing/analysis/progression/progressionrecognizer.h,241,CommittedOverrideContribution,double,priorStrength,double priorStrength = 0.0;               ///< enters the F-B contradiction quantity
+src/composing/analysis/progression/progressionrecognizer.h,242,CommittedOverrideContribution,double,compositeConfidence,double compositeConfidence = 0.0;         ///< the committed reading's confidence (the §8 threshold-scaling input)
+src/composing/analysis/progression/progressionrecognizer.h,243,CommittedOverrideContribution,std::string,schemaName,std::string schemaName;
+src/composing/analysis/progression/progressionrecognizer.h,254,HarmonicSequence,std::string,name,std::string name;                         ///< the repeated progression entry's name
+src/composing/analysis/progression/progressionrecognizer.h,255,HarmonicSequence,int,transpositionStep,"int transpositionStep = 0;                ///< the constant nonzero semitone shift between repetitions [1,11]"
+src/composing/analysis/progression/progressionrecognizer.h,256,HarmonicSequence,int,startIndex,"int startIndex = 0;                       ///< covered position range [startIndex, endIndex)"
+src/composing/analysis/progression/progressionrecognizer.h,257,HarmonicSequence,int,endIndex,int endIndex = 0;
+src/composing/analysis/progression/progressionrecognizer.h,258,HarmonicSequence,int,startTick,int startTick = 0;
+src/composing/analysis/progression/progressionrecognizer.h,259,HarmonicSequence,int,endTick,int endTick = 0;
+src/composing/analysis/progression/progressionrecognizer.h,260,HarmonicSequence,int,repetitions,int repetitions = 0;                      ///< number of transposed repetitions (≥ 2 by construction)
+src/composing/analysis/progression/progressionrecognizer.h,261,HarmonicSequence,double,priorStrength,double priorStrength = 0.0;               ///< the max prior strength among the repeated recognitions
+src/composing/analysis/progression/progressionrecognizer.h,266,ProgressionRecognitionOutput,IdiomWeights,weights,IdiomWeights weights = kEqualSeed;                       ///< §4.5 phase-2 mixture w (exposed — the future auto-detect)
+src/composing/analysis/progression/progressionrecognizer.h,267,ProgressionRecognitionOutput,std::vector<ProgressionSchemaSpan>,schemaSpans,"std::vector<ProgressionSchemaSpan> schemaSpans;          ///< §4.4 the annotation (ordered: longer, then more specific)"
+src/composing/analysis/progression/progressionrecognizer.h,268,ProgressionRecognitionOutput,std::vector<AbstainedFeature>,abstainedFeatures,std::vector<AbstainedFeature> abstainedFeatures;         ///< §4.3 abstained-position §5.5 features
+src/composing/analysis/progression/progressionrecognizer.h,269,ProgressionRecognitionOutput,std::vector<CommittedOverrideContribution>,overrides,std::vector<CommittedOverrideContribution> overrides;    ///< §4.3 committed-position F-B contributions
+src/composing/analysis/progression/progressionrecognizer.h,270,ProgressionRecognitionOutput,std::vector<HarmonicSequence>,sequences,std::vector<HarmonicSequence> sequences;                 ///< §4.6 always-emitted key-evidence output
+tools/compare_analyses.py,47,Region,int,measure_number,measure_number:   int
+tools/compare_analyses.py,48,Region,float,beat,beat:             float
+tools/compare_analyses.py,49,Region,int,start_tick,start_tick:       int
+tools/compare_analyses.py,50,Region,int,end_tick,end_tick:         int
+tools/compare_analyses.py,51,Region,float,duration,duration:         float
+tools/compare_analyses.py,52,Region,int,root_pc,root_pc:          int
+tools/compare_analyses.py,53,Region,str,quality,quality:          str
+tools/compare_analyses.py,54,Region,str,chord_symbol,chord_symbol:     str
+tools/compare_analyses.py,55,Region,str,roman_numeral,roman_numeral:    str
+tools/compare_analyses.py,56,Region,str,key,key:              str
+tools/compare_analyses.py,57,Region,float,key_confidence,key_confidence:   float
+tools/compare_analyses.py,58,Region,Optional[bool],diatonic_to_key,diatonic_to_key:  Optional[bool]
+tools/compare_analyses.py,59,Region,list[dict],alternatives,alternatives:     list[dict] = field(default_factory=list)
+tools/compare_analyses.py,61,Region,Optional[float],chord_score,chord_score:      Optional[float] = None
+tools/compare_analyses.py,62,Region,Optional[float],chord_score_margin,chord_score_margin: Optional[float] = None
+tools/compare_analyses.py,63,Region,Optional[int],bass_pc,bass_pc:          Optional[int]   = None
+tools/compare_analyses.py,64,Region,Optional[bool],bass_is_root,bass_is_root:     Optional[bool]  = None
+tools/compare_analyses.py,65,Region,Optional[int],note_count,note_count:       Optional[int]   = None
+tools/compare_analyses.py,66,Region,Optional[int],pitch_class_set,pitch_class_set:  Optional[int]   = None
+tools/compare_analyses.py,67,Region,Optional[dict],key_runner_up,"key_runner_up:    Optional[dict]  = None   # {""key"": str, ""confidence"": float} or None"
+tools/compare_analyses.py,72,ComparedRegion,Region,ours,ours:           Region
+tools/compare_analyses.py,73,ComparedRegion,Optional[Region],theirs,theirs:         Optional[Region]
+tools/compare_analyses.py,74,ComparedRegion,str,category,category:       str
+tools/compare_analyses.py,75,ComparedRegion,str,notes,"notes:          str = """""
+tools/compare_analyses.py,77,ComparedRegion,Optional[object],dcml_region,"dcml_region:    Optional[object] = field(default=None, repr=False)  # DcmlRegion | None"
+tools/compare_analyses.py,78,ComparedRegion,str,three_way_cat,"three_way_cat:  str = ""no_dcml"""
+tools/compare_analyses.py,564,DcmlDirectResult,Region,ours,ours:       Region
+tools/compare_analyses.py,565,DcmlDirectResult,Optional[object],dcml,dcml:       Optional[object]   # DcmlRegion | None
+tools/compare_analyses.py,566,DcmlDirectResult,str,category,category:   str                # 'dcml_agree' | 'dcml_disagree' | 'unaligned'
+tools/compare_analyses.py,574,DcmlDirectResult,Optional[bool],rn_agree,rn_agree:   Optional[bool] = None
+tools/compare_analyses.py,627,DcmlAnchoredResult,object,dcml,dcml:       object                 # DcmlRegion
+tools/compare_analyses.py,628,DcmlAnchoredResult,Optional[Region],ours,ours:       Optional[Region]       # best-overlapping ours region (or None)
+tools/compare_analyses.py,629,DcmlAnchoredResult,str,category,category:   str                    # 'dcml_agree' | 'dcml_disagree' | 'no_ours_coverage'
+tools/compare_analyses.py,634,DcmlAnchoredResult,Optional[bool],rn_agree,rn_agree:   Optional[bool] = None
+tools/compare_rn.py,318,RnPair,int,measure,measure:      int
+tools/compare_rn.py,319,RnPair,float,beat,beat:         float
+tools/compare_rn.py,320,RnPair,str,ours_rn_raw,ours_rn_raw:  str
+tools/compare_rn.py,321,RnPair,str,dcml_rn_raw,dcml_rn_raw:  str
+tools/compare_rn.py,322,RnPair,str,ours_rn,ours_rn:      str          # normalised
+tools/compare_rn.py,323,RnPair,str,dcml_rn,dcml_rn:      str          # normalised
+tools/compare_rn.py,324,RnPair,int,ours_root_pc,ours_root_pc: int
+tools/compare_rn.py,325,RnPair,Optional[int],dcml_root_pc,dcml_root_pc: Optional[int]
+tools/compare_rn.py,326,RnPair,str,category,category:     str          # one of RN_CATEGORIES
+tools/compare_rn.py,400,PieceStats,int,movements,movements:        int = 0
+tools/compare_rn.py,401,PieceStats,int,matched,matched:          int = 0
+tools/compare_rn.py,402,PieceStats,int,exact,exact:            int = 0
+tools/compare_rn.py,403,PieceStats,int,partial,partial:          int = 0
+tools/compare_rn.py,404,PieceStats,int,key_disagree,key_disagree:     int = 0
+tools/compare_rn.py,405,PieceStats,int,quality_disagree,quality_disagree: int = 0
+tools/compare_rn.py,406,PieceStats,int,root_err,root_err:         int = 0
+tools/compare_rn.py,407,PieceStats,Counter,patterns,patterns:         Counter = None    # type: ignore[assignment]
+tools/compare_rn.py,410,PieceStats,Counter,qe_quality_pairs,qe_quality_pairs: Counter = None    # type: ignore[assignment]
+tools/compare_rn.py,411,PieceStats,Counter,qe_rn_pairs,qe_rn_pairs:      Counter = None    # type: ignore[assignment]
+tools/compare_rn.py,415,PieceStats,int,root_aligned,root_aligned:     int = 0           # aligned with DCML root_pc resolved
+tools/compare_rn.py,416,PieceStats,int,root_agree,root_agree:       int = 0
+tools/compare_rn.py,421,PieceStats,int,kd_eq_global,kd_eq_global:     int = 0           # S1: our key == DCML global (≠local)
+tools/compare_rn.py,422,PieceStats,int,kd_ne_global,kd_ne_global:     int = 0           # S2: our key  != DCML global
+tools/compare_rn.py,423,PieceStats,int,kd_keyfail,kd_keyfail:       int = 0           # subset of S2: our key did not parse
+tools/compare_rn.py,426,PieceStats,int,keyparse_fail,keyparse_fail:    int = 0
+tools/compare_rn.py,579,GridStats,int,pieces,pieces:       int = 0
+tools/compare_rn.py,580,GridStats,int,scored_dur,scored_dur:   int = 0           # Σ duration of cells that yielded a scoreable pair
+tools/compare_rn.py,581,GridStats,int,unscored_dur,unscored_dur: int = 0           # Σ duration of cells with no scoreable pair (gap/unaligned)
+tools/compare_rn.py,582,GridStats,Counter,bucket_dur,bucket_dur:   Counter = None    # type: ignore[assignment]  bucket -> Σ duration
+tools/compare_rn.py,688,WirCoverage,int,total,total:   int = 0   # all *.ours.json in the dir
+tools/compare_rn.py,689,WirCoverage,int,covered,covered: int = 0   # those with a resolvable WiR analysis.txt that parsed
+tools/dcml_parser.py,35,DcmlRegion,int,measure_number,measure_number: int
+tools/dcml_parser.py,36,DcmlRegion,float,beat,beat: float
+tools/dcml_parser.py,37,DcmlRegion,str,global_key,global_key: str
+tools/dcml_parser.py,38,DcmlRegion,str,local_key,local_key: str
+tools/dcml_parser.py,39,DcmlRegion,str,chord_symbol,"chord_symbol: str       # raw DCML chord string (e.g. ""V65"")"
+tools/dcml_parser.py,40,DcmlRegion,str,roman_numeral,"roman_numeral: str      # extracted numeral (e.g. ""V"")"
+tools/dcml_parser.py,41,DcmlRegion,Optional[int],root_pc,"root_pc: Optional[int]  # computed from numeral + local key, or None"
+tools/dcml_parser.py,48,DcmlRegion,Optional[int],abs_tick,abs_tick: Optional[int] = None
+tools/dcml_parser.py,59,DcmlRegion,Optional[str],cadence,cadence: Optional[str] = None
+tools/dcml_parser.py,60,DcmlRegion,Optional[str],phraseend,phraseend: Optional[str] = None
+tools/dcml_parser.py,72,DcmlRegion,Optional[str],figbass,figbass: Optional[str] = None
+tools/dcml_parser.py,73,DcmlRegion,Optional[str],pedal,pedal: Optional[str] = None
+tools/dcml_parser.py,327,DcmlMarker,Optional[int],abs_tick,"abs_tick: Optional[int]   # round(Fraction(<quarterbeats col>) * 480), or None"
+tools/dcml_parser.py,328,DcmlMarker,str,label,"label: str                # verbatim cell value (e.g. ""PAC"", ""HC.SIM"", ""}{"")"
+tools/dcml_parser.py,329,DcmlMarker,int,measure_number,measure_number: int
+tools/dcml_parser.py,330,DcmlMarker,float,beat,beat: float
+tools/dcml_parser.py,331,DcmlMarker,str,kind,kind: str                 # 'cadence' or 'phraseend'

@@ -1,0 +1,352 @@
+file,tag,reason
+src/composing/CMakeLists.txt,L3+,build file — non-source
+src/composing/analysis/CMakeLists.txt,L3+,build file — non-source
+src/composing/analysis/chord/analysisutils.h,L3+,chord/decode layer (L4) — deferred to the L4 certification audit (chordslicedecoder is the L4 survivor; chordanalyzer.h types consumed cross-layer)
+src/composing/analysis/chord/chordanalyzer.cpp,RETIRES,R1 legacy chord competition + Gates A-L; R9 file-split — retires at E4 (roadmap R1/R9)
+src/composing/analysis/chord/chordanalyzer.h,L3+,chord/decode layer (L4) — deferred to the L4 certification audit (chordslicedecoder is the L4 survivor; chordanalyzer.h types consumed cross-layer)
+src/composing/analysis/chord/chorddiagnose.cpp,L3+,chord/decode layer (L4) — deferred to the L4 certification audit (chordslicedecoder is the L4 survivor; chordanalyzer.h types consumed cross-layer)
+src/composing/analysis/chord/chordpostpasses.cpp,L3+,chord/decode layer (L4) — deferred to the L4 certification audit (chordslicedecoder is the L4 survivor; chordanalyzer.h types consumed cross-layer)
+src/composing/analysis/chord/chordslicedecoder.cpp,L3+,chord/decode layer (L4) — deferred to the L4 certification audit (chordslicedecoder is the L4 survivor; chordanalyzer.h types consumed cross-layer)
+src/composing/analysis/chord/chordslicedecoder.h,L3+,chord/decode layer (L4) — deferred to the L4 certification audit (chordslicedecoder is the L4 survivor; chordanalyzer.h types consumed cross-layer)
+src/composing/analysis/chord/chordsymbolformatter.cpp,L3+,chord/decode layer (L4) — deferred to the L4 certification audit (chordslicedecoder is the L4 survivor; chordanalyzer.h types consumed cross-layer)
+src/composing/analysis/chord/chordvoicing.cpp,L3+,chord/decode layer (L4) — deferred to the L4 certification audit (chordslicedecoder is the L4 survivor; chordanalyzer.h types consumed cross-layer)
+src/composing/analysis/chord/postscoringgates.cpp,RETIRES,R1 legacy post-scoring Gates I/K/L — retires with the legacy competition at E4
+src/composing/analysis/decode/chordpathdecoder.h,L3+,L3 key-mode decoder scaffolding — deferred to the L3 audit
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,L1,Phrase-boundary primitive impl — L1.5 notation-derived view
+src/composing/analysis/engravingbridge/phraseboundaryview.h,L1,Phrase-boundary primitive — L1.5 notation-derived view (cowork_phrase_boundary_design.md)
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,L1,Derived summary views impl — L1 §3/§5; check for legacy collectRegionTones residue (R-note)
+src/composing/analysis/engravingbridge/regiontonecollector.h,L1,Derived summary views over the note model (weightedPcView/soundingAt) — L1 §3/§5; check for legacy collectRegionTones residue
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,L1,weightedPcView/soundingAt primitive impl — L1 derived views (layer1 design §3)
+src/composing/analysis/engravingbridge/spellingview.cpp,L1,Spelling view impl — L1.5 notation-derived reader (R4 survivor)
+src/composing/analysis/engravingbridge/spellingview.h,L1,Spelling view — L1.5 notation-derived reader (instruction L1 def; R4 shared-spelling-view survivor)
+src/composing/analysis/function/forwardoverride.cpp,L5-DORMANT,DORMANT forward-override impl (localized/forward/convergence-bounded recompute; one-pass closure)
+src/composing/analysis/function/forwardoverride.h,L5-DORMANT,DORMANT §8/§9-D7 confidence-weighted forward-override mechanism surface (the ONE reusable override the resolver + modulation recompute reuse); not wired
+src/composing/analysis/function/functioncadence.cpp,L5-DORMANT,"DORMANT §5.2 cadence detector impl (cadential-6/4 collapse, family gate, phrase gate, tonic-vote)"
+src/composing/analysis/function/functioncadence.h,L5-DORMANT,DORMANT §5.2 key-agnostic event-pair cadence DETECTOR surface (replaces the retiring sectioncadencedetection); not wired
+src/composing/analysis/function/functionmodulation.cpp,L5-DORMANT,DORMANT §5.3/§5.4 impl (persistence hysteresis over committed spans; §8 case-4 channel #1)
+src/composing/analysis/function/functionmodulation.h,L5-DORMANT,DORMANT §5.3/§5.4 tonicization-vs-modulation + cadence-confirmed modulation recompute surface (reuses the L3-audited localmodulationdetector substrate); not wired
+src/composing/analysis/function/functionoutput.cpp,L5-DORMANT,DORMANT §7 output-assembly impl (additive over the L4 result; verbatim carried-identity emit)
+src/composing/analysis/function/functionoutput.h,L5-DORMANT,DORMANT §7 output-assembly surface (Roman numeral + cadence + local-key markers + open marks); not wired
+src/composing/analysis/function/functionprogression.cpp,L5-DORMANT,DORMANT §5.0 progression impl (licensed-motion test; §15-12 grammar-completion is spec-ahead-of-code)
+src/composing/analysis/function/functionprogression.h,L5-DORMANT,DORMANT §5.0 progression MODEL surface — the GRAMMAR owner isLicensedProgression (D5); not wired
+src/composing/analysis/function/functionrelationallabel.cpp,L5-DORMANT,DORMANT §5.6 relational-label impl (chromaticism trigger + false-positive guard; V/iv over-trigger is inference-deferred)
+src/composing/analysis/function/functionrelationallabel.h,L5-DORMANT,DORMANT §5.6 relational labels (aug6/Neapolitan/applied/mixture precedence) + unified tonicization emitter surface; not wired
+src/composing/analysis/function/functionresolver.cpp,L5-DORMANT,DORMANT §5.5 resolver impl (six ambiguity kinds; verbatim carried-identity selection; soft bass prior)
+src/composing/analysis/function/functionresolver.h,L5-DORMANT,DORMANT §5.5 RESOLVER surface (select-among-carried-readings by ambiguity kind) + §5.5/§10 fine-grain override (§8 channel #2); not wired
+src/composing/analysis/function/functionromannumeral.cpp,L5-DORMANT,DORMANT §5.1 base Roman-numeral derivation impl (deterministic reading from key + committed chord)
+src/composing/analysis/function/functionromannumeral.h,L5-DORMANT,DORMANT §5.1 base Roman-numeral derivation surface (degree/quality/inversion/chromatic alteration); not wired
+src/composing/analysis/function/harmonicfunctionlayer.cpp,L5-RETIRES,MIS-TAG (see .h) — legacy L4 competition pipeline impl (applyHarmonicFunction winner selection); retires R1/R7; #12-check the winner-selection + progression-signal ownership on deletion
+src/composing/analysis/function/harmonicfunctionlayer.h,L5-RETIRES,"MIS-TAG (inherited 'function layer (L5)') — this is the LEGACY L4 CHORD-COMPETITION pipeline (harmonicfunctionlayer.h:25 'Competition pipeline — the SINGLE owner of winner selection'; applyHarmonicFunction runs the per-bass competition + winner selection, LIVE via chordanalyzer/regionanalyzer), NOT the Layer-5 function machinery; its functional labeling is 'E4 (planned)'. Retires R1 (legacy competition) + R7 (rename). #12-check on deletion: it is the SOLE owner of winner selection + progression-signal application (pass-1 finding)"
+src/composing/analysis/function/tonicizationlabeler.cpp,L5-DORMANT,DORMANT applied-chord labeler impl (secondary-dominant / applied-leading-tone recognition)
+src/composing/analysis/function/tonicizationlabeler.h,L5-DORMANT,DORMANT applied-chord labeler (§13 the dormant tonicizationlabeler; Stage-6-tonic-i narrow slice; the reused labeler §5.6 references); not wired
+src/composing/analysis/grouping/groupinglayer.cpp,DEFERRED,Layer 6 (grouping) — deferred to the L6 audit
+src/composing/analysis/grouping/groupinglayer.h,DEFERRED,Layer 6 (grouping) — the design-only rebuild of the live cadence/pivot/KeyArea machinery; deferred to the L6 audit
+src/composing/analysis/harmony/harmonicsegmenter.cpp,RETIRES,L2-LEGACY greedy-expand segmenter impl — retires R6; #12-check kAnchorMinScore/kRound2MinScore + greedy-expand interpretation
+src/composing/analysis/harmony/harmonicsegmenter.h,RETIRES,"L2-LEGACY greedy-expand segmenter — retires R6 (segment-first spine), superseded by the change-point slicer; #12-check the anchor thresholds"
+src/composing/analysis/key/keymodeanalyzer.cpp,L3+,key/mode layer (L3) — deferred to the L3 audit (keyresolver shrinks R5; keymodesequence is the L3 survivor)
+src/composing/analysis/key/keymodeanalyzer.h,L3+,key/mode layer (L3) — deferred to the L3 audit (keyresolver shrinks R5; keymodesequence is the L3 survivor)
+src/composing/analysis/key/keymodeformatting.cpp,L3+,key/mode layer (L3) — deferred to the L3 audit (keyresolver shrinks R5; keymodesequence is the L3 survivor)
+src/composing/analysis/key/keymodesequence.cpp,L3+,key/mode layer (L3) — deferred to the L3 audit (keyresolver shrinks R5; keymodesequence is the L3 survivor)
+src/composing/analysis/key/keymodesequence.h,L3+,key/mode layer (L3) — deferred to the L3 audit (keyresolver shrinks R5; keymodesequence is the L3 survivor)
+src/composing/analysis/key/keyresolver.cpp,L3+,key/mode layer (L3) — deferred to the L3 audit (keyresolver shrinks R5; keymodesequence is the L3 survivor)
+src/composing/analysis/key/keyresolver.h,L3+,key/mode layer (L3) — deferred to the L3 audit (keyresolver shrinks R5; keymodesequence is the L3 survivor)
+src/composing/analysis/key/modepriorpresets.cpp,L3+,key/mode layer (L3) — deferred to the L3 audit (keyresolver shrinks R5; keymodesequence is the L3 survivor)
+src/composing/analysis/key/modepriorpresets.h,L3+,key/mode layer (L3) — deferred to the L3 audit (keyresolver shrinks R5; keymodesequence is the L3 survivor)
+src/composing/analysis/notemodel/note_model.cpp,L1,Note-model core impl (build/tie-resolve/eligibility/query index) — Architectural Layer 1 (layer1 design §4/§6)
+src/composing/analysis/notemodel/note_model.h,L1,Note-model core (NoteModel/NoteQueryIndex) — Architectural Layer 1 fact layer (layer1 design §3/§5)
+src/composing/analysis/param/paramoverride.cpp,L3+,"param-override infrastructure — deferred (cross-cutting, not L1/L2)"
+src/composing/analysis/param/paramoverride.h,L3+,"param-override infrastructure — deferred (cross-cutting, not L1/L2)"
+src/composing/analysis/progression/progressionrecognizer.cpp,L5-DORMANT,DORMANT progression-schema recognizer impl (multi-chord pattern/substitution recognition over the committed progression)
+src/composing/analysis/progression/progressionrecognizer.h,L5-DORMANT,"DORMANT L5-consumer progression-schema recognizer surface (reads the Harmonic Vocabulary catalog; one-way consistency test with the D5 grammar); batch_analyze --diagnostic only, no production consumer"
+src/composing/analysis/region/harmonicrhythm.h,L3+,region orchestration (L3 seam); regionanalyzer.cpp EMBEDS the legacy greedy-expand segmenter retiring R6 — deferred to the L3 audit
+src/composing/analysis/region/regionanalyzer.cpp,L3+,region orchestration (L3 seam); regionanalyzer.cpp EMBEDS the legacy greedy-expand segmenter retiring R6 — deferred to the L3 audit
+src/composing/analysis/region/regionanalyzer.h,L3+,region orchestration (L3 seam); regionanalyzer.cpp EMBEDS the legacy greedy-expand segmenter retiring R6 — deferred to the L3 audit
+src/composing/analysis/region/sparsechordrefinement.cpp,L3+,region orchestration (L3 seam); regionanalyzer.cpp EMBEDS the legacy greedy-expand segmenter retiring R6 — deferred to the L3 audit
+src/composing/analysis/region/sparsechordrefinement.h,L3+,region orchestration (L3 seam); regionanalyzer.cpp EMBEDS the legacy greedy-expand segmenter retiring R6 — deferred to the L3 audit
+src/composing/analysis/scoreharvest/metricweights.cpp,L1,Metric-weight primitive impl — L1.5 notation-derived value (layer2 design §8)
+src/composing/analysis/scoreharvest/metricweights.h,L1,Metric-weight primitive (regionMetricWeightForOnsetTick) — L1.5 (layer2 design §8 metric-weight contract)
+src/composing/analysis/section/cadencekeyanchor.cpp,L3+,section / cadence / joint-key (L3-L5); cadencekeyanchor R3 diagnostic — deferred
+src/composing/analysis/section/cadencekeyanchor.h,L3+,section / cadence / joint-key (L3-L5); cadencekeyanchor R3 diagnostic — deferred
+src/composing/analysis/section/jointkeydecision.cpp,L3+,section / cadence / joint-key (L3-L5); cadencekeyanchor R3 diagnostic — deferred
+src/composing/analysis/section/jointkeydecision.h,L3+,section / cadence / joint-key (L3-L5); cadencekeyanchor R3 diagnostic — deferred
+src/composing/analysis/section/localmodulationdetector.cpp,DEFERRED,ALREADY L3-AUDITED — L5-reused substrate; seam checked via functionmodulation (#6)
+src/composing/analysis/section/localmodulationdetector.h,DEFERRED,"ALREADY L3-AUDITED (L3 file table: 'L3 key-evidence: local-modulation detector') — it is ALSO the dormant modulation-span substrate the L5 functionmodulation reuses (§13); the L5 SEAM (what functionmodulation reads from it) is audited via functionmodulation's rows, the file internals NOT re-audited here (#6 no-duplication)"
+src/composing/analysis/section/sectionanalyzer.cpp,L5-MIXED,"L3-audited (L3-MIXED) — its L5 cadence/pivot labeling (LIVE, R2-retiring) noted at file level; deep rows NOT re-generated (#6; the L3 inventory holds this file's rows)"
+src/composing/analysis/section/sectionanalyzer.h,L5-MIXED,"L3-audited (L3-MIXED) — its L5 content (detectCadences/detectPivotChords surface, LIVE via the notation bridge) is the R2 legacy circular detector; file-level RETIRES note only, deep rows NOT re-generated (the L3 audit already inventoried this file — #6 no-duplication)"
+src/composing/analysis/section/sectioncadencedetection.cpp,L5-RETIRES,"LIVE-and-retiring — the legacy KEY-DEPENDENT (circular) cadence + pivot detection (detectCadences/detectPivotChords), reached from the notation bridge (notationcomposingbridge.cpp) = production; roadmap R2 (legacy circular cadence detector) + the L6 rebuild target. The dormant key-agnostic replacement is function/functioncadence. #12-check on deletion: the cadence-type + pivot interpretations L5/L6 must consciously re-home (pass-1)"
+src/composing/analysis/slicing/slicer.cpp,L2,Change-point slicer impl — Architectural Layer 2 survivor (layer2 design §4/§5)
+src/composing/analysis/slicing/slicer.h,L2,Change-point slicer (changePointSlices/Slice) — Architectural Layer 2 survivor (layer2 design §3)
+src/composing/analysis/types/analysistypes.h,L3+,shared analysis types (cross-layer) — deferred; note: carries metric/spelling/tone type decls consumed by L1
+src/composing/analysis/vocabulary/harmonicvocabulary.cpp,L3+,harmonic vocabulary (L4) — deferred to the L4 audit
+src/composing/analysis/vocabulary/harmonicvocabulary.h,L3+,harmonic vocabulary (L4) — deferred to the L4 audit
+src/composing/analysis/voiceleading/textureclassifier.cpp,L3+,voice-leading analysis (L4/L5); voicelinearview is a derived view but serves L4+ selection — deferred (boundary note in report P3)
+src/composing/analysis/voiceleading/textureclassifier.h,L3+,voice-leading analysis (L4/L5); voicelinearview is a derived view but serves L4+ selection — deferred (boundary note in report P3)
+src/composing/analysis/voiceleading/textureclassifierreference.h,L3+,voice-leading analysis (L4/L5); voicelinearview is a derived view but serves L4+ selection — deferred (boundary note in report P3)
+src/composing/analysis/voiceleading/voiceleadingprofiles.cpp,L3+,voice-leading analysis (L4/L5); voicelinearview is a derived view but serves L4+ selection — deferred (boundary note in report P3)
+src/composing/analysis/voiceleading/voiceleadingprofiles.h,L3+,voice-leading analysis (L4/L5); voicelinearview is a derived view but serves L4+ selection — deferred (boundary note in report P3)
+src/composing/analysis/voiceleading/voicelinearview.cpp,L3+,voice-leading analysis (L4/L5); voicelinearview is a derived view but serves L4+ selection — deferred (boundary note in report P3)
+src/composing/analysis/voiceleading/voicelinearview.h,L3+,voice-leading analysis (L4/L5); voicelinearview is a derived view but serves L4+ selection — deferred (boundary note in report P3)
+src/composing/analyzed_section.h,L3+,public output DTO — not L1/L2 analysis
+src/composing/composingconfiguration.cpp,L3+,module configuration — not L1/L2 analysis
+src/composing/composingconfiguration.h,L3+,module configuration — not L1/L2 analysis
+src/composing/composingmodule.cpp,L3+,module registration/wiring — not L1/L2 analysis
+src/composing/composingmodule.h,L3+,module registration/wiring — not L1/L2 analysis
+src/composing/icomposinganalysisconfiguration.h,L3+,config interface — not L1/L2 analysis
+src/composing/icomposingchordstaffconfiguration.h,L3+,config interface — not L1/L2 analysis
+src/composing/icomposingconfiguration.h,L3+,config interface — not L1/L2 analysis
+src/composing/intonation/CMakeLists.txt,L3+,"tuning subsystem — outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+src/composing/intonation/equal_temperament.h,L3+,"tuning subsystem — outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+src/composing/intonation/just_intonation.h,L3+,"tuning subsystem — outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+src/composing/intonation/kirnberger.h,L3+,"tuning subsystem — outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+src/composing/intonation/pythagorean.h,L3+,"tuning subsystem — outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+src/composing/intonation/quarter_comma_meantone.h,L3+,"tuning subsystem — outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+src/composing/intonation/tuning_keys.h,L3+,"tuning subsystem — outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+src/composing/intonation/tuning_registry.cpp,L3+,"tuning subsystem — outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+src/composing/intonation/tuning_system.h,L3+,"tuning subsystem — outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+src/composing/intonation/tuning_utils.h,L3+,"tuning subsystem — outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+src/composing/intonation/werckmeister.h,L3+,"tuning subsystem — outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+src/composing/tests/CMakeLists.txt,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/analyzechord_robustness_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/cadencekeyanchor_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/chord_branch_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/chord_mismatch_report.txt,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/chordanalyzer_musicxml_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/chordanalyzer_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/chordsymbolformatter_branch_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/chordvoicing_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/comparison_utils.h,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/comparison_utils_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/chordanalyzer_catalog_jazz.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/chordanalyzer_catalog_standard.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/chordanalyzer_context.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/eb_compound.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/eb_compound.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/eb_dense.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/eb_dense.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/eb_pedal.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/eb_pedal.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/eb_steps.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/eb_steps.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/francis-poulenc-o-magnum-mysterium.mxl,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/jazz_smoke_test.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/mono_smoke_test.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/mono_smoke_test.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_dense_start.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_dense_start.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_flags.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_flags.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_grace.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_grace.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_long_sustain.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_long_sustain.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_slice_held_melody.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_slice_held_melody.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_slice_ineligible.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_slice_ineligible.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_slice_passing.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_slice_passing.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_slice_release.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_slice_release.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_slice_rest.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_slice_rest.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_solid_theory.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_staff_eligibility.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_staff_eligibility.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_tie_chain.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_tie_chain.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_two_staff.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_two_staff.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_unison.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_unison.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/organ-sonata-n1-in-e-flat-major-bwv-525-i-allegro.mxl,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/pb_chorale.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/reachback_anchor.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/reachback_anchor.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/s1c_a_minor_amb.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/s1c_c_major.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/s1c_c_minor.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/s1c_g_dom7.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/s1c_g_minor.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/s1c_modulation_cg.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/s1c_modulation_cg.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/s1c_partial_cm.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/s1c_seg_absorb.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/s1c_seg_changes.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/s1c_seg_merge.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/s1c_unison_c.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/solid theory.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/decode_chord_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/decode_keymode_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/decode_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/diagnose_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/engravingbridge_branch_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/environment.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/forwardoverride_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/functioncadence_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/functionlayer_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/functionmodulation_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/functionoutput_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/functionprogression_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/functionrelationallabel_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/functionresolver_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/functionromannumeral_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/gater_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/grouping_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/harmonicvocabulary_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/jointkeydecision_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/keymode_branch_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/keymodeanalyzer_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/l3_coverage_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/localmodulationdetector_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/modepriorpresets_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/nashville_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/note_model_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/paramoverride_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/phraseboundaryview_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/postscoringgates_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/progressionrecognizer_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/reachback_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/regionanalysis_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/slicer_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/spellingview_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/synthetic_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/test_helpers.h,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/tonicizationlabeler_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/tuning_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/verify_chord_track.py,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/voiceleading_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+tools/a8_rebaseline_measure.py,INSTRUMENT,the ROBUST-STOP measurement instrument (variant-(b) root-fail enumerations; self-validates grid==oracle per piece). Reads the corpus; writes tools/robust_stop/<preset>/* + summary/manifest
+tools/analyze_bir_true_iter19.py,NON-INSTRUMENT,one-off analysis/triage script — not the standing measurement chain
+tools/analyze_cat1_minor_iter24.py,NON-INSTRUMENT,one-off analysis/triage script — not the standing measurement chain
+tools/analyze_diag20.py,NON-INSTRUMENT,one-off analysis/triage script — not the standing measurement chain
+tools/analyze_inversion_errors.py,INSTRUMENT,the SECONDARY bassIsRoot metric (three-way music21_dcml_agree split). Reads a validated per-preset dir
+tools/analyze_iter90_regressions.py,NON-INSTRUMENT,one-off analysis/triage script — not the standing measurement chain
+tools/analyze_pdmx.py,NON-INSTRUMENT,one-off analysis/triage script — not the standing measurement chain
+tools/analyze_wrong_root_iter90.py,NON-INSTRUMENT,one-off analysis/triage script — not the standing measurement chain
+tools/batch_analyze.cpp,INSTRUMENT-HARNESS,"the SHARED HARNESS — the standalone score→analysis driver every corpus run + diagnostic path uses (--decode-chords, --section-level, --diagnose-measures, --dump-regions). Reads a score; writes .ours.json"
+tools/bir_false_baseline.json,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/bir_true_baseline.json,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/build_score_census_registry.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/c1_gen_devbed.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/c1_gen_substrate.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/c1_reliability.py,INSTRUMENT,the C1 reliability instrumentation primitives (cell-join + squash + PRESETS) reused by the fitter
+tools/calibration_fit.py,INSTRUMENT,the FITTING instrument — Stage-5 Class-M→Class-P reliability maps (isotonic/logistic). Reads the corpus + c1 substrate; writes tools/calibration_maps/*.json
+tools/cc_e0_fullspine_measure.py,NON-INSTRUMENT,"a specific measurement-run driver (baseline / sweep / full-spine / step-M) — a run, not the standing chain"
+tools/cc_eg2_probe.py,NON-INSTRUMENT,"a specific measurement-run driver (baseline / sweep / full-spine / step-M) — a run, not the standing chain"
+tools/cc_layer3_keymode_baseline.py,NON-INSTRUMENT,"a specific measurement-run driver (baseline / sweep / full-spine / step-M) — a run, not the standing chain"
+tools/cc_layer3_sweep_grade.py,NON-INSTRUMENT,"a specific measurement-run driver (baseline / sweep / full-spine / step-M) — a run, not the standing chain"
+tools/cc_layer4_chord_baseline.py,NON-INSTRUMENT,"a specific measurement-run driver (baseline / sweep / full-spine / step-M) — a run, not the standing chain"
+tools/cc_stepM_l5_measure.py,NON-INSTRUMENT,"a specific measurement-run driver (baseline / sweep / full-spine / step-M) — a run, not the standing chain"
+tools/characterise_bir_false.py,INSTRUMENT,the BATCH-STOP diagnostic + validate_corpus_dir (the corpus-integrity guard the a8 instrument imports). Reads a per-preset corpus dir + its manifest; writes stdout characterization
+tools/check_corelli_g.py,NON-INSTRUMENT,one-off score/tick check script — not the standing measurement chain
+tools/check_corelli_mscx.py,NON-INSTRUMENT,one-off score/tick check script — not the standing measurement chain
+tools/check_corelli_raw.json,NON-INSTRUMENT,one-off score/tick check script — not the standing measurement chain
+tools/check_corelli_tick.py,NON-INSTRUMENT,one-off score/tick check script — not the standing measurement chain
+tools/check_iter46_candidates.py,NON-INSTRUMENT,one-off score/tick check script — not the standing measurement chain
+tools/check_parity.py,NON-INSTRUMENT,one-off score/tick check script — not the standing measurement chain
+tools/compare_analyses.py,INSTRUMENT,base COMPARISON module — three-level batch_analyze-vs-music21 region compare; imported by ~all the stops. Reads .ours.json + .music21.json; writes nothing (library)
+tools/compare_bach_wir.py,NON-INSTRUMENT,corpus/oracle comparison helper — not in the core regression-stop import closure (own audit if promoted)
+tools/compare_gatej.py,NON-INSTRUMENT,corpus/oracle comparison helper — not in the core regression-stop import closure (own audit if promoted)
+tools/compare_inversion_regressions.py,NON-INSTRUMENT,corpus/oracle comparison helper — not in the core regression-stop import closure (own audit if promoted)
+tools/compare_l6_oracle.py,NON-INSTRUMENT,corpus/oracle comparison helper — not in the core regression-stop import closure (own audit if promoted)
+tools/compare_omnibook.py,NON-INSTRUMENT,corpus/oracle comparison helper — not in the core regression-stop import closure (own audit if promoted)
+tools/compare_progressions_oracle.py,NON-INSTRUMENT,corpus/oracle comparison helper — not in the core regression-stop import closure (own audit if promoted)
+tools/compare_rn.py,INSTRUMENT,the robust-unit ROMAN-NUMERAL grid compare (grid_score_regions; a8 self-validates variant-(b) decomposition byte-identical to this). Reads .ours.json + DCML GT
+tools/compare_vl_parity.py,NON-INSTRUMENT,corpus/oracle comparison helper — not in the core regression-stop import closure (own audit if promoted)
+tools/compare_when_in_rome.py,NON-INSTRUMENT,corpus/oracle comparison helper — not in the core regression-stop import closure (own audit if promoted)
+tools/conformal_check.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/corpus_registry.json,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/dcml_parser.py,INSTRUMENT,"the GROUND-TRUTH PARSER — DCML TSV + RomanText → WiR roots (the corrected-parser, 2026-06-13). Reads .harmonies.tsv / DCML; writes nothing (library)"
+tools/decode_chord_corpus.py,NON-INSTRUMENT,"dormant-decoder corpus run driver — a run, not the standing chain"
+tools/decode_keymode_corpus.py,NON-INSTRUMENT,"dormant-decoder corpus run driver — a run, not the standing chain"
+tools/diag_genuine32_characterize.py,NON-INSTRUMENT,one-off diagnostic script (per-iteration/gate triage) — not the standing measurement chain
+tools/diag_iter28_gate_k.py,NON-INSTRUMENT,one-off diagnostic script (per-iteration/gate triage) — not the standing measurement chain
+tools/diag_iter32_gate_l.py,NON-INSTRUMENT,one-off diagnostic script (per-iteration/gate triage) — not the standing measurement chain
+tools/diag_iter47_gate_m.py,NON-INSTRUMENT,one-off diagnostic script (per-iteration/gate triage) — not the standing measurement chain
+tools/diag_iter47_gate_q.py,NON-INSTRUMENT,one-off diagnostic script (per-iteration/gate triage) — not the standing measurement chain
+tools/diag_iter48_step2.py,NON-INSTRUMENT,one-off diagnostic script (per-iteration/gate triage) — not the standing measurement chain
+tools/diag_iter48_step3.py,NON-INSTRUMENT,one-off diagnostic script (per-iteration/gate triage) — not the standing measurement chain
+tools/diag_iter54_alts_full.py,NON-INSTRUMENT,one-off diagnostic script (per-iteration/gate triage) — not the standing measurement chain
+tools/diag_iter54_bir_false_enumerate.py,NON-INSTRUMENT,one-off diagnostic script (per-iteration/gate triage) — not the standing measurement chain
+tools/diag_iter63_genuine6_enumerate.py,NON-INSTRUMENT,one-off diagnostic script (per-iteration/gate triage) — not the standing measurement chain
+tools/diag_iter8_bir_false.py,NON-INSTRUMENT,one-off diagnostic script (per-iteration/gate triage) — not the standing measurement chain
+tools/diag_iter8_gates_detailed.py,NON-INSTRUMENT,one-off diagnostic script (per-iteration/gate triage) — not the standing measurement chain
+tools/diff_iter90_classification.py,NON-INSTRUMENT,one-off classification-diff script — not the standing measurement chain
+tools/diff_iter90_flips.py,NON-INSTRUMENT,one-off classification-diff script — not the standing measurement chain
+tools/dump_birfalse_cases.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/enumerate_near_agree_iter38.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/extra_scores_registry.json,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/filter_effendi.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/find_enharmonic_errors_temp.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/find_maj_to_dom7.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/fix_keysig.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/gate_n_fp_scan_iter39.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/grieg_modal_diagnostic.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/inject_dcml_rn.py,NON-INSTRUMENT,ground-truth-injection helper (writes RN into scores for QA) — not a measurement instrument
+tools/inject_dcml_rn_qa.py,NON-INSTRUMENT,ground-truth-injection helper (writes RN into scores for QA) — not a measurement instrument
+tools/inject_m21_rn.py,NON-INSTRUMENT,ground-truth-injection helper (writes RN into scores for QA) — not a measurement instrument
+tools/iter45_cluster_a_diagnostic.py,NON-INSTRUMENT,one-off per-iteration diagnostic script — not the standing measurement chain
+tools/iter45_step4_cluster_b.py,NON-INSTRUMENT,one-off per-iteration diagnostic script — not the standing measurement chain
+tools/iter45_step4_detail.py,NON-INSTRUMENT,one-off per-iteration diagnostic script — not the standing measurement chain
+tools/iter58_diagnostic.py,NON-INSTRUMENT,one-off per-iteration diagnostic script — not the standing measurement chain
+tools/iter92_jazz_bir_true_analysis.py,NON-INSTRUMENT,one-off per-iteration diagnostic script — not the standing measurement chain
+tools/iter94_birtrue_dump.py,NON-INSTRUMENT,one-off per-iteration diagnostic script — not the standing measurement chain
+tools/iter94_jazz_regression_analysis.py,NON-INSTRUMENT,one-off per-iteration diagnostic script — not the standing measurement chain
+tools/iter95_enumerate_errors.py,NON-INSTRUMENT,one-off per-iteration diagnostic script — not the standing measurement chain
+tools/iter97_categorize_birfalse.py,NON-INSTRUMENT,one-off per-iteration diagnostic script — not the standing measurement chain
+tools/l15_split.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/measure_fanout.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/measure_joint_probe.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/music21_batch.py,INSTRUMENT,the music21 GROUND-TRUTH GENERATOR — exports the corpus to MusicXML + .music21.json (v9.9.1 pin). Reads music21 corpus; writes tools/corpus/*.xml + *.music21.json
+tools/oracle_root_metric.py,INSTRUMENT,the STANDING per-event tiered ORACLE-ROOT metric (reuses compare_analyses + dcml_parser + validate_corpus_dir). Reads a validated per-preset dir + DCML GT
+tools/param_manifest.json,INSTRUMENT-MANIFEST,the FIT MANIFEST — the param provenance ledger the constants ESTABLISHED/UNFIT/DEAD check reads (CLAUDE.md). File-level row; its coverage of L5 + scorer constants is a Task-2 establishment check
+tools/pdmx_jazz_candidates.py,NON-INSTRUMENT,"PDMX dataset candidate/spot-check helper — corpus acquisition, not measurement"
+tools/pdmx_spot_check.py,NON-INSTRUMENT,"PDMX dataset candidate/spot-check helper — corpus acquisition, not measurement"
+tools/reconcile_counts.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/rerun_dcml_comparison.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/robust_stop_diff.py,INSTRUMENT,the ROBUST-STOP GATE (exit 0 iff every preset's class-(b) duration non-increases vs the committed reference). Reads a candidate a8 dir + tools/robust_stop/ reference; writes the explained diff
+tools/run_bach_preset.py,INSTRUMENT,"the CORPUS GENERATOR/VALIDATOR — clean-slates + regenerates a per-preset dir, stamps corpus_manifest.json, exits nonzero unless complete. Runs batch_analyze; writes .ours.json + manifest"
+tools/run_bach_suites_validation.py,NON-INSTRUMENT,per-corpus validation runner (composer-specific) — wraps the chain; not itself the stop
+tools/run_beethoven_validation.py,NON-INSTRUMENT,per-corpus validation runner (composer-specific) — wraps the chain; not itself the stop
+tools/run_chopin_validation.py,NON-INSTRUMENT,per-corpus validation runner (composer-specific) — wraps the chain; not itself the stop
+tools/run_corelli_validation.py,NON-INSTRUMENT,per-corpus validation runner (composer-specific) — wraps the chain; not itself the stop
+tools/run_cpe_bach_validation.py,NON-INSTRUMENT,per-corpus validation runner (composer-specific) — wraps the chain; not itself the stop
+tools/run_diag20_targeted.py,NON-INSTRUMENT,per-corpus validation runner (composer-specific) — wraps the chain; not itself the stop
+tools/run_dlc_baseline.py,NON-INSTRUMENT,per-corpus validation runner (composer-specific) — wraps the chain; not itself the stop
+tools/run_dvorak_validation.py,NON-INSTRUMENT,per-corpus validation runner (composer-specific) — wraps the chain; not itself the stop
+tools/run_grieg_validation.py,NON-INSTRUMENT,per-corpus validation runner (composer-specific) — wraps the chain; not itself the stop
+tools/run_mozart_validation.py,NON-INSTRUMENT,per-corpus validation runner (composer-specific) — wraps the chain; not itself the stop
+tools/run_schumann_validation.py,NON-INSTRUMENT,per-corpus validation runner (composer-specific) — wraps the chain; not itself the stop
+tools/run_tchaikovsky_validation.py,NON-INSTRUMENT,per-corpus validation runner (composer-specific) — wraps the chain; not itself the stop
+tools/run_validation.py,NON-INSTRUMENT,per-corpus validation runner (composer-specific) — wraps the chain; not itself the stop
+tools/score_census_registry.json,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/section_7_3_diagnostic.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/snapshot_sources_manifest.json,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/stage5_15_13_population.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/stage5_2_2b_analyze.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/stage5_2_2b_dlc_probe.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/stage5_2_2b_evidence.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/stage5_2_2b_jointfit.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/stage5_2_2b_snapshot_preview.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/stage5_2_2b_surface.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/stage5_2_2c_3way.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/stage5_2_2c_byteproof.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/stage5_2_2c_sweep.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/stage5_2_2c_winnerdiff.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/stage5_2_2d_surface.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/stage5_2_2d_sweep.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/stage5_2_2e_liveness.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/stage5_fit_driver.py,INSTRUMENT,the Stage-5 FITTER HARNESS (fitter design §4.3/§7). Reads DCML GT; drives the calibration fit
+tools/stage5_split_registry.json,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/survey_1pc_dominant_slices.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/survey_iii_slash_correct_iter90.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/survey_pc8_flat_authored_bass.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/test_batch_analyze_regressions.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/test_dcml_parser.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/tests/test_dcml_parser_figbass_pedal.py,INSTRUMENT-TEST,regression test for a measurement instrument (dcml_parser / metric primitives / oracle_root_metric / snapshot sources) — the establishment cross-check; file-level
+tools/tests/test_metric_primitives_l0l1.py,INSTRUMENT-TEST,regression test for a measurement instrument (dcml_parser / metric primitives / oracle_root_metric / snapshot sources) — the establishment cross-check; file-level
+tools/tests/test_metric_scripts.py,INSTRUMENT-TEST,regression test for a measurement instrument (dcml_parser / metric primitives / oracle_root_metric / snapshot sources) — the establishment cross-check; file-level
+tools/tests/test_oracle_root_metric.py,INSTRUMENT-TEST,regression test for a measurement instrument (dcml_parser / metric primitives / oracle_root_metric / snapshot sources) — the establishment cross-check; file-level
+tools/tests/test_snapshot_sources.py,INSTRUMENT-TEST,regression test for a measurement instrument (dcml_parser / metric primitives / oracle_root_metric / snapshot sources) — the establishment cross-check; file-level
+tools/theta_fit.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"
+tools/validate_slices_corpus.py,NON-INSTRUMENT,"tools/ script/registry/config NOT in the measurement-chain import closure — file-level, out of instrument deep scope"

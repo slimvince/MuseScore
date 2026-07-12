@@ -1,0 +1,1686 @@
+file,line,kind,func,context
+src/composing/analysis/function/forwardoverride.cpp,32,if,overrideBar,if (c < 0.0) {
+src/composing/analysis/function/forwardoverride.cpp,34,else-if,overrideBar,} else if (c > 1.0) {
+src/composing/analysis/function/forwardoverride.cpp,61,if,tryOverride,if (isClosed(decisionId)) {
+src/composing/analysis/function/forwardoverride.cpp,64,if,tryOverride,"if (!overrides(earlierConfidence, contradictionStrength, p)) {"
+src/composing/analysis/function/forwardoverride.cpp,74,if,forwardRecompute,if (m_recomputing) {
+src/composing/analysis/function/forwardoverride.cpp,77,if,forwardRecompute,if (firstSlice > lastSlice) {
+src/composing/analysis/function/forwardoverride.cpp,87,if,forwardRecompute,if (reread) {
+src/composing/analysis/function/functioncadence.cpp,42,if,eventHasPc,if (n.pc() == target) {
+src/composing/analysis/function/functioncadence.cpp,58,if,voiceMovesFromTo,if (nd.pc() != from) {
+src/composing/analysis/function/functioncadence.cpp,62,if,voiceMovesFromTo,if (na.voice == nd.voice && na.pc() == to) {
+src/composing/analysis/function/functioncadence.cpp,84,if,isPredominant,if (pred.rootPc < 0) {
+src/composing/analysis/function/functioncadence.cpp,88,if,isPredominant,if (r == 5 || r == 2 || r == 1 || r == 8) {
+src/composing/analysis/function/functioncadence.cpp,91,if,isPredominant,if (pred.rootPc != tonicPc && pred.rootPc != dom.rootPc) {
+src/composing/analysis/function/functioncadence.cpp,107,if,isSecondInversionTonicTriad,if (e.quality != ChordQuality::Major && e.quality != ChordQuality::Minor) {
+src/composing/analysis/function/functioncadence.cpp,110,if,isSecondInversionTonicTriad,if (e.rootPc < 0 || e.bassPc < 0) {
+src/composing/analysis/function/functioncadence.cpp,128,if,dominantSeventhPresent,if (dom.rootPc < 0) {
+src/composing/analysis/function/functioncadence.cpp,140,if,isGenuineDominant,if (dominantSeventhPresent(dom)) {
+src/composing/analysis/function/functioncadence.cpp,148,if,isGenuineDominant,"if (dominantTritonePresent(dom, tonicPc)) {"
+src/composing/analysis/function/functioncadence.cpp,149,ternary,isGenuineDominant,const int thirdPc = (arr.quality == ChordQuality::Minor) ? norm(tonicPc + 3)
+src/composing/analysis/function/functioncadence.cpp,151,if,isGenuineDominant,"if (leadingToneResolves(dom, arr, tonicPc)"
+src/composing/analysis/function/functioncadence.cpp,166,if,cadenceTonicVote,if (c.bassFiveToOne) {
+src/composing/analysis/function/functioncadence.cpp,169,if,cadenceTonicVote,if (c.leadingToneResolves) {
+src/composing/analysis/function/functioncadence.cpp,172,if,cadenceTonicVote,if (c.genuineDominant) {
+src/composing/analysis/function/functioncadence.cpp,176,if,cadenceTonicVote,if (arrival.endsPhrase) {
+src/composing/analysis/function/functioncadence.cpp,179,if,cadenceTonicVote,if (arrival.isFinalBar) {
+src/composing/analysis/function/functioncadence.cpp,182,switch,cadenceTonicVote,switch (c.type) {
+src/composing/analysis/function/functioncadence.cpp,183,case,cadenceTonicVote,case FunctionalCadenceType::Half:
+src/composing/analysis/function/functioncadence.cpp,184,case,cadenceTonicVote,case FunctionalCadenceType::PhrygianHalf:
+src/composing/analysis/function/functioncadence.cpp,187,case,cadenceTonicVote,case FunctionalCadenceType::Plagal:
+src/composing/analysis/function/functioncadence.cpp,190,case,cadenceTonicVote,case FunctionalCadenceType::Evaded:
+src/composing/analysis/function/functioncadence.cpp,196,ternary,cadenceTonicVote,return v < 0.0 ? 0.0 : v;
+src/composing/analysis/function/functioncadence.cpp,220,if,tryAuthentic,if (!arr.endsPhrase) {                         // phrase gate — §5.2 candidate admission:
+src/composing/analysis/function/functioncadence.cpp,223,if,tryAuthentic,if (isSecondInversionTonicTriad(arr)) {        // a 6/4 never registers as a tonic arrival
+src/composing/analysis/function/functioncadence.cpp,226,if,tryAuthentic,if (arr.quality != ChordQuality::Major && arr.quality != ChordQuality::Minor) {
+src/composing/analysis/function/functioncadence.cpp,230,if,tryAuthentic,if (tonicPc < 0) {
+src/composing/analysis/function/functioncadence.cpp,239,if,tryAuthentic,if (!formV && !formViio) {
+src/composing/analysis/function/functioncadence.cpp,248,if,tryAuthentic,if (!ltResolves) {
+src/composing/analysis/function/functioncadence.cpp,256,if,tryAuthentic,if (predIdx >= 0
+src/composing/analysis/function/functioncadence.cpp,264,if,tryAuthentic,if (predIdx < 0
+src/composing/analysis/function/functioncadence.cpp,274,ternary,tryAuthentic,c.type = bassFiveToOne ? FunctionalCadenceType::PerfectAuthentic
+src/composing/analysis/function/functioncadence.cpp,295,if,tryDeceptive,if (!arr.endsPhrase) {
+src/composing/analysis/function/functioncadence.cpp,298,if,tryDeceptive,if (dom.quality != ChordQuality::Major || dom.rootPc < 0 || arr.rootPc < 0) {
+src/composing/analysis/function/functioncadence.cpp,309,if,tryDeceptive,if (!viMajorKey && !bVIminorKey) {
+src/composing/analysis/function/functioncadence.cpp,317,if,tryDeceptive,"if (!eventHasPc(dom, ltPc)) {"
+src/composing/analysis/function/functioncadence.cpp,320,if,tryDeceptive,"if (!dominantSeventhPresent(dom) && !dominantTritonePresent(dom, tonicPc)) {"
+src/composing/analysis/function/functioncadence.cpp,326,if,tryDeceptive,if (predIdx < 0
+src/composing/analysis/function/functioncadence.cpp,352,if,tryHalf,if (!arr.endsPhrase) {
+src/composing/analysis/function/functioncadence.cpp,355,if,tryHalf,if (arr.quality != ChordQuality::Major || arr.rootPc < 0) {
+src/composing/analysis/function/functioncadence.cpp,360,if,tryHalf,"if (!isPredominant(pred, arr, tonicPc)) {"
+src/composing/analysis/function/functioncadence.cpp,367,if,tryHalf,if (pred.bassPc >= 0 && arr.bassPc >= 0
+src/composing/analysis/function/functioncadence.cpp,375,ternary,tryHalf,c.type = phrygian ? FunctionalCadenceType::PhrygianHalf : FunctionalCadenceType::Half;
+src/composing/analysis/function/functioncadence.cpp,381,ternary,tryHalf,const int predDegree = (pred.rootPc >= 0) ? norm(pred.rootPc - tonicPc) : -1;
+src/composing/analysis/function/functioncadence.cpp,400,if,tryPlagal,if (!arr.endsPhrase) {
+src/composing/analysis/function/functioncadence.cpp,403,if,tryPlagal,if (isSecondInversionTonicTriad(arr)) {
+src/composing/analysis/function/functioncadence.cpp,406,if,tryPlagal,if (arr.quality != ChordQuality::Major && arr.quality != ChordQuality::Minor) {
+src/composing/analysis/function/functioncadence.cpp,410,if,tryPlagal,if (tonicPc < 0 || sd.rootPc < 0) {
+src/composing/analysis/function/functioncadence.cpp,416,if,tryPlagal,if (r != 5 && r != 2 && r != 8) {
+src/composing/analysis/function/functioncadence.cpp,444,if,tryEvaded,if (!arr.endsPhrase) {
+src/composing/analysis/function/functioncadence.cpp,447,if,tryEvaded,if (dom.quality != ChordQuality::Major || dom.rootPc < 0 || arr.rootPc < 0) {
+src/composing/analysis/function/functioncadence.cpp,453,if,tryEvaded,"if (!eventHasPc(dom, norm(tonicPc + 11))) {"
+src/composing/analysis/function/functioncadence.cpp,456,if,tryEvaded,"if (!dominantSeventhPresent(dom) && !dominantTritonePresent(dom, tonicPc)) {"
+src/composing/analysis/function/functioncadence.cpp,461,if,tryEvaded,if (predIdx < 0
+src/composing/analysis/function/functioncadence.cpp,474,if,tryEvaded,if (isTonic || isSubmediant || isDominant) {
+src/composing/analysis/function/functioncadence.cpp,499,if,detectFunctionalCadences,if (events.size() < 2) {
+src/composing/analysis/function/functioncadence.cpp,509,if,detectFunctionalCadences,if (c.type == FunctionalCadenceType::None) {
+src/composing/analysis/function/functioncadence.cpp,512,if,detectFunctionalCadences,if (c.type == FunctionalCadenceType::None) {
+src/composing/analysis/function/functioncadence.cpp,515,if,detectFunctionalCadences,if (c.type == FunctionalCadenceType::None) {
+src/composing/analysis/function/functioncadence.cpp,518,if,detectFunctionalCadences,if (c.type == FunctionalCadenceType::None) {
+src/composing/analysis/function/functioncadence.cpp,521,if,detectFunctionalCadences,if (c.type != FunctionalCadenceType::None) {
+src/composing/analysis/function/functionmodulation.cpp,53,if,decideTonicizationVsModulation,if (c.tonicPc == span.tonicPc && c.minorMode == span.minorMode
+src/composing/analysis/function/functionmodulation.cpp,66,ternary,decideTonicizationVsModulation,const int durTicks = (span.endTick > span.startTick) ? (span.endTick - span.startTick) : 0;
+src/composing/analysis/function/functionmodulation.cpp,70,ternary,decideTonicizationVsModulation,d.spellingSupport = (s < spellingSupport.size()) ? spellingSupport[s] : false;
+src/composing/analysis/function/functionmodulation.cpp,77,ternary,decideTonicizationVsModulation,+ params.wSpelling * (d.spellingSupport ? 1.0 : 0.0);
+src/composing/analysis/function/functionmodulation.cpp,119,if,modulationRecompute,if (!modulation.isModulation) {
+src/composing/analysis/function/functionmodulation.cpp,138,if,modulationRecompute,if (!fired) {
+src/composing/analysis/function/functionmodulation.cpp,153,if,modulationRecompute,if (reread) {
+src/composing/analysis/function/functionoutput.cpp,38,if,cadenceVoteForUnit,if (c.arrivalTick >= unit.startTick && c.arrivalTick < unit.endTick) {
+src/composing/analysis/function/functionoutput.cpp,39,if,cadenceVoteForUnit,if (c.tonicVote > best) {
+src/composing/analysis/function/functionoutput.cpp,53,if,licensedFitForUnit,if (units[i].chord.rootPc < 0) {
+src/composing/analysis/function/functionoutput.cpp,57,if,licensedFitForUnit,if (units[j].committed && units[j].chord.rootPc >= 0) {
+src/composing/analysis/function/functionoutput.cpp,58,ternary,licensedFitForUnit,"return isLicensedProgression(units[j].chord, units[i].chord) ? 1.0 : 0.0;"
+src/composing/analysis/function/functionoutput.cpp,79,if,assembleFunctionOutput,if (!units.empty()) {
+src/composing/analysis/function/functionoutput.cpp,92,if,assembleFunctionOutput,if (m.isModulation) {
+src/composing/analysis/function/functionprogression.cpp,32,if,rootMotion,if (fromPc < 0 || toPc < 0) {
+src/composing/analysis/function/functionprogression.cpp,94,if,isAppliedResolution,if (delta < 0) {
+src/composing/analysis/function/functionprogression.cpp,100,if,isAppliedResolution,if (from.quality == ChordQuality::Major && delta == 5) {
+src/composing/analysis/function/functionprogression.cpp,106,if,isAppliedResolution,if (from.quality == ChordQuality::Diminished
+src/composing/analysis/function/functionprogression.cpp,114,if,isAppliedResolution,if (from.quality == ChordQuality::HalfDiminished
+src/composing/analysis/function/functionprogression.cpp,127,if,isLicensedProgression,if (from.rootPc < 0 || to.rootPc < 0) {
+src/composing/analysis/function/functionprogression.cpp,148,if,isMetricallyStrong,if (sliceIndex < 0 || sliceIndex >= n) {
+src/composing/analysis/function/functionprogression.cpp,165,if,prevailingHarmonyIndex,if (sliceIndex < 0 || sliceIndex >= n) {
+src/composing/analysis/function/functionprogression.cpp,169,if,prevailingHarmonyIndex,"if (region[static_cast<size_t>(j)].committed && isMetricallyStrong(region, j)) {"
+src/composing/analysis/function/functionprogression.cpp,179,if,establishedNextFunctionIndex,if (sliceIndex < 0) {
+src/composing/analysis/function/functionprogression.cpp,183,if,establishedNextFunctionIndex,if (region[static_cast<size_t>(j)].committed) {
+src/composing/analysis/function/functionrelationallabel.cpp,78,if,augSixthSpellingSign,if (rootLof == kNoLineOfFifths) {
+src/composing/analysis/function/functionrelationallabel.cpp,84,if,augSixthSpellingSign,if (lof == kNoLineOfFifths) {
+src/composing/analysis/function/functionrelationallabel.cpp,89,if,augSixthSpellingSign,if (normalizePc(lof * 7) != targetPc) {
+src/composing/analysis/function/functionrelationallabel.cpp,93,if,augSixthSpellingSign,if (dist == 10) {
+src/composing/analysis/function/functionrelationallabel.cpp,96,if,augSixthSpellingSign,if (dist == -2) {
+src/composing/analysis/function/functionrelationallabel.cpp,115,if,tryAugmentedSixth,if (root < 0 || in.identity.quality != ChordQuality::Major) {
+src/composing/analysis/function/functionrelationallabel.cpp,118,if,tryAugmentedSixth,if (root != normalizePc(in.keyTonicPc + 8)) {
+src/composing/analysis/function/functionrelationallabel.cpp,123,if,tryAugmentedSixth,if (sign != 1) {
+src/composing/analysis/function/functionrelationallabel.cpp,142,if,tryNeapolitan,if (root < 0 || in.identity.quality != ChordQuality::Major) {
+src/composing/analysis/function/functionrelationallabel.cpp,145,if,tryNeapolitan,if (root != normalizePc(in.keyTonicPc + 1)) {
+src/composing/analysis/function/functionrelationallabel.cpp,169,switch,triadFamily,switch (q) {
+src/composing/analysis/function/functionrelationallabel.cpp,170,case,triadFamily,case ChordQuality::Major:          return ChordQuality::Major;
+src/composing/analysis/function/functionrelationallabel.cpp,171,case,triadFamily,case ChordQuality::Minor:          return ChordQuality::Minor;
+src/composing/analysis/function/functionrelationallabel.cpp,172,case,triadFamily,case ChordQuality::Diminished:     return ChordQuality::Diminished;
+src/composing/analysis/function/functionrelationallabel.cpp,173,case,triadFamily,case ChordQuality::HalfDiminished: return ChordQuality::Diminished;
+src/composing/analysis/function/functionrelationallabel.cpp,174,case,triadFamily,case ChordQuality::Augmented:      return ChordQuality::Augmented;
+src/composing/analysis/function/functionrelationallabel.cpp,189,if,tryModalMixture,if (root < 0) {
+src/composing/analysis/function/functionrelationallabel.cpp,194,if,tryModalMixture,if (degree < 0) {
+src/composing/analysis/function/functionrelationallabel.cpp,196,else-if,tryModalMixture,} else if (in.keyMode == KeySigMode::Ionian && degree < 7) {
+src/composing/analysis/function/functionrelationallabel.cpp,199,if,tryModalMixture,if (cq != ChordQuality::Unknown && cq != dq) {
+src/composing/analysis/function/functionrelationallabel.cpp,203,if,tryModalMixture,if (!borrowed) {
+src/composing/analysis/function/functionrelationallabel.cpp,218,if,emitAppliedLabel,if (in.identity.rootPc < 0 || in.nextRootPc < 0) {
+src/composing/analysis/function/functionrelationallabel.cpp,244,if,emitAppliedLabel,if (tl.isApplied) {
+src/composing/analysis/function/functionrelationallabel.cpp,275,if,emitAppliedLabel,if (!dominantRel && !leadingToneRel) {
+src/composing/analysis/function/functionrelationallabel.cpp,282,if,emitAppliedLabel,if (targetDegree <= 0) {
+src/composing/analysis/function/functionrelationallabel.cpp,296,if,emitAppliedLabel,if (!hasForeignTone) {
+src/composing/analysis/function/functionrelationallabel.cpp,307,if,emitAppliedLabel,if (label.find('/') == std::string::npos) {
+src/composing/analysis/function/functionrelationallabel.cpp,324,if,classifyRelationalLabel,if (RelationalLabel a6 = tryAugmentedSixth(in); a6.role != RelationalRole::None) {
+src/composing/analysis/function/functionrelationallabel.cpp,327,if,classifyRelationalLabel,if (RelationalLabel neap = tryNeapolitan(in); neap.role != RelationalRole::None) {
+src/composing/analysis/function/functionrelationallabel.cpp,330,if,classifyRelationalLabel,if (RelationalLabel app = emitAppliedLabel(in); app.role != RelationalRole::None) {
+src/composing/analysis/function/functionrelationallabel.cpp,333,if,classifyRelationalLabel,if (RelationalLabel mix = tryModalMixture(in); mix.role != RelationalRole::None) {
+src/composing/analysis/function/functionresolver.cpp,74,if,cadenceVoteFor,if (tonicPc < 0) {
+src/composing/analysis/function/functionresolver.cpp,79,if,cadenceVoteFor,if (c.tonicPc == tonicPc) {
+src/composing/analysis/function/functionresolver.cpp,97,if,plausibility,"if (hasPrev && isLicensedProgression(prevChord, reading)) {"
+src/composing/analysis/function/functionresolver.cpp,100,if,plausibility,"if (hasNext && isLicensedProgression(reading, nextChord)) {"
+src/composing/analysis/function/functionresolver.cpp,103,if,plausibility,"if (cadenceVoteFor(reading.rootPc, cadences) > 0.0) {"
+src/composing/analysis/function/functionresolver.cpp,117,switch,degreeFunctionalBias,switch (degree) {
+src/composing/analysis/function/functionresolver.cpp,118,case,degreeFunctionalBias,"case 0: case 2: return FunctionalBias::Tonic;        // 1̂, 3̂"
+src/composing/analysis/function/functionresolver.cpp,118,case,degreeFunctionalBias,"case 0: case 2: return FunctionalBias::Tonic;        // 1̂, 3̂"
+src/composing/analysis/function/functionresolver.cpp,119,case,degreeFunctionalBias,"case 1: case 3: return FunctionalBias::Predominant;  // 2̂, 4̂"
+src/composing/analysis/function/functionresolver.cpp,119,case,degreeFunctionalBias,"case 1: case 3: return FunctionalBias::Predominant;  // 2̂, 4̂"
+src/composing/analysis/function/functionresolver.cpp,120,case,degreeFunctionalBias,"case 4: case 6: return FunctionalBias::Dominant;     // 5̂, 7̂"
+src/composing/analysis/function/functionresolver.cpp,120,case,degreeFunctionalBias,"case 4: case 6: return FunctionalBias::Dominant;     // 5̂, 7̂"
+src/composing/analysis/function/functionresolver.cpp,127,if,bassScaleDegreeBias,if (bassPc < 0) {
+src/composing/analysis/function/functionresolver.cpp,140,if,rootFunctionalBias,if (rootPc < 0) {
+src/composing/analysis/function/functionresolver.cpp,173,ternary,resolveAbstained,const ProgressionChord nextChord = hasNext ? prog[static_cast<size_t>(nextIdx)].chord : ProgressionChord{};
+src/composing/analysis/function/functionresolver.cpp,174,ternary,resolveAbstained,const ProgressionChord prevChord = hasPrev ? prog[static_cast<size_t>(prevIdx)].chord : ProgressionChord{};
+src/composing/analysis/function/functionresolver.cpp,200,if,resolveAbstained,if (!hasB) {
+src/composing/analysis/function/functionresolver.cpp,204,if,resolveAbstained,if (bias == FunctionalBias::None) {
+src/composing/analysis/function/functionresolver.cpp,209,if,resolveAbstained,if (aMatch != bMatch) {
+src/composing/analysis/function/functionresolver.cpp,210,ternary,resolveAbstained,"return pick(aMatch ? readA : readB, ResolutionBasis::BassDegreePrior, 0.25);"
+src/composing/analysis/function/functionresolver.cpp,215,switch,resolveAbstained,switch (oq.ambiguity) {
+src/composing/analysis/function/functionresolver.cpp,216,case,resolveAbstained,case AmbiguityKind::TransitionVsContinuation: {
+src/composing/analysis/function/functionresolver.cpp,217,if,resolveAbstained,if (!hasB) {
+src/composing/analysis/function/functionresolver.cpp,224,if,resolveAbstained,if (aIn != bIn) {
+src/composing/analysis/function/functionresolver.cpp,225,ternary,resolveAbstained,"return pick(aIn ? readA : readB, ResolutionBasis::Progression, 1.0);"
+src/composing/analysis/function/functionresolver.cpp,231,if,resolveAbstained,if (aPrev != bPrev) {
+src/composing/analysis/function/functionresolver.cpp,232,ternary,resolveAbstained,"return pick(aPrev ? readA : readB, ResolutionBasis::NeighbourHarmony, 0.5);"
+src/composing/analysis/function/functionresolver.cpp,237,case,resolveAbstained,case AmbiguityKind::ShareTone: {
+src/composing/analysis/function/functionresolver.cpp,238,if,resolveAbstained,if (!hasB) {
+src/composing/analysis/function/functionresolver.cpp,245,if,resolveAbstained,if (aIn != bIn) {
+src/composing/analysis/function/functionresolver.cpp,246,ternary,resolveAbstained,"return pick(aIn ? readA : readB, ResolutionBasis::Progression, 1.0);"
+src/composing/analysis/function/functionresolver.cpp,251,case,resolveAbstained,case AmbiguityKind::RelativePair: {
+src/composing/analysis/function/functionresolver.cpp,252,if,resolveAbstained,if (!hasB) {
+src/composing/analysis/function/functionresolver.cpp,260,if,resolveAbstained,if (voteA != voteB) {
+src/composing/analysis/function/functionresolver.cpp,261,ternary,resolveAbstained,"return pick(voteA > voteB ? readA : readB, ResolutionBasis::CadenceVote,"
+src/composing/analysis/function/functionresolver.cpp,268,case,resolveAbstained,case AmbiguityKind::CloseReading:
+src/composing/analysis/function/functionresolver.cpp,269,case,resolveAbstained,case AmbiguityKind::InsufficientEvidence: {
+src/composing/analysis/function/functionresolver.cpp,270,if,resolveAbstained,if (!hasB) {
+src/composing/analysis/function/functionresolver.cpp,277,if,resolveAbstained,if (std::fabs(plausA - plausB) > params.decidingMargin) {
+src/composing/analysis/function/functionresolver.cpp,278,ternary,resolveAbstained,"return pick(plausA > plausB ? readA : readB, ResolutionBasis::Progression,"
+src/composing/analysis/function/functionresolver.cpp,284,case,resolveAbstained,case AmbiguityKind::SymmetricRotation: {
+src/composing/analysis/function/functionresolver.cpp,292,if,resolveAbstained,if (c.rootPc < 0) {
+src/composing/analysis/function/functionresolver.cpp,296,if,resolveAbstained,if (e.rootPc == c.rootPc && e.quality == c.quality) {
+src/composing/analysis/function/functionresolver.cpp,303,if,resolveAbstained,if (hasB) {
+src/composing/analysis/function/functionresolver.cpp,313,if,resolveAbstained,if (hasNext) {
+src/composing/analysis/function/functionresolver.cpp,315,if,resolveAbstained,"if (isAppliedResolution(toPC(c), nextChord)) {"
+src/composing/analysis/function/functionresolver.cpp,321,if,resolveAbstained,if (appliedHits == 1) {
+src/composing/analysis/function/functionresolver.cpp,330,if,resolveAbstained,if (cad.tonicPc >= 0 && cad.tonicPc == normPc(c.rootPc + 1)) {
+src/composing/analysis/function/functionresolver.cpp,337,if,resolveAbstained,if (pinHits == 1) {
+src/composing/analysis/function/functionresolver.cpp,343,case,resolveAbstained,case AmbiguityKind::None:
+src/composing/analysis/function/functionresolver.cpp,389,if,attemptFineGrainOverride,if (s.decision != SliceDecision::Commit) {
+src/composing/analysis/function/functionresolver.cpp,393,if,attemptFineGrainOverride,if (committed.rootPc < 0) {
+src/composing/analysis/function/functionresolver.cpp,404,if,attemptFineGrainOverride,if (prog[static_cast<size_t>(j)].committed) {
+src/composing/analysis/function/functionresolver.cpp,412,ternary,attemptFineGrainOverride,const ProgressionChord nextChord = hasNext ? prog[static_cast<size_t>(nextIdx)].chord : ProgressionChord{};
+src/composing/analysis/function/functionresolver.cpp,413,ternary,attemptFineGrainOverride,const ProgressionChord prevChord = hasPrev ? prog[static_cast<size_t>(prevIdx)].chord : ProgressionChord{};
+src/composing/analysis/function/functionresolver.cpp,425,if,attemptFineGrainOverride,if (hasPrev) {
+src/composing/analysis/function/functionresolver.cpp,428,if,attemptFineGrainOverride,if (hasNext) {
+src/composing/analysis/function/functionresolver.cpp,436,if,attemptFineGrainOverride,"if (c.rootPc < 0 || sameRootQuality(c, committed)) {"
+src/composing/analysis/function/functionresolver.cpp,440,if,attemptFineGrainOverride,if (!haveBest || p > bestPlaus) {
+src/composing/analysis/function/functionresolver.cpp,446,if,attemptFineGrainOverride,if (!haveBest) {
+src/composing/analysis/function/functionresolver.cpp,451,if,attemptFineGrainOverride,if (contradictionStrength <= 0.0) {
+src/composing/analysis/function/functionresolver.cpp,468,if,attemptFineGrainOverride,"if (!result.closure.tryOverride(i, s.confidence.composite, contradictionStrength, params.override)) {"
+src/composing/analysis/function/functionresolver.cpp,493,if,attemptFineGrainOverride,if (region[static_cast<size_t>(j)].decision == SliceDecision::Abstain) {
+src/composing/analysis/function/functionresolver.cpp,518,if,resolveCarriedReadings,if (s.decision == SliceDecision::Abstain) {
+src/composing/analysis/function/functionresolver.cpp,548,if,hasForwardCadenceAnchor,if (c.arrivalTick >= fromTick) {
+src/composing/analysis/function/functionresolver.cpp,567,if,isCutDecision,if (i < 0 || i >= n) {
+src/composing/analysis/function/functionresolver.cpp,570,if,isCutDecision,if (region[static_cast<size_t>(i)].decision != SliceDecision::Abstain) {
+src/composing/analysis/function/functionresolver.cpp,573,if,isCutDecision,"if (hasForwardCadenceAnchor(i, region, cadences)) {"
+src/composing/analysis/function/functionresolver.cpp,576,if,isCutDecision,"if (establishedNextFunctionIndex(prog, i) >= 0) {"
+src/composing/analysis/function/functionresolver.cpp,580,if,isCutDecision,"if (slicesPast >= std::max(1, ext.maxForwardExtendSlices)) {"
+src/composing/analysis/function/functionresolver.cpp,583,if,isCutDecision,if (ext.maxForwardExtendBeats > 0
+src/composing/analysis/function/functionresolver.cpp,599,if,firstCutSelectionSlice,"if (isCutDecision(i, region, cadences, prog, ext)) {"
+src/composing/analysis/function/functionresolver.cpp,620,if,resolveCarriedReadingsExtending,if (!ext.enableForwardExtension || !provider.supply) {
+src/composing/analysis/function/functionresolver.cpp,630,if,resolveCarriedReadingsExtending,"if (firstCutSelectionSlice(region, cadences, selectionCount, ext) < 0) {"
+src/composing/analysis/function/functionresolver.cpp,635,ternary,resolveCarriedReadingsExtending,const int fromTick = region.empty() ? 0 : region.back().endTick;
+src/composing/analysis/function/functionresolver.cpp,637,if,resolveCarriedReadingsExtending,if (st == ForwardSupply::Supplied && !more.empty()) {
+src/composing/analysis/function/functionresolver.cpp,642,if,resolveCarriedReadingsExtending,if (st == ForwardSupply::Refused) {
+src/composing/analysis/function/functionresolver.cpp,655,if,resolveCarriedReadingsExtending,if (static_cast<int>(result.readings.size()) > selectionCount) {
+src/composing/analysis/function/functionresolver.cpp,665,if,resolveCarriedReadingsExtending,"if (isCutDecision(i, region, cadences, finalProg, ext)) {"
+src/composing/analysis/function/functionresolver.cpp,667,if,resolveCarriedReadingsExtending,if (denied) {
+src/composing/analysis/function/tonicizationlabeler.cpp,46,if,keyScale,"if (!pcInMask(collMask, tonicPc)) {"
+src/composing/analysis/function/tonicizationlabeler.cpp,52,if,keyScale,"if (pcInMask(collMask, pc)) {"
+src/composing/analysis/function/tonicizationlabeler.cpp,70,if,labelTonicizations,if (regions.size() < 2) {
+src/composing/analysis/function/tonicizationlabeler.cpp,79,if,labelTonicizations,if (a.rootPc < 0 || b.rootPc < 0) {
+src/composing/analysis/function/tonicizationlabeler.cpp,92,if,labelTonicizations,"if (!keyScale(a.keyTonicPc, collMask, scale)) {"
+src/composing/analysis/function/tonicizationlabeler.cpp,97,if,labelTonicizations,if (scale[s] == d) {
+src/composing/analysis/function/tonicizationlabeler.cpp,102,if,labelTonicizations,if (degree <= 0) {
+src/composing/analysis/function/tonicizationlabeler.cpp,113,if,labelTonicizations,"if (pcInMask(collMask, lt)) {"
+src/composing/analysis/function/tonicizationlabeler.cpp,120,if,labelTonicizations,if (a.quality == ChordQuality::Major) {
+src/composing/analysis/function/tonicizationlabeler.cpp,123,if,labelTonicizations,"if (a.rootPc == normalizePc(d + 7) && pcInMask(a.pitchClassMask, lt)) {"
+src/composing/analysis/function/tonicizationlabeler.cpp,127,else-if,labelTonicizations,} else if (a.quality == ChordQuality::Diminished
+src/composing/analysis/function/tonicizationlabeler.cpp,131,if,labelTonicizations,if (a.rootPc == lt) {
+src/composing/analysis/function/tonicizationlabeler.cpp,137,if,labelTonicizations,if (kind == AppliedKind::None) {
+src/composing/analysis/function/tonicizationlabeler.cpp,148,if,labelTonicizations,if (kind == AppliedKind::AppliedDominant) {
+src/composing/analysis/function/tonicizationlabeler.cpp,150,if,labelTonicizations,if (hasSeventh) {
+src/composing/analysis/function/tonicizationlabeler.cpp,156,ternary,labelTonicizations,"? ""\xc3\xb8""   // ø (half-diminished)"
+src/composing/analysis/function/tonicizationlabeler.cpp,158,if,labelTonicizations,if (hasSeventh) {
+src/composing/analysis/function/tonicizationlabeler.cpp,163,ternary,labelTonicizations,label += (degMajorThird ? kUpper[degree] : kLower[degree]);
+src/composing/analysis/progression/progressionrecognizer.cpp,34,if,idiomIndex,if (bit == (1u << i)) {
+src/composing/analysis/progression/progressionrecognizer.cpp,46,if,maxWeightOverIdioms,if ((idioms & static_cast<IdiomSet>(1u << i)) != 0) {
+src/composing/analysis/progression/progressionrecognizer.cpp,47,if,maxWeightOverIdioms,if (!any || w[i] > best) {
+src/composing/analysis/progression/progressionrecognizer.cpp,53,ternary,maxWeightOverIdioms,"return any ? best : 0.0;  // §4.5: the MAX over the set, never the sum; empty set → 0"
+src/composing/analysis/progression/progressionrecognizer.cpp,67,if,normaliseToUnit,if (sum <= 0.0) {
+src/composing/analysis/progression/progressionrecognizer.cpp,89,if,blendIdiomWeights,if (evidence <= 0.0) {
+src/composing/analysis/progression/progressionrecognizer.cpp,95,ternary,blendIdiomWeights,const double alpha = (blendRate > 0.0) ? evidence / (evidence + blendRate) : 1.0;
+src/composing/analysis/progression/progressionrecognizer.cpp,112,if,recognitionPriorStrength,if (modeContradicts) {
+src/composing/analysis/progression/progressionrecognizer.cpp,115,if,recognitionPriorStrength,if (chordsOnly) {
+src/composing/analysis/progression/progressionrecognizer.cpp,151,if,selectCandidateFillingMember,if (candidates[i].rootPc == memberRootPc && candidates[i].quality == memberQuality) {
+src/composing/analysis/progression/progressionrecognizer.cpp,171,if,modeContradictsLocalKey,if (entryMode == Mode::Major) {
+src/composing/analysis/progression/progressionrecognizer.cpp,174,if,modeContradictsLocalKey,if (entryMode == Mode::Minor) {
+src/composing/analysis/progression/progressionrecognizer.cpp,190,if,anchorRootPc,if (c.spanStart < 0 || c.spanStart >= static_cast<int>(progression.size())) {
+src/composing/analysis/progression/progressionrecognizer.cpp,207,if,recognizeProgressions,if (progression.empty()) {
+src/composing/analysis/progression/progressionrecognizer.cpp,226,if,recognizeProgressions,if (!c.entry) {
+src/composing/analysis/progression/progressionrecognizer.cpp,230,if,recognizeProgressions,if ((c.entry->idioms & static_cast<IdiomSet>(1u << i)) != 0) {
+src/composing/analysis/progression/progressionrecognizer.cpp,241,if,recognizeProgressions,if (!c.entry) {
+src/composing/analysis/progression/progressionrecognizer.cpp,250,if,recognizeProgressions,if (prior <= params.admissionThreshold) {
+src/composing/analysis/progression/progressionrecognizer.cpp,284,if,recognizeProgressions,if (lx != ly) {
+src/composing/analysis/progression/progressionrecognizer.cpp,297,if,recognizeProgressions,if (c.entry->skeleton.kind != SkeletonKind::ChordDegrees) {
+src/composing/analysis/progression/progressionrecognizer.cpp,303,if,recognizeProgressions,if (stepIdx >= steps.size()) {
+src/composing/analysis/progression/progressionrecognizer.cpp,312,if,recognizeProgressions,if (m.spanIndex == p) {
+src/composing/analysis/progression/progressionrecognizer.cpp,318,if,recognizeProgressions,if (pos.committed) {
+src/composing/analysis/progression/progressionrecognizer.cpp,321,if,recognizeProgressions,if (substituted) {
+src/composing/analysis/progression/progressionrecognizer.cpp,326,if,recognizeProgressions,"if (memberContradictsCommittedReading(memberRootPc, memberQuality,"
+src/composing/analysis/progression/progressionrecognizer.cpp,366,if,recognizeProgressions,if (x->cand->entry != y->cand->entry) {
+src/composing/analysis/progression/progressionrecognizer.cpp,382,if,recognizeProgressions,if (next.spanStart < prev.spanEnd) {
+src/composing/analysis/progression/progressionrecognizer.cpp,387,if,recognizeProgressions,if (ap < 0 || an < 0) {
+src/composing/analysis/progression/progressionrecognizer.cpp,391,if,recognizeProgressions,if (step == 0) {
+src/composing/analysis/progression/progressionrecognizer.cpp,394,if,recognizeProgressions,if (runEnd == i) {
+src/composing/analysis/progression/progressionrecognizer.cpp,396,else-if,recognizeProgressions,} else if (step != runStep) {
+src/composing/analysis/progression/progressionrecognizer.cpp,404,if,recognizeProgressions,if (runEnd > i) {  // ≥2 recognitions with a constant nonzero step
+tools/a8_rebaseline_measure.py,527,if,<module-scope>,"if __name__ == ""__main__"":"
+tools/a8_rebaseline_measure.py,75,if,_pcs,if bitmap is None:
+tools/a8_rebaseline_measure.py,82,if,_t_invariant,if not pcs:
+tools/a8_rebaseline_measure.py,89,if,_is_halfdim_or_min6_set,if len(pcs) != 4:
+tools/a8_rebaseline_measure.py,91,for,_is_halfdim_or_min6_set,for r in pcs:
+tools/a8_rebaseline_measure.py,100,if,cell_class,"if len(pcs) >= 3 and _t_invariant(pcs, 3):      # dim7 (fully-diminished)"
+tools/a8_rebaseline_measure.py,102,if,cell_class,"if len(pcs) >= 3 and _t_invariant(pcs, 4):      # augmented triad"
+tools/a8_rebaseline_measure.py,104,if,cell_class,"if len(pcs) >= 4 and _t_invariant(pcs, 2):      # whole-tone"
+tools/a8_rebaseline_measure.py,106,if,cell_class,if _is_halfdim_or_min6_set(pcs):                # ø7 <-> m6 share-tone
+tools/a8_rebaseline_measure.py,175,if,build_piece_grid,if not ours_regions or not wir_regions:
+tools/a8_rebaseline_measure.py,182,for,build_piece_grid,"for (s, e) in ours_spans:"
+tools/a8_rebaseline_measure.py,185,for,build_piece_grid,"for (s, e) in dcml_spans:"
+tools/a8_rebaseline_measure.py,188,if,build_piece_grid,if len(bounds) < 2:
+tools/a8_rebaseline_measure.py,191,for,build_piece_grid,for i in range(len(grid) - 1):
+tools/a8_rebaseline_measure.py,206,if,build_piece_grid,if dict(pg.bucket_dur) != dict(oracle.bucket_dur) or pg.scored_dur != oracle.scored_dur:
+tools/a8_rebaseline_measure.py,223,for,batch_gate_cases,"for i, (our_r, their_r) in enumerate(aligned):"
+tools/a8_rebaseline_measure.py,256,if,measure_preset,if scores is not None:
+tools/a8_rebaseline_measure.py,287,for,measure_preset,for ours_path in ours_files:
+tools/a8_rebaseline_measure.py,430,for,_write_cells,"for stem, c in sorted(cells, key=lambda x: (x[0], x[1][""t0""])):"
+tools/a8_rebaseline_measure.py,441,for,_write_runs,"for r in sorted(runs, key=lambda r: (r[""stem""], r[""start""])):"
+tools/a8_rebaseline_measure.py,454,for,build_mapping,"for stem, case in batch_cases:"
+tools/a8_rebaseline_measure.py,507,if,main,if args.scores:
+tools/a8_rebaseline_measure.py,512,for,main,for preset in presets:
+tools/a8_rebaseline_measure.py,92,if,_is_halfdim_or_min6_set,"if frozenset((r + d) % 12 for d in (0, 3, 6, 10)) == pcs:"
+tools/a8_rebaseline_measure.py,126,if,add_cell,if pair is None:
+tools/a8_rebaseline_measure.py,140,if,add_cell,if otc is None:
+tools/a8_rebaseline_measure.py,179,ternary,build_piece_grid,"m21_spans = [(r.start_tick, r.end_tick) for r in m21_regions] if m21_regions else []"
+tools/a8_rebaseline_measure.py,183,if,build_piece_grid,if e > s:
+tools/a8_rebaseline_measure.py,186,if,build_piece_grid,if s >= 0 and e > s:
+tools/a8_rebaseline_measure.py,193,if,build_piece_grid,if t1 - t0 <= 0:
+tools/a8_rebaseline_measure.py,197,if,build_piece_grid,if oi is None or di is None:
+tools/a8_rebaseline_measure.py,220,ternary,batch_gate_cases,"wir_aligned = (cmp.align_dcml_regions(ours_regions, wir_regions)"
+tools/a8_rebaseline_measure.py,224,if,batch_gate_cases,"if cmp.classify(our_r, their_r).category != ""chord_disagree"":"
+tools/a8_rebaseline_measure.py,226,if,batch_gate_cases,if our_r.bass_is_root:
+tools/a8_rebaseline_measure.py,228,if,batch_gate_cases,if not wir_regions or i >= len(wir_aligned):
+tools/a8_rebaseline_measure.py,233,if,batch_gate_cases,"if cat != ""music21_dcml_agree"":"
+tools/a8_rebaseline_measure.py,248,ternary,measure_preset,"corpus_root = Path(corpus_root) if corpus_root else (_ROOT / ""tools"" / ""corpus"")"
+tools/a8_rebaseline_measure.py,290,try,measure_preset,try:
+tools/a8_rebaseline_measure.py,294,if,measure_preset,if not ours_regions:
+tools/a8_rebaseline_measure.py,297,if,measure_preset,if m21_path.exists():
+tools/a8_rebaseline_measure.py,304,if,measure_preset,if wir_path:
+tools/a8_rebaseline_measure.py,309,if,measure_preset,if not wir_regions:
+tools/a8_rebaseline_measure.py,312,if,measure_preset,if m21_regions:
+tools/a8_rebaseline_measure.py,322,for,measure_preset,for c in pg.cells:
+tools/a8_rebaseline_measure.py,365,for,measure_preset,"for case in batch_gate_cases(ours_regions, m21_regions, wir_regions):"
+tools/a8_rebaseline_measure.py,374,for,merge_runs,"for stem, c in sorted(cells, key=lambda x: (x[0], x[1][""t0""])):"
+tools/a8_rebaseline_measure.py,384,if,merge_runs,if cur:
+tools/a8_rebaseline_measure.py,461,if,build_mapping,if b_fail:
+tools/a8_rebaseline_measure.py,465,if,build_mapping,if a_fail:
+tools/a8_rebaseline_measure.py,510,ternary,main,presets = [args.preset] if args.preset else PRESETS
+tools/a8_rebaseline_measure.py,142,if,add_cell,elif gtc is None:
+tools/a8_rebaseline_measure.py,200,ternary,build_piece_grid,"mi = crn._active_index_at(m21_spans, t0) if m21_spans else None"
+tools/a8_rebaseline_measure.py,201,ternary,build_piece_grid,m21_root = m21_regions[mi].root_pc if mi is not None else None
+tools/a8_rebaseline_measure.py,231,ternary,batch_gate_cases,wir_pc = wir_r.root_pc if wir_r is not None else None
+tools/a8_rebaseline_measure.py,298,try,measure_preset,try:
+tools/a8_rebaseline_measure.py,305,try,measure_preset,try:
+tools/a8_rebaseline_measure.py,325,if,measure_preset,"if c[""root_agree""]:"
+tools/a8_rebaseline_measure.py,336,if,measure_preset,"if c[""rn_agree""]:"
+tools/a8_rebaseline_measure.py,342,if,measure_preset,"if kv == ""agree"":"
+tools/a8_rebaseline_measure.py,351,if,measure_preset,"if c[""m21_genuine""]:"
+tools/a8_rebaseline_measure.py,376,if,merge_runs,"if cur and cur[""key""] == key and cur[""end""] == c[""t0""]:"
+tools/a8_rebaseline_measure.py,144,if,add_cell,"elif (otc, omaj) == (gtc, gmaj):"
+tools/a8_rebaseline_measure.py,232,ternary,batch_gate_cases,"cat = cmp.three_way_classify(our_r.root_pc, their_r.root_pc if their_r else None, wir_pc)"
+tools/a8_rebaseline_measure.py,331,if,measure_preset,"if c[""cls""] == ""a"":"
+tools/a8_rebaseline_measure.py,344,if,measure_preset,"elif kv == ""disagree"":"
+tools/a8_rebaseline_measure.py,355,if,measure_preset,"if c[""cls""] == ""a"":"
+tools/a8_rebaseline_measure.py,359,if,measure_preset,"if not c[""rn_agree""]:"
+tools/a8_rebaseline_measure.py,361,if,measure_preset,"if c[""key_verdict""] == ""disagree"":"
+tools/a8_rebaseline_measure.py,379,if,merge_runs,if cur:
+tools/a8_rebaseline_measure.py,399,ternary,measure_preset,"""agg"": {k: (dict(v) if isinstance(v, Counter) else v) for k, v in agg.items()},"
+tools/a8_rebaseline_measure.py,346,if,measure_preset,"elif kv == ""keyfail"":"
+tools/a8_rebaseline_measure.py,457,ternary,build_mapping,"cells = [c for c in (pg.cells if pg else []) if c[""t0""] < e and c[""t1""] > s]"
+tools/analyze_inversion_errors.py,368,if,<module-scope>,"if __name__ == ""__main__"":"
+tools/analyze_inversion_errors.py,39,if,_infer_quality,if not m:
+tools/analyze_inversion_errors.py,42,if,_infer_quality,if 'dim7' in body or '°7' in body:
+tools/analyze_inversion_errors.py,44,if,_infer_quality,if body.startswith('ø') or 'm7b5' in body.lower():
+tools/analyze_inversion_errors.py,46,if,_infer_quality,if 'maj7' in body.lower() or body.startswith('M7'):
+tools/analyze_inversion_errors.py,48,if,_infer_quality,if body.startswith('m7') or body.startswith('min7'):
+tools/analyze_inversion_errors.py,50,if,_infer_quality,if body.startswith('7'):
+tools/analyze_inversion_errors.py,52,if,_infer_quality,if 'dim' in body.lower() or '°' in body:
+tools/analyze_inversion_errors.py,54,if,_infer_quality,if body.startswith('m') or body.startswith('min'):
+tools/analyze_inversion_errors.py,74,if,main,if args.corpus_dir and args.ours_dir:
+tools/analyze_inversion_errors.py,81,if,main,if args.ours_dir:
+tools/analyze_inversion_errors.py,102,if,main,if not ours_files:
+tools/analyze_inversion_errors.py,108,if,main,if sample_regions and sample_regions[0].bass_is_root is None:
+tools/analyze_inversion_errors.py,124,for,main,for ours_path in ours_files:
+tools/analyze_inversion_errors.py,192,if,main,if total_genuine > 0:
+tools/analyze_inversion_errors.py,200,if,main,if n == 0:
+tools/analyze_inversion_errors.py,232,for,main,for r in errors:
+tools/analyze_inversion_errors.py,253,for,main,"for q, cnt in alt_quality_counts.most_common(8):"
+tools/analyze_inversion_errors.py,263,for,main,for nc in sorted(note_counts.keys()):
+tools/analyze_inversion_errors.py,306,for,main,"for lo, hi in bins:"
+tools/analyze_inversion_errors.py,311,if,main,if hi_cnt:
+tools/analyze_inversion_errors.py,334,for,main,for r in errors:
+tools/analyze_inversion_errors.py,361,if,main,if should_have_fired:
+tools/analyze_inversion_errors.py,88,try,main,try:
+tools/analyze_inversion_errors.py,127,if,main,if not music21_path.exists():
+tools/analyze_inversion_errors.py,131,try,main,try:
+tools/analyze_inversion_errors.py,138,if,main,if not ours_regions:
+tools/analyze_inversion_errors.py,148,if,main,if wir_path:
+tools/analyze_inversion_errors.py,160,for,main,"for i, (our_r, their_r) in enumerate(aligned):"
+tools/analyze_inversion_errors.py,197,ternary,main,errors = genuine_bir_errors if genuine_bir_errors else all_bir_errors_2way
+tools/analyze_inversion_errors.py,198,ternary,main,"source = ""three-way genuine errors"" if genuine_bir_errors else ""two-way chord_disagree"""
+tools/analyze_inversion_errors.py,234,if,main,if not alts:
+tools/analyze_inversion_errors.py,238,for,main,for alt in alts:
+tools/analyze_inversion_errors.py,243,if,main,if found_clean:
+tools/analyze_inversion_errors.py,328,for,_has_clean_alt,for alt in (r.alternatives or []):
+tools/analyze_inversion_errors.py,336,if,main,if margin >= INVERSION_SUSPICION_MARGIN:
+tools/analyze_inversion_errors.py,340,if,main,if not clean_present:
+tools/analyze_inversion_errors.py,346,if,main,if winner_has_7th and not alt_has_7th:
+tools/analyze_inversion_errors.py,87,ternary,main,corpus_dir = Path(args.corpus_dir).resolve() if args.corpus_dir else _CORPUS_DIR
+tools/analyze_inversion_errors.py,149,try,main,try:
+tools/analyze_inversion_errors.py,156,ternary,main,"wir_aligned = cmp.align_dcml_regions(ours_regions, wir_regions) if wir_regions else [None] * len(ours_regions)"
+tools/analyze_inversion_errors.py,162,if,main,"if result.category != ""chord_disagree"":"
+tools/analyze_inversion_errors.py,168,if,main,if bir:
+tools/analyze_inversion_errors.py,174,if,main,if wir_regions and i < len(wir_aligned):
+tools/analyze_inversion_errors.py,241,if,main,if q in CLEAN:
+tools/analyze_inversion_errors.py,330,if,_has_clean_alt,if q in CLEAN:
+tools/analyze_inversion_errors.py,178,if,main,"if category == ""music21_dcml_agree"":"
+tools/analyze_inversion_errors.py,176,ternary,main,wir_pc = wir_r.root_pc if wir_r is not None else None
+tools/analyze_inversion_errors.py,179,if,main,if bir:
+tools/analyze_inversion_errors.py,177,ternary,main,"category = cmp.three_way_classify(our_r.root_pc, their_r.root_pc if their_r else None, wir_pc)"
+tools/batch_analyze.cpp,144,switch,jsonEscape,switch (c) {
+tools/batch_analyze.cpp,145,case,jsonEscape,"case '""':  r += ""\\\""""; break;"
+tools/batch_analyze.cpp,146,case,jsonEscape,"case '\\': r += ""\\\\""; break;"
+tools/batch_analyze.cpp,147,case,jsonEscape,"case '\n': r += ""\\n"";  break;"
+tools/batch_analyze.cpp,148,case,jsonEscape,"case '\r': r += ""\\r"";  break;"
+tools/batch_analyze.cpp,149,case,jsonEscape,"case '\t': r += ""\\t"";  break;"
+tools/batch_analyze.cpp,151,if,jsonEscape,if (c < 0x20) {
+tools/batch_analyze.cpp,195,if,applyPreset,"if (name == ""Default"") {"
+tools/batch_analyze.cpp,220,if,applyPreset,if (p.name != name) continue;
+tools/batch_analyze.cpp,337,if,loadScore,"if (ext == ""xml"" || ext == ""musicxml"") {"
+tools/batch_analyze.cpp,341,else-if,loadScore,"} else if (ext == ""mxl"") {"
+tools/batch_analyze.cpp,352,if,loadScore,if (!ok) {
+tools/batch_analyze.cpp,373,if,isChordTrackStaff,if (!staff || !staff->part()) return false;
+tools/batch_analyze.cpp,386,if,staffIsEligible,if (staffIdx >= staves.size()) return false;
+tools/batch_analyze.cpp,388,if,staffIsEligible,if (!st || !st->visible()) return false;
+tools/batch_analyze.cpp,390,if,staffIsEligible,if (!part) return false;
+tools/batch_analyze.cpp,392,if,staffIsEligible,if (instr && instr->useDrumset()) return false;
+tools/batch_analyze.cpp,408,if,referenceStaffForAnalysis,"if (!excludeStaves.count(staffIndex) && staffIsEligible(score, staffIndex)) {"
+tools/batch_analyze.cpp,440,if,locateMeasureByTick,if (!score) {
+tools/batch_analyze.cpp,451,if,locateMeasureByTick,if (tick >= measure->tick() && tick < measure->endTick()) {
+tools/batch_analyze.cpp,455,if,locateMeasureByTick,if (!measure->excludeFromNumbering()) {
+tools/batch_analyze.cpp,460,if,locateMeasureByTick,if (layoutBreak && layoutBreak->startWithMeasureOne()) {
+tools/batch_analyze.cpp,465,if,locateMeasureByTick,if (lastMeasure && tick == score->endTick()) {
+tools/batch_analyze.cpp,549,switch,regionDumpModeName,switch (mode) {
+tools/batch_analyze.cpp,550,case,regionDumpModeName,"case RegionDumpMode::Batch:               return ""batch"";"
+tools/batch_analyze.cpp,551,case,regionDumpModeName,"case RegionDumpMode::Notation:            return ""notation"";"
+tools/batch_analyze.cpp,552,case,regionDumpModeName,"case RegionDumpMode::NotationPreMerge:    return ""notation-premerge"";"
+tools/batch_analyze.cpp,576,if,analyzeScore,if (!firstSegment) {
+tools/batch_analyze.cpp,611,if,analyzeScore,if (regions.empty()) {
+tools/batch_analyze.cpp,628,if,analyzeScore,if (sectionLevel) {
+tools/batch_analyze.cpp,642,ternary,analyzeScore,ar.measureNumber    = measure ? regionMeasure.number : 0;
+tools/batch_analyze.cpp,643,if,analyzeScore,if (measure) {
+tools/batch_analyze.cpp,660,if,analyzeScore,if (ar.bassPc < 0) {
+tools/batch_analyze.cpp,661,if,analyzeScore,if (const auto* bassTone = analysis::bassToneFromTones(ar.tones)) {
+tools/batch_analyze.cpp,686,if,analyzeScore,if (!measure) {
+tools/batch_analyze.cpp,693,ternary,analyzeScore,prevKey.has_value() ? &prevKey.value() : nullptr);
+tools/batch_analyze.cpp,711,if,analyzeScore,if (ar.bassPc < 0) {
+tools/batch_analyze.cpp,712,if,analyzeScore,if (const auto* bassTone = analysis::bassToneFromTones(ar.tones)) {
+tools/batch_analyze.cpp,741,if,convertNotationRegion,if (converted.bassPc < 0) {
+tools/batch_analyze.cpp,742,if,convertNotationRegion,if (const auto* bassTone = analysis::bassToneFromTones(converted.tones)) {
+tools/batch_analyze.cpp,748,ternary,locateMeasureByTick,"? locateMeasureByTick(score, Fraction::fromTicks(region.startTick))"
+tools/batch_analyze.cpp,751,if,convertNotationRegion,if (measure) {
+tools/batch_analyze.cpp,782,if,analyzeScoreNotation,if (!firstSegment) {
+tools/batch_analyze.cpp,809,ternary,analyzeScoreNotation,? dump.finalRegions
+tools/batch_analyze.cpp,820,switch,qualityToString,switch (q) {
+tools/batch_analyze.cpp,821,case,qualityToString,"case ChordQuality::Major:          return ""Major"";"
+tools/batch_analyze.cpp,822,case,qualityToString,"case ChordQuality::Minor:          return ""Minor"";"
+tools/batch_analyze.cpp,823,case,qualityToString,"case ChordQuality::Diminished:     return ""Diminished"";"
+tools/batch_analyze.cpp,824,case,qualityToString,"case ChordQuality::Augmented:      return ""Augmented"";"
+tools/batch_analyze.cpp,825,case,qualityToString,"case ChordQuality::HalfDiminished: return ""HalfDiminished"";"
+tools/batch_analyze.cpp,826,case,qualityToString,"case ChordQuality::Suspended2:     return ""Suspended2"";"
+tools/batch_analyze.cpp,827,case,qualityToString,"case ChordQuality::Suspended4:     return ""Suspended4"";"
+tools/batch_analyze.cpp,828,case,qualityToString,"case ChordQuality::Power:          return ""Power"";"
+tools/batch_analyze.cpp,873,ternary,writeKeyCandidateDump,"prevKey.has_value() ? &prevKey.value() : nullptr, &dump);"
+tools/batch_analyze.cpp,876,if,writeKeyCandidateDump,if (!match) {
+tools/batch_analyze.cpp,878,if,writeKeyCandidateDump,if (t >= r.startTick && t < r.endTick) { match = true; break; }
+tools/batch_analyze.cpp,882,if,writeKeyCandidateDump,if (match) {
+tools/batch_analyze.cpp,883,if,writeKeyCandidateDump,"if (!firstEmitted) { out << "",\n""; }"
+tools/batch_analyze.cpp,895,ternary,writeKeyCandidateDump,"out << ""      \""hysteresisPromoted\"": "" << (dump.hysteresisPromoted ? ""true"" : ""false"") << "",\n"";"
+tools/batch_analyze.cpp,896,ternary,writeKeyCandidateDump,"out << ""      \""strongPriorPromoted\"": "" << (dump.strongPriorPromoted ? ""true"" : ""false"") << "",\n"";"
+tools/batch_analyze.cpp,906,ternary,writeKeyCandidateDump,"<< "", \""isMajor\"": "" << (analysis::keyModeIsMajor(m) ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,920,ternary,writeKeyCandidateDump,"<< "", \""completeTriad\"": "" << (c.hasCompleteTriad ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,922,ternary,writeKeyCandidateDump,"out << (ci + 1 < dump.candidates.size() ? "",\n"" : ""\n"");"
+tools/batch_analyze.cpp,955,ternary,writeCadenceAnchorJson,ci.rootPc = r.hasAnalyzedChord ? r.chord.identity.rootPc : -1;
+tools/batch_analyze.cpp,963,if,writeCadenceAnchorJson,if (!endsPhrase) {
+tools/batch_analyze.cpp,965,if,writeCadenceAnchorJson,if (it != phraseBoundaryTicks.end() && *it < r.endTick) {
+tools/batch_analyze.cpp,980,ternary,writeCadenceAnchorJson,"out << ""    \""detected\"": ""    << (anchor.detected ? ""true"" : ""false"") << "",\n"";"
+tools/batch_analyze.cpp,982,ternary,writeCadenceAnchorJson,"out << ""    \""minorMode\"": ""   << (anchor.minorMode ? ""true"" : ""false"") << "",\n"";"
+tools/batch_analyze.cpp,988,ternary,writeCadenceAnchorJson,"out << (i == 0 ? ""\n"" : "",\n"");"
+tools/batch_analyze.cpp,992,ternary,writeCadenceAnchorJson,"<< "", \""minorMode\"": "" << (c.minorMode ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,993,ternary,writeCadenceAnchorJson,"<< "", \""endsPhrase\"": "" << (c.endsPhrase ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,994,ternary,writeCadenceAnchorJson,"<< "", \""chromaticLeadingTone\"": "" << (c.chromaticLeadingTone ? ""true"" : ""false"") << ""}"";"
+tools/batch_analyze.cpp,996,ternary,writeCadenceAnchorJson,"out << (cadences.empty() ? """" : ""\n    "") << ""]\n"";"
+tools/batch_analyze.cpp,1023,ternary,writeModulationJson,ci.rootPc = r.hasAnalyzedChord ? r.chord.identity.rootPc : -1;
+tools/batch_analyze.cpp,1027,if,writeModulationJson,if (!endsPhrase) {
+tools/batch_analyze.cpp,1029,if,writeModulationJson,if (it != phraseBoundaryTicks.end() && *it < r.endTick) {
+tools/batch_analyze.cpp,1042,ternary,writeModulationJson,"out << ""    \""anchorDetected\"": "" << (mod.anchor.detected ? ""true"" : ""false"") << "",\n"";"
+tools/batch_analyze.cpp,1044,ternary,writeModulationJson,"out << ""    \""anchorMinorMode\"": "" << (mod.anchor.minorMode ? ""true"" : ""false"") << "",\n"";"
+tools/batch_analyze.cpp,1049,ternary,writeModulationJson,"out << (i == 0 ? ""\n"" : "",\n"");"
+tools/batch_analyze.cpp,1053,ternary,writeModulationJson,"<< "", \""minorMode\"": "" << (s.minorMode ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,1057,ternary,writeModulationJson,"<< "", \""agreesWithAnchor\"": "" << (s.agreesWithAnchor ? ""true"" : ""false"") << ""}"";"
+tools/batch_analyze.cpp,1059,ternary,writeModulationJson,"out << (mod.spans.empty() ? """" : ""\n    "") << ""]\n"";"
+tools/batch_analyze.cpp,1096,ternary,writeJointKeyJson,ji.rootPc = r.hasAnalyzedChord ? r.chord.identity.rootPc : -1;
+tools/batch_analyze.cpp,1100,if,writeJointKeyJson,if (!endsPhrase) {
+tools/batch_analyze.cpp,1102,if,writeJointKeyJson,if (it != phraseBoundaryTicks.end() && *it < r.endTick) {
+tools/batch_analyze.cpp,1118,if,writeJointKeyJson,if (r.hasAnalyzedChord) {
+tools/batch_analyze.cpp,1139,ternary,writeJointKeyJson,"out << ""    \""anchorDetected\"": "" << (jk.anchor.detected ? ""true"" : ""false"") << "",\n"";"
+tools/batch_analyze.cpp,1141,ternary,writeJointKeyJson,"out << ""    \""anchorMinorMode\"": "" << (jk.anchor.minorMode ? ""true"" : ""false"") << "",\n"";"
+tools/batch_analyze.cpp,1157,ternary,writeJointKeyJson,"out << (i == 0 ? """" : "", "")"
+tools/batch_analyze.cpp,1159,ternary,writeJointKeyJson,"<< "", \""isMajor\"": "" << (st.isMajor ? ""true"" : ""false"") << ""}"";"
+tools/batch_analyze.cpp,1165,ternary,writeJointKeyJson,"out << (i == 0 ? ""\n"" : "",\n"");"
+tools/batch_analyze.cpp,1169,ternary,writeJointKeyJson,"<< "", \""softIsMajor\"": "" << (d.softIsMajor ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,1171,ternary,writeJointKeyJson,"<< "", \""jointIsMajor\"": "" << (d.jointIsMajor ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,1173,ternary,writeJointKeyJson,"<< "", \""prodIsMajor\"": "" << (d.prodIsMajor ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,1174,ternary,writeJointKeyJson,"<< "", \""keyHardPinned\"": "" << (d.keyHardPinned ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,1175,ternary,writeJointKeyJson,"<< "", \""chordPinned\"": "" << (d.chordPinned ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,1176,ternary,writeJointKeyJson,"<< "", \""keyAmbiguous\"": "" << (d.keyAmbiguous ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,1177,ternary,writeJointKeyJson,"<< "", \""coupled\"": "" << (d.coupled ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,1178,ternary,writeJointKeyJson,"<< "", \""jointChanged\"": "" << (d.jointChanged ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,1179,ternary,writeJointKeyJson,"<< "", \""anchorContributed\"": "" << (d.anchorContributed ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,1180,ternary,writeJointKeyJson,"<< "", \""modulationContributed\"": "" << (d.modulationContributed ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,1184,ternary,writeJointKeyJson,"out << (jk.decisions.empty() ? """" : ""\n    "") << ""]\n"";"
+tools/batch_analyze.cpp,1206,ternary,writeTonicizationJson,ti.rootPc = r.hasAnalyzedChord ? r.chord.identity.rootPc : -1;
+tools/batch_analyze.cpp,1225,ternary,writeTonicizationJson,"out << (i == 0 ? ""\n"" : "",\n"");"
+tools/batch_analyze.cpp,1227,ternary,writeTonicizationJson,"<< "", \""isApplied\"": "" << (l.isApplied ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,1231,ternary,writeTonicizationJson,"<< "", \""hasSeventh\"": "" << (l.hasSeventh ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,1234,ternary,writeTonicizationJson,"out << (labels.empty() ? """" : ""\n    "") << ""]"";"
+tools/batch_analyze.cpp,1251,switch,relationalRoleName,switch (role) {
+tools/batch_analyze.cpp,1252,case,relationalRoleName,"case analysis::RelationalRole::None:             return ""None"";"
+tools/batch_analyze.cpp,1253,case,relationalRoleName,"case analysis::RelationalRole::AugmentedSixth:   return ""AugmentedSixth"";"
+tools/batch_analyze.cpp,1254,case,relationalRoleName,"case analysis::RelationalRole::Neapolitan:       return ""Neapolitan"";"
+tools/batch_analyze.cpp,1255,case,relationalRoleName,"case analysis::RelationalRole::AppliedSecondary: return ""AppliedSecondary"";"
+tools/batch_analyze.cpp,1256,case,relationalRoleName,"case analysis::RelationalRole::ModalMixture:     return ""ModalMixture"";"
+tools/batch_analyze.cpp,1268,if,writeL5Json,if (regions[j].hasAnalyzedChord && regions[j].chord.identity.rootPc >= 0) {
+tools/batch_analyze.cpp,1293,if,writeL5Json,if (t.tpc >= 0) { in.noteTpcs.push_back(t.tpc); }
+tools/batch_analyze.cpp,1296,ternary,classifyRelationalLabel,? analysis::classifyRelationalLabel(in)
+tools/batch_analyze.cpp,1317,if,writeL5Json,if (r.hasAnalyzedChord) {
+tools/batch_analyze.cpp,1341,ternary,writeL5Json,"out << (i == 0 ? ""\n"" : "",\n"");"
+tools/batch_analyze.cpp,1347,ternary,writeL5Json,"<< "", \""openMark\"": "" << (u.openMark ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,1351,ternary,writeL5Json,"out << (out5.units.empty() ? """" : ""\n    "") << ""]"";"
+tools/batch_analyze.cpp,1380,ternary,writeRegionKeyMarginJson,const int rootPc = r.hasAnalyzedChord ? r.chord.identity.rootPc : -1;
+tools/batch_analyze.cpp,1381,ternary,writeRegionKeyMarginJson,"out << (i ? "",\n    "" : ""\n    "");"
+tools/batch_analyze.cpp,1388,ternary,writeRegionKeyMarginJson,"<< "", \""uncertain\"": "" << (r.keySeqMargin < 1.0 ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,1391,ternary,writeRegionKeyMarginJson,"out << (regions.empty() ? ""]"" : ""\n  ]"") << ""\n}\n"";"
+tools/batch_analyze.cpp,1422,ternary,writeFanoutJson,const int rootPc = r.hasAnalyzedChord ? r.chord.identity.rootPc : -1;
+tools/batch_analyze.cpp,1423,ternary,writeFanoutJson,"out << (i ? "",\n    "" : ""\n    "");"
+tools/batch_analyze.cpp,1433,ternary,writeFanoutJson,"out << (regions.empty() ? ""]"" : ""\n  ]"") << ""\n}\n"";"
+tools/batch_analyze.cpp,1464,ternary,writeJson,const int rootPitchClass = r.hasAnalyzedChord ? r.chord.identity.rootPc : -1;
+tools/batch_analyze.cpp,1466,ternary,writeJson,"? analysis::ChordSymbolFormatter::formatSymbol(r.chord, r.key.keySignatureFifths)"
+tools/batch_analyze.cpp,1469,ternary,writeJson,? analysis::ChordSymbolFormatter::formatRomanNumeral(r.chord)
+tools/batch_analyze.cpp,1477,ternary,writeJson,? 0.0
+tools/batch_analyze.cpp,1483,if,writeJson,if (r.pcMask & (static_cast<uint16_t>(1u) << bit)) ++noteCount;
+tools/batch_analyze.cpp,1504,if,writeJson,if (r.keyRanked.size() >= 2) {
+tools/batch_analyze.cpp,1516,ternary,writeJson,"out << ""      \""bassIsRoot\"": ""      << (bassIsRoot ? ""true"" : ""false"")                      << "",\n"";"
+tools/batch_analyze.cpp,1518,ternary,writeJson,"out << ""      \""diatonicToKey\"": ""    << (r.chord.function.diatonicToKey ? ""true"" : ""false"") << "",\n"";"
+tools/batch_analyze.cpp,1519,ternary,writeJson,"out << ""      \""hasAnalyzedChord\"": "" << (r.hasAnalyzedChord ? ""true"" : ""false"")           << "",\n"";"
+tools/batch_analyze.cpp,1529,ternary,writeJson,"<< ""\""isBass\"": "" << (tone.isBass ? ""true"" : ""false"") << "", """
+tools/batch_analyze.cpp,1533,ternary,writeJson,"<< ""}"" << (isLastTone ? """" : "","") << ""\n"";"
+tools/batch_analyze.cpp,1551,ternary,writeJson,"<< ""\""bassIsRoot\"": ""     << (altBassIsRoot ? ""true"" : ""false"") << "", """
+tools/batch_analyze.cpp,1556,if,writeJson,"if (!isLastAlt) out << "","";"
+tools/batch_analyze.cpp,1562,if,writeJson,"if (!isLast) out << "","";"
+tools/batch_analyze.cpp,1566,if,writeJson,if (dumpCadenceAnchor || dumpTonicization || dumpModulation || dumpJointKey || dumpL5) {
+tools/batch_analyze.cpp,1569,if,writeJson,if (dumpCadenceAnchor) {
+tools/batch_analyze.cpp,1573,if,writeJson,if (dumpModulation) {
+tools/batch_analyze.cpp,1574,if,writeJson,if (wroteExtra) {
+tools/batch_analyze.cpp,1580,if,writeJson,if (dumpJointKey) {
+tools/batch_analyze.cpp,1581,if,writeJson,if (wroteExtra) {
+tools/batch_analyze.cpp,1588,if,writeJson,if (dumpTonicization) {
+tools/batch_analyze.cpp,1589,if,writeJson,if (wroteExtra) {
+tools/batch_analyze.cpp,1595,if,writeJson,if (dumpL5) {
+tools/batch_analyze.cpp,1596,if,writeJson,if (wroteExtra) {
+tools/batch_analyze.cpp,1622,ternary,diagPcName,return keyFifths < 0 ? FLAT[pc] : SHARP[pc];
+tools/batch_analyze.cpp,1627,switch,diagQualityName,switch (q) {
+tools/batch_analyze.cpp,1628,case,diagQualityName,"case ChordQuality::Major:          return ""Major"";"
+tools/batch_analyze.cpp,1629,case,diagQualityName,"case ChordQuality::Minor:          return ""Minor"";"
+tools/batch_analyze.cpp,1630,case,diagQualityName,"case ChordQuality::Diminished:     return ""Diminished"";"
+tools/batch_analyze.cpp,1631,case,diagQualityName,"case ChordQuality::Augmented:      return ""Augmented"";"
+tools/batch_analyze.cpp,1632,case,diagQualityName,"case ChordQuality::HalfDiminished: return ""HalfDiminished"";"
+tools/batch_analyze.cpp,1633,case,diagQualityName,"case ChordQuality::Suspended2:     return ""Suspended2"";"
+tools/batch_analyze.cpp,1634,case,diagQualityName,"case ChordQuality::Suspended4:     return ""Suspended4"";"
+tools/batch_analyze.cpp,1635,case,diagQualityName,"case ChordQuality::Power:          return ""Power"";"
+tools/batch_analyze.cpp,1665,if,diagTemplateName,"if (tplIdx < 0 || tplIdx >= static_cast<int>(analysis::kTemplateCount)) { return ""Unknown""; }"
+tools/batch_analyze.cpp,1678,if,diagContextBanner,if (!ctx) {
+tools/batch_analyze.cpp,1685,if,diagContextBanner,if (ctx->previousRootPc >= 0) {
+tools/batch_analyze.cpp,1714,if,writeDiagnosticJson,if (r.measureNumber == targetMeasure) {
+tools/batch_analyze.cpp,1716,if,writeDiagnosticJson,if (!region || r.beat < region->beat) {
+tools/batch_analyze.cpp,1721,if,writeDiagnosticJson,if (!region) {
+tools/batch_analyze.cpp,1723,if,writeDiagnosticJson,"if (!firstBlock) { out << "",\n""; }"
+tools/batch_analyze.cpp,1747,if,writeDiagnosticJson,"if (!firstBlock) { out << "",\n""; }"
+tools/batch_analyze.cpp,1759,ternary,writeDiagnosticJson,"? analysis::ChordSymbolFormatter::formatSymbol(region->chord, keyFifths)"
+tools/batch_analyze.cpp,1773,ternary,writeDiagnosticJson,"<< ""\""is_bass\"": "" << (t.isBass ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,1775,if,writeDiagnosticJson,"if (ti + 1 < region->tones.size()) { out << "",""; }"
+tools/batch_analyze.cpp,1787,if,writeDiagnosticJson,if (diag.pcWeights[static_cast<size_t>(pc)] < 0.001) { continue; }
+tools/batch_analyze.cpp,1788,if,writeDiagnosticJson,"if (!firstPc) { out << "", ""; }"
+tools/batch_analyze.cpp,1799,if,writeDiagnosticJson,if (diag.hasWinner) {
+tools/batch_analyze.cpp,1819,ternary,writeDiagnosticJson,? 0.0
+tools/batch_analyze.cpp,1824,if,writeDiagnosticJson,if (c.verticalScore < oracleThreshold) { break; }
+tools/batch_analyze.cpp,1825,if,writeDiagnosticJson,"if (!firstOracle) { out << "",\n""; }"
+tools/batch_analyze.cpp,1851,if,writeDiagnosticJson,"if (!firstComp) { out << "",\n""; }"
+tools/batch_analyze.cpp,1863,ternary,writeDiagnosticJson,"<< (c.rootContinuityWithheldByGateR ? ""true"" : ""false"") << "", """
+tools/batch_analyze.cpp,1876,if,writeDiagnosticJson,if (diag.postGates.hasCompetitionWinner) {
+tools/batch_analyze.cpp,1884,ternary,writeDiagnosticJson,"<< (pg.iter8691ChangedWinner ? ""true"" : ""false"") << "", """
+tools/batch_analyze.cpp,1886,ternary,writeDiagnosticJson,"<< (pg.gatesChangedWinner ? ""true"" : ""false"");"
+tools/batch_analyze.cpp,1894,if,writeDiagnosticJson,if (region->hasAnalyzedChord) {
+tools/batch_analyze.cpp,1896,ternary,writeDiagnosticJson,"out << ""        \""hasMinorSeventh\"": ""      << (analysis::hasExtension(ext, analysis::Extension::MinorSeventh)      ? ""true"" : ""false"") << "",\n"";"
+tools/batch_analyze.cpp,1897,ternary,writeDiagnosticJson,"out << ""        \""hasMajorSeventh\"": ""      << (analysis::hasExtension(ext, analysis::Extension::MajorSeventh)      ? ""true"" : ""false"") << "",\n"";"
+tools/batch_analyze.cpp,1898,ternary,writeDiagnosticJson,"out << ""        \""hasDimSeventh\"": ""        << (analysis::hasExtension(ext, analysis::Extension::DiminishedSeventh) ? ""true"" : ""false"") << "",\n"";"
+tools/batch_analyze.cpp,1899,ternary,writeDiagnosticJson,"out << ""        \""hasAddedSixth\"": ""        << (analysis::hasExtension(ext, analysis::Extension::AddedSixth)        ? ""true"" : ""false"") << "",\n"";"
+tools/batch_analyze.cpp,1900,ternary,writeDiagnosticJson,"out << ""        \""hasNaturalNinth\"": ""      << (analysis::hasExtension(ext, analysis::Extension::NaturalNinth)      ? ""true"" : ""false"") << "",\n"";"
+tools/batch_analyze.cpp,1901,ternary,writeDiagnosticJson,"out << ""        \""hasFlatNinth\"": ""         << (analysis::hasExtension(ext, analysis::Extension::FlatNinth)         ? ""true"" : ""false"") << "",\n"";"
+tools/batch_analyze.cpp,1902,ternary,writeDiagnosticJson,"out << ""        \""hasSharpNinth\"": ""        << (analysis::hasExtension(ext, analysis::Extension::SharpNinth)        ? ""true"" : ""false"") << "",\n"";"
+tools/batch_analyze.cpp,1903,ternary,writeDiagnosticJson,"out << ""        \""hasNaturalEleventh\"": ""   << (analysis::hasExtension(ext, analysis::Extension::NaturalEleventh)   ? ""true"" : ""false"") << "",\n"";"
+tools/batch_analyze.cpp,1904,ternary,writeDiagnosticJson,"out << ""        \""hasSharpEleventh\"": ""     << (analysis::hasExtension(ext, analysis::Extension::SharpEleventh)     ? ""true"" : ""false"") << "",\n"";"
+tools/batch_analyze.cpp,1905,ternary,writeDiagnosticJson,"out << ""        \""hasNaturalThirteenth\"": "" << (analysis::hasExtension(ext, analysis::Extension::NaturalThirteenth) ? ""true"" : ""false"") << "",\n"";"
+tools/batch_analyze.cpp,1906,ternary,writeDiagnosticJson,"out << ""        \""hasFlatThirteenth\"": ""    << (analysis::hasExtension(ext, analysis::Extension::FlatThirteenth)    ? ""true"" : ""false"") << "",\n"";"
+tools/batch_analyze.cpp,1907,ternary,writeDiagnosticJson,"out << ""        \""hasSharpThirteenth\"": ""   << (analysis::hasExtension(ext, analysis::Extension::SharpThirteenth)   ? ""true"" : ""false"") << "",\n"";"
+tools/batch_analyze.cpp,1908,ternary,writeDiagnosticJson,"out << ""        \""hasFlatFifth\"": ""         << (analysis::hasExtension(ext, analysis::Extension::FlatFifth)         ? ""true"" : ""false"") << "",\n"";"
+tools/batch_analyze.cpp,1909,ternary,writeDiagnosticJson,"out << ""        \""hasSharpFifth\"": ""        << (analysis::hasExtension(ext, analysis::Extension::SharpFifth)        ? ""true"" : ""false"") << "",\n"";"
+tools/batch_analyze.cpp,1910,ternary,writeDiagnosticJson,"out << ""        \""omitsThird\"": ""           << (analysis::hasExtension(ext, analysis::Extension::OmitsThird)        ? ""true"" : ""false"") << "",\n"";"
+tools/batch_analyze.cpp,1911,ternary,writeDiagnosticJson,"out << ""        \""isSixNine\"": ""            << (analysis::hasExtension(ext, analysis::Extension::SixNine)           ? ""true"" : ""false"") << ""\n"";"
+tools/batch_analyze.cpp,2190,if,runSliceValidation,if (!(e.plays && e.visible && e.staffEligible)) {
+tools/batch_analyze.cpp,2211,if,runSliceValidation,if (deterministic) {
+tools/batch_analyze.cpp,2213,if,runSliceValidation,if (slices[i].start != slices2[i].start || slices[i].end != slices2[i].end) {
+tools/batch_analyze.cpp,2230,if,runSliceValidation,if (bexp.size() < 2) {
+tools/batch_analyze.cpp,2231,if,runSliceValidation,if (!slices.empty()) {
+tools/batch_analyze.cpp,2247,if,runSliceValidation,if (sliceBoundaries != bexp) {
+tools/batch_analyze.cpp,2250,if,runSliceValidation,if (!sliceBoundaries.count(b)) {
+tools/batch_analyze.cpp,2257,if,runSliceValidation,if (!bexp.count(b)) {
+tools/batch_analyze.cpp,2266,if,runSliceValidation,if (slices.front().start != *bexp.begin()) {
+tools/batch_analyze.cpp,2270,if,runSliceValidation,if (slices.back().end != *bexp.rbegin()) {
+tools/batch_analyze.cpp,2275,if,runSliceValidation,if (slices[i].end != slices[i + 1].start) {
+tools/batch_analyze.cpp,2286,if,runSliceValidation,if (!(slices[i].start < slices[i].end)) {
+tools/batch_analyze.cpp,2300,if,runSliceValidation,if (sl.start < e->onset && e->onset < sl.end) {
+tools/batch_analyze.cpp,2307,if,runSliceValidation,if (sl.start < e->release && e->release < sl.end) {
+tools/batch_analyze.cpp,2315,if,runSliceValidation,if (bad) {
+tools/batch_analyze.cpp,2332,if,runSliceValidation,if (e->onset > e->release) {
+tools/batch_analyze.cpp,2340,if,runSliceValidation,if (slices.empty()) {
+tools/batch_analyze.cpp,2343,if,runSliceValidation,if (!sliceBoundaries.count(e->onset) || !sliceBoundaries.count(e->release)) {
+tools/batch_analyze.cpp,2366,ternary,runSliceValidation,const int domainStart = bexp.empty() ? 0 : *bexp.begin();
+tools/batch_analyze.cpp,2367,ternary,runSliceValidation,const int domainEnd   = bexp.empty() ? 0 : *bexp.rbegin();
+tools/batch_analyze.cpp,2369,if,runSliceValidation,if (t > domainStart && t < domainEnd
+tools/batch_analyze.cpp,2377,if,runSliceValidation,if (e->onset < sl.end && e->release > sl.start) {
+tools/batch_analyze.cpp,2382,if,runSliceValidation,if (hasEligible) {
+tools/batch_analyze.cpp,2386,if,runSliceValidation,if (releaseOpened) {
+tools/batch_analyze.cpp,2394,if,runSliceValidation,if (!violations.empty()) {
+tools/batch_analyze.cpp,2402,ternary,runSliceValidation,"os << ""  \""ok\"": "" << (ok ? ""true"" : ""false"") << "",\n"";"
+tools/batch_analyze.cpp,2413,ternary,runSliceValidation,"os << ""  \""deterministic\"": "" << (deterministic ? ""true"" : ""false"") << "",\n"";"
+tools/batch_analyze.cpp,2418,ternary,runSliceValidation,"os << (i ? "",\n    "" : ""\n    "");"
+tools/batch_analyze.cpp,2424,ternary,runSliceValidation,"os << (violations.empty() ? ""]\n"" : ""\n  ]\n"");"
+tools/batch_analyze.cpp,2458,if,runKeyModeDecode,if (sk.uncertain) {
+tools/batch_analyze.cpp,2475,ternary,runKeyModeDecode,const int measureNumber = mi.measure ? mi.number : 0;
+tools/batch_analyze.cpp,2477,ternary,runKeyModeDecode,? 1.0 + static_cast<double>(s - mi.measure->tick().ticks()) / Constants::DIVISION
+tools/batch_analyze.cpp,2482,ternary,runKeyModeDecode,"os << (i ? "",\n    "" : ""\n    "");"
+tools/batch_analyze.cpp,2501,ternary,runKeyModeDecode,"<< "", \""uncertain\"": "" << (sk.uncertain ? ""true"" : ""false"");"
+tools/batch_analyze.cpp,2502,if,runKeyModeDecode,if (!sk.alternatives.empty()) {
+tools/batch_analyze.cpp,2521,ternary,runKeyModeDecode,"os << (a ? "", "" : """") << ""{ \""key\"": \"""" << jsonEscape(altKey)"
+tools/batch_analyze.cpp,2527,ternary,runKeyModeDecode,"os << (decoded.empty() ? ""]\n"" : ""\n  ]\n"");"
+tools/batch_analyze.cpp,2567,if,runReachBackAB,if (mIdx == 0) { continue; }
+tools/batch_analyze.cpp,2570,if,runReachBackAB,"if (b > a) { ranges.emplace_back(a, b); }"
+tools/batch_analyze.cpp,2575,if,runReachBackAB,if (x.size() != y.size()) { return false; }
+tools/batch_analyze.cpp,2577,if,runReachBackAB,if (x[i].startTick != y[i].startTick || x[i].endTick != y[i].endTick) { return false; }
+tools/batch_analyze.cpp,2578,if,runReachBackAB,if (x[i].keyModeResult.tonicPc != y[i].keyModeResult.tonicPc) { return false; }
+tools/batch_analyze.cpp,2579,if,runReachBackAB,if (x[i].keyModeResult.isMajor() != y[i].keyModeResult.isMajor()) { return false; }
+tools/batch_analyze.cpp,2580,if,runReachBackAB,if (x[i].chordResult.identity.rootPc != y[i].chordResult.identity.rootPc) { return false; }
+tools/batch_analyze.cpp,2581,if,runReachBackAB,if (x[i].chordResult.identity.quality != y[i].chordResult.identity.quality) { return false; }
+tools/batch_analyze.cpp,2611,if,runReachBackAB,if (diff) { ++changed; }
+tools/batch_analyze.cpp,2612,if,runReachBackAB,if (!offR.empty() && !onR.empty()
+tools/batch_analyze.cpp,2616,if,runReachBackAB,"if (r) { os << "",""; }"
+tools/batch_analyze.cpp,2618,ternary,runReachBackAB,"<< "", \""changed\"": "" << (diff ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,2621,ternary,runReachBackAB,"os << (ranges.empty() ? ""]"" : ""\n  ]"") << "",\n"";"
+tools/batch_analyze.cpp,2662,if,runChordDecode,if (sc.hasChord) { ++namedCount; }
+tools/batch_analyze.cpp,2663,if,runChordDecode,if (sc.uncertain) { ++uncertainCount; }
+tools/batch_analyze.cpp,2696,ternary,runChordDecode,const int measureNumber = mi.measure ? mi.number : 0;
+tools/batch_analyze.cpp,2698,ternary,runChordDecode,? 1.0 + static_cast<double>(s - mi.measure->tick().ticks()) / Constants::DIVISION
+tools/batch_analyze.cpp,2715,ternary,runChordDecode,const int rootPc = sc.hasChord ? sc.chosen.rootPc : -1;
+tools/batch_analyze.cpp,2716,ternary,runChordDecode,const int bassPc = sc.hasChord ? sc.chosen.bassPc : -1;
+tools/batch_analyze.cpp,2718,ternary,runChordDecode,"const char* quality = sc.hasChord ? qualityToString(sc.chosen.quality) : ""Unknown"";"
+tools/batch_analyze.cpp,2719,ternary,runChordDecode,const std::string chordSym = sc.hasChord ? symbolFor(sc.chosen) : std::string();
+tools/batch_analyze.cpp,2721,ternary,runChordDecode,"os << (i ? "",\n    "" : ""\n    "");"
+tools/batch_analyze.cpp,2729,ternary,runChordDecode,"<< "", \""bassIsRoot\"": "" << (bassIsRoot ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,2735,ternary,runChordDecode,"<< "", \""chordScore\"": "" << fmtDouble(sc.hasChord ? sc.chosen.score : 0.0, 5)"
+tools/batch_analyze.cpp,2738,ternary,runChordDecode,"<< "", \""uncertain\"": "" << (sc.uncertain ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,2739,ternary,runChordDecode,"<< "", \""hasChord\"": "" << (sc.hasChord ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,2744,ternary,runChordDecode,"{ bool f = true; for (int pc : soundingPcs) { os << (f ? """" : "", "") << pc; f = false; } }"
+tools/batch_analyze.cpp,2750,ternary,runChordDecode,"{ bool f = true; for (int pc : sc.chordTonePcs) { os << (f ? """" : "", "") << pc; f = false; } }"
+tools/batch_analyze.cpp,2752,ternary,runChordDecode,"{ bool f = true; for (int pc : sc.nonChordTonePcs) { os << (f ? """" : "", "") << pc; f = false; } }"
+tools/batch_analyze.cpp,2758,ternary,runChordDecode,"os << (a ? "", "" : """")"
+tools/batch_analyze.cpp,2762,ternary,runChordDecode,"<< "", \""bassIsRoot\"": "" << (alt.bassIsRoot() ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,2769,ternary,runChordDecode,"os << (decoded.empty() ? ""]\n"" : ""\n  ]\n"");"
+tools/batch_analyze.cpp,2800,switch,runVlDump,switch (t) {
+tools/batch_analyze.cpp,2801,case,runVlDump,"case vl::MotionType::Parallel: return ""parallel"";"
+tools/batch_analyze.cpp,2802,case,runVlDump,"case vl::MotionType::Similar:  return ""similar"";"
+tools/batch_analyze.cpp,2803,case,runVlDump,"case vl::MotionType::Contrary: return ""contrary"";"
+tools/batch_analyze.cpp,2804,case,runVlDump,"case vl::MotionType::Oblique:  return ""oblique"";"
+tools/batch_analyze.cpp,2809,switch,runVlDump,switch (c) {
+tools/batch_analyze.cpp,2810,case,runVlDump,"case vl::TextureClass::Contrapuntal:        return ""Contrapuntal"";"
+tools/batch_analyze.cpp,2811,case,runVlDump,"case vl::TextureClass::HomophonicClassical: return ""HomophonicClassical"";"
+tools/batch_analyze.cpp,2812,case,runVlDump,"case vl::TextureClass::HomophonicPianistic: return ""HomophonicPianistic"";"
+tools/batch_analyze.cpp,2813,case,runVlDump,"case vl::TextureClass::ModerateMixed:       return ""ModerateMixed"";"
+tools/batch_analyze.cpp,2818,switch,runVlDump,switch (r) {
+tools/batch_analyze.cpp,2819,case,runVlDump,"case vl::AbstentionReason::None:          return ""none"";"
+tools/batch_analyze.cpp,2820,case,runVlDump,"case vl::AbstentionReason::NoPair:        return ""no-pair"";"
+tools/batch_analyze.cpp,2821,case,runVlDump,"case vl::AbstentionReason::TooFewSamples: return ""too-few-samples"";"
+tools/batch_analyze.cpp,2822,case,runVlDump,"case vl::AbstentionReason::LowMargin:     return ""low-margin"";"
+tools/batch_analyze.cpp,2823,case,runVlDump,"case vl::AbstentionReason::LowFit:        return ""low-fit"";"
+tools/batch_analyze.cpp,2840,ternary,runVlDump,"os << (i == 0 ? ""\n"" : "",\n"");"
+tools/batch_analyze.cpp,2843,ternary,runVlDump,"os << (k == 0 ? """" : "", "") << ""["" << rl.onsets[k].first << "", "" << rl.onsets[k].second << ""]"";"
+tools/batch_analyze.cpp,2847,ternary,runVlDump,"os << (reduced.empty() ? ""],\n"" : ""\n  ],\n"");"
+tools/batch_analyze.cpp,2855,ternary,runVlDump,"<< "", \""defined\"": "" << (motion.defined ? ""true"" : ""false"") << "" },\n"";"
+tools/batch_analyze.cpp,2859,ternary,runVlDump,"os << (k == 0 ? """" : "", "") << interval.hist[k];"
+tools/batch_analyze.cpp,2863,ternary,runVlDump,"<< "", \""defined\"": "" << (interval.defined ? ""true"" : ""false"") << "" },\n"";"
+tools/batch_analyze.cpp,2868,ternary,runVlDump,"os << (i == 0 ? ""\n"" : "",\n"");"
+tools/batch_analyze.cpp,2875,ternary,runVlDump,"os << (motionEvents.empty() ? ""],\n"" : ""\n  ],\n"");"
+tools/batch_analyze.cpp,2879,ternary,runVlDump,"<< "", \""abstained\"": "" << (span.abstained ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,2882,ternary,runVlDump,"<< "", \""clippedBySelectionEdge\"": "" << (span.clippedBySelectionEdge ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,2883,ternary,runVlDump,"<< "", \""cueDenied\"": "" << (span.cueDenied ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,2887,ternary,runVlDump,"os << (i == 0 ? """" : "", "") << ""{ \""cls\"": \"""" << classNameOf(cf.cls)"
+tools/batch_analyze.cpp,2948,switch,fsCadenceTypeName,switch (t) {
+tools/batch_analyze.cpp,2949,case,fsCadenceTypeName,"case analysis::FunctionalCadenceType::None:               return ""None"";"
+tools/batch_analyze.cpp,2950,case,fsCadenceTypeName,"case analysis::FunctionalCadenceType::PerfectAuthentic:   return ""PerfectAuthentic"";"
+tools/batch_analyze.cpp,2951,case,fsCadenceTypeName,"case analysis::FunctionalCadenceType::ImperfectAuthentic: return ""ImperfectAuthentic"";"
+tools/batch_analyze.cpp,2952,case,fsCadenceTypeName,"case analysis::FunctionalCadenceType::Half:               return ""Half"";"
+tools/batch_analyze.cpp,2953,case,fsCadenceTypeName,"case analysis::FunctionalCadenceType::PhrygianHalf:       return ""PhrygianHalf"";"
+tools/batch_analyze.cpp,2954,case,fsCadenceTypeName,"case analysis::FunctionalCadenceType::Deceptive:          return ""Deceptive"";"
+tools/batch_analyze.cpp,2955,case,fsCadenceTypeName,"case analysis::FunctionalCadenceType::Plagal:             return ""Plagal"";"
+tools/batch_analyze.cpp,2956,case,fsCadenceTypeName,"case analysis::FunctionalCadenceType::Evaded:             return ""Evaded"";"
+tools/batch_analyze.cpp,2963,switch,fsResolutionBasisName,switch (b) {
+tools/batch_analyze.cpp,2964,case,fsResolutionBasisName,"case analysis::ResolutionBasis::None:             return ""None"";"
+tools/batch_analyze.cpp,2965,case,fsResolutionBasisName,"case analysis::ResolutionBasis::Progression:      return ""Progression"";"
+tools/batch_analyze.cpp,2966,case,fsResolutionBasisName,"case analysis::ResolutionBasis::CadenceVote:      return ""CadenceVote"";"
+tools/batch_analyze.cpp,2967,case,fsResolutionBasisName,"case analysis::ResolutionBasis::NeighbourHarmony: return ""NeighbourHarmony"";"
+tools/batch_analyze.cpp,2968,case,fsResolutionBasisName,"case analysis::ResolutionBasis::BassDegreePrior:  return ""BassDegreePrior"";"
+tools/batch_analyze.cpp,2969,case,fsResolutionBasisName,"case analysis::ResolutionBasis::FineGrainOverride:return ""FineGrainOverride"";"
+tools/batch_analyze.cpp,2976,switch,fsSliceDecisionName,switch (d) {
+tools/batch_analyze.cpp,2977,case,fsSliceDecisionName,"case analysis::chordslice::SliceDecision::Commit:  return ""Commit"";"
+tools/batch_analyze.cpp,2978,case,fsSliceDecisionName,"case analysis::chordslice::SliceDecision::Inherit: return ""Inherit"";"
+tools/batch_analyze.cpp,2979,case,fsSliceDecisionName,"case analysis::chordslice::SliceDecision::Abstain: return ""Abstain"";"
+tools/batch_analyze.cpp,2986,switch,fsOpenQuestionName,switch (q) {
+tools/batch_analyze.cpp,2987,case,fsOpenQuestionName,"case analysis::chordslice::OpenQuestion::None:           return ""None"";"
+tools/batch_analyze.cpp,2988,case,fsOpenQuestionName,"case analysis::chordslice::OpenQuestion::Root:           return ""Root"";"
+tools/batch_analyze.cpp,2989,case,fsOpenQuestionName,"case analysis::chordslice::OpenQuestion::Quality:        return ""Quality"";"
+tools/batch_analyze.cpp,2990,case,fsOpenQuestionName,"case analysis::chordslice::OpenQuestion::NoteMembership: return ""NoteMembership"";"
+tools/batch_analyze.cpp,2998,switch,fsAmbiguityKindName,switch (k) {
+tools/batch_analyze.cpp,2999,case,fsAmbiguityKindName,"case AK::None:                     return ""None"";"
+tools/batch_analyze.cpp,3000,case,fsAmbiguityKindName,"case AK::InsufficientEvidence:     return ""InsufficientEvidence"";"
+tools/batch_analyze.cpp,3001,case,fsAmbiguityKindName,"case AK::TransitionVsContinuation: return ""TransitionVsContinuation"";"
+tools/batch_analyze.cpp,3002,case,fsAmbiguityKindName,"case AK::SymmetricRotation:        return ""SymmetricRotation"";"
+tools/batch_analyze.cpp,3003,case,fsAmbiguityKindName,"case AK::ShareTone:                return ""ShareTone"";"
+tools/batch_analyze.cpp,3004,case,fsAmbiguityKindName,"case AK::RelativePair:             return ""RelativePair"";"
+tools/batch_analyze.cpp,3005,case,fsAmbiguityKindName,"case AK::CloseReading:             return ""CloseReading"";"
+tools/batch_analyze.cpp,3018,ternary,fsFifthsForTonic,const int t = minor ? (((tonicPc + 3) % 12) + 12) % 12 : (((tonicPc % 12) + 12) % 12);
+tools/batch_analyze.cpp,3020,if,fsFifthsForTonic,if (f > 6) { f -= 12; }
+tools/batch_analyze.cpp,3034,ternary,fsGroupingJson,"os << (i ? "", "" : """")"
+tools/batch_analyze.cpp,3040,ternary,fsGroupingJson,"<< "", \""carriesOpenMark\"": "" << (p.carriesOpenMark ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,3041,ternary,fsGroupingJson,"<< "", \""clippedAtStart\"": "" << (p.clippedAtStart ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,3042,ternary,fsGroupingJson,"<< "", \""clippedAtEnd\"": "" << (p.clippedAtEnd ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,3043,ternary,fsGroupingJson,"<< "", \""extensionCue\"": "" << (p.extensionCue ? ""true"" : ""false"") << "" }"";"
+tools/batch_analyze.cpp,3049,ternary,fsGroupingJson,"os << (i ? "", "" : """")"
+tools/batch_analyze.cpp,3053,ternary,fsGroupingJson,"<< "", \""localMinorMode\"": "" << (k.localMinorMode ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,3055,ternary,fsGroupingJson,"<< "", \""carriesOpenMark\"": "" << (k.carriesOpenMark ? ""true"" : ""false"") << "" }"";"
+tools/batch_analyze.cpp,3061,ternary,fsGroupingJson,"os << (i ? "", "" : """")"
+tools/batch_analyze.cpp,3063,ternary,fsGroupingJson,"<< "", \""kind\"": \"""" << (a.kind == g6::CadenceAlignmentKind::ClosesSpan ? ""ClosesSpan"" : ""Internal"") << ""\"""""
+tools/batch_analyze.cpp,3123,ternary,runFullSpine,const int lastTick = slices.empty() ? 0 : slices.back().end;
+tools/batch_analyze.cpp,3145,if,runFullSpine,if (!ne->plays || !ne->visible || !ne->staffEligible) { continue; }
+tools/batch_analyze.cpp,3146,if,runFullSpine,if (excludeStaves.count(static_cast<size_t>(ne->staff))) { continue; }
+tools/batch_analyze.cpp,3149,if,runFullSpine,if (ne->tpc >= 0) { c.noteTpcs.push_back(ne->tpc); }
+tools/batch_analyze.cpp,3170,if,runFullSpine,if (!isCommitted(i)) { continue; }
+tools/batch_analyze.cpp,3197,if,runFullSpine,if (!isCommitted(i)) { continue; }
+tools/batch_analyze.cpp,3217,if,runFullSpine,if (!md.isModulation) { continue; }
+tools/batch_analyze.cpp,3220,if,runFullSpine,if (slices[i].start < md.endTick && slices[i].end > md.startTick) {
+tools/batch_analyze.cpp,3221,if,runFullSpine,if (first < 0) { first = static_cast<int>(i); }
+tools/batch_analyze.cpp,3225,if,runFullSpine,if (first < 0) { continue; }
+tools/batch_analyze.cpp,3227,if,runFullSpine,if (sliceId >= 0 && sliceId < static_cast<int>(slices.size())) {
+tools/batch_analyze.cpp,3234,if,runFullSpine,if (rr.fired) { ++recomputeFired; recomputeSlices += (rr.slicesReread > 0 ? rr.slicesReread : 0); }
+tools/batch_analyze.cpp,3234,ternary,runFullSpine,if (rr.fired) { ++recomputeFired; recomputeSlices += (rr.slicesReread > 0 ? rr.slicesReread : 0); }
+tools/batch_analyze.cpp,3241,ternary,runFullSpine,fs.chord.rootPc = decoded[i].hasChord ? decoded[i].chosen.rootPc : -1;
+tools/batch_analyze.cpp,3242,ternary,runFullSpine,fs.chord.quality = decoded[i].hasChord ? decoded[i].chosen.quality : ChordQuality::Unknown;
+tools/batch_analyze.cpp,3266,if,runFullSpine,if (noFineGrainOverride) {
+tools/batch_analyze.cpp,3276,if,runFullSpine,if (i < res.readings.size()) {
+tools/batch_analyze.cpp,3278,if,runFullSpine,if (rr.reading.rootPc >= 0) { return rr.reading; }
+tools/batch_analyze.cpp,3284,if,runFullSpine,if (isCommitted(i)) { return true; }
+tools/batch_analyze.cpp,3285,if,runFullSpine,if (i < res.readings.size() && res.readings[i].resolved && !res.readings[i].openMark) {
+tools/batch_analyze.cpp,3297,ternary,runFullSpine,"? homeFifths : fsFifthsForTonic(localTonic[i], localMinor[i]);"
+tools/batch_analyze.cpp,3301,ternary,runFullSpine,? homeMode
+tools/batch_analyze.cpp,3302,ternary,runFullSpine,: (localMinor[i] ? analysis::KeySigMode::Aeolian : analysis::KeySigMode::Ionian);
+tools/batch_analyze.cpp,3308,if,runFullSpine,if (unitHasChord(j)) { return finalReadingOf(j).rootPc; }
+tools/batch_analyze.cpp,3322,ternary,runFullSpine,u.resolverConfidence = (i < res.readings.size()) ? res.readings[i].functionConfidence : 0.0;
+tools/batch_analyze.cpp,3324,if,runFullSpine,if (unitHasChord(i)) {
+tools/batch_analyze.cpp,3368,if,runFullSpine,if (isCommitted(i)) { ++committedCount; }
+tools/batch_analyze.cpp,3370,if,runFullSpine,if (unitOpenMark(i)) { ++openMarkCount; }
+tools/batch_analyze.cpp,3371,if,runFullSpine,if (i < res.readings.size() && res.readings[i].overrodeCommit) { ++overrodeCount; }
+tools/batch_analyze.cpp,3372,if,runFullSpine,if (unitHasChord(i)) {
+tools/batch_analyze.cpp,3373,if,runFullSpine,if (finalReadingOf(i).extensionsKnown) { ++committedExtKnown; } else { ++committedExtUnknown; }
+tools/batch_analyze.cpp,3376,if,runFullSpine,if (alt.extensionsKnown) { ++altExtKnown; } else { ++altExtUnknown; }
+tools/batch_analyze.cpp,3396,ternary,runFullSpine,"os << ""  \""homeMinor\"": "" << (homeMinor ? ""true"" : ""false"") << "",\n"";"
+tools/batch_analyze.cpp,3417,ternary,runFullSpine,"{ bool f = true; for (int t : phraseTicks) { os << (f ? """" : "", "") << t; f = false; } }"
+tools/batch_analyze.cpp,3426,ternary,runFullSpine,"os << (i ? "", "" : """") << phraseProfile.textureTicks[i];"
+tools/batch_analyze.cpp,3431,ternary,runFullSpine,"os << (i ? "", "" : """") << fmtDouble(phraseProfile.textureStrength[i], 6);"
+tools/batch_analyze.cpp,3446,ternary,runFullSpine,"os << (i ? "", "" : """")"
+tools/batch_analyze.cpp,3451,ternary,runFullSpine,"<< "", \""minorMode\"": "" << (c.minorMode ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,3459,ternary,runFullSpine,"os << (i ? "", "" : """")"
+tools/batch_analyze.cpp,3461,ternary,runFullSpine,"<< "", \""tonicPc\"": "" << m.tonicPc << "", \""minorMode\"": "" << (m.minorMode ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,3462,ternary,runFullSpine,"<< "", \""isHomeKey\"": "" << (m.isHomeKey ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,3463,ternary,runFullSpine,"<< "", \""cadenceConfirmed\"": "" << (m.cadenceConfirmed ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,3465,ternary,runFullSpine,"<< "", \""isModulation\"": "" << (m.isModulation ? ""true"" : ""false"") << "" }"";"
+tools/batch_analyze.cpp,3475,ternary,runFullSpine,const int rootPc = hasChord ? fr.rootPc : -1;
+tools/batch_analyze.cpp,3476,ternary,runFullSpine,const int bassPc = hasChord ? fr.bassPc : -1;
+tools/batch_analyze.cpp,3478,ternary,runFullSpine,const std::string rn = (i < out5.units.size()) ? out5.units[i].romanNumeral : std::string();
+tools/batch_analyze.cpp,3479,ternary,runFullSpine,const std::string chordSym = hasChord ? symbolFor(fr) : std::string();
+tools/batch_analyze.cpp,3482,ternary,runFullSpine,const int measureNumber = mi.measure ? mi.number : 0;
+tools/batch_analyze.cpp,3484,ternary,runFullSpine,? 1.0 + static_cast<double>(s - mi.measure->tick().ticks()) / Constants::DIVISION : 1.0;
+tools/batch_analyze.cpp,3488,ternary,runFullSpine,(i < res.readings.size()) ? res.readings[i] : analysis::ResolvedReading{};
+tools/batch_analyze.cpp,3490,ternary,runFullSpine,(i < out5.units.size()) ? out5.units[i].confidence : analysis::FunctionConfidence{};
+tools/batch_analyze.cpp,3492,ternary,runFullSpine,"os << (firstReg ? ""\n    "" : "",\n    "");"
+tools/batch_analyze.cpp,3506,ternary,runFullSpine,"<< "", \""bassIsRoot\"": "" << (bassIsRoot ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,3507,ternary,runFullSpine,"<< "", \""quality\"": \"""" << (hasChord ? qualityToString(fr.quality) : ""Unknown"") << ""\"""""
+tools/batch_analyze.cpp,3513,ternary,runFullSpine,"<< "", \""localMinor\"": "" << (localMinor[i] ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,3516,ternary,runFullSpine,"<< "", \""l4RootPc\"": "" << (decoded[i].hasChord ? decoded[i].chosen.rootPc : -1)"
+tools/batch_analyze.cpp,3517,ternary,runFullSpine,"<< "", \""l4Uncertain\"": "" << (decoded[i].uncertain ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,3524,ternary,runFullSpine,"<< "", \""l5Resolved\"": "" << (rr.resolved ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,3525,ternary,runFullSpine,"<< "", \""l5OverrodeCommit\"": "" << (rr.overrodeCommit ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,3526,ternary,runFullSpine,"<< "", \""l5OpenMark\"": "" << (rr.openMark ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,3532,ternary,runFullSpine,"<< "", \""l5BothLicensed\"": "" << (rr.bothLicensed ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,3534,ternary,runFullSpine,"<< "", \""l5Role\"": \"""" << ((i < out5.units.size()) ? relationalRoleName(out5.units[i].relationalRole) : ""None"") << ""\"""""
+tools/batch_analyze.cpp,3542,ternary,runFullSpine,"<< "", \""l5OverrideContradiction\"": "" << fmtDouble((rr.overrodeCommit ? rr.functionConfidence : 0.0), 4)"
+tools/batch_analyze.cpp,3543,ternary,runFullSpine,"<< "", \""l4ChosenExtensions\"": "" << (hasChord ? static_cast<long long>(fr.extensions) : 0)"
+tools/batch_analyze.cpp,3544,ternary,runFullSpine,"<< "", \""l4ChosenExtKnown\"": "" << (hasChord && fr.extensionsKnown ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,3545,ternary,runFullSpine,"<< "", \""openMark\"": "" << (unitOpenMark(i) ? ""true"" : ""false"");"
+tools/batch_analyze.cpp,3550,ternary,runFullSpine,"os << (a ? "", "" : """")"
+tools/batch_analyze.cpp,3554,ternary,runFullSpine,"<< "", \""bassIsRoot\"": "" << (alt.bassIsRoot() ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,3556,ternary,runFullSpine,"<< "", \""extKnown\"": "" << (alt.extensionsKnown ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,3561,ternary,runFullSpine,"os << (decoded.empty() ? ""]"" : ""\n  ]"");"
+tools/batch_analyze.cpp,3567,if,runFullSpine,if (emitL6) {
+tools/batch_analyze.cpp,3585,ternary,runFullSpine,gspan.startTick = slices.empty() ? 0 : slices.front().start;
+tools/batch_analyze.cpp,3601,if,runFullSpine,if (emitProgressions) {
+tools/batch_analyze.cpp,3606,if,runFullSpine,if (!unitHasChord(i)) {
+tools/batch_analyze.cpp,3634,ternary,runFullSpine,"os << (k ? "", "" : """") << fmtDouble(rec.weights[k], 4);"
+tools/batch_analyze.cpp,3640,ternary,runFullSpine,"os << (s ? "", "" : """")"
+tools/batch_analyze.cpp,3647,ternary,runFullSpine,"<< "", \""chordsOnly\"": "" << (sp.chordsOnly ? ""true"" : ""false"")"
+tools/batch_analyze.cpp,3654,ternary,runFullSpine,"os << (q ? "", "" : """")"
+tools/batch_analyze.cpp,3714,ternary,runJointProbe,"const Fraction startTick = firstSegment ? firstSegment->tick() : Fraction(0, 1);"
+tools/batch_analyze.cpp,3747,if,runJointProbe,if (repSlice) { *repSlice = -1; }
+tools/batch_analyze.cpp,3748,if,runJointProbe,if (it == decodedByKey.end()) { return -1; }
+tools/batch_analyze.cpp,3753,if,runJointProbe,if (ov <= 0) { continue; }
+tools/batch_analyze.cpp,3754,if,runJointProbe,if (!dec[i].hasChord || dec[i].decision == cs::SliceDecision::Abstain) { continue; }
+tools/batch_analyze.cpp,3755,if,runJointProbe,if (dec[i].chosen.rootPc < 0) { continue; }
+tools/batch_analyze.cpp,3760,if,runJointProbe,if (rd.second > bestDur) { bestDur = rd.second; bestRoot = rd.first; }
+tools/batch_analyze.cpp,3762,if,runJointProbe,if (repSlice && bestRoot >= 0) {
+tools/batch_analyze.cpp,3766,if,runJointProbe,if (ov <= 0) { continue; }
+tools/batch_analyze.cpp,3767,if,runJointProbe,if (!dec[i].hasChord || dec[i].decision == cs::SliceDecision::Abstain) { continue; }
+tools/batch_analyze.cpp,3768,if,runJointProbe,if (dec[i].chosen.rootPc != bestRoot) { continue; }
+tools/batch_analyze.cpp,3769,if,runJointProbe,if (ov > repOv) { repOv = ov; *repSlice = static_cast<int>(i); }
+tools/batch_analyze.cpp,3788,ternary,runJointProbe,? 1.0 + static_cast<double>(hr.startTick - regionMeasure.measure->tick().ticks()) / Constants::DIVISION
+tools/batch_analyze.cpp,3792,ternary,runJointProbe,const int prodRoot = hr.hasAnalyzedChord ? hr.chordResult.identity.rootPc : -1;
+tools/batch_analyze.cpp,3794,if,runJointProbe,if (bassPc < 0) {
+tools/batch_analyze.cpp,3795,if,runJointProbe,if (const auto* bt = analysis::bassToneFromTones(hr.tones)) { bassPc = bt->pitch % 12; }
+tools/batch_analyze.cpp,3803,ternary,runJointProbe,"os << (ri ? "",\n    "" : ""\n    "") << ""{\n"";"
+tools/batch_analyze.cpp,3815,ternary,runJointProbe,"os << ""      \""bassIsRoot\"": ""    << (bir ? ""true"" : ""false"") << "",\n"";"
+tools/batch_analyze.cpp,3824,ternary,runJointProbe,"os << ""        \""isPedalPoint\"": "" << (hr.chordResult.identity.isPedalPoint ? ""true"" : ""false"") << "",\n"";"
+tools/batch_analyze.cpp,3830,if,runJointProbe,if (repSlice >= 0) {
+tools/batch_analyze.cpp,3842,ternary,runJointProbe,"os << (ai ? "", "" : """")"
+tools/batch_analyze.cpp,3853,ternary,runJointProbe,"os << (regions.empty() ? ""]"" : ""\n  ]"") << ""\n}\n"";"
+tools/batch_analyze.cpp,3869,if,main,if (args.size() < 2) {
+tools/batch_analyze.cpp,3875,if,main,"if (arg1 == ""--help"" || arg1 == ""-h"") {"
+tools/batch_analyze.cpp,3942,if,main,"if (a == ""--preset"" || a == ""-p"") {"
+tools/batch_analyze.cpp,3943,if,main,if (i + 1 < args.size()) {
+tools/batch_analyze.cpp,3949,else-if,main,"} else if (a == ""--param-override"") {"
+tools/batch_analyze.cpp,3950,if,main,if (i + 1 < args.size()) {
+tools/batch_analyze.cpp,3956,else-if,main,"} else if (a == ""--dump-regions"") {"
+tools/batch_analyze.cpp,3957,if,main,if (i + 1 >= args.size()) {
+tools/batch_analyze.cpp,3963,if,main,"if (mode == ""batch"") {"
+tools/batch_analyze.cpp,3965,else-if,main,"} else if (mode == ""notation"") {"
+tools/batch_analyze.cpp,3967,else-if,main,"} else if (mode == ""notation-premerge"") {"
+tools/batch_analyze.cpp,3974,else-if,main,"} else if (a == ""--section-level"") {"
+tools/batch_analyze.cpp,3976,else-if,main,"} else if (a == ""--validate-slices"") {"
+tools/batch_analyze.cpp,3978,else-if,main,"} else if (a == ""--decode-keymode"") {"
+tools/batch_analyze.cpp,3980,else-if,main,"} else if (a == ""--decode-chords"") {"
+tools/batch_analyze.cpp,3982,else-if,main,"} else if (a == ""--reachback-ab"") {"
+tools/batch_analyze.cpp,3984,else-if,main,"} else if (a == ""--dump-fullspine"") {"
+tools/batch_analyze.cpp,3986,else-if,main,"} else if (a == ""--fullspine-no-override"") {"
+tools/batch_analyze.cpp,3990,else-if,main,"} else if (a == ""--dump-region-keymargin"") {"
+tools/batch_analyze.cpp,3995,else-if,main,"} else if (a == ""--dump-fanout"") {"
+tools/batch_analyze.cpp,4000,else-if,main,"} else if (a == ""--dump-joint-probe"") {"
+tools/batch_analyze.cpp,4005,else-if,main,"} else if (a == ""--dump-l6"") {"
+tools/batch_analyze.cpp,4009,else-if,main,"} else if (a == ""--dump-progressions"") {"
+tools/batch_analyze.cpp,4014,else-if,main,"} else if (a == ""--dump-vl"") {"
+tools/batch_analyze.cpp,4017,else-if,main,"} else if (a == ""--chord-no-membership"") {"
+tools/batch_analyze.cpp,4021,else-if,main,"} else if (a == ""--chord-no-two-pass"") {"
+tools/batch_analyze.cpp,4024,else-if,main,"} else if (a == ""--chord-context-slices"" || a == ""--chord-topk"""
+tools/batch_analyze.cpp,4030,if,main,if (i + 1 >= args.size()) {
+tools/batch_analyze.cpp,4036,if,main,"if (a == ""--chord-context-slices"") {"
+tools/batch_analyze.cpp,4038,else-if,main,"} else if (a == ""--chord-topk"") {"
+tools/batch_analyze.cpp,4040,else-if,main,"} else if (a == ""--chord-uncertain-margin"") {"
+tools/batch_analyze.cpp,4042,else-if,main,"} else if (a == ""--chord-min-pcs"") {"
+tools/batch_analyze.cpp,4044,else-if,main,"} else if (a == ""--chord-max-context-slices"") {"
+tools/batch_analyze.cpp,4046,else-if,main,"} else if (a == ""--chord-min-harmony-pcs"") {"
+tools/batch_analyze.cpp,4048,else-if,main,"} else if (a == ""--chord-memb-salience"") {"
+tools/batch_analyze.cpp,4050,else-if,main,"} else if (a == ""--chord-memb-penalty"") {"
+tools/batch_analyze.cpp,4052,else-if,main,"} else if (a == ""--chord-memb-ref-dur"") {"
+tools/batch_analyze.cpp,4054,else-if,main,"} else if (a == ""--chord-stepwise-tol"") {"
+tools/batch_analyze.cpp,4057,if,main,if (!ok) {
+tools/batch_analyze.cpp,4062,else-if,main,"} else if (a == ""--seq-change-base"" || a == ""--seq-relative-extra"""
+tools/batch_analyze.cpp,4067,if,main,if (i + 1 >= args.size()) {
+tools/batch_analyze.cpp,4073,if,main,"if (a == ""--seq-change-base"") {"
+tools/batch_analyze.cpp,4075,else-if,main,"} else if (a == ""--seq-relative-extra"") {"
+tools/batch_analyze.cpp,4077,else-if,main,"} else if (a == ""--seq-per-fifth"") {"
+tools/batch_analyze.cpp,4079,else-if,main,"} else if (a == ""--seq-window-beats"") {"
+tools/batch_analyze.cpp,4081,else-if,main,"} else if (a == ""--seq-uncertain"") {"
+tools/batch_analyze.cpp,4083,else-if,main,"} else if (a == ""--seq-topk"") {"
+tools/batch_analyze.cpp,4085,else-if,main,"} else if (a == ""--seq-max-alts"") {"
+tools/batch_analyze.cpp,4088,if,main,if (!ok) {
+tools/batch_analyze.cpp,4093,else-if,main,"} else if (a == ""--key-in-neither"" || a == ""--key-in-keysig-only"""
+tools/batch_analyze.cpp,4097,if,main,if (i + 1 >= args.size()) {
+tools/batch_analyze.cpp,4104,if,main,if (!ok) {
+tools/batch_analyze.cpp,4109,if,main,"if (a == ""--key-in-neither"") { ovInNeither = dv; }"
+tools/batch_analyze.cpp,4110,else-if,main,"else if (a == ""--key-in-keysig-only"") { ovInKeySigOnly = dv; }"
+tools/batch_analyze.cpp,4111,else-if,main,"else if (a == ""--key-in-candidate-only"") { ovInCandidateOnly = dv; }"
+tools/batch_analyze.cpp,4112,else-if,main,"else if (a == ""--key-in-both"") { ovInBoth = dv; }"
+tools/batch_analyze.cpp,4113,else-if,main,"else if (a == ""--key-leading-tone"") { ovLeadingTone = dv; }"
+tools/batch_analyze.cpp,4114,else-if,main,"} else if (a == ""--ignore-declared-mode"") {"
+tools/batch_analyze.cpp,4116,else-if,main,"} else if (a == ""--dump-cadence-anchor"") {"
+tools/batch_analyze.cpp,4118,else-if,main,"} else if (a == ""--dump-modulation"") {"
+tools/batch_analyze.cpp,4120,else-if,main,"} else if (a == ""--dump-joint-key"") {"
+tools/batch_analyze.cpp,4122,else-if,main,"} else if (a == ""--joint-key-wiring"") {"
+tools/batch_analyze.cpp,4124,else-if,main,"} else if (a == ""--dump-tonicization"") {"
+tools/batch_analyze.cpp,4126,else-if,main,"} else if (a == ""--dump-l5"") {"
+tools/batch_analyze.cpp,4128,else-if,main,"} else if (a == ""--diagnose-measures"") {"
+tools/batch_analyze.cpp,4129,if,main,if (i + 1 >= args.size()) {
+tools/batch_analyze.cpp,4145,else-if,main,"} else if (a == ""--dump-key-candidates"") {"
+tools/batch_analyze.cpp,4146,if,main,if (i + 1 >= args.size()) {
+tools/batch_analyze.cpp,4162,else-if,main,} else if (inputPath.empty()) {
+tools/batch_analyze.cpp,4164,else-if,main,} else if (outputPath.empty()) {
+tools/batch_analyze.cpp,4169,if,main,if (inputPath.empty()) {
+tools/batch_analyze.cpp,4176,if,main,"if (!applyPreset(presetName, keyPrefs)) {"
+tools/batch_analyze.cpp,4222,if,main,"if (presetName == ""Jazz"") {"
+tools/batch_analyze.cpp,4233,else-if,main,"} else if (presetName == ""Baroque"") {"
+tools/batch_analyze.cpp,4238,else-if,main,"} else if (presetName == ""Default"") {"
+tools/batch_analyze.cpp,4283,if,main,if (paramOverridePath) {
+tools/batch_analyze.cpp,4301,if,main,if (!score) {
+tools/batch_analyze.cpp,4312,if,main,if (validateSlices) {
+tools/batch_analyze.cpp,4317,if,main,if (!outputPath.empty()) {
+tools/batch_analyze.cpp,4324,ternary,main,return ok ? 0 : 2;
+tools/batch_analyze.cpp,4330,if,main,"if (!staffIsEligible(score, si)) {"
+tools/batch_analyze.cpp,4339,if,main,if (decodeKeyMode) {
+tools/batch_analyze.cpp,4345,if,main,if (refStaff < score->nstaves() && score->staff(refStaff)) {
+tools/batch_analyze.cpp,4349,if,main,if (km == mu::engraving::KeyMode::MAJOR || km == mu::engraving::KeyMode::IONIAN) {
+tools/batch_analyze.cpp,4351,else-if,main,} else if (km == mu::engraving::KeyMode::MINOR || km == mu::engraving::KeyMode::AEOLIAN) {
+tools/batch_analyze.cpp,4358,if,main,if (ovInNeither) { decodeKeyPrefs.scaleScoreInNeither = *ovInNeither; }
+tools/batch_analyze.cpp,4359,if,main,if (ovInKeySigOnly) { decodeKeyPrefs.scaleScoreInKeySigOnly = *ovInKeySigOnly; }
+tools/batch_analyze.cpp,4360,if,main,if (ovInCandidateOnly) { decodeKeyPrefs.scaleScoreInCandidateOnly = *ovInCandidateOnly; }
+tools/batch_analyze.cpp,4361,if,main,if (ovInBoth) { decodeKeyPrefs.scaleScoreInBoth = *ovInBoth; }
+tools/batch_analyze.cpp,4362,if,main,if (ovLeadingTone) { decodeKeyPrefs.leadingToneWeight = *ovLeadingTone; }
+tools/batch_analyze.cpp,4364,if,main,if (!outputPath.empty()) {
+tools/batch_analyze.cpp,4379,if,main,if (decodeChords) {
+tools/batch_analyze.cpp,4385,if,main,if (refStaff < score->nstaves() && score->staff(refStaff)) {
+tools/batch_analyze.cpp,4389,if,main,if (km == mu::engraving::KeyMode::MINOR || km == mu::engraving::KeyMode::AEOLIAN) {
+tools/batch_analyze.cpp,4395,if,main,if (!outputPath.empty()) {
+tools/batch_analyze.cpp,4409,if,main,if (reachBackAB) {
+tools/batch_analyze.cpp,4413,if,main,if (!outputPath.empty()) {
+tools/batch_analyze.cpp,4427,if,main,if (dumpVl) {
+tools/batch_analyze.cpp,4431,if,main,if (!outputPath.empty()) {
+tools/batch_analyze.cpp,4447,if,main,if (dumpFullSpine) {
+tools/batch_analyze.cpp,4453,if,main,if (!outputPath.empty()) {
+tools/batch_analyze.cpp,4468,if,main,if (dumpRegionKeyMargin) {
+tools/batch_analyze.cpp,4475,if,main,if (!outputPath.empty()) {
+tools/batch_analyze.cpp,4490,if,main,if (dumpFanout) {
+tools/batch_analyze.cpp,4497,if,main,if (!outputPath.empty()) {
+tools/batch_analyze.cpp,4512,if,main,if (dumpJointProbe) {
+tools/batch_analyze.cpp,4517,if,main,if (!outputPath.empty()) {
+tools/batch_analyze.cpp,4533,if,main,if (dumpMode == RegionDumpMode::Batch) {
+tools/batch_analyze.cpp,4537,if,main,if (dumpMode == RegionDumpMode::NotationPreMerge) {
+tools/batch_analyze.cpp,4539,else-if,main,} else if (!notationDump.postMergeRegions.empty()) {
+tools/batch_analyze.cpp,4562,if,main,if (dumpCadenceAnchor || dumpModulation || dumpJointKey) {
+tools/batch_analyze.cpp,4564,if,main,if (refStaff < score->nstaves() && score->staff(refStaff)) {
+tools/batch_analyze.cpp,4568,if,main,if (km == mu::engraving::KeyMode::MAJOR || km == mu::engraving::KeyMode::IONIAN) {
+tools/batch_analyze.cpp,4570,else-if,main,} else if (km == mu::engraving::KeyMode::MINOR || km == mu::engraving::KeyMode::AEOLIAN) {
+tools/batch_analyze.cpp,4580,if,main,if (outputPath.empty()) {
+tools/batch_analyze.cpp,4581,if,main,if (!dumpKeyTicks.empty()) {
+tools/batch_analyze.cpp,4584,else-if,main,} else if (!diagnoseMeasures.empty()) {
+tools/batch_analyze.cpp,4593,if,main,if (!outFile.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text)) {
+tools/batch_analyze.cpp,4600,if,main,if (!dumpKeyTicks.empty()) {
+tools/batch_analyze.cpp,4603,else-if,main,} else if (!diagnoseMeasures.empty()) {
+tools/c1_reliability.py,413,if,<module-scope>,"if __name__ == ""__main__"":"
+tools/c1_reliability.py,79,for,bin_curve,"for conf, correct, w in pairs:"
+tools/c1_reliability.py,89,for,bin_curve,"for i, b in enumerate(bins):"
+tools/c1_reliability.py,109,for,curve_diagnostics,for r in nonempty:
+tools/c1_reliability.py,115,if,curve_diagnostics,if tot_w > 0:
+tools/c1_reliability.py,119,if,curve_diagnostics,if tot_w > 0:
+tools/c1_reliability.py,134,for,fmt_curve,for r in rows:
+tools/c1_reliability.py,144,if,fmt_curve,"if diag[""violation_bins""]:"
+tools/c1_reliability.py,159,for,cells_with_region_conf,for c in pg.cells:
+tools/c1_reliability.py,167,if,_load_wir,if not p:
+tools/c1_reliability.py,169,try,_load_wir,try:
+tools/c1_reliability.py,182,for,measure_l3,"for ours_path in sorted(corpus_dir.glob(""*.ours.json"")):"
+tools/c1_reliability.py,230,for,measure_l4_l5,"for fs_path in sorted(Path(fs_dir).glob(""*.ours.json"")):"
+tools/c1_reliability.py,284,for,measure_devbeds,for corpus in l6.DEV_BEDS:
+tools/c1_reliability.py,332,if,_range,if not xs:
+tools/c1_reliability.py,360,for,main,for preset in PRESETS:
+tools/c1_reliability.py,398,for,main,"for name, pairs, wl in ("
+tools/c1_reliability.py,408,if,main,if args.out:
+tools/c1_reliability.py,68,ternary,squash,return x / (x + k) if (x + k) > 0 else 0.0
+tools/c1_reliability.py,110,if,curve_diagnostics,"if prev is not None and r[""emp""] < prev[""emp""] - 1e-9:"
+tools/c1_reliability.py,135,if,fmt_curve,"if r[""n""] == 0:"
+tools/c1_reliability.py,185,if,measure_l3,if not wir:
+tools/c1_reliability.py,187,try,measure_l3,try:
+tools/c1_reliability.py,191,if,measure_l3,if not ours:
+tools/c1_reliability.py,195,if,measure_l3,if m21_path.exists():
+tools/c1_reliability.py,201,if,measure_l3,if not km_path.exists():
+tools/c1_reliability.py,207,for,measure_l3,"for c, rs in zip(pg.cells, region_start):"
+tools/c1_reliability.py,232,if,measure_l4_l5,"if stem == ""corpus_manifest"":"
+tools/c1_reliability.py,235,if,measure_l4_l5,if not wir:
+tools/c1_reliability.py,237,try,measure_l4_l5,try:
+tools/c1_reliability.py,241,if,measure_l4_l5,if not ours:
+tools/c1_reliability.py,245,if,measure_l4_l5,if m21_path.exists():
+tools/c1_reliability.py,254,for,measure_l4_l5,"for r in raw.get(""regions"", []):"
+tools/c1_reliability.py,259,for,measure_l4_l5,"for m in raw.get(""modulations"", []):"
+tools/c1_reliability.py,264,for,measure_l4_l5,"for c, rs in zip(pg.cells, region_start):"
+tools/c1_reliability.py,286,if,measure_devbeds,if not cdir.is_dir():
+tools/c1_reliability.py,288,for,measure_devbeds,"for stem, mscx, tsv in l6._corpus_pieces(corpus):"
+tools/c1_reliability.py,365,for,main,"for name, pairs in ((""L3 key — SEQUENCE MARGIN (squashed x/(x+%.1f))"" % SQUASH_K_L3_MARGIN, l3[""margin""]),"
+tools/c1_reliability.py,374,for,main,"for name, pairs, corr in ("
+tools/c1_reliability.py,90,ternary,bin_curve,"emp = (b[""cw""] / b[""w""]) if b[""w""] > 0 else None"
+tools/c1_reliability.py,91,ternary,bin_curve,"mconf = (b[""confw""] / b[""w""]) if b[""w""] > 0 else None"
+tools/c1_reliability.py,127,ternary,curve_diagnostics,"""overall_correct"": (sum(r[""w""] * r[""emp""] for r in nonempty) / tot_w) if tot_w > 0 else None,"
+tools/c1_reliability.py,196,try,measure_l3,try:
+tools/c1_reliability.py,208,if,measure_l3,if rs is None or rs not in conf_by_start:
+tools/c1_reliability.py,211,if,measure_l3,"if kv in (""keyfail"", ""dcml_keyfail""):"
+tools/c1_reliability.py,246,try,measure_l4_l5,try:
+tools/c1_reliability.py,257,if,measure_l4_l5,"if r.get(""l5OverrodeCommit""):"
+tools/c1_reliability.py,260,if,measure_l4_l5,"if m.get(""isModulation"") and m.get(""cadenceConfirmed""):"
+tools/c1_reliability.py,265,if,measure_l4_l5,if rs is None or rs not in conf_by_start:
+tools/c1_reliability.py,271,if,measure_l4_l5,if cb <= 0.0:
+tools/c1_reliability.py,274,ternary,measure_l4_l5,"""l5_zero_frac"": (l5_zero_w / total_w) if total_w else 0.0, ""dfs"": dfs}"
+tools/c1_reliability.py,290,if,measure_devbeds,if not fj.exists():
+tools/c1_reliability.py,292,try,measure_devbeds,try:
+tools/c1_reliability.py,302,if,measure_devbeds,if gt_cad and our_cads:
+tools/c1_reliability.py,317,if,measure_devbeds,if tt and ts and len(tt) == len(ts) and gt_phr:
+tools/c1_reliability.py,161,ternary,cells_with_region_conf,region_start.append(ours_regions[oi].start_tick if oi is not None else None)
+tools/c1_reliability.py,214,ternary,measure_l3,"correct = 1.0 if kv == ""agree"" else 0.0"
+tools/c1_reliability.py,305,for,measure_devbeds,for c in our_cads:
+tools/c1_reliability.py,319,if,measure_devbeds,if mx > 0:
+tools/c1_reliability.py,95,ternary,bin_curve,"""mass"": (b[""w""] / tot_w) if tot_w > 0 else 0.0,"
+tools/c1_reliability.py,143,ternary,fmt_curve,"f""({'under' if diag['signed_gap'] and diag['signed_gap']>0 else 'over'}-confident)"")"
+tools/c1_reliability.py,322,for,measure_devbeds,"for tick, s in zip(tt, ts):"
+tools/c1_reliability.py,268,ternary,measure_l4_l5,"l4_pairs.append((min(max(comp, 0.0), 1.0), 1.0 if c[""root_agree""] else 0.0, c[""w""]))"
+tools/c1_reliability.py,269,ternary,measure_l4_l5,"l5_pairs.append((min(max(cb, 0.0), 1.0), 1.0 if c[""rn_agree""] else 0.0, c[""w""]))"
+tools/c1_reliability.py,309,ternary,measure_devbeds,correct = 1.0 if t in matched_our else 0.0
+tools/c1_reliability.py,325,ternary,measure_devbeds,"l15_pairs.append((min(max(norm, 0.0), 1.0), 1.0 if near else 0.0, 1.0))"
+tools/calibration_fit.py,341,if,<module-scope>,"if __name__ == ""__main__"":"
+tools/calibration_fit.py,57,try,_corpus_git_hash,try:
+tools/calibration_fit.py,69,for,collect_l3,"for ours_path in sorted(corpus_dir.glob(""*.ours.json"")):"
+tools/calibration_fit.py,112,for,collect_l4,"for fs_path in sorted(Path(fs_dir).glob(""*.ours.json"")):"
+tools/calibration_fit.py,182,if,apply_map,"if isinstance(mapper, IsotonicRegression):"
+tools/calibration_fit.py,191,if,curve_at,"if isinstance(mapper, IsotonicRegression):"
+tools/calibration_fit.py,199,if,fit_row,if len(fit_pairs) < 50 or len(hel_pairs) < 20:
+tools/calibration_fit.py,231,if,fit_row,"if chosen == ""isotonic"":"
+tools/calibration_fit.py,310,for,main,for carrier in CARRIERS:
+tools/calibration_fit.py,337,for,main,for p in written:
+tools/calibration_fit.py,72,if,collect_l3,if split is None:
+tools/calibration_fit.py,75,if,collect_l3,if not wir:
+tools/calibration_fit.py,77,try,collect_l3,try:
+tools/calibration_fit.py,81,if,collect_l3,if not ours:
+tools/calibration_fit.py,85,if,collect_l3,if m21_path.exists():
+tools/calibration_fit.py,91,if,collect_l3,if not km_path.exists():
+tools/calibration_fit.py,96,for,collect_l3,"for cell, rs in zip(pg.cells, region_start):"
+tools/calibration_fit.py,114,if,collect_l4,"if stem == ""corpus_manifest"":"
+tools/calibration_fit.py,117,if,collect_l4,if split is None:
+tools/calibration_fit.py,120,if,collect_l4,if not wir:
+tools/calibration_fit.py,122,try,collect_l4,try:
+tools/calibration_fit.py,126,if,collect_l4,if not ours:
+tools/calibration_fit.py,130,if,collect_l4,if m21_path.exists():
+tools/calibration_fit.py,138,for,collect_l4,"for cell, rs in zip(pg.cells, region_start):"
+tools/calibration_fit.py,222,ternary,fit_row,"chosen = ""platt"" if (near_logistic and platt_not_worse) else ""isotonic"""
+tools/calibration_fit.py,227,ternary,fit_row,"chosen_map = iso if chosen == ""isotonic"" else lr"
+tools/calibration_fit.py,321,if,main,if art:
+tools/calibration_fit.py,331,if,main,if art:
+tools/calibration_fit.py,86,try,collect_l3,try:
+tools/calibration_fit.py,97,if,collect_l3,if rs is None or rs not in conf_by_start:
+tools/calibration_fit.py,100,if,collect_l3,"if kv in (""keyfail"", ""dcml_keyfail""):"
+tools/calibration_fit.py,131,try,collect_l4,try:
+tools/calibration_fit.py,139,if,collect_l4,if rs is None or rs not in conf_by_start:
+tools/calibration_fit.py,102,ternary,collect_l3,"correct = 1.0 if kv == ""agree"" else 0.0"
+tools/calibration_fit.py,142,ternary,collect_l4,"out.append((comp, 1.0 if cell[""root_agree""] else 0.0, cell[""w""], split))"
+tools/characterise_bir_false.py,302,if,<module-scope>,"if __name__ == ""__main__"":"
+tools/characterise_bir_false.py,59,if,validate_corpus_dir,if not manifest_path.exists():
+tools/characterise_bir_false.py,63,try,validate_corpus_dir,try:
+tools/characterise_bir_false.py,71,if,validate_corpus_dir,"if not manifest.get(""complete"", False) or ours_count != expected:"
+tools/characterise_bir_false.py,81,if,validate_corpus_dir,if extra:
+tools/characterise_bir_false.py,86,if,validate_corpus_dir,if missing:
+tools/characterise_bir_false.py,91,for,validate_corpus_dir,for stem in sorted(ok_stems):
+tools/characterise_bir_false.py,121,if,parse_pc_set,if bitmap is None:
+tools/characterise_bir_false.py,133,for,run,for ours_path in ours_files:
+tools/characterise_bir_false.py,222,for,run,for d in range(12):
+tools/characterise_bir_false.py,250,for,run,for d in nonzero_sorted[:2]:
+tools/characterise_bir_false.py,254,for,run,"for d, lbl in [(5, ""β P4 above""), (2, ""γ M2 above"")]:"
+tools/characterise_bir_false.py,263,for,run,for c in moz:
+tools/characterise_bir_false.py,265,if,run,if not moz:
+tools/characterise_bir_false.py,273,for,run,"for k, c in enumerate(sorted(cases, key=lambda c: (c[""stem""], c[""tick""])), 1):"
+tools/characterise_bir_false.py,290,try,main,try:
+tools/characterise_bir_false.py,94,if,validate_corpus_dir,"if digest != scores[stem].get(""sha256""):"
+tools/characterise_bir_false.py,118,ternary,pc_name,"return PC_NAMES[pc % 12] if pc is not None and pc >= 0 else ""?"""
+tools/characterise_bir_false.py,136,if,run,if not m21_path.exists():
+tools/characterise_bir_false.py,138,try,run,try:
+tools/characterise_bir_false.py,143,if,run,if not ours_regions:
+tools/characterise_bir_false.py,148,if,run,if wir_path:
+tools/characterise_bir_false.py,159,for,run,"for i, (our_r, their_r) in enumerate(aligned):"
+tools/characterise_bir_false.py,224,if,run,if c == 0:
+tools/characterise_bir_false.py,237,for,dump_group,"for k, c in enumerate(sub, 1):"
+tools/characterise_bir_false.py,255,if,run,"if d not in nonzero_sorted[:2] and delta_counts.get(d, 0) > 0:"
+tools/characterise_bir_false.py,149,try,run,try:
+tools/characterise_bir_false.py,156,ternary,run,"wir_aligned = cmp.align_dcml_regions(ours_regions, wir_regions) if wir_regions else [None]*len(ours_regions)"
+tools/characterise_bir_false.py,160,if,run,"if cmp.classify(our_r, their_r).category != ""chord_disagree"":"
+tools/characterise_bir_false.py,162,if,run,if our_r.bass_is_root:               # only BIR=false residuals
+tools/characterise_bir_false.py,164,if,run,if not wir_regions or i >= len(wir_aligned):
+tools/characterise_bir_false.py,169,if,run,"if cat != ""music21_dcml_agree"":"
+tools/characterise_bir_false.py,167,ternary,run,wir_pc = wir_r.root_pc if wir_r is not None else None
+tools/characterise_bir_false.py,174,ternary,run,our_bass  = our_r.bass_pc if our_r.bass_pc is not None else our_root
+tools/characterise_bir_false.py,168,ternary,run,"cat    = cmp.three_way_classify(our_r.root_pc, their_r.root_pc if their_r else None, wir_pc)"
+tools/characterise_bir_false.py,196,ternary,run,"""wir_label"":     wir_r.chord_symbol if wir_r else """","
+tools/compare_analyses.py,37,if,<module-scope>,if TYPE_CHECKING:
+tools/compare_analyses.py,1167,if,<module-scope>,"if __name__ == ""__main__"":"
+tools/compare_analyses.py,177,if,_rn_base_cased,if not s:
+tools/compare_analyses.py,201,for,align_regions,for our in ours:
+tools/compare_analyses.py,254,for,_matches_alternative,for alt in ours.alternatives:
+tools/compare_analyses.py,262,if,classify,if theirs is None:
+tools/compare_analyses.py,265,if,classify,"if _chord_matches(ours, theirs):"
+tools/compare_analyses.py,275,if,classify,"if _matches_alternative(theirs, ours):"
+tools/compare_analyses.py,301,for,summarize,for cr in compared:
+tools/compare_analyses.py,309,if,agreement_rate,if total == 0:
+tools/compare_analyses.py,324,if,chord_identity_agreement,if total_aligned == 0:
+tools/compare_analyses.py,356,if,three_way_classify,if dcml_root_pc is None:
+tools/compare_analyses.py,358,if,three_way_classify,if ours_root_pc is None or theirs_root_pc is None:
+tools/compare_analyses.py,362,if,three_way_classify,if ours_dcml and theirs_dcml:
+tools/compare_analyses.py,364,if,three_way_classify,if ours_dcml and not theirs_dcml:
+tools/compare_analyses.py,366,if,three_way_classify,if theirs_dcml and not ours_dcml:
+tools/compare_analyses.py,397,if,_median,if not values:
+tools/compare_analyses.py,423,for,_build_measure_anchors,for r in ours_regions:
+tools/compare_analyses.py,435,if,_dcml_tick_for,if not measure_starts:
+tools/compare_analyses.py,437,if,_dcml_tick_for,if measure in measure_starts:
+tools/compare_analyses.py,441,if,_dcml_tick_for,if prev_m is not None and next_m is not None and next_m > prev_m:
+tools/compare_analyses.py,447,if,_dcml_tick_for,if prev_m is not None:
+tools/compare_analyses.py,451,if,_dcml_tick_for,if next_m is not None:
+tools/compare_analyses.py,465,if,_dcml_time_spans,if not dcml_regions or not ours_regions:
+tools/compare_analyses.py,481,for,_dcml_time_spans,"for i, s in enumerate(starts):"
+tools/compare_analyses.py,501,if,_best_dcml_match_by_overlap,if our_dur <= 0:
+tools/compare_analyses.py,506,for,_best_dcml_match_by_overlap,"for dr, (ds, de) in zip(dcml_regions, dcml_spans):"
+tools/compare_analyses.py,514,if,_best_dcml_match_by_overlap,if best is None or best_ov == 0:
+tools/compare_analyses.py,516,if,_best_dcml_match_by_overlap,if (best_ov / our_dur) >= 0.5 \
+tools/compare_analyses.py,533,if,align_dcml_regions,"if mode == ""time-overlap"":"
+tools/compare_analyses.py,542,for,align_dcml_regions,for our in ours_regions:
+tools/compare_analyses.py,597,for,compare_ours_vs_dcml_direct,"for ours, dr in zip(ours_regions, matches):"
+tools/compare_analyses.py,652,if,compare_dcml_anchored,if not ours_regions or not dcml_regions:
+tools/compare_analyses.py,659,for,compare_dcml_anchored,"for dr, (ds, de) in zip(dcml_regions, spans):"
+tools/compare_analyses.py,809,for,three_way_summarize,for cr in compared:
+tools/compare_analyses.py,820,for,mode_breakdown_of_errors,for cr in compared:
+tools/compare_analyses.py,837,for,bass_is_root_breakdown,for cr in compared:
+tools/compare_analyses.py,857,for,note_count_breakdown,for cr in compared:
+tools/compare_analyses.py,883,for,score_margin_by_category,for cr in compared:
+tools/compare_analyses.py,889,if,score_margin_by_category,if not has_data:
+tools/compare_analyses.py,892,for,score_margin_by_category,"for cat, margins in buckets.items():"
+tools/compare_analyses.py,925,for,print_report,for cat in CATEGORIES:
+tools/compare_analyses.py,937,if,print_report,if disagree:
+tools/compare_analyses.py,952,if,print_report,if has_dcml:
+tools/compare_analyses.py,1045,for,render_html_fragment,for cr in compared:
+tools/compare_analyses.py,1077,if,render_html_fragment,if has_dcml:
+tools/compare_analyses.py,1132,if,compare_files,if dcml_regions is not None:
+tools/compare_analyses.py,1161,if,main,if args.html:
+tools/compare_analyses.py,159,ternary,_rn_base,return m.group(0).upper() if m else rn.upper()
+tools/compare_analyses.py,180,ternary,_rn_base_cased,return m.group(0) if m else s
+tools/compare_analyses.py,207,for,align_regions,for their in theirs:
+tools/compare_analyses.py,215,if,align_regions,if best is not None and our_dur > 0 and best_overlap > 0 \
+tools/compare_analyses.py,255,if,_matches_alternative,"if (int(alt.get(""rootPitchClass"", -99)) == theirs.root_pc"
+tools/compare_analyses.py,266,if,classify,"if _rn_matches(ours, theirs):"
+tools/compare_analyses.py,268,if,classify,"if _key_matches(ours, theirs):"
+tools/compare_analyses.py,374,ternary,_extract_mode,return m.group(1) if m else key_str
+tools/compare_analyses.py,401,ternary,_median,return s[n // 2] if n % 2 else 0.5 * (s[n // 2 - 1] + s[n // 2])
+tools/compare_analyses.py,411,ternary,_infer_ticks_per_beat,return _median(samples) if samples else 480.0
+tools/compare_analyses.py,425,if,_build_measure_anchors,if cur is None or r.beat < cur[1]:
+tools/compare_analyses.py,469,ternary,_dcml_time_spans,piece_end = max(r.end_tick for r in ours_regions) if ours_regions else 0
+tools/compare_analyses.py,482,if,_dcml_time_spans,if s is None:
+tools/compare_analyses.py,486,for,_dcml_time_spans,"for j in range(i + 1, len(starts)):"
+tools/compare_analyses.py,507,if,_best_dcml_match_by_overlap,if ds < 0 or de <= ds:
+tools/compare_analyses.py,510,if,_best_dcml_match_by_overlap,if ov > best_ov:
+tools/compare_analyses.py,535,if,align_dcml_regions,if not spans:
+tools/compare_analyses.py,545,for,align_dcml_regions,for dr in dcml_regions:
+tools/compare_analyses.py,599,if,compare_ours_vs_dcml_direct,if dr is not None:
+tools/compare_analyses.py,604,if,compare_ours_vs_dcml_direct,if dr is None:
+tools/compare_analyses.py,660,if,compare_dcml_anchored,if ds < 0 or de <= ds:
+tools/compare_analyses.py,666,for,compare_dcml_anchored,for r in ours_regions:
+tools/compare_analyses.py,671,if,compare_dcml_anchored,if best is None or best_ov == 0:
+tools/compare_analyses.py,678,if,compare_dcml_anchored,if dcml_rn and ours_rn:
+tools/compare_analyses.py,680,if,compare_dcml_anchored,if dr.root_pc is not None and dr.root_pc == best.root_pc:
+tools/compare_analyses.py,821,if,mode_breakdown_of_errors,if cr.three_way_cat == 'music21_dcml_agree':
+tools/compare_analyses.py,838,if,bass_is_root_breakdown,if cr.ours.bass_is_root is None:
+tools/compare_analyses.py,842,if,bass_is_root_breakdown,if cat not in data:
+tools/compare_analyses.py,846,ternary,bass_is_root_breakdown,return data if has_data else None
+tools/compare_analyses.py,858,if,note_count_breakdown,if cr.ours.note_count is None:
+tools/compare_analyses.py,862,if,note_count_breakdown,if nc not in counts:
+tools/compare_analyses.py,865,if,note_count_breakdown,if cat in counts[nc]:
+tools/compare_analyses.py,867,ternary,note_count_breakdown,return counts if has_data else None
+tools/compare_analyses.py,884,if,score_margin_by_category,if cr.ours.chord_score_margin is None:
+tools/compare_analyses.py,887,if,score_margin_by_category,if cr.three_way_cat in buckets:
+tools/compare_analyses.py,893,if,score_margin_by_category,if not margins:
+tools/compare_analyses.py,939,for,print_report,for cr in disagree[:20]:
+tools/compare_analyses.py,945,if,print_report,if len(disagree) > 20:
+tools/compare_analyses.py,962,for,print_report,for cat in THREE_WAY_CATEGORIES:
+tools/compare_analyses.py,970,if,print_report,if mode_bd:
+tools/compare_analyses.py,979,if,print_report,if bir:
+tools/compare_analyses.py,989,if,print_report,if nc_bd:
+tools/compare_analyses.py,999,if,print_report,if sm:
+tools/compare_analyses.py,1085,ternary,render_html_fragment,"dcml_header = (""<th>DCML RN</th><th>3-way</th>"" if has_dcml else """")"
+tools/compare_analyses.py,1135,for,compare_files,"for cr, dm in zip(compared, dcml_matches):"
+tools/compare_analyses.py,210,if,align_regions,if ov > best_overlap:
+tools/compare_analyses.py,248,ternary,_tonic,"return k.split()[0].lower() if k else """""
+tools/compare_analyses.py,476,ternary,_dcml_time_spans,"dr.abs_tick if getattr(dr, 'abs_tick', None) is not None"
+tools/compare_analyses.py,487,if,_dcml_time_spans,if starts[j] is not None and starts[j] > s:
+tools/compare_analyses.py,546,if,align_dcml_regions,if dr.measure_number != our.measure_number:
+tools/compare_analyses.py,549,if,align_dcml_regions,if dist < best_dist and dist <= 0.5:
+tools/compare_analyses.py,602,if,compare_ours_vs_dcml_direct,if dcml_rn and ours_rn:
+tools/compare_analyses.py,607,if,compare_ours_vs_dcml_direct,elif dr.root_pc is not None and dr.root_pc == ours.root_pc:
+tools/compare_analyses.py,668,if,compare_dcml_anchored,if ov > best_ov:
+tools/compare_analyses.py,739,ternary,dcml_anchored_summarize,"'coverage_pct':         100 * with_ours_coverage / total if total else 0.0,"
+tools/compare_analyses.py,740,ternary,dcml_anchored_summarize,"'agree_pct':            100 * agree / scoreable if scoreable else 0.0,"
+tools/compare_analyses.py,742,ternary,dcml_anchored_summarize,"'bass_is_root_pct_of_disagree': 100 * bir_in_disagree / disagree if disagree else 0.0,"
+tools/compare_analyses.py,746,ternary,dcml_anchored_summarize,"'rn_agree_pct':                 100 * rn_agree / rn_scoreable if rn_scoreable else 0.0,"
+tools/compare_analyses.py,792,ternary,dcml_direct_summarize,"'align_pct':       100 * aligned  / total    if total    else 0.0,"
+tools/compare_analyses.py,793,ternary,dcml_direct_summarize,"'agree_pct':       100 * agree    / aligned  if aligned  else 0.0,"
+tools/compare_analyses.py,794,ternary,dcml_direct_summarize,"'disagree_pct':    100 * disagree / aligned  if aligned  else 0.0,"
+tools/compare_analyses.py,796,ternary,dcml_direct_summarize,"'bass_is_root_pct_of_disagree':  100 * bir_in_disagree / disagree if disagree else 0.0,"
+tools/compare_analyses.py,800,ternary,dcml_direct_summarize,"'rn_agree_pct':                  100 * rn_agree / rn_scoreable if rn_scoreable else 0.0,"
+tools/compare_analyses.py,844,ternary,bass_is_root_breakdown,key = 'bass_is_root' if cr.ours.bass_is_root else 'bass_not_root'
+tools/compare_analyses.py,972,for,print_report,"for mode, cnt in sorted(mode_bd.items(), key=lambda x: -x[1]):"
+tools/compare_analyses.py,981,for,print_report,"for cat in ('music21_dcml_agree', 'all_agree'):"
+tools/compare_analyses.py,992,for,print_report,for nc in sorted(nc_bd.keys()):
+tools/compare_analyses.py,1001,for,print_report,"for cat in ('music21_dcml_agree', 'all_agree'):"
+tools/compare_analyses.py,1047,ternary,render_html_fragment,"their_sym = cr.theirs.chord_symbol if cr.theirs else ""—"""
+tools/compare_analyses.py,1048,ternary,render_html_fragment,"their_rn  = cr.theirs.roman_numeral if cr.theirs else ""—"""
+tools/compare_analyses.py,1049,ternary,render_html_fragment,"their_key = cr.theirs.key           if cr.theirs else ""—"""
+tools/compare_analyses.py,1050,ternary,render_html_fragment,"dcml_rn   = cr.dcml_region.roman_numeral if cr.dcml_region else ""—"""
+tools/compare_analyses.py,1052,ternary,render_html_fragment,"dcml_cell = (f""<td>{dcml_rn}</td>"""
+tools/compare_analyses.py,107,ternary,_load_region,"chord_score       = float(cs)  if cs  is not None else None,"
+tools/compare_analyses.py,108,ternary,_load_region,"chord_score_margin= float(csm) if csm is not None else None,"
+tools/compare_analyses.py,109,ternary,_load_region,"bass_pc           = int(bpc)   if bpc is not None else None,"
+tools/compare_analyses.py,110,ternary,_load_region,"bass_is_root      = bool(bir)  if bir is not None else None,"
+tools/compare_analyses.py,111,ternary,_load_region,"note_count        = int(nc)    if nc  is not None else None,"
+tools/compare_analyses.py,112,ternary,_load_region,"pitch_class_set   = int(pcs)   if pcs is not None else None,"
+tools/compare_analyses.py,113,ternary,_load_region,"key_runner_up     = kru if isinstance(kru, dict) else None,"
+tools/compare_analyses.py,941,ternary,print_report,"rn_them  = cr.theirs.roman_numeral if cr.theirs else ""—"""
+tools/compare_analyses.py,964,ternary,print_report,denom = tw_total if cat != 'no_dcml' else sum(tw_counts.values())
+tools/compare_analyses.py,1003,if,print_report,"if d.get('count', 0) == 0:"
+tools/compare_analyses.py,1137,ternary,compare_files,dcml_pc = dm.root_pc if dm is not None else None
+tools/compare_analyses.py,1138,ternary,compare_files,their_pc = cr.theirs.root_pc if cr.theirs is not None else None
+tools/compare_analyses.py,974,ternary,print_report,flag = '' if diatonic else '  <- non-diatonic'
+tools/compare_analyses.py,943,ternary,print_report,"f""  {cr.ours.chord_symbol:<10} vs {cr.theirs.chord_symbol if cr.theirs else '—':<10}"""
+tools/compare_rn.py,70,try,<module-scope>,try:
+tools/compare_rn.py,994,if,<module-scope>,"if __name__ == ""__main__"":"
+tools/compare_rn.py,123,if,normalise_rn,if not rn:
+tools/compare_rn.py,139,if,split_rn,if not rn:
+tools/compare_rn.py,147,if,split_rn,if _IT6_RE.match(rn):
+tools/compare_rn.py,150,if,split_rn,if not m:
+tools/compare_rn.py,172,if,extract_quality,if parts is None:
+tools/compare_rn.py,175,if,extract_quality,if not deg:
+tools/compare_rn.py,194,if,extract_quality,if has_hdim:
+tools/compare_rn.py,196,if,extract_quality,if has_dim:
+tools/compare_rn.py,198,if,extract_quality,if has_aug:
+tools/compare_rn.py,200,if,extract_quality,if is_upper:
+tools/compare_rn.py,263,if,_dcml_key_tonic,if not k:
+tools/compare_rn.py,266,if,_dcml_key_tonic,if not m:
+tools/compare_rn.py,279,if,_our_key_tonic,if not k:
+tools/compare_rn.py,282,if,_our_key_tonic,if not m:
+tools/compare_rn.py,301,if,key_disagree_subtag,if otc is None:
+tools/compare_rn.py,304,if,key_disagree_subtag,"if gtc is not None and (otc, omaj) == (gtc, gmaj):"
+tools/compare_rn.py,333,if,classify_pair,if dcml_region is None:
+tools/compare_rn.py,335,if,classify_pair,if dcml_region.root_pc is None:
+tools/compare_rn.py,348,if,classify_pair,if ours_parts is None or dcml_parts is None:
+tools/compare_rn.py,370,if,classify_pair,if root_match and quality_match:
+tools/compare_rn.py,465,for,score_regions,"for ours_r, dr in zip(ours_regions, matches):"
+tools/compare_rn.py,512,try,score_piece,try:
+tools/compare_rn.py,516,try,score_piece,try:
+tools/compare_rn.py,520,if,score_piece,if not ours_regions or not dcml_regions:
+tools/compare_rn.py,528,for,_find_tsv,"for cand in (f""{stem}.harmonies.tsv"", f""{stem}.tsv""):"
+tools/compare_rn.py,536,if,score_corpus,if not ours_dir.is_dir() or not tsv_dir.is_dir():
+tools/compare_rn.py,539,if,score_corpus,if not ours_files:
+tools/compare_rn.py,542,for,score_corpus,for p in ours_files:
+tools/compare_rn.py,556,for,discover_corpora,"for label, cfg in CROSS_CORPORA.items():"
+tools/compare_rn.py,599,for,_active_index_at,"for i, (s, e) in enumerate(spans):"
+tools/compare_rn.py,612,if,grid_score_regions,if not ours_regions or not dcml_regions:
+tools/compare_rn.py,618,for,grid_score_regions,"for (s, e) in ours_spans:"
+tools/compare_rn.py,622,for,grid_score_regions,"for (s, e) in dcml_spans:"
+tools/compare_rn.py,626,if,grid_score_regions,if len(bounds) < 2:
+tools/compare_rn.py,631,for,grid_score_regions,for i in range(len(grid) - 1):
+tools/compare_rn.py,652,try,grid_score_piece_tsv,try:
+tools/compare_rn.py,657,if,grid_score_piece_tsv,if not ours_regions or not dcml_regions:
+tools/compare_rn.py,663,if,grid_score_corpus_tsv,if not ours_dir.is_dir() or not tsv_dir.is_dir():
+tools/compare_rn.py,666,for,grid_score_corpus_tsv,"for p in sorted(ours_dir.glob(""*.ours.json"")):"
+tools/compare_rn.py,701,if,score_corpus_wir,if not ours_dir.is_dir():
+tools/compare_rn.py,704,if,score_corpus_wir,if not ours_files:
+tools/compare_rn.py,709,for,score_corpus_wir,for p in ours_files:
+tools/compare_rn.py,724,if,score_corpus_wir,if agg.movements == 0:
+tools/compare_rn.py,756,if,format_report,if stats.patterns:
+tools/compare_rn.py,778,for,_format_quality_breakdown,"for (o, d), n in agg.qe_quality_pairs.most_common():"
+tools/compare_rn.py,784,for,_format_quality_breakdown,"for (o, d), n in agg.qe_rn_pairs.most_common(top_rn):"
+tools/compare_rn.py,790,for,_format_quality_breakdown,"for label, st in per_corpus.items():"
+tools/compare_rn.py,810,for,format_grid_report,for k in RN_CATEGORIES:
+tools/compare_rn.py,882,if,main,if args.wir_bach:
+tools/compare_rn.py,989,if,main,if args.output:
+tools/compare_rn.py,201,if,extract_quality,if has_majm7:
+tools/compare_rn.py,203,if,extract_quality,if has_seventh:
+tools/compare_rn.py,207,if,extract_quality,if has_majm7:
+tools/compare_rn.py,209,if,extract_quality,if has_seventh:
+tools/compare_rn.py,349,if,classify_pair,if ours_region.root_pc == dcml_region.root_pc:
+tools/compare_rn.py,372,if,classify_pair,if ours_norm == dcml_norm:
+tools/compare_rn.py,376,if,classify_pair,elif root_match and not quality_match:
+tools/compare_rn.py,429,if,__post_init__,if self.patterns is None:
+tools/compare_rn.py,431,if,__post_init__,if self.qe_quality_pairs is None:
+tools/compare_rn.py,433,if,__post_init__,if self.qe_rn_pairs is None:
+tools/compare_rn.py,466,if,score_regions,if dr is None:
+tools/compare_rn.py,469,if,score_regions,if dr.root_pc is not None:
+tools/compare_rn.py,474,if,score_regions,if pair is None:
+tools/compare_rn.py,478,if,score_regions,"if _our_key_tonic(getattr(ours_r, 'key', None))[0] is None:"
+tools/compare_rn.py,480,if,score_regions,"if pair.category == ""exact"":"
+tools/compare_rn.py,504,if,score_regions,"if pair.category != ""exact"":"
+tools/compare_rn.py,530,if,_find_tsv,if p.exists():
+tools/compare_rn.py,545,if,score_corpus,if tsv is None:
+tools/compare_rn.py,548,if,score_corpus,if s is not None:
+tools/compare_rn.py,550,ternary,score_corpus,return agg if agg.movements > 0 else None
+tools/compare_rn.py,558,for,discover_corpora,"for cand in sorted(root.glob(cfg[""ours_glob""])):"
+tools/compare_rn.py,562,if,discover_corpora,if ours_dir is not None:
+tools/compare_rn.py,585,if,__post_init__,if self.bucket_dur is None:
+tools/compare_rn.py,600,if,_active_index_at,if e > s and s <= tick < e:
+tools/compare_rn.py,619,if,grid_score_regions,if e > s:
+tools/compare_rn.py,623,if,grid_score_regions,if s >= 0 and e > s:
+tools/compare_rn.py,634,if,grid_score_regions,if w <= 0:                       # coincident boundaries -> zero-width cell
+tools/compare_rn.py,638,if,grid_score_regions,if oi is None or di is None:
+tools/compare_rn.py,642,if,grid_score_regions,if pair is None:
+tools/compare_rn.py,669,if,grid_score_corpus_tsv,if tsv is None:
+tools/compare_rn.py,672,if,grid_score_corpus_tsv,if g is not None:
+tools/compare_rn.py,674,ternary,grid_score_corpus_tsv,return agg if agg.pieces > 0 else None
+tools/compare_rn.py,712,if,score_corpus_wir,if not wir_path:
+tools/compare_rn.py,714,try,score_corpus_wir,try:
+tools/compare_rn.py,719,if,score_corpus_wir,if not ours_regions or not wir_regions:
+tools/compare_rn.py,732,ternary,_pct,return 100.0 * num / denom if denom else 0.0
+tools/compare_rn.py,760,for,format_report,"for (o, d), n in stats.patterns.most_common(top_n):"
+tools/compare_rn.py,885,if,main,if result is None:
+tools/compare_rn.py,897,if,main,if args.granularity_robust:
+tools/compare_rn.py,900,if,main,if args.key_breakdown:
+tools/compare_rn.py,904,if,main,elif args.cross_corpus:
+tools/compare_rn.py,195,ternary,extract_quality,"return ""HalfDim7"" if has_seventh else ""HalfDim"""
+tools/compare_rn.py,197,ternary,extract_quality,"return ""Dim7"" if has_seventh else ""Dim"""
+tools/compare_rn.py,199,ternary,extract_quality,"return ""Aug7"" if has_seventh else ""Aug"""
+tools/compare_rn.py,285,ternary,_our_key_tonic,pc = _KB_NOTE_OURS[letter] + (1 if acc == '#' else -1 if acc == 'b' else 0)
+tools/compare_rn.py,471,if,score_regions,if dr.root_pc == ours_r.root_pc:
+tools/compare_rn.py,482,if,score_regions,"elif pair.category == ""partial"":"
+tools/compare_rn.py,559,if,discover_corpora,if cand.is_dir():
+tools/compare_rn.py,906,if,main,if not root.is_dir():
+tools/compare_rn.py,915,for,main,"for label, ours_dir in corpora.items():"
+tools/compare_rn.py,928,if,main,if agg.movements > 0:
+tools/compare_rn.py,931,if,main,if args.quality_breakdown and agg.matched > 0:
+tools/compare_rn.py,934,if,main,if args.key_breakdown and agg.matched > 0:
+tools/compare_rn.py,937,if,main,if args.granularity_robust:
+tools/compare_rn.py,948,if,main,elif args.corpus:
+tools/compare_rn.py,285,ternary,_our_key_tonic,pc = _KB_NOTE_OURS[letter] + (1 if acc == '#' else -1 if acc == 'b' else 0)
+tools/compare_rn.py,379,ternary,classify_pair,"cat = ""key_disagree"" if o_ext_q == d_ext_q else ""quality_disagree"""
+tools/compare_rn.py,484,if,score_regions,"elif pair.category == ""key_disagree"":"
+tools/compare_rn.py,919,if,main,if stats is None:
+tools/compare_rn.py,939,for,main,"for label, ours_dir in corpora.items():"
+tools/compare_rn.py,944,if,main,if grid_agg.pieces > 0:
+tools/compare_rn.py,949,if,main,if not args.tsv_dir:
+tools/compare_rn.py,953,if,main,if stats is None:
+tools/compare_rn.py,958,if,main,if args.granularity_robust:
+tools/compare_rn.py,963,if,main,if args.key_breakdown:
+tools/compare_rn.py,967,if,main,elif args.ours and args.tsv:
+tools/compare_rn.py,487,if,score_regions,"if tag == ""eq_global"":"
+tools/compare_rn.py,494,if,score_regions,"elif pair.category == ""quality_disagree"":"
+tools/compare_rn.py,942,if,main,if g is not None:
+tools/compare_rn.py,960,if,main,if grid is not None:
+tools/compare_rn.py,969,if,main,if stats is None:
+tools/compare_rn.py,974,if,main,if args.granularity_robust:
+tools/compare_rn.py,979,if,main,if args.key_breakdown:
+tools/compare_rn.py,489,if,score_regions,"elif tag == ""keyfail"":"
+tools/compare_rn.py,502,if,score_regions,"elif pair.category == ""root_err"":"
+tools/compare_rn.py,976,if,main,if grid is not None:
+tools/dcml_parser.py,130,if,_key_to_tonic_pc,if not key:
+tools/dcml_parser.py,145,try,_compute_root_pc,try:
+tools/dcml_parser.py,204,if,_parse_fraction,if not s:
+tools/dcml_parser.py,308,if,parse_abc_harmonies_file,if skipped is not None:
+tools/dcml_parser.py,404,if,_resolve_dcml_key,if not localkey:
+tools/dcml_parser.py,409,if,_resolve_dcml_key,"if re.match(r'^[A-Ga-g][#b]?$', localkey):"
+tools/dcml_parser.py,413,try,_resolve_dcml_key,try:
+tools/dcml_parser.py,469,if,_resolve_effective_dcml_key,"if relativeroot and relativeroot not in ('.', '@none'):"
+tools/dcml_parser.py,482,if,find_dcml_file,if not bwv_match:
+tools/dcml_parser.py,493,try,find_dcml_file,try:
+tools/dcml_parser.py,498,for,find_dcml_file,for fname in entries:
+tools/dcml_parser.py,550,if,_split_rntxt_applied,if '/' not in numeral:
+tools/dcml_parser.py,553,if,_split_rntxt_applied,if _RNTXT_TARGET_RE.match(tail):
+tools/dcml_parser.py,576,for,parse_rntxt_file,for raw_line in lines:
+tools/dcml_parser.py,669,try,_build_wir_index,try:
+tools/dcml_parser.py,674,for,_build_wir_index,for folder in folders:
+tools/dcml_parser.py,697,if,find_wir_file,if wir_base not in _WIR_CACHE:
+tools/dcml_parser.py,85,for,parse_dcml_file,for row in reader:
+tools/dcml_parser.py,154,if,_compute_root_pc,if n.startswith('b'):
+tools/dcml_parser.py,161,if,_compute_root_pc,if not degree_str:
+tools/dcml_parser.py,177,if,_compute_root_pc,"if is_minor and degree_idx in (5, 6):"
+tools/dcml_parser.py,183,if,_compute_root_pc,if prefix == 'b':
+tools/dcml_parser.py,256,ternary,parse_abc_harmonies_file,other_col = ('quarterbeats_all_endings'
+tools/dcml_parser.py,260,for,parse_abc_harmonies_file,"for idx, row in enumerate(reader):"
+tools/dcml_parser.py,310,if,parse_abc_harmonies_file,elif local_skips:
+tools/dcml_parser.py,358,ternary,parse_cadence_phrase_markers,other_col = ('quarterbeats_all_endings'
+tools/dcml_parser.py,362,for,parse_cadence_phrase_markers,for row in reader:
+tools/dcml_parser.py,420,if,_resolve_dcml_key,if n.startswith('b'):
+tools/dcml_parser.py,427,if,_resolve_dcml_key,if not degree_match:
+tools/dcml_parser.py,438,if,_resolve_dcml_key,"if global_minor and degree_idx in (5, 6):"
+tools/dcml_parser.py,441,if,_resolve_dcml_key,if prefix == 'b':
+tools/dcml_parser.py,499,if,find_dcml_file,if not fname.endswith('.tsv'):
+tools/dcml_parser.py,502,if,find_dcml_file,if plain in f_lower or f_lower.startswith(padded3) or f_lower.startswith(padded4):
+tools/dcml_parser.py,579,if,parse_rntxt_file,if not header_done:
+tools/dcml_parser.py,585,if,parse_rntxt_file,if not line.startswith('m'):
+tools/dcml_parser.py,590,if,parse_rntxt_file,if not measure_match:
+tools/dcml_parser.py,592,if,parse_rntxt_file,if measure_match.group(2):
+tools/dcml_parser.py,603,while,parse_rntxt_file,while i < len(tokens):
+tools/dcml_parser.py,626,for,parse_rntxt_file,"for beat, (key, numeral) in sorted(beat_chords.items()):"
+tools/dcml_parser.py,677,if,_build_wir_index,if not os.path.exists(rjson_path) or not os.path.exists(txt_path):
+tools/dcml_parser.py,679,try,_build_wir_index,try:
+tools/dcml_parser.py,86,try,parse_dcml_file,try:
+tools/dcml_parser.py,147,ternary,_compute_root_pc,is_minor  = key[0].islower() if key else False
+tools/dcml_parser.py,148,ternary,_compute_root_pc,semitones = (_DEGREE_SEMITONES_MINOR if is_minor
+tools/dcml_parser.py,156,if,_compute_root_pc,elif n.startswith('#'):
+tools/dcml_parser.py,180,if,_compute_root_pc,if n[:len(degree_token)].islower():
+tools/dcml_parser.py,185,if,_compute_root_pc,elif prefix == '#':
+tools/dcml_parser.py,262,if,parse_abc_harmonies_file,"if not numeral or numeral in ('.', '~', '@none'):"
+tools/dcml_parser.py,264,try,parse_abc_harmonies_file,try:
+tools/dcml_parser.py,365,if,parse_cadence_phrase_markers,if not cad and not phr:
+tools/dcml_parser.py,367,try,parse_cadence_phrase_markers,try:
+tools/dcml_parser.py,375,if,parse_cadence_phrase_markers,if (qb_raw or '').strip():
+tools/dcml_parser.py,377,if,parse_cadence_phrase_markers,if cad:
+tools/dcml_parser.py,380,if,parse_cadence_phrase_markers,if phr:
+tools/dcml_parser.py,415,ternary,_resolve_dcml_key,global_minor = globalkey[0].islower() if globalkey else False
+tools/dcml_parser.py,416,ternary,_resolve_dcml_key,semitones = _DEGREE_SEMITONES_MINOR if global_minor else _DEGREE_SEMITONES_MAJOR
+tools/dcml_parser.py,422,if,_resolve_dcml_key,elif n.startswith('#'):
+tools/dcml_parser.py,439,if,_resolve_dcml_key,if n[:len(degree_token)].islower():
+tools/dcml_parser.py,443,if,_resolve_dcml_key,elif prefix == '#':
+tools/dcml_parser.py,450,ternary,_resolve_dcml_key,return note.lower() if local_minor else note
+tools/dcml_parser.py,504,if,find_dcml_file,if bwv_sub and bwv_sub not in fname:
+tools/dcml_parser.py,580,if,parse_rntxt_file,if line.startswith('m') and not line.startswith('Note:'):
+tools/dcml_parser.py,607,if,parse_rntxt_file,if tok in _SKIP_TOKENS:
+tools/dcml_parser.py,611,if,parse_rntxt_file,if beat_m:
+tools/dcml_parser.py,615,if,parse_rntxt_file,if _KEY_TOKEN.match(tok):
+tools/dcml_parser.py,622,if,parse_rntxt_file,if _NUMERAL_TOKEN.match(tok):
+tools/dcml_parser.py,682,for,_build_wir_index,"for m21path in data.get(""music21"", []):"
+tools/dcml_parser.py,95,if,parse_dcml_file,"if not numeral or numeral in ('.', '~', '@none'):"
+tools/dcml_parser.py,275,if,parse_abc_harmonies_file,if (qb_raw or '').strip():
+tools/dcml_parser.py,384,ternary,parse_cadence_phrase_markers,"_tick_key = lambda m: (m.abs_tick if m.abs_tick is not None else -1,"
+tools/dcml_parser.py,618,if,parse_rntxt_file,if global_key == 'C' and not regions:
+tools/dcml_parser.py,634,ternary,parse_rntxt_file,"effective_key = _resolve_dcml_key(target, key) if target else key"
+tools/dcml_parser.py,314,ternary,parse_abc_harmonies_file,"f""{local_skips[:3]}{' …' if len(local_skips) > 3 else ''}"","
+tools/music21_batch.py,41,try,<module-scope>,try:
+tools/music21_batch.py,48,try,<module-scope>,try:
+tools/music21_batch.py,59,try,<module-scope>,try:
+tools/music21_batch.py,527,if,<module-scope>,"if __name__ == ""__main__"":"
+tools/music21_batch.py,92,if,_is_bach_chorale,"if ""bwv"" not in p:"
+tools/music21_batch.py,97,for,_is_bach_chorale,for suffix in _VARIANT_SUFFIXES:
+tools/music21_batch.py,103,if,_is_bach_chorale,if bwv_match and bwv_match.group(1) in _NON_CHORALE_BWV:
+tools/music21_batch.py,107,try,_is_bach_chorale,try:
+tools/music21_batch.py,119,if,_chorale_reject_reason,"if ""bwv"" not in p:"
+tools/music21_batch.py,122,for,_chorale_reject_reason,for suffix in _VARIANT_SUFFIXES:
+tools/music21_batch.py,126,if,_chorale_reject_reason,if bwv_match and bwv_match.group(1) in _NON_CHORALE_BWV:
+tools/music21_batch.py,128,try,_chorale_reject_reason,try:
+tools/music21_batch.py,160,if,_key_to_str,if k is None:
+tools/music21_batch.py,181,try,analyze_chorale,try:
+tools/music21_batch.py,190,if,analyze_chorale,if _HAS_FLOATING_KEY:
+tools/music21_batch.py,199,try,analyze_chorale,try:
+tools/music21_batch.py,212,for,analyze_chorale,"for elem in chordified.flatten().getElementsByClass(""Chord""):"
+tools/music21_batch.py,293,if,stem_from_corpus_path,"if p.suffix.lower() in ("".mxl"", "".xml"", "".musicxml"", "".mscz"", "".mscx""):"
+tools/music21_batch.py,297,try,stem_from_corpus_path,try:
+tools/music21_batch.py,310,for,stem_from_corpus_path,"for ext in ("".mxl"", "".xml"", "".musicxml"", "".mscz"", "".mscx""):"
+tools/music21_batch.py,315,if,stem_from_corpus_path,"if len(parts) == 2 and parts[0] == ""bach"":"
+tools/music21_batch.py,331,try,get_composer_paths,try:
+tools/music21_batch.py,337,for,get_composer_paths,for p in paths:
+tools/music21_batch.py,357,try,run_single,try:
+tools/music21_batch.py,374,for,run_single,"for r in analysis[""regions""]:"
+tools/music21_batch.py,400,if,process_chorale,if score is None:
+tools/music21_batch.py,411,if,process_chorale,if not xml_path.exists():
+tools/music21_batch.py,430,try,process_chorale,try:
+tools/music21_batch.py,449,if,run_batch,if not paths:
+tools/music21_batch.py,457,if,run_batch,if apply_filter:
+tools/music21_batch.py,465,for,run_batch,"for idx, path in enumerate(paths, 1):"
+tools/music21_batch.py,496,if,run_batch,if apply_filter:
+tools/music21_batch.py,521,if,main,if args.single:
+tools/music21_batch.py,98,if,_is_bach_chorale,if basename.endswith(suffix):
+tools/music21_batch.py,108,if,_is_bach_chorale,if len(score.parts) != 4:
+tools/music21_batch.py,123,if,_chorale_reject_reason,if basename.endswith(suffix):
+tools/music21_batch.py,191,try,analyze_chorale,try:
+tools/music21_batch.py,214,if,analyze_chorale,if root is None:
+tools/music21_batch.py,224,if,analyze_chorale,if fk_analyzer is not None:
+tools/music21_batch.py,232,if,analyze_chorale,if local_key is not None:
+tools/music21_batch.py,241,try,analyze_chorale,try:
+tools/music21_batch.py,300,if,stem_from_corpus_path,"if len(parts) == 2 and parts[0] == ""bach"":"
+tools/music21_batch.py,311,if,stem_from_corpus_path,if last.lower().endswith(ext):
+tools/music21_batch.py,339,if,get_composer_paths,"if not any(s.endswith(ext) for ext in ("".mxl"", "".xml"", "".musicxml"")):"
+tools/music21_batch.py,341,if,get_composer_paths,"if composer.lower() == ""bach"" and ""bwv"" not in s:"
+tools/music21_batch.py,401,try,process_chorale,try:
+tools/music21_batch.py,412,try,process_chorale,try:
+tools/music21_batch.py,469,try,run_batch,try:
+tools/music21_batch.py,477,if,run_batch,"if apply_filter and not _is_bach_chorale(path, score):"
+tools/music21_batch.py,490,if,run_batch,if result is not None:
+tools/music21_batch.py,499,for,run_batch,"for reason, count in sorted(reject_reasons.items(), key=lambda x: -x[1]):"
+tools/music21_batch.py,225,try,analyze_chorale,try:
+tools/music21_batch.py,233,try,analyze_chorale,try:
+tools/music21_batch.py,486,ternary,run_batch,"status  = ""ok"" if result is not None else ""FAILED"""
+tools/music21_batch.py,487,ternary,run_batch,"regions = len(result[""regions""]) if result else 0"
+tools/music21_batch.py,488,ternary,run_batch,"key     = result.get(""detectedKey"", ""?"") if result else ""?"""
+tools/music21_batch.py,242,ternary,analyze_chorale,chord_sym = elem.pitches[0].name if not chord_sym else chord_sym
+tools/music21_batch.py,418,if,process_chorale,"if src.exists() and src.suffix.lower() == "".mxl"":"
+tools/music21_batch.py,501,ternary,run_batch,"print(f""  Succeeded       : {ok} / {accepted if apply_filter else total}"")"
+tools/oracle_root_metric.py,446,if,<module-scope>,"if __name__ == ""__main__"":"
+tools/oracle_root_metric.py,104,if,parse_our_key,if not k:
+tools/oracle_root_metric.py,108,if,parse_our_key,if not m:
+tools/oracle_root_metric.py,112,if,parse_our_key,if suf in _OUR_MINOR_MODES:
+tools/oracle_root_metric.py,114,if,parse_our_key,if suf in _OUR_MAJOR_MODES:
+tools/oracle_root_metric.py,121,if,parse_dcml_key,if not k:
+tools/oracle_root_metric.py,131,if,parse_m21_key,if not k:
+tools/oracle_root_metric.py,135,if,parse_m21_key,if not m:
+tools/oracle_root_metric.py,138,if,parse_m21_key,if base is None:
+tools/oracle_root_metric.py,154,for,load_dir,"for ours_path in sorted(corpus_dir.glob(""*.ours.json"")):"
+tools/oracle_root_metric.py,180,for,region_at,for r in regions:
+tools/oracle_root_metric.py,183,for,region_at,for r in regions:
+tools/oracle_root_metric.py,205,if,classify_charged_event,if our_tonic is None or dcml_tonic is None:
+tools/oracle_root_metric.py,216,if,classify_charged_event,if not key_match:
+tools/oracle_root_metric.py,224,if,classify_charged_event,if oracle_key_disputed:
+tools/oracle_root_metric.py,229,if,classify_charged_event,if dcml_events_in_region >= 2:
+tools/oracle_root_metric.py,256,for,run_preset,"for stem, (ours, m21, wir) in data.items():"
+tools/oracle_root_metric.py,366,for,format_report,for t in TIERS:
+tools/oracle_root_metric.py,391,for,emit_json,for res in results:
+tools/oracle_root_metric.py,429,for,main,for d in args.corpus_dir:
+tools/oracle_root_metric.py,440,if,main,if args.emit_json:
+tools/oracle_root_metric.py,93,ternary,pcn,"return PC_NAMES[p % 12] if p is not None and p >= 0 else ""?"""
+tools/oracle_root_metric.py,124,ternary,parse_dcml_key,"mode = ""minor"" if k[0].islower() else ""major"""
+tools/oracle_root_metric.py,157,if,load_dir,if not m21_path.exists():
+tools/oracle_root_metric.py,159,try,load_dir,try:
+tools/oracle_root_metric.py,164,if,load_dir,if not ours:
+tools/oracle_root_metric.py,168,if,load_dir,if wir_path:
+tools/oracle_root_metric.py,181,if,region_at,if r.start_tick <= tick < r.end_tick:
+tools/oracle_root_metric.py,184,if,region_at,if r.start_tick == tick:
+tools/oracle_root_metric.py,219,if,classify_charged_event,if oracle_key_disputed:
+tools/oracle_root_metric.py,257,if,run_preset,if not wir or not ours:
+tools/oracle_root_metric.py,264,for,run_preset,"for dr, (ds, de) in zip(wir, spans):"
+tools/oracle_root_metric.py,269,for,run_preset,"for ds, de, dr in dcml_events:"
+tools/oracle_root_metric.py,431,try,main,try:
+tools/oracle_root_metric.py,169,try,load_dir,try:
+tools/oracle_root_metric.py,200,ternary,classify_charged_event,"our_tonic, our_mode = parse_our_key(our_r.key if our_r else """")"
+tools/oracle_root_metric.py,202,ternary,classify_charged_event,"m21_tonic, _ = parse_m21_key(m21_r.key if m21_r else """")"
+tools/oracle_root_metric.py,265,if,run_preset,if ds < 0 or de <= ds:
+tools/oracle_root_metric.py,278,if,run_preset,if scoreable:
+tools/oracle_root_metric.py,285,if,run_preset,if scoreable and (m21_pc != dcml_pc):
+tools/oracle_root_metric.py,292,if,run_preset,"if cat == ""all_agree"":"
+tools/oracle_root_metric.py,297,if,run_preset,if (m21_pc is not None and dcml_pc is not None and m21_pc == dcml_pc
+tools/oracle_root_metric.py,301,if,run_preset,"if cat != ""music21_dcml_agree"":"
+tools/oracle_root_metric.py,310,if,run_preset,if our_r:
+tools/oracle_root_metric.py,317,if,run_preset,if len(examples[tier]) < 6:
+tools/oracle_root_metric.py,369,ternary,format_report,pct = 100 * n / rec if rec else 0.0
+tools/oracle_root_metric.py,370,ternary,format_report,"lead = ""      "" if t.startswith(""KEY-"") else ""    """
+tools/oracle_root_metric.py,371,ternary,format_report,"name = t if not t.startswith(""KEY-"") else t"
+tools/oracle_root_metric.py,221,ternary,classify_charged_event,"return ""KEY-HARD"", (""tonic"" if not tonic_match else ""mode-only"")"
+tools/oracle_root_metric.py,272,ternary,run_preset,our_pc = our_r.root_pc if (our_r and our_r.root_pc is not None and our_r.root_pc >= 0) else None
+tools/oracle_root_metric.py,273,ternary,run_preset,m21_pc = m21_r.root_pc if (m21_r and m21_r.root_pc is not None and m21_r.root_pc >= 0) else None
+tools/oracle_root_metric.py,287,if,run_preset,"if cat == ""dcml_ours_agree"":"
+tools/oracle_root_metric.py,311,for,run_preset,"for ds2, de2, dr2 in dcml_events:"
+tools/oracle_root_metric.py,220,ternary,classify_charged_event,"return ""KEY-TONICIZATION"", (""tonic"" if not tonic_match else ""mode-only"")"
+tools/oracle_root_metric.py,289,if,run_preset,"elif cat == ""all_differ"":"
+tools/oracle_root_metric.py,312,if,run_preset,if our_r.start_tick <= ds2 < our_r.end_tick and dr2.root_pc is not None:
+tools/oracle_root_metric.py,376,ternary,format_report,"f""{'OK' if tier_sum == rec else 'MISMATCH!'}"")"
+tools/oracle_root_metric.py,372,ternary,format_report,"L.append(f""{lead}{name:<{18 if not t.startswith('KEY-') else 16}} {n:>8} {pct:>8.1f}%   {idn:>10}"")"
+tools/oracle_root_metric.py,321,ternary,run_preset,"""ours"": f""{(our_r.key if our_r else '?')}:{(our_r.chord_symbol if our_r else '?')}->{pcn(our_pc)}"","
+tools/oracle_root_metric.py,321,ternary,run_preset,"""ours"": f""{(our_r.key if our_r else '?')}:{(our_r.chord_symbol if our_r else '?')}->{pcn(our_pc)}"","
+tools/oracle_root_metric.py,322,ternary,run_preset,"""m21"": f""{(m21_r.key if m21_r else '?')}->{pcn(m21_pc)}"","
+tools/robust_stop_diff.py,161,if,<module-scope>,"if __name__ == ""__main__"":"
+tools/robust_stop_diff.py,63,if,parse_runs,if not path.exists():
+tools/robust_stop_diff.py,66,for,parse_runs,"for i, ln in enumerate(path.read_text(encoding=""utf-8"").splitlines()):"
+tools/robust_stop_diff.py,76,if,parse_runs,if skipped:
+tools/robust_stop_diff.py,112,for,main,for preset in PRESETS:
+tools/robust_stop_diff.py,67,if,parse_runs,"if i < 2 or not ln.strip():          # title + count header, blank lines"
+tools/robust_stop_diff.py,70,if,parse_runs,if not m:
+tools/robust_stop_diff.py,133,ternary,main,"ca_flag = ""  ** INVESTIGATE (large net increase)"" if d_ca > CLASS_A_INVESTIGATE_TICKS else """""
+tools/robust_stop_diff.py,147,for,_dump,for k in show:
+tools/robust_stop_diff.py,149,if,_dump,if args.show_runs and n > args.show_runs:
+tools/robust_stop_diff.py,158,ternary,main,sys.exit(0 if overall_pass else 1)
+tools/robust_stop_diff.py,143,ternary,_dump,show = keys if args.show_runs == 0 else keys[:args.show_runs]
+tools/robust_stop_diff.py,156,ternary,main,"print(f""\nOVERALL: {'PASS' if overall_pass else 'FAIL'} """
+tools/robust_stop_diff.py,132,ternary,main,"f""delta={d_cb:+d}  -> {'PASS' if cb_pass else 'FAIL'}"")"
+tools/run_bach_preset.py,533,if,<module-scope>,"if __name__ == ""__main__"":"
+tools/run_bach_preset.py,66,for,_detect_music21_version,"for xml in sorted(corpus_dir.glob(""*.xml"")):"
+tools/run_bach_preset.py,89,for,_write_manifest,"for stem, status in sorted(score_status.items()):"
+tools/run_bach_preset.py,104,if,_write_manifest,if exe is not None and Path(exe).exists():
+tools/run_bach_preset.py,140,if,_to_unix_path,if len(s) >= 2 and s[1] == ':':
+tools/run_bach_preset.py,197,try,_run_batch_analyze,try:
+tools/run_bach_preset.py,232,try,_get_git_hash,try:
+tools/run_bach_preset.py,250,if,_process_one,if not m21_path.exists():
+tools/run_bach_preset.py,255,if,_process_one,if not skip_cpp or not ours_path.exists():
+tools/run_bach_preset.py,263,if,_process_one,if not ours_path.exists():
+tools/run_bach_preset.py,266,try,_process_one,try:
+tools/run_bach_preset.py,346,if,main,if args.output_dir:
+tools/run_bach_preset.py,357,if,main,if out_is_separate and not args.resume and not args.skip_cpp:
+tools/run_bach_preset.py,363,if,main,if exe is None and not args.skip_cpp:
+tools/run_bach_preset.py,365,if,main,if exe:
+tools/run_bach_preset.py,369,if,main,if args.diag_out:
+tools/run_bach_preset.py,376,if,main,if total == 0:
+tools/run_bach_preset.py,384,if,main,if out_is_separate:
+tools/run_bach_preset.py,398,if,main,if args.ignore_declared_mode:
+tools/run_bach_preset.py,400,if,main,if args.dump_cadence_anchor:
+tools/run_bach_preset.py,402,if,main,if args.dump_tonicization:
+tools/run_bach_preset.py,404,if,main,if args.dump_l5:
+tools/run_bach_preset.py,406,if,main,if args.dump_fullspine:
+tools/run_bach_preset.py,408,if,main,if args.fullspine_no_override:
+tools/run_bach_preset.py,410,if,main,if args.dump_modulation:
+tools/run_bach_preset.py,412,if,main,if args.dump_joint_key:
+tools/run_bach_preset.py,414,if,main,if args.joint_key_wiring:
+tools/run_bach_preset.py,416,if,main,if args.param_override:
+tools/run_bach_preset.py,475,if,main,if total_chord:
+tools/run_bach_preset.py,478,if,main,if compared_n:
+tools/run_bach_preset.py,503,if,main,if diag_fh is not None:
+tools/run_bach_preset.py,516,if,main,if not manifest['complete']:
+tools/run_bach_preset.py,67,try,_detect_music21_version,try:
+tools/run_bach_preset.py,72,if,_detect_music21_version,if m:
+tools/run_bach_preset.py,91,if,_write_manifest,"if status == ""OK"":"
+tools/run_bach_preset.py,195,ternary,_run_batch_analyze,"extra = f"" {extra_args}"" if extra_args else """""
+tools/run_bach_preset.py,199,if,_run_batch_analyze,if platform.system() == 'Windows':
+tools/run_bach_preset.py,216,if,_run_batch_analyze,if extra_args:
+tools/run_bach_preset.py,221,if,_run_batch_analyze,if diag_fh is not None and r.stderr:
+tools/run_bach_preset.py,256,if,_process_one,if exe is None:
+tools/run_bach_preset.py,260,if,_process_one,if not ok:
+tools/run_bach_preset.py,358,for,main,"for stale in list(out_dir.glob(""*.ours.json"")) + [out_dir / MANIFEST_NAME]:"
+tools/run_bach_preset.py,385,for,main,for xml_path in xml_files:
+tools/run_bach_preset.py,432,for,main,for future in concurrent.futures.as_completed(futures):
+tools/run_bach_preset.py,522,if,main,if bad:
+tools/run_bach_preset.py,524,if,main,if missing:
+tools/run_bach_preset.py,93,if,_write_manifest,if ours.exists():
+tools/run_bach_preset.py,129,ternary,_find_batch_analyze,candidates = ([Path(hint)] if hint else []) + [
+tools/run_bach_preset.py,201,if,_run_batch_analyze,if bash:
+tools/run_bach_preset.py,235,ternary,_get_git_hash,return r.stdout.strip() if r.returncode == 0 else 'unknown'
+tools/run_bach_preset.py,359,if,main,if stale.exists():
+tools/run_bach_preset.py,387,if,main,if m21_src.exists():
+tools/run_bach_preset.py,433,try,main,try:
+tools/run_bach_preset.py,439,if,main,if diag_text and diag_fh is not None:
+tools/run_bach_preset.py,445,if,main,if status == 'SKIP_NO_M21':
+tools/run_bach_preset.py,448,if,main,if status == 'SKIP_NO_EXE':
+tools/run_bach_preset.py,451,if,main,if status == 'FAILED':
+tools/run_bach_preset.py,454,if,main,if status == 'SKIP_NO_OURS':
+tools/run_bach_preset.py,457,if,main,if status == 'ERROR':
+tools/run_bach_preset.py,207,if,_run_batch_analyze,if diag_fh is not None and r.stderr:
+tools/run_bach_preset.py,210,if,_run_batch_analyze,if r.returncode != 0:
+tools/run_bach_preset.py,495,ternary,main,"'chord_identity_pct': round(100*total_agree/total_chord, 2) if total_chord else 0,"
+tools/run_bach_preset.py,496,ternary,main,"'mean_per_chorale_pct': round(100*agree_sum/compared_n, 2) if compared_n else 0,"
+tools/stage5_fit_driver.py,697,if,<module-scope>,"if __name__ == ""__main__"":"
+tools/stage5_fit_driver.py,165,if,baseline_value,"if ""per_preset"" in p:"
+tools/stage5_fit_driver.py,171,if,fmt_val,"if PARAMS[name].get(""kind"") == ""bool"":"
+tools/stage5_fit_driver.py,185,for,wir_covered_stems,"for xml in sorted((_ROOT / ""tools"" / ""corpus"").glob(""*.xml"")):"
+tools/stage5_fit_driver.py,194,try,score_mode,try:
+tools/stage5_fit_driver.py,198,if,score_mode,"if ""minor"" in dk:"
+tools/stage5_fit_driver.py,200,if,score_mode,"if ""major"" in dk:"
+tools/stage5_fit_driver.py,212,for,compute_split,for s in stems:
+tools/stage5_fit_driver.py,217,for,compute_split,"for mode, members in by_mode.items():"
+tools/stage5_fit_driver.py,237,if,split_scores_file,"if which == ""full"":"
+tools/stage5_fit_driver.py,255,for,write_override,"for name, v in perturb.items():"
+tools/stage5_fit_driver.py,257,for,write_override,for rule in (disable_rules or []):
+tools/stage5_fit_driver.py,268,if,regen,if override_win_path:
+tools/stage5_fit_driver.py,271,if,regen,if r.returncode != 0:
+tools/stage5_fit_driver.py,280,if,measure,if scores_file:
+tools/stage5_fit_driver.py,283,if,measure,if r.returncode != 0:
+tools/stage5_fit_driver.py,306,if,evaluate,if frozen_hit and not perturb_frozen:
+tools/stage5_fit_driver.py,327,if,evaluate,if baseline is not None:
+tools/stage5_fit_driver.py,363,if,perturbations_for,"if kind == ""bool"":"
+tools/stage5_fit_driver.py,365,if,perturbations_for,"if kind == ""int"":"
+tools/stage5_fit_driver.py,370,if,perturbations_for,if lo != base:
+tools/stage5_fit_driver.py,429,if,main,"if args.mode == ""split"":"
+tools/stage5_fit_driver.py,443,if,main,"if args.mode == ""evaluate"":"
+tools/stage5_fit_driver.py,461,if,main,"if args.mode == ""fit"":"
+tools/stage5_fit_driver.py,544,if,main,"if args.mode == ""audit"":"
+tools/stage5_fit_driver.py,603,if,main,"if args.mode == ""fixture"":"
+tools/stage5_fit_driver.py,629,if,main,"if args.mode == ""determinism"":"
+tools/stage5_fit_driver.py,642,if,main,"if args.mode == ""screen"":"
+tools/stage5_fit_driver.py,179,ternary,git_head,"return r.stdout.strip() if r.returncode == 0 else ""unknown"""
+tools/stage5_fit_driver.py,186,if,wir_covered_stems,"if dcml.find_wir_file(str(WIR_DIR), xml.stem):"
+tools/stage5_fit_driver.py,220,for,compute_split,"for i, s in enumerate(members):"
+tools/stage5_fit_driver.py,227,if,compute_split,if members:
+tools/stage5_fit_driver.py,291,ternary,measure,"key = 100 * agg[""b_key_agree""] / kd if kd else 0.0"
+tools/stage5_fit_driver.py,367,ternary,perturbations_for,"step = round(0.10 * base, 6) if base > 1.0 else 0.05"
+tools/stage5_fit_driver.py,435,for,main,"for mode, s in strata.items():"
+tools/stage5_fit_driver.py,448,for,main,for kv in args.set:
+tools/stage5_fit_driver.py,503,for,main,for v in coarse:
+tools/stage5_fit_driver.py,515,for,main,for _rnd in range(args.refine_rounds):
+tools/stage5_fit_driver.py,526,if,main,if best:
+tools/stage5_fit_driver.py,531,if,main,if best is None:
+tools/stage5_fit_driver.py,552,if,main,if args.resume and outp.exists():
+tools/stage5_fit_driver.py,567,if,main,"if (""__baseline__"" not in done) and not (args.resume and outp.exists()):"
+tools/stage5_fit_driver.py,574,for,main,for rule in rules:
+tools/stage5_fit_driver.py,615,for,main,"for preset in (""Baroque"", ""Jazz"", ""Default""):"
+tools/stage5_fit_driver.py,638,if,main,if not same:
+tools/stage5_fit_driver.py,648,if,main,if args.resume and outp.exists():
+tools/stage5_fit_driver.py,658,if,main,"if (""__baseline__"", ""-"", carrier) not in done:"
+tools/stage5_fit_driver.py,663,for,main,for name in names:
+tools/stage5_fit_driver.py,172,ternary,fmt_val,"return ""true"" if v else ""false"""
+tools/stage5_fit_driver.py,223,if,compute_split,"if split == ""fitting"":"
+tools/stage5_fit_driver.py,313,ternary,evaluate,"regen(preset, ov_win if has_override else None, scratch_root)"
+tools/stage5_fit_driver.py,320,ternary,evaluate,"""families"": sorted({PARAMS[n][""fam""] for n in perturb}) if perturb else [],"
+tools/stage5_fit_driver.py,475,if,eval_at,if v in results:
+tools/stage5_fit_driver.py,508,if,best_feasible,if not feas:
+tools/stage5_fit_driver.py,517,if,main,if best is None:
+tools/stage5_fit_driver.py,519,for,main,"for cand in (round(best[""value""] - step, 6), round(best[""value""] + step, 6)):"
+tools/stage5_fit_driver.py,533,if,main,"elif best[""objective_delta""] <= 1e-9:"
+tools/stage5_fit_driver.py,550,ternary,main,"rules = POST_SCORING_RULES if not args.only else args.only.split("","")"
+tools/stage5_fit_driver.py,553,for,main,for ln in outp.read_text().splitlines():
+tools/stage5_fit_driver.py,560,if,main,elif outp.exists():
+tools/stage5_fit_driver.py,575,if,main,if rule in done:
+tools/stage5_fit_driver.py,649,for,main,for ln in outp.read_text().splitlines():
+tools/stage5_fit_driver.py,654,ternary,main,"names = list(PARAMS) if not args.only else args.only.split("","")"
+tools/stage5_fit_driver.py,665,for,main,"for dirn, value, steplab in perturbations_for(name, carrier):"
+tools/stage5_fit_driver.py,221,ternary,compute_split,"split = ""held_out"" if (i % step == step - 1) else ""fitting"""
+tools/stage5_fit_driver.py,450,ternary,main,"perturb[k] = (v == ""true"") if PARAMS[k].get(""kind"") == ""bool"" else float(v)"
+tools/stage5_fit_driver.py,520,if,main,if lo <= cand <= hi:
+tools/stage5_fit_driver.py,536,if,main,"elif not best_obj[""feasible""]:"
+tools/stage5_fit_driver.py,554,try,main,try:
+tools/stage5_fit_driver.py,626,ternary,main,"print(""FIXTURE:"", ""PASS"" if ok else ""FAIL"")"
+tools/stage5_fit_driver.py,637,ternary,main,"""BYTE-IDENTICAL"" if same else ""DIVERGED"")"
+tools/stage5_fit_driver.py,650,try,main,try:
+tools/stage5_fit_driver.py,666,if,main,"if (name, dirn, carrier) in done:"
+tools/stage5_fit_driver.py,668,if,main,"if ""clamped0"" in steplab:"
+tools/stage5_fit_driver.py,556,if,main,"if d.get(""record"") == ""rule"":"
+tools/stage5_fit_driver.py,623,ternary,main,"f""{'MATCH' if match else 'MISMATCH'}  batch={m['batch_gate']}  """
