@@ -24,6 +24,31 @@ open); then, when the work is an audit, `cowork_audit_protocol.md` + `DEFECT_TYP
 > and how; OI-44 in the same discussion), with the Stage-3 entry-gate items OI-1…OI-7
 > remaining. See `OPEN_ITEMS.md` OI-116/OI-139/OI-140 and STATUS.md (top).
 
+> **★ CC ADDENDUM 2 (2026-07-12, later) — L5 + instruments CERTIFIED; the OI-84 plan COMPLETE;
+> the OI-43 discussion OPENED and its PROBE DELIVERED.** The user granted the L5 + instruments
+> certification (all five certifications now user-granted) — the OI-84 dependency-ordered plan
+> is DONE. The held OI-43 discussion (mode/key + chord inference — where and how) opened with
+> `cowork_mode_key_chord_inference_discussion.md` (the Premise-Gate ledger + three written
+> predictions), and its funnel's first two stages ran this session
+> (`cc_mode_key_chord_probe_report.md`, `tools/reports/mode_key_chord_probe.json`).
+> **★ THE DESK-SIM HARD GATE FIRED — the joint chord→key coupling does NOT fire on this
+> corpus.** The carried key alternatives are diatonic-collection siblings (relative maj/min),
+> so the chord is **key-invariant** under them: re-decoding the chord under the ground-truth
+> key gives the SAME region root as under the argmax key on **0/6** hand-traced cases and
+> **0.30–0.37 %** of key-disagree regions corpus-wide (×3 presets). So there is no "top chord
+> from another key" to rank — the user's mechanism is theory-sound (Raphael & Stoddard; Wu &
+> Yoshii) but empirically inert on common-practice tonal music. Predictions: **P1 NOT MET**
+> (chord-coupling key-flip ceiling ≤ +0.16 pp, below the +0.3 pp shelve floor); **P3 NOT MET**
+> (menu-containment 62–67 %, not ≥80 %); **P2 NOT EVALUABLE** (mechanism inert + no per-alt
+> confidence carried). The key-agreement ceiling/floor grader was NOT built (per the gate); the
+> only code change is the additive read-only fire-rate diagnostic in `measure_joint_probe.py`
+> (chord axis reproduces arc-12 +9/+3/+10; enum-table self-check 0 mismatch; a8 reproduces the
+> ratified key column 68.13/64.43/67.50). **For the user:** OI-44's single status the numbers
+> support is design DELIVERED / build SHELVED on BOTH axes; the key-axis headroom is a
+> **key-layer ranking (OI-75/OI-81 runner-up closeness) / menu-width** question, not a
+> chord↔key coupling one — the build/re-scope call (key-layer ranking vs menu-widening vs
+> stay-shelved) is the user's. See `OPEN_ITEMS.md` OI-43/OI-44 and STATUS.md (top).
+
 **What session 36 did (all local commits `416b7d6215`…, UNPUSHED — push fork-only when
 ratified):** (1) PONDER-POINT 2 resolved → **#17–#19 ratified** (`cowork_premise_gate_reflection.md`);
 (2) the **L1–L5 retro premise audit** (3 tiers, `cowork_l1_l5_premise_debt_audit.md`) → the
