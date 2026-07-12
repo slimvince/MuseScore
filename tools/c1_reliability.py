@@ -164,6 +164,13 @@ def cells_with_region_conf(stem, ours_regions, wir_regions, m21_regions, conf_by
 
 
 def _load_wir(stem):
+    # OI-144 / DISCOVERY D3 (OI-145 wave-1): this reads WiR via the RAW parse_rntxt_file, NOT the
+    # OI-142-corrected dcml.load_wir_regions the governing graded consumers use — so the 12 transposed
+    # editions grade UNCORRECTED here. This feeds the committed calibration maps (calibration_fit reuses
+    # this) and the reliability curves, so it IS a graded surface; routing it through load_wir_regions
+    # MOVES all 4 committed maps (measured) → a RE-BASELINE (O-12 + user ratification), NOT a byte-
+    # identical fix. Left on the raw parse this session and surfaced for the user's decision
+    # (cc_measurement_chain_hardening_report.md); switch to dcml.load_wir_regions at that re-baseline.
     p = dcml.find_wir_file(str(a8.WIR_DIR), stem)
     if not p:
         return []

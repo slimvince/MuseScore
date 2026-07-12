@@ -183,6 +183,10 @@ def load_dir(corpus_dir: Path, wir_dir: Path):
             continue
         if not ours:
             continue
+        # OI-144 / DISCOVERY D3: raw WiR (parse_rntxt_file), NOT the OI-142-corrected load_wir_regions
+        # — the 12 transposed editions grade UNCORRECTED here, so this tool's charged/floor root figures
+        # are on pre-OI-142 WiR. Routing through load_wir_regions is a RE-BASELINE (moves the figures),
+        # surfaced for the user; left raw this session (cc_measurement_chain_hardening_report.md).
         wir_path = dcml.find_wir_file(str(wir_dir), stem)
         wir = []
         if wir_path:
