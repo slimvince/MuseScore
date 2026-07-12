@@ -1,0 +1,4773 @@
+{
+  "git_hash": "a5fb0065d3",
+  "corpus_git_hash": "c50002fee1",
+  "n_scores": 352,
+  "measure_edge_rule": "run.dur < median inter-measure tick gap (per piece)",
+  "presets": {
+    "Baroque": {
+      "scored_dur": 8293680,
+      "failing_mass_dur": 2643600,
+      "failing_share_of_scored_pct": 31.8749,
+      "key_agree_pct_vs_global": 68.1251,
+      "reconciliation": {
+        "my_agree": 5650080,
+        "a8_agree": 5650080,
+        "my_disagree": 2635920,
+        "a8_disagree": 2635920,
+        "my_keyfail": 7680,
+        "a8_keyfail": 7680,
+        "my_dcml_keyfail": 0,
+        "a8_dcml_keyfail": 0,
+        "my_scored": 8293680,
+        "a8_scored": 8293680,
+        "agree_ok": true,
+        "disagree_ok": true,
+        "keyfail_ok": true,
+        "scored_ok": true,
+        "classified_global_total": 2643600,
+        "classified_local_total": 2643600,
+        "failing_mass": 2643600,
+        "classified_eq_failing_global": true,
+        "classified_eq_failing_local": true
+      },
+      "region_stream_match": {
+        "frozen_regions": 10255,
+        "probe_regions": 10255,
+        "matched_start_end_key": 10255,
+        "match_frac": 1.0,
+        "scores_probe_failed": 0
+      },
+      "cause_table_local_anchored": {
+        "enharmonic": {
+          "dur": 0,
+          "n": 0,
+          "share_of_failing_pct": 0.0
+        },
+        "tonicization_vs_modulation": {
+          "dur": 1139400,
+          "n": 394,
+          "share_of_failing_pct": 43.1
+        },
+        "relative_key": {
+          "dur": 428160,
+          "n": 262,
+          "share_of_failing_pct": 16.2
+        },
+        "parallel_mode": {
+          "dur": 42000,
+          "n": 22,
+          "share_of_failing_pct": 1.59
+        },
+        "segmentation_edge": {
+          "dur": 5760,
+          "n": 5,
+          "share_of_failing_pct": 0.22
+        },
+        "wrong_neighborhood": {
+          "dur": 271760,
+          "n": 130,
+          "share_of_failing_pct": 10.28
+        },
+        "unclassified": {
+          "dur": 748840,
+          "n": 433,
+          "share_of_failing_pct": 28.33
+        },
+        "unparseable_our_key": {
+          "dur": 7680,
+          "n": 4,
+          "share_of_failing_pct": 0.29
+        }
+      },
+      "cause_table_global_anchored": {
+        "enharmonic": {
+          "dur": 0,
+          "n": 0,
+          "share_of_failing_pct": 0.0
+        },
+        "tonicization_vs_modulation": {
+          "dur": 1139400,
+          "n": 394,
+          "share_of_failing_pct": 43.1
+        },
+        "relative_key": {
+          "dur": 412320,
+          "n": 253,
+          "share_of_failing_pct": 15.6
+        },
+        "parallel_mode": {
+          "dur": 9600,
+          "n": 5,
+          "share_of_failing_pct": 0.36
+        },
+        "segmentation_edge": {
+          "dur": 5760,
+          "n": 5,
+          "share_of_failing_pct": 0.22
+        },
+        "wrong_neighborhood": {
+          "dur": 308880,
+          "n": 149,
+          "share_of_failing_pct": 11.68
+        },
+        "unclassified": {
+          "dur": 759960,
+          "n": 440,
+          "share_of_failing_pct": 28.75
+        },
+        "unparseable_our_key": {
+          "dur": 7680,
+          "n": 4,
+          "share_of_failing_pct": 0.29
+        }
+      },
+      "transposition_contamination": {
+        "note": "pieces whose SCORE is transposed vs the WiR reference edition (constant whole-piece root offset >= 70% coverage): ~100% key- AND root-disagree by construction, NOT key-inference error (#9/#19). Included in the a8-reconciling tables; excluded in the clean-corpus view.",
+        "n_transposed_pieces": 12,
+        "transposed_pieces": [
+          {
+            "stem": "bwv126.6",
+            "offset": 2,
+            "frac": 0.962,
+            "scored": 51360,
+            "fail": 51360
+          },
+          {
+            "stem": "bwv267",
+            "offset": 11,
+            "frac": 0.946,
+            "scored": 32160,
+            "fail": 32160
+          },
+          {
+            "stem": "bwv180.7",
+            "offset": 2,
+            "frac": 0.971,
+            "scored": 28800,
+            "fail": 28800
+          },
+          {
+            "stem": "bwv30.6",
+            "offset": 2,
+            "frac": 0.833,
+            "scored": 26880,
+            "fail": 26880
+          },
+          {
+            "stem": "bwv184.5",
+            "offset": 7,
+            "frac": 0.875,
+            "scored": 26400,
+            "fail": 26400
+          },
+          {
+            "stem": "bwv145.5",
+            "offset": 2,
+            "frac": 0.946,
+            "scored": 25920,
+            "fail": 25920
+          },
+          {
+            "stem": "bwv39.7",
+            "offset": 3,
+            "frac": 0.806,
+            "scored": 24960,
+            "fail": 24960
+          },
+          {
+            "stem": "bwv177.5",
+            "offset": 3,
+            "frac": 0.815,
+            "scored": 24480,
+            "fail": 24480
+          },
+          {
+            "stem": "bwv244.62",
+            "offset": 10,
+            "frac": 0.933,
+            "scored": 22560,
+            "fail": 22560
+          },
+          {
+            "stem": "bwv73.5",
+            "offset": 3,
+            "frac": 0.929,
+            "scored": 22560,
+            "fail": 22560
+          },
+          {
+            "stem": "bwv148.6",
+            "offset": 1,
+            "frac": 0.967,
+            "scored": 21600,
+            "fail": 21600
+          },
+          {
+            "stem": "bwv115.6",
+            "offset": 4,
+            "frac": 1.0,
+            "scored": 19200,
+            "fail": 19200
+          }
+        ],
+        "transposed_failing_dur": 326880,
+        "transposed_share_of_failing_pct": 12.36,
+        "clean_failing_mass_dur": 2316720,
+        "clean_scored_dur": 7966800,
+        "clean_key_agree_pct_vs_global": 70.9203
+      },
+      "cause_table_local_anchored_clean_corpus": {
+        "enharmonic": {
+          "dur": 0,
+          "n": 0,
+          "share_of_clean_failing_pct": 0.0
+        },
+        "tonicization_vs_modulation": {
+          "dur": 1134600,
+          "n": 393,
+          "share_of_clean_failing_pct": 48.97
+        },
+        "relative_key": {
+          "dur": 423840,
+          "n": 261,
+          "share_of_clean_failing_pct": 18.29
+        },
+        "parallel_mode": {
+          "dur": 26160,
+          "n": 12,
+          "share_of_clean_failing_pct": 1.13
+        },
+        "segmentation_edge": {
+          "dur": 5760,
+          "n": 5,
+          "share_of_clean_failing_pct": 0.25
+        },
+        "wrong_neighborhood": {
+          "dur": 52400,
+          "n": 40,
+          "share_of_clean_failing_pct": 2.26
+        },
+        "unclassified": {
+          "dur": 666280,
+          "n": 406,
+          "share_of_clean_failing_pct": 28.76
+        },
+        "unparseable_our_key": {
+          "dur": 7680,
+          "n": 4,
+          "share_of_clean_failing_pct": 0.33
+        }
+      },
+      "our_key_relationship_to_local_key_clean_corpus": {
+        "equal": {
+          "dur": 1134600,
+          "share_of_clean_failing_pct": 48.97
+        },
+        "relative": {
+          "dur": 423840,
+          "share_of_clean_failing_pct": 18.29
+        },
+        "distant": {
+          "dur": 224880,
+          "share_of_clean_failing_pct": 9.71
+        },
+        "dominant_or_subdominant": {
+          "dur": 499560,
+          "share_of_clean_failing_pct": 21.56
+        },
+        "parallel": {
+          "dur": 26160,
+          "share_of_clean_failing_pct": 1.13
+        }
+      },
+      "leading_tone_test_local_anchored_clean_corpus": {
+        "n_runs": 183,
+        "n_runs_lt_present": 82,
+        "dur_total": 293040,
+        "dur_lt_present": 166080,
+        "lt_present_frac_dur": 0.5667,
+        "lt_present_frac_n": 0.4481
+      },
+      "our_key_relationship_to_local_key": {
+        "equal": {
+          "dur": 1139400,
+          "share_of_failing_pct": 43.1
+        },
+        "distant": {
+          "dur": 471120,
+          "share_of_failing_pct": 17.82
+        },
+        "relative": {
+          "dur": 428160,
+          "share_of_failing_pct": 16.2
+        },
+        "dominant_or_subdominant": {
+          "dur": 555240,
+          "share_of_failing_pct": 21.0
+        },
+        "parallel": {
+          "dur": 42000,
+          "share_of_failing_pct": 1.59
+        }
+      },
+      "our_key_relationship_to_global_key": {
+        "distant": {
+          "dur": 567840,
+          "share_of_failing_pct": 21.48
+        },
+        "dominant_or_subdominant": {
+          "dur": 1060800,
+          "share_of_failing_pct": 40.13
+        },
+        "relative": {
+          "dur": 997680,
+          "share_of_failing_pct": 37.74
+        },
+        "parallel": {
+          "dur": 9600,
+          "share_of_failing_pct": 0.36
+        }
+      },
+      "unclassified_local_by_our_to_local_rel": {
+        "distant": {
+          "dur": 219040,
+          "share_of_failing_pct": 8.29
+        },
+        "dominant_or_subdominant": {
+          "dur": 529800,
+          "share_of_failing_pct": 20.04
+        }
+      },
+      "present_but_outranked": {
+        "carried_dur": 2056560,
+        "absent_dur": 579360,
+        "menu_unavailable_dur": 0,
+        "carried_share_of_failing_pct": 77.79,
+        "absent_share_of_failing_pct": 21.92,
+        "menu_unavailable_share_pct": 0.0
+      },
+      "leading_tone_test_global_anchored": {
+        "n_runs": 223,
+        "n_runs_lt_present": 55,
+        "dur_total": 359760,
+        "dur_lt_present": 114960,
+        "lt_present_frac_dur": 0.3195,
+        "lt_present_frac_n": 0.2466
+      },
+      "leading_tone_test_local_anchored": {
+        "n_runs": 183,
+        "n_runs_lt_present": 82,
+        "dur_total": 293040,
+        "dur_lt_present": 166080,
+        "lt_present_frac_dur": 0.5667,
+        "lt_present_frac_n": 0.4481
+      },
+      "examples_per_local_cause": {
+        "tonicization_vs_modulation": [
+          {
+            "stem": "bwv104.6",
+            "start": 10560,
+            "dur": 960,
+            "our_key": "Bmin",
+            "g_key": "A",
+            "l_key": "b",
+            "rel_to_local": "equal",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv144.3",
+            "start": 10080,
+            "dur": 1920,
+            "our_key": "Dmaj",
+            "g_key": "G",
+            "l_key": "D",
+            "rel_to_local": "equal",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv110.7",
+            "start": 2400,
+            "dur": 480,
+            "our_key": "Dmaj",
+            "g_key": "b",
+            "l_key": "D",
+            "rel_to_local": "equal",
+            "rel_to_global": "relative"
+          },
+          {
+            "stem": "bwv133.6",
+            "start": 7680,
+            "dur": 6240,
+            "our_key": "Amaj",
+            "g_key": "D",
+            "l_key": "A",
+            "rel_to_local": "equal",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv114.7",
+            "start": 14400,
+            "dur": 1920,
+            "our_key": "Fmaj",
+            "g_key": "g",
+            "l_key": "F",
+            "rel_to_local": "equal",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv122.6",
+            "start": 6240,
+            "dur": 3840,
+            "our_key": "Dharm",
+            "g_key": "g",
+            "l_key": "d",
+            "rel_to_local": "equal",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv122.6",
+            "start": 15840,
+            "dur": 2880,
+            "our_key": "Bbmaj",
+            "g_key": "g",
+            "l_key": "Bb",
+            "rel_to_local": "equal",
+            "rel_to_global": "relative"
+          },
+          {
+            "stem": "bwv102.7",
+            "start": 12480,
+            "dur": 2880,
+            "our_key": "Gmin",
+            "g_key": "c",
+            "l_key": "g",
+            "rel_to_local": "equal",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv103.6",
+            "start": 9600,
+            "dur": 2400,
+            "our_key": "Amaj",
+            "g_key": "b",
+            "l_key": "A",
+            "rel_to_local": "equal",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv103.6",
+            "start": 18720,
+            "dur": 960,
+            "our_key": "Dmaj",
+            "g_key": "b",
+            "l_key": "D",
+            "rel_to_local": "equal",
+            "rel_to_global": "relative"
+          }
+        ],
+        "wrong_neighborhood": [
+          {
+            "stem": "bwv115.6",
+            "start": 0,
+            "dur": 9600,
+            "our_key": "Gmaj",
+            "g_key": "Eb",
+            "l_key": "Eb",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv115.6",
+            "start": 9600,
+            "dur": 1920,
+            "our_key": "Gmaj",
+            "g_key": "Eb",
+            "l_key": "F",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv115.6",
+            "start": 11520,
+            "dur": 480,
+            "our_key": "Gmaj",
+            "g_key": "Eb",
+            "l_key": "Bb",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv115.6",
+            "start": 12000,
+            "dur": 2400,
+            "our_key": "Dmaj",
+            "g_key": "Eb",
+            "l_key": "Bb",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv115.6",
+            "start": 14400,
+            "dur": 960,
+            "our_key": "Gmaj",
+            "g_key": "Eb",
+            "l_key": "Bb",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv115.6",
+            "start": 15360,
+            "dur": 3840,
+            "our_key": "Gmaj",
+            "g_key": "Eb",
+            "l_key": "Eb",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv14.5",
+            "start": 3840,
+            "dur": 3360,
+            "our_key": "CDor",
+            "g_key": "g",
+            "l_key": "Bb",
+            "rel_to_local": "distant",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv11.6",
+            "start": 20160,
+            "dur": 960,
+            "our_key": "Eharm",
+            "g_key": "D",
+            "l_key": "b",
+            "rel_to_local": "dominant_or_subdominant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv148.6",
+            "start": 480,
+            "dur": 2880,
+            "our_key": "F#harm",
+            "g_key": "f",
+            "l_key": "f",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv148.6",
+            "start": 3840,
+            "dur": 2400,
+            "our_key": "Amaj",
+            "g_key": "f",
+            "l_key": "f",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          }
+        ],
+        "relative_key": [
+          {
+            "stem": "bwv110.7",
+            "start": 2880,
+            "dur": 2400,
+            "our_key": "Dmaj",
+            "g_key": "b",
+            "l_key": "b",
+            "rel_to_local": "relative",
+            "rel_to_global": "relative"
+          },
+          {
+            "stem": "bwv110.7",
+            "start": 12960,
+            "dur": 720,
+            "our_key": "F#min",
+            "g_key": "b",
+            "l_key": "A",
+            "rel_to_local": "relative",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv122.6",
+            "start": 18720,
+            "dur": 960,
+            "our_key": "Bbmaj",
+            "g_key": "g",
+            "l_key": "g",
+            "rel_to_local": "relative",
+            "rel_to_global": "relative"
+          },
+          {
+            "stem": "bwv102.7",
+            "start": 11520,
+            "dur": 960,
+            "our_key": "Gmin",
+            "g_key": "c",
+            "l_key": "Bb",
+            "rel_to_local": "relative",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv102.7",
+            "start": 15360,
+            "dur": 1200,
+            "our_key": "Gmin",
+            "g_key": "c",
+            "l_key": "Bb",
+            "rel_to_local": "relative",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv103.6",
+            "start": 8640,
+            "dur": 960,
+            "our_key": "F#min",
+            "g_key": "b",
+            "l_key": "A",
+            "rel_to_local": "relative",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv108.6",
+            "start": 12960,
+            "dur": 1440,
+            "our_key": "Dmaj",
+            "g_key": "b",
+            "l_key": "b",
+            "rel_to_local": "relative",
+            "rel_to_global": "relative"
+          },
+          {
+            "stem": "bwv14.5",
+            "start": 10320,
+            "dur": 720,
+            "our_key": "Bbmaj",
+            "g_key": "g",
+            "l_key": "g",
+            "rel_to_local": "relative",
+            "rel_to_global": "relative"
+          },
+          {
+            "stem": "bwv101.7",
+            "start": 15360,
+            "dur": 1440,
+            "our_key": "Amin",
+            "g_key": "d",
+            "l_key": "C",
+            "rel_to_local": "relative",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv10.7",
+            "start": 15360,
+            "dur": 1920,
+            "our_key": "Bbmaj",
+            "g_key": "g",
+            "l_key": "g",
+            "rel_to_local": "relative",
+            "rel_to_global": "relative"
+          }
+        ],
+        "unclassified": [
+          {
+            "stem": "bwv110.7",
+            "start": 13680,
+            "dur": 720,
+            "our_key": "F#min",
+            "g_key": "b",
+            "l_key": "D",
+            "rel_to_local": "distant",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv110.7",
+            "start": 14400,
+            "dur": 3360,
+            "our_key": "F#min",
+            "g_key": "b",
+            "l_key": "b",
+            "rel_to_local": "dominant_or_subdominant",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv114.7",
+            "start": 16320,
+            "dur": 480,
+            "our_key": "Fmaj",
+            "g_key": "g",
+            "l_key": "g",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv113.8",
+            "start": 13440,
+            "dur": 2400,
+            "our_key": "F#min",
+            "g_key": "b",
+            "l_key": "b",
+            "rel_to_local": "dominant_or_subdominant",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv122.6",
+            "start": 5760,
+            "dur": 480,
+            "our_key": "Dharm",
+            "g_key": "g",
+            "l_key": "g",
+            "rel_to_local": "dominant_or_subdominant",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv102.7",
+            "start": 16560,
+            "dur": 240,
+            "our_key": "Gmin",
+            "g_key": "c",
+            "l_key": "Eb",
+            "rel_to_local": "distant",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv102.7",
+            "start": 16800,
+            "dur": 960,
+            "our_key": "Bbmaj",
+            "g_key": "c",
+            "l_key": "Eb",
+            "rel_to_local": "dominant_or_subdominant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv14.5",
+            "start": 1440,
+            "dur": 480,
+            "our_key": "Cmin",
+            "g_key": "g",
+            "l_key": "g",
+            "rel_to_local": "dominant_or_subdominant",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv10.7",
+            "start": 29760,
+            "dur": 1920,
+            "our_key": "Fmaj",
+            "g_key": "g",
+            "l_key": "Bb",
+            "rel_to_local": "dominant_or_subdominant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv10.7",
+            "start": 31680,
+            "dur": 480,
+            "our_key": "Fmaj",
+            "g_key": "g",
+            "l_key": "g",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          }
+        ],
+        "segmentation_edge": [
+          {
+            "stem": "bwv112.5",
+            "start": 18720,
+            "dur": 960,
+            "our_key": "Amin",
+            "g_key": "G",
+            "l_key": "G",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv372",
+            "start": 8640,
+            "dur": 1440,
+            "our_key": "Dmin",
+            "g_key": "g",
+            "l_key": "g",
+            "rel_to_local": "dominant_or_subdominant",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv328",
+            "start": 34320,
+            "dur": 720,
+            "our_key": "Gmaj",
+            "g_key": "a",
+            "l_key": "d",
+            "rel_to_local": "dominant_or_subdominant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv383",
+            "start": 22560,
+            "dur": 1440,
+            "our_key": "Dmin",
+            "g_key": "a",
+            "l_key": "C",
+            "rel_to_local": "distant",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv437",
+            "start": 42240,
+            "dur": 1200,
+            "our_key": "Amin",
+            "g_key": "d",
+            "l_key": "d",
+            "rel_to_local": "dominant_or_subdominant",
+            "rel_to_global": "dominant_or_subdominant"
+          }
+        ],
+        "parallel_mode": [
+          {
+            "stem": "bwv127.5",
+            "start": 20160,
+            "dur": 2880,
+            "our_key": "Cmaj",
+            "g_key": "F",
+            "l_key": "c",
+            "rel_to_local": "parallel",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv159.5",
+            "start": 21120,
+            "dur": 2160,
+            "our_key": "Bbmaj",
+            "g_key": "Eb",
+            "l_key": "bb",
+            "rel_to_local": "parallel",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv177.5",
+            "start": 4320,
+            "dur": 1440,
+            "our_key": "Gmin",
+            "g_key": "e",
+            "l_key": "G",
+            "rel_to_local": "parallel",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv177.5",
+            "start": 7680,
+            "dur": 4320,
+            "our_key": "Gmin",
+            "g_key": "e",
+            "l_key": "G",
+            "rel_to_local": "parallel",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv177.5",
+            "start": 18240,
+            "dur": 480,
+            "our_key": "Gmin",
+            "g_key": "e",
+            "l_key": "G",
+            "rel_to_local": "parallel",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv244.15",
+            "start": 13920,
+            "dur": 1440,
+            "our_key": "Emaj",
+            "g_key": "D",
+            "l_key": "e",
+            "rel_to_local": "parallel",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv244.62",
+            "start": 15360,
+            "dur": 1920,
+            "our_key": "Amin",
+            "g_key": "b",
+            "l_key": "A",
+            "rel_to_local": "parallel",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv245.37",
+            "start": 10560,
+            "dur": 3360,
+            "our_key": "Ebmaj",
+            "g_key": "bb",
+            "l_key": "eb",
+            "rel_to_local": "parallel",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv30.6",
+            "start": 10080,
+            "dur": 960,
+            "our_key": "Amaj",
+            "g_key": "G",
+            "l_key": "a",
+            "rel_to_local": "parallel",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv30.6",
+            "start": 22080,
+            "dur": 960,
+            "our_key": "Amaj",
+            "g_key": "G",
+            "l_key": "a",
+            "rel_to_local": "parallel",
+            "rel_to_global": "distant"
+          }
+        ]
+      },
+      "absent_from_menu_runs": [
+        {
+          "stem": "bwv267",
+          "start": 480,
+          "dur": 11040,
+          "our_key": "Gmaj",
+          "g_key": "Ab",
+          "l_key": "Ab",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv180.7",
+          "start": 0,
+          "dur": 10080,
+          "our_key": "Fmaj",
+          "g_key": "Eb",
+          "l_key": "Eb",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv115.6",
+          "start": 0,
+          "dur": 9600,
+          "our_key": "Gmaj",
+          "g_key": "Eb",
+          "l_key": "Eb",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv180.7",
+          "start": 19680,
+          "dur": 9120,
+          "our_key": "Fmaj",
+          "g_key": "Eb",
+          "l_key": "Eb",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv226.2",
+          "start": 36960,
+          "dur": 9120,
+          "our_key": "Bbmaj",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv145.5",
+          "start": 17280,
+          "dur": 8640,
+          "our_key": "F#min",
+          "g_key": "e",
+          "l_key": "e",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv226.2",
+          "start": 21120,
+          "dur": 8160,
+          "our_key": "Bbmaj",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv148.6",
+          "start": 10560,
+          "dur": 7680,
+          "our_key": "Amaj",
+          "g_key": "f",
+          "l_key": "Ab",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv39.7",
+          "start": 11520,
+          "dur": 7200,
+          "our_key": "Bbmaj",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv226.2",
+          "start": 5760,
+          "dur": 6720,
+          "our_key": "Bbmaj",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv30.6",
+          "start": 3840,
+          "dur": 6240,
+          "our_key": "Amaj",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv267",
+          "start": 26880,
+          "dur": 5760,
+          "our_key": "Gmaj",
+          "g_key": "Ab",
+          "l_key": "Ab",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv369",
+          "start": 10080,
+          "dur": 5760,
+          "our_key": "Gmaj",
+          "g_key": "e",
+          "l_key": "D",
+          "cause_local": "unclassified",
+          "rel_to_local": "dominant_or_subdominant",
+          "rel_to_global": "relative"
+        },
+        {
+          "stem": "bwv121.6",
+          "start": 25920,
+          "dur": 5280,
+          "our_key": "Bharm",
+          "g_key": "e",
+          "l_key": "b",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "dominant_or_subdominant"
+        },
+        {
+          "stem": "bwv126.6",
+          "start": 6240,
+          "dur": 5280,
+          "our_key": "Amin",
+          "g_key": "g",
+          "l_key": "g",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv126.6",
+          "start": 42720,
+          "dur": 5280,
+          "our_key": "Amin",
+          "g_key": "g",
+          "l_key": "Bb",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv244.62",
+          "start": 3840,
+          "dur": 5280,
+          "our_key": "Amin",
+          "g_key": "b",
+          "l_key": "b",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv39.7",
+          "start": 3360,
+          "dur": 5280,
+          "our_key": "Bbmaj",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv43.11",
+          "start": 14400,
+          "dur": 5280,
+          "our_key": "Aharm",
+          "g_key": "G",
+          "l_key": "a",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv184.5",
+          "start": 13440,
+          "dur": 4800,
+          "our_key": "Dmaj",
+          "g_key": "G",
+          "l_key": "D",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "dominant_or_subdominant"
+        },
+        {
+          "stem": "bwv226.2",
+          "start": 480,
+          "dur": 4800,
+          "our_key": "Bbmaj",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv244.40",
+          "start": 17280,
+          "dur": 4800,
+          "our_key": "Bmin",
+          "g_key": "A",
+          "l_key": "A",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv126.6",
+          "start": 20880,
+          "dur": 4560,
+          "our_key": "Amin",
+          "g_key": "g",
+          "l_key": "Bb",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv62.6",
+          "start": 480,
+          "dur": 4560,
+          "our_key": "Bbmaj",
+          "g_key": "a",
+          "l_key": "a",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv11.6",
+          "start": 15840,
+          "dur": 4320,
+          "our_key": "Eharm",
+          "g_key": "D",
+          "l_key": "e",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv145.5",
+          "start": 1920,
+          "dur": 4320,
+          "our_key": "F#PhrygDom",
+          "g_key": "e",
+          "l_key": "A",
+          "cause_local": "relative_key",
+          "rel_to_local": "relative",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv177.5",
+          "start": 7680,
+          "dur": 4320,
+          "our_key": "Gmin",
+          "g_key": "e",
+          "l_key": "G",
+          "cause_local": "parallel_mode",
+          "rel_to_local": "parallel",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv187.7",
+          "start": 13440,
+          "dur": 4320,
+          "our_key": "Fmaj",
+          "g_key": "g",
+          "l_key": "F",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv411",
+          "start": 8640,
+          "dur": 4320,
+          "our_key": "Amin",
+          "g_key": "G",
+          "l_key": "a",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv46.6",
+          "start": 11520,
+          "dur": 4320,
+          "our_key": "Bbmaj",
+          "g_key": "g",
+          "l_key": "Bb",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "relative"
+        },
+        {
+          "stem": "bwv115.6",
+          "start": 15360,
+          "dur": 3840,
+          "our_key": "Gmaj",
+          "g_key": "Eb",
+          "l_key": "Eb",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv126.6",
+          "start": 25440,
+          "dur": 3840,
+          "our_key": "Cmaj",
+          "g_key": "g",
+          "l_key": "Bb",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "dominant_or_subdominant"
+        },
+        {
+          "stem": "bwv126.6",
+          "start": 35520,
+          "dur": 3840,
+          "our_key": "Cmaj",
+          "g_key": "g",
+          "l_key": "Bb",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "dominant_or_subdominant"
+        },
+        {
+          "stem": "bwv177.5",
+          "start": 12000,
+          "dur": 3840,
+          "our_key": "Gmin",
+          "g_key": "e",
+          "l_key": "e",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv245.14",
+          "start": 19200,
+          "dur": 3840,
+          "our_key": "Amaj",
+          "g_key": "f#",
+          "l_key": "e",
+          "cause_local": "unclassified",
+          "rel_to_local": "dominant_or_subdominant",
+          "rel_to_global": "relative"
+        },
+        {
+          "stem": "bwv275",
+          "start": 16800,
+          "dur": 3840,
+          "our_key": "Amin",
+          "g_key": "d",
+          "l_key": "a",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "dominant_or_subdominant"
+        },
+        {
+          "stem": "bwv30.6",
+          "start": 14400,
+          "dur": 3840,
+          "our_key": "Amaj",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv30.6",
+          "start": 18240,
+          "dur": 3840,
+          "our_key": "Amaj",
+          "g_key": "G",
+          "l_key": "e",
+          "cause_local": "unclassified",
+          "rel_to_local": "dominant_or_subdominant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv30.6",
+          "start": 23040,
+          "dur": 3840,
+          "our_key": "Amaj",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv320",
+          "start": 33600,
+          "dur": 3840,
+          "our_key": "Gmel",
+          "g_key": "F",
+          "l_key": "g",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv39.7",
+          "start": 21120,
+          "dur": 3840,
+          "our_key": "Bbmaj",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv148.6",
+          "start": 19440,
+          "dur": 3600,
+          "our_key": "F#min",
+          "g_key": "f",
+          "l_key": "f",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv14.5",
+          "start": 3840,
+          "dur": 3360,
+          "our_key": "CDor",
+          "g_key": "g",
+          "l_key": "Bb",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "dominant_or_subdominant"
+        },
+        {
+          "stem": "bwv126.6",
+          "start": 480,
+          "dur": 3360,
+          "our_key": "Amin",
+          "g_key": "g",
+          "l_key": "g",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv226.2",
+          "start": 29280,
+          "dur": 3360,
+          "our_key": "Bbmaj",
+          "g_key": "G",
+          "l_key": "D",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv371",
+          "start": 36000,
+          "dur": 3360,
+          "our_key": "Cmaj",
+          "g_key": "G",
+          "l_key": "d",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "dominant_or_subdominant"
+        },
+        {
+          "stem": "bwv73.5",
+          "start": 4320,
+          "dur": 3360,
+          "our_key": "Cmin",
+          "g_key": "a",
+          "l_key": "a",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv73.5",
+          "start": 10080,
+          "dur": 3360,
+          "our_key": "Gmin",
+          "g_key": "a",
+          "l_key": "C",
+          "cause_local": "unclassified",
+          "rel_to_local": "dominant_or_subdominant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv126.6",
+          "start": 32160,
+          "dur": 3120,
+          "our_key": "Amin",
+          "g_key": "g",
+          "l_key": "Eb",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv387",
+          "start": 3840,
+          "dur": 3120,
+          "our_key": "Cmaj",
+          "g_key": "d",
+          "l_key": "C",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv148.6",
+          "start": 480,
+          "dur": 2880,
+          "our_key": "F#harm",
+          "g_key": "f",
+          "l_key": "f",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv145.5",
+          "start": 12960,
+          "dur": 2880,
+          "our_key": "Emaj",
+          "g_key": "e",
+          "l_key": "D",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "parallel"
+        },
+        {
+          "stem": "bwv126.6",
+          "start": 29280,
+          "dur": 2880,
+          "our_key": "Amin",
+          "g_key": "g",
+          "l_key": "g",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv126.6",
+          "start": 48960,
+          "dur": 2880,
+          "our_key": "Amin",
+          "g_key": "g",
+          "l_key": "g",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv177.5",
+          "start": 480,
+          "dur": 2880,
+          "our_key": "Gharm",
+          "g_key": "e",
+          "l_key": "e",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv176.6",
+          "start": 2400,
+          "dur": 2880,
+          "our_key": "Cmin",
+          "g_key": "Bb",
+          "l_key": "c",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv24.6",
+          "start": 16320,
+          "dur": 2880,
+          "our_key": "Fmaj",
+          "g_key": "d",
+          "l_key": "c",
+          "cause_local": "unclassified",
+          "rel_to_local": "dominant_or_subdominant",
+          "rel_to_global": "relative"
+        },
+        {
+          "stem": "bwv267",
+          "start": 18720,
+          "dur": 2880,
+          "our_key": "Aharm",
+          "g_key": "Ab",
+          "l_key": "bb",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv267",
+          "start": 24000,
+          "dur": 2880,
+          "our_key": "Gmaj",
+          "g_key": "Ab",
+          "l_key": "eb",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv284",
+          "start": 23040,
+          "dur": 2880,
+          "our_key": "Bbmaj",
+          "g_key": "C",
+          "l_key": "C",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        }
+      ]
+    },
+    "Jazz": {
+      "scored_dur": 8291520,
+      "failing_mass_dur": 2949120,
+      "failing_share_of_scored_pct": 35.5679,
+      "key_agree_pct_vs_global": 64.4321,
+      "reconciliation": {
+        "my_agree": 5342400,
+        "a8_agree": 5342400,
+        "my_disagree": 2938320,
+        "a8_disagree": 2938320,
+        "my_keyfail": 10800,
+        "a8_keyfail": 10800,
+        "my_dcml_keyfail": 0,
+        "a8_dcml_keyfail": 0,
+        "my_scored": 8291520,
+        "a8_scored": 8291520,
+        "agree_ok": true,
+        "disagree_ok": true,
+        "keyfail_ok": true,
+        "scored_ok": true,
+        "classified_global_total": 2949120,
+        "classified_local_total": 2949120,
+        "failing_mass": 2949120,
+        "classified_eq_failing_global": true,
+        "classified_eq_failing_local": true
+      },
+      "region_stream_match": {
+        "frozen_regions": 9919,
+        "probe_regions": 9919,
+        "matched_start_end_key": 9919,
+        "match_frac": 1.0,
+        "scores_probe_failed": 0
+      },
+      "cause_table_local_anchored": {
+        "enharmonic": {
+          "dur": 0,
+          "n": 0,
+          "share_of_failing_pct": 0.0
+        },
+        "tonicization_vs_modulation": {
+          "dur": 1115400,
+          "n": 450,
+          "share_of_failing_pct": 37.82
+        },
+        "relative_key": {
+          "dur": 329760,
+          "n": 213,
+          "share_of_failing_pct": 11.18
+        },
+        "parallel_mode": {
+          "dur": 49440,
+          "n": 27,
+          "share_of_failing_pct": 1.68
+        },
+        "segmentation_edge": {
+          "dur": 8400,
+          "n": 7,
+          "share_of_failing_pct": 0.28
+        },
+        "wrong_neighborhood": {
+          "dur": 316880,
+          "n": 162,
+          "share_of_failing_pct": 10.74
+        },
+        "unclassified": {
+          "dur": 1118440,
+          "n": 588,
+          "share_of_failing_pct": 37.92
+        },
+        "unparseable_our_key": {
+          "dur": 10800,
+          "n": 9,
+          "share_of_failing_pct": 0.37
+        }
+      },
+      "cause_table_global_anchored": {
+        "enharmonic": {
+          "dur": 0,
+          "n": 0,
+          "share_of_failing_pct": 0.0
+        },
+        "tonicization_vs_modulation": {
+          "dur": 1115400,
+          "n": 450,
+          "share_of_failing_pct": 37.82
+        },
+        "relative_key": {
+          "dur": 303840,
+          "n": 190,
+          "share_of_failing_pct": 10.3
+        },
+        "parallel_mode": {
+          "dur": 14160,
+          "n": 7,
+          "share_of_failing_pct": 0.48
+        },
+        "segmentation_edge": {
+          "dur": 6960,
+          "n": 6,
+          "share_of_failing_pct": 0.24
+        },
+        "wrong_neighborhood": {
+          "dur": 355800,
+          "n": 194,
+          "share_of_failing_pct": 12.06
+        },
+        "unclassified": {
+          "dur": 1142160,
+          "n": 600,
+          "share_of_failing_pct": 38.73
+        },
+        "unparseable_our_key": {
+          "dur": 10800,
+          "n": 9,
+          "share_of_failing_pct": 0.37
+        }
+      },
+      "transposition_contamination": {
+        "note": "pieces whose SCORE is transposed vs the WiR reference edition (constant whole-piece root offset >= 70% coverage): ~100% key- AND root-disagree by construction, NOT key-inference error (#9/#19). Included in the a8-reconciling tables; excluded in the clean-corpus view.",
+        "n_transposed_pieces": 12,
+        "transposed_pieces": [
+          {
+            "stem": "bwv126.6",
+            "offset": 2,
+            "frac": 0.957,
+            "scored": 51360,
+            "fail": 51360
+          },
+          {
+            "stem": "bwv267",
+            "offset": 11,
+            "frac": 0.914,
+            "scored": 32160,
+            "fail": 32160
+          },
+          {
+            "stem": "bwv180.7",
+            "offset": 2,
+            "frac": 1.0,
+            "scored": 28800,
+            "fail": 28800
+          },
+          {
+            "stem": "bwv30.6",
+            "offset": 2,
+            "frac": 0.889,
+            "scored": 26880,
+            "fail": 26880
+          },
+          {
+            "stem": "bwv184.5",
+            "offset": 7,
+            "frac": 0.919,
+            "scored": 26400,
+            "fail": 26400
+          },
+          {
+            "stem": "bwv145.5",
+            "offset": 2,
+            "frac": 0.892,
+            "scored": 25920,
+            "fail": 25920
+          },
+          {
+            "stem": "bwv39.7",
+            "offset": 3,
+            "frac": 0.879,
+            "scored": 24960,
+            "fail": 24960
+          },
+          {
+            "stem": "bwv177.5",
+            "offset": 3,
+            "frac": 0.833,
+            "scored": 24480,
+            "fail": 24480
+          },
+          {
+            "stem": "bwv244.62",
+            "offset": 10,
+            "frac": 0.9,
+            "scored": 22560,
+            "fail": 22560
+          },
+          {
+            "stem": "bwv73.5",
+            "offset": 3,
+            "frac": 1.0,
+            "scored": 22560,
+            "fail": 22560
+          },
+          {
+            "stem": "bwv148.6",
+            "offset": 1,
+            "frac": 0.962,
+            "scored": 21600,
+            "fail": 21600
+          },
+          {
+            "stem": "bwv115.6",
+            "offset": 4,
+            "frac": 0.95,
+            "scored": 19200,
+            "fail": 19200
+          }
+        ],
+        "transposed_failing_dur": 326880,
+        "transposed_share_of_failing_pct": 11.08,
+        "clean_failing_mass_dur": 2622240,
+        "clean_scored_dur": 7964640,
+        "clean_key_agree_pct_vs_global": 67.0765
+      },
+      "cause_table_local_anchored_clean_corpus": {
+        "enharmonic": {
+          "dur": 0,
+          "n": 0,
+          "share_of_clean_failing_pct": 0.0
+        },
+        "tonicization_vs_modulation": {
+          "dur": 1113000,
+          "n": 449,
+          "share_of_clean_failing_pct": 42.44
+        },
+        "relative_key": {
+          "dur": 327840,
+          "n": 211,
+          "share_of_clean_failing_pct": 12.5
+        },
+        "parallel_mode": {
+          "dur": 33120,
+          "n": 16,
+          "share_of_clean_failing_pct": 1.26
+        },
+        "segmentation_edge": {
+          "dur": 8400,
+          "n": 7,
+          "share_of_clean_failing_pct": 0.32
+        },
+        "wrong_neighborhood": {
+          "dur": 100160,
+          "n": 73,
+          "share_of_clean_failing_pct": 3.82
+        },
+        "unclassified": {
+          "dur": 1028920,
+          "n": 559,
+          "share_of_clean_failing_pct": 39.24
+        },
+        "unparseable_our_key": {
+          "dur": 10800,
+          "n": 9,
+          "share_of_clean_failing_pct": 0.41
+        }
+      },
+      "our_key_relationship_to_local_key_clean_corpus": {
+        "equal": {
+          "dur": 1113000,
+          "share_of_clean_failing_pct": 42.44
+        },
+        "relative": {
+          "dur": 327840,
+          "share_of_clean_failing_pct": 12.5
+        },
+        "distant": {
+          "dur": 382320,
+          "share_of_clean_failing_pct": 14.58
+        },
+        "dominant_or_subdominant": {
+          "dur": 755160,
+          "share_of_clean_failing_pct": 28.8
+        },
+        "parallel": {
+          "dur": 33120,
+          "share_of_clean_failing_pct": 1.26
+        }
+      },
+      "leading_tone_test_local_anchored_clean_corpus": {
+        "n_runs": 134,
+        "n_runs_lt_present": 56,
+        "dur_total": 204720,
+        "dur_lt_present": 109920,
+        "lt_present_frac_dur": 0.5369,
+        "lt_present_frac_n": 0.4179
+      },
+      "our_key_relationship_to_local_key": {
+        "equal": {
+          "dur": 1115400,
+          "share_of_failing_pct": 37.82
+        },
+        "relative": {
+          "dur": 329760,
+          "share_of_failing_pct": 11.18
+        },
+        "distant": {
+          "dur": 627360,
+          "share_of_failing_pct": 21.27
+        },
+        "dominant_or_subdominant": {
+          "dur": 816360,
+          "share_of_failing_pct": 27.68
+        },
+        "parallel": {
+          "dur": 49440,
+          "share_of_failing_pct": 1.68
+        }
+      },
+      "our_key_relationship_to_global_key": {
+        "relative": {
+          "dur": 799680,
+          "share_of_failing_pct": 27.12
+        },
+        "dominant_or_subdominant": {
+          "dur": 1414800,
+          "share_of_failing_pct": 47.97
+        },
+        "distant": {
+          "dur": 709680,
+          "share_of_failing_pct": 24.06
+        },
+        "parallel": {
+          "dur": 14160,
+          "share_of_failing_pct": 0.48
+        }
+      },
+      "unclassified_local_by_our_to_local_rel": {
+        "distant": {
+          "dur": 361600,
+          "share_of_failing_pct": 12.26
+        },
+        "dominant_or_subdominant": {
+          "dur": 756840,
+          "share_of_failing_pct": 25.66
+        }
+      },
+      "present_but_outranked": {
+        "carried_dur": 2268720,
+        "absent_dur": 669600,
+        "menu_unavailable_dur": 0,
+        "carried_share_of_failing_pct": 76.93,
+        "absent_share_of_failing_pct": 22.71,
+        "menu_unavailable_share_pct": 0.0
+      },
+      "leading_tone_test_global_anchored": {
+        "n_runs": 154,
+        "n_runs_lt_present": 40,
+        "dur_total": 248160,
+        "dur_lt_present": 81120,
+        "lt_present_frac_dur": 0.3269,
+        "lt_present_frac_n": 0.2597
+      },
+      "leading_tone_test_local_anchored": {
+        "n_runs": 134,
+        "n_runs_lt_present": 56,
+        "dur_total": 204720,
+        "dur_lt_present": 109920,
+        "lt_present_frac_dur": 0.5369,
+        "lt_present_frac_n": 0.4179
+      },
+      "examples_per_local_cause": {
+        "tonicization_vs_modulation": [
+          {
+            "stem": "bwv110.7",
+            "start": 2400,
+            "dur": 480,
+            "our_key": "Dmaj",
+            "g_key": "b",
+            "l_key": "D",
+            "rel_to_local": "equal",
+            "rel_to_global": "relative"
+          },
+          {
+            "stem": "bwv144.3",
+            "start": 8640,
+            "dur": 1920,
+            "our_key": "DMixolyd",
+            "g_key": "G",
+            "l_key": "D",
+            "rel_to_local": "equal",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv144.3",
+            "start": 10560,
+            "dur": 1440,
+            "our_key": "Dmaj",
+            "g_key": "G",
+            "l_key": "D",
+            "rel_to_local": "equal",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv104.6",
+            "start": 9600,
+            "dur": 1920,
+            "our_key": "BDor",
+            "g_key": "A",
+            "l_key": "b",
+            "rel_to_local": "equal",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv114.7",
+            "start": 14400,
+            "dur": 1920,
+            "our_key": "FMixolyd",
+            "g_key": "g",
+            "l_key": "F",
+            "rel_to_local": "equal",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv133.6",
+            "start": 7680,
+            "dur": 4800,
+            "our_key": "Amaj",
+            "g_key": "D",
+            "l_key": "A",
+            "rel_to_local": "equal",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv133.6",
+            "start": 12480,
+            "dur": 2880,
+            "our_key": "AMixolyd",
+            "g_key": "D",
+            "l_key": "A",
+            "rel_to_local": "equal",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv122.6",
+            "start": 6720,
+            "dur": 3360,
+            "our_key": "Dharm",
+            "g_key": "g",
+            "l_key": "d",
+            "rel_to_local": "equal",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv122.6",
+            "start": 15840,
+            "dur": 2880,
+            "our_key": "Bbmaj",
+            "g_key": "g",
+            "l_key": "Bb",
+            "rel_to_local": "equal",
+            "rel_to_global": "relative"
+          },
+          {
+            "stem": "bwv102.7",
+            "start": 12960,
+            "dur": 2400,
+            "our_key": "Gmin",
+            "g_key": "c",
+            "l_key": "g",
+            "rel_to_local": "equal",
+            "rel_to_global": "dominant_or_subdominant"
+          }
+        ],
+        "relative_key": [
+          {
+            "stem": "bwv110.7",
+            "start": 2880,
+            "dur": 2400,
+            "our_key": "Dmaj",
+            "g_key": "b",
+            "l_key": "b",
+            "rel_to_local": "relative",
+            "rel_to_global": "relative"
+          },
+          {
+            "stem": "bwv122.6",
+            "start": 18720,
+            "dur": 960,
+            "our_key": "Bbmaj",
+            "g_key": "g",
+            "l_key": "g",
+            "rel_to_local": "relative",
+            "rel_to_global": "relative"
+          },
+          {
+            "stem": "bwv102.7",
+            "start": 15360,
+            "dur": 1200,
+            "our_key": "Gmin",
+            "g_key": "c",
+            "l_key": "Bb",
+            "rel_to_local": "relative",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv101.7",
+            "start": 15360,
+            "dur": 1440,
+            "our_key": "Amin",
+            "g_key": "d",
+            "l_key": "C",
+            "rel_to_local": "relative",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv10.7",
+            "start": 15360,
+            "dur": 1920,
+            "our_key": "Bbmaj",
+            "g_key": "g",
+            "l_key": "g",
+            "rel_to_local": "relative",
+            "rel_to_global": "relative"
+          },
+          {
+            "stem": "bwv123.6",
+            "start": 14400,
+            "dur": 960,
+            "our_key": "Dmaj",
+            "g_key": "b",
+            "l_key": "b",
+            "rel_to_local": "relative",
+            "rel_to_global": "relative"
+          },
+          {
+            "stem": "bwv123.6",
+            "start": 28800,
+            "dur": 1920,
+            "our_key": "Dmaj",
+            "g_key": "b",
+            "l_key": "b",
+            "rel_to_local": "relative",
+            "rel_to_global": "relative"
+          },
+          {
+            "stem": "bwv127.5",
+            "start": 13920,
+            "dur": 1920,
+            "our_key": "CMixolyd",
+            "g_key": "F",
+            "l_key": "a",
+            "rel_to_local": "relative",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv121.6",
+            "start": 9600,
+            "dur": 2400,
+            "our_key": "Bmin",
+            "g_key": "e",
+            "l_key": "D",
+            "rel_to_local": "relative",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv11.6",
+            "start": 24480,
+            "dur": 960,
+            "our_key": "Bmin",
+            "g_key": "D",
+            "l_key": "D",
+            "rel_to_local": "relative",
+            "rel_to_global": "relative"
+          }
+        ],
+        "unclassified": [
+          {
+            "stem": "bwv110.7",
+            "start": 13920,
+            "dur": 480,
+            "our_key": "F#min",
+            "g_key": "b",
+            "l_key": "D",
+            "rel_to_local": "distant",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv110.7",
+            "start": 14400,
+            "dur": 3360,
+            "our_key": "F#min",
+            "g_key": "b",
+            "l_key": "b",
+            "rel_to_local": "dominant_or_subdominant",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv144.3",
+            "start": 8160,
+            "dur": 480,
+            "our_key": "DMixolyd",
+            "g_key": "G",
+            "l_key": "G",
+            "rel_to_local": "dominant_or_subdominant",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv104.6",
+            "start": 11520,
+            "dur": 480,
+            "our_key": "BDor",
+            "g_key": "A",
+            "l_key": "A",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv114.7",
+            "start": 16320,
+            "dur": 1920,
+            "our_key": "FMixolyd",
+            "g_key": "g",
+            "l_key": "g",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv114.7",
+            "start": 18240,
+            "dur": 960,
+            "our_key": "CDor",
+            "g_key": "g",
+            "l_key": "g",
+            "rel_to_local": "dominant_or_subdominant",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv133.6",
+            "start": 15360,
+            "dur": 2400,
+            "our_key": "AMixolyd",
+            "g_key": "D",
+            "l_key": "D",
+            "rel_to_local": "dominant_or_subdominant",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv113.8",
+            "start": 13440,
+            "dur": 2400,
+            "our_key": "F#min",
+            "g_key": "b",
+            "l_key": "b",
+            "rel_to_local": "dominant_or_subdominant",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv112.5",
+            "start": 17280,
+            "dur": 480,
+            "our_key": "ADor",
+            "g_key": "G",
+            "l_key": "e",
+            "rel_to_local": "dominant_or_subdominant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv112.5",
+            "start": 17760,
+            "dur": 3840,
+            "our_key": "ADor",
+            "g_key": "G",
+            "l_key": "G",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          }
+        ],
+        "wrong_neighborhood": [
+          {
+            "stem": "bwv115.6",
+            "start": 0,
+            "dur": 9600,
+            "our_key": "Gmaj",
+            "g_key": "Eb",
+            "l_key": "Eb",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv115.6",
+            "start": 9600,
+            "dur": 1920,
+            "our_key": "Gmaj",
+            "g_key": "Eb",
+            "l_key": "F",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv115.6",
+            "start": 11520,
+            "dur": 720,
+            "our_key": "Gmaj",
+            "g_key": "Eb",
+            "l_key": "Bb",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv115.6",
+            "start": 12240,
+            "dur": 1680,
+            "our_key": "Dmaj",
+            "g_key": "Eb",
+            "l_key": "Bb",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv115.6",
+            "start": 13920,
+            "dur": 1440,
+            "our_key": "DMixolyd",
+            "g_key": "Eb",
+            "l_key": "Bb",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv115.6",
+            "start": 15360,
+            "dur": 1440,
+            "our_key": "DMixolyd",
+            "g_key": "Eb",
+            "l_key": "Eb",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv115.6",
+            "start": 16800,
+            "dur": 2400,
+            "our_key": "Gmaj",
+            "g_key": "Eb",
+            "l_key": "Eb",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv14.5",
+            "start": 3840,
+            "dur": 3360,
+            "our_key": "CDor",
+            "g_key": "g",
+            "l_key": "Bb",
+            "rel_to_local": "distant",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv14.5",
+            "start": 13920,
+            "dur": 960,
+            "our_key": "CDor",
+            "g_key": "g",
+            "l_key": "d",
+            "rel_to_local": "distant",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv123.6",
+            "start": 2880,
+            "dur": 2880,
+            "our_key": "C#PhrygDom",
+            "g_key": "b",
+            "l_key": "f#",
+            "rel_to_local": "dominant_or_subdominant",
+            "rel_to_global": "distant"
+          }
+        ],
+        "parallel_mode": [
+          {
+            "stem": "bwv123.6",
+            "start": 43200,
+            "dur": 2880,
+            "our_key": "Bmaj",
+            "g_key": "b",
+            "l_key": "b",
+            "rel_to_local": "parallel",
+            "rel_to_global": "parallel"
+          },
+          {
+            "stem": "bwv127.5",
+            "start": 20160,
+            "dur": 480,
+            "our_key": "CMixolyd",
+            "g_key": "F",
+            "l_key": "c",
+            "rel_to_local": "parallel",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv127.5",
+            "start": 20640,
+            "dur": 2400,
+            "our_key": "Cmaj",
+            "g_key": "F",
+            "l_key": "c",
+            "rel_to_local": "parallel",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv159.5",
+            "start": 20640,
+            "dur": 2640,
+            "our_key": "BbMixolyd",
+            "g_key": "Eb",
+            "l_key": "bb",
+            "rel_to_local": "parallel",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv177.5",
+            "start": 4320,
+            "dur": 1440,
+            "our_key": "Gmin",
+            "g_key": "e",
+            "l_key": "G",
+            "rel_to_local": "parallel",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv177.5",
+            "start": 7680,
+            "dur": 4320,
+            "our_key": "Gmin",
+            "g_key": "e",
+            "l_key": "G",
+            "rel_to_local": "parallel",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv177.5",
+            "start": 18240,
+            "dur": 480,
+            "our_key": "Gmin",
+            "g_key": "e",
+            "l_key": "G",
+            "rel_to_local": "parallel",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv177.5",
+            "start": 18720,
+            "dur": 1440,
+            "our_key": "CDor",
+            "g_key": "e",
+            "l_key": "C",
+            "rel_to_local": "parallel",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv184.5",
+            "start": 12960,
+            "dur": 480,
+            "our_key": "EMixolyd",
+            "g_key": "G",
+            "l_key": "e",
+            "rel_to_local": "parallel",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv245.14",
+            "start": 21120,
+            "dur": 960,
+            "our_key": "Emaj",
+            "g_key": "f#",
+            "l_key": "e",
+            "rel_to_local": "parallel",
+            "rel_to_global": "distant"
+          }
+        ],
+        "segmentation_edge": [
+          {
+            "stem": "bwv244.10",
+            "start": 14880,
+            "dur": 1440,
+            "our_key": "BbDor",
+            "g_key": "Ab",
+            "l_key": "Ab",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv277",
+            "start": 3360,
+            "dur": 960,
+            "our_key": "Amin",
+            "g_key": "d",
+            "l_key": "d",
+            "rel_to_local": "dominant_or_subdominant",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv277",
+            "start": 11040,
+            "dur": 960,
+            "our_key": "Amin",
+            "g_key": "d",
+            "l_key": "F",
+            "rel_to_local": "distant",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv316",
+            "start": 6240,
+            "dur": 1440,
+            "our_key": "Bbmaj",
+            "g_key": "g",
+            "l_key": "d",
+            "rel_to_local": "distant",
+            "rel_to_global": "relative"
+          },
+          {
+            "stem": "bwv383",
+            "start": 22560,
+            "dur": 1440,
+            "our_key": "Dmin",
+            "g_key": "a",
+            "l_key": "C",
+            "rel_to_local": "distant",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv60.5",
+            "start": 3360,
+            "dur": 720,
+            "our_key": "B#alt",
+            "g_key": "A",
+            "l_key": "c#",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv437",
+            "start": 42240,
+            "dur": 1440,
+            "our_key": "Amin",
+            "g_key": "d",
+            "l_key": "d",
+            "rel_to_local": "dominant_or_subdominant",
+            "rel_to_global": "dominant_or_subdominant"
+          }
+        ]
+      },
+      "absent_from_menu_runs": [
+        {
+          "stem": "bwv267",
+          "start": 480,
+          "dur": 11040,
+          "our_key": "Gmaj",
+          "g_key": "Ab",
+          "l_key": "Ab",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv180.7",
+          "start": 0,
+          "dur": 10080,
+          "our_key": "Fmaj",
+          "g_key": "Eb",
+          "l_key": "Eb",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv115.6",
+          "start": 0,
+          "dur": 9600,
+          "our_key": "Gmaj",
+          "g_key": "Eb",
+          "l_key": "Eb",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv226.2",
+          "start": 36960,
+          "dur": 9120,
+          "our_key": "Bbmaj",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv145.5",
+          "start": 17280,
+          "dur": 8640,
+          "our_key": "F#min",
+          "g_key": "e",
+          "l_key": "e",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv126.6",
+          "start": 21120,
+          "dur": 8160,
+          "our_key": "Amin",
+          "g_key": "g",
+          "l_key": "Bb",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv180.7",
+          "start": 21120,
+          "dur": 7680,
+          "our_key": "Fmaj",
+          "g_key": "Eb",
+          "l_key": "Eb",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv148.6",
+          "start": 10560,
+          "dur": 7200,
+          "our_key": "Amaj",
+          "g_key": "f",
+          "l_key": "Ab",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv39.7",
+          "start": 11520,
+          "dur": 7200,
+          "our_key": "Bbmaj",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv30.6",
+          "start": 3840,
+          "dur": 6240,
+          "our_key": "Amaj",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv267",
+          "start": 26880,
+          "dur": 5760,
+          "our_key": "Gmaj",
+          "g_key": "Ab",
+          "l_key": "Ab",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv369",
+          "start": 10080,
+          "dur": 5760,
+          "our_key": "Gmaj",
+          "g_key": "e",
+          "l_key": "D",
+          "cause_local": "unclassified",
+          "rel_to_local": "dominant_or_subdominant",
+          "rel_to_global": "relative"
+        },
+        {
+          "stem": "bwv422",
+          "start": 17280,
+          "dur": 5760,
+          "our_key": "GMixolyd",
+          "g_key": "C",
+          "l_key": "G",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "dominant_or_subdominant"
+        },
+        {
+          "stem": "bwv126.6",
+          "start": 6240,
+          "dur": 5280,
+          "our_key": "Amin",
+          "g_key": "g",
+          "l_key": "g",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv126.6",
+          "start": 42720,
+          "dur": 5280,
+          "our_key": "DDor",
+          "g_key": "g",
+          "l_key": "Bb",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "dominant_or_subdominant"
+        },
+        {
+          "stem": "bwv226.2",
+          "start": 21120,
+          "dur": 5280,
+          "our_key": "FMixolyd",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv244.62",
+          "start": 3840,
+          "dur": 5280,
+          "our_key": "Amin",
+          "g_key": "b",
+          "l_key": "b",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv39.7",
+          "start": 3360,
+          "dur": 5280,
+          "our_key": "Bbmaj",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv43.11",
+          "start": 14400,
+          "dur": 5280,
+          "our_key": "Amel",
+          "g_key": "G",
+          "l_key": "a",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv11.6",
+          "start": 15360,
+          "dur": 4800,
+          "our_key": "Emel",
+          "g_key": "D",
+          "l_key": "e",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv121.6",
+          "start": 26640,
+          "dur": 4560,
+          "our_key": "Bmel",
+          "g_key": "e",
+          "l_key": "b",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "dominant_or_subdominant"
+        },
+        {
+          "stem": "bwv62.6",
+          "start": 480,
+          "dur": 4560,
+          "our_key": "Bbmaj",
+          "g_key": "a",
+          "l_key": "a",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv177.5",
+          "start": 7680,
+          "dur": 4320,
+          "our_key": "Gmin",
+          "g_key": "e",
+          "l_key": "G",
+          "cause_local": "parallel_mode",
+          "rel_to_local": "parallel",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv226.2",
+          "start": 8160,
+          "dur": 4320,
+          "our_key": "Bbmaj",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv282",
+          "start": 9120,
+          "dur": 4320,
+          "our_key": "Aharm",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv362",
+          "start": 33600,
+          "dur": 4320,
+          "our_key": "EbLyd",
+          "g_key": "Bb",
+          "l_key": "c",
+          "cause_local": "relative_key",
+          "rel_to_local": "relative",
+          "rel_to_global": "dominant_or_subdominant"
+        },
+        {
+          "stem": "bwv393",
+          "start": 19200,
+          "dur": 4320,
+          "our_key": "Amaj",
+          "g_key": "f#",
+          "l_key": "A",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "relative"
+        },
+        {
+          "stem": "bwv177.5",
+          "start": 12000,
+          "dur": 3840,
+          "our_key": "Gmin",
+          "g_key": "e",
+          "l_key": "e",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv176.6",
+          "start": 19680,
+          "dur": 3840,
+          "our_key": "Cmin",
+          "g_key": "Bb",
+          "l_key": "c",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv244.40",
+          "start": 17760,
+          "dur": 3840,
+          "our_key": "Bmin",
+          "g_key": "A",
+          "l_key": "A",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv267",
+          "start": 17760,
+          "dur": 3840,
+          "our_key": "Amel",
+          "g_key": "Ab",
+          "l_key": "bb",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv30.6",
+          "start": 14400,
+          "dur": 3840,
+          "our_key": "Amaj",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv30.6",
+          "start": 18240,
+          "dur": 3840,
+          "our_key": "Amaj",
+          "g_key": "G",
+          "l_key": "e",
+          "cause_local": "unclassified",
+          "rel_to_local": "dominant_or_subdominant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv30.6",
+          "start": 23040,
+          "dur": 3840,
+          "our_key": "Amaj",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv39.7",
+          "start": 21120,
+          "dur": 3840,
+          "our_key": "Bbmaj",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv14.5",
+          "start": 3840,
+          "dur": 3360,
+          "our_key": "CDor",
+          "g_key": "g",
+          "l_key": "Bb",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "dominant_or_subdominant"
+        },
+        {
+          "stem": "bwv145.5",
+          "start": 2400,
+          "dur": 3360,
+          "our_key": "G#min",
+          "g_key": "e",
+          "l_key": "A",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv145.5",
+          "start": 12480,
+          "dur": 3360,
+          "our_key": "D#alt",
+          "g_key": "e",
+          "l_key": "D",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv126.6",
+          "start": 480,
+          "dur": 3360,
+          "our_key": "Amin",
+          "g_key": "g",
+          "l_key": "g",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv176.6",
+          "start": 25440,
+          "dur": 3360,
+          "our_key": "Fmel",
+          "g_key": "Bb",
+          "l_key": "f",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "dominant_or_subdominant"
+        },
+        {
+          "stem": "bwv226.2",
+          "start": 29280,
+          "dur": 3360,
+          "our_key": "Bbmaj",
+          "g_key": "G",
+          "l_key": "D",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv320",
+          "start": 33600,
+          "dur": 3360,
+          "our_key": "Gmel",
+          "g_key": "F",
+          "l_key": "g",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv411",
+          "start": 7680,
+          "dur": 3360,
+          "our_key": "DMixolyd",
+          "g_key": "G",
+          "l_key": "a",
+          "cause_local": "unclassified",
+          "rel_to_local": "dominant_or_subdominant",
+          "rel_to_global": "dominant_or_subdominant"
+        },
+        {
+          "stem": "bwv73.5",
+          "start": 10080,
+          "dur": 3360,
+          "our_key": "Gmin",
+          "g_key": "a",
+          "l_key": "C",
+          "cause_local": "unclassified",
+          "rel_to_local": "dominant_or_subdominant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv387",
+          "start": 3840,
+          "dur": 3120,
+          "our_key": "Cmaj",
+          "g_key": "d",
+          "l_key": "C",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv14.5",
+          "start": 7200,
+          "dur": 2880,
+          "our_key": "Bbmaj",
+          "g_key": "g",
+          "l_key": "Bb",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "relative"
+        },
+        {
+          "stem": "bwv148.6",
+          "start": 480,
+          "dur": 2880,
+          "our_key": "F#min",
+          "g_key": "f",
+          "l_key": "f",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv126.6",
+          "start": 29280,
+          "dur": 2880,
+          "our_key": "Amin",
+          "g_key": "g",
+          "l_key": "g",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv177.5",
+          "start": 480,
+          "dur": 2880,
+          "our_key": "Gharm",
+          "g_key": "e",
+          "l_key": "e",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv176.6",
+          "start": 2400,
+          "dur": 2880,
+          "our_key": "Cmin",
+          "g_key": "Bb",
+          "l_key": "c",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv24.6",
+          "start": 16320,
+          "dur": 2880,
+          "our_key": "Fmaj",
+          "g_key": "d",
+          "l_key": "c",
+          "cause_local": "unclassified",
+          "rel_to_local": "dominant_or_subdominant",
+          "rel_to_global": "relative"
+        },
+        {
+          "stem": "bwv24.6",
+          "start": 22080,
+          "dur": 2880,
+          "our_key": "Fmaj",
+          "g_key": "d",
+          "l_key": "F",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "relative"
+        },
+        {
+          "stem": "bwv226.2",
+          "start": 2400,
+          "dur": 2880,
+          "our_key": "FMixolyd",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv226.2",
+          "start": 26400,
+          "dur": 2880,
+          "our_key": "Bbmaj",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv244.54",
+          "start": 12480,
+          "dur": 2880,
+          "our_key": "Dmin",
+          "g_key": "F",
+          "l_key": "g",
+          "cause_local": "unclassified",
+          "rel_to_local": "dominant_or_subdominant",
+          "rel_to_global": "relative"
+        },
+        {
+          "stem": "bwv245.14",
+          "start": 27840,
+          "dur": 2880,
+          "our_key": "Amaj",
+          "g_key": "f#",
+          "l_key": "A",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "relative"
+        },
+        {
+          "stem": "bwv274",
+          "start": 7200,
+          "dur": 2880,
+          "our_key": "FMixolyd",
+          "g_key": "g",
+          "l_key": "g",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv284",
+          "start": 23040,
+          "dur": 2880,
+          "our_key": "Bbmaj",
+          "g_key": "C",
+          "l_key": "C",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv323",
+          "start": 18240,
+          "dur": 2880,
+          "our_key": "Bmel",
+          "g_key": "f#",
+          "l_key": "f#",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "dominant_or_subdominant",
+          "rel_to_global": "dominant_or_subdominant"
+        },
+        {
+          "stem": "bwv384",
+          "start": 6240,
+          "dur": 2880,
+          "our_key": "Ebmaj",
+          "g_key": "c",
+          "l_key": "Bb",
+          "cause_local": "unclassified",
+          "rel_to_local": "dominant_or_subdominant",
+          "rel_to_global": "relative"
+        }
+      ]
+    },
+    "Default": {
+      "scored_dur": 8293680,
+      "failing_mass_dur": 2695680,
+      "failing_share_of_scored_pct": 32.5028,
+      "key_agree_pct_vs_global": 67.4972,
+      "reconciliation": {
+        "my_agree": 5598000,
+        "a8_agree": 5598000,
+        "my_disagree": 2662560,
+        "a8_disagree": 2662560,
+        "my_keyfail": 33120,
+        "a8_keyfail": 33120,
+        "my_dcml_keyfail": 0,
+        "a8_dcml_keyfail": 0,
+        "my_scored": 8293680,
+        "a8_scored": 8293680,
+        "agree_ok": true,
+        "disagree_ok": true,
+        "keyfail_ok": true,
+        "scored_ok": true,
+        "classified_global_total": 2695680,
+        "classified_local_total": 2695680,
+        "failing_mass": 2695680,
+        "classified_eq_failing_global": true,
+        "classified_eq_failing_local": true
+      },
+      "region_stream_match": {
+        "frozen_regions": 10247,
+        "probe_regions": 10247,
+        "matched_start_end_key": 10247,
+        "match_frac": 1.0,
+        "scores_probe_failed": 0
+      },
+      "cause_table_local_anchored": {
+        "enharmonic": {
+          "dur": 0,
+          "n": 0,
+          "share_of_failing_pct": 0.0
+        },
+        "tonicization_vs_modulation": {
+          "dur": 1135320,
+          "n": 397,
+          "share_of_failing_pct": 42.12
+        },
+        "relative_key": {
+          "dur": 441360,
+          "n": 269,
+          "share_of_failing_pct": 16.37
+        },
+        "parallel_mode": {
+          "dur": 49680,
+          "n": 27,
+          "share_of_failing_pct": 1.84
+        },
+        "segmentation_edge": {
+          "dur": 5040,
+          "n": 4,
+          "share_of_failing_pct": 0.19
+        },
+        "wrong_neighborhood": {
+          "dur": 291200,
+          "n": 138,
+          "share_of_failing_pct": 10.8
+        },
+        "unclassified": {
+          "dur": 739960,
+          "n": 430,
+          "share_of_failing_pct": 27.45
+        },
+        "unparseable_our_key": {
+          "dur": 33120,
+          "n": 17,
+          "share_of_failing_pct": 1.23
+        }
+      },
+      "cause_table_global_anchored": {
+        "enharmonic": {
+          "dur": 0,
+          "n": 0,
+          "share_of_failing_pct": 0.0
+        },
+        "tonicization_vs_modulation": {
+          "dur": 1135320,
+          "n": 397,
+          "share_of_failing_pct": 42.12
+        },
+        "relative_key": {
+          "dur": 407520,
+          "n": 253,
+          "share_of_failing_pct": 15.12
+        },
+        "parallel_mode": {
+          "dur": 16320,
+          "n": 9,
+          "share_of_failing_pct": 0.61
+        },
+        "segmentation_edge": {
+          "dur": 5040,
+          "n": 4,
+          "share_of_failing_pct": 0.19
+        },
+        "wrong_neighborhood": {
+          "dur": 330480,
+          "n": 158,
+          "share_of_failing_pct": 12.26
+        },
+        "unclassified": {
+          "dur": 767880,
+          "n": 444,
+          "share_of_failing_pct": 28.49
+        },
+        "unparseable_our_key": {
+          "dur": 33120,
+          "n": 17,
+          "share_of_failing_pct": 1.23
+        }
+      },
+      "transposition_contamination": {
+        "note": "pieces whose SCORE is transposed vs the WiR reference edition (constant whole-piece root offset >= 70% coverage): ~100% key- AND root-disagree by construction, NOT key-inference error (#9/#19). Included in the a8-reconciling tables; excluded in the clean-corpus view.",
+        "n_transposed_pieces": 12,
+        "transposed_pieces": [
+          {
+            "stem": "bwv126.6",
+            "offset": 2,
+            "frac": 0.962,
+            "scored": 51360,
+            "fail": 51360
+          },
+          {
+            "stem": "bwv267",
+            "offset": 11,
+            "frac": 0.947,
+            "scored": 32160,
+            "fail": 32160
+          },
+          {
+            "stem": "bwv180.7",
+            "offset": 2,
+            "frac": 0.971,
+            "scored": 28800,
+            "fail": 28800
+          },
+          {
+            "stem": "bwv30.6",
+            "offset": 2,
+            "frac": 0.862,
+            "scored": 26880,
+            "fail": 26880
+          },
+          {
+            "stem": "bwv184.5",
+            "offset": 7,
+            "frac": 0.875,
+            "scored": 26400,
+            "fail": 26400
+          },
+          {
+            "stem": "bwv145.5",
+            "offset": 2,
+            "frac": 0.944,
+            "scored": 25920,
+            "fail": 25920
+          },
+          {
+            "stem": "bwv39.7",
+            "offset": 3,
+            "frac": 0.806,
+            "scored": 24960,
+            "fail": 24960
+          },
+          {
+            "stem": "bwv177.5",
+            "offset": 3,
+            "frac": 0.808,
+            "scored": 24480,
+            "fail": 24480
+          },
+          {
+            "stem": "bwv244.62",
+            "offset": 10,
+            "frac": 0.903,
+            "scored": 22560,
+            "fail": 22560
+          },
+          {
+            "stem": "bwv73.5",
+            "offset": 3,
+            "frac": 0.929,
+            "scored": 22560,
+            "fail": 22560
+          },
+          {
+            "stem": "bwv148.6",
+            "offset": 1,
+            "frac": 0.967,
+            "scored": 21600,
+            "fail": 21600
+          },
+          {
+            "stem": "bwv115.6",
+            "offset": 4,
+            "frac": 1.0,
+            "scored": 19200,
+            "fail": 19200
+          }
+        ],
+        "transposed_failing_dur": 326880,
+        "transposed_share_of_failing_pct": 12.13,
+        "clean_failing_mass_dur": 2368800,
+        "clean_scored_dur": 7966800,
+        "clean_key_agree_pct_vs_global": 70.2666
+      },
+      "cause_table_local_anchored_clean_corpus": {
+        "enharmonic": {
+          "dur": 0,
+          "n": 0,
+          "share_of_clean_failing_pct": 0.0
+        },
+        "tonicization_vs_modulation": {
+          "dur": 1130520,
+          "n": 396,
+          "share_of_clean_failing_pct": 47.73
+        },
+        "relative_key": {
+          "dur": 441360,
+          "n": 269,
+          "share_of_clean_failing_pct": 18.63
+        },
+        "parallel_mode": {
+          "dur": 34800,
+          "n": 17,
+          "share_of_clean_failing_pct": 1.47
+        },
+        "segmentation_edge": {
+          "dur": 5040,
+          "n": 4,
+          "share_of_clean_failing_pct": 0.21
+        },
+        "wrong_neighborhood": {
+          "dur": 56960,
+          "n": 45,
+          "share_of_clean_failing_pct": 2.4
+        },
+        "unclassified": {
+          "dur": 667000,
+          "n": 407,
+          "share_of_clean_failing_pct": 28.16
+        },
+        "unparseable_our_key": {
+          "dur": 33120,
+          "n": 17,
+          "share_of_clean_failing_pct": 1.4
+        }
+      },
+      "our_key_relationship_to_local_key_clean_corpus": {
+        "equal": {
+          "dur": 1130520,
+          "share_of_clean_failing_pct": 47.73
+        },
+        "relative": {
+          "dur": 441360,
+          "share_of_clean_failing_pct": 18.63
+        },
+        "distant": {
+          "dur": 238080,
+          "share_of_clean_failing_pct": 10.05
+        },
+        "dominant_or_subdominant": {
+          "dur": 490920,
+          "share_of_clean_failing_pct": 20.72
+        },
+        "parallel": {
+          "dur": 34800,
+          "share_of_clean_failing_pct": 1.47
+        }
+      },
+      "leading_tone_test_local_anchored_clean_corpus": {
+        "n_runs": 190,
+        "n_runs_lt_present": 87,
+        "dur_total": 312000,
+        "dur_lt_present": 182880,
+        "lt_present_frac_dur": 0.5862,
+        "lt_present_frac_n": 0.4579
+      },
+      "our_key_relationship_to_local_key": {
+        "distant": {
+          "dur": 486720,
+          "share_of_failing_pct": 18.06
+        },
+        "equal": {
+          "dur": 1135320,
+          "share_of_failing_pct": 42.12
+        },
+        "relative": {
+          "dur": 441360,
+          "share_of_failing_pct": 16.37
+        },
+        "dominant_or_subdominant": {
+          "dur": 549480,
+          "share_of_failing_pct": 20.38
+        },
+        "parallel": {
+          "dur": 49680,
+          "share_of_failing_pct": 1.84
+        }
+      },
+      "our_key_relationship_to_global_key": {
+        "distant": {
+          "dur": 553200,
+          "share_of_failing_pct": 20.52
+        },
+        "dominant_or_subdominant": {
+          "dur": 1098960,
+          "share_of_failing_pct": 40.77
+        },
+        "relative": {
+          "dur": 994080,
+          "share_of_failing_pct": 36.88
+        },
+        "parallel": {
+          "dur": 16320,
+          "share_of_failing_pct": 0.61
+        }
+      },
+      "unclassified_local_by_our_to_local_rel": {
+        "distant": {
+          "dur": 221440,
+          "share_of_failing_pct": 8.21
+        },
+        "dominant_or_subdominant": {
+          "dur": 518520,
+          "share_of_failing_pct": 19.24
+        }
+      },
+      "present_but_outranked": {
+        "carried_dur": 2079840,
+        "absent_dur": 582720,
+        "menu_unavailable_dur": 0,
+        "carried_share_of_failing_pct": 77.15,
+        "absent_share_of_failing_pct": 21.62,
+        "menu_unavailable_share_pct": 0.0
+      },
+      "leading_tone_test_global_anchored": {
+        "n_runs": 226,
+        "n_runs_lt_present": 59,
+        "dur_total": 365040,
+        "dur_lt_present": 122640,
+        "lt_present_frac_dur": 0.336,
+        "lt_present_frac_n": 0.2611
+      },
+      "leading_tone_test_local_anchored": {
+        "n_runs": 190,
+        "n_runs_lt_present": 87,
+        "dur_total": 312000,
+        "dur_lt_present": 182880,
+        "lt_present_frac_dur": 0.5862,
+        "lt_present_frac_n": 0.4579
+      },
+      "examples_per_local_cause": {
+        "wrong_neighborhood": [
+          {
+            "stem": "bwv115.6",
+            "start": 0,
+            "dur": 9600,
+            "our_key": "Gmaj",
+            "g_key": "Eb",
+            "l_key": "Eb",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv115.6",
+            "start": 9600,
+            "dur": 1920,
+            "our_key": "Gmaj",
+            "g_key": "Eb",
+            "l_key": "F",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv115.6",
+            "start": 11520,
+            "dur": 480,
+            "our_key": "Gmaj",
+            "g_key": "Eb",
+            "l_key": "Bb",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv115.6",
+            "start": 12000,
+            "dur": 2400,
+            "our_key": "Dmaj",
+            "g_key": "Eb",
+            "l_key": "Bb",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv115.6",
+            "start": 14400,
+            "dur": 960,
+            "our_key": "DMixolyd",
+            "g_key": "Eb",
+            "l_key": "Bb",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv115.6",
+            "start": 15360,
+            "dur": 1440,
+            "our_key": "DMixolyd",
+            "g_key": "Eb",
+            "l_key": "Eb",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv115.6",
+            "start": 16800,
+            "dur": 2400,
+            "our_key": "Gmaj",
+            "g_key": "Eb",
+            "l_key": "Eb",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv14.5",
+            "start": 3840,
+            "dur": 3360,
+            "our_key": "CDor",
+            "g_key": "g",
+            "l_key": "Bb",
+            "rel_to_local": "distant",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv145.5",
+            "start": 0,
+            "dur": 960,
+            "our_key": "C#min",
+            "g_key": "e",
+            "l_key": "e",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv145.5",
+            "start": 2880,
+            "dur": 3360,
+            "our_key": "Bmaj",
+            "g_key": "e",
+            "l_key": "A",
+            "rel_to_local": "distant",
+            "rel_to_global": "dominant_or_subdominant"
+          }
+        ],
+        "tonicization_vs_modulation": [
+          {
+            "stem": "bwv144.3",
+            "start": 10080,
+            "dur": 1920,
+            "our_key": "Dmaj",
+            "g_key": "G",
+            "l_key": "D",
+            "rel_to_local": "equal",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv110.7",
+            "start": 2400,
+            "dur": 480,
+            "our_key": "Dmaj",
+            "g_key": "b",
+            "l_key": "D",
+            "rel_to_local": "equal",
+            "rel_to_global": "relative"
+          },
+          {
+            "stem": "bwv104.6",
+            "start": 10560,
+            "dur": 960,
+            "our_key": "Bmin",
+            "g_key": "A",
+            "l_key": "b",
+            "rel_to_local": "equal",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv114.7",
+            "start": 14400,
+            "dur": 1920,
+            "our_key": "Fmaj",
+            "g_key": "g",
+            "l_key": "F",
+            "rel_to_local": "equal",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv133.6",
+            "start": 7680,
+            "dur": 6240,
+            "our_key": "Amaj",
+            "g_key": "D",
+            "l_key": "A",
+            "rel_to_local": "equal",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv122.6",
+            "start": 6240,
+            "dur": 3840,
+            "our_key": "Dmin",
+            "g_key": "g",
+            "l_key": "d",
+            "rel_to_local": "equal",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv122.6",
+            "start": 15840,
+            "dur": 2880,
+            "our_key": "Bbmaj",
+            "g_key": "g",
+            "l_key": "Bb",
+            "rel_to_local": "equal",
+            "rel_to_global": "relative"
+          },
+          {
+            "stem": "bwv102.7",
+            "start": 12480,
+            "dur": 2880,
+            "our_key": "Gmin",
+            "g_key": "c",
+            "l_key": "g",
+            "rel_to_local": "equal",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv101.7",
+            "start": 12960,
+            "dur": 2400,
+            "our_key": "Amin",
+            "g_key": "d",
+            "l_key": "a",
+            "rel_to_local": "equal",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv103.6",
+            "start": 9600,
+            "dur": 2400,
+            "our_key": "Amaj",
+            "g_key": "b",
+            "l_key": "A",
+            "rel_to_local": "equal",
+            "rel_to_global": "distant"
+          }
+        ],
+        "relative_key": [
+          {
+            "stem": "bwv110.7",
+            "start": 2880,
+            "dur": 2400,
+            "our_key": "Dmaj",
+            "g_key": "b",
+            "l_key": "b",
+            "rel_to_local": "relative",
+            "rel_to_global": "relative"
+          },
+          {
+            "stem": "bwv110.7",
+            "start": 12960,
+            "dur": 720,
+            "our_key": "F#min",
+            "g_key": "b",
+            "l_key": "A",
+            "rel_to_local": "relative",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv122.6",
+            "start": 18720,
+            "dur": 960,
+            "our_key": "Bbmaj",
+            "g_key": "g",
+            "l_key": "g",
+            "rel_to_local": "relative",
+            "rel_to_global": "relative"
+          },
+          {
+            "stem": "bwv102.7",
+            "start": 11520,
+            "dur": 960,
+            "our_key": "Gmin",
+            "g_key": "c",
+            "l_key": "Bb",
+            "rel_to_local": "relative",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv102.7",
+            "start": 15360,
+            "dur": 1200,
+            "our_key": "Gmin",
+            "g_key": "c",
+            "l_key": "Bb",
+            "rel_to_local": "relative",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv101.7",
+            "start": 15360,
+            "dur": 1440,
+            "our_key": "Amin",
+            "g_key": "d",
+            "l_key": "C",
+            "rel_to_local": "relative",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv103.6",
+            "start": 8640,
+            "dur": 960,
+            "our_key": "F#min",
+            "g_key": "b",
+            "l_key": "A",
+            "rel_to_local": "relative",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv14.5",
+            "start": 10320,
+            "dur": 720,
+            "our_key": "Bbmaj",
+            "g_key": "g",
+            "l_key": "g",
+            "rel_to_local": "relative",
+            "rel_to_global": "relative"
+          },
+          {
+            "stem": "bwv10.7",
+            "start": 15360,
+            "dur": 1920,
+            "our_key": "Bbmaj",
+            "g_key": "g",
+            "l_key": "g",
+            "rel_to_local": "relative",
+            "rel_to_global": "relative"
+          },
+          {
+            "stem": "bwv123.6",
+            "start": 0,
+            "dur": 960,
+            "our_key": "Dmaj",
+            "g_key": "b",
+            "l_key": "b",
+            "rel_to_local": "relative",
+            "rel_to_global": "relative"
+          }
+        ],
+        "unclassified": [
+          {
+            "stem": "bwv110.7",
+            "start": 13680,
+            "dur": 720,
+            "our_key": "F#min",
+            "g_key": "b",
+            "l_key": "D",
+            "rel_to_local": "distant",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv110.7",
+            "start": 14400,
+            "dur": 3360,
+            "our_key": "F#min",
+            "g_key": "b",
+            "l_key": "b",
+            "rel_to_local": "dominant_or_subdominant",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv114.7",
+            "start": 16320,
+            "dur": 480,
+            "our_key": "Fmaj",
+            "g_key": "g",
+            "l_key": "g",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv122.6",
+            "start": 5760,
+            "dur": 480,
+            "our_key": "Dmin",
+            "g_key": "g",
+            "l_key": "g",
+            "rel_to_local": "dominant_or_subdominant",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv113.8",
+            "start": 13440,
+            "dur": 2400,
+            "our_key": "F#min",
+            "g_key": "b",
+            "l_key": "b",
+            "rel_to_local": "dominant_or_subdominant",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv102.7",
+            "start": 16560,
+            "dur": 240,
+            "our_key": "Gmin",
+            "g_key": "c",
+            "l_key": "Eb",
+            "rel_to_local": "distant",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv102.7",
+            "start": 16800,
+            "dur": 960,
+            "our_key": "Bbmaj",
+            "g_key": "c",
+            "l_key": "Eb",
+            "rel_to_local": "dominant_or_subdominant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv14.5",
+            "start": 1440,
+            "dur": 480,
+            "our_key": "Cmin",
+            "g_key": "g",
+            "l_key": "g",
+            "rel_to_local": "dominant_or_subdominant",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv10.7",
+            "start": 29760,
+            "dur": 1920,
+            "our_key": "Fmaj",
+            "g_key": "g",
+            "l_key": "Bb",
+            "rel_to_local": "dominant_or_subdominant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv10.7",
+            "start": 31680,
+            "dur": 480,
+            "our_key": "Fmaj",
+            "g_key": "g",
+            "l_key": "g",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          }
+        ],
+        "segmentation_edge": [
+          {
+            "stem": "bwv112.5",
+            "start": 18720,
+            "dur": 960,
+            "our_key": "Amin",
+            "g_key": "G",
+            "l_key": "G",
+            "rel_to_local": "distant",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv372",
+            "start": 8640,
+            "dur": 1440,
+            "our_key": "Dmin",
+            "g_key": "g",
+            "l_key": "g",
+            "rel_to_local": "dominant_or_subdominant",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv383",
+            "start": 22560,
+            "dur": 1440,
+            "our_key": "Dmin",
+            "g_key": "a",
+            "l_key": "C",
+            "rel_to_local": "distant",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv437",
+            "start": 42240,
+            "dur": 1200,
+            "our_key": "Amin",
+            "g_key": "d",
+            "l_key": "d",
+            "rel_to_local": "dominant_or_subdominant",
+            "rel_to_global": "dominant_or_subdominant"
+          }
+        ],
+        "parallel_mode": [
+          {
+            "stem": "bwv127.5",
+            "start": 20160,
+            "dur": 2880,
+            "our_key": "Cmaj",
+            "g_key": "F",
+            "l_key": "c",
+            "rel_to_local": "parallel",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv159.5",
+            "start": 21120,
+            "dur": 2160,
+            "our_key": "Bbmaj",
+            "g_key": "Eb",
+            "l_key": "bb",
+            "rel_to_local": "parallel",
+            "rel_to_global": "dominant_or_subdominant"
+          },
+          {
+            "stem": "bwv177.5",
+            "start": 4320,
+            "dur": 1440,
+            "our_key": "Gmin",
+            "g_key": "e",
+            "l_key": "G",
+            "rel_to_local": "parallel",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv177.5",
+            "start": 7680,
+            "dur": 4320,
+            "our_key": "Gmin",
+            "g_key": "e",
+            "l_key": "G",
+            "rel_to_local": "parallel",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv177.5",
+            "start": 18240,
+            "dur": 480,
+            "our_key": "Gmin",
+            "g_key": "e",
+            "l_key": "G",
+            "rel_to_local": "parallel",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv244.15",
+            "start": 13920,
+            "dur": 1440,
+            "our_key": "Emaj",
+            "g_key": "D",
+            "l_key": "e",
+            "rel_to_local": "parallel",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv244.62",
+            "start": 15360,
+            "dur": 960,
+            "our_key": "Amin",
+            "g_key": "b",
+            "l_key": "A",
+            "rel_to_local": "parallel",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv245.14",
+            "start": 21120,
+            "dur": 1920,
+            "our_key": "Emaj",
+            "g_key": "f#",
+            "l_key": "e",
+            "rel_to_local": "parallel",
+            "rel_to_global": "distant"
+          },
+          {
+            "stem": "bwv245.3",
+            "start": 19680,
+            "dur": 1440,
+            "our_key": "Gmaj",
+            "g_key": "g",
+            "l_key": "g",
+            "rel_to_local": "parallel",
+            "rel_to_global": "parallel"
+          },
+          {
+            "stem": "bwv245.37",
+            "start": 10560,
+            "dur": 3360,
+            "our_key": "Ebmaj",
+            "g_key": "bb",
+            "l_key": "eb",
+            "rel_to_local": "parallel",
+            "rel_to_global": "dominant_or_subdominant"
+          }
+        ]
+      },
+      "absent_from_menu_runs": [
+        {
+          "stem": "bwv267",
+          "start": 480,
+          "dur": 11040,
+          "our_key": "Gmaj",
+          "g_key": "Ab",
+          "l_key": "Ab",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv180.7",
+          "start": 0,
+          "dur": 10080,
+          "our_key": "Fmaj",
+          "g_key": "Eb",
+          "l_key": "Eb",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv115.6",
+          "start": 0,
+          "dur": 9600,
+          "our_key": "Gmaj",
+          "g_key": "Eb",
+          "l_key": "Eb",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv180.7",
+          "start": 19680,
+          "dur": 9120,
+          "our_key": "Fmaj",
+          "g_key": "Eb",
+          "l_key": "Eb",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv226.2",
+          "start": 36960,
+          "dur": 9120,
+          "our_key": "Bbmaj",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv145.5",
+          "start": 17280,
+          "dur": 8640,
+          "our_key": "F#min",
+          "g_key": "e",
+          "l_key": "e",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv226.2",
+          "start": 21120,
+          "dur": 8160,
+          "our_key": "Bbmaj",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv148.6",
+          "start": 10560,
+          "dur": 7680,
+          "our_key": "Amaj",
+          "g_key": "f",
+          "l_key": "Ab",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv39.7",
+          "start": 11520,
+          "dur": 7200,
+          "our_key": "Bbmaj",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv226.2",
+          "start": 5760,
+          "dur": 6720,
+          "our_key": "Bbmaj",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv30.6",
+          "start": 3840,
+          "dur": 6240,
+          "our_key": "Amaj",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv267",
+          "start": 26880,
+          "dur": 5760,
+          "our_key": "Gmaj",
+          "g_key": "Ab",
+          "l_key": "Ab",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv369",
+          "start": 10080,
+          "dur": 5760,
+          "our_key": "Gmaj",
+          "g_key": "e",
+          "l_key": "D",
+          "cause_local": "unclassified",
+          "rel_to_local": "dominant_or_subdominant",
+          "rel_to_global": "relative"
+        },
+        {
+          "stem": "bwv121.6",
+          "start": 25920,
+          "dur": 5280,
+          "our_key": "Bharm",
+          "g_key": "e",
+          "l_key": "b",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "dominant_or_subdominant"
+        },
+        {
+          "stem": "bwv126.6",
+          "start": 6240,
+          "dur": 5280,
+          "our_key": "Amin",
+          "g_key": "g",
+          "l_key": "g",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv244.62",
+          "start": 3840,
+          "dur": 5280,
+          "our_key": "Amin",
+          "g_key": "b",
+          "l_key": "b",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv39.7",
+          "start": 3360,
+          "dur": 5280,
+          "our_key": "Bbmaj",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv184.5",
+          "start": 13440,
+          "dur": 4800,
+          "our_key": "Dmaj",
+          "g_key": "G",
+          "l_key": "D",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "dominant_or_subdominant"
+        },
+        {
+          "stem": "bwv226.2",
+          "start": 480,
+          "dur": 4800,
+          "our_key": "Bbmaj",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv126.6",
+          "start": 20880,
+          "dur": 4560,
+          "our_key": "Amin",
+          "g_key": "g",
+          "l_key": "Bb",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv62.6",
+          "start": 480,
+          "dur": 4560,
+          "our_key": "Bbmaj",
+          "g_key": "a",
+          "l_key": "a",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv177.5",
+          "start": 7680,
+          "dur": 4320,
+          "our_key": "Gmin",
+          "g_key": "e",
+          "l_key": "G",
+          "cause_local": "parallel_mode",
+          "rel_to_local": "parallel",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv187.7",
+          "start": 13440,
+          "dur": 4320,
+          "our_key": "Fmaj",
+          "g_key": "g",
+          "l_key": "F",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv244.40",
+          "start": 17280,
+          "dur": 4320,
+          "our_key": "Bmin",
+          "g_key": "A",
+          "l_key": "A",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv267",
+          "start": 18720,
+          "dur": 4320,
+          "our_key": "Amin",
+          "g_key": "Ab",
+          "l_key": "bb",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv393",
+          "start": 19200,
+          "dur": 4320,
+          "our_key": "Amaj",
+          "g_key": "f#",
+          "l_key": "A",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "relative"
+        },
+        {
+          "stem": "bwv46.6",
+          "start": 11520,
+          "dur": 4320,
+          "our_key": "Bbmaj",
+          "g_key": "g",
+          "l_key": "Bb",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "relative"
+        },
+        {
+          "stem": "bwv126.6",
+          "start": 25440,
+          "dur": 3840,
+          "our_key": "Cmaj",
+          "g_key": "g",
+          "l_key": "Bb",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "dominant_or_subdominant"
+        },
+        {
+          "stem": "bwv126.6",
+          "start": 35520,
+          "dur": 3840,
+          "our_key": "Cmaj",
+          "g_key": "g",
+          "l_key": "Bb",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "dominant_or_subdominant"
+        },
+        {
+          "stem": "bwv177.5",
+          "start": 480,
+          "dur": 3840,
+          "our_key": "Gmin",
+          "g_key": "e",
+          "l_key": "e",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv177.5",
+          "start": 12000,
+          "dur": 3840,
+          "our_key": "Gmin",
+          "g_key": "e",
+          "l_key": "e",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv177.5",
+          "start": 21120,
+          "dur": 3840,
+          "our_key": "Gmin",
+          "g_key": "e",
+          "l_key": "e",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv275",
+          "start": 16800,
+          "dur": 3840,
+          "our_key": "Amin",
+          "g_key": "d",
+          "l_key": "a",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "dominant_or_subdominant"
+        },
+        {
+          "stem": "bwv30.6",
+          "start": 14400,
+          "dur": 3840,
+          "our_key": "Amaj",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv30.6",
+          "start": 18240,
+          "dur": 3840,
+          "our_key": "Amaj",
+          "g_key": "G",
+          "l_key": "e",
+          "cause_local": "unclassified",
+          "rel_to_local": "dominant_or_subdominant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv30.6",
+          "start": 23040,
+          "dur": 3840,
+          "our_key": "Amaj",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv320",
+          "start": 33600,
+          "dur": 3840,
+          "our_key": "Gmel",
+          "g_key": "F",
+          "l_key": "g",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv39.7",
+          "start": 21120,
+          "dur": 3840,
+          "our_key": "Bbmaj",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv148.6",
+          "start": 19440,
+          "dur": 3600,
+          "our_key": "F#min",
+          "g_key": "f",
+          "l_key": "f",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv14.5",
+          "start": 3840,
+          "dur": 3360,
+          "our_key": "CDor",
+          "g_key": "g",
+          "l_key": "Bb",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "dominant_or_subdominant"
+        },
+        {
+          "stem": "bwv145.5",
+          "start": 2880,
+          "dur": 3360,
+          "our_key": "Bmaj",
+          "g_key": "e",
+          "l_key": "A",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "dominant_or_subdominant"
+        },
+        {
+          "stem": "bwv148.6",
+          "start": 3840,
+          "dur": 3360,
+          "our_key": "F#min",
+          "g_key": "f",
+          "l_key": "f",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv126.6",
+          "start": 480,
+          "dur": 3360,
+          "our_key": "Amin",
+          "g_key": "g",
+          "l_key": "g",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv126.6",
+          "start": 44640,
+          "dur": 3360,
+          "our_key": "DDor",
+          "g_key": "g",
+          "l_key": "Bb",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "dominant_or_subdominant"
+        },
+        {
+          "stem": "bwv226.2",
+          "start": 29280,
+          "dur": 3360,
+          "our_key": "Bbmaj",
+          "g_key": "G",
+          "l_key": "D",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv73.5",
+          "start": 4320,
+          "dur": 3360,
+          "our_key": "Cmin",
+          "g_key": "a",
+          "l_key": "a",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv73.5",
+          "start": 10080,
+          "dur": 3360,
+          "our_key": "Gmin",
+          "g_key": "a",
+          "l_key": "C",
+          "cause_local": "unclassified",
+          "rel_to_local": "dominant_or_subdominant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv126.6",
+          "start": 32160,
+          "dur": 3120,
+          "our_key": "Amin",
+          "g_key": "g",
+          "l_key": "Eb",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv387",
+          "start": 3840,
+          "dur": 3120,
+          "our_key": "Cmaj",
+          "g_key": "d",
+          "l_key": "C",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv145.5",
+          "start": 12960,
+          "dur": 2880,
+          "our_key": "Emaj",
+          "g_key": "e",
+          "l_key": "D",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "parallel"
+        },
+        {
+          "stem": "bwv148.6",
+          "start": 480,
+          "dur": 2880,
+          "our_key": "F#min",
+          "g_key": "f",
+          "l_key": "f",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv126.6",
+          "start": 29280,
+          "dur": 2880,
+          "our_key": "Amin",
+          "g_key": "g",
+          "l_key": "g",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv176.6",
+          "start": 2400,
+          "dur": 2880,
+          "our_key": "Cmin",
+          "g_key": "Bb",
+          "l_key": "c",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv24.6",
+          "start": 16320,
+          "dur": 2880,
+          "our_key": "Fmaj",
+          "g_key": "d",
+          "l_key": "c",
+          "cause_local": "unclassified",
+          "rel_to_local": "dominant_or_subdominant",
+          "rel_to_global": "relative"
+        },
+        {
+          "stem": "bwv244.62",
+          "start": 16320,
+          "dur": 2880,
+          "our_key": "Gmaj",
+          "g_key": "b",
+          "l_key": "A",
+          "cause_local": "unclassified",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv267",
+          "start": 24000,
+          "dur": 2880,
+          "our_key": "Gmaj",
+          "g_key": "Ab",
+          "l_key": "eb",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv282",
+          "start": 10560,
+          "dur": 2880,
+          "our_key": "Aharm",
+          "g_key": "G",
+          "l_key": "G",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv284",
+          "start": 23040,
+          "dur": 2880,
+          "our_key": "Bbmaj",
+          "g_key": "C",
+          "l_key": "C",
+          "cause_local": "wrong_neighborhood",
+          "rel_to_local": "distant",
+          "rel_to_global": "distant"
+        },
+        {
+          "stem": "bwv288",
+          "start": 19200,
+          "dur": 2880,
+          "our_key": "Amin",
+          "g_key": "d",
+          "l_key": "a",
+          "cause_local": "tonicization_vs_modulation",
+          "rel_to_local": "equal",
+          "rel_to_global": "dominant_or_subdominant"
+        },
+        {
+          "stem": "bwv384",
+          "start": 6240,
+          "dur": 2880,
+          "our_key": "Ebmaj",
+          "g_key": "c",
+          "l_key": "Bb",
+          "cause_local": "unclassified",
+          "rel_to_local": "dominant_or_subdominant",
+          "rel_to_global": "relative"
+        }
+      ]
+    }
+  }
+}
