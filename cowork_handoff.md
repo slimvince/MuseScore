@@ -315,6 +315,41 @@ withheld files opened only after**) + this `docs(cc)` fold (instruction force-ad
 1/2/3); when L5's two passes complete, the OI-84 dependency-ordered certification plan is DONE and the
 held OI-43 discussion (mode/key + chord inference — where and how) opens.**
 
+**★ UPDATE (CC, 2026-07-12) — L5 PASS-1, PARTITION 1 (dormant resolver) DEEP DISPOSITIONS DONE**
+(`cc_l5_audit_pass1_resolver_report.md`; the first of the three OI-116 partition sessions).
+**READ-ONLY** — no production behaviour changed, no constant tuned, no golden refresh;
+`tools/robust_stop`/`tools/corpus` untouched. All **815** `L5-DORMANT` rows (`analysis/function/`
+minus `harmonicfunctionlayer` + `progressionrecognizer`) verdicted via a reproducible generator
+`tools/audit/l5/gen_resolver_dispositions.py` → SURVIVES 396 / PUBLISHED 225 / ESTABLISHED 149 /
+UNFIT 34 / ASSUMPTION 8 / FACT 3; **no DEAD/DUPLICATED, no backward include.** P3 spec→code BOTH
+directions vs the signed `cowork_layer5_function_design.md` §1–§12 — **the dormant pipeline is a
+faithful, near-complete realization** (§5.1 base RN, all 8 cadence types §5.2, the §5.3/§5.4
+modulation hysteresis + §8 recompute, the six-ambiguity-kind §5.5 resolver + fine-grain override,
+§5.6 precedence, §7 assembly incl. the D-L5a boundary squash, the §8 one-pass-closure mechanism, §4
+progression consumer). P4 via the test suites (**137 tests pass**; **no `src/` production consumer**
+— dormancy confirmed; only `batch_analyze` diagnostic calls it). **9 findings / 17 flagged rows.**
+**Two would change behaviour at engage — a NEW defect type DT-22 (a BUILT mechanism diverges from a
+fixed-direction rule of the signed design):** **OI-118** — `functionmodulation` confirms a
+modulation on ANY `FunctionalCadence` type, though §5.3(a) + the file's own header say authentic/half
+only (a deceptive cadence would wrongly confirm a key change); **OI-119** — `functioncadence.tryHalf`
+omits the §5.2 seventh/inversion down-weight (a seventh half votes equal to a plain half). Both
+DORMANT. **OI-120** — the L5 firewall-seed manifest gap (DT-2; **answers F-L5-3 / OI-116's deferred
+`param_manifest.json` check**: only the θ pair is registered; the 28 named seeds + 6 inline
+confidence magnitudes are not — the OI-25 set). **OI-121** — doc-sync (DT-12): the design §5.0/§15-12
+still says the grammar completion is "pending / not yet in code", but it **LANDED at commit
+`2e9a22557e`** (the three motions are in `functionprogression`, the D5 test runs tightened) — **this
+handoff's own line ~1389 also future-tenses the already-landed increment**; Cowork to re-word.
+**OI-122** — documented/declared items (the Δ0 aug-resolution exclusion flagged-to-Cowork awaiting
+adjudication; the aug6 ♭6̂-root L4 input assumption; the minor-key modal-mixture role gap; the
+decision-context stop-(ii) subsumption; the `combinedBoundary` k>0 guard). Convergences confirmed:
+OI-83 (`bothLicensed` OK-by-design), OI-117 (`harmonicfunctionlayer` scope), OI-53 (the labeler IS
+built), OI-1/OI-2 (the resolver re-ordering + override demotion are the engage changes to this same
+code). **OI-116 partition-1 DONE.** Commits: freeze `e346f788d4` `feat(tools)` (blinding boundary) +
+this `docs(cc)` fold (instruction force-added); pushed fork-only, `upstream` untouched. **NEXT:
+Cowork drafts the partition-2 (Python instruments, 1,687) + partition-3 (harness `batch_analyze.cpp`,
+870) pass-1 deep instructions + the whole-scope pass-2 sweep; L5 certification NOT proposed until all
+complete.**
+
 *(The 2026-07-07 entry block below is HISTORICAL — its ponder-points are resolved; kept for
 provenance.)*
 

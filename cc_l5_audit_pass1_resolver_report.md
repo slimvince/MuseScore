@@ -275,7 +275,11 @@ across 11 suites, all PASS.** Per-module coverage:
 - **No withheld file was opened before the Task-3 freeze commit.** (`DEFECT_TYPES.md`,
   `OPEN_ITEMS.md`, `STATUS.md`, `cowork_handoff.md`, every `cc_*_report.md`, and the audit-era
   `cowork_*` dossiers remained closed through the blind pass.)
-- **After the freeze (Task 4):** *(filled at unblind — §8.)*
+- **After the Task-3 freeze commit `e346f788d4`, in the mandated order:** `OPEN_ITEMS.md`
+  (full), `DEFECT_TYPES.md`, `STATUS.md` (head), `cc_l5_audit_pass1_report.md` (the parent
+  session's report), `cowork_handoff.md` (entry block + the line-1389 grammar context). Git
+  history (`git log`/`git show`) consulted post-freeze only, to timestamp the grammar-completion
+  commit. No withheld file was opened before the freeze.
 
 ## 7. Self-check (CLAUDE.md, mandatory)
 
@@ -290,4 +294,59 @@ slugs). No inference-problem-driven change (read-only audit).
 
 ## 8. Unblind & reconcile (Task 4)
 
-*(This section is filled after the Task-3 freeze commit, which lifts the withheld list.)*
+**Convergence with the existing register (evidence the register is right).**
+- **OI-116 / F-L5-3 answered.** The parent report explicitly deferred to *this* partition the
+  check "does `param_manifest.json` cover the L5 dormant-resolver literals, or are they
+  firewall-deferred?" **Answer: firewall-deferred.** Of the 34 firewall seeds, only the
+  `forwardoverride` θ pair (`baseBar`/`confidenceScale`) is registered (G8); the other 28 named
+  param defaults and the 6 inline §7 confidence magnitudes are **not** in the manifest. This is
+  the L5 twin of OI-87 (L1/L2) / OI-91 (L3) / OI-103 (decoder) / OI-106 (oracle) → **new row
+  OI-120** (DT-2).
+- **OI-25** (Stage-5) already names "L5 firewall 1.0s, θ, inline 1.0/0.5/0.25, §15-13 null" —
+  exactly my UNFIT firewall-seed rows and the inline-confidence finding; they are Stage-5 fit
+  candidates. OI-120 cross-refs OI-25 (the fit side) and OI-6/EG-5 (the manifest-extension side).
+- **OI-83** already declares `bothLicensed` OK-by-design (Stage-5 telemetry); my §4b note on that
+  field is the same item — **no new row**.
+- **OI-117** = the `harmonicfunctionlayer` L5-RETIRES scope reconciliation; my Task-0 scope check
+  independently confirms it (0 deep rows in the L5-DORMANT CSVs, correctly outside scope).
+- **OI-53** ("Tonicization classifier V/V wired, not implemented — likely superseded by the L5
+  design") — my `tonicizationlabeler` audit confirms it IS built (the §13 reused labeler, now
+  subsumed by `emitAppliedLabel`); the L5 design supersedes OI-53's "not implemented" framing.
+- **OI-1 / OI-2** (EG-1: resolver progression-first re-ordering at `functionresolver.cpp:221-246`;
+  the F-B override demotion — the `attemptFineGrainOverride` net-harm, the 968-fire/45-correction
+  figure recorded in `param_manifest.json`) are the pre-production engage-step design changes to
+  *this* resolver. My audit found the override **mechanism** faithful to §8 but its constants
+  **UNFIT** — consistent with OI-2's "demote pre-production".
+
+**Divergence (the bigger news — new register rows).**
+- **OI-118** (new, DT-22) — modulation confirmation admits **all** cadence types
+  (`functionmodulation.cpp:52-60`), against §5.3(a) and the file's own header ("authentic or half").
+- **OI-119** (new, DT-22) — half cadence omits the §5.2 seventh/inversion **down-weight**
+  (`functioncadence.cpp:387`).
+- **OI-120** (new, DT-2) — the L5 dormant-resolver constant manifest gap (answers OI-116's deferred
+  check; the L5 twin of OI-87/91/103/106; converges OI-25).
+- **OI-121** (new, DT-12) — `cowork_layer5_function_design.md` §5.0/§15-12 is **stale**: the code
+  landed the §15-12 grammar completion at commit **`2e9a22557e`** (`feat(L5): §15-12 grammar
+  completion`), yet the signed design still reads "the code implements the pre-amendment set …
+  pending" and handoff line 1389 future-tenses the increment. Doc-sync (#10); the docs are
+  Cowork-owned (surfaced, not fixed — auditor, not amender).
+- **OI-122** (new) — the L5-DORMANT documented/declared confirmations: the Δ0 augmented-resolution
+  exclusion (in-code flagged to Cowork, awaiting adjudication); the aug6 ♭6̂-root L4 input
+  assumption; the minor-key modal-mixture role gap; the decision-context stop-(ii) subsumption; the
+  `combinedBoundary` k>0 guard. Documented deferrals + one adjudication ask; no code change.
+
+**New defect TYPE promoted (`DEFECT_TYPES.md`, same commit):** **DT-22 — signed-design rule not
+honored by a coded mechanism** (a *built* mechanism omits or contradicts an explicit fixed-direction
+RULE of the signed design — an admission restriction, a weighting direction — so it behaves more
+permissively / less discriminately than the ratified spec; distinct from DT-17's never-coded
+capability in that the mechanism runs). Founding instances: OI-118, OI-119.
+
+**Register discipline.** OI-118…OI-122 are added in the same commit as this report; OI-116 is
+updated to record partition-1 dispositions DONE + the manifest check answered. Certification is
+**NOT** proposed — partitions 2 (instruments) + 3 (harness) + the whole-scope pass-2 signature
+sweep are owed before L5 certification, per OI-116 / OI-84.
+
+**On severity.** All nine findings are on **dormant** code (no `src/` consumer; production
+byte-identical). None is a production correctness bug. OI-118 and OI-119 are the two that would
+change behaviour at engage and are the ones to fix before the modulation/cadence path goes live;
+the rest are firewall, doc-sync, documented-deferral, or latent-edge.
