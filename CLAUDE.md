@@ -66,6 +66,15 @@ analytical fact is **published exactly once, on the producing layer's output sur
 consumers read, never re-derive.** A fact consumed by no one is either **declared dormancy**
 (its future consumer named) or **waste** (removed). Evidence for why this needs stating:
 `cowork_siloed_facts_audit.md` (17 findings) + `cowork_adjudication_dossier.md` Part B.
+*Amendment (user, 2026-07-12, at the evidence-inventory discussion):* for EVIDENCE-class
+facts (hints/clues a layer discovers that downstream inference could conceivably use —
+the `cowork_evidence_inventory.md` catalog), **publish broadly even without a named
+consumer** — the user's rationale: a visible smörgåsbord of evidence lets a future design
+RECOGNIZE useful facts it would never have thought to request. Guardrails: each published
+evidence fact carries its **establishment status** on the surface (established vs
+unvalidated — a consumer may not put an unvalidated fact under load, #19); publication is
+the in-memory surface (serialization stays selective); and the inventory + the
+`ARCHITECTURE.md` layer specifications are kept in sync as facts are adopted (OI-146).
 
 *Provenance: principles 1–11 are the user's standing list; #12 (no information loss) and
 #13–16 were ratified by the user on 2026-07-06; #17–19 (the Premise Gate + the Class-A/Class-B

@@ -6,10 +6,23 @@
 **You (the next session) start context-less, and THIS handoff is the ONE document you read
 first — it orients you and directs every other read (the standing convention).** From here,
 in order: `CLAUDE.md` now runs **#1–#19** (the Premise Gate #17, Class-A/#18 + Class-B/#19
-prohibitions, the surprise-scope rule, the fact-publication corollary, the register rules —
+prohibitions, the surprise-scope rule, the fact-publication corollary — **amended 2026-07-12
+with the user's publish-evidence-broadly rule, see the corollary text** —, the register rules —
 it is auto-loaded, but VERIFY you have the #17–#19 version); then **`OPEN_ITEMS.md`** (the
 ONE register — mandatory at session start; a stage may not open while a row gating it is
 open); then, when the work is an audit, `cowork_audit_protocol.md` + `DEFECT_TYPES.md`.
+
+> **★ THE STANDING KEY-LAYER WORK PACKAGE (Cowork, 2026-07-12 — the current line of work; do
+> not lose these):** the readiness gate **OI-145** (fix everything the key layer depends on
+> BEFORE building it; wave 1 = the measurement chain, wave 2 = the substrate, wave 3 = the
+> evidence publication) governs sequencing. Its documents, all live: **`cowork_key_layer_design_opening.md`**
+> (the seven design decisions — the user reads it WITH the caveat that the fixing waves may
+> change it); **`cowork_evidence_inventory.md`** (★ every hint each layer finds or could find,
+> per layer, with the circularity map — the MENU the design orders evidence from; the
+> layer-specification sections of `ARCHITECTURE.md` must be updated from it as facts are
+> adopted, tracked at OI-146); `cowork_key_drift_research_grounding.md` (the literature);
+> `cc_l3_key_decode_mechanism_report.md` (the pinned mechanism);
+> `cc_key_mode_inference_diagnosis_report.md` (the failure taxonomy).
 
 > **★ CC ADDENDUM (2026-07-12) — OI-145 WAVE 1 (measurement-chain hardening) delivered.** 13 rows
 > closed + 3 discoveries surfaced, NO grading digit moved; the establishment battery
