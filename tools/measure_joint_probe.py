@@ -57,6 +57,7 @@ import run_bach_preset as rbp          # noqa: E402
 import compare_analyses as cmp         # noqa: E402
 import compare_rn as crn               # noqa: E402
 import dcml_parser as dcml             # noqa: E402
+import producer_key_modes as pkm       # noqa: E402  (the producer's emitted mode vocabulary)
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent
 WIR_DIR = _REPO_ROOT / "tools" / "dcml" / "when_in_rome"
@@ -80,23 +81,45 @@ KEY_UNCERTAIN_BAR = 1.0
 #                           region root vs the argmax key (the joint chord->key coupling
 #                           the user's question turns on; PREDICTION-1's mechanism)
 #
-# KeySigMode enum index -> is_major, derived from keymodeformatting.cpp keyModeSuffix()
-# + compare_rn._mode_is_major (major iff suffix prefix in {maj,ion,lyd,mix}). Verified
-# faithful per row against crn._our_key_tonic(region key string) — the _selfcheck below.
-_MAJOR_MODE_IDX = frozenset({0, 3, 4, 9, 10, 11, 16, 19})
-#   0 Ionian, 3 Lydian, 4 Mixolydian, 9 LydianAugmented, 10 LydianDominant,
-#   11 MixolydianB6, 16 IonianSharp5, 19 LydianSharp2   (all other modes -> minor)
-
-
-def _mode_is_major(mode_idx):
-    return mode_idx in _MAJOR_MODE_IDX
+# ── The carried-key identity: routed through THE ONE shared reduction (OI-157) ──
+# The probe grades a carried/argmax key that batch_analyze emits as (tonicPc, KeySigMode
+# INT) — the alternatives carry no key string, so an integer mode has to be resolved to a
+# mode NAME before it can be graded. This used to be done by a local {enum index -> is_major}
+# table, which was a THIRD copy of the mode classification and went stale at OI-132: an
+# (index -> bool) table cannot express the parent-collection reduction at all, because that
+# reduction MOVES the tonic (an emitted "C#PhrygDom" grades as F# minor, the key it is the
+# dominant of), and the table also still encoded the superseded same-tonic prefix rule.
+#
+# The table is gone. The mode integer is resolved to the PRODUCER's own emitted suffix
+# (producer_key_modes reads keyModeSuffix() + the KeySigMode declaration order), the key
+# string the producer itself would print is composed from it, and that string is graded by
+# crn._our_key_ident — the ONE reduction every graded surface uses. So the OI-132 parent-
+# collection ruling and the OI-155 abstain rule apply here exactly as they do on the ratified
+# key column, and any future change to either reaches this probe with no second edit.
+#
+# Consequence, recorded (not a defect of this fold): the reduction ABSTAINS on the six modes
+# whose suffix carries an accidental, a '+' or a digit (Dor♭2, Loc#2, Loc#6, Ion+, Dor#4,
+# Lyd#2) because _KB_OURS_KEY_RE rejects those strings — the OI-152 residual. A carried key in
+# one of those modes therefore contributes no identity to the menu instead of a confidently-
+# wrong one. When OI-152 fixes the regex in the shared reduction, this probe is fixed with it.
+_PC_SHARP_NAMES = ("C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B")
+_MODE_SUFFIX_BY_INDEX = pkm.suffix_by_enum_index()
 
 
 def _key_ident(tonic_pc, mode_idx):
-    """(tonic_pc%12, is_major) for a carried/argmax key from its tonicPc + KeySigMode int."""
-    if tonic_pc is None or tonic_pc < 0:
+    """The graded key identity (tonic_pc, is_major) of a carried/argmax key given as the
+    (tonicPc, KeySigMode int) pair batch_analyze emits — or None when the shared reduction
+    ABSTAINS (unknown/unparseable mode; OI-33/OI-155). Composes the producer's own emitted
+    key string and grades it with crn._our_key_ident, the ONE reduction (OI-157).
+
+    The tonic is respelled sharpwise when composing (A# for B♭). Only the pitch class is
+    graded, and both spellings reduce to the same pitch class, so the identity is unchanged
+    — including through the parent-collection offset, which is pitch-class arithmetic."""
+    if tonic_pc is None or tonic_pc < 0 or mode_idx is None:
         return None
-    return (tonic_pc % 12, _mode_is_major(mode_idx))
+    if not 0 <= mode_idx < len(_MODE_SUFFIX_BY_INDEX):
+        return None                      # a mode integer outside the producer's enum
+    return crn._our_key_ident(_PC_SHARP_NAMES[tonic_pc % 12] + _MODE_SUFFIX_BY_INDEX[mode_idx])
 
 
 def _dcml_root_by_region(ours_regions, wir_regions):
@@ -180,7 +203,7 @@ def _collect_one(args_tuple):
             "argmaxKeyIdent": _key_ident(ak.get("tonicPc"), ak.get("mode")),
             "gtGlobalKey": (gt_key if gt_key[0] is not None else None),
             "gtLocalKey": (l_key if l_key[0] is not None else None),   # OI-143 local-key column
-            "ourKeyStr": reg.get("key"),              # for the enum-table self-check
+            "ourKeyStr": reg.get("key"),              # the emitted key string — the self-check side
         })
     return (stem, rows, "OK")
 
@@ -234,7 +257,7 @@ def _summarize(all_rows):
     ka_flip_any = 0                             # key-disagree AND chord flips under ANY carried key
     ka_alt_total = 0                            # carried alternatives seen (committed regions)
     ka_alt_keyconf_nonzero = 0                  # carried alts with a populated (>0) keyConf
-    ka_selfcheck_total = 0; ka_selfcheck_mismatch = 0   # enum-table vs key-string faithfulness
+    ka_selfcheck_total = 0; ka_selfcheck_mismatch = 0   # composed-ident vs emitted-key-string
 
     for r in all_rows:
         am = r["argmaxRoot"]
@@ -304,14 +327,16 @@ def _summarize(all_rows):
         else:
             ka_keydis_local += 1
             ka_keydis_local_dur += dur
-        # enum-table faithfulness self-check: is_major from tonicPc+mode must equal
-        # crn._our_key_tonic(region key string) — proves the alt grading is faithful.
-        if ak_ident is not None and r.get("ourKeyStr"):
-            sc = crn._our_key_tonic(r["ourKeyStr"])
-            if sc[0] is not None:
-                ka_selfcheck_total += 1
-                if (sc[0] % 12, sc[1]) != ak_ident:
-                    ka_selfcheck_mismatch += 1
+        # Faithfulness self-check (OI-157): the identity _key_ident composes from the region's
+        # (tonicPc, mode int) must equal the identity the ONE reduction gives the key string
+        # batch_analyze actually EMITTED for the same region. It is the same reduction on both
+        # sides, so the only thing under test is the composition — that the producer's mode
+        # integer and its printed key string name the same key. Abstains count as checked and
+        # must agree on BOTH sides (None == None), so an abstain cannot hide a mismatch.
+        if r.get("ourKeyStr"):
+            ka_selfcheck_total += 1
+            if crn._our_key_ident(r["ourKeyStr"]) != ak_ident:
+                ka_selfcheck_mismatch += 1
         for a in alts:
             ka_alt_total += 1
             kc = a.get("keyConf", 0.0)
@@ -428,7 +453,9 @@ def _summarize(all_rows):
                 "n_nonzero": ka_alt_keyconf_nonzero,
                 "frac_nonzero": round(ka_alt_keyconf_nonzero / ka_alt_total, 4) if ka_alt_total else None,
             },
-            "enum_table_selfcheck": {
+            # OI-157 — the composed carried-key identity vs the emitted key string's identity,
+            # both through the ONE shared reduction. n_mismatch must be 0.
+            "key_ident_selfcheck": {
                 "n_checked": ka_selfcheck_total,
                 "n_mismatch": ka_selfcheck_mismatch,
             },
@@ -440,7 +467,14 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--batch-analyze", metavar="PATH")
     ap.add_argument("--corpus-dir", default="tools/corpus")
-    ap.add_argument("--out", metavar="FILE", help="write the JSON report here")
+    # The default is a SCRATCH path, not tools/reports/joint_probe_measure.json — that file is
+    # COMMITTED evidence (the arc-#12 / OI-43 go/no-go the shelve ruling rests on), and a bare
+    # re-run must not silently overwrite it (the OI-151 defect, same class, this file). Writing
+    # the committed path is an explicit --out.
+    ap.add_argument("--out", metavar="FILE", default="C:/tmp/joint_probe_measure.json",
+                    help="write the JSON report here (default: a scratch path; pass "
+                         "tools/reports/joint_probe_measure.json explicitly to re-baseline "
+                         "the committed evidence)")
     args = ap.parse_args()
 
     exe = rbp._find_batch_analyze(args.batch_analyze)
@@ -513,7 +547,7 @@ def main():
                   f"agree={pp['agreement_frac']}")
             ka = summ["key_axis_desksim"]
             mc = ka["menu_containment"]; cf = ka["chord_flip_under_gt"]
-            sc = ka["enum_table_selfcheck"]; kc = ka["alt_keyconf_populated"]
+            sc = ka["key_ident_selfcheck"]; kc = ka["alt_keyconf_populated"]
             kl = ka["vs_local_key"]
             print(f"  ★ KEY-AXIS desk-sim (OI-43): key-disagree regions vs HOME={ka['n_key_disagree_regions']} "
                   f"(dur {ka['key_disagree_dur']}); keyfail={ka['n_key_unparseable_regions']}")
@@ -525,11 +559,11 @@ def main():
             print(f"     PRED-1 chord-flip-under-GT (coupling fires): {cf['n']} "
                   f"({cf['frac_of_keydisagree']}); coupled={cf['n_coupled']}; any-carried-flip={ka['chord_flip_under_any_carried']['n']}")
             print(f"     PRED-2 alt keyConf populated: {kc['n_nonzero']}/{kc['n_alts']} ({kc['frac_nonzero']}); "
-                  f"enum-table selfcheck mismatch={sc['n_mismatch']}/{sc['n_checked']}")
+                  f"key-ident selfcheck mismatch={sc['n_mismatch']}/{sc['n_checked']}")
             if failed:
                 print(f"  FAILED {len(failed)}: {failed[:5]}")
 
-    out = args.out or str(_REPO_ROOT / "tools" / "reports" / "joint_probe_measure.json")
+    out = args.out
     Path(out).parent.mkdir(parents=True, exist_ok=True)
     Path(out).write_text(json.dumps(report, indent=2), encoding="utf-8")
     print(f"\nReport → {out}")

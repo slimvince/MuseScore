@@ -248,8 +248,9 @@ _KB_OURS_KEY_RE = re.compile(r'^([A-G])([#b]?)([A-Za-z]+)$')
 # The two sets below mirror that partition for the 16 modes NOT covered by the parent-collection
 # reduction (the five dominant-family exotics are ruled separately — OI-132, just below).
 # Spellings are ASCII-normalized (♭→b, ♯→#) and lower-cased for lookup.
-# tools/tests/test_metric_primitives_l0l1.py PARSES both C++ sources and asserts this table is
-# complete and faithful to them, so a 22nd producer mode cannot land and be graded silently.
+# tools/producer_key_modes.py READS both C++ sources (the ONE reader of the producer's vocabulary,
+# OI-157) and tools/tests/test_metric_primitives_l0l1.py asserts this table is complete and
+# faithful to what it reports, so a 22nd producer mode cannot land and be graded silently.
 #
 # The MINOR classification of the church modes is the declared PARENT-SIGNATURE choice
 # (carry-fix 2 Task 2): D-Dorian is a minor-third mode; its natural-scale parent at the SAME

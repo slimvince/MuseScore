@@ -21,7 +21,9 @@ ONE loading substrate, no second parser — reuses:
   * compare_rn._our_key_tonic / _dcml_key_tonic          (the ratified key identity parsers)
   * dcml_parser.find_wir_file / parse_rntxt_file         (WiR reference; carries global_key + local_key)
   * run_bach_preset._run_batch_analyze                   (the --dump-joint-probe invocation)
-  * measure_joint_probe._key_ident                       (the carried-menu KeySigMode->(pc,is_major) table)
+  * measure_joint_probe._key_ident                       (the carried-menu (tonicPc, KeySigMode int)
+                                                          identity — itself routed through
+                                                          compare_rn._our_key_ident since OI-157)
 
 The failing MASS and its per-cause duration are computed over the FROZEN corpus
 (tools/corpus/<preset>/*.ours.json, corpus c50002fee1) so reconciliation to a8 is
@@ -90,7 +92,7 @@ import run_bach_preset as rbp          # noqa: E402
 import compare_analyses as cmp         # noqa: E402
 import compare_rn as crn               # noqa: E402
 import dcml_parser as dcml             # noqa: E402
-import measure_joint_probe as mjp      # noqa: E402  (reuse _key_ident + _MAJOR_MODE_IDX; #6)
+import measure_joint_probe as mjp      # noqa: E402  (reuse _key_ident; #6)
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent
 WIR_DIR = _REPO_ROOT / "tools" / "dcml" / "when_in_rome"

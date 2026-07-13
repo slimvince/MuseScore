@@ -26,7 +26,6 @@ or:
 
 from __future__ import annotations
 
-import codecs
 import io
 import re
 import tempfile
@@ -44,6 +43,7 @@ sys.path.insert(0, str(_TOOLS_DIR))
 import compare_analyses as cmp        # noqa: E402
 import compare_rn as crn              # noqa: E402
 import dcml_parser as dcml            # noqa: E402
+import producer_key_modes as pkm      # noqa: E402  (the ONE reader of the producer's vocabulary)
 
 
 # ── builders (carry only the fields the metric reads) ────────────────────────
@@ -434,29 +434,18 @@ _EXOTIC_PRODUCER_MODES = {"PhrygianDominant", "MixolydianB6", "LydianDominant",
                           "LydianAugmented", "Altered"}
 
 
-def _producer_mode_suffixes() -> dict:
-    """{KeySigMode name -> emitted suffix}, parsed from keyModeSuffix() in the producer."""
-    text = (_SRC_KEY_DIR / "keymodeformatting.cpp").read_text(encoding="utf-8")
-    body = text.split("const char* keyModeSuffix", 1)[1]
-    out = {}
-    for name, suffix in re.findall(r'case KeySigMode::(\w+):\s*return "([^"]*)";', body):
-        # the source spells unicode accidentals as C escapes, e.g. "Dor♭2"
-        out[name] = codecs.decode(suffix, "unicode_escape")
-    return out
-
-
-def _producer_major_modes() -> set:
-    """The KeySigMode names keyModeIsMajor() returns true for (the producer's own partition)."""
-    text = (_SRC_KEY_DIR / "keymodeanalyzer.h").read_text(encoding="utf-8")
-    body = text.split("inline constexpr bool keyModeIsMajor", 1)[1].split("return true;", 1)[0]
-    return set(re.findall(r"case KeySigMode::(\w+):", body))
+# The producer sources are parsed by ONE reader — tools/producer_key_modes.py (OI-157). The two
+# parsers this test used to hold are folded onto it; the shared reader is also what
+# measure_joint_probe uses to resolve a KeySigMode integer to the suffix it prints. The test stays
+# an INDEPENDENT check of compare_rn's table: the reader reports what the producer emits,
+# compare_rn holds the hand-checked mirror, and the two are compared here.
 
 
 class TestModeVocabularyMatchesProducer(unittest.TestCase):
 
     def setUp(self):
-        self.suffixes = _producer_mode_suffixes()
-        self.major_modes = _producer_major_modes()
+        self.suffixes = pkm.mode_suffixes()
+        self.major_modes = pkm.major_mode_names()
 
     def test_producer_emits_the_expected_number_of_modes(self):
         # KEY_MODE_COUNT in keymodeanalyzer.h is the producer's own declared total.
@@ -464,6 +453,19 @@ class TestModeVocabularyMatchesProducer(unittest.TestCase):
         declared = int(re.search(r"KEY_MODE_COUNT\s*=\s*(\d+)", header).group(1))
         self.assertEqual(len(self.suffixes), declared)
         self.assertEqual(len(self.major_modes), 9)   # the major-third modes
+
+    def test_the_enum_order_join_covers_every_emitted_mode(self):
+        """OI-157: the (mode integer -> suffix) join through which measure_joint_probe grades a
+        carried key. Every KeySigMode enumerator must have a keyModeSuffix() case, and the join
+        must be exactly as long as the producer's declared count — otherwise a mode integer coming
+        out of batch_analyze would index past the table, or onto the wrong mode."""
+        self.assertEqual(len(pkm.suffix_by_enum_index()), len(self.suffixes))
+        self.assertEqual(len(pkm.mode_names_in_enum_order()), len(self.suffixes))
+        # The DECLARATION order is what the C++ casts to int — pin both ends of it.
+        self.assertEqual(pkm.mode_names_in_enum_order()[0], "Ionian")
+        self.assertEqual(pkm.suffix_by_enum_index()[0], "maj")
+        self.assertEqual(pkm.mode_names_in_enum_order()[-1], "AlteredDomBB7")
+        self.assertEqual(pkm.suffix_by_enum_index()[-1], "altDom")
 
     def test_every_emitted_mode_is_classified(self):
         """COMPLETENESS: no mode the producer can emit falls through to the abstain path."""
