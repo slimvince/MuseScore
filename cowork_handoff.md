@@ -1,6 +1,54 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
+## ★★★ CC SESSION CLOSE 2026-07-13 — WAVE-2 DEPENDENCY RECONCILIATION (READ-ONLY): **THE PREMISE IS UNDER RECONCILIATION; THE SEQUENCE AWAITS THE USER'S RATIFICATION**
+
+**Read `cc_wave2_dependency_reconciliation_report.md`.** Stage 1 of the #17 funnel. **No `src/` change, no
+build, no test run, no golden refreshed, no corpus/robust-stop write, NO register row edited, NO re-scope
+applied.** Freeze `8b3811cdce`. The deliverable is a report + a **proposed** corrected sequence; §6
+recommends, the user disposes.
+
+**★ E4 is NOT a key-layer prerequisite — ZERO of the ~11 wave-2 substrate rows are Class 1.** The reason is
+structural and reproduces at the code: **the rebuilt L3 key decoder already reads the correct substrate.**
+Every duplication the wave-2 rows name — two segmenters, two pitch-contexts, two tpc readers, the
+value-copied window constants — lies on the **LEGACY** side of the legacy-vs-rebuilt seam. The key layer
+does not touch it. `regiontonecollector.h:230-237` says it verbatim: `collectPitchContext` is *"**LEGACY**
+(DOM-walk) … the indexed, span-anchored successor is `pitchContextOverSpan` … **which the Layer-3 key/mode
+sequence decoder consumes**"*, and the call sites confirm it. Same for the segmenters (L3 already consumes
+`changePointSlices`). **"Dissolves at E4" means the LEGACY half is DELETED — it never meant the key layer
+needs E4.**
+
+**★ And E4 is far further away than the annotations imply.** E4 is the *fifth* stage of the engage program
+(E0→E1→E2→**E3, a user ratification event**→E4→E5), behind the **bounded-context/temporal-extension HARD
+GATE**, an **unbuilt L6** (G1), an **explicitly unmet G2**, and **OI-1…OI-7** (register section A =
+"blocks E4/L5 engagement"). Had wave 2 genuinely required E4, OI-145 would have been saying *"build the key
+layer after the entire engage program"* — self-contradictory. **E4 should not become the next arc.**
+
+**★ Three register annotations are factually wrong at HEAD — proposed corrections recorded, NONE applied**
+(#19 — an annotation is a lead, not a fact): **OI-79's "emission sigmoid written in two files" is REFUTED**
+(it is single-sourced; the real duplication is the *pedal* sigmoid, L4, which dies at E4); **OI-86's "a refit
+silently diverges" is OVERSTATED and inert on the production path** (the live key decoder single-sources
+`decayRate`/`lookaheadWeight`/the three change costs **by reference** — a Stage-5 refit **does** move it;
+this was the most plausible route to a genuine key-layer FIT dependency, and it is already closed by design);
+**OI-86(a)'s "removal waits for the E4 #8 timing" is unsupported** (the include is dead — 6/6 symbols
+unreferenced — so it depends on no retirement).
+
+**★ THE ONE THING THAT IS YOURS (#7/#13 STOP): the key layer's cadence→key channel would make L3 a consumer
+of an L5 fact.** `functioncadence.cpp` is **L5**; `FunctionalCadence` today has exactly **one** consumer
+outside `analysis/function/` — `groupinglayer` (L6) — i.e. only downward-forward. An L3 consumer is a **new
+upward L5→L3 dependency**. Your design already names this as *"the one genuine ARCHITECTURE question"*; this
+report **confirms it real at the code** and shows that it — **not E4** — is what actually governs
+**OI-118/OI-119**. Their #8-correct timing is *"at the first consumer of the cadence votes"*, which, if
+Decision 3(b) is ratified, **is the key layer**.
+
+**Proposed to the user (§6):** re-scope the **9 Class-2** rows/parts out of the key-layer blocker set (keep
+the rows OPEN — real hygiene, just not blockers); do the **6-item Class-3** residue as one byte-identical
+`src/`-hygiene commit; re-time OI-118/OI-119 to the cadence-channel build; **answer OI-91's owed cross-check**
+(does `cowork_stage5_fitter_design.md` deliberately defer L3 key-emission fitting? — still unanswered, and the
+fitting stage depends on the answer); then open the key layer's own #17 funnel — **its four read-only probes
+depend on no wave-2 row.**
+
+---
 ## ★★★ CC SESSION CLOSE 2026-07-13 — THE WAVE-1 FINALIZERS: OI-158 + OI-125 + OI-159 LANDED; **OI-145 WAVE 1 IS CLOSED**
 
 **Read `cc_wave1_finalize_report.md`.** The three findings the hygiene sweep declared are now dispositioned
