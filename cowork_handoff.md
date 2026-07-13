@@ -1,6 +1,60 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
+## ★★★ CC SESSION CLOSE 2026-07-13 — OI-167, THE COLLECTION/TONIC SPLIT (READ-ONLY): **THE TWO NAMED SITES ARE SAFE — AND THE SPLIT BREAKS AT THE SITE THE ROW CLEARS. ⛔ STOP.**
+
+**Read `cc_oi167_collection_tonic_report.md`.** The foundational premise-verification step of the design
+pass. **No `src/` edit, no build, no test run, no golden refreshed, no retirement applied, NO existing
+register row re-scoped, no `ARCHITECTURE.md` / design-opening edit.** One new row (**OI-168**) per the
+standing rule (c). **Everything is a PROPOSAL.**
+
+**★ Both sites OI-167 names are SAFE for the engaged L4 (FACT, at the code).**
+- **Gate G-E** — genuinely tonic-dependent (a *degree* test, not reformulable collection-only), but
+  **unreachable in the engaged decoder**: `analyzeChord` does **not** call the gates (`chordanalyzer.cpp:1582-1584`
+  — they run *at the call site*), and `applyPostScoringGates` has **15 non-test call sites across 7 files,
+  none in `chordslicedecoder.cpp`**. **Retires with R1.** *Rider for E4:* 8 of those sites are in
+  `harmonicsegmenter` (L2) and `regiontoneprimitives` (L1.5) — **not** "legacy chord competition". If they
+  survive while still calling the gates, G-E keeps firing at **L2/L1.5**. Evidence for OI-13/OI-165; no row
+  re-scoped.
+- **The Aeolian lone-tonic guard** — also unreachable (the decoder never calls `sparsechordrefinement`), and
+  **it has ZERO fire sites on all three corpora** (no `Unknown`-quality lone-pitch-class region exists; the
+  11 that exist are all hardened). Its own contract calls it a ***user-facing*** refinement, it runs
+  **post-commit**, and a **sibling deliberately skips it** for a different presentation surface
+  (`sparsechordrefinement.h:66-70`) — a presentation heuristic, not a musical need. **Proposed disposition:
+  RE-HOME to the presentation/L5 surface (zero behavior change), not L4** — which settles OI-102's carried
+  question (i) and **contradicts OI-90's L4 re-tag** (proposed correction, not applied).
+
+**⛔ THE STOP — a THIRD tonic-dependent site, INSIDE the decoder, at the place OI-167 declares safe.**
+OI-167's load-bearing claim (the two key-consuming terms are *"pure collection-membership tests … provably
+identical for all **7 diatonic** modes of one signature"*) is **true as written and insufficient as used**:
+`analyzeChord` accepts **all 21** modes (*"All 21 modes are active"*) and the key layer **emits non-diatonic
+ones**. Both terms test **S = { keyTonicPc + parentScale[i] }**, and
+
+> **S = the signature's collection TRANSPOSED by δ = keyModeTonicOffset(M) − keyModeTonicOffset(parent(M)).**
+
+δ=0 for **19** modes (the tonic provably cancels — the row is right for them). **δ=+1 for `Altered` and
+`AlteredDomBB7`**: S is the collection **transposed up a semitone** — C-Altered builds the **C-major**
+collection while its signature is **B major** (2 of 7 pcs shared). Structurally unsatisfiable (their tonic is
+not in their parent collection), and it **contradicts the code's own comment** (`chordanalyzer.cpp:1333-1335`).
+**`Altered` is LIVE — 24 emitted Jazz regions** — and **the engaged `ChordSliceDecoder` calls the same
+`analyzeChord`** (`chordslicedecoder.cpp:452-454`). **⇒ the engaged L4's candidate scores are tonic-dependent
+on a live population. The collection/tonic split is FALSE for the engaged L4 today** (DT-1, Class-A #18 — a
+checkable claim about our own system, established over a third of its domain). **OI-168.**
+
+**★ It is RESTORABLE — and the fix makes the split STRUCTURAL rather than algebraic.** Replace both
+membership loops with the repo's existing **`pcInMask(diatonicMaskFromFifths(keySignatureFifths), pc)`** —
+whose contract already states the needed property (*"Key-agnostic: depends ONLY on the notated signature,
+never a resolved mode"*, `analysisutils.h:82-94`). **Byte-identical for the 19 δ=0 modes**, corrects the 2,
+and afterwards **the terms take no tonic at all**, so the property cannot silently lapse the way it did here.
+**Behavior change on Jazz (≤24 regions) ⇒ robust-stop diff + class-(b) non-increase + explained run-level
+set-diff + user ratification (#14). Inference-affecting ⇒ declared, NOT fixed (#8).**
+
+**What this means for the design pass.** OI-167's *conclusion* survives (its two named sites do not threaten
+the split); its *premise* does not. **No design may rest on the collection/tonic split until OI-168 is fixed
+and measured.** The OI-166 cadence-vote precision probe is **not** blocked by this (it does not rest on the
+split), but the key-layer funnel stays shut until the corrected layer assignment is ratified as a whole.
+
+---
 ## ★★★ CC SESSION CLOSE 2026-07-13 — THE WHOLE-GRAPH FACT-DEPENDENCY AUDIT (READ-ONLY): **THE FACT GRAPH IS UNDER ESTABLISHMENT — THE KEY-LAYER FUNNEL DOES NOT OPEN UNTIL IT IS RATIFIED**
 
 **Read `cc_fact_dependency_audit_report.md`.** Stage 1 of the #17 funnel. **No `src/` change, no build, no
