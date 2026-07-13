@@ -170,6 +170,31 @@ Default inventory is DEFERRED pending the corpus-expansion evidence (OI-38/OI-39
 Sequencing per the readiness gate: the inventory decision comes FIRST, then the
 surviving priors are FIT against the local column at the fitting stage — never
 hand-set again; no ad-hoc prior adjustment now.
+*Refinement (user, 2026-07-13): the chord-scale mode names are an established,
+published naming convention, and the detections are USEFUL — the probe showed the
+flagged spans are real (dominant-saturated music); only the ROLE was wrong. So the
+direction is: KEEP the vocabulary and the detection, CHANGE THE JOB — the mode fit
+becomes a published EVIDENCE fact (feeding the dominant-shape/cadence channels, the
+smörgåsbord, and the declared intonation consumer), while the KEY state space per
+preset is curated separately. Nothing detected is discarded; a fact miscast as a
+conclusion becomes an input.*
+**★ THE GOVERNING FRAMING (user-ratified 2026-07-13, superseding retire-vs-keep):
+infer the mode as precisely as the evidence allows, always; carry the rich answer
+(#12); bind interpretations LATE — at three depths.** (1) NEVER bound: the rich
+per-state fit is always computed and always PUBLISHED (the emission already scores
+all 252 states; publishing is free; discarding at inference time is where
+information dies today). (2) Bound at INFERENCE, per preset: which states may WIN
+the committed key — not deferrable to display (mid-pipeline consumers read the
+committed key), softened by the collection insight (an exotic mode shares its
+parent's collection, and the chord layer mostly consumes the collection), governed
+by the preset mode-priors, FITTED not hand-set — "Baroque ≈ major/minor" lives here
+as fitted weights, not deleted vocabulary. (3) Bound at each CONSUMER: grading
+reduces by the annotators' convention (landed); DISPLAY reduces by the preset's
+presentation choice, very late, possibly a user setting (a Baroque user sees
+major/minor — or "G minor, dominant-colored" on request; a Jazz user sees "G alt");
+the chord layer binds to the collection; intonation binds to the full scale
+identity. Nothing lost anywhere; everything interpreted exactly as late as its
+consumer permits.
 
 **Decision 7 — the structural fit.** Everything above lives inside the ratified
 forward-only frame — including the cadence channel, which the architecture already

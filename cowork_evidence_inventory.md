@@ -203,7 +203,7 @@ Every alleged circle above fell to one of these. None survived as a true blocker
 which is the answer to the user's worry: the circularity challenge, named
 completely, stops nothing.
 
-## 8b. A declared future consumer, named by the user (2026-07-13)
+## 8b. Declared future consumers, named by the user (2026-07-13)
 
 **The intonation/tuning feature (held long-horizon, register row OI-62) will consume
 the published analysis facts:** knowing the mode, the chord, its function, and the
@@ -211,6 +211,17 @@ progression enables just-intonation tuning decisions — especially in the TIME
 dimension (staying in tune over time versus allowing controlled drift). This is a
 concrete instance of the publish-evidence-broadly rationale: a consumer none of the
 producing layers were designed for, recognizable only because the facts are visible.
+
+**Explainability (user, 2026-07-13): the end user may want to know HOW a mode, chord,
+or function was inferred.** If the evidence trail behind every inference is published
+— which pitch classes drove the key, which cadence vote confirmed the modulation,
+which margin separated the winner from the runner-up, why the analyzer abstained —
+then "show me why" is a late-bound DISPLAY consumer of facts that already exist, not
+a new analysis. Much of the raw material exists today as internal diagnostics (the
+chord-diagnosis replay, the dormant function machinery's structured open marks and
+ambiguity kinds, the ranked-candidates-plus-margins confidence contract); the gap is
+publication, which is wave 3's job anyway. A register row for the feature follows at
+the next free number (numbers are in flight in the current CC session).
 
 ## 9. What this inventory changes
 

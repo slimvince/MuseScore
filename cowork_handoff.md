@@ -1,6 +1,77 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
+## ★★★ SESSION CLOSE 2026-07-13 — THE CURRENT ENTRY POINT (Cowork)
+
+**You (the next Cowork session) start context-less. Read, in this order:** (1) `CLAUDE.md`
+in full — it now carries #1–#19 PLUS the 2026-07-12 fact-publication amendment (publish
+EVIDENCE-class facts broadly, establishment status on the surface), the conventions
+(★ NO self-invented labels/abbreviations/numbering/jargon — the user has corrected this
+repeatedly; use existing repository names or plain words), and the self-check-after-every-
+coding-exercise section; (2) `OPEN_ITEMS.md` — the ONE register, mandatory, every row has
+a resolution path (the backlog triage eliminated the "decide later" tier 2026-07-13);
+(3) the standing key-layer work package below.
+
+**WHERE THE WORK STANDS.** The OI-84 certification plan is COMPLETE (all five layers + the
+measurement chain, two passes each, all certifications user-granted). The OI-43 joint-step
+question is SETTLED (shelved on both measured axes, OI-44 closed); its successor is the
+KEY-LAYER line: diagnosis → mechanism → research grounding → design opening, all delivered
+(documents below). The user directed the KEY-LAYER READINESS GATE (**OI-145**): fix
+everything the key layer depends on BEFORE building it — wave 1 (measurement chain) is
+done EXCEPT the harness group (OI-135/136/137); wave 2 (substrate hygiene) and wave 3
+(evidence publication per the inventory) follow; the cadence-machinery pair OI-118/OI-119
+gates that channel. Two re-baselines have LANDED user-ratified (the CC entry directly
+below has the second one's numbers — `CLAUDE.md`'s gate blocks are current).
+
+**THE IMMEDIATE NEXT ACTION: draft + dispatch the HARNESS-GROUP instruction** (the last
+wave-1 item): OI-135 (single-source the hand-copied "Default" mode priors + the hard-coded
+onset threshold — needs the CLI to read the composing Settings defaults), OI-136 (document
+the six parsed-but-unlisted flags), OI-137 (CRLF/exit-path asymmetry — fix if provably
+inert, else document), plus the OI-153 REGISTER LINT (a duplicate-ID check into the
+establishment battery — two sessions collided on OI-150; the Dor♭2 row was renumbered
+OI-152). It needs a BUILD + a full corpus-regeneration byte-identity proof (the OI-135
+values are proven copies today, so single-sourcing must change nothing). **Its Task 0 must
+commit Cowork's UNCOMMITTED working-tree edits** (staged by name, unread): `OPEN_ITEMS.md`
+(the OI-152 renumber + OI-153 + OI-154), `cowork_evidence_inventory.md` (§8b
+explainability), `cowork_key_layer_design_opening.md` (the keep-vocabulary refinement +
+★ the user-ratified GOVERNING FRAMING: infer modes as precisely as possible, carry the
+rich answer (#12), bind interpretations LATE at three depths — read it, it governs the
+whole state-space decision), and this handoff block. The known carry
+`cowork_joint_key_chord_design.md` stays unstaged, as always.
+
+**THE KEY-LAYER WORK PACKAGE (all live):** `cowork_key_layer_design_opening.md` — the
+seven design decisions, the user actively reading and enriching (his questions produced:
+the progression-grammar evidence option, the governing late-binding framing, the Baroque
+state-space direction, the fermata+rest phrase-facts composite);
+`cowork_evidence_inventory.md` — every hint per layer + the circularity map (all five
+alleged circles broken) + the declared future consumers (intonation OI-62, explainability
+OI-154); `cowork_key_drift_research_grounding.md` (the literature; Temperley verified
+in-paper; the Contrapunctus dossier findings); `cc_l3_key_decode_mechanism_report.md`
+(the pinned mechanism: the emission window + the unfit change costs are the levers; the
+top-8 lattice prune exists but is secondary); `cc_key_mode_inference_diagnosis_report.md`
+(the failure taxonomy); `contrapunctus_findings.md` (the comparable product — mine the
+repository's OWN research holdings FIRST, a lesson learned twice).
+
+**WORKING NOTES FOR YOU (lessons this arc taught, so you do not relearn them):** the user
+demands PLAIN LANGUAGE — no coined terms, and every choice you present must carry FULL
+CONTEXT inside the question itself (two corrections on this; quote CC's option labels
+VERBATIM when advising on its dialogs — a mislabeled option once sent the wrong
+instruction). VERIFY EVERYTHING AT THE OBJECTS, including CC's claims AND your own
+dispatch premises (a false premise of ours about calibration-map consumption made it into
+an instruction; CC rightly checked and refuted it). The sandbox file mirror goes STALE —
+read files via the host tools ONLY, never commit from the sandbox (a truncated-content
+near-miss); git METADATA (log/rev-parse) has been reliable. CC sessions run Task-0
+commits of Cowork's waiting register edits staged-by-name-unread — keep that pattern; the
+DT-20 discipline (cross-check every required read against every blinding/withholding
+requirement) applies to every instruction you draft; write quantitative PREDICTIONS
+before every measurement (the Premise Gate — the last re-baseline landed on-prediction to
+the digit, which is what right looks like). The user's standing frame: MAXIMUM PRECISION
+governs (#4) — complexity, code volume, architecture redesign, long analysis times all
+acceptable; the `ARCHITECTURE.md` §2.14 effort preset is the sanctioned latency valve; a
+HUMAN acts as ground truth where formal ground truth is missing (the corpus event, OI-38,
+carries the method + the named repertoire breadth + the open when-question).
+
+---
 ## ★ CC ENTRY — THE COMBINED RE-BASELINE LANDED (OI-132 + OI-144, user-ratified 2026-07-13)
 
 **The ratified key baselines MOVED. Anything quoting the key column must be re-read.**
