@@ -36,21 +36,39 @@ against the committed reference, none moved** (root 66.04/64.98/65.93 · RN 46.3
   at 7/8/6**. The shelve stands — only the figures were stale, and the menu-widening signal is **weaker**
   than recorded (~¼ of key-disagree regions miss the GT key, not ~⅓).
 
-### ★ ONE NEW DISCOVERY — OI-160 (declared, not absorbed; a ruling is owed)
+### ★ OI-160 — CLOSED on the user's option-A ruling (the follow-up dispatch, same day)
 
-**The same OI-142 cause also staled the SIBLING artifact** `tools/reports/joint_probe_measure.json` — the
-**arc-12 chord-axis go/no-go**, backing a *different* ruling (`cc_engage_stage3_joint_measure_report.md`).
-OI-159 named only the key-axis evidence. Measured at HEAD: fire-rate **byte-identical** (which chords flip is
-our analyzer's property, not the ground truth's), but the corr/harm split re-sorts against the corrected
-ground truth — net (corr−harm) **+9/+3/+10 → +9/+6/+10**. The arc-12 no-go is **not visibly threatened** (a
-net of +6…+10 out of ~6200 scored regions is still the "nearly a coin-flip" reading), **but that is a ruling,
-and this dispatch was not authorized to rewrite a ratified decision record.** Owed: (a) the refresh, and
-(b) a call on the **#6 duplication** behind it — *two* committed artifacts from *one* instrument, the older a
-strict subset of the newer's blocks, so it may simply be **superseded** rather than refreshed.
+**Read `cc_oi160_report.md`.** The discovery this session declared was dispositioned immediately: the **two**
+committed artifacts of the one instrument `measure_joint_probe.py` are **collapsed to one**, refreshed under
+the corrected ground truth, and **both rulings re-confirmed.**
+
+- **The subset premise, proven at the files (not assumed):** every field of the arc-12
+  `joint_probe_measure.json` is present in the OI-43 run (**0 missing**), which adds **exactly** the
+  `key_axis_desksim` subtree (93 paths) **and nothing else** — a strict superset. So there was never a
+  second concern, only a second file.
+- **The collapse.** One canonical artifact — **`tools/reports/joint_probe_measure.json`**, the instrument's
+  own natural committed target (the path named in its `--out` help, derived from its own name), carrying
+  **both axes**. The separately-named `mode_key_chord_probe.json` is **retired** (#6). O-12 snapshot of both
+  outgoing files first, at `tools/reports/snapshot_2026-07-13_pre_oi160/`.
+- **The arc-12 chord-axis no-go STANDS.** Net (corr−harm) **+9/+3/+10 → +9/+6/+10** — ≈ **+0.14 / +0.10 /
+  +0.16 pp** of ~6,200 scored regions, far below the **+0.3 pp** shelve floor. **And its sharpest evidence is
+  byte-identical:** the coupled minority — the only population the joint step is theory-scoped to — reads
+  **0 / +5 / −2**, every cell unmoved. None of the three re-sorted flips fell in it.
+- **The OI-43/OI-44 shelve STANDS** (re-confirmed at OI-159, reproduced here to the digit): menu-containment
+  **75.6/68.7/72.5 %**, still under the 80 % bar; chord-flip-under-GT **7/8/6**, the coupling still inert.
+- **The causal claim held exactly.** Of 109 fields the retired subset shares with the refreshed run, the
+  **only** ones that moved are the ground-truth-graded `benefit_*` fields — not one fire-rate, beam-width,
+  pedal, or region-count field. The OI-142 correction moved the *ground truth*; our analyzer never moved.
+- **Doc-sync tail, fixed in passing:** the OI-141 register row and `cowork_key_mode_inference_diagnosis.md`
+  still carried OI-159's *superseded* menu-containment (66.7/61.6/64.1 %). Both now carry the corrected
+  figure with the superseded one beside it (#12).
 
 ### Where this leaves the gate
 
-**Wave 1 (the measurement chain) is CLOSED.** Every graded surface is established and byte-identical.
+**Wave 1 (the measurement chain) is CLOSED and PUSHED to the fork.** Every graded surface is established and
+byte-identical; the establishment battery passes identically across every commit of this wave. Every
+discovered item is dispositioned — **no wave-1 item is left open.**
+
 **Next: wave 2 — the `src/` substrate** (OI-86, OI-13, OI-87, the file-table reasons), toward lifting the
 key-layer readiness gate (OI-145).
 
