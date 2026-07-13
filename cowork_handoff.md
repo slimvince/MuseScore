@@ -1,6 +1,53 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
+## ★★★ CC SESSION CLOSE 2026-07-13 — OI-145 WAVE 1 CLOSED (the measurement chain is hygienic)
+
+**Read `cc_instrument_hygiene_sweep_report.md`.** A `tools/`-only hygiene / dedup / establishment sweep.
+**No `src/` file was touched, no re-baseline was run, and no graded figure moved anywhere.** The
+establishment battery reproduces byte-identical before the first edit and after the last: a8_diff **+0/-0
+on all three presets**, class-(b) delta +0, calib **4/4 sha256-identical**, validate 3/3. Root / RN / key
+columns all unmoved. Python suites 119 -> **127** tests, green.
+
+**Closed:** OI-157 (the third mode-classification copy folded into the ONE shared reduction, via the new
+`tools/producer_key_modes.py` — the ONE reader of the producer's `KeySigMode` vocabulary; the probe's own
+self-check reports **0 mismatches on 6409 / 6311 / 6413 regions**), OI-151 (**and the same destructive-default
+defect found at a second instrument**), OI-132 entirely (the cross-language value copies are now pinned by a
+producer-parsing test), OI-127(a)/(b)/(e) (two false-agreement edges — each measured **0 of 33,296 pairs
+affected** *before* the edit — and `gen_inventory`'s invented dependency edge, closed at the class).
+
+**Established (#19):** OI-125's two alignment tolerances are **derived, not hand-set** (0.5 = the majority
+boundary; 0.5 = the nearest-beat radius), and **most of OI-133(c) is not a grading tolerance at all** —
+histogram bucket edges that grade nothing. The audit's classification of them was too broad. The two that
+*are* load-bearing (`calibration_fit`'s min-cell and near-logistic gates) are recorded as **NOT established**,
+each with the concrete experiment it would take, rather than justified after the fact.
+
+### ★ THREE FINDINGS — two need the user's ruling
+
+1. **OI-158 — the music21 corroborator's local-key path has NEVER run.** `music21.analysis.floatingKey`
+   exports no `FloatingKey` (v9.9.1 — the class is `KeyAnalyzer`); the constructor raises, a bare
+   `except Exception` swallows it, and `local_key` silently falls back to the global key. Proven at the
+   artifact: **all 28,914 committed regions have `key == keyGlobal`.** So the `.music21.json` Roman numerals
+   were computed against the global key throughout. **No governing figure is affected** (the robust unit is
+   DCML-only; the BIR gate reads music21's root and quality, not its key/RN). **NOT fixed** — activating
+   `KeyAnalyzer` re-bases a ground-truth corroborator. **The user rules:** activate it, or declare the
+   global-key reading intended and delete the dead block.
+2. **OI-159 — the OI-142 correction silently staled the committed OI-43 probe evidence.** Attributed by an
+   A/B re-run of the pre-fold code at HEAD: key-disagree **-196 / -187 / -191** from OI-142 vs **-11 / -20 /
+   -8** from the OI-157 fold. **The OI-43/OI-44 shelve ruling is unchanged and re-confirmed** —
+   chord-flip-under-GT is byte-identical at **7 / 8 / 6** and menu-containment, though up from 62-67 % to
+   68.7-75.6 %, is still below its 80 % bar. Only the recorded figures are stale.
+3. **OI-125 narrowed — a load-bearing 4/4 assumption that happens to be right.** The extrapolation branch
+   **fires 162 times across 15 stems** (not inert), and on every one of them the measure length derived from
+   the piece's own anchors is exactly 4.0 beats — so the value is correct wherever it fires. But the *rule*
+   hard-codes 4/4 and breaks on the non-4/4 corpus we plan to add. The fix already sits three lines above the
+   use (the interpolation branch derives it); it is **byte-identical on today's corpus** but edits the shared
+   tick resolver, so it **awaits ratification**.
+
+**Next: OI-145 wave 2** — the `src/` substrate hygiene (OI-86, OI-13, OI-87, the file-table reasons) toward
+lifting the key-layer readiness gate.
+
+---
 ## ★★★ CC SESSION CLOSE 2026-07-13 — OI-155 CLOSED (the harness group's follow-up is discharged)
 
 **Read `cc_oi155_report.md`.** The entry points below still stand; this is what changed under them.
