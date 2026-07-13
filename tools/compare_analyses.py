@@ -125,6 +125,29 @@ def load_analysis(path: Path) -> tuple[dict, list[Region]]:
 # Quality normalisation (handles minor differences in string form)
 # ══════════════════════════════════════════════════════════════════════════
 
+# The two producers whose quality strings meet here, and what they can actually emit
+# (OI-127(a) — the completeness the audit flagged as unproven, established by measurement over
+# the committed corpus, 352 stems x 3 presets):
+#
+#   OURS      batch_analyze qualityToString(ChordQuality) — a TOTAL switch over the enum, so the
+#             vocabulary is exactly: Major, Minor, Diminished, Augmented, HalfDiminished,
+#             Suspended2, Suspended4, Power, and "Unknown" for the default arm. All 8 named
+#             qualities appear in the corpus; "Unknown" does not.
+#             tools/tests/test_cross_language_constants.py PARSES that switch and asserts every
+#             string it can return is a key below — so a NEW ChordQuality cannot land and pass
+#             through this map unnormalised (the silent failure the audit named).
+#   music21   Major, Minor, Diminished, Augmented, and "Unknown" (5,856 corpus regions — a
+#             sonority music21 resolves a root for but will not name). "Unknown" is NOT mapped
+#             here on purpose: it is the no-quality marker, and _quality_matches settles it
+#             before normalisation (two unknowns are two abstains, not an agreement).
+#
+# An unmapped string passes through to itself, which is safe only while both producers spell a
+# given quality identically; the parse test above is what keeps that true going forward.
+# The lower-case aliases and "dim7" below are emitted by NEITHER producer at HEAD. They are kept
+# as accepted spellings, not removed: this map is the comparator's input contract, and a corpus
+# or a third producer using those spellings must still normalise correctly rather than pass
+# through. ("dim7" -> "Diminished" is a deliberate widening to the triad quality; nothing emits
+# it today, so it collapses nothing.)
 _QUALITY_NORMALISE = {
     "HalfDiminished": "HalfDiminished",
     "halfdim":        "HalfDiminished",
@@ -184,18 +207,63 @@ def _rn_base_cased(rn: str) -> str:
 # Alignment
 # ══════════════════════════════════════════════════════════════════════════
 # OI-125: measurement-decision tolerances — ONE named home per instrument, with provenance.
-# These are hand-set with a documented rationale but NOT independently derived / oracle-established
-# (#19); re-derivation is later (Stage-5-adjacent) work, flagged per constant. They are NOT fittable
-# scorer constants (→ NOT param_manifest.json rows) — they are grading conventions of the comparator.
-# NOTE: the robust A-8 grid (compare_rn.grid_score_regions) UNIONS boundaries and needs no overlap
-# threshold, so these govern only the batch-stop / secondary-metric / oracle-root alignment.
-ALIGN_OVERLAP_FRACTION = 0.5   # a (ours, DCML/m21) pair aligns iff overlap ≥ this fraction of EITHER
-                               # duration (lenient OR). [hand-set; re-derivation flagged]
-ALIGN_BEAT_DISTANCE_TOL = 0.5  # measure-anchored mode only: max |beat| distance for a match, in beats.
-                               # [hand-set; re-derivation flagged]
-EXTRAPOLATION_BEATS_PER_MEASURE = 4  # beats/measure ASSUMED when extrapolating a DCML tick beyond the
-                               # anchored measures (the rntxt/WiR path lacks abs_tick) — a silent 4/4
-                               # approximation for non-4/4 meters. [hand-set; re-derivation flagged]
+# They are NOT fittable scorer constants (→ NOT param_manifest.json rows); they are grading
+# conventions of the comparator. NOTE: the robust A-8 grid (compare_rn.grid_score_regions) UNIONS
+# boundaries and needs no overlap threshold, so these govern only the batch-stop / secondary-metric /
+# oracle-root alignment — EXCEPT the extrapolation constant, which sits in the shared tick resolver
+# _dcml_tick_for and therefore reaches the a8 path too (established separately, below).
+#
+# ESTABLISHED 2026-07-13 (OI-145 wave-1 instrument-hygiene sweep, #19). The two alignment tolerances
+# are DERIVED below — they are not fitted numbers but the definitions of the words they implement,
+# and no other value is coherent. The third is measured correct on this corpus but its RULE is still
+# an assumption, and that is stated rather than papered over.
+
+# ── DERIVED, not fitted: 0.5 is what "the same harmonic event" MEANS here. ──────────────
+# Two spans (ours, ground-truth) name the same event iff ONE OF THEM SPENDS THE MAJORITY OF ITS
+# LIFE INSIDE THE OTHER — and 0.5 is the majority boundary, the only value for which "majority"
+# means majority. It is a definition, not a tuned parameter; there is no value to re-derive.
+# Two consequences fall out of it, and both are the behavior we want:
+#   * When our region is covered by exactly TWO ground-truth regions, the ≥0.5-of-OURS leg ALWAYS
+#     succeeds by pigeonhole (two parts of a whole cannot both be under half), so the pair always
+#     resolves to the plurality ground-truth region and is never silently dropped.
+#   * The OR (either duration, not both) is what makes the test symmetric under a duration
+#     mismatch: a short ground-truth chord wholly inside a long over-grabbed region of ours scores
+#     1.0 on ITS side, so a segmentation over-grab is still aligned and still GRADED (as an error)
+#     rather than escaping the metric as "unaligned". Requiring BOTH halves would let over-grab
+#     regions vanish from the denominator — i.e. flatter the score.
+# The pair that is REFUSED is the one where neither span is mostly inside the other: an edge-
+# straddling overlap, which is precisely not the same event.
+ALIGN_OVERLAP_FRACTION = 0.5
+
+# ── DERIVED, not fitted: half the beat grid. ────────────────────────────────────────────
+# Measure-anchored mode matches our region to a ground-truth row by |beat| distance on a grid whose
+# spacing is 1.0 beat. 0.5 is that grid's half-spacing — the nearest-neighbour (Voronoi) radius. It
+# is the unique tolerance for which every on-grid beat matches its NEAREST beat and nothing else:
+# any larger value would let a region match a beat that is not its nearest; any smaller would leave
+# a dead band in which an on-grid region matches nothing. Combined with the argmin on distance at
+# the call site, the rule is exactly "nearest beat, no ties, no gaps".
+ALIGN_BEAT_DISTANCE_TOL = 0.5
+
+# ── NOT derived: an unverified meter ASSUMPTION that happens to hold. See OI-125. ───────
+# Beats/measure assumed when _dcml_tick_for must EXTRAPOLATE a ground-truth (measure, beat) onset
+# beyond the outermost measure our regions anchor (the rntxt/WiR path carries no abs_tick). It
+# hard-codes 4/4 and is simply WRONG for any other meter — a 3/4 pickup at beat 3 is placed a full
+# beat early.
+#
+# Measured over the committed corpus (2026-07-13, all three presets), the branch is LOAD-BEARING,
+# not inert: it fires 162 times across 15 stems — overwhelmingly the pickup (anacrusis) measure,
+# which DCML numbers 0 while our regions start at measure 1, plus a few trailing measures our
+# segmentation leaves unanchored. On EVERY ONE of those 15 stems the measure length DERIVED from
+# the piece's own anchors is exactly 4.0 beats, so the constant is correct wherever it currently
+# fires and no committed figure depends on the assumption being lucky.
+#
+# It is still an ASSUMPTION rather than a derivation, and the corpus that would break it is one we
+# plan to add (OI-38/OI-39 — non-4/4 repertoire). The fix is already sitting three lines above the
+# use: the INTERPOLATION branch derives tick_per_measure from the anchors instead of assuming it,
+# and the same estimator serves extrapolation. That change is byte-identical on today's corpus
+# (measured: derived == 4.0 on every firing stem) but it edits the shared tick resolver, so it is
+# left to be ratified rather than slipped into a hygiene sweep. OI-125 stays OPEN on exactly that.
+EXTRAPOLATION_BEATS_PER_MEASURE = 4
 
 
 def _overlap(a_start: int, a_end: int, b_start: int, b_end: int) -> int:
@@ -272,11 +340,37 @@ def roots_agree(ours_root_pc: Optional[int], gt_root_pc: Optional[int]) -> bool:
     return ours_root_pc == gt_root_pc
 
 
+def _unresolved_root(root_pc) -> bool:
+    """A region with NO resolved root. The .ours.json / .music21.json schema spells that -1,
+    not null, and _load_region's default is -1 too — so an absent root arrives here as a
+    NEGATIVE INT, never as the None the OI-52 abstain convention is written in (OI-127(b))."""
+    return root_pc is None or root_pc < 0
+
+
 def _roots_match(ours: Region, theirs: Region) -> bool:
+    # Without this guard the -1 sentinel compares EQUAL to itself, so two rootless regions
+    # would score as a chord AGREEMENT — a false agreement manufactured by the sentinel, and
+    # one that flatters the metric (OI-127(b)). An unresolved root on EITHER side is settled
+    # here the way compare_rn.classify_pair settles it: not an agreement. Byte-identical at
+    # HEAD — measured over the committed corpus (352 stems x 3 presets, 33,296 aligned pairs,
+    # the same denominator roots_agree cites) an unresolved root occurs on NEITHER side, 0
+    # times, so this guard fires on no real pair. It makes the false agreement structurally
+    # impossible instead of merely empirically absent (#19).
+    if _unresolved_root(ours.root_pc) or _unresolved_root(theirs.root_pc):
+        return False
     return roots_agree(ours.root_pc, theirs.root_pc)
 
 
 def _quality_matches(ours: Region, theirs: Region) -> bool:
+    # "Unknown" is the NO-QUALITY marker on both sides — music21 emits it for a sonority it
+    # cannot name (5,856 corpus regions), and _load_region defaults to it when the field is
+    # absent. Two unknowns are two abstains, not an agreement; without this guard they would
+    # normalise to the same string and match (the OI-127(a) sibling of the root sentinel).
+    # Byte-identical at HEAD: OUR side never emits "Unknown" over the committed corpus (its
+    # vocabulary is the 8 strings qualityToString() can return, none of them Unknown), so the
+    # both-unknown pair occurs 0 times.
+    if ours.quality == "Unknown" or theirs.quality == "Unknown":
+        return False
     return _norm_quality(ours.quality) == _norm_quality(theirs.quality)
 
 

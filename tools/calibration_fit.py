@@ -194,10 +194,35 @@ def curve_at(mapper, grid):
     return list(map(float, mapper.predict_proba(X)[:, 1]))
 
 
+# ── OI-133(c) / #19 — the two genuinely LOAD-BEARING fitting gates in this instrument. ──────────
+# Unlike the bucket edges in analyze_inversion_errors (which grade nothing), these two DECIDE the
+# committed calibration maps: MIN_* decides whether a row is fitted AT ALL, and NEAR_LOGISTIC_TOL
+# decides whether that row ships a Platt curve or an isotonic one. They are hand-set, and the
+# hygiene sweep of 2026-07-13 did NOT establish them — saying so plainly rather than inventing a
+# derivation after the fact.
+#
+# WHAT AN ESTABLISHMENT WOULD TAKE (the concrete gate on the OI-133(c) row; neither is a desk
+# exercise, which is why neither was forced here):
+#   MIN_FITTING_CELLS / MIN_HELD_OUT_CELLS — a minimum-sample-size question. Establish by sweeping
+#     the two counts and measuring held-out ECE variance across resamples: the right floor is where
+#     the fitted curve stops moving under resampling. Today's 50/20 is a rule of thumb.
+#   NEAR_LOGISTIC_TOL — "the isotonic and Platt curves agree closely enough that the smoother,
+#     lower-variance parametric fit is preferred." 0.05 is a probability distance (5 points), of
+#     the same order as the ECE it is protecting, but it was not derived FROM it. Establish by
+#     showing the held-out ECE is insensitive to the choice across the band where the two curves
+#     are within tolerance — i.e. that the tie-break cannot cost calibration quality.
+# Both are RECORDED as unestablished (#19: an instrument constant is trusted only once positively
+# established, never merely because it has not misbehaved). Changing either re-fits the committed
+# maps, so any change is a re-baseline event, not a sweep.
+MIN_FITTING_CELLS = 50      # [hand-set; NOT established — see above]
+MIN_HELD_OUT_CELLS = 20     # [hand-set; NOT established — see above]
+NEAR_LOGISTIC_TOL = 0.05    # [hand-set; NOT established — see above]
+
+
 def fit_row(name, layer, decision, conf_name, carrier, cells, squash_note):
     fit_pairs = split_pairs(cells, "fitting")
     hel_pairs = split_pairs(cells, "held_out")
-    if len(fit_pairs) < 50 or len(hel_pairs) < 20:
+    if len(fit_pairs) < MIN_FITTING_CELLS or len(hel_pairs) < MIN_HELD_OUT_CELLS:
         return None, f"  [{name} / {carrier}] INSUFFICIENT cells (fit={len(fit_pairs)} hel={len(hel_pairs)})"
 
     # pre-map diagnostics
@@ -217,7 +242,7 @@ def fit_row(name, layer, decision, conf_name, carrier, cells, squash_note):
     iso_g = curve_at(iso, grid)
     pl_g = curve_at(lr, grid)
     max_abs_diff = max(abs(i - p) for i, p in zip(iso_g, pl_g))
-    near_logistic = max_abs_diff < 0.05
+    near_logistic = max_abs_diff < NEAR_LOGISTIC_TOL
     platt_not_worse = pl_post_hel["ece"] is not None and iso_post_hel["ece"] is not None \
         and pl_post_hel["ece"] <= iso_post_hel["ece"] + 1e-6
     chosen = "platt" if (near_logistic and platt_not_worse) else "isotonic"

@@ -31,6 +31,19 @@ _ROOT       = Path(__file__).resolve().parent.parent
 _CORPUS_DIR = _ROOT / "tools" / "corpus" / "baroque"
 _WIR_DIR    = _ROOT / "tools" / "dcml" / "when_in_rome"
 
+# ── A CROSS-LANGUAGE VALUE COPY (OI-132(b), DT-3) ────────────────────────────────────
+# The production default of the C++ preference `inversionSuspicionMargin`
+# (src/composing/analysis/types/analysistypes.h). This grading script must know the value
+# the analyzer actually ran with in order to attribute a residual error to the right
+# blocker; there is no way to single-source a C++ constant into Python, so it is copied.
+# What KEEPS the copy honest is a test, not this comment:
+# tools/tests/test_cross_language_constants.py PARSES the C++ declaration and asserts this
+# value equals it — so a change to the production default turns the guard red instead of
+# silently mis-attributing every blocker here.
+# Hoisted to module scope (OI-145 wave-1 hygiene sweep) from inside main(), where nothing
+# could see it. Same value, same single use below — no measurement changed.
+INVERSION_SUSPICION_MARGIN = 0.70
+
 
 def _infer_quality(sym: str) -> str:
     """Infer a quality category name from a chord symbol string."""
@@ -209,6 +222,12 @@ def main():
 
     # ── Q1: chordScoreMargin distribution ─────────────────────────────────
     margins = [r.chord_score_margin or 0.0 for r in errors]
+    # ESTABLISHED 2026-07-13 (OI-133(c), #19): the margin cut-points below (0.25 / 0.5 / 1.0 / 1.5 /
+    # 2.0) and the noteCount>=3 grouping further down are HISTOGRAM BUCKET EDGES and REPORT LABELS
+    # in this printed diagnostic — they classify nothing and no figure is graded through them. The
+    # audit filed them with the grading tolerances (OI-133(c)); they are not grading tolerances, and
+    # they owe no derivation. The one number in this file that IS load-bearing is
+    # INVERSION_SUSPICION_MARGIN (a cross-language copy of the production pref, pinned by a test).
     lt_025 = sum(1 for m in margins if m < 0.25)
     lt_05  = sum(1 for m in margins if m < 0.5)
     lt_1   = sum(1 for m in margins if m < 1.0)
@@ -269,12 +288,20 @@ def main():
     print(f"  noteCount>=3 (genuine chord):     {nc3p:4d}  ({100*nc3p/n:.1f}%)")
 
     # ── Q4: beat position distribution ────────────────────────────────────
+    # ESTABLISHED 2026-07-13 (OI-133(c), #19): the ±0.26 below is a HISTOGRAM BUCKET RADIUS, not a
+    # grading tolerance — nothing is graded through it. It buckets a float beat onto the integer
+    # beat it belongs to, for a printed distribution. The radius is just over 0.25 (a sixteenth) on
+    # purpose: it pulls the sixteenth-note offsets IMMEDIATELY ADJACENT to a beat into that beat's
+    # bucket, which is the question the diagnostic asks ("do these errors cluster on the beat?").
+    # A 0.25 radius would drop exactly the on-the-edge sixteenths that make the cluster visible.
+    # It is a reporting choice, and it is the reader's to change; no measurement depends on it.
+    BEAT_BUCKET_RADIUS = 0.26
     beats = [r.beat for r in errors]
     beat_counts: Counter = Counter(round(b) for b in beats)
-    beat1 = sum(1 for b in beats if abs(b - 1.0) < 0.26)
-    beat2 = sum(1 for b in beats if abs(b - 2.0) < 0.26)
-    beat3 = sum(1 for b in beats if abs(b - 3.0) < 0.26)
-    beat4 = sum(1 for b in beats if abs(b - 4.0) < 0.26)
+    beat1 = sum(1 for b in beats if abs(b - 1.0) < BEAT_BUCKET_RADIUS)
+    beat2 = sum(1 for b in beats if abs(b - 2.0) < BEAT_BUCKET_RADIUS)
+    beat3 = sum(1 for b in beats if abs(b - 3.0) < BEAT_BUCKET_RADIUS)
+    beat4 = sum(1 for b in beats if abs(b - 4.0) < BEAT_BUCKET_RADIUS)
     other = n - beat1 - beat2 - beat3 - beat4
 
     print(f"\n── Beat position distribution ──")
@@ -322,7 +349,7 @@ def main():
     #              (the seventh-exemption guard in chordanalyzer.cpp's post-ranking inversion
     #              correction — OI-133: the former "~1916-1923" line anchor was stale, the file
     #              is 1610 lines; cited symbol-led to avoid re-drift)
-    INVERSION_SUSPICION_MARGIN = 0.70
+    # INVERSION_SUSPICION_MARGIN is the module-level cross-language copy (see its declaration).
     SEVENTH_QUALITIES = {"Dominant7", "Major7", "Minor7", "HalfDiminished", "Diminished7"}
 
     blocker_b = blocker_c = blocker_a = other = 0
