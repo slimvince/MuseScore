@@ -64,9 +64,10 @@ they drift with each L3-wiring / grading re-baseline (the former docstring figur
 3862/4065/3894 predated the −4/+1/−4 L3-wiring delta and the OI-142/OI-143 re-baseline).
 
 Reuses ``characterise_bir_false.validate_corpus_dir`` (the anti-contamination manifest guard),
-``compare_analyses`` (load_analysis, three_way_classify, _dcml_time_spans), and
-``dcml_parser`` (find_wir_file, parse_rntxt_file, _key_to_tonic_pc, _NOTE_TO_PC) verbatim —
-none of those modules is forked.
+``compare_analyses`` (load_analysis, three_way_classify, _dcml_time_spans),
+``compare_rn`` (_our_key_tonic / _dcml_key_tonic — the ONE graded key reduction, OI-132), and
+``dcml_parser`` (find_wir_file, parse_rntxt_file, _NOTE_TO_PC) verbatim — none of those modules
+is forked.
 """
 from __future__ import annotations
 
@@ -83,6 +84,7 @@ _ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(_ROOT / "tools"))
 
 import compare_analyses as cmp           # noqa: E402  (reused verbatim)
+import compare_rn as crn                 # noqa: E402  (the ONE graded key reduction — OI-132)
 import dcml_parser as dcml               # noqa: E402  (reused verbatim)
 from characterise_bir_false import validate_corpus_dir  # noqa: E402 (reused verbatim)
 
@@ -95,51 +97,37 @@ def pcn(p):
     return PC_NAMES[p % 12] if p is not None and p >= 0 else "?"
 
 
-# ── key parsing (tool-local glue; mode-class only, third-of-the-mode for exotic modes) ──
-# Ported verbatim from the ratified decomposition diagnostic; covered by the tool's tests.
+# ── key parsing ──────────────────────────────────────────────────────────────
+# OI-132 (DT-6), consolidated 2026-07-13 at the user-ratified re-baseline: this tool used to carry
+# a SECOND key-string parser beside the shared graded substrate compare_rn._our_key_tonic /
+# _dcml_key_tonic, and the two embedded different music-theory readings of the dominant-family
+# exotic modes. There is now ONE reduction, in compare_rn, and these are thin adapters onto it —
+# they only re-shape its (tonic_pc, is_major) pair into this tool's (tonic_pc, 'major'|'minor')
+# convention. Do not re-derive a key reduction here; change compare_rn._our_key_tonic instead.
 #
-# OI-132 / DISCOVERY D2 (OI-145 wave-1, 2026-07-12): this parse_our_key is a SECOND key-string
-# parser alongside the shared substrate compare_rn._our_key_tonic (the one every GOVERNING graded
-# surface — a8, the robust unit, the classifier, the probe — uses). They are NOT interchangeable:
-# they embed DIFFERENT music-theory decisions for the DOMINANT-family exotic modes.
-#   • parse_our_key (below, exact-set membership): PhrygDom -> MAJOR, alt -> MAJOR, Lydb7 -> None.
-#   • compare_rn._our_key_tonic (prefix rule maj/ion/lyd/mix): PhrygDom -> minor, alt -> minor,
-#     Lydb7 -> major.
-# MEASURED consolidation impact (A/B, OI-145 wave-1): parse_dcml_key IS byte-identical to
-# compare_rn._dcml_key_tonic, but swapping THIS parser for _our_key_tonic MOVES this tool's KEY-tier
-# split (jazz +1 record, default +13 records shuffling KEY-HARD/KEY-TONICIZATION/AMBIGUOUS; the
-# charged/floor ROOT sets are UNCHANGED on all 3 presets). So the DT-6 dedup is NOT a byte-identical
-# hygiene fold — it needs a music-theory adjudication of the dominant-family mode classification
-# (which reading is authoritative), then a coordinated re-baseline. NOT consolidated here; surfaced
-# for the user's decision (cc_measurement_chain_hardening_report.md).
-_OUR_MINOR_MODES = {"min", "harm", "mel", "Dor", "Dor#4", "Dorb2", "Phryg", "Loc#6"}
-_OUR_MAJOR_MODES = {"maj", "Lyd", "Lyd#2", "Lyd+", "Mixolyd", "Mixb6", "PhrygDom", "alt"}
+# The consolidation moved this tool's KEY-tier split (measured and reported at the re-baseline);
+# the charged/floor ROOT sets — this tool's primary metric — are untouched by key parsing, which
+# only sub-classifies an already-charged event (see classify_charged_event).
+
+
+def _as_mode_name(reduction):
+    """compare_rn's (tonic_pc, is_major) -> this tool's (tonic_pc, 'major'|'minor')."""
+    tonic, is_major = reduction
+    if tonic is None:
+        return None, None
+    return tonic, ("major" if is_major else "minor")
 
 
 def parse_our_key(k: str):
-    """'Gmin'/'Bbmaj'/'AMix(b6)' -> (tonic_pc, 'major'|'minor'|None)."""
-    if not k:
-        return None, None
-    k = k.replace("♯", "#").replace("♭", "b")
-    m = re.match(r"^([A-G][#b]?)(.*)$", k)
-    if not m:
-        return None, None
-    tonic = dcml._key_to_tonic_pc(m.group(1))
-    suf = m.group(2)
-    if suf in _OUR_MINOR_MODES:
-        return tonic, "minor"
-    if suf in _OUR_MAJOR_MODES:
-        return tonic, "major"
-    return tonic, None  # unknown mode -> tonic only
+    """'Gmin'/'Bbmaj'/'C#PhrygDom' -> (tonic_pc, 'major'|'minor').
+    The shared graded reduction (compare_rn._our_key_tonic), verbatim."""
+    return _as_mode_name(crn._our_key_tonic(k))
 
 
 def parse_dcml_key(k: str):
-    """DCML local key 'g'/'Bb' -> (tonic_pc, 'major'|'minor')."""
-    if not k:
-        return None, None
-    tonic = dcml._key_to_tonic_pc(k)
-    mode = "minor" if k[0].islower() else "major"
-    return tonic, mode
+    """DCML local key 'g'/'Bb' -> (tonic_pc, 'major'|'minor').
+    The shared graded reduction (compare_rn._dcml_key_tonic), verbatim."""
+    return _as_mode_name(crn._dcml_key_tonic(k))
 
 
 def parse_m21_key(k: str):
@@ -185,8 +173,8 @@ def load_dir(corpus_dir: Path, wir_dir: Path):
             continue
         # OI-144 / DISCOVERY D3: raw WiR (parse_rntxt_file), NOT the OI-142-corrected load_wir_regions
         # — the 12 transposed editions grade UNCORRECTED here, so this tool's charged/floor root figures
-        # are on pre-OI-142 WiR. Routing through load_wir_regions is a RE-BASELINE (moves the figures),
-        # surfaced for the user; left raw this session (cc_measurement_chain_hardening_report.md).
+        # are on pre-OI-142 WiR. Routing through load_wir_regions is a RE-BASELINE (moves the figures);
+        # it lands in the OI-144 commit alongside the calibration-map refit.
         wir_path = dcml.find_wir_file(str(wir_dir), stem)
         wir = []
         if wir_path:

@@ -239,11 +239,11 @@ _KB_OURS_KEY_RE = re.compile(r'^([A-G])([#b]?)([A-Za-z]+)$')
 # normalization maps a mode suffix to a major/minor identity so the key comparison scores
 # key IDENTITY, not parseability. PRODUCTION EMITS THESE UNCHANGED.
 #
-# Mapping (mode-prefix, lower-cased → is_major):
+# Mapping (mode-prefix, lower-cased → is_major), applied to every mode EXCEPT the five
+# dominant-family modes handled by _parent_collection_reduction below:
 #   • major-third modes maj / ion(ian) / lyd(ian) / mix(olydian)     → MAJOR
 #   • every other (minor-third) mode → MINOR, i.e.:
 #       - Xharm / Xmel  → X minor      (harmonic / melodic minor variants of the tonic)
-#       - XPhrygDom      → X minor      (Phrygian-dominant is a minor-tonic dominant scale)
 #       - XDor           → X minor      — the PARENT-SIGNATURE CLASSIFICATION (declared choice):
 #            Dorian is a minor-third mode; its natural-scale parent at the SAME tonic is the
 #            minor key, and the key comparison uses only (tonic_pc, is_major). Classifying
@@ -258,6 +258,48 @@ def _mode_is_major(mode: str) -> bool:
     """Classify a local-key mode suffix as major (True) or minor (False), case-
     insensitively, per the carry-fix-2 Task-2 mapping documented above."""
     return mode.lower()[:3] in _KB_MAJOR_MODE_PREFIXES
+
+
+# ── The five dominant-family modes: the PARENT-COLLECTION reduction ───────────
+# OI-132, ruled by the user 2026-07-13. These five emitted modes are the ones whose TONIC TRIAD
+# is major but whose PARENT COLLECTION is a minor scale — each is a rotation of a harmonic- or
+# melodic-minor scale. They grade as the MINOR key of that parent collection, uniformly: an
+# emitted "C#PhrygDom" (the Phrygian-dominant scale on C#) grades as F# minor, the key it is the
+# dominant of. The prefix rule above cannot express this (it never moves the tonic), so these
+# five are reduced here, ahead of it.
+#
+# Evidence (cc_mode_grading_adjudication_probe_report.md, read-only probe on all three presets):
+# on the local-key column the parent-collection reading matches the DCML annotators on 67 % of
+# the affected duration (54–100 % per mode); the tonic-triad reading matches 0 %. The affected
+# duration is 0.48–0.71 % of the graded total.
+#
+# The mode-suffix spellings are ASCII-normalized before lookup because the chain emits the
+# unicode accidentals ♭/♯ inside a mode name (e.g. "AMix♭6"). Modes NOT listed here keep the
+# prefix rule verbatim, so no cell outside these five moves.
+#
+# suffix (ASCII-normalized) -> (semitones from the emitted tonic to the parent tonic, parent_is_major)
+_KB_PARENT_COLLECTION_MODES = {
+    "PhrygDom": (-7, False),   # 5th mode of harmonic minor
+    "Mixb6":    (-7, False),   # 5th mode of melodic minor (Aeolian dominant)
+    "Lydb7":    (-5, False),   # 4th mode of melodic minor (Lydian dominant)
+    "Lyd+":     (-3, False),   # 3rd mode of melodic minor (Lydian augmented)
+    "alt":      (+1, False),   # 7th mode of melodic minor (altered / super-Locrian)
+}
+
+_KB_OURS_TONIC_RE = re.compile(r'^([A-G][#b]?)(.*)$')
+
+
+def _parent_collection_reduction(k: str) -> Optional[tuple[Optional[int], Optional[bool]]]:
+    """(parent_tonic_pc, parent_is_major) if `k` names one of the five dominant-family modes;
+    None if it does not (the caller then applies the prefix rule unchanged)."""
+    m = _KB_OURS_TONIC_RE.match(k.strip().replace('♯', '#').replace('♭', 'b'))
+    if not m:
+        return None
+    parent = _KB_PARENT_COLLECTION_MODES.get(m.group(2))
+    if parent is None:
+        return None
+    offset, parent_is_major = parent
+    return ((dcml._key_to_tonic_pc(m.group(1)) + offset) % 12, parent_is_major)
 
 
 def _dcml_key_tonic(k: Optional[str]) -> tuple[Optional[int], Optional[bool]]:
@@ -275,12 +317,23 @@ def _dcml_key_tonic(k: Optional[str]) -> tuple[Optional[int], Optional[bool]]:
 
 def _our_key_tonic(k: Optional[str]) -> tuple[Optional[int], Optional[bool]]:
     """Our key string ('Cmin', 'Cmaj', 'C#min', 'Bbmaj', 'Gdor', 'DDor', 'EPhrygDom')
-    -> (tonic_pc, is_major).  The mode suffix is normalized to a major/minor identity
-    by _mode_is_major (carry-fix 2 Task 2) so a mode-qualified name with a correct tonic
-    is not counted a parse failure.  (None, None) only if the string is genuinely
-    unparseable (empty / not <letter><acc?><mode>)."""
+    -> (tonic_pc, is_major).  THE ONE key-string reduction for grading — every graded
+    surface reads it (a8 / the robust unit, c1_reliability and the calibration fit through
+    it, the key-disagreement classifier, oracle_root_metric).
+
+    Two rules, in order:
+      1. the five dominant-family modes reduce to their PARENT COLLECTION's minor key
+         (_parent_collection_reduction — OI-132, user-ruled 2026-07-13);
+      2. every other mode suffix keeps its tonic and is normalized to a major/minor identity
+         by _mode_is_major (carry-fix 2 Task 2), so a mode-qualified name with a correct tonic
+         is not counted a parse failure.
+
+    (None, None) only if the string is genuinely unparseable (empty / not <letter><acc?><mode>)."""
     if not k:
         return (None, None)
+    parent = _parent_collection_reduction(k)
+    if parent is not None:
+        return parent
     m = _KB_OURS_KEY_RE.match(k.strip())
     if not m:
         return (None, None)

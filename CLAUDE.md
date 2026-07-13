@@ -191,16 +191,30 @@ identical to `compare_rn.grid_score_regions()` on all 326×3 covered pieces. A f
 superseded batch sets lives at `tools/robust_stop/batch_stop_frozen_history.json` (block (C)).
 
 **Ratified baselines** (variant b, root-agree at 326/352 coverage, corpus `c50002fee1`;
-**re-baselined at the OI-142/OI-143 key-grading correction, user-ratified 2026-07-12**): **root-agree
+**key columns re-baselined at the OI-132 mode-grading consolidation, user-ratified 2026-07-13**): **root-agree
 66.04 / 64.98 / 65.93 %** (Baroque/Jazz/Default), **RN-agree 46.33 / 44.10 / 46.23 %**, **key-agree vs
-HOME/global 71.29 / 67.49 / 70.52 %**, **key-agree vs LOCAL 65.72 / 62.49 / 65.39 %** (the OI-143 dual
-column — both computed, both tracked). *These SUPERSEDE the R10-b column (root 63.36/62.37/63.25, RN
-44.58/42.40/44.41, key 68.13/64.43/67.50), preserved in `tools/robust_stop/snapshot_2026-07-12_pre_oi142_oi143/`.
-The re-baseline applied the 12 transposed editions' constant offsets to the WiR ground truth at the shared
-substrate `dcml_parser.load_wir_regions` (OI-142) and split the key column into home/local (OI-143); the
-run-level set-diff was confined to the 12 corrected stems (the other 314 byte-identical) and the class-(b)
-root-disagree duration DECREASED on all presets. Provenance: `cc_key_grading_rebaseline_report.md`; offsets
-in `tools/robust_stop/corpus_transposition_offsets.json`.*
+HOME/global 71.42 / 67.83 / 70.65 %**, **key-agree vs LOCAL 65.99 / 62.98 / 65.71 %** (the OI-143 dual
+column — both computed, both tracked).
+
+*The KEY columns above supersede the OI-142/OI-143 column (key home 71.29/67.49/70.52, key local
+65.72/62.49/65.39), preserved in `tools/robust_stop/snapshot_2026-07-13_pre_oi132_oi144/`. **Root and RN did
+NOT move** (the mode reduction touches only the key axis): every root-failing run set is byte-identical, the
+class-(b) root-disagree duration is unchanged on all presets, and the run-level set-diff is (+0 / −0). What
+changed: the five dominant-family exotic modes (Phrygian dominant, altered, Lydian dominant, Lydian augmented,
+Mixolydian ♭6) now reduce to the MINOR key of their PARENT COLLECTION — an emitted "C♯PhrygDom" grades as F♯
+minor, the key it is the dominant of — in the ONE shared reduction `compare_rn._our_key_tonic`, onto which the
+second key parser (`oracle_root_metric`) was folded. Key-abstain also drops (7680/10800/33120 → 0/4080/2400
+ticks). The user's ruling and the evidence: `cc_mode_grading_adjudication_probe_report.md` (the parent-collection
+reading matches the DCML annotators on 67 % of the affected duration on the local column; the tonic-triad
+reading on 0 %). Provenance: `cc_key_grading_and_calibration_rebaseline_report.md`.*
+
+*Earlier columns, for the record: the OI-142/OI-143 re-baseline (user-ratified 2026-07-12) applied the 12
+transposed editions' constant offsets to the WiR ground truth at the shared substrate
+`dcml_parser.load_wir_regions` (OI-142) and split the key column into home/local (OI-143); its run-level
+set-diff was confined to the 12 corrected stems and the class-(b) root-disagree duration DECREASED on all
+presets (`cc_key_grading_rebaseline_report.md`; offsets in `tools/robust_stop/corpus_transposition_offsets.json`).
+It in turn superseded the R10-b column (root 63.36/62.37/63.25, RN 44.58/42.40/44.41, key 68.13/64.43/67.50),
+preserved in `tools/robust_stop/snapshot_2026-07-12_pre_oi142_oi143/`.*
 
 - **The hard stop (per preset):** the **class-(b) (pitch-class-decidable-root) root-disagree DURATION
   must be NON-INCREASING** vs the committed reference — the *meaningful* functional errors never grow.
@@ -227,13 +241,18 @@ in `tools/robust_stop/corpus_transposition_offsets.json`.*
 **★ A-8 DUAL-TRACK (MEASURED + RATIFIED, user, 2026-07-03; `cc_a8_rebaseline_measure_report.md`).** The
 **primary reported metric AND the Stage-5 fitting-objective basis** is the robust unit above: root
 governs, RN + key(home,local) tracked beside. Ratified baselines (variant b, root-agree at 326/352
-coverage; **re-baselined at the OI-142/OI-143 key-grading correction, user-ratified 2026-07-12** —
-`cc_key_grading_rebaseline_report.md`): **root-agree Baroque 66.04 % / Jazz 64.98 % / Default 65.93 %**,
-RN-agree 46.33/44.10/46.23 %, **key-agree vs HOME/global 71.29/67.49/70.52 %** + **vs LOCAL
-65.72/62.49/65.39 %** (the OI-143 dual column, both tracked). The re-baseline applied the 12 transposed
-editions' offsets to the WiR ground truth at `dcml_parser.load_wir_regions` (OI-142) and split the key
-column (OI-143); the run-diff was confined to the 12 corrected stems (the other 314 byte-identical) and
-class-(b) root-disagree duration DECREASED on all presets. *The superseded R10-b column (root
+coverage; **key columns re-baselined at the OI-132 mode-grading consolidation, user-ratified 2026-07-13** —
+`cc_key_grading_and_calibration_rebaseline_report.md`): **root-agree Baroque 66.04 % / Jazz 64.98 % / Default
+65.93 %**, RN-agree 46.33/44.10/46.23 %, **key-agree vs HOME/global 71.42/67.83/70.65 %** + **vs LOCAL
+65.99/62.98/65.71 %** (the OI-143 dual column, both tracked). That consolidation reduces the five
+dominant-family exotic modes to their PARENT COLLECTION's minor key in the one shared reduction
+`compare_rn._our_key_tonic`; it moved the KEY columns only — root, RN, every root-failing run set and the
+class-(b) hard-stop duration are byte-identical (run-diff +0/−0 on all presets). The key columns it superseded
+(home 71.29/67.49/70.52, local 65.72/62.49/65.39) came from the OI-142/OI-143 re-baseline (user-ratified
+2026-07-12, `cc_key_grading_rebaseline_report.md`), which applied the 12 transposed editions' offsets to the
+WiR ground truth at `dcml_parser.load_wir_regions` (OI-142) and split the key column (OI-143); its run-diff was
+confined to the 12 corrected stems (the other 314 byte-identical) and class-(b) root-disagree duration
+DECREASED on all presets. *The superseded R10-b column (root
 63.36/62.37/63.25, RN 44.58/42.40/44.41, key 68.13/64.43/67.50), preserved in
 `tools/robust_stop/snapshot_2026-07-12_pre_oi142_oi143/`, was itself re-baselined at the 2.2e kWStepIn
 adoption, 2026-07-05; its key-column establishment history: Jazz is byte-identical to the pre-adoption
