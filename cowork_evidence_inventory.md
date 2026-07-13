@@ -29,7 +29,14 @@
   product's biggest key-detection win came from a phrase-end ("pseudo-fermata")
   alignment fix. UNDISCUSSED as key evidence; not in the note model's 11 documented
   facts. Cheap to read; enormous leverage for transition costs and cadence location.
-- Rests/silences (partially consumed by the dormant phrase view); grace notes
+- **Rests/silences as phrase ends** (user-raised 2026-07-12, pairing with the
+  fermata fact above): a sufficiently long rest signals a phrase end just as a
+  fermata does. Status: HALF-EMBODIED — the dormant phrase-boundary view is already
+  a silence-based phrase-end detector, gated off, with "sufficiently long" a
+  hand-set 240-tick threshold (one of the OI-87 unfit constants). The composite
+  publication the key layer wants: phrase-end facts from fermatas AND long rests
+  together (fermatas are a chorale convention; rests generalize to other
+  repertoire), the silence threshold fit rather than guessed. Grace notes
   (embellishment hints); slurs/articulation (phrase shaping, weak); lyrics/verse
   structure (chorale phrase structure — UNDISCUSSED, probably redundant with
   fermatas); tempo/character markings (style/preset hints, weak); pedal lines

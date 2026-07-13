@@ -98,8 +98,12 @@ become fitting-stage targets against the local column regardless of (a)–(d).
 **Decision 3 — the transition model (the stickiness lever).** Options:
 (a) **phrase-boundary-modulated change costs** — cheaper transitions at phrase ends;
 the comparable product's single biggest published win; our phrase-boundary view is
-built and gated off. Expectation: the best-grounded structural transition change;
-directly attacks the home-versus-local gap.
+built and gated off. The phrase-end facts themselves come from TWO score signals
+jointly (the evidence inventory, user-enriched 2026-07-12): fermatas (the chorale
+convention, currently unread) and sufficiently long rests (the dormant view's
+existing mechanism, its threshold hand-set and unfit). Expectation: the
+best-grounded structural transition change; directly attacks the home-versus-local
+gap.
 (b) **the cadence→key channel** — the June dossier's green light + the ratified
 cadence-confirmed forward override + the (to-be-verified) already-built tonic-voting
 machinery. The one genuine ARCHITECTURE question in this conversation: where the
@@ -148,6 +152,24 @@ inventory is a design input never revisited since it was hand-set: which modes e
 states per preset, how harmonic/melodic minor variants are represented, whether any
 rows are dead. An enumeration-and-justification pass belongs to this design before
 any fitting bakes the current inventory in.
+*Enriched 2026-07-12 from the mode-grading adjudication and the published record:*
+the key-detection tradition for common-practice music runs 24 states (12 major + 12
+minor) — no published tracker emits jazz-scale keys; the Baroque-relevant modal
+residue in the scholarship is the four church modes (Phrygian, Mixolydian, Dorian,
+Aeolian — Burns, "Bach's Modal Chorales"), NOT the dominant-family jazz scales; our
+hand-set Baroque priors are near-backwards against that record (church modes
+suppressed, Phrygian dominant boosted +0.50 — the value the adjudication probe
+caught mislabeling); and the annotators grade everything as major/minor regardless.
+**The user's direction (2026-07-12), recorded for this decision:** in the Baroque
+inventory only ordinary major and minor carry high priority; the dominant-family
+exotics are candidates for retirement from that inventory (dominant-heaviness
+re-expressed as evidence — the cadence/dominant channels), with the church modes the
+one scholarly-supported question to settle; the Jazz inventory legitimately keeps
+the chord-scale modes (unestablishable until jazz ground truth exists, OI-7); the
+Default inventory is DEFERRED pending the corpus-expansion evidence (OI-38/OI-39).
+Sequencing per the readiness gate: the inventory decision comes FIRST, then the
+surviving priors are FIT against the local column at the fitting stage — never
+hand-set again; no ad-hoc prior adjustment now.
 
 **Decision 7 — the structural fit.** Everything above lives inside the ratified
 forward-only frame — including the cadence channel, which the architecture already
