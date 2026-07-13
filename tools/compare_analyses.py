@@ -244,25 +244,26 @@ ALIGN_OVERLAP_FRACTION = 0.5
 # the call site, the rule is exactly "nearest beat, no ties, no gaps".
 ALIGN_BEAT_DISTANCE_TOL = 0.5
 
-# ── NOT derived: an unverified meter ASSUMPTION that happens to hold. See OI-125. ───────
-# Beats/measure assumed when _dcml_tick_for must EXTRAPOLATE a ground-truth (measure, beat) onset
-# beyond the outermost measure our regions anchor (the rntxt/WiR path carries no abs_tick). It
-# hard-codes 4/4 and is simply WRONG for any other meter — a 3/4 pickup at beat 3 is placed a full
-# beat early.
+# ── The LAST RESORT when a stem's measure length cannot be derived at all. See OI-125. ──
+# _dcml_tick_for EXTRAPOLATES a ground-truth (measure, beat) onset that lies beyond the outermost
+# measure our regions anchor (the rntxt/WiR path carries no abs_tick) — overwhelmingly the pickup
+# (anacrusis) measure, which DCML numbers 0 while our regions start at measure 1, plus a few
+# trailing measures our segmentation leaves unanchored. It used to hard-code 4/4 there, which is
+# simply WRONG for any other meter — a 3/4 pickup at beat 3 would be placed a full beat early.
 #
-# Measured over the committed corpus (2026-07-13, all three presets), the branch is LOAD-BEARING,
-# not inert: it fires 162 times across 15 stems — overwhelmingly the pickup (anacrusis) measure,
-# which DCML numbers 0 while our regions start at measure 1, plus a few trailing measures our
-# segmentation leaves unanchored. On EVERY ONE of those 15 stems the measure length DERIVED from
-# the piece's own anchors is exactly 4.0 beats, so the constant is correct wherever it currently
-# fires and no committed figure depends on the assumption being lucky.
+# FIXED 2026-07-13 (OI-125, user-ratified): the extrapolation now uses the measure length DERIVED
+# from each stem's own anchors (_derive_ticks_per_measure), the same quantity the INTERPOLATION
+# branch already derives from the two anchors it sits between. The resolver is therefore
+# meter-correct for the non-4/4 repertoire we plan to add (OI-38/OI-39), and byte-identical on
+# today's corpus: measured before the edit over all three presets, the branch fires 162 times
+# across 15 stems and the derived measure length is exactly 4.0 beats on EVERY firing, so every
+# resolved tick is unchanged (proven again by the establishment battery afterwards).
 #
-# It is still an ASSUMPTION rather than a derivation, and the corpus that would break it is one we
-# plan to add (OI-38/OI-39 — non-4/4 repertoire). The fix is already sitting three lines above the
-# use: the INTERPOLATION branch derives tick_per_measure from the anchors instead of assuming it,
-# and the same estimator serves extrapolation. That change is byte-identical on today's corpus
-# (measured: derived == 4.0 on every firing stem) but it edits the shared tick resolver, so it is
-# left to be ratified rather than slipped into a hygiene sweep. OI-125 stays OPEN on exactly that.
+# This constant survives ONLY as the last resort for a stem whose anchors cannot yield a measure
+# length at all (fewer than two anchored measures — i.e. every analyzer region of the piece falls
+# inside a single measure). Measured over the committed corpus: 0 of 352 stems on any preset, so
+# the branch never fires today; it exists so an underivable stem still resolves its onset rather
+# than silently dropping the ground-truth row from the denominator (#12).
 EXTRAPOLATION_BEATS_PER_MEASURE = 4
 
 
@@ -570,11 +571,28 @@ def _build_measure_anchors(ours_regions: list[Region],
     return {m: int(round(at - (ab - 1) * tpb)) for m, (at, ab) in anchors.items()}
 
 
+def _derive_ticks_per_measure(measure_starts: dict[int, int]) -> Optional[float]:
+    """Derive one measure's length in ticks from the stem's own measure anchors (OI-125).
+
+    Each pair of consecutive anchored measures gives a measure length: the tick distance
+    between them divided by the number of measures between them.  The median over those
+    pairs is the piece's measure length — robust to the two anchors that are legitimately
+    shorter than a measure (a pickup, and a final measure our segmentation truncates).
+    Returns None when fewer than two measures are anchored, in which case no measure length
+    is derivable from the anchors at all.
+    """
+    ms = sorted(measure_starts)
+    spans = [(measure_starts[b] - measure_starts[a]) / (b - a)
+             for a, b in zip(ms, ms[1:]) if b > a]
+    return _median(spans) if spans else None
+
+
 def _dcml_tick_for(measure: int, beat: float,
                    measure_starts: dict[int, int],
                    tpb: float) -> Optional[int]:
     """Convert a DCML (measure, beat) onset to a tick.  Linearly interpolates
-    across measures with no analyzer-region anchor."""
+    across measures with no analyzer-region anchor, and extrapolates beyond the
+    outermost anchor using the measure length derived from the stem's anchors."""
     if not measure_starts:
         return None
     if measure in measure_starts:
@@ -587,13 +605,19 @@ def _dcml_tick_for(measure: int, beat: float,
         tick_per_measure = (next_t - prev_t) / (next_m - prev_m)
         m_start = prev_t + (measure - prev_m) * tick_per_measure
         return int(round(m_start + (beat - 1) * tpb))
+    # Beyond the outermost anchor: the stem's OWN measure length, not an assumed meter
+    # (OI-125).  EXTRAPOLATION_BEATS_PER_MEASURE is the last resort for a stem too thinly
+    # anchored to derive one — see its definition.
+    derived = _derive_ticks_per_measure(measure_starts)
+    tick_per_measure = (derived if derived is not None
+                        else EXTRAPOLATION_BEATS_PER_MEASURE * tpb)
     if prev_m is not None:
         return int(round(measure_starts[prev_m]
-                         + (measure - prev_m) * EXTRAPOLATION_BEATS_PER_MEASURE * tpb
+                         + (measure - prev_m) * tick_per_measure
                          + (beat - 1) * tpb))
     if next_m is not None:
         return int(round(measure_starts[next_m]
-                         - (next_m - measure) * EXTRAPOLATION_BEATS_PER_MEASURE * tpb
+                         - (next_m - measure) * tick_per_measure
                          + (beat - 1) * tpb))
     return None
 
