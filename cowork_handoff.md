@@ -24,6 +24,43 @@ open); then, when the work is an audit, `cowork_audit_protocol.md` + `DEFECT_TYP
 > `cc_l3_key_decode_mechanism_report.md` (the pinned mechanism);
 > `cc_key_mode_inference_diagnosis_report.md` (the failure taxonomy).
 
+> **★ CC ADDENDUM (2026-07-13) — THE BACKLOG TRIAGE PASS delivered; the register's weakest tier is GONE.**
+> Every row whose recorded plan was only *"triage: verify this is still real, then assign or supersede"*
+> now carries a **checked** verdict (`cc_backlog_triage_report.md`). Read-only in substance; the one
+> authorized action beyond reading was a build + the three suites at HEAD (composing 1101/1101 · notation
+> **53 pass + 4 SKIPPED** · pipeline-snapshot pass). **Closed as superseded:** OI-53 (a tonicization
+> classifier IS implemented and live — the claim was refuted both ways), OI-54, OI-59, OI-60, OI-71 (open
+> for work finished five weeks earlier), + OI-58's sus-export and Rampageswing sub-claims (the latter
+> *refuted* — that corpus is horn-only, so it has no bass to dilute). **Assigned:** OI-55 (ninths → the L4
+> decoder engagement + the NCT lever), OI-57 (rescoped — the extra-scores registry is 140 entries vs 163
+> files on disk, 23 unregistered, validated by nothing → OI-38), OI-52 (**decided: build the shared
+> root-comparison helper**; its "not worth it" status was stale and the risk it guards has since fired as
+> OI-132/D2), OI-47/OI-48, and **OI-68's A-3 — whose trigger had quietly already fired** (the
+> dominant/cadence→key channel is now an active key-layer design input).
+>
+> **★ TWO DECISIONS ARE WAITING FOR THE USER (§E):** **OI-56** — do we want a music-theory judge that
+> works *without* ground truth? (Mode 3 is obsolete; Modes 1/2 have no code on master, but a working
+> implementation sits on the **unmerged `llm-triage` branch** — land-rescoped / defer to OI-38 / drop.)
+> **OI-62** — is the intonation/tuning feature still a goal? (All six §11.3 items confirmed still
+> unimplemented at the code — hold / schedule / close as out of scope.) Both are stated in plain language
+> for a reader who does not know the code, in `cc_backlog_triage_report.md` §4.
+>
+> **★ THE FINDING TO CARRY INTO THE KEY-LAYER WORK — NEW ROW OI-148: the key layer already has FOUR
+> failing, user-visible, DCML-checked acceptance tests sitting in the suite, and until now nobody owned
+> them.** The four notation SKIPs share one root cause (`a6b08af3fe` L3 decoder wiring): the
+> `characteristicPitch`/`trueLeadingTone` terms are **hard-gated on a `>0.1` window weight**
+> (`keymodeanalyzer.cpp:339-354/374`) — C major's B♮ carries **0.093** in the 4-beat window, just under
+> the cliff, so C is denied its anchors and the opening flips to F. That is exactly the emission-model +
+> window defect `cc_l3_key_decode_mechanism_report.md` pinned and **design-opening decision 2** exists to
+> fix. **One of them mis-keys Corelli's C-minor ending as G Phrygian-dominant — a live in-suite instance of
+> OI-147**, in one of the five modes the user just ruled on at OI-132. **And their scheduled fix does not
+> exist:** all four skip messages cite *"L1/L3 stabilization plan Phase 4c"*, and
+> `cowork_l1l3_stabilization_plan.md` has **no Phase 4c**. Their skip messages also carry a standing
+> instruction — *do NOT refresh the goldens/expectations* — so they must be made GREEN, never re-blessed.
+> Also new: **OI-149** (German-flat-bass slash dropped — the bass is lost from the symbol; a correct-oracle
+> test is checked in DISABLED and "flagged for Cowork" with no register row) and **OI-150**
+> (`BUILD_AND_TEST.md` baselines stale — its "53/53 passing" **hides the four xfails**).
+>
 > **★ CC ADDENDUM (2026-07-12) — OI-145 WAVE 1 (measurement-chain hardening) delivered.** 13 rows
 > closed + 3 discoveries surfaced, NO grading digit moved; the establishment battery
 > (`tools/audit/hardening_battery.py`) reproduced byte-identical after every fix + at the end (a8
