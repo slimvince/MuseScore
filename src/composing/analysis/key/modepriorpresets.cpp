@@ -137,4 +137,36 @@ std::vector<ModePriorPreset> modePriorPresets()
     return { standard, jazz, modal, baroque, contemporary };
 }
 
+ModePriorPreset modePriorAppDefaults()
+{
+    // The out-of-box product configuration: ComposingConfiguration::init() registers
+    // these as the MODE_PRIOR_* settings defaults, and tools/batch_analyze's "Default"
+    // preset applies them so the config users actually run can be corpus-measured.
+    // Both read this table; neither carries a copy of it (OI-135).
+    ModePriorPreset appDefaults;
+    appDefaults.name             = "Default";
+    appDefaults.ionian           =  1.20;
+    appDefaults.dorian           = -0.50;
+    appDefaults.phrygian         = -1.50;
+    appDefaults.lydian           =  0.00;
+    appDefaults.mixolydian       = -0.20;
+    appDefaults.aeolian          =  1.00;
+    appDefaults.locrian          = -3.50;
+    appDefaults.melodicMinor     = -0.50;
+    appDefaults.dorianB2         = -1.50;
+    appDefaults.lydianAugmented  = -1.00;
+    appDefaults.lydianDominant   = -0.30;
+    appDefaults.mixolydianB6     = -1.00;
+    appDefaults.aeolianB5        = -2.00;
+    appDefaults.altered          = -3.50;
+    appDefaults.harmonicMinor    = -0.30;
+    appDefaults.locrianSharp6    = -2.00;
+    appDefaults.ionianSharp5     = -1.50;
+    appDefaults.dorianSharp4     = -1.50;
+    appDefaults.phrygianDominant = -0.80;
+    appDefaults.lydianSharp2     = -2.00;
+    appDefaults.alteredDomBB7    = -3.50;
+    return appDefaults;
+}
+
 } // namespace mu::composing

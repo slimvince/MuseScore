@@ -74,6 +74,25 @@ enum class ScoringPhase : uint8_t {
 
 namespace mu::composing::analysis {
 
+// ── Shared segmentation default ──────────────────────────────────────────────
+
+/// The out-of-box Pass-2 onset-Jaccard sub-boundary threshold (Layer 2).
+///
+/// The ONE source of this value (OI-135). It is read by:
+///   • AnalyzeRegionsOptions::onsetBoundaryThreshold (region/regionanalyzer.h) — the
+///     struct default every caller starts from;
+///   • ComposingConfiguration::init(), which registers it as the ONSET_BOUNDARY_THRESHOLD
+///     settings default the user-facing bridge then reads;
+///   • tools/batch_analyze, whose corpus figures are only comparable to the user pipeline
+///     while the two agree.
+///
+/// It lives in this dependency-free leaf because those three readers span the analysis
+/// library, the composing module, and the measurement harness, and no heavier header is
+/// common to all of them. Previously each carried its own 0.25 literal, so a change to the
+/// config default would have silently stopped the harness measuring the shipped pipeline
+/// (the divergence documented at docs/implementation_roadmap.md 0.6).
+inline constexpr double kDefaultOnsetBoundaryThreshold = 0.25;
+
 // ── Parameter bounds (relocated from chord/analysisutils.h) ──────────────────
 
 /// Describes the valid range for a single numeric scoring parameter.

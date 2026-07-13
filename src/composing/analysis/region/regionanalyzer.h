@@ -47,6 +47,7 @@
 #include "composing/analysis/chord/chordanalyzer.h"
 #include "composing/analysis/key/keymodeanalyzer.h"
 #include "composing/analysis/region/harmonicrhythm.h"
+#include "composing/analysis/types/analysistypes.h"   // kDefaultOnsetBoundaryThreshold
 #include "engraving/types/fraction.h"
 
 namespace mu::engraving {
@@ -125,8 +126,10 @@ struct AnalyzeRegionsOptions {
     HarmonicRegionGranularity granularity = HarmonicRegionGranularity::Smoothed;
 
     /// Pass 2 onset-Jaccard sub-boundary threshold.  Lower = more boundaries.
-    /// Bridge reads this from IComposingAnalysisConfiguration; batch passes 0.25.
-    double onsetBoundaryThreshold = 0.25;
+    /// The bridge reads this from IComposingAnalysisConfiguration (whose registered
+    /// default IS kDefaultOnsetBoundaryThreshold); batch_analyze passes the same
+    /// constant. One source, three readers — see analysistypes.h (OI-135).
+    double onsetBoundaryThreshold = kDefaultOnsetBoundaryThreshold;
 
     /// When true and ≥3 distinct pitch classes are already sounding at the
     /// region start tick, collectRegionTones skips notes whose onset is

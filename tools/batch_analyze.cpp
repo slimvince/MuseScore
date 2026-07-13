@@ -176,6 +176,33 @@ static std::string fmtDouble(double v, int precision = 6)
 // This used to inline the same 5x21 table — see docs/duplication_audit.md §5.8.
 // ══════════════════════════════════════════════════════════════════════════
 
+/// Copy the 21 priors of @p p onto @p prefs.
+static void applyModePriors(const mu::composing::ModePriorPreset& p,
+                            analysis::KeyModeAnalyzerPreferences& prefs)
+{
+    prefs.modePriorIonian           = p.ionian;
+    prefs.modePriorDorian           = p.dorian;
+    prefs.modePriorPhrygian         = p.phrygian;
+    prefs.modePriorLydian           = p.lydian;
+    prefs.modePriorMixolydian       = p.mixolydian;
+    prefs.modePriorAeolian          = p.aeolian;
+    prefs.modePriorLocrian          = p.locrian;
+    prefs.modePriorMelodicMinor     = p.melodicMinor;
+    prefs.modePriorDorianB2         = p.dorianB2;
+    prefs.modePriorLydianAugmented  = p.lydianAugmented;
+    prefs.modePriorLydianDominant   = p.lydianDominant;
+    prefs.modePriorMixolydianB6     = p.mixolydianB6;
+    prefs.modePriorAeolianB5        = p.aeolianB5;
+    prefs.modePriorAltered          = p.altered;
+    prefs.modePriorHarmonicMinor    = p.harmonicMinor;
+    prefs.modePriorLocrianSharp6    = p.locrianSharp6;
+    prefs.modePriorIonianSharp5     = p.ionianSharp5;
+    prefs.modePriorDorianSharp4     = p.dorianSharp4;
+    prefs.modePriorPhrygianDominant = p.phrygianDominant;
+    prefs.modePriorLydianSharp2     = p.lydianSharp2;
+    prefs.modePriorAlteredDomBB7    = p.alteredDomBB7;
+}
+
 /// Apply a named mode prior preset to @p prefs.
 /// Returns true on success; false if @p name is not a known preset.
 /// Valid names: "Standard", "Jazz", "Modal", "Baroque", "Contemporary", "Default".
@@ -183,62 +210,21 @@ static std::string fmtDouble(double v, int precision = 6)
 static bool applyPreset(const std::string& name,
                         analysis::KeyModeAnalyzerPreferences& prefs)
 {
-    // "Default" (Stage 2.4 V4) is NOT a named tuning preset — it reproduces the
-    // live product's out-of-box mode priors so the configuration users actually
-    // run can be corpus-measured (informational; no gate). These 21 values are the
-    // app's registered settings defaults in composingconfiguration.cpp (init(),
-    // MODE_PRIOR_* setDefaultValue calls). They are NOT the KeyModeAnalyzerPreferences
-    // struct defaults and NOT the "Standard" preset: the app defaults diverge from
-    // both on 11 of 21 modes (Lydian, Mixolydian, Locrian, LydianAugmented,
-    // LydianDominant, MixolydianB6, AeolianB5, LocrianSharp6, IonianSharp5,
-    // DorianSharp4, LydianSharp2). KEEP IN SYNC with composingconfiguration.cpp.
+    // "Default" (Stage 2.4 V4) is NOT a named tuning preset — it reproduces the live
+    // product's out-of-box mode priors so the configuration users actually run can be
+    // corpus-measured (informational; no gate). Those 21 values are the app's registered
+    // settings defaults, and both this branch and ComposingConfiguration::init() now read
+    // them from the ONE table modePriorAppDefaults() (OI-135). Until then this branch
+    // hand-copied them, kept in sync only by a comment. They are NOT the
+    // KeyModeAnalyzerPreferences struct defaults and NOT the "Standard" preset: the app
+    // defaults diverge from both on 11 of the 21 modes.
     if (name == "Default") {
-        prefs.modePriorIonian           =  1.20;
-        prefs.modePriorDorian           = -0.50;
-        prefs.modePriorPhrygian         = -1.50;
-        prefs.modePriorLydian           =  0.00;
-        prefs.modePriorMixolydian       = -0.20;
-        prefs.modePriorAeolian          =  1.00;
-        prefs.modePriorLocrian          = -3.50;
-        prefs.modePriorMelodicMinor     = -0.50;
-        prefs.modePriorDorianB2         = -1.50;
-        prefs.modePriorLydianAugmented  = -1.00;
-        prefs.modePriorLydianDominant   = -0.30;
-        prefs.modePriorMixolydianB6     = -1.00;
-        prefs.modePriorAeolianB5        = -2.00;
-        prefs.modePriorAltered          = -3.50;
-        prefs.modePriorHarmonicMinor    = -0.30;
-        prefs.modePriorLocrianSharp6    = -2.00;
-        prefs.modePriorIonianSharp5     = -1.50;
-        prefs.modePriorDorianSharp4     = -1.50;
-        prefs.modePriorPhrygianDominant = -0.80;
-        prefs.modePriorLydianSharp2     = -2.00;
-        prefs.modePriorAlteredDomBB7    = -3.50;
+        applyModePriors(mu::composing::modePriorAppDefaults(), prefs);
         return true;
     }
     for (const auto& p : mu::composing::modePriorPresets()) {
         if (p.name != name) continue;
-        prefs.modePriorIonian           = p.ionian;
-        prefs.modePriorDorian           = p.dorian;
-        prefs.modePriorPhrygian         = p.phrygian;
-        prefs.modePriorLydian           = p.lydian;
-        prefs.modePriorMixolydian       = p.mixolydian;
-        prefs.modePriorAeolian          = p.aeolian;
-        prefs.modePriorLocrian          = p.locrian;
-        prefs.modePriorMelodicMinor     = p.melodicMinor;
-        prefs.modePriorDorianB2         = p.dorianB2;
-        prefs.modePriorLydianAugmented  = p.lydianAugmented;
-        prefs.modePriorLydianDominant   = p.lydianDominant;
-        prefs.modePriorMixolydianB6     = p.mixolydianB6;
-        prefs.modePriorAeolianB5        = p.aeolianB5;
-        prefs.modePriorAltered          = p.altered;
-        prefs.modePriorHarmonicMinor    = p.harmonicMinor;
-        prefs.modePriorLocrianSharp6    = p.locrianSharp6;
-        prefs.modePriorIonianSharp5     = p.ionianSharp5;
-        prefs.modePriorDorianSharp4     = p.dorianSharp4;
-        prefs.modePriorPhrygianDominant = p.phrygianDominant;
-        prefs.modePriorLydianSharp2     = p.lydianSharp2;
-        prefs.modePriorAlteredDomBB7    = p.alteredDomBB7;
+        applyModePriors(p, prefs);
         return true;
     }
     return false;
@@ -587,14 +573,13 @@ static std::vector<AnalyzedRegion> analyzeScore(
     // AnalyzedRegion (with measureNumber/beat/pcMask/keyRanked).
     cra::AnalyzeRegionsOptions opts;
     opts.granularity                     = analysis::HarmonicRegionGranularity::Smoothed;
-    // DIVERGENCE (see docs/implementation_roadmap.md 0.6): batch hard-codes 0.25, whereas
-    // the user-facing bridge reads it from IComposingAnalysisConfiguration
-    // (notationharmonicrhythmbridge.cpp:85, falling back to 0.25 only when cfg is null).
-    // 0.25 is also the config default, so the two coincide today — but ALL batch corpus
-    // numbers (BIR, rn_agree) assume 0.25. If the config default ever changes, batch will
-    // no longer measure the user pipeline. Unifying the source is Stage 2 work; do not
-    // change behavior here.
-    opts.onsetBoundaryThreshold          = 0.25;
+    // Batch measures the user pipeline's segmentation, so it reads the SAME constant the
+    // config registers as the ONSET_BOUNDARY_THRESHOLD default the bridge then consumes
+    // (analysistypes.h). Previously batch hard-coded 0.25 here, which merely coincided with
+    // the config default — a change to that default would have silently left the corpus
+    // measuring a pipeline nobody runs (the docs/implementation_roadmap.md 0.6 divergence).
+    // Closed at OI-135: one source, three readers.
+    opts.onsetBoundaryThreshold          = analysis::kDefaultOnsetBoundaryThreshold;
     opts.excludeLookAheadOnDenseStart    = true;
     // D2 unification — batch now matches the bridge's sparse Pass-1 admission
     // (Iter 75; both paths use minDistinctPcsForCandidate=1). Net error reduction
@@ -2552,7 +2537,7 @@ static std::string runReachBackAB(Score* score, const std::string& stem,
     auto baseOpts = [&]() {
         cra::AnalyzeRegionsOptions o;
         o.granularity = analysis::HarmonicRegionGranularity::Smoothed;
-        o.onsetBoundaryThreshold = 0.25;
+        o.onsetBoundaryThreshold = analysis::kDefaultOnsetBoundaryThreshold;   // OI-135
         o.excludeLookAheadOnDenseStart = true;
         o.pass1MinDistinctPcsForCandidate = 1;
         return o;
@@ -3715,7 +3700,7 @@ static std::string runJointProbe(
     const Fraction endTick = score->endTick();
     cra::AnalyzeRegionsOptions opts;
     opts.granularity                  = analysis::HarmonicRegionGranularity::Smoothed;
-    opts.onsetBoundaryThreshold       = 0.25;
+    opts.onsetBoundaryThreshold       = analysis::kDefaultOnsetBoundaryThreshold;   // OI-135
     opts.excludeLookAheadOnDenseStart = true;
     opts.pass1MinDistinctPcsForCandidate = 1;
     const std::vector<HarmonicRegion> regions = cra::analyzeRegions(

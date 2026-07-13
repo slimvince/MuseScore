@@ -24,6 +24,7 @@
 #include <algorithm>
 #include <cmath>
 
+#include "composing/analysis/types/analysistypes.h"   // kDefaultOnsetBoundaryThreshold
 #include "settings.h"
 
 using namespace mu::composing;
@@ -145,7 +146,10 @@ void ComposingConfiguration::init()
         m_useRegionalAccumulationChanged.notify();
     });
 
-    settings()->setDefaultValue(ONSET_BOUNDARY_THRESHOLD, Val(0.25));
+    // The value is owned by analysis::kDefaultOnsetBoundaryThreshold (analysistypes.h),
+    // which AnalyzeRegionsOptions and tools/batch_analyze also read (OI-135).
+    settings()->setDefaultValue(ONSET_BOUNDARY_THRESHOLD,
+                                Val(analysis::kDefaultOnsetBoundaryThreshold));
     settings()->valueChanged(ONSET_BOUNDARY_THRESHOLD).onReceive(nullptr, [this](const Val&) {
         m_onsetBoundaryThresholdChanged.notify();
     });
@@ -210,92 +214,100 @@ void ComposingConfiguration::init()
         m_chordStaffWriteCadenceMarkersChanged.notify();
     });
 
-    // ── Mode priors — diatonic ───────────────────────────────────────────────
-    settings()->setDefaultValue(MODE_PRIOR_IONIAN, Val(1.20));
+    // ── Mode priors ─────────────────────────────────────────────────────────
+    // The 21 out-of-box values are owned by modePriorAppDefaults() in
+    // composing_analysis. tools/batch_analyze's "Default" preset reads that same
+    // table, so the harness and the registered settings defaults cannot drift apart
+    // (OI-135; previously the harness hand-copied these 21 literals, kept in sync
+    // only by a code comment).
+    const ModePriorPreset appDefaults = modePriorAppDefaults();
+
+    // Diatonic
+    settings()->setDefaultValue(MODE_PRIOR_IONIAN, Val(appDefaults.ionian));
     settings()->valueChanged(MODE_PRIOR_IONIAN).onReceive(nullptr, [this](const Val&) {
         m_modePriorIonianChanged.notify();
     });
-    settings()->setDefaultValue(MODE_PRIOR_DORIAN, Val(-0.50));
+    settings()->setDefaultValue(MODE_PRIOR_DORIAN, Val(appDefaults.dorian));
     settings()->valueChanged(MODE_PRIOR_DORIAN).onReceive(nullptr, [this](const Val&) {
         m_modePriorDorianChanged.notify();
     });
-    settings()->setDefaultValue(MODE_PRIOR_PHRYGIAN, Val(-1.50));
+    settings()->setDefaultValue(MODE_PRIOR_PHRYGIAN, Val(appDefaults.phrygian));
     settings()->valueChanged(MODE_PRIOR_PHRYGIAN).onReceive(nullptr, [this](const Val&) {
         m_modePriorPhrygianChanged.notify();
     });
-    settings()->setDefaultValue(MODE_PRIOR_LYDIAN, Val(0.00));
+    settings()->setDefaultValue(MODE_PRIOR_LYDIAN, Val(appDefaults.lydian));
     settings()->valueChanged(MODE_PRIOR_LYDIAN).onReceive(nullptr, [this](const Val&) {
         m_modePriorLydianChanged.notify();
     });
-    settings()->setDefaultValue(MODE_PRIOR_MIXOLYDIAN, Val(-0.20));
+    settings()->setDefaultValue(MODE_PRIOR_MIXOLYDIAN, Val(appDefaults.mixolydian));
     settings()->valueChanged(MODE_PRIOR_MIXOLYDIAN).onReceive(nullptr, [this](const Val&) {
         m_modePriorMixolydianChanged.notify();
     });
-    settings()->setDefaultValue(MODE_PRIOR_AEOLIAN, Val(1.00));
+    settings()->setDefaultValue(MODE_PRIOR_AEOLIAN, Val(appDefaults.aeolian));
     settings()->valueChanged(MODE_PRIOR_AEOLIAN).onReceive(nullptr, [this](const Val&) {
         m_modePriorAeolianChanged.notify();
     });
-    settings()->setDefaultValue(MODE_PRIOR_LOCRIAN, Val(-3.50));
+    settings()->setDefaultValue(MODE_PRIOR_LOCRIAN, Val(appDefaults.locrian));
     settings()->valueChanged(MODE_PRIOR_LOCRIAN).onReceive(nullptr, [this](const Val&) {
         m_modePriorLocrianChanged.notify();
     });
 
-    // ── Mode priors — melodic minor family ──────────────────────────────────
-    settings()->setDefaultValue(MODE_PRIOR_MELODIC_MINOR, Val(-0.50));
+    // Melodic minor family
+    settings()->setDefaultValue(MODE_PRIOR_MELODIC_MINOR, Val(appDefaults.melodicMinor));
     settings()->valueChanged(MODE_PRIOR_MELODIC_MINOR).onReceive(nullptr, [this](const Val&) {
         m_modePriorMelodicMinorChanged.notify();
     });
-    settings()->setDefaultValue(MODE_PRIOR_DORIAN_B2, Val(-1.50));
+    settings()->setDefaultValue(MODE_PRIOR_DORIAN_B2, Val(appDefaults.dorianB2));
     settings()->valueChanged(MODE_PRIOR_DORIAN_B2).onReceive(nullptr, [this](const Val&) {
         m_modePriorDorianB2Changed.notify();
     });
-    settings()->setDefaultValue(MODE_PRIOR_LYDIAN_AUGMENTED, Val(-1.00));
+    settings()->setDefaultValue(MODE_PRIOR_LYDIAN_AUGMENTED, Val(appDefaults.lydianAugmented));
     settings()->valueChanged(MODE_PRIOR_LYDIAN_AUGMENTED).onReceive(nullptr, [this](const Val&) {
         m_modePriorLydianAugmentedChanged.notify();
     });
-    settings()->setDefaultValue(MODE_PRIOR_LYDIAN_DOMINANT, Val(-0.30));
+    settings()->setDefaultValue(MODE_PRIOR_LYDIAN_DOMINANT, Val(appDefaults.lydianDominant));
     settings()->valueChanged(MODE_PRIOR_LYDIAN_DOMINANT).onReceive(nullptr, [this](const Val&) {
         m_modePriorLydianDominantChanged.notify();
     });
-    settings()->setDefaultValue(MODE_PRIOR_MIXOLYDIAN_B6, Val(-1.00));
+    settings()->setDefaultValue(MODE_PRIOR_MIXOLYDIAN_B6, Val(appDefaults.mixolydianB6));
     settings()->valueChanged(MODE_PRIOR_MIXOLYDIAN_B6).onReceive(nullptr, [this](const Val&) {
         m_modePriorMixolydianB6Changed.notify();
     });
-    settings()->setDefaultValue(MODE_PRIOR_AEOLIAN_B5, Val(-2.00));
+    settings()->setDefaultValue(MODE_PRIOR_AEOLIAN_B5, Val(appDefaults.aeolianB5));
     settings()->valueChanged(MODE_PRIOR_AEOLIAN_B5).onReceive(nullptr, [this](const Val&) {
         m_modePriorAeolianB5Changed.notify();
     });
-    settings()->setDefaultValue(MODE_PRIOR_ALTERED, Val(-3.50));
+    settings()->setDefaultValue(MODE_PRIOR_ALTERED, Val(appDefaults.altered));
     settings()->valueChanged(MODE_PRIOR_ALTERED).onReceive(nullptr, [this](const Val&) {
         m_modePriorAlteredChanged.notify();
     });
 
-    // ── Mode priors — harmonic minor family ─────────────────────────────────
-    settings()->setDefaultValue(MODE_PRIOR_HARMONIC_MINOR, Val(-0.30));
+    // Harmonic minor family
+    settings()->setDefaultValue(MODE_PRIOR_HARMONIC_MINOR, Val(appDefaults.harmonicMinor));
     settings()->valueChanged(MODE_PRIOR_HARMONIC_MINOR).onReceive(nullptr, [this](const Val&) {
         m_modePriorHarmonicMinorChanged.notify();
     });
-    settings()->setDefaultValue(MODE_PRIOR_LOCRIAN_SHARP6, Val(-2.00));
+    settings()->setDefaultValue(MODE_PRIOR_LOCRIAN_SHARP6, Val(appDefaults.locrianSharp6));
     settings()->valueChanged(MODE_PRIOR_LOCRIAN_SHARP6).onReceive(nullptr, [this](const Val&) {
         m_modePriorLocrianSharp6Changed.notify();
     });
-    settings()->setDefaultValue(MODE_PRIOR_IONIAN_SHARP5, Val(-1.50));
+    settings()->setDefaultValue(MODE_PRIOR_IONIAN_SHARP5, Val(appDefaults.ionianSharp5));
     settings()->valueChanged(MODE_PRIOR_IONIAN_SHARP5).onReceive(nullptr, [this](const Val&) {
         m_modePriorIonianSharp5Changed.notify();
     });
-    settings()->setDefaultValue(MODE_PRIOR_DORIAN_SHARP4, Val(-1.50));
+    settings()->setDefaultValue(MODE_PRIOR_DORIAN_SHARP4, Val(appDefaults.dorianSharp4));
     settings()->valueChanged(MODE_PRIOR_DORIAN_SHARP4).onReceive(nullptr, [this](const Val&) {
         m_modePriorDorianSharp4Changed.notify();
     });
-    settings()->setDefaultValue(MODE_PRIOR_PHRYGIAN_DOMINANT, Val(-0.80));
+    settings()->setDefaultValue(MODE_PRIOR_PHRYGIAN_DOMINANT, Val(appDefaults.phrygianDominant));
     settings()->valueChanged(MODE_PRIOR_PHRYGIAN_DOMINANT).onReceive(nullptr, [this](const Val&) {
         m_modePriorPhrygianDominantChanged.notify();
     });
-    settings()->setDefaultValue(MODE_PRIOR_LYDIAN_SHARP2, Val(-2.00));
+    settings()->setDefaultValue(MODE_PRIOR_LYDIAN_SHARP2, Val(appDefaults.lydianSharp2));
     settings()->valueChanged(MODE_PRIOR_LYDIAN_SHARP2).onReceive(nullptr, [this](const Val&) {
         m_modePriorLydianSharp2Changed.notify();
     });
-    settings()->setDefaultValue(MODE_PRIOR_ALTERED_DOM_BB7, Val(-3.50));
+    settings()->setDefaultValue(MODE_PRIOR_ALTERED_DOM_BB7, Val(appDefaults.alteredDomBB7));
     settings()->valueChanged(MODE_PRIOR_ALTERED_DOM_BB7).onReceive(nullptr, [this](const Val&) {
         m_modePriorAlteredDomBB7Changed.notify();
     });

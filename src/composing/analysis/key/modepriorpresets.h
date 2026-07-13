@@ -73,4 +73,20 @@ struct ModePriorPreset {
 /// Standard, Jazz, Modal, Baroque, Contemporary.
 std::vector<ModePriorPreset> modePriorPresets();
 
+/// The app's out-of-box mode priors — the 21 values ComposingConfiguration::init()
+/// registers as the MODE_PRIOR_* settings defaults.
+///
+/// This is NOT one of the five named tuning presets (it is absent from
+/// modePriorPresets()) and it is NOT the ModePriorPreset struct defaults, i.e. not
+/// "Standard": the app defaults diverge from Standard on 11 of the 21 modes (lydian,
+/// mixolydian, locrian, lydianAugmented, lydianDominant, mixolydianB6, aeolianB5,
+/// locrianSharp6, ionianSharp5, dorianSharp4, lydianSharp2).
+///
+/// It lives here for the same reason modePriorPresets() does (see the note above):
+/// composing_analysis is the only library both the app and tools/batch_analyze link,
+/// so it is the one place where the settings registration and the harness's "Default"
+/// preset — which exists to corpus-measure the configuration users actually run — can
+/// read ONE table instead of value-copying it between them (OI-135).
+ModePriorPreset modePriorAppDefaults();
+
 } // namespace mu::composing

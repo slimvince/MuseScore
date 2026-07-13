@@ -42,6 +42,7 @@
 #include "composing/analysis/key/modepriorpresets.h"
 
 using mu::composing::ModePriorPreset;
+using mu::composing::modePriorAppDefaults;
 using mu::composing::modePriorPresets;
 
 namespace {
@@ -125,6 +126,60 @@ TEST(Composing_ModePriorPresetsTests, AllFivePresetsAreDistinct)
                 << " must differ in at least one prior";
         }
     }
+}
+
+// ── Contract: the app out-of-box defaults (criterion 3 — oracle) ─────────────
+
+TEST(Composing_ModePriorPresetsTests, AppDefaultsAreNotOneOfTheNamedPresets)
+{
+    // modepriorpresets.h documents modePriorAppDefaults() as the app's registered
+    // settings defaults — NOT a sixth tuning preset. The named-preset list is the
+    // user-visible one and must stay at five; a caller asking for "Default" is served
+    // by modePriorAppDefaults(), not by a lookup in modePriorPresets().
+    const std::vector<ModePriorPreset> p = modePriorPresets();
+    ASSERT_EQ(p.size(), 5u);
+    for (const ModePriorPreset& preset : p) {
+        EXPECT_NE(preset.name, "Default");
+    }
+    EXPECT_EQ(modePriorAppDefaults().name, "Default");
+}
+
+TEST(Composing_ModePriorPresetsTests, AppDefaultsDivergeFromStandardOnElevenModes)
+{
+    // The documented contract (modepriorpresets.h, and the applyPreset() comment in
+    // tools/batch_analyze.cpp): the app's out-of-box priors are NOT the struct defaults,
+    // i.e. NOT "Standard" — they diverge on 11 of the 21 modes, and agree on the other 10.
+    // This is the reason "Default" cannot simply be served as the Standard preset, so it
+    // is a genuine oracle rather than a pinned magnitude. Since the harness's "Default"
+    // preset and ComposingConfiguration::init() now read this ONE table (OI-135), the
+    // divergence is stated in exactly one place and checked here.
+    const ModePriorPreset standard;          // == modePriorPresets()[0], by the test above
+    const ModePriorPreset app = modePriorAppDefaults();
+
+    // The 11 documented divergences.
+    EXPECT_NE(app.lydian, standard.lydian);
+    EXPECT_NE(app.mixolydian, standard.mixolydian);
+    EXPECT_NE(app.locrian, standard.locrian);
+    EXPECT_NE(app.lydianAugmented, standard.lydianAugmented);
+    EXPECT_NE(app.lydianDominant, standard.lydianDominant);
+    EXPECT_NE(app.mixolydianB6, standard.mixolydianB6);
+    EXPECT_NE(app.aeolianB5, standard.aeolianB5);
+    EXPECT_NE(app.locrianSharp6, standard.locrianSharp6);
+    EXPECT_NE(app.ionianSharp5, standard.ionianSharp5);
+    EXPECT_NE(app.dorianSharp4, standard.dorianSharp4);
+    EXPECT_NE(app.lydianSharp2, standard.lydianSharp2);
+
+    // The other 10 agree.
+    EXPECT_DOUBLE_EQ(app.ionian, standard.ionian);
+    EXPECT_DOUBLE_EQ(app.dorian, standard.dorian);
+    EXPECT_DOUBLE_EQ(app.phrygian, standard.phrygian);
+    EXPECT_DOUBLE_EQ(app.aeolian, standard.aeolian);
+    EXPECT_DOUBLE_EQ(app.melodicMinor, standard.melodicMinor);
+    EXPECT_DOUBLE_EQ(app.dorianB2, standard.dorianB2);
+    EXPECT_DOUBLE_EQ(app.altered, standard.altered);
+    EXPECT_DOUBLE_EQ(app.harmonicMinor, standard.harmonicMinor);
+    EXPECT_DOUBLE_EQ(app.phrygianDominant, standard.phrygianDominant);
+    EXPECT_DOUBLE_EQ(app.alteredDomBB7, standard.alteredDomBB7);
 }
 
 // ── Design intent (semi-oracle): Jazz embraces the modal colours ─────────────
