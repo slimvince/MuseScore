@@ -31,8 +31,10 @@ THE ABSTAIN-AWARE CONVENTION (OI-33; before any abstaining path is adoption-gate
 Every reported agreement-% is published WITH its abstain/coverage figure so a metric can
 never be flattered by opting out of the hard slices:
   - ROOT respect (the governing hard stop): an abstained cell — OUR region carries no root_pc —
-    is counted a DISAGREEMENT (root_agree = our.root_pc == dcml.root_pc is False for None),
-    so the root metric is NOT abstention-reducible. The scored/unscored duration is published.
+    is counted a DISAGREEMENT, so the root metric is NOT abstention-reducible. The
+    scored/unscored duration is published. The comparison itself is compare_analyses.roots_agree,
+    the ONE root-equality decision every graded site routes through (OI-52), so this convention
+    is encoded once instead of being re-implemented at each `==`.
   - KEY respect: an abstained cell — OUR key is unparseable/absent — becomes `keyfail` and is
     EXCLUDED from the key-agree denominator (agree+disagree). So the key-agree-% IS abstention-
     reducible: raising the key-abstain rate can lift key-agree without better inference. The
@@ -144,8 +146,12 @@ class PieceGrid:
         bucket = pair.category
         self.bucket_dur[bucket] += w
 
-        # respect 1 — root
-        root_agree = (our_r.root_pc == dcml_r.root_pc)
+        # respect 1 — root. The one shared comparison (OI-52); the abstain convention
+        # stated below in THE ABSTAIN-AWARE CONVENTION is encoded there, once, rather
+        # than re-implemented at each graded site. classify_pair has already dropped any
+        # cell whose DCML root did not resolve, so an abstain here is OURS, and it counts
+        # as a disagreement.
+        root_agree = cmp.roots_agree(our_r.root_pc, dcml_r.root_pc)
         # respect 2 — RN (exact+partial == agree, per design doc rn_agree)
         rn_agree = bucket in ("exact", "partial")
         # respect 3 — key vs the DCML GLOBAL (home) key (keyfail reported separately)

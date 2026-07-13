@@ -402,7 +402,7 @@ def classify_pair(ours_region, dcml_region) -> Optional[RnPair]:
 
     # If either side is unparseable, fall back to root-only classification.
     if ours_parts is None or dcml_parts is None:
-        if ours_region.root_pc == dcml_region.root_pc:
+        if cmp.roots_agree(ours_region.root_pc, dcml_region.root_pc):   # OI-52
             # Root agrees, but we can't compare RN strings — treat as partial
             # (unknown extension/quality difference) so we don't claim exact.
             cat = "partial"
@@ -420,7 +420,7 @@ def classify_pair(ours_region, dcml_region) -> Optional[RnPair]:
             category=cat,
         )
 
-    root_match    = (ours_region.root_pc == dcml_region.root_pc)
+    root_match    = cmp.roots_agree(ours_region.root_pc, dcml_region.root_pc)   # OI-52
     quality_match = _same_quality(ours_parts[1], dcml_parts[1])
 
     if root_match and quality_match:
@@ -521,10 +521,12 @@ def score_regions(ours_regions: list, dcml_regions: list) -> PieceStats:
     for ours_r, dr in zip(ours_regions, matches):
         if dr is None:
             continue
-        # root-agree denominator (parallel to compare_analyses.dcml_direct)
+        # root-agree denominator (parallel to compare_analyses.dcml_direct). The
+        # `is not None` guard is the SCOREABILITY decision (a GT root that did not
+        # resolve is out of the denominator); the equality itself is OI-52's one helper.
         if dr.root_pc is not None:
             stats.root_aligned += 1
-            if dr.root_pc == ours_r.root_pc:
+            if cmp.roots_agree(ours_r.root_pc, dr.root_pc):
                 stats.root_agree += 1
         pair = classify_pair(ours_r, dr)
         if pair is None:

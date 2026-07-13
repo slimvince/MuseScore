@@ -240,8 +240,40 @@ def align_regions(ours: list[Region], theirs: list[Region]) -> list[tuple[Region
 # Classification
 # ══════════════════════════════════════════════════════════════════════════
 
+def roots_agree(ours_root_pc: Optional[int], gt_root_pc: Optional[int]) -> bool:
+    """The ONE "does our root equal the ground-truth root" decision (OI-52).
+
+    Every graded surface routes its OURS-vs-ground-truth root comparison through here —
+    the governing hard stop (a8_rebaseline_measure), the robust-unit grid (compare_rn),
+    and this module's _roots_match, three_way_classify, dcml_direct and dcml_anchored.
+    (three_way_classify's music21-vs-DCML leg deliberately does NOT route through here:
+    that is a corroborator-vs-GT comparison, not ours-vs-GT, and the convention below is
+    about OUR abstain.) The comparison itself is one line; what must not be re-decided
+    per site is THE ABSTAIN CONVENTION (OI-33), which is the whole reason this exists:
+
+      • OURS abstained (root_pc is None) against a resolved ground-truth root counts
+        as a DISAGREEMENT — None != int. This is what makes the root metric
+        non-abstention-reducible: declining the hard slices cannot flatter it.
+      • The GROUND TRUTH having no resolvable root is a SCOREABILITY question, not an
+        equality one, and each caller settles it before calling: compare_rn.classify_pair
+        drops the pair (so a8, which skips a cell whose pair is None, never sees one),
+        and compare_rn's root_agree denominator guards `if dr.root_pc is not None`.
+        compare_analyses.classify does not guard, so a both-abstained pair would read
+        here as a match — measured over the committed corpus (352 stems x 3 presets,
+        33,296 aligned pairs) that case does not occur even once, on either leg, so the
+        four sites agree in practice as well as in intent.
+
+    A convention held only by prose, re-implemented at four `==` sites, is exactly the
+    construction that let two copies of the KEY parser drift into different readings of
+    the same modes (OI-132's discovery D2) — where folding them moved a graded figure.
+    Folding this one moved nothing: the expression is unchanged, so every site's verdict
+    is identical by construction, which the a8 hard-stop diff confirms (+0/-0, all presets).
+    """
+    return ours_root_pc == gt_root_pc
+
+
 def _roots_match(ours: Region, theirs: Region) -> bool:
-    return ours.root_pc == theirs.root_pc
+    return roots_agree(ours.root_pc, theirs.root_pc)
 
 
 def _quality_matches(ours: Region, theirs: Region) -> bool:
@@ -371,7 +403,10 @@ def three_way_classify(ours_root_pc: Optional[int],
         return 'no_dcml'
     if ours_root_pc is None or theirs_root_pc is None:
         return 'no_dcml'
-    ours_dcml   = (ours_root_pc   == dcml_root_pc)
+    ours_dcml   = roots_agree(ours_root_pc, dcml_root_pc)          # OI-52
+    # NOT roots_agree: this is music21 against DCML — a corroborator-vs-GT comparison,
+    # not OURS-vs-GT — and the helper's abstain convention is about OUR abstain. Both
+    # legs are guaranteed non-None here anyway (the two guards above).
     theirs_dcml = (theirs_root_pc == dcml_root_pc)
     if ours_dcml and theirs_dcml:
         return 'all_agree'
@@ -618,7 +653,7 @@ def compare_ours_vs_dcml_direct(
         if dr is None:
             results.append(DcmlDirectResult(ours=ours, dcml=None, category='unaligned',
                                              rn_agree=rn_agree))
-        elif dr.root_pc is not None and dr.root_pc == ours.root_pc:
+        elif dr.root_pc is not None and roots_agree(ours.root_pc, dr.root_pc):   # OI-52
             results.append(DcmlDirectResult(ours=ours, dcml=dr, category='dcml_agree',
                                              rn_agree=rn_agree))
         else:
@@ -691,7 +726,7 @@ def compare_dcml_anchored(
         ours_rn = _rn_base_cased(best.roman_numeral or '')
         if dcml_rn and ours_rn:
             rn_agree = (dcml_rn == ours_rn)
-        if dr.root_pc is not None and dr.root_pc == best.root_pc:
+        if dr.root_pc is not None and roots_agree(best.root_pc, dr.root_pc):   # OI-52
             out.append(DcmlAnchoredResult(dcml=dr, ours=best,
                                            category='dcml_agree',
                                            rn_agree=rn_agree))
