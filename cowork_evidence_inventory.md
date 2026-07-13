@@ -203,6 +203,15 @@ Every alleged circle above fell to one of these. None survived as a true blocker
 which is the answer to the user's worry: the circularity challenge, named
 completely, stops nothing.
 
+## 8b. A declared future consumer, named by the user (2026-07-13)
+
+**The intonation/tuning feature (held long-horizon, register row OI-62) will consume
+the published analysis facts:** knowing the mode, the chord, its function, and the
+progression enables just-intonation tuning decisions — especially in the TIME
+dimension (staying in tune over time versus allowing controlled drift). This is a
+concrete instance of the publish-evidence-broadly rationale: a consumer none of the
+producing layers were designed for, recognizable only because the facts are visible.
+
 ## 9. What this inventory changes
 
 The design opening's decisions gain a concrete evidence menu: the emission decision
