@@ -15,10 +15,17 @@
   (Baroque/Jazz/Default — the ratified baselines). The failing mass to explain is
   the remaining **~32 / 36 / 32 %**.
 - In the failing regions, the ground-truth key is PRESENT in the carried
-  candidate-key list (`keyAlternatives`) for **66.7 / 61.6 / 64.1 %** of regions and
-  ABSENT for the rest (`tools/reports/mode_key_chord_probe.json`). The list carries
+  candidate-key list (`keyAlternatives`) for **75.6 / 68.7 / 72.5 %** of regions and
+  ABSENT for the rest (`tools/reports/joint_probe_measure.json`). The list carries
   no usable per-candidate confidence (populated on 2 of 25,864), and the runner-up
   closeness is computed then discarded (rows OI-75/OI-81).
+  *(Figures refreshed at OI-159/OI-160 under the OI-142-corrected ground truth; they
+  supersede **66.7 / 61.6 / 64.1 %**, which was graded against the pre-correction
+  ground truth — #12, kept beside. The menu-widening signal is therefore weaker than
+  originally recorded: the menu misses the true key in ~¼ of failing regions, not ~⅓.
+  Still below the 80 % bar, so the reading is unchanged. The artifact is the canonical
+  one since OI-160 — formerly the separately-named `mode_key_chord_probe.json`, now
+  retired, #6.)*
 - Chord ROOTS cannot separate relative keys — measured inert (the OI-43 probe):
   same pitch collection, same roots. FUNCTIONAL evidence can: a V–i cadence in the
   relative minor contains the leading tone (a note outside the relative major's
@@ -99,5 +106,6 @@ under the certified-layer discipline and the entry-gate ordering.
 
 *Cross-references: OI-141 (the question, user-framed), OI-75/OI-81 (discarded
 ranking facts), OI-94/OI-78/OI-91/OI-97 (key-layer audit facts), OI-33 (abstention
-caveat), `tools/reports/mode_key_chord_probe.json` (containment),
-`cc_mode_key_chord_probe_report.md` (the probe this follows).*
+caveat), `tools/reports/joint_probe_measure.json` (containment — the canonical
+joint-probe artifact since OI-160), `cc_mode_key_chord_probe_report.md` (the probe
+this follows).*

@@ -13,7 +13,11 @@
 > **Provenance / reproducibility (#16).** Corpus `c50002fee1` (the pinned frozen gate corpus, 352 source
 > XMLs, 326/326 WiR-covered per preset). Instrument commit **`689840d2ef`** (`feat(composing): --dump-joint-probe`).
 > HEAD **`fa0a881aa4`**, branch `master`, fork-only. Measurement report artifact:
-> `tools/reports/joint_probe_measure.json`. Both regression stops untouched/green (production byte-identical —
+> `tools/reports/joint_probe_measure.json` — **re-measured at OI-160 (2026-07-13) under the OI-142-corrected
+> ground truth, and now the ONE canonical artifact of this instrument** (it carries both axes: the chord-axis
+> blocks this report reads and the key-axis block the OI-43/OI-44 shelve record reads; the separately-named
+> duplicate `mode_key_chord_probe.json` is retired, #6). The corrected §2.1 figures are marked in place, the
+> superseded ones kept beside them (#12). Both regression stops untouched/green (production byte-identical —
 > §5). The benefit is measured the SAME way the robust stop is (#1): root-agreement vs the DCML (When-in-Rome)
 > ground truth, aligned to our region ticks by the SHARED `compare_analyses._dcml_time_spans` /
 > `compare_rn._active_index_at` / `dcml_parser` substrate the a8 driver reuses — no proxy, no new tick matcher.
@@ -99,15 +103,31 @@ argmax key (both roots defined). Per flip, vs the DCML root: **corr** = the flip
 **harm** = argmax agreed and the flip does not; **neutral** = neither agrees (a root move that changes nothing).
 This is the same net-(corr−harm) framing that exposed the F-B override (`cc_engage_c3_measurement_report.md`).
 
+> **★ RE-MEASURED AT OI-160 (2026-07-13) — the figures below are the corrected ones; the ruling is
+> unchanged.** The original run pre-dated the **OI-142** ground-truth correction (the 12 transposed
+> editions' offsets, applied at `dcml_parser.load_wir_regions`), so the DCML-graded corr/harm split
+> below was sorted against a partly-wrong ground truth. The artifact was refreshed from a run at HEAD
+> and the superseded figures are kept beside the corrected ones (#12). **What moved and what did not
+> is the whole story:** the **fire-rate is byte-identical** (99 / 95 / 89 flip regions — which chords
+> flip is a property of *our analyzer*, and our analyzer did not change), and so are beam width, the
+> pedal counts, and the region counts; **only the ground-truth-graded corr/harm sort moved.** The
+> **coupled minority (§2.2) — the population this decision actually turns on — is byte-identical.**
+> See `cc_oi160_report.md`; superseded artifact at `tools/reports/snapshot_2026-07-13_pre_oi160/`.
+
 | preset | **top-alt flip** (per region, the highest-conf carried alt that flips) | **per-flip pairs** (all region×alt flips) | **any-alt oracle bound** (DCML-scored regions) |
 |---|---|---|---|
-| Baroque | corr **37** / harm **28** / neut 32 → **net +9** (n=97) | 56 / 52 / 65 → net +4 (n=173) | corr-available **37**, harm-exposed **28**, over **6249** |
-| Jazz | corr **36** / harm **33** / neut 25 → **net +3** (n=94) | 70 / 55 / 48 → net +15 (n=173) | corr-available **36**, harm-exposed **33**, over **6149** |
-| Default | corr **35** / harm **25** / neut 29 → **net +10** (n=89) | 64 / 49 / 56 → net +15 (n=169) | corr-available **35**, harm-exposed **25**, over **6253** |
+| Baroque | corr **38** / harm **29** / neut 30 → **net +9** (n=97) | 59 / 53 / 61 → net +6 (n=173) | corr-available **38**, harm-exposed **29**, over **6249** |
+| Jazz | corr **39** / harm **33** / neut 22 → **net +6** (n=94) | 75 / 55 / 43 → net +20 (n=173) | corr-available **39**, harm-exposed **33**, over **6149** |
+| Default | corr **36** / harm **26** / neut 27 → **net +10** (n=89) | 67 / 50 / 52 → net +17 (n=169) | corr-available **36**, harm-exposed **26**, over **6253** |
+
+*Superseded (the pre-OI-142 grading, kept for the record — #12): top-alt corr/harm/neut **37/28/32 → net +9**
+(Baroque), **36/33/25 → net +3** (Jazz), **35/25/29 → net +10** (Default); per-flip pairs 56/52/65 → +4,
+70/55/48 → +15, 64/49/56 → +15; oracle bound 37/28, 36/33, 35/25. The net (corr−harm) moved
+**+9 / +3 / +10 → +9 / +6 / +10** — Jazz by three regions, Baroque and Default not at all.*
 
 Reading it:
 - **Every framing tells the same story: the flip is nearly a coin-flip.** Corrections exceed harms only
-  slightly; the net is a handful of regions out of ~6200. Absolute root-accuracy gain: **+0.05 to +0.24 pp**
+  slightly; the net is a handful of regions out of ~6200. Absolute root-accuracy gain: **+0.10 to +0.32 pp**
   (top-alt / per-flip); the **oracle ceiling is +0.6 pp** (a perfect key-selector capturing all corr, no harm).
 - **The oracle bound EQUALS the top-alt result** (corr-available == top-alt corr; harm-exposed == top-alt harm,
   to the unit on all presets). That is an owed-4 finding in itself: when a carried key CAN flip to the DCML root,
@@ -130,6 +150,11 @@ CLAUDE.md-verified, **not** the demoted emission sigmoid). Restricting the benef
 sign is not even stable across presets. This is the sharpest form of the go/no-go: the coupled minority — the
 *only* population for which the contract theory-justifies a key-coupled chord re-decode — does not yield a
 reliable correction surface.
+
+> **★ OI-160: this table is BYTE-IDENTICAL under the corrected ground truth** (4/4/8, 8/3/4, 2/4/5 — every
+> cell unmoved). The OI-142 correction re-sorted three graded flips corpus-wide (§2.1), and **none of them
+> fell in the coupled minority.** The sharpest evidence the no-go rests on is therefore untouched by the
+> correction, not merely unthreatened by it.
 
 ### §2.3 The fire-rate (owed-1 / owed-3) and beam width (owed-4)
 

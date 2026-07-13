@@ -22,8 +22,15 @@
 > WiR-covered per preset). Probe C++ instrument `689840d2ef` (`--dump-joint-probe`) —
 > **unchanged** (no C++ dump field was needed; the zero-C++ route). Grader: the additive KEY-axis
 > desk-sim extension of `tools/measure_joint_probe.py`. Artifact:
-> `tools/reports/mode_key_chord_probe.json`. Reference: `tools/a8_rebaseline_measure.py` on the
-> committed corpus (§3). Both regression stops untouched (no production change).
+> **`tools/reports/joint_probe_measure.json`** — since **OI-160** (2026-07-13) the ONE canonical
+> artifact of this instrument, carrying both axes (the key-axis `key_axis_desksim` block this report
+> reads, and the chord-axis blocks the arc-12 record reads). *It was formerly a separately-named file,
+> `tools/reports/mode_key_chord_probe.json`; that duplicate is **retired** — one instrument, one
+> artifact (#6). The retired file is preserved at `tools/reports/snapshot_2026-07-13_pre_oi160/`, and
+> every figure in this report is reproduced by the canonical artifact to the digit (the collapse run
+> differs from the OI-159 run in exactly one field: `git_hash`).* Reference:
+> `tools/a8_rebaseline_measure.py` on the committed corpus (§3). Both regression stops untouched
+> (no production change).
 >
 > **★ FIGURES REFRESHED 2026-07-13 (OI-159; `cc_wave1_finalize_report.md`).** The original run was
 > HEAD `243cfd2165` (the Task-0 register/discussion commit), which **pre-dated the OI-142
@@ -141,9 +148,12 @@ Reading it:
   which chords flip is a property of our analyzer, not of the ground truth — but *whether a flip
   corrects or harms* is graded against the ground truth, so the corr/harm split re-sorts: net
   **+9 / +6 / +10** (was +9 / +3 / +10). Out of ~6200 scored regions per preset that is still a
-  handful, and arc-12's conclusion ("the flip is nearly a coin-flip") is untouched. **The arc-12
-  evidence artifact itself (`tools/reports/joint_probe_measure.json`) and the report citing it are
-  still stale from the same cause — recorded as OI-160, not silently rewritten here.**
+  handful, and arc-12's conclusion ("the flip is nearly a coin-flip") is untouched. ***★ CLOSED at
+  OI-160 (2026-07-13):** the arc-12 evidence artifact and the report citing it
+  (`cc_engage_stage3_joint_measure_report.md` §2.1) are now refreshed from the same corrected run, and
+  the two artifacts are collapsed into the one canonical `tools/reports/joint_probe_measure.json`. The
+  arc-12 **no-go was re-confirmed, not reopened** — and its sharpest evidence, the coupled-minority
+  table (§2.2 there: 0 / +5 / −2), is **byte-identical** under the corrected ground truth.*
 - **The chord→key coupling (P1's mechanism) fires on 0.33–0.41 % of key-disagree regions**
   (7 / 8 / 6 regions — **the same regions, the same durations 9600 / 11760 / 8160 ticks**; the
   percentage rises only because the key-disagree denominator shrank). Even granting every one of
@@ -263,7 +273,8 @@ built around.
   chord-axis logic is untouched (reproduces net +9/+3/+10).
 - ✅ No self-invented labels/abbreviations/jargon — uses `keySeqMargin`, `keyAlternatives`,
   `global_key`, "menu-containment", "key-disagree" (the names in the code and the discussion doc).
-- ✅ Figures enter via the generated artifact `tools/reports/mode_key_chord_probe.json`
+- ✅ Figures enter via the generated artifact `tools/reports/joint_probe_measure.json` (the canonical
+  artifact since OI-160; formerly the separately-named `mode_key_chord_probe.json`)
   (#17f) + the a8 summary; no hand-transcribed measurement numbers (the desk-sim table §1 is
   hand-traced control flow, its roots cross-checked at the dump).
 - ✅ Coverage reported alongside every figure (OI-33); enum-table faithfulness proven (§3).

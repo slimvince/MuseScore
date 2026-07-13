@@ -467,14 +467,21 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--batch-analyze", metavar="PATH")
     ap.add_argument("--corpus-dir", default="tools/corpus")
-    # The default is a SCRATCH path, not tools/reports/joint_probe_measure.json — that file is
-    # COMMITTED evidence (the arc-#12 / OI-43 go/no-go the shelve ruling rests on), and a bare
-    # re-run must not silently overwrite it (the OI-151 defect, same class, this file). Writing
-    # the committed path is an explicit --out.
+    # THE ONE COMMITTED ARTIFACT of this instrument is tools/reports/joint_probe_measure.json
+    # (OI-160, 2026-07-13): a single full run carrying BOTH axes — the chord-axis blocks the arc-12
+    # go/no-go rests on AND the key_axis_desksim block the OI-43/OI-44 shelve rests on. It used to be
+    # TWO committed files (this one plus a separately-named mode_key_chord_probe.json whose content
+    # was a strict superset); that duplicate is retired — one instrument, one artifact (#6). Do not
+    # re-create it: a second axis or a new question belongs in a new BLOCK of this report, not a
+    # second file.
+    #
+    # The default is a SCRATCH path, not the committed artifact, because a bare re-run must not
+    # silently overwrite committed evidence (the OI-151 defect, same class, this file). Writing the
+    # committed path is an explicit --out.
     ap.add_argument("--out", metavar="FILE", default="C:/tmp/joint_probe_measure.json",
                     help="write the JSON report here (default: a scratch path; pass "
                          "tools/reports/joint_probe_measure.json explicitly to re-baseline "
-                         "the committed evidence)")
+                         "the committed evidence — the ONE canonical artifact, both axes)")
     args = ap.parse_args()
 
     exe = rbp._find_batch_analyze(args.batch_analyze)
