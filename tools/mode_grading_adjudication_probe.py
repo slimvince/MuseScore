@@ -41,9 +41,13 @@ DCML ground truth through the OI-142-corrected dcml.load_wir_regions) is REPLICA
 a8_rebaseline_measure.build_piece_grid; the per-cell baseline key verdict reproduces
 a8's committed tools/robust_stop/summary.json agg counters byte-for-byte (establishment (a)).
 
-READ-ONLY: writes ONLY to --out (default tools/reports/, gitignored/regenerable) and validates the
-committed corpus manifest before reading (characterise_bir_false.validate_corpus_dir). Touches
-NOTHING under tools/robust_stop/ or tools/corpus/.
+READ-ONLY: writes ONLY to --out — which defaults to a SCRATCH path (OI-151). It does NOT default
+to tools/reports/mode_grading_adjudication_probe.json: that file is COMMITTED evidence, the record
+the user's OI-132 ruling was made on, and a bare re-run silently overwriting it destroys the
+pre-ruling evidence and breaks the figures cited in cc_mode_grading_adjudication_probe_report.md
+(#12 information loss + #10 doc-sync). Writing that path is an explicit --out. The probe also
+validates the committed corpus manifest before reading (characterise_bir_false.validate_corpus_dir)
+and touches NOTHING under tools/robust_stop/ or tools/corpus/.
 """
 from __future__ import annotations
 
@@ -346,7 +350,12 @@ def establishment(results):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--out", default=str(_ROOT / "tools" / "reports" / "mode_grading_adjudication_probe.json"))
+    # SCRATCH default (OI-151) — see the module docstring. The committed evidence path is written
+    # only when it is asked for by name.
+    ap.add_argument("--out", default="C:/tmp/mode_grading_adjudication_probe.json",
+                    help="write the JSON report here (default: a scratch path; pass "
+                         "tools/reports/mode_grading_adjudication_probe.json explicitly to "
+                         "overwrite the committed OI-132 ruling evidence)")
     args = ap.parse_args()
 
     results = [measure_preset(p) for p in PRESETS]
