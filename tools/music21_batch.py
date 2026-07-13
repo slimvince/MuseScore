@@ -10,12 +10,16 @@ Key design notes:
   - music21's romanNumeralFromChord() is STATELESS — it has no temporal context
     and operates on a single chord snapshot.  This means Roman numerals may
     differ from ours in transitional passages.
-  - Key detection: the emitted fields are "key" and "keyGlobal" (NOT "keyLocal" — this docstring
-    named a field that was never written; corrected 2026-07-13). "keyGlobal" is the
-    Krumhansl-Schmuckler global key (score.analyze('key')). "key" was INTENDED to be the FloatingKey
-    local sliding-window key, falling back to the global key — but that path has never executed
-    (see the DISCOVERY note at the fk_analyzer block; OI-158), so at HEAD "key" == "keyGlobal" on
-    every region of the committed corpus, and "romanNumeral" is computed against the global key.
+  - Key detection: music21 corroborates at the GLOBAL key only. The emitted fields are "key" and
+    "keyGlobal", and both carry the Krumhansl-Schmuckler global key (score.analyze('key'));
+    "romanNumeral" is computed against it. There is no local-key second opinion here. History
+    (OI-158): a FloatingKey local sliding window was intended, but music21.analysis.floatingKey
+    exports no such name (v9.9.1 — the class is KeyAnalyzer), so the constructor always raised, a
+    bare except swallowed it, and every region of the committed corpus was produced at the global
+    key. The dead machinery was removed 2026-07-13 after proving the corroborator regenerates
+    byte-identical without it. Whether the key layer should consume a KeyAnalyzer local-key
+    second opinion (as an explicitly-unvalidated cross-check, never under load) is an OPEN
+    evidence question, gated on the key-layer design — see cowork_evidence_inventory.md.
   - Tick offsets use 480 ticks per quarter note (matching MuseScore / batch_analyze).
 
 Usage:
@@ -42,14 +46,8 @@ import traceback
 from pathlib import Path
 
 try:
+    import music21
     from music21 import corpus, roman
-    from music21.analysis import floatingKey as m21_floatingKey
-    _HAS_FLOATING_KEY = True
-except ImportError:
-    _HAS_FLOATING_KEY = False
-
-try:
-    import music21  # noqa: F401
 except ImportError:
     print("music21 is not installed.  Install it with:  pip install music21",
           file=sys.stderr)
@@ -190,45 +188,28 @@ def analyze_chorale(score, source_name: str) -> dict:
         source, detectedKey, keyConfidence, regions[]
         Each region: measureNumber, beat, startTick, endTick, duration,
                      rootPitchClass, quality, chordSymbol, romanNumeral,
-                     key, keyLocal, diatonicToKey (always null — music21 doesn't
-                     expose this directly), alternatives (always empty — music21
-                     returns only one candidate).
+                     key, keyGlobal (both the global key — see OI-158),
+                     diatonicToKey (always null — music21 doesn't expose this
+                     directly), alternatives (always empty — music21 returns
+                     only one candidate).
     """
-    # ── Global key (Krumhansl-Schmuckler) ──────────────────────────────────
+    # ── Global key (Krumhansl-Schmuckler) — the ONLY key this corroborator has ──
+    # OI-158: the emitted "key" is the global key, and so is the key the Roman numeral below is
+    # measured against. A local sliding-window key was intended here and never once ran (the
+    # `FloatingKey` name does not exist in music21 9.9.1); the dead machinery is removed, and
+    # removing it was proven byte-identical at the artifact — every committed .music21.json
+    # regenerates with the same sha256. Activating music21's real `KeyAnalyzer` would give the
+    # corroborator genuinely local keys and CHANGE it: a ground-truth-corroborator re-baseline
+    # under the user's ratification (#16), not a hygiene edit. It is deliberately not done here;
+    # the open question — whether the key layer should consume a KeyAnalyzer local key as an
+    # explicitly-unvalidated cross-check (#19: never under load until established) — is carried
+    # on OI-158 and catalogued in cowork_evidence_inventory.md.
     try:
         global_key = score.analyze("key")
         key_confidence = float(getattr(global_key, "correlationCoefficient", 0.0))
     except Exception:
         global_key = None
         key_confidence = 0.0
-
-    # ── Optional: FloatingKey local sliding window ─────────────────────────
-    # ★ DISCOVERY 2026-07-13 (OI-145 wave-1 hygiene sweep, establishing the OI-133(c) "FloatingKey
-    #   ±4" tolerance) — THIS BLOCK HAS NEVER RUN, and the ±4 is not a tolerance but unreachable
-    #   configuration on an object that is never constructed.
-    #
-    #   music21.analysis.floatingKey exports NO name `FloatingKey` (v9.9.1 — the class is
-    #   `KeyAnalyzer`). So the constructor below raises AttributeError, the bare `except Exception`
-    #   swallows it, fk_analyzer stays None, and `local_key` silently falls back to the GLOBAL key
-    #   for every region — which then feeds `romanNumeral` and the emitted "key" field. Proven at
-    #   the artifact, not inferred: in the committed corroborator all 28,914 Baroque regions have
-    #   key == keyGlobal, on every stem. The intended local sliding window has never once run.
-    #
-    #   NOT FIXED HERE, deliberately. Constructing KeyAnalyzer would give `romanNumeral` and `key`
-    #   genuinely local values, changing the committed .music21.json — a ground-truth-corroborator
-    #   change, i.e. a re-baseline event under the user's ratification, not a hygiene edit. The
-    #   governing hard stop is unaffected either way (the a8 robust unit is DCML-only and never
-    #   reads music21; the BIR gate reads music21's root + quality, not its key or RN) — the blast
-    #   radius is the full_agree / chord_agree_rn_differs / chord_agree_key_differs sub-split in
-    #   compare_analyses.classify. Tracked at OI-158; the user rules on whether to activate it.
-    fk_analyzer = None
-    if _HAS_FLOATING_KEY:
-        try:
-            fk_analyzer = m21_floatingKey.FloatingKey()   # ← always raises; see above
-            fk_analyzer.numFlats = 4
-            fk_analyzer.numSharps = 4
-        except Exception:
-            fk_analyzer = None
 
     # ── Chordify ───────────────────────────────────────────────────────────
     try:
@@ -254,19 +235,11 @@ def analyze_chorale(score, source_name: str) -> dict:
         dur_ql     = float(elem.duration.quarterLength)
         end_tick   = int((float(elem.offset) + dur_ql) * TICKS_PER_QUARTER)
 
-        # ── Local key ─────────────────────────────────────────────────────
-        local_key = global_key
-        if fk_analyzer is not None:
-            try:
-                local_key = fk_analyzer.analyze(score, elem.offset)
-            except Exception:
-                local_key = global_key
-
-        # ── Roman numeral ─────────────────────────────────────────────────
+        # ── Roman numeral (against the global key — OI-158) ────────────────
         rn_str = "?"
-        if local_key is not None:
+        if global_key is not None:
             try:
-                rn = roman.romanNumeralFromChord(elem, local_key)
+                rn = roman.romanNumeralFromChord(elem, global_key)
                 rn_str = rn.figure
             except Exception:
                 rn_str = "?"
@@ -288,7 +261,7 @@ def analyze_chorale(score, source_name: str) -> dict:
             "quality":        _normalize_quality(elem.quality),
             "chordSymbol":    chord_sym,
             "romanNumeral":   rn_str,
-            "key":            _key_to_str(local_key),
+            "key":            _key_to_str(global_key),
             "keyGlobal":      _key_to_str(global_key),
             # music21 doesn't expose a direct diatonic-to-key boolean;
             # compare_analyses.py derives this from the romanNumeral figure

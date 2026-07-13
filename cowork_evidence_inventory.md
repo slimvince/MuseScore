@@ -223,6 +223,30 @@ ambiguity kinds, the ranked-candidates-plus-margins confidence contract); the ga
 publication, which is wave 3's job anyway. A register row for the feature follows at
 the next free number (numbers are in flight in the current CC session).
 
+## 8c. An external evidence source, filed OPEN — music21's local key (OI-158)
+
+**The question, not yet decided:** should the key layer consume a music21
+`KeyAnalyzer` **local** key as a second opinion — an explicitly-unvalidated,
+non-ground-truth cross-check on our own key inference?
+
+**Where it comes from.** `tools/music21_batch.py` produces the music21 corroborator
+(`.music21.json`). It corroborates at the **global** key only: a local sliding-window
+key was intended, but the class it called does not exist in music21 9.9.1 (the class
+is `KeyAnalyzer`), so the constructor always raised, the exception was swallowed, and
+every committed region was produced at the global key. The dead machinery was removed
+2026-07-13 (proven byte-identical at the artifact — all 352 `.music21.json` regenerate
+with the same sha256). Removing it deliberately does **not** decide this question:
+music21's real `KeyAnalyzer` is still there to be called.
+
+**Status if it is ever adopted:** it enters as an **unvalidated** field and stays
+unvalidated until positively established (#19 — a consumer may not put it under load
+before then), and music21 is **not** ground truth (DCML/When-in-Rome is; music21 only
+corroborates). Activating it changes the committed `.music21.json`, so adoption is a
+**corroborator re-baseline** under the user's ratification (#16), not a refresh.
+
+**Gate:** the key-layer design conversation. Carried on **OI-158**; the dead-code half
+of that row is closed, this half stays open.
+
 ## 9. What this inventory changes
 
 The design opening's decisions gain a concrete evidence menu: the emission decision

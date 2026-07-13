@@ -101,6 +101,14 @@ LIT_OVERRIDE = {
     (MB, "71", "480"): ("ESTABLISHED", "value-copied-constant", 1,
         "TICKS_PER_QUARTER=480 duplicates MuseScore Constants::DIVISION (documented). Value-copied; "
         "silently drifts if DIVISION ever changes (DIVISION is fixed, so low risk)."),
+    # SUPERSEDED BY OI-158 (2026-07-13), and left verbatim on purpose: these two rows are the
+    # FROZEN pass-1 verdicts, stamped to the audit freeze commit, and the disposition artifacts they
+    # generate must keep reproducing byte-identical. Establishing them is what FOUND the defect: the
+    # two literals were never tolerances at all but unreachable configuration on an object music21
+    # 9.9.1 cannot construct (`FloatingKey` does not exist; the class is `KeyAnalyzer`), so they
+    # shaped nothing -- the "feeds oracle_root_metric's KEY tiers" claim in the note below is refuted.
+    # The dead block was removed from music21_batch.py in the OI-158 fix; the live record is the
+    # OI-158 register row, not this frozen table.
     (MB, "193", "4"): ("UNFIT", "oracle-param", 1,
         "FloatingKey.numFlats=4 -- local-key search bounded to +/-4 flats, hand-set with no cited "
         "provenance; shapes keyLocal, which feeds oracle_root_metric's KEY tiers."),
