@@ -9,6 +9,8 @@ reference artifacts. Run it FIRST to record the clean starting state, then after
 any deviation is the discovery protocol (its own register row + STOP-and-report).
 
 Gates (all scratch; no committed file is written):
+  0. register  [HARD, <1s]  register_lint: no OPEN_ITEMS.md row ID collides (OI-153). Cheap,
+                            so it runs at every fold — which is the whole point of it.
   1. a8_diff   [HARD, ~6s]  a8_rebaseline_measure -> scratch, then robust_stop_diff vs the
                             committed tools/robust_stop reference. PASS iff diff exits 0
                             (class-(b) duration non-increase, all presets) AND every preset's
@@ -43,6 +45,9 @@ sys.path.insert(0, str(_TOOLS))
 
 import characterise_bir_false as cbf   # noqa: E402  (validate_corpus_dir)
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import register_lint                   # noqa: E402  (the OI-153 ID-collision check)
+
 PRESETS = ["baroque", "jazz", "default"]
 PY = sys.executable
 REF_DIR = _TOOLS / "robust_stop"
@@ -67,6 +72,17 @@ def _run(cmd, log_path):
 
 def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+# ── Gate 0: register ID-collision lint (OI-153) ───────────────────────────────────────
+def gate_register() -> dict:
+    ids = register_lint.collect_row_ids(_ROOT / "OPEN_ITEMS.md")
+    collisions = register_lint.find_collisions(ids)
+    detail = f"{len(ids)} row IDs, no collision"
+    if collisions:
+        detail = "; ".join(f"{oi} heads {len(lines)} rows (lines {lines})"
+                           for oi, lines in sorted(collisions.items()))
+    return {"gate": "register", "pass": not collisions, "detail": detail}
 
 
 # ── Gate 1: a8 measure + robust_stop_diff vs the committed reference ──────────────────
@@ -183,7 +199,7 @@ def main():
     scratch = Path(args.scratch)
     scratch.mkdir(parents=True, exist_ok=True)
 
-    results = [gate_a8_diff(scratch), gate_calib(scratch), gate_validate()]
+    results = [gate_register(), gate_a8_diff(scratch), gate_calib(scratch), gate_validate()]
     if args.fixture:
         expect = json.loads(Path(args.fixture_expect).read_text()) if args.fixture_expect else None
         results.append(gate_fixture(scratch, expect))
