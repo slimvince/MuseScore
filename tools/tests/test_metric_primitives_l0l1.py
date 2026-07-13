@@ -500,5 +500,66 @@ class TestModeVocabularyMatchesProducer(unittest.TestCase):
         self.assertTrue(crn._KB_MINOR_MODES <= emitted, crn._KB_MINOR_MODES - emitted)
 
 
+class TestDcmlTickExtrapolation(unittest.TestCase):
+    """OI-125 — the shared ground-truth tick resolver extrapolates beyond the outermost
+    anchor on the stem's OWN derived measure length, not an assumed 4/4.
+
+    These pin the fix's two halves: the derivation itself, and the meter-correctness it
+    buys (a 3/4 pickup, the case the old constant placed a full beat early).
+    """
+
+    TPB = 480.0
+
+    def test_derives_the_measure_length_from_consecutive_anchors(self):
+        """4/4 at 480 ticks/beat: every consecutive-anchor gap is one 1920-tick measure."""
+        anchors = {m: (m - 1) * 1920 for m in range(1, 9)}
+        self.assertEqual(cmp._derive_ticks_per_measure(anchors), 1920)
+
+    def test_a_short_pickup_anchor_does_not_drag_the_derived_length(self):
+        """The median is robust to the anchors that are legitimately short — a pickup
+        (measure 1 lasting one beat) and a truncated final measure."""
+        anchors = {1: 0, 2: 480}                       # pickup: one beat long
+        anchors.update({m: 480 + (m - 2) * 1920 for m in range(3, 10)})
+        anchors[10] = anchors[9] + 960                 # truncated final measure
+        self.assertEqual(cmp._derive_ticks_per_measure(anchors), 1920)
+
+    def test_derivation_is_none_when_fewer_than_two_measures_are_anchored(self):
+        """With one anchor there is no measure length to derive — say so, don't guess."""
+        self.assertIsNone(cmp._derive_ticks_per_measure({}))
+        self.assertIsNone(cmp._derive_ticks_per_measure({1: 0}))
+
+    def test_extrapolation_backwards_uses_the_derived_length_not_4_4(self):
+        """A 3/4 stem's pickup (DCML measure 0, which our regions never anchor): the
+        onset must land one 1440-tick measure before measure 1, not one 4/4 measure.
+        This is the case the old hard-coded constant placed a full beat early.
+        """
+        anchors = {m: (m - 1) * 1440 for m in range(1, 9)}   # 3/4 at 480 ticks/beat
+        tick = cmp._dcml_tick_for(0, 1.0, anchors, self.TPB)
+        self.assertEqual(tick, -1440)
+        self.assertEqual(cmp._dcml_tick_for(0, 3.0, anchors, self.TPB), -1440 + 2 * 480)
+        # the superseded 4/4 assumption would have put beat 1 of measure 0 at -1920
+        self.assertNotEqual(tick, -int(cmp.EXTRAPOLATION_BEATS_PER_MEASURE * self.TPB))
+
+    def test_extrapolation_forwards_uses_the_derived_length(self):
+        """Beyond the last anchored measure (a trailing measure our segmentation leaves
+        unanchored), the same derived length carries the onset forward."""
+        anchors = {m: (m - 1) * 1440 for m in range(1, 5)}   # 3/4, anchored through m4
+        self.assertEqual(cmp._dcml_tick_for(6, 1.0, anchors, self.TPB), 3 * 1440 + 2 * 1440)
+
+    def test_on_a_4_4_stem_the_derived_length_reproduces_the_old_constant(self):
+        """The byte-identity the corpus showed (162 firings, derived == 4 * tpb on every
+        one): on a 4/4 stem the derived rule and the superseded constant agree exactly."""
+        anchors = {m: (m - 1) * 1920 for m in range(1, 9)}
+        derived = cmp._dcml_tick_for(0, 1.0, anchors, self.TPB)
+        old = int(round(anchors[1] - 1 * cmp.EXTRAPOLATION_BEATS_PER_MEASURE * self.TPB))
+        self.assertEqual(derived, old)
+
+    def test_interpolation_between_anchors_is_untouched(self):
+        """The fix must not disturb the interpolation branch, which brackets its own two
+        anchors and needs no piece-wide estimate."""
+        anchors = {1: 0, 5: 4 * 1920}                  # measures 2-4 unanchored
+        self.assertEqual(cmp._dcml_tick_for(3, 1.0, anchors, self.TPB), 2 * 1920)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

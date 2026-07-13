@@ -1,7 +1,61 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★ CC SESSION CLOSE 2026-07-13 — OI-145 WAVE 1 CLOSED (the measurement chain is hygienic)
+## ★★★ CC SESSION CLOSE 2026-07-13 — THE WAVE-1 FINALIZERS: OI-158 + OI-125 + OI-159 LANDED; **OI-145 WAVE 1 IS CLOSED**
+
+**Read `cc_wave1_finalize_report.md`.** The three findings the hygiene sweep declared are now dispositioned
+on the user's rulings. A `tools/`-only instrument-fix pass: **no `src/` file touched, no re-baseline, no
+graded figure moved anywhere.** Commits `e02bbebf88` (OI-158) → `6725329381` (OI-125) → `126918aaba`
+(OI-159 + the new OI-160 row) → the `docs(cc)` fold; one commit per register row, each carrying its own flip.
+
+**The proof.** Establishment battery byte-identical before the first edit and after the last — a8_diff
+**+0/−0 all three presets**, class-(b) Δ+0, calib **4/4 sha256-identical**, validate 3/3, register **160**
+IDs no collision — and checked deeper than the gate itself: **all 159 leaf fields of the a8 summary diffed
+against the committed reference, none moved** (root 66.04/64.98/65.93 · RN 46.33/44.10/46.23 · key-home
+71.42/67.83/70.65 · key-local 65.99/62.98/65.71 · class durations · coverage 326/326/326). Python suites
+127 + 4, green.
+
+- **OI-158 — dead-code half CLOSED, evidence half OPEN.** The dead FloatingKey machinery is removed;
+  `KeyAnalyzer` was deliberately **not** activated (a corroborator re-baseline, #16 — and an unvalidated
+  heuristic under load, #19). **Proven at the artifact: a full 352-stem regen is sha256-identical to every
+  committed copy — 1408/1408 files, 0 differ.** The question is **filed, not foreclosed** (#12):
+  `cowork_evidence_inventory.md` **§8c** now carries *"should the key layer consume a music21 `KeyAnalyzer`
+  LOCAL key as an unvalidated, non-ground-truth second opinion?"*, gated on the key-layer design
+  conversation. **This is the one thing in this session that is yours to pick up in the design.**
+- **OI-125 — extrapolation half CLOSED.** The shared ground-truth tick resolver derives each stem's measure
+  length instead of assuming 4/4, so it is meter-correct for the planned non-4/4 corpus (OI-38/OI-39).
+  Byte-identical, predicted before measuring: **162 firings across 15 stems, derived = exactly 4.0 beats on
+  every one ⇒ 0 of 162 ticks change** (reproducible on demand: `python tools/cc_oi125_extrapolation_probe.py`,
+  committed and read-only — the figures are not hand-transcribed, #17f; and 7 new tests pin the behavior,
+  including **a 3/4 pickup — the case the old constant placed a full beat early** — so the meter-correctness
+  is *tested*, not asserted). Open only on the named `calibration_fit` remainder it shares with OI-133(c)
+  (min-cell 50/20; `NEAR_LOGISTIC_TOL` 0.05) — scheduled at the calibration/Stage-5 work, gating nothing.
+- **OI-159 — CLOSED, ruling RE-CONFIRMED.** The OI-43 evidence is refreshed from a HEAD run (O-12 snapshot
+  first). Key-disagree 1982/2143/2019 → **1775/1936/1820**; menu-containment 66.7/61.6/64.1 % →
+  **75.6/68.7/72.5 %**, **still under the 80 % bar (P3 STILL NOT MET)**; **chord-flip-under-GT byte-identical
+  at 7/8/6**. The shelve stands — only the figures were stale, and the menu-widening signal is **weaker**
+  than recorded (~¼ of key-disagree regions miss the GT key, not ~⅓).
+
+### ★ ONE NEW DISCOVERY — OI-160 (declared, not absorbed; a ruling is owed)
+
+**The same OI-142 cause also staled the SIBLING artifact** `tools/reports/joint_probe_measure.json` — the
+**arc-12 chord-axis go/no-go**, backing a *different* ruling (`cc_engage_stage3_joint_measure_report.md`).
+OI-159 named only the key-axis evidence. Measured at HEAD: fire-rate **byte-identical** (which chords flip is
+our analyzer's property, not the ground truth's), but the corr/harm split re-sorts against the corrected
+ground truth — net (corr−harm) **+9/+3/+10 → +9/+6/+10**. The arc-12 no-go is **not visibly threatened** (a
+net of +6…+10 out of ~6200 scored regions is still the "nearly a coin-flip" reading), **but that is a ruling,
+and this dispatch was not authorized to rewrite a ratified decision record.** Owed: (a) the refresh, and
+(b) a call on the **#6 duplication** behind it — *two* committed artifacts from *one* instrument, the older a
+strict subset of the newer's blocks, so it may simply be **superseded** rather than refreshed.
+
+### Where this leaves the gate
+
+**Wave 1 (the measurement chain) is CLOSED.** Every graded surface is established and byte-identical.
+**Next: wave 2 — the `src/` substrate** (OI-86, OI-13, OI-87, the file-table reasons), toward lifting the
+key-layer readiness gate (OI-145).
+
+---
+## CC SESSION CLOSE 2026-07-13 — OI-145 WAVE 1 CLOSED (the measurement chain is hygienic)
 
 **Read `cc_instrument_hygiene_sweep_report.md`.** A `tools/`-only hygiene / dedup / establishment sweep.
 **No `src/` file was touched, no re-baseline was run, and no graded figure moved anywhere.** The
