@@ -4592,6 +4592,22 @@ int main(int argc, char* argv[])
         std::cout.flush();
         std::fflush(stdout);
     } else {
+        // LINE-ENDING DISCIPLINE (OI-137a — established, deliberately unchanged).
+        // QIODevice::Text translates '\n' to the platform terminator on write, so on
+        // Windows this path emits CRLF: all 1056 committed .ours.json (352 stems x 3
+        // presets) are strictly CRLF, and every one of them would change sha256 if this
+        // were opened binary. Dropping Text here is therefore a full-corpus re-baseline,
+        // not a cleanup, and needs its own ratification — it is NOT done as a side effect
+        // of a byte-identical dispatch.
+        //
+        // The consequence to know: corpus byte-identity holds only while regeneration
+        // stays on Windows. The same code on Linux writes LF and every fingerprint in
+        // corpus_manifest.json moves. The diagnostic writers below all use
+        // std::ofstream(std::ios::binary) and so are already OS-independent; aligning
+        // THEM to this path would spread the platform dependence rather than remove it,
+        // which is why they are left alone. The portable fix (write the bytes explicitly
+        // rather than let the platform choose) is a corpus-touching change awaiting the
+        // user's call.
         QFile outFile(outputPath.toQString());
         if (!outFile.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text)) {
             std::cerr << "ERROR: cannot open output file: "
@@ -4618,6 +4634,26 @@ int main(int argc, char* argv[])
     // Skip static-module destructor sequence (crashes due to ordering constraints).
     // On Windows, some runs hang in Qt TLS shutdown during ExitProcess after the
     // JSON is already fully written. TerminateProcess bypasses that teardown.
+    //
+    // EXIT-PATH ASYMMETRY (OI-137b — established, deliberately unchanged). Only this,
+    // the standard path, force-exits; the ~10 diagnostic paths above return normally.
+    // That is load-bearing in BOTH directions, not an oversight:
+    //   • This path may force-exit because it has already flushed and closed everything
+    //     by hand (std::cout.flush() + fflush(stdout) on the stdout branch;
+    //     outFile.flush() + close() on the file branch), so skipping the destructors
+    //     cannot truncate its output. Every error return (bad args, unreadable score,
+    //     unopenable output file) happens BEFORE this point and returns normally, so the
+    //     force-exit masks no failure code.
+    //   • The diagnostic paths may NOT adopt it. They rely on std::ofstream's destructor
+    //     at scope exit (and std::cout's flush on normal return) to write their output,
+    //     which _Exit/TerminateProcess would skip, truncating it. And --validate-slices
+    //     returns a MEANINGFUL 0/2 (the invariant-failure stop signal) that a
+    //     force-exit(0) would silently swallow.
+    // So the two exit disciplines are each correct for their own flush contract, and
+    // unifying them is unsafe in either direction. Whether the diagnostic returns are
+    // exposed to the same "some runs" Qt-TLS hang is UNESTABLISHED (never observed); if
+    // one is ever seen to hang, the fix is an explicit flush + a force-exit carrying that
+    // path's own exit code, never a bare force-exit(0).
 #ifdef _WIN32
     ::TerminateProcess(::GetCurrentProcess(), 0);
 #endif
