@@ -1,6 +1,47 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
+## ★★★ CC SESSION CLOSE 2026-07-13 — THE HARNESS GROUP (the OI-145 wave-1 remainder is CLOSED)
+
+**Read `cc_harness_group_report.md`.** The Cowork entry point below this block still stands; this
+is what changed under it.
+
+**Landed, byte-identical as the dispatch required** (7 commits, `0922e2bfdc` … `3f839e0e24`): **OI-153**
+(the register ID-collision lint, wired as gate 0 of the establishment battery so it runs at every fold),
+**OI-135** (the two value-copied inference-affecting constants — genuinely SINGLE-SOURCED, not
+sync-tested: `composing_analysis` is the one library both the app and `batch_analyze` link, so the 21
+"Default" mode priors and `onsetBoundaryThreshold` each now have ONE home that both read), **OI-136**
+(the six undocumented measurement flags surfaced in `--help`), **OI-137** (output + exit disciplines
+ESTABLISHED and, on the evidence, deliberately NOT changed), **OI-52** (one shared root-comparison helper
+across every graded site).
+
+**The proof:** the recompiled harness regenerates the committed corpus **bit-for-bit — 0 of 1056
+`.ours.json` differ** across all three presets. Battery PASS on the committed tree (a8_diff +0/−0,
+class-(b) Δ+0, calib 4/4, validate 3/3, regen 0/0/0). Suites green; **no golden refresh owed.** Every
+ratified figure unmoved.
+
+**★ ONE THING NEEDS YOUR RULING — OI-155.** The OI-132 consolidation left two regression tests red, and
+one of them hides a grading-semantics question that was never stated: `parse_our_key` is now a thin
+adapter over the shared reduction, whose `_mode_is_major()` is a prefix-membership test — so **any
+unrecognized mode suffix now reads as MINOR rather than abstaining.** An unparseable mode grades as a
+definite minor key instead of a keyfail, which cuts against the abstain convention (OI-33) and is the
+same family as OI-152 (Dor♭2). It is PRE-EXISTING (verified against HEAD with this session's changes
+absent) and **no committed figure is wrong** — it sat inside the ratified measurement. It was **not fixed
+here on purpose:** editing a red regression test's expectation to match the current code is how a defect
+gets laundered, and this is a grading-semantics call, not CC's. **Owed: rule on it, then update both test
+expectations in one commit.** The other red test is simply stale (`EPhrygDom` → A minor is the correct
+parent-collection answer; the test still pins the superseded E minor).
+
+**Two things offered, not taken** (both need your call, both out of a byte-identical dispatch's scope):
+(1) a **byte-identical** fix for the corpus line-ending platform-dependence — the committed corpus is
+CRLF only because regeneration happens on Windows, and the same code on Linux would move every
+fingerprint; writing the CRLF explicitly reproduces the committed bytes exactly while removing the OS
+dependence. (2) The bridge's 4th literal `0.25` (`notationharmonicrhythmbridge.cpp:85`), outside this
+dispatch's edit scope.
+
+`cowork_joint_key_chord_design.md` remains uncommitted (the standing carry).
+
+---
 ## ★★★ SESSION CLOSE 2026-07-13 — THE CURRENT ENTRY POINT (Cowork)
 
 **You (the next Cowork session) start context-less. Read, in this order:** (1) `CLAUDE.md`
