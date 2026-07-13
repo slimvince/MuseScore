@@ -15,6 +15,7 @@
   "type": "isotonic-piecewise-linear",
   "x_thresholds": [
    0.0,
+   0.5006,
    0.5008,
    0.5009,
    0.5389,
@@ -23,25 +24,26 @@
    0.6671,
    0.72,
    0.7201,
+   0.9808,
    0.9812,
-   0.9814,
    0.9992,
    1.0
   ],
   "y_thresholds": [
-   0.28944358263213144,
-   0.28944358263213144,
-   0.5199222546161322,
-   0.5199222546161322,
-   0.5767020335985855,
-   0.5767020335985855,
-   0.6805135951661632,
-   0.6805135951661632,
-   0.7358841103662976,
-   0.7358841103662976,
-   0.825,
-   0.825,
-   0.8566462506207582
+   0.3038974471486107,
+   0.3038974471486107,
+   0.5,
+   0.5422740524781341,
+   0.5422740524781341,
+   0.6065428824049514,
+   0.6065428824049514,
+   0.7069486404833837,
+   0.7069486404833837,
+   0.7768734142236289,
+   0.7768734142236289,
+   0.8409090909090909,
+   0.8409090909090909,
+   0.8874358549908955
   ]
  },
  "monotone": true,
@@ -54,18 +56,18 @@
   "n_cells_held_out": 5752
  },
  "ece": {
-  "pre_map_fitting": 0.1126083500842338,
-  "pre_map_held_out": 0.10222334394191647,
-  "post_map_fitting": 3.7584214678431354e-14,
-  "post_map_held_out": 0.016671811502413928
+  "pre_map_fitting": 0.1120367611252504,
+  "pre_map_held_out": 0.097506362809841,
+  "post_map_fitting": 5.0378566480150863e-14,
+  "post_map_held_out": 0.018268554782495578
  },
  "signed_gap_pre": {
-  "fitting": 0.011221878230609347,
-  "held_out": 0.010385242758046512
+  "fitting": 0.03467920547301382,
+  "held_out": 0.01732197971698102
  },
  "overall_correct": {
-  "fitting": 0.465971164769294,
-  "held_out": 0.4730854605993341
+  "fitting": 0.48942849201169847,
+  "held_out": 0.4800221975582686
  },
  "raw_monotonicity_violations": {
   "fitting": 4,
@@ -74,24 +76,24 @@
  "shape_selection": {
   "chosen": "isotonic",
   "rule": "isotonic default; Platt only if near-logistic AND not worse held-out",
-  "isotonic_vs_platt_max_abs_diff": 0.20342873503977998,
+  "isotonic_vs_platt_max_abs_diff": 0.21806857800289065,
   "near_logistic": false,
   "platt": {
-   "a": 2.7986005257985838,
-   "b": -1.4278129237204504,
-   "post_map_fitting_ece": 0.08037715951944886,
-   "post_map_held_out_ece": 0.06861202413271572
+   "a": 2.9634351768270557,
+   "b": -1.393796895620242,
+   "post_map_fitting_ece": 0.07768486711141795,
+   "post_map_held_out_ece": 0.06036170783616076
   },
   "isotonic": {
-   "post_map_fitting_ece": 3.7584214678431354e-14,
-   "post_map_held_out_ece": 0.016671811502413928
+   "post_map_fitting_ece": 5.0378566480150863e-14,
+   "post_map_held_out_ece": 0.018268554782495578
   }
  },
  "flat_band_assertion": {
   "band": "[0,0.5)",
   "map_low_band_range": [
-   0.28944358263213144,
-   0.28944358263213144
+   0.3038974471486107,
+   0.3038974471486107
   ],
   "note": "isotonic pools the flat low band to its mean; does not invent resolution."
  }

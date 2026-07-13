@@ -17,7 +17,8 @@ REUSES VERBATIM:
   - compare_rn._active_index_at              (point membership in a span list)
   - compare_rn.classify_pair / _our_key_tonic / _dcml_key_tonic (via build_piece_grid)
   - compare_analyses.load_analysis / _dcml_time_spans
-  - dcml_parser.find_wir_file / parse_rntxt_file / parse_cadence_phrase_markers
+  - dcml_parser.load_wir_regions (the ONE corrected ground-truth substrate, OI-144)
+                                 / parse_cadence_phrase_markers
   - compare_l6_oracle.match_points / score_cadence / DEV_BEDS / _corpus_pieces / TOLERANCE_TICKS
 
 The measured (layer × decision) rows (contract §3):
@@ -164,18 +165,14 @@ def cells_with_region_conf(stem, ours_regions, wir_regions, m21_regions, conf_by
 
 
 def _load_wir(stem):
-    # OI-144 / DISCOVERY D3 (OI-145 wave-1): this reads WiR via the RAW parse_rntxt_file, NOT the
-    # OI-142-corrected dcml.load_wir_regions the governing graded consumers use — so the 12 transposed
-    # editions grade UNCORRECTED here. This feeds the committed calibration maps (calibration_fit reuses
-    # this) and the reliability curves, so it IS a graded surface; routing it through load_wir_regions
-    # MOVES all 4 committed maps (measured) → a RE-BASELINE (O-12 + user ratification), NOT a byte-
-    # identical fix. Left on the raw parse this session and surfaced for the user's decision
-    # (cc_measurement_chain_hardening_report.md); switch to dcml.load_wir_regions at that re-baseline.
-    p = dcml.find_wir_file(str(a8.WIR_DIR), stem)
-    if not p:
-        return []
+    # OI-144, routed 2026-07-13 at the user-ratified re-baseline: this is a GRADED surface (it feeds
+    # the reliability curves and, through calibration_fit, the committed calibration maps), so it loads
+    # the ground truth through the ONE corrected substrate dcml.load_wir_regions — the same path the
+    # governing graded consumers use, with the OI-142 corpus-transposition correction applied. It used
+    # to read the RAW parse_rntxt_file, which graded the 12 transposed editions against the wrong pitch
+    # level; the routing re-fit all four maps (cc_key_grading_and_calibration_rebaseline_report.md).
     try:
-        return dcml.parse_rntxt_file(p)
+        return dcml.load_wir_regions(str(a8.WIR_DIR), stem)
     except (OSError, ValueError, KeyError, TypeError):
         return []
 

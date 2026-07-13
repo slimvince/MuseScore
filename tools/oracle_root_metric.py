@@ -66,8 +66,8 @@ they drift with each L3-wiring / grading re-baseline (the former docstring figur
 Reuses ``characterise_bir_false.validate_corpus_dir`` (the anti-contamination manifest guard),
 ``compare_analyses`` (load_analysis, three_way_classify, _dcml_time_spans),
 ``compare_rn`` (_our_key_tonic / _dcml_key_tonic — the ONE graded key reduction, OI-132), and
-``dcml_parser`` (find_wir_file, parse_rntxt_file, _NOTE_TO_PC) verbatim — none of those modules
-is forked.
+``dcml_parser`` (load_wir_regions — the ONE corrected ground-truth loading substrate, OI-144;
+_NOTE_TO_PC) verbatim — none of those modules is forked.
 """
 from __future__ import annotations
 
@@ -171,19 +171,18 @@ def load_dir(corpus_dir: Path, wir_dir: Path):
             continue
         if not ours:
             continue
-        # OI-144 / DISCOVERY D3: raw WiR (parse_rntxt_file), NOT the OI-142-corrected load_wir_regions
-        # — the 12 transposed editions grade UNCORRECTED here, so this tool's charged/floor root figures
-        # are on pre-OI-142 WiR. Routing through load_wir_regions is a RE-BASELINE (moves the figures);
-        # it lands in the OI-144 commit alongside the calibration-map refit.
-        wir_path = dcml.find_wir_file(str(wir_dir), stem)
+        # OI-144, routed 2026-07-13 at the user-ratified re-baseline: this tool's charged/floor root
+        # figures are a GRADED surface, so the ground truth loads through the ONE corrected substrate
+        # dcml.load_wir_regions (the OI-142 corpus-transposition correction applied), like every other
+        # graded consumer. It used to read the RAW parse_rntxt_file, which graded the 12 transposed
+        # editions against the wrong pitch level (cc_key_grading_and_calibration_rebaseline_report.md).
         wir = []
-        if wir_path:
-            try:
-                wir = dcml.parse_rntxt_file(wir_path)
-            except (OSError, ValueError, KeyError, TypeError) as exc:
-                print(f"[oracle_root_metric] {stem}: WiR parse failed, no GT root "
-                      f"({type(exc).__name__}: {exc})", file=sys.stderr)
-                wir = []
+        try:
+            wir = dcml.load_wir_regions(str(wir_dir), stem)
+        except (OSError, ValueError, KeyError, TypeError) as exc:
+            print(f"[oracle_root_metric] {stem}: WiR parse failed, no GT root "
+                  f"({type(exc).__name__}: {exc})", file=sys.stderr)
+            wir = []
         out[stem] = (ours, m21, wir)
     return out
 
