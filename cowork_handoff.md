@@ -1,6 +1,55 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
+## ★★★ CC SESSION CLOSE 2026-07-13 — OI-155 CLOSED (the harness group's follow-up is discharged)
+
+**Read `cc_oi155_report.md`.** The entry points below still stand; this is what changed under them.
+
+**The user's ruling is implemented, and it moved no grade.** `compare_rn._mode_is_major` — the two-valued
+prefix rule with no unknown state, under which any unrecognized mode suffix fell through to MINOR — is
+replaced by the three-valued `_mode_class`: **set-membership in the producer's own emitted vocabulary**,
+read from `keymodeformatting.cpp` `keyModeSuffix()` (the 21 spellings) and partitioned by
+`keymodeanalyzer.h` `keyModeIsMajor()` (the producer's own major-third/minor-third split — the grader reads
+that partition, it does not re-decide it). A suffix in neither set and not one of the five OI-132 exotics
+now **abstains on the mode axis** (OI-33), and **`compare_rn._our_key_ident` is the ONE abstain decision**
+every graded site routes through — the OI-52 pattern applied to the key axis, so an abstain is a `keyfail`
+(excluded from the key-agree denominator, flagged by `robust_stop_diff` if it rises) instead of being
+completed into a confident reading.
+
+**The proof:** all 16 `a8_rebaseline_measure` output files are **byte-identical (sha256)** before vs after
+on all three presets — summary, every run/cell enumeration, every mapping. Battery PASS (a8_diff +0/−0 ×3,
+class-(b) Δ+0, calib 4/4, validate 3/3). Every ratified figure unmoved; **no re-baseline, no snapshot owed.**
+The reason is the premise, measured before the fix: all **14** mode suffixes the corpus actually emits are
+in the vocabulary, so the abstain path fires on **no real cell**. Both red tests are green **by the code**,
+not by an edited expectation; the metric suites are 119/119. A new test **parses both C++ producer sources**
+and pins the grader's table complete-and-faithful to them — a 22nd emitted mode now goes red instead of
+grading silently.
+
+**★ THREE THINGS DECLARED (for you, not decided by CC).**
+1. **A third hidden red assertion in the same test.** The OI-132 fold had *also* dropped the reduction's
+   unicode-accidental normalization (`F♯maj` → `(None, None)`); the failure was masked behind the `Cweird`
+   one. Restored in the same one reduction (the pre-fold parser did it — `git show 800f1a12bf^`), zero effect
+   on real cells.
+2. **OI-157 (new row) — a THIRD copy of the mode classification went stale at OI-132.**
+   `measure_joint_probe.py`'s `_MAJOR_MODE_IDX` classifies a key from its `KeySigMode` **enum index** and its
+   comment still claims it is "derived from `compare_rn._mode_is_major`" and "verified faithful". Both claims
+   are false at HEAD: that function is gone, and an (index → is_major) table **cannot express** the
+   parent-collection tonic move at all. Read-only probe, not in the battery, no committed figure affected —
+   declared, not fixed (out of a byte-identical dispatch's scope; its outputs are frozen report evidence).
+3. **A latent wrong-tonic path** for the producer's double-sharp tonic spellings (`Fx`/`Cx`/`Gx`): the tonic
+   regex reads `"Fxalt"` as tonic **F** + mode `"xalt"`. Unreachable today (no corpus cell), and it is
+   OI-152's territory (the key-parse abstain family), so it is recorded there.
+
+**The two deferred rows you asked for are filed, not fixed:** **OI-156** (the bridge's 4th hard-coded `0.25`
+onset literal, `src/notation/internal/notationharmonicrhythmbridge.cpp:85` — filed as its own row because
+OI-135 is closed; gated on the next `src/notation` config-unification touch) and an **OI-34 amendment** (the
+committed corpus is CRLF *only because* regeneration runs on Windows — the deferred obligation of the O-12
+corpus git-tracking decision, cross-referenced from OI-137(a)). Also corrected: OI-152's row cited
+`_KB_MAJOR_MODE_PREFIXES`, a constant this work removed — the anchor now points at `_KB_MINOR_MODES`.
+
+`cowork_joint_key_chord_design.md` remains uncommitted (the standing carry).
+
+---
 ## ★★★ CC SESSION CLOSE 2026-07-13 — THE HARNESS GROUP (the OI-145 wave-1 remainder is CLOSED)
 
 **Read `cc_harness_group_report.md`.** The Cowork entry point below this block still stands; this
