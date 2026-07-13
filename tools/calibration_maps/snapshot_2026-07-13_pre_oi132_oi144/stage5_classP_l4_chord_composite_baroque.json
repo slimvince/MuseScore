@@ -1,0 +1,98 @@
+{
+ "schema": "stage5_classP_reliability_map/v1",
+ "layer": "L4",
+ "decision": "chord-of-slice",
+ "published_confidence": "composite (min(margin,sufficiency,cleanliness); native [0,1])",
+ "confidence_class_in": "M",
+ "confidence_class_out": "P",
+ "carrier": "baroque",
+ "idiom_target": "idiom-#2 (Baroque common-practice); WiR/DCML-adjudicated fitting pool",
+ "license_provenance": "C1 substrate is WiR-adjudicated (DCML When-in-Rome) = the licensed fitting pool; music21 is corroboration only, never GT (contract C1 / feedback_ground_truth).",
+ "empirically_unvalidated_note": "Jazz carrier deliberately UNMAPPED (A-7): stays Class M.",
+ "squash_note": "native [0,1] composite; no squash",
+ "map_type": "isotonic",
+ "map": {
+  "type": "isotonic-piecewise-linear",
+  "x_thresholds": [
+   0.0,
+   0.5008,
+   0.5009,
+   0.5389,
+   0.5391,
+   0.667,
+   0.6671,
+   0.72,
+   0.7201,
+   0.9812,
+   0.9814,
+   0.9992,
+   1.0
+  ],
+  "y_thresholds": [
+   0.28944358263213144,
+   0.28944358263213144,
+   0.5199222546161322,
+   0.5199222546161322,
+   0.5767020335985855,
+   0.5767020335985855,
+   0.6805135951661632,
+   0.6805135951661632,
+   0.7358841103662976,
+   0.7358841103662976,
+   0.825,
+   0.825,
+   0.8566462506207582
+  ]
+ },
+ "monotone": true,
+ "fit_substrate": {
+  "corpus_git_hash": "c50002fee1",
+  "split_registry": "tools/stage5_split_registry.json",
+  "fit_split": "fitting",
+  "validation_split": "held_out",
+  "n_cells_fit": 21094,
+  "n_cells_held_out": 5752
+ },
+ "ece": {
+  "pre_map_fitting": 0.1126083500842338,
+  "pre_map_held_out": 0.10222334394191647,
+  "post_map_fitting": 3.7584214678431354e-14,
+  "post_map_held_out": 0.016671811502413928
+ },
+ "signed_gap_pre": {
+  "fitting": 0.011221878230609347,
+  "held_out": 0.010385242758046512
+ },
+ "overall_correct": {
+  "fitting": 0.465971164769294,
+  "held_out": 0.4730854605993341
+ },
+ "raw_monotonicity_violations": {
+  "fitting": 4,
+  "held_out": 3
+ },
+ "shape_selection": {
+  "chosen": "isotonic",
+  "rule": "isotonic default; Platt only if near-logistic AND not worse held-out",
+  "isotonic_vs_platt_max_abs_diff": 0.20342873503977998,
+  "near_logistic": false,
+  "platt": {
+   "a": 2.7986005257985838,
+   "b": -1.4278129237204504,
+   "post_map_fitting_ece": 0.08037715951944886,
+   "post_map_held_out_ece": 0.06861202413271572
+  },
+  "isotonic": {
+   "post_map_fitting_ece": 3.7584214678431354e-14,
+   "post_map_held_out_ece": 0.016671811502413928
+  }
+ },
+ "flat_band_assertion": {
+  "band": "[0,0.5)",
+  "map_low_band_range": [
+   0.28944358263213144,
+   0.28944358263213144
+  ],
+  "note": "isotonic pools the flat low band to its mean; does not invent resolution."
+ }
+}

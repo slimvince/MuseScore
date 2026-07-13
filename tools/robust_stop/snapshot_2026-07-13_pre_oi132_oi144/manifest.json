@@ -1,0 +1,192 @@
+{
+ "schema": 1,
+ "artifact": "robust-unit regression-stop reference (batch->robust diff base), RE-BASELINED at the OI-142/OI-143 key-grading correction (2026-07-12): 12 transposed editions corpus-transposition-corrected at the shared GT substrate + the key column split into HOME (DCML global) and LOCAL (DCML local) agreement.",
+ "date": "2026-07-12",
+ "dispatch": "cc_instruction_key_grading_rebaseline.md (OI-142 arithmetic correction + OI-143 dual key columns)",
+ "coverage_hardening_note": "OI-140 + OI-124 (2026-07-12, cc_measurement_chain_hardening_report.md): metadata-only re-stamp. OI-140 — per-preset coverage.wir_no_annotation + coverage.wir_parse_fail added (0 parse failures here); robust_stop_diff now RECONCILES the candidate wir_covered against this reference and FAILS loudly on a coverage shrink. OI-124 — per-preset coverage.wir_source_sha256 records the identity of the WiR source graded against (offset-file pattern; paired with generated_by.offsets_file_sha256); robust_stop_diff cross-checks it and cross-checks this manifest's class_b_root_disagree_dur against the sibling summary.json (catches a partial re-baseline). No grading figure changed.",
+ "abstain_convention_note": "OI-33 (2026-07-12, ABSTAIN-AWARE convention): every reported agreement-% is published with its abstain/coverage figure so a metric cannot be flattered by opting out of hard slices. ROOT (the hard stop) counts an abstained cell as a DISAGREEMENT — not abstention-reducible. KEY-agree EXCLUDES abstained (key-unparseable) cells from its denominator, so it IS abstention-reducible; the per-preset key_parse_fail_pct below is the abstain coverage, and robust_stop_diff reports it beside key-agree and FLAGS a candidate abstain above this reference. Convention text + mechanical enforcement both. No grading figure changed.",
+ "unit": "A-8 union-of-boundaries cell, duration-weighted; variant (b) DCML-only (music21 is NOT GT); root governs, RN+key(home,local) tracked beside",
+ "identity": "stem@runStartTick (maximal contiguous same-(stem,our_root,dcml_root) failing run; re-slice-stable)",
+ "generated_by": {
+  "instrument": "tools/a8_rebaseline_measure.py",
+  "instrument_note": "re-baselined with the OI-142 transposition correction applied at the shared substrate dcml_parser.load_wir_regions + the OI-143 dual home/local key columns; both land in the adoption commit named in the report.",
+  "key_parsers": "tools/compare_rn.py (_our_key_tonic / _dcml_key_tonic)",
+  "offsets_file": "tools/robust_stop/corpus_transposition_offsets.json",
+  "offsets_file_sha256": "f1bc3e3765fe266735d6808e32202ccbc54915dd500a21800feaccf751dce10d",
+  "invocation": "python tools/a8_rebaseline_measure.py --out-dir tools/robust_stop",
+  "self_validation": "variant-(b) 5-bucket duration decomposition asserted byte-identical to compare_rn.grid_score_regions() on every covered piece (326x3) at generation"
+ },
+ "provenance": {
+  "head_at_generation_short": "bd9e9c1ab2",
+  "adoption_commit": "see cc_key_grading_rebaseline_report.md (the revertible adoption commit that lands this reference)",
+  "corpus_git_hash": "c50002fee1",
+  "corpus_complete": true,
+  "corpus_scores": 352,
+  "wir_coverage": 326,
+  "wir_excluded_no_annotation": 26,
+  "outgoing_reference_snapshot": "tools/robust_stop/snapshot_2026-07-12_pre_oi142_oi143/ (O-12; the superseded R10-b reference)",
+  "user_ratified": "2026-07-12"
+ },
+ "reproduce_status": {
+  "note": "The OI-142/OI-143 re-baseline figures. root/RN/key are re-baselined values (NOT the superseded R10-b column); the outgoing R10-b values are preserved in the snapshot dir. Deterministic on corpus c50002fee1: re-run the invocation to reproduce.",
+  "root": {
+   "baroque": 66.0406,
+   "jazz": 64.9772,
+   "default": 65.9307
+  },
+  "rn": {
+   "baroque": 46.3293,
+   "jazz": 44.101,
+   "default": 46.228
+  },
+  "key_home": {
+   "baroque": 71.2909,
+   "jazz": 67.4887,
+   "default": 70.5183
+  },
+  "key_local": {
+   "baroque": 65.7238,
+   "jazz": 62.4942,
+   "default": 65.3852
+  },
+  "superseded_r10b": {
+   "root": {
+    "baroque": 63.3581,
+    "jazz": 62.3664,
+    "default": 63.2539
+   },
+   "rn": {
+    "baroque": 44.5785,
+    "jazz": 42.399,
+    "default": 44.4107
+   },
+   "key_home": {
+    "baroque": 68.1251,
+    "jazz": 64.4321,
+    "default": 67.4972
+   }
+  }
+ },
+ "presets": {
+  "baroque": {
+   "scored_dur": 8293680,
+   "unscored_dur": 192720,
+   "root_agree_pct": 66.0406,
+   "rn_agree_pct": 46.3293,
+   "key_agree_pct": 71.2909,
+   "key_agree_pct_local": 65.7238,
+   "key_parse_fail_pct": 0.0926,
+   "root_disagree_dur": 2816480,
+   "root_disagree_cells": 7424,
+   "class_b_root_disagree_dur": 2714000,
+   "class_b_root_disagree_cells": 7156,
+   "class_a_root_disagree_dur": 102480,
+   "class_a_root_disagree_cells": 268,
+   "variant_b_root_fail_runs": 6506,
+   "variant_b_root_fail_cells": 7424,
+   "variant_a_root_fail_runs": 1580,
+   "variant_a_root_fail_cells": 1717,
+   "variant_a_root_disagree_dur": 586200,
+   "variant_a_class_b_dur": 555840,
+   "variant_a_class_a_dur": 30360,
+   "batch_stop_count": 54,
+   "mapping_summary": {
+    "batch_cases": 54,
+    "still_failing_variant_b": 54,
+    "still_failing_variant_a": 52,
+    "disappeared_variant_b": 0,
+    "disappeared_variant_a": 2
+   },
+   "coverage": {
+    "total_ours_files": 352,
+    "wir_covered": 326,
+    "m21_and_wir": 326,
+    "no_wir": 26,
+    "wir_no_annotation": 26,
+    "wir_parse_fail": 0,
+    "wir_source_sha256": "e54764662445724912c8340d092fe5736777f8fead08031d858738d4ce46f1a5"
+   },
+   "run_enumeration_file": "baroque_variant_b_root_fail_runs.txt"
+  },
+  "jazz": {
+   "scored_dur": 8291520,
+   "unscored_dur": 194880,
+   "root_agree_pct": 64.9772,
+   "rn_agree_pct": 44.101,
+   "key_agree_pct": 67.4887,
+   "key_agree_pct_local": 62.4942,
+   "key_parse_fail_pct": 0.1303,
+   "root_disagree_dur": 2903920,
+   "root_disagree_cells": 7655,
+   "class_b_root_disagree_dur": 2784160,
+   "class_b_root_disagree_cells": 7342,
+   "class_a_root_disagree_dur": 119760,
+   "class_a_root_disagree_cells": 313,
+   "variant_b_root_fail_runs": 6689,
+   "variant_b_root_fail_cells": 7655,
+   "variant_a_root_fail_runs": 1301,
+   "variant_a_root_fail_cells": 1413,
+   "variant_a_root_disagree_dur": 484560,
+   "variant_a_class_b_dur": 460200,
+   "variant_a_class_a_dur": 24360,
+   "batch_stop_count": 24,
+   "mapping_summary": {
+    "batch_cases": 24,
+    "still_failing_variant_b": 24,
+    "still_failing_variant_a": 23,
+    "disappeared_variant_b": 0,
+    "disappeared_variant_a": 1
+   },
+   "coverage": {
+    "total_ours_files": 352,
+    "wir_covered": 326,
+    "m21_and_wir": 326,
+    "no_wir": 26,
+    "wir_no_annotation": 26,
+    "wir_parse_fail": 0,
+    "wir_source_sha256": "e54764662445724912c8340d092fe5736777f8fead08031d858738d4ce46f1a5"
+   },
+   "run_enumeration_file": "jazz_variant_b_root_fail_runs.txt"
+  },
+  "default": {
+   "scored_dur": 8293680,
+   "unscored_dur": 192720,
+   "root_agree_pct": 65.9307,
+   "rn_agree_pct": 46.228,
+   "key_agree_pct": 70.5183,
+   "key_agree_pct_local": 65.3852,
+   "key_parse_fail_pct": 0.3993,
+   "root_disagree_dur": 2825600,
+   "root_disagree_cells": 7446,
+   "class_b_root_disagree_dur": 2718080,
+   "class_b_root_disagree_cells": 7162,
+   "class_a_root_disagree_dur": 107520,
+   "class_a_root_disagree_cells": 284,
+   "variant_b_root_fail_runs": 6522,
+   "variant_b_root_fail_cells": 7446,
+   "variant_a_root_fail_runs": 1562,
+   "variant_a_root_fail_cells": 1697,
+   "variant_a_root_disagree_dur": 579840,
+   "variant_a_class_b_dur": 549480,
+   "variant_a_class_a_dur": 30360,
+   "batch_stop_count": 54,
+   "mapping_summary": {
+    "batch_cases": 54,
+    "still_failing_variant_b": 54,
+    "still_failing_variant_a": 52,
+    "disappeared_variant_b": 0,
+    "disappeared_variant_a": 2
+   },
+   "coverage": {
+    "total_ours_files": 352,
+    "wir_covered": 326,
+    "m21_and_wir": 326,
+    "no_wir": 26,
+    "wir_no_annotation": 26,
+    "wir_parse_fail": 0,
+    "wir_source_sha256": "e54764662445724912c8340d092fe5736777f8fead08031d858738d4ce46f1a5"
+   },
+   "run_enumeration_file": "default_variant_b_root_fail_runs.txt"
+  }
+ }
+}

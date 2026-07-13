@@ -1,0 +1,140 @@
+{
+ "schema": "stage5_classP_reliability_map/v1",
+ "layer": "L3",
+ "decision": "key-of-slice",
+ "published_confidence": "sequence margin (squashed x/(x+1); D-L3a boundary confidence)",
+ "confidence_class_in": "M",
+ "confidence_class_out": "P",
+ "carrier": "baroque",
+ "idiom_target": "idiom-#2 (Baroque common-practice); WiR/DCML-adjudicated fitting pool",
+ "license_provenance": "C1 substrate is WiR-adjudicated (DCML When-in-Rome) = the licensed fitting pool; music21 is corroboration only, never GT (contract C1 / feedback_ground_truth).",
+ "empirically_unvalidated_note": "Jazz carrier deliberately UNMAPPED (A-7): stays Class M.",
+ "squash_note": "squash s(x)=x/(x+1), k=uncertainThreshold; monotone, ranking-invariant",
+ "map_type": "isotonic",
+ "map": {
+  "type": "isotonic-piecewise-linear",
+  "x_thresholds": [
+   0.0008731080162247537,
+   0.0018919935748194438,
+   0.0020860891349678066,
+   0.011088858412845085,
+   0.011922440259101602,
+   0.40689215045485444,
+   0.40741759104584274,
+   0.6534047781617284,
+   0.6535104587868015,
+   0.6775868016933141,
+   0.6776013540743129,
+   0.6869061000084535,
+   0.6871852301378262,
+   0.7855559034315345,
+   0.7856822911420348,
+   0.7892784895482131,
+   0.7893184451701254,
+   0.8308444919583472,
+   0.8309531537379639,
+   0.8850893028482915,
+   0.8850986772559726,
+   0.8929033474129733,
+   0.8929038061987277,
+   0.8952732634736182,
+   0.895294317203772,
+   0.9077405664729219,
+   0.9077515453922358,
+   0.9090811559785504,
+   0.9091148697161657,
+   0.9143021193085895,
+   0.9143043224899736,
+   0.9174726834582246,
+   0.9175278137448145,
+   0.9215538611189558
+  ],
+  "y_thresholds": [
+   0.2,
+   0.2,
+   0.3076923076923077,
+   0.3076923076923077,
+   0.5132478632478631,
+   0.5132478632478631,
+   0.5489714461160577,
+   0.5489714461160577,
+   0.559748427672956,
+   0.559748427672956,
+   0.5681818181818182,
+   0.5681818181818182,
+   0.5833189133068003,
+   0.5833189133068003,
+   0.6503496503496503,
+   0.6503496503496503,
+   0.6816987740805605,
+   0.6816987740805605,
+   0.7172544080604534,
+   0.7172544080604534,
+   0.7218161683277963,
+   0.7218161683277963,
+   0.7564102564102565,
+   0.7564102564102565,
+   0.8342808413871518,
+   0.8342808413871518,
+   0.8550295857988166,
+   0.8550295857988166,
+   0.8746556473829201,
+   0.8746556473829201,
+   0.9899497487437185,
+   0.9899497487437185,
+   1.0,
+   1.0
+  ]
+ },
+ "monotone": true,
+ "fit_substrate": {
+  "corpus_git_hash": "c50002fee1",
+  "split_registry": "tools/stage5_split_registry.json",
+  "fit_split": "fitting",
+  "validation_split": "held_out",
+  "n_cells_fit": 14845,
+  "n_cells_held_out": 3971
+ },
+ "ece": {
+  "pre_map_fitting": 0.1330223330732036,
+  "pre_map_held_out": 0.15426500560418463,
+  "post_map_fitting": 1.0103359911413227e-14,
+  "post_map_held_out": 0.02746361214495027
+ },
+ "signed_gap_pre": {
+  "fitting": -0.07724826435140139,
+  "held_out": -0.08436454889096584
+ },
+ "overall_correct": {
+  "fitting": 0.6827326833899295,
+  "held_out": 0.6786214625945644
+ },
+ "raw_monotonicity_violations": {
+  "fitting": 4,
+  "held_out": 3
+ },
+ "shape_selection": {
+  "chosen": "isotonic",
+  "rule": "isotonic default; Platt only if near-logistic AND not worse held-out",
+  "isotonic_vs_platt_max_abs_diff": 0.25483199902200715,
+  "near_logistic": false,
+  "platt": {
+   "a": 1.805096000450728,
+   "b": -0.5876831234606508,
+   "post_map_fitting_ece": 0.03864831003788831,
+   "post_map_held_out_ece": 0.04689179479765905
+  },
+  "isotonic": {
+   "post_map_fitting_ece": 1.0103359911413227e-14,
+   "post_map_held_out_ece": 0.02746361214495027
+  }
+ },
+ "flat_band_assertion": {
+  "band": "[0,0.5)",
+  "map_low_band_range": [
+   0.2,
+   0.5489714461160577
+  ],
+  "note": "isotonic pools the flat low band to its mean; does not invent resolution."
+ }
+}

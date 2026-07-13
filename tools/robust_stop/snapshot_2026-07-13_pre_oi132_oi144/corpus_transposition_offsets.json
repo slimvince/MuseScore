@@ -1,0 +1,272 @@
+{
+  "schema": 1,
+  "artifact": "OI-142 corpus-transposition offsets \u2014 the constant per-piece root offset (our_root - dcml_root mod 12) applied to the When-in-Rome ground truth so the 12 transposed Bach-chorale editions grade against what OUR score actually contains. 12 of 326 WiR-covered pieces.",
+  "date": "2026-07-12",
+  "decision": "user 2026-07-12 (register OI-142): ARITHMETIC CORRECTION (no score/GT file edited)",
+  "applied_at": "dcml_parser.load_wir_regions \u2014 the ONE shared WiR ground-truth loading substrate; every consumer reads the corrected view through it, no consumer-side special-casing",
+  "convention": "offset = (our_root - dcml_root) mod 12; the correction ADDS offset to every WiR root_pc + global_key tonic + local_key tonic. The Roman-numeral / chord_symbol strings are key-relative and stay verbatim (a transposed EDITION plays the same functional progression). Internally consistent: 'V' under the shifted local key roots at the shifted root_pc. corrected_dcml_root == our_root on the aligned chords.",
+  "detection_rule": "classify_key_disagreement._piece_transposition \u2014 modal (our_root - dcml_root) mod 12 over aligned root-defined regions; transposed iff modal offset nonzero AND coverage >= 0.70 (TRANSPOSE_FRAC).",
+  "independent_reverification": "this session (verify_offsets.py): RAW parse_rntxt_file + _piece_transposition on the frozen corpus c50002fee1, all 3 presets. The modal offset is IDENTICAL across presets for every stem \u2014 a whole-piece score transposition is preset-independent, so ONE offset per stem is applied to all presets. All 12 re-verified (offset matches the recorded value, coverage >= 0.70 on every preset).",
+  "provenance": {
+    "diagnosis_report": "cc_key_mode_inference_diagnosis_report.md \u00a75",
+    "diagnosis_artifact": "tools/reports/key_mode_inference_diagnosis.json (transposition_contamination)",
+    "register_row": "OI-142",
+    "corpus_git_hash": "c50002fee1"
+  },
+  "offsets": {
+    "bwv115.6": {
+      "offset": 4,
+      "reverified": true,
+      "verification_by_preset": {
+        "Baroque": {
+          "modal_offset": 4,
+          "coverage_frac": 1.0,
+          "n_aligned_regions": 20
+        },
+        "Jazz": {
+          "modal_offset": 4,
+          "coverage_frac": 0.95,
+          "n_aligned_regions": 20
+        },
+        "Default": {
+          "modal_offset": 4,
+          "coverage_frac": 1.0,
+          "n_aligned_regions": 20
+        }
+      },
+      "notated_signature_evidence": "notated 1 sharp = G major; WiR global Eb; offset +4 (diagnosis \u00a71/\u00a75)"
+    },
+    "bwv126.6": {
+      "offset": 2,
+      "reverified": true,
+      "verification_by_preset": {
+        "Baroque": {
+          "modal_offset": 2,
+          "coverage_frac": 0.962,
+          "n_aligned_regions": 53
+        },
+        "Jazz": {
+          "modal_offset": 2,
+          "coverage_frac": 0.957,
+          "n_aligned_regions": 47
+        },
+        "Default": {
+          "modal_offset": 2,
+          "coverage_frac": 0.962,
+          "n_aligned_regions": 52
+        }
+      }
+    },
+    "bwv145.5": {
+      "offset": 2,
+      "reverified": true,
+      "verification_by_preset": {
+        "Baroque": {
+          "modal_offset": 2,
+          "coverage_frac": 0.946,
+          "n_aligned_regions": 37
+        },
+        "Jazz": {
+          "modal_offset": 2,
+          "coverage_frac": 0.892,
+          "n_aligned_regions": 37
+        },
+        "Default": {
+          "modal_offset": 2,
+          "coverage_frac": 0.944,
+          "n_aligned_regions": 36
+        }
+      }
+    },
+    "bwv148.6": {
+      "offset": 1,
+      "reverified": true,
+      "verification_by_preset": {
+        "Baroque": {
+          "modal_offset": 1,
+          "coverage_frac": 0.967,
+          "n_aligned_regions": 30
+        },
+        "Jazz": {
+          "modal_offset": 1,
+          "coverage_frac": 0.962,
+          "n_aligned_regions": 26
+        },
+        "Default": {
+          "modal_offset": 1,
+          "coverage_frac": 0.967,
+          "n_aligned_regions": 30
+        }
+      }
+    },
+    "bwv177.5": {
+      "offset": 3,
+      "reverified": true,
+      "verification_by_preset": {
+        "Baroque": {
+          "modal_offset": 3,
+          "coverage_frac": 0.815,
+          "n_aligned_regions": 27
+        },
+        "Jazz": {
+          "modal_offset": 3,
+          "coverage_frac": 0.833,
+          "n_aligned_regions": 24
+        },
+        "Default": {
+          "modal_offset": 3,
+          "coverage_frac": 0.808,
+          "n_aligned_regions": 26
+        }
+      }
+    },
+    "bwv180.7": {
+      "offset": 2,
+      "reverified": true,
+      "verification_by_preset": {
+        "Baroque": {
+          "modal_offset": 2,
+          "coverage_frac": 0.971,
+          "n_aligned_regions": 34
+        },
+        "Jazz": {
+          "modal_offset": 2,
+          "coverage_frac": 1.0,
+          "n_aligned_regions": 33
+        },
+        "Default": {
+          "modal_offset": 2,
+          "coverage_frac": 0.971,
+          "n_aligned_regions": 34
+        }
+      }
+    },
+    "bwv184.5": {
+      "offset": 7,
+      "reverified": true,
+      "verification_by_preset": {
+        "Baroque": {
+          "modal_offset": 7,
+          "coverage_frac": 0.875,
+          "n_aligned_regions": 40
+        },
+        "Jazz": {
+          "modal_offset": 7,
+          "coverage_frac": 0.919,
+          "n_aligned_regions": 37
+        },
+        "Default": {
+          "modal_offset": 7,
+          "coverage_frac": 0.875,
+          "n_aligned_regions": 40
+        }
+      }
+    },
+    "bwv244.62": {
+      "offset": 10,
+      "reverified": true,
+      "verification_by_preset": {
+        "Baroque": {
+          "modal_offset": 10,
+          "coverage_frac": 0.933,
+          "n_aligned_regions": 30
+        },
+        "Jazz": {
+          "modal_offset": 10,
+          "coverage_frac": 0.9,
+          "n_aligned_regions": 30
+        },
+        "Default": {
+          "modal_offset": 10,
+          "coverage_frac": 0.903,
+          "n_aligned_regions": 31
+        }
+      }
+    },
+    "bwv267": {
+      "offset": 11,
+      "reverified": true,
+      "verification_by_preset": {
+        "Baroque": {
+          "modal_offset": 11,
+          "coverage_frac": 0.946,
+          "n_aligned_regions": 37
+        },
+        "Jazz": {
+          "modal_offset": 11,
+          "coverage_frac": 0.914,
+          "n_aligned_regions": 35
+        },
+        "Default": {
+          "modal_offset": 11,
+          "coverage_frac": 0.947,
+          "n_aligned_regions": 38
+        }
+      },
+      "notated_signature_evidence": "notated 1 sharp = G major; WiR global Ab; constant -1 (=+11) on 35/37 chords (diagnosis \u00a71)"
+    },
+    "bwv30.6": {
+      "offset": 2,
+      "reverified": true,
+      "verification_by_preset": {
+        "Baroque": {
+          "modal_offset": 2,
+          "coverage_frac": 0.833,
+          "n_aligned_regions": 30
+        },
+        "Jazz": {
+          "modal_offset": 2,
+          "coverage_frac": 0.889,
+          "n_aligned_regions": 27
+        },
+        "Default": {
+          "modal_offset": 2,
+          "coverage_frac": 0.862,
+          "n_aligned_regions": 29
+        }
+      }
+    },
+    "bwv39.7": {
+      "offset": 3,
+      "reverified": true,
+      "verification_by_preset": {
+        "Baroque": {
+          "modal_offset": 3,
+          "coverage_frac": 0.806,
+          "n_aligned_regions": 36
+        },
+        "Jazz": {
+          "modal_offset": 3,
+          "coverage_frac": 0.879,
+          "n_aligned_regions": 33
+        },
+        "Default": {
+          "modal_offset": 3,
+          "coverage_frac": 0.806,
+          "n_aligned_regions": 36
+        }
+      }
+    },
+    "bwv73.5": {
+      "offset": 3,
+      "reverified": true,
+      "verification_by_preset": {
+        "Baroque": {
+          "modal_offset": 3,
+          "coverage_frac": 0.929,
+          "n_aligned_regions": 28
+        },
+        "Jazz": {
+          "modal_offset": 3,
+          "coverage_frac": 1.0,
+          "n_aligned_regions": 27
+        },
+        "Default": {
+          "modal_offset": 3,
+          "coverage_frac": 0.929,
+          "n_aligned_regions": 28
+        }
+      }
+    }
+  }
+}

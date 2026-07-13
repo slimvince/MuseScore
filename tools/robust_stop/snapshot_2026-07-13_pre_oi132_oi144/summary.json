@@ -1,0 +1,173 @@
+{
+ "baroque": {
+  "preset": "baroque",
+  "coverage": {
+   "total_ours_files": 352,
+   "wir_covered": 326,
+   "m21_and_wir": 326,
+   "no_wir": 26
+  },
+  "agg": {
+   "scored_dur": 8293680,
+   "unscored_dur": 192720,
+   "bucket_dur": {
+    "exact": 2832640,
+    "key_disagree": 1375080,
+    "partial": 1009760,
+    "quality_disagree": 259720,
+    "root_err": 2816480
+   },
+   "b_root_agree": 5477200,
+   "b_root_dis": 2816480,
+   "b_rn_agree": 3842400,
+   "b_rn_dis": 4451280,
+   "b_key_agree": 5912640,
+   "b_key_dis": 2373360,
+   "b_key_fail": 7680,
+   "b_dcml_keyfail": 0,
+   "b_key_agree_local": 5450920,
+   "b_key_dis_local": 2835080,
+   "b_key_fail_local": 7680,
+   "b_dcml_keyfail_local": 0,
+   "a_root_dis_dur": 586200,
+   "a_root_dis_cells": 1717,
+   "a_rn_dis_dur": 586200,
+   "a_key_dis_dur": 160680,
+   "b_root_dis_cells": 7424,
+   "b_cls_a_dur": 102480,
+   "b_cls_b_dur": 2714000,
+   "b_cls_a_cells": 268,
+   "b_cls_b_cells": 7156,
+   "a_cls_a_dur": 30360,
+   "a_cls_b_dur": 555840,
+   "a_cls_a_cells": 81,
+   "a_cls_b_cells": 1636
+  },
+  "batch_gate_count": 54,
+  "grid_b_root_fail_cells": 7424,
+  "grid_a_root_fail_cells": 1717,
+  "grid_b_root_fail_runs": 6506,
+  "grid_a_root_fail_runs": 1580,
+  "mapping_summary": {
+   "batch_cases": 54,
+   "still_failing_variant_b": 54,
+   "still_failing_variant_a": 52,
+   "disappeared_variant_b": 0,
+   "disappeared_variant_a": 2
+  }
+ },
+ "jazz": {
+  "preset": "jazz",
+  "coverage": {
+   "total_ours_files": 352,
+   "wir_covered": 326,
+   "m21_and_wir": 326,
+   "no_wir": 26
+  },
+  "agg": {
+   "scored_dur": 8291520,
+   "unscored_dur": 194880,
+   "bucket_dur": {
+    "exact": 2690640,
+    "key_disagree": 1437360,
+    "partial": 966000,
+    "root_err": 2903920,
+    "quality_disagree": 293600
+   },
+   "b_root_agree": 5387600,
+   "b_root_dis": 2903920,
+   "b_rn_agree": 3656640,
+   "b_rn_dis": 4634880,
+   "b_key_agree": 5595840,
+   "b_key_dis": 2684880,
+   "b_key_fail": 10800,
+   "b_dcml_keyfail": 0,
+   "b_key_agree_local": 5181720,
+   "b_key_dis_local": 3099000,
+   "b_key_fail_local": 10800,
+   "b_dcml_keyfail_local": 0,
+   "a_root_dis_dur": 484560,
+   "a_root_dis_cells": 1413,
+   "a_rn_dis_dur": 484560,
+   "a_key_dis_dur": 169080,
+   "b_root_dis_cells": 7655,
+   "b_cls_a_dur": 119760,
+   "b_cls_b_dur": 2784160,
+   "b_cls_a_cells": 313,
+   "b_cls_b_cells": 7342,
+   "a_cls_a_dur": 24360,
+   "a_cls_b_dur": 460200,
+   "a_cls_a_cells": 63,
+   "a_cls_b_cells": 1350
+  },
+  "batch_gate_count": 24,
+  "grid_b_root_fail_cells": 7655,
+  "grid_a_root_fail_cells": 1413,
+  "grid_b_root_fail_runs": 6689,
+  "grid_a_root_fail_runs": 1301,
+  "mapping_summary": {
+   "batch_cases": 24,
+   "still_failing_variant_b": 24,
+   "still_failing_variant_a": 23,
+   "disappeared_variant_b": 0,
+   "disappeared_variant_a": 1
+  }
+ },
+ "default": {
+  "preset": "default",
+  "coverage": {
+   "total_ours_files": 352,
+   "wir_covered": 326,
+   "m21_and_wir": 326,
+   "no_wir": 26
+  },
+  "agg": {
+   "scored_dur": 8293680,
+   "unscored_dur": 192720,
+   "bucket_dur": {
+    "exact": 2832640,
+    "key_disagree": 1379040,
+    "partial": 1001360,
+    "root_err": 2825600,
+    "quality_disagree": 255040
+   },
+   "b_root_agree": 5468080,
+   "b_root_dis": 2825600,
+   "b_rn_agree": 3834000,
+   "b_rn_dis": 4459680,
+   "b_key_agree": 5848560,
+   "b_key_dis": 2412000,
+   "b_key_fail": 33120,
+   "b_dcml_keyfail": 0,
+   "b_key_agree_local": 5422840,
+   "b_key_dis_local": 2837720,
+   "b_key_fail_local": 33120,
+   "b_dcml_keyfail_local": 0,
+   "a_root_dis_dur": 579840,
+   "a_root_dis_cells": 1697,
+   "a_rn_dis_dur": 579840,
+   "a_key_dis_dur": 164880,
+   "b_root_dis_cells": 7446,
+   "b_cls_a_dur": 107520,
+   "b_cls_b_dur": 2718080,
+   "b_cls_a_cells": 284,
+   "b_cls_b_cells": 7162,
+   "a_cls_a_dur": 30360,
+   "a_cls_b_dur": 549480,
+   "a_cls_a_cells": 81,
+   "a_cls_b_cells": 1616
+  },
+  "batch_gate_count": 54,
+  "grid_b_root_fail_cells": 7446,
+  "grid_a_root_fail_cells": 1697,
+  "grid_b_root_fail_runs": 6522,
+  "grid_a_root_fail_runs": 1562,
+  "mapping_summary": {
+   "batch_cases": 54,
+   "still_failing_variant_b": 54,
+   "still_failing_variant_a": 52,
+   "disappeared_variant_b": 0,
+   "disappeared_variant_a": 2
+  }
+ }
+}
