@@ -10,9 +10,12 @@ Key design notes:
   - music21's romanNumeralFromChord() is STATELESS — it has no temporal context
     and operates on a single chord snapshot.  This means Roman numerals may
     differ from ours in transitional passages.
-  - Key detection is performed two ways and both are stored:
-      "key"      — Krumhansl-Schmuckler global key (score.analyze('key'))
-      "keyLocal" — FloatingKey local sliding-window key (where available)
+  - Key detection: the emitted fields are "key" and "keyGlobal" (NOT "keyLocal" — this docstring
+    named a field that was never written; corrected 2026-07-13). "keyGlobal" is the
+    Krumhansl-Schmuckler global key (score.analyze('key')). "key" was INTENDED to be the FloatingKey
+    local sliding-window key, falling back to the global key — but that path has never executed
+    (see the DISCOVERY note at the fk_analyzer block; OI-158), so at HEAD "key" == "keyGlobal" on
+    every region of the committed corpus, and "romanNumeral" is computed against the global key.
   - Tick offsets use 480 ticks per quarter note (matching MuseScore / batch_analyze).
 
 Usage:
@@ -68,7 +71,14 @@ M21_CORPUS_BACH_DIR = M21_CORPUS_ROOT / "bach"
 
 # ── Constants ──────────────────────────────────────────────────────────────
 
-TICKS_PER_QUARTER = 480   # must match MuseScore's Constants::DIVISION
+# A CROSS-LANGUAGE VALUE COPY (OI-132(b), DT-3): MuseScore's Constants::DIVISION
+# (src/engraving/types/constants.h), the tick grid every .ours.json region is expressed on.
+# music21 reports offsets in quarter notes, so this factor is what puts the music21 ground
+# truth onto the SAME tick grid our regions use — if it ever disagreed with the engraving
+# constant, every music21-vs-ours alignment would be silently mis-scaled.
+# A C++ constant cannot be single-sourced into Python, so tools/tests/test_cross_language_
+# constants.py PARSES the C++ declaration and asserts this value equals it (red on drift).
+TICKS_PER_QUARTER = 480
 
 # OI-130: the committed .music21.json GROUND TRUTH was produced by music21 v9.9.1
 # (REPRODUCIBILITY.md C2). Regenerating with a different music21 is a DELIBERATE re-baseline of the
@@ -193,10 +203,28 @@ def analyze_chorale(score, source_name: str) -> dict:
         key_confidence = 0.0
 
     # ── Optional: FloatingKey local sliding window ─────────────────────────
+    # ★ DISCOVERY 2026-07-13 (OI-145 wave-1 hygiene sweep, establishing the OI-133(c) "FloatingKey
+    #   ±4" tolerance) — THIS BLOCK HAS NEVER RUN, and the ±4 is not a tolerance but unreachable
+    #   configuration on an object that is never constructed.
+    #
+    #   music21.analysis.floatingKey exports NO name `FloatingKey` (v9.9.1 — the class is
+    #   `KeyAnalyzer`). So the constructor below raises AttributeError, the bare `except Exception`
+    #   swallows it, fk_analyzer stays None, and `local_key` silently falls back to the GLOBAL key
+    #   for every region — which then feeds `romanNumeral` and the emitted "key" field. Proven at
+    #   the artifact, not inferred: in the committed corroborator all 28,914 Baroque regions have
+    #   key == keyGlobal, on every stem. The intended local sliding window has never once run.
+    #
+    #   NOT FIXED HERE, deliberately. Constructing KeyAnalyzer would give `romanNumeral` and `key`
+    #   genuinely local values, changing the committed .music21.json — a ground-truth-corroborator
+    #   change, i.e. a re-baseline event under the user's ratification, not a hygiene edit. The
+    #   governing hard stop is unaffected either way (the a8 robust unit is DCML-only and never
+    #   reads music21; the BIR gate reads music21's root + quality, not its key or RN) — the blast
+    #   radius is the full_agree / chord_agree_rn_differs / chord_agree_key_differs sub-split in
+    #   compare_analyses.classify. Tracked at OI-158; the user rules on whether to activate it.
     fk_analyzer = None
     if _HAS_FLOATING_KEY:
         try:
-            fk_analyzer = m21_floatingKey.FloatingKey()
+            fk_analyzer = m21_floatingKey.FloatingKey()   # ← always raises; see above
             fk_analyzer.numFlats = 4
             fk_analyzer.numSharps = 4
         except Exception:
