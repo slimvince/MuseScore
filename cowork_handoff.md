@@ -1,6 +1,54 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
+## ★ CC ENTRY — THE COMBINED RE-BASELINE LANDED (OI-132 + OI-144, user-ratified 2026-07-13)
+
+**The ratified key baselines MOVED. Anything quoting the key column must be re-read.**
+Report: `cc_key_grading_and_calibration_rebaseline_report.md`. O-12 snapshot `23e21da8ea` →
+landing commits **`800f1a12bf`** (A, the grading consolidation) + **`b3511fd28a`** (B, the
+routing + calibration refit). Both separately revertible.
+
+**The new ratified columns** (variant b, 326/352 coverage, corpus `c50002fee1`; Baroque/Jazz/Default):
+
+| column | value | moved? |
+|---|---|---|
+| root-agree | 66.04 / 64.98 / 65.93 % | **no — byte-identical** |
+| RN-agree | 46.33 / 44.10 / 46.23 % | **no — byte-identical** |
+| key-agree vs HOME | **71.42 / 67.83 / 70.65 %** | yes (was 71.29 / 67.49 / 70.52) |
+| key-agree vs LOCAL | **65.99 / 62.98 / 65.71 %** | yes (was 65.72 / 62.49 / 65.39) |
+| key-abstain | **0 / 4 080 / 2 400** ticks | yes (was 7 680 / 10 800 / 33 120) |
+
+**(A) OI-132 — the user's parent-collection ruling, implemented once.** The five dominant-family
+exotic modes (Phrygian dominant, altered, Lydian dominant, Lydian augmented, Mixolydian ♭6) reduce
+to the MINOR key of their PARENT COLLECTION — "C♯PhrygDom" grades as F♯ minor, the key it is the
+dominant of — in the ONE shared reduction `compare_rn._our_key_tonic`. `oracle_root_metric`'s
+divergent second key parser is FOLDED onto it and deleted (the DT-6 duplication is gone).
+**Every figure landed on the adjudication probe's written prediction to the digit — zero surprise.**
+The hard stop passes untouched (+0/−0 runs, class-(b) Δ+0 on all presets).
+
+**(B) OI-144 — the graded surfaces routed onto the corrected ground truth; all four calibration maps
+refit and re-committed.** a8 is byte-identical under (B) (it already read the corrected substrate), so
+**every governing figure in this event is attributable to (A) alone.**
+
+**★ A load-bearing premise of the dispatch was FALSE and is recorded, not absorbed:** the instruction
+said the calibration maps are "consumed at analysis time" and therefore that the refit is a
+production-behavior change. **They are not.** The four maps are read by exactly two measurement
+instruments (`conformal_check.py`, `theta_fit.py`); no C++/CMake/resource file references them, and
+`tools/batch_analyze.cpp` reads only the score and its command-line parameters. The mandated full
+corpus regeneration (352 × 3) confirms it empirically: **0 `.ours.json` differ.** The refit is a
+measurement-artifact re-baseline; no golden refresh was owed.
+
+**Two leftovers filed (not absorbed):** **OI-150** — the shared parser still abstains on a mode name
+containing an accidental or digit, so **Dor♭2** keyfails (4 080 Jazz / 2 400 Default ticks); the user
+corrected the reduction target for the eventual fix: Dorian ♭2 is the 2nd mode of melodic minor, so
+D Dorian ♭2 is the notes of C melodic minor and grades as **C minor (the parent), NOT D minor** —
+same-tonic-minor is the unprincipled reduction OI-132 retired. **OI-151** — the adjudication probe's
+default output path overwrites its own committed evidence (DT-24, sibling of OI-130).
+
+**OI-145 wave-1 remainder is now the harness group only (OI-135 / OI-136 / OI-137).** The two
+figure-moving remainders are closed.
+
+---
 ## ★★★ SESSION 36 CLOSE — THE CURRENT ENTRY POINT (Cowork, 2026-07-10)
 
 **You (the next session) start context-less, and THIS handoff is the ONE document you read
