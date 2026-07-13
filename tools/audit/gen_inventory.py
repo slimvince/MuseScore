@@ -950,14 +950,39 @@ def extract_crosslayer(orig_text, path):
 # regex-scanned, so the extraction is exact, not heuristic.
 import ast as _ast
 
-_PY_STDLIB_MODS = {
-    "os", "sys", "json", "re", "csv", "glob", "subprocess", "argparse", "collections",
-    "math", "pathlib", "typing", "itertools", "functools", "dataclasses", "io", "shutil",
-    "hashlib", "time", "random", "copy", "xml", "statistics", "struct", "tempfile",
-    "warnings", "abc", "enum", "fractions", "datetime", "traceback", "concurrent",
-    "multiprocessing", "__future__", "numpy", "np", "sklearn", "music21", "unittest",
-    "pytest", "textwrap", "operator", "bisect", "heapq", "decimal", "contextlib",
-}
+# OI-127(e). This was a HAND-LISTED set of "not an internal module" names, and it silently
+# mis-resolved every stdlib module it forgot: `import platform` (run_bach_preset) was not in the
+# list, so it was resolved to a nonexistent tools/platform.py and tagged an `instrument`
+# dependency edge — a crosslayer false positive in the audit's OWN tool.
+#
+# Two fixes, both structural rather than another hand-list:
+#   1. the stdlib set is ASKED OF THE INTERPRETER (sys.stdlib_module_names, authoritative and
+#      complete) instead of enumerated here;
+#   2. an edge is only claimed when the resolved file ACTUALLY EXISTS — so a name that is
+#      neither stdlib nor a real tools/ module can no longer be reported as an instrument
+#      dependency on a file that was never there.
+# Together these close the class, not just the one instance. "np" is the conventional numpy
+# alias; the rest are the third-party packages the instruments genuinely import.
+_PY_THIRD_PARTY_MODS = {"numpy", "np", "sklearn", "music21", "pytest"}
+_PY_STDLIB_MODS = set(sys.stdlib_module_names) | {"__future__"} | _PY_THIRD_PARTY_MODS
+
+# Where an instrument's own modules live. tools/ holds the measurement chain; tools/audit/ holds
+# the audit tooling, which imports its siblings (e.g. register_lint) directly.
+_PY_MODULE_DIRS = (
+    ("tools/%s.py", os.path.join(REPO_ROOT, "tools")),
+    ("tools/audit/%s.py", os.path.join(REPO_ROOT, "tools", "audit")),
+)
+
+
+def _py_internal_module(top):
+    """The repo-relative path of the tools/ module a top-level import name refers to, or None
+    when the name is stdlib/third-party or names no file we ship (OI-127(e))."""
+    if not top or top in _PY_STDLIB_MODS:
+        return None
+    for rel_fmt, abs_dir in _PY_MODULE_DIRS:
+        if os.path.isfile(os.path.join(abs_dir, top + ".py")):
+            return rel_fmt % top
+    return None
 _PY_IO_CALLS = {"open", "load", "loads", "dump", "dumps", "glob", "iglob",
                 "read_text", "write_text", "read_bytes", "write_bytes",
                 "read_csv", "to_csv", "makedirs", "mkdir", "walk", "listdir"}
@@ -1035,18 +1060,20 @@ def extract_python(orig, path):
             ln = getattr(node, "lineno", 0)
             branches.append({"line": ln, "kind": kind,
                              "func": _py_enclosing(func_spans, ln), "context": ctx(ln)})
-        # internal-module imports (dependency edges = the instrument's crosslayer)
+        # internal-module imports (dependency edges = the instrument's crosslayer).
+        # _py_internal_module (OI-127(e)) resolves a top-level name to a REAL tools/ module or to
+        # None; a name that resolves to nothing is not an edge, and is not invented as one.
         if isinstance(node, _ast.Import):
             for a in node.names:
-                top = a.name.split(".")[0]
-                if top not in _PY_STDLIB_MODS:
+                resolved = _py_internal_module(a.name.split(".")[0])
+                if resolved:
                     cross.append({"line": node.lineno, "include": a.name,
-                                  "resolved": "tools/%s.py" % top, "target_area": "instrument"})
+                                  "resolved": resolved, "target_area": "instrument"})
         elif isinstance(node, _ast.ImportFrom):
-            top = (node.module or "").split(".")[0]
-            if top and top not in _PY_STDLIB_MODS:
+            resolved = _py_internal_module((node.module or "").split(".")[0])
+            if resolved:
                 cross.append({"line": node.lineno, "include": node.module,
-                              "resolved": "tools/%s.py" % top, "target_area": "instrument"})
+                              "resolved": resolved, "target_area": "instrument"})
         # file IO (reads/writes — the instrument's surface)
         if isinstance(node, _ast.Call):
             fname = None
