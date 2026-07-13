@@ -1,6 +1,106 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
+## ★★★ CC SESSION CLOSE 2026-07-13 — THE WHOLE-GRAPH FACT-DEPENDENCY AUDIT (READ-ONLY): **THE FACT GRAPH IS UNDER ESTABLISHMENT — THE KEY-LAYER FUNNEL DOES NOT OPEN UNTIL IT IS RATIFIED**
+
+**Read `cc_fact_dependency_audit_report.md`.** Stage 1 of the #17 funnel. **No `src/` change, no build, no
+test run, no golden refreshed, no corpus/robust-stop write, NO existing register row re-scoped, no
+`ARCHITECTURE.md` / evidence-inventory / design-opening edit.** New register rows only (**OI-161…OI-167**),
+per the standing rule (c). **Everything is a PROPOSAL. Nothing is decided.**
+
+**★ THE REBUILT SPINE IS ACYCLIC — proven, not asserted.** By include-closure: `keymodesequence` has **no
+`chord/`, `function/`, `grouping/` or `decode/` include anywhere**; `ChordSliceDecoder::decideSlice` takes
+**no key at all**; the L2 `Slice` carries `{start,end}` and nothing else. Every fact cycle in the code today
+lives in the **legacy** path (~13 sites), all retiring at R6/E4 — **except one with no retirement row**.
+
+**★ THE STOP (OI-166) — the cadence→key channel's premise is REFUTED at the code.** The design opening's §1
+proposes that the dormant `functioncadence.cpp` *"appears to BE"* the June dossier's key-agnostic cadence
+pre-scan, and its §5 flags the identification as unverified. **Verified; it fails.** The detector IS
+key-agnostic (FACT — no key parameter anywhere), but it is **CHORD-DERIVED**: the tonic hypothesis is *read
+off the Layer-4 committed chord root* — `functioncadence.cpp:229` `const int tonicPc = arr.rootPc;`, plus
+`:301`, `:358`, `:409`, `:450` — and every entry gate reads `.quality`. The June dossier specified a
+**bass-driven, chord-free, tonic-ENUMERATING** pre-scan running *before* `analyzeKeyMode`
+(`cc_cadence_key_investigation_dossier.md:203-209`). **Different units. The pre-scan was never built.**
+
+⇒ **`cowork_evidence_inventory.md` §8 circle 2's break tests the wrong axis.** It says the circle is "BROKEN
+BY THE KEY-AGNOSTIC FORM … the rebuilt machinery votes for a tonic FROM root motion, quality, and the raised
+leading tone — no key input." Every clause is true — but *root* and *quality* **are Layer-4 facts**, so the
+sentence names the problem without noticing it. **Key-agnostic ≠ layer-forward.** L3 consuming this vote is
+**L3 ← L5 ← L4 ← L3**. (This confirms and deepens the wave-2 report's own STOP, which spotted the upward
+L5→L3 edge but not that the machinery it points at is the wrong unit.)
+
+**★ BUT THE BREAK IS REALIZABLE — at a lower layer than anyone proposed.** The chord-free half already
+exists inside `functioncadence.cpp`: `eventHasPc` (`:38`), `voiceMovesFromTo` (`:52`),
+`dominantTritonePresent` (`:72`), `leadingToneResolves` (`:117`) read **only** per-voice notes plus a
+candidate tonic — zero chord fields. **Proposed owning layer: L1.5** — a cadential-evidence derived view
+(bass-motion intervals + same-voice 7̂→1̂ resolution + tritone/seventh presence + the *already-built*
+phrase-boundary salience), enumerating tonic hypotheses, consumed **strictly forward** by L3; **L5 keeps**
+the cadence typology and the modulation-confirmation vote (both legitimately need committed chords).
+**Trade-offs named, not hidden:** the #6 duplication risk (the four predicates must be **single-sourced**,
+never copied); the **UNMEASURED** precision cost of the coarser chord-free vote (PAC-vs-IAC and the
+pre-dominant licensing do *not* survive relocation); and the fact that the **forward-override alternative is
+already sanctioned and already built** (`functionmodulation.cpp:143-154` on `forwardoverride::OnePassClosure`)
+— decision 3(b) frames these as either/or, but they are **complementary**, and only the first was ever in
+doubt.
+
+**★ THE COLLECTION/TONIC SPLIT — THEORY → FACT, conditionally (OI-167).** The rebuilt L4 is tonic-independent
+**by construction**: its only key use is one `analyzeChord` call with `gateCtxOut=nullptr`, so it never runs
+the post-scoring gates; and its two key-consuming terms are **pure collection-membership tests** (the
+constructed pitch-class set is provably identical for all 7 diatonic modes of one signature ⇒ the oracle
+cannot distinguish relative major from relative minor). **But two TONIC-dependent sites are LIVE and are not
+in the decoder:** Gate G-E (`postscoringgates.cpp:379-385`, rides R1 — confirm, since R1's text names gate
+*letters*, not sub-rules) and the **Aeolian lone-tonic/dominant guard** (`sparsechordrefinement.cpp:154-159`),
+whose retirement is **UNDECIDED** (OI-102). **If that guard survives the engagement, L4 is not
+tonic-independent and every design resting on the split loses its premise (#18).**
+
+**★ THE PROGRESSION-GRAMMAR BREAK IS VACUOUS AS BUILT.** `isLicensedProgression` takes only
+`ProgressionChord{rootPc, quality}` × 2 and is **transposition-invariant** (`functionprogression.cpp:125-143`)
+— it returns the **identical value under every candidate key**, i.e. **zero** key-discriminating
+information. §8 circle 5's "broken by enumeration" is logically sound but names an instrument that cannot
+discriminate keys. The asset that **could** is `harmonicvocabulary` (degree-offset skeletons, tonic supplied
+at query time) — dormant, no consumer, and unnamed in decision 3(e). **Proposed: re-scope the §4(4) probe.**
+
+**★ §8 ENUMERATES FIVE CIRCLES; THE CODE HAS AT LEAST THREE MORE.** Two are named in our own
+`ARCHITECTURE.md` §2.14 and omitted from §8 (**segmentation↔chord** — live in the legacy path, killed in the
+target by the pure L2 slicer; **functional-role↔chord-identity** — broken by the sanctioned fine-grain
+forward-override). The third appears in **neither** (**OI-165**): `findTemporalContext`, an **L1.5
+note-view primitive that instantiates a chord analyzer** and runs full `analyzeChord` at
+`ScoringPhase::Final` — *all* progression signals active — LIVE at `regionanalyzer.cpp:918-919`, on **no**
+retirement row. The §2.14 `ScoringPhase::Segmentation` mitigation does not cover it — and that mitigation is
+**partial** in any case (`analysistypes.h:68-69`: *"rootContinuityBonus stays active (segmentation depends on
+it)"*).
+
+**★ TWO CORRECTIONS THE INVENTORY OWES (OI-146(a)).** **Fermatas are not unread (OI-162)** — the "cheapest
+unread high-value fact in the system" is already read at `phraseboundaryview.cpp:113`, together with breath
+marks, double barlines, mid-score key changes, ritardandi and long rests, by a **built L1.5 view that is
+gated off**. The gap is wiring and publication, not detection. And **dominant-shape votes / leading-tone
+events are mis-filed at L4** — both are computable with **no chord decision**, so as filed they look like
+upward edges into L3 when in fact they are strictly forward.
+
+**★ AND THE SPELLING CHANNEL DOES NOT EXIST (OI-163).** The L3 emission's entire evidence surface is
+`PitchContext{pitch, durationWeight, beatWeight, isBass}` — **no `tpc`**, though L1 has carried spelled pitch
+since the note model. Design decision 2(a) ("the single best-grounded emission improvement") has **no input
+path**. Forward; a missing field, not a cycle.
+
+**★ TWO RATIFIED POSITIONS CONTRADICT EACH OTHER (OI-161).** `cowork_target_architecture.md` §2
+(user-ratified, corrections recorded 2026-06-21) rules that L3 *"needs only the notes … **NOT** chord
+symbols, functions, or **cadence detection**"*, and points cadence-based key refinement at the **gated
+Stage-5 joint step** — now **shelved** (OI-43/OI-44). Design-opening **decision 3(b)** proposes precisely the
+rejected thing. **The design pass must resolve this explicitly.** The §5.2 L1.5 proposal is one way to
+satisfy both — it is not "cadence detection" in the sense the ruling forbade, and it is not the shelved joint
+step — but it must be *said*, and the ruling's wording amended.
+
+**Predictions vs findings (#17b): 7 right, 3 wrong — all three reported (§1).** I predicted the
+key-invariance measurement did not exist (**it does, and is established**); I predicted the cadence
+relocation was not achievable (**it is** — I reasoned from the header's contract prose instead of the
+predicate bodies); and I predicted a placement problem for progression-grammar but **missed the instrument
+problem underneath it**. The diagnostic lesson, recorded: **reading the contract is not reading the code
+(#15).**
+
+**NEXT: the design pass ratifies the layer assignment — with CC's proposed placements as ONE input among
+several. Only then does the key-layer funnel open.**
+
+---
 ## ★★★ CC SESSION CLOSE 2026-07-13 — WAVE-2 DEPENDENCY RECONCILIATION (READ-ONLY): **THE PREMISE IS UNDER RECONCILIATION; THE SEQUENCE AWAITS THE USER'S RATIFICATION**
 
 **Read `cc_wave2_dependency_reconciliation_report.md`.** Stage 1 of the #17 funnel. **No `src/` change, no
