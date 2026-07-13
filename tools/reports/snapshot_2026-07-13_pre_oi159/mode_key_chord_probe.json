@@ -1,5 +1,5 @@
 {
-  "git_hash": "6725329381",
+  "git_hash": "243cfd2165",
   "corpus_git_hash": "c50002fee1",
   "key_uncertain_bar": 1.0,
   "n_scores": 352,
@@ -10,8 +10,8 @@
       "n_regions_with_carried_alts": 10255,
       "beam_width_carried_keys": {
         "5": 10030,
-        ">6": 47,
-        "6": 178
+        "6": 178,
+        ">6": 47
       },
       "fire_rate": {
         "n_flip_regions": 99,
@@ -21,9 +21,9 @@
         "frac_of_coupled": 0.0135
       },
       "benefit_top_alt_flip": {
-        "corr": 38,
-        "neutral": 30,
-        "harm": 29,
+        "corr": 37,
+        "neutral": 32,
+        "harm": 28,
         "net_corr_minus_harm": 9,
         "n": 97
       },
@@ -35,16 +35,16 @@
         "n": 16
       },
       "benefit_per_flip_pairs": {
-        "corr": 59,
-        "neutral": 61,
-        "harm": 53,
-        "net_corr_minus_harm": 6,
+        "corr": 56,
+        "neutral": 65,
+        "harm": 52,
+        "net_corr_minus_harm": 4,
         "n": 173
       },
       "benefit_any_alt_bound": {
         "n_scored_regions": 6249,
-        "corrections_available": 38,
-        "harms_exposed": 29,
+        "corrections_available": 37,
+        "harms_exposed": 28,
         "net_available": 9
       },
       "pedal_owed_p1": {
@@ -53,40 +53,33 @@
         "agreement_frac": 0.2
       },
       "key_axis_desksim": {
-        "n_key_agree_regions": 4634,
-        "n_key_disagree_regions": 1775,
+        "n_key_agree_regions": 4427,
+        "n_key_disagree_regions": 1982,
         "n_key_unparseable_regions": 0,
-        "key_agree_dur": 4298400,
-        "key_disagree_dur": 1725360,
-        "vs_local_key": {
-          "n_key_agree_regions": 4225,
-          "n_key_disagree_regions": 2024,
-          "n_key_unparseable_regions": 160,
-          "key_agree_dur": 3991320,
-          "key_disagree_dur": 1895880
-        },
+        "key_agree_dur": 4101600,
+        "key_disagree_dur": 1922160,
         "menu_containment": {
-          "n": 1342,
-          "frac_of_keydisagree": 0.7561,
-          "frac_of_keydisagree_dur": 0.7575
+          "n": 1322,
+          "frac_of_keydisagree": 0.667,
+          "frac_of_keydisagree_dur": 0.6702
         },
         "chord_flip_under_gt": {
           "n": 7,
-          "frac_of_keydisagree": 0.0039,
+          "frac_of_keydisagree": 0.0035,
           "n_coupled": 3,
           "dur": 9600
         },
         "chord_flip_under_any_carried": {
-          "n": 16,
-          "frac_of_keydisagree": 0.009
+          "n": 20,
+          "frac_of_keydisagree": 0.0101
         },
         "alt_keyconf_populated": {
           "n_alts": 25864,
           "n_nonzero": 2,
           "frac_nonzero": 0.0001
         },
-        "key_ident_selfcheck": {
-          "n_checked": 6409,
+        "enum_table_selfcheck": {
+          "n_checked": 6404,
           "n_mismatch": 0
         }
       },
@@ -110,10 +103,10 @@
         "frac_of_coupled": 0.01
       },
       "benefit_top_alt_flip": {
-        "corr": 39,
-        "neutral": 22,
+        "corr": 36,
+        "neutral": 25,
         "harm": 33,
-        "net_corr_minus_harm": 6,
+        "net_corr_minus_harm": 3,
         "n": 94
       },
       "benefit_top_alt_flip_coupled": {
@@ -124,17 +117,17 @@
         "n": 15
       },
       "benefit_per_flip_pairs": {
-        "corr": 75,
-        "neutral": 43,
+        "corr": 70,
+        "neutral": 48,
         "harm": 55,
-        "net_corr_minus_harm": 20,
+        "net_corr_minus_harm": 15,
         "n": 173
       },
       "benefit_any_alt_bound": {
         "n_scored_regions": 6149,
-        "corrections_available": 39,
+        "corrections_available": 36,
         "harms_exposed": 33,
-        "net_available": 6
+        "net_available": 3
       },
       "pedal_owed_p1": {
         "n_production_pedal_regions": 2,
@@ -142,40 +135,33 @@
         "agreement_frac": 0.5
       },
       "key_axis_desksim": {
-        "n_key_agree_regions": 4373,
-        "n_key_disagree_regions": 1936,
-        "n_key_unparseable_regions": 2,
-        "key_agree_dur": 4216560,
-        "key_disagree_dur": 1932240,
-        "vs_local_key": {
-          "n_key_agree_regions": 4007,
-          "n_key_disagree_regions": 2140,
-          "n_key_unparseable_regions": 164,
-          "key_agree_dur": 3939600,
-          "key_disagree_dur": 2063760
-        },
+        "n_key_agree_regions": 4168,
+        "n_key_disagree_regions": 2143,
+        "n_key_unparseable_regions": 0,
+        "key_agree_dur": 4010640,
+        "key_disagree_dur": 2139840,
         "menu_containment": {
-          "n": 1329,
-          "frac_of_keydisagree": 0.6865,
-          "frac_of_keydisagree_dur": 0.6802
+          "n": 1320,
+          "frac_of_keydisagree": 0.616,
+          "frac_of_keydisagree_dur": 0.6103
         },
         "chord_flip_under_gt": {
           "n": 8,
-          "frac_of_keydisagree": 0.0041,
+          "frac_of_keydisagree": 0.0037,
           "n_coupled": 4,
           "dur": 11760
         },
         "chord_flip_under_any_carried": {
-          "n": 27,
-          "frac_of_keydisagree": 0.0139
+          "n": 30,
+          "frac_of_keydisagree": 0.014
         },
         "alt_keyconf_populated": {
           "n_alts": 25509,
           "n_nonzero": 5,
           "frac_nonzero": 0.0002
         },
-        "key_ident_selfcheck": {
-          "n_checked": 6311,
+        "enum_table_selfcheck": {
+          "n_checked": 6307,
           "n_mismatch": 0
         }
       },
@@ -199,9 +185,9 @@
         "frac_of_coupled": 0.0095
       },
       "benefit_top_alt_flip": {
-        "corr": 36,
-        "neutral": 27,
-        "harm": 26,
+        "corr": 35,
+        "neutral": 29,
+        "harm": 25,
         "net_corr_minus_harm": 10,
         "n": 89
       },
@@ -213,16 +199,16 @@
         "n": 11
       },
       "benefit_per_flip_pairs": {
-        "corr": 67,
-        "neutral": 52,
-        "harm": 50,
-        "net_corr_minus_harm": 17,
+        "corr": 64,
+        "neutral": 56,
+        "harm": 49,
+        "net_corr_minus_harm": 15,
         "n": 169
       },
       "benefit_any_alt_bound": {
         "n_scored_regions": 6253,
-        "corrections_available": 36,
-        "harms_exposed": 26,
+        "corrections_available": 35,
+        "harms_exposed": 25,
         "net_available": 10
       },
       "pedal_owed_p1": {
@@ -231,31 +217,24 @@
         "agreement_frac": 0.2
       },
       "key_axis_desksim": {
-        "n_key_agree_regions": 4592,
-        "n_key_disagree_regions": 1820,
-        "n_key_unparseable_regions": 1,
-        "key_agree_dur": 4259520,
-        "key_disagree_dur": 1769760,
-        "vs_local_key": {
-          "n_key_agree_regions": 4217,
-          "n_key_disagree_regions": 2035,
-          "n_key_unparseable_regions": 161,
-          "key_agree_dur": 3966600,
-          "key_disagree_dur": 1926600
-        },
+        "n_key_agree_regions": 4394,
+        "n_key_disagree_regions": 2019,
+        "n_key_unparseable_regions": 0,
+        "key_agree_dur": 4074480,
+        "key_disagree_dur": 1955760,
         "menu_containment": {
-          "n": 1320,
-          "frac_of_keydisagree": 0.7253,
-          "frac_of_keydisagree_dur": 0.7295
+          "n": 1295,
+          "frac_of_keydisagree": 0.6414,
+          "frac_of_keydisagree_dur": 0.6455
         },
         "chord_flip_under_gt": {
           "n": 6,
-          "frac_of_keydisagree": 0.0033,
+          "frac_of_keydisagree": 0.003,
           "n_coupled": 2,
           "dur": 8160
         },
         "chord_flip_under_any_carried": {
-          "n": 19,
+          "n": 21,
           "frac_of_keydisagree": 0.0104
         },
         "alt_keyconf_populated": {
@@ -263,8 +242,8 @@
           "n_nonzero": 2,
           "frac_nonzero": 0.0001
         },
-        "key_ident_selfcheck": {
-          "n_checked": 6413,
+        "enum_table_selfcheck": {
+          "n_checked": 6398,
           "n_mismatch": 0
         }
       },

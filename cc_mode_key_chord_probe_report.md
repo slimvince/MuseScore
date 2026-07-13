@@ -19,12 +19,19 @@
 > menu-containment (PREDICTION 3) — the build/re-scope decision is the user's (#8/#14).
 >
 > **Provenance / reproducibility (#16).** Corpus `c50002fee1` (pinned, 352 XMLs, 326/352
-> WiR-covered per preset). HEAD `243cfd2165` (the Task-0 register/discussion commit). Probe C++
-> instrument `689840d2ef` (`--dump-joint-probe`) — **unchanged** (no C++ dump field was needed;
-> the zero-C++ route). Grader: the additive KEY-axis desk-sim extension of
-> `tools/measure_joint_probe.py` (this session, `feat(tools)`). Artifact:
+> WiR-covered per preset). Probe C++ instrument `689840d2ef` (`--dump-joint-probe`) —
+> **unchanged** (no C++ dump field was needed; the zero-C++ route). Grader: the additive KEY-axis
+> desk-sim extension of `tools/measure_joint_probe.py`. Artifact:
 > `tools/reports/mode_key_chord_probe.json`. Reference: `tools/a8_rebaseline_measure.py` on the
 > committed corpus (§3). Both regression stops untouched (no production change).
+>
+> **★ FIGURES REFRESHED 2026-07-13 (OI-159; `cc_wave1_finalize_report.md`).** The original run was
+> HEAD `243cfd2165` (the Task-0 register/discussion commit), which **pre-dated the OI-142
+> ground-truth correction** and the OI-157 mode-grading fold; its key-axis figures went stale and
+> nothing re-ran it. The artifact and the figures below now come from a re-run at HEAD on the same
+> pinned corpus. **The shelve ruling is re-confirmed, not reopened** — chord-flip-under-GT is
+> byte-identical at 7 / 8 / 6 and menu-containment is still below its 80 % bar (§0). Outgoing
+> evidence preserved at `tools/reports/snapshot_2026-07-13_pre_oi159/` (O-12).
 
 ---
 
@@ -37,7 +44,24 @@ quantitative predictions **before** any measurement. Each is answered explicitly
 |---|---|---|---|
 | **P1** — chord evidence re-ranks the key; flips on 3–8 % of graded regions, net **+0.5…+2.0 pp**; **below +0.3 pp ⟹ shelve** | ≥ +0.3 pp | chord-driven key-flip fires on **0.11 / 0.13 / 0.09 %** of committed regions; net key-agreement effect **≤ +0.16 / +0.19 / +0.14 pp** even if *every* flip were correct with zero harm | **NOT MET** — below the +0.3 pp floor even in the impossible best case ⟹ the prediction's own rule says shelve on the key axis |
 | **P2** — ≥ 70 % of correct key-flips in the lowest key-confidence quartile; top-quartile flip rate < 1 % | ≥ 70 % | **NOT EVALUABLE** — the mechanism fires on only 7 / 8 / 6 regions total (no distribution to quartile); and the carried alternatives carry **no per-alternative confidence** (`keyConf` populated on **0.01 %** of alts — only the region-level `keySeqMargin` exists; relates OI-75/OI-81) | **NOT EVALUABLE** (mechanism inert + input absent) |
-| **P3** — ground-truth key present in the carried menu in ≥ 80 % of key-disagree regions | ≥ 80 % | **66.7 / 61.6 / 64.1 %** by count (67.0 / 61.0 / 64.6 % by duration) | **NOT MET** — the menu misses the GT key ~⅓ of the time (a menu-widening signal, §2) |
+| **P3** — ground-truth key present in the carried menu in ≥ 80 % of key-disagree regions | ≥ 80 % | **75.6 / 68.7 / 72.5 %** by count (75.8 / 68.0 / 73.0 % by duration) — *refreshed 2026-07-13 (OI-159); the original run recorded 66.7 / 61.6 / 64.1 %* | **STILL NOT MET** — the menu misses the GT key ~¼ of the time (a menu-widening signal, §2 — real, but weaker than first recorded) |
+
+**★ The figures in this report were REFRESHED on 2026-07-13 (OI-159). The verdicts did not change.**
+The original run (`git 243cfd2165`) graded against a ground truth that was **corrected afterwards**:
+**OI-142** applied the 12 transposed editions' constant offsets to the When-in-Rome ground truth at
+the shared substrate `dcml_parser.load_wir_regions`, and **OI-157** folded the probe's carried-key
+mode grading onto the one shared reduction. Neither was propagated to this evidence, so it drifted
+(#10, #16) — the discovery is register row OI-159.
+
+**The attribution, measured (Baroque / Jazz / Default):** key-disagree regions fall by
+**−207 / −207 / −199**, of which the hygiene sweep's A/B attributed **−196 / −187 / −191** to the
+OI-142 ground-truth correction and **−11 / −20 / −8** to the OI-157 fold. Menu-containment rises
+with it. **P1's mechanism — chord-flip-under-GT — is BYTE-IDENTICAL at 7 / 8 / 6 regions**
+(coupled 3 / 4 / 2, durations 9600 / 11760 / 8160 ticks unchanged), which is the number the shelve
+ruling rests on. **So the OI-43/OI-44 shelve ruling is RE-CONFIRMED, not reopened:** the coupling
+is still inert, and menu-containment is still below its 80 % bar. Only the recorded figures were
+stale. The outgoing artifact is preserved at
+`tools/reports/snapshot_2026-07-13_pre_oi159/` (O-12).
 
 **The load-bearing finding (control flow before arithmetic — #17c).** The user's mechanism
 requires the chord to *differ* under a different carried key ("the top chord from another
@@ -96,29 +120,43 @@ was not built** (declared deviation from a literal "stop after the hand traces,"
 Both axes in one table (per key-disagree region = argmax region key ≠ DCML global key; committed
 regions; region-level):
 
+**★ THE FIGURES BELOW WERE REFRESHED 2026-07-13 (OI-159) — the conclusion is UNCHANGED.** The run
+this report was first written from (`git 243cfd2165`) pre-dated the **OI-142 ground-truth
+correction** (the 12 transposed editions' offsets, applied at `dcml_parser.load_wir_regions`) and
+the **OI-157 mode-grading fold**, so its key-axis figures were stale. The table now carries a
+**re-run at HEAD** on the same pinned corpus `c50002fee1`; the superseded figures are kept beside
+each cell, and the drift is attributed in §0. **What did NOT move: chord-flip-under-GT is
+byte-identical at 7 / 8 / 6 regions** — the mechanism the shelve ruling rests on is still inert.
+
 | preset | key-disagree regions | **P3 menu-containment** (GT key in menu) | **P1 chord-flip-under-GT** (coupling fires) | chord-flip under **any** carried key | per-alt `keyConf` populated | **chord (root) axis** (arc-12, reproduced) |
 |---|---|---|---|---|---|---|
-| Baroque | 1982 | **66.7 %** (1322) | **0.35 %** (7; coupled 3) | 20 | 2 / 25864 | net **+9** (corr 37/harm 28) |
-| Jazz | 2143 | **61.6 %** (1320) | **0.37 %** (8; coupled 4) | 30 | 5 / 25509 | net **+3** (corr 36/harm 33) |
-| Default | 2019 | **64.1 %** (1295) | **0.30 %** (6; coupled 2) | 21 | 2 / 25902 | net **+10** (corr 35/harm 25) |
+| Baroque | 1775 *(was 1982)* | **75.6 %** (1342) *(was 66.7 %, 1322)* | **0.39 %** (7; coupled 3) *(count byte-identical)* | 16 *(was 20)* | 2 / 25864 | net **+9** (corr 38/harm 29) *(was corr 37/harm 28)* |
+| Jazz | 1936 *(was 2143)* | **68.7 %** (1329) *(was 61.6 %, 1320)* | **0.41 %** (8; coupled 4) *(count byte-identical)* | 27 *(was 30)* | 5 / 25509 | net **+6** (corr 39/harm 33) *(was net +3, corr 36/harm 33)* |
+| Default | 1820 *(was 2019)* | **72.5 %** (1320) *(was 64.1 %, 1295)* | **0.33 %** (6; coupled 2) *(count byte-identical)* | 19 *(was 21)* | 2 / 25902 | net **+10** (corr 36/harm 26) *(was corr 35/harm 25)* |
 
 Reading it:
 
-- **The chord (root) axis reproduces arc-12 byte-for-byte** (net **+9 / +3 / +10**; fire-rate
-  99 / 95 / 89 committed regions = 1.5 / 1.5 / 1.4 %) — the extended harness did not disturb the
-  existing measurement, and the arc-12 chord-axis result stands.
-- **The chord→key coupling (P1's mechanism) fires on 0.30–0.37 % of key-disagree regions**
-  (7 / 8 / 6 regions; duration 9600 / 11760 / 8160 ticks). Even granting every one of those flips
-  a correct, harm-free key correction, the **absolute** key-agreement ceiling of the
+- **The chord (root) axis moved slightly under the corrected ground truth, and the arc-12 reading
+  stands.** The fire-rate is byte-identical (99 / 95 / 89 committed regions = 1.5 / 1.5 / 1.4 %) —
+  which chords flip is a property of our analyzer, not of the ground truth — but *whether a flip
+  corrects or harms* is graded against the ground truth, so the corr/harm split re-sorts: net
+  **+9 / +6 / +10** (was +9 / +3 / +10). Out of ~6200 scored regions per preset that is still a
+  handful, and arc-12's conclusion ("the flip is nearly a coin-flip") is untouched. **The arc-12
+  evidence artifact itself (`tools/reports/joint_probe_measure.json`) and the report citing it are
+  still stale from the same cause — recorded as OI-160, not silently rewritten here.**
+- **The chord→key coupling (P1's mechanism) fires on 0.33–0.41 % of key-disagree regions**
+  (7 / 8 / 6 regions — **the same regions, the same durations 9600 / 11760 / 8160 ticks**; the
+  percentage rises only because the key-disagree denominator shrank). Even granting every one of
+  those flips a correct, harm-free key correction, the **absolute** key-agreement ceiling of the
   chord-coupling is **+0.16 / +0.19 / +0.14 pp** of graded region-duration — below P1's +0.3 pp
   abandonment floor. The realistic value (some flips harm, two of the corpus flips are a
   within-minor-mode-variant artifact and an ambiguous-boundary coin-flip) is **~0**.
-- **The GT key is in the carried menu ~⅔ of the time (P3: 62–67 %, not ≥ 80 %).** So a *perfect
-  key ranker* could recover up to ~⅔ of key-disagree duration — **but the chord cannot drive that
-  ranking** (0.3 % flip rate). Realizing the menu ceiling is a **key-layer** improvement (or a
-  wider menu for the missing ~⅓), **not** the joint chord-key step the user asked about. The
-  menu misses the GT key entirely in ~⅓ of key-disagree regions — the menu-widening signal the
-  discussion's re-scope option (OI-44) names.
+- **The GT key is in the carried menu ~7 times in 10 (P3: 68.7–75.6 %, still not ≥ 80 %).** So a
+  *perfect key ranker* could recover up to ~¾ of key-disagree duration — **but the chord cannot
+  drive that ranking** (0.4 % flip rate). Realizing the menu ceiling is a **key-layer** improvement
+  (or a wider menu for the missing ~¼), **not** the joint chord-key step the user asked about. The
+  menu-widening signal the discussion's re-scope option (OI-44) names is **real but weaker than
+  first recorded**: the menu misses the GT key in ~¼ of key-disagree regions, not ~⅓.
 - **The carried alternatives carry no per-alternative confidence** (`keyConf` = 0 on 99.99 % of
   alts; only the region-level `keySeqMargin` is populated). So even the input P2's quartile
   analysis needs does not exist — the closeness of each runner-up key is folded into a
@@ -171,11 +209,12 @@ instrument-hardening item; no adoption event leans on it here.
   between collection siblings that name the same chords.
 - **P1 NOT MET** (chord-coupling ≤ +0.16 pp best case, < +0.3 pp floor) → by the prediction's own
   rule, the joint step stays **shelved on the key axis** too, not only the chord axis.
-- **P3 NOT MET** (62–67 % menu-containment) → if the joint step is not the answer, the remaining
-  key-axis headroom (~⅓ of graded duration disagrees) splits into: ~⅔ where the GT key is
-  carried but unexploited (a **key-layer ranking** question — the OI-75/OI-81 discarded runner-up
-  closeness is the natural lever), and ~⅓ where the GT key is **absent from the menu** (a
-  **menu-widening** question — the OI-44 re-scope option).
+- **P3 NOT MET** (68.7–75.6 % menu-containment on the refreshed run; 62–67 % as originally
+  recorded) → if the joint step is not the answer, the remaining key-axis headroom (~28 % of
+  graded region-duration disagrees) splits into: ~¾ where the GT key is carried but unexploited
+  (a **key-layer ranking** question — the OI-75/OI-81 discarded runner-up closeness is the natural
+  lever), and ~¼ where the GT key is **absent from the menu** (a **menu-widening** question — the
+  OI-44 re-scope option, whose signal is real but **weaker** than the original figures suggested).
 - **OI-44** — the single declared status the numbers support: **design DELIVERED / build
   SHELVED on both axes** (chord axis arc-12; key axis this probe). The reopened framing does not
   revive the joint step; it points the key-axis headroom at the key layer and menu width, not at
@@ -235,5 +274,13 @@ built around.
 *CC, 2026-07-12. OI-43 discussion — the Premise-Gate funnel's desk-simulate + read-only stages.
 The desk sim killed the premise at the cheap stage, exactly as the funnel intends: the joint
 chord→key coupling does not fire because the carried key alternatives are collection siblings
-under which the chord is invariant. The key-axis headroom is real (~⅓ disagrees) but it is a
-key-layer / menu-width question, not a chord↔key coupling one. Fork-only; `upstream` untouched.*
+under which the chord is invariant. The key-axis headroom is real (~28 % of graded duration
+disagrees) but it is a key-layer / menu-width question, not a chord↔key coupling one. Fork-only;
+`upstream` untouched.*
+
+*Figures refreshed 2026-07-13 (CC, OI-159 — `cc_wave1_finalize_report.md`): the run this report was
+written from pre-dated the OI-142 ground-truth correction and the OI-157 mode-grading fold. The
+artifact and every figure above are now from a re-run at HEAD on the same pinned corpus; the
+outgoing evidence is preserved at `tools/reports/snapshot_2026-07-13_pre_oi159/` (O-12). Every
+verdict is unchanged and the shelve ruling is re-confirmed — chord-flip-under-GT is byte-identical
+at 7 / 8 / 6 regions, and menu-containment, though higher, is still below its 80 % bar.*
