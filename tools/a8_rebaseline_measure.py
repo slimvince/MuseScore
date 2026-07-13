@@ -35,8 +35,13 @@ never be flattered by opting out of the hard slices:
     scored/unscored duration is published. The comparison itself is compare_analyses.roots_agree,
     the ONE root-equality decision every graded site routes through (OI-52), so this convention
     is encoded once instead of being re-implemented at each `==`.
-  - KEY respect: an abstained cell — OUR key is unparseable/absent — becomes `keyfail` and is
-    EXCLUDED from the key-agree denominator (agree+disagree). So the key-agree-% IS abstention-
+  - KEY respect: an abstained cell — compare_rn._our_key_ident returns None, because OUR key
+    string is unparseable/absent OR because its mode suffix lies outside the producer's emitted
+    vocabulary (OI-155: an unknown mode abstains on the mode axis instead of being silently read
+    as minor) — becomes `keyfail` and is EXCLUDED from the key-agree denominator
+    (agree+disagree). That one helper is the ONE abstain decision on the key axis, encoded once
+    rather than re-implemented at each graded site (the OI-52 pattern applied to the key
+    respect). So the key-agree-% IS abstention-
     reducible: raising the key-abstain rate can lift key-agree without better inference. The
     summary publishes b_key_fail (the abstain duration) and the manifest key_parse_fail_pct;
     robust_stop_diff reports the key-abstain BESIDE key-agree and FLAGS a candidate abstain
@@ -154,14 +159,18 @@ class PieceGrid:
         root_agree = cmp.roots_agree(our_r.root_pc, dcml_r.root_pc)
         # respect 2 — RN (exact+partial == agree, per design doc rn_agree)
         rn_agree = bucket in ("exact", "partial")
-        # respect 3 — key vs the DCML GLOBAL (home) key (keyfail reported separately)
-        otc, omaj = crn._our_key_tonic(getattr(our_r, "key", None))
+        # respect 3 — key vs the DCML GLOBAL (home) key (keyfail reported separately).
+        # OUR side goes through crn._our_key_ident — the ONE abstain decision on the key axis
+        # (OI-155): it returns None both when the string does not parse AND when the mode suffix
+        # is outside the producer's vocabulary (OI-33 — an unknown mode abstains on the mode
+        # axis; it is never silently completed into a confident major/minor reading).
+        ours_key = crn._our_key_ident(getattr(our_r, "key", None))
         gtc, gmaj = crn._dcml_key_tonic(getattr(dcml_r, "global_key", None))
-        if otc is None:
-            key_verdict = "keyfail"          # our key unparseable
+        if ours_key is None:
+            key_verdict = "keyfail"          # our key abstained (unparseable / unknown mode)
         elif gtc is None:
             key_verdict = "dcml_keyfail"     # dcml global_key unparseable (rare)
-        elif (otc, omaj) == (gtc, gmaj):
+        elif ours_key == (gtc, gmaj):
             key_verdict = "agree"
         else:
             key_verdict = "disagree"
@@ -169,11 +178,11 @@ class PieceGrid:
         # respect 3b — key vs the DCML LOCAL key (the key IN EFFECT; OI-143). Carried BESIDE
         # the home-key column; the local column counts correct modulation-following as agreement.
         ltc, lmaj = crn._dcml_key_tonic(getattr(dcml_r, "local_key", None))
-        if otc is None:
+        if ours_key is None:
             key_verdict_local = "keyfail"
         elif ltc is None:
             key_verdict_local = "dcml_keyfail"
-        elif (otc, omaj) == (ltc, lmaj):
+        elif ours_key == (ltc, lmaj):
             key_verdict_local = "agree"
         else:
             key_verdict_local = "disagree"

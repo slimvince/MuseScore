@@ -111,16 +111,24 @@ def pcn(p):
 
 
 def _as_mode_name(reduction):
-    """compare_rn's (tonic_pc, is_major) -> this tool's (tonic_pc, 'major'|'minor')."""
+    """compare_rn's (tonic_pc, is_major) -> this tool's (tonic_pc, 'major'|'minor'|None).
+
+    The three states are carried through faithfully, including the MODE ABSTAIN (OI-33,
+    user-ruled at OI-155): is_major=None — the tonic parsed but the mode suffix is outside the
+    producer's vocabulary — maps to mode None, NOT to 'minor'. classify_charged_event then
+    compares the tonic only (`mode_match` is True when either side's mode is None), so an
+    unknown mode never fabricates a mode disagreement, and never fabricates a mode agreement."""
     tonic, is_major = reduction
     if tonic is None:
         return None, None
+    if is_major is None:
+        return tonic, None                      # mode abstain — tonic known, mode unknown
     return tonic, ("major" if is_major else "minor")
 
 
 def parse_our_key(k: str):
-    """'Gmin'/'Bbmaj'/'C#PhrygDom' -> (tonic_pc, 'major'|'minor').
-    The shared graded reduction (compare_rn._our_key_tonic), verbatim."""
+    """'Gmin'/'Bbmaj'/'C#PhrygDom' -> (tonic_pc, 'major'|'minor'|None).
+    The shared graded reduction (compare_rn._our_key_tonic), verbatim. Mode None = ABSTAIN."""
     return _as_mode_name(crn._our_key_tonic(k))
 
 

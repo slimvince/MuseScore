@@ -231,33 +231,64 @@ _KB_DCML_KEY_RE = re.compile(r'^([a-gA-G])([#b]*)$')
 # key-parse failures — carry-fix 2 Task 2, measurement fairness).
 _KB_OURS_KEY_RE = re.compile(r'^([A-G])([#b]?)([A-Za-z]+)$')
 
-# ── Grader-side mode-qualified local-key normalization (carry-fix 2 Task 2) ──
+# ── Grader-side mode classification: the PRODUCER's emitted vocabulary, READ ──
 # The chain's local-key path emits mode-qualified names (Xharm/Xmel harmonic/melodic
 # minor, XDor Dorian, XPhrygDom Phrygian-dominant) whose TONIC is correct but whose
 # STRING the maj/min-only DCML key parser rejected → they were counted keyparse_fail,
-# conflating key-inference quality with mode-label string parseability. This grader-only
-# normalization maps a mode suffix to a major/minor identity so the key comparison scores
-# key IDENTITY, not parseability. PRODUCTION EMITS THESE UNCHANGED.
+# conflating key-inference quality with mode-label string parseability (carry-fix 2 Task 2).
+# This grader-only normalization maps a mode suffix to a major/minor identity so the key
+# comparison scores key IDENTITY, not parseability. PRODUCTION EMITS THESE UNCHANGED.
 #
-# Mapping (mode-prefix, lower-cased → is_major), applied to every mode EXCEPT the five
-# dominant-family modes handled by _parent_collection_reduction below:
-#   • major-third modes maj / ion(ian) / lyd(ian) / mix(olydian)     → MAJOR
-#   • every other (minor-third) mode → MINOR, i.e.:
-#       - Xharm / Xmel  → X minor      (harmonic / melodic minor variants of the tonic)
-#       - XDor           → X minor      — the PARENT-SIGNATURE CLASSIFICATION (declared choice):
-#            Dorian is a minor-third mode; its natural-scale parent at the SAME tonic is the
-#            minor key, and the key comparison uses only (tonic_pc, is_major). Classifying
-#            D-Dorian as (D, minor) PRESERVES the correct tonic (the property the E0′ spot-
-#            check verified) and keeps the whole minor-mode family on one side. The rejected
-#            alternative — the RELATIVE-major signature (D-Dorian → F major) — was declined
-#            because it MOVES the tonic and would break the tonic-correct property.
-_KB_MAJOR_MODE_PREFIXES = ('maj', 'ion', 'lyd', 'mix')
+# THE VOCABULARY IS THE PRODUCER'S — read, not re-decided here (#6, the fact-publication
+# corollary). Two sources, both in the producing layer (src/composing/analysis/key/):
+#   • keymodeformatting.cpp  keyModeSuffix()   — the 21 suffix spellings the chain can emit,
+#                                                one per KeySigMode (the switch is total).
+#   • keymodeanalyzer.h      keyModeIsMajor()  — the producer's OWN major-third / minor-third
+#                                                partition of those same 21 modes.
+# The two sets below mirror that partition for the 16 modes NOT covered by the parent-collection
+# reduction (the five dominant-family exotics are ruled separately — OI-132, just below).
+# Spellings are ASCII-normalized (♭→b, ♯→#) and lower-cased for lookup.
+# tools/tests/test_metric_primitives_l0l1.py PARSES both C++ sources and asserts this table is
+# complete and faithful to them, so a 22nd producer mode cannot land and be graded silently.
+#
+# The MINOR classification of the church modes is the declared PARENT-SIGNATURE choice
+# (carry-fix 2 Task 2): D-Dorian is a minor-third mode; its natural-scale parent at the SAME
+# tonic is the minor key, and the key comparison uses only (tonic_pc, is_major). Grading it
+# (D, minor) PRESERVES the correct tonic (the property the E0′ spot-check verified) and keeps
+# the whole minor-third family on one side. The rejected alternative — the RELATIVE-major
+# signature (D-Dorian → F major) — MOVES the tonic and would break the tonic-correct property.
+#
+# ★ THE ABSTAIN RULE (OI-33; user-ruled at OI-155, 2026-07-13). A suffix in NEITHER set and not
+# one of the five exotics is UNKNOWN, and the mode axis ABSTAINS (None) — it is NOT read as
+# minor. An abstain is never silently completed into a confident reading. (The superseded prefix
+# rule `mode.lower()[:3] in {maj,ion,lyd,mix}` had NO unknown state: every unrecognized suffix
+# fell through to MINOR. It agreed with the producer's partition on all 21 real modes, so no
+# committed figure was ever wrong — but the RULE was wrong, and a change to the emitted
+# vocabulary would have been graded silently instead of surfacing.)
+#
+# major-third modes (keyModeIsMajor() == true), less the four exotics that partition contains:
+_KB_MAJOR_MODES = frozenset({"maj", "lyd", "mixolyd", "ion+", "lyd#2"})
+# minor-third modes (keyModeIsMajor() == false), less the one exotic it contains ("alt"):
+_KB_MINOR_MODES = frozenset({"min", "dor", "phryg", "loc", "mel", "harm",
+                             "dorb2", "loc#2", "loc#6", "dor#4", "altdom"})
 
 
-def _mode_is_major(mode: str) -> bool:
-    """Classify a local-key mode suffix as major (True) or minor (False), case-
-    insensitively, per the carry-fix-2 Task-2 mapping documented above."""
-    return mode.lower()[:3] in _KB_MAJOR_MODE_PREFIXES
+def _ascii_accidentals(s: str) -> str:
+    """The chain emits unicode accidentals inside key strings (e.g. 'AMix♭6', 'F♯maj').
+    ONE normalization, used by every step of the reduction below."""
+    return s.replace('♯', '#').replace('♭', 'b')
+
+
+def _mode_class(mode: str) -> Optional[bool]:
+    """Classify an emitted mode suffix: True = major, False = minor, None = ABSTAIN — the
+    suffix is not in the producer's vocabulary (OI-33/OI-155: an unknown mode is a mode-axis
+    abstain, never a silent 'minor'). Case-insensitive; unicode accidentals normalized."""
+    m = _ascii_accidentals(mode).lower()
+    if m in _KB_MAJOR_MODES:
+        return True
+    if m in _KB_MINOR_MODES:
+        return False
+    return None
 
 
 # ── The five dominant-family modes: the PARENT-COLLECTION reduction ───────────
@@ -291,8 +322,8 @@ _KB_OURS_TONIC_RE = re.compile(r'^([A-G][#b]?)(.*)$')
 
 def _parent_collection_reduction(k: str) -> Optional[tuple[Optional[int], Optional[bool]]]:
     """(parent_tonic_pc, parent_is_major) if `k` names one of the five dominant-family modes;
-    None if it does not (the caller then applies the prefix rule unchanged)."""
-    m = _KB_OURS_TONIC_RE.match(k.strip().replace('♯', '#').replace('♭', 'b'))
+    None if it does not (the caller then classifies the suffix with _mode_class, unchanged)."""
+    m = _KB_OURS_TONIC_RE.match(_ascii_accidentals(k.strip()))
     if not m:
         return None
     parent = _KB_PARENT_COLLECTION_MODES.get(m.group(2))
@@ -321,25 +352,47 @@ def _our_key_tonic(k: Optional[str]) -> tuple[Optional[int], Optional[bool]]:
     surface reads it (a8 / the robust unit, c1_reliability and the calibration fit through
     it, the key-disagreement classifier, oracle_root_metric).
 
-    Two rules, in order:
+    Three rules, in order:
       1. the five dominant-family modes reduce to their PARENT COLLECTION's minor key
          (_parent_collection_reduction — OI-132, user-ruled 2026-07-13);
-      2. every other mode suffix keeps its tonic and is normalized to a major/minor identity
-         by _mode_is_major (carry-fix 2 Task 2), so a mode-qualified name with a correct tonic
-         is not counted a parse failure.
+      2. every other mode suffix in the producer's vocabulary keeps its tonic and is
+         classified major/minor by _mode_class (carry-fix 2 Task 2), so a mode-qualified
+         name with a correct tonic is not counted a parse failure;
+      3. a suffix OUTSIDE the producer's vocabulary ABSTAINS on the mode axis — the pair is
+         (tonic_pc, None): tonic known, mode unknown (OI-33, user-ruled at OI-155). It is NOT
+         silently graded minor. Consumers treat mode=None as a keyfail on the key axis
+         (_our_key_ident, below, is that one decision).
 
-    (None, None) only if the string is genuinely unparseable (empty / not <letter><acc?><mode>)."""
+    (None, None) only if the string is genuinely unparseable (empty / not <letter><acc?><mode>
+    — e.g. the OI-152 accidental/digit suffixes 'Dor♭2', 'Loc#2', which the regex rejects)."""
     if not k:
         return (None, None)
     parent = _parent_collection_reduction(k)
     if parent is not None:
         return parent
-    m = _KB_OURS_KEY_RE.match(k.strip())
+    m = _KB_OURS_KEY_RE.match(_ascii_accidentals(k.strip()))
     if not m:
         return (None, None)
     letter, acc, mode = m.group(1), m.group(2), m.group(3)
     pc = _KB_NOTE_OURS[letter] + (1 if acc == '#' else -1 if acc == 'b' else 0)
-    return (pc % 12, _mode_is_major(mode))
+    return (pc % 12, _mode_class(mode))
+
+
+def _our_key_ident(k: Optional[str]) -> Optional[tuple[int, bool]]:
+    """The graded key IDENTITY (tonic_pc, is_major) of one of OUR key strings, or None when the
+    string ABSTAINS.  THE ONE abstain decision on the key axis — every graded site routes
+    through it instead of re-deciding what counts as an abstain (the OI-52 pattern).
+
+    A key string abstains when EITHER half of the identity is missing:
+      • no tonic — the string did not parse at all (empty / OI-152 accidental+digit suffix); or
+      • no mode class — the suffix is outside the producer's vocabulary (OI-33/OI-155).
+    Per the OI-33 abstain-aware convention, an abstained cell is a `keyfail`: EXCLUDED from the
+    key-agree denominator, published beside key-agree as the abstain coverage, and flagged by
+    robust_stop_diff if it rises. It is never completed into a confident reading."""
+    tonic, is_major = _our_key_tonic(k)
+    if tonic is None or is_major is None:
+        return None
+    return (tonic, is_major)
 
 
 def key_disagree_subtag(ours_region, dcml_region) -> str:
@@ -349,15 +402,15 @@ def key_disagree_subtag(ours_region, dcml_region) -> str:
                     local tonic).  Unblocked by Stage 6.
       'ne_global' — our tonic+mode != DCML global key (S2: genuine key error).
                     Unblocked by Stage 4.
-      'keyfail'   — our key string did not parse (the 2.4% caveat).  Counts as
-                    ne_global for the S1/S2 split (the dossier "lumps into the
-                    tonic✗ column"), but is reported separately so it is not
-                    silently hidden in S2."""
-    otc, omaj = _our_key_tonic(getattr(ours_region, 'key', None))
-    if otc is None:
+      'keyfail'   — our key ABSTAINED (_our_key_ident: unparseable string, or a mode outside
+                    the producer's vocabulary — OI-33/OI-155).  Counts as ne_global for the
+                    S1/S2 split (the dossier "lumps into the tonic✗ column"), but is reported
+                    separately so it is not silently hidden in S2."""
+    ours = _our_key_ident(getattr(ours_region, 'key', None))
+    if ours is None:
         return 'keyfail'
     gtc, gmaj = _dcml_key_tonic(getattr(dcml_region, 'global_key', None))
-    if gtc is not None and (otc, omaj) == (gtc, gmaj):
+    if gtc is not None and ours == (gtc, gmaj):
         return 'eq_global'
     return 'ne_global'
 
@@ -532,8 +585,9 @@ def score_regions(ours_regions: list, dcml_regions: list) -> PieceStats:
         if pair is None:
             continue
         stats.matched += 1
-        # Corpus-wide our-key parse-failure caveat (independent of bucket).
-        if _our_key_tonic(getattr(ours_r, 'key', None))[0] is None:
+        # Corpus-wide our-key ABSTAIN caveat (independent of bucket) — the one abstain
+        # decision (_our_key_ident): no tonic, or a mode outside the producer's vocabulary.
+        if _our_key_ident(getattr(ours_r, 'key', None)) is None:
             stats.keyparse_fail += 1
         if pair.category == "exact":
             stats.exact += 1

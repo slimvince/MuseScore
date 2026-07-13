@@ -26,7 +26,9 @@ or:
 
 from __future__ import annotations
 
+import codecs
 import io
+import re
 import tempfile
 import unittest
 from contextlib import redirect_stdout
@@ -349,8 +351,11 @@ class TestKeyTonicHelpers(unittest.TestCase):
     def test_our_key_tonic(self):
         self.assertEqual(crn._our_key_tonic("Cmaj"), (0, True))
         self.assertEqual(crn._our_key_tonic("Cmin"), (0, False))
-        self.assertEqual(crn._our_key_tonic("Gmix"), (7, True))   # mixolydian = major-ish
-        self.assertEqual(crn._our_key_tonic("Gdor"), (7, False))  # dorian = minor-ish
+        # The suffix is the PRODUCER's spelling ("Mixolyd", keyModeSuffix()), not an
+        # abbreviation: the classification is set-membership in the emitted vocabulary,
+        # not a prefix match (OI-155). "Gmix" is not a string the chain can emit.
+        self.assertEqual(crn._our_key_tonic("GMixolyd"), (7, True))   # mixolydian = major-ish
+        self.assertEqual(crn._our_key_tonic("Gdor"), (7, False))      # dorian = minor-ish
         self.assertEqual(crn._our_key_tonic("Bbmaj"), (10, True))
         self.assertEqual(crn._our_key_tonic("C#min"), (1, False))
 
@@ -358,16 +363,46 @@ class TestKeyTonicHelpers(unittest.TestCase):
         # carry-fix 2 Task 2: mode-qualified local-key names (correct tonic, uppercase
         # in the mode) normalize to (tonic, minor) instead of counting as a parse failure.
         self.assertEqual(crn._our_key_tonic("DDor"), (2, False))       # Dorian -> minor tonic
-        self.assertEqual(crn._our_key_tonic("EPhrygDom"), (4, False))  # Phrygian-dom -> minor tonic
+        # OI-132 (user-ruled 2026-07-13): the five dominant-family exotics reduce to the
+        # MINOR key of their PARENT COLLECTION. E Phrygian-dominant is the dominant of A
+        # minor (offset -7), so it grades A minor (9), not E minor (4).
+        self.assertEqual(crn._our_key_tonic("EPhrygDom"), (9, False))
         self.assertEqual(crn._our_key_tonic("Gharm"), (7, False))      # harmonic minor
         self.assertEqual(crn._our_key_tonic("Dmel"), (2, False))       # melodic minor
         self.assertEqual(crn._our_key_tonic("F#harm"), (6, False))     # with accidental
         self.assertEqual(crn._our_key_tonic("Clyd"), (0, True))        # lydian = major-ish
 
+    def test_our_key_tonic_unknown_mode_abstains(self):
+        # ★ THE ABSTAIN RULE (OI-33, user-ruled at OI-155). A mode suffix OUTSIDE the
+        # producer's vocabulary abstains on the MODE axis — (tonic, None) — and is NOT
+        # silently graded minor. The tonic is still known, so this is not a full parse
+        # failure; _our_key_ident (the one abstain decision) turns it into a keyfail.
+        self.assertEqual(crn._our_key_tonic("Cweird"), (0, None))
+        self.assertIsNone(crn._mode_class("weird"))
+        self.assertIsNone(crn._our_key_ident("Cweird"))
+        # ... while a mode IN the vocabulary yields a full identity.
+        self.assertEqual(crn._our_key_ident("Cmaj"), (0, True))
+        self.assertEqual(crn._our_key_ident("EPhrygDom"), (9, False))
+        # An unparseable string abstains on BOTH axes.
+        self.assertIsNone(crn._our_key_ident(""))
+
     def test_our_key_tonic_parse_failures(self):
         self.assertEqual(crn._our_key_tonic(""), (None, None))
         self.assertEqual(crn._our_key_tonic(None), (None, None))
         self.assertEqual(crn._our_key_tonic("C major"), (None, None))  # space -> no parse
+        # OI-152 (the remaining key-parse abstain): the six emitted suffixes carrying an
+        # accidental or a digit are rejected by _KB_OURS_KEY_RE's [A-Za-z]+ mode group, so
+        # they abstain on BOTH axes (tonic included). Unchanged here — OI-152 owns it.
+        self.assertEqual(crn._our_key_tonic("CDor♭2"), (None, None))
+        self.assertEqual(crn._our_key_tonic("CLoc#2"), (None, None))
+
+    def test_our_key_tonic_unicode_accidental_tonic(self):
+        # The reduction ASCII-normalizes ♯/♭ before parsing, so a unicode-accidental TONIC
+        # grades identically to its ASCII spelling. (The OI-132 fold dropped this
+        # normalization from the graded path; restored with the OI-155 abstain fix.)
+        self.assertEqual(crn._our_key_tonic("F♯maj"), crn._our_key_tonic("F#maj"))
+        self.assertEqual(crn._our_key_tonic("F♯maj"), (6, True))
+        self.assertEqual(crn._our_key_tonic("B♭min"), (10, False))
 
     def test_dcml_key_tonic(self):
         self.assertEqual(crn._dcml_key_tonic("C"), (0, True))    # uppercase = major
@@ -375,6 +410,92 @@ class TestKeyTonicHelpers(unittest.TestCase):
         self.assertEqual(crn._dcml_key_tonic("f#"), (6, False))
         self.assertEqual(crn._dcml_key_tonic("Bb"), (10, True))
         self.assertEqual(crn._dcml_key_tonic(""), (None, None))
+
+
+# ════════════════════════════════════════════════════════════════════════════
+# The grader's mode table vs the PRODUCER's emitted vocabulary (OI-155).
+#
+# The grader must READ the producer's vocabulary, not re-decide it (#6, the fact-publication
+# corollary), and an emitted mode it cannot place must ABSTAIN, not default to minor (OI-33).
+# Prose cannot enforce either property, so this test PARSES the two producing sources —
+#   src/composing/analysis/key/keymodeformatting.cpp   keyModeSuffix()   (the 21 spellings)
+#   src/composing/analysis/key/keymodeanalyzer.h       keyModeIsMajor()  (their maj/min partition)
+# — and asserts compare_rn's table is COMPLETE and FAITHFUL to them. If a 22nd mode is added to
+# the producer, or an existing one is respelled or re-classified, this test goes red instead of
+# the new mode silently abstaining (or, before OI-155, silently grading as minor).
+# ════════════════════════════════════════════════════════════════════════════
+
+_SRC_KEY_DIR = _TOOLS_DIR.parent / "src" / "composing" / "analysis" / "key"
+
+# The five dominant-family exotics: graded by the OI-132 parent-collection reduction (user-ruled
+# 2026-07-13) INSTEAD of by the producer's major/minor partition — that is the whole point of the
+# ruling, so they are excluded from the faithfulness comparison and checked separately.
+_EXOTIC_PRODUCER_MODES = {"PhrygianDominant", "MixolydianB6", "LydianDominant",
+                          "LydianAugmented", "Altered"}
+
+
+def _producer_mode_suffixes() -> dict:
+    """{KeySigMode name -> emitted suffix}, parsed from keyModeSuffix() in the producer."""
+    text = (_SRC_KEY_DIR / "keymodeformatting.cpp").read_text(encoding="utf-8")
+    body = text.split("const char* keyModeSuffix", 1)[1]
+    out = {}
+    for name, suffix in re.findall(r'case KeySigMode::(\w+):\s*return "([^"]*)";', body):
+        # the source spells unicode accidentals as C escapes, e.g. "Dor♭2"
+        out[name] = codecs.decode(suffix, "unicode_escape")
+    return out
+
+
+def _producer_major_modes() -> set:
+    """The KeySigMode names keyModeIsMajor() returns true for (the producer's own partition)."""
+    text = (_SRC_KEY_DIR / "keymodeanalyzer.h").read_text(encoding="utf-8")
+    body = text.split("inline constexpr bool keyModeIsMajor", 1)[1].split("return true;", 1)[0]
+    return set(re.findall(r"case KeySigMode::(\w+):", body))
+
+
+class TestModeVocabularyMatchesProducer(unittest.TestCase):
+
+    def setUp(self):
+        self.suffixes = _producer_mode_suffixes()
+        self.major_modes = _producer_major_modes()
+
+    def test_producer_emits_the_expected_number_of_modes(self):
+        # KEY_MODE_COUNT in keymodeanalyzer.h is the producer's own declared total.
+        header = (_SRC_KEY_DIR / "keymodeanalyzer.h").read_text(encoding="utf-8")
+        declared = int(re.search(r"KEY_MODE_COUNT\s*=\s*(\d+)", header).group(1))
+        self.assertEqual(len(self.suffixes), declared)
+        self.assertEqual(len(self.major_modes), 9)   # the major-third modes
+
+    def test_every_emitted_mode_is_classified(self):
+        """COMPLETENESS: no mode the producer can emit falls through to the abstain path."""
+        for name, suffix in sorted(self.suffixes.items()):
+            with self.subTest(mode=name, suffix=suffix):
+                if name in _EXOTIC_PRODUCER_MODES:
+                    ascii_suffix = crn._ascii_accidentals(suffix)
+                    self.assertIn(ascii_suffix, crn._KB_PARENT_COLLECTION_MODES)
+                else:
+                    self.assertIsNotNone(
+                        crn._mode_class(suffix),
+                        f"producer mode {name} ('{suffix}') is in NEITHER grader set — it would "
+                        f"ABSTAIN on the mode axis. Add it to _KB_MAJOR_MODES/_KB_MINOR_MODES.")
+
+    def test_classification_is_faithful_to_the_producer(self):
+        """FAITHFULNESS: for every non-exotic mode, the grader's class == keyModeIsMajor()."""
+        for name, suffix in sorted(self.suffixes.items()):
+            if name in _EXOTIC_PRODUCER_MODES:
+                continue
+            with self.subTest(mode=name, suffix=suffix):
+                self.assertEqual(crn._mode_class(suffix), name in self.major_modes)
+
+    def test_the_exotic_five_are_exactly_the_parent_collection_set(self):
+        """The OI-132 ruling covers exactly these five producer modes — no more, no fewer."""
+        ascii_exotics = {crn._ascii_accidentals(self.suffixes[n]) for n in _EXOTIC_PRODUCER_MODES}
+        self.assertEqual(ascii_exotics, set(crn._KB_PARENT_COLLECTION_MODES))
+
+    def test_the_grader_sets_contain_no_mode_the_producer_cannot_emit(self):
+        """No invented entries: every grader-set suffix is one the producer actually emits."""
+        emitted = {crn._ascii_accidentals(s).lower() for s in self.suffixes.values()}
+        self.assertTrue(crn._KB_MAJOR_MODES <= emitted, crn._KB_MAJOR_MODES - emitted)
+        self.assertTrue(crn._KB_MINOR_MODES <= emitted, crn._KB_MINOR_MODES - emitted)
 
 
 if __name__ == "__main__":

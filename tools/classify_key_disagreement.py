@@ -268,10 +268,13 @@ def _build_cells(stem, ours_regions, wir_regions):
         pair = crn.classify_pair(our_r, dcml_r)
         if pair is None:
             continue                      # unscored (a8 skips)
-        k = crn._our_key_tonic(getattr(our_r, "key", None))
+        # OUR side: crn._our_key_ident is the ONE abstain decision on the key axis (OI-155) —
+        # None both when the string does not parse and when the mode suffix is outside the
+        # producer's vocabulary (OI-33). Keeping this site on that one helper is what keeps the
+        # scored set and key_verdict reconciled with a8 (the contract stated in the header).
+        our_ident = crn._our_key_ident(getattr(our_r, "key", None))
         g = crn._dcml_key_tonic(getattr(dcml_r, "global_key", None))
         l = crn._dcml_key_tonic(getattr(dcml_r, "local_key", None))
-        our_ident = k if k[0] is not None else None
         g_ident = g if g[0] is not None else None
         l_ident = l if l[0] is not None else None
         if our_ident is None:
