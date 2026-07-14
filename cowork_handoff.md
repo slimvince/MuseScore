@@ -1,7 +1,72 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★ CC SESSION CLOSE 2026-07-14 — OI-168, THE δ TONIC-DEPENDENCE MAGNITUDE (MEASUREMENT BUILD): **EXACTLY ONE COMMITTED CHORD FLIPS — AND IT FLIPS TO THE GROUND-TRUTH ROOT. THE FIX IS A CORRECTNESS RE-BASELINE, THE SMALLEST POSSIBLE ONE.**
+## ★★★ CC SESSION CLOSE 2026-07-14 (b) — OI-168, THE SIGNATURE-MASK FIX: **ADOPTED AND RE-BASELINED, EVERY PREDICTION MET EXACTLY — AND YOUR CLOSURE CLAIM IS REFUTED. TWO NEW STOPS.**
+
+Report: `cc_oi168_fix_report.md`. Dispatch: `cc_instruction_oi168_fix.md` (user-ratified 2026-07-13).
+
+**The fix landed, and it is clean.** Both key-consuming scoring terms now test
+`pcInMask(diatonicMaskFromFifths(keySignatureFifths), pc)` and **take no tonic and no mode scale** — the
+dead `keyTonicPc`/`scale` parameters are gone, so the tonic-independence of *those terms* is structural.
+`docs/scoring_model.md` §4 synced in the same commit. The `pcInKeyCollection` A/B predicate, the
+`MU_KEY_COLLECTION_SIGMASK_VARIANT` switch and the `…MembershipDiffers` counters are removed with it (a
+differs-counter comparing a set against itself is a false instrument, #19); the population and
+Aeolian-guard counters are kept.
+
+**Every #17b prediction met exactly.** Baroque + Default **BYTE-IDENTICAL** (352/352 each — the δ=0
+derivation verified at runtime on 704 scores). Jazz: 9 files, **exactly ONE committed chord flips** —
+`bwv145.5@12960` (`D#alt`): `Ebm` (root 3) → **`B/Eb` (root 11)**, the DCML *and* music21 root. **Zero
+flips outside the 24 Altered regions on any preset** — the load-bearing structural claim. Robust-stop
+diff: **removal-only, one run, zero additions; class-(b) Jazz −480 / Baroque +0 / Default +0; OVERALL
+PASS.** O-12 snapshot taken before any edit (`tools/robust_stop/snapshot_2026-07-13_pre_oi168/`); reference
+re-stamped; all three suites green with **no golden refreshed**.
+
+**Honest note on the columns:** at the two decimals CLAUDE.md publishes, **no percentage moves** (Jazz
+root-agree 64.9772 → 64.9830 %, +0.0058 pp). What moves is the hard-stop duration (−480) and the Jazz run
+count (6689 → **6688**). New instrument, established before use: `tools/robust_stop_restamp.py` **derives**
+every manifest figure from the candidate `summary.json` (the manifest was previously hand-assembled — a
+#17f gap) and reproduces the outgoing manifest exactly before writing the new one.
+
+**★★ STOP 1 — OI-170: THE FIX DID NOT MAKE L4 TONIC-INDEPENDENT. Your closure statement is refuted.**
+The dispatch closes with *"L4 is structurally tonic-independent, the collection/tonic premise holds
+(OI-167 + OI-168 closed)"*. **It is not, and it does not.** The fix corrects the two **scoring terms** —
+all it ever touched. I checked the whole layer instead of the two named terms and found **three more sites
+that answer a pure COLLECTION-membership question through the TONIC**, same `(keyTonicPc + scale[i]) % 12`
+construction, same δ≠0 corruption, same live region path:
+
+1. `buildChordResult`'s **`diatonicToKey`** flag — a **published fact**, read by
+   `notationimplodebridge.cpp:1205` and re-derived in five more places (a #6 duplication in its own right);
+2. **Gate I**'s `invRootIsDiatonic` (`postscoringgates.cpp:475-479`) — **swaps the committed winner**;
+3. **Gate L**'s `invRootIsDiatonic` (`:520-524`) — **swaps the committed winner**.
+
+⇒ **`cowork_evidence_inventory.md` §8 circle-3's collection/tonic split STILL DOES NOT HOLD for the live
+L4.** No design may rest on it and no doc may call L4 tonic-independent (#18). L4 is also now internally
+**inconsistent** under a δ≠0 mode: the scoring term says a root IS in the key while Gate L can say it is
+NOT — two answers to one question (#6/#12). **This does not invalidate the adoption** — the A/B held those
+three constant, so the measured result is exactly what the fix delivers: a strict improvement, just a
+partial one. Declared, **not fixed** (#8). Cheap to finish: same 24 Jazz regions, Baroque/Default should
+again be byte-identical.
+
+**★ STOP 2 — OI-171: TASK 3 (the Aeolian-guard RE-HOME) WAS NOT DONE; ITS PREMISE IS FALSE AT THE CODE.**
+My own OI-167 report §4.2 called the re-home *"zero behavior change (it already runs post-commit)"* —
+**wrong, and I am correcting my own claim.** Three of the four call sites are **inside the region
+analyzer's commit path, BEFORE the commit**: `regionanalyzer.cpp:1015` mutates `chosenResult`, and
+`decoder.commit(chosenResult.identity, …)` runs at `:1026` — so the refinement's quality overwrite reaches
+the **committed chord identity**. Moving the file to a presentation home **removes it from the analysis
+commit path** — a structural behavior change, inert on this corpus only because the body never executes.
+**I stopped rather than force the cross-layer move**, per your own escape clause. The disposition (delete
+the three L4 call sites? re-home only the presentation ones? retire outright, OI-102?) is the design pass's.
+
+**Incidental:** OI-169 gains a **second instance** — `formatNashvilleNumber(…, int keySignatureFifths)`
+(`chordsymbolformatter.cpp`) never reads its `keySignatureFifths` either.
+
+**⇒ NEXT (yours to sequence, the user's to ratify): the OI-170 disposition** (one further correctness
+re-baseline fixing the three remaining sites?) **and the OI-171 disposition.** The key-layer funnel stays
+**shut** — the collection/tonic split does not hold. OI-166 (the chord-free cadence-vote probe) is
+unaffected by either and can proceed independently.
+
+---
+## ★★★ CC SESSION CLOSE 2026-07-14 (a) — OI-168, THE δ TONIC-DEPENDENCE MAGNITUDE (MEASUREMENT BUILD): **EXACTLY ONE COMMITTED CHORD FLIPS — AND IT FLIPS TO THE GROUND-TRUTH ROOT. THE FIX IS A CORRECTNESS RE-BASELINE, THE SMALLEST POSSIBLE ONE.**
 
 Report: `cc_oi168_magnitude_report.md`. Dispatch: `cc_instruction_oi168_magnitude.md`. **No fix promoted
 to default** — the production path is unchanged and regenerates the corpus byte-identically.
