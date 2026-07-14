@@ -104,6 +104,20 @@ def main() -> int:
     summary = json.load(open(args.candidate / "summary.json", encoding="utf-8"))
     old = json.load(open(REF_DIR / "manifest.json", encoding="utf-8"))
 
+    # DT-24 guard (destructive write to a COMMITTED reference). This tool overwrites
+    # tools/robust_stop/ by design — that is what a re-baseline is — so the O-12 discipline is
+    # enforced mechanically here rather than left to convention: refuse to write unless the
+    # named outgoing-reference snapshot actually exists on disk. `--snapshot` is a required
+    # argument, so a no-arg invocation cannot reach this point at all.
+    if not args.dry_run:
+        snap = Path(args.snapshot.split(" (")[0].rstrip("/"))
+        if not (snap.is_dir() and (snap / "manifest.json").is_file()):
+            print(f"REFUSING to re-stamp {REF_DIR}/: the O-12 outgoing-reference snapshot "
+                  f"'{snap}' does not exist (expected a directory containing manifest.json).\n"
+                  f"Snapshot the outgoing reference FIRST (guiding principle #16 / O-12), or "
+                  f"pass --dry-run to preview.")
+            return 2
+
     manifest = {
         "schema": old["schema"],
         "artifact": args.artifact,
