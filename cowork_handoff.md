@@ -1,6 +1,83 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
+## ★★★ CC SESSION CLOSE 2026-07-14 — OI-168, THE δ TONIC-DEPENDENCE MAGNITUDE (MEASUREMENT BUILD): **EXACTLY ONE COMMITTED CHORD FLIPS — AND IT FLIPS TO THE GROUND-TRUTH ROOT. THE FIX IS A CORRECTNESS RE-BASELINE, THE SMALLEST POSSIBLE ONE.**
+
+Report: `cc_oi168_magnitude_report.md`. Dispatch: `cc_instruction_oi168_magnitude.md`. **No fix promoted
+to default** — the production path is unchanged and regenerates the corpus byte-identically.
+
+**The instrumentation (the OI-110 pattern, removable in one revert).**
+`src/composing/analysis/chord/keycollectionprobe.{h,cpp}`: one counter block, two **value-less**
+environment flags — `MU_KEY_COLLECTION_PROBE` (counting; `batch_analyze` writes
+`<output>.ours.json.probe.json`) and `MU_KEY_COLLECTION_SIGMASK_VARIANT` (the A/B: the two
+key-consuming terms test `pcInMask(diatonicMaskFromFifths(fifths), pc)` instead of the mode-transposed
+set). Value-less means a corpus arm is just `tools/run_bach_preset.py` with the flag exported — no
+separate driver, no Windows-path mangling (the problem the OI-110 instrument had to work around). The
+two membership loops are unified into ONE predicate, `pcInKeyCollection`, which carries the A/B; its
+committed branch is the same test as before. Reporting instrument: `tools/cc_oi168_probe_report.py`
+(`byteid` / `counters` / `flips`).
+
+**OFF path proven inert.** The instrumented binary regenerates the corpus **byte-identically on
+352 × 3** with both flags unset AND with the counters on. `composing_tests` 1103, `notation_tests` 53,
+`pipeline_snapshot_tests` 11 — all green, **no golden refreshed**; `tools/robust_stop` and
+`tools/corpus` untouched (every arm wrote to a scratch dir). *(Side establishment: the committed
+`tools/corpus` is at-HEAD-reproducible on all three presets, despite its manifest being stamped to the
+older corpus commit.)*
+
+**THE NUMBER — one flip.** Baroque and Default are **byte-identical under the variant** (352/352 each;
+their `…MembershipDiffers` counters are 0 — the δ=0 derivation verified at runtime, not on paper). On
+Jazz 9 files change; **22 of the 24 Altered regions move their SCORE only** (+0.30 — the
+`diatonicRootBonus` the corrupted collection was withholding from a root that was *already winning*,
+which is why the defect moves scores far more often than decisions), and **exactly one region flips**:
+
+> **`bwv145.5@12960`, local key `D#alt`: `Ebm` (root pc 3) → `B/Eb` (root pc 11).**
+> The sounding notes are **D♯–F♯–B** (tpc 23/20/19) — a B-major triad in first inversion. The current
+> reading is **a chord the notes do not contain** (E♭ minor needs B♭). The scorer chose E♭ because
+> under `D#alt` its collection S is the **D♯-major** collection, while the signature's collection is
+> **D major** — exactly the semitone transposition OI-168 derives.
+> **Both oracles back the variant:** music21 root 11; and the robust stop *already lists this region as
+> a class-(b) root failure* — `bwv145.5@12960 our_root=3 -> dcml_root=11 dur=480 cls=b`.
+
+**The governing metric moves the right way.** Robust-stop diff on the variant corpus (read-only,
+scratch out-dir): **removal-only, exactly ONE run**, class-(b) root-disagree duration **−480 Jazz /
++0 Baroque / +0 Default**, class-(a) +0, key columns unmoved, zero additions. `OVERALL: PASS`.
+
+**Two corrections the measurement forces on the register.**
+1. **The `ChordSliceDecoder` is NOT on the production path.** `decoderWindowCalls` = **0** on all three
+   corpora. It is reached only from `--decode-chords` / `--dump-fullspine` / `--dump-joint-probe`, and
+   `batch_analyze.cpp:3121` itself calls it "the dormant per-slice decoder". So OI-168's "*inside the
+   ENGAGED decoder*" is the wrong word: the defect is live **TODAY, THROUGH THE REGION PATH**
+   (`regionanalyzer.cpp`'s committing `analyzeChord` call), and the decoder — same scorer — **inherits**
+   it when engaged. The substance is unchanged and if anything stronger.
+2. **The scorer's exposure is ~2× the output surface.** The committing call runs **49** times under
+   `Altered` on Jazz (10 scores), while only **24** Altered regions survive to `.ours.json` (9 scores) —
+   the region analyzer scores each region on more than one attempt. A population of this kind must not
+   be estimated off the surface again. `AlteredDomBB7` 0-firing is **confirmed at the counter**.
+
+**OI-167 site (b) is answered at a real counter.** The `sparsechordrefinement` Aeolian guard fires
+**0 / 0 / 0** — and is deader than the output-surface inference claimed: its shape preconditions match
+**0** times under *any* mode, and `refineSparseChordQualityFromKeyContext` is reached with an
+`Unknown`-quality chord **0** times across all four call sites (`analyzeChord` never hands the region
+path an unqualified chord, so the early return takes every call). The whole function body is
+unexercised on this corpus — evidence FOR retirement at OI-102's disposition, not a substitute for it.
+
+**Incidental, declared not fixed — new row OI-169.** `structuralPenalties` **silently ignores its
+`extThreshold` parameter**: every caller passes `prefs.extensionThreshold` and the body never reads it
+(its branches use `kSus4StructuralFourthThreshold` and two hardcoded `0.05` literals). Pre-existing at
+HEAD; surfaced only as a `C4100` warning when the edit forced a recompile. Inference-affecting ⇒
+declared, not touched under a measurement dispatch.
+
+**⇒ THE NEXT STEP (yours to sequence, the user's to ratify).** The flip count is > 0, so the fix is a
+**correctness re-baseline** — but a trivially favorable one: Baroque/Default byte-identical, Jazz one
+run removed, hard stop PASSES. Promote the signature-mask form (delete `pcInKeyCollection`'s committed
+branch — the terms then take **no tonic at all**, so the property becomes structural and cannot lapse
+again), snapshot the outgoing reference (O-12), re-baseline `tools/robust_stop`, explained run-diff =
+the single run above. **What this does NOT resolve:** whether `D#alt` is a defensible local key for a
+Bach chorale is a KEY-layer question this measurement does not touch — the fix makes the chord layer
+read the signature's collection correctly *whatever* mode the key layer emits; it does not make the
+emitted mode right.
+
+---
 ## ★★★ CC SESSION CLOSE 2026-07-13 — OI-167, THE COLLECTION/TONIC SPLIT (READ-ONLY): **THE TWO NAMED SITES ARE SAFE — AND THE SPLIT BREAKS AT THE SITE THE ROW CLEARS. ⛔ STOP.**
 
 **Read `cc_oi167_collection_tonic_report.md`.** The foundational premise-verification step of the design
