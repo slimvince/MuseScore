@@ -22,19 +22,63 @@
 
 #include "chordanalyzer.h"
 #include "analysisutils.h"
+#include "keycollectionprobe.h"      // OI-168 measurement scaffolding (default-OFF)
 #include "composing/analysis/function/harmonicfunctionlayer.h"
 #include "../param/paramoverride.h"   // Stage-5 fitter: optional constant override (D-6)
 
 #include <algorithm>
 #include <array>
 #include <cmath>
+#include <cstdint>
 #include <limits>
 #include <utility>
 
 namespace fn = mu::composing::function;
+namespace kcp = mu::composing::analysis::keycollectionprobe;
 
 namespace mu::composing::analysis {
 namespace {
+
+/// The one membership predicate the two key-consuming scoring terms share: is \p pc a member
+/// of the current key's diatonic collection?
+///
+/// COMMITTED FORM (what production computes, unchanged): membership in
+/// { (keyTonicPc + scale[i]) mod 12 } — the intervals of the mode's diatonic PARENT, laid out
+/// from the MODE's own tonic. That set is the key signature's collection only when the mode's
+/// tonic offset equals its parent's, which holds for 19 of the 21 KeySigMode values and fails
+/// for Altered and AlteredDomBB7 (OI-168).
+///
+/// OI-168 A/B VARIANT (opt-in, MU_KEY_COLLECTION_SIGMASK_VARIANT): membership in the key
+/// SIGNATURE's own diatonic collection, \p signatureMask. Provably the same set for the 19
+/// modes whose offset matches their parent's, so the variant can only move the two exotic ones.
+/// The variant is the proposed fix's form; it is NOT promoted here.
+///
+/// Both verdicts are computed whenever the probe counts, so the corpus run can report how
+/// often the two disagree per (root, template) cell.
+bool pcInKeyCollection(int pc, int keyTonicPc, const std::array<int, 7>& scale,
+                       uint16_t signatureMask,
+                       unsigned long long& testCounter,
+                       unsigned long long& differCounter)
+{
+    bool inModeTransposedSet = false;
+    for (int interval : scale) {
+        if ((keyTonicPc + interval) % 12 == pc) {
+            inModeTransposedSet = true;
+            break;
+        }
+    }
+    if (kcp::countingEnabled) {
+        const bool inSignatureCollection = pcInMask(signatureMask, pc);
+        kcp::bump(testCounter);
+        if (inSignatureCollection != inModeTransposedSet) {
+            kcp::bump(differCounter);
+        }
+    }
+    if (kcp::signatureMaskVariantEnabled) {
+        return pcInMask(signatureMask, pc);
+    }
+    return inModeTransposedSet;
+}
 
 
 // Three-way classification for a note that is NOT part of the template being scored.
@@ -548,6 +592,7 @@ double dim7CharacteristicBonus(const TemplateDef& tpl, int rootPc,
                                const std::array<double, 12>& pcWeight,
                                int keyTonicPc,
                                const std::array<int, 7>& scale,
+                               uint16_t signatureMask,
                                double extThreshold = kExtensionThreshold)
 {
     if (tpl.quality != ChordQuality::Diminished) {
@@ -571,10 +616,10 @@ double dim7CharacteristicBonus(const TemplateDef& tpl, int rootPc,
         || pcWeight[static_cast<size_t>(b5Pc)] <= extThreshold) {
         return 0.0;
     }
-    for (int interval : scale) {
-        if ((keyTonicPc + interval) % 12 == dim7Pc) {
-            return 0.0;  // diatonic — no bonus
-        }
+    if (pcInKeyCollection(dim7Pc, keyTonicPc, scale, signatureMask,
+                          kcp::counters().dim7MembershipTests,
+                          kcp::counters().dim7MembershipDiffers)) {
+        return 0.0;  // diatonic — no bonus
     }
     return kDim7CharacteristicBonus;
 }
@@ -895,13 +940,14 @@ double appliedBassRootBonus(const TemplateDef& tpl,
 // pipeline can gate the migrated bonuses. See docs/scoring_model.md §4 / §11.
 double diatonicRootContribution(int rootPc, int keyTonicPc,
                                 const std::array<int, 7>& scale,
+                                uint16_t signatureMask,
                                 const ChordAnalyzerPreferences& prefs)
 {
     // Prefer roots that belong to the current key scale.
-    for (int interval : scale) {
-        if ((keyTonicPc + interval) % 12 == rootPc) {
-            return prefs.diatonicRootBonus;
-        }
+    if (pcInKeyCollection(rootPc, keyTonicPc, scale, signatureMask,
+                          kcp::counters().diatonicRootMembershipTests,
+                          kcp::counters().diatonicRootMembershipDiffers)) {
+        return prefs.diatonicRootBonus;
     }
     return 0.0;
 }
@@ -1069,6 +1115,14 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
 {
     if (tones.empty()) {
         return {};
+    }
+
+    // OI-168 (default-OFF): the population the two key-consuming terms are scored under.
+    kcp::bump(kcp::counters().analyzeChordCalls);
+    if (keyMode == KeySigMode::Altered) {
+        kcp::bump(kcp::counters().analyzeChordCallsAltered);
+    } else if (keyMode == KeySigMode::AlteredDomBB7) {
+        kcp::bump(kcp::counters().analyzeChordCallsAlteredDomBB7);
     }
 
     // Build pitch-class weight histogram and find the bass note.
@@ -1341,6 +1395,11 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     const size_t modeScaleIdx = DIATONIC_PARENT_INDEX[keyModeIndex(keyMode)];
     const std::array<int, 7>& scale = keyModeScaleIntervals(keyModeFromIndex(modeScaleIdx));
 
+    // OI-168 (default-OFF): the key SIGNATURE's own diatonic collection — what the comment
+    // above claims the mapping preserves. Consumed only by the opt-in A/B variant inside
+    // pcInKeyCollection(); unread on the production path.
+    const uint16_t signatureMask = diatonicMaskFromFifths(keySignatureFifths);
+
     // Score every root × template combination.
     //
     // Each concern is delegated to a named helper (defined in the anonymous namespace
@@ -1400,10 +1459,11 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
             basisIndepMatrix[rootPc][tplIdx] =
                 scoreTemplateTones(tpl, rootPc, pcWeight)
                 + scoreExtraNotes(tpl, rootPc, pcWeight, tpcForPc)
-                + dim7CharacteristicBonus(tpl, rootPc, pcWeight, keyTonicPc, scale, prefs.extensionThreshold)
+                + dim7CharacteristicBonus(tpl, rootPc, pcWeight, keyTonicPc, scale, signatureMask,
+                                          prefs.extensionThreshold)
                 + structuralPenalties(tpl, rootPc, pcWeight, tpcForPc, distinctPcs, prefs.extensionThreshold)
                 + tpcConsistencyBonus(tpl, rootPc, tpcForPc, prefs)
-                + diatonicRootContribution(rootPc, keyTonicPc, scale, prefs);
+                + diatonicRootContribution(rootPc, keyTonicPc, scale, signatureMask, prefs);
 
             // Iter 74 Fix A — template complexity preference (bass-independent).
             const int templateDefinedTones = static_cast<int>(tpl.intervals.size());

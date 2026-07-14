@@ -607,6 +607,10 @@ src/
         ichordanalyzer.h          ← IChordAnalyzer interface
         chordanalyzerfactory.h/.cpp ← ChordAnalyzerFactory
         chordanalyzer.h/.cpp      ← RuleBasedChordAnalyzer implementation
+        keycollectionprobe.h/.cpp ← OI-168 measurement scaffolding: default-OFF branch
+                                    counters + the default-OFF signature-mask A/B variant
+                                    of the two key-consuming scoring terms. Reads nothing
+                                    the analyzer consumes; removable in one revert.
       key/
         keymodeanalyzer.h/.cpp    ← KeyModeAnalyzer, all 21 modes
       region/

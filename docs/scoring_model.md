@@ -260,6 +260,29 @@ side effect. Deferred. Future attempts must either (a) replicate the non-
 diatonic-♭♭7 check inside the new template guard, or (b) replace the bonus
 with an equivalent mechanism.
 
+**"Non-diatonic to the current key" — the shared membership predicate, and its known defect
+(OI-168).** Condition 3 above, and the identical condition in `diatonicRootContribution` (§4
+"Other terms"), are the analyzer's only two key-consuming scoring tests. Since the OI-168
+measurement build they run through **one** predicate, `pcInKeyCollection()` (`chordanalyzer.cpp`) —
+one path per concern, and one place to correct.
+
+Its committed form tests membership in **{ (keyTonicPc + scale[i]) mod 12 }**, where `scale` is the
+interval set of the mode's *diatonic parent* (`DIATONIC_PARENT_INDEX`) laid out from the **mode's
+own** tonic. That set equals the key signature's diatonic collection **only when the mode's tonic
+offset equals its parent's** — true for 19 of the 21 `KeySigMode` values, **false for `Altered` and
+`AlteredDomBB7`**, whose tonic sits a semitone above their parent's. For those two the set is the
+signature's collection **transposed up a semitone** (2 of 7 pitch classes shared), so both terms
+score against the wrong collection. Measured magnitude (`cc_oi168_magnitude_report.md`, 2026-07-14):
+`Altered` is emitted on Jazz only — 24 surviving regions, 49 scorer entries — and the corruption
+flips exactly **one** committed chord (`bwv145.5@12960`, a class-(b) root failure against the DCML
+ground truth); on the other 22 regions it moves the score without moving the winner.
+
+A **default-OFF A/B variant** (`MU_KEY_COLLECTION_SIGMASK_VARIANT`, `keycollectionprobe.h`) swaps the
+predicate to `pcInMask(diatonicMaskFromFifths(keySignatureFifths), pc)` — the signature's own
+collection, which takes **no tonic at all**. It is byte-identical for the 19 unaffected modes (proven:
+Baroque and Default regenerate byte-identically under it) and corrects the two. **The variant is not
+the default**; promoting it is a ratified correctness re-baseline (OI-168), not a cleanup.
+
 ### `rootContinuityBonus` — `prefs.rootContinuityBonus = 0.40`
 
 Applied by the competition pipeline `applyHarmonicFunction()`
@@ -553,7 +576,7 @@ bonus functions and the single control point.
 | Term                                  | Value         | What it does |
 |---------------------------------------|---------------|---|
 | `bassNoteRootBonus`                  | 0.70          | Awarded when `rootPc == bassPc`, multiplied by `bassRootBonusMultiplier` (1.0 full triad, 0.3 third-only or root+5, 0.1 bass alone). |
-| `diatonicRootBonus`                  | 0.30          | Awarded when root is a scale member of the current key. |
+| `diatonicRootBonus`                  | 0.30          | Awarded when the root is a member of the current key's collection (`diatonicRootContribution`). Shares the `pcInKeyCollection()` membership predicate with `dim7CharacteristicBonus` — including its OI-168 defect on `Altered` / `AlteredDomBB7`; see §4. |
 | `tpcConsistencyBonusPerTone`         | 0.20          | Per non-root template tone whose authored TPC matches the expected delta. |
 | `resolutionBonus`                    | 0.35          | Awarded on `prevDim→Maj/min` semitone-up, `prevHalfDim→Maj` P4-up, `prevAug→same-root`. |
 | `stepwiseBassInversionBonus`         | 0.50          | Inverted Maj/Min with bass stepwise from previous region's bass. |

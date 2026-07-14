@@ -92,6 +92,7 @@ extern "C" __declspec(dllimport) int __stdcall TerminateProcess(void* hProcess, 
 #include "composing/analysis/key/keyresolver.h"
 #include "composing/analysis/key/modepriorpresets.h"
 #include "composing/analysis/chord/analysisutils.h"
+#include "composing/analysis/chord/keycollectionprobe.h"   // OI-168 counters (default-OFF)
 #include "composing/analysis/region/regionanalyzer.h"
 #include "composing/analysis/section/sectionanalyzer.h"   // Stage 2.2-i prototype: --section-level
 #include "composing/analysis/section/cadencekeyanchor.h"   // Stage 4c-i: --dump-cadence-anchor
@@ -4628,6 +4629,14 @@ int main(int argc, char* argv[])
         outFile.write(json.data(), static_cast<qint64>(json.size()));
         outFile.flush();
         outFile.close();
+    }
+
+    // OI-168 measurement (default-OFF): flush the key-collection probe counters beside the
+    // score's own output, before the hard terminate below (which bypasses atexit). A no-op
+    // unless MU_KEY_COLLECTION_PROBE is set, so production writes nothing extra.
+    if (!outputPath.empty()) {
+        analysis::keycollectionprobe::writeCounters(
+            outputPath.toQString().toStdString() + ".probe.json");
     }
 
     delete score;

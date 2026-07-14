@@ -26,6 +26,9 @@
 #include <tuple>
 
 #include "composing/analysis/chord/analysisutils.h"
+#include "composing/analysis/chord/keycollectionprobe.h"   // OI-168 counters (default-OFF)
+
+namespace kcp = mu::composing::analysis::keycollectionprobe;
 
 namespace mu::composing::analysis::region {
 
@@ -126,6 +129,9 @@ void refineSparseChordQualityFromKeyContext(
         return;
     }
 
+    // OI-168 Task A (default-OFF): does the Aeolian guard below ever actually run?
+    kcp::bump(kcp::counters().sparseRefineEntries);
+
     const int uniquePitchClasses = distinctPitchClassCount(tones);
 
     int degree = result.function.degree;
@@ -151,10 +157,18 @@ void refineSparseChordQualityFromKeyContext(
     // In plain Aeolian, a lone tonic or dominant pitch is too ambiguous to
     // harden into a minor triad. Leave it unqualified and let richer later
     // evidence decide the quality.
-    if (uniquePitchClasses == 1
-        && quality == ChordQuality::Minor
-        && keyMode == KeySigMode::Aeolian
-        && (degree == 0 || degree == 4)) {
+    //
+    // OI-168 Task A (default-OFF): the guard is the one TONIC-dependent site OI-167 named
+    // outside the chord scorer. Count its shape preconditions separately from the Aeolian
+    // test, so a zero fire-count says WHICH conjunct is unreachable.
+    const bool guardShapeMatches = (uniquePitchClasses == 1
+                                    && quality == ChordQuality::Minor
+                                    && (degree == 0 || degree == 4));
+    if (guardShapeMatches) {
+        kcp::bump(kcp::counters().sparseGuardShapeMatched);
+    }
+    if (guardShapeMatches && keyMode == KeySigMode::Aeolian) {
+        kcp::bump(kcp::counters().sparseAeolianGuardFires);
         return;
     }
 

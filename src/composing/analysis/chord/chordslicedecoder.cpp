@@ -28,6 +28,7 @@
 #include <optional>
 
 #include "function/harmonicfunctionlayer.h"            // ScoringSnapshot/ScoringCell (cube) + bassIsTemplateChordTone
+#include "keycollectionprobe.h"                        // OI-168 counters (default-OFF)
 #include "composing/analysis/engravingbridge/regiontonecollector.h"   // weightedPcView (indexed window)
 #include "composing/analysis/engravingbridge/spellingview.h"          // lineOfFifths (the shared per-note spelling primitive, G4/C1)
 #include "composing/analysis/scoreharvest/metricweights.h"            // regionMetricWeightForOnsetTick (indexed per-note beat weight)
@@ -443,6 +444,16 @@ std::vector<ChordSliceCandidate> candidatesForWindow(
         engravingbridge::weightedPcView(model, winStart, winEnd, excludeStaves,
                                         /*parentStartTick=*/-1,
                                         /*excludeLookAheadOnDenseStart=*/false, prefs);
+
+    // OI-168 Task B (default-OFF): the slice decoder's own entries into analyzeChord, counted
+    // apart from the region path's — the two are separate consumers of the same scorer.
+    namespace kcp = mu::composing::analysis::keycollectionprobe;
+    kcp::bump(kcp::counters().decoderWindowCalls);
+    if (keyMode == KeySigMode::Altered) {
+        kcp::bump(kcp::counters().decoderWindowCallsAltered);
+    } else if (keyMode == KeySigMode::AlteredDomBB7) {
+        kcp::bump(kcp::counters().decoderWindowCallsAlteredDomBB7);
+    }
 
     function::ScoringSnapshot snapshot;
     // analyzeChord's RANKED results (top-<=4 from the winning bass) already carry the FULL

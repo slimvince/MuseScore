@@ -40,6 +40,9 @@ target_sources(composing_analysis PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/chord/analysisutils.h
     ${CMAKE_CURRENT_LIST_DIR}/chord/chordanalyzer.cpp
     ${CMAKE_CURRENT_LIST_DIR}/chord/chordanalyzer.h
+    # OI-168 measurement scaffolding — default-OFF counters + the signature-mask A/B variant.
+    ${CMAKE_CURRENT_LIST_DIR}/chord/keycollectionprobe.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/chord/keycollectionprobe.h
     # Refactor #1 — single-responsibility layer TUs split out of chordanalyzer.cpp
     # (byte-identical pure code movement). See cc_refactor1_split_design_dossier.md.
     ${CMAKE_CURRENT_LIST_DIR}/chord/chordsymbolformatter.cpp

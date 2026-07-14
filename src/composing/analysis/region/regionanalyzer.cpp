@@ -38,6 +38,7 @@
 
 #include "composing/analysis/chord/analysisutils.h"
 #include "composing/analysis/chord/chordanalyzer.h"
+#include "composing/analysis/chord/keycollectionprobe.h"   // OI-168 counters (default-OFF)
 #include "composing/analysis/decode/chordpathdecoder.h"
 #include "composing/analysis/engravingbridge/phraseboundaryview.h"
 #include "composing/analysis/engravingbridge/regiontonecollector.h"
@@ -52,6 +53,7 @@
 #include "composing/analysis/slicing/slicer.h"
 
 namespace ebr  = mu::composing::analysis::engravingbridge;
+namespace kcp  = mu::composing::analysis::keycollectionprobe;
 namespace kr   = mu::composing::analysis::keyresolver;
 namespace kms  = mu::composing::analysis::keymodeseq;
 namespace shv  = mu::composing::analysis::scoreharvest;
@@ -982,6 +984,16 @@ analyzeRegions(const mu::engraving::Score* score,
             const Measure* currentMeasure = regionStartSeg ? regionStartSeg->measure() : nullptr;
             temporalCtx.regionMetricWeight = shv::regionMetricWeightForBeatType(
                 shv::safeBeatType(currentMeasure, regionStartSeg));
+
+            // OI-168 Task B (default-OFF): the COMMITTING chord call — the one whose winner
+            // reaches the .ours.json surface. Counted separately from the lookahead and the
+            // slice-decoder entries, which also enter analyzeChord.
+            kcp::bump(kcp::counters().regionCommitCalls);
+            if (localKeyMode == KeySigMode::Altered) {
+                kcp::bump(kcp::counters().regionCommitCallsAltered);
+            } else if (localKeyMode == KeySigMode::AlteredDomBB7) {
+                kcp::bump(kcp::counters().regionCommitCallsAlteredDomBB7);
+            }
 
             analysis::PostScoringGateContext gateCtx;
             auto results = chordAnalyzer->analyzeChord(
