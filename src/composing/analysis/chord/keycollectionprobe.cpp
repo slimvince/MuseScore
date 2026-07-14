@@ -40,7 +40,6 @@ bool s_written = false;
 } // namespace
 
 const bool countingEnabled = envFlagSet("MU_KEY_COLLECTION_PROBE");
-const bool signatureMaskVariantEnabled = envFlagSet("MU_KEY_COLLECTION_SIGMASK_VARIANT");
 
 Counters& counters()
 {
@@ -62,7 +61,6 @@ void writeCounters(const std::string& path)
     const Counters& c = counters();
     std::fprintf(f,
                  "{\n"
-                 "  \"signatureMaskVariant\": %s,\n"
                  "  \"sparseRefineEntries\": %llu,\n"
                  "  \"sparseGuardShapeMatched\": %llu,\n"
                  "  \"sparseAeolianGuardFires\": %llu,\n"
@@ -74,19 +72,12 @@ void writeCounters(const std::string& path)
                  "  \"regionCommitCallsAlteredDomBB7\": %llu,\n"
                  "  \"decoderWindowCalls\": %llu,\n"
                  "  \"decoderWindowCallsAltered\": %llu,\n"
-                 "  \"decoderWindowCallsAlteredDomBB7\": %llu,\n"
-                 "  \"dim7MembershipTests\": %llu,\n"
-                 "  \"dim7MembershipDiffers\": %llu,\n"
-                 "  \"diatonicRootMembershipTests\": %llu,\n"
-                 "  \"diatonicRootMembershipDiffers\": %llu\n"
+                 "  \"decoderWindowCallsAlteredDomBB7\": %llu\n"
                  "}\n",
-                 signatureMaskVariantEnabled ? "true" : "false",
                  c.sparseRefineEntries, c.sparseGuardShapeMatched, c.sparseAeolianGuardFires,
                  c.analyzeChordCalls, c.analyzeChordCallsAltered, c.analyzeChordCallsAlteredDomBB7,
                  c.regionCommitCalls, c.regionCommitCallsAltered, c.regionCommitCallsAlteredDomBB7,
-                 c.decoderWindowCalls, c.decoderWindowCallsAltered, c.decoderWindowCallsAlteredDomBB7,
-                 c.dim7MembershipTests, c.dim7MembershipDiffers,
-                 c.diatonicRootMembershipTests, c.diatonicRootMembershipDiffers);
+                 c.decoderWindowCalls, c.decoderWindowCallsAltered, c.decoderWindowCallsAlteredDomBB7);
     std::fclose(f);
 }
 

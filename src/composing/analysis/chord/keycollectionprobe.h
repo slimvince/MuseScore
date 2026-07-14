@@ -27,24 +27,29 @@
 
 // ── OI-168 measurement scaffolding — DEFAULT-OFF, read-only ────────────────────────────
 //
-// Measures the magnitude of the OI-168 defect: `analyzeChord`'s two key-consuming terms
-// (dim7CharacteristicBonus, diatonicRootContribution) test membership in
-// { (keyTonicPc + scale[i]) mod 12 }, which equals the key SIGNATURE's diatonic collection
-// only when the mode's tonic offset equals its diatonic parent's — true for 19 of the 21
-// KeySigMode values, false for Altered (offset 1) and AlteredDomBB7 (offset 8), whose set is
-// the signature's collection transposed up a semitone.
+// One switch, read once from the environment at static init and default-OFF, so an unset
+// environment leaves the production path untouched:
 //
-// Two independent switches, BOTH read once from the environment at static-init and BOTH
-// default-OFF, so an unset environment leaves the production path untouched:
+//   MU_KEY_COLLECTION_PROBE   counting on; batch_analyze writes <output>.probe.json
 //
-//   MU_KEY_COLLECTION_PROBE            counting on; batch_analyze writes <output>.probe.json
-//   MU_KEY_COLLECTION_SIGMASK_VARIANT  the A/B: the two membership tests read the signature's
-//                                      own diatonic collection instead (the proposed fix's
-//                                      form — provably the same set for the 19 delta=0 modes)
+// The counters are plain integers that NO scoring path ever reads, so production output is
+// byte-identical either way. The whole scaffold is removable in one revert (the OI-110 pattern).
 //
-// The counters are plain integers that NO scoring path ever reads, and the variant flag is
-// false unless explicitly set, so production output is byte-identical either way. The whole
-// scaffold is removable in one revert (the OI-110 pattern).
+// WHAT REMAINS MEASURABLE HERE, now that the OI-168 fix is adopted
+// (`cc_oi168_fix_report.md`; the two key-consuming scoring terms take the signature collection
+// and no tonic):
+//
+//   * the population the chord scorer runs under (calls per key mode, split by call site) —
+//     the counters that established that `Altered` is Jazz-only, `AlteredDomBB7` is 0-firing,
+//     and the `ChordSliceDecoder` is NOT on the production path;
+//   * the `sparsechordrefinement` Aeolian lone-tonic/dominant guard's fire count — the
+//     evidence for OI-167 / OI-102's still-open disposition of that file.
+//
+// REMOVED AT THE FIX (do not restore without a reason): the `MU_KEY_COLLECTION_SIGMASK_VARIANT`
+// A/B switch and the `…MembershipTests` / `…MembershipDiffers` counters. The A/B compared the
+// mode-transposed set against the signature collection; the fix deletes the former, so the
+// switch has nothing to switch and a "differs" counter would compare a set against itself and
+// report a structural zero — a false instrument (#19), not a measurement.
 
 namespace mu::composing::analysis::keycollectionprobe {
 
@@ -72,24 +77,11 @@ struct Counters {
     unsigned long long decoderWindowCalls = 0;               ///< ChordSliceDecoder's slice window
     unsigned long long decoderWindowCallsAltered = 0;
     unsigned long long decoderWindowCallsAlteredDomBB7 = 0;
-
-    // ── Task C support: does the corrupted membership give a DIFFERENT verdict? ──
-    // Counted per (root, template) cell, at each of the two terms, whether or not the
-    // variant is enabled: "tests" is every membership question asked, "differs" is every
-    // one the signature collection answers differently from the mode-transposed set.
-    unsigned long long dim7MembershipTests = 0;
-    unsigned long long dim7MembershipDiffers = 0;
-    unsigned long long diatonicRootMembershipTests = 0;
-    unsigned long long diatonicRootMembershipDiffers = 0;
 };
 
 /// True when MU_KEY_COLLECTION_PROBE is set and non-empty. Read once at static init; the
 /// counters do nothing at all when it is false.
 extern const bool countingEnabled;
-
-/// True when MU_KEY_COLLECTION_SIGMASK_VARIANT is set and non-empty. Read once at static init.
-/// When false (every production run) the two membership tests keep their committed form.
-extern const bool signatureMaskVariantEnabled;
 
 /// The process-global counter block.
 Counters& counters();

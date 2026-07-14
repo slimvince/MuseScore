@@ -1,5 +1,5 @@
 === jazz: VARIANT B — root-failing RUNS (re-slice-stable identity) ===
-(count = 6688; identity = stem@runStartTick)
+(count = 6689; identity = stem@runStartTick)
 bwv10.7@5760  [5760,6240) dur=   480  our=Eb6(3) -> dcml_root=0  cls=b
 bwv10.7@19680  [19680,20160) dur=   480  our=Dm7/C(2) -> dcml_root=10  cls=b
 bwv10.7@21600  [21600,22080) dur=   480  our=Cm6(0) -> dcml_root=9  cls=b
@@ -522,6 +522,7 @@ bwv144.6@26400  [26400,26880) dur=   480  our=Bsus2/F#(11) -> dcml_root=6  cls=b
 bwv144.6@27840  [27840,28320) dur=   480  our=B7(11) -> dcml_root=4  cls=b
 bwv145.5@6720  [6720,7200) dur=   480  our=G#m6(8) -> dcml_root=5  cls=b
 bwv145.5@7200  [7200,8160) dur=   960  our=G#m6(8) -> dcml_root=6  cls=b
+bwv145.5@12960  [12960,13440) dur=   480  our=Ebm(3) -> dcml_root=11  cls=b
 bwv145.5@14880  [14880,15360) dur=   480  our=A(9) -> dcml_root=6  cls=b
 bwv145.5@17280  [17280,17760) dur=   480  our=F#m(6) -> dcml_root=2  cls=b
 bwv145.5@17760  [17760,18240) dur=   480  our=D/F#(2) -> dcml_root=4  cls=b

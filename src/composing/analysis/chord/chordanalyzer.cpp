@@ -39,48 +39,6 @@ namespace kcp = mu::composing::analysis::keycollectionprobe;
 namespace mu::composing::analysis {
 namespace {
 
-/// The one membership predicate the two key-consuming scoring terms share: is \p pc a member
-/// of the current key's diatonic collection?
-///
-/// COMMITTED FORM (what production computes, unchanged): membership in
-/// { (keyTonicPc + scale[i]) mod 12 } — the intervals of the mode's diatonic PARENT, laid out
-/// from the MODE's own tonic. That set is the key signature's collection only when the mode's
-/// tonic offset equals its parent's, which holds for 19 of the 21 KeySigMode values and fails
-/// for Altered and AlteredDomBB7 (OI-168).
-///
-/// OI-168 A/B VARIANT (opt-in, MU_KEY_COLLECTION_SIGMASK_VARIANT): membership in the key
-/// SIGNATURE's own diatonic collection, \p signatureMask. Provably the same set for the 19
-/// modes whose offset matches their parent's, so the variant can only move the two exotic ones.
-/// The variant is the proposed fix's form; it is NOT promoted here.
-///
-/// Both verdicts are computed whenever the probe counts, so the corpus run can report how
-/// often the two disagree per (root, template) cell.
-bool pcInKeyCollection(int pc, int keyTonicPc, const std::array<int, 7>& scale,
-                       uint16_t signatureMask,
-                       unsigned long long& testCounter,
-                       unsigned long long& differCounter)
-{
-    bool inModeTransposedSet = false;
-    for (int interval : scale) {
-        if ((keyTonicPc + interval) % 12 == pc) {
-            inModeTransposedSet = true;
-            break;
-        }
-    }
-    if (kcp::countingEnabled) {
-        const bool inSignatureCollection = pcInMask(signatureMask, pc);
-        kcp::bump(testCounter);
-        if (inSignatureCollection != inModeTransposedSet) {
-            kcp::bump(differCounter);
-        }
-    }
-    if (kcp::signatureMaskVariantEnabled) {
-        return pcInMask(signatureMask, pc);
-    }
-    return inModeTransposedSet;
-}
-
-
 // Three-way classification for a note that is NOT part of the template being scored.
 //
 //   Extension    — neutral colour tone; adds slight evidence for the candidate.
@@ -588,10 +546,14 @@ double scoreExtraNotes(const TemplateDef& tpl, int rootPc,
 /// Bonus for Diminished templates when a non-diatonic dim7 interval is present.
 /// The dim7 (9 semitones from root) fingerprints the true diminished root: when it is
 /// non-diatonic in the current key it confirms this root over chord inversions.
+///
+/// "Diatonic in the current key" is a question about the key's COLLECTION, not its tonic, so
+/// the term takes only \p signatureMask — the notated signature's own diatonic pitch classes
+/// (`diatonicMaskFromFifths`). It takes no tonic and no mode scale, which is what makes the
+/// tonic-independence structural rather than a cancellation a future mode-table edit could
+/// silently break — the way OI-168 was born. See docs/scoring_model.md §4.
 double dim7CharacteristicBonus(const TemplateDef& tpl, int rootPc,
                                const std::array<double, 12>& pcWeight,
-                               int keyTonicPc,
-                               const std::array<int, 7>& scale,
                                uint16_t signatureMask,
                                double extThreshold = kExtensionThreshold)
 {
@@ -616,9 +578,7 @@ double dim7CharacteristicBonus(const TemplateDef& tpl, int rootPc,
         || pcWeight[static_cast<size_t>(b5Pc)] <= extThreshold) {
         return 0.0;
     }
-    if (pcInKeyCollection(dim7Pc, keyTonicPc, scale, signatureMask,
-                          kcp::counters().dim7MembershipTests,
-                          kcp::counters().dim7MembershipDiffers)) {
+    if (pcInMask(signatureMask, dim7Pc)) {
         return 0.0;  // diatonic — no bonus
     }
     return kDim7CharacteristicBonus;
@@ -938,15 +898,19 @@ double appliedBassRootBonus(const TemplateDef& tpl,
 // (supportsContextualInversionBonuses / qualifiesForCompleteTriadInversionBonus) stay here
 // (they are pitch facts) and are published as per-cell flags on the ScoringSnapshot so the
 // pipeline can gate the migrated bonuses. See docs/scoring_model.md §4 / §11.
-double diatonicRootContribution(int rootPc, int keyTonicPc,
-                                const std::array<int, 7>& scale,
-                                uint16_t signatureMask,
+//
+// KEY CONTEXT — the COLLECTION, never the tonic. "Does this root belong to the key?" is a
+// question about the key signature's diatonic pitch-class set, and the term takes exactly that:
+// \p signatureMask, from `diatonicMaskFromFifths` ("depends ONLY on the notated signature, never
+// a resolved mode"). It takes no tonic and no mode scale — so the property cannot lapse when a
+// mode is added to the table, which is precisely how OI-168 arose: the previous form tested
+// membership in { (keyTonicPc + scale[i]) mod 12 }, which equals the signature's collection only
+// while every mode's tonic offset matches its diatonic parent's — false for Altered and
+// AlteredDomBB7, whose set is the collection transposed up a semitone.
+double diatonicRootContribution(int rootPc, uint16_t signatureMask,
                                 const ChordAnalyzerPreferences& prefs)
 {
-    // Prefer roots that belong to the current key scale.
-    if (pcInKeyCollection(rootPc, keyTonicPc, scale, signatureMask,
-                          kcp::counters().diatonicRootMembershipTests,
-                          kcp::counters().diatonicRootMembershipDiffers)) {
+    if (pcInMask(signatureMask, rootPc)) {
         return prefs.diatonicRootBonus;
     }
     return 0.0;
@@ -1378,15 +1342,24 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     static_assert(templates.size() == kTemplateCount,
                   "templates array extent must equal analysis::kTemplateCount");
 
-    // Key context — used for diatonic root bonus and degree assignment.
-    // The tonic and scale are derived from the detected mode.
+    // Key context — used for scale-DEGREE assignment (a degree is tonic-relative by definition)
+    // and published on the snapshot for the post-scoring gates. The two key-consuming SCORING
+    // terms no longer read either of these: they take the signature collection below (OI-168).
     const int ionianTonicPc = ionianTonicPcFromFifths(keySignatureFifths);
     const int keyTonicPc    = (ionianTonicPc + keyModeTonicOffset(keyMode)) % 12;
 
     // keyModeIndex() returns the raw enum ordinal (0–20 for all 21 KeySigMode values).
-    // Non-diatonic modes are mapped to their diatonic key-signature parent so that
-    // diatonic-root bonus and scale-membership scoring stay correct for the parent
-    // tonal context.
+    // Non-diatonic modes are mapped to their diatonic key-signature parent for degree
+    // assignment.
+    //
+    // OI-168 — READ THIS BEFORE REUSING `scale` FOR A COLLECTION TEST. The set
+    // { (keyTonicPc + scale[i]) mod 12 } equals the key SIGNATURE's collection only while every
+    // mode's tonic offset matches its parent's. That holds for 19 of the 21 KeySigMode values
+    // and FAILS for Altered (offset 1, Ionian parent offset 0) and AlteredDomBB7 (offset 8,
+    // Mixolydian parent offset 7): for those two the set is the signature's collection
+    // transposed up a semitone (2 of 7 pitch classes shared). It is not fixable by re-parenting —
+    // their tonic is not a member of any parent collection. A question of the form "is this pitch
+    // class IN THE KEY?" must therefore use `signatureMask` below, never this pair.
     static constexpr std::array<size_t, 21> DIATONIC_PARENT_INDEX = {
         0, 1, 2, 3, 4, 5, 6,  // diatonic: identity mapping
         1, 2, 3, 4, 5, 6, 0,  // melodic minor family: Dorian…Ionian parents
@@ -1395,9 +1368,9 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     const size_t modeScaleIdx = DIATONIC_PARENT_INDEX[keyModeIndex(keyMode)];
     const std::array<int, 7>& scale = keyModeScaleIntervals(keyModeFromIndex(modeScaleIdx));
 
-    // OI-168 (default-OFF): the key SIGNATURE's own diatonic collection — what the comment
-    // above claims the mapping preserves. Consumed only by the opt-in A/B variant inside
-    // pcInKeyCollection(); unread on the production path.
+    // The key SIGNATURE's own diatonic collection: the pitch-class set the two key-consuming
+    // scoring terms test membership in. Depends only on the notated signature — no tonic, no
+    // mode — so their tonic-independence is structural (OI-168).
     const uint16_t signatureMask = diatonicMaskFromFifths(keySignatureFifths);
 
     // Score every root × template combination.
@@ -1459,11 +1432,11 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
             basisIndepMatrix[rootPc][tplIdx] =
                 scoreTemplateTones(tpl, rootPc, pcWeight)
                 + scoreExtraNotes(tpl, rootPc, pcWeight, tpcForPc)
-                + dim7CharacteristicBonus(tpl, rootPc, pcWeight, keyTonicPc, scale, signatureMask,
+                + dim7CharacteristicBonus(tpl, rootPc, pcWeight, signatureMask,
                                           prefs.extensionThreshold)
                 + structuralPenalties(tpl, rootPc, pcWeight, tpcForPc, distinctPcs, prefs.extensionThreshold)
                 + tpcConsistencyBonus(tpl, rootPc, tpcForPc, prefs)
-                + diatonicRootContribution(rootPc, keyTonicPc, scale, signatureMask, prefs);
+                + diatonicRootContribution(rootPc, signatureMask, prefs);
 
             // Iter 74 Fix A — template complexity preference (bass-independent).
             const int templateDefinedTones = static_cast<int>(tpl.intervals.size());

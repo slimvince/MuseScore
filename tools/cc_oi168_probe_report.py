@@ -1,32 +1,34 @@
 #!/usr/bin/env python3
-"""OI-168 magnitude measurement — the reporting side of the default-OFF key-collection probe.
+"""OI-168 — the reporting side of the default-OFF key-collection probe.
 
-The probe itself lives in src/composing/analysis/chord/keycollectionprobe.{h,cpp} and is driven
-by two environment flags, both unset in production:
+The probe itself lives in src/composing/analysis/chord/keycollectionprobe.{h,cpp} and is driven by
+one environment flag, unset in production:
 
-    MU_KEY_COLLECTION_PROBE=1            count the branches; batch_analyze writes <out>.probe.json
-    MU_KEY_COLLECTION_SIGMASK_VARIANT=1  the A/B: the two key-consuming scoring terms test the key
-                                         SIGNATURE's diatonic collection instead of the mode-
-                                         transposed set (the proposed OI-168 fix's form)
+    MU_KEY_COLLECTION_PROBE=1   count the branches; batch_analyze writes <out>.probe.json
 
-Both flags are value-less, so a corpus run is just the ordinary tools/run_bach_preset.py with the
-flag exported into the environment — no separate driver, no path rewriting.
+The flag is value-less, so a corpus run is just the ordinary tools/run_bach_preset.py with it
+exported into the environment — no separate driver, no path rewriting.
+
+HISTORY — the A/B switch this tool was built to drive (MU_KEY_COLLECTION_SIGMASK_VARIANT) is GONE.
+It compared the two key-consuming scoring terms' mode-tonic-anchored membership set against the key
+signature's own collection. The signature-mask form won and was adopted (cc_oi168_fix_report.md), so
+the committed branch it was switching against no longer exists. The subcommands below still work:
+`flips` diffs any two corpora and needs no build flag.
 
 Three subcommands:
 
-  byteid  <dir_a> <dir_b>      Every <stem>.ours.json byte-compared (sha256). The OFF-path
-                               inertness proof: an instrumented build with the flags unset must
-                               reproduce the pre-change corpus exactly.
+  byteid  <dir_a> <dir_b>      Every <stem>.ours.json byte-compared (sha256). The inertness proof
+                               for a change that must not move the corpus.
 
   counters <dir> [--label L]   Sum the per-score <stem>.ours.json.probe.json blocks written by the
                                probe, and report the per-score detail for every score whose Altered
                                / AlteredDomBB7 population is non-zero.
 
-  flips   <base_dir> <var_dir> The A/B: the committed-chord diff. Reports every region whose
-                               committed chord moved, split by whether the region's local key is an
-                               Altered-family mode (the population the defect can reach) or not
-                               (where the two membership tests are provably the same set, so a flip
-                               would REFUTE the OI-168 derivation).
+  flips   <base_dir> <var_dir> The committed-chord diff between two corpora. Reports every region
+                               whose committed chord moved, split by whether the region's local key
+                               is an Altered-family mode (the population the OI-168 defect could
+                               reach) or not (where the two membership tests are provably the same
+                               set, so a flip there would REFUTE the OI-168 derivation).
 
 Usage:
     python tools/cc_oi168_probe_report.py byteid   <dir_a> <dir_b>
