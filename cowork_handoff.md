@@ -1,6 +1,90 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
+## ★★★ CC SESSION CLOSE 2026-07-16 — OI-170, THE WHOLE-LAYER TONIC-USE MAP: **MEASURED. NO FIX PROMOTED.**
+
+Report: `cc_oi170_measure_report.md`. Generated artifact: `cc_oi170_measurements.txt` (every figure
+below is cited from it — none hand-typed, #17f). Dispatch: `cc_instruction_oi170_measure.md`.
+
+**The deliverable, in one line: the complete classified map of L4's tonic-uses + the measured
+magnitude of unifying the collection ones — and the answer to your question is NO.**
+
+**1. L4 cannot be made fully tonic-independent.** Three class-(a) sites (the three you named) —
+**and seven class-(b)**, three of them live and decision-bearing: **Gate G-E** (58 winner swaps,
+Baroque), **`applyTonicPriorToSparseChord`** (172/183/172 committed-QUALITY overwrites, on the
+commit path, named by no register row — **OI-172**), and the published **`degree`**. A degree is
+tonic-relative *by definition*; no collection answers it. **The collection question can be made
+tonic-free; the degree question cannot — and the degree question is wired into the identity
+decision.** That is the named design constraint, and it outranks the collection fix.
+
+**2. The class-(a) fix is metric-neutral AND correct — measured, not argued.** ZERO committed-chord
+flips on every preset. Gate I's verdict differed on exactly **one** candidate corpus-wide with
+`gateISwapDiffers = 0` (another conjunct blocked it either way); Gate L's never differed. Baroque +
+Default **byte-identical 352/352**; Jazz **9 files**, and the **only** JSON key that changes anywhere
+is `diatonicToKey` — **22 flags, all `false→true`, all toward-correct**. Hard stop: run-diff
+**(+0/−0)**, class-(a) and class-(b) duration **δ=0**, every key column identical to the digit,
+`robust_stop_diff.py` **OVERALL PASS**. **⇒ the fix needs NO robust-stop re-baseline** — a 9-file
+`tools/corpus/jazz` regen + a manifest re-stamp whose figures do not move. No golden (they carry no
+`diatonicToKey`, no Altered key — verified).
+
+**3. Your `diatonicToKey` single-sourcing premise is FALSE at the code (OI-173).** The dispatch says
+"the five consumers re-derive the published fact". They do not: there are **four inequivalent
+definitions** of the flag and **two of `degree`**, and most re-derivations answer **for a different
+key** than the one L4 committed under — so "read the published fact" is **not well-defined**, not
+merely non-identical. **What unifies is the predicate, not the value.** The published flag has **one**
+reader tree-wide; `BaseRomanNumeral::diatonicToKey` has **none** (dormancy or waste). Three copies of
+the 21→7 parent table (#6).
+
+**4. ★ OI-175 — NEW, and it changes the shape of your question.** The enumeration as first scoped
+(your named L4 files) would have shipped "nothing was left unclassified" while a **live,
+chord-deciding tonic site sat two directories away**. Caught only by re-running the identical pattern
+**tree-wide** (140 hits vs 118) and reading the out-of-scope remainder file by file:
+**`harmonicsegmenter.cpp:849-852`** — the Iter-74 Fix-B **head-gap tonic prior** inside
+`greedyExpandSegmentation`, on the **live region path** — builds the mode tonic exactly as every
+δ-bug site does, then **overwrites a synthesized head region's committed root, bass and quality**
+when the winner is not tonic-rooted and the margin is thin (`< 0.4`). **Class (b)** ("is this root
+THE TONIC?"), so **not** a δ-bug and the primitive cannot replace it. **Fire count NOT measured** —
+instrumenting Layer 2 was outside this dispatch; liveness is structural, magnitude is not.
+**Why it matters to you: fixing L4 would NOT make the committed chord tonic-independent — the THIRD
+live chord-deciding genuine-tonic site lives in the SEGMENTER (Layer 2), and it is the first one
+outside L4** (the two inside are Gate G-E and `applyTonicPriorToSparseChord`). So "is L4 tonic-independent?" may be
+the wrong frame; the answerable question is whether tonic-independence is a property of L4 or of the
+**whole chord-committing path**. It also **composes with OI-174**: a wrong `Altered` mode ⇒ this prior
+prefers a tonic a semitone off. **Declared, not fixed, not built around.**
+
+**5. OI-174 — a key-layer inference problem, declared not fixed.** **22 of the 23** Jazz `Altered`
+regions contain **no pitch class outside their own signature's collection**. The key layer emits an
+"altered" mode over material with **no altered tone**. This is also the diagnosis of the one magnitude
+miss (22 flag flips vs a predicted ≤18): I had assumed `Altered` implied chromatic material.
+
+**6. Provenance — the first measurement was NOT established, and was re-run (#16/#19).** The
+artifact's first generation came from a binary built **before** the last source edit to
+`chordanalyzer.cpp` (build 12:05, edit 12:22): the stamp to the committed source was broken, so
+nothing it carried was established. Rebuilt from the exact committed source (the incremental build
+recompiled exactly **one** TU, confirming that edit was the only one outstanding) and **all nine
+corpus arms, the three suites and the hard stop re-run — every figure reproduced exactly**, which
+*establishes* rather than assumes that the edit was non-behavioral. **Stamp the arm to the build, not
+to the working tree; a corpus run does not rebuild.**
+
+**The OFF path is inert — proven:** both flags unset ⇒ **352/352 byte-identical on all three
+presets**; `composing_tests` 1103, `notation_tests` 53, `pipeline_snapshot_tests` 11, all green, **no
+golden refreshed**, `tools/robust_stop` + `tools/corpus` untouched.
+
+**The method lesson, for the next dispatch:** a **scoped** sweep proves completeness of the **scope**,
+never of the **question**. Four consecutive audits missed sites; the scope check (same pattern
+tree-wide, remainder enumerated by file) is what caught this one, and it is now part of the generated
+artifact (§SWEEP 1b/1c) so a future sweep cannot drop it silently.
+
+**OWED FROM YOU / THE USER — the disposition on the recommended fix:** one shared signature-mask
+primitive for the *collection* question (a1/a2/a3) + `diatonicDegreeForRootPc` for the *degree*
+question + **retire `DIATONIC_PARENT_INDEX` and its two duplicates** (with the collection question on
+the mask and the degree question on the mode's own scale, the parent table has no remaining correct
+use). **The degree-basis correction (parent scale → mode's own scale) is a SEPARATE change with its
+own measurement — it moves `degree`, hence Roman numerals, hence possibly Gate G-E and
+`applyTonicPriorToSparseChord`, i.e. committed chords. NOT folded in.** The key-layer funnel stays
+shut. Register: **OI-172, OI-173, OI-174, OI-175 new — all declared, none fixed.**
+
+---
 ## ★★★ CC SESSION CLOSE 2026-07-14 (b) — OI-168, THE SIGNATURE-MASK FIX: **ADOPTED AND RE-BASELINED, EVERY PREDICTION MET EXACTLY — AND YOUR CLOSURE CLAIM IS REFUTED. TWO NEW STOPS.**
 
 Report: `cc_oi168_fix_report.md`. Dispatch: `cc_instruction_oi168_fix.md` (user-ratified 2026-07-13).
