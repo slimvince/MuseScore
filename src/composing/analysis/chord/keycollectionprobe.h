@@ -25,31 +25,50 @@
 
 #include <string>
 
-// ── OI-168 measurement scaffolding — DEFAULT-OFF, read-only ────────────────────────────
+// ── OI-168 / OI-170 measurement scaffolding — DEFAULT-OFF, read-only ───────────────────
 //
-// One switch, read once from the environment at static init and default-OFF, so an unset
-// environment leaves the production path untouched:
+// Two switches, read once from the environment at static init and both default-OFF, so an
+// unset environment leaves the production path untouched:
 //
-//   MU_KEY_COLLECTION_PROBE   counting on; batch_analyze writes <output>.probe.json
+//   MU_KEY_COLLECTION_PROBE            counting on; batch_analyze writes <output>.probe.json
+//   MU_KEY_COLLECTION_SIGMASK_VARIANT  the A/B: the THREE remaining collection-membership sites
+//                                      (OI-170) test the key SIGNATURE's collection instead of
+//                                      the mode-tonic-anchored set
 //
-// The counters are plain integers that NO scoring path ever reads, so production output is
-// byte-identical either way. The whole scaffold is removable in one revert (the OI-110 pattern).
+// The counters are plain integers that NO scoring path ever reads, and the variant flag is false
+// unless set, so production output is byte-identical either way. The whole scaffold is removable
+// in one revert (the OI-110 pattern).
 //
-// WHAT REMAINS MEASURABLE HERE, now that the OI-168 fix is adopted
-// (`cc_oi168_fix_report.md`; the two key-consuming scoring terms take the signature collection
-// and no tonic):
+// WHAT IS MEASURED HERE
 //
+//   OI-168 (the adopted fix — `cc_oi168_fix_report.md`; the two key-consuming SCORING terms now
+//   take the signature collection and no tonic):
 //   * the population the chord scorer runs under (calls per key mode, split by call site) —
 //     the counters that established that `Altered` is Jazz-only, `AlteredDomBB7` is 0-firing,
 //     and the `ChordSliceDecoder` is NOT on the production path;
 //   * the `sparsechordrefinement` Aeolian lone-tonic/dominant guard's fire count — the
 //     evidence for OI-167 / OI-102's still-open disposition of that file.
 //
-// REMOVED AT THE FIX (do not restore without a reason): the `MU_KEY_COLLECTION_SIGMASK_VARIANT`
-// A/B switch and the `…MembershipTests` / `…MembershipDiffers` counters. The A/B compared the
-// mode-transposed set against the signature collection; the fix deletes the former, so the
-// switch has nothing to switch and a "differs" counter would compare a set against itself and
-// report a structural zero — a false instrument (#19), not a measurement.
+//   OI-170 (the three sites the OI-168 fix did NOT reach — all on the live region path, all
+//   asking a pure COLLECTION-membership question through the TONIC, all carrying the identical
+//   δ≠0 corruption on Altered / AlteredDomBB7):
+//   * `buildChordResult`'s `diatonicToKey` flag (a PUBLISHED fact);
+//   * Gate I's `invRootIsDiatonic` and Gate L's `invRootIsDiatonic` (both SWAP the committed
+//     winner when they fire — decision-bearing, not cosmetic).
+//   Each site evaluates BOTH predicates whenever counting is on and reports how often they
+//   differ; the SIGMASK_VARIANT switch decides which one the code actually uses. The two
+//   decision-bearing gates additionally count the cases where the differing predicate would
+//   change the gate's swap decision (every other conjunct of the gate passing) — that is the
+//   per-gate attribution of any committed-chord flip.
+//
+//   The two LIVE class-(b) (genuine-tonic) sites' magnitude, which the fix design must account
+//   for because the signature mask cannot replace them: Gate G-E's degree test, and
+//   `applyTonicPriorToSparseChord`'s degree→triad-quality overwrite on the commit path.
+//
+// The `…MembershipTests` / `…MembershipDiffers` counters of the OI-168 A/B are gone with the
+// terms they measured (the fix deleted the mode-transposed branch, so a "differs" counter there
+// would compare a set against itself and report a structural zero — a false instrument, #19).
+// The counters below measure the sites where the two forms still genuinely differ.
 
 namespace mu::composing::analysis::keycollectionprobe {
 
@@ -77,11 +96,43 @@ struct Counters {
     unsigned long long decoderWindowCalls = 0;               ///< ChordSliceDecoder's slice window
     unsigned long long decoderWindowCallsAltered = 0;
     unsigned long long decoderWindowCallsAlteredDomBB7 = 0;
+
+    // ── OI-170 site 1: buildChordResult's diatonicToKey flag ──
+    /// buildChordResult reached the diatonic check (both predicates evaluated).
+    unsigned long long diatonicFlagTests = 0;
+    /// The mode-transposed verdict and the signature-collection verdict DIFFER for this chord.
+    unsigned long long diatonicFlagDiffers = 0;
+
+    // ── OI-170 site 2: Gate I's invRootIsDiatonic ──
+    /// The membership test was reached (a candidate passed every earlier conjunct).
+    unsigned long long gateIDiatonicTests = 0;
+    /// The two predicates disagree on this candidate.
+    unsigned long long gateIDiatonicDiffers = 0;
+    /// They disagree AND every remaining conjunct passes — i.e. the SWAP decision itself differs.
+    unsigned long long gateISwapDiffers = 0;
+
+    // ── OI-170 site 3: Gate L's invRootIsDiatonic ──
+    unsigned long long gateLDiatonicTests = 0;
+    unsigned long long gateLDiatonicDiffers = 0;
+    unsigned long long gateLSwapDiffers = 0;
+
+    // ── The live class-(b) (genuine-tonic) sites, for magnitude ──
+    /// Gate G-E's key-context degree test fired (the winner was swapped to the HalfDim reading).
+    unsigned long long gateGEFires = 0;
+    /// applyTonicPriorToSparseChord was entered with a thin (Power/Sus2/Sus4) chord.
+    unsigned long long tonicPriorEntries = 0;
+    /// …and it overwrote the committed quality with the degree's diatonic triad quality.
+    unsigned long long tonicPriorApplied = 0;
 };
 
 /// True when MU_KEY_COLLECTION_PROBE is set and non-empty. Read once at static init; the
 /// counters do nothing at all when it is false.
 extern const bool countingEnabled;
+
+/// True when MU_KEY_COLLECTION_SIGMASK_VARIANT is set and non-empty. Read once at static init.
+/// The three OI-170 sites take the key signature's collection instead of the mode-transposed
+/// set when this is true. FALSE in production — the default path is unchanged.
+extern const bool signatureMaskVariant;
 
 /// The process-global counter block.
 Counters& counters();

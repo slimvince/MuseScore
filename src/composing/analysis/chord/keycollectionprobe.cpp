@@ -39,7 +39,8 @@ bool s_written = false;
 
 } // namespace
 
-const bool countingEnabled = envFlagSet("MU_KEY_COLLECTION_PROBE");
+const bool countingEnabled    = envFlagSet("MU_KEY_COLLECTION_PROBE");
+const bool signatureMaskVariant = envFlagSet("MU_KEY_COLLECTION_SIGMASK_VARIANT");
 
 Counters& counters()
 {
@@ -72,12 +73,29 @@ void writeCounters(const std::string& path)
                  "  \"regionCommitCallsAlteredDomBB7\": %llu,\n"
                  "  \"decoderWindowCalls\": %llu,\n"
                  "  \"decoderWindowCallsAltered\": %llu,\n"
-                 "  \"decoderWindowCallsAlteredDomBB7\": %llu\n"
+                 "  \"decoderWindowCallsAlteredDomBB7\": %llu,\n"
+                 "  \"diatonicFlagTests\": %llu,\n"
+                 "  \"diatonicFlagDiffers\": %llu,\n"
+                 "  \"gateIDiatonicTests\": %llu,\n"
+                 "  \"gateIDiatonicDiffers\": %llu,\n"
+                 "  \"gateISwapDiffers\": %llu,\n"
+                 "  \"gateLDiatonicTests\": %llu,\n"
+                 "  \"gateLDiatonicDiffers\": %llu,\n"
+                 "  \"gateLSwapDiffers\": %llu,\n"
+                 "  \"gateGEFires\": %llu,\n"
+                 "  \"tonicPriorEntries\": %llu,\n"
+                 "  \"tonicPriorApplied\": %llu,\n"
+                 "  \"signatureMaskVariant\": %s\n"
                  "}\n",
                  c.sparseRefineEntries, c.sparseGuardShapeMatched, c.sparseAeolianGuardFires,
                  c.analyzeChordCalls, c.analyzeChordCallsAltered, c.analyzeChordCallsAlteredDomBB7,
                  c.regionCommitCalls, c.regionCommitCallsAltered, c.regionCommitCallsAlteredDomBB7,
-                 c.decoderWindowCalls, c.decoderWindowCallsAltered, c.decoderWindowCallsAlteredDomBB7);
+                 c.decoderWindowCalls, c.decoderWindowCallsAltered, c.decoderWindowCallsAlteredDomBB7,
+                 c.diatonicFlagTests, c.diatonicFlagDiffers,
+                 c.gateIDiatonicTests, c.gateIDiatonicDiffers, c.gateISwapDiffers,
+                 c.gateLDiatonicTests, c.gateLDiatonicDiffers, c.gateLSwapDiffers,
+                 c.gateGEFires, c.tonicPriorEntries, c.tonicPriorApplied,
+                 signatureMaskVariant ? "true" : "false");
     std::fclose(f);
 }
 

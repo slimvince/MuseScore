@@ -193,6 +193,13 @@ void applyTonicPriorToSparseChord(
         return;
     }
 
+    // OI-170 (default-OFF): this runs on the region analyzer's COMMIT path and overwrites the
+    // committed quality, and it reaches that quality through the tonic (diatonicDegreeForRootPc
+    // → diatonicTriadShapeForDegree). Counted, not changed — it is a class-(b) genuine-degree
+    // site the signature-mask primitive cannot replace, and its live fire count is the magnitude
+    // the fix design has to account for.
+    kcp::bump(kcp::counters().tonicPriorEntries);
+
     // Dense regions (3+ PCs) carry their own quality evidence; overriding
     // them with a diatonic assumption would suppress legitimate chord color.
     if (distinctPitchClassCount(tones) > 2) {
@@ -211,6 +218,7 @@ void applyTonicPriorToSparseChord(
     }
     const auto diatonicQuality = std::get<0>(*triadShape);
 
+    kcp::bump(kcp::counters().tonicPriorApplied);
     result.identity.quality = diatonicQuality;
 }
 

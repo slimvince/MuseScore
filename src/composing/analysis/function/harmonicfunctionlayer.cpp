@@ -515,7 +515,7 @@ void applyHarmonicFunction(const ScoringSnapshot&                      snapshot,
     // one builder path across the module; cowork_gateA_unification_design.md).
     const analysis::BuildChordResultContext buildCtx{
         snapshot.pcWeight, snapshot.tpcForPc, winBassPc, winBassTpc,
-        snapshot.keyTonicPc, snapshot.keyMode, snapshot.scale };
+        snapshot.keyTonicPc, snapshot.keyMode, snapshot.scale, snapshot.keySigFifths };
 
     for (const WorkCand& rc : chosenPerBass) {
         if (results.size() >= 3) {

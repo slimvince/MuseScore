@@ -256,6 +256,10 @@ struct ScoringSnapshot {
     std::array<int, 7>     scale      {};
     int                    keyTonicPc { -1 };
     analysis::KeySigMode   keyMode    {};
+    /// The notated key signature (-7..+7) the region was analyzed under — the input to
+    /// diatonicMaskFromFifths, i.e. to the key's own collection. Carried for the OI-170
+    /// default-OFF signature-mask variant of the diatonic check; no committed path reads it.
+    int                    keySigFifths { 0 };
 };
 
 /// Capped inversion-context bonus (the four §4.1b bonuses), migrated from the oracle in

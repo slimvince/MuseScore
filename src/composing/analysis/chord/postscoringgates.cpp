@@ -22,11 +22,15 @@
 
 #include "chordanalyzer.h"
 #include "../param/paramoverride.h"   // Stage-5 fitter: optional constant override (D-6)
+#include "analysisutils.h"            // pcInMask, diatonicMaskFromFifths (the signature collection)
+#include "keycollectionprobe.h"       // OI-170 counters + signature-mask variant (default-OFF)
 
 #include <algorithm>
 #include <cstdint>
 #include <utility>
 #include <vector>
+
+namespace kcp = mu::composing::analysis::keycollectionprobe;
 
 namespace mu::composing::analysis {
 
@@ -64,7 +68,7 @@ ChordAnalysisResult buildResultFromGateCtx(const RawCandidate&              rc,
         BuildChordResultContext{ gateCtx.pcWeight, gateCtx.tpcForPc,
                                  gateCtx.bassPc, gateCtx.bassTpc,
                                  gateCtx.keyTonicPc, gateCtx.keyMode,
-                                 gateCtx.scale },
+                                 gateCtx.scale, gateCtx.keySigFifths },
         prefs);
 }
 } // namespace
@@ -384,6 +388,13 @@ void applyPostScoringGates(
                                        || gExpectedAltRoot == gSupertonicPc
                                        || gExpectedAltRoot == gMediantPc);
             const bool geFires = !ruleOff(P::PostScoringRule::GateGE) && geKeyContext;
+            if (geFires) {
+                // OI-170 (default-OFF): Gate G-E is a genuine TONIC use — it asks whether the
+                // alternative root is the key's ii / iii / vii DEGREE, which the signature's
+                // collection cannot answer. Counted, not changed: this is the magnitude of a
+                // class-(b) site the signature-mask primitive cannot replace.
+                kcp::bump(kcp::counters().gateGEFires);
+            }
             const bool gdFires = !ruleOff(P::PostScoringRule::GateGD)
                                  && !geFires
                                  && context != nullptr
@@ -472,10 +483,32 @@ void applyPostScoringGates(
                 if (invBassPc != winner.identity.bassPc)                   continue;  // different bass
                 if (invBassPc == invRootPc)                                continue;  // root position
                 if ((winner.identity.bassPc - invRootPc + 12) % 12 != 4)  continue;  // not I4 interval
+                // OI-170 — "is that root diatonic to the current key?" is a COLLECTION-membership
+                // question, and this asks it through the TONIC (the mode-transposed set). The
+                // default-OFF variant asks the key SIGNATURE's own collection instead; the
+                // counters report how often the two verdicts differ, and how often that
+                // difference would change this gate's SWAP decision.
                 const int invInterval = (invRootPc - gateCtx.keyTonicPc + 12) % 12;
                 bool invRootIsDiatonic = false;
                 for (int d = 0; d < 7; ++d) {
                     if (gateCtx.scale[d] == invInterval) { invRootIsDiatonic = true; break; }
+                }
+                if (kcp::countingEnabled || kcp::signatureMaskVariant) {
+                    const bool bySignature =
+                        pcInMask(diatonicMaskFromFifths(gateCtx.keySigFifths), invRootPc);
+                    kcp::bump(kcp::counters().gateIDiatonicTests);
+                    if (bySignature != invRootIsDiatonic) {
+                        kcp::bump(kcp::counters().gateIDiatonicDiffers);
+                        const bool restPasses =
+                            gateCtx.pcWeight[static_cast<size_t>(invRootPc)] > prefs.extensionThreshold
+                            && (winner.identity.score - inv.identity.score) <= kGateIMargin;
+                        if (restPasses) {
+                            kcp::bump(kcp::counters().gateISwapDiffers);
+                        }
+                    }
+                    if (kcp::signatureMaskVariant) {
+                        invRootIsDiatonic = bySignature;
+                    }
                 }
                 if (!invRootIsDiatonic)                                    continue;  // not diatonic
                 if (gateCtx.pcWeight[static_cast<size_t>(invRootPc)] <= prefs.extensionThreshold) {
@@ -517,10 +550,26 @@ void applyPostScoringGates(
                 if (inv.identity.quality != ChordQuality::Major)                        continue;  // not Major
                 if (inv.identity.rootPc != winner.identity.rootPc)                      continue;  // different root
                 if (inv.identity.bassPc != winner.identity.bassPc)                      continue;  // not root-position
+                // OI-170 — the same collection-membership-through-the-tonic question as Gate I,
+                // and the same default-OFF signature-collection variant + counters.
                 const int invInterval = (inv.identity.rootPc - gateCtx.keyTonicPc + 12) % 12;
                 bool invRootIsDiatonic = false;
                 for (int d = 0; d < 7; ++d) {
                     if (gateCtx.scale[d] == invInterval) { invRootIsDiatonic = true; break; }
+                }
+                if (kcp::countingEnabled || kcp::signatureMaskVariant) {
+                    const bool bySignature =
+                        pcInMask(diatonicMaskFromFifths(gateCtx.keySigFifths), inv.identity.rootPc);
+                    kcp::bump(kcp::counters().gateLDiatonicTests);
+                    if (bySignature != invRootIsDiatonic) {
+                        kcp::bump(kcp::counters().gateLDiatonicDiffers);
+                        if ((winner.identity.score - inv.identity.score) <= kGateLMargin) {
+                            kcp::bump(kcp::counters().gateLSwapDiffers);
+                        }
+                    }
+                    if (kcp::signatureMaskVariant) {
+                        invRootIsDiatonic = bySignature;
+                    }
                 }
                 if (!invRootIsDiatonic)                                                 continue;  // not diatonic
                 if (winner.identity.score - inv.identity.score > kGateLMargin)                continue;  // margin too wide

@@ -356,11 +356,15 @@ namespace {
 BuildChordResultContext makeBuildCtx(const std::array<double, 12>& pcWeight,
                                      const std::array<int, 12>& tpcForPc,
                                      int bassPc, int bassTpc = -1,
-                                     int keyTonicPc = 0)
+                                     int keyTonicPc = 0,
+                                     int keySignatureFifths = 0)
 {
     static const std::array<int, 7> kIonian = { 0, 2, 4, 5, 7, 9, 11 };
+    // keySignatureFifths defaults to 0 (C), the signature whose collection is exactly the
+    // (keyTonicPc = 0, Ionian) pair above — so the two key contexts the builder carries agree.
     return BuildChordResultContext{ pcWeight, tpcForPc, bassPc, bassTpc,
-                                    keyTonicPc, KeySigMode::Ionian, kIonian };
+                                    keyTonicPc, KeySigMode::Ionian, kIonian,
+                                    keySignatureFifths };
 }
 } // namespace
 

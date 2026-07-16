@@ -1,19 +1,21 @@
 #!/usr/bin/env python3
-"""OI-168 — the reporting side of the default-OFF key-collection probe.
+"""OI-168 / OI-170 — the reporting side of the default-OFF key-collection probe.
 
 The probe itself lives in src/composing/analysis/chord/keycollectionprobe.{h,cpp} and is driven by
-one environment flag, unset in production:
+two environment flags, both unset in production:
 
-    MU_KEY_COLLECTION_PROBE=1   count the branches; batch_analyze writes <out>.probe.json
+    MU_KEY_COLLECTION_PROBE=1            count the branches; batch_analyze writes <out>.probe.json
+    MU_KEY_COLLECTION_SIGMASK_VARIANT=1  the OI-170 A/B: the three remaining collection-membership
+                                         sites (buildChordResult's diatonicToKey flag, Gate I's and
+                                         Gate L's invRootIsDiatonic) test the key SIGNATURE's own
+                                         collection instead of the mode-tonic-anchored set
 
-The flag is value-less, so a corpus run is just the ordinary tools/run_bach_preset.py with it
-exported into the environment — no separate driver, no path rewriting.
+Both flags are value-less, so a corpus arm is just the ordinary tools/run_bach_preset.py with the
+flag exported into the environment — no separate driver, no path rewriting.
 
-HISTORY — the A/B switch this tool was built to drive (MU_KEY_COLLECTION_SIGMASK_VARIANT) is GONE.
-It compared the two key-consuming scoring terms' mode-tonic-anchored membership set against the key
-signature's own collection. The signature-mask form won and was adopted (cc_oi168_fix_report.md), so
-the committed branch it was switching against no longer exists. The subcommands below still work:
-`flips` diffs any two corpora and needs no build flag.
+HISTORY — the OI-168 arm of the A/B (the two key-consuming SCORING terms) is gone: the
+signature-mask form won and was adopted (cc_oi168_fix_report.md), so the branch it switched against
+no longer exists. The flag name is reused for the three sites the fix did NOT reach (OI-170).
 
 Three subcommands:
 
@@ -24,11 +26,13 @@ Three subcommands:
                                probe, and report the per-score detail for every score whose Altered
                                / AlteredDomBB7 population is non-zero.
 
-  flips   <base_dir> <var_dir> The committed-chord diff between two corpora. Reports every region
-                               whose committed chord moved, split by whether the region's local key
-                               is an Altered-family mode (the population the OI-168 defect could
-                               reach) or not (where the two membership tests are provably the same
-                               set, so a flip there would REFUTE the OI-168 derivation).
+  flips   <base_dir> <var_dir> The diff between two corpora, on the two surfaces the OI-170 variant
+                               can move: the COMMITTED CHORD (Gate I / Gate L swap the winner) and
+                               the PUBLISHED diatonicToKey FLAG (buildChordResult). Each is split by
+                               whether the region's local key is an Altered-family mode (the
+                               population the defect can reach) or not (where the two membership
+                               tests are provably the same set, so a difference there would REFUTE
+                               the derivation and is a STOP).
 
 Usage:
     python tools/cc_oi168_probe_report.py byteid   <dir_a> <dir_b>
@@ -50,8 +54,12 @@ COUNTER_FIELDS = [
     "analyzeChordCalls", "analyzeChordCallsAltered", "analyzeChordCallsAlteredDomBB7",
     "regionCommitCalls", "regionCommitCallsAltered", "regionCommitCallsAlteredDomBB7",
     "decoderWindowCalls", "decoderWindowCallsAltered", "decoderWindowCallsAlteredDomBB7",
-    "dim7MembershipTests", "dim7MembershipDiffers",
-    "diatonicRootMembershipTests", "diatonicRootMembershipDiffers",
+    # OI-170 — the three sites the OI-168 fix did not reach, plus the two live class-(b)
+    # (genuine-tonic) sites whose magnitude the fix design has to account for.
+    "diatonicFlagTests", "diatonicFlagDiffers",
+    "gateIDiatonicTests", "gateIDiatonicDiffers", "gateISwapDiffers",
+    "gateLDiatonicTests", "gateLDiatonicDiffers", "gateLSwapDiffers",
+    "gateGEFires", "tonicPriorEntries", "tonicPriorApplied",
 ]
 
 
@@ -131,6 +139,7 @@ def cmd_counters(directory, label):
 def cmd_flips(base_dir, var_dir):
     base_files = sorted(glob.glob(os.path.join(base_dir, "*.ours.json")))
     flips_in, flips_out, seg_diffs = [], [], []
+    flag_in, flag_out = [], []
     delta_regions = 0
     for pb in base_files:
         stem = _stem(pb)
@@ -153,12 +162,15 @@ def cmd_flips(base_dir, var_dir):
             rv = v_by_tick.get(tick)
             if rv is None:
                 continue
-            if _chord_of(rb) == _chord_of(rv):
-                continue
-            row = (stem, tick, rb.get("key"), rv.get("key"),
-                   rb.get("chordSymbol"), rv.get("chordSymbol"),
-                   rb.get("romanNumeral"), rv.get("romanNumeral"))
-            (flips_in if _delta_nonzero(rb) else flips_out).append(row)
+            if _chord_of(rb) != _chord_of(rv):
+                row = (stem, tick, rb.get("key"), rv.get("key"),
+                       rb.get("chordSymbol"), rv.get("chordSymbol"),
+                       rb.get("romanNumeral"), rv.get("romanNumeral"))
+                (flips_in if _delta_nonzero(rb) else flips_out).append(row)
+            if rb.get("diatonicToKey") != rv.get("diatonicToKey"):
+                frow = (stem, tick, rb.get("key"), rb.get("chordSymbol"),
+                        rb.get("diatonicToKey"), rv.get("diatonicToKey"))
+                (flag_in if _delta_nonzero(rb) else flag_out).append(frow)
 
     print("=== committed-chord flips: base=%s  variant=%s" % (base_dir, var_dir))
     print("  scores compared                                   : %d" % len(base_files))
@@ -174,11 +186,24 @@ def cmd_flips(base_dir, var_dir):
             print("  %-10s %-7d %-7s %-10s -> %-10s  %-9s -> %-9s"
                   % (stem, tick, kb, cb, cv, rb, rv))
     if flips_out:
-        print("  --- FLIPS OUTSIDE (a STOP: refutes the OI-168 derivation) ---")
+        print("  --- FLIPS OUTSIDE (a STOP: refutes the derivation) ---")
         for row in flips_out[:60]:
             print("    %s" % (row,))
     for stem, why in seg_diffs[:20]:
         print("    segmentation: %s — %s" % (stem, why))
+
+    print("=== published diatonicToKey flag flips (buildChordResult, OI-170 site 1)")
+    print("  FLAG flips inside the Altered-family regions      : %d" % len(flag_in))
+    print("  FLAG flips anywhere else (must be 0 — structural) : %d" % len(flag_out))
+    if flag_in:
+        print("  --- flag flips inside the Altered-family regions ---")
+        print("  %-10s %-7s %-7s %-10s %-5s -> %-5s" % ("stem", "tick", "key", "chord", "base", "var"))
+        for stem, tick, k, c, fb, fv in flag_in:
+            print("  %-10s %-7d %-7s %-10s %-5s -> %-5s" % (stem, tick, k, c, fb, fv))
+    if flag_out:
+        print("  --- FLAG FLIPS OUTSIDE (a STOP: refutes the derivation) ---")
+        for row in flag_out[:60]:
+            print("    %s" % (row,))
     return 0
 
 

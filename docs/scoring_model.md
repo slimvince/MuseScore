@@ -295,6 +295,31 @@ Note that `buildChordResult`'s `diatonicToKey` flag and the Gate I / Gate L `inv
 (`postscoringgates.cpp`) still answer a *collection* question through the *tonic* pair and so still
 carry the OI-168 defect — they are declared, not fixed (see `OPEN_ITEMS.md` OI-170).
 
+**OI-170 measured those three sites (2026-07-16; `cc_oi170_measure_report.md`) — the code carries a
+DEFAULT-OFF A/B for them, and no fix is promoted.** Each of the three evaluates *both* predicates
+whenever `MU_KEY_COLLECTION_PROBE` is set, and takes the signature-collection answer only when
+`MU_KEY_COLLECTION_SIGMASK_VARIANT` is also set; **both flags are unset in production and the OFF path
+is byte-identical (352/352 × 3 presets, proven)**. What the A/B measured:
+
+- **ZERO committed chords move on any preset.** Gate I's two verdicts differed on exactly **one**
+  candidate across the whole Jazz corpus and the swap decision differed **0** times (another conjunct
+  blocked it either way); Gate L's verdicts never differed. So neither gate's *swap* is reachable by
+  this defect on this corpus — the defect is live but, at these two gates, currently inert.
+- **Only the published `diatonicToKey` flag moves**: 22 flags on 9 Jazz files, every one
+  `false → true`, every one toward-correct; Baroque/Default byte-identical (δ = 0 at runtime again).
+- The robust-stop hard gate is unmoved (run-diff +0/−0, class-(a) and class-(b) duration δ = 0).
+
+**Reading for a future fix:** the collection question at all three sites can move to
+`pcInMask(diatonicMaskFromFifths(fifths), pc)` with **no committed-chord change** — but that is *not*
+the whole tonic story in the scoring path. Two live sites decide a committed chord from a genuine
+**degree**, which no collection can answer and this primitive cannot replace: **Gate G-E** (58 winner
+swaps on Baroque) and `applyTonicPriorToSparseChord` (172/183/172 committed-*quality* overwrites —
+`OPEN_ITEMS.md` OI-172). A third lives outside this layer entirely, in the segmenter (OI-175). See
+also OI-173: `degree` itself has **two** inequivalent definitions in the tree (the mode's diatonic
+**parent** scale here in `buildChordResult`, vs the mode's **own** scale in `diatonicDegreeForRootPc`),
+which differ for all 14 non-diatonic modes — correcting that basis is a **separate** change with its
+own measurement, because it moves `degree`, hence Roman numerals, hence possibly those two gates.
+
 ### `rootContinuityBonus` — `prefs.rootContinuityBonus = 0.40`
 
 Applied by the competition pipeline `applyHarmonicFunction()`

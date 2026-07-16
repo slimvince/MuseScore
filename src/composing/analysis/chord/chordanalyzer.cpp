@@ -1007,6 +1007,14 @@ ChordAnalysisResult buildChordResult(
     }
 
     // Diatonic check: every sounding pc must be in the scale.
+    //
+    // OI-170 — THIS IS A COLLECTION-MEMBERSHIP QUESTION ASKED THROUGH THE TONIC. The set it
+    // tests, { (keyTonicPc + scale[i]) mod 12 }, equals the key SIGNATURE's collection only for
+    // the 19 modes whose tonic offset matches their diatonic parent's; for Altered and
+    // AlteredDomBB7 it is that collection transposed up a semitone (the OI-168 derivation,
+    // documented at the `scale` construction in analyzeChord). The default-OFF variant below
+    // asks the same question of the signature's own collection, and the counters report how
+    // often the two verdicts differ. Committed behavior is unchanged with the flag unset.
     bool diatonic = (degree >= 0);
     if (diatonic) {
         for (int pc = 0; pc < 12; ++pc) {
@@ -1024,6 +1032,32 @@ ChordAnalysisResult buildChordResult(
                 diatonic = false;
                 break;
             }
+        }
+    }
+
+    if (kcp::countingEnabled || kcp::signatureMaskVariant) {
+        // The same predicate, asked of the signature's own collection. `degree >= 0` is exactly
+        // "the root is a member of the mode-transposed set", so its signature-collection twin is
+        // pcInMask(signatureMask, rootPc) — no tonic, no mode scale.
+        const uint16_t signatureMask = diatonicMaskFromFifths(ctx.keySignatureFifths);
+        bool diatonicBySignature = pcInMask(signatureMask, rootPc);
+        if (diatonicBySignature) {
+            for (int pc = 0; pc < 12; ++pc) {
+                if (ctx.pcWeight[static_cast<size_t>(pc)] <= 0.2) {
+                    continue;
+                }
+                if (!pcInMask(signatureMask, pc)) {
+                    diatonicBySignature = false;
+                    break;
+                }
+            }
+        }
+        kcp::bump(kcp::counters().diatonicFlagTests);
+        if (diatonicBySignature != diatonic) {
+            kcp::bump(kcp::counters().diatonicFlagDiffers);
+        }
+        if (kcp::signatureMaskVariant) {
+            diatonic = diatonicBySignature;
         }
     }
 
@@ -1529,6 +1563,7 @@ std::vector<ChordAnalysisResult> RuleBasedChordAnalyzer::analyzeChord(
     snapshot.scale               = scale;
     snapshot.keyTonicPc          = keyTonicPc;
     snapshot.keyMode             = keyMode;
+    snapshot.keySigFifths        = keySignatureFifths;
     snapshot.cells.reserve(bassCandidates.size() * 12 * templates.size());
 
     for (size_t bi = 0; bi < bassCandidates.size(); ++bi) {

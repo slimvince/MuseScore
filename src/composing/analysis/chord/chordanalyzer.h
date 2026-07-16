@@ -622,6 +622,11 @@ struct BuildChordResultContext {
     int                           keyTonicPc;
     KeySigMode                    keyMode;
     const std::array<int, 7>&     scale;
+    /// The NOTATED key signature the region was analyzed under. Carried so the diatonic check
+    /// can ask its collection-membership question of the signature's own collection rather than
+    /// of the mode-tonic-anchored set (OI-170). Read only by the default-OFF signature-mask
+    /// variant today; the committed path still uses keyTonicPc + scale.
+    int                           keySignatureFifths;
 };
 
 /// Construct a fully-normalised ChordAnalysisResult from a raw scored cell.
