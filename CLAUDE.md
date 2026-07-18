@@ -165,9 +165,12 @@ Only stop and ask if:
 
 **Always read these two files at the start of every session:**
 - `C:\s\MS\BUILD_AND_TEST.md` — authoritative commands for all build variants, both test suites, and all Python tools
-- `C:\s\MS\STATUS.md` — current BIR baselines, HEAD commit, active iteration, and known regressions
+- `C:\s\MS\STATUS.md` — lean since the 2026-07-18 doc split: the current entries, active iteration/next
+  action, and pointers to the ratified baselines (gate block (A) below)
 
-Do not rely on memory of previous sessions for BIR numbers or iteration state — read STATUS.md.
+Do not rely on memory of previous sessions for baseline numbers or iteration state — read STATUS.md.
+`STATUS_ARCHIVE.md` and `cowork_handoff_archive.md` hold the superseded historical entries moved out
+by the doc split (`cc_instruction_doc_split.md`) — reference-only, NOT part of the session-start read.
 
 ```
 # Build — use PowerShell Start-Process (cmd.exe //c fails in MSYS2/Git Bash)
