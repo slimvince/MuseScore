@@ -1,5 +1,12 @@
 # The key-layer design conversation — opening document
 
+> **⛔ SUPERSEDED 2026-07-17 by `cowork_joint_estimator_architecture.md`.** The user ratified the JOINT
+> `(tonic, mode, chord)` estimator (option A): the key is NOT a separable layer to design in isolation — it
+> is one axis of a single joint estimate. The seven "design decisions" and the late-binding framing below
+> are HISTORY. What survives, reframed: the evidence menu (each hint is now a *factor* of the joint model),
+> and the cadence channel (OI-166, now A's L1.5 cadence factor). Do not build from this document; build from
+> the architecture doc + `cowork_key_chord_joint_inference_grounding.md`.
+
 > **Cowork, 2026-07-12.** The design conversation the user scoped at the start of the
 > arc — mode/key + chord inference, where and how — now opens on complete inputs: the
 > honest measurement columns (OI-142/OI-143), the failure taxonomy (the OI-141

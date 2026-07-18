@@ -1,5 +1,16 @@
 # The joint key-and-chord step — architecture design
 
+> **★★ SHELVED — MEASURED NOT TO PAY (user-ratified 2026-07-07, arc #12). NOT BUILT.** The read-only probe
+> (`measure_joint_probe.py`) measured net +0.05–0.16 pp over ~6200 regions (harm 75–90 % of correction,
+> oracle ceiling +0.6 pp, coupled-minority net ~0, fire-rate 1.4 %) — the carried alternative keys are
+> diatonic-collection siblings, so the chord is almost always key-stable. This design is retained as the
+> record; the step is **off the Stage-3 build inventory.** **#12: nothing is lost** — the key alternatives
+> are carried; the chord under an alternative key is *never computed* (not discarded); the ~1.4 % it would
+> change is 50/50 noise. **★ BUT SEE `COWORK_HANDOFF.md` PONDER-POINT 1 (next session):** this probe tested a
+> *key-first-then-chord* framing; the user's open question is whether the correct architecture is the **full
+> joint (key, chord) space ranked together** (the top chord may come from a non-top key) — which was NOT
+> measured. Revisit the shelving under that framing, on measured fact.
+>
 > **Status: DESIGN (CC, 2026-07-07). READ-ONLY architectural design pass — no `src/` change, no build, no
 > corpus write, no constant fitted or tuned.** Engage arc #10 (`cc_instruction_engage_joint_key_chord_design.md`).
 > This DESIGNS the owed joint key-and-chord step's architecture; it does **NOT** build it. The build is a later

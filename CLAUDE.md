@@ -54,6 +54,33 @@ override convenience.
     recorded figure is trusted only after being *positively established* (oracle cross-check,
     derivation of what the measurement unit actually measures, reproduce-check) — never
     because it is merely unfalsified.
+20. **Fit/evaluation separation.** No value is graded on data that helped fit it. Every fit
+    event declares its held-out data (split or k-fold) and its capacity budget (parameter
+    count, regularization, justified against corpus size) BEFORE fitting; the headline claim
+    is the held-out figure. A fitted-and-self-measured number is not established (#19).
+21. **Ground truth is an instrument too.** The accuracy of ground truth is itself a measured
+    quantity — per-axis annotator agreement, not an assumed binary (sharpens #9's "accurate").
+    Every precision target and every "irreducible residual" verdict is interpreted against
+    that measured ceiling; without it, structural error and annotator disagreement are
+    indistinguishable in the residual.
+22. **Every hard gate carries a pre-declared protocol for the largest change it will face.**
+    A gate written only for incremental change must not be amended under the pressure of a
+    live diff — the exceptional-event variant (e.g. architecture-scale adoption: aggregate
+    criterion + explained diff + snapshot + ratification) is written and ratified before such
+    a change is on the table.
+23. **End-state principles need lawful transitions.** When a planned change must temporarily
+    violate an end-state principle (e.g. #6, one path per concern, during a parallel build),
+    the violation is declared, bounded, and pre-ratified with a retirement map — migration is
+    a first-class state, never an undeclared exception.
+24. **Every reported figure carries its uncertainty.** Sampling noise on the measurement
+    corpus is quantified; a difference within the uncertainty is not a finding, and no
+    decision rests on one. (The companion of #16: reproducibility bounds instrument error,
+    this bounds sampling error.)
+
+*Ledger corollary to #17 (ratified with #20–#24):* when a decision selects a **constrained
+optimum** (a design chosen for methodology-compliance rather than raw measured performance),
+the ledger records what the unconstrained best known alternative is and why it is excluded —
+so a future reader can re-test whether the constraint still binds.
 
 *Scope of surprise (ratified with #17–19):* surprises are **allowed in explorational runs**
 whose purpose is to eliminate ignorance (#5 fact-finding); they are **NOT allowed when building
@@ -79,7 +106,10 @@ the in-memory surface (serialization stays selective); and the inventory + the
 *Provenance: principles 1–11 are the user's standing list; #12 (no information loss) and
 #13–16 were ratified by the user on 2026-07-06; #17–19 (the Premise Gate + the Class-A/Class-B
 prohibitions) and the surprise-scope rule were ratified by the user on 2026-07-10 — analysis
-and evidence in `cowork_premise_gate_reflection.md`. Companion standing rules elsewhere: the
+and evidence in `cowork_premise_gate_reflection.md`; #20–#24 (evaluation statistics, the
+ground-truth ceiling, gate/transition governance) and the constrained-optimum ledger corollary
+were ratified by the user on 2026-07-18 at the joint-estimator plan review — analysis in
+`cowork_joint_estimator_architecture.md` §6/§7, operational rows OI-176…OI-181. Companion standing rules elsewhere: the
 ⛔ TOTAL UNIFICATION rule (`cowork_handoff.md`), the MEASURE-BEFORE-BUILD gate
 (`cowork_engage_arc_plan.md`, now the middle stage of the #17 funnel), and the doc-sync,
 layer, and gate policies below.*

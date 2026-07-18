@@ -1,5 +1,13 @@
 # MuseScore Arranger — Architecture Document
 
+> **★★ GOVERNING DECISION (user-ratified 2026-07-17): the key/mode/chord estimator is JOINT — see
+> `cowork_joint_estimator_architecture.md`.** Key, mode, and chord are inferred by ONE probabilistic decode
+> over `(tonic, mode, chord)` with segmentation as a modeled (semi-Markov) variable and every enumerated clue
+> as a theory-grounded factor — NOT the feed-forward, per-layer pipeline the layer sections below still
+> describe. Those layer sections (L1–L6) remain the accurate description of the CURRENT code and its
+> retirements, but the TARGET architecture is the joint estimator; the layer specs are updated to it as the
+> design pass proceeds. Theory basis: `cowork_key_chord_joint_inference_grounding.md`.
+
 > **Living design document.** Read this AND STATUS.md at the start of every development
 > session. ARCHITECTURE.md contains stable design decisions. STATUS.md contains current
 > implementation status and immediate next steps. Update STATUS.md as your last act when
