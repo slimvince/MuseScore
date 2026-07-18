@@ -1,0 +1,666 @@
+{
+ "generated_by": "tools/term_inventory/gen_term_inventory.py",
+ "dispatch": "cc_instruction_term_inventory.md (2026-07-18)",
+ "term_rows": 95,
+ "rows_by_layer": {
+  "L4-oracle": 20,
+  "L4-competition": 9,
+  "L4-gates": 10,
+  "L4-postpass": 3,
+  "L4-commit": 2,
+  "L2": 9,
+  "L1.5": 8,
+  "L3": 15,
+  "L3-section": 4,
+  "L3-dormant": 3,
+  "L4-decoder": 2,
+  "L5": 8,
+  "bridge": 2
+ },
+ "rows_by_liveness": {
+  "live": 80,
+  "dormant": 15
+ },
+ "rows_by_roster_factor": {
+  "F1": 18,
+  "F3": 3,
+  "F9": 12,
+  "NONE": 26,
+  "F7": 9,
+  "F5": 9,
+  "F6": 9,
+  "F8": 1,
+  "F4": 4,
+  "F2": 4
+ },
+ "rows_with_no_roster_factor": [
+  "diatonicRootContribution",
+  "buildChordResult: degree + diatonicToKey",
+  "kScoreThresholdRatio + result cap + diff-root append",
+  "cross-bass winner selection + tie policy",
+  "gate outer guard",
+  "FM2 enharmonic flip (Major-add6 <-> Minor7)",
+  "Gates G-E / G-D (Minor-add6 <-> HalfDim7)",
+  "Gate H (augmented rotation)",
+  "Gate L (Major over Augmented same-root)",
+  "applyTonicPriorToSparseChord",
+  "refineSparseChordQualityFromKeyContext + Aeolian guard",
+  "head-gap tonic prior (Iter-74 Fix-B)",
+  "dynamic lookahead (resolver)",
+  "mode-switching hysteresis (resolver)",
+  "L3 sequence decoder (Viterbi)",
+  "L3 confidence sigmoid",
+  "annotate key-confidence gate",
+  "island key stabilization",
+  "joint key weights (J-key)",
+  "local-modulation establishment",
+  "modulation decision params",
+  "forward-override bar",
+  "function output confidence",
+  "VL-C texture classifier",
+  "key exposure buckets (implode bridge)",
+  "preset carriers (batch_analyze)"
+ ],
+ "roster_factors_with_no_live_term": [
+  "F8"
+ ],
+ "constant_provenance_mentions": {
+  "hand-set": 203,
+  "fit-adopted": 2,
+  "derived": 5,
+  "preset-table": 4,
+  "swept": 4,
+  "structural": 1,
+  "study-fitted": 3
+ },
+ "template_staleness_check": {
+  "kTemplateCount_source": 17,
+  "scoring_model_doc_claim": 17,
+  "scoring_model_table_rows": 17,
+  "pass": true
+ },
+ "registered_constants_doc_mention_check": {
+  "registered_total": 32,
+  "not_mentioned_in_scoring_model_md": [
+   "kAnnotateKeyConfidenceThreshold",
+   "kAugThinEvidenceFactor",
+   "kBassSupportPresenceThreshold",
+   "kComplexityEvidenceFloor",
+   "kExtensionFactorDefault",
+   "kExtensionFactorFlat13",
+   "kExtensionThreshold",
+   "kExtraNoteWeightCap",
+   "kSeventhThreshold",
+   "kSus4FlatThirdFactor",
+   "kSus4SharpThirdFactor",
+   "kSus4StructuralFourthThreshold",
+   "kTemplateToneWeightCap"
+  ]
+ },
+ "oi23_measured": {
+  "definition": "param_manifest rows in chord-surface groups G1-G7 with consuming_path production|both",
+  "measured_live_chord_surface_constants": 57,
+  "live_rows_by_group": {
+   "G1": 28,
+   "G10": 1,
+   "G11": 0,
+   "G12": 0,
+   "G13": 0,
+   "G2": 7,
+   "G3": 5,
+   "G4": 4,
+   "G5": 5,
+   "G6": 5,
+   "G7": 3,
+   "G8": 0,
+   "G9": 0
+  },
+  "of_which_fit_adopted": [
+   "kWStepIn"
+  ],
+  "manifest_total_rows": 78,
+  "manifest_live_rows_all_groups": 58,
+  "note": "OI-23 claims '~30 live hand-set constants'; the manifest's chord-surface live rows are the closest mechanical measurement of that population (G1 oracle + G7 gate margins alone = the ~30-sized core). Constants NOT in the manifest at all (see per-row column) are additional to this figure."
+ },
+ "oi179_census": {
+  "corpus_stems": 352,
+  "wir_covered_stems": 326,
+  "covered_stems_with_second_analysis_BCMH": 87,
+  "second_analysis_file": "analysis_BCMH.txt (header: 'Analyst: The Bach Chorales Melody-Harmony Corpus. See https://github.com/PeARL-laboratory/BCMH; Proofreader: Automated translation by Nestor Napoles Lopez')",
+  "location": "tools/dcml/when_in_rome/Corpus/Early_Choral/Bach,_Johann_Sebastian/Chorales/<NNN>/",
+  "wir_chorale_folders_total": 371,
+  "wir_chorale_folders_with_BCMH": 100,
+  "dcml_bach_chorales_repo_pieces": 361,
+  "dcml_bach_chorales_pieces_with_harmony_labels": 0,
+  "stems_with_second_analysis": [
+   "bwv108.6",
+   "bwv110.7",
+   "bwv115.6",
+   "bwv121.6",
+   "bwv133.6",
+   "bwv144.3",
+   "bwv145.5",
+   "bwv148.6",
+   "bwv151.5",
+   "bwv153.1",
+   "bwv153.5",
+   "bwv159.5",
+   "bwv16.6",
+   "bwv164.6",
+   "bwv168.6",
+   "bwv169.7",
+   "bwv17.7",
+   "bwv174.5",
+   "bwv177.5",
+   "bwv180.7",
+   "bwv184.5",
+   "bwv197.10",
+   "bwv197.5",
+   "bwv20.11",
+   "bwv20.7",
+   "bwv226.2",
+   "bwv244.15",
+   "bwv244.3",
+   "bwv244.37",
+   "bwv244.44",
+   "bwv244.54",
+   "bwv244.62",
+   "bwv245.11",
+   "bwv245.14",
+   "bwv245.15",
+   "bwv245.3",
+   "bwv248.46-5",
+   "bwv248.53-5",
+   "bwv255",
+   "bwv256",
+   "bwv259",
+   "bwv26.6",
+   "bwv269",
+   "bwv277",
+   "bwv28.6",
+   "bwv280",
+   "bwv281",
+   "bwv291",
+   "bwv30.6",
+   "bwv302",
+   "bwv305",
+   "bwv308",
+   "bwv311",
+   "bwv318",
+   "bwv32.6",
+   "bwv33.6",
+   "bwv330",
+   "bwv334",
+   "bwv342",
+   "bwv347",
+   "bwv351",
+   "bwv352",
+   "bwv363",
+   "bwv377",
+   "bwv38.6",
+   "bwv382",
+   "bwv385",
+   "bwv386",
+   "bwv39.7",
+   "bwv40.8",
+   "bwv404",
+   "bwv415",
+   "bwv416",
+   "bwv429",
+   "bwv431",
+   "bwv45.7",
+   "bwv46.6",
+   "bwv47.5",
+   "bwv55.5",
+   "bwv56.5",
+   "bwv57.8",
+   "bwv6.6",
+   "bwv65.2",
+   "bwv65.7",
+   "bwv67.7",
+   "bwv86.6",
+   "bwv87.7"
+  ],
+  "note": "counts only; no agreement grading built. Independence of the BCMH annotations from the WiR analyst annotations is a literature question (Cowork's half of OI-179)."
+ },
+ "dt26_sweep": {
+  "patterns": {
+   "named-term-constant": "k[A-Z][a-zA-Z]*(Bonus|Penalty|Margin|Threshold|Weight|Prior|Cost|Factor|Ratio|Budget)\\s*=\\s*[-0-9]",
+   "term-shaped-variable": "(double|float|int)\\s+[a-zA-Z_]*([Bb]onus|[Pp]enalty|[Ww]eight|[Tt]hreshold|[Mm]argin|[Pp]rior|[Cc]ost)[a-zA-Z_]*\\s*=\\s*[-0-9.]",
+   "tonic-construction": "ionianTonicPcFromFifths|keyModeTonicOffset"
+  },
+  "hit_files": {
+   "src/composing/analysis/chord/analysisutils.h": {
+    "patterns": [
+     "tonic-construction"
+    ],
+    "disposition": "IN-SCOPE (shared primitives: pcInMask/diatonicMaskFromFifths/ionianTonicPcFromFifths)"
+   },
+   "src/composing/analysis/chord/chordanalyzer.cpp": {
+    "patterns": [
+     "named-term-constant",
+     "term-shaped-variable",
+     "tonic-construction"
+    ],
+    "disposition": "IN-SCOPE"
+   },
+   "src/composing/analysis/chord/chordanalyzer.h": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "IN-SCOPE (kTemplateCount/kTemplateIntervals/derived masks)"
+   },
+   "src/composing/analysis/chord/chordslicedecoder.cpp": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "IN-SCOPE (dormant decoder)"
+   },
+   "src/composing/analysis/chord/chordslicedecoder.h": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "IN-SCOPE (dormant decoder)"
+   },
+   "src/composing/analysis/chord/postscoringgates.cpp": {
+    "patterns": [
+     "named-term-constant",
+     "term-shaped-variable"
+    ],
+    "disposition": "IN-SCOPE"
+   },
+   "src/composing/analysis/decode/chordpathdecoder.h": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "IN-SCOPE (computes no score \u2014 verified)"
+   },
+   "src/composing/analysis/engravingbridge/phraseboundaryview.h": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "IN-SCOPE (dormant F8 surface)"
+   },
+   "src/composing/analysis/engravingbridge/regiontonecollector.cpp": {
+    "patterns": [
+     "named-term-constant",
+     "term-shaped-variable"
+    ],
+    "disposition": "IN-SCOPE"
+   },
+   "src/composing/analysis/engravingbridge/regiontonecollector.h": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "IN-SCOPE"
+   },
+   "src/composing/analysis/function/functioncadence.h": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "IN-SCOPE (dormant L5)"
+   },
+   "src/composing/analysis/function/functionmodulation.cpp": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "IN-SCOPE (dormant L5)"
+   },
+   "src/composing/analysis/function/functionmodulation.h": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "IN-SCOPE (dormant L5)"
+   },
+   "src/composing/analysis/function/functionoutput.h": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "IN-SCOPE (dormant L5)"
+   },
+   "src/composing/analysis/function/functionprogression.h": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "IN-SCOPE (dormant L5)"
+   },
+   "src/composing/analysis/function/functionresolver.h": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "IN-SCOPE (dormant L5)"
+   },
+   "src/composing/analysis/function/harmonicfunctionlayer.cpp": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "IN-SCOPE"
+   },
+   "src/composing/analysis/function/harmonicfunctionlayer.h": {
+    "patterns": [
+     "named-term-constant",
+     "term-shaped-variable"
+    ],
+    "disposition": "IN-SCOPE"
+   },
+   "src/composing/analysis/grouping/groupinglayer.h": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "IN-SCOPE (dormant; alignmentWindowTicks=480, codetta knobs inert 0/0.0)"
+   },
+   "src/composing/analysis/harmony/harmonicsegmenter.cpp": {
+    "patterns": [
+     "named-term-constant",
+     "term-shaped-variable",
+     "tonic-construction"
+    ],
+    "disposition": "IN-SCOPE"
+   },
+   "src/composing/analysis/key/keymodeanalyzer.cpp": {
+    "patterns": [
+     "term-shaped-variable",
+     "tonic-construction"
+    ],
+    "disposition": "IN-SCOPE"
+   },
+   "src/composing/analysis/key/keymodeanalyzer.h": {
+    "patterns": [
+     "term-shaped-variable",
+     "tonic-construction"
+    ],
+    "disposition": "IN-SCOPE"
+   },
+   "src/composing/analysis/key/keymodesequence.h": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "IN-SCOPE"
+   },
+   "src/composing/analysis/key/keyresolver.cpp": {
+    "patterns": [
+     "named-term-constant",
+     "tonic-construction"
+    ],
+    "disposition": "IN-SCOPE"
+   },
+   "src/composing/analysis/progression/progressionrecognizer.cpp": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "IN-SCOPE (dormant)"
+   },
+   "src/composing/analysis/progression/progressionrecognizer.h": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "IN-SCOPE (dormant)"
+   },
+   "src/composing/analysis/region/harmonicrhythm.h": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "IN-SCOPE (regionMetricWeight carrier field default 1.0; no scoring term)"
+   },
+   "src/composing/analysis/region/regionanalyzer.cpp": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "IN-SCOPE"
+   },
+   "src/composing/analysis/region/sparsechordrefinement.cpp": {
+    "patterns": [
+     "tonic-construction"
+    ],
+    "disposition": "IN-SCOPE"
+   },
+   "src/composing/analysis/section/cadencekeyanchor.cpp": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "IN-SCOPE (dormant)"
+   },
+   "src/composing/analysis/section/jointkeydecision.h": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "IN-SCOPE (dormant)"
+   },
+   "src/composing/analysis/section/sectionanalyzer.cpp": {
+    "patterns": [
+     "term-shaped-variable",
+     "tonic-construction"
+    ],
+    "disposition": "IN-SCOPE"
+   },
+   "src/composing/analysis/section/sectionanalyzer.h": {
+    "patterns": [
+     "named-term-constant",
+     "term-shaped-variable"
+    ],
+    "disposition": "IN-SCOPE"
+   },
+   "src/composing/analysis/section/sectioncadencedetection.cpp": {
+    "patterns": [
+     "tonic-construction"
+    ],
+    "disposition": "IN-SCOPE"
+   },
+   "src/composing/analysis/types/analysistypes.h": {
+    "patterns": [
+     "named-term-constant",
+     "term-shaped-variable"
+    ],
+    "disposition": "IN-SCOPE"
+   },
+   "src/composing/analysis/voiceleading/textureclassifier.h": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "IN-SCOPE (dormant VL-C)"
+   },
+   "src/composing/analysis/voiceleading/textureclassifierreference.h": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "IN-SCOPE (generated study-fitted reference)"
+   },
+   "src/composing/analyzed_section.h": {
+    "patterns": [
+     "named-term-constant"
+    ],
+    "disposition": "IN-SCOPE (POD carrier defaults, no scoring term \u2014 verified: confidence/weight struct fields)"
+   },
+   "src/engraving/compat/pageformat.cpp": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "UPSTREAM-NON-ANALYSIS (page layout)"
+   },
+   "src/engraving/dom/box.h": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "UPSTREAM-NON-ANALYSIS (layout)"
+   },
+   "src/engraving/dom/pitchspelling.cpp": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "UPSTREAM-NON-ANALYSIS (note-input/MIDI spelling algorithm; our analysis reads authored TPC \u2014 spelling is INPUT; flagged as input-provenance context only)"
+   },
+   "src/engraving/dom/system.h": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "UPSTREAM-NON-ANALYSIS (layout)"
+   },
+   "src/engraving/playback/playbackcontext.h": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "UPSTREAM-NON-ANALYSIS (playback)"
+   },
+   "src/engraving/rendering/iscorerenderer.h": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "UPSTREAM-NON-ANALYSIS (rendering)"
+   },
+   "src/engraving/rendering/score/accidentalslayout.cpp": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "UPSTREAM-NON-ANALYSIS (rendering)"
+   },
+   "src/engraving/rendering/score/accidentalslayout.h": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "UPSTREAM-NON-ANALYSIS (rendering)"
+   },
+   "src/engraving/rendering/score/chordlayout.cpp": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "UPSTREAM-NON-ANALYSIS (rendering)"
+   },
+   "src/engraving/rendering/score/chordlayout.h": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "UPSTREAM-NON-ANALYSIS (rendering)"
+   },
+   "src/engraving/rendering/score/guitarbendlayout.cpp": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "UPSTREAM-NON-ANALYSIS (rendering)"
+   },
+   "src/engraving/rendering/score/slurtielayout.cpp": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "UPSTREAM-NON-ANALYSIS (rendering)"
+   },
+   "src/engraving/rendering/score/tappinglayout.cpp": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "UPSTREAM-NON-ANALYSIS (rendering)"
+   },
+   "src/engraving/rendering/score/textlayout.cpp": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "UPSTREAM-NON-ANALYSIS (rendering)"
+   },
+   "src/engraving/rendering/score/tlayout.cpp": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "UPSTREAM-NON-ANALYSIS (rendering)"
+   },
+   "src/engraving/rendering/single/singlelayout.cpp": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "UPSTREAM-NON-ANALYSIS (rendering)"
+   },
+   "src/engraving/rw/read114/read114.cpp": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "UPSTREAM-NON-ANALYSIS (legacy file read)"
+   },
+   "src/importexport/midi/internal/midiimport/importmidi_clef.cpp": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "UPSTREAM-NON-ANALYSIS (MIDI import)"
+   },
+   "src/importexport/midi/internal/midiimport/importmidi_lrhand.cpp": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "UPSTREAM-NON-ANALYSIS (MIDI import)"
+   },
+   "src/importexport/midi/internal/midiimport/importmidi_quant.cpp": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "UPSTREAM-NON-ANALYSIS (MIDI import)"
+   },
+   "src/importexport/musicxml/internal/import/importmusicxmlpass1.cpp": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "UPSTREAM-NON-ANALYSIS (import; the declared-mode dedup patch lives in pass2 \u2014 INPUT-producing, tracked in CLAUDE.md)"
+   },
+   "src/importexport/musicxml/internal/import/importmusicxmlpass1.h": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "UPSTREAM-NON-ANALYSIS (import)"
+   },
+   "src/importexport/videoexport/internal/videowriter.cpp": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "UPSTREAM-NON-ANALYSIS (video export)"
+   },
+   "src/notation/internal/notationcomposingbridge.cpp": {
+    "patterns": [
+     "tonic-construction"
+    ],
+    "disposition": "CONSUMER (tonic used for display degree/labels \u2014 OI-173 D2/D3 definition sites; no scoring term)"
+   },
+   "src/notation/internal/notationcomposingbridgehelpers.h": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "CONSUMER (bridge segmentation helper defaults; detectOnsetSubBoundaries threshold default 0.25 \u2014 same value routed as opts.onsetBoundaryThreshold on live callers; enumerated under Pass-2 row)"
+   },
+   "src/notation/internal/notationimplodebridge.cpp": {
+    "patterns": [
+     "named-term-constant",
+     "term-shaped-variable",
+     "tonic-construction"
+    ],
+    "disposition": "CONSUMER (ENUMERATED: key exposure buckets 0.5/0.8 \u2014 new register row; also kSameChordReannotationGap, OI-60c)"
+   },
+   "src/notation/internal/notationnoteinput.cpp": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "UPSTREAM-NON-ANALYSIS (note input UI margins)"
+   },
+   "src/notation/internal/notationtuningbridge.cpp": {
+    "patterns": [
+     "tonic-construction"
+    ],
+    "disposition": "CONSUMER (intonation feature reads key/tonic; no inference term)"
+   },
+   "src/notationscene/qml/MuseScore/NotationScene/continuouspanel.cpp": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "UPSTREAM-NON-ANALYSIS (UI)"
+   },
+   "src/notationscene/utilities/engravingitempreviewpainter.cpp": {
+    "patterns": [
+     "term-shaped-variable"
+    ],
+    "disposition": "UPSTREAM-NON-ANALYSIS (UI)"
+   },
+   "tools/batch_analyze.cpp": {
+    "patterns": [
+     "named-term-constant",
+     "term-shaped-variable"
+    ],
+    "disposition": "DIAGNOSTIC-CARRIER (preset carriers + decode-only sweep overrides; enumerated under preset-carriers row)"
+   }
+  },
+  "undispositioned": []
+ }
+}
