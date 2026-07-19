@@ -130,11 +130,25 @@ table are counted with the measured-misaligned spans LEFT OUT** (the mechanical 
 labeled span containing zero of its own chord's tones is skipped and listed) — ratified as the
 most-precise option available while the substrate repair (the OI-184 row's consequence (c)) stays
 a deferred future event; the rule is INTERIM, retired by that repair, recorded on the OI-184 row
-per the interim-exception discipline. **The ACTIVE dispatch is
-`cc_instruction_misaligned_span_exclusion.md`** — it must FIRST establish the criterion (sample 10
-excluded spans at the note data; each must show the anchoring-shift signature or STOP), then
-re-count. After its report is verified: the estimator-module build arc opens under the
-already-ratified parallel-build sanction. OI-179 (the ground-truth ceiling): the literature half is ANSWERED — no
+per the interim-exception discipline. The dispatch `cc_instruction_misaligned_span_exclusion.md` is DELIVERED and Cowork-verified at the
+artifacts (`b28b4a8fdb`): the criterion established at the data (10-span sample, all
+anchoring-shifts), 332 spans left out, every movement small and in the predicted band
+(seventh-presence 0.9235 → 0.9357; the remaining gap to ~0.97 is PARTIAL misalignment, recoverable
+only by the substrate repair — recorded on the OI-184 row); the triad third-below-fifth ordering
+persists on clean data and is now a genuine counted corpus fact (the exclusion provably could not
+flip within-family orderings); the 240 double-labeled pivot spans are enumerated (OI-184 row).
+**THE FITTING RECORD IS COMPLETE under every ratified protocol and ruling. THE NEXT ACTION — the
+funnel's middle stage, in its ratified order (desk-simulate → READ-ONLY PROBE → build): the probe
+decoder** — a Python measurement instrument in `tools/joint_estimator/` implementing the ratified
+decode at identity weights over the committed tables and note events, established against the
+desk simulation's hand arithmetic (injected-table parity mode), then decoding all 326 pieces and
+graded side-by-side on the robust unit against the three preset baselines, with the asymmetric
+written predictions recorded in the dispatch BEFORE the measurement. Only after its results are
+reviewed does the production-module build open under the parallel-build sanction (the probe's
+outputs then serve as the module's parity oracle). Declared probe reductions: the cadence factor
+is omitted (its feature weights are deliberately unfit until the weight-fitting stage) and the
+fermata term is omitted (fermatas were not in the note-event extraction — an extraction addendum
+owed, recorded at the dispatch). OI-179 (the ground-truth ceiling): the literature half is ANSWERED — no
 published inter-annotator agreement figure exists for classical symbolic Roman-numeral analysis
 anywhere in the field, so the 87-stem BCMH measurement would be novel; BCMH is inspected at the files
 (independent origin, single reading, NO annotator record anywhere; the 2023 JEP:HPP Method section

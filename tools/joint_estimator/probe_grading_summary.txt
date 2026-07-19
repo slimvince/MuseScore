@@ -1,0 +1,70 @@
+=== probe decoder — Task-3 corpus decode + grading (summary) ===
+instrument_commit b28b4a8fdb6f95d09dfe62063292a2ac502f4df2
+note_events_git_hash c7094c71b37b52e21601c1b78ed7ecf7b8fdae87  tables_git_hash 57ed94a6a46571172a351c09ba4f5cb92930674a
+leftover_rule option 2a (freq)  seg_cap 4  key_prune_topk 6
+cadence: DECLARED OMITTED (no fitted cadence table; feature weights unfit)
+fermata: DECLARED OMITTED (not in the note-event extraction; addendum owed)
+coverage 326 graded / 0 no-WiR; decode mean 2.533s max 12.901s total 825.7s
+
+axis                baseline(B/J/D)          predicted                    MEASURED
+--------------------------------------------------------------------------------------------
+key vs LOCAL       65.99/62.98/65.71              70-80% (UP; the load-bearing prediction) 74.43
+key vs HOME        71.42/67.83/70.65              72-82% (UP)                  53.67
+chord root         66.04/64.98/65.93              55-70% (may sit BELOW current) 72.97
+Roman numeral      46.33/44.1/46.23              40-55%                       59.5
+
+key abstain: home 0.0%  local 0.0% (commits best path everywhere)
+slowest pieces: [['bwv328', 12.9, 391], ['bwv371', 9.93, 329], ['bwv437', 7.05, 250], ['bwv276', 6.92, 223], ['bwv425', 5.75, 197], ['bwv42.7', 5.54, 169]]
+
+10 weakest key-local pieces:
+  bwv226.2   key_local   0.0%  root   5.5%
+  bwv62.6    key_local   0.0%  root   4.8%
+  bwv293     key_local  16.1%  root  67.7%
+  bwv88.7    key_local  22.9%  root  60.0%
+  bwv113.8   key_local  27.3%  root  15.9%
+  bwv366     key_local  29.2%  root  35.4%
+  bwv371     key_local  35.7%  root  30.8%
+  bwv65.2    key_local  40.4%  root  87.2%
+  bwv277     key_local  40.5%  root  37.3%
+  bwv419     key_local  46.8%  root  58.5%
+10 strongest key-local pieces:
+  bwv433     key_local 100.0%  root  93.2%
+  bwv397     key_local 100.0%  root  82.7%
+  bwv321     key_local 100.0%  root  89.6%
+  bwv294     key_local 100.0%  root  88.1%
+  bwv269     key_local 100.0%  root  78.7%
+  bwv266     key_local  99.2%  root  83.3%
+  bwv262     key_local  99.0%  root  85.4%
+  bwv379     key_local  98.6%  root  88.9%
+  bwv169.7   key_local  98.3%  root  89.0%
+  bwv385     key_local  98.2%  root  87.3%
+
+-- per-piece vs Default baseline (326 pieces) --
+mean key_local delta +7.84pp  root delta +7.05pp  (key_local better/worse 220/90)
+10 largest key-local WINS vs Default (stem: mine vs default):
+  bwv274      +56.2pp  (68.8 vs 12.5)  root +4.7pp
+  bwv271      +47.9pp  (77.7 vs 29.8)  root -2.1pp
+  bwv244.54   +46.8pp  (83.0 vs 36.2)  root -11.7pp
+  bwv256      +43.6pp  (87.2 vs 43.6)  root +19.2pp
+  bwv367      +41.3pp  (89.1 vs 47.8)  root +7.6pp
+  bwv117.4    +39.7pp  (85.9 vs 46.2)  root +17.9pp
+  bwv397      +38.5pp  (100.0 vs 61.5)  root +18.3pp
+  bwv155.5    +38.5pp  (87.2 vs 48.7)  root +15.4pp
+  bwv248.5    +38.3pp  (74.5 vs 36.2)  root +5.3pp
+  bwv283      +38.2pp  (89.7 vs 51.5)  root +20.6pp
+10 largest key-local LOSSES vs Default:
+  bwv88.7     -45.7pp  (22.9 vs 68.6)  root -12.9pp
+  bwv351      -38.6pp  (55.7 vs 94.3)  root +15.0pp
+  bwv419      -38.3pp  (46.8 vs 85.1)  root -13.8pp
+  bwv113.8    -35.2pp  (27.3 vs 62.5)  root -1.1pp
+  bwv153.1    -34.6pp  (53.8 vs 88.5)  root +16.7pp
+  bwv309      -34.3pp  (53.9 vs 88.2)  root +9.8pp
+  bwv2.6      -32.6pp  (58.1 vs 90.7)  root +0.0pp
+  bwv342      -27.8pp  (55.6 vs 83.3)  root -4.2pp
+  bwv77.6     -27.8pp  (58.9 vs 86.7)  root -20.0pp
+  bwv245.22   -22.6pp  (64.5 vs 87.1)  root +9.7pp
+
+-- prune-loss (§5 reserve, 12-piece sample) --
+tight(seg_cap4,topK6): root 71.96 key_local 70.53
+loose(seg_cap6,topK12): root 72.87 key_local 75.29
+LOSS: root +0.91pp key_local +4.76pp at 5.3x compute -> the headline is a conservative LOWER BOUND

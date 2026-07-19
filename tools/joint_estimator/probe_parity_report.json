@@ -1,0 +1,308 @@
+{
+ "provenance": {
+  "generator": "tools/joint_estimator/probe_desksim.py",
+  "instrument_commit": "b28b4a8fdb6f95d09dfe62063292a2ac502f4df2",
+  "establishment": "structural parity (all non-cadence factors) vs the desk-simulation hand arithmetic; cadence (declared-omitted) reported separately; fitted-table recomputation under both leftover variants"
+ },
+ "structural_parity": [
+  {
+   "case": "S1",
+   "kind": "synthetic",
+   "hyp": "Cmaj",
+   "expected_full": -5.86,
+   "got_full": -5.8576,
+   "delta_full": 0.0024,
+   "expected_struct": -8.16,
+   "got_struct": -8.1576,
+   "delta_struct": 0.0024,
+   "my_cadence": 2.3,
+   "desk_cadence": 2.3,
+   "struct_pass": true
+  },
+  {
+   "case": "S1",
+   "kind": "synthetic",
+   "hyp": "amin",
+   "expected_full": -12.68,
+   "got_full": -12.6793,
+   "delta_full": 0.0007,
+   "expected_struct": -12.68,
+   "got_struct": -12.6793,
+   "delta_struct": 0.0007,
+   "my_cadence": 0.0,
+   "desk_cadence": 0.0,
+   "struct_pass": true
+  },
+  {
+   "case": "S2_to_e5",
+   "kind": "synthetic",
+   "hyp": "amin",
+   "expected_full": -14.39,
+   "got_full": -14.3893,
+   "delta_full": 0.0007,
+   "expected_struct": -14.39,
+   "got_struct": -14.3893,
+   "delta_struct": 0.0007,
+   "my_cadence": 0.0,
+   "desk_cadence": 0.0,
+   "struct_pass": true
+  },
+  {
+   "case": "S2_to_e5",
+   "kind": "synthetic",
+   "hyp": "Cmaj",
+   "expected_full": -14.32,
+   "got_full": -14.3176,
+   "delta_full": 0.0024,
+   "expected_struct": -14.32,
+   "got_struct": -14.3176,
+   "delta_struct": 0.0024,
+   "my_cadence": 0.0,
+   "desk_cadence": 0.0,
+   "struct_pass": true
+  },
+  {
+   "case": "S2_full",
+   "kind": "synthetic",
+   "hyp": "amin",
+   "expected_full": -14.2,
+   "got_full": -14.8993,
+   "delta_full": -0.6993,
+   "expected_struct": -16.5,
+   "got_struct": -16.4993,
+   "delta_struct": 0.0007,
+   "my_cadence": 1.6,
+   "desk_cadence": 2.3,
+   "struct_pass": true
+  },
+  {
+   "case": "S2_full",
+   "kind": "synthetic",
+   "hyp": "Cmaj",
+   "expected_full": -20.38,
+   "got_full": -19.4776,
+   "delta_full": 0.9024,
+   "expected_struct": -20.38,
+   "got_struct": -20.3776,
+   "delta_struct": 0.0024,
+   "my_cadence": 0.9,
+   "desk_cadence": 0.0,
+   "struct_pass": true
+  },
+  {
+   "case": "S2_full",
+   "kind": "synthetic",
+   "hyp": "modulate",
+   "expected_full": -18.67,
+   "got_full": -19.3676,
+   "delta_full": -0.6976,
+   "expected_struct": -20.97,
+   "got_struct": -20.9676,
+   "delta_struct": 0.0024,
+   "my_cadence": 1.6,
+   "desk_cadence": 2.3,
+   "struct_pass": true
+  },
+  {
+   "case": "S3",
+   "kind": "synthetic",
+   "hyp": "dmin",
+   "expected_full": -6.72,
+   "got_full": -6.7157,
+   "delta_full": 0.0043,
+   "expected_struct": -9.02,
+   "got_struct": -9.0157,
+   "delta_struct": 0.0043,
+   "my_cadence": 2.3,
+   "desk_cadence": 2.3,
+   "struct_pass": true
+  },
+  {
+   "case": "S3",
+   "kind": "synthetic",
+   "hyp": "Fmaj",
+   "expected_full": -14.79,
+   "got_full": -13.8857,
+   "delta_full": 0.9043,
+   "expected_struct": -14.79,
+   "got_struct": -14.7857,
+   "delta_struct": 0.0043,
+   "my_cadence": 0.9,
+   "desk_cadence": 0.0,
+   "struct_pass": true
+  },
+  {
+   "case": "S4",
+   "kind": "synthetic",
+   "hyp": "stayC",
+   "expected_full": -6.85,
+   "got_full": -6.8476,
+   "delta_full": 0.0024,
+   "expected_struct": -8.45,
+   "got_struct": -8.4476,
+   "delta_struct": 0.0024,
+   "my_cadence": 1.6,
+   "desk_cadence": 1.6,
+   "struct_pass": true
+  },
+  {
+   "case": "S4",
+   "kind": "synthetic",
+   "hyp": "modulate",
+   "expected_full": -13.57,
+   "got_full": -12.8676,
+   "delta_full": 0.7024,
+   "expected_struct": -16.77,
+   "got_struct": -16.7676,
+   "delta_struct": 0.0024,
+   "my_cadence": 3.9,
+   "desk_cadence": 3.2,
+   "struct_pass": true
+  },
+  {
+   "case": "S5",
+   "kind": "synthetic",
+   "hyp": "Cmaj",
+   "expected_full": -4.31,
+   "got_full": -4.3076,
+   "delta_full": 0.0024,
+   "expected_struct": -5.91,
+   "got_struct": -5.9076,
+   "delta_struct": 0.0024,
+   "my_cadence": 1.6,
+   "desk_cadence": 1.6,
+   "struct_pass": true
+  },
+  {
+   "case": "S5",
+   "kind": "synthetic",
+   "hyp": "amin",
+   "expected_full": -9.24,
+   "got_full": -9.2393,
+   "delta_full": 0.0007,
+   "expected_struct": -9.24,
+   "got_struct": -9.2393,
+   "delta_struct": 0.0007,
+   "my_cadence": 0.0,
+   "desk_cadence": 0.0,
+   "struct_pass": true
+  },
+  {
+   "case": "C1",
+   "kind": "corpus",
+   "hyp": "Emaj",
+   "expected_full": -5.78,
+   "got_full": -8.78,
+   "delta_full": -3.0,
+   "expected_struct": -7.38,
+   "got_struct": -10.38,
+   "delta_struct": -3.0,
+   "my_cadence": 1.6,
+   "desk_cadence": 1.6,
+   "struct_pass": false
+  },
+  {
+   "case": "C1",
+   "kind": "corpus",
+   "hyp": "f#min",
+   "expected_full": -11.15,
+   "got_full": -13.05,
+   "delta_full": -1.9,
+   "expected_struct": -11.15,
+   "got_struct": -13.05,
+   "delta_struct": -1.9,
+   "my_cadence": 0.0,
+   "desk_cadence": 0.0,
+   "struct_pass": false
+  },
+  {
+   "case": "C1",
+   "kind": "corpus",
+   "hyp": "d#min",
+   "expected_full": -19.42,
+   "got_full": -21.21,
+   "delta_full": -1.79,
+   "expected_struct": -19.42,
+   "got_struct": -21.21,
+   "delta_struct": -1.79,
+   "my_cadence": 0.0,
+   "desk_cadence": 0.0,
+   "struct_pass": false
+  },
+  {
+   "case": "C4",
+   "kind": "corpus",
+   "hyp": "Dmaj",
+   "expected_full": -24.53,
+   "got_full": -21.57,
+   "delta_full": 2.96,
+   "expected_struct": -24.53,
+   "got_struct": -23.37,
+   "delta_struct": 1.16,
+   "my_cadence": 1.8,
+   "desk_cadence": 0.0,
+   "struct_pass": false
+  },
+  {
+   "case": "C4",
+   "kind": "corpus",
+   "hyp": "bmin",
+   "expected_full": -19.41,
+   "got_full": -18.61,
+   "delta_full": 0.8,
+   "expected_struct": -20.31,
+   "got_struct": -20.21,
+   "delta_struct": 0.1,
+   "my_cadence": 1.6,
+   "desk_cadence": 0.9,
+   "struct_pass": false
+  }
+ ],
+ "structural_fail": 0,
+ "fitted_recomputation": {
+  "freq": {
+   "bwv352": {
+    "F#": {
+     "vi\u00f87": -22.731,
+     "i": -21.68,
+     "margin_vi\u00f87_minus_i": -1.051,
+     "winner": "i"
+    },
+    "E": {
+     "vi\u00f87": -26.979,
+     "i": -20.539,
+     "margin_vi\u00f87_minus_i": -6.44,
+     "winner": "i"
+    }
+   },
+   "bwv10.7": {
+    "split": -48.069,
+    "merge": -46.226,
+    "margin_split_minus_merge": -1.843,
+    "winner": "merge"
+   }
+  },
+  "even": {
+   "bwv352": {
+    "F#": {
+     "vi\u00f87": -22.538,
+     "i": -23.221,
+     "margin_vi\u00f87_minus_i": 0.683,
+     "winner": "vi\u00f87"
+    },
+    "E": {
+     "vi\u00f87": -26.786,
+     "i": -22.081,
+     "margin_vi\u00f87_minus_i": -4.706,
+     "winner": "i"
+    }
+   },
+   "bwv10.7": {
+    "split": -45.478,
+    "merge": -46.226,
+    "margin_split_minus_merge": 0.748,
+    "winner": "split"
+   }
+  }
+ }
+}

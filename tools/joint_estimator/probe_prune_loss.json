@@ -1,0 +1,40 @@
+{
+ "provenance": {
+  "generator": "tools/joint_estimator/probe_run.py:measure_prune_loss",
+  "instrument_commit": "b28b4a8fdb6f95d09dfe62063292a2ac502f4df2",
+  "sample": [
+   "bwv269",
+   "bwv352",
+   "bwv10.7",
+   "bwv110.7",
+   "bwv254",
+   "bwv101.7",
+   "bwv266",
+   "bwv40.3",
+   "bwv277",
+   "bwv88.7",
+   "bwv293",
+   "bwv320"
+  ],
+  "note": "the DECLARED candidate prune's established loss (ratified \u00a75 reserve): root-present + member-overlap + few-NCT + key-top-K + seg-cap + inversion-free state collapse. The headline uses TIGHT; LOOSE widens seg_cap and key-top-K."
+ },
+ "tight": {
+  "seg_cap": 4,
+  "key_top_k": 6,
+  "root_pct": 71.96,
+  "key_local_pct": 70.53,
+  "seconds": 30.5
+ },
+ "loose": {
+  "seg_cap": 6,
+  "key_top_k": 12,
+  "root_pct": 72.87,
+  "key_local_pct": 75.29,
+  "seconds": 161.8
+ },
+ "loss_pp": {
+  "root": 0.91,
+  "key_local": 4.76
+ },
+ "compute_ratio": 5.3
+}
