@@ -1,0 +1,102 @@
+=== excluded (measured-misaligned / zero-factor) spans — OI-184 interim, user-ratified 2026-07-19 ===
+all-326: 332 spans  (triad 275, seventh 57)
+per training fold (fold k = stems with fold != k):
+  fold0: total 260  triad 213  seventh 47
+  fold1: total 283  triad 232  seventh 51
+  fold2: total 274  triad 228  seventh 46
+  fold3: total 234  triad 197  seventh 37
+  fold4: total 277  triad 230  seventh 47
+
+-- Task-1 sample verification (seed 20260719, 10 of 332) --
+   sample_pass = True  (any tone-free = False)
+   [the labeled chord's factor tones should sound immediately before/after the span]
+
+  bwv226.2 @37200-37440  triad  'ii'  key=G
+    factor pcs        : [['root', 9], ['third', 0], ['fifth', 4]]
+    sounding in span  : [2, 5, 7]  (zero factors present — the exclusion)
+    1 beat before     : [0, 2, 3, 5, 7, 11]   (factor frac 0.3333)
+    1 beat after      : [0, 2, 3, 7]   (factor frac 0.3333)
+    prev segment      : {'raw': 'ii6', 'pcs': [2, 5, 7, 11]}   (factor frac 0.0)
+    next segment      : {'raw': 'V7', 'pcs': [0, 2, 3, 7]}   (factor frac 0.3333)
+    best-neighborhood factor fraction = 0.3333  tone_free_STOP=False
+
+  bwv244.54 @8160-8640  triad  'I6'  key=F
+    factor pcs        : [['root', 5], ['third', 9], ['fifth', 0]]
+    sounding in span  : [2, 4, 7, 10]  (zero factors present — the exclusion)
+    1 beat before     : [0, 2, 5, 9]   (factor frac 1.0)
+    1 beat after      : [0, 5, 7, 9]   (factor frac 1.0)
+    prev segment      : {'raw': 'viio6', 'pcs': [0, 2, 5, 9]}   (factor frac 1.0)
+    next segment      : {'raw': 'IV', 'pcs': [0, 5, 7, 9]}   (factor frac 1.0)
+    best-neighborhood factor fraction = 1.0  tone_free_STOP=False
+
+  bwv315 @1920-2160  seventh  'viio7'  key=e
+    factor pcs        : [['root', 3], ['third', 6], ['fifth', 9], ['seventh', 0]]
+    sounding in span  : [4, 7, 11]  (zero factors present — the exclusion)
+    1 beat before     : [3, 4, 6, 7, 9, 11]   (factor frac 0.75)
+    1 beat after      : [0, 6, 7, 9, 11]   (factor frac 0.75)
+    prev segment      : {'raw': 'ii/o2', 'pcs': [3, 6, 9, 11]}   (factor frac 0.75)
+    next segment      : {'raw': 'i', 'pcs': [0, 6, 9]}   (factor frac 0.75)
+    best-neighborhood factor fraction = 0.75  tone_free_STOP=False
+
+  bwv33.6 @15360-15840  triad  'VI6'  key=a
+    factor pcs        : [['root', 5], ['third', 9], ['fifth', 0]]
+    sounding in span  : [4, 8, 11]  (zero factors present — the exclusion)
+    1 beat before     : [2, 5, 9]   (factor frac 0.6667)
+    1 beat after      : [0, 4, 5, 9]   (factor frac 1.0)
+    prev segment      : {'raw': 'V6', 'pcs': [4, 8, 11]}   (factor frac 0.0)
+    next segment      : {'raw': 'V6/III', 'pcs': [0, 4, 5, 9]}   (factor frac 1.0)
+    best-neighborhood factor fraction = 1.0  tone_free_STOP=False
+
+  bwv371 @26640-26880  triad  'ii6'  key=C
+    factor pcs        : [['root', 2], ['third', 5], ['fifth', 9]]
+    sounding in span  : [0, 4, 7]  (zero factors present — the exclusion)
+    1 beat before     : [0, 2, 4, 7]   (factor frac 0.3333)
+    1 beat after      : [0, 4, 6, 7, 9]   (factor frac 0.3333)
+    prev segment      : {'raw': 'V2', 'pcs': [0, 4, 7]}   (factor frac 0.0)
+    next segment      : {'raw': 'V2', 'pcs': [0, 4, 6, 9]}   (factor frac 0.3333)
+    best-neighborhood factor fraction = 0.3333  tone_free_STOP=False
+
+  bwv371 @46560-47040  triad  'i6'  key=a
+    factor pcs        : [['root', 9], ['third', 0], ['fifth', 4]]
+    sounding in span  : [2, 7, 11]  (zero factors present — the exclusion)
+    1 beat before     : [2, 7, 11]   (factor frac 0.0)
+    1 beat after      : [0, 4, 7, 10]   (factor frac 0.6667)
+    prev segment      : {'raw': 'V4/3', 'pcs': [2, 7, 11]}   (factor frac 0.0)
+    next segment      : {'raw': 'i6/4', 'pcs': [0, 4, 7, 10]}   (factor frac 0.6667)
+    best-neighborhood factor fraction = 0.6667  tone_free_STOP=False
+
+  bwv380 @12240-12480  seventh  'V7'  key=Eb
+    factor pcs        : [['root', 10], ['third', 2], ['fifth', 5], ['seventh', 8]]
+    sounding in span  : [0, 4, 7]  (zero factors present — the exclusion)
+    1 beat before     : [0, 4, 7]   (factor frac 0.0)
+    1 beat after      : [4, 5, 7, 8, 10]   (factor frac 0.75)
+    prev segment      : {'raw': 'V6/5', 'pcs': [0, 4, 7]}   (factor frac 0.0)
+    next segment      : {'raw': 'I', 'pcs': [4, 7, 10]}   (factor frac 0.25)
+    best-neighborhood factor fraction = 0.75  tone_free_STOP=False
+
+  bwv398 @0-480  triad  'I'  key=D
+    factor pcs        : [['root', 2], ['third', 6], ['fifth', 9]]
+    sounding in span  : []  (zero factors present — the exclusion)
+    1 beat before     : []   (factor frac 0.0)
+    1 beat after      : [2, 4, 6, 9]   (factor frac 1.0)
+    prev segment      : None   (factor frac 0.0)
+    next segment      : {'raw': 'I6', 'pcs': [2, 4, 6, 7, 9]}   (factor frac 1.0)
+    best-neighborhood factor fraction = 1.0  tone_free_STOP=False
+
+  bwv429 @15360-15600  triad  'IV6'  key=A
+    factor pcs        : [['root', 2], ['third', 6], ['fifth', 9]]
+    sounding in span  : [1, 5, 8]  (zero factors present — the exclusion)
+    1 beat before     : [1, 6, 10]   (factor frac 0.3333)
+    1 beat after      : [1, 2, 5, 6, 8, 9, 11]   (factor frac 1.0)
+    prev segment      : {'raw': 'V6/5', 'pcs': [1, 5, 8, 11]}   (factor frac 0.0)
+    next segment      : {'raw': 'vii/o7', 'pcs': [1, 5, 8, 11]}   (factor frac 0.0)
+    best-neighborhood factor fraction = 1.0  tone_free_STOP=False
+
+  bwv62.6 @9360-9600  seventh  'V6/5'  key=a
+    factor pcs        : [['root', 4], ['third', 8], ['fifth', 11], ['seventh', 2]]
+    sounding in span  : [0, 3, 6, 9, 10]  (zero factors present — the exclusion)
+    1 beat before     : [0, 2, 3, 6, 7, 9]   (factor frac 0.25)
+    1 beat after      : [2, 3, 6, 7, 9, 10]   (factor frac 0.25)
+    prev segment      : {'raw': 'V6', 'pcs': [0, 3, 7]}   (factor frac 0.0)
+    next segment      : {'raw': 'i', 'pcs': [2, 3, 6, 7, 9, 10]}   (factor frac 0.25)
+    best-neighborhood factor fraction = 0.25  tone_free_STOP=False

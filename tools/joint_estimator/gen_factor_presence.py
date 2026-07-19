@@ -63,7 +63,7 @@ OUT_DIR_DEFAULT = _ROOT / "tools" / "joint_estimator"
 THRESHOLD = glt.THRESHOLD
 ALPHA = glt.ALPHA
 N_FOLDS = glt.N_FOLDS
-FIT_VERSION = "factor-presence-v1 (option 3a; P(factor sounds | role, family))"
+FIT_VERSION = "factor-presence-v1 (option 3a; P(factor sounds | role, family); +OI-184 zero-factor span exclusion, interim)"
 
 # The two note->segment membership definitions, both reported (like part-2's exact vs robust
 # boundary). PRIMARY = 'overlap' ("sounds during the segment": a factor held over from the previous
@@ -83,29 +83,13 @@ GENRE_SCOPE = (
     "beyond it.")
 
 
-def sounding_pcs(piece, start, end, mode):
-    """The set of pitch classes sounding in segment [start,end). 'overlap': notes whose sounding
-    interval [onset, onset+dur) overlaps the segment (a held-over factor still sounds). 'onset':
-    notes whose onset falls in the segment (part-2's onset-in-span assignment). Measure-0 (anacrusis)
-    notes are excluded in both — the same exclusion as part 2."""
-    pcs = set()
-    for n in piece["notes"]:
-        onset, dur, pc = n[0], n[1], n[2]
-        if n[6] == 0:                       # OI-184 (a): anacrusis notes excluded (part-2 convention)
-            continue
-        if mode == "overlap":
-            if onset < end and onset + dur > start:
-                pcs.add(pc)
-        else:                               # onset-in-segment
-            if start <= onset < end:
-                pcs.add(pc)
-    return pcs
-
-
 def per_stem_counts(stem, piece):
     """Per-segment factor-presence counts for one stem, or (None, reason) for an excluded stem. The
     exclusion gate is IDENTICAL to gen_note_tables.per_stem_counts (flagged / multi-meter / meter not
-    in {4/4,3/4}); m0 segments are already dropped by gt_segments."""
+    in {4/4,3/4}); m0 segments are already dropped by gt_segments. OI-184 interim (user-ratified
+    2026-07-19): the measured-misaligned (zero-factor) spans are LEFT OUT of the counts — the same
+    gnt.excluded_zero_factor_segments criterion the note-side re-count uses (#6). A left-out segment is
+    counted only as `seg_excluded_zero_factor` and listed, never silently dropped."""
     if stem in gnt.FLAGGED:
         return None, "flagged"
     if stem in gnt.MULTIMETER or piece["multi_meter"]:
@@ -115,16 +99,20 @@ def per_stem_counts(stem, piece):
         return None, "meter_not_counted"
 
     segs = gnt.gt_segments(stem)
+    excluded = gnt.excluded_zero_factor_segments(segs, piece)     # OI-184 interim: the left-out spans
+    for sp in excluded:
+        sp["stem"] = stem
+    excluded_idx = {sp["idx"] for sp in excluded}                 # by INDEX (starts are not unique)
     # counts[mode][(role, family)] = [present, total]
     counts = {m: defaultdict(lambda: [0, 0]) for m in MODES}
     diag = Counter()
-    # alignment diagnostic (PRIMARY mode): #-factors-present distribution per family (a segment with
-    # ZERO factors present is a GT-tick MISALIGNMENT signature — the span holds a different chord; the
-    # OI-184 / part-2 anomaly-1 jitter), and the seventh's presence conditioned on the triad being
-    # complete (a well-aligned segment). Reported beside the raw table, never used to adjust it.
+    # alignment diagnostic (PRIMARY mode), now over the KEPT segments only: the #-factors-present
+    # distribution per family (index 0 must be 0 — every left-out zero-factor span was removed; the
+    # retained-forward alarm), and the seventh's presence conditioned on the triad being complete (a
+    # well-aligned segment). Reported beside the raw table, never used to adjust it.
     factor_dist = {"triad": Counter(), "seventh": Counter()}     # #present -> segment count
     seventh_align = {"any": [0, 0], "triad_complete": [0, 0]}    # [seventh_absent, total]
-    for s in segs:
+    for i, s in enumerate(segs):
         if s["tonic"] is None or s["is_major"] is None:
             diag["seg_indeterminate_key"] += 1
             continue
@@ -140,9 +128,12 @@ def per_stem_counts(stem, piece):
             else:
                 diag["seg_unmapped_quality"] += 1
             continue
+        if i in excluded_idx:                           # OI-184 interim: measured-misaligned span
+            diag["seg_excluded_zero_factor"] += 1
+            continue
         family = "seventh" if len(factors) == 4 else "triad"
         diag[f"seg_{family}"] += 1
-        snd = {m: sounding_pcs(piece, s["start"], s["end"], m) for m in MODES}
+        snd = {m: gnt.sounding_pcs(piece, s["start"], s["end"], m) for m in MODES}
         for role, pc in factors:
             cell = f"{role}|{family}"
             for m in MODES:
@@ -163,7 +154,7 @@ def per_stem_counts(stem, piece):
                 seventh_align["triad_complete"][0] += (0 if sev_present else 1)
     return {"counts": {m: dict(counts[m]) for m in MODES}, "diag": diag,
             "factor_dist": {f: dict(factor_dist[f]) for f in factor_dist},
-            "seventh_align": seventh_align}, None
+            "seventh_align": seventh_align, "excluded_spans": excluded}, None
 
 
 def _cell_stat(present, total):
@@ -183,11 +174,15 @@ def _cell_stat(present, total):
 
 
 def fit_presence(stem_counts):
-    """Aggregate per-stem counts and build the presence table (per mode) + the alignment diagnostic."""
+    """Aggregate per-stem counts and build the presence table (per mode) + the alignment diagnostic.
+    OI-184 interim: the measured-misaligned (zero-factor) spans are already LEFT OUT per stem; here
+    the excluded spans are aggregated for reporting and the alignment diagnostic runs over the KEPT
+    segments (its index-0 count must be 0 — the retained-forward alarm)."""
     agg = {m: defaultdict(lambda: [0, 0]) for m in MODES}
     diag = Counter()
     factor_dist = {"triad": Counter(), "seventh": Counter()}
     seventh_align = {"any": [0, 0], "triad_complete": [0, 0]}
+    excluded_spans = []
     for sc in stem_counts:
         for m in MODES:
             for cell, (p, t) in sc["counts"][m].items():
@@ -200,6 +195,7 @@ def fit_presence(stem_counts):
         for k in seventh_align:
             seventh_align[k][0] += sc["seventh_align"][k][0]
             seventh_align[k][1] += sc["seventh_align"][k][1]
+        excluded_spans.extend(sc["excluded_spans"])
     table = {}
     for m in MODES:
         table[m] = {cell: _cell_stat(agg[m][cell][0], agg[m][cell][1])
@@ -209,23 +205,25 @@ def fit_presence(stem_counts):
         absent, total = pair
         return {"seventh_absent": absent, "total": total,
                 "P_seventh_present": (1 - absent / total) if total else None}
-    zero_present = {f: factor_dist[f].get(0, 0) for f in factor_dist}
-    fam_tot = {f: sum(factor_dist[f].values()) for f in factor_dist}
+    zero_after = {f: factor_dist[f].get(0, 0) for f in factor_dist}     # must be 0 (the alarm)
+    excl_left_out = {f: sum(1 for sp in excluded_spans if sp["family"] == f) for f in factor_dist}
     alignment = {
         "factors_present_distribution": {f: dict(sorted(factor_dist[f].items())) for f in factor_dist},
-        "zero_factors_present_misalignment": {
-            f: {"count": zero_present[f], "total": fam_tot[f],
-                "frac": (zero_present[f] / fam_tot[f]) if fam_tot[f] else None} for f in factor_dist},
+        "zero_factors_present_after_exclusion_MUST_BE_ZERO": zero_after,
+        "excluded_zero_factor_spans_LEFT_OUT": excl_left_out,
         "seventh_presence_any": _rate(seventh_align["any"]),
         "seventh_presence_when_triad_complete": _rate(seventh_align["triad_complete"]),
         "note": ("a segment with ZERO of its factors sounding is a GT-tick MISALIGNMENT signature "
                  "(the span holds a different chord — the OI-184 / part-2 anomaly-1 jitter), NOT a "
-                 "musical incomplete chord. The raw table counts every kept segment (the fact, "
-                 "unadjusted); this diagnostic quantifies the alignment floor so the raw rates are "
-                 "interpreted correctly. 'seventh_presence_when_triad_complete' is the seventh's "
-                 "presence among well-aligned seventh segments (root+third+fifth all sounding)."),
+                 "musical incomplete chord. OI-184 interim (user-ratified 2026-07-19): these spans are "
+                 "now LEFT OUT of the table, so this diagnostic — over the KEPT segments — must show "
+                 "index-0 count 0 (zero_factors_present_after_exclusion_MUST_BE_ZERO); the number left "
+                 "out is excluded_zero_factor_spans_LEFT_OUT. 'seventh_presence_when_triad_complete' is "
+                 "the seventh's presence among well-aligned seventh segments (root+third+fifth all "
+                 "sounding)."),
     }
-    return {"table": table, "diagnostics": dict(diag), "alignment_diagnostic": alignment}
+    return {"table": table, "diagnostics": dict(diag), "alignment_diagnostic": alignment,
+            "excluded_spans": excluded_spans}
 
 
 def sanity(table_primary):
@@ -291,6 +289,21 @@ def main():
         stems = stem_set(name)
         fits[name] = {"fit": fit_presence([per_stem[s] for s in stems]), "n_stems": len(stems)}
 
+    # OI-184 interim: the left-out (measured-misaligned / zero-factor) spans, aggregated for
+    # declaration + the shared span-list artifact (written by gen_note_tables via the same criterion).
+    all_excluded_spans = []
+    for stem in counted_stems:
+        all_excluded_spans.extend(per_stem[stem]["excluded_spans"])
+
+    def _fam_counts(spans):
+        return {"total": len(spans),
+                "triad": sum(1 for sp in spans if sp["family"] == "triad"),
+                "seventh": sum(1 for sp in spans if sp["family"] == "seventh")}
+
+    excl_counts = {"all326": _fam_counts(all_excluded_spans),
+                   "per_training_fold": {f"fold{i}": _fam_counts(
+                       [sp for sp in all_excluded_spans if fold_of[sp["stem"]] != i]) for i in range(N_FOLDS)}}
+
     # reliability: every cell must clear the count>=20 rule; a sub-threshold cell is a reportable
     # finding (the unchanged reliability rule). None expected — all cells carry thousands.
     sub_threshold = {}
@@ -322,6 +335,16 @@ def main():
                            "zero (finding-2 option-2c, a zero probability, is fatal to the decode). "
                            "p_present_mle is the raw corpus frequency, reported beside it."),
         "exclusions_same_as_part2": "flagged (7) + multi-meter (bwv304,bwv362) + meter not in {4/4,3/4}; m0 segments dropped",
+        "excluded_zero_factor_spans": {
+            "rule": ("OI-184 interim (user-ratified 2026-07-19): measured-misaligned spans left out — "
+                     "the shared gnt.excluded_zero_factor_segments criterion (a kept triad/seventh whose "
+                     "chord factors ALL fail to sound under overlap membership); listed, never silently "
+                     "dropped. Removes only zero-factor segments: numerators unchanged, per-family "
+                     "denominators reduced (so within-family role ordering is preserved by construction)."),
+            "INTERIM": gnt.INTERIM_NOTE,
+            "artifact": glt._rel(gnt.EXCL_ARTIFACT),
+            "counts": excl_counts,
+        },
         "GENRE_SCOPE": GENRE_SCOPE,
     }
 
@@ -342,6 +365,12 @@ def main():
             "excluded": {k: sorted(v) for k, v in excluded.items()},
             "all326_segment_diagnostics": fits["all"]["fit"]["diagnostics"],
         },
+        "excluded_zero_factor_spans": {
+            "INTERIM": gnt.INTERIM_NOTE, "counts": excl_counts, "artifact": glt._rel(gnt.EXCL_ARTIFACT),
+            "note": ("removes ONLY zero-factor segments (0 present in all roles), so every cell's "
+                     "numerator is unchanged and only the per-family denominator drops by the left-out "
+                     "count — within-family role ordering is preserved by construction."),
+        },
         "primary_mode": PRIMARY_MODE,
         "reliability_all_cells_pass": not sub_threshold,
         "sub_threshold_cells": sub_threshold,
@@ -357,6 +386,7 @@ def main():
     print(f"wrote factor_presence_*.json (6 fits) + inventory (+summary) to {out_dir}")
     print(f"counted stems: {len(counted_stems)}  excluded: "
           + "{" + ", ".join(f"{k}:{len(v)}" for k, v in excluded.items()) + "}")
+    print(f"zero-factor spans LEFT OUT (OI-184 interim): {excl_counts['all326']}")
     print(f"reliability all cells pass (>=20): {not sub_threshold}")
     print(f"seventh presence (seventh chords): {san['seventh_presence_in_seventh_chords']}  "
           f"near_one={san['seventh_near_one']}")
@@ -370,6 +400,7 @@ def _write_summary(path, inv, fits, san):
          f"GENRE SCOPE: {inv['provenance']['GENRE_SCOPE']}",
          f"counted stems: {inv['counted_population']['counted_stems']}  "
          f"excluded: {inv['counted_population']['excluded_counts']}",
+         f"zero-factor spans LEFT OUT (OI-184 interim): {inv['excluded_zero_factor_spans']['counts']['all326']}",
          f"reliability all cells >=20: {inv['reliability_all_cells_pass']}",
          "",
          f"-- P(factor sounds | role, family), all-326, PRIMARY mode '{inv['primary_mode']}' --",
@@ -402,14 +433,9 @@ def _write_summary(path, inv, fits, san):
                  f"(fifth_is_most_omitted={pf['fifth_is_most_omitted']})")
     ad = fits["all"]["fit"]["alignment_diagnostic"]
     L += ["",
-          "-- alignment diagnostic (interprets the raw rates; NOT an adjustment) --",
-          f"  zero-factors-present (misalignment signature): "
-          f"triad {ad['zero_factors_present_misalignment']['triad']['count']}"
-          f"/{ad['zero_factors_present_misalignment']['triad']['total']} "
-          f"({ad['zero_factors_present_misalignment']['triad']['frac']:.4f}), "
-          f"seventh {ad['zero_factors_present_misalignment']['seventh']['count']}"
-          f"/{ad['zero_factors_present_misalignment']['seventh']['total']} "
-          f"({ad['zero_factors_present_misalignment']['seventh']['frac']:.4f})",
+          "-- alignment diagnostic (over KEPT segments; interprets the rates, NOT an adjustment) --",
+          f"  zero-factor spans LEFT OUT (OI-184 interim): {ad['excluded_zero_factor_spans_LEFT_OUT']}",
+          f"  zero-factors-present after exclusion (MUST be 0): {ad['zero_factors_present_after_exclusion_MUST_BE_ZERO']}",
           f"  factors-present distribution triad:  {ad['factors_present_distribution']['triad']}",
           f"  factors-present distribution seventh:{ad['factors_present_distribution']['seventh']}",
           f"  P(seventh present | any seventh seg)          = {ad['seventh_presence_any']['P_seventh_present']:.4f}",

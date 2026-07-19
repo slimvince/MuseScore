@@ -120,11 +120,21 @@ ratified after the alternatives were examined against the principles and the pre
 with the user's two sharpenings incorporated (the genre scope limit: every counted value is a
 Bach-chorale value, jazz de-scoped per the register's item 7; the per-factor asymmetry: a silent
 seventh must be near-prohibitive for a seventh-chord reading, which per-factor counting delivers).
-**The ACTIVE dispatch is `cc_instruction_secondary_dominant_refit.md`** (the re-count under the
-amended pooling ladder + the presence table; one commit; the probe document, the standing-rule and
-state-line handoff edits, the OI-184 addition, and the factorization §5 rule ride it). After its
-report is verified: the estimator-module build arc opens under the already-ratified parallel-build
-sanction. OI-179 (the ground-truth ceiling): the literature half is ANSWERED — no
+The dispatch `cc_instruction_secondary_dominant_refit.md` is DELIVERED and Cowork-verified at the
+artifacts (`73c84b92d3`): the applied-relation pooling level is counted — P(secondary dominant
+resolves to its target) = 0.771 major / 0.774 minor, root-position triad resolution 0.647/0.660;
+101 applied rows corrected from the mode's plain frequency list; every other table byte-identical;
+capacity passes (587 parameters). The chord-factor presence table is counted with the genre scope
+declared. **The misalignment decision is USER-RULED (2026-07-19): the note-side tables and the presence
+table are counted with the measured-misaligned spans LEFT OUT** (the mechanical criterion: a
+labeled span containing zero of its own chord's tones is skipped and listed) — ratified as the
+most-precise option available while the substrate repair (the OI-184 row's consequence (c)) stays
+a deferred future event; the rule is INTERIM, retired by that repair, recorded on the OI-184 row
+per the interim-exception discipline. **The ACTIVE dispatch is
+`cc_instruction_misaligned_span_exclusion.md`** — it must FIRST establish the criterion (sample 10
+excluded spans at the note data; each must show the anchoring-shift signature or STOP), then
+re-count. After its report is verified: the estimator-module build arc opens under the
+already-ratified parallel-build sanction. OI-179 (the ground-truth ceiling): the literature half is ANSWERED — no
 published inter-annotator agreement figure exists for classical symbolic Roman-numeral analysis
 anywhere in the field, so the 87-stem BCMH measurement would be novel; BCMH is inspected at the files
 (independent origin, single reading, NO annotator record anywhere; the 2023 JEP:HPP Method section

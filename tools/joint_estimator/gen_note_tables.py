@@ -35,6 +35,7 @@ from __future__ import annotations
 
 import bisect
 import json
+import random
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -57,7 +58,9 @@ FOLD_ARTIFACT = _ROOT / "tools" / "joint_estimator" / "fold_assignment.json"
 PART1_INVENTORY = _ROOT / "tools" / "joint_estimator" / "table_fit_inventory.json"
 
 OUT_DIR = _ROOT / "tools" / "joint_estimator"
-FIT_VERSION = "note-tables-v1 (part2 §3/§4/§5)"
+EXCL_ARTIFACT = OUT_DIR / "excluded_zero_factor_spans.json"
+FIT_VERSION = "note-tables-v1 (part2 §3/§4/§5; +OI-184 zero-factor span exclusion, interim)"
+EXCLUSION_SEED = 20260719          # fixed seed for the Task-1 sample verification (byte-reproducible)
 
 THRESHOLD = glt.THRESHOLD
 ALPHA = glt.ALPHA
@@ -65,6 +68,10 @@ N_FOLDS = glt.N_FOLDS
 FLAGGED = set(glt.OI184_FLAGGED)
 MULTIMETER = {"bwv304", "bwv362"}
 COUNTED_METERS = {(4, 4), (3, 4)}
+
+INTERIM_NOTE = ("INTERIM (OI-184, user-ratified 2026-07-19): measured-misaligned spans are left out — "
+                "retired by the OI-184 substrate repair (consequence (c)); after the repair the "
+                "criterion must find zero spans on every stem and remains only as an alarm.")
 
 _MC_INV = {0: "downbeat", 1: "mid_strong", 2: "other_tactus", 3: "sub_tactus"}
 _MV_INV = {0: "none", 1: "step", 2: "leap"}
@@ -266,12 +273,75 @@ def gt_segments(stem: str):
     return segs
 
 
-def _seg_for_tick(segs, starts, tick):
-    """The kept GT segment whose [start,end) contains tick, or None."""
+def _seg_idx_for_tick(segs, starts, tick):
+    """Index of the GT segment whose [start,end) contains tick, or -1. NOTE: segment starts are NOT
+    unique — 240 corpus ticks carry two GT labels resolving to the same span (a modulation/GT-tick
+    collision, the OI-184 domain), so a segment must be identified by INDEX, never by start tick. With
+    a duplicate start, bisect returns the later (second) of the colliding pair — the pre-existing
+    part-2 note-assignment behavior, unchanged."""
     i = bisect.bisect_right(starts, tick) - 1
     if 0 <= i < len(segs) and segs[i]["start"] <= tick < segs[i]["end"]:
-        return segs[i]
-    return None
+        return i
+    return -1
+
+
+def _seg_for_tick(segs, starts, tick):
+    """The GT segment whose [start,end) contains tick, or None."""
+    i = _seg_idx_for_tick(segs, starts, tick)
+    return segs[i] if i >= 0 else None
+
+
+# ══════════════════════════════════════════════════════════════════════════
+# The measured-misaligned span exclusion (OI-184 interim rule; user-ratified 2026-07-19)
+# ══════════════════════════════════════════════════════════════════════════
+
+def sounding_pcs(piece, start, end, mode):
+    """Pitch classes sounding in the span [start,end). 'overlap' = a note whose sounding interval
+    [onset,onset+dur) overlaps the span (a factor held over from the previous chord still sounds);
+    'onset' = a note whose onset falls in the span (the emission/spelling onset-in-span assignment).
+    Measure-0 (anacrusis) notes are excluded in both (the part-2 convention). ONE membership
+    definition (#6), shared by the presence table (gen_factor_presence) and the zero-factor criterion
+    below."""
+    pcs = set()
+    for n in piece["notes"]:
+        onset, dur, pc = n[0], n[1], n[2]
+        if n[6] == 0:                       # OI-184 (a): anacrusis notes excluded
+            continue
+        if mode == "overlap":
+            if onset < end and onset + dur > start:
+                pcs.add(pc)
+        else:                               # onset-in-segment
+            if start <= onset < end:
+                pcs.add(pc)
+    return pcs
+
+
+def excluded_zero_factor_segments(segs, piece):
+    """The measured-misaligned GT spans to LEAVE OUT of every count (the OI-184 interim rule ratified
+    in OPEN_ITEMS.md's OI-184 row, user 2026-07-19). The mechanical criterion (the existing
+    zero-factors-present diagnostic): a kept GT segment that maps to a standard triad/seventh whose
+    chord factors ALL fail to sound under 'overlap' membership — i.e. NONE of the labeled chord's own
+    tones sound anywhere in the labeled span. These are GT-tick anchoring misalignments (the label
+    shifted off the notes; part-2 anomaly-1 / OI-184). Chromatic (AugSixth/Neapolitan), unmapped and
+    indeterminate-key segments have no standard factor roles and are NOT candidates (the diagnostic
+    never classified them). Returns the excluded spans (segment index, span, family, raw label, local
+    key, factor pcs) — never silently dropped, always LISTED. INTERIM: retired by the OI-184 substrate
+    repair (consequence (c)), after which this must return [] on every stem and remains only as an
+    alarm."""
+    out = []
+    for i, s in enumerate(segs):
+        if s["tonic"] is None or s["is_major"] is None:
+            continue
+        factors = chord_factor_pcs(s["cls"], s["tonic"], s["is_major"])
+        if factors is None:
+            continue
+        family = "seventh" if len(factors) == 4 else "triad"
+        snd = sounding_pcs(piece, s["start"], s["end"], "overlap")
+        if not any(pc in snd for _r, pc in factors):
+            out.append({"idx": i, "start": s["start"], "end": s["end"], "family": family,
+                        "raw": s["raw"], "local_key": s["local_key"],
+                        "factor_pcs": [[r, pc] for r, pc in factors]})
+    return out
 
 
 # ══════════════════════════════════════════════════════════════════════════
@@ -292,22 +362,40 @@ def per_stem_counts(stem: str, piece: dict):
     segs = gt_segments(stem)
     starts = [s["start"] for s in segs]
 
+    # OI-184 interim: the measured-misaligned (zero-factor) spans are LEFT OUT of every count.
+    # Identified by INDEX (starts are not unique — colliding GT labels share a span).
+    excluded = excluded_zero_factor_segments(segs, piece)
+    for sp in excluded:
+        sp["stem"] = stem
+    excluded_idx = {sp["idx"] for sp in excluded}
+
     emission = defaultdict(Counter)     # (mc,appr,dep,tied) -> Counter(category)
     spelling = {True: Counter(), False: Counter()}
     boundary = {c: [0, 0] for c in _MC_INV.values()}    # class -> [boundaries, events]
     boundary_robust = {c: [0, 0] for c in _MC_INV.values()}
     diag = Counter()
+    # OI-184-domain measurement property (surfaced, #12/DT-23): GT-tick collisions — two WiR labels
+    # resolving to the same span (a modulation/anacrusis alignment artifact). A note/event in such a
+    # span is assigned by _seg_idx_for_tick to the LATER label (pre-existing); if that label is
+    # zero-factor it is left out. NOT built around — reported.
+    for _t, _c in Counter(starts).items():
+        if _c > 1:
+            diag["gt_tick_collision_extra_labels"] += _c - 1
 
     # ── emission + spelling (per note whose onset falls in a kept GT segment) ──
     for n in piece["notes"]:
         onset, dur, pc, midi, lof, part, measure, beat, mc_c, ap_c, dp_c, tied = n
         if measure == 0:                            # OI-184 (a): pickup notes excluded
             continue
-        seg = _seg_for_tick(segs, starts, onset)
-        if seg is None:
+        si = _seg_idx_for_tick(segs, starts, onset)
+        if si < 0:
             diag["note_unassigned"] += 1
             continue
         diag["notes_in_segment"] += 1
+        if si in excluded_idx:                       # OI-184 interim: note in a left-out span
+            diag["note_in_excluded_span"] += 1
+            continue
+        seg = segs[si]
         if seg["tonic"] is None or seg["is_major"] is None:
             diag["note_indeterminate_key"] += 1
             continue
@@ -323,22 +411,30 @@ def per_stem_counts(stem: str, piece: dict):
         diag["spelling_notes"] += 1
 
     # ── event-level boundary (per event; boundary iff a GT label starts at its tick) ──
-    gt_start_set = set(starts)
-    # robust variant: the FIRST event (min start) of each kept GT segment is a boundary
+    # OI-184 interim: a left-out span is dropped — its start is not a boundary (unless a KEPT segment
+    # also starts there), and events inside it (its spurious boundary event + interior events, when
+    # assigned to the left-out index) are dropped from the denominator too.
+    gt_start_set = {segs[i]["start"] for i in range(len(segs)) if i not in excluded_idx}
+    # robust variant: the FIRST event (min start) of each KEPT GT segment is a boundary
     first_event_of_seg = {}
     for ev in piece["events"]:
         start, end, measure, beat, mc_c = ev
         if measure == 0:
             continue
-        seg = _seg_for_tick(segs, starts, start)
-        if seg is not None:
-            fe = first_event_of_seg.get(seg["start"])
+        si = _seg_idx_for_tick(segs, starts, start)
+        if si >= 0 and si not in excluded_idx:
+            seg_start = segs[si]["start"]
+            fe = first_event_of_seg.get(seg_start)
             if fe is None or start < fe:
-                first_event_of_seg[seg["start"]] = start
+                first_event_of_seg[seg_start] = start
     robust_boundary_ticks = set(first_event_of_seg.values())
     for ev in piece["events"]:
         start, end, measure, beat, mc_c = ev
         if measure == 0:
+            continue
+        si = _seg_idx_for_tick(segs, starts, start)
+        if si >= 0 and si in excluded_idx:
+            diag["event_in_excluded_span"] += 1
             continue
         cls = _MC_INV[mc_c]
         boundary[cls][1] += 1
@@ -347,14 +443,15 @@ def per_stem_counts(stem: str, piece: dict):
         boundary_robust[cls][1] += 1
         if start in robust_boundary_ticks:
             boundary_robust[cls][0] += 1
-    # GT starts that land on no event boundary (the sub-beat analyst-vs-note jitter; a measurement
-    # caveat, not an inference item — related to OI-184).
+    # GT starts (of KEPT segments) that land on no event boundary (the sub-beat analyst-vs-note
+    # jitter; a measurement caveat, not an inference item — related to OI-184).
     event_ticks = {ev[0] for ev in piece["events"] if ev[2] != 0}
-    diag["gt_starts_kept"] += len(starts)
-    diag["gt_starts_off_lattice"] += sum(1 for s in starts if s not in event_ticks)
+    kept_starts = [segs[i]["start"] for i in range(len(segs)) if i not in excluded_idx]
+    diag["gt_starts_kept"] += len(kept_starts)
+    diag["gt_starts_off_lattice"] += sum(1 for s in kept_starts if s not in event_ticks)
 
     return {"emission": emission, "spelling": spelling, "boundary": boundary,
-            "boundary_robust": boundary_robust, "diag": diag}, None
+            "boundary_robust": boundary_robust, "diag": diag, "excluded_spans": excluded}, None
 
 
 # ══════════════════════════════════════════════════════════════════════════
@@ -590,11 +687,71 @@ def sanity_anchors(all_stem_counts_index, note_events, spelling_all):
 
 
 # ══════════════════════════════════════════════════════════════════════════
+# Task 1 — establish the criterion: sample the excluded spans and confirm the labeled chord's tones
+# sound immediately before/after the span (the anchoring-shift signature), not genuinely tone-free
+# ══════════════════════════════════════════════════════════════════════════
+
+def verify_sample(all_excluded, note_events, seed=EXCLUSION_SEED, k=10, beat=480):
+    """For a fixed-seed sample of k excluded spans, gather the labeled chord's factor presence in the
+    immediate neighborhood (one beat before, one beat after, the previous and the next GT segment). An
+    anchoring misalignment shows the chord's tones sounding adjacent; a span with the chord's tones
+    NOWHERE in its neighborhood would be a genuine tone-free annotation — which REFUTES the leave-out
+    rule (the dispatch's STOP condition). Deterministic (fixed seed over a sorted population)."""
+    pop = sorted(all_excluded, key=lambda sp: (sp["stem"], sp["start"]))
+    rng = random.Random(seed)
+    idxs = sorted(rng.sample(range(len(pop)), min(k, len(pop))))
+    seg_cache = {}
+    samples = []
+    any_tone_free = False
+    for j in idxs:
+        sp = pop[j]
+        stem = sp["stem"]
+        piece = note_events["pieces"][stem]
+        if stem not in seg_cache:
+            seg_cache[stem] = gt_segments(stem)
+        segs = seg_cache[stem]
+        i, s, e = sp["idx"], sp["start"], sp["end"]
+        fpcs = [pc for _r, pc in sp["factor_pcs"]]
+        before = sounding_pcs(piece, s - beat, s, "overlap")
+        after = sounding_pcs(piece, e, e + beat, "overlap")
+        prev_seg = segs[i - 1] if i - 1 >= 0 else None
+        next_seg = segs[i + 1] if i + 1 < len(segs) else None
+        prev_pcs = sounding_pcs(piece, prev_seg["start"], prev_seg["end"], "overlap") if prev_seg else set()
+        next_pcs = sounding_pcs(piece, next_seg["start"], next_seg["end"], "overlap") if next_seg else set()
+
+        def frac(pcs):
+            return round(sum(1 for pc in fpcs if pc in pcs) / len(fpcs), 4)
+
+        fr = {"before_window_1beat": frac(before), "after_window_1beat": frac(after),
+              "prev_segment": frac(prev_pcs), "next_segment": frac(next_pcs)}
+        best = max(fr.values())
+        tone_free = best == 0.0
+        any_tone_free = any_tone_free or tone_free
+        samples.append({
+            "population_index": j, "stem": stem, "start": s, "end": e, "family": sp["family"],
+            "raw_label": sp["raw"], "local_key": sp["local_key"], "factor_pcs": sp["factor_pcs"],
+            "sounding_pcs_in_span": sorted(sounding_pcs(piece, s, e, "overlap")),
+            "before_window_1beat_pcs": sorted(before), "after_window_1beat_pcs": sorted(after),
+            "prev_segment": ({"raw": prev_seg["raw"], "pcs": sorted(prev_pcs)} if prev_seg else None),
+            "next_segment": ({"raw": next_seg["raw"], "pcs": sorted(next_pcs)} if next_seg else None),
+            "factor_fraction_by_neighborhood": fr,
+            "best_neighborhood_factor_fraction": best,
+            "tone_free_STOP": tone_free,
+        })
+    return {"seed": seed, "sample_size": len(idxs), "population_size": len(pop),
+            "any_tone_free": any_tone_free, "sample_pass": not any_tone_free, "samples": samples}
+
+
+# ══════════════════════════════════════════════════════════════════════════
 # Main
 # ══════════════════════════════════════════════════════════════════════════
 
 def _write(path, obj):
     path.write_text(json.dumps(obj, separators=(",", ":"), sort_keys=True) + "\n", encoding="utf-8")
+
+
+def _write_pretty(path, obj):
+    path.write_text(json.dumps(obj, indent=1, ensure_ascii=False, sort_keys=True) + "\n", encoding="utf-8")
 
 
 def main():
@@ -613,6 +770,27 @@ def main():
         else:
             per_stem[stem] = res
     counted_stems = sorted(per_stem)
+
+    # ── the measured-misaligned (zero-factor) excluded-span population + Task-1 verification ──
+    all_excluded = []
+    for stem in counted_stems:
+        all_excluded.extend(per_stem[stem]["excluded_spans"])
+    all_excluded.sort(key=lambda sp: (sp["stem"], sp["start"]))
+
+    def _fam_counts(spans):
+        return {"total": len(spans),
+                "triad": sum(1 for sp in spans if sp["family"] == "triad"),
+                "seventh": sum(1 for sp in spans if sp["family"] == "seventh")}
+
+    excl_counts = {"all326": _fam_counts(all_excluded),
+                   "per_training_fold": {f"fold{i}": _fam_counts(
+                       [sp for sp in all_excluded if fold_of[sp["stem"]] != i]) for i in range(N_FOLDS)}}
+    sample_verif = verify_sample(all_excluded, note_events)
+    if not sample_verif["sample_pass"]:                     # Task-1 STOP (dispatch): refutes the rule
+        bad = [s for s in sample_verif["samples"] if s["tone_free_STOP"]]
+        raise SystemExit("STOP (Task 1): a sampled zero-factor span has the labeled chord's tones "
+                         "NOWHERE in its neighborhood — the leave-out criterion would exclude a genuine "
+                         "annotation, refuting it. " + json.dumps(bad))
 
     part1 = json.loads(PART1_INVENTORY.read_text(encoding="utf-8"))["capacity_bound_summary"]
     part1_grid_table6 = json.loads(
@@ -672,7 +850,35 @@ def main():
         "gt_tick_resolver": "compare_analyses._dcml_time_spans (measure-anchor, imported untouched)",
         "counted_stems": len(counted_stems), "excluded": {k: sorted(v) for k, v in excluded.items()},
         "anacrusis_convention": "WiR m0 segments dropped; music21 measure-0 (pickup) notes/events skipped",
+        "excluded_zero_factor_spans": {
+            "rule": ("OI-184 interim: a kept GT segment whose standard triad/seventh factors ALL fail to "
+                     "sound (overlap membership) is skipped from every numerator+denominator — the "
+                     "existing zero-factors-present diagnostic; listed, never silently dropped."),
+            "INTERIM": INTERIM_NOTE, "artifact": glt._rel(EXCL_ARTIFACT), "counts": excl_counts,
+        },
     }
+
+    # ── the excluded-span list artifact (Task 1: enumerate + fixed-seed sample verification) ──
+    excl_obj = {
+        "purpose": ("the measured-misaligned (zero-factor) GT spans LEFT OUT of the note-side and the "
+                    "chord-factor-presence counts (OI-184 interim rule; user-ratified 2026-07-19)."),
+        "provenance": {
+            "generator": glt._rel(Path(__file__)), "corpus_git_hash": glt._git_head(),
+            "criterion": ("a kept GT segment mapping to a standard triad/seventh whose chord factors ALL "
+                          "fail to sound under 'overlap' membership (the existing zero-factors-present "
+                          "diagnostic)."),
+            "INTERIM": INTERIM_NOTE,
+            "membership": "overlap ([onset,onset+dur) intersects the span); anacrusis (m0) notes excluded",
+            "counted_population": ("the 317 counted stems (7 flagged + 2 multi-meter excluded; meter in "
+                                   "{4/4,3/4}) — the same gate as the note-side/presence counts."),
+        },
+        "counts": excl_counts,
+        "sample_verification_task1": sample_verif,
+        "spans": all_excluded,
+    }
+    _write_pretty(EXCL_ARTIFACT, excl_obj)
+    _write_excluded_summary(sample_verif, excl_counts)
+
     for name in ["all"] + [f"fold{i}" for i in range(N_FOLDS)]:
         suffix = "all" if name == "all" else name.replace("fold", "fold")
         obj = {"provenance": dict(prov, fit_scope=name, n_training_stems=fits[name]["n_stems"]),
@@ -684,6 +890,14 @@ def main():
     inventory = {
         "purpose": "part-2 note-side fit: parameter inventory, combined capacity, establishment, hand-checks, sanity.",
         "provenance": prov,
+        "excluded_zero_factor_spans": {
+            "INTERIM": INTERIM_NOTE, "counts": excl_counts, "artifact": glt._rel(EXCL_ARTIFACT),
+            "task1_sample_pass": sample_verif["sample_pass"],
+            "task1_any_tone_free": sample_verif["any_tone_free"],
+            "task1_sample_size": sample_verif["sample_size"],
+            "notes_left_out_all326": fits["all"]["meta"]["diagnostics"].get("note_in_excluded_span", 0),
+            "boundary_events_left_out_all326": fits["all"]["meta"]["diagnostics"].get("event_in_excluded_span", 0),
+        },
         "counted_population": {
             "counted_stems": len(counted_stems),
             "anacrusis_pieces_m0_dropped": len(anacrusis_counted),
@@ -737,20 +951,58 @@ def main():
     }
     _write(OUT_DIR / "note_table_fit_inventory.json", inventory)
     _write_summary(inventory, capacity, template_valid, sanity, all_tabs)
-    print(f"wrote note_tables_*.json (6 fits), note_table_fit_inventory.json")
+    print(f"wrote note_tables_*.json (6 fits), note_table_fit_inventory.json, excluded_zero_factor_spans.json")
     print(f"counted stems: {len(counted_stems)}  excluded: {{"
           + ", ".join(f'{k}:{len(v)}' for k, v in excluded.items()) + "}")
+    ec = excl_counts["all326"]
+    print(f"zero-factor spans LEFT OUT (all-326): {ec['total']} (triad {ec['triad']}, seventh {ec['seventh']})  "
+          f"Task-1 sample_pass={sample_verif['sample_pass']}")
+    print(f"notes left out: {fits['all']['meta']['diagnostics'].get('note_in_excluded_span', 0)}  "
+          f"boundary events left out: {fits['all']['meta']['diagnostics'].get('event_in_excluded_span', 0)}")
     print(f"template oracle agreement: {template_valid['agree']}/{template_valid['tokens_checked']} "
           f"({template_valid['agree_pct']}%)  unmapped tokens: {template_valid['template_unmapped_tokens']}")
     print(f"combined capacity (all): {capacity['all']['combined_tokens_per_param']} tokens/param "
           f"(pass={capacity['all']['passes_combined_bound']})")
 
 
+def _write_excluded_summary(sample_verif, excl_counts):
+    """A readable listing of the Task-1 fixed-seed sample (10 excluded spans + neighborhood evidence)
+    and the per-fold excluded counts."""
+    a = excl_counts["all326"]
+    L = ["=== excluded (measured-misaligned / zero-factor) spans — OI-184 interim, user-ratified 2026-07-19 ===",
+         f"all-326: {a['total']} spans  (triad {a['triad']}, seventh {a['seventh']})",
+         "per training fold (fold k = stems with fold != k):"]
+    for name, c in excl_counts["per_training_fold"].items():
+        L.append(f"  {name}: total {c['total']}  triad {c['triad']}  seventh {c['seventh']}")
+    L += ["",
+          f"-- Task-1 sample verification (seed {sample_verif['seed']}, {sample_verif['sample_size']} of "
+          f"{sample_verif['population_size']}) --",
+          f"   sample_pass = {sample_verif['sample_pass']}  (any tone-free = {sample_verif['any_tone_free']})",
+          "   [the labeled chord's factor tones should sound immediately before/after the span]"]
+    for sm in sample_verif["samples"]:
+        fr = sm["factor_fraction_by_neighborhood"]
+        L += ["",
+              f"  {sm['stem']} @{sm['start']}-{sm['end']}  {sm['family']}  '{sm['raw_label']}'  key={sm['local_key']}",
+              f"    factor pcs        : {sm['factor_pcs']}",
+              f"    sounding in span  : {sm['sounding_pcs_in_span']}  (zero factors present — the exclusion)",
+              f"    1 beat before     : {sm['before_window_1beat_pcs']}   (factor frac {fr['before_window_1beat']})",
+              f"    1 beat after      : {sm['after_window_1beat_pcs']}   (factor frac {fr['after_window_1beat']})",
+              f"    prev segment      : {sm['prev_segment']}   (factor frac {fr['prev_segment']})",
+              f"    next segment      : {sm['next_segment']}   (factor frac {fr['next_segment']})",
+              f"    best-neighborhood factor fraction = {sm['best_neighborhood_factor_fraction']}  "
+              f"tone_free_STOP={sm['tone_free_STOP']}"]
+    (OUT_DIR / "excluded_zero_factor_spans_summary.txt").write_text("\n".join(L) + "\n", encoding="utf-8")
+
+
 def _write_summary(inventory, capacity, template_valid, sanity, all_tabs):
+    ez = inventory["excluded_zero_factor_spans"]
     L = ["=== note-side table fit (part 2 §3/§4/§5) — summary ===",
          f"corpus git_hash: {inventory['provenance']['corpus_git_hash']}",
          f"counted stems: {inventory['counted_population']['counted_stems']}  "
          f"excluded: {inventory['counted_population']['excluded_counts']}",
+         f"zero-factor spans LEFT OUT (OI-184 interim): all-326 {ez['counts']['all326']}  "
+         f"(notes left out {ez['notes_left_out_all326']}, boundary events left out "
+         f"{ez['boundary_events_left_out_all326']}); Task-1 sample_pass={ez['task1_sample_pass']}",
          "",
          f"template mapping vs music21 oracle: {template_valid['agree']}/{template_valid['tokens_checked']} "
          f"({template_valid['agree_pct']}%); unmapped {template_valid['template_unmapped_tokens']} tokens; "

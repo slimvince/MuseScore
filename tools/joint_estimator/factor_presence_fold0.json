@@ -2,118 +2,118 @@
  "factor_presence_table": {
   "onset": {
    "fifth|seventh": {
-    "p_absent_smoothed": 0.5190311418685121,
-    "p_present_mle": 0.4809578765147144,
-    "p_present_smoothed": 0.4809688581314879,
+    "p_absent_smoothed": 0.5124232680502777,
+    "p_present_mle": 0.48756946475577656,
+    "p_present_smoothed": 0.4875767319497223,
     "present": 1667,
     "reliable": true,
-    "total": 3466
+    "total": 3419
    },
    "fifth|triad": {
-    "p_absent_smoothed": 0.15407058823529407,
-    "p_present_mle": 0.8459945401487339,
-    "p_present_smoothed": 0.8459294117647059,
+    "p_absent_smoothed": 0.13676527084133694,
+    "p_present_mle": 0.8633045148895293,
+    "p_present_smoothed": 0.8632347291586631,
     "present": 8987,
     "reliable": true,
-    "total": 10623
+    "total": 10410
    },
    "root|seventh": {
-    "p_absent_smoothed": 0.3817762399077278,
-    "p_present_mle": 0.6182919792267744,
-    "p_present_smoothed": 0.6182237600922722,
+    "p_absent_smoothed": 0.3732826658871675,
+    "p_present_mle": 0.6267914594910793,
+    "p_present_smoothed": 0.6267173341128325,
     "present": 2143,
     "reliable": true,
-    "total": 3466
+    "total": 3419
    },
    "root|triad": {
-    "p_absent_smoothed": 0.0813176470588235,
-    "p_present_mle": 0.9187611785747906,
-    "p_present_smoothed": 0.9186823529411765,
+    "p_absent_smoothed": 0.06252401075681902,
+    "p_present_mle": 0.9375600384245918,
+    "p_present_smoothed": 0.937475989243181,
     "present": 9760,
     "reliable": true,
-    "total": 10623
+    "total": 10410
    },
    "seventh|seventh": {
-    "p_absent_smoothed": 0.2655709342560554,
-    "p_present_mle": 0.7345643392960185,
-    "p_present_smoothed": 0.7344290657439446,
+    "p_absent_smoothed": 0.2554808535515931,
+    "p_present_mle": 0.7446621819245394,
+    "p_present_smoothed": 0.7445191464484069,
     "present": 2546,
     "reliable": true,
-    "total": 3466
+    "total": 3419
    },
    "third|seventh": {
-    "p_absent_smoothed": 0.410322952710496,
-    "p_present_mle": 0.5897287939988459,
-    "p_present_smoothed": 0.589677047289504,
+    "p_absent_smoothed": 0.40222157263957903,
+    "p_present_mle": 0.597835624451594,
+    "p_present_smoothed": 0.597778427360421,
     "present": 2044,
     "reliable": true,
-    "total": 3466
+    "total": 3419
    },
    "third|triad": {
-    "p_absent_smoothed": 0.1049411764705882,
-    "p_present_mle": 0.89513320154382,
-    "p_present_smoothed": 0.8950588235294118,
+    "p_absent_smoothed": 0.08663081060315025,
+    "p_present_mle": 0.9134486071085495,
+    "p_present_smoothed": 0.9133691893968497,
     "present": 9509,
     "reliable": true,
-    "total": 10623
+    "total": 10410
    }
   },
   "overlap": {
    "fifth|seventh": {
-    "p_absent_smoothed": 0.1554209919261822,
-    "p_present_mle": 0.8447778418926717,
-    "p_present_smoothed": 0.8445790080738178,
+    "p_absent_smoothed": 0.14381759719380294,
+    "p_present_mle": 0.8563907575314419,
+    "p_present_smoothed": 0.8561824028061971,
     "present": 2928,
     "reliable": true,
-    "total": 3466
+    "total": 3419
    },
    "fifth|triad": {
-    "p_absent_smoothed": 0.06296470588235292,
-    "p_present_mle": 0.9371175750729549,
-    "p_present_smoothed": 0.9370352941176471,
+    "p_absent_smoothed": 0.04379562043795615,
+    "p_present_mle": 0.9562920268972143,
+    "p_present_smoothed": 0.9562043795620438,
     "present": 9955,
     "reliable": true,
-    "total": 10623
+    "total": 10410
    },
    "root|seventh": {
-    "p_absent_smoothed": 0.08102652825836221,
-    "p_present_mle": 0.9192152336987882,
-    "p_present_smoothed": 0.9189734717416378,
+    "p_absent_smoothed": 0.06840105232388194,
+    "p_present_mle": 0.9318514185434338,
+    "p_present_smoothed": 0.9315989476761181,
     "present": 3186,
     "reliable": true,
-    "total": 3466
+    "total": 3419
    },
    "root|triad": {
-    "p_absent_smoothed": 0.05835294117647061,
-    "p_present_mle": 0.9417302080391603,
-    "p_present_smoothed": 0.9416470588235294,
+    "p_absent_smoothed": 0.03908951210142142,
+    "p_present_mle": 0.9609990393852065,
+    "p_present_smoothed": 0.9609104878985786,
     "present": 10004,
     "reliable": true,
-    "total": 10623
+    "total": 10410
    },
    "seventh|seventh": {
-    "p_absent_smoothed": 0.07122260668973468,
-    "p_present_mle": 0.9290248124639354,
-    "p_present_smoothed": 0.9287773933102653,
+    "p_absent_smoothed": 0.05846243788365979,
+    "p_present_mle": 0.9417958467388126,
+    "p_present_smoothed": 0.9415375621163402,
     "present": 3220,
     "reliable": true,
-    "total": 3466
+    "total": 3419
    },
    "third|seventh": {
-    "p_absent_smoothed": 0.11735870818915806,
-    "p_present_mle": 0.8828620888632429,
-    "p_present_smoothed": 0.8826412918108419,
+    "p_absent_smoothed": 0.10523238819058756,
+    "p_present_mle": 0.8949985375840889,
+    "p_present_smoothed": 0.8947676118094124,
     "present": 3060,
     "reliable": true,
-    "total": 3466
+    "total": 3419
    },
    "third|triad": {
-    "p_absent_smoothed": 0.07585882352941176,
-    "p_present_mle": 0.9242210298409113,
-    "p_present_smoothed": 0.9241411764705882,
+    "p_absent_smoothed": 0.0569535151747983,
+    "p_present_mle": 0.9431316042267051,
+    "p_present_smoothed": 0.9430464848252017,
     "present": 9818,
     "reliable": true,
-    "total": 10623
+    "total": 10410
    }
   }
  },
@@ -125,11 +125,50 @@
    "n_folds": 5,
    "threshold": 20
   },
-  "corpus_git_hash": "57ed94a6a46571172a351c09ba4f5cb92930674a",
+  "corpus_git_hash": "73c84b92d3fd3ba1a678ab90236bb40d99a97926",
+  "excluded_zero_factor_spans": {
+   "INTERIM": "INTERIM (OI-184, user-ratified 2026-07-19): measured-misaligned spans are left out — retired by the OI-184 substrate repair (consequence (c)); after the repair the criterion must find zero spans on every stem and remains only as an alarm.",
+   "artifact": "tools/joint_estimator/excluded_zero_factor_spans.json",
+   "counts": {
+    "all326": {
+     "seventh": 57,
+     "total": 332,
+     "triad": 275
+    },
+    "per_training_fold": {
+     "fold0": {
+      "seventh": 47,
+      "total": 260,
+      "triad": 213
+     },
+     "fold1": {
+      "seventh": 51,
+      "total": 283,
+      "triad": 232
+     },
+     "fold2": {
+      "seventh": 46,
+      "total": 274,
+      "triad": 228
+     },
+     "fold3": {
+      "seventh": 37,
+      "total": 234,
+      "triad": 197
+     },
+     "fold4": {
+      "seventh": 47,
+      "total": 277,
+      "triad": 230
+     }
+    }
+   },
+   "rule": "OI-184 interim (user-ratified 2026-07-19): measured-misaligned spans left out — the shared gnt.excluded_zero_factor_segments criterion (a kept triad/seventh whose chord factors ALL fail to sound under overlap membership); listed, never silently dropped. Removes only zero-factor segments: numerators unchanged, per-family denominators reduced (so within-family role ordering is preserved by construction)."
+  },
   "exclusions_same_as_part2": "flagged (7) + multi-meter (bwv304,bwv362) + meter not in {4/4,3/4}; m0 segments dropped",
   "factor_pcs": "gen_note_tables.chord_factor_pcs (shares member_pcs framework/root derivation)",
   "fit_scope": "fold0",
-  "fit_version": "factor-presence-v1 (option 3a; P(factor sounds | role, family))",
+  "fit_version": "factor-presence-v1 (option 3a; P(factor sounds | role, family); +OI-184 zero-factor span exclusion, interim)",
   "generator": "tools/joint_estimator/gen_factor_presence.py",
   "gt_segment_alignment": "gen_note_tables.gt_segments (compare_analyses._dcml_time_spans, part-2, untouched)",
   "membership_definitions": {
