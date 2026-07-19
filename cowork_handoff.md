@@ -42,17 +42,28 @@ signature/declared-mode prior is INITIAL-STATE-ONLY**, re-anchored at a notated 
 (factorization doc §3.10). OI-181 ✅; new rows OI-184 (WiR anacrusis alignment — establish before fit
 counts), OI-185 (bwv352 b4 bass check); the §4.3 sensitive-cell record feeds OI-177.
 
-**★ THE IMMEDIATE NEXT ACTION — the pre-fit gates, Cowork-drafted for user ratification: OI-176
-(held-out split / k-fold), OI-177 (capacity budget, incl. the desk sim's §4.3 sensitive-cell/pooling
-record), OI-178 (the robust-stop architecture-adoption protocol), OI-180 (the dual-path sanction +
-retirement map).** The funnel stays SHUT — no build until the gates pass.
+**★ THE PRE-FIT GATES ARE DRAFTED AND USER-RATIFIED (2026-07-19, this session's third act —
+`cowork_prefit_gates.md`):** the OI-176 (5-fold CV grouped by analysis file, committed assignment,
+train-fold-only fitting, CV headline + bootstrap CI), OI-177 (count-inventory artifact, cell threshold
+20, params ≤ tokens/10, ≤ 12 weights, §4.3 sensitive-cell records), OI-178 (the adoption-event
+variant, written before any diff: MAP commit / no abstention, asymmetric #17b prediction, per-preset
+class-(b) net decrease with every added run explained, O-12, one revertible adoption commit), and
+OI-180 (A isolated on the L1/L1.5 fact surface behind a default-OFF driver, byte-identical production,
+full-surface side-by-side grading, six-item post-adoption retirement map incl. the deferred Gates A–L
+dissolution, reverse map, DT-13 visibility guard) protocols. All four rows read "protocol ratified —
+pending execution".
 
-**★ STATE / PENDING.** The design-pass commit dispatch ran and was verified at the objects
-(`910a998e9b`, pushed to origin). The desk-sim commit dispatch **`cc_instruction_desk_sim_commit.md`**
-is drafted — if not yet run, run it FIRST (it commits the desk-sim document, the ratified spec
-amendments, and the register/STATUS/handoff updates; the §4.6 erratum's tracked record is the desk-sim
-doc itself — the measurement report stays untracked per `/cc_*.md`, its on-disk courtesy note
-uncommitted). OI-179 (the ground-truth ceiling): the literature half is ANSWERED — no
+**★ THE IMMEDIATE NEXT ACTION — the funnel's probe/build arc may open under the OI-180 sanction.**
+Dispatches are written just-in-time (the standing rule); the first concrete steps in order: (1) the
+OI-176 fold-assignment artifact + the OI-177 count-inventory instrument (both read-only, CC
+dispatches); (2) OI-184's anacrusis-alignment establishment (gates the boundary/metric-table counts);
+(3) then table fitting under the ratified protocols. **The dual-path status line (the OI-180 DT-13
+guard) starts appearing here from the build dispatch on.**
+
+**★ STATE / PENDING.** The design-pass commit (`910a998e9b`) and the desk-sim commit (`31b3dba6ca`)
+both ran, were verified at the objects, and are pushed to origin. The pre-fit-gates commit dispatch
+**`cc_instruction_prefit_gates_commit.md`** is drafted — if not yet run, run it FIRST (it commits the
+ratified gates document and the register/STATUS/handoff updates). OI-179 (the ground-truth ceiling): the literature half is ANSWERED — no
 published inter-annotator agreement figure exists for classical symbolic Roman-numeral analysis
 anywhere in the field, so the 87-stem BCMH measurement would be novel; BCMH is inspected at the files
 (independent origin, single reading, NO annotator record anywhere; the 2023 JEP:HPP Method section
