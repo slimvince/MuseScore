@@ -68,7 +68,126 @@ From `cowork_evidence_inventory.md` §8, mapped to the joint model (`cowork_key_
 
 ## 5. What is NOT yet decided (honestly, for the design pass)
 
-The state space's exact contents (esp. the **mode vocabulary**); the precise **functional form** of each factor and the **joint factorization**; whether our richer-than-published clue set actually improves precision (the one CONJECTURE, resolved only by build-and-measure); the exact-vs-approximate inference call if the state space is large; **how the values are fit — the fitting parameterization** (generative, Raphael-Stoddard's unsupervised EM, vs discriminative, the Masada & Bunescu semi-Markov CRF with the same theory-derived factors as feature functions — see §6); and any factor where published theory supplies no form. These are the design pass's agenda — nameable, bounded, and mostly closable by deriving from the literature, not by groping.
+**Decided 2026-07-19 (→ §5a):** the mode vocabulary, the fitting parameterization, the chord-state
+basis (scale-degree-valued), the non-chord-tone placement, and the signature/declared-mode prior.
+**Remaining for the structure-design step:** the precise functional form of each factor and the joint
+factorization (how the factors multiply; the conditional independences); the exact-vs-approximate
+inference call (mitigated — the ratified state space is compact: 24 keys × the degree vocabulary);
+whether our richer-than-published clue set actually improves precision (the one CONJECTURE, resolved
+only by build-and-measure); any factor where published theory supplies no form; and the desk-simulation
+forms owed by OI-181. These are nameable, bounded, and mostly closable by deriving from the literature,
+not by groping.
+
+## 5a. Design decisions ratified (the design pass, 2026-07-19 →)
+
+**★ The factorization specification is USER-RATIFIED (2026-07-19): `cowork_joint_estimator_factorization.md`**
+— the variable structure, score form, ten-factor roster, premise ledger P1–P8, decode plan, and
+desk-simulation forms/case list. It is the governing structure document; the five decisions below are
+its foundations. Next in the funnel: the desk simulation (its §6), then the pre-fit gates
+(OI-176/OI-177/OI-178/OI-180). No build before those.
+
+**Mode vocabulary (user-ratified 2026-07-19).** The joint state's mode axis is **{major, minor}** —
+minor meaning the composite minor practice (natural/harmonic/melodic as one key with variable sixth and
+seventh degrees). **Modal and chromatic color is modeled in the pitch-emission factor**, not the state:
+the first build carries the minor-scale variants (raised sixth and seventh) only; church-mode variants
+(Dorian sixth, Mixolydian seventh, Phrygian second, …) enter later only through their own premise-ledger
+entries (#17); the dominant-family exotic scales are **excluded from the state space** (constrained-
+optimum ledger record: the 21-mode state space is excluded because its states are ungradable against any
+ground truth we possess — #19/#20 — and OI-174 measured them harming inference). **User's condition,
+part of the decision: the un-rounded reading is preserved and published.** The emission factor's
+modal-variant evidence is published as a derived fact on the output surface, so the presentation layer
+can show the end-user that a passage decoded as, say, D minor would — without the rounding to
+major/minor — be called D Dorian, and can choose whether/how to display that by user preference (the
+eventual preset ↔ mode-prior mapping is a presentation/preference concern, not an inference state).
+Inference states stay two-mode under every preset. This resolves the OI-174/OI-132/OI-147 mode-
+vocabulary question at the design level; the rows close when the build lands.
+
+**Fitting parameterization (user-ratified 2026-07-19).** The staged form: **the factor TABLES are fit
+generatively from ground-truth counts and frozen** (each table established on its own — the
+key-conditioned chord-transition table, the bass-note-given-chord-and-inversion table, the tone-category
+emission tables, the key-change table — every entry a musically meaningful probability, per the
+published forms); **the small vector of COMBINATION WEIGHTS over the factors is fit discriminatively by
+convex conditional likelihood** (the semi-Markov conditional-random-field objective with the logarithms
+of the frozen tables as features; L2 penalty; the OI-176 held-out gate and OI-177 capacity budget
+govern). **Mandatory ablation arm:** all-weights-equal-one IS the pure generative model, so the weight
+layer's contribution is measured on held-out data inside the same machinery, never assumed — its
+adoption is gated on winning that comparison. **Ledger entries attached to the decision:** (a) the
+staged ASSEMBLY is our synthesis (each stage established separately in the literature; the combination
+is an assumption with its own #17b prediction); (b) constrained-optimum record — the unconstrained
+alternative is the fully joint discriminative fit with rich free features (possibly a higher ceiling),
+excluded because fully joint weights sacrifice the modular diagnosability (#3/#19) the error-correction
+loop runs on; re-test if that constraint stops binding; (c) fit-scope declaration (the Noland &
+Sandler lesson): which components may be re-fit is declared before any fit — tables from counts, once,
+frozen; only the combination weights move; (d) the direct-metric few-weight search (the minimum-error-
+rate protocol with bootstrap confidence intervals) is the established fallback if the likelihood-fit
+weights measurably disagree with the reported metric.
+
+**Chord state is scale-degree-valued (user-ratified 2026-07-19).** The joint state's chord axis is a
+**Roman numeral — scale degree, quality, inversion — relative to the state's tonic and mode** (the
+Raphael-Stoddard / Harasim structure). Consequences, all structural: (a) the tonic/degree coupling
+terms (the diatonic-root bonus, `buildChordResult`'s degree, Gate G-E's degree condition,
+`applyTonicPriorToSparseChord`, the segmenter's head-gap tonic prior — the gap map's group 1) dissolve
+by construction — a degree is key-relative by definition; (b) **transposition invariance**: the chord-
+transition table pools all keys' evidence (twelvefold counts per cell — the decisive capacity device on
+a 326-piece corpus); (c) the ground truth is natively degree-valued, so tables fit from counts with no
+conversion layer, and the OI-173 defect class (four inequivalent `diatonicToKey` definitions, two of
+`degree`) is never rebuilt. **The chord symbol (root pitch class, quality, bass) is a DERIVED fact,
+published once** (root = tonic + the degree's interval) — the robust stop's root metric is unchanged
+and every baseline column stays comparable. **Tonicization is applied-degree classes** (the secondary
+dominant V/x, applied leading-tone chords, and the standard chromatic classes — Neapolitan sixth,
+augmented-sixth chords — per the ground truth's own vocabulary; this also matches jazz analytical
+practice, where the secondary dominant, and later the substitute dominant and extended dominant chains,
+are applied-degree devices — jazz-specific classes enter only under the OI-7 jazz-ground-truth gate).
+**Excluded alternatives recorded:** root-valued chord state (forfeits transposition tying and
+structurally preserves the ad-hoc key coupling the audits condemned); momentary modulation for
+tonicization (fits Bach acceptably but shreds jazz tonicization chains into micro-keys and departs from
+the ground truth's labeling convention).
+
+**Non-chord-tone handling (user-ratified 2026-07-19).** **No live cleaning stage exists.** Non-chord
+tones live INSIDE the pitch-emission factor: each tone is emitted by category (chord member vs
+within-scale non-chord tone vs outside-scale tone — the Raphael-Stoddard structure), with the emission
+probability conditioned on **chord-independent melodic and metric covariates** — stepwise approach and
+departure, chromatic-neighbor motion, metric weakness, the tied-over/syncopated preparation (the
+figuration-feature forms Masada & Bunescu fit on chorales; every covariate computable without knowing
+the chord, so no circularity). Chord identity and tone status are decided together in the one decode
+(#12 — no ornament verdict is ever committed early). **Ornament labels (passing tone, neighbor tone,
+suspension, appoggiatura, pedal point) are derived AFTER the decode** from the committed chord by the
+standard definitions and published as a derived fact for the presentation layer — the same pattern as
+the modal-color publication. **Style adaptation is values-only:** the chord-tone boundary shift in jazz
+(tensions as chord members) is a VOCABULARY matter handled by the degree-valued quality classes; the
+changed ornamental/metric conventions (enclosures, anticipations) are covariate TABLE VALUES refit per
+preset — same structure, no per-style rule code; jazz-specific covariate additions enter only under the
+OI-7 jazz-ground-truth gate with their own ledger entries. **Establishment resource:** the BCMH
+reduction is the chorales with non-chord tones removed — aligning the 87 overlapping full-texture
+stems against their reductions yields empirically labeled chord-tone/ornament data for fitting and
+validating these emission tables (BCMH's declared instrument status applies). **Excluded alternatives
+recorded:** a live pre-cleaning stage (the published cleaners' ~28 % error rate would be hard-committed
+upstream, violating #12, and the suspension's chord-relative definition makes pre-cleaning circular);
+pure category emission without melodic covariates (discards the established voice-leading evidence —
+the strongest ornament discriminator).
+
+**The key-signature and declared-mode prior (user-ratified 2026-07-19).** A **weak, fitted,
+transposition-invariant soft prior on (tonic, mode)** from the notated signature — a small categorical
+table (local-key tonic distance from the signature's relative pair on the circle of fifths, by mode)
+counted from ground truth; the declared mode, where the score carries one, is a second conditioning
+input with its own fitted strength. **No conditional gate and no threshold anywhere:** the user's
+intent — the signature consulted only where the analysis is otherwise unsure — is delivered by the
+probability calculus itself (a weak prior is negligible where the content likelihood is decisive and
+tips the scale only where the evidence is ambiguous), never by an "if uncertain" code path. Bach's
+modal notation practice (the Dorian chorale written one flat short) is handled statistically as
+measured mass one fifth away in minor — no special case. A mid-piece signature change re-anchors the
+prior (discharging the OI-94(a) deferral). **The signature-influence rate is measured by ablation and
+published at every fit** (the fraction of committed keys the signature factor changed), with the
+recorded expectation that it is SMALL — a large fitted weight or influence rate is a #3 finding to
+investigate, not to ship. **The declared-mode wall (the −7 hard penalty) is formally retired.**
+Whether the prior conditions the initial key state only or also acts as a weak persistent pull is
+settled by the desk simulation, not assumed. Ledgered as OUR form — the literature's absence of any
+signature prior is explicitly cited (PKSpell: the formalization "is missing"). **Excluded alternatives
+recorded:** the hard signature constraint (factually false three ways; the known wall-defect pattern);
+no prior at all (discards free information; contradicted by the Stage-4a declared-mode measurement);
+the literal conditional "consult only when uncertain" (reintroduces a threshold gate the soft prior
+makes unnecessary). *(The signature's separate job — naming the prevailing collection for the
+spelling/collection emission, the OI-168 mask — is a different factor and untouched by this decision.)*
 
 ## 6. Recorded assessment (Cowork, 2026-07-18) — agreement, two reservations, one refinement
 

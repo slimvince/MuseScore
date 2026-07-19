@@ -8,6 +8,107 @@
 > AI-Assistant side-project records. Nothing was edited.
 
 ---
+## ★★★★ COWORK SESSION CLOSE 2026-07-17 — THE ARCHITECTURE DECISION: THE KEY/MODE/CHORD ESTIMATOR IS **JOINT (option A), USER-RATIFIED**. THE CURRENT ENTRY POINT.
+
+**You (the next session) start clueless — the user is continuing with a stronger model and NO conversational
+handover, so THIS block is the entire handover.** Read, in this order: (1) `CLAUDE.md` in full (the #1–#19
+principles, the conventions, the Premise Gate, the firewall/DT-2, the no-inference-fixing-until-refactoring
+rule); (2) `OPEN_ITEMS.md` (the ONE register, current through OI-175, CC-maintained); (3) this block;
+(4) **`cowork_joint_estimator_architecture.md` — THE GOVERNING ARCHITECTURE**; (5)
+**`cowork_key_chord_joint_inference_grounding.md` — the cited literature basis for the decision.**
+
+**★ THE HEADLINE — THE ARCHITECTURE IS DECIDED (user-ratified 2026-07-17).** The tonal analyzer's key,
+mode, and chord are inferred by **ONE JOINT probabilistic estimate** — a single decode over
+`(tonic, mode, chord)` with segmentation as a modeled (semi-Markov) variable, every enumerated clue entering
+as a theory-grounded factor. **NOT** a feed-forward pipeline, **NOT** the old "key layer as a separable
+layer to bolt on." This **supersedes the incremental framing of `cowork_key_layer_design_opening.md`**. The
+full spec, factor roster, reframe of in-flight items, and the path are in
+`cowork_joint_estimator_architecture.md`. The decision was reached over a research review
+(`cowork_key_chord_joint_inference_grounding.md`, 5-stream primary-source literature review): the mutual
+dependence of key/mode/chord is the *established* structure of tonal analysis (Raphael-Stoddard's composite
+`(tonic,mode,chord)` state decoded in one Viterbi; Ni et al.'s key-conditioned chord transition; the
+multi-task lineage), and — judged purely on long-term inference accuracy under our own methodology — no
+argument survives for feed-forward (a greedy approximation that loses information early, #12) or a learned
+black box (un-establishable/undiagnosable, #1/#3/#18/#19; needs data we lack). B and C survive only *inside*
+A (approximate inference for tractability; a learned factor only where theory supplies no form).
+
+**★ THE IMMEDIATE NEXT ACTION — the term-level theory-grounding audit (READ-ONLY; the #17 funnel's first
+stage; NO building).** Enumerate every factor of the joint model (the roster in the architecture doc §2),
+derive each factor's *form* from established theory/research (#1/#2), triage the current terms keep/fix/drop,
+and name precisely the few forms where theory runs out (#5). This is the concrete answer to "do we have the
+right terms with the right forms" — the current answer is *no, several are known-wrong and it was never
+audited*. It is part research (the deep-research pattern) + part code-enumeration (what terms the current
+inference actually uses). **The design decisions it surfaces are the USER's — especially the MODE
+VOCABULARY (should the exotic modes be states, emissions, or excluded — OI-174/OI-132/OI-147). Bring them;
+do not pre-decide.**
+
+**★ HOW WE GOT HERE (this Cowork arc, 2026-07-14→17 — so nothing is lost).** Working with a separate CC
+coding session (which has no greater context and can hallucinate — VERIFY every CC claim at the objects):
+(a) **wave-1 measurement chain hardened + pushed** — the instrument A is graded on; retained in full.
+(b) **instrument-hygiene sweep + OI-155/157/151/125/158/159/160** — grader/probe/artifact hygiene; OI-158
+removed the dead music21 `FloatingKey` corroborator path (its local-key-as-evidence question filed at
+`cowork_evidence_inventory.md` §8c / OI-146); OI-125 replaced a hard-coded 4/4 tick-extrapolation with the
+derived measure length. (c) **wave-2 dependency reconciliation** — E4 (the L4 decoder engagement) is **NOT**
+a key-layer prerequisite (0 of 11 wave-2 rows Class-1; the rebuilt L3 spine `keymodesequence` is acyclic);
+the substrate rows were over-scoped. (d) **whole-graph fact-dependency audit** → **OI-165** (`findTemporalContext`
+is a live L1.5→L4→L3 cycle with no retirement row), **OI-166** (the key-agnostic cadence pre-scan is **not
+built** — `functioncadence` is chord-derived, must be a new L1.5 unit), **OI-167** (the collection/tonic
+split holds only conditionally). (e) **OI-168** — the δ collection-membership defect (`analyzeChord`'s two
+key terms test membership through the tonic, mis-transposed for `Altered`/`AlteredDomBB7`): measured (exactly
+1 committed-chord flip, `bwv145.5@12960` `Ebm`→`B`, a strict improvement) and **FIXED** as a correctness
+re-baseline (class-(b) −480, the signature-mask primitive `pcInMask(diatonicMaskFromFifths(...))`).
+(f) **OI-170** — the whole-layer sweep found **three MORE** collection-membership sites (`diatonicToKey` +
+Gate I/L `invRootIsDiatonic`), so L4 is **not** tonic-independent and is internally inconsistent; the
+class-(a) fix is metric-neutral (only the `diatonicToKey` flag corrects). **OI-171** (the Aeolian-guard
+re-home is NOT byte-identical — it sits on the commit path — so it was NOT done). **OI-172/173/174**
+(more degree/tonic-dependent sites; `diatonicToKey` has four inequivalent definitions — "single-source the
+*predicate*, not the value"; **OI-174: the key layer emits `Altered` on material with NO altered tone, 22 of
+23 regions** — a key-emission defect, sibling of OI-147). (g) **OI-175 — the clincher:** the L2 segmenter's
+head-gap prior uses the **provisional inferred key** (`resolveKeyAndModeRanked().front().mode`,
+`regionanalyzer.cpp:606-609/872`) to set the committed chord — so the committed chord genuinely depends on
+the inferred key, and **L4 CANNOT be made tonic-independent**; the current architecture is an ad-hoc
+provisional-then-refine bootstrap. That, plus the research, is why the answer is a **joint** model.
+
+**★ THE REFRAME — the open OI items are now parts of A** (architecture doc §3): OI-166 → A's **cadence
+factor** (still build the key-agnostic detector at L1.5); OI-168/OI-170 → the **signature-mask collection
+emission term** (the right *form*); OI-174/OI-147 → A's **mode-vocabulary / mode-emission** question;
+OI-175 → **superseded** by A's joint decode; **OI-23** (~30 hand-set chord constants) + **OI-91/OI-97**
+(hand-set key change-costs) → **retire into A's fit-once factors**. **OI-145 wave-1 (the measurement chain)
+is RETAINED in full** — it is how A is graded honestly.
+
+**★ STATE / PENDING.** The register is current through OI-175 (CC commits it each dispatch). **PENDING
+DISPATCH, drafted but NOT run: `cc_instruction_doc_split.md`** — split STATUS.md + this handoff into a lean
+active must-read + a reference-only archive (both are huge); run it early. **NOT yet drafted:** the
+term-level grounding audit (the next action). CC has pushed through the OI-170 measurement to `origin` only
+(`upstream` push stays disabled — the `cfc7eb5e39` MusicXML-patch hard stop); read `STATUS.md` for the
+current HEAD/baselines. Several `cc_instruction_*.md` dispatch files I drafted this arc are in the repo root
+(force-added by CC as it ran them) — historical.
+
+**★ METHODOLOGY REMINDERS (the standing frame for building A).** A is a decision to build A **right**, not
+to start coding now. The **#17 funnel governs** (desk-simulate → read-only probe → build; no build until the
+forms are pinned and ratified). Each factor's **FORM** comes from established theory (#1/#2); its **VALUES**
+are fit **ONCE, globally, against ground truth** (#19) and frozen — **NEVER per-case tuned** (#8, the DT-2
+firewall). A wrong result is a **structural** diagnosis (wrong form / missing clue, #3) or irreducible
+residual — never a knob-turn. The joint model is the **antidote to information loss** (#12). Complexity,
+redesign, and long fits are all acceptable for maximum-precision inference (#4). **VERIFY EVERYTHING AT THE
+OBJECTS** — every CC claim (CC has no greater context and hallucinates; this arc caught a stale-binary
+measurement, a silent regex drop, and three "the split holds" claims that were each incomplete). The user
+also runs this Cowork session under "do not bash for reading local files" — use the host Read/Grep/Glob.
+
+*Provenance: the joint-architecture decision is the user's, 2026-07-17, on the grounding review. Documents
+authored this arc: `cowork_joint_estimator_architecture.md` (governing), `cowork_key_chord_joint_inference_grounding.md`
+(theory). `cowork_key_layer_design_opening.md` is superseded-by-the-architecture-doc at its next touch. The
+standing key-layer work-package block below and the older session-close blocks are HISTORY, kept for
+provenance (the doc-split will move them to an archive).*
+
+> **History → `cowork_handoff_archive.md`** (reference-only, NOT part of the session-start read):
+> the older session-close / entry-point blocks (2026-07-16 back to 2026-07-01, incl. the superseded
+> standing key-layer work package), the pre-joint-decision architecture-direction and
+> current-state/roadmap/iteration records, and the LLM-integration / ms-core-api / AI-Assistant
+> records — all moved verbatim by the 2026-07-18 doc split (`cc_instruction_doc_split.md`).
+> A superseded entry moves there instead of accumulating here.
+
+---
 ## ★★★ CC SESSION CLOSE 2026-07-16 — OI-170, THE WHOLE-LAYER TONIC-USE MAP: **MEASURED. NO FIX PROMOTED.**
 
 Report: `cc_oi170_measure_report.md`. Generated artifact: `cc_oi170_measurements.txt` (every figure
