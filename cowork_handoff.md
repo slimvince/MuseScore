@@ -72,17 +72,32 @@ ESTABLISHED — correct at measure bodies (anacrusis pieces peak at offset 0, 20
 unaffected), with the WiR m0 pickup label systematically displaced (beat−1)·480 in all 207 anacrusis
 pieces and 7 pieces carrying >2pp LOCAL misalignment (incl. bwv110.7 — desk-sim §4.5 resolved as
 local)**; OI-184 flipped ✅ with consequences on the row (pickup-aware count extraction at the
-fit-event layer; the 7 flagged pieces; the deferred substrate-correction option). **The ACTIVE
-dispatch is `cc_instruction_label_table_fit.md`** — the fit event part 1 of 2 (label-side tables:
-chord transition, key transition, entry, bass/inversion, signature prior, boundary-by-beat-class),
-fit per training fold + all-326 under the ratified OI-176/OI-177 protocols, with the OI-186(a)
-fit-layer normalization (quality from figure+case, never `extract_quality`) and the OI-184
-consequences (pickup measures + the 7 flagged pieces excluded from the tick-anchored boundary
-counts; label-sequence tables unaffected). NO decoding, NO evaluation — tables only, frozen.
-**Declared staging:** part 2 (the note-side emission/spelling tables — note-level extraction) is
-its own next dispatch; then the A-module build arc opens under the OI-180 sanction, whose first act
-includes the §4.3 sensitive-cell probe against the FITTED tables (OI-177 item 4, prediction-first).
-The OI-184 row flip + this state line ride part 1's commit. OI-179 (the ground-truth ceiling): the literature half is ANSWERED — no
+fit-event layer; the 7 flagged pieces; the deferred substrate-correction option). **The fit event part 1 (label-side tables) is DELIVERED and Cowork-verified at the artifacts**
+(`c7094c71b3`; report `cc_label_table_fit_report.md`, untracked): six tables fit per training fold +
+all-326 under the ratified protocols — capacity PASS 19× over the bound (581 params, tokens/param
+186–213), exact count reconciliation, byte-reproducible, the §4.3 sensitive cells disposed as the
+desk sim anticipated (three pooled at <20; two count deltas explained by the finer OI-186(a)
+normalization), the boundary table reproducing the Temperley shape (0.991/0.896/0.767/0.066).
+**Three as-built realization notes ACCEPTED into the fit-event record:** (1) table-1's "drop both
+sides' inversion" chain realized as context-side coarsening + within-row outcome pooling (pooled
+buckets namespaced after two mid-fit key-collision bugs, fixed and reported); (2) table-6's
+denominator is a 16th-note grid — sub-tactus P is grid-dependent; the note-EVENT denominator is
+owed at part 2; (3) table-5 parameterized as collection displacement by local mode (equivalent
+bookkeeping to the ratified tonic-distance-from-relative-pair form). Flagged small populations
+(ninth figures ×2, multi-level applied ×3, multi-signature ×3, multi-meter ×2 excluded from table
+6, one empty declared-mode piece) are recorded in the inventory notes. **The ACTIVE dispatch is `cc_instruction_note_table_fit.md` — the fit event part 2:** the
+note-event extraction (music21 read-only over the corpus xml; the ratified event lattice; the four
+declared chord-independent covariates), the pitch-emission table (member / within-collection NCT /
+outside, per covariate combo, presence/absence only), the spelling table (line-of-fifths position
+relative to the local key; the minor leading-tone/subtonic contrast reportable), and the
+event-level boundary denominator discharging part 1's grid caveat. OI-184 exclusions declared
+(m0-labeled segments dropped on the 207 anacrusis pieces; the 7 flagged + 2 multi-meter pieces out
+of tick-anchored counts); combined part-1+2 capacity check; desk-sim-anchored hand-checks
+(bwv145.5 m10, bwv352 m1 b4); BCMH ornament validation deferred (dataset not on disk). After its
+report verifies: the A-module build arc under the OI-180 sanction, opening with the §4.3
+sensitive-cell probe against the FITTED tables (OI-177 item 4, prediction-first — the fitted values
+differ from the desk sim's provisionals: V→I 0.28 vs 0.42, downbeat boundary 0.99 vs 0.65; the
+probe re-runs C2/C3/S5 with the real numbers). OI-179 (the ground-truth ceiling): the literature half is ANSWERED — no
 published inter-annotator agreement figure exists for classical symbolic Roman-numeral analysis
 anywhere in the field, so the 87-stem BCMH measurement would be novel; BCMH is inspected at the files
 (independent origin, single reading, NO annotator record anywhere; the 2023 JEP:HPP Method section

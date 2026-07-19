@@ -1,0 +1,9 @@
+=== note-event extraction (part 2 §1) — summary ===
+corpus git_hash: c7094c71b37b52e21601c1b78ed7ecf7b8fdae87
+covered stems extracted: 326  (parse failures: 0)
+total notes: 76107   total events: 26698
+
+-- establishment: pc reconciliation on pc-constant regions --
+  bwv145.5: 26/26 pc-constant regions match (cited clean region {'startTick': 480, 'endTick': 960, 'pcs': [1, 6, 9]})
+  bwv352: 7/7 pc-constant regions match (cited clean region {'startTick': 480, 'endTick': 960, 'pcs': [0, 4, 9]})
+  bwv254: 10/10 pc-constant regions match (cited clean region {'startTick': 960, 'endTick': 1440, 'pcs': [0, 5, 9]})

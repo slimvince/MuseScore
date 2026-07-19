@@ -1,0 +1,30 @@
+=== note-side table fit (part 2 §3/§4/§5) — summary ===
+corpus git_hash: c7094c71b37b52e21601c1b78ed7ecf7b8fdae87
+counted stems: 317  excluded: {'flagged': 7, 'multi_meter': 2}
+
+template mapping vs music21 oracle: 18407/18418 (99.94%); unmapped 3 tokens; residual disagree 8 tokens
+
+-- combined capacity (part1 + part2), per fold --
+  all    params   666  tokens  294930  tok/param   442.84  pass=True
+  fold0  params   618  tokens  235577  tok/param   381.19  pass=True
+  fold1  params   604  tokens  236586  tok/param   391.70  pass=True
+  fold2  params   602  tokens  237527  tok/param   394.56  pass=True
+  fold3  params   597  tokens  235463  tok/param   394.41  pass=True
+  fold4  params   612  tokens  234567  tok/param   383.28  pass=True
+
+-- emission base category rates --
+  {'member': 0.8243481131037518, 'within': 0.1662036527670811, 'outside': 0.009448234129167125}
+-- covariate-support effect (L2:0 unsupported vs L2:1 supported) --
+  L2:0: {'member': 0.9510950457155007, 'within': 0.04295130767595152, 'outside': 0.005953646608547736}
+  L2:1: {'member': 0.8155832316311077, 'within': 0.17472687438427267, 'outside': 0.009689893984619682}
+
+-- spelling: minor leading-tone (raised7) vs subtonic (dia:-2) --
+  P(raised7)=0.07534719823118911  P(subtonic)=0.03554895322324328  leading>subtonic=True
+-- sanity: minor V-labeled note counts raised7 vs flat7 --
+  raised7=1564  flat7=238  raised7>>flat7=True
+
+-- event-level boundary P (event denominator) vs robust first-event --
+  downbeat      exact P=0.9734392735527809  (4288/4405)   robust P=0.9741203178206583  (4291/4405)
+  mid_strong    exact P=0.9606794589493551  (3054/3179)   robust P=0.9609940232777603  (3055/3179)
+  other_tactus  exact P=0.8612403100775193  (6666/7740)   robust P=0.8618863049095608  (6671/7740)
+  sub_tactus    exact P=0.3070551549405574  (3151/10262)   robust P=0.3043266419801208  (3123/10262)
