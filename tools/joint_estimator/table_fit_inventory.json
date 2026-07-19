@@ -1,0 +1,1673 @@
+{
+ "capacity_bound_summary": {
+  "all": {
+   "free_params": 581,
+   "passes": true,
+   "tokens_per_param": 213.287,
+   "total_tokens": 123920
+  },
+  "fold0": {
+   "free_params": 533,
+   "passes": true,
+   "tokens_per_param": 185.871,
+   "total_tokens": 99069
+  },
+  "fold1": {
+   "free_params": 517,
+   "passes": true,
+   "tokens_per_param": 192.654,
+   "total_tokens": 99602
+  },
+  "fold2": {
+   "free_params": 520,
+   "passes": true,
+   "tokens_per_param": 191.633,
+   "total_tokens": 99649
+  },
+  "fold3": {
+   "free_params": 522,
+   "passes": true,
+   "tokens_per_param": 189.404,
+   "total_tokens": 98869
+  },
+  "fold4": {
+   "free_params": 528,
+   "passes": true,
+   "tokens_per_param": 186.536,
+   "total_tokens": 98491
+  }
+ },
+ "establishment": {
+  "byte_reproducible": "run twice; artifacts are deterministic (sorted, no timestamp/random)",
+  "hand_checks_table1": {
+   "V->I (major)": {
+    "from": "V | Maj |  | ",
+    "mle_prob": 0.27925925925925926,
+    "raw_count_from_row": 1350,
+    "raw_count_pair": 377,
+    "to": "I | Maj |  | "
+   },
+   "V->vi (major)": {
+    "from": "V | Maj |  | ",
+    "mle_prob": 0.018518518518518517,
+    "raw_count_from_row": 1350,
+    "raw_count_pair": 25,
+    "to": "VI | Min |  | "
+   },
+   "i->V (minor)": {
+    "from": "I | Min |  | ",
+    "mle_prob": 0.17225253312548713,
+    "raw_count_from_row": 1283,
+    "raw_count_pair": 221,
+    "to": "V | Maj |  | "
+   }
+  },
+  "normalization_coverage_all326": {
+   "indeterminate_mode_labels": 0,
+   "note": "every WiR label normalizes (raw_unnormalized == 0: the 2 It6 tokens route to the AugSixth class); nothing is silently dropped — the label total reconciles to 18418 (#12/DT-23).",
+   "raw_unnormalized_labels": 0
+  },
+  "reconcile_count_inventory": {
+   "all_ok": true,
+   "key_changes": 1720,
+   "key_changes_ok": true,
+   "labels": 18418,
+   "labels_ok": true,
+   "transition_pairs": 16372,
+   "transition_pairs_ok": true
+  },
+  "row_sums_all_within_1e-9": true
+ },
+ "notes": {
+  "backoff_chains": {
+   "table1": "context (from) back-off: full -> inversion-free -> family -> unigram; outcome (to) pooled within a reliable row: full -> inversion-free -> family -> base. NOTE (interpretation, reported per #13): the dispatch chain 'drop BOTH sides' inversion' is realized as context (from-side) coarsening at the row level plus within-row outcome pooling; the from-side is not coarsened per-sparse-cell (which would require cross-row redistribution). The named sensitive cells (V->vi own-MLE at 236; V6->vi-halfdim pooled at 2) behave as specified.",
+   "table2": "sparse (cofBand|modePair) change cell -> mode-pair marginal -> base; distances>=3 pre-pooled to 'cofFar' per mode pair (declared cell definition).",
+   "table3": "entry class -> inversion-free -> unigram base.",
+   "table4": "context (deg,quality,mode) -> (quality,mode) -> (mode); inversion-figure outcome.",
+   "table5": "cell (signed-fifths-distance | local-mode) per declared mode; |distance|>=2 pre-pooled to 'far'; sparse cell -> local-mode marginal -> base.",
+   "table6": "no pooling (Bernoulli per beat class); cells with <20 slots would be reported."
+  },
+  "multi_level_applied": "3 two-level applied labels (V6/5/V/III, V2/V/III, V/V/III) are peeled to a clean base chord with the applied chain joined as the target (e.g. 'V/III'), reusing dcml._split_rntxt_applied iteratively (no new parser).",
+  "ninth_figures": "figures '9'/'9[b9]' (2 labels: V9/V, V9[b9]) are outside the dispatch's enumerated inversion set {7,6/5,4/3,2,42}; mapped to the dominant-seventh family (a ninth carries a seventh) with the figure retained verbatim. Flagged.",
+  "smoothing": "Katz-style back-off with a hard count>=20 reliability gate and additive alpha=1 at the pooled base (the single declared alpha per table). Reliable cells (count>=20) keep their EXACT MLE = count/total; sparse cells pool into their declared parent (chains below), promoted while a bucket stays <20, and the residual (sparse-count) mass is distributed over the pooled buckets alpha-smoothed. Rows sum to 1 by construction.",
+  "table5_distance": "signed circle-of-fifths displacement of the local key's diatonic COLLECTION (minor keys use their relative-major signature) from the piece's notated signature fifths, folded to (-6,6]; kept for {-1,0,+1}, |d|>=2 pooled to 'far'. The signature's relative pair (major + relative minor) is distance 0, split by the local-mode coordinate. Initial signature used; 3 multi-signature pieces flagged.",
+  "table6_grid": "denominator = a 16th-note (0.25 quarter-beat) metric grid per counted measure, the finest resolution that captures every observed WiR label beat with no snapping. A slot is a boundary iff a GT label starts there. Sub-tactus boundary probability is grid-dependent (the note-event denominator is part 2, sec 3.7); reported with that caveat. Pickup measures (m0) and the 7 OI-184 flagged pieces excluded; 3/2 and 2 multi-meter pieces excluded (flagged)."
+ },
+ "per_fold": {
+  "all": {
+   "free_params": {
+    "table1": {
+     "major": 258,
+     "minor": 153
+    },
+    "table2": 11,
+    "table3": 21,
+    "table4": 121,
+    "table5": {
+     "major": 6,
+     "minor": 7,
+     "none": 0
+    },
+    "table6": 4,
+    "total": 581
+   },
+   "passes_capacity_bound": true,
+   "per_table_free_params": {
+    "table1": 411,
+    "table2": 11,
+    "table3": 21,
+    "table4": 121,
+    "table5": 13,
+    "table6": 4
+   },
+   "per_table_tokens": {
+    "table1": 16372,
+    "table2": 18092,
+    "table3": 1720,
+    "table4": 18418,
+    "table5": 2046,
+    "table6": 67272
+   },
+   "per_table_tokens_per_param": {
+    "table1": 39.83,
+    "table2": 1644.73,
+    "table3": 81.9,
+    "table4": 152.21,
+    "table5": 157.38,
+    "table6": 16818.0
+   },
+   "table1": {
+    "distinct_estimated_rows": {
+     "major": 60,
+     "minor": 67
+    },
+    "distinct_from_contexts": {
+     "major": 124,
+     "minor": 151
+    },
+    "distinct_transition_pairs": {
+     "major": 746,
+     "minor": 894
+    },
+    "pair_count_histogram": {
+     "major": {
+      "1": 328,
+      "100+": 21,
+      "2-4": 198,
+      "20-49": 49,
+      "5-19": 133,
+      "50-99": 17
+     },
+     "minor": {
+      "1": 445,
+      "100+": 12,
+      "2-4": 262,
+      "20-49": 32,
+      "5-19": 128,
+      "50-99": 15
+     }
+    },
+    "reliable_rows": {
+     "major": 34,
+     "minor": 41
+    }
+   },
+   "table2": {
+    "cell_count_histogram": {
+     "100+": 6,
+     "2-4": 2,
+     "20-49": 5,
+     "5-19": 1
+    },
+    "distinct_cells": 14,
+    "pooled_buckets": 1,
+    "reliable_cells": 11
+   },
+   "table3": {
+    "class_count_histogram": {
+     "1": 29,
+     "100+": 7,
+     "2-4": 38,
+     "20-49": 8,
+     "5-19": 15,
+     "50-99": 5
+    },
+    "distinct_entry_classes": 102,
+    "pooled_buckets": 2,
+    "reliable_cells": 20
+   },
+   "table4": {
+    "distinct_contexts": 60,
+    "distinct_estimated_rows": 49,
+    "reliable_rows": 34
+   },
+   "table5": {
+    "declared_mode_contexts": {
+     "major": {
+      "cell_count_histogram": {
+       "100+": 4,
+       "20-49": 1,
+       "5-19": 2,
+       "50-99": 1
+      },
+      "distinct_cells": 8
+     },
+     "minor": {
+      "cell_count_histogram": {
+       "100+": 3,
+       "20-49": 1,
+       "5-19": 1,
+       "50-99": 3
+      },
+      "distinct_cells": 8
+     },
+     "none": {
+      "cell_count_histogram": {
+       "1": 1,
+       "2-4": 1
+      },
+      "distinct_cells": 2
+     }
+    }
+   },
+   "table6": {
+    "beat_classes": {
+     "downbeat": {
+      "boundary": 4335,
+      "prob": 0.9910836762688614,
+      "slots": 4374
+     },
+     "mid_strong": {
+      "boundary": 3311,
+      "prob": 0.8958333333333334,
+      "slots": 3696
+     },
+     "other_tactus": {
+      "boundary": 6710,
+      "prob": 0.7670324645633287,
+      "slots": 8748
+     },
+     "sub_tactus": {
+      "boundary": 3311,
+      "prob": 0.06562413287350854,
+      "slots": 50454
+     }
+    },
+    "excluded": {
+     "flagged": [
+      "bwv110.7",
+      "bwv112.5",
+      "bwv113.8",
+      "bwv123.6",
+      "bwv140.7",
+      "bwv274",
+      "bwv384"
+     ],
+     "meter": [
+      "bwv304",
+      "bwv362"
+     ],
+     "no_meter": []
+    },
+    "out_of_grid_label_starts": 1,
+    "pieces_counted": 317
+   },
+   "tokens": {
+    "boundary_slots": 67272,
+    "indeterminate_mode_labels": 0,
+    "inv_labels": 18418,
+    "key_changes": 1720,
+    "labels": 18418,
+    "local_key_segments": 2046,
+    "raw_unnormalized": 0,
+    "transition_pairs": 16372
+   },
+   "tokens_per_param": 213.287,
+   "total_tokens_for_bound": 123920
+  },
+  "fold0": {
+   "free_params": {
+    "table1": {
+     "major": 225,
+     "minor": 154
+    },
+    "table2": 9,
+    "table3": 20,
+    "table4": 108,
+    "table5": {
+     "major": 6,
+     "minor": 7,
+     "none": 0
+    },
+    "table6": 4,
+    "total": 533
+   },
+   "passes_capacity_bound": true,
+   "per_table_free_params": {
+    "table1": 379,
+    "table2": 9,
+    "table3": 20,
+    "table4": 108,
+    "table5": 13,
+    "table6": 4
+   },
+   "per_table_tokens": {
+    "table1": 13045,
+    "table2": 14391,
+    "table3": 1346,
+    "table4": 14656,
+    "table5": 1611,
+    "table6": 54020
+   },
+   "per_table_tokens_per_param": {
+    "table1": 34.42,
+    "table2": 1599.0,
+    "table3": 67.3,
+    "table4": 135.7,
+    "table5": 123.92,
+    "table6": 13505.0
+   },
+   "table1": {
+    "distinct_estimated_rows": {
+     "major": 58,
+     "minor": 59
+    },
+    "distinct_from_contexts": {
+     "major": 116,
+     "minor": 138
+    },
+    "distinct_transition_pairs": {
+     "major": 663,
+     "minor": 782
+    },
+    "pair_count_histogram": {
+     "major": {
+      "1": 294,
+      "100+": 17,
+      "2-4": 178,
+      "20-49": 43,
+      "5-19": 114,
+      "50-99": 17
+     },
+     "minor": {
+      "1": 412,
+      "100+": 11,
+      "2-4": 216,
+      "20-49": 26,
+      "5-19": 106,
+      "50-99": 11
+     }
+    },
+    "reliable_rows": {
+     "major": 32,
+     "minor": 34
+    }
+   },
+   "table2": {
+    "cell_count_histogram": {
+     "1": 2,
+     "100+": 6,
+     "20-49": 3,
+     "5-19": 3
+    },
+    "distinct_cells": 14,
+    "pooled_buckets": 1,
+    "reliable_cells": 9
+   },
+   "table3": {
+    "class_count_histogram": {
+     "1": 37,
+     "100+": 2,
+     "2-4": 27,
+     "20-49": 10,
+     "5-19": 16,
+     "50-99": 7
+    },
+    "distinct_entry_classes": 99,
+    "pooled_buckets": 2,
+    "reliable_cells": 19
+   },
+   "table4": {
+    "distinct_contexts": 59,
+    "distinct_estimated_rows": 45,
+    "reliable_rows": 32
+   },
+   "table5": {
+    "declared_mode_contexts": {
+     "major": {
+      "cell_count_histogram": {
+       "100+": 3,
+       "20-49": 1,
+       "5-19": 3,
+       "50-99": 1
+      },
+      "distinct_cells": 8
+     },
+     "minor": {
+      "cell_count_histogram": {
+       "100+": 3,
+       "20-49": 2,
+       "5-19": 1,
+       "50-99": 2
+      },
+      "distinct_cells": 8
+     },
+     "none": {
+      "cell_count_histogram": {
+       "1": 1,
+       "2-4": 1
+      },
+      "distinct_cells": 2
+     }
+    }
+   },
+   "table6": {
+    "beat_classes": {
+     "downbeat": {
+      "boundary": 3493,
+      "prob": 0.9903600793875815,
+      "slots": 3527
+     },
+     "mid_strong": {
+      "boundary": 2607,
+      "prob": 0.8915868673050615,
+      "slots": 2924
+     },
+     "other_tactus": {
+      "boundary": 5406,
+      "prob": 0.7663736886872696,
+      "slots": 7054
+     },
+     "sub_tactus": {
+      "boundary": 2588,
+      "prob": 0.06387757620634332,
+      "slots": 40515
+     }
+    },
+    "excluded": {
+     "flagged": [
+      "bwv110.7",
+      "bwv112.5",
+      "bwv113.8",
+      "bwv123.6",
+      "bwv140.7",
+      "bwv274"
+     ],
+     "meter": [
+      "bwv304"
+     ],
+     "no_meter": []
+    },
+    "out_of_grid_label_starts": 1,
+    "pieces_counted": 258
+   },
+   "tokens": {
+    "boundary_slots": 54020,
+    "indeterminate_mode_labels": 0,
+    "inv_labels": 14656,
+    "key_changes": 1346,
+    "labels": 14656,
+    "local_key_segments": 1611,
+    "raw_unnormalized": 0,
+    "transition_pairs": 13045
+   },
+   "tokens_per_param": 185.871,
+   "total_tokens_for_bound": 99069
+  },
+  "fold1": {
+   "free_params": {
+    "table1": {
+     "major": 223,
+     "minor": 134
+    },
+    "table2": 11,
+    "table3": 20,
+    "table4": 113,
+    "table5": {
+     "major": 6,
+     "minor": 6,
+     "none": 0
+    },
+    "table6": 4,
+    "total": 517
+   },
+   "passes_capacity_bound": true,
+   "per_table_free_params": {
+    "table1": 357,
+    "table2": 11,
+    "table3": 20,
+    "table4": 113,
+    "table5": 12,
+    "table6": 4
+   },
+   "per_table_tokens": {
+    "table1": 13238,
+    "table2": 14656,
+    "table3": 1418,
+    "table4": 14916,
+    "table5": 1678,
+    "table6": 53696
+   },
+   "per_table_tokens_per_param": {
+    "table1": 37.08,
+    "table2": 1332.36,
+    "table3": 70.9,
+    "table4": 132.0,
+    "table5": 139.83,
+    "table6": 13424.0
+   },
+   "table1": {
+    "distinct_estimated_rows": {
+     "major": 55,
+     "minor": 62
+    },
+    "distinct_from_contexts": {
+     "major": 114,
+     "minor": 140
+    },
+    "distinct_transition_pairs": {
+     "major": 676,
+     "minor": 803
+    },
+    "pair_count_histogram": {
+     "major": {
+      "1": 306,
+      "100+": 20,
+      "2-4": 170,
+      "20-49": 45,
+      "5-19": 121,
+      "50-99": 14
+     },
+     "minor": {
+      "1": 414,
+      "100+": 11,
+      "2-4": 229,
+      "20-49": 27,
+      "5-19": 112,
+      "50-99": 10
+     }
+    },
+    "reliable_rows": {
+     "major": 31,
+     "minor": 35
+    }
+   },
+   "table2": {
+    "cell_count_histogram": {
+     "100+": 6,
+     "2-4": 2,
+     "20-49": 4,
+     "5-19": 2
+    },
+    "distinct_cells": 14,
+    "pooled_buckets": 2,
+    "reliable_cells": 10
+   },
+   "table3": {
+    "class_count_histogram": {
+     "1": 27,
+     "100+": 3,
+     "2-4": 37,
+     "20-49": 8,
+     "5-19": 12,
+     "50-99": 7
+    },
+    "distinct_entry_classes": 94,
+    "pooled_buckets": 3,
+    "reliable_cells": 18
+   },
+   "table4": {
+    "distinct_contexts": 56,
+    "distinct_estimated_rows": 46,
+    "reliable_rows": 32
+   },
+   "table5": {
+    "declared_mode_contexts": {
+     "major": {
+      "cell_count_histogram": {
+       "100+": 3,
+       "20-49": 1,
+       "5-19": 3,
+       "50-99": 1
+      },
+      "distinct_cells": 8
+     },
+     "minor": {
+      "cell_count_histogram": {
+       "100+": 3,
+       "20-49": 1,
+       "5-19": 2,
+       "50-99": 2
+      },
+      "distinct_cells": 8
+     },
+     "none": {
+      "cell_count_histogram": {
+       "1": 1,
+       "2-4": 1
+      },
+      "distinct_cells": 2
+     }
+    }
+   },
+   "table6": {
+    "beat_classes": {
+     "downbeat": {
+      "boundary": 3427,
+      "prob": 0.9898902368573079,
+      "slots": 3462
+     },
+     "mid_strong": {
+      "boundary": 2719,
+      "prob": 0.8949967083607636,
+      "slots": 3038
+     },
+     "other_tactus": {
+      "boundary": 5321,
+      "prob": 0.7684864240323512,
+      "slots": 6924
+     },
+     "sub_tactus": {
+      "boundary": 2744,
+      "prob": 0.06813667063965037,
+      "slots": 40272
+     }
+    },
+    "excluded": {
+     "flagged": [
+      "bwv110.7",
+      "bwv112.5",
+      "bwv113.8",
+      "bwv123.6",
+      "bwv140.7",
+      "bwv274",
+      "bwv384"
+     ],
+     "meter": [
+      "bwv304",
+      "bwv362"
+     ],
+     "no_meter": []
+    },
+    "out_of_grid_label_starts": 1,
+    "pieces_counted": 251
+   },
+   "tokens": {
+    "boundary_slots": 53696,
+    "indeterminate_mode_labels": 0,
+    "inv_labels": 14916,
+    "key_changes": 1418,
+    "labels": 14916,
+    "local_key_segments": 1678,
+    "raw_unnormalized": 0,
+    "transition_pairs": 13238
+   },
+   "tokens_per_param": 192.654,
+   "total_tokens_for_bound": 99602
+  },
+  "fold2": {
+   "free_params": {
+    "table1": {
+     "major": 232,
+     "minor": 130
+    },
+    "table2": 11,
+    "table3": 21,
+    "table4": 109,
+    "table5": {
+     "major": 6,
+     "minor": 7,
+     "none": 0
+    },
+    "table6": 4,
+    "total": 520
+   },
+   "passes_capacity_bound": true,
+   "per_table_free_params": {
+    "table1": 362,
+    "table2": 11,
+    "table3": 21,
+    "table4": 109,
+    "table5": 13,
+    "table6": 4
+   },
+   "per_table_tokens": {
+    "table1": 13173,
+    "table2": 14544,
+    "table3": 1371,
+    "table4": 14803,
+    "table5": 1630,
+    "table6": 54128
+   },
+   "per_table_tokens_per_param": {
+    "table1": 36.39,
+    "table2": 1322.18,
+    "table3": 65.29,
+    "table4": 135.81,
+    "table5": 125.38,
+    "table6": 13532.0
+   },
+   "table1": {
+    "distinct_estimated_rows": {
+     "major": 57,
+     "minor": 56
+    },
+    "distinct_from_contexts": {
+     "major": 115,
+     "minor": 140
+    },
+    "distinct_transition_pairs": {
+     "major": 671,
+     "minor": 786
+    },
+    "pair_count_histogram": {
+     "major": {
+      "1": 301,
+      "100+": 19,
+      "2-4": 174,
+      "20-49": 45,
+      "5-19": 116,
+      "50-99": 16
+     },
+     "minor": {
+      "1": 406,
+      "100+": 11,
+      "2-4": 226,
+      "20-49": 27,
+      "5-19": 107,
+      "50-99": 9
+     }
+    },
+    "reliable_rows": {
+     "major": 32,
+     "minor": 31
+    }
+   },
+   "table2": {
+    "cell_count_histogram": {
+     "100+": 6,
+     "2-4": 2,
+     "20-49": 4,
+     "5-19": 2
+    },
+    "distinct_cells": 14,
+    "pooled_buckets": 2,
+    "reliable_cells": 10
+   },
+   "table3": {
+    "class_count_histogram": {
+     "1": 27,
+     "100+": 2,
+     "2-4": 37,
+     "20-49": 9,
+     "5-19": 13,
+     "50-99": 7
+    },
+    "distinct_entry_classes": 95,
+    "pooled_buckets": 4,
+    "reliable_cells": 18
+   },
+   "table4": {
+    "distinct_contexts": 56,
+    "distinct_estimated_rows": 46,
+    "reliable_rows": 32
+   },
+   "table5": {
+    "declared_mode_contexts": {
+     "major": {
+      "cell_count_histogram": {
+       "100+": 2,
+       "20-49": 1,
+       "5-19": 3,
+       "50-99": 2
+      },
+      "distinct_cells": 8
+     },
+     "minor": {
+      "cell_count_histogram": {
+       "100+": 3,
+       "20-49": 2,
+       "5-19": 1,
+       "50-99": 2
+      },
+      "distinct_cells": 8
+     },
+     "none": {
+      "cell_count_histogram": {
+       "1": 1,
+       "2-4": 1
+      },
+      "distinct_cells": 2
+     }
+    }
+   },
+   "table6": {
+    "beat_classes": {
+     "downbeat": {
+      "boundary": 3480,
+      "prob": 0.9925841414717627,
+      "slots": 3506
+     },
+     "mid_strong": {
+      "boundary": 2706,
+      "prob": 0.8978102189781022,
+      "slots": 3014
+     },
+     "other_tactus": {
+      "boundary": 5374,
+      "prob": 0.7664004563605248,
+      "slots": 7012
+     },
+     "sub_tactus": {
+      "boundary": 2688,
+      "prob": 0.06621342004138339,
+      "slots": 40596
+     }
+    },
+    "excluded": {
+     "flagged": [
+      "bwv110.7",
+      "bwv140.7",
+      "bwv274",
+      "bwv384"
+     ],
+     "meter": [
+      "bwv304",
+      "bwv362"
+     ],
+     "no_meter": []
+    },
+    "out_of_grid_label_starts": 1,
+    "pieces_counted": 253
+   },
+   "tokens": {
+    "boundary_slots": 54128,
+    "indeterminate_mode_labels": 0,
+    "inv_labels": 14803,
+    "key_changes": 1371,
+    "labels": 14803,
+    "local_key_segments": 1630,
+    "raw_unnormalized": 0,
+    "transition_pairs": 13173
+   },
+   "tokens_per_param": 191.633,
+   "total_tokens_for_bound": 99649
+  },
+  "fold3": {
+   "free_params": {
+    "table1": {
+     "major": 228,
+     "minor": 130
+    },
+    "table2": 10,
+    "table3": 21,
+    "table4": 116,
+    "table5": {
+     "major": 6,
+     "minor": 7,
+     "none": 0
+    },
+    "table6": 4,
+    "total": 522
+   },
+   "passes_capacity_bound": true,
+   "per_table_free_params": {
+    "table1": 358,
+    "table2": 10,
+    "table3": 21,
+    "table4": 116,
+    "table5": 13,
+    "table6": 4
+   },
+   "per_table_tokens": {
+    "table1": 13017,
+    "table2": 14381,
+    "table3": 1364,
+    "table4": 14642,
+    "table5": 1625,
+    "table6": 53840
+   },
+   "per_table_tokens_per_param": {
+    "table1": 36.36,
+    "table2": 1438.1,
+    "table3": 64.95,
+    "table4": 126.22,
+    "table5": 125.0,
+    "table6": 13460.0
+   },
+   "table1": {
+    "distinct_estimated_rows": {
+     "major": 56,
+     "minor": 59
+    },
+    "distinct_from_contexts": {
+     "major": 113,
+     "minor": 145
+    },
+    "distinct_transition_pairs": {
+     "major": 682,
+     "minor": 817
+    },
+    "pair_count_histogram": {
+     "major": {
+      "1": 317,
+      "100+": 19,
+      "2-4": 167,
+      "20-49": 41,
+      "5-19": 121,
+      "50-99": 17
+     },
+     "minor": {
+      "1": 438,
+      "100+": 10,
+      "2-4": 219,
+      "20-49": 25,
+      "5-19": 113,
+      "50-99": 12
+     }
+    },
+    "reliable_rows": {
+     "major": 32,
+     "minor": 34
+    }
+   },
+   "table2": {
+    "cell_count_histogram": {
+     "1": 1,
+     "100+": 6,
+     "2-4": 1,
+     "20-49": 3,
+     "5-19": 3
+    },
+    "distinct_cells": 14,
+    "pooled_buckets": 2,
+    "reliable_cells": 9
+   },
+   "table3": {
+    "class_count_histogram": {
+     "1": 29,
+     "100+": 3,
+     "2-4": 33,
+     "20-49": 9,
+     "5-19": 14,
+     "50-99": 6
+    },
+    "distinct_entry_classes": 94,
+    "pooled_buckets": 4,
+    "reliable_cells": 18
+   },
+   "table4": {
+    "distinct_contexts": 60,
+    "distinct_estimated_rows": 48,
+    "reliable_rows": 33
+   },
+   "table5": {
+    "declared_mode_contexts": {
+     "major": {
+      "cell_count_histogram": {
+       "100+": 3,
+       "2-4": 1,
+       "20-49": 1,
+       "5-19": 2,
+       "50-99": 1
+      },
+      "distinct_cells": 8
+     },
+     "minor": {
+      "cell_count_histogram": {
+       "100+": 3,
+       "20-49": 2,
+       "5-19": 1,
+       "50-99": 2
+      },
+      "distinct_cells": 8
+     },
+     "none": {
+      "cell_count_histogram": {
+       "1": 1,
+       "2-4": 1
+      },
+      "distinct_cells": 2
+     }
+    }
+   },
+   "table6": {
+    "beat_classes": {
+     "downbeat": {
+      "boundary": 3488,
+      "prob": 0.9914724275156339,
+      "slots": 3518
+     },
+     "mid_strong": {
+      "boundary": 2598,
+      "prob": 0.8940123881624226,
+      "slots": 2906
+     },
+     "other_tactus": {
+      "boundary": 5391,
+      "prob": 0.7662023877202956,
+      "slots": 7036
+     },
+     "sub_tactus": {
+      "boundary": 2617,
+      "prob": 0.06480931154036652,
+      "slots": 40380
+     }
+    },
+    "excluded": {
+     "flagged": [
+      "bwv112.5",
+      "bwv113.8",
+      "bwv123.6",
+      "bwv140.7",
+      "bwv384"
+     ],
+     "meter": [
+      "bwv362"
+     ],
+     "no_meter": []
+    },
+    "out_of_grid_label_starts": 0,
+    "pieces_counted": 255
+   },
+   "tokens": {
+    "boundary_slots": 53840,
+    "indeterminate_mode_labels": 0,
+    "inv_labels": 14642,
+    "key_changes": 1364,
+    "labels": 14642,
+    "local_key_segments": 1625,
+    "raw_unnormalized": 0,
+    "transition_pairs": 13017
+   },
+   "tokens_per_param": 189.404,
+   "total_tokens_for_bound": 98869
+  },
+  "fold4": {
+   "free_params": {
+    "table1": {
+     "major": 229,
+     "minor": 131
+    },
+    "table2": 10,
+    "table3": 21,
+    "table4": 120,
+    "table5": {
+     "major": 6,
+     "minor": 7
+    },
+    "table6": 4,
+    "total": 528
+   },
+   "passes_capacity_bound": true,
+   "per_table_free_params": {
+    "table1": 360,
+    "table2": 10,
+    "table3": 21,
+    "table4": 120,
+    "table5": 13,
+    "table6": 4
+   },
+   "per_table_tokens": {
+    "table1": 13015,
+    "table2": 14396,
+    "table3": 1381,
+    "table4": 14655,
+    "table5": 1640,
+    "table6": 53404
+   },
+   "per_table_tokens_per_param": {
+    "table1": 36.15,
+    "table2": 1439.6,
+    "table3": 65.76,
+    "table4": 122.12,
+    "table5": 126.15,
+    "table6": 13351.0
+   },
+   "table1": {
+    "distinct_estimated_rows": {
+     "major": 59,
+     "minor": 59
+    },
+    "distinct_from_contexts": {
+     "major": 120,
+     "minor": 143
+    },
+    "distinct_transition_pairs": {
+     "major": 680,
+     "minor": 789
+    },
+    "pair_count_histogram": {
+     "major": {
+      "1": 308,
+      "100+": 18,
+      "2-4": 178,
+      "20-49": 41,
+      "5-19": 119,
+      "50-99": 16
+     },
+     "minor": {
+      "1": 392,
+      "100+": 11,
+      "2-4": 240,
+      "20-49": 26,
+      "5-19": 109,
+      "50-99": 11
+     }
+    },
+    "reliable_rows": {
+     "major": 33,
+     "minor": 35
+    }
+   },
+   "table2": {
+    "cell_count_histogram": {
+     "100+": 6,
+     "2-4": 2,
+     "20-49": 4,
+     "5-19": 2
+    },
+    "distinct_cells": 14,
+    "pooled_buckets": 1,
+    "reliable_cells": 10
+   },
+   "table3": {
+    "class_count_histogram": {
+     "1": 29,
+     "100+": 4,
+     "2-4": 36,
+     "20-49": 7,
+     "5-19": 13,
+     "50-99": 7
+    },
+    "distinct_entry_classes": 96,
+    "pooled_buckets": 4,
+    "reliable_cells": 18
+   },
+   "table4": {
+    "distinct_contexts": 59,
+    "distinct_estimated_rows": 49,
+    "reliable_rows": 34
+   },
+   "table5": {
+    "declared_mode_contexts": {
+     "major": {
+      "cell_count_histogram": {
+       "100+": 2,
+       "20-49": 1,
+       "5-19": 3,
+       "50-99": 2
+      },
+      "distinct_cells": 8
+     },
+     "minor": {
+      "cell_count_histogram": {
+       "100+": 3,
+       "20-49": 2,
+       "5-19": 1,
+       "50-99": 2
+      },
+      "distinct_cells": 8
+     }
+    }
+   },
+   "table6": {
+    "beat_classes": {
+     "downbeat": {
+      "boundary": 3452,
+      "prob": 0.9910996267585415,
+      "slots": 3483
+     },
+     "mid_strong": {
+      "boundary": 2614,
+      "prob": 0.9007580978635424,
+      "slots": 2902
+     },
+     "other_tactus": {
+      "boundary": 5348,
+      "prob": 0.7677289692793569,
+      "slots": 6966
+     },
+     "sub_tactus": {
+      "boundary": 2607,
+      "prob": 0.0650887573964497,
+      "slots": 40053
+     }
+    },
+    "excluded": {
+     "flagged": [
+      "bwv110.7",
+      "bwv112.5",
+      "bwv113.8",
+      "bwv123.6",
+      "bwv274",
+      "bwv384"
+     ],
+     "meter": [
+      "bwv304",
+      "bwv362"
+     ],
+     "no_meter": []
+    },
+    "out_of_grid_label_starts": 1,
+    "pieces_counted": 251
+   },
+   "tokens": {
+    "boundary_slots": 53404,
+    "indeterminate_mode_labels": 0,
+    "inv_labels": 14655,
+    "key_changes": 1381,
+    "labels": 14655,
+    "local_key_segments": 1640,
+    "raw_unnormalized": 0,
+    "transition_pairs": 13015
+   },
+   "tokens_per_param": 186.536,
+   "total_tokens_for_bound": 98491
+  }
+ },
+ "provenance": {
+  "constants": {
+   "alpha": 1.0,
+   "n_folds": 5,
+   "threshold": 20,
+   "tokens_per_param_min": 10
+  },
+  "corpus_git_hash": "01edaab7bccd963fdd2310fc3a790a249cfcdfb1",
+  "corpus_xml_dir": "tools/corpus",
+  "fold_artifact": "tools/joint_estimator/fold_assignment.json",
+  "generator": "tools/joint_estimator/gen_label_tables.py",
+  "ground_truth_substrate": "dcml_parser.load_wir_regions (OI-142-corrected)",
+  "normalization_version": "label-fit-v1 (OI-186a; quality from figure+case)",
+  "oi184_flagged_excluded_from_boundary": [
+   "bwv110.7",
+   "bwv112.5",
+   "bwv113.8",
+   "bwv123.6",
+   "bwv140.7",
+   "bwv274",
+   "bwv384"
+  ],
+  "protocol": "cowork_prefit_gates.md (OI-176/OI-177), user-ratified 2026-07-19",
+  "wir_dir": "tools/dcml/when_in_rome",
+  "xml_elements_used": [
+   "<key><fifths>",
+   "<key><mode>",
+   "<time><beats>",
+   "<time><beat-type>"
+  ]
+ },
+ "purpose": "OI-177 pre-fit parameter inventory for the label-side table fit. Per fold + all-326: table dimensions, raw-cell histograms, own-MLE vs pooled cell counts, effective free parameters, training tokens, tokens/params>=10 check.",
+ "sensitive_cells_desk_sim_4_3": {
+  "V6_to_vihalfdim": {
+   "description": "V6 -> vi half-dim (deg V maj fig '6' -> deg VI min color '/o')",
+   "disposition_all326": "pooled (<20 -> declared parent)",
+   "normalized_class_count_by_train_complement": {
+    "fold0": 2,
+    "fold1": 2,
+    "fold2": 2,
+    "fold3": 2,
+    "fold4": 0
+   },
+   "normalized_class_count_overall": 2,
+   "note_disposition_is_aggregate": "the count and disposition are the AGGREGATE over the predicate's constituent fine transitions; the fitted table gates each FINE (from,to) cell individually (below).",
+   "raw_label_count_by_fold_holdout": {
+    "0": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 2
+   },
+   "raw_label_count_overall": 2,
+   "top_constituent_fine_transitions": [
+    {
+     "fine_cell_own_MLE": false,
+     "fitted": {
+      "how": "pooled -> BASE",
+      "prob": 0.096429
+     },
+     "mode": "minor",
+     "raw_count": 2,
+     "transition": "V | Maj | 6 |   =>  VI | HalfDim7 | 7 | "
+    }
+   ]
+  },
+  "V_to_vi": {
+   "description": "V (maj, not applied) -> VI (any, not applied) — deceptive",
+   "disposition_all326": "own_MLE (>=20)",
+   "normalized_class_count_by_train_complement": {
+    "fold0": 188,
+    "fold1": 181,
+    "fold2": 187,
+    "fold3": 184,
+    "fold4": 200
+   },
+   "normalized_class_count_overall": 235,
+   "normalized_vs_raw_delta_note": "normalized count is raw_count-1: bwv90.5 'V->bVI' — the fit-time normalization preserves the bVI accidental (#12), so V->bVI is NOT a diatonic deceptive V->vi; the count inventory's compare_rn parse folds bVI to VI.",
+   "note_disposition_is_aggregate": "the count and disposition are the AGGREGATE over the predicate's constituent fine transitions; the fitted table gates each FINE (from,to) cell individually (below).",
+   "raw_label_count_by_fold_holdout": {
+    "0": 47,
+    "1": 55,
+    "2": 48,
+    "3": 51,
+    "4": 35
+   },
+   "raw_label_count_overall": 236,
+   "top_constituent_fine_transitions": [
+    {
+     "fine_cell_own_MLE": true,
+     "fitted": {
+      "how": "own_MLE",
+      "prob": 0.112696
+     },
+     "mode": "major",
+     "raw_count": 79,
+     "transition": "V | Dom7 | 7 |   =>  VI | Min |  | "
+    },
+    {
+     "fine_cell_own_MLE": true,
+     "fitted": {
+      "how": "own_MLE",
+      "prob": 0.127706
+     },
+     "mode": "minor",
+     "raw_count": 59,
+     "transition": "V | Dom7 | 7 |   =>  VI | Maj |  | "
+    },
+    {
+     "fine_cell_own_MLE": true,
+     "fitted": {
+      "how": "own_MLE",
+      "prob": 0.018519
+     },
+     "mode": "major",
+     "raw_count": 25,
+     "transition": "V | Maj |  |   =>  VI | Min |  | "
+    },
+    {
+     "fine_cell_own_MLE": false,
+     "fitted": {
+      "how": "pooled -> BASE",
+      "prob": 0.119097
+     },
+     "mode": "major",
+     "raw_count": 13,
+     "transition": "V | Maj | 6 |   =>  VI | Min |  | "
+    },
+    {
+     "fine_cell_own_MLE": false,
+     "fitted": {
+      "how": "pooled -> BASE",
+      "prob": 0.070215
+     },
+     "mode": "minor",
+     "raw_count": 9,
+     "transition": "V | Maj |  |   =>  VI | Maj |  | "
+    },
+    {
+     "fine_cell_own_MLE": false,
+     "fitted": {
+      "how": "pooled -> BASE",
+      "prob": 0.075606
+     },
+     "mode": "major",
+     "raw_count": 6,
+     "transition": "V | Dom7 | 7 |   =>  VI | Min | 6 | "
+    }
+   ]
+  },
+  "applied_not_resolving_to_target": {
+   "description": "applied chord -> a chord whose degree != target (aggregate)",
+   "disposition_all326": "own_MLE (>=20)",
+   "normalized_class_count_by_train_complement": {
+    "fold0": 124,
+    "fold1": 132,
+    "fold2": 119,
+    "fold3": 119,
+    "fold4": 126
+   },
+   "normalized_class_count_overall": 155,
+   "normalized_vs_raw_delta_note": "normalized count is raw_count+1: bwv60.5 'It6/ii -> V7/ii' — the fit-time normalization maps It6 to the AugSixth class (dispatch-mandated), exposing the applied It6/ii; the count inventory's compare_rn parse leaves It6 unparseable (label_components None) so it was missed.",
+   "note_disposition_is_aggregate": "the count and disposition are the AGGREGATE over the predicate's constituent fine transitions; the fitted table gates each FINE (from,to) cell individually (below).",
+   "raw_label_count_by_fold_holdout": {
+    "0": 31,
+    "1": 23,
+    "2": 35,
+    "3": 36,
+    "4": 29
+   },
+   "raw_label_count_overall": 154,
+   "top_constituent_fine_transitions": [
+    {
+     "fine_cell_own_MLE": false,
+     "fitted": {
+      "how": "pooled -> BASE",
+      "prob": 0.444444
+     },
+     "mode": "major",
+     "raw_count": 8,
+     "transition": "V | Maj | 6 | vi  =>  V | Dom7 | 6/5 | vi"
+    },
+    {
+     "fine_cell_own_MLE": false,
+     "fitted": {
+      "how": "pooled -> «invfree» V | Dom7 |  | iv",
+      "prob": 0.005017
+     },
+     "mode": "minor",
+     "raw_count": 6,
+     "transition": "V | Maj | 6 | iv  =>  V | Dom7 | 6/5 | iv"
+    },
+    {
+     "fine_cell_own_MLE": false,
+     "fitted": {
+      "how": "pooled -> BASE",
+      "prob": 1.0
+     },
+     "mode": "minor",
+     "raw_count": 5,
+     "transition": "V | Maj | 6 | III  =>  V | Dom7 | 6/5 | III"
+    },
+    {
+     "fine_cell_own_MLE": false,
+     "fitted": {
+      "how": "pooled -> BASE",
+      "prob": 0.285714
+     },
+     "mode": "major",
+     "raw_count": 5,
+     "transition": "V | Dom7 | 7 | IV  =>  II | Min |  | "
+    },
+    {
+     "fine_cell_own_MLE": false,
+     "fitted": {
+      "how": "pooled -> BASE",
+      "prob": 0.05276
+     },
+     "mode": "minor",
+     "raw_count": 4,
+     "transition": "V | Maj | 6 | VII  =>  V | Dom7 | 6/5 | VII"
+    },
+    {
+     "fine_cell_own_MLE": false,
+     "fitted": {
+      "how": "pooled -> BASE",
+      "prob": 0.25
+     },
+     "mode": "major",
+     "raw_count": 4,
+     "transition": "V | Dom7 | 2 | IV  =>  V | Dom7 | 4/3 | IV"
+    }
+   ]
+  },
+  "i_to_IVraised6": {
+   "description": "minor key: i -> IV (raised 6th, maj color)",
+   "disposition_all326": "own_MLE (>=20)",
+   "normalized_class_count_by_train_complement": {
+    "fold0": 35,
+    "fold1": 33,
+    "fold2": 36,
+    "fold3": 30,
+    "fold4": 26
+   },
+   "normalized_class_count_overall": 40,
+   "note_disposition_is_aggregate": "the count and disposition are the AGGREGATE over the predicate's constituent fine transitions; the fitted table gates each FINE (from,to) cell individually (below).",
+   "raw_label_count_by_fold_holdout": {
+    "0": 5,
+    "1": 7,
+    "2": 4,
+    "3": 10,
+    "4": 14
+   },
+   "raw_label_count_overall": 40,
+   "top_constituent_fine_transitions": [
+    {
+     "fine_cell_own_MLE": false,
+     "fitted": {
+      "how": "pooled -> BASE",
+      "prob": 0.145872
+     },
+     "mode": "minor",
+     "raw_count": 12,
+     "transition": "I | Min |  |   =>  IV | Dom7 | 6/5 | "
+    },
+    {
+     "fine_cell_own_MLE": false,
+     "fitted": {
+      "how": "pooled -> BASE",
+      "prob": 0.25009
+     },
+     "mode": "minor",
+     "raw_count": 10,
+     "transition": "I | Min | 6 |   =>  IV | Dom7 | 2 | "
+    },
+    {
+     "fine_cell_own_MLE": false,
+     "fitted": {
+      "how": "pooled -> BASE",
+      "prob": 0.145872
+     },
+     "mode": "minor",
+     "raw_count": 8,
+     "transition": "I | Min |  |   =>  IV | Maj | 6 | "
+    },
+    {
+     "fine_cell_own_MLE": false,
+     "fitted": {
+      "how": "pooled -> «family» IV | triad |  | ",
+      "prob": 0.043323
+     },
+     "mode": "minor",
+     "raw_count": 5,
+     "transition": "I | Min | 6 |   =>  IV | Maj | 6 | "
+    },
+    {
+     "fine_cell_own_MLE": false,
+     "fitted": {
+      "how": "pooled -> BASE",
+      "prob": 0.145872
+     },
+     "mode": "minor",
+     "raw_count": 2,
+     "transition": "I | Min |  |   =>  IV | Dom7 | 7 | "
+    },
+    {
+     "fine_cell_own_MLE": false,
+     "fitted": {
+      "how": "pooled -> «family» IV | triad |  | ",
+      "prob": 0.043323
+     },
+     "mode": "minor",
+     "raw_count": 1,
+     "transition": "I | Min | 6 |   =>  IV | Maj |  | "
+    }
+   ]
+  },
+  "vi_to_appliedTo_vi": {
+   "description": "vi -> any chord applied to VI (target base VI)",
+   "disposition_all326": "pooled (<20 -> declared parent)",
+   "normalized_class_count_by_train_complement": {
+    "fold0": 9,
+    "fold1": 10,
+    "fold2": 8,
+    "fold3": 9,
+    "fold4": 8
+   },
+   "normalized_class_count_overall": 11,
+   "note_disposition_is_aggregate": "the count and disposition are the AGGREGATE over the predicate's constituent fine transitions; the fitted table gates each FINE (from,to) cell individually (below).",
+   "raw_label_count_by_fold_holdout": {
+    "0": 2,
+    "1": 1,
+    "2": 3,
+    "3": 2,
+    "4": 3
+   },
+   "raw_label_count_overall": 11,
+   "top_constituent_fine_transitions": [
+    {
+     "fine_cell_own_MLE": false,
+     "fitted": {
+      "how": "pooled -> BASE",
+      "prob": 0.280553
+     },
+     "mode": "major",
+     "raw_count": 2,
+     "transition": "VI | Min |  |   =>  VII | Dim | 6 | vi"
+    },
+    {
+     "fine_cell_own_MLE": false,
+     "fitted": {
+      "how": "pooled -> BASE",
+      "prob": 0.280553
+     },
+     "mode": "major",
+     "raw_count": 2,
+     "transition": "VI | Min |  |   =>  V | Maj |  | vi"
+    },
+    {
+     "fine_cell_own_MLE": false,
+     "fitted": {
+      "how": "pooled -> BASE",
+      "prob": 1.0
+     },
+     "mode": "major",
+     "raw_count": 1,
+     "transition": "VI | Min | 6 |   =>  V | Maj |  | vi"
+    },
+    {
+     "fine_cell_own_MLE": false,
+     "fitted": {
+      "how": "pooled -> BASE",
+      "prob": 1.0
+     },
+     "mode": "major",
+     "raw_count": 1,
+     "transition": "VI | Min | 6 |   =>  VII | Dim7 | 7 | vi"
+    },
+    {
+     "fine_cell_own_MLE": false,
+     "fitted": {
+      "how": "pooled -> BASE",
+      "prob": 0.280553
+     },
+     "mode": "major",
+     "raw_count": 1,
+     "transition": "VI | Min |  |   =>  IV | Dom7 | 6/5 | vi"
+    },
+    {
+     "fine_cell_own_MLE": false,
+     "fitted": {
+      "how": "pooled -> BASE",
+      "prob": 0.280553
+     },
+     "mode": "major",
+     "raw_count": 1,
+     "transition": "VI | Min |  |   =>  V | Dom7 | 4/3 | vi"
+    }
+   ]
+  },
+  "vihalfdim_to_IV": {
+   "description": "vi half-dim -> IV (deg VI '/o' -> deg IV maj)",
+   "disposition_all326": "pooled (<20 -> declared parent)",
+   "normalized_class_count_by_train_complement": {
+    "fold0": 3,
+    "fold1": 2,
+    "fold2": 2,
+    "fold3": 3,
+    "fold4": 2
+   },
+   "normalized_class_count_overall": 3,
+   "note_disposition_is_aggregate": "the count and disposition are the AGGREGATE over the predicate's constituent fine transitions; the fitted table gates each FINE (from,to) cell individually (below).",
+   "raw_label_count_by_fold_holdout": {
+    "0": 0,
+    "1": 1,
+    "2": 1,
+    "3": 0,
+    "4": 1
+   },
+   "raw_label_count_overall": 3,
+   "top_constituent_fine_transitions": [
+    {
+     "fine_cell_own_MLE": false,
+     "fitted": {
+      "how": "pooled -> BASE",
+      "prob": 1.0
+     },
+     "mode": "minor",
+     "raw_count": 2,
+     "transition": "VI | HalfDim7 | 7 |   =>  IV | Maj | 6 | "
+    },
+    {
+     "fine_cell_own_MLE": false,
+     "fitted": {
+      "how": "pooled -> BASE",
+      "prob": 1.0
+     },
+     "mode": "minor",
+     "raw_count": 1,
+     "transition": "VI | HalfDim7 | 7 |   =>  IV | Dom7 | 6/5 | "
+    }
+   ]
+  }
+ }
+}

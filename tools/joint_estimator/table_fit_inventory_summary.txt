@@ -1,0 +1,36 @@
+=== OI-177 label-side table-fit parameter inventory — summary ===
+corpus git_hash: 01edaab7bccd963fdd2310fc3a790a249cfcdfb1
+reconcile (all-326): labels=18418 trans=16372 keychg=1720  ->  ALL_OK=True
+
+-- capacity bound (tokens/params >= 10) --
+fit        tokens  params  tok/param  pass
+fold0       99069     533     185.87  True
+fold1       99602     517     192.65  True
+fold2       99649     520     191.63  True
+fold3       98869     522     189.40  True
+fold4       98491     528     186.54  True
+all        123920     581     213.29  True
+
+-- all-326 free params by table --
+  table1 major=258 minor=153; table2=11 table3=21 table4=121; table5={'minor': 7, 'major': 6, 'none': 0}; table6=4; TOTAL=581
+
+-- hand checks (all-326 raw MLE) --
+  V->I (major)    : 377/1350 = 0.2793
+  i->V (minor)    : 221/1283 = 0.1723
+  V->vi (major)   : 25/1350 = 0.0185
+
+-- table 6 boundary by beat class (all-326) --
+  downbeat       boundary=  4335 slots=   4374 P=0.9911
+  mid_strong     boundary=  3311 slots=   3696 P=0.8958
+  other_tactus   boundary=  6710 slots=   8748 P=0.7670
+  sub_tactus     boundary=  3311 slots=  50454 P=0.0656
+  pieces_counted=317 out_of_grid_starts=1
+  excluded: flagged=7 meter=['bwv304', 'bwv362'] no_meter=[]
+
+-- sensitive cells (desk-sim 4.3): raw-label(count-inv) / normalized / disposition --
+  V6_to_vihalfdim                    raw=   2  norm=   2  pooled (<20 -> declared parent)
+  vihalfdim_to_IV                    raw=   3  norm=   3  pooled (<20 -> declared parent)
+  i_to_IVraised6                     raw=  40  norm=  40  own_MLE (>=20)
+  vi_to_appliedTo_vi                 raw=  11  norm=  11  pooled (<20 -> declared parent)
+  applied_not_resolving_to_target    raw= 154  norm= 155  own_MLE (>=20)  [delta explained]
+  V_to_vi                            raw= 236  norm= 235  own_MLE (>=20)  [delta explained]

@@ -67,10 +67,22 @@ guard) starts appearing here from the build dispatch on.**
 counted — three sit below the ratified threshold 20, as the desk sim anticipated). **NEW ROW OI-186**
 (CC-found: `compare_rn.extract_quality` coarse on WiR `/o` and figured-bass slashes — binds the
 fit-event normalization; a separate read-only check owed on whether rn_agree grading is affected) —
-the row is on disk, rides the next commit. **The ACTIVE dispatch is `cc_instruction_wir_alignment_probe.md`** — the OI-184 establishment probe
-(read-only, measure-only; its commit also carries the on-disk OI-186 row and this state line). After
-its report is verified: the fit-event dispatch under the ratified OI-176/OI-177 protocols (its
-normalization design must respect OI-186(a)). OI-179 (the ground-truth ceiling): the literature half is ANSWERED — no
+the row is on disk, rides the next commit. The OI-184 probe ran and is verified at the objects (`01edaab7bc`): **the mapping convention is
+ESTABLISHED — correct at measure bodies (anacrusis pieces peak at offset 0, 206/207; ratified columns
+unaffected), with the WiR m0 pickup label systematically displaced (beat−1)·480 in all 207 anacrusis
+pieces and 7 pieces carrying >2pp LOCAL misalignment (incl. bwv110.7 — desk-sim §4.5 resolved as
+local)**; OI-184 flipped ✅ with consequences on the row (pickup-aware count extraction at the
+fit-event layer; the 7 flagged pieces; the deferred substrate-correction option). **The ACTIVE
+dispatch is `cc_instruction_label_table_fit.md`** — the fit event part 1 of 2 (label-side tables:
+chord transition, key transition, entry, bass/inversion, signature prior, boundary-by-beat-class),
+fit per training fold + all-326 under the ratified OI-176/OI-177 protocols, with the OI-186(a)
+fit-layer normalization (quality from figure+case, never `extract_quality`) and the OI-184
+consequences (pickup measures + the 7 flagged pieces excluded from the tick-anchored boundary
+counts; label-sequence tables unaffected). NO decoding, NO evaluation — tables only, frozen.
+**Declared staging:** part 2 (the note-side emission/spelling tables — note-level extraction) is
+its own next dispatch; then the A-module build arc opens under the OI-180 sanction, whose first act
+includes the §4.3 sensitive-cell probe against the FITTED tables (OI-177 item 4, prediction-first).
+The OI-184 row flip + this state line ride part 1's commit. OI-179 (the ground-truth ceiling): the literature half is ANSWERED — no
 published inter-annotator agreement figure exists for classical symbolic Roman-numeral analysis
 anywhere in the field, so the 87-stem BCMH measurement would be novel; BCMH is inspected at the files
 (independent origin, single reading, NO annotator record anywhere; the 2023 JEP:HPP Method section
