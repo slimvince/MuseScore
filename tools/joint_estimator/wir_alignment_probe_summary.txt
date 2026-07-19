@@ -1,0 +1,47 @@
+=== OI-184 WiR anacrusis-alignment probe — summary ===
+corpus git_hash: dcd1b64349f9a979784a2a42b30bac1b96aca45f
+coverage: 326 covered / 352 ours-files (no_annotation=26, wir_parse_fail=0)
+
+-- establishment (#19) --
+offset-0 aggregate root-agree: 5468080/8293680 = 65.9307%
+reconciles to committed block-(A) Default (5468080/8293680): True
+per-piece offset-0 == pinned build_piece_grid on all covered stems: True
+
+-- anacrusis 2x2 (ours_pickup x wir_m0) --
+both=207  ours_pickup_only=1  wir_m0_only=12  neither=106  total=326
+mismatched pairs (13): bwv112.5, bwv113.8, bwv190.7, bwv20.7, bwv244.10, bwv245.40, bwv274, bwv277, bwv279, bwv281, bwv384, bwv398, bwv62.6
+
+-- argmax offset distribution (count of pieces best at each offset) --
+  offset    -960    -480       0     480     960
+ overall       1       2     315       4       4
+    both       0       1     206       0       0
+ours_pickup_only       0       0       1       0       0
+wir_m0_only       0       1       8       1       2
+ neither       1       0     100       3       2
+-- by ours_pickup --
+    ours_pickup       0       1     207       0       0
+ no_ours_pickup       1       1     108       4       4
+
+-- pieces with argmax margin over offset 0 > 2.0 pp: 7 --
+        bwv384  class=wir_m0_only      argmax=  960 margin=13.125pp
+        bwv274  class=wir_m0_only      argmax=  960 margin=10.8333pp
+      bwv140.7  class=neither          argmax= -960 margin=9.0909pp
+      bwv113.8  class=wir_m0_only      argmax= -480 margin=6.2103pp
+      bwv110.7  class=both             argmax= -480 margin=4.6512pp
+      bwv123.6  class=neither          argmax=  480 margin=2.7961pp
+      bwv112.5  class=wir_m0_only      argmax=  480 margin=2.1916pp
+
+-- pickup-chord mapping (sharpest form; MASKED by the global sweep) --
+pieces with both m0: 207  | WiR m0 chord lands: inside=12 overshoot=195 before=0
+WiR m0 first-beat distribution: {'3.0': 12, '4.0': 195}
+displacement (ticks) distribution: {'960': 12, '1440': 195}
+
+-- named case bwv110.7 (desk-sim §4.5) --
+  class=both  ours_min_m=0  wir_min_m=0  m0_span=480  derived_measure=1920.0
+    offset    agree   scored      pct
+      -960     3840    20160  19.0476
+      -480     6240    20640  30.2326
+         0     5280    20640  25.5814
+       480     3840    20160  19.0476
+       960     2880    19680  14.6341
+  argmax offset = -480  (margin over 0 = 4.6512 pp)
