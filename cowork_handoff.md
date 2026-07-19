@@ -30,23 +30,29 @@ prior is a weak FITTED soft prior with NO conditional gate — its influence sel
 passages by the probability calculus; the signature-influence rate is measured by ablation and
 published at every fit; the declared-mode wall is retired.
 
-**★ THE IMMEDIATE NEXT ACTION — the desk simulation (factorization doc §6; the #17c stage; NO CODE).**
-Ten paper traces against the ratified specification: five synthetic (the authentic cadence; the
-relative-pair ambiguity; the Dorian-notated opening; the tonicization; the deceptive cadence) and five
-corpus cases (`bwv145.5@12960` — must come out right WITHOUT the OI-168 special form; `bwv352@1440`
-share-tone; `bwv10.7@36000` segmentation over-grab; one relative-major/minor failure drawn from the
-key-local residual; one genuinely modal chorale). Provisional table values are DECLARED provisional;
-answer FIRST "does the mechanism fire on this case?", THEN "which term moves, by how much?". A desk-sim
-surprise is the stage doing its job — record it, diagnose it, fix the SPECIFICATION, re-ratify if
-structural. **THEN the pre-fit gates, Cowork-drafted for user ratification: OI-176 (held-out split /
-k-fold), OI-177 (capacity budget), OI-178 (the robust-stop architecture-adoption protocol), OI-180
-(the dual-path sanction + retirement map).** The funnel stays SHUT — no build until the desk
-simulation and the gates pass.
+**★ THE DESK SIMULATION IS RUN AND USER-RATIFIED (2026-07-19, this session's second act —
+`cowork_factorization_desk_simulation.md`).** All ten §6 traces on paper, every corpus fact verified at
+a committed source (incl. the OI-142 +2 offset on bwv145.5). Nine of ten pass as specified — including
+C1 `bwv145.5@12960` right WITHOUT the OI-168 special form, and C4 `bwv110.7@2880` flipping to the GT
+key by the designed mechanisms. The tenth (C3 `bwv10.7@36000`) surfaced the one surprise (#13, the
+stage working): the score form's FACTOR GRANULARITY was under-specified (per-segment factors reward
+merging — semi-Markov length bias) — **amended with ratification** (factorization doc §2: bass per
+event, missing-tone penalty per event of length). **Also settled with ratification: the
+signature/declared-mode prior is INITIAL-STATE-ONLY**, re-anchored at a notated signature change
+(factorization doc §3.10). OI-181 ✅; new rows OI-184 (WiR anacrusis alignment — establish before fit
+counts), OI-185 (bwv352 b4 bass check); the §4.3 sensitive-cell record feeds OI-177.
 
-**★ STATE / PENDING.** The commit dispatch **`cc_instruction_design_pass_commit.md`** is drafted at
-this close — if not yet run, run it FIRST (it commits this session's documents and moves the
-superseded 2026-07-17 block below to `cowork_handoff_archive.md`, verbatim, with the doc-split
-reconciliation gate). OI-179 (the ground-truth ceiling): the literature half is ANSWERED — no
+**★ THE IMMEDIATE NEXT ACTION — the pre-fit gates, Cowork-drafted for user ratification: OI-176
+(held-out split / k-fold), OI-177 (capacity budget, incl. the desk sim's §4.3 sensitive-cell/pooling
+record), OI-178 (the robust-stop architecture-adoption protocol), OI-180 (the dual-path sanction +
+retirement map).** The funnel stays SHUT — no build until the gates pass.
+
+**★ STATE / PENDING.** The design-pass commit dispatch ran and was verified at the objects
+(`910a998e9b`, pushed to origin). The desk-sim commit dispatch **`cc_instruction_desk_sim_commit.md`**
+is drafted — if not yet run, run it FIRST (it commits the desk-sim document, the ratified spec
+amendments, and the register/STATUS/handoff updates; the §4.6 erratum's tracked record is the desk-sim
+doc itself — the measurement report stays untracked per `/cc_*.md`, its on-disk courtesy note
+uncommitted). OI-179 (the ground-truth ceiling): the literature half is ANSWERED — no
 published inter-annotator agreement figure exists for classical symbolic Roman-numeral analysis
 anywhere in the field, so the 87-stem BCMH measurement would be novel; BCMH is inspected at the files
 (independent origin, single reading, NO annotator record anywhere; the 2023 JEP:HPP Method section
@@ -62,8 +68,8 @@ abbreviations. Every behavior change is user-ratified (#14). The presentation-la
 attached to decisions (1) and (4) — the published un-rounded modal reading and the published ornament
 labels — are PART of the ratified record; do not let them drop out of the build.
 
-*(The 2026-07-17 session-close block below is SUPERSEDED by this one; the commit dispatch moves it to
-the archive.)*
+*(The superseded 2026-07-17 session-close block was moved verbatim to `cowork_handoff_archive.md` by
+the 2026-07-19 design-pass commit `910a998e9b`.)*
 
 ---
 

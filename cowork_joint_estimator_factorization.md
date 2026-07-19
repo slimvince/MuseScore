@@ -2,8 +2,11 @@
 
 **Ratified by the user 2026-07-19** — the variable structure (§1), the score form (§2), the factor
 roster (§3), the premise ledger P1–P8 (§4), the decode plan (§5), and the desk-simulation forms and
-case list (§6) are the governing structure. Values remain unfit; the funnel's next stage is the §6
-desk simulation, then the pre-fit gates (OI-176/OI-177/OI-178/OI-180).
+case list (§6) are the governing structure. Values remain unfit. **The §6 desk simulation has RUN and
+its findings are user-ratified (2026-07-19, same day — `cowork_factorization_desk_simulation.md`):**
+nine of ten traces pass as specified; the amendments it produced (the §2 factor-granularity rule and
+the §3.10 initial-state-only prior) are incorporated below with dated marks. The funnel's next stage
+is the pre-fit gates (OI-176/OI-177/OI-178/OI-180).
 
 **Author:** Cowork, 2026-07-19, at the user's direction. **Standing:** the structure-design step of
 `cowork_joint_estimator_architecture.md` §4 (step 2), building on the five ratified §5a decisions and
@@ -56,6 +59,17 @@ with the identity-weight setting (all `w = 1`) being exactly the generative prod
 ablation baseline (ratified). The weight vector is small (one weight per factor, roughly ten), fit by
 convex conditional likelihood under the held-out gate.
 
+**Factor granularity (amendment, user-ratified 2026-07-19 at the desk simulation —
+`cowork_factorization_desk_simulation.md` §4.1, the `bwv10.7@36000` length-bias finding):** the
+per-segment sums above are evaluated at these granularities — the pitch and spelling emissions **per
+tone**; the BASS factor **per event** (each event's sounding bass against the segment's chord — Ni's
+published per-frame form); the missing-template-tone penalty inside `P_emit` **normalized per event of
+segment length** (a segment missing a template tone pays in proportion to how long it fails to sound
+it); the chord-transition, key-transition, entry, and boundary factors **per boundary/event** (as
+written). Without this rule, per-segment factor instances give longer segments an evidence-free
+discount (the semi-Markov length bias) that the desk simulation measured deciding merge-vs-split
+against ground truth by ~6.6 nats on the named case.
+
 ## 3. The factors — form, table, provenance (values all unfit)
 
 1. **Pitch emission** `P_emit(tone | k, c; covariates)` — each tone classified into categories:
@@ -74,7 +88,8 @@ convex conditional likelihood under the held-out gate.
    membership test.
 3. **Bass/inversion** `P_bass(bass chord-factor | c)` — categorical: which chord factor (root, third,
    fifth, seventh) sounds in the bass, given the degree class and inversion; the figured-bass tradition
-   is the theory, Ni's bass-given-chord chain the published probabilistic analogue. Bass-motion
+   is the theory, Ni's bass-given-chord chain the published probabilistic analogue. **Evaluated per
+   event within the segment (the 2026-07-19 granularity amendment, §2).** Bass-motion
    continuity across segments is NOT in the first structure (recorded as a possible later factor with
    its own ledger entry).
 4. **Same-key chord transition** `P_chord(c_j | c_{j-1}, mode)` — the asymmetric first-order degree
@@ -109,8 +124,12 @@ convex conditional likelihood under the held-out gate.
    plagal motion misread) are carried as feature refinements, and the factor's weight must respect the
    measured weakness of half-cadence detection. This is the OI-166 channel delivered as a factor.
 10. **Signature/declared-mode prior** `P_prior(k_1 | signature, declared mode)` — the ratified weak
-    fitted table (initial state; the persistent-pull variant is a desk-simulation question, §5), with
-    the signature-influence rate measured by ablation and published at every fit.
+    fitted table. **SETTLED (user-ratified 2026-07-19 at the desk simulation, its §4.2 — the S3/C5
+    traces): the prior conditions the INITIAL key state only, re-entering only at a notated mid-piece
+    signature change (the OI-94(a) discharge moment); the persistent-pull variant is rejected** (a
+    linearly growing tax on away-from-signature keys with no theory basis, softly re-introducing the
+    OI-174 signature-pull bias). The signature-influence rate is measured by ablation and published at
+    every fit.
 
 ## 4. The premise ledger (conditional independences — #17a/#17e)
 
@@ -140,6 +159,11 @@ carry/abstention policies of the old architecture re-express as posterior mass, 
 
 ## 6. The desk-simulation forms (discharging OI-181)
 
+> **STAGE RUN AND RATIFIED (2026-07-19):** the simulation below was executed on paper as specified —
+> `cowork_factorization_desk_simulation.md`, user-ratified 2026-07-19. Outcome: nine of ten traces pass;
+> one specification under-determination found and amended (§2 factor granularity); the §5a prior
+> question settled (initial-state-only, §3.10). OI-181 is discharged.
+
 Two declared forms, replacing the infeasible full hand-trace:
 
 **(a) Small synthetic cases — hand-computable DP tables, state space truncated to a declared candidate
@@ -166,8 +190,8 @@ code exists; a surprise at this stage is cheap and is the point.
 The values of any table or weight (the fitting protocol and its gates: OI-176, OI-177); the robust-stop
 adoption protocol (OI-178) and the dual-path/retirement plan (OI-180) — separate documents; the jazz
 vocabulary and covariates (the OI-7 gate); the grammar upgrade of the chord-transition factor and the
-bass-motion continuity factor (recorded future ledger entries); the persistent-vs-initial signature
-prior (settled by desk simulation §6a case 3, then recorded).
+bass-motion continuity factor (recorded future ledger entries). *(The persistent-vs-initial signature
+prior, listed here as open at ratification, was settled by the desk simulation as forecast — see §3.10.)*
 
 *Ratification asked for: the variable structure (§1), the score form (§2), the factor roster (§3), the
 premise ledger (§4), the decode plan (§5), and the desk-simulation forms and case list (§6).*
