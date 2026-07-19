@@ -60,10 +60,12 @@ dispatches); (2) OI-184's anacrusis-alignment establishment (gates the boundary/
 (3) then table fitting under the ratified protocols. **The dual-path status line (the OI-180 DT-13
 guard) starts appearing here from the build dispatch on.**
 
-**★ STATE / PENDING.** The design-pass commit (`910a998e9b`) and the desk-sim commit (`31b3dba6ca`)
-both ran, were verified at the objects, and are pushed to origin. The pre-fit-gates commit dispatch
-**`cc_instruction_prefit_gates_commit.md`** is drafted — if not yet run, run it FIRST (it commits the
-ratified gates document and the register/STATUS/handoff updates). OI-179 (the ground-truth ceiling): the literature half is ANSWERED — no
+**★ STATE / PENDING.** Three commits ran, were verified at the objects, and are pushed to origin:
+`910a998e9b` (design pass), `31b3dba6ca` (desk sim), `61a8ed750f` (pre-fit gates). **The ACTIVE
+dispatch is `cc_instruction_prefit_instruments.md`** — the two read-only instruments (the OI-176
+fold-assignment generator + artifact; the OI-177 count inventory), the first execution step of the
+ratified gates. Its report comes back to Cowork for verification at the objects before anything else
+is drafted (just-in-time rule). OI-179 (the ground-truth ceiling): the literature half is ANSWERED — no
 published inter-annotator agreement figure exists for classical symbolic Roman-numeral analysis
 anywhere in the field, so the 87-stem BCMH measurement would be novel; BCMH is inspected at the files
 (independent origin, single reading, NO annotator record anywhere; the 2023 JEP:HPP Method section
