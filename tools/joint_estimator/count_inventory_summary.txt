@@ -1,0 +1,42 @@
+=== OI-177 count inventory — generated summary ===
+corpus git_hash: 61a8ed750f4ca5ea2465558d69bb1f80045e21cf
+coverage: 326 stems, 5 folds
+TOTALS  labels=18418  transition_pairs=16372  key_changes=1720
+  per fold: f0(lab=3762,tr=3327,kc=374), f1(lab=3502,tr=3134,kc=302), f2(lab=3615,tr=3199,kc=349), f3(lab=3776,tr=3355,kc=356), f4(lab=3763,tr=3357,kc=339)
+
+(a) normalized classes distinct = 228; raw labels distinct = 230
+    top 15 normalized classes:
+        2719  I | Maj |  | 
+        2484  V | Maj |  | 
+        1604  i | Min |  | 
+        1235  V | Dom7 | 7 | 
+         984  I | Maj | 6 | 
+         823  V | Maj | 6 | 
+         635  IV | Maj |  | 
+         599  vi | Min |  | 
+         575  V | Maj | 6/5 | 
+         563  vii | Dim | o6 | 
+         529  i | Min | 6 | 
+         462  IV | Maj | 6 | 
+         411  V | Dom7 | 2 | 
+         360  ii | Min |  | 
+         317  ii | Min | 6/5 | 
+    tail (classes beyond top 15): 213
+
+raw_unnormalized: 2 labels (0.0109%)  {'It6': 1, 'It6/ii': 1}
+normalization gaps: halfdim-sigil-coarse=545, seventh-as-triad=1999
+
+(b) transitions same-key: major distinct=744, minor distinct=892
+(c) key changes by kind (overall): {'other': 1094, 'relative': 622, 'parallel': 4}
+(d) entry chords distinct = 102
+
+(e) sensitive cells (desk-sim §4.3) — raw counts:
+    V6_to_vihalfdim                    count=    2   [from V (maj color) figure exactly '6'; to VI (min color) with '/o' half-dim sigil]
+    vihalfdim_to_IV                    count=    3   [from VI (min color) with '/o' sigil; to IV (maj color)]
+    i_to_IVraised6                     count=   40   [minor local key; from i (I min color); to IV (maj color = raised 6th degree)]
+    vi_to_appliedTo_vi                 count=   11   [from vi (VI min color); to any chord applied to VI (target base == VI)]
+    applied_not_resolving_to_target    count=  154   [from an applied chord (target present); to a chord whose degree base != target base]
+    V_to_vi                            count=  236   [from V (maj color), not applied; to VI (any color), not applied (deceptive)]
+
+(ii) unparseable rate 0.0109% (threshold 2.0%) -> PASS
+EXCLUDED: boundary/metric-position tables (gated on OI-184).
