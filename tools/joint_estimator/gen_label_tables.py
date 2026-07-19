@@ -188,6 +188,9 @@ def count_tables(stems, stem_data):
     a tokens dict."""
     # 1: transitions per mode; key = (from LabelClass, to LabelClass)
     trans = {True: Counter(), False: Counter()}
+    # 1 (applied-relation level, option 1a): per mode, Counter over the relation cells of every
+    # applied (target-bearing) from-chord's continuation — pooled across ALL targets.
+    applied_rel = {True: Counter(), False: Counter()}
     # 2: key-transition cells
     keytrans = Counter()
     # 3: entry classes
@@ -205,7 +208,8 @@ def count_tables(stems, stem_data):
 
     tokens = {"labels": 0, "transition_pairs": 0, "key_changes": 0,
               "local_key_segments": 0, "inv_labels": 0, "boundary_slots": 0,
-              "raw_unnormalized": 0, "indeterminate_mode_labels": 0}
+              "raw_unnormalized": 0, "indeterminate_mode_labels": 0,
+              "applied_transition_pairs": 0}
 
     for stem in stems:
         d = stem_data[stem]
@@ -221,6 +225,12 @@ def count_tables(stems, stem_data):
             if same:
                 tokens["transition_pairs"] += 1
                 trans[a["is_major"]][(a["cls"], b["cls"])] += 1
+                # applied-relation level (option 1a): an applied from-chord's continuation is
+                # re-expressed by RELATION TO ITS TARGET, pooled across all targets (per mode).
+                ac, bc = a["cls"], b["cls"]
+                if ac.target and not ac.raw_unnormalized and not bc.raw_unnormalized:
+                    applied_rel[a["is_major"]][_relation_cell(ac, bc)] += 1
+                    tokens["applied_transition_pairs"] += 1
                 keytrans["stay"] += 1        # table 2: P(k_j|k_{j-1}) includes STAY (no change) — §3.5
             else:
                 tokens["key_changes"] += 1
@@ -311,7 +321,8 @@ def count_tables(stems, stem_data):
                 boundary_out_of_grid += 1
 
     return {
-        "trans": trans, "keytrans": keytrans, "entry": entry, "inv_ctx": inv_ctx,
+        "trans": trans, "applied_rel": applied_rel,
+        "keytrans": keytrans, "entry": entry, "inv_ctx": inv_ctx,
         "sigprior": sigprior, "boundary": boundary,
         "boundary_out_of_grid": boundary_out_of_grid,
         "boundary_pieces_counted": boundary_pieces_counted,
@@ -441,6 +452,62 @@ def _family_key_of(invfree_key: str) -> str:
     return f"{deg} | {fam} |  | {tgt}"
 
 
+# ── the applied-relation pooling level (option 1a; cowork_sensitive_cell_probe.md finding 1) ──
+# For an applied from-chord (target non-empty), the count->=20 rule leaves EVERY per-target row
+# sparse, so each fell to BASE (the mode's plain frequency table) — blind to the one behavior that
+# defines a secondary dominant. This level re-expresses an applied chord's continuation by RELATION
+# TO ITS TARGET, pooled across ALL targets (the transposition-pooling principle the table already
+# uses across keys, applied to the target axis). Cells are namespaced «rel» so a relation cell can
+# never collide with a concrete class key. The resolution cell keeps quality-family and inversion
+# sub-cells that the unchanged count->=20 rule lets survive; the declared back-off precedence
+# collapses POSITION first, then QUALITY-FAMILY, then to the flat resolve aggregate.
+_REL = "«" + "rel" + "»"       # «rel»
+_REL_RESOLVE = _REL + "resolve"
+_REL_ELSEWHERE = _REL + "elsewhere"
+
+
+def _target_head_rest(target: str):
+    """Split an applied target chain ('V', 'vi', 'V/III') into (immediate target degree, rest chain).
+    The chord resolves to the chord specified by the FULL immediate target: degree `head` with the
+    remaining applied chain `rest` (so 'V/III' resolves to a chord that is itself V-of-III — degree
+    V, target III)."""
+    if "/" in target:
+        head, rest = target.split("/", 1)
+    else:
+        head, rest = target, ""
+    return head, rest
+
+
+def _relation_cell(a: "norm.LabelClass", b: "norm.LabelClass") -> str:
+    """Classify continuation b's relation to applied chord a's target. RESOLUTION = b is a chord of
+    the target (same degree letter, and the same remaining applied chain); it keeps quality-family
+    (triad/seventh) and inversion-class (root/inverted) sub-cells. Everything else is one 'elsewhere'
+    cell. Accidentals compare consistently (both sides upper-cased)."""
+    head, rest = _target_head_rest(a.target)
+    resolves = (b.degree_base.upper() == head.upper() and b.target == rest)
+    if not resolves:
+        return _REL_ELSEWHERE
+    qf = "seventh" if b.quality in norm._SEVENTH_QUALITIES else "triad"
+    pos = "inv" if b.inversion else "root"
+    return f"{_REL_RESOLVE}|{qf}|{pos}"
+
+
+def _applied_rel_parent(cell: str):
+    """Relation-cell back-off parent: resolve|qf|pos -> resolve|qf -> resolve (terminal);
+    elsewhere (terminal). RESOLVE and ELSEWHERE have SEPARATE terminal bases so a pooled sparse
+    resolution can never mix into the elsewhere mass (and vice versa) — the semantic split is
+    preserved at every pooling level. Position collapses before quality-family (the declared
+    precedence — quality is the primary distinction, kept longest)."""
+    if cell == _REL_ELSEWHERE or cell == _REL_RESOLVE:
+        return None                               # terminal — each keeps its own base
+    if cell.startswith(_REL_RESOLVE + "|"):
+        body = cell[len(_REL_RESOLVE) + 1:]
+        if "|" in body:                          # resolve|qf|pos -> resolve|qf
+            return f"{_REL_RESOLVE}|{body.split('|', 1)[0]}"
+        return _REL_RESOLVE                       # resolve|qf -> resolve
+    return None
+
+
 def _t1_ctx_chain(from_cls):
     """table 1 context back-off (distinct level keys): full from -> inversion-free -> family ->
     unigram base. Level tags keep a root-position full context distinct from the inversion-free
@@ -507,15 +574,65 @@ def _t5_parent(cell):
 def fit_tables(stems, stem_data, label):
     c = count_tables(stems, stem_data)
 
-    # 1: transition per mode (conditional)
+    # 1: transition per mode (conditional) + the applied-relation pooling level (option 1a)
     t1 = {}
     t1_meta = {}
     for is_major, name in ((True, "major"), (False, "minor")):
         pc = {(a, b): n for (a, b), n in c["trans"][is_major].items()}
         rows, meta = estimate_conditional(pc, _t1_ctx_chain, _t1_outcome_parent,
                                           display_key=lambda cf: cf.key())
+        from_ctx = {a.key(): a for (a, b) in pc}       # display key -> the from LabelClass
+
+        # the per-mode applied-relation distribution (pooled across ALL targets)
+        rel_counts = dict(c["applied_rel"][is_major])
+        rel_dist, rel_meta = katz_distribution(rel_counts, _applied_rel_parent)
+        rel_ctx_key = f"{_REL}applied|{name}"
+
+        # Override every APPLIED from-context (target-bearing) that fell all the way to BASE (the
+        # mode's plain frequency table): its continuations now read the relation cells. Applied
+        # contexts that found a reliable per-target level (L0/L1/L2 >= 20) are MORE specific and are
+        # kept. Non-applied rows are untouched (byte-identical to the pre-amendment table 1).
+        overridden = []
+        if rel_dist:
+            for dk in list(rows.keys()):
+                fc = from_ctx[dk]
+                if fc.target and rows[dk]["context_used"] == _BASE:
+                    rows[dk] = {"context_used": rel_ctx_key, "dist": rel_dist,
+                                "row_type": "applied_relation"}
+                    overridden.append(dk)
         t1[name] = rows
-        t1_meta[name] = meta
+
+        # recompute table-1 free params from the FINAL rows (distinct estimated context -> dist);
+        # equals estimate_conditional's per-level accounting for the plain part, adds the one relation
+        # distribution per mode, and drops any level now referenced by no row.
+        distinct = {}
+        for dk, row in rows.items():
+            distinct[row["context_used"]] = row["dist"]
+        recomputed_fp = sum(max(0, len(d) - 1) for d in distinct.values())
+
+        applied_all = [dk for dk in rows if from_ctx[dk].target]
+        P_resolve = sum(v for k, v in rel_dist.items() if k.startswith(_REL_RESOLVE))
+        t1_meta[name] = {
+            **meta,
+            "free_params": recomputed_fp,
+            "free_params_before_amendment": meta["free_params"],
+            "applied_relation": {
+                "rel_ctx_key": rel_ctx_key,
+                "raw_counts": {k: rel_counts[k] for k in sorted(rel_counts)},
+                "total_applied_transitions": sum(rel_counts.values()),
+                "dist": {k: rel_dist[k] for k in sorted(rel_dist)},
+                "reliable_cells": rel_meta["reliable_cells"],
+                "pooled_buckets": rel_meta["pooled_buckets"],
+                "P_resolves_to_target": P_resolve,
+                "P_elsewhere": 1.0 - P_resolve,
+                "n_applied_contexts": len(applied_all),
+                "n_overridden_to_relation": len(overridden),
+                "n_applied_kept_pertarget": len(applied_all) - len(overridden),
+                "overridden_contexts": sorted(overridden),
+                "applied_kept_pertarget_contexts": sorted(
+                    dk for dk in applied_all if rows[dk].get("row_type") != "applied_relation"),
+            },
+        }
 
     # 2: key transition (categorical)
     t2_dist, t2_meta = katz_distribution(dict(c["keytrans"]), _t2_parent)
@@ -748,8 +865,12 @@ def main():
     #    report the fitted P each constituent transition receives ──
     sensitive = build_sensitive_report(fits, stem_data, covered, stem_fold)
 
+    # ── the applied-relation effect (option 1a review surface) ──
+    applied_effect = applied_relation_effect(fits)
+
     # ── the OI-177 parameter inventory artifact ──
-    inventory = build_inventory(fits, prov, recon, hchecks, capacity, sensitive, all_tables)
+    inventory = build_inventory(fits, prov, recon, hchecks, capacity, sensitive, all_tables,
+                                applied_effect)
     (out_dir / "table_fit_inventory.json").write_text(
         json.dumps(inventory, indent=1, ensure_ascii=False, sort_keys=True) + "\n", encoding="utf-8")
     write_inventory_summary(out_dir / "table_fit_inventory_summary.txt", inventory)
@@ -870,6 +991,21 @@ def build_sensitive_report(fits, stem_data, covered, stem_fold):
         if row is None:
             return {"prob": None, "how": "from-context not observed"}
         dist = row["dist"]
+        if row.get("row_type") == "applied_relation":
+            # applied from-context: score by the relation cell of (from -> to), walking the
+            # relation back-off to the level actually stored in the row.
+            cell = _relation_cell(from_cls, to_cls)
+            node = cell
+            for _ in range(6):
+                if node in dist:
+                    return {"prob": round(dist[node], 6),
+                            "how": ("own_MLE" if node == cell else f"pooled -> {node}"),
+                            "relation_cell": cell, "row_type": "applied_relation"}
+                nxt = _applied_rel_parent(node)
+                if nxt is None or nxt == node:
+                    break
+                node = nxt
+            return {"prob": None, "how": "relation cell not in row", "relation_cell": cell}
         tk = to_cls.key()
         if tk in dist:
             return {"prob": round(dist[tk], 6), "how": "own_MLE"}
@@ -913,9 +1049,109 @@ def build_sensitive_report(fits, stem_data, covered, stem_fold):
     return report
 
 
+# ── applied-relation effect report (option 1a review surface: the three passages' affected values) ──
+
+def _base_unigram(trans_mode):
+    """Reproduce table 1's BASE level (the mode's plain next-chord frequency table) — the katz
+    distribution over the aggregate outcome counts, exactly as estimate_conditional builds ctx_out
+    ['BASE']. This is what every applied context USED to resolve to (finding 1)."""
+    agg = Counter()
+    for (a, b), n in trans_mode.items():
+        agg[b] += n
+    dist, _ = katz_distribution(dict(agg), _t1_outcome_parent)
+    return dist
+
+
+def _lookup_base(base_dist, to_cls):
+    """Look up a concrete outcome in a BASE unigram with the same outcome pooling walk."""
+    tk = to_cls.key()
+    if tk in base_dist:
+        return round(base_dist[tk], 6), "own_MLE"
+    node = _t1_outcome_parent(to_cls)
+    for _ in range(5):
+        if node in base_dist:
+            return round(base_dist[node], 6), f"pooled -> {node}"
+        nxt = _t1_outcome_parent(node)
+        if nxt == node:
+            break
+        node = nxt
+    return None, "not in BASE"
+
+
+def _lookup_relation(rel_dist, cell):
+    """Look up a relation cell in the fitted relation distribution with the relation pooling walk."""
+    node = cell
+    for _ in range(6):
+        if node in rel_dist:
+            return round(rel_dist[node], 6), ("own_MLE" if node == cell else f"pooled -> {node}")
+        nxt = _applied_rel_parent(node)
+        if nxt is None or nxt == node:
+            break
+        node = nxt
+    return None, "not in relation row"
+
+
+def applied_relation_effect(fits):
+    """Per mode: the fitted relation distribution (overall P(resolve), the cells), the per-target
+    resolve/elsewhere raw counts, and — for each applied target — the representative resolution
+    outcome scored BEFORE (the mode unigram, which every applied context used) vs AFTER (the fitted
+    relation resolve cell). This is the passage-affected-value review surface (finding 1 / passage B:
+    the dominant-of-the-subdominant, target 'IV', resolving to its target)."""
+    _tables, all_meta = fits["all"]
+    rc = all_meta["raw_counts"]
+    out = {}
+    for is_major, name in ((True, "major"), (False, "minor")):
+        base_dist = _base_unigram(rc["trans"][is_major])
+        ar = all_meta["table1_meta"][name]["applied_relation"]
+        rel_dist = {k: v for k, v in ar["dist"].items()}
+        per_target = defaultdict(lambda: {"resolve": 0, "elsewhere": 0})
+        resolves_by_target = defaultdict(Counter)
+        for (a, b), n in rc["trans"][is_major].items():
+            if not (a.target and not a.raw_unnormalized and not b.raw_unnormalized):
+                continue
+            cell = _relation_cell(a, b)
+            tgt = a.target
+            if cell.startswith(_REL_RESOLVE):
+                per_target[tgt]["resolve"] += n
+                resolves_by_target[tgt][b] += n
+            else:
+                per_target[tgt]["elsewhere"] += n
+        # representative before/after per target (most common actual resolution outcome)
+        targets = {}
+        for tgt in sorted(per_target):
+            rc_t = per_target[tgt]["resolve"]
+            el_t = per_target[tgt]["elsewhere"]
+            rep = None
+            if resolves_by_target[tgt]:
+                b_rep, b_n = resolves_by_target[tgt].most_common(1)[0]
+                cell = _relation_cell(  # need an applied 'a' with this target; b_rep is the outcome
+                    norm.LabelClass("V", "Dom7", "", tgt), b_rep)
+                before_p, before_how = _lookup_base(base_dist, b_rep)
+                after_p, after_how = _lookup_relation(rel_dist, cell)
+                rep = {"representative_resolution_outcome": b_rep.key(), "raw_count": b_n,
+                       "relation_cell": cell,
+                       "before_mode_unigram": {"prob": before_p, "how": before_how},
+                       "after_relation_resolve": {"prob": after_p, "how": after_how}}
+            targets[tgt] = {"resolve_count": rc_t, "elsewhere_count": el_t,
+                            "P_resolve_this_target_raw": (rc_t / (rc_t + el_t)) if (rc_t + el_t) else None,
+                            "representative": rep}
+        out[name] = {
+            "P_resolves_to_target_overall": ar["P_resolves_to_target"],
+            "P_elsewhere_overall": ar["P_elsewhere"],
+            "relation_distribution": ar["dist"],
+            "relation_raw_counts": ar["raw_counts"],
+            "reliable_relation_cells": ar["reliable_cells"],
+            "n_applied_contexts": ar["n_applied_contexts"],
+            "n_overridden_to_relation": ar["n_overridden_to_relation"],
+            "n_applied_kept_pertarget": ar["n_applied_kept_pertarget"],
+            "per_target": targets,
+        }
+    return out
+
+
 # ── the OI-177 parameter inventory ──
 
-def build_inventory(fits, prov, recon, hchecks, capacity, sensitive, all_tables):
+def build_inventory(fits, prov, recon, hchecks, capacity, sensitive, all_tables, applied_effect):
     def raw_hist(counter):
         h = Counter()
         for n in counter.values():
@@ -953,6 +1189,10 @@ def build_inventory(fits, prov, recon, hchecks, capacity, sensitive, all_tables)
                 "pair_count_histogram": {
                     "major": raw_hist(rc["trans"][True]),
                     "minor": raw_hist(rc["trans"][False])},
+                "free_params_before_amendment": {
+                    m: meta["table1_meta"][m]["free_params_before_amendment"] for m in ("major", "minor")},
+                "applied_relation_level": {
+                    m: meta["table1_meta"][m]["applied_relation"] for m in ("major", "minor")},
             },
             "table2": {"distinct_cells": len(rc["keytrans"]),
                        "cell_count_histogram": raw_hist(rc["keytrans"]),
@@ -995,6 +1235,7 @@ def build_inventory(fits, prov, recon, hchecks, capacity, sensitive, all_tables)
         "capacity_bound_summary": capacity,
         "per_fold": per_fold_dims,
         "sensitive_cells_desk_sim_4_3": sensitive,
+        "applied_relation_effect": applied_effect,
         "notes": _INVENTORY_NOTES,
     }
 
@@ -1032,6 +1273,20 @@ _INVENTORY_NOTES = {
                   "within-row outcome pooling; the from-side is not coarsened per-sparse-cell "
                   "(which would require cross-row redistribution). The named sensitive cells "
                   "(V->vi own-MLE at 236; V6->vi-halfdim pooled at 2) behave as specified.",
+        "table1_applied_relation": (
+            "the applied-relation pooling level (option 1a, cowork_sensitive_cell_probe.md finding "
+            "1). AS-BUILT FORM (reported per the dispatch): the level sits on BOTH sides. CONTEXT "
+            "side: every applied (target-bearing) from-context that would otherwise fall to BASE "
+            "(the mode unigram) is instead pooled across ALL targets into one relation distribution "
+            "per mode — an applied context that finds a reliable per-target level (L0 full / L1 "
+            "inversion-free / L2 family, each >=20, all target-specific) keeps it and is NOT pooled. "
+            "OUTCOME side: the continuation is re-expressed by RELATION TO THE TARGET — 'resolves to "
+            "a chord of its target' vs 'elsewhere'. The resolve cell keeps quality-family "
+            "(triad/seventh) and inversion (root/inverted) sub-cells via the unchanged count>=20 "
+            "Katz rule, precedence collapsing position first, then quality-family, then the flat "
+            "resolve aggregate. Cells namespaced «rel» (the part-1 collision lesson). The relation "
+            "row's 'elsewhere' mass is apportioned over specific non-target continuations by the "
+            "ratified below-threshold rule (option 2a, mode frequency) at DECODE time, not here."),
         "table2": "sparse (cofBand|modePair) change cell -> mode-pair marginal -> base; "
                   "distances>=3 pre-pooled to 'cofFar' per mode pair (declared cell definition).",
         "table3": "entry class -> inversion-free -> unigram base.",
@@ -1102,6 +1357,27 @@ def write_inventory_summary(path, inv):
         L.append(f"  {name:34s} raw={sc['raw_label_count_overall']:4d}  "
                  f"norm={sc['normalized_class_count_overall']:4d}  "
                  f"{sc['disposition_all326']}{delta}")
+    L.append("")
+    L.append("-- applied-relation level (option 1a; all-326) --")
+    for name in ("major", "minor"):
+        ae = inv["applied_relation_effect"][name]
+        L.append(f"  [{name}] P(resolves to target)={ae['P_resolves_to_target_overall']:.4f}  "
+                 f"P(elsewhere)={ae['P_elsewhere_overall']:.4f}  "
+                 f"applied_contexts={ae['n_applied_contexts']} "
+                 f"(overridden->relation={ae['n_overridden_to_relation']}, "
+                 f"kept_pertarget={ae['n_applied_kept_pertarget']})")
+        for cell in sorted(ae["relation_distribution"]):
+            rawc = ae["relation_raw_counts"].get(cell, "")
+            L.append(f"      {cell:34s} P={ae['relation_distribution'][cell]:.4f}  raw={rawc}")
+        # passage-B representative: dominant-of-the-subdominant, target 'IV'
+        for tgt in ("IV", "iv", "V", "v"):
+            if tgt in ae["per_target"] and ae["per_target"][tgt]["representative"]:
+                pt = ae["per_target"][tgt]
+                rep = pt["representative"]
+                L.append(f"      target {tgt:3s} resolve={pt['resolve_count']} "
+                         f"elsewhere={pt['elsewhere_count']}  rep {rep['representative_resolution_outcome']} "
+                         f"BEFORE(unigram)={rep['before_mode_unigram']['prob']} "
+                         f"AFTER(resolve)={rep['after_relation_resolve']['prob']}")
     path.write_text("\n".join(L) + "\n", encoding="utf-8")
 
 

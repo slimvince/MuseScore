@@ -123,12 +123,13 @@ def _chord_root(base: str, quality: str, tonic: int, is_major: bool):
     return (tonic + semi) % 12
 
 
-def member_pcs(cls: "norm.LabelClass", tonic: int, is_major: bool):
-    """The realized chord-member pc set of a normalized class in a (tonic, mode) key, or None if the
-    class is unmappable (multi-level applied, or raw_unnormalized). Root = tonic + degree interval
-    (accidentals honored); applied classes anchor to the TARGET's tonicized key (framework mode = the
-    target's own case: uppercase major, lowercase minor); members from the quality template. The
-    augmented-sixth and Neapolitan chromatic classes carry their textbook pc content. Dispatch §3."""
+def _framework_and_root(cls: "norm.LabelClass", tonic: int, is_major: bool):
+    """Shared framework/root derivation for member_pcs and chord_factor_pcs (#6 — ONE path). Returns
+    (fw_tonic, fw_major, root_pc): fw_* are the tonicized framework a class is read in (its target's
+    key for applied classes, else the local key); root_pc is the chord root pc for a standard
+    triad/seventh quality, or None for a chromatic class (AugSixth/Neapolitan — special member
+    content, no standard root/third/fifth roles). Returns None entirely for an unmappable class
+    (raw_unnormalized, multi-level applied, bad target degree, or a quality with no template)."""
     if cls.raw_unnormalized:
         return None
     q = cls.quality
@@ -143,19 +144,53 @@ def member_pcs(cls: "norm.LabelClass", tonic: int, is_major: bool):
         tacc = sum(1 if c == "#" else -1 for c in cls.target if c in "#b")
         fw_tonic = (tonic + (_MAJ_SCALE if is_major else _MIN_SCALE)[tnum - 1] + tacc) % 12
         fw_major = tbase[:1].isupper()
-    if q == "AugSixth":                             # It6 = flat-6, tonic, sharp-4 of the (target) key
-        return frozenset((fw_tonic + i) % 12 for i in (8, 0, 6))
-    if q == "Neapolitan":                           # flat-II major triad
-        return frozenset((fw_tonic + i) % 12 for i in (1, 5, 8))
+    if q in ("AugSixth", "Neapolitan"):             # chromatic — special content, no standard root
+        return (fw_tonic, fw_major, None)
     if q not in _QUAL_TEMPLATE:
         return None
     root = _chord_root(cls.degree_base, q, fw_tonic, fw_major)
     if root is None:
         return None
+    return (fw_tonic, fw_major, root)
+
+
+def member_pcs(cls: "norm.LabelClass", tonic: int, is_major: bool):
+    """The realized chord-member pc set of a normalized class in a (tonic, mode) key, or None if the
+    class is unmappable (multi-level applied, or raw_unnormalized). Root = tonic + degree interval
+    (accidentals honored); applied classes anchor to the TARGET's tonicized key (framework mode = the
+    target's own case: uppercase major, lowercase minor); members from the quality template. The
+    augmented-sixth and Neapolitan chromatic classes carry their textbook pc content. Dispatch §3."""
+    fr = _framework_and_root(cls, tonic, is_major)
+    if fr is None:
+        return None
+    fw_tonic, fw_major, root = fr
+    q = cls.quality
+    if q == "AugSixth":                             # It6 = flat-6, tonic, sharp-4 of the (target) key
+        return frozenset((fw_tonic + i) % 12 for i in (8, 0, 6))
+    if q == "Neapolitan":                           # flat-II major triad
+        return frozenset((fw_tonic + i) % 12 for i in (1, 5, 8))
     pcs = set((root + i) % 12 for i in _QUAL_TEMPLATE[q])
     if cls.inversion.startswith("9"):               # a ninth carries the ninth as a member
         pcs.add((root + (1 if "b9" in cls.inversion else 2)) % 12)
     return frozenset(pcs)
+
+
+def chord_factor_pcs(cls: "norm.LabelClass", tonic: int, is_major: bool):
+    """The ordered (role, pc) chord factors of a STANDARD triad/seventh class in a (tonic, mode) key,
+    or None when the class has no standard root/third/fifth roles (chromatic AugSixth/Neapolitan,
+    multi-level applied, raw_unnormalized, unmapped quality). Roles in template order: root, third,
+    fifth, and — seventh chords only — seventh. Ninth extensions are NOT factors here. Reuses the same
+    framework/root derivation as member_pcs (#6). The chord-factor presence table
+    (cowork_sensitive_cell_probe.md finding 3, option 3a) is built from this."""
+    fr = _framework_and_root(cls, tonic, is_major)
+    if fr is None:
+        return None
+    _fw_tonic, _fw_major, root = fr
+    if root is None:                                # chromatic class — no standard factor roles
+        return None
+    tmpl = _QUAL_TEMPLATE[cls.quality]
+    roles = ("root", "third", "fifth", "seventh")
+    return [(roles[i], (root + tmpl[i]) % 12) for i in range(len(tmpl))]
 
 
 def note_category(pc: int, mem: frozenset, tonic: int, is_major: bool) -> str:

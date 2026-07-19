@@ -1,18 +1,18 @@
 === OI-177 label-side table-fit parameter inventory — summary ===
-corpus git_hash: 01edaab7bccd963fdd2310fc3a790a249cfcdfb1
+corpus git_hash: 57ed94a6a46571172a351c09ba4f5cb92930674a
 reconcile (all-326): labels=18418 trans=16372 keychg=1720  ->  ALL_OK=True
 
 -- capacity bound (tokens/params >= 10) --
 fit        tokens  params  tok/param  pass
-fold0       99069     533     185.87  True
-fold1       99602     517     192.65  True
-fold2       99649     520     191.63  True
-fold3       98869     522     189.40  True
-fold4       98491     528     186.54  True
-all        123920     581     213.29  True
+fold0       99069     539     183.80  True
+fold1       99602     523     190.44  True
+fold2       99649     526     189.45  True
+fold3       98869     528     187.25  True
+fold4       98491     534     184.44  True
+all        123920     587     211.11  True
 
 -- all-326 free params by table --
-  table1 major=258 minor=153; table2=11 table3=21 table4=121; table5={'minor': 7, 'major': 6, 'none': 0}; table6=4; TOTAL=581
+  table1 major=261 minor=156; table2=11 table3=21 table4=121; table5={'minor': 7, 'major': 6, 'none': 0}; table6=4; TOTAL=587
 
 -- hand checks (all-326 raw MLE) --
   V->I (major)    : 377/1350 = 0.2793
@@ -34,3 +34,22 @@ all        123920     581     213.29  True
   vi_to_appliedTo_vi                 raw=  11  norm=  11  pooled (<20 -> declared parent)
   applied_not_resolving_to_target    raw= 154  norm= 155  own_MLE (>=20)  [delta explained]
   V_to_vi                            raw= 236  norm= 235  own_MLE (>=20)  [delta explained]
+
+-- applied-relation level (option 1a; all-326) --
+  [major] P(resolves to target)=0.7708  P(elsewhere)=0.2292  applied_contexts=64 (overridden->relation=41, kept_pertarget=23)
+      «rel»elsewhere                     P=0.2292  raw=113
+      «rel»resolve                       P=0.0162  raw=
+      «rel»resolve|triad|inv             P=0.1075  raw=53
+      «rel»resolve|triad|root            P=0.6471  raw=319
+      target IV  resolve=113 elsewhere=28  rep IV | Maj |  |  BEFORE(unigram)=0.05178 AFTER(resolve)=0.647059
+      target iv  resolve=3 elsewhere=0  rep IV | Min |  |  BEFORE(unigram)=0.029312 AFTER(resolve)=0.647059
+      target V   resolve=170 elsewhere=34  rep V | Maj |  |  BEFORE(unigram)=0.135922 AFTER(resolve)=0.647059
+  [minor] P(resolves to target)=0.7742  P(elsewhere)=0.2258  applied_contexts=71 (overridden->relation=60, kept_pertarget=11)
+      «rel»elsewhere                     P=0.2258  raw=77
+      «rel»resolve                       P=0.0147  raw=
+      «rel»resolve|triad|inv             P=0.0997  raw=34
+      «rel»resolve|triad|root            P=0.6598  raw=225
+      target IV  resolve=9 elsewhere=4  rep IV | Maj |  |  BEFORE(unigram)=0.05276 AFTER(resolve)=0.659824
+      target iv  resolve=69 elsewhere=20  rep IV | Min |  |  BEFORE(unigram)=0.01897 AFTER(resolve)=0.659824
+      target V   resolve=102 elsewhere=21  rep V | Maj |  |  BEFORE(unigram)=0.153455 AFTER(resolve)=0.659824
+      target v   resolve=9 elsewhere=9  rep V | Min |  |  BEFORE(unigram)=0.014651 AFTER(resolve)=0.659824

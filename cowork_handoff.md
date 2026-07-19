@@ -85,19 +85,46 @@ denominator is a 16th-note grid — sub-tactus P is grid-dependent; the note-EVE
 owed at part 2; (3) table-5 parameterized as collection displacement by local mode (equivalent
 bookkeeping to the ratified tonic-distance-from-relative-pair form). Flagged small populations
 (ninth figures ×2, multi-level applied ×3, multi-signature ×3, multi-meter ×2 excluded from table
-6, one empty declared-mode piece) are recorded in the inventory notes. **The ACTIVE dispatch is `cc_instruction_note_table_fit.md` — the fit event part 2:** the
-note-event extraction (music21 read-only over the corpus xml; the ratified event lattice; the four
-declared chord-independent covariates), the pitch-emission table (member / within-collection NCT /
-outside, per covariate combo, presence/absence only), the spelling table (line-of-fifths position
-relative to the local key; the minor leading-tone/subtonic contrast reportable), and the
-event-level boundary denominator discharging part 1's grid caveat. OI-184 exclusions declared
-(m0-labeled segments dropped on the 207 anacrusis pieces; the 7 flagged + 2 multi-meter pieces out
-of tick-anchored counts); combined part-1+2 capacity check; desk-sim-anchored hand-checks
-(bwv145.5 m10, bwv352 m1 b4); BCMH ornament validation deferred (dataset not on disk). After its
-report verifies: the A-module build arc under the OI-180 sanction, opening with the §4.3
-sensitive-cell probe against the FITTED tables (OI-177 item 4, prediction-first — the fitted values
-differ from the desk sim's provisionals: V→I 0.28 vs 0.42, downbeat boundary 0.99 vs 0.65; the
-probe re-runs C2/C3/S5 with the real numbers). OI-179 (the ground-truth ceiling): the literature half is ANSWERED — no
+6, one empty declared-mode piece) are recorded in the inventory notes. **The fit event's TABLE STAGE is COMPLETE — both parts delivered and Cowork-verified at the
+artifacts.** Part 1 `c7094c71b3` (label-side: six tables). Part 2 `57ed94a6a4` (note-side: the
+note-event substrate — 326 stems / 76,107 notes / 26,698 events; the pitch-emission table with the
+~4× covariate figuration effect (member .824 / within-NCT .166 / outside .009); the spelling table
+with the minor leading-tone ≫ subtonic contrast (.0753 vs .0355); the event-level boundary
+denominator superseding-for-A part 1's grid variant (sub-tactus .307 vs .066); template mapping
+established 99.94 % vs the music21 oracle; combined capacity PASS ~38× over the bound (666 params /
+294,930 tokens all-326); hand-checks reproduce the desk-sim segments). Reports:
+`cc_label_table_fit_report.md`, `cc_note_table_fit_report.md` (untracked). The GT-jitter caveat
+(1.53 %) is recorded on the OI-184 row. BCMH ornament validation stays deferred (dataset not on
+disk; also OI-185). **Every fitted value is FROZEN; the weight fit happens only at the build arc
+per the ratified staged fitting.**
+
+**★ THE FITTED-TABLE PROBE IS RUN (`cowork_sensitive_cell_probe.md`, expectations written before
+lookup) — the capacity-protocol requirement (OI-177, item 4: re-check the three value-sensitive
+desk-simulation cases against the FITTED tables before building) is discharged, pending the user's
+ruling on its findings.** Outcomes: the bwv352 added-sixth/half-diminished ambiguity stays a
+near-tie hinging on the bass note (as expected); the bwv10.7 merged-segments case flips to the
+ground-truth two-segment reading (as expected — the fitted downbeat-boundary probability 0.97 is
+the mover); the deceptive-cadence example keeps its verdict but with a smaller margin than
+expected (miss recorded, mechanism named). **The probe's chief finding: the fitted chord-progression
+table cannot express applied-chord resolution** — every applied-chord row fell back to the plain
+chord-frequency table because the declared pooling ladder pools by degree and family, and applied
+chords are individually rare; the proposed remedy (for the user to ratify — it amends the ratified
+pooling ladder) is one added pooling level grouping applied-chord progressions by relation to
+their target, pooled across targets, then a mechanical refit. Two smaller findings: the
+leftover-mass scoring rule for below-threshold progressions is nowhere defined (one-sentence rule
+proposed), and the missing-chord-tone penalty is still not a fitted quantity (one small additional
+table proposed, same data and protocol). **THE PROBE'S FINDINGS ARE USER-RATIFIED (2026-07-19): options 1a
+(the secondary-dominant pooling level + re-count), 2a (the below-threshold scoring rule — now a
+dated paragraph in the factorization document §5), and 3a (the chord-factor presence table)** —
+ratified after the alternatives were examined against the principles and the precision objective,
+with the user's two sharpenings incorporated (the genre scope limit: every counted value is a
+Bach-chorale value, jazz de-scoped per the register's item 7; the per-factor asymmetry: a silent
+seventh must be near-prohibitive for a seventh-chord reading, which per-factor counting delivers).
+**The ACTIVE dispatch is `cc_instruction_secondary_dominant_refit.md`** (the re-count under the
+amended pooling ladder + the presence table; one commit; the probe document, the standing-rule and
+state-line handoff edits, the OI-184 addition, and the factorization §5 rule ride it). After its
+report is verified: the estimator-module build arc opens under the already-ratified parallel-build
+sanction. OI-179 (the ground-truth ceiling): the literature half is ANSWERED — no
 published inter-annotator agreement figure exists for classical symbolic Roman-numeral analysis
 anywhere in the field, so the 87-stem BCMH measurement would be novel; BCMH is inspected at the files
 (independent origin, single reading, NO annotator record anywhere; the 2023 JEP:HPP Method section
@@ -115,6 +142,24 @@ labels — are PART of the ratified record; do not let them drop out of the buil
 
 *(The superseded 2026-07-17 session-close block was moved verbatim to `cowork_handoff_archive.md` by
 the 2026-07-19 design-pass commit `910a998e9b`.)*
+
+---
+
+## ⛔ STANDING RULE: EVERY CHOICE CARRIES ITS ALTERNATIVES, WITH PROS AND CONS (user mandate 2026-07-19; sharpened same day)
+
+**Whenever Cowork presents a choice, proposal, or recommendation to the user — in documents and in
+conversation alike — it MUST present the alternatives considered, each with its pros and cons, and
+each explicitly RATED against (a) the guiding principles and (b) the ultimate objective: as precise
+inference as possible.** The user's sharpening (2026-07-19): **decision points are KEPT as decision
+points** — even where the principles force the answer, the alternatives and their ratings are still
+presented in full and the decision is still the user's; Cowork may state that the derivation forces
+an option, but never substitutes that statement for the alternatives themselves, and never
+auto-delegates. A recommendation without its alternatives is not a decision surface. This holds
+always, without the user having to remind. Companion rules that bind the same texts: the
+full-decision-surface rule (below), the predicate-qualification rule (every predicate names its
+argument — "sensitive" to WHAT, "expensive" in WHICH factor), and the no-self-invented-labels
+convention (CLAUDE.md; terms defined in plain words at first use; a reader who knows music theory
+but not this repository's internals must be able to follow).
 
 ---
 

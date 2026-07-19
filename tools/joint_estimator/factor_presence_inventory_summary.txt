@@ -1,0 +1,37 @@
+=== chord-factor presence table (option 3a) — summary ===
+corpus git_hash: 57ed94a6a46571172a351c09ba4f5cb92930674a
+GENRE SCOPE: Bach-chorale values only. These are counts over the 326 annotated Bach chorales (When-in-Rome ground truth), the only repertoire we hold ground truth for. For jazz — where omitting the fifth or even the root from a voicing is normal practice — these frequencies would be wrong, and no jazz values can be counted because no jazz ground truth exists (register item 7; the style-adaptation pattern is: same table STRUCTURE, values re-counted per style, only when a jazz ground-truth gate is passed). The reliability claim is scoped to this corpus and claims nothing beyond it.
+counted stems: 317  excluded: {'flagged': 7, 'multi_meter': 2}
+reliability all cells >=20: True
+
+-- P(factor sounds | role, family), all-326, PRIMARY mode 'overlap' --
+  cell                present   total   P(mle)  P(smoothed)  P(absent)
+  root|triad            12497   13297   0.9398       0.9398     0.0602
+  third|triad           12248   13297   0.9211       0.9210     0.0790
+  fifth|triad           12402   13297   0.9327       0.9326     0.0674
+  root|seventh           3979    4365   0.9116       0.9114     0.0886
+  third|seventh          3816    4365   0.8742       0.8741     0.1259
+  fifth|seventh          3683    4365   0.8438       0.8436     0.1564
+  seventh|seventh        4031    4365   0.9235       0.9233     0.0767
+
+-- cross-check mode 'onset' (part-2 onset-in-segment) --
+  cell                 P(mle)
+  root|triad           0.9171
+  third|triad          0.8910
+  fifth|triad          0.8433
+  root|seventh         0.6094
+  third|seventh        0.5789
+  fifth|seventh        0.4797
+  seventh|seventh      0.7281
+
+-- sanity (user expectations; reported, never adjusted) --
+  seventh presence in seventh chords = 0.9235  (near 1: False)
+  triad   : root=0.9398  third=0.9211  fifth=0.9327  -> most-omitted=third (fifth_is_most_omitted=False)
+  seventh : root=0.9116  third=0.8742  fifth=0.8438  -> most-omitted=fifth (fifth_is_most_omitted=True)
+
+-- alignment diagnostic (interprets the raw rates; NOT an adjustment) --
+  zero-factors-present (misalignment signature): triad 275/13297 (0.0207), seventh 57/4365 (0.0131)
+  factors-present distribution triad:  {0: 275, 1: 560, 2: 799, 3: 11663}
+  factors-present distribution seventh:{0: 57, 1: 185, 2: 200, 3: 768, 4: 3155}
+  P(seventh present | any seventh seg)          = 0.9235
+  P(seventh present | triad complete/aligned)   = 0.9732

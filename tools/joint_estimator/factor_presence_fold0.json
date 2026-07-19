@@ -1,0 +1,145 @@
+{
+ "factor_presence_table": {
+  "onset": {
+   "fifth|seventh": {
+    "p_absent_smoothed": 0.5190311418685121,
+    "p_present_mle": 0.4809578765147144,
+    "p_present_smoothed": 0.4809688581314879,
+    "present": 1667,
+    "reliable": true,
+    "total": 3466
+   },
+   "fifth|triad": {
+    "p_absent_smoothed": 0.15407058823529407,
+    "p_present_mle": 0.8459945401487339,
+    "p_present_smoothed": 0.8459294117647059,
+    "present": 8987,
+    "reliable": true,
+    "total": 10623
+   },
+   "root|seventh": {
+    "p_absent_smoothed": 0.3817762399077278,
+    "p_present_mle": 0.6182919792267744,
+    "p_present_smoothed": 0.6182237600922722,
+    "present": 2143,
+    "reliable": true,
+    "total": 3466
+   },
+   "root|triad": {
+    "p_absent_smoothed": 0.0813176470588235,
+    "p_present_mle": 0.9187611785747906,
+    "p_present_smoothed": 0.9186823529411765,
+    "present": 9760,
+    "reliable": true,
+    "total": 10623
+   },
+   "seventh|seventh": {
+    "p_absent_smoothed": 0.2655709342560554,
+    "p_present_mle": 0.7345643392960185,
+    "p_present_smoothed": 0.7344290657439446,
+    "present": 2546,
+    "reliable": true,
+    "total": 3466
+   },
+   "third|seventh": {
+    "p_absent_smoothed": 0.410322952710496,
+    "p_present_mle": 0.5897287939988459,
+    "p_present_smoothed": 0.589677047289504,
+    "present": 2044,
+    "reliable": true,
+    "total": 3466
+   },
+   "third|triad": {
+    "p_absent_smoothed": 0.1049411764705882,
+    "p_present_mle": 0.89513320154382,
+    "p_present_smoothed": 0.8950588235294118,
+    "present": 9509,
+    "reliable": true,
+    "total": 10623
+   }
+  },
+  "overlap": {
+   "fifth|seventh": {
+    "p_absent_smoothed": 0.1554209919261822,
+    "p_present_mle": 0.8447778418926717,
+    "p_present_smoothed": 0.8445790080738178,
+    "present": 2928,
+    "reliable": true,
+    "total": 3466
+   },
+   "fifth|triad": {
+    "p_absent_smoothed": 0.06296470588235292,
+    "p_present_mle": 0.9371175750729549,
+    "p_present_smoothed": 0.9370352941176471,
+    "present": 9955,
+    "reliable": true,
+    "total": 10623
+   },
+   "root|seventh": {
+    "p_absent_smoothed": 0.08102652825836221,
+    "p_present_mle": 0.9192152336987882,
+    "p_present_smoothed": 0.9189734717416378,
+    "present": 3186,
+    "reliable": true,
+    "total": 3466
+   },
+   "root|triad": {
+    "p_absent_smoothed": 0.05835294117647061,
+    "p_present_mle": 0.9417302080391603,
+    "p_present_smoothed": 0.9416470588235294,
+    "present": 10004,
+    "reliable": true,
+    "total": 10623
+   },
+   "seventh|seventh": {
+    "p_absent_smoothed": 0.07122260668973468,
+    "p_present_mle": 0.9290248124639354,
+    "p_present_smoothed": 0.9287773933102653,
+    "present": 3220,
+    "reliable": true,
+    "total": 3466
+   },
+   "third|seventh": {
+    "p_absent_smoothed": 0.11735870818915806,
+    "p_present_mle": 0.8828620888632429,
+    "p_present_smoothed": 0.8826412918108419,
+    "present": 3060,
+    "reliable": true,
+    "total": 3466
+   },
+   "third|triad": {
+    "p_absent_smoothed": 0.07585882352941176,
+    "p_present_mle": 0.9242210298409113,
+    "p_present_smoothed": 0.9241411764705882,
+    "present": 9818,
+    "reliable": true,
+    "total": 10623
+   }
+  }
+ },
+ "primary_mode": "overlap",
+ "provenance": {
+  "GENRE_SCOPE": "Bach-chorale values only. These are counts over the 326 annotated Bach chorales (When-in-Rome ground truth), the only repertoire we hold ground truth for. For jazz — where omitting the fifth or even the root from a voicing is normal practice — these frequencies would be wrong, and no jazz values can be counted because no jazz ground truth exists (register item 7; the style-adaptation pattern is: same table STRUCTURE, values re-counted per style, only when a jazz ground-truth gate is passed). The reliability claim is scoped to this corpus and claims nothing beyond it.",
+  "constants": {
+   "alpha": 1.0,
+   "n_folds": 5,
+   "threshold": 20
+  },
+  "corpus_git_hash": "57ed94a6a46571172a351c09ba4f5cb92930674a",
+  "exclusions_same_as_part2": "flagged (7) + multi-meter (bwv304,bwv362) + meter not in {4/4,3/4}; m0 segments dropped",
+  "factor_pcs": "gen_note_tables.chord_factor_pcs (shares member_pcs framework/root derivation)",
+  "fit_scope": "fold0",
+  "fit_version": "factor-presence-v1 (option 3a; P(factor sounds | role, family))",
+  "generator": "tools/joint_estimator/gen_factor_presence.py",
+  "gt_segment_alignment": "gen_note_tables.gt_segments (compare_analyses._dcml_time_spans, part-2, untouched)",
+  "membership_definitions": {
+   "onset": "CROSS-CHECK — part-2's onset-in-segment assignment.",
+   "overlap": "PRIMARY — a factor sounds if a note's [onset,onset+dur) overlaps the segment (a factor held over from the previous chord still sounds)."
+  },
+  "n_training_stems": 258,
+  "note_events_artifact": "tools/joint_estimator/note_events/note_events.json",
+  "protocol": "cowork_prefit_gates.md (OI-176/OI-177), user-ratified 2026-07-19",
+  "ratified_probe_finding": "cowork_sensitive_cell_probe.md finding 3, option 3a (2026-07-19)",
+  "smoothing_note": "stored p_present_smoothed = (present+alpha)/(total+2*alpha) with the ratified alpha=1, so P(absent) — the missing-tone penalty basis — is never zero (finding-2 option-2c, a zero probability, is fatal to the decode). p_present_mle is the raw corpus frequency, reported beside it."
+ }
+}

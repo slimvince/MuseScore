@@ -1,0 +1,832 @@
+{
+ "alignment_diagnostic_all326": {
+  "factors_present_distribution": {
+   "seventh": {
+    "0": 57,
+    "1": 185,
+    "2": 200,
+    "3": 768,
+    "4": 3155
+   },
+   "triad": {
+    "0": 275,
+    "1": 560,
+    "2": 799,
+    "3": 11663
+   }
+  },
+  "note": "a segment with ZERO of its factors sounding is a GT-tick MISALIGNMENT signature (the span holds a different chord — the OI-184 / part-2 anomaly-1 jitter), NOT a musical incomplete chord. The raw table counts every kept segment (the fact, unadjusted); this diagnostic quantifies the alignment floor so the raw rates are interpreted correctly. 'seventh_presence_when_triad_complete' is the seventh's presence among well-aligned seventh segments (root+third+fifth all sounding).",
+  "seventh_presence_any": {
+   "P_seventh_present": 0.9234822451317297,
+   "seventh_absent": 334,
+   "total": 4365
+  },
+  "seventh_presence_when_triad_complete": {
+   "P_seventh_present": 0.973164713140037,
+   "seventh_absent": 87,
+   "total": 3242
+  },
+  "zero_factors_present_misalignment": {
+   "seventh": {
+    "count": 57,
+    "frac": 0.013058419243986255,
+    "total": 4365
+   },
+   "triad": {
+    "count": 275,
+    "frac": 0.020681356696999324,
+    "total": 13297
+   }
+  }
+ },
+ "all326_table": {
+  "onset": {
+   "fifth|seventh": {
+    "p_absent_smoothed": 0.5202656285779712,
+    "p_present_mle": 0.47972508591065294,
+    "p_present_smoothed": 0.47973437142202885,
+    "present": 2094,
+    "reliable": true,
+    "total": 4365
+   },
+   "fifth|triad": {
+    "p_absent_smoothed": 0.15670351154222117,
+    "p_present_mle": 0.8433481236369106,
+    "p_present_smoothed": 0.8432964884577788,
+    "present": 11214,
+    "reliable": true,
+    "total": 13297
+   },
+   "root|seventh": {
+    "p_absent_smoothed": 0.39065720174032514,
+    "p_present_mle": 0.6093928980526919,
+    "p_present_smoothed": 0.6093427982596749,
+    "present": 2660,
+    "reliable": true,
+    "total": 4365
+   },
+   "root|triad": {
+    "p_absent_smoothed": 0.0829385668095346,
+    "p_present_mle": 0.9171241633451155,
+    "p_present_smoothed": 0.9170614331904654,
+    "present": 12195,
+    "reliable": true,
+    "total": 13297
+   },
+   "seventh|seventh": {
+    "p_absent_smoothed": 0.2720403022670025,
+    "p_present_mle": 0.7280641466208476,
+    "p_present_smoothed": 0.7279596977329975,
+    "present": 3178,
+    "reliable": true,
+    "total": 4365
+   },
+   "third|seventh": {
+    "p_absent_smoothed": 0.42111289214563774,
+    "p_present_mle": 0.5789232531500573,
+    "p_present_smoothed": 0.5788871078543623,
+    "present": 2527,
+    "reliable": true,
+    "total": 4365
+   },
+   "third|triad": {
+    "p_absent_smoothed": 0.10903075419204455,
+    "p_present_mle": 0.8910280514401745,
+    "p_present_smoothed": 0.8909692458079554,
+    "present": 11848,
+    "reliable": true,
+    "total": 13297
+   }
+  },
+  "overlap": {
+   "fifth|seventh": {
+    "p_absent_smoothed": 0.15640027478818408,
+    "p_present_mle": 0.8437571592210767,
+    "p_present_smoothed": 0.8435997252118159,
+    "present": 3683,
+    "reliable": true,
+    "total": 4365
+   },
+   "fifth|triad": {
+    "p_absent_smoothed": 0.06737348672832544,
+    "p_present_mle": 0.9326915845679477,
+    "p_present_smoothed": 0.9326265132716746,
+    "present": 12402,
+    "reliable": true,
+    "total": 13297
+   },
+   "root|seventh": {
+    "p_absent_smoothed": 0.08861918937485691,
+    "p_present_mle": 0.9115693012600229,
+    "p_present_smoothed": 0.9113808106251431,
+    "present": 3979,
+    "reliable": true,
+    "total": 4365
+   },
+   "root|triad": {
+    "p_absent_smoothed": 0.06023009248815703,
+    "p_present_mle": 0.9398360532450929,
+    "p_present_smoothed": 0.939769907511843,
+    "present": 12497,
+    "reliable": true,
+    "total": 13297
+   },
+   "seventh|seventh": {
+    "p_absent_smoothed": 0.07671170139683992,
+    "p_present_mle": 0.9234822451317297,
+    "p_present_smoothed": 0.9232882986031601,
+    "present": 4031,
+    "reliable": true,
+    "total": 4365
+   },
+   "third|seventh": {
+    "p_absent_smoothed": 0.12594458438287148,
+    "p_present_mle": 0.8742268041237113,
+    "p_present_smoothed": 0.8740554156171285,
+    "present": 3816,
+    "reliable": true,
+    "total": 4365
+   },
+   "third|triad": {
+    "p_absent_smoothed": 0.07895330475975637,
+    "p_present_mle": 0.921110024817628,
+    "p_present_smoothed": 0.9210466952402436,
+    "present": 12248,
+    "reliable": true,
+    "total": 13297
+   }
+  }
+ },
+ "counted_population": {
+  "all326_segment_diagnostics": {
+   "seg_chromatic_class": 2,
+   "seg_multilevel_applied": 3,
+   "seg_seventh": 4365,
+   "seg_triad": 13297
+  },
+  "counted_stems": 317,
+  "excluded": {
+   "flagged": [
+    "bwv110.7",
+    "bwv112.5",
+    "bwv113.8",
+    "bwv123.6",
+    "bwv140.7",
+    "bwv274",
+    "bwv384"
+   ],
+   "multi_meter": [
+    "bwv304",
+    "bwv362"
+   ]
+  },
+  "excluded_counts": {
+   "flagged": 7,
+   "multi_meter": 2
+  }
+ },
+ "per_fold_table": {
+  "fold0": {
+   "onset": {
+    "fifth|seventh": {
+     "p_absent_smoothed": 0.5190311418685121,
+     "p_present_mle": 0.4809578765147144,
+     "p_present_smoothed": 0.4809688581314879,
+     "present": 1667,
+     "reliable": true,
+     "total": 3466
+    },
+    "fifth|triad": {
+     "p_absent_smoothed": 0.15407058823529407,
+     "p_present_mle": 0.8459945401487339,
+     "p_present_smoothed": 0.8459294117647059,
+     "present": 8987,
+     "reliable": true,
+     "total": 10623
+    },
+    "root|seventh": {
+     "p_absent_smoothed": 0.3817762399077278,
+     "p_present_mle": 0.6182919792267744,
+     "p_present_smoothed": 0.6182237600922722,
+     "present": 2143,
+     "reliable": true,
+     "total": 3466
+    },
+    "root|triad": {
+     "p_absent_smoothed": 0.0813176470588235,
+     "p_present_mle": 0.9187611785747906,
+     "p_present_smoothed": 0.9186823529411765,
+     "present": 9760,
+     "reliable": true,
+     "total": 10623
+    },
+    "seventh|seventh": {
+     "p_absent_smoothed": 0.2655709342560554,
+     "p_present_mle": 0.7345643392960185,
+     "p_present_smoothed": 0.7344290657439446,
+     "present": 2546,
+     "reliable": true,
+     "total": 3466
+    },
+    "third|seventh": {
+     "p_absent_smoothed": 0.410322952710496,
+     "p_present_mle": 0.5897287939988459,
+     "p_present_smoothed": 0.589677047289504,
+     "present": 2044,
+     "reliable": true,
+     "total": 3466
+    },
+    "third|triad": {
+     "p_absent_smoothed": 0.1049411764705882,
+     "p_present_mle": 0.89513320154382,
+     "p_present_smoothed": 0.8950588235294118,
+     "present": 9509,
+     "reliable": true,
+     "total": 10623
+    }
+   },
+   "overlap": {
+    "fifth|seventh": {
+     "p_absent_smoothed": 0.1554209919261822,
+     "p_present_mle": 0.8447778418926717,
+     "p_present_smoothed": 0.8445790080738178,
+     "present": 2928,
+     "reliable": true,
+     "total": 3466
+    },
+    "fifth|triad": {
+     "p_absent_smoothed": 0.06296470588235292,
+     "p_present_mle": 0.9371175750729549,
+     "p_present_smoothed": 0.9370352941176471,
+     "present": 9955,
+     "reliable": true,
+     "total": 10623
+    },
+    "root|seventh": {
+     "p_absent_smoothed": 0.08102652825836221,
+     "p_present_mle": 0.9192152336987882,
+     "p_present_smoothed": 0.9189734717416378,
+     "present": 3186,
+     "reliable": true,
+     "total": 3466
+    },
+    "root|triad": {
+     "p_absent_smoothed": 0.05835294117647061,
+     "p_present_mle": 0.9417302080391603,
+     "p_present_smoothed": 0.9416470588235294,
+     "present": 10004,
+     "reliable": true,
+     "total": 10623
+    },
+    "seventh|seventh": {
+     "p_absent_smoothed": 0.07122260668973468,
+     "p_present_mle": 0.9290248124639354,
+     "p_present_smoothed": 0.9287773933102653,
+     "present": 3220,
+     "reliable": true,
+     "total": 3466
+    },
+    "third|seventh": {
+     "p_absent_smoothed": 0.11735870818915806,
+     "p_present_mle": 0.8828620888632429,
+     "p_present_smoothed": 0.8826412918108419,
+     "present": 3060,
+     "reliable": true,
+     "total": 3466
+    },
+    "third|triad": {
+     "p_absent_smoothed": 0.07585882352941176,
+     "p_present_mle": 0.9242210298409113,
+     "p_present_smoothed": 0.9241411764705882,
+     "present": 9818,
+     "reliable": true,
+     "total": 10623
+    }
+   }
+  },
+  "fold1": {
+   "onset": {
+    "fifth|seventh": {
+     "p_absent_smoothed": 0.522240990990991,
+     "p_present_mle": 0.47774647887323946,
+     "p_present_smoothed": 0.47775900900900903,
+     "present": 1696,
+     "reliable": true,
+     "total": 3550
+    },
+    "fifth|triad": {
+     "p_absent_smoothed": 0.15697128917245262,
+     "p_present_mle": 0.8430930930930931,
+     "p_present_smoothed": 0.8430287108275474,
+     "present": 8984,
+     "reliable": true,
+     "total": 10656
+    },
+    "root|seventh": {
+     "p_absent_smoothed": 0.3879504504504504,
+     "p_present_mle": 0.612112676056338,
+     "p_present_smoothed": 0.6120495495495496,
+     "present": 2173,
+     "reliable": true,
+     "total": 3550
+    },
+    "root|triad": {
+     "p_absent_smoothed": 0.08406830549821731,
+     "p_present_mle": 0.9160097597597597,
+     "p_present_smoothed": 0.9159316945017827,
+     "present": 9761,
+     "reliable": true,
+     "total": 10656
+    },
+    "seventh|seventh": {
+     "p_absent_smoothed": 0.2826576576576577,
+     "p_present_mle": 0.7174647887323944,
+     "p_present_smoothed": 0.7173423423423423,
+     "present": 2547,
+     "reliable": true,
+     "total": 3550
+    },
+    "third|seventh": {
+     "p_absent_smoothed": 0.42286036036036034,
+     "p_present_mle": 0.5771830985915493,
+     "p_present_smoothed": 0.5771396396396397,
+     "present": 2049,
+     "reliable": true,
+     "total": 3550
+    },
+    "third|triad": {
+     "p_absent_smoothed": 0.11202852317507972,
+     "p_present_mle": 0.8880442942942943,
+     "p_present_smoothed": 0.8879714768249203,
+     "present": 9463,
+     "reliable": true,
+     "total": 10656
+    }
+   },
+   "overlap": {
+    "fifth|seventh": {
+     "p_absent_smoothed": 0.1582207207207207,
+     "p_present_mle": 0.8419718309859155,
+     "p_present_smoothed": 0.8417792792792793,
+     "present": 2989,
+     "reliable": true,
+     "total": 3550
+    },
+    "fifth|triad": {
+     "p_absent_smoothed": 0.06905610808782137,
+     "p_present_mle": 0.9310247747747747,
+     "p_present_smoothed": 0.9309438919121786,
+     "present": 9921,
+     "reliable": true,
+     "total": 10656
+    },
+    "root|seventh": {
+     "p_absent_smoothed": 0.09093468468468469,
+     "p_present_mle": 0.9092957746478874,
+     "p_present_smoothed": 0.9090653153153153,
+     "present": 3228,
+     "reliable": true,
+     "total": 3550
+    },
+    "root|triad": {
+     "p_absent_smoothed": 0.061174704447363504,
+     "p_present_mle": 0.9389076576576577,
+     "p_present_smoothed": 0.9388252955526365,
+     "present": 10005,
+     "reliable": true,
+     "total": 10656
+    },
+    "seventh|seventh": {
+     "p_absent_smoothed": 0.0807995495495496,
+     "p_present_mle": 0.9194366197183098,
+     "p_present_smoothed": 0.9192004504504504,
+     "present": 3264,
+     "reliable": true,
+     "total": 3550
+    },
+    "third|seventh": {
+     "p_absent_smoothed": 0.13091216216216217,
+     "p_present_mle": 0.8692957746478873,
+     "p_present_smoothed": 0.8690878378378378,
+     "present": 3086,
+     "reliable": true,
+     "total": 3550
+    },
+    "third|triad": {
+     "p_absent_smoothed": 0.08172264965284293,
+     "p_present_mle": 0.9183558558558559,
+     "p_present_smoothed": 0.9182773503471571,
+     "present": 9786,
+     "reliable": true,
+     "total": 10656
+    }
+   }
+  },
+  "fold2": {
+   "onset": {
+    "fifth|seventh": {
+     "p_absent_smoothed": 0.5258645327236353,
+     "p_present_mle": 0.4741206748641693,
+     "p_present_smoothed": 0.4741354672763647,
+     "present": 1658,
+     "reliable": true,
+     "total": 3497
+    },
+    "fifth|triad": {
+     "p_absent_smoothed": 0.15897674418604646,
+     "p_present_mle": 0.84108671380722,
+     "p_present_smoothed": 0.8410232558139535,
+     "present": 9040,
+     "reliable": true,
+     "total": 10748
+    },
+    "root|seventh": {
+     "p_absent_smoothed": 0.3986853386681909,
+     "p_present_mle": 0.6013726050900772,
+     "p_present_smoothed": 0.6013146613318091,
+     "present": 2103,
+     "reliable": true,
+     "total": 3497
+    },
+    "root|triad": {
+     "p_absent_smoothed": 0.08567441860465119,
+     "p_present_mle": 0.9144026795682918,
+     "p_present_smoothed": 0.9143255813953488,
+     "present": 9828,
+     "reliable": true,
+     "total": 10748
+    },
+    "seventh|seventh": {
+     "p_absent_smoothed": 0.27693626750500144,
+     "p_present_mle": 0.7231913068344296,
+     "p_present_smoothed": 0.7230637324949986,
+     "present": 2529,
+     "reliable": true,
+     "total": 3497
+    },
+    "third|seventh": {
+     "p_absent_smoothed": 0.4249785653043727,
+     "p_present_mle": 0.5750643408635974,
+     "p_present_smoothed": 0.5750214346956273,
+     "present": 2011,
+     "reliable": true,
+     "total": 3497
+    },
+    "third|triad": {
+     "p_absent_smoothed": 0.11209302325581394,
+     "p_present_mle": 0.8879791589132862,
+     "p_present_smoothed": 0.8879069767441861,
+     "present": 9544,
+     "reliable": true,
+     "total": 10748
+    }
+   },
+   "overlap": {
+    "fifth|seventh": {
+     "p_absent_smoothed": 0.15747356387539302,
+     "p_present_mle": 0.8427223334286531,
+     "p_present_smoothed": 0.842526436124607,
+     "present": 2947,
+     "reliable": true,
+     "total": 3497
+    },
+    "fifth|triad": {
+     "p_absent_smoothed": 0.07004651162790698,
+     "p_present_mle": 0.9300334946036471,
+     "p_present_smoothed": 0.929953488372093,
+     "present": 9996,
+     "reliable": true,
+     "total": 10748
+    },
+    "root|seventh": {
+     "p_absent_smoothed": 0.09145470134324096,
+     "p_present_mle": 0.9087789533886188,
+     "p_present_smoothed": 0.908545298656759,
+     "present": 3178,
+     "reliable": true,
+     "total": 3497
+    },
+    "root|triad": {
+     "p_absent_smoothed": 0.06297674418604648,
+     "p_present_mle": 0.9371045775958318,
+     "p_present_smoothed": 0.9370232558139535,
+     "present": 10072,
+     "reliable": true,
+     "total": 10748
+    },
+    "seventh|seventh": {
+     "p_absent_smoothed": 0.08002286367533584,
+     "p_present_mle": 0.9202173291392622,
+     "p_present_smoothed": 0.9199771363246642,
+     "present": 3218,
+     "reliable": true,
+     "total": 3497
+    },
+    "third|seventh": {
+     "p_absent_smoothed": 0.13032294941411837,
+     "p_present_mle": 0.8698884758364313,
+     "p_present_smoothed": 0.8696770505858816,
+     "present": 3042,
+     "reliable": true,
+     "total": 3497
+    },
+    "third|triad": {
+     "p_absent_smoothed": 0.08232558139534885,
+     "p_present_mle": 0.9177521399330107,
+     "p_present_smoothed": 0.9176744186046512,
+     "present": 9864,
+     "reliable": true,
+     "total": 10748
+    }
+   }
+  },
+  "fold3": {
+   "onset": {
+    "fifth|seventh": {
+     "p_absent_smoothed": 0.5175064047822374,
+     "p_present_mle": 0.48248362289945884,
+     "p_present_smoothed": 0.4824935952177626,
+     "present": 1694,
+     "reliable": true,
+     "total": 3511
+    },
+    "fifth|triad": {
+     "p_absent_smoothed": 0.15162113621325268,
+     "p_present_mle": 0.8484447385837194,
+     "p_present_smoothed": 0.8483788637867473,
+     "present": 8974,
+     "reliable": true,
+     "total": 10577
+    },
+    "root|seventh": {
+     "p_absent_smoothed": 0.3879874750925135,
+     "p_present_mle": 0.6120763315294788,
+     "p_present_smoothed": 0.6120125249074865,
+     "present": 2149,
+     "reliable": true,
+     "total": 3511
+    },
+    "root|triad": {
+     "p_absent_smoothed": 0.07836279421495418,
+     "p_present_mle": 0.9217169329677602,
+     "p_present_smoothed": 0.9216372057850458,
+     "present": 9749,
+     "reliable": true,
+     "total": 10577
+    },
+    "seventh|seventh": {
+     "p_absent_smoothed": 0.2635923711927127,
+     "p_present_mle": 0.7365422956422671,
+     "p_present_smoothed": 0.7364076288072873,
+     "present": 2586,
+     "reliable": true,
+     "total": 3511
+    },
+    "third|seventh": {
+     "p_absent_smoothed": 0.421576999715343,
+     "p_present_mle": 0.5784676730276275,
+     "p_present_smoothed": 0.578423000284657,
+     "present": 2031,
+     "reliable": true,
+     "total": 3511
+    },
+    "third|triad": {
+     "p_absent_smoothed": 0.10303431326212309,
+     "p_present_mle": 0.8970407487945542,
+     "p_present_smoothed": 0.8969656867378769,
+     "present": 9488,
+     "reliable": true,
+     "total": 10577
+    }
+   },
+   "overlap": {
+    "fifth|seventh": {
+     "p_absent_smoothed": 0.15684600056931397,
+     "p_present_mle": 0.8433494730845913,
+     "p_present_smoothed": 0.843153999430686,
+     "present": 2961,
+     "reliable": true,
+     "total": 3511
+    },
+    "fifth|triad": {
+     "p_absent_smoothed": 0.06342754513659132,
+     "p_present_mle": 0.9366550061454099,
+     "p_present_smoothed": 0.9365724548634087,
+     "present": 9907,
+     "reliable": true,
+     "total": 10577
+    },
+    "root|seventh": {
+     "p_absent_smoothed": 0.08539709649871907,
+     "p_present_mle": 0.9148390771859869,
+     "p_present_smoothed": 0.9146029035012809,
+     "present": 3212,
+     "reliable": true,
+     "total": 3511
+    },
+    "root|triad": {
+     "p_absent_smoothed": 0.05577086681160792,
+     "p_present_mle": 0.944313132268129,
+     "p_present_smoothed": 0.9442291331883921,
+     "present": 9988,
+     "reliable": true,
+     "total": 10577
+    },
+    "seventh|seventh": {
+     "p_absent_smoothed": 0.07429547395388558,
+     "p_present_mle": 0.9259470236399886,
+     "p_present_smoothed": 0.9257045260461144,
+     "present": 3251,
+     "reliable": true,
+     "total": 3511
+    },
+    "third|seventh": {
+     "p_absent_smoothed": 0.12154853401651011,
+     "p_present_mle": 0.8786670464255198,
+     "p_present_smoothed": 0.8784514659834899,
+     "present": 3085,
+     "reliable": true,
+     "total": 3511
+    },
+    "third|triad": {
+     "p_absent_smoothed": 0.07344739578410053,
+     "p_present_mle": 0.926633260849012,
+     "p_present_smoothed": 0.9265526042158995,
+     "present": 9801,
+     "reliable": true,
+     "total": 10577
+    }
+   }
+  },
+  "fold4": {
+   "onset": {
+    "fifth|seventh": {
+     "p_absent_smoothed": 0.5165794066317626,
+     "p_present_mle": 0.48341094295692666,
+     "p_present_smoothed": 0.48342059336823734,
+     "present": 1661,
+     "reliable": true,
+     "total": 3436
+    },
+    "fifth|triad": {
+     "p_absent_smoothed": 0.1619119591913849,
+     "p_present_mle": 0.8381519274376418,
+     "p_present_smoothed": 0.8380880408086151,
+     "present": 8871,
+     "reliable": true,
+     "total": 10584
+    },
+    "root|seventh": {
+     "p_absent_smoothed": 0.3970331588132635,
+     "p_present_mle": 0.6030267753201397,
+     "p_present_smoothed": 0.6029668411867365,
+     "present": 2072,
+     "reliable": true,
+     "total": 3436
+    },
+    "root|triad": {
+     "p_absent_smoothed": 0.08530134139429435,
+     "p_present_mle": 0.9147770219198791,
+     "p_present_smoothed": 0.9146986586057057,
+     "present": 9682,
+     "reliable": true,
+     "total": 10584
+    },
+    "seventh|seventh": {
+     "p_absent_smoothed": 0.2713787085514834,
+     "p_present_mle": 0.7287543655413271,
+     "p_present_smoothed": 0.7286212914485166,
+     "present": 2504,
+     "reliable": true,
+     "total": 3436
+    },
+    "third|seventh": {
+     "p_absent_smoothed": 0.4258289703315882,
+     "p_present_mle": 0.5742142025611175,
+     "p_present_smoothed": 0.5741710296684118,
+     "present": 1973,
+     "reliable": true,
+     "total": 3436
+    },
+    "third|triad": {
+     "p_absent_smoothed": 0.11307387115057621,
+     "p_present_mle": 0.8869992441421013,
+     "p_present_smoothed": 0.8869261288494238,
+     "present": 9388,
+     "reliable": true,
+     "total": 10584
+    }
+   },
+   "overlap": {
+    "fifth|seventh": {
+     "p_absent_smoothed": 0.1541593949970913,
+     "p_present_mle": 0.8460419091967404,
+     "p_present_smoothed": 0.8458406050029087,
+     "present": 2907,
+     "reliable": true,
+     "total": 3436
+    },
+    "fifth|triad": {
+     "p_absent_smoothed": 0.07141507651615342,
+     "p_present_mle": 0.9286659108087679,
+     "p_present_smoothed": 0.9285849234838466,
+     "present": 9829,
+     "reliable": true,
+     "total": 10584
+    },
+    "root|seventh": {
+     "p_absent_smoothed": 0.09453170447934844,
+     "p_present_mle": 0.9057043073341094,
+     "p_present_smoothed": 0.9054682955206516,
+     "present": 3112,
+     "reliable": true,
+     "total": 3436
+    },
+    "root|triad": {
+     "p_absent_smoothed": 0.06291328169280186,
+     "p_present_mle": 0.9371693121693122,
+     "p_present_smoothed": 0.9370867183071981,
+     "present": 9919,
+     "reliable": true,
+     "total": 10584
+    },
+    "seventh|seventh": {
+     "p_absent_smoothed": 0.07737056428155908,
+     "p_present_mle": 0.9228754365541327,
+     "p_present_smoothed": 0.9226294357184409,
+     "present": 3171,
+     "reliable": true,
+     "total": 3436
+    },
+    "third|seventh": {
+     "p_absent_smoothed": 0.1297265852239674,
+     "p_present_mle": 0.8704889406286379,
+     "p_present_smoothed": 0.8702734147760326,
+     "present": 2991,
+     "reliable": true,
+     "total": 3436
+    },
+    "third|triad": {
+     "p_absent_smoothed": 0.0814283015303231,
+     "p_present_mle": 0.9186507936507936,
+     "p_present_smoothed": 0.9185716984696769,
+     "present": 9723,
+     "reliable": true,
+     "total": 10584
+    }
+   }
+  }
+ },
+ "primary_mode": "overlap",
+ "provenance": {
+  "GENRE_SCOPE": "Bach-chorale values only. These are counts over the 326 annotated Bach chorales (When-in-Rome ground truth), the only repertoire we hold ground truth for. For jazz — where omitting the fifth or even the root from a voicing is normal practice — these frequencies would be wrong, and no jazz values can be counted because no jazz ground truth exists (register item 7; the style-adaptation pattern is: same table STRUCTURE, values re-counted per style, only when a jazz ground-truth gate is passed). The reliability claim is scoped to this corpus and claims nothing beyond it.",
+  "constants": {
+   "alpha": 1.0,
+   "n_folds": 5,
+   "threshold": 20
+  },
+  "corpus_git_hash": "57ed94a6a46571172a351c09ba4f5cb92930674a",
+  "exclusions_same_as_part2": "flagged (7) + multi-meter (bwv304,bwv362) + meter not in {4/4,3/4}; m0 segments dropped",
+  "factor_pcs": "gen_note_tables.chord_factor_pcs (shares member_pcs framework/root derivation)",
+  "fit_version": "factor-presence-v1 (option 3a; P(factor sounds | role, family))",
+  "generator": "tools/joint_estimator/gen_factor_presence.py",
+  "gt_segment_alignment": "gen_note_tables.gt_segments (compare_analyses._dcml_time_spans, part-2, untouched)",
+  "membership_definitions": {
+   "onset": "CROSS-CHECK — part-2's onset-in-segment assignment.",
+   "overlap": "PRIMARY — a factor sounds if a note's [onset,onset+dur) overlaps the segment (a factor held over from the previous chord still sounds)."
+  },
+  "note_events_artifact": "tools/joint_estimator/note_events/note_events.json",
+  "protocol": "cowork_prefit_gates.md (OI-176/OI-177), user-ratified 2026-07-19",
+  "ratified_probe_finding": "cowork_sensitive_cell_probe.md finding 3, option 3a (2026-07-19)",
+  "smoothing_note": "stored p_present_smoothed = (present+alpha)/(total+2*alpha) with the ratified alpha=1, so P(absent) — the missing-tone penalty basis — is never zero (finding-2 option-2c, a zero probability, is fatal to the decode). p_present_mle is the raw corpus frequency, reported beside it."
+ },
+ "purpose": "the chord-factor presence table (option 3a): P(factor sounds | role, family) per training fold + all-326; the counted replacement for the desk-sim missing-tone placeholder. Bach-chorale scope (declared).",
+ "reliability_all_cells_pass": true,
+ "sanity_expectations": {
+  "fifth_is_most_omitted_seventh": true,
+  "fifth_is_most_omitted_triad": false,
+  "per_family_omission": {
+   "seventh": {
+    "fifth_is_most_omitted": true,
+    "most_omitted_role": "fifth",
+    "presence": {
+     "fifth": 0.8437571592210767,
+     "root": 0.9115693012600229,
+     "third": 0.8742268041237113
+    }
+   },
+   "triad": {
+    "fifth_is_most_omitted": false,
+    "most_omitted_role": "third",
+    "presence": {
+     "fifth": 0.9326915845679477,
+     "root": 0.9398360532450929,
+     "third": 0.921110024817628
+    }
+   }
+  },
+  "seventh_near_one": false,
+  "seventh_presence_in_seventh_chords": 0.9234822451317297
+ },
+ "sub_threshold_cells": {}
+}

@@ -1,39 +1,331 @@
 {
+ "applied_relation_effect": {
+  "major": {
+   "P_elsewhere_overall": 0.22920892494929002,
+   "P_resolves_to_target_overall": 0.77079107505071,
+   "n_applied_contexts": 64,
+   "n_applied_kept_pertarget": 23,
+   "n_overridden_to_relation": 41,
+   "per_target": {
+    "IV": {
+     "P_resolve_this_target_raw": 0.8014184397163121,
+     "elsewhere_count": 28,
+     "representative": {
+      "after_relation_resolve": {
+       "how": "own_MLE",
+       "prob": 0.647059
+      },
+      "before_mode_unigram": {
+       "how": "own_MLE",
+       "prob": 0.05178
+      },
+      "raw_count": 77,
+      "relation_cell": "«rel»resolve|triad|root",
+      "representative_resolution_outcome": "IV | Maj |  | "
+     },
+     "resolve_count": 113
+    },
+    "V": {
+     "P_resolve_this_target_raw": 0.8333333333333334,
+     "elsewhere_count": 34,
+     "representative": {
+      "after_relation_resolve": {
+       "how": "own_MLE",
+       "prob": 0.647059
+      },
+      "before_mode_unigram": {
+       "how": "own_MLE",
+       "prob": 0.135922
+      },
+      "raw_count": 149,
+      "relation_cell": "«rel»resolve|triad|root",
+      "representative_resolution_outcome": "V | Maj |  | "
+     },
+     "resolve_count": 170
+    },
+    "i": {
+     "P_resolve_this_target_raw": 0.0,
+     "elsewhere_count": 3,
+     "representative": null,
+     "resolve_count": 0
+    },
+    "ii": {
+     "P_resolve_this_target_raw": 0.7435897435897436,
+     "elsewhere_count": 10,
+     "representative": {
+      "after_relation_resolve": {
+       "how": "own_MLE",
+       "prob": 0.647059
+      },
+      "before_mode_unigram": {
+       "how": "own_MLE",
+       "prob": 0.021946
+      },
+      "raw_count": 25,
+      "relation_cell": "«rel»resolve|triad|root",
+      "representative_resolution_outcome": "II | Min |  | "
+     },
+     "resolve_count": 29
+    },
+    "iii": {
+     "P_resolve_this_target_raw": 1.0,
+     "elsewhere_count": 0,
+     "representative": {
+      "after_relation_resolve": {
+       "how": "own_MLE",
+       "prob": 0.647059
+      },
+      "before_mode_unigram": {
+       "how": "own_MLE",
+       "prob": 0.006675
+      },
+      "raw_count": 1,
+      "relation_cell": "«rel»resolve|triad|root",
+      "representative_resolution_outcome": "III | Min |  | "
+     },
+     "resolve_count": 1
+    },
+    "iv": {
+     "P_resolve_this_target_raw": 1.0,
+     "elsewhere_count": 0,
+     "representative": {
+      "after_relation_resolve": {
+       "how": "own_MLE",
+       "prob": 0.647059
+      },
+      "before_mode_unigram": {
+       "how": "pooled -> BASE",
+       "prob": 0.029312
+      },
+      "raw_count": 2,
+      "relation_cell": "«rel»resolve|triad|root",
+      "representative_resolution_outcome": "IV | Min |  | "
+     },
+     "resolve_count": 3
+    },
+    "vi": {
+     "P_resolve_this_target_raw": 0.6274509803921569,
+     "elsewhere_count": 38,
+     "representative": {
+      "after_relation_resolve": {
+       "how": "own_MLE",
+       "prob": 0.647059
+      },
+      "before_mode_unigram": {
+       "how": "own_MLE",
+       "prob": 0.042678
+      },
+      "raw_count": 64,
+      "relation_cell": "«rel»resolve|triad|root",
+      "representative_resolution_outcome": "VI | Min |  | "
+     },
+     "resolve_count": 64
+    }
+   },
+   "relation_distribution": {
+    "«rel»elsewhere": 0.22920892494929007,
+    "«rel»resolve": 0.016227180527383367,
+    "«rel»resolve|triad|inv": 0.1075050709939148,
+    "«rel»resolve|triad|root": 0.6470588235294118
+   },
+   "relation_raw_counts": {
+    "«rel»elsewhere": 113,
+    "«rel»resolve|seventh|inv": 8,
+    "«rel»resolve|triad|inv": 53,
+    "«rel»resolve|triad|root": 319
+   },
+   "reliable_relation_cells": 3
+  },
+  "minor": {
+   "P_elsewhere_overall": 0.22580645161290325,
+   "P_resolves_to_target_overall": 0.7741935483870968,
+   "n_applied_contexts": 71,
+   "n_applied_kept_pertarget": 11,
+   "n_overridden_to_relation": 60,
+   "per_target": {
+    "III": {
+     "P_resolve_this_target_raw": 0.7903225806451613,
+     "elsewhere_count": 13,
+     "representative": {
+      "after_relation_resolve": {
+       "how": "own_MLE",
+       "prob": 0.659824
+      },
+      "before_mode_unigram": {
+       "how": "own_MLE",
+       "prob": 0.010487
+      },
+      "raw_count": 39,
+      "relation_cell": "«rel»resolve|triad|root",
+      "representative_resolution_outcome": "III | Maj |  | "
+     },
+     "resolve_count": 49
+    },
+    "IV": {
+     "P_resolve_this_target_raw": 0.6923076923076923,
+     "elsewhere_count": 4,
+     "representative": {
+      "after_relation_resolve": {
+       "how": "own_MLE",
+       "prob": 0.659824
+      },
+      "before_mode_unigram": {
+       "how": "pooled -> BASE",
+       "prob": 0.05276
+      },
+      "raw_count": 4,
+      "relation_cell": "«rel»resolve|triad|root",
+      "representative_resolution_outcome": "IV | Maj |  | "
+     },
+     "resolve_count": 9
+    },
+    "V": {
+     "P_resolve_this_target_raw": 0.8292682926829268,
+     "elsewhere_count": 21,
+     "representative": {
+      "after_relation_resolve": {
+       "how": "own_MLE",
+       "prob": 0.659824
+      },
+      "before_mode_unigram": {
+       "how": "own_MLE",
+       "prob": 0.153455
+      },
+      "raw_count": 89,
+      "relation_cell": "«rel»resolve|triad|root",
+      "representative_resolution_outcome": "V | Maj |  | "
+     },
+     "resolve_count": 102
+    },
+    "V/III": {
+     "P_resolve_this_target_raw": 0.6666666666666666,
+     "elsewhere_count": 1,
+     "representative": {
+      "after_relation_resolve": {
+       "how": "own_MLE",
+       "prob": 0.659824
+      },
+      "before_mode_unigram": {
+       "how": "pooled -> BASE",
+       "prob": 0.05276
+      },
+      "raw_count": 1,
+      "relation_cell": "«rel»resolve|triad|root",
+      "representative_resolution_outcome": "V | Maj |  | III"
+     },
+     "resolve_count": 2
+    },
+    "VI": {
+     "P_resolve_this_target_raw": 0.0,
+     "elsewhere_count": 1,
+     "representative": null,
+     "resolve_count": 0
+    },
+    "VII": {
+     "P_resolve_this_target_raw": 0.75,
+     "elsewhere_count": 8,
+     "representative": {
+      "after_relation_resolve": {
+       "how": "own_MLE",
+       "prob": 0.659824
+      },
+      "before_mode_unigram": {
+       "how": "own_MLE",
+       "prob": 0.003701
+      },
+      "raw_count": 21,
+      "relation_cell": "«rel»resolve|triad|root",
+      "representative_resolution_outcome": "VII | Maj |  | "
+     },
+     "resolve_count": 24
+    },
+    "iv": {
+     "P_resolve_this_target_raw": 0.7752808988764045,
+     "elsewhere_count": 20,
+     "representative": {
+      "after_relation_resolve": {
+       "how": "own_MLE",
+       "prob": 0.659824
+      },
+      "before_mode_unigram": {
+       "how": "own_MLE",
+       "prob": 0.01897
+      },
+      "raw_count": 49,
+      "relation_cell": "«rel»resolve|triad|root",
+      "representative_resolution_outcome": "IV | Min |  | "
+     },
+     "resolve_count": 69
+    },
+    "v": {
+     "P_resolve_this_target_raw": 0.5,
+     "elsewhere_count": 9,
+     "representative": {
+      "after_relation_resolve": {
+       "how": "own_MLE",
+       "prob": 0.659824
+      },
+      "before_mode_unigram": {
+       "how": "own_MLE",
+       "prob": 0.014651
+      },
+      "raw_count": 6,
+      "relation_cell": "«rel»resolve|triad|root",
+      "representative_resolution_outcome": "V | Min |  | "
+     },
+     "resolve_count": 9
+    }
+   },
+   "relation_distribution": {
+    "«rel»elsewhere": 0.22580645161290322,
+    "«rel»resolve": 0.014662756598240456,
+    "«rel»resolve|triad|inv": 0.09970674486803519,
+    "«rel»resolve|triad|root": 0.6598240469208211
+   },
+   "relation_raw_counts": {
+    "«rel»elsewhere": 77,
+    "«rel»resolve|seventh|inv": 5,
+    "«rel»resolve|triad|inv": 34,
+    "«rel»resolve|triad|root": 225
+   },
+   "reliable_relation_cells": 3
+  }
+ },
  "capacity_bound_summary": {
   "all": {
-   "free_params": 581,
+   "free_params": 587,
    "passes": true,
-   "tokens_per_param": 213.287,
+   "tokens_per_param": 211.107,
    "total_tokens": 123920
   },
   "fold0": {
-   "free_params": 533,
+   "free_params": 539,
    "passes": true,
-   "tokens_per_param": 185.871,
+   "tokens_per_param": 183.801,
    "total_tokens": 99069
   },
   "fold1": {
-   "free_params": 517,
+   "free_params": 523,
    "passes": true,
-   "tokens_per_param": 192.654,
+   "tokens_per_param": 190.444,
    "total_tokens": 99602
   },
   "fold2": {
-   "free_params": 520,
+   "free_params": 526,
    "passes": true,
-   "tokens_per_param": 191.633,
+   "tokens_per_param": 189.447,
    "total_tokens": 99649
   },
   "fold3": {
-   "free_params": 522,
+   "free_params": 528,
    "passes": true,
-   "tokens_per_param": 189.404,
+   "tokens_per_param": 187.252,
    "total_tokens": 98869
   },
   "fold4": {
-   "free_params": 528,
+   "free_params": 534,
    "passes": true,
-   "tokens_per_param": 186.536,
+   "tokens_per_param": 184.44,
    "total_tokens": 98491
   }
  },
@@ -81,6 +373,7 @@
  "notes": {
   "backoff_chains": {
    "table1": "context (from) back-off: full -> inversion-free -> family -> unigram; outcome (to) pooled within a reliable row: full -> inversion-free -> family -> base. NOTE (interpretation, reported per #13): the dispatch chain 'drop BOTH sides' inversion' is realized as context (from-side) coarsening at the row level plus within-row outcome pooling; the from-side is not coarsened per-sparse-cell (which would require cross-row redistribution). The named sensitive cells (V->vi own-MLE at 236; V6->vi-halfdim pooled at 2) behave as specified.",
+   "table1_applied_relation": "the applied-relation pooling level (option 1a, cowork_sensitive_cell_probe.md finding 1). AS-BUILT FORM (reported per the dispatch): the level sits on BOTH sides. CONTEXT side: every applied (target-bearing) from-context that would otherwise fall to BASE (the mode unigram) is instead pooled across ALL targets into one relation distribution per mode — an applied context that finds a reliable per-target level (L0 full / L1 inversion-free / L2 family, each >=20, all target-specific) keeps it and is NOT pooled. OUTCOME side: the continuation is re-expressed by RELATION TO THE TARGET — 'resolves to a chord of its target' vs 'elsewhere'. The resolve cell keeps quality-family (triad/seventh) and inversion (root/inverted) sub-cells via the unchanged count>=20 Katz rule, precedence collapsing position first, then quality-family, then the flat resolve aggregate. Cells namespaced «rel» (the part-1 collision lesson). The relation row's 'elsewhere' mass is apportioned over specific non-target continuations by the ratified below-threshold rule (option 2a, mode frequency) at DECODE time, not here.",
    "table2": "sparse (cofBand|modePair) change cell -> mode-pair marginal -> base; distances>=3 pre-pooled to 'cofFar' per mode pair (declared cell definition).",
    "table3": "entry class -> inversion-free -> unigram base.",
    "table4": "context (deg,quality,mode) -> (quality,mode) -> (mode); inversion-figure outcome.",
@@ -97,8 +390,8 @@
   "all": {
    "free_params": {
     "table1": {
-     "major": 258,
-     "minor": 153
+     "major": 261,
+     "minor": 156
     },
     "table2": 11,
     "table3": 21,
@@ -109,11 +402,11 @@
      "none": 0
     },
     "table6": 4,
-    "total": 581
+    "total": 587
    },
    "passes_capacity_bound": true,
    "per_table_free_params": {
-    "table1": 411,
+    "table1": 417,
     "table2": 11,
     "table3": 21,
     "table4": 121,
@@ -129,7 +422,7 @@
     "table6": 67272
    },
    "per_table_tokens_per_param": {
-    "table1": 39.83,
+    "table1": 39.26,
     "table2": 1644.73,
     "table3": 81.9,
     "table4": 152.21,
@@ -137,6 +430,197 @@
     "table6": 16818.0
    },
    "table1": {
+    "applied_relation_level": {
+     "major": {
+      "P_elsewhere": 0.22920892494929002,
+      "P_resolves_to_target": 0.77079107505071,
+      "applied_kept_pertarget_contexts": [
+       "V | Dom7 | 2 | IV",
+       "V | Dom7 | 2 | V",
+       "V | Dom7 | 4/3 | IV",
+       "V | Dom7 | 4/3 | V",
+       "V | Dom7 | 4/3 | vi",
+       "V | Dom7 | 6/5 | IV",
+       "V | Dom7 | 6/5 | V",
+       "V | Dom7 | 6/5 | vi",
+       "V | Dom7 | 7 | IV",
+       "V | Dom7 | 7 | V",
+       "V | Dom7 | 7 | vi",
+       "V | Dom7 | 9 | V",
+       "V | Maj |  | V",
+       "V | Maj |  | vi",
+       "V | Maj | 6 | V",
+       "V | Maj | 6 | vi",
+       "VII | Dim |  | V",
+       "VII | Dim | 6 | V",
+       "VII | Dim | 6/4 | V",
+       "VII | Dim7 | 7 | V",
+       "VII | HalfDim7 | 4/3 | V",
+       "VII | HalfDim7 | 6/5 | V",
+       "VII | HalfDim7 | 7 | V"
+      ],
+      "dist": {
+       "«rel»elsewhere": 0.22920892494929007,
+       "«rel»resolve": 0.016227180527383367,
+       "«rel»resolve|triad|inv": 0.1075050709939148,
+       "«rel»resolve|triad|root": 0.6470588235294118
+      },
+      "n_applied_contexts": 64,
+      "n_applied_kept_pertarget": 23,
+      "n_overridden_to_relation": 41,
+      "overridden_contexts": [
+       "II | HalfDim7 | 6/5 | vi",
+       "II | HalfDim7 | 7 | vi",
+       "II | Min |  | IV",
+       "II | Min7 | 6/5 | V",
+       "II | Min7 | 7 | IV",
+       "II | Min7 | 7 | V",
+       "IV | Dom7 | 2 | i",
+       "IV | Dom7 | 2 | vi",
+       "IV | Dom7 | 6/5 | vi",
+       "IV | Maj | 6 | vi",
+       "It | AugSixth | 6 | ii",
+       "V | Dom7 | 2 | ii",
+       "V | Dom7 | 4/3 | ii",
+       "V | Dom7 | 6/5 | ii",
+       "V | Dom7 | 6/5 | iv",
+       "V | Dom7 | 7 | ii",
+       "V | Maj |  | IV",
+       "V | Maj |  | ii",
+       "V | Maj | 6 | IV",
+       "V | Maj | 6 | ii",
+       "V | Maj | 6/4 | IV",
+       "VI | Maj |  | ii",
+       "VI | Min |  | IV",
+       "VI | Min |  | V",
+       "VI | Min | 6 | V",
+       "VI | Min7 | 7 | V",
+       "VII | Dim |  | IV",
+       "VII | Dim |  | vi",
+       "VII | Dim | 6 | IV",
+       "VII | Dim | 6 | ii",
+       "VII | Dim | 6 | iv",
+       "VII | Dim | 6 | vi",
+       "VII | Dim | 6/4 | IV",
+       "VII | Dim7 | 4/3 | ii",
+       "VII | Dim7 | 6/5 | ii",
+       "VII | Dim7 | 7 | ii",
+       "VII | Dim7 | 7 | iii",
+       "VII | Dim7 | 7 | iv",
+       "VII | Dim7 | 7 | vi",
+       "VII | HalfDim7 | 7 | IV",
+       "VII | HalfDim7 | 7 | ii"
+      ],
+      "pooled_buckets": 1,
+      "raw_counts": {
+       "«rel»elsewhere": 113,
+       "«rel»resolve|seventh|inv": 8,
+       "«rel»resolve|triad|inv": 53,
+       "«rel»resolve|triad|root": 319
+      },
+      "rel_ctx_key": "«rel»applied|major",
+      "reliable_cells": 3,
+      "total_applied_transitions": 493
+     },
+     "minor": {
+      "P_elsewhere": 0.22580645161290325,
+      "P_resolves_to_target": 0.7741935483870968,
+      "applied_kept_pertarget_contexts": [
+       "V | Dom7 | 2 | iv",
+       "V | Dom7 | 4/3 | iv",
+       "V | Dom7 | 6/5 | V",
+       "V | Dom7 | 6/5 | iv",
+       "V | Dom7 | 7 | V",
+       "V | Dom7 | 7 | iv",
+       "V | Maj |  | III",
+       "V | Maj | 6 | III",
+       "VII | Dim7 | 4/3 | V",
+       "VII | Dim7 | 6/5 | V",
+       "VII | Dim7 | 7 | V"
+      ],
+      "dist": {
+       "«rel»elsewhere": 0.22580645161290322,
+       "«rel»resolve": 0.014662756598240456,
+       "«rel»resolve|triad|inv": 0.09970674486803519,
+       "«rel»resolve|triad|root": 0.6598240469208211
+      },
+      "n_applied_contexts": 71,
+      "n_applied_kept_pertarget": 11,
+      "n_overridden_to_relation": 60,
+      "overridden_contexts": [
+       "II | Dim | 6 | iv",
+       "II | HalfDim7 | 2 | iv",
+       "II | HalfDim7 | 6/5 | V",
+       "II | Min7 | 2 | iv",
+       "IV | Dom7 | 2 | iv",
+       "IV | Dom7 | 6/5 | v",
+       "IV | Maj | 6 | III",
+       "IV | Maj | 6 | V",
+       "IV | Maj | 6 | iv",
+       "IV | Min |  | iv",
+       "IV | Min | 6 | iv",
+       "V | Dom7 | 2 | III",
+       "V | Dom7 | 2 | IV",
+       "V | Dom7 | 2 | V/III",
+       "V | Dom7 | 2 | VII",
+       "V | Dom7 | 6/5 | III",
+       "V | Dom7 | 6/5 | IV",
+       "V | Dom7 | 6/5 | V/III",
+       "V | Dom7 | 6/5 | VII",
+       "V | Dom7 | 6/5 | v",
+       "V | Dom7 | 7 | III",
+       "V | Dom7 | 7 | IV",
+       "V | Dom7 | 7 | VI",
+       "V | Dom7 | 7 | VII",
+       "V | Dom7 | 7 | v",
+       "V | Maj |  | IV",
+       "V | Maj |  | V",
+       "V | Maj |  | V/III",
+       "V | Maj |  | v",
+       "V | Maj | 6 | IV",
+       "V | Maj | 6 | V",
+       "V | Maj | 6 | VII",
+       "V | Maj | 6 | iv",
+       "V | Maj | 6 | v",
+       "V | Maj | 6/4 | iv",
+       "VI | HalfDim7 | 7 | iv",
+       "VI | HalfDim7 | 7 | v",
+       "VI | Maj | 6 | iv",
+       "VII | Dim |  | iv",
+       "VII | Dim |  | v",
+       "VII | Dim | 6 | III",
+       "VII | Dim | 6 | IV",
+       "VII | Dim | 6 | V",
+       "VII | Dim | 6 | VII",
+       "VII | Dim | 6 | iv",
+       "VII | Dim | 6/4 | V",
+       "VII | Dim | 6/4 | VII",
+       "VII | Dim | 6/4 | iv",
+       "VII | Dim7 | 4/3 | iv",
+       "VII | Dim7 | 6/5 | iv",
+       "VII | Dim7 | 6/5 | v",
+       "VII | Dim7 | 7 | IV",
+       "VII | Dim7 | 7 | VII",
+       "VII | Dim7 | 7 | iv",
+       "VII | HalfDim7 | 4/3 | III",
+       "VII | HalfDim7 | 4/3 | IV",
+       "VII | HalfDim7 | 4/3 | iv",
+       "VII | HalfDim7 | 7 | III",
+       "VII | HalfDim7 | 7 | VII",
+       "VII | HalfDim7 | 7 | iv"
+      ],
+      "pooled_buckets": 1,
+      "raw_counts": {
+       "«rel»elsewhere": 77,
+       "«rel»resolve|seventh|inv": 5,
+       "«rel»resolve|triad|inv": 34,
+       "«rel»resolve|triad|root": 225
+      },
+      "rel_ctx_key": "«rel»applied|minor",
+      "reliable_cells": 3,
+      "total_applied_transitions": 341
+     }
+    },
     "distinct_estimated_rows": {
      "major": 60,
      "minor": 67
@@ -148,6 +632,10 @@
     "distinct_transition_pairs": {
      "major": 746,
      "minor": 894
+    },
+    "free_params_before_amendment": {
+     "major": 258,
+     "minor": 153
     },
     "pair_count_histogram": {
      "major": {
@@ -273,6 +761,7 @@
     "pieces_counted": 317
    },
    "tokens": {
+    "applied_transition_pairs": 834,
     "boundary_slots": 67272,
     "indeterminate_mode_labels": 0,
     "inv_labels": 18418,
@@ -282,14 +771,14 @@
     "raw_unnormalized": 0,
     "transition_pairs": 16372
    },
-   "tokens_per_param": 213.287,
+   "tokens_per_param": 211.107,
    "total_tokens_for_bound": 123920
   },
   "fold0": {
    "free_params": {
     "table1": {
-     "major": 225,
-     "minor": 154
+     "major": 228,
+     "minor": 157
     },
     "table2": 9,
     "table3": 20,
@@ -300,11 +789,11 @@
      "none": 0
     },
     "table6": 4,
-    "total": 533
+    "total": 539
    },
    "passes_capacity_bound": true,
    "per_table_free_params": {
-    "table1": 379,
+    "table1": 385,
     "table2": 9,
     "table3": 20,
     "table4": 108,
@@ -320,7 +809,7 @@
     "table6": 54020
    },
    "per_table_tokens_per_param": {
-    "table1": 34.42,
+    "table1": 33.88,
     "table2": 1599.0,
     "table3": 67.3,
     "table4": 135.7,
@@ -328,6 +817,182 @@
     "table6": 13505.0
    },
    "table1": {
+    "applied_relation_level": {
+     "major": {
+      "P_elsewhere": 0.22693266832917702,
+      "P_resolves_to_target": 0.773067331670823,
+      "applied_kept_pertarget_contexts": [
+       "V | Dom7 | 2 | IV",
+       "V | Dom7 | 2 | V",
+       "V | Dom7 | 4/3 | IV",
+       "V | Dom7 | 4/3 | V",
+       "V | Dom7 | 4/3 | vi",
+       "V | Dom7 | 6/5 | IV",
+       "V | Dom7 | 6/5 | V",
+       "V | Dom7 | 6/5 | vi",
+       "V | Dom7 | 7 | IV",
+       "V | Dom7 | 7 | V",
+       "V | Dom7 | 7 | vi",
+       "V | Maj |  | V",
+       "V | Maj |  | vi",
+       "V | Maj | 6 | V",
+       "V | Maj | 6 | vi",
+       "VII | Dim |  | V",
+       "VII | Dim | 6 | V",
+       "VII | Dim | 6/4 | V",
+       "VII | Dim7 | 7 | V",
+       "VII | HalfDim7 | 4/3 | V",
+       "VII | HalfDim7 | 6/5 | V",
+       "VII | HalfDim7 | 7 | V"
+      ],
+      "dist": {
+       "«rel»elsewhere": 0.22693266832917705,
+       "«rel»resolve": 0.01995012468827928,
+       "«rel»resolve|triad|inv": 0.1172069825436409,
+       "«rel»resolve|triad|root": 0.6359102244389028
+      },
+      "n_applied_contexts": 58,
+      "n_applied_kept_pertarget": 22,
+      "n_overridden_to_relation": 36,
+      "overridden_contexts": [
+       "II | HalfDim7 | 6/5 | vi",
+       "II | HalfDim7 | 7 | vi",
+       "II | Min |  | IV",
+       "II | Min7 | 6/5 | V",
+       "II | Min7 | 7 | V",
+       "IV | Dom7 | 2 | i",
+       "IV | Dom7 | 2 | vi",
+       "IV | Dom7 | 6/5 | vi",
+       "IV | Maj | 6 | vi",
+       "It | AugSixth | 6 | ii",
+       "V | Dom7 | 2 | ii",
+       "V | Dom7 | 4/3 | ii",
+       "V | Dom7 | 6/5 | ii",
+       "V | Dom7 | 6/5 | iv",
+       "V | Dom7 | 7 | ii",
+       "V | Maj |  | IV",
+       "V | Maj |  | ii",
+       "V | Maj | 6 | IV",
+       "V | Maj | 6 | ii",
+       "V | Maj | 6/4 | IV",
+       "VI | Maj |  | ii",
+       "VI | Min |  | IV",
+       "VI | Min |  | V",
+       "VI | Min | 6 | V",
+       "VII | Dim |  | IV",
+       "VII | Dim |  | vi",
+       "VII | Dim | 6 | IV",
+       "VII | Dim | 6 | ii",
+       "VII | Dim | 6 | iv",
+       "VII | Dim | 6 | vi",
+       "VII | Dim | 6/4 | IV",
+       "VII | Dim7 | 4/3 | ii",
+       "VII | Dim7 | 7 | ii",
+       "VII | Dim7 | 7 | iii",
+       "VII | Dim7 | 7 | vi",
+       "VII | HalfDim7 | 7 | ii"
+      ],
+      "pooled_buckets": 1,
+      "raw_counts": {
+       "«rel»elsewhere": 91,
+       "«rel»resolve|seventh|inv": 8,
+       "«rel»resolve|triad|inv": 47,
+       "«rel»resolve|triad|root": 255
+      },
+      "rel_ctx_key": "«rel»applied|major",
+      "reliable_cells": 3,
+      "total_applied_transitions": 401
+     },
+     "minor": {
+      "P_elsewhere": 0.22456140350877196,
+      "P_resolves_to_target": 0.775438596491228,
+      "applied_kept_pertarget_contexts": [
+       "V | Dom7 | 2 | iv",
+       "V | Dom7 | 4/3 | iv",
+       "V | Dom7 | 6/5 | V",
+       "V | Dom7 | 6/5 | iv",
+       "V | Dom7 | 7 | V",
+       "V | Dom7 | 7 | iv",
+       "V | Maj |  | III",
+       "V | Maj | 6 | III",
+       "VII | Dim7 | 4/3 | V",
+       "VII | Dim7 | 6/5 | V",
+       "VII | Dim7 | 7 | V"
+      ],
+      "dist": {
+       "«rel»elsewhere": 0.22456140350877193,
+       "«rel»resolve": 0.01403508771929829,
+       "«rel»resolve|triad|inv": 0.09824561403508772,
+       "«rel»resolve|triad|root": 0.6631578947368421
+      },
+      "n_applied_contexts": 62,
+      "n_applied_kept_pertarget": 11,
+      "n_overridden_to_relation": 51,
+      "overridden_contexts": [
+       "II | Dim | 6 | iv",
+       "II | HalfDim7 | 2 | iv",
+       "II | HalfDim7 | 6/5 | V",
+       "IV | Dom7 | 2 | iv",
+       "IV | Dom7 | 6/5 | v",
+       "IV | Maj | 6 | III",
+       "IV | Maj | 6 | V",
+       "IV | Maj | 6 | iv",
+       "IV | Min |  | iv",
+       "IV | Min | 6 | iv",
+       "V | Dom7 | 2 | III",
+       "V | Dom7 | 2 | V/III",
+       "V | Dom7 | 6/5 | III",
+       "V | Dom7 | 6/5 | IV",
+       "V | Dom7 | 6/5 | V/III",
+       "V | Dom7 | 6/5 | VII",
+       "V | Dom7 | 6/5 | v",
+       "V | Dom7 | 7 | III",
+       "V | Dom7 | 7 | VI",
+       "V | Dom7 | 7 | VII",
+       "V | Dom7 | 7 | v",
+       "V | Maj |  | V",
+       "V | Maj |  | V/III",
+       "V | Maj | 6 | IV",
+       "V | Maj | 6 | V",
+       "V | Maj | 6 | VII",
+       "V | Maj | 6 | iv",
+       "V | Maj | 6 | v",
+       "V | Maj | 6/4 | iv",
+       "VI | HalfDim7 | 7 | v",
+       "VII | Dim |  | iv",
+       "VII | Dim |  | v",
+       "VII | Dim | 6 | III",
+       "VII | Dim | 6 | IV",
+       "VII | Dim | 6 | V",
+       "VII | Dim | 6 | VII",
+       "VII | Dim | 6 | iv",
+       "VII | Dim | 6/4 | V",
+       "VII | Dim | 6/4 | VII",
+       "VII | Dim | 6/4 | iv",
+       "VII | Dim7 | 4/3 | iv",
+       "VII | Dim7 | 6/5 | iv",
+       "VII | Dim7 | 6/5 | v",
+       "VII | Dim7 | 7 | VII",
+       "VII | Dim7 | 7 | iv",
+       "VII | HalfDim7 | 4/3 | III",
+       "VII | HalfDim7 | 4/3 | IV",
+       "VII | HalfDim7 | 4/3 | iv",
+       "VII | HalfDim7 | 7 | III",
+       "VII | HalfDim7 | 7 | VII",
+       "VII | HalfDim7 | 7 | iv"
+      ],
+      "pooled_buckets": 1,
+      "raw_counts": {
+       "«rel»elsewhere": 64,
+       "«rel»resolve|seventh|inv": 4,
+       "«rel»resolve|triad|inv": 28,
+       "«rel»resolve|triad|root": 189
+      },
+      "rel_ctx_key": "«rel»applied|minor",
+      "reliable_cells": 3,
+      "total_applied_transitions": 285
+     }
+    },
     "distinct_estimated_rows": {
      "major": 58,
      "minor": 59
@@ -339,6 +1004,10 @@
     "distinct_transition_pairs": {
      "major": 663,
      "minor": 782
+    },
+    "free_params_before_amendment": {
+     "major": 225,
+     "minor": 154
     },
     "pair_count_histogram": {
      "major": {
@@ -462,6 +1131,7 @@
     "pieces_counted": 258
    },
    "tokens": {
+    "applied_transition_pairs": 686,
     "boundary_slots": 54020,
     "indeterminate_mode_labels": 0,
     "inv_labels": 14656,
@@ -471,14 +1141,14 @@
     "raw_unnormalized": 0,
     "transition_pairs": 13045
    },
-   "tokens_per_param": 185.871,
+   "tokens_per_param": 183.801,
    "total_tokens_for_bound": 99069
   },
   "fold1": {
    "free_params": {
     "table1": {
-     "major": 223,
-     "minor": 134
+     "major": 226,
+     "minor": 137
     },
     "table2": 11,
     "table3": 20,
@@ -489,11 +1159,11 @@
      "none": 0
     },
     "table6": 4,
-    "total": 517
+    "total": 523
    },
    "passes_capacity_bound": true,
    "per_table_free_params": {
-    "table1": 357,
+    "table1": 363,
     "table2": 11,
     "table3": 20,
     "table4": 113,
@@ -509,7 +1179,7 @@
     "table6": 53696
    },
    "per_table_tokens_per_param": {
-    "table1": 37.08,
+    "table1": 36.47,
     "table2": 1332.36,
     "table3": 70.9,
     "table4": 132.0,
@@ -517,6 +1187,186 @@
     "table6": 13424.0
    },
    "table1": {
+    "applied_relation_level": {
+     "major": {
+      "P_elsewhere": 0.2376237623762376,
+      "P_resolves_to_target": 0.7623762376237624,
+      "applied_kept_pertarget_contexts": [
+       "V | Dom7 | 2 | IV",
+       "V | Dom7 | 2 | V",
+       "V | Dom7 | 4/3 | IV",
+       "V | Dom7 | 4/3 | V",
+       "V | Dom7 | 4/3 | vi",
+       "V | Dom7 | 6/5 | IV",
+       "V | Dom7 | 6/5 | V",
+       "V | Dom7 | 6/5 | vi",
+       "V | Dom7 | 7 | IV",
+       "V | Dom7 | 7 | V",
+       "V | Dom7 | 7 | vi",
+       "V | Dom7 | 9 | V",
+       "V | Maj |  | V",
+       "V | Maj |  | vi",
+       "V | Maj | 6 | V",
+       "V | Maj | 6 | vi",
+       "VII | Dim |  | V",
+       "VII | Dim | 6 | V",
+       "VII | Dim | 6/4 | V",
+       "VII | Dim7 | 7 | V",
+       "VII | HalfDim7 | 4/3 | V",
+       "VII | HalfDim7 | 6/5 | V",
+       "VII | HalfDim7 | 7 | V"
+      ],
+      "dist": {
+       "«rel»elsewhere": 0.2376237623762376,
+       "«rel»resolve": 0.017326732673267342,
+       "«rel»resolve|triad|inv": 0.11386138613861387,
+       "«rel»resolve|triad|root": 0.6311881188118812
+      },
+      "n_applied_contexts": 60,
+      "n_applied_kept_pertarget": 23,
+      "n_overridden_to_relation": 37,
+      "overridden_contexts": [
+       "II | HalfDim7 | 6/5 | vi",
+       "II | HalfDim7 | 7 | vi",
+       "II | Min |  | IV",
+       "II | Min7 | 7 | IV",
+       "II | Min7 | 7 | V",
+       "IV | Dom7 | 2 | i",
+       "IV | Dom7 | 2 | vi",
+       "IV | Dom7 | 6/5 | vi",
+       "IV | Maj | 6 | vi",
+       "It | AugSixth | 6 | ii",
+       "V | Dom7 | 2 | ii",
+       "V | Dom7 | 4/3 | ii",
+       "V | Dom7 | 6/5 | ii",
+       "V | Dom7 | 6/5 | iv",
+       "V | Dom7 | 7 | ii",
+       "V | Maj |  | IV",
+       "V | Maj |  | ii",
+       "V | Maj | 6 | IV",
+       "V | Maj | 6 | ii",
+       "V | Maj | 6/4 | IV",
+       "VI | Maj |  | ii",
+       "VI | Min |  | IV",
+       "VI | Min |  | V",
+       "VI | Min | 6 | V",
+       "VI | Min7 | 7 | V",
+       "VII | Dim |  | IV",
+       "VII | Dim |  | vi",
+       "VII | Dim | 6 | IV",
+       "VII | Dim | 6 | ii",
+       "VII | Dim | 6 | iv",
+       "VII | Dim | 6 | vi",
+       "VII | Dim7 | 6/5 | ii",
+       "VII | Dim7 | 7 | ii",
+       "VII | Dim7 | 7 | iii",
+       "VII | Dim7 | 7 | iv",
+       "VII | Dim7 | 7 | vi",
+       "VII | HalfDim7 | 7 | IV"
+      ],
+      "pooled_buckets": 1,
+      "raw_counts": {
+       "«rel»elsewhere": 96,
+       "«rel»resolve|seventh|inv": 7,
+       "«rel»resolve|triad|inv": 46,
+       "«rel»resolve|triad|root": 255
+      },
+      "rel_ctx_key": "«rel»applied|major",
+      "reliable_cells": 3,
+      "total_applied_transitions": 404
+     },
+     "minor": {
+      "P_elsewhere": 0.22021660649819497,
+      "P_resolves_to_target": 0.779783393501805,
+      "applied_kept_pertarget_contexts": [
+       "V | Dom7 | 2 | iv",
+       "V | Dom7 | 4/3 | iv",
+       "V | Dom7 | 6/5 | V",
+       "V | Dom7 | 6/5 | iv",
+       "V | Dom7 | 7 | V",
+       "V | Dom7 | 7 | iv",
+       "V | Maj |  | III",
+       "V | Maj | 6 | III",
+       "VII | Dim7 | 4/3 | V",
+       "VII | Dim7 | 6/5 | V",
+       "VII | Dim7 | 7 | V"
+      ],
+      "dist": {
+       "«rel»elsewhere": 0.22021660649819494,
+       "«rel»resolve": 0.014440433212996373,
+       "«rel»resolve|triad|inv": 0.09747292418772563,
+       "«rel»resolve|triad|root": 0.6678700361010831
+      },
+      "n_applied_contexts": 64,
+      "n_applied_kept_pertarget": 11,
+      "n_overridden_to_relation": 53,
+      "overridden_contexts": [
+       "II | Dim | 6 | iv",
+       "II | HalfDim7 | 2 | iv",
+       "II | Min7 | 2 | iv",
+       "IV | Dom7 | 6/5 | v",
+       "IV | Maj | 6 | III",
+       "IV | Maj | 6 | iv",
+       "IV | Min | 6 | iv",
+       "V | Dom7 | 2 | III",
+       "V | Dom7 | 2 | IV",
+       "V | Dom7 | 2 | V/III",
+       "V | Dom7 | 2 | VII",
+       "V | Dom7 | 6/5 | III",
+       "V | Dom7 | 6/5 | IV",
+       "V | Dom7 | 6/5 | V/III",
+       "V | Dom7 | 6/5 | VII",
+       "V | Dom7 | 6/5 | v",
+       "V | Dom7 | 7 | III",
+       "V | Dom7 | 7 | IV",
+       "V | Dom7 | 7 | VI",
+       "V | Dom7 | 7 | VII",
+       "V | Dom7 | 7 | v",
+       "V | Maj |  | IV",
+       "V | Maj |  | V",
+       "V | Maj |  | V/III",
+       "V | Maj |  | v",
+       "V | Maj | 6 | IV",
+       "V | Maj | 6 | V",
+       "V | Maj | 6 | VII",
+       "V | Maj | 6 | iv",
+       "V | Maj | 6 | v",
+       "VI | HalfDim7 | 7 | iv",
+       "VI | HalfDim7 | 7 | v",
+       "VI | Maj | 6 | iv",
+       "VII | Dim |  | iv",
+       "VII | Dim |  | v",
+       "VII | Dim | 6 | III",
+       "VII | Dim | 6 | IV",
+       "VII | Dim | 6 | V",
+       "VII | Dim | 6 | VII",
+       "VII | Dim | 6 | iv",
+       "VII | Dim | 6/4 | V",
+       "VII | Dim | 6/4 | VII",
+       "VII | Dim7 | 4/3 | iv",
+       "VII | Dim7 | 6/5 | iv",
+       "VII | Dim7 | 6/5 | v",
+       "VII | Dim7 | 7 | IV",
+       "VII | Dim7 | 7 | VII",
+       "VII | Dim7 | 7 | iv",
+       "VII | HalfDim7 | 4/3 | III",
+       "VII | HalfDim7 | 4/3 | IV",
+       "VII | HalfDim7 | 7 | III",
+       "VII | HalfDim7 | 7 | VII",
+       "VII | HalfDim7 | 7 | iv"
+      ],
+      "pooled_buckets": 1,
+      "raw_counts": {
+       "«rel»elsewhere": 61,
+       "«rel»resolve|seventh|inv": 4,
+       "«rel»resolve|triad|inv": 27,
+       "«rel»resolve|triad|root": 185
+      },
+      "rel_ctx_key": "«rel»applied|minor",
+      "reliable_cells": 3,
+      "total_applied_transitions": 277
+     }
+    },
     "distinct_estimated_rows": {
      "major": 55,
      "minor": 62
@@ -528,6 +1378,10 @@
     "distinct_transition_pairs": {
      "major": 676,
      "minor": 803
+    },
+    "free_params_before_amendment": {
+     "major": 223,
+     "minor": 134
     },
     "pair_count_histogram": {
      "major": {
@@ -653,6 +1507,7 @@
     "pieces_counted": 251
    },
    "tokens": {
+    "applied_transition_pairs": 681,
     "boundary_slots": 53696,
     "indeterminate_mode_labels": 0,
     "inv_labels": 14916,
@@ -662,14 +1517,14 @@
     "raw_unnormalized": 0,
     "transition_pairs": 13238
    },
-   "tokens_per_param": 192.654,
+   "tokens_per_param": 190.444,
    "total_tokens_for_bound": 99602
   },
   "fold2": {
    "free_params": {
     "table1": {
-     "major": 232,
-     "minor": 130
+     "major": 235,
+     "minor": 133
     },
     "table2": 11,
     "table3": 21,
@@ -680,11 +1535,11 @@
      "none": 0
     },
     "table6": 4,
-    "total": 520
+    "total": 526
    },
    "passes_capacity_bound": true,
    "per_table_free_params": {
-    "table1": 362,
+    "table1": 368,
     "table2": 11,
     "table3": 21,
     "table4": 109,
@@ -700,7 +1555,7 @@
     "table6": 54128
    },
    "per_table_tokens_per_param": {
-    "table1": 36.39,
+    "table1": 35.8,
     "table2": 1322.18,
     "table3": 65.29,
     "table4": 135.81,
@@ -708,6 +1563,184 @@
     "table6": 13532.0
    },
    "table1": {
+    "applied_relation_level": {
+     "major": {
+      "P_elsewhere": 0.22391857506361323,
+      "P_resolves_to_target": 0.7760814249363868,
+      "applied_kept_pertarget_contexts": [
+       "V | Dom7 | 2 | IV",
+       "V | Dom7 | 2 | V",
+       "V | Dom7 | 4/3 | IV",
+       "V | Dom7 | 4/3 | V",
+       "V | Dom7 | 4/3 | vi",
+       "V | Dom7 | 6/5 | IV",
+       "V | Dom7 | 6/5 | V",
+       "V | Dom7 | 6/5 | vi",
+       "V | Dom7 | 7 | IV",
+       "V | Dom7 | 7 | V",
+       "V | Dom7 | 7 | vi",
+       "V | Dom7 | 9 | V",
+       "V | Maj |  | V",
+       "V | Maj |  | vi",
+       "V | Maj | 6 | V",
+       "V | Maj | 6 | vi",
+       "VII | Dim |  | V",
+       "VII | Dim | 6 | V",
+       "VII | Dim | 6/4 | V",
+       "VII | Dim7 | 7 | V",
+       "VII | HalfDim7 | 4/3 | V",
+       "VII | HalfDim7 | 6/5 | V",
+       "VII | HalfDim7 | 7 | V"
+      ],
+      "dist": {
+       "«rel»elsewhere": 0.22391857506361323,
+       "«rel»resolve": 0.01526717557251911,
+       "«rel»resolve|triad|inv": 0.10687022900763359,
+       "«rel»resolve|triad|root": 0.6539440203562341
+      },
+      "n_applied_contexts": 58,
+      "n_applied_kept_pertarget": 23,
+      "n_overridden_to_relation": 35,
+      "overridden_contexts": [
+       "II | Min |  | IV",
+       "II | Min7 | 6/5 | V",
+       "II | Min7 | 7 | IV",
+       "IV | Dom7 | 2 | i",
+       "IV | Dom7 | 2 | vi",
+       "IV | Dom7 | 6/5 | vi",
+       "IV | Maj | 6 | vi",
+       "V | Dom7 | 2 | ii",
+       "V | Dom7 | 4/3 | ii",
+       "V | Dom7 | 6/5 | ii",
+       "V | Dom7 | 7 | ii",
+       "V | Maj |  | IV",
+       "V | Maj |  | ii",
+       "V | Maj | 6 | IV",
+       "V | Maj | 6 | ii",
+       "V | Maj | 6/4 | IV",
+       "VI | Maj |  | ii",
+       "VI | Min |  | IV",
+       "VI | Min |  | V",
+       "VI | Min | 6 | V",
+       "VI | Min7 | 7 | V",
+       "VII | Dim |  | IV",
+       "VII | Dim |  | vi",
+       "VII | Dim | 6 | IV",
+       "VII | Dim | 6 | ii",
+       "VII | Dim | 6 | iv",
+       "VII | Dim | 6 | vi",
+       "VII | Dim | 6/4 | IV",
+       "VII | Dim7 | 4/3 | ii",
+       "VII | Dim7 | 6/5 | ii",
+       "VII | Dim7 | 7 | ii",
+       "VII | Dim7 | 7 | iv",
+       "VII | Dim7 | 7 | vi",
+       "VII | HalfDim7 | 7 | IV",
+       "VII | HalfDim7 | 7 | ii"
+      ],
+      "pooled_buckets": 1,
+      "raw_counts": {
+       "«rel»elsewhere": 88,
+       "«rel»resolve|seventh|inv": 6,
+       "«rel»resolve|triad|inv": 42,
+       "«rel»resolve|triad|root": 257
+      },
+      "rel_ctx_key": "«rel»applied|major",
+      "reliable_cells": 3,
+      "total_applied_transitions": 393
+     },
+     "minor": {
+      "P_elsewhere": 0.21641791044776115,
+      "P_resolves_to_target": 0.7835820895522388,
+      "applied_kept_pertarget_contexts": [
+       "V | Dom7 | 2 | iv",
+       "V | Dom7 | 4/3 | iv",
+       "V | Dom7 | 6/5 | V",
+       "V | Dom7 | 6/5 | iv",
+       "V | Dom7 | 7 | V",
+       "V | Dom7 | 7 | iv",
+       "V | Maj |  | III",
+       "V | Maj | 6 | III",
+       "VII | Dim7 | 4/3 | V",
+       "VII | Dim7 | 6/5 | V",
+       "VII | Dim7 | 7 | V"
+      ],
+      "dist": {
+       "«rel»elsewhere": 0.21641791044776118,
+       "«rel»resolve": 0.014925373134328401,
+       "«rel»resolve|triad|inv": 0.1044776119402985,
+       "«rel»resolve|triad|root": 0.664179104477612
+      },
+      "n_applied_contexts": 64,
+      "n_applied_kept_pertarget": 11,
+      "n_overridden_to_relation": 53,
+      "overridden_contexts": [
+       "II | HalfDim7 | 2 | iv",
+       "II | HalfDim7 | 6/5 | V",
+       "II | Min7 | 2 | iv",
+       "IV | Dom7 | 2 | iv",
+       "IV | Dom7 | 6/5 | v",
+       "IV | Maj | 6 | III",
+       "IV | Maj | 6 | V",
+       "IV | Maj | 6 | iv",
+       "IV | Min |  | iv",
+       "IV | Min | 6 | iv",
+       "V | Dom7 | 2 | III",
+       "V | Dom7 | 2 | IV",
+       "V | Dom7 | 2 | V/III",
+       "V | Dom7 | 2 | VII",
+       "V | Dom7 | 6/5 | III",
+       "V | Dom7 | 6/5 | IV",
+       "V | Dom7 | 6/5 | V/III",
+       "V | Dom7 | 6/5 | VII",
+       "V | Dom7 | 6/5 | v",
+       "V | Dom7 | 7 | IV",
+       "V | Dom7 | 7 | VII",
+       "V | Dom7 | 7 | v",
+       "V | Maj |  | IV",
+       "V | Maj |  | V",
+       "V | Maj |  | V/III",
+       "V | Maj |  | v",
+       "V | Maj | 6 | IV",
+       "V | Maj | 6 | V",
+       "V | Maj | 6 | VII",
+       "V | Maj | 6 | iv",
+       "V | Maj | 6 | v",
+       "V | Maj | 6/4 | iv",
+       "VI | HalfDim7 | 7 | iv",
+       "VI | Maj | 6 | iv",
+       "VII | Dim | 6 | III",
+       "VII | Dim | 6 | IV",
+       "VII | Dim | 6 | V",
+       "VII | Dim | 6 | VII",
+       "VII | Dim | 6 | iv",
+       "VII | Dim | 6/4 | V",
+       "VII | Dim | 6/4 | VII",
+       "VII | Dim | 6/4 | iv",
+       "VII | Dim7 | 4/3 | iv",
+       "VII | Dim7 | 6/5 | v",
+       "VII | Dim7 | 7 | IV",
+       "VII | Dim7 | 7 | VII",
+       "VII | Dim7 | 7 | iv",
+       "VII | HalfDim7 | 4/3 | III",
+       "VII | HalfDim7 | 4/3 | IV",
+       "VII | HalfDim7 | 4/3 | iv",
+       "VII | HalfDim7 | 7 | III",
+       "VII | HalfDim7 | 7 | VII",
+       "VII | HalfDim7 | 7 | iv"
+      ],
+      "pooled_buckets": 1,
+      "raw_counts": {
+       "«rel»elsewhere": 58,
+       "«rel»resolve|seventh|inv": 4,
+       "«rel»resolve|triad|inv": 28,
+       "«rel»resolve|triad|root": 178
+      },
+      "rel_ctx_key": "«rel»applied|minor",
+      "reliable_cells": 3,
+      "total_applied_transitions": 268
+     }
+    },
     "distinct_estimated_rows": {
      "major": 57,
      "minor": 56
@@ -719,6 +1752,10 @@
     "distinct_transition_pairs": {
      "major": 671,
      "minor": 786
+    },
+    "free_params_before_amendment": {
+     "major": 232,
+     "minor": 130
     },
     "pair_count_histogram": {
      "major": {
@@ -841,6 +1878,7 @@
     "pieces_counted": 253
    },
    "tokens": {
+    "applied_transition_pairs": 661,
     "boundary_slots": 54128,
     "indeterminate_mode_labels": 0,
     "inv_labels": 14803,
@@ -850,14 +1888,14 @@
     "raw_unnormalized": 0,
     "transition_pairs": 13173
    },
-   "tokens_per_param": 191.633,
+   "tokens_per_param": 189.447,
    "total_tokens_for_bound": 99649
   },
   "fold3": {
    "free_params": {
     "table1": {
-     "major": 228,
-     "minor": 130
+     "major": 231,
+     "minor": 133
     },
     "table2": 10,
     "table3": 21,
@@ -868,11 +1906,11 @@
      "none": 0
     },
     "table6": 4,
-    "total": 522
+    "total": 528
    },
    "passes_capacity_bound": true,
    "per_table_free_params": {
-    "table1": 358,
+    "table1": 364,
     "table2": 10,
     "table3": 21,
     "table4": 116,
@@ -888,7 +1926,7 @@
     "table6": 53840
    },
    "per_table_tokens_per_param": {
-    "table1": 36.36,
+    "table1": 35.76,
     "table2": 1438.1,
     "table3": 64.95,
     "table4": 126.22,
@@ -896,6 +1934,183 @@
     "table6": 13460.0
    },
    "table1": {
+    "applied_relation_level": {
+     "major": {
+      "P_elsewhere": 0.22774869109947637,
+      "P_resolves_to_target": 0.7722513089005236,
+      "applied_kept_pertarget_contexts": [
+       "V | Dom7 | 2 | IV",
+       "V | Dom7 | 2 | V",
+       "V | Dom7 | 4/3 | IV",
+       "V | Dom7 | 4/3 | V",
+       "V | Dom7 | 4/3 | vi",
+       "V | Dom7 | 6/5 | IV",
+       "V | Dom7 | 6/5 | V",
+       "V | Dom7 | 6/5 | vi",
+       "V | Dom7 | 7 | IV",
+       "V | Dom7 | 7 | V",
+       "V | Dom7 | 7 | vi",
+       "V | Dom7 | 9 | V",
+       "V | Maj |  | V",
+       "V | Maj |  | vi",
+       "V | Maj | 6 | V",
+       "V | Maj | 6 | vi",
+       "VII | Dim |  | V",
+       "VII | Dim | 6 | V",
+       "VII | Dim | 6/4 | V",
+       "VII | Dim7 | 7 | V",
+       "VII | HalfDim7 | 4/3 | V",
+       "VII | HalfDim7 | 6/5 | V",
+       "VII | HalfDim7 | 7 | V"
+      ],
+      "dist": {
+       "«rel»elsewhere": 0.22774869109947643,
+       "«rel»resolve": 0.010471204188481686,
+       "«rel»resolve|triad|inv": 0.112565445026178,
+       "«rel»resolve|triad|root": 0.6492146596858639
+      },
+      "n_applied_contexts": 55,
+      "n_applied_kept_pertarget": 23,
+      "n_overridden_to_relation": 32,
+      "overridden_contexts": [
+       "II | HalfDim7 | 6/5 | vi",
+       "II | HalfDim7 | 7 | vi",
+       "II | Min7 | 6/5 | V",
+       "II | Min7 | 7 | IV",
+       "II | Min7 | 7 | V",
+       "IV | Dom7 | 2 | i",
+       "IV | Dom7 | 6/5 | vi",
+       "It | AugSixth | 6 | ii",
+       "V | Dom7 | 2 | ii",
+       "V | Dom7 | 6/5 | ii",
+       "V | Dom7 | 6/5 | iv",
+       "V | Dom7 | 7 | ii",
+       "V | Maj |  | IV",
+       "V | Maj |  | ii",
+       "V | Maj | 6 | ii",
+       "V | Maj | 6/4 | IV",
+       "VI | Maj |  | ii",
+       "VI | Min7 | 7 | V",
+       "VII | Dim |  | vi",
+       "VII | Dim | 6 | IV",
+       "VII | Dim | 6 | ii",
+       "VII | Dim | 6 | iv",
+       "VII | Dim | 6 | vi",
+       "VII | Dim | 6/4 | IV",
+       "VII | Dim7 | 4/3 | ii",
+       "VII | Dim7 | 6/5 | ii",
+       "VII | Dim7 | 7 | ii",
+       "VII | Dim7 | 7 | iii",
+       "VII | Dim7 | 7 | iv",
+       "VII | Dim7 | 7 | vi",
+       "VII | HalfDim7 | 7 | IV",
+       "VII | HalfDim7 | 7 | ii"
+      ],
+      "pooled_buckets": 1,
+      "raw_counts": {
+       "«rel»elsewhere": 87,
+       "«rel»resolve|seventh|inv": 4,
+       "«rel»resolve|triad|inv": 43,
+       "«rel»resolve|triad|root": 248
+      },
+      "rel_ctx_key": "«rel»applied|major",
+      "reliable_cells": 3,
+      "total_applied_transitions": 382
+     },
+     "minor": {
+      "P_elsewhere": 0.23574144486692006,
+      "P_resolves_to_target": 0.7642585551330799,
+      "applied_kept_pertarget_contexts": [
+       "V | Dom7 | 2 | iv",
+       "V | Dom7 | 4/3 | iv",
+       "V | Dom7 | 6/5 | V",
+       "V | Dom7 | 6/5 | iv",
+       "V | Dom7 | 7 | V",
+       "V | Dom7 | 7 | iv",
+       "V | Maj |  | III",
+       "V | Maj | 6 | III",
+       "VII | Dim7 | 4/3 | V",
+       "VII | Dim7 | 6/5 | V",
+       "VII | Dim7 | 7 | V"
+      ],
+      "dist": {
+       "«rel»elsewhere": 0.23574144486692014,
+       "«rel»resolve": 0.019011406844106515,
+       "«rel»resolve|triad|inv": 0.09505703422053231,
+       "«rel»resolve|triad|root": 0.6501901140684411
+      },
+      "n_applied_contexts": 66,
+      "n_applied_kept_pertarget": 11,
+      "n_overridden_to_relation": 55,
+      "overridden_contexts": [
+       "II | Dim | 6 | iv",
+       "II | HalfDim7 | 2 | iv",
+       "II | HalfDim7 | 6/5 | V",
+       "II | Min7 | 2 | iv",
+       "IV | Dom7 | 2 | iv",
+       "IV | Dom7 | 6/5 | v",
+       "IV | Maj | 6 | III",
+       "IV | Maj | 6 | V",
+       "IV | Min |  | iv",
+       "IV | Min | 6 | iv",
+       "V | Dom7 | 2 | III",
+       "V | Dom7 | 2 | IV",
+       "V | Dom7 | 2 | V/III",
+       "V | Dom7 | 2 | VII",
+       "V | Dom7 | 6/5 | III",
+       "V | Dom7 | 6/5 | IV",
+       "V | Dom7 | 6/5 | V/III",
+       "V | Dom7 | 6/5 | VII",
+       "V | Dom7 | 6/5 | v",
+       "V | Dom7 | 7 | III",
+       "V | Dom7 | 7 | IV",
+       "V | Dom7 | 7 | VI",
+       "V | Dom7 | 7 | VII",
+       "V | Dom7 | 7 | v",
+       "V | Maj |  | IV",
+       "V | Maj |  | V",
+       "V | Maj |  | V/III",
+       "V | Maj |  | v",
+       "V | Maj | 6 | IV",
+       "V | Maj | 6 | V",
+       "V | Maj | 6 | VII",
+       "V | Maj | 6 | iv",
+       "V | Maj | 6 | v",
+       "V | Maj | 6/4 | iv",
+       "VI | HalfDim7 | 7 | iv",
+       "VI | HalfDim7 | 7 | v",
+       "VI | Maj | 6 | iv",
+       "VII | Dim |  | iv",
+       "VII | Dim |  | v",
+       "VII | Dim | 6 | III",
+       "VII | Dim | 6 | VII",
+       "VII | Dim | 6 | iv",
+       "VII | Dim | 6/4 | V",
+       "VII | Dim | 6/4 | VII",
+       "VII | Dim | 6/4 | iv",
+       "VII | Dim7 | 4/3 | iv",
+       "VII | Dim7 | 6/5 | iv",
+       "VII | Dim7 | 7 | IV",
+       "VII | Dim7 | 7 | VII",
+       "VII | Dim7 | 7 | iv",
+       "VII | HalfDim7 | 4/3 | III",
+       "VII | HalfDim7 | 4/3 | iv",
+       "VII | HalfDim7 | 7 | III",
+       "VII | HalfDim7 | 7 | VII",
+       "VII | HalfDim7 | 7 | iv"
+      ],
+      "pooled_buckets": 1,
+      "raw_counts": {
+       "«rel»elsewhere": 62,
+       "«rel»resolve|seventh|inv": 5,
+       "«rel»resolve|triad|inv": 25,
+       "«rel»resolve|triad|root": 171
+      },
+      "rel_ctx_key": "«rel»applied|minor",
+      "reliable_cells": 3,
+      "total_applied_transitions": 263
+     }
+    },
     "distinct_estimated_rows": {
      "major": 56,
      "minor": 59
@@ -907,6 +2122,10 @@
     "distinct_transition_pairs": {
      "major": 682,
      "minor": 817
+    },
+    "free_params_before_amendment": {
+     "major": 228,
+     "minor": 130
     },
     "pair_count_histogram": {
      "major": {
@@ -1031,6 +2250,7 @@
     "pieces_counted": 255
    },
    "tokens": {
+    "applied_transition_pairs": 645,
     "boundary_slots": 53840,
     "indeterminate_mode_labels": 0,
     "inv_labels": 14642,
@@ -1040,14 +2260,14 @@
     "raw_unnormalized": 0,
     "transition_pairs": 13017
    },
-   "tokens_per_param": 189.404,
+   "tokens_per_param": 187.252,
    "total_tokens_for_bound": 98869
   },
   "fold4": {
    "free_params": {
     "table1": {
-     "major": 229,
-     "minor": 131
+     "major": 232,
+     "minor": 134
     },
     "table2": 10,
     "table3": 21,
@@ -1057,11 +2277,11 @@
      "minor": 7
     },
     "table6": 4,
-    "total": 528
+    "total": 534
    },
    "passes_capacity_bound": true,
    "per_table_free_params": {
-    "table1": 360,
+    "table1": 366,
     "table2": 10,
     "table3": 21,
     "table4": 120,
@@ -1077,7 +2297,7 @@
     "table6": 53404
    },
    "per_table_tokens_per_param": {
-    "table1": 36.15,
+    "table1": 35.56,
     "table2": 1439.6,
     "table3": 65.76,
     "table4": 122.12,
@@ -1085,6 +2305,189 @@
     "table6": 13351.0
    },
    "table1": {
+    "applied_relation_level": {
+     "major": {
+      "P_elsewhere": 0.22959183673469374,
+      "P_resolves_to_target": 0.7704081632653063,
+      "applied_kept_pertarget_contexts": [
+       "V | Dom7 | 2 | IV",
+       "V | Dom7 | 2 | V",
+       "V | Dom7 | 4/3 | IV",
+       "V | Dom7 | 4/3 | V",
+       "V | Dom7 | 4/3 | vi",
+       "V | Dom7 | 6/5 | IV",
+       "V | Dom7 | 6/5 | V",
+       "V | Dom7 | 6/5 | vi",
+       "V | Dom7 | 7 | IV",
+       "V | Dom7 | 7 | V",
+       "V | Dom7 | 7 | vi",
+       "V | Dom7 | 9 | V",
+       "V | Maj |  | V",
+       "V | Maj |  | vi",
+       "V | Maj | 6 | V",
+       "V | Maj | 6 | vi",
+       "VII | Dim |  | V",
+       "VII | Dim | 6 | V",
+       "VII | Dim | 6/4 | V",
+       "VII | Dim7 | 7 | V",
+       "VII | HalfDim7 | 4/3 | V",
+       "VII | HalfDim7 | 6/5 | V",
+       "VII | HalfDim7 | 7 | V"
+      ],
+      "dist": {
+       "«rel»elsewhere": 0.22959183673469388,
+       "«rel»resolve": 0.017857142857142905,
+       "«rel»resolve|triad|inv": 0.08673469387755102,
+       "«rel»resolve|triad|root": 0.6658163265306123
+      },
+      "n_applied_contexts": 61,
+      "n_applied_kept_pertarget": 23,
+      "n_overridden_to_relation": 38,
+      "overridden_contexts": [
+       "II | HalfDim7 | 6/5 | vi",
+       "II | HalfDim7 | 7 | vi",
+       "II | Min |  | IV",
+       "II | Min7 | 6/5 | V",
+       "II | Min7 | 7 | IV",
+       "II | Min7 | 7 | V",
+       "IV | Dom7 | 2 | i",
+       "IV | Dom7 | 2 | vi",
+       "IV | Dom7 | 6/5 | vi",
+       "IV | Maj | 6 | vi",
+       "It | AugSixth | 6 | ii",
+       "V | Dom7 | 2 | ii",
+       "V | Dom7 | 4/3 | ii",
+       "V | Dom7 | 6/5 | ii",
+       "V | Dom7 | 6/5 | iv",
+       "V | Dom7 | 7 | ii",
+       "V | Maj |  | IV",
+       "V | Maj |  | ii",
+       "V | Maj | 6 | IV",
+       "V | Maj | 6 | ii",
+       "V | Maj | 6/4 | IV",
+       "VI | Min |  | IV",
+       "VI | Min |  | V",
+       "VI | Min | 6 | V",
+       "VI | Min7 | 7 | V",
+       "VII | Dim |  | IV",
+       "VII | Dim | 6 | IV",
+       "VII | Dim | 6 | ii",
+       "VII | Dim | 6 | vi",
+       "VII | Dim | 6/4 | IV",
+       "VII | Dim7 | 4/3 | ii",
+       "VII | Dim7 | 6/5 | ii",
+       "VII | Dim7 | 7 | ii",
+       "VII | Dim7 | 7 | iii",
+       "VII | Dim7 | 7 | iv",
+       "VII | Dim7 | 7 | vi",
+       "VII | HalfDim7 | 7 | IV",
+       "VII | HalfDim7 | 7 | ii"
+      ],
+      "pooled_buckets": 1,
+      "raw_counts": {
+       "«rel»elsewhere": 90,
+       "«rel»resolve|seventh|inv": 7,
+       "«rel»resolve|triad|inv": 34,
+       "«rel»resolve|triad|root": 261
+      },
+      "rel_ctx_key": "«rel»applied|major",
+      "reliable_cells": 3,
+      "total_applied_transitions": 392
+     },
+     "minor": {
+      "P_elsewhere": 0.2324723247232472,
+      "P_resolves_to_target": 0.7675276752767528,
+      "applied_kept_pertarget_contexts": [
+       "V | Dom7 | 2 | iv",
+       "V | Dom7 | 4/3 | iv",
+       "V | Dom7 | 6/5 | V",
+       "V | Dom7 | 6/5 | iv",
+       "V | Dom7 | 7 | V",
+       "V | Dom7 | 7 | iv",
+       "V | Maj |  | III",
+       "V | Maj | 6 | III",
+       "VII | Dim7 | 4/3 | V",
+       "VII | Dim7 | 6/5 | V",
+       "VII | Dim7 | 7 | V"
+      ],
+      "dist": {
+       "«rel»elsewhere": 0.23247232472324722,
+       "«rel»resolve": 0.011070110701106972,
+       "«rel»resolve|triad|inv": 0.1033210332103321,
+       "«rel»resolve|triad|root": 0.6531365313653137
+      },
+      "n_applied_contexts": 66,
+      "n_applied_kept_pertarget": 11,
+      "n_overridden_to_relation": 55,
+      "overridden_contexts": [
+       "II | Dim | 6 | iv",
+       "II | HalfDim7 | 6/5 | V",
+       "II | Min7 | 2 | iv",
+       "IV | Dom7 | 2 | iv",
+       "IV | Dom7 | 6/5 | v",
+       "IV | Maj | 6 | III",
+       "IV | Maj | 6 | V",
+       "IV | Maj | 6 | iv",
+       "IV | Min |  | iv",
+       "IV | Min | 6 | iv",
+       "V | Dom7 | 2 | III",
+       "V | Dom7 | 2 | IV",
+       "V | Dom7 | 2 | VII",
+       "V | Dom7 | 6/5 | III",
+       "V | Dom7 | 6/5 | IV",
+       "V | Dom7 | 6/5 | VII",
+       "V | Dom7 | 6/5 | v",
+       "V | Dom7 | 7 | III",
+       "V | Dom7 | 7 | IV",
+       "V | Dom7 | 7 | VI",
+       "V | Dom7 | 7 | VII",
+       "V | Dom7 | 7 | v",
+       "V | Maj |  | IV",
+       "V | Maj |  | V",
+       "V | Maj |  | v",
+       "V | Maj | 6 | IV",
+       "V | Maj | 6 | V",
+       "V | Maj | 6 | VII",
+       "V | Maj | 6 | iv",
+       "V | Maj | 6 | v",
+       "V | Maj | 6/4 | iv",
+       "VI | HalfDim7 | 7 | iv",
+       "VI | HalfDim7 | 7 | v",
+       "VI | Maj | 6 | iv",
+       "VII | Dim |  | iv",
+       "VII | Dim |  | v",
+       "VII | Dim | 6 | III",
+       "VII | Dim | 6 | IV",
+       "VII | Dim | 6 | V",
+       "VII | Dim | 6 | VII",
+       "VII | Dim | 6 | iv",
+       "VII | Dim | 6/4 | V",
+       "VII | Dim | 6/4 | iv",
+       "VII | Dim7 | 4/3 | iv",
+       "VII | Dim7 | 6/5 | iv",
+       "VII | Dim7 | 6/5 | v",
+       "VII | Dim7 | 7 | IV",
+       "VII | Dim7 | 7 | VII",
+       "VII | Dim7 | 7 | iv",
+       "VII | HalfDim7 | 4/3 | III",
+       "VII | HalfDim7 | 4/3 | IV",
+       "VII | HalfDim7 | 4/3 | iv",
+       "VII | HalfDim7 | 7 | III",
+       "VII | HalfDim7 | 7 | VII",
+       "VII | HalfDim7 | 7 | iv"
+      ],
+      "pooled_buckets": 1,
+      "raw_counts": {
+       "«rel»elsewhere": 63,
+       "«rel»resolve|seventh|inv": 3,
+       "«rel»resolve|triad|inv": 28,
+       "«rel»resolve|triad|root": 177
+      },
+      "rel_ctx_key": "«rel»applied|minor",
+      "reliable_cells": 3,
+      "total_applied_transitions": 271
+     }
+    },
     "distinct_estimated_rows": {
      "major": 59,
      "minor": 59
@@ -1096,6 +2499,10 @@
     "distinct_transition_pairs": {
      "major": 680,
      "minor": 789
+    },
+    "free_params_before_amendment": {
+     "major": 229,
+     "minor": 131
     },
     "pair_count_histogram": {
      "major": {
@@ -1213,6 +2620,7 @@
     "pieces_counted": 251
    },
    "tokens": {
+    "applied_transition_pairs": 663,
     "boundary_slots": 53404,
     "indeterminate_mode_labels": 0,
     "inv_labels": 14655,
@@ -1222,7 +2630,7 @@
     "raw_unnormalized": 0,
     "transition_pairs": 13015
    },
-   "tokens_per_param": 186.536,
+   "tokens_per_param": 184.44,
    "total_tokens_for_bound": 98491
   }
  },
@@ -1233,7 +2641,7 @@
    "threshold": 20,
    "tokens_per_param_min": 10
   },
-  "corpus_git_hash": "01edaab7bccd963fdd2310fc3a790a249cfcdfb1",
+  "corpus_git_hash": "57ed94a6a46571172a351c09ba4f5cb92930674a",
   "corpus_xml_dir": "tools/corpus",
   "fold_artifact": "tools/joint_estimator/fold_assignment.json",
   "generator": "tools/joint_estimator/gen_label_tables.py",
@@ -1411,8 +2819,10 @@
     {
      "fine_cell_own_MLE": false,
      "fitted": {
-      "how": "pooled -> «invfree» V | Dom7 |  | iv",
-      "prob": 0.005017
+      "how": "own_MLE",
+      "prob": 0.225806,
+      "relation_cell": "«rel»elsewhere",
+      "row_type": "applied_relation"
      },
      "mode": "minor",
      "raw_count": 6,
@@ -1441,8 +2851,10 @@
     {
      "fine_cell_own_MLE": false,
      "fitted": {
-      "how": "pooled -> BASE",
-      "prob": 0.05276
+      "how": "own_MLE",
+      "prob": 0.225806,
+      "relation_cell": "«rel»elsewhere",
+      "row_type": "applied_relation"
      },
      "mode": "minor",
      "raw_count": 4,

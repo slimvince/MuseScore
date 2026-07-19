@@ -146,6 +146,13 @@ against ground truth by ~6.6 nats on the named case.
 
 ## 5. The decode
 
+**The below-threshold scoring rule (user-ratified 2026-07-19 at the fitted-table probe,
+`cowork_sensitive_cell_probe.md` finding 2, option 2a):** where a fitted table row stores a pooled
+leftover probability for continuations below the count-reliability threshold, the decoder scores a
+specific such continuation as the row's leftover mass apportioned in proportion to that outcome
+class's overall frequency in the mode (the standard back-off construction) — never by even division
+and never as zero.
+
 **Exact semi-Markov Viterbi over the joint state** is the target (the ratified architecture): states
 `(k, c)` — 24 keys × the degree vocabulary; the transition factorizes into the block structure
 (same-key: chord-transition table; key-change: key-transition × entry tables), which keeps the
