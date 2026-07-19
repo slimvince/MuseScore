@@ -127,3 +127,8 @@ tools/cc_*
 # (The actual filenames contain U+F03A, the NTFS-safe substitute for ':'.)
 *tmpbuild_out.txt
 *ExecutionPolicy RemoteSigned*
+
+# Research-paper library binaries: git home is the private repo
+# (slimvince/research-papers), never this public fork.
+docs/research_papers/*.pdf
+tools/BCMH_dataset/
