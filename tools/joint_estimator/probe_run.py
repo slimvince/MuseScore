@@ -132,6 +132,28 @@ def _pct(a, b):
     return round(100.0 * a / b, 2) if b else None
 
 
+# The committed probe baseline (e3d17c325d; cadence-free, pre-chromatic-vocabulary decode) — the
+# side-by-side reference the dispatch asks for. Task 3 reports the axes BESIDE these.
+PROBE_BASELINE = {"root_agree_pct": 72.97, "rn_agree_pct": 59.50,
+                  "key_home_agree_pct": 53.67, "key_local_agree_pct": 74.43}
+
+
+def _delta(new, base):
+    if new is None or base is None:
+        return None
+    return round(new - base, 2)
+
+
+def _prediction_verdict(cols, base):
+    """The dispatch's ±1-point prediction: every axis moves < ±1pp. Returns the per-axis |delta| and a
+    boolean; a larger movement on any axis is a prominently-reported surprise (the dispatch's wording)."""
+    axes = ("root_agree_pct", "rn_agree_pct", "key_home_agree_pct", "key_local_agree_pct")
+    deltas = {a: _delta(cols.get(a), base.get(a)) for a in axes}
+    over = {a: d for a, d in deltas.items() if d is not None and abs(d) >= 1.0}
+    return {"deltas_pp": deltas, "prediction": "every axis moves < +/-1.0pp",
+            "holds": len(over) == 0, "axes_over_1pp": over}
+
+
 def run_corpus(write=True, verbose=True, stems=None):
     t_all = time.perf_counter()
     pieces, prov = pd.load_pieces()
@@ -146,6 +168,8 @@ def run_corpus(write=True, verbose=True, stems=None):
     grand = Counter()
     per_piece_grade = {}
     n_no_wir = 0
+    cad_totals = Counter()                          # WEIGHTLESS cadence-feature fires, corpus-wide
+    chromatic_decodes = {}                          # stem -> [ (start_tick, class_key, root_pc) ] (Task 3)
     for idx, stem in enumerate(stem_list):
         piece = pieces[stem]
         sig, dm = pd.piece_header(stem)
@@ -153,10 +177,17 @@ def run_corpus(write=True, verbose=True, stems=None):
                             sig_fifths=sig, declared_mode=dm)
         timings.append((stem, r.decode_seconds, len(piece.events)))
         ours_regions = decode_to_regions(piece, r, vocab, cache)
+        if r.cadence_fires:
+            cad_totals.update(r.cadence_fires)
+        chrom = [(s["start_tick"], s["class_key"], s["root_pc"]) for s in r.segments
+                 if s["quality"] in ("AugSixth", "Neapolitan")]
+        if chrom:
+            chromatic_decodes[stem] = chrom
         decode_records[stem] = {
             "n_events": r.n_events, "n_segments": len(r.segments),
             "total_score": round(r.total_score, 3), "decode_seconds": round(r.decode_seconds, 4),
             "sig_fifths": sig, "declared_mode": dm,
+            "cadence_fires": r.cadence_fires,
             "segments": r.segments, "posterior": r.posterior,
         }
         g = grade_regions(stem, ours_regions)
@@ -198,13 +229,32 @@ def run_corpus(write=True, verbose=True, stems=None):
             "tables_git_hash": adapter.corpus_git_hash,
             "leftover_rule": f"option 2{'a' if LEFTOVER=='freq' else 'b'} ({LEFTOVER})",
             "seg_cap_events": SEG_CAP, "key_prune_topk": pd.KEY_PRUNE_TOPK,
-            "cadence": "DECLARED OMITTED (no fitted cadence table; feature weights unfit)",
-            "fermata": "DECLARED OMITTED (not in the note-event extraction; addendum owed)",
+            "cadence": ("WIRED, WEIGHTLESS (algorithm-completion step 1): the ratified cadence-evidence "
+                        "features compute at every committed boundary and are LOGGED (cadence_feature_fires), "
+                        "but every weight is 0 so they move no score — the vocabulary change is isolated."),
+            "fermata": ("EXTRACTED (note_events fermata field, step 1); the cadence-location feature is "
+                        "wired weightless; the counted fermata-boundary cells are in fermata_boundary_addendum.json."),
+            "chromatic_vocab": ("Task 3: AugSixth (Italian; the 2 corpus tokens) + Neapolitan added to the "
+                                "decode vocabulary via chromatic_root_pc; see chromatic_decodes."),
             "grading": "a8_rebaseline_measure.build_piece_grid (pinned, read-only) vs "
                        "dcml_parser.load_wir_regions (OI-142-corrected)",
             "coverage": len(per_piece_grade), "no_wir": n_no_wir,
         },
         "columns": cols,
+        "probe_baseline_columns": PROBE_BASELINE,
+        "axis_delta_vs_probe_baseline": {
+            "root_agree_pct": _delta(cols["root_agree_pct"], PROBE_BASELINE["root_agree_pct"]),
+            "rn_agree_pct": _delta(cols["rn_agree_pct"], PROBE_BASELINE["rn_agree_pct"]),
+            "key_home_agree_pct": _delta(cols["key_home_agree_pct"], PROBE_BASELINE["key_home_agree_pct"]),
+            "key_local_agree_pct": _delta(cols["key_local_agree_pct"], PROBE_BASELINE["key_local_agree_pct"]),
+        },
+        "prediction_verdict": _prediction_verdict(cols, PROBE_BASELINE),
+        "cadence_feature_fires": dict(cad_totals),
+        "chromatic_decodes": {
+            "n_segments": sum(len(v) for v in chromatic_decodes.values()),
+            "n_pieces": len(chromatic_decodes),
+            "by_piece": chromatic_decodes,
+        },
         "duration_totals": {k: grand[k] for k in sorted(grand)},
         "timing": timing_summary,
         "win_loss_key_local": wl,
@@ -216,7 +266,7 @@ def run_corpus(write=True, verbose=True, stems=None):
             encoding="utf-8")
     if verbose:
         _print_corpus_report(cols, timing_summary, wl, len(per_piece_grade), n_no_wir,
-                             time.perf_counter() - t_all)
+                             time.perf_counter() - t_all, result)
     return result
 
 
@@ -438,39 +488,62 @@ def _win_loss(per_piece_grade):
     return {"weakest_key_local": rows[:10], "strongest_key_local": rows[-10:][::-1]}
 
 
-def _print_corpus_report(cols, timing, wl, cov, no_wir, wall):
+def _print_corpus_report(cols, timing, wl, cov, no_wir, wall, result=None):
     print("\n" + "=" * 78)
     print("TASK 3 — probe decode + grading (326 covered; identity weights; leftover 2a)")
+    print("      (cadence WIRED-WEIGHTLESS; chromatic vocab completed)")
     print("=" * 78)
     print(f"coverage: {cov} graded pieces ({no_wir} without WiR); wall {wall:.0f}s "
           f"(decode mean {timing['mean_s']}s / max {timing['max_s']}s)")
-    print(f"\n{'axis':16s} {'baseline (B/J/D)':26s} {'predicted':34s} {'MEASURED (probe)'}")
-    print("-" * 100)
-    for axis, colkey in (("key vs LOCAL", "key_local_agree_pct"), ("key vs HOME", "key_home_agree_pct"),
-                         ("chord root", "root_agree_pct"), ("Roman numeral", "rn_agree_pct")):
-        b = BASELINES[{"key vs LOCAL": "key_local", "key vs HOME": "key_home",
-                       "chord root": "root", "Roman numeral": "rn"}[axis]]
-        pkey = {"key vs LOCAL": "key_local", "key vs HOME": "key_home",
-                "chord root": "root", "Roman numeral": "rn"}[axis]
+    print(f"\n{'axis':16s} {'PROBE base':11s} {'MEASURED':11s} {'delta':8s} {'Default(B/J/D)'}")
+    print("-" * 78)
+    for axis, colkey, bkey in (("key vs LOCAL", "key_local_agree_pct", "key_local"),
+                               ("key vs HOME", "key_home_agree_pct", "key_home"),
+                               ("chord root", "root_agree_pct", "root"),
+                               ("Roman numeral", "rn_agree_pct", "rn")):
+        b = BASELINES[bkey]
+        pb = PROBE_BASELINE[colkey]
+        d = _delta(cols[colkey], pb)
         bl = f"{b['Baroque']}/{b['Jazz']}/{b['Default']}"
-        print(f"{axis:16s} {bl:26s} {PREDICTIONS[pkey]:34s} {cols[colkey]}")
+        print(f"{axis:16s} {pb!s:11s} {cols[colkey]!s:11s} {d:+8.2f} {bl}")
+    if result:
+        pv = result["prediction_verdict"]
+        print(f"\nprediction (<+/-1.0pp on every axis): {'HOLDS' if pv['holds'] else 'SURPRISE — '+str(pv['axes_over_1pp'])}")
+        cf = result["cadence_feature_fires"]
+        print(f"cadence fires (WEIGHTLESS, over {cf.get('boundaries',0)} committed boundaries): "
+              f"LT={cf.get('leading_tone',0)} tritone={cf.get('tritone_pair',0)} "
+              f"domBass={cf.get('dominant_tonic_bass',0)} fermata={cf.get('fermata_location',0)} "
+              f"any={cf.get('any_fire',0)}")
+        ch = result["chromatic_decodes"]
+        print(f"chromatic classes decoded: {ch['n_segments']} segments on {ch['n_pieces']} pieces "
+              f"{list(ch['by_piece'].keys())[:8]}")
     print(f"\nkey abstain: home {cols['key_home_abstain_pct']}%  local {cols['key_local_abstain_pct']}% "
           f"(the probe commits its best path everywhere — should be ~0)")
     print("\nslowest pieces:", timing["slowest"][:5])
-    print("\n10 weakest key-local pieces:", [(r["stem"], r["key_local_agree_pct"]) for r in wl["weakest_key_local"]])
-    print("10 strongest key-local pieces:", [(r["stem"], r["key_local_agree_pct"]) for r in wl["strongest_key_local"]])
 
 
 def run_parity_artifact(write=True):
     import probe_desksim as ds
     rows, nfail = ds.run_parity(verbose=True)
+    fire_rows, fire_stop = ds.run_cadence_fire_establishment(verbose=True)
+    if fire_stop:
+        raise SystemExit("STOP (Task 2): a cadence feature does not fire where the desk-sim applied its "
+                         "credit, and the mismatch is NOT the documented approach-window under-spec — "
+                         "the feature implementation is wrong. " + json.dumps(fire_rows))
     fitted = ds.run_fitted_probe(verbose=True)
     art = {"provenance": {"generator": "tools/joint_estimator/probe_desksim.py",
                           "instrument_commit": _git_head(),
                           "establishment": "structural parity (all non-cadence factors) vs the "
-                          "desk-simulation hand arithmetic; cadence (declared-omitted) reported "
-                          "separately; fitted-table recomputation under both leftover variants"},
+                          "desk-simulation hand arithmetic; the cadence MECHANISM-FIRES table (Task 2) "
+                          "checks the WEIGHTLESS features fire where the desk-sim applied its credits; "
+                          "fitted-table recomputation under both leftover variants",
+                          "cadence_window_note": ("the tritone feature uses a SINGLE-event approach "
+                          "(committed probe convention); the desk-sim S2 credit assumed a multi-beat "
+                          "window (Bigo 'last four beats', theory §F4). The divergence is confined to "
+                          "S2's tritone, is verdict-irrelevant, and is DECLARED to Cowork as the "
+                          "fit-time window design question — NOT built around here.")},
            "structural_parity": rows, "structural_fail": nfail,
+           "cadence_fire_establishment": fire_rows, "cadence_fire_stop": fire_stop,
            "fitted_recomputation": fitted}
     if write:
         (_HERE / "probe_parity_report.json").write_text(json.dumps(art, indent=1), encoding="utf-8")
@@ -494,15 +567,30 @@ def write_summaries():
          f"coverage {g['provenance']['coverage']} graded / {g['provenance']['no_wir']} no-WiR;"
          f" decode mean {tm['mean_s']}s max {tm['max_s']}s total {tm['total_s']}s",
          "",
-         "axis                baseline(B/J/D)          predicted                    MEASURED",
-         "-" * 92]
+         "axis                PROBE-base   MEASURED     delta      Default(B/J/D)",
+         "-" * 78]
     for axis, ck, bk in (("key vs LOCAL", "key_local_agree_pct", "key_local"),
                          ("key vs HOME", "key_home_agree_pct", "key_home"),
                          ("chord root", "root_agree_pct", "root"),
                          ("Roman numeral", "rn_agree_pct", "rn")):
         b = BASELINES[bk]
-        L.append(f"{axis:18s} {b['Baroque']}/{b['Jazz']}/{b['Default']:<18} "
-                 f"{PREDICTIONS[bk]:28s} {c[ck]}")
+        pb = PROBE_BASELINE[ck]
+        d = _delta(c[ck], pb)
+        L.append(f"{axis:18s} {pb!s:12s} {c[ck]!s:12s} {d:+7.2f}    {b['Baroque']}/{b['Jazz']}/{b['Default']}")
+    pv = g.get("prediction_verdict", {})
+    L.append("")
+    L.append(f"PREDICTION (<+/-1.0pp on every axis vs probe baseline): "
+             f"{'HOLDS' if pv.get('holds') else 'SURPRISE — ' + str(pv.get('axes_over_1pp'))}")
+    cf = g.get("cadence_feature_fires", {})
+    if cf:
+        L.append(f"cadence fires (WEIGHTLESS; {cf.get('boundaries',0)} committed boundaries; move NO score): "
+                 f"leading_tone={cf.get('leading_tone',0)} tritone_pair={cf.get('tritone_pair',0)} "
+                 f"dominant_tonic_bass={cf.get('dominant_tonic_bass',0)} "
+                 f"fermata_location={cf.get('fermata_location',0)} any_fire={cf.get('any_fire',0)}")
+    ch = g.get("chromatic_decodes", {})
+    if ch:
+        L.append(f"chromatic classes decoded (Task 3): {ch.get('n_segments',0)} segments on "
+                 f"{ch.get('n_pieces',0)} pieces  {list(ch.get('by_piece',{}).keys())}")
     L += ["", f"key abstain: home {c['key_home_abstain_pct']}%  local {c['key_local_abstain_pct']}% "
               "(commits best path everywhere)",
           f"slowest pieces: {tm['slowest'][:6]}",
@@ -548,6 +636,20 @@ def write_summaries():
     for r in p["structural_parity"]:
         Lp.append(f"{r['case']:11s} {r['hyp']:9s} {r['delta_struct']:+8.3f}    {r['delta_full']:+7.2f}"
                   f"     {r['my_cadence']:+.1f}/{r['desk_cadence']:+.1f}  [{r['kind']}]")
+    fe = p.get("cadence_fire_establishment")
+    if fe is not None:
+        Lp += ["", f"-- cadence MECHANISM-FIRES establishment (Task 2): "
+                   f"{'STOP' if p.get('cadence_fire_stop') else 'PASS'} --",
+               "  (weightless features must FIRE where the desk-sim applied its credits)"]
+        for r in fe:
+            marks = []
+            for f, d in r["per_feature"].items():
+                tag = "OK" if d["match"] else ("slip" if d["classify"] == "documented_window_underspec" else "STOP")
+                marks.append(f"{f.split('_')[0]}:desk{int(d['desk'])}/act{int(d['actual'])}[{tag}]")
+            res = ("" if r["resolution_fires_only_at_arrival"] is None
+                   else f"  resolution-only-at-arrival={r['resolution_fires_only_at_arrival']}")
+            Lp.append(f"  {r['check'][:34]:34s} {r['case']}/{r['hyp']}@e{r['arrival_event']}: "
+                      + " ".join(marks) + res)
     Lp += ["", "-- fitted-table recomputation (probe sensitive cells) --"]
     for lo in ("freq", "even"):
         f = p["fitted_recomputation"][lo]

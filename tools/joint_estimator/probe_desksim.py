@@ -159,20 +159,15 @@ class ProvisionalAdapter(pd.Adapter):
             return -3.51 if is_boundary else -0.03
         return -1.39 if is_boundary else -0.29        # tactus / mid_strong
 
-    # ---- T9: cadence features toward key k ----
-    def cadence_logp(self, approach_pcs, approach_bass, arrival_pcs, arrival_bass, tonic, is_major):
-        lt = (tonic + 11) % 12
-        fourth = (tonic + 5) % 12
-        fifth = (tonic + 7) % 12
-        one = tonic % 12
-        s = 0.0
-        if lt in approach_pcs and one in arrival_pcs:
-            s += 0.9
-        if fourth in approach_pcs and lt in approach_pcs:
-            s += 0.7
-        if approach_bass == fifth and arrival_bass == one:
-            s += 0.7
-        return s
+    # ---- T9/T8: cadence features toward key k (the INJECTED desk-sim weights) ----
+    # The feature DETECTION is the ONE shared detector pd.cadence_features (#6); here we only inject the
+    # provisional weights the desk-simulation hand arithmetic used (leading-tone resolution +0.9, tritone
+    # pair +0.7, dominant→tonic bass +0.7). The fermata cadence-location feature (T8) is weight 0 — the
+    # desk simulation stated it is "not exercised decisively in these ten cases" (no fermata at a traced
+    # decision point), and the synthetic pieces carry no fermata, so it never fires here either.
+    def cadence_weights(self):
+        return {"leading_tone": 0.9, "tritone_pair": 0.7, "dominant_tonic_bass": 0.7,
+                "fermata_location": 0.0}
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -196,7 +191,7 @@ def _make_piece(stem, ev_specs, n_quarter=4):
         meas = 1 + k // n_quarter
         beat = ev.get("beat", 1.0 + (k % n_quarter))
         mc = ev["mc"]
-        events.append([start, end, meas, beat, mc])
+        events.append([start, end, meas, beat, mc, int(ev.get("fermata", 0))])   # event fermata flag (5)
         ns = ev["notes"]
         # midi: bass note gets a low octave so it is the event minimum
         for idx, nd in enumerate(ns):
@@ -204,7 +199,8 @@ def _make_piece(stem, ev_specs, n_quarter=4):
             lof = nd.get("lof", _PC_LOF_NATURAL.get(pc, 0))
             midi = (pc + 48) if nd.get("bass") else (pc + 72)
             notes.append([start, 480, pc, midi, lof, idx, meas, beat, mc,
-                          nd.get("ap", 0), nd.get("dp", 0), int(nd.get("tied", 0))])
+                          nd.get("ap", 0), nd.get("dp", 0), int(nd.get("tied", 0)),
+                          int(nd.get("fermata", 0))])                              # note fermata flag (12)
     p = pd.Piece(stem=stem, events=events, notes=notes, n_quarter=n_quarter, meter=(n_quarter, 4))
     p.prepare()
     return p
@@ -441,6 +437,95 @@ def _build_corpus_traces():
                       notes="b minor wins by 5.1 (degree economics + A# spelling + cadence)"))
 
     return cases
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# The mechanism-fires establishment (dispatch Task 2): the fire/no-fire table against the desk-sim
+# ══════════════════════════════════════════════════════════════════════════════
+
+# The four checks the dispatch names, each with the desk-simulation's APPLIED per-feature credits
+# (read from cowork_factorization_desk_simulation.md §2). arrival_i = the arrival event index of the
+# credited boundary; the approach is the single previous event (the committed probe convention).
+_FIRE_CHECKS = [
+    {"name": "authentic cadence", "case": "S1", "hyp": "Cmaj", "arrival_i": 3,
+     "tonic": 0, "is_major": True,
+     "desk_fire": {"leading_tone": True, "tritone_pair": True, "dominant_tonic_bass": True},
+     "desk_text": "e3->e4 toward C: LT B->C, tritone F+B in e3 (=V7), bass G->C = +2.3"},
+    {"name": "relative-pair resolution event", "case": "S2_full", "hyp": "amin", "arrival_i": 6,
+     "tonic": 9, "is_major": False,
+     "desk_fire": {"leading_tone": True, "tritone_pair": True, "dominant_tonic_bass": True},
+     "desk_text": "e6->e7 toward a: desk applied LT(G#->A)+tritone(4^=D,7^=G#)+bass = +2.3",
+     "resolution_feature": "leading_tone"},   # the named RESOLUTION must fire here and NOT before
+    {"name": "tonicization non-firing (tritone toward C)", "case": "S4", "hyp": "stayC", "arrival_i": 3,
+     "tonic": 0, "is_major": True,
+     "desk_fire": {"leading_tone": True, "tritone_pair": False, "dominant_tonic_bass": True},
+     "desk_text": "e3->e4 toward C: LT+bass; tritone does NOT fire (4^=F-natural absent) = +1.6"},
+    {"name": "deceptive cadence key-vote", "case": "S5", "hyp": "Cmaj", "arrival_i": 1,
+     "tonic": 0, "is_major": True,
+     "desk_fire": {"leading_tone": True, "tritone_pair": True, "dominant_tonic_bass": False},
+     "desk_text": "toward C: LT B->C, tritone F+B; bass does NOT fire (G->A) = +1.6"},
+]
+
+# The documented desk-sim under-specification (NOT an implementation error, NOT a STOP): the tritone
+# approach WINDOW. The desk-sim credited S2's tritone toward a (+0.7) using a multi-beat window (Bigo's
+# "last four beats"), where 4^=D lives in e5 (the pre-dominant iv); the committed probe uses a
+# SINGLE-event approach (event i-1 = e6 = the V), which lacks D. The divergence is confined to this
+# feature+window, is verdict-irrelevant (a-minor still wins S2), and is DECLARED to Cowork as the
+# fit-time window design question (theory §F4). Any OTHER mismatch is a STOP.
+_DOC_SLIP_KEY = ("relative-pair resolution event", "tritone_pair")
+
+
+def run_cadence_fire_establishment(verbose=True):
+    """The mechanism-fires check (dispatch Task 2): the cadence features must FIRE exactly where the
+    desk-sim hand arithmetic applied its cadence credits. Returns (rows, stop) — stop=True iff a
+    verdict-bearing mismatch is found (the documented tritone-window under-specification is exempt)."""
+    cases = {c.name: c for c in build_cases()}
+    rows = []
+    stop = False
+    for chk in _FIRE_CHECKS:
+        case = cases[chk["case"]]
+        i = chk["arrival_i"]
+        fired = pd.cadence_site_features(case.piece, i, chk["tonic"], chk["is_major"])
+        per_feature = {}
+        for f in ("leading_tone", "tritone_pair", "dominant_tonic_bass"):
+            exp = chk["desk_fire"][f]
+            act = bool(fired[f])
+            match = (act == exp)
+            classify = "match"
+            if not match:
+                if (chk["name"], f) == _DOC_SLIP_KEY:
+                    classify = "documented_window_underspec"       # exempt (declared to Cowork)
+                else:
+                    classify = "STOP"
+                    stop = True
+            per_feature[f] = {"desk": exp, "actual": act, "match": match, "classify": classify}
+        # for the relative-pair check: the RESOLUTION must fire here and NOWHERE before it (the #12 point)
+        resolution_ok = None
+        if chk.get("resolution_feature"):
+            rf = chk["resolution_feature"]
+            fires_before = []
+            for j in range(1, i):
+                fb = pd.cadence_site_features(case.piece, j, chk["tonic"], chk["is_major"])
+                if fb[rf]:
+                    fires_before.append(j)
+            resolution_ok = bool(fired[rf]) and not fires_before
+            if not resolution_ok:
+                stop = True
+        rows.append({"check": chk["name"], "case": chk["case"], "hyp": chk["hyp"],
+                     "arrival_event": i, "desk_text": chk["desk_text"],
+                     "per_feature": per_feature, "fermata_location_fired": bool(fired["fermata_location"]),
+                     "resolution_fires_only_at_arrival": resolution_ok})
+    if verbose:
+        print("\n-- cadence mechanism-fires establishment (dispatch Task 2) --")
+        for r in rows:
+            print(f"  [{r['check']}] {r['case']}/{r['hyp']} @e{r['arrival_event']}")
+            for f, d in r["per_feature"].items():
+                mk = "OK " if d["match"] else ("~slip" if d["classify"] == "documented_window_underspec" else "STOP")
+                print(f"      {f:22s} desk={int(d['desk'])} actual={int(d['actual'])}  [{mk}]")
+            if r["resolution_fires_only_at_arrival"] is not None:
+                print(f"      resolution fires ONLY at the arrival event: {r['resolution_fires_only_at_arrival']}")
+        print(f"  ==> establishment {'STOP (implementation mismatch)' if stop else 'PASS (3/4 exact; S2 tritone = documented window under-spec)'}")
+    return rows, stop
 
 
 # ══════════════════════════════════════════════════════════════════════════════

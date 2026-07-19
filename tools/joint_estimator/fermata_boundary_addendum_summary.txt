@@ -1,0 +1,22 @@
+=== fermata-conditioned boundary cells (algorithm-completion step 1) — summary ===
+corpus git_hash: e3d17c325d24e0de1213440043cbf02ac14f3d3e
+counted stems: 317  (excluded: {'flagged': 7, 'multi_meter': 2})
+
+P(segment boundary | fermata at/adjacent) — the ONE counted addition (all-326 fold):
+
+-- exact_tick --
+  fermata_at_or_adjacent   P=0.8087  (4515/5583)  [reliable]
+  no_fermata_context       P=0.6292  (12393/19698)  [reliable]
+  _marginal                P=0.6688  (16908/25281)
+
+-- robust_first_event --
+  fermata_at_or_adjacent   P=0.8098  (4521/5583)  [reliable]
+  no_fermata_context       P=0.6282  (12375/19698)  [reliable]
+  _marginal                P=0.6683  (16896/25281)
+
+per training fold — P(boundary | fermata at/adjacent), exact_tick:
+  fold0: P=0.8097  (3609/4457)
+  fold1: P=0.8084  (3611/4467)
+  fold2: P=0.8101  (3609/4455)
+  fold3: P=0.8103  (3609/4454)
+  fold4: P=0.8051  (3622/4499)

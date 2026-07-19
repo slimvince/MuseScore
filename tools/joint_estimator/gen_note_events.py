@@ -21,9 +21,16 @@ The fold coverage list is `fold_assignment.json` (OI-176). music21 native `.meas
 PER NOTE (§1): onset tick, duration tick, pitch-class, midi, notated spelling as a line-of-fifths
 position (step+alter), part index (voice), measure number, beat, metric class, melodic approach and
 departure (step<=2 semitones / leap / none, per same-voice temporal adjacency), tied-from-previous
-flag. THE EVENT LATTICE (§1): the minimal segments between consecutive note onsets/offsets (the
-Pardo & Birmingham partition) with >=1 sounding note; each event carries its start/end tick, measure,
-beat and metric class.
+flag, and (addendum, algorithm-completion step 1) a FERMATA flag (a music21 expressions.Fermata on
+the note/chord). THE EVENT LATTICE (§1): the minimal segments between consecutive note onsets/offsets
+(the Pardo & Birmingham partition) with >=1 sounding note; each event carries its start/end tick,
+measure, beat, metric class, and whether ANY sounding note carries a fermata.
+
+FERMATA ADDENDUM (algorithm-completion step 1, Cowork dispatch 2026-07-19): the fermata mark is the
+ratified boundary/cadence-location factor's evidence (factorization §3.8; the chorale phrase-end
+convention, de Clercq EMR 2015). It is APPENDED to the note/event records (note element 12, event
+element 5), so every previously-existing field is byte-identical to the pre-addendum extraction
+(proven field-wise in main()). No existing field, order, or count changes.
 
 ESTABLISHMENT (#19): (i) byte-reproducible; (ii) a spot reconciliation on 3 pieces (incl. bwv145.5):
 the extracted pcs sounding across a NAMED pitch-class-constant region equal the committed .ours.json
@@ -42,7 +49,7 @@ _ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(_ROOT / "tools"))
 sys.path.insert(0, str(_ROOT / "tools" / "joint_estimator"))
 
-from music21 import converter                      # noqa: E402  (the established corpus toolchain)
+from music21 import converter, expressions         # noqa: E402  (the established corpus toolchain)
 import gen_label_tables as glt                      # noqa: E402  (reuse the ONE _beat_class — #6)
 
 # The single metric-class definition (part 1's; part 1 is frozen, so we import rather than copy — #6).
@@ -58,7 +65,8 @@ OUT_DIR = _ROOT / "tools" / "joint_estimator" / "note_events"
 OUT_JSON = OUT_DIR / "note_events.json"
 OUT_SUMMARY = OUT_DIR / "note_events_summary.txt"
 
-EXTRACTION_VERSION = "note-events-v1 (part2 §1; music21 recurse, offset*480, line-of-fifths spelling)"
+EXTRACTION_VERSION = ("note-events-v1+fermata (part2 §1; music21 recurse, offset*480, line-of-fifths "
+                      "spelling; +fermata flag APPENDED to note[12]/event[5], existing fields invariant)")
 
 # line-of-fifths position of a natural step (F=-1 .. B=5); a sharp is +7, a flat -7.
 _STEP_LOF = {"F": -1, "C": 0, "G": 1, "D": 2, "A": 3, "E": 4, "B": 5}
@@ -131,11 +139,15 @@ def extract_stem(stem: str) -> dict | None:
                 beatpos = 1.0
                 beat_fallbacks += 1
             tied = bool(n.tie and n.tie.type in ("stop", "continue"))
+            # fermata: a music21 expressions.Fermata attached to the note/chord (shared by all its
+            # pitches). The chorale phrase-end convention (factorization §3.8; de Clercq EMR 2015).
+            ferm = any(isinstance(e, expressions.Fermata) for e in n.expressions)
             for p in (n.pitches if n.isChord else [n.pitch]):
                 pnotes.append({
                     "onset": onset, "dur": dur, "pc": p.pitchClass, "midi": p.midi,
                     "lof": _line_of_fifths(p.step, p.alter or 0.0),
                     "part": pi, "measure": meas, "beat": round(beatpos, 4), "tied": tied,
+                    "fermata": ferm,
                 })
         parts_notes.append(pnotes)
 
@@ -158,7 +170,9 @@ def extract_stem(stem: str) -> dict | None:
         if not sounding:
             continue                                  # a silent gap is not a harmonic event
         meas, beatpos = _tick_to_measure_beat(a, m1_map, n_quarter)
-        events.append({"start": a, "end": b, "measure": meas, "beat": round(beatpos, 4)})
+        ev_ferm = any(nd["fermata"] for nd in sounding)   # any sounding note carries a fermata
+        events.append({"start": a, "end": b, "measure": meas, "beat": round(beatpos, 4),
+                       "fermata": ev_ferm})
 
     # ── metric class per note (from native beat) and per event (from measure-derived beat) ──
     for nd in notes:
@@ -217,19 +231,25 @@ def _tick_to_measure_beat(tick: int, m1_map: dict, n_quarter: int):
     return meas, pos
 
 
-# compact packing: notes and events as arrays; codes documented in the artifact header.
+# compact packing: notes and events as arrays; codes documented in the artifact header. The fermata
+# flag is APPENDED (note[12] / event[5]) so elements 0..11 (notes) / 0..4 (events) are byte-identical
+# to the pre-addendum extraction — the invariance obligation, proven field-wise in main().
 def _pack_note(nd: dict) -> list:
     return [nd["onset"], nd["dur"], nd["pc"], nd["midi"], nd["lof"], nd["part"], nd["measure"],
-            nd["beat"], _MC[nd["mc"]], _MV[nd["approach"]], _MV[nd["departure"]], int(nd["tied"])]
+            nd["beat"], _MC[nd["mc"]], _MV[nd["approach"]], _MV[nd["departure"]], int(nd["tied"]),
+            int(nd["fermata"])]
 
 
 def _pack_event(ev: dict) -> list:
-    return [ev["start"], ev["end"], ev["measure"], ev["beat"], _MC[ev["mc"]]]
+    return [ev["start"], ev["end"], ev["measure"], ev["beat"], _MC[ev["mc"]], int(ev["fermata"])]
 
 
 NOTE_FIELDS = ["onset", "dur", "pc", "midi", "lof", "part", "measure", "beat",
-               "metric_class_code", "approach_code", "departure_code", "tied"]
-EVENT_FIELDS = ["start", "end", "measure", "beat", "metric_class_code"]
+               "metric_class_code", "approach_code", "departure_code", "tied", "fermata"]
+EVENT_FIELDS = ["start", "end", "measure", "beat", "metric_class_code", "fermata"]
+# the count of pre-addendum fields (the invariance obligation compares exactly these leading elements).
+NOTE_PREEXISTING = 12
+EVENT_PREEXISTING = 5
 
 
 # ══════════════════════════════════════════════════════════════════════════
@@ -276,11 +296,80 @@ def reconcile_stem(stem: str, packed: dict) -> dict:
 
 
 # ══════════════════════════════════════════════════════════════════════════
+# Fermata addendum (algorithm-completion step 1) — invariance check + census
+# ══════════════════════════════════════════════════════════════════════════
+
+def check_field_invariance(prev: dict | None, pieces: dict) -> dict:
+    """The invariance obligation (dispatch Task 1): every PRE-ADDENDUM field is byte-identical after
+    regeneration. Compares, against the prior on-disk artifact, each note's leading NOTE_PREEXISTING
+    elements and each event's leading EVENT_PREEXISTING elements, plus the per-piece scalars and the
+    note/event counts — MECHANICALLY (element-wise), not by eyeball. Returns {ok, checked, first_diff}.
+    If prev is None (no prior artifact) the check is vacuously ok=None (nothing to compare against)."""
+    if prev is None:
+        return {"ok": None, "reason": "no prior note_events.json on disk to compare against"}
+    prev_pieces = prev.get("pieces", {})
+    scalars = ("stem", "meter", "n_quarter", "multi_meter", "beat_fallbacks")
+    checked = {"pieces": 0, "notes": 0, "events": 0}
+    for stem, rec in pieces.items():
+        pp = prev_pieces.get(stem)
+        if pp is None:
+            return {"ok": False, "first_diff": {"stem": stem, "why": "stem absent from prior artifact"}}
+        for k in scalars:
+            if pp.get(k) != rec.get(k):
+                return {"ok": False, "first_diff": {"stem": stem, "scalar": k,
+                                                    "prev": pp.get(k), "new": rec.get(k)}}
+        if len(pp["notes"]) != len(rec["notes"]) or len(pp["events"]) != len(rec["events"]):
+            return {"ok": False, "first_diff": {"stem": stem, "why": "note/event count changed",
+                                                "prev": [len(pp["notes"]), len(pp["events"])],
+                                                "new": [len(rec["notes"]), len(rec["events"])]}}
+        for i, (a, b) in enumerate(zip(pp["notes"], rec["notes"])):
+            if a[:NOTE_PREEXISTING] != b[:NOTE_PREEXISTING]:
+                return {"ok": False, "first_diff": {"stem": stem, "note_index": i,
+                                                    "prev": a[:NOTE_PREEXISTING], "new": b[:NOTE_PREEXISTING]}}
+        for i, (a, b) in enumerate(zip(pp["events"], rec["events"])):
+            if a[:EVENT_PREEXISTING] != b[:EVENT_PREEXISTING]:
+                return {"ok": False, "first_diff": {"stem": stem, "event_index": i,
+                                                    "prev": a[:EVENT_PREEXISTING], "new": b[:EVENT_PREEXISTING]}}
+        checked["pieces"] += 1
+        checked["notes"] += len(rec["notes"])
+        checked["events"] += len(rec["events"])
+    return {"ok": True, "checked": checked,
+            "note_preexisting_fields": NOTE_PREEXISTING, "event_preexisting_fields": EVENT_PREEXISTING}
+
+
+def fermata_census(pieces: dict) -> dict:
+    """Per-piece fermata census: note-fermata count, event-fermata count, and the list of pieces with
+    ZERO fermatas (worth listing — a chorale should carry fermatas at nearly every phrase end)."""
+    per_piece = {}
+    zero_fermata = []
+    tot_note_ferm = tot_event_ferm = 0
+    for stem, rec in sorted(pieces.items()):
+        nf = sum(1 for n in rec["notes"] if n[12])          # note fermata flag (element 12)
+        ef = sum(1 for ev in rec["events"] if ev[5])         # event fermata flag (element 5)
+        per_piece[stem] = {"notes_with_fermata": nf, "events_with_fermata": ef}
+        tot_note_ferm += nf
+        tot_event_ferm += ef
+        if nf == 0:
+            zero_fermata.append(stem)
+    with_ferm = [s for s in pieces if per_piece[s]["notes_with_fermata"] > 0]
+    return {
+        "pieces_total": len(pieces),
+        "pieces_with_fermata": len(with_ferm),
+        "pieces_zero_fermata": zero_fermata,          # the full list (dispatch: "worth listing")
+        "pieces_zero_fermata_count": len(zero_fermata),
+        "total_notes_with_fermata": tot_note_ferm,
+        "total_events_with_fermata": tot_event_ferm,
+        "per_piece": per_piece,
+    }
+
+
+# ══════════════════════════════════════════════════════════════════════════
 # Main
 # ══════════════════════════════════════════════════════════════════════════
 
 def main():
     OUT_DIR.mkdir(parents=True, exist_ok=True)
+    prev = json.loads(OUT_JSON.read_text(encoding="utf-8")) if OUT_JSON.exists() else None
     fa = json.loads(FOLD_ARTIFACT.read_text(encoding="utf-8"))
     covered = sorted(fa["stem_index"].keys())
 
@@ -312,6 +401,13 @@ def main():
         if r["matched"] != r["pc_constant_regions"] or r["mismatch"] is not None:
             raise SystemExit(f"STOP: pc reconciliation FAILED on {stem}: {r}")
 
+    # fermata addendum (step 1): the field-invariance obligation + the fermata census
+    invariance = check_field_invariance(prev, pieces)
+    if invariance["ok"] is False:
+        raise SystemExit("STOP (Task 1 invariance): a pre-addendum field changed after regeneration: "
+                         + json.dumps(invariance["first_diff"]))
+    census = fermata_census(pieces)
+
     provenance = {
         "generator": _rel(Path(__file__)),
         "corpus_git_hash": _git_head(),
@@ -329,10 +425,18 @@ def main():
             "onset/dur/end in ticks (480/quarter); pc=midi%12; lof=line-of-fifths (step+alter, F=-1..B=5, "
             "sharp +7 flat -7); part=voice index; measure (0=anacrusis, music21 native = WiR m0); "
             "beat=1-indexed quarter-beat; approach/departure vs the temporally-adjacent same-voice note "
-            "(step<=2 semitones / leap>2 / none if a rest gap or voice edge); tied=1 if tied from previous."),
+            "(step<=2 semitones / leap>2 / none if a rest gap or voice edge); tied=1 if tied from previous; "
+            "fermata=1 if a music21 expressions.Fermata is on the note/chord (APPENDED element 12)."),
         "event_notes": (
             "minimal segments between consecutive note onsets/offsets with >=1 sounding note (the "
-            "Pardo & Birmingham partition); [start,end,measure,beat,metric_class_code]."),
+            "Pardo & Birmingham partition); [start,end,measure,beat,metric_class_code,fermata]; "
+            "fermata=1 if ANY sounding note carries a fermata (APPENDED element 5)."),
+        "fermata_addendum": {
+            "field_invariance": invariance,       # element-wise proof: every pre-addendum field unchanged
+            "invariance_baseline": ("the on-disk note_events.json read before this regeneration (the "
+                                    "committed pre-addendum artifact on the first run)"),
+            "census": census,
+        },
         "establishment": {
             "byte_reproducible": "run twice; note_events.json byte-identical",
             "pc_reconciliation": recon,
@@ -346,10 +450,21 @@ def main():
     OUT_JSON.write_text(json.dumps(out, separators=(",", ":"), sort_keys=True) + "\n", encoding="utf-8")
 
     lines = [
-        "=== note-event extraction (part 2 §1) — summary ===",
+        "=== note-event extraction (part 2 §1 + fermata addendum) — summary ===",
         f"corpus git_hash: {provenance['corpus_git_hash']}",
         f"covered stems extracted: {len(pieces)}  (parse failures: {len(parse_fail)})",
         f"total notes: {total_notes}   total events: {total_events}",
+        "",
+        "-- fermata addendum (algorithm-completion step 1) --",
+        (f"  field invariance vs pre-addendum artifact: {invariance['ok']}"
+         + (f"  (checked {invariance['checked']['notes']} notes[:12] + "
+            f"{invariance['checked']['events']} events[:5] over {invariance['checked']['pieces']} pieces)"
+            if invariance['ok'] else f"  ({invariance.get('reason', invariance.get('first_diff'))})")),
+        f"  pieces with fermata: {census['pieces_with_fermata']}/{census['pieces_total']}",
+        f"  pieces with ZERO fermata ({census['pieces_zero_fermata_count']}): "
+        f"{census['pieces_zero_fermata'] if census['pieces_zero_fermata'] else 'none'}",
+        f"  total notes with fermata: {census['total_notes_with_fermata']}   "
+        f"total events with fermata: {census['total_events_with_fermata']}",
         "",
         "-- establishment: pc reconciliation on pc-constant regions --",
     ]

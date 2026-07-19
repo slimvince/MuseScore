@@ -2,14 +2,15 @@
  "provenance": {
   "generator": "tools/joint_estimator/probe_run.py",
   "decoder": "tools/joint_estimator/probe_decoder.py (identity weights; ratified factorization)",
-  "instrument_commit": "b28b4a8fdb6f95d09dfe62063292a2ac502f4df2",
-  "note_events_git_hash": "c7094c71b37b52e21601c1b78ed7ecf7b8fdae87",
+  "instrument_commit": "e3d17c325d24e0de1213440043cbf02ac14f3d3e",
+  "note_events_git_hash": "e3d17c325d24e0de1213440043cbf02ac14f3d3e",
   "tables_git_hash": "57ed94a6a46571172a351c09ba4f5cb92930674a",
   "leftover_rule": "option 2a (freq)",
   "seg_cap_events": 4,
   "key_prune_topk": 6,
-  "cadence": "DECLARED OMITTED (no fitted cadence table; feature weights unfit)",
-  "fermata": "DECLARED OMITTED (not in the note-event extraction; addendum owed)",
+  "cadence": "WIRED, WEIGHTLESS (algorithm-completion step 1): the ratified cadence-evidence features compute at every committed boundary and are LOGGED (cadence_feature_fires), but every weight is 0 so they move no score \u2014 the vocabulary change is isolated.",
+  "fermata": "EXTRACTED (note_events fermata field, step 1); the cadence-location feature is wired weightless; the counted fermata-boundary cells are in fermata_boundary_addendum.json.",
+  "chromatic_vocab": "Task 3: AugSixth (Italian; the 2 corpus tokens) + Neapolitan added to the decode vocabulary via chromatic_root_pc; see chromatic_decodes.",
   "grading": "a8_rebaseline_measure.build_piece_grid (pinned, read-only) vs dcml_parser.load_wir_regions (OI-142-corrected)",
   "coverage": 326,
   "no_wir": 0
@@ -19,9 +20,17 @@
    "n_events": 68,
    "n_segments": 49,
    "total_score": -797.492,
-   "decode_seconds": 2.3785,
+   "decode_seconds": 2.4986,
    "sig_fifths": -2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 10,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 6,
+    "boundaries": 48,
+    "any_fire": 14
+   },
    "segments": [
     {
      "i": 0,
@@ -1305,9 +1314,17 @@
    "n_events": 62,
    "n_segments": 42,
    "total_score": -698.288,
-   "decode_seconds": 1.6977,
+   "decode_seconds": 1.7456,
    "sig_fifths": -1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 13,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 10,
+    "boundaries": 41,
+    "any_fire": 18
+   },
    "segments": [
     {
      "i": 0,
@@ -2409,9 +2426,17 @@
    "n_events": 72,
    "n_segments": 42,
    "total_score": -810.37,
-   "decode_seconds": 1.9413,
+   "decode_seconds": 1.9644,
    "sig_fifths": -2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 12,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 9,
+    "boundaries": 41,
+    "any_fire": 19
+   },
    "segments": [
     {
      "i": 0,
@@ -3513,9 +3538,17 @@
    "n_events": 86,
    "n_segments": 38,
    "total_score": -900.501,
-   "decode_seconds": 2.6051,
+   "decode_seconds": 2.6751,
    "sig_fifths": 2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 10,
+    "boundaries": 37,
+    "any_fire": 13
+   },
    "segments": [
     {
      "i": 0,
@@ -4513,9 +4546,17 @@
    "n_events": 69,
    "n_segments": 37,
    "total_score": -703.874,
-   "decode_seconds": 2.1542,
+   "decode_seconds": 2.1888,
    "sig_fifths": 3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 12,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 7,
+    "boundaries": 36,
+    "any_fire": 17
+   },
    "segments": [
     {
      "i": 0,
@@ -5487,9 +5528,17 @@
    "n_events": 98,
    "n_segments": 41,
    "total_score": -1053.674,
-   "decode_seconds": 3.0702,
+   "decode_seconds": 2.9293,
    "sig_fifths": 2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 10,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 8,
+    "boundaries": 40,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -6565,9 +6614,17 @@
    "n_events": 107,
    "n_segments": 47,
    "total_score": -1010.05,
-   "decode_seconds": 3.5332,
+   "decode_seconds": 3.3636,
    "sig_fifths": 2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 11,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 9,
+    "boundaries": 46,
+    "any_fire": 19
+   },
    "segments": [
     {
      "i": 0,
@@ -7799,9 +7856,17 @@
    "n_events": 70,
    "n_segments": 31,
    "total_score": -750.349,
-   "decode_seconds": 2.1047,
+   "decode_seconds": 2.0859,
    "sig_fifths": 2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 7,
+    "boundaries": 30,
+    "any_fire": 13
+   },
    "segments": [
     {
      "i": 0,
@@ -8617,9 +8682,17 @@
    "n_events": 98,
    "n_segments": 64,
    "total_score": -1041.637,
-   "decode_seconds": 3.28,
+   "decode_seconds": 3.1241,
    "sig_fifths": 1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 16,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 0,
+    "boundaries": 63,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -10293,9 +10366,17 @@
    "n_events": 74,
    "n_segments": 35,
    "total_score": -830.334,
-   "decode_seconds": 2.0317,
+   "decode_seconds": 1.9616,
    "sig_fifths": 2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 6,
+    "boundaries": 34,
+    "any_fire": 11
+   },
    "segments": [
     {
      "i": 0,
@@ -11215,9 +11296,17 @@
    "n_events": 71,
    "n_segments": 35,
    "total_score": -770.531,
-   "decode_seconds": 2.2194,
+   "decode_seconds": 2.1477,
    "sig_fifths": -2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 8,
+    "boundaries": 34,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -12137,9 +12226,17 @@
    "n_events": 61,
    "n_segments": 28,
    "total_score": -586.77,
-   "decode_seconds": 2.2267,
+   "decode_seconds": 2.1637,
    "sig_fifths": 1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "boundaries": 27,
+    "any_fire": 15
+   },
    "segments": [
     {
      "i": 0,
@@ -12877,9 +12974,17 @@
    "n_events": 71,
    "n_segments": 38,
    "total_score": -716.32,
-   "decode_seconds": 2.4573,
+   "decode_seconds": 2.3715,
    "sig_fifths": 1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 12,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "boundaries": 37,
+    "any_fire": 18
+   },
    "segments": [
     {
      "i": 0,
@@ -13877,9 +13982,17 @@
    "n_events": 100,
    "n_segments": 42,
    "total_score": -1015.282,
-   "decode_seconds": 2.808,
+   "decode_seconds": 2.7579,
    "sig_fifths": 2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 14,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "boundaries": 41,
+    "any_fire": 19
+   },
    "segments": [
     {
      "i": 0,
@@ -14981,9 +15094,17 @@
    "n_events": 49,
    "n_segments": 34,
    "total_score": -533.664,
-   "decode_seconds": 1.4341,
+   "decode_seconds": 1.432,
    "sig_fifths": -2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 7,
+    "boundaries": 33,
+    "any_fire": 12
+   },
    "segments": [
     {
      "i": 0,
@@ -15877,9 +15998,17 @@
    "n_events": 56,
    "n_segments": 34,
    "total_score": -649.201,
-   "decode_seconds": 1.6274,
+   "decode_seconds": 1.7677,
    "sig_fifths": 2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "boundaries": 33,
+    "any_fire": 13
+   },
    "segments": [
     {
      "i": 0,
@@ -16773,9 +16902,17 @@
    "n_events": 172,
    "n_segments": 81,
    "total_score": -1803.99,
-   "decode_seconds": 5.3111,
+   "decode_seconds": 5.5603,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 12,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 19,
+    "boundaries": 80,
+    "any_fire": 30
+   },
    "segments": [
     {
      "i": 0,
@@ -18891,9 +19028,17 @@
    "n_events": 79,
    "n_segments": 49,
    "total_score": -894.199,
-   "decode_seconds": 2.4103,
+   "decode_seconds": 2.3824,
    "sig_fifths": -1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 13,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 10,
+    "boundaries": 48,
+    "any_fire": 22
+   },
    "segments": [
     {
      "i": 0,
@@ -20177,9 +20322,17 @@
    "n_events": 65,
    "n_segments": 38,
    "total_score": -694.613,
-   "decode_seconds": 2.1748,
+   "decode_seconds": 2.2653,
    "sig_fifths": -2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 11,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 10,
+    "boundaries": 37,
+    "any_fire": 18
+   },
    "segments": [
     {
      "i": 0,
@@ -21177,9 +21330,17 @@
    "n_events": 58,
    "n_segments": 29,
    "total_score": -604.783,
-   "decode_seconds": 1.632,
+   "decode_seconds": 1.7294,
    "sig_fifths": 2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "boundaries": 28,
+    "any_fire": 12
+   },
    "segments": [
     {
      "i": 0,
@@ -21943,9 +22104,17 @@
    "n_events": 77,
    "n_segments": 37,
    "total_score": -811.151,
-   "decode_seconds": 2.3115,
+   "decode_seconds": 2.451,
    "sig_fifths": -2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 8,
+    "boundaries": 36,
+    "any_fire": 12
+   },
    "segments": [
     {
      "i": 0,
@@ -22917,9 +23086,17 @@
    "n_events": 99,
    "n_segments": 50,
    "total_score": -957.142,
-   "decode_seconds": 3.2839,
+   "decode_seconds": 3.3549,
    "sig_fifths": -3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 15,
+    "boundaries": 49,
+    "any_fire": 20
+   },
    "segments": [
     {
      "i": 0,
@@ -24229,9 +24406,17 @@
    "n_events": 66,
    "n_segments": 35,
    "total_score": -637.427,
-   "decode_seconds": 2.2104,
+   "decode_seconds": 2.3902,
    "sig_fifths": 1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 11,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "boundaries": 34,
+    "any_fire": 18
+   },
    "segments": [
     {
      "i": 0,
@@ -25151,9 +25336,17 @@
    "n_events": 89,
    "n_segments": 43,
    "total_score": -987.598,
-   "decode_seconds": 2.4186,
+   "decode_seconds": 2.7579,
    "sig_fifths": 2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 4,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 8,
+    "boundaries": 42,
+    "any_fire": 12
+   },
    "segments": [
     {
      "i": 0,
@@ -26281,9 +26474,17 @@
    "n_events": 57,
    "n_segments": 36,
    "total_score": -656.413,
-   "decode_seconds": 1.8466,
+   "decode_seconds": 1.9183,
    "sig_fifths": 2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 9,
+    "boundaries": 35,
+    "any_fire": 15
+   },
    "segments": [
     {
      "i": 0,
@@ -27229,9 +27430,17 @@
    "n_events": 73,
    "n_segments": 37,
    "total_score": -737.43,
-   "decode_seconds": 2.1954,
+   "decode_seconds": 2.3916,
    "sig_fifths": 3,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 10,
+    "boundaries": 36,
+    "any_fire": 17
+   },
    "segments": [
     {
      "i": 0,
@@ -28203,9 +28412,17 @@
    "n_events": 54,
    "n_segments": 29,
    "total_score": -574.659,
-   "decode_seconds": 1.8073,
+   "decode_seconds": 1.9082,
    "sig_fifths": 1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 9,
+    "boundaries": 28,
+    "any_fire": 13
+   },
    "segments": [
     {
      "i": 0,
@@ -28969,9 +29186,17 @@
    "n_events": 64,
    "n_segments": 37,
    "total_score": -732.448,
-   "decode_seconds": 1.9137,
+   "decode_seconds": 1.9679,
    "sig_fifths": 1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 5,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "boundaries": 36,
+    "any_fire": 13
+   },
    "segments": [
     {
      "i": 0,
@@ -29943,9 +30168,17 @@
    "n_events": 55,
    "n_segments": 37,
    "total_score": -650.644,
-   "decode_seconds": 1.3272,
+   "decode_seconds": 1.3223,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 9,
+    "boundaries": 36,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -30917,9 +31150,17 @@
    "n_events": 40,
    "n_segments": 32,
    "total_score": -455.141,
-   "decode_seconds": 1.2003,
+   "decode_seconds": 1.2194,
    "sig_fifths": 0,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 4,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "boundaries": 31,
+    "any_fire": 10
+   },
    "segments": [
     {
      "i": 0,
@@ -31761,9 +32002,17 @@
    "n_events": 70,
    "n_segments": 34,
    "total_score": -705.294,
-   "decode_seconds": 2.45,
+   "decode_seconds": 2.489,
    "sig_fifths": 3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 10,
+    "boundaries": 33,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -32657,9 +32906,17 @@
    "n_events": 89,
    "n_segments": 40,
    "total_score": -841.772,
-   "decode_seconds": 3.9221,
+   "decode_seconds": 3.0935,
    "sig_fifths": 2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 5,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 10,
+    "boundaries": 39,
+    "any_fire": 15
+   },
    "segments": [
     {
      "i": 0,
@@ -33709,9 +33966,17 @@
    "n_events": 77,
    "n_segments": 36,
    "total_score": -758.506,
-   "decode_seconds": 2.5012,
+   "decode_seconds": 2.7362,
    "sig_fifths": -1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 8,
+    "boundaries": 35,
+    "any_fire": 13
+   },
    "segments": [
     {
      "i": 0,
@@ -34657,9 +34922,17 @@
    "n_events": 66,
    "n_segments": 41,
    "total_score": -688.337,
-   "decode_seconds": 1.875,
+   "decode_seconds": 2.0035,
    "sig_fifths": 0,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 9,
+    "boundaries": 40,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -35735,9 +36008,17 @@
    "n_events": 102,
    "n_segments": 50,
    "total_score": -995.836,
-   "decode_seconds": 3.2081,
+   "decode_seconds": 3.3147,
    "sig_fifths": -3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 12,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 7,
+    "fermata_location": 14,
+    "boundaries": 49,
+    "any_fire": 24
+   },
    "segments": [
     {
      "i": 0,
@@ -37047,9 +37328,17 @@
    "n_events": 67,
    "n_segments": 32,
    "total_score": -703.994,
-   "decode_seconds": 1.9319,
+   "decode_seconds": 1.8651,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 4,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 8,
+    "boundaries": 31,
+    "any_fire": 13
+   },
    "segments": [
     {
      "i": 0,
@@ -37891,9 +38180,17 @@
    "n_events": 57,
    "n_segments": 33,
    "total_score": -573.059,
-   "decode_seconds": 1.9238,
+   "decode_seconds": 1.8124,
    "sig_fifths": -2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 8,
+    "boundaries": 32,
+    "any_fire": 13
+   },
    "segments": [
     {
      "i": 0,
@@ -38761,9 +39058,17 @@
    "n_events": 39,
    "n_segments": 31,
    "total_score": -440.632,
-   "decode_seconds": 1.0946,
+   "decode_seconds": 1.1539,
    "sig_fifths": -2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 6,
+    "boundaries": 30,
+    "any_fire": 13
+   },
    "segments": [
     {
      "i": 0,
@@ -39579,9 +39884,17 @@
    "n_events": 72,
    "n_segments": 36,
    "total_score": -801.65,
-   "decode_seconds": 1.8195,
+   "decode_seconds": 2.0546,
    "sig_fifths": 2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 10,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "boundaries": 35,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -40527,9 +40840,17 @@
    "n_events": 90,
    "n_segments": 45,
    "total_score": -889.415,
-   "decode_seconds": 2.7973,
+   "decode_seconds": 2.9771,
    "sig_fifths": 3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 11,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 10,
+    "boundaries": 44,
+    "any_fire": 19
+   },
    "segments": [
     {
      "i": 0,
@@ -41709,9 +42030,17 @@
    "n_events": 111,
    "n_segments": 76,
    "total_score": -1218.826,
-   "decode_seconds": 3.5776,
+   "decode_seconds": 3.5976,
    "sig_fifths": 3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 19,
+    "tritone_pair": 6,
+    "dominant_tonic_bass": 7,
+    "fermata_location": 18,
+    "boundaries": 75,
+    "any_fire": 33
+   },
    "segments": [
     {
      "i": 0,
@@ -43697,9 +44026,17 @@
    "n_events": 125,
    "n_segments": 64,
    "total_score": -1365.256,
-   "decode_seconds": 3.4288,
+   "decode_seconds": 3.4879,
    "sig_fifths": 2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 15,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 8,
+    "fermata_location": 15,
+    "boundaries": 63,
+    "any_fire": 28
+   },
    "segments": [
     {
      "i": 0,
@@ -45373,9 +45710,17 @@
    "n_events": 123,
    "n_segments": 68,
    "total_score": -1287.396,
-   "decode_seconds": 4.3149,
+   "decode_seconds": 4.2872,
    "sig_fifths": -2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 12,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 16,
+    "boundaries": 67,
+    "any_fire": 27
+   },
    "segments": [
     {
      "i": 0,
@@ -47153,9 +47498,17 @@
    "n_events": 98,
    "n_segments": 45,
    "total_score": -1008.878,
-   "decode_seconds": 2.9794,
+   "decode_seconds": 2.7761,
    "sig_fifths": -2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 12,
+    "boundaries": 44,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -48335,9 +48688,17 @@
    "n_events": 68,
    "n_segments": 34,
    "total_score": -731.493,
-   "decode_seconds": 1.5196,
+   "decode_seconds": 1.4848,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 3,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 7,
+    "boundaries": 33,
+    "any_fire": 11
+   },
    "segments": [
     {
      "i": 0,
@@ -49231,9 +49592,17 @@
    "n_events": 88,
    "n_segments": 42,
    "total_score": -909.684,
-   "decode_seconds": 3.0984,
+   "decode_seconds": 3.0847,
    "sig_fifths": -1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 19,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 9,
+    "boundaries": 41,
+    "any_fire": 23
+   },
    "segments": [
     {
      "i": 0,
@@ -50335,9 +50704,17 @@
    "n_events": 78,
    "n_segments": 35,
    "total_score": -889.355,
-   "decode_seconds": 2.0931,
+   "decode_seconds": 2.0866,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "boundaries": 34,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -51257,9 +51634,17 @@
    "n_events": 79,
    "n_segments": 44,
    "total_score": -818.258,
-   "decode_seconds": 2.5059,
+   "decode_seconds": 2.5565,
    "sig_fifths": 2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 13,
+    "tritone_pair": 5,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 11,
+    "boundaries": 43,
+    "any_fire": 19
+   },
    "segments": [
     {
      "i": 0,
@@ -52413,9 +52798,17 @@
    "n_events": 97,
    "n_segments": 60,
    "total_score": -1036.627,
-   "decode_seconds": 3.0647,
+   "decode_seconds": 3.106,
    "sig_fifths": -2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 16,
+    "tritone_pair": 5,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 12,
+    "boundaries": 59,
+    "any_fire": 24
+   },
    "segments": [
     {
      "i": 0,
@@ -53985,9 +54378,17 @@
    "n_events": 124,
    "n_segments": 96,
    "total_score": -1505.345,
-   "decode_seconds": 3.3339,
+   "decode_seconds": 3.3271,
    "sig_fifths": 2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 14,
+    "tritone_pair": 6,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 21,
+    "boundaries": 95,
+    "any_fire": 35
+   },
    "segments": [
     {
      "i": 0,
@@ -56493,9 +56894,17 @@
    "n_events": 48,
    "n_segments": 35,
    "total_score": -532.852,
-   "decode_seconds": 1.4065,
+   "decode_seconds": 1.4511,
    "sig_fifths": -2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "boundaries": 34,
+    "any_fire": 13
+   },
    "segments": [
     {
      "i": 0,
@@ -57415,9 +57824,17 @@
    "n_events": 83,
    "n_segments": 41,
    "total_score": -807.357,
-   "decode_seconds": 3.1192,
+   "decode_seconds": 2.9621,
    "sig_fifths": -2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 14,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 11,
+    "boundaries": 40,
+    "any_fire": 19
+   },
    "segments": [
     {
      "i": 0,
@@ -58493,9 +58910,17 @@
    "n_events": 48,
    "n_segments": 25,
    "total_score": -525.93,
-   "decode_seconds": 1.2361,
+   "decode_seconds": 1.2345,
    "sig_fifths": 2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 5,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 6,
+    "boundaries": 24,
+    "any_fire": 11
+   },
    "segments": [
     {
      "i": 0,
@@ -59155,9 +59580,17 @@
    "n_events": 96,
    "n_segments": 45,
    "total_score": -1019.245,
-   "decode_seconds": 2.956,
+   "decode_seconds": 2.9607,
    "sig_fifths": 3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 11,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 9,
+    "boundaries": 44,
+    "any_fire": 15
+   },
    "segments": [
     {
      "i": 0,
@@ -60337,9 +60770,17 @@
    "n_events": 60,
    "n_segments": 37,
    "total_score": -675.124,
-   "decode_seconds": 1.4645,
+   "decode_seconds": 1.467,
    "sig_fifths": -1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 8,
+    "boundaries": 36,
+    "any_fire": 14
+   },
    "segments": [
     {
      "i": 0,
@@ -61311,9 +61752,17 @@
    "n_events": 60,
    "n_segments": 32,
    "total_score": -623.789,
-   "decode_seconds": 1.9253,
+   "decode_seconds": 1.8786,
    "sig_fifths": -1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 5,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 8,
+    "boundaries": 31,
+    "any_fire": 14
+   },
    "segments": [
     {
      "i": 0,
@@ -62155,9 +62604,17 @@
    "n_events": 97,
    "n_segments": 50,
    "total_score": -1010.571,
-   "decode_seconds": 3.2296,
+   "decode_seconds": 3.2703,
    "sig_fifths": -1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 12,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "boundaries": 49,
+    "any_fire": 23
+   },
    "segments": [
     {
      "i": 0,
@@ -63467,9 +63924,17 @@
    "n_events": 157,
    "n_segments": 82,
    "total_score": -1559.159,
-   "decode_seconds": 5.1072,
+   "decode_seconds": 5.5784,
    "sig_fifths": -2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 18,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 20,
+    "boundaries": 81,
+    "any_fire": 32
+   },
    "segments": [
     {
      "i": 0,
@@ -65611,9 +66076,17 @@
    "n_events": 93,
    "n_segments": 59,
    "total_score": -985.658,
-   "decode_seconds": 2.8365,
+   "decode_seconds": 3.1776,
    "sig_fifths": 1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 17,
+    "boundaries": 58,
+    "any_fire": 21
+   },
    "segments": [
     {
      "i": 0,
@@ -67157,9 +67630,17 @@
    "n_events": 63,
    "n_segments": 41,
    "total_score": -671.188,
-   "decode_seconds": 1.9409,
+   "decode_seconds": 2.164,
    "sig_fifths": 1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 5,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 11,
+    "boundaries": 40,
+    "any_fire": 14
+   },
    "segments": [
     {
      "i": 0,
@@ -68235,9 +68716,17 @@
    "n_events": 112,
    "n_segments": 51,
    "total_score": -1120.666,
-   "decode_seconds": 3.1371,
+   "decode_seconds": 3.3739,
    "sig_fifths": 1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 17,
+    "boundaries": 50,
+    "any_fire": 24
+   },
    "segments": [
     {
      "i": 0,
@@ -69573,9 +70062,17 @@
    "n_events": 102,
    "n_segments": 47,
    "total_score": -990.033,
-   "decode_seconds": 3.1916,
+   "decode_seconds": 3.3039,
    "sig_fifths": -1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 12,
+    "boundaries": 46,
+    "any_fire": 19
+   },
    "segments": [
     {
      "i": 0,
@@ -70807,9 +71304,17 @@
    "n_events": 76,
    "n_segments": 39,
    "total_score": -802.691,
-   "decode_seconds": 2.383,
+   "decode_seconds": 2.4198,
    "sig_fifths": -4,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 10,
+    "boundaries": 38,
+    "any_fire": 18
+   },
    "segments": [
     {
      "i": 0,
@@ -71833,9 +72338,17 @@
    "n_events": 65,
    "n_segments": 35,
    "total_score": -667.39,
-   "decode_seconds": 2.3092,
+   "decode_seconds": 2.3684,
    "sig_fifths": 4,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 9,
+    "boundaries": 34,
+    "any_fire": 17
+   },
    "segments": [
     {
      "i": 0,
@@ -72755,9 +73268,17 @@
    "n_events": 79,
    "n_segments": 44,
    "total_score": -896.385,
-   "decode_seconds": 2.0746,
+   "decode_seconds": 2.2975,
    "sig_fifths": 2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 10,
+    "boundaries": 43,
+    "any_fire": 13
+   },
    "segments": [
     {
      "i": 0,
@@ -73911,9 +74432,17 @@
    "n_events": 67,
    "n_segments": 34,
    "total_score": -716.047,
-   "decode_seconds": 2.0771,
+   "decode_seconds": 2.0123,
    "sig_fifths": 2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 11,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 4,
+    "boundaries": 33,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -74807,9 +75336,17 @@
    "n_events": 70,
    "n_segments": 44,
    "total_score": -768.146,
-   "decode_seconds": 2.1366,
+   "decode_seconds": 1.9315,
    "sig_fifths": -2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 10,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 11,
+    "boundaries": 43,
+    "any_fire": 19
+   },
    "segments": [
     {
      "i": 0,
@@ -75963,9 +76500,17 @@
    "n_events": 75,
    "n_segments": 37,
    "total_score": -768.7,
-   "decode_seconds": 2.7392,
+   "decode_seconds": 2.9197,
    "sig_fifths": -1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 11,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 9,
+    "boundaries": 36,
+    "any_fire": 19
+   },
    "segments": [
     {
      "i": 0,
@@ -76937,9 +77482,17 @@
    "n_events": 104,
    "n_segments": 51,
    "total_score": -1099.134,
-   "decode_seconds": 3.735,
+   "decode_seconds": 3.8641,
    "sig_fifths": 3,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 13,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 13,
+    "boundaries": 50,
+    "any_fire": 24
+   },
    "segments": [
     {
      "i": 0,
@@ -78275,9 +78828,17 @@
    "n_events": 65,
    "n_segments": 35,
    "total_score": -694.764,
-   "decode_seconds": 2.0171,
+   "decode_seconds": 2.1234,
    "sig_fifths": 2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 11,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 9,
+    "boundaries": 34,
+    "any_fire": 18
+   },
    "segments": [
     {
      "i": 0,
@@ -79197,9 +79758,17 @@
    "n_events": 62,
    "n_segments": 32,
    "total_score": -725.064,
-   "decode_seconds": 1.7645,
+   "decode_seconds": 1.8827,
    "sig_fifths": 2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 5,
+    "boundaries": 31,
+    "any_fire": 12
+   },
    "segments": [
     {
      "i": 0,
@@ -80041,9 +80610,17 @@
    "n_events": 66,
    "n_segments": 36,
    "total_score": -659.692,
-   "decode_seconds": 2.1815,
+   "decode_seconds": 2.3716,
    "sig_fifths": -1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 11,
+    "boundaries": 35,
+    "any_fire": 19
+   },
    "segments": [
     {
      "i": 0,
@@ -80989,9 +81566,17 @@
    "n_events": 67,
    "n_segments": 38,
    "total_score": -733.631,
-   "decode_seconds": 1.6867,
+   "decode_seconds": 1.7043,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 11,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "boundaries": 37,
+    "any_fire": 19
+   },
    "segments": [
     {
      "i": 0,
@@ -81989,9 +82574,17 @@
    "n_events": 68,
    "n_segments": 40,
    "total_score": -759.091,
-   "decode_seconds": 2.0062,
+   "decode_seconds": 2.0559,
    "sig_fifths": 3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 10,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 9,
+    "boundaries": 39,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -83041,9 +83634,17 @@
    "n_events": 82,
    "n_segments": 53,
    "total_score": -966.082,
-   "decode_seconds": 2.4753,
+   "decode_seconds": 2.478,
    "sig_fifths": 3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 16,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 14,
+    "boundaries": 52,
+    "any_fire": 26
+   },
    "segments": [
     {
      "i": 0,
@@ -84431,9 +85032,17 @@
    "n_events": 80,
    "n_segments": 49,
    "total_score": -928.699,
-   "decode_seconds": 2.0409,
+   "decode_seconds": 2.2089,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 10,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 13,
+    "boundaries": 48,
+    "any_fire": 19
+   },
    "segments": [
     {
      "i": 0,
@@ -85717,9 +86326,17 @@
    "n_events": 80,
    "n_segments": 34,
    "total_score": -831.313,
-   "decode_seconds": 2.2055,
+   "decode_seconds": 2.3728,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 4,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "boundaries": 33,
+    "any_fire": 11
+   },
    "segments": [
     {
      "i": 0,
@@ -86613,9 +87230,17 @@
    "n_events": 50,
    "n_segments": 31,
    "total_score": -549.104,
-   "decode_seconds": 1.4374,
+   "decode_seconds": 1.4017,
    "sig_fifths": 4,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 6,
+    "boundaries": 30,
+    "any_fire": 12
+   },
    "segments": [
     {
      "i": 0,
@@ -87431,9 +88056,17 @@
    "n_events": 50,
    "n_segments": 32,
    "total_score": -587.892,
-   "decode_seconds": 1.469,
+   "decode_seconds": 1.4646,
    "sig_fifths": -3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 8,
+    "boundaries": 31,
+    "any_fire": 14
+   },
    "segments": [
     {
      "i": 0,
@@ -88275,9 +88908,17 @@
    "n_events": 71,
    "n_segments": 55,
    "total_score": -777.95,
-   "decode_seconds": 2.3482,
+   "decode_seconds": 2.4746,
    "sig_fifths": 3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 15,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 7,
+    "fermata_location": 15,
+    "boundaries": 54,
+    "any_fire": 24
+   },
    "segments": [
     {
      "i": 0,
@@ -89717,9 +90358,17 @@
    "n_events": 64,
    "n_segments": 34,
    "total_score": -689.138,
-   "decode_seconds": 1.8356,
+   "decode_seconds": 1.8567,
    "sig_fifths": -2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 5,
+    "boundaries": 33,
+    "any_fire": 12
+   },
    "segments": [
     {
      "i": 0,
@@ -90613,9 +91262,17 @@
    "n_events": 77,
    "n_segments": 45,
    "total_score": -931.672,
-   "decode_seconds": 2.6194,
+   "decode_seconds": 2.8284,
    "sig_fifths": -3,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 13,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 7,
+    "fermata_location": 9,
+    "boundaries": 44,
+    "any_fire": 21
+   },
    "segments": [
     {
      "i": 0,
@@ -91795,9 +92452,17 @@
    "n_events": 158,
    "n_segments": 94,
    "total_score": -1762.406,
-   "decode_seconds": 5.0164,
+   "decode_seconds": 5.3906,
    "sig_fifths": -3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 29,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 21,
+    "boundaries": 93,
+    "any_fire": 41
+   },
    "segments": [
     {
      "i": 0,
@@ -94251,9 +94916,17 @@
    "n_events": 67,
    "n_segments": 39,
    "total_score": -751.403,
-   "decode_seconds": 2.0913,
+   "decode_seconds": 2.1521,
    "sig_fifths": 1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 14,
+    "boundaries": 38,
+    "any_fire": 20
+   },
    "segments": [
     {
      "i": 0,
@@ -95277,9 +95950,17 @@
    "n_events": 80,
    "n_segments": 41,
    "total_score": -812.406,
-   "decode_seconds": 2.2016,
+   "decode_seconds": 2.4985,
    "sig_fifths": 3,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 10,
+    "boundaries": 40,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -96355,9 +97036,17 @@
    "n_events": 82,
    "n_segments": 47,
    "total_score": -870.091,
-   "decode_seconds": 2.623,
+   "decode_seconds": 2.7667,
    "sig_fifths": 3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 12,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 11,
+    "boundaries": 46,
+    "any_fire": 21
+   },
    "segments": [
     {
      "i": 0,
@@ -97589,9 +98278,17 @@
    "n_events": 77,
    "n_segments": 37,
    "total_score": -812.85,
-   "decode_seconds": 2.2637,
+   "decode_seconds": 2.3638,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 11,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 10,
+    "boundaries": 36,
+    "any_fire": 18
+   },
    "segments": [
     {
      "i": 0,
@@ -98563,9 +99260,17 @@
    "n_events": 58,
    "n_segments": 29,
    "total_score": -600.159,
-   "decode_seconds": 1.774,
+   "decode_seconds": 1.8417,
    "sig_fifths": 3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 5,
+    "boundaries": 28,
+    "any_fire": 11
+   },
    "segments": [
     {
      "i": 0,
@@ -99329,9 +100034,17 @@
    "n_events": 77,
    "n_segments": 43,
    "total_score": -758.962,
-   "decode_seconds": 2.3755,
+   "decode_seconds": 2.4633,
    "sig_fifths": 0,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 13,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 11,
+    "boundaries": 42,
+    "any_fire": 21
+   },
    "segments": [
     {
      "i": 0,
@@ -100459,9 +101172,17 @@
    "n_events": 58,
    "n_segments": 30,
    "total_score": -555.808,
-   "decode_seconds": 1.8097,
+   "decode_seconds": 1.9718,
    "sig_fifths": 3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "boundaries": 29,
+    "any_fire": 13
+   },
    "segments": [
     {
      "i": 0,
@@ -101251,9 +101972,17 @@
    "n_events": 77,
    "n_segments": 41,
    "total_score": -746.924,
-   "decode_seconds": 2.534,
+   "decode_seconds": 2.8505,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 8,
+    "boundaries": 40,
+    "any_fire": 14
+   },
    "segments": [
     {
      "i": 0,
@@ -102329,9 +103058,17 @@
    "n_events": 44,
    "n_segments": 28,
    "total_score": -476.723,
-   "decode_seconds": 1.3213,
+   "decode_seconds": 1.4828,
    "sig_fifths": 0,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 10,
+    "boundaries": 27,
+    "any_fire": 15
+   },
    "segments": [
     {
      "i": 0,
@@ -103069,9 +103806,17 @@
    "n_events": 71,
    "n_segments": 36,
    "total_score": -730.006,
-   "decode_seconds": 2.0428,
+   "decode_seconds": 2.1633,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "boundaries": 35,
+    "any_fire": 15
+   },
    "segments": [
     {
      "i": 0,
@@ -104017,9 +104762,17 @@
    "n_events": 67,
    "n_segments": 32,
    "total_score": -759.256,
-   "decode_seconds": 1.8545,
+   "decode_seconds": 1.8934,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 8,
+    "boundaries": 31,
+    "any_fire": 14
+   },
    "segments": [
     {
      "i": 0,
@@ -104861,9 +105614,17 @@
    "n_events": 62,
    "n_segments": 36,
    "total_score": -703.382,
-   "decode_seconds": 1.5537,
+   "decode_seconds": 1.6502,
    "sig_fifths": 2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 8,
+    "boundaries": 35,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -105809,9 +106570,17 @@
    "n_events": 84,
    "n_segments": 43,
    "total_score": -828.892,
-   "decode_seconds": 2.6732,
+   "decode_seconds": 2.7857,
    "sig_fifths": 1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "boundaries": 42,
+    "any_fire": 17
+   },
    "segments": [
     {
      "i": 0,
@@ -106939,9 +107708,17 @@
    "n_events": 63,
    "n_segments": 30,
    "total_score": -673.895,
-   "decode_seconds": 2.0783,
+   "decode_seconds": 2.1383,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 7,
+    "boundaries": 29,
+    "any_fire": 10
+   },
    "segments": [
     {
      "i": 0,
@@ -107731,9 +108508,17 @@
    "n_events": 77,
    "n_segments": 41,
    "total_score": -770.669,
-   "decode_seconds": 2.4116,
+   "decode_seconds": 2.6778,
    "sig_fifths": 1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 9,
+    "boundaries": 40,
+    "any_fire": 13
+   },
    "segments": [
     {
      "i": 0,
@@ -108809,9 +109594,17 @@
    "n_events": 97,
    "n_segments": 56,
    "total_score": -1124.546,
-   "decode_seconds": 2.6075,
+   "decode_seconds": 2.6654,
    "sig_fifths": 2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 16,
+    "tritone_pair": 5,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 9,
+    "boundaries": 55,
+    "any_fire": 22
+   },
    "segments": [
     {
      "i": 0,
@@ -110277,9 +111070,17 @@
    "n_events": 70,
    "n_segments": 34,
    "total_score": -668.671,
-   "decode_seconds": 2.3337,
+   "decode_seconds": 2.3904,
    "sig_fifths": 2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 5,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 8,
+    "boundaries": 33,
+    "any_fire": 12
+   },
    "segments": [
     {
      "i": 0,
@@ -111173,9 +111974,17 @@
    "n_events": 83,
    "n_segments": 39,
    "total_score": -774.455,
-   "decode_seconds": 2.8189,
+   "decode_seconds": 2.9334,
    "sig_fifths": 1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 11,
+    "boundaries": 38,
+    "any_fire": 14
+   },
    "segments": [
     {
      "i": 0,
@@ -112199,9 +113008,17 @@
    "n_events": 55,
    "n_segments": 30,
    "total_score": -465.627,
-   "decode_seconds": 1.7189,
+   "decode_seconds": 1.8205,
    "sig_fifths": 1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 8,
+    "boundaries": 29,
+    "any_fire": 14
+   },
    "segments": [
     {
      "i": 0,
@@ -112991,9 +113808,17 @@
    "n_events": 53,
    "n_segments": 24,
    "total_score": -530.343,
-   "decode_seconds": 1.4956,
+   "decode_seconds": 1.5695,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 4,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 5,
+    "boundaries": 23,
+    "any_fire": 8
+   },
    "segments": [
     {
      "i": 0,
@@ -113627,9 +114452,17 @@
    "n_events": 84,
    "n_segments": 43,
    "total_score": -845.926,
-   "decode_seconds": 2.5208,
+   "decode_seconds": 2.6863,
    "sig_fifths": 1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 12,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 11,
+    "boundaries": 42,
+    "any_fire": 18
+   },
    "segments": [
     {
      "i": 0,
@@ -114757,9 +115590,17 @@
    "n_events": 123,
    "n_segments": 57,
    "total_score": -1174.796,
-   "decode_seconds": 4.8258,
+   "decode_seconds": 4.7667,
    "sig_fifths": 1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 13,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 12,
+    "boundaries": 56,
+    "any_fire": 20
+   },
    "segments": [
     {
      "i": 0,
@@ -116251,9 +117092,17 @@
    "n_events": 87,
    "n_segments": 39,
    "total_score": -889.568,
-   "decode_seconds": 2.5749,
+   "decode_seconds": 2.7205,
    "sig_fifths": 1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 10,
+    "boundaries": 38,
+    "any_fire": 17
+   },
    "segments": [
     {
      "i": 0,
@@ -117277,9 +118126,17 @@
    "n_events": 80,
    "n_segments": 50,
    "total_score": -781.895,
-   "decode_seconds": 2.7537,
+   "decode_seconds": 3.0157,
    "sig_fifths": 1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 13,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "boundaries": 49,
+    "any_fire": 21
+   },
    "segments": [
     {
      "i": 0,
@@ -118589,9 +119446,17 @@
    "n_events": 76,
    "n_segments": 35,
    "total_score": -768.704,
-   "decode_seconds": 2.3283,
+   "decode_seconds": 2.3675,
    "sig_fifths": 2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 10,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 8,
+    "boundaries": 34,
+    "any_fire": 17
+   },
    "segments": [
     {
      "i": 0,
@@ -119511,9 +120376,17 @@
    "n_events": 69,
    "n_segments": 35,
    "total_score": -739.124,
-   "decode_seconds": 2.0666,
+   "decode_seconds": 2.2231,
    "sig_fifths": 2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 10,
+    "boundaries": 34,
+    "any_fire": 17
+   },
    "segments": [
     {
      "i": 0,
@@ -120433,9 +121306,17 @@
    "n_events": 65,
    "n_segments": 37,
    "total_score": -731.734,
-   "decode_seconds": 1.6515,
+   "decode_seconds": 1.6356,
    "sig_fifths": -1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 10,
+    "boundaries": 36,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -121407,9 +122288,17 @@
    "n_events": 76,
    "n_segments": 38,
    "total_score": -739.795,
-   "decode_seconds": 2.3466,
+   "decode_seconds": 2.3768,
    "sig_fifths": -2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 7,
+    "boundaries": 37,
+    "any_fire": 14
+   },
    "segments": [
     {
      "i": 0,
@@ -122407,9 +123296,17 @@
    "n_events": 64,
    "n_segments": 34,
    "total_score": -656.054,
-   "decode_seconds": 2.1926,
+   "decode_seconds": 2.3223,
    "sig_fifths": -2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 5,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 6,
+    "boundaries": 33,
+    "any_fire": 12
+   },
    "segments": [
     {
      "i": 0,
@@ -123303,9 +124200,17 @@
    "n_events": 83,
    "n_segments": 40,
    "total_score": -824.212,
-   "decode_seconds": 2.3538,
+   "decode_seconds": 2.4121,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "boundaries": 39,
+    "any_fire": 17
+   },
    "segments": [
     {
      "i": 0,
@@ -124355,9 +125260,17 @@
    "n_events": 223,
    "n_segments": 99,
    "total_score": -2251.51,
-   "decode_seconds": 6.9166,
+   "decode_seconds": 7.0488,
    "sig_fifths": 0,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 20,
+    "tritone_pair": 7,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 30,
+    "boundaries": 98,
+    "any_fire": 47
+   },
    "segments": [
     {
      "i": 0,
@@ -126941,9 +127854,17 @@
    "n_events": 115,
    "n_segments": 56,
    "total_score": -1232.52,
-   "decode_seconds": 3.3397,
+   "decode_seconds": 3.4249,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 13,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 11,
+    "boundaries": 55,
+    "any_fire": 22
+   },
    "segments": [
     {
      "i": 0,
@@ -128409,9 +129330,17 @@
    "n_events": 88,
    "n_segments": 43,
    "total_score": -932.696,
-   "decode_seconds": 2.5053,
+   "decode_seconds": 2.6199,
    "sig_fifths": 1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 9,
+    "boundaries": 42,
+    "any_fire": 14
+   },
    "segments": [
     {
      "i": 0,
@@ -129539,9 +130468,17 @@
    "n_events": 89,
    "n_segments": 49,
    "total_score": -958.954,
-   "decode_seconds": 2.8605,
+   "decode_seconds": 2.9777,
    "sig_fifths": 1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 10,
+    "tritone_pair": 5,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 11,
+    "boundaries": 48,
+    "any_fire": 19
+   },
    "segments": [
     {
      "i": 0,
@@ -130825,9 +131762,17 @@
    "n_events": 62,
    "n_segments": 34,
    "total_score": -696.451,
-   "decode_seconds": 1.7939,
+   "decode_seconds": 1.8671,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 9,
+    "boundaries": 33,
+    "any_fire": 13
+   },
    "segments": [
     {
      "i": 0,
@@ -131721,9 +132666,17 @@
    "n_events": 96,
    "n_segments": 48,
    "total_score": -1011.079,
-   "decode_seconds": 2.9644,
+   "decode_seconds": 3.0681,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 13,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 11,
+    "boundaries": 47,
+    "any_fire": 21
+   },
    "segments": [
     {
      "i": 0,
@@ -132981,9 +133934,17 @@
    "n_events": 41,
    "n_segments": 26,
    "total_score": -397.666,
-   "decode_seconds": 1.3983,
+   "decode_seconds": 1.3847,
    "sig_fifths": -1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 7,
+    "boundaries": 25,
+    "any_fire": 10
+   },
    "segments": [
     {
      "i": 0,
@@ -133669,9 +134630,17 @@
    "n_events": 58,
    "n_segments": 31,
    "total_score": -599.347,
-   "decode_seconds": 1.6716,
+   "decode_seconds": 1.6135,
    "sig_fifths": 1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 8,
+    "boundaries": 30,
+    "any_fire": 13
+   },
    "segments": [
     {
      "i": 0,
@@ -134487,9 +135456,17 @@
    "n_events": 119,
    "n_segments": 54,
    "total_score": -1172.421,
-   "decode_seconds": 3.4329,
+   "decode_seconds": 3.5185,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 11,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 15,
+    "boundaries": 53,
+    "any_fire": 22
+   },
    "segments": [
     {
      "i": 0,
@@ -135903,9 +136880,17 @@
    "n_events": 100,
    "n_segments": 48,
    "total_score": -952.716,
-   "decode_seconds": 3.1927,
+   "decode_seconds": 3.3534,
    "sig_fifths": 0,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 13,
+    "boundaries": 47,
+    "any_fire": 22
+   },
    "segments": [
     {
      "i": 0,
@@ -137163,9 +138148,17 @@
    "n_events": 89,
    "n_segments": 42,
    "total_score": -841.002,
-   "decode_seconds": 2.5181,
+   "decode_seconds": 2.6806,
    "sig_fifths": -3,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 10,
+    "boundaries": 41,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -138267,9 +139260,17 @@
    "n_events": 40,
    "n_segments": 17,
    "total_score": -393.861,
-   "decode_seconds": 1.1062,
+   "decode_seconds": 1.2473,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 2,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 2,
+    "boundaries": 16,
+    "any_fire": 5
+   },
    "segments": [
     {
      "i": 0,
@@ -138721,9 +139722,17 @@
    "n_events": 75,
    "n_segments": 34,
    "total_score": -739.227,
-   "decode_seconds": 2.5368,
+   "decode_seconds": 2.7482,
    "sig_fifths": -1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 5,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 9,
+    "boundaries": 33,
+    "any_fire": 12
+   },
    "segments": [
     {
      "i": 0,
@@ -139617,9 +140626,17 @@
    "n_events": 89,
    "n_segments": 42,
    "total_score": -928.029,
-   "decode_seconds": 2.3919,
+   "decode_seconds": 2.4186,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 9,
+    "boundaries": 41,
+    "any_fire": 15
+   },
    "segments": [
     {
      "i": 0,
@@ -140721,9 +141738,17 @@
    "n_events": 75,
    "n_segments": 37,
    "total_score": -831.426,
-   "decode_seconds": 2.0202,
+   "decode_seconds": 2.1744,
    "sig_fifths": 1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 8,
+    "boundaries": 36,
+    "any_fire": 13
+   },
    "segments": [
     {
      "i": 0,
@@ -141695,9 +142720,17 @@
    "n_events": 56,
    "n_segments": 27,
    "total_score": -482.706,
-   "decode_seconds": 1.735,
+   "decode_seconds": 1.9669,
    "sig_fifths": -1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 5,
+    "boundaries": 26,
+    "any_fire": 11
+   },
    "segments": [
     {
      "i": 0,
@@ -142409,9 +143442,17 @@
    "n_events": 68,
    "n_segments": 34,
    "total_score": -637.663,
-   "decode_seconds": 2.192,
+   "decode_seconds": 2.2646,
    "sig_fifths": -1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 7,
+    "boundaries": 33,
+    "any_fire": 13
+   },
    "segments": [
     {
      "i": 0,
@@ -143305,9 +144346,17 @@
    "n_events": 100,
    "n_segments": 49,
    "total_score": -923.15,
-   "decode_seconds": 3.2957,
+   "decode_seconds": 3.5836,
    "sig_fifths": 0,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 13,
+    "boundaries": 48,
+    "any_fire": 20
+   },
    "segments": [
     {
      "i": 0,
@@ -144591,9 +145640,17 @@
    "n_events": 58,
    "n_segments": 31,
    "total_score": -559.818,
-   "decode_seconds": 1.5475,
+   "decode_seconds": 1.6512,
    "sig_fifths": 0,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 4,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "boundaries": 30,
+    "any_fire": 9
+   },
    "segments": [
     {
      "i": 0,
@@ -145409,9 +146466,17 @@
    "n_events": 111,
    "n_segments": 55,
    "total_score": -1005.266,
-   "decode_seconds": 3.6604,
+   "decode_seconds": 4.1355,
    "sig_fifths": 1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 14,
+    "boundaries": 54,
+    "any_fire": 20
+   },
    "segments": [
     {
      "i": 0,
@@ -146851,9 +147916,17 @@
    "n_events": 72,
    "n_segments": 33,
    "total_score": -691.304,
-   "decode_seconds": 2.1095,
+   "decode_seconds": 2.2656,
    "sig_fifths": -1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 6,
+    "boundaries": 32,
+    "any_fire": 14
+   },
    "segments": [
     {
      "i": 0,
@@ -147721,9 +148794,17 @@
    "n_events": 64,
    "n_segments": 37,
    "total_score": -668.683,
-   "decode_seconds": 1.6662,
+   "decode_seconds": 1.8506,
    "sig_fifths": 0,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 5,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 11,
+    "boundaries": 36,
+    "any_fire": 17
+   },
    "segments": [
     {
      "i": 0,
@@ -148695,9 +149776,17 @@
    "n_events": 74,
    "n_segments": 40,
    "total_score": -743.352,
-   "decode_seconds": 2.2985,
+   "decode_seconds": 2.5241,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 4,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 13,
+    "boundaries": 39,
+    "any_fire": 15
+   },
    "segments": [
     {
      "i": 0,
@@ -149747,9 +150836,17 @@
    "n_events": 68,
    "n_segments": 29,
    "total_score": -680.278,
-   "decode_seconds": 1.8774,
+   "decode_seconds": 2.0159,
    "sig_fifths": 0,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 8,
+    "boundaries": 28,
+    "any_fire": 14
+   },
    "segments": [
     {
      "i": 0,
@@ -150513,9 +151610,17 @@
    "n_events": 73,
    "n_segments": 32,
    "total_score": -734.978,
-   "decode_seconds": 2.2657,
+   "decode_seconds": 2.4252,
    "sig_fifths": -2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 5,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 6,
+    "boundaries": 31,
+    "any_fire": 12
+   },
    "segments": [
     {
      "i": 0,
@@ -151357,9 +152462,17 @@
    "n_events": 56,
    "n_segments": 30,
    "total_score": -602.879,
-   "decode_seconds": 1.654,
+   "decode_seconds": 1.6455,
    "sig_fifths": 3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 5,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "boundaries": 29,
+    "any_fire": 9
+   },
    "segments": [
     {
      "i": 0,
@@ -152149,9 +153262,17 @@
    "n_events": 87,
    "n_segments": 48,
    "total_score": -881.554,
-   "decode_seconds": 2.9387,
+   "decode_seconds": 2.9285,
    "sig_fifths": 3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 11,
+    "boundaries": 47,
+    "any_fire": 15
+   },
    "segments": [
     {
      "i": 0,
@@ -153409,9 +154530,17 @@
    "n_events": 84,
    "n_segments": 43,
    "total_score": -801.974,
-   "decode_seconds": 2.7078,
+   "decode_seconds": 2.7132,
    "sig_fifths": 1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 10,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 11,
+    "boundaries": 42,
+    "any_fire": 19
+   },
    "segments": [
     {
      "i": 0,
@@ -154539,9 +155668,17 @@
    "n_events": 86,
    "n_segments": 44,
    "total_score": -823.995,
-   "decode_seconds": 4.3226,
+   "decode_seconds": 2.8102,
    "sig_fifths": -1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 11,
+    "boundaries": 43,
+    "any_fire": 19
+   },
    "segments": [
     {
      "i": 0,
@@ -155695,9 +156832,17 @@
    "n_events": 80,
    "n_segments": 46,
    "total_score": -836.627,
-   "decode_seconds": 2.2137,
+   "decode_seconds": 2.3323,
    "sig_fifths": 2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "boundaries": 45,
+    "any_fire": 19
+   },
    "segments": [
     {
      "i": 0,
@@ -156903,9 +158048,17 @@
    "n_events": 79,
    "n_segments": 44,
    "total_score": -849.852,
-   "decode_seconds": 2.2975,
+   "decode_seconds": 2.577,
    "sig_fifths": 2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 10,
+    "boundaries": 43,
+    "any_fire": 17
+   },
    "segments": [
     {
      "i": 0,
@@ -158059,9 +159212,17 @@
    "n_events": 132,
    "n_segments": 59,
    "total_score": -1328.765,
-   "decode_seconds": 4.3587,
+   "decode_seconds": 4.7684,
    "sig_fifths": 2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 11,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 10,
+    "boundaries": 58,
+    "any_fire": 21
+   },
    "segments": [
     {
      "i": 0,
@@ -159605,9 +160766,17 @@
    "n_events": 107,
    "n_segments": 50,
    "total_score": -1043.721,
-   "decode_seconds": 3.1441,
+   "decode_seconds": 3.3621,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 10,
+    "boundaries": 49,
+    "any_fire": 18
+   },
    "segments": [
     {
      "i": 0,
@@ -160917,9 +162086,17 @@
    "n_events": 82,
    "n_segments": 36,
    "total_score": -752.48,
-   "decode_seconds": 2.7777,
+   "decode_seconds": 2.8619,
    "sig_fifths": -1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 5,
+    "boundaries": 35,
+    "any_fire": 13
+   },
    "segments": [
     {
      "i": 0,
@@ -161865,9 +163042,17 @@
    "n_events": 67,
    "n_segments": 36,
    "total_score": -640.835,
-   "decode_seconds": 2.0485,
+   "decode_seconds": 2.1613,
    "sig_fifths": -2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 4,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 8,
+    "boundaries": 35,
+    "any_fire": 10
+   },
    "segments": [
     {
      "i": 0,
@@ -162813,9 +163998,17 @@
    "n_events": 67,
    "n_segments": 37,
    "total_score": -626.28,
-   "decode_seconds": 2.1605,
+   "decode_seconds": 2.2531,
    "sig_fifths": -2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 9,
+    "boundaries": 36,
+    "any_fire": 15
+   },
    "segments": [
     {
      "i": 0,
@@ -163787,9 +164980,17 @@
    "n_events": 84,
    "n_segments": 45,
    "total_score": -886.769,
-   "decode_seconds": 2.2094,
+   "decode_seconds": 2.3441,
    "sig_fifths": -1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 5,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 12,
+    "boundaries": 44,
+    "any_fire": 15
+   },
    "segments": [
     {
      "i": 0,
@@ -164969,9 +166170,17 @@
    "n_events": 64,
    "n_segments": 29,
    "total_score": -609.151,
-   "decode_seconds": 2.0963,
+   "decode_seconds": 2.1422,
    "sig_fifths": 1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 5,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 7,
+    "boundaries": 28,
+    "any_fire": 11
+   },
    "segments": [
     {
      "i": 0,
@@ -165735,9 +166944,17 @@
    "n_events": 97,
    "n_segments": 52,
    "total_score": -1119.184,
-   "decode_seconds": 2.5677,
+   "decode_seconds": 2.7658,
    "sig_fifths": 2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 16,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 9,
+    "boundaries": 51,
+    "any_fire": 24
+   },
    "segments": [
     {
      "i": 0,
@@ -167099,9 +168316,17 @@
    "n_events": 121,
    "n_segments": 59,
    "total_score": -1294.329,
-   "decode_seconds": 3.3815,
+   "decode_seconds": 3.3987,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 13,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 11,
+    "boundaries": 58,
+    "any_fire": 24
+   },
    "segments": [
     {
      "i": 0,
@@ -168645,9 +169870,17 @@
    "n_events": 73,
    "n_segments": 35,
    "total_score": -745.559,
-   "decode_seconds": 2.3108,
+   "decode_seconds": 2.3774,
    "sig_fifths": -2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 6,
+    "boundaries": 34,
+    "any_fire": 11
+   },
    "segments": [
     {
      "i": 0,
@@ -169567,9 +170800,17 @@
    "n_events": 68,
    "n_segments": 37,
    "total_score": -677.141,
-   "decode_seconds": 1.9738,
+   "decode_seconds": 2.1553,
    "sig_fifths": 2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "boundaries": 36,
+    "any_fire": 15
+   },
    "segments": [
     {
      "i": 0,
@@ -170541,9 +171782,17 @@
    "n_events": 83,
    "n_segments": 41,
    "total_score": -918.511,
-   "decode_seconds": 2.4492,
+   "decode_seconds": 2.5138,
    "sig_fifths": 1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 5,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "boundaries": 40,
+    "any_fire": 15
+   },
    "segments": [
     {
      "i": 0,
@@ -171619,9 +172868,17 @@
    "n_events": 76,
    "n_segments": 40,
    "total_score": -709.056,
-   "decode_seconds": 2.4429,
+   "decode_seconds": 2.5092,
    "sig_fifths": -2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 8,
+    "boundaries": 39,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -172671,9 +173928,17 @@
    "n_events": 107,
    "n_segments": 56,
    "total_score": -985.065,
-   "decode_seconds": 3.8448,
+   "decode_seconds": 3.7352,
    "sig_fifths": 2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 5,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 13,
+    "boundaries": 55,
+    "any_fire": 21
+   },
    "segments": [
     {
      "i": 0,
@@ -174139,9 +175404,17 @@
    "n_events": 70,
    "n_segments": 44,
    "total_score": -691.473,
-   "decode_seconds": 2.4559,
+   "decode_seconds": 2.5713,
    "sig_fifths": 1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 14,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 11,
+    "boundaries": 43,
+    "any_fire": 19
+   },
    "segments": [
     {
      "i": 0,
@@ -175295,9 +176568,17 @@
    "n_events": 73,
    "n_segments": 36,
    "total_score": -731.719,
-   "decode_seconds": 2.1512,
+   "decode_seconds": 2.3238,
    "sig_fifths": 1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "boundaries": 35,
+    "any_fire": 14
+   },
    "segments": [
     {
      "i": 0,
@@ -176243,9 +177524,17 @@
    "n_events": 76,
    "n_segments": 44,
    "total_score": -730.833,
-   "decode_seconds": 2.733,
+   "decode_seconds": 2.7824,
    "sig_fifths": 1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 18,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 11,
+    "boundaries": 43,
+    "any_fire": 25
+   },
    "segments": [
     {
      "i": 0,
@@ -177399,9 +178688,17 @@
    "n_events": 122,
    "n_segments": 79,
    "total_score": -1313.546,
-   "decode_seconds": 4.316,
+   "decode_seconds": 4.5147,
    "sig_fifths": -1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 17,
+    "tritone_pair": 11,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 10,
+    "boundaries": 78,
+    "any_fire": 26
+   },
    "segments": [
     {
      "i": 0,
@@ -179465,9 +180762,17 @@
    "n_events": 49,
    "n_segments": 30,
    "total_score": -493.953,
-   "decode_seconds": 1.9654,
+   "decode_seconds": 2.0994,
    "sig_fifths": -2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 7,
+    "boundaries": 29,
+    "any_fire": 11
+   },
    "segments": [
     {
      "i": 0,
@@ -180257,9 +181562,17 @@
    "n_events": 132,
    "n_segments": 63,
    "total_score": -1265.302,
-   "decode_seconds": 4.4777,
+   "decode_seconds": 4.7475,
    "sig_fifths": 0,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 11,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 16,
+    "boundaries": 62,
+    "any_fire": 24
+   },
    "segments": [
     {
      "i": 0,
@@ -181907,9 +183220,17 @@
    "n_events": 34,
    "n_segments": 24,
    "total_score": -383.706,
-   "decode_seconds": 0.9379,
+   "decode_seconds": 1.0043,
    "sig_fifths": 3,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 5,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 2,
+    "boundaries": 23,
+    "any_fire": 6
+   },
    "segments": [
     {
      "i": 0,
@@ -182543,9 +183864,17 @@
    "n_events": 30,
    "n_segments": 21,
    "total_score": -320.814,
-   "decode_seconds": 0.739,
+   "decode_seconds": 0.7754,
    "sig_fifths": 1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 5,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 3,
+    "boundaries": 20,
+    "any_fire": 7
+   },
    "segments": [
     {
      "i": 0,
@@ -183101,9 +184430,17 @@
    "n_events": 112,
    "n_segments": 56,
    "total_score": -1020.289,
-   "decode_seconds": 4.138,
+   "decode_seconds": 4.1791,
    "sig_fifths": -1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 18,
+    "boundaries": 55,
+    "any_fire": 27
+   },
    "segments": [
     {
      "i": 0,
@@ -184569,9 +185906,17 @@
    "n_events": 81,
    "n_segments": 37,
    "total_score": -698.356,
-   "decode_seconds": 2.571,
+   "decode_seconds": 2.4773,
    "sig_fifths": -2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 7,
+    "boundaries": 36,
+    "any_fire": 15
+   },
    "segments": [
     {
      "i": 0,
@@ -185543,9 +186888,17 @@
    "n_events": 43,
    "n_segments": 35,
    "total_score": -475.933,
-   "decode_seconds": 1.3264,
+   "decode_seconds": 1.3118,
    "sig_fifths": 2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 10,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 7,
+    "boundaries": 34,
+    "any_fire": 15
+   },
    "segments": [
     {
      "i": 0,
@@ -186465,9 +187818,17 @@
    "n_events": 391,
    "n_segments": 181,
    "total_score": -3669.396,
-   "decode_seconds": 12.9011,
+   "decode_seconds": 13.2993,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 39,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 41,
+    "boundaries": 180,
+    "any_fire": 73
+   },
    "segments": [
     {
      "i": 0,
@@ -191183,9 +192544,17 @@
    "n_events": 87,
    "n_segments": 46,
    "total_score": -820.221,
-   "decode_seconds": 2.7793,
+   "decode_seconds": 2.8985,
    "sig_fifths": -3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 13,
+    "boundaries": 45,
+    "any_fire": 17
+   },
    "segments": [
     {
      "i": 0,
@@ -192391,9 +193760,17 @@
    "n_events": 108,
    "n_segments": 48,
    "total_score": -1129.091,
-   "decode_seconds": 3.0366,
+   "decode_seconds": 3.2102,
    "sig_fifths": 0,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 10,
+    "boundaries": 47,
+    "any_fire": 18
+   },
    "segments": [
     {
      "i": 0,
@@ -193651,9 +195028,17 @@
    "n_events": 62,
    "n_segments": 26,
    "total_score": -654.24,
-   "decode_seconds": 1.7184,
+   "decode_seconds": 1.8899,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 3,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "boundaries": 25,
+    "any_fire": 7
+   },
    "segments": [
     {
      "i": 0,
@@ -194339,9 +195724,17 @@
    "n_events": 54,
    "n_segments": 27,
    "total_score": -580.138,
-   "decode_seconds": 1.5217,
+   "decode_seconds": 1.758,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 2,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 6,
+    "boundaries": 26,
+    "any_fire": 7
+   },
    "segments": [
     {
      "i": 0,
@@ -195053,9 +196446,17 @@
    "n_events": 54,
    "n_segments": 34,
    "total_score": -507.048,
-   "decode_seconds": 1.6367,
+   "decode_seconds": 1.8805,
    "sig_fifths": 1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 12,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 7,
+    "boundaries": 33,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -195949,9 +197350,17 @@
    "n_events": 82,
    "n_segments": 36,
    "total_score": -761.942,
-   "decode_seconds": 2.2155,
+   "decode_seconds": 2.4123,
    "sig_fifths": -2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 9,
+    "boundaries": 35,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -196897,9 +198306,17 @@
    "n_events": 70,
    "n_segments": 37,
    "total_score": -795.675,
-   "decode_seconds": 1.9988,
+   "decode_seconds": 2.154,
    "sig_fifths": -2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 7,
+    "boundaries": 36,
+    "any_fire": 11
+   },
    "segments": [
     {
      "i": 0,
@@ -197871,9 +199288,17 @@
    "n_events": 51,
    "n_segments": 30,
    "total_score": -554.847,
-   "decode_seconds": 1.3921,
+   "decode_seconds": 1.6086,
    "sig_fifths": 1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 6,
+    "boundaries": 29,
+    "any_fire": 10
+   },
    "segments": [
     {
      "i": 0,
@@ -198663,9 +200088,17 @@
    "n_events": 59,
    "n_segments": 32,
    "total_score": -587.276,
-   "decode_seconds": 1.6931,
+   "decode_seconds": 1.9399,
    "sig_fifths": 3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 5,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 7,
+    "boundaries": 31,
+    "any_fire": 12
+   },
    "segments": [
     {
      "i": 0,
@@ -199507,9 +200940,17 @@
    "n_events": 80,
    "n_segments": 34,
    "total_score": -810.822,
-   "decode_seconds": 2.0412,
+   "decode_seconds": 2.2919,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 4,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "boundaries": 33,
+    "any_fire": 14
+   },
    "segments": [
     {
      "i": 0,
@@ -200403,9 +201844,17 @@
    "n_events": 82,
    "n_segments": 36,
    "total_score": -816.934,
-   "decode_seconds": 2.0951,
+   "decode_seconds": 2.3067,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 2,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 8,
+    "boundaries": 35,
+    "any_fire": 10
+   },
    "segments": [
     {
      "i": 0,
@@ -201351,9 +202800,17 @@
    "n_events": 74,
    "n_segments": 43,
    "total_score": -784.373,
-   "decode_seconds": 1.9379,
+   "decode_seconds": 2.1375,
    "sig_fifths": 3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 11,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 8,
+    "boundaries": 42,
+    "any_fire": 17
+   },
    "segments": [
     {
      "i": 0,
@@ -202481,9 +203938,17 @@
    "n_events": 141,
    "n_segments": 65,
    "total_score": -1494.293,
-   "decode_seconds": 4.692,
+   "decode_seconds": 4.7877,
    "sig_fifths": 0,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 19,
+    "boundaries": 64,
+    "any_fire": 25
+   },
    "segments": [
     {
      "i": 0,
@@ -204183,9 +205648,17 @@
    "n_events": 57,
    "n_segments": 26,
    "total_score": -564.281,
-   "decode_seconds": 1.862,
+   "decode_seconds": 2.0266,
    "sig_fifths": -1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 4,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 8,
+    "boundaries": 25,
+    "any_fire": 9
+   },
    "segments": [
     {
      "i": 0,
@@ -204871,9 +206344,17 @@
    "n_events": 70,
    "n_segments": 47,
    "total_score": -831.725,
-   "decode_seconds": 2.5293,
+   "decode_seconds": 2.0912,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 11,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 9,
+    "boundaries": 46,
+    "any_fire": 17
+   },
    "segments": [
     {
      "i": 0,
@@ -206105,9 +207586,17 @@
    "n_events": 101,
    "n_segments": 43,
    "total_score": -926.771,
-   "decode_seconds": 4.0965,
+   "decode_seconds": 3.5048,
    "sig_fifths": -1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 8,
+    "boundaries": 42,
+    "any_fire": 17
+   },
    "segments": [
     {
      "i": 0,
@@ -207235,9 +208724,17 @@
    "n_events": 88,
    "n_segments": 43,
    "total_score": -896.98,
-   "decode_seconds": 2.9167,
+   "decode_seconds": 3.0061,
    "sig_fifths": -1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 5,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 8,
+    "boundaries": 42,
+    "any_fire": 14
+   },
    "segments": [
     {
      "i": 0,
@@ -208365,9 +209862,17 @@
    "n_events": 73,
    "n_segments": 39,
    "total_score": -736.154,
-   "decode_seconds": 2.159,
+   "decode_seconds": 2.1969,
    "sig_fifths": -2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 5,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 8,
+    "boundaries": 38,
+    "any_fire": 15
+   },
    "segments": [
     {
      "i": 0,
@@ -209391,9 +210896,17 @@
    "n_events": 94,
    "n_segments": 49,
    "total_score": -906.403,
-   "decode_seconds": 2.894,
+   "decode_seconds": 2.9257,
    "sig_fifths": 0,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 11,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 16,
+    "boundaries": 48,
+    "any_fire": 26
+   },
    "segments": [
     {
      "i": 0,
@@ -210677,9 +212190,17 @@
    "n_events": 79,
    "n_segments": 42,
    "total_score": -824.781,
-   "decode_seconds": 2.4708,
+   "decode_seconds": 2.5164,
    "sig_fifths": 3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 10,
+    "boundaries": 41,
+    "any_fire": 19
+   },
    "segments": [
     {
      "i": 0,
@@ -211781,9 +213302,17 @@
    "n_events": 95,
    "n_segments": 57,
    "total_score": -969.057,
-   "decode_seconds": 3.3424,
+   "decode_seconds": 3.5025,
    "sig_fifths": -2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 19,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 13,
+    "boundaries": 56,
+    "any_fire": 25
+   },
    "segments": [
     {
      "i": 0,
@@ -213275,9 +214804,17 @@
    "n_events": 61,
    "n_segments": 30,
    "total_score": -587.462,
-   "decode_seconds": 2.1593,
+   "decode_seconds": 2.2448,
    "sig_fifths": -1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 7,
+    "boundaries": 29,
+    "any_fire": 12
+   },
    "segments": [
     {
      "i": 0,
@@ -214067,9 +215604,17 @@
    "n_events": 146,
    "n_segments": 68,
    "total_score": -1333.166,
-   "decode_seconds": 4.3362,
+   "decode_seconds": 4.4581,
    "sig_fifths": -2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 12,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 7,
+    "fermata_location": 9,
+    "boundaries": 67,
+    "any_fire": 22
+   },
    "segments": [
     {
      "i": 0,
@@ -215847,9 +217392,17 @@
    "n_events": 67,
    "n_segments": 29,
    "total_score": -727.431,
-   "decode_seconds": 1.7577,
+   "decode_seconds": 1.9425,
    "sig_fifths": -1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 2,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 6,
+    "boundaries": 28,
+    "any_fire": 7
+   },
    "segments": [
     {
      "i": 0,
@@ -216613,9 +218166,17 @@
    "n_events": 81,
    "n_segments": 39,
    "total_score": -876.907,
-   "decode_seconds": 2.4707,
+   "decode_seconds": 2.6206,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 10,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "boundaries": 38,
+    "any_fire": 17
+   },
    "segments": [
     {
      "i": 0,
@@ -217639,9 +219200,17 @@
    "n_events": 81,
    "n_segments": 41,
    "total_score": -811.475,
-   "decode_seconds": 2.9203,
+   "decode_seconds": 3.2378,
    "sig_fifths": -2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 11,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "boundaries": 40,
+    "any_fire": 20
+   },
    "segments": [
     {
      "i": 0,
@@ -218717,9 +220286,17 @@
    "n_events": 82,
    "n_segments": 37,
    "total_score": -865.715,
-   "decode_seconds": 2.7988,
+   "decode_seconds": 3.104,
    "sig_fifths": -4,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 8,
+    "boundaries": 36,
+    "any_fire": 14
+   },
    "segments": [
     {
      "i": 0,
@@ -219691,9 +221268,17 @@
    "n_events": 101,
    "n_segments": 54,
    "total_score": -990.55,
-   "decode_seconds": 3.3626,
+   "decode_seconds": 3.6724,
    "sig_fifths": 3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 15,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 14,
+    "boundaries": 53,
+    "any_fire": 26
+   },
    "segments": [
     {
      "i": 0,
@@ -221107,9 +222692,17 @@
    "n_events": 79,
    "n_segments": 45,
    "total_score": -824.894,
-   "decode_seconds": 2.5669,
+   "decode_seconds": 2.7419,
    "sig_fifths": -2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 5,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 9,
+    "boundaries": 44,
+    "any_fire": 14
+   },
    "segments": [
     {
      "i": 0,
@@ -222289,9 +223882,17 @@
    "n_events": 105,
    "n_segments": 50,
    "total_score": -995.329,
-   "decode_seconds": 3.7611,
+   "decode_seconds": 3.9052,
    "sig_fifths": -2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 11,
+    "boundaries": 49,
+    "any_fire": 19
+   },
    "segments": [
     {
      "i": 0,
@@ -223601,9 +225202,17 @@
    "n_events": 70,
    "n_segments": 41,
    "total_score": -770.428,
-   "decode_seconds": 1.9541,
+   "decode_seconds": 1.981,
    "sig_fifths": -1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "boundaries": 40,
+    "any_fire": 19
+   },
    "segments": [
     {
      "i": 0,
@@ -224679,9 +226288,17 @@
    "n_events": 72,
    "n_segments": 39,
    "total_score": -724.991,
-   "decode_seconds": 2.4369,
+   "decode_seconds": 2.4413,
    "sig_fifths": 3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 10,
+    "boundaries": 38,
+    "any_fire": 14
+   },
    "segments": [
     {
      "i": 0,
@@ -225705,9 +227322,17 @@
    "n_events": 65,
    "n_segments": 36,
    "total_score": -661.655,
-   "decode_seconds": 2.403,
+   "decode_seconds": 2.422,
    "sig_fifths": -2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 10,
+    "boundaries": 35,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -226653,9 +228278,17 @@
    "n_events": 75,
    "n_segments": 38,
    "total_score": -802.066,
-   "decode_seconds": 2.4176,
+   "decode_seconds": 2.4884,
    "sig_fifths": -2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 10,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 13,
+    "boundaries": 37,
+    "any_fire": 20
+   },
    "segments": [
     {
      "i": 0,
@@ -227653,9 +229286,17 @@
    "n_events": 162,
    "n_segments": 87,
    "total_score": -1770.06,
-   "decode_seconds": 5.1244,
+   "decode_seconds": 5.5014,
    "sig_fifths": -2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 15,
+    "tritone_pair": 6,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 16,
+    "boundaries": 86,
+    "any_fire": 29
+   },
    "segments": [
     {
      "i": 0,
@@ -229927,9 +231568,17 @@
    "n_events": 79,
    "n_segments": 39,
    "total_score": -798.31,
-   "decode_seconds": 2.4582,
+   "decode_seconds": 2.4867,
    "sig_fifths": 1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 6,
+    "boundaries": 38,
+    "any_fire": 12
+   },
    "segments": [
     {
      "i": 0,
@@ -230953,9 +232602,17 @@
    "n_events": 65,
    "n_segments": 30,
    "total_score": -610.212,
-   "decode_seconds": 2.0704,
+   "decode_seconds": 1.978,
    "sig_fifths": -1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 7,
+    "boundaries": 29,
+    "any_fire": 14
+   },
    "segments": [
     {
      "i": 0,
@@ -231745,9 +233402,17 @@
    "n_events": 54,
    "n_segments": 29,
    "total_score": -509.054,
-   "decode_seconds": 1.8188,
+   "decode_seconds": 1.7595,
    "sig_fifths": 0,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "boundaries": 28,
+    "any_fire": 13
+   },
    "segments": [
     {
      "i": 0,
@@ -232511,9 +234176,17 @@
    "n_events": 106,
    "n_segments": 49,
    "total_score": -1011.561,
-   "decode_seconds": 3.346,
+   "decode_seconds": 3.4768,
    "sig_fifths": -1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 10,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 12,
+    "boundaries": 48,
+    "any_fire": 19
+   },
    "segments": [
     {
      "i": 0,
@@ -233797,9 +235470,17 @@
    "n_events": 70,
    "n_segments": 30,
    "total_score": -677.871,
-   "decode_seconds": 2.2211,
+   "decode_seconds": 2.283,
    "sig_fifths": 0,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 9,
+    "boundaries": 29,
+    "any_fire": 13
+   },
    "segments": [
     {
      "i": 0,
@@ -234589,9 +236270,17 @@
    "n_events": 114,
    "n_segments": 66,
    "total_score": -1186.038,
-   "decode_seconds": 3.8391,
+   "decode_seconds": 3.9846,
    "sig_fifths": -1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 14,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 15,
+    "boundaries": 65,
+    "any_fire": 24
+   },
    "segments": [
     {
      "i": 0,
@@ -236317,9 +238006,17 @@
    "n_events": 69,
    "n_segments": 29,
    "total_score": -696.127,
-   "decode_seconds": 2.2978,
+   "decode_seconds": 2.4223,
    "sig_fifths": 1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 5,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "boundaries": 28,
+    "any_fire": 12
+   },
    "segments": [
     {
      "i": 0,
@@ -237083,9 +238780,17 @@
    "n_events": 102,
    "n_segments": 57,
    "total_score": -1080.896,
-   "decode_seconds": 3.4229,
+   "decode_seconds": 3.4351,
    "sig_fifths": 3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 13,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 13,
+    "boundaries": 56,
+    "any_fire": 23
+   },
    "segments": [
     {
      "i": 0,
@@ -238577,9 +240282,17 @@
    "n_events": 55,
    "n_segments": 29,
    "total_score": -492.281,
-   "decode_seconds": 1.7147,
+   "decode_seconds": 1.7555,
    "sig_fifths": 0,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "boundaries": 28,
+    "any_fire": 11
+   },
    "segments": [
     {
      "i": 0,
@@ -239343,9 +241056,17 @@
    "n_events": 329,
    "n_segments": 150,
    "total_score": -3323.619,
-   "decode_seconds": 9.9343,
+   "decode_seconds": 10.6476,
    "sig_fifths": 0,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 26,
+    "tritone_pair": 7,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 37,
+    "boundaries": 149,
+    "any_fire": 63
+   },
    "segments": [
     {
      "i": 0,
@@ -243255,9 +244976,17 @@
    "n_events": 100,
    "n_segments": 49,
    "total_score": -1015.604,
-   "decode_seconds": 3.0127,
+   "decode_seconds": 3.2124,
    "sig_fifths": -1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 4,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 12,
+    "boundaries": 48,
+    "any_fire": 17
+   },
    "segments": [
     {
      "i": 0,
@@ -244541,9 +246270,17 @@
    "n_events": 59,
    "n_segments": 27,
    "total_score": -535.344,
-   "decode_seconds": 1.9068,
+   "decode_seconds": 1.9532,
    "sig_fifths": 1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "boundaries": 26,
+    "any_fire": 12
+   },
    "segments": [
     {
      "i": 0,
@@ -245255,9 +246992,17 @@
    "n_events": 123,
    "n_segments": 53,
    "total_score": -1217.443,
-   "decode_seconds": 3.6538,
+   "decode_seconds": 3.7396,
    "sig_fifths": -1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 7,
+    "fermata_location": 13,
+    "boundaries": 52,
+    "any_fire": 22
+   },
    "segments": [
     {
      "i": 0,
@@ -246645,9 +248390,17 @@
    "n_events": 68,
    "n_segments": 32,
    "total_score": -700.901,
-   "decode_seconds": 2.1423,
+   "decode_seconds": 2.1862,
    "sig_fifths": 1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 3,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 7,
+    "boundaries": 31,
+    "any_fire": 10
+   },
    "segments": [
     {
      "i": 0,
@@ -247489,9 +249242,17 @@
    "n_events": 64,
    "n_segments": 29,
    "total_score": -641.502,
-   "decode_seconds": 1.9317,
+   "decode_seconds": 2.0076,
    "sig_fifths": 3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 2,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "boundaries": 28,
+    "any_fire": 12
+   },
    "segments": [
     {
      "i": 0,
@@ -248255,9 +250016,17 @@
    "n_events": 53,
    "n_segments": 31,
    "total_score": -535.311,
-   "decode_seconds": 1.5057,
+   "decode_seconds": 1.6262,
    "sig_fifths": 2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 5,
+    "boundaries": 30,
+    "any_fire": 12
+   },
    "segments": [
     {
      "i": 0,
@@ -249073,9 +250842,17 @@
    "n_events": 98,
    "n_segments": 49,
    "total_score": -904.697,
-   "decode_seconds": 3.2254,
+   "decode_seconds": 3.4662,
    "sig_fifths": 1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 14,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 11,
+    "boundaries": 48,
+    "any_fire": 24
+   },
    "segments": [
     {
      "i": 0,
@@ -250359,9 +252136,17 @@
    "n_events": 58,
    "n_segments": 27,
    "total_score": -543.15,
-   "decode_seconds": 1.7369,
+   "decode_seconds": 1.9779,
    "sig_fifths": 1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "boundaries": 26,
+    "any_fire": 13
+   },
    "segments": [
     {
      "i": 0,
@@ -251073,9 +252858,17 @@
    "n_events": 57,
    "n_segments": 39,
    "total_score": -674.783,
-   "decode_seconds": 1.6734,
+   "decode_seconds": 1.7968,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 10,
+    "boundaries": 38,
+    "any_fire": 15
+   },
    "segments": [
     {
      "i": 0,
@@ -252099,9 +253892,17 @@
    "n_events": 92,
    "n_segments": 42,
    "total_score": -938.024,
-   "decode_seconds": 3.0041,
+   "decode_seconds": 3.2547,
    "sig_fifths": -3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 11,
+    "boundaries": 41,
+    "any_fire": 18
+   },
    "segments": [
     {
      "i": 0,
@@ -253203,9 +255004,17 @@
    "n_events": 104,
    "n_segments": 50,
    "total_score": -997.462,
-   "decode_seconds": 3.4989,
+   "decode_seconds": 3.6057,
    "sig_fifths": 1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 13,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 13,
+    "boundaries": 49,
+    "any_fire": 23
+   },
    "segments": [
     {
      "i": 0,
@@ -254515,9 +256324,17 @@
    "n_events": 82,
    "n_segments": 37,
    "total_score": -890.615,
-   "decode_seconds": 2.2922,
+   "decode_seconds": 2.3782,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 5,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 7,
+    "boundaries": 36,
+    "any_fire": 11
+   },
    "segments": [
     {
      "i": 0,
@@ -255489,9 +257306,17 @@
    "n_events": 169,
    "n_segments": 84,
    "total_score": -1695.941,
-   "decode_seconds": 5.4497,
+   "decode_seconds": 5.8726,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 15,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 20,
+    "boundaries": 83,
+    "any_fire": 32
+   },
    "segments": [
     {
      "i": 0,
@@ -257685,9 +259510,17 @@
    "n_events": 42,
    "n_segments": 25,
    "total_score": -448.806,
-   "decode_seconds": 1.2292,
+   "decode_seconds": 1.3463,
    "sig_fifths": -3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 5,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 5,
+    "boundaries": 24,
+    "any_fire": 8
+   },
    "segments": [
     {
      "i": 0,
@@ -258347,9 +260180,17 @@
    "n_events": 79,
    "n_segments": 43,
    "total_score": -821.64,
-   "decode_seconds": 2.6314,
+   "decode_seconds": 2.8584,
    "sig_fifths": 3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 12,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 9,
+    "boundaries": 42,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -259477,9 +261318,17 @@
    "n_events": 67,
    "n_segments": 32,
    "total_score": -617.66,
-   "decode_seconds": 2.2023,
+   "decode_seconds": 2.3147,
    "sig_fifths": 3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 9,
+    "boundaries": 31,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -260321,9 +262170,17 @@
    "n_events": 62,
    "n_segments": 32,
    "total_score": -595.594,
-   "decode_seconds": 1.7308,
+   "decode_seconds": 1.796,
    "sig_fifths": 0,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 3,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 6,
+    "boundaries": 31,
+    "any_fire": 9
+   },
    "segments": [
     {
      "i": 0,
@@ -261165,9 +263022,17 @@
    "n_events": 80,
    "n_segments": 40,
    "total_score": -742.905,
-   "decode_seconds": 2.5102,
+   "decode_seconds": 2.6557,
    "sig_fifths": 1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 10,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 8,
+    "boundaries": 39,
+    "any_fire": 15
+   },
    "segments": [
     {
      "i": 0,
@@ -262217,9 +264082,17 @@
    "n_events": 128,
    "n_segments": 73,
    "total_score": -1280.602,
-   "decode_seconds": 4.4217,
+   "decode_seconds": 4.6186,
    "sig_fifths": 0,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 17,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 17,
+    "boundaries": 72,
+    "any_fire": 29
+   },
    "segments": [
     {
      "i": 0,
@@ -264127,9 +266000,17 @@
    "n_events": 71,
    "n_segments": 43,
    "total_score": -765.969,
-   "decode_seconds": 2.4369,
+   "decode_seconds": 2.4523,
    "sig_fifths": -2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 14,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 10,
+    "boundaries": 42,
+    "any_fire": 20
+   },
    "segments": [
     {
      "i": 0,
@@ -265257,9 +267138,17 @@
    "n_events": 114,
    "n_segments": 76,
    "total_score": -1260.251,
-   "decode_seconds": 3.7926,
+   "decode_seconds": 4.0574,
    "sig_fifths": 0,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 17,
+    "tritone_pair": 6,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 15,
+    "boundaries": 75,
+    "any_fire": 29
+   },
    "segments": [
     {
      "i": 0,
@@ -267245,9 +269134,17 @@
    "n_events": 69,
    "n_segments": 41,
    "total_score": -728.707,
-   "decode_seconds": 2.3575,
+   "decode_seconds": 2.5569,
    "sig_fifths": 1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 11,
+    "boundaries": 40,
+    "any_fire": 18
+   },
    "segments": [
     {
      "i": 0,
@@ -268323,9 +270220,17 @@
    "n_events": 75,
    "n_segments": 42,
    "total_score": -762.804,
-   "decode_seconds": 2.216,
+   "decode_seconds": 2.3722,
    "sig_fifths": -2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 10,
+    "boundaries": 41,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -269427,9 +271332,17 @@
    "n_events": 71,
    "n_segments": 38,
    "total_score": -710.247,
-   "decode_seconds": 2.4285,
+   "decode_seconds": 2.5064,
    "sig_fifths": 3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 9,
+    "boundaries": 37,
+    "any_fire": 14
+   },
    "segments": [
     {
      "i": 0,
@@ -270427,9 +272340,17 @@
    "n_events": 84,
    "n_segments": 38,
    "total_score": -847.067,
-   "decode_seconds": 2.7752,
+   "decode_seconds": 2.8674,
    "sig_fifths": 3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 9,
+    "boundaries": 37,
+    "any_fire": 14
+   },
    "segments": [
     {
      "i": 0,
@@ -271427,9 +273348,17 @@
    "n_events": 71,
    "n_segments": 40,
    "total_score": -765.758,
-   "decode_seconds": 2.1313,
+   "decode_seconds": 2.2811,
    "sig_fifths": 3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 10,
+    "boundaries": 39,
+    "any_fire": 17
+   },
    "segments": [
     {
      "i": 0,
@@ -272479,9 +274408,17 @@
    "n_events": 48,
    "n_segments": 22,
    "total_score": -465.714,
-   "decode_seconds": 1.2841,
+   "decode_seconds": 1.3593,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 5,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "boundaries": 21,
+    "any_fire": 9
+   },
    "segments": [
     {
      "i": 0,
@@ -273063,9 +275000,17 @@
    "n_events": 76,
    "n_segments": 38,
    "total_score": -784.109,
-   "decode_seconds": 2.4288,
+   "decode_seconds": 2.4865,
    "sig_fifths": -1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 4,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 8,
+    "boundaries": 37,
+    "any_fire": 12
+   },
    "segments": [
     {
      "i": 0,
@@ -274063,9 +276008,17 @@
    "n_events": 88,
    "n_segments": 37,
    "total_score": -865.511,
-   "decode_seconds": 3.0899,
+   "decode_seconds": 3.0654,
    "sig_fifths": 2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 11,
+    "boundaries": 36,
+    "any_fire": 17
+   },
    "segments": [
     {
      "i": 0,
@@ -275037,9 +276990,17 @@
    "n_events": 72,
    "n_segments": 33,
    "total_score": -725.198,
-   "decode_seconds": 2.489,
+   "decode_seconds": 2.4963,
    "sig_fifths": 1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 8,
+    "boundaries": 32,
+    "any_fire": 14
+   },
    "segments": [
     {
      "i": 0,
@@ -275907,9 +277868,17 @@
    "n_events": 74,
    "n_segments": 38,
    "total_score": -771.703,
-   "decode_seconds": 2.3501,
+   "decode_seconds": 2.5866,
    "sig_fifths": 1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 8,
+    "boundaries": 37,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -276907,9 +278876,17 @@
    "n_events": 68,
    "n_segments": 38,
    "total_score": -747.219,
-   "decode_seconds": 1.8086,
+   "decode_seconds": 2.0179,
    "sig_fifths": -1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 5,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 10,
+    "boundaries": 37,
+    "any_fire": 13
+   },
    "segments": [
     {
      "i": 0,
@@ -277907,9 +279884,17 @@
    "n_events": 82,
    "n_segments": 53,
    "total_score": -968.198,
-   "decode_seconds": 2.1585,
+   "decode_seconds": 2.2674,
    "sig_fifths": -1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 10,
+    "tritone_pair": 6,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 15,
+    "boundaries": 52,
+    "any_fire": 22
+   },
    "segments": [
     {
      "i": 0,
@@ -279297,9 +281282,17 @@
    "n_events": 124,
    "n_segments": 52,
    "total_score": -1282.632,
-   "decode_seconds": 4.5411,
+   "decode_seconds": 4.7251,
    "sig_fifths": -3,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 11,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 16,
+    "boundaries": 51,
+    "any_fire": 25
+   },
    "segments": [
     {
      "i": 0,
@@ -280661,9 +282654,17 @@
    "n_events": 60,
    "n_segments": 37,
    "total_score": -641.164,
-   "decode_seconds": 1.8439,
+   "decode_seconds": 1.9059,
    "sig_fifths": -3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 10,
+    "boundaries": 36,
+    "any_fire": 17
+   },
    "segments": [
     {
      "i": 0,
@@ -281635,9 +283636,17 @@
    "n_events": 82,
    "n_segments": 42,
    "total_score": -770.809,
-   "decode_seconds": 2.5206,
+   "decode_seconds": 2.6808,
    "sig_fifths": -1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 11,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 8,
+    "boundaries": 41,
+    "any_fire": 19
+   },
    "segments": [
     {
      "i": 0,
@@ -282739,9 +284748,17 @@
    "n_events": 128,
    "n_segments": 67,
    "total_score": -1310.143,
-   "decode_seconds": 3.5169,
+   "decode_seconds": 3.6931,
    "sig_fifths": -3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 16,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 14,
+    "boundaries": 66,
+    "any_fire": 26
+   },
    "segments": [
     {
      "i": 0,
@@ -284493,9 +286510,17 @@
    "n_events": 98,
    "n_segments": 40,
    "total_score": -965.496,
-   "decode_seconds": 3.0173,
+   "decode_seconds": 3.0587,
    "sig_fifths": -1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 10,
+    "boundaries": 39,
+    "any_fire": 17
+   },
    "segments": [
     {
      "i": 0,
@@ -285545,9 +287570,17 @@
    "n_events": 45,
    "n_segments": 22,
    "total_score": -508.583,
-   "decode_seconds": 1.2206,
+   "decode_seconds": 1.2215,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 5,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 5,
+    "boundaries": 21,
+    "any_fire": 11
+   },
    "segments": [
     {
      "i": 0,
@@ -286129,9 +288162,17 @@
    "n_events": 63,
    "n_segments": 37,
    "total_score": -659.593,
-   "decode_seconds": 1.962,
+   "decode_seconds": 2.0493,
    "sig_fifths": -1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "boundaries": 36,
+    "any_fire": 14
+   },
    "segments": [
     {
      "i": 0,
@@ -287103,9 +289144,17 @@
    "n_events": 76,
    "n_segments": 34,
    "total_score": -725.443,
-   "decode_seconds": 2.7885,
+   "decode_seconds": 2.7921,
    "sig_fifths": -1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 3,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 6,
+    "boundaries": 33,
+    "any_fire": 9
+   },
    "segments": [
     {
      "i": 0,
@@ -287999,9 +290048,17 @@
    "n_events": 158,
    "n_segments": 68,
    "total_score": -1561.565,
-   "decode_seconds": 4.7876,
+   "decode_seconds": 4.6755,
    "sig_fifths": 2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 10,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 18,
+    "boundaries": 67,
+    "any_fire": 23
+   },
    "segments": [
     {
      "i": 0,
@@ -289779,9 +291836,17 @@
    "n_events": 63,
    "n_segments": 33,
    "total_score": -632.991,
-   "decode_seconds": 2.1088,
+   "decode_seconds": 2.0669,
    "sig_fifths": -1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 12,
+    "boundaries": 32,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -290649,9 +292714,17 @@
    "n_events": 66,
    "n_segments": 37,
    "total_score": -572.642,
-   "decode_seconds": 2.3655,
+   "decode_seconds": 2.5356,
    "sig_fifths": 3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 12,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "boundaries": 36,
+    "any_fire": 18
+   },
    "segments": [
     {
      "i": 0,
@@ -291623,9 +293696,17 @@
    "n_events": 79,
    "n_segments": 44,
    "total_score": -810.223,
-   "decode_seconds": 2.6906,
+   "decode_seconds": 2.78,
    "sig_fifths": -2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 15,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 10,
+    "boundaries": 43,
+    "any_fire": 22
+   },
    "segments": [
     {
      "i": 0,
@@ -292779,9 +294860,17 @@
    "n_events": 101,
    "n_segments": 44,
    "total_score": -966.0,
-   "decode_seconds": 3.9839,
+   "decode_seconds": 3.877,
    "sig_fifths": 1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 10,
+    "boundaries": 43,
+    "any_fire": 17
+   },
    "segments": [
     {
      "i": 0,
@@ -293935,9 +296024,17 @@
    "n_events": 93,
    "n_segments": 42,
    "total_score": -955.045,
-   "decode_seconds": 3.2536,
+   "decode_seconds": 3.3161,
    "sig_fifths": -1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 10,
+    "boundaries": 41,
+    "any_fire": 14
+   },
    "segments": [
     {
      "i": 0,
@@ -295039,9 +297136,17 @@
    "n_events": 154,
    "n_segments": 58,
    "total_score": -1446.801,
-   "decode_seconds": 5.0989,
+   "decode_seconds": 5.4119,
    "sig_fifths": -1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 13,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 12,
+    "boundaries": 57,
+    "any_fire": 25
+   },
    "segments": [
     {
      "i": 0,
@@ -296559,9 +298664,17 @@
    "n_events": 58,
    "n_segments": 30,
    "total_score": -552.02,
-   "decode_seconds": 1.9005,
+   "decode_seconds": 2.0486,
    "sig_fifths": 1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "boundaries": 29,
+    "any_fire": 13
+   },
    "segments": [
     {
      "i": 0,
@@ -297351,9 +299464,17 @@
    "n_events": 72,
    "n_segments": 37,
    "total_score": -742.812,
-   "decode_seconds": 1.9777,
+   "decode_seconds": 2.1439,
    "sig_fifths": 2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 10,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 9,
+    "boundaries": 36,
+    "any_fire": 18
+   },
    "segments": [
     {
      "i": 0,
@@ -298325,9 +300446,17 @@
    "n_events": 70,
    "n_segments": 44,
    "total_score": -776.205,
-   "decode_seconds": 1.9002,
+   "decode_seconds": 2.1296,
    "sig_fifths": -1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 11,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 10,
+    "boundaries": 43,
+    "any_fire": 18
+   },
    "segments": [
     {
      "i": 0,
@@ -299481,9 +301610,17 @@
    "n_events": 90,
    "n_segments": 41,
    "total_score": -921.433,
-   "decode_seconds": 2.5877,
+   "decode_seconds": 2.8692,
    "sig_fifths": 2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 9,
+    "boundaries": 40,
+    "any_fire": 15
+   },
    "segments": [
     {
      "i": 0,
@@ -300559,9 +302696,17 @@
    "n_events": 92,
    "n_segments": 47,
    "total_score": -1026.191,
-   "decode_seconds": 2.6697,
+   "decode_seconds": 2.9733,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 14,
+    "boundaries": 46,
+    "any_fire": 19
+   },
    "segments": [
     {
      "i": 0,
@@ -301793,9 +303938,17 @@
    "n_events": 72,
    "n_segments": 33,
    "total_score": -777.81,
-   "decode_seconds": 1.7738,
+   "decode_seconds": 1.9744,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "boundaries": 32,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -302663,9 +304816,17 @@
    "n_events": 169,
    "n_segments": 84,
    "total_score": -1738.175,
-   "decode_seconds": 5.5379,
+   "decode_seconds": 5.9882,
    "sig_fifths": 3,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 18,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 21,
+    "boundaries": 83,
+    "any_fire": 35
+   },
    "segments": [
     {
      "i": 0,
@@ -304859,9 +307020,17 @@
    "n_events": 67,
    "n_segments": 32,
    "total_score": -726.356,
-   "decode_seconds": 1.8141,
+   "decode_seconds": 1.9905,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 8,
+    "boundaries": 31,
+    "any_fire": 12
+   },
    "segments": [
     {
      "i": 0,
@@ -305703,9 +307872,17 @@
    "n_events": 60,
    "n_segments": 34,
    "total_score": -671.729,
-   "decode_seconds": 1.4392,
+   "decode_seconds": 1.496,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 8,
+    "boundaries": 33,
+    "any_fire": 13
+   },
    "segments": [
     {
      "i": 0,
@@ -306599,9 +308776,17 @@
    "n_events": 81,
    "n_segments": 45,
    "total_score": -804.837,
-   "decode_seconds": 2.591,
+   "decode_seconds": 2.7282,
    "sig_fifths": 0,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 14,
+    "boundaries": 44,
+    "any_fire": 21
+   },
    "segments": [
     {
      "i": 0,
@@ -307781,9 +309966,17 @@
    "n_events": 108,
    "n_segments": 50,
    "total_score": -1056.157,
-   "decode_seconds": 3.0464,
+   "decode_seconds": 3.5101,
    "sig_fifths": -1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 10,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 13,
+    "boundaries": 49,
+    "any_fire": 22
+   },
    "segments": [
     {
      "i": 0,
@@ -309093,9 +311286,17 @@
    "n_events": 49,
    "n_segments": 24,
    "total_score": -503.797,
-   "decode_seconds": 1.2687,
+   "decode_seconds": 1.4394,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 3,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 7,
+    "boundaries": 23,
+    "any_fire": 10
+   },
    "segments": [
     {
      "i": 0,
@@ -309729,9 +311930,17 @@
    "n_events": 197,
    "n_segments": 89,
    "total_score": -2005.869,
-   "decode_seconds": 5.7494,
+   "decode_seconds": 6.2709,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 15,
+    "boundaries": 88,
+    "any_fire": 23
+   },
    "segments": [
     {
      "i": 0,
@@ -312055,9 +314264,17 @@
    "n_events": 104,
    "n_segments": 52,
    "total_score": -1006.095,
-   "decode_seconds": 3.2897,
+   "decode_seconds": 3.7531,
    "sig_fifths": 0,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 13,
+    "boundaries": 51,
+    "any_fire": 20
+   },
    "segments": [
     {
      "i": 0,
@@ -313419,9 +315636,17 @@
    "n_events": 72,
    "n_segments": 45,
    "total_score": -701.297,
-   "decode_seconds": 2.0922,
+   "decode_seconds": 2.3651,
    "sig_fifths": -3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 10,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 11,
+    "boundaries": 44,
+    "any_fire": 18
+   },
    "segments": [
     {
      "i": 0,
@@ -314601,9 +316826,17 @@
    "n_events": 92,
    "n_segments": 49,
    "total_score": -963.559,
-   "decode_seconds": 2.7482,
+   "decode_seconds": 3.2235,
    "sig_fifths": 1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 9,
+    "boundaries": 48,
+    "any_fire": 18
+   },
    "segments": [
     {
      "i": 0,
@@ -315887,9 +318120,17 @@
    "n_events": 108,
    "n_segments": 54,
    "total_score": -1057.107,
-   "decode_seconds": 3.2886,
+   "decode_seconds": 3.824,
    "sig_fifths": 3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 11,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 10,
+    "boundaries": 53,
+    "any_fire": 21
+   },
    "segments": [
     {
      "i": 0,
@@ -317303,9 +319544,17 @@
    "n_events": 51,
    "n_segments": 32,
    "total_score": -570.148,
-   "decode_seconds": 1.7599,
+   "decode_seconds": 1.9967,
    "sig_fifths": 1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 10,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 10,
+    "boundaries": 31,
+    "any_fire": 15
+   },
    "segments": [
     {
      "i": 0,
@@ -318147,9 +320396,17 @@
    "n_events": 110,
    "n_segments": 52,
    "total_score": -1077.179,
-   "decode_seconds": 3.2694,
+   "decode_seconds": 3.7386,
    "sig_fifths": 3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 14,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 11,
+    "boundaries": 51,
+    "any_fire": 24
+   },
    "segments": [
     {
      "i": 0,
@@ -319511,9 +321768,17 @@
    "n_events": 70,
    "n_segments": 36,
    "total_score": -632.418,
-   "decode_seconds": 1.9392,
+   "decode_seconds": 2.2426,
    "sig_fifths": -1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 6,
+    "boundaries": 35,
+    "any_fire": 14
+   },
    "segments": [
     {
      "i": 0,
@@ -320459,9 +322724,17 @@
    "n_events": 68,
    "n_segments": 30,
    "total_score": -669.849,
-   "decode_seconds": 1.782,
+   "decode_seconds": 2.0074,
    "sig_fifths": 1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 6,
+    "boundaries": 29,
+    "any_fire": 11
+   },
    "segments": [
     {
      "i": 0,
@@ -321251,9 +323524,17 @@
    "n_events": 119,
    "n_segments": 58,
    "total_score": -1069.154,
-   "decode_seconds": 3.9453,
+   "decode_seconds": 4.3304,
    "sig_fifths": 1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 10,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 13,
+    "boundaries": 57,
+    "any_fire": 24
+   },
    "segments": [
     {
      "i": 0,
@@ -322771,9 +325052,17 @@
    "n_events": 57,
    "n_segments": 30,
    "total_score": -680.652,
-   "decode_seconds": 1.1059,
+   "decode_seconds": 1.225,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 4,
+    "boundaries": 29,
+    "any_fire": 13
+   },
    "segments": [
     {
      "i": 0,
@@ -323563,9 +325852,17 @@
    "n_events": 82,
    "n_segments": 38,
    "total_score": -789.149,
-   "decode_seconds": 2.4325,
+   "decode_seconds": 2.5606,
    "sig_fifths": 1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 4,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "boundaries": 37,
+    "any_fire": 14
+   },
    "segments": [
     {
      "i": 0,
@@ -324563,9 +326860,17 @@
    "n_events": 74,
    "n_segments": 47,
    "total_score": -771.268,
-   "decode_seconds": 2.3531,
+   "decode_seconds": 2.4497,
    "sig_fifths": 4,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 12,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 13,
+    "boundaries": 46,
+    "any_fire": 21
+   },
    "segments": [
     {
      "i": 0,
@@ -325797,9 +328102,17 @@
    "n_events": 250,
    "n_segments": 105,
    "total_score": -2441.697,
-   "decode_seconds": 7.0544,
+   "decode_seconds": 7.2574,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 14,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 24,
+    "boundaries": 104,
+    "any_fire": 39
+   },
    "segments": [
     {
      "i": 0,
@@ -328539,9 +330852,17 @@
    "n_events": 60,
    "n_segments": 30,
    "total_score": -542.097,
-   "decode_seconds": 1.9108,
+   "decode_seconds": 2.0554,
    "sig_fifths": -1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 6,
+    "boundaries": 29,
+    "any_fire": 14
+   },
    "segments": [
     {
      "i": 0,
@@ -329331,9 +331652,17 @@
    "n_events": 64,
    "n_segments": 38,
    "total_score": -708.421,
-   "decode_seconds": 2.0998,
+   "decode_seconds": 2.354,
    "sig_fifths": -2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 14,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 10,
+    "boundaries": 37,
+    "any_fire": 22
+   },
    "segments": [
     {
      "i": 0,
@@ -330331,9 +332660,17 @@
    "n_events": 79,
    "n_segments": 42,
    "total_score": -813.531,
-   "decode_seconds": 2.3472,
+   "decode_seconds": 2.5607,
    "sig_fifths": 4,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 12,
+    "boundaries": 41,
+    "any_fire": 19
+   },
    "segments": [
     {
      "i": 0,
@@ -331435,9 +333772,17 @@
    "n_events": 70,
    "n_segments": 48,
    "total_score": -829.855,
-   "decode_seconds": 1.7706,
+   "decode_seconds": 2.0467,
    "sig_fifths": -1,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 13,
+    "tritone_pair": 5,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 12,
+    "boundaries": 47,
+    "any_fire": 20
+   },
    "segments": [
     {
      "i": 0,
@@ -332695,9 +335040,17 @@
    "n_events": 56,
    "n_segments": 36,
    "total_score": -634.746,
-   "decode_seconds": 1.6063,
+   "decode_seconds": 1.7232,
    "sig_fifths": -2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 10,
+    "tritone_pair": 5,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 9,
+    "boundaries": 35,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -333643,9 +335996,17 @@
    "n_events": 55,
    "n_segments": 34,
    "total_score": -630.226,
-   "decode_seconds": 1.3443,
+   "decode_seconds": 1.436,
    "sig_fifths": -2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 10,
+    "tritone_pair": 7,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 10,
+    "boundaries": 33,
+    "any_fire": 18
+   },
    "segments": [
     {
      "i": 0,
@@ -334539,9 +336900,17 @@
    "n_events": 67,
    "n_segments": 37,
    "total_score": -761.75,
-   "decode_seconds": 1.8974,
+   "decode_seconds": 2.2062,
    "sig_fifths": -2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 10,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 8,
+    "boundaries": 36,
+    "any_fire": 18
+   },
    "segments": [
     {
      "i": 0,
@@ -335513,9 +337882,17 @@
    "n_events": 66,
    "n_segments": 38,
    "total_score": -705.715,
-   "decode_seconds": 1.8753,
+   "decode_seconds": 2.1968,
    "sig_fifths": -2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 9,
+    "boundaries": 37,
+    "any_fire": 17
+   },
    "segments": [
     {
      "i": 0,
@@ -336513,9 +338890,17 @@
    "n_events": 70,
    "n_segments": 40,
    "total_score": -719.403,
-   "decode_seconds": 2.3787,
+   "decode_seconds": 2.75,
    "sig_fifths": -2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "boundaries": 39,
+    "any_fire": 17
+   },
    "segments": [
     {
      "i": 0,
@@ -337565,9 +339950,17 @@
    "n_events": 56,
    "n_segments": 36,
    "total_score": -631.66,
-   "decode_seconds": 1.5445,
+   "decode_seconds": 1.7476,
    "sig_fifths": -2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "boundaries": 35,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -338513,9 +340906,17 @@
    "n_events": 49,
    "n_segments": 30,
    "total_score": -515.342,
-   "decode_seconds": 1.6478,
+   "decode_seconds": 1.8486,
    "sig_fifths": -2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 7,
+    "boundaries": 29,
+    "any_fire": 12
+   },
    "segments": [
     {
      "i": 0,
@@ -339305,9 +341706,17 @@
    "n_events": 57,
    "n_segments": 29,
    "total_score": -562.714,
-   "decode_seconds": 1.6296,
+   "decode_seconds": 1.8226,
    "sig_fifths": -2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 6,
+    "boundaries": 28,
+    "any_fire": 12
+   },
    "segments": [
     {
      "i": 0,
@@ -340071,9 +342480,17 @@
    "n_events": 92,
    "n_segments": 49,
    "total_score": -1092.123,
-   "decode_seconds": 2.4465,
+   "decode_seconds": 2.78,
    "sig_fifths": 3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 15,
+    "boundaries": 48,
+    "any_fire": 23
+   },
    "segments": [
     {
      "i": 0,
@@ -341357,9 +343774,17 @@
    "n_events": 64,
    "n_segments": 32,
    "total_score": -640.381,
-   "decode_seconds": 1.9179,
+   "decode_seconds": 2.3057,
    "sig_fifths": 0,
    "declared_mode": "",
+   "cadence_fires": {
+    "leading_tone": 5,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 6,
+    "boundaries": 31,
+    "any_fire": 11
+   },
    "segments": [
     {
      "i": 0,
@@ -342201,9 +344626,17 @@
    "n_events": 59,
    "n_segments": 33,
    "total_score": -632.725,
-   "decode_seconds": 1.8065,
+   "decode_seconds": 2.1856,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 5,
+    "boundaries": 32,
+    "any_fire": 10
+   },
    "segments": [
     {
      "i": 0,
@@ -343071,9 +345504,17 @@
    "n_events": 84,
    "n_segments": 37,
    "total_score": -842.786,
-   "decode_seconds": 2.5091,
+   "decode_seconds": 2.9522,
    "sig_fifths": 2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 12,
+    "boundaries": 36,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -344045,9 +346486,17 @@
    "n_events": 62,
    "n_segments": 36,
    "total_score": -736.311,
-   "decode_seconds": 1.4244,
+   "decode_seconds": 1.6588,
    "sig_fifths": 1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 6,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 11,
+    "boundaries": 35,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -344993,9 +347442,17 @@
    "n_events": 43,
    "n_segments": 34,
    "total_score": -521.029,
-   "decode_seconds": 0.9389,
+   "decode_seconds": 1.0916,
    "sig_fifths": 0,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 14,
+    "tritone_pair": 5,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "boundaries": 33,
+    "any_fire": 19
+   },
    "segments": [
     {
      "i": 0,
@@ -345889,9 +348346,17 @@
    "n_events": 89,
    "n_segments": 44,
    "total_score": -920.985,
-   "decode_seconds": 2.509,
+   "decode_seconds": 2.9308,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 8,
+    "boundaries": 43,
+    "any_fire": 15
+   },
    "segments": [
     {
      "i": 0,
@@ -347045,9 +349510,17 @@
    "n_events": 38,
    "n_segments": 27,
    "total_score": -401.119,
-   "decode_seconds": 1.171,
+   "decode_seconds": 1.3387,
    "sig_fifths": 3,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 5,
+    "boundaries": 26,
+    "any_fire": 11
+   },
    "segments": [
     {
      "i": 0,
@@ -347759,9 +350232,17 @@
    "n_events": 56,
    "n_segments": 37,
    "total_score": -625.235,
-   "decode_seconds": 1.7052,
+   "decode_seconds": 1.925,
    "sig_fifths": -2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 10,
+    "boundaries": 36,
+    "any_fire": 15
+   },
    "segments": [
     {
      "i": 0,
@@ -348733,9 +351214,17 @@
    "n_events": 85,
    "n_segments": 40,
    "total_score": -935.782,
-   "decode_seconds": 2.3469,
+   "decode_seconds": 2.5915,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 13,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 9,
+    "boundaries": 39,
+    "any_fire": 18
+   },
    "segments": [
     {
      "i": 0,
@@ -349785,9 +352274,17 @@
    "n_events": 63,
    "n_segments": 37,
    "total_score": -632.056,
-   "decode_seconds": 1.8425,
+   "decode_seconds": 2.421,
    "sig_fifths": -1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 5,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 9,
+    "boundaries": 36,
+    "any_fire": 13
+   },
    "segments": [
     {
      "i": 0,
@@ -350759,9 +353256,17 @@
    "n_events": 94,
    "n_segments": 50,
    "total_score": -961.027,
-   "decode_seconds": 2.895,
+   "decode_seconds": 3.4909,
    "sig_fifths": -2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 12,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 15,
+    "boundaries": 49,
+    "any_fire": 24
+   },
    "segments": [
     {
      "i": 0,
@@ -352071,9 +354576,17 @@
    "n_events": 84,
    "n_segments": 44,
    "total_score": -875.136,
-   "decode_seconds": 2.5875,
+   "decode_seconds": 2.7129,
    "sig_fifths": 2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 4,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 12,
+    "boundaries": 43,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -353227,9 +355740,17 @@
    "n_events": 64,
    "n_segments": 38,
    "total_score": -696.497,
-   "decode_seconds": 1.8329,
+   "decode_seconds": 1.9261,
    "sig_fifths": 1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 5,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 11,
+    "boundaries": 37,
+    "any_fire": 14
+   },
    "segments": [
     {
      "i": 0,
@@ -354227,9 +356748,17 @@
    "n_events": 63,
    "n_segments": 39,
    "total_score": -726.204,
-   "decode_seconds": 1.6964,
+   "decode_seconds": 1.9125,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 10,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 10,
+    "boundaries": 38,
+    "any_fire": 20
+   },
    "segments": [
     {
      "i": 0,
@@ -355253,9 +357782,17 @@
    "n_events": 44,
    "n_segments": 27,
    "total_score": -500.035,
-   "decode_seconds": 1.0678,
+   "decode_seconds": 1.2436,
    "sig_fifths": 2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 8,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 5,
+    "boundaries": 26,
+    "any_fire": 13
+   },
    "segments": [
     {
      "i": 0,
@@ -355967,9 +358504,17 @@
    "n_events": 97,
    "n_segments": 49,
    "total_score": -1027.055,
-   "decode_seconds": 3.0839,
+   "decode_seconds": 3.3465,
    "sig_fifths": -2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 12,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 9,
+    "boundaries": 48,
+    "any_fire": 19
+   },
    "segments": [
     {
      "i": 0,
@@ -357253,9 +359798,17 @@
    "n_events": 61,
    "n_segments": 38,
    "total_score": -630.029,
-   "decode_seconds": 1.8095,
+   "decode_seconds": 2.0329,
    "sig_fifths": 4,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 12,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 9,
+    "boundaries": 37,
+    "any_fire": 19
+   },
    "segments": [
     {
      "i": 0,
@@ -358253,9 +360806,17 @@
    "n_events": 81,
    "n_segments": 37,
    "total_score": -813.866,
-   "decode_seconds": 2.5045,
+   "decode_seconds": 2.8277,
    "sig_fifths": 0,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 4,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "boundaries": 36,
+    "any_fire": 13
+   },
    "segments": [
     {
      "i": 0,
@@ -359227,9 +361788,17 @@
    "n_events": 56,
    "n_segments": 29,
    "total_score": -612.567,
-   "decode_seconds": 1.4777,
+   "decode_seconds": 1.6271,
    "sig_fifths": 2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 4,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "boundaries": 28,
+    "any_fire": 11
+   },
    "segments": [
     {
      "i": 0,
@@ -359993,9 +362562,17 @@
    "n_events": 61,
    "n_segments": 36,
    "total_score": -637.604,
-   "decode_seconds": 1.8741,
+   "decode_seconds": 2.105,
    "sig_fifths": -2,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 11,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 7,
+    "boundaries": 35,
+    "any_fire": 16
+   },
    "segments": [
     {
      "i": 0,
@@ -360941,9 +363518,17 @@
    "n_events": 73,
    "n_segments": 34,
    "total_score": -803.382,
-   "decode_seconds": 2.0659,
+   "decode_seconds": 2.3174,
    "sig_fifths": 4,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 7,
+    "boundaries": 33,
+    "any_fire": 13
+   },
    "segments": [
     {
      "i": 0,
@@ -361837,9 +364422,17 @@
    "n_events": 79,
    "n_segments": 44,
    "total_score": -884.69,
-   "decode_seconds": 2.0982,
+   "decode_seconds": 2.389,
    "sig_fifths": -1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 9,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 10,
+    "boundaries": 43,
+    "any_fire": 17
+   },
    "segments": [
     {
      "i": 0,
@@ -362993,9 +365586,17 @@
    "n_events": 77,
    "n_segments": 40,
    "total_score": -816.017,
-   "decode_seconds": 2.3058,
+   "decode_seconds": 2.6254,
    "sig_fifths": 2,
    "declared_mode": "major",
+   "cadence_fires": {
+    "leading_tone": 11,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 13,
+    "boundaries": 39,
+    "any_fire": 19
+   },
    "segments": [
     {
      "i": 0,
@@ -364045,9 +366646,17 @@
    "n_events": 49,
    "n_segments": 31,
    "total_score": -550.923,
-   "decode_seconds": 1.3053,
+   "decode_seconds": 1.5026,
    "sig_fifths": -1,
    "declared_mode": "minor",
+   "cadence_fires": {
+    "leading_tone": 7,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 8,
+    "boundaries": 30,
+    "any_fire": 15
+   },
    "segments": [
     {
      "i": 0,

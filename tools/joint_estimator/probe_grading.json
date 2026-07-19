@@ -2,18 +2,18 @@
  "provenance": {
   "generator": "tools/joint_estimator/probe_run.py",
   "decoder": "tools/joint_estimator/probe_decoder.py (identity weights; ratified factorization)",
-  "instrument_commit": "b28b4a8fdb6f95d09dfe62063292a2ac502f4df2",
-  "note_events_git_hash": "c7094c71b37b52e21601c1b78ed7ecf7b8fdae87",
+  "instrument_commit": "e3d17c325d24e0de1213440043cbf02ac14f3d3e",
+  "note_events_git_hash": "e3d17c325d24e0de1213440043cbf02ac14f3d3e",
   "tables_git_hash": "57ed94a6a46571172a351c09ba4f5cb92930674a",
   "leftover_rule": "option 2a (freq)",
   "seg_cap_events": 4,
   "key_prune_topk": 6,
-  "cadence": "DECLARED OMITTED (no fitted cadence table; feature weights unfit)",
-  "fermata": "DECLARED OMITTED (not in the note-event extraction; addendum owed)",
+  "cadence": "WIRED, WEIGHTLESS (algorithm-completion step 1): the ratified cadence-evidence features compute at every committed boundary and are LOGGED (cadence_feature_fires), but every weight is 0 so they move no score \u2014 the vocabulary change is isolated.",
+  "fermata": "EXTRACTED (note_events fermata field, step 1); the cadence-location feature is wired weightless; the counted fermata-boundary cells are in fermata_boundary_addendum.json.",
+  "chromatic_vocab": "Task 3: AugSixth (Italian; the 2 corpus tokens) + Neapolitan added to the decode vocabulary via chromatic_root_pc; see chromatic_decodes.",
   "grading": "a8_rebaseline_measure.build_piece_grid (pinned, read-only) vs dcml_parser.load_wir_regions (OI-142-corrected)",
   "coverage": 326,
-  "no_wir": 0,
-  "regraded": "from probe_corpus_decode.json (region-emission fix)"
+  "no_wir": 0
  },
  "columns": {
   "root_agree_pct": 72.97,
@@ -22,6 +22,42 @@
   "key_local_agree_pct": 74.43,
   "key_home_abstain_pct": 0.0,
   "key_local_abstain_pct": 0.0
+ },
+ "probe_baseline_columns": {
+  "root_agree_pct": 72.97,
+  "rn_agree_pct": 59.5,
+  "key_home_agree_pct": 53.67,
+  "key_local_agree_pct": 74.43
+ },
+ "axis_delta_vs_probe_baseline": {
+  "root_agree_pct": 0.0,
+  "rn_agree_pct": 0.0,
+  "key_home_agree_pct": 0.0,
+  "key_local_agree_pct": 0.0
+ },
+ "prediction_verdict": {
+  "deltas_pp": {
+   "root_agree_pct": 0.0,
+   "rn_agree_pct": 0.0,
+   "key_home_agree_pct": 0.0,
+   "key_local_agree_pct": 0.0
+  },
+  "prediction": "every axis moves < +/-1.0pp",
+  "holds": true,
+  "axes_over_1pp": {}
+ },
+ "cadence_feature_fires": {
+  "leading_tone": 2949,
+  "tritone_pair": 589,
+  "dominant_tonic_bass": 802,
+  "fermata_location": 3242,
+  "boundaries": 13556,
+  "any_fire": 5624
+ },
+ "chromatic_decodes": {
+  "n_segments": 0,
+  "n_pieces": 0,
+  "by_piece": {}
  },
  "duration_totals": {
   "bucket_exact": 3581880,
@@ -41,49 +77,49 @@
   "unscored": 190560
  },
  "timing": {
-  "mean_s": 2.533,
-  "max_s": 12.901,
-  "total_s": 825.7,
+  "mean_s": 2.658,
+  "max_s": 13.299,
+  "total_s": 866.6,
   "slowest": [
    [
     "bwv328",
-    12.9,
+    13.3,
     391
    ],
    [
     "bwv371",
-    9.93,
+    10.65,
     329
    ],
    [
     "bwv437",
-    7.05,
+    7.26,
     250
    ],
    [
     "bwv276",
-    6.92,
+    7.05,
     223
    ],
    [
     "bwv425",
-    5.75,
+    6.27,
     197
    ],
    [
     "bwv42.7",
-    5.54,
+    5.99,
     169
    ],
    [
     "bwv383",
-    5.45,
+    5.87,
     169
    ],
    [
-    "bwv126.6",
-    5.31,
-    172
+    "bwv226.2",
+    5.58,
+    157
    ]
   ]
  },

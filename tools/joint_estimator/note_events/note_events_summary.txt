@@ -1,7 +1,13 @@
-=== note-event extraction (part 2 §1) — summary ===
-corpus git_hash: c7094c71b37b52e21601c1b78ed7ecf7b8fdae87
+=== note-event extraction (part 2 §1 + fermata addendum) — summary ===
+corpus git_hash: e3d17c325d24e0de1213440043cbf02ac14f3d3e
 covered stems extracted: 326  (parse failures: 0)
 total notes: 76107   total events: 26698
+
+-- fermata addendum (algorithm-completion step 1) --
+  field invariance vs pre-addendum artifact: True  (checked 76107 notes[:12] + 26698 events[:5] over 326 pieces)
+  pieces with fermata: 325/326
+  pieces with ZERO fermata (1): ['bwv112.5']
+  total notes with fermata: 7544   total events with fermata: 2247
 
 -- establishment: pc reconciliation on pc-constant regions --
   bwv145.5: 26/26 pc-constant regions match (cited clean region {'startTick': 480, 'endTick': 960, 'pcs': [1, 6, 9]})

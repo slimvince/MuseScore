@@ -1,7 +1,7 @@
 {
  "provenance": {
   "generator": "tools/joint_estimator/probe_run.py:measure_prune_loss",
-  "instrument_commit": "b28b4a8fdb6f95d09dfe62063292a2ac502f4df2",
+  "instrument_commit": "e3d17c325d24e0de1213440043cbf02ac14f3d3e",
   "sample": [
    "bwv269",
    "bwv352",
@@ -23,18 +23,18 @@
   "key_top_k": 6,
   "root_pct": 71.96,
   "key_local_pct": 70.53,
-  "seconds": 30.5
+  "seconds": 31.8
  },
  "loose": {
   "seg_cap": 6,
   "key_top_k": 12,
   "root_pct": 72.87,
   "key_local_pct": 75.29,
-  "seconds": 161.8
+  "seconds": 173.1
  },
  "loss_pp": {
   "root": 0.91,
   "key_local": 4.76
  },
- "compute_ratio": 5.3
+ "compute_ratio": 5.4
 }

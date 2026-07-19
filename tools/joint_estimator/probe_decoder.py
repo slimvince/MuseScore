@@ -81,10 +81,12 @@ FOLD_ARTIFACT = _HERE / "fold_assignment.json"
 WIR_DIR = str(_ROOT / "tools" / "dcml" / "when_in_rome")
 
 # ── note-event record field indices (note_events provenance: event_fields / note_fields) ──
-# event = [start, end, measure, beat, metric_class_code]
-EV_START, EV_END, EV_MEAS, EV_BEAT, EV_MC = 0, 1, 2, 3, 4
-# note = [onset, dur, pc, midi, lof, part, measure, beat, metric_class_code, approach, departure, tied]
+# event = [start, end, measure, beat, metric_class_code, fermata]
+EV_START, EV_END, EV_MEAS, EV_BEAT, EV_MC, EV_FERM = 0, 1, 2, 3, 4, 5
+# note = [onset, dur, pc, midi, lof, part, measure, beat, metric_class_code, approach, departure,
+#         tied, fermata]
 N_ONSET, N_DUR, N_PC, N_MIDI, N_LOF, N_PART, N_MEAS, N_BEAT, N_MC, N_AP, N_DP, N_TIED = range(12)
+N_FERM = 12    # the fermata addendum (algorithm-completion step 1); read by index, older records lack it
 
 # canonical fewest-accidental spelling of a pc, for rendering a decode key string + the spelling
 # factor's tonic line-of-fifths (matches gen_label_tables._PC_TO_FIFTHS; letter+acc only).
@@ -150,11 +152,25 @@ def _first_bucket(dist: dict, outcome, parent_fn) -> Optional[str]:
 # The adapter interface (fitted tables OR injected provisional tables share this)
 # ══════════════════════════════════════════════════════════════════════════════
 
+# The ratified cadence-evidence features (factorization §3.9; the Bigo feature forms + the fermata
+# cadence-location prior §3.8). Each is a boolean fire toward a candidate key at a candidate boundary
+# site; the score is Σ weight[f]·fired[f]. In THIS dispatch all weights are 0 (wired but WEIGHTLESS) —
+# the features compute and are logged, but move no score, so the Task-3 measurement isolates the
+# vocabulary change alone. The weight fit is a later dispatch.
+CADENCE_FEATURES = ("leading_tone", "tritone_pair", "dominant_tonic_bass", "fermata_location")
+
+# Chromatic classes to ensure in the decode vocabulary (Task 3). The Neapolitan (♭II) has 0 GT tokens
+# in this corpus and no fitted table row, so it must be added explicitly (the Italian aug6 already
+# enters from the tables). Class-key strings normalize through the same normalize.normalize_label path.
+CHROMATIC_COMPLETION_KEYS = ("N | Neapolitan |  | ",)
+
+
 class Adapter:
     """Log-probability provider for every factor. The engine (segment scorer + Viterbi) calls these
     and never looks inside a table, so the fitted and the injected-provisional adapters are
-    interchangeable (Task-2 establishment). `cadence_on` gates the DECLARED-OMITTED cadence factor:
-    False for the fitted corpus decode (no fitted cadence table exists), True for the parity mode."""
+    interchangeable (Task-2 establishment). `cadence_on` gates the cadence factor: for the fitted
+    corpus decode it is wired-but-WEIGHTLESS (weights all 0 → inert; fires logged on the committed
+    path); for the parity mode the injected weights reproduce the desk-simulation hand arithmetic."""
 
     cadence_on = False
     name = "abstract"
@@ -169,8 +185,10 @@ class Adapter:
     def bass_logp(self, role, family, degree_base, quality, is_major): raise NotImplementedError
     def factor_absent_logp(self, role, family): raise NotImplementedError
     def boundary_logp(self, beat_class, is_boundary): raise NotImplementedError
-    def cadence_logp(self, approach_pcs, approach_bass, arrival_pcs, arrival_bass, tonic, is_major):
-        return 0.0
+
+    def cadence_weights(self):
+        """Per-feature weights (a nat per firing). Base: all zero (the wired-weightless default)."""
+        return {f: 0.0 for f in CADENCE_FEATURES}
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -179,7 +197,11 @@ class Adapter:
 
 class FittedAdapter(Adapter):
     name = "fitted"
-    cadence_on = False        # DECLARED OMISSION: no fitted cadence table; the corpus decode omits it
+    cadence_on = True         # WIRED BUT WEIGHTLESS: cadence_weights() is all-zero (see below), so the
+                              # factor is inert (scores 0 → the decode is byte-identical to the
+                              # cadence-free probe baseline); fires are logged on the committed path.
+    # cadence_weights() inherits the base all-zero dict — no fitted cadence table exists yet (the
+    # weight fit is a later dispatch). The features compute; they move no score.
 
     def __init__(self, leftover_mode="freq"):
         self.leftover_mode = leftover_mode
@@ -499,8 +521,32 @@ _MC_NAME = gnt._MC_INV       # {0:downbeat,...}
 _MV_NAME = gnt._MV_INV       # {0:none,1:step,2:leap}
 
 
+def chromatic_root_pc(cls, tonic, is_major):
+    """The published/gradeable ROOT of a chromatic class that gnt.chord_factor_pcs leaves rootless
+    (AugSixth / Neapolitan — algorithm-completion step 1, Task 3). Reuses gnt._framework_and_root for
+    the framework tonic (#6). Convention chosen to MATCH the grader's GT root (dcml_parser):
+      - AugSixth  → the framework tonic. dcml_parser roots 'It6' at degree I (the tonic): verified at
+                    the two corpus tokens — bwv351 It6 in g→root G(7), bwv60.5 It6/ii in A→root B(11).
+      - Neapolitan→ the flat supertonic (framework tonic + 1) = the root of the ♭II major triad, which
+                    is also how dcml_parser roots the alternative 'bII' spelling.
+    The chosen root is a chord member in both cases (so the ROOT-PRESENT candidate prune is meaningful)."""
+    fr = gnt._framework_and_root(cls, tonic, is_major)
+    if fr is None:
+        return None
+    fw_tonic, _fw_major, root = fr
+    if root is not None:
+        return root
+    if cls.quality == "AugSixth":
+        return fw_tonic
+    if cls.quality == "Neapolitan":
+        return (fw_tonic + 1) % 12
+    return None
+
+
 class ChordCache:
-    """Per-(tonic,is_major,class-key) cache of member_pcs / chord_factor_pcs / root_pc (reuse gnt)."""
+    """Per-(tonic,is_major,class-key) cache of member_pcs / chord_factor_pcs / root_pc (reuse gnt).
+    For a chromatic class (AugSixth/Neapolitan) gnt.chord_factor_pcs returns None, so the root falls
+    back to chromatic_root_pc — this is the ONLY change that makes those classes decodable (Task 3)."""
     def __init__(self):
         self._m = {}
 
@@ -510,7 +556,7 @@ class ChordCache:
         if v is None:
             mem = gnt.member_pcs(cls, tonic, is_major)
             fac = gnt.chord_factor_pcs(cls, tonic, is_major)
-            root = fac[0][1] if fac else None
+            root = fac[0][1] if fac else chromatic_root_pc(cls, tonic, is_major)
             v = (mem, fac, root)
             self._m[key] = v
         return v
@@ -651,19 +697,104 @@ def score_hypothesis(piece: Piece, hyp, adapter: Adapter, cache: ChordCache,
     return out
 
 
-def cadence_at(piece: Piece, i, tonic, is_major, adapter: Adapter):
-    """The DECLARED-OMITTED cadence factor at the boundary that STARTS a segment at event i (toward
-    that segment's key). Zero for the fitted adapter (omitted). The approach is event i-1 (the last
-    event of the previous segment); the arrival is event i. Position-and-key dependent only."""
-    if not adapter.cadence_on or i <= 0:
-        return 0.0
+def cadence_features(approach_pcs, approach_bass, arrival_pcs, arrival_bass, tonic, is_major,
+                     ferm_ctx=False):
+    """The ratified cadence-evidence features toward key (tonic, is_major) at a boundary site (approach
+    → arrival), each a boolean FIRE. The SINGLE detector shared by the fitted decode (weightless, fire
+    logged) and the parity mode (injected weights) — #6. Forms (factorization §3.9; Bigo feature set;
+    the named false-positive guards carried AS the feature definitions, not as exceptions):
+
+      leading_tone        7̂→1̂ across the boundary: the raised 7th (tonic+11) sounds in the approach AND
+                          the tonic sounds in the arrival (a RESOLUTION event, not mere presence).
+      tritone_pair        both 4̂ (tonic+5) AND 7̂ (tonic+11) sound in the approach — the key-fingerprint
+                          tritone. Requiring BOTH is the guard against a secondary dominant reading
+                          (V/V raises 4̂, so the home-key 4̂ is absent — the feature stays silent).
+      dominant_tonic_bass root-of-V → root-of-I in the bass (approach bass = 5̂, arrival bass = 1̂, root
+                          positions) — the guard against non-cadential bass motion (e.g. plagal 4→1).
+      fermata_location    the cadence-location prior: a fermata at or adjacent to the site (the §3.8
+                          weak-beat displacement handled by the caller's ferm_ctx).
+
+    The parallel-major/minor false positive is DECLARED (the pc-features shared by k and its parallel
+    fire for both; the mode rides the emission's 3̂ — not a suppression here). Returns {feature: bool}."""
+    lt = (tonic + 11) % 12
+    fourth = (tonic + 5) % 12
+    fifth = (tonic + 7) % 12
+    one = tonic % 12
+    return {
+        "leading_tone": (lt in approach_pcs) and (one in arrival_pcs),
+        "tritone_pair": (fourth in approach_pcs) and (lt in approach_pcs),
+        "dominant_tonic_bass": (approach_bass == fifth) and (arrival_bass == one),
+        "fermata_location": bool(ferm_ctx),
+    }
+
+
+def _fermata_cadence_ctx(piece: Piece, i):
+    """The §3.8 fermata cadence-location context at the boundary site (arrival event i, approach i-1):
+    a fermata AT the site (approach or arrival event carries one) OR the weak-beat DISPLACEMENT (the
+    arrival sits on a strong beat and a metrically-weak fermata falls one event later — de Clercq's
+    documented shift). Older note-event records without the fermata field read as no-fermata."""
+    evs = piece.events
+    if i <= 0 or i >= len(evs):
+        return False
+    def ferm(e):
+        return len(evs[e]) > EV_FERM and bool(evs[e][EV_FERM])
+    at = ferm(i) or ferm(i - 1)
+    displaced = False
+    if i + 1 < len(evs):
+        arr_strong = evs[i][EV_MC] in (0, 1)             # downbeat / mid_strong
+        if arr_strong and ferm(i + 1) and evs[i + 1][EV_MC] in (2, 3):   # weak-beat fermata after
+            displaced = True
+    return at or displaced
+
+
+def cadence_site_features(piece: Piece, i, tonic, is_major):
+    """The fired-feature dict at the boundary that STARTS a segment at event i, toward (tonic,is_major).
+    The approach is event i-1 (last event of the previous segment); the arrival is event i."""
+    if i <= 0:
+        return {f: False for f in CADENCE_FEATURES}
     ap_notes = piece.notes_by_event[i - 1]
     ar_notes = piece.notes_by_event[i]
     ap_pcs = {n[N_PC] for n in ap_notes}
     ar_pcs = {n[N_PC] for n in ar_notes}
-    ap_bass = event_bass_pc(ap_notes)
-    ar_bass = event_bass_pc(ar_notes)
-    return adapter.cadence_logp(ap_pcs, ap_bass, ar_pcs, ar_bass, tonic, is_major)
+    return cadence_features(ap_pcs, event_bass_pc(ap_notes), ar_pcs, event_bass_pc(ar_notes),
+                            tonic, is_major, _fermata_cadence_ctx(piece, i))
+
+
+def cadence_at(piece: Piece, i, tonic, is_major, adapter: Adapter):
+    """The cadence factor's SCORE at the boundary starting a segment at event i (toward its key) =
+    Σ weight[f]·fired[f]. For the fitted adapter every weight is 0, so this returns 0.0 and the decode
+    is byte-identical to the cadence-free baseline (the wired-weightless mandate). The all-zero-weight
+    short-circuit avoids computing features in the hot Viterbi loop — the fires are logged separately on
+    the committed path (cadence_report). The parity adapter's nonzero weights score the desk-sim values."""
+    if not adapter.cadence_on or i <= 0:
+        return 0.0
+    w = adapter.cadence_weights()
+    if not any(w.values()):                              # weightless: inert factor (fitted decode)
+        return 0.0
+    fired = cadence_site_features(piece, i, tonic, is_major)
+    return sum(w[f] for f, on in fired.items() if on)
+
+
+def cadence_report(piece: Piece, segments):
+    """Fire counts over the COMMITTED path's boundaries (each segment after the first is a boundary,
+    toward that segment's key). Returns {feature: count, "boundaries": n, "any_fire": n} — the per-piece
+    cadence-feature log the dispatch asks for (the features compute + are logged; they move no score)."""
+    counts = {f: 0 for f in CADENCE_FEATURES}
+    n_bound = any_fire = 0
+    for si, s in enumerate(segments):
+        if si == 0:
+            continue
+        i = s["i"] if isinstance(s, dict) else s.i
+        tonic = s["tonic_pc"] if isinstance(s, dict) else s.tonic
+        is_major = s["is_major"] if isinstance(s, dict) else s.is_major
+        fired = cadence_site_features(piece, i, tonic, is_major)
+        n_bound += 1
+        if any(fired.values()):
+            any_fire += 1
+        for f, on in fired.items():
+            if on:
+                counts[f] += 1
+    return {**counts, "boundaries": n_bound, "any_fire": any_fire}
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -695,6 +826,24 @@ class Vocabulary:
             if lc.raw_unnormalized or lc.quality in ("triad", "seventh"):
                 continue                                  # pooled-quality placeholders are not states
             self.classes[lc.key()] = lc
+
+        # ── chromatic-class completion (algorithm-completion step 1, Task 3) ──────────────────
+        # The augmented-sixth family and the Neapolitan carry textbook pc content in gnt.member_pcs
+        # but are rootless in gnt.chord_factor_pcs, so the ROOT-PRESENT candidate prune excluded them
+        # from the decode even when present in the tables. chromatic_root_pc now gives them a gradeable
+        # root; here we ensure the states exist. The Italian aug6 classes are already in the fitted
+        # tables (It | AugSixth | 6 |, It | AugSixth | 6 | ii) and enter above; the Neapolitan has NO
+        # fitted table row (0 GT tokens in this corpus — a REPORTED finding vs the dispatch premise) and
+        # is added explicitly for vocabulary completeness (#12: a chord the model can never propose can
+        # never be inferred). Its transition/entry/emission back off to the pooled cells. NOTE: the fit
+        # layer collapses the whole aug6 family (It/Ger/Fr) to Italian pc content, so Ger/Fr are not
+        # separately representable and are NOT invented here (facts only).
+        self.chromatic_added = []
+        for kkey in CHROMATIC_COMPLETION_KEYS:
+            lc = class_from_key(kkey).inversion_free()
+            if lc.key() not in self.classes and not lc.raw_unnormalized:
+                self.classes[lc.key()] = lc
+                self.chromatic_added.append(lc.key())
         self.keylist = sorted(self.classes)
 
 
@@ -722,6 +871,7 @@ class DecodeResult:
     decode_seconds: float
     posterior: list          # per segment: {best, best_score, runner_key, runner_score, gap}
     notes: str = ""
+    cadence_fires: dict = None    # WEIGHTLESS cadence-feature fire counts over the committed boundaries
 
 
 # candidate-state generation (two DECLARED prunes, each loss-measurable by widening it):
@@ -935,7 +1085,8 @@ def decode_piece(piece: Piece, adapter: Adapter, vocab: Vocabulary, cache: Chord
     posterior = _segment_posterior(piece, segs, adapter, vocab, cache, sig_fifths, declared_mode, key_set)
     dt = time.perf_counter() - t0
     seg_dicts = [_seg_summary(piece, s, vocab, cache) for s in segs]
-    return DecodeResult(piece.stem, seg_dicts, end_score, N, dt, posterior)
+    cad_fires = cadence_report(piece, seg_dicts)     # WEIGHTLESS: logged, moves no score (§Task 2)
+    return DecodeResult(piece.stem, seg_dicts, end_score, N, dt, posterior, cadence_fires=cad_fires)
 
 
 def _seg_summary(piece, s: Segment, vocab, cache):

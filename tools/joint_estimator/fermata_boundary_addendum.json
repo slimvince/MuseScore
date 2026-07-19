@@ -1,0 +1,261 @@
+{
+ "fits": {
+  "all": {
+   "exact_tick": {
+    "_marginal": {
+     "boundaries": 16908,
+     "events": 25281,
+     "prob": 0.6688026581227008
+    },
+    "fermata_at_or_adjacent": {
+     "boundaries": 4515,
+     "events": 5583,
+     "prob": 0.8087049973132724,
+     "reliable": true
+    },
+    "no_fermata_context": {
+     "boundaries": 12393,
+     "events": 19698,
+     "prob": 0.6291501675296984,
+     "reliable": true
+    }
+   },
+   "robust_first_event": {
+    "_marginal": {
+     "boundaries": 16896,
+     "events": 25281,
+     "prob": 0.6683279933546933
+    },
+    "fermata_at_or_adjacent": {
+     "boundaries": 4521,
+     "events": 5583,
+     "prob": 0.8097796883396023,
+     "reliable": true
+    },
+    "no_fermata_context": {
+     "boundaries": 12375,
+     "events": 19698,
+     "prob": 0.6282363691745355,
+     "reliable": true
+    }
+   }
+  },
+  "fold0": {
+   "exact_tick": {
+    "_marginal": {
+     "boundaries": 13514,
+     "events": 20147,
+     "prob": 0.6707698416637713
+    },
+    "fermata_at_or_adjacent": {
+     "boundaries": 3609,
+     "events": 4457,
+     "prob": 0.8097374915862688,
+     "reliable": true
+    },
+    "no_fermata_context": {
+     "boundaries": 9905,
+     "events": 15690,
+     "prob": 0.631293817718292,
+     "reliable": true
+    }
+   },
+   "robust_first_event": {
+    "_marginal": {
+     "boundaries": 13511,
+     "events": 20147,
+     "prob": 0.6706209361195216
+    },
+    "fermata_at_or_adjacent": {
+     "boundaries": 3614,
+     "events": 4457,
+     "prob": 0.8108593224141799,
+     "reliable": true
+    },
+    "no_fermata_context": {
+     "boundaries": 9897,
+     "events": 15690,
+     "prob": 0.6307839388145315,
+     "reliable": true
+    }
+   }
+  },
+  "fold1": {
+   "exact_tick": {
+    "_marginal": {
+     "boundaries": 13569,
+     "events": 20309,
+     "prob": 0.6681274311881432
+    },
+    "fermata_at_or_adjacent": {
+     "boundaries": 3611,
+     "events": 4467,
+     "prob": 0.8083725095142154,
+     "reliable": true
+    },
+    "no_fermata_context": {
+     "boundaries": 9958,
+     "events": 15842,
+     "prob": 0.628582249715945,
+     "reliable": true
+    }
+   },
+   "robust_first_event": {
+    "_marginal": {
+     "boundaries": 13555,
+     "events": 20309,
+     "prob": 0.6674380816386823
+    },
+    "fermata_at_or_adjacent": {
+     "boundaries": 3615,
+     "events": 4467,
+     "prob": 0.8092679650772331,
+     "reliable": true
+    },
+    "no_fermata_context": {
+     "boundaries": 9940,
+     "events": 15842,
+     "prob": 0.6274460295417246,
+     "reliable": true
+    }
+   }
+  },
+  "fold2": {
+   "exact_tick": {
+    "_marginal": {
+     "boundaries": 13624,
+     "events": 20409,
+     "prob": 0.6675486305061492
+    },
+    "fermata_at_or_adjacent": {
+     "boundaries": 3609,
+     "events": 4455,
+     "prob": 0.8101010101010101,
+     "reliable": true
+    },
+    "no_fermata_context": {
+     "boundaries": 10015,
+     "events": 15954,
+     "prob": 0.6277422589946094,
+     "reliable": true
+    }
+   },
+   "robust_first_event": {
+    "_marginal": {
+     "boundaries": 13619,
+     "events": 20409,
+     "prob": 0.6673036405507374
+    },
+    "fermata_at_or_adjacent": {
+     "boundaries": 3613,
+     "events": 4455,
+     "prob": 0.8109988776655443,
+     "reliable": true
+    },
+    "no_fermata_context": {
+     "boundaries": 10006,
+     "events": 15954,
+     "prob": 0.6271781371442898,
+     "reliable": true
+    }
+   }
+  },
+  "fold3": {
+   "exact_tick": {
+    "_marginal": {
+     "boundaries": 13522,
+     "events": 20185,
+     "prob": 0.6699033936091157
+    },
+    "fermata_at_or_adjacent": {
+     "boundaries": 3609,
+     "events": 4454,
+     "prob": 0.8102828917826672,
+     "reliable": true
+    },
+    "no_fermata_context": {
+     "boundaries": 9913,
+     "events": 15731,
+     "prob": 0.6301570148115186,
+     "reliable": true
+    }
+   },
+   "robust_first_event": {
+    "_marginal": {
+     "boundaries": 13518,
+     "events": 20185,
+     "prob": 0.6697052266534556
+    },
+    "fermata_at_or_adjacent": {
+     "boundaries": 3615,
+     "events": 4454,
+     "prob": 0.8116299955096542,
+     "reliable": true
+    },
+    "no_fermata_context": {
+     "boundaries": 9903,
+     "events": 15731,
+     "prob": 0.6295213273154917,
+     "reliable": true
+    }
+   }
+  },
+  "fold4": {
+   "exact_tick": {
+    "_marginal": {
+     "boundaries": 13403,
+     "events": 20074,
+     "prob": 0.6676795855335259
+    },
+    "fermata_at_or_adjacent": {
+     "boundaries": 3622,
+     "events": 4499,
+     "prob": 0.805067792842854,
+     "reliable": true
+    },
+    "no_fermata_context": {
+     "boundaries": 9781,
+     "events": 15575,
+     "prob": 0.6279935794542536,
+     "reliable": true
+    }
+   },
+   "robust_first_event": {
+    "_marginal": {
+     "boundaries": 13381,
+     "events": 20074,
+     "prob": 0.6665836405300388
+    },
+    "fermata_at_or_adjacent": {
+     "boundaries": 3627,
+     "events": 4499,
+     "prob": 0.8061791509224272,
+     "reliable": true
+    },
+    "no_fermata_context": {
+     "boundaries": 9754,
+     "events": 15575,
+     "prob": 0.6262600321027287,
+     "reliable": true
+    }
+   }
+  }
+ },
+ "provenance": {
+  "boundary_numerator": "exact_tick: a KEPT GT label starts at the event's start tick; robust_first_event: the event is the first (min-start) event of a KEPT GT segment \u2014 the same dual the note-side boundary table reports.",
+  "corpus_git_hash": "e3d17c325d24e0de1213440043cbf02ac14f3d3e",
+  "counted_stems": 317,
+  "covariate_definition": "ferm_ctx(event) = the event's own fermata flag (a sounding note carries a fermata) OR a fermata note ends at the event's start tick (the phrase-end boundary) OR a fermata note begins at the event's end tick (the approach). The boundary-factor reading of \u00a73.8.",
+  "excluded_stems": {
+   "flagged": 7,
+   "multi_meter": 2
+  },
+  "generator": "tools/joint_estimator/gen_fermata_boundary.py",
+  "n_folds": 5,
+  "note_events_artifact": "tools/joint_estimator/note_events/note_events.json",
+  "protocol": "cowork_prefit_gates.md (OI-176/OI-177) \u2014 5-fold grouped split, count>=20 reliability, OI-184 exclusions + interim zero-factor span leave-out",
+  "relation_to_existing_tables": "ADDENDUM ONLY \u2014 note_tables_*.json are NOT re-counted or modified; this is a separate covariate on the same events.",
+  "threshold": 20,
+  "version": "fermata-boundary-addendum-v1 (P(boundary | fermata at/adjacent); step-1 counted addition)"
+ }
+}

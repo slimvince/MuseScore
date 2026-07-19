@@ -143,12 +143,37 @@ decoder** — a Python measurement instrument in `tools/joint_estimator/` implem
 decode at identity weights over the committed tables and note events, established against the
 desk simulation's hand arithmetic (injected-table parity mode), then decoding all 326 pieces and
 graded side-by-side on the robust unit against the three preset baselines, with the asymmetric
-written predictions recorded in the dispatch BEFORE the measurement. Only after its results are
-reviewed does the production-module build open under the parallel-build sanction (the probe's
-outputs then serve as the module's parity oracle). Declared probe reductions: the cadence factor
-is omitted (its feature weights are deliberately unfit until the weight-fitting stage) and the
-fermata term is omitted (fermatas were not in the note-event extraction — an extraction addendum
-owed, recorded at the dispatch). OI-179 (the ground-truth ceiling): the literature half is ANSWERED — no
+written predictions recorded in the dispatch BEFORE the measurement. **THE PROBE HAS RUN AND IS COWORK-VERIFIED AT THE ARTIFACTS (`e3d17c325d`).** Establishment: 13/13
+synthetic-case parities within ±0.004 of the desk-simulation hand arithmetic (divergences isolated
+to the declared-omitted cadence factor, plus a couple of hand-arithmetic bookkeeping slips in the
+desk-sim document — an annotation is owed there at its next touch). Measured at identity weights,
+326 pieces, no abstention: **key vs LOCAL key 74.43 % (baseline ~66 — the load-bearing prediction
+HELD); chord root 72.97 % (+7.0 over the years-hand-tuned baseline — a positive surprise); Roman
+numeral 59.50 % (+13); key vs HOME key 53.67 % (below band — partly the metric's construction:
+correct local-key-following lowers home-agreement wherever local ≠ home; partly the genuine
+dominant error class, relative-major/minor confusion, tied by named-piece diagnosis to the OMITTED
+cadence factor — bwv88.7 the biggest loss, bwv274 the biggest win).** Declared prunes (segment cap
+4, key candidates 6) carry a measured cost (+0.9 root / +4.8 key-local unpruned on a 12-piece
+sample at 5.3× compute) — the headline is a conservative lower bound; the production build should
+afford exact. Probe limitations on record: cadence factor unfit; fermatas unread (extraction
+addendum owed); Neapolitan and augmented-sixth classes excluded from the probe vocabulary; two of
+the weakest graded pieces (bwv226.2, bwv62.6 at 0 % key-local) belong to the known
+alignment-artifact families — grading includes them by protocol, and the substrate repair would
+clean this too. A Cowork bookkeeping slip owned: the OI-184 "executed" annotation was left off the
+probe dispatch's riding-edit list; CC correctly left it uncommitted; it rides the next commit.
+**THE DECISION IS USER-RULED (2026-07-19): option 2 — complete the algorithm in the instrument
+layer first; build the production module only when the algorithm is COMPLETE** (the standing
+completion-before-build discipline). **The ACTIVE dispatch is
+`cc_instruction_algorithm_completion.md` (step 1 of 2):** the fermata extraction addendum (with
+field-wise substrate invariance proven and the fermata-conditioned boundary cells counted under
+the standing protocol), the cadence features wired but WEIGHTLESS (fire-establishment against the
+desk-simulation cases; weights come only at the weight-fitting stage), and the chord-class
+vocabulary completed (Neapolitan + augmented-sixth) with a re-measure under a written ±1-point
+prediction. **Step 2 (its own later dispatch): the weight fit** — the ratified staged fitting's
+second stage, on the probe decoder, under the OI-176 held-out folds and OI-177 capacity budget,
+with the identity-weight ablation comparison mandated by the ratified fitting decision; the
+cadence feature weights get their values there. Only after that: the production-module build under
+the parallel-build sanction, of the complete algorithm, with the probe outputs as parity oracle. OI-179 (the ground-truth ceiling): the literature half is ANSWERED — no
 published inter-annotator agreement figure exists for classical symbolic Roman-numeral analysis
 anywhere in the field, so the 87-stem BCMH measurement would be novel; BCMH is inspected at the files
 (independent origin, single reading, NO annotator record anywhere; the 2023 JEP:HPP Method section

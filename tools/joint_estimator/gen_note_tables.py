@@ -384,7 +384,9 @@ def per_stem_counts(stem: str, piece: dict):
 
     # ── emission + spelling (per note whose onset falls in a kept GT segment) ──
     for n in piece["notes"]:
-        onset, dur, pc, midi, lof, part, measure, beat, mc_c, ap_c, dp_c, tied = n
+        # n[:12] = the pre-addendum note fields; a trailing fermata flag (element 12) is ignored here
+        # (this generator's tables do not use it — the fermata-boundary addendum is a separate artifact).
+        onset, dur, pc, midi, lof, part, measure, beat, mc_c, ap_c, dp_c, tied = n[:12]
         if measure == 0:                            # OI-184 (a): pickup notes excluded
             continue
         si = _seg_idx_for_tick(segs, starts, onset)
@@ -418,7 +420,7 @@ def per_stem_counts(stem: str, piece: dict):
     # robust variant: the FIRST event (min start) of each KEPT GT segment is a boundary
     first_event_of_seg = {}
     for ev in piece["events"]:
-        start, end, measure, beat, mc_c = ev
+        start, end, measure, beat, mc_c = ev[:5]     # ev[5] (fermata) unused here — separate addendum
         if measure == 0:
             continue
         si = _seg_idx_for_tick(segs, starts, start)
@@ -429,7 +431,7 @@ def per_stem_counts(stem: str, piece: dict):
                 first_event_of_seg[seg_start] = start
     robust_boundary_ticks = set(first_event_of_seg.values())
     for ev in piece["events"]:
-        start, end, measure, beat, mc_c = ev
+        start, end, measure, beat, mc_c = ev[:5]     # ev[5] (fermata) unused here — separate addendum
         if measure == 0:
             continue
         si = _seg_idx_for_tick(segs, starts, start)
