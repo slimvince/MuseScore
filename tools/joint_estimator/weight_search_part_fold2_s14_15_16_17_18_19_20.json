@@ -1,0 +1,2859 @@
+{
+ "fit_label": "fold2",
+ "fold_held_out": 2,
+ "n_training_pieces": 259,
+ "training_stems": [
+  "bwv10.7",
+  "bwv102.7",
+  "bwv103.6",
+  "bwv104.6",
+  "bwv108.6",
+  "bwv110.7",
+  "bwv115.6",
+  "bwv117.4",
+  "bwv121.6",
+  "bwv122.6",
+  "bwv126.6",
+  "bwv13.6",
+  "bwv133.6",
+  "bwv14.5",
+  "bwv140.7",
+  "bwv144.3",
+  "bwv144.6",
+  "bwv148.6",
+  "bwv151.5",
+  "bwv153.1",
+  "bwv153.5",
+  "bwv153.9",
+  "bwv154.3",
+  "bwv154.8",
+  "bwv155.5",
+  "bwv159.5",
+  "bwv168.6",
+  "bwv169.7",
+  "bwv17.7",
+  "bwv174.5",
+  "bwv176.6",
+  "bwv179.6",
+  "bwv180.7",
+  "bwv184.5",
+  "bwv190.7",
+  "bwv194.12",
+  "bwv194.6",
+  "bwv197.5",
+  "bwv2.6",
+  "bwv20.11",
+  "bwv20.7",
+  "bwv226.2",
+  "bwv24.6",
+  "bwv244.15",
+  "bwv244.25",
+  "bwv244.3",
+  "bwv244.32",
+  "bwv244.40",
+  "bwv244.44",
+  "bwv244.54",
+  "bwv245.14",
+  "bwv245.15",
+  "bwv245.17",
+  "bwv245.22",
+  "bwv245.26",
+  "bwv245.28",
+  "bwv245.3",
+  "bwv245.37",
+  "bwv245.40",
+  "bwv248.33-3",
+  "bwv248.46-5",
+  "bwv253",
+  "bwv254",
+  "bwv255",
+  "bwv256",
+  "bwv258",
+  "bwv259",
+  "bwv26.6",
+  "bwv261",
+  "bwv262",
+  "bwv263",
+  "bwv264",
+  "bwv265",
+  "bwv266",
+  "bwv267",
+  "bwv268",
+  "bwv269",
+  "bwv270",
+  "bwv271",
+  "bwv273",
+  "bwv274",
+  "bwv275",
+  "bwv276",
+  "bwv278",
+  "bwv279",
+  "bwv280",
+  "bwv281",
+  "bwv282",
+  "bwv283",
+  "bwv284",
+  "bwv286",
+  "bwv287",
+  "bwv288",
+  "bwv289",
+  "bwv290",
+  "bwv291",
+  "bwv292",
+  "bwv293",
+  "bwv294",
+  "bwv295",
+  "bwv296",
+  "bwv298",
+  "bwv299",
+  "bwv3.6",
+  "bwv30.6",
+  "bwv300",
+  "bwv301",
+  "bwv302",
+  "bwv303",
+  "bwv304",
+  "bwv305",
+  "bwv307",
+  "bwv309",
+  "bwv310",
+  "bwv311",
+  "bwv312",
+  "bwv313",
+  "bwv314",
+  "bwv316",
+  "bwv317",
+  "bwv318",
+  "bwv319",
+  "bwv320",
+  "bwv321",
+  "bwv322",
+  "bwv323",
+  "bwv324",
+  "bwv325",
+  "bwv327",
+  "bwv328",
+  "bwv329",
+  "bwv330",
+  "bwv332",
+  "bwv333",
+  "bwv334",
+  "bwv335",
+  "bwv337",
+  "bwv339",
+  "bwv340",
+  "bwv341",
+  "bwv342",
+  "bwv343",
+  "bwv344",
+  "bwv345",
+  "bwv346",
+  "bwv347",
+  "bwv348",
+  "bwv349",
+  "bwv350",
+  "bwv352",
+  "bwv353",
+  "bwv355",
+  "bwv356",
+  "bwv357",
+  "bwv358",
+  "bwv359",
+  "bwv360",
+  "bwv361",
+  "bwv362",
+  "bwv363",
+  "bwv364",
+  "bwv366",
+  "bwv367",
+  "bwv37.6",
+  "bwv370",
+  "bwv371",
+  "bwv372",
+  "bwv373",
+  "bwv375",
+  "bwv376",
+  "bwv377",
+  "bwv378",
+  "bwv379",
+  "bwv38.6",
+  "bwv380",
+  "bwv381",
+  "bwv383",
+  "bwv384",
+  "bwv385",
+  "bwv386",
+  "bwv387",
+  "bwv388",
+  "bwv389",
+  "bwv39.7",
+  "bwv391",
+  "bwv393",
+  "bwv394",
+  "bwv395",
+  "bwv396",
+  "bwv397",
+  "bwv398",
+  "bwv399",
+  "bwv4.8",
+  "bwv40.6",
+  "bwv40.8",
+  "bwv401",
+  "bwv403",
+  "bwv404",
+  "bwv405",
+  "bwv406",
+  "bwv407",
+  "bwv408",
+  "bwv409",
+  "bwv410",
+  "bwv412",
+  "bwv413",
+  "bwv414",
+  "bwv415",
+  "bwv416",
+  "bwv417",
+  "bwv418",
+  "bwv42.7",
+  "bwv420",
+  "bwv421",
+  "bwv422",
+  "bwv423",
+  "bwv424",
+  "bwv425",
+  "bwv426",
+  "bwv427",
+  "bwv428",
+  "bwv429",
+  "bwv43.11",
+  "bwv430",
+  "bwv431",
+  "bwv432",
+  "bwv434",
+  "bwv435",
+  "bwv436",
+  "bwv437",
+  "bwv438",
+  "bwv44.7",
+  "bwv46.6",
+  "bwv47.5",
+  "bwv5.7",
+  "bwv55.5",
+  "bwv56.5",
+  "bwv57.8",
+  "bwv6.6",
+  "bwv62.6",
+  "bwv64.8",
+  "bwv65.2",
+  "bwv65.7",
+  "bwv67.7",
+  "bwv73.5",
+  "bwv74.8",
+  "bwv77.6",
+  "bwv80.8",
+  "bwv81.7",
+  "bwv84.5",
+  "bwv85.6",
+  "bwv86.6",
+  "bwv87.7",
+  "bwv88.7",
+  "bwv89.6",
+  "bwv9.7",
+  "bwv90.5",
+  "bwv94.8",
+  "bwv96.6"
+ ],
+ "lattice_build_seconds": 620.1,
+ "n_candidates": 11938918,
+ "starts": [
+  {
+   "start_index": 14,
+   "start_name": "random12",
+   "start_seed": 20260933,
+   "start_x": [
+    0.35612715693423275,
+    0.37659733744523255,
+    0.7922027136256431,
+    0.69094216750584,
+    0.9152742872984126,
+    0.3414033340126776,
+    0.5336511976196996,
+    0.0863717464299229,
+    0.09483800989079795,
+    1.0,
+    0.3719573004167194,
+    0.1273377374342366,
+    0.6531576889500629
+   ],
+   "x": [
+    0.12482505860030162,
+    1.0,
+    0.15541602851820102,
+    0.39959710045655034,
+    0.0347522673048979,
+    0.07977617047673567,
+    0.05090664155990905,
+    0.307703930251672,
+    0.0824166584836598,
+    0.0352,
+    0.015796485138589954,
+    0.0,
+    0.0
+   ],
+   "weights": {
+    "prior": 0.12482505860030162,
+    "declared_mode": 1.0,
+    "emission": 0.15541602851820102,
+    "spelling": 0.39959710045655034,
+    "bass": 0.0347522673048979,
+    "boundary": 0.07977617047673567,
+    "chord_trans": 0.05090664155990905,
+    "key_trans": 0.307703930251672,
+    "entry": 0.0824166584836598,
+    "cad_leading_tone": 0.0352,
+    "cad_tritone_pair": 0.015796485138589954,
+    "cad_dominant_tonic_bass": 0.0,
+    "cad_fermata_location": 0.0
+   },
+   "weights_generative_scale": {
+    "prior": 0.5025626802016419,
+    "declared_mode": 4.02613614475345,
+    "emission": 0.6257260898911621,
+    "spelling": 1.6088323294867926,
+    "bass": 0.139917359508383,
+    "boundary": 0.32118972344639857,
+    "chord_trans": 0.204957069592358,
+    "key_trans": 1.238857915468951,
+    "entry": 0.33182068765086375,
+    "cad_leading_tone": 0.14171999229532145,
+    "cad_tritone_pair": 0.06359879977653772,
+    "cad_dominant_tonic_bass": 0.0,
+    "cad_fermata_location": 0.0
+   },
+   "R_train": 0.4846980676328502,
+   "train_columns": {
+    "key_local_agree_pct": 77.7445652173913,
+    "key_home_agree_pct": 54.85326086956522,
+    "root_agree_pct": 73.78562801932367,
+    "rn_agree_pct": 61.33635265700483
+   },
+   "train_root_disagree": 0.26214371980676326,
+   "train_key_local_disagree": 0.22255434782608696,
+   "n_evaluations": 375,
+   "n_distinct_points": 375,
+   "seconds": 4107.7,
+   "trace": [
+    {
+     "stage": -1,
+     "sweep": -1,
+     "coord": "start",
+     "R": 0.8327710464581973
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "declared_mode",
+     "value": 0.7531946748904651,
+     "R": 0.8318641321434618
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "emission",
+     "value": 1.5844054272512862,
+     "R": 0.8133630801228566
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "spelling",
+     "value": 0.21804462280356,
+     "R": 0.8089917531258313
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "bass",
+     "value": 0.0,
+     "R": 0.7727514571089991
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "boundary",
+     "value": 0.43095451219826086,
+     "R": 0.7722617233790418
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "chord_trans",
+     "value": 0.0,
+     "R": 0.5889872529811577
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "key_trans",
+     "value": 0.10902732967756285,
+     "R": 0.5773045013666158
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "cad_leading_tone",
+     "value": 0.0,
+     "R": 0.5657124543453547
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "cad_tritone_pair",
+     "value": 0.0,
+     "R": 0.5604741170778906
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "cad_dominant_tonic_bass",
+     "value": 0.16073883015554816,
+     "R": 0.5596758587324625
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "cad_fermata_location",
+     "value": 0.2748276746662403,
+     "R": 0.5592724282224318
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "prior",
+     "value": 0.33715533045610213,
+     "R": 0.5591817236291512
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "emission",
+     "value": 0.6666666666666666,
+     "R": 0.5590547371985584
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "spelling",
+     "value": 0.49060040130800997,
+     "R": 0.5577123092180054
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "bass",
+     "value": 0.05,
+     "R": 0.5554446943859903
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "boundary",
+     "value": 0.3232158841486957,
+     "R": 0.5504848968536119
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "chord_trans",
+     "value": 0.05,
+     "R": 0.5467812923195976
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "key_trans",
+     "value": 0.32708198903268854,
+     "R": 0.5344481524472818
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "entry",
+     "value": 0.13467861103233428,
+     "R": 0.5342123718320758
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "cad_tritone_pair",
+     "value": 0.05,
+     "R": 0.5339403172760688
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "cad_dominant_tonic_bass",
+     "value": 0.0,
+     "R": 0.5337589475720642
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "cad_fermata_location",
+     "value": 0.0,
+     "R": 0.5306756626039852
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "prior",
+     "value": 0.2528664978420766,
+     "R": 0.5306575256335848
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "declared_mode",
+     "value": 1.426140043329343,
+     "R": 0.5302947862255756
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "emission",
+     "value": 0.3505967049580512,
+     "R": 0.5233483265621978
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "spelling",
+     "value": 0.5160086524490577,
+     "R": 0.5224035787691936
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "bass",
+     "value": 0.07011934099161024,
+     "R": 0.5210796759763028
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "boundary",
+     "value": 0.11331842397263592,
+     "R": 0.5182297333236624
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "chord_trans",
+     "value": 0.05258950574370768,
+     "R": 0.5159391918020109
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "key_trans",
+     "value": 0.3440216028179581,
+     "R": 0.5020904323449092
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "entry",
+     "value": 0.1416536317687903,
+     "R": 0.5017460547620773
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "cad_leading_tone",
+     "value": 0.05,
+     "R": 0.5014741777229996
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "declared_mode",
+     "value": 0.9090909090909091,
+     "R": 0.501419802315184
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "emission",
+     "value": 0.3505967049580511,
+     "R": 0.5004229198385655
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "bass",
+     "value": 0.06170502007261701,
+     "R": 0.4999335411682254
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "boundary",
+     "value": 0.1133184239726359,
+     "R": 0.49835701169421087
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "chord_trans",
+     "value": 0.07231057039759807,
+     "R": 0.4973242975526081
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "key_trans",
+     "value": 0.4162661394097294,
+     "R": 0.4956935082505859
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "cad_tritone_pair",
+     "value": 0.030852510036308504,
+     "R": 0.49507743229204415
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "prior",
+     "value": 0.15603132325037702,
+     "R": 0.4950593124109106
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "declared_mode",
+     "value": 1.25,
+     "R": 0.49435263704670096
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "emission",
+     "value": 0.22438189117315271,
+     "R": 0.4942805720635841
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "spelling",
+     "value": 0.49949637557068793,
+     "R": 0.49255984733193225
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "bass",
+     "value": 0.03949121284647489,
+     "R": 0.4916721018431287
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "boundary",
+     "value": 0.0997202130959196,
+     "R": 0.49163586733338166
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "chord_trans",
+     "value": 0.06363330194988631,
+     "R": 0.4910561151774283
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "key_trans",
+     "value": 0.36631420268056186,
+     "R": 0.49031260569164614
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "entry",
+     "value": 0.11332290541503223,
+     "R": 0.49027636855582934
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "cad_leading_tone",
+     "value": 0.0352,
+     "R": 0.4898777600618447
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "cad_tritone_pair",
+     "value": 0.019745606423237444,
+     "R": 0.4894791515678601
+    },
+    {
+     "stage": 1,
+     "sweep": 2,
+     "coord": "prior",
+     "value": 0.15603132325037702,
+     "R": 0.4894610329999517
+    },
+    {
+     "stage": 1,
+     "sweep": 2,
+     "coord": "declared_mode",
+     "value": 1.25,
+     "R": 0.48931608445668456
+    },
+    {
+     "stage": 1,
+     "sweep": 2,
+     "coord": "emission",
+     "value": 0.16318682994411107,
+     "R": 0.4877035319128376
+    },
+    {
+     "stage": 1,
+     "sweep": 2,
+     "coord": "bass",
+     "value": 0.0347522673048979,
+     "R": 0.4872324491472194
+    },
+    {
+     "stage": 1,
+     "sweep": 2,
+     "coord": "entry",
+     "value": 0.0824166584836598,
+     "R": 0.4870875006039523
+    },
+    {
+     "stage": 1,
+     "sweep": 2,
+     "coord": "cad_leading_tone",
+     "value": 0.0352,
+     "R": 0.4870150263323187
+    },
+    {
+     "stage": 2,
+     "sweep": 0,
+     "coord": "emission",
+     "value": 0.15541602851820102,
+     "R": 0.48687007778905156
+    },
+    {
+     "stage": 2,
+     "sweep": 0,
+     "coord": "key_trans",
+     "value": 0.307703930251672,
+     "R": 0.4846980676328502
+    }
+   ]
+  },
+  {
+   "start_index": 15,
+   "start_name": "random13",
+   "start_seed": 20260934,
+   "start_x": [
+    0.6226125848136669,
+    0.9059542683112236,
+    0.8014378478519474,
+    0.610787827930375,
+    0.28112633786513097,
+    0.38933428233766293,
+    0.8242321519202722,
+    0.5692141815711618,
+    0.04570258095063921,
+    0.6531329996499726,
+    0.9336007767850821,
+    0.7893369784272039,
+    1.0
+   ],
+   "x": [
+    0.1561920564143902,
+    1.0,
+    0.12286581795033898,
+    0.3830640803135831,
+    0.0,
+    0.08735873833240533,
+    0.045454545454545456,
+    0.32724137402757747,
+    0.04299451382111372,
+    0.11636972830625464,
+    0.04338842975206612,
+    0.0,
+    0.045454545454545456
+   ],
+   "weights": {
+    "prior": 0.1561920564143902,
+    "declared_mode": 1.0,
+    "emission": 0.12286581795033898,
+    "spelling": 0.3830640803135831,
+    "bass": 0.0,
+    "boundary": 0.08735873833240533,
+    "chord_trans": 0.045454545454545456,
+    "key_trans": 0.32724137402757747,
+    "entry": 0.04299451382111372,
+    "cad_leading_tone": 0.11636972830625464,
+    "cad_tritone_pair": 0.04338842975206612,
+    "cad_dominant_tonic_bass": 0.0,
+    "cad_fermata_location": 0.045454545454545456
+   },
+   "weights_generative_scale": {
+    "prior": 0.6492459143969197,
+    "declared_mode": 4.156715324077798,
+    "emission": 0.5107182282795271,
+    "spelling": 1.592288332743239,
+    "bass": 0.0,
+    "boundary": 0.3631254063184118,
+    "chord_trans": 0.18894160563989992,
+    "key_trans": 1.3602492340927057,
+    "entry": 0.17871595445149807,
+    "cad_leading_tone": 0.48371583290937853,
+    "cad_tritone_pair": 0.1803533508380863,
+    "cad_dominant_tonic_bass": 0.0,
+    "cad_fermata_location": 0.18894160563989992
+   },
+   "R_train": 0.48762208683879704,
+   "train_columns": {
+    "key_local_agree_pct": 77.85755729619959,
+    "key_home_agree_pct": 55.022483318827966,
+    "root_agree_pct": 73.3802340199207,
+    "rn_agree_pct": 60.399743738516584
+   },
+   "train_root_disagree": 0.26619765980079296,
+   "train_key_local_disagree": 0.22142442703800405,
+   "n_evaluations": 369,
+   "n_distinct_points": 369,
+   "seconds": 3883.4,
+   "trace": [
+    {
+     "stage": -1,
+     "sweep": -1,
+     "coord": "start",
+     "R": 0.6366859973420321
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "declared_mode",
+     "value": 1.8119085366224472,
+     "R": 0.6365871635010392
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "emission",
+     "value": 0.29487796308081354,
+     "R": 0.6347664274148723
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "bass",
+     "value": 0.07757740862272622,
+     "R": 0.6288757582348534
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "chord_trans",
+     "value": 0.0,
+     "R": 0.5639165033983988
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "key_trans",
+     "value": 0.20943447937764958,
+     "R": 0.5595264010836176
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "cad_leading_tone",
+     "value": 0.1802334352007272,
+     "R": 0.5560977674576107
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "cad_tritone_pair",
+     "value": 0.0,
+     "R": 0.5457211619863096
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "cad_dominant_tonic_bass",
+     "value": 0.0,
+     "R": 0.544236816642477
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "cad_fermata_location",
+     "value": 0.0,
+     "R": 0.5383657380537822
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "emission",
+     "value": 0.14743898154040677,
+     "R": 0.5347564809440898
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "bass",
+     "value": 0.0,
+     "R": 0.5295874443799574
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "boundary",
+     "value": 0.10743762018567875,
+     "R": 0.516125132965864
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "entry",
+     "value": 0.037835172162580075,
+     "R": 0.5137327434056237
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "cad_leading_tone",
+     "value": 0.0901167176003636,
+     "R": 0.5131162205942796
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "prior",
+     "value": 0.17181126205582928,
+     "R": 0.5127535601170184
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "emission",
+     "value": 0.09829265436027118,
+     "R": 0.5070774103084807
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "boundary",
+     "value": 0.0976705638051625,
+     "R": 0.5069686200560874
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "key_trans",
+     "value": 0.23037792731541457,
+     "R": 0.5065878541727106
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "entry",
+     "value": 0.03439561105689098,
+     "R": 0.5046658930470941
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "cad_leading_tone",
+     "value": 0.08192428872760327,
+     "R": 0.5043395222899139
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "prior",
+     "value": 0.13744900964466342,
+     "R": 0.5041944686200561
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "declared_mode",
+     "value": 0.8,
+     "R": 0.5039406246978049
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "boundary",
+     "value": 0.110989277051321,
+     "R": 0.5037771653733653
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "chord_trans",
+     "value": 0.05,
+     "R": 0.5012022135227877
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "key_trans",
+     "value": 0.3599655114303352,
+     "R": 0.4908353873664878
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "cad_tritone_pair",
+     "value": 0.05,
+     "R": 0.4902728437129945
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "cad_fermata_location",
+     "value": 0.05,
+     "R": 0.4902511846049705
+    },
+    {
+     "stage": 1,
+     "sweep": 2,
+     "coord": "declared_mode",
+     "value": 1.1,
+     "R": 0.49003360410018376
+    },
+    {
+     "stage": 1,
+     "sweep": 2,
+     "coord": "emission",
+     "value": 0.12286581795033898,
+     "R": 0.4897616284692003
+    },
+    {
+     "stage": 1,
+     "sweep": 2,
+     "coord": "boundary",
+     "value": 0.0917266752490256,
+     "R": 0.4885105405666763
+    },
+    {
+     "stage": 1,
+     "sweep": 2,
+     "coord": "entry",
+     "value": 0.04299451382111372,
+     "R": 0.4884198820230152
+    },
+    {
+     "stage": 1,
+     "sweep": 2,
+     "coord": "cad_leading_tone",
+     "value": 0.11636972830625464,
+     "R": 0.4883110917706218
+    },
+    {
+     "stage": 1,
+     "sweep": 2,
+     "coord": "cad_tritone_pair",
+     "value": 0.04132231404958678,
+     "R": 0.4878396673435838
+    },
+    {
+     "stage": 2,
+     "sweep": 0,
+     "coord": "boundary",
+     "value": 0.08735873833240533,
+     "R": 0.4878034039261193
+    },
+    {
+     "stage": 2,
+     "sweep": 0,
+     "coord": "cad_tritone_pair",
+     "value": 0.04338842975206612,
+     "R": 0.48762208683879704
+    }
+   ]
+  },
+  {
+   "start_index": 16,
+   "start_name": "random14",
+   "start_seed": 20260935,
+   "start_x": [
+    0.4242570977640441,
+    0.07842307237053789,
+    0.8676769667129041,
+    0.5310565812076201,
+    0.7130798911528242,
+    0.9696167166412111,
+    0.4061005391411288,
+    0.8032936574209822,
+    0.796744858342578,
+    0.5134435267112102,
+    0.9630443564183092,
+    1.0,
+    0.6842901370859388
+   ],
+   "x": [
+    0.42251756263197143,
+    0.06508460232946393,
+    0.7200994378557466,
+    0.8814652463253285,
+    0.2958983864183225,
+    0.26823363969734804,
+    0.5055443117090411,
+    1.0,
+    0.4408211401381162,
+    0.05,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "weights": {
+    "prior": 0.42251756263197143,
+    "declared_mode": 0.06508460232946393,
+    "emission": 0.7200994378557466,
+    "spelling": 0.8814652463253285,
+    "bass": 0.2958983864183225,
+    "boundary": 0.26823363969734804,
+    "chord_trans": 0.5055443117090411,
+    "key_trans": 1.0,
+    "entry": 0.4408211401381162,
+    "cad_leading_tone": 0.05,
+    "cad_tritone_pair": 0.0,
+    "cad_dominant_tonic_bass": 0.0,
+    "cad_fermata_location": 0.0
+   },
+   "weights_generative_scale": {
+    "prior": 0.8267251245442148,
+    "declared_mode": 0.12734873227886326,
+    "emission": 1.408993022058259,
+    "spelling": 1.7247317744859159,
+    "bass": 0.5789738746959467,
+    "boundary": 0.5248432462886647,
+    "chord_trans": 0.989180618805006,
+    "key_trans": 1.9566645215747476,
+    "entry": 0.8625390852683819,
+    "cad_leading_tone": 0.09783322607873739,
+    "cad_tritone_pair": 0.0,
+    "cad_dominant_tonic_bass": 0.0,
+    "cad_fermata_location": 0.0
+   },
+   "R_train": 0.484715394254868,
+   "train_columns": {
+    "key_local_agree_pct": 76.98995083863505,
+    "key_home_agree_pct": 54.71732215153268,
+    "root_agree_pct": 74.53850973587815,
+    "rn_agree_pct": 61.6119625988047
+   },
+   "train_root_disagree": 0.25461490264121844,
+   "train_key_local_disagree": 0.2301004916136495,
+   "n_evaluations": 254,
+   "n_distinct_points": 254,
+   "seconds": 2672.3,
+   "trace": [
+    {
+     "stage": -1,
+     "sweep": -1,
+     "coord": "start",
+     "R": 0.570939736893016
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "emission",
+     "value": 1.3015154500693562,
+     "R": 0.5643513480836658
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "spelling",
+     "value": 0.8160588200152687,
+     "R": 0.5352592001547464
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "bass",
+     "value": 0.27394215378496856,
+     "R": 0.5311789738381933
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "boundary",
+     "value": 0.37249527717459724,
+     "R": 0.5222189985735355
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "chord_trans",
+     "value": 0.46803194589755526,
+     "R": 0.5177298538117676
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "cad_leading_tone",
+     "value": 0.19724834103346578,
+     "R": 0.5172949136160445
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "cad_tritone_pair",
+     "value": 0.0,
+     "R": 0.5163671063439146
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "cad_dominant_tonic_bass",
+     "value": 0.0,
+     "R": 0.5137771496218985
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "cad_fermata_location",
+     "value": 0.0,
+     "R": 0.5008743367100821
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "declared_mode",
+     "value": 0.12051039788480239,
+     "R": 0.5005125422093584
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "emission",
+     "value": 0.6666666666666666,
+     "R": 0.4994815029180533
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "boundary",
+     "value": 0.30430427157005485,
+     "R": 0.49122141084038273
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "key_trans",
+     "value": 1.1344746763060958,
+     "R": 0.4886366375051213
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "entry",
+     "value": 0.4408211401381162,
+     "R": 0.48655894544052436
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "cad_leading_tone",
+     "value": 0.0,
+     "R": 0.4856371698476961
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "prior",
+     "value": 0.5281469532899643,
+     "R": 0.48556487372276846
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "declared_mode",
+     "value": 0.06508460232946393,
+     "R": 0.48491420859841916
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "cad_leading_tone",
+     "value": 0.05,
+     "R": 0.48478769037979563
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "prior",
+     "value": 0.42251756263197143,
+     "R": 0.484715394254868
+    }
+   ]
+  },
+  {
+   "start_index": 17,
+   "start_name": "random15",
+   "start_seed": 20260936,
+   "start_x": [
+    0.2484906926385623,
+    0.674612850952776,
+    1.0,
+    0.07247575400443233,
+    0.953322246376367,
+    0.5189178368774743,
+    0.8675501046148282,
+    0.49701658187345243,
+    0.07392629513739057,
+    0.6895056774717538,
+    0.34726694380146444,
+    0.4111764455285203,
+    0.5643448734809495
+   ],
+   "x": [
+    0.22089278724134917,
+    1.0,
+    0.37646518830699266,
+    0.44293179186639425,
+    0.08566984448246043,
+    0.10148285775373278,
+    0.19279953571403327,
+    0.5091413362903049,
+    0.1897546133163822,
+    0.2340269433882593,
+    0.0,
+    0.17690699199233628,
+    0.019190045164071134
+   ],
+   "weights": {
+    "prior": 0.22089278724134917,
+    "declared_mode": 1.0,
+    "emission": 0.37646518830699266,
+    "spelling": 0.44293179186639425,
+    "bass": 0.08566984448246043,
+    "boundary": 0.10148285775373278,
+    "chord_trans": 0.19279953571403327,
+    "key_trans": 0.5091413362903049,
+    "entry": 0.1897546133163822,
+    "cad_leading_tone": 0.2340269433882593,
+    "cad_tritone_pair": 0.0,
+    "cad_dominant_tonic_bass": 0.17690699199233628,
+    "cad_fermata_location": 0.019190045164071134
+   },
+   "weights_generative_scale": {
+    "prior": 0.6373668346420452,
+    "declared_mode": 2.885412613973915,
+    "emission": 1.0862574030630618,
+    "spelling": 1.2780409793813627,
+    "bass": 0.24719284990687493,
+    "boundary": 0.2928199178647411,
+    "chord_trans": 0.5563062123175859,
+    "key_trans": 1.4690828340275808,
+    "entry": 0.5475203548228318,
+    "cad_leading_tone": 0.6752642944622427,
+    "cad_tritone_pair": 0.0,
+    "cad_dominant_tonic_bass": 0.5104496661948695,
+    "cad_fermata_location": 0.05537119837913998
+   },
+   "R_train": 0.4758013979272114,
+   "train_columns": {
+    "key_local_agree_pct": 77.25958062183659,
+    "key_home_agree_pct": 56.044830079537235,
+    "root_agree_pct": 75.16027958544228,
+    "rn_agree_pct": 62.045673656302725
+   },
+   "train_root_disagree": 0.24839720414557726,
+   "train_key_local_disagree": 0.22740419378163412,
+   "n_evaluations": 424,
+   "n_distinct_points": 424,
+   "seconds": 4475.0,
+   "trace": [
+    {
+     "stage": -1,
+     "sweep": -1,
+     "coord": "start",
+     "R": 0.7403439441181447
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "prior",
+     "value": 0.4969813852771246,
+     "R": 0.7403258163536606
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "declared_mode",
+     "value": 1.349225701905552,
+     "R": 0.7398182389481063
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "emission",
+     "value": 1.4823316789587835,
+     "R": 0.7335641602010974
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "spelling",
+     "value": 0.07247575400443233,
+     "R": 0.7221456883217324
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "bass",
+     "value": 0.0,
+     "R": 0.6840811346283947
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "boundary",
+     "value": 0.12972945921936857,
+     "R": 0.6786989457431667
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "chord_trans",
+     "value": 0.21688752615370704,
+     "R": 0.6264286577262292
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "key_trans",
+     "value": 0.49701658187345243,
+     "R": 0.585906169976325
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "entry",
+     "value": 0.07392629513739057,
+     "R": 0.5777834142570718
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "cad_leading_tone",
+     "value": 0.5171292581038154,
+     "R": 0.5763340338671885
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "cad_tritone_pair",
+     "value": 0.34726694380146444,
+     "R": 0.5711136078090269
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "cad_fermata_location",
+     "value": 0.0,
+     "R": 0.568722982926417
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "prior",
+     "value": 0.12424534631928115,
+     "R": 0.5687048709217803
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "declared_mode",
+     "value": 1.349225701905552,
+     "R": 0.5678898307131299
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "emission",
+     "value": 0.4941105596529278,
+     "R": 0.5592642229305516
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "spelling",
+     "value": 0.10743310611719395,
+     "R": 0.5417753465681302
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "bass",
+     "value": 0.05,
+     "R": 0.5379227053140097
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "cad_leading_tone",
+     "value": 0.2555190271345796,
+     "R": 0.5370115442206443
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "cad_dominant_tonic_bass",
+     "value": 0.3047499354242981,
+     "R": 0.535637514189793
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "prior",
+     "value": 0.18417281281227554,
+     "R": 0.5356193995604184
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "declared_mode",
+     "value": 0.5,
+     "R": 0.5352208777141754
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "emission",
+     "value": 0.4941105596529278,
+     "R": 0.532476155982132
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "spelling",
+     "value": 0.4297324244687758,
+     "R": 0.51230408848318
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "bass",
+     "value": 0.15000000000000002,
+     "R": 0.5121591924460867
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "entry",
+     "value": 0.21916657838042145,
+     "R": 0.5097321838247724
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "cad_tritone_pair",
+     "value": 0.0,
+     "R": 0.5045629897528632
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "cad_dominant_tonic_bass",
+     "value": 0.3047499354242981,
+     "R": 0.5026100060277275
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "cad_fermata_location",
+     "value": 0.05,
+     "R": 0.5021942515432098
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "declared_mode",
+     "value": 1.25,
+     "R": 0.5014347029320988
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "emission",
+     "value": 0.43481729249457657,
+     "R": 0.499318768236514
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "spelling",
+     "value": 0.4297324244687758,
+     "R": 0.49638913001543206
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "bass",
+     "value": 0.13200000000000003,
+     "R": 0.49590084876543206
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "boundary",
+     "value": 0.12307333574083945,
+     "R": 0.4899554109423958
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "entry",
+     "value": 0.21916657838042145,
+     "R": 0.4872800674861412
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "cad_dominant_tonic_bass",
+     "value": 0.26817994317338234,
+     "R": 0.4870089178115209
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "cad_fermata_location",
+     "value": 0.032,
+     "R": 0.48693661123162213
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "prior",
+     "value": 0.3683456256245511,
+     "R": 0.48686430465172337
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "declared_mode",
+     "value": 1.1,
+     "R": 0.4867196914919258
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "emission",
+     "value": 0.43481729249457657,
+     "R": 0.4860699395078688
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "spelling",
+     "value": 0.4883323005326997,
+     "R": 0.4849673438893307
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "boundary",
+     "value": 0.12307333574083945,
+     "R": 0.4845482595699546
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "key_trans",
+     "value": 0.5893947394230643,
+     "R": 0.482941672692215
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "entry",
+     "value": 0.21916657838042145,
+     "R": 0.48163617077698223
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "cad_leading_tone",
+     "value": 0.3378763995167994,
+     "R": 0.4808239321184071
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "cad_dominant_tonic_bass",
+     "value": 0.26817994317338234,
+     "R": 0.4806612187831453
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "cad_fermata_location",
+     "value": 0.02327272727272727,
+     "R": 0.4799590262713907
+    },
+    {
+     "stage": 1,
+     "sweep": 2,
+     "coord": "prior",
+     "value": 0.26788772772694625,
+     "R": 0.47988671969149194
+    },
+    {
+     "stage": 1,
+     "sweep": 2,
+     "coord": "declared_mode",
+     "value": 1.1,
+     "R": 0.47974210653169436
+    },
+    {
+     "stage": 1,
+     "sweep": 2,
+     "coord": "spelling",
+     "value": 0.4883323005326997,
+     "R": 0.47903863302243754
+    },
+    {
+     "stage": 1,
+     "sweep": 2,
+     "coord": "bass",
+     "value": 0.09917355371900827,
+     "R": 0.47878557829031404
+    },
+    {
+     "stage": 1,
+     "sweep": 2,
+     "coord": "key_trans",
+     "value": 0.5893947394230643,
+     "R": 0.47831718719876615
+    },
+    {
+     "stage": 1,
+     "sweep": 2,
+     "coord": "cad_leading_tone",
+     "value": 0.24572829055767226,
+     "R": 0.4775761519182572
+    },
+    {
+     "stage": 1,
+     "sweep": 2,
+     "coord": "cad_dominant_tonic_bass",
+     "value": 0.19503995867155077,
+     "R": 0.4774315596684018
+    },
+    {
+     "stage": 2,
+     "sweep": 0,
+     "coord": "key_trans",
+     "value": 0.5613283232600612,
+     "R": 0.47688766779938785
+    },
+    {
+     "stage": 2,
+     "sweep": 0,
+     "coord": "cad_leading_tone",
+     "value": 0.2580147050855559,
+     "R": 0.4765984623912467
+    },
+    {
+     "stage": 2,
+     "sweep": 0,
+     "coord": "cad_dominant_tonic_bass",
+     "value": 0.1857523415919531,
+     "R": 0.4765261610392114
+    },
+    {
+     "stage": 2,
+     "sweep": 1,
+     "coord": "declared_mode",
+     "value": 1.05,
+     "R": 0.47634540765912325
+    },
+    {
+     "stage": 2,
+     "sweep": 1,
+     "coord": "emission",
+     "value": 0.3952884477223423,
+     "R": 0.47623351893364185
+    },
+    {
+     "stage": 2,
+     "sweep": 2,
+     "coord": "declared_mode",
+     "value": 1.05,
+     "R": 0.47612505122086435
+    },
+    {
+     "stage": 2,
+     "sweep": 2,
+     "coord": "bass",
+     "value": 0.08566984448246043,
+     "R": 0.4759839008989468
+    },
+    {
+     "stage": 2,
+     "sweep": 2,
+     "coord": "entry",
+     "value": 0.1897546133163822,
+     "R": 0.47587370450711014
+    },
+    {
+     "stage": 2,
+     "sweep": 2,
+     "coord": "cad_dominant_tonic_bass",
+     "value": 0.17690699199233628,
+     "R": 0.4758013979272114
+    }
+   ]
+  },
+  {
+   "start_index": 18,
+   "start_name": "random16",
+   "start_seed": 20260937,
+   "start_x": [
+    0.3197309149390088,
+    0.9276477385108227,
+    0.026803629593809948,
+    0.5518899047747279,
+    0.16310377102242185,
+    0.3060373385892205,
+    1.0,
+    0.7322846871949952,
+    0.31702992403132707,
+    0.17108976554383232,
+    0.6448912998310108,
+    0.15125323835101315,
+    0.14711929069761678
+   ],
+   "x": [
+    0.08616711432194112,
+    1.0,
+    0.06879568940899536,
+    0.20281867556826064,
+    0.020640626851916553,
+    0.06398193355604895,
+    0.027840790430267857,
+    0.179408983701113,
+    0.017652727350159835,
+    0.02515008834238295,
+    0.0,
+    0.027175049333889024,
+    0.0
+   ],
+   "weights": {
+    "prior": 0.08616711432194112,
+    "declared_mode": 1.0,
+    "emission": 0.06879568940899536,
+    "spelling": 0.20281867556826064,
+    "bass": 0.020640626851916553,
+    "boundary": 0.06398193355604895,
+    "chord_trans": 0.027840790430267857,
+    "key_trans": 0.179408983701113,
+    "entry": 0.017652727350159835,
+    "cad_leading_tone": 0.02515008834238295,
+    "cad_tritone_pair": 0.0,
+    "cad_dominant_tonic_bass": 0.027175049333889024,
+    "cad_fermata_location": 0.0
+   },
+   "weights_generative_scale": {
+    "prior": 0.4651238447997546,
+    "declared_mode": 5.397927602193335,
+    "emission": 0.37135415077273576,
+    "spelling": 1.094800527090209,
+    "bass": 0.11141660941053329,
+    "boundary": 0.3453698451838966,
+    "chord_trans": 0.15028257113042293,
+    "key_trans": 0.968436705201692,
+    "entry": 0.09528814421742099,
+    "cad_leading_tone": 0.13575835606094974,
+    "cad_tritone_pair": 0.0,
+    "cad_dominant_tonic_bass": 0.14668894889036516,
+    "cad_fermata_location": 0.0
+   },
+   "R_train": 0.48565197428833795,
+   "train_columns": {
+    "key_local_agree_pct": 77.64064085834421,
+    "key_home_agree_pct": 55.10729302595331,
+    "root_agree_pct": 73.794161712822,
+    "rn_agree_pct": 60.708762263786184
+   },
+   "train_root_disagree": 0.26205838287178,
+   "train_key_local_disagree": 0.22359359141655794,
+   "n_evaluations": 372,
+   "n_distinct_points": 372,
+   "seconds": 3906.3,
+   "trace": [
+    {
+     "stage": -1,
+     "sweep": -1,
+     "coord": "start",
+     "R": 0.673531393641855
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "declared_mode",
+     "value": 1.8552954770216454,
+     "R": 0.6733869997352778
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "emission",
+     "value": 0.028894189551778048,
+     "R": 0.6433838566101286
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "spelling",
+     "value": 0.4462010862501734,
+     "R": 0.6275146789873906
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "bass",
+     "value": 0.1318688368315245,
+     "R": 0.6238506162141344
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "boundary",
+     "value": 0.32990684489837735,
+     "R": 0.6196718742465885
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "chord_trans",
+     "value": 0.2694988513649929,
+     "R": 0.5881901655189079
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "cad_leading_tone",
+     "value": 0.13832548588310623,
+     "R": 0.5871146225959215
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "cad_tritone_pair",
+     "value": 0.0,
+     "R": 0.5814430997415272
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "cad_fermata_location",
+     "value": 0.0,
+     "R": 0.5812573925217853
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "declared_mode",
+     "value": 2.0,
+     "R": 0.5806056436623459
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "emission",
+     "value": 0.028894189551778048,
+     "R": 0.5565435228781842
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "bass",
+     "value": 0.032967209207881126,
+     "R": 0.5548977719844546
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "chord_trans",
+     "value": 0.06737471284124823,
+     "R": 0.5337226736312632
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "entry",
+     "value": 0.042719600187386804,
+     "R": 0.529333526794351
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "emission",
+     "value": 0.057788379103556095,
+     "R": 0.5148954177245798
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "bass",
+     "value": 0.02197813947192075,
+     "R": 0.5133176157659292
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "boundary",
+     "value": 0.10996894829945912,
+     "R": 0.5065649611054742
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "chord_trans",
+     "value": 0.033687356420624114,
+     "R": 0.5014749262536873
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "entry",
+     "value": 0.021359800093693402,
+     "R": 0.4999335122458355
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "cad_leading_tone",
+     "value": 0.034581371470776556,
+     "R": 0.4987005608741901
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "cad_dominant_tonic_bass",
+     "value": 0.027175049333889024,
+     "R": 0.4985555072043323
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "emission",
+     "value": 0.07223547387944512,
+     "R": 0.49480262044624945
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "bass",
+     "value": 0.019980126792655227,
+     "R": 0.4943674909952377
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "boundary",
+     "value": 0.0879751586395673,
+     "R": 0.4919549817460893
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "chord_trans",
+     "value": 0.030624869473294646,
+     "R": 0.4908851333381688
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "entry",
+     "value": 0.01941800008517582,
+     "R": 0.4902323444790987
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "cad_leading_tone",
+     "value": 0.027665097176621245,
+     "R": 0.4900872802881942
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "cad_dominant_tonic_bass",
+     "value": 0.029892554267277927,
+     "R": 0.4898696840018375
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "prior",
+     "value": 0.09478382575413523,
+     "R": 0.4897971519063853
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "declared_mode",
+     "value": 1.1,
+     "R": 0.48925316119049345
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "emission",
+     "value": 0.07223547387944512,
+     "R": 0.4887825161976598
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "bass",
+     "value": 0.022704689537108212,
+     "R": 0.48832922347935404
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "boundary",
+     "value": 0.06398193355604895,
+     "R": 0.4869750132908028
+    },
+    {
+     "stage": 1,
+     "sweep": 2,
+     "coord": "bass",
+     "value": 0.020640626851916553,
+     "R": 0.4860144507273694
+    },
+    {
+     "stage": 2,
+     "sweep": 0,
+     "coord": "emission",
+     "value": 0.06879568940899536,
+     "R": 0.48565197428833795
+    }
+   ]
+  },
+  {
+   "start_index": 19,
+   "start_name": "random17",
+   "start_seed": 20260938,
+   "start_x": [
+    0.06008313418908909,
+    0.03193738752620836,
+    0.6385607496605028,
+    0.5009734622828378,
+    0.2450255933243258,
+    1.0,
+    0.476304117432314,
+    0.6705895972327152,
+    0.2201016781256044,
+    0.17719158808585148,
+    0.7801436767194518,
+    0.7934223035669205,
+    0.5711618975210512
+   ],
+   "x": [
+    0.029865824759301777,
+    0.13970244065343043,
+    0.5771138063322151,
+    0.9960855628145285,
+    0.08203125,
+    0.1366956288092485,
+    0.23675887577034288,
+    1.0,
+    0.1989218994601673,
+    0.14679585183699884,
+    0.0,
+    0.6573173375597735,
+    0.0
+   ],
+   "weights": {
+    "prior": 0.029865824759301777,
+    "declared_mode": 0.13970244065343043,
+    "emission": 0.5771138063322151,
+    "spelling": 0.9960855628145285,
+    "bass": 0.08203125,
+    "boundary": 0.1366956288092485,
+    "chord_trans": 0.23675887577034288,
+    "key_trans": 1.0,
+    "entry": 0.1989218994601673,
+    "cad_leading_tone": 0.14679585183699884,
+    "cad_tritone_pair": 0.0,
+    "cad_dominant_tonic_bass": 0.6573173375597735,
+    "cad_fermata_location": 0.0
+   },
+   "weights_generative_scale": {
+    "prior": 0.07912232958239487,
+    "declared_mode": 0.37010806304296084,
+    "emission": 1.528924419773347,
+    "spelling": 2.6388894607281874,
+    "bass": 0.21732209476432918,
+    "boundary": 0.36214223723218975,
+    "chord_trans": 0.6272357770539702,
+    "key_trans": 2.649259821888965,
+    "entry": 0.5269957959336574,
+    "cad_leading_tone": 0.3889003522917264,
+    "cad_tritone_pair": 0.0,
+    "cad_dominant_tonic_bass": 1.7414044126281343,
+    "cad_fermata_location": 0.0
+   },
+   "R_train": 0.4719128883746716,
+   "train_columns": {
+    "key_local_agree_pct": 78.00094005351073,
+    "key_home_agree_pct": 55.354689420782414,
+    "root_agree_pct": 74.8077711090221,
+    "rn_agree_pct": 61.910960059777764
+   },
+   "train_root_disagree": 0.25192228890977897,
+   "train_key_local_disagree": 0.2199905994648926,
+   "n_evaluations": 358,
+   "n_distinct_points": 358,
+   "seconds": 3750.7,
+   "trace": [
+    {
+     "stage": -1,
+     "sweep": -1,
+     "coord": "start",
+     "R": 0.5494581912294705
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "declared_mode",
+     "value": 0.06387477505241672,
+     "R": 0.5492405002055971
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "emission",
+     "value": 0.9578411244907542,
+     "R": 0.545635352436223
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "spelling",
+     "value": 1.0019469245656756,
+     "R": 0.5425403274565286
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "boundary",
+     "value": 0.49902842929204083,
+     "R": 0.536538786955786
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "chord_trans",
+     "value": 0.23768929558757942,
+     "R": 0.516579628152124
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "key_trans",
+     "value": 1.0039298202198723,
+     "R": 0.5159268392930538
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "cad_leading_tone",
+     "value": 0.2642325333065979,
+     "R": 0.5158905732453277
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "cad_tritone_pair",
+     "value": 0.0,
+     "R": 0.515092720195353
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "cad_dominant_tonic_bass",
+     "value": 0.5258538700478188,
+     "R": 0.5136783443340345
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "cad_fermata_location",
+     "value": 0.0,
+     "R": 0.5106447247595574
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "emission",
+     "value": 0.6348251869654367,
+     "R": 0.5032139577594124
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "bass",
+     "value": 0.0,
+     "R": 0.5025796239911072
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "boundary",
+     "value": 0.24853750692590634,
+     "R": 0.4878841607565012
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "cad_leading_tone",
+     "value": 0.1761550222043986,
+     "R": 0.4874137598301732
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "prior",
+     "value": 0.029865824759301777,
+     "R": 0.48734139045689195
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "declared_mode",
+     "value": 0.12700221877584583,
+     "R": 0.4872328363969701
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "bass",
+     "value": 0.05,
+     "R": 0.48589298207522136
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "boundary",
+     "value": 0.12426875346295317,
+     "R": 0.47674138346589545
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "cad_leading_tone",
+     "value": 0.11743668146959907,
+     "R": 0.4764160038563509
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "declared_mode",
+     "value": 0.13970244065343043,
+     "R": 0.47634369727645215
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "emission",
+     "value": 0.5771138063322151,
+     "R": 0.4759640877319836
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "bass",
+     "value": 0.0625,
+     "R": 0.4748071824536033
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "boundary",
+     "value": 0.1366956288092485,
+     "R": 0.4741925765244638
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "cad_leading_tone",
+     "value": 0.14679585183699884,
+     "R": 0.4732164376958303
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "cad_dominant_tonic_bass",
+     "value": 0.6573173375597735,
+     "R": 0.4729633646661846
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "bass",
+     "value": 0.078125,
+     "R": 0.4725998505555957
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "entry",
+     "value": 0.1989218994601673,
+     "R": 0.47222021356087446
+    },
+    {
+     "stage": 2,
+     "sweep": 0,
+     "coord": "bass",
+     "value": 0.08203125,
+     "R": 0.4719128883746716
+    }
+   ]
+  },
+  {
+   "start_index": 20,
+   "start_name": "random18",
+   "start_seed": 20260939,
+   "start_x": [
+    0.3693177249617241,
+    0.01136110006480494,
+    1.0,
+    0.20791717226216302,
+    0.5333616714920396,
+    0.6293900677274362,
+    0.7220423919252846,
+    0.4818031094044143,
+    0.3509082653335167,
+    0.37930585502200265,
+    0.7306328603128028,
+    0.6673494208839209,
+    0.39623108861339384
+   ],
+   "x": [
+    0.2171000719169159,
+    0.030356906981528722,
+    0.5700275606339931,
+    1.0,
+    0.08375505579511748,
+    0.14014440820075552,
+    0.2572400395896898,
+    0.7724279563865751,
+    0.37505134217694475,
+    0.0625,
+    0.0,
+    0.047619047619047616,
+    0.02697367466746771
+   ],
+   "weights": {
+    "prior": 0.2171000719169159,
+    "declared_mode": 0.030356906981528722,
+    "emission": 0.5700275606339931,
+    "spelling": 1.0,
+    "bass": 0.08375505579511748,
+    "boundary": 0.14014440820075552,
+    "chord_trans": 0.2572400395896898,
+    "key_trans": 0.7724279563865751,
+    "entry": 0.37505134217694475,
+    "cad_leading_tone": 0.0625,
+    "cad_tritone_pair": 0.0,
+    "cad_dominant_tonic_bass": 0.047619047619047616,
+    "cad_fermata_location": 0.02697367466746771
+   },
+   "weights_generative_scale": {
+    "prior": 0.5669884079270939,
+    "declared_mode": 0.0792814770030794,
+    "emission": 1.4887098664901448,
+    "spelling": 2.6116454173450485,
+    "bass": 0.21873850764679742,
+    "boundary": 0.366007501444037,
+    "chord_trans": 0.6718197705520721,
+    "key_trans": 2.0173079325262,
+    "entry": 0.9795011190655275,
+    "cad_leading_tone": 0.16322783858406553,
+    "cad_tritone_pair": 0.0,
+    "cad_dominant_tonic_bass": 0.12436406749262136,
+    "cad_fermata_location": 0.07044567383424827
+   },
+   "R_train": 0.4773707935589625,
+   "train_columns": {
+    "key_local_agree_pct": 77.18216661845531,
+    "key_home_agree_pct": 54.22512293896442,
+    "root_agree_pct": 75.08075402564845,
+    "rn_agree_pct": 62.21736091023045
+   },
+   "train_root_disagree": 0.24919245974351556,
+   "train_key_local_disagree": 0.22817833381544692,
+   "n_evaluations": 393,
+   "n_distinct_points": 393,
+   "seconds": 3979.2,
+   "trace": [
+    {
+     "stage": -1,
+     "sweep": -1,
+     "coord": "start",
+     "R": 0.5927684352952547
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "declared_mode",
+     "value": 0.02272220012960988,
+     "R": 0.5926234657388616
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "emission",
+     "value": 0.6666666666666666,
+     "R": 0.5872895073808315
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "spelling",
+     "value": 0.5691426804240595,
+     "R": 0.5778546921813086
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "bass",
+     "value": 0.3649997833821036,
+     "R": 0.5651241725853988
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "boundary",
+     "value": 0.43071568630103635,
+     "R": 0.5611159409790142
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "chord_trans",
+     "value": 0.4941212140500768,
+     "R": 0.5288250078542256
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "cad_leading_tone",
+     "value": 1.0382939931270323,
+     "R": 0.5283356291838855
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "cad_tritone_pair",
+     "value": 0.4815591762157353,
+     "R": 0.5212456203938625
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "cad_dominant_tonic_bass",
+     "value": 0.5864655238406568,
+     "R": 0.5204134647914552
+    },
+    {
+     "stage": 0,
+     "sweep": 0,
+     "coord": "cad_fermata_location",
+     "value": 0.0,
+     "R": 0.5161619454707913
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "prior",
+     "value": 0.2434168363551235,
+     "R": 0.5160894974522447
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "spelling",
+     "value": 0.8222276410026768,
+     "R": 0.5154736892945978
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "bass",
+     "value": 0.23435866000587682,
+     "R": 0.512831195807067
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "boundary",
+     "value": 0.20741509107832212,
+     "R": 0.5106797404539644
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "chord_trans",
+     "value": 0.3172648063848987,
+     "R": 0.5105661015311791
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "key_trans",
+     "value": 0.9526674246363782,
+     "R": 0.5083912875495025
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "entry",
+     "value": 0.308377580333037,
+     "R": 0.5052588996763754
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "cad_leading_tone",
+     "value": 0.5,
+     "R": 0.500784910399459
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "cad_tritone_pair",
+     "value": 0.0,
+     "R": 0.49170344644622915
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "cad_dominant_tonic_bass",
+     "value": 0.0,
+     "R": 0.49069049514024554
+    },
+    {
+     "stage": 0,
+     "sweep": 1,
+     "coord": "cad_fermata_location",
+     "value": 0.05,
+     "R": 0.49063622989171063
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "spelling",
+     "value": 1.294619118497483,
+     "R": 0.49020352552509106
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "bass",
+     "value": 0.1266795218901152,
+     "R": 0.4890641201861632
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "boundary",
+     "value": 0.11211552656060442,
+     "R": 0.4854351965675995
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "entry",
+     "value": 0.37505134217694475,
+     "R": 0.48324776435992
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "cad_leading_tone",
+     "value": 0.0,
+     "R": 0.4825788801311254
+    },
+    {
+     "stage": 0,
+     "sweep": 2,
+     "coord": "cad_fermata_location",
+     "value": 0.025747598546219174,
+     "R": 0.4822534769927929
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "declared_mode",
+     "value": 0.030356906981528722,
+     "R": 0.4821450092800154
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "emission",
+     "value": 0.5700275606339931,
+     "R": 0.4817278950920837
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "bass",
+     "value": 0.10134361751209216,
+     "R": 0.4806973773020924
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "boundary",
+     "value": 0.14014440820075552,
+     "R": 0.4787267380194774
+    },
+    {
+     "stage": 1,
+     "sweep": 0,
+     "coord": "cad_leading_tone",
+     "value": 0.05,
+     "R": 0.4783651528300067
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "prior",
+     "value": 0.2171000719169159,
+     "R": 0.47829283579211257
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "bass",
+     "value": 0.09213056137462923,
+     "R": 0.4778770128242214
+    },
+    {
+     "stage": 1,
+     "sweep": 1,
+     "coord": "cad_dominant_tonic_bass",
+     "value": 0.05,
+     "R": 0.47769622022948605
+    },
+    {
+     "stage": 1,
+     "sweep": 2,
+     "coord": "bass",
+     "value": 0.08375505579511748,
+     "R": 0.47756966541317136
+    },
+    {
+     "stage": 1,
+     "sweep": 2,
+     "coord": "cad_leading_tone",
+     "value": 0.0625,
+     "R": 0.4775515861536978
+    },
+    {
+     "stage": 1,
+     "sweep": 2,
+     "coord": "cad_fermata_location",
+     "value": 0.028322358400841095,
+     "R": 0.4774792691158037
+    },
+    {
+     "stage": 2,
+     "sweep": 0,
+     "coord": "cad_dominant_tonic_bass",
+     "value": 0.047619047619047616,
+     "R": 0.4774431105968566
+    },
+    {
+     "stage": 2,
+     "sweep": 0,
+     "coord": "cad_fermata_location",
+     "value": 0.02697367466746771,
+     "R": 0.4773707935589625
+    }
+   ]
+  }
+ ],
+ "establishment": {},
+ "wall_seconds": 27542.2,
+ "provenance": {
+  "generator": "tools/joint_estimator/search_direct.py",
+  "instrument_commit": "aef4540c0d01676ac4bad326aa78ea141fc91c23",
+  "note_events_git_hash": "e3d17c325d24e0de1213440043cbf02ac14f3d3e",
+  "fold_artifact": "tools/joint_estimator/fold_assignment.json",
+  "dispatch": "cc_instruction_direct_metric_search.md (Cowork 2026-07-19; the ratified fallback)",
+  "objective": "R(w) = duration-weighted ROOT disagreement + duration-weighted KEY-vs-LOCAL disagreement, pooled over the training-fold complement, on the robust unit (CLAUDE.md block (A)) through the pinned a8/compare_rn chain. User ruling 2026-07-19: the search objective is M2 - the equal-weighted sum of the two primary axes. Roman numeral and key-home are recorded beside it and never enter it.",
+  "method": "coordinate line search on a declared multiplicative grid, with random restarts - the published minimum-error-rate protocol (Och 2003, ACL). The ONE declared approximation to that protocol: Och searches each coordinate line EXACTLY by an upper-envelope sweep over the candidate set; here each line is searched on the declared grid below. Deterministic given the start; strict improvement only.",
+  "grid_stages": [
+   [
+    2.0,
+    1.5
+   ],
+   [
+    1.25,
+    1.1
+   ],
+   [
+    1.05
+   ]
+  ],
+  "max_sweeps_per_stage": 3,
+  "zero_probe": "stage 0 additionally offers 0.0 for every coordinate, so 'the metric rejects this factor' is reachable; a coordinate already at 0 is offered the absolute re-entry grid (0.05, 0.25, 1.0) against the incumbent's unit scale",
+  "bounds": [
+   0.0,
+   5.0
+  ],
+  "bounds_note": "the decode is scale-invariant (established at runtime), so the UPPER bound cannot bind: any ray with non-negative components rescales into the box. The declared box therefore constrains exactly NON-NEGATIVITY, which is the theory-grounded part (each factor is a log-probability of the generative form; a negative weight would assert the counted table actively misleads). Iterates are held at max-component 1.0, so no clip ever fires.",
+  "n_starts": 21,
+  "seed_base": 20260719,
+  "weight_vector": [
+   "prior",
+   "declared_mode",
+   "emission",
+   "spelling",
+   "bass",
+   "boundary",
+   "chord_trans",
+   "key_trans",
+   "entry",
+   "cad_leading_tone",
+   "cad_tritone_pair",
+   "cad_dominant_tonic_bass",
+   "cad_fermata_location"
+  ],
+  "n_weights": 13,
+  "seg_cap_events": 4,
+  "key_prune_topk": 6,
+  "leftover_rule": "option 2a (freq)",
+  "decoder": "probe_decoder.decode_piece's own lattice (fit_weights.build_unit, augment_gt=False), re-decoded by the max-plus recursion in this module; established at runtime to reproduce decode_piece's score AND segmentation exactly",
+  "grading": "probe_run.decode_to_regions -> probe_run.grade_regions -> a8_rebaseline_measure.build_piece_grid vs dcml_parser.load_wir_regions - the pinned chain, unmodified",
+  "firewall": "the objective is a TRAINING-fold error quantity, lawfully consulted by the optimizer per the ratified fallback; this module never constructs a held-out stem list (grade_stems is its only grading call site and training_stems its only stem source). Held-out evaluation is search_run.py, once per fold, downstream, feeding nothing back."
+ }
+}

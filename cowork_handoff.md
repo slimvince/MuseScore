@@ -181,13 +181,19 @@ Cowork premise error owned:** (a) the corpus holds ZERO Neapolitan tokens (the d
 exactly 2 augmented-sixth tokens, the family collapsed to Italian pitch content (facts only);
 (b) ★ the tritone-pair feature's approach window is under-specified — currently single-event, the
 published form is a FOUR-BEAT approach window — a step-2 design decision to present with
-alternatives; (c) the low tritone fire count (589) reflects that narrow window. **Step 2 is DISPATCHED: `cc_instruction_weight_fit.md`** — the weight fit under the OI-176
-held-out folds and OI-177 capacity budget, both step-2 rulings in (2026-07-19): **W1** (the
-tritone-pair approach window widened to the published four-beat form) and **C1** (the
-weight-vector cap amended ≤ 12 → ≤ 14 by ratification, recorded on the gates document — the four
-cadence features keep their own fitted weights). Predictions written in the dispatch (key-local
-77–85, key-home 62–75, root 72–78, RN 60–68); a band miss at this fit event is a
-STOP-for-review. Only after that: the production-module build under
+alternatives; (c) the low tritone fire count (589) reflects that narrow window. Step 2's likelihood fit ran (`aef4540c0d`) and STOPPED itself correctly: the fit converged
+cleanly and made the decode WORSE on two axes (key-local inverted −4.45, the mechanism
+established: the path-likelihood objective rewards never-modulating — the proxy→target link was
+never a ledger premise, now refuted; rows OI-187…OI-190; the four-beat window ruling itself
+worked, tritone fires 589 → 9,084 with guards intact). **The user then ruled (2026-07-19):
+option 1 — the ratified direct-metric fallback — and ★R = M2** (the search minimizes the
+equal-weighted sum of duration-weighted root + key-vs-local disagreement on training folds).
+**The ACTIVE dispatch is `cc_instruction_direct_metric_weight_fit.md`** — 13 weights in [0,5], 21
+starts per fold (identity + likelihood + 19 seeded random), selection on the training objective
+only, held-out once, stability record in place of a convexity proof; predictions: key-local
+74–82, key-home 57–68, root 72–77 (the hard-stop axis inside the objective so it cannot be traded
+away), RN 59–66; the OI-187 modulation-rate check and the OI-190 cadence-weight watch are report
+items; a band miss is a STOP-for-review. Only after that: the production-module build under
 the parallel-build sanction, of the complete algorithm, with the probe outputs as parity oracle. OI-179 (the ground-truth ceiling): the literature half is ANSWERED — no
 published inter-annotator agreement figure exists for classical symbolic Roman-numeral analysis
 anywhere in the field, so the 87-stem BCMH measurement would be novel; BCMH is inspected at the files

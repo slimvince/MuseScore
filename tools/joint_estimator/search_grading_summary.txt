@@ -1,0 +1,70 @@
+THE DIRECT-METRIC WEIGHT SEARCH — the ratified fallback (Task 2 measurement)
+instrument aef4540c0d01676ac4bad326aa78ea141fc91c23   corpus e3d17c325d24e0de1213440043cbf02ac14f3d3e
+
+HEADLINE — pooled 5-fold CV (each piece decoded once by its fold's complement model)
+arm                           key-LOCAL     key-HOME         root           RN
+direct_cv                         77.60        56.46        74.19        61.77
+identity_cv                       74.68        53.20        72.70        60.08
+likelihood_cv                     70.22        56.34        73.04        57.99
+all326_publishable                77.41        56.16        74.86        62.25
+
+95 % piece-bootstrap intervals (direct-search arm) and PAIRED deltas
+  key_local_agree_pct    [ 75.72, 79.46]   vs identity  +2.92 [ +2.06, +3.77] *   vs likelihood  +7.37 [ +6.16, +8.65] *
+  key_home_agree_pct     [ 53.76, 59.14]   vs identity  +3.27 [ +2.40, +4.17] *   vs likelihood  +0.11 [ -1.29, +1.60]
+  root_agree_pct         [ 72.11, 76.43]   vs identity  +1.50 [ +0.82, +2.17] *   vs likelihood  +1.15 [ +0.45, +1.90] *
+  rn_agree_pct           [ 59.73, 64.02]   vs identity  +1.68 [ +0.93, +2.46] *   vs likelihood  +3.77 [ +2.97, +4.60] *
+  (* = the interval excludes zero; a difference inside its interval is not a finding, #24)
+
+PREDICTION VERDICTS (bands written by Cowork before measuring, #17b)
+  key_local_agree_pct    band  74.0- 82.0  measured  77.60   HOLDS
+  key_home_agree_pct     band  57.0- 68.0  measured  56.46   *** MISSED ***
+  root_agree_pct         band  72.0- 77.0  measured  74.19   HOLDS
+  rn_agree_pct           band  59.0- 66.0  measured  61.77   HOLDS
+
+STABILITY — the converged optima per fold (the protocol's substitute for a convexity proof)
+fold      starts  R_train min        max    spread  near-best   selected start  id.rank  heldout keyL spread
+fold0         21     0.469963   0.502070  0.032107          1         random05        5  4.28 pp
+fold1         21     0.478632   0.517433  0.038801          1   likelihood_fit       13  3.38 pp
+fold2         21     0.471913   0.490907  0.018994          1         random17       19  3.88 pp
+fold3         21     0.462692   0.504311  0.041619          2         random06        5  5.07 pp
+fold4         21     0.484699   0.542887  0.058188          2         random07       14  5.42 pp
+  the selected optimum came from a NAMED start (identity / likelihood) in 1 of 5 folds, from a seeded-random start in 4.
+  'id.rank' = the identity start's rank among the 21 converged optima (1 = best). If the
+  identity start keeps ranking first, the search is finding the basin it STARTED in and
+  the 19 random starts are landing in worse local optima — read the headline accordingly.
+
+THE SELECTED WEIGHTS (generative scale: the nine generative weights average 1.0, so the
+vector reads directly against the identity ablation where each of them IS 1.0)
+weight                       mean       sd      min      max  folds@0
+prior                       1.390    0.779    0.079    2.482        0
+declared_mode               2.941    1.316    0.370    3.863        0
+emission                    0.792    0.373    0.502    1.529        0
+spelling                    1.414    0.658    0.647    2.639        0
+bass                        0.136    0.052    0.069    0.217        0
+boundary                    0.210    0.081    0.130    0.362        0
+chord_trans                 0.357    0.140    0.233    0.627        0
+key_trans                   1.355    0.661    0.776    2.649        0
+entry                       0.405    0.098    0.239    0.527        0
+cad_leading_tone            0.202    0.149    0.000    0.389        1
+cad_tritone_pair            0.000    0.000    0.000    0.000        5
+cad_dominant_tonic_bass     0.610    0.626    0.090    1.741        0
+cad_fermata_location        0.000    0.000    0.000    0.000        5
+
+MODULATION RATE (the OI-187 mechanism was a decode that stopped modulating)
+arm                          mean key changes/piece    total   pieces with 0
+ground_truth                                   5.28     1720               4
+identity_cv                                    7.28     2372               4
+likelihood_cv                                  4.05     1321              43
+direct_cv                                      5.52     1800               9
+all326_publishable                             6.07     1979               4
+
+ESTABLISHMENT
+  identity_cv      reproduces committed fit_grading.json on 326 pieces: PASS
+  likelihood_cv    reproduces committed fit_grading.json on 326 pieces: PASS
+  cached-lattice decode == pinned decode_piece at the SELECTED weights: 20 checks, 0 mismatches (PASS)
+  cached-lattice decode == pinned decode_piece at identity + random weights: 20 checks, 0 mismatches (PASS)
+  scale invariance (the decode is a function of the RAY of w): 60 checks, 0 path changes (PASS)
+
+PRUNE COST at the selected weights (OI-188): key_local_agree_pct +2.15 pp, key_home_agree_pct +3.22 pp, root_agree_pct -0.58 pp, rn_agree_pct +1.19 pp
+TIMING: direct_cv mean 3.69s, identity_cv mean 3.44s, likelihood_cv mean 3.53s, all326 mean 3.04s
+wall 5416s
