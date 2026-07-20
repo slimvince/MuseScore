@@ -3,6 +3,13 @@
 Cowork dispatch 2026-07-19, Task 1). READ-ONLY / FIT-LAYER-OWNED. No src/ change, no corpus mutation,
 no gate change, NO DECODING, NO EVALUATION.
 
+★ STEP-2 ADDITION (the weight fit): the same counted population is ALSO tabulated CROSSED with the beat
+class — `exact_tick_by_beat_class` — which is the form the ratified factorization's boundary factor
+actually names (§3 items 7+8: the boundary probability conditioned on beat-strength class AND the
+fermata). That crossed table is what the decoder's boundary factor consumes; a cell below the count
+threshold pools to the beat-class-only cell in `note_tables_*.json`. The step-1 marginal cells are
+untouched and still reported (they reproduce byte-identically).
+
 WHAT IT PRODUCES — a SMALL ADDENDUM artifact beside the boundary table (the dispatch's wording): the
 ONE counted addition the ratified boundary factor names, **P(segment boundary | fermata at or adjacent
 to the event)**. It does NOT re-count any existing table — the existing note-side tables
@@ -32,7 +39,7 @@ from __future__ import annotations
 
 import json
 import sys
-from collections import Counter
+from collections import Counter, defaultdict
 from pathlib import Path
 
 _HERE = Path(__file__).resolve().parent
@@ -55,16 +62,29 @@ N_ONSET, N_DUR, N_MEAS, N_FERM = 0, 1, 6, 12
 EV_START, EV_END, EV_MEAS, EV_MC, EV_FERM = 0, 1, 2, 4, 5
 
 
-def _ferm_ctx_ticks(piece: dict):
+def _ferm_ctx_ticks(notes):
     """Ticks where a (non-anacrusis) fermata note ENDS (offset) and BEGINS (onset) — the 'adjacent'
     part of the covariate. Measure-0 (anacrusis) notes are excluded, matching the counting population."""
     offs, ons = set(), set()
-    for n in piece["notes"]:
-        if n[N_MEAS] == 0 or not n[N_FERM]:
+    for n in notes:
+        if n[N_MEAS] == 0 or len(n) <= N_FERM or not n[N_FERM]:
             continue
         ons.add(n[N_ONSET])
         offs.add(n[N_ONSET] + n[N_DUR])
     return offs, ons
+
+
+def event_ferm_ctx(ev, ferm_off, ferm_on):
+    """THE fermata boundary-covariate rule for one event (the single definition, #6): the event's own
+    fermata flag, OR a fermata note ends at its start tick, OR a fermata note begins at its end tick."""
+    return bool(len(ev) > EV_FERM and ev[EV_FERM]) or (ev[EV_START] in ferm_off) or (ev[EV_END] in ferm_on)
+
+
+def event_ferm_ctx_flags(events, notes):
+    """The per-event fermata-context flags for a whole piece — the SAME rule the counted cells were fit
+    under, so the decoder's boundary factor reads its covariate from this one definition."""
+    ferm_off, ferm_on = _ferm_ctx_ticks(notes)
+    return [event_ferm_ctx(ev, ferm_off, ferm_on) for ev in events]
 
 
 def per_stem(stem: str, piece: dict):
@@ -98,11 +118,15 @@ def per_stem(stem: str, piece: dict):
                 first_event_of_seg[seg_start] = start
     robust_boundary_ticks = set(first_event_of_seg.values())
 
-    ferm_off, ferm_on = _ferm_ctx_ticks(piece)
+    ferm_off, ferm_on = _ferm_ctx_ticks(piece["notes"])
 
-    # cell -> [boundaries, events], both boundary variants; keyed by fermata context (True/False)
+    # cell -> [boundaries, events], both boundary variants; keyed by fermata context (True/False), and
+    # (step 2, the weight fit) CROSSED with the beat class — the form the ratified factorization's
+    # boundary factor names (§3 items 7+8: boundary probability conditioned on beat-strength class AND
+    # the fermata). The marginal (fermata-only) cells stay exactly as step 1 counted them.
     exact = {True: [0, 0], False: [0, 0]}
     robust = {True: [0, 0], False: [0, 0]}
+    exact_bc = defaultdict(lambda: [0, 0])          # (beat_class, ferm_ctx) -> [boundaries, events]
     for ev in piece["events"]:
         start, end, measure = ev[EV_START], ev[EV_END], ev[EV_MEAS]
         if measure == 0:
@@ -110,25 +134,34 @@ def per_stem(stem: str, piece: dict):
         si = gnt._seg_idx_for_tick(segs, starts, start)
         if si >= 0 and si in excluded_idx:
             continue                                    # OI-184 interim: left-out span event dropped
-        ferm_ctx = bool(ev[EV_FERM]) or (start in ferm_off) or (end in ferm_on)
+        ferm_ctx = event_ferm_ctx(ev, ferm_off, ferm_on)
+        bc = gnt._MC_INV[ev[EV_MC]]
         exact[ferm_ctx][1] += 1
+        exact_bc[(bc, ferm_ctx)][1] += 1
         if start in gt_start_set:
             exact[ferm_ctx][0] += 1
+            exact_bc[(bc, ferm_ctx)][0] += 1
         robust[ferm_ctx][1] += 1
         if start in robust_boundary_ticks:
             robust[ferm_ctx][0] += 1
-    return {"exact": exact, "robust": robust}, None
+    return {"exact": exact, "robust": robust,
+            "exact_bc": {f"{bc}|{int(fc)}": v for (bc, fc), v in exact_bc.items()}}, None
 
 
 def _fit(stem_counts):
-    """Aggregate the 2-cell Bernoulli table with the reliability flag (count>=THRESHOLD)."""
+    """Aggregate the 2-cell Bernoulli table with the reliability flag (count>=THRESHOLD), plus the
+    beat-class-CROSSED table the decoder's boundary factor consumes (step 2)."""
     exact = {True: [0, 0], False: [0, 0]}
     robust = {True: [0, 0], False: [0, 0]}
+    exact_bc = defaultdict(lambda: [0, 0])
     for sc in stem_counts:
         for cell in (True, False):
             for k in (0, 1):
                 exact[cell][k] += sc["exact"][cell][k]
                 robust[cell][k] += sc["robust"][cell][k]
+        for key, v in sc.get("exact_bc", {}).items():
+            exact_bc[key][0] += v[0]
+            exact_bc[key][1] += v[1]
 
     def cells(tab):
         out = {}
@@ -143,7 +176,19 @@ def _fit(stem_counts):
         out["_marginal"] = {"boundaries": tot_b, "events": tot_e,
                             "prob": (tot_b / tot_e if tot_e else None)}
         return out
-    return {"exact_tick": cells(exact), "robust_first_event": cells(robust)}
+
+    # the crossed table, keyed beat_class -> {fermata cell -> row}. A cell is `reliable` iff its own
+    # event count >= THRESHOLD; the decoder's declared pooling parent for an unreliable cell is the
+    # beat-class-only cell of note_tables_*.json (the same count>=20 rule as every other table).
+    bc_out = {}
+    for key, (b, e) in sorted(exact_bc.items()):
+        bc, fc = key.rsplit("|", 1)
+        name = "fermata_at_or_adjacent" if fc == "1" else "no_fermata_context"
+        bc_out.setdefault(bc, {})[name] = {"boundaries": b, "events": e,
+                                           "prob": (b / e if e else None),
+                                           "reliable": e >= glt.THRESHOLD}
+    return {"exact_tick": cells(exact), "robust_first_event": cells(robust),
+            "exact_tick_by_beat_class": bc_out}
 
 
 def main():
@@ -189,6 +234,11 @@ def main():
                                "GT segment — the same dual the note-side boundary table reports."),
         "relation_to_existing_tables": ("ADDENDUM ONLY — note_tables_*.json are NOT re-counted or "
                                         "modified; this is a separate covariate on the same events."),
+        "crossed_table": ("exact_tick_by_beat_class (added at the weight fit, step 2): P(boundary | "
+                          "beat class x fermata context) — the form the ratified factorization's "
+                          "boundary factor names (§3 items 7+8). A cell is used by the decoder iff its "
+                          "own training count >= threshold; the declared pooling parent is the "
+                          "beat-class-only cell in note_tables_*.json."),
     }
     obj = {"provenance": prov, "fits": fits}
     OUT_JSON.write_text(json.dumps(obj, indent=1, sort_keys=True) + "\n", encoding="utf-8")
@@ -209,6 +259,16 @@ def main():
             rel = "" if key == "_marginal" else ("  [reliable]" if cc["reliable"] else "  [UNRELIABLE <20]")
             L.append(f"  {key:24s} P={p}  ({cc['boundaries']}/{cc['events']}){rel}")
         L.append("")
+    L.append("P(boundary | beat class x fermata context) — the CROSSED table the decoder consumes")
+    L.append("  (step 2; unreliable cell pools to the beat-class-only cell of note_tables_*.json):")
+    for bc in sorted(a["exact_tick_by_beat_class"]):
+        for name in ("fermata_at_or_adjacent", "no_fermata_context"):
+            cc = a["exact_tick_by_beat_class"][bc].get(name)
+            if cc is None:
+                continue
+            rel = "reliable" if cc["reliable"] else "UNRELIABLE <20 -> pooled"
+            L.append(f"  {bc:13s} {name:24s} P={cc['prob']:.4f}  ({cc['boundaries']}/{cc['events']})  [{rel}]")
+    L.append("")
     # per-fold P(boundary|fermata) for the exact variant (the headline cell), reproducibility view
     L.append("per training fold — P(boundary | fermata at/adjacent), exact_tick:")
     for i in range(glt.N_FOLDS):

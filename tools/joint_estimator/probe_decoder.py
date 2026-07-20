@@ -24,6 +24,20 @@ scheme, NO second chord-template. It REUSES the fit-layer generators' own primit
                       _cof_distance, _key_change_kind, read_xml_header, _PC_TO_FIFTHS, pool sigils)
   - compare_rn / compare_analyses / a8_rebaseline_measure  (GRADING ONLY — Task 3, read-only)
 
+★ ALGORITHM-COMPLETION STEP 2 (the weight fit, Cowork dispatch 2026-07-19) added three things here:
+  (a) ★R1 (user ruling): the cadence TRITONE-PAIR feature's approach window is the LAST FOUR BEATS
+      before the boundary event (Bigo's published form), replacing the single-event approach the probe
+      declared as an under-specification. Window = 4 quarter-beats = 4·480 ticks, strictly before the
+      arrival event's start, clipped at the piece start, voice-agnostic, overlap membership.
+  (b) ★R2 (user ruling C1): the ratified score form's factor weights are now an explicit 13-element
+      vector on the Adapter (`WEIGHT_NAMES`), applied at the factor call sites. The IDENTITY setting
+      (every generative weight 1.0, every cadence weight 0.0 — a cadence feature is an indicator, not a
+      log-probability, so its generative-baseline value is zero) reproduces the committed step-1 probe
+      decode exactly; that setting is the mandated generative-baseline ablation arm.
+  (c) the boundary factor now carries the FERMATA cells the ratified factorization §3 item 7/8 names:
+      P(boundary | beat class × fermata context), counted under the same protocol in
+      gen_fermata_boundary.py and backing off to the beat-class-only cell below the count threshold.
+
 The ratified score form (§2, with the 2026-07-19 factor-granularity amendment) at identity weights:
 
   Score(S,h) =  logP_prior(k1 | signature, declared mode)              [once, initial state only]
@@ -65,6 +79,7 @@ sys.path.insert(0, str(_HERE))
 import normalize as norm            # noqa: E402  the OI-186a class (reused)
 import gen_note_tables as gnt       # noqa: E402  note-side primitives (reused)
 import gen_label_tables as glt      # noqa: E402  label-side table keying (reused)
+import gen_fermata_boundary as gfb  # noqa: E402  the ONE fermata boundary-covariate rule (reused)
 # FIREWALL: the decoder imports ONLY the fit-layer generators above — never the grading chain
 # (compare_rn / compare_analyses / a8_rebaseline_measure). The grade is downstream, in probe_run.py,
 # and feeds no value back here (§ the ratified fit-firewall).
@@ -76,6 +91,7 @@ LOG0_FLOOR = math.log(1e-9)         # a defensive floor for a would-be zero prob
 TABLES_ALL = _HERE / "tables_all.json"
 NOTE_TABLES_ALL = _HERE / "note_tables_all.json"
 FACTOR_PRESENCE_ALL = _HERE / "factor_presence_all.json"
+FERMATA_BOUNDARY = _HERE / "fermata_boundary_addendum.json"
 NOTE_EVENTS = _HERE / "note_events" / "note_events.json"
 FOLD_ARTIFACT = _HERE / "fold_assignment.json"
 WIR_DIR = str(_ROOT / "tools" / "dcml" / "when_in_rome")
@@ -154,10 +170,49 @@ def _first_bucket(dist: dict, outcome, parent_fn) -> Optional[str]:
 
 # The ratified cadence-evidence features (factorization §3.9; the Bigo feature forms + the fermata
 # cadence-location prior §3.8). Each is a boolean fire toward a candidate key at a candidate boundary
-# site; the score is Σ weight[f]·fired[f]. In THIS dispatch all weights are 0 (wired but WEIGHTLESS) —
-# the features compute and are logged, but move no score, so the Task-3 measurement isolates the
-# vocabulary change alone. The weight fit is a later dispatch.
+# site; the score is Σ weight[f]·fired[f]. Each feature has its own FITTED weight since step 2 (the
+# ratified §3.9 form; user ruling R2/C1). At the IDENTITY setting every cadence weight is 0, so the
+# factor is inert and the features are only logged — that setting is the generative-baseline arm.
 CADENCE_FEATURES = ("leading_tone", "tritone_pair", "dominant_tonic_bass", "fermata_location")
+
+# ★R1 (user ruling 2026-07-19): the tritone-pair feature's approach window — the LAST FOUR BEATS
+# strictly before the boundary (arrival) event, within the piece, voice-agnostic, both degrees sounding
+# anywhere in the window (overlap membership). A "beat" is the quarter-beat, the corpus-wide convention
+# of these instruments (gen_note_events: `beat` is the 1-indexed quarter-beat; TICKS_PER_QUARTER=480).
+CADENCE_APPROACH_BEATS = 4
+TICKS_PER_QUARTER = 480              # VALIDATED against the artifact's own provenance in load_pieces()
+CADENCE_APPROACH_TICKS = CADENCE_APPROACH_BEATS * TICKS_PER_QUARTER
+
+# ★R2 (user ruling C1, 2026-07-19: the capacity cap amended ≤12 → ≤14): THE WEIGHT VECTOR of the
+# ratified log-linear score form (§2). Thirteen weights — nine generative-factor weights over frozen
+# table log-probabilities, plus the four cadence-evidence feature weights the ratified factorization
+# §3.9 gives their own fitted strengths:
+#   prior          the signature prior (the declared-mode-agnostic component of factor 10)
+#   declared_mode  the declared-mode INCREMENT over that component (the "declared-mode strength")
+#   emission       pitch emission per tone, INCLUDING the missing-template-tone (presence) penalty
+#   spelling       spelled-degree emission per tone
+#   bass           bass chord-factor per event
+#   boundary       segmentation boundary per event, including the fermata cells
+#   chord_trans    same-key chord transition per boundary
+#   key_trans      key transition per boundary (stay cell included)
+#   entry          entry chord at the initial segment and at a key change
+#   cad_*          the four cadence-evidence features (indicators, one weight each)
+WEIGHT_NAMES = ("prior", "declared_mode", "emission", "spelling", "bass", "boundary",
+                "chord_trans", "key_trans", "entry",
+                "cad_leading_tone", "cad_tritone_pair", "cad_dominant_tonic_bass",
+                "cad_fermata_location")
+GENERATIVE_WEIGHTS = WEIGHT_NAMES[:9]
+CADENCE_WEIGHT_OF = {f: "cad_" + f for f in CADENCE_FEATURES}
+
+
+def identity_weights():
+    """The mandated generative-baseline setting: every generative factor weight 1.0; every cadence
+    feature weight 0.0. A cadence feature is a boolean INDICATOR, not a log-probability, so the
+    generative product corresponds to giving it no weight — this is exactly the committed step-1
+    'wired but weightless' decode, and it is the ablation arm the fit is reported against."""
+    w = {n: 1.0 for n in GENERATIVE_WEIGHTS}
+    w.update({CADENCE_WEIGHT_OF[f]: 0.0 for f in CADENCE_FEATURES})
+    return w
 
 # Chromatic classes to ensure in the decode vocabulary (Task 3). The Neapolitan (♭II) has 0 GT tokens
 # in this corpus and no fitted table row, so it must be added explicitly (the Italian aug6 already
@@ -174,6 +229,11 @@ class Adapter:
 
     cadence_on = False
     name = "abstract"
+    # ★R2: the 13-element weight vector (WEIGHT_NAMES). The factor methods below always return the RAW
+    # table log-probability — the weights are applied at the call sites (score_segment_content and the
+    # Viterbi's transition arithmetic), so the fit can read the unweighted factor values as its feature
+    # functions from the SAME methods the decode uses (#6: one path, no shadow scorer).
+    w = None                          # set in __init__ of each concrete adapter
 
     # each returns a log-probability (a nat); NEG_INF marks an impossible/unmappable candidate.
     def prior_logp(self, tonic, is_major, sig_fifths, declared_mode): raise NotImplementedError
@@ -184,11 +244,26 @@ class Adapter:
     def spelling_logp(self, sbin, is_major): raise NotImplementedError
     def bass_logp(self, role, family, degree_base, quality, is_major): raise NotImplementedError
     def factor_absent_logp(self, role, family): raise NotImplementedError
-    def boundary_logp(self, beat_class, is_boundary): raise NotImplementedError
+    def boundary_logp(self, beat_class, is_boundary, ferm_ctx=False): raise NotImplementedError
+
+    def weights(self):
+        return self.w if self.w is not None else identity_weights()
+
+    def prior_terms(self, tonic, is_major, sig_fifths, declared_mode):
+        """The signature/declared-mode prior split into its TWO fitted features (★R2):
+          (a) the signature component — the same table read with NO declared mode;
+          (b) the declared-mode INCREMENT — how much the notated <mode> shifts that reading.
+        Their identity-weighted sum is exactly prior_logp(...), so the generative baseline is unchanged;
+        separating them is what makes the "declared-mode strength" a measurable fitted quantity (the
+        ratified §5a decision 5: a weak fitted prior whose influence rate is published at every fit)."""
+        sig_only = self.prior_logp(tonic, is_major, sig_fifths, "")
+        full = self.prior_logp(tonic, is_major, sig_fifths, declared_mode)
+        return sig_only, full - sig_only
 
     def cadence_weights(self):
-        """Per-feature weights (a nat per firing). Base: all zero (the wired-weightless default)."""
-        return {f: 0.0 for f in CADENCE_FEATURES}
+        """Per-feature weights (a nat per firing), read off the weight vector."""
+        wv = self.weights()
+        return {f: wv.get(CADENCE_WEIGHT_OF[f], 0.0) for f in CADENCE_FEATURES}
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -197,17 +272,22 @@ class Adapter:
 
 class FittedAdapter(Adapter):
     name = "fitted"
-    cadence_on = True         # WIRED BUT WEIGHTLESS: cadence_weights() is all-zero (see below), so the
-                              # factor is inert (scores 0 → the decode is byte-identical to the
-                              # cadence-free probe baseline); fires are logged on the committed path.
-    # cadence_weights() inherits the base all-zero dict — no fitted cadence table exists yet (the
-    # weight fit is a later dispatch). The features compute; they move no score.
+    cadence_on = True         # the cadence factor is scored iff its weights are nonzero. At the
+                              # IDENTITY setting they are all 0 → the factor is inert and the decode is
+                              # byte-identical to the committed step-1 baseline; the fires are logged on
+                              # the committed path either way (cadence_report).
 
-    def __init__(self, leftover_mode="freq"):
+    def __init__(self, leftover_mode="freq", table_set="all", weights=None):
+        """`table_set` selects the FROZEN generative tables: "all" (all-326) or "fold{i}" (fit on the
+        complement of fold i — the held-out protocol's training tables, OI-176). `weights` is the
+        ★R2 weight vector (default: the identity/generative-baseline setting)."""
         self.leftover_mode = leftover_mode
-        self.tables = json.loads(TABLES_ALL.read_text(encoding="utf-8"))
-        self.ntab = json.loads(NOTE_TABLES_ALL.read_text(encoding="utf-8"))
-        self.fpres = json.loads(FACTOR_PRESENCE_ALL.read_text(encoding="utf-8"))
+        self.table_set = table_set
+        self.w = dict(weights) if weights is not None else identity_weights()
+        suffix = "all" if table_set == "all" else table_set
+        self.tables = json.loads((_HERE / f"tables_{suffix}.json").read_text(encoding="utf-8"))
+        self.ntab = json.loads((_HERE / f"note_tables_{suffix}.json").read_text(encoding="utf-8"))
+        self.fpres = json.loads((_HERE / f"factor_presence_{suffix}.json").read_text(encoding="utf-8"))
         self.corpus_git_hash = self.tables["provenance"]["corpus_git_hash"]
 
         # table 1: per mode, a display-key -> row map + a level-key -> dist back-off map.
@@ -236,6 +316,12 @@ class FittedAdapter(Adapter):
             self.emis_levels.setdefault(row["context_used"], row["dist"])
         self.spell = self.ntab["spelling_position_by_mode"]
         self.boundary = self.ntab["event_boundary_by_beat_class"]
+        # the FERMATA cells of the boundary factor (factorization §3 items 7+8; counted in step 1 and
+        # crossed with the beat class in step 2 under the same protocol). A crossed cell is used iff its
+        # own training count is reliable (count >= threshold); otherwise the beat-class-only cell above
+        # is the declared pooling parent. Fermata context per event is gfb's ONE rule (#6).
+        fadd = json.loads(FERMATA_BOUNDARY.read_text(encoding="utf-8"))
+        self.ferm_boundary = fadd["fits"][suffix]["exact_tick_by_beat_class"]
 
         # factor-presence (PRIMARY mode 'overlap'): P(absent | role,family) — the missing-tone basis.
         self.fp = self.fpres["factor_presence_table"][self.fpres["primary_mode"]]
@@ -247,6 +333,11 @@ class FittedAdapter(Adapter):
         self._apportion_cache = {}       # (id(dist), bucket, mode) -> (denom_mass, member_count)
         # factor memoization (pure functions of class/key args — the decode calls each many times)
         self._ct_cache, self._entry_cache, self._kt_cache = {}, {}, {}
+        # The two Katz-backed caches store (log-probability, PROVENANCE) — provenance being "cell" for a
+        # stored exact cell and "leftover:<bucket>" when the ratified below-threshold rule apportioned a
+        # pooled bucket's reserved mass. The weight fit reads it to report how many ground-truth
+        # transitions route through leftover mass (dispatch Task 1 establishment). It is computed by the
+        # SAME query that produces the value — no second lookup path, and no value is affected.
 
     # ---- the mode class marginal (lazy; used only by the leftover rule) ----
     def mode_marginal(self, mode):
@@ -268,7 +359,9 @@ class FittedAdapter(Adapter):
 
     # ---- the ratified leftover apportionment over a stored Katz dist ----
     def _katz_query(self, dist, outcome_cls, parent_fn, mode, is_class=True):
-        """P(outcome_cls | ...) from a stored Katz dist with the ratified below-threshold rule (§5).
+        """(P(outcome_cls | ...), provenance) from a stored Katz dist with the ratified below-threshold
+        rule (§5). Provenance is "cell" for a stored exact cell and "leftover:<bucket>" when the rule
+        apportioned a pooled bucket's reserved mass — computed by this same query, never a second lookup.
         is_class=True: the outcome space is chord CLASSES (table1 normal rows, table3) — option 2a
         apportions the first-bucket mass by the outcome's class marginal in the mode. is_class=False:
         a non-class categorical outcome space (the applied-relation resolve/elsewhere cells) — the
@@ -276,20 +369,21 @@ class FittedAdapter(Adapter):
         directly (the standard assign-reserved-mass back-off)."""
         ck = outcome_cls.key() if isinstance(outcome_cls, norm.LabelClass) else str(outcome_cls)
         if ck in dist:
-            return dist[ck]
+            return dist[ck], "cell"
         bucket = _first_bucket(dist, outcome_cls, parent_fn)
         if bucket is None:
-            return None
+            return None, "unavailable"
         mass = dist[bucket]
         if mass <= 0.0:
-            return None
+            return None, "unavailable"
+        prov = "leftover:" + bucket
         if not is_class:
-            return mass
+            return mass, prov
         denom, count = self._apportion(dist, bucket, parent_fn, mode)
         if self.leftover_mode == "even":
-            return mass / max(1, count)
+            return mass / max(1, count), prov
         marg = self.mode_marginal(mode)          # option 2a (ratified): class-marginal apportionment
-        return mass * (marg.get(ck, 0) + glt.ALPHA) / denom if denom > 0 else mass
+        return (mass * (marg.get(ck, 0) + glt.ALPHA) / denom if denom > 0 else mass), prov
 
     def _apportion(self, dist, bucket, parent_fn, mode):
         """(marginal-mass, member-count) of the vocabulary classes that back off into `bucket`,
@@ -330,14 +424,20 @@ class FittedAdapter(Adapter):
         return _safe_log(base / residual_keys if base > 0 else 1e-6)
 
     # ---- factor 6: entry chord (initial segment + at a key change) ----
-    def entry_logp(self, cls, is_major):
+    def _entry(self, cls, is_major):
         ck = (cls.key(), is_major)
         v = self._entry_cache.get(ck)
         if v is None:
-            p = self._katz_query(self.t3, cls, glt._t3_entry_parent, mode_name(is_major))
-            v = _safe_log(p) if p is not None else LOG0_FLOOR
+            p, prov = self._katz_query(self.t3, cls, glt._t3_entry_parent, mode_name(is_major))
+            v = (_safe_log(p) if p is not None else LOG0_FLOOR, prov)
             self._entry_cache[ck] = v
         return v
+
+    def entry_logp(self, cls, is_major):
+        return self._entry(cls, is_major)[0]
+
+    def entry_prov(self, cls, is_major):
+        return self._entry(cls, is_major)[1]
 
     # ---- factor 5: key transition (every boundary; stay-cell if no change) ----
     def key_trans_logp(self, k_prev, k):
@@ -369,13 +469,19 @@ class FittedAdapter(Adapter):
         return _safe_log(self.t2.get("BASE", 1e-6))
 
     # ---- factor 4: same-key chord transition (with the applied-relation override) ----
-    def chord_trans_logp(self, prev_cls, cls, is_major):
+    def _chord_trans(self, prev_cls, cls, is_major):
         ck = (prev_cls.key(), cls.key(), is_major)
         v = self._ct_cache.get(ck)
         if v is None:
             v = self._compute_chord_trans(prev_cls, cls, is_major)
             self._ct_cache[ck] = v
         return v
+
+    def chord_trans_logp(self, prev_cls, cls, is_major):
+        return self._chord_trans(prev_cls, cls, is_major)[0]
+
+    def chord_trans_prov(self, prev_cls, cls, is_major):
+        return self._chord_trans(prev_cls, cls, is_major)[1]
 
     def _compute_chord_trans(self, prev_cls, cls, is_major):
         mode = mode_name(is_major)
@@ -390,10 +496,11 @@ class FittedAdapter(Adapter):
         # applied-relation row (option 1a): score the outcome by its RELATION to the target.
         if str(row.get("context_used", "")).startswith(glt._REL):
             rel_cell = glt._relation_cell(prev_cls, cls)
-            p = self._katz_query(row["dist"], rel_cell, glt._applied_rel_parent, mode, is_class=False)
-            return _safe_log(p) if p is not None else LOG0_FLOOR
-        p = self._katz_query(row["dist"], cls, glt._t1_outcome_parent, mode)
-        return _safe_log(p) if p is not None else LOG0_FLOOR
+            p, prov = self._katz_query(row["dist"], rel_cell, glt._applied_rel_parent, mode,
+                                       is_class=False)
+            return (_safe_log(p) if p is not None else LOG0_FLOOR), prov
+        p, prov = self._katz_query(row["dist"], cls, glt._t1_outcome_parent, mode)
+        return (_safe_log(p) if p is not None else LOG0_FLOOR), prov
 
     # ---- factor 1: pitch emission P(category | covariate combo) ----
     def emission_logp(self, category, combo):
@@ -449,9 +556,15 @@ class FittedAdapter(Adapter):
             return _safe_log(0.05)
         return _safe_log(rec["p_absent_smoothed"])
 
-    # ---- factor 7: boundary P(boundary? | beat class) ----
-    def boundary_logp(self, beat_class, is_boundary):
-        rec = self.boundary.get(beat_class)
+    # ---- factor 7 (+8): boundary P(boundary? | beat class × fermata context) ----
+    def boundary_logp(self, beat_class, is_boundary, ferm_ctx=False):
+        """The crossed cell is used iff its own training count is reliable; otherwise the beat-class-only
+        cell is the declared pooling parent (the same count>=threshold rule as every other table)."""
+        cell = self.ferm_boundary.get(beat_class, {}).get(
+            "fermata_at_or_adjacent" if ferm_ctx else "no_fermata_context")
+        rec = cell if (cell and cell.get("reliable") and cell.get("prob") is not None) else None
+        if rec is None:
+            rec = self.boundary.get(beat_class)
         if rec is None:
             return 0.0
         p = rec["prob"]
@@ -484,7 +597,10 @@ class Piece:
     notes_by_event: list = field(default_factory=list)   # per event: list of note records (onset in ev)
     ev_bass: list = field(default_factory=list)           # per event: bass pc (lowest midi) or None
     ev_onset_pcs: list = field(default_factory=list)       # per event: set of onset pcs
+    ev_ferm_ctx: list = field(default_factory=list)         # per event: the boundary factor's fermata flag
     _live_notes: list = field(default_factory=list)        # (onset, offset, pc) for non-anacrusis notes
+    _win_cache: dict = field(default_factory=dict)          # arrival event -> approach-window pcs (★R1)
+    _cad_cache: dict = field(default_factory=dict)          # (event, tonic, is_major) -> fired features
 
     def prepare(self):
         # assign each (non-anacrusis) note to the event whose [start,end) contains its ONSET (the
@@ -503,6 +619,29 @@ class Piece:
         self.ev_onset_pcs = [frozenset(n[N_PC] for n in ns) for ns in self.notes_by_event]
         self._live_notes = sorted(((n[N_ONSET], n[N_ONSET] + n[N_DUR], n[N_PC])
                                    for n in self.notes if n[N_MEAS] != 0), key=lambda t: t[0])
+        # the boundary factor's fermata covariate, per event — gen_fermata_boundary's ONE rule (#6),
+        # the same definition its counted cells were fit under.
+        self.ev_ferm_ctx = gfb.event_ferm_ctx_flags(self.events, self.notes)
+        self._win_cache = {}
+        self._cad_cache = {}
+
+    def approach_window_pcs(self, i):
+        """★R1: pitch classes sounding anywhere in the four beats strictly before event i's start
+        (overlap membership, voice-agnostic, clipped at the piece start; anacrusis notes excluded with
+        the rest of _live_notes). The tritone-pair feature's published approach window."""
+        v = self._win_cache.get(i)
+        if v is None:
+            t0 = self.events[i][EV_START]
+            lo = max(0, t0 - CADENCE_APPROACH_TICKS)
+            pcs = set()
+            for onset, offset, pc in self._live_notes:
+                if onset >= t0:
+                    break
+                if offset > lo:
+                    pcs.add(pc)
+            v = frozenset(pcs)
+            self._win_cache[i] = v
+        return v
 
     def overlap_pcs(self, i, j):
         """Pitch classes sounding anywhere in [start_i, end_{j-1}) (overlap membership — gnt)."""
@@ -582,26 +721,36 @@ def segment_overlap_pcs(piece: Piece, i, j):
     return piece.overlap_pcs(i, j)
 
 
-def score_segment_content(piece: Piece, i, j, tonic, is_major, cls, adapter: Adapter,
-                          cache: ChordCache, seg_pcs=None):
-    """The WITHIN-segment factor sum for a candidate (segment [i,j), key (tonic,is_major), chord cls):
-    emission (per tone) + spelling (per tone) + bass (per event) + missing-tone (per event of length)
-    + boundary (per event). Returns NEG_INF for an unmappable class in this key. `seg_pcs` (overlap
-    pcs of the span) may be passed precomputed."""
+CONTENT_FEATURES = ("emission", "spelling", "bass", "missing_tone", "boundary")
+# which weight each content feature is scored under (★R2: the presence penalty rides the emission
+# weight, per the ratified enumeration "pitch emission incl. the presence penalty").
+CONTENT_WEIGHT_OF = {"emission": "emission", "spelling": "spelling", "bass": "bass",
+                     "missing_tone": "emission", "boundary": "boundary"}
+
+
+def segment_features(piece: Piece, i, j, tonic, is_major, cls, adapter: Adapter,
+                     cache: ChordCache, seg_pcs=None):
+    """THE within-segment factor primitive: the per-FACTOR raw log-probability sum for a candidate
+    (segment [i,j), key (tonic,is_major), chord cls) — emission (per tone) + spelling (per tone) +
+    bass (per event) + missing-tone (per event of segment length) + boundary (per event, with the
+    fermata covariate). Returns None for an unmappable class in this key. These five numbers ARE the
+    weight fit's content feature functions, so the fit and the decode read the same values from the
+    same call (#6). `seg_pcs` (overlap pcs of the span) may be passed precomputed."""
     mem, fac, _root = cache.get(cls, tonic, is_major)
     if mem is None:
-        return NEG_INF
+        return None
     n_events = j - i
-    total = 0.0
     key_lof = glt._PC_TO_FIFTHS[tonic % 12]      # tonic line-of-fifths for the spelling factor
+    b = {"emission": 0.0, "spelling": 0.0, "bass": 0.0, "missing_tone": 0.0, "boundary": 0.0}
 
     # emission + spelling, per tone (onset-in-segment)
     for e in range(i, j):
         for n in piece.notes_by_event[e]:
             cat = gnt.note_category(n[N_PC], mem, tonic, is_major)
             combo = (_MC_NAME[n[N_MC]], _MV_NAME[n[N_AP]], _MV_NAME[n[N_DP]], bool(n[N_TIED]))
-            total += adapter.emission_logp(cat, combo)
-            total += adapter.spelling_logp(gnt.spelling_bin(n[N_LOF] - key_lof, is_major), is_major)
+            b["emission"] += adapter.emission_logp(cat, combo)
+            b["spelling"] += adapter.spelling_logp(gnt.spelling_bin(n[N_LOF] - key_lof, is_major),
+                                                   is_major)
 
     # bass, per event (Ni's per-frame form)
     family = "seventh" if (fac and len(fac) == 4) else "triad"
@@ -610,7 +759,7 @@ def score_segment_content(piece: Piece, i, j, tonic, is_major, cls, adapter: Ada
         bpc = piece.ev_bass[e]
         if bpc is None:
             continue
-        total += adapter.bass_logp(fac_pc.get(bpc), family, cls.degree_base, cls.quality, is_major)
+        b["bass"] += adapter.bass_logp(fac_pc.get(bpc), family, cls.degree_base, cls.quality, is_major)
 
     # missing-template-tone penalty, per event of segment length (fully-absent factor only)
     if fac:
@@ -618,47 +767,27 @@ def score_segment_content(piece: Piece, i, j, tonic, is_major, cls, adapter: Ada
             seg_pcs = piece.overlap_pcs(i, j)
         for role, pc in fac:
             if pc not in seg_pcs:
-                total += n_events * adapter.factor_absent_logp(role, family)
+                b["missing_tone"] += n_events * adapter.factor_absent_logp(role, family)
 
     # boundary, per event: the first event is a boundary; interior events are non-boundaries
     for idx, e in enumerate(range(i, j)):
-        total += adapter.boundary_logp(_MC_NAME[piece.events[e][EV_MC]], idx == 0)
-
-    return total
-
-
-def score_segment_content_breakdown(piece: Piece, i, j, tonic, is_major, cls, adapter: Adapter,
-                                    cache: ChordCache):
-    """The per-FACTOR breakdown of the within-segment sum (the establishment / parity view — the
-    SAME factor calls score_segment_content makes, itemized). Returns a dict of nats per factor."""
-    mem, fac, _root = cache.get(cls, tonic, is_major)
-    if mem is None:
-        return None
-    n_events = j - i
-    key_lof = glt._PC_TO_FIFTHS[tonic % 12]
-    b = {"emission": 0.0, "spelling": 0.0, "bass": 0.0, "missing_tone": 0.0, "boundary": 0.0}
-    for e in range(i, j):
-        for n in piece.notes_by_event[e]:
-            cat = gnt.note_category(n[N_PC], mem, tonic, is_major)
-            combo = (_MC_NAME[n[N_MC]], _MV_NAME[n[N_AP]], _MV_NAME[n[N_DP]], bool(n[N_TIED]))
-            b["emission"] += adapter.emission_logp(cat, combo)
-            b["spelling"] += adapter.spelling_logp(gnt.spelling_bin(n[N_LOF] - key_lof, is_major), is_major)
-    family = "seventh" if (fac and len(fac) == 4) else "triad"
-    fac_pc = {pc: role for role, pc in (fac or [])}
-    for e in range(i, j):
-        bpc = event_bass_pc(piece.notes_by_event[e])
-        if bpc is None:
-            continue
-        b["bass"] += adapter.bass_logp(fac_pc.get(bpc), family, cls.degree_base, cls.quality, is_major)
-    if fac:
-        seg_pcs = segment_overlap_pcs(piece, i, j)
-        for role, pc in fac:
-            if pc not in seg_pcs:
-                b["missing_tone"] += n_events * adapter.factor_absent_logp(role, family)
-    for idx, e in enumerate(range(i, j)):
-        bc = _MC_NAME[piece.events[e][EV_MC]]
-        b["boundary"] += adapter.boundary_logp(bc, idx == 0)
+        b["boundary"] += adapter.boundary_logp(_MC_NAME[piece.events[e][EV_MC]], idx == 0,
+                                               piece.ev_ferm_ctx[e])
     return b
+
+
+def weighted_content(feat, w):
+    """The ★R2-weighted within-segment sum from the raw feature dict (the ONE weighting rule)."""
+    return sum(feat[f] * w[CONTENT_WEIGHT_OF[f]] for f in CONTENT_FEATURES)
+
+
+def score_segment_content(piece: Piece, i, j, tonic, is_major, cls, adapter: Adapter,
+                          cache: ChordCache, seg_pcs=None):
+    """The weighted within-segment score; NEG_INF for an unmappable class in this key."""
+    feat = segment_features(piece, i, j, tonic, is_major, cls, adapter, cache, seg_pcs)
+    if feat is None:
+        return NEG_INF
+    return weighted_content(feat, adapter.weights())
 
 
 def score_hypothesis(piece: Piece, hyp, adapter: Adapter, cache: ChordCache,
@@ -673,7 +802,7 @@ def score_hypothesis(piece: Piece, hyp, adapter: Adapter, cache: ChordCache,
     for si, seg in enumerate(hyp):
         i, j = seg["i"], seg["j"]
         tonic, is_major, cls = seg["tonic"], seg["is_major"], seg["cls"]
-        b = score_segment_content_breakdown(piece, i, j, tonic, is_major, cls, adapter, cache)
+        b = segment_features(piece, i, j, tonic, is_major, cls, adapter, cache)
         if b is None:
             b = {"emission": NEG_INF}
         b["prior"] = 0.0
@@ -698,7 +827,7 @@ def score_hypothesis(piece: Piece, hyp, adapter: Adapter, cache: ChordCache,
 
 
 def cadence_features(approach_pcs, approach_bass, arrival_pcs, arrival_bass, tonic, is_major,
-                     ferm_ctx=False):
+                     ferm_ctx=False, window_pcs=None):
     """The ratified cadence-evidence features toward key (tonic, is_major) at a boundary site (approach
     → arrival), each a boolean FIRE. The SINGLE detector shared by the fitted decode (weightless, fire
     logged) and the parity mode (injected weights) — #6. Forms (factorization §3.9; Bigo feature set;
@@ -706,9 +835,13 @@ def cadence_features(approach_pcs, approach_bass, arrival_pcs, arrival_bass, ton
 
       leading_tone        7̂→1̂ across the boundary: the raised 7th (tonic+11) sounds in the approach AND
                           the tonic sounds in the arrival (a RESOLUTION event, not mere presence).
-      tritone_pair        both 4̂ (tonic+5) AND 7̂ (tonic+11) sound in the approach — the key-fingerprint
-                          tritone. Requiring BOTH is the guard against a secondary dominant reading
-                          (V/V raises 4̂, so the home-key 4̂ is absent — the feature stays silent).
+      tritone_pair        both 4̂ (tonic+5) AND 7̂ (tonic+11) sound anywhere in the APPROACH WINDOW —
+                          the key-fingerprint tritone. ★R1 (user ruling 2026-07-19): the window is the
+                          LAST FOUR BEATS strictly before the boundary event (Bigo's published form),
+                          not the single preceding event; it is voice-agnostic, clipped at the piece
+                          start, and the two degrees need not sound simultaneously. Requiring BOTH
+                          degrees is the guard against a secondary dominant reading (V/V raises 4̂, so
+                          the home-key 4̂ is absent — the feature stays silent).
       dominant_tonic_bass root-of-V → root-of-I in the bass (approach bass = 5̂, arrival bass = 1̂, root
                           positions) — the guard against non-cadential bass motion (e.g. plagal 4→1).
       fermata_location    the cadence-location prior: a fermata at or adjacent to the site (the §3.8
@@ -720,9 +853,10 @@ def cadence_features(approach_pcs, approach_bass, arrival_pcs, arrival_bass, ton
     fourth = (tonic + 5) % 12
     fifth = (tonic + 7) % 12
     one = tonic % 12
+    win = approach_pcs if window_pcs is None else window_pcs      # ★R1: the four-beat approach window
     return {
         "leading_tone": (lt in approach_pcs) and (one in arrival_pcs),
-        "tritone_pair": (fourth in approach_pcs) and (lt in approach_pcs),
+        "tritone_pair": (fourth in win) and (lt in win),
         "dominant_tonic_bass": (approach_bass == fifth) and (arrival_bass == one),
         "fermata_location": bool(ferm_ctx),
     }
@@ -749,15 +883,22 @@ def _fermata_cadence_ctx(piece: Piece, i):
 
 def cadence_site_features(piece: Piece, i, tonic, is_major):
     """The fired-feature dict at the boundary that STARTS a segment at event i, toward (tonic,is_major).
-    The approach is event i-1 (last event of the previous segment); the arrival is event i."""
+    The approach is event i-1 (last event of the previous segment); the arrival is event i. Memoized per
+    (event, key): with fitted (nonzero) cadence weights the Viterbi asks for this at every candidate."""
     if i <= 0:
         return {f: False for f in CADENCE_FEATURES}
-    ap_notes = piece.notes_by_event[i - 1]
-    ar_notes = piece.notes_by_event[i]
-    ap_pcs = {n[N_PC] for n in ap_notes}
-    ar_pcs = {n[N_PC] for n in ar_notes}
-    return cadence_features(ap_pcs, event_bass_pc(ap_notes), ar_pcs, event_bass_pc(ar_notes),
-                            tonic, is_major, _fermata_cadence_ctx(piece, i))
+    ck = (i, tonic, is_major)
+    v = piece._cad_cache.get(ck)
+    if v is None:
+        ap_notes = piece.notes_by_event[i - 1]
+        ar_notes = piece.notes_by_event[i]
+        ap_pcs = {n[N_PC] for n in ap_notes}
+        ar_pcs = {n[N_PC] for n in ar_notes}
+        v = cadence_features(ap_pcs, event_bass_pc(ap_notes), ar_pcs, event_bass_pc(ar_notes),
+                             tonic, is_major, _fermata_cadence_ctx(piece, i),
+                             window_pcs=piece.approach_window_pcs(i))
+        piece._cad_cache[ck] = v
+    return v
 
 
 def cadence_at(piece: Piece, i, tonic, is_major, adapter: Adapter):
@@ -895,23 +1036,29 @@ def _key_collection(tonic, is_major):
 _KEY_COLL = {(t, m): _key_collection(t, m) for t in range(12) for m in (True, False)}
 
 
-def _candidate_keys_for_segment(onset_pcs, key_set, sig_key):
+def _candidate_keys_for_segment(onset_pcs, key_set, sig_key, extra_keys=None):
     """The KEY-FIT prune: keys ranked by |onset_pcs ∩ collection|, keep the top-K, always include the
-    signature key. Ties broken deterministically by (−fit, tonic, mode)."""
+    signature key. Ties broken deterministically by (−fit, tonic, mode). `extra_keys` is the TRAINING-
+    ONLY widening the weight fit uses so the ground-truth key is representable in the training lattice
+    (fit_weights.build_unit is its only caller — decoding never passes it); a widened key then goes
+    through the ordinary state filters unchanged, so no candidate is privileged inside it."""
     scored = sorted(key_set, key=lambda k: (-len(onset_pcs & _KEY_COLL[k]), k[0], not k[1]))
     keep = scored[:KEY_PRUNE_TOPK]
     if sig_key is not None and sig_key in _KEY_COLL and sig_key not in keep:
         keep.append(sig_key)
+    for k in (extra_keys or ()):
+        if k in _KEY_COLL and k not in keep:
+            keep.append(k)
     return keep
 
 
 def _candidate_states_for_segment(piece, i, j, vocab: Vocabulary, cache: ChordCache, key_set,
-                                  sig_key=None):
+                                  sig_key=None, extra_keys=None):
     onset_pcs = set()
     for e in range(i, j):
         onset_pcs |= piece.ev_onset_pcs[e]
     seg_pcs = piece.overlap_pcs(i, j)
-    keys = _candidate_keys_for_segment(onset_pcs, key_set, sig_key)
+    keys = _candidate_keys_for_segment(onset_pcs, key_set, sig_key, extra_keys)
     n_onset = len(onset_pcs)
     max_ncts = max(1, j - i)          # allow ~1 non-chord tone per event of segment length
     cand = []
@@ -939,6 +1086,9 @@ def decode_piece(piece: Piece, adapter: Adapter, vocab: Vocabulary, cache: Chord
     DecodeResult with the best path + the per-segment runner-up key posterior."""
     t0 = time.perf_counter()
     N = len(piece.events)
+    w = adapter.weights()          # ★R2: the transition factors are weighted at these call sites
+    w_prior, w_dmode = w["prior"], w["declared_mode"]
+    w_entry, w_key, w_chord = w["entry"], w["key_trans"], w["chord_trans"]
     key_set = key_set or KEYS_24
     if prune_keys is not None:
         key_set = [k for k in key_set if k in prune_keys]
@@ -1025,7 +1175,7 @@ def decode_piece(piece: Piece, adapter: Adapter, vocab: Vocabulary, cache: Chord
                 for (pt, pm), kb in key_best.items():
                     if pt == tt and pm == tm:
                         continue
-                    val = kb + adapter.key_trans_logp((pt, pm), (tt, tm))
+                    val = kb + w_key * adapter.key_trans_logp((pt, pm), (tt, tm))
                     if val > best_k:
                         best_k, arg_k = val, (pt, pm)
                 kchg[(tt, tm)] = (best_k, arg_k)
@@ -1035,20 +1185,22 @@ def decode_piece(piece: Piece, adapter: Adapter, vocab: Vocabulary, cache: Chord
                     continue
                 cls = vocab.classes[ckey]
                 cad = cadence_at(piece, i, tonic, is_major, adapter)
-                entry_lp = adapter.entry_logp(cls, is_major)
+                entry_lp = w_entry * adapter.entry_logp(cls, is_major)
                 best_in = NEG_INF
                 back = None
                 # (a) initial segment
                 if start_score is not None:
-                    tin = start_score + adapter.prior_logp(tonic, is_major, sig_fifths, declared_mode) + entry_lp
+                    pr_sig, pr_inc = adapter.prior_terms(tonic, is_major, sig_fifths, declared_mode)
+                    tin = start_score + w_prior * pr_sig + w_dmode * pr_inc + entry_lp
                     if tin > best_in:
                         best_in, back = tin, (i, START)
                 # (b) same-key chord transition (+ the stay key-cell)
                 same = per_class.get((tonic, is_major))
                 if same:
-                    stay = adapter.key_trans_logp((tonic, is_major), (tonic, is_major))
+                    stay = w_key * adapter.key_trans_logp((tonic, is_major), (tonic, is_major))
                     for pck, psc in same.items():
-                        tin = psc + adapter.chord_trans_logp(vocab.classes[pck], cls, is_major) + stay
+                        tin = psc + w_chord * adapter.chord_trans_logp(vocab.classes[pck], cls,
+                                                                       is_major) + stay
                         if tin > best_in:
                             best_in, back = tin, (i, (tonic, is_major, pck))
                 # (c) key-change transition (precomputed best prev key) + entry
@@ -1168,6 +1320,11 @@ def sub_piece(piece: Piece, event_indices, bass_override=None):
 def load_pieces():
     d = json.loads(NOTE_EVENTS.read_text(encoding="utf-8"))
     prov = d["provenance"]
+    # establish, do not assume, the tick convention the ★R1 approach window is measured in (#19)
+    tpq = prov.get("ticks_per_quarter")
+    if tpq != TICKS_PER_QUARTER:
+        raise SystemExit(f"STOP: note_events ticks_per_quarter={tpq} but the decoder's window constant "
+                         f"assumes {TICKS_PER_QUARTER} — the ★R1 four-beat window would be mis-scaled.")
     pieces = {}
     for stem, p in d["pieces"].items():
         pc = Piece(stem=stem, events=p["events"], notes=p["notes"],

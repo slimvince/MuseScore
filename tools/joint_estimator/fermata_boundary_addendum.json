@@ -20,6 +20,64 @@
      "reliable": true
     }
    },
+   "exact_tick_by_beat_class": {
+    "downbeat": {
+     "fermata_at_or_adjacent": {
+      "boundaries": 1223,
+      "events": 1257,
+      "prob": 0.9729514717581543,
+      "reliable": true
+     },
+     "no_fermata_context": {
+      "boundaries": 2954,
+      "events": 3037,
+      "prob": 0.9726703984194929,
+      "reliable": true
+     }
+    },
+    "mid_strong": {
+     "fermata_at_or_adjacent": {
+      "boundaries": 1099,
+      "events": 1148,
+      "prob": 0.9573170731707317,
+      "reliable": true
+     },
+     "no_fermata_context": {
+      "boundaries": 1922,
+      "events": 1998,
+      "prob": 0.9619619619619619,
+      "reliable": true
+     }
+    },
+    "other_tactus": {
+     "fermata_at_or_adjacent": {
+      "boundaries": 1431,
+      "events": 1635,
+      "prob": 0.8752293577981651,
+      "reliable": true
+     },
+     "no_fermata_context": {
+      "boundaries": 5161,
+      "events": 6029,
+      "prob": 0.8560291922375186,
+      "reliable": true
+     }
+    },
+    "sub_tactus": {
+     "fermata_at_or_adjacent": {
+      "boundaries": 762,
+      "events": 1543,
+      "prob": 0.4938431626701231,
+      "reliable": true
+     },
+     "no_fermata_context": {
+      "boundaries": 2356,
+      "events": 8634,
+      "prob": 0.2728746814917767,
+      "reliable": true
+     }
+    }
+   },
    "robust_first_event": {
     "_marginal": {
      "boundaries": 16896,
@@ -58,6 +116,64 @@
      "events": 15690,
      "prob": 0.631293817718292,
      "reliable": true
+    }
+   },
+   "exact_tick_by_beat_class": {
+    "downbeat": {
+     "fermata_at_or_adjacent": {
+      "boundaries": 990,
+      "events": 1016,
+      "prob": 0.9744094488188977,
+      "reliable": true
+     },
+     "no_fermata_context": {
+      "boundaries": 2384,
+      "events": 2451,
+      "prob": 0.9726642186862505,
+      "reliable": true
+     }
+    },
+    "mid_strong": {
+     "fermata_at_or_adjacent": {
+      "boundaries": 853,
+      "events": 892,
+      "prob": 0.9562780269058296,
+      "reliable": true
+     },
+     "no_fermata_context": {
+      "boundaries": 1524,
+      "events": 1582,
+      "prob": 0.9633375474083439,
+      "reliable": true
+     }
+    },
+    "other_tactus": {
+     "fermata_at_or_adjacent": {
+      "boundaries": 1160,
+      "events": 1318,
+      "prob": 0.8801213960546282,
+      "reliable": true
+     },
+     "no_fermata_context": {
+      "boundaries": 4150,
+      "events": 4864,
+      "prob": 0.8532072368421053,
+      "reliable": true
+     }
+    },
+    "sub_tactus": {
+     "fermata_at_or_adjacent": {
+      "boundaries": 606,
+      "events": 1231,
+      "prob": 0.49228269699431354,
+      "reliable": true
+     },
+     "no_fermata_context": {
+      "boundaries": 1847,
+      "events": 6793,
+      "prob": 0.2718975415869277,
+      "reliable": true
+     }
     }
    },
    "robust_first_event": {
@@ -100,6 +216,64 @@
      "reliable": true
     }
    },
+   "exact_tick_by_beat_class": {
+    "downbeat": {
+     "fermata_at_or_adjacent": {
+      "boundaries": 960,
+      "events": 981,
+      "prob": 0.9785932721712538,
+      "reliable": true
+     },
+     "no_fermata_context": {
+      "boundaries": 2331,
+      "events": 2387,
+      "prob": 0.9765395894428153,
+      "reliable": true
+     }
+    },
+    "mid_strong": {
+     "fermata_at_or_adjacent": {
+      "boundaries": 902,
+      "events": 940,
+      "prob": 0.9595744680851064,
+      "reliable": true
+     },
+     "no_fermata_context": {
+      "boundaries": 1576,
+      "events": 1635,
+      "prob": 0.963914373088685,
+      "reliable": true
+     }
+    },
+    "other_tactus": {
+     "fermata_at_or_adjacent": {
+      "boundaries": 1130,
+      "events": 1284,
+      "prob": 0.8800623052959502,
+      "reliable": true
+     },
+     "no_fermata_context": {
+      "boundaries": 4092,
+      "events": 4751,
+      "prob": 0.8612923595032624,
+      "reliable": true
+     }
+    },
+    "sub_tactus": {
+     "fermata_at_or_adjacent": {
+      "boundaries": 619,
+      "events": 1262,
+      "prob": 0.49049128367670364,
+      "reliable": true
+     },
+     "no_fermata_context": {
+      "boundaries": 1959,
+      "events": 7069,
+      "prob": 0.2771254774366954,
+      "reliable": true
+     }
+    }
+   },
    "robust_first_event": {
     "_marginal": {
      "boundaries": 13555,
@@ -138,6 +312,64 @@
      "events": 15954,
      "prob": 0.6277422589946094,
      "reliable": true
+    }
+   },
+   "exact_tick_by_beat_class": {
+    "downbeat": {
+     "fermata_at_or_adjacent": {
+      "boundaries": 991,
+      "events": 1016,
+      "prob": 0.9753937007874016,
+      "reliable": true
+     },
+     "no_fermata_context": {
+      "boundaries": 2371,
+      "events": 2437,
+      "prob": 0.9729175215428806,
+      "reliable": true
+     }
+    },
+    "mid_strong": {
+     "fermata_at_or_adjacent": {
+      "boundaries": 900,
+      "events": 938,
+      "prob": 0.9594882729211087,
+      "reliable": true
+     },
+     "no_fermata_context": {
+      "boundaries": 1567,
+      "events": 1629,
+      "prob": 0.961939840392879,
+      "reliable": true
+     }
+    },
+    "other_tactus": {
+     "fermata_at_or_adjacent": {
+      "boundaries": 1115,
+      "events": 1283,
+      "prob": 0.8690568978955573,
+      "reliable": true
+     },
+     "no_fermata_context": {
+      "boundaries": 4166,
+      "events": 4849,
+      "prob": 0.8591462157145803,
+      "reliable": true
+     }
+    },
+    "sub_tactus": {
+     "fermata_at_or_adjacent": {
+      "boundaries": 603,
+      "events": 1218,
+      "prob": 0.49507389162561577,
+      "reliable": true
+     },
+     "no_fermata_context": {
+      "boundaries": 1911,
+      "events": 7039,
+      "prob": 0.27148742719136243,
+      "reliable": true
+     }
     }
    },
    "robust_first_event": {
@@ -180,6 +412,64 @@
      "reliable": true
     }
    },
+   "exact_tick_by_beat_class": {
+    "downbeat": {
+     "fermata_at_or_adjacent": {
+      "boundaries": 976,
+      "events": 1007,
+      "prob": 0.9692154915590864,
+      "reliable": true
+     },
+     "no_fermata_context": {
+      "boundaries": 2385,
+      "events": 2453,
+      "prob": 0.9722788422339992,
+      "reliable": true
+     }
+    },
+    "mid_strong": {
+     "fermata_at_or_adjacent": {
+      "boundaries": 855,
+      "events": 893,
+      "prob": 0.9574468085106383,
+      "reliable": true
+     },
+     "no_fermata_context": {
+      "boundaries": 1524,
+      "events": 1584,
+      "prob": 0.9621212121212122,
+      "reliable": true
+     }
+    },
+    "other_tactus": {
+     "fermata_at_or_adjacent": {
+      "boundaries": 1163,
+      "events": 1327,
+      "prob": 0.8764129615674454,
+      "reliable": true
+     },
+     "no_fermata_context": {
+      "boundaries": 4145,
+      "events": 4859,
+      "prob": 0.8530561844000824,
+      "reliable": true
+     }
+    },
+    "sub_tactus": {
+     "fermata_at_or_adjacent": {
+      "boundaries": 615,
+      "events": 1227,
+      "prob": 0.5012224938875306,
+      "reliable": true
+     },
+     "no_fermata_context": {
+      "boundaries": 1859,
+      "events": 6835,
+      "prob": 0.2719824433065106,
+      "reliable": true
+     }
+    }
+   },
    "robust_first_event": {
     "_marginal": {
      "boundaries": 13518,
@@ -220,6 +510,64 @@
      "reliable": true
     }
    },
+   "exact_tick_by_beat_class": {
+    "downbeat": {
+     "fermata_at_or_adjacent": {
+      "boundaries": 975,
+      "events": 1008,
+      "prob": 0.9672619047619048,
+      "reliable": true
+     },
+     "no_fermata_context": {
+      "boundaries": 2345,
+      "events": 2420,
+      "prob": 0.96900826446281,
+      "reliable": true
+     }
+    },
+    "mid_strong": {
+     "fermata_at_or_adjacent": {
+      "boundaries": 886,
+      "events": 929,
+      "prob": 0.9537136706135629,
+      "reliable": true
+     },
+     "no_fermata_context": {
+      "boundaries": 1497,
+      "events": 1562,
+      "prob": 0.9583866837387964,
+      "reliable": true
+     }
+    },
+    "other_tactus": {
+     "fermata_at_or_adjacent": {
+      "boundaries": 1156,
+      "events": 1328,
+      "prob": 0.8704819277108434,
+      "reliable": true
+     },
+     "no_fermata_context": {
+      "boundaries": 4091,
+      "events": 4793,
+      "prob": 0.8535364072605883,
+      "reliable": true
+     }
+    },
+    "sub_tactus": {
+     "fermata_at_or_adjacent": {
+      "boundaries": 605,
+      "events": 1234,
+      "prob": 0.49027552674230146,
+      "reliable": true
+     },
+     "no_fermata_context": {
+      "boundaries": 1848,
+      "events": 6800,
+      "prob": 0.27176470588235296,
+      "reliable": true
+     }
+    }
+   },
    "robust_first_event": {
     "_marginal": {
      "boundaries": 13381,
@@ -243,9 +591,10 @@
  },
  "provenance": {
   "boundary_numerator": "exact_tick: a KEPT GT label starts at the event's start tick; robust_first_event: the event is the first (min-start) event of a KEPT GT segment \u2014 the same dual the note-side boundary table reports.",
-  "corpus_git_hash": "e3d17c325d24e0de1213440043cbf02ac14f3d3e",
+  "corpus_git_hash": "c6ae08bd4528641b50a4c2d670a7035b3e8dcbec",
   "counted_stems": 317,
   "covariate_definition": "ferm_ctx(event) = the event's own fermata flag (a sounding note carries a fermata) OR a fermata note ends at the event's start tick (the phrase-end boundary) OR a fermata note begins at the event's end tick (the approach). The boundary-factor reading of \u00a73.8.",
+  "crossed_table": "exact_tick_by_beat_class (added at the weight fit, step 2): P(boundary | beat class x fermata context) \u2014 the form the ratified factorization's boundary factor names (\u00a73 items 7+8). A cell is used by the decoder iff its own training count >= threshold; the declared pooling parent is the beat-class-only cell in note_tables_*.json.",
   "excluded_stems": {
    "flagged": 7,
    "multi_meter": 2

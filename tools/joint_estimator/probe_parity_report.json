@@ -1,7 +1,7 @@
 {
  "provenance": {
   "generator": "tools/joint_estimator/probe_desksim.py",
-  "instrument_commit": "e3d17c325d24e0de1213440043cbf02ac14f3d3e",
+  "instrument_commit": "c6ae08bd4528641b50a4c2d670a7035b3e8dcbec",
   "establishment": "structural parity (all non-cadence factors) vs the desk-simulation hand arithmetic; the cadence MECHANISM-FIRES table (Task 2) checks the WEIGHTLESS features fire where the desk-sim applied its credits; fitted-table recomputation under both leftover variants",
   "cadence_window_note": "the tritone feature uses a SINGLE-event approach (committed probe convention); the desk-sim S2 credit assumed a multi-beat window (Bigo 'last four beats', theory \u00a7F4). The divergence is confined to S2's tritone, is verdict-irrelevant, and is DECLARED to Cowork as the fit-time window design question \u2014 NOT built around here."
  },
@@ -67,12 +67,12 @@
    "kind": "synthetic",
    "hyp": "amin",
    "expected_full": -14.2,
-   "got_full": -14.8993,
-   "delta_full": -0.6993,
+   "got_full": -14.1993,
+   "delta_full": 0.0007,
    "expected_struct": -16.5,
    "got_struct": -16.4993,
    "delta_struct": 0.0007,
-   "my_cadence": 1.6,
+   "my_cadence": 2.3,
    "desk_cadence": 2.3,
    "struct_pass": true
   },
@@ -81,12 +81,12 @@
    "kind": "synthetic",
    "hyp": "Cmaj",
    "expected_full": -20.38,
-   "got_full": -19.4776,
-   "delta_full": 0.9024,
+   "got_full": -18.7776,
+   "delta_full": 1.6024,
    "expected_struct": -20.38,
    "got_struct": -20.3776,
    "delta_struct": 0.0024,
-   "my_cadence": 0.9,
+   "my_cadence": 1.6,
    "desk_cadence": 0.0,
    "struct_pass": true
   },
@@ -95,12 +95,12 @@
    "kind": "synthetic",
    "hyp": "modulate",
    "expected_full": -18.67,
-   "got_full": -19.3676,
-   "delta_full": -0.6976,
+   "got_full": -18.6676,
+   "delta_full": 0.0024,
    "expected_struct": -20.97,
    "got_struct": -20.9676,
    "delta_struct": 0.0024,
-   "my_cadence": 1.6,
+   "my_cadence": 2.3,
    "desk_cadence": 2.3,
    "struct_pass": true
   },
@@ -123,12 +123,12 @@
    "kind": "synthetic",
    "hyp": "Fmaj",
    "expected_full": -14.79,
-   "got_full": -13.8857,
-   "delta_full": 0.9043,
+   "got_full": -13.1857,
+   "delta_full": 1.6043,
    "expected_struct": -14.79,
    "got_struct": -14.7857,
    "delta_struct": 0.0043,
-   "my_cadence": 0.9,
+   "my_cadence": 1.6,
    "desk_cadence": 0.0,
    "struct_pass": true
   },
@@ -249,12 +249,12 @@
    "kind": "corpus",
    "hyp": "bmin",
    "expected_full": -19.41,
-   "got_full": -18.61,
-   "delta_full": 0.8,
+   "got_full": -16.51,
+   "delta_full": 2.9,
    "expected_struct": -20.31,
    "got_struct": -20.21,
    "delta_struct": 0.1,
-   "my_cadence": 1.6,
+   "my_cadence": 3.7,
    "desk_cadence": 0.9,
    "struct_pass": false
   }
@@ -305,9 +305,9 @@
     },
     "tritone_pair": {
      "desk": true,
-     "actual": false,
-     "match": false,
-     "classify": "documented_window_underspec"
+     "actual": true,
+     "match": true,
+     "classify": "match"
     },
     "dominant_tonic_bass": {
      "desk": true,
@@ -383,44 +383,44 @@
   "freq": {
    "bwv352": {
     "F#": {
-     "vi\u00f87": -22.731,
-     "i": -21.68,
+     "vi\u00f87": -22.736,
+     "i": -21.685,
      "margin_vi\u00f87_minus_i": -1.051,
      "winner": "i"
     },
     "E": {
-     "vi\u00f87": -26.979,
-     "i": -20.539,
+     "vi\u00f87": -26.984,
+     "i": -20.544,
      "margin_vi\u00f87_minus_i": -6.44,
      "winner": "i"
     }
    },
    "bwv10.7": {
-    "split": -48.069,
-    "merge": -46.226,
-    "margin_split_minus_merge": -1.843,
+    "split": -48.073,
+    "merge": -46.192,
+    "margin_split_minus_merge": -1.88,
     "winner": "merge"
    }
   },
   "even": {
    "bwv352": {
     "F#": {
-     "vi\u00f87": -22.538,
-     "i": -23.221,
+     "vi\u00f87": -22.543,
+     "i": -23.226,
      "margin_vi\u00f87_minus_i": 0.683,
      "winner": "vi\u00f87"
     },
     "E": {
-     "vi\u00f87": -26.786,
-     "i": -22.081,
+     "vi\u00f87": -26.791,
+     "i": -22.085,
      "margin_vi\u00f87_minus_i": -4.706,
      "winner": "i"
     }
    },
    "bwv10.7": {
-    "split": -45.478,
-    "merge": -46.226,
-    "margin_split_minus_merge": 0.748,
+    "split": -45.481,
+    "merge": -46.192,
+    "margin_split_minus_merge": 0.711,
     "winner": "split"
    }
   }

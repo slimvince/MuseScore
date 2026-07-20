@@ -1,5 +1,5 @@
 === probe decoder — Task-2 establishment (parity + fitted recomputation) ===
-instrument_commit e3d17c325d24e0de1213440043cbf02ac14f3d3e
+instrument_commit c6ae08bd4528641b50a4c2d670a7035b3e8dcbec
 STRUCTURAL PARITY (synthetic, all non-cadence factors): 13/13 within +/-0.05; structural_fail=0
 
 case        hyp        struct_delta   full_delta   cadence(me/desk)
@@ -7,11 +7,11 @@ S1          Cmaj        +0.002      +0.00     +2.3/+2.3  [synthetic]
 S1          amin        +0.001      +0.00     +0.0/+0.0  [synthetic]
 S2_to_e5    amin        +0.001      +0.00     +0.0/+0.0  [synthetic]
 S2_to_e5    Cmaj        +0.002      +0.00     +0.0/+0.0  [synthetic]
-S2_full     amin        +0.001      -0.70     +1.6/+2.3  [synthetic]
-S2_full     Cmaj        +0.002      +0.90     +0.9/+0.0  [synthetic]
-S2_full     modulate    +0.002      -0.70     +1.6/+2.3  [synthetic]
+S2_full     amin        +0.001      +0.00     +2.3/+2.3  [synthetic]
+S2_full     Cmaj        +0.002      +1.60     +1.6/+0.0  [synthetic]
+S2_full     modulate    +0.002      +0.00     +2.3/+2.3  [synthetic]
 S3          dmin        +0.004      +0.00     +2.3/+2.3  [synthetic]
-S3          Fmaj        +0.004      +0.90     +0.9/+0.0  [synthetic]
+S3          Fmaj        +0.004      +1.60     +1.6/+0.0  [synthetic]
 S4          stayC       +0.002      +0.00     +1.6/+1.6  [synthetic]
 S4          modulate    +0.002      +0.70     +3.9/+3.2  [synthetic]
 S5          Cmaj        +0.002      +0.00     +1.6/+1.6  [synthetic]
@@ -20,12 +20,12 @@ C1          Emaj        -3.000      -3.00     +1.6/+1.6  [corpus]
 C1          f#min       -1.900      -1.90     +0.0/+0.0  [corpus]
 C1          d#min       -1.790      -1.79     +0.0/+0.0  [corpus]
 C4          Dmaj        +1.160      +2.96     +1.8/+0.0  [corpus]
-C4          bmin        +0.100      +0.80     +1.6/+0.9  [corpus]
+C4          bmin        +0.100      +2.90     +3.7/+0.9  [corpus]
 
 -- cadence MECHANISM-FIRES establishment (Task 2): PASS --
   (weightless features must FIRE where the desk-sim applied its credits)
   authentic cadence                  S1/Cmaj@e3: leading:desk1/act1[OK] tritone:desk1/act1[OK] dominant:desk1/act1[OK]
-  relative-pair resolution event     S2_full/amin@e6: leading:desk1/act1[OK] tritone:desk1/act0[slip] dominant:desk1/act1[OK]  resolution-only-at-arrival=True
+  relative-pair resolution event     S2_full/amin@e6: leading:desk1/act1[OK] tritone:desk1/act1[OK] dominant:desk1/act1[OK]  resolution-only-at-arrival=True
   tonicization non-firing (tritone t S4/stayC@e3: leading:desk1/act1[OK] tritone:desk0/act0[OK] dominant:desk1/act1[OK]
   deceptive cadence key-vote         S5/Cmaj@e1: leading:desk1/act1[OK] tritone:desk1/act1[OK] dominant:desk0/act0[OK]
 
@@ -33,8 +33,8 @@ C4          bmin        +0.100      +0.80     +1.6/+0.9  [corpus]
 leftover=freq:
   bwv352 bass F#: margin(viø7-i) -1.05 winner i
   bwv352 bass E : margin(viø7-i) -6.44 winner i
-  bwv10.7: margin(split-merge) -1.84 winner merge
+  bwv10.7: margin(split-merge) -1.88 winner merge
 leftover=even:
   bwv352 bass F#: margin(viø7-i) +0.68 winner viø7
   bwv352 bass E : margin(viø7-i) -4.71 winner i
-  bwv10.7: margin(split-merge) +0.75 winner split
+  bwv10.7: margin(split-merge) +0.71 winner split

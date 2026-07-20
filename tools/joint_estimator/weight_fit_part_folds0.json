@@ -1,0 +1,471 @@
+{
+ "folds": {
+  "0": {
+   "label": "fold0",
+   "inner_validation_fold": 1,
+   "lambda_path": [
+    {
+     "lambda": 0.01,
+     "n_units": 318,
+     "tokens": 15141,
+     "objective_start": 2.4979631861519227,
+     "objective_end": 1.295074802565451,
+     "grad_norm_end": 3.0717956473077753e-06,
+     "n_objective_evals": 52,
+     "iterations": 47,
+     "status": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+     "success": true,
+     "monotone_decrease": true,
+     "n_iterate_points": 47,
+     "objective_trace_head": [
+      1.750055,
+      1.616801,
+      1.494485,
+      1.422963,
+      1.384825
+     ],
+     "objective_trace_tail": [
+      1.295075,
+      1.295075,
+      1.295075,
+      1.295075,
+      1.295075
+     ],
+     "seconds": 514.9,
+     "weights": {
+      "prior": 0.9999999999999865,
+      "declared_mode": 0.9905490359894095,
+      "emission": 0.323658650959509,
+      "spelling": 0.443688645002459,
+      "bass": 0.26624641531263216,
+      "boundary": 0.8052065033474944,
+      "chord_trans": 0.265977468027015,
+      "key_trans": 0.5606755051381114,
+      "entry": 0.4495519458160498,
+      "cad_leading_tone": 0.016653527692403705,
+      "cad_tritone_pair": 0.24549881634009313,
+      "cad_dominant_tonic_bass": 0.048751850817534706,
+      "cad_fermata_location": 0.04735172993570378
+     },
+     "inner_val_nll_per_token": 1.2693261330164884,
+     "inner_val_units": 97
+    },
+    {
+     "lambda": 0.003,
+     "n_units": 318,
+     "tokens": 15141,
+     "objective_start": 1.2779716872921432,
+     "objective_end": 1.2774990262051271,
+     "grad_norm_end": 3.0797753557130465e-06,
+     "n_objective_evals": 71,
+     "iterations": 65,
+     "status": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+     "success": true,
+     "monotone_decrease": true,
+     "n_iterate_points": 65,
+     "objective_trace_head": [
+      1.277902,
+      1.27781,
+      1.277702,
+      1.277641,
+      1.277605
+     ],
+     "objective_trace_tail": [
+      1.277499,
+      1.277499,
+      1.277499,
+      1.277499,
+      1.277499
+     ],
+     "seconds": 688.2,
+     "weights": {
+      "prior": 0.999999999999998,
+      "declared_mode": 0.9743707850715507,
+      "emission": 0.32402204008846175,
+      "spelling": 0.403747345793645,
+      "bass": 0.24941483620918495,
+      "boundary": 0.790316207237396,
+      "chord_trans": 0.26468772819736913,
+      "key_trans": 0.5403314406121874,
+      "entry": 0.4449101927644658,
+      "cad_leading_tone": 0.031418406193144226,
+      "cad_tritone_pair": 0.2863800622106165,
+      "cad_dominant_tonic_bass": 0.12841389647050724,
+      "cad_fermata_location": 0.10326690226362785
+     },
+     "inner_val_nll_per_token": 1.2689165338882964,
+     "inner_val_units": 97
+    },
+    {
+     "lambda": 0.001,
+     "n_units": 318,
+     "tokens": 15141,
+     "objective_start": 1.2723175771621638,
+     "objective_end": 1.2722445793798272,
+     "grad_norm_end": 3.1543011170383043e-06,
+     "n_objective_evals": 88,
+     "iterations": 78,
+     "status": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+     "success": true,
+     "monotone_decrease": true,
+     "n_iterate_points": 78,
+     "objective_trace_head": [
+      1.272311,
+      1.272303,
+      1.272293,
+      1.272288,
+      1.272284
+     ],
+     "objective_trace_tail": [
+      1.272245,
+      1.272245,
+      1.272245,
+      1.272245,
+      1.272245
+     ],
+     "seconds": 841.3,
+     "weights": {
+      "prior": 0.9999999999999618,
+      "declared_mode": 0.9458583124223722,
+      "emission": 0.32421758471196,
+      "spelling": 0.39087873581249305,
+      "bass": 0.24422538755113718,
+      "boundary": 0.7837623302028963,
+      "chord_trans": 0.26448865256746396,
+      "key_trans": 0.5346454858956258,
+      "entry": 0.44391225648890187,
+      "cad_leading_tone": 0.033743085753666906,
+      "cad_tritone_pair": 0.29927765011272794,
+      "cad_dominant_tonic_bass": 0.21209898058062698,
+      "cad_fermata_location": 0.15204483104780786
+     },
+     "inner_val_nll_per_token": 1.2690004292584627,
+     "inner_val_units": 97
+    },
+    {
+     "lambda": 0.0003,
+     "n_units": 318,
+     "tokens": 15141,
+     "objective_start": 1.2703726599845506,
+     "objective_end": 1.2703540080306905,
+     "grad_norm_end": 3.710728075773461e-06,
+     "n_objective_evals": 92,
+     "iterations": 85,
+     "status": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+     "success": true,
+     "monotone_decrease": true,
+     "n_iterate_points": 85,
+     "objective_trace_head": [
+      1.270372,
+      1.270371,
+      1.270369,
+      1.270369,
+      1.270368
+     ],
+     "objective_trace_tail": [
+      1.270354,
+      1.270354,
+      1.270354,
+      1.270354,
+      1.270354
+     ],
+     "seconds": 880.8,
+     "weights": {
+      "prior": 1.0000000000000087,
+      "declared_mode": 0.9105245596109858,
+      "emission": 0.32430610863649345,
+      "spelling": 0.38583868758916756,
+      "bass": 0.2422992055038398,
+      "boundary": 0.7807296101924408,
+      "chord_trans": 0.2644568215873343,
+      "key_trans": 0.5327650583992453,
+      "entry": 0.44362768059992574,
+      "cad_leading_tone": 0.03159255793404902,
+      "cad_tritone_pair": 0.303831345507701,
+      "cad_dominant_tonic_bass": 0.27212713149733814,
+      "cad_fermata_location": 0.18163293915213904
+     },
+     "inner_val_nll_per_token": 1.2690995399726082,
+     "inner_val_units": 97
+    }
+   ],
+   "lambda_selected": 0.003,
+   "final_fit": {
+    "lambda": 0.003,
+    "n_units": 415,
+    "tokens": 20112,
+    "objective_start": 1.2772987430648064,
+    "objective_end": 1.277077551166047,
+    "grad_norm_end": 4.364648856895487e-06,
+    "n_objective_evals": 55,
+    "iterations": 47,
+    "status": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "success": true,
+    "monotone_decrease": true,
+    "n_iterate_points": 47,
+    "objective_trace_head": [
+     1.27723,
+     1.277194,
+     1.277171,
+     1.277147,
+     1.27712
+    ],
+    "objective_trace_tail": [
+     1.277078,
+     1.277078,
+     1.277078,
+     1.277078,
+     1.277078
+    ],
+    "seconds": 698.4,
+    "weights": {
+     "prior": 1.0000000000000515,
+     "declared_mode": 0.9856309268779992,
+     "emission": 0.32048182900251276,
+     "spelling": 0.414887931850744,
+     "bass": 0.24819518049161568,
+     "boundary": 0.7737964836570095,
+     "chord_trans": 0.2694461973587837,
+     "key_trans": 0.5595281825078581,
+     "entry": 0.44335948274511067,
+     "cad_leading_tone": 0.005334673812822935,
+     "cad_tritone_pair": 0.3099855699738103,
+     "cad_dominant_tonic_bass": 0.115214804698661,
+     "cad_fermata_location": 0.06037574398648442
+    }
+   },
+   "construction": {
+    "anacrusis": 258,
+    "aug_key_widened_spans": 2496,
+    "aug_state_forced_spans": 11087,
+    "build_seconds": 342.7,
+    "candidates": 11080964,
+    "class_outside_vocabulary": 2,
+    "gt_segments": 13711,
+    "gt_segments_from_cap_split": 129,
+    "gtprov_chord_cell": 6760,
+    "gtprov_chord_leftover": 5188,
+    "gtprov_entry_cell": 1111,
+    "gtprov_entry_leftover": 390,
+    "labeled": 20256,
+    "misaligned_span_left_out": 254,
+    "no_gt_span": 16,
+    "resuming_units": 158,
+    "stems_excluded_flagged": 6,
+    "stems_used": 259,
+    "stems_with_resuming_units": 79,
+    "units": 417,
+    "units_dropped_unscorable_gt": 2,
+    "unmapped_VI | Maj |  | vi": 1,
+    "unmapped_bVI | Maj |  | ": 1
+   },
+   "weights": {
+    "prior": 1.0000000000000515,
+    "declared_mode": 0.9856309268779992,
+    "emission": 0.32048182900251276,
+    "spelling": 0.414887931850744,
+    "bass": 0.24819518049161568,
+    "boundary": 0.7737964836570095,
+    "chord_trans": 0.2694461973587837,
+    "key_trans": 0.5595281825078581,
+    "entry": 0.44335948274511067,
+    "cad_leading_tone": 0.005334673812822935,
+    "cad_tritone_pair": 0.3099855699738103,
+    "cad_dominant_tonic_bass": 0.115214804698661,
+    "cad_fermata_location": 0.06037574398648442
+   }
+  }
+ },
+ "all": null,
+ "provenance": {
+  "generator": "tools/joint_estimator/fit_weights.py",
+  "instrument_commit": "c6ae08bd4528641b50a4c2d670a7035b3e8dcbec",
+  "note_events_git_hash": "e3d17c325d24e0de1213440043cbf02ac14f3d3e",
+  "fold_artifact": "tools/joint_estimator/fold_assignment.json",
+  "protocol": "cowork_prefit_gates.md \u2014 OI-176 (5-fold grouped held-out; every fitted object train-fold-only; model selection by inner validation inside the training folds) and OI-177 (capacity budget; the weight-vector cap amended <=12 -> <=14 by user ratification 2026-07-19, ruling C1)",
+  "weight_vector": [
+   "prior",
+   "declared_mode",
+   "emission",
+   "spelling",
+   "bass",
+   "boundary",
+   "chord_trans",
+   "key_trans",
+   "entry",
+   "cad_leading_tone",
+   "cad_tritone_pair",
+   "cad_dominant_tonic_bass",
+   "cad_fermata_location"
+  ],
+  "n_weights": 13,
+  "identity_weights": {
+   "prior": 1.0,
+   "declared_mode": 1.0,
+   "emission": 1.0,
+   "spelling": 1.0,
+   "bass": 1.0,
+   "boundary": 1.0,
+   "chord_trans": 1.0,
+   "key_trans": 1.0,
+   "entry": 1.0,
+   "cad_leading_tone": 0.0,
+   "cad_tritone_pair": 0.0,
+   "cad_dominant_tonic_bass": 0.0,
+   "cad_fermata_location": 0.0
+  },
+  "objective": "semi-Markov conditional log-likelihood of the ground-truth path: NLL(w) = sum_u [ logZ_u(w) - w.F(y*_u) ] / tokens + lambda*||w - w_identity||^2. Convex (linear numerator, convex logZ, convex quadratic). The L2 anchor is the ratified generative baseline, so lambda -> infinity recovers the identity-weight ablation arm exactly.",
+  "lambda_grid": [
+   0.01,
+   0.003,
+   0.001,
+   0.0003
+  ],
+  "seg_cap_events": 4,
+  "key_prune_topk": 6,
+  "leftover_rule": "option 2a (freq)",
+  "cadence_approach_window": "4 beats (1920 ticks) \u2014 user ruling R1 (W1)",
+  "firewall": "this generator imports no grading module; the grading of the fitted weights is downstream in fit_run.py and feeds no value back"
+ },
+ "establishment": {
+  "viterbi_parity": {
+   "rows": [
+    {
+     "stem": "bwv269",
+     "decoder_score": -782.082736,
+     "lattice_maxplus": -782.082736,
+     "delta": 0.0
+    },
+    {
+     "stem": "bwv352",
+     "decoder_score": -877.040512,
+     "lattice_maxplus": -877.040512,
+     "delta": 0.0
+    },
+    {
+     "stem": "bwv10.7",
+     "decoder_score": -797.776081,
+     "lattice_maxplus": -797.776081,
+     "delta": 0.0
+    }
+   ],
+   "max_abs_delta": 0.0,
+   "pass": true
+  },
+  "forward_backward": {
+   "rows": [
+    {
+     "stem": "bwv10.7",
+     "span": [
+      0,
+      68
+     ],
+     "logZ_forward": -779.37593843,
+     "logZ_backward": -779.37593843,
+     "delta": -0.0,
+     "gt_path_score": -919.298768,
+     "logZ_minus_gt": 139.92283
+    },
+    {
+     "stem": "bwv101.7",
+     "span": [
+      1,
+      19
+     ],
+     "logZ_forward": -203.16355612,
+     "logZ_backward": -203.16355612,
+     "delta": 0.0,
+     "gt_path_score": -230.143051,
+     "logZ_minus_gt": 26.979494
+    },
+    {
+     "stem": "bwv101.7",
+     "span": [
+      22,
+      42
+     ],
+     "logZ_forward": -211.26977342,
+     "logZ_backward": -211.26977342,
+     "delta": -0.0,
+     "gt_path_score": -258.016696,
+     "logZ_minus_gt": 46.746923
+    },
+    {
+     "stem": "bwv101.7",
+     "span": [
+      44,
+      62
+     ],
+     "logZ_forward": -189.99503324,
+     "logZ_backward": -189.99503324,
+     "delta": -0.0,
+     "gt_path_score": -233.394809,
+     "logZ_minus_gt": 43.399776
+    },
+    {
+     "stem": "bwv102.7",
+     "span": [
+      1,
+      29
+     ],
+     "logZ_forward": -298.41947784,
+     "logZ_backward": -298.41947784,
+     "delta": 0.0,
+     "gt_path_score": -390.338094,
+     "logZ_minus_gt": 91.918616
+    },
+    {
+     "stem": "bwv102.7",
+     "span": [
+      30,
+      49
+     ],
+     "logZ_forward": -211.36613813,
+     "logZ_backward": -211.36613813,
+     "delta": -0.0,
+     "gt_path_score": -245.636139,
+     "logZ_minus_gt": 34.270001
+    }
+   ],
+   "max_abs_fb_delta": 0.0,
+   "gt_within_Z": true
+  },
+  "gradient": {
+   "objective": 2.0240509553219854,
+   "analytic": {
+    "prior": -6.7627063369558446e-15,
+    "declared_mode": -0.001603153444810544,
+    "emission": 0.4438840966759212,
+    "spelling": 0.13483967381549594,
+    "bass": 0.1830150070296002,
+    "boundary": -0.11508817822650416,
+    "chord_trans": 1.2812099691672625,
+    "key_trans": -0.13482651704915144,
+    "entry": -0.10031629578119443,
+    "cad_leading_tone": 0.0015792141763698844,
+    "cad_tritone_pair": -0.05724835824682576,
+    "cad_dominant_tonic_bass": -0.0013331733952925459,
+    "cad_fermata_location": -0.013847681170390185
+   },
+   "numeric": {
+    "prior": -2.2204460492503128e-11,
+    "declared_mode": -0.0016031534544325152,
+    "emission": 0.4438840968568058,
+    "spelling": 0.1348396736711166,
+    "bass": 0.18301500706030535,
+    "boundary": -0.11508817838734585,
+    "chord_trans": 1.2812099691172918,
+    "key_trans": -0.1348265171285945,
+    "entry": -0.10031629589235534,
+    "cad_leading_tone": 0.0015792140484194304,
+    "cad_tritone_pair": -0.05724835847598086,
+    "cad_dominant_tonic_bass": -0.0013331734161070583,
+    "cad_fermata_location": -0.01384768124612634
+   },
+   "max_abs_diff": 2.2915509767518216e-10,
+   "max_rel_diff": 0.02219769778616617,
+   "pass": true
+  }
+ },
+ "wall_seconds": 3990.0
+}

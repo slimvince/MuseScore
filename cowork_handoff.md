@@ -169,10 +169,25 @@ field-wise substrate invariance proven and the fermata-conditioned boundary cell
 the standing protocol), the cadence features wired but WEIGHTLESS (fire-establishment against the
 desk-simulation cases; weights come only at the weight-fitting stage), and the chord-class
 vocabulary completed (Neapolitan + augmented-sixth) with a re-measure under a written ±1-point
-prediction. **Step 2 (its own later dispatch): the weight fit** — the ratified staged fitting's
-second stage, on the probe decoder, under the OI-176 held-out folds and OI-177 capacity budget,
-with the identity-weight ablation comparison mandated by the ratified fitting decision; the
-cadence feature weights get their values there. Only after that: the production-module build under
+prediction. **Step 1 is DELIVERED and Cowork-verified at the artifacts (`c6ae08bd45`):** fermatas
+extracted with field-wise substrate invariance proven two independent ways (325/326 pieces carry
+them; the zero piece, bwv112.5, is itself OI-184-flagged); the fermata-conditioned boundary cells
+counted (0.809 at/adjacent vs 0.629 without — the phrase-end convention, fold-stable); the cadence
+features wired weightless with the fire-establishment passing; the chromatic classes completed and
+measured byte-identical at identity weights (the ±1-point prediction held trivially — the classes
+are dormant until weights exist). **Three carried notes for step 2, from CC's anomalies plus one
+Cowork premise error owned:** (a) the corpus holds ZERO Neapolitan tokens (the dispatch premise
+"few" was Cowork's error; the class is carried reachable-but-unfitted for completeness) and
+exactly 2 augmented-sixth tokens, the family collapsed to Italian pitch content (facts only);
+(b) ★ the tritone-pair feature's approach window is under-specified — currently single-event, the
+published form is a FOUR-BEAT approach window — a step-2 design decision to present with
+alternatives; (c) the low tritone fire count (589) reflects that narrow window. **Step 2 is DISPATCHED: `cc_instruction_weight_fit.md`** — the weight fit under the OI-176
+held-out folds and OI-177 capacity budget, both step-2 rulings in (2026-07-19): **W1** (the
+tritone-pair approach window widened to the published four-beat form) and **C1** (the
+weight-vector cap amended ≤ 12 → ≤ 14 by ratification, recorded on the gates document — the four
+cadence features keep their own fitted weights). Predictions written in the dispatch (key-local
+77–85, key-home 62–75, root 72–78, RN 60–68); a band miss at this fit event is a
+STOP-for-review. Only after that: the production-module build under
 the parallel-build sanction, of the complete algorithm, with the probe outputs as parity oracle. OI-179 (the ground-truth ceiling): the literature half is ANSWERED — no
 published inter-annotator agreement figure exists for classical symbolic Roman-numeral analysis
 anywhere in the field, so the 87-stem BCMH measurement would be novel; BCMH is inspected at the files

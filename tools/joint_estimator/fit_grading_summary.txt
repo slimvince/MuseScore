@@ -1,0 +1,91 @@
+=== the weight fit — held-out measurement (algorithm-completion step 2) ===
+instrument_commit c6ae08bd4528641b50a4c2d670a7035b3e8dcbec
+weight fit tools/joint_estimator/weight_fit.json   note_events e3d17c325d24e0de1213440043cbf02ac14f3d3e
+cadence window: tritone-pair approach window = 4 beats (1920 ticks) — user ruling R1 (W1)
+bootstrap: {'B': 2000, 'seed': 20260719, 'level': '95%', 'unit': 'piece (resampled with replacement); paired across arms'}
+
+THE HEADLINE — pooled 5-fold cross-validated decode (each piece decoded once, by the model
+fitted on the complement of its own fold), with piece-level bootstrap 95% intervals.
+
+axis             FITTED (CV)            IDENTITY (CV)          paired delta           step1   current B/J/D
+----------------------------------------------------------------------------------------------------------------------
+key vs LOCAL     70.22  [68.27,72.26]  74.68  [72.92,76.53]   -4.45 [-5.47,-3.46]   74.43  65.99/62.98/65.71
+key vs HOME      56.34  [53.04,59.65]  53.2   [50.62,55.84]   +3.16 [+1.75,+4.52]   53.67  71.42/67.83/70.65
+chord root       73.04  [70.92,75.26]  72.7   [70.65,74.88]   +0.34 [-0.08,+0.79]   72.97  66.04/64.98/65.93
+Roman numeral    57.99  [55.93,60.20]  60.08  [58.04,62.23]   -2.09 [-2.70,-1.45]   59.50  46.33/44.1/46.23
+
+prediction verdicts (Cowork's bands, written before measuring):
+  key vs LOCAL     band 77.0-85.0  measured 70.22  *** OUTSIDE BAND ***  (vs step-1 identity -4.21pp)
+  key vs HOME      band 62.0-75.0  measured 56.34  *** OUTSIDE BAND ***  (vs step-1 identity +2.67pp)
+  chord root       band 72.0-78.0  measured 73.04  HOLDS  (vs step-1 identity +0.07pp)
+  Roman numeral    band 60.0-68.0  measured 57.99  *** OUTSIDE BAND ***  (vs step-1 identity -1.51pp)
+
+publishable all-326 model (BESIDE the headline, not in its place): key vs LOCAL 70.47  key vs HOME 56.64  chord root 73.07  Roman numeral 57.54
+
+THE FITTED WEIGHTS (per fold, and the all-326 publishable model):
+
+weight                           f0       f1       f2       f3       f4    all326
+------------------------------------------------------------------------------------------------
+prior                         1.000    1.000    1.000    1.000    1.000     1.000
+declared_mode                 0.986    0.998    0.918    1.020    1.016     1.056
+emission                      0.320    0.326    0.309    0.318    0.307     0.320
+spelling                      0.415    0.434    0.339    0.422    0.319     0.375
+bass                          0.248    0.245    0.232    0.271    0.233     0.233
+boundary                      0.774    0.785    0.761    0.789    0.759     0.762
+chord_trans                   0.269    0.265    0.276    0.282    0.287     0.276
+key_trans                     0.560    0.529    0.500    0.611    0.511     0.503
+entry                         0.443    0.461    0.468    0.450    0.475     0.472
+cad_leading_tone              0.005    0.019    0.039   -0.047    0.019     0.004
+cad_tritone_pair              0.310    0.228    0.345    0.355    0.333     0.329
+cad_dominant_tonic_bass       0.115    0.045    0.269    0.003    0.283     0.238
+cad_fermata_location          0.060    0.040    0.083    0.046    0.179     0.135
+lambda (inner-validated)      0.003     0.01   0.0003     0.01   0.0003
+
+cadence fires on the committed path — fitted: {'leading_tone': 3082, 'tritone_pair': 10526, 'dominant_tonic_bass': 755, 'fermata_location': 3742, 'boundaries': 15035, 'any_fire': 12136}
+                                     identity: {'leading_tone': 3002, 'tritone_pair': 9054, 'dominant_tonic_bass': 821, 'fermata_location': 3263, 'boundaries': 13569, 'any_fire': 10505}
+
+timings (decode seconds per piece): fitted_cv: mean 2.789 max 13.471  identity_cv: mean 2.722 max 13.408  all326: mean 2.983 max 15.323
+
+-- the declared prune's cost AT THE FITTED WEIGHTS (12-piece sample) --
+  tight(seg_cap 4, topK 6): key vs LOCAL 68.62  key vs HOME 45.31  chord root 71.81  Roman numeral 57.22
+  loose(seg_cap 6, topK 12): key vs LOCAL 75.66  key vs HOME 54.62  chord root 72.95  Roman numeral 60.41
+  LOSS: key vs LOCAL +7.04pp  key vs HOME +9.31pp  chord root +1.14pp  Roman numeral +3.19pp
+
+-- the deceptive-cadence case (S5 (deceptive cadence V7 -> vi in C major)) --
+  desk-sim provisional cadence weights: winner Cmaj margin +4.93
+  FITTED cadence weights:               winner Cmaj margin +3.67
+  verdict preserved: True
+
+-- the desk-simulation sensitive cases under the fitted weights --
+  bwv352: segments 39 (identity) -> 41 (fitted)
+     columns fitted   {'key_local_agree_pct': 88.5, 'key_home_agree_pct': 52.1, 'root_agree_pct': 84.9, 'rn_agree_pct': 75.5}
+     columns identity {'key_local_agree_pct': 92.7, 'key_home_agree_pct': 56.2, 'root_agree_pct': 81.8, 'rn_agree_pct': 73.4}
+     at tick 1440: fitted {'span': [1440, 1920], 'key': 'Amin', 'class': 'I | Min |  | ', 'root_pc': 9}
+                    identity {'span': [1440, 1920], 'key': 'Amin', 'class': 'I | Min |  | ', 'root_pc': 9}
+  bwv10.7: segments 49 (identity) -> 57 (fitted)
+     columns fitted   {'key_local_agree_pct': 63.6, 'key_home_agree_pct': 9.1, 'root_agree_pct': 78.4, 'rn_agree_pct': 54.5}
+     columns identity {'key_local_agree_pct': 61.4, 'key_home_agree_pct': 22.7, 'root_agree_pct': 85.2, 'rn_agree_pct': 64.8}
+     at tick 36000: fitted {'span': [36000, 36480], 'key': 'Cmin', 'class': 'II | Min |  | ', 'root_pc': 2}
+                    identity {'span': [36000, 36480], 'key': 'Cmin', 'class': 'II | Min |  | ', 'root_pc': 2}
+  bwv88.7: segments 29 (identity) -> 33 (fitted)
+     columns fitted   {'key_local_agree_pct': 31.4, 'key_home_agree_pct': 8.6, 'root_agree_pct': 67.1, 'rn_agree_pct': 41.4}
+     columns identity {'key_local_agree_pct': 22.9, 'key_home_agree_pct': 0.0, 'root_agree_pct': 60.0, 'rn_agree_pct': 28.6}
+     at tick 0: fitted {'span': [0, 960], 'key': 'Dmaj', 'class': 'VI | Min |  | ', 'root_pc': 11}
+                    identity {'span': [0, 960], 'key': 'Dmaj', 'class': 'VI | Min |  | ', 'root_pc': 11}
+
+-- the fit's own record (from weight_fit.json) --
+  lattice max-plus == decoder Viterbi: max|delta| 0.0  (PASS)
+  forward logZ == backward logZ: max|delta| 0.0; ground-truth path inside Z: True
+  analytic gradient vs finite differences: max|diff| 2.2915509767518216e-10  (PASS)
+  fold0: lambda 0.003  objective 1.27730 -> 1.27708  |grad| 4.36e-06  evals 55  monotone True  CONVERGENCE: RELATIVE REDUCTION OF F <= 
+  fold1: lambda 0.01  objective 1.33066 -> 1.32998  |grad| 2.35e-06  evals 43  monotone True  CONVERGENCE: RELATIVE REDUCTION OF F <= 
+  fold2: lambda 0.0003  objective 1.30520 -> 1.30363  |grad| 3.68e-06  evals 102  monotone True  CONVERGENCE: RELATIVE REDUCTION OF F <= 
+  fold3: lambda 0.01  objective 1.26508 -> 1.26425  |grad| 3.72e-06  evals 38  monotone True  CONVERGENCE: RELATIVE REDUCTION OF F <= 
+  fold4: lambda 0.0003  objective 1.32532 -> 1.32491  |grad| 5.63e-06  evals 74  monotone True  CONVERGENCE: RELATIVE REDUCTION OF F <= 
+
+-- ground-truth path construction (all-326 build) --
+  stems used 319 (flagged excluded 7); units 516 of which resuming 197
+  labeled events 25550; anacrusis 317; misaligned-span left-out 310; no-GT-span 16; class outside vocabulary 2
+  ground-truth segments 17264 (of which 179 produced by the segment-cap split)
+  lattice augmentation: key widened on 3135 spans, state force-added on 14257 spans, of 15021368 candidates
+  ground-truth transitions through leftover mass: chord 6356 of 15050; entry 471 of 1913

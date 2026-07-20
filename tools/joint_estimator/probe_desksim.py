@@ -152,7 +152,10 @@ class ProvisionalAdapter(pd.Adapter):
         return -1.05 if role == "third" else -0.80
 
     # ---- T7: boundary ----
-    def boundary_logp(self, beat_class, is_boundary):
+    def boundary_logp(self, beat_class, is_boundary, ferm_ctx=False):
+        # the desk simulation's provisional T7 has no fermata cell (its synthetic pieces carry no
+        # fermata); the covariate is accepted and ignored so the injected table stays exactly as the
+        # hand arithmetic used it.
         if beat_class == "downbeat":
             return -0.43 if is_boundary else -1.05
         if beat_class == "sub_tactus":
@@ -472,6 +475,11 @@ _FIRE_CHECKS = [
 # SINGLE-event approach (event i-1 = e6 = the V), which lacks D. The divergence is confined to this
 # feature+window, is verdict-irrelevant (a-minor still wins S2), and is DECLARED to Cowork as the
 # fit-time window design question (theory §F4). Any OTHER mismatch is a STOP.
+# The step-1 exemption: the S2 tritone was the one desk-sim credit the probe's SINGLE-EVENT approach
+# window could not reproduce (declared to Cowork as the fit-time window design question). ★R1 (user
+# ruling 2026-07-19) adopted the published four-beat window, and the check now matches exactly — the
+# exemption is retained only so a regression would be classified, and the runner reports whether it was
+# exercised at all.
 _DOC_SLIP_KEY = ("relative-pair resolution event", "tritone_pair")
 
 
@@ -524,7 +532,13 @@ def run_cadence_fire_establishment(verbose=True):
                 print(f"      {f:22s} desk={int(d['desk'])} actual={int(d['actual'])}  [{mk}]")
             if r["resolution_fires_only_at_arrival"] is not None:
                 print(f"      resolution fires ONLY at the arrival event: {r['resolution_fires_only_at_arrival']}")
-        print(f"  ==> establishment {'STOP (implementation mismatch)' if stop else 'PASS (3/4 exact; S2 tritone = documented window under-spec)'}")
+        n_feat = sum(len(r["per_feature"]) for r in rows)
+        n_exact = sum(1 for r in rows for d in r["per_feature"].values() if d["match"])
+        n_slip = sum(1 for r in rows for d in r["per_feature"].values()
+                     if d["classify"] == "documented_window_underspec")
+        print(f"  ==> establishment {'STOP (implementation mismatch)' if stop else 'PASS'} "
+              f"({n_exact}/{n_feat} feature checks exact; documented window-underspec exemption used "
+              f"{n_slip}x)")
     return rows, stop
 
 

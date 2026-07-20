@@ -73,8 +73,12 @@ silent hand-picking hidden inside "derived from counts."
    The degree vocabulary's rare-class pooling (factorization §1) is the same rule applied to the state
    space itself.
 3. **Global sanity bound:** total effective free parameters ≤ training tokens / 10 [prov-ratify],
-   verified in the artifact. The combination-weight vector stays ≤ 12 weights (one per factor plus the
-   declared-mode strength), L2-penalized, per the ratified staged-fitting decision.
+   verified in the artifact. The combination-weight vector stays ≤ 14 weights, L2-penalized, per the
+   ratified staged-fitting decision. *(Amended ≤ 12 → ≤ 14 by user ratification 2026-07-19 at the
+   weight-fit dispatch: the ratified factorization gives the four cadence features their own fitted
+   weights, putting the enumerated vector at 12–13; the amendment is the lawful #22 path — capacity
+   impact nil, thousands of training tokens per weight either way. Original text: "≤ 12 weights (one
+   per factor plus the declared-mode strength)".)*
 4. **The desk-sim sensitive-cell record (`cowork_factorization_desk_simulation.md` §4.3) gets explicit
    treatment:** the artifact reports, by name, the raw count and own-MLE-vs-pooled disposition of the
    named cells (V6→viø7, viø7→IV, i→IV-raised-6, the applied retrogression cells vi→V/vi and

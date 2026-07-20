@@ -1,5 +1,5 @@
 === fermata-conditioned boundary cells (algorithm-completion step 1) — summary ===
-corpus git_hash: e3d17c325d24e0de1213440043cbf02ac14f3d3e
+corpus git_hash: c6ae08bd4528641b50a4c2d670a7035b3e8dcbec
 counted stems: 317  (excluded: {'flagged': 7, 'multi_meter': 2})
 
 P(segment boundary | fermata at/adjacent) — the ONE counted addition (all-326 fold):
@@ -13,6 +13,17 @@ P(segment boundary | fermata at/adjacent) — the ONE counted addition (all-326 
   fermata_at_or_adjacent   P=0.8098  (4521/5583)  [reliable]
   no_fermata_context       P=0.6282  (12375/19698)  [reliable]
   _marginal                P=0.6683  (16896/25281)
+
+P(boundary | beat class x fermata context) — the CROSSED table the decoder consumes
+  (step 2; unreliable cell pools to the beat-class-only cell of note_tables_*.json):
+  downbeat      fermata_at_or_adjacent   P=0.9730  (1223/1257)  [reliable]
+  downbeat      no_fermata_context       P=0.9727  (2954/3037)  [reliable]
+  mid_strong    fermata_at_or_adjacent   P=0.9573  (1099/1148)  [reliable]
+  mid_strong    no_fermata_context       P=0.9620  (1922/1998)  [reliable]
+  other_tactus  fermata_at_or_adjacent   P=0.8752  (1431/1635)  [reliable]
+  other_tactus  no_fermata_context       P=0.8560  (5161/6029)  [reliable]
+  sub_tactus    fermata_at_or_adjacent   P=0.4938  (762/1543)  [reliable]
+  sub_tactus    no_fermata_context       P=0.2729  (2356/8634)  [reliable]
 
 per training fold — P(boundary | fermata at/adjacent), exact_tick:
   fold0: P=0.8097  (3609/4457)

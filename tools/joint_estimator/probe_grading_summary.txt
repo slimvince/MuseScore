@@ -1,24 +1,25 @@
 === probe decoder — Task-3 corpus decode + grading (summary) ===
-instrument_commit e3d17c325d24e0de1213440043cbf02ac14f3d3e
+instrument_commit c6ae08bd4528641b50a4c2d670a7035b3e8dcbec
 note_events_git_hash e3d17c325d24e0de1213440043cbf02ac14f3d3e  tables_git_hash 57ed94a6a46571172a351c09ba4f5cb92930674a
 leftover_rule option 2a (freq)  seg_cap 4  key_prune_topk 6
-cadence: WIRED, WEIGHTLESS (algorithm-completion step 1): the ratified cadence-evidence features compute at every committed boundary and are LOGGED (cadence_feature_fires), but every weight is 0 so they move no score — the vocabulary change is isolated.
-fermata: EXTRACTED (note_events fermata field, step 1); the cadence-location feature is wired weightless; the counted fermata-boundary cells are in fermata_boundary_addendum.json.
-coverage 326 graded / 0 no-WiR; decode mean 2.658s max 13.299s total 866.6s
+cadence: WIRED, WEIGHTLESS on this arm: this is the IDENTITY-weight (generative-baseline) decode, so every cadence weight is 0 and the features move no score; their fires are logged. The features themselves are the step-2 forms — the tritone pair now uses the ruled four-beat approach window (R1/W1). The FITTED arm is measured in fit_run.py / fit_grading.json.
+fermata: EXTRACTED (note_events fermata field, step 1). Step 2: the boundary factor now reads the fermata cells CROSSED with the beat class (fermata_boundary_addendum.exact_tick_by_beat_class), pooling to the beat-class-only cell below the count threshold — the ratified factorization's boundary form (§3 items 7+8). This is the only thing that moves this arm from the step-1 committed columns.
+coverage 326 graded / 0 no-WiR; decode mean 3.214s max 16.863s total 1047.7s
 
 axis                PROBE-base   MEASURED     delta      Default(B/J/D)
 ------------------------------------------------------------------------------
-key vs LOCAL       74.43        74.43          +0.00    65.99/62.98/65.71
-key vs HOME        53.67        53.67          +0.00    71.42/67.83/70.65
-chord root         72.97        72.97          +0.00    66.04/64.98/65.93
-Roman numeral      59.5         59.5           +0.00    46.33/44.1/46.23
+key vs LOCAL       74.43        74.42          -0.01    65.99/62.98/65.71
+key vs HOME        53.67        53.69          +0.02    71.42/67.83/70.65
+chord root         72.97        72.88          -0.09    66.04/64.98/65.93
+Roman numeral      59.5         59.49          -0.01    46.33/44.1/46.23
 
-PREDICTION (<+/-1.0pp on every axis vs probe baseline): HOLDS
-cadence fires (WEIGHTLESS; 13556 committed boundaries; move NO score): leading_tone=2949 tritone_pair=589 dominant_tonic_bass=802 fermata_location=3242 any_fire=5624
+IDENTITY-arm movement vs the step-1 committed columns: {'root_agree_pct': -0.09, 'rn_agree_pct': -0.01, 'key_home_agree_pct': 0.02, 'key_local_agree_pct': -0.01}
+  attribution: the fermata-crossed boundary cells (step-2 algorithm completion); every other factor and every weight is unchanged from the step-1 committed run
+cadence fires (WEIGHTLESS; 13543 committed boundaries; move NO score): leading_tone=2960 tritone_pair=9075 dominant_tonic_bass=805 fermata_location=3215 any_fire=10513
 chromatic classes decoded (Task 3): 0 segments on 0 pieces  []
 
 key abstain: home 0.0%  local 0.0% (commits best path everywhere)
-slowest pieces: [['bwv328', 13.3, 391], ['bwv371', 10.65, 329], ['bwv437', 7.26, 250], ['bwv276', 7.05, 223], ['bwv425', 6.27, 197], ['bwv42.7', 5.99, 169]]
+slowest pieces: [['bwv328', 16.86, 391], ['bwv371', 12.74, 329], ['bwv437', 9.12, 250], ['bwv276', 8.44, 223], ['bwv425', 7.65, 197], ['bwv42.7', 7.47, 169]]
 
 10 weakest key-local pieces:
   bwv226.2   key_local   0.0%  root   5.5%
@@ -27,10 +28,10 @@ slowest pieces: [['bwv328', 13.3, 391], ['bwv371', 10.65, 329], ['bwv437', 7.26,
   bwv88.7    key_local  22.9%  root  60.0%
   bwv113.8   key_local  27.3%  root  15.9%
   bwv366     key_local  29.2%  root  35.4%
-  bwv371     key_local  35.7%  root  30.8%
+  bwv371     key_local  35.7%  root  30.2%
   bwv65.2    key_local  40.4%  root  87.2%
-  bwv277     key_local  40.5%  root  37.3%
-  bwv419     key_local  46.8%  root  58.5%
+  bwv277     key_local  40.5%  root  38.9%
+  bwv110.7   key_local  43.0%  root  24.4%
 10 strongest key-local pieces:
   bwv433     key_local 100.0%  root  93.2%
   bwv397     key_local 100.0%  root  82.7%
@@ -44,12 +45,12 @@ slowest pieces: [['bwv328', 13.3, 391], ['bwv371', 10.65, 329], ['bwv437', 7.26,
   bwv385     key_local  98.2%  root  87.3%
 
 -- per-piece vs Default baseline (326 pieces) --
-mean key_local delta +7.84pp  root delta +7.05pp  (key_local better/worse 220/90)
+mean key_local delta +7.81pp  root delta +6.93pp  (key_local better/worse 221/91)
 10 largest key-local WINS vs Default (stem: mine vs default):
   bwv274      +56.2pp  (68.8 vs 12.5)  root +4.7pp
   bwv271      +47.9pp  (77.7 vs 29.8)  root -2.1pp
   bwv244.54   +46.8pp  (83.0 vs 36.2)  root -11.7pp
-  bwv256      +43.6pp  (87.2 vs 43.6)  root +19.2pp
+  bwv256      +43.6pp  (87.2 vs 43.6)  root +20.5pp
   bwv367      +41.3pp  (89.1 vs 47.8)  root +7.6pp
   bwv117.4    +39.7pp  (85.9 vs 46.2)  root +17.9pp
   bwv397      +38.5pp  (100.0 vs 61.5)  root +18.3pp

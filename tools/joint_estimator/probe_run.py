@@ -144,14 +144,20 @@ def _delta(new, base):
     return round(new - base, 2)
 
 
-def _prediction_verdict(cols, base):
-    """The dispatch's ±1-point prediction: every axis moves < ±1pp. Returns the per-axis |delta| and a
-    boolean; a larger movement on any axis is a prominently-reported surprise (the dispatch's wording)."""
+def _completion_delta(cols, base):
+    """The movement of the IDENTITY-weight (generative-baseline) decode from the step-1 committed
+    columns to this run. Under algorithm-completion step 2 exactly one thing can move it: the boundary
+    factor now carries the fermata cells the ratified factorization names, crossed with the beat class
+    (gen_fermata_boundary.exact_tick_by_beat_class). The R1 approach-window ruling cannot move it — the
+    cadence weights are zero on this arm — and the weight vector is at its identity setting, which
+    reproduces the step-1 arithmetic exactly. So this delta IS the fermata cells' effect at identity."""
     axes = ("root_agree_pct", "rn_agree_pct", "key_home_agree_pct", "key_local_agree_pct")
     deltas = {a: _delta(cols.get(a), base.get(a)) for a in axes}
-    over = {a: d for a, d in deltas.items() if d is not None and abs(d) >= 1.0}
-    return {"deltas_pp": deltas, "prediction": "every axis moves < +/-1.0pp",
-            "holds": len(over) == 0, "axes_over_1pp": over}
+    return {"deltas_pp": deltas,
+            "attribution": ("the fermata-crossed boundary cells (step-2 algorithm completion); every "
+                            "other factor and every weight is unchanged from the step-1 committed run"),
+            "axes_moved_over_1pp": {a: d for a, d in deltas.items()
+                                    if d is not None and abs(d) >= 1.0}}
 
 
 def run_corpus(write=True, verbose=True, stems=None):
@@ -229,11 +235,17 @@ def run_corpus(write=True, verbose=True, stems=None):
             "tables_git_hash": adapter.corpus_git_hash,
             "leftover_rule": f"option 2{'a' if LEFTOVER=='freq' else 'b'} ({LEFTOVER})",
             "seg_cap_events": SEG_CAP, "key_prune_topk": pd.KEY_PRUNE_TOPK,
-            "cadence": ("WIRED, WEIGHTLESS (algorithm-completion step 1): the ratified cadence-evidence "
-                        "features compute at every committed boundary and are LOGGED (cadence_feature_fires), "
-                        "but every weight is 0 so they move no score — the vocabulary change is isolated."),
-            "fermata": ("EXTRACTED (note_events fermata field, step 1); the cadence-location feature is "
-                        "wired weightless; the counted fermata-boundary cells are in fermata_boundary_addendum.json."),
+            "cadence": ("WIRED, WEIGHTLESS on this arm: this is the IDENTITY-weight (generative-baseline) "
+                        "decode, so every cadence weight is 0 and the features move no score; their fires "
+                        "are logged. The features themselves are the step-2 forms — the tritone pair now "
+                        "uses the ruled four-beat approach window (R1/W1). The FITTED arm is measured in "
+                        "fit_run.py / fit_grading.json."),
+            "fermata": ("EXTRACTED (note_events fermata field, step 1). Step 2: the boundary factor now "
+                        "reads the fermata cells CROSSED with the beat class "
+                        "(fermata_boundary_addendum.exact_tick_by_beat_class), pooling to the "
+                        "beat-class-only cell below the count threshold — the ratified factorization's "
+                        "boundary form (§3 items 7+8). This is the only thing that moves this arm from "
+                        "the step-1 committed columns."),
             "chromatic_vocab": ("Task 3: AugSixth (Italian; the 2 corpus tokens) + Neapolitan added to the "
                                 "decode vocabulary via chromatic_root_pc; see chromatic_decodes."),
             "grading": "a8_rebaseline_measure.build_piece_grid (pinned, read-only) vs "
@@ -248,7 +260,7 @@ def run_corpus(write=True, verbose=True, stems=None):
             "key_home_agree_pct": _delta(cols["key_home_agree_pct"], PROBE_BASELINE["key_home_agree_pct"]),
             "key_local_agree_pct": _delta(cols["key_local_agree_pct"], PROBE_BASELINE["key_local_agree_pct"]),
         },
-        "prediction_verdict": _prediction_verdict(cols, PROBE_BASELINE),
+        "identity_completion_delta": _completion_delta(cols, PROBE_BASELINE),
         "cadence_feature_fires": dict(cad_totals),
         "chromatic_decodes": {
             "n_segments": sum(len(v) for v in chromatic_decodes.values()),
@@ -577,10 +589,10 @@ def write_summaries():
         pb = PROBE_BASELINE[ck]
         d = _delta(c[ck], pb)
         L.append(f"{axis:18s} {pb!s:12s} {c[ck]!s:12s} {d:+7.2f}    {b['Baroque']}/{b['Jazz']}/{b['Default']}")
-    pv = g.get("prediction_verdict", {})
+    pv = g.get("identity_completion_delta", {})
     L.append("")
-    L.append(f"PREDICTION (<+/-1.0pp on every axis vs probe baseline): "
-             f"{'HOLDS' if pv.get('holds') else 'SURPRISE — ' + str(pv.get('axes_over_1pp'))}")
+    L.append(f"IDENTITY-arm movement vs the step-1 committed columns: {pv.get('deltas_pp')}")
+    L.append(f"  attribution: {pv.get('attribution')}")
     cf = g.get("cadence_feature_fires", {})
     if cf:
         L.append(f"cadence fires (WEIGHTLESS; {cf.get('boundaries',0)} committed boundaries; move NO score): "

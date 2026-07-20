@@ -1,0 +1,5917 @@
+{
+ "provenance": {
+  "generator": "tools/joint_estimator/fit_run.py:cadence_window_report",
+  "instrument_commit": "c6ae08bd4528641b50a4c2d670a7035b3e8dcbec",
+  "path": "the step-1 identity-weight decode path committed at c6ae08bd45 (probe_corpus_decode.json, read from that commit); the boundaries are identical under both windows because the step-1 cadence weights were all zero, so this isolates the feature-definition change",
+  "ruling": "R1 = W1 (user, 2026-07-19): the tritone-pair approach window is the four beats strictly before the boundary event, within the piece, voice-agnostic, both degrees sounding anywhere in the window. Four beats = 1920 ticks at 480 ticks/quarter-beat (the corpus-wide beat convention of these instruments).",
+  "superseded": "single-event approach (the step-1 declared under-specification)"
+ },
+ "single_event_window": {
+  "boundaries": 13556,
+  "leading_tone": 2949,
+  "tritone_pair": 589,
+  "dominant_tonic_bass": 802,
+  "fermata_location": 3242,
+  "any_fire": 5624
+ },
+ "four_beat_window": {
+  "boundaries": 13556,
+  "leading_tone": 2949,
+  "tritone_pair": 9084,
+  "dominant_tonic_bass": 802,
+  "fermata_location": 3242,
+  "any_fire": 10530
+ },
+ "delta": {
+  "any_fire": 4906,
+  "boundaries": 0,
+  "dominant_tonic_bass": 0,
+  "fermata_location": 0,
+  "leading_tone": 0,
+  "tritone_pair": 8495
+ },
+ "fire_rate_per_boundary": {
+  "single_event": {
+   "leading_tone": 0.2175,
+   "tritone_pair": 0.0434,
+   "dominant_tonic_bass": 0.0592,
+   "fermata_location": 0.2392
+  },
+  "four_beat": {
+   "leading_tone": 0.2175,
+   "tritone_pair": 0.6701,
+   "dominant_tonic_bass": 0.0592,
+   "fermata_location": 0.2392
+  }
+ },
+ "per_piece": {
+  "bwv10.7": {
+   "old": {
+    "boundaries": 48,
+    "leading_tone": 10,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 6,
+    "any_fire": 14
+   },
+   "new": {
+    "boundaries": 48,
+    "leading_tone": 10,
+    "tritone_pair": 16,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 6,
+    "any_fire": 22
+   }
+  },
+  "bwv101.7": {
+   "old": {
+    "boundaries": 41,
+    "leading_tone": 13,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 10,
+    "any_fire": 18
+   },
+   "new": {
+    "boundaries": 41,
+    "leading_tone": 13,
+    "tritone_pair": 23,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 10,
+    "any_fire": 30
+   }
+  },
+  "bwv102.7": {
+   "old": {
+    "boundaries": 41,
+    "leading_tone": 12,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 9,
+    "any_fire": 19
+   },
+   "new": {
+    "boundaries": 41,
+    "leading_tone": 12,
+    "tritone_pair": 29,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 9,
+    "any_fire": 32
+   }
+  },
+  "bwv103.6": {
+   "old": {
+    "boundaries": 37,
+    "leading_tone": 7,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 10,
+    "any_fire": 13
+   },
+   "new": {
+    "boundaries": 37,
+    "leading_tone": 7,
+    "tritone_pair": 23,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 10,
+    "any_fire": 26
+   }
+  },
+  "bwv104.6": {
+   "old": {
+    "boundaries": 36,
+    "leading_tone": 12,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 7,
+    "any_fire": 17
+   },
+   "new": {
+    "boundaries": 36,
+    "leading_tone": 12,
+    "tritone_pair": 32,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 7,
+    "any_fire": 34
+   }
+  },
+  "bwv108.6": {
+   "old": {
+    "boundaries": 40,
+    "leading_tone": 10,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 8,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 40,
+    "leading_tone": 10,
+    "tritone_pair": 25,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 8,
+    "any_fire": 33
+   }
+  },
+  "bwv11.6": {
+   "old": {
+    "boundaries": 46,
+    "leading_tone": 11,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 9,
+    "any_fire": 19
+   },
+   "new": {
+    "boundaries": 46,
+    "leading_tone": 11,
+    "tritone_pair": 29,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 9,
+    "any_fire": 34
+   }
+  },
+  "bwv110.7": {
+   "old": {
+    "boundaries": 30,
+    "leading_tone": 6,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 7,
+    "any_fire": 13
+   },
+   "new": {
+    "boundaries": 30,
+    "leading_tone": 6,
+    "tritone_pair": 20,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 7,
+    "any_fire": 24
+   }
+  },
+  "bwv112.5": {
+   "old": {
+    "boundaries": 63,
+    "leading_tone": 16,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 0,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 63,
+    "leading_tone": 16,
+    "tritone_pair": 55,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 0,
+    "any_fire": 56
+   }
+  },
+  "bwv113.8": {
+   "old": {
+    "boundaries": 34,
+    "leading_tone": 6,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 6,
+    "any_fire": 11
+   },
+   "new": {
+    "boundaries": 34,
+    "leading_tone": 6,
+    "tritone_pair": 17,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 6,
+    "any_fire": 22
+   }
+  },
+  "bwv114.7": {
+   "old": {
+    "boundaries": 34,
+    "leading_tone": 9,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 8,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 34,
+    "leading_tone": 9,
+    "tritone_pair": 28,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 8,
+    "any_fire": 30
+   }
+  },
+  "bwv115.6": {
+   "old": {
+    "boundaries": 27,
+    "leading_tone": 8,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "any_fire": 15
+   },
+   "new": {
+    "boundaries": 27,
+    "leading_tone": 8,
+    "tritone_pair": 20,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "any_fire": 26
+   }
+  },
+  "bwv117.4": {
+   "old": {
+    "boundaries": 37,
+    "leading_tone": 12,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "any_fire": 18
+   },
+   "new": {
+    "boundaries": 37,
+    "leading_tone": 12,
+    "tritone_pair": 27,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "any_fire": 31
+   }
+  },
+  "bwv121.6": {
+   "old": {
+    "boundaries": 41,
+    "leading_tone": 14,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "any_fire": 19
+   },
+   "new": {
+    "boundaries": 41,
+    "leading_tone": 14,
+    "tritone_pair": 27,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "any_fire": 32
+   }
+  },
+  "bwv122.6": {
+   "old": {
+    "boundaries": 33,
+    "leading_tone": 8,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 7,
+    "any_fire": 12
+   },
+   "new": {
+    "boundaries": 33,
+    "leading_tone": 8,
+    "tritone_pair": 21,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 7,
+    "any_fire": 26
+   }
+  },
+  "bwv123.6": {
+   "old": {
+    "boundaries": 33,
+    "leading_tone": 7,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "any_fire": 13
+   },
+   "new": {
+    "boundaries": 33,
+    "leading_tone": 7,
+    "tritone_pair": 12,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "any_fire": 20
+   }
+  },
+  "bwv126.6": {
+   "old": {
+    "boundaries": 80,
+    "leading_tone": 12,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 19,
+    "any_fire": 30
+   },
+   "new": {
+    "boundaries": 80,
+    "leading_tone": 12,
+    "tritone_pair": 50,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 19,
+    "any_fire": 58
+   }
+  },
+  "bwv127.5": {
+   "old": {
+    "boundaries": 48,
+    "leading_tone": 13,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 10,
+    "any_fire": 22
+   },
+   "new": {
+    "boundaries": 48,
+    "leading_tone": 13,
+    "tritone_pair": 29,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 10,
+    "any_fire": 35
+   }
+  },
+  "bwv13.6": {
+   "old": {
+    "boundaries": 37,
+    "leading_tone": 11,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 10,
+    "any_fire": 18
+   },
+   "new": {
+    "boundaries": 37,
+    "leading_tone": 11,
+    "tritone_pair": 21,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 10,
+    "any_fire": 26
+   }
+  },
+  "bwv133.6": {
+   "old": {
+    "boundaries": 28,
+    "leading_tone": 6,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "any_fire": 12
+   },
+   "new": {
+    "boundaries": 28,
+    "leading_tone": 6,
+    "tritone_pair": 18,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "any_fire": 20
+   }
+  },
+  "bwv14.5": {
+   "old": {
+    "boundaries": 36,
+    "leading_tone": 6,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 8,
+    "any_fire": 12
+   },
+   "new": {
+    "boundaries": 36,
+    "leading_tone": 6,
+    "tritone_pair": 24,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 8,
+    "any_fire": 26
+   }
+  },
+  "bwv140.7": {
+   "old": {
+    "boundaries": 49,
+    "leading_tone": 9,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 15,
+    "any_fire": 20
+   },
+   "new": {
+    "boundaries": 49,
+    "leading_tone": 9,
+    "tritone_pair": 32,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 15,
+    "any_fire": 37
+   }
+  },
+  "bwv144.3": {
+   "old": {
+    "boundaries": 34,
+    "leading_tone": 11,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "any_fire": 18
+   },
+   "new": {
+    "boundaries": 34,
+    "leading_tone": 11,
+    "tritone_pair": 26,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "any_fire": 30
+   }
+  },
+  "bwv144.6": {
+   "old": {
+    "boundaries": 42,
+    "leading_tone": 4,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 8,
+    "any_fire": 12
+   },
+   "new": {
+    "boundaries": 42,
+    "leading_tone": 4,
+    "tritone_pair": 17,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 8,
+    "any_fire": 21
+   }
+  },
+  "bwv145.5": {
+   "old": {
+    "boundaries": 35,
+    "leading_tone": 7,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 9,
+    "any_fire": 15
+   },
+   "new": {
+    "boundaries": 35,
+    "leading_tone": 7,
+    "tritone_pair": 18,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 9,
+    "any_fire": 24
+   }
+  },
+  "bwv148.6": {
+   "old": {
+    "boundaries": 36,
+    "leading_tone": 8,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 10,
+    "any_fire": 17
+   },
+   "new": {
+    "boundaries": 36,
+    "leading_tone": 8,
+    "tritone_pair": 30,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 10,
+    "any_fire": 32
+   }
+  },
+  "bwv151.5": {
+   "old": {
+    "boundaries": 28,
+    "leading_tone": 6,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 9,
+    "any_fire": 13
+   },
+   "new": {
+    "boundaries": 28,
+    "leading_tone": 6,
+    "tritone_pair": 22,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 9,
+    "any_fire": 25
+   }
+  },
+  "bwv153.1": {
+   "old": {
+    "boundaries": 36,
+    "leading_tone": 5,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "any_fire": 13
+   },
+   "new": {
+    "boundaries": 36,
+    "leading_tone": 5,
+    "tritone_pair": 22,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "any_fire": 26
+   }
+  },
+  "bwv153.5": {
+   "old": {
+    "boundaries": 36,
+    "leading_tone": 9,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 9,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 36,
+    "leading_tone": 9,
+    "tritone_pair": 25,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 9,
+    "any_fire": 28
+   }
+  },
+  "bwv153.9": {
+   "old": {
+    "boundaries": 31,
+    "leading_tone": 4,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "any_fire": 10
+   },
+   "new": {
+    "boundaries": 31,
+    "leading_tone": 4,
+    "tritone_pair": 14,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "any_fire": 16
+   }
+  },
+  "bwv154.3": {
+   "old": {
+    "boundaries": 33,
+    "leading_tone": 8,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 10,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 33,
+    "leading_tone": 8,
+    "tritone_pair": 27,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 10,
+    "any_fire": 29
+   }
+  },
+  "bwv154.8": {
+   "old": {
+    "boundaries": 39,
+    "leading_tone": 5,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 10,
+    "any_fire": 15
+   },
+   "new": {
+    "boundaries": 39,
+    "leading_tone": 5,
+    "tritone_pair": 27,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 10,
+    "any_fire": 30
+   }
+  },
+  "bwv155.5": {
+   "old": {
+    "boundaries": 35,
+    "leading_tone": 6,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 8,
+    "any_fire": 13
+   },
+   "new": {
+    "boundaries": 35,
+    "leading_tone": 6,
+    "tritone_pair": 29,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 8,
+    "any_fire": 32
+   }
+  },
+  "bwv156.6": {
+   "old": {
+    "boundaries": 40,
+    "leading_tone": 9,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 9,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 40,
+    "leading_tone": 9,
+    "tritone_pair": 28,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 9,
+    "any_fire": 30
+   }
+  },
+  "bwv159.5": {
+   "old": {
+    "boundaries": 49,
+    "leading_tone": 12,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 7,
+    "fermata_location": 14,
+    "any_fire": 24
+   },
+   "new": {
+    "boundaries": 49,
+    "leading_tone": 12,
+    "tritone_pair": 36,
+    "dominant_tonic_bass": 7,
+    "fermata_location": 14,
+    "any_fire": 39
+   }
+  },
+  "bwv16.6": {
+   "old": {
+    "boundaries": 31,
+    "leading_tone": 4,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 8,
+    "any_fire": 13
+   },
+   "new": {
+    "boundaries": 31,
+    "leading_tone": 4,
+    "tritone_pair": 19,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 8,
+    "any_fire": 24
+   }
+  },
+  "bwv164.6": {
+   "old": {
+    "boundaries": 32,
+    "leading_tone": 7,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 8,
+    "any_fire": 13
+   },
+   "new": {
+    "boundaries": 32,
+    "leading_tone": 7,
+    "tritone_pair": 26,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 8,
+    "any_fire": 27
+   }
+  },
+  "bwv166.6": {
+   "old": {
+    "boundaries": 30,
+    "leading_tone": 9,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 6,
+    "any_fire": 13
+   },
+   "new": {
+    "boundaries": 30,
+    "leading_tone": 9,
+    "tritone_pair": 13,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 6,
+    "any_fire": 20
+   }
+  },
+  "bwv168.6": {
+   "old": {
+    "boundaries": 35,
+    "leading_tone": 10,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 35,
+    "leading_tone": 10,
+    "tritone_pair": 22,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "any_fire": 26
+   }
+  },
+  "bwv169.7": {
+   "old": {
+    "boundaries": 44,
+    "leading_tone": 11,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 10,
+    "any_fire": 19
+   },
+   "new": {
+    "boundaries": 44,
+    "leading_tone": 11,
+    "tritone_pair": 34,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 10,
+    "any_fire": 37
+   }
+  },
+  "bwv17.7": {
+   "old": {
+    "boundaries": 75,
+    "leading_tone": 19,
+    "tritone_pair": 6,
+    "dominant_tonic_bass": 7,
+    "fermata_location": 18,
+    "any_fire": 33
+   },
+   "new": {
+    "boundaries": 75,
+    "leading_tone": 19,
+    "tritone_pair": 44,
+    "dominant_tonic_bass": 7,
+    "fermata_location": 18,
+    "any_fire": 55
+   }
+  },
+  "bwv174.5": {
+   "old": {
+    "boundaries": 63,
+    "leading_tone": 15,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 8,
+    "fermata_location": 15,
+    "any_fire": 28
+   },
+   "new": {
+    "boundaries": 63,
+    "leading_tone": 15,
+    "tritone_pair": 42,
+    "dominant_tonic_bass": 8,
+    "fermata_location": 15,
+    "any_fire": 52
+   }
+  },
+  "bwv176.6": {
+   "old": {
+    "boundaries": 67,
+    "leading_tone": 12,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 16,
+    "any_fire": 27
+   },
+   "new": {
+    "boundaries": 67,
+    "leading_tone": 12,
+    "tritone_pair": 38,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 16,
+    "any_fire": 44
+   }
+  },
+  "bwv177.5": {
+   "old": {
+    "boundaries": 44,
+    "leading_tone": 6,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 12,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 44,
+    "leading_tone": 6,
+    "tritone_pair": 35,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 12,
+    "any_fire": 39
+   }
+  },
+  "bwv179.6": {
+   "old": {
+    "boundaries": 33,
+    "leading_tone": 3,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 7,
+    "any_fire": 11
+   },
+   "new": {
+    "boundaries": 33,
+    "leading_tone": 3,
+    "tritone_pair": 20,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 7,
+    "any_fire": 24
+   }
+  },
+  "bwv180.7": {
+   "old": {
+    "boundaries": 41,
+    "leading_tone": 19,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 9,
+    "any_fire": 23
+   },
+   "new": {
+    "boundaries": 41,
+    "leading_tone": 19,
+    "tritone_pair": 33,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 9,
+    "any_fire": 35
+   }
+  },
+  "bwv183.5": {
+   "old": {
+    "boundaries": 34,
+    "leading_tone": 8,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 34,
+    "leading_tone": 8,
+    "tritone_pair": 18,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "any_fire": 23
+   }
+  },
+  "bwv184.5": {
+   "old": {
+    "boundaries": 43,
+    "leading_tone": 13,
+    "tritone_pair": 5,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 11,
+    "any_fire": 19
+   },
+   "new": {
+    "boundaries": 43,
+    "leading_tone": 13,
+    "tritone_pair": 35,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 11,
+    "any_fire": 37
+   }
+  },
+  "bwv187.7": {
+   "old": {
+    "boundaries": 59,
+    "leading_tone": 16,
+    "tritone_pair": 5,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 12,
+    "any_fire": 24
+   },
+   "new": {
+    "boundaries": 59,
+    "leading_tone": 16,
+    "tritone_pair": 42,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 12,
+    "any_fire": 49
+   }
+  },
+  "bwv190.7": {
+   "old": {
+    "boundaries": 95,
+    "leading_tone": 14,
+    "tritone_pair": 6,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 21,
+    "any_fire": 35
+   },
+   "new": {
+    "boundaries": 95,
+    "leading_tone": 14,
+    "tritone_pair": 37,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 21,
+    "any_fire": 56
+   }
+  },
+  "bwv194.12": {
+   "old": {
+    "boundaries": 34,
+    "leading_tone": 9,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "any_fire": 13
+   },
+   "new": {
+    "boundaries": 34,
+    "leading_tone": 9,
+    "tritone_pair": 23,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "any_fire": 25
+   }
+  },
+  "bwv194.6": {
+   "old": {
+    "boundaries": 40,
+    "leading_tone": 14,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 11,
+    "any_fire": 19
+   },
+   "new": {
+    "boundaries": 40,
+    "leading_tone": 14,
+    "tritone_pair": 26,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 11,
+    "any_fire": 31
+   }
+  },
+  "bwv197.10": {
+   "old": {
+    "boundaries": 24,
+    "leading_tone": 5,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 6,
+    "any_fire": 11
+   },
+   "new": {
+    "boundaries": 24,
+    "leading_tone": 5,
+    "tritone_pair": 16,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 6,
+    "any_fire": 22
+   }
+  },
+  "bwv197.5": {
+   "old": {
+    "boundaries": 44,
+    "leading_tone": 11,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 9,
+    "any_fire": 15
+   },
+   "new": {
+    "boundaries": 44,
+    "leading_tone": 11,
+    "tritone_pair": 34,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 9,
+    "any_fire": 36
+   }
+  },
+  "bwv2.6": {
+   "old": {
+    "boundaries": 36,
+    "leading_tone": 9,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 8,
+    "any_fire": 14
+   },
+   "new": {
+    "boundaries": 36,
+    "leading_tone": 9,
+    "tritone_pair": 25,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 8,
+    "any_fire": 27
+   }
+  },
+  "bwv20.11": {
+   "old": {
+    "boundaries": 31,
+    "leading_tone": 5,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 8,
+    "any_fire": 14
+   },
+   "new": {
+    "boundaries": 31,
+    "leading_tone": 5,
+    "tritone_pair": 25,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 8,
+    "any_fire": 26
+   }
+  },
+  "bwv20.7": {
+   "old": {
+    "boundaries": 49,
+    "leading_tone": 12,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "any_fire": 23
+   },
+   "new": {
+    "boundaries": 49,
+    "leading_tone": 12,
+    "tritone_pair": 38,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "any_fire": 40
+   }
+  },
+  "bwv226.2": {
+   "old": {
+    "boundaries": 81,
+    "leading_tone": 18,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 20,
+    "any_fire": 32
+   },
+   "new": {
+    "boundaries": 81,
+    "leading_tone": 18,
+    "tritone_pair": 70,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 20,
+    "any_fire": 73
+   }
+  },
+  "bwv227.1": {
+   "old": {
+    "boundaries": 58,
+    "leading_tone": 7,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 17,
+    "any_fire": 21
+   },
+   "new": {
+    "boundaries": 58,
+    "leading_tone": 7,
+    "tritone_pair": 31,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 17,
+    "any_fire": 39
+   }
+  },
+  "bwv227.11": {
+   "old": {
+    "boundaries": 40,
+    "leading_tone": 5,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 11,
+    "any_fire": 14
+   },
+   "new": {
+    "boundaries": 40,
+    "leading_tone": 5,
+    "tritone_pair": 20,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 11,
+    "any_fire": 26
+   }
+  },
+  "bwv227.7": {
+   "old": {
+    "boundaries": 50,
+    "leading_tone": 9,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 17,
+    "any_fire": 24
+   },
+   "new": {
+    "boundaries": 50,
+    "leading_tone": 9,
+    "tritone_pair": 36,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 17,
+    "any_fire": 40
+   }
+  },
+  "bwv24.6": {
+   "old": {
+    "boundaries": 46,
+    "leading_tone": 8,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 12,
+    "any_fire": 19
+   },
+   "new": {
+    "boundaries": 46,
+    "leading_tone": 8,
+    "tritone_pair": 36,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 12,
+    "any_fire": 41
+   }
+  },
+  "bwv244.10": {
+   "old": {
+    "boundaries": 38,
+    "leading_tone": 9,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 10,
+    "any_fire": 18
+   },
+   "new": {
+    "boundaries": 38,
+    "leading_tone": 9,
+    "tritone_pair": 32,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 10,
+    "any_fire": 34
+   }
+  },
+  "bwv244.15": {
+   "old": {
+    "boundaries": 34,
+    "leading_tone": 9,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 9,
+    "any_fire": 17
+   },
+   "new": {
+    "boundaries": 34,
+    "leading_tone": 9,
+    "tritone_pair": 20,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 9,
+    "any_fire": 27
+   }
+  },
+  "bwv244.25": {
+   "old": {
+    "boundaries": 43,
+    "leading_tone": 7,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 10,
+    "any_fire": 13
+   },
+   "new": {
+    "boundaries": 43,
+    "leading_tone": 7,
+    "tritone_pair": 25,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 10,
+    "any_fire": 27
+   }
+  },
+  "bwv244.3": {
+   "old": {
+    "boundaries": 33,
+    "leading_tone": 11,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 4,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 33,
+    "leading_tone": 11,
+    "tritone_pair": 21,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 4,
+    "any_fire": 27
+   }
+  },
+  "bwv244.32": {
+   "old": {
+    "boundaries": 43,
+    "leading_tone": 10,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 11,
+    "any_fire": 19
+   },
+   "new": {
+    "boundaries": 43,
+    "leading_tone": 10,
+    "tritone_pair": 32,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 11,
+    "any_fire": 36
+   }
+  },
+  "bwv244.37": {
+   "old": {
+    "boundaries": 36,
+    "leading_tone": 11,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 9,
+    "any_fire": 19
+   },
+   "new": {
+    "boundaries": 36,
+    "leading_tone": 11,
+    "tritone_pair": 26,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 9,
+    "any_fire": 31
+   }
+  },
+  "bwv244.40": {
+   "old": {
+    "boundaries": 50,
+    "leading_tone": 13,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 13,
+    "any_fire": 24
+   },
+   "new": {
+    "boundaries": 50,
+    "leading_tone": 13,
+    "tritone_pair": 42,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 13,
+    "any_fire": 46
+   }
+  },
+  "bwv244.44": {
+   "old": {
+    "boundaries": 34,
+    "leading_tone": 11,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 9,
+    "any_fire": 18
+   },
+   "new": {
+    "boundaries": 34,
+    "leading_tone": 11,
+    "tritone_pair": 21,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 9,
+    "any_fire": 26
+   }
+  },
+  "bwv244.46": {
+   "old": {
+    "boundaries": 31,
+    "leading_tone": 8,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 5,
+    "any_fire": 12
+   },
+   "new": {
+    "boundaries": 31,
+    "leading_tone": 8,
+    "tritone_pair": 20,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 5,
+    "any_fire": 25
+   }
+  },
+  "bwv244.54": {
+   "old": {
+    "boundaries": 35,
+    "leading_tone": 9,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 11,
+    "any_fire": 19
+   },
+   "new": {
+    "boundaries": 35,
+    "leading_tone": 9,
+    "tritone_pair": 28,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 11,
+    "any_fire": 31
+   }
+  },
+  "bwv244.62": {
+   "old": {
+    "boundaries": 37,
+    "leading_tone": 11,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "any_fire": 19
+   },
+   "new": {
+    "boundaries": 37,
+    "leading_tone": 11,
+    "tritone_pair": 23,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "any_fire": 30
+   }
+  },
+  "bwv245.11": {
+   "old": {
+    "boundaries": 39,
+    "leading_tone": 10,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 9,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 39,
+    "leading_tone": 10,
+    "tritone_pair": 33,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 9,
+    "any_fire": 35
+   }
+  },
+  "bwv245.14": {
+   "old": {
+    "boundaries": 52,
+    "leading_tone": 16,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 14,
+    "any_fire": 26
+   },
+   "new": {
+    "boundaries": 52,
+    "leading_tone": 16,
+    "tritone_pair": 31,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 14,
+    "any_fire": 39
+   }
+  },
+  "bwv245.15": {
+   "old": {
+    "boundaries": 48,
+    "leading_tone": 10,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 13,
+    "any_fire": 19
+   },
+   "new": {
+    "boundaries": 48,
+    "leading_tone": 10,
+    "tritone_pair": 22,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 13,
+    "any_fire": 28
+   }
+  },
+  "bwv245.17": {
+   "old": {
+    "boundaries": 33,
+    "leading_tone": 4,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "any_fire": 11
+   },
+   "new": {
+    "boundaries": 33,
+    "leading_tone": 4,
+    "tritone_pair": 24,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "any_fire": 26
+   }
+  },
+  "bwv245.22": {
+   "old": {
+    "boundaries": 30,
+    "leading_tone": 8,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 6,
+    "any_fire": 12
+   },
+   "new": {
+    "boundaries": 30,
+    "leading_tone": 8,
+    "tritone_pair": 16,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 6,
+    "any_fire": 20
+   }
+  },
+  "bwv245.26": {
+   "old": {
+    "boundaries": 31,
+    "leading_tone": 7,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 8,
+    "any_fire": 14
+   },
+   "new": {
+    "boundaries": 31,
+    "leading_tone": 7,
+    "tritone_pair": 13,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 8,
+    "any_fire": 20
+   }
+  },
+  "bwv245.28": {
+   "old": {
+    "boundaries": 54,
+    "leading_tone": 15,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 7,
+    "fermata_location": 15,
+    "any_fire": 24
+   },
+   "new": {
+    "boundaries": 54,
+    "leading_tone": 15,
+    "tritone_pair": 33,
+    "dominant_tonic_bass": 7,
+    "fermata_location": 15,
+    "any_fire": 41
+   }
+  },
+  "bwv245.3": {
+   "old": {
+    "boundaries": 33,
+    "leading_tone": 8,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 5,
+    "any_fire": 12
+   },
+   "new": {
+    "boundaries": 33,
+    "leading_tone": 8,
+    "tritone_pair": 28,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 5,
+    "any_fire": 28
+   }
+  },
+  "bwv245.37": {
+   "old": {
+    "boundaries": 44,
+    "leading_tone": 13,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 7,
+    "fermata_location": 9,
+    "any_fire": 21
+   },
+   "new": {
+    "boundaries": 44,
+    "leading_tone": 13,
+    "tritone_pair": 21,
+    "dominant_tonic_bass": 7,
+    "fermata_location": 9,
+    "any_fire": 26
+   }
+  },
+  "bwv245.40": {
+   "old": {
+    "boundaries": 93,
+    "leading_tone": 29,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 21,
+    "any_fire": 41
+   },
+   "new": {
+    "boundaries": 93,
+    "leading_tone": 29,
+    "tritone_pair": 67,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 21,
+    "any_fire": 77
+   }
+  },
+  "bwv248.33-3": {
+   "old": {
+    "boundaries": 38,
+    "leading_tone": 7,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 14,
+    "any_fire": 20
+   },
+   "new": {
+    "boundaries": 38,
+    "leading_tone": 7,
+    "tritone_pair": 24,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 14,
+    "any_fire": 31
+   }
+  },
+  "bwv248.35-3": {
+   "old": {
+    "boundaries": 40,
+    "leading_tone": 8,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 10,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 40,
+    "leading_tone": 8,
+    "tritone_pair": 32,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 10,
+    "any_fire": 33
+   }
+  },
+  "bwv248.46-5": {
+   "old": {
+    "boundaries": 46,
+    "leading_tone": 12,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 11,
+    "any_fire": 21
+   },
+   "new": {
+    "boundaries": 46,
+    "leading_tone": 12,
+    "tritone_pair": 36,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 11,
+    "any_fire": 40
+   }
+  },
+  "bwv248.5": {
+   "old": {
+    "boundaries": 36,
+    "leading_tone": 11,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 10,
+    "any_fire": 18
+   },
+   "new": {
+    "boundaries": 36,
+    "leading_tone": 11,
+    "tritone_pair": 27,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 10,
+    "any_fire": 30
+   }
+  },
+  "bwv248.53-5": {
+   "old": {
+    "boundaries": 28,
+    "leading_tone": 7,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 5,
+    "any_fire": 11
+   },
+   "new": {
+    "boundaries": 28,
+    "leading_tone": 7,
+    "tritone_pair": 22,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 5,
+    "any_fire": 25
+   }
+  },
+  "bwv25.6": {
+   "old": {
+    "boundaries": 42,
+    "leading_tone": 13,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 11,
+    "any_fire": 21
+   },
+   "new": {
+    "boundaries": 42,
+    "leading_tone": 13,
+    "tritone_pair": 25,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 11,
+    "any_fire": 30
+   }
+  },
+  "bwv253": {
+   "old": {
+    "boundaries": 29,
+    "leading_tone": 8,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "any_fire": 13
+   },
+   "new": {
+    "boundaries": 29,
+    "leading_tone": 8,
+    "tritone_pair": 18,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "any_fire": 21
+   }
+  },
+  "bwv254": {
+   "old": {
+    "boundaries": 40,
+    "leading_tone": 7,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 8,
+    "any_fire": 14
+   },
+   "new": {
+    "boundaries": 40,
+    "leading_tone": 7,
+    "tritone_pair": 27,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 8,
+    "any_fire": 31
+   }
+  },
+  "bwv255": {
+   "old": {
+    "boundaries": 27,
+    "leading_tone": 8,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 10,
+    "any_fire": 15
+   },
+   "new": {
+    "boundaries": 27,
+    "leading_tone": 8,
+    "tritone_pair": 18,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 10,
+    "any_fire": 21
+   }
+  },
+  "bwv256": {
+   "old": {
+    "boundaries": 35,
+    "leading_tone": 6,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "any_fire": 15
+   },
+   "new": {
+    "boundaries": 35,
+    "leading_tone": 6,
+    "tritone_pair": 23,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "any_fire": 26
+   }
+  },
+  "bwv257": {
+   "old": {
+    "boundaries": 31,
+    "leading_tone": 8,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 8,
+    "any_fire": 14
+   },
+   "new": {
+    "boundaries": 31,
+    "leading_tone": 8,
+    "tritone_pair": 22,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 8,
+    "any_fire": 25
+   }
+  },
+  "bwv258": {
+   "old": {
+    "boundaries": 35,
+    "leading_tone": 8,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 8,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 35,
+    "leading_tone": 8,
+    "tritone_pair": 31,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 8,
+    "any_fire": 31
+   }
+  },
+  "bwv259": {
+   "old": {
+    "boundaries": 42,
+    "leading_tone": 7,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "any_fire": 17
+   },
+   "new": {
+    "boundaries": 42,
+    "leading_tone": 7,
+    "tritone_pair": 30,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "any_fire": 33
+   }
+  },
+  "bwv26.6": {
+   "old": {
+    "boundaries": 29,
+    "leading_tone": 6,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 7,
+    "any_fire": 10
+   },
+   "new": {
+    "boundaries": 29,
+    "leading_tone": 6,
+    "tritone_pair": 11,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 7,
+    "any_fire": 19
+   }
+  },
+  "bwv260": {
+   "old": {
+    "boundaries": 40,
+    "leading_tone": 8,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 9,
+    "any_fire": 13
+   },
+   "new": {
+    "boundaries": 40,
+    "leading_tone": 8,
+    "tritone_pair": 30,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 9,
+    "any_fire": 35
+   }
+  },
+  "bwv261": {
+   "old": {
+    "boundaries": 55,
+    "leading_tone": 16,
+    "tritone_pair": 5,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 9,
+    "any_fire": 22
+   },
+   "new": {
+    "boundaries": 55,
+    "leading_tone": 16,
+    "tritone_pair": 39,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 9,
+    "any_fire": 42
+   }
+  },
+  "bwv262": {
+   "old": {
+    "boundaries": 33,
+    "leading_tone": 5,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 8,
+    "any_fire": 12
+   },
+   "new": {
+    "boundaries": 33,
+    "leading_tone": 5,
+    "tritone_pair": 19,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 8,
+    "any_fire": 23
+   }
+  },
+  "bwv263": {
+   "old": {
+    "boundaries": 38,
+    "leading_tone": 6,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 11,
+    "any_fire": 14
+   },
+   "new": {
+    "boundaries": 38,
+    "leading_tone": 6,
+    "tritone_pair": 23,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 11,
+    "any_fire": 25
+   }
+  },
+  "bwv264": {
+   "old": {
+    "boundaries": 29,
+    "leading_tone": 6,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 8,
+    "any_fire": 14
+   },
+   "new": {
+    "boundaries": 29,
+    "leading_tone": 6,
+    "tritone_pair": 16,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 8,
+    "any_fire": 20
+   }
+  },
+  "bwv265": {
+   "old": {
+    "boundaries": 23,
+    "leading_tone": 4,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 5,
+    "any_fire": 8
+   },
+   "new": {
+    "boundaries": 23,
+    "leading_tone": 4,
+    "tritone_pair": 12,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 5,
+    "any_fire": 17
+   }
+  },
+  "bwv266": {
+   "old": {
+    "boundaries": 42,
+    "leading_tone": 12,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 11,
+    "any_fire": 18
+   },
+   "new": {
+    "boundaries": 42,
+    "leading_tone": 12,
+    "tritone_pair": 29,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 11,
+    "any_fire": 32
+   }
+  },
+  "bwv267": {
+   "old": {
+    "boundaries": 56,
+    "leading_tone": 13,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 12,
+    "any_fire": 20
+   },
+   "new": {
+    "boundaries": 56,
+    "leading_tone": 13,
+    "tritone_pair": 48,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 12,
+    "any_fire": 50
+   }
+  },
+  "bwv268": {
+   "old": {
+    "boundaries": 38,
+    "leading_tone": 9,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 10,
+    "any_fire": 17
+   },
+   "new": {
+    "boundaries": 38,
+    "leading_tone": 9,
+    "tritone_pair": 32,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 10,
+    "any_fire": 35
+   }
+  },
+  "bwv269": {
+   "old": {
+    "boundaries": 49,
+    "leading_tone": 13,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "any_fire": 21
+   },
+   "new": {
+    "boundaries": 49,
+    "leading_tone": 13,
+    "tritone_pair": 36,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "any_fire": 39
+   }
+  },
+  "bwv270": {
+   "old": {
+    "boundaries": 34,
+    "leading_tone": 10,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 8,
+    "any_fire": 17
+   },
+   "new": {
+    "boundaries": 34,
+    "leading_tone": 10,
+    "tritone_pair": 19,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 8,
+    "any_fire": 26
+   }
+  },
+  "bwv271": {
+   "old": {
+    "boundaries": 34,
+    "leading_tone": 8,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 10,
+    "any_fire": 17
+   },
+   "new": {
+    "boundaries": 34,
+    "leading_tone": 8,
+    "tritone_pair": 22,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 10,
+    "any_fire": 28
+   }
+  },
+  "bwv272": {
+   "old": {
+    "boundaries": 36,
+    "leading_tone": 9,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 10,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 36,
+    "leading_tone": 9,
+    "tritone_pair": 24,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 10,
+    "any_fire": 26
+   }
+  },
+  "bwv273": {
+   "old": {
+    "boundaries": 37,
+    "leading_tone": 9,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 7,
+    "any_fire": 14
+   },
+   "new": {
+    "boundaries": 37,
+    "leading_tone": 9,
+    "tritone_pair": 30,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 7,
+    "any_fire": 30
+   }
+  },
+  "bwv274": {
+   "old": {
+    "boundaries": 33,
+    "leading_tone": 5,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 6,
+    "any_fire": 12
+   },
+   "new": {
+    "boundaries": 33,
+    "leading_tone": 5,
+    "tritone_pair": 23,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 6,
+    "any_fire": 25
+   }
+  },
+  "bwv275": {
+   "old": {
+    "boundaries": 39,
+    "leading_tone": 7,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "any_fire": 17
+   },
+   "new": {
+    "boundaries": 39,
+    "leading_tone": 7,
+    "tritone_pair": 20,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "any_fire": 29
+   }
+  },
+  "bwv276": {
+   "old": {
+    "boundaries": 98,
+    "leading_tone": 20,
+    "tritone_pair": 7,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 30,
+    "any_fire": 47
+   },
+   "new": {
+    "boundaries": 98,
+    "leading_tone": 20,
+    "tritone_pair": 69,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 30,
+    "any_fire": 82
+   }
+  },
+  "bwv277": {
+   "old": {
+    "boundaries": 55,
+    "leading_tone": 13,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 11,
+    "any_fire": 22
+   },
+   "new": {
+    "boundaries": 55,
+    "leading_tone": 13,
+    "tritone_pair": 38,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 11,
+    "any_fire": 44
+   }
+  },
+  "bwv278": {
+   "old": {
+    "boundaries": 42,
+    "leading_tone": 6,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 9,
+    "any_fire": 14
+   },
+   "new": {
+    "boundaries": 42,
+    "leading_tone": 6,
+    "tritone_pair": 31,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 9,
+    "any_fire": 34
+   }
+  },
+  "bwv279": {
+   "old": {
+    "boundaries": 48,
+    "leading_tone": 10,
+    "tritone_pair": 5,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 11,
+    "any_fire": 19
+   },
+   "new": {
+    "boundaries": 48,
+    "leading_tone": 10,
+    "tritone_pair": 26,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 11,
+    "any_fire": 34
+   }
+  },
+  "bwv28.6": {
+   "old": {
+    "boundaries": 33,
+    "leading_tone": 6,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 9,
+    "any_fire": 13
+   },
+   "new": {
+    "boundaries": 33,
+    "leading_tone": 6,
+    "tritone_pair": 17,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 9,
+    "any_fire": 21
+   }
+  },
+  "bwv280": {
+   "old": {
+    "boundaries": 47,
+    "leading_tone": 13,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 11,
+    "any_fire": 21
+   },
+   "new": {
+    "boundaries": 47,
+    "leading_tone": 13,
+    "tritone_pair": 29,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 11,
+    "any_fire": 35
+   }
+  },
+  "bwv281": {
+   "old": {
+    "boundaries": 25,
+    "leading_tone": 7,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 7,
+    "any_fire": 10
+   },
+   "new": {
+    "boundaries": 25,
+    "leading_tone": 7,
+    "tritone_pair": 16,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 7,
+    "any_fire": 19
+   }
+  },
+  "bwv282": {
+   "old": {
+    "boundaries": 30,
+    "leading_tone": 9,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 8,
+    "any_fire": 13
+   },
+   "new": {
+    "boundaries": 30,
+    "leading_tone": 9,
+    "tritone_pair": 19,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 8,
+    "any_fire": 22
+   }
+  },
+  "bwv283": {
+   "old": {
+    "boundaries": 53,
+    "leading_tone": 11,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 15,
+    "any_fire": 22
+   },
+   "new": {
+    "boundaries": 53,
+    "leading_tone": 11,
+    "tritone_pair": 46,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 15,
+    "any_fire": 49
+   }
+  },
+  "bwv284": {
+   "old": {
+    "boundaries": 47,
+    "leading_tone": 7,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 13,
+    "any_fire": 22
+   },
+   "new": {
+    "boundaries": 47,
+    "leading_tone": 7,
+    "tritone_pair": 27,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 13,
+    "any_fire": 32
+   }
+  },
+  "bwv285": {
+   "old": {
+    "boundaries": 41,
+    "leading_tone": 8,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 10,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 41,
+    "leading_tone": 8,
+    "tritone_pair": 26,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 10,
+    "any_fire": 30
+   }
+  },
+  "bwv286": {
+   "old": {
+    "boundaries": 16,
+    "leading_tone": 2,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 2,
+    "any_fire": 5
+   },
+   "new": {
+    "boundaries": 16,
+    "leading_tone": 2,
+    "tritone_pair": 8,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 2,
+    "any_fire": 12
+   }
+  },
+  "bwv287": {
+   "old": {
+    "boundaries": 33,
+    "leading_tone": 5,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 9,
+    "any_fire": 12
+   },
+   "new": {
+    "boundaries": 33,
+    "leading_tone": 5,
+    "tritone_pair": 24,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 9,
+    "any_fire": 25
+   }
+  },
+  "bwv288": {
+   "old": {
+    "boundaries": 41,
+    "leading_tone": 8,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 9,
+    "any_fire": 15
+   },
+   "new": {
+    "boundaries": 41,
+    "leading_tone": 8,
+    "tritone_pair": 28,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 9,
+    "any_fire": 31
+   }
+  },
+  "bwv289": {
+   "old": {
+    "boundaries": 36,
+    "leading_tone": 6,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 8,
+    "any_fire": 13
+   },
+   "new": {
+    "boundaries": 36,
+    "leading_tone": 6,
+    "tritone_pair": 20,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 8,
+    "any_fire": 23
+   }
+  },
+  "bwv290": {
+   "old": {
+    "boundaries": 26,
+    "leading_tone": 7,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 5,
+    "any_fire": 11
+   },
+   "new": {
+    "boundaries": 26,
+    "leading_tone": 7,
+    "tritone_pair": 17,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 5,
+    "any_fire": 20
+   }
+  },
+  "bwv291": {
+   "old": {
+    "boundaries": 33,
+    "leading_tone": 9,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 7,
+    "any_fire": 13
+   },
+   "new": {
+    "boundaries": 33,
+    "leading_tone": 9,
+    "tritone_pair": 22,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 7,
+    "any_fire": 27
+   }
+  },
+  "bwv292": {
+   "old": {
+    "boundaries": 48,
+    "leading_tone": 9,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 13,
+    "any_fire": 20
+   },
+   "new": {
+    "boundaries": 48,
+    "leading_tone": 9,
+    "tritone_pair": 34,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 13,
+    "any_fire": 38
+   }
+  },
+  "bwv293": {
+   "old": {
+    "boundaries": 30,
+    "leading_tone": 4,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "any_fire": 9
+   },
+   "new": {
+    "boundaries": 30,
+    "leading_tone": 4,
+    "tritone_pair": 25,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "any_fire": 27
+   }
+  },
+  "bwv294": {
+   "old": {
+    "boundaries": 54,
+    "leading_tone": 8,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 14,
+    "any_fire": 20
+   },
+   "new": {
+    "boundaries": 54,
+    "leading_tone": 8,
+    "tritone_pair": 43,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 14,
+    "any_fire": 46
+   }
+  },
+  "bwv295": {
+   "old": {
+    "boundaries": 32,
+    "leading_tone": 7,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 6,
+    "any_fire": 14
+   },
+   "new": {
+    "boundaries": 32,
+    "leading_tone": 7,
+    "tritone_pair": 17,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 6,
+    "any_fire": 23
+   }
+  },
+  "bwv296": {
+   "old": {
+    "boundaries": 36,
+    "leading_tone": 9,
+    "tritone_pair": 5,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 11,
+    "any_fire": 17
+   },
+   "new": {
+    "boundaries": 36,
+    "leading_tone": 9,
+    "tritone_pair": 23,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 11,
+    "any_fire": 27
+   }
+  },
+  "bwv297": {
+   "old": {
+    "boundaries": 39,
+    "leading_tone": 4,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 13,
+    "any_fire": 15
+   },
+   "new": {
+    "boundaries": 39,
+    "leading_tone": 4,
+    "tritone_pair": 27,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 13,
+    "any_fire": 33
+   }
+  },
+  "bwv298": {
+   "old": {
+    "boundaries": 28,
+    "leading_tone": 6,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 8,
+    "any_fire": 14
+   },
+   "new": {
+    "boundaries": 28,
+    "leading_tone": 6,
+    "tritone_pair": 21,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 8,
+    "any_fire": 24
+   }
+  },
+  "bwv299": {
+   "old": {
+    "boundaries": 31,
+    "leading_tone": 5,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 6,
+    "any_fire": 12
+   },
+   "new": {
+    "boundaries": 31,
+    "leading_tone": 5,
+    "tritone_pair": 26,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 6,
+    "any_fire": 27
+   }
+  },
+  "bwv3.6": {
+   "old": {
+    "boundaries": 29,
+    "leading_tone": 5,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "any_fire": 9
+   },
+   "new": {
+    "boundaries": 29,
+    "leading_tone": 5,
+    "tritone_pair": 23,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "any_fire": 23
+   }
+  },
+  "bwv30.6": {
+   "old": {
+    "boundaries": 47,
+    "leading_tone": 7,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 11,
+    "any_fire": 15
+   },
+   "new": {
+    "boundaries": 47,
+    "leading_tone": 7,
+    "tritone_pair": 32,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 11,
+    "any_fire": 36
+   }
+  },
+  "bwv300": {
+   "old": {
+    "boundaries": 42,
+    "leading_tone": 10,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 11,
+    "any_fire": 19
+   },
+   "new": {
+    "boundaries": 42,
+    "leading_tone": 10,
+    "tritone_pair": 26,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 11,
+    "any_fire": 29
+   }
+  },
+  "bwv301": {
+   "old": {
+    "boundaries": 43,
+    "leading_tone": 7,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 11,
+    "any_fire": 19
+   },
+   "new": {
+    "boundaries": 43,
+    "leading_tone": 7,
+    "tritone_pair": 25,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 11,
+    "any_fire": 34
+   }
+  },
+  "bwv302": {
+   "old": {
+    "boundaries": 45,
+    "leading_tone": 9,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "any_fire": 19
+   },
+   "new": {
+    "boundaries": 45,
+    "leading_tone": 9,
+    "tritone_pair": 30,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "any_fire": 37
+   }
+  },
+  "bwv303": {
+   "old": {
+    "boundaries": 43,
+    "leading_tone": 8,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 10,
+    "any_fire": 17
+   },
+   "new": {
+    "boundaries": 43,
+    "leading_tone": 8,
+    "tritone_pair": 29,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 10,
+    "any_fire": 34
+   }
+  },
+  "bwv304": {
+   "old": {
+    "boundaries": 58,
+    "leading_tone": 11,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 10,
+    "any_fire": 21
+   },
+   "new": {
+    "boundaries": 58,
+    "leading_tone": 11,
+    "tritone_pair": 45,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 10,
+    "any_fire": 47
+   }
+  },
+  "bwv305": {
+   "old": {
+    "boundaries": 49,
+    "leading_tone": 9,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 10,
+    "any_fire": 18
+   },
+   "new": {
+    "boundaries": 49,
+    "leading_tone": 9,
+    "tritone_pair": 37,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 10,
+    "any_fire": 42
+   }
+  },
+  "bwv306": {
+   "old": {
+    "boundaries": 35,
+    "leading_tone": 8,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 5,
+    "any_fire": 13
+   },
+   "new": {
+    "boundaries": 35,
+    "leading_tone": 8,
+    "tritone_pair": 27,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 5,
+    "any_fire": 29
+   }
+  },
+  "bwv307": {
+   "old": {
+    "boundaries": 35,
+    "leading_tone": 4,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 8,
+    "any_fire": 10
+   },
+   "new": {
+    "boundaries": 35,
+    "leading_tone": 4,
+    "tritone_pair": 30,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 8,
+    "any_fire": 31
+   }
+  },
+  "bwv308": {
+   "old": {
+    "boundaries": 36,
+    "leading_tone": 9,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 9,
+    "any_fire": 15
+   },
+   "new": {
+    "boundaries": 36,
+    "leading_tone": 9,
+    "tritone_pair": 33,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 9,
+    "any_fire": 34
+   }
+  },
+  "bwv309": {
+   "old": {
+    "boundaries": 44,
+    "leading_tone": 5,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 12,
+    "any_fire": 15
+   },
+   "new": {
+    "boundaries": 44,
+    "leading_tone": 5,
+    "tritone_pair": 23,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 12,
+    "any_fire": 30
+   }
+  },
+  "bwv310": {
+   "old": {
+    "boundaries": 28,
+    "leading_tone": 5,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 7,
+    "any_fire": 11
+   },
+   "new": {
+    "boundaries": 28,
+    "leading_tone": 5,
+    "tritone_pair": 22,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 7,
+    "any_fire": 24
+   }
+  },
+  "bwv311": {
+   "old": {
+    "boundaries": 51,
+    "leading_tone": 16,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 9,
+    "any_fire": 24
+   },
+   "new": {
+    "boundaries": 51,
+    "leading_tone": 16,
+    "tritone_pair": 37,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 9,
+    "any_fire": 40
+   }
+  },
+  "bwv312": {
+   "old": {
+    "boundaries": 58,
+    "leading_tone": 13,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 11,
+    "any_fire": 24
+   },
+   "new": {
+    "boundaries": 58,
+    "leading_tone": 13,
+    "tritone_pair": 47,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 11,
+    "any_fire": 48
+   }
+  },
+  "bwv313": {
+   "old": {
+    "boundaries": 34,
+    "leading_tone": 8,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 6,
+    "any_fire": 11
+   },
+   "new": {
+    "boundaries": 34,
+    "leading_tone": 8,
+    "tritone_pair": 25,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 6,
+    "any_fire": 29
+   }
+  },
+  "bwv314": {
+   "old": {
+    "boundaries": 36,
+    "leading_tone": 8,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "any_fire": 15
+   },
+   "new": {
+    "boundaries": 36,
+    "leading_tone": 8,
+    "tritone_pair": 24,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "any_fire": 29
+   }
+  },
+  "bwv315": {
+   "old": {
+    "boundaries": 40,
+    "leading_tone": 9,
+    "tritone_pair": 5,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "any_fire": 15
+   },
+   "new": {
+    "boundaries": 40,
+    "leading_tone": 9,
+    "tritone_pair": 31,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "any_fire": 35
+   }
+  },
+  "bwv316": {
+   "old": {
+    "boundaries": 39,
+    "leading_tone": 8,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 8,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 39,
+    "leading_tone": 8,
+    "tritone_pair": 32,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 8,
+    "any_fire": 34
+   }
+  },
+  "bwv317": {
+   "old": {
+    "boundaries": 55,
+    "leading_tone": 9,
+    "tritone_pair": 5,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 13,
+    "any_fire": 21
+   },
+   "new": {
+    "boundaries": 55,
+    "leading_tone": 9,
+    "tritone_pair": 42,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 13,
+    "any_fire": 45
+   }
+  },
+  "bwv318": {
+   "old": {
+    "boundaries": 43,
+    "leading_tone": 14,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 11,
+    "any_fire": 19
+   },
+   "new": {
+    "boundaries": 43,
+    "leading_tone": 14,
+    "tritone_pair": 37,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 11,
+    "any_fire": 39
+   }
+  },
+  "bwv319": {
+   "old": {
+    "boundaries": 35,
+    "leading_tone": 8,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "any_fire": 14
+   },
+   "new": {
+    "boundaries": 35,
+    "leading_tone": 8,
+    "tritone_pair": 25,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "any_fire": 27
+   }
+  },
+  "bwv32.6": {
+   "old": {
+    "boundaries": 43,
+    "leading_tone": 18,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 11,
+    "any_fire": 25
+   },
+   "new": {
+    "boundaries": 43,
+    "leading_tone": 18,
+    "tritone_pair": 28,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 11,
+    "any_fire": 33
+   }
+  },
+  "bwv320": {
+   "old": {
+    "boundaries": 78,
+    "leading_tone": 17,
+    "tritone_pair": 11,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 10,
+    "any_fire": 26
+   },
+   "new": {
+    "boundaries": 78,
+    "leading_tone": 17,
+    "tritone_pair": 51,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 10,
+    "any_fire": 55
+   }
+  },
+  "bwv321": {
+   "old": {
+    "boundaries": 29,
+    "leading_tone": 7,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 7,
+    "any_fire": 11
+   },
+   "new": {
+    "boundaries": 29,
+    "leading_tone": 7,
+    "tritone_pair": 18,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 7,
+    "any_fire": 19
+   }
+  },
+  "bwv322": {
+   "old": {
+    "boundaries": 62,
+    "leading_tone": 11,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 16,
+    "any_fire": 24
+   },
+   "new": {
+    "boundaries": 62,
+    "leading_tone": 11,
+    "tritone_pair": 48,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 16,
+    "any_fire": 52
+   }
+  },
+  "bwv323": {
+   "old": {
+    "boundaries": 23,
+    "leading_tone": 5,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 2,
+    "any_fire": 6
+   },
+   "new": {
+    "boundaries": 23,
+    "leading_tone": 5,
+    "tritone_pair": 9,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 2,
+    "any_fire": 11
+   }
+  },
+  "bwv324": {
+   "old": {
+    "boundaries": 20,
+    "leading_tone": 5,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 3,
+    "any_fire": 7
+   },
+   "new": {
+    "boundaries": 20,
+    "leading_tone": 5,
+    "tritone_pair": 8,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 3,
+    "any_fire": 11
+   }
+  },
+  "bwv325": {
+   "old": {
+    "boundaries": 55,
+    "leading_tone": 9,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 18,
+    "any_fire": 27
+   },
+   "new": {
+    "boundaries": 55,
+    "leading_tone": 9,
+    "tritone_pair": 40,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 18,
+    "any_fire": 46
+   }
+  },
+  "bwv326": {
+   "old": {
+    "boundaries": 36,
+    "leading_tone": 9,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 7,
+    "any_fire": 15
+   },
+   "new": {
+    "boundaries": 36,
+    "leading_tone": 9,
+    "tritone_pair": 21,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 7,
+    "any_fire": 26
+   }
+  },
+  "bwv327": {
+   "old": {
+    "boundaries": 34,
+    "leading_tone": 10,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 7,
+    "any_fire": 15
+   },
+   "new": {
+    "boundaries": 34,
+    "leading_tone": 10,
+    "tritone_pair": 17,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 7,
+    "any_fire": 23
+   }
+  },
+  "bwv328": {
+   "old": {
+    "boundaries": 180,
+    "leading_tone": 39,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 41,
+    "any_fire": 73
+   },
+   "new": {
+    "boundaries": 180,
+    "leading_tone": 39,
+    "tritone_pair": 119,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 41,
+    "any_fire": 131
+   }
+  },
+  "bwv329": {
+   "old": {
+    "boundaries": 45,
+    "leading_tone": 7,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 13,
+    "any_fire": 17
+   },
+   "new": {
+    "boundaries": 45,
+    "leading_tone": 7,
+    "tritone_pair": 33,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 13,
+    "any_fire": 37
+   }
+  },
+  "bwv33.6": {
+   "old": {
+    "boundaries": 47,
+    "leading_tone": 9,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 10,
+    "any_fire": 18
+   },
+   "new": {
+    "boundaries": 47,
+    "leading_tone": 9,
+    "tritone_pair": 28,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 10,
+    "any_fire": 33
+   }
+  },
+  "bwv330": {
+   "old": {
+    "boundaries": 25,
+    "leading_tone": 3,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "any_fire": 7
+   },
+   "new": {
+    "boundaries": 25,
+    "leading_tone": 3,
+    "tritone_pair": 20,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "any_fire": 21
+   }
+  },
+  "bwv331": {
+   "old": {
+    "boundaries": 26,
+    "leading_tone": 2,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 6,
+    "any_fire": 7
+   },
+   "new": {
+    "boundaries": 26,
+    "leading_tone": 2,
+    "tritone_pair": 14,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 6,
+    "any_fire": 16
+   }
+  },
+  "bwv332": {
+   "old": {
+    "boundaries": 33,
+    "leading_tone": 12,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 7,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 33,
+    "leading_tone": 12,
+    "tritone_pair": 15,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 7,
+    "any_fire": 24
+   }
+  },
+  "bwv333": {
+   "old": {
+    "boundaries": 35,
+    "leading_tone": 8,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 9,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 35,
+    "leading_tone": 8,
+    "tritone_pair": 28,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 9,
+    "any_fire": 31
+   }
+  },
+  "bwv334": {
+   "old": {
+    "boundaries": 36,
+    "leading_tone": 8,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 7,
+    "any_fire": 11
+   },
+   "new": {
+    "boundaries": 36,
+    "leading_tone": 8,
+    "tritone_pair": 23,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 7,
+    "any_fire": 25
+   }
+  },
+  "bwv335": {
+   "old": {
+    "boundaries": 29,
+    "leading_tone": 6,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 6,
+    "any_fire": 10
+   },
+   "new": {
+    "boundaries": 29,
+    "leading_tone": 6,
+    "tritone_pair": 17,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 6,
+    "any_fire": 19
+   }
+  },
+  "bwv336": {
+   "old": {
+    "boundaries": 31,
+    "leading_tone": 5,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 7,
+    "any_fire": 12
+   },
+   "new": {
+    "boundaries": 31,
+    "leading_tone": 5,
+    "tritone_pair": 18,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 7,
+    "any_fire": 21
+   }
+  },
+  "bwv337": {
+   "old": {
+    "boundaries": 33,
+    "leading_tone": 4,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "any_fire": 14
+   },
+   "new": {
+    "boundaries": 33,
+    "leading_tone": 4,
+    "tritone_pair": 21,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "any_fire": 26
+   }
+  },
+  "bwv338": {
+   "old": {
+    "boundaries": 35,
+    "leading_tone": 2,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 8,
+    "any_fire": 10
+   },
+   "new": {
+    "boundaries": 35,
+    "leading_tone": 2,
+    "tritone_pair": 20,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 8,
+    "any_fire": 25
+   }
+  },
+  "bwv339": {
+   "old": {
+    "boundaries": 42,
+    "leading_tone": 11,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 8,
+    "any_fire": 17
+   },
+   "new": {
+    "boundaries": 42,
+    "leading_tone": 11,
+    "tritone_pair": 32,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 8,
+    "any_fire": 34
+   }
+  },
+  "bwv340": {
+   "old": {
+    "boundaries": 64,
+    "leading_tone": 9,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 19,
+    "any_fire": 25
+   },
+   "new": {
+    "boundaries": 64,
+    "leading_tone": 9,
+    "tritone_pair": 48,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 19,
+    "any_fire": 53
+   }
+  },
+  "bwv341": {
+   "old": {
+    "boundaries": 25,
+    "leading_tone": 4,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 8,
+    "any_fire": 9
+   },
+   "new": {
+    "boundaries": 25,
+    "leading_tone": 4,
+    "tritone_pair": 14,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 8,
+    "any_fire": 18
+   }
+  },
+  "bwv342": {
+   "old": {
+    "boundaries": 46,
+    "leading_tone": 11,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 9,
+    "any_fire": 17
+   },
+   "new": {
+    "boundaries": 46,
+    "leading_tone": 11,
+    "tritone_pair": 29,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 9,
+    "any_fire": 35
+   }
+  },
+  "bwv343": {
+   "old": {
+    "boundaries": 42,
+    "leading_tone": 9,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 8,
+    "any_fire": 17
+   },
+   "new": {
+    "boundaries": 42,
+    "leading_tone": 9,
+    "tritone_pair": 30,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 8,
+    "any_fire": 34
+   }
+  },
+  "bwv344": {
+   "old": {
+    "boundaries": 42,
+    "leading_tone": 5,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 8,
+    "any_fire": 14
+   },
+   "new": {
+    "boundaries": 42,
+    "leading_tone": 5,
+    "tritone_pair": 25,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 8,
+    "any_fire": 29
+   }
+  },
+  "bwv345": {
+   "old": {
+    "boundaries": 38,
+    "leading_tone": 7,
+    "tritone_pair": 5,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 8,
+    "any_fire": 15
+   },
+   "new": {
+    "boundaries": 38,
+    "leading_tone": 7,
+    "tritone_pair": 30,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 8,
+    "any_fire": 34
+   }
+  },
+  "bwv346": {
+   "old": {
+    "boundaries": 48,
+    "leading_tone": 11,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 16,
+    "any_fire": 26
+   },
+   "new": {
+    "boundaries": 48,
+    "leading_tone": 11,
+    "tritone_pair": 30,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 16,
+    "any_fire": 37
+   }
+  },
+  "bwv347": {
+   "old": {
+    "boundaries": 41,
+    "leading_tone": 8,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 10,
+    "any_fire": 19
+   },
+   "new": {
+    "boundaries": 41,
+    "leading_tone": 8,
+    "tritone_pair": 34,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 10,
+    "any_fire": 37
+   }
+  },
+  "bwv348": {
+   "old": {
+    "boundaries": 56,
+    "leading_tone": 19,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 13,
+    "any_fire": 25
+   },
+   "new": {
+    "boundaries": 56,
+    "leading_tone": 19,
+    "tritone_pair": 45,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 13,
+    "any_fire": 52
+   }
+  },
+  "bwv349": {
+   "old": {
+    "boundaries": 29,
+    "leading_tone": 7,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 7,
+    "any_fire": 12
+   },
+   "new": {
+    "boundaries": 29,
+    "leading_tone": 7,
+    "tritone_pair": 19,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 7,
+    "any_fire": 25
+   }
+  },
+  "bwv350": {
+   "old": {
+    "boundaries": 67,
+    "leading_tone": 12,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 7,
+    "fermata_location": 9,
+    "any_fire": 22
+   },
+   "new": {
+    "boundaries": 67,
+    "leading_tone": 12,
+    "tritone_pair": 50,
+    "dominant_tonic_bass": 7,
+    "fermata_location": 9,
+    "any_fire": 55
+   }
+  },
+  "bwv351": {
+   "old": {
+    "boundaries": 28,
+    "leading_tone": 2,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 6,
+    "any_fire": 7
+   },
+   "new": {
+    "boundaries": 28,
+    "leading_tone": 2,
+    "tritone_pair": 15,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 6,
+    "any_fire": 16
+   }
+  },
+  "bwv352": {
+   "old": {
+    "boundaries": 38,
+    "leading_tone": 10,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "any_fire": 17
+   },
+   "new": {
+    "boundaries": 38,
+    "leading_tone": 10,
+    "tritone_pair": 27,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "any_fire": 30
+   }
+  },
+  "bwv353": {
+   "old": {
+    "boundaries": 40,
+    "leading_tone": 11,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "any_fire": 20
+   },
+   "new": {
+    "boundaries": 40,
+    "leading_tone": 11,
+    "tritone_pair": 29,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "any_fire": 35
+   }
+  },
+  "bwv354": {
+   "old": {
+    "boundaries": 36,
+    "leading_tone": 6,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 8,
+    "any_fire": 14
+   },
+   "new": {
+    "boundaries": 36,
+    "leading_tone": 6,
+    "tritone_pair": 27,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 8,
+    "any_fire": 31
+   }
+  },
+  "bwv355": {
+   "old": {
+    "boundaries": 53,
+    "leading_tone": 15,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 14,
+    "any_fire": 26
+   },
+   "new": {
+    "boundaries": 53,
+    "leading_tone": 15,
+    "tritone_pair": 41,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 14,
+    "any_fire": 45
+   }
+  },
+  "bwv356": {
+   "old": {
+    "boundaries": 44,
+    "leading_tone": 5,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 9,
+    "any_fire": 14
+   },
+   "new": {
+    "boundaries": 44,
+    "leading_tone": 5,
+    "tritone_pair": 34,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 9,
+    "any_fire": 37
+   }
+  },
+  "bwv357": {
+   "old": {
+    "boundaries": 49,
+    "leading_tone": 9,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 11,
+    "any_fire": 19
+   },
+   "new": {
+    "boundaries": 49,
+    "leading_tone": 9,
+    "tritone_pair": 33,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 11,
+    "any_fire": 37
+   }
+  },
+  "bwv358": {
+   "old": {
+    "boundaries": 40,
+    "leading_tone": 9,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "any_fire": 19
+   },
+   "new": {
+    "boundaries": 40,
+    "leading_tone": 9,
+    "tritone_pair": 26,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "any_fire": 31
+   }
+  },
+  "bwv359": {
+   "old": {
+    "boundaries": 38,
+    "leading_tone": 6,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 10,
+    "any_fire": 14
+   },
+   "new": {
+    "boundaries": 38,
+    "leading_tone": 6,
+    "tritone_pair": 32,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 10,
+    "any_fire": 33
+   }
+  },
+  "bwv360": {
+   "old": {
+    "boundaries": 35,
+    "leading_tone": 8,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 10,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 35,
+    "leading_tone": 8,
+    "tritone_pair": 28,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 10,
+    "any_fire": 28
+   }
+  },
+  "bwv361": {
+   "old": {
+    "boundaries": 37,
+    "leading_tone": 10,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 13,
+    "any_fire": 20
+   },
+   "new": {
+    "boundaries": 37,
+    "leading_tone": 10,
+    "tritone_pair": 24,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 13,
+    "any_fire": 31
+   }
+  },
+  "bwv362": {
+   "old": {
+    "boundaries": 86,
+    "leading_tone": 15,
+    "tritone_pair": 6,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 16,
+    "any_fire": 29
+   },
+   "new": {
+    "boundaries": 86,
+    "leading_tone": 15,
+    "tritone_pair": 54,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 16,
+    "any_fire": 58
+   }
+  },
+  "bwv363": {
+   "old": {
+    "boundaries": 38,
+    "leading_tone": 6,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 6,
+    "any_fire": 12
+   },
+   "new": {
+    "boundaries": 38,
+    "leading_tone": 6,
+    "tritone_pair": 25,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 6,
+    "any_fire": 28
+   }
+  },
+  "bwv364": {
+   "old": {
+    "boundaries": 29,
+    "leading_tone": 6,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 7,
+    "any_fire": 14
+   },
+   "new": {
+    "boundaries": 29,
+    "leading_tone": 6,
+    "tritone_pair": 16,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 7,
+    "any_fire": 19
+   }
+  },
+  "bwv365": {
+   "old": {
+    "boundaries": 28,
+    "leading_tone": 6,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "any_fire": 13
+   },
+   "new": {
+    "boundaries": 28,
+    "leading_tone": 6,
+    "tritone_pair": 22,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "any_fire": 25
+   }
+  },
+  "bwv366": {
+   "old": {
+    "boundaries": 48,
+    "leading_tone": 10,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 12,
+    "any_fire": 19
+   },
+   "new": {
+    "boundaries": 48,
+    "leading_tone": 10,
+    "tritone_pair": 22,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 12,
+    "any_fire": 34
+   }
+  },
+  "bwv367": {
+   "old": {
+    "boundaries": 29,
+    "leading_tone": 6,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 9,
+    "any_fire": 13
+   },
+   "new": {
+    "boundaries": 29,
+    "leading_tone": 6,
+    "tritone_pair": 14,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 9,
+    "any_fire": 20
+   }
+  },
+  "bwv368": {
+   "old": {
+    "boundaries": 65,
+    "leading_tone": 14,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 15,
+    "any_fire": 24
+   },
+   "new": {
+    "boundaries": 65,
+    "leading_tone": 14,
+    "tritone_pair": 44,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 15,
+    "any_fire": 49
+   }
+  },
+  "bwv369": {
+   "old": {
+    "boundaries": 28,
+    "leading_tone": 5,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "any_fire": 12
+   },
+   "new": {
+    "boundaries": 28,
+    "leading_tone": 5,
+    "tritone_pair": 11,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "any_fire": 19
+   }
+  },
+  "bwv37.6": {
+   "old": {
+    "boundaries": 56,
+    "leading_tone": 13,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 13,
+    "any_fire": 23
+   },
+   "new": {
+    "boundaries": 56,
+    "leading_tone": 13,
+    "tritone_pair": 44,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 13,
+    "any_fire": 49
+   }
+  },
+  "bwv370": {
+   "old": {
+    "boundaries": 28,
+    "leading_tone": 6,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "any_fire": 11
+   },
+   "new": {
+    "boundaries": 28,
+    "leading_tone": 6,
+    "tritone_pair": 18,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "any_fire": 19
+   }
+  },
+  "bwv371": {
+   "old": {
+    "boundaries": 149,
+    "leading_tone": 26,
+    "tritone_pair": 7,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 37,
+    "any_fire": 63
+   },
+   "new": {
+    "boundaries": 149,
+    "leading_tone": 26,
+    "tritone_pair": 102,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 37,
+    "any_fire": 119
+   }
+  },
+  "bwv372": {
+   "old": {
+    "boundaries": 48,
+    "leading_tone": 4,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 12,
+    "any_fire": 17
+   },
+   "new": {
+    "boundaries": 48,
+    "leading_tone": 4,
+    "tritone_pair": 28,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 12,
+    "any_fire": 33
+   }
+  },
+  "bwv373": {
+   "old": {
+    "boundaries": 26,
+    "leading_tone": 7,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "any_fire": 12
+   },
+   "new": {
+    "boundaries": 26,
+    "leading_tone": 7,
+    "tritone_pair": 17,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "any_fire": 20
+   }
+  },
+  "bwv374": {
+   "old": {
+    "boundaries": 52,
+    "leading_tone": 9,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 7,
+    "fermata_location": 13,
+    "any_fire": 22
+   },
+   "new": {
+    "boundaries": 52,
+    "leading_tone": 9,
+    "tritone_pair": 31,
+    "dominant_tonic_bass": 7,
+    "fermata_location": 13,
+    "any_fire": 38
+   }
+  },
+  "bwv375": {
+   "old": {
+    "boundaries": 31,
+    "leading_tone": 3,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 7,
+    "any_fire": 10
+   },
+   "new": {
+    "boundaries": 31,
+    "leading_tone": 3,
+    "tritone_pair": 26,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 7,
+    "any_fire": 27
+   }
+  },
+  "bwv376": {
+   "old": {
+    "boundaries": 28,
+    "leading_tone": 2,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "any_fire": 12
+   },
+   "new": {
+    "boundaries": 28,
+    "leading_tone": 2,
+    "tritone_pair": 21,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "any_fire": 24
+   }
+  },
+  "bwv377": {
+   "old": {
+    "boundaries": 30,
+    "leading_tone": 7,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 5,
+    "any_fire": 12
+   },
+   "new": {
+    "boundaries": 30,
+    "leading_tone": 7,
+    "tritone_pair": 23,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 5,
+    "any_fire": 26
+   }
+  },
+  "bwv378": {
+   "old": {
+    "boundaries": 48,
+    "leading_tone": 14,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 11,
+    "any_fire": 24
+   },
+   "new": {
+    "boundaries": 48,
+    "leading_tone": 14,
+    "tritone_pair": 31,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 11,
+    "any_fire": 37
+   }
+  },
+  "bwv379": {
+   "old": {
+    "boundaries": 26,
+    "leading_tone": 7,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "any_fire": 13
+   },
+   "new": {
+    "boundaries": 26,
+    "leading_tone": 7,
+    "tritone_pair": 19,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "any_fire": 22
+   }
+  },
+  "bwv38.6": {
+   "old": {
+    "boundaries": 38,
+    "leading_tone": 8,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 10,
+    "any_fire": 15
+   },
+   "new": {
+    "boundaries": 38,
+    "leading_tone": 8,
+    "tritone_pair": 19,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 10,
+    "any_fire": 25
+   }
+  },
+  "bwv380": {
+   "old": {
+    "boundaries": 41,
+    "leading_tone": 9,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 11,
+    "any_fire": 18
+   },
+   "new": {
+    "boundaries": 41,
+    "leading_tone": 9,
+    "tritone_pair": 27,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 11,
+    "any_fire": 30
+   }
+  },
+  "bwv381": {
+   "old": {
+    "boundaries": 49,
+    "leading_tone": 13,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 13,
+    "any_fire": 23
+   },
+   "new": {
+    "boundaries": 49,
+    "leading_tone": 13,
+    "tritone_pair": 42,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 13,
+    "any_fire": 45
+   }
+  },
+  "bwv382": {
+   "old": {
+    "boundaries": 36,
+    "leading_tone": 5,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 7,
+    "any_fire": 11
+   },
+   "new": {
+    "boundaries": 36,
+    "leading_tone": 5,
+    "tritone_pair": 24,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 7,
+    "any_fire": 27
+   }
+  },
+  "bwv383": {
+   "old": {
+    "boundaries": 83,
+    "leading_tone": 15,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 20,
+    "any_fire": 32
+   },
+   "new": {
+    "boundaries": 83,
+    "leading_tone": 15,
+    "tritone_pair": 56,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 20,
+    "any_fire": 63
+   }
+  },
+  "bwv384": {
+   "old": {
+    "boundaries": 24,
+    "leading_tone": 5,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 5,
+    "any_fire": 8
+   },
+   "new": {
+    "boundaries": 24,
+    "leading_tone": 5,
+    "tritone_pair": 16,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 5,
+    "any_fire": 17
+   }
+  },
+  "bwv385": {
+   "old": {
+    "boundaries": 42,
+    "leading_tone": 12,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 9,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 42,
+    "leading_tone": 12,
+    "tritone_pair": 33,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 9,
+    "any_fire": 35
+   }
+  },
+  "bwv386": {
+   "old": {
+    "boundaries": 31,
+    "leading_tone": 7,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 9,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 31,
+    "leading_tone": 7,
+    "tritone_pair": 16,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 9,
+    "any_fire": 25
+   }
+  },
+  "bwv387": {
+   "old": {
+    "boundaries": 31,
+    "leading_tone": 3,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 6,
+    "any_fire": 9
+   },
+   "new": {
+    "boundaries": 31,
+    "leading_tone": 3,
+    "tritone_pair": 21,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 6,
+    "any_fire": 24
+   }
+  },
+  "bwv388": {
+   "old": {
+    "boundaries": 39,
+    "leading_tone": 10,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 8,
+    "any_fire": 15
+   },
+   "new": {
+    "boundaries": 39,
+    "leading_tone": 10,
+    "tritone_pair": 35,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 8,
+    "any_fire": 36
+   }
+  },
+  "bwv389": {
+   "old": {
+    "boundaries": 72,
+    "leading_tone": 17,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 17,
+    "any_fire": 29
+   },
+   "new": {
+    "boundaries": 72,
+    "leading_tone": 17,
+    "tritone_pair": 54,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 17,
+    "any_fire": 60
+   }
+  },
+  "bwv39.7": {
+   "old": {
+    "boundaries": 42,
+    "leading_tone": 14,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 10,
+    "any_fire": 20
+   },
+   "new": {
+    "boundaries": 42,
+    "leading_tone": 14,
+    "tritone_pair": 30,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 10,
+    "any_fire": 34
+   }
+  },
+  "bwv390": {
+   "old": {
+    "boundaries": 75,
+    "leading_tone": 17,
+    "tritone_pair": 6,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 15,
+    "any_fire": 29
+   },
+   "new": {
+    "boundaries": 75,
+    "leading_tone": 17,
+    "tritone_pair": 49,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 15,
+    "any_fire": 55
+   }
+  },
+  "bwv391": {
+   "old": {
+    "boundaries": 40,
+    "leading_tone": 7,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 11,
+    "any_fire": 18
+   },
+   "new": {
+    "boundaries": 40,
+    "leading_tone": 7,
+    "tritone_pair": 25,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 11,
+    "any_fire": 31
+   }
+  },
+  "bwv392": {
+   "old": {
+    "boundaries": 41,
+    "leading_tone": 7,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 10,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 41,
+    "leading_tone": 7,
+    "tritone_pair": 33,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 10,
+    "any_fire": 35
+   }
+  },
+  "bwv393": {
+   "old": {
+    "boundaries": 37,
+    "leading_tone": 7,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 9,
+    "any_fire": 14
+   },
+   "new": {
+    "boundaries": 37,
+    "leading_tone": 7,
+    "tritone_pair": 26,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 9,
+    "any_fire": 33
+   }
+  },
+  "bwv394": {
+   "old": {
+    "boundaries": 37,
+    "leading_tone": 8,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 9,
+    "any_fire": 14
+   },
+   "new": {
+    "boundaries": 37,
+    "leading_tone": 8,
+    "tritone_pair": 30,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 9,
+    "any_fire": 33
+   }
+  },
+  "bwv395": {
+   "old": {
+    "boundaries": 39,
+    "leading_tone": 9,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 10,
+    "any_fire": 17
+   },
+   "new": {
+    "boundaries": 39,
+    "leading_tone": 9,
+    "tritone_pair": 28,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 10,
+    "any_fire": 33
+   }
+  },
+  "bwv396": {
+   "old": {
+    "boundaries": 21,
+    "leading_tone": 5,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "any_fire": 9
+   },
+   "new": {
+    "boundaries": 21,
+    "leading_tone": 5,
+    "tritone_pair": 14,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "any_fire": 17
+   }
+  },
+  "bwv397": {
+   "old": {
+    "boundaries": 37,
+    "leading_tone": 4,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 8,
+    "any_fire": 12
+   },
+   "new": {
+    "boundaries": 37,
+    "leading_tone": 4,
+    "tritone_pair": 23,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 8,
+    "any_fire": 26
+   }
+  },
+  "bwv398": {
+   "old": {
+    "boundaries": 36,
+    "leading_tone": 8,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 11,
+    "any_fire": 17
+   },
+   "new": {
+    "boundaries": 36,
+    "leading_tone": 8,
+    "tritone_pair": 15,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 11,
+    "any_fire": 24
+   }
+  },
+  "bwv399": {
+   "old": {
+    "boundaries": 32,
+    "leading_tone": 6,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 8,
+    "any_fire": 14
+   },
+   "new": {
+    "boundaries": 32,
+    "leading_tone": 6,
+    "tritone_pair": 25,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 8,
+    "any_fire": 28
+   }
+  },
+  "bwv4.8": {
+   "old": {
+    "boundaries": 37,
+    "leading_tone": 9,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 8,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 37,
+    "leading_tone": 9,
+    "tritone_pair": 26,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 8,
+    "any_fire": 31
+   }
+  },
+  "bwv40.3": {
+   "old": {
+    "boundaries": 37,
+    "leading_tone": 5,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 10,
+    "any_fire": 13
+   },
+   "new": {
+    "boundaries": 37,
+    "leading_tone": 5,
+    "tritone_pair": 23,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 10,
+    "any_fire": 29
+   }
+  },
+  "bwv40.6": {
+   "old": {
+    "boundaries": 52,
+    "leading_tone": 10,
+    "tritone_pair": 6,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 15,
+    "any_fire": 22
+   },
+   "new": {
+    "boundaries": 52,
+    "leading_tone": 10,
+    "tritone_pair": 27,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 15,
+    "any_fire": 36
+   }
+  },
+  "bwv40.8": {
+   "old": {
+    "boundaries": 51,
+    "leading_tone": 11,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 16,
+    "any_fire": 25
+   },
+   "new": {
+    "boundaries": 51,
+    "leading_tone": 11,
+    "tritone_pair": 26,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 16,
+    "any_fire": 38
+   }
+  },
+  "bwv400": {
+   "old": {
+    "boundaries": 36,
+    "leading_tone": 9,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 10,
+    "any_fire": 17
+   },
+   "new": {
+    "boundaries": 36,
+    "leading_tone": 9,
+    "tritone_pair": 22,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 10,
+    "any_fire": 28
+   }
+  },
+  "bwv401": {
+   "old": {
+    "boundaries": 41,
+    "leading_tone": 11,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 8,
+    "any_fire": 19
+   },
+   "new": {
+    "boundaries": 41,
+    "leading_tone": 11,
+    "tritone_pair": 26,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 8,
+    "any_fire": 30
+   }
+  },
+  "bwv402": {
+   "old": {
+    "boundaries": 66,
+    "leading_tone": 16,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 14,
+    "any_fire": 26
+   },
+   "new": {
+    "boundaries": 66,
+    "leading_tone": 16,
+    "tritone_pair": 49,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 14,
+    "any_fire": 55
+   }
+  },
+  "bwv403": {
+   "old": {
+    "boundaries": 39,
+    "leading_tone": 7,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 10,
+    "any_fire": 17
+   },
+   "new": {
+    "boundaries": 39,
+    "leading_tone": 7,
+    "tritone_pair": 28,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 10,
+    "any_fire": 32
+   }
+  },
+  "bwv404": {
+   "old": {
+    "boundaries": 21,
+    "leading_tone": 5,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 5,
+    "any_fire": 11
+   },
+   "new": {
+    "boundaries": 21,
+    "leading_tone": 5,
+    "tritone_pair": 17,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 5,
+    "any_fire": 19
+   }
+  },
+  "bwv405": {
+   "old": {
+    "boundaries": 36,
+    "leading_tone": 9,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "any_fire": 14
+   },
+   "new": {
+    "boundaries": 36,
+    "leading_tone": 9,
+    "tritone_pair": 23,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "any_fire": 28
+   }
+  },
+  "bwv406": {
+   "old": {
+    "boundaries": 33,
+    "leading_tone": 3,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 6,
+    "any_fire": 9
+   },
+   "new": {
+    "boundaries": 33,
+    "leading_tone": 3,
+    "tritone_pair": 23,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 6,
+    "any_fire": 25
+   }
+  },
+  "bwv407": {
+   "old": {
+    "boundaries": 67,
+    "leading_tone": 10,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 18,
+    "any_fire": 23
+   },
+   "new": {
+    "boundaries": 67,
+    "leading_tone": 10,
+    "tritone_pair": 39,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 18,
+    "any_fire": 50
+   }
+  },
+  "bwv408": {
+   "old": {
+    "boundaries": 32,
+    "leading_tone": 6,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 12,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 32,
+    "leading_tone": 6,
+    "tritone_pair": 16,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 12,
+    "any_fire": 23
+   }
+  },
+  "bwv409": {
+   "old": {
+    "boundaries": 36,
+    "leading_tone": 12,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "any_fire": 18
+   },
+   "new": {
+    "boundaries": 36,
+    "leading_tone": 12,
+    "tritone_pair": 22,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "any_fire": 29
+   }
+  },
+  "bwv410": {
+   "old": {
+    "boundaries": 43,
+    "leading_tone": 15,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 10,
+    "any_fire": 22
+   },
+   "new": {
+    "boundaries": 43,
+    "leading_tone": 15,
+    "tritone_pair": 24,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 10,
+    "any_fire": 34
+   }
+  },
+  "bwv411": {
+   "old": {
+    "boundaries": 43,
+    "leading_tone": 9,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 10,
+    "any_fire": 17
+   },
+   "new": {
+    "boundaries": 43,
+    "leading_tone": 9,
+    "tritone_pair": 34,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 10,
+    "any_fire": 37
+   }
+  },
+  "bwv412": {
+   "old": {
+    "boundaries": 41,
+    "leading_tone": 6,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 10,
+    "any_fire": 14
+   },
+   "new": {
+    "boundaries": 41,
+    "leading_tone": 6,
+    "tritone_pair": 20,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 10,
+    "any_fire": 26
+   }
+  },
+  "bwv413": {
+   "old": {
+    "boundaries": 57,
+    "leading_tone": 13,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 12,
+    "any_fire": 25
+   },
+   "new": {
+    "boundaries": 57,
+    "leading_tone": 13,
+    "tritone_pair": 42,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 12,
+    "any_fire": 46
+   }
+  },
+  "bwv414": {
+   "old": {
+    "boundaries": 29,
+    "leading_tone": 8,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "any_fire": 13
+   },
+   "new": {
+    "boundaries": 29,
+    "leading_tone": 8,
+    "tritone_pair": 18,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 7,
+    "any_fire": 21
+   }
+  },
+  "bwv415": {
+   "old": {
+    "boundaries": 36,
+    "leading_tone": 10,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 9,
+    "any_fire": 18
+   },
+   "new": {
+    "boundaries": 36,
+    "leading_tone": 10,
+    "tritone_pair": 20,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 9,
+    "any_fire": 22
+   }
+  },
+  "bwv416": {
+   "old": {
+    "boundaries": 43,
+    "leading_tone": 11,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 10,
+    "any_fire": 18
+   },
+   "new": {
+    "boundaries": 43,
+    "leading_tone": 11,
+    "tritone_pair": 33,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 10,
+    "any_fire": 37
+   }
+  },
+  "bwv417": {
+   "old": {
+    "boundaries": 40,
+    "leading_tone": 7,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 9,
+    "any_fire": 15
+   },
+   "new": {
+    "boundaries": 40,
+    "leading_tone": 7,
+    "tritone_pair": 22,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 9,
+    "any_fire": 25
+   }
+  },
+  "bwv418": {
+   "old": {
+    "boundaries": 46,
+    "leading_tone": 8,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 14,
+    "any_fire": 19
+   },
+   "new": {
+    "boundaries": 46,
+    "leading_tone": 8,
+    "tritone_pair": 25,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 14,
+    "any_fire": 32
+   }
+  },
+  "bwv419": {
+   "old": {
+    "boundaries": 32,
+    "leading_tone": 7,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 32,
+    "leading_tone": 7,
+    "tritone_pair": 20,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "any_fire": 22
+   }
+  },
+  "bwv42.7": {
+   "old": {
+    "boundaries": 83,
+    "leading_tone": 18,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 21,
+    "any_fire": 35
+   },
+   "new": {
+    "boundaries": 83,
+    "leading_tone": 18,
+    "tritone_pair": 58,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 21,
+    "any_fire": 64
+   }
+  },
+  "bwv420": {
+   "old": {
+    "boundaries": 31,
+    "leading_tone": 7,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 8,
+    "any_fire": 12
+   },
+   "new": {
+    "boundaries": 31,
+    "leading_tone": 7,
+    "tritone_pair": 23,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 8,
+    "any_fire": 25
+   }
+  },
+  "bwv421": {
+   "old": {
+    "boundaries": 33,
+    "leading_tone": 9,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 8,
+    "any_fire": 13
+   },
+   "new": {
+    "boundaries": 33,
+    "leading_tone": 9,
+    "tritone_pair": 21,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 8,
+    "any_fire": 24
+   }
+  },
+  "bwv422": {
+   "old": {
+    "boundaries": 44,
+    "leading_tone": 8,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 14,
+    "any_fire": 21
+   },
+   "new": {
+    "boundaries": 44,
+    "leading_tone": 8,
+    "tritone_pair": 33,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 14,
+    "any_fire": 37
+   }
+  },
+  "bwv423": {
+   "old": {
+    "boundaries": 49,
+    "leading_tone": 10,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 13,
+    "any_fire": 22
+   },
+   "new": {
+    "boundaries": 49,
+    "leading_tone": 10,
+    "tritone_pair": 31,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 13,
+    "any_fire": 35
+   }
+  },
+  "bwv424": {
+   "old": {
+    "boundaries": 23,
+    "leading_tone": 3,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 7,
+    "any_fire": 10
+   },
+   "new": {
+    "boundaries": 23,
+    "leading_tone": 3,
+    "tritone_pair": 18,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 7,
+    "any_fire": 20
+   }
+  },
+  "bwv425": {
+   "old": {
+    "boundaries": 88,
+    "leading_tone": 6,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 15,
+    "any_fire": 23
+   },
+   "new": {
+    "boundaries": 88,
+    "leading_tone": 6,
+    "tritone_pair": 60,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 15,
+    "any_fire": 64
+   }
+  },
+  "bwv426": {
+   "old": {
+    "boundaries": 51,
+    "leading_tone": 8,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 13,
+    "any_fire": 20
+   },
+   "new": {
+    "boundaries": 51,
+    "leading_tone": 8,
+    "tritone_pair": 32,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 13,
+    "any_fire": 38
+   }
+  },
+  "bwv427": {
+   "old": {
+    "boundaries": 44,
+    "leading_tone": 10,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 11,
+    "any_fire": 18
+   },
+   "new": {
+    "boundaries": 44,
+    "leading_tone": 10,
+    "tritone_pair": 24,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 11,
+    "any_fire": 31
+   }
+  },
+  "bwv428": {
+   "old": {
+    "boundaries": 48,
+    "leading_tone": 9,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 9,
+    "any_fire": 18
+   },
+   "new": {
+    "boundaries": 48,
+    "leading_tone": 9,
+    "tritone_pair": 39,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 9,
+    "any_fire": 40
+   }
+  },
+  "bwv429": {
+   "old": {
+    "boundaries": 53,
+    "leading_tone": 11,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 10,
+    "any_fire": 21
+   },
+   "new": {
+    "boundaries": 53,
+    "leading_tone": 11,
+    "tritone_pair": 43,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 10,
+    "any_fire": 45
+   }
+  },
+  "bwv43.11": {
+   "old": {
+    "boundaries": 31,
+    "leading_tone": 10,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 10,
+    "any_fire": 15
+   },
+   "new": {
+    "boundaries": 31,
+    "leading_tone": 10,
+    "tritone_pair": 8,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 10,
+    "any_fire": 19
+   }
+  },
+  "bwv430": {
+   "old": {
+    "boundaries": 51,
+    "leading_tone": 14,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 11,
+    "any_fire": 24
+   },
+   "new": {
+    "boundaries": 51,
+    "leading_tone": 14,
+    "tritone_pair": 43,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 11,
+    "any_fire": 46
+   }
+  },
+  "bwv431": {
+   "old": {
+    "boundaries": 35,
+    "leading_tone": 8,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 6,
+    "any_fire": 14
+   },
+   "new": {
+    "boundaries": 35,
+    "leading_tone": 8,
+    "tritone_pair": 26,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 6,
+    "any_fire": 28
+   }
+  },
+  "bwv432": {
+   "old": {
+    "boundaries": 29,
+    "leading_tone": 6,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 6,
+    "any_fire": 11
+   },
+   "new": {
+    "boundaries": 29,
+    "leading_tone": 6,
+    "tritone_pair": 24,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 6,
+    "any_fire": 26
+   }
+  },
+  "bwv433": {
+   "old": {
+    "boundaries": 57,
+    "leading_tone": 10,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 13,
+    "any_fire": 24
+   },
+   "new": {
+    "boundaries": 57,
+    "leading_tone": 10,
+    "tritone_pair": 40,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 13,
+    "any_fire": 48
+   }
+  },
+  "bwv434": {
+   "old": {
+    "boundaries": 29,
+    "leading_tone": 9,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 4,
+    "any_fire": 13
+   },
+   "new": {
+    "boundaries": 29,
+    "leading_tone": 9,
+    "tritone_pair": 16,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 4,
+    "any_fire": 22
+   }
+  },
+  "bwv435": {
+   "old": {
+    "boundaries": 37,
+    "leading_tone": 4,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "any_fire": 14
+   },
+   "new": {
+    "boundaries": 37,
+    "leading_tone": 4,
+    "tritone_pair": 30,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "any_fire": 32
+   }
+  },
+  "bwv436": {
+   "old": {
+    "boundaries": 46,
+    "leading_tone": 12,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 13,
+    "any_fire": 21
+   },
+   "new": {
+    "boundaries": 46,
+    "leading_tone": 12,
+    "tritone_pair": 26,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 13,
+    "any_fire": 36
+   }
+  },
+  "bwv437": {
+   "old": {
+    "boundaries": 104,
+    "leading_tone": 14,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 24,
+    "any_fire": 39
+   },
+   "new": {
+    "boundaries": 104,
+    "leading_tone": 14,
+    "tritone_pair": 77,
+    "dominant_tonic_bass": 6,
+    "fermata_location": 24,
+    "any_fire": 85
+   }
+  },
+  "bwv438": {
+   "old": {
+    "boundaries": 29,
+    "leading_tone": 9,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 6,
+    "any_fire": 14
+   },
+   "new": {
+    "boundaries": 29,
+    "leading_tone": 9,
+    "tritone_pair": 23,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 6,
+    "any_fire": 25
+   }
+  },
+  "bwv44.7": {
+   "old": {
+    "boundaries": 37,
+    "leading_tone": 14,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 10,
+    "any_fire": 22
+   },
+   "new": {
+    "boundaries": 37,
+    "leading_tone": 14,
+    "tritone_pair": 20,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 10,
+    "any_fire": 27
+   }
+  },
+  "bwv45.7": {
+   "old": {
+    "boundaries": 41,
+    "leading_tone": 8,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 12,
+    "any_fire": 19
+   },
+   "new": {
+    "boundaries": 41,
+    "leading_tone": 8,
+    "tritone_pair": 24,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 12,
+    "any_fire": 29
+   }
+  },
+  "bwv46.6": {
+   "old": {
+    "boundaries": 47,
+    "leading_tone": 13,
+    "tritone_pair": 5,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 12,
+    "any_fire": 20
+   },
+   "new": {
+    "boundaries": 47,
+    "leading_tone": 13,
+    "tritone_pair": 26,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 12,
+    "any_fire": 31
+   }
+  },
+  "bwv47.5": {
+   "old": {
+    "boundaries": 35,
+    "leading_tone": 10,
+    "tritone_pair": 5,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 9,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 35,
+    "leading_tone": 10,
+    "tritone_pair": 25,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 9,
+    "any_fire": 29
+   }
+  },
+  "bwv48.3": {
+   "old": {
+    "boundaries": 33,
+    "leading_tone": 10,
+    "tritone_pair": 7,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 10,
+    "any_fire": 18
+   },
+   "new": {
+    "boundaries": 33,
+    "leading_tone": 10,
+    "tritone_pair": 23,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 10,
+    "any_fire": 25
+   }
+  },
+  "bwv48.7": {
+   "old": {
+    "boundaries": 36,
+    "leading_tone": 10,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 8,
+    "any_fire": 18
+   },
+   "new": {
+    "boundaries": 36,
+    "leading_tone": 10,
+    "tritone_pair": 25,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 8,
+    "any_fire": 28
+   }
+  },
+  "bwv5.7": {
+   "old": {
+    "boundaries": 37,
+    "leading_tone": 9,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 9,
+    "any_fire": 17
+   },
+   "new": {
+    "boundaries": 37,
+    "leading_tone": 9,
+    "tritone_pair": 27,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 9,
+    "any_fire": 31
+   }
+  },
+  "bwv55.5": {
+   "old": {
+    "boundaries": 39,
+    "leading_tone": 8,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "any_fire": 17
+   },
+   "new": {
+    "boundaries": 39,
+    "leading_tone": 8,
+    "tritone_pair": 31,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "any_fire": 33
+   }
+  },
+  "bwv56.5": {
+   "old": {
+    "boundaries": 35,
+    "leading_tone": 8,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 35,
+    "leading_tone": 8,
+    "tritone_pair": 19,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 9,
+    "any_fire": 26
+   }
+  },
+  "bwv57.8": {
+   "old": {
+    "boundaries": 29,
+    "leading_tone": 6,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 7,
+    "any_fire": 12
+   },
+   "new": {
+    "boundaries": 29,
+    "leading_tone": 6,
+    "tritone_pair": 21,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 7,
+    "any_fire": 23
+   }
+  },
+  "bwv6.6": {
+   "old": {
+    "boundaries": 28,
+    "leading_tone": 8,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 6,
+    "any_fire": 12
+   },
+   "new": {
+    "boundaries": 28,
+    "leading_tone": 8,
+    "tritone_pair": 20,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 6,
+    "any_fire": 24
+   }
+  },
+  "bwv60.5": {
+   "old": {
+    "boundaries": 48,
+    "leading_tone": 9,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 15,
+    "any_fire": 23
+   },
+   "new": {
+    "boundaries": 48,
+    "leading_tone": 9,
+    "tritone_pair": 19,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 15,
+    "any_fire": 29
+   }
+  },
+  "bwv62.6": {
+   "old": {
+    "boundaries": 31,
+    "leading_tone": 5,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 6,
+    "any_fire": 11
+   },
+   "new": {
+    "boundaries": 31,
+    "leading_tone": 5,
+    "tritone_pair": 23,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 6,
+    "any_fire": 24
+   }
+  },
+  "bwv64.2": {
+   "old": {
+    "boundaries": 32,
+    "leading_tone": 7,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 5,
+    "any_fire": 10
+   },
+   "new": {
+    "boundaries": 32,
+    "leading_tone": 7,
+    "tritone_pair": 22,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 5,
+    "any_fire": 24
+   }
+  },
+  "bwv64.4": {
+   "old": {
+    "boundaries": 36,
+    "leading_tone": 6,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 12,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 36,
+    "leading_tone": 6,
+    "tritone_pair": 18,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 12,
+    "any_fire": 26
+   }
+  },
+  "bwv64.8": {
+   "old": {
+    "boundaries": 35,
+    "leading_tone": 6,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 11,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 35,
+    "leading_tone": 6,
+    "tritone_pair": 15,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 11,
+    "any_fire": 22
+   }
+  },
+  "bwv65.2": {
+   "old": {
+    "boundaries": 33,
+    "leading_tone": 14,
+    "tritone_pair": 5,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "any_fire": 19
+   },
+   "new": {
+    "boundaries": 33,
+    "leading_tone": 14,
+    "tritone_pair": 18,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "any_fire": 22
+   }
+  },
+  "bwv65.7": {
+   "old": {
+    "boundaries": 43,
+    "leading_tone": 9,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 8,
+    "any_fire": 15
+   },
+   "new": {
+    "boundaries": 43,
+    "leading_tone": 9,
+    "tritone_pair": 27,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 8,
+    "any_fire": 30
+   }
+  },
+  "bwv67.7": {
+   "old": {
+    "boundaries": 26,
+    "leading_tone": 8,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 5,
+    "any_fire": 11
+   },
+   "new": {
+    "boundaries": 26,
+    "leading_tone": 8,
+    "tritone_pair": 16,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 5,
+    "any_fire": 20
+   }
+  },
+  "bwv73.5": {
+   "old": {
+    "boundaries": 36,
+    "leading_tone": 9,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 10,
+    "any_fire": 15
+   },
+   "new": {
+    "boundaries": 36,
+    "leading_tone": 9,
+    "tritone_pair": 15,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 10,
+    "any_fire": 20
+   }
+  },
+  "bwv74.8": {
+   "old": {
+    "boundaries": 39,
+    "leading_tone": 13,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 9,
+    "any_fire": 18
+   },
+   "new": {
+    "boundaries": 39,
+    "leading_tone": 13,
+    "tritone_pair": 24,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 9,
+    "any_fire": 30
+   }
+  },
+  "bwv77.6": {
+   "old": {
+    "boundaries": 36,
+    "leading_tone": 5,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 9,
+    "any_fire": 13
+   },
+   "new": {
+    "boundaries": 36,
+    "leading_tone": 5,
+    "tritone_pair": 17,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 9,
+    "any_fire": 21
+   }
+  },
+  "bwv78.7": {
+   "old": {
+    "boundaries": 49,
+    "leading_tone": 12,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 15,
+    "any_fire": 24
+   },
+   "new": {
+    "boundaries": 49,
+    "leading_tone": 12,
+    "tritone_pair": 41,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 15,
+    "any_fire": 44
+   }
+  },
+  "bwv80.8": {
+   "old": {
+    "boundaries": 43,
+    "leading_tone": 4,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 12,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 43,
+    "leading_tone": 4,
+    "tritone_pair": 24,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 12,
+    "any_fire": 32
+   }
+  },
+  "bwv81.7": {
+   "old": {
+    "boundaries": 37,
+    "leading_tone": 5,
+    "tritone_pair": 1,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 11,
+    "any_fire": 14
+   },
+   "new": {
+    "boundaries": 37,
+    "leading_tone": 5,
+    "tritone_pair": 22,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 11,
+    "any_fire": 26
+   }
+  },
+  "bwv83.5": {
+   "old": {
+    "boundaries": 38,
+    "leading_tone": 10,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 10,
+    "any_fire": 20
+   },
+   "new": {
+    "boundaries": 38,
+    "leading_tone": 10,
+    "tritone_pair": 22,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 10,
+    "any_fire": 31
+   }
+  },
+  "bwv84.5": {
+   "old": {
+    "boundaries": 26,
+    "leading_tone": 8,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 5,
+    "any_fire": 13
+   },
+   "new": {
+    "boundaries": 26,
+    "leading_tone": 8,
+    "tritone_pair": 15,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 5,
+    "any_fire": 21
+   }
+  },
+  "bwv85.6": {
+   "old": {
+    "boundaries": 48,
+    "leading_tone": 12,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 9,
+    "any_fire": 19
+   },
+   "new": {
+    "boundaries": 48,
+    "leading_tone": 12,
+    "tritone_pair": 39,
+    "dominant_tonic_bass": 5,
+    "fermata_location": 9,
+    "any_fire": 40
+   }
+  },
+  "bwv86.6": {
+   "old": {
+    "boundaries": 37,
+    "leading_tone": 12,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 9,
+    "any_fire": 19
+   },
+   "new": {
+    "boundaries": 37,
+    "leading_tone": 12,
+    "tritone_pair": 14,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 9,
+    "any_fire": 25
+   }
+  },
+  "bwv87.7": {
+   "old": {
+    "boundaries": 36,
+    "leading_tone": 4,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "any_fire": 13
+   },
+   "new": {
+    "boundaries": 36,
+    "leading_tone": 4,
+    "tritone_pair": 25,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 11,
+    "any_fire": 28
+   }
+  },
+  "bwv88.7": {
+   "old": {
+    "boundaries": 28,
+    "leading_tone": 4,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "any_fire": 11
+   },
+   "new": {
+    "boundaries": 28,
+    "leading_tone": 4,
+    "tritone_pair": 21,
+    "dominant_tonic_bass": 1,
+    "fermata_location": 6,
+    "any_fire": 24
+   }
+  },
+  "bwv89.6": {
+   "old": {
+    "boundaries": 35,
+    "leading_tone": 11,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 7,
+    "any_fire": 16
+   },
+   "new": {
+    "boundaries": 35,
+    "leading_tone": 11,
+    "tritone_pair": 19,
+    "dominant_tonic_bass": 4,
+    "fermata_location": 7,
+    "any_fire": 27
+   }
+  },
+  "bwv9.7": {
+   "old": {
+    "boundaries": 33,
+    "leading_tone": 7,
+    "tritone_pair": 2,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 7,
+    "any_fire": 13
+   },
+   "new": {
+    "boundaries": 33,
+    "leading_tone": 7,
+    "tritone_pair": 25,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 7,
+    "any_fire": 26
+   }
+  },
+  "bwv90.5": {
+   "old": {
+    "boundaries": 43,
+    "leading_tone": 9,
+    "tritone_pair": 0,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 10,
+    "any_fire": 17
+   },
+   "new": {
+    "boundaries": 43,
+    "leading_tone": 9,
+    "tritone_pair": 30,
+    "dominant_tonic_bass": 3,
+    "fermata_location": 10,
+    "any_fire": 36
+   }
+  },
+  "bwv94.8": {
+   "old": {
+    "boundaries": 39,
+    "leading_tone": 11,
+    "tritone_pair": 3,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 13,
+    "any_fire": 19
+   },
+   "new": {
+    "boundaries": 39,
+    "leading_tone": 11,
+    "tritone_pair": 21,
+    "dominant_tonic_bass": 2,
+    "fermata_location": 13,
+    "any_fire": 30
+   }
+  },
+  "bwv96.6": {
+   "old": {
+    "boundaries": 30,
+    "leading_tone": 7,
+    "tritone_pair": 4,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 8,
+    "any_fire": 15
+   },
+   "new": {
+    "boundaries": 30,
+    "leading_tone": 7,
+    "tritone_pair": 20,
+    "dominant_tonic_bass": 0,
+    "fermata_location": 8,
+    "any_fire": 22
+   }
+  }
+ }
+}

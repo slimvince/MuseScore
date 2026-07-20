@@ -1,0 +1,223 @@
+{
+ "provenance": {
+  "generator": "tools/joint_estimator/fit_run.py:mechanism_report",
+  "instrument_commit": "c6ae08bd4528641b50a4c2d670a7035b3e8dcbec",
+  "purpose": "the named-piece diagnosis of the fitted arm's key-axis band miss; read-only, adjusts nothing",
+  "sample": "the largest key-local movers between the two arms, taken from fit_grading.json's per-piece counters \u2014 declared, not cherry-picked",
+  "tables": "all-326 (the publishable model), both arms, so only the weights differ"
+ },
+ "relative_weights_vs_emission": {
+  "prior": 3.121,
+  "declared_mode": 3.296,
+  "emission": 1.0,
+  "spelling": 1.171,
+  "bass": 0.728,
+  "boundary": 2.377,
+  "chord_trans": 0.862,
+  "key_trans": 1.569,
+  "entry": 1.472
+ },
+ "per_piece": {
+  "bwv331": {
+   "identity": {
+    "segments": 27,
+    "key_changes": 7,
+    "distinct_keys": 4,
+    "largest_key_duration_fraction": 0.512
+   },
+   "fitted": {
+    "segments": 33,
+    "key_changes": 0,
+    "distinct_keys": 1,
+    "largest_key_duration_fraction": 1.0
+   }
+  },
+  "bwv342": {
+   "identity": {
+    "segments": 47,
+    "key_changes": 8,
+    "distinct_keys": 3,
+    "largest_key_duration_fraction": 0.639
+   },
+   "fitted": {
+    "segments": 54,
+    "key_changes": 1,
+    "distinct_keys": 2,
+    "largest_key_duration_fraction": 0.917
+   }
+  },
+  "bwv88.7": {
+   "identity": {
+    "segments": 29,
+    "key_changes": 1,
+    "distinct_keys": 2,
+    "largest_key_duration_fraction": 0.875
+   },
+   "fitted": {
+    "segments": 33,
+    "key_changes": 2,
+    "distinct_keys": 3,
+    "largest_key_duration_fraction": 0.889
+   }
+  },
+  "bwv434": {
+   "identity": {
+    "segments": 30,
+    "key_changes": 9,
+    "distinct_keys": 5,
+    "largest_key_duration_fraction": 0.625
+   },
+   "fitted": {
+    "segments": 34,
+    "key_changes": 1,
+    "distinct_keys": 2,
+    "largest_key_duration_fraction": 0.722
+   }
+  },
+  "bwv391": {
+   "identity": {
+    "segments": 41,
+    "key_changes": 7,
+    "distinct_keys": 4,
+    "largest_key_duration_fraction": 0.5
+   },
+   "fitted": {
+    "segments": 46,
+    "key_changes": 2,
+    "distinct_keys": 2,
+    "largest_key_duration_fraction": 0.778
+   }
+  },
+  "bwv9.7": {
+   "identity": {
+    "segments": 34,
+    "key_changes": 7,
+    "distinct_keys": 5,
+    "largest_key_duration_fraction": 0.487
+   },
+   "fitted": {
+    "segments": 37,
+    "key_changes": 0,
+    "distinct_keys": 1,
+    "largest_key_duration_fraction": 1.0
+   }
+  },
+  "bwv244.62": {
+   "identity": {
+    "segments": 38,
+    "key_changes": 11,
+    "distinct_keys": 8,
+    "largest_key_duration_fraction": 0.354
+   },
+   "fitted": {
+    "segments": 43,
+    "key_changes": 1,
+    "distinct_keys": 2,
+    "largest_key_duration_fraction": 0.979
+   }
+  },
+  "bwv424": {
+   "identity": {
+    "segments": 24,
+    "key_changes": 5,
+    "distinct_keys": 4,
+    "largest_key_duration_fraction": 0.588
+   },
+   "fitted": {
+    "segments": 29,
+    "key_changes": 4,
+    "distinct_keys": 3,
+    "largest_key_duration_fraction": 0.603
+   }
+  },
+  "bwv33.6": {
+   "identity": {
+    "segments": 48,
+    "key_changes": 11,
+    "distinct_keys": 5,
+    "largest_key_duration_fraction": 0.406
+   },
+   "fitted": {
+    "segments": 59,
+    "key_changes": 6,
+    "distinct_keys": 5,
+    "largest_key_duration_fraction": 0.73
+   }
+  },
+  "bwv77.6": {
+   "identity": {
+    "segments": 37,
+    "key_changes": 3,
+    "distinct_keys": 3,
+    "largest_key_duration_fraction": 0.489
+   },
+   "fitted": {
+    "segments": 39,
+    "key_changes": 2,
+    "distinct_keys": 3,
+    "largest_key_duration_fraction": 0.5
+   }
+  },
+  "bwv387": {
+   "identity": {
+    "segments": 32,
+    "key_changes": 6,
+    "distinct_keys": 5,
+    "largest_key_duration_fraction": 0.5
+   },
+   "fitted": {
+    "segments": 32,
+    "key_changes": 2,
+    "distinct_keys": 3,
+    "largest_key_duration_fraction": 0.719
+   }
+  },
+  "bwv48.3": {
+   "identity": {
+    "segments": 34,
+    "key_changes": 7,
+    "distinct_keys": 5,
+    "largest_key_duration_fraction": 0.287
+   },
+   "fitted": {
+    "segments": 36,
+    "key_changes": 6,
+    "distinct_keys": 4,
+    "largest_key_duration_fraction": 0.425
+   }
+  },
+  "bwv326": {
+   "identity": {
+    "segments": 37,
+    "key_changes": 4,
+    "distinct_keys": 2,
+    "largest_key_duration_fraction": 0.833
+   },
+   "fitted": {
+    "segments": 36,
+    "key_changes": 0,
+    "distinct_keys": 1,
+    "largest_key_duration_fraction": 1.0
+   }
+  },
+  "bwv57.8": {
+   "identity": {
+    "segments": 30,
+    "key_changes": 4,
+    "distinct_keys": 3,
+    "largest_key_duration_fraction": 0.838
+   },
+   "fitted": {
+    "segments": 32,
+    "key_changes": 0,
+    "distinct_keys": 1,
+    "largest_key_duration_fraction": 1.0
+   }
+  }
+ },
+ "total_key_changes": {
+  "identity": 90,
+  "fitted": 27,
+  "relative_change_pct": -70.0
+ }
+}

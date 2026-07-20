@@ -2,24 +2,24 @@
  "provenance": {
   "generator": "tools/joint_estimator/probe_run.py",
   "decoder": "tools/joint_estimator/probe_decoder.py (identity weights; ratified factorization)",
-  "instrument_commit": "e3d17c325d24e0de1213440043cbf02ac14f3d3e",
+  "instrument_commit": "c6ae08bd4528641b50a4c2d670a7035b3e8dcbec",
   "note_events_git_hash": "e3d17c325d24e0de1213440043cbf02ac14f3d3e",
   "tables_git_hash": "57ed94a6a46571172a351c09ba4f5cb92930674a",
   "leftover_rule": "option 2a (freq)",
   "seg_cap_events": 4,
   "key_prune_topk": 6,
-  "cadence": "WIRED, WEIGHTLESS (algorithm-completion step 1): the ratified cadence-evidence features compute at every committed boundary and are LOGGED (cadence_feature_fires), but every weight is 0 so they move no score \u2014 the vocabulary change is isolated.",
-  "fermata": "EXTRACTED (note_events fermata field, step 1); the cadence-location feature is wired weightless; the counted fermata-boundary cells are in fermata_boundary_addendum.json.",
+  "cadence": "WIRED, WEIGHTLESS on this arm: this is the IDENTITY-weight (generative-baseline) decode, so every cadence weight is 0 and the features move no score; their fires are logged. The features themselves are the step-2 forms \u2014 the tritone pair now uses the ruled four-beat approach window (R1/W1). The FITTED arm is measured in fit_run.py / fit_grading.json.",
+  "fermata": "EXTRACTED (note_events fermata field, step 1). Step 2: the boundary factor now reads the fermata cells CROSSED with the beat class (fermata_boundary_addendum.exact_tick_by_beat_class), pooling to the beat-class-only cell below the count threshold \u2014 the ratified factorization's boundary form (\u00a73 items 7+8). This is the only thing that moves this arm from the step-1 committed columns.",
   "chromatic_vocab": "Task 3: AugSixth (Italian; the 2 corpus tokens) + Neapolitan added to the decode vocabulary via chromatic_root_pc; see chromatic_decodes.",
   "grading": "a8_rebaseline_measure.build_piece_grid (pinned, read-only) vs dcml_parser.load_wir_regions (OI-142-corrected)",
   "coverage": 326,
   "no_wir": 0
  },
  "columns": {
-  "root_agree_pct": 72.97,
-  "rn_agree_pct": 59.5,
-  "key_home_agree_pct": 53.67,
-  "key_local_agree_pct": 74.43,
+  "root_agree_pct": 72.88,
+  "rn_agree_pct": 59.49,
+  "key_home_agree_pct": 53.69,
+  "key_local_agree_pct": 74.42,
   "key_home_abstain_pct": 0.0,
   "key_local_abstain_pct": 0.0
  },
@@ -30,29 +30,28 @@
   "key_local_agree_pct": 74.43
  },
  "axis_delta_vs_probe_baseline": {
-  "root_agree_pct": 0.0,
-  "rn_agree_pct": 0.0,
-  "key_home_agree_pct": 0.0,
-  "key_local_agree_pct": 0.0
+  "root_agree_pct": -0.09,
+  "rn_agree_pct": -0.01,
+  "key_home_agree_pct": 0.02,
+  "key_local_agree_pct": -0.01
  },
- "prediction_verdict": {
+ "identity_completion_delta": {
   "deltas_pp": {
-   "root_agree_pct": 0.0,
-   "rn_agree_pct": 0.0,
-   "key_home_agree_pct": 0.0,
-   "key_local_agree_pct": 0.0
+   "root_agree_pct": -0.09,
+   "rn_agree_pct": -0.01,
+   "key_home_agree_pct": 0.02,
+   "key_local_agree_pct": -0.01
   },
-  "prediction": "every axis moves < +/-1.0pp",
-  "holds": true,
-  "axes_over_1pp": {}
+  "attribution": "the fermata-crossed boundary cells (step-2 algorithm completion); every other factor and every weight is unchanged from the step-1 committed run",
+  "axes_moved_over_1pp": {}
  },
  "cadence_feature_fires": {
-  "leading_tone": 2949,
-  "tritone_pair": 589,
-  "dominant_tonic_bass": 802,
-  "fermata_location": 3242,
-  "boundaries": 13556,
-  "any_fire": 5624
+  "leading_tone": 2960,
+  "tritone_pair": 9075,
+  "dominant_tonic_bass": 805,
+  "fermata_location": 3215,
+  "boundaries": 13543,
+  "any_fire": 10513
  },
  "chromatic_decodes": {
   "n_segments": 0,
@@ -60,66 +59,66 @@
   "by_piece": {}
  },
  "duration_totals": {
-  "bucket_exact": 3581880,
-  "bucket_key_disagree": 1014360,
-  "bucket_partial": 1353160,
-  "bucket_quality_disagree": 102960,
-  "bucket_root_err": 2242520,
-  "key_agree": 4451760,
-  "key_disagree": 3843120,
-  "keyl_agree": 6174240,
-  "keyl_disagree": 2120640,
-  "rn_agree": 4935040,
-  "rn_dis": 3359840,
-  "root_agree": 6052360,
-  "root_dis": 2242520,
+  "bucket_exact": 3580320,
+  "bucket_key_disagree": 1010640,
+  "bucket_partial": 1354000,
+  "bucket_quality_disagree": 100560,
+  "bucket_root_err": 2249360,
+  "key_agree": 4453200,
+  "key_disagree": 3841680,
+  "keyl_agree": 6172680,
+  "keyl_disagree": 2122200,
+  "rn_agree": 4934320,
+  "rn_dis": 3360560,
+  "root_agree": 6045520,
+  "root_dis": 2249360,
   "scored": 8294880,
   "unscored": 190560
  },
  "timing": {
-  "mean_s": 2.658,
-  "max_s": 13.299,
-  "total_s": 866.6,
+  "mean_s": 3.214,
+  "max_s": 16.863,
+  "total_s": 1047.7,
   "slowest": [
    [
     "bwv328",
-    13.3,
+    16.86,
     391
    ],
    [
     "bwv371",
-    10.65,
+    12.74,
     329
    ],
    [
     "bwv437",
-    7.26,
+    9.12,
     250
    ],
    [
     "bwv276",
-    7.05,
+    8.44,
     223
    ],
    [
     "bwv425",
-    6.27,
+    7.65,
     197
    ],
    [
     "bwv42.7",
-    5.99,
+    7.47,
     169
    ],
    [
     "bwv383",
-    5.87,
+    6.88,
     169
    ],
    [
-    "bwv226.2",
-    5.58,
-    157
+    "bwv126.6",
+    6.57,
+    172
    ]
   ]
  },
@@ -164,7 +163,7 @@
    {
     "stem": "bwv371",
     "key_local_agree_pct": 35.7,
-    "root_agree_pct": 30.8,
+    "root_agree_pct": 30.2,
     "dur": 76320
    },
    {
@@ -176,14 +175,14 @@
    {
     "stem": "bwv277",
     "key_local_agree_pct": 40.5,
-    "root_agree_pct": 37.3,
+    "root_agree_pct": 38.9,
     "dur": 30240
    },
    {
-    "stem": "bwv419",
-    "key_local_agree_pct": 46.8,
-    "root_agree_pct": 58.5,
-    "dur": 22560
+    "stem": "bwv110.7",
+    "key_local_agree_pct": 43.0,
+    "root_agree_pct": 24.4,
+    "dur": 20640
    }
   ],
   "strongest_key_local": [
@@ -251,10 +250,10 @@
  },
  "win_loss_vs_default": {
   "n_pieces": 326,
-  "mean_key_local_delta_pp": 7.84,
-  "mean_root_delta_pp": 7.05,
-  "pieces_key_local_better": 220,
-  "pieces_key_local_worse": 90,
+  "mean_key_local_delta_pp": 7.81,
+  "mean_root_delta_pp": 6.93,
+  "pieces_key_local_better": 221,
+  "pieces_key_local_worse": 91,
   "largest_key_local_losses": [
    {
     "stem": "bwv88.7",
@@ -380,8 +379,8 @@
     "kl_delta": 43.6,
     "my_kl": 87.2,
     "def_kl": 43.6,
-    "root_delta": 19.2,
-    "my_root": 73.1,
+    "root_delta": 20.5,
+    "my_root": 74.4,
     "def_root": 53.8
    },
    {
