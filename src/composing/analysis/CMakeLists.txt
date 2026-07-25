@@ -347,6 +347,12 @@ target_sources(composing_analysis PRIVATE
     # Byte-identical on production by construction. Dispatch: the joint-estimator C++ module build.
     ${CMAKE_CURRENT_LIST_DIR}/joint/labelclass.h
     ${CMAKE_CURRENT_LIST_DIR}/joint/labelclass.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/joint/jointprimitives.h
+    ${CMAKE_CURRENT_LIST_DIR}/joint/jointprimitives.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/joint/jointadapter.h
+    ${CMAKE_CURRENT_LIST_DIR}/joint/jointadapter.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/joint/jointdecoder.h
+    ${CMAKE_CURRENT_LIST_DIR}/joint/jointdecoder.cpp
     ${CMAKE_CURRENT_LIST_DIR}/joint/jointtables.h
     ${CMAKE_CURRENT_LIST_DIR}/joint/jointtables.cpp
     ${CMAKE_CURRENT_LIST_DIR}/joint/jointweights.h
