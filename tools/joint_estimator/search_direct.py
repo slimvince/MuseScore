@@ -124,10 +124,20 @@ def maxplus_decode(lat: fw.UnitLattice, ts: fw.TableSet, mc: MaxContext, stats=N
       (2) only the span backpointer is stored; the branch and the predecessor state are RECOMPUTED
           during the backtrack from the retained `logA`, which visits a few dozen boundaries instead
           of writing (n, 24, C) argmax arrays at every one.
-    Tie-breaking matches `probe_decoder.decode_piece`'s branch order: the same-key chord transition is
-    tried before the key-change branch there (`if tin > best_in` keeps the earlier branch on an exact
-    tie), so `>=` here keeps the same-key branch on a tie; a span that only equals the incumbent does
-    not replace it, as `score > cur[0]` does there."""
+    ★ TIE-BREAK SCOPE (the §5 total order, user-ratified 2026-07-20): `decode_piece` now resolves an
+    EXACT-score tie by the §5 total order on paths (fewer segments; earliest boundary ticks; canonical
+    class-key order) — see probe_decoder. This cached-lattice decode is a SPEED path for the stability
+    DIAGNOSTIC ONLY (never the CV headline, which is `decode_piece`), and its vectorised max-plus
+    recursion cannot cheaply express the §5 lexicographic order; it retains the pre-§5 branch/first-span
+    tie-break. On the 6 corpus pieces whose committed decode §5 canonicalised to a different EQUAL-SCORE
+    segmentation (`decode_parity_ref` regeneration, this dispatch), this decode and `decode_piece` now
+    pick different-but-equally-optimal paths, so `establish_decoder` would flag those 6 if the stability
+    diagnostic is RE-RUN. The committed stability figures predate §5 and are unaffected (they measure the
+    per-start modulation rate, invariant to a one-boundary shift on a repeated-chord run). Deferred item
+    surfaced to Cowork (this dispatch's report): §5-ify this decode's tie-break — or relax
+    establish_decoder to accept equal-score §5-equivalent paths — before the stability diagnostic is
+    re-run. Not done here: the vectorised max-plus form cannot cheaply carry the §5 path signature, and
+    this path is off the CV headline and the production/parity critical path."""
     C, n, K = lat.C, lat.n, 24
     cw = lat.cand_feat @ mc.wc                                   # weighted content per candidate
     cadw = lat.cad @ mc.wcad                                     # (n, 24)

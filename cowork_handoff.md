@@ -209,10 +209,21 @@ until adoption or the reverse map executes):** the joint estimator exists as ins
 Python (`tools/joint_estimator/`, complete: tables, weights, probe decoder) and, from the next
 dispatch, as a NEW isolated C++ module beside the certified stack; production byte-identical
 behind a default-OFF driver; neither exit (adoption via OI-178 / removal via the reverse map) has
-executed. **The ACTIVE dispatch to draft: the C++ module build** (module home fixed at the
-dispatch; input-parity establishment against the committed note events — the two-readers-agree
-discipline; decode parity against the probe oracle at identity AND selected weights; both suites
-+ pipeline snapshots untouched). Only after that: the production-module build under
+executed. The module build's Tasks 2–3 are DELIVERED and Cowork-verified at the local objects (three
+unpushed commits `803ef9e2ae`/`89ac9c35f6`/`e0efd495f1`): score parity at machine precision
+326/326 on BOTH weight arms; path parity 322/326 per arm with the residual PROVEN equal-score
+ties (a real apportionment-cache bug caught and fixed by the establishment tests en route);
+include closure clean; the sanctioned touchable set held exactly. **Three user ratifications
+followed (2026-07-20):** (1) the two build-session artifacts (the mode marginal + the unrounded
+parity reference) are ratified; (2) the TIE-BREAK rule is ratified into the factorization §5
+(fewer segments → earliest boundaries → canonical class order; platform-stable output for the
+diff-based measurements to come), to be implemented in BOTH decoders; (3) Task 1's architecture
+is the L1 FACT-SURFACE EXTENSION (additive publication of the notated-note facts, two proofs per
+commit — the sanction's touchable set amended accordingly on the gates document; a module-private
+raw score walk stays forbidden as the audited defect class). **The ACTIVE dispatch is
+`cc_instruction_joint_input_parity.md`** — tie-break both sides + parity to 326/326, the L1
+extension, the fact adapter + input parity by divergence class, end-to-end parity, and the PUSH
+of everything (origin only). Only after that: the production-module build under
 the parallel-build sanction, of the complete algorithm, with the probe outputs as parity oracle. OI-179 (the ground-truth ceiling): the literature half is ANSWERED — no
 published inter-annotator agreement figure exists for classical symbolic Roman-numeral analysis
 anywhere in the field, so the 87-stem BCMH measurement would be novel; BCMH is inspected at the files

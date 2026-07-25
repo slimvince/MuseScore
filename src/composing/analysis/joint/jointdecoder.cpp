@@ -337,8 +337,18 @@ ContentFeatures segmentFeatures(const Piece& piece, int i, int j, int tonic, boo
 
 double weightedContent(const ContentFeatures& f, const WeightVector& w)
 {
-    return f.emission * w.get("emission") + f.spelling * w.get("spelling") + f.bass * w.get("bass")
-           + f.missing * w.get("emission") + f.boundary * w.get("boundary");
+    // BIT-IDENTICAL to probe_decoder.weighted_content, which sums the five weighted terms with Python's
+    // builtin sum() — and CPython 3.12+ sum() uses NEUMAIER (Kahan-Babuska) compensated summation for
+    // floats. A naive left-to-right sum drifts ~1 ULP vs the compensated one, which flips exact-tie-
+    // adjacent boundary decisions in the semi-Markov Viterbi and breaks decode parity with the pinned
+    // reference (#16 reproducibility). We mirror the compensated sum over the SAME term order
+    // (CONTENT_FEATURES: emission, spelling, bass, missing_tone→emission-weight, boundary). /fp:precise
+    // (the build default) preserves the compensation; verified bit-identical to the reference.
+    const double terms[5] = {
+        f.emission * w.get("emission"), f.spelling * w.get("spelling"), f.bass * w.get("bass"),
+        f.missing * w.get("emission"), f.boundary * w.get("boundary")
+    };
+    return neumaierSum(terms, 5);
 }
 
 // cadence features toward (tonic,isMajor) at the boundary starting event i (approach i-1 -> arrival i).
@@ -488,6 +498,68 @@ DecodeResult decodePiece(const Piece& piece, const FittedAdapter& adapter, const
     V[0].hasStart = true;
     V[0].startScore = 0.0;
 
+    // ── the §5 tie-break (user-ratified 2026-07-20; cowork_joint_estimator_factorization.md §5) ──
+    // Exact-score ties resolve by a declared TOTAL ORDER on paths (no epsilon): fewer segments; then
+    // the earliest boundary-tick sequence (lexicographic); then the canonical class-key order of the
+    // state sequence. This is the C++ mirror of probe_decoder.decode_piece's §5 helpers. The fast
+    // path is the raw score compare — the sig walk fires ONLY on an exact (bit-equal) tie.
+    struct PathSig {
+        std::vector<int> ticks;                                    // segment start ticks
+        std::vector<std::tuple<int, int, std::string> > keys;       // canonical state keys (tonic, major?0:1, ckey)
+    };
+    auto sigLess = [](const PathSig& a, const PathSig& b) -> bool {
+        if (a.keys.size() != b.keys.size()) {
+            return a.keys.size() < b.keys.size();                   // fewer segments
+        }
+        if (a.ticks != b.ticks) {
+            return a.ticks < b.ticks;                              // earliest boundary-tick sequence
+        }
+        return a.keys < b.keys;                                     // canonical class-key order
+    };
+    auto prefixSig = [&](int bi, const std::string& bstateEnc) -> PathSig {
+        PathSig s;
+        if (bstateEnc == kStartEnc) {
+            return s;
+        }
+        int jj = bi;
+        std::string enc = bstateEnc;
+        while (enc != kStartEnc) {
+            const Boundary& B = V[jj];
+            const auto it = B.idx.find(enc);
+            const StateEntry& e = B.states[it->second];
+            s.ticks.push_back(piece.events[e.backI].start);        // e's segment starts at event backI
+            s.keys.emplace_back(e.tonic, e.major ? 0 : 1, e.ckey);
+            jj = e.backI;
+            enc = e.backEnc;
+        }
+        std::reverse(s.ticks.begin(), s.ticks.end());
+        std::reverse(s.keys.begin(), s.keys.end());
+        return s;
+    };
+    auto fullSig = [&](int bi, const std::string& bstateEnc, int tonic, bool major,
+                       const std::string& ckey) -> PathSig {
+        PathSig s = prefixSig(bi, bstateEnc);
+        s.ticks.push_back(piece.events[bi].start);
+        s.keys.emplace_back(tonic, major ? 0 : 1, ckey);
+        return s;
+    };
+    // A = (score, bi, bstateEnc, state) strictly §5-preferred over B?
+    auto better = [&](double aScore, int aBi, const std::string& aEnc, int aT, bool aM, const std::string& aC,
+                      double bScore, int bBi, const std::string& bEnc, int bT, bool bM, const std::string& bC) -> bool {
+        if (aScore != bScore) {
+            return aScore > bScore;
+        }
+        return sigLess(fullSig(aBi, aEnc, aT, aM, aC), fullSig(bBi, bEnc, bT, bM, bC));
+    };
+    // A = (val, prefix ending in state aEnc at boundary atI) strictly §5-preferred over B?
+    auto betterPrefix = [&](double aVal, const std::string& aEnc, double bVal, const std::string& bEnc,
+                            int atI) -> bool {
+        if (aVal != bVal) {
+            return aVal > bVal;
+        }
+        return sigLess(prefixSig(atI, aEnc), prefixSig(atI, bEnc));
+    };
+
     // caches
     std::unordered_map<long long, PcMask> overlapCache;
     std::unordered_map<std::string, double> contentCache;
@@ -535,13 +607,17 @@ DecodeResult decodePiece(const Piece& piece, const FittedAdapter& adapter, const
             ? it->second : cadCache.emplace(k, cadenceFired(piece, i, tonic, major)).first->second;
         static const std::array<const char*, 4> names = { "leading_tone", "tritone_pair",
                                                           "dominant_tonic_bass", "fermata_location" };
-        double s = 0.0;
+        // BIT-IDENTICAL to probe_decoder.cadence_at's sum(w[f] for fired f) — Neumaier-compensated
+        // (Python sum()), over the fired features in CADENCE_FEATURES order. Naive would drift ~1 ULP
+        // on the weighted arms.
+        double terms[4];
+        int nt = 0;
         for (int f = 0; f < 4; ++f) {
             if (fired[f]) {
-                s += adapter.cadenceWeight(names[f]);
+                terms[nt++] = adapter.cadenceWeight(names[f]);
             }
         }
-        return s;
+        return neumaierSum(terms, nt);
     };
 
     // per-boundary summary of V[i] (in insertion order — the tie-break order Python's dicts give)
@@ -570,9 +646,14 @@ DecodeResult decodePiece(const Piece& piece, const FittedAdapter& adapter, const
             if (kit == s.keyIdx.end()) {
                 s.keyIdx[kk] = s.keyBest.size();
                 s.keyBest.push_back({ e.tonic, e.major, e.score, e.ckey });
-            } else if (e.score > s.keyBest[kit->second].score) {
-                s.keyBest[kit->second].score = e.score;
-                s.keyBest[kit->second].arg = e.ckey;
+            } else {
+                KeyBest& kb = s.keyBest[kit->second];
+                // §5: the per-key representative class is best-scoring, exact ties by the §5 prefix order.
+                if (betterPrefix(e.score, stateEnc(e.tonic, e.major, e.ckey),
+                                 kb.score, stateEnc(kb.tonic, kb.major, kb.arg), i)) {
+                    kb.score = e.score;
+                    kb.arg = e.ckey;
+                }
             }
         }
         return s;
@@ -603,10 +684,12 @@ DecodeResult decodePiece(const Piece& piece, const FittedAdapter& adapter, const
                         continue;
                     }
                     const double val = kb.score + wKey * adapter.keyTransLogp(kb.tonic, kb.major, tt, tm);
-                    if (val > kc.best) {
+                    const std::string candEnc = stateEnc(kb.tonic, kb.major, kb.arg);
+                    // §5: on an exact val tie the change-source is the §5-preferred predecessor prefix.
+                    if (!kc.hasArg || betterPrefix(val, candEnc, kc.best, kc.backEnc, i)) {
                         kc.best = val;
                         kc.hasArg = true;
-                        kc.backEnc = stateEnc(kb.tonic, kb.major, kb.arg);
+                        kc.backEnc = candEnc;
                     }
                 }
                 kchg.emplace(tkey, kc);
@@ -626,14 +709,14 @@ DecodeResult decodePiece(const Piece& piece, const FittedAdapter& adapter, const
                 double bestIn = NEG_INF;
                 int backI = -1;
                 std::string backEnc;
+                bool haveBack = false;
                 // (a) initial segment
                 if (sm.hasStart) {
                     const auto pr = adapter.priorTerms(tonic, major, sigFifths, declaredMode);
                     const double tin = sm.startScore + wPrior * pr.first + wDmode * pr.second + entryLp;
-                    if (tin > bestIn) {
-                        bestIn = tin;
-                        backI = i;
-                        backEnc = kStartEnc;
+                    if (!haveBack || better(tin, i, kStartEnc, tonic, major, ckey,
+                                            bestIn, backI, backEnc, tonic, major, ckey)) {
+                        bestIn = tin; backI = i; backEnc = kStartEnc; haveBack = true;
                     }
                 }
                 // (b) same-key chord transition (+ stay key-cell)
@@ -644,10 +727,10 @@ DecodeResult decodePiece(const Piece& piece, const FittedAdapter& adapter, const
                     for (const auto& pck : pcIt->second) {
                         const double tin = pck.second
                             + wChord * adapter.chordTransLogp(*vocab.find(pck.first), *cls, major) + stay;
-                        if (tin > bestIn) {
-                            bestIn = tin;
-                            backI = i;
-                            backEnc = stateEnc(tonic, major, pck.first);
+                        const std::string cand = stateEnc(tonic, major, pck.first);
+                        if (!haveBack || better(tin, i, cand, tonic, major, ckey,
+                                                bestIn, backI, backEnc, tonic, major, ckey)) {
+                            bestIn = tin; backI = i; backEnc = cand; haveBack = true;
                         }
                     }
                 }
@@ -655,13 +738,12 @@ DecodeResult decodePiece(const Piece& piece, const FittedAdapter& adapter, const
                 const auto kcIt = kchg.find(kk);
                 if (kcIt != kchg.end() && kcIt->second.hasArg) {
                     const double tin = kcIt->second.best + entryLp;
-                    if (tin > bestIn) {
-                        bestIn = tin;
-                        backI = i;
-                        backEnc = kcIt->second.backEnc;
+                    if (!haveBack || better(tin, i, kcIt->second.backEnc, tonic, major, ckey,
+                                            bestIn, backI, backEnc, tonic, major, ckey)) {
+                        bestIn = tin; backI = i; backEnc = kcIt->second.backEnc; haveBack = true;
                     }
                 }
-                if (bestIn == NEG_INF) {
+                if (!haveBack) {
                     continue;
                 }
                 const double score = bestIn + cscore + cad;
@@ -670,11 +752,14 @@ DecodeResult decodePiece(const Piece& piece, const FittedAdapter& adapter, const
                 if (exist == bh.idx.end()) {
                     bh.idx[st] = bh.states.size();
                     bh.states.push_back({ tonic, major, ckey, score, backI, backEnc });
-                } else if (score > bh.states[exist->second].score) {
+                } else {
                     StateEntry& se = bh.states[exist->second];
-                    se.score = score;
-                    se.backI = backI;
-                    se.backEnc = backEnc;
+                    if (better(score, backI, backEnc, tonic, major, ckey,
+                               se.score, se.backI, se.backEnc, tonic, major, ckey)) {
+                        se.score = score;
+                        se.backI = backI;
+                        se.backEnc = backEnc;
+                    }
                 }
             }
         }
@@ -685,10 +770,13 @@ DecodeResult decodePiece(const Piece& piece, const FittedAdapter& adapter, const
         result.totalScore = NEG_INF;
         return result;
     }
-    // terminal: first max-score state in insertion order (== Python max over dict items)
+    // terminal: the §5-best full-coverage state (exact-score ties by the total order on paths).
     size_t bestIdx = 0;
     for (size_t s = 1; s < V[N].states.size(); ++s) {
-        if (V[N].states[s].score > V[N].states[bestIdx].score) {
+        const StateEntry& a = V[N].states[s];
+        const StateEntry& b = V[N].states[bestIdx];
+        if (better(a.score, a.backI, a.backEnc, a.tonic, a.major, a.ckey,
+                   b.score, b.backI, b.backEnc, b.tonic, b.major, b.ckey)) {
             bestIdx = s;
         }
     }

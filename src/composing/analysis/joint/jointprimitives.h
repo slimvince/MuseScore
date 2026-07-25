@@ -23,6 +23,8 @@
 #ifndef MU_COMPOSING_ANALYSIS_JOINT_JOINTPRIMITIVES_H
 #define MU_COMPOSING_ANALYSIS_JOINT_JOINTPRIMITIVES_H
 
+#include <cmath>
+#include <cstddef>
 #include <cstdint>
 #include <optional>
 #include <string>
@@ -50,6 +52,27 @@
 namespace mu::composing::analysis::joint {
 // A 12-bit pitch-class set (bit pc set) — the C++ form of a Python frozenset of pcs.
 using PcMask = uint16_t;
+
+// NEUMAIER (Kahan-Babuska) compensated summation over `n` doubles in the given order — the C++ mirror
+// of Python's builtin sum() on floats (CPython 3.12+ uses exactly this compensated algorithm). Every
+// place the pinned Python decoder sums floats with sum() (weighted_content; the emission-floor
+// denominator) MUST use this, not a naive accumulation, or the C++ result drifts ~1 ULP and breaks
+// decode parity with the reference (#16). /fp:precise (the build default) preserves the compensation.
+inline double neumaierSum(const double* xs, std::size_t n)
+{
+    double s = 0.0, c = 0.0;
+    for (std::size_t i = 0; i < n; ++i) {
+        const double x = xs[i];
+        const double t = s + x;
+        if (std::fabs(s) >= std::fabs(x)) {
+            c += (s - t) + x;
+        } else {
+            c += (x - t) + s;
+        }
+        s = t;
+    }
+    return s + c;
+}
 
 // The ordered chord factor: role ("root"/"third"/"fifth"/"seventh") and its pitch class.
 struct ChordFactor {

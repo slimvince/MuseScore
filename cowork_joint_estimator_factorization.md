@@ -146,6 +146,16 @@ against ground truth by ~6.6 nats on the named case.
 
 ## 5. The decode
 
+**The tie-break rule (user-ratified 2026-07-20 at the C++ module build's parity finding):** exact
+score ties between candidate decodes are real (proven at 8 corpus pieces — equal-score
+segmentations differing by one boundary on repeated-chord runs) and, unbroken, they make the
+committed output depend on the platform's floating-point library — unacceptable for the
+diff-based adoption measurement and regression stops (#16, reproducibility). Equal-score
+candidates therefore resolve by a declared TOTAL order, implemented identically in every decoder
+of this specification: fewer segments first; then the earliest boundary-tick sequence
+(lexicographic); then the canonical class-key order of the state sequence. No epsilon, no
+platform dependence — a pure order on paths.
+
 **The below-threshold scoring rule (user-ratified 2026-07-19 at the fitted-table probe,
 `cowork_sensitive_cell_probe.md` finding 2, option 2a):** where a fitted table row stores a pooled
 leftover probability for continuations below the count-reliability threshold, the decoder scores a

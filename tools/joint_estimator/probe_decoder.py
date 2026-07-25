@@ -1108,6 +1108,66 @@ def decode_piece(piece: Piece, adapter: Adapter, vocab: Vocabulary, cache: Chord
     START = ("START",)
     V[0][START] = (0.0, None, None)
 
+    # ── the §5 tie-break (user-ratified 2026-07-20; cowork_joint_estimator_factorization.md §5) ──
+    # Exact-score ties between candidate decodes are real and, unbroken, make the committed path
+    # depend on container/insertion order (and, cross-language, on the FP library). §5 resolves an
+    # EXACT (bit-equal) score tie by a declared TOTAL ORDER on the paths — no epsilon:
+    #   1) fewer segments;  2) earliest boundary-tick sequence (lexicographic);  3) canonical
+    #   class-key order of the state sequence. The comparator's fast path is the raw score compare
+    #   (ties are the rare minority), so the ordering machinery costs nothing off a tie.
+    def _canon(st):
+        # canonical state order for criterion 3: (tonic ascending, major-before-minor, class-key).
+        return (st[0], 0 if st[1] else 1, st[2])
+
+    def _prefix_sig(bi, bstate):
+        """(nseg, boundary-start-ticks tuple, canonical-state-keys tuple) of the best path ending at
+        boundary bi with state bstate — reconstructed by walking backpointers (V[<current j] is
+        finalized). START/None → the empty path. Walked ONLY on an exact-score tie."""
+        if bstate == START or bstate is None:
+            return (0, (), ())
+        ticks, keys = [], []
+        jj, s = bi, bstate
+        while not (s == START or s is None):
+            _sc, pbi, pbs = V[jj][s]
+            ticks.append(piece.events[pbi][EV_START])   # s's segment starts at event pbi
+            keys.append(_canon(s))
+            jj, s = pbi, pbs
+        ticks.reverse()
+        keys.reverse()
+        return (len(keys), tuple(ticks), tuple(keys))
+
+    def _full_sig(bi, bstate, st):
+        """The §5 signature of the candidate path = [prefix ending at (bi,bstate)] + [segment [bi,·)
+        with state st]. (nseg, ticks, keys)."""
+        pn, pt, pk = _prefix_sig(bi, bstate)
+        return (pn + 1, pt + (piece.events[bi][EV_START],), pk + (_canon(st),))
+
+    def _better(a_score, a_bi, a_bs, a_st, b_score, b_bi, b_bs, b_st):
+        """True iff path A is strictly §5-preferred over path B (both ending in state a_st/b_st).
+        Fast path: a_score != b_score decides by score. Only an EXACT tie consults the total order."""
+        if a_score != b_score:
+            return a_score > b_score
+        an, at, ak = _full_sig(a_bi, a_bs, a_st)
+        bn, bt, bk = _full_sig(b_bi, b_bs, b_st)
+        if an != bn:
+            return an < bn
+        if at != bt:
+            return at < bt
+        return ak < bk
+
+    def _better_prefix(a_val, a_state, b_val, b_state, at_i):
+        """True iff prefix A is strictly §5-preferred over prefix B (both ending at boundary at_i).
+        Used where the shared future segment cancels (key_best representative; key-change source)."""
+        if a_val != b_val:
+            return a_val > b_val
+        an, at, ak = _prefix_sig(at_i, a_state)
+        bn, bt, bk = _prefix_sig(at_i, b_state)
+        if an != bn:
+            return an < bn
+        if at != bt:
+            return at < bt
+        return ak < bk
+
     # precompute candidate states per (i,j) lazily
     cand_cache = {}
 
@@ -1152,7 +1212,10 @@ def decode_piece(piece: Piece, adapter: Adapter, vocab: Vocabulary, cache: Chord
                 continue
             (tt, tm, ck) = st
             per_class[(tt, tm)][ck] = sc
-            if (tt, tm) not in key_best or sc > key_best[(tt, tm)]:
+            # §5: the per-key representative class is the best-scoring one, exact-score ties broken by
+            # the §5 prefix order (so key-change transitions carry the canonical predecessor).
+            if (tt, tm) not in key_best or _better_prefix(sc, st, key_best[(tt, tm)],
+                                                          (tt, tm, key_arg[(tt, tm)]), i):
                 key_best[(tt, tm)] = sc
                 key_arg[(tt, tm)] = ck
         s = (start_score, key_best, key_arg, per_class)
@@ -1176,7 +1239,9 @@ def decode_piece(piece: Piece, adapter: Adapter, vocab: Vocabulary, cache: Chord
                     if pt == tt and pm == tm:
                         continue
                     val = kb + w_key * adapter.key_trans_logp((pt, pm), (tt, tm))
-                    if val > best_k:
+                    # §5: on an exact val tie the change-source is the §5-preferred predecessor prefix.
+                    if arg_k is None or _better_prefix(val, (pt, pm, key_arg[(pt, pm)]), best_k,
+                                                       (arg_k[0], arg_k[1], key_arg[arg_k]), i):
                         best_k, arg_k = val, (pt, pm)
                 kchg[(tt, tm)] = (best_k, arg_k)
             for (tonic, is_major, ckey) in cand_states:
@@ -1186,13 +1251,14 @@ def decode_piece(piece: Piece, adapter: Adapter, vocab: Vocabulary, cache: Chord
                 cls = vocab.classes[ckey]
                 cad = cadence_at(piece, i, tonic, is_major, adapter)
                 entry_lp = w_entry * adapter.entry_logp(cls, is_major)
+                st = (tonic, is_major, ckey)
                 best_in = NEG_INF
                 back = None
                 # (a) initial segment
                 if start_score is not None:
                     pr_sig, pr_inc = adapter.prior_terms(tonic, is_major, sig_fifths, declared_mode)
                     tin = start_score + w_prior * pr_sig + w_dmode * pr_inc + entry_lp
-                    if tin > best_in:
+                    if back is None or _better(tin, i, START, st, best_in, back[0], back[1], st):
                         best_in, back = tin, (i, START)
                 # (b) same-key chord transition (+ the stay key-cell)
                 same = per_class.get((tonic, is_major))
@@ -1201,20 +1267,21 @@ def decode_piece(piece: Piece, adapter: Adapter, vocab: Vocabulary, cache: Chord
                     for pck, psc in same.items():
                         tin = psc + w_chord * adapter.chord_trans_logp(vocab.classes[pck], cls,
                                                                        is_major) + stay
-                        if tin > best_in:
-                            best_in, back = tin, (i, (tonic, is_major, pck))
+                        cand_bs = (tonic, is_major, pck)
+                        if back is None or _better(tin, i, cand_bs, st, best_in, back[0], back[1], st):
+                            best_in, back = tin, (i, cand_bs)
                 # (c) key-change transition (precomputed best prev key) + entry
                 bk, ak = kchg.get((tonic, is_major), (NEG_INF, None))
                 if ak is not None:
                     tin = bk + entry_lp
-                    if tin > best_in:
-                        best_in, back = tin, (i, (ak[0], ak[1], key_arg[ak]))
-                if best_in == NEG_INF:
+                    cand_bs = (ak[0], ak[1], key_arg[ak])
+                    if back is None or _better(tin, i, cand_bs, st, best_in, back[0], back[1], st):
+                        best_in, back = tin, (i, cand_bs)
+                if back is None:
                     continue
                 score = best_in + cscore + cad
-                st = (tonic, is_major, ckey)
                 cur = best_here.get(st)
-                if cur is None or score > cur[0]:
+                if cur is None or _better(score, back[0], back[1], st, cur[0], cur[1], cur[2], st):
                     best_here[st] = (score, back[0], back[1])
         V[j] = best_here
 
@@ -1222,7 +1289,13 @@ def decode_piece(piece: Piece, adapter: Adapter, vocab: Vocabulary, cache: Chord
     if not V[N]:
         return DecodeResult(piece.stem, [], NEG_INF, N, time.perf_counter() - t0, [],
                             notes="no complete path")
-    end_state, (end_score, _bi, _bs) = max(V[N].items(), key=lambda kv: kv[1][0])
+    # §5: the terminal path is the §5-best full-coverage state (exact-score ties by the total order).
+    end_state = None
+    end_val = None
+    for stx, (scx, bix, bsx) in V[N].items():
+        if end_state is None or _better(scx, bix, bsx, stx, end_val[0], end_val[1], end_val[2], end_state):
+            end_state, end_val = stx, (scx, bix, bsx)
+    end_score = end_val[0]
     # backtrack
     segs = []
     st, j = end_state, N

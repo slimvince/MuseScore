@@ -42,11 +42,17 @@ double safeLog(double p)
 namespace {
 double distSum(const Dist& d)
 {
-    double s = 0.0;
+    // BIT-IDENTICAL to Python sum(dist.values()) (the emission-floor denominator) — CPython 3.12+ sum()
+    // is Neumaier-compensated, so a naive accumulation drifts ~1 ULP (see jointprimitives.neumaierSum).
+    // The emission dists this floor uses were verified order-invariant (their values sum with no
+    // rounding regardless of order), so iterating the unordered_map's hash order matches Python's dict
+    // order here; a future order-sensitive dist hitting the floor would need Python-dict-order iteration.
+    std::vector<double> vals;
+    vals.reserve(d.size());
     for (const auto& kv : d) {
-        s += kv.second;
+        vals.push_back(kv.second);
     }
-    return s;
+    return neumaierSum(vals.data(), vals.size());
 }
 
 double distGet(const Dist& d, const std::string& k, double def = 0.0)

@@ -145,6 +145,15 @@ key/mode/chord concern. Sanction terms:
    enumerated (#17e): shared utility primitives — permitted only for dependency-free pc/mask helpers
    (`normalizePc`, `diatonicMaskFromFifths` — the OI-173 shared-predicate leaf), the allowed list
    enumerated in the build dispatch; any other shared include is a violation surfaced at review.
+   *(Amended by user ratification 2026-07-20, at the module build's input-parity finding: the
+   published note model is tie-resolved and lossy for A's needs, and a module-private raw score walk
+   would be the raw-source-outside-the-fact-layer defect class the certification audits condemned.
+   The sanctioned touchable set therefore ALSO includes ADDITIVE extension of the L1/L1.5 fact
+   surface — publishing the missing notated-note facts (tie flags, unresolved notated notes and
+   continuations, and kin) once, on the fact layer's output surface — under two proofs per commit:
+   byte-identity for every existing consumer (both suites + pipeline snapshots untouched) and full
+   test coverage of the new published paths. A consumes the published facts; it never re-reads the
+   raw score.)*
 2. **Production byte-identity for the entire build arc.** A runs only behind a default-OFF diagnostic
    driver (the fullspine pattern); every increment proves both suites + pipeline snapshots untouched;
    no golden refresh occurs on A's account before adoption.

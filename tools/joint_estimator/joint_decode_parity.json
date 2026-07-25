@@ -1,8 +1,8 @@
 {
  "provenance": {"tool": "tools/batch_analyze.cpp --joint-decode-corpus", "tables_git_hash": "57ed94a6a46571172a351c09ba4f5cb92930674a"},
  "arms": {
-  "identity": {"pieces": 326, "segment_exact": 322, "score_within_1e6": 326, "max_rel_score": 3.0391e-16, "decode_mean_s": 4.27466, "decode_max_s": 22.5185, "pass": false, "divergent": ["bwv123.6", "bwv194.12", "bwv282", "bwv320"]},
-  "selected": {"pieces": 326, "segment_exact": 322, "score_within_1e6": 326, "max_rel_score": 3.67282e-16, "decode_mean_s": 4.21099, "decode_max_s": 22.5647, "pass": false, "divergent": ["bwv11.6", "bwv313", "bwv342", "bwv368"]}
+  "identity": {"pieces": 326, "segment_exact": 326, "score_within_1e6": 326, "max_rel_score": 0, "decode_mean_s": 4.70814, "decode_max_s": 25.6543, "pass": true, "divergent": []},
+  "selected": {"pieces": 326, "segment_exact": 326, "score_within_1e6": 326, "max_rel_score": 0, "decode_mean_s": 4.58954, "decode_max_s": 25.0562, "pass": true, "divergent": []}
  },
- "overall_pass": false
+ "overall_pass": true
 }
