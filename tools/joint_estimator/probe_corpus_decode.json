@@ -1,5 +1,6 @@
 {
  "provenance": {
+  "superseded_by": "decode_parity_ref.json — the authoritative full-precision §5 decode reference (both weight arms). This artifact PREDATES the §5 tie-break (cowork_joint_estimator_factorization.md §5), so its per-piece identity segments are stale-under-§5; the bwv362 identity entry in particular was §5-canonicalised in decode_parity_ref.json. It is NOT re-timed/regenerated here (Task-C dispatch: a full regeneration would churn 326 non-deterministic per-piece timings for a diagnostic artifact not consumed by any test). Read decode_parity_ref.json for the §5-canonical decode.",
   "generator": "tools/joint_estimator/probe_run.py",
   "decoder": "tools/joint_estimator/probe_decoder.py (identity weights; ratified factorization)",
   "instrument_commit": "c6ae08bd4528641b50a4c2d670a7035b3e8dcbec",

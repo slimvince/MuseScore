@@ -58,6 +58,11 @@ using PcMask = uint16_t;
 // place the pinned Python decoder sums floats with sum() (weighted_content; the emission-floor
 // denominator) MUST use this, not a naive accumulation, or the C++ result drifts ~1 ULP and breaks
 // decode parity with the reference (#16). /fp:precise (the build default) preserves the compensation.
+// REPRODUCIBILITY COUPLING (recorded in the parity artifacts' provenance too): the C++ decode's
+// bit-identity to the Python reference RESTS on CPython's sum() staying Neumaier-compensated. If a
+// future Python version changes sum()'s algorithm, this mirror would no longer match and the decode
+// parity would break — which is exactly how such a change should surface (a loud parity failure, not a
+// silent drift). Re-mirror this function against the new sum() and re-stamp the parity references then.
 inline double neumaierSum(const double* xs, std::size_t n)
 {
     double s = 0.0, c = 0.0;

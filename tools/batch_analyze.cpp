@@ -121,6 +121,7 @@ extern "C" __declspec(dllimport) int __stdcall TerminateProcess(void* hProcess, 
 #include "composing/analysis/engravingbridge/regiontonecollector.h" // weightedPcView (focal-slice sounding pcs)
 #include "composing/analyzed_section.h"                    // Stage 2.2-i prototype: AnalyzedSection
 #include "composing/analysis/joint/jointdecoder.h"          // joint estimator (OI-180 dual path): --joint-decode-corpus
+#include "composing/analysis/joint/jointfactadapter.h"      // Task C fact adapter: --joint-adapter-facts / --joint-decode-from-adapter
 #include "composing/analysis/joint/jointweights.h"          // the identity + selected weight vectors
 #include "global/serialization/json.h"                      // --joint-decode-corpus: parse the decode-parity reference
 #include "global/types/bytearray.h"
@@ -1976,6 +1977,18 @@ static void printHelp(const std::string& prog)
         << "            total score to 1e-6. Writes <artifact-dir>/joint_decode_parity.json.\n"
         << "            Self-driving (needs no input score) and RETURNS before any analysis,\n"
         << "            so production output is unchanged. Default OFF.\n"
+        << "  --joint-adapter-facts <artifact-dir>\n"
+        << "            (OI-180 dual-path Task C) Load every covered corpus score under\n"
+        << "            <artifact-dir>/../corpus, build the joint inputs through the FACT\n"
+        << "            ADAPTER (composing/analysis/joint/jointfactadapter — the L1 published\n"
+        << "            notatedNotes() surface + structural facts), and dump the extracted\n"
+        << "            facts to <artifact-dir>/adapter_facts.json for the two-readers-agree\n"
+        << "            INPUT PARITY vs note_events.json (gen_input_parity.py). Default OFF.\n"
+        << "  --joint-decode-from-adapter <artifact-dir>\n"
+        << "            (OI-180 dual-path Task C) As above, but decode each piece from the\n"
+        << "            adapter's OWN Piece (not note_events.json) at both weight arms and\n"
+        << "            check segment-exactly vs decode_parity_ref.json (the END-TO-END parity).\n"
+        << "            Writes <artifact-dir>/joint_endtoend_parity.json. Default OFF.\n"
         << "  --decode-keymode\n"
         << "            (Layer-3 diagnostic) Build the layer-1 note model, run the REAL\n"
         << "            layer-2 slicer, run the isolated layer-3 key/mode SEQUENCE decoder\n"
@@ -3929,7 +3942,10 @@ static int runJointDecodeCorpus(const std::string& artifactDir)
 
     std::ostringstream art;
     art << "{\n \"provenance\": {\"tool\": \"tools/batch_analyze.cpp --joint-decode-corpus\", "
-        << "\"tables_git_hash\": \"" << tables.corpusGitHash << "\"},\n \"arms\": {\n";
+        << "\"tables_git_hash\": \"" << tables.corpusGitHash << "\", "
+        << "\"reproducibility_coupling\": \"decode bit-identity to the Python reference rests on CPython "
+        << "3.12+ sum() staying Neumaier-compensated (mirrored by jointprimitives.neumaierSum); a future "
+        << "Python sum() change would surface as a parity break\"},\n \"arms\": {\n";
 
     bool overallPass = true;
     const std::vector<std::pair<std::string, joint::WeightVector> > arms = {
@@ -4011,6 +4027,297 @@ static int runJointDecodeCorpus(const std::string& artifactDir)
     ofs << art.str();
     std::cout << "joint-decode-parity: overall " << (overallPass ? "PASS" : "FAIL")
               << "; artifact -> " << outPath << "\n";
+    return overallPass ? 0 : 1;
+}
+
+// ── --joint-adapter-facts / --joint-decode-from-adapter (default OFF; OI-180 dual-path Task C) ────
+// These are the "score -> facts" build step the --joint-decode-corpus comment names as separate. They
+// load each covered corpus score, build the joint decoder's inputs through the FACT ADAPTER
+// (composing/analysis/joint/jointfactadapter — the L1 published notatedNotes() surface + the score's
+// structural facts), and (1) dump the extracted facts for the two-readers-agree INPUT PARITY against
+// note_events.json (gen_input_parity.py), and (2) decode from the adapter's own Piece and check it
+// against the §5 decode-parity oracle (decode_parity_ref.json) segment-exactly on both weight arms —
+// the END-TO-END parity. They never touch the passed score/preset/analyzeScore; production output is
+// byte-identical (they return before it). Corpus xml dir is <artifactDir>/../corpus (== tools/corpus).
+
+namespace {
+// compact JSON number for a beat (integer-valued -> "N.0"; else up to 4 trimmed decimals).
+std::string jointBeatStr(double v)
+{
+    char buf[32];
+    if (v == std::floor(v)) {
+        std::snprintf(buf, sizeof(buf), "%.1f", v);
+        return std::string(buf);
+    }
+    std::snprintf(buf, sizeof(buf), "%.4f", v);
+    std::string s(buf);
+    while (!s.empty() && s.back() == '0') {
+        s.pop_back();
+    }
+    return s;
+}
+
+// read a JSON object from `path`; returns "" on success or an error string.
+std::string jointReadJson(const std::string& path, muse::JsonObject& out)
+{
+    std::ifstream f(path, std::ios::binary);
+    if (!f) {
+        return "cannot open " + path;
+    }
+    const std::string s((std::istreambuf_iterator<char>(f)), std::istreambuf_iterator<char>());
+    std::string err;
+    const muse::ByteArray ba(s.data(), s.size());
+    out = muse::JsonDocument::fromJson(ba, &err).rootObject();
+    return err.empty() ? std::string() : ("parse error in " + path + ": " + err);
+}
+
+// serialize one Piece's notes+events (note_events.json array layout) plus the meter/sig/mode scalars.
+void jointSerializePiece(std::ostream& os, const mu::composing::analysis::joint::AdapterFacts& fx)
+{
+    namespace joint = mu::composing::analysis::joint;
+    os << "{";
+    os << "\"meter\":";
+    if (fx.meterBeats && fx.meterBeatType) {
+        os << "[" << *fx.meterBeats << "," << *fx.meterBeatType << "]";
+    } else {
+        os << "null";
+    }
+    os << ",\"n_quarter\":" << fx.piece.nQuarter;
+    os << ",\"multi_meter\":" << (fx.multiMeter ? "true" : "false");
+    os << ",\"sig_fifths\":";
+    if (fx.sigFifths) {
+        os << *fx.sigFifths;
+    } else {
+        os << "null";
+    }
+    os << ",\"declared_mode\":\"" << fx.declaredMode << "\"";
+    os << ",\"notes\":[";
+    for (size_t i = 0; i < fx.piece.notes.size(); ++i) {
+        const joint::NoteRec& n = fx.piece.notes[i];
+        os << (i ? "," : "") << "[" << n.onset << "," << n.dur << "," << n.pc << "," << n.midi << ","
+           << n.lof << "," << n.part << "," << n.measure << "," << jointBeatStr(n.beat) << ","
+           << n.mc << "," << n.ap << "," << n.dp << "," << n.tied << "," << n.ferm << "]";
+    }
+    os << "],\"events\":[";
+    for (size_t i = 0; i < fx.piece.events.size(); ++i) {
+        const joint::EventRec& e = fx.piece.events[i];
+        os << (i ? "," : "") << "[" << e.start << "," << e.end << "," << e.measure << ","
+           << jointBeatStr(e.beat) << "," << e.mc << "," << e.ferm << "]";
+    }
+    os << "]}";
+}
+} // namespace
+
+static int runJointAdapterFacts(const std::string& artifactDir)
+{
+    namespace joint = mu::composing::analysis::joint;
+    initModules();   // engraving + MusicXML importer must be initialized before loadScore
+    const std::string corpusDir = artifactDir + "/../corpus";
+
+    // covered stems + corpus provenance: note_events.json (the reference the facts are graded against)
+    muse::JsonObject ne;
+    std::string err = jointReadJson(artifactDir + "/note_events/note_events.json", ne);
+    if (!err.empty()) {
+        std::cerr << "joint: " << err << "\n";
+        return 1;
+    }
+    const std::string corpusGitHash = ne.value("provenance").toObject().value("corpus_git_hash").toStdString();
+    std::vector<std::string> stems = ne.value("pieces").toObject().keys();
+    std::sort(stems.begin(), stems.end());
+
+    std::ostringstream art;
+    art << "{\n \"provenance\": {\"tool\": \"tools/batch_analyze.cpp --joint-adapter-facts\", "
+        << "\"reader\": \"composing/analysis/joint/jointfactadapter (L1 notatedNotes + structural facts)\", "
+        << "\"corpus_git_hash\": \"" << corpusGitHash << "\", "
+        << "\"corpus_xml_dir\": \"tools/corpus\", "
+        << "\"note\": \"the C++ fact-adapter extraction, graded field-by-field against note_events.json "
+        << "by gen_input_parity.py (two-readers-agree input parity)\"},\n \"pieces\": {\n";
+
+    int done = 0;
+    std::vector<std::string> loadFail;
+    bool firstPiece = true;
+    for (const std::string& stem : stems) {
+        const std::string path = corpusDir + "/" + stem + ".xml";
+        MasterScore* sc = loadScore(muse::io::path_t(QString::fromStdString(path)));
+        if (!sc) {
+            loadFail.push_back(stem);
+            continue;
+        }
+        const joint::AdapterFacts fx = joint::buildAdapterFacts(sc, stem);
+        delete sc;
+        if (!fx.ok) {
+            loadFail.push_back(stem + " (adapter: " + fx.error + ")");
+            continue;
+        }
+        art << (firstPiece ? "  " : ",\n  ") << "\"" << stem << "\": ";
+        jointSerializePiece(art, fx);
+        firstPiece = false;
+        ++done;
+        if (done % 40 == 0) {
+            std::cout << "joint-adapter-facts: " << done << "/" << stems.size() << " " << stem << "\n";
+        }
+    }
+    art << "\n }\n}\n";
+
+    const std::string outPath = artifactDir + "/adapter_facts.json";
+    std::ofstream ofs(outPath, std::ios::binary);
+    ofs << art.str();
+    std::cout << "joint-adapter-facts: " << done << "/" << stems.size() << " pieces extracted";
+    if (!loadFail.empty()) {
+        std::cout << ", " << loadFail.size() << " FAILED:";
+        for (size_t i = 0; i < loadFail.size() && i < 10; ++i) {
+            std::cout << " " << loadFail[i];
+        }
+    }
+    std::cout << "; artifact -> " << outPath << "\n";
+    return loadFail.empty() ? 0 : 1;
+}
+
+static int runJointDecodeFromAdapter(const std::string& artifactDir)
+{
+    namespace joint = mu::composing::analysis::joint;
+    using muse::JsonArray;
+    using muse::JsonObject;
+    using muse::JsonValue;
+    initModules();   // engraving + MusicXML importer must be initialized before loadScore
+    const std::string corpusDir = artifactDir + "/../corpus";
+
+    JsonObject ref;
+    std::string err = jointReadJson(artifactDir + "/decode_parity_ref.json", ref);
+    if (!err.empty()) {
+        std::cerr << "joint: " << err << "\n";
+        return 1;
+    }
+    joint::JointTables tables = joint::JointTables::load(artifactDir, "all");
+    if (!tables.loaded) {
+        std::cerr << "joint: " << tables.error << "\n";
+        return 1;
+    }
+    joint::Vocabulary vocab(tables);
+    joint::ChordCache cache;   // weight-independent (shared across arms)
+
+    joint::WeightVector selected;
+    const JsonObject selObj = ref.value("selected_weights").toObject();
+    for (const std::string& n : joint::kWeightNames) {
+        selected.w[n] = selObj.value(n).toDouble();
+    }
+    struct Arm { std::string name; joint::WeightVector w; joint::FittedAdapter adapter; };
+    std::vector<Arm> arms;
+    arms.push_back({ "identity", joint::identityWeights(), joint::FittedAdapter() });
+    arms.push_back({ "selected", selected, joint::FittedAdapter() });
+    for (Arm& a : arms) {
+        a.adapter = joint::FittedAdapter::load(artifactDir, "all", a.w);
+        if (!a.adapter.loaded()) {
+            std::cerr << "joint: " << a.adapter.error() << "\n";
+            return 1;
+        }
+    }
+
+    // the covered stems (the oracle's identity arm)
+    std::vector<std::string> stems = ref.value("identity").toObject().keys();
+    std::sort(stems.begin(), stems.end());
+
+    // per-arm accumulators
+    std::vector<int> segExact(arms.size(), 0), pieces(arms.size(), 0);
+    std::vector<std::vector<std::string> > divergent(arms.size());
+    std::vector<std::string> loadFail;
+    int sigMismatch = 0, dmMismatch = 0;
+    std::vector<std::string> sigMismatchStems;
+
+    for (const std::string& stem : stems) {
+        const std::string path = corpusDir + "/" + stem + ".xml";
+        MasterScore* sc = loadScore(muse::io::path_t(QString::fromStdString(path)));
+        if (!sc) {
+            loadFail.push_back(stem);
+            continue;
+        }
+        joint::AdapterFacts fx = joint::buildAdapterFacts(sc, stem);
+        delete sc;
+        if (!fx.ok) {
+            loadFail.push_back(stem + " (adapter: " + fx.error + ")");
+            continue;
+        }
+
+        // sig/mode parity vs the oracle (the reference read them from the xml header)
+        const JsonObject refId = ref.value("identity").toObject().value(stem).toObject();
+        const JsonValue refSigV = refId.value("sig_fifths");
+        const std::optional<int> refSig = refSigV.isNumber() ? std::optional<int>(refSigV.toInt()) : std::nullopt;
+        const std::string refDm = refId.value("declared_mode").toStdString();
+        if (fx.sigFifths != refSig) {
+            ++sigMismatch;
+            if (sigMismatchStems.size() < 20) {
+                sigMismatchStems.push_back(stem);
+            }
+        }
+        if (fx.declaredMode != refDm) {
+            ++dmMismatch;
+        }
+
+        for (size_t ai = 0; ai < arms.size(); ++ai) {
+            const joint::DecodeResult r = joint::decodePiece(fx.piece, arms[ai].adapter, vocab, cache, 4,
+                                                             fx.sigFifths, fx.declaredMode);
+            const JsonObject exp = ref.value(arms[ai].name).toObject().value(stem).toObject();
+            const JsonArray es = exp.value("segments").toArray();
+            bool segOk = (r.segments.size() == es.size());
+            for (size_t s = 0; segOk && s < es.size(); ++s) {
+                const JsonArray e = es.at(s).toArray();
+                const joint::SegmentSummary& g = r.segments[s];
+                const JsonValue rootV = e.at(5);
+                const bool rootOk = rootV.isNull() ? !g.rootPc.has_value()
+                                    : (g.rootPc.has_value() && *g.rootPc == rootV.toInt());
+                if (g.i != e.at(0).toInt() || g.j != e.at(1).toInt() || g.tonicPc != e.at(2).toInt()
+                    || g.isMajor != e.at(3).toBool() || g.classKey != e.at(4).toStdString() || !rootOk) {
+                    segOk = false;
+                }
+            }
+            ++pieces[ai];
+            if (segOk) {
+                ++segExact[ai];
+            } else {
+                divergent[ai].push_back(stem);
+            }
+        }
+    }
+
+    std::ostringstream art;
+    art << "{\n \"provenance\": {\"tool\": \"tools/batch_analyze.cpp --joint-decode-from-adapter\", "
+        << "\"tables_git_hash\": \"" << tables.corpusGitHash << "\", "
+        << "\"reader\": \"composing/analysis/joint/jointfactadapter (decodes from the OWN adapter Piece, "
+        << "NOT note_events.json)\", \"oracle\": \"decode_parity_ref.json (§5)\", "
+        << "\"reproducibility_coupling\": \"decode bit-identity to the §5 oracle rests on CPython 3.12+ "
+        << "sum() staying Neumaier-compensated (mirrored by jointprimitives.neumaierSum); a future "
+        << "Python sum() change would surface as a parity break\"},\n";
+    art << " \"sig_parity\": {\"mismatch\": " << sigMismatch << ", \"declared_mode_mismatch\": " << dmMismatch
+        << ", \"mismatch_stems\": [";
+    for (size_t i = 0; i < sigMismatchStems.size(); ++i) {
+        art << (i ? ", " : "") << "\"" << sigMismatchStems[i] << "\"";
+    }
+    art << "]},\n \"load_fail\": [";
+    for (size_t i = 0; i < loadFail.size(); ++i) {
+        art << (i ? ", " : "") << "\"" << loadFail[i] << "\"";
+    }
+    art << "],\n \"arms\": {\n";
+    bool overallPass = loadFail.empty();
+    for (size_t ai = 0; ai < arms.size(); ++ai) {
+        const bool armPass = (segExact[ai] == pieces[ai]);
+        overallPass = overallPass && armPass;
+        std::cout << "joint-decode-from-adapter [" << arms[ai].name << "]: " << pieces[ai] << " pieces, "
+                  << segExact[ai] << " segment-exact -> " << (armPass ? "PASS" : "FAIL") << "\n";
+        art << "  \"" << arms[ai].name << "\": {\"pieces\": " << pieces[ai] << ", \"segment_exact\": "
+            << segExact[ai] << ", \"pass\": " << (armPass ? "true" : "false") << ", \"divergent\": [";
+        for (size_t d = 0; d < divergent[ai].size(); ++d) {
+            art << (d ? ", " : "") << "\"" << divergent[ai][d] << "\"";
+        }
+        art << "]}" << (ai + 1 < arms.size() ? "," : "") << "\n";
+    }
+    art << " },\n \"overall_pass\": " << (overallPass ? "true" : "false") << "\n}\n";
+
+    const std::string outPath = artifactDir + "/joint_endtoend_parity.json";
+    std::ofstream ofs(outPath, std::ios::binary);
+    ofs << art.str();
+    std::cout << "joint-decode-from-adapter: overall " << (overallPass ? "PASS" : "FAIL")
+              << " (sig mismatch " << sigMismatch << ", dm mismatch " << dmMismatch
+              << ", load fail " << loadFail.size() << "); artifact -> " << outPath << "\n";
     return overallPass ? 0 : 1;
 }
 
@@ -4098,6 +4405,10 @@ int main(int argc, char* argv[])
     // dormant joint module over the committed note events and checks it against the Python probe
     // reference; returns before any score/preset/analysis is touched (production byte-identical).
     std::string jointDecodeCorpusDir;
+    // --joint-adapter-facts <dir> / --joint-decode-from-adapter <dir>: Task-C fact-adapter drivers
+    // (default OFF; production byte-identical — they return before any score/preset/analysis is touched).
+    std::string jointAdapterFactsDir;
+    std::string jointDecodeFromAdapterDir;
 
     for (int i = 1; i < args.size(); ++i) {
         const QString a = args.at(i);
@@ -4120,6 +4431,20 @@ int main(int argc, char* argv[])
                 jointDecodeCorpusDir = args.at(++i).toUtf8().toStdString();
             } else {
                 std::cerr << "ERROR: --joint-decode-corpus requires an artifact-dir argument\n";
+                return 1;
+            }
+        } else if (a == "--joint-adapter-facts") {
+            if (i + 1 < args.size()) {
+                jointAdapterFactsDir = args.at(++i).toUtf8().toStdString();
+            } else {
+                std::cerr << "ERROR: --joint-adapter-facts requires an artifact-dir argument\n";
+                return 1;
+            }
+        } else if (a == "--joint-decode-from-adapter") {
+            if (i + 1 < args.size()) {
+                jointDecodeFromAdapterDir = args.at(++i).toUtf8().toStdString();
+            } else {
+                std::cerr << "ERROR: --joint-decode-from-adapter requires an artifact-dir argument\n";
                 return 1;
             }
         } else if (a == "--dump-regions") {
@@ -4341,6 +4666,15 @@ int main(int argc, char* argv[])
     // byte-identical whether or not this flag is present.
     if (!jointDecodeCorpusDir.empty()) {
         return runJointDecodeCorpus(jointDecodeCorpusDir);
+    }
+    // ── --joint-adapter-facts / --joint-decode-from-adapter (Task C; default OFF) ────
+    // Both load the corpus scores, build the joint inputs through the fact adapter, and return before
+    // any production analysis path (standard corpus byte-identical whether or not the flag is present).
+    if (!jointAdapterFactsDir.empty()) {
+        return runJointAdapterFacts(jointAdapterFactsDir);
+    }
+    if (!jointDecodeFromAdapterDir.empty()) {
+        return runJointDecodeFromAdapter(jointDecodeFromAdapterDir);
     }
 
     if (inputPath.empty()) {

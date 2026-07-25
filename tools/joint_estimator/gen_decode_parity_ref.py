@@ -88,6 +88,12 @@ def main():
                      "C++ joint decoder must reproduce these EXACTLY (segments) and to 1e-6 relative "
                      "(scores). Identity segments equal probe_corpus_decode.json; scores here are "
                      "unrounded."),
+            "reproducibility_coupling": ("this reference's scores are Python builtin sum() sums (CPython "
+                                         "3.12+ Neumaier-compensated). The C++ decoder mirrors that with "
+                                         "jointprimitives.neumaierSum; the bit-identity RESTS on CPython "
+                                         "keeping sum() compensated. A future Python changing sum() would "
+                                         "surface as a decode-parity break — the correct loud signal; "
+                                         "re-mirror neumaierSum and re-stamp this reference then."),
         },
         "selected_weights": sel,
         "identity": id_decode,

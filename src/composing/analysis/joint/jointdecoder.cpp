@@ -352,7 +352,9 @@ double weightedContent(const ContentFeatures& f, const WeightVector& w)
 }
 
 // cadence features toward (tonic,isMajor) at the boundary starting event i (approach i-1 -> arrival i).
-std::array<bool, 4> cadenceFired(const Piece& piece, int i, int tonic, bool isMajor)
+// isMajor is part of the probe_decoder signature but the four features are mode-independent (tonic-
+// relative pcs only), so it is deliberately unused here — matching probe_decoder._cadence_fired.
+std::array<bool, 4> cadenceFired(const Piece& piece, int i, int tonic, [[maybe_unused]] bool isMajor)
 {
     const int lt = normalizePc(tonic + 11);
     const int fourth = normalizePc(tonic + 5);
@@ -727,10 +729,10 @@ DecodeResult decodePiece(const Piece& piece, const FittedAdapter& adapter, const
                     for (const auto& pck : pcIt->second) {
                         const double tin = pck.second
                             + wChord * adapter.chordTransLogp(*vocab.find(pck.first), *cls, major) + stay;
-                        const std::string cand = stateEnc(tonic, major, pck.first);
-                        if (!haveBack || better(tin, i, cand, tonic, major, ckey,
+                        const std::string candEnc = stateEnc(tonic, major, pck.first);
+                        if (!haveBack || better(tin, i, candEnc, tonic, major, ckey,
                                                 bestIn, backI, backEnc, tonic, major, ckey)) {
-                            bestIn = tin; backI = i; backEnc = cand; haveBack = true;
+                            bestIn = tin; backI = i; backEnc = candEnc; haveBack = true;
                         }
                     }
                 }

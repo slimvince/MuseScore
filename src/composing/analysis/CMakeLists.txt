@@ -353,6 +353,12 @@ target_sources(composing_analysis PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/joint/jointadapter.cpp
     ${CMAKE_CURRENT_LIST_DIR}/joint/jointdecoder.h
     ${CMAKE_CURRENT_LIST_DIR}/joint/jointdecoder.cpp
+    # jointfactadapter — the "score -> facts" build step (Task C): builds the decoder's Piece inputs
+    # from the L1 published notatedNotes() surface + the score's structural facts (measure/meter/
+    # signature). The C++ counterpart of tools/joint_estimator/gen_note_events.py; input parity grades
+    # it against note_events.json field by field. Still DORMANT (driven only by --joint-* diagnostics).
+    ${CMAKE_CURRENT_LIST_DIR}/joint/jointfactadapter.h
+    ${CMAKE_CURRENT_LIST_DIR}/joint/jointfactadapter.cpp
     ${CMAKE_CURRENT_LIST_DIR}/joint/jointtables.h
     ${CMAKE_CURRENT_LIST_DIR}/joint/jointtables.cpp
     ${CMAKE_CURRENT_LIST_DIR}/joint/jointweights.h

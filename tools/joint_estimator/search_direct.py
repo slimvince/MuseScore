@@ -133,11 +133,13 @@ def maxplus_decode(lat: fw.UnitLattice, ts: fw.TableSet, mc: MaxContext, stats=N
     segmentation (`decode_parity_ref` regeneration, this dispatch), this decode and `decode_piece` now
     pick different-but-equally-optimal paths, so `establish_decoder` would flag those 6 if the stability
     diagnostic is RE-RUN. The committed stability figures predate §5 and are unaffected (they measure the
-    per-start modulation rate, invariant to a one-boundary shift on a repeated-chord run). Deferred item
-    surfaced to Cowork (this dispatch's report): §5-ify this decode's tie-break — or relax
-    establish_decoder to accept equal-score §5-equivalent paths — before the stability diagnostic is
-    re-run. Not done here: the vectorised max-plus form cannot cheaply carry the §5 path signature, and
-    this path is off the CV headline and the production/parity critical path."""
+    per-start modulation rate, invariant to a one-boundary shift on a repeated-chord run). CLOSEOUT
+    (Task-C dispatch): the vectorised max-plus form still cannot cheaply carry the §5 lexicographic path
+    signature (§5-ifying the recursion would mean writing per-boundary path signatures — the very cost
+    this speed path exists to avoid), so instead `establish_decoder` is RELAXED to accept EQUAL-score
+    §5-equivalent paths: the hard establishment is score-exactness, and an equal-score path difference is
+    reported (equal_score_path_diffs) rather than failing. decode_piece remains the §5 authority; this
+    diagnostic path is off the CV headline and the production/parity critical path."""
     C, n, K = lat.C, lat.n, 24
     cw = lat.cand_feat @ mc.wc                                   # weighted content per candidate
     cadw = lat.cad @ mc.wcad                                     # (n, 24)
@@ -260,7 +262,7 @@ def establish_decoder(pieces, ts: fw.TableSet, stems, n_random=4, seed=7, verbos
         sig, dm = pd.piece_header(stem)
         lats[stem] = fw.build_unit(piece, stem, 0, len(piece.events), True, None, ts, sig, dm,
                                    augment_gt=False)
-    rows, bad = [], 0
+    rows, bad, path_diffs = [], 0, 0
     for label, x in arms:
         mc = MaxContext(ts, x)
         wd = fw.vec_to_weights(x)
@@ -274,13 +276,25 @@ def establish_decoder(pieces, ts: fw.TableSet, stems, n_random=4, seed=7, verbos
             sc, segs = maxplus_decode(lats[stem], ts, mc)
             got = segments_to_dicts(lats[stem], piece, segs, ts)
             key = lambda ss: [(s["i"], s["j"], s["tonic_pc"], s["is_major"], s["class_key"]) for s in ss]
-            ok = (abs(sc - r.total_score) < 1e-9) and (key(r.segments) == key(got))
+            # §5 relaxation (closeout, this dispatch): the cached-lattice max-plus decode reproduces the
+            # SCORE exactly but breaks EXACT-score ties by its own vectorised (pre-§5) order — it cannot
+            # cheaply carry §5's lexicographic path signature (see maxplus_decode's docstring). On the
+            # pieces §5 canonicalised to a different EQUAL-score segmentation, decode_piece and this decode
+            # pick different-but-equally-optimal paths; that is a tie-break choice, NOT a decoder defect.
+            # The HARD establishment is score-exactness; a path difference AT EQUAL score is reported
+            # (path_identical) but does not fail the diagnostic.
+            score_ok = abs(sc - r.total_score) < 1e-9
+            path_ok = key(r.segments) == key(got)
+            ok = score_ok
             bad += (not ok)
+            path_diffs += (score_ok and not path_ok)
             rows.append({"arm": label, "stem": stem, "n_segments": len(r.segments),
-                         "score_delta": round(sc - r.total_score, 12), "path_identical": bool(ok)})
+                         "score_delta": round(sc - r.total_score, 12),
+                         "score_exact": bool(score_ok), "path_identical": bool(path_ok)})
             if verbose:
+                tag = "OK" if path_ok else ("§5-EQUAL" if score_ok else "SCORE-MISMATCH")
                 print(f"    {label:9s} {stem:10s} nseg {len(r.segments):3d} "
-                      f"delta {sc - r.total_score:+.1e} path {'OK' if ok else 'MISMATCH'}", flush=True)
+                      f"delta {sc - r.total_score:+.1e} {tag}", flush=True)
     # scale invariance
     inv_bad, inv_n = 0, 0
     for label, x in arms:
@@ -292,6 +306,10 @@ def establish_decoder(pieces, ts: fw.TableSet, stems, n_random=4, seed=7, verbos
                 inv_n += 1
                 inv_bad += (p0 != p1)
     return {"rows": rows, "n_checks": len(rows), "mismatches": int(bad), "pass": bool(bad == 0),
+            "equal_score_path_diffs": int(path_diffs),
+            "equal_score_path_diffs_note": ("§5-equivalent alternative optima (equal score, different "
+                                            "boundary tie-break); acceptable — max-plus keeps its "
+                                            "vectorised pre-§5 tie-break, decode_piece is the §5 authority"),
             "scale_invariance": {"n_checks": inv_n, "path_changes": int(inv_bad),
                                  "pass": bool(inv_bad == 0),
                                  "consequence": ("the decode is a function of the RAY of w, so the "

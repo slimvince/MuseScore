@@ -1,0 +1,433 @@
+{
+ "provenance": {
+  "generator": "tools/joint_estimator/gen_input_parity.py",
+  "instrument_commit": "1e35415ee06b77e001aeea3b947369a2016573b3",
+  "corpus_git_hash": "e3d17c325d24e0de1213440043cbf02ac14f3d3e",
+  "reference": "note_events/note_events.json (music21 9.9.1)",
+  "candidate": "adapter_facts.json (composing/analysis/joint/jointfactadapter: L1 notatedNotes + structural facts)",
+  "note": "field-by-field two-readers-agree parity over all covered pieces; divergences enumerated by class with decode-relevance annotation and root cause. The only residual class is METRIC-POSITION (measure/beat/mc), mechanically unmappable from the engraving model; its decode impact is the separate end-to-end parity (joint_endtoend_parity.json)."
+ },
+ "summary": {
+  "pieces_compared": 326,
+  "pieces_only_in_reference": 0,
+  "pieces_only_in_adapter": 0,
+  "perfect_pieces": 300,
+  "total_notes_reference": 76107,
+  "total_notes_adapter": 76107,
+  "matched_notes": 76107,
+  "total_events_reference": 26698,
+  "total_events_adapter": 26698,
+  "matched_events": 26698,
+  "anacrusis_exclusion_mismatch_notes": 20,
+  "anacrusis_exclusion_mismatch_pieces": [
+   "bwv113.8",
+   "bwv274",
+   "bwv384"
+  ],
+  "divergence_class_count": 8
+ },
+ "divergence_classes": {
+  "anacrusis_exclusion_mismatch": {
+   "count": 20,
+   "decode_relevance": "decode-critical",
+   "examples": [
+    {
+     "stem": "bwv113.8",
+     "key(onset,part,midi)": [
+      0,
+      0,
+      71
+     ],
+     "ref_measure": 1,
+     "adapter_measure": 0
+    },
+    {
+     "stem": "bwv113.8",
+     "key(onset,part,midi)": [
+      0,
+      3,
+      59
+     ],
+     "ref_measure": 1,
+     "adapter_measure": 0
+    },
+    {
+     "stem": "bwv113.8",
+     "key(onset,part,midi)": [
+      0,
+      2,
+      62
+     ],
+     "ref_measure": 1,
+     "adapter_measure": 0
+    }
+   ],
+   "affected_pieces": [
+    "bwv113.8",
+    "bwv274",
+    "bwv384"
+   ],
+   "root_cause": "music21 reproduces the xml <measure number>/irregular-measure structure verbatim; MuseScore's engraving import normalises it, so the metrical grid cannot recover it",
+   "mechanically_mappable": false
+  },
+  "event_field:beat": {
+   "count": 68,
+   "decode_relevance": "cosmetic (never read by the decode)",
+   "examples": [
+    {
+     "stem": "bwv113.8",
+     "key(start,end)": [
+      6720,
+      6960
+     ],
+     "ref": 2.0,
+     "adapter": 6.0
+    },
+    {
+     "stem": "bwv113.8",
+     "key(start,end)": [
+      14160,
+      14400
+     ],
+     "ref": 1.5,
+     "adapter": 5.5
+    },
+    {
+     "stem": "bwv113.8",
+     "key(start,end)": [
+      7200,
+      7680
+     ],
+     "ref": 3.0,
+     "adapter": 7.0
+    }
+   ],
+   "affected_pieces": [
+    "bwv113.8",
+    "bwv154.8",
+    "bwv226.2",
+    "bwv248.33-3",
+    "bwv274",
+    "bwv276",
+    "bwv284",
+    "bwv304",
+    "bwv371",
+    "bwv372",
+    "bwv374",
+    "bwv380",
+    "bwv382",
+    "bwv383",
+    "bwv384",
+    "bwv4.8",
+    "bwv409",
+    "bwv410",
+    "bwv411",
+    "bwv42.7",
+    "bwv422",
+    "bwv426",
+    "bwv48.3"
+   ],
+   "root_cause": "music21 reproduces the xml <measure number>/irregular-measure structure verbatim; MuseScore's engraving import normalises it, so the metrical grid cannot recover it",
+   "mechanically_mappable": false
+  },
+  "event_field:measure": {
+   "count": 1582,
+   "decode_relevance": "cosmetic (never read by the decode)",
+   "examples": [
+    {
+     "stem": "bwv113.8",
+     "key(start,end)": [
+      5760,
+      6000
+     ],
+     "ref": 4,
+     "adapter": 3
+    },
+    {
+     "stem": "bwv113.8",
+     "key(start,end)": [
+      9120,
+      9360
+     ],
+     "ref": 7,
+     "adapter": 5
+    },
+    {
+     "stem": "bwv113.8",
+     "key(start,end)": [
+      16560,
+      16800
+     ],
+     "ref": 12,
+     "adapter": 9
+    }
+   ],
+   "affected_pieces": [
+    "bwv113.8",
+    "bwv154.8",
+    "bwv226.2",
+    "bwv248.33-3",
+    "bwv261",
+    "bwv274",
+    "bwv276",
+    "bwv284",
+    "bwv304",
+    "bwv324",
+    "bwv371",
+    "bwv372",
+    "bwv374",
+    "bwv380",
+    "bwv382",
+    "bwv383",
+    "bwv384",
+    "bwv4.8",
+    "bwv409",
+    "bwv410",
+    "bwv411",
+    "bwv42.7",
+    "bwv422",
+    "bwv426",
+    "bwv48.3"
+   ],
+   "root_cause": "music21 reproduces the xml <measure number>/irregular-measure structure verbatim; MuseScore's engraving import normalises it, so the metrical grid cannot recover it",
+   "mechanically_mappable": false
+  },
+  "event_field:metric_class_code": {
+   "count": 38,
+   "decode_relevance": "decode-critical",
+   "examples": [
+    {
+     "stem": "bwv113.8",
+     "key(start,end)": [
+      7200,
+      7680
+     ],
+     "ref": 1,
+     "adapter": 2
+    },
+    {
+     "stem": "bwv113.8",
+     "key(start,end)": [
+      14880,
+      15360
+     ],
+     "ref": 1,
+     "adapter": 2
+    },
+    {
+     "stem": "bwv113.8",
+     "key(start,end)": [
+      6240,
+      6480
+     ],
+     "ref": 0,
+     "adapter": 2
+    }
+   ],
+   "affected_pieces": [
+    "bwv113.8",
+    "bwv154.8",
+    "bwv248.33-3",
+    "bwv274",
+    "bwv276",
+    "bwv284",
+    "bwv304",
+    "bwv371",
+    "bwv372",
+    "bwv374",
+    "bwv380",
+    "bwv382",
+    "bwv383",
+    "bwv384",
+    "bwv4.8",
+    "bwv409",
+    "bwv410",
+    "bwv411",
+    "bwv42.7",
+    "bwv422",
+    "bwv426",
+    "bwv48.3"
+   ],
+   "root_cause": "music21 reproduces the xml <measure number>/irregular-measure structure verbatim; MuseScore's engraving import normalises it, so the metrical grid cannot recover it",
+   "mechanically_mappable": false
+  },
+  "note_field:beat": {
+   "count": 744,
+   "decode_relevance": "cosmetic (never read by the decode)",
+   "examples": [
+    {
+     "stem": "bwv261",
+     "key(onset,part,midi)": [
+      23520,
+      1,
+      61
+     ],
+     "ref": 3.0,
+     "adapter": 1.0
+    },
+    {
+     "stem": "bwv261",
+     "key(onset,part,midi)": [
+      28320,
+      2,
+      66
+     ],
+     "ref": 1.0,
+     "adapter": 3.0
+    },
+    {
+     "stem": "bwv261",
+     "key(onset,part,midi)": [
+      27840,
+      0,
+      74
+     ],
+     "ref": 4.0,
+     "adapter": 2.0
+    }
+   ],
+   "affected_pieces": [
+    "bwv261",
+    "bwv276",
+    "bwv304",
+    "bwv324",
+    "bwv374",
+    "bwv4.8",
+    "bwv48.3"
+   ],
+   "root_cause": "music21 reproduces the xml <measure number>/irregular-measure structure verbatim; MuseScore's engraving import normalises it, so the metrical grid cannot recover it",
+   "mechanically_mappable": false
+  },
+  "note_field:measure": {
+   "count": 4045,
+   "decode_relevance": "cosmetic (never read by the decode)",
+   "examples": [
+    {
+     "stem": "bwv113.8",
+     "key(onset,part,midi)": [
+      12720,
+      3,
+      53
+     ],
+     "ref": 9,
+     "adapter": 7
+    },
+    {
+     "stem": "bwv113.8",
+     "key(onset,part,midi)": [
+      17520,
+      2,
+      61
+     ],
+     "ref": 12,
+     "adapter": 9
+    },
+    {
+     "stem": "bwv113.8",
+     "key(onset,part,midi)": [
+      10560,
+      1,
+      70
+     ],
+     "ref": 8,
+     "adapter": 6
+    }
+   ],
+   "affected_pieces": [
+    "bwv113.8",
+    "bwv154.8",
+    "bwv226.2",
+    "bwv248.33-3",
+    "bwv261",
+    "bwv274",
+    "bwv276",
+    "bwv284",
+    "bwv304",
+    "bwv324",
+    "bwv371",
+    "bwv372",
+    "bwv374",
+    "bwv380",
+    "bwv382",
+    "bwv383",
+    "bwv384",
+    "bwv4.8",
+    "bwv409",
+    "bwv410",
+    "bwv411",
+    "bwv42.7",
+    "bwv422",
+    "bwv426",
+    "bwv48.3"
+   ],
+   "root_cause": "music21 reproduces the xml <measure number>/irregular-measure structure verbatim; MuseScore's engraving import normalises it, so the metrical grid cannot recover it",
+   "mechanically_mappable": false
+  },
+  "note_field:metric_class_code": {
+   "count": 518,
+   "decode_relevance": "decode-critical",
+   "examples": [
+    {
+     "stem": "bwv261",
+     "key(onset,part,midi)": [
+      23520,
+      1,
+      61
+     ],
+     "ref": 1,
+     "adapter": 0
+    },
+    {
+     "stem": "bwv261",
+     "key(onset,part,midi)": [
+      28320,
+      2,
+      66
+     ],
+     "ref": 0,
+     "adapter": 1
+    },
+    {
+     "stem": "bwv261",
+     "key(onset,part,midi)": [
+      34080,
+      1,
+      70
+     ],
+     "ref": 0,
+     "adapter": 1
+    }
+   ],
+   "affected_pieces": [
+    "bwv261",
+    "bwv276",
+    "bwv304",
+    "bwv324",
+    "bwv374",
+    "bwv4.8",
+    "bwv48.3"
+   ],
+   "root_cause": "music21 reproduces the xml <measure number>/irregular-measure structure verbatim; MuseScore's engraving import normalises it, so the metrical grid cannot recover it",
+   "mechanically_mappable": false
+  },
+  "note_field:tied": {
+   "count": 1,
+   "decode_relevance": "decode-critical",
+   "examples": [
+    {
+     "stem": "bwv362",
+     "key(onset,part,midi)": [
+      35520,
+      2,
+      58
+     ],
+     "ref": 1,
+     "adapter": 0
+    }
+   ],
+   "affected_pieces": [
+    "bwv362"
+   ]
+  }
+ }
+}

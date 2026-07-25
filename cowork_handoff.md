@@ -220,10 +220,20 @@ parity reference) are ratified; (2) the TIE-BREAK rule is ratified into the fact
 diff-based measurements to come), to be implemented in BOTH decoders; (3) Task 1's architecture
 is the L1 FACT-SURFACE EXTENSION (additive publication of the notated-note facts, two proofs per
 commit — the sanction's touchable set amended accordingly on the gates document; a module-private
-raw score walk stays forbidden as the audited defect class). **The ACTIVE dispatch is
-`cc_instruction_joint_input_parity.md`** — tie-break both sides + parity to 326/326, the L1
-extension, the fact adapter + input parity by divergence class, end-to-end parity, and the PUSH
-of everything (origin only). Only after that: the production-module build under
+raw score walk stays forbidden as the audited defect class). Tasks A and B of that dispatch are DELIVERED, pushed, and Cowork-verified at the artifacts
+(`869e75e0a0`, `1e35415ee0`): **decode parity is now 326/326 segment-exact and BIT-IDENTICAL
+(max relative score difference 0) on both arms** — the true cause of the old divergence was
+CPython 3.12+'s compensated summation, not the math library (CC overturned its own earlier
+diagnosis with bit-level evidence; the C++ now mirrors it — a recorded Python-version coupling);
+the §5 tie-break lives in both decoders (re-grade of the canonicalized pieces: 0.00 pp); the L1
+`notatedNotes()` additive publication landed under both proofs, catching and fixing a latent
+infinite-loop on partial ties. **Task C was honestly deferred, not rushed. The ACTIVE dispatch is
+`cc_instruction_joint_fact_adapter.md`** — the fact adapter consuming the published surface,
+input parity vs the committed note events by divergence class (the voice/part mapping the named
+risk), end-to-end parity on both arms, plus the four small deferred items (the diagnostic
+decoder's pre-§5 tie-break; the one stale identity entry in the old probe decode artifact; the
+two cosmetic warnings; the Python-version coupling recorded in provenance). After it: the OI-178
+adoption measurement — the last gate. Only after that: the production-module build under
 the parallel-build sanction, of the complete algorithm, with the probe outputs as parity oracle. OI-179 (the ground-truth ceiling): the literature half is ANSWERED — no
 published inter-annotator agreement figure exists for classical symbolic Roman-numeral analysis
 anywhere in the field, so the 87-stem BCMH measurement would be novel; BCMH is inspected at the files
