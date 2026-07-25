@@ -91,6 +91,36 @@ struct NoteEvent {
     bool staffEligible = true;  ///< staffIsEligible() at this note's onset (hidden/drumset/chord-track => false).
 };
 
+// A single NOTATED note — the score-notation atom BEFORE tie resolution. The additive L1 publication
+// the joint estimator's fact adapter (OI-180 dual path) consumes: NoteEvent above is tie-RESOLVED (a
+// tied group collapses into one span), which DISCARDS the per-notated-note onsets/durations, the tie
+// structure, and the fermata mark that the joint model's event lattice and emission covariates need
+// (music21's note_events extraction reads exactly these notated facts). notatedNotes() republishes
+// them losslessly and additively: EVERY notated note is published — tie STARTS and tie CONTINUATIONS
+// alike — with its OWN notated span, whether it continues a tie, whether its chord carries a fermata,
+// and the index of the tie-resolved NoteEvent it belongs to. Purely additive: NoteEvent and every
+// existing view/consumer are byte-identical; nothing here changes the resolved model. Ticks absolute.
+//
+// The sanctioned dual-path amendment (cowork_prefit_gates.md OI-180, 2026-07-20) added this ADDITIVE
+// fact-surface extension to the touchable set precisely so the joint module reads the published facts
+// — never a module-private raw score walk (the forbidden raw-source-outside-the-fact-layer defect).
+struct NotatedNote {
+    int  pitch   = 0;    ///< ppitch — MIDI playback pitch (as NoteEvent::pitch).
+    int  tpc     = -1;   ///< TPC (0-34, circle-of-fifths spelling). -1 = not provided.
+    int  staff   = 0;    ///< Owning staff index.
+    int  voice   = 0;    ///< Voice 0..VOICES-1.
+    int  onset   = 0;    ///< This notated note's OWN onset tick (its chord's segment tick).
+    int  duration = 0;   ///< This notated note's OWN notated length (Chord::actualTicks) — NOT tie-resolved.
+    bool tieContinuation = false;  ///< This note continues a tie begun by an earlier note (Note::tieBack()).
+    bool hasFermata = false;       ///< A Fermata is attached to this note's chord (segment annotation at its track).
+    bool isGrace = false;          ///< Grace note (kept + flagged).
+    bool plays   = true;           ///< Note::play().
+    bool visible = true;           ///< Note::visible().
+    bool staffEligible = true;     ///< staffIsEligible() at this note's onset.
+    int  resolvedIndex = -1;       ///< Index into notes() of the tie-resolved NoteEvent this note belongs to
+                                   ///  (the tie-start's event). -1 iff that event is not in the loaded span.
+};
+
 // Static query index over an onset-sorted note set.
 //
 // Built once from a NoteModel's notes (O(N log N)); answers the two range
@@ -200,6 +230,12 @@ public:
     const mu::engraving::Score* score() const { return m_score; }
     const std::vector<NoteEvent>& notes() const { return m_notes; }
 
+    /// The NOTATED notes (tie-UNRESOLVED) whose span overlaps the loaded span — the additive L1 fact
+    /// surface (see NotatedNote). Includes tie continuations; each links to its resolved NoteEvent via
+    /// resolvedIndex. Build order (ascending onset, then staff/voice/chord-note). Additive: notes()
+    /// and every existing consumer are unaffected.
+    const std::vector<NotatedNote>& notatedNotes() const { return m_notated; }
+
     int  loadedStart() const { return m_loadedStart; }
     int  loadedEnd() const { return m_loadedEnd; }
     int  selectionStart() const { return m_selectionStart; }
@@ -231,6 +267,7 @@ private:
 
     const mu::engraving::Score* m_score = nullptr;
     std::vector<NoteEvent> m_notes;  ///< Sorted by onset (ascending, stable build order).
+    std::vector<NotatedNote> m_notated;  ///< The additive tie-UNRESOLVED notated notes (same build order).
     NoteQueryIndex m_index;          ///< Onset/overlap query index over m_notes (built in build()).
 
     int  m_loadedStart = 0;          ///< Current loaded-span start tick (grows down via extend Earlier).

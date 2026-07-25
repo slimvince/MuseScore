@@ -24,6 +24,7 @@
 
 #include <algorithm>
 #include <climits>
+#include <unordered_map>
 #include <utility>
 
 #include "engraving/dom/chord.h"
@@ -64,6 +65,48 @@ NoteEvent makeEvent(const mu::engraving::Note* n, int onsetTick, int staff, int 
     e.visible       = n->visible();
     e.staffEligible = staffEligible;
     return e;
+}
+
+// Whether a Fermata is attached to this chord — a Segment annotation at the chord's track (music21
+// reads the fermata as a note/chord expression; MuseScore stores it as a segment annotation). Applies
+// to the whole chord (all its notes), matching music21's per-chord fermata.
+bool chordHasFermata(const mu::engraving::Chord* chord)
+{
+    using namespace mu::engraving;
+    const Segment* seg = chord->segment();
+    if (!seg) {
+        return false;
+    }
+    for (const EngravingItem* a : seg->annotations()) {
+        if (a && a->isFermata() && a->track() == chord->track()) {
+            return true;
+        }
+    }
+    return false;
+}
+
+// Emit one NotatedNote (the tie-UNRESOLVED atom). Unlike makeEvent, tie continuations are NOT skipped;
+// each notated note carries its OWN notated span (Chord::actualTicks), not the tie-resolved span.
+// resolvedIndex is filled in a second phase (it needs the whole tie-start->event map).
+NotatedNote makeNotatedNote(const mu::engraving::Note* n, int onsetTick, int staff, int voice,
+                            bool isGrace, bool staffEligible, bool hasFermata)
+{
+    using namespace mu::engraving;
+    NotatedNote nn;
+    nn.pitch          = n->ppitch();
+    nn.tpc            = n->tpc();
+    nn.staff          = staff;
+    nn.voice          = voice;
+    nn.onset          = onsetTick;
+    nn.duration       = n->chord()->actualTicks().ticks();   // THIS note's own notated length (not tie-resolved)
+    nn.tieContinuation = (n->tieBack() != nullptr);
+    nn.hasFermata     = hasFermata;
+    nn.isGrace        = isGrace;
+    nn.plays          = n->play();
+    nn.visible        = n->visible();
+    nn.staffEligible  = staffEligible;
+    nn.resolvedIndex  = -1;
+    return nn;
 }
 
 } // namespace
@@ -124,6 +167,7 @@ void NoteModel::rebuildForLoadedSpan()
     // overlaps the current loaded span. (Phase 1b replaces this with a span-scoped
     // walk + an incremental index, byte-identical to here.)
     m_notes.clear();
+    m_notated.clear();
 
     const Score* sc = m_score;
     if (!sc) {
@@ -139,13 +183,28 @@ void NoteModel::rebuildForLoadedSpan()
     const int t0 = m_loadedStart;
     const int t1 = m_loadedEnd;
 
+    // ADDITIVE notated-note publication (Task B): built ALONGSIDE the tie-resolved NoteEvents in the
+    // SAME single walk. `tieStartIdx` maps each tie-START note (the note that owns the resolved
+    // NoteEvent) to that event's index; a tie continuation resolves to it in phase 2 (below). The
+    // NoteEvent surface itself is byte-identical — the emission below is the same makeEvent + overlap
+    // test as before, only re-expressed to also record the tie-start index.
+    std::unordered_map<const Note*, int> tieStartIdx;
+    std::vector<std::pair<const Note*, NotatedNote> > pendingNotated;
+
     // Retain a note iff its span overlaps [t0, t1): onset < t1 && release > t0.
     // This keeps sustained-in notes (onset < t0, release > t0) for free. The walk
     // order is unchanged, so the retained subsequence preserves build order
     // (ascending onset, staff, voice, chord-note) and stays onset-sorted.
-    const auto consider = [&](NoteEvent e) {
+    const auto considerEvent = [&](const Note* n, NoteEvent e) {
         if (e.onset < t1 && e.release > t0) {
+            tieStartIdx[n] = static_cast<int>(m_notes.size());
             m_notes.push_back(e);
+        }
+    };
+    // Notated notes are retained by the SAME overlap test on their OWN notated span (onset..onset+dur).
+    const auto considerNotated = [&](const Note* n, NotatedNote nn) {
+        if (nn.onset < t1 && nn.onset + nn.duration > t0) {
+            pendingNotated.push_back({ n, nn });
         }
     };
 
@@ -177,25 +236,45 @@ void NoteModel::rebuildForLoadedSpan()
                     if (!grace) {
                         continue;
                     }
+                    const bool graceFerm = chordHasFermata(grace);
                     for (const Note* gn : grace->notes()) {
+                        // notated: EVERY note incl. tie continuations
+                        considerNotated(gn, makeNotatedNote(gn, segTick, static_cast<int>(si), v,
+                                                            true, eligible, graceFerm));
                         if (gn->tieBack()) {
-                            continue;  // continuation — subsumed into its tie-start
+                            continue;  // resolved event: continuation subsumed into its tie-start
                         }
-                        consider(makeEvent(gn, segTick, static_cast<int>(si), v, true, eligible));
+                        considerEvent(gn, makeEvent(gn, segTick, static_cast<int>(si), v, true, eligible));
                     }
                 }
 
                 // Main chord notes.
+                const bool chordFerm = chordHasFermata(chord);
                 for (const Note* n : chord->notes()) {
+                    considerNotated(n, makeNotatedNote(n, segTick, static_cast<int>(si), v,
+                                                       false, eligible, chordFerm));
                     if (n->tieBack()) {
                         // Tie continuation: already represented by the tie-start
                         // note's resolved span. Exactly one onset per tied group.
                         continue;
                     }
-                    consider(makeEvent(n, segTick, static_cast<int>(si), v, false, eligible));
+                    considerEvent(n, makeEvent(n, segTick, static_cast<int>(si), v, false, eligible));
                 }
             }
         }
+    }
+
+    // Phase 2: resolve each notated note's link to its tie-resolved NoteEvent (the event emitted at its
+    // tie-start; -1 if that event was not retained in the loaded span). The tie-start is the DOM's own
+    // firstTiedNote() — the SAME tie machinery makeEvent's span resolution uses, and cycle-safe against
+    // the degenerate/partial-tie structures a hand-rolled tieBack walk would loop on (#6: reuse the DOM
+    // tie API, do not re-implement it). Build order is preserved.
+    m_notated.reserve(pendingNotated.size());
+    for (auto& pn : pendingNotated) {
+        const Note* start = pn.first->firstTiedNote();
+        const auto it = start ? tieStartIdx.find(start) : tieStartIdx.end();
+        pn.second.resolvedIndex = (it != tieStartIdx.end()) ? it->second : -1;
+        m_notated.push_back(pn.second);
     }
 
     m_index.build(m_notes);
