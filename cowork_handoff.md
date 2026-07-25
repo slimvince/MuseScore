@@ -188,12 +188,31 @@ never a ledger premise, now refuted; rows OI-187…OI-190; the four-beat window 
 worked, tritone fires 589 → 9,084 with guards intact). **The user then ruled (2026-07-19):
 option 1 — the ratified direct-metric fallback — and ★R = M2** (the search minimizes the
 equal-weighted sum of duration-weighted root + key-vs-local disagreement on training folds).
-**The ACTIVE dispatch is `cc_instruction_direct_metric_weight_fit.md`** — 13 weights in [0,5], 21
-starts per fold (identity + likelihood + 19 seeded random), selection on the training objective
-only, held-out once, stability record in place of a convexity proof; predictions: key-local
-74–82, key-home 57–68, root 72–77 (the hard-stop axis inside the objective so it cannot be traded
-away), RN 59–66; the OI-187 modulation-rate check and the OI-190 cadence-weight watch are report
-items; a band miss is a STOP-for-review. Only after that: the production-module build under
+The direct-metric search DELIVERED and Cowork-verified (`3ff9017f4d`): **beats the generative
+baseline on all four axes, every interval excluding zero (key-local 77.60, key-home 56.46, root
+74.19, RN 61.77 pooled CV); modulation rate 5.52/piece vs ground truth 5.28 — the OI-187
+mechanism did not reappear.** The user then ruled on the four review items (2026-07-20):
+(1) the key-home band miss is ACCEPTED-AND-RECORDED (not statistically resolvable per the
+uncertainty rule; the axis improved +3.27; the prediction was Cowork's, too optimistic on the
+cadence features); (2) OI-191: the held-out FIGURES stand (procedure pre-declared, selection on
+training only), but the individual WEIGHT VALUES are unidentified — a standing caution: never
+read a single weight as an established fact about music; a protocol note owed to future fit
+events (restart selection declared in capacity terms); (3) OI-190: the two zero-pinned cadence
+features stay WIRED for future refits; the form question (mutual substitutability) deferred to
+post-build refinement; (4) **THE PRODUCTION-MODULE BUILD OPENS** under the parallel-build
+sanction — the frozen all-326 tables + selected weights, the probe artifacts as parity oracle;
+the real adoption verdict comes only from the OI-178 protocol on the full pipeline later.
+Machine power-state note: CC's post-work shutdowns are USER-instructed and authorized practice.
+
+**⚑ DUAL-PATH STATUS (the OI-180 sanction's standing visibility line — carried every session
+until adoption or the reverse map executes):** the joint estimator exists as instrument-layer
+Python (`tools/joint_estimator/`, complete: tables, weights, probe decoder) and, from the next
+dispatch, as a NEW isolated C++ module beside the certified stack; production byte-identical
+behind a default-OFF driver; neither exit (adoption via OI-178 / removal via the reverse map) has
+executed. **The ACTIVE dispatch to draft: the C++ module build** (module home fixed at the
+dispatch; input-parity establishment against the committed note events — the two-readers-agree
+discipline; decode parity against the probe oracle at identity AND selected weights; both suites
++ pipeline snapshots untouched). Only after that: the production-module build under
 the parallel-build sanction, of the complete algorithm, with the probe outputs as parity oracle. OI-179 (the ground-truth ceiling): the literature half is ANSWERED — no
 published inter-annotator agreement figure exists for classical symbolic Roman-numeral analysis
 anywhere in the field, so the 87-stem BCMH measurement would be novel; BCMH is inspected at the files

@@ -57,6 +57,7 @@ set(MODULE_TEST_SRC
     ${CMAKE_CURRENT_LIST_DIR}/gater_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/grouping_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/harmonicvocabulary_tests.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/joint_tables_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/jointkeydecision_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/keymodeanalyzer_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/keymode_branch_tests.cpp
@@ -88,3 +89,9 @@ set(MODULE_TEST_LINK
 set(MODULE_TEST_DATA_ROOT ${CMAKE_CURRENT_LIST_DIR})
 
 include(SetupGTest)
+
+# The joint-estimator table-loading tests read the committed runtime artifacts under
+# tools/joint_estimator/ (loaded from disk, not a Qt resource); pass the absolute source
+# path as a compile definition so the test locates them regardless of the run directory.
+target_compile_definitions(${MODULE_TEST} PRIVATE
+    JOINT_ARTIFACT_DIR="${PROJECT_SOURCE_DIR}/tools/joint_estimator")

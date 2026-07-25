@@ -336,6 +336,22 @@ target_sources(composing_analysis PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/progression/progressionrecognizer.h
     ${CMAKE_CURRENT_LIST_DIR}/progression/progressionrecognizer.cpp
 
+    # joint/ — THE JOINT KEY/MODE/CHORD ESTIMATOR (the OI-180 sanctioned dual path). The
+    # C++ re-expression of the ratified factorization (cowork_joint_estimator_factorization.md),
+    # built to decode byte-equivalently to the established Python probe (probe_corpus_decode.json).
+    # Reads ONLY the L1/L1.5 published fact surface + the two dependency-free pitch primitives
+    # (normalizePc, diatonicMaskFromFifths) — never the legacy L2/L3/L4/L5 analysis. Frozen tables
+    # and weights are LOADED AT RUNTIME from the committed artifacts under tools/joint_estimator/.
+    # DORMANT: no production consumer — nothing in src/ calls any joint symbol; it is exercised only
+    # by the composing tests and (a later commit) a default-OFF tools/batch_analyze diagnostic flag.
+    # Byte-identical on production by construction. Dispatch: the joint-estimator C++ module build.
+    ${CMAKE_CURRENT_LIST_DIR}/joint/labelclass.h
+    ${CMAKE_CURRENT_LIST_DIR}/joint/labelclass.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/joint/jointtables.h
+    ${CMAKE_CURRENT_LIST_DIR}/joint/jointtables.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/joint/jointweights.h
+    ${CMAKE_CURRENT_LIST_DIR}/joint/jointweights.cpp
+
     # voiceleading/ — AXIS 2 (VOICE LEADING), the dormant FOUNDATION build. The second,
     # orthogonal analysis dimension (cross-ARI(VL, harmonic) = 0.030, findings v2.0): the
     # linear reading of the same L1 notes. VL-A voicelinearview (the lossless per-voice
