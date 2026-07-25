@@ -120,6 +120,10 @@ extern "C" __declspec(dllimport) int __stdcall TerminateProcess(void* hProcess, 
 #include "composing/analysis/engravingbridge/phraseboundaryview.h"  // owned Layer-1.5 phrase-boundary primitive
 #include "composing/analysis/engravingbridge/regiontonecollector.h" // weightedPcView (focal-slice sounding pcs)
 #include "composing/analyzed_section.h"                    // Stage 2.2-i prototype: AnalyzedSection
+#include "composing/analysis/joint/jointdecoder.h"          // joint estimator (OI-180 dual path): --joint-decode-corpus
+#include "composing/analysis/joint/jointweights.h"          // the identity + selected weight vectors
+#include "global/serialization/json.h"                      // --joint-decode-corpus: parse the decode-parity reference
+#include "global/types/bytearray.h"
 #include "notation/internal/notationanalysisinternal.h"
 #include "notation/internal/notationcomposingbridge.h"
 
@@ -1964,6 +1968,14 @@ static void printHelp(const std::string& prog)
         << "            any analysis runs (the analysis pipeline is never invoked, so its\n"
         << "            output is unchanged). Exit 0 if all invariants held, 2 if any\n"
         << "            failed. Default OFF.\n"
+        << "  --joint-decode-corpus <artifact-dir>\n"
+        << "            (OI-180 dual-path diagnostic) Run the DORMANT joint estimator\n"
+        << "            (src/composing/analysis/joint) over the committed note events under\n"
+        << "            <artifact-dir> at both weight arms and check its decode against the\n"
+        << "            Python probe reference (decode_parity_ref.json): segments exactly,\n"
+        << "            total score to 1e-6. Writes <artifact-dir>/joint_decode_parity.json.\n"
+        << "            Self-driving (needs no input score) and RETURNS before any analysis,\n"
+        << "            so production output is unchanged. Default OFF.\n"
         << "  --decode-keymode\n"
         << "            (Layer-3 diagnostic) Build the layer-1 note model, run the REAL\n"
         << "            layer-2 slicer, run the isolated layer-3 key/mode SEQUENCE decoder\n"
@@ -3860,6 +3872,148 @@ static std::string runJointProbe(
 
 } // namespace
 
+// ── --joint-decode-corpus (default OFF; OI-180 dual-path driver) ────────────────────────────────
+// Runs the DORMANT joint estimator (src/composing/analysis/joint) over the committed note events at
+// BOTH weight arms (identity + the direct-metric selected vector, both read from the reference), and
+// checks its decode against the full-precision Python probe reference (decode_parity_ref.json): the
+// segment state sequence + boundaries EXACTLY, the total score to 1e-6 relative. Emits a parity
+// artifact. It never touches the passed score, the preset, or analyzeScore — production output is
+// byte-identical (this returns before any of that). This is the Task-3 measurement hook the later
+// OI-178 adoption will use; it consumes the ESTABLISHED note-event extraction (the fact-layer path,
+// score -> facts, is a separate build step). Reads ONLY the committed tools/joint_estimator artifacts.
+static int runJointDecodeCorpus(const std::string& artifactDir)
+{
+    namespace joint = mu::composing::analysis::joint;
+    using muse::ByteArray;
+    using muse::JsonArray;
+    using muse::JsonDocument;
+    using muse::JsonObject;
+    using muse::JsonValue;
+
+    auto readJson = [](const std::string& path, JsonObject& out) -> std::string {
+        std::ifstream f(path, std::ios::binary);
+        if (!f) {
+            return "cannot open " + path;
+        }
+        const std::string s((std::istreambuf_iterator<char>(f)), std::istreambuf_iterator<char>());
+        std::string err;
+        const ByteArray ba(s.data(), s.size());
+        out = JsonDocument::fromJson(ba, &err).rootObject();
+        return err.empty() ? std::string() : ("parse error in " + path + ": " + err);
+    };
+
+    joint::LoadedCorpus corpus = joint::loadPiecesFromNoteEvents(artifactDir + "/note_events/note_events.json");
+    if (!corpus.ok) {
+        std::cerr << "joint: " << corpus.error << "\n";
+        return 1;
+    }
+    JsonObject ref;
+    std::string err = readJson(artifactDir + "/decode_parity_ref.json", ref);
+    if (!err.empty()) {
+        std::cerr << "joint: " << err << "\n";
+        return 1;
+    }
+    joint::JointTables tables = joint::JointTables::load(artifactDir, "all");
+    if (!tables.loaded) {
+        std::cerr << "joint: " << tables.error << "\n";
+        return 1;
+    }
+    joint::Vocabulary vocab(tables);
+    joint::ChordCache cache;   // weight-independent (keyed by tonic/mode/class) — shared across arms
+
+    joint::WeightVector selected;
+    const JsonObject selObj = ref.value("selected_weights").toObject();
+    for (const std::string& n : joint::kWeightNames) {
+        selected.w[n] = selObj.value(n).toDouble();
+    }
+
+    std::ostringstream art;
+    art << "{\n \"provenance\": {\"tool\": \"tools/batch_analyze.cpp --joint-decode-corpus\", "
+        << "\"tables_git_hash\": \"" << tables.corpusGitHash << "\"},\n \"arms\": {\n";
+
+    bool overallPass = true;
+    const std::vector<std::pair<std::string, joint::WeightVector> > arms = {
+        { "identity", joint::identityWeights() }, { "selected", selected }
+    };
+    for (size_t ai = 0; ai < arms.size(); ++ai) {
+        const std::string& armName = arms[ai].first;
+        joint::FittedAdapter adapter = joint::FittedAdapter::load(artifactDir, "all", arms[ai].second);
+        if (!adapter.loaded()) {
+            std::cerr << "joint: " << adapter.error() << "\n";
+            return 1;
+        }
+        const JsonObject expected = ref.value(armName).toObject();
+        int pieces = 0, segExact = 0, scoreWithin = 0;
+        double maxRel = 0.0, maxSecs = 0.0, totSecs = 0.0;
+        std::vector<std::string> divergent;
+        const auto tArm0 = std::chrono::steady_clock::now();
+        for (auto& kv : corpus.pieces) {
+            const std::string& stem = kv.first;
+            if (!expected.contains(stem)) {
+                continue;
+            }
+            const JsonObject exp = expected.value(stem).toObject();
+            const JsonValue sv = exp.value("sig_fifths");
+            const std::optional<int> sig = sv.isNumber() ? std::optional<int>(sv.toInt()) : std::nullopt;
+            const std::string dm = exp.value("declared_mode").toStdString();
+            const auto tp0 = std::chrono::steady_clock::now();
+            const joint::DecodeResult r = joint::decodePiece(kv.second, adapter, vocab, cache, 4, sig, dm);
+            const double secs = std::chrono::duration<double>(std::chrono::steady_clock::now() - tp0).count();
+            totSecs += secs;
+            maxSecs = std::max(maxSecs, secs);
+            ++pieces;
+
+            const JsonArray es = exp.value("segments").toArray();
+            bool segOk = (r.segments.size() == es.size());
+            for (size_t s = 0; segOk && s < es.size(); ++s) {
+                const JsonArray e = es.at(s).toArray();
+                const joint::SegmentSummary& g = r.segments[s];
+                const JsonValue rootV = e.at(5);
+                const bool rootOk = rootV.isNull() ? !g.rootPc.has_value()
+                                    : (g.rootPc.has_value() && *g.rootPc == rootV.toInt());
+                if (g.i != e.at(0).toInt() || g.j != e.at(1).toInt() || g.tonicPc != e.at(2).toInt()
+                    || g.isMajor != e.at(3).toBool() || g.classKey != e.at(4).toStdString() || !rootOk) {
+                    segOk = false;
+                }
+            }
+            if (segOk) {
+                ++segExact;
+            }
+            const double expScore = exp.value("total_score").toDouble();
+            const double rel = std::abs(r.totalScore - expScore) / std::max(1.0, std::abs(expScore));
+            maxRel = std::max(maxRel, rel);
+            if (rel <= 1e-6) {
+                ++scoreWithin;
+            }
+            if (!segOk || rel > 1e-6) {
+                divergent.push_back(stem);
+            }
+        }
+        const double armSecs = std::chrono::duration<double>(std::chrono::steady_clock::now() - tArm0).count();
+        const bool armPass = (segExact == pieces) && (scoreWithin == pieces);
+        overallPass = overallPass && armPass;
+        std::cout << "joint-decode-parity [" << armName << "]: " << pieces << " pieces, "
+                  << segExact << " segment-exact, " << scoreWithin << " score-within-1e-6, max_rel_score="
+                  << maxRel << ", decode mean " << (pieces ? totSecs / pieces : 0.0) << "s / max " << maxSecs
+                  << "s, wall " << armSecs << "s -> " << (armPass ? "PASS" : "FAIL") << "\n";
+        art << "  \"" << armName << "\": {\"pieces\": " << pieces << ", \"segment_exact\": " << segExact
+            << ", \"score_within_1e6\": " << scoreWithin << ", \"max_rel_score\": " << maxRel
+            << ", \"decode_mean_s\": " << (pieces ? totSecs / pieces : 0.0) << ", \"decode_max_s\": " << maxSecs
+            << ", \"pass\": " << (armPass ? "true" : "false") << ", \"divergent\": [";
+        for (size_t d = 0; d < divergent.size(); ++d) {
+            art << (d ? ", " : "") << "\"" << divergent[d] << "\"";
+        }
+        art << "]}" << (ai + 1 < arms.size() ? "," : "") << "\n";
+    }
+    art << " },\n \"overall_pass\": " << (overallPass ? "true" : "false") << "\n}\n";
+    const std::string outPath = artifactDir + "/joint_decode_parity.json";
+    std::ofstream ofs(outPath, std::ios::binary);
+    ofs << art.str();
+    std::cout << "joint-decode-parity: overall " << (overallPass ? "PASS" : "FAIL")
+              << "; artifact -> " << outPath << "\n";
+    return overallPass ? 0 : 1;
+}
+
 int main(int argc, char* argv[])
 {
     QCoreApplication::setOrganizationName("MuseScore");
@@ -3940,6 +4094,10 @@ int main(int argc, char* argv[])
     // scoring-constant values by name BEFORE analysis runs. Applied after chordPrefs is
     // built (below), so a prefs-field override lands on the preset-configured value.
     std::optional<std::string> paramOverridePath;
+    // --joint-decode-corpus <dir>: the OI-180 dual-path decode-parity driver (default OFF). Runs the
+    // dormant joint module over the committed note events and checks it against the Python probe
+    // reference; returns before any score/preset/analysis is touched (production byte-identical).
+    std::string jointDecodeCorpusDir;
 
     for (int i = 1; i < args.size(); ++i) {
         const QString a = args.at(i);
@@ -3955,6 +4113,13 @@ int main(int argc, char* argv[])
                 paramOverridePath = args.at(++i).toUtf8().toStdString();
             } else {
                 std::cerr << "ERROR: --param-override requires a file argument\n";
+                return 1;
+            }
+        } else if (a == "--joint-decode-corpus") {
+            if (i + 1 < args.size()) {
+                jointDecodeCorpusDir = args.at(++i).toUtf8().toStdString();
+            } else {
+                std::cerr << "ERROR: --joint-decode-corpus requires an artifact-dir argument\n";
                 return 1;
             }
         } else if (a == "--dump-regions") {
@@ -4168,6 +4333,14 @@ int main(int argc, char* argv[])
         } else if (outputPath.empty()) {
             outputPath = a;
         }
+    }
+
+    // ── --joint-decode-corpus (OI-180 dual-path driver; default OFF) ────────
+    // Self-driving: consumes only the committed tools/joint_estimator artifacts, needs no input
+    // score, and returns before any production analysis path — so the standard corpus stays
+    // byte-identical whether or not this flag is present.
+    if (!jointDecodeCorpusDir.empty()) {
+        return runJointDecodeCorpus(jointDecodeCorpusDir);
     }
 
     if (inputPath.empty()) {
