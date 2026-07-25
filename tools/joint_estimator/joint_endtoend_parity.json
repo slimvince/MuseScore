@@ -1,0 +1,10 @@
+{
+ "provenance": {"tool": "tools/batch_analyze.cpp --joint-decode-from-adapter", "tables_git_hash": "57ed94a6a46571172a351c09ba4f5cb92930674a", "reader": "composing/analysis/joint/jointfactadapter (decodes from the OWN adapter Piece, NOT note_events.json)", "oracle": "decode_parity_ref.json (§5)", "reproducibility_coupling": "decode bit-identity to the §5 oracle rests on CPython 3.12+ sum() staying Neumaier-compensated (mirrored by jointprimitives.neumaierSum); a future Python sum() change would surface as a parity break"},
+ "sig_parity": {"mismatch": 0, "declared_mode_mismatch": 0, "mismatch_stems": []},
+ "load_fail": [],
+ "arms": {
+  "identity": {"pieces": 326, "segment_exact": 320, "pass": false, "divergent": ["bwv113.8", "bwv274", "bwv276", "bwv304", "bwv384", "bwv411"]},
+  "selected": {"pieces": 326, "segment_exact": 316, "pass": false, "divergent": ["bwv113.8", "bwv261", "bwv274", "bwv276", "bwv284", "bwv380", "bwv383", "bwv384", "bwv4.8", "bwv48.3"]}
+ },
+ "overall_pass": false
+}
