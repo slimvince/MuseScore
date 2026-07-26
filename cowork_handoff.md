@@ -143,6 +143,24 @@ committed probe artifact's runner-up/gap slice); Task 3 the C++ slice on the mod
 (additive, bit-identical parity vs the reference on all 326, corpus render UNCHANGED, byte-
 identity everywhere). After it: the record assembly dispatch (derived chord facts + spelling
 establishment + modal-reading counter + §2 provenance block), then the seams, then the switch.
+
+**★ TASK 1 (OI-195) DELIVERED AND COWORK-VERIFIED (`4565830c82` — the new embedded digest
+matches the blob hash Cowork computed independently at the D1 verification; row flipped; note:
+the row cites "this Task-1 commit" because a commit cannot embed its own hash — the hash
+4565830c82 is added at the next commit's row touch). TASKS 2–3 STOPPED BY CC — CORRECTLY (#13):
+Cowork's dispatch named `probe_corpus_decode.json` as the Task-2 establishment oracle, but that
+artifact is the IDENTITY-weight, pre-§5 slice while the deliverable is at SELECTED weights —
+the arms differ in segmentation on 287/326 pieces, so segment-for-segment reproduction is
+unsatisfiable. A Cowork spec error, owned; CC verified the incompatibility at the objects and
+did not build around it. THE RULING (pending user): the two-half establishment — (a) mechanism:
+the new generator run at IDENTITY weights on the §5-current decoder must reproduce the committed
+probe artifact's runner-up/gap slice on the §5-UNAFFECTED pieces, with the ~6 §5-canonicalized
+pieces enumerated and individually explained as the ratified tie-break (the explained-diff
+pattern, not a tolerance); (b) decode: the generator's SELECTED-weights committed segments must
+equal `decode_parity_ref.json`'s selected arm exactly. Both halves check against frozen
+committed objects; the selected-weights slice artifact then becomes the C++ parity oracle
+(validating the REAL production surface, #15). The dispatch file gets a dated amendment on the
+ruling.**
 **THEN the agenda is the retirement map + refinements, each its own later dispatch, in no forced
 order but all on the register:** the legacy retirements (the map's six items on the gates doc);
 the presentation-layer publications that are PART of the ratified record and must not drop (the
