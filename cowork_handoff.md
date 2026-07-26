@@ -77,6 +77,52 @@ corollary + the riding Cowork edits), then the READ-ONLY notation consumption-su
 declared source on A's surface or declared retirement; the exotic-`KeySigMode` consumer list; the
 OI-182 constants' fate; tree-wide scope check per the OI-175 lesson). After its ratified report:
 the contract drafting, then the build dispatches under the OI-180 sanction pattern (§8.2–8.4).
+
+**★ THE AUDIT IS DELIVERED, COWORK-VERIFIED AT THE OBJECTS, AND ITS ONE DECISION IS RULED
+(2026-07-26, same day).** Commits `00c0df81c5` (Task-0 ratification record — the
+decision-neutrality corollary is IN CLAUDE.md :106) + `21422ee77d` (audit artifacts), both
+verified by `git show --stat` + fresh reads; report read in full. 75 consumed-field rows:
+56 A-SOURCED / 13 DERIVABLE / 4 RETIRE-CANDIDATE / 2 UNRESOLVED; the scope check found a SECOND
+notation entry point (`analyzeNoteHarmonicContext[Details]` — two out-of-roster consumers,
+`notationinteraction.cpp:8311`, `notationcontextmenumodel.cpp:194`), the function-labeling layer
+DORMANT, accessibility string-only — all recorded in the decision doc §10. **The pedal-point
+ruling: P1 with the user's voice-independence sharpening** — the structural pedal (NOT the piano
+sustain-pedal marking) becomes an OI-194 ornament class defined voice-independently (bass /
+internal / inverted), superseding the legacy bass-only fact; the OI-194 row and decision-doc §10
+carry it (Cowork edits on disk, riding the next commit). **NEXT ACTION: Cowork drafts the
+output-surface contract** (the A-native record: both seams, every audited field's mapping, the
+B-full posterior fields, the modal-reading form, the confidence-mapping for the OI-182 cluster,
+the two §10 drafting items) — then the build dispatches under the OI-180 sanction (§8.2–8.4).
+
+**★ THE CONTRACT IS DRAFTED, PENDING THE USER'S RATIFICATION —
+`cowork_notation_output_contract.md` (Cowork, 2026-07-26).** The A-native record: the two seams
+(span + note-view, one computation); instrument provenance ON the record (#16 — table hashes +
+weight identity + decoder version, per D1's embedded constants); the committed-reading fields
+with the derived chord facts (incl. the class-native `diatonicToKey` closing OI-173's consumer
+re-derivations on this path); the TWO-GROUP uncertainty surface (the established content-score
+GAP fields from the first switch; the marginal MASS fields added at OI-193's oracle — separate
+named fields, separate semantics, ranking-source stamped, never a silent redefinition); the
+un-rounded modal reading as per-key-run per-degree inflection counts (C1 delivered; no 21-value
+mode anywhere); ornament fields reserved for OI-194 (incl. the voice-independent pedal class);
+the audited-75-row consumer mapping by cluster with the presentation-gate rule (OI-182 cluster:
+gates keep their function, read published mass/gap, values become declared emitter-side
+presentation constants); six establishment conditions (#19) incl. the spelling-derivation and
+modal-counter instruments. **One audit disposition CORRECTED at drafting:** the aug-sixth
+It/Ger/Fr distinction is NOT derivable from A's vocabulary (the family collapsed to Italian
+pitch content, 2 corpus tokens — the 2026-07-19 step-1 record); it derives from the sounding
+pitch classes (L1 facts). After ratification: the build dispatches (record + table codegen
+behind the default-OFF driver first).
+
+**★ THE CONTRACT IS USER-RATIFIED (2026-07-26, as specified, no amendments) AND THE BUILD ARC
+OPENS.** The ACTIVE dispatch is **`cc_instruction_joint_table_codegen.md`** — Task 0 the second
+ratification-record commit (the P1/§10 edits + the ratified contract + the sharpened OI-194 row
++ this handoff block), then Decision D1 executed: the five table artifacts + the selected weight
+vector embedded VERBATIM (JSON bytes + sha256 hashes) as generated source in the joint module,
+loaded through the EXISTING established parsers (#19 carried forward, #6 one parse path); the
+drift guard (embedded-vs-artifact hash equality test); the §2 provenance constants published
+(declared dormancy — consumer: the record build); establishment = full-corpus regen field-exact
++ a8/robust_stop_diff (+0/−0) + both suites + snapshots untouched. After its ratified report:
+the record + posterior-slice build dispatch, then the seams, then the switch (§8.2–8.4).
 **THEN the agenda is the retirement map + refinements, each its own later dispatch, in no forced
 order but all on the register:** the legacy retirements (the map's six items on the gates doc);
 the presentation-layer publications that are PART of the ratified record and must not drop (the

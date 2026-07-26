@@ -478,5 +478,39 @@ ruling.**
 Decisions A2, B-full (slice-first, completion rowed OI-193), C1, D1, and the E split (modal
 reading in-increment; ornament labels rowed OI-194) — all as recommended. The verification plan
 (§8) stands as standing policy. This document is now part of the ratified record; the
-ratification commit rides the first dispatch (`cc_instruction_notation_consumption_audit.md`,
-Task 0).
+ratification commit rode the first dispatch (`cc_instruction_notation_consumption_audit.md`,
+Task 0 — commit `00c0df81c5`).
+
+## 10. The consumption-audit findings and the pedal-point ruling (2026-07-26, same day)
+
+**The §8.1 audit is DELIVERED and Cowork-verified at the objects** (ratification commit
+`00c0df81c5`; artifact commit `21422ee77d`, `tools/audit/notation_surface/`; report
+`cc_notation_consumption_audit_report.md`, untracked). 75 consumed-field rows: 56 A-SOURCED,
+13 DERIVABLE, 4 RETIRE-CANDIDATE, 2 UNRESOLVED. The scope check (the OI-175 lesson) corrected
+this document's §1 three ways, now record: **(a) there is a SECOND notation entry point** —
+the single-note `analyzeNoteHarmonicContext[Details]` surface, consumed by the tuning bridge,
+status bar/accessibility, `notationinteraction.cpp:8311` (writes Harmony elements) and
+`notationcontextmenumodel.cpp:194` (right-click menu) — in the A2 contract's scope (both seams
+read A's record; `ChordAnalysisResult`/`NoteHarmonicContext` retire with the legacy path);
+**(b) the function-labeling layer is DORMANT** (no live surface reads — live section reads are
+`sectionanalyzer.cpp` + `sectioncadencedetection.cpp`); **(c) accessibility consumes only the
+pre-formatted annotation string** (no struct field). The confidence cluster is fed everywhere by
+`normalizedConfidence` (never `keyConfidence`) → maps to the B-full posterior mass/gap; the
+OI-182 constants split confidence-mapping vs C1-retire, with `kSameChordReannotationGap` a
+presentation-timing constant re-homed to the emitter. Two light items carried to contract
+drafting: the aug-sixth It/Ger/Fr distinction resting on A's vocabulary classes; the
+root/bass-spelling derivation from (key, degree) as an instrument to establish at build (#19).
+
+**The pedal-point ruling (the audit's two UNRESOLVED rows): P1, user-ratified 2026-07-26, with
+the user's voice-independence sharpening.** The pedal-point concept — the STRUCTURAL pedal of
+harmony theory (a tone held against changing harmony), not the piano sustain-pedal marking —
+becomes an ornament-label class in OI-194, defined VOICE-INDEPENDENTLY (bass / internal /
+inverted sub-labels), derived post-decode at the presentation layer from published facts. This
+supersedes the legacy bass-only `isPedalPoint`/`pedalBassPc` fact (an unestablished Iter-86/91
+post-pass, the OI-23 constant class), whose bass-narrowing was an implementation limit, not a
+theory scope — the voice-independent class publishes strictly more information (#12) from the
+same facts. P2 (keep the legacy detector alive: #6/#7/#19 failures), P3 (drop: #12 regression),
+P4 (a pedal factor in A's model: forbidden now by #8/#17/#18/#22; lawful only via a measured
+residual and a ledgered factor proposal) — excluded, recorded per the constrained-optimum
+ledger. The "X ped." annotation re-expresses when OI-194 delivers; the interim absence is the
+OI-194 row's declared #23 gap (decision-weightless under corollary (c), bookkept nonetheless).
