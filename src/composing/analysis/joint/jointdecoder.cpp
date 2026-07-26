@@ -43,9 +43,8 @@ const std::string kStartEnc = "\x02START";
 // gen_note_tables._MC_INV / _MV_INV
 const std::array<std::string, 4> kMcName = { "downbeat", "mid_strong", "other_tactus", "sub_tactus" };
 const std::array<std::string, 3> kMvName = { "none", "step", "leap" };
-// probe_decoder._PC_KEYNAME (fewest-accidental spelling for the decode key string)
-const std::array<std::string, 12> kPcKeyName = { "C", "Db", "D", "Eb", "E", "F",
-                                                 "F#", "G", "Ab", "A", "Bb", "B" };
+// (The pc->keyname spelling — probe_decoder._PC_KEYNAME — is the module's single primitive
+// jointprimitives::pcKeyName, used by keyString below and by jointrender's chord symbol; #6.)
 
 int popcount(PcMask m)
 {
@@ -69,7 +68,7 @@ std::string keyEnc(int tonic, bool major)
 
 std::string keyString(int tonic, bool major)
 {
-    return kPcKeyName[normalizePc(tonic)] + (major ? "maj" : "min");
+    return pcKeyName(tonic) + (major ? "maj" : "min");
 }
 
 std::optional<int> eventBassPc(const Piece& p, const std::vector<int>& noteIdx)

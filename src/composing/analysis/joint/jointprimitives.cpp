@@ -167,6 +167,13 @@ int pcToFifths(int pc)
     return f[normalizePc(pc)];
 }
 
+const std::string& pcKeyName(int pc)
+{
+    static const std::array<std::string, 12> kPcKeyName = { "C", "Db", "D", "Eb", "E", "F",
+                                                            "F#", "G", "Ab", "A", "Bb", "B" };
+    return kPcKeyName[normalizePc(pc)];
+}
+
 Framework frameworkAndRoot(const LabelClass& cls, int tonic, bool isMajor)
 {
     Framework f;

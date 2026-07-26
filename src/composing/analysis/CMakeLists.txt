@@ -363,6 +363,12 @@ target_sources(composing_analysis PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/joint/jointtables.cpp
     ${CMAKE_CURRENT_LIST_DIR}/joint/jointweights.h
     ${CMAKE_CURRENT_LIST_DIR}/joint/jointweights.cpp
+    # jointrender — the presentation-derivation primitives (chord-symbol / Roman-numeral / grading
+    # quality strings) single-sourced from the batch render (the notation output-surface contract
+    # §3.2 derived chord facts + §5.6 formatter continuity; #6 one path). Pure functions of a class +
+    # bass role; read by BOTH tools/batch_analyze --joint-inference and the §3.2 notation record.
+    ${CMAKE_CURRENT_LIST_DIR}/joint/jointrender.h
+    ${CMAKE_CURRENT_LIST_DIR}/joint/jointrender.cpp
     # jointembeddedartifacts — GENERATED (tools/joint_estimator/gen_embedded_tables.py, Decision
     # D1): the five committed table artifacts + the SELECTED weight vector embedded VERBATIM as
     # compiled-in bytes, provenance-locked at build time. loadEmbedded() parses these through the

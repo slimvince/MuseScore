@@ -45,7 +45,8 @@
 namespace joint = mu::composing::analysis::joint;
 
 namespace {
-// probe_decoder._PC_KEYNAME / jointdecoder.kPcKeyName (kept in sync; keyString is file-local there).
+// probe_decoder._PC_KEYNAME (an INDEPENDENT test oracle for the key label, not the code-under-test's
+// jointprimitives::pcKeyName — kept deliberately separate so the test checks the derived label).
 const char* const kPcKeyName[12] = { "C", "Db", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B" };
 std::string keyLabel(int tonic, bool major)
 {

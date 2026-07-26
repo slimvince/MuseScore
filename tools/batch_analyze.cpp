@@ -124,6 +124,7 @@ extern "C" __declspec(dllimport) int __stdcall TerminateProcess(void* hProcess, 
 #include "composing/analysis/joint/jointdecoder.h"          // joint estimator (OI-180 dual path): --joint-decode-corpus
 #include "composing/analysis/joint/jointfactadapter.h"      // Task C fact adapter: --joint-adapter-facts / --joint-decode-from-adapter
 #include "composing/analysis/joint/jointweights.h"          // the identity + selected weight vectors
+#include "composing/analysis/joint/jointrender.h"           // §3.2/§5.6 presentation derivations (single-sourced)
 #include "global/serialization/json.h"                      // --joint-decode-corpus: parse the decode-parity reference
 #include "global/types/bytearray.h"
 #include "notation/internal/notationanalysisinternal.h"
@@ -4523,58 +4524,10 @@ static int runJointDecodeFromAdapter(const std::string& artifactDir)
 // and every legacy unit test on it — is byte-identical. Inference is PRESET-INDEPENDENT (the ratified
 // mode decision): the three preset dirs converge at the inference fields by construction.
 
-// canonical fewest-accidental pc spelling (probe_decoder._PC_KEYNAME).
-static const char* const kJointPcKeyName[12] = {
-    "C", "Db", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"
-};
-
-// probe_run._QUAL_STR: joint chord quality -> the .ours.json quality string a8/compare_rn grades.
-static std::string jointOursQuality(const std::string& q)
-{
-    static const std::map<std::string, std::string> kMap = {
-        { "Maj", "Major" }, { "Dom7", "Major" }, { "Maj7", "Major" }, { "Min", "Minor" },
-        { "Min7", "Minor" }, { "MinMaj7", "Minor" }, { "Dim", "Diminished" }, { "Dim7", "Diminished" },
-        { "HalfDim", "HalfDiminished" }, { "HalfDim7", "HalfDiminished" }, { "Aug", "Augmented" },
-        { "Aug7", "Augmented" }, { "AugMaj7", "Augmented" }, { "AugSixth", "Major" },
-        { "Neapolitan", "Major" }
-    };
-    const auto it = kMap.find(q);
-    return it != kMap.end() ? it->second : std::string("Unknown");
-}
-
-// probe_run.render_rn: a When-in-Rome-style Roman numeral from the (inversion-free) class + the
-// derived bass role. `bassRole` is empty when the bass is not a chord factor (Python .get default "").
-static std::string jointRenderRn(const mu::composing::analysis::joint::LabelClass& cls,
-                                 const std::string& bassRole, bool hasSeventh)
-{
-    static const std::set<std::string> kMajorColor = {
-        "Maj", "Dom7", "Maj7", "Aug", "Aug7", "AugMaj7", "AugSixth", "Neapolitan"
-    };
-    const std::string q = cls.quality();
-    std::string d = cls.degreeBase();
-    if (kMajorColor.find(q) == kMajorColor.end()) {
-        for (char& c : d) {
-            c = static_cast<char>(std::tolower(static_cast<unsigned char>(c)));
-        }
-    }
-    std::string sig;
-    if (q == "Dim" || q == "Dim7") {
-        sig = "o";
-    } else if (q == "HalfDim" || q == "HalfDim7") {
-        sig = "\xC3\xB8";                         // U+00F8 LATIN SMALL LETTER O WITH STROKE (ø), UTF-8
-    } else if (q == "Aug" || q == "Aug7" || q == "AugMaj7") {
-        sig = "+";
-    }
-    std::string fig;                             // _FIG_SEVENTH / _FIG_TRIAD; "" when bass role unknown
-    if (hasSeventh) {
-        if (bassRole == "root") { fig = "7"; } else if (bassRole == "third") { fig = "6/5"; } else if (bassRole == "fifth") { fig = "4/3"; } else if (bassRole == "seventh") { fig = "4/2"; }
-    } else {
-        if (bassRole == "third") { fig = "6"; } else if (bassRole == "fifth") { fig = "6/4"; }
-        // "root" -> "" (root-position triad); unknown -> ""
-    }
-    const std::string tgt = cls.target().empty() ? std::string() : ("/" + cls.target());
-    return d + sig + fig + tgt;
-}
+// The chord-symbol / Roman-numeral / grading-quality render primitives (jointPcKeyName,
+// jointOursQuality, jointChordSymbol, jointRenderRn) are single-sourced in the joint module
+// (composing/analysis/joint/jointrender.h) — the notation output-surface contract §3.2/§5.6
+// formatter continuity requires ONE derivation shared by this batch render and the §3.2 record (#6).
 
 // A double formatted for round-trip JSON, with a guaranteed decimal so it parses as a float. The
 // `duration` field MUST round-trip exactly: a8/compare_analyses recovers ticks-per-beat by dividing
@@ -4632,11 +4585,9 @@ static void writeJointInferenceJson(const mu::composing::analysis::joint::Piece&
             if (onsetMask & (1u << b)) { ++noteCount; }
         }
         const int rootPc = info.root.has_value() ? *info.root : -1;
-        const std::string quality = jointOursQuality(cls->quality());
-        const std::string chordSym = info.root.has_value()
-            ? (std::string(kJointPcKeyName[((*info.root) % 12 + 12) % 12]) + cls->quality())
-            : std::string();
-        const std::string rn = jointRenderRn(*cls, bassRole, hasSeventh);
+        const std::string quality = joint::jointOursQuality(cls->quality());
+        const std::string chordSym = joint::jointChordSymbol(info.root, cls->quality());
+        const std::string rn = joint::jointRenderRn(*cls, bassRole, hasSeventh);
         const double durationQ = static_cast<double>(s.endTick - s.startTick) / 480.0;
         const int measureNumber = (s.i >= 0 && s.i < static_cast<int>(piece.events.size()))
             ? piece.events[s.i].measure : 0;

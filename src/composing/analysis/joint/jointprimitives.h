@@ -103,6 +103,11 @@ bool startsWith(const std::string& s, const std::string& prefix);
 // gen_label_tables._PC_TO_FIFTHS: pc -> signed circle-of-fifths position.
 int pcToFifths(int pc);
 
+// probe_decoder._PC_KEYNAME: pc -> canonical fewest-accidental spelling (C, Db, D, ...). The ONE
+// source of this map in the module (#6): consumed by the decoder's key string (jointdecoder.keyString)
+// AND the presentation chord symbol (jointrender.jointChordSymbol). `pc` is normalized to 0..11.
+const std::string& pcKeyName(int pc);
+
 // The pooling sigils (gen_label_tables); guillemets are UTF-8, matching the committed table keys.
 extern const std::string kBase;          // "BASE"
 extern const std::string kPoolInvfree;   // "«invfree» "
