@@ -1,0 +1,258 @@
+{
+  "dispatch": "cc_instruction_notation_consumption_audit.md (READ-ONLY)",
+  "decision_surface": "cowork_notation_adoption_increment.md \u00a78.1 (user-ratified 2026-07-26)",
+  "scope": "READS of the notation harmonic-analysis output surface by live production consumers",
+  "total_field_rows": 75,
+  "disposition_class_counts": {
+    "A-SOURCED": 56,
+    "DERIVABLE": 13,
+    "RETIRE-CANDIDATE": 4,
+    "UNRESOLVED": 2
+  },
+  "role_counts": {
+    "carried": 5,
+    "decision": 66,
+    "diagnostic": 1,
+    "presentation": 3
+  },
+  "rows_per_consumer": {
+    "notationaccessibility.cpp": 1,
+    "notationcomposingbridge.cpp": 24,
+    "notationcontextmenumodel.cpp": 5,
+    "notationimplodebridge.cpp": 14,
+    "notationinteraction.cpp": 2,
+    "notationtuningbridge.cpp": 5,
+    "sectionanalyzer.cpp": 17,
+    "sectioncadencedetection.cpp": 7
+  },
+  "entry_points": [
+    "analyzeHarmonicRhythm",
+    "analyzeNoteHarmonicContext",
+    "analyzeNoteHarmonicContextDetails",
+    "analyzeSection",
+    "harmonicAnnotation"
+  ],
+  "carrier_types": [
+    "(out-param)",
+    "(std::string)",
+    "AnalyzedRegion",
+    "AnalyzedSection",
+    "ChordAnalysisResult",
+    "ChordAnalysisTone",
+    "HarmonicRegion",
+    "KeyArea",
+    "NoteHarmonicContext",
+    "chordResult.function",
+    "chordResult.identity",
+    "chordResults[].identity",
+    "keyModeResult"
+  ],
+  "roster_expected": [
+    "notationcomposingbridge",
+    "notationimplodebridge",
+    "notationtuningbridge",
+    "sectionanalyzer(+downstream function-labeling)",
+    "accessibility"
+  ],
+  "roster_found": {
+    "notationharmonicrhythmbridge.cpp": "SEAM/producer: reads config + plumbs 21 mode priors; returns HarmonicRegion vector (no region field read)",
+    "notationcomposingbridge.cpp(+helpers.cpp)": "main analysis: single-note context + region-emit annotations + status-bar string",
+    "notationimplodebridge.cpp": "chord-track implode: key runs, voicing, chord-symbol/roman/nashville, OI-182 constants, cadence",
+    "notationtuningbridge.cpp": "region + single-note intonation (tuning offsets)",
+    "sectionanalyzer.cpp": "HarmonicRegion->AnalyzedRegion translation + key stabilization + gap-fill + key-area grouping",
+    "sectioncadencedetection.cpp": "detectCadences / detectPivotChords (cadence + pivot staff-text labels)",
+    "notationinteraction.cpp": "OUT-OF-ROSTER (found by sweep): analyzeNoteHarmonicContext -> writes Harmony elements to score",
+    "notationscene/notationcontextmenumodel.cpp": "OUT-OF-ROSTER (found by sweep): analyzeNoteHarmonicContextDetails -> right-click analysis menu",
+    "notationaccessibility.cpp": "STRING consumer only (harmonicAnnotation string); reads no struct field"
+  },
+  "roster_found_beyond_expected": [
+    "notationinteraction.cpp (harmony-writing; via single-note entry analyzeNoteHarmonicContext)",
+    "notationscene/notationcontextmenumodel.cpp (right-click analysis menu; via analyzeNoteHarmonicContextDetails)",
+    "sectioncadencedetection.cpp (part of the section layer; cadence/pivot labels)",
+    "notationcomposingbridgehelpers.cpp (part of the composingbridge)"
+  ],
+  "second_entry_point": "analyzeNoteHarmonicContext / analyzeNoteHarmonicContextDetails (single-note; returns ChordAnalysisResult / NoteHarmonicContext) \u2014 a SECOND surface beyond analyzeHarmonicRhythm, not named in decision-doc \u00a71",
+  "dormant_no_consumer": {
+    "functionresolver.{h,cpp}": "DORMANT (no production consumer): internal L4->L5 FunctionSlice/FunctionalCadence types",
+    "functionprogression.{h,cpp}": "DORMANT: internal ProgressionChord/ProgressionSlice licensing predicates",
+    "functionromannumeral.{h,cpp}": "DORMANT: BaseRomanNumeralInput wrapper -> shared formatRomanNumeral"
+  },
+  "accessibility_is_string_only": "notationaccessibility.cpp reads NO struct field; consumes only the pre-formatted harmonicAnnotation(Note*) string (singleElementAccessibilityInfo :173/:204/:206)",
+  "task2_exotic_mode_sites": [
+    {
+      "site": "notationharmonicrhythmbridge.cpp:92-113",
+      "what": "plumbs all 21 mode priors from IComposingAnalysisConfiguration into keyPrefs.modePrior* (the 19 exotic priors + Ionian/Aeolian)",
+      "disposition": "RETIRE under C1 (two-mode key): the 19 exotic-mode priors go dead; the whole 21-prior stack retires (retirement-map item 2)"
+    },
+    {
+      "site": "icomposinganalysisconfiguration.h:157-252",
+      "what": "21 mode-prior getters/setters/notifications + applyModePriorPreset/currentModePriorPreset",
+      "disposition": "RETIRE under C1 (the interface's 21-prior block); modeNameConfidenceThreshold(:117) retires with the suffix-vs-fallback gate"
+    },
+    {
+      "site": "composingconfiguration.cpp:62-.. (+ MODE_NAME_CONFIDENCE_THRESHOLD:48)",
+      "what": "21 MODE_PRIOR settings keys + impls + MODE_NAME_CONFIDENCE_THRESHOLD",
+      "disposition": "RETIRE under C1 (the persisted settings + registration)"
+    },
+    {
+      "site": "composingpreferencesmodel.{h,cpp} (88 modePrior refs)",
+      "what": "the 21 mode-prior UI-model properties (Q_PROPERTY + getters/setters/signals)",
+      "disposition": "RETIRE under C1 (the preferences-model surface)"
+    },
+    {
+      "site": "preferences/qml/.../ComposingAnalysisSection.qml (105 modePrior refs) + ComposingPreferencesPage.qml",
+      "what": "the 21 mode-prior UI sliders + bindings",
+      "disposition": "RETIRE under C1 (the UI panel exposing the exotic-mode priors)"
+    },
+    {
+      "site": "notationcomposingbridge.cpp:1047-1049",
+      "what": "makeBracketMarker: isMajorLike branch on Ionian/Lydian/Mixolydian -> bracket tonic letter case",
+      "disposition": "C1: two-mode isMajor suffices for the case decision; exotic branch retires"
+    },
+    {
+      "site": "notationcomposingbridge.cpp:1053-1059",
+      "what": "makeBracketMarker: Ionian/Aeolian/HarmonicMinor/MelodicMinor -> bare-colon vs keyModeSuffix marker form",
+      "disposition": "C1: the exotic-mode bracket-suffix forms retire; the modal reading is published beside the two-mode key"
+    },
+    {
+      "site": "notationcomposingbridge.cpp:771, 863",
+      "what": "status-bar + enclosing-area key string via keyModeSuffix(mode) for all 21 modes",
+      "disposition": "C1: two-mode suffix (major/minor) + published un-rounded modal reading replaces the 21-value suffix"
+    },
+    {
+      "site": "notationcomposingbridge.cpp:91 (helper), 1140",
+      "what": "keyModeScaleIntervals(mode) degree lookup \u2014 per-mode scale (branches implicitly on all 21)",
+      "disposition": "A-SOURCED: A's degree state is native scale-degree relative to (tonic, major/minor); the per-mode scale table is not needed"
+    },
+    {
+      "site": "notationimplodebridge.cpp:103-119",
+      "what": "fallbackModeSuffix + keyAnnotationBaseLabel: keyModeIsMajor collapse to Ionian/Aeolian below modeNameConfidenceThreshold, else keyModeSuffix(all 21)",
+      "disposition": "C1: the confidence-gated exotic-vs-broad suffix machinery retires; two-mode label + modal reading"
+    },
+    {
+      "site": "notationimplodebridge.cpp:941-1004, 1233-1269",
+      "what": "relationship arrows, modulation-pivot, borrowed-key search over all KEY_MODE_COUNT modes (Ionian/Aeolian tie-break at :1233-1252)",
+      "disposition": "C1: the exotic-mode relationship/borrowed-key machinery retires; the two-mode key + posterior alternatives replace it"
+    },
+    {
+      "site": "keymodeformatting.cpp:82-134 (keyModeSuffix/keyModeTonicName)",
+      "what": "the 21-mode display-name + suffix tables the notation path routes through",
+      "disposition": "The shared formatter the notation path calls; under C1 the exotic-name tables become unreachable from the notation surface (retire with the 21-value mode)"
+    }
+  ],
+  "task2_site_count": 12,
+  "task3_oi182_constants": [
+    {
+      "const": "kTentativeKeyExposureThreshold = 0.5",
+      "loc": "notationimplodebridge.cpp:79",
+      "fed_by": "keyModeResult.normalizedConfidence (the emission sigmoid)",
+      "controls": "supportsTentativeKeyExposure(:84) -> run.hasTentativeExposure -> finishRun emission gate (:205, discards key run if untrue); keyExposureBucket lower bound",
+      "disposition": "confidence-mapping: replace with the B-full posterior key-marginal mass/gap threshold (contract's confidence-mapping ruling)"
+    },
+    {
+      "const": "kAssertiveKeyExposureThreshold = 0.8",
+      "loc": "notationimplodebridge.cpp:80",
+      "fed_by": "keyModeResult.normalizedConfidence",
+      "controls": "keyExposureBucket(:92) bucket 1<->2 boundary -> sameUserFacingInference region coalescing (:307-308). (Actual KeySig exposure uses AnalyzedRegion.hasAssertiveExposure, set by analyzeSection at the same 0.8 on normalizedConfidence.)",
+      "disposition": "confidence-mapping: replace with posterior key-marginal mass threshold; shares its fate with hasAssertiveExposure"
+    },
+    {
+      "const": "keyExposureBucket(confidence)->{0,1,2}",
+      "loc": "notationimplodebridge.cpp:87-96",
+      "fed_by": "keyModeResult.normalizedConfidence (:307-308)",
+      "controls": "sameUserFacingInference region-coalescing equality -> chord-track segmentation (merge loop :665-677)",
+      "disposition": "confidence-mapping: the bucketed confidence-equality re-expresses as a posterior-mass band; retires with normalizedConfidence"
+    },
+    {
+      "const": "kSameChordReannotationGap = 2*480 = 960 ticks",
+      "loc": "notationimplodebridge.cpp:661",
+      "fed_by": "gapFromLastAnnotation = r.startTick - merged.back().startTick (:666) + sameUserFacingInference (:665)",
+      "controls": "merge condition (:667): consecutive same-chord sub-regions merge (<960) vs separate re-annotations (>=960) -> chord-track segmentation",
+      "disposition": "presentation-timing constant (not a confidence value); survives the switch as an emitter-side option over A's segment stream (re-home to the notation emitter, not the inference layer)"
+    },
+    {
+      "const": "fallbackModeSuffix()",
+      "loc": "notationimplodebridge.cpp:103-108",
+      "fed_by": "KeySigMode mode (via keyModeIsMajor) + modeNameConfidenceThreshold=0.35 gate (:115-117)",
+      "controls": "under low confidence, collapse the exotic mode suffix to plain major/minor (Ionian/Aeolian)",
+      "disposition": "RETIRE under C1: the two-mode label is the default; the un-rounded modal reading is published beside it (no rounded exotic label to fall back from)"
+    },
+    {
+      "const": "modeNameConfidenceThreshold = 0.35 (Gate L)",
+      "loc": "icomposinganalysisconfiguration.h:117; composingconfiguration.cpp:48",
+      "fed_by": "keyModeResult.normalizedConfidence",
+      "controls": "picks the true per-mode suffix vs fallbackModeSuffix in keyAnnotationBaseLabel (:115-117)",
+      "disposition": "RETIRE under C1 (no exotic suffix to gate); its confidence role folds into the posterior-mass mapping"
+    },
+    {
+      "const": "kAnnotateKeyConfidenceThreshold = 0.8",
+      "loc": "sectionanalyzer.h:91 (hasAssertiveKeyConfidence, key-area open at :760)",
+      "fed_by": "keyModeResult.normalizedConfidence",
+      "controls": "cadence/pivot gate (sectioncadencedetection.cpp:56) + key-area opening (sectionanalyzer.cpp:760) + AnalyzedRegion.hasAssertiveExposure",
+      "disposition": "confidence-mapping: the 0.8 assertive bar maps to a posterior key-marginal mass threshold (B-full)"
+    }
+  ],
+  "task4_in_memory_only_fields": {
+    "keyAlternatives": {
+      "definition": "harmonicrhythm.h:118",
+      "population": "regionanalyzer.cpp:279,552,1043,1062",
+      "readers_found": [
+        "regionanalysis_tests.cpp:510,518-525 (TEST ONLY)"
+      ],
+      "production_consumer": false,
+      "note": "No production consumer; a composing-layer regression test is the only reader. Not carried into AnalyzedRegion at all. Confirmed at code \u2014 unchanged vs decision-doc \u00a71."
+    },
+    "fanout": {
+      "definition": "harmonicrhythm.h:130",
+      "population": "regionanalyzer.cpp:1066,1262,1454 (computeRawFanoutSummary)",
+      "readers_found": [
+        "tools/batch_analyze.cpp:699,1419-1422 (--dump-fanout diagnostic, batch surface, read-only)"
+      ],
+      "production_consumer": false,
+      "note": "No reader anywhere in src/; only the batch --dump-fanout diagnostic (tools/) reads it. Not on the notation path. Confirmed at code \u2014 unchanged vs decision-doc \u00a71."
+    }
+  },
+  "unresolved_findings": [
+    {
+      "consumer": "notationcomposingbridge.cpp",
+      "field": "chordResult.identity.isPedalPoint",
+      "sites": "1202",
+      "fact": "gate: emit 'X ped.' pedal-point StaffText annotation",
+      "why": "A DecodeResult/SegmentSummary carries no pedal-point concept -> user (decision-doc \u00a73)"
+    },
+    {
+      "consumer": "notationcomposingbridge.cpp",
+      "field": "chordResult.identity.pedalBassPc",
+      "sites": "1203, 1206-1207",
+      "fact": "pedal bass note for the 'X ped.' annotation",
+      "why": "A carries no pedal-bass concept -> user (decision-doc \u00a73)"
+    }
+  ],
+  "unresolved_count": 2,
+  "retire_candidates": [
+    {
+      "consumer": "sectionanalyzer.cpp",
+      "field": "HarmonicRegion.hasAnalyzedChord",
+      "sites": "215",
+      "note": "no live reader; A always decodes a segment"
+    },
+    {
+      "consumer": "sectionanalyzer.cpp",
+      "field": "HarmonicRegion.temporalExtensions",
+      "sites": "218",
+      "note": "no live reader on any consumer; decode-time-internal"
+    },
+    {
+      "consumer": "notationcomposingbridge.cpp",
+      "field": "AnalyzedRegion.temporalExtensions",
+      "sites": "281",
+      "note": "no live reader downstream"
+    },
+    {
+      "consumer": "notationcomposingbridge.cpp",
+      "field": "keyModeResult.score",
+      "sites": "helpers.cpp:194",
+      "note": "dead path; no live reader"
+    }
+  ]
+}
