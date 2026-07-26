@@ -349,6 +349,13 @@ def main():
                              "Pass a Windows-form path (e.g. C:/tmp/x.txt); MSYS path "
                              "conversion is off. Byte-identical to the un-passed run when the "
                              "file sets every constant to its current value. Default off.")
+    parser.add_argument("--joint-inference", metavar="DIR",
+                        help="OI-178 ADOPTION (user-ratified 2026-07-26): pass --joint-inference DIR "
+                             "to batch_analyze so each .ours.json is produced by the joint estimator's "
+                             "decode (tables + selected weights read from DIR, e.g. "
+                             "C:/s/MS/tools/joint_estimator) instead of the legacy analyzeScore "
+                             "pipeline. INTENTIONAL behavior change; not byte-identical. Pass a "
+                             "Windows-form path (MSYS path conversion is off). Default off.")
     parser.add_argument("--diag-out", metavar="FILE",
                         help="Append batch_analyze stderr to this file (for diagnostics)")
     args = parser.parse_args()
@@ -426,6 +433,8 @@ def main():
         extra_flags.append("--joint-key-wiring")
     if args.param_override:
         extra_flags.append(f"--param-override {args.param_override}")
+    if args.joint_inference:
+        extra_flags.append(f"--joint-inference {args.joint_inference}")
     extra_args = " ".join(extra_flags)
     work_items = [
         (idx, exe, xml_path,

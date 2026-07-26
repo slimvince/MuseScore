@@ -20,6 +20,7 @@
 #include <chrono>
 #include <cstdint>
 #include <cstdio>
+#include <cctype>
 #include <optional>
 #include <cstdlib>
 #include <fstream>
@@ -1989,6 +1990,13 @@ static void printHelp(const std::string& prog)
         << "            adapter's OWN Piece (not note_events.json) at both weight arms and\n"
         << "            check segment-exactly vs decode_parity_ref.json (the END-TO-END parity).\n"
         << "            Writes <artifact-dir>/joint_endtoend_parity.json. Default OFF.\n"
+        << "  --joint-inference <artifact-dir>\n"
+        << "            (OI-178 ADOPTION, user-ratified 2026-07-26) Produce the standard\n"
+        << "            .ours.json for the input score from the joint estimator's decode\n"
+        << "            (tables + selected weights read from <artifact-dir>, e.g.\n"
+        << "            tools/joint_estimator) INSTEAD of the legacy analyzeScore pipeline.\n"
+        << "            INTENTIONAL behavior change; batch/corpus surface only (notation\n"
+        << "            stays legacy). Default OFF (default output byte-identical).\n"
         << "  --decode-keymode\n"
         << "            (Layer-3 diagnostic) Build the layer-1 note model, run the REAL\n"
         << "            layer-2 slicer, run the isolated layer-3 key/mode SEQUENCE decoder\n"
@@ -4321,6 +4329,235 @@ static int runJointDecodeFromAdapter(const std::string& artifactDir)
     return overallPass ? 0 : 1;
 }
 
+// ── --joint-inference: THE OI-178 ADOPTION WIRING (user-ratified 2026-07-26, option 1) ─────────────
+// The joint estimator is the PRODUCTION inference layer on the batch/corpus surface. When set, the
+// standard .ours.json for one score is produced by the joint module's decode (fact adapter -> §5
+// decoder at the committed all-326 tables + the direct-metric SELECTED weight vector), NOT by the
+// legacy analyzeScore pipeline. The render below is the C++ counterpart of probe_run.decode_to_regions
+// + adoption_measure.region_to_dict — the exact rendering the ratified adoption record (root 77.03,
+// RN 64.12, key-local 78.42) was measured through, so a8 over the regenerated corpus reproduces it.
+// STAGED SCOPE (the re-scoped dispatch): the in-app NOTATION layer stays on the legacy analysis (its
+// tables-packaging + richer output-surface contract are the named successor increment); this flag
+// touches only the batch/corpus output. The flag is default-OFF, so batch_analyze's default output —
+// and every legacy unit test on it — is byte-identical. Inference is PRESET-INDEPENDENT (the ratified
+// mode decision): the three preset dirs converge at the inference fields by construction.
+
+// canonical fewest-accidental pc spelling (probe_decoder._PC_KEYNAME).
+static const char* const kJointPcKeyName[12] = {
+    "C", "Db", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"
+};
+
+// probe_run._QUAL_STR: joint chord quality -> the .ours.json quality string a8/compare_rn grades.
+static std::string jointOursQuality(const std::string& q)
+{
+    static const std::map<std::string, std::string> kMap = {
+        { "Maj", "Major" }, { "Dom7", "Major" }, { "Maj7", "Major" }, { "Min", "Minor" },
+        { "Min7", "Minor" }, { "MinMaj7", "Minor" }, { "Dim", "Diminished" }, { "Dim7", "Diminished" },
+        { "HalfDim", "HalfDiminished" }, { "HalfDim7", "HalfDiminished" }, { "Aug", "Augmented" },
+        { "Aug7", "Augmented" }, { "AugMaj7", "Augmented" }, { "AugSixth", "Major" },
+        { "Neapolitan", "Major" }
+    };
+    const auto it = kMap.find(q);
+    return it != kMap.end() ? it->second : std::string("Unknown");
+}
+
+// probe_run.render_rn: a When-in-Rome-style Roman numeral from the (inversion-free) class + the
+// derived bass role. `bassRole` is empty when the bass is not a chord factor (Python .get default "").
+static std::string jointRenderRn(const mu::composing::analysis::joint::LabelClass& cls,
+                                 const std::string& bassRole, bool hasSeventh)
+{
+    static const std::set<std::string> kMajorColor = {
+        "Maj", "Dom7", "Maj7", "Aug", "Aug7", "AugMaj7", "AugSixth", "Neapolitan"
+    };
+    const std::string q = cls.quality();
+    std::string d = cls.degreeBase();
+    if (kMajorColor.find(q) == kMajorColor.end()) {
+        for (char& c : d) {
+            c = static_cast<char>(std::tolower(static_cast<unsigned char>(c)));
+        }
+    }
+    std::string sig;
+    if (q == "Dim" || q == "Dim7") {
+        sig = "o";
+    } else if (q == "HalfDim" || q == "HalfDim7") {
+        sig = "\xC3\xB8";                         // U+00F8 LATIN SMALL LETTER O WITH STROKE (ø), UTF-8
+    } else if (q == "Aug" || q == "Aug7" || q == "AugMaj7") {
+        sig = "+";
+    }
+    std::string fig;                             // _FIG_SEVENTH / _FIG_TRIAD; "" when bass role unknown
+    if (hasSeventh) {
+        if (bassRole == "root") { fig = "7"; } else if (bassRole == "third") { fig = "6/5"; } else if (bassRole == "fifth") { fig = "4/3"; } else if (bassRole == "seventh") { fig = "4/2"; }
+    } else {
+        if (bassRole == "third") { fig = "6"; } else if (bassRole == "fifth") { fig = "6/4"; }
+        // "root" -> "" (root-position triad); unknown -> ""
+    }
+    const std::string tgt = cls.target().empty() ? std::string() : ("/" + cls.target());
+    return d + sig + fig + tgt;
+}
+
+// A double formatted for round-trip JSON, with a guaranteed decimal so it parses as a float. The
+// `duration` field MUST round-trip exactly: a8/compare_analyses recovers ticks-per-beat by dividing
+// (end-start ticks)/duration to anchor the ground-truth onsets.
+static std::string jointFmtDouble(double v)
+{
+    char buf[64];
+    std::snprintf(buf, sizeof(buf), "%.17g", v);
+    std::string s(buf);
+    if (s.find_first_of(".eEnN") == std::string::npos) {
+        s += ".0";
+    }
+    return s;
+}
+
+// Render one DecodeResult to the .ours.json region schema compare_analyses._load_region reads —
+// byte-for-grading-identical to probe_run.decode_to_regions + adoption_measure.region_to_dict.
+static void writeJointInferenceJson(const mu::composing::analysis::joint::Piece& piece,
+                                    const mu::composing::analysis::joint::DecodeResult& r,
+                                    mu::composing::analysis::joint::Vocabulary& vocab,
+                                    mu::composing::analysis::joint::ChordCache& cache,
+                                    const std::string& sourceName, const std::string& presetName,
+                                    std::ostream& out)
+{
+    namespace joint = mu::composing::analysis::joint;
+    out << "{\n";
+    out << "  \"source\": \"" << jsonEscape(sourceName) << "\",\n";
+    out << "  \"preset\": \"" << jsonEscape(presetName) << "\",\n";
+    out << "  \"analysisPath\": \"joint\",\n";
+    out << "  \"regions\": [";
+    bool first = true;
+    for (const joint::SegmentSummary& s : r.segments) {
+        const joint::LabelClass* cls = vocab.find(s.classKey);
+        if (!cls) {
+            continue;                            // a decoded class is always in the vocabulary
+        }
+        const joint::ChordInfo& info = cache.get(*cls, s.tonicPc, s.isMajor);
+        const bool hasSeventh = info.fac.has_value() && info.fac->size() == 4;
+        // bass role: the factor role of the FIRST event's bass pc, if it is a chord factor
+        std::string bassRole;
+        const std::optional<int> bass = (s.i >= 0 && s.i < static_cast<int>(piece.evBass.size()))
+            ? piece.evBass[s.i] : std::nullopt;
+        if (bass.has_value() && info.fac.has_value()) {
+            for (const joint::ChordFactor& f : *info.fac) {
+                if (f.pc == *bass) { bassRole = f.role; break; }
+            }
+        }
+        // onset pcs = union over events [i, j)
+        uint32_t onsetMask = 0;
+        for (int e = s.i; e < s.j && e < static_cast<int>(piece.evOnsetPcs.size()); ++e) {
+            onsetMask |= static_cast<uint32_t>(piece.evOnsetPcs[e]);
+        }
+        int noteCount = 0;
+        for (int b = 0; b < 12; ++b) {
+            if (onsetMask & (1u << b)) { ++noteCount; }
+        }
+        const int rootPc = info.root.has_value() ? *info.root : -1;
+        const std::string quality = jointOursQuality(cls->quality());
+        const std::string chordSym = info.root.has_value()
+            ? (std::string(kJointPcKeyName[((*info.root) % 12 + 12) % 12]) + cls->quality())
+            : std::string();
+        const std::string rn = jointRenderRn(*cls, bassRole, hasSeventh);
+        const double durationQ = static_cast<double>(s.endTick - s.startTick) / 480.0;
+        const int measureNumber = (s.i >= 0 && s.i < static_cast<int>(piece.events.size()))
+            ? piece.events[s.i].measure : 0;
+        const double beat = (s.i >= 0 && s.i < static_cast<int>(piece.events.size()))
+            ? piece.events[s.i].beat : 1.0;
+
+        out << (first ? "\n" : ",\n");
+        first = false;
+        out << "    {";
+        out << "\"measureNumber\": " << measureNumber;
+        out << ", \"beat\": " << jointFmtDouble(beat);
+        out << ", \"startTick\": " << s.startTick;
+        out << ", \"endTick\": " << s.endTick;
+        out << ", \"duration\": " << jointFmtDouble(durationQ);
+        out << ", \"rootPitchClass\": " << rootPc;
+        out << ", \"quality\": \"" << jsonEscape(quality) << "\"";
+        out << ", \"chordSymbol\": \"" << jsonEscape(chordSym) << "\"";
+        out << ", \"romanNumeral\": \"" << jsonEscape(rn) << "\"";
+        out << ", \"key\": \"" << jsonEscape(s.key) << "\"";
+        out << ", \"keyConfidence\": 1.0";
+        out << ", \"diatonicToKey\": null";
+        out << ", \"alternatives\": []";
+        if (bass.has_value()) {
+            out << ", \"bassPitchClass\": " << *bass;
+        } else {
+            out << ", \"bassPitchClass\": null";
+        }
+        out << ", \"bassIsRoot\": " << (bassRole == "root" ? "true" : "false");
+        out << ", \"noteCount\": " << noteCount;
+        out << ", \"pitchClassSet\": " << onsetMask;
+        out << "}";
+    }
+    out << (first ? "" : "\n  ") << "]\n";
+    out << "}\n";
+}
+
+// Drive the joint estimator over ONE loaded score and write the .ours.json (the adoption wiring).
+static int runJointInference(mu::engraving::MasterScore* score, const std::string& stem,
+                             const std::string& sourceName, const std::string& presetName,
+                             const std::string& jointDir, const muse::io::path_t& outputPath)
+{
+    namespace joint = mu::composing::analysis::joint;
+    using muse::JsonObject;
+
+    joint::JointTables tables = joint::JointTables::load(jointDir, "all");
+    if (!tables.loaded) {
+        std::cerr << "joint-inference: " << tables.error << "\n";
+        return 1;
+    }
+    joint::Vocabulary vocab(tables);
+    joint::ChordCache cache;
+
+    JsonObject ref;
+    const std::string err = jointReadJson(jointDir + "/decode_parity_ref.json", ref);
+    if (!err.empty()) {
+        std::cerr << "joint-inference: " << err << "\n";
+        return 1;
+    }
+    joint::WeightVector selected;
+    const JsonObject selObj = ref.value("selected_weights").toObject();
+    for (const std::string& n : joint::kWeightNames) {
+        selected.w[n] = selObj.value(n).toDouble();
+    }
+    joint::FittedAdapter adapter = joint::FittedAdapter::load(jointDir, "all", selected);
+    if (!adapter.loaded()) {
+        std::cerr << "joint-inference: " << adapter.error() << "\n";
+        return 1;
+    }
+
+    joint::AdapterFacts fx = joint::buildAdapterFacts(score, stem);
+    joint::DecodeResult r;
+    if (fx.ok) {
+        r = joint::decodePiece(fx.piece, adapter, vocab, cache, 4, fx.sigFifths, fx.declaredMode);
+    } else {
+        // A non-covered stem the adapter cannot extract: emit an empty region list rather than fail
+        // the corpus regen. The 326 WiR-covered pieces (the establishment set) always extract.
+        std::cerr << "joint-inference: adapter failed for " << stem << ": " << fx.error << "\n";
+    }
+
+    std::ostringstream out;
+    writeJointInferenceJson(fx.piece, r, vocab, cache, sourceName, presetName, out);
+    const std::string json = out.str();
+    if (outputPath.empty()) {
+        std::cout << json;
+        std::cout.flush();
+        std::fflush(stdout);
+    } else {
+        // Match the committed corpus line-ending convention (QIODevice::Text -> CRLF on Windows;
+        // OI-137a): the standard .ours.json writer below uses the same path.
+        QFile outFile(outputPath.toQString());
+        if (!outFile.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text)) {
+            std::cerr << "joint-inference: cannot open output file: "
+                      << outputPath.toQString().toUtf8().toStdString() << "\n";
+            return 1;
+        }
+        outFile.write(json.data(), static_cast<qint64>(json.size()));
+        outFile.flush();
+        outFile.close();
+    }
+    return 0;
+}
+
 int main(int argc, char* argv[])
 {
     QCoreApplication::setOrganizationName("MuseScore");
@@ -4409,6 +4646,13 @@ int main(int argc, char* argv[])
     // (default OFF; production byte-identical — they return before any score/preset/analysis is touched).
     std::string jointAdapterFactsDir;
     std::string jointDecodeFromAdapterDir;
+    // --joint-inference <artifact-dir>: THE OI-178 ADOPTION WIRING (user-ratified 2026-07-26).
+    // Produces the standard .ours.json for the input score from the joint estimator's decode
+    // (tables + selected weights read from <artifact-dir>, e.g. tools/joint_estimator), instead of
+    // the legacy analyzeScore pipeline. Default OFF ⇒ the default batch output is byte-identical
+    // and every legacy unit test on it keeps passing. Staged scope: batch/corpus surface only; the
+    // notation layer stays on the legacy analysis (its increment is the named successor).
+    std::string jointInferenceDir;
 
     for (int i = 1; i < args.size(); ++i) {
         const QString a = args.at(i);
@@ -4445,6 +4689,13 @@ int main(int argc, char* argv[])
                 jointDecodeFromAdapterDir = args.at(++i).toUtf8().toStdString();
             } else {
                 std::cerr << "ERROR: --joint-decode-from-adapter requires an artifact-dir argument\n";
+                return 1;
+            }
+        } else if (a == "--joint-inference") {
+            if (i + 1 < args.size()) {
+                jointInferenceDir = args.at(++i).toUtf8().toStdString();
+            } else {
+                std::cerr << "ERROR: --joint-inference requires an artifact-dir argument\n";
                 return 1;
             }
         } else if (a == "--dump-regions") {
@@ -5033,6 +5284,21 @@ int main(int argc, char* argv[])
         }
         delete score;
         return 0;
+    }
+
+    // ── --joint-inference: THE OI-178 ADOPTION WIRING (user-ratified 2026-07-26, option 1) ──
+    // The joint estimator IS the production inference layer on the batch/corpus surface. Produce
+    // this score's .ours.json from the joint decode and return — the legacy analyzeScore pipeline
+    // below is skipped for this output. Default OFF ⇒ the standard path is byte-identical.
+    if (!jointInferenceDir.empty()) {
+        const std::string jiStem =
+            QFileInfo(inputPath.toQString()).completeBaseName().toUtf8().toStdString();
+        const std::string jiSource =
+            QFileInfo(inputPath.toQString()).fileName().toUtf8().toStdString();
+        const int rc = runJointInference(score, jiStem, jiSource, presetName,
+                                         jointInferenceDir, outputPath);
+        delete score;
+        return rc;
     }
 
     // J-key-iii: enable the production joint re-key wiring for this process (global,

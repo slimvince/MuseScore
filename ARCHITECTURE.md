@@ -8,6 +8,31 @@
 > retirements, but the TARGET architecture is the joint estimator; the layer specs are updated to it as the
 > design pass proceeds. Theory basis: `cowork_key_chord_joint_inference_grounding.md`.
 
+> **★★ AS-BUILT (the OI-178 adoption, user-ratified 2026-07-26, option 1 — STAGED SCOPE): the joint estimator
+> is now the PRODUCTION inference layer on the batch/corpus surface.** As-built module `src/composing/analysis/joint/`:
+> the **L1 fact adapter** (`jointfactadapter` — score → `Piece` from the published `notemodel::notatedNotes()`
+> tie-unresolved surface + the score's structural facts, per the OI-180 sanction: no module-private raw-note walk);
+> the **event lattice + exact block-factorized semi-Markov Viterbi decoder** (`jointdecoder`) with the ratified
+> **§5 total-order tie-break**; the **factor log-probability provider** (`jointadapter` — the ten-factor
+> log-linear score, Katz leftover option 2a); the frozen generative **tables** (`jointtables` — the committed
+> all-326 `tables_all.json` / `note_tables_all.json` / `factor_presence_all.json` / `fermata_boundary_addendum.json`,
+> loaded at runtime); and the **weight vector** (`jointweights` — the direct-metric SELECTED vector, read from
+> `tools/joint_estimator/decode_parity_ref.json`). State = `24 keys × a ground-truth-derived Roman-numeral
+> vocabulary`, chord = scale-degree-valued (the chord symbol is the derived published fact from (key, degree)),
+> segmentation is a modeled semi-Markov variable, seg_cap 4. Inference is **preset-independent** (presets are
+> presentation concerns). **Wiring:** `tools/batch_analyze.cpp --joint-inference <dir>` (default-OFF) produces
+> each `.ours.json` from the decode instead of the legacy `analyzeScore` pipeline; `tools/run_bach_preset.py
+> --joint-inference` regenerates the corpus; the committed regression reference `tools/robust_stop/` is graded on
+> it (root 77.03 / RN 64.12 / key-home 56.14 / key-local 78.42 %, class-(b) hard-stop 1,817,280 ticks per preset).
+> **STAGED SCOPE (declared migration state, #23):** the in-app **NOTATION layer stays on the legacy L1–L6 pipeline**
+> (`region::analyzeRegions` → `analyzeSection`); its migration is the OI-180 retirement map, whose first increment
+> carries the notation output-surface contract (from A's posterior — alternatives, exposure/confidence, cadences,
+> key areas) and the fitted-table packaging to the in-app runtime (the two gaps the adoption STOP surfaced). Full
+> spec: `cowork_joint_estimator_architecture.md`, `cowork_joint_estimator_factorization.md`; pre-fit gates
+> `cowork_prefit_gates.md`; adoption record `cc_adoption_measurement_report.md` / `tools/joint_estimator/adoption_record.json`.
+> The layer sections (L1–L6) below remain the accurate description of the LEGACY pipeline — still live on the
+> notation path, dormant-compiled on the batch path.
+
 > **Living design document.** Read this AND STATUS.md at the start of every development
 > session. ARCHITECTURE.md contains stable design decisions. STATUS.md contains current
 > implementation status and immediate next steps. Update STATUS.md as your last act when

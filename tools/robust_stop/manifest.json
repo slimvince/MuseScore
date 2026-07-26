@@ -1,8 +1,8 @@
 {
  "schema": 1,
- "artifact": "robust-unit regression-stop reference (batch->robust diff base), RE-BASELINED at the OI-168 signature-mask fix (2026-07-14): analyzeChord's two key-consuming scoring terms (dim7CharacteristicBonus, diatonicRootContribution) now test the key SIGNATURE's diatonic collection (pcInMask(diatonicMaskFromFifths(fifths), pc)) instead of the mode-tonic-anchored set {(keyTonicPc + scale[i]) mod 12}, and take no tonic and no mode scale at all. Byte-identical for the 19 KeySigMode values whose tonic offset equals their diatonic parent's; corrects Altered and AlteredDomBB7, whose set was the collection transposed up a semitone. Baroque and Default are BYTE-IDENTICAL (352/352 each). Jazz: 9 .ours.json change, exactly ONE committed chord flips (bwv145.5@12960, local key D#alt: Ebm root 3 -> B/Eb root 11 = the DCML ground-truth root and the music21 root). Run-level set-diff REMOVAL-ONLY, one run; class-(b) root-disagree duration Jazz -480, Baroque/Default +0; zero additions on any preset; OVERALL PASS.",
- "date": "2026-07-14",
- "dispatch": "cc_instruction_oi168_fix.md (Cowork 2026-07-13; user-ratified). Magnitude measured first: cc_oi168_magnitude_report.md (default-OFF A/B). Adoption report: cc_oi168_fix_report.md",
+ "artifact": "the OI-178 joint-estimator ADOPTION robust-stop reference (variant-b union-of-boundaries; root governs, RN + key home/local tracked). The joint estimator is the PRODUCTION inference layer on the batch/corpus surface: batch_analyze --joint-inference decodes each score via the joint module (fact adapter -> the ratified §5 decoder at the committed all-326 tables + the direct-metric SELECTED weight vector, seg_cap 4, leftover 2a), PRESET-INDEPENDENT (the three preset dirs are identical at the inference fields). STAGED SCOPE (user-ratified option 1): the in-app NOTATION layer stays on the legacy analysis as a declared migration state; its increment (output-surface contract + table packaging) is the named successor. Every column reproduces the ratified adoption record EXACTLY.",
+ "date": "2026-07-26",
+ "dispatch": "cc_instruction_adoption_commit.md (OI-178 adoption, user-ratified 2026-07-26, option 1). Measurement record: cc_adoption_measurement_report.md + tools/joint_estimator/adoption_record.json (measurement provenance d615152c51). Establishment: the regenerated corpus decode matches tools/joint_estimator/adoption_decode.json field-exactly on all 326 covered pieces.",
  "coverage_hardening_note": "OI-140 + OI-124 (2026-07-12, cc_measurement_chain_hardening_report.md): metadata-only re-stamp. OI-140 — per-preset coverage.wir_no_annotation + coverage.wir_parse_fail added (0 parse failures here); robust_stop_diff now RECONCILES the candidate wir_covered against this reference and FAILS loudly on a coverage shrink. OI-124 — per-preset coverage.wir_source_sha256 records the identity of the WiR source graded against (offset-file pattern; paired with generated_by.offsets_file_sha256); robust_stop_diff cross-checks it and cross-checks this manifest's class_b_root_disagree_dur against the sibling summary.json (catches a partial re-baseline). No grading figure changed.",
  "abstain_convention_note": "OI-33 (2026-07-12, ABSTAIN-AWARE convention): every reported agreement-% is published with its abstain/coverage figure so a metric cannot be flattered by opting out of hard slices. ROOT (the hard stop) counts an abstained cell as a DISAGREEMENT — not abstention-reducible. KEY-agree EXCLUDES abstained (key-unparseable) cells from its denominator, so it IS abstention-reducible; the per-preset key_parse_fail_pct below is the abstain coverage, and robust_stop_diff reports it beside key-agree and FLAGS a candidate abstain above this reference. Convention text + mechanical enforcement both. No grading figure changed.",
  "unit": "A-8 union-of-boundaries cell, duration-weighted; variant (b) DCML-only (music21 is NOT GT); root governs, RN+key(home,local) tracked beside",
@@ -17,37 +17,37 @@
   "self_validation": "variant-(b) 5-bucket duration decomposition asserted byte-identical to compare_rn.grid_score_regions() on every covered piece (326x3) at generation"
  },
  "provenance": {
-  "head_at_generation_short": "bf6388d43a (+ the working-tree OI-168 fix that this manifest's adoption commit lands)",
-  "adoption_commit": "the OI-168 signature-mask fix commit that carries this manifest (see cc_oi168_fix_report.md)",
-  "corpus_git_hash": "the OI-168 adoption commit that carries this manifest (tools/corpus is gitignored and regenerated from that source state; reproduce with the invocation above)",
+  "head_at_generation_short": "d615152c51 (+ the working-tree --joint-inference wiring landed by this manifest's adoption commit)",
+  "adoption_commit": "the OI-178 adoption commit that carries this manifest (see cc_adoption_measurement_report.md)",
+  "corpus_git_hash": "the OI-178 adoption commit that carries this manifest (tools/corpus is gitignored, regenerated via run_bach_preset.py --joint-inference C:/s/MS/tools/joint_estimator; source state = this commit)",
   "corpus_complete": true,
   "corpus_scores": 352,
   "wir_coverage": 326,
   "wir_excluded_no_annotation": 26,
-  "outgoing_reference_snapshot": "tools/robust_stop/snapshot_2026-07-13_pre_oi168/ (O-12; the superseded OI-132/OI-144 reference)",
-  "user_ratified": "2026-07-13 (the fix dispatch; magnitude measured 2026-07-14)"
+  "outgoing_reference_snapshot": "tools/robust_stop/snapshot_2026-07-26_pre_oi178_adoption/ (O-12; the superseded OI-168 legacy-analysis reference)",
+  "user_ratified": "2026-07-26 (the adoption ruling; option 1 staged scope)"
  },
  "reproduce_status": {
-  "note": "The OI-168 signature-mask fix figures. Root and RN move on JAZZ ONLY, by exactly one corrected run (bwv145.5@12960); Baroque and Default are byte-identical to the OI-132/OI-144 reference they supersede (every column, every run set). The key columns are unchanged on all three presets (the key layer is upstream of the corrected terms). At two decimals NO published column moves - Jazz root-agree 64.9772 -> 64.9830 % (+0.0058 pp); what moves is the class-(b) hard-stop duration (Jazz -480) and the Jazz run count (6689 -> 6688). Outgoing values preserved below and, byte-for-byte, in the snapshot dir. Deterministic: rebuild at the adoption commit, regenerate tools/corpus, re-run the invocation.",
+  "note": "reproduce: rebuild batch_analyze; for p in Baroque Jazz Default: python tools/run_bach_preset.py --preset $p --output-dir tools/corpus/${p,,} --joint-inference C:/s/MS/tools/joint_estimator; python tools/a8_rebaseline_measure.py --out-dir <cand>; python tools/robust_stop_diff.py --candidate <cand> -> OVERALL PASS. The decode reproduces adoption_decode.json field-exactly on all 326 covered pieces.",
   "root": {
-   "baroque": 66.0406,
-   "jazz": 64.983,
-   "default": 65.9307
+   "baroque": 77.0341,
+   "jazz": 77.0341,
+   "default": 77.0341
   },
   "rn": {
-   "baroque": 46.3293,
-   "jazz": 44.101,
-   "default": 46.228
+   "baroque": 64.1184,
+   "jazz": 64.1184,
+   "default": 64.1184
   },
   "key_home": {
-   "baroque": 71.4182,
-   "jazz": 67.8274,
-   "default": 70.6514
+   "baroque": 56.1427,
+   "jazz": 56.1427,
+   "default": 56.1427
   },
   "key_local": {
-   "baroque": 65.99,
-   "jazz": 62.9805,
-   "default": 65.7093
+   "baroque": 78.4161,
+   "jazz": 78.4161,
+   "default": 78.4161
   },
   "superseded_r10b": {
    "root": {
@@ -111,37 +111,70 @@
     "jazz": 6689,
     "default": 6522
    }
+  },
+  "superseded_oi168": {
+   "note": "the OI-168 signature-mask LEGACY-ANALYSIS reference (batch analyzeScore pipeline); superseded on the batch/corpus surface by the joint estimator's adoption. Class-(b) root-disagree dur 2714000/2783680/2718080 (Baroque/Jazz/Default).",
+   "root": {
+    "baroque": 66.0406,
+    "jazz": 64.983,
+    "default": 65.9307
+   },
+   "rn": {
+    "baroque": 46.3293,
+    "jazz": 44.101,
+    "default": 46.228
+   },
+   "key_home": {
+    "baroque": 71.4182,
+    "jazz": 67.8274,
+    "default": 70.6514
+   },
+   "key_local": {
+    "baroque": 65.99,
+    "jazz": 62.9805,
+    "default": 65.7093
+   },
+   "class_b_root_disagree_dur": {
+    "baroque": 2714000,
+    "jazz": 2783680,
+    "default": 2718080
+   },
+   "variant_b_root_fail_runs": {
+    "baroque": 6506,
+    "jazz": 6688,
+    "default": 6522
+   }
   }
  },
  "presets": {
   "baroque": {
-   "scored_dur": 8293680,
-   "unscored_dur": 192720,
-   "root_agree_pct": 66.0406,
-   "rn_agree_pct": 46.3293,
-   "key_agree_pct": 71.4182,
-   "key_agree_pct_local": 65.99,
+   "scored_dur": 8300640,
+   "unscored_dur": 186720,
+   "root_agree_pct": 77.0341,
+   "rn_agree_pct": 64.1184,
+   "key_agree_pct": 56.1427,
+   "key_agree_pct_local": 78.4161,
    "key_parse_fail_pct": 0.0,
-   "root_disagree_dur": 2816480,
-   "root_disagree_cells": 7424,
-   "class_b_root_disagree_dur": 2714000,
-   "class_b_root_disagree_cells": 7156,
-   "class_a_root_disagree_dur": 102480,
-   "class_a_root_disagree_cells": 268,
-   "variant_b_root_fail_runs": 6506,
-   "variant_b_root_fail_cells": 7424,
-   "variant_a_root_fail_runs": 1580,
-   "variant_a_root_fail_cells": 1717,
-   "variant_a_root_disagree_dur": 586200,
-   "variant_a_class_b_dur": 555840,
-   "variant_a_class_a_dur": 30360,
-   "batch_stop_count": 54,
+   "root_disagree_dur": 1906320,
+   "root_disagree_cells": 4980,
+   "class_b_root_disagree_dur": 1817280,
+   "class_b_root_disagree_cells": 4694,
+   "class_a_root_disagree_dur": 89040,
+   "class_a_root_disagree_cells": 286,
+   "variant_b_root_fail_runs": 4547,
+   "variant_b_root_fail_cells": 4980,
+   "variant_a_root_fail_runs": 1468,
+   "variant_a_root_fail_cells": 1524,
+   "variant_a_root_disagree_dur": 472800,
+   "variant_a_class_b_dur": 450600,
+   "variant_a_class_a_dur": 22200,
+   "batch_stop_count": 515,
    "mapping_summary": {
-    "batch_cases": 54,
-    "still_failing_variant_b": 54,
-    "still_failing_variant_a": 52,
+    "batch_cases": 515,
+    "still_failing_variant_b": 515,
+    "still_failing_variant_a": 506,
     "disappeared_variant_b": 0,
-    "disappeared_variant_a": 2
+    "disappeared_variant_a": 9
    },
    "coverage": {
     "total_ours_files": 352,
@@ -155,33 +188,33 @@
    "run_enumeration_file": "baroque_variant_b_root_fail_runs.txt"
   },
   "jazz": {
-   "scored_dur": 8291520,
-   "unscored_dur": 194880,
-   "root_agree_pct": 64.983,
-   "rn_agree_pct": 44.101,
-   "key_agree_pct": 67.8274,
-   "key_agree_pct_local": 62.9805,
-   "key_parse_fail_pct": 0.0492,
-   "root_disagree_dur": 2903440,
-   "root_disagree_cells": 7654,
-   "class_b_root_disagree_dur": 2783680,
-   "class_b_root_disagree_cells": 7341,
-   "class_a_root_disagree_dur": 119760,
-   "class_a_root_disagree_cells": 313,
-   "variant_b_root_fail_runs": 6688,
-   "variant_b_root_fail_cells": 7654,
-   "variant_a_root_fail_runs": 1301,
-   "variant_a_root_fail_cells": 1413,
-   "variant_a_root_disagree_dur": 484560,
-   "variant_a_class_b_dur": 460200,
-   "variant_a_class_a_dur": 24360,
-   "batch_stop_count": 24,
+   "scored_dur": 8300640,
+   "unscored_dur": 186720,
+   "root_agree_pct": 77.0341,
+   "rn_agree_pct": 64.1184,
+   "key_agree_pct": 56.1427,
+   "key_agree_pct_local": 78.4161,
+   "key_parse_fail_pct": 0.0,
+   "root_disagree_dur": 1906320,
+   "root_disagree_cells": 4980,
+   "class_b_root_disagree_dur": 1817280,
+   "class_b_root_disagree_cells": 4694,
+   "class_a_root_disagree_dur": 89040,
+   "class_a_root_disagree_cells": 286,
+   "variant_b_root_fail_runs": 4547,
+   "variant_b_root_fail_cells": 4980,
+   "variant_a_root_fail_runs": 1468,
+   "variant_a_root_fail_cells": 1524,
+   "variant_a_root_disagree_dur": 472800,
+   "variant_a_class_b_dur": 450600,
+   "variant_a_class_a_dur": 22200,
+   "batch_stop_count": 515,
    "mapping_summary": {
-    "batch_cases": 24,
-    "still_failing_variant_b": 24,
-    "still_failing_variant_a": 23,
+    "batch_cases": 515,
+    "still_failing_variant_b": 515,
+    "still_failing_variant_a": 506,
     "disappeared_variant_b": 0,
-    "disappeared_variant_a": 1
+    "disappeared_variant_a": 9
    },
    "coverage": {
     "total_ours_files": 352,
@@ -195,33 +228,33 @@
    "run_enumeration_file": "jazz_variant_b_root_fail_runs.txt"
   },
   "default": {
-   "scored_dur": 8293680,
-   "unscored_dur": 192720,
-   "root_agree_pct": 65.9307,
-   "rn_agree_pct": 46.228,
-   "key_agree_pct": 70.6514,
-   "key_agree_pct_local": 65.7093,
-   "key_parse_fail_pct": 0.0289,
-   "root_disagree_dur": 2825600,
-   "root_disagree_cells": 7446,
-   "class_b_root_disagree_dur": 2718080,
-   "class_b_root_disagree_cells": 7162,
-   "class_a_root_disagree_dur": 107520,
-   "class_a_root_disagree_cells": 284,
-   "variant_b_root_fail_runs": 6522,
-   "variant_b_root_fail_cells": 7446,
-   "variant_a_root_fail_runs": 1562,
-   "variant_a_root_fail_cells": 1697,
-   "variant_a_root_disagree_dur": 579840,
-   "variant_a_class_b_dur": 549480,
-   "variant_a_class_a_dur": 30360,
-   "batch_stop_count": 54,
+   "scored_dur": 8300640,
+   "unscored_dur": 186720,
+   "root_agree_pct": 77.0341,
+   "rn_agree_pct": 64.1184,
+   "key_agree_pct": 56.1427,
+   "key_agree_pct_local": 78.4161,
+   "key_parse_fail_pct": 0.0,
+   "root_disagree_dur": 1906320,
+   "root_disagree_cells": 4980,
+   "class_b_root_disagree_dur": 1817280,
+   "class_b_root_disagree_cells": 4694,
+   "class_a_root_disagree_dur": 89040,
+   "class_a_root_disagree_cells": 286,
+   "variant_b_root_fail_runs": 4547,
+   "variant_b_root_fail_cells": 4980,
+   "variant_a_root_fail_runs": 1468,
+   "variant_a_root_fail_cells": 1524,
+   "variant_a_root_disagree_dur": 472800,
+   "variant_a_class_b_dur": 450600,
+   "variant_a_class_a_dur": 22200,
+   "batch_stop_count": 515,
    "mapping_summary": {
-    "batch_cases": 54,
-    "still_failing_variant_b": 54,
-    "still_failing_variant_a": 52,
+    "batch_cases": 515,
+    "still_failing_variant_b": 515,
+    "still_failing_variant_a": 506,
     "disappeared_variant_b": 0,
-    "disappeared_variant_a": 2
+    "disappeared_variant_a": 9
    },
    "coverage": {
     "total_ours_files": 352,

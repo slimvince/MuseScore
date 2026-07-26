@@ -1,7 +1,85 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE 2026-07-19 — THE DESIGN PASS IS DONE: THEORY GROUNDED, FIVE DECISIONS + THE FACTORIZATION SPECIFICATION USER-RATIFIED. THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE 2026-07-26 — THE JOINT ESTIMATOR: DESK-SIMULATED, GATED, FITTED, BUILT, MEASURED, AND **ADOPTION USER-RATIFIED**. THE CURRENT ENTRY POINT.
+
+**You (the next session) start clueless — this block is the entire handover.** Read, in order:
+(1) `CLAUDE.md` in full (principles #1–#24 + corollaries; NOTE: its gate block (A) baselines are
+the OUTGOING ones until the adoption commit lands and rewrites them); (2) `OPEN_ITEMS.md`
+(current through OI-192); (3) this block, then the 2026-07-19→26 running record below it (this
+arc's full narrative — it moves to the archive at the next doc split); (4) the ratified
+governing documents in this order: `cowork_joint_estimator_factorization.md` (the structure,
+WITH its dated amendments: factor granularity, the below-threshold rule, the tie-break),
+`cowork_prefit_gates.md` (the four protocols WITH the dated amendments: weight cap ≤ 14, the
+L1-extension sanction widening, the ★R=A1 adoption-condition amendment),
+`cowork_factorization_desk_simulation.md` and `cowork_sensitive_cell_probe.md` (the ratified
+paper stages), and `cc_adoption_measurement_report.md` + `tools/joint_estimator/adoption_record*`
+(the measured basis of the adoption ruling).
+
+**★ THE HEADLINE.** The joint estimator (the 2026-07-17 architecture decision) went from paper to
+ratified adoption in this arc, every stage gated and user-ratified: the desk simulation (9/10
+passed; the one surprise became the granularity amendment); the four pre-fit gates; the counted
+tables (label-side + note-side, all protocols, all establishment locks); the likelihood weight
+fit that STOPPED ITSELF (OI-187 — the objective rewarded never-modulating; replaced by the
+pre-ratified direct-metric fallback, user objective M2, which beat the generative baseline on
+all four axes); the C++ module (bit-identical decode parity 326/326 both arms; the fact adapter
+on the published L1 surface; the reader-skew finding accepted as option 1 with the unification
+written into the future repair event); and the OI-178 adoption measurement — **EVERY amended
+PASS condition held: class-(b) root-error duration −33 % per preset, key-local +12.4/+15.4/+12.6
+beyond every interval, RN +18–20, modulation rate 6.07 vs GT 5.28, the key-home column explained
+against its 59.27 % ceiling. The user ratified adoption (option 1) 2026-07-26.** The one cost is
+rowed (OI-192: the genuine-new fifth-substitution subset, ≈8 % of the old failure mass, the
+named refinement candidate).
+
+**★ STATE / PENDING — THE FIRST ACTION OF THE NEXT SESSION.** CC's pre-commit reconnaissance
+STOPPED on two verified gaps in the original adoption scope — (1) the fitted tables have no
+in-app delivery mechanism (packaging was explicitly deferred at the module build), and (2) the
+joint decode does not yet produce the notation layer's rich output surface (alternatives,
+confidences, key areas, cadence/pivot streams), which the adoption record never verified — and
+**the user re-scoped by ratification (2026-07-26): STAGED ADOPTION.** **The ACTIVE dispatch is
+`cc_instruction_adoption_commit.md` AS RE-SCOPED** (the ★ header note): the batch/corpus path
+switches to the joint decode; corpus regeneration must equal the measured `adoption_decode.json`
+or STOP; the `tools/robust_stop/` re-baseline must equal the record's figures or STOP (root
+77.03 / RN 64.12 / key-local 78.42 / key-home 56.14, class-(b) 1,817,280 per preset); NO
+notation-layer change and NO golden refresh (a snapshot change is a STOP — the notation path is
+untouched); the doc sync records the DECLARED migration state. If not yet run: give it to CC.
+When its report returns: verify at the objects (the establishment equalities are the
+load-bearing checks). **THE NAMED SUCCESSOR INCREMENT (Cowork drafts after that verification):
+the notation-layer adoption** — the output-surface contract synthesized from A's retained
+posterior (alternatives + confidences: the no-information-loss payoff), the table-packaging
+ruling presented with alternatives (embed-in-source vs app resource file — one exceeds the old
+sanctioned file classes and needs its own widening), the 21-value-mode/presentation questions,
+and the ratified presentation publications (the un-rounded modal reading; the post-decode
+ornament labels) — each verified BEFORE any golden blesses it. Until that increment lands, batch
+output is A's and the in-app analysis is legacy — the declared, bounded #23 state, visible here
+until closed.
+**THEN the agenda is the retirement map + refinements, each its own later dispatch, in no forced
+order but all on the register:** the legacy retirements (the map's six items on the gates doc);
+the presentation-layer publications that are PART of the ratified record and must not drop (the
+un-rounded modal reading; the post-decode ornament labels); OI-192 (fifth-substitution
+refinement, with OI-189 leftover coverage + OI-190 cadence form); the bundled OI-184 repair +
+reader-unification + refit event; the standing deferred refactors (CLAUDE.md); OI-7 (jazz GT)
+before any jazz claim; OI-179 (the BCMH ground-truth-ceiling measurement, instrument not built).
+
+**★ METHOD REMINDERS (this session's additions — all standing).** Every choice to the user
+carries ALTERNATIVES with pros/cons rated against the guiding principles AND the ultimate
+objective (as precise inference as possible) — decision points are kept even when the derivation
+forces the answer (⛔ block below). Plain language ALWAYS: no self-invented labels or
+abbreviations, every term defined at first use, predicates name their arguments — the user knows
+music theory, not this repository's internals (two full rewrites were demanded this arc; do not
+repeat that). The product is UNSHIPPED: end-user behavior-change considerations carry no weight.
+CC's post-work machine shutdowns are USER-instructed and authorized. Verify every CC claim at
+the objects (this arc: CC was excellent — it caught its own bugs, overturned its own wrong
+diagnosis with evidence, and honored every STOP — but the verification duty stands). Individual
+fitted WEIGHT values are UNIDENTIFIED (OI-191) — never read one as an established musical fact.
+The never-bash-for-local-files rule held all arc; git object reads by explicit SHA are the one
+sanctioned bash use.
+
+*(The 2026-07-19 block below is this arc's detailed running record — kept for provenance; it
+moves to `cowork_handoff_archive.md` at the next doc split, per the standing pattern.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE 2026-07-19 — THE DESIGN PASS IS DONE: THEORY GROUNDED, FIVE DECISIONS + THE FACTORIZATION SPECIFICATION USER-RATIFIED. (SUPERSEDED 2026-07-26 as the entry point — this arc's running record follows.)
 
 **You (the next session) start clueless — this block is the entire handover.** Read, in order:
 (1) `CLAUDE.md` in full (the principles are now **#1–#24** plus the constrained-optimum ledger
@@ -243,9 +321,29 @@ for the user's ratification; NO adoption act in the dispatch. **The ★R ruling 
 ratification BEFORE the measurement (the #22 lawful moment), recorded with its original text on
 the gates document: key-LOCAL must exceed every preset baseline beyond the interval; the
 modulation-rate band (0.75–1.25× the GT's 5.28) is a PASS condition; key-HOME is tracked with a
-mandatory decomposition against the computed GT self-agreement ceiling. **The dispatch is LIVE —
-`cc_instruction_adoption_measurement.md`.** When its record returns and verifies: the user's
-adoption ruling on one revertible commit is the final act of the dual path's forward exit. Only after that: the production-module build under
+mandatory decomposition against the computed GT self-agreement ceiling. The measurement DELIVERED and Cowork-verified at the artifacts (`d615152c51`): **EVERY amended
+PASS condition holds** — key-local exceeds every baseline beyond the interval (+12.4/+15.4/+12.6),
+root +11, RN +18–20, class-(b) duration −33 % per preset (robust_stop_diff OVERALL PASS),
+modulation rate 6.07 in-band (GT 5.28), abstain 0; the key-home decomposition proves the point
+the ★R=A1 amendment rests on (ceiling 59.27 %; A at 56.14 below it; the current system 12–15
+points ABOVE it — home-column reward for under-following modulation); the one cost surfaced and
+diagnosed (1,474 genuine-new class-(b) runs ≈ 8 % of the old failure mass, dominated by
+fifth-apart functional substitutions with the key correct — the named post-adoption refinement
+candidate for the chord-transition/bass factor). **THE USER RATIFIED OPTION 1 (2026-07-26): ADOPT.**
+Scoping ruling recorded the same day: the product is UNSHIPPED — end-user behavior-change
+considerations carry no weight in decision surfaces; correctness and the disciplines alone
+govern. **The ACTIVE dispatch is `cc_instruction_adoption_commit.md` — ONE revertible adoption
+commit:** the wiring (A = the production inference layer, preset-independent; legacy code stays
+compiled, dormant on the output path), the corpus regeneration (must equal the measured
+`adoption_decode.json` or STOP), the `tools/robust_stop/` re-baseline (figures must equal the
+record's or STOP; O-12 snapshot already taken), the golden refresh (the record is the
+verified-correct precondition), and the same-commit doc sync (CLAUDE.md gate block (A) new
+baselines, STATUS, ARCHITECTURE.md as-built section, OI-178 → EXECUTED). **After it: the
+dual path's forward exit is complete and the retirement map is the live agenda** (first
+increments as their own dispatches: the L2/L3/L4 legacy retirements per the map, the
+fifth-substitution refinement, the presentation-layer publications — the un-rounded modal
+reading and post-decode ornament labels, PART of the ratified record, must not drop out — and
+the bundled OI-184 repair + reader-unification + refit event). Only after that: the production-module build under
 the parallel-build sanction, of the complete algorithm, with the probe outputs as parity oracle. OI-179 (the ground-truth ceiling): the literature half is ANSWERED — no
 published inter-annotator agreement figure exists for classical symbolic Roman-numeral analysis
 anywhere in the field, so the 87-stem BCMH measurement would be novel; BCMH is inspected at the files
