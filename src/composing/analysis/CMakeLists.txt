@@ -369,6 +369,13 @@ target_sources(composing_analysis PRIVATE
     # bass role; read by BOTH tools/batch_analyze --joint-inference and the §3.2 notation record.
     ${CMAKE_CURRENT_LIST_DIR}/joint/jointrender.h
     ${CMAKE_CURRENT_LIST_DIR}/joint/jointrender.cpp
+    # jointnotationrecord — the A-native NOTATION OUTPUT-SURFACE RECORD (contract §3): the one output
+    # surface the in-app notation path will read (Decision A2). ONE assembly function over the decode
+    # outputs + the compiled-in provenance; §3.1 piece block, §3.2 committed + derived chord facts,
+    # §3.3 the established posterior slice, §3.4 the modal reading. DORMANT (declared dormancy — named
+    # consumer: the seams dispatch). It NEVER re-decodes and never reads the score.
+    ${CMAKE_CURRENT_LIST_DIR}/joint/jointnotationrecord.h
+    ${CMAKE_CURRENT_LIST_DIR}/joint/jointnotationrecord.cpp
     # jointembeddedartifacts — GENERATED (tools/joint_estimator/gen_embedded_tables.py, Decision
     # D1): the five committed table artifacts + the SELECTED weight vector embedded VERBATIM as
     # compiled-in bytes, provenance-locked at build time. loadEmbedded() parses these through the
