@@ -103,13 +103,29 @@ unvalidated — a consumer may not put an unvalidated fact under load, #19); pub
 the in-memory surface (serialization stays selective); and the inventory + the
 `ARCHITECTURE.md` layer specifications are kept in sync as facts are adopted (OI-146).
 
+*Decision-neutrality of the existing implementation (corollary to #4/#6/#19; user-ratified
+2026-07-26):* Designs are chosen from the principles and the ultimate objective — enabling the
+best possible inference — alone. In that choice: **(a)** the value of reusing existing code, and
+the cost of making existing code obsolete, are SECONDARY — they may break ties between designs
+equal under the principles and the objective, and reuse counts only as carried-forward
+establishment (#19), never as sunk cost or saved effort; **(b)** downstream implementation
+impact — whether and how many consumers must change — carries NO weight; **(c)**
+end-user-visible behavior change carries NO weight (the 2026-07-26 unshipped-scoping ruling),
+while every behavior change remains ratification-gated (#14) and verification-gated (#15/#19)
+exactly as before. The best-possible-inference design is chosen first; what exists then either
+serves it or retires. (This does not weaken #6 — one path per concern is an END-STATE structural
+principle, not a preservation claim for the existing path; nor #19 — establishment must still
+exist before trust.)
+
 *Provenance: principles 1–11 are the user's standing list; #12 (no information loss) and
 #13–16 were ratified by the user on 2026-07-06; #17–19 (the Premise Gate + the Class-A/Class-B
 prohibitions) and the surprise-scope rule were ratified by the user on 2026-07-10 — analysis
 and evidence in `cowork_premise_gate_reflection.md`; #20–#24 (evaluation statistics, the
 ground-truth ceiling, gate/transition governance) and the constrained-optimum ledger corollary
 were ratified by the user on 2026-07-18 at the joint-estimator plan review — analysis in
-`cowork_joint_estimator_architecture.md` §6/§7, operational rows OI-176…OI-181. Companion standing rules elsewhere: the
+`cowork_joint_estimator_architecture.md` §6/§7, operational rows OI-176…OI-181; the
+decision-neutrality corollary was ratified by the user on 2026-07-26 at the notation-layer
+adoption increment's decision surface — analysis in `cowork_notation_adoption_increment.md` §2. Companion standing rules elsewhere: the
 ⛔ TOTAL UNIFICATION rule (`cowork_handoff.md`), the MEASURE-BEFORE-BUILD gate
 (`cowork_engage_arc_plan.md`, now the middle stage of the #17 funnel), and the doc-sync,
 layer, and gate policies below.*

@@ -31,21 +31,22 @@ against its 59.27 % ceiling. The user ratified adoption (option 1) 2026-07-26.**
 rowed (OI-192: the genuine-new fifth-substitution subset, ≈8 % of the old failure mass, the
 named refinement candidate).
 
-**★ STATE / PENDING — THE FIRST ACTION OF THE NEXT SESSION.** CC's pre-commit reconnaissance
-STOPPED on two verified gaps in the original adoption scope — (1) the fitted tables have no
-in-app delivery mechanism (packaging was explicitly deferred at the module build), and (2) the
-joint decode does not yet produce the notation layer's rich output surface (alternatives,
-confidences, key areas, cadence/pivot streams), which the adoption record never verified — and
-**the user re-scoped by ratification (2026-07-26): STAGED ADOPTION.** **The ACTIVE dispatch is
-`cc_instruction_adoption_commit.md` AS RE-SCOPED** (the ★ header note): the batch/corpus path
-switches to the joint decode; corpus regeneration must equal the measured `adoption_decode.json`
-or STOP; the `tools/robust_stop/` re-baseline must equal the record's figures or STOP (root
-77.03 / RN 64.12 / key-local 78.42 / key-home 56.14, class-(b) 1,817,280 per preset); NO
-notation-layer change and NO golden refresh (a snapshot change is a STOP — the notation path is
-untouched); the doc sync records the DECLARED migration state. If not yet run: give it to CC.
-When its report returns: verify at the objects (the establishment equalities are the
-load-bearing checks). **THE NAMED SUCCESSOR INCREMENT (Cowork drafts after that verification):
-the notation-layer adoption** — the output-surface contract synthesized from A's retained
+**★ STATE — THE ADOPTION COMMIT IS EXECUTED, PUSHED, AND COWORK-VERIFIED AT THE OBJECTS
+(`205dd0843a`, 2026-07-26).** The staged scope ran exactly as re-scoped after CC's correct
+two-gap STOP (no in-app tables delivery; the notation output surface never verified — both
+deferred BY DESIGN to the successor increment): the batch/corpus path now decodes via the joint
+module (preset-independent at the inference fields); the regenerated corpus is field-exact to
+the measured `adoption_decode.json` on 326/326 in all three preset dirs; the re-baselined
+`tools/robust_stop/` reference equals the adoption record's figures exactly (root 77.03 / RN
+64.12 / key-local 78.42 / key-home 56.14; class-(b) 1,817,280 per preset — verified in the
+committed summary); `robust_stop_diff` OVERALL PASS (−33.0/−34.7/−33.1 %); NO golden moved
+(the notation path byte-identical, proven); CLAUDE.md gate block (A), STATUS, ARCHITECTURE, and
+the register all moved in the same commit (OI-178 → EXECUTED staged scope; OI-175 superseded on
+the batch surface, live on the legacy notation path until the map). **The dual path's state:
+batch output is A's; the in-app notation analysis is legacy — the declared, bounded migration
+(#23), visible here until the successor increment closes it.**
+
+**★ THE FIRST ACTION OF THE NEXT SESSION — draft the notation-layer adoption increment** — the output-surface contract synthesized from A's retained
 posterior (alternatives + confidences: the no-information-loss payoff), the table-packaging
 ruling presented with alternatives (embed-in-source vs app resource file — one exceeds the old
 sanctioned file classes and needs its own widening), the 21-value-mode/presentation questions,
@@ -53,6 +54,29 @@ and the ratified presentation publications (the un-rounded modal reading; the po
 ornament labels) — each verified BEFORE any golden blesses it. Until that increment lands, batch
 output is A's and the in-app analysis is legacy — the declared, bounded #23 state, visible here
 until closed.
+
+**★★ EXECUTED AND RATIFIED (Cowork, 2026-07-26, same day — this session):** the increment's
+decision surface is drafted and **USER-RATIFIED in full** (`cowork_notation_adoption_increment.md`
+— took FOUR writings; the three corrections are themselves ratified record now). **The ratified
+rulings:** (0) a NEW PRINCIPLES COROLLARY — *decision-neutrality of the existing implementation*
+(reuse value/obsolescence cost SECONDARY, counting only as carried-forward establishment #19;
+downstream consumer-change impact NO weight; end-user behavior-change impact NO weight; #14/#15/#19
+gates unchanged) — CLAUDE.md insertion rides the next dispatch's Task-0 ratification commit;
+(A2) the JOINT-NATIVE record IS the notation surface — no compatibility view, `HarmonicRegion`
+retires with the legacy path; (B-full) the uncertainty contract is the FULL POSTERIOR
+(forward-backward marginals, status-marked model probabilities), delivered established-slice-first,
+completion rowed **OI-193**; (C1) two-mode key + the published un-rounded modal reading, no
+21-value mode ever inferred again; (D1) tables EMBEDDED as provenance-stamped generated source
+(≈158 KB + 13 weights — build-time provenance lock, no sanction widening); (E) modal reading
+INSIDE the increment, ornament labels their OWN increment, rowed **OI-194** (BCMH validation
+resource not on disk). Rows OI-193/OI-194 are on disk at ruling time (register rule (c)), riding
+the next commit with this entry and the ratified decision doc. **THE ACTIVE DISPATCH is
+`cc_instruction_notation_consumption_audit.md`** — Task 0 the ratification commit (CLAUDE.md
+corollary + the riding Cowork edits), then the READ-ONLY notation consumption-surface audit
+(§8.1 of the decision doc: every consumed field of the legacy region stream with file:line →
+declared source on A's surface or declared retirement; the exotic-`KeySigMode` consumer list; the
+OI-182 constants' fate; tree-wide scope check per the OI-175 lesson). After its ratified report:
+the contract drafting, then the build dispatches under the OI-180 sanction pattern (§8.2–8.4).
 **THEN the agenda is the retirement map + refinements, each its own later dispatch, in no forced
 order but all on the register:** the legacy retirements (the map's six items on the gates doc);
 the presentation-layer publications that are PART of the ratified record and must not drop (the
