@@ -56,6 +56,12 @@ struct WeightVector {
 /// The mandated generative-baseline setting: every generative weight 1.0, every cadence
 /// weight 0.0 (probe_decoder.identity_weights()).
 WeightVector identityWeights();
+
+/// The committed direct-metric SELECTED weight vector (probe_decoder selected_start
+/// 'random07') — the PRODUCTION weights. Parsed from the compiled-in embedded snippet
+/// (embedded::kSelectedWeightsJson) through the muse JSON parser, exactly as the batch path
+/// previously read decode_parity_ref.json's selected_weights (#6, one weight source).
+WeightVector selectedWeights();
 } // namespace mu::composing::analysis::joint
 
 #endif // MU_COMPOSING_ANALYSIS_JOINT_JOINTWEIGHTS_H

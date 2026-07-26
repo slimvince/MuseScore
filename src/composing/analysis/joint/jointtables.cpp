@@ -27,14 +27,34 @@
 #include <utility>
 #include <vector>
 
+#include "jointembeddedartifacts.h"
 #include "serialization/json.h"
 #include "types/bytearray.h"
 
 namespace mu::composing::analysis::joint {
 namespace {
+// Parse JSON bytes — from a file OR the compiled-in embedded artifacts — into a root object.
+// The ONE parse path the filesystem loader and the embedded loader share (#6).
+bool parseRoot(const std::string& bytes, muse::JsonObject& out, std::string& err)
+{
+    std::string jerr;
+    const muse::ByteArray ba(bytes.data(), bytes.size());
+    const muse::JsonDocument doc = muse::JsonDocument::fromJson(ba, &jerr);
+    if (!jerr.empty()) {
+        err = "JSON parse error: " + jerr;
+        return false;
+    }
+    if (!doc.isObject()) {
+        err = "not a JSON object";
+        return false;
+    }
+    out = doc.rootObject();
+    return true;
+}
+
 // Read a JSON file from disk (std::ifstream — no filesystem-injection dependency, so this
 // loads identically in the NO_QT composing library and in both consumer binaries) and
-// parse it with the muse JSON facility.
+// parse it with the shared parseRoot.
 bool readRoot(const std::string& path, muse::JsonObject& out, std::string& err)
 {
     std::ifstream f(path, std::ios::binary);
@@ -43,18 +63,11 @@ bool readRoot(const std::string& path, muse::JsonObject& out, std::string& err)
         return false;
     }
     const std::string s((std::istreambuf_iterator<char>(f)), std::istreambuf_iterator<char>());
-    std::string jerr;
-    const muse::ByteArray ba(s.data(), s.size());
-    const muse::JsonDocument doc = muse::JsonDocument::fromJson(ba, &jerr);
-    if (!jerr.empty()) {
-        err = "JSON parse error in " + path + ": " + jerr;
+    std::string perr;
+    if (!parseRoot(s, out, perr)) {
+        err = perr + " in " + path;
         return false;
     }
-    if (!doc.isObject()) {
-        err = "not a JSON object: " + path;
-        return false;
-    }
-    out = doc.rootObject();
     return true;
 }
 
@@ -111,20 +124,20 @@ BoundaryCell parseBoundaryCell(const muse::JsonObject& parent, const std::string
     c.prob = pv.toDouble();
     return c;
 }
-} // namespace
 
-JointTables JointTables::load(const std::string& artifactDir, const std::string& tableSet)
+// Build the loaded tables from the four already-parsed root objects. This is the shared
+// parse-to-structure step (#6): the filesystem loader and the embedded loader differ ONLY in
+// where the bytes come from; everything downstream is this one function. `suffix` selects the
+// table set (the tables_/note_tables_/factor_presence_ file suffix, and the fermata addendum's
+// per-set fits key). On success `loaded` is true.
+JointTables buildTables(const muse::JsonObject& tables, const muse::JsonObject& ntab,
+                        const muse::JsonObject& fpres, const muse::JsonObject& ferm,
+                        const std::string& suffix)
 {
     JointTables jt;
-    jt.tableSet = tableSet;
-    const std::string suffix = tableSet;
-    const std::string dir = artifactDir + "/";
+    jt.tableSet = suffix;
 
     // ── tables_{suffix}.json ── table1..table5
-    muse::JsonObject tables;
-    if (!readRoot(dir + "tables_" + suffix + ".json", tables, jt.error)) {
-        return jt;
-    }
     jt.corpusGitHash = tables.value("provenance").toObject().value("corpus_git_hash").toStdString();
 
     const muse::JsonObject t1 = tables.value("table1_chord_transition").toObject();
@@ -140,10 +153,6 @@ JointTables JointTables::load(const std::string& artifactDir, const std::string&
     }
 
     // ── note_tables_{suffix}.json ── emission / spelling / boundary
-    muse::JsonObject ntab;
-    if (!readRoot(dir + "note_tables_" + suffix + ".json", ntab, jt.error)) {
-        return jt;
-    }
     jt.emission = parseKatz(ntab.value("emission_category_by_covariate").toObject());
 
     const muse::JsonObject spell = ntab.value("spelling_position_by_mode").toObject();
@@ -157,10 +166,6 @@ JointTables JointTables::load(const std::string& artifactDir, const std::string&
     }
 
     // ── factor_presence_{suffix}.json ── the missing-template-tone (absence) table
-    muse::JsonObject fpres;
-    if (!readRoot(dir + "factor_presence_" + suffix + ".json", fpres, jt.error)) {
-        return jt;
-    }
     const std::string primary = fpres.value("primary_mode").toStdString();
     const muse::JsonObject fpTable = fpres.value("factor_presence_table").toObject().value(primary).toObject();
     for (const std::string& cell : fpTable.keys()) {
@@ -168,10 +173,6 @@ JointTables JointTables::load(const std::string& artifactDir, const std::string&
     }
 
     // ── fermata_boundary_addendum.json ── the boundary factor's fermata-crossed cells
-    muse::JsonObject ferm;
-    if (!readRoot(dir + "fermata_boundary_addendum.json", ferm, jt.error)) {
-        return jt;
-    }
     const muse::JsonObject byBc = ferm.value("fits").toObject().value(suffix).toObject()
                                   .value("exact_tick_by_beat_class").toObject();
     for (const std::string& bc : byBc.keys()) {
@@ -180,8 +181,41 @@ JointTables JointTables::load(const std::string& artifactDir, const std::string&
         jt.fermBoundaryNoFerm.emplace(bc, parseBoundaryCell(cell, "no_fermata_context"));
     }
 
-    jt.error.clear();
     jt.loaded = true;
     return jt;
+}
+} // namespace
+
+JointTables JointTables::load(const std::string& artifactDir, const std::string& tableSet)
+{
+    JointTables jt;
+    jt.tableSet = tableSet;
+    const std::string dir = artifactDir + "/";
+    muse::JsonObject tables, ntab, fpres, ferm;
+    if (!readRoot(dir + "tables_" + tableSet + ".json", tables, jt.error)
+        || !readRoot(dir + "note_tables_" + tableSet + ".json", ntab, jt.error)
+        || !readRoot(dir + "factor_presence_" + tableSet + ".json", fpres, jt.error)
+        || !readRoot(dir + "fermata_boundary_addendum.json", ferm, jt.error)) {
+        return jt;
+    }
+    return buildTables(tables, ntab, fpres, ferm, tableSet);
+}
+
+JointTables JointTables::loadEmbedded(const std::string& tableSet)
+{
+    JointTables jt;
+    jt.tableSet = tableSet;
+    if (tableSet != "all") {
+        jt.error = "embedded joint artifacts cover only the 'all' table set (got '" + tableSet + "')";
+        return jt;
+    }
+    muse::JsonObject tables, ntab, fpres, ferm;
+    if (!parseRoot(embedded::kTablesAll.bytes(), tables, jt.error)
+        || !parseRoot(embedded::kNoteTablesAll.bytes(), ntab, jt.error)
+        || !parseRoot(embedded::kFactorPresenceAll.bytes(), fpres, jt.error)
+        || !parseRoot(embedded::kFermataBoundaryAddendum.bytes(), ferm, jt.error)) {
+        return jt;
+    }
+    return buildTables(tables, ntab, fpres, ferm, tableSet);
 }
 } // namespace mu::composing::analysis::joint

@@ -22,6 +22,10 @@
 
 #include "jointweights.h"
 
+#include "jointembeddedartifacts.h"
+#include "serialization/json.h"
+#include "types/bytearray.h"
+
 namespace mu::composing::analysis::joint {
 const std::array<std::string, 13> kWeightNames = {
     "prior", "declared_mode", "emission", "spelling", "bass", "boundary",
@@ -53,6 +57,19 @@ WeightVector identityWeights()
         if (wv.w.find(n) == wv.w.end()) {
             wv.w[n] = 0.0;
         }
+    }
+    return wv;
+}
+
+WeightVector selectedWeights()
+{
+    WeightVector wv;
+    const std::string s = embedded::kSelectedWeightsJson.bytes();
+    std::string jerr;
+    const muse::ByteArray ba(s.data(), s.size());
+    const muse::JsonObject o = muse::JsonDocument::fromJson(ba, &jerr).rootObject();
+    for (const std::string& n : kWeightNames) {
+        wv.w[n] = o.value(n).toDouble();
     }
     return wv;
 }

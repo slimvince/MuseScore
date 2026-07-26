@@ -4332,8 +4332,10 @@ static int runJointDecodeFromAdapter(const std::string& artifactDir)
 // ── --joint-inference: THE OI-178 ADOPTION WIRING (user-ratified 2026-07-26, option 1) ─────────────
 // The joint estimator is the PRODUCTION inference layer on the batch/corpus surface. When set, the
 // standard .ours.json for one score is produced by the joint module's decode (fact adapter -> §5
-// decoder at the committed all-326 tables + the direct-metric SELECTED weight vector), NOT by the
-// legacy analyzeScore pipeline. The render below is the C++ counterpart of probe_run.decode_to_regions
+// decoder at the all-326 tables + the direct-metric SELECTED weight vector), NOT by the legacy
+// analyzeScore pipeline. Tables and weights are the COMPILED-IN EMBEDDED artifacts (ratified
+// Decision D1 — provenance-locked at build time, byte-identical to tools/joint_estimator/); the
+// <artifact-dir> is no longer read for fitted values. The render below is the C++ counterpart of probe_run.decode_to_regions
 // + adoption_measure.region_to_dict — the exact rendering the ratified adoption record (root 77.03,
 // RN 64.12, key-local 78.42) was measured through, so a8 over the regenerated corpus reproduces it.
 // STAGED SCOPE (the re-scoped dispatch): the in-app NOTATION layer stays on the legacy analysis (its
@@ -4495,12 +4497,16 @@ static void writeJointInferenceJson(const mu::composing::analysis::joint::Piece&
 // Drive the joint estimator over ONE loaded score and write the .ours.json (the adoption wiring).
 static int runJointInference(mu::engraving::MasterScore* score, const std::string& stem,
                              const std::string& sourceName, const std::string& presetName,
-                             const std::string& jointDir, const muse::io::path_t& outputPath)
+                             const muse::io::path_t& outputPath)
 {
     namespace joint = mu::composing::analysis::joint;
-    using muse::JsonObject;
 
-    joint::JointTables tables = joint::JointTables::load(jointDir, "all");
+    // The fitted tables AND the SELECTED weight vector are the compiled-in EMBEDDED artifacts
+    // (ratified Decision D1) — provenance-locked at build time (#16/#19); no fitted value is
+    // read from the filesystem <artifact-dir>. The embedded bytes are byte-identical to the
+    // committed tools/joint_estimator/ artifacts (the joint_embedded_tests drift guard), so this
+    // decode reproduces the file-based path exactly.
+    joint::JointTables tables = joint::JointTables::loadEmbedded("all");
     if (!tables.loaded) {
         std::cerr << "joint-inference: " << tables.error << "\n";
         return 1;
@@ -4508,18 +4514,8 @@ static int runJointInference(mu::engraving::MasterScore* score, const std::strin
     joint::Vocabulary vocab(tables);
     joint::ChordCache cache;
 
-    JsonObject ref;
-    const std::string err = jointReadJson(jointDir + "/decode_parity_ref.json", ref);
-    if (!err.empty()) {
-        std::cerr << "joint-inference: " << err << "\n";
-        return 1;
-    }
-    joint::WeightVector selected;
-    const JsonObject selObj = ref.value("selected_weights").toObject();
-    for (const std::string& n : joint::kWeightNames) {
-        selected.w[n] = selObj.value(n).toDouble();
-    }
-    joint::FittedAdapter adapter = joint::FittedAdapter::load(jointDir, "all", selected);
+    const joint::WeightVector selected = joint::selectedWeights();
+    joint::FittedAdapter adapter = joint::FittedAdapter::loadEmbedded(selected);
     if (!adapter.loaded()) {
         std::cerr << "joint-inference: " << adapter.error() << "\n";
         return 1;
@@ -5291,12 +5287,14 @@ int main(int argc, char* argv[])
     // this score's .ours.json from the joint decode and return — the legacy analyzeScore pipeline
     // below is skipped for this output. Default OFF ⇒ the standard path is byte-identical.
     if (!jointInferenceDir.empty()) {
+        // The <artifact-dir> argument stays on the CLI (the trigger; reserved for reference
+        // inputs the joint diagnostics read), but the PRODUCTION tables/weights are now the
+        // compiled-in embedded artifacts (Decision D1), so it is not forwarded here.
         const std::string jiStem =
             QFileInfo(inputPath.toQString()).completeBaseName().toUtf8().toStdString();
         const std::string jiSource =
             QFileInfo(inputPath.toQString()).fileName().toUtf8().toStdString();
-        const int rc = runJointInference(score, jiStem, jiSource, presetName,
-                                         jointInferenceDir, outputPath);
+        const int rc = runJointInference(score, jiStem, jiSource, presetName, outputPath);
         delete score;
         return rc;
     }

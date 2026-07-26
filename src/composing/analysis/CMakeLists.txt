@@ -363,6 +363,13 @@ target_sources(composing_analysis PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/joint/jointtables.cpp
     ${CMAKE_CURRENT_LIST_DIR}/joint/jointweights.h
     ${CMAKE_CURRENT_LIST_DIR}/joint/jointweights.cpp
+    # jointembeddedartifacts — GENERATED (tools/joint_estimator/gen_embedded_tables.py, Decision
+    # D1): the five committed table artifacts + the SELECTED weight vector embedded VERBATIM as
+    # compiled-in bytes, provenance-locked at build time. loadEmbedded() parses these through the
+    # SAME parser as the filesystem path (#6). This is the PRODUCTION table/weight source; the
+    # filesystem JointTables::load stays for the tests/diagnostics that establish it.
+    ${CMAKE_CURRENT_LIST_DIR}/joint/jointembeddedartifacts.h
+    ${CMAKE_CURRENT_LIST_DIR}/joint/jointembeddedartifacts.cpp
 
     # voiceleading/ — AXIS 2 (VOICE LEADING), the dormant FOUNDATION build. The second,
     # orthogonal analysis dimension (cross-ARI(VL, harmonic) = 0.030, findings v2.0): the

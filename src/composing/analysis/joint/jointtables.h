@@ -80,6 +80,12 @@ public:
     /// caller must check `loaded` before use.
     static JointTables load(const std::string& artifactDir, const std::string& tableSet = "all");
 
+    /// Load the tables from the compiled-in embedded artifacts (ratified Decision D1) — the
+    /// PRODUCTION source, provenance-locked at build time (#16/#19). Only the "all" table set
+    /// is embedded; any other `tableSet` sets `error` and leaves `loaded` false. Parses the
+    /// SAME bytes through the SAME parser as load() (#6, one parse path).
+    static JointTables loadEmbedded(const std::string& tableSet = "all");
+
     bool loaded = false;
     std::string error;
 

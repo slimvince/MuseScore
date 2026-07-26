@@ -28,6 +28,7 @@
 #include <iterator>
 #include <set>
 
+#include "jointembeddedartifacts.h"
 #include "serialization/json.h"
 #include "types/bytearray.h"
 
@@ -76,6 +77,35 @@ const std::vector<std::string>& roleFigures(const std::string& family, const std
     const auto it = m.find(role);
     return it != m.end() ? it->second : empty;
 }
+
+// Parse mode_marginal.json bytes (file OR embedded) into a root object — the ONE parse used
+// by both FittedAdapter loaders (#6).
+bool parseMarginalRoot(const std::string& bytes, muse::JsonObject& out, std::string& err)
+{
+    std::string jerr;
+    const muse::ByteArray ba(bytes.data(), bytes.size());
+    const muse::JsonDocument doc = muse::JsonDocument::fromJson(ba, &jerr);
+    if (!jerr.empty()) {
+        err = "JSON parse error: " + jerr;
+        return false;
+    }
+    out = doc.rootObject();
+    return true;
+}
+
+// Fill the per-mode class marginals from the mode_marginal root object (shared by both loaders).
+void fillModeMarginal(const muse::JsonObject& root,
+                      std::unordered_map<std::string, double>& margMajor,
+                      std::unordered_map<std::string, double>& margMinor)
+{
+    for (const auto& modePair : { std::make_pair(std::string("major"), &margMajor),
+                                  std::make_pair(std::string("minor"), &margMinor) }) {
+        const muse::JsonObject o = root.value(modePair.first).toObject();
+        for (const std::string& k : o.keys()) {
+            (*modePair.second)[k] = o.value(k).toDouble();
+        }
+    }
+}
 } // namespace
 
 const std::string& FittedAdapter::modeName(bool isMajor)
@@ -119,20 +149,31 @@ FittedAdapter FittedAdapter::load(const std::string& artifactDir, const std::str
         return a;
     }
     const std::string s((std::istreambuf_iterator<char>(f)), std::istreambuf_iterator<char>());
-    std::string jerr;
-    const muse::ByteArray ba(s.data(), s.size());
-    const muse::JsonObject root = muse::JsonDocument::fromJson(ba, &jerr).rootObject();
-    if (!jerr.empty()) {
-        a.m_error = "JSON parse error in " + path + ": " + jerr;
+    muse::JsonObject root;
+    if (!parseMarginalRoot(s, root, a.m_error)) {
+        a.m_error += " in " + path;
         return a;
     }
-    for (const auto& modePair : { std::make_pair(std::string("major"), &a.m_margMajor),
-                                  std::make_pair(std::string("minor"), &a.m_margMinor) }) {
-        const muse::JsonObject o = root.value(modePair.first).toObject();
-        for (const std::string& k : o.keys()) {
-            (*modePair.second)[k] = o.value(k).toDouble();
-        }
+    fillModeMarginal(root, a.m_margMajor, a.m_margMinor);
+    a.m_loaded = true;
+    return a;
+}
+
+FittedAdapter FittedAdapter::loadEmbedded(WeightVector weights, const std::string& leftoverMode)
+{
+    FittedAdapter a;
+    a.m_weights = std::move(weights);
+    a.m_leftoverMode = leftoverMode;
+    a.m_tables = JointTables::loadEmbedded("all");
+    if (!a.m_tables.loaded) {
+        a.m_error = a.m_tables.error;
+        return a;
     }
+    muse::JsonObject root;
+    if (!parseMarginalRoot(embedded::kModeMarginal.bytes(), root, a.m_error)) {
+        return a;
+    }
+    fillModeMarginal(root, a.m_margMajor, a.m_margMinor);
     a.m_loaded = true;
     return a;
 }

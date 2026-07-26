@@ -15,13 +15,25 @@
 > the **event lattice + exact block-factorized semi-Markov Viterbi decoder** (`jointdecoder`) with the ratified
 > **§5 total-order tie-break**; the **factor log-probability provider** (`jointadapter` — the ten-factor
 > log-linear score, Katz leftover option 2a); the frozen generative **tables** (`jointtables` — the committed
-> all-326 `tables_all.json` / `note_tables_all.json` / `factor_presence_all.json` / `fermata_boundary_addendum.json`,
-> loaded at runtime); and the **weight vector** (`jointweights` — the direct-metric SELECTED vector, read from
-> `tools/joint_estimator/decode_parity_ref.json`). State = `24 keys × a ground-truth-derived Roman-numeral
+> all-326 `tables_all.json` / `note_tables_all.json` / `factor_presence_all.json` / `fermata_boundary_addendum.json`);
+> and the **weight vector** (`jointweights` — the direct-metric SELECTED vector, identity `random07`).
+> **Table/weight delivery — EMBEDDED (ratified Decision D1):** a provenance-stamped code-generation step
+> (`tools/joint_estimator/gen_embedded_tables.py`) compiles the five committed artifacts + the selected weight vector
+> VERBATIM (JSON bytes, not a parsed-structure codegen) into the generated `jointembeddedartifacts.{h,cpp}`, so the
+> running binary's fitted values are **provenance-locked at BUILD time** (#16/#19) and cannot silently drift.
+> `JointTables::loadEmbedded` / `FittedAdapter::loadEmbedded` / `selectedWeights()` are the PRODUCTION source; they
+> parse the embedded bytes through the SAME parser as the filesystem loaders (#6, one parse path). The filesystem
+> `JointTables::load` / `FittedAdapter::load` stay for the tests/diagnostics that establish the embedded data.
+> Regenerating the embedded source is the **new mechanical step of any table re-fit**; the `joint_embedded_tests`
+> drift guard (embedded bytes byte-identical to the committed files; the weight vector value-exact to
+> `decode_parity_ref.json`) is the standing guard against divergence. The generated file publishes the §2
+> output-surface-contract provenance constants (artifact sha256s, the weight-vector identity, a decoder-version
+> string) as declared dormancy — consumer: the notation record build. State = `24 keys × a ground-truth-derived Roman-numeral
 > vocabulary`, chord = scale-degree-valued (the chord symbol is the derived published fact from (key, degree)),
 > segmentation is a modeled semi-Markov variable, seg_cap 4. Inference is **preset-independent** (presets are
 > presentation concerns). **Wiring:** `tools/batch_analyze.cpp --joint-inference <dir>` (default-OFF) produces
-> each `.ours.json` from the decode instead of the legacy `analyzeScore` pipeline; `tools/run_bach_preset.py
+> each `.ours.json` from the decode at the EMBEDDED tables/weights (the `<dir>` is no longer read for fitted
+> values) instead of the legacy `analyzeScore` pipeline; `tools/run_bach_preset.py
 > --joint-inference` regenerates the corpus; the committed regression reference `tools/robust_stop/` is graded on
 > it (root 77.03 / RN 64.12 / key-home 56.14 / key-local 78.42 %, class-(b) hard-stop 1,817,280 ticks per preset).
 > **STAGED SCOPE (declared migration state, #23):** the in-app **NOTATION layer stays on the legacy L1–L6 pipeline**

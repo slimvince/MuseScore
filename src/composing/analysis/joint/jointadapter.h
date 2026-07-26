@@ -55,6 +55,11 @@ public:
                               WeightVector weights = identityWeights(),
                               const std::string& leftoverMode = "freq");
 
+    /// Load the tables and mode marginal from the compiled-in embedded artifacts (Decision D1) —
+    /// the PRODUCTION source (only the "all" set is embedded). Same parse path as load() (#6).
+    static FittedAdapter loadEmbedded(WeightVector weights = identityWeights(),
+                                      const std::string& leftoverMode = "freq");
+
     bool loaded() const { return m_loaded; }
     const std::string& error() const { return m_error; }
     const std::string& corpusGitHash() const { return m_tables.corpusGitHash; }
