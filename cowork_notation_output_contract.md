@@ -89,11 +89,23 @@ values produced this analysis" from the record itself; a provenance-less analysi
 
 Group (i), the ESTABLISHED slice — published from the first switch:
 
-- Key axis: the runner-up key and the content-score gap to it (the Python probe's published
-  form, parity-established).
-- Chord axis: the top-N alternative chord classes under the committed key with their
-  content-score gaps (the same re-scoring mechanism on the other axis), each with its derived
-  chord facts so the alternatives are display-ready (the legacy `alternatives` consumers' need).
+- Key axis: the committed chord class re-scored under every scoreable candidate key (the
+  decoder's full candidate set), committed key flagged; the runner-up and gap are derived facts.
+- Chord axis: every scoreable vocabulary class re-scored under the committed key, committed
+  class flagged; each alternative resolvable to its derived chord facts (the legacy
+  `alternatives` consumers' need).
+
+**★ Amendment (user-ratified option 1, 2026-07-26, at the posterior-slice delivery):** both
+axes publish the FULL scoreable candidate lists — the original "runner-up" / "top-N" wording is
+superseded. No truncation constant exists anywhere in the publication (a breadth "N" or a
+gap-window width would be a hand-set value with no basis, #1/#19); nothing computed is discarded
+at the boundary (#12; the evidence-publication amendment — the near-miss class scores are the
+evidence the OI-192-class refinements read); display subsetting is a downstream presentation
+read. Constrained-optimum ledger: top-N and gap-window truncation were examined and excluded
+(both invent an unestablished constant and lose ambiguity-dependent evidence for no principled
+gain); re-test only if a measured cost of the full list ever appears. The delivered form
+(commits `9849134f40`/`56439ebad7` — shared label tables + per-segment full score lists,
+bit-identical C++ parity) is this amendment's form.
 
 Group (ii), the MARGINAL completion — added by OI-193 when its oracle is established:
 

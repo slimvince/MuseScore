@@ -161,6 +161,34 @@ equal `decode_parity_ref.json`'s selected arm exactly. Both halves check against
 committed objects; the selected-weights slice artifact then becomes the C++ parity oracle
 (validating the REAL production surface, #15). The dispatch file gets a dated amendment on the
 ruling.**
+
+**★ THE POSTERIOR-SLICE DISPATCH IS FULLY DELIVERED AND COWORK-VERIFIED (2026-07-26; commits
+`4565830c82` / `9849134f40` / `56439ebad7`, all pushed).** The two-half establishment held:
+(a) identity-arm slice reproduces the frozen probe artifact EXACTLY on 325 pieces with `bwv362`
+the sole pre-enumerated §5 exception at equal total score (matches the committed 2026-07-25
+Task-A record — the independent consistency check); (b) selected-arm segments ==
+`decode_parity_ref.json` 326/326. C++ parity: 1,672,064 candidates, both axes, 0 divergences,
+bit-identical; suites 1155/53/11 green, no golden, corpus untouched. The module surface now
+publishes §3.3 group (i) (`computePosteriorSlice`); group (ii) marginals stay OI-193. **ONE
+RECONCILIATION PENDING (Cowork's deviation, CC-flagged):** the ratified contract §3.3 wrote
+"top-N alternative chord classes"; Cowork's dispatch mandated the FULL scoreable-class list (104
+classes/segment, span-independent — a factual finding), and full-list is what was built. The
+contract needs the dated amendment (full-list, presentation subsets downstream) or the record
+build must truncate — the user's call, surface presented in chat. **RULED: option 1 (user,
+2026-07-26)** — the contract §3.3 now carries the dated FULL-LIST amendment (both axes; no
+truncation constant; top-N/gap-window excluded with ledger rationale). **THE ACTIVE DISPATCH is
+`cc_instruction_notation_record_assembly.md`:** Task 0 the ratification-record commit (the
+amended contract + this handoff); then the record assembly — the formatter primitives
+single-sourced into the joint module (batch re-pointed, corpus byte-identity the establishment),
+the §3.1/§3.2 record struct with the derived chord facts (fifths mapping reused, member/factor
+roles, aug-sixth sub-type from sounding content, chord-symbol/RN strings, the §2 provenance
+block consuming the D1 constants — dormancy discharged), the NEW spelling-derivation instrument
+with its §5.2 establishment artifact (derivation documented + corpus reproduction with
+enumerated divergences), the §3.4 modal-reading counter with its §5.4 establishment (bwv254
+hand-check), ornament fields reserved (OI-194), the §3.3 slice attached via the delivered
+`computePosteriorSlice`. All dormant/default-OFF (declared dormancy — named consumer: the seams
+dispatch); decode untouched; byte-identity everywhere. THEN: the seams dispatch, then the
+switch (§8.4).
 **THEN the agenda is the retirement map + refinements, each its own later dispatch, in no forced
 order but all on the register:** the legacy retirements (the map's six items on the gates doc);
 the presentation-layer publications that are PART of the ratified record and must not drop (the
