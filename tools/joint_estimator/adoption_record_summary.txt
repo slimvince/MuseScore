@@ -1,0 +1,121 @@
+OI-178 ADOPTION MEASUREMENT — the adoption record (MEASUREMENT ONLY; no adoption act)
+instrument 020baca3472e42a77224c1e701c24a2e56d5947e   corpus e3d17c325d24e0de1213440043cbf02ac14f3d3e
+decoder input: adapter_facts.json (composing/analysis/joint/jointfactadapter — the production path)
+selected weights: random07 (R_train 0.477130); {'seg_cap': 4, 'leftover_rule': 'option 2a (freq)', 'table_set': 'all', 'tie_break': 'the ratified §5 total order (inside probe_decoder.decode_piece)'}
+
+ESTABLISHMENT — Python-from-adapter reproduces the C++ production decode: True
+  divergent vs note_events oracle: ['bwv113.8', 'bwv261', 'bwv274', 'bwv276', 'bwv284', 'bwv380', 'bwv383', 'bwv384', 'bwv4.8', 'bwv48.3']
+  (C++ from-adapter divergent:      ['bwv113.8', 'bwv261', 'bwv274', 'bwv276', 'bwv284', 'bwv380', 'bwv383', 'bwv384', 'bwv4.8', 'bwv48.3'])
+  current-system grading reproduces manifest ROOT: baroque True(66.04 vs 66.0406), jazz True(64.98 vs 64.983), default True(65.93 vs 65.9307)
+
+COLUMNS — A (from adapter, all-326 selected) vs current committed baselines (B/J/D)
+axis            A(all326)   current B / J / D
+key-LOCAL           78.42   65.99 / 62.98 / 65.71
+key-HOME            56.14   71.42 / 67.83 / 70.65
+root                77.03   66.04 / 64.98 / 65.93
+RN                  64.12   46.33 / 44.1 / 46.23
+
+PASS CONDITIONS (OI-178 as amended ★R=A1)
+  (i)  key-LOCAL exceeds baseline beyond CI on every preset: PASS
+         baroque  A-current key-local +12.37 [+10.57,+14.19]  *excludes 0
+         jazz     A-current key-local +15.37 [+13.55,+17.21]  *excludes 0
+         default  A-current key-local +12.63 [+10.82,+14.41]  *excludes 0
+  (i)  root non-degrading: PASS   RN non-degrading: PASS
+  (i-b) modulation-rate band [3.96, 6.6]: A=6.07 (GT 5.28) -> PASS
+  (ii) class-(b) root-disagree DURATION net decrease every preset: PASS   (robust_stop_diff rc=0)
+         baroque  class-b dur 2714000 -> 1817280 (-896720, -33.0%)   class-a delta -13440
+         jazz     class-b dur 2783680 -> 1817280 (-966400, -34.7%)   class-a delta -30720
+         default  class-b dur 2718080 -> 1817280 (-900800, -33.1%)   class-a delta -18480
+  (—)  key-abstain reads zero (A commits MAP): PASS
+
+★R  GT SELF-AGREEMENT CEILING (key-HOME decomposition)
+  ceiling (GT local==home over A's graded dur): 59.27%   modulated (local!=home): 40.73%
+  A key-home 56.14  vs current home 71.42/67.83/70.65  -> a system above the ceiling under-follows modulation
+
+SET-DIFF (per preset; A vs the committed reference)
+  baroque  runs ref=6506 cand=4547  (+3688 / -5647); added class-b=3474 (dur 1442040), removed class-b dur 2319520; GENUINE-NEW class-b runs=1474 (dur 671880)
+  jazz     runs ref=6688 cand=4547  (+3662 / -5803); added class-b=3462 (dur 1434000), removed class-b dur 2382960; GENUINE-NEW class-b runs=1458 (dur 663720)
+  default  runs ref=6522 cand=4547  (+3678 / -5653); added class-b=3465 (dur 1438680), removed class-b dur 2320000; GENUINE-NEW class-b runs=1469 (dur 668520)
+
+PREDICTIONS vs MEASURED
+  class-b duration: predicted NET DECREASE 10-30%; measured baroque -33.0%, jazz -34.7%, default -33.1%
+  key-local delta:  predicted +8..+13; measured baroque +12.4, jazz +15.4, default +12.6
+  key-home delta:   predicted -12..-18; measured baroque -15.3, jazz -11.7, default -14.5
+  RN delta:         predicted +12..+16; measured baroque +17.8, jazz +20.0, default +17.9
+  root delta:       predicted large (known); measured baroque +11.0, jazz +12.1, default +11.1
+  modulation:       predicted in-band; measured 6.07 band [3.96, 6.6] -> in
+
+TIMING: decode mean 3.285s max 18.021s total 1071.1s (production scale, 326 pieces)
+
+robust_stop_diff.py verdict (authoritative gate output):
+=== baroque ===
+  runs: reference=6506 candidate=4547  (+3688 / -5647)
+  WiR COVERAGE: reference=326 candidate=326  -> OK
+  (a) HARD STOP class-(b) root-disagree dur: ref=2714000 cand=1817280 delta=-896720  -> PASS
+  (c) TRACKED  class-(a) root-disagree dur: ref=102480 cand=89040 delta=-13440
+  (â€”) KEY-AGREE home:  ref=71.4182% cand=56.1427%    local: ref=65.9900% cand=78.4161%
+  (â€”) KEY-ABSTAIN (OI-33; excluded from the key-agree denominator): ref=0.0000% cand=0.0000%
+  (b) DIAGNOSTIC ADDED (candidate not in reference): 3688 runs (class-b 3474 / class-a 214)
+        bwv10.7@5280  our_root=3 -> dcml_root=7  dur=480 cls=b
+        bwv10.7@5760  our_root=3 -> dcml_root=0  dur=480 cls=b
+        bwv10.7@6240  our_root=5 -> dcml_root=0  dur=480 cls=b
+        bwv10.7@13920  our_root=2 -> dcml_root=7  dur=480 cls=b
+        bwv10.7@19680  our_root=2 -> dcml_root=10  dur=960 cls=b
+        bwv10.7@28320  our_root=3 -> dcml_root=10  dur=480 cls=b
+        ... (+3682 more; --show-runs 0 for all)
+  (b) DIAGNOSTIC REMOVED (reference not in candidate): 5647 runs (class-b 5458 / class-a 189)
+        bwv10.7@24000  our_root=0 -> dcml_root=5  dur=480 cls=b
+        bwv10.7@28320  our_root=0 -> dcml_root=10  dur=480 cls=b
+        bwv10.7@30240  our_root=0 -> dcml_root=5  dur=480 cls=b
+        bwv10.7@31200  our_root=7 -> dcml_root=5  dur=480 cls=b
+        bwv10.7@34080  our_root=9 -> dcml_root=2  dur=480 cls=b
+        bwv10.7@36000  our_root=10 -> dcml_root=7  dur=480 cls=b
+        ... (+5641 more; --show-runs 0 for all)
+=== jazz ===
+  runs: reference=6688 candidate=4547  (+3662 / -5803)
+  WiR COVERAGE: reference=326 candidate=326  -> OK
+  (a) HARD STOP class-(b) root-disagree dur: ref=2783680 cand=1817280 delta=-966400  -> PASS
+  (c) TRACKED  class-(a) root-disagree dur: ref=119760 cand=89040 delta=-30720
+  (â€”) KEY-AGREE home:  ref=67.8274% cand=56.1427%    local: ref=62.9805% cand=78.4161%
+  (â€”) KEY-ABSTAIN (OI-33; excluded from the key-agree denominator): ref=0.0492% cand=0.0000%
+  (b) DIAGNOSTIC ADDED (candidate not in reference): 3662 runs (class-b 3462 / class-a 200)
+        bwv10.7@5280  our_root=3 -> dcml_root=7  dur=480 cls=b
+        bwv10.7@6240  our_root=5 -> dcml_root=0  dur=480 cls=b
+        bwv10.7@13920  our_root=2 -> dcml_root=7  dur=480 cls=b
+        bwv10.7@31680  our_root=9 -> dcml_root=0  dur=480 cls=b
+        bwv10.7@32160  our_root=9 -> dcml_root=6  dur=480 cls=b
+        bwv10.7@34080  our_root=0 -> dcml_root=2  dur=480 cls=b
+        ... (+3656 more; --show-runs 0 for all)
+  (b) DIAGNOSTIC REMOVED (reference not in candidate): 5803 runs (class-b 5590 / class-a 213)
+        bwv10.7@21600  our_root=0 -> dcml_root=9  dur=480 cls=b
+        bwv10.7@23040  our_root=3 -> dcml_root=0  dur=480 cls=b
+        bwv10.7@24000  our_root=0 -> dcml_root=5  dur=480 cls=b
+        bwv10.7@27360  our_root=0 -> dcml_root=10  dur=480 cls=b
+        bwv10.7@27840  our_root=2 -> dcml_root=10  dur=480 cls=b
+        bwv10.7@30240  our_root=0 -> dcml_root=5  dur=480 cls=b
+        ... (+5797 more; --show-runs 0 for all)
+=== default ===
+  runs: reference=6522 candidate=4547  (+3678 / -5653)
+  WiR COVERAGE: reference=326 candidate=326  -> OK
+  (a) HARD STOP class-(b) root-disagree dur: ref=2718080 cand=1817280 delta=-900800  -> PASS
+  (c) TRACKED  class-(a) root-disagree dur: ref=107520 cand=89040 delta=-18480
+  (â€”) KEY-AGREE home:  ref=70.6514% cand=56.1427%    local: ref=65.7093% cand=78.4161%
+  (â€”) KEY-ABSTAIN (OI-33; excluded from the key-agree denominator): ref=0.0289% cand=0.0000%
+  (b) DIAGNOSTIC ADDED (candidate not in reference): 3678 runs (class-b 3465 / class-a 213)
+        bwv10.7@5280  our_root=3 -> dcml_root=7  dur=480 cls=b
+        bwv10.7@6240  our_root=5 -> dcml_root=0  dur=480 cls=b
+        bwv10.7@13920  our_root=2 -> dcml_root=7  dur=480 cls=b
+        bwv10.7@19680  our_root=2 -> dcml_root=10  dur=960 cls=b
+        bwv10.7@28320  our_root=3 -> dcml_root=10  dur=480 cls=b
+        bwv10.7@30720  our_root=9 -> dcml_root=5  dur=960 cls=b
+        ... (+3672 more; --show-runs 0 for all)
+  (b) DIAGNOSTIC REMOVED (reference not in candidate): 5653 runs (class-b 5455 / class-a 198)
+        bwv10.7@24000  our_root=0 -> dcml_root=5  dur=480 cls=b
+        bwv10.7@28320  our_root=0 -> dcml_root=10  dur=480 cls=b
+        bwv10.7@30240  our_root=0 -> dcml_root=5  dur=480 cls=b
+        bwv10.7@31200  our_root=7 -> dcml_root=5  dur=480 cls=b
+        bwv10.7@34080  our_root=9 -> dcml_root=2  dur=480 cls=b
+        bwv10.7@36000  our_root=10 -> dcml_root=7  dur=480 cls=b
+        ... (+5647 more; --show-runs 0 for all)
+
+OVERALL: PASS (hard stop = class-(b) duration non-increase + WiR coverage non-shrink, all presets)

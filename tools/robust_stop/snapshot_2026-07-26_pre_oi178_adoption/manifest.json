@@ -1,0 +1,238 @@
+{
+ "schema": 1,
+ "artifact": "robust-unit regression-stop reference (batch->robust diff base), RE-BASELINED at the OI-168 signature-mask fix (2026-07-14): analyzeChord's two key-consuming scoring terms (dim7CharacteristicBonus, diatonicRootContribution) now test the key SIGNATURE's diatonic collection (pcInMask(diatonicMaskFromFifths(fifths), pc)) instead of the mode-tonic-anchored set {(keyTonicPc + scale[i]) mod 12}, and take no tonic and no mode scale at all. Byte-identical for the 19 KeySigMode values whose tonic offset equals their diatonic parent's; corrects Altered and AlteredDomBB7, whose set was the collection transposed up a semitone. Baroque and Default are BYTE-IDENTICAL (352/352 each). Jazz: 9 .ours.json change, exactly ONE committed chord flips (bwv145.5@12960, local key D#alt: Ebm root 3 -> B/Eb root 11 = the DCML ground-truth root and the music21 root). Run-level set-diff REMOVAL-ONLY, one run; class-(b) root-disagree duration Jazz -480, Baroque/Default +0; zero additions on any preset; OVERALL PASS.",
+ "date": "2026-07-14",
+ "dispatch": "cc_instruction_oi168_fix.md (Cowork 2026-07-13; user-ratified). Magnitude measured first: cc_oi168_magnitude_report.md (default-OFF A/B). Adoption report: cc_oi168_fix_report.md",
+ "coverage_hardening_note": "OI-140 + OI-124 (2026-07-12, cc_measurement_chain_hardening_report.md): metadata-only re-stamp. OI-140 — per-preset coverage.wir_no_annotation + coverage.wir_parse_fail added (0 parse failures here); robust_stop_diff now RECONCILES the candidate wir_covered against this reference and FAILS loudly on a coverage shrink. OI-124 — per-preset coverage.wir_source_sha256 records the identity of the WiR source graded against (offset-file pattern; paired with generated_by.offsets_file_sha256); robust_stop_diff cross-checks it and cross-checks this manifest's class_b_root_disagree_dur against the sibling summary.json (catches a partial re-baseline). No grading figure changed.",
+ "abstain_convention_note": "OI-33 (2026-07-12, ABSTAIN-AWARE convention): every reported agreement-% is published with its abstain/coverage figure so a metric cannot be flattered by opting out of hard slices. ROOT (the hard stop) counts an abstained cell as a DISAGREEMENT — not abstention-reducible. KEY-agree EXCLUDES abstained (key-unparseable) cells from its denominator, so it IS abstention-reducible; the per-preset key_parse_fail_pct below is the abstain coverage, and robust_stop_diff reports it beside key-agree and FLAGS a candidate abstain above this reference. Convention text + mechanical enforcement both. No grading figure changed.",
+ "unit": "A-8 union-of-boundaries cell, duration-weighted; variant (b) DCML-only (music21 is NOT GT); root governs, RN+key(home,local) tracked beside",
+ "identity": "stem@runStartTick (maximal contiguous same-(stem,our_root,dcml_root) failing run; re-slice-stable)",
+ "generated_by": {
+  "instrument": "tools/a8_rebaseline_measure.py",
+  "instrument_note": "Unchanged instrument. The reference is re-baselined because the SOURCE changed (the OI-168 fix), not the measurement: a8_rebaseline_measure.py, compare_rn.py and the offsets file are byte-identical to the OI-132/OI-144 reference. The OI-142 transposition correction, the OI-143 dual home/local key columns and the OI-132 parent-collection mode reduction are all carried forward unchanged. The manifest itself is now DERIVED, not hand-assembled: tools/robust_stop_restamp.py regenerates every recorded figure from the candidate summary.json (#17f).",
+  "key_parsers": "tools/compare_rn.py (_our_key_tonic / _dcml_key_tonic)",
+  "offsets_file": "tools/robust_stop/corpus_transposition_offsets.json",
+  "offsets_file_sha256": "f1bc3e3765fe266735d6808e32202ccbc54915dd500a21800feaccf751dce10d",
+  "invocation": "python tools/a8_rebaseline_measure.py --out-dir tools/robust_stop",
+  "self_validation": "variant-(b) 5-bucket duration decomposition asserted byte-identical to compare_rn.grid_score_regions() on every covered piece (326x3) at generation"
+ },
+ "provenance": {
+  "head_at_generation_short": "bf6388d43a (+ the working-tree OI-168 fix that this manifest's adoption commit lands)",
+  "adoption_commit": "the OI-168 signature-mask fix commit that carries this manifest (see cc_oi168_fix_report.md)",
+  "corpus_git_hash": "the OI-168 adoption commit that carries this manifest (tools/corpus is gitignored and regenerated from that source state; reproduce with the invocation above)",
+  "corpus_complete": true,
+  "corpus_scores": 352,
+  "wir_coverage": 326,
+  "wir_excluded_no_annotation": 26,
+  "outgoing_reference_snapshot": "tools/robust_stop/snapshot_2026-07-13_pre_oi168/ (O-12; the superseded OI-132/OI-144 reference)",
+  "user_ratified": "2026-07-13 (the fix dispatch; magnitude measured 2026-07-14)"
+ },
+ "reproduce_status": {
+  "note": "The OI-168 signature-mask fix figures. Root and RN move on JAZZ ONLY, by exactly one corrected run (bwv145.5@12960); Baroque and Default are byte-identical to the OI-132/OI-144 reference they supersede (every column, every run set). The key columns are unchanged on all three presets (the key layer is upstream of the corrected terms). At two decimals NO published column moves - Jazz root-agree 64.9772 -> 64.9830 % (+0.0058 pp); what moves is the class-(b) hard-stop duration (Jazz -480) and the Jazz run count (6689 -> 6688). Outgoing values preserved below and, byte-for-byte, in the snapshot dir. Deterministic: rebuild at the adoption commit, regenerate tools/corpus, re-run the invocation.",
+  "root": {
+   "baroque": 66.0406,
+   "jazz": 64.983,
+   "default": 65.9307
+  },
+  "rn": {
+   "baroque": 46.3293,
+   "jazz": 44.101,
+   "default": 46.228
+  },
+  "key_home": {
+   "baroque": 71.4182,
+   "jazz": 67.8274,
+   "default": 70.6514
+  },
+  "key_local": {
+   "baroque": 65.99,
+   "jazz": 62.9805,
+   "default": 65.7093
+  },
+  "superseded_r10b": {
+   "root": {
+    "baroque": 63.3581,
+    "jazz": 62.3664,
+    "default": 63.2539
+   },
+   "rn": {
+    "baroque": 44.5785,
+    "jazz": 42.399,
+    "default": 44.4107
+   },
+   "key_home": {
+    "baroque": 68.1251,
+    "jazz": 64.4321,
+    "default": 67.4972
+   }
+  },
+  "superseded_oi142_oi143": {
+   "note": "The key columns superseded by the OI-132 parent-collection mode-grading consolidation (2026-07-13). root and RN are UNCHANGED by that event (the mode reduction touches only the key axis) and so have no superseded column here. Byte-for-byte copy of the outgoing reference: tools/robust_stop/snapshot_2026-07-13_pre_oi132_oi144/.",
+   "key_home": {
+    "baroque": 71.2909,
+    "jazz": 67.4887,
+    "default": 70.5183
+   },
+   "key_local": {
+    "baroque": 65.7238,
+    "jazz": 62.4942,
+    "default": 65.3852
+   }
+  },
+  "superseded_oi132_oi144": {
+   "note": "The OI-132 mode-grading + OI-144 calibration reference (2026-07-13), superseded by the OI-168 signature-mask fix. Byte-for-byte copy at tools/robust_stop/snapshot_2026-07-13_pre_oi168/.",
+   "root": {
+    "baroque": 66.0406,
+    "jazz": 64.9772,
+    "default": 65.9307
+   },
+   "rn": {
+    "baroque": 46.3293,
+    "jazz": 44.101,
+    "default": 46.228
+   },
+   "key_home": {
+    "baroque": 71.4182,
+    "jazz": 67.8274,
+    "default": 70.6514
+   },
+   "key_local": {
+    "baroque": 65.99,
+    "jazz": 62.9805,
+    "default": 65.7093
+   },
+   "class_b_root_disagree_dur": {
+    "baroque": 2714000,
+    "jazz": 2784160,
+    "default": 2718080
+   },
+   "variant_b_root_fail_runs": {
+    "baroque": 6506,
+    "jazz": 6689,
+    "default": 6522
+   }
+  }
+ },
+ "presets": {
+  "baroque": {
+   "scored_dur": 8293680,
+   "unscored_dur": 192720,
+   "root_agree_pct": 66.0406,
+   "rn_agree_pct": 46.3293,
+   "key_agree_pct": 71.4182,
+   "key_agree_pct_local": 65.99,
+   "key_parse_fail_pct": 0.0,
+   "root_disagree_dur": 2816480,
+   "root_disagree_cells": 7424,
+   "class_b_root_disagree_dur": 2714000,
+   "class_b_root_disagree_cells": 7156,
+   "class_a_root_disagree_dur": 102480,
+   "class_a_root_disagree_cells": 268,
+   "variant_b_root_fail_runs": 6506,
+   "variant_b_root_fail_cells": 7424,
+   "variant_a_root_fail_runs": 1580,
+   "variant_a_root_fail_cells": 1717,
+   "variant_a_root_disagree_dur": 586200,
+   "variant_a_class_b_dur": 555840,
+   "variant_a_class_a_dur": 30360,
+   "batch_stop_count": 54,
+   "mapping_summary": {
+    "batch_cases": 54,
+    "still_failing_variant_b": 54,
+    "still_failing_variant_a": 52,
+    "disappeared_variant_b": 0,
+    "disappeared_variant_a": 2
+   },
+   "coverage": {
+    "total_ours_files": 352,
+    "wir_covered": 326,
+    "m21_and_wir": 326,
+    "no_wir": 26,
+    "wir_no_annotation": 26,
+    "wir_parse_fail": 0,
+    "wir_source_sha256": "e54764662445724912c8340d092fe5736777f8fead08031d858738d4ce46f1a5"
+   },
+   "run_enumeration_file": "baroque_variant_b_root_fail_runs.txt"
+  },
+  "jazz": {
+   "scored_dur": 8291520,
+   "unscored_dur": 194880,
+   "root_agree_pct": 64.983,
+   "rn_agree_pct": 44.101,
+   "key_agree_pct": 67.8274,
+   "key_agree_pct_local": 62.9805,
+   "key_parse_fail_pct": 0.0492,
+   "root_disagree_dur": 2903440,
+   "root_disagree_cells": 7654,
+   "class_b_root_disagree_dur": 2783680,
+   "class_b_root_disagree_cells": 7341,
+   "class_a_root_disagree_dur": 119760,
+   "class_a_root_disagree_cells": 313,
+   "variant_b_root_fail_runs": 6688,
+   "variant_b_root_fail_cells": 7654,
+   "variant_a_root_fail_runs": 1301,
+   "variant_a_root_fail_cells": 1413,
+   "variant_a_root_disagree_dur": 484560,
+   "variant_a_class_b_dur": 460200,
+   "variant_a_class_a_dur": 24360,
+   "batch_stop_count": 24,
+   "mapping_summary": {
+    "batch_cases": 24,
+    "still_failing_variant_b": 24,
+    "still_failing_variant_a": 23,
+    "disappeared_variant_b": 0,
+    "disappeared_variant_a": 1
+   },
+   "coverage": {
+    "total_ours_files": 352,
+    "wir_covered": 326,
+    "m21_and_wir": 326,
+    "no_wir": 26,
+    "wir_no_annotation": 26,
+    "wir_parse_fail": 0,
+    "wir_source_sha256": "e54764662445724912c8340d092fe5736777f8fead08031d858738d4ce46f1a5"
+   },
+   "run_enumeration_file": "jazz_variant_b_root_fail_runs.txt"
+  },
+  "default": {
+   "scored_dur": 8293680,
+   "unscored_dur": 192720,
+   "root_agree_pct": 65.9307,
+   "rn_agree_pct": 46.228,
+   "key_agree_pct": 70.6514,
+   "key_agree_pct_local": 65.7093,
+   "key_parse_fail_pct": 0.0289,
+   "root_disagree_dur": 2825600,
+   "root_disagree_cells": 7446,
+   "class_b_root_disagree_dur": 2718080,
+   "class_b_root_disagree_cells": 7162,
+   "class_a_root_disagree_dur": 107520,
+   "class_a_root_disagree_cells": 284,
+   "variant_b_root_fail_runs": 6522,
+   "variant_b_root_fail_cells": 7446,
+   "variant_a_root_fail_runs": 1562,
+   "variant_a_root_fail_cells": 1697,
+   "variant_a_root_disagree_dur": 579840,
+   "variant_a_class_b_dur": 549480,
+   "variant_a_class_a_dur": 30360,
+   "batch_stop_count": 54,
+   "mapping_summary": {
+    "batch_cases": 54,
+    "still_failing_variant_b": 54,
+    "still_failing_variant_a": 52,
+    "disappeared_variant_b": 0,
+    "disappeared_variant_a": 2
+   },
+   "coverage": {
+    "total_ours_files": 352,
+    "wir_covered": 326,
+    "m21_and_wir": 326,
+    "no_wir": 26,
+    "wir_no_annotation": 26,
+    "wir_parse_fail": 0,
+    "wir_source_sha256": "e54764662445724912c8340d092fe5736777f8fead08031d858738d4ce46f1a5"
+   },
+   "run_enumeration_file": "default_variant_b_root_fail_runs.txt"
+  }
+ }
+}

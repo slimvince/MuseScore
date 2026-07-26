@@ -1,0 +1,688 @@
+{
+ "provenance": {
+  "generator": "tools/joint_estimator/adoption_measure.py (+ _b.py)",
+  "instrument_commit": "020baca3472e42a77224c1e701c24a2e56d5947e",
+  "dispatch": "cc_instruction_adoption_measurement.md (Cowork 2026-07-20; \u2605R=A1)",
+  "kind": "MEASUREMENT ONLY \u2014 adoption record for the user's ratification; NO adoption act",
+  "corpus_git_hash": "e3d17c325d24e0de1213440043cbf02ac14f3d3e",
+  "decoder_input": "adapter_facts.json (composing/analysis/joint/jointfactadapter \u2014 the production path)",
+  "selected_start": "random07",
+  "selected_R_train": 0.47712994546260434,
+  "config": {
+   "seg_cap": 4,
+   "leftover_rule": "option 2a (freq)",
+   "table_set": "all",
+   "tie_break": "the ratified \u00a75 total order (inside probe_decoder.decode_piece)"
+  },
+  "reference": "tools/robust_stop/ (the committed OI-168 re-baseline)",
+  "o12_snapshot": "tools/robust_stop/snapshot_2026-07-26_pre_oi178_adoption/",
+  "reuse": "decode=probe_decoder.decode_piece; regions=probe_run.decode_to_regions; grading=probe_run.grade_regions->a8.build_piece_grid; run enumeration + class split + set-diff=a8_rebaseline_measure.py + robust_stop_diff.py (the R10 sandwich); pooled+bootstrap=fit_run; modulation=search_run"
+ },
+ "establishment": {
+  "reproduces_cpp_from_adapter_decode": true,
+  "divergent_vs_note_events_oracle": [
+   "bwv113.8",
+   "bwv261",
+   "bwv274",
+   "bwv276",
+   "bwv284",
+   "bwv380",
+   "bwv383",
+   "bwv384",
+   "bwv4.8",
+   "bwv48.3"
+  ],
+  "cpp_from_adapter_divergent": [
+   "bwv113.8",
+   "bwv261",
+   "bwv274",
+   "bwv276",
+   "bwv284",
+   "bwv380",
+   "bwv383",
+   "bwv384",
+   "bwv4.8",
+   "bwv48.3"
+  ],
+  "current_system_reproduces_manifest_root": {
+   "baroque": {
+    "root_pooled": 66.04,
+    "root_manifest": 66.0406,
+    "reproduces_root": true,
+    "n_pieces": 326
+   },
+   "jazz": {
+    "root_pooled": 64.98,
+    "root_manifest": 64.983,
+    "reproduces_root": true,
+    "n_pieces": 326
+   },
+   "default": {
+    "root_pooled": 65.93,
+    "root_manifest": 65.9307,
+    "reproduces_root": true,
+    "n_pieces": 326
+   }
+  },
+  "note": "cross-language decoder parity is 326/326 on identical input (Task A); the adapter Piece is that identical input, so the Python-from-adapter decode == the C++ production decode-from-adapter. The observable is the IDENTICAL divergent set vs the note_events oracle (decode_parity_ref selected arm)."
+ },
+ "predictions_vs_measured": {
+  "class_b_duration": {
+   "predicted": "NET DECREASE every preset, 10-30% smaller",
+   "measured_pct_change": {
+    "baroque": -33.04,
+    "jazz": -34.72,
+    "default": -33.14
+   }
+  },
+  "set_diff": {
+   "predicted": "LARGE in both directions",
+   "measured": {
+    "baroque": {
+     "added": 3688,
+     "removed": 5647
+    },
+    "jazz": {
+     "added": 3662,
+     "removed": 5803
+    },
+    "default": {
+     "added": 3678,
+     "removed": 5653
+    }
+   }
+  },
+  "key_local": {
+   "predicted": "+8 to +13 pts over every preset baseline",
+   "measured_delta": {
+    "baroque": 12.37,
+    "jazz": 15.37,
+    "default": 12.63
+   }
+  },
+  "key_home": {
+   "predicted": "12-18 pts BELOW the baselines (explained by the GT ceiling)",
+   "measured_delta": {
+    "baroque": -15.29,
+    "jazz": -11.73,
+    "default": -14.54
+   }
+  },
+  "rn": {
+   "predicted": "+12 to +16",
+   "measured_delta": {
+    "baroque": 17.8,
+    "jazz": 20.04,
+    "default": 17.9
+   }
+  },
+  "modulation": {
+   "predicted": "within the \u2605R band",
+   "measured": 6.07,
+   "band": [
+    3.96,
+    6.6
+   ],
+   "within": true
+  },
+  "root": {
+   "predicted": "large improvement (expected, carried as known \u2014 the architecture's asymmetric expectation)",
+   "measured_delta": {
+    "baroque": 11.02,
+    "jazz": 12.08,
+    "default": 11.13
+   }
+  }
+ },
+ "columns": {
+  "A_from_adapter": {
+   "key_local_agree_pct": 78.42,
+   "key_home_agree_pct": 56.14,
+   "root_agree_pct": 77.03,
+   "rn_agree_pct": 64.12
+  },
+  "current_baseline_committed": {
+   "key_local": {
+    "Baroque": 65.99,
+    "Jazz": 62.98,
+    "Default": 65.71
+   },
+   "key_home": {
+    "Baroque": 71.42,
+    "Jazz": 67.83,
+    "Default": 70.65
+   },
+   "root": {
+    "Baroque": 66.04,
+    "Jazz": 64.98,
+    "Default": 65.93
+   },
+   "rn": {
+    "Baroque": 46.33,
+    "Jazz": 44.1,
+    "Default": 46.23
+   }
+  }
+ },
+ "pass_conditions": {
+  "amended_ruling": "\u2605R=A1 (user 2026-07-20): key-LOCAL is the PASS axis; key-HOME tracked with the GT-ceiling decomposition; modulation-rate is a PASS condition.",
+  "i_key_local_exceeds_beyond_CI": {
+   "pass": true,
+   "per_preset": {
+    "baroque": {
+     "key_local_exceeds": true,
+     "key_local_delta": {
+      "mean": 12.37,
+      "lo": 10.57,
+      "hi": 14.19,
+      "excludes_zero": true
+     },
+     "root_nondegrading": true,
+     "root_delta": {
+      "mean": 11.02,
+      "lo": 9.3,
+      "hi": 12.82,
+      "excludes_zero": true
+     },
+     "rn_nondegrading": true,
+     "rn_delta": {
+      "mean": 17.8,
+      "lo": 16.16,
+      "hi": 19.45,
+      "excludes_zero": true
+     }
+    },
+    "jazz": {
+     "key_local_exceeds": true,
+     "key_local_delta": {
+      "mean": 15.37,
+      "lo": 13.55,
+      "hi": 17.21,
+      "excludes_zero": true
+     },
+     "root_nondegrading": true,
+     "root_delta": {
+      "mean": 12.08,
+      "lo": 10.42,
+      "hi": 13.8,
+      "excludes_zero": true
+     },
+     "rn_nondegrading": true,
+     "rn_delta": {
+      "mean": 20.04,
+      "lo": 18.43,
+      "hi": 21.67,
+      "excludes_zero": true
+     }
+    },
+    "default": {
+     "key_local_exceeds": true,
+     "key_local_delta": {
+      "mean": 12.63,
+      "lo": 10.82,
+      "hi": 14.41,
+      "excludes_zero": true
+     },
+     "root_nondegrading": true,
+     "root_delta": {
+      "mean": 11.13,
+      "lo": 9.42,
+      "hi": 12.9,
+      "excludes_zero": true
+     },
+     "rn_nondegrading": true,
+     "rn_delta": {
+      "mean": 17.9,
+      "lo": 16.26,
+      "hi": 19.57,
+      "excludes_zero": true
+     }
+    }
+   }
+  },
+  "i_root_nondegrading": {
+   "pass": true
+  },
+  "i_rn_nondegrading": {
+   "pass": true
+  },
+  "ib_modulation_band": {
+   "pass": true,
+   "detail": {
+    "a_mean_key_changes_per_piece": 6.07,
+    "gt_mean_key_changes_per_piece_measured": 5.28,
+    "gt_mean_committed": 5.28,
+    "band_x0.75_1.25_of_gt": [
+     3.96,
+     6.6
+    ],
+    "a_pieces_with_zero_key_change": 4,
+    "gt_pieces_with_zero_key_change": 4,
+    "within_band": true,
+    "n_pieces": 326
+   }
+  },
+  "ii_class_b_duration_net_decrease": {
+   "pass": true,
+   "per_preset": {
+    "baroque": {
+     "cand_class_b_dur": 1817280,
+     "ref_class_b_dur": 2714000,
+     "delta_class_b_dur": -896720,
+     "pct_change": -33.04,
+     "net_decrease": true,
+     "cand_class_a_dur": 89040,
+     "ref_class_a_dur": 102480,
+     "delta_class_a_dur": -13440,
+     "class_a_investigate": false,
+     "cand_scored_dur": 8300640,
+     "ref_scored_dur": 8293680,
+     "cand_wir_covered": 326,
+     "ref_wir_covered": 326
+    },
+    "jazz": {
+     "cand_class_b_dur": 1817280,
+     "ref_class_b_dur": 2783680,
+     "delta_class_b_dur": -966400,
+     "pct_change": -34.72,
+     "net_decrease": true,
+     "cand_class_a_dur": 89040,
+     "ref_class_a_dur": 119760,
+     "delta_class_a_dur": -30720,
+     "class_a_investigate": false,
+     "cand_scored_dur": 8300640,
+     "ref_scored_dur": 8291520,
+     "cand_wir_covered": 326,
+     "ref_wir_covered": 326
+    },
+    "default": {
+     "cand_class_b_dur": 1817280,
+     "ref_class_b_dur": 2718080,
+     "delta_class_b_dur": -900800,
+     "pct_change": -33.14,
+     "net_decrease": true,
+     "cand_class_a_dur": 89040,
+     "ref_class_a_dur": 107520,
+     "delta_class_a_dur": -18480,
+     "class_a_investigate": false,
+     "cand_scored_dur": 8300640,
+     "ref_scored_dur": 8293680,
+     "cand_wir_covered": 326,
+     "ref_wir_covered": 326
+    }
+   },
+   "robust_stop_diff_returncode": 0,
+   "robust_stop_diff_pass": true
+  },
+  "iii_class_a_tracked": {
+   "baroque": {
+    "delta": -13440,
+    "investigate": false
+   },
+   "jazz": {
+    "delta": -30720,
+    "investigate": false
+   },
+   "default": {
+    "delta": -18480,
+    "investigate": false
+   }
+  },
+  "key_abstain_zero": {
+   "pass": true,
+   "detail": {
+    "baroque": {
+     "b_key_fail": 0,
+     "b_key_fail_local": 0
+    },
+    "jazz": {
+     "b_key_fail": 0,
+     "b_key_fail_local": 0
+    },
+    "default": {
+     "b_key_fail": 0,
+     "b_key_fail_local": 0
+    }
+   }
+  },
+  "iv_user_ratification": "PENDING \u2014 this record is the input to that ruling (no adoption act here)"
+ },
+ "R_ceiling_decomposition": {
+  "graded_dur_local_eq_home": 4919640,
+  "graded_dur_local_ne_home": 3381000,
+  "graded_dur_dcml_keyfail": 0,
+  "ceiling_home_pct": 59.27,
+  "modulated_fraction_pct": 40.73,
+  "note": "the maximum key-HOME agreement a PERFECT local-following decoder can reach; a system scoring ABOVE this on key-home is achieving it by UNDER-following modulation (staying in the home key where the music has left it)."
+ },
+ "modulation_rate": {
+  "a_mean_key_changes_per_piece": 6.07,
+  "gt_mean_key_changes_per_piece_measured": 5.28,
+  "gt_mean_committed": 5.28,
+  "band_x0.75_1.25_of_gt": [
+   3.96,
+   6.6
+  ],
+  "a_pieces_with_zero_key_change": 4,
+  "gt_pieces_with_zero_key_change": 4,
+  "within_band": true,
+  "n_pieces": 326
+ },
+ "confidence_intervals_A_minus_current": {
+  "baroque": {
+   "n_pieces": 326,
+   "key_local_agree_pct": {
+    "mean": 12.37,
+    "lo": 10.57,
+    "hi": 14.19,
+    "excludes_zero": true
+   },
+   "key_home_agree_pct": {
+    "mean": -15.29,
+    "lo": -17.49,
+    "hi": -13.07,
+    "excludes_zero": true
+   },
+   "root_agree_pct": {
+    "mean": 11.02,
+    "lo": 9.3,
+    "hi": 12.82,
+    "excludes_zero": true
+   },
+   "rn_agree_pct": {
+    "mean": 17.8,
+    "lo": 16.16,
+    "hi": 19.45,
+    "excludes_zero": true
+   }
+  },
+  "jazz": {
+   "n_pieces": 326,
+   "key_local_agree_pct": {
+    "mean": 15.37,
+    "lo": 13.55,
+    "hi": 17.21,
+    "excludes_zero": true
+   },
+   "key_home_agree_pct": {
+    "mean": -11.73,
+    "lo": -14.1,
+    "hi": -9.5,
+    "excludes_zero": true
+   },
+   "root_agree_pct": {
+    "mean": 12.08,
+    "lo": 10.42,
+    "hi": 13.8,
+    "excludes_zero": true
+   },
+   "rn_agree_pct": {
+    "mean": 20.04,
+    "lo": 18.43,
+    "hi": 21.67,
+    "excludes_zero": true
+   }
+  },
+  "default": {
+   "n_pieces": 326,
+   "key_local_agree_pct": {
+    "mean": 12.63,
+    "lo": 10.82,
+    "hi": 14.41,
+    "excludes_zero": true
+   },
+   "key_home_agree_pct": {
+    "mean": -14.54,
+    "lo": -16.77,
+    "hi": -12.36,
+    "excludes_zero": true
+   },
+   "root_agree_pct": {
+    "mean": 11.13,
+    "lo": 9.42,
+    "hi": 12.9,
+    "excludes_zero": true
+   },
+   "rn_agree_pct": {
+    "mean": 17.9,
+    "lo": 16.26,
+    "hi": 19.57,
+    "excludes_zero": true
+   }
+  }
+ },
+ "set_diff_summary": {
+  "baroque": {
+   "runs_reference": 6506,
+   "runs_candidate": 4547,
+   "added": 3688,
+   "removed": 5647,
+   "added_class_b": 3474,
+   "added_class_a": 214,
+   "added_class_b_dur": 1442040,
+   "removed_class_b_dur": 2319520,
+   "genuine_new_class_b_runs": 1474,
+   "genuine_new_class_b_dur": 671880,
+   "diagnosis_buckets": {
+    "fifth|key_ok|genuine_new": 386,
+    "fifth|key_ok|churn": 274,
+    "fourth|key_ok|churn": 193,
+    "major-sixth|key_ok|churn": 175,
+    "fourth|key_ok|genuine_new": 140,
+    "minor-third|key_ok|churn": 128,
+    "major-sixth|key_wrong|churn": 121,
+    "fifth|key_wrong|genuine_new": 120,
+    "major-sixth|key_ok|genuine_new": 118,
+    "tritone|key_ok|churn": 110,
+    "leading-tone|key_ok|churn": 103,
+    "whole-tone|key_ok|churn": 95,
+    "minor-third|key_ok|genuine_new": 88,
+    "whole-tone|key_wrong|churn": 86,
+    "minor-seventh|key_ok|churn": 86,
+    "fifth|key_wrong|churn": 81,
+    "minor-sixth|key_ok|churn": 75,
+    "major-third|key_wrong|churn": 72,
+    "major-third|key_ok|churn": 72,
+    "fourth|key_wrong|churn": 67,
+    "minor-sixth|key_ok|genuine_new": 66,
+    "minor-third|key_wrong|churn": 60,
+    "whole-tone|key_ok|genuine_new": 57,
+    "whole-tone|key_wrong|genuine_new": 56,
+    "minor-seventh|key_ok|genuine_new": 56,
+    "major-third|key_ok|genuine_new": 53,
+    "major-third|key_wrong|genuine_new": 49,
+    "minor-seventh|key_wrong|churn": 48,
+    "major-sixth|key_wrong|genuine_new": 47,
+    "minor-sixth|key_wrong|churn": 44,
+    "minor-third|key_wrong|genuine_new": 41,
+    "leading-tone|key_wrong|churn": 41,
+    "minor-seventh|key_wrong|genuine_new": 40,
+    "fourth|key_wrong|genuine_new": 36,
+    "leading-tone|key_ok|genuine_new": 34,
+    "tritone|key_wrong|churn": 29,
+    "minor-sixth|key_wrong|genuine_new": 28,
+    "semitone|key_ok|churn": 22,
+    "tritone|key_ok|genuine_new": 18,
+    "semitone|key_wrong|churn": 18,
+    "semitone|key_ok|genuine_new": 17,
+    "leading-tone|key_wrong|genuine_new": 15,
+    "semitone|key_wrong|genuine_new": 7,
+    "tritone|key_wrong|genuine_new": 2
+   }
+  },
+  "jazz": {
+   "runs_reference": 6688,
+   "runs_candidate": 4547,
+   "added": 3662,
+   "removed": 5803,
+   "added_class_b": 3462,
+   "added_class_a": 200,
+   "added_class_b_dur": 1434000,
+   "removed_class_b_dur": 2382960,
+   "genuine_new_class_b_runs": 1458,
+   "genuine_new_class_b_dur": 663720,
+   "diagnosis_buckets": {
+    "fifth|key_ok|genuine_new": 386,
+    "fifth|key_ok|churn": 269,
+    "fourth|key_ok|churn": 192,
+    "major-sixth|key_ok|churn": 178,
+    "minor-third|key_ok|churn": 146,
+    "fourth|key_ok|genuine_new": 144,
+    "fifth|key_wrong|genuine_new": 123,
+    "major-sixth|key_wrong|churn": 117,
+    "tritone|key_ok|churn": 114,
+    "leading-tone|key_ok|churn": 104,
+    "major-sixth|key_ok|genuine_new": 101,
+    "whole-tone|key_ok|churn": 90,
+    "whole-tone|key_wrong|churn": 83,
+    "major-third|key_ok|churn": 83,
+    "minor-seventh|key_ok|churn": 79,
+    "minor-sixth|key_ok|churn": 79,
+    "minor-third|key_ok|genuine_new": 78,
+    "fifth|key_wrong|churn": 78,
+    "major-third|key_wrong|churn": 72,
+    "fourth|key_wrong|churn": 62,
+    "minor-seventh|key_ok|genuine_new": 62,
+    "minor-third|key_wrong|churn": 61,
+    "whole-tone|key_wrong|genuine_new": 59,
+    "whole-tone|key_ok|genuine_new": 59,
+    "minor-sixth|key_ok|genuine_new": 55,
+    "minor-seventh|key_wrong|churn": 52,
+    "major-third|key_ok|genuine_new": 50,
+    "major-third|key_wrong|genuine_new": 48,
+    "minor-third|key_wrong|genuine_new": 45,
+    "major-sixth|key_wrong|genuine_new": 40,
+    "leading-tone|key_wrong|churn": 40,
+    "leading-tone|key_ok|genuine_new": 38,
+    "fourth|key_wrong|genuine_new": 37,
+    "minor-seventh|key_wrong|genuine_new": 36,
+    "minor-sixth|key_wrong|churn": 36,
+    "minor-sixth|key_wrong|genuine_new": 33,
+    "semitone|key_ok|churn": 27,
+    "tritone|key_wrong|churn": 25,
+    "tritone|key_ok|genuine_new": 19,
+    "semitone|key_ok|genuine_new": 18,
+    "semitone|key_wrong|churn": 17,
+    "leading-tone|key_wrong|genuine_new": 16,
+    "semitone|key_wrong|genuine_new": 8,
+    "tritone|key_wrong|genuine_new": 3
+   }
+  },
+  "default": {
+   "runs_reference": 6522,
+   "runs_candidate": 4547,
+   "added": 3678,
+   "removed": 5653,
+   "added_class_b": 3465,
+   "added_class_a": 213,
+   "added_class_b_dur": 1438680,
+   "removed_class_b_dur": 2320000,
+   "genuine_new_class_b_runs": 1469,
+   "genuine_new_class_b_dur": 668520,
+   "diagnosis_buckets": {
+    "fifth|key_ok|genuine_new": 385,
+    "fifth|key_ok|churn": 274,
+    "fourth|key_ok|churn": 191,
+    "major-sixth|key_ok|churn": 180,
+    "fourth|key_ok|genuine_new": 140,
+    "minor-third|key_ok|churn": 126,
+    "major-sixth|key_wrong|churn": 121,
+    "fifth|key_wrong|genuine_new": 121,
+    "tritone|key_ok|churn": 111,
+    "major-sixth|key_ok|genuine_new": 106,
+    "leading-tone|key_ok|churn": 103,
+    "whole-tone|key_ok|churn": 95,
+    "minor-third|key_ok|genuine_new": 91,
+    "minor-seventh|key_ok|churn": 86,
+    "whole-tone|key_wrong|churn": 84,
+    "fifth|key_wrong|churn": 80,
+    "minor-sixth|key_ok|churn": 75,
+    "major-third|key_ok|churn": 72,
+    "major-third|key_wrong|churn": 71,
+    "minor-sixth|key_ok|genuine_new": 66,
+    "fourth|key_wrong|churn": 66,
+    "minor-third|key_wrong|churn": 61,
+    "whole-tone|key_wrong|genuine_new": 57,
+    "whole-tone|key_ok|genuine_new": 57,
+    "minor-seventh|key_ok|genuine_new": 56,
+    "major-third|key_ok|genuine_new": 54,
+    "major-third|key_wrong|genuine_new": 49,
+    "minor-seventh|key_wrong|churn": 48,
+    "major-sixth|key_wrong|genuine_new": 46,
+    "minor-sixth|key_wrong|churn": 43,
+    "minor-third|key_wrong|genuine_new": 41,
+    "minor-seventh|key_wrong|genuine_new": 40,
+    "leading-tone|key_wrong|churn": 40,
+    "fourth|key_wrong|genuine_new": 37,
+    "leading-tone|key_ok|genuine_new": 34,
+    "minor-sixth|key_wrong|genuine_new": 29,
+    "tritone|key_wrong|churn": 29,
+    "semitone|key_ok|churn": 22,
+    "tritone|key_ok|genuine_new": 18,
+    "semitone|key_wrong|churn": 18,
+    "semitone|key_ok|genuine_new": 17,
+    "leading-tone|key_wrong|genuine_new": 16,
+    "semitone|key_wrong|genuine_new": 7,
+    "tritone|key_wrong|genuine_new": 2
+   }
+  }
+ },
+ "timing": {
+  "decode_mean_s": 3.285,
+  "decode_max_s": 18.021,
+  "decode_total_s": 1071.1,
+  "slowest": [
+   [
+    "bwv328",
+    18.02,
+    391
+   ],
+   [
+    "bwv371",
+    13.23,
+    329
+   ],
+   [
+    "bwv437",
+    9.35,
+    250
+   ],
+   [
+    "bwv276",
+    9.03,
+    223
+   ],
+   [
+    "bwv425",
+    7.79,
+    197
+   ],
+   [
+    "bwv42.7",
+    7.4,
+    169
+   ],
+   [
+    "bwv383",
+    7.21,
+    169
+   ],
+   [
+    "bwv226.2",
+    7.02,
+    157
+   ]
+  ],
+  "measure_wall_s": 10.1
+ },
+ "robust_stop_diff_stdout": "=== baroque ===\n  runs: reference=6506 candidate=4547  (+3688 / -5647)\n  WiR COVERAGE: reference=326 candidate=326  -> OK\n  (a) HARD STOP class-(b) root-disagree dur: ref=2714000 cand=1817280 delta=-896720  -> PASS\n  (c) TRACKED  class-(a) root-disagree dur: ref=102480 cand=89040 delta=-13440\n  (\u00e2\u20ac\u201d) KEY-AGREE home:  ref=71.4182% cand=56.1427%    local: ref=65.9900% cand=78.4161%\n  (\u00e2\u20ac\u201d) KEY-ABSTAIN (OI-33; excluded from the key-agree denominator): ref=0.0000% cand=0.0000%\n  (b) DIAGNOSTIC ADDED (candidate not in reference): 3688 runs (class-b 3474 / class-a 214)\n        bwv10.7@5280  our_root=3 -> dcml_root=7  dur=480 cls=b\n        bwv10.7@5760  our_root=3 -> dcml_root=0  dur=480 cls=b\n        bwv10.7@6240  our_root=5 -> dcml_root=0  dur=480 cls=b\n        bwv10.7@13920  our_root=2 -> dcml_root=7  dur=480 cls=b\n        bwv10.7@19680  our_root=2 -> dcml_root=10  dur=960 cls=b\n        bwv10.7@28320  our_root=3 -> dcml_root=10  dur=480 cls=b\n        ... (+3682 more; --show-runs 0 for all)\n  (b) DIAGNOSTIC REMOVED (reference not in candidate): 5647 runs (class-b 5458 / class-a 189)\n        bwv10.7@24000  our_root=0 -> dcml_root=5  dur=480 cls=b\n        bwv10.7@28320  our_root=0 -> dcml_root=10  dur=480 cls=b\n        bwv10.7@30240  our_root=0 -> dcml_root=5  dur=480 cls=b\n        bwv10.7@31200  our_root=7 -> dcml_root=5  dur=480 cls=b\n        bwv10.7@34080  our_root=9 -> dcml_root=2  dur=480 cls=b\n        bwv10.7@36000  our_root=10 -> dcml_root=7  dur=480 cls=b\n        ... (+5641 more; --show-runs 0 for all)\n=== jazz ===\n  runs: reference=6688 candidate=4547  (+3662 / -5803)\n  WiR COVERAGE: reference=326 candidate=326  -> OK\n  (a) HARD STOP class-(b) root-disagree dur: ref=2783680 cand=1817280 delta=-966400  -> PASS\n  (c) TRACKED  class-(a) root-disagree dur: ref=119760 cand=89040 delta=-30720\n  (\u00e2\u20ac\u201d) KEY-AGREE home:  ref=67.8274% cand=56.1427%    local: ref=62.9805% cand=78.4161%\n  (\u00e2\u20ac\u201d) KEY-ABSTAIN (OI-33; excluded from the key-agree denominator): ref=0.0492% cand=0.0000%\n  (b) DIAGNOSTIC ADDED (candidate not in reference): 3662 runs (class-b 3462 / class-a 200)\n        bwv10.7@5280  our_root=3 -> dcml_root=7  dur=480 cls=b\n        bwv10.7@6240  our_root=5 -> dcml_root=0  dur=480 cls=b\n        bwv10.7@13920  our_root=2 -> dcml_root=7  dur=480 cls=b\n        bwv10.7@31680  our_root=9 -> dcml_root=0  dur=480 cls=b\n        bwv10.7@32160  our_root=9 -> dcml_root=6  dur=480 cls=b\n        bwv10.7@34080  our_root=0 -> dcml_root=2  dur=480 cls=b\n        ... (+3656 more; --show-runs 0 for all)\n  (b) DIAGNOSTIC REMOVED (reference not in candidate): 5803 runs (class-b 5590 / class-a 213)\n        bwv10.7@21600  our_root=0 -> dcml_root=9  dur=480 cls=b\n        bwv10.7@23040  our_root=3 -> dcml_root=0  dur=480 cls=b\n        bwv10.7@24000  our_root=0 -> dcml_root=5  dur=480 cls=b\n        bwv10.7@27360  our_root=0 -> dcml_root=10  dur=480 cls=b\n        bwv10.7@27840  our_root=2 -> dcml_root=10  dur=480 cls=b\n        bwv10.7@30240  our_root=0 -> dcml_root=5  dur=480 cls=b\n        ... (+5797 more; --show-runs 0 for all)\n=== default ===\n  runs: reference=6522 candidate=4547  (+3678 / -5653)\n  WiR COVERAGE: reference=326 candidate=326  -> OK\n  (a) HARD STOP class-(b) root-disagree dur: ref=2718080 cand=1817280 delta=-900800  -> PASS\n  (c) TRACKED  class-(a) root-disagree dur: ref=107520 cand=89040 delta=-18480\n  (\u00e2\u20ac\u201d) KEY-AGREE home:  ref=70.6514% cand=56.1427%    local: ref=65.7093% cand=78.4161%\n  (\u00e2\u20ac\u201d) KEY-ABSTAIN (OI-33; excluded from the key-agree denominator): ref=0.0289% cand=0.0000%\n  (b) DIAGNOSTIC ADDED (candidate not in reference): 3678 runs (class-b 3465 / class-a 213)\n        bwv10.7@5280  our_root=3 -> dcml_root=7  dur=480 cls=b\n        bwv10.7@6240  our_root=5 -> dcml_root=0  dur=480 cls=b\n        bwv10.7@13920  our_root=2 -> dcml_root=7  dur=480 cls=b\n        bwv10.7@19680  our_root=2 -> dcml_root=10  dur=960 cls=b\n        bwv10.7@28320  our_root=3 -> dcml_root=10  dur=480 cls=b\n        bwv10.7@30720  our_root=9 -> dcml_root=5  dur=960 cls=b\n        ... (+3672 more; --show-runs 0 for all)\n  (b) DIAGNOSTIC REMOVED (reference not in candidate): 5653 runs (class-b 5455 / class-a 198)\n        bwv10.7@24000  our_root=0 -> dcml_root=5  dur=480 cls=b\n        bwv10.7@28320  our_root=0 -> dcml_root=10  dur=480 cls=b\n        bwv10.7@30240  our_root=0 -> dcml_root=5  dur=480 cls=b\n        bwv10.7@31200  our_root=7 -> dcml_root=5  dur=480 cls=b\n        bwv10.7@34080  our_root=9 -> dcml_root=2  dur=480 cls=b\n        bwv10.7@36000  our_root=10 -> dcml_root=7  dur=480 cls=b\n        ... (+5647 more; --show-runs 0 for all)\n\nOVERALL: PASS (hard stop = class-(b) duration non-increase + WiR coverage non-shrink, all presets)\n",
+ "what_the_adoption_commit_would_contain": {
+  "note": "For the user's ratification \u2014 NOT executed in this dispatch.",
+  "would_contain": [
+   "the wiring point: A becomes the inference-layer key/mode/chord estimator; the analysis is PRESET-INDEPENDENT at the inference layer (the ratified mode decision) \u2014 presets remain presentation concerns only",
+   "the re-baselined tools/robust_stop/ reference (a8 re-run over A's decode; the set-diff explained and ratified; the manifest re-stamped via robust_stop_restamp.py; the O-12 snapshot at snapshot_2026-07-26_pre_oi178_adoption/ is the outgoing preservation)",
+   "the OI-180 retirement map's first steps (each its own later verified increment)",
+   "one revertible, provenance-stamped commit; suites + pipeline snapshots refreshed only if A's adoption changes committed output"
+  ]
+ }
+}

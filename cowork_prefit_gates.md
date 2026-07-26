@@ -114,9 +114,19 @@ variant, written while no diff exists.
    large root improvement would itself be a surprise to investigate (#3); (c) O-12 snapshot of the
    outgoing `tools/robust_stop/` reference; (d) the full-corpus a8 measurement, all three presets.
 3. **Adoption PASS requires ALL of:**
-   - **(i) Held-out:** A's key-agree (local AND home) exceeds the current baseline beyond the
+   - **(i) Held-out:** A's key-agree vs the LOCAL key exceeds the current baseline beyond the
      piece-bootstrap CI on every preset; root-agree and RN-agree do not degrade beyond the CI (#24 —
-     a difference within the CI is not a finding, in either direction).
+     a difference within the CI is not a finding, in either direction). **(i-b) The modulation-rate
+     guard:** A's key changes per piece sit within 0.75×–1.25× of the ground truth's rate. **The
+     key-HOME column is TRACKED with a mandatory explained decomposition** against the computed GT
+     self-agreement ceiling (the duration fraction where the ground truth's own local key equals its
+     home key — the maximum any local-following decoder can score on that column). *(Amended by user
+     ratification 2026-07-20, BEFORE the adoption measurement ran (#22's lawful moment): the original
+     condition demanded home-exceedance, which is impossible by construction for a correct
+     modulation-follower — measured at the probe/CV stage (A home 56.46 vs baselines ~71 while
+     matching the GT modulation rate 5.52 vs 5.28); the never-modulate failure the home condition
+     guarded is guarded directly by (i-b). Original text: "A's key-agree (local AND home) exceeds the
+     current baseline beyond the piece-bootstrap CI on every preset".)*
    - **(ii) Full-corpus aggregate criterion (replacing zero-new-case for this one event):** the
      class-(b) root-disagree DURATION shows a NET DECREASE on every preset. Added (new-failing) runs
      are permitted inside the net decrease — but the mandatory explained diff sharpens: EVERY added

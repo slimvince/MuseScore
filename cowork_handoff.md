@@ -227,13 +227,25 @@ CPython 3.12+'s compensated summation, not the math library (CC overturned its o
 diagnosis with bit-level evidence; the C++ now mirrors it — a recorded Python-version coupling);
 the §5 tie-break lives in both decoders (re-grade of the canonicalized pieces: 0.00 pp); the L1
 `notatedNotes()` additive publication landed under both proofs, catching and fixing a latent
-infinite-loop on partial ties. **Task C was honestly deferred, not rushed. The ACTIVE dispatch is
-`cc_instruction_joint_fact_adapter.md`** — the fact adapter consuming the published surface,
-input parity vs the committed note events by divergence class (the voice/part mapping the named
-risk), end-to-end parity on both arms, plus the four small deferred items (the diagnostic
-decoder's pre-§5 tie-break; the one stale identity entry in the old probe decode artifact; the
-two cosmetic warnings; the Python-version coupling recorded in provenance). After it: the OI-178
-adoption measurement — the last gate. Only after that: the production-module build under
+infinite-loop on partial ties. Task C DELIVERED and verified (`8416b2c84c`, `020baca347`, pushed): the fact adapter reads only
+the published surface; input parity 300/326 byte-perfect with ONE mechanically-unmappable class
+(metric position — music21 read the xml's EDITORIAL measure bookkeeping, the production engraving
+model normalizes it; ~26 pathological-measure pieces; end-to-end 320/326 identity, 316/326
+selected, every divergence in that class). **User ruling (2026-07-20): option 1 — residual
+accepted-and-recorded; the OI-184 repair event's scope WIDENED to the full reader unification**
+(production fact layer becomes the single extraction source; re-extract, re-count, re-fit; the
+music21 scaffold retires) — on the OI-184 row. **The ACTIVE dispatch (pending ONE ruling) is
+`cc_instruction_adoption_measurement.md` — the OI-178 protocol's measurement phase**: O-12
+snapshot, A's production-path decode on the full covered corpus, the per-preset class-(b)
+duration delta + fully-classified set-diff, the key/RN columns with bootstrap intervals, the GT
+self-agreement ceiling, the modulation-rate guard, timing — assembled into the adoption record
+for the user's ratification; NO adoption act in the dispatch. **The ★R ruling is IN (user, 2026-07-20): A1** — the OI-178 PASS condition amended by
+ratification BEFORE the measurement (the #22 lawful moment), recorded with its original text on
+the gates document: key-LOCAL must exceed every preset baseline beyond the interval; the
+modulation-rate band (0.75–1.25× the GT's 5.28) is a PASS condition; key-HOME is tracked with a
+mandatory decomposition against the computed GT self-agreement ceiling. **The dispatch is LIVE —
+`cc_instruction_adoption_measurement.md`.** When its record returns and verifies: the user's
+adoption ruling on one revertible commit is the final act of the dual path's forward exit. Only after that: the production-module build under
 the parallel-build sanction, of the complete algorithm, with the probe outputs as parity oracle. OI-179 (the ground-truth ceiling): the literature half is ANSWERED — no
 published inter-annotator agreement figure exists for classical symbolic Roman-numeral analysis
 anywhere in the field, so the 87-stem BCMH measurement would be novel; BCMH is inspected at the files
