@@ -104,6 +104,31 @@ struct RecordSegment {
     //      hasAnalyzedChord, keyAlternatives, fanout, pedal-identity): deliberately NOT declared here.
 };
 
+// ── §3.4 the un-rounded modal reading (C1; per key run) ───────────────────────────────────────────
+// One observed chromatic inflection of a scale degree within a key run, identified by pitch-class
+// offset (contract §3.4: "inflection identity by pitch-class offset, with the notated tpc recorded
+// beside"). Un-rounded counts only — no label, no threshold, no rounding.
+struct ModalInflection {
+    int pcOffset = 0;                ///< (note pc - tonic pc) mod 12 — the inflection identity
+    int notatedLofOffset = 0;        ///< the note's tonal spelling relative to the tonic (note lof - key
+                                     ///< tonic lof) — the tpc "recorded beside" (well-defined per cell)
+    long long durationTicks = 0;     ///< summed notated duration of notes ONSETTING in the run at this cell
+    int onsetCount = 0;              ///< number of such note onsets
+};
+// One scale degree (1..7) of the run's key with every observed inflection (sorted by pcOffset).
+struct ModalDegree {
+    int degree = 0;                  ///< 1..7 (the letter-based scale degree of the key)
+    std::vector<ModalInflection> inflections;
+};
+// A maximal run of consecutive committed segments sharing one key, with its modal reading (degrees
+// that have any observed note, in ascending degree order).
+struct ModalKeyRun {
+    int startTick = 0, endTick = 0;
+    int tonicPc = 0;
+    bool isMajor = true;
+    std::vector<ModalDegree> degrees;
+};
+
 // The full record for one analyzed piece/span.
 struct NotationRecord {
     std::string stem;
@@ -123,8 +148,8 @@ struct NotationRecord {
     // §3.3 group (i) — the established posterior slice, one per segment (same order as `segments`).
     std::vector<SegmentSlice> slices;
 
-    // §3.4 the un-rounded modal reading (populated by the modal-counter commit; empty until then).
-    // (declared here so the ONE assembly function fills it; the field's type lands with that commit.)
+    // §3.4 the un-rounded modal reading, one entry per key run (C1; ratified decision 1).
+    std::vector<ModalKeyRun> modalReading;
 };
 
 /// Assemble the notation record for a decoded piece (contract §3.1–§3.3). Score-decode-INDEPENDENT:
@@ -136,6 +161,15 @@ NotationRecord assembleNotationRecord(const Piece& piece, const DecodeResult& re
                                       std::optional<int> sigFifths, const std::string& declaredMode,
                                       const FittedAdapter& adapter, const Vocabulary& vocab,
                                       ChordCache& cache);
+
+/// The §3.4 un-rounded modal reading over the decode's KEY RUNS (maximal consecutive same-key
+/// segments). For each key run and each scale degree 1..7 of its key, the sounding duration and onset
+/// count of EVERY chromatic inflection of that degree observed in the run — counted from the Piece's
+/// notated notes (degree from the notated spelling, inflection keyed by pitch-class offset). No label,
+/// no threshold, no rounding (C1's publication; the presentation layer formats later). `referenceFifths`
+/// is the notated signature (the enharmonic reference for each run's key tonic spelling).
+std::vector<ModalKeyRun> computeModalReading(const Piece& piece, const DecodeResult& result,
+                                             int referenceFifths);
 
 /// The class-native `diatonicToKey` answer (§3.2): TRUE iff the class is a plain diatonic-degree chord
 /// of the key's mode — an unaltered scale degree (no ♭/♯ in the degree base), no applied target, and

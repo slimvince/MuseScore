@@ -60,6 +60,7 @@ set(MODULE_TEST_SRC
     ${CMAKE_CURRENT_LIST_DIR}/joint_adapter_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/joint_decoder_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/joint_embedded_tests.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/joint_modal_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/joint_primitives_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/joint_record_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/joint_slice_tests.cpp

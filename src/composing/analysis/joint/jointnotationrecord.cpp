@@ -23,6 +23,7 @@
 #include "jointnotationrecord.h"
 
 #include <array>
+#include <map>
 
 #include "jointembeddedartifacts.h"   // §2 provenance constants (Decision D1 — dormancy discharged)
 #include "jointrender.h"              // the §3.2/§5.6 presentation derivations (single-sourced, Task 1)
@@ -85,6 +86,73 @@ std::string recordAugSixthSubType(const Piece& piece, int i, int j, int tonicPc)
         return "French";
     }
     return "Italian";
+}
+
+// ── §3.4 the un-rounded modal reading ─────────────────────────────────────────────────────────────
+// The scale degree (1..7) of a note is its LETTER's position in the key — read from the line of
+// fifths: adding a perfect fifth (+1 lof) advances the scale degree by +4 (mod 7), so the fifths
+// distance from the tonic (lofDiff mod 7) maps to a degree via {0->1,1->5,2->2,3->6,4->3,5->7,6->4}.
+// This is mode-independent (the LETTER is the same in major/minor; only which inflection is diatonic
+// differs), and it correctly separates e.g. ♭7 (G) from the raised leading tone (G#) — both letter G,
+// degree 7 — while a ♭6 (Ab) lands on degree 6 as its letter demands.
+namespace {
+int degreeFromLofDiff(int lofDiff)
+{
+    static const std::array<int, 7> kDegForResidue = { 1, 5, 2, 6, 3, 7, 4 };
+    const int r = ((lofDiff % 7) + 7) % 7;
+    return kDegForResidue[static_cast<size_t>(r)];
+}
+} // namespace
+
+std::vector<ModalKeyRun> computeModalReading(const Piece& piece, const DecodeResult& result,
+                                             int referenceFifths)
+{
+    std::vector<ModalKeyRun> runs;
+    // group consecutive committed segments sharing one (tonicPc, isMajor) into key runs.
+    for (size_t si = 0; si < result.segments.size();) {
+        const SegmentSummary& first = result.segments[si];
+        size_t sj = si + 1;
+        while (sj < result.segments.size()
+               && result.segments[sj].tonicPc == first.tonicPc
+               && result.segments[sj].isMajor == first.isMajor) {
+            ++sj;
+        }
+        ModalKeyRun run;
+        run.tonicPc = first.tonicPc;
+        run.isMajor = first.isMajor;
+        run.startTick = first.startTick;
+        run.endTick = result.segments[sj - 1].endTick;
+
+        const int keyTonicLof = keySignatureFifths(run.tonicPc, run.isMajor, referenceFifths)
+                                + (run.isMajor ? 0 : 3);
+        // accumulate degree -> pcOffset -> (duration, onsetCount, notatedLofOffset) over notes ONSETTING
+        // in the run span (non-anacrusis).
+        std::map<int, std::map<int, ModalInflection> > acc;   // degree -> pcOffset -> cell
+        for (const NoteRec& n : piece.notes) {
+            if (n.measure == 0 || n.onset < run.startTick || n.onset >= run.endTick) {
+                continue;
+            }
+            const int lofDiff = n.lof - keyTonicLof;
+            const int degree = degreeFromLofDiff(lofDiff);
+            const int pcOffset = (((n.pc - run.tonicPc) % 12) + 12) % 12;
+            ModalInflection& cell = acc[degree][pcOffset];
+            cell.pcOffset = pcOffset;
+            cell.notatedLofOffset = lofDiff;
+            cell.durationTicks += n.dur;
+            cell.onsetCount += 1;
+        }
+        for (const auto& degEntry : acc) {
+            ModalDegree md;
+            md.degree = degEntry.first;
+            for (const auto& infEntry : degEntry.second) {
+                md.inflections.push_back(infEntry.second);
+            }
+            run.degrees.push_back(std::move(md));
+        }
+        runs.push_back(std::move(run));
+        si = sj;
+    }
+    return runs;
 }
 
 // ── the assembly ──────────────────────────────────────────────────────────────────────────────────
@@ -191,6 +259,9 @@ NotationRecord assembleNotationRecord(const Piece& piece, const DecodeResult& re
 
     // §3.3 group (i) — the established posterior slice (attached, NOT recomputed inline).
     rec.slices = computePosteriorSlice(piece, result.segments, adapter, vocab, cache);
+
+    // §3.4 the un-rounded modal reading over the decode's key runs.
+    rec.modalReading = computeModalReading(piece, result, sigRef);
 
     return rec;
 }

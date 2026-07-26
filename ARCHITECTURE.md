@@ -64,6 +64,33 @@
 > segments equal `decode_parity_ref.json` on all 326. The default-OFF `batch_analyze --joint-posterior-slice <dir>`
 > driver verifies the C++ slice BIT-IDENTICALLY against it (every piece × segment × candidate × both axes; a
 > near-miss is a defect, not a tolerance).
+>
+> **NOTATION OUTPUT-SURFACE RECORD — the A-native record (as-built, DORMANT; contract `cowork_notation_output_contract.md`
+> §3.1–§3.4).** `joint::assembleNotationRecord(piece, result, sigFifths, declaredMode, adapter, vocab, cache)`
+> (`jointnotationrecord`) assembles the ONE surface the in-app notation path will read (Decision A2), from the
+> decode outputs + the decode's prior inputs + the compiled-in provenance — it NEVER re-decodes and never reads the
+> score. **§3.1** the piece block: analyzed span, the signature-fifths/declared-mode INPUT ECHO (the adapter exposes
+> only the initial signature — no mid-piece re-anchor points, so that list is empty), and the §2 provenance block
+> read from the D1 embedded constants (`kTableArtifacts` hashes, `kWeightVectorIdentity`, `kDecoderVersion`,
+> `kCorpusGitHash` — **their declared dormancy is discharged**: the record is their consumer). **§3.2** per committed
+> segment: the native fields verbatim + the derived chord facts computed ONCE (the render primitives are
+> single-sourced in `jointrender` — `jointOursQuality`/`jointChordSymbol`/`jointRenderRn`, shared with the batch
+> render for §5.6 formatter continuity, #6): `keySignatureFifths`, root/bass tonal **spellings** (line-of-fifths;
+> `jointprimitives::rootSpellingLof`/`factorSpellingLof`), member pcs with factor roles, the class-native
+> `diatonicToKey` (a structural read, not a collection recompute — OI-173's lesson), the per-event bass factor role,
+> and the augmented-sixth Italian/German/French sub-type derived from the SOUNDING content (the vocabulary collapsed
+> the family to Italian). **§3.3** the established posterior slice attached. **§3.4** the un-rounded modal reading
+> (`computeModalReading`) per key run: for each scale degree 1..7, the sounding duration + onset count of every
+> chromatic inflection (degree from the notated spelling, inflection by pc offset) — counted, un-rounded, no label
+> (C1). **§3.5** ornament fields RESERVED-absent (OI-194's own increment); **§3.6** excluded fields simply absent.
+> **Establishment:** the key-signature-fifths mapping duplicates the legacy `keymodeanalyzer::keySignatureFifthsForKey`
+> module-locally (L1-only isolation, #7/OI-180 — unifies at the legacy retirement); the spelling derivation is
+> established by `tools/joint_estimator/gen_spelling_establishment.py` → `spelling_establishment.json` (root
+> 13061/13063 = 99.985 % agreement with the notated tpc where the root sounds, 0 unmappable/pc-mismatch; the four
+> divergences are enharmonic re-spellings, the OI-168 convention class); the modal counter by the bwv254 hand-check
+> (D-minor degree-6 all ♭6, degree-7 ♭7+leading-tone). Consumers: NONE yet — the record is dormant, its named
+> consumer the later SEAMS dispatch (the span/note seams that read it). Suites: unit coverage in
+> `joint_record_tests` / `joint_spelling_tests` / `joint_modal_tests`.
 > The layer sections (L1–L6) below remain the accurate description of the LEGACY pipeline — still live on the
 > notation path, dormant-compiled on the batch path.
 
