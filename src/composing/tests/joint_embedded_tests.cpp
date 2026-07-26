@@ -61,6 +61,24 @@ std::string readFileBytes(const std::string& path)
     return ss.str();
 }
 
+// Normalize a checked-out file's bytes to the git-canonical LF form (.gitattributes `* text=auto`:
+// CRLF -> LF). The embedded artifacts are stored in this canonical form (OI-195), so the guard
+// establishes against the committed OBJECT content and is checkout-configuration-INDEPENDENT: on a
+// CRLF checkout the raw working-tree bytes carry `\r\n`, but the canonical LF form does not.
+// git converts CRLF only (a lone CR is left as-is), so a plain `\r\n` -> `\n` pass is exact.
+std::string toCanonicalLf(const std::string& s)
+{
+    std::string out;
+    out.reserve(s.size());
+    for (std::size_t i = 0; i < s.size(); ++i) {
+        if (s[i] == '\r' && i + 1 < s.size() && s[i + 1] == '\n') {
+            continue;   // drop the CR of a CRLF pair
+        }
+        out.push_back(s[i]);
+    }
+    return out;
+}
+
 std::string sha256Hex(const std::string& bytes)
 {
     const QByteArray in(bytes.data(), static_cast<int>(bytes.size()));
@@ -88,7 +106,10 @@ TEST(JointEmbeddedDriftGuard, EmbeddedArtifactsMatchCommittedBytesAndHashes)
     ASSERT_EQ(emb::kTableArtifacts.size(), 5u);
     for (const emb::EmbeddedBlob* b : emb::kTableArtifacts) {
         const std::string embedded = b->bytes();
-        const std::string file = readFileBytes(std::string(JOINT_ARTIFACT_DIR) + "/" + b->name);
+        // The file side is normalized to the git-canonical LF form (OI-195), so the guard compares
+        // the committed OBJECT content, not the checkout's line-ending configuration.
+        const std::string file =
+            toCanonicalLf(readFileBytes(std::string(JOINT_ARTIFACT_DIR) + "/" + b->name));
         ASSERT_FALSE(file.empty()) << "committed artifact not found: " << b->name;
 
         // byte-equality (strictly stronger than the sha256 the §2 provenance publishes): the
@@ -96,7 +117,8 @@ TEST(JointEmbeddedDriftGuard, EmbeddedArtifactsMatchCommittedBytesAndHashes)
         EXPECT_EQ(embedded.size(), b->byteLen) << b->name;
         EXPECT_EQ(embedded, file) << b->name;
 
-        // the published sha256 constant matches BOTH the embedded bytes and the committed file.
+        // the published sha256 constant matches BOTH the embedded bytes and the committed file
+        // (canonical LF form).
         ASSERT_TRUE(isLowerHex64(b->sha256)) << b->name;
         EXPECT_EQ(sha256Hex(embedded), std::string(b->sha256)) << b->name;
         EXPECT_EQ(sha256Hex(file), std::string(b->sha256)) << b->name;

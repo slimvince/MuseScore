@@ -27,8 +27,11 @@
 //
 // The five table artifacts + the SELECTED weight vector are embedded VERBATIM (JSON
 // bytes, not a parsed-structure codegen) and parsed at load through the SAME parser as
-// the filesystem path (#6). Establishment = byte equality vs the committed artifacts
-// (the joint_embedded_tests drift guard). Source corpus: 57ed94a6a46571172a351c09ba4f5cb92930674a.
+// the filesystem path (#6). The embedded bytes are the GIT-CANONICAL LF form
+// (.gitattributes `* text=auto`; CRLF -> LF), so the generated source and the drift
+// guard are checkout-configuration-INDEPENDENT (OI-195): the guard normalizes the
+// checked-out file's line endings to LF before comparing. Establishment = byte equality
+// vs the committed artifacts (the joint_embedded_tests drift guard). Source corpus: 57ed94a6a46571172a351c09ba4f5cb92930674a.
 
 #ifndef MU_COMPOSING_ANALYSIS_JOINT_JOINTEMBEDDEDARTIFACTS_H
 #define MU_COMPOSING_ANALYSIS_JOINT_JOINTEMBEDDEDARTIFACTS_H
@@ -41,7 +44,8 @@ namespace mu::composing::analysis::joint::embedded {
 /// One embedded artifact: the committed file's bytes stored VERBATIM as compiled-in
 /// C-string chunks (JSON text carries no NUL byte, so each chunk is NUL-terminated and
 /// its length is strlen; bytes() concatenates them into the exact file bytes). `sha256`
-/// is the lowercase-hex digest of those verbatim bytes (== the committed file's digest).
+/// is the lowercase-hex digest of those verbatim bytes (== the committed file's
+/// git-canonical LF digest, OI-195).
 struct EmbeddedBlob {
     const char* const* chunks;
     std::size_t chunkCount;

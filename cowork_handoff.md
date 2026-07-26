@@ -123,6 +123,26 @@ drift guard (embedded-vs-artifact hash equality test); the §2 provenance consta
 (declared dormancy — consumer: the record build); establishment = full-corpus regen field-exact
 + a8/robust_stop_diff (+0/−0) + both suites + snapshots untouched. After its ratified report:
 the record + posterior-slice build dispatch, then the seams, then the switch (§8.2–8.4).
+
+**★ D1 IS DELIVERED AND COWORK-VERIFIED AT THE OBJECTS, WITH ONE FINDING (2026-07-26).**
+Commits `5f3362f359` (ratification record — the four riding files exactly) + `83fbb9e661` (the
+codegen: 15 files, the five artifacts + selected weights embedded verbatim through the shared
+parser, drift guard 6 tests, batch `--joint-inference` switched to embedded, regen BYTE-IDENTICAL
+352/352 ×3, robust-stop sandwich +0/−0 every preset, suites 1152/53/11 green, no golden).
+**The finding (OI-195, Cowork-found at object verification):** the embedded bytes are the CRLF
+WORKING-TREE checkout form, not the git-canonical LF blobs (blob 114,787 vs embedded 118,460 on
+`tables_all.json`; literal `\r\n` escapes in the generated file) — so the generator's
+"deterministic re-run" and the drift guard are CHECKOUT-CONFIGURATION-DEPENDENT (the OI-34 class
+in a `src/` generated file; #16). NO inference impact (JSON parse is line-ending-insensitive;
+every establishment check passed). Fix = LF-normalize at the generator, regenerate, normalize
+the guard's file side — Task 1 of the ACTIVE dispatch. **THE ACTIVE DISPATCH is
+`cc_instruction_posterior_slice.md`:** Task 1 the OI-195 fix (own commit, carries the riding
+Cowork rows/handoff edits, flips OI-195); Task 2 the Python posterior-slice reference instrument
+(full key-list + chord-class-list content scores per committed segment, established against the
+committed probe artifact's runner-up/gap slice); Task 3 the C++ slice on the module surface
+(additive, bit-identical parity vs the reference on all 326, corpus render UNCHANGED, byte-
+identity everywhere). After it: the record assembly dispatch (derived chord facts + spelling
+establishment + modal-reading counter + §2 provenance block), then the seams, then the switch.
 **THEN the agenda is the retirement map + refinements, each its own later dispatch, in no forced
 order but all on the register:** the legacy retirements (the map's six items on the gates doc);
 the presentation-layer publications that are PART of the ratified record and must not drop (the

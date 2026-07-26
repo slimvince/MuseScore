@@ -101,6 +101,16 @@ def read_bytes(path):
         return f.read()
 
 
+def canonicalize_lf(data):
+    """Normalize working-tree bytes to the git-canonical LF form (.gitattributes `* text=auto`):
+    CRLF -> LF. The committed blob is LF; embedding AND hashing this canonical form makes the
+    generated source and the drift guard checkout-configuration-INDEPENDENT (OI-195; #16) — on a
+    CRLF checkout the raw working-tree bytes differ from the committed object, but the canonical
+    LF form does not. git's text normalization converts CRLF only (a lone CR is left as-is), so a
+    plain `\\r\\n` -> `\\n` replacement reproduces the committed blob bytes exactly."""
+    return data.replace(b"\r\n", b"\n")
+
+
 LICENSE = """/*
  * SPDX-License-Identifier: GPL-3.0-only
  * MuseScore-Studio-CLA-applies
@@ -134,8 +144,12 @@ def gen_header(blobs, weight_blob, corpus_git_hash):
     lines.append("//")
     lines.append("// The five table artifacts + the SELECTED weight vector are embedded VERBATIM (JSON")
     lines.append("// bytes, not a parsed-structure codegen) and parsed at load through the SAME parser as")
-    lines.append("// the filesystem path (#6). Establishment = byte equality vs the committed artifacts")
-    lines.append("// (the joint_embedded_tests drift guard). Source corpus: %s." % corpus_git_hash)
+    lines.append("// the filesystem path (#6). The embedded bytes are the GIT-CANONICAL LF form")
+    lines.append("// (.gitattributes `* text=auto`; CRLF -> LF), so the generated source and the drift")
+    lines.append("// guard are checkout-configuration-INDEPENDENT (OI-195): the guard normalizes the")
+    lines.append("// checked-out file's line endings to LF before comparing. Establishment = byte equality")
+    lines.append("// vs the committed artifacts (the joint_embedded_tests drift guard). Source corpus: %s."
+                 % corpus_git_hash)
     lines.append("")
     lines.append("#ifndef MU_COMPOSING_ANALYSIS_JOINT_JOINTEMBEDDEDARTIFACTS_H")
     lines.append("#define MU_COMPOSING_ANALYSIS_JOINT_JOINTEMBEDDEDARTIFACTS_H")
@@ -148,7 +162,8 @@ def gen_header(blobs, weight_blob, corpus_git_hash):
     lines.append("/// One embedded artifact: the committed file's bytes stored VERBATIM as compiled-in")
     lines.append("/// C-string chunks (JSON text carries no NUL byte, so each chunk is NUL-terminated and")
     lines.append("/// its length is strlen; bytes() concatenates them into the exact file bytes). `sha256`")
-    lines.append("/// is the lowercase-hex digest of those verbatim bytes (== the committed file's digest).")
+    lines.append("/// is the lowercase-hex digest of those verbatim bytes (== the committed file's")
+    lines.append("/// git-canonical LF digest, OI-195).")
     lines.append("struct EmbeddedBlob {")
     lines.append("    const char* const* chunks;")
     lines.append("    std::size_t chunkCount;")
@@ -252,7 +267,7 @@ def main():
     corpus_git_hash = None
     for name, base in FILE_ARTIFACTS:
         path = os.path.join(HERE, name)
-        data = read_bytes(path)
+        data = canonicalize_lf(read_bytes(path))   # git-canonical LF form (OI-195)
         digest = hashlib.sha256(data).hexdigest()
         chunks = chunk_literals(data)
         blobs.append((name, base, digest, len(data), len(chunks), chunks))
@@ -266,7 +281,9 @@ def main():
     if start != "random07":
         print("WARNING: decode_parity_ref.json selected_start is %r, not 'random07'" % start, file=sys.stderr)
     ordered = {n: sel[n] for n in WEIGHT_NAMES}      # WEIGHT_NAMES order, all 13 present
-    snippet = json.dumps(ordered).encode("utf-8")     # verbatim embedded snippet bytes
+    # Generator-owned serialization: json.dumps emits a single line (no newline), so this is LF by
+    # construction; canonicalize_lf is applied for symmetry with the file artifacts (OI-195, no-op).
+    snippet = canonicalize_lf(json.dumps(ordered).encode("utf-8"))   # verbatim embedded snippet bytes
     wdigest = hashlib.sha256(snippet).hexdigest()
     wchunks = chunk_literals(snippet)
     weight_blob = ("selected_weights@decode_parity_ref.json", "kSelectedWeightsJson",
