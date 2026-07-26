@@ -464,6 +464,75 @@ double segmentContentScore(const Piece& piece, int i, int j, int tonic, bool isM
     return feat.valid ? weightedContent(feat, adapter.weights()) : NEG_INF;
 }
 
+std::vector<SegmentSlice> computePosteriorSlice(const Piece& piece,
+                                                const std::vector<SegmentSummary>& segments,
+                                                const FittedAdapter& adapter, const Vocabulary& vocab,
+                                                ChordCache& cache)
+{
+    // The CHORD axis iterates the vocabulary in SORTED class-key order — probe_decoder iterates
+    // vocab.keylist = sorted(classes); the reference artifact's chord_axis_labels are in this order.
+    // (byte-lexicographic == Python's sorted() on these ASCII class keys.)
+    std::vector<const std::pair<std::string, LabelClass>*> sortedClasses;
+    sortedClasses.reserve(vocab.ordered().size());
+    for (const auto& cp : vocab.ordered()) {
+        sortedClasses.push_back(&cp);
+    }
+    std::sort(sortedClasses.begin(), sortedClasses.end(),
+              [](const std::pair<std::string, LabelClass>* a, const std::pair<std::string, LabelClass>* b) {
+                  return a->first < b->first;
+              });
+
+    std::vector<SegmentSlice> out;
+    out.reserve(segments.size());
+    for (const SegmentSummary& s : segments) {
+        SegmentSlice slice;
+        const LabelClass* committedCls = vocab.find(s.classKey);
+
+        // KEY axis: the committed chord class re-scored under every scoreable candidate key, in
+        // KEYS_24 order (tonic 0..11, major before minor). Filter == probe_decoder._segment_posterior:
+        // root defined AND finite content score. The committed key is flagged by its list index.
+        if (committedCls) {
+            for (int t = 0; t < 12; ++t) {
+                for (bool m : { true, false }) {
+                    const ChordInfo& info = cache.get(*committedCls, t, m);
+                    if (!info.root.has_value()) {
+                        continue;
+                    }
+                    const double sc = segmentContentScore(piece, s.i, s.j, t, m, *committedCls, adapter, cache);
+                    if (sc == NEG_INF) {
+                        continue;
+                    }
+                    if (t == s.tonicPc && m == s.isMajor) {
+                        slice.keyAxis.committed = static_cast<int>(slice.keyAxis.labels.size());
+                    }
+                    slice.keyAxis.labels.push_back(keyString(t, m));
+                    slice.keyAxis.scores.push_back(sc);
+                }
+            }
+        }
+
+        // CHORD axis: every scoreable vocabulary class re-scored under the committed key, sorted order.
+        for (const auto* cp : sortedClasses) {
+            const ChordInfo& info = cache.get(cp->second, s.tonicPc, s.isMajor);
+            if (!info.root.has_value()) {
+                continue;
+            }
+            const double sc = segmentContentScore(piece, s.i, s.j, s.tonicPc, s.isMajor, cp->second,
+                                                  adapter, cache);
+            if (sc == NEG_INF) {
+                continue;
+            }
+            if (cp->first == s.classKey) {
+                slice.chordAxis.committed = static_cast<int>(slice.chordAxis.labels.size());
+            }
+            slice.chordAxis.labels.push_back(cp->first);
+            slice.chordAxis.scores.push_back(sc);
+        }
+        out.push_back(std::move(slice));
+    }
+    return out;
+}
+
 // ── the exact semi-Markov Viterbi ─────────────────────────────────────────────────────────────
 
 DecodeResult decodePiece(const Piece& piece, const FittedAdapter& adapter, const Vocabulary& vocab,

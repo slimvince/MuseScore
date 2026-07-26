@@ -42,6 +42,28 @@
 > key areas) and the fitted-table packaging to the in-app runtime (the two gaps the adoption STOP surfaced). Full
 > spec: `cowork_joint_estimator_architecture.md`, `cowork_joint_estimator_factorization.md`; pre-fit gates
 > `cowork_prefit_gates.md`; adoption record `cc_adoption_measurement_report.md` / `tools/joint_estimator/adoption_record.json`.
+>
+> **POSTERIOR SLICE — the notation output-surface contract §3.3 GROUP (i) (as-built, ADDITIVE; the decode is
+> unchanged).** `jointdecoder::computePosteriorSlice(piece, segments, adapter, vocab, cache)` publishes, per
+> committed segment, the ESTABLISHED content-score uncertainty surface as two full candidate lists (no truncation
+> constant): a **KEY axis** — the committed chord class re-scored under every scoreable candidate key (all 24,
+> KEYS_24 order: tonic 0..11, major before minor) — and a **CHORD axis** — every scoreable vocabulary class
+> re-scored under the committed key (sorted class-key order); each entry is (label, weighted within-segment content
+> score) with the committed reading flagged by index. It is computed POST-decode by re-scoring the held span with
+> `segmentContentScore`, so it inherits the established Neumaier bit-parity; "scoreable" = root defined AND finite
+> content score (probe_decoder._segment_posterior's filter). The scores are LOG-scores, NOT probabilities, and gaps
+> are score differences; **GROUP (ii) forward-backward marginals are NOT delivered here — OI-193's later step.** The
+> batch `.ours.json` render is UNCHANGED (the a8 grading schema keeps `"alternatives": []`, the pinned grading form);
+> the slice's consumer is the later notation record build. **Reference oracle + parity:** the Python
+> `tools/joint_estimator/gen_posterior_slice.py` writes `posterior_slice_ref.json` — the SELECTED-arm slice, full
+> precision, in shared-label form (the scoreable sets are span-INDEPENDENT on this corpus: exactly one 24-key list
+> and one 104-class list across all 13,063 committed segments, so the labels are published once at top level and each
+> segment stores only its scores + committed index; lossless, not truncation). It is established two-halved:
+> (a) the identity-arm key-axis runner-up/gap reproduces the committed `probe_corpus_decode.json` EXACTLY on the 325
+> §5-unaffected pieces (bwv362 the sole §5 equal-score exception, enumerated), (b) the selected-arm committed
+> segments equal `decode_parity_ref.json` on all 326. The default-OFF `batch_analyze --joint-posterior-slice <dir>`
+> driver verifies the C++ slice BIT-IDENTICALLY against it (every piece × segment × candidate × both axes; a
+> near-miss is a defect, not a tolerance).
 > The layer sections (L1–L6) below remain the accurate description of the LEGACY pipeline — still live on the
 > notation path, dormant-compiled on the batch path.
 

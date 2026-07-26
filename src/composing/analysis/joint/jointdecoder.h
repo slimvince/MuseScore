@@ -124,6 +124,35 @@ struct DecodeResult {
     bool complete = false;
 };
 
+// ── The posterior slice (notation output-surface contract §3.3 GROUP (i); the established
+// content-score uncertainty surface). Additive: computed POST-decode by re-scoring the committed
+// span under alternative readings; the decode itself is unchanged. GROUP (ii) forward-backward
+// marginals are OI-193's later step and are NOT produced here. ──────────────────────────────────
+
+// One axis of a segment's slice: a FULL candidate list (no truncation) as parallel arrays — `labels`
+// and `scores` in lock-step, `committed` the index of the committed reading. The KEY axis holds the
+// committed chord class re-scored under every scoreable candidate key (KEYS_24 order: tonic 0..11,
+// major before minor); the CHORD axis holds every scoreable vocabulary class re-scored under the
+// committed key (vocabulary class-key SORTED order). A candidate is "scoreable" iff its root is
+// defined AND its within-segment content score is finite (mirrors probe_decoder._segment_posterior).
+struct PosteriorAxis {
+    std::vector<std::string> labels;   // key strings (key axis) or class keys (chord axis)
+    std::vector<double> scores;        // weighted within-segment content score, lock-step with labels
+    int committed = -1;                // index of the committed reading in labels/scores
+};
+struct SegmentSlice {
+    PosteriorAxis keyAxis;
+    PosteriorAxis chordAxis;
+};
+
+/// The per-segment posterior slice (contract §3.3 group (i)) for a decode's committed segments — the
+/// C++ mirror of probe_decoder's key-axis/chord-axis re-scoring, built on segmentContentScore (so it
+/// inherits the established Neumaier bit-parity). One SegmentSlice per input segment, same order.
+std::vector<SegmentSlice> computePosteriorSlice(const Piece& piece,
+                                                const std::vector<SegmentSummary>& segments,
+                                                const FittedAdapter& adapter, const Vocabulary& vocab,
+                                                ChordCache& cache);
+
 /// Diagnostic: the weighted within-segment content score of one candidate — the value the Viterbi
 /// caches as `content` (score_segment_content). Used to localize decode-parity divergences.
 double segmentContentScore(const Piece& piece, int i, int j, int tonic, bool isMajor,

@@ -1997,6 +1997,13 @@ static void printHelp(const std::string& prog)
         << "            tools/joint_estimator) INSTEAD of the legacy analyzeScore pipeline.\n"
         << "            INTENTIONAL behavior change; batch/corpus surface only (notation\n"
         << "            stays legacy). Default OFF (default output byte-identical).\n"
+        << "  --joint-posterior-slice <artifact-dir>\n"
+        << "            (Task 3) Compute the posterior slice (notation output-surface\n"
+        << "            contract §3.3 group (i)) per committed segment via\n"
+        << "            joint::computePosteriorSlice, and verify it BIT-IDENTICALLY against\n"
+        << "            the Python reference <artifact-dir>/posterior_slice_ref.json (every\n"
+        << "            piece, segment, candidate, both axes). Self-driving; returns before\n"
+        << "            any analysis (production output byte-identical). Default OFF.\n"
         << "  --decode-keymode\n"
         << "            (Layer-3 diagnostic) Build the layer-1 note model, run the REAL\n"
         << "            layer-2 slicer, run the isolated layer-3 key/mode SEQUENCE decoder\n"
@@ -4038,6 +4045,178 @@ static int runJointDecodeCorpus(const std::string& artifactDir)
     return overallPass ? 0 : 1;
 }
 
+// ── --joint-posterior-slice (default OFF; the Task-3 posterior-slice PARITY driver) ───────────────
+// Decodes the committed note events at the SELECTED weight arm and computes the posterior slice
+// (notation output-surface contract §3.3 group (i)) per committed segment via
+// joint::computePosteriorSlice, then verifies BIT-IDENTICAL equality — every piece, every segment,
+// every candidate, both axes — against the Python reference posterior_slice_ref.json (the parity
+// oracle from tools/joint_estimator/gen_posterior_slice.py). "Bit-identical" is the exact double
+// value (the reference stores the round-trippable repr; muse JSON toDouble recovers the exact double,
+// as the joint_embedded weight-parity test establishes) AND the exact candidate labels/order/committed
+// index. A near-miss is a defect, not a tolerance (the Neumaier lesson). Writes a small pass/fail +
+// first-divergence report. Self-driving: consumes only committed artifacts, needs no input score, and
+// returns before any production analysis path — the standard corpus stays byte-identical.
+static int runJointPosteriorSlice(const std::string& artifactDir)
+{
+    namespace joint = mu::composing::analysis::joint;
+    using muse::ByteArray;
+    using muse::JsonArray;
+    using muse::JsonDocument;
+    using muse::JsonObject;
+    using muse::JsonValue;
+
+    auto readJson = [](const std::string& path, JsonObject& out) -> std::string {
+        std::ifstream f(path, std::ios::binary);
+        if (!f) {
+            return "cannot open " + path;
+        }
+        const std::string s((std::istreambuf_iterator<char>(f)), std::istreambuf_iterator<char>());
+        std::string e;
+        const ByteArray ba(s.data(), s.size());
+        out = JsonDocument::fromJson(ba, &e).rootObject();
+        return e.empty() ? std::string() : ("parse error in " + path + ": " + e);
+    };
+
+    joint::LoadedCorpus corpus = joint::loadPiecesFromNoteEvents(artifactDir + "/note_events/note_events.json");
+    if (!corpus.ok) {
+        std::cerr << "joint-slice: " << corpus.error << "\n";
+        return 1;
+    }
+    JsonObject ref;
+    std::string err = readJson(artifactDir + "/posterior_slice_ref.json", ref);
+    if (!err.empty()) {
+        std::cerr << "joint-slice: " << err << "\n";
+        return 1;
+    }
+    const JsonArray keyLabels = ref.value("key_axis_labels").toArray();
+    const JsonArray chordLabels = ref.value("chord_axis_labels").toArray();
+    const JsonObject refPieces = ref.value("pieces").toObject();
+
+    JsonObject parity;
+    err = readJson(artifactDir + "/decode_parity_ref.json", parity);
+    if (!err.empty()) {
+        std::cerr << "joint-slice: " << err << "\n";
+        return 1;
+    }
+    joint::WeightVector selected;
+    const JsonObject selObj = parity.value("selected_weights").toObject();
+    for (const std::string& n : joint::kWeightNames) {
+        selected.w[n] = selObj.value(n).toDouble();
+    }
+
+    joint::JointTables tables = joint::JointTables::load(artifactDir, "all");
+    if (!tables.loaded) {
+        std::cerr << "joint-slice: " << tables.error << "\n";
+        return 1;
+    }
+    joint::Vocabulary vocab(tables);
+    joint::ChordCache cache;
+    joint::FittedAdapter adapter = joint::FittedAdapter::load(artifactDir, "all", selected);
+    if (!adapter.loaded()) {
+        std::cerr << "joint-slice: " << adapter.error() << "\n";
+        return 1;
+    }
+
+    // Compare one axis (C++ vs the reference's shared labels + per-segment scores + committed index).
+    // Returns an empty string on match, else a human-readable first-divergence description.
+    auto compareAxis = [](const std::string& axis, const std::string& stem, size_t si,
+                          const joint::PosteriorAxis& ax, const JsonArray& sharedLabels,
+                          const JsonArray& refScores, int refCommitted, long long& candCount) -> std::string {
+        if (ax.labels.size() != sharedLabels.size() || ax.scores.size() != refScores.size()
+            || ax.labels.size() != ax.scores.size()) {
+            return stem + " seg " + std::to_string(si) + " " + axis + ": candidate count "
+                   + std::to_string(ax.labels.size()) + " != ref " + std::to_string(sharedLabels.size());
+        }
+        if (ax.committed != refCommitted) {
+            return stem + " seg " + std::to_string(si) + " " + axis + ": committed index "
+                   + std::to_string(ax.committed) + " != ref " + std::to_string(refCommitted);
+        }
+        for (size_t k = 0; k < ax.labels.size(); ++k) {
+            if (ax.labels[k] != sharedLabels.at(k).toStdString()) {
+                return stem + " seg " + std::to_string(si) + " " + axis + " cand " + std::to_string(k)
+                       + ": label '" + ax.labels[k] + "' != ref '" + sharedLabels.at(k).toStdString() + "'";
+            }
+            const double refSc = refScores.at(k).toDouble();
+            if (ax.scores[k] != refSc) {                    // BIT-EXACT (finite, no NaN) — no tolerance
+                std::ostringstream d;
+                d.precision(17);
+                d << stem << " seg " << si << " " << axis << " cand " << k << " ('" << ax.labels[k]
+                  << "'): score " << ax.scores[k] << " != ref " << refSc;
+                return d.str();
+            }
+            ++candCount;
+        }
+        return std::string();
+    };
+
+    int pieces = 0, segsCompared = 0, divergences = 0;
+    long long candCompared = 0;
+    std::string firstDiv;
+    const auto t0 = std::chrono::steady_clock::now();
+    for (auto& kv : corpus.pieces) {
+        const std::string& stem = kv.first;
+        if (!refPieces.contains(stem)) {
+            continue;
+        }
+        const JsonObject rp = refPieces.value(stem).toObject();
+        const JsonValue sv = rp.value("sig_fifths");
+        const std::optional<int> sig = sv.isNumber() ? std::optional<int>(sv.toInt()) : std::nullopt;
+        const std::string dm = rp.value("declared_mode").toStdString();
+        const joint::DecodeResult r = joint::decodePiece(kv.second, adapter, vocab, cache, 4, sig, dm);
+        const std::vector<joint::SegmentSlice> slice =
+            joint::computePosteriorSlice(kv.second, r.segments, adapter, vocab, cache);
+        const JsonArray refSegs = rp.value("segments").toArray();
+        ++pieces;
+        if (slice.size() != refSegs.size()) {
+            ++divergences;
+            if (firstDiv.empty()) {
+                firstDiv = stem + ": segment count " + std::to_string(slice.size()) + " != ref "
+                           + std::to_string(refSegs.size());
+            }
+            continue;
+        }
+        for (size_t si = 0; si < slice.size(); ++si) {
+            const JsonObject rs = refSegs.at(si).toObject();
+            const std::string dk = compareAxis("key_axis", stem, si, slice[si].keyAxis, keyLabels,
+                                               rs.value("key_scores").toArray(),
+                                               rs.value("key_committed").toInt(), candCompared);
+            const std::string dc = compareAxis("chord_axis", stem, si, slice[si].chordAxis, chordLabels,
+                                               rs.value("chord_scores").toArray(),
+                                               rs.value("chord_committed").toInt(), candCompared);
+            if (!dk.empty() || !dc.empty()) {
+                ++divergences;
+                if (firstDiv.empty()) {
+                    firstDiv = dk.empty() ? dc : dk;
+                }
+            }
+            ++segsCompared;
+        }
+    }
+    const double secs = std::chrono::duration<double>(std::chrono::steady_clock::now() - t0).count();
+    const bool pass = (divergences == 0);
+
+    std::ostringstream art;
+    art << "{\n \"tool\": \"tools/batch_analyze.cpp --joint-posterior-slice\",\n"
+        << " \"reference\": \"posterior_slice_ref.json\",\n"
+        << " \"weight_arm\": \"selected\",\n"
+        << " \"pieces\": " << pieces << ", \"segments_compared\": " << segsCompared
+        << ", \"candidates_compared\": " << candCompared << ",\n"
+        << " \"divergences\": " << divergences << ", \"first_divergence\": \""
+        << (firstDiv.empty() ? std::string("none") : firstDiv) << "\",\n"
+        << " \"wall_seconds\": " << secs << ",\n"
+        << " \"overall_pass\": " << (pass ? "true" : "false") << "\n}\n";
+    const std::string outPath = artifactDir + "/joint_posterior_slice_parity.json";
+    std::ofstream ofs(outPath, std::ios::binary);
+    ofs << art.str();
+    std::cout << "joint-posterior-slice: " << pieces << " pieces, " << segsCompared << " segments, "
+              << candCompared << " candidates compared, " << divergences << " divergence(s) -> "
+              << (pass ? "PASS" : "FAIL") << "; artifact -> " << outPath << "\n";
+    if (!pass) {
+        std::cout << "  first divergence: " << firstDiv << "\n";
+    }
+    return pass ? 0 : 1;
+}
+
 // ── --joint-adapter-facts / --joint-decode-from-adapter (default OFF; OI-180 dual-path Task C) ────
 // These are the "score -> facts" build step the --joint-decode-corpus comment names as separate. They
 // load each covered corpus score, build the joint decoder's inputs through the FACT ADAPTER
@@ -4649,6 +4828,10 @@ int main(int argc, char* argv[])
     // and every legacy unit test on it keeps passing. Staged scope: batch/corpus surface only; the
     // notation layer stays on the legacy analysis (its increment is the named successor).
     std::string jointInferenceDir;
+    // --joint-posterior-slice <artifact-dir>: the Task-3 posterior-slice PARITY driver (default OFF).
+    // Computes the §3.3 group (i) slice per segment and checks it bit-identically against the Python
+    // reference posterior_slice_ref.json; returns before any score/preset/analysis (byte-identical).
+    std::string jointPosteriorSliceDir;
 
     for (int i = 1; i < args.size(); ++i) {
         const QString a = args.at(i);
@@ -4692,6 +4875,13 @@ int main(int argc, char* argv[])
                 jointInferenceDir = args.at(++i).toUtf8().toStdString();
             } else {
                 std::cerr << "ERROR: --joint-inference requires an artifact-dir argument\n";
+                return 1;
+            }
+        } else if (a == "--joint-posterior-slice") {
+            if (i + 1 < args.size()) {
+                jointPosteriorSliceDir = args.at(++i).toUtf8().toStdString();
+            } else {
+                std::cerr << "ERROR: --joint-posterior-slice requires an artifact-dir argument\n";
                 return 1;
             }
         } else if (a == "--dump-regions") {
@@ -4913,6 +5103,12 @@ int main(int argc, char* argv[])
     // byte-identical whether or not this flag is present.
     if (!jointDecodeCorpusDir.empty()) {
         return runJointDecodeCorpus(jointDecodeCorpusDir);
+    }
+    // ── --joint-posterior-slice (Task-3 posterior-slice parity driver; default OFF) ────
+    // Self-driving: consumes only the committed tools/joint_estimator artifacts (posterior_slice_ref.json
+    // + tables + selected weights) and returns before any production analysis (standard corpus byte-identical).
+    if (!jointPosteriorSliceDir.empty()) {
+        return runJointPosteriorSlice(jointPosteriorSliceDir);
     }
     // ── --joint-adapter-facts / --joint-decode-from-adapter (Task C; default OFF) ────
     // Both load the corpus scores, build the joint inputs through the fact adapter, and return before
