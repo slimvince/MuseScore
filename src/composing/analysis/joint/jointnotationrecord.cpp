@@ -29,42 +29,9 @@
 
 namespace mu::composing::analysis::joint {
 
-// ── §3.2 derived: (tonic, mode) -> notated key-signature fifths ───────────────────────────────────
-// MODULE-LOCAL reimplementation of keymodeanalyzer::keySignatureFifthsForKey (the legacy key
-// analyzer). It is duplicated, not reused, because keymodeanalyzer.h drags in the legacy L3/L4 key
-// machinery and the joint module reads ONLY the L1/L1.5 fact surface + the sanctioned dependency-free
-// primitives (#7/OI-180). The two unify when the legacy key analyzer retires (the OI-180 map).
-//
-// Derivation (the circle-of-fifths key signatures):
-//   * a MAJOR key's signature is the circle-of-fifths position of its tonic (Ionian);
-//   * a MINOR key shares its RELATIVE MAJOR's signature — Aeolian's parent Ionian is tonic + 3
-//     semitones (A minor -> C major, +3 = 0 mod 12);
-//   * the three enharmonic tonics (Db/C#, Gb/F#, Cb/B) have TWO valid signatures (±); the spelling
-//     nearest the notated reference signature is chosen (|opt - ref| minimized, ties -> the first).
-// The per-Ionian-pc table below is the standard key-signature accidental count (sharps +, flats -).
-int recordKeySignatureFifths(int tonicPc, bool isMajor, int referenceFifths)
-{
-    const int ionianPc = isMajor ? (((tonicPc % 12) + 12) % 12)
-                                 : ((((tonicPc + 3) % 12) + 12) % 12);   // minor -> relative-major Ionian
-    // (Ionian pc) -> {primary, enharmonic-alternate} signature fifths.
-    static const std::array<std::array<int, 2>, 12> kOpts = { {
-        { {  0,  0 } },   // 0  C
-        { {  7, -5 } },   // 1  C# / Db
-        { {  2,  2 } },   // 2  D
-        { { -3, -3 } },   // 3  Eb
-        { {  4,  4 } },   // 4  E
-        { { -1, -1 } },   // 5  F
-        { {  6, -6 } },   // 6  F# / Gb
-        { {  1,  1 } },   // 7  G
-        { { -4, -4 } },   // 8  Ab
-        { {  3,  3 } },   // 9  A
-        { { -2, -2 } },   // 10 Bb
-        { {  5, -7 } },   // 11 B / Cb
-    } };
-    const std::array<int, 2>& o = kOpts[static_cast<size_t>(ionianPc)];
-    const int d0 = o[0] - referenceFifths, d1 = o[1] - referenceFifths;
-    return (std::abs(d0) <= std::abs(d1)) ? o[0] : o[1];
-}
+// The (tonic, mode) -> key-signature fifths mapping AND the root/bass tonal-spelling derivation live
+// in jointprimitives (keySignatureFifths / rootSpellingLof / factorSpellingLof) — key/pitch primitives
+// reused here (#6/#7). The full line-of-fifths derivation is documented at those definitions.
 
 // ── §3.2 derived: the class-native diatonicToKey answer ───────────────────────────────────────────
 // TRUE iff the class is a plain diatonic-degree chord of the key's mode. A purely STRUCTURAL read of
@@ -187,7 +154,8 @@ NotationRecord assembleNotationRecord(const Piece& piece, const DecodeResult& re
         const ChordInfo& info = cache.get(resolved, s.tonicPc, s.isMajor);
 
         // derived facts
-        rs.keySignatureFifths = recordKeySignatureFifths(s.tonicPc, s.isMajor, sigRef);
+        rs.keySignatureFifths = keySignatureFifths(s.tonicPc, s.isMajor, sigRef);
+        rs.rootSpellingLof = rootSpellingLof(resolved, s.tonicPc, s.isMajor, sigRef);
         rs.memberPcs = info.mem;
         if (info.fac.has_value()) {
             rs.members = *info.fac;
@@ -195,13 +163,18 @@ NotationRecord assembleNotationRecord(const Piece& piece, const DecodeResult& re
         rs.chordSymbol = jointChordSymbol(info.root, resolved.quality());
         rs.diatonicToKey = recordDiatonicToKey(resolved);
 
-        // per-event bass facts over [i, j)
+        // per-event bass facts over [i, j) — the bass factor role and, where it IS a chord factor and
+        // the root is spellable, the bass factor's tonal spelling (§3.2 bass spelling).
         const bool hasSeventh = info.fac.has_value() && info.fac->size() == 4;
         for (int e = s.i; e < s.j && e >= 0 && e < static_cast<int>(piece.evBass.size()); ++e) {
             EventBassFact bf;
             bf.eventIndex = e;
             bf.bassPc = piece.evBass[e];
             bf.role = bassFactorRole(info, piece.evBass[e]);
+            if (!bf.role.empty() && rs.rootSpellingLof.has_value() && info.root.has_value()
+                && bf.bassPc.has_value()) {
+                bf.spellingLof = factorSpellingLof(*rs.rootSpellingLof, *info.root, *bf.bassPc);
+            }
             rs.bassPerEvent.push_back(std::move(bf));
         }
         // the Roman numeral uses the FIRST event's bass role (the batch-render form, §5.6 continuity).

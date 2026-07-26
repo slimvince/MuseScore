@@ -133,20 +133,20 @@ joint::Piece onEventPiece(const std::vector<int>& pcs, const std::vector<int>& m
 TEST(JointRecordTests, KeySignatureFifthsMapping)
 {
     // unambiguous majors/minors (reference 0)
-    EXPECT_EQ(joint::recordKeySignatureFifths(0, true, 0), 0);    // C major
-    EXPECT_EQ(joint::recordKeySignatureFifths(7, true, 0), 1);    // G major
-    EXPECT_EQ(joint::recordKeySignatureFifths(5, true, 0), -1);   // F major
-    EXPECT_EQ(joint::recordKeySignatureFifths(2, true, 0), 2);    // D major
-    EXPECT_EQ(joint::recordKeySignatureFifths(9, false, 0), 0);   // A minor -> C major sig 0
-    EXPECT_EQ(joint::recordKeySignatureFifths(2, false, 0), -1);  // D minor -> F major sig -1
-    EXPECT_EQ(joint::recordKeySignatureFifths(4, false, 0), 1);   // E minor -> G major sig 1
+    EXPECT_EQ(joint::keySignatureFifths(0, true, 0), 0);    // C major
+    EXPECT_EQ(joint::keySignatureFifths(7, true, 0), 1);    // G major
+    EXPECT_EQ(joint::keySignatureFifths(5, true, 0), -1);   // F major
+    EXPECT_EQ(joint::keySignatureFifths(2, true, 0), 2);    // D major
+    EXPECT_EQ(joint::keySignatureFifths(9, false, 0), 0);   // A minor -> C major sig 0
+    EXPECT_EQ(joint::keySignatureFifths(2, false, 0), -1);  // D minor -> F major sig -1
+    EXPECT_EQ(joint::keySignatureFifths(4, false, 0), 1);   // E minor -> G major sig 1
     // enharmonic pairs resolved by the reference
-    EXPECT_EQ(joint::recordKeySignatureFifths(6, true, 6), 6);    // F# major (sharp ref)
-    EXPECT_EQ(joint::recordKeySignatureFifths(6, true, -6), -6);  // Gb major (flat ref)
-    EXPECT_EQ(joint::recordKeySignatureFifths(1, true, 7), 7);    // C# major (sharp ref)
-    EXPECT_EQ(joint::recordKeySignatureFifths(1, true, -5), -5);  // Db major (flat ref)
-    EXPECT_EQ(joint::recordKeySignatureFifths(11, true, 5), 5);   // B major (sharp ref)
-    EXPECT_EQ(joint::recordKeySignatureFifths(11, true, -7), -7); // Cb major (flat ref)
+    EXPECT_EQ(joint::keySignatureFifths(6, true, 6), 6);    // F# major (sharp ref)
+    EXPECT_EQ(joint::keySignatureFifths(6, true, -6), -6);  // Gb major (flat ref)
+    EXPECT_EQ(joint::keySignatureFifths(1, true, 7), 7);    // C# major (sharp ref)
+    EXPECT_EQ(joint::keySignatureFifths(1, true, -5), -5);  // Db major (flat ref)
+    EXPECT_EQ(joint::keySignatureFifths(11, true, 5), 5);   // B major (sharp ref)
+    EXPECT_EQ(joint::keySignatureFifths(11, true, -7), -7); // Cb major (flat ref)
 }
 
 // ── §3.2 derived: the class-native diatonicToKey rule (hand cases) ────────────────────────────────

@@ -1,0 +1,673 @@
+{
+ "provenance": {
+  "generator": "tools/joint_estimator/gen_spelling_establishment.py",
+  "decode_source": "decode_parity_ref.json",
+  "decode_arm": "selected",
+  "note_events_git_hash": null,
+  "lof_convention": "C=0, +1 = perfect fifth up (== note_events lof = tpc - Tpc::TPC_C)"
+ },
+ "root_spelling": {
+  "overall": {
+   "agree": 13061,
+   "disagree": 2,
+   "not_sounding": 0,
+   "unmappable": 0
+  },
+  "agree_rate_where_sounding": 0.9998468958126004,
+  "per_cell": [
+   {
+    "cell": "major / VII | Dim |  | vi",
+    "agree": 18,
+    "disagree": 1
+   },
+   {
+    "cell": "major / VII | Dim7 |  | VII",
+    "agree": 1,
+    "disagree": 1
+   },
+   {
+    "cell": "major / I | Maj |  | ",
+    "agree": 2780,
+    "disagree": 0
+   },
+   {
+    "cell": "major / I | Maj7 |  | ",
+    "agree": 2,
+    "disagree": 0
+   },
+   {
+    "cell": "major / I | Min |  | ",
+    "agree": 2,
+    "disagree": 0
+   },
+   {
+    "cell": "major / II | Dim |  | ",
+    "agree": 1,
+    "disagree": 0
+   },
+   {
+    "cell": "major / II | HalfDim7 |  | ",
+    "agree": 1,
+    "disagree": 0
+   },
+   {
+    "cell": "major / II | HalfDim7 |  | V",
+    "agree": 2,
+    "disagree": 0
+   },
+   {
+    "cell": "major / II | HalfDim7 |  | vi",
+    "agree": 3,
+    "disagree": 0
+   },
+   {
+    "cell": "major / II | Min |  | ",
+    "agree": 384,
+    "disagree": 0
+   },
+   {
+    "cell": "major / II | Min |  | IV",
+    "agree": 9,
+    "disagree": 0
+   },
+   {
+    "cell": "major / II | Min7 |  | ",
+    "agree": 86,
+    "disagree": 0
+   },
+   {
+    "cell": "major / II | Min7 |  | IV",
+    "agree": 3,
+    "disagree": 0
+   },
+   {
+    "cell": "major / II | Min7 |  | V",
+    "agree": 6,
+    "disagree": 0
+   },
+   {
+    "cell": "major / III | Aug |  | ",
+    "agree": 3,
+    "disagree": 0
+   },
+   {
+    "cell": "major / III | Maj |  | ",
+    "agree": 5,
+    "disagree": 0
+   },
+   {
+    "cell": "major / III | Min |  | ",
+    "agree": 83,
+    "disagree": 0
+   },
+   {
+    "cell": "major / III | Min7 |  | ",
+    "agree": 8,
+    "disagree": 0
+   },
+   {
+    "cell": "major / IV | Dom7 |  | ",
+    "agree": 2,
+    "disagree": 0
+   },
+   {
+    "cell": "major / IV | Dom7 |  | i",
+    "agree": 4,
+    "disagree": 0
+   },
+   {
+    "cell": "major / IV | Dom7 |  | vi",
+    "agree": 8,
+    "disagree": 0
+   },
+   {
+    "cell": "major / IV | Maj |  | ",
+    "agree": 1071,
+    "disagree": 0
+   },
+   {
+    "cell": "major / IV | Maj7 |  | ",
+    "agree": 20,
+    "disagree": 0
+   },
+   {
+    "cell": "major / IV | Min |  | ",
+    "agree": 4,
+    "disagree": 0
+   },
+   {
+    "cell": "major / It | AugSixth |  | ii",
+    "agree": 1,
+    "disagree": 0
+   },
+   {
+    "cell": "major / V | Dom7 |  | ",
+    "agree": 89,
+    "disagree": 0
+   },
+   {
+    "cell": "major / V | Dom7 |  | III",
+    "agree": 1,
+    "disagree": 0
+   },
+   {
+    "cell": "major / V | Dom7 |  | IV",
+    "agree": 46,
+    "disagree": 0
+   },
+   {
+    "cell": "major / V | Dom7 |  | V",
+    "agree": 51,
+    "disagree": 0
+   },
+   {
+    "cell": "major / V | Dom7 |  | VI",
+    "agree": 1,
+    "disagree": 0
+   },
+   {
+    "cell": "major / V | Dom7 |  | iv",
+    "agree": 2,
+    "disagree": 0
+   },
+   {
+    "cell": "major / V | Dom7 |  | v",
+    "agree": 3,
+    "disagree": 0
+   },
+   {
+    "cell": "major / V | Dom7 |  | vi",
+    "agree": 26,
+    "disagree": 0
+   },
+   {
+    "cell": "major / V | Maj |  | ",
+    "agree": 2095,
+    "disagree": 0
+   },
+   {
+    "cell": "major / V | Maj |  | III",
+    "agree": 1,
+    "disagree": 0
+   },
+   {
+    "cell": "major / V | Maj |  | IV",
+    "agree": 281,
+    "disagree": 0
+   },
+   {
+    "cell": "major / V | Maj |  | V",
+    "agree": 61,
+    "disagree": 0
+   },
+   {
+    "cell": "major / V | Maj |  | ii",
+    "agree": 60,
+    "disagree": 0
+   },
+   {
+    "cell": "major / V | Maj |  | vi",
+    "agree": 41,
+    "disagree": 0
+   },
+   {
+    "cell": "major / V | Min |  | ",
+    "agree": 1,
+    "disagree": 0
+   },
+   {
+    "cell": "major / V | Min7 |  | ",
+    "agree": 1,
+    "disagree": 0
+   },
+   {
+    "cell": "major / VI | Dom7 |  | ",
+    "agree": 3,
+    "disagree": 0
+   },
+   {
+    "cell": "major / VI | HalfDim7 |  | iv",
+    "agree": 2,
+    "disagree": 0
+   },
+   {
+    "cell": "major / VI | Maj |  | ",
+    "agree": 3,
+    "disagree": 0
+   },
+   {
+    "cell": "major / VI | Maj |  | ii",
+    "agree": 13,
+    "disagree": 0
+   },
+   {
+    "cell": "major / VI | Maj7 |  | ",
+    "agree": 1,
+    "disagree": 0
+   },
+   {
+    "cell": "major / VI | Min |  | ",
+    "agree": 574,
+    "disagree": 0
+   },
+   {
+    "cell": "major / VI | Min |  | IV",
+    "agree": 260,
+    "disagree": 0
+   },
+   {
+    "cell": "major / VI | Min |  | V",
+    "agree": 111,
+    "disagree": 0
+   },
+   {
+    "cell": "major / VI | Min7 |  | ",
+    "agree": 20,
+    "disagree": 0
+   },
+   {
+    "cell": "major / VI | Min7 |  | V",
+    "agree": 6,
+    "disagree": 0
+   },
+   {
+    "cell": "major / VII | Dim |  | ",
+    "agree": 207,
+    "disagree": 0
+   },
+   {
+    "cell": "major / VII | Dim |  | IV",
+    "agree": 35,
+    "disagree": 0
+   },
+   {
+    "cell": "major / VII | Dim |  | V",
+    "agree": 35,
+    "disagree": 0
+   },
+   {
+    "cell": "major / VII | Dim |  | ii",
+    "agree": 8,
+    "disagree": 0
+   },
+   {
+    "cell": "major / VII | Dim |  | v",
+    "agree": 3,
+    "disagree": 0
+   },
+   {
+    "cell": "major / VII | Dim7 |  | ",
+    "agree": 6,
+    "disagree": 0
+   },
+   {
+    "cell": "major / VII | Dim7 |  | IV",
+    "agree": 2,
+    "disagree": 0
+   },
+   {
+    "cell": "major / VII | Dim7 |  | V",
+    "agree": 8,
+    "disagree": 0
+   },
+   {
+    "cell": "major / VII | Dim7 |  | ii",
+    "agree": 10,
+    "disagree": 0
+   },
+   {
+    "cell": "major / VII | Dim7 |  | iii",
+    "agree": 8,
+    "disagree": 0
+   },
+   {
+    "cell": "major / VII | Dim7 |  | v",
+    "agree": 2,
+    "disagree": 0
+   },
+   {
+    "cell": "major / VII | Dim7 |  | vi",
+    "agree": 8,
+    "disagree": 0
+   },
+   {
+    "cell": "major / VII | Dom7 |  | ",
+    "agree": 3,
+    "disagree": 0
+   },
+   {
+    "cell": "major / VII | HalfDim7 |  | ",
+    "agree": 11,
+    "disagree": 0
+   },
+   {
+    "cell": "major / VII | HalfDim7 |  | V",
+    "agree": 26,
+    "disagree": 0
+   },
+   {
+    "cell": "major / VII | HalfDim7 |  | ii",
+    "agree": 3,
+    "disagree": 0
+   },
+   {
+    "cell": "major / VII | Maj |  | ",
+    "agree": 1,
+    "disagree": 0
+   },
+   {
+    "cell": "major / bVII | Maj7 |  | ",
+    "agree": 5,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / I | Maj |  | ",
+    "agree": 21,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / I | Maj7 |  | ",
+    "agree": 2,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / I | Min |  | ",
+    "agree": 1761,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / I | Min7 |  | ",
+    "agree": 1,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / II | Dim |  | ",
+    "agree": 121,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / II | HalfDim7 |  | ",
+    "agree": 103,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / II | HalfDim7 |  | iv",
+    "agree": 1,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / II | Min |  | ",
+    "agree": 35,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / II | Min7 |  | ",
+    "agree": 2,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / II | Min7 |  | IV",
+    "agree": 1,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / III | Aug |  | ",
+    "agree": 8,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / III | AugMaj7 |  | ",
+    "agree": 3,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / III | Maj |  | ",
+    "agree": 42,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / IV | Dom7 |  | ",
+    "agree": 5,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / IV | Dom7 |  | i",
+    "agree": 7,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / IV | Dom7 |  | iv",
+    "agree": 1,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / IV | Maj |  | ",
+    "agree": 88,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / IV | Min |  | ",
+    "agree": 294,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / IV | Min |  | iv",
+    "agree": 1,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / IV | Min7 |  | ",
+    "agree": 11,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / It | AugSixth |  | ",
+    "agree": 1,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / V | Dom7 |  | ",
+    "agree": 23,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / V | Dom7 |  | III",
+    "agree": 2,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / V | Dom7 |  | V",
+    "agree": 6,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / V | Dom7 |  | VII",
+    "agree": 12,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / V | Dom7 |  | iv",
+    "agree": 1,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / V | Maj |  | ",
+    "agree": 1322,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / V | Maj |  | III",
+    "agree": 10,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / V | Maj |  | IV",
+    "agree": 4,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / V | Maj |  | V",
+    "agree": 1,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / V | Min |  | ",
+    "agree": 67,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / V | Min7 |  | ",
+    "agree": 5,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / VI | Dim |  | ",
+    "agree": 2,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / VI | Dom7 |  | ",
+    "agree": 1,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / VI | HalfDim7 |  | ",
+    "agree": 1,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / VI | HalfDim7 |  | iv",
+    "agree": 5,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / VI | Maj |  | ",
+    "agree": 131,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / VI | Maj7 |  | ",
+    "agree": 2,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / VI | Min |  | ",
+    "agree": 4,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / VII | Dim |  | ",
+    "agree": 206,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / VII | Dim |  | iv",
+    "agree": 1,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / VII | Dim |  | v",
+    "agree": 3,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / VII | Dim7 |  | ",
+    "agree": 29,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / VII | Dim7 |  | V",
+    "agree": 21,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / VII | Dim7 |  | iii",
+    "agree": 19,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / VII | Dim7 |  | v",
+    "agree": 2,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / VII | Dom7 |  | ",
+    "agree": 2,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / VII | HalfDim7 |  | ",
+    "agree": 4,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / VII | HalfDim7 |  | III",
+    "agree": 7,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / VII | HalfDim7 |  | VII",
+    "agree": 1,
+    "disagree": 0
+   },
+   {
+    "cell": "minor / VII | Maj |  | ",
+    "agree": 17,
+    "disagree": 0
+   }
+  ],
+  "divergences": [
+   {
+    "stem": "bwv312",
+    "tick": 2880,
+    "class": "VII | Dim7 |  | VII",
+    "mode": "major",
+    "kind": "lof_mismatch",
+    "derived_lof": 10,
+    "notated_lofs": [
+     -2
+    ]
+   },
+   {
+    "stem": "bwv331",
+    "tick": 11760,
+    "class": "VII | Dim |  | vi",
+    "mode": "major",
+    "kind": "lof_mismatch",
+    "derived_lof": 8,
+    "notated_lofs": [
+     -4
+    ]
+   }
+  ]
+ },
+ "bass_spelling": {
+  "overall": {
+   "agree": 11180,
+   "disagree": 2,
+   "not_sounding": 0,
+   "no_factor_bass": 1881
+  },
+  "agree_rate_where_factor": 0.9998211411196566,
+  "divergences": [
+   {
+    "stem": "bwv244.46",
+    "tick": 4320,
+    "class": "VII | Dim7 |  | iii",
+    "mode": "minor",
+    "role": "seventh",
+    "derived_lof": -2,
+    "notated_lof": 10
+   },
+   {
+    "stem": "bwv245.15",
+    "tick": 13920,
+    "class": "II | Dim |  | ",
+    "mode": "major",
+    "role": "fifth",
+    "derived_lof": -4,
+    "notated_lof": 8
+   }
+  ]
+ }
+}

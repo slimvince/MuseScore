@@ -285,6 +285,140 @@ std::string noteCategory(int pc, PcMask mem, int tonic, bool isMajor)
     return ((coll >> normalizePc(pc - tonic)) & 1u) ? "within" : "outside";
 }
 
+// ── notated key-signature fifths + tonal spelling (contract §3.2) ─────────────────────────────────
+// Line-of-fifths (lof) convention: C=0, +1 = a perfect fifth up (so a sharp = +7, a flat = -7). This
+// is exactly note_events' `lof` field (= tpc - Tpc::TPC_C), so a derived lof compares directly with a
+// notated one. Every mapping here carries its music-theory basis; the pitch class of any lof is
+// (7*lof) mod 12.
+
+namespace {
+// scale-degree line-of-fifths offset relative to the mode tonic (the circle-of-fifths positions of
+// the major / natural-minor scale degrees): I..VII of C major = C D E F G A B; of A natural minor
+// (relative) i..VII = A B C D E F G, i.e. ♭3 ♭6 ♭7.
+const std::array<int, 7> kMajorLof = { 0, 2, 4, -1, 1, 3, 5 };
+const std::array<int, 7> kMinorLof = { 0, 2, -3, -1, 1, -4, -2 };
+
+// (Ionian pc) -> {primary, enharmonic-alternate} key-signature fifths (the standard signatures;
+// sharps +, flats -). The three enharmonic tonics (Db/C#, Gb/F#, Cb/B) carry both spellings.
+const std::array<std::array<int, 2>, 12> kSigOpts = { {
+    { {  0,  0 } }, { {  7, -5 } }, { {  2,  2 } }, { { -3, -3 } }, { {  4,  4 } }, { { -1, -1 } },
+    { {  6, -6 } }, { {  1,  1 } }, { { -4, -4 } }, { {  3,  3 } }, { { -2, -2 } }, { {  5, -7 } },
+} };
+
+// the canonical lof of a chord-factor semitone interval (the standard tertian spellings): unison
+// 0->0, m3 3->-3, M3 4->+4, d5 6->-6, P5 7->+1, A5 8->+8, d7 9->-9, m7 10->-2, M7 11->+5.
+int intervalLof(int semis, bool& ok)
+{
+    switch (((semis % 12) + 12) % 12) {
+    case 0:  ok = true; return 0;
+    case 3:  ok = true; return -3;
+    case 4:  ok = true; return 4;
+    case 6:  ok = true; return -6;
+    case 7:  ok = true; return 1;
+    case 8:  ok = true; return 8;
+    case 9:  ok = true; return -9;
+    case 10: ok = true; return -2;
+    case 11: ok = true; return 5;
+    default: ok = false; return 0;
+    }
+}
+
+// the lof offset of scale degree `num` (with `acc` chromatic accidentals) in the mode's scale,
+// relative to the mode tonic. A sharp/flat is +7/-7 lof. In MINOR with a diminished-family quality
+// and no explicit accidental, the 6th/7th are the RAISED (harmonic/melodic-minor) forms — mirroring
+// jointprimitives.chordRoot's semitone override — so the leading-tone dim spells its raised root.
+int degreeLofOffset(int num, int acc, bool isMajor, const std::string& quality)
+{
+    int base = (isMajor ? kMajorLof : kMinorLof)[num - 1];
+    if (!isMajor && acc == 0 && isDimQuality(quality)) {
+        if (num == 7) {
+            base = 5;   // raised leading tone
+        } else if (num == 6) {
+            base = 3;   // raised submediant
+        }
+    }
+    return base + 7 * acc;
+}
+
+// the line-of-fifths of the (possibly tonicized) framework tonic a class is read in: the key tonic's
+// lof, plus the applied target degree's lof offset in the HOME scale (matching frameworkAndRoot's
+// fwTonic pc). `cls` must be framework-valid (the caller gates on frameworkAndRoot).
+int frameworkTonicLof(const LabelClass& cls, int tonicPc, bool isMajor, int referenceFifths)
+{
+    const int keyTonicLof = keySignatureFifths(tonicPc, isMajor, referenceFifths) + (isMajor ? 0 : 3);
+    const std::string& target = cls.target();
+    if (target.empty()) {
+        return keyTonicLof;
+    }
+    // Parse the applied target exactly as frameworkAndRoot: strip leading b/#, UPPERCASE the Roman
+    // (targets may be lowercase — "vi", "ii", "iv"), degreeNum; tacc = net accidental over the target.
+    // (splitDegree cannot be reused: it expects an already-uppercase Roman, as the degree base is.)
+    size_t i = 0;
+    while (i < target.size() && (target[i] == 'b' || target[i] == '#')) {
+        ++i;
+    }
+    std::string tbaseUpper = target.substr(i);
+    for (char& c : tbaseUpper) {
+        c = static_cast<char>(std::toupper(static_cast<unsigned char>(c)));
+    }
+    const int tnum = degreeNum(tbaseUpper);
+    if (tnum < 0) {
+        return keyTonicLof;   // unreachable when framework-valid; defensive
+    }
+    int tacc = 0;
+    for (char c : target) {
+        if (c == '#') {
+            ++tacc;
+        } else if (c == 'b') {
+            --tacc;
+        }
+    }
+    return keyTonicLof + degreeLofOffset(tnum, tacc, isMajor, std::string());
+}
+} // namespace
+
+int keySignatureFifths(int tonicPc, bool isMajor, int referenceFifths)
+{
+    const int ionianPc = isMajor ? normalizePc(tonicPc) : normalizePc(tonicPc + 3);   // minor -> relative major
+    const std::array<int, 2>& o = kSigOpts[static_cast<size_t>(ionianPc)];
+    const int d0 = o[0] - referenceFifths, d1 = o[1] - referenceFifths;
+    return (std::abs(d0) <= std::abs(d1)) ? o[0] : o[1];
+}
+
+std::optional<int> rootSpellingLof(const LabelClass& cls, int tonicPc, bool isMajor, int referenceFifths)
+{
+    const Framework fr = frameworkAndRoot(cls, tonicPc, isMajor);
+    if (!fr.valid) {
+        return std::nullopt;
+    }
+    const int fwLof = frameworkTonicLof(cls, tonicPc, isMajor, referenceFifths);
+    if (!fr.hasRoot) {                         // a chromatic class (AugSixth / Neapolitan)
+        if (cls.quality() == "Neapolitan") {
+            return fwLof - 5;                  // ♭2 spelling (Db in C)
+        }
+        if (cls.quality() == "AugSixth") {
+            return fwLof;                      // the chromatic "root" is the framework tonic (1̂)
+        }
+        return std::nullopt;
+    }
+    int num = -1, acc = 0;
+    splitDegree(cls.degreeBase(), num, acc);
+    if (num < 0) {
+        return std::nullopt;
+    }
+    return fwLof + degreeLofOffset(num, acc, fr.fwMajor, cls.quality());
+}
+
+std::optional<int> factorSpellingLof(int rootLof, int rootPc, int factorPc)
+{
+    bool ok = false;
+    const int iv = intervalLof(factorPc - rootPc, ok);
+    if (!ok) {
+        return std::nullopt;
+    }
+    return rootLof + iv;
+}
+
 PcMask keyCollectionMask(int tonic, bool isMajor)
 {
     const std::array<int, 7>& scale = isMajor ? kMajScale : kMinScale;

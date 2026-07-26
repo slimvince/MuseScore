@@ -69,6 +69,8 @@ struct EventBassFact {
     int eventIndex = 0;                 ///< event index in the Piece's event lattice
     std::optional<int> bassPc;          ///< the event's lowest-sounding pc (none if the event is empty)
     std::string role;                   ///< the bass pc's factor role, or "" when it is not a member
+    std::optional<int> spellingLof;     ///< the bass factor's tonal spelling (line-of-fifths, C=0), when
+                                        ///< it is a chord factor (§3.2 bass spelling); none otherwise
 };
 
 // §3.2 — one committed segment: the native decode facts (verbatim from SegmentSummary) plus the
@@ -85,6 +87,8 @@ struct RecordSegment {
 
     // derived chord facts ─────────────────────────────────────────────────────────────────────────
     int keySignatureFifths = 0;                  ///< (tonic, mode) -> notated key-signature fifths
+    std::optional<int> rootSpellingLof;          ///< the root's tonal spelling (line-of-fifths, C=0);
+                                                 ///< none for an unmappable class (§3.2 root spelling)
     std::vector<ChordFactor> members;            ///< member pcs with factor roles (EMPTY for a chromatic
                                                  ///< class — AugSixth/Neapolitan carry no standard factors)
     std::optional<PcMask> memberPcs;             ///< the raw member pc set (carries chromatic-class members
@@ -132,13 +136,6 @@ NotationRecord assembleNotationRecord(const Piece& piece, const DecodeResult& re
                                       std::optional<int> sigFifths, const std::string& declaredMode,
                                       const FittedAdapter& adapter, const Vocabulary& vocab,
                                       ChordCache& cache);
-
-/// (tonic, mode) -> the notated key-signature fifths, enharmonic spelling nearest `referenceFifths`.
-/// A MODULE-LOCAL reimplementation: it duplicates keymodeanalyzer::keySignatureFifthsForKey (the
-/// legacy key analyzer), which CANNOT be reused here without including keymodeanalyzer.h and breaking
-/// the joint module's L1-only isolation (#7/OI-180). The two unify when the legacy key analyzer
-/// retires (the OI-180 retirement map). Derivation documented at the definition.
-int recordKeySignatureFifths(int tonicPc, bool isMajor, int referenceFifths);
 
 /// The class-native `diatonicToKey` answer (§3.2): TRUE iff the class is a plain diatonic-degree chord
 /// of the key's mode — an unaltered scale degree (no ♭/♯ in the degree base), no applied target, and

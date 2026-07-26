@@ -127,6 +127,25 @@ std::string noteCategory(int pc, PcMask mem, int tonic, bool isMajor);
 /// The local key's diatonic collection as a pc mask (major scale / composite minor).
 PcMask keyCollectionMask(int tonic, bool isMajor);
 
+// ── notated key-signature fifths + tonal spelling (notation output-surface contract §3.2) ──────
+// (tonic, mode) -> the notated key-signature fifths, enharmonic spelling nearest `referenceFifths`.
+// A MODULE-LOCAL reimplementation that duplicates keymodeanalyzer::keySignatureFifthsForKey (the
+// legacy key analyzer) — it cannot be reused without including keymodeanalyzer.h and breaking the
+// joint module's L1-only isolation (#7/OI-180); the two unify when the legacy key analyzer retires.
+int keySignatureFifths(int tonicPc, bool isMajor, int referenceFifths);
+
+// The chord ROOT's line-of-fifths tonal spelling (C=0, +1 = a perfect fifth up — == note_events'
+// `lof` = tpc - Tpc::TPC_C), derived from (key, degree/class); std::nullopt for an unmappable class.
+// The chromatic classes (applied targets, Neapolitan, augmented-sixth) follow their standard
+// theory spellings. See the definition for the full per-degree/per-mode derivation. Its pitch class
+// (7*lof mod 12) equals the decoder's root pc by construction (chordRoot).
+std::optional<int> rootSpellingLof(const LabelClass& cls, int tonicPc, bool isMajor, int referenceFifths);
+
+// A chord FACTOR's line-of-fifths spelling given the root's lof and the factor/root pitch classes:
+// rootLof + the canonical spelling of the tertian interval (factorPc - rootPc). std::nullopt when
+// that interval is not a tertian chord-factor interval (unison/third/fifth/seventh).
+std::optional<int> factorSpellingLof(int rootLof, int rootPc, int factorPc);
+
 // ── spelling (gen_note_tables) ──────────────────────────────────────────────────────────
 std::string spellingBin(int rel, bool isMajor);
 /// _spelling_parent: the back-off parent of a spelling cell, or nullopt for BASE (terminal).
