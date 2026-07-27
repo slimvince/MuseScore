@@ -143,6 +143,31 @@
 > on a perturbed include, both directions). No inference change on this path; the display renderings are the only
 > additions, and they are presentation.
 
+> **SEAMS PART 2 — THE IMPLODE + TUNING SPAN-SEAM CONSUMERS + THE EXPOSURE-BUCKET UNIFICATION (as-built, behind the
+> default-OFF `useJointNotationRecord`; DORMANT on production).** The last two span-seam consumers are re-plumbed
+> onto the record path. **The key-exposure BUCKET is unified (the P2a pattern completed):** the tentative/assertive
+> bucket the implode formerly re-thresholded at 0.5/0.8 is now a STORED per-arm result on `AnalyzedRegion`
+> (`keyExposureBucket`, 0=below-tentative / 1=tentative / 2=assertive), set ONCE at the section-layer set site beside
+> `hasAssertiveExposure` — legacy arm from `normalizedConfidence >= 0.5/0.8` (`sectionanalyzer.cpp::legacyKeyExposureBucket`,
+> legacy-arm-only), record arm from the raw §3.3 key-axis gap (nats) at `kTentativeKeyExposureGap=0.975911` /
+> `kAssertiveKeyExposureGap=1.055757` (`sectionrecordadapter.cpp`, the P1 constants from
+> `tools/notation_seams/exposure_constants.json`; the record's confidence field carries nats, never compared to the
+> [0,1] literals). The implode reads the stored bucket (#6 — one thresholding site per gate). **The implode chord-track
+> record path** (`notationimplodebridge.cpp`, `populateChordTrack` behind the flag → `produceNotationRecord` →
+> `analyzeSectionFromRecord` → the SAME `emitImplodedChordTrack` with the record) writes, per region: the **Roman
+> numeral** as the record's PUBLISHED `romanNumeral` (a fact, looked up by `noteView` at the region's start tick, NOT
+> re-formatted from `ChordIdentity`); the **display chord symbol** + **Nashville** as PRESENTATION derivations
+> (`ChordSymbolFormatter::formatSymbol`/`formatNashvilleNumber`; a rootless class writes no symbol); exposure gates read
+> the stored bucket; the borrowed-key source-key search is restricted to the C1 two modes (the exotic-mode enumeration
+> + the 0.35 mode-suffix gate are legacy-arm-only, inert on the record arm by two-mode construction);
+> `kSameChordReannotationGap` (960) is a declared presentation-timing constant. **The tuning region record path**
+> (`notationtuningbridge.cpp`, `applyRegionTuning` behind the flag) derives the tuning regions from the record and maps
+> each to the `(span, chordResult, keyModeResult)` the tuning loop reads — the inputs are FACTS the record carries
+> (`rootPc`, `quality`, and `keyModeResult.tonicPc`, the only `KeyModeAnalysisResult` field any `TuningSystem` reads —
+> `JustIntonation::rootOffset`); no consumed fact the record lacks. A produce failure writes/tunes NOTHING on either
+> path (the record IS the surface, A2/#13 — no legacy fallback). Flag OFF → both paths byte-identical. **OI-182 EXECUTED
+> at the record surface** (the §4.1 presentation-gate disposition — every exposure/annotation constant's declared site).
+
 > **Living design document.** Read this AND STATUS.md at the start of every development
 > session. ARCHITECTURE.md contains stable design decisions. STATUS.md contains current
 > implementation status and immediate next steps. Update STATUS.md as your last act when

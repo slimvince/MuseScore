@@ -52,6 +52,8 @@
 #include "composing/analysis/chord/chordanalyzer.h"
 #include "composing/analysis/region/harmonicrhythm.h"
 #include "composing/analysis/key/keymodeanalyzer.h"
+#include "composing/analysis/section/sectionrecordadapter.h"   // analyzeSectionFromRecord (record path)
+#include "composing/analysis/joint/jointnotationproducer.h"    // produceNotationRecord (record path)
 #include "composing/intonation/just_intonation.h"
 #include "composing/intonation/tuning_system.h"
 #include "composing/intonation/tuning_utils.h"
@@ -758,16 +760,42 @@ bool applyRegionTuning(mu::engraving::Score* score,
     // Exclude chord staff staves from both analysis and tuning.
     std::set<size_t> excludeStaves = chordTrackExcludeStaves(score);
 
-    // ── Harmonic analysis ────────────────────────────────────────────────────
-    const auto regions = analyzeHarmonicRhythm(score, startTick, endTick,
-                                               excludeStaves);
+    const auto* cfg = analysisConfig();
+
+    // ── Harmonic analysis (record path default OFF, useJointNotationRecord) ───
+    // Legacy: analyzeHarmonicRhythm -> HarmonicRegion stream. Record (the P3a pattern): derive the
+    // section from the joint notation record and map each region to the (span, chordResult,
+    // keyModeResult) HarmonicRegion the loop below reads. The tuning inputs are FACTS the record carries
+    // -- span, chord.identity.rootPc, chord.identity.quality, and keyModeResult.tonicPc (the only
+    // KeyModeAnalysisResult field any TuningSystem reads: JustIntonation::rootOffset; all others ignore
+    // it) -- no display strings, no consumed fact the record lacks. A produce failure tunes NOTHING (the
+    // record IS the surface, A2/#13 -- no legacy fallback). Flag OFF -> byte-identical.
+    std::vector<HarmonicRegion> regions;
+    if (cfg && cfg->useJointNotationRecord()) {
+        const auto rec = mu::composing::analysis::joint::produceNotationRecord(score, std::string());
+        if (!rec.ok) {
+            return false;
+        }
+        const auto section = mu::composing::analysis::analyzeSectionFromRecord(
+            score, startTick, endTick, excludeStaves, rec.record);
+        regions.reserve(section.regions.size());
+        for (const auto& r : section.regions) {
+            HarmonicRegion hr;
+            hr.startTick     = r.startTick;
+            hr.endTick       = r.endTick;
+            hr.chordResult   = r.chordResult;
+            hr.keyModeResult = r.keyModeResult;
+            regions.push_back(std::move(hr));
+        }
+    } else {
+        regions = analyzeHarmonicRhythm(score, startTick, endTick, excludeStaves);
+    }
     if (regions.empty()) {
         return false;
     }
 
     const auto& tuningSystem = preferredTuningSystem();
 
-    const auto* cfg = analysisConfig();
     const bool tonicAnchored       = cfg && cfg->tonicAnchoredTuning();
     const bool minimizeRetune      = cfg && cfg->minimizeTuningDeviation();
     const bool annotateTuning      = cfg && cfg->annotateTuningOffsets();

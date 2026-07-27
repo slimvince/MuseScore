@@ -179,6 +179,33 @@ TEST_F(Notation_TuningTests, TonicAnchoredSplitsNonTiedSustainedNote)
     delete score;
 }
 
+// Seams part 2, P4 Task 3 — the tuning region path RECORD arm.
+// With useJointNotationRecord ON, applyRegionTuning derives the tuning regions from the joint
+// notation record (produceNotationRecord -> analyzeSectionFromRecord) instead of analyzeHarmonicRhythm.
+// The tuning inputs are FACTS the record carries (span, rootPc, quality, key tonicPc), so JI tuning
+// applies end-to-end on a real harmonic progression. Structural + flag-restoring; the flag-OFF legacy
+// path is byte-identical (its behaviour is every other test in this suite).
+TEST_F(Notation_TuningTests, RecordArmAppliesTuningFromRecordFacts)
+{
+    configureTuning(mu::composing::intonation::TuningMode::TonicAnchored);
+
+    MasterScore* score = ScoreRW::readScore(u"harmony_pinning_i_iv_v_i.mscx");
+    ASSERT_TRUE(score);
+
+    auto config = analysisConfig();
+    ASSERT_TRUE(config);
+    config->setUseJointNotationRecord(true);           // ← the record arm under test
+
+    score->startCmd(TranslatableString::untranslatable("Notation tuning record-arm test"));
+    const bool applied = mu::notation::applyRegionTuning(score, Fraction(0, 1), score->endTick());
+    score->endCmd();
+
+    config->setUseJointNotationRecord(false);          // restore before the rest of the suite runs
+
+    EXPECT_TRUE(applied) << "the record arm applied no tuning from record facts";
+    delete score;
+}
+
 TEST_F(Notation_TuningTests, FreeDriftKeepsNonTiedSustainedNoteWhole)
 {
     configureTuning(mu::composing::intonation::TuningMode::FreeDrift);
