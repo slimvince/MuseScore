@@ -276,6 +276,19 @@ directive; the thorough axis added to OI-199's row), the emitters wired, the con
 amendment (on disk, riding). One rule now governs all display strings: renderings are
 presentation; facts are published.
 
+**★ THE REGISTER SPLIT IS DELIVERED AND COWORK-VERIFIED (2026-07-26; `1e32b5e92e`, 206 files,
+verified at the objects: 200==200==200 items, `overall_ok: true` in the committed
+`open_items/split_reconciliation.json`, index 331,284 → 76,064 bytes).** `OPEN_ITEMS.md` is now
+the lean INDEX (status authoritative HERE only); every item's full narrative lives verbatim in
+`open_items/OI-<n>.md`; CLAUDE.md's register section carries the amended rules (dated,
+user-ratified); the reconciliation instrument `tools/open_items_split_check.py` is permanent.
+The mixed-state rows' condensations kept BOTH operative states (verified faithful). ALL future
+row work targets index row + detail file. **NEXT: hand `cc_instruction_notation_seams_2.md`
+back to CC — it resumes at P-strings (amendment 6) from HEAD `1e32b5e92e`** (the riding
+Cowork edits now: `cowork_notation_output_contract.md` (the presentation-derivations amendment,
+correctly left unstaged by the split) + this handoff block). Then P4 → merged note-seam →
+P6 → P7.
+
 **★ REGISTER SPLIT DELIVERED (CC, 2026-07-26; dispatch `cc_instruction_open_items_split.md`).**
 The register is now the lean INDEX `OPEN_ITEMS.md` (the authoritative status surface, 200 rows,
 ~76 KB — the render problem is gone) + one verbatim detail file per item under `open_items/OI-<n>.md`

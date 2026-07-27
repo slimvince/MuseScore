@@ -1094,11 +1094,14 @@ TEST(SeamsGapMeasurement, DISABLED_EmitArtifact)
 // StaffText is SUSPENDED (the record path sets isPedalPoint = false, OI-194). Flag-OFF byte-identity
 // is the existing golden suite (this test runs a SEPARATE arm and restores the flag before returning).
 //
-// Chord-symbol strings are NOT exact-matched here: the record's chordSymbol is the batch-render/
-// grading form (jointChordSymbol, e.g. "GMaj"/"GDom7"), which MuseScore's Harmony re-parses on
-// read-back — the round-trip normalization would make an exact assertion fragile (surfaced to Cowork
-// as a display-form question, separate from the byte-faithful Roman path). Roman numerals (ROMAN
-// Harmony) store their text literally, so they round-trip and are matched here.
+// Chord symbols: the record arm now writes the DISPLAY form (ChordSymbolFormatter::formatSymbol from
+// the record's committed reading — the ratified D2 / §3.3-amendment presentation derivation), NOT the
+// record's grading-form chordSymbol ("GDom7"). STANDARD Harmony re-parses on read-back, so the exact
+// display string is not round-trip-asserted here (the exact form is established by the unit tests in
+// section_record_adapter_tests.cpp); instead this asserts symbols ARE written and carry NO grading-
+// only token ("Dom"/"HalfDim" — no chord-render style produces them), proving the DISPLAY form (not
+// the grading form) reaches the score. Roman numerals (ROMAN Harmony) store their text literally, so
+// they round-trip and are matched exactly.
 TEST(SectionRecordAdapterAnnotation, RecordArmEmitsRecordDerivedStrings)
 {
     auto cfg = muse::modularity::globalIoc()->resolve<
@@ -1109,6 +1112,7 @@ TEST(SectionRecordAdapterAnnotation, RecordArmEmitsRecordDerivedStrings)
 
     int checkedScores = 0;
     int checkedRomans = 0;
+    int checkedSymbols = 0;
 
     // Two representative chorales — enough to exercise the record path (each score pays two
     // whole-score decodes: the test's own produceNotationRecord + the emitter's internal one), so
@@ -1143,27 +1147,35 @@ TEST(SectionRecordAdapterAnnotation, RecordArmEmitsRecordDerivedStrings)
         score->selection().setRange(startSeg, endSeg, /*staffStart=*/0, /*staffEnd=*/score->nstaves());
         ASSERT_TRUE(score->selection().isRange()) << entry.id;
 
-        // Roman-only: exercises the record's romanNumeral (literal round-trip) + the key-area brackets
-        // + cadence/pivot, and lets the pedal path (Roman-mode-gated) be observed.
-        mu::notation::addHarmonicAnnotationsToSelection(score, /*sym=*/false, /*roman=*/true, /*nashville=*/false);
+        // Symbols + Roman: exercises the record's DISPLAY chord symbol (STANDARD Harmony, presentation
+        // derivation) AND the record's romanNumeral (ROMAN Harmony, literal round-trip) + the key-area
+        // brackets + cadence/pivot, and lets the pedal path (Roman-mode-gated) be observed.
+        mu::notation::addHarmonicAnnotationsToSelection(score, /*sym=*/true, /*roman=*/true, /*nashville=*/false);
 
         const auto after = collectExistingHarmonies(score, endTick);
         for (const auto& e : after) {
             if (std::find(pre.begin(), pre.end(), e.harmony) != pre.end()) {
                 continue;                                    // pre-existing DCML annotation
             }
-            if (e.harmony->harmonyType() != HarmonyType::ROMAN) {
-                continue;
+            const std::string text = e.harmony->harmonyName().toQString().toStdString();
+            if (e.harmony->harmonyType() == HarmonyType::ROMAN) {
+                if (!text.empty() && text.front() == '[') {
+                    continue;                                // "[G:]" key-area bracket marker, not a chord Roman
+                }
+                const int tick = e.segment->tick().ticks();
+                const auto* rs = mu::composing::analysis::joint::noteView(rec.record, tick).segment;
+                ASSERT_NE(rs, nullptr) << entry.id << " @ " << tick << " (a written Roman with no record segment)";
+                EXPECT_EQ(text, rs->romanNumeral) << entry.id << " @ " << tick << " (record-derived Roman)";
+                ++checkedRomans;
+            } else if (e.harmony->harmonyType() == HarmonyType::STANDARD) {
+                // The DISPLAY form, not the grading form: no grading-only quality token leaks through.
+                for (const char* tok : { "Dom", "HalfDim", "AugSixth", "Neapolitan" }) {
+                    EXPECT_EQ(text.find(tok), std::string::npos)
+                        << entry.id << " @ " << e.segment->tick().ticks()
+                        << ": a grading-form token in a display chord symbol (\"" << text << "\")";
+                }
+                ++checkedSymbols;
             }
-            std::string text = e.harmony->harmonyName().toQString().toStdString();
-            if (!text.empty() && text.front() == '[') {
-                continue;                                    // "[G:]" key-area bracket marker, not a chord Roman
-            }
-            const int tick = e.segment->tick().ticks();
-            const auto* rs = mu::composing::analysis::joint::noteView(rec.record, tick).segment;
-            ASSERT_NE(rs, nullptr) << entry.id << " @ " << tick << " (a written Roman with no record segment)";
-            EXPECT_EQ(text, rs->romanNumeral) << entry.id << " @ " << tick << " (record-derived Roman)";
-            ++checkedRomans;
         }
 
         // Pedal SUSPENDED on the record path: no "X ped." StaffText anywhere in the window.
@@ -1218,6 +1230,7 @@ TEST(SectionRecordAdapterAnnotation, RecordArmEmitsRecordDerivedStrings)
 
     EXPECT_GT(checkedScores, 0) << "no corpus score produced a record";
     EXPECT_GT(checkedRomans, 0) << "the record-arm emitter wrote no record-derived Romans";
+    EXPECT_GT(checkedSymbols, 0) << "the record-arm emitter wrote no display chord symbols";
 }
 
 // ── P3 status-bar performance baseline (Stage 2.5) ───────────────────────────

@@ -95,6 +95,16 @@ Group (i), the ESTABLISHED slice — published from the first switch:
   class flagged; each alternative resolvable to its derived chord facts (the legacy
   `alternatives` consumers' need).
 
+**★ Amendment (user-ratified 2026-07-26, at the P3a findings — display renderings are
+PRESENTATION derivations):** the record's chord-symbol string is the GRADING form only (the
+batch-continuity fact, §5.6); the DISPLAY chord symbol (idiomatic, spelling-aware, preset-
+styled) and the Nashville number are PRESENTATION-layer derivations from published facts —
+verified fully derivable (degree + root spelling + class quality + bass role + key, no
+exception class) — each rendered by ONE shared presentation formatter, never published on the
+record (the record stays preset-independent; renderings are presentation, facts are published).
+A permanent dependency-direction guard enforces the boundary both ways (user directive at the
+D2 ruling; the OI-199 review carries the thorough axis).
+
 **★ Amendment (user-ratified option 1, 2026-07-26, at the posterior-slice delivery):** both
 axes publish the FULL scoreable candidate lists — the original "runner-up" / "top-N" wording is
 superseded. No truncation constant exists anywhere in the publication (a breadth "N" or a

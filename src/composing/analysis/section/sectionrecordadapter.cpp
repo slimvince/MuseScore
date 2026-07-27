@@ -115,6 +115,26 @@ ChordQuality qualityFromOursString(const std::string& q)
     return ChordQuality::Unknown;
 }
 
+// The record's FINE class quality carries the chord's seventh; the coarse ChordQuality (above) does
+// not. Derive the seventh-ness extension flag from the fine quality string so the display formatter
+// renders "G7"/"GMaj7"/"AmMaj7"/"Bdim7"/"C7#5" rather than the bare triad — the named carriage hazard
+// (the coarse grading map drops seventh-ness on the way to display). The joint vocabulary is triad +
+// seventh classes only (no 9th/11th/13th), so the seventh is the ONLY extension the class carries.
+// HalfDim/HalfDim7 need NO flag — ChordSymbolFormatter renders HalfDiminished as "m7b5" structurally.
+// This READS A's published class quality; it never re-derives from pitch content (OI-173's lesson).
+uint32_t seventhExtensionFromJointQuality(const std::string& fineQuality)
+{
+    uint32_t ext = 0;
+    if (fineQuality == "Dom7" || fineQuality == "Min7" || fineQuality == "Aug7") {
+        setExtension(ext, Extension::MinorSeventh);
+    } else if (fineQuality == "Maj7" || fineQuality == "MinMaj7" || fineQuality == "AugMaj7") {
+        setExtension(ext, Extension::MajorSeventh);
+    } else if (fineQuality == "Dim7") {
+        setExtension(ext, Extension::DiminishedSeventh);
+    }
+    return ext;
+}
+
 KeySigMode twoModeOf(bool isMajor)
 {
     return isMajor ? KeySigMode::Ionian : KeySigMode::Aeolian;   // C1: the published mode axis is {major, minor}
@@ -142,40 +162,6 @@ std::optional<double> keyAxisGap(const joint::SegmentSlice* slice)
         best = std::max(best, ax.scores[k]);
     }
     return ax.scores[static_cast<size_t>(ax.committed)] - best;
-}
-
-// The committed reading -> chordResult (identity + function), read from the record's published facts
-// (§3.2). `committedContentScore` is the committed chord-axis slice score (the status-bar '(%.2f)'
-// suffix carries the model probability, CSV row 37) or 0 when the slice is absent.
-ChordAnalysisResult recordChordResult(const joint::RecordSegment& seg, double committedContentScore)
-{
-    ChordAnalysisResult res;
-
-    ChordIdentity& id = res.identity;
-    id.score = committedContentScore;
-    id.rootPc = seg.rootPc.value_or(-1);
-    id.rootTpc = seg.rootSpellingLof.has_value() ? *seg.rootSpellingLof + kTpcC : -1;
-
-    // bass: the FIRST event's sounding bass (evBass[i]; the batch-render form), which the record
-    // publishes as bassPerEvent.front(). The bass is a property of the sounding notes, not the class.
-    std::optional<int> bassPc;
-    std::optional<int> bassLof;
-    if (!seg.bassPerEvent.empty()) {
-        bassPc = seg.bassPerEvent.front().bassPc;
-        bassLof = seg.bassPerEvent.front().spellingLof;
-    }
-    id.bassPc = bassPc.value_or(id.rootPc);              // fall back to the root when the event is empty
-    id.bassTpc = bassLof.has_value() ? *bassLof + kTpcC : -1;
-    id.quality = qualityFromOursString(joint::jointOursQuality(seg.quality));
-    // id.isPedalPoint stays false — the pedal-point class suspends on the record path (the P1 ruling,
-    // OI-194: the "X ped." annotation re-expresses from the voice-independent ornament class later).
-
-    ChordFunction& fn = res.function;
-    fn.degree = recordFunctionDegree(seg.degree, seg.target);
-    fn.diatonicToKey = seg.diatonicToKey;
-    fn.keyTonicPc = seg.tonicPc;
-    fn.keyMode = twoModeOf(seg.isMajor);
-    return res;
 }
 
 // The alternatives: the §3.3 chord-axis slice (every scoreable vocabulary class re-scored under the
@@ -211,6 +197,7 @@ std::vector<ChordAnalysisResult> recordAlternatives(const joint::RecordSegment& 
         alt.identity.rootTpc = lof.has_value() ? *lof + kTpcC : -1;
         alt.identity.bassPc = bassPc.value_or(alt.identity.rootPc);
         alt.identity.quality = qualityFromOursString(joint::jointOursQuality(cls.quality()));
+        alt.identity.extensions = seventhExtensionFromJointQuality(cls.quality());   // carry seventh-ness (as the committed reading)
 
         alt.function.degree = recordFunctionDegree(cls.degreeBase(), cls.target());
         alt.function.diatonicToKey = joint::recordDiatonicToKey(cls);
@@ -227,6 +214,44 @@ std::vector<ChordAnalysisResult> recordAlternatives(const joint::RecordSegment& 
 }
 
 } // namespace
+
+// The committed reading -> chordResult (identity + function), read from the record's published facts
+// (§3.2). The class-quality carriage is COMPLETE: the coarse ChordQuality plus the seventh-ness
+// extension (seventhExtensionFromJointQuality) — so the presentation formatter renders the idiomatic
+// display symbol / Nashville number. `committedContentScore` seeds identity.score (0 when the slice
+// is absent). The pedal fact is NOT set (isPedalPoint stays false — it suspends on the record path,
+// OI-194). Pure: reads only `seg`; the SINGLE record-segment -> ChordAnalysisResult converter (#6).
+ChordAnalysisResult chordResultFromRecordSegment(const joint::RecordSegment& seg, double committedContentScore)
+{
+    ChordAnalysisResult res;
+
+    ChordIdentity& id = res.identity;
+    id.score = committedContentScore;
+    id.rootPc = seg.rootPc.value_or(-1);
+    id.rootTpc = seg.rootSpellingLof.has_value() ? *seg.rootSpellingLof + kTpcC : -1;
+
+    // bass: the FIRST event's sounding bass (evBass[i]; the batch-render form), which the record
+    // publishes as bassPerEvent.front(). The bass is a property of the sounding notes, not the class.
+    std::optional<int> bassPc;
+    std::optional<int> bassLof;
+    if (!seg.bassPerEvent.empty()) {
+        bassPc = seg.bassPerEvent.front().bassPc;
+        bassLof = seg.bassPerEvent.front().spellingLof;
+    }
+    id.bassPc = bassPc.value_or(id.rootPc);              // fall back to the root when the event is empty
+    id.bassTpc = bassLof.has_value() ? *bassLof + kTpcC : -1;
+    id.quality = qualityFromOursString(joint::jointOursQuality(seg.quality));
+    id.extensions = seventhExtensionFromJointQuality(seg.quality);   // the named carriage: seventh-ness
+    // id.isPedalPoint stays false — the pedal-point class suspends on the record path (the P1 ruling,
+    // OI-194: the "X ped." annotation re-expresses from the voice-independent ornament class later).
+
+    ChordFunction& fn = res.function;
+    fn.degree = recordFunctionDegree(seg.degree, seg.target);
+    fn.diatonicToKey = seg.diatonicToKey;
+    fn.keyTonicPc = seg.tonicPc;
+    fn.keyMode = twoModeOf(seg.isMajor);
+    return res;
+}
 
 AnalyzedSection analyzeSectionFromRecord(const mu::engraving::Score* sc,
                                          const mu::engraving::Fraction& from,
@@ -277,7 +302,7 @@ AnalyzedSection analyzeSectionFromRecord(const mu::engraving::Score* sc,
         r.startTick        = seg.startTick;
         r.endTick          = seg.endTick;
         r.hasAnalyzedChord = true;                        // A decodes every segment
-        r.chordResult      = recordChordResult(seg, committedContentScore);
+        r.chordResult      = chordResultFromRecordSegment(seg, committedContentScore);
 
         // key/mode context — the C1 two-mode key; normalizedConfidence carries the RAW §3.3 key-axis
         // gap (nats), NO [0,1] remap (amendment 1); hasAssertiveExposure = gap >= the P1 constant.

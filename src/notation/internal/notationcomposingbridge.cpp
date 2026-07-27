@@ -1135,20 +1135,30 @@ void emitHarmonicAnnotations(mu::engraving::Score* score,
 
         std::string symText, romanText, nashvilleText;
         if (record) {
-            // ── Record path: the chord-symbol / Roman strings are the record's DERIVED FACTS
-            // (jointRender form — §5.6 formatter continuity, #6; NEVER re-formatted from ChordIdentity),
-            // looked up by the region's start tick. The Roman is the segment's OWN COMMITTED-key
-            // numeral — A commits a coherent per-segment key sequence, so the legacy transient-key
-            // area re-contextualization does not apply (an expected inference-driven difference, P6).
+            // ── Record path ──
+            // The Roman numeral is the record's PUBLISHED derived fact (jointRender form — §3.2 / §5.6
+            // formatter continuity, #6), looked up by the region's start tick: the segment's OWN
+            // committed-key numeral (A commits a coherent per-segment key sequence, so the legacy
+            // transient-key area re-contextualization does not apply — an expected inference-driven
+            // difference, P6). The Roman stays a PUBLISHED FACT, not a presentation derivation.
             if (const mu::composing::analysis::joint::RecordSegment* rs =
                     mu::composing::analysis::joint::noteView(*record, region.startTick).segment) {
-                symText   = options.writeChordSymbols  ? rs->chordSymbol  : std::string();
                 romanText = options.writeRomanNumerals ? rs->romanNumeral : std::string();
             }
-            // Nashville: a DECLARED GAP on the record path — the record and jointRender publish no
-            // Nashville string, and §5.6 has no batch-render Nashville form to reproduce, so deriving
-            // one here would be an unratified second formatter path (#6). FINDING returned to Cowork;
-            // left empty rather than ported (#12/#13). nashvilleText stays "".
+            // The DISPLAY chord symbol is a PRESENTATION derivation (ratified D2 ruling + contract §3.3
+            // amendment — display renderings are presentation, facts are published): the idiomatic,
+            // spelling-aware symbol ("G7"/"Am7"/"Bdim7") derived from the record's committed reading
+            // (annotationResult == region.chordResult, its class-quality carriage — seventh-ness —
+            // completed in analyzeSectionFromRecord) via the SAME shared presentation formatter the
+            // status-bar / legacy path uses (ChordSymbolFormatter::formatSymbol; #6). This REPLACES the
+            // record's GRADING-form chordSymbol ("GDom7") — the batch-continuity fact stays on the
+            // record, the display is derived here. A rootless chromatic class (rootPc < 0) renders no
+            // symbol, matching the batch render's rootless "" (jointChordSymbol).
+            const FormattedChordResult fmt = formatChordResultForStatusBar(score, annotationResult, perRegionFifths);
+            symText = (options.writeChordSymbols && annotationResult.identity.rootPc >= 0)
+                          ? fmt.symbol : std::string();
+            // Nashville: still a DECLARED record-path GAP in this unit; closed by the P-strings Task 2
+            // (rendered from the same shared formatter, formatChordResultForStatusBar). Stays "".
         } else {
             // ── Legacy path (unchanged behaviour): re-contextualize to the enclosing key area, then
             // format via ChordSymbolFormatter. ──

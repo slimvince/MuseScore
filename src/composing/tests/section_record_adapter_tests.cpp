@@ -40,6 +40,7 @@
 #include "composing/analysis/joint/jointnotationproducer.h"
 #include "composing/analysis/joint/jointnotationrecord.h"
 #include "composing/analysis/joint/jointrender.h"
+#include "composing/analysis/chord/chordanalyzer.h"   // ChordSymbolFormatter (the reused presentation formatter)
 #include "composing/analyzed_section.h"
 
 #include "engraving/dom/masterscore.h"
@@ -243,4 +244,113 @@ TEST(SectionRecordAdapterTests, NullScoreAndDegenerateWindowReturnEmpty)
     EXPECT_TRUE(degen.keyAreas.empty());
 
     delete sc;
+}
+
+// ── (4) the DISPLAY chord-symbol carriage (P-strings Task 1) ──────────────────────────────────────
+//
+// chordResultFromRecordSegment is the ONE record-segment -> ChordAnalysisResult converter (#6). Its
+// class-quality carriage is complete: the coarse ChordQuality alone DROPS the seventh (the named
+// hazard — a Dom7 would render the bare "C"), so the converter sets the seventh-ness extension from
+// the record's FINE class quality. These establish (#19) that the REUSED presentation formatter
+// (ChordSymbolFormatter::formatSymbol; the ratified D2 / §3.3-amendment presentation derivation)
+// renders the idiomatic DISPLAY symbol from the record's committed reading: across the vocabulary
+// families, with the root SPELLED from the record's published line-of-fifths, and for the inversion /
+// applied / chromatic classes. Expectations are stated independently (standard chord-symbol
+// convention is the oracle); nothing here re-derives from pitch content (OI-173's lesson).
+namespace {
+// A committed RecordSegment for the carriage tests: fine class quality; root pc + its published
+// line-of-fifths spelling (both nullopt => a rootless chromatic class); key (tonic/mode/fifths); an
+// optional sounding bass (pc + lof) for slash chords. degree/target drive the function fields only.
+joint::RecordSegment makeCommittedSeg(const std::string& quality,
+                                      std::optional<int> rootPc, std::optional<int> rootLof,
+                                      int tonicPc, bool isMajor, int keyFifths,
+                                      const std::string& degree = "I", const std::string& target = "",
+                                      std::optional<int> bassPc = std::nullopt,
+                                      std::optional<int> bassLof = std::nullopt)
+{
+    joint::RecordSegment seg;
+    seg.startTick = 0;
+    seg.endTick = 960;
+    seg.tonicPc = tonicPc;
+    seg.isMajor = isMajor;
+    seg.degree = degree;
+    seg.quality = quality;
+    seg.target = target;
+    seg.rootPc = rootPc;
+    seg.rootSpellingLof = rootLof;
+    seg.keySignatureFifths = keyFifths;
+    if (bassPc.has_value()) {
+        joint::EventBassFact bf;
+        bf.eventIndex = 0;
+        bf.bassPc = bassPc;
+        bf.spellingLof = bassLof;
+        seg.bassPerEvent.push_back(bf);
+    }
+    return seg;
+}
+
+// The display symbol the record arm emits: the record-derived committed reading -> the reused formatter.
+std::string display(const joint::RecordSegment& seg)
+{
+    const an::ChordAnalysisResult r = an::chordResultFromRecordSegment(seg);
+    return an::ChordSymbolFormatter::formatSymbol(r, seg.keySignatureFifths);
+}
+} // namespace
+
+TEST(SectionRecordAdapterTests, DisplaySymbolCarriesSeventhAcrossVocabularyFamilies)
+{
+    // Root C in C major (fifths 0), root position. Without the carriage the coarse quality would render
+    // "C" for BOTH "Maj" and "Dom7"; the seventh-ness carriage makes Dom7 -> "C7", Maj7 -> "CMaj7", etc.
+    EXPECT_EQ(display(makeCommittedSeg("Maj",      0, 0, 0, true, 0)), "C");
+    EXPECT_EQ(display(makeCommittedSeg("Dom7",     0, 0, 0, true, 0)), "C7");
+    EXPECT_EQ(display(makeCommittedSeg("Maj7",     0, 0, 0, true, 0)), "CMaj7");
+    EXPECT_EQ(display(makeCommittedSeg("Min",      0, 0, 0, true, 0)), "Cm");
+    EXPECT_EQ(display(makeCommittedSeg("Min7",     0, 0, 0, true, 0)), "Cm7");
+    EXPECT_EQ(display(makeCommittedSeg("MinMaj7",  0, 0, 0, true, 0)), "CmMaj7");
+    EXPECT_EQ(display(makeCommittedSeg("Dim",      0, 0, 0, true, 0)), "Cdim");
+    EXPECT_EQ(display(makeCommittedSeg("Dim7",     0, 0, 0, true, 0)), "Cdim7");
+    EXPECT_EQ(display(makeCommittedSeg("HalfDim7", 0, 0, 0, true, 0)), "Cm7b5");   // HalfDiminished: 7 is structural
+    EXPECT_EQ(display(makeCommittedSeg("Aug",      0, 0, 0, true, 0)), "C+");
+    EXPECT_EQ(display(makeCommittedSeg("Aug7",     0, 0, 0, true, 0)), "C7#5");
+    EXPECT_EQ(display(makeCommittedSeg("AugMaj7",  0, 0, 0, true, 0)), "CMaj7#5");
+}
+
+TEST(SectionRecordAdapterTests, DisplaySymbolRootSpelledFromRecordTpc)
+{
+    // Same pitch class (8) and quality (Min7); the record's PUBLISHED line-of-fifths decides the
+    // spelling — Ab (lof -4) in a flat key vs G# (lof 8) in a sharp key. The display root comes from
+    // rootSpellingLof (the record tpc), never from the pc alone.
+    EXPECT_EQ(display(makeCommittedSeg("Min7", 8, -4, /*Fminor*/ 5, false, -4)), "Abm7");
+    EXPECT_EQ(display(makeCommittedSeg("Min7", 8,  8, /*Amajor*/ 9, true,   3)), "G#m7");
+}
+
+TEST(SectionRecordAdapterTests, DisplaySymbolInversionSlashBass)
+{
+    // The slash bass is the record's published per-event sounding bass (bassPerEvent.front()), spelled
+    // from its own line-of-fifths. C major triad with E in the bass -> "C/E"; a dom7 with the seventh
+    // (Bb) in the bass -> "C7/Bb".
+    EXPECT_EQ(display(makeCommittedSeg("Maj",  0, 0, 0, true, 0, "I", "", /*bass*/ 4, /*bassLof*/ 4)),  "C/E");
+    EXPECT_EQ(display(makeCommittedSeg("Dom7", 0, 0, 0, true, 0, "I", "", /*bass*/ 10, /*bassLof*/ -2)), "C7/Bb");
+}
+
+TEST(SectionRecordAdapterTests, DisplaySymbolAppliedAndChromaticClasses)
+{
+    // Applied dominant (V/V in C = D7): the display is the chord's OWN idiomatic symbol — the applied
+    // relationship lives in the Roman numeral, not the chord symbol. The degree resolves to -1 (an
+    // applied class has a non-empty target), which does not affect the symbol.
+    const joint::RecordSegment vOfV = makeCommittedSeg("Dom7", 2, 2, 0, true, 0, "V", "V");
+    EXPECT_EQ(an::chordResultFromRecordSegment(vOfV).function.degree, -1);
+    EXPECT_EQ(display(vOfV), "D7");
+
+    // Neapolitan (rooted bII major triad in C) -> "Db": the coarse quality is Major; the root is
+    // spelled from the published tpc (lof -5 = Db).
+    EXPECT_EQ(display(makeCommittedSeg("Neapolitan", 1, -5, 0, true, 0, "N", "")), "Db");
+
+    // A rootless chromatic class (an AugSixth carrying no chord-factor root): the converter yields
+    // rootPc = -1, and the record-arm emitter suppresses the symbol on `rootPc >= 0` — matching the
+    // batch render's rootless "" (jointChordSymbol returns "" for a rootless class). We establish the
+    // guard's precondition here; formatSymbol is never called on a rootless result (no root to spell).
+    const joint::RecordSegment rootless =
+        makeCommittedSeg("AugSixth", std::nullopt, std::nullopt, 0, true, 0, "It", "");
+    EXPECT_LT(an::chordResultFromRecordSegment(rootless).identity.rootPc, 0);
 }

@@ -56,9 +56,22 @@ class Score;
 
 namespace mu::composing::analysis::joint {
 struct NotationRecord;
+struct RecordSegment;
 }
 
 namespace mu::composing::analysis {
+
+/// One committed record segment -> its ChordAnalysisResult (the committed reading's identity +
+/// function), derived from the segment's published facts (§3.2). This is the ONE record-segment ->
+/// ChordAnalysisResult converter (#6): analyzeSectionFromRecord uses it for every region, and the
+/// presentation layer reads its result to render the DISPLAY chord symbol / Nashville number (the
+/// ratified D2 / §3.3-amendment presentation derivations — ChordSymbolFormatter::formatSymbol /
+/// formatNashvilleNumber). It carries the CLASS quality's seventh-ness into the extensions bitmask
+/// (the coarse ChordQuality alone drops it), so the formatter renders "G7"/"GMaj7"/"Am7"/"Bdim7"
+/// rather than the bare triad. `committedContentScore` seeds identity.score (the status-bar
+/// "(%.2f)" suffix, CSV row 37); 0 when the segment's slice is absent. Pure — reads only `seg`.
+ChordAnalysisResult chordResultFromRecordSegment(const mu::composing::analysis::joint::RecordSegment& seg,
+                                                 double committedContentScore = 0.0);
 
 /// The record-path analyzeSection: derive AnalyzedSection for [from, to) from the joint estimator's
 /// notation record `rec` (produced by joint::produceNotationRecord). `sc`/`excludeStaves` are used
