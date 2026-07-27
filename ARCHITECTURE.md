@@ -168,6 +168,33 @@
 > path (the record IS the surface, A2/#13 — no legacy fallback). Flag OFF → both paths byte-identical. **OI-182 EXECUTED
 > at the record surface** (the §4.1 presentation-gate disposition — every exposure/annotation constant's declared site).
 
+> **SEAMS PART 2 — THE NOTE-SEAM RE-PLUMB (status bar + harmony write + right-click menu) on `noteView` (as-built,
+> behind the default-OFF `useJointNotationRecord`; DORMANT on production).** The single-note surface
+> (`analyzeNoteHarmonicContext[Details]`, and through them `harmonicAnnotation`) gains its record arm at the ONE funnel
+> `analyzeHarmonicContextAtTick` (`notationcomposingbridge`): flag ON → `produceNotationRecord` (whole-score, once) →
+> `noteView(rec, tick)` → the ONE builder `buildNoteContextFromRecord` fills `NoteHarmonicContext` from the record's
+> published facts (contract §1 **seam 2** — a VIEW into the record, NOT a second computation, #6). The builder reuses the
+> SHARED per-segment mapping `regionFromRecordSegment` (`sectionrecordadapter`, EXTRACTED so the span seam
+> `analyzeSectionFromRecord` and the note seam derive the committed reading + two-mode key + §3.3 alternatives in ONE
+> place — the span loop then adds only `tones`, which the note view carries none of). Per note: `chordResults[0]` = the
+> committed reading via `chordResultFromRecordSegment`; `chordResults[1..]` = the §3.3 chord-axis alternatives
+> (`recordAlternatives`), committed-first then descending content score, each carrying its §3.3 content score as
+> `identity.score` (the "(%.2f)" suffix); `keyFifths`/`keyMode` = the C1 two-mode key; `keyConfidence` = the RAW §3.3
+> key-axis gap in nats (a model-internal quantity, NO [0,1] remap); the pedal fields stay false/-1 (suspended, OI-194);
+> `temporalExtensions` default (audited: no in-tree reader); `enclosingKeyArea` nullopt (the single-segment view has no
+> section key-area grouping). The THREE audited note-seam consumers — the **status bar** (`harmonicAnnotation` → the
+> accessibility chain), the **harmony write** (`notationinteraction`), and the **right-click menu**
+> (`notationcontextmenumodel`) — all route through `analyzeNoteHarmonicContext[Details]`, so the ONE builder carries all
+> three; each renders via the SAME shared P-strings formatters (`formatChordResultForStatusBar` / `ChordSymbolFormatter`)
+> reading the carriage — **NO consumer code change**. An out-of-span tick or a produce failure yields an EMPTY context
+> (nothing written, no partial output, no legacy fallback — the record IS the surface, A2/#13). The bounded-window decode
+> cache is BYPASSED on the record arm (a whole-score produce per invocation, the P3a/P4 pattern; a record cache is a later
+> measured concern — the interactive-frequency cost is noted, not a structural incompatibility). Flag OFF → the legacy
+> expanding-window path byte-identical. **After this unit the whole audited note seam is dual-arm; what remains before the
+> switch: P6 (the dual-arm classified comparison over the FULL notation output surface — the switch-ratification evidence;
+> catalogue includes OI-201 + the applied-chord Nashville "?" convention) + P7 (doc-sync/close), then the user's switch
+> ratification.**
+
 > **Living design document.** Read this AND STATUS.md at the start of every development
 > session. ARCHITECTURE.md contains stable design decisions. STATUS.md contains current
 > implementation status and immediate next steps. Update STATUS.md as your last act when
