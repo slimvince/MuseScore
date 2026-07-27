@@ -376,6 +376,14 @@ target_sources(composing_analysis PRIVATE
     # consumer: the seams dispatch). It NEVER re-decodes and never reads the score.
     ${CMAKE_CURRENT_LIST_DIR}/joint/jointnotationrecord.h
     ${CMAKE_CURRENT_LIST_DIR}/joint/jointnotationrecord.cpp
+    # jointnotationproducer — the record-producing ENTRY + the two §1 seam views (notation
+    # output-surface contract §1). The one-call score->record producer (buildAdapterFacts ->
+    # embedded tables/adapter + SELECTED weights -> decodePiece -> assembleNotationRecord) plus its
+    # facts->record core, the span view (segments overlapping a span) and the note view (the segment
+    # containing a tick). DORMANT (declared dormancy — named consumer: seams part 2, the re-plumbed
+    # notation consumers). It composes only established parts; no inference, no new derivation.
+    ${CMAKE_CURRENT_LIST_DIR}/joint/jointnotationproducer.h
+    ${CMAKE_CURRENT_LIST_DIR}/joint/jointnotationproducer.cpp
     # jointembeddedartifacts — GENERATED (tools/joint_estimator/gen_embedded_tables.py, Decision
     # D1): the five committed table artifacts + the SELECTED weight vector embedded VERBATIM as
     # compiled-in bytes, provenance-locked at build time. loadEmbedded() parses these through the

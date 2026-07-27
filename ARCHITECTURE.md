@@ -87,10 +87,37 @@
 > module-locally (L1-only isolation, #7/OI-180 — unifies at the legacy retirement); the spelling derivation is
 > established by `tools/joint_estimator/gen_spelling_establishment.py` → `spelling_establishment.json` (root
 > 13061/13063 = 99.985 % agreement with the notated tpc where the root sounds, 0 unmappable/pc-mismatch; the four
-> divergences are enharmonic re-spellings, the OI-168 convention class); the modal counter by the bwv254 hand-check
-> (D-minor degree-6 all ♭6, degree-7 ♭7+leading-tone). Consumers: NONE yet — the record is dormant, its named
-> consumer the later SEAMS dispatch (the span/note seams that read it). Suites: unit coverage in
+> divergences are enharmonic re-spellings, the OI-168 convention class); **the C++ spelling mapping
+> (`jointprimitives::rootSpellingLof`/`factorSpellingLof` — the one the switch publishes) is established lof-EXACT
+> against that Python derivation on all 13,063 committed segments — 0 divergences, root 13,063 + bass 11,182 cells
+> reconciling to the establishment (OI-197 RESOLVED; the default-OFF `batch_analyze --joint-spelling-parity` dump +
+> `gen_spelling_establishment.py --cpp-parity` → the generated `cpp_parity` block, with a negative-control check
+> that a perturbed lof STOPs)**; the modal counter by the bwv254 hand-check
+> (D-minor degree-6 all ♭6, degree-7 ♭7+leading-tone). Consumers: the RECORD PRODUCER + the two seam VIEWS (next
+> paragraph) read this record — DORMANT (no src/ consumer yet). Suites: unit coverage in
 > `joint_record_tests` / `joint_spelling_tests` / `joint_modal_tests`.
+>
+> **RECORD PRODUCER + THE TWO SEAM VIEWS — the notation output-surface contract §1 seams, PRODUCER side (as-built,
+> DORMANT; `jointnotationproducer`).** `joint::produceNotationRecord(score, stem)` is the ONE-call score->record
+> entry: `buildAdapterFacts` (the L1 published-fact surface — the only score read, no raw-DOM walk) -> the compiled-in
+> EMBEDDED tables/adapter + the SELECTED weight vector (Decision D1) -> `decodePiece` (§5 total order, seg_cap 4) ->
+> `assembleNotationRecord` (which attaches the §3.3 slice). WHOLE-score decode ONCE; deterministic; NO caching (a
+> later, measured concern — #17's funnel, not built speculatively). It returns a `NotationRecordResult` — either the
+> full record or an UNAMBIGUOUS failure (`ok=false`, `error` set, empty record) when the fact adapter cannot extract
+> the score (`AdapterFacts.ok == false`, e.g. a null score): never a partial record, never a silent fallback (#13). A
+> `produceNotationRecord(piece, sigFifths, declaredMode)` core (the same minus `buildAdapterFacts`) is the
+> establishment seam. The two §1 seams READ this record as pure VIEWS (#6, no recompute): **the span view**
+> `spanViewSegments(rec, startTick, endTick)` returns the segment indices OVERLAPPING [startTick, endTick)
+> (`seg.startTick < endTick && seg.endTick > startTick`; an empty/inverted span selects nothing); **the note view**
+> `noteView(rec, tick)` returns the segment CONTAINING `tick` (`seg.startTick <= tick < seg.endTick` — a boundary
+> tick belongs to the segment it STARTS), resolving the committed reading + derived facts (`segment`) + the §3.3
+> slice (`slice`), or `found=false` outside the analyzed span (the §3.1 piece block is the record's own fields).
+> Consumers: NONE yet — DORMANT, the named consumer the SEAMS PART 2 dispatch (the re-plumbed notation consumers
+> behind the default-OFF switch). It composes only already-established parts; no inference, no new derivation.
+> Coverage: `joint_producer_tests` (the producer core vs the parts-assembled record + a `decode_parity_ref` spot-check
+> on bwv324/bwv362; the score wrapper == `buildAdapterFacts` + core on `pb_chorale.mscx`; the null-score failure
+> path; the span-view overlap incl. span-splitting; the note-view boundary rule; the empty-span / out-of-span edge
+> duties).
 > The layer sections (L1–L6) below remain the accurate description of the LEGACY pipeline — still live on the
 > notation path, dormant-compiled on the batch path.
 
