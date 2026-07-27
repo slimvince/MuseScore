@@ -209,6 +209,16 @@ target_sources(composing_analysis PRIVATE
     # hasAssertiveKeyConfidence — independent of analyzeSection, driven by the
     # notation bridge. Declarations stay in the unchanged sectionanalyzer.h.
     ${CMAKE_CURRENT_LIST_DIR}/section/sectioncadencedetection.cpp
+    # sectionrecordadapter — the RECORD-path variant of analyzeSection (seams part 2, partition P2b):
+    # analyzeSectionFromRecord derives the shared AnalyzedSection from the joint estimator's notation
+    # output-surface record (jointnotationrecord.h) instead of the legacy Pass-0 HarmonicRegion stream,
+    # re-collecting per-segment tones over the L1 note surface (composing-side, #7). A consumer of the
+    # published record; it never re-decodes, never invokes the legacy analysis, computes no inference.
+    # DORMANT — no src/ caller yet (the named consumer is the span/implode bridge re-plumb behind the
+    # default-OFF useJointNotationRecord flag); byte-identical on production by construction. Spec:
+    # cowork_notation_output_contract.md §3/§4; dispatch cc_instruction_notation_seams_2.md.
+    ${CMAKE_CURRENT_LIST_DIR}/section/sectionrecordadapter.h
+    ${CMAKE_CURRENT_LIST_DIR}/section/sectionrecordadapter.cpp
     # cadencekeyanchor — key-agnostic authentic-cadence → global tonic anchor
     # (Stage 4c-i; docs/stage4c_cadence_key_design.md §2). Built + measured only;
     # not yet wired into key scoring (that is 4c-ii).

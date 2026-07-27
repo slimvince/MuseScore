@@ -285,6 +285,14 @@ consumer re-plumbs there; earlier would create an undeclared dormancy). CC resum
 HEAD `c19aec5369`, with the raw-gap rule binding and the layering reminder: tones re-collection
 is composing-side against the L1 note surface, never the notation-side collector (#7). Then
 P3 → P4 (bucket + OI-182) → P5 → P6 → P7.
+
+**★ P2b PREPARATION TURN (2026-07-26; doc-only commits `0d5de65a79` STATUS + `493dc8ca35`
+handoff, verified):** CC de-risked the adapter instead of rushing it at session tail — correct
+(the half-built-consumer risk). Pinned conversions: quality via the EXISTING single-source
+`jointOursQuality` map (reuse, #6); `rootTpc = rootSpellingLof + Tpc::TPC_C`. Open at
+implementation: degree string→int, the composing-side per-span tone collector, rootPc/bassPc
+sourcing — all in the STATUS resume note. **Cowork's ruling: P2b runs in a FRESH CC session**,
+same dispatch (`cc_instruction_notation_seams_2.md`), resume at P2b from HEAD `493dc8ca35`.
 **THEN the agenda is the retirement map + refinements, each its own later dispatch, in no forced
 order but all on the register:** the legacy retirements (the map's six items on the gates doc);
 the presentation-layer publications that are PART of the ratified record and must not drop (the

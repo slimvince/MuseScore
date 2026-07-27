@@ -82,6 +82,7 @@ set(MODULE_TEST_SRC
     ${CMAKE_CURRENT_LIST_DIR}/progressionrecognizer_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/reachback_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/regionanalysis_tests.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/section_record_adapter_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/slicer_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/spellingview_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/synthetic_tests.cpp

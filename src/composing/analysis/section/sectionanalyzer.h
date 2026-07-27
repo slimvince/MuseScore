@@ -79,6 +79,24 @@ analyzeSection(const mu::engraving::Score* sc,
                const std::vector<HarmonicRegion>& rawRegions,
                const ChordAnalyzerPreferences& chordPrefs = kDefaultChordAnalyzerPreferences);
 
+// ── Key-area grouping (shared by the legacy and record arms) ──────────────────
+//
+// Confidence-gated key-area grouping (docs/unified_analysis_pipeline.md:149-163). Fills `keyAreas`
+// from `regions` and stamps each region's `keyAreaId`. A new KeyArea opens at the first region and
+// then ONLY when the region's (keyFifths, mode) differs from the enclosing area AND the region is
+// assertively exposed — reading the STORED per-region `hasAssertiveExposure` boolean (set once, per
+// arm, by the section layer: legacy `hasAssertiveKeyConfidence` == normalizedConfidence >= 0.8;
+// record path `gap >= the P1 assertive constant`) rather than re-thresholding the confidence field,
+// so the gate has ONE thresholding site (#6 — the confidence-axis analogue of the OI-173 lesson).
+// Regions that disagree but are not assertively exposed group into the enclosing area (keyAreaId
+// unchanged); their own keyModeResult is preserved verbatim. `KeyArea::confidence` is seeded from the
+// max `normalizedConfidence` over the collapsed regions — a [0,1] confidence on the legacy arm, the
+// raw §3.3 key-axis gap (nats) on the record arm (no production consumer reads it as a probability).
+// SHARED by analyzeSection (legacy) and analyzeSectionFromRecord (record); byte-identical on the
+// legacy arm by construction (same code, same inputs).
+void groupKeyAreas(std::vector<mu::composing::analysis::AnalyzedRegion>& regions,
+                   std::vector<mu::composing::analysis::KeyArea>& keyAreas);
+
 // ── Cadence and pivot detection ───────────────────────────────────────────────
 
 /// Minimum normalized key confidence required for cadence or pivot detection.

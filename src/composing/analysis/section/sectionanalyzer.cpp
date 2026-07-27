@@ -733,33 +733,48 @@ analyzeSection(const mu::engraving::Score* sc,
 
     out.regions = std::move(displayRegions);
 
-    // Key-areas: confidence-gated grouping per docs/unified_analysis_pipeline.md:149-163.
-    //
+    // Key-areas: confidence-gated grouping (the shared helper — see sectionanalyzer.h). Reads the
+    // stored per-region hasAssertiveExposure boolean set just above.
+    groupKeyAreas(out.regions, out.keyAreas);
+
+    return out;
+}
+
+// ── Key-area grouping (shared by the legacy and record arms) ──────────────────
+//
+// Lifted verbatim out of analyzeSection (byte-identical code movement) so the record-path variant
+// (analyzeSectionFromRecord) shares the ONE grouping definition (#6). Documented in sectionanalyzer.h.
+void groupKeyAreas(std::vector<mu::composing::analysis::AnalyzedRegion>& regions,
+                   std::vector<mu::composing::analysis::KeyArea>& keyAreas)
+{
+    using namespace mu::composing::analysis;
+
+    keyAreas.clear();
+
     // A new KeyArea opens at the first region, then only when:
     //   (a) the region's (keyFifths, mode) differs from the enclosing area, AND
     //   (b) the region is assertively exposed.
-    // (b) reads the STORED per-region hasAssertiveExposure boolean (set just above
-    // from hasAssertiveKeyConfidence) rather than re-thresholding the confidence
-    // field — ONE thresholding site per gate (#6). On the legacy arm this is
-    // byte-identical (hasAssertiveExposure == normalizedConfidence >= 0.8); on the
-    // record arm the boolean is gap >= the P1 assertive constant, and the
-    // confidence field carries a nats gap that must NOT be compared to 0.8.
+    // (b) reads the STORED per-region hasAssertiveExposure boolean rather than re-thresholding the
+    // confidence field — ONE thresholding site per gate (#6). On the legacy arm this is byte-identical
+    // (hasAssertiveExposure == normalizedConfidence >= 0.8); on the record arm the boolean is
+    // gap >= the P1 assertive constant, and the confidence field carries a nats gap that must NOT be
+    // compared to 0.8.
     //
-    // Regions that disagree with the enclosing area but are not assertively exposed
-    // are silently grouped into the enclosing area (keyAreaId unchanged).
-    // Their own keyModeResult is preserved verbatim — status-bar display remains
-    // accurate; only the keyAreaId annotation grouping is affected.
-    for (size_t i = 0; i < out.regions.size(); ++i) {
-        const AnalyzedRegion& region = out.regions[i];
+    // Regions that disagree with the enclosing area but are not assertively exposed are silently
+    // grouped into the enclosing area (keyAreaId unchanged). Their own keyModeResult is preserved
+    // verbatim — status-bar display remains accurate; only the keyAreaId annotation grouping is
+    // affected.
+    for (size_t i = 0; i < regions.size(); ++i) {
+        const AnalyzedRegion& region = regions[i];
         const int regionFifths = region.keyModeResult.keySignatureFifths;
         const KeySigMode regionMode = region.keyModeResult.mode;
         const double regionConfidence = region.keyModeResult.normalizedConfidence;
 
-        const bool diverges = !out.keyAreas.empty()
-            && (out.keyAreas.back().keyFifths != regionFifths
-                || out.keyAreas.back().mode != regionMode);
+        const bool diverges = !keyAreas.empty()
+            && (keyAreas.back().keyFifths != regionFifths
+                || keyAreas.back().mode != regionMode);
 
-        if (out.keyAreas.empty()
+        if (keyAreas.empty()
             || (diverges && region.hasAssertiveExposure)) {
             KeyArea area;
             area.startTick  = region.startTick;
@@ -767,18 +782,16 @@ analyzeSection(const mu::engraving::Score* sc,
             area.keyFifths  = regionFifths;
             area.mode       = regionMode;
             area.confidence = regionConfidence;
-            out.keyAreas.push_back(area);
+            keyAreas.push_back(area);
         } else {
-            KeyArea& back = out.keyAreas.back();
+            KeyArea& back = keyAreas.back();
             back.endTick = region.endTick;
             if (regionConfidence > back.confidence) {
                 back.confidence = regionConfidence;
             }
         }
-        out.regions[i].keyAreaId = static_cast<int>(out.keyAreas.size()) - 1;
+        regions[i].keyAreaId = static_cast<int>(keyAreas.size()) - 1;
     }
-
-    return out;
 }
 
 } // namespace mu::composing::analysis
