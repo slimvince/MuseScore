@@ -57,6 +57,8 @@ class Score;
 namespace mu::composing::analysis::joint {
 struct NotationRecord;
 struct RecordSegment;
+struct SegmentSlice;
+class ChordCache;
 }
 
 namespace mu::composing::analysis {
@@ -72,6 +74,21 @@ namespace mu::composing::analysis {
 /// "(%.2f)" suffix, CSV row 37); 0 when the segment's slice is absent. Pure — reads only `seg`.
 ChordAnalysisResult chordResultFromRecordSegment(const mu::composing::analysis::joint::RecordSegment& seg,
                                                  double committedContentScore = 0.0);
+
+/// One committed record segment + its §3.3 slice -> one AnalyzedRegion, EXCEPT the sounding tones (the
+/// caller re-collects those from the L1 note surface where it has the score; the note-seam view carries
+/// none). This is the SHARED per-segment record -> region mapping (#6): used by BOTH
+/// analyzeSectionFromRecord (the span seam — it then fills `tones`) and the note-seam record arm
+/// (jointnotationproducer::noteView -> this -> NoteHarmonicContext). Fills identity+function
+/// (chordResultFromRecordSegment), the C1 two-mode key with the RAW §3.3 key-axis gap (nats) in
+/// normalizedConfidence (no [0,1] remap), the key-exposure bucket/flag from that gap, and the §3.3
+/// chord-axis alternatives (content-score ranked, committed dropped). `referenceFifths` is the notated
+/// signature (spelling reference); `cache` resolves the alternative classes' roots/spellings. Pure:
+/// reads only `seg`/`slice`.
+AnalyzedRegion regionFromRecordSegment(const mu::composing::analysis::joint::RecordSegment& seg,
+                                       const mu::composing::analysis::joint::SegmentSlice* slice,
+                                       int referenceFifths,
+                                       mu::composing::analysis::joint::ChordCache& cache);
 
 /// The record-path analyzeSection: derive AnalyzedSection for [from, to) from the joint estimator's
 /// notation record `rec` (produced by joint::produceNotationRecord). `sc`/`excludeStaves` are used

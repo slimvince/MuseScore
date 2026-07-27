@@ -263,6 +263,49 @@ ChordAnalysisResult chordResultFromRecordSegment(const joint::RecordSegment& seg
     return res;
 }
 
+// One committed record segment + its §3.3 slice -> one AnalyzedRegion, EXCEPT the sounding tones (the
+// caller fills those from L1 where it has the score). The SHARED per-segment mapping (#6): the
+// analyzeSectionFromRecord loop below AND the note-seam record arm both call it, so the committed
+// reading, the two-mode key + RAW nats gap, the exposure bucket, and the §3.3 chord-axis alternatives
+// are derived in exactly ONE place. Pure: reads only seg/slice.
+AnalyzedRegion regionFromRecordSegment(const joint::RecordSegment& seg, const joint::SegmentSlice* slice,
+                                       int referenceFifths, joint::ChordCache& cache)
+{
+    const double committedContentScore =
+        (slice && slice->chordAxis.committed >= 0
+         && slice->chordAxis.committed < static_cast<int>(slice->chordAxis.scores.size()))
+            ? slice->chordAxis.scores[static_cast<size_t>(slice->chordAxis.committed)]
+            : 0.0;
+
+    AnalyzedRegion r;
+    r.startTick        = seg.startTick;
+    r.endTick          = seg.endTick;
+    r.hasAnalyzedChord = true;                        // A decodes every segment
+    r.chordResult      = chordResultFromRecordSegment(seg, committedContentScore);
+
+    // key/mode context — the C1 two-mode key; normalizedConfidence carries the RAW §3.3 key-axis
+    // gap (nats), NO [0,1] remap (amendment 1); hasAssertiveExposure = gap >= the P1 constant.
+    KeyModeAnalysisResult& kmr = r.keyModeResult;
+    kmr.keySignatureFifths   = seg.keySignatureFifths;
+    kmr.mode                 = twoModeOf(seg.isMajor);
+    kmr.tonicPc              = seg.tonicPc;
+    const std::optional<double> gap = keyAxisGap(slice);
+    kmr.normalizedConfidence = gap.value_or(0.0);
+    r.hasAssertiveExposure   = gap.has_value() && *gap >= kAssertiveKeyExposureGap;
+
+    // The key-exposure BUCKET (the implode coalescing + tentative gate; set once per arm, #6): from
+    // the SAME gap — 2 (assertive) iff hasAssertiveExposure, 1 (tentative) iff gap >= the tentative
+    // constant, else 0. A null gap -> 0 (no exposure). NEVER compares the nats gap to the legacy
+    // 0.5/0.8 literals (amendment 1).
+    r.keyExposureBucket = gap.has_value()
+        ? (*gap >= kAssertiveKeyExposureGap ? 2 : (*gap >= kTentativeKeyExposureGap ? 1 : 0))
+        : 0;
+
+    // alternatives: the §3.3 chord-axis slice, content-score ranked, committed dropped.
+    r.alternatives = recordAlternatives(seg, slice, referenceFifths, cache);
+    return r;
+}
+
 AnalyzedSection analyzeSectionFromRecord(const mu::engraving::Score* sc,
                                          const mu::engraving::Fraction& from,
                                          const mu::engraving::Fraction& to,
@@ -302,42 +345,13 @@ AnalyzedSection analyzeSectionFromRecord(const mu::engraving::Score* sc,
         }
         const joint::SegmentSlice* slice = (si < rec.slices.size()) ? &rec.slices[si] : nullptr;
 
-        const double committedContentScore =
-            (slice && slice->chordAxis.committed >= 0
-             && slice->chordAxis.committed < static_cast<int>(slice->chordAxis.scores.size()))
-                ? slice->chordAxis.scores[static_cast<size_t>(slice->chordAxis.committed)]
-                : 0.0;
-
-        AnalyzedRegion r;
-        r.startTick        = seg.startTick;
-        r.endTick          = seg.endTick;
-        r.hasAnalyzedChord = true;                        // A decodes every segment
-        r.chordResult      = chordResultFromRecordSegment(seg, committedContentScore);
-
-        // key/mode context — the C1 two-mode key; normalizedConfidence carries the RAW §3.3 key-axis
-        // gap (nats), NO [0,1] remap (amendment 1); hasAssertiveExposure = gap >= the P1 constant.
-        KeyModeAnalysisResult& kmr = r.keyModeResult;
-        kmr.keySignatureFifths   = seg.keySignatureFifths;
-        kmr.mode                 = twoModeOf(seg.isMajor);
-        kmr.tonicPc              = seg.tonicPc;
-        const std::optional<double> gap = keyAxisGap(slice);
-        kmr.normalizedConfidence = gap.value_or(0.0);
-        r.hasAssertiveExposure   = gap.has_value() && *gap >= kAssertiveKeyExposureGap;
-
-        // The key-exposure BUCKET (the implode coalescing + tentative gate; set once per arm, #6): from
-        // the SAME gap — 2 (assertive) iff hasAssertiveExposure, 1 (tentative) iff gap >= the tentative
-        // constant, else 0. A null gap -> 0 (no exposure). NEVER compares the nats gap to the legacy
-        // 0.5/0.8 literals (amendment 1).
-        r.keyExposureBucket = gap.has_value()
-            ? (*gap >= kAssertiveKeyExposureGap ? 2 : (*gap >= kTentativeKeyExposureGap ? 1 : 0))
-            : 0;
+        // The committed reading + key + exposure + §3.3 alternatives via the SHARED per-segment mapping
+        // (#6 — the same path the note-seam record arm takes).
+        AnalyzedRegion r = regionFromRecordSegment(seg, slice, referenceFifths, cache);
 
         // tones: re-collect over the segment span from the L1 note surface (DERIVABLE; the record does
-        // not carry raw tones).
+        // not carry raw tones). This is the SPAN seam's own fill — the note-seam view carries no tones.
         r.tones = ebr::weightedPcView(noteModel, seg.startTick, seg.endTick, excludeStaves);
-
-        // alternatives: the §3.3 chord-axis slice, content-score ranked, committed dropped.
-        r.alternatives = recordAlternatives(seg, slice, referenceFifths, cache);
 
         out.regions.push_back(std::move(r));
     }

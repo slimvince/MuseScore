@@ -54,8 +54,9 @@
 #include "composing/analysis/chord/chordanalyzer.h"
 #include "composing/analysis/key/keymodeanalyzer.h"
 #include "composing/analysis/section/sectionanalyzer.h"
-#include "composing/analysis/section/sectionrecordadapter.h"   // analyzeSectionFromRecord (record path)
+#include "composing/analysis/section/sectionrecordadapter.h"   // analyzeSectionFromRecord / regionFromRecordSegment (record path)
 #include "composing/analysis/joint/jointnotationproducer.h"    // produceNotationRecord / noteView / NotationRecord
+#include "composing/analysis/joint/jointdecoder.h"             // ChordCache (the note-seam record arm resolves alternatives)
 #include "composing/icomposinganalysisconfiguration.h"
 #include "modularity/ioc.h"
 
@@ -572,6 +573,45 @@ mu::notation::NoteHarmonicContext analyzeHarmonicContextRegionallyAtTick(
     return previousSnapshot.context;
 }
 
+// The record-arm note-seam builder (notation output-surface contract §1 seam 2): the note seam is a
+// VIEW into the whole-score joint notation record (noteView) — NOT a second computation (#6). Fills
+// NoteHarmonicContext from the record's published facts via the SHARED per-segment mapping
+// (regionFromRecordSegment -> chordResultFromRecordSegment for chordResults[0] + recordAlternatives for
+// [1..], content-score ranked). keyConfidence carries the RAW §3.3 key-axis gap (nats), NO [0,1] remap.
+// An out-of-span tick -> an EMPTY context (no chordResults; the record IS the surface, A2 — there is no
+// P4 fallback on this arm). Pedal suspends (chordResultFromRecordSegment leaves isPedalPoint false;
+// OI-194); temporalExtensions stays default (audited: no in-tree reader); enclosingKeyArea stays nullopt
+// (the single-segment note view carries no section key-area grouping — the graceful-degradation default).
+mu::notation::NoteHarmonicContext buildNoteContextFromRecord(
+    const mu::composing::analysis::joint::NotationRecord& rec,
+    const mu::engraving::Fraction& tick)
+{
+    namespace an = mu::composing::analysis;
+    mu::notation::NoteHarmonicContext ctx;
+
+    const an::joint::NoteView nv = an::joint::noteView(rec, tick.ticks());
+    if (!nv.found || !nv.segment) {
+        return ctx;                                        // outside the analyzed span — no reading (A2)
+    }
+
+    an::joint::ChordCache cache;
+    const int referenceFifths = rec.sigFifths.value_or(0);
+    const an::AnalyzedRegion region =
+        an::regionFromRecordSegment(*nv.segment, nv.slice, referenceFifths, cache);
+
+    ctx.keyFifths     = region.keyModeResult.keySignatureFifths;
+    ctx.keyMode       = region.keyModeResult.mode;
+    ctx.keyConfidence = region.keyModeResult.normalizedConfidence;   // RAW §3.3 key-axis gap (nats)
+    ctx.wasRegional   = true;                                        // the record arm is the regional answer
+
+    ctx.chordResults.reserve(1 + region.alternatives.size());
+    ctx.chordResults.push_back(region.chordResult);                  // committed reading first
+    for (const auto& alt : region.alternatives) {                    // then §3.3 chord-axis, score desc
+        ctx.chordResults.push_back(alt);
+    }
+    return ctx;
+}
+
 }
 
 // ── Tick-local (P4) path ─────────────────────────────────────────────────────
@@ -674,6 +714,25 @@ NoteHarmonicContext analyzeHarmonicContextAtTick(const mu::engraving::Score* sco
     const Segment* seg = score->tick2segment(tick, true, SegmentType::ChordRest);
     if (!seg) {
         return {};
+    }
+
+    // Record arm (default OFF, useJointNotationRecord): the note seam is a VIEW into the whole-score
+    // joint notation record (contract §1 seam 2), NOT the legacy Pass-0 / expanding-window path. Produce
+    // the record ONCE and look up `tick`. The bounded-window decode cache is BYPASSED — a whole-score
+    // produce per invocation (the P3a/P4 emitter pattern); a record cache is a later, measured concern
+    // (#17's funnel, not built speculatively — the interactive-frequency cost is noted for the report).
+    // A produce failure returns an EMPTY context (no partial, no legacy fallback — the record is the
+    // surface, A2/#13). Flag OFF -> the legacy path below runs byte-identically.
+    {
+        static muse::GlobalInject<mu::composing::IComposingAnalysisConfiguration> config;
+        const auto* prefs = config.get().get();
+        if (prefs && prefs->useJointNotationRecord()) {
+            const auto rec = mu::composing::analysis::joint::produceNotationRecord(score, std::string());
+            if (!rec.ok) {
+                return {};
+            }
+            return buildNoteContextFromRecord(rec.record, tick);
+        }
     }
 
     const staff_idx_t refStaff = resolveAnalysisReferenceStaff(score, tick, preferredStaffIdx, excludeStaves);
