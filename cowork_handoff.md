@@ -246,7 +246,44 @@ lawful path). Cowork writes `cc_instruction_open_items_split.md` when seams 2 la
 2026-07-26, mid-P3): the split runs as the NEXT CC session after the P3 report verifies,
 BEFORE P4** — the concurrency concern was the real one, not order; P4's OI-182 edit then
 happens in the new index+detail structure, and the seams-2 dispatch gets a dated note to that
-effect. The Cowork rows OI-198/199/200 + handoff blocks ride the split's Task 0.
+effect. The Cowork rows OI-198/199/200 + handoff blocks ride the split's Task 0. *(Superseded in part:
+the rows rode P3a's commit `e2c59715a5` instead; only the handoff rides the split.)*
+
+**★ P3a DELIVERED AND COWORK-VERIFIED (2026-07-26; `e2c59715a5` + STATUS `cb246a7580`).** The
+annotation-emitter record path landed byte-identical (legacy else-arm verbatim; 11 goldens
+untouched; the new 12th snapshot test verified GOLDEN-LESS — structural pins of the record arm
+against its own published facts, nothing blessed). **CC's P3 re-partition RATIFIED (dispatch
+amendment 5):** status-bar/note-context merges with old P5 into ONE note-seam unit (the
+string-carriage decided once, #6). **TWO P3a FINDINGS WITH THE USER** (decision surface
+presented in chat; amendment 6 on ruling): (1) Nashville is a record-path publication GAP
+(legacy published it via three consumers; the record publishes none); (2) the record's
+`chordSymbol` is the GRADING form ("GMaj"/"GDom7"), not a display-idiomatic, spelling-aware
+form. Until ruled: record arm writes no Nashville; emitters keep the current form. **ORDER:
+the register split (`cc_instruction_open_items_split.md`, WRITTEN, the next CC session) →
+P-strings (amendment 6, post-ruling) → P4 (bucket + OI-182, in the NEW register shape) → the
+merged note-seam unit → P6 → P7.**
+
+**★ BOTH P3a FINDINGS RULED (user, 2026-07-26) — AMENDMENT 6 IS IN THE DISPATCH.** Nashville:
+presentation concern (full derivability from published facts VERIFIED, no exception class — the
+user's condition held). Display chord symbol: **D2** — grading form stays on the record;
+display symbol is a presentation derivation (preset styling is presentation territory; the
+record stays preset-independent; Cowork's earlier D1 recommendation revised by the
+separation-of-concerns lens). The P-strings unit is now presentation-side: the shared
+display-symbol path (ChordSymbolFormatter reused where faithful; the CARRIAGE faithfulness —
+seventh-ness through the adapter's quality map — a named establishment duty), the shared
+Nashville formatter, **the permanent inference↔presentation dependency-direction guard** (user
+directive; the thorough axis added to OI-199's row), the emitters wired, the contract's dated
+amendment (on disk, riding). One rule now governs all display strings: renderings are
+presentation; facts are published.
+
+**★ REGISTER SPLIT DELIVERED (CC, 2026-07-26; dispatch `cc_instruction_open_items_split.md`).**
+The register is now the lean INDEX `OPEN_ITEMS.md` (the authoritative status surface, 200 rows,
+~76 KB — the render problem is gone) + one verbatim detail file per item under `open_items/OI-<n>.md`
+(narrative/provenance only, never a status of record). The split is byte-reconciled: every
+pre-split row content is byte-identical in its detail file (`tools/open_items_split_check.py` →
+`open_items/split_reconciliation.json`, 200/200/200 PASS). CLAUDE.md's "Open-items register"
+section is amended (index+detail rules, user-ratified 2026-07-26). Handoff reading step (2)
+above and any future `OPEN_ITEMS.md` reference now mean the INDEX; open detail files as needed.
 
 **★ SEAMS-2 SESSION 1: P0 DELIVERED + A CORRECT FEASIBILITY STOP; THE PARTITION IS RATIFIED
 (Cowork, 2026-07-26; commits `b090f6e4ab` flag + `685bde37d6` STATUS, verified at the

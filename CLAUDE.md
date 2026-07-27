@@ -130,17 +130,24 @@ adoption increment's decision surface — analysis in `cowork_notation_adoption_
 (`cowork_engage_arc_plan.md`, now the middle stage of the #17 funnel), and the doc-sync,
 layer, and gate policies below.*
 
-## The open-items register (user-directed, 2026-07-10)
+## The open-items register (user-directed, 2026-07-10; split into index + detail files, user-ratified 2026-07-26)
 
-**`OPEN_ITEMS.md` is the ONE home for every discovered-but-unresolved issue** (#6 applied to
-tracking itself — created after a full-repo sweep found 91 open items scattered across 12
-surfaces with 11 status contradictions). Rules: (a) **read `OPEN_ITEMS.md` at session start**;
-(b) **a stage may not open while a register item gating it is open**; (c) every newly
-discovered issue gets a register row **in the same commit** that records the discovery;
-(d) every resolution flips its row with provenance; (e) tracking an owed/deferred/TODO item in
+**The register is `OPEN_ITEMS.md` (the lean INDEX) + `open_items/OI-<n>.md` (one detail file per
+item).** The INDEX `OPEN_ITEMS.md` is the ONE home for every discovered-but-unresolved issue and the
+**authoritative status surface** (#6 applied to tracking itself — created after a full-repo sweep
+found 91 open items scattered across 12 surfaces with 11 status contradictions; split into
+index + per-item detail files on 2026-07-26, user-ratified option 1, when the single file grew too
+large to render). Each item's full original row (text + source + status) lives verbatim in its
+detail file `open_items/OI-<n>.md`, which carries narrative and provenance only and **never a status
+of record**. Rules: (a) **read the INDEX `OPEN_ITEMS.md` at session start** (open detail files as
+needed); (b) **a stage may not open while a register item gating it is open**; (c) every newly
+discovered issue gets an **index row AND its detail file** **in the same commit** that records the
+discovery; (d) every resolution **flips the INDEX row** with provenance (the detail file gains a
+dated resolution note, never a status of its own); (e) tracking an owed/deferred/TODO item in
 prose only, without a register row, is a doc-sync violation (#10). "Deal with everything
-discovered" means: every item has ONE row, an owning layer, and a blocking gate — fixed at its
-#8-correct stage, never silently forgotten.
+discovered" means: every item has ONE index row, an owning layer, and a blocking gate — fixed at its
+#8-correct stage, never silently forgotten. (The byte-level split reconciliation instrument is
+`tools/open_items_split_check.py` → `open_items/split_reconciliation.json`.)
 
 ## Project context
 
