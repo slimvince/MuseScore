@@ -308,6 +308,25 @@ implode labels, `kSameChordReannotationGap` re-homed unchanged, **OI-182 EXECUTE
 detail file updated with every constant's new declared site incl. P2b's assertive one). Then
 the merged note-seam unit → P6 → P7.
 
+**★ P4 DELIVERED AND COWORK-VERIFIED (2026-07-27; `0e0ca379b3`/`bb9e3c9811`/`599eebd45e`,
+verified at the objects — the tentative constant 0.975911 at the set site full-precision, the
+implode/tuning record arms pinned golden-less, OI-182 EXECUTED in the new register shape).**
+The bucket unification completed the P2a pattern (set once per arm; the implode's local
+thresholding removed; legacy equality pinned by fixture + byte-identical goldens); tuning's
+only key-mode read verified to be `tonicPc` (JustIntonation) — no FINDING. **One finding
+carried: the split-check false-fails on post-split items (frozen baseline)** — rowed and fixed
+as Task 1 of the ACTIVE dispatch (OI-202, created-and-resolved, the OI-195 pattern; the
+instrument gains a LIVING mode — bijection + no-status-in-detail for all items, verbatim
+reconciliation kept for the original 200; `split_reconciliation.json` stays the historical
+record). **THE ACTIVE DISPATCH is `cc_instruction_notation_noteseam.md`** — the ratified
+MERGED note-seam unit: the `NoteHarmonicContext` record-arm carriage built ONCE (committed +
+§3.3 alternatives through the ONE `chordResultFromRecordSegment` converter; `keyConfidence` =
+raw nats gap documented; pedal suspended; window-cache disposition honest — bypass-with-note
+or FINDING, never forced), then the three consumers (status bar/accessibility chain,
+`notationinteraction` harmony write, the context menu) on it, golden-less structural pins.
+AFTER: P6 (dual-arm classified comparison — the switch evidence; catalogue: OI-201 + the
+Nashville "?" convention) → P7 → the user's switch ratification.
+
 **★ REGISTER SPLIT DELIVERED (CC, 2026-07-26; dispatch `cc_instruction_open_items_split.md`).**
 The register is now the lean INDEX `OPEN_ITEMS.md` (the authoritative status surface, 200 rows,
 ~76 KB — the render problem is gone) + one verbatim detail file per item under `open_items/OI-<n>.md`

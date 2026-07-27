@@ -1,0 +1,2040 @@
+{
+ "mode": "living",
+ "baseline_commit": "cb246a7580",
+ "index_item_count": 202,
+ "detail_file_count": 202,
+ "baseline_item_count": 200,
+ "post_baseline_ids": [
+  "OI-201",
+  "OI-202"
+ ],
+ "bijection_ok": true,
+ "index_duplicate_ids": [],
+ "index_without_detail_file": [],
+ "detail_file_without_index_row": [],
+ "status_discipline_violations": [],
+ "baseline_content_mismatches": [],
+ "overall_ok": true,
+ "per_item": [
+  {
+   "id": "OI-1",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-2",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-3",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-4",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-5",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-6",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-7",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-8",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-9",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-10",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-11",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-12",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-13",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-14",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-15",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-16",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-17",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-18",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-19",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-20",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-21",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-22",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-23",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-24",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-25",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-26",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-27",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-28",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-29",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-30",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-31",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-32",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-33",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-34",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-35",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-36",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-37",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-38",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-39",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-40",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-41",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-42",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-43",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-44",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-45",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-46",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-47",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-48",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-49",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-50",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-51",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-52",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-53",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-54",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-55",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-56",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-57",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-58",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-59",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-60",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-61",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-62",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-63",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-64",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-65",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-66",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-67",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-68",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-69",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-70",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-71",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-72",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-73",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-74",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-75",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-76",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-77",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-78",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-79",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-80",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-81",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-82",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-83",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-84",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-85",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-86",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-87",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-88",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-89",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-90",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-91",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-92",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-93",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-94",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-95",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-96",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-97",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-98",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-99",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-100",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-101",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-102",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-103",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-104",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-105",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-106",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-107",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-108",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-109",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-110",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-111",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-112",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-113",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-114",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-115",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-116",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-117",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-118",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-119",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-120",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-121",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-122",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-123",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-124",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-125",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-126",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-127",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-128",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-129",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-130",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-131",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-132",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-133",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-134",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-135",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-136",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-137",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-138",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-139",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-140",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-141",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-142",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-143",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-144",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-145",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-146",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-147",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-148",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-149",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-150",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-151",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-152",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-153",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-154",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-155",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-156",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-157",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-158",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-159",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-160",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-161",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-162",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-163",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-164",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-165",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-166",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-167",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-168",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-169",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-170",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-171",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-172",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-173",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-174",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-175",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-176",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-177",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-178",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-179",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-180",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-181",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-182",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-183",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-184",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-185",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-186",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-187",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-188",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-189",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-190",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-191",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-192",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-193",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-194",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-195",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-196",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-197",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-198",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-199",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-200",
+   "post_baseline": false,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": true,
+   "ok": true
+  },
+  {
+   "id": "OI-201",
+   "post_baseline": true,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": null,
+   "ok": true
+  },
+  {
+   "id": "OI-202",
+   "post_baseline": true,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": null,
+   "ok": true
+  }
+ ]
+}
