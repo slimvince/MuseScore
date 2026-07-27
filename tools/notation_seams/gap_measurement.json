@@ -1,0 +1,3970 @@
+{
+    "corpus": [
+        {
+            "analysisEndTick": 20640,
+            "id": "bach_chorale_001",
+            "legacyRegions": [
+                {
+                    "endTick": 480,
+                    "normalizedConfidence": 0.9472126806567951,
+                    "startTick": 0
+                },
+                {
+                    "endTick": 960,
+                    "normalizedConfidence": 0.9472126806567951,
+                    "startTick": 480
+                },
+                {
+                    "endTick": 1440,
+                    "normalizedConfidence": 0.782721155535169,
+                    "startTick": 960
+                },
+                {
+                    "endTick": 1920,
+                    "normalizedConfidence": 0.7728216999476515,
+                    "startTick": 1440
+                },
+                {
+                    "endTick": 2880,
+                    "normalizedConfidence": 0.7704302539219315,
+                    "startTick": 1920
+                },
+                {
+                    "endTick": 3360,
+                    "normalizedConfidence": 0.6502386075811897,
+                    "startTick": 2880
+                },
+                {
+                    "endTick": 4320,
+                    "normalizedConfidence": 0.5206218453641299,
+                    "startTick": 3360
+                },
+                {
+                    "endTick": 4800,
+                    "normalizedConfidence": 0.7651166189459985,
+                    "startTick": 4320
+                },
+                {
+                    "endTick": 5760,
+                    "normalizedConfidence": 0.40153053187083554,
+                    "startTick": 4800
+                },
+                {
+                    "endTick": 6240,
+                    "normalizedConfidence": 0.8398223712993921,
+                    "startTick": 5760
+                },
+                {
+                    "endTick": 6720,
+                    "normalizedConfidence": 0.7750164347941387,
+                    "startTick": 6240
+                },
+                {
+                    "endTick": 7200,
+                    "normalizedConfidence": 0.6261753903996115,
+                    "startTick": 6720
+                },
+                {
+                    "endTick": 7680,
+                    "normalizedConfidence": 0.8683677874895712,
+                    "startTick": 7200
+                },
+                {
+                    "endTick": 8160,
+                    "normalizedConfidence": 0.9422490511088968,
+                    "startTick": 7680
+                },
+                {
+                    "endTick": 8640,
+                    "normalizedConfidence": 0.9415571743922743,
+                    "startTick": 8160
+                },
+                {
+                    "endTick": 9120,
+                    "normalizedConfidence": 0.9665774079698216,
+                    "startTick": 8640
+                },
+                {
+                    "endTick": 10080,
+                    "normalizedConfidence": 0.9529228248080422,
+                    "startTick": 9120
+                },
+                {
+                    "endTick": 10560,
+                    "normalizedConfidence": 0.9529228248080422,
+                    "startTick": 10080
+                },
+                {
+                    "endTick": 12000,
+                    "normalizedConfidence": 0.9529228248080422,
+                    "startTick": 10560
+                },
+                {
+                    "endTick": 13440,
+                    "normalizedConfidence": 0.9073264301630275,
+                    "startTick": 12000
+                },
+                {
+                    "endTick": 14400,
+                    "normalizedConfidence": 0.8435038310561801,
+                    "startTick": 13440
+                },
+                {
+                    "endTick": 14880,
+                    "normalizedConfidence": 0.2011095792162712,
+                    "startTick": 14400
+                },
+                {
+                    "endTick": 15360,
+                    "normalizedConfidence": 0.2011095792162712,
+                    "startTick": 14880
+                },
+                {
+                    "endTick": 15840,
+                    "normalizedConfidence": 0.18701789369334407,
+                    "startTick": 15360
+                },
+                {
+                    "endTick": 16320,
+                    "normalizedConfidence": 0.22877509514943373,
+                    "startTick": 15840
+                },
+                {
+                    "endTick": 17760,
+                    "normalizedConfidence": 0.24352709589704166,
+                    "startTick": 16320
+                },
+                {
+                    "endTick": 19200,
+                    "normalizedConfidence": 0.18185212425808125,
+                    "startTick": 17760
+                },
+                {
+                    "endTick": 20160,
+                    "normalizedConfidence": 0.22766886350293247,
+                    "startTick": 19200
+                },
+                {
+                    "endTick": 20640,
+                    "normalizedConfidence": 0.28769878024318213,
+                    "startTick": 20160
+                }
+            ],
+            "recordSegments": [
+                {
+                    "endTick": 960,
+                    "keyAxisGap": 0.41940252567489233,
+                    "startTick": 0
+                },
+                {
+                    "endTick": 1440,
+                    "keyAxisGap": 1.6381718164267847,
+                    "startTick": 960
+                },
+                {
+                    "endTick": 1920,
+                    "keyAxisGap": 0.010401518638811336,
+                    "startTick": 1440
+                },
+                {
+                    "endTick": 2400,
+                    "keyAxisGap": 0.41940252567489233,
+                    "startTick": 1920
+                },
+                {
+                    "endTick": 2880,
+                    "keyAxisGap": 0.008603742259824187,
+                    "startTick": 2400
+                },
+                {
+                    "endTick": 3360,
+                    "keyAxisGap": 1.2481838064280424,
+                    "startTick": 2880
+                },
+                {
+                    "endTick": 3840,
+                    "keyAxisGap": 1.339668114307198,
+                    "startTick": 3360
+                },
+                {
+                    "endTick": 4320,
+                    "keyAxisGap": 0.42363639070726,
+                    "startTick": 3840
+                },
+                {
+                    "endTick": 4800,
+                    "keyAxisGap": 0.4194025256748921,
+                    "startTick": 4320
+                },
+                {
+                    "endTick": 5760,
+                    "keyAxisGap": 0.00670436324360657,
+                    "startTick": 4800
+                },
+                {
+                    "endTick": 6240,
+                    "keyAxisGap": 0.4194025256748921,
+                    "startTick": 5760
+                },
+                {
+                    "endTick": 6720,
+                    "keyAxisGap": 0.010401518638811558,
+                    "startTick": 6240
+                },
+                {
+                    "endTick": 7200,
+                    "keyAxisGap": 0.44172167176031363,
+                    "startTick": 6720
+                },
+                {
+                    "endTick": 7680,
+                    "keyAxisGap": 0.027353061402049628,
+                    "startTick": 7200
+                },
+                {
+                    "endTick": 8160,
+                    "keyAxisGap": 0.9362842488373448,
+                    "startTick": 7680
+                },
+                {
+                    "endTick": 8640,
+                    "keyAxisGap": 0.3180797791115255,
+                    "startTick": 8160
+                },
+                {
+                    "endTick": 9120,
+                    "keyAxisGap": 0.018231873420911704,
+                    "startTick": 8640
+                },
+                {
+                    "endTick": 10080,
+                    "keyAxisGap": 0.41940252567489233,
+                    "startTick": 9120
+                },
+                {
+                    "endTick": 10560,
+                    "keyAxisGap": 0.42757725990911855,
+                    "startTick": 10080
+                },
+                {
+                    "endTick": 11040,
+                    "keyAxisGap": 0.4705279587679514,
+                    "startTick": 10560
+                },
+                {
+                    "endTick": 11520,
+                    "keyAxisGap": 0.34960896772524075,
+                    "startTick": 11040
+                },
+                {
+                    "endTick": 12000,
+                    "keyAxisGap": 0.8687358729142916,
+                    "startTick": 11520
+                },
+                {
+                    "endTick": 12720,
+                    "keyAxisGap": 0.8426843148369212,
+                    "startTick": 12000
+                },
+                {
+                    "endTick": 12960,
+                    "keyAxisGap": 0.02997801784126497,
+                    "startTick": 12720
+                },
+                {
+                    "endTick": 13440,
+                    "keyAxisGap": 0.4194025256748921,
+                    "startTick": 12960
+                },
+                {
+                    "endTick": 14400,
+                    "keyAxisGap": 0.00670436324360657,
+                    "startTick": 13440
+                },
+                {
+                    "endTick": 15360,
+                    "keyAxisGap": 2.8173091821875316,
+                    "startTick": 14400
+                },
+                {
+                    "endTick": 15840,
+                    "keyAxisGap": 0.43317806999396846,
+                    "startTick": 15360
+                },
+                {
+                    "endTick": 16320,
+                    "keyAxisGap": 0.2542860329000829,
+                    "startTick": 15840
+                },
+                {
+                    "endTick": 17280,
+                    "keyAxisGap": 0.40715265438361836,
+                    "startTick": 16320
+                },
+                {
+                    "endTick": 18240,
+                    "keyAxisGap": 0.4239205661665242,
+                    "startTick": 17280
+                },
+                {
+                    "endTick": 19200,
+                    "keyAxisGap": 0.1858599305011399,
+                    "startTick": 18240
+                },
+                {
+                    "endTick": 20160,
+                    "keyAxisGap": 0.32543420767573017,
+                    "startTick": 19200
+                },
+                {
+                    "endTick": 20640,
+                    "keyAxisGap": 0.4194025256748921,
+                    "startTick": 20160
+                }
+            ]
+        },
+        {
+            "analysisEndTick": 19200,
+            "id": "bach_chorale_003",
+            "legacyRegions": [
+                {
+                    "endTick": 480,
+                    "normalizedConfidence": 0.026596993576865773,
+                    "startTick": 0
+                },
+                {
+                    "endTick": 960,
+                    "normalizedConfidence": 0.026596993576865773,
+                    "startTick": 480
+                },
+                {
+                    "endTick": 1440,
+                    "normalizedConfidence": 0.02481057561823516,
+                    "startTick": 960
+                },
+                {
+                    "endTick": 1920,
+                    "normalizedConfidence": 0.02465005253383996,
+                    "startTick": 1440
+                },
+                {
+                    "endTick": 2400,
+                    "normalizedConfidence": 0.09589041686645082,
+                    "startTick": 1920
+                },
+                {
+                    "endTick": 3840,
+                    "normalizedConfidence": 0.09589041686645082,
+                    "startTick": 2400
+                },
+                {
+                    "endTick": 4320,
+                    "normalizedConfidence": 0.03102507758458063,
+                    "startTick": 3840
+                },
+                {
+                    "endTick": 4800,
+                    "normalizedConfidence": 0.03617220716263404,
+                    "startTick": 4320
+                },
+                {
+                    "endTick": 5280,
+                    "normalizedConfidence": 0.08514555407907018,
+                    "startTick": 4800
+                },
+                {
+                    "endTick": 6240,
+                    "normalizedConfidence": 0.0878573574593657,
+                    "startTick": 5280
+                },
+                {
+                    "endTick": 7200,
+                    "normalizedConfidence": 0.0878573574593657,
+                    "startTick": 6240
+                },
+                {
+                    "endTick": 7680,
+                    "normalizedConfidence": 0.0957460883884875,
+                    "startTick": 7200
+                },
+                {
+                    "endTick": 8160,
+                    "normalizedConfidence": 0.22892786768729817,
+                    "startTick": 7680
+                },
+                {
+                    "endTick": 8640,
+                    "normalizedConfidence": 0.22892786768729817,
+                    "startTick": 8160
+                },
+                {
+                    "endTick": 10080,
+                    "normalizedConfidence": 0.07391526001928993,
+                    "startTick": 8640
+                },
+                {
+                    "endTick": 11040,
+                    "normalizedConfidence": 0.07391526001928993,
+                    "startTick": 10080
+                },
+                {
+                    "endTick": 11520,
+                    "normalizedConfidence": 0.20881536209463786,
+                    "startTick": 11040
+                },
+                {
+                    "endTick": 12000,
+                    "normalizedConfidence": 0.3197894222156078,
+                    "startTick": 11520
+                },
+                {
+                    "endTick": 12480,
+                    "normalizedConfidence": 0.3197894222156078,
+                    "startTick": 12000
+                },
+                {
+                    "endTick": 12960,
+                    "normalizedConfidence": 0.0414293573863107,
+                    "startTick": 12480
+                },
+                {
+                    "endTick": 13920,
+                    "normalizedConfidence": 0.11358926759966709,
+                    "startTick": 12960
+                },
+                {
+                    "endTick": 14400,
+                    "normalizedConfidence": 0.06696334901249029,
+                    "startTick": 13920
+                },
+                {
+                    "endTick": 14880,
+                    "normalizedConfidence": 0.0037385262147959764,
+                    "startTick": 14400
+                },
+                {
+                    "endTick": 15840,
+                    "normalizedConfidence": 0.0619745351738474,
+                    "startTick": 14880
+                },
+                {
+                    "endTick": 16320,
+                    "normalizedConfidence": 0.030247706420842468,
+                    "startTick": 15840
+                },
+                {
+                    "endTick": 16800,
+                    "normalizedConfidence": 0.028777277457934552,
+                    "startTick": 16320
+                },
+                {
+                    "endTick": 17760,
+                    "normalizedConfidence": 0.0629563898312898,
+                    "startTick": 16800
+                },
+                {
+                    "endTick": 18240,
+                    "normalizedConfidence": 0.0629563898312898,
+                    "startTick": 17760
+                },
+                {
+                    "endTick": 18720,
+                    "normalizedConfidence": 0.02107135024701889,
+                    "startTick": 18240
+                },
+                {
+                    "endTick": 19200,
+                    "normalizedConfidence": 0.13094790985508897,
+                    "startTick": 18720
+                }
+            ],
+            "recordSegments": [
+                {
+                    "endTick": 1920,
+                    "keyAxisGap": 1.0562916322071985,
+                    "startTick": 0
+                },
+                {
+                    "endTick": 2880,
+                    "keyAxisGap": 1.0870687273091342,
+                    "startTick": 1920
+                },
+                {
+                    "endTick": 3360,
+                    "keyAxisGap": 0.7215578471839064,
+                    "startTick": 2880
+                },
+                {
+                    "endTick": 3840,
+                    "keyAxisGap": -0.00670436324360657,
+                    "startTick": 3360
+                },
+                {
+                    "endTick": 4320,
+                    "keyAxisGap": 0.29405373939485324,
+                    "startTick": 3840
+                },
+                {
+                    "endTick": 5280,
+                    "keyAxisGap": 1.0952879456271676,
+                    "startTick": 4320
+                },
+                {
+                    "endTick": 5760,
+                    "keyAxisGap": 0.9063954136233248,
+                    "startTick": 5280
+                },
+                {
+                    "endTick": 6240,
+                    "keyAxisGap": 1.4614154948507512,
+                    "startTick": 5760
+                },
+                {
+                    "endTick": 6960,
+                    "keyAxisGap": 0.9672765620779629,
+                    "startTick": 6240
+                },
+                {
+                    "endTick": 7680,
+                    "keyAxisGap": 0.48383427481253793,
+                    "startTick": 6960
+                },
+                {
+                    "endTick": 8160,
+                    "keyAxisGap": 0.006825501542927048,
+                    "startTick": 7680
+                },
+                {
+                    "endTick": 8400,
+                    "keyAxisGap": 0.41940252567489233,
+                    "startTick": 8160
+                },
+                {
+                    "endTick": 8640,
+                    "keyAxisGap": -0.027353061402049406,
+                    "startTick": 8400
+                },
+                {
+                    "endTick": 9120,
+                    "keyAxisGap": 0.5267849736713714,
+                    "startTick": 8640
+                },
+                {
+                    "endTick": 9600,
+                    "keyAxisGap": -0.004079406804391006,
+                    "startTick": 9120
+                },
+                {
+                    "endTick": 10560,
+                    "keyAxisGap": 2.3863503671585553,
+                    "startTick": 9600
+                },
+                {
+                    "endTick": 11040,
+                    "keyAxisGap": 0.6983400101801389,
+                    "startTick": 10560
+                },
+                {
+                    "endTick": 11520,
+                    "keyAxisGap": -0.00670436324360657,
+                    "startTick": 11040
+                },
+                {
+                    "endTick": 11760,
+                    "keyAxisGap": 0.5267849736713717,
+                    "startTick": 11520
+                },
+                {
+                    "endTick": 12240,
+                    "keyAxisGap": 2.199106459240212,
+                    "startTick": 11760
+                },
+                {
+                    "endTick": 12960,
+                    "keyAxisGap": 1.0692301170302283,
+                    "startTick": 12240
+                },
+                {
+                    "endTick": 13440,
+                    "keyAxisGap": -0.00670436324360657,
+                    "startTick": 12960
+                },
+                {
+                    "endTick": 14400,
+                    "keyAxisGap": 1.6101675573181193,
+                    "startTick": 13440
+                },
+                {
+                    "endTick": 14880,
+                    "keyAxisGap": -0.00670436324360657,
+                    "startTick": 14400
+                },
+                {
+                    "endTick": 16560,
+                    "keyAxisGap": 1.5727095878130744,
+                    "startTick": 14880
+                },
+                {
+                    "endTick": 17040,
+                    "keyAxisGap": 1.0524526939744923,
+                    "startTick": 16560
+                },
+                {
+                    "endTick": 18000,
+                    "keyAxisGap": -0.07931128221191841,
+                    "startTick": 17040
+                },
+                {
+                    "endTick": 18720,
+                    "keyAxisGap": 0.722954202877748,
+                    "startTick": 18000
+                },
+                {
+                    "endTick": 19200,
+                    "keyAxisGap": 0.41940252567489233,
+                    "startTick": 18720
+                }
+            ]
+        },
+        {
+            "analysisEndTick": 46080,
+            "id": "bach_bwv806_prelude",
+            "legacyRegions": [
+                {
+                    "endTick": 1920,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 0
+                },
+                {
+                    "endTick": 2880,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 1920
+                },
+                {
+                    "endTick": 5760,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 2880
+                },
+                {
+                    "endTick": 6720,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 5760
+                },
+                {
+                    "endTick": 7920,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 6720
+                },
+                {
+                    "endTick": 8640,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 7920
+                },
+                {
+                    "endTick": 9840,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 8640
+                },
+                {
+                    "endTick": 11520,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 9840
+                },
+                {
+                    "endTick": 13920,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 11520
+                },
+                {
+                    "endTick": 14400,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 13920
+                },
+                {
+                    "endTick": 14640,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 14400
+                },
+                {
+                    "endTick": 15600,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 14640
+                },
+                {
+                    "endTick": 17280,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 15600
+                },
+                {
+                    "endTick": 18480,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 17280
+                },
+                {
+                    "endTick": 20160,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 18480
+                },
+                {
+                    "endTick": 21360,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 20160
+                },
+                {
+                    "endTick": 22320,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 21360
+                },
+                {
+                    "endTick": 23040,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 22320
+                },
+                {
+                    "endTick": 23280,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 23040
+                },
+                {
+                    "endTick": 24240,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 23280
+                },
+                {
+                    "endTick": 25200,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 24240
+                },
+                {
+                    "endTick": 25920,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 25200
+                },
+                {
+                    "endTick": 28800,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 25920
+                },
+                {
+                    "endTick": 30000,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 28800
+                },
+                {
+                    "endTick": 30960,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 30000
+                },
+                {
+                    "endTick": 31680,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 30960
+                },
+                {
+                    "endTick": 32880,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 31680
+                },
+                {
+                    "endTick": 34560,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 32880
+                },
+                {
+                    "endTick": 34800,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 34560
+                },
+                {
+                    "endTick": 35760,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 34800
+                },
+                {
+                    "endTick": 36720,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 35760
+                },
+                {
+                    "endTick": 37440,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 36720
+                },
+                {
+                    "endTick": 39600,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 37440
+                },
+                {
+                    "endTick": 40320,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 39600
+                },
+                {
+                    "endTick": 40560,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 40320
+                },
+                {
+                    "endTick": 42480,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 40560
+                },
+                {
+                    "endTick": 43200,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 42480
+                },
+                {
+                    "endTick": 44400,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 43200
+                },
+                {
+                    "endTick": 45360,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 44400
+                },
+                {
+                    "endTick": 46080,
+                    "normalizedConfidence": 0.9675485720190131,
+                    "startTick": 45360
+                }
+            ],
+            "recordSegments": [
+                {
+                    "endTick": 480,
+                    "keyAxisGap": 0.48896205182880004,
+                    "startTick": 0
+                },
+                {
+                    "endTick": 840,
+                    "keyAxisGap": 0.35034181755808635,
+                    "startTick": 480
+                },
+                {
+                    "endTick": 1200,
+                    "keyAxisGap": -0.006158001540908398,
+                    "startTick": 840
+                },
+                {
+                    "endTick": 1560,
+                    "keyAxisGap": 0.4761516849364118,
+                    "startTick": 1200
+                },
+                {
+                    "endTick": 2040,
+                    "keyAxisGap": 0.5452015364923932,
+                    "startTick": 1560
+                },
+                {
+                    "endTick": 2520,
+                    "keyAxisGap": 0.32751228043714686,
+                    "startTick": 2040
+                },
+                {
+                    "endTick": 2880,
+                    "keyAxisGap": 0.9754772883736593,
+                    "startTick": 2520
+                },
+                {
+                    "endTick": 3360,
+                    "keyAxisGap": 0.9836884505659866,
+                    "startTick": 2880
+                },
+                {
+                    "endTick": 3840,
+                    "keyAxisGap": 0.3461687359449872,
+                    "startTick": 3360
+                },
+                {
+                    "endTick": 4320,
+                    "keyAxisGap": 0.057066811994199274,
+                    "startTick": 3840
+                },
+                {
+                    "endTick": 4800,
+                    "keyAxisGap": 1.1187275715156026,
+                    "startTick": 4320
+                },
+                {
+                    "endTick": 5280,
+                    "keyAxisGap": 0.47343621972821115,
+                    "startTick": 4800
+                },
+                {
+                    "endTick": 5760,
+                    "keyAxisGap": 0.024146731716840897,
+                    "startTick": 5280
+                },
+                {
+                    "endTick": 6720,
+                    "keyAxisGap": 0.775702732220168,
+                    "startTick": 5760
+                },
+                {
+                    "endTick": 7440,
+                    "keyAxisGap": 1.7873438608081527,
+                    "startTick": 6720
+                },
+                {
+                    "endTick": 8160,
+                    "keyAxisGap": 0.7194450570435436,
+                    "startTick": 7440
+                },
+                {
+                    "endTick": 8640,
+                    "keyAxisGap": 0.401672960146501,
+                    "startTick": 8160
+                },
+                {
+                    "endTick": 9360,
+                    "keyAxisGap": 0.9014968705105422,
+                    "startTick": 8640
+                },
+                {
+                    "endTick": 10320,
+                    "keyAxisGap": 0.8730816312746006,
+                    "startTick": 9360
+                },
+                {
+                    "endTick": 11040,
+                    "keyAxisGap": 1.0445992929649663,
+                    "startTick": 10320
+                },
+                {
+                    "endTick": 11520,
+                    "keyAxisGap": 0.48613106993983224,
+                    "startTick": 11040
+                },
+                {
+                    "endTick": 12000,
+                    "keyAxisGap": 1.0457883243115518,
+                    "startTick": 11520
+                },
+                {
+                    "endTick": 12960,
+                    "keyAxisGap": 0.8964117702577656,
+                    "startTick": 12000
+                },
+                {
+                    "endTick": 13920,
+                    "keyAxisGap": 1.2378931059672942,
+                    "startTick": 12960
+                },
+                {
+                    "endTick": 14400,
+                    "keyAxisGap": 0.48613106993983224,
+                    "startTick": 13920
+                },
+                {
+                    "endTick": 14880,
+                    "keyAxisGap": 1.0457883243115518,
+                    "startTick": 14400
+                },
+                {
+                    "endTick": 15840,
+                    "keyAxisGap": 0.8964117702577656,
+                    "startTick": 14880
+                },
+                {
+                    "endTick": 16320,
+                    "keyAxisGap": 0.4249458438479836,
+                    "startTick": 15840
+                },
+                {
+                    "endTick": 17280,
+                    "keyAxisGap": 0.45171254301659935,
+                    "startTick": 16320
+                },
+                {
+                    "endTick": 18240,
+                    "keyAxisGap": 1.0660407150480014,
+                    "startTick": 17280
+                },
+                {
+                    "endTick": 19200,
+                    "keyAxisGap": 0.9858443410534679,
+                    "startTick": 18240
+                },
+                {
+                    "endTick": 20160,
+                    "keyAxisGap": 1.0499874575907198,
+                    "startTick": 19200
+                },
+                {
+                    "endTick": 20640,
+                    "keyAxisGap": 0.4135690204531537,
+                    "startTick": 20160
+                },
+                {
+                    "endTick": 21600,
+                    "keyAxisGap": 2.0729158636871388,
+                    "startTick": 20640
+                },
+                {
+                    "endTick": 22560,
+                    "keyAxisGap": 0.3281441830514362,
+                    "startTick": 21600
+                },
+                {
+                    "endTick": 23520,
+                    "keyAxisGap": 1.5546425131496795,
+                    "startTick": 22560
+                },
+                {
+                    "endTick": 24480,
+                    "keyAxisGap": -0.012005764431558319,
+                    "startTick": 23520
+                },
+                {
+                    "endTick": 25440,
+                    "keyAxisGap": 0.8163321237879604,
+                    "startTick": 24480
+                },
+                {
+                    "endTick": 25920,
+                    "keyAxisGap": 0.3132890005236233,
+                    "startTick": 25440
+                },
+                {
+                    "endTick": 26880,
+                    "keyAxisGap": 1.2352681495280784,
+                    "startTick": 25920
+                },
+                {
+                    "endTick": 27360,
+                    "keyAxisGap": 0.30176149034631816,
+                    "startTick": 26880
+                },
+                {
+                    "endTick": 28320,
+                    "keyAxisGap": 1.2458445990487146,
+                    "startTick": 27360
+                },
+                {
+                    "endTick": 28800,
+                    "keyAxisGap": 0.30176149034631816,
+                    "startTick": 28320
+                },
+                {
+                    "endTick": 29760,
+                    "keyAxisGap": 1.3447413571277176,
+                    "startTick": 28800
+                },
+                {
+                    "endTick": 30000,
+                    "keyAxisGap": 0.29720910753512886,
+                    "startTick": 29760
+                },
+                {
+                    "endTick": 30960,
+                    "keyAxisGap": 1.6552877123368868,
+                    "startTick": 30000
+                },
+                {
+                    "endTick": 31200,
+                    "keyAxisGap": 0.035130434775968444,
+                    "startTick": 30960
+                },
+                {
+                    "endTick": 31680,
+                    "keyAxisGap": 0.3051101436925232,
+                    "startTick": 31200
+                },
+                {
+                    "endTick": 32640,
+                    "keyAxisGap": 1.2227248729421438,
+                    "startTick": 31680
+                },
+                {
+                    "endTick": 33600,
+                    "keyAxisGap": 0.8682546012609214,
+                    "startTick": 32640
+                },
+                {
+                    "endTick": 34080,
+                    "keyAxisGap": 0.4186700738616871,
+                    "startTick": 33600
+                },
+                {
+                    "endTick": 34560,
+                    "keyAxisGap": -0.26983542667005267,
+                    "startTick": 34080
+                },
+                {
+                    "endTick": 35280,
+                    "keyAxisGap": 0.6496910279068508,
+                    "startTick": 34560
+                },
+                {
+                    "endTick": 36000,
+                    "keyAxisGap": -0.014294468742126476,
+                    "startTick": 35280
+                },
+                {
+                    "endTick": 36720,
+                    "keyAxisGap": 1.080166923748874,
+                    "startTick": 36000
+                },
+                {
+                    "endTick": 36960,
+                    "keyAxisGap": 0.5226118920582712,
+                    "startTick": 36720
+                },
+                {
+                    "endTick": 37440,
+                    "keyAxisGap": 1.099503175673973,
+                    "startTick": 36960
+                },
+                {
+                    "endTick": 38400,
+                    "keyAxisGap": 1.0944405286647148,
+                    "startTick": 37440
+                },
+                {
+                    "endTick": 39360,
+                    "keyAxisGap": 0.5428982380419667,
+                    "startTick": 38400
+                },
+                {
+                    "endTick": 40320,
+                    "keyAxisGap": 0.017663208351981652,
+                    "startTick": 39360
+                },
+                {
+                    "endTick": 40800,
+                    "keyAxisGap": 1.6048417427011685,
+                    "startTick": 40320
+                },
+                {
+                    "endTick": 41760,
+                    "keyAxisGap": 0.5184835885326029,
+                    "startTick": 40800
+                },
+                {
+                    "endTick": 42240,
+                    "keyAxisGap": 0.28092019258336576,
+                    "startTick": 41760
+                },
+                {
+                    "endTick": 42960,
+                    "keyAxisGap": 1.6387704285369171,
+                    "startTick": 42240
+                },
+                {
+                    "endTick": 43680,
+                    "keyAxisGap": 0.5798905149643039,
+                    "startTick": 42960
+                },
+                {
+                    "endTick": 44640,
+                    "keyAxisGap": 0.009259669693022943,
+                    "startTick": 43680
+                },
+                {
+                    "endTick": 45600,
+                    "keyAxisGap": 1.354336135494579,
+                    "startTick": 44640
+                },
+                {
+                    "endTick": 46080,
+                    "keyAxisGap": -0.02705168026385607,
+                    "startTick": 45600
+                }
+            ]
+        },
+        {
+            "analysisEndTick": 21840,
+            "id": "bach_bwv806_gigue",
+            "legacyRegions": [
+                {
+                    "endTick": 240,
+                    "normalizedConfidence": 0.3811906123854119,
+                    "startTick": 0
+                },
+                {
+                    "endTick": 960,
+                    "normalizedConfidence": 0.3811906123854119,
+                    "startTick": 240
+                },
+                {
+                    "endTick": 1680,
+                    "normalizedConfidence": 0.3811906123854119,
+                    "startTick": 960
+                },
+                {
+                    "endTick": 1920,
+                    "normalizedConfidence": 0.3811906123854119,
+                    "startTick": 1680
+                },
+                {
+                    "endTick": 2880,
+                    "normalizedConfidence": 0.3811906123854119,
+                    "startTick": 1920
+                },
+                {
+                    "endTick": 3120,
+                    "normalizedConfidence": 0.3811906123854119,
+                    "startTick": 2880
+                },
+                {
+                    "endTick": 3840,
+                    "normalizedConfidence": 0.3811906123854119,
+                    "startTick": 3120
+                },
+                {
+                    "endTick": 4560,
+                    "normalizedConfidence": 0.3811906123854119,
+                    "startTick": 3840
+                },
+                {
+                    "endTick": 4800,
+                    "normalizedConfidence": 0.3811906123854119,
+                    "startTick": 4560
+                },
+                {
+                    "endTick": 5760,
+                    "normalizedConfidence": 0.3811906123854119,
+                    "startTick": 4800
+                },
+                {
+                    "endTick": 6000,
+                    "normalizedConfidence": 0.3811906123854119,
+                    "startTick": 5760
+                },
+                {
+                    "endTick": 7440,
+                    "normalizedConfidence": 0.3811906123854119,
+                    "startTick": 6000
+                },
+                {
+                    "endTick": 8640,
+                    "normalizedConfidence": 0.3811906123854119,
+                    "startTick": 7440
+                },
+                {
+                    "endTick": 8880,
+                    "normalizedConfidence": 0.3811906123854119,
+                    "startTick": 8640
+                },
+                {
+                    "endTick": 10320,
+                    "normalizedConfidence": 0.3811906123854119,
+                    "startTick": 8880
+                },
+                {
+                    "endTick": 10680,
+                    "normalizedConfidence": 0.3811906123854119,
+                    "startTick": 10320
+                },
+                {
+                    "endTick": 11640,
+                    "normalizedConfidence": 0.3811906123854119,
+                    "startTick": 10680
+                },
+                {
+                    "endTick": 11760,
+                    "normalizedConfidence": 0.3811906123854119,
+                    "startTick": 11640
+                },
+                {
+                    "endTick": 13200,
+                    "normalizedConfidence": 0.3811906123854119,
+                    "startTick": 11760
+                },
+                {
+                    "endTick": 14640,
+                    "normalizedConfidence": 0.3811906123854119,
+                    "startTick": 13200
+                },
+                {
+                    "endTick": 15600,
+                    "normalizedConfidence": 0.3811906123854119,
+                    "startTick": 14640
+                },
+                {
+                    "endTick": 16080,
+                    "normalizedConfidence": 0.3811906123854119,
+                    "startTick": 15600
+                },
+                {
+                    "endTick": 17520,
+                    "normalizedConfidence": 0.3811906123854119,
+                    "startTick": 16080
+                },
+                {
+                    "endTick": 18960,
+                    "normalizedConfidence": 0.3811906123854119,
+                    "startTick": 17520
+                },
+                {
+                    "endTick": 20400,
+                    "normalizedConfidence": 0.3811906123854119,
+                    "startTick": 18960
+                },
+                {
+                    "endTick": 21120,
+                    "normalizedConfidence": 0.3811906123854119,
+                    "startTick": 20400
+                },
+                {
+                    "endTick": 21840,
+                    "normalizedConfidence": 0.3811906123854119,
+                    "startTick": 21120
+                }
+            ],
+            "recordSegments": [
+                {
+                    "endTick": 720,
+                    "keyAxisGap": 0.9086062770065624,
+                    "startTick": 0
+                },
+                {
+                    "endTick": 1200,
+                    "keyAxisGap": 0.4072469086187329,
+                    "startTick": 720
+                },
+                {
+                    "endTick": 1620,
+                    "keyAxisGap": 0.714195144165112,
+                    "startTick": 1200
+                },
+                {
+                    "endTick": 1800,
+                    "keyAxisGap": 0.4441477322753449,
+                    "startTick": 1620
+                },
+                {
+                    "endTick": 2280,
+                    "keyAxisGap": 0.9182606687043879,
+                    "startTick": 1800
+                },
+                {
+                    "endTick": 2520,
+                    "keyAxisGap": 0.4670961688326227,
+                    "startTick": 2280
+                },
+                {
+                    "endTick": 3000,
+                    "keyAxisGap": 0.4241324718117907,
+                    "startTick": 2520
+                },
+                {
+                    "endTick": 3360,
+                    "keyAxisGap": 0.47973667055781455,
+                    "startTick": 3000
+                },
+                {
+                    "endTick": 3960,
+                    "keyAxisGap": 2.031153161948983,
+                    "startTick": 3360
+                },
+                {
+                    "endTick": 4440,
+                    "keyAxisGap": 0.45033346878546343,
+                    "startTick": 3960
+                },
+                {
+                    "endTick": 5040,
+                    "keyAxisGap": 0.7000426775485922,
+                    "startTick": 4440
+                },
+                {
+                    "endTick": 5520,
+                    "keyAxisGap": 0.3790908348555879,
+                    "startTick": 5040
+                },
+                {
+                    "endTick": 6000,
+                    "keyAxisGap": 0.6958695959354904,
+                    "startTick": 5520
+                },
+                {
+                    "endTick": 6240,
+                    "keyAxisGap": 0.44152277583612953,
+                    "startTick": 6000
+                },
+                {
+                    "endTick": 6660,
+                    "keyAxisGap": 1.1664724174066325,
+                    "startTick": 6240
+                },
+                {
+                    "endTick": 7080,
+                    "keyAxisGap": 0.4271155392976267,
+                    "startTick": 6660
+                },
+                {
+                    "endTick": 7560,
+                    "keyAxisGap": 1.3099858326918161,
+                    "startTick": 7080
+                },
+                {
+                    "endTick": 8040,
+                    "keyAxisGap": 2.358727019777536,
+                    "startTick": 7560
+                },
+                {
+                    "endTick": 8400,
+                    "keyAxisGap": 0.3729133569302485,
+                    "startTick": 8040
+                },
+                {
+                    "endTick": 8640,
+                    "keyAxisGap": -0.005384384616826665,
+                    "startTick": 8400
+                },
+                {
+                    "endTick": 9120,
+                    "keyAxisGap": 1.0072716736664011,
+                    "startTick": 8640
+                },
+                {
+                    "endTick": 9540,
+                    "keyAxisGap": 2.3681886113652224,
+                    "startTick": 9120
+                },
+                {
+                    "endTick": 9960,
+                    "keyAxisGap": 0.69111932092685,
+                    "startTick": 9540
+                },
+                {
+                    "endTick": 10440,
+                    "keyAxisGap": 1.1081527412673413,
+                    "startTick": 9960
+                },
+                {
+                    "endTick": 10920,
+                    "keyAxisGap": 1.0947603325602646,
+                    "startTick": 10440
+                },
+                {
+                    "endTick": 11040,
+                    "keyAxisGap": 0.4460239464380602,
+                    "startTick": 10920
+                },
+                {
+                    "endTick": 11280,
+                    "keyAxisGap": 1.707594614698857,
+                    "startTick": 11040
+                },
+                {
+                    "endTick": 11760,
+                    "keyAxisGap": 1.271165894958692,
+                    "startTick": 11280
+                },
+                {
+                    "endTick": 12120,
+                    "keyAxisGap": 0.7502103940085769,
+                    "startTick": 11760
+                },
+                {
+                    "endTick": 12480,
+                    "keyAxisGap": 1.0262737447353452,
+                    "startTick": 12120
+                },
+                {
+                    "endTick": 12720,
+                    "keyAxisGap": 0.4140218578098134,
+                    "startTick": 12480
+                },
+                {
+                    "endTick": 13200,
+                    "keyAxisGap": 1.03697500400198,
+                    "startTick": 12720
+                },
+                {
+                    "endTick": 13680,
+                    "keyAxisGap": 1.0153047001832212,
+                    "startTick": 13200
+                },
+                {
+                    "endTick": 14160,
+                    "keyAxisGap": 2.4039317441899373,
+                    "startTick": 13680
+                },
+                {
+                    "endTick": 14640,
+                    "keyAxisGap": 0.34177637408015915,
+                    "startTick": 14160
+                },
+                {
+                    "endTick": 15060,
+                    "keyAxisGap": 3.6256367072239595,
+                    "startTick": 14640
+                },
+                {
+                    "endTick": 15480,
+                    "keyAxisGap": 1.7439442687871205,
+                    "startTick": 15060
+                },
+                {
+                    "endTick": 15960,
+                    "keyAxisGap": 1.6471689970604144,
+                    "startTick": 15480
+                },
+                {
+                    "endTick": 16440,
+                    "keyAxisGap": 0.38924893696948804,
+                    "startTick": 15960
+                },
+                {
+                    "endTick": 16800,
+                    "keyAxisGap": 1.0262737447353452,
+                    "startTick": 16440
+                },
+                {
+                    "endTick": 17160,
+                    "keyAxisGap": 0.40253772277424726,
+                    "startTick": 16800
+                },
+                {
+                    "endTick": 17460,
+                    "keyAxisGap": 0.5667379998976365,
+                    "startTick": 17160
+                },
+                {
+                    "endTick": 17880,
+                    "keyAxisGap": 0.3723420117480831,
+                    "startTick": 17460
+                },
+                {
+                    "endTick": 18240,
+                    "keyAxisGap": 1.234461492228474,
+                    "startTick": 17880
+                },
+                {
+                    "endTick": 18480,
+                    "keyAxisGap": 0.4441477322753449,
+                    "startTick": 18240
+                },
+                {
+                    "endTick": 18840,
+                    "keyAxisGap": 0.8783713524774939,
+                    "startTick": 18480
+                },
+                {
+                    "endTick": 19200,
+                    "keyAxisGap": 1.3872869487444461,
+                    "startTick": 18840
+                },
+                {
+                    "endTick": 19680,
+                    "keyAxisGap": 0.31294656754293193,
+                    "startTick": 19200
+                },
+                {
+                    "endTick": 19920,
+                    "keyAxisGap": 1.707594614698857,
+                    "startTick": 19680
+                },
+                {
+                    "endTick": 20400,
+                    "keyAxisGap": 1.1778108119665598,
+                    "startTick": 19920
+                },
+                {
+                    "endTick": 20880,
+                    "keyAxisGap": 0.37593883172761977,
+                    "startTick": 20400
+                },
+                {
+                    "endTick": 21360,
+                    "keyAxisGap": 0.2673653732906631,
+                    "startTick": 20880
+                },
+                {
+                    "endTick": 21600,
+                    "keyAxisGap": -0.02699460024416589,
+                    "startTick": 21360
+                },
+                {
+                    "endTick": 21840,
+                    "keyAxisGap": -0.02436757159558889,
+                    "startTick": 21600
+                }
+            ]
+        },
+        {
+            "analysisEndTick": 30720,
+            "id": "mozart_k279_1",
+            "legacyRegions": [
+                {
+                    "endTick": 1920,
+                    "normalizedConfidence": 0.34126218441912576,
+                    "startTick": 0
+                },
+                {
+                    "endTick": 3840,
+                    "normalizedConfidence": 0.06914729110318797,
+                    "startTick": 1920
+                },
+                {
+                    "endTick": 5760,
+                    "normalizedConfidence": 0.07305246156581359,
+                    "startTick": 3840
+                },
+                {
+                    "endTick": 7680,
+                    "normalizedConfidence": 0.07153175503598554,
+                    "startTick": 5760
+                },
+                {
+                    "endTick": 9600,
+                    "normalizedConfidence": 0.07153175503598554,
+                    "startTick": 7680
+                },
+                {
+                    "endTick": 11520,
+                    "normalizedConfidence": 0.07153175503598554,
+                    "startTick": 9600
+                },
+                {
+                    "endTick": 12840,
+                    "normalizedConfidence": 0.07153175503598554,
+                    "startTick": 11520
+                },
+                {
+                    "endTick": 13440,
+                    "normalizedConfidence": 0.2870587868995574,
+                    "startTick": 12840
+                },
+                {
+                    "endTick": 15360,
+                    "normalizedConfidence": 0.2870587868995574,
+                    "startTick": 13440
+                },
+                {
+                    "endTick": 17280,
+                    "normalizedConfidence": 0.2870587868995574,
+                    "startTick": 15360
+                },
+                {
+                    "endTick": 18240,
+                    "normalizedConfidence": 0.2870587868995574,
+                    "startTick": 17280
+                },
+                {
+                    "endTick": 19200,
+                    "normalizedConfidence": 0.029819009344246732,
+                    "startTick": 18240
+                },
+                {
+                    "endTick": 21120,
+                    "normalizedConfidence": 0.029819009344246732,
+                    "startTick": 19200
+                },
+                {
+                    "endTick": 22080,
+                    "normalizedConfidence": 0.029819009344246732,
+                    "startTick": 21120
+                },
+                {
+                    "endTick": 23040,
+                    "normalizedConfidence": 0.7718430542559419,
+                    "startTick": 22080
+                },
+                {
+                    "endTick": 23280,
+                    "normalizedConfidence": 0.7718430542559419,
+                    "startTick": 23040
+                },
+                {
+                    "endTick": 24000,
+                    "normalizedConfidence": 0.8123599155537304,
+                    "startTick": 23280
+                },
+                {
+                    "endTick": 24960,
+                    "normalizedConfidence": 0.8273274156461106,
+                    "startTick": 24000
+                },
+                {
+                    "endTick": 25200,
+                    "normalizedConfidence": 0.8273274156461106,
+                    "startTick": 24960
+                },
+                {
+                    "endTick": 26880,
+                    "normalizedConfidence": 0.8542870043957786,
+                    "startTick": 25200
+                },
+                {
+                    "endTick": 28800,
+                    "normalizedConfidence": 0.8542870043957786,
+                    "startTick": 26880
+                },
+                {
+                    "endTick": 29760,
+                    "normalizedConfidence": 0.8542870043957786,
+                    "startTick": 28800
+                },
+                {
+                    "endTick": 30720,
+                    "normalizedConfidence": 0.0636973486417159,
+                    "startTick": 29760
+                }
+            ],
+            "recordSegments": [
+                {
+                    "endTick": 360,
+                    "keyAxisGap": 0.4654139071974184,
+                    "startTick": 0
+                },
+                {
+                    "endTick": 960,
+                    "keyAxisGap": 0.0034975957021137205,
+                    "startTick": 360
+                },
+                {
+                    "endTick": 1320,
+                    "keyAxisGap": 0.43093050986410564,
+                    "startTick": 960
+                },
+                {
+                    "endTick": 1560,
+                    "keyAxisGap": -0.04933306777844493,
+                    "startTick": 1320
+                },
+                {
+                    "endTick": 2400,
+                    "keyAxisGap": 1.3414917378565692,
+                    "startTick": 1560
+                },
+                {
+                    "endTick": 2880,
+                    "keyAxisGap": 0.5087320778090021,
+                    "startTick": 2400
+                },
+                {
+                    "endTick": 3360,
+                    "keyAxisGap": 1.0995728134371756,
+                    "startTick": 2880
+                },
+                {
+                    "endTick": 3840,
+                    "keyAxisGap": -0.017754016791914573,
+                    "startTick": 3360
+                },
+                {
+                    "endTick": 4200,
+                    "keyAxisGap": 0.4654139071974184,
+                    "startTick": 3840
+                },
+                {
+                    "endTick": 4800,
+                    "keyAxisGap": 0.0034975957021137205,
+                    "startTick": 4200
+                },
+                {
+                    "endTick": 5160,
+                    "keyAxisGap": 0.43093050986410564,
+                    "startTick": 4800
+                },
+                {
+                    "endTick": 5400,
+                    "keyAxisGap": -0.04933306777844493,
+                    "startTick": 5160
+                },
+                {
+                    "endTick": 6240,
+                    "keyAxisGap": 1.3414917378565692,
+                    "startTick": 5400
+                },
+                {
+                    "endTick": 6720,
+                    "keyAxisGap": 0.5087320778090021,
+                    "startTick": 6240
+                },
+                {
+                    "endTick": 7200,
+                    "keyAxisGap": 1.0995728134371756,
+                    "startTick": 6720
+                },
+                {
+                    "endTick": 7680,
+                    "keyAxisGap": -0.017754016791914573,
+                    "startTick": 7200
+                },
+                {
+                    "endTick": 8160,
+                    "keyAxisGap": 0.5488020593468206,
+                    "startTick": 7680
+                },
+                {
+                    "endTick": 8640,
+                    "keyAxisGap": 0.9574652847144769,
+                    "startTick": 8160
+                },
+                {
+                    "endTick": 9120,
+                    "keyAxisGap": -0.10219720791574272,
+                    "startTick": 8640
+                },
+                {
+                    "endTick": 9600,
+                    "keyAxisGap": -0.014309958396995004,
+                    "startTick": 9120
+                },
+                {
+                    "endTick": 10080,
+                    "keyAxisGap": -0.11634967453226164,
+                    "startTick": 9600
+                },
+                {
+                    "endTick": 10560,
+                    "keyAxisGap": -0.016934914836210346,
+                    "startTick": 10080
+                },
+                {
+                    "endTick": 11040,
+                    "keyAxisGap": 0.41215780757892073,
+                    "startTick": 10560
+                },
+                {
+                    "endTick": 11520,
+                    "keyAxisGap": 0.9616383663275765,
+                    "startTick": 11040
+                },
+                {
+                    "endTick": 12000,
+                    "keyAxisGap": 0.5036210741935516,
+                    "startTick": 11520
+                },
+                {
+                    "endTick": 12480,
+                    "keyAxisGap": 0.26980857211441656,
+                    "startTick": 12000
+                },
+                {
+                    "endTick": 12960,
+                    "keyAxisGap": 0.5090264008944572,
+                    "startTick": 12480
+                },
+                {
+                    "endTick": 13440,
+                    "keyAxisGap": 0.9272184697692758,
+                    "startTick": 12960
+                },
+                {
+                    "endTick": 13920,
+                    "keyAxisGap": 0.6068930354166246,
+                    "startTick": 13440
+                },
+                {
+                    "endTick": 14400,
+                    "keyAxisGap": 0.9569677626682562,
+                    "startTick": 13920
+                },
+                {
+                    "endTick": 14880,
+                    "keyAxisGap": 0.41215780757891984,
+                    "startTick": 14400
+                },
+                {
+                    "endTick": 15360,
+                    "keyAxisGap": 0.5036210741935512,
+                    "startTick": 14880
+                },
+                {
+                    "endTick": 15840,
+                    "keyAxisGap": 1.0058437749912523,
+                    "startTick": 15360
+                },
+                {
+                    "endTick": 16320,
+                    "keyAxisGap": 0.5141975237141874,
+                    "startTick": 15840
+                },
+                {
+                    "endTick": 16800,
+                    "keyAxisGap": 0.32731194604387426,
+                    "startTick": 16320
+                },
+                {
+                    "endTick": 17280,
+                    "keyAxisGap": 0.6110661170297247,
+                    "startTick": 16800
+                },
+                {
+                    "endTick": 17760,
+                    "keyAxisGap": 0.5206882714666321,
+                    "startTick": 17280
+                },
+                {
+                    "endTick": 18240,
+                    "keyAxisGap": 1.0137963263825398,
+                    "startTick": 17760
+                },
+                {
+                    "endTick": 18720,
+                    "keyAxisGap": -0.11856011101272679,
+                    "startTick": 18240
+                },
+                {
+                    "endTick": 18960,
+                    "keyAxisGap": 1.0380625119190015,
+                    "startTick": 18720
+                },
+                {
+                    "endTick": 19680,
+                    "keyAxisGap": 1.005843774991252,
+                    "startTick": 19200
+                },
+                {
+                    "endTick": 20160,
+                    "keyAxisGap": 0.5141975237141874,
+                    "startTick": 19680
+                },
+                {
+                    "endTick": 20640,
+                    "keyAxisGap": 0.32731194604387426,
+                    "startTick": 20160
+                },
+                {
+                    "endTick": 21120,
+                    "keyAxisGap": 0.6110661170297247,
+                    "startTick": 20640
+                },
+                {
+                    "endTick": 21840,
+                    "keyAxisGap": 1.0122582919078909,
+                    "startTick": 21120
+                },
+                {
+                    "endTick": 22320,
+                    "keyAxisGap": 0.4647895362779142,
+                    "startTick": 21840
+                },
+                {
+                    "endTick": 22680,
+                    "keyAxisGap": 0.21025994460449482,
+                    "startTick": 22320
+                },
+                {
+                    "endTick": 23280,
+                    "keyAxisGap": 0.22425706725331196,
+                    "startTick": 22680
+                },
+                {
+                    "endTick": 24000,
+                    "keyAxisGap": 0.5892389328171999,
+                    "startTick": 23280
+                },
+                {
+                    "endTick": 24120,
+                    "keyAxisGap": 0.4938042400076177,
+                    "startTick": 24000
+                },
+                {
+                    "endTick": 24600,
+                    "keyAxisGap": 0.2723218176826805,
+                    "startTick": 24120
+                },
+                {
+                    "endTick": 25200,
+                    "keyAxisGap": 0.22425706725331196,
+                    "startTick": 24600
+                },
+                {
+                    "endTick": 25920,
+                    "keyAxisGap": 0.5892389328171999,
+                    "startTick": 25200
+                },
+                {
+                    "endTick": 26400,
+                    "keyAxisGap": 0.9157450717098987,
+                    "startTick": 25920
+                },
+                {
+                    "endTick": 26880,
+                    "keyAxisGap": 0.003650522207669482,
+                    "startTick": 26400
+                },
+                {
+                    "endTick": 27360,
+                    "keyAxisGap": 0.8913338049667523,
+                    "startTick": 26880
+                },
+                {
+                    "endTick": 27840,
+                    "keyAxisGap": 1.2868337281947975,
+                    "startTick": 27360
+                },
+                {
+                    "endTick": 28080,
+                    "keyAxisGap": 0.43450652695999037,
+                    "startTick": 27840
+                },
+                {
+                    "endTick": 28560,
+                    "keyAxisGap": 0.4687801553144042,
+                    "startTick": 28080
+                },
+                {
+                    "endTick": 28800,
+                    "keyAxisGap": 0.2118220925555665,
+                    "startTick": 28560
+                },
+                {
+                    "endTick": 30720,
+                    "keyAxisGap": 2.751147627827333,
+                    "startTick": 28800
+                }
+            ]
+        },
+        {
+            "analysisEndTick": 23040,
+            "id": "mozart_k280_1",
+            "legacyRegions": [
+                {
+                    "endTick": 960,
+                    "normalizedConfidence": 0.9984219719395961,
+                    "startTick": 0
+                },
+                {
+                    "endTick": 1440,
+                    "normalizedConfidence": 0.9986592021110884,
+                    "startTick": 960
+                },
+                {
+                    "endTick": 2640,
+                    "normalizedConfidence": 0.8596737063069287,
+                    "startTick": 1440
+                },
+                {
+                    "endTick": 2880,
+                    "normalizedConfidence": 0.5640332965867989,
+                    "startTick": 2640
+                },
+                {
+                    "endTick": 3840,
+                    "normalizedConfidence": 0.5640332965867989,
+                    "startTick": 2880
+                },
+                {
+                    "endTick": 4320,
+                    "normalizedConfidence": 0.7103846065063663,
+                    "startTick": 3840
+                },
+                {
+                    "endTick": 5040,
+                    "normalizedConfidence": 0.7103846065063663,
+                    "startTick": 4320
+                },
+                {
+                    "endTick": 5760,
+                    "normalizedConfidence": 0.38452367289434775,
+                    "startTick": 5040
+                },
+                {
+                    "endTick": 7200,
+                    "normalizedConfidence": 0.38452367289434775,
+                    "startTick": 5760
+                },
+                {
+                    "endTick": 8640,
+                    "normalizedConfidence": 0.941386786124018,
+                    "startTick": 7200
+                },
+                {
+                    "endTick": 9120,
+                    "normalizedConfidence": 0.9794778994985242,
+                    "startTick": 8640
+                },
+                {
+                    "endTick": 10080,
+                    "normalizedConfidence": 0.9788251117947745,
+                    "startTick": 9120
+                },
+                {
+                    "endTick": 11520,
+                    "normalizedConfidence": 0.9788251117947745,
+                    "startTick": 10080
+                },
+                {
+                    "endTick": 12480,
+                    "normalizedConfidence": 0.9788251117947745,
+                    "startTick": 11520
+                },
+                {
+                    "endTick": 12960,
+                    "normalizedConfidence": 0.10831187624187245,
+                    "startTick": 12480
+                },
+                {
+                    "endTick": 14400,
+                    "normalizedConfidence": 0.10831187624187245,
+                    "startTick": 12960
+                },
+                {
+                    "endTick": 15840,
+                    "normalizedConfidence": 0.10831187624187245,
+                    "startTick": 14400
+                },
+                {
+                    "endTick": 17280,
+                    "normalizedConfidence": 0.10831187624187245,
+                    "startTick": 15840
+                },
+                {
+                    "endTick": 18240,
+                    "normalizedConfidence": 0.9812839432805233,
+                    "startTick": 17280
+                },
+                {
+                    "endTick": 18720,
+                    "normalizedConfidence": 0.926429266882407,
+                    "startTick": 18240
+                },
+                {
+                    "endTick": 19200,
+                    "normalizedConfidence": 0.9299109904262931,
+                    "startTick": 18720
+                },
+                {
+                    "endTick": 19680,
+                    "normalizedConfidence": 0.9359035286879969,
+                    "startTick": 19200
+                },
+                {
+                    "endTick": 20160,
+                    "normalizedConfidence": 0.9295181844520345,
+                    "startTick": 19680
+                },
+                {
+                    "endTick": 20640,
+                    "normalizedConfidence": 0.9235583334587605,
+                    "startTick": 20160
+                },
+                {
+                    "endTick": 21120,
+                    "normalizedConfidence": 0.9220263522119794,
+                    "startTick": 20640
+                },
+                {
+                    "endTick": 21600,
+                    "normalizedConfidence": 0.7908483150363577,
+                    "startTick": 21120
+                },
+                {
+                    "endTick": 22080,
+                    "normalizedConfidence": 0.8569655643729908,
+                    "startTick": 21600
+                },
+                {
+                    "endTick": 22560,
+                    "normalizedConfidence": 0.8448388847309525,
+                    "startTick": 22080
+                },
+                {
+                    "endTick": 23040,
+                    "normalizedConfidence": 0.9318337031462791,
+                    "startTick": 22560
+                }
+            ],
+            "recordSegments": [
+                {
+                    "endTick": 1440,
+                    "keyAxisGap": 1.7939214041649816,
+                    "startTick": 0
+                },
+                {
+                    "endTick": 2160,
+                    "keyAxisGap": 0.4102868214832325,
+                    "startTick": 1440
+                },
+                {
+                    "endTick": 2640,
+                    "keyAxisGap": 1.3301478635943065,
+                    "startTick": 2160
+                },
+                {
+                    "endTick": 3120,
+                    "keyAxisGap": 0.40253772277424726,
+                    "startTick": 2640
+                },
+                {
+                    "endTick": 3600,
+                    "keyAxisGap": 1.0426374687290005,
+                    "startTick": 3120
+                },
+                {
+                    "endTick": 4320,
+                    "keyAxisGap": 0.5768691357288169,
+                    "startTick": 3600
+                },
+                {
+                    "endTick": 5280,
+                    "keyAxisGap": 1.5515343223110607,
+                    "startTick": 4320
+                },
+                {
+                    "endTick": 5760,
+                    "keyAxisGap": 0.6176909847857543,
+                    "startTick": 5280
+                },
+                {
+                    "endTick": 6240,
+                    "keyAxisGap": 0.036048895298573136,
+                    "startTick": 5760
+                },
+                {
+                    "endTick": 7200,
+                    "keyAxisGap": 0.09587564607763532,
+                    "startTick": 6240
+                },
+                {
+                    "endTick": 7680,
+                    "keyAxisGap": 2.776746347283151,
+                    "startTick": 7200
+                },
+                {
+                    "endTick": 8640,
+                    "keyAxisGap": 1.7420383881983827,
+                    "startTick": 7680
+                },
+                {
+                    "endTick": 9000,
+                    "keyAxisGap": 1.0214904209999127,
+                    "startTick": 8640
+                },
+                {
+                    "endTick": 9480,
+                    "keyAxisGap": -0.28173388354703643,
+                    "startTick": 9000
+                },
+                {
+                    "endTick": 9960,
+                    "keyAxisGap": 0.3461687359449863,
+                    "startTick": 9480
+                },
+                {
+                    "endTick": 10320,
+                    "keyAxisGap": 0.4434737864500411,
+                    "startTick": 9960
+                },
+                {
+                    "endTick": 10560,
+                    "keyAxisGap": 0.51136654182522,
+                    "startTick": 10320
+                },
+                {
+                    "endTick": 11040,
+                    "keyAxisGap": -0.005538633657461212,
+                    "startTick": 10560
+                },
+                {
+                    "endTick": 11520,
+                    "keyAxisGap": 1.0269061652635405,
+                    "startTick": 11040
+                },
+                {
+                    "endTick": 12480,
+                    "keyAxisGap": 0.34555766118105513,
+                    "startTick": 11520
+                },
+                {
+                    "endTick": 12960,
+                    "keyAxisGap": 0.008603742259824187,
+                    "startTick": 12480
+                },
+                {
+                    "endTick": 13320,
+                    "keyAxisGap": 1.0203338307513965,
+                    "startTick": 12960
+                },
+                {
+                    "endTick": 13800,
+                    "keyAxisGap": -0.28173388354703643,
+                    "startTick": 13320
+                },
+                {
+                    "endTick": 14280,
+                    "keyAxisGap": 0.3461687359449863,
+                    "startTick": 13800
+                },
+                {
+                    "endTick": 14760,
+                    "keyAxisGap": 1.3945075664211215,
+                    "startTick": 14280
+                },
+                {
+                    "endTick": 15120,
+                    "keyAxisGap": 0.011359927697595529,
+                    "startTick": 14760
+                },
+                {
+                    "endTick": 15360,
+                    "keyAxisGap": -0.009962743579076339,
+                    "startTick": 15120
+                },
+                {
+                    "endTick": 15840,
+                    "keyAxisGap": 0.4165423232719374,
+                    "startTick": 15360
+                },
+                {
+                    "endTick": 16800,
+                    "keyAxisGap": 0.33959939287219143,
+                    "startTick": 15840
+                },
+                {
+                    "endTick": 17280,
+                    "keyAxisGap": 0.008603742259824187,
+                    "startTick": 16800
+                },
+                {
+                    "endTick": 17760,
+                    "keyAxisGap": 0.4286368754713965,
+                    "startTick": 17280
+                },
+                {
+                    "endTick": 18240,
+                    "keyAxisGap": 0.5022508376335599,
+                    "startTick": 17760
+                },
+                {
+                    "endTick": 18720,
+                    "keyAxisGap": -0.0018414782622566683,
+                    "startTick": 18240
+                },
+                {
+                    "endTick": 19200,
+                    "keyAxisGap": 0.4939046744073603,
+                    "startTick": 18720
+                },
+                {
+                    "endTick": 19680,
+                    "keyAxisGap": 0.011359927697595307,
+                    "startTick": 19200
+                },
+                {
+                    "endTick": 20160,
+                    "keyAxisGap": 0.5022508376335602,
+                    "startTick": 19680
+                },
+                {
+                    "endTick": 20640,
+                    "keyAxisGap": -0.009792971343677515,
+                    "startTick": 20160
+                },
+                {
+                    "endTick": 21120,
+                    "keyAxisGap": -0.006158001540908398,
+                    "startTick": 20640
+                },
+                {
+                    "endTick": 21600,
+                    "keyAxisGap": 0.4622658346144355,
+                    "startTick": 21120
+                },
+                {
+                    "endTick": 22080,
+                    "keyAxisGap": -0.002056870796692145,
+                    "startTick": 21600
+                },
+                {
+                    "endTick": 22720,
+                    "keyAxisGap": 0.4996258811943446,
+                    "startTick": 22080
+                },
+                {
+                    "endTick": 23360,
+                    "keyAxisGap": 0.4397198807402636,
+                    "startTick": 22720
+                }
+            ]
+        },
+        {
+            "analysisEndTick": 22080,
+            "id": "chopin_bi105_op30_1",
+            "legacyRegions": [
+                {
+                    "endTick": 480,
+                    "normalizedConfidence": 0.808399870790458,
+                    "startTick": 0
+                },
+                {
+                    "endTick": 1920,
+                    "normalizedConfidence": 0.808399870790458,
+                    "startTick": 480
+                },
+                {
+                    "endTick": 3360,
+                    "normalizedConfidence": 0.19881201821643796,
+                    "startTick": 1920
+                },
+                {
+                    "endTick": 4800,
+                    "normalizedConfidence": 0.023660578155461194,
+                    "startTick": 3360
+                },
+                {
+                    "endTick": 6240,
+                    "normalizedConfidence": 0.06424919235694293,
+                    "startTick": 4800
+                },
+                {
+                    "endTick": 7680,
+                    "normalizedConfidence": 0.1851378259003217,
+                    "startTick": 6240
+                },
+                {
+                    "endTick": 9120,
+                    "normalizedConfidence": 0.20121027653011025,
+                    "startTick": 7680
+                },
+                {
+                    "endTick": 9600,
+                    "normalizedConfidence": 0.20121027653011025,
+                    "startTick": 9120
+                },
+                {
+                    "endTick": 10560,
+                    "normalizedConfidence": 0.1777216080524766,
+                    "startTick": 9600
+                },
+                {
+                    "endTick": 12000,
+                    "normalizedConfidence": 0.24183841686042595,
+                    "startTick": 10560
+                },
+                {
+                    "endTick": 13440,
+                    "normalizedConfidence": 0.24183841686042595,
+                    "startTick": 12000
+                },
+                {
+                    "endTick": 14880,
+                    "normalizedConfidence": 0.19881201821643796,
+                    "startTick": 13440
+                },
+                {
+                    "endTick": 16320,
+                    "normalizedConfidence": 0.023660578155461194,
+                    "startTick": 14880
+                },
+                {
+                    "endTick": 17760,
+                    "normalizedConfidence": 0.06424919235694293,
+                    "startTick": 16320
+                },
+                {
+                    "endTick": 19200,
+                    "normalizedConfidence": 0.1851378259003217,
+                    "startTick": 17760
+                },
+                {
+                    "endTick": 20640,
+                    "normalizedConfidence": 0.20121027653011025,
+                    "startTick": 19200
+                },
+                {
+                    "endTick": 21120,
+                    "normalizedConfidence": 0.20121027653011025,
+                    "startTick": 20640
+                },
+                {
+                    "endTick": 22080,
+                    "normalizedConfidence": 0.22142308951421383,
+                    "startTick": 21120
+                }
+            ],
+            "recordSegments": [
+                {
+                    "endTick": 1200,
+                    "keyAxisGap": 0.9745329849974373,
+                    "startTick": 0
+                },
+                {
+                    "endTick": 1920,
+                    "keyAxisGap": 0.009590576971241216,
+                    "startTick": 1200
+                },
+                {
+                    "endTick": 3360,
+                    "keyAxisGap": 1.5861541873217324,
+                    "startTick": 1920
+                },
+                {
+                    "endTick": 4320,
+                    "keyAxisGap": 1.0772393346963742,
+                    "startTick": 3360
+                },
+                {
+                    "endTick": 4800,
+                    "keyAxisGap": 0.5535417817305284,
+                    "startTick": 4320
+                },
+                {
+                    "endTick": 6240,
+                    "keyAxisGap": 1.5945003505479312,
+                    "startTick": 4800
+                },
+                {
+                    "endTick": 7200,
+                    "keyAxisGap": 0.928826100700832,
+                    "startTick": 6240
+                },
+                {
+                    "endTick": 8160,
+                    "keyAxisGap": 0.6302923708125832,
+                    "startTick": 7200
+                },
+                {
+                    "endTick": 9120,
+                    "keyAxisGap": 1.0535629102600392,
+                    "startTick": 8160
+                },
+                {
+                    "endTick": 10080,
+                    "keyAxisGap": 1.8405881255154535,
+                    "startTick": 9120
+                },
+                {
+                    "endTick": 10560,
+                    "keyAxisGap": 0.9740843945677327,
+                    "startTick": 10080
+                },
+                {
+                    "endTick": 12000,
+                    "keyAxisGap": 0.0672196481765015,
+                    "startTick": 10560
+                },
+                {
+                    "endTick": 12960,
+                    "keyAxisGap": 0.9443289385228395,
+                    "startTick": 12000
+                },
+                {
+                    "endTick": 13920,
+                    "keyAxisGap": 0.6302923708125832,
+                    "startTick": 12960
+                },
+                {
+                    "endTick": 14880,
+                    "keyAxisGap": 1.0493968657296433,
+                    "startTick": 13920
+                },
+                {
+                    "endTick": 15840,
+                    "keyAxisGap": 1.0772393346963742,
+                    "startTick": 14880
+                },
+                {
+                    "endTick": 16320,
+                    "keyAxisGap": 0.5535417817305284,
+                    "startTick": 15840
+                },
+                {
+                    "endTick": 17760,
+                    "keyAxisGap": 1.5945003505479312,
+                    "startTick": 16320
+                },
+                {
+                    "endTick": 18720,
+                    "keyAxisGap": 0.928826100700832,
+                    "startTick": 17760
+                },
+                {
+                    "endTick": 19680,
+                    "keyAxisGap": 0.6302923708125832,
+                    "startTick": 18720
+                },
+                {
+                    "endTick": 20640,
+                    "keyAxisGap": 1.0535629102600392,
+                    "startTick": 19680
+                },
+                {
+                    "endTick": 21600,
+                    "keyAxisGap": 1.8405881255154535,
+                    "startTick": 20640
+                },
+                {
+                    "endTick": 22080,
+                    "keyAxisGap": 0.9740843945677327,
+                    "startTick": 21600
+                }
+            ]
+        },
+        {
+            "analysisEndTick": 22080,
+            "id": "chopin_bi105_op30_2",
+            "legacyRegions": [
+                {
+                    "endTick": 480,
+                    "normalizedConfidence": 0.22254655224693065,
+                    "startTick": 0
+                },
+                {
+                    "endTick": 1920,
+                    "normalizedConfidence": 0.19648924111020433,
+                    "startTick": 480
+                },
+                {
+                    "endTick": 2400,
+                    "normalizedConfidence": 0.19648924111020433,
+                    "startTick": 1920
+                },
+                {
+                    "endTick": 3360,
+                    "normalizedConfidence": 0.10338071633976241,
+                    "startTick": 2400
+                },
+                {
+                    "endTick": 4800,
+                    "normalizedConfidence": 0.2029138043940558,
+                    "startTick": 3360
+                },
+                {
+                    "endTick": 6240,
+                    "normalizedConfidence": 0.49685041902931837,
+                    "startTick": 4800
+                },
+                {
+                    "endTick": 6720,
+                    "normalizedConfidence": 0.4758448473047546,
+                    "startTick": 6240
+                },
+                {
+                    "endTick": 7680,
+                    "normalizedConfidence": 0.6951546528222152,
+                    "startTick": 6720
+                },
+                {
+                    "endTick": 9120,
+                    "normalizedConfidence": 0.25371495987792025,
+                    "startTick": 7680
+                },
+                {
+                    "endTick": 9600,
+                    "normalizedConfidence": 0.27478354458122983,
+                    "startTick": 9120
+                },
+                {
+                    "endTick": 10080,
+                    "normalizedConfidence": 0.45633132418162686,
+                    "startTick": 9600
+                },
+                {
+                    "endTick": 10560,
+                    "normalizedConfidence": 0.552921677090246,
+                    "startTick": 10080
+                },
+                {
+                    "endTick": 12000,
+                    "normalizedConfidence": 0.3752191279907764,
+                    "startTick": 10560
+                },
+                {
+                    "endTick": 13440,
+                    "normalizedConfidence": 0.018846847678997213,
+                    "startTick": 12000
+                },
+                {
+                    "endTick": 13920,
+                    "normalizedConfidence": 0.018846847678997213,
+                    "startTick": 13440
+                },
+                {
+                    "endTick": 14880,
+                    "normalizedConfidence": 0.10338071633976191,
+                    "startTick": 13920
+                },
+                {
+                    "endTick": 16320,
+                    "normalizedConfidence": 0.2029138043940558,
+                    "startTick": 14880
+                },
+                {
+                    "endTick": 17760,
+                    "normalizedConfidence": 0.49685041902931837,
+                    "startTick": 16320
+                },
+                {
+                    "endTick": 18240,
+                    "normalizedConfidence": 0.4758448473047534,
+                    "startTick": 17760
+                },
+                {
+                    "endTick": 19200,
+                    "normalizedConfidence": 0.6951546528222152,
+                    "startTick": 18240
+                },
+                {
+                    "endTick": 20640,
+                    "normalizedConfidence": 0.25371495987792025,
+                    "startTick": 19200
+                },
+                {
+                    "endTick": 21120,
+                    "normalizedConfidence": 0.2747318917206017,
+                    "startTick": 20640
+                },
+                {
+                    "endTick": 21600,
+                    "normalizedConfidence": 0.43464237112990683,
+                    "startTick": 21120
+                },
+                {
+                    "endTick": 22080,
+                    "normalizedConfidence": 0.5086614585615016,
+                    "startTick": 21600
+                }
+            ],
+            "recordSegments": [
+                {
+                    "endTick": 640,
+                    "keyAxisGap": 0.5906216693056128,
+                    "startTick": 0
+                },
+                {
+                    "endTick": 1920,
+                    "keyAxisGap": 1.6853662183666236,
+                    "startTick": 640
+                },
+                {
+                    "endTick": 3360,
+                    "keyAxisGap": 1.3793798667391544,
+                    "startTick": 1920
+                },
+                {
+                    "endTick": 4320,
+                    "keyAxisGap": 1.622323149930049,
+                    "startTick": 3360
+                },
+                {
+                    "endTick": 4800,
+                    "keyAxisGap": 0.3609758520401707,
+                    "startTick": 4320
+                },
+                {
+                    "endTick": 6240,
+                    "keyAxisGap": 1.5755847748837981,
+                    "startTick": 4800
+                },
+                {
+                    "endTick": 7200,
+                    "keyAxisGap": 0.9759110078726794,
+                    "startTick": 6240
+                },
+                {
+                    "endTick": 7680,
+                    "keyAxisGap": 0.3088454923928774,
+                    "startTick": 7200
+                },
+                {
+                    "endTick": 9120,
+                    "keyAxisGap": 0.3742946924012722,
+                    "startTick": 7680
+                },
+                {
+                    "endTick": 10080,
+                    "keyAxisGap": 3.733774957391196,
+                    "startTick": 9120
+                },
+                {
+                    "endTick": 10560,
+                    "keyAxisGap": -0.026085968953110772,
+                    "startTick": 10080
+                },
+                {
+                    "endTick": 12000,
+                    "keyAxisGap": 1.6238712751039328,
+                    "startTick": 10560
+                },
+                {
+                    "endTick": 12960,
+                    "keyAxisGap": 1.622323149930049,
+                    "startTick": 12000
+                },
+                {
+                    "endTick": 13920,
+                    "keyAxisGap": 2.055685545852679,
+                    "startTick": 12960
+                },
+                {
+                    "endTick": 14880,
+                    "keyAxisGap": -0.03626895174337985,
+                    "startTick": 13920
+                },
+                {
+                    "endTick": 15840,
+                    "keyAxisGap": 1.622323149930049,
+                    "startTick": 14880
+                },
+                {
+                    "endTick": 16320,
+                    "keyAxisGap": 0.994095768994117,
+                    "startTick": 15840
+                },
+                {
+                    "endTick": 17280,
+                    "keyAxisGap": 1.2818972027660758,
+                    "startTick": 16320
+                },
+                {
+                    "endTick": 17760,
+                    "keyAxisGap": 0.4897233875733935,
+                    "startTick": 17280
+                },
+                {
+                    "endTick": 18720,
+                    "keyAxisGap": 0.9759110078726794,
+                    "startTick": 17760
+                },
+                {
+                    "endTick": 19200,
+                    "keyAxisGap": 0.3088454923928774,
+                    "startTick": 18720
+                },
+                {
+                    "endTick": 20160,
+                    "keyAxisGap": 0.3899851934924419,
+                    "startTick": 19200
+                },
+                {
+                    "endTick": 20640,
+                    "keyAxisGap": -0.015690501091169873,
+                    "startTick": 20160
+                },
+                {
+                    "endTick": 21600,
+                    "keyAxisGap": 3.733774957391196,
+                    "startTick": 20640
+                },
+                {
+                    "endTick": 22320,
+                    "keyAxisGap": 0.5327667344923697,
+                    "startTick": 21600
+                }
+            ]
+        },
+        {
+            "analysisEndTick": 30720,
+            "id": "corelli_op01n08a",
+            "legacyRegions": [
+                {
+                    "endTick": 1440,
+                    "normalizedConfidence": 0.2240732427032628,
+                    "startTick": 0
+                },
+                {
+                    "endTick": 1920,
+                    "normalizedConfidence": 0.14289872247819335,
+                    "startTick": 1440
+                },
+                {
+                    "endTick": 2880,
+                    "normalizedConfidence": 0.14551188640087653,
+                    "startTick": 1920
+                },
+                {
+                    "endTick": 3360,
+                    "normalizedConfidence": 0.19665476921986408,
+                    "startTick": 2880
+                },
+                {
+                    "endTick": 3840,
+                    "normalizedConfidence": 0.14400664273837044,
+                    "startTick": 3360
+                },
+                {
+                    "endTick": 4800,
+                    "normalizedConfidence": 0.1045369995717317,
+                    "startTick": 3840
+                },
+                {
+                    "endTick": 5280,
+                    "normalizedConfidence": 0.13582061762906442,
+                    "startTick": 4800
+                },
+                {
+                    "endTick": 5760,
+                    "normalizedConfidence": 0.07002927273857065,
+                    "startTick": 5280
+                },
+                {
+                    "endTick": 7680,
+                    "normalizedConfidence": 0.08279312620692074,
+                    "startTick": 5760
+                },
+                {
+                    "endTick": 9120,
+                    "normalizedConfidence": 0.2240732427032609,
+                    "startTick": 7680
+                },
+                {
+                    "endTick": 9600,
+                    "normalizedConfidence": 0.14289872247819138,
+                    "startTick": 9120
+                },
+                {
+                    "endTick": 10560,
+                    "normalizedConfidence": 0.14551188640087653,
+                    "startTick": 9600
+                },
+                {
+                    "endTick": 11040,
+                    "normalizedConfidence": 0.1966547692198624,
+                    "startTick": 10560
+                },
+                {
+                    "endTick": 11520,
+                    "normalizedConfidence": 0.14400664273837044,
+                    "startTick": 11040
+                },
+                {
+                    "endTick": 12480,
+                    "normalizedConfidence": 0.1045369995717317,
+                    "startTick": 11520
+                },
+                {
+                    "endTick": 12960,
+                    "normalizedConfidence": 0.05416176400836501,
+                    "startTick": 12480
+                },
+                {
+                    "endTick": 13440,
+                    "normalizedConfidence": 0.04402069269295649,
+                    "startTick": 12960
+                },
+                {
+                    "endTick": 15360,
+                    "normalizedConfidence": 0.03752529203329969,
+                    "startTick": 13440
+                },
+                {
+                    "endTick": 16320,
+                    "normalizedConfidence": 0.08117239663453253,
+                    "startTick": 15360
+                },
+                {
+                    "endTick": 16800,
+                    "normalizedConfidence": 0.09983665723548667,
+                    "startTick": 16320
+                },
+                {
+                    "endTick": 17280,
+                    "normalizedConfidence": 0.09962877442873481,
+                    "startTick": 16800
+                },
+                {
+                    "endTick": 17760,
+                    "normalizedConfidence": 0.2733760852724412,
+                    "startTick": 17280
+                },
+                {
+                    "endTick": 18240,
+                    "normalizedConfidence": 0.0638523259764008,
+                    "startTick": 17760
+                },
+                {
+                    "endTick": 18720,
+                    "normalizedConfidence": 0.021792922206794903,
+                    "startTick": 18240
+                },
+                {
+                    "endTick": 19200,
+                    "normalizedConfidence": 0.01658295766299693,
+                    "startTick": 18720
+                },
+                {
+                    "endTick": 20160,
+                    "normalizedConfidence": 0.012718384228263114,
+                    "startTick": 19200
+                },
+                {
+                    "endTick": 20640,
+                    "normalizedConfidence": 0.08915207738213253,
+                    "startTick": 20160
+                },
+                {
+                    "endTick": 21120,
+                    "normalizedConfidence": 0.12621538956575057,
+                    "startTick": 20640
+                },
+                {
+                    "endTick": 21600,
+                    "normalizedConfidence": 0.012564164589358717,
+                    "startTick": 21120
+                },
+                {
+                    "endTick": 22080,
+                    "normalizedConfidence": 0.04531863254218309,
+                    "startTick": 21600
+                },
+                {
+                    "endTick": 22560,
+                    "normalizedConfidence": 0.052444889780374836,
+                    "startTick": 22080
+                },
+                {
+                    "endTick": 23040,
+                    "normalizedConfidence": 0.08037782423978723,
+                    "startTick": 22560
+                },
+                {
+                    "endTick": 24000,
+                    "normalizedConfidence": 0.0016421219467402947,
+                    "startTick": 23040
+                },
+                {
+                    "endTick": 24960,
+                    "normalizedConfidence": 0.3791855113417107,
+                    "startTick": 24000
+                },
+                {
+                    "endTick": 25440,
+                    "normalizedConfidence": 0.04980595419383891,
+                    "startTick": 24960
+                },
+                {
+                    "endTick": 25920,
+                    "normalizedConfidence": 0.17588231281275485,
+                    "startTick": 25440
+                },
+                {
+                    "endTick": 26400,
+                    "normalizedConfidence": 0.09230029274293383,
+                    "startTick": 25920
+                },
+                {
+                    "endTick": 26880,
+                    "normalizedConfidence": 0.07290564268458327,
+                    "startTick": 26400
+                },
+                {
+                    "endTick": 27360,
+                    "normalizedConfidence": 0.07290564268458327,
+                    "startTick": 26880
+                },
+                {
+                    "endTick": 27840,
+                    "normalizedConfidence": 0.015174741527812214,
+                    "startTick": 27360
+                },
+                {
+                    "endTick": 28320,
+                    "normalizedConfidence": 0.056670103286038324,
+                    "startTick": 27840
+                },
+                {
+                    "endTick": 28800,
+                    "normalizedConfidence": 0.14701277655878384,
+                    "startTick": 28320
+                },
+                {
+                    "endTick": 30720,
+                    "normalizedConfidence": 0.08317269649392221,
+                    "startTick": 28800
+                }
+            ],
+            "recordSegments": [
+                {
+                    "endTick": 960,
+                    "keyAxisGap": 0.6943388601419795,
+                    "startTick": 0
+                },
+                {
+                    "endTick": 1440,
+                    "keyAxisGap": 0.03624633561522694,
+                    "startTick": 960
+                },
+                {
+                    "endTick": 2640,
+                    "keyAxisGap": 1.6139956556084574,
+                    "startTick": 1440
+                },
+                {
+                    "endTick": 3840,
+                    "keyAxisGap": 0.008990770156905192,
+                    "startTick": 2640
+                },
+                {
+                    "endTick": 4800,
+                    "keyAxisGap": 2.0839155574693473,
+                    "startTick": 3840
+                },
+                {
+                    "endTick": 5760,
+                    "keyAxisGap": 0.7003499636587427,
+                    "startTick": 4800
+                },
+                {
+                    "endTick": 8640,
+                    "keyAxisGap": 0.8917617816159513,
+                    "startTick": 5760
+                },
+                {
+                    "endTick": 9600,
+                    "keyAxisGap": 0.004813056234463264,
+                    "startTick": 8640
+                },
+                {
+                    "endTick": 10320,
+                    "keyAxisGap": 1.5879378270115163,
+                    "startTick": 9600
+                },
+                {
+                    "endTick": 11520,
+                    "keyAxisGap": 0.008990770156905192,
+                    "startTick": 10320
+                },
+                {
+                    "endTick": 12480,
+                    "keyAxisGap": 2.0839155574693473,
+                    "startTick": 11520
+                },
+                {
+                    "endTick": 13440,
+                    "keyAxisGap": 0.7003499636587427,
+                    "startTick": 12480
+                },
+                {
+                    "endTick": 14400,
+                    "keyAxisGap": -0.010280380339490858,
+                    "startTick": 13440
+                },
+                {
+                    "endTick": 15840,
+                    "keyAxisGap": 0.4864592312517537,
+                    "startTick": 14400
+                },
+                {
+                    "endTick": 16800,
+                    "keyAxisGap": 0.48005586334421846,
+                    "startTick": 15840
+                },
+                {
+                    "endTick": 17280,
+                    "keyAxisGap": -0.013359238335478363,
+                    "startTick": 16800
+                },
+                {
+                    "endTick": 17760,
+                    "keyAxisGap": 1.0498277375352763,
+                    "startTick": 17280
+                },
+                {
+                    "endTick": 18240,
+                    "keyAxisGap": 0.36628122961126275,
+                    "startTick": 17760
+                },
+                {
+                    "endTick": 18720,
+                    "keyAxisGap": 1.0498277375352763,
+                    "startTick": 18240
+                },
+                {
+                    "endTick": 19200,
+                    "keyAxisGap": -0.057329502924680975,
+                    "startTick": 18720
+                },
+                {
+                    "endTick": 19680,
+                    "keyAxisGap": 0.5203816057638355,
+                    "startTick": 19200
+                },
+                {
+                    "endTick": 20160,
+                    "keyAxisGap": -0.015825551224744272,
+                    "startTick": 19680
+                },
+                {
+                    "endTick": 20640,
+                    "keyAxisGap": 0.5203816057638351,
+                    "startTick": 20160
+                },
+                {
+                    "endTick": 21120,
+                    "keyAxisGap": 0.32245102164684525,
+                    "startTick": 20640
+                },
+                {
+                    "endTick": 22080,
+                    "keyAxisGap": -0.0052874670682778735,
+                    "startTick": 21120
+                },
+                {
+                    "endTick": 23520,
+                    "keyAxisGap": 0.4776938280418239,
+                    "startTick": 22080
+                },
+                {
+                    "endTick": 24000,
+                    "keyAxisGap": 0.06130371057906592,
+                    "startTick": 23520
+                },
+                {
+                    "endTick": 24480,
+                    "keyAxisGap": 0.41940252567489233,
+                    "startTick": 24000
+                },
+                {
+                    "endTick": 24960,
+                    "keyAxisGap": 0.013258485979541712,
+                    "startTick": 24480
+                },
+                {
+                    "endTick": 25440,
+                    "keyAxisGap": 1.0498277375352763,
+                    "startTick": 24960
+                },
+                {
+                    "endTick": 25920,
+                    "keyAxisGap": -0.043177036308160055,
+                    "startTick": 25440
+                },
+                {
+                    "endTick": 26400,
+                    "keyAxisGap": 0.5267849736713717,
+                    "startTick": 25920
+                },
+                {
+                    "endTick": 26880,
+                    "keyAxisGap": 0.9362842488373446,
+                    "startTick": 26400
+                },
+                {
+                    "endTick": 27360,
+                    "keyAxisGap": 0.004813056234463264,
+                    "startTick": 26880
+                },
+                {
+                    "endTick": 30720,
+                    "keyAxisGap": 0.5643270737020591,
+                    "startTick": 27360
+                }
+            ]
+        },
+        {
+            "analysisEndTick": 15360,
+            "id": "schumann_kinderszenen_n01",
+            "legacyRegions": [
+                {
+                    "endTick": 960,
+                    "normalizedConfidence": 0.42297175020457817,
+                    "startTick": 0
+                },
+                {
+                    "endTick": 1440,
+                    "normalizedConfidence": 0.42297175020457817,
+                    "startTick": 960
+                },
+                {
+                    "endTick": 1920,
+                    "normalizedConfidence": 0.2874021861576711,
+                    "startTick": 1440
+                },
+                {
+                    "endTick": 2880,
+                    "normalizedConfidence": 0.4362403501117313,
+                    "startTick": 1920
+                },
+                {
+                    "endTick": 3360,
+                    "normalizedConfidence": 0.4362403501117313,
+                    "startTick": 2880
+                },
+                {
+                    "endTick": 3840,
+                    "normalizedConfidence": 0.7293055175943631,
+                    "startTick": 3360
+                },
+                {
+                    "endTick": 4800,
+                    "normalizedConfidence": 0.7313450843099203,
+                    "startTick": 3840
+                },
+                {
+                    "endTick": 5280,
+                    "normalizedConfidence": 0.7313450843099203,
+                    "startTick": 4800
+                },
+                {
+                    "endTick": 5760,
+                    "normalizedConfidence": 0.748544710165403,
+                    "startTick": 5280
+                },
+                {
+                    "endTick": 6240,
+                    "normalizedConfidence": 0.5327124471595502,
+                    "startTick": 5760
+                },
+                {
+                    "endTick": 6720,
+                    "normalizedConfidence": 0.47892640244464807,
+                    "startTick": 6240
+                },
+                {
+                    "endTick": 6960,
+                    "normalizedConfidence": 0.47892640244464807,
+                    "startTick": 6720
+                },
+                {
+                    "endTick": 7680,
+                    "normalizedConfidence": 0.3541810468948857,
+                    "startTick": 6960
+                },
+                {
+                    "endTick": 8160,
+                    "normalizedConfidence": 0.2753592810734426,
+                    "startTick": 7680
+                },
+                {
+                    "endTick": 8640,
+                    "normalizedConfidence": 0.21613430242124745,
+                    "startTick": 8160
+                },
+                {
+                    "endTick": 9120,
+                    "normalizedConfidence": 0.060244368342660684,
+                    "startTick": 8640
+                },
+                {
+                    "endTick": 9600,
+                    "normalizedConfidence": 0.058872674466516874,
+                    "startTick": 9120
+                },
+                {
+                    "endTick": 10080,
+                    "normalizedConfidence": 0.017208498886400005,
+                    "startTick": 9600
+                },
+                {
+                    "endTick": 10560,
+                    "normalizedConfidence": 0.03203466320129091,
+                    "startTick": 10080
+                },
+                {
+                    "endTick": 11040,
+                    "normalizedConfidence": 0.17164230223248528,
+                    "startTick": 10560
+                },
+                {
+                    "endTick": 11520,
+                    "normalizedConfidence": 0.21191576404186693,
+                    "startTick": 11040
+                },
+                {
+                    "endTick": 12000,
+                    "normalizedConfidence": 0.13004168995347615,
+                    "startTick": 11520
+                },
+                {
+                    "endTick": 12480,
+                    "normalizedConfidence": 0.2011671183998854,
+                    "startTick": 12000
+                },
+                {
+                    "endTick": 13440,
+                    "normalizedConfidence": 0.2011671183998854,
+                    "startTick": 12480
+                },
+                {
+                    "endTick": 14400,
+                    "normalizedConfidence": 0.7506316379726182,
+                    "startTick": 13440
+                },
+                {
+                    "endTick": 14880,
+                    "normalizedConfidence": 0.7506316379726182,
+                    "startTick": 14400
+                },
+                {
+                    "endTick": 15360,
+                    "normalizedConfidence": 0.20848704157919837,
+                    "startTick": 14880
+                }
+            ],
+            "recordSegments": [
+                {
+                    "endTick": 480,
+                    "keyAxisGap": 0.8654000620606555,
+                    "startTick": 0
+                },
+                {
+                    "endTick": 960,
+                    "keyAxisGap": -0.3747379033040925,
+                    "startTick": 480
+                },
+                {
+                    "endTick": 1320,
+                    "keyAxisGap": 0.05147027758277689,
+                    "startTick": 960
+                },
+                {
+                    "endTick": 1600,
+                    "keyAxisGap": 0.34032450215334764,
+                    "startTick": 1320
+                },
+                {
+                    "endTick": 1920,
+                    "keyAxisGap": -0.034346956599009326,
+                    "startTick": 1600
+                },
+                {
+                    "endTick": 2400,
+                    "keyAxisGap": 0.8802507996978854,
+                    "startTick": 1920
+                },
+                {
+                    "endTick": 2880,
+                    "keyAxisGap": -0.3747379033040925,
+                    "startTick": 2400
+                },
+                {
+                    "endTick": 3240,
+                    "keyAxisGap": 0.05147027758277689,
+                    "startTick": 2880
+                },
+                {
+                    "endTick": 3520,
+                    "keyAxisGap": 0.34032450215334764,
+                    "startTick": 3240
+                },
+                {
+                    "endTick": 3840,
+                    "keyAxisGap": -0.034346956599009326,
+                    "startTick": 3520
+                },
+                {
+                    "endTick": 4320,
+                    "keyAxisGap": 0.8802507996978854,
+                    "startTick": 3840
+                },
+                {
+                    "endTick": 4800,
+                    "keyAxisGap": 0.48973159279425893,
+                    "startTick": 4320
+                },
+                {
+                    "endTick": 5120,
+                    "keyAxisGap": 0.6237201464761903,
+                    "startTick": 4800
+                },
+                {
+                    "endTick": 5280,
+                    "keyAxisGap": -0.0013420997241322397,
+                    "startTick": 5120
+                },
+                {
+                    "endTick": 5760,
+                    "keyAxisGap": 0.3044340150030638,
+                    "startTick": 5280
+                },
+                {
+                    "endTick": 5920,
+                    "keyAxisGap": -0.029842967707690793,
+                    "startTick": 5760
+                },
+                {
+                    "endTick": 6400,
+                    "keyAxisGap": 0.014058791807811666,
+                    "startTick": 5920
+                },
+                {
+                    "endTick": 6720,
+                    "keyAxisGap": 0.0041897230374443595,
+                    "startTick": 6400
+                },
+                {
+                    "endTick": 7200,
+                    "keyAxisGap": 0.9138797588409246,
+                    "startTick": 6720
+                },
+                {
+                    "endTick": 7440,
+                    "keyAxisGap": 0.48613106993983246,
+                    "startTick": 7200
+                },
+                {
+                    "endTick": 8000,
+                    "keyAxisGap": 1.9896943405686023,
+                    "startTick": 7440
+                },
+                {
+                    "endTick": 8640,
+                    "keyAxisGap": 0.524769579211267,
+                    "startTick": 8000
+                },
+                {
+                    "endTick": 9120,
+                    "keyAxisGap": -0.007977670574919493,
+                    "startTick": 8640
+                },
+                {
+                    "endTick": 9600,
+                    "keyAxisGap": 1.3929594412472368,
+                    "startTick": 9120
+                },
+                {
+                    "endTick": 10080,
+                    "keyAxisGap": 0.3368321967567658,
+                    "startTick": 9600
+                },
+                {
+                    "endTick": 10560,
+                    "keyAxisGap": 2.3978187586191795,
+                    "startTick": 10080
+                },
+                {
+                    "endTick": 11040,
+                    "keyAxisGap": 2.397636371516513,
+                    "startTick": 10560
+                },
+                {
+                    "endTick": 11520,
+                    "keyAxisGap": 0.4580927530013361,
+                    "startTick": 11040
+                },
+                {
+                    "endTick": 12000,
+                    "keyAxisGap": 0.3410052783698658,
+                    "startTick": 11520
+                },
+                {
+                    "endTick": 12480,
+                    "keyAxisGap": -0.0045976637000273435,
+                    "startTick": 12000
+                },
+                {
+                    "endTick": 12960,
+                    "keyAxisGap": 0.4486199237461461,
+                    "startTick": 12480
+                },
+                {
+                    "endTick": 13440,
+                    "keyAxisGap": 0.41099577160389966,
+                    "startTick": 12960
+                },
+                {
+                    "endTick": 13920,
+                    "keyAxisGap": 0.40738276992663014,
+                    "startTick": 13440
+                },
+                {
+                    "endTick": 14400,
+                    "keyAxisGap": -0.3747379033040925,
+                    "startTick": 13920
+                },
+                {
+                    "endTick": 14760,
+                    "keyAxisGap": 0.05147027758277689,
+                    "startTick": 14400
+                },
+                {
+                    "endTick": 15040,
+                    "keyAxisGap": 0.34032450215334764,
+                    "startTick": 14760
+                },
+                {
+                    "endTick": 15360,
+                    "keyAxisGap": -0.034346956599009326,
+                    "startTick": 15040
+                }
+            ]
+        },
+        {
+            "analysisEndTick": 26880,
+            "id": "bach_chorale_137",
+            "legacyRegions": [
+                {
+                    "endTick": 1920,
+                    "normalizedConfidence": 0.02826698649618268,
+                    "startTick": 0
+                },
+                {
+                    "endTick": 2400,
+                    "normalizedConfidence": 0.02902558580956845,
+                    "startTick": 1920
+                },
+                {
+                    "endTick": 2880,
+                    "normalizedConfidence": 0.03454757616882468,
+                    "startTick": 2400
+                },
+                {
+                    "endTick": 3360,
+                    "normalizedConfidence": 0.04001374189216825,
+                    "startTick": 2880
+                },
+                {
+                    "endTick": 3840,
+                    "normalizedConfidence": 0.038268812273268435,
+                    "startTick": 3360
+                },
+                {
+                    "endTick": 4800,
+                    "normalizedConfidence": 0.03509828172904413,
+                    "startTick": 3840
+                },
+                {
+                    "endTick": 5760,
+                    "normalizedConfidence": 0.047839683042400716,
+                    "startTick": 4800
+                },
+                {
+                    "endTick": 6720,
+                    "normalizedConfidence": 0.047839683042400716,
+                    "startTick": 5760
+                },
+                {
+                    "endTick": 7200,
+                    "normalizedConfidence": 0.16634627388215734,
+                    "startTick": 6720
+                },
+                {
+                    "endTick": 7680,
+                    "normalizedConfidence": 0.14285959418275998,
+                    "startTick": 7200
+                },
+                {
+                    "endTick": 9600,
+                    "normalizedConfidence": 0.11280195044155938,
+                    "startTick": 7680
+                },
+                {
+                    "endTick": 10080,
+                    "normalizedConfidence": 0.11280195044155938,
+                    "startTick": 9600
+                },
+                {
+                    "endTick": 10560,
+                    "normalizedConfidence": 0.11066430918778777,
+                    "startTick": 10080
+                },
+                {
+                    "endTick": 11520,
+                    "normalizedConfidence": 0.09856732156053093,
+                    "startTick": 10560
+                },
+                {
+                    "endTick": 12960,
+                    "normalizedConfidence": 0.09856732156053093,
+                    "startTick": 11520
+                },
+                {
+                    "endTick": 13440,
+                    "normalizedConfidence": 0.23220865556225007,
+                    "startTick": 12960
+                },
+                {
+                    "endTick": 14400,
+                    "normalizedConfidence": 0.2136786791022958,
+                    "startTick": 13440
+                },
+                {
+                    "endTick": 15360,
+                    "normalizedConfidence": 0.09514256060132661,
+                    "startTick": 14400
+                },
+                {
+                    "endTick": 15840,
+                    "normalizedConfidence": 0.13778947626539312,
+                    "startTick": 15360
+                },
+                {
+                    "endTick": 16320,
+                    "normalizedConfidence": 0.13814062755156278,
+                    "startTick": 15840
+                },
+                {
+                    "endTick": 17280,
+                    "normalizedConfidence": 0.08047043999757247,
+                    "startTick": 16320
+                },
+                {
+                    "endTick": 17760,
+                    "normalizedConfidence": 0.0790534808206266,
+                    "startTick": 17280
+                },
+                {
+                    "endTick": 18240,
+                    "normalizedConfidence": 0.1664358904702785,
+                    "startTick": 17760
+                },
+                {
+                    "endTick": 19200,
+                    "normalizedConfidence": 0.5351631347294559,
+                    "startTick": 18240
+                },
+                {
+                    "endTick": 19680,
+                    "normalizedConfidence": 0.5351631347294559,
+                    "startTick": 19200
+                },
+                {
+                    "endTick": 20160,
+                    "normalizedConfidence": 0.5315264789023328,
+                    "startTick": 19680
+                },
+                {
+                    "endTick": 20640,
+                    "normalizedConfidence": 0.2794366768014847,
+                    "startTick": 20160
+                },
+                {
+                    "endTick": 21120,
+                    "normalizedConfidence": 0.28562833848611546,
+                    "startTick": 20640
+                },
+                {
+                    "endTick": 22080,
+                    "normalizedConfidence": 0.28562833848611546,
+                    "startTick": 21120
+                },
+                {
+                    "endTick": 23040,
+                    "normalizedConfidence": 0.04015050354189922,
+                    "startTick": 22080
+                },
+                {
+                    "endTick": 23520,
+                    "normalizedConfidence": 0.04015050354189922,
+                    "startTick": 23040
+                },
+                {
+                    "endTick": 24000,
+                    "normalizedConfidence": 0.10113154737093288,
+                    "startTick": 23520
+                },
+                {
+                    "endTick": 24480,
+                    "normalizedConfidence": 0.13090646478850138,
+                    "startTick": 24000
+                },
+                {
+                    "endTick": 24960,
+                    "normalizedConfidence": 0.12391551054076551,
+                    "startTick": 24480
+                },
+                {
+                    "endTick": 25440,
+                    "normalizedConfidence": 0.12391551054076551,
+                    "startTick": 24960
+                },
+                {
+                    "endTick": 25920,
+                    "normalizedConfidence": 0.21640885148340075,
+                    "startTick": 25440
+                },
+                {
+                    "endTick": 26880,
+                    "normalizedConfidence": 0.1696834303502649,
+                    "startTick": 25920
+                }
+            ],
+            "recordSegments": [
+                {
+                    "endTick": 960,
+                    "keyAxisGap": 1.619039967583018,
+                    "startTick": 0
+                },
+                {
+                    "endTick": 1680,
+                    "keyAxisGap": 0.8245816335944527,
+                    "startTick": 960
+                },
+                {
+                    "endTick": 2640,
+                    "keyAxisGap": 0.3256558940141634,
+                    "startTick": 1680
+                },
+                {
+                    "endTick": 3360,
+                    "keyAxisGap": 0.44131011252671026,
+                    "startTick": 2640
+                },
+                {
+                    "endTick": 3840,
+                    "keyAxisGap": -0.27328580601976427,
+                    "startTick": 3360
+                },
+                {
+                    "endTick": 4800,
+                    "keyAxisGap": -0.00670436324360657,
+                    "startTick": 3840
+                },
+                {
+                    "endTick": 5760,
+                    "keyAxisGap": 1.045917577059,
+                    "startTick": 4800
+                },
+                {
+                    "endTick": 6000,
+                    "keyAxisGap": -0.288862944308929,
+                    "startTick": 5760
+                },
+                {
+                    "endTick": 6720,
+                    "keyAxisGap": 0.5181046670647786,
+                    "startTick": 6000
+                },
+                {
+                    "endTick": 7200,
+                    "keyAxisGap": 0.41034946135104877,
+                    "startTick": 6720
+                },
+                {
+                    "endTick": 7440,
+                    "keyAxisGap": -0.02085682986012727,
+                    "startTick": 7200
+                },
+                {
+                    "endTick": 10080,
+                    "keyAxisGap": 1.0557569948936214,
+                    "startTick": 7440
+                },
+                {
+                    "endTick": 10560,
+                    "keyAxisGap": 0.004079406804390562,
+                    "startTick": 10080
+                },
+                {
+                    "endTick": 11520,
+                    "keyAxisGap": 1.3844850067545504,
+                    "startTick": 10560
+                },
+                {
+                    "endTick": 11760,
+                    "keyAxisGap": 0.6091883786615806,
+                    "startTick": 11520
+                },
+                {
+                    "endTick": 12480,
+                    "keyAxisGap": 0.43070560605683994,
+                    "startTick": 11760
+                },
+                {
+                    "endTick": 12960,
+                    "keyAxisGap": 0.34690841921354565,
+                    "startTick": 12480
+                },
+                {
+                    "endTick": 13440,
+                    "keyAxisGap": 0.003138436846957582,
+                    "startTick": 12960
+                },
+                {
+                    "endTick": 14400,
+                    "keyAxisGap": 0.41940252567489256,
+                    "startTick": 13440
+                },
+                {
+                    "endTick": 14880,
+                    "keyAxisGap": 1.209070391631802,
+                    "startTick": 14400
+                },
+                {
+                    "endTick": 15360,
+                    "keyAxisGap": 0.00588453158549318,
+                    "startTick": 14880
+                },
+                {
+                    "endTick": 15840,
+                    "keyAxisGap": 0.9188223814194845,
+                    "startTick": 15360
+                },
+                {
+                    "endTick": 16320,
+                    "keyAxisGap": 0.29416512374344705,
+                    "startTick": 15840
+                },
+                {
+                    "endTick": 16800,
+                    "keyAxisGap": 1.3758930989744957,
+                    "startTick": 16320
+                },
+                {
+                    "endTick": 17280,
+                    "keyAxisGap": 0.8677949029568581,
+                    "startTick": 16800
+                },
+                {
+                    "endTick": 17760,
+                    "keyAxisGap": 0.5777825120215065,
+                    "startTick": 17280
+                },
+                {
+                    "endTick": 19200,
+                    "keyAxisGap": 0.4380730327830449,
+                    "startTick": 17760
+                },
+                {
+                    "endTick": 19680,
+                    "keyAxisGap": 0.47052795876795184,
+                    "startTick": 19200
+                },
+                {
+                    "endTick": 20160,
+                    "keyAxisGap": 0.5298966497689035,
+                    "startTick": 19680
+                },
+                {
+                    "endTick": 20640,
+                    "keyAxisGap": -0.001115900839258277,
+                    "startTick": 20160
+                },
+                {
+                    "endTick": 21120,
+                    "keyAxisGap": 0.3961343548667111,
+                    "startTick": 20640
+                },
+                {
+                    "endTick": 21600,
+                    "keyAxisGap": 1.6584454234859654,
+                    "startTick": 21120
+                },
+                {
+                    "endTick": 22080,
+                    "keyAxisGap": -0.20506366870557446,
+                    "startTick": 21600
+                },
+                {
+                    "endTick": 23040,
+                    "keyAxisGap": -0.00670436324360657,
+                    "startTick": 22080
+                },
+                {
+                    "endTick": 24000,
+                    "keyAxisGap": 2.4251279844042912,
+                    "startTick": 23040
+                },
+                {
+                    "endTick": 24480,
+                    "keyAxisGap": 0.3168230726547918,
+                    "startTick": 24000
+                },
+                {
+                    "endTick": 24960,
+                    "keyAxisGap": 1.0493898286469396,
+                    "startTick": 24480
+                },
+                {
+                    "endTick": 25440,
+                    "keyAxisGap": 0.39097148903714096,
+                    "startTick": 24960
+                },
+                {
+                    "endTick": 25920,
+                    "keyAxisGap": -0.00670436324360657,
+                    "startTick": 25440
+                },
+                {
+                    "endTick": 26880,
+                    "keyAxisGap": -0.00670436324360657,
+                    "startTick": 25920
+                }
+            ]
+        }
+    ],
+    "legacyConfidenceField": "KeyModeAnalysisResult.normalizedConfidence per AnalyzedRegion (the exposure-gate input today)",
+    "recordGapField": "keyAxis.scores[committed] - max(other keyAxis.scores), nats; null if <2 candidates / no committed. RAW, no [0,1] remap.",
+    "window": "[0, endTickForMeasureCap(kMaxAnalysisMeasures=16)) — the snapshot harness window"
+}

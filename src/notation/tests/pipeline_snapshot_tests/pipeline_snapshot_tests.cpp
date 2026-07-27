@@ -60,7 +60,9 @@
 #include <chrono>
 #include <cmath>
 #include <fstream>
+#include <limits>
 #include <numeric>
+#include <optional>
 #include <sstream>
 #include <string>
 #include <vector>
@@ -100,6 +102,7 @@
 #include "composing/analysis/chord/chordanalyzer.h"
 #include "composing/analysis/key/keymodeanalyzer.h"
 #include "composing/analysis/section/sectionanalyzer.h"
+#include "composing/analysis/joint/jointnotationproducer.h"   // P1 §4.1 gap measurement (record arm)
 #include "composing/analyzed_section.h"
 #include "composing/icomposinganalysisconfiguration.h"
 #include "composing/icomposingchordstaffconfiguration.h"
@@ -137,6 +140,10 @@ using mu::composing::analysis::ChordQuality;
 using mu::composing::analysis::AnalyzedRegion;
 using mu::composing::analysis::AnalyzedSection;
 using mu::composing::analysis::KeySigMode;
+using mu::composing::analysis::joint::produceNotationRecord;
+using mu::composing::analysis::joint::spanViewSegments;
+using mu::composing::analysis::joint::RecordSegment;
+using mu::composing::analysis::joint::SegmentSlice;
 
 namespace {
 
@@ -940,6 +947,139 @@ INSTANTIATE_TEST_SUITE_P(Corpus,
                          PipelineSnapshotTests,
                          ::testing::ValuesIn(kCorpus),
                          corpusIdForTestName);
+
+// ── P1 (seams-2): the §4.1 gap-scale measurement artifact ────────────────────
+//
+// Emits tools/notation_seams/gap_measurement.json — the input to the §4.1
+// presentation-constant selection (choose_exposure_constants.py). For each
+// snapshot-corpus score over the SAME 16-measure window the goldens pin, it
+// records, per LEGACY region, the key-mode normalizedConfidence the exposure
+// gates read today; and, per RECORD committed segment, the §3.3 key-axis
+// content-score GAP (nats) that replaces it on the record path — the RAW gap,
+// no [0,1] remapping (Cowork's binding P2 sharpening). The Python analysis then
+// picks each gap-scale constant to preserve the legacy exposure RATE.
+//
+// MEASUREMENT-ONLY and OPT-IN (DISABLED_ — the DISABLED_P3PerfBaseline
+// precedent): it never runs in the default sweep, so the golden comparison and
+// byte-identity are untouched. It calls only public entry points the production
+// notation path already uses (analyzeHarmonicRhythm + analyzeSection = legacy;
+// produceNotationRecord = record). No production code is instrumented. Run with:
+//
+//   ./pipeline_snapshot_tests.exe \
+//       --gtest_also_run_disabled_tests \
+//       --gtest_filter='*SeamsGapMeasurement*'
+
+// The §3.3 key-axis content-score gap (nats): the committed key's within-segment
+// content score minus the best-scoring alternative key. SIGNED — negative when
+// the decoded (committed) key is not the local content-argmax (a transition/prior
+// chose it), which is exactly the low-local-confidence regime. Absent (null) when
+// the axis carries no committed index or fewer than two candidates.
+std::optional<double> keyAxisContentGap(const SegmentSlice& slice)
+{
+    const auto& ax = slice.keyAxis;
+    const int n = static_cast<int>(ax.scores.size());
+    if (ax.committed < 0 || ax.committed >= n || n < 2) {
+        return std::nullopt;
+    }
+    double bestOther = -std::numeric_limits<double>::infinity();
+    for (int i = 0; i < n; ++i) {
+        if (i != ax.committed) {
+            bestOther = std::max(bestOther, ax.scores[static_cast<size_t>(i)]);
+        }
+    }
+    return ax.scores[static_cast<size_t>(ax.committed)] - bestOther;
+}
+
+TEST(SeamsGapMeasurement, DISABLED_EmitArtifact)
+{
+    auto analysisCfg = muse::modularity::globalIoc()->resolve<
+        mu::composing::IComposingAnalysisConfiguration>("composing");
+    if (analysisCfg) {
+        analysisCfg->setUseRegionalAccumulation(true);   // production default (matches the golden path)
+        analysisCfg->setUseJointNotationRecord(false);   // legacy arm; the record arm is a direct producer call
+    }
+
+    QJsonArray corpusArr;
+    for (const CorpusEntry& entry : kCorpus) {
+        const QString scorePath = corpusPath(entry);
+        ASSERT_TRUE(QFileInfo::exists(scorePath)) << "missing: " << scorePath.toStdString();
+        MasterScore* score = ScoreRW::readScore(muse::String::fromQString(scorePath),
+                                                 /*isAbsolutePath=*/true);
+        ASSERT_TRUE(score) << "load failed: " << scorePath.toStdString();
+
+        const Fraction endTick = endTickForMeasureCap(score, kMaxAnalysisMeasures);
+
+        // legacy arm — the normalizedConfidence the exposure gates read today, per region.
+        const auto rawRegions = mu::notation::analyzeHarmonicRhythm(
+            score, Fraction(0, 1), endTick, /*excludeStaves=*/{},
+            mu::notation::HarmonicRegionGranularity::Smoothed);
+        const auto section = mu::composing::analysis::analyzeSection(
+            score, Fraction(0, 1), endTick, /*excludeStaves=*/{}, rawRegions);
+        QJsonArray legacyArr;
+        for (const AnalyzedRegion& r : section.regions) {
+            QJsonObject o;
+            o[QStringLiteral("startTick")] = r.startTick;
+            o[QStringLiteral("endTick")] = r.endTick;
+            o[QStringLiteral("normalizedConfidence")] = r.keyModeResult.normalizedConfidence;
+            legacyArr.append(o);
+        }
+
+        // record arm — the §3.3 key-axis content-score gap per committed segment, over the same window.
+        QJsonArray recordArr;
+        QString recordError;
+        const auto res = produceNotationRecord(score, std::string(entry.id));
+        if (res.ok) {
+            const std::vector<int> idx = spanViewSegments(res.record, 0, endTick.ticks());
+            for (int i : idx) {
+                const RecordSegment& s = res.record.segments[static_cast<size_t>(i)];
+                QJsonObject o;
+                o[QStringLiteral("startTick")] = s.startTick;
+                o[QStringLiteral("endTick")] = s.endTick;
+                std::optional<double> gap;
+                if (i < static_cast<int>(res.record.slices.size())) {
+                    gap = keyAxisContentGap(res.record.slices[static_cast<size_t>(i)]);
+                }
+                if (gap.has_value()) {
+                    o[QStringLiteral("keyAxisGap")] = *gap;
+                } else {
+                    o[QStringLiteral("keyAxisGap")] = QJsonValue(QJsonValue::Null);
+                }
+                recordArr.append(o);
+            }
+        } else {
+            recordError = QString::fromStdString(res.error);
+        }
+
+        QJsonObject scoreObj;
+        scoreObj[QStringLiteral("id")] = QString::fromUtf8(entry.id);
+        scoreObj[QStringLiteral("analysisEndTick")] = endTick.ticks();
+        scoreObj[QStringLiteral("legacyRegions")] = legacyArr;
+        scoreObj[QStringLiteral("recordSegments")] = recordArr;
+        if (!recordError.isEmpty()) {
+            scoreObj[QStringLiteral("recordError")] = recordError;
+        }
+        corpusArr.append(scoreObj);
+    }
+
+    QJsonObject root;
+    root[QStringLiteral("window")] =
+        QStringLiteral("[0, endTickForMeasureCap(kMaxAnalysisMeasures=16)) — the snapshot harness window");
+    root[QStringLiteral("legacyConfidenceField")] =
+        QStringLiteral("KeyModeAnalysisResult.normalizedConfidence per AnalyzedRegion (the exposure-gate input today)");
+    root[QStringLiteral("recordGapField")] =
+        QStringLiteral("keyAxis.scores[committed] - max(other keyAxis.scores), nats; null if <2 candidates / no committed. RAW, no [0,1] remap.");
+    root[QStringLiteral("corpus")] = corpusArr;
+
+    const QString outPath = QStringLiteral(PIPELINE_SNAPSHOT_CORPUS_ROOT)
+                            + QStringLiteral("/tools/notation_seams/gap_measurement.json");
+    QDir().mkpath(QFileInfo(outPath).absolutePath());
+    const QByteArray bytes = serializeSnapshot(root).toUtf8();
+    QFile out(outPath);
+    ASSERT_TRUE(out.open(QIODevice::WriteOnly | QIODevice::Truncate)) << out.errorString().toStdString();
+    ASSERT_EQ(out.write(bytes), static_cast<qint64>(bytes.size()));
+    out.close();
+    std::cout << "[seams gap measurement] wrote " << outPath.toStdString() << std::endl;
+}
 
 // ── P3 status-bar performance baseline (Stage 2.5) ───────────────────────────
 //

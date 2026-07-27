@@ -242,7 +242,24 @@ layer/gate, STATUS (authoritative HERE ONLY), and the link to a per-item detail 
 doc-split discipline). Detail files carry narrative/provenance, never a status line (the
 two-place drift killer); rule (c) becomes index-row + detail-file in the discovery commit;
 CLAUDE.md's register section amends in the same commit (the user's ratification here is the
-lawful path). Cowork writes `cc_instruction_open_items_split.md` when seams 2 lands.
+lawful path). Cowork writes `cc_instruction_open_items_split.md` when seams 2 lands (ALL partition units
+through P7 — OI-182 executes at P4, so the split waits for the whole partition).
+
+**★ SEAMS-2 SESSION 1: P0 DELIVERED + A CORRECT FEASIBILITY STOP; THE PARTITION IS RATIFIED
+(Cowork, 2026-07-26; commits `b090f6e4ab` flag + `685bde37d6` STATUS, verified at the
+objects).** CC's mapping study surfaced the real cross-task dependency — the section/bridge
+confidence gates consume the §4.1 gap-scale constants, so the measurement (original Task 2.3)
+must run FIRST — and stopped rather than build on unmeasured constants (#19 honored). The
+ratified partition: P0 flag ✓ → P1 §4.1 gap-scale measurement (tools-only) → P2 the
+record→AnalyzedSection adapter → P3 span-path composing bridge → P4 implode+tuning (OI-182
+executes) → P5 note-seam consumers → P6 dual-arm classified comparison → P7 doc sync/close.
+Cowork's binding sharpening on P2 (in the dispatch's dated amendment): the legacy confidence
+fields carry the RAW key-axis gap in nats, documented; NO [0,1] pseudo-confidence mapping ever
+(an invented calibration, #19/DT-2); the ranked-alternatives ordering difference (content score
+vs legacy template score) is an EXPECTED inference-driven difference for P6's classification,
+never to be bent toward legacy. The re-plumb checklist confirmed NO record gap beyond the
+three known ones (ranked-list assembly at P2; the P1 constants; the pedal suspension as ruled).
+CC resumes at P1 from HEAD `685bde37d6`.
 **THEN the agenda is the retirement map + refinements, each its own later dispatch, in no forced
 order but all on the register:** the legacy retirements (the map's six items on the gates doc);
 the presentation-layer publications that are PART of the ratified record and must not drop (the

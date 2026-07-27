@@ -1,0 +1,48 @@
+{
+  "provenance": {
+    "measurement": "tools/notation_seams/gap_measurement.json",
+    "window": "[0, endTickForMeasureCap(kMaxAnalysisMeasures=16)) \u2014 the snapshot harness window",
+    "legacy_field": "KeyModeAnalysisResult.normalizedConfidence per AnalyzedRegion (the exposure-gate input today)",
+    "record_field": "keyAxis.scores[committed] - max(other keyAxis.scores), nats; null if <2 candidates / no committed. RAW, no [0,1] remap.",
+    "rate_basis": "duration-weighted (segmentation-invariant); count rate reported beside, not selected on",
+    "selection": "for each legacy threshold, the observed gap value g minimizing |record duration-rate(gap>=g) - legacy duration-rate(conf>=threshold)|"
+  },
+  "pool": {
+    "legacy_regions": 327,
+    "record_segments_with_gap": 448,
+    "record_segments_null_gap": 0,
+    "record_errors": []
+  },
+  "constants": [
+    {
+      "legacy_threshold": 0.35,
+      "gate_family": "modeNameConfidenceThreshold (mode-suffix vs fallback-suffix)",
+      "legacy_rate_dur": 0.469423,
+      "legacy_rate_count": 0.464832,
+      "chosen_gap_nats": 0.649691,
+      "record_rate_dur": 0.464296,
+      "record_rate_count": 0.388393,
+      "residual_dur": 0.005127
+    },
+    {
+      "legacy_threshold": 0.5,
+      "gate_family": "kTentativeKeyExposureThreshold / supportsTentativeKeyExposure / exposure bucket lower",
+      "legacy_rate_dur": 0.338501,
+      "legacy_rate_count": 0.327217,
+      "chosen_gap_nats": 0.975911,
+      "record_rate_dur": 0.340837,
+      "record_rate_count": 0.276786,
+      "residual_dur": 0.002336
+    },
+    {
+      "legacy_threshold": 0.8,
+      "gate_family": "kAssertiveKeyExposureThreshold / kAnnotateKeyConfidenceThreshold / hasAssertiveExposure / bucket upper",
+      "legacy_rate_dur": 0.273902,
+      "legacy_rate_count": 0.238532,
+      "chosen_gap_nats": 1.055757,
+      "record_rate_dur": 0.272871,
+      "record_rate_count": 0.205357,
+      "residual_dur": 0.001031
+    }
+  ]
+}
