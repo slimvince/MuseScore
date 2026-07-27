@@ -73,8 +73,53 @@ executes there. **P1 measures and selects; it declares no constant in production
 no production behavior** (the measurement test is opt-in `DISABLED_`; the notation output is
 byte-identical).
 
+## P6 — the dual-arm classified comparison (the switch evidence)
+
+The **P6** deliverable is the evidence the user's switch ratification reads (§8.4 of
+`cowork_notation_adoption_increment.md`): what the switch actually changes on the FULL notation
+output surface, and why every difference is accounted for.
+
+1. **Capture** (`pipeline_snapshot_tests` — `DISABLED_DualArmClassifiedCapture`, opt-in,
+   measurement-only): over the snapshot corpus, in the same 16-measure window, run each of the four
+   audited output surfaces TWICE — arm **legacy** (`useJointNotationRecord` OFF) and arm **record**
+   (ON) — and serialize both arms:
+   - `annotation` — the span-seam write (display chord symbols / Roman numerals / key brackets /
+     Nashville / pedal + cadence StaffText);
+   - `implode` — the chord-track write (treble symbols, bass Roman/Nashville, imploded voicing
+     pitches, key/cadence StaffText);
+   - `tuning` — per-note tuning offsets under a fixed Just-Intonation tonic-anchored config;
+   - `noteSeam` — the committed reading + rendered symbol/roman/nashville + §3.3 alternatives at
+     every measure downbeat.
+
+   Emits `dualarm_capture.json`. Deterministic run-to-run (each surface array is stable-sorted; both
+   arms are deterministic decodes). The flag is restored OFF by RAII per surface, so the default
+   sweep + goldens are byte-identical. Run with:
+   ```
+   pipeline_snapshot_tests.exe --gtest_also_run_disabled_tests --gtest_filter='*DualArmClassifiedCapture*'
+   ```
+2. **Classify** (`classify_dualarm.py`): align the two arms per surface and classify EVERY
+   non-identical output item into one of the ratified classes — **inference-driven** (the record's
+   committed reading differs — the adoption's expected differences, both readings cited),
+   **presentation-rule** (a ratified rule accounts for it, cited: C1 two-mode display / the §4.1
+   exposure gates / OI-194 pedal suspension / §3.3 alternatives ordering / D2 grading-vs-display /
+   OI-201 aug-sixth coarseness / the applied-chord Nashville "?" convention), **input-scoping**
+   (the OI-204 excluded-staff class — structurally 0 on this chord-track-free corpus), and
+   **UNEXPLAINED** (every entry investigated to a mechanism before delivery, else a STOP). Emits
+   `dualarm_classified_report.json` + `dualarm_classified_summary.txt`.
+   ```
+   python tools/notation_seams/classify_dualarm.py
+   ```
+
+The instrument invents no value and bends nothing toward either arm — a difference is **classified,
+never patched** (an inference difference is expected; a presentation difference cites its ratified
+rule; anything unexplained is a STOP, not a report line).
+
 ## Files
 
-- `choose_exposure_constants.py` — the selection instrument (stdlib only).
-- `gap_measurement.json` — the raw per-region / per-segment measurement (generated, #17f).
-- `exposure_constants.json` — the chosen constants + provenance (generated, #17f).
+- `choose_exposure_constants.py` — the P1 selection instrument (stdlib only).
+- `gap_measurement.json` — the P1 raw per-region / per-segment measurement (generated, #17f).
+- `exposure_constants.json` — the P1 chosen constants + provenance (generated, #17f).
+- `classify_dualarm.py` — the P6 dual-arm classifier (stdlib only).
+- `dualarm_capture.json` — the P6 two-arm full-surface capture (generated, #17f).
+- `dualarm_classified_report.json` — the P6 classified diff, per surface per class (generated, #17f).
+- `dualarm_classified_summary.txt` — the P6 human-readable summary (generated, #17f).

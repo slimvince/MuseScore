@@ -1,0 +1,32 @@
+P6 DUAL-ARM CLASSIFIED DIFF — legacy (flag OFF) vs record (flag ON)
+capture: tools/notation_seams/dualarm_capture.json
+window:  [0, endTickForMeasureCap(kMaxAnalysisMeasures=16)) — the snapshot harness window
+
+GRAND TOTALS (output items, by class):
+  identical        2053
+  inference-driven 6029
+  presentation-rule 220
+  input-scoping    0
+  UNEXPLAINED      0
+
+PER SURFACE:
+  surface      identical  inference   present.  input-scope   UNEXPL
+  annotation         410       3269         43            0        0
+  implode            314       1503          3            0        0
+  tuning            1329       1169          0            0        0
+  noteSeam             0         88        174            0        0
+
+UNEXPLAINED ENTRIES: 0  (every non-identical item is accounted for by a cited rule)
+
+PER SCORE (inference / presentation / input-scope / UNEXPL, summed over surfaces):
+  bach_chorale_001       inf=200   pres=35    in-scope=0   UNEXPL=0
+  bach_chorale_003       inf=394   pres=12    in-scope=0   UNEXPL=0
+  bach_bwv806_prelude    inf=1070  pres=23    in-scope=0   UNEXPL=0
+  bach_bwv806_gigue      inf=881   pres=17    in-scope=0   UNEXPL=0
+  mozart_k279_1          inf=869   pres=12    in-scope=0   UNEXPL=0
+  mozart_k280_1          inf=447   pres=19    in-scope=0   UNEXPL=0
+  chopin_bi105_op30_1    inf=334   pres=22    in-scope=0   UNEXPL=0
+  chopin_bi105_op30_2    inf=297   pres=18    in-scope=0   UNEXPL=0
+  corelli_op01n08a       inf=799   pres=12    in-scope=0   UNEXPL=0
+  schumann_kinderszenen_n01 inf=342   pres=32    in-scope=0   UNEXPL=0
+  bach_chorale_137       inf=396   pres=18    in-scope=0   UNEXPL=0

@@ -104,7 +104,13 @@
 > `assembleNotationRecord` (which attaches the §3.3 slice). WHOLE-score decode ONCE; deterministic; NO caching (a
 > later, measured concern — #17's funnel, not built speculatively). It returns a `NotationRecordResult` — either the
 > full record or an UNAMBIGUOUS failure (`ok=false`, `error` set, empty record) when the fact adapter cannot extract
-> the score (`AdapterFacts.ok == false`, e.g. a null score): never a partial record, never a silent fallback (#13). A
+> the score (`AdapterFacts.ok == false`, e.g. a null score): never a partial record, never a silent fallback (#13).
+> **Input-scoping (OI-204):** `produceNotationRecord(score, stem, excludeStaves = {})` forwards `excludeStaves` to
+> `buildAdapterFacts`, which skips any notated note whose owning staff is in the set — INPUT selection at the fact
+> adapter (the layer that owns its input surface, #7), before the note enters the L1 fact view the decode reads; NOT a
+> consumer-side post-filter, NOT an inference change (the empty default skips nothing → byte-identical extraction). Each
+> record-arm seam threads the SAME chord-track exclude set its legacy arm passes (arm-for-arm input parity), so a
+> populated chord track's own notes are never fed back into a re-analysis (the self-feedback hazard). A
 > `produceNotationRecord(piece, sigFifths, declaredMode)` core (the same minus `buildAdapterFacts`) is the
 > establishment seam. The two §1 seams READ this record as pure VIEWS (#6, no recompute): **the span view**
 > `spanViewSegments(rec, startTick, endTick)` returns the segment indices OVERLAPPING [startTick, endTick)
@@ -194,6 +200,27 @@
 > switch: P6 (the dual-arm classified comparison over the FULL notation output surface — the switch-ratification evidence;
 > catalogue includes OI-201 + the applied-chord Nashville "?" convention) + P7 (doc-sync/close), then the user's switch
 > ratification.**
+
+> **SEAMS PART 2 — THE DUAL-ARM CLASSIFIED-COMPARISON INSTRUMENT (as-built; MEASUREMENT-ONLY, OPT-IN; the switch
+> evidence).** The §8.4 switch-ratification evidence: what the switch actually changes on the notation output surface,
+> and why. A CAPTURE (`pipeline_snapshot_tests` `DISABLED_DualArmClassifiedCapture`, opt-in — the golden sweep and
+> byte-identity untouched) runs the FULL notation output surface TWICE per snapshot-corpus score over the 16-measure
+> window — arm "legacy" (`useJointNotationRecord` OFF) and arm "record" (ON) — and serializes both:
+> `annotation` (the span-seam write: display symbols / Roman / key brackets / Nashville / pedal + cadence StaffText),
+> `implode` (the chord-track write: treble symbols, bass Roman/Nashville, imploded voicing pitches, key/cadence text),
+> `tuning` (per-note offsets under a fixed Just-Intonation tonic-anchored config — a downstream read of the committed
+> root+key), and `noteSeam` (the committed reading + rendered symbol/roman/nashville + §3.3 alternatives at EVERY
+> measure downbeat). It calls only public production entry points; the flag is restored OFF by RAII per surface; each
+> surface array is sorted by a stable key so the artifact `tools/notation_seams/dualarm_capture.json` is deterministic
+> run-to-run. A CLASSIFIER (`tools/notation_seams/classify_dualarm.py`, #17f) aligns the two arms per surface and
+> classifies EVERY non-identical item into: **inference-driven** (the record's committed reading differs — the
+> adoption's expected differences, both readings cited); **presentation-rule** (a ratified rule accounts for it, cited:
+> C1 two-mode display / the §4.1 exposure gates / OI-194 pedal suspension / §3.3 alternatives ordering / D2
+> grading-vs-display / OI-201 aug-sixth coarseness / the applied-chord Nashville "?" convention); **input-scoping** (the
+> OI-204 class — structurally ZERO on this chord-track-free corpus); and **UNEXPLAINED** (the headline — every entry
+> investigated to a mechanism before delivery, else a STOP). It emits `dualarm_classified_report.json` +
+> `dualarm_classified_summary.txt`. The instrument invents no value and bends nothing toward either arm — a difference
+> is CLASSIFIED, never patched.
 
 > **Living design document.** Read this AND STATUS.md at the start of every development
 > session. ARCHITECTURE.md contains stable design decisions. STATUS.md contains current
