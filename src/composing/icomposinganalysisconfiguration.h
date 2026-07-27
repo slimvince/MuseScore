@@ -134,6 +134,18 @@ public:
     virtual void setMinKeyStabilityBeats(double value) = 0;
     virtual muse::async::Notification minKeyStabilityBeatsChanged() const = 0;
 
+    /// INTERNAL MIGRATION SWITCH (default false; NO settings UI). When true, the
+    /// notation path derives its analysis from the joint estimator's A-native
+    /// notation record (jointnotationproducer / the notation output-surface
+    /// contract) instead of the legacy analyzeHarmonicRhythm/analyzeChord path.
+    /// Both paths are compiled; with the flag false the record path is never
+    /// invoked and behavior is byte-identical to the legacy path. This flag —
+    /// and the whole legacy branch it selects against — RETIRES together at the
+    /// OI-180 retirement map; it is not a permanent user preference.
+    virtual bool useJointNotationRecord() const = 0;
+    virtual void setUseJointNotationRecord(bool value) = 0;
+    virtual muse::async::Notification useJointNotationRecordChanged() const = 0;
+
     // ── Status-bar display ───────────────────────────────────────────────────
 
     virtual bool showKeyModeInStatusBar() const = 0;

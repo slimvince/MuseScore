@@ -94,6 +94,10 @@ public:
     void setMinKeyStabilityBeats(double value) override;
     muse::async::Notification minKeyStabilityBeatsChanged() const override;
 
+    bool useJointNotationRecord() const override;
+    void setUseJointNotationRecord(bool value) override;
+    muse::async::Notification useJointNotationRecordChanged() const override;
+
     bool showKeyModeInStatusBar() const override;
     void setShowKeyModeInStatusBar(bool value) override;
     muse::async::Notification showKeyModeInStatusBarChanged() const override;
@@ -238,6 +242,7 @@ private:
     muse::async::Notification m_modeNameConfidenceThresholdChanged;
     muse::async::Notification m_minimumDisplayDurationBeatsChanged;
     muse::async::Notification m_minKeyStabilityBeatsChanged;
+    muse::async::Notification m_useJointNotationRecordChanged;
     muse::async::Notification m_showKeyModeInStatusBarChanged;
     muse::async::Notification m_showChordSymbolsInStatusBarChanged;
     muse::async::Notification m_showRomanNumeralsInStatusBarChanged;

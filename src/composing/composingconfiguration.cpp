@@ -48,6 +48,7 @@ static const Settings::Key ONSET_BOUNDARY_THRESHOLD(module_name,     "composing/
 static const Settings::Key MODE_NAME_CONFIDENCE_THRESHOLD(module_name, "composing/modeNameConfidenceThreshold");
 static const Settings::Key MINIMUM_DISPLAY_DURATION_BEATS(module_name, "composing/minimumDisplayDurationBeats");
 static const Settings::Key MIN_KEY_STABILITY_BEATS(module_name, "composing/minKeyStabilityBeats");
+static const Settings::Key USE_JOINT_NOTATION_RECORD(module_name, "composing/useJointNotationRecord");
 static const Settings::Key SHOW_KEY_MODE_IN_STATUS_BAR(module_name,       "composing/showKeyModeInStatusBar");
 static const Settings::Key SHOW_CHORD_SYMBOLS_IN_STATUS_BAR(module_name,  "composing/showChordSymbolsInStatusBar");
 static const Settings::Key SHOW_ROMAN_NUMERALS_IN_STATUS_BAR(module_name, "composing/showRomanNumeralsInStatusBar");
@@ -167,6 +168,13 @@ void ComposingConfiguration::init()
     settings()->setDefaultValue(MIN_KEY_STABILITY_BEATS, Val(8.0));
     settings()->valueChanged(MIN_KEY_STABILITY_BEATS).onReceive(nullptr, [this](const Val&) {
         m_minKeyStabilityBeatsChanged.notify();
+    });
+
+    // Internal migration switch — default false (legacy notation path). Retires with the
+    // legacy branch at the OI-180 map; no settings UI (see the interface comment).
+    settings()->setDefaultValue(USE_JOINT_NOTATION_RECORD, Val(false));
+    settings()->valueChanged(USE_JOINT_NOTATION_RECORD).onReceive(nullptr, [this](const Val&) {
+        m_useJointNotationRecordChanged.notify();
     });
 
     settings()->setDefaultValue(SHOW_KEY_MODE_IN_STATUS_BAR, Val(true));
@@ -576,6 +584,23 @@ void ComposingConfiguration::setMinKeyStabilityBeats(double value)
 muse::async::Notification ComposingConfiguration::minKeyStabilityBeatsChanged() const
 {
     return m_minKeyStabilityBeatsChanged;
+}
+
+// ── useJointNotationRecord (internal migration switch; retires at the OI-180 map) ─────
+
+bool ComposingConfiguration::useJointNotationRecord() const
+{
+    return settings()->value(USE_JOINT_NOTATION_RECORD).toBool();
+}
+
+void ComposingConfiguration::setUseJointNotationRecord(bool value)
+{
+    settings()->setSharedValue(USE_JOINT_NOTATION_RECORD, Val(value));
+}
+
+muse::async::Notification ComposingConfiguration::useJointNotationRecordChanged() const
+{
+    return m_useJointNotationRecordChanged;
 }
 
 // ── showKeyModeInStatusBar ───────────────────────────────────────────────────

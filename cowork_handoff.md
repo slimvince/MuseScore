@@ -211,6 +211,38 @@ module's one-call score→record producer (adapter → embedded decode → assem
 and the note-seam tick lookup (containing segment, `startTick <= t < endTick`), dormant,
 coverage incl. corpus pieces. THEN seams part 2 (consumer re-plumb behind the default-OFF flag
 + the §8.3(d) consumer-output comparison instruments), then the switch (§8.4).
+
+**★ SEAMS PART 1 DELIVERED AND COWORK-VERIFIED (2026-07-26; `77cbb72b8d` / `c8c5bb6a25` /
+`6e71b3ceff`, pushed, verified at the objects).** OI-197 ✅ — lof-exact C++↔Python parity, 0
+divergences over 13,063 roots + 11,182 bass + 39,954 factor cells, counts reconciled against
+the committed artifact, comparator established by negative control (perturbation flagged,
+nonzero exit); the C++ mapping inherits the Python-side corpus establishment. The producer
+(`produceNotationRecord`: adapter → embedded tables → §5 decode → assembly; no caching, no
+raw-DOM read) + span view (overlap semantics) + note view (half-open containment) delivered
+dormant with 5 tests incl. edge duties (empty span; out-of-span tick; adapter failure → whole-
+record failure state, never partial). Suites 1174/53/11 green. **THE ACTIVE DISPATCH is
+`cc_instruction_notation_seams_2.md` — the LAST pre-switch increment:** the consumer re-plumb
+behind an internal default-OFF configuration flag (both paths compiled; flag OFF byte-identical
+per commit) — section layer + span-path composing bridge, implode + tuning (with the §4.1
+DECLARED presentation constants on the gap scale, values chosen by measured correspondence to
+the legacy gates' firing on the snapshot corpus, documented + OI-182 row executed), the
+note-seam consumers, the pedal "X ped." emission SUSPENDING per P1 (comment + OI-194); NO
+legacy analysis call on the record path anywhere; plus the §8.3(d) DUAL-ARM comparison
+instrument (flag OFF vs ON over the snapshot corpus, classified output diff committed as the
+switch-ratification input). Feasibility STOP with a partition proposal is explicitly permitted
+(the audit precedent). AFTER its ratified report + the user's switch ratification: the ONE
+switch commit (§8.4 — flag default flips, goldens refresh against the established record,
+CLAUDE.md/STATUS/ARCHITECTURE/rows/handoff move together).
+
+**⚑ QUEUED (user-ruled 2026-07-26, option 1; waits behind the seams-2 dispatch — single-dispatch
+rule + OPEN_ITEMS collision avoidance): THE REGISTER SPLIT.** `OPEN_ITEMS.md` (too large to
+render) becomes the complete lean INDEX — per row: ID, name, 1–2-sentence description, owning
+layer/gate, STATUS (authoritative HERE ONLY), and the link to a per-item detail file
+(`open_items/OI-xxx.md`, the full narrative moved VERBATIM, byte-reconciled — the 2026-07-18
+doc-split discipline). Detail files carry narrative/provenance, never a status line (the
+two-place drift killer); rule (c) becomes index-row + detail-file in the discovery commit;
+CLAUDE.md's register section amends in the same commit (the user's ratification here is the
+lawful path). Cowork writes `cc_instruction_open_items_split.md` when seams 2 lands.
 **THEN the agenda is the retirement map + refinements, each its own later dispatch, in no forced
 order but all on the register:** the legacy retirements (the map's six items on the gates doc);
 the presentation-layer publications that are PART of the ratified record and must not drop (the
