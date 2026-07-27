@@ -109,9 +109,12 @@
 #include "composing/icomposingchordstaffconfiguration.h"
 
 #include "notation/internal/notationimplodebridge.h"
+#include "notation/internal/notationtuningbridge.h"        // P6 dual-arm: applyRegionTuning (tuning surface)
 
 #include "notation/internal/notationcomposingbridge.h"
 #include "notation/internal/notationcomposingbridgehelpers.h"
+
+#include "composing/intonation/tuning_system.h"             // P6 dual-arm: TuningMode (deterministic tuning config)
 
 using mu::engraving::Chord;
 using mu::engraving::ChordRest;
@@ -2017,6 +2020,461 @@ TEST(PipelineDivergenceCObservation, GenerateReport)
     file.close();
     ASSERT_EQ(written, bytes.size())
         << "Short write to " << outPath.toStdString();
+}
+
+// ── Seams part 2, P6 — the DUAL-ARM classified-comparison CAPTURE ─────────────
+//
+// Emits tools/notation_seams/dualarm_capture.json — the two arms' FULL notation output surface over
+// the snapshot corpus, the input to the classified diff (tools/notation_seams/classify_dualarm.py) that
+// is the §8.4 switch-ratification evidence. For each corpus score, over the 16-measure golden window,
+// each of the FOUR audited output surfaces is captured TWICE — arm "legacy" (useJointNotationRecord OFF)
+// and arm "record" (ON):
+//   * annotation — the span-seam write (addHarmonicAnnotationsToSelection, sym+roman+nashville): the
+//     written Harmony elements (STANDARD display symbol / ROMAN numeral / key bracket / NASHVILLE) and
+//     the StaffText annotations (pedal "X ped.", any cadence label);
+//   * implode    — the chord-track write (populateChordTrack): the treble display symbols, the bass
+//     Roman/Nashville, the imploded voicing pitches, and the chord-staff key/cadence StaffText;
+//   * tuning     — applyRegionTuning under a fixed Just-Intonation tonic-anchored config: per-note
+//     tuning offsets (cents) — a downstream read of the committed rootPc+key;
+//   * noteSeam   — analyzeHarmonicContextAtTick at EVERY MEASURE DOWNBEAT (the declared, deterministic
+//     tick sample): the committed reading (rootPc/quality/key), its rendered symbol/roman/nashville
+//     (the shared status-bar formatter), and its §3.3 ranked alternatives.
+//
+// MEASUREMENT-ONLY and OPT-IN (DISABLED_ — the DISABLED_SeamsGapMeasurement precedent): it never runs
+// in the default sweep, so the golden comparison and byte-identity are untouched. It calls ONLY the
+// public production entry points the notation path already uses; no production code is instrumented.
+// The record arm re-decodes the whole score per surface (the OI-203 deferred latency; irrelevant to an
+// output comparison). DETERMINISTIC: each surface array is sorted by a stable key, and both arms are
+// deterministic decodes — two runs are byte-identical (proven by re-running and diffing the artifact).
+// The flag is restored OFF by RAII scope after every surface. Run with:
+//
+//   ./pipeline_snapshot_tests.exe \
+//       --gtest_also_run_disabled_tests \
+//       --gtest_filter='*DualArmClassifiedCapture*'
+
+// RAII: turn the record arm ON for one captured surface and restore it OFF on scope exit — so a throw
+// or early return cannot leak the flag into the next surface (which must be captured on the arm it names).
+struct ScopedJointRecordArm {
+    mu::composing::IComposingAnalysisConfiguration* cfg = nullptr;
+    explicit ScopedJointRecordArm(bool on)
+    {
+        auto shared = muse::modularity::globalIoc()->resolve<
+            mu::composing::IComposingAnalysisConfiguration>("composing");
+        cfg = shared.get();
+        if (cfg) {
+            cfg->setUseJointNotationRecord(on);
+        }
+    }
+    ~ScopedJointRecordArm()
+    {
+        if (cfg) {
+            cfg->setUseJointNotationRecord(false);
+        }
+    }
+};
+
+MasterScore* loadCorpusScore(const CorpusEntry& entry)
+{
+    const QString p = corpusPath(entry);
+    if (!QFileInfo::exists(p)) {
+        return nullptr;
+    }
+    return ScoreRW::readScore(muse::String::fromQString(p), /*isAbsolutePath=*/true);
+}
+
+// Deterministic tuning config for the tuning-surface capture: Just Intonation, tonic-anchored, NO
+// sustained-event splitting (so both arms keep the identical note structure and the offsets align by
+// (tick, staff, pitch) — a pure value comparison). Mirrors notationtuning_tests.cpp::configureTuning.
+void configureTuningForCapture()
+{
+    auto cfg = muse::modularity::globalIoc()->resolve<
+        mu::composing::IComposingAnalysisConfiguration>("composing");
+    if (!cfg) {
+        return;
+    }
+    cfg->setTuningSystemKey("just");
+    cfg->setTonicAnchoredTuning(true);
+    cfg->setTuningMode(mu::composing::intonation::TuningMode::TonicAnchored);
+    cfg->setAllowSplitSlurOfSustainedEvents(false);
+    cfg->setMinimizeTuningDeviation(false);
+    cfg->setAnnotateTuningOffsets(false);
+    cfg->setAnnotateDriftAtBoundaries(false);
+    cfg->setUseRegionalAccumulation(true);
+}
+
+// A captured output item + its deterministic sort key. Sorting guarantees run-to-run byte-identity even
+// if a segment's annotation list order ever drifts.
+struct CapturedItem {
+    QString key;
+    QJsonObject obj;
+};
+QString itemKey(int tick, int staff, const QString& kind, const QString& text)
+{
+    return QStringLiteral("%1|%2|%3|%4")
+        .arg(tick, 8, 10, QLatin1Char('0')).arg(staff, 3, 10, QLatin1Char('0')).arg(kind, text);
+}
+QJsonArray sortedItems(std::vector<CapturedItem>& items)
+{
+    std::sort(items.begin(), items.end(),
+              [](const CapturedItem& a, const CapturedItem& b) { return a.key < b.key; });
+    QJsonArray arr;
+    for (const CapturedItem& it : items) {
+        arr.append(it.obj);
+    }
+    return arr;
+}
+
+// Classify a written Harmony by type (+ the ROMAN key-bracket "[...]" sub-case).
+QString harmonyKind(const Harmony* h, const QString& text)
+{
+    switch (h->harmonyType()) {
+    case HarmonyType::STANDARD:  return QStringLiteral("symbol");
+    case HarmonyType::ROMAN:     return (!text.isEmpty() && text.front() == QLatin1Char('['))
+                                        ? QStringLiteral("keyBracket") : QStringLiteral("roman");
+    case HarmonyType::NASHVILLE: return QStringLiteral("nashville");
+    default:                     return QStringLiteral("harmonyOther");
+    }
+}
+QString harmonyText(const Harmony* h)
+{
+    QString t = h->harmonyName().toQString();
+    if (t.isEmpty()) {
+        t = h->plainText().toQString();
+    }
+    return t;
+}
+
+std::vector<mu::engraving::EngravingItem*> collectStaffTexts(MasterScore* score, const Fraction& endTick)
+{
+    std::vector<mu::engraving::EngravingItem*> out;
+    for (Segment* seg = score->firstSegment(SegmentType::ChordRest); seg && seg->tick() < endTick;
+         seg = seg->next1(SegmentType::ChordRest)) {
+        for (mu::engraving::EngravingItem* ann : seg->annotations()) {
+            if (ann && ann->isStaffText()) {
+                out.push_back(ann);
+            }
+        }
+    }
+    return out;
+}
+
+// ── surface 1: the span-seam annotation write ────────────────────────────────
+QJsonArray captureAnnotationSurface(const CorpusEntry& entry, bool useRecord)
+{
+    std::vector<CapturedItem> items;
+    MasterScore* score = loadCorpusScore(entry);
+    if (!score) {
+        return QJsonArray();
+    }
+    const Fraction endTick = endTickForMeasureCap(score, kMaxAnalysisMeasures);
+    Segment* startSeg = score->firstSegment(SegmentType::ChordRest);
+    if (!startSeg || score->nstaves() == 0) {
+        delete score;
+        return QJsonArray();
+    }
+
+    // pre-existing elements (the DCML source ships Roman numerals + staff texts) — captured by pointer
+    // identity so only OUR writes are recorded.
+    const auto beforeH = collectExistingHarmonies(score, endTick);
+    std::vector<Harmony*> preH;
+    for (const auto& e : beforeH) {
+        preH.push_back(e.harmony);
+    }
+    const auto beforeT = collectStaffTexts(score, endTick);
+
+    Segment* endSeg = segmentAtOrAfter(score, endTick);
+    score->selection().setRange(startSeg, endSeg, /*staffStart=*/0, /*staffEnd=*/score->nstaves());
+    if (!score->selection().isRange()) {
+        delete score;
+        return QJsonArray();
+    }
+    {
+        ScopedJointRecordArm arm(useRecord);
+        mu::notation::addHarmonicAnnotationsToSelection(score, /*sym=*/true, /*roman=*/true, /*nash=*/true);
+    }
+
+    for (const auto& e : collectExistingHarmonies(score, endTick)) {
+        if (std::find(preH.begin(), preH.end(), e.harmony) != preH.end()) {
+            continue;
+        }
+        const int tick = e.segment->tick().ticks();
+        const int staff = static_cast<int>(mu::engraving::track2staff(e.harmony->track()));
+        const QString text = harmonyText(e.harmony);
+        const QString kind = harmonyKind(e.harmony, text);
+        QJsonObject o;
+        o[QStringLiteral("tick")] = tick;
+        o[QStringLiteral("staff")] = staff;
+        o[QStringLiteral("kind")] = kind;
+        o[QStringLiteral("text")] = text;
+        items.push_back({ itemKey(tick, staff, kind, text), o });
+    }
+    for (mu::engraving::EngravingItem* ann : collectStaffTexts(score, endTick)) {
+        if (std::find(beforeT.begin(), beforeT.end(), ann) != beforeT.end()) {
+            continue;
+        }
+        const int tick = ann->tick().ticks();
+        const int staff = static_cast<int>(mu::engraving::track2staff(ann->track()));
+        const QString text = mu::engraving::toStaffText(ann)->plainText().toQString();
+        QJsonObject o;
+        o[QStringLiteral("tick")] = tick;
+        o[QStringLiteral("staff")] = staff;
+        o[QStringLiteral("kind")] = QStringLiteral("staffText");
+        o[QStringLiteral("text")] = text;
+        items.push_back({ itemKey(tick, staff, QStringLiteral("staffText"), text), o });
+    }
+    delete score;
+    return sortedItems(items);
+}
+
+// ── surface 2: the implode chord-track write ─────────────────────────────────
+QJsonArray captureImplodeSurface(const CorpusEntry& entry, bool useRecord)
+{
+    // comprehensive chord-staff config: symbols + Roman function + key annotations + cadence markers.
+    if (auto chordStaffCfg = muse::modularity::globalIoc()->resolve<
+            mu::composing::IComposingChordStaffConfiguration>("composing")) {
+        chordStaffCfg->setChordStaffWriteChordSymbols(true);
+        chordStaffCfg->setChordStaffFunctionNotation("roman");
+        chordStaffCfg->setChordStaffWriteKeyAnnotations(true);
+        chordStaffCfg->setChordStaffHighlightNonDiatonic(false);
+        chordStaffCfg->setChordStaffWriteCadenceMarkers(true);
+    }
+
+    std::vector<CapturedItem> items;
+    MasterScore* score = loadCorpusScore(entry);
+    if (!score) {
+        return QJsonArray();
+    }
+    const Fraction endTick = endTickForMeasureCap(score, kMaxAnalysisMeasures);
+    if (score->nstaves() == 0) {
+        delete score;
+        return QJsonArray();
+    }
+
+    const staff_idx_t trebleStaffIdx = appendChordTrackStaffPair(score);
+    const track_idx_t trebleTrack = trebleStaffIdx * VOICES;
+    const track_idx_t bassTrack   = (trebleStaffIdx + 1) * VOICES;
+
+    bool ok = false;
+    {
+        ScopedJointRecordArm arm(useRecord);
+        score->startCmd(muse::TranslatableString::untranslatable("P6 dual-arm implode capture"));
+        ok = mu::notation::populateChordTrack(score, Fraction(0, 1), endTick, trebleStaffIdx);
+        score->endCmd();
+    }
+    if (!ok) {
+        delete score;
+        return QJsonArray();
+    }
+
+    for (Segment* seg = score->firstSegment(SegmentType::ChordRest); seg && seg->tick() < endTick;
+         seg = seg->next1(SegmentType::ChordRest)) {
+        const int tick = seg->tick().ticks();
+        // treble voicing pitches (the imploded chord's notes)
+        if (ChordRest* cr = seg->cr(trebleTrack) ? toChordRest(seg->cr(trebleTrack)) : nullptr) {
+            if (cr->isChord()) {
+                std::vector<int> pitches;
+                for (Note* n : toChord(cr)->notes()) {
+                    if (n) {
+                        pitches.push_back(n->pitch());
+                    }
+                }
+                std::sort(pitches.begin(), pitches.end());
+                if (!pitches.empty()) {
+                    QJsonArray parr;
+                    QString flat;
+                    for (int p : pitches) {
+                        parr.append(p);
+                        flat += QString::number(p) + QLatin1Char(',');
+                    }
+                    QJsonObject o;
+                    o[QStringLiteral("tick")] = tick;
+                    o[QStringLiteral("kind")] = QStringLiteral("voicing");
+                    o[QStringLiteral("pitches")] = parr;
+                    items.push_back({ itemKey(tick, 900, QStringLiteral("voicing"), flat), o });
+                }
+            }
+        }
+        // treble + bass harmonies + staff texts
+        for (mu::engraving::EngravingItem* ann : seg->annotations()) {
+            const track_idx_t t = ann ? ann->track() : 0;
+            if (!ann || (t != trebleTrack && t != bassTrack)) {
+                continue;
+            }
+            const QString role = (t == trebleTrack) ? QStringLiteral("treble") : QStringLiteral("bass");
+            if (ann->isHarmony()) {
+                const Harmony* h = toHarmony(ann);
+                const QString text = harmonyText(h);
+                const QString kind = role + QLatin1Char(':') + harmonyKind(h, text);
+                QJsonObject o;
+                o[QStringLiteral("tick")] = tick;
+                o[QStringLiteral("kind")] = kind;
+                o[QStringLiteral("text")] = text;
+                items.push_back({ itemKey(tick, (t == trebleTrack) ? 0 : 1, kind, text), o });
+            } else if (ann->isStaffText()) {
+                const QString text = mu::engraving::toStaffText(ann)->plainText().toQString();
+                const QString kind = role + QStringLiteral(":staffText");
+                QJsonObject o;
+                o[QStringLiteral("tick")] = tick;
+                o[QStringLiteral("kind")] = kind;
+                o[QStringLiteral("text")] = text;
+                items.push_back({ itemKey(tick, (t == trebleTrack) ? 0 : 1, kind, text), o });
+            }
+        }
+    }
+    delete score;
+    return sortedItems(items);
+}
+
+// ── surface 3: per-note tuning offsets ───────────────────────────────────────
+QJsonArray captureTuningSurface(const CorpusEntry& entry, bool useRecord)
+{
+    configureTuningForCapture();
+    std::vector<CapturedItem> items;
+    MasterScore* score = loadCorpusScore(entry);
+    if (!score) {
+        return QJsonArray();
+    }
+    const Fraction endTick = endTickForMeasureCap(score, kMaxAnalysisMeasures);
+    {
+        ScopedJointRecordArm arm(useRecord);
+        score->startCmd(muse::TranslatableString::untranslatable("P6 dual-arm tuning capture"));
+        mu::notation::applyRegionTuning(score, Fraction(0, 1), endTick);
+        score->endCmd();
+    }
+    for (Segment* seg = score->firstSegment(SegmentType::ChordRest); seg && seg->tick() < endTick;
+         seg = seg->next1(SegmentType::ChordRest)) {
+        const int tick = seg->tick().ticks();
+        for (track_idx_t t = 0; t < score->ntracks(); ++t) {
+            ChordRest* cr = seg->cr(t);
+            if (!cr || !cr->isChord()) {
+                continue;
+            }
+            const int staff = static_cast<int>(mu::engraving::track2staff(t));
+            for (Note* n : toChord(cr)->notes()) {
+                if (!n) {
+                    continue;
+                }
+                const double cents = std::round(n->tuning() * 1000.0) / 1000.0;
+                QJsonObject o;
+                o[QStringLiteral("tick")] = tick;
+                o[QStringLiteral("staff")] = staff;
+                o[QStringLiteral("pitch")] = n->pitch();
+                o[QStringLiteral("cents")] = cents;
+                items.push_back({ itemKey(tick, staff, QStringLiteral("t"), QString::number(n->pitch())), o });
+            }
+        }
+    }
+    delete score;
+    return sortedItems(items);
+}
+
+// ── surface 4: the note-seam answers at every measure downbeat ───────────────
+QJsonArray captureNoteSeamSurface(const CorpusEntry& entry, bool useRecord)
+{
+    QJsonArray arr;
+    MasterScore* score = loadCorpusScore(entry);
+    if (!score) {
+        return arr;
+    }
+    const auto samples = collectSampleTicks(score, kMaxAnalysisMeasures);
+    ScopedJointRecordArm arm(useRecord);   // ON for the whole read-only sweep; restored OFF on return
+    for (const SampleTick& s : samples) {
+        if (s.isMidMeasure) {
+            continue;   // the declared sample is every measure DOWNBEAT
+        }
+        const Fraction t = Fraction::fromTicks(s.tickValue);
+        const NoteHarmonicContext ctx = mu::notation::analyzeHarmonicContextAtTick(score, t);
+        QJsonObject o;
+        o[QStringLiteral("tick")] = s.tickValue;
+        o[QStringLiteral("measure")] = s.measureNumber;
+        if (ctx.chordResults.empty()) {
+            o[QStringLiteral("rootPc")] = -1;
+            o[QStringLiteral("quality")] = QStringLiteral("");
+            o[QStringLiteral("symbol")] = QStringLiteral("");
+            o[QStringLiteral("roman")] = QStringLiteral("");
+            o[QStringLiteral("nashville")] = QStringLiteral("");
+        } else {
+            const ChordAnalysisResult& r = ctx.chordResults.front();
+            const mu::notation::FormattedChordResult fmt =
+                mu::notation::formatChordResultForStatusBar(score, r, ctx.keyFifths);
+            o[QStringLiteral("rootPc")] = r.identity.rootPc;
+            o[QStringLiteral("quality")] = QString::fromStdString(qualityName(r.identity.quality));
+            o[QStringLiteral("symbol")] = QString::fromStdString(fmt.symbol);
+            o[QStringLiteral("roman")] = QString::fromStdString(fmt.roman);
+            o[QStringLiteral("nashville")] = QString::fromStdString(fmt.nashville);
+            QJsonArray alts;
+            for (size_t k = 1; k < ctx.chordResults.size(); ++k) {
+                const ChordAnalysisResult& a = ctx.chordResults[k];
+                QJsonObject ao;
+                ao[QStringLiteral("rootPc")] = a.identity.rootPc;
+                ao[QStringLiteral("quality")] = QString::fromStdString(qualityName(a.identity.quality));
+                ao[QStringLiteral("score")] = std::round(a.identity.score * 1000.0) / 1000.0;
+                alts.append(ao);
+            }
+            o[QStringLiteral("alternatives")] = alts;
+        }
+        o[QStringLiteral("keyFifths")] = ctx.keyFifths;
+        o[QStringLiteral("keyMode")] = QString::fromStdString(modeName(ctx.keyMode));
+        arr.append(o);
+    }
+    delete score;
+    return arr;
+}
+
+QJsonObject captureArm(const CorpusEntry& entry, bool useRecord)
+{
+    QJsonObject arm;
+    arm[QStringLiteral("annotation")] = captureAnnotationSurface(entry, useRecord);
+    arm[QStringLiteral("implode")] = captureImplodeSurface(entry, useRecord);
+    arm[QStringLiteral("tuning")] = captureTuningSurface(entry, useRecord);
+    arm[QStringLiteral("noteSeam")] = captureNoteSeamSurface(entry, useRecord);
+    return arm;
+}
+
+TEST(DualArmClassifiedCapture, DISABLED_EmitCapture)
+{
+    auto analysisCfg = muse::modularity::globalIoc()->resolve<
+        mu::composing::IComposingAnalysisConfiguration>("composing");
+    ASSERT_TRUE(analysisCfg) << "IComposingAnalysisConfiguration not registered";
+    analysisCfg->setUseRegionalAccumulation(true);
+    analysisCfg->setUseJointNotationRecord(false);
+
+    QJsonArray corpusArr;
+    for (const CorpusEntry& entry : kCorpus) {
+        int endTickVal = 0;
+        if (MasterScore* s = loadCorpusScore(entry)) {
+            endTickVal = endTickForMeasureCap(s, kMaxAnalysisMeasures).ticks();
+            delete s;
+        }
+        QJsonObject scoreObj;
+        scoreObj[QStringLiteral("id")] = QString::fromUtf8(entry.id);
+        scoreObj[QStringLiteral("analysisEndTick")] = endTickVal;
+        scoreObj[QStringLiteral("legacy")] = captureArm(entry, /*useRecord=*/false);
+        scoreObj[QStringLiteral("record")] = captureArm(entry, /*useRecord=*/true);
+        corpusArr.append(scoreObj);
+        std::cout << "[dual-arm capture] " << entry.id << " done" << std::endl;
+    }
+
+    QJsonObject root;
+    root[QStringLiteral("window")] =
+        QStringLiteral("[0, endTickForMeasureCap(kMaxAnalysisMeasures=16)) — the snapshot harness window");
+    root[QStringLiteral("arms")] =
+        QStringLiteral("legacy = useJointNotationRecord OFF; record = ON. Each surface captured on a fresh score.");
+    root[QStringLiteral("surfaces")] = QStringLiteral(
+        "annotation (span-seam write) | implode (chord track) | tuning (per-note cents) | noteSeam (downbeats)");
+    root[QStringLiteral("corpus")] = corpusArr;
+
+    const QString outPath = QStringLiteral(PIPELINE_SNAPSHOT_CORPUS_ROOT)
+                            + QStringLiteral("/tools/notation_seams/dualarm_capture.json");
+    QDir().mkpath(QFileInfo(outPath).absolutePath());
+    const QByteArray bytes = serializeSnapshot(root).toUtf8();
+    QFile out(outPath);
+    ASSERT_TRUE(out.open(QIODevice::WriteOnly | QIODevice::Truncate)) << out.errorString().toStdString();
+    ASSERT_EQ(out.write(bytes), static_cast<qint64>(bytes.size()));
+    out.close();
+
+    analysisCfg->setUseJointNotationRecord(false);   // explicit restore (the RAII already did per surface)
+    std::cout << "[dual-arm capture] wrote " << outPath.toStdString() << std::endl;
 }
 
 } // namespace
