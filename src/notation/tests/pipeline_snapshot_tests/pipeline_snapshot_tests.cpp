@@ -1195,7 +1195,11 @@ TEST(SectionRecordAdapterAnnotation, RecordArmEmitsRecordDerivedStrings)
         delete score;
     }
 
-    // Nashville is a DECLARED record-path GAP: requesting Nashville writes NOTHING (the FINDING).
+    // Nashville: the P3a record-path gap is CLOSED (P-strings Task 2) — requesting Nashville now WRITES
+    // it (the shared formatNashvilleNumber, a presentation derivation from the record's committed
+    // reading). The exact per-region string continuity vs the legacy formatter is established by the
+    // unit test (section_record_adapter_tests.cpp NashvilleContinuityWithLegacyFormatter); here we
+    // assert the arm emits Nashville end-to-end.
     {
         MasterScore* score = ScoreRW::readScore(muse::String::fromQString(corpusPath(kCorpus[0])),
                                                 /*isAbsolutePath=*/true);
@@ -1222,7 +1226,7 @@ TEST(SectionRecordAdapterAnnotation, RecordArmEmitsRecordDerivedStrings)
                 ++newNashville;
             }
         }
-        EXPECT_EQ(newNashville, 0) << "record path must not write Nashville (declared gap / FINDING)";
+        EXPECT_GT(newNashville, 0) << "record path must write Nashville (the P3a gap is closed)";
         delete score;
     }
 

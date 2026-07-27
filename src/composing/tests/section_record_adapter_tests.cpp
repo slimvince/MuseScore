@@ -43,6 +43,8 @@
 #include "composing/analysis/chord/chordanalyzer.h"   // ChordSymbolFormatter (the reused presentation formatter)
 #include "composing/analyzed_section.h"
 
+#include "test_helpers.h"   // makeRomanResult (the legacy-equivalent ChordAnalysisResult builder)
+
 #include "engraving/dom/masterscore.h"
 #include "engraving/dom/pitchspelling.h"   // Tpc::TPC_C
 #include "engraving/types/fraction.h"
@@ -353,4 +355,55 @@ TEST(SectionRecordAdapterTests, DisplaySymbolAppliedAndChromaticClasses)
     const joint::RecordSegment rootless =
         makeCommittedSeg("AugSixth", std::nullopt, std::nullopt, 0, true, 0, "It", "");
     EXPECT_LT(an::chordResultFromRecordSegment(rootless).identity.rootPc, 0);
+}
+
+// ── (5) the Nashville-number continuity (P-strings Task 2) ────────────────────────────────────────
+//
+// The record arm and the legacy arm both render Nashville via the SAME shared formatter
+// (ChordSymbolFormatter::formatNashvilleNumber; the ratified §3.3-amendment presentation derivation
+// that closes the P3a Nashville gap — NO jointRenderNashville on the record, NO second formatter #6).
+// On a reading both arms agree on (same degree, quality/seventh, bass, key) they MUST produce the
+// IDENTICAL string — establishing the record carriage is Nashville-equivalent. The applied/chromatic
+// convention ("?" for a non-diatonic degree) is the LEGACY formatter's own (cited: nashville_tests.cpp
+// "SURFACED FINDING" — nashvilleDegree returns "?" outside 0..6), so it coincides too. Differences on
+// other readings would be the inference-driven decode, never a formatter divergence.
+TEST(SectionRecordAdapterTests, NashvilleContinuityWithLegacyFormatter)
+{
+    const std::string DEG = "\xc2\xb0";   // ° U+00B0 (matches formatNashvilleNumber / nashville_tests.cpp)
+
+    struct Reading {
+        std::string name;
+        joint::RecordSegment seg;          // the record arm (converted via chordResultFromRecordSegment)
+        an::ChordAnalysisResult legacy;    // the legacy-equivalent reading (same musical facts)
+        std::string expected;              // the Nashville oracle (standard convention)
+    };
+    const std::vector<Reading> readings = {
+        { "I",      makeCommittedSeg("Maj",  0, 0, 0, true, 0, "I", ""),
+                    an::makeRomanResult(0, an::ChordQuality::Major, 0, 0),                                   "1" },
+        { "V7",     makeCommittedSeg("Dom7", 7, 1, 0, true, 0, "V", ""),
+                    an::makeRomanResult(4, an::ChordQuality::Major, 7, 7, /*min7=*/true),                    "57" },
+        { "ii",     makeCommittedSeg("Min",  2, 2, 0, true, 0, "II", ""),
+                    an::makeRomanResult(1, an::ChordQuality::Minor, 2, 2),                                   "2m" },
+        { "viio7",  makeCommittedSeg("Dim7", 11, 5, 0, true, 0, "VII", ""),
+                    an::makeRomanResult(6, an::ChordQuality::Diminished, 11, 11, false, false, /*dim7=*/true),
+                                                                                                  "7" + DEG + "7" },
+        { "i(min)", makeCommittedSeg("Min",  9, 3, 9, false, 0, "I", ""),
+                    an::makeRomanResult(0, an::ChordQuality::Minor, 9, 9, false, false, false, false, 9,
+                                        an::KeySigMode::Aeolian),                                            "1m" },
+        { "I/3",    makeCommittedSeg("Maj",  0, 0, 0, true, 0, "I", "", /*bass*/ 4, /*bassLof*/ 4),
+                    an::makeRomanResult(0, an::ChordQuality::Major, 0, 4),                                   "1/5" },
+        { "V/V",    makeCommittedSeg("Dom7", 2, 2, 0, true, 0, "V", "V"),
+                    an::makeRomanResult(-1, an::ChordQuality::Major, 2, 2, /*min7=*/true),                   "?7" },
+    };
+
+    int coinciding = 0;
+    for (const Reading& rd : readings) {
+        const an::ChordAnalysisResult recordArm = an::chordResultFromRecordSegment(rd.seg);
+        const std::string recordNash = an::ChordSymbolFormatter::formatNashvilleNumber(recordArm, rd.seg.keySignatureFifths);
+        const std::string legacyNash = an::ChordSymbolFormatter::formatNashvilleNumber(rd.legacy, rd.seg.keySignatureFifths);
+        EXPECT_EQ(recordNash, legacyNash) << rd.name << " (record-arm Nashville must equal the legacy arm)";
+        EXPECT_EQ(recordNash, rd.expected) << rd.name << " (the Nashville oracle)";
+        ++coinciding;
+    }
+    EXPECT_EQ(coinciding, 7) << "every reading is checked";
 }

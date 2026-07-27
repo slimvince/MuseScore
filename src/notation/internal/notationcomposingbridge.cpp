@@ -1157,8 +1157,14 @@ void emitHarmonicAnnotations(mu::engraving::Score* score,
             const FormattedChordResult fmt = formatChordResultForStatusBar(score, annotationResult, perRegionFifths);
             symText = (options.writeChordSymbols && annotationResult.identity.rootPc >= 0)
                           ? fmt.symbol : std::string();
-            // Nashville: still a DECLARED record-path GAP in this unit; closed by the P-strings Task 2
-            // (rendered from the same shared formatter, formatChordResultForStatusBar). Stays "".
+            // The Nashville number is a PRESENTATION derivation too (ratified §3.3 amendment — this
+            // closes the P3a Nashville GAP): the shared ChordSymbolFormatter::formatNashvilleNumber
+            // (via formatChordResultForStatusBar) renders it from the record's committed reading —
+            // degree (recordFunctionDegree) + quality/seventh + bass role + key — with NO second
+            // formatter (#6) and NO jointRenderNashville published on the record. The applied/chromatic
+            // convention ("?" for a non-diatonic degree) is the legacy formatter's own, so both arms
+            // coincide on shared readings (an inference-driven decode difference is not a formatter one).
+            nashvilleText = options.writeNashvilleNumbers ? fmt.nashville : std::string();
         } else {
             // ── Legacy path (unchanged behaviour): re-contextualize to the enclosing key area, then
             // format via ChordSymbolFormatter. ──
