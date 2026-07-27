@@ -1,0 +1,87 @@
+{
+    "instrument": "src/notation/tests/pipeline_snapshot_tests/pipeline_snapshot_tests.cpp NoteSeamLatency.DISABLED_Sweep",
+    "machine": "Windows 11 Version 25H2 / x86_64",
+    "open_item": "OI-203",
+    "purpose": "Record-arm note-seam interactive latency — MEASUREMENT ONLY (the keyed-record-cache design returns to Cowork with these numbers). (a) produce_cold_ms: one whole-score produceNotationRecord (cold; the funnel pays this per query today). (b) funnel_per_query_ms: analyzeHarmonicContextAtTick per query at the record arm (flag ON) = produce + record lookup. (c) memoized_per_query_ms: the per-query cost were the record memoized (produce once, then noteView per tick) — the bound the cache design is judged against.",
+    "record_arm": true,
+    "runs_per_score": 5,
+    "scores": [
+        {
+            "funnel_per_query_ms": {
+                "max": 5253.3225,
+                "median": 5226.539049999999,
+                "p95": 5253.3225
+            },
+            "funnel_sample_ticks": 12,
+            "id": "bach_chorale_001",
+            "measures": 23,
+            "memoized_per_query_ms": {
+                "max": 4e-04,
+                "median": 0,
+                "p95": 1e-04
+            },
+            "notes": 230,
+            "produce_cold_ms_median": 5260.8713,
+            "queries": 80,
+            "sizeClass": "small SATB chorale"
+        },
+        {
+            "funnel_per_query_ms": {
+                "max": 8509.0833,
+                "median": 8435.284950000001,
+                "p95": 8509.0833
+            },
+            "funnel_sample_ticks": 12,
+            "id": "chopin_bi105_op30_1",
+            "measures": 54,
+            "memoized_per_query_ms": {
+                "max": 4e-04,
+                "median": 1e-04,
+                "p95": 1e-04
+            },
+            "notes": 589,
+            "produce_cold_ms_median": 8385.5698,
+            "queries": 248,
+            "sizeClass": "mid-size piano (mazurka)"
+        },
+        {
+            "funnel_per_query_ms": {
+                "max": 21772.7937,
+                "median": 21652.1286,
+                "p95": 21772.7937
+            },
+            "funnel_sample_ticks": 12,
+            "id": "bach_bwv806_prelude",
+            "measures": 37,
+            "memoized_per_query_ms": {
+                "max": 3e-04,
+                "median": 1e-04,
+                "p95": 1e-04
+            },
+            "notes": 866,
+            "produce_cold_ms_median": 22104.598,
+            "queries": 462,
+            "sizeClass": "contrapuntal keyboard prelude"
+        },
+        {
+            "funnel_per_query_ms": {
+                "max": 27110.3042,
+                "median": 26992.0685,
+                "p95": 27110.3042
+            },
+            "funnel_sample_ticks": 12,
+            "id": "mozart_k279_1",
+            "measures": 100,
+            "memoized_per_query_ms": {
+                "max": 6e-04,
+                "median": 2e-04,
+                "p95": 3e-04
+            },
+            "notes": 1978,
+            "produce_cold_ms_median": 27072.142,
+            "queries": 1441,
+            "sizeClass": "largest convenient (sonata mvt)"
+        }
+    ],
+    "unit": "milliseconds, wall (std::chrono::steady_clock); per-score aggregates are median-of-runs"
+}

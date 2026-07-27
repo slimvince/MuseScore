@@ -79,6 +79,7 @@
 #include <QJsonObject>
 #include <QJsonValue>
 #include <QString>
+#include <QSysInfo>
 
 #include "global/types/translatablestring.h"
 
@@ -1612,6 +1613,229 @@ TEST(P3PerfBaseline, DISABLED_Sweep)
     // block between the BEGIN/END markers is what docs/perf_p3_baseline.md is
     // lifted from.
     std::cout << report.str() << std::endl;
+}
+
+// ── OI-203: the record-arm note-seam interactive-latency measurement (read-only) ──────────────────
+//
+// THE SUBJECT. The notation switch (2026-07-27) put the joint record path on the DEFAULT in-app
+// notation analysis (useJointNotationRecord ON). Its note seam (analyzeHarmonicContextAtTick, flag ON)
+// runs produceNotationRecord — a WHOLE-SCORE decode — on every interactive query (the status bar fires
+// per note selection), BYPASSING the legacy bounded-window decode cache (see the record-arm branch in
+// analyzeHarmonicContextAtTick). OI-203 declared this latency at the note-seam build and DEFERRED the
+// record-cache design to a later, measured increment (#17: measure before build). THIS is that
+// measurement — measurement ONLY; the keyed-record-cache design returns to Cowork WITH these numbers.
+// No production code is touched (a DISABLED test-layer instrument, the P3PerfBaseline pattern).
+//
+// Per perf-corpus score (the shared kPerfCorpus: small chorale -> mid piano -> contrapuntal prelude ->
+// sonata movement, spanning the snapshot corpus + a corpus-scale piece), at the record arm (flag ON):
+//   (a) produce_cold_ms   — one whole-score produceNotationRecord (COLD; the producer has no cache, so
+//                           every call is cold). This is the cost the funnel pays PER query today.
+//   (b) funnel_per_query  — analyzeHarmonicContextAtTick per chord-bearing tick (flag ON): the cost a
+//                           consumer experiences TODAY = a whole-score produce + the record lookup, per query.
+//   (c) memoized_per_query— the per-query cost WERE the record memoized: produce ONCE, then noteView(rec, tick)
+//                           per tick. This is the measured BOUND the record-cache design will be judged against.
+// Emits a human table on stdout + the generated artifact tools/notation_seams/noteseam_latency.json (#17f).
+//
+// DISABLED: a measurement, not a regression gate (timing is machine-dependent). Regenerate the artifact:
+//   ./pipeline_snapshot_tests.exe --gtest_also_run_disabled_tests --gtest_filter='*NoteSeamLatency*'
+TEST(NoteSeamLatency, DISABLED_Sweep)
+{
+    auto analysisCfg = muse::modularity::globalIoc()->resolve<
+        mu::composing::IComposingAnalysisConfiguration>("composing");
+    ASSERT_TRUE(analysisCfg) << "IComposingAnalysisConfiguration not registered";
+    analysisCfg->setUseRegionalAccumulation(true);
+    analysisCfg->setUseJointNotationRecord(true);   // the record arm — the DEFAULT since the switch
+
+    // one per-query latency vector -> its per-run aggregate
+    auto statsOf = [](std::vector<double> v) {
+        PerfRunStats st;
+        st.medianMs = medianSorted(v);
+        st.p95Ms    = percentileNearestRank(v, 95.0);
+        st.maxMs    = v.empty() ? 0.0 : *std::max_element(v.begin(), v.end());
+        st.totalMs  = std::accumulate(v.begin(), v.end(), 0.0);
+        return st;
+    };
+    // median-of-runs of one PerfRunStats field across the runs (the P3PerfBaseline reporting convention)
+    auto medOfRuns = [](const std::vector<PerfRunStats>& runs, double PerfRunStats::* field) {
+        std::vector<double> vals;
+        for (const auto& r : runs) {
+            vals.push_back(r.*field);
+        }
+        return medianSorted(vals);
+    };
+
+    std::ostringstream report;
+    report << "\n==== NOTESEAM-LATENCY BEGIN ====\n";
+    report << "runs_per_score=" << kPerfRuns << " record_arm=on\n";
+
+    QJsonArray scoresArr;
+
+    for (const PerfScore& ps : kPerfCorpus) {
+        const QString scorePath = perfCorpusPath(ps);
+        ASSERT_TRUE(QFileInfo::exists(scorePath))
+            << "Perf corpus score missing: " << scorePath.toStdString();
+        MasterScore* score = ScoreRW::readScore(muse::String::fromQString(scorePath),
+                                                /*isAbsolutePath=*/true);
+        ASSERT_TRUE(score) << "Failed to load perf score: " << scorePath.toStdString();
+
+        // size facts for the scaling table
+        int measureCount = 0;
+        for (Measure* m = score->firstMeasure(); m; m = m->nextMeasure()) {
+            ++measureCount;
+        }
+        int noteCount = 0;
+        for (Segment* s = score->firstSegment(SegmentType::ChordRest); s;
+             s = s->next1(SegmentType::ChordRest)) {
+            for (track_idx_t tr = 0; tr < score->ntracks(); ++tr) {
+                mu::engraving::EngravingItem* e = s->element(tr);
+                if (e && e->isChord()) {
+                    noteCount += static_cast<int>(toChord(e)->notes().size());
+                }
+            }
+        }
+
+        // the funnel excludes the same chord-track staves the note-seam consumer passes (OI-204 parity;
+        // the perf corpus carries no chord track, so this is the empty set — decode the whole score).
+        const std::set<size_t> exclude = mu::notation::chordTrackExcludeStaves(score);
+        const std::vector<int> ticks = collectChordBearingTicks(score);
+        ASSERT_FALSE(ticks.empty());
+
+        // The funnel per query (b) IS a whole-score produce per query, so measuring it over EVERY tick
+        // would be (ticks x produce) — hours on the largest score. The per-query wall time is
+        // produce-dominated (~constant per tick), so we SAMPLE evenly-spaced ticks for (b); (c)'s
+        // noteView is a microsecond lookup, so it sweeps every tick. The sampled count is on the artifact.
+        constexpr int kFunnelRuns = 3;
+        constexpr int kFunnelSampleTicks = 12;
+        std::vector<int> sampledTicks;
+        {
+            const int n = static_cast<int>(ticks.size());
+            const int want = std::min(kFunnelSampleTicks, n);
+            for (int k = 0; k < want; ++k) {
+                const int idx = (want == 1)
+                                ? 0
+                                : static_cast<int>(std::llround(static_cast<double>(k) * (n - 1) / (want - 1)));
+                sampledTicks.push_back(ticks[idx]);
+            }
+        }
+
+        // (a) whole-score produceNotationRecord, cold (the producer memoizes nothing — every call cold).
+        std::vector<double> produceMs;
+        for (int run = 0; run < kPerfRuns; ++run) {
+            const auto t0 = std::chrono::steady_clock::now();
+            const auto rec = produceNotationRecord(score, std::string(ps.id), exclude);
+            const auto t1 = std::chrono::steady_clock::now();
+            ASSERT_TRUE(rec.ok) << "produceNotationRecord failed for " << ps.id;
+            produceMs.push_back(std::chrono::duration<double, std::milli>(t1 - t0).count());
+        }
+
+        // (b) the note-seam funnel per query TODAY (flag ON = a whole-score produce + record lookup per
+        //     query), on the sampled ticks; (c) the per-query cost were the record memoized (produce ONCE,
+        //     then noteView per tick), swept over EVERY tick (noteView is a cheap lookup).
+        std::vector<PerfRunStats> funnelRuns, memoRuns;
+        for (int run = 0; run < kFunnelRuns; ++run) {
+            std::vector<double> funnel;
+            funnel.reserve(sampledTicks.size());
+            for (int t : sampledTicks) {
+                const auto a0 = std::chrono::steady_clock::now();
+                NoteHarmonicContext ctx = mu::notation::analyzeHarmonicContextAtTick(
+                    score, Fraction::fromTicks(t), 0, exclude);
+                const auto a1 = std::chrono::steady_clock::now();
+                funnel.push_back(std::chrono::duration<double, std::milli>(a1 - a0).count());
+                (void)ctx;
+            }
+            funnelRuns.push_back(statsOf(funnel));
+        }
+        for (int run = 0; run < kPerfRuns; ++run) {
+            const auto rec = produceNotationRecord(score, std::string(ps.id), exclude);
+            ASSERT_TRUE(rec.ok);
+            std::vector<double> memo;
+            memo.reserve(ticks.size());
+            for (int t : ticks) {
+                const auto a0 = std::chrono::steady_clock::now();
+                const mu::composing::analysis::joint::NoteView nv =
+                    mu::composing::analysis::joint::noteView(rec.record, t);
+                const auto a1 = std::chrono::steady_clock::now();
+                memo.push_back(std::chrono::duration<double, std::milli>(a1 - a0).count());
+                (void)nv;
+            }
+            memoRuns.push_back(statsOf(memo));
+        }
+
+        const double produceMedian = medianSorted(produceMs);
+        const double funnelMedian  = medOfRuns(funnelRuns, &PerfRunStats::medianMs);
+        const double funnelP95     = medOfRuns(funnelRuns, &PerfRunStats::p95Ms);
+        const double funnelMax     = medOfRuns(funnelRuns, &PerfRunStats::maxMs);
+        const double memoMedian    = medOfRuns(memoRuns, &PerfRunStats::medianMs);
+        const double memoP95       = medOfRuns(memoRuns, &PerfRunStats::p95Ms);
+        const double memoMax       = medOfRuns(memoRuns, &PerfRunStats::maxMs);
+
+        report << "score=" << ps.id
+               << " sizeClass=\"" << ps.sizeClass << "\""
+               << " measures=" << measureCount
+               << " notes=" << noteCount
+               << " queries=" << ticks.size()
+               << " funnelSampleTicks=" << sampledTicks.size()
+               << " produceColdMs=" << produceMedian
+               << " funnelPerQueryMs(median/p95/max)=" << funnelMedian << "/" << funnelP95 << "/" << funnelMax
+               << " memoizedPerQueryMs(median/p95/max)=" << memoMedian << "/" << memoP95 << "/" << memoMax
+               << "\n";
+
+        QJsonObject o;
+        o["id"] = QString::fromUtf8(ps.id);
+        o["sizeClass"] = QString::fromUtf8(ps.sizeClass);
+        o["measures"] = measureCount;
+        o["notes"] = noteCount;
+        o["queries"] = static_cast<int>(ticks.size());
+        o["funnel_sample_ticks"] = static_cast<int>(sampledTicks.size());
+        o["produce_cold_ms_median"] = produceMedian;
+        QJsonObject fq;
+        fq["median"] = funnelMedian;
+        fq["p95"] = funnelP95;
+        fq["max"] = funnelMax;
+        o["funnel_per_query_ms"] = fq;
+        QJsonObject mq;
+        mq["median"] = memoMedian;
+        mq["p95"] = memoP95;
+        mq["max"] = memoMax;
+        o["memoized_per_query_ms"] = mq;
+        scoresArr.append(o);
+
+        delete score;
+    }
+    report << "==== NOTESEAM-LATENCY END ====\n";
+    std::cout << report.str() << std::endl;
+
+    QJsonObject root;
+    root["instrument"] =
+        QStringLiteral("src/notation/tests/pipeline_snapshot_tests/pipeline_snapshot_tests.cpp "
+                       "NoteSeamLatency.DISABLED_Sweep");
+    root["open_item"] = QStringLiteral("OI-203");
+    root["purpose"] = QStringLiteral(
+        "Record-arm note-seam interactive latency — MEASUREMENT ONLY (the keyed-record-cache design "
+        "returns to Cowork with these numbers). (a) produce_cold_ms: one whole-score produceNotationRecord "
+        "(cold; the funnel pays this per query today). (b) funnel_per_query_ms: analyzeHarmonicContextAtTick "
+        "per query at the record arm (flag ON) = produce + record lookup. (c) memoized_per_query_ms: the "
+        "per-query cost were the record memoized (produce once, then noteView per tick) — the bound the "
+        "cache design is judged against.");
+    root["record_arm"] = true;
+    root["runs_per_score"] = kPerfRuns;
+    root["unit"] = QStringLiteral(
+        "milliseconds, wall (std::chrono::steady_clock); per-score aggregates are median-of-runs");
+    root["machine"] =
+        QSysInfo::prettyProductName() + QStringLiteral(" / ") + QSysInfo::currentCpuArchitecture();
+    root["scores"] = scoresArr;
+
+    const QString outPath = QStringLiteral(PIPELINE_SNAPSHOT_CORPUS_ROOT)
+                            + QStringLiteral("/tools/notation_seams/noteseam_latency.json");
+    QDir().mkpath(QFileInfo(outPath).absolutePath());
+    const QByteArray bytes = serializeSnapshot(root).toUtf8();
+    QFile out(outPath);
+    ASSERT_TRUE(out.open(QIODevice::WriteOnly | QIODevice::Truncate)) << out.errorString().toStdString();
+    ASSERT_EQ(out.write(bytes), static_cast<qint64>(bytes.size()));
+    out.close();
+    std::cout << "wrote " << outPath.toStdString() << std::endl;
+
+    analysisCfg->setUseJointNotationRecord(false);   // leave the shared flag as the suite expects it
 }
 
 // ── Stage 3.1b byte-identity A/B (uncached window vs cached window) ───────────

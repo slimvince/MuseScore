@@ -382,6 +382,80 @@ migration state is CLOSED on both surfaces; the live agenda = the OI-180 retirem
 OI-193, OI-194, OI-203, then OI-205(b) + the OI-198/199/200 reviews, then — and only then —
 the inference-improvement era.**
 
+**★★★ THE SWITCH IS EXECUTED, PUSHED, AND COWORK-VERIFIED AT THE OBJECTS (`2a81af273e`,
+2026-07-27) — THE NOTATION-LAYER ADOPTION INCREMENT IS COMPLETE; THE #23 MIGRATION STATE IS
+CLOSED ON BOTH SURFACES; THE OI-180 DUAL-PATH VISIBILITY LINE'S EXIT HAS EXECUTED.** Verified:
+the default flip at the site (prior `Val(false)` → `Val(true)`); corpus + `tools/robust_stop/`
+zero diff; the golden reconciliation committed — inference-driven 3125 / presentation-rule 121
+/ record-arm-inert-auxiliary 277 / input-scoping 0 / UNEXPLAINED 0; STATUS swept (29 entries
+byte-reconciled to the archive by the new committed instrument); CLAUDE.md staged scope
+CLOSED; suites 1186 / 61+4 / 13 green. **Cowork's dispositions on CC's two flagged judgment
+calls: (1) the `record-arm-inert-auxiliary` class is ACCEPTED** — by the dispatch's letter an
+un-P6-explained class was a STOP, but the mechanism is fully established (the ratified §3.6
+exclusion + the TWICE-audited no-production-reader fields `temporalExtensions`/`wasRegional`,
+serialized only by the snapshot test), the classification is explicit, documented, and
+reversible — the honest-classification outcome the STOP exists to force; **(2) the golden-test
+explicit flag pin was the dispatch's own provisioned case** — and its root finding is recorded
+as standing knowledge: THE MUSE TEST HARNESS DOES NOT APPLY REGISTERED CONFIG DEFAULTS
+(production gets them via `ComposingModule::onInit`; tests must pin flags explicitly — the
+pre-refresh legacy-golden pass at flipped default was this, diagnosed to mechanism). **THE
+LIVE AGENDA (each its own just-in-time dispatch): the OI-180 retirement map's increments;
+OI-193 (marginals); OI-194 (ornament labels incl. the pedal class); OI-203 (measure the
+interactive latency, then the keyed record cache — priority RISEN, now the default path);
+then OI-205(b) + OI-198/OI-199/OI-200; then the inference era (OI-192 first in queue,
+prioritized by OI-200's output).**
+
+**★ THE POST-SWITCH ARC OPENS (user "go", 2026-07-27). THE ACTIVE DISPATCH is
+`cc_instruction_marginals.md`** — post-switch increment 1, ordered by Cowork: Task 1 the
+OI-203 latency MEASUREMENT (read-only; the live-pain item measured first per
+measure-before-build; the cache DESIGN returns to Cowork with the numbers), then **OI-193 —
+the contract's group (ii) full forward-backward marginals**: the Python reference over the
+production decode's own lattice (the fit arc's lattice machinery imported as the carried-
+establishment basis), the PRE-DECLARED oracle (forward==backward logZ; mass normalization;
+synthetic agreement with the fit-arc arithmetic; gap↔mass monotonicity) gating publication
+(#19 — no oracle, no publication), then the C++ marginals bit-parity on all 326 with the
+committed decode proven untouched, the record's group (ii) fields ADDITIVE beside the group
+(i) gaps (separate named fields, never a redefinition). Ordering rationale recorded: the
+algorithmic completions (OI-193, then OI-194) PRECEDE the retirement map's deletions — the
+map removes the switch's revert escape (the dormant legacy arm), so completion-first also
+preserves revertibility longest; the map opens after OI-194. Feasibility STOP with partition
+permitted (Python-first seam).
+
+**★★★ THE 3.1b CONTRADICTION + ITS CONSEQUENCES (2026-07-27, user-challenged, Cowork-owned):**
+the seams dispatches' whole-score interactive producer CONTRADICTS the recorded Stage-3.1b
+decision (2026-06-12, archive :2957–2979): whole-score interactive analysis was A/B-FALSIFIED
+for the legacy analyzer (window path 59/41 better; Mozart 35/65) and SHELVED WITH EVIDENCE
+(`docs/p3_granularity_ab_3_1b.md`); the Tristan-scale concern is likewise on record
+(`cowork_architecture_review_2026_07.md` §7). Cowork's #17a failure: the scale assumption was
+never a ledger premise; the evidence lived in archives outside the session-start read. The
+user also confirmed the DESIGNED interactive shape at the record: read only what inference
+needs, extending temporally until satisfied (the OI-18 §2.15 extension cluster — specified,
+never coded; note-model `extend` dormant, OI-88) — never carried into A's interactive design;
+A's posterior now supplies the principled stopping criterion (extend until the queried span's
+reading + uncertainty stabilize). All recorded on OI-206's detail; the fix surface gains the
+bounded/grow-until-stable candidate with a REQUIRED read-only A/B first (windowed vs
+whole-piece A-decode accuracy on the corpus — 3.1b measured the legacy analyzer, never A).
+**TWO NEW ROWS: OI-207** (the decision-conformance audit — every recorded
+ruling/shelving/falsification enumerated and checked against the current implementation for
+direct opposition; priority, slots right after the OI-206 diagnosis; the map does NOT proceed
+over unknown contradictions) **and OI-208** (the DECISIONS REGISTER proposal — the OPEN_ITEMS
+pattern for rulings, populated from OI-207, added to the session-start read; user ratification
+of the shape owed).**
+
+**★★ OI-206 — A STOP-CLASS FIELD REPORT ARRIVED MID-FLIGHT (user, 2026-07-27, running the
+switched build): selection highlight NEVER renders (selection STATE works — status bar shows
+it, annotate acts on it correctly); spacebar playback dead.** Rowed (index + detail) with TWO
+hypothesis mechanisms, neither asserted: (a) the OI-203 synchronous whole-score-decode-per-
+selection-change starving UI paint + input dispatch (corroborated by the test-scale slowness,
+but the NEVER-renders/stays-dead shape needs a re-trigger source to explain — measure, don't
+assume); (b) an uncaught exception escaping the record-arm funnel on a score feature the
+corpus never exercised, aborting the selection-visuals chain. **PRIORITY ORDER CHANGED: the
+OI-206 diagnosis is the NEXT dispatch after the in-flight marginals dispatch returns** (no
+mid-flight steering; its Task-1 latency numbers feed the diagnosis). **OI-206 BLOCKS the
+OI-180 map** — the dormant legacy arm (the designed mitigation, explicit
+`useJointNotationRecord=false`) must survive until this is resolved. OI-194 slips behind the
+diagnosis.
+
 **★ OI-205 ROWED (user-directed 2026-07-27, mid-P7; index row + detail file on disk, riding):**
 STATUS.md + ARCHITECTURE.md too large. Half (a) STATUS archive sweep = mechanical (the
 STATUS_ARCHIVE pattern), rides the switch's doc-sync or just after; half (b) ARCHITECTURE
