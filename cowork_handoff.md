@@ -189,6 +189,28 @@ hand-check), ornament fields reserved (OI-194), the §3.3 slice attached via the
 `computePosteriorSlice`. All dormant/default-OFF (declared dormancy — named consumer: the seams
 dispatch); decode untouched; byte-identity everywhere. THEN: the seams dispatch, then the
 switch (§8.4).
+
+**★ THE RECORD ASSEMBLY IS DELIVERED AND COWORK-VERIFIED (2026-07-26; commits `04fb57ab08` /
+`c06298c983` / `e064f08298` / `acea6057c4` / `e336bd0348`, all pushed, all verified at the
+objects).** Contract §3.1–§3.4 built dormant with NO field gaps: render primitives
+single-sourced into the module (`jointrender`; corpus regen 352/352×3 byte-identical), the
+record with derived facts + the D1 provenance dormancy discharged, the spelling derivation
+(§5.2 establishment: root 99.985 % / bass 99.982 % derived-vs-notated, 4 divergences ALL the
+enharmonic-convention class, enumerated), the modal counter (§5.4 bwv254 hand-check verified:
+♭6 B♭×4/1920t, C♯×5/2160t vs C♮×1/240t — consistent with the desk-sim C5 facts). Suites
+1169/53/11 green throughout; one CC-caught-and-fixed bug in its own new code (lowercase applied
+targets in the framework-LOF parse). **TWO NEW ROWS at verification: OI-196** (the module-local
+fifths mapping — a declared interim duplicate, unifies at map item 2) **and OI-197** (the C++
+spelling establishment is PARTIAL — the corpus figure is Python-side; a lof-exact C++↔Python
+corpus parity is OWED BEFORE THE SWITCH). §3.1 note: the adapter exposes only the initial
+signature, so the re-anchor list is empty — recorded, consistent with the fitted corpus
+behavior (multi-signature pieces were a flagged small population at the fit). **THE ACTIVE
+DISPATCH is `cc_instruction_notation_seams_1.md`:** Task 0 the rows commit; Task 1 the OI-197
+lof-exact parity (flips the row or STOPs); Task 2 the record-producing entry — the joint
+module's one-call score→record producer (adapter → embedded decode → assembly) + the span view
+and the note-seam tick lookup (containing segment, `startTick <= t < endTick`), dormant,
+coverage incl. corpus pieces. THEN seams part 2 (consumer re-plumb behind the default-OFF flag
++ the §8.3(d) consumer-output comparison instruments), then the switch (§8.4).
 **THEN the agenda is the retirement map + refinements, each its own later dispatch, in no forced
 order but all on the register:** the legacy retirements (the map's six items on the gates doc);
 the presentation-layer publications that are PART of the ratified record and must not drop (the
