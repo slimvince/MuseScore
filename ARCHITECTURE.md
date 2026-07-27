@@ -97,8 +97,17 @@
 > paragraph) read this record — DORMANT (no src/ consumer yet). Suites: unit coverage in
 > `joint_record_tests` / `joint_spelling_tests` / `joint_modal_tests`.
 >
-> **RECORD PRODUCER + THE TWO SEAM VIEWS — the notation output-surface contract §1 seams, PRODUCER side (as-built,
-> DORMANT; `jointnotationproducer`).** `joint::produceNotationRecord(score, stem)` is the ONE-call score->record
+> **THE RECORD PATH — the notation output-surface contract as-built (behind the default-OFF `useJointNotationRecord`;
+> DORMANT on production; DUAL-ARM, awaiting the switch).** This is the consolidated, forward end-to-end record of the
+> joint estimator's A-native notation record and the re-plumbed notation consumers that read it, behind ONE internal
+> default-OFF flag (delivered by the seams partition P0-P7; per-unit provenance in STATUS.md / `cowork_handoff.md`). It
+> is the declared, bounded **#23 migration posture**: the legacy analysis path lives BESIDE the record path, and with
+> the flag OFF the legacy path runs BYTE-IDENTICALLY (proven per delivery unit — three suites + the pipeline-snapshot
+> goldens untouched, no golden refresh anywhere in the partition). The switch has NOT happened; flipping it is a
+> separate, user-ratified commit (see **(6) the switch**, below).
+>
+> **(1) The producer + the two seam views (contract §1 seams, PRODUCER side; `jointnotationproducer`).**
+> `joint::produceNotationRecord(score, stem)` is the ONE-call score->record
 > entry: `buildAdapterFacts` (the L1 published-fact surface — the only score read, no raw-DOM walk) -> the compiled-in
 > EMBEDDED tables/adapter + the SELECTED weight vector (Decision D1) -> `decodePiece` (§5 total order, seg_cap 4) ->
 > `assembleNotationRecord` (which attaches the §3.3 slice). WHOLE-score decode ONCE; deterministic; NO caching (a
@@ -118,8 +127,9 @@
 > `noteView(rec, tick)` returns the segment CONTAINING `tick` (`seg.startTick <= tick < seg.endTick` — a boundary
 > tick belongs to the segment it STARTS), resolving the committed reading + derived facts (`segment`) + the §3.3
 > slice (`slice`), or `found=false` outside the analyzed span (the §3.1 piece block is the record's own fields).
-> Consumers: NONE yet — DORMANT, the named consumer the SEAMS PART 2 dispatch (the re-plumbed notation consumers
-> behind the default-OFF switch). It composes only already-established parts; no inference, no new derivation.
+> Consumers: the record-arm branches of the re-plumbed notation seams — subsections (2)-(5) below (behind the
+> default-OFF flag; DORMANT on production until the switch). It composes only already-established parts; no inference,
+> no new derivation.
 > Coverage: `joint_producer_tests` (the producer core vs the parts-assembled record + a `decode_parity_ref` spot-check
 > on bwv324/bwv362; the score wrapper == `buildAdapterFacts` + core on `pb_chorale.mscx`; the null-score failure
 > path; the span-view overlap incl. span-splitting; the note-view boundary rule; the empty-span / out-of-span edge
@@ -127,9 +137,8 @@
 > The layer sections (L1–L6) below remain the accurate description of the LEGACY pipeline — still live on the
 > notation path, dormant-compiled on the batch path.
 
-> **SEAMS PART 2 — THE NOTATION CONSUMER RE-PLUMB + THE INFERENCE↔PRESENTATION BOUNDARY (as-built, behind the
-> default-OFF `useJointNotationRecord`; DORMANT on production — the legacy path is byte-identical with the flag
-> off).** The section layer's record path `analyzeSectionFromRecord` (`sectionrecordadapter`) derives the shared
+> **(2) The section adapter + the span-annotation consumer + the inference↔presentation boundary.**
+> The section layer's record path `analyzeSectionFromRecord` (`sectionrecordadapter`) derives the shared
 > `AnalyzedSection` from the record (1:1 segment→region) via the ONE record-segment→`ChordAnalysisResult` converter
 > `chordResultFromRecordSegment` (#6; the section layer and the presentation layer both read its result). The
 > span-path emitter's record arm (`emitHarmonicAnnotations`, `notationcomposingbridge`) writes, per region: the
@@ -149,8 +158,8 @@
 > on a perturbed include, both directions). No inference change on this path; the display renderings are the only
 > additions, and they are presentation.
 
-> **SEAMS PART 2 — THE IMPLODE + TUNING SPAN-SEAM CONSUMERS + THE EXPOSURE-BUCKET UNIFICATION (as-built, behind the
-> default-OFF `useJointNotationRecord`; DORMANT on production).** The last two span-seam consumers are re-plumbed
+> **(3) The implode + tuning span-seam consumers + the exposure-bucket unification.**
+> The last two span-seam consumers are re-plumbed
 > onto the record path. **The key-exposure BUCKET is unified (the P2a pattern completed):** the tentative/assertive
 > bucket the implode formerly re-thresholded at 0.5/0.8 is now a STORED per-arm result on `AnalyzedRegion`
 > (`keyExposureBucket`, 0=below-tentative / 1=tentative / 2=assertive), set ONCE at the section-layer set site beside
@@ -174,8 +183,8 @@
 > path (the record IS the surface, A2/#13 — no legacy fallback). Flag OFF → both paths byte-identical. **OI-182 EXECUTED
 > at the record surface** (the §4.1 presentation-gate disposition — every exposure/annotation constant's declared site).
 
-> **SEAMS PART 2 — THE NOTE-SEAM RE-PLUMB (status bar + harmony write + right-click menu) on `noteView` (as-built,
-> behind the default-OFF `useJointNotationRecord`; DORMANT on production).** The single-note surface
+> **(4) The note-seam re-plumb (status bar + harmony write + right-click menu) on `noteView`.**
+> The single-note surface
 > (`analyzeNoteHarmonicContext[Details]`, and through them `harmonicAnnotation`) gains its record arm at the ONE funnel
 > `analyzeHarmonicContextAtTick` (`notationcomposingbridge`): flag ON → `produceNotationRecord` (whole-score, once) →
 > `noteView(rec, tick)` → the ONE builder `buildNoteContextFromRecord` fills `NoteHarmonicContext` from the record's
@@ -196,13 +205,10 @@
 > (nothing written, no partial output, no legacy fallback — the record IS the surface, A2/#13). The bounded-window decode
 > cache is BYPASSED on the record arm (a whole-score produce per invocation, the P3a/P4 pattern; a record cache is a later
 > measured concern — the interactive-frequency cost is noted, not a structural incompatibility). Flag OFF → the legacy
-> expanding-window path byte-identical. **After this unit the whole audited note seam is dual-arm; what remains before the
-> switch: P6 (the dual-arm classified comparison over the FULL notation output surface — the switch-ratification evidence;
-> catalogue includes OI-201 + the applied-chord Nashville "?" convention) + P7 (doc-sync/close), then the user's switch
-> ratification.**
+> expanding-window path byte-identical. After this unit the whole audited note seam is dual-arm.
 
-> **SEAMS PART 2 — THE DUAL-ARM CLASSIFIED-COMPARISON INSTRUMENT (as-built; MEASUREMENT-ONLY, OPT-IN; the switch
-> evidence).** The §8.4 switch-ratification evidence: what the switch actually changes on the notation output surface,
+> **(5) The dual-arm classified-comparison instrument (measurement-only, opt-in; the switch evidence).**
+> The §8.4 switch-ratification evidence: what the switch actually changes on the notation output surface,
 > and why. A CAPTURE (`pipeline_snapshot_tests` `DISABLED_DualArmClassifiedCapture`, opt-in — the golden sweep and
 > byte-identity untouched) runs the FULL notation output surface TWICE per snapshot-corpus score over the 16-measure
 > window — arm "legacy" (`useJointNotationRecord` OFF) and arm "record" (ON) — and serializes both:
@@ -221,6 +227,19 @@
 > investigated to a mechanism before delivery, else a STOP). It emits `dualarm_classified_report.json` +
 > `dualarm_classified_summary.txt`. The instrument invents no value and bends nothing toward either arm — a difference
 > is CLASSIFIED, never patched.
+>
+> **(6) The dual path and the switch.** Until the switch this is the declared, bounded **#23** dual path: batch/corpus
+> output is A's (the OI-178 adoption); the in-app notation analysis is LEGACY, with the record path built beside it and
+> DORMANT behind the OFF flag. The seams partition (P0-P7) is closed out at HEAD and completeness-verified
+> (`tools/notation_seams/partition_completeness.json` — every consumer's record branch cited, every ruling checked,
+> every seams-era register row in state, the flag OFF everywhere, the three suites green; NO finding). **The switch is
+> a separate, user-ratified commit (§8.4)** that flips the flag default to ON, refreshes the pipeline-snapshot goldens
+> against the now-established record arm (cited preconditions: the P6 classified report + the OI-178 adoption record),
+> and moves the CLAUDE.md staged-scope block, STATUS, ARCHITECTURE, the register rows, and the handoff dual-path line
+> together. The legacy `ChordAnalysisResult`/`NoteHarmonicContext`/`HarmonicRegion` path and the per-arm legacy
+> branches then RETIRE on the **OI-180 retirement map** (post-switch); the post-switch agenda includes OI-193 (the
+> marginal-posterior completion), OI-194 (the ornament-label / voice-independent pedal-class publication), OI-203 (the
+> record-cache increment), and OI-201 (the aug-sixth display-symbol completeness gap).
 
 > **Living design document.** Read this AND STATUS.md at the start of every development
 > session. ARCHITECTURE.md contains stable design decisions. STATUS.md contains current

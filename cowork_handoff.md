@@ -344,6 +344,29 @@ report (identical / inference-driven / presentation-rule / input-scoping(→0 ex
 UNEXPLAINED→mechanism-or-STOP) — the §8.4 switch-ratification evidence. AFTER: P7, then the
 user's switch ratification (its commit a separate Cowork-written dispatch).
 
+**★ P6 DELIVERED AND COWORK-VERIFIED (2026-07-27; `f4a8bfdf1d`/`c7eafb777d`/`89412b48b2`,
+verified at the objects incl. the committed classified report).** OI-204 ✅ RESOLVED (the
+producer's `excludeStaves` input scoping at the fact adapter; empty-set byte-identity + the
+populated-chord-track exclusion proven both directions; the self-feedback hazard closed
+arm-for-arm). **THE SWITCH EVIDENCE EXISTS:** the dual-arm classified report
+(`tools/notation_seams/dualarm_classified_report.json`, deterministic capture sha256-proven) —
+**identical 2053 / inference-driven 6029 / presentation-rule 220 (every one rule-cited: C1 86,
+ordering 74, Nashville-"?" 52, §4.1 gates 5, pedal 3) / input-scoping 0 (as predicted) /
+UNEXPLAINED 0.** **THE ACTIVE DISPATCH is `cc_instruction_notation_p7.md`** — the partition
+close-out: read-only completeness verification (every consumer's record branch cited; every
+ruling grep-verified incl. the raw-gap rule; every seams-era row state checked; a gap =
+FINDING/STOP, repaired nowhere) + the ARCHITECTURE/STATUS consolidation. AFTER ITS REPORT:
+Cowork assembles the SWITCH decision surface (§8.4) for the user — the one ratified commit
+(flag default flips; goldens refresh with the P6 report + adoption record as cited
+preconditions; CLAUDE.md/STATUS/ARCHITECTURE/rows/handoff move together).
+
+**★ OI-205 ROWED (user-directed 2026-07-27, mid-P7; index row + detail file on disk, riding):**
+STATUS.md + ARCHITECTURE.md too large. Half (a) STATUS archive sweep = mechanical (the
+STATUS_ARCHIVE pattern), rides the switch's doc-sync or just after; half (b) ARCHITECTURE
+restructure = a design decision surface (candidate: the register split's index+satellite
+pattern), timed by the ratified restructure-once lesson — AFTER the OI-180 map's deletions
+settle, BEFORE the OI-198/199/200 reviews consume it.
+
 **★ REGISTER SPLIT DELIVERED (CC, 2026-07-26; dispatch `cc_instruction_open_items_split.md`).**
 The register is now the lean INDEX `OPEN_ITEMS.md` (the authoritative status surface, 200 rows,
 ~76 KB — the render problem is gone) + one verbatim detail file per item under `open_items/OI-<n>.md`

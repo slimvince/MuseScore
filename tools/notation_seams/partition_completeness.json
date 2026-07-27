@@ -1,0 +1,101 @@
+{
+  "title": "seams-2 partition close-out (unit P7) — completeness verification",
+  "purpose": "Read-only verification that the ratified P0-P7 notation-consumer re-plumb partition is COMPLETE at the code, the register, and the suites, so the switch ratification can be assembled on a verified-complete record. A gap found here is a FINDING/STOP for Cowork; this unit repairs nothing.",
+  "provenance": {
+    "dispatch": "cc_instruction_notation_p7.md (Cowork, 2026-07-27)",
+    "contract": "cowork_notation_output_contract.md (user-ratified 2026-07-26)",
+    "ratified_partition_and_amendments": "cc_instruction_notation_seams_2.md (REFERENCE ONLY: the ratified P0-P7 + amendments 1-6)",
+    "audit_roster": "tools/audit/notation_surface/consumption_fields.csv (75 consumed-field rows)",
+    "git_head": "89412b48b27e2cfe70254e5a2199d6c3c681958c",
+    "git_head_short": "89412b48b2",
+    "verified": "2026-07-27",
+    "note": "Every verdict below is a fact verified at the object cited (code file:line, the register INDEX row, or the captured test output). No number is transcribed from another document."
+  },
+  "partition_delivery": {
+    "P0_flag": { "commits": ["b090f6e4ab"], "status_commit": "685bde37d6" },
+    "P1_gap_scale_measurement": { "commits": ["ad0c4069bc"], "status_commit": "3c4b03fbd5" },
+    "P2a_assertive_exposure_gate_unification": { "commits": ["e3dac74b04"], "status_commit": "c19aec5369" },
+    "P2b_record_to_AnalyzedSection_adapter": { "commits": ["d25cf40170"], "status_commit": "3acc8e141c" },
+    "P3a_annotation_emitter_record_path": { "commits": ["e2c59715a5"], "status_commit": "cb246a7580" },
+    "P_strings_display_symbol_nashville_boundary_guard": { "commits": ["58ac88079b", "55ae163ef5", "b2c71fb6e3"] },
+    "P4_implode_tuning_bucket_OI182": { "commits": ["0e0ca379b3", "bb9e3c9811", "599eebd45e"] },
+    "note_seam_merged_P3b_P5": { "commits": ["874bda0ab6", "2d16899734", "903125a5dc"] },
+    "P6_OI204_and_dual_arm": { "commits": ["f4a8bfdf1d", "c7eafb777d", "89412b48b2"] },
+    "seams_part1_producer_reference": { "commits": ["6e71b3ceff"], "oi197": "c8c5bb6a25" }
+  },
+  "task1_1_consumer_record_arm_branches": {
+    "question": "Does every audited consumer (audit CSV roster) have its record-arm branch behind useJointNotationRecord? Cite the branch site per consumer.",
+    "verdict": "PASS",
+    "record_arm_branch_sites": [
+      "src/notation/internal/notationcomposingbridge.cpp:1491-1507  (span-seam annotation emitter — useRecord -> produceNotationRecord(excludeStaves) -> analyzeSectionFromRecord -> emitHarmonicAnnotations(&rec.record))",
+      "src/notation/internal/notationcomposingbridge.cpp:729-738    (note-seam funnel analyzeHarmonicContextAtTick — produceNotationRecord(excludeStaves) -> buildNoteContextFromRecord)",
+      "src/notation/internal/notationimplodebridge.cpp:1416-1432   (implode populateChordTrack — produceNotationRecord(excludeStaves) -> analyzeSectionFromRecord -> emitImplodedChordTrack(&rec.record))",
+      "src/notation/internal/notationtuningbridge.cpp:774-795       (tuning applyRegionTuning region path — produceNotationRecord(excludeStaves) -> analyzeSectionFromRecord -> HarmonicRegion loop)"
+    ],
+    "consumers": [
+      { "consumer": "composing bridge SPAN path (annotations / bracket markers / status-bar strings)", "csv_rows": "26-49 (analyzeSection / analyzeNoteHarmonicContext on notationcomposingbridge.cpp)", "record_branch": "notationcomposingbridge.cpp:1491 (emitHarmonicAnnotations arm)", "verdict": "PASS" },
+      { "consumer": "composing bridge NOTE path (single-note context; harmonicAnnotation)", "csv_rows": "35-37,40-44,48-49", "record_branch": "notationcomposingbridge.cpp:729 (analyzeHarmonicContextAtTick funnel; analyzeNoteHarmonicContext[Details]->analyzeHarmonicContextAtTick at :949/:964/:984/:988)", "verdict": "PASS" },
+      { "consumer": "implode bridge (chord-track write)", "csv_rows": "50-63 (notationimplodebridge.cpp)", "record_branch": "notationimplodebridge.cpp:1416", "verdict": "PASS" },
+      { "consumer": "tuning bridge (region + single-note)", "csv_rows": "64-68 (notationtuningbridge.cpp)", "record_branch": "notationtuningbridge.cpp:774 (region path); single-note path via analyzeNoteHarmonicContext at :190/:547 -> the note-seam funnel branch", "verdict": "PASS" },
+      { "consumer": "section layer + cadence/pivot (sectionanalyzer / sectioncadencedetection)", "csv_rows": "2-25", "record_branch": "the record path is analyzeSectionFromRecord (sectionrecordadapter.cpp:309), entered from the span-seam/implode/tuning record branches above; key-areas via the shared groupKeyAreas (sectionrecordadapter.cpp:360); cadence/pivot via the SHARED detectCadences/detectPivotChords over the record-derived regions reading the P2a-unified stored hasAssertiveExposure (notationcomposingbridge.cpp:1110/1346, notationimplodebridge.cpp:1318)", "verdict": "PASS" },
+      { "consumer": "interaction (notationinteraction harmony write)", "csv_rows": "69-70", "record_branch": "routes through analyzeNoteHarmonicContext (notationinteraction.cpp:8311) -> the note-seam funnel branch; NO consumer code change (renders via the shared P-strings formatters reading the carriage)", "verdict": "PASS" },
+      { "consumer": "context menu (notationcontextmenumodel)", "csv_rows": "71-75", "record_branch": "routes through analyzeNoteHarmonicContextDetails (notationcontextmenumodel.cpp:194) -> the note-seam funnel branch; NO consumer code change", "verdict": "PASS" },
+      { "consumer": "accessibility chain (notationaccessibility)", "csv_rows": "76", "record_branch": "routes through harmonicAnnotation (notationcomposingbridge.cpp:825 -> analyzeNoteHarmonicContextDetails -> the note-seam funnel branch); notationaccessibility.cpp:204 reads the formatted string downstream (string-only, no direct surface read)", "verdict": "PASS" }
+    ],
+    "findings": []
+  },
+  "task1_2_ratified_rulings": {
+    "question": "Is every ratified ruling of the increment implemented or explicitly carried?",
+    "verdict": "PASS",
+    "rulings": [
+      { "ruling": "raw-gap rule (amendment 1): the record arm carries the RAW §3.3 key-axis gap in nats; NO [0,1] remap anywhere", "evidence": "sectionrecordadapter.cpp:293 kmr.normalizedConfidence = gap.value_or(0.0) (raw); the only 0.5/0.8 tokens in the file are in the correspondence COMMENTS (lines 61-77,286-299), never applied to the gap; grep for sigmoid|logistic|normaliz|remap in sectionrecordadapter.cpp returns only comment lines asserting the absence", "verdict": "PASS" },
+      { "ruling": "C1 two-mode display (no 21-value mode on the record arm)", "evidence": "twoModeOf(seg.isMajor) at sectionrecordadapter.cpp:215,262,290; the implode exotic-mode enumeration + the 0.35 mode-suffix gate are legacy-arm-only, inert on the record arm by two-mode construction (notationimplodebridge.cpp:844-854)", "verdict": "PASS" },
+      { "ruling": "D2 grading/display split: the record's chordSymbol is the GRADING form; the DISPLAY symbol is a presentation derivation via the shared ChordSymbolFormatter", "evidence": "chordResultFromRecordSegment (sectionrecordadapter.cpp:234) carries the committed reading + the seventh-ness extension (line 254 seventhExtensionFromJointQuality); the emitters render the display symbol via ChordSymbolFormatter::formatSymbol through formatChordResultForStatusBar (notationcomposingbridge.cpp / notationimplodebridge.cpp record arms); the grading-form string stays on the record for batch/a8 continuity", "verdict": "PASS" },
+      { "ruling": "Nashville presentation path (one shared formatNashvilleNumber, no second formatter)", "evidence": "the record arm renders Nashville via the shared formatNashvilleNumber (composing formatter); no jointRenderNashville exists (#6)", "verdict": "PASS" },
+      { "ruling": "pedal suspension (OI-194): isPedalPoint stays false on the record arm; OI-194 comment at the sites", "evidence": "sectionrecordadapter.cpp:255-256 (id.isPedalPoint stays false, OI-194 comment); the note-seam builder keeps pedal false/-1 (OI-194); the 'X ped.' StaffText never fires on the record arm", "verdict": "PASS" },
+      { "ruling": "§4.1 constants at their declared sites (the two gap constants + the retired 0.35 + the re-homed 960)", "evidence": "kAssertiveKeyExposureGap=1.055757 (sectionrecordadapter.cpp:69, cited to exposure_constants.json 0.8-row), kTentativeKeyExposureGap=0.975911 (sectionrecordadapter.cpp:79, cited to the 0.5-row); the 0.35 mode-suffix gate is RETIRED on the record path (no kModeSuffixGap constant exists; g0.35=0.649691 lives only in exposure_constants.json, unwired); kSameChordReannotationGap=2*480=960 re-homed as a declared presentation-timing constant (notationimplodebridge.cpp:94,670-676)", "verdict": "PASS" },
+      { "ruling": "boundary guard present and green (permanent mechanical include-closure, both directions)", "evidence": "src/composing/tests/inference_presentation_boundary_tests.cpp (glob analysis/joint/ includes NO presentation formatter; chordsymbolformatter.cpp includes NO joint inference internal; negative control both ways); part of composing_tests (1186 GREEN)", "verdict": "PASS" }
+    ],
+    "findings": []
+  },
+  "task1_3_register_row_states": {
+    "question": "Is every seams-era register row in its correct state? (the INDEX OPEN_ITEMS.md is the authority; fix nothing, report any mismatch as a FINDING)",
+    "verdict": "PASS",
+    "register_living_check": "tools/open_items_split_check.py living mode: index=204 detail=204 baseline=200 post-baseline=4 -> OVERALL PASS at verification (bijection holds, no detail file carries a status of its own, all 200 original items byte-verbatim); report open_items/register_check.json. NOTE: OI-205 (a concurrent user-directed doc-structure row about STATUS/ARCHITECTURE size — NOT a seams-era row) was rowed by Cowork mid-P7 and rides this commit via the handoff; the committed register is 205/205 (post-baseline 5), living-check re-run OVERALL PASS.",
+    "rows": [
+      { "id": "OI-182", "expected": "EXECUTED", "index_state": "EXECUTED AT THE RECORD SURFACE 2026-07-27 (seams-2 P4, §4.1)", "verdict": "PASS" },
+      { "id": "OI-195", "expected": "RESOLVED", "index_state": "RESOLVED 2026-07-26 (4565830c82)", "verdict": "PASS" },
+      { "id": "OI-197", "expected": "RESOLVED", "index_state": "RESOLVED 2026-07-27 (--joint-spelling-parity; switch precondition discharged)", "verdict": "PASS" },
+      { "id": "OI-202", "expected": "RESOLVED", "index_state": "RESOLVED 2026-07-27 (seams-2 note-seam Task 1; living split-check mode)", "verdict": "PASS" },
+      { "id": "OI-204", "expected": "RESOLVED", "index_state": "RESOLVED 2026-07-27 (seams-2 P6 Task 1; the producer excludeStaves input-scoping)", "verdict": "PASS" },
+      { "id": "OI-196", "expected": "OPEN with carried disposition", "index_state": "OPEN — a bounded interim duplicate; retires at OI-180 map item 2 (the legacy key-analyzer retirement)", "verdict": "PASS" },
+      { "id": "OI-201", "expected": "OPEN with carried disposition", "index_state": "OPEN — CC-found 2026-07-27; presentation-completeness gap declared to Cowork; catalogued at P6 dual-arm; resolve at its #8-correct stage, never a knob-turn", "verdict": "PASS" },
+      { "id": "OI-203", "expected": "OPEN with carried disposition", "index_state": "OPEN — Cowork-rowed 2026-07-27; NOT a switch blocker (correctness unaffected; product unshipped); the record-cache increment is measured-then-built post-switch", "verdict": "PASS" },
+      { "id": "OI-193", "expected": "OPEN (post-switch/increment work)", "index_state": "OPEN — a named step of the notation-layer adoption increment (the marginal posterior completion; oracle must be positively established before publication)", "verdict": "PASS" },
+      { "id": "OI-194", "expected": "OPEN (post-switch work)", "index_state": "OPEN — its own increment after the notation switch (the ornament-label publication incl. the voice-independent pedal-point class)", "verdict": "PASS" }
+    ],
+    "findings": []
+  },
+  "task1_4_flag_default_and_suites": {
+    "question": "Is the flag default OFF everywhere (the switch has NOT happened) and are the three suites + 13 snapshot tests green at HEAD?",
+    "verdict": "PASS",
+    "flag_default_off": {
+      "getter": "src/composing/composingconfiguration.cpp:591 useJointNotationRecord() -> settings()->value(USE_JOINT_NOTATION_RECORD).toBool()",
+      "registered_default": "src/composing/composingconfiguration.cpp:175 setDefaultValue(USE_JOINT_NOTATION_RECORD, Val(false))",
+      "no_settings_ui": "no QML / settings-UI reader of useJointNotationRecord (grep over the tree: only the interface header, the config impl, the four bridge branch sites, the adapter/CMake comments, and the tests)",
+      "verdict": "PASS"
+    },
+    "suites_at_head": {
+      "build": "setup_and_build.bat -> ninja: no work to do (binaries current at HEAD; this unit changes no code)",
+      "composing_tests": { "ran": 1186, "passed": 1186, "disabled": 2, "verdict": "PASS" },
+      "notation_tests": { "ran": 65, "passed": 61, "skipped": 4, "verdict": "PASS", "note": "61 passing == the P6 baseline; the 4 SKIPPED are the by-design GTEST_SKIP behavior-snapshot tests" },
+      "pipeline_snapshot_tests": { "ran": 14, "passed": 13, "skipped_or_disabled_reported": 1, "verdict": "PASS", "note": "13 goldens/tests GREEN == the P6 baseline; DualArmClassifiedCapture + SeamsGapMeasurement are opt-in DISABLED_" }
+    },
+    "findings": []
+  },
+  "overall": {
+    "verdict": "COMPLETE — PASS",
+    "findings_total": 0,
+    "statement": "The ratified P0-P7 notation-consumer re-plumb partition is COMPLETE and verified at the code, the register, and the suites. Every audited consumer has its record-arm branch behind the default-OFF useJointNotationRecord; every ratified ruling is implemented or explicitly carried; every seams-era register row is in its correct state (the INDEX is the authority; the living split-check passes); the flag default is OFF everywhere (the switch has NOT happened) and composing 1186 / notation 61 / pipeline-snapshot 13 are green at HEAD 89412b48b2. NO gap found -> NO FINDING/STOP. The dual path is the declared, bounded #23 migration posture awaiting the user's switch ratification (§8.4); the switch scope (flag default flip + goldens refresh against the established record + docs/rows) is a separate, Cowork-written, user-ratified commit."
+  }
+}
