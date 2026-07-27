@@ -1237,6 +1237,105 @@ TEST(SectionRecordAdapterAnnotation, RecordArmEmitsRecordDerivedStrings)
     EXPECT_GT(checkedSymbols, 0) << "the record-arm emitter wrote no display chord symbols";
 }
 
+// ── Seams part 2, P4 — the IMPLODE chord-track RECORD path ───────────────────
+//
+// With useJointNotationRecord ON, populateChordTrack derives the AnalyzedSection from the joint
+// notation record (analyzeSectionFromRecord) and runs the SAME implode emitter with the record-arm
+// specifics: the DISPLAY chord symbol on the treble track via the shared presentation formatter
+// (STANDARD Harmony — no grading-form token leaks), and the Roman numeral on the bass track as the
+// record's PUBLISHED romanNumeral (ROMAN Harmony, literal round-trip; equal to noteView(record,
+// tick).romanNumeral — a fact, not re-formatted from ChordIdentity). Structural + golden-less (the
+// P3a precedent); flag-OFF byte-identity is the existing implode goldens. Restores the flag + the
+// chord-staff config before returning.
+TEST(ImplodeRecordArm, RecordArmEmitsRecordDerivedChordTrack)
+{
+    auto cfg = muse::modularity::globalIoc()->resolve<
+        mu::composing::IComposingAnalysisConfiguration>("composing");
+    ASSERT_TRUE(cfg) << "IComposingAnalysisConfiguration not registered";
+    auto chordStaffCfg = muse::modularity::globalIoc()->resolve<
+        mu::composing::IComposingChordStaffConfiguration>("composing");
+    ASSERT_TRUE(chordStaffCfg) << "IComposingChordStaffConfiguration not registered";
+
+    cfg->setUseRegionalAccumulation(true);
+    cfg->setUseJointNotationRecord(true);                 // ← the record arm under test
+    chordStaffCfg->setChordStaffWriteChordSymbols(true);
+    chordStaffCfg->setChordStaffFunctionNotation("roman");
+    chordStaffCfg->setChordStaffWriteKeyAnnotations(false);
+    chordStaffCfg->setChordStaffHighlightNonDiatonic(false);
+    chordStaffCfg->setChordStaffWriteCadenceMarkers(false);
+
+    int checkedScores = 0;
+    int checkedRomans = 0;
+    int checkedSymbols = 0;
+
+    // Two representative chorales (each pays two whole-score decodes — the test's own + the emitter's
+    // internal one), so the subset is kept small to bound the default-sweep runtime.
+    for (int ci = 0; ci < 2; ++ci) {
+        const CorpusEntry& entry = kCorpus[ci];
+        const QString scorePath = corpusPath(entry);
+        ASSERT_TRUE(QFileInfo::exists(scorePath)) << "missing: " << scorePath.toStdString();
+        MasterScore* score = ScoreRW::readScore(muse::String::fromQString(scorePath),
+                                                 /*isAbsolutePath=*/true);
+        ASSERT_TRUE(score) << "load failed: " << entry.id;
+
+        const Fraction endTick = endTickForMeasureCap(score, kMaxAnalysisMeasures);
+        const auto rec = produceNotationRecord(score, std::string(entry.id));
+        if (!rec.ok || score->nstaves() == 0) {
+            delete score;
+            continue;
+        }
+
+        const staff_idx_t trebleStaffIdx = appendChordTrackStaffPair(score);
+        const track_idx_t trebleTrack = trebleStaffIdx * VOICES;
+        const track_idx_t bassTrack   = (trebleStaffIdx + 1) * VOICES;
+
+        score->startCmd(muse::TranslatableString::untranslatable("pipeline_snapshot_tests implode record arm"));
+        const bool ok = mu::notation::populateChordTrack(score, Fraction(0, 1), endTick, trebleStaffIdx);
+        score->endCmd();
+        ASSERT_TRUE(ok) << entry.id << " (record-arm populateChordTrack wrote nothing)";
+
+        for (Segment* seg = score->firstSegment(SegmentType::ChordRest);
+             seg && seg->tick() < endTick;
+             seg = seg->next1(SegmentType::ChordRest)) {
+            const int tick = seg->tick().ticks();
+            for (mu::engraving::EngravingItem* ann : seg->annotations()) {
+                if (!ann || !ann->isHarmony()) {
+                    continue;
+                }
+                const track_idx_t t = ann->track();
+                if (t != trebleTrack && t != bassTrack) {
+                    continue;                                // only the appended chord-track staves
+                }
+                const std::string text = toHarmony(ann)->harmonyName().toQString().toStdString();
+                if (ann->isHarmony() && toHarmony(ann)->harmonyType() == HarmonyType::ROMAN) {
+                    // the Roman is the record's PUBLISHED numeral at this tick
+                    const RecordSegment* rs = mu::composing::analysis::joint::noteView(rec.record, tick).segment;
+                    ASSERT_NE(rs, nullptr) << entry.id << " @ " << tick << " (a written Roman with no record segment)";
+                    EXPECT_EQ(text, rs->romanNumeral) << entry.id << " @ " << tick << " (record-derived Roman)";
+                    ++checkedRomans;
+                } else if (toHarmony(ann)->harmonyType() == HarmonyType::STANDARD) {
+                    // the DISPLAY form: no grading-only quality token leaks through
+                    for (const char* tok : { "Dom", "HalfDim", "AugSixth", "Neapolitan" }) {
+                        EXPECT_EQ(text.find(tok), std::string::npos)
+                            << entry.id << " @ " << tick << ": a grading-form token in a display chord symbol (\"" << text << "\")";
+                    }
+                    ++checkedSymbols;
+                }
+            }
+        }
+
+        ++checkedScores;
+        delete score;
+    }
+
+    cfg->setUseJointNotationRecord(false);               // restore before the rest of the suite runs
+    configureChordStaffForSnapshot();                    // restore the deterministic snapshot config
+
+    EXPECT_GT(checkedScores, 0) << "no corpus score produced a record";
+    EXPECT_GT(checkedRomans, 0) << "the record-arm implode wrote no record-derived Romans";
+    EXPECT_GT(checkedSymbols, 0) << "the record-arm implode wrote no display chord symbols";
+}
+
 // ── P3 status-bar performance baseline (Stage 2.5) ───────────────────────────
 //
 // Roadmap item 2.5 — capture the cost of the P3 status-bar query path

@@ -34,6 +34,10 @@ class Score;
 class Fraction;
 }
 
+namespace mu::composing::analysis::joint {
+struct NotationRecord;
+}
+
 namespace mu::notation {
 
 /// Populate a grand-staff instrument with a harmonic reduction of the score.
@@ -62,6 +66,14 @@ bool populateChordTrack(
 /// in Phase 4+) should call this directly instead of going through
 /// `populateChordTrack`.
 ///
+/// `record` (default null) selects the RECORD ARM (seams part 2): when non-null,
+/// the section was derived from the joint notation record and this emitter takes
+/// the record-arm specifics — the Roman numeral is the record's PUBLISHED
+/// `romanNumeral` fact (looked up per region via `noteView`, NOT re-formatted from
+/// `ChordIdentity`); a rootless chromatic class writes no chord symbol (matching
+/// the batch rootless ""); the borrowed-key source-key search is restricted to the
+/// C1 two modes (Ionian/Aeolian). When null the legacy arm runs byte-identically.
+///
 /// @return true if any content was written.
 bool emitImplodedChordTrack(
     mu::engraving::Score* score,
@@ -69,6 +81,7 @@ bool emitImplodedChordTrack(
     const mu::engraving::Fraction& startTick,
     const mu::engraving::Fraction& endTick,
     mu::engraving::staff_idx_t trebleStaffIdx,
-    bool useCollectedTones = false);
+    bool useCollectedTones = false,
+    const mu::composing::analysis::joint::NotationRecord* record = nullptr);
 
 } // namespace mu::notation

@@ -59,7 +59,11 @@
 #include "composing/analysis/region/harmonicrhythm.h"
 #include "composing/analysis/key/keymodeanalyzer.h"
 #include "composing/analysis/section/sectionanalyzer.h"
+#include "composing/analysis/section/sectionrecordadapter.h"   // analyzeSectionFromRecord (record path)
+#include "composing/analysis/joint/jointnotationproducer.h"    // produceNotationRecord / noteView
+#include "composing/analysis/joint/jointnotationrecord.h"      // NotationRecord / RecordSegment
 #include "composing/icomposingchordstaffconfiguration.h"
+#include "composing/icomposinganalysisconfiguration.h"         // useJointNotationRecord (record path flag)
 #include "modularity/ioc.h"
 
 #include "notationanalysisinternal.h"
@@ -82,11 +86,24 @@ using mu::composing::analysis::keyModeScaleIntervals;
 // `bucket == 2` == assertive. The 0.5/0.8 literals now live at the legacy set site
 // (sectionanalyzer.cpp::legacyKeyExposureBucket), legacy-arm-only, retiring with the legacy path.
 
+// A declared PRESENTATION-TIMING constant (OI-182): the chord-track coalescer keeps consecutive
+// same-chord sub-regions as one annotation UNLESS a re-annotation is ≥ this many ticks (2 quarter
+// notes = 2 × Constants::DIVISION) past the previous one — re-annotating a chord at the second
+// half-measure when the melody restarts over a sustained bass. It decides annotation TIMING, not
+// inference; unchanged in role across both arms (a re-home, not a re-tune).
+constexpr int kSameChordReannotationGap = 2 * 480; // 2 × Constants::DIVISION
+
 double ticksToQuarterNoteBeats(int ticks)
 {
     return static_cast<double>(ticks) / static_cast<double>(mu::engraving::Constants::DIVISION);
 }
 
+// LEGACY-ARM-ONLY behaviour: below the mode-suffix confidence threshold, an exotic mode's own suffix
+// (e.g. "Dorian") falls back to its parent two-mode suffix ("major"/"minor"). On the RECORD ARM the
+// region mode is ALWAYS Ionian/Aeolian by construction (C1), so keyModeSuffix(mode) == this fallback and
+// the mode-suffix gate is INERT — the exotic-suffix branch cannot fire, and the 0.35 mode-suffix gate is
+// unwired there (its measured constant stays recorded in exposure_constants.json, OI-182 disposition C1).
+// The published modal reading (§3.4) is the successor fact; this fallback retires with the legacy path.
 const char* fallbackModeSuffix(mu::composing::analysis::KeySigMode mode)
 {
     return mu::composing::analysis::keyModeIsMajor(mode)
@@ -524,11 +541,17 @@ bool emitImplodedChordTrack(
     const mu::engraving::Fraction& startTick,
     const mu::engraving::Fraction& endTick,
     mu::engraving::staff_idx_t trebleStaffIdx,
-    bool useCollectedTones)
+    bool useCollectedTones,
+    const mu::composing::analysis::joint::NotationRecord* record)
 {
     using namespace mu::engraving;
-    using namespace mu::composing::analysis;
+    using namespace mu::composing::analysis;   // makes the nested `joint::` namespace visible too
     using mu::composing::analysis::KeySigMode;  // disambiguate from mu::engraving::KeyMode
+
+    // record != nullptr selects the RECORD ARM (seams part 2): the Roman is the record's published
+    // fact, a rootless class writes no symbol, and the borrowed-key search is C1 two-mode. Null on the
+    // legacy arm, where every record-arm branch below is inert -> byte-identical.
+    const bool recordArm = (record != nullptr);
 
     if (!score || endTick <= startTick) {
         return false;
@@ -644,7 +667,7 @@ bool emitImplodedChordTrack(
     // while still merging eighth-note sub-regions and the first beat following a
     // harmonic annotation (gap < 2 beats).
     {
-        constexpr int kSameChordReannotationGap = 2 * 480; // 2 × Constants::DIVISION
+        // kSameChordReannotationGap: the declared presentation-timing constant (OI-182), namespace-scope.
         std::vector<AnalyzedRegion> merged;
         merged.reserve(regions.size());
         for (auto& r : regions) {
@@ -1133,10 +1156,16 @@ bool emitImplodedChordTrack(
             continue;
         }
 
-        // Chord symbol above treble.
+        // Chord symbol above treble — the DISPLAY form via the shared presentation formatter
+        // (ChordSymbolFormatter::formatSymbol, the P-strings path; the record arm's chordResult carries
+        // the fine class quality's seventh-ness, so this renders "G7"/"Am7"/"Bdim7"). On the record arm
+        // a rootless chromatic class (rootPc < 0, e.g. an augmented-sixth) writes NO symbol — matching
+        // the batch rootless "" (jointChordSymbol) and the P3a annotation emitter; the legacy arm always
+        // has rootPc >= 0, so the guard is inert there (byte-identical).
         const bool writeChordSymbols = !prefs || prefs->chordStaffWriteChordSymbols();
         const ChordSymbolFormatter::Options fmtOpts{ scoreNoteSpelling(score) };
-        const std::string symText = (writeChordSymbols && passesMinimumDisplayDuration)
+        const std::string symText = (writeChordSymbols && passesMinimumDisplayDuration
+                                     && (!recordArm || chord.identity.rootPc >= 0))
             ? sanitizeChordTrackSymbolForHarmonyRenderer(
                 ChordSymbolFormatter::formatSymbol(chord, localKeyFifths, fmtOpts))
             : "";
@@ -1155,19 +1184,32 @@ bool emitImplodedChordTrack(
         const std::string fnKey = prefs ? prefs->chordStaffFunctionNotation() : "roman";
         if (fnKey != "none" && passesMinimumDisplayDuration) {
             const bool useNashville = (fnKey == "nashville");
-            std::string fnText = useNashville
-                ? ChordSymbolFormatter::formatNashvilleNumber(chord, localKeyFifths)
-                : ChordSymbolFormatter::formatRomanNumeral(chord);
-            // Chord-track fallback: if the standard formatter produced empty text because
-            // the chord quality is Unknown (e.g. lone tonic/dominant in Aeolian), force-assign
-            // the diatonic quality for the degree and retry.  This is intentionally more
-            // aggressive than the status-bar refinement — users want every annotated
-            // region on the chord staff to show a Roman numeral.
-            if (fnText.empty() && !useNashville && chord.function.degree >= 0 && chord.function.degree <= 6) {
-                auto refinedChord = chord;
-                mu::notation::internal::forceChordTrackQualityFromKeyContext(refinedChord, localMode);
-                if (refinedChord.identity.quality != mu::composing::analysis::ChordQuality::Unknown) {
-                    fnText = ChordSymbolFormatter::formatRomanNumeral(refinedChord);
+            std::string fnText;
+            if (useNashville) {
+                // Nashville is a PRESENTATION derivation on BOTH arms (formatNashvilleNumber on the
+                // reading — the P-strings path; on the record arm the derived chordResult).
+                fnText = ChordSymbolFormatter::formatNashvilleNumber(chord, localKeyFifths);
+            } else if (recordArm) {
+                // Record arm: the Roman is the record's PUBLISHED numeral (a fact, NOT re-formatted from
+                // ChordIdentity — the jointRender form, §5.6/A2), looked up by the region's start tick.
+                // The legacy Unknown-quality refinement does not apply (the record's numeral is
+                // authoritative); the record's committed-key numeral, no legacy area re-contextualization.
+                if (const joint::RecordSegment* rs = joint::noteView(*record, region.startTick).segment) {
+                    fnText = rs->romanNumeral;
+                }
+            } else {
+                fnText = ChordSymbolFormatter::formatRomanNumeral(chord);
+                // Chord-track fallback (legacy): if the standard formatter produced empty text because
+                // the chord quality is Unknown (e.g. lone tonic/dominant in Aeolian), force-assign
+                // the diatonic quality for the degree and retry.  This is intentionally more
+                // aggressive than the status-bar refinement — users want every annotated
+                // region on the chord staff to show a Roman numeral.
+                if (fnText.empty() && chord.function.degree >= 0 && chord.function.degree <= 6) {
+                    auto refinedChord = chord;
+                    mu::notation::internal::forceChordTrackQualityFromKeyContext(refinedChord, localMode);
+                    if (refinedChord.identity.quality != mu::composing::analysis::ChordQuality::Unknown) {
+                        fnText = ChordSymbolFormatter::formatRomanNumeral(refinedChord);
+                    }
                 }
             }
             if (!fnText.empty()) {
@@ -1217,6 +1259,12 @@ bool emitImplodedChordTrack(
                 }
                 const int ionianPc = ((candidateFifths * 7) % 12 + 12) % 12;
                 for (size_t mi = 0; mi < KEY_MODE_COUNT; ++mi) {
+                    // Record arm (C1): the source key is a two-mode key — only Ionian (0) / Aeolian (5).
+                    // The exotic-mode enumeration is legacy-arm only (retires with the legacy path; the
+                    // published modal reading is the successor fact). Inert on the legacy arm.
+                    if (recordArm && mi != 0 && mi != 5) {
+                        continue;
+                    }
                     const KeySigMode candidateMode = keyModeFromIndex(mi);
                     const int tonicPc = (ionianPc + keyModeTonicOffset(candidateMode)) % 12;
                     const auto& candidateScale = keyModeScaleIntervals(candidateMode);
@@ -1356,6 +1404,28 @@ bool populateChordTrack(
         static_cast<size_t>(trebleStaffIdx),
         static_cast<size_t>(bassStaffIdx)
     };
+
+    // Record path (default OFF, useJointNotationRecord): derive the AnalyzedSection from the joint
+    // estimator's whole-score notation record (analyzeSectionFromRecord — the P3a pattern) instead of
+    // the legacy Pass-0 stream, then run the SAME implode emitter with the record-arm specifics
+    // (Roman = published fact, rootless symbol suppressed, two-mode source keys). A produce failure
+    // writes NOTHING (the record IS the surface, A2 — no legacy fallback, #13). Flag OFF -> the legacy
+    // path below runs byte-identically.
+    static muse::GlobalInject<mu::composing::IComposingAnalysisConfiguration> analysisConfig;
+    const mu::composing::IComposingAnalysisConfiguration* analysisPrefs = analysisConfig.get().get();
+    if (analysisPrefs && analysisPrefs->useJointNotationRecord()) {
+        const auto rec = mu::composing::analysis::joint::produceNotationRecord(score, std::string());
+        if (!rec.ok) {
+            return false;
+        }
+        const auto section = mu::composing::analysis::analyzeSectionFromRecord(
+            score, startTick, endTick, excludeStaves, rec.record);
+        if (section.regions.empty()) {
+            return false;
+        }
+        return emitImplodedChordTrack(score, section, startTick, endTick,
+                                       trebleStaffIdx, useCollectedTones, &rec.record);
+    }
 
     const auto rawRegions = mu::notation::analyzeHarmonicRhythm(
         score, startTick, endTick, excludeStaves,
