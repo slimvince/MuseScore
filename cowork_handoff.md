@@ -273,6 +273,18 @@ boolean/bucket, ONE thresholding site per gate (#6), legacy byte-identity proven
 (2) the 0.35 mode-suffix gate is NOT re-declared on the record path — it RETIRES under C1 at
 P4 (the measured g₀.₃₅ stays in the artifact as record, unwired). CC resumes at P2 (the
 record→AnalyzedSection adapter) from HEAD `3c4b03fbd5`.
+
+**★ P2a DELIVERED AND COWORK-VERIFIED (2026-07-26; `e3dac74b04` + STATUS `c19aec5369`, verified
+at the objects — the detectors read the stored `hasAssertiveExposure`, set-once comments in
+place).** The amendment-2(1) gate unification landed byte-identical (suites 1174/53/11, no
+golden): cadence/pivot detectors + key-area grouping read the section layer's stored per-arm
+boolean; `hasAssertiveKeyConfidence` is the single legacy thresholding site. **Amendment 3
+(Cowork):** CC's routing of the implode 0.5/0.8 BUCKET unification to P4 is RATIFIED (its only
+consumer re-plumbs there; earlier would create an undeclared dormancy). CC resumes at **P2b**
+(the record→`AnalyzedSection` adapter, dead code, unit-tested via `produceNotationRecord`) from
+HEAD `c19aec5369`, with the raw-gap rule binding and the layering reminder: tones re-collection
+is composing-side against the L1 note surface, never the notation-side collector (#7). Then
+P3 → P4 (bucket + OI-182) → P5 → P6 → P7.
 **THEN the agenda is the retirement map + refinements, each its own later dispatch, in no forced
 order but all on the register:** the legacy retirements (the map's six items on the gates doc);
 the presentation-layer publications that are PART of the ratified record and must not drop (the
