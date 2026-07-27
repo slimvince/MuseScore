@@ -74,9 +74,21 @@ std::vector<CadenceMarker> detectCadences(
 
     // ── PAC / PC / DC ───────────────────────────────────────────────────────
     // Examine consecutive pairs (i, i+1) where i is inside the selection.
+    //
+    // Assertive-exposure gate: read the STORED per-region AnalyzedRegion::
+    // hasAssertiveExposure — set ONCE, per arm, by the section layer (legacy:
+    // hasAssertiveKeyConfidence(keyModeResult) = normalizedConfidence >= 0.8;
+    // record: the §3.3 key-axis gap >= the P1 assertive constant g0.8, from
+    // tools/notation_seams/exposure_constants.json). ONE thresholding site per
+    // gate (#6 — the confidence-axis analogue of the OI-173 one-definition
+    // lesson): the detector never re-thresholds the confidence field, which on
+    // the record path carries a nats gap, not a [0,1] confidence. Byte-identical
+    // on the legacy arm — every region reaching a detector comes (directly or via
+    // whole-region copies) from analyzeSection, so hasAssertiveExposure ==
+    // hasAssertiveKeyConfidence(keyModeResult) holds by construction.
     for (size_t i = 0; i + 1 < total && i < n; ++i) {
-        if (!hasAssertiveKeyConfidence(regions[i].keyModeResult)
-            || !hasAssertiveKeyConfidence(regions[i + 1].keyModeResult)) {
+        if (!regions[i].hasAssertiveExposure
+            || !regions[i + 1].hasAssertiveExposure) {
             continue;
         }
 
@@ -127,7 +139,7 @@ std::vector<CadenceMarker> detectCadences(
 
     // ── Half cadence ────────────────────────────────────────────────────────
     // Last in-selection region is degree 4 (dominant arrival).
-    if (hasAssertiveKeyConfidence(regions[n - 1].keyModeResult)
+    if (regions[n - 1].hasAssertiveExposure
         && regions[n - 1].chordResult.function.degree == 4) {
         const int hcTick = regions[n - 1].startTick;
         // Do not emit HC if another cadence label already occupies this tick.
@@ -172,7 +184,7 @@ std::vector<PivotLabel> detectPivotChords(
 
     for (size_t i = 0; i < total; ++i) {
         const auto& km = regions[i].keyModeResult;
-        if (!hasAssertiveKeyConfidence(km)) {
+        if (!regions[i].hasAssertiveExposure) {   // stored per-arm gate (see detectCadences)
             continue;
         }
         if (prevFifths == std::numeric_limits<int>::min()) {
@@ -200,7 +212,7 @@ std::vector<PivotLabel> detectPivotChords(
                                           total);
         for (size_t k = tr.boundaryIdx + 1; k < searchEnd; ++k) {
             const auto& km = regions[k].keyModeResult;
-            if (hasAssertiveKeyConfidence(km)
+            if (regions[k].hasAssertiveExposure   // stored per-arm gate (see detectCadences)
                 && km.keySignatureFifths == tr.newFifths
                 && km.mode == tr.newMode) {
                 confirmed = true;

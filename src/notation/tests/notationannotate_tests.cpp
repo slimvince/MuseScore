@@ -75,6 +75,11 @@ AnalyzedRegion region(int startTick, int endTick,
     r.endTick = endTick;
     r.chordResult = chord;
     r.keyModeResult = km;
+    // The cadence/pivot detectors read the STORED hasAssertiveExposure boolean
+    // (the gate unification — one thresholding site). Set it here exactly as
+    // analyzeSection does (hasAssertiveKeyConfidence(km) = confidence >= 0.8), so
+    // these fixtures exercise the detector logic identically.
+    r.hasAssertiveExposure = hasAssertiveKeyConfidence(km);
     return r;
 }
 

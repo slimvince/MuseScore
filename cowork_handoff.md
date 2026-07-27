@@ -260,6 +260,19 @@ vs legacy template score) is an EXPECTED inference-driven difference for P6's cl
 never to be bent toward legacy. The re-plumb checklist confirmed NO record gap beyond the
 three known ones (ranked-list assembly at P2; the P1 constants; the pedal suspension as ruled).
 CC resumes at P1 from HEAD `685bde37d6`.
+
+**★ P1 DELIVERED AND COWORK-VERIFIED (2026-07-26; `ad0c4069bc` + STATUS `3c4b03fbd5`, verified
+at the objects — the committed `tools/notation_seams/exposure_constants.json` matches the report
+to the digit).** The §4.1 constants, measured by duration-weighted (segmentation-invariant) rate
+correspondence over the snapshot corpus: 0.35→g 0.6497 (residual 0.0051), 0.50→g 0.9759
+(0.0023), 0.80→g 1.0558 (0.0010); count rates reported beside, not selected on; raw-gap rule
+held ("no [0,1] remap" in the provenance). Production untouched; measurement is a DISABLED_
+opt-in test + tools; goldens green. **Two Cowork dispositions pinned as dispatch amendment 2:**
+(1) CC's gate unification RATIFIED for P2 — detectors read the section layer's per-arm stored
+boolean/bucket, ONE thresholding site per gate (#6), legacy byte-identity proven per commit;
+(2) the 0.35 mode-suffix gate is NOT re-declared on the record path — it RETIRES under C1 at
+P4 (the measured g₀.₃₅ stays in the artifact as record, unwired). CC resumes at P2 (the
+record→AnalyzedSection adapter) from HEAD `3c4b03fbd5`.
 **THEN the agenda is the retirement map + refinements, each its own later dispatch, in no forced
 order but all on the register:** the legacy retirements (the map's six items on the gates doc);
 the presentation-layer publications that are PART of the ratified record and must not drop (the

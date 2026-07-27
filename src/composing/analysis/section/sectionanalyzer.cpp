@@ -737,12 +737,15 @@ analyzeSection(const mu::engraving::Score* sc,
     //
     // A new KeyArea opens at the first region, then only when:
     //   (a) the region's (keyFifths, mode) differs from the enclosing area, AND
-    //   (b) the region's normalizedConfidence >= kAnnotateKeyConfidenceThreshold (0.8).
-    // (b) reads the emission sigmoid as an INTERNAL gate input — the sigmoid's declared
-    // role (confidence contract §3 / D-L3a); it is NOT the Layer-3 boundary confidence
-    // (the sequence margin). Gate input + constant unchanged by the close-out.
+    //   (b) the region is assertively exposed.
+    // (b) reads the STORED per-region hasAssertiveExposure boolean (set just above
+    // from hasAssertiveKeyConfidence) rather than re-thresholding the confidence
+    // field — ONE thresholding site per gate (#6). On the legacy arm this is
+    // byte-identical (hasAssertiveExposure == normalizedConfidence >= 0.8); on the
+    // record arm the boolean is gap >= the P1 assertive constant, and the
+    // confidence field carries a nats gap that must NOT be compared to 0.8.
     //
-    // Regions that disagree with the enclosing area but fall below the threshold
+    // Regions that disagree with the enclosing area but are not assertively exposed
     // are silently grouped into the enclosing area (keyAreaId unchanged).
     // Their own keyModeResult is preserved verbatim — status-bar display remains
     // accurate; only the keyAreaId annotation grouping is affected.
@@ -757,7 +760,7 @@ analyzeSection(const mu::engraving::Score* sc,
                 || out.keyAreas.back().mode != regionMode);
 
         if (out.keyAreas.empty()
-            || (diverges && regionConfidence >= kAnnotateKeyConfidenceThreshold)) {
+            || (diverges && region.hasAssertiveExposure)) {
             KeyArea area;
             area.startTick  = region.startTick;
             area.endTick    = region.endTick;
