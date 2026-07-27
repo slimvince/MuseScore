@@ -327,6 +327,23 @@ or FINDING, never forced), then the three consumers (status bar/accessibility ch
 AFTER: P6 (dual-arm classified comparison — the switch evidence; catalogue: OI-201 + the
 Nashville "?" convention) → P7 → the user's switch ratification.
 
+**★ THE NOTE-SEAM UNIT DELIVERED AND COWORK-VERIFIED (2026-07-27; `874bda0ab6`/`2d16899734`/
+`903125a5dc`, verified at the objects — living register check PASS 202/202 in the committed
+artifact, the carriage field-by-field vs the audit CSV clean, six golden-less pins, RAII flag
+guards).** OI-202 created-and-resolved (the split-check living mode). **TWO COWORK ROWS AT
+VERIFICATION (index + detail files, the new shape): OI-203** (record-arm note-seam latency —
+whole-score decode per interactive query; cache deferred measured-then-built post-switch; NOT
+a switch blocker) **and OI-204** (the record producer lacks `excludeStaves` input scoping —
+Cowork RAISED CC's classing: the legacy exclusion guards against consuming the imploded chord
+track's own notes, so the record arm carries a SELF-FEEDBACK hazard in the in-app implode
+case; **a PRE-SWITCH gate**, #18). **THE ACTIVE DISPATCH is `cc_instruction_notation_p6.md`:**
+Task 1 the OI-204 producer input-scoping fix (layer-correct at the producer/adapter; empty-set
+byte-identity + populated-chord-track fixture establishment; row flips); then the dual-arm
+capture instrument (both arms, full surface, snapshot corpus, deterministic) and the CLASSIFIED
+report (identical / inference-driven / presentation-rule / input-scoping(→0 expected) /
+UNEXPLAINED→mechanism-or-STOP) — the §8.4 switch-ratification evidence. AFTER: P7, then the
+user's switch ratification (its commit a separate Cowork-written dispatch).
+
 **★ REGISTER SPLIT DELIVERED (CC, 2026-07-26; dispatch `cc_instruction_open_items_split.md`).**
 The register is now the lean INDEX `OPEN_ITEMS.md` (the authoritative status surface, 200 rows,
 ~76 KB — the render problem is gone) + one verbatim detail file per item under `open_items/OI-<n>.md`

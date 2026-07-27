@@ -1414,7 +1414,11 @@ bool populateChordTrack(
     static muse::GlobalInject<mu::composing::IComposingAnalysisConfiguration> analysisConfig;
     const mu::composing::IComposingAnalysisConfiguration* analysisPrefs = analysisConfig.get().get();
     if (analysisPrefs && analysisPrefs->useJointNotationRecord()) {
-        const auto rec = mu::composing::analysis::joint::produceNotationRecord(score, std::string());
+        // OI-204: the record's decode excludes the same chord-track (treble+bass target) staves the
+        // legacy analyzeHarmonicRhythm arm below excludes — so re-imploding a populated chord track
+        // never feeds the previous run's own notes back into the analysis (arm-for-arm input parity).
+        const auto rec = mu::composing::analysis::joint::produceNotationRecord(score, std::string(),
+                                                                               excludeStaves);
         if (!rec.ok) {
             return false;
         }

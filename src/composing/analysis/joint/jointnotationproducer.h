@@ -24,6 +24,7 @@
 #define MU_COMPOSING_ANALYSIS_JOINT_JOINTNOTATIONPRODUCER_H
 
 #include <optional>
+#include <set>
 #include <string>
 #include <vector>
 
@@ -63,7 +64,13 @@ struct NotationRecordResult {
 /// -> the §3.1–§3.4 record. WHOLE-SCORE decode, ONCE; deterministic (§5); NO caching in this increment
 /// (a cache is a later, measured concern — #17's funnel, not built speculatively). Returns an
 /// unambiguous FAILURE when the adapter cannot extract the score (never a partial record).
-NotationRecordResult produceNotationRecord(const mu::engraving::Score* score, const std::string& stem);
+///
+/// `excludeStaves` (OI-204) is forwarded to buildAdapterFacts as INPUT-SCOPING: the named staves'
+/// notes never enter the decode's fact surface. Each notation seam passes the SAME chord-track exclude
+/// set its legacy arm passes (arm-for-arm input parity), so a populated chord track's own notes are
+/// never re-analyzed. The EMPTY set (the default; the batch/corpus path) skips nothing -> byte-identical.
+NotationRecordResult produceNotationRecord(const mu::engraving::Score* score, const std::string& stem,
+                                           const std::set<size_t>& excludeStaves = {});
 
 /// The facts->record CORE of the producer (the above minus buildAdapterFacts): a prepared decode Piece
 /// + its prior inputs (`sigFifths`/`declaredMode`) -> the record. Loads the embedded production

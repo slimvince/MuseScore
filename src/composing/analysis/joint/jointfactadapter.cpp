@@ -320,7 +320,8 @@ int melodic(const std::vector<std::tuple<int, int, int> >& pn, size_t i, int dir
 }
 } // namespace
 
-AdapterFacts buildAdapterFacts(const mu::engraving::Score* score, const std::string& stem)
+AdapterFacts buildAdapterFacts(const mu::engraving::Score* score, const std::string& stem,
+                               const std::set<size_t>& excludeStaves)
 {
     using namespace mu::engraving;
 
@@ -394,6 +395,11 @@ AdapterFacts buildAdapterFacts(const mu::engraving::Score* score, const std::str
         }
         if (nn.duration <= 0) {
             continue;                       // music21: if dur <= 0: continue
+        }
+        if (excludeStaves.count(static_cast<size_t>(nn.staff))) {
+            continue;                       // OI-204 input-scoping: an excluded (chord-track) staff's
+                                            // notes never enter the fact surface — no self-feedback on
+                                            // a populated chord track. Empty set skips nothing.
         }
         NoteRec n;
         n.onset = nn.onset;

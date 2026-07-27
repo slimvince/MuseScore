@@ -24,6 +24,7 @@
 #define MU_COMPOSING_ANALYSIS_JOINT_JOINTFACTADAPTER_H
 
 #include <optional>
+#include <set>
 #include <string>
 #include <vector>
 
@@ -83,7 +84,15 @@ struct AdapterFacts {
 
 /// Build the joint decoder's inputs for one score from the published note-model surface + the score's
 /// structural facts. `stem` labels the returned Piece. Never re-walks the note DOM (OI-180).
-AdapterFacts buildAdapterFacts(const mu::engraving::Score* score, const std::string& stem);
+///
+/// `excludeStaves` (OI-204 input-scoping) — staff indices whose notated notes NEVER enter the L1 fact
+/// surface the decode reads. This is INPUT selection at the producer/adapter (the layer that owns its
+/// input surface, #7), NOT a consumer-side post-filter and NOT an inference change. The notation seams
+/// pass their chord-track staves here (the same set the legacy `analyzeHarmonicRhythm` seam excludes),
+/// so re-analysis never consumes the imploded chord track's OWN notes (the self-feedback hazard). The
+/// EMPTY set (the default; the batch/corpus path) skips nothing -> byte-identical extraction.
+AdapterFacts buildAdapterFacts(const mu::engraving::Score* score, const std::string& stem,
+                               const std::set<size_t>& excludeStaves = {});
 
 } // namespace mu::composing::analysis::joint
 

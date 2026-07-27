@@ -727,7 +727,10 @@ NoteHarmonicContext analyzeHarmonicContextAtTick(const mu::engraving::Score* sco
         static muse::GlobalInject<mu::composing::IComposingAnalysisConfiguration> config;
         const auto* prefs = config.get().get();
         if (prefs && prefs->useJointNotationRecord()) {
-            const auto rec = mu::composing::analysis::joint::produceNotationRecord(score, std::string());
+            // OI-204: the record's decode excludes the same chord-track staves the legacy note-seam
+            // funnel below excludes from analysis input (arm-for-arm input parity).
+            const auto rec = mu::composing::analysis::joint::produceNotationRecord(score, std::string(),
+                                                                                   excludeStaves);
             if (!rec.ok) {
                 return {};
             }
@@ -1487,7 +1490,10 @@ void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
     // partial). Flag OFF -> the legacy path below runs byte-identically.
     const bool useRecord = prefs && prefs->useJointNotationRecord();
     if (useRecord) {
-        const auto rec = mu::composing::analysis::joint::produceNotationRecord(score, std::string());
+        // OI-204: the record's decode excludes the same chord-track staves the legacy
+        // analyzeHarmonicRhythm arm below excludes from analysis input (arm-for-arm input parity).
+        const auto rec = mu::composing::analysis::joint::produceNotationRecord(score, std::string(),
+                                                                               excludeStaves);
         if (!rec.ok) {
             return;
         }

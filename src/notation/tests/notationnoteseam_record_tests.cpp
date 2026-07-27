@@ -141,6 +141,17 @@ double committedContentScore(const joint::SegmentSlice* slice)
     return ax.scores[static_cast<size_t>(ax.committed)];
 }
 
+// The record the note-seam funnel ACTUALLY produces: a whole-score decode with the fixture's chord-track
+// staves EXCLUDED from the analysis input (OI-204 — analyzeNoteHarmonicContext[Details] threads
+// chordTrackExcludeStaves into produceNotationRecord; the reference here must use the SAME exclusion for
+// arm-for-arm input parity). Both fixtures carry a populated chord track ("Chord Track Piano" /
+// "Chord Track Treble+Bass"), so an empty-exclusion reference would re-analyze the chord track's own
+// notes and its committed content scores would diverge from the funnel's — hence the shared helper (#6).
+joint::NotationRecordResult produceFunnelRecord(MasterScore* score)
+{
+    return joint::produceNotationRecord(score, "noteseam", mu::notation::chordTrackExcludeStaves(score));
+}
+
 } // namespace
 
 class NotationNoteSeamRecordArm : public ::testing::Test {};
@@ -159,7 +170,7 @@ TEST_F(NotationNoteSeamRecordArm, CarriageEqualsRecordCommittedFacts)
         MasterScore* score = ScoreRW::readScore(fixture);
         ASSERT_TRUE(score) << "failed to read fixture";
 
-        const joint::NotationRecordResult rec = joint::produceNotationRecord(score, "noteseam");
+        const joint::NotationRecordResult rec = produceFunnelRecord(score);
         ASSERT_TRUE(rec.ok) << "produceNotationRecord failed";
         ASSERT_FALSE(rec.record.segments.empty()) << "record has no segments";
 
@@ -204,7 +215,7 @@ TEST_F(NotationNoteSeamRecordArm, CarriageOrderingCommittedThenDescendingScore)
         MasterScore* score = ScoreRW::readScore(fixture);
         ASSERT_TRUE(score);
 
-        const joint::NotationRecordResult rec = joint::produceNotationRecord(score, "noteseam");
+        const joint::NotationRecordResult rec = produceFunnelRecord(score);
         ASSERT_TRUE(rec.ok);
 
         for (const NoteAt& na : collectNotes(score)) {
@@ -273,7 +284,7 @@ TEST_F(NotationNoteSeamRecordArm, HarmonyWriteUsesRecordCarriage)
     MasterScore* score = ScoreRW::readScore(kFixtures.front());
     ASSERT_TRUE(score);
 
-    const joint::NotationRecordResult rec = joint::produceNotationRecord(score, "noteseam");
+    const joint::NotationRecordResult rec = produceFunnelRecord(score);
     ASSERT_TRUE(rec.ok);
 
     int checked = 0;
@@ -315,7 +326,7 @@ TEST_F(NotationNoteSeamRecordArm, ContextMenuScoreSuffixIsRecordContentScore)
     MasterScore* score = ScoreRW::readScore(kFixtures.front());
     ASSERT_TRUE(score);
 
-    const joint::NotationRecordResult rec = joint::produceNotationRecord(score, "noteseam");
+    const joint::NotationRecordResult rec = produceFunnelRecord(score);
     ASSERT_TRUE(rec.ok);
 
     int checked = 0;
@@ -350,7 +361,7 @@ TEST_F(NotationNoteSeamRecordArm, EdgesYieldNothingNoPartial)
     MasterScore* score = ScoreRW::readScore(kFixtures.front());
     ASSERT_TRUE(score);
 
-    const joint::NotationRecordResult rec = joint::produceNotationRecord(score, "noteseam");
+    const joint::NotationRecordResult rec = produceFunnelRecord(score);
     ASSERT_TRUE(rec.ok);
     ASSERT_FALSE(rec.record.segments.empty());
 

@@ -60,10 +60,11 @@ NotationRecordResult produceNotationRecord(const Piece& piece, std::optional<int
     return res;
 }
 
-NotationRecordResult produceNotationRecord(const mu::engraving::Score* score, const std::string& stem)
+NotationRecordResult produceNotationRecord(const mu::engraving::Score* score, const std::string& stem,
+                                           const std::set<size_t>& excludeStaves)
 {
     NotationRecordResult res;
-    const AdapterFacts fx = buildAdapterFacts(score, stem);
+    const AdapterFacts fx = buildAdapterFacts(score, stem, excludeStaves);
     if (!fx.ok) {
         // The adapter could not extract the score (e.g. a null score): an unambiguous FAILURE, never a
         // partial record, never a silent fallback to anything (#13). The caller branches on `ok`.

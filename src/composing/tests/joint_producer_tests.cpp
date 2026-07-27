@@ -33,6 +33,7 @@
 
 #include <memory>
 #include <optional>
+#include <set>
 #include <string>
 #include <vector>
 
@@ -224,6 +225,71 @@ TEST(JointProducerTests, ScoreWrapperEqualsFactsPlusCore)
     ASSERT_TRUE(core.ok) << core.error;
     expectRecordsEqual(res.record, core.record, "pb_chorale wrapper==core");
 
+    delete sc;
+}
+
+// ── (b2, OI-204) input-scoping: excludeStaves drops the named staves' notes from the fact surface ─────
+// The producer's excludeStaves parameter (forwarded to buildAdapterFacts) is the OI-204 fix: an excluded
+// staff's notes never enter the L1 fact surface the decode reads (no self-feedback on a populated chord
+// track). Establishment, both directions:
+//   * the EXCLUSION works — nm_two_staff sounds C5 (midi 72) on staff 0 and C3 (midi 48) on staff 1 (one
+//     Piano part, two staves); excluding staff 1 removes exactly the midi-48 notes from the facts while
+//     keeping midi-72, and the note count drops. The default/explicit-empty set keeps both.
+//   * the exclusion CHANGES the decode — pb_chorale (4-staff SATB) with the bass staff (index 3, 59
+//     notes) excluded yields a record that differs from the full-score record (fewer notes decoded ->
+//     different committed reading), while the empty-set produce equals the default produce (byte-identical).
+TEST(JointProducerTests, ExcludeStavesScopesTheFactSurfaceAndDecode)
+{
+    // ── the exclusion removes exactly the named staff's notes from the fact surface ──
+    MasterScore* two = ScoreRW::readScore(u"data/nm_two_staff.mscx");
+    ASSERT_TRUE(two) << "failed to read nm_two_staff.mscx";
+
+    const joint::AdapterFacts full = joint::buildAdapterFacts(two, "nm_two_staff", {});
+    ASSERT_TRUE(full.ok) << full.error;
+    auto hasMidi = [](const joint::Piece& p, int midi) {
+        for (const joint::NoteRec& n : p.notes) { if (n.midi == midi) { return true; } }
+        return false;
+    };
+    // fixture preconditions: staff-0 C5 (72) and staff-1 C3 (48) both sound (else the test is vacuous).
+    ASSERT_TRUE(hasMidi(full.piece, 72)) << "fixture precondition: staff-0 C5 must sound";
+    ASSERT_TRUE(hasMidi(full.piece, 48)) << "fixture precondition: staff-1 C3 must sound";
+
+    const joint::AdapterFacts excl = joint::buildAdapterFacts(two, "nm_two_staff", { size_t(1) });
+    ASSERT_TRUE(excl.ok) << excl.error;
+    EXPECT_TRUE(hasMidi(excl.piece, 72)) << "staff-0 note must survive exclusion of staff 1";
+    EXPECT_FALSE(hasMidi(excl.piece, 48)) << "the excluded staff's note leaked into the fact surface";
+    EXPECT_LT(excl.piece.notes.size(), full.piece.notes.size()) << "exclusion must drop notes";
+
+    // the default-argument call equals the explicit empty set (the empty set skips nothing).
+    const joint::AdapterFacts dflt = joint::buildAdapterFacts(two, "nm_two_staff");
+    ASSERT_TRUE(dflt.ok);
+    EXPECT_EQ(dflt.piece.notes.size(), full.piece.notes.size());
+    delete two;
+
+    // ── the exclusion changes the produced decode (harmonically load-bearing staff removed) ──
+    MasterScore* sc = ScoreRW::readScore(u"data/pb_chorale.mscx");
+    ASSERT_TRUE(sc) << "failed to read pb_chorale.mscx";
+
+    const joint::NotationRecordResult recFull = joint::produceNotationRecord(sc, "pb_chorale", {});
+    const joint::NotationRecordResult recDflt = joint::produceNotationRecord(sc, "pb_chorale");
+    const joint::NotationRecordResult recExcl = joint::produceNotationRecord(sc, "pb_chorale", { size_t(3) });
+    ASSERT_TRUE(recFull.ok) << recFull.error;
+    ASSERT_TRUE(recDflt.ok) << recDflt.error;
+    ASSERT_TRUE(recExcl.ok) << recExcl.error;
+
+    // the empty-set produce equals the default produce (byte-identical extraction + decode).
+    expectRecordsEqual(recFull.record, recDflt.record, "pb_chorale empty==default");
+
+    // excluding the bass staff changes the record: some committed reading (segment count, span, or
+    // committed class) must differ — removing a chorale's bass line cannot leave the decode identical.
+    bool differs = recFull.record.segments.size() != recExcl.record.segments.size();
+    for (size_t i = 0; !differs && i < recFull.record.segments.size(); ++i) {
+        const joint::RecordSegment& a = recFull.record.segments[i];
+        const joint::RecordSegment& b = recExcl.record.segments[i];
+        differs = a.startTick != b.startTick || a.endTick != b.endTick
+                  || a.classKey != b.classKey || a.tonicPc != b.tonicPc;
+    }
+    EXPECT_TRUE(differs) << "excluding the bass staff must change the decode";
     delete sc;
 }
 

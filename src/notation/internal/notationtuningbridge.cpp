@@ -772,7 +772,10 @@ bool applyRegionTuning(mu::engraving::Score* score,
     // record IS the surface, A2/#13 -- no legacy fallback). Flag OFF -> byte-identical.
     std::vector<HarmonicRegion> regions;
     if (cfg && cfg->useJointNotationRecord()) {
-        const auto rec = mu::composing::analysis::joint::produceNotationRecord(score, std::string());
+        // OI-204: the record's decode excludes the same chord-track staves the legacy
+        // analyzeHarmonicRhythm arm excludes from analysis input (arm-for-arm input parity).
+        const auto rec = mu::composing::analysis::joint::produceNotationRecord(score, std::string(),
+                                                                               excludeStaves);
         if (!rec.ok) {
             return false;
         }
