@@ -76,24 +76,11 @@ namespace {
 
 using mu::composing::analysis::keyModeScaleIntervals;
 
-constexpr double kTentativeKeyExposureThreshold = 0.5;
-constexpr double kAssertiveKeyExposureThreshold = 0.8;
-
-bool supportsTentativeKeyExposure(const mu::composing::analysis::KeyModeAnalysisResult& keyModeResult)
-{
-    return keyModeResult.normalizedConfidence >= kTentativeKeyExposureThreshold;
-}
-
-int keyExposureBucket(double confidence)
-{
-    if (confidence < kTentativeKeyExposureThreshold) {
-        return 0;
-    }
-    if (confidence < kAssertiveKeyExposureThreshold) {
-        return 1;
-    }
-    return 2;
-}
+// The tentative/assertive key-exposure buckets are no longer re-thresholded here: the section layer
+// stores AnalyzedRegion::keyExposureBucket ONCE per arm (legacy from normalizedConfidence >= 0.5/0.8;
+// record from the P1 gap constants), and this emitter reads it (#6). `bucket >= 1` == tentative,
+// `bucket == 2` == assertive. The 0.5/0.8 literals now live at the legacy set site
+// (sectionanalyzer.cpp::legacyKeyExposureBucket), legacy-arm-only, retiring with the legacy path.
 
 double ticksToQuarterNoteBeats(int ticks)
 {
@@ -188,7 +175,7 @@ std::vector<KeyAnnotationCandidate> collectStableKeyAnnotationCandidates(
                                                region.keyModeResult.mode,
                                                region.keyModeResult.normalizedConfidence,
                                                modeNameConfidenceThreshold);
-        run.hasTentativeExposure = supportsTentativeKeyExposure(region.keyModeResult);
+        run.hasTentativeExposure = region.keyExposureBucket >= 1;   // stored per-arm bucket (>=1 == tentative)
         // Phase 3a: read AnalyzedRegion::hasAssertiveExposure (populated by
         // analyzeSection from the same hasAssertiveKeyConfidence helper) instead
         // of recomputing it here.
@@ -249,7 +236,7 @@ std::vector<KeyAnnotationCandidate> collectStableKeyAnnotationCandidates(
         }
 
         run.endTick = region.endTick;
-        run.hasTentativeExposure = run.hasTentativeExposure || supportsTentativeKeyExposure(region.keyModeResult);
+        run.hasTentativeExposure = run.hasTentativeExposure || region.keyExposureBucket >= 1;
         if (!run.hasAssertiveExposure && region.hasAssertiveExposure) {
             run.hasAssertiveExposure = true;
             run.representativeRegionIdx = regionIdx;
@@ -304,8 +291,7 @@ bool sameUserFacingInference(const mu::composing::analysis::AnalyzedRegion& lhs,
            && lhs.chordResult.identity.quality == rhs.chordResult.identity.quality
            && lhs.keyModeResult.keySignatureFifths == rhs.keyModeResult.keySignatureFifths
            && lhs.keyModeResult.mode == rhs.keyModeResult.mode
-           && keyExposureBucket(lhs.keyModeResult.normalizedConfidence)
-              == keyExposureBucket(rhs.keyModeResult.normalizedConfidence);
+           && lhs.keyExposureBucket == rhs.keyExposureBucket;   // stored per-arm bucket (set once, #6)
 }
 
 

@@ -114,6 +114,19 @@ struct AnalyzedRegion {
     /// so annotation and tick-regional paths can gate on the same flag.
     bool hasAssertiveExposure = false;
 
+    /// Key-exposure BUCKET for this region: 0 = below tentative exposure,
+    /// 1 = tentative (a key run may still be exposed, marked "?"), 2 = assertive.
+    /// Set ONCE per arm at the section-layer set site (beside
+    /// `hasAssertiveExposure`) so the implode chord-track emitter reads a stored
+    /// result rather than re-thresholding the confidence field itself (#6 — the
+    /// confidence-axis analogue of the OI-173 lesson): the legacy arm from
+    /// `normalizedConfidence >= 0.5 / 0.8`; the record arm from the raw §3.3
+    /// key-axis gap `>= kTentativeKeyExposureGap / kAssertiveKeyExposureGap` (the
+    /// P1 constants — the record's confidence field carries nats, NOT a [0,1]
+    /// value, so it must never be compared to the 0.5/0.8 literals). Bucket == 2
+    /// coincides with `hasAssertiveExposure` on both arms by construction.
+    int keyExposureBucket = 0;
+
     /// Snapshot of the `ChordTemporalContext` that fed this region's
     /// `analyzeChord` call.  Tick-regional and emitter consumers read this
     /// instead of re-deriving context per tick (Phase 3c — closes divergence

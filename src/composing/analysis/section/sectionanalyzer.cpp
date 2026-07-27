@@ -72,6 +72,29 @@ const bool s_registerSectionParams = [] {
     return true;
 }();
 
+// The legacy-arm key-exposure bucket: 0 = below tentative, 1 = tentative, 2 = assertive, from the
+// per-region normalizedConfidence at the 0.5 / 0.8 thresholds. These two literals are the legacy
+// exposure thresholds (formerly kTentativeKeyExposureThreshold / kAssertiveKeyExposureThreshold,
+// re-thresholded inside the implode bridge's keyExposureBucket / supportsTentativeKeyExposure). Storing
+// the bucket ONCE here (beside hasAssertiveExposure) gives the implode emitter one thresholding site to
+// read (#6) and lets the record arm set the bucket from the P1 gap constants without any consumer
+// comparing a nats gap to a [0,1] literal. Byte-identical to the former implode-local computation.
+// LEGACY-ARM ONLY: these literals retire with the legacy analysis path (OI-180); the record arm's
+// bucket comes from the gap constants in sectionrecordadapter.cpp.
+constexpr double kLegacyTentativeKeyExposureThreshold = 0.5;
+constexpr double kLegacyAssertiveKeyExposureThreshold = 0.8;
+
+int legacyKeyExposureBucket(double confidence)
+{
+    if (confidence < kLegacyTentativeKeyExposureThreshold) {
+        return 0;
+    }
+    if (confidence < kLegacyAssertiveKeyExposureThreshold) {
+        return 1;
+    }
+    return 2;
+}
+
 int distinctPitchClassCount(const std::vector<mu::composing::analysis::ChordAnalysisTone>& tones)
 {
     bool seenPitchClasses[12] = {};
@@ -726,9 +749,11 @@ analyzeSection(const mu::engraving::Score* sc,
     // Pass 4: key/mode stabilization.
     stabilizeHarmonicRegionsForDisplay(displayRegions);
 
-    // Post-stabilization: set hasAssertiveExposure on each display region.
+    // Post-stabilization: set hasAssertiveExposure + the key-exposure bucket on each display region
+    // (the ONE legacy-arm set site for both — the implode emitter reads the stored results, #6).
     for (auto& r : displayRegions) {
         r.hasAssertiveExposure = hasAssertiveKeyConfidence(r.keyModeResult);
+        r.keyExposureBucket = legacyKeyExposureBucket(r.keyModeResult.normalizedConfidence);
     }
 
     out.regions = std::move(displayRegions);

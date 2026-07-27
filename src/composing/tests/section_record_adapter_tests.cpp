@@ -59,6 +59,7 @@ using mu::engraving::ScoreRW;
 namespace {
 constexpr int kTpcC = static_cast<int>(mu::engraving::Tpc::TPC_C);
 constexpr double kAssertiveGap = 1.055757;   // exposure_constants.json 0.8-gate chosen_gap_nats
+constexpr double kTentativeGap = 0.975911;   // exposure_constants.json 0.5-gate chosen_gap_nats
 
 // Independent mirror of the adapter's coarse-quality -> enum map (drives the seg.quality expectation
 // through the PUBLIC jointOursQuality — an independent check of the pipeline, not a copy of the impl).
@@ -159,6 +160,15 @@ TEST(SectionRecordAdapterTests, MapsRecordFieldsFaithfullyOverTheWholeSpan)
         const std::optional<double> gap = expectGap(slice);
         EXPECT_DOUBLE_EQ(r.keyModeResult.normalizedConfidence, gap.value_or(0.0)) << ctx;
         EXPECT_EQ(r.hasAssertiveExposure, gap.has_value() && *gap >= kAssertiveGap) << ctx;
+
+        // the key-exposure BUCKET (P4 Task 1): from the SAME gap at the P1 tentative/assertive
+        // constants — 0 below tentative, 1 tentative, 2 assertive; a null gap -> 0. Never the 0.5/0.8
+        // legacy literals (the record's confidence field carries nats). Bucket == 2 iff assertive.
+        const int expectBucket = gap.has_value()
+            ? (*gap >= kAssertiveGap ? 2 : (*gap >= kTentativeGap ? 1 : 0))
+            : 0;
+        EXPECT_EQ(r.keyExposureBucket, expectBucket) << ctx;
+        EXPECT_EQ(r.keyExposureBucket == 2, r.hasAssertiveExposure) << ctx;
 
         // alternatives: the chord-axis slice minus the committed reading, content-score descending
         const size_t committedDrop = (slice.chordAxis.committed >= 0

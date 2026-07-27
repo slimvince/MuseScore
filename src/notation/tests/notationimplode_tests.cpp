@@ -49,6 +49,9 @@
 #include "notation/internal/notationcomposingbridgehelpers.h"
 #include "notation/internal/notationimplodebridge.h"
 
+#include "composing/analysis/section/sectionanalyzer.h"   // analyzeSection (legacy-arm bucket set site)
+#include "composing/analyzed_section.h"
+
 using namespace mu::engraving;
 
 namespace {
@@ -701,6 +704,39 @@ TEST_F(Notation_ImplodeTests, ImplodeChordTrackKeepsSustainedSupportAcrossBeatBo
     EXPECT_TRUE(hasHarmonyAt(score, Fraction(1, 4), kTargetTrebleTrack));
     EXPECT_TRUE(hasHarmonyAt(score, Fraction(2, 4), kTargetTrebleTrack));
     EXPECT_FALSE(hasHarmonyAt(score, Fraction(3, 4), kTargetTrebleTrack));
+
+    delete score;
+}
+
+// Seams part 2, P4 Task 1 — the key-exposure BUCKET unification (byte-identity fixture, legacy arm).
+// The bucket is now set ONCE at the section-layer set site (analyzeSection) and read by the implode
+// emitter, instead of the implode re-thresholding normalizedConfidence at 0.5/0.8. This fixture mirrors
+// the legacy set site: over a real score's analyzeSection output, every region's stored
+// keyExposureBucket must equal the 0.5/0.8 thresholding of its own normalizedConfidence — the exact
+// former implode-local computation. (End-to-end implode byte-identity is additionally pinned by the
+// pipeline-snapshot implode goldens.)
+TEST_F(Notation_ImplodeTests, KeyExposureBucketMirrorsLegacyThresholdsAtSetSite)
+{
+    MasterScore* score = ScoreRW::readScore(
+        u"../../../../tools/dcml/chopin_mazurkas/MS3/BI16-1.mscx");
+    ASSERT_TRUE(score);
+
+    const auto rawRegions = mu::notation::analyzeHarmonicRhythm(
+        score, Fraction(0, 1), score->endTick(), {},
+        mu::notation::HarmonicRegionGranularity::Smoothed);
+    const auto section = mu::composing::analysis::analyzeSection(
+        score, Fraction(0, 1), score->endTick(), {}, rawRegions);
+    ASSERT_FALSE(section.regions.empty());
+
+    for (const auto& r : section.regions) {
+        const double conf = r.keyModeResult.normalizedConfidence;
+        const int expected = conf < 0.5 ? 0 : (conf < 0.8 ? 1 : 2);
+        EXPECT_EQ(r.keyExposureBucket, expected)
+            << "region " << r.startTick << "-" << r.endTick << " conf=" << conf;
+        // bucket == 2 coincides with hasAssertiveExposure on the legacy arm (no fitter override loaded).
+        EXPECT_EQ(r.keyExposureBucket == 2, r.hasAssertiveExposure)
+            << "region " << r.startTick << "-" << r.endTick;
+    }
 
     delete score;
 }

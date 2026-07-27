@@ -289,6 +289,25 @@ Cowork edits now: `cowork_notation_output_contract.md` (the presentation-derivat
 correctly left unstaged by the split) + this handoff block). Then P4 → merged note-seam →
 P6 → P7.
 
+**★ P-STRINGS DELIVERED AND COWORK-VERIFIED (2026-07-27; `58ac88079b`/`55ae163ef5`/`b2c71fb6e3`,
+verified at the objects).** Display symbol: the carriage hazard was REAL and fixed at the
+carriage (extensions never set — Dom7 displayed "C"; now derived from A's fine class quality),
+12-family + flat-key (lof-decides: "Abm7" vs "G#m7") + inversion + applied/chromatic tests;
+Nashville: the record arm renders through the ONE existing `formatNashvilleNumber` (no second
+formatter), 7 coinciding readings asserted identical; the boundary guard is a permanent suite
+member proven by negative control (a planted joint include failed it, exit 1). Suites
+1185/53/12, flag-OFF byte-identical throughout. **OI-201 NEW (CC-found, correctly rowed in the
+new register shape):** the aug-sixth display symbol renders as the coarse major triad (the
+vocabulary collapsed the family; the It/Ger/Fr character reaches the reader via the Roman only)
+— a presentation-completeness gap for P6's catalogue, resolution at its #8-correct stage.
+P6-catalogue sibling noted by Cowork: the applied-chord Nashville "?" convention (legacy's own,
+continuity-preserved). **THE ACTIVE DISPATCH is `cc_instruction_notation_p4.md`** (fresh-file
+pattern): implode + tuning record paths, the exposure-bucket unification on the gap scale
+(tentative constant from the committed artifact at full precision), the C1 two-mode rule at the
+implode labels, `kSameChordReannotationGap` re-homed unchanged, **OI-182 EXECUTES** (index row +
+detail file updated with every constant's new declared site incl. P2b's assertive one). Then
+the merged note-seam unit → P6 → P7.
+
 **★ REGISTER SPLIT DELIVERED (CC, 2026-07-26; dispatch `cc_instruction_open_items_split.md`).**
 The register is now the lean INDEX `OPEN_ITEMS.md` (the authoritative status surface, 200 rows,
 ~76 KB — the render problem is gone) + one verbatim detail file per item under `open_items/OI-<n>.md`

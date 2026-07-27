@@ -100,7 +100,8 @@ void groupKeyAreas(std::vector<mu::composing::analysis::AnalyzedRegion>& regions
 // ── Cadence and pivot detection ───────────────────────────────────────────────
 
 /// Minimum normalized key confidence required for cadence or pivot detection.
-/// Matches kAssertiveKeyExposureThreshold used by populateChordTrack.
+/// The 0.8 assertive key-exposure threshold (the legacy bucket's upper bound,
+/// legacyKeyExposureBucket in sectionanalyzer.cpp), shared with the implode.
 /// Stage-5 fitter: a mutable global (was `inline constexpr`) so the parameter-override
 /// mechanism can register its address (registered in sectionanalyzer.cpp). Byte-identical
 /// when no override is loaded — same 0.8 literal, read as before; the loader is the only

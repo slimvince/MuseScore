@@ -68,6 +68,16 @@ constexpr int kTpcC = static_cast<int>(mu::engraving::Tpc::TPC_C);
 // the assertive gate to set hasAssertiveExposure.
 constexpr double kAssertiveKeyExposureGap = 1.055757;
 
+// The record-path TENTATIVE-exposure gate constant: the §3.3 KEY-AXIS content-score GAP (nats) whose
+// duration-weighted record firing rate matches the legacy 0.5 normalizedConfidence gate's rate. From
+// the SAME P1 measurement (tools/notation_seams/exposure_constants.json, gate_family
+// "kTentativeKeyExposureThreshold / supportsTentativeKeyExposure / exposure bucket lower"): legacy
+// dur-rate 0.338501, record dur-rate 0.340837, residual 0.002336. It is the record-arm analogue of the
+// legacy 0.5 literal — the key-exposure bucket's LOWER bound (the assertive gap above is the UPPER
+// bound). A PRESENTATION constant declared on the record's gap scale — NOT a fit and NOT a [0,1] remap.
+// Value verbatim from the artifact's chosen_gap_nats for the 0.5 row.
+constexpr double kTentativeKeyExposureGap = 0.975911;
+
 // A's native scale-degree (RecordSegment.degree == LabelClass.degreeBase, an uppercase Roman or a
 // chromatic token; `target` is the applied tonicization) -> the legacy 0-based diatonic degree index
 // (0 = I .. 6 = VII) the cadence/pivot detectors and the Roman formatter read. Only an UNALTERED
@@ -313,6 +323,14 @@ AnalyzedSection analyzeSectionFromRecord(const mu::engraving::Score* sc,
         const std::optional<double> gap = keyAxisGap(slice);
         kmr.normalizedConfidence = gap.value_or(0.0);
         r.hasAssertiveExposure   = gap.has_value() && *gap >= kAssertiveKeyExposureGap;
+
+        // The key-exposure BUCKET (the implode coalescing + tentative gate; set once per arm, #6): from
+        // the SAME gap — 2 (assertive) iff hasAssertiveExposure, 1 (tentative) iff gap >= the tentative
+        // constant, else 0. A null gap -> 0 (no exposure). NEVER compares the nats gap to the legacy
+        // 0.5/0.8 literals (amendment 1).
+        r.keyExposureBucket = gap.has_value()
+            ? (*gap >= kAssertiveKeyExposureGap ? 2 : (*gap >= kTentativeKeyExposureGap ? 1 : 0))
+            : 0;
 
         // tones: re-collect over the segment span from the L1 note surface (DERIVABLE; the record does
         // not carry raw tones).
