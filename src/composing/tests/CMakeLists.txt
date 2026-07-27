@@ -57,6 +57,7 @@ set(MODULE_TEST_SRC
     ${CMAKE_CURRENT_LIST_DIR}/gater_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/grouping_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/harmonicvocabulary_tests.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/inference_presentation_boundary_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/joint_adapter_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/joint_decoder_tests.cpp
     ${CMAKE_CURRENT_LIST_DIR}/joint_embedded_tests.cpp
@@ -104,5 +105,8 @@ include(SetupGTest)
 # The joint-estimator table-loading tests read the committed runtime artifacts under
 # tools/joint_estimator/ (loaded from disk, not a Qt resource); pass the absolute source
 # path as a compile definition so the test locates them regardless of the run directory.
+# COMPOSING_SRC_DIR is the absolute path to src/composing so the inference<->presentation
+# include-closure guard (inference_presentation_boundary_tests.cpp) can scan the real sources.
 target_compile_definitions(${MODULE_TEST} PRIVATE
-    JOINT_ARTIFACT_DIR="${PROJECT_SOURCE_DIR}/tools/joint_estimator")
+    JOINT_ARTIFACT_DIR="${PROJECT_SOURCE_DIR}/tools/joint_estimator"
+    COMPOSING_SRC_DIR="${PROJECT_SOURCE_DIR}/src/composing")

@@ -121,6 +121,28 @@
 > The layer sections (L1–L6) below remain the accurate description of the LEGACY pipeline — still live on the
 > notation path, dormant-compiled on the batch path.
 
+> **SEAMS PART 2 — THE NOTATION CONSUMER RE-PLUMB + THE INFERENCE↔PRESENTATION BOUNDARY (as-built, behind the
+> default-OFF `useJointNotationRecord`; DORMANT on production — the legacy path is byte-identical with the flag
+> off).** The section layer's record path `analyzeSectionFromRecord` (`sectionrecordadapter`) derives the shared
+> `AnalyzedSection` from the record (1:1 segment→region) via the ONE record-segment→`ChordAnalysisResult` converter
+> `chordResultFromRecordSegment` (#6; the section layer and the presentation layer both read its result). The
+> span-path emitter's record arm (`emitHarmonicAnnotations`, `notationcomposingbridge`) writes, per region: the
+> **Roman numeral** as the record's PUBLISHED derived fact (`rs->romanNumeral`, the jointRender form); and the
+> **display chord symbol** + **Nashville number** as PRESENTATION DERIVATIONS (Decision D2 + the contract §3.3
+> amendment — display renderings are presentation, facts are published) rendered by the REUSED `ChordSymbolFormatter`
+> (`formatSymbol` / `formatNashvilleNumber`, via the shared `formatChordResultForStatusBar`) from the record's
+> committed reading — NOT the record's grading-form `chordSymbol` ("GDom7"), which stays on the record for batch/a8
+> continuity. The carriage is COMPLETE: the converter carries the FINE class quality's seventh-ness into
+> `ChordIdentity.extensions` (the coarse `ChordQuality` drops it), so the formatter renders "G7"/"Am7"/"Bdim7"; a
+> rootless chromatic class renders no symbol (matching the batch rootless "" from `jointChordSymbol`). **THE BOUNDARY
+> IS PERMANENTLY GUARDED both ways** by a mechanical include-closure test (`inference_presentation_boundary_tests`):
+> the joint estimator's inference module (every file under `analysis/joint/`) includes NO presentation formatter
+> (`chordanalyzer.h` / `chordsymbolformatter`; the shared pitch leaf `analysisutils.h` is exempt), and the
+> presentation formatter (`chordsymbolformatter.cpp`) includes NO joint inference internal — it consumes only the
+> published record/adapter output surface (a `ChordAnalysisResult`). The guard carries a negative control (it fires
+> on a perturbed include, both directions). No inference change on this path; the display renderings are the only
+> additions, and they are presentation.
+
 > **Living design document.** Read this AND STATUS.md at the start of every development
 > session. ARCHITECTURE.md contains stable design decisions. STATUS.md contains current
 > implementation status and immediate next steps. Update STATUS.md as your last act when
