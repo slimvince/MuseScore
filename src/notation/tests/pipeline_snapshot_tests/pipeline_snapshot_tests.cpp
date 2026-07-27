@@ -894,6 +894,11 @@ TEST_P(PipelineSnapshotTests, MatchesGoldenSnapshot)
         mu::composing::IComposingAnalysisConfiguration>("composing");
     if (analysisCfg) {
         analysisCfg->setUseRegionalAccumulation(true);
+        // The joint record IS the production notation path since the user-ratified switch
+        // (2026-07-27) — the goldens below pin the record arm. Set the flag explicitly, for the
+        // same determinism reason as the line above: the record-arm tests in this binary restore
+        // the flag OFF when they finish, so the ambient value is not reliable across the suite.
+        analysisCfg->setUseJointNotationRecord(true);
     }
 
     const QString scorePath = corpusPath(entry);

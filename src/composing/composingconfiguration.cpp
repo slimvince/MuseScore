@@ -170,9 +170,12 @@ void ComposingConfiguration::init()
         m_minKeyStabilityBeatsChanged.notify();
     });
 
-    // Internal migration switch — default false (legacy notation path). Retires with the
-    // legacy branch at the OI-180 map; no settings UI (see the interface comment).
-    settings()->setDefaultValue(USE_JOINT_NOTATION_RECORD, Val(false));
+    // Internal migration switch — default TRUE since the user-ratified switch (2026-07-27):
+    // the joint estimator's notation record IS the production notation analysis. Explicit
+    // false selects the LEGACY notation path, still compiled and dormant. This flag — and the
+    // whole legacy branch it selects against — retires at the OI-180 map; no settings UI (see
+    // the interface comment).
+    settings()->setDefaultValue(USE_JOINT_NOTATION_RECORD, Val(true));
     settings()->valueChanged(USE_JOINT_NOTATION_RECORD).onReceive(nullptr, [this](const Val&) {
         m_useJointNotationRecordChanged.notify();
     });

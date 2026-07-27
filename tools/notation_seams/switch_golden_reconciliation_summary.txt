@@ -1,0 +1,30 @@
+SWITCH GOLDEN RECONCILIATION — legacy arm -> record arm (useJointNotationRecord default ON)
+base (legacy goldens): HEAD
+
+INVARIANT SURFACES (implode / keyAreas / tickLocal — never flag-gated; must be byte-identical):
+  breaks: 0 
+
+GATED-SURFACE DIFFS, by class (grand totals across 11 goldens):
+  identical                  182
+  inference-driven           3125
+  presentation-rule          121
+  input-scoping              0
+  record-arm-inert-auxiliary 277
+  UNEXPLAINED                0
+
+UNEXPLAINED entries: 0 (each is a STOP #13/#15)
+
+PER GOLDEN (inference / presentation / input-scope / UNEXPL over gated surfaces):
+  bach_bwv806_gigue.json     inf=420   pres=4    inertAux=29   in-scope=0  UNEXPL=0   invBreak=-
+  bach_bwv806_prelude.json   inf=499   pres=13   inertAux=30   in-scope=0  UNEXPL=0   invBreak=-
+  bach_chorale_001.json      inf=118   pres=16   inertAux=19   in-scope=0  UNEXPL=0   invBreak=-
+  bach_chorale_003.json      inf=212   pres=11   inertAux=20   in-scope=0  UNEXPL=0   invBreak=-
+  bach_chorale_137.json      inf=222   pres=16   inertAux=25   in-scope=0  UNEXPL=0   invBreak=-
+  chopin_bi105_op30_1.json   inf=176   pres=6    inertAux=20   in-scope=0  UNEXPL=0   invBreak=-
+  chopin_bi105_op30_2.json   inf=151   pres=6    inertAux=15   in-scope=0  UNEXPL=0   invBreak=-
+  corelli_op01n08a.json      inf=463   pres=8    inertAux=31   in-scope=0  UNEXPL=0   invBreak=-
+  mozart_k279_1.json         inf=398   pres=4    inertAux=32   in-scope=0  UNEXPL=0   invBreak=-
+  mozart_k280_1.json         inf=247   pres=12   inertAux=26   in-scope=0  UNEXPL=0   invBreak=-
+  schumann_kinderszenen_n01.json inf=219   pres=25   inertAux=30   in-scope=0  UNEXPL=0   invBreak=-
+
+VERDICT: PASS

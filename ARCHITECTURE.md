@@ -97,14 +97,15 @@
 > paragraph) read this record — DORMANT (no src/ consumer yet). Suites: unit coverage in
 > `joint_record_tests` / `joint_spelling_tests` / `joint_modal_tests`.
 >
-> **THE RECORD PATH — the notation output-surface contract as-built (behind the default-OFF `useJointNotationRecord`;
-> DORMANT on production; DUAL-ARM, awaiting the switch).** This is the consolidated, forward end-to-end record of the
-> joint estimator's A-native notation record and the re-plumbed notation consumers that read it, behind ONE internal
-> default-OFF flag (delivered by the seams partition P0-P7; per-unit provenance in STATUS.md / `cowork_handoff.md`). It
-> is the declared, bounded **#23 migration posture**: the legacy analysis path lives BESIDE the record path, and with
-> the flag OFF the legacy path runs BYTE-IDENTICALLY (proven per delivery unit — three suites + the pipeline-snapshot
-> goldens untouched, no golden refresh anywhere in the partition). The switch has NOT happened; flipping it is a
-> separate, user-ratified commit (see **(6) the switch**, below).
+> **THE RECORD PATH — the notation output-surface contract as-built (the PRODUCTION notation path since THE SWITCH,
+> user-ratified 2026-07-27; `useJointNotationRecord` defaults ON).** This is the consolidated, forward end-to-end record
+> of the joint estimator's A-native notation record and the re-plumbed notation consumers that read it (delivered by the
+> seams partition P0-P7; per-unit provenance in STATUS.md / `cowork_handoff.md`). At the switch the migration posture
+> **CLOSED**: the record path is now THE in-app notation analysis; the legacy `analyzeHarmonicRhythm`/`analyzeChord`
+> path remains COMPILED and DORMANT, selected only by an explicit `useJointNotationRecord = false`, awaiting deletion at
+> the **OI-180 retirement map (now fully live)**. Through the whole P0-P7 build the flag stayed OFF and the legacy path
+> ran byte-identically (proven per delivery unit); the switch flipped the default and refreshed the pipeline-snapshot
+> goldens against the record arm, every diff reconciled to the P6 classified evidence (see **(6) the switch**, below).
 >
 > **(1) The producer + the two seam views (contract §1 seams, PRODUCER side; `jointnotationproducer`).**
 > `joint::produceNotationRecord(score, stem)` is the ONE-call score->record
@@ -228,18 +229,24 @@
 > `dualarm_classified_summary.txt`. The instrument invents no value and bends nothing toward either arm — a difference
 > is CLASSIFIED, never patched.
 >
-> **(6) The dual path and the switch.** Until the switch this is the declared, bounded **#23** dual path: batch/corpus
-> output is A's (the OI-178 adoption); the in-app notation analysis is LEGACY, with the record path built beside it and
-> DORMANT behind the OFF flag. The seams partition (P0-P7) is closed out at HEAD and completeness-verified
-> (`tools/notation_seams/partition_completeness.json` — every consumer's record branch cited, every ruling checked,
-> every seams-era register row in state, the flag OFF everywhere, the three suites green; NO finding). **The switch is
-> a separate, user-ratified commit (§8.4)** that flips the flag default to ON, refreshes the pipeline-snapshot goldens
-> against the now-established record arm (cited preconditions: the P6 classified report + the OI-178 adoption record),
-> and moves the CLAUDE.md staged-scope block, STATUS, ARCHITECTURE, the register rows, and the handoff dual-path line
-> together. The legacy `ChordAnalysisResult`/`NoteHarmonicContext`/`HarmonicRegion` path and the per-arm legacy
-> branches then RETIRE on the **OI-180 retirement map** (post-switch); the post-switch agenda includes OI-193 (the
-> marginal-posterior completion), OI-194 (the ornament-label / voice-independent pedal-class publication), OI-203 (the
-> record-cache increment), and OI-201 (the aug-sixth display-symbol completeness gap).
+> **(6) THE SWITCH — the migration posture is CLOSED (user-ratified 2026-07-27).** The seams partition (P0-P7) was
+> closed out and completeness-verified (`tools/notation_seams/partition_completeness.json` — every consumer's record
+> branch cited, every ruling checked, every seams-era register row in state, the flag OFF everywhere, the three suites
+> green; NO finding), and the switch — ONE revertible, user-ratified commit (dispatch `cc_instruction_notation_switch.md`)
+> — flipped `useJointNotationRecord`'s default to **ON**. The batch/corpus output is A's (the OI-178 adoption); the in-app
+> notation analysis is now **A's record path** too. The switch refreshed the pipeline-snapshot goldens against the
+> established record arm (cited preconditions: the P6 classified report `dualarm_classified_report.json` + the OI-178
+> adoption record), and every legacy→record golden diff was reconciled to the P6 taxonomy by
+> `tools/notation_seams/reconcile_switch_goldens.py` → `switch_golden_reconciliation.json`: **0 unexplained, 0
+> input-scoping, the non-flag-gated surfaces (implode / keyAreas / tickLocal) byte-identical** — the diff is
+> inference-driven (the record's committed-reading / segmentation / voicing moves), §3.3 alternatives-ordering
+> presentation, and a production-INERT auxiliary class (the note-seam carriage's `temporalExtensions`/`wasRegional`,
+> which no consumer reads). The batch/corpus surface and `tools/robust_stop/` did not move (the flag is notation-side;
+> `test_batch_analyze_regressions` passes). The legacy `ChordAnalysisResult`/`NoteHarmonicContext`/`HarmonicRegion` path
+> and the per-arm legacy branches now RETIRE on the **OI-180 retirement map** (post-switch, fully live); the post-switch
+> agenda includes OI-193 (the marginal-posterior completion), OI-194 (the ornament-label / voice-independent pedal-class
+> publication), OI-203 (the record-cache increment — the latency is now on the default path), and OI-201 (the aug-sixth
+> display-symbol completeness gap).
 
 > **Living design document.** Read this AND STATUS.md at the start of every development
 > session. ARCHITECTURE.md contains stable design decisions. STATUS.md contains current

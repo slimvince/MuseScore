@@ -360,6 +360,28 @@ Cowork assembles the SWITCH decision surface (§8.4) for the user — the one ra
 (flag default flips; goldens refresh with the P6 report + adoption record as cited
 preconditions; CLAUDE.md/STATUS/ARCHITECTURE/rows/handoff move together).
 
+**★ P7 DELIVERED AND COWORK-VERIFIED (2026-07-27; `4967d6b724`, verified at the objects —
+the committed completeness artifact: every consumer's record branch cited, every ruling
+grep-verified, every row in state, flag OFF, suites 1186/61/13 green; ARCHITECTURE
+consolidated to ONE record-path section; ZERO findings). THE SEAMS-2 PARTITION IS COMPLETE.
+THE SWITCH DECISION SURFACE IS PRESENTED TO THE USER (in chat, this session) — the §8.4 one
+ratified commit; on ratification Cowork writes the switch dispatch.**
+
+**★★ THE SWITCH IS USER-RATIFIED (2026-07-27).** The ACTIVE dispatch is
+**`cc_instruction_notation_switch.md`** — ONE revertible, provenance-stamped commit: the flag
+default flips ON; the pipeline-snapshot goldens refresh (verified-correct precondition: the
+establishment chain + the P6 classified report + this ratification, cited in the commit body;
+**a golden diff class NOT explained by the P6 catalogue is a STOP**); tests disposed per kind
+(snapshot-class refreshed; unit-class STOP; flag-scoped RAII tests keep pinning their explicit
+arm); same-commit doc/register sync (CLAUDE.md staged-scope block CLOSES; STATUS switch entry +
+the OI-205(a) archive sweep with verbatim byte-reconciled moves; ARCHITECTURE posture flips;
+OI-180 forward exit EXECUTED on the notation surface; OI-203's latency note — now live on the
+default path, the cache increment's priority rises). Batch/corpus surfaces and
+`tools/robust_stop/` must not move (the flag is notation-side). **AFTER the switch: the
+migration state is CLOSED on both surfaces; the live agenda = the OI-180 retirement map,
+OI-193, OI-194, OI-203, then OI-205(b) + the OI-198/199/200 reviews, then — and only then —
+the inference-improvement era.**
+
 **★ OI-205 ROWED (user-directed 2026-07-27, mid-P7; index row + detail file on disk, riding):**
 STATUS.md + ARCHITECTURE.md too large. Half (a) STATUS archive sweep = mechanical (the
 STATUS_ARCHIVE pattern), rides the switch's doc-sync or just after; half (b) ARCHITECTURE

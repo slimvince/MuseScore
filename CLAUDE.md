@@ -266,10 +266,22 @@ superseded OI-168 reference's 2 714 000 / 2 783 680 / 2 718 080; `robust_stop_di
 run-level set-diff large in both directions by design, every added class-(b) run enumerated/diagnosed —
 the genuine-new fifth-substitution subset is OI-192, the accepted cost side of the net trade).
 
-**STAGED SCOPE (declared migration state, #23):** this adopts on the batch/committed surface ONLY. The
-**in-app NOTATION layer stays on the legacy analysis** (its output-surface contract from A's posterior and
-the fitted-table packaging are the named successor increment; the retirement map, OI-180, is now the live
-agenda). The legacy analysis code remains compiled, dormant on the batch output path.
+**STAGED SCOPE — CLOSED AT THE NOTATION SWITCH (user-ratified 2026-07-27).** The OI-178 adoption put the
+joint estimator on the batch/committed surface only; **THE NOTATION SWITCH now puts it on the in-app
+NOTATION surface too.** `useJointNotationRecord` defaults **ON**, so the in-app notation analysis — the
+span-annotation emit, the implode chord-track, the tuning region path, and the note-seam (status-bar /
+harmony-write / right-click-menu) — is produced by the joint estimator's A-native notation record (the
+seams P0–P7 record path), NOT the legacy `analyzeHarmonicRhythm`/`analyzeChord` path. **The migration state
+is now CLOSED on BOTH surfaces.** The legacy notation path remains **COMPILED and DORMANT** (selected only by
+an explicit `useJointNotationRecord = false`), awaiting deletion at the **OI-180 retirement map, now fully
+live**. The switch is ONE revertible commit: the pipeline-snapshot goldens were refreshed against the record
+arm and every diff reconciled against the P6 classified evidence — **0 unexplained, 0 input-scoping, the
+non-flag-gated surfaces byte-identical** (`tools/notation_seams/switch_golden_reconciliation.json`; the
+inference/§3.3-presentation/inert-auxiliary split is the record arm's expected notation differences). **The
+batch/corpus surface and `tools/robust_stop/` are UNMOVED** (the flag is notation-side; `test_batch_analyze_
+regressions` passes, no `tools/corpus/` or `tools/robust_stop/` diff). Provenance: dispatch
+`cc_instruction_notation_switch.md`; the P6 report `tools/notation_seams/dualarm_classified_report.json`; the
+OI-178 adoption record `tools/joint_estimator/adoption_record.json`.
 
 **Superseded columns preserved (#12):** the OI-168 LEGACY-ANALYSIS baselines (root 66.04 / 64.98 / 65.93,
 RN 46.33 / 44.10 / 46.23, key-home 71.42 / 67.83 / 70.65, key-local 65.99 / 62.98 / 65.71) live in the
