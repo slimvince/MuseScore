@@ -54,6 +54,8 @@
 #include "composing/analysis/chord/chordanalyzer.h"
 #include "composing/analysis/key/keymodeanalyzer.h"
 #include "composing/analysis/section/sectionanalyzer.h"
+#include "composing/analysis/section/sectionrecordadapter.h"   // analyzeSectionFromRecord (record path)
+#include "composing/analysis/joint/jointnotationproducer.h"    // produceNotationRecord / noteView / NotationRecord
 #include "composing/icomposinganalysisconfiguration.h"
 #include "modularity/ioc.h"
 
@@ -988,9 +990,16 @@ struct EmitAnnotationOptions {
     bool writeNashvilleNumbers = false;
 };
 
+// `record` (default nullptr) selects the RECORD path: when non-null, the per-region chord-symbol /
+// Roman strings are the record's DERIVED FACTS (jointRender form — §5.6 formatter continuity, #6),
+// looked up by the region's start tick, instead of the legacy ChordSymbolFormatter. Every other
+// concern (the key-area brackets, cadence/pivot detection, the min-duration gate, the per-staff write)
+// is identical — it runs on the record-derived AnalyzedSection. When nullptr the legacy path runs
+// byte-identically.
 void emitHarmonicAnnotations(mu::engraving::Score* score,
                              const mu::composing::analysis::AnalyzedSection& section,
-                             const EmitAnnotationOptions& options)
+                             const EmitAnnotationOptions& options,
+                             const mu::composing::analysis::joint::NotationRecord* record = nullptr)
 {
     using namespace mu::engraving;
     using mu::composing::analysis::AnalyzedRegion;
@@ -1118,48 +1127,70 @@ void emitHarmonicAnnotations(mu::engraving::Score* score,
         const int perRegionFifths = region.keyModeResult.keySignatureFifths;
         const auto perRegionMode  = region.keyModeResult.mode;
 
-        // Effective key for Roman numerals: enclosing KeyArea when available,
-        // per-region key as fallback.  This is the Phase 5b behavior change:
-        // regions absorbed into an enclosing area get Romans in the area's key,
-        // not the transient local key the confidence gate suppressed.
-        int romanKeyFifths = perRegionFifths;
-        KeySigMode romanKeyMode = perRegionMode;
-        if (options.writeRomanNumerals
-            && activeKeyAreaId >= 0
-            && activeKeyAreaId < static_cast<int>(keyAreas.size())) {
-            romanKeyFifths = keyAreas[activeKeyAreaId].keyFifths;
-            romanKeyMode   = keyAreas[activeKeyAreaId].mode;
-        }
-
-        // Re-contextualize the chord result when the roman key differs from the
-        // per-region key: recompute degree and tonal function for the area key.
+        // annotationResult: the region's committed reading. On the LEGACY arm it is re-contextualized
+        // to the enclosing key area for Roman numerals (below). On the RECORD arm the strings come
+        // from the record's derived facts instead, so it stays the committed reading — and its
+        // isPedalPoint is false (the pedal block below never fires on the record path; OI-194).
         mu::composing::analysis::ChordAnalysisResult annotationResult = region.chordResult;
-        if (options.writeRomanNumerals
-            && (romanKeyFifths != perRegionFifths || romanKeyMode != perRegionMode)) {
-            const int ionianPc = ionianTonicPcFromFifths(romanKeyFifths);
-            const int tonicPc  = (ionianPc + keyModeTonicOffset(romanKeyMode)) % 12;
-            annotationResult.function.degree
-                = diatonicDegreeForRootPc(annotationResult.identity.rootPc,
-                                          romanKeyFifths, romanKeyMode);
-            annotationResult.function.diatonicToKey = (annotationResult.function.degree >= 0);
-            annotationResult.function.keyTonicPc    = tonicPc;
-            annotationResult.function.keyMode       = romanKeyMode;
-        }
 
-        const FormattedChordResult fmt = formatChordResultForStatusBar(score, annotationResult, perRegionFifths);
-        const std::string symText = options.writeChordSymbols ? fmt.symbol : "";
-        std::string romanText = options.writeRomanNumerals ? fmt.roman : "";
-        if (options.writeRomanNumerals && romanText.empty()
-                && annotationResult.identity.quality == ChordQuality::Unknown
-                && annotationResult.function.degree >= 0
-                && annotationResult.function.degree <= 6) {
-            auto refinedForRoman = annotationResult;
-            mu::notation::internal::forceChordTrackQualityFromKeyContext(refinedForRoman, romanKeyMode);
-            if (refinedForRoman.identity.quality != ChordQuality::Unknown) {
-                romanText = mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(refinedForRoman);
+        std::string symText, romanText, nashvilleText;
+        if (record) {
+            // ── Record path: the chord-symbol / Roman strings are the record's DERIVED FACTS
+            // (jointRender form — §5.6 formatter continuity, #6; NEVER re-formatted from ChordIdentity),
+            // looked up by the region's start tick. The Roman is the segment's OWN COMMITTED-key
+            // numeral — A commits a coherent per-segment key sequence, so the legacy transient-key
+            // area re-contextualization does not apply (an expected inference-driven difference, P6).
+            if (const mu::composing::analysis::joint::RecordSegment* rs =
+                    mu::composing::analysis::joint::noteView(*record, region.startTick).segment) {
+                symText   = options.writeChordSymbols  ? rs->chordSymbol  : std::string();
+                romanText = options.writeRomanNumerals ? rs->romanNumeral : std::string();
             }
+            // Nashville: a DECLARED GAP on the record path — the record and jointRender publish no
+            // Nashville string, and §5.6 has no batch-render Nashville form to reproduce, so deriving
+            // one here would be an unratified second formatter path (#6). FINDING returned to Cowork;
+            // left empty rather than ported (#12/#13). nashvilleText stays "".
+        } else {
+            // ── Legacy path (unchanged behaviour): re-contextualize to the enclosing key area, then
+            // format via ChordSymbolFormatter. ──
+            // Effective key for Roman numerals: enclosing KeyArea when available, per-region fallback.
+            // This is the Phase 5b behavior: regions absorbed into an enclosing area get Romans in the
+            // area's key, not the transient local key the confidence gate suppressed.
+            int romanKeyFifths = perRegionFifths;
+            KeySigMode romanKeyMode = perRegionMode;
+            if (options.writeRomanNumerals
+                && activeKeyAreaId >= 0
+                && activeKeyAreaId < static_cast<int>(keyAreas.size())) {
+                romanKeyFifths = keyAreas[activeKeyAreaId].keyFifths;
+                romanKeyMode   = keyAreas[activeKeyAreaId].mode;
+            }
+
+            if (options.writeRomanNumerals
+                && (romanKeyFifths != perRegionFifths || romanKeyMode != perRegionMode)) {
+                const int ionianPc = ionianTonicPcFromFifths(romanKeyFifths);
+                const int tonicPc  = (ionianPc + keyModeTonicOffset(romanKeyMode)) % 12;
+                annotationResult.function.degree
+                    = diatonicDegreeForRootPc(annotationResult.identity.rootPc,
+                                              romanKeyFifths, romanKeyMode);
+                annotationResult.function.diatonicToKey = (annotationResult.function.degree >= 0);
+                annotationResult.function.keyTonicPc    = tonicPc;
+                annotationResult.function.keyMode       = romanKeyMode;
+            }
+
+            const FormattedChordResult fmt = formatChordResultForStatusBar(score, annotationResult, perRegionFifths);
+            symText = options.writeChordSymbols ? fmt.symbol : "";
+            romanText = options.writeRomanNumerals ? fmt.roman : "";
+            if (options.writeRomanNumerals && romanText.empty()
+                    && annotationResult.identity.quality == ChordQuality::Unknown
+                    && annotationResult.function.degree >= 0
+                    && annotationResult.function.degree <= 6) {
+                auto refinedForRoman = annotationResult;
+                mu::notation::internal::forceChordTrackQualityFromKeyContext(refinedForRoman, romanKeyMode);
+                if (refinedForRoman.identity.quality != ChordQuality::Unknown) {
+                    romanText = mu::composing::analysis::ChordSymbolFormatter::formatRomanNumeral(refinedForRoman);
+                }
+            }
+            nashvilleText = options.writeNashvilleNumbers ? fmt.nashville : "";
         }
-        const std::string nashvilleText = options.writeNashvilleNumbers ? fmt.nashville : "";
 
         for (staff_idx_t si : options.writeStaves) {
             const track_idx_t track = si * VOICES;
@@ -1197,6 +1228,9 @@ void emitHarmonicAnnotations(mu::engraving::Score* score,
         // StaffText "X ped." (e.g. "G ped.", "Eb ped.") on the first write staff,
         // in the Roman numeral layer (alongside cadence markers and pivot labels).
         // Only written when Roman numeral mode is active.
+        // RECORD PATH: this NEVER fires — analyzeSectionFromRecord sets isPedalPoint = false (the
+        // pedal fact SUSPENDS on the record path; it re-expresses from the voice-independent
+        // ornament-class successor, OI-194, when that increment delivers).
         if (options.writeRomanNumerals
                 && !options.writeStaves.empty()
                 && annotationResult.identity.isPedalPoint
@@ -1369,6 +1403,27 @@ void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
             + mu::composing::analysis::kMaxPivotLookaheadRegions
               * 4 * Constants::DIVISION)  // ~8 measures of lookahead
         : endTick;
+
+    // Record path (default OFF, useJointNotationRecord): derive the AnalyzedSection from the joint
+    // estimator's whole-score notation record instead of the legacy Pass-0 stream, and emit the
+    // record's derived chord-symbol/Roman strings (§5.6, A2 — the record IS the surface).
+    // analyzeSectionFromRecord windows the whole-score record to [startTick, lookaheadEndTick). A
+    // produce failure writes NOTHING (no legacy fallback — the record is the surface; #13 no silent
+    // partial). Flag OFF -> the legacy path below runs byte-identically.
+    const bool useRecord = prefs && prefs->useJointNotationRecord();
+    if (useRecord) {
+        const auto rec = mu::composing::analysis::joint::produceNotationRecord(score, std::string());
+        if (!rec.ok) {
+            return;
+        }
+        const auto section = mu::composing::analysis::analyzeSectionFromRecord(
+            score, startTick, lookaheadEndTick, excludeStaves, rec.record);
+        if (section.regions.empty()) {
+            return;
+        }
+        emitHarmonicAnnotations(score, section, options, &rec.record);
+        return;
+    }
 
     const auto rawRegions = mu::notation::analyzeHarmonicRhythm(
         score, startTick, lookaheadEndTick, excludeStaves,

@@ -93,6 +93,7 @@
 #include "engraving/dom/segment.h"
 #include "engraving/dom/select.h"
 #include "engraving/dom/staff.h"
+#include "engraving/dom/stafftext.h"   // P3a record-arm pedal-suppression check
 #include "engraving/types/constants.h"
 
 #include "engraving/tests/utils/scorerw.h"
@@ -1079,6 +1080,144 @@ TEST(SeamsGapMeasurement, DISABLED_EmitArtifact)
     ASSERT_EQ(out.write(bytes), static_cast<qint64>(bytes.size()));
     out.close();
     std::cout << "[seams gap measurement] wrote " << outPath.toStdString() << std::endl;
+}
+
+// ── Seams part 2, P3a — the annotation-emitter RECORD path ───────────────────
+//
+// With useJointNotationRecord ON, addHarmonicAnnotationsToSelection derives the AnalyzedSection from
+// the joint estimator's notation record (analyzeSectionFromRecord) and writes the record's DERIVED
+// chord-symbol / Roman strings (§5.6 formatter continuity, #6; A2 — the record IS the surface), not
+// the legacy ChordSymbolFormatter output. This test proves the record path is taken and that the
+// written Roman numerals equal the record segment at each write tick; that Nashville is a declared
+// record-path GAP (requesting it writes nothing — the record/jointRender publish no Nashville form,
+// §5.6 has no batch-render Nashville to reproduce; a FINDING to Cowork); and that the pedal "X ped."
+// StaffText is SUSPENDED (the record path sets isPedalPoint = false, OI-194). Flag-OFF byte-identity
+// is the existing golden suite (this test runs a SEPARATE arm and restores the flag before returning).
+//
+// Chord-symbol strings are NOT exact-matched here: the record's chordSymbol is the batch-render/
+// grading form (jointChordSymbol, e.g. "GMaj"/"GDom7"), which MuseScore's Harmony re-parses on
+// read-back — the round-trip normalization would make an exact assertion fragile (surfaced to Cowork
+// as a display-form question, separate from the byte-faithful Roman path). Roman numerals (ROMAN
+// Harmony) store their text literally, so they round-trip and are matched here.
+TEST(SectionRecordAdapterAnnotation, RecordArmEmitsRecordDerivedStrings)
+{
+    auto cfg = muse::modularity::globalIoc()->resolve<
+        mu::composing::IComposingAnalysisConfiguration>("composing");
+    ASSERT_TRUE(cfg) << "IComposingAnalysisConfiguration not registered";
+    cfg->setUseRegionalAccumulation(true);          // production default
+    cfg->setUseJointNotationRecord(true);           // ← the record arm under test
+
+    int checkedScores = 0;
+    int checkedRomans = 0;
+
+    // Two representative chorales — enough to exercise the record path (each score pays two
+    // whole-score decodes: the test's own produceNotationRecord + the emitter's internal one), so
+    // the subset is kept small to bound the default-sweep runtime.
+    for (int ci = 0; ci < 2; ++ci) {
+        const CorpusEntry& entry = kCorpus[ci];
+        const QString scorePath = corpusPath(entry);
+        ASSERT_TRUE(QFileInfo::exists(scorePath)) << "missing: " << scorePath.toStdString();
+        MasterScore* score = ScoreRW::readScore(muse::String::fromQString(scorePath),
+                                                 /*isAbsolutePath=*/true);
+        ASSERT_TRUE(score) << "load failed: " << entry.id;
+
+        const Fraction endTick = endTickForMeasureCap(score, kMaxAnalysisMeasures);
+        const auto rec = mu::composing::analysis::joint::produceNotationRecord(score, std::string(entry.id));
+        if (!rec.ok) {
+            delete score;
+            continue;
+        }
+
+        Segment* startSeg = score->firstSegment(SegmentType::ChordRest);
+        if (!startSeg || score->nstaves() == 0) {
+            delete score;
+            continue;
+        }
+        const auto before = collectExistingHarmonies(score, endTick);
+        std::vector<mu::engraving::Harmony*> pre;
+        pre.reserve(before.size());
+        for (const auto& e : before) {
+            pre.push_back(e.harmony);
+        }
+        Segment* endSeg = segmentAtOrAfter(score, endTick);
+        score->selection().setRange(startSeg, endSeg, /*staffStart=*/0, /*staffEnd=*/score->nstaves());
+        ASSERT_TRUE(score->selection().isRange()) << entry.id;
+
+        // Roman-only: exercises the record's romanNumeral (literal round-trip) + the key-area brackets
+        // + cadence/pivot, and lets the pedal path (Roman-mode-gated) be observed.
+        mu::notation::addHarmonicAnnotationsToSelection(score, /*sym=*/false, /*roman=*/true, /*nashville=*/false);
+
+        const auto after = collectExistingHarmonies(score, endTick);
+        for (const auto& e : after) {
+            if (std::find(pre.begin(), pre.end(), e.harmony) != pre.end()) {
+                continue;                                    // pre-existing DCML annotation
+            }
+            if (e.harmony->harmonyType() != HarmonyType::ROMAN) {
+                continue;
+            }
+            std::string text = e.harmony->harmonyName().toQString().toStdString();
+            if (!text.empty() && text.front() == '[') {
+                continue;                                    // "[G:]" key-area bracket marker, not a chord Roman
+            }
+            const int tick = e.segment->tick().ticks();
+            const auto* rs = mu::composing::analysis::joint::noteView(rec.record, tick).segment;
+            ASSERT_NE(rs, nullptr) << entry.id << " @ " << tick << " (a written Roman with no record segment)";
+            EXPECT_EQ(text, rs->romanNumeral) << entry.id << " @ " << tick << " (record-derived Roman)";
+            ++checkedRomans;
+        }
+
+        // Pedal SUSPENDED on the record path: no "X ped." StaffText anywhere in the window.
+        for (Segment* seg = score->firstSegment(SegmentType::ChordRest);
+             seg && seg->tick() < endTick;
+             seg = seg->next1(SegmentType::ChordRest)) {
+            for (mu::engraving::EngravingItem* ann : seg->annotations()) {
+                if (ann && ann->isStaffText()) {
+                    const std::string t = mu::engraving::toStaffText(ann)->plainText().toStdString();
+                    EXPECT_EQ(t.find(" ped."), std::string::npos)
+                        << entry.id << ": a pedal annotation was written on the record path";
+                }
+            }
+        }
+
+        ++checkedScores;
+        delete score;
+    }
+
+    // Nashville is a DECLARED record-path GAP: requesting Nashville writes NOTHING (the FINDING).
+    {
+        MasterScore* score = ScoreRW::readScore(muse::String::fromQString(corpusPath(kCorpus[0])),
+                                                /*isAbsolutePath=*/true);
+        ASSERT_TRUE(score);
+        const Fraction endTick = endTickForMeasureCap(score, kMaxAnalysisMeasures);
+        const auto before = collectExistingHarmonies(score, endTick);
+        std::vector<mu::engraving::Harmony*> pre;
+        pre.reserve(before.size());
+        for (const auto& e : before) {
+            pre.push_back(e.harmony);
+        }
+        Segment* startSeg = score->firstSegment(SegmentType::ChordRest);
+        Segment* endSeg = segmentAtOrAfter(score, endTick);
+        ASSERT_TRUE(startSeg && score->nstaves() > 0);
+        score->selection().setRange(startSeg, endSeg, 0, score->nstaves());
+        ASSERT_TRUE(score->selection().isRange());
+        mu::notation::addHarmonicAnnotationsToSelection(score, /*sym=*/false, /*roman=*/false, /*nashville=*/true);
+        int newNashville = 0;
+        for (const auto& e : collectExistingHarmonies(score, endTick)) {
+            if (std::find(pre.begin(), pre.end(), e.harmony) != pre.end()) {
+                continue;
+            }
+            if (e.harmony->harmonyType() == HarmonyType::NASHVILLE) {
+                ++newNashville;
+            }
+        }
+        EXPECT_EQ(newNashville, 0) << "record path must not write Nashville (declared gap / FINDING)";
+        delete score;
+    }
+
+    cfg->setUseJointNotationRecord(false);           // restore before the rest of the suite runs
+
+    EXPECT_GT(checkedScores, 0) << "no corpus score produced a record";
+    EXPECT_GT(checkedRomans, 0) << "the record-arm emitter wrote no record-derived Romans";
 }
 
 // ── P3 status-bar performance baseline (Stage 2.5) ───────────────────────────

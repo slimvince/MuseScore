@@ -242,8 +242,11 @@ layer/gate, STATUS (authoritative HERE ONLY), and the link to a per-item detail 
 doc-split discipline). Detail files carry narrative/provenance, never a status line (the
 two-place drift killer); rule (c) becomes index-row + detail-file in the discovery commit;
 CLAUDE.md's register section amends in the same commit (the user's ratification here is the
-lawful path). Cowork writes `cc_instruction_open_items_split.md` when seams 2 lands (ALL partition units
-through P7 — OI-182 executes at P4, so the split waits for the whole partition).
+lawful path). Cowork writes `cc_instruction_open_items_split.md` when seams 2 lands. **RESCHEDULED (user,
+2026-07-26, mid-P3): the split runs as the NEXT CC session after the P3 report verifies,
+BEFORE P4** — the concurrency concern was the real one, not order; P4's OI-182 edit then
+happens in the new index+detail structure, and the seams-2 dispatch gets a dated note to that
+effect. The Cowork rows OI-198/199/200 + handoff blocks ride the split's Task 0.
 
 **★ SEAMS-2 SESSION 1: P0 DELIVERED + A CORRECT FEASIBILITY STOP; THE PARTITION IS RATIFIED
 (Cowork, 2026-07-26; commits `b090f6e4ab` flag + `685bde37d6` STATUS, verified at the
@@ -293,6 +296,33 @@ handoff, verified):** CC de-risked the adapter instead of rushing it at session 
 implementation: degree string→int, the composing-side per-span tone collector, rootPc/bassPc
 sourcing — all in the STATUS resume note. **Cowork's ruling: P2b runs in a FRESH CC session**,
 same dispatch (`cc_instruction_notation_seams_2.md`), resume at P2b from HEAD `493dc8ca35`.
+
+**★ P2b DELIVERED AND COWORK-VERIFIED (2026-07-26; `d25cf40170` adapter + `3acc8e141c` STATUS,
+verified at the objects — `analyzeSectionFromRecord`, the shared `groupKeyAreas` extraction
+byte-identical, `kAssertiveKeyExposureGap = 1.055757` declared with the full P1 citation, the
+per-arm boolean set from the raw gap).** All section-layer CSV rows (2–25) satisfied, no
+unsatisfiable row; the degree mapping reads A's published degree (never root+key recomputation
+— the OI-173 lesson) with the tested invariant `degree ≥ 0 ⟺ diatonicToKey`; suites 1177/53/11
+green, no golden. Two carried notes (amendment 4): the early-landed assertive constant joins
+P4's OI-182 row-update; `KeyArea::confidence` carries raw nats with no production [0,1] reader
+(amendment-1-conformant). Expected differences (alternatives ordering; class-native
+`diatonicToKey`) carried to P6. **CC resumes at P3 (span-path composing bridge) from HEAD
+`3acc8e141c`** — strings from the record's derived facts, one formatter path (#6/§5.6).
+
+**★ THREE USER-DIRECTED REVIEW PASSES ROWED (2026-07-26, mid-P3; rows OI-198/OI-199/OI-200 on
+disk, riding the next commit):** (a) OI-198 the register-driven implementation review (total
+unification proven, test-data reliability #9, full regression coverage; new issue types rowed
++ catalogued); (b) OI-199 the comprehensive code review (the L1–L5 two-pass blind certification
+pattern on everything the old certifications predate: joint module, record path, seams, codegen
+machinery); (c) OI-200 the architecture step-back against #4 (layer design re-derived;
+reached-vs-possible in BOTH halves, user-sharpened: EMPIRICAL against measured ceilings —
+CONSUMES OI-179, which must be built for it — AND THEORETICAL against the public state of the
+art: published algorithms/research/software compared method-by-method, factor-by-factor, best
+reported figures on comparable tasks as the headroom benchmark, findings ledgered per factor;
+output prioritizes the refinement agenda). SEQUENCE (derived from
+the OI-84 never-audit-retiring-code lesson + the 2026-06-15 clean-layers gate + the standing
+no-inference-work-before-completion rule): switch → OI-180 map + OI-193/OI-194 completions →
+OI-198 + OI-199 → OI-200 → only then the refinement agenda (OI-192 and kin).
 **THEN the agenda is the retirement map + refinements, each its own later dispatch, in no forced
 order but all on the register:** the legacy retirements (the map's six items on the gates doc);
 the presentation-layer publications that are PART of the ratified record and must not drop (the
