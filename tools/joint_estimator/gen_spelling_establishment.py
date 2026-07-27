@@ -123,11 +123,134 @@ def _pc(lof):
     return (7 * lof) % 12
 
 
+def compare_cpp_parity(decode, ne, cpp):
+    """OI-197: compare the C++ dump's per-segment root/factor spellings against the Python derivation,
+    lof-EXACT, over EVERY committed segment. Both sides implement the ONE documented line-of-fifths
+    derivation (jointprimitives::rootSpellingLof/factorSpellingLof == root_lof/factor_lofs here), so any
+    divergence means one implementation is wrong (a STOP; the artifact records it, the fix is not decided
+    by editing). The comparison cells are exactly the establishment's: the ROOT field on every committed
+    segment (13,063), and the BASS field at each segment's lowest-note factor cell (11,182). The full
+    factor set is compared too (a stronger superset). Note-selection (lowest sounding note -> factor) is
+    done here, identically to the notated establishment above, so the C++ dump only supplies the
+    derivation (root_lof + all factor lofs). Returns the cpp_parity block; note-independent of any table.
+    """
+    pieces = ne['pieces']
+    selected = decode['selected']
+    cpp_pieces = cpp.get('pieces', {})
+
+    seg_total = 0
+    matched = 0
+    root_cells = 0
+    bass_cells = 0
+    factor_cells = 0
+    root_div, bass_div, factor_div = [], [], []
+    class_mismatch, missing = [], []
+    cpp_seen = set()   # (stem, tick) committed cells matched into the C++ dump
+
+    for stem in sorted(selected.keys()):
+        if stem not in pieces:
+            continue
+        dec = selected[stem]
+        sig = dec.get('sig_fifths')
+        ref = sig if sig is not None else 0
+        pc = pieces[stem]
+        events = pc['events']
+        notes = pc['notes']
+        cpp_segs = {s['tick']: s for s in cpp_pieces.get(stem, {}).get('segments', [])}
+
+        for seg in dec['segments']:
+            i, j, tonic, is_major, class_key, _root_pc = seg[0], seg[1], seg[2], seg[3], seg[4], seg[5]
+            if i < 0 or j <= i or j > len(events):
+                continue
+            seg_total += 1
+            seg_start = events[i][0]
+            seg_end = events[j - 1][1]
+
+            rl = root_lof(class_key, tonic, is_major, ref)
+            factors = factor_lofs(class_key, tonic, is_major, ref)   # role -> (pc, lof)
+
+            cs = cpp_segs.get(seg_start)
+            if cs is None:
+                missing.append({'stem': stem, 'tick': seg_start, 'class': class_key})
+                continue
+            cpp_seen.add((stem, seg_start))
+            matched += 1
+            if cs.get('class_key') != class_key:
+                class_mismatch.append({'stem': stem, 'tick': seg_start,
+                                       'cpp_class': cs.get('class_key'), 'py_class': class_key})
+                continue   # a DECODE divergence (not spelling): skip the spelling compare, still reported
+
+            # ROOT field parity (every committed segment; the establishment's 13,063 cells)
+            root_cells += 1
+            if cs.get('root_lof') != rl:
+                root_div.append({'stem': stem, 'tick': seg_start, 'class': class_key,
+                                 'py_root_lof': rl, 'cpp_root_lof': cs.get('root_lof')})
+
+            # full FACTOR set parity (superset) — cpp factors keyed by pc (distinct per tertian chord)
+            cpp_facs = {f['pc']: f['lof'] for f in cs.get('factors', [])}
+            for role, (fpc, flof) in factors.items():
+                factor_cells += 1
+                if cpp_facs.get(fpc) != flof:
+                    factor_div.append({'stem': stem, 'tick': seg_start, 'class': class_key,
+                                       'role': role, 'pc': fpc, 'py_lof': flof, 'cpp_lof': cpp_facs.get(fpc)})
+
+            # BASS field parity — the establishment's segment-level lowest-note factor cell (11,182)
+            sounding = [n for n in notes if n[6] != 0 and n[0] < seg_end and (n[0] + n[1]) > seg_start]
+            if sounding:
+                bass_pc = min(sounding, key=lambda n: n[3])[2]
+                match = [(role, lof) for role, (fpc, lof) in factors.items() if fpc == bass_pc]
+                if match:
+                    bass_cells += 1
+                    role, py_blof = match[0]
+                    if cpp_facs.get(bass_pc) != py_blof:
+                        bass_div.append({'stem': stem, 'tick': seg_start, 'class': class_key,
+                                         'role': role, 'pc': bass_pc, 'py_lof': py_blof,
+                                         'cpp_lof': cpp_facs.get(bass_pc)})
+
+    extra = [{'stem': stem, 'tick': s['tick'], 'class': s.get('class_key')}
+             for stem, cs in cpp_pieces.items()
+             for s in cs.get('segments', []) if (stem, s['tick']) not in cpp_seen]
+
+    div_total = (len(root_div) + len(bass_div) + len(factor_div)
+                 + len(class_mismatch) + len(missing) + len(extra))
+    return {
+        'purpose': 'OI-197 lof-exact C++<->Python spelling-derivation parity (a notation-switch precondition)',
+        'cpp_source': cpp.get('tool'),
+        'cpp_weight_arm': cpp.get('weight_arm'),
+        'cpp_tables': cpp.get('tables'),
+        'segments_total': seg_total,
+        'segments_matched': matched,
+        'root_cells_compared': root_cells,
+        'bass_cells_compared': bass_cells,
+        'factor_cells_compared': factor_cells,
+        'root_divergences': root_div,
+        'bass_divergences': bass_div,
+        'factor_divergences': factor_div,
+        'decode_alignment': {
+            'class_mismatch': class_mismatch, 'missing_in_cpp': missing, 'extra_in_cpp': extra,
+        },
+        'divergences_total': div_total,
+        'pass': div_total == 0,
+        'inheritance': (
+            'lof-EXACT on all cells (0 divergences): the C++ mapping produces the identical spelling as '
+            'the Python mapping on every committed segment, so the C++ derivation INHERITS the Python-side '
+            'corpus establishment (root 13061/13063 = 99.985 %, bass 11180/11182 = 99.982 % derived-vs-'
+            'notated, with the 4 enumerated enharmonic-convention divergences). See root_spelling / '
+            'bass_spelling above for that notated establishment.'
+        ) if div_total == 0 else (
+            'DIVERGENCE FOUND (%d): one implementation is wrong; STOP and report, do not resolve by editing.'
+            % div_total),
+    }
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--decode', default=os.path.join(_HERE, 'decode_parity_ref.json'))
     ap.add_argument('--note-events', default=os.path.join(_HERE, 'note_events', 'note_events.json'))
     ap.add_argument('--out', default=os.path.join(_HERE, 'spelling_establishment.json'))
+    ap.add_argument('--cpp-parity', default=None,
+                    help='path to the C++ dump (batch_analyze --joint-spelling-parity); when given, adds '
+                         'the OI-197 lof-exact C++<->Python parity block and exits nonzero on any divergence')
     args = ap.parse_args()
 
     decode = json.load(open(args.decode, encoding='utf-8'))
@@ -241,6 +364,12 @@ def main():
             'divergences': bass_divergences,
         },
     }
+    parity = None
+    if args.cpp_parity:
+        cpp = json.load(open(args.cpp_parity, encoding='utf-8'))
+        parity = compare_cpp_parity(decode, ne, cpp)
+        out['cpp_parity'] = parity
+
     with open(args.out, 'w', encoding='utf-8', newline='\n') as f:
         json.dump(out, f, ensure_ascii=False, indent=1)
     r = root_overall
@@ -252,6 +381,23 @@ def main():
     print(f"root divergences: {len(root_divergences)}; bass divergences: {len(bass_divergences)}")
     print(f"wrote {args.out}")
 
+    if parity is not None:
+        print(f"cpp-parity: segments matched={parity['segments_matched']}/{parity['segments_total']} "
+              f"root_cells={parity['root_cells_compared']} bass_cells={parity['bass_cells_compared']} "
+              f"factor_cells={parity['factor_cells_compared']}")
+        print(f"cpp-parity divergences: root={len(parity['root_divergences'])} "
+              f"bass={len(parity['bass_divergences'])} factor={len(parity['factor_divergences'])} "
+              f"class_mismatch={len(parity['decode_alignment']['class_mismatch'])} "
+              f"missing={len(parity['decode_alignment']['missing_in_cpp'])} "
+              f"extra={len(parity['decode_alignment']['extra_in_cpp'])} -> "
+              f"{'PASS' if parity['pass'] else 'FAIL (STOP)'}")
+        if not parity['pass']:
+            for key in ('root_divergences', 'bass_divergences', 'factor_divergences'):
+                for d in parity[key][:10]:
+                    print(f"  {key}: {d}")
+            return 2
+    return 0
+
 
 if __name__ == '__main__':
-    main()
+    raise SystemExit(main())

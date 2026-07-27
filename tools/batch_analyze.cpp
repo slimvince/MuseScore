@@ -2005,6 +2005,12 @@ static void printHelp(const std::string& prog)
         << "            the Python reference <artifact-dir>/posterior_slice_ref.json (every\n"
         << "            piece, segment, candidate, both axes). Self-driving; returns before\n"
         << "            any analysis (production output byte-identical). Default OFF.\n"
+        << "  --joint-spelling-parity <artifact-dir>\n"
+        << "            (OI-197) Dump the C++ root/bass tonal-spelling derivation (notation\n"
+        << "            output-surface contract §3.2/§5.2) per committed segment to\n"
+        << "            <artifact-dir>/joint_spelling_parity_cpp.json, for the lof-EXACT\n"
+        << "            C++<->Python parity check (gen_spelling_establishment.py --cpp-parity).\n"
+        << "            Self-driving; returns before any analysis (byte-identical). Default OFF.\n"
         << "  --decode-keymode\n"
         << "            (Layer-3 diagnostic) Build the layer-1 note model, run the REAL\n"
         << "            layer-2 slicer, run the isolated layer-3 key/mode SEQUENCE decoder\n"
@@ -4218,6 +4224,136 @@ static int runJointPosteriorSlice(const std::string& artifactDir)
     return pass ? 0 : 1;
 }
 
+// ── --joint-spelling-parity (default OFF; the OI-197 spelling-derivation PARITY dump) ──────────────
+// Establishes the C++ root/bass tonal-SPELLING derivation (notation output-surface contract §3.2 /
+// §5.2) — the mapping the notation switch will PUBLISH — against the Python establishment instrument
+// (tools/joint_estimator/gen_spelling_establishment.py). Both implement the ONE documented line-of-
+// fifths derivation (#6); §5.2's corpus-wide derived-vs-notated figure (root 99.985 % / bass 99.982 %,
+// 4 enumerated enharmonic divergences) was measured on the PYTHON side, so OI-197 owes a lof-EXACT
+// C++<->Python parity over EVERY committed segment before the switch. This driver DUMPS the C++
+// derivation per committed segment; gen_spelling_establishment.py --cpp-parity reads the dump and
+// compares lof-exactly (any divergence = STOP: one implementation is wrong, decided by report not edit).
+//
+// Production config (what the switch publishes): the COMPILED-IN EMBEDDED tables + the SELECTED weight
+// vector (ratified Decision D1), the §5 decode. The per-segment root/factor spellings are computed by
+// the SAME primitives + inputs assembleNotationRecord uses (jointprimitives::rootSpellingLof over the
+// resolved class at the segment's (tonic, mode) + the notated-signature reference sigRef; factorSpellingLof
+// over each ordered chord factor) — #6, one derivation, so the dump equals the record's published
+// spellings. `factors` dumps ALL chord factors: a superset covering the record's per-event bass spelling
+// (factorSpellingLof(rootLof, root, bassPc)) for whatever bass pc the note-selection picks, so the Python
+// comparator picks the establishment's segment-level bass factor from it. Per-piece sig/mode are the
+// committed decode inputs (decode_parity_ref.json `selected` arm). Self-driving: consumes only committed
+// artifacts, needs no input score, returns before any production analysis (standard corpus byte-identical).
+static int runJointSpellingParity(const std::string& artifactDir)
+{
+    namespace joint = mu::composing::analysis::joint;
+    using muse::ByteArray;
+    using muse::JsonDocument;
+    using muse::JsonObject;
+    using muse::JsonValue;
+
+    auto readJson = [](const std::string& path, JsonObject& out) -> std::string {
+        std::ifstream f(path, std::ios::binary);
+        if (!f) {
+            return "cannot open " + path;
+        }
+        const std::string s((std::istreambuf_iterator<char>(f)), std::istreambuf_iterator<char>());
+        std::string e;
+        const ByteArray ba(s.data(), s.size());
+        out = JsonDocument::fromJson(ba, &e).rootObject();
+        return e.empty() ? std::string() : ("parse error in " + path + ": " + e);
+    };
+
+    joint::LoadedCorpus corpus = joint::loadPiecesFromNoteEvents(artifactDir + "/note_events/note_events.json");
+    if (!corpus.ok) {
+        std::cerr << "joint-spelling-parity: " << corpus.error << "\n";
+        return 1;
+    }
+    JsonObject parity;
+    std::string err = readJson(artifactDir + "/decode_parity_ref.json", parity);
+    if (!err.empty()) {
+        std::cerr << "joint-spelling-parity: " << err << "\n";
+        return 1;
+    }
+    const JsonObject selected = parity.value("selected").toObject();   // per-piece sig/mode (committed decode)
+
+    // Production config: the compiled-in EMBEDDED tables + the SELECTED weight vector (Decision D1) —
+    // byte-identical to the committed tools/joint_estimator/ artifacts, so this decode reproduces the
+    // committed decode_parity_ref `selected` arm (the class_key the comparator cross-checks against).
+    joint::JointTables tables = joint::JointTables::loadEmbedded("all");
+    if (!tables.loaded) {
+        std::cerr << "joint-spelling-parity: " << tables.error << "\n";
+        return 1;
+    }
+    joint::Vocabulary vocab(tables);
+    joint::ChordCache cache;
+    const joint::WeightVector selWeights = joint::selectedWeights();
+    joint::FittedAdapter adapter = joint::FittedAdapter::loadEmbedded(selWeights);
+    if (!adapter.loaded()) {
+        std::cerr << "joint-spelling-parity: " << adapter.error() << "\n";
+        return 1;
+    }
+
+    std::ostringstream art;
+    art << "{\n \"tool\": \"tools/batch_analyze.cpp --joint-spelling-parity\",\n"
+        << " \"weight_arm\": \"selected\",\n \"tables\": \"embedded\",\n"
+        << " \"derivation\": \"jointprimitives::rootSpellingLof / factorSpellingLof (== assembleNotationRecord)\",\n"
+        << " \"pieces\": {\n";
+    int pieces = 0;
+    long long segs = 0;
+    bool firstPiece = true;
+    for (auto& kv : corpus.pieces) {
+        const std::string& stem = kv.first;
+        if (!selected.contains(stem)) {
+            continue;
+        }
+        const JsonObject sp = selected.value(stem).toObject();
+        const JsonValue sv = sp.value("sig_fifths");
+        const std::optional<int> sig = sv.isNumber() ? std::optional<int>(sv.toInt()) : std::nullopt;
+        const std::string dm = sp.value("declared_mode").toStdString();
+        const int sigRef = sig.has_value() ? *sig : 0;
+        const joint::DecodeResult r = joint::decodePiece(kv.second, adapter, vocab, cache, 4, sig, dm);
+
+        art << (firstPiece ? "" : ",\n") << "  \"" << jsonEscape(stem) << "\": {\"sig_fifths\": "
+            << (sig.has_value() ? std::to_string(*sig) : std::string("null")) << ", \"segments\": [";
+        firstPiece = false;
+        bool firstSeg = true;
+        for (const joint::SegmentSummary& s : r.segments) {
+            // the record's exact class resolution + chord content (jointnotationrecord.cpp:220-247).
+            const joint::LabelClass* clsp = vocab.find(s.classKey);
+            const joint::LabelClass resolved = clsp ? *clsp : joint::classFromKey(s.classKey);
+            const joint::ChordInfo& info = cache.get(resolved, s.tonicPc, s.isMajor);
+            const std::optional<int> rootLof = joint::rootSpellingLof(resolved, s.tonicPc, s.isMajor, sigRef);
+
+            art << (firstSeg ? "\n" : ",\n") << "    {\"tick\": " << s.startTick
+                << ", \"class_key\": \"" << jsonEscape(s.classKey) << "\", \"tonic_pc\": " << s.tonicPc
+                << ", \"is_major\": " << (s.isMajor ? "true" : "false") << ", \"root_lof\": "
+                << (rootLof.has_value() ? std::to_string(*rootLof) : std::string("null")) << ", \"factors\": [";
+            firstSeg = false;
+            bool firstFac = true;
+            if (rootLof.has_value() && info.root.has_value() && info.fac.has_value()) {
+                for (const joint::ChordFactor& f : *info.fac) {
+                    const std::optional<int> flof = joint::factorSpellingLof(*rootLof, *info.root, f.pc);
+                    art << (firstFac ? "" : ", ") << "{\"role\": \"" << f.role << "\", \"pc\": " << f.pc
+                        << ", \"lof\": " << (flof.has_value() ? std::to_string(*flof) : std::string("null")) << "}";
+                    firstFac = false;
+                }
+            }
+            art << "]}";
+            ++segs;
+        }
+        art << (firstSeg ? "" : "\n  ") << "]}";
+        ++pieces;
+    }
+    art << "\n }\n}\n";
+    const std::string outPath = artifactDir + "/joint_spelling_parity_cpp.json";
+    std::ofstream ofs(outPath, std::ios::binary);
+    ofs << art.str();
+    std::cout << "joint-spelling-parity: " << pieces << " pieces, " << segs
+              << " segments dumped -> " << outPath << "\n";
+    return 0;
+}
+
 // ── --joint-adapter-facts / --joint-decode-from-adapter (default OFF; OI-180 dual-path Task C) ────
 // These are the "score -> facts" build step the --joint-decode-corpus comment names as separate. They
 // load each covered corpus score, build the joint decoder's inputs through the FACT ADAPTER
@@ -4783,6 +4919,10 @@ int main(int argc, char* argv[])
     // Computes the §3.3 group (i) slice per segment and checks it bit-identically against the Python
     // reference posterior_slice_ref.json; returns before any score/preset/analysis (byte-identical).
     std::string jointPosteriorSliceDir;
+    // --joint-spelling-parity <artifact-dir>: the OI-197 spelling-derivation PARITY dump (default OFF).
+    // Dumps the C++ root/bass tonal-spelling derivation per committed segment for the lof-exact
+    // C++<->Python parity; returns before any score/preset/analysis (byte-identical).
+    std::string jointSpellingParityDir;
 
     for (int i = 1; i < args.size(); ++i) {
         const QString a = args.at(i);
@@ -4833,6 +4973,13 @@ int main(int argc, char* argv[])
                 jointPosteriorSliceDir = args.at(++i).toUtf8().toStdString();
             } else {
                 std::cerr << "ERROR: --joint-posterior-slice requires an artifact-dir argument\n";
+                return 1;
+            }
+        } else if (a == "--joint-spelling-parity") {
+            if (i + 1 < args.size()) {
+                jointSpellingParityDir = args.at(++i).toUtf8().toStdString();
+            } else {
+                std::cerr << "ERROR: --joint-spelling-parity requires an artifact-dir argument\n";
                 return 1;
             }
         } else if (a == "--dump-regions") {
@@ -5060,6 +5207,13 @@ int main(int argc, char* argv[])
     // + tables + selected weights) and returns before any production analysis (standard corpus byte-identical).
     if (!jointPosteriorSliceDir.empty()) {
         return runJointPosteriorSlice(jointPosteriorSliceDir);
+    }
+    // ── --joint-spelling-parity (OI-197 spelling-derivation parity dump; default OFF) ────
+    // Self-driving: consumes only the committed tools/joint_estimator artifacts (note_events +
+    // decode_parity_ref) + the embedded tables/weights, and returns before any production analysis
+    // (the standard corpus stays byte-identical whether or not the flag is present).
+    if (!jointSpellingParityDir.empty()) {
+        return runJointSpellingParity(jointSpellingParityDir);
     }
     // ── --joint-adapter-facts / --joint-decode-from-adapter (Task C; default OFF) ────
     // Both load the corpus scores, build the joint inputs through the fact adapter, and return before

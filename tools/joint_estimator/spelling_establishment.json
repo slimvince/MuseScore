@@ -669,5 +669,27 @@
     "notated_lof": 8
    }
   ]
+ },
+ "cpp_parity": {
+  "purpose": "OI-197 lof-exact C++<->Python spelling-derivation parity (a notation-switch precondition)",
+  "cpp_source": "tools/batch_analyze.cpp --joint-spelling-parity",
+  "cpp_weight_arm": "selected",
+  "cpp_tables": "embedded",
+  "segments_total": 13063,
+  "segments_matched": 13063,
+  "root_cells_compared": 13063,
+  "bass_cells_compared": 11182,
+  "factor_cells_compared": 39954,
+  "root_divergences": [],
+  "bass_divergences": [],
+  "factor_divergences": [],
+  "decode_alignment": {
+   "class_mismatch": [],
+   "missing_in_cpp": [],
+   "extra_in_cpp": []
+  },
+  "divergences_total": 0,
+  "pass": true,
+  "inheritance": "lof-EXACT on all cells (0 divergences): the C++ mapping produces the identical spelling as the Python mapping on every committed segment, so the C++ derivation INHERITS the Python-side corpus establishment (root 13061/13063 = 99.985 %, bass 11180/11182 = 99.982 % derived-vs-notated, with the 4 enumerated enharmonic-convention divergences). See root_spelling / bass_spelling above for that notated establishment."
  }
 }
