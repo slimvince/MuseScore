@@ -1,0 +1,283 @@
+{
+ "provenance": {
+  "generator": "tools/notation_seams/gen_editing_cycle.py",
+  "instrument_commit": "2e139d2a06bc2b127fcbdb27dc7ef7ebb529149e",
+  "open_item": "OI-206 / cc_instruction_analysis_cost_profile.md Task 3",
+  "arm": "record (useJointNotationRecord ON = production default since the notation switch)",
+  "method": "produces-per-action is a control-flow FACT (cited to file:line); produce_cold_ms is the MEASURED whole-score produceNotationRecord cost (noteseam_latency.json + large_score_decode_profile.json); cost-per-action = produces x produce_cold (#19: the two are carried with their sources, never conflated)."
+ },
+ "undo_counter_fact": {
+  "change_token": "undoStack->currentIndex() (notationcomposingbridge.cpp:400)",
+  "edit_advances_index": true,
+  "navigation_advances_index": false,
+  "consequence": "On the record arm there is no cache, so every action pays >=1 whole-score produce. A (score, change-token) record cache would serve navigation and warm re-queries; but a sustained pitch-edit session advances the token every keystroke, so the cache is re-paid each keystroke there (the edit loop is the hard case a cache alone does not solve — the extent/frequency axes do)."
+ },
+ "produce_cost_by_score": [
+  {
+   "id": "bach_chorale_001",
+   "sizeClass": "small SATB chorale",
+   "measures": 23,
+   "notes": 230,
+   "produce_cold_ms": 5260.8713,
+   "source": "noteseam_latency.json (C++ whole-score produceNotationRecord, cold)"
+  },
+  {
+   "id": "chopin_bi105_op30_1",
+   "sizeClass": "mid-size piano (mazurka)",
+   "measures": 54,
+   "notes": 589,
+   "produce_cold_ms": 8385.5698,
+   "source": "noteseam_latency.json (C++ whole-score produceNotationRecord, cold)"
+  },
+  {
+   "id": "bach_bwv806_prelude",
+   "sizeClass": "contrapuntal keyboard prelude",
+   "measures": 37,
+   "notes": 866,
+   "produce_cold_ms": 22104.598,
+   "source": "noteseam_latency.json (C++ whole-score produceNotationRecord, cold)"
+  },
+  {
+   "id": "mozart_k279_1",
+   "sizeClass": "largest convenient (sonata mvt)",
+   "measures": 100,
+   "notes": 1978,
+   "produce_cold_ms": 27072.142,
+   "source": "noteseam_latency.json (C++ whole-score produceNotationRecord, cold)"
+  },
+  {
+   "id": "bach_chorale_001",
+   "sizeClass": "small SATB chorale",
+   "events": 80,
+   "notes": 230,
+   "produce_cold_ms": 5683.3026,
+   "source": "large_score_decode_profile.json (phase1+2+3+4, the whole produce)"
+  },
+  {
+   "id": "chopin_bi105_op30_1",
+   "sizeClass": "mid-size piano (mazurka)",
+   "events": 248,
+   "notes": 589,
+   "produce_cold_ms": 8804.176000000001,
+   "source": "large_score_decode_profile.json (phase1+2+3+4, the whole produce)"
+  },
+  {
+   "id": "bach_bwv806_prelude",
+   "sizeClass": "contrapuntal keyboard prelude",
+   "events": 462,
+   "notes": 866,
+   "produce_cold_ms": 22971.1404,
+   "source": "large_score_decode_profile.json (phase1+2+3+4, the whole produce)"
+  },
+  {
+   "id": "mozart_k279_1",
+   "sizeClass": "largest convenient (sonata mvt)",
+   "events": 1441,
+   "notes": 1978,
+   "produce_cold_ms": 27213.1613,
+   "source": "large_score_decode_profile.json (phase1+2+3+4, the whole produce)"
+  },
+  {
+   "id": "bach_brandenburg4_mvt3",
+   "sizeClass": "large",
+   "events": 1976,
+   "notes": 6361,
+   "produce_cold_ms": 107301.92129999999,
+   "source": "large_score_decode_profile.json (phase1+2+3+4, the whole produce)"
+  },
+  {
+   "id": "butterworth_green_willow",
+   "sizeClass": "large",
+   "events": 1100,
+   "notes": 3375,
+   "produce_cold_ms": 13859.7605,
+   "source": "large_score_decode_profile.json (phase1+2+3+4, the whole produce)"
+  },
+  {
+   "id": "dvorak_cello_concerto_mvt2",
+   "sizeClass": "large",
+   "events": 1818,
+   "notes": 4812,
+   "produce_cold_ms": 51199.6708,
+   "source": "large_score_decode_profile.json (phase1+2+3+4, the whole produce)"
+  },
+  {
+   "id": "holst_mercury",
+   "sizeClass": "large",
+   "events": 1743,
+   "notes": 8405,
+   "produce_cold_ms": 9886.6474,
+   "source": "large_score_decode_profile.json (phase1+2+3+4, the whole produce)"
+  }
+ ],
+ "actions": [
+  {
+   "action": "navigation step (next/prev element; e.g. left/right arrow)",
+   "is_edit": false,
+   "advances_undo_index": false,
+   "produces_record_arm": 1,
+   "produces_legacy_arm": 0,
+   "citations": [
+    "src/notation/internal/notationinteraction.cpp:395 (m_selectionChanged.notify on move)",
+    "src/notation/internal/notationaccessibility.cpp:118/203 (single-note -> funnel)",
+    "src/notation/internal/notationcomposingbridge.cpp:732 (record-arm produceNotationRecord)",
+    "src/notation/internal/notationcomposingbridge.cpp:400 (changeToken = undoStack currentIndex — UNCHANGED on navigation)"
+   ],
+   "note": "Selection change, no edit. Undo index unchanged. Record arm: 1 whole-score produce, no cache. Legacy arm: served from the bounded-window cache (warm).",
+   "record_arm_cost_by_score": [
+    {
+     "id": "bach_chorale_001",
+     "produce_cold_ms": 5260.8713,
+     "record_arm_cost_ms": 5260.8713
+    },
+    {
+     "id": "chopin_bi105_op30_1",
+     "produce_cold_ms": 8385.5698,
+     "record_arm_cost_ms": 8385.5698
+    },
+    {
+     "id": "bach_bwv806_prelude",
+     "produce_cold_ms": 22104.598,
+     "record_arm_cost_ms": 22104.598
+    },
+    {
+     "id": "mozart_k279_1",
+     "produce_cold_ms": 27072.142,
+     "record_arm_cost_ms": 27072.142
+    },
+    {
+     "id": "bach_chorale_001",
+     "produce_cold_ms": 5683.3026,
+     "record_arm_cost_ms": 5683.3026
+    },
+    {
+     "id": "chopin_bi105_op30_1",
+     "produce_cold_ms": 8804.176000000001,
+     "record_arm_cost_ms": 8804.176000000001
+    },
+    {
+     "id": "bach_bwv806_prelude",
+     "produce_cold_ms": 22971.1404,
+     "record_arm_cost_ms": 22971.1404
+    },
+    {
+     "id": "mozart_k279_1",
+     "produce_cold_ms": 27213.1613,
+     "record_arm_cost_ms": 27213.1613
+    },
+    {
+     "id": "bach_brandenburg4_mvt3",
+     "produce_cold_ms": 107301.92129999999,
+     "record_arm_cost_ms": 107301.92129999999
+    },
+    {
+     "id": "butterworth_green_willow",
+     "produce_cold_ms": 13859.7605,
+     "record_arm_cost_ms": 13859.7605
+    },
+    {
+     "id": "dvorak_cello_concerto_mvt2",
+     "produce_cold_ms": 51199.6708,
+     "record_arm_cost_ms": 51199.6708
+    },
+    {
+     "id": "holst_mercury",
+     "produce_cold_ms": 9886.6474,
+     "record_arm_cost_ms": 9886.6474
+    }
+   ],
+   "multi_note_note": null
+  },
+  {
+   "action": "pitch change (up/down arrow on a selected note)",
+   "is_edit": true,
+   "advances_undo_index": true,
+   "produces_record_arm": 1,
+   "produces_legacy_arm": 1,
+   "citations": [
+    "src/notation/internal/notationundostack.cpp:55/77/101 -> :281 (apply/undo/redo -> notifyAboutNotationChanged)",
+    "src/notation/internal/notationaccessibility.cpp:48/110 (notationChanged -> updateAccessibilityInfo)",
+    "src/notation/internal/notationcomposingbridge.cpp:732 (record-arm produceNotationRecord)",
+    "src/notation/internal/notationcomposingbridge.cpp:400 (changeToken advances on the commit)"
+   ],
+   "note": "An EDIT: apply() pushes to the undo stack (currentIndex advances -> any memo keyed on it is invalidated) and fires notationChanged -> the funnel -> one whole-score produce. The undo-index advance is why a (score, change-token) record cache is re-paid EACH keystroke on a sustained pitch-edit session (it is a NEW key every keystroke). A produce that also re-notifies the selection could add a second produce (call-path q2 caveat); >=1 per keystroke.",
+   "record_arm_cost_by_score": [
+    {
+     "id": "bach_chorale_001",
+     "produce_cold_ms": 5260.8713,
+     "record_arm_cost_ms": 5260.8713
+    },
+    {
+     "id": "chopin_bi105_op30_1",
+     "produce_cold_ms": 8385.5698,
+     "record_arm_cost_ms": 8385.5698
+    },
+    {
+     "id": "bach_bwv806_prelude",
+     "produce_cold_ms": 22104.598,
+     "record_arm_cost_ms": 22104.598
+    },
+    {
+     "id": "mozart_k279_1",
+     "produce_cold_ms": 27072.142,
+     "record_arm_cost_ms": 27072.142
+    },
+    {
+     "id": "bach_chorale_001",
+     "produce_cold_ms": 5683.3026,
+     "record_arm_cost_ms": 5683.3026
+    },
+    {
+     "id": "chopin_bi105_op30_1",
+     "produce_cold_ms": 8804.176000000001,
+     "record_arm_cost_ms": 8804.176000000001
+    },
+    {
+     "id": "bach_bwv806_prelude",
+     "produce_cold_ms": 22971.1404,
+     "record_arm_cost_ms": 22971.1404
+    },
+    {
+     "id": "mozart_k279_1",
+     "produce_cold_ms": 27213.1613,
+     "record_arm_cost_ms": 27213.1613
+    },
+    {
+     "id": "bach_brandenburg4_mvt3",
+     "produce_cold_ms": 107301.92129999999,
+     "record_arm_cost_ms": 107301.92129999999
+    },
+    {
+     "id": "butterworth_green_willow",
+     "produce_cold_ms": 13859.7605,
+     "record_arm_cost_ms": 13859.7605
+    },
+    {
+     "id": "dvorak_cello_concerto_mvt2",
+     "produce_cold_ms": 51199.6708,
+     "record_arm_cost_ms": 51199.6708
+    },
+    {
+     "id": "holst_mercury",
+     "produce_cold_ms": 9886.6474,
+     "record_arm_cost_ms": 9886.6474
+    }
+   ],
+   "multi_note_note": null
+  },
+  {
+   "action": "add analyzed harmony to selection (multi-note command)",
+   "is_edit": true,
+   "advances_undo_index": true,
+   "produces_record_arm": "N (once per selected note)",
+   "produces_legacy_arm": "N",
+   "citations": [
+    "src/notation/internal/notationinteraction.cpp:8256 (addAnalyzedHarmonyToSelection)",
+    "src/notation/internal/notationinteraction.cpp:8311 (funnel call inside the per-note loop over byStaffTick)"
+   ],
+   "note": "N-note selection -> N whole-score produces (OI-213). A keyed (score, change-token) record cache would collapse the N to 1 (the note views are microsecond lookups into the one record).",
+   "record_arm_cost_by_score": [],
+   "multi_note_note": "cost = N x produce_cold_ms; for an N-note selection on a score whose produce is P ms, the command costs N*P ms."
+  }
+ ]
+}
