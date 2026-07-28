@@ -12,6 +12,13 @@ build.cmake     text            eol=lf
 # all-fail after any git checkout / worktree switch / bisect.
 src/notation/tests/**/*.json  text  eol=lf
 
+# Binary MuseScore scores (.mscz is a ZIP container) must NEVER be line-ending
+# normalised — the default `* text=auto` above would corrupt the zip on a CRLF
+# checkout (the OI-195 / OI-34 line-ending-normalisation class). Marked binary so
+# git stores and checks them out byte-for-byte. (.mscx is uncompressed XML and is
+# left under text=auto by design — only the committed .mscz set needs this.)
+*.mscz          binary
+
 # Batch files need CRLF line endings
 *.bat           text            eol=crlf
 *.cmd           text            eol=crlf

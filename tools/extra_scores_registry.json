@@ -1,6 +1,6 @@
 {
   "_description": "Extra scores available for batch analysis. Not part of DCML validation corpora. Ground truth not available for any of these scores.",
-  "_updated": "2026-04-24",
+  "_updated": "2026-07-28",
   "jazz": [
     {
       "path": "tools/extra scores/500-miles-high-chick-corea-500-miles-high-by-chick-corea-arr-mark-taylor.mscz",
@@ -1162,5 +1162,430 @@
       "style": "fusion",
       "ground_truth": false
     }
-  ]
+  ],
+  "large": [
+    {
+      "path": "tools/extra scores/large/bach-brandenburg-concerto-no-3-bwv-1048.mscz",
+      "title": "Brandenburg Concerto No. 3 in G, BWV 1048",
+      "composer": "J. S. Bach",
+      "source": "https://musescore.com/score/5090058",
+      "license": "CC0",
+      "license_metaTag_raw": "OpenScore (CC0)",
+      "ground_truth": false,
+      "measured": {
+        "staves": 11,
+        "parts": 11,
+        "measures": 186,
+        "notes": 19913,
+        "events": 3129,
+        "scoreChordNotes": 19913,
+        "fileBytes": 2856821
+      },
+      "notes": "Name-pair with bach_brandenburg3_short: near-identical content (19913 vs 19910 notes, both 11 staves/186 measures); the file-size difference (2.86 vs 0.12 MB) is embedded media, not transcription density."
+    },
+    {
+      "path": "tools/extra scores/large/bach-brandenburg-concerto-no-3.mscz",
+      "title": "Brandenburg Concerto No. 3 in G (second upload)",
+      "composer": "J. S. Bach",
+      "source": "http://musescore.com/frirobi48/scores/4840481",
+      "license": "undetermined",
+      "license_metaTag_raw": "",
+      "ground_truth": false,
+      "measured": {
+        "staves": 11,
+        "parts": 11,
+        "measures": 186,
+        "notes": 19910,
+        "events": 3129,
+        "scoreChordNotes": 19910,
+        "fileBytes": 116082
+      },
+      "notes": "Name-pair with bach_brandenburg3_bwv1048 (see there); no copyright metaTag (licence undetermined)."
+    },
+    {
+      "path": "tools/extra scores/large/bach-brandenburg-concerto-no-4-bwv-1049-mvt-iii-presto.mscz",
+      "title": "Brandenburg Concerto No. 4 in G, BWV 1049, mvt III (Presto)",
+      "composer": "J. S. Bach",
+      "source": "",
+      "license": "CC0",
+      "license_metaTag_raw": "OpenScore (CC0)",
+      "ground_truth": false,
+      "measured": {
+        "staves": 9,
+        "parts": 9,
+        "measures": 244,
+        "notes": 6361,
+        "events": 1976,
+        "scoreChordNotes": 6361,
+        "fileBytes": 75260
+      }
+    },
+    {
+      "path": "tools/extra scores/large/bach-mass-in-b-minor-bwv-232-part-1.mscz",
+      "title": "Mass in B minor, BWV 232, Part 1",
+      "composer": "J. S. Bach",
+      "source": "https://musescore.com/score/5073154",
+      "license": "undetermined",
+      "license_metaTag_raw": "",
+      "ground_truth": false,
+      "measured": {
+        "staves": 40,
+        "parts": 40,
+        "measures": 1043,
+        "notes": 59562,
+        "events": 11196,
+        "scoreChordNotes": 59562,
+        "fileBytes": 565874
+      }
+    },
+    {
+      "path": "tools/extra scores/large/bach-the-art-of-the-fugue.mscz",
+      "title": "The Art of Fugue, BWV 1080",
+      "composer": "J. S. Bach",
+      "source": "https://musescore.com/score/4457661",
+      "license": "CC0",
+      "license_metaTag_raw": "Creative Commons copyright waiver (CC0 1.0 Universal)",
+      "ground_truth": false,
+      "measured": {
+        "staves": 6,
+        "parts": 5,
+        "measures": 2303,
+        "notes": 62694,
+        "events": 20430,
+        "scoreChordNotes": 62694,
+        "fileBytes": 498443
+      }
+    },
+    {
+      "path": "tools/extra scores/large/beethoven-ludwig-van-symphony-no-7-op-92-i-poco-sostenuto.mscz",
+      "title": "Symphony No. 7 in A, Op. 92, mvt I (Poco sostenuto)",
+      "composer": "Ludwig van Beethoven",
+      "source": "http://musescore.comhttps://musescore.com/user/16916841/scores/6479581",
+      "license": "CC0",
+      "license_metaTag_raw": "Creative Commons copyright waiver (CC0 1.0 Universal)",
+      "ground_truth": false,
+      "measured": {
+        "staves": 24,
+        "parts": 23,
+        "measures": 728,
+        "notes": 27648,
+        "events": 4948,
+        "scoreChordNotes": 27648,
+        "fileBytes": 337256
+      }
+    },
+    {
+      "path": "tools/extra scores/large/beethoven-symphony-no-9-op-125.mscz",
+      "title": "Symphony No. 9 in D minor, Op. 125",
+      "composer": "Ludwig van Beethoven",
+      "source": "http://musescore.com/user/13033246/scores/5733014",
+      "license": "CC0",
+      "license_metaTag_raw": "OpenScore (CC0)",
+      "ground_truth": false,
+      "measured": {
+        "staves": 53,
+        "parts": 52,
+        "measures": 2617,
+        "notes": 114763,
+        "events": 15067,
+        "scoreChordNotes": 114763,
+        "fileBytes": 6153844
+      },
+      "notes": "Name-pair with beethoven_sym9_openscore: near-identical content (114763 vs 114767 notes, 15067 events both); 53 vs 56 staves; two OpenScore-lineage transcriptions of the same work."
+    },
+    {
+      "path": "tools/extra scores/large/butterworth-the-banks-of-green-willow.mscz",
+      "title": "The Banks of Green Willow",
+      "composer": "George Butterworth",
+      "source": "",
+      "license": "undetermined",
+      "license_metaTag_raw": "",
+      "ground_truth": false,
+      "measured": {
+        "staves": 17,
+        "parts": 15,
+        "measures": 163,
+        "notes": 3375,
+        "events": 1100,
+        "scoreChordNotes": 3375,
+        "fileBytes": 86136
+      }
+    },
+    {
+      "path": "tools/extra scores/large/dvorak-cello-concerto-in-b-minor-movement-iii.mscz",
+      "title": "Cello Concerto in B minor, Op. 104, mvt III",
+      "composer": "Antonin Dvorak",
+      "source": "http://musescore.com/user/30859765/scores/5651916",
+      "license": "undetermined",
+      "license_metaTag_raw": "1894",
+      "ground_truth": false,
+      "measured": {
+        "staves": 20,
+        "parts": 20,
+        "measures": 516,
+        "notes": 12187,
+        "events": 3515,
+        "scoreChordNotes": 12187,
+        "fileBytes": 186616
+      }
+    },
+    {
+      "path": "tools/extra scores/large/dvorak-cello-concerto-in-b-minor-mvt-1.mscz",
+      "title": "Cello Concerto in B minor, Op. 104, mvt I",
+      "composer": "Antonin Dvorak",
+      "source": "http://musescore.com/user/30859765/scores/5651914",
+      "license": "undetermined",
+      "license_metaTag_raw": "1894",
+      "ground_truth": false,
+      "measured": {
+        "staves": 20,
+        "parts": 20,
+        "measures": 354,
+        "notes": 13597,
+        "events": 4084,
+        "scoreChordNotes": 13597,
+        "fileBytes": 228858
+      }
+    },
+    {
+      "path": "tools/extra scores/large/dvorak-cello-concerto-in-b-minor-mvt-ii.mscz",
+      "title": "Cello Concerto in B minor, Op. 104, mvt II",
+      "composer": "Antonin Dvorak",
+      "source": "http://musescore.com/user/30859765/scores/5651915",
+      "license": "undetermined",
+      "license_metaTag_raw": "1894",
+      "ground_truth": false,
+      "measured": {
+        "staves": 20,
+        "parts": 20,
+        "measures": 166,
+        "notes": 4812,
+        "events": 1818,
+        "scoreChordNotes": 4812,
+        "fileBytes": 112576
+      }
+    },
+    {
+      "path": "tools/extra scores/large/dvorak-symphony-no-9-mvt-i.mscz",
+      "title": "Symphony No. 9 in E minor 'From the New World', mvt I",
+      "composer": "Antonin Dvorak",
+      "source": "http://musescore.com/user/30859765/scores/5695982",
+      "license": "undetermined",
+      "license_metaTag_raw": "1894",
+      "ground_truth": false,
+      "measured": {
+        "staves": 15,
+        "parts": 15,
+        "measures": 452,
+        "notes": 12110,
+        "events": 2471,
+        "scoreChordNotes": 12110,
+        "fileBytes": 176215
+      }
+    },
+    {
+      "path": "tools/extra scores/large/faure-piano-quintet-no-2-op-115.mscz",
+      "title": "Piano Quintet No. 2 in C minor, Op. 115",
+      "composer": "Gabriel Faure",
+      "source": "https://musescore.com/score/4043121",
+      "license": "CC0",
+      "license_metaTag_raw": "OpenScore (CC0)",
+      "ground_truth": false,
+      "measured": {
+        "staves": 6,
+        "parts": 5,
+        "measures": 1251,
+        "notes": 22487,
+        "events": 9745,
+        "scoreChordNotes": 22487,
+        "fileBytes": 3059678
+      }
+    },
+    {
+      "path": "tools/extra scores/large/gluck-iphigenie-en-aulide-vocal-score.mscz",
+      "title": "Iphigenie en Aulide (vocal score)",
+      "composer": "Christoph Willibald Gluck",
+      "source": "http://musescore.com/user/13033246/scores/5673458",
+      "license": "CC0",
+      "license_metaTag_raw": "OpenScore (CC0)",
+      "ground_truth": false,
+      "measured": {
+        "staves": 26,
+        "parts": 25,
+        "measures": 4517,
+        "notes": 86666,
+        "events": 29677,
+        "scoreChordNotes": 86666,
+        "fileBytes": 4274725
+      }
+    },
+    {
+      "path": "tools/extra scores/large/haydn-8th-symphony-le-soir.mscz",
+      "title": "Symphony No. 8 in G 'Le soir'",
+      "composer": "Joseph Haydn",
+      "source": "",
+      "license": "undetermined",
+      "license_metaTag_raw": "1761?",
+      "ground_truth": false,
+      "measured": {
+        "staves": 14,
+        "parts": 14,
+        "measures": 599,
+        "notes": 12191,
+        "events": 2969,
+        "scoreChordNotes": 12191,
+        "fileBytes": 138422
+      }
+    },
+    {
+      "path": "tools/extra scores/large/haydn-symphony-no-6.mscz",
+      "title": "Symphony No. 6 in D 'Le matin'",
+      "composer": "Joseph Haydn",
+      "source": "http://musescore.com/user/30859765/scores/5452080",
+      "license": "undetermined",
+      "license_metaTag_raw": "(1761?)",
+      "ground_truth": false,
+      "measured": {
+        "staves": 12,
+        "parts": 12,
+        "measures": 430,
+        "notes": 11522,
+        "events": 2976,
+        "scoreChordNotes": 11522,
+        "fileBytes": 127386
+      }
+    },
+    {
+      "path": "tools/extra scores/large/holst-openscore-transcription-of-mercury.mscz",
+      "title": "The Planets, Op. 32 - Mercury (single movement)",
+      "composer": "Gustav Holst",
+      "source": "http://musescore.com/shoogle/scores/5094996",
+      "license": "CC0",
+      "license_metaTag_raw": "Creative Commons copyright waiver (CC0 1.0 Universal)",
+      "ground_truth": false,
+      "measured": {
+        "staves": 69,
+        "parts": 64,
+        "measures": 296,
+        "notes": 8405,
+        "events": 1743,
+        "scoreChordNotes": 8405,
+        "fileBytes": 202845
+      },
+      "notes": "A SINGLE movement (Mercury) of The Planets, not the full suite (cf holst_planets, 1537 measures)."
+    },
+    {
+      "path": "tools/extra scores/large/holst-the-planets-op-32.mscz",
+      "title": "The Planets, Op. 32 (full suite)",
+      "composer": "Gustav Holst",
+      "source": "https://musescore.com/user/13033246/scores/5271023",
+      "license": "CC0",
+      "license_metaTag_raw": "OpenScore (CC0)",
+      "ground_truth": false,
+      "measured": {
+        "staves": 69,
+        "parts": 64,
+        "measures": 1537,
+        "notes": 91886,
+        "events": 11336,
+        "scoreChordNotes": 91886,
+        "fileBytes": 3936071
+      },
+      "notes": "The full Planets suite; cf holst_mercury (single movement)."
+    },
+    {
+      "path": "tools/extra scores/large/mozart-symphony-no-41-jupiter-k-551.mscz",
+      "title": "Symphony No. 41 in C 'Jupiter', K. 551",
+      "composer": "W. A. Mozart",
+      "source": "http://musescore.com/musemeister/mozart-jupiter",
+      "license": "undetermined",
+      "license_metaTag_raw": "",
+      "ground_truth": false,
+      "measured": {
+        "staves": 17,
+        "parts": 17,
+        "measures": 925,
+        "notes": 32772,
+        "events": 6811,
+        "scoreChordNotes": 32772,
+        "fileBytes": 311663
+      },
+      "notes": "Name-pair with mozart_jupiter: IDENTICAL content counts (32772 notes, 6811 events, 17 staves, 925 measures); the 0.31 vs 4.62 MB file-size difference is embedded media, NOT a full-score-vs-reduction difference."
+    },
+    {
+      "path": "tools/extra scores/large/mozart-symphony-no-41-jupiter.mscz",
+      "title": "Symphony No. 41 in C 'Jupiter', K. 551 (embedded-media upload)",
+      "composer": "W. A. Mozart",
+      "source": "https://musescore.com/score/4861738",
+      "license": "undetermined",
+      "license_metaTag_raw": "",
+      "ground_truth": false,
+      "measured": {
+        "staves": 17,
+        "parts": 17,
+        "measures": 925,
+        "notes": 32772,
+        "events": 6811,
+        "scoreChordNotes": 32772,
+        "fileBytes": 4621093
+      },
+      "notes": "Name-pair with mozart_jupiter_k551 (see there); identical content, larger file = embedded media."
+    },
+    {
+      "path": "tools/extra scores/large/string-quartet-in-d-minor-d-810-death-and-the-maiden-franz-schubert.mscz",
+      "title": "String Quartet No. 14 in D minor, D. 810 'Death and the Maiden'",
+      "composer": "Franz Schubert",
+      "source": "http://musescore.com/user/37221589/scores/7397765",
+      "license": "CC0",
+      "license_metaTag_raw": "OpenScore (CC0)",
+      "ground_truth": false,
+      "measured": {
+        "staves": 4,
+        "parts": 4,
+        "measures": 1445,
+        "notes": 22357,
+        "events": 9120,
+        "scoreChordNotes": 22357,
+        "fileBytes": 552079
+      }
+    },
+    {
+      "path": "tools/extra scores/large/symphony-no9-op125-ludwig-van-beethoven-beethoven-symphony-no-9-op-125-arranged-bu-andrew-moranty-credit-to-openscore.mscz",
+      "title": "Symphony No. 9 in D minor, Op. 125 (second OpenScore transcription)",
+      "composer": "Ludwig van Beethoven",
+      "source": "http://musescore.com/user/37098095/scores/14316052",
+      "license": "CC0",
+      "license_metaTag_raw": "OpenScore (CC0)",
+      "ground_truth": false,
+      "measured": {
+        "staves": 56,
+        "parts": 53,
+        "measures": 2617,
+        "notes": 114767,
+        "events": 15067,
+        "scoreChordNotes": 114767,
+        "fileBytes": 5908369
+      },
+      "notes": "Name-pair with beethoven_sym9 (see there); a second OpenScore transcription."
+    },
+    {
+      "path": "tools/extra scores/large/tchaikovsky-1812-overture.mscz",
+      "title": "1812 Overture, Op. 49",
+      "composer": "Pyotr Ilyich Tchaikovsky",
+      "source": "https://musescore.com/score/4145221",
+      "license": "CC0",
+      "license_metaTag_raw": "OpenScore (CC0)",
+      "ground_truth": false,
+      "measured": {
+        "staves": 44,
+        "parts": 42,
+        "measures": 422,
+        "notes": 31357,
+        "events": 3493,
+        "scoreChordNotes": 31357,
+        "fileBytes": 2688378
+      }
+    }
+  ],
+  "_large_description": "23 user-committed large/orchestral scores (tools/extra scores/large/), ground_truth=false, committed 2026-07-28 (cc_instruction_analysis_cost_profile.md Task 0). Counts are MEASURED as the joint fact adapter counts them (large_score_profile_counts.json). Licence read from each file's own copyright metaTag only; 'undetermined' where the metaTag is empty or a bare date."
 }

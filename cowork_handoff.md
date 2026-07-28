@@ -1,7 +1,146 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE 2026-07-28 — THE NOTATION-LAYER ADOPTION INCREMENT: RATIFIED, BUILT, SWITCHED, CLOSED — THE JOINT ESTIMATOR IS PRODUCTION ON BOTH SURFACES. A LIVE INTERACTIVE REGRESSION (OI-206) IS UNDER READ-ONLY INVESTIGATION. THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE 2026-07-28 (SECOND SESSION, AFTERNOON) — THE OI-206 DIAGNOSIS RETURNED AND VERIFIED; THE PROBLEM IS NOT LATENCY BUT THE UNSETTLED ANALYSIS-EXTENT QUESTION; THE USER HAS STATED A STANDING LARGE-SCORE REQUIREMENT. THE CURRENT ENTRY POINT.
+
+**You (the next session) start clueless — this block is the entire handover.** Read, in order:
+(1) `CLAUDE.md` IN FULL; (2) `OPEN_ITEMS.md` — the lean INDEX, status authoritative THERE ONLY,
+narratives in `open_items/OI-<n>.md` — opening AT MINIMUM the details of the new rows this arc
+creates plus **OI-206, OI-203, OI-207, OI-208, OI-188, OI-191, OI-162, OI-18, OI-38, OI-39**;
+(3) this block, then the earlier 2026-07-28 block below it (the notation-switch arc's record);
+(4) the evidence this arc turns on: **`docs/p3_granularity_ab_3_1b.md`** (the shelved
+whole-score interactive prior, with its measured A/B) and **`cowork_architecture_review_2026_07.md`
+§7** (the Tristan stress case, finding F-11 especially); (5) the ratified governing documents
+`cowork_notation_adoption_increment.md` and `cowork_notation_output_contract.md` with their dated
+amendments.
+
+**★ THE HEADLINE.** CC's OI-206 investigation returned (`05d2d39df9` / `6e9ecd3dfd` /
+`2e139d2a06`) and was Cowork-verified at the objects — read-only scope held (no `src/`, no
+golden, no corpus, no `tools/robust_stop/`), the code citations re-read independently, the
+artifacts reproducing every headline figure. **The mechanism is closed:** exactly one selection
+kind reaches the note-seam funnel (a single-NOTE selection), exactly one whole-score
+`produceNotationRecord` per event, synchronous on the UI thread, no re-trigger loop. **But the
+fix decision surface did not survive contact with the user's field data, and the problem
+re-framed twice.**
+
+**★ WHAT THE USER'S FIELD DATA ESTABLISHED (2026-07-28), and what it killed.** A sixty-bar
+SATB + piano + bass arrangement costs ~20 s per full analysis. Up/down arrow (a pitch change)
+is an EDIT — the undo counter advances, every memoization is invalidated, and the 20 s is
+re-paid **per keystroke of the ordinary composing loop**. Left/right arrow (navigation) is not
+an edit, so a cache would serve it. **Consequence: the keyed record cache is a partial remedy at
+best — useful for navigation, worthless for composing.** And moving the computation off the
+drawing thread only means the application stays responsive while displaying an answer to a
+question the user has already moved past. **Neither inference-neutral remedy is sufficient**;
+that is a measured-from-the-field conclusion, not an argument.
+
+**★ THE FINDING THAT ENLARGED IT (Cowork, verified at the code).** `produceNotationRecord(score,
+stem, excludeStaves)` **takes no tick range at all.** All four record-arm seams — annotation emit
+(`notationcomposingbridge.cpp:1495`), implode (`notationimplodebridge.cpp:1420`), tuning, and the
+note seam (`:732`) — analyze the ENTIRE score and narrow the result by view afterwards, while
+every legacy arm passed the actual span into `analyzeHarmonicRhythm` (`:1509`, `:1434`) with a
+deliberate ~8-bar Roman-numeral lookahead. So annotating four bars costs a full-score analysis,
+**and the record arm silently changed the analysis INPUT SCOPE on every seam.** The ratified
+contract's span seam specifies the opposite. That scope change is already shipped: the P6
+dual-arm report classified 6,029 differences as "inference-driven", and **nothing separates the
+part caused by the estimator reading better from the part caused only by it now reading the whole
+piece** — two different causes under one label, and the switch was ratified on that label. A
+cheap read-only separation exists (re-run the dual-arm instrument with the record arm bounded to
+the legacy span).
+
+**★ THE QUESTION THE WHOLE ARC TURNS ON, AND ITS RECORD STATUS (established this session).**
+*What temporal extent does the analyzer read when answering a query, and how often must it
+re-read it?* It was **originally ratified as whole-piece** ("decode-once-query-many", Q1);
+**overturned on measurement at Stage 3.1b (2026-06-12)** — the A/B falsified the whole-piece
+premise (32–40 % tick changes on contrapuntal scores; DCML 59/41 for the window path, 65/35 on
+Mozart) and whole-piece was **SHELVED WITH EVIDENCE**; and then **explicitly PARKED, not
+answered** — 3.1b's own disposition forbids re-attempting it "without resolving the granularity
+question as a deliberate product decision… it needs the granularity-robust metric the 2.2-i
+dossier mandated." **That precondition has been satisfied since 2026-07-06** (the robust-unit
+stop), three weeks before the seams dispatches specified whole-score with no ledger premise. So
+the question is legitimately re-openable by the route the record itself prescribes — and the
+current code answers it in the shelved direction, by dispatch specification rather than by any
+ruling. The expanding-window behavior it displaced was never ratified either: it is the
+incumbent that won the A/B. The design that would answer it properly — read only what the
+inference needs, extending temporally until satisfied — is roadmap §2.15, **specified and never
+coded** (OI-18).
+
+**★ THE USER'S TWO STANDING ADDITIONS (2026-07-28).** (1) **Very large scores must be handled** —
+a full act of Tristan, a symphony — and are expected to be a MORE COMMON use case than the
+corpora we hold. This collides with the ratified chorale-scale tractability envelope (60–150
+events, exact decode) and with a fitted corpus of 326 chorales by one composer. (2) **The effort
+control is ONE setting with several dials, and in the worst case it must bound TEMPORALLY, not
+merely switch algorithm stages on and off** — which means the extent question and the effort
+question are the same question, and belong in one mechanism (#6), not in a bridge and a preset
+separately. The user's ruling on timing: **it is too early to implement it, because we do not yet
+know factually which parts of the inference must be switchable.** The user's recorded prediction,
+verbatim, entered as a #17(b) band to be checked and not confirmed: *"always read the entire score
+will VERY likely not survive (maybe only under some effort setting = EXTREME)."*
+
+**★ THE ACTIVE DISPATCH is `cc_instruction_analysis_cost_profile.md`** (read-only; user-ratified
+plan and score set). It commits the 23 large scores the user supplied under `"tools/extra
+scores/large/"` with measured event and staff counts and per-file licence (plus an explicit
+`*.mscz binary` rule and a byte-identity round-trip check — this repo has been bitten twice by
+line-ending normalization, OI-195/OI-34); profiles one cold analysis into its phases with the
+**segment-content-scoring versus dynamic-program split made MANDATORY** (that split decides
+whether incremental patching is viable, and therefore whether the whole-piece extent can survive
+at any acceptable cost — the window study already proved content scores position-local and
+reusable byte-identically); fits the scaling law in events AND separately in staves with
+uncertainty (#24) and extrapolates to Tristan scale, flagged as extrapolation; prices the
+**composing loop per user action** (pitch change, navigation step, multi-note command); and
+discriminates the extent candidates directly — the true cumulative cost of growing, whether
+structural boundaries even EXIST in this repertoire (reported as a distribution with its tail,
+since F-11 predicts the tail is where it fails), and the event count per screen. It also
+inventories, read-only, whether annotated material both larger and more chromatic than a chorale
+exists on disk at all — the accuracy half of the extent question cannot be measured without it.
+**Six register rows ride Task 0**, including a home for the extent question itself, which has
+never had one — which is precisely how it came to be re-decided by implementation.
+
+**★ HOW THIS FITS THE STANDING PLAN — five consequences the agenda must absorb.**
+(1) **The OI-180 retirement map gains a SECOND reason to stay blocked.** The legacy arm is not
+merely the revert escape for OI-206; it is **the only working implementation of a bounded,
+growing, cached interactive read** — the reference implementation of a candidate we may adopt.
+Deleting it before the extent question is ruled would destroy it. (2) **OI-193's marginals
+completion has a cost interaction:** the ratified §3.3 full-list publication (104 classes × every
+candidate key, per segment, no truncation) may itself be a dominant cost on symphonic scores, and
+the marginals ADD per-segment published mass on top — the profile's posterior-slice hypothesis
+answers this, and a finding there is a finding about a RATIFIED decision, reported not changed.
+(3) **OI-200 is re-scoped, not rescheduled:** its architecture step-back must now judge the
+system against the stated large-score requirement, not against the envelope it was fitted in; its
+empirical half still consumes OI-179, which is unbuilt, so it stays late. (4) **OI-207 has grown
+from a suspicion to a pattern** — two confirmed instances now (the whole-score interactive
+producer; the dropped span parameter on four seams) plus the extent question's own history; it
+remains next after this dispatch, and the map does not proceed over it. (5) **If the extent
+changes, #6 reaches the batch surface too** — one path per concern means the graded corpus would
+have to move with it, i.e. a robust-stop re-baseline; that is an architecture-scale event, and
+the #22 protocol for exactly that class already exists (the OI-178 adoption-event variant), so
+the path is lawful but must be entered deliberately. **None of this is inference-refinement work
+(#8):** the extent question is architectural and algorithmic completion — OI-18's never-coded
+cluster — not a precision fix, and it must not be mistaken for one by a later session.
+
+**★ AFTER THE DISPATCH, in order:** Cowork presents the analysis-extent and interactive-cost
+decision surface (the candidate grid — whole piece / fixed window / grown window / enclosing
+musical unit / viewport, against per-query / per-edit / once-then-patched — each rated on the
+measured numbers against the guiding principles AND #4, with the 3.1b evidence and the Tristan
+review as required inputs); then the ratified build; then **OI-207**; then the marginals C++
+follow-up (Tasks 3–4); then OI-194; then the OI-180 map (still blocked by OI-206 + OI-207);
+then OI-205(b) and the OI-198/199/200 reviews; and only then the inference era (OI-192 first).
+
+**★ METHOD REMINDERS — including two Cowork failures this session, recorded so they are not
+repeated.** (a) **Every choice to the user carries ALTERNATIVES with pros/cons EACH NAMING the
+principle, guardrail or gate it rests on, and EACH rated on both axes — principles, and the
+ultimate objective of maximum-precision inference.** The user had to demand this TWICE more this
+session, on top of the three rewrites the previous arc needed. It is not a formatting preference;
+a pro without its principle is an opinion. (b) **Option numbering in a question must match the
+numbering in the prose that precedes it** — the user had to point out that it did not. (c) The
+never-bash-for-local-files rule held; git object reads by explicit SHA are the one sanctioned use.
+(d) Verify every CC claim at the objects — CC was accurate this session, and the duty stands.
+(e) Plain language always, terms defined at first use, no self-invented labels: the user knows
+music theory, not this repository's internals.
+
+*(The earlier 2026-07-28 block below is the notation-switch arc's record — kept for provenance.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE 2026-07-28 (FIRST SESSION) — THE NOTATION-LAYER ADOPTION INCREMENT: RATIFIED, BUILT, SWITCHED, CLOSED — THE JOINT ESTIMATOR IS PRODUCTION ON BOTH SURFACES. (SUPERSEDED as the entry point by the block above; its OI-206 investigation has since returned.)
 
 **You (the next session) start clueless — this block is the entire handover.** Read, in order:
 (1) `CLAUDE.md` IN FULL (note two things newer than its older text: the **decision-neutrality

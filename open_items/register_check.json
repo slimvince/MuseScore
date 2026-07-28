@@ -1,8 +1,8 @@
 {
  "mode": "living",
  "baseline_commit": "cb246a7580",
- "index_item_count": 208,
- "detail_file_count": 208,
+ "index_item_count": 215,
+ "detail_file_count": 215,
  "baseline_item_count": 200,
  "post_baseline_ids": [
   "OI-201",
@@ -12,7 +12,14 @@
   "OI-205",
   "OI-206",
   "OI-207",
-  "OI-208"
+  "OI-208",
+  "OI-209",
+  "OI-210",
+  "OI-211",
+  "OI-212",
+  "OI-213",
+  "OI-214",
+  "OI-215"
  ],
  "bijection_ok": true,
  "index_duplicate_ids": [],
@@ -2094,6 +2101,76 @@
   },
   {
    "id": "OI-208",
+   "post_baseline": true,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": null,
+   "ok": true
+  },
+  {
+   "id": "OI-209",
+   "post_baseline": true,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": null,
+   "ok": true
+  },
+  {
+   "id": "OI-210",
+   "post_baseline": true,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": null,
+   "ok": true
+  },
+  {
+   "id": "OI-211",
+   "post_baseline": true,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": null,
+   "ok": true
+  },
+  {
+   "id": "OI-212",
+   "post_baseline": true,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": null,
+   "ok": true
+  },
+  {
+   "id": "OI-213",
+   "post_baseline": true,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": null,
+   "ok": true
+  },
+  {
+   "id": "OI-214",
+   "post_baseline": true,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": null,
+   "ok": true
+  },
+  {
+   "id": "OI-215",
    "post_baseline": true,
    "index_present": true,
    "detail_present": true,
