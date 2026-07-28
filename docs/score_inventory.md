@@ -231,7 +231,24 @@ qualifier — **pitch-class-root resolvable** — now applies: the symmetric-dim
 User-curated `.mscz` for qualitative work. **No ground-truth annotations.**
 Documented in `tools/extra_scores_registry.json` (`ground_truth: false`). The path
 **contains a space** — always quote it: `"tools/extra scores"`. Sub-folders:
-`hiromi/` (20, designated LLM-triage corpus), `Steely dan/`, `piazzolla/`.
+`hiromi/` (20, designated LLM-triage corpus), `Steely dan/`, `piazzolla/`,
+`large/` (23, see below).
+
+### `tools/extra scores/large/` — large / orchestral scores (committed 2026-07-28)
+
+23 user-committed large/orchestral scores (symphonies, concertos, the B-minor Mass, the Art of Fugue,
+string-quartet and quintet movements) added for the analysis-cost measurement
+(`cc_instruction_analysis_cost_profile.md`, OI-209 the large-score requirement). **`ground_truth: false`**;
+registered in `tools/extra_scores_registry.json` under `"large"` with **measured** counts (notes/events as
+the joint fact adapter counts them, staves, parts, measures, file size — from
+`tools/notation_seams/large_score_profile_counts.json`) and the **licence read from each file's own
+copyright metaTag only** (CC0 where the tag says so; `undetermined` for 11 whose tag is empty or a bare
+date — never guessed). `.mscz` is a ZIP container marked **`binary`** in `.gitattributes` (so the
+`* text=auto` default cannot line-ending-corrupt it — the OI-195/OI-34 class). Three name-pairs are the
+SAME work at different file sizes (Beethoven 9, Jupiter, Brandenburg 3) — the size difference is embedded
+media, not transcription density (near-identical measured note/event counts). **Not gate/regression
+material** (no ground truth); a qualitative + cost-measurement corpus. NOTE (OI-215): the joint decoder
+returns an EMPTY analysis on 13 of these 23 (the symphonies) — see the register.
 
 ---
 

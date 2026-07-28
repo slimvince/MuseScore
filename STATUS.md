@@ -7,6 +7,44 @@
 
 *Last updated: 2026-07-28, LATEST (Cowork — **CC's OI-206 investigation below was received and VERIFIED at the objects; then the problem RE-FRAMED TWICE and the fix surface did NOT survive.** (1) **The editing loop kills the cache-only remedy:** up/down arrow is an EDIT, so the undo counter advances and the ~20 s full analysis is re-paid PER KEYSTROKE (user's sixty-bar six-staff arrangement); left/right arrow is not an edit, so a cache serves navigation only; off-thread computation only keeps the UI alive while answering a question the user has moved past. (2) **`produceNotationRecord` takes NO tick range** — all four record-arm seams analyze the ENTIRE score and narrow by view afterwards, while every legacy arm passed the actual span into `analyzeHarmonicRhythm` (+~8-bar RN lookahead): a cost multiplier AND a silent analysis-input SCOPE change, already shipped inside P6's 6,029 "inference-driven" differences with nothing separating estimator-quality from scope. (3) **The extent question's record status, established this session:** ratified as whole-piece (Q1) → OVERTURNED and SHELVED WITH EVIDENCE at Stage 3.1b (DCML 59/41 for the window path, 65/35 on Mozart) → explicitly PARKED pending the granularity-robust metric, **which has existed since 2026-07-06** → now implemented as whole-piece by dispatch specification, no ruling. (4) **User's standing additions:** very large scores (a Tristan act, a symphony) MUST be handled and are expected to be more common than our corpora; the effort control is ONE setting with several dials that must bound TEMPORALLY, too early to implement until we know factually which parts of the inference must be switchable. User's #17(b) prediction, verbatim: *"always read the entire score will VERY likely not survive (maybe only under some effort setting = EXTREME)."* **ACTIVE DISPATCH: `cc_instruction_analysis_cost_profile.md`** (read-only) — commit+register the 23 large scores; the phase profile with the MANDATORY content-scoring vs dynamic-program split (it decides whether incremental patching is viable, hence whether the whole-piece extent can survive); the scaling law in events AND staves with uncertainty + a flagged Tristan extrapolation; cost PER USER ACTION in the composing loop; the extent-candidate discrimination; and a ground-truth inventory. Six register rows ride Task 0, including a home for the extent question, which has never had one. **NEXT:** the analysis-extent decision surface → ratified build → OI-207 (two confirmed instances now) → marginals C++ → OI-194 → the OI-180 map (still blocked; the legacy arm is ALSO the only working bounded-growing-cached interactive read) → OI-205(b) → OI-198/199/200 → only then the inference era. **Full handover: the second 2026-07-28 block in `cowork_handoff.md`.**)*
 
+*Last updated: 2026-07-28, later (CC — **THE ANALYSIS-COST PROFILE DELIVERED (READ-ONLY; test-layer +
+tools/ instruments only; NO src/ change, NO golden/corpus/robust_stop movement, NO behavior change).**
+Dispatch `cc_instruction_analysis_cost_profile.md`. **★ A SURPRISE — A STOP (#13): whole-piece decode
+does not just get SLOW on orchestral scores, it FAILS to an EMPTY analysis on most of them (OI-215).**
+The joint decoder returns `complete=false`, 0 committed segments, on **13 of the 23 committed large
+scores** (every symphony in the set) — theorem-proven (an event whose every ≤segCap window has <2
+distinct onset pcs fails the ≥2-member content gate → V[N] empty; `jointdecoder.cpp:444-445/838`),
+confirmed on the 2 decoded instances (butterworth, holst_mercury). The chorale fit corpus (OI-39) never
+exhibits it; the ADAPTER succeeds on all orchestral scores (no crash). **TASK 0:** 23 large/orchestral
+scores committed (ground_truth:false, `.mscz binary` in .gitattributes, staged+worktree byte-identity
+PROVEN 0 mismatches), registered with MEASURED counts + metaTag licence (11 undetermined, never guessed);
+3 name-pairs are the same work at different file sizes (embedded media). 7 register rows OI-209..215;
+living-check PASS (215). **TASK 1 (phase profile):** the produce is ~99% the DECODE (phase 3); phase 2
+embedded-table parse a constant ~10 ms (OI-214 answered — immaterial); the §3.3 slice 0.3-0.9% (posterior-
+slice-dominates hypothesis REFUTED). **The MANDATORY content-vs-DP split (chorale envelope, byte-identical
+Python reference, decode reproduces parity on all 109): content 40.5% / DP 59.5%** — the coupled DP
+dominates and is not reusable, so incremental patching saves ≤40%; whole-piece does not survive cheaply
+via patching. **TASK 2 (scaling, #24):** buildAdapterFacts ~ **events^1.80** (95% CI 1.65-2.09, R²=0.965,
+n=27) — a clean near-quadratic law (16.8 s on the largest); the decode has no clean events^k law (density
+confound ~3× + the failure cliff); Tristan-act extrapolation FLAGGED — a fact-extraction floor ~23 s at
+~60k events (CI 4-514 s), decode failing-or-worse. **User's #17(b) prediction SUPPORTED, more strongly:**
+whole-piece not only costs seconds-to-minutes, it FAILS entirely on the majority of orchestral scores —
+it does not survive as a default. **TASK 3 (editing cycle):** the change-token is `undoStack->currentIndex()`;
+a pitch edit ADVANCES it (a cache is a new key each keystroke → the edit loop is the hard case a cache
+alone doesn't solve), navigation does NOT (served warm); add-harmony is an N-produce multiplier (OI-213).
+**TASK 4 (extent discrimination):** enclosing-musical-unit undermined — **24 of 27 scores have a
+boundary-free stretch >30 measures** (Fauré: 467 measures / 2947 events, zero structural boundary — F-11
+realized); viewport is bounded (~15-120 events/screen); grow-until-stable's win is the BOUNDING (~50
+events) not reuse. All subject to OI-215 (a window with an uncoverable event returns empty too). **TASK 5
+(ground truth):** YES — larger+more-chromatic annotated material is on disk (42 subcorpora; the Tristan
+Prelude ITSELF with DCML annotations — resolving the arch-review "[unverified]"); the accuracy half is NOT
+blocked on OI-38 for Romantic/Impressionist, only for jazz/pop. Artifacts: `tools/notation_seams/`
+(large_score_profile_counts / large_score_decode_profile / cost_profile_analysis / editing_cycle /
+ground_truth_inventory + the 4 generators) + `tools/joint_estimator/content_dp_split.json`. 6 commits.
+**NEXT (Cowork):** the analysis-extent + interactive-cost decision surface (the §A candidates rated on
+these numbers + the 3.1b evidence + the Tristan review), with **OI-215 as a prerequisite — no extent
+produces an answer on the orchestral class until it is resolved** → then OI-207.)*
+
 *Last updated: 2026-07-28 (CC — **THE OI-206 INVESTIGATION DELIVERED (READ-ONLY; investigate-by-default,
 NO fix).** Dispatch `cc_instruction_oi206_investigation.md`. **TASK 1 — the note-seam call-path
 confirmation** (generated fact table `tools/notation_seams/callpath_facts.json`, `gen_callpath_facts.py`,
