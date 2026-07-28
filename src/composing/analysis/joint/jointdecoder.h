@@ -173,6 +173,73 @@ struct LoadedCorpus {
     std::map<std::string, Piece> pieces;
 };
 LoadedCorpus loadPiecesFromNoteEvents(const std::string& noteEventsPath);
+
+// ─────────────────────────────────────────────────────────────────────────────────────────────
+// OI-199 Task 1 — DEFAULT-OFF fire-count instrument (OI-110 disposition). Zero work + byte-identical
+// decode output when disabled (every counting site is guarded; the returned candidate/segment data is
+// untouched); an explicit jointFireSetEnabled(true) is the ONLY way to turn it on, so no production
+// path ever counts. Reverted in its own commit at the dispatch close (hash recorded for a one-cherry-
+// pick re-add), exactly as OI-110's L4 oracle counter was. It characterizes the joint decode to the
+// L4 standard: per-filter admission rejections (candidateStates gates 1/2/3) + per-branch DP fires.
+
+// Per-window admission breakdown, filled by candidateStates when a non-null pointer is passed (so the
+// per-event coverage decomposition and the aggregate counters both read the ONE real gate logic, #6).
+struct AdmitStats {
+    int offered = 0;         // (key,class) pairs examined for the window
+    int rejRoot = 0;         // gate (1) ROOT-PRESENT rejections
+    int rejMemInvalid = 0;   // unmappable class in this key (info.mem absent)
+    int rejOverlap = 0;      // gate (2) MEMBER-OVERLAP rejections (the OI-215 gate)
+    int rejFit = 0;          // gate (3) FIT / non-chord-tone-budget rejections
+    int admitted = 0;        // candidates admitted (returned)
+    int nOnset = 0;          // distinct onset pcs in the window (the quantity gate (2) tests)
+    int deepestGate = 0;     // deepest gate any class reached: 0 none, 1 root, 2 member-overlap test, 3 fit test/admit
+};
+
+struct JointFireCounters {
+    // candidate admission (candidateStates) — aggregate over every examined window
+    long long candWindows = 0;        // candidateStates invocations (windows examined)
+    long long candOffered = 0;        // (key,class) pairs examined across all windows
+    long long rejRootPresent = 0;     // gate (1) ROOT-PRESENT rejections
+    long long rejMemInvalid = 0;      // unmappable class in this key
+    long long rejMemberOverlap = 0;   // gate (2) MEMBER-OVERLAP rejections (the OI-215 gate)
+    long long rejFit = 0;             // gate (3) FIT / NCT-budget rejections
+    long long admitted = 0;           // candidates admitted
+    long long onsetDiv[13] = { 0 };   // per window: histogram of distinct onset pcs (0..12, clamped)
+    // decode DP (decodePiece)
+    long long dpPieces = 0;
+    long long dpComplete = 0;
+    long long dpEmpty = 0;            // V[N] empty -> complete=false (the OI-215 OUTCOME branch)
+    long long dpSegments = 0;         // committed segments across pieces
+    long long trInitial = 0;         // (a) initial-segment transition was the chosen predecessor
+    long long trSameKey = 0;         // (b) same-key chord transition was the chosen predecessor
+    long long trKeyChange = 0;       // (c) key-change transition was the chosen predecessor
+    long long trContentNegInf = 0;   // candidate skipped: content == -inf
+    long long trNoBack = 0;          // candidate skipped: no admissible predecessor
+    long long stInsert = 0;          // new DP state inserted at a boundary
+    long long stImprove = 0;         // existing DP state improved by a §5-better path
+};
+
+void jointFireSetEnabled(bool on);
+bool jointFireEnabled();
+void jointFireReset();
+JointFireCounters jointFireSnapshot();
+
+// Per-event structural coverability decomposition — answers "why is an event uncoverable" per the
+// three admission gates, so the OI-215 member-overlap failure is separated from any SIBLING (a
+// root-present or NCT-budget failure). An event is coverable iff some <=segCap window containing it
+// admits >=1 candidate. Uses the REAL candidateStates (no re-implementation, #6).
+struct CoverageScan {
+    int nEvents = 0;
+    int uncoverable = 0;
+    // uncoverable decomposition (mutually exclusive):
+    int uncovMemberOverlapPure = 0;  // every covering window had <2 distinct onset pcs (the OI-215 theorem case)
+    int uncovMemberOverlapRich = 0;  // some covering window had >=2 onset pcs but gate (2) still rejected all classes
+    int uncovFitBlocked = 0;         // a rich covering window had a class pass gates 1&2 but fail gate (3): a SIBLING
+    int uncovRootOnly = 0;           // rich covering windows never got a class past gate (1): a SIBLING
+    bool complete = false;           // did a full-coverage decode exist (no uncoverable event)
+};
+CoverageScan scanCoverage(const Piece& piece, const Vocabulary& vocab, ChordCache& cache,
+                          std::optional<int> sigFifths, int segCap);
 } // namespace mu::composing::analysis::joint
 
 #endif // MU_COMPOSING_ANALYSIS_JOINT_JOINTDECODER_H

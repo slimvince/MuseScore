@@ -88,6 +88,17 @@ std::optional<int> eventBassPc(const Piece& p, const std::vector<int>& noteIdx)
 }
 } // namespace
 
+// ── OI-199 Task 1 fire-count instrument state (DEFAULT-OFF; reverted at close per OI-110) ──────────
+namespace {
+JointFireCounters g_fc;
+bool g_fcOn = false;
+} // namespace
+
+void jointFireSetEnabled(bool on) { g_fcOn = on; }
+bool jointFireEnabled() { return g_fcOn; }
+void jointFireReset() { g_fc = JointFireCounters(); }
+JointFireCounters jointFireSnapshot() { return g_fc; }
+
 // ── Piece ───────────────────────────────────────────────────────────────────────────────────
 
 void Piece::prepare()
@@ -422,7 +433,7 @@ std::vector<std::pair<int, bool> > candidateKeys(PcMask onsetPcs, const std::opt
 
 std::vector<std::tuple<int, bool, std::string> > candidateStates(
     const Piece& piece, int i, int j, const Vocabulary& vocab, ChordCache& cache,
-    const std::optional<std::pair<int, bool> >& sigKey)
+    const std::optional<std::pair<int, bool> >& sigKey, AdmitStats* stats = nullptr)
 {
     PcMask onsetPcs = 0;
     for (int e = i; e < j; ++e) {
@@ -431,25 +442,55 @@ std::vector<std::tuple<int, bool, std::string> > candidateStates(
     const std::vector<std::pair<int, bool> > keys = candidateKeys(onsetPcs, sigKey);
     const int nOnset = popcount(onsetPcs);
     const int maxNcts = std::max(1, j - i);
+    // OI-199 fire-count: per-window admission breakdown (only when instrumented; byte-identical off).
+    const bool count = (stats != nullptr) || g_fcOn;
+    AdmitStats local;                      // scratch when no external stats requested but counting on
+    AdmitStats* st = stats ? stats : (count ? &local : nullptr);
+    if (st) {
+        *st = AdmitStats();
+        st->nOnset = nOnset;
+    }
+    int deepest = 0;                       // deepest gate any class reached this window
     std::vector<std::tuple<int, bool, std::string> > cand;
     for (const auto& km : keys) {
         for (const auto& cp : vocab.ordered()) {
             const ChordInfo& info = cache.get(cp.second, km.first, km.second);
+            if (st) { ++st->offered; }
             if (!info.root.has_value() || !((onsetPcs >> *info.root) & 1u)) {
-                continue;                  // (1) ROOT-PRESENT
+                if (st) { ++st->rejRoot; }
+                continue;                  // (1) ROOT-PRESENT   [class level 0]
             }
+            if (deepest < 1) { deepest = 1; }
             if (!info.mem.has_value()) {
-                continue;
+                if (st) { ++st->rejMemInvalid; }
+                continue;                  // [class level 1: passed gate 1, unmappable]
             }
             const int present = popcount(*info.mem & onsetPcs);
             if (present < std::min(2, popcount(*info.mem))) {
-                continue;                  // (2) MEMBER-OVERLAP
+                if (st) { ++st->rejOverlap; }
+                if (deepest < 2) { deepest = 2; }
+                continue;                  // (2) MEMBER-OVERLAP  [class level 2: reached gate 2]
             }
             if ((nOnset - present) > maxNcts) {
-                continue;                  // (3) FIT
+                if (st) { ++st->rejFit; }
+                deepest = 3;
+                continue;                  // (3) FIT             [class level 3: reached gate 3]
             }
+            deepest = 3;
+            if (st) { ++st->admitted; }
             cand.push_back({ km.first, km.second, cp.first });
         }
+    }
+    if (st) { st->deepestGate = deepest; }
+    if (g_fcOn) {
+        ++g_fc.candWindows;
+        g_fc.candOffered += st->offered;
+        g_fc.rejRootPresent += st->rejRoot;
+        g_fc.rejMemInvalid += st->rejMemInvalid;
+        g_fc.rejMemberOverlap += st->rejOverlap;
+        g_fc.rejFit += st->rejFit;
+        g_fc.admitted += st->admitted;
+        ++g_fc.onsetDiv[nOnset < 0 ? 0 : (nOnset > 12 ? 12 : nOnset)];
     }
     return cand;
 }
@@ -771,6 +812,7 @@ DecodeResult decodePiece(const Piece& piece, const FittedAdapter& adapter, const
                 const std::string& ckey = std::get<2>(c);
                 const double cscore = content(i, j, tonic, major, ckey);
                 if (cscore == NEG_INF) {
+                    if (g_fcOn) { ++g_fc.trContentNegInf; }
                     continue;
                 }
                 const LabelClass* cls = vocab.find(ckey);
@@ -780,13 +822,14 @@ DecodeResult decodePiece(const Piece& piece, const FittedAdapter& adapter, const
                 int backI = -1;
                 std::string backEnc;
                 bool haveBack = false;
+                int backKind = 0;   // OI-199 fire-count: which transition produced the chosen predecessor
                 // (a) initial segment
                 if (sm.hasStart) {
                     const auto pr = adapter.priorTerms(tonic, major, sigFifths, declaredMode);
                     const double tin = sm.startScore + wPrior * pr.first + wDmode * pr.second + entryLp;
                     if (!haveBack || better(tin, i, kStartEnc, tonic, major, ckey,
                                             bestIn, backI, backEnc, tonic, major, ckey)) {
-                        bestIn = tin; backI = i; backEnc = kStartEnc; haveBack = true;
+                        bestIn = tin; backI = i; backEnc = kStartEnc; haveBack = true; backKind = 1;
                     }
                 }
                 // (b) same-key chord transition (+ stay key-cell)
@@ -800,7 +843,7 @@ DecodeResult decodePiece(const Piece& piece, const FittedAdapter& adapter, const
                         const std::string candEnc = stateEnc(tonic, major, pck.first);
                         if (!haveBack || better(tin, i, candEnc, tonic, major, ckey,
                                                 bestIn, backI, backEnc, tonic, major, ckey)) {
-                            bestIn = tin; backI = i; backEnc = candEnc; haveBack = true;
+                            bestIn = tin; backI = i; backEnc = candEnc; haveBack = true; backKind = 2;
                         }
                     }
                 }
@@ -810,22 +853,30 @@ DecodeResult decodePiece(const Piece& piece, const FittedAdapter& adapter, const
                     const double tin = kcIt->second.best + entryLp;
                     if (!haveBack || better(tin, i, kcIt->second.backEnc, tonic, major, ckey,
                                             bestIn, backI, backEnc, tonic, major, ckey)) {
-                        bestIn = tin; backI = i; backEnc = kcIt->second.backEnc; haveBack = true;
+                        bestIn = tin; backI = i; backEnc = kcIt->second.backEnc; haveBack = true; backKind = 3;
                     }
                 }
                 if (!haveBack) {
+                    if (g_fcOn) { ++g_fc.trNoBack; }
                     continue;
+                }
+                if (g_fcOn) {
+                    if (backKind == 1) { ++g_fc.trInitial; }
+                    else if (backKind == 2) { ++g_fc.trSameKey; }
+                    else if (backKind == 3) { ++g_fc.trKeyChange; }
                 }
                 const double score = bestIn + cscore + cad;
                 const std::string st = stateEnc(tonic, major, ckey);
                 const auto exist = bh.idx.find(st);
                 if (exist == bh.idx.end()) {
+                    if (g_fcOn) { ++g_fc.stInsert; }
                     bh.idx[st] = bh.states.size();
                     bh.states.push_back({ tonic, major, ckey, score, backI, backEnc });
                 } else {
                     StateEntry& se = bh.states[exist->second];
                     if (better(score, backI, backEnc, tonic, major, ckey,
                                se.score, se.backI, se.backEnc, tonic, major, ckey)) {
+                        if (g_fcOn) { ++g_fc.stImprove; }
                         se.score = score;
                         se.backI = backI;
                         se.backEnc = backEnc;
@@ -838,6 +889,7 @@ DecodeResult decodePiece(const Piece& piece, const FittedAdapter& adapter, const
     if (V[N].states.empty()) {
         result.complete = false;
         result.totalScore = NEG_INF;
+        if (g_fcOn) { ++g_fc.dpPieces; ++g_fc.dpEmpty; }   // the OI-215 empty-analysis outcome branch
         return result;
     }
     // terminal: the §5-best full-coverage state (exact-score ties by the total order on paths).
@@ -886,7 +938,61 @@ DecodeResult decodePiece(const Piece& piece, const FittedAdapter& adapter, const
     }
     std::reverse(segs.begin(), segs.end());
     result.segments = std::move(segs);
+    if (g_fcOn) { ++g_fc.dpPieces; ++g_fc.dpComplete; g_fc.dpSegments += static_cast<long long>(result.segments.size()); }
     return result;
+}
+
+// ── OI-199 Task 1 — per-event structural coverability decomposition (DEFAULT-OFF harness helper) ──
+// For each event, examine every <=segCap window containing it, call the REAL candidateStates (no re-
+// implementation, #6), and classify uncoverable events by the responsible admission gate — so the
+// OI-215 member-overlap failure is separated from any sibling (root-present / NCT-budget). The global
+// fire counters accumulate over the same window enumeration (candidateStates bumps g_fc when enabled).
+CoverageScan scanCoverage(const Piece& piece, const Vocabulary& vocab, ChordCache& cache,
+                          std::optional<int> sigFifths, int segCap)
+{
+    CoverageScan cs;
+    const int N = static_cast<int>(piece.events.size());
+    cs.nEvents = N;
+    // sigKey exactly as decodePiece derives it (the notated-signature major key is always kept).
+    std::optional<std::pair<int, bool> > sigKey;
+    if (sigFifths.has_value()) {
+        for (int t = 0; t < 12 && !sigKey.has_value(); ++t) {
+            if (collectionFifths(t, true) == *sigFifths) {
+                sigKey = std::make_pair(t, true);
+            }
+        }
+    }
+    std::vector<char> coverable(N, 0), hasRich(N, 0), richDeepest(N, 0);
+    for (int j = 1; j <= N; ++j) {
+        for (int i = std::max(0, j - segCap); i < j; ++i) {
+            AdmitStats stw;
+            const auto cand = candidateStates(piece, i, j, vocab, cache, sigKey, &stw);
+            const bool admits = !cand.empty();
+            const bool rich = stw.nOnset >= 2;
+            for (int e = i; e < j; ++e) {
+                if (admits) { coverable[e] = 1; }
+                if (rich) {
+                    hasRich[e] = 1;
+                    if (stw.deepestGate > richDeepest[e]) { richDeepest[e] = static_cast<char>(stw.deepestGate); }
+                }
+            }
+        }
+    }
+    for (int e = 0; e < N; ++e) {
+        if (coverable[e]) { continue; }
+        ++cs.uncoverable;
+        if (!hasRich[e]) {
+            ++cs.uncovMemberOverlapPure;          // every covering window had <2 onset pcs (OI-215 theorem)
+        } else if (richDeepest[e] >= 3) {
+            ++cs.uncovFitBlocked;                 // a rich window passed gates 1&2, failed gate 3 (SIBLING)
+        } else if (richDeepest[e] == 2) {
+            ++cs.uncovMemberOverlapRich;          // rich window, gate 2 rejected all (broader member-overlap)
+        } else {
+            ++cs.uncovRootOnly;                   // rich window never got a class past gate 1 (SIBLING)
+        }
+    }
+    cs.complete = (cs.uncoverable == 0);
+    return cs;
 }
 
 // ── note_events.json loader ───────────────────────────────────────────────────────────────────

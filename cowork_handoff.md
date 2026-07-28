@@ -1,7 +1,92 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE 2026-07-28 (THIRD) — THE COST PROFILE RETURNED WITH A STOP (OI-215: THE DECODER RETURNS NOTHING ON MOST ORCHESTRAL SCORES); OI-199 IS PULLED FORWARD AS THE ANSWER. THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE 2026-07-28 (FOURTH) — OI-199 PASS 1 RECEIVED; TWO PROCESS FAILURES, ONE COWORK'S; THE LIVE QUESTION IS NOW **IS OI-215 ALONE?** THE CURRENT ENTRY POINT.
+
+**You (the next session) start clueless — this block is the entire handover.** Read, in order:
+(1) `CLAUDE.md` IN FULL; (2) `OPEN_ITEMS.md` (INDEX), opening at minimum **OI-215, OI-216…OI-223,
+OI-199, OI-209, OI-210, OI-206, OI-110, OI-89, OI-100, OI-84, OI-207**; (3) this block, then the
+three earlier 2026-07-28 blocks; (4) the method precedent this arc is measured against —
+`cc_l4_audit_pass1_decoder_report.md` and `tools/audit/l4/`; (5) `docs/p3_granularity_ab_3_1b.md`
+and `cowork_architecture_review_2026_07.md` §7.
+
+**★ TWO PROCESS FAILURES, AND ONE OF THEM IS COWORK'S.** (1) **The blinding was defeated by
+Cowork's own STATUS entry**, which headlined all three sealed findings with exact line citations
+in a file the dispatch itself mandates reading at session start — the OI-89 founding shape,
+correctly declared by CC rather than papered over, rowed **OI-222**. **The remedy is now
+STANDING: withheld findings NEVER enter a mandatory session-start read — STATUS carries a
+POINTER, the content lives in a post-freeze artifact.** Blindness on the joint module is
+**unrecoverable** (its findings are permanently in the register, which is itself a mandatory
+read), so the discovery experiment moves to the instruments partition. (2) **A Cowork claim that
+was WRONG and is withdrawn:** that pass 1's dispositions were "generated, not made" and therefore
+void. Measured against the **user-certified L4 decoder pass** — nine distinct (kind, verdict,
+reason) combinations over 311 rows, all 127 branches on a single verdict — against CC's **ten
+over 1,069**, CC's pass carries MORE verdict diversity than the precedent, and generated
+dispositions with hand-curated exception sets **ARE** the ratified method (`gen_dispositions.py`,
+`gen_l3_dispositions.py`, `pass1_oracle_dispositions.py` are all in the audit tooling). The
+proposed "verdict-entropy guard" is **withdrawn**, calibrated against nothing. **CC's inventory,
+partition proposal, feasibility stop, field curation and rows all STAND.** *Lesson for the next
+Cowork: verifying at the objects includes verifying your own criticism against the precedent
+before you level it.*
+
+**★ THE GENUINE SHORTFALL, NARROWER AND STILL REAL.** Two arms under-delivered against the L4
+standard. **P4 (behavioural characterization):** at L4 it ran real corpus routes — 29,080 slices,
+commit 34.4 % / inherit 3.0 % / abstain 62.6 %, plus per-site fire counts under the OI-110
+instrument; CC's was a passing test suite plus a fire structure read off the code. That is
+precisely the arm that would have exposed the member-overlap prune, and CC drew the lesson itself
+— "a corpus-only fire rate would have MISSED it" — without having run one. **P3's second side:**
+it reported only stale dormancy headers. Cowork searched the ratified
+`cowork_joint_estimator_factorization.md` for the decoder's candidate admission — the root-present
+prune, the member-overlap prune, the non-chord-tone budget — and **found no description of
+candidate admission anywhere in it**. If that holds, the rule that empties the analysis on 13 of
+23 large scores entered production **with no ratified basis** — OI-207's subject matter, and it
+bears directly on the fix.
+
+**★ THE GOVERNING QUESTION IS NOW: IS OI-215 ALONE?** One admission-rule failure was found by
+accident, on one texture, by a measurement not looking for it. #3 says a surprise means the fact
+basis was incomplete; designing a fix around a single instance without knowing whether it has
+siblings is what that principle forbids. **No fix may be designed until the family is
+enumerated.**
+
+**★ THE ACTIVE DISPATCH is `cc_instruction_oi199_joint_p3_p4.md`** (user-ratified, amended
+alternative 2 — dispositions NOT redone, the two arms completed). Per-branch and per-filter fire
+counts under the OI-110 disposition (default-OFF, byte-identity proven, REVERTED at close, hash
+recorded) over **BOTH** the fit corpus **and the 23 committed large scores** — the first time this
+module's branch behaviour is characterized on the repertoire the requirement names, and the 13
+empty-decoding scores are the CHEAPEST cases because admission rejects before the costly dynamic
+program. **A branch dead on one population and live on the other is a headline finding** — that
+is the structural shape of OI-215. Plus P3's second side done exhaustively with candidate
+admission settled either way, and the frozen dispositions **annotated** (never rewritten, #10/#12)
+with the fire-route and manifest-registration columns the L4 rows carried. Predictions registered
+BEFORE the run (#17b — CC declared it registered none last time).
+
+**★ AFTER IT, in order:** the **OI-215 decision surface under the Premise Gate** — ONE design at
+the correct layer covering the whole enumerated family, never a patch per symptom (#6/#7), with
+the groundwork already laid: the admission filters test **onset** pitch classes while the
+**sounding** set is computed on the adjacent line, an unvalidated proxy premise (#17d) that was
+never stated. *(The user has ruled candidate admission is **COMPLETION**, not refinement, so #8
+permits the work now — but that licenses deriving the correct rule from the model, NOT loosening
+a threshold until orchestral scores pass, which is per-case tuning and DT-2 forbids it.)* → the
+**instruments partition, sealed and blind** under the OI-222 remedy (#19: every figure steering
+this arc came from instruments nobody has reviewed) → then pass 2, the analysis-extent decision,
+and the record-seams partition. The OI-180 map stays blocked.
+
+**★ METHOD REMINDERS — the standing list, with this session's additions.** Alternatives are
+presented in **FULL PROSE**, each pro and con naming the principle it rests on, each option rated
+on both the principles and the ultimate objective; the option-widget compression was rejected and
+is not used. **Do not chase the most recent finding** — ask first where it belongs in the ratified
+sequence (a bespoke counters dispatch was written and withdrawn unhanded for exactly this).
+**Verify your own criticism against the precedent before levelling it** (the entropy-guard error).
+**Do not build a framing on an unconfirmed reading of the user's words** (the "implementation
+efficiency" misreading — the user meant BUILD EFFORT; the rule is *make it work first, compromise
+on performance only if performance proves a problem*, which makes the effort dial and the extent
+question LAST resorts). Verify every CC claim at the objects. Never bash for local files; git
+object reads by explicit SHA only.
+
+*(The three earlier 2026-07-28 blocks below are this arc's running record — kept for provenance.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE 2026-07-28 (THIRD) — THE COST PROFILE RETURNED WITH A STOP (OI-215: THE DECODER RETURNS NOTHING ON MOST ORCHESTRAL SCORES); OI-199 IS PULLED FORWARD AS THE ANSWER. (SUPERSEDED as the entry point by the block above.)
 
 **You (the next session) start clueless — this block is the entire handover.** Read, in order:
 (1) `CLAUDE.md` IN FULL; (2) `OPEN_ITEMS.md` (INDEX; status authoritative there only), opening at
