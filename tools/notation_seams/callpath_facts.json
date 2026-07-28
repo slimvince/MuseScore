@@ -1,0 +1,207 @@
+{
+  "field_pattern_reproduction": {
+    "note": "Each field observation (OI-206 user field reports 2026-07-27) is mapped to the exact code branch. Every observation reproduces; there is no unexplained observation.",
+    "observations": [
+      {
+        "citations": [
+          "src/notation/internal/notationaccessibility.cpp:118",
+          "src/notation/internal/notationaccessibility.cpp:203",
+          "src/notation/internal/notationaccessibility.cpp:204",
+          "src/notation/internal/notationcomposingbridge.cpp:732",
+          "muse/framework/global/thirdparty/kors_async/async/internal/channelimpl.h:487"
+        ],
+        "code_explanation": "isSingle && isNote -> harmonicAnnotation -> synchronous whole-score produceNotationRecord on the UI thread; paint blocked until it returns",
+        "field": "selecting a SINGLE NOTE takes 3-4 s before the highlight renders",
+        "match": true
+      },
+      {
+        "citations": [
+          "src/notationscene/qml/MuseScore/NotationScene/notationviewinputcontroller.cpp:856",
+          "src/notation/internal/notationaccessibility.cpp:122"
+        ],
+        "code_explanation": "ctrl-click -> SelectType::ADD -> a LIST selection -> isList() branch -> literal \"List selection\"; the funnel is never reached",
+        "field": "ctrl-clicking additional notes is INSTANT",
+        "match": true
+      },
+      {
+        "citations": [
+          "src/notation/internal/notationaccessibility.cpp:120"
+        ],
+        "code_explanation": "range selection -> isRange() -> rangeAccessibilityInfo() (bar/beat string only); no harmonicAnnotation call",
+        "field": "measures / ranges highlight at normal speed",
+        "match": true
+      },
+      {
+        "citations": [
+          "src/notation/internal/notationaccessibility.cpp:118",
+          "src/notation/internal/notationaccessibility.cpp:203"
+        ],
+        "code_explanation": "single non-note element -> isSingle() true but element->isNote() FALSE -> the harmonicAnnotation branch is skipped",
+        "field": "rests, fermatas, key signatures, repeats, clefs highlight at normal speed",
+        "match": true
+      },
+      {
+        "citations": [
+          "muse/framework/global/thirdparty/kors_async/async/internal/channelimpl.h:487",
+          "src/notation/internal/notationcomposingbridge.cpp:732"
+        ],
+        "code_explanation": "the synchronous whole-score decode blocks the UI thread; paint AND input dispatch (the spacebar shortcut) starve together and recover together when produceNotationRecord returns \u2014 consistent with UI-thread blocking, not an aborted chain (hypothesis (b) is dead)",
+        "field": "spacebar start/stop works INSTANTLY once the highlight has rendered, and not before",
+        "match": true
+      }
+    ],
+    "verdict": "The field pattern is FULLY REPRODUCED by the code facts. The mechanism is a single synchronous whole-score produceNotationRecord on the UI thread, fired once per single-note selection through the status-bar accessibility path. One decode per event; no re-trigger loop; the note-seam status bar is the sole per-selection payer. This confirms OI-206 hypothesis (a) and closes the call-path confirmation the OI-206 dated notes owe before the fix decision surface."
+  },
+  "manifest": {
+    "anchor_count": 38,
+    "anchors_verified": true,
+    "generated_by": "tools/notation_seams/gen_callpath_facts.py",
+    "git_hash": "7dcfbf2096eeb655511ba6fbf4916409d942fc06",
+    "note": "READ-ONLY code-fact extraction; no production code touched. Every claim's citation was re-verified against the source at this git_hash. Re-run to reproduce; an anchor mismatch exits nonzero."
+  },
+  "open_item": "OI-206",
+  "purpose": "Confirm the OI-206 mechanism at the code: which selection kinds reach the note-seam funnel analyzeHarmonicContextAtTick; how many produceNotationRecord calls one single-note selection EVENT triggers; that the call is synchronous on the UI thread with no re-trigger loop; and the other record-arm consumers' interactive frequency. Every claim carries a verified code citation.",
+  "q1_selection_kind_dispatch": {
+    "conclusion": "The note-seam funnel is reached from the interactive selection path by EXACTLY ONE selection kind: a single-NOTE selection. Range, list (ctrl-click multi-note), single non-note (rest, fermata, key signature, clef, barline, repeat), and empty selections never reach it.",
+    "dispatch_branches": [
+      {
+        "citations": [
+          "src/notation/internal/notationaccessibility.cpp:118",
+          "src/notation/internal/notationaccessibility.cpp:119",
+          "src/notation/internal/notationaccessibility.cpp:203",
+          "src/notation/internal/notationaccessibility.cpp:204"
+        ],
+        "handler": "singleElementAccessibilityInfo()",
+        "predicate": "selection()->isSingle()",
+        "reaches_funnel": "ONLY IF the single element is a Note (element->isNote())",
+        "selection": "single element"
+      },
+      {
+        "citations": [
+          "src/notation/internal/notationaccessibility.cpp:120"
+        ],
+        "handler": "rangeAccessibilityInfo()",
+        "predicate": "selection()->isRange()",
+        "reaches_funnel": "NO \u2014 builds a bar/beat string only; no harmonicAnnotation call",
+        "selection": "range"
+      },
+      {
+        "citations": [
+          "src/notation/internal/notationaccessibility.cpp:122"
+        ],
+        "handler": "literal \"List selection\"",
+        "predicate": "selection()->isList()",
+        "reaches_funnel": "NO \u2014 a translated literal; no analysis call",
+        "selection": "list (multi-element, e.g. ctrl-clicked notes)"
+      },
+      {
+        "citations": [
+          "src/notation/internal/notationaccessibility.cpp:110"
+        ],
+        "handler": "empty",
+        "predicate": "(else)",
+        "reaches_funnel": "NO",
+        "selection": "none"
+      }
+    ],
+    "entry": "NotationAccessibility subscribes selectionChanged()->updateAccessibilityInfo() and notationChanged()->updateAccessibilityInfo() (the status-bar text builder).",
+    "entry_citations": [
+      "src/notation/internal/notationaccessibility.cpp:44",
+      "src/notation/internal/notationaccessibility.cpp:48",
+      "src/notation/internal/notationaccessibility.cpp:110"
+    ],
+    "funnel_gate": "singleElementAccessibilityInfo() calls harmonicAnnotation(toNote(element)) ONLY inside `if (element->isNote())`. harmonicAnnotation -> analyzeNoteHarmonicContextDetails(note) -> analyzeHarmonicContextAtTick -> (flag ON) produceNotationRecord (whole-score decode).",
+    "funnel_gate_citations": [
+      "src/notation/internal/notationaccessibility.cpp:203",
+      "src/notation/internal/notationaccessibility.cpp:204",
+      "src/notation/internal/notationcomposingbridge.cpp:817",
+      "src/notation/internal/notationcomposingbridge.cpp:825",
+      "src/notation/internal/notationcomposingbridge.cpp:964",
+      "src/notation/internal/notationcomposingbridge.cpp:729",
+      "src/notation/internal/notationcomposingbridge.cpp:732"
+    ]
+  },
+  "q2_produce_calls_per_single_note_event": {
+    "answer": "EXACTLY ONE produceNotationRecord per single-note selection event (no multiplier).",
+    "caveat": "This counts the SELECTION event only. An event that BOTH re-selects a note AND relayouts the score (e.g. an edit that leaves a note selected) would additionally fire notationChanged -> a second updateAccessibilityInfo -> a second produce. That is an edit event, not the field-reported plain selection. No path fires the funnel more than once for a plain single-note click.",
+    "citations": [
+      "src/notationscene/qml/MuseScore/NotationScene/notationviewinputcontroller.cpp:830",
+      "src/notationscene/qml/MuseScore/NotationScene/notationviewinputcontroller.cpp:852",
+      "src/notationscene/qml/MuseScore/NotationScene/notationviewinputcontroller.cpp:856",
+      "src/notationscene/qml/MuseScore/NotationScene/notationviewinputcontroller.cpp:873",
+      "src/notation/internal/notationinteraction.cpp:1001",
+      "src/notation/internal/notationinteraction.cpp:1025",
+      "src/notation/internal/notationinteraction.cpp:387",
+      "src/notation/internal/notationinteraction.cpp:395",
+      "src/notation/internal/notationinteraction.cpp:344",
+      "src/notation/internal/notationcomposingbridge.cpp:732"
+    ],
+    "reasoning": [
+      "A single-note mouse click routes mousePress_considerSelect -> select({hitElement}, SelectType::SINGLE); ctrl-click uses SelectType::ADD (making a list, not a single).",
+      "select() calls notifyAboutSelectionChangedIfNeed() at most once per call; the notify is de-duplicated by score()->selectionChanged() and emits m_selectionChanged.notify() a single time.",
+      "select() does NOT call notifyAboutNotationChanged() \u2014 notationChanged() is emitted from apply() (score edits) and layout ops, not from a plain selection. So the accessibility object's second subscription (notationChanged) does NOT fire on a plain single-note selection.",
+      "Therefore updateAccessibilityInfo() runs once -> singleElementAccessibilityInfo() once -> harmonicAnnotation once -> ONE produceNotationRecord."
+    ]
+  },
+  "q3_synchronous_and_no_loop": {
+    "no_loop": "updateAccessibilityInfo() -> setAccessibilityInfo() writes m_accessibilityInfo.set() (a separate ValCh consumed by the status-bar text UI). It does not call select(), deselect, or any notation edit, so it cannot re-emit selectionChanged() or notationChanged(). The dedup guard (m_accessibilityInfo.val == infoStd) short-circuits even the ValCh notify on an unchanged string. There is NO re-trigger cycle: one selection event -> one decode. The earlier field 'total freeze' presentation is consistent with a burst of DISTINCT selection events (each a fresh synchronous whole-score decode), not a self-sustaining loop.",
+    "no_loop_citations": [
+      "src/notation/internal/notationaccessibility.cpp:140",
+      "src/notation/internal/notationaccessibility.cpp:136",
+      "src/notation/internal/notationaccessibility.cpp:110"
+    ],
+    "synchronous": "m_selectionChanged.notify() -> Channel::send(SendMode::Auto) -> sendAuto(): when the receiver was registered on the SAME thread as the sender (accessibility is constructed and subscribes on the UI thread, the same thread select() runs on), the callback runs INLINE via sendThdata.receiversCall(...) \u2014 no queue, no event-loop hop. So the whole-score produceNotationRecord executes synchronously on the UI thread inside the select() call; UI paint and input dispatch are blocked until it returns.",
+    "synchronous_citations": [
+      "src/notation/internal/notationinteraction.cpp:395",
+      "muse/framework/global/thirdparty/kors_async/async/internal/channelimpl.h:596",
+      "muse/framework/global/thirdparty/kors_async/async/internal/channelimpl.h:487",
+      "src/notation/internal/notationcomposingbridge.cpp:732"
+    ]
+  },
+  "q4_other_consumers_frequency": {
+    "consumers": [
+      {
+        "consumer": "note-seam status bar (accessibility)",
+        "entry": "singleElementAccessibilityInfo -> harmonicAnnotation -> analyzeHarmonicContextAtTick",
+        "produce_call_site": "src/notation/internal/notationcomposingbridge.cpp:732",
+        "trigger_scope": "PER single-note SELECTION change (the interactive per-event payer)"
+      },
+      {
+        "consumer": "span-annotation emit (Add chord symbols/Roman numerals to selection)",
+        "entry": "addHarmonicAnnotationsToSelection -> produceNotationRecord",
+        "fn": "src/notation/internal/notationcomposingbridge.cpp:1385",
+        "produce_call_site": "src/notation/internal/notationcomposingbridge.cpp:1495",
+        "trigger_scope": "PER explicit annotate command over a range (once per invocation)"
+      },
+      {
+        "consumer": "implode chord track",
+        "entry": "populateChordTrack -> produceNotationRecord",
+        "fn": "src/notation/internal/notationimplodebridge.cpp:1384",
+        "produce_call_site": "src/notation/internal/notationimplodebridge.cpp:1420",
+        "trigger_scope": "PER Implode command (once)"
+      },
+      {
+        "consumer": "region tuning",
+        "entry": "applyRegionTuning -> produceNotationRecord",
+        "fn": "src/notation/internal/notationtuningbridge.cpp:747",
+        "produce_call_site": "src/notation/internal/notationtuningbridge.cpp:777",
+        "trigger_scope": "PER tuning-apply command (once)"
+      },
+      {
+        "consumer": "add-analyzed-harmony to selection (per-note path)",
+        "entry": "addAnalyzedHarmonyToSelection -> analyzeNoteHarmonicContext(note,...) -> funnel",
+        "fn": "src/notation/internal/notationinteraction.cpp:8256",
+        "produce_call_site": "src/notation/internal/notationinteraction.cpp:8311",
+        "trigger_scope": "PER explicit add-harmony command, but calls the funnel ONCE PER SELECTED NOTE (a loop over byStaffTick) \u2014 an N-produce multiplier per command on the flag-ON arm; relevant to the fix surface (a keyed record cache collapses the N to 1)"
+      },
+      {
+        "consumer": "right-click note context menu (Tune as / analysis items)",
+        "entry": "appendNoteAnalysisItems -> analyzeNoteHarmonicContextDetails -> funnel",
+        "produce_call_site": "src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp:194",
+        "trigger_scope": "PER right-click that builds the note context menu (once per menu build)"
+      }
+    ],
+    "note": "Every non-note-seam producer of the record is USER-ACTION-scoped (fires once per explicit command), NOT per selection change. The note-seam status-bar path is the SOLE per-selection payer."
+  },
+  "task": "Task 1 \u2014 the note-seam call-path confirmation (closed at the code, flag useJointNotationRecord ON = the switched/production arm)"
+}
