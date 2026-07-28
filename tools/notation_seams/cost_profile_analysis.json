@@ -1,0 +1,1093 @@
+{
+ "provenance": {
+  "generator": "tools/notation_seams/analyze_cost_profile.py",
+  "instrument_commit": "2e139d2a06bc2b127fcbdb27dc7ef7ebb529149e",
+  "open_item": "OI-206 / cc_instruction_analysis_cost_profile.md Tasks 1/2/4",
+  "inputs": {
+   "counts": true,
+   "decode": true,
+   "content_dp": true,
+   "latency": true
+  }
+ },
+ "task1_phase_table": [
+  {
+   "id": "bach_chorale_001",
+   "events": 80,
+   "notes": 230,
+   "staves": 2,
+   "nSegments": 50,
+   "phase1_build_facts_ms": 0.4059,
+   "phase2_load_tables_ms": 10.5815,
+   "phase3_decode_ms": 5650.2404,
+   "phase4_assemble_ms": 22.0748,
+   "phase4_posterior_slice_ms": 22.1329,
+   "total_ms": 5683.3026,
+   "share_phase1": 7.141974104986069e-05,
+   "share_phase2": 0.001861857575558268,
+   "share_phase3": 0.9941825726471083,
+   "share_phase4": 0.003884150036283481,
+   "posterior_slice_share_of_phase4": 1.0026319604254625,
+   "peak_ws_MB": 121.71484375,
+   "ws_decode_growth_MB": 2.40234375
+  },
+  {
+   "id": "chopin_bi105_op30_1",
+   "events": 248,
+   "notes": 589,
+   "staves": 2,
+   "nSegments": 86,
+   "phase1_build_facts_ms": 1.9686,
+   "phase2_load_tables_ms": 12.1633,
+   "phase3_decode_ms": 8742.6704,
+   "phase4_assemble_ms": 47.3737,
+   "phase4_posterior_slice_ms": 46.0078,
+   "total_ms": 8804.176000000001,
+   "share_phase1": 0.00022359843783222865,
+   "share_phase2": 0.0013815375794395748,
+   "share_phase3": 0.9930140424271391,
+   "share_phase4": 0.005380821555589074,
+   "posterior_slice_share_of_phase4": 0.9711675465500901,
+   "peak_ws_MB": 157.765625,
+   "ws_decode_growth_MB": 0.64453125
+  },
+  {
+   "id": "bach_bwv806_prelude",
+   "events": 462,
+   "notes": 866,
+   "staves": 2,
+   "nSegments": 153,
+   "phase1_build_facts_ms": 4.2528,
+   "phase2_load_tables_ms": 10.3363,
+   "phase3_decode_ms": 22877.7667,
+   "phase4_assemble_ms": 78.7846,
+   "phase4_posterior_slice_ms": 77.3341,
+   "total_ms": 22971.1404,
+   "share_phase1": 0.00018513665085604543,
+   "share_phase2": 0.0004499689532174902,
+   "share_phase3": 0.9959351735101493,
+   "share_phase4": 0.0034297208857771815,
+   "posterior_slice_share_of_phase4": 0.9815890415131893,
+   "peak_ws_MB": 274.38671875,
+   "ws_decode_growth_MB": 2.328125
+  },
+  {
+   "id": "mozart_k279_1",
+   "events": 1441,
+   "notes": 1978,
+   "staves": 2,
+   "nSegments": 389,
+   "phase1_build_facts_ms": 16.261,
+   "phase2_load_tables_ms": 10.0687,
+   "phase3_decode_ms": 26977.4303,
+   "phase4_assemble_ms": 209.4013,
+   "phase4_posterior_slice_ms": 206.8391,
+   "total_ms": 27213.1613,
+   "share_phase1": 0.000597541749035971,
+   "share_phase2": 0.00036999376474500223,
+   "share_phase3": 0.9913376105994712,
+   "share_phase4": 0.007694853886747807,
+   "posterior_slice_share_of_phase4": 0.9877641638327939,
+   "peak_ws_MB": 384.390625,
+   "ws_decode_growth_MB": 2.23046875
+  },
+  {
+   "id": "bach_brandenburg4_mvt3",
+   "events": 1976,
+   "notes": 6361,
+   "staves": 9,
+   "nSegments": 598,
+   "phase1_build_facts_ms": 32.4077,
+   "phase2_load_tables_ms": 10.0616,
+   "phase3_decode_ms": 106739.4631,
+   "phase4_assemble_ms": 519.9889,
+   "phase4_posterior_slice_ms": 538.5473,
+   "total_ms": 107301.92129999999,
+   "share_phase1": 0.00030202348296628313,
+   "share_phase2": 9.376905723681577e-05,
+   "share_phase3": 0.9947581721446772,
+   "share_phase4": 0.004846035315119749,
+   "posterior_slice_share_of_phase4": 1.0356899926133039,
+   "peak_ws_MB": 692.48046875,
+   "ws_decode_growth_MB": 0.0
+  },
+  {
+   "id": "butterworth_green_willow",
+   "events": 1100,
+   "notes": 3375,
+   "staves": 17,
+   "nSegments": 0,
+   "phase1_build_facts_ms": 13.9118,
+   "phase2_load_tables_ms": 10.6385,
+   "phase3_decode_ms": 13835.2022,
+   "phase4_assemble_ms": 0.008,
+   "phase4_posterior_slice_ms": 0.0043,
+   "total_ms": 13859.7605,
+   "share_phase1": 0.0010037547185609737,
+   "share_phase2": 0.0007675818063378512,
+   "share_phase3": 0.9982280862645497,
+   "share_phase4": 5.772105513655882e-07,
+   "posterior_slice_share_of_phase4": 0.5375,
+   "peak_ws_MB": 1454.9921875,
+   "ws_decode_growth_MB": 48.50390625
+  },
+  {
+   "id": "dvorak_cello_concerto_mvt2",
+   "events": 1818,
+   "notes": 4812,
+   "staves": 20,
+   "nSegments": 531,
+   "phase1_build_facts_ms": 23.8158,
+   "phase2_load_tables_ms": 9.7502,
+   "phase3_decode_ms": 50737.498,
+   "phase4_assemble_ms": 428.6068,
+   "phase4_posterior_slice_ms": 449.7907,
+   "total_ms": 51199.6708,
+   "share_phase1": 0.0004651553345534401,
+   "share_phase2": 0.00019043481818637004,
+   "share_phase3": 0.9909731294600433,
+   "share_phase4": 0.008371280387216865,
+   "posterior_slice_share_of_phase4": 1.0494250207882843,
+   "peak_ws_MB": 1454.9921875,
+   "ws_decode_growth_MB": 0.0
+  },
+  {
+   "id": "holst_mercury",
+   "events": 1743,
+   "notes": 8405,
+   "staves": 69,
+   "nSegments": 0,
+   "phase1_build_facts_ms": 44.4344,
+   "phase2_load_tables_ms": 9.8438,
+   "phase3_decode_ms": 9832.3607,
+   "phase4_assemble_ms": 0.0085,
+   "phase4_posterior_slice_ms": 0.0049,
+   "total_ms": 9886.6474,
+   "share_phase1": 0.00449438502277324,
+   "share_phase2": 0.0009956661345078414,
+   "share_phase3": 0.9945090890972808,
+   "share_phase4": 8.597454380743871e-07,
+   "posterior_slice_share_of_phase4": 0.5764705882352941,
+   "peak_ws_MB": 1454.9921875,
+   "ws_decode_growth_MB": 33.05859375
+  }
+ ],
+ "task1_content_dp_split": {
+  "envelope": "chorale (Python reference decoder, byte-identical to C++ decodePiece)",
+  "content_frac_pooled": 0.4049331277286126,
+  "dp_frac_pooled": 0.5950668722713874,
+  "content_frac_range": [
+   0.3687430180049163,
+   0.4717404665074533
+  ],
+  "n_pieces": 109,
+  "interpretation": null
+ },
+ "task2_scaling": {
+  "decode_vs_events_normal_only": {
+   "A": 154.74336055746807,
+   "k": 0.7843564387691271,
+   "log10_A": 2.1896120241857706,
+   "r2": 0.8664638566533345,
+   "n": 6,
+   "k_ci95": [
+    0.5414426612316471,
+    1.179761455765797
+   ],
+   "predict_ms": null
+  },
+  "decode_vs_staves_normal_only": {
+   "A": 8220.318758605767,
+   "k": 0.7887070801808476,
+   "log10_A": 3.9148886584669924,
+   "r2": 0.5418150430218527,
+   "n": 6,
+   "k_ci95": [
+    0.34471906178301664,
+    1.6878977332712426
+   ],
+   "predict_ms": null
+  },
+  "n_normal_decode_scores": 6,
+  "n_segs0_failures_excluded": 2,
+  "density_confound": [
+   {
+    "id": "bach_chorale_001",
+    "events": 80,
+    "notes": 230,
+    "notes_per_event": 2.875,
+    "decode_ms_per_event": 70.628005,
+    "nSegments": 50
+   },
+   {
+    "id": "chopin_bi105_op30_1",
+    "events": 248,
+    "notes": 589,
+    "notes_per_event": 2.375,
+    "decode_ms_per_event": 35.25270322580646,
+    "nSegments": 86
+   },
+   {
+    "id": "bach_bwv806_prelude",
+    "events": 462,
+    "notes": 866,
+    "notes_per_event": 1.8744588744588744,
+    "decode_ms_per_event": 49.51897554112554,
+    "nSegments": 153
+   },
+   {
+    "id": "mozart_k279_1",
+    "events": 1441,
+    "notes": 1978,
+    "notes_per_event": 1.3726578764746704,
+    "decode_ms_per_event": 18.721325676613464,
+    "nSegments": 389
+   },
+   {
+    "id": "bach_brandenburg4_mvt3",
+    "events": 1976,
+    "notes": 6361,
+    "notes_per_event": 3.2191295546558703,
+    "decode_ms_per_event": 54.01794691295546,
+    "nSegments": 598
+   },
+   {
+    "id": "butterworth_green_willow",
+    "events": 1100,
+    "notes": 3375,
+    "notes_per_event": 3.0681818181818183,
+    "decode_ms_per_event": 12.577456545454545,
+    "nSegments": 0
+   },
+   {
+    "id": "dvorak_cello_concerto_mvt2",
+    "events": 1818,
+    "notes": 4812,
+    "notes_per_event": 2.6468646864686467,
+    "decode_ms_per_event": 27.908414741474147,
+    "nSegments": 531
+   },
+   {
+    "id": "holst_mercury",
+    "events": 1743,
+    "notes": 8405,
+    "notes_per_event": 4.822145725760183,
+    "decode_ms_per_event": 5.641056052782559,
+    "nSegments": 0
+   }
+  ],
+  "buildfacts_vs_events": {
+   "A": 0.0009919985518929322,
+   "k": 1.369791283704197,
+   "log10_A": -3.0034889618230065,
+   "r2": 0.9808675194820001,
+   "n": 8,
+   "k_ci95": [
+    1.270212069006238,
+    1.531310285929134
+   ],
+   "predict_ms": null
+  },
+  "buildfacts_vs_events_fullcorpus": {
+   "A": 5.600924309622629e-05,
+   "k": 1.803044314104888,
+   "log10_A": -4.251740296307395,
+   "r2": 0.9652956613539009,
+   "n": 27,
+   "k_ci95": [
+    1.6465358398856258,
+    2.085114877877251
+   ],
+   "predict_ms": null
+  },
+  "buildfacts_vs_staves_fullcorpus": {
+   "A": 3.9760649658451994,
+   "k": 1.3497041744658744,
+   "log10_A": 0.5994534718212468,
+   "r2": 0.3576976665872461,
+   "n": 27,
+   "k_ci95": [
+    0.46263281191491573,
+    2.0212225200894562
+   ],
+   "predict_ms": null
+  }
+ },
+ "task2_tristan_extrapolation": {
+  "note": "EXTRAPOLATION beyond the measured range, flagged NOT a measurement. Basis: the buildFacts (phase 1) law events^1.80 (R^2~0.97), the CLEAN fit; it gives a FLOOR on the whole-piece cost (fact extraction alone). The decode on top of it FAILS to empty on most orchestral scores (OI-215) or costs more with a poorly-captured density constant. The true Tristan-act event count is not on disk; bounded from the measured orchestral scores (gluck 29677 events was the largest adapter run; a full act is larger).",
+  "measured_max_events_adapter": 29677,
+  "measured_max_events_decoded_normally": 1976,
+  "points": {
+   "10k_events": {
+    "events": 10000,
+    "buildfacts_floor_s_point": 0.9129289097475505,
+    "buildfacts_floor_s_ci95": [
+     0.21597479141141288,
+     12.266459102593622
+    ],
+    "decode": "FAILS to an empty analysis if any event is uncoverable (OI-215; true of most orchestral scores measured); else > the phase-1 floor with a large density constant"
+   },
+   "30k_events_gluck_scale": {
+    "events": 30000,
+    "buildfacts_floor_s_point": 6.617709907056753,
+    "buildfacts_floor_s_ci95": [
+     1.3182576768051313,
+     121.21931959125087
+    ],
+    "decode": "FAILS to an empty analysis if any event is uncoverable (OI-215; true of most orchestral scores measured); else > the phase-1 floor with a large density constant"
+   },
+   "60k_events_tristan_act_estimate": {
+    "events": 60000,
+    "buildfacts_floor_s_point": 23.092882596738114,
+    "buildfacts_floor_s_ci95": [
+     4.1272139790679665,
+     514.3443394382346
+    ],
+    "decode": "FAILS to an empty analysis if any event is uncoverable (OI-215; true of most orchestral scores measured); else > the phase-1 floor with a large density constant"
+   }
+  }
+ },
+ "task4b_boundaries": [
+  {
+   "id": "bach_chorale_001",
+   "measures": 23,
+   "events": 80,
+   "structuralBoundaries": 2,
+   "fermatas": 0,
+   "structuralBarlines": 2,
+   "rehearsalMarks": 0,
+   "restSpans": 0,
+   "nUnits": 3,
+   "maxUnitMeasures": 14,
+   "maxUnitEvents": 56,
+   "meanUnitMeasures": 7.666666666666667
+  },
+  {
+   "id": "chopin_bi105_op30_1",
+   "measures": 54,
+   "events": 248,
+   "structuralBoundaries": 2,
+   "fermatas": 2,
+   "structuralBarlines": 1,
+   "rehearsalMarks": 0,
+   "restSpans": 0,
+   "nUnits": 3,
+   "maxUnitMeasures": 53,
+   "maxUnitEvents": 247,
+   "meanUnitMeasures": 18.0
+  },
+  {
+   "id": "bach_bwv806_prelude",
+   "measures": 37,
+   "events": 462,
+   "structuralBoundaries": 1,
+   "fermatas": 0,
+   "structuralBarlines": 1,
+   "rehearsalMarks": 0,
+   "restSpans": 0,
+   "nUnits": 2,
+   "maxUnitMeasures": 36,
+   "maxUnitEvents": 462,
+   "meanUnitMeasures": 18.5
+  },
+  {
+   "id": "mozart_k279_1",
+   "measures": 100,
+   "events": 1441,
+   "structuralBoundaries": 2,
+   "fermatas": 2,
+   "structuralBarlines": 3,
+   "rehearsalMarks": 0,
+   "restSpans": 0,
+   "nUnits": 3,
+   "maxUnitMeasures": 61,
+   "maxUnitEvents": 914,
+   "meanUnitMeasures": 33.333333333333336
+  },
+  {
+   "id": "bach_brandenburg3_bwv1048",
+   "measures": 186,
+   "events": 3129,
+   "structuralBoundaries": 6,
+   "fermatas": 22,
+   "structuralBarlines": 5,
+   "rehearsalMarks": 0,
+   "restSpans": 0,
+   "nUnits": 7,
+   "maxUnitMeasures": 136,
+   "maxUnitEvents": 1974,
+   "meanUnitMeasures": 26.571428571428573
+  },
+  {
+   "id": "bach_brandenburg3_short",
+   "measures": 186,
+   "events": 3129,
+   "structuralBoundaries": 6,
+   "fermatas": 22,
+   "structuralBarlines": 5,
+   "rehearsalMarks": 0,
+   "restSpans": 0,
+   "nUnits": 7,
+   "maxUnitMeasures": 136,
+   "maxUnitEvents": 1974,
+   "meanUnitMeasures": 26.571428571428573
+  },
+  {
+   "id": "bach_brandenburg4_mvt3",
+   "measures": 244,
+   "events": 1976,
+   "structuralBoundaries": 2,
+   "fermatas": 9,
+   "structuralBarlines": 1,
+   "rehearsalMarks": 0,
+   "restSpans": 0,
+   "nUnits": 3,
+   "maxUnitMeasures": 243,
+   "maxUnitEvents": 1975,
+   "meanUnitMeasures": 81.33333333333333
+  },
+  {
+   "id": "bach_mass_bwv232_part1",
+   "measures": 1043,
+   "events": 11196,
+   "structuralBoundaries": 23,
+   "fermatas": 115,
+   "structuralBarlines": 13,
+   "rehearsalMarks": 0,
+   "restSpans": 0,
+   "nUnits": 24,
+   "maxUnitMeasures": 127,
+   "maxUnitEvents": 1455,
+   "meanUnitMeasures": 43.458333333333336
+  },
+  {
+   "id": "bach_art_of_fugue",
+   "measures": 2303,
+   "events": 20430,
+   "structuralBoundaries": 70,
+   "fermatas": 139,
+   "structuralBarlines": 34,
+   "rehearsalMarks": 0,
+   "restSpans": 2,
+   "nUnits": 71,
+   "maxUnitMeasures": 240,
+   "maxUnitEvents": 1520,
+   "meanUnitMeasures": 32.436619718309856
+  },
+  {
+   "id": "beethoven_sym7_i",
+   "measures": 728,
+   "events": 4948,
+   "structuralBoundaries": 29,
+   "fermatas": 54,
+   "structuralBarlines": 8,
+   "rehearsalMarks": 13,
+   "restSpans": 4,
+   "nUnits": 30,
+   "maxUnitMeasures": 101,
+   "maxUnitEvents": 695,
+   "meanUnitMeasures": 24.266666666666666
+  },
+  {
+   "id": "beethoven_sym9",
+   "measures": 2617,
+   "events": 15067,
+   "structuralBoundaries": 99,
+   "fermatas": 414,
+   "structuralBarlines": 56,
+   "rehearsalMarks": 0,
+   "restSpans": 12,
+   "nUnits": 99,
+   "maxUnitMeasures": 383,
+   "maxUnitEvents": 2795,
+   "meanUnitMeasures": 26.434343434343436
+  },
+  {
+   "id": "butterworth_green_willow",
+   "measures": 163,
+   "events": 1100,
+   "structuralBoundaries": 14,
+   "fermatas": 13,
+   "structuralBarlines": 5,
+   "rehearsalMarks": 8,
+   "restSpans": 0,
+   "nUnits": 14,
+   "maxUnitMeasures": 24,
+   "maxUnitEvents": 357,
+   "meanUnitMeasures": 11.642857142857142
+  },
+  {
+   "id": "dvorak_cello_concerto_mvt3",
+   "measures": 516,
+   "events": 3515,
+   "structuralBoundaries": 17,
+   "fermatas": 0,
+   "structuralBarlines": 3,
+   "rehearsalMarks": 15,
+   "restSpans": 0,
+   "nUnits": 18,
+   "maxUnitMeasures": 48,
+   "maxUnitEvents": 408,
+   "meanUnitMeasures": 28.666666666666668
+  },
+  {
+   "id": "dvorak_cello_concerto_mvt1",
+   "measures": 354,
+   "events": 4084,
+   "structuralBoundaries": 19,
+   "fermatas": 37,
+   "structuralBarlines": 1,
+   "rehearsalMarks": 15,
+   "restSpans": 0,
+   "nUnits": 20,
+   "maxUnitMeasures": 35,
+   "maxUnitEvents": 405,
+   "meanUnitMeasures": 17.7
+  },
+  {
+   "id": "dvorak_cello_concerto_mvt2",
+   "measures": 166,
+   "events": 1818,
+   "structuralBoundaries": 25,
+   "fermatas": 60,
+   "structuralBarlines": 3,
+   "rehearsalMarks": 8,
+   "restSpans": 0,
+   "nUnits": 26,
+   "maxUnitMeasures": 22,
+   "maxUnitEvents": 351,
+   "meanUnitMeasures": 6.384615384615385
+  },
+  {
+   "id": "dvorak_sym9_i",
+   "measures": 452,
+   "events": 2471,
+   "structuralBoundaries": 17,
+   "fermatas": 0,
+   "structuralBarlines": 8,
+   "rehearsalMarks": 13,
+   "restSpans": 0,
+   "nUnits": 18,
+   "maxUnitMeasures": 41,
+   "maxUnitEvents": 209,
+   "meanUnitMeasures": 25.11111111111111
+  },
+  {
+   "id": "faure_piano_quintet2",
+   "measures": 1251,
+   "events": 9745,
+   "structuralBoundaries": 7,
+   "fermatas": 4,
+   "structuralBarlines": 6,
+   "rehearsalMarks": 0,
+   "restSpans": 0,
+   "nUnits": 8,
+   "maxUnitMeasures": 467,
+   "maxUnitEvents": 2947,
+   "meanUnitMeasures": 156.375
+  },
+  {
+   "id": "gluck_iphigenie",
+   "measures": 4517,
+   "events": 29677,
+   "structuralBoundaries": 267,
+   "fermatas": 355,
+   "structuralBarlines": 163,
+   "rehearsalMarks": 0,
+   "restSpans": 2,
+   "nUnits": 266,
+   "maxUnitMeasures": 187,
+   "maxUnitEvents": 1844,
+   "meanUnitMeasures": 16.981203007518797
+  },
+  {
+   "id": "haydn_sym8_le_soir",
+   "measures": 599,
+   "events": 2969,
+   "structuralBoundaries": 15,
+   "fermatas": 28,
+   "structuralBarlines": 15,
+   "rehearsalMarks": 0,
+   "restSpans": 0,
+   "nUnits": 16,
+   "maxUnitMeasures": 112,
+   "maxUnitEvents": 636,
+   "meanUnitMeasures": 37.4375
+  },
+  {
+   "id": "haydn_sym6",
+   "measures": 430,
+   "events": 2976,
+   "structuralBoundaries": 20,
+   "fermatas": 43,
+   "structuralBarlines": 20,
+   "rehearsalMarks": 0,
+   "restSpans": 0,
+   "nUnits": 21,
+   "maxUnitMeasures": 71,
+   "maxUnitEvents": 567,
+   "meanUnitMeasures": 20.476190476190474
+  },
+  {
+   "id": "holst_mercury",
+   "measures": 296,
+   "events": 1743,
+   "structuralBoundaries": 21,
+   "fermatas": 68,
+   "structuralBarlines": 1,
+   "rehearsalMarks": 10,
+   "restSpans": 0,
+   "nUnits": 22,
+   "maxUnitMeasures": 36,
+   "maxUnitEvents": 209,
+   "meanUnitMeasures": 13.454545454545455
+  },
+  {
+   "id": "holst_planets",
+   "measures": 1537,
+   "events": 11336,
+   "structuralBoundaries": 115,
+   "fermatas": 315,
+   "structuralBarlines": 28,
+   "rehearsalMarks": 73,
+   "restSpans": 1,
+   "nUnits": 116,
+   "maxUnitMeasures": 36,
+   "maxUnitEvents": 1063,
+   "meanUnitMeasures": 13.25
+  },
+  {
+   "id": "mozart_jupiter_k551",
+   "measures": 925,
+   "events": 6811,
+   "structuralBoundaries": 15,
+   "fermatas": 30,
+   "structuralBarlines": 15,
+   "rehearsalMarks": 0,
+   "restSpans": 2,
+   "nUnits": 16,
+   "maxUnitMeasures": 199,
+   "maxUnitEvents": 1187,
+   "meanUnitMeasures": 57.8125
+  },
+  {
+   "id": "mozart_jupiter",
+   "measures": 925,
+   "events": 6811,
+   "structuralBoundaries": 15,
+   "fermatas": 35,
+   "structuralBarlines": 15,
+   "rehearsalMarks": 0,
+   "restSpans": 2,
+   "nUnits": 16,
+   "maxUnitMeasures": 199,
+   "maxUnitEvents": 1187,
+   "meanUnitMeasures": 57.8125
+  },
+  {
+   "id": "schubert_d810_death_maiden",
+   "measures": 1445,
+   "events": 9120,
+   "structuralBoundaries": 34,
+   "fermatas": 16,
+   "structuralBarlines": 37,
+   "rehearsalMarks": 0,
+   "restSpans": 0,
+   "nUnits": 35,
+   "maxUnitMeasures": 358,
+   "maxUnitEvents": 1493,
+   "meanUnitMeasures": 41.285714285714285
+  },
+  {
+   "id": "beethoven_sym9_openscore",
+   "measures": 2617,
+   "events": 15067,
+   "structuralBoundaries": 99,
+   "fermatas": 414,
+   "structuralBarlines": 56,
+   "rehearsalMarks": 0,
+   "restSpans": 12,
+   "nUnits": 99,
+   "maxUnitMeasures": 383,
+   "maxUnitEvents": 2795,
+   "meanUnitMeasures": 26.434343434343436
+  },
+  {
+   "id": "tchaikovsky_1812",
+   "measures": 422,
+   "events": 3493,
+   "structuralBoundaries": 16,
+   "fermatas": 60,
+   "structuralBarlines": 11,
+   "rehearsalMarks": 0,
+   "restSpans": 1,
+   "nUnits": 15,
+   "maxUnitMeasures": 76,
+   "maxUnitEvents": 776,
+   "meanUnitMeasures": 28.133333333333333
+  }
+ ],
+ "task4b_summary": {
+  "n_scores": 27,
+  "n_with_boundary_free_stretch_gt_30_measures": 24,
+  "worst_maxUnitMeasures": [
+   {
+    "id": "faure_piano_quintet2",
+    "measures": 1251,
+    "events": 9745,
+    "structuralBoundaries": 7,
+    "fermatas": 4,
+    "structuralBarlines": 6,
+    "rehearsalMarks": 0,
+    "restSpans": 0,
+    "nUnits": 8,
+    "maxUnitMeasures": 467,
+    "maxUnitEvents": 2947,
+    "meanUnitMeasures": 156.375
+   },
+   {
+    "id": "beethoven_sym9",
+    "measures": 2617,
+    "events": 15067,
+    "structuralBoundaries": 99,
+    "fermatas": 414,
+    "structuralBarlines": 56,
+    "rehearsalMarks": 0,
+    "restSpans": 12,
+    "nUnits": 99,
+    "maxUnitMeasures": 383,
+    "maxUnitEvents": 2795,
+    "meanUnitMeasures": 26.434343434343436
+   },
+   {
+    "id": "beethoven_sym9_openscore",
+    "measures": 2617,
+    "events": 15067,
+    "structuralBoundaries": 99,
+    "fermatas": 414,
+    "structuralBarlines": 56,
+    "rehearsalMarks": 0,
+    "restSpans": 12,
+    "nUnits": 99,
+    "maxUnitMeasures": 383,
+    "maxUnitEvents": 2795,
+    "meanUnitMeasures": 26.434343434343436
+   },
+   {
+    "id": "schubert_d810_death_maiden",
+    "measures": 1445,
+    "events": 9120,
+    "structuralBoundaries": 34,
+    "fermatas": 16,
+    "structuralBarlines": 37,
+    "rehearsalMarks": 0,
+    "restSpans": 0,
+    "nUnits": 35,
+    "maxUnitMeasures": 358,
+    "maxUnitEvents": 1493,
+    "meanUnitMeasures": 41.285714285714285
+   },
+   {
+    "id": "bach_brandenburg4_mvt3",
+    "measures": 244,
+    "events": 1976,
+    "structuralBoundaries": 2,
+    "fermatas": 9,
+    "structuralBarlines": 1,
+    "rehearsalMarks": 0,
+    "restSpans": 0,
+    "nUnits": 3,
+    "maxUnitMeasures": 243,
+    "maxUnitEvents": 1975,
+    "meanUnitMeasures": 81.33333333333333
+   },
+   {
+    "id": "bach_art_of_fugue",
+    "measures": 2303,
+    "events": 20430,
+    "structuralBoundaries": 70,
+    "fermatas": 139,
+    "structuralBarlines": 34,
+    "rehearsalMarks": 0,
+    "restSpans": 2,
+    "nUnits": 71,
+    "maxUnitMeasures": 240,
+    "maxUnitEvents": 1520,
+    "meanUnitMeasures": 32.436619718309856
+   },
+   {
+    "id": "mozart_jupiter_k551",
+    "measures": 925,
+    "events": 6811,
+    "structuralBoundaries": 15,
+    "fermatas": 30,
+    "structuralBarlines": 15,
+    "rehearsalMarks": 0,
+    "restSpans": 2,
+    "nUnits": 16,
+    "maxUnitMeasures": 199,
+    "maxUnitEvents": 1187,
+    "meanUnitMeasures": 57.8125
+   },
+   {
+    "id": "mozart_jupiter",
+    "measures": 925,
+    "events": 6811,
+    "structuralBoundaries": 15,
+    "fermatas": 35,
+    "structuralBarlines": 15,
+    "rehearsalMarks": 0,
+    "restSpans": 2,
+    "nUnits": 16,
+    "maxUnitMeasures": 199,
+    "maxUnitEvents": 1187,
+    "meanUnitMeasures": 57.8125
+   }
+  ]
+ },
+ "task4c_viewport": [
+  {
+   "id": "bach_chorale_001",
+   "measures": 23,
+   "events": 80,
+   "staves": 2,
+   "eventsFirst4Measures": 14,
+   "eventsFirst8Measures": 24,
+   "events_per_measure": 3.4782608695652173
+  },
+  {
+   "id": "chopin_bi105_op30_1",
+   "measures": 54,
+   "events": 248,
+   "staves": 2,
+   "eventsFirst4Measures": 16,
+   "eventsFirst8Measures": 35,
+   "events_per_measure": 4.592592592592593
+  },
+  {
+   "id": "bach_bwv806_prelude",
+   "measures": 37,
+   "events": 462,
+   "staves": 2,
+   "eventsFirst4Measures": 71,
+   "eventsFirst8Measures": 119,
+   "events_per_measure": 12.486486486486486
+  },
+  {
+   "id": "mozart_k279_1",
+   "measures": 100,
+   "events": 1441,
+   "staves": 2,
+   "eventsFirst4Measures": 56,
+   "eventsFirst8Measures": 120,
+   "events_per_measure": 14.41
+  },
+  {
+   "id": "bach_brandenburg3_bwv1048",
+   "measures": 186,
+   "events": 3129,
+   "staves": 11,
+   "eventsFirst4Measures": 45,
+   "eventsFirst8Measures": 100,
+   "events_per_measure": 16.822580645161292
+  },
+  {
+   "id": "bach_brandenburg3_short",
+   "measures": 186,
+   "events": 3129,
+   "staves": 11,
+   "eventsFirst4Measures": 45,
+   "eventsFirst8Measures": 100,
+   "events_per_measure": 16.822580645161292
+  },
+  {
+   "id": "bach_brandenburg4_mvt3",
+   "measures": 244,
+   "events": 1976,
+   "staves": 9,
+   "eventsFirst4Measures": 23,
+   "eventsFirst8Measures": 43,
+   "events_per_measure": 8.098360655737705
+  },
+  {
+   "id": "bach_mass_bwv232_part1",
+   "measures": 1043,
+   "events": 11196,
+   "staves": 40,
+   "eventsFirst4Measures": 32,
+   "eventsFirst8Measures": 68,
+   "events_per_measure": 10.734419942473634
+  },
+  {
+   "id": "bach_art_of_fugue",
+   "measures": 2303,
+   "events": 20430,
+   "staves": 6,
+   "eventsFirst4Measures": 12,
+   "eventsFirst8Measures": 35,
+   "events_per_measure": 8.871037776812853
+  },
+  {
+   "id": "beethoven_sym7_i",
+   "measures": 728,
+   "events": 4948,
+   "staves": 24,
+   "eventsFirst4Measures": 14,
+   "eventsFirst8Measures": 33,
+   "events_per_measure": 6.7967032967032965
+  },
+  {
+   "id": "beethoven_sym9",
+   "measures": 2617,
+   "events": 15067,
+   "staves": 53,
+   "eventsFirst4Measures": 16,
+   "eventsFirst8Measures": 27,
+   "events_per_measure": 5.757355750859763
+  },
+  {
+   "id": "butterworth_green_willow",
+   "measures": 163,
+   "events": 1100,
+   "staves": 17,
+   "eventsFirst4Measures": 12,
+   "eventsFirst8Measures": 29,
+   "events_per_measure": 6.748466257668712
+  },
+  {
+   "id": "dvorak_cello_concerto_mvt3",
+   "measures": 516,
+   "events": 3515,
+   "staves": 20,
+   "eventsFirst4Measures": 8,
+   "eventsFirst8Measures": 23,
+   "events_per_measure": 6.812015503875969
+  },
+  {
+   "id": "dvorak_cello_concerto_mvt1",
+   "measures": 354,
+   "events": 4084,
+   "staves": 20,
+   "eventsFirst4Measures": 23,
+   "eventsFirst8Measures": 32,
+   "events_per_measure": 11.536723163841808
+  },
+  {
+   "id": "dvorak_cello_concerto_mvt2",
+   "measures": 166,
+   "events": 1818,
+   "staves": 20,
+   "eventsFirst4Measures": 15,
+   "eventsFirst8Measures": 38,
+   "events_per_measure": 10.951807228915662
+  },
+  {
+   "id": "dvorak_sym9_i",
+   "measures": 452,
+   "events": 2471,
+   "staves": 15,
+   "eventsFirst4Measures": 23,
+   "eventsFirst8Measures": 42,
+   "events_per_measure": 5.466814159292035
+  },
+  {
+   "id": "faure_piano_quintet2",
+   "measures": 1251,
+   "events": 9745,
+   "staves": 6,
+   "eventsFirst4Measures": 48,
+   "eventsFirst8Measures": 96,
+   "events_per_measure": 7.7897681854516385
+  },
+  {
+   "id": "gluck_iphigenie",
+   "measures": 4517,
+   "events": 29677,
+   "staves": 26,
+   "eventsFirst4Measures": 16,
+   "eventsFirst8Measures": 32,
+   "events_per_measure": 6.570068629621431
+  },
+  {
+   "id": "haydn_sym8_le_soir",
+   "measures": 599,
+   "events": 2969,
+   "staves": 14,
+   "eventsFirst4Measures": 12,
+   "eventsFirst8Measures": 24,
+   "events_per_measure": 4.956594323873122
+  },
+  {
+   "id": "haydn_sym6",
+   "measures": 430,
+   "events": 2976,
+   "staves": 12,
+   "eventsFirst4Measures": 35,
+   "eventsFirst8Measures": 70,
+   "events_per_measure": 6.920930232558139
+  },
+  {
+   "id": "holst_mercury",
+   "measures": 296,
+   "events": 1743,
+   "staves": 69,
+   "eventsFirst4Measures": 24,
+   "eventsFirst8Measures": 52,
+   "events_per_measure": 5.888513513513513
+  },
+  {
+   "id": "holst_planets",
+   "measures": 1537,
+   "events": 11336,
+   "staves": 69,
+   "eventsFirst4Measures": 32,
+   "eventsFirst8Measures": 64,
+   "events_per_measure": 7.375406636304489
+  },
+  {
+   "id": "mozart_jupiter_k551",
+   "measures": 925,
+   "events": 6811,
+   "staves": 17,
+   "eventsFirst4Measures": 16,
+   "eventsFirst8Measures": 32,
+   "events_per_measure": 7.363243243243243
+  },
+  {
+   "id": "mozart_jupiter",
+   "measures": 925,
+   "events": 6811,
+   "staves": 17,
+   "eventsFirst4Measures": 16,
+   "eventsFirst8Measures": 32,
+   "events_per_measure": 7.363243243243243
+  },
+  {
+   "id": "schubert_d810_death_maiden",
+   "measures": 1445,
+   "events": 9120,
+   "staves": 4,
+   "eventsFirst4Measures": 13,
+   "eventsFirst8Measures": 27,
+   "events_per_measure": 6.311418685121107
+  },
+  {
+   "id": "beethoven_sym9_openscore",
+   "measures": 2617,
+   "events": 15067,
+   "staves": 56,
+   "eventsFirst4Measures": 16,
+   "eventsFirst8Measures": 27,
+   "events_per_measure": 5.757355750859763
+  },
+  {
+   "id": "tchaikovsky_1812",
+   "measures": 422,
+   "events": 3493,
+   "staves": 44,
+   "eventsFirst4Measures": 12,
+   "eventsFirst8Measures": 26,
+   "events_per_measure": 8.277251184834123
+  }
+ ]
+}

@@ -59,6 +59,7 @@
 #include <algorithm>
 #include <chrono>
 #include <cmath>
+#include <cstdlib>
 #include <fstream>
 #include <limits>
 #include <numeric>
@@ -83,8 +84,10 @@
 
 #include "global/types/translatablestring.h"
 
+#include "engraving/dom/barline.h"      // OI-206 cost profile: endBarLineType / BarLineType (boundary evidence)
 #include "engraving/dom/chord.h"
 #include "engraving/dom/factory.h"
+#include "engraving/dom/keysig.h"       // OI-206 cost profile: KeySig / toKeySig / concertKey (key-sig change)
 #include "engraving/dom/harmony.h"
 #include "engraving/dom/instrument.h"
 #include "engraving/dom/masterscore.h"
@@ -105,6 +108,12 @@
 #include "composing/analysis/key/keymodeanalyzer.h"
 #include "composing/analysis/section/sectionanalyzer.h"
 #include "composing/analysis/joint/jointnotationproducer.h"   // P1 §4.1 gap measurement (record arm)
+#include "composing/analysis/joint/jointfactadapter.h"        // OI-206 cost profile: buildAdapterFacts (phase 1)
+#include "composing/analysis/joint/jointdecoder.h"            // OI-206 cost profile: decodePiece (phase 3), ChordCache
+#include "composing/analysis/joint/jointtables.h"             // OI-206 cost profile: JointTables::loadEmbedded (phase 2)
+#include "composing/analysis/joint/jointweights.h"            // OI-206 cost profile: selectedWeights (phase 2)
+#include "composing/analysis/joint/jointadapter.h"            // OI-206 cost profile: FittedAdapter::loadEmbedded (phase 2)
+#include "composing/analysis/joint/jointnotationrecord.h"     // OI-206 cost profile: assembleNotationRecord/computePosteriorSlice (phase 4)
 #include "composing/analyzed_section.h"
 #include "composing/icomposinganalysisconfiguration.h"
 #include "composing/icomposingchordstaffconfiguration.h"
@@ -116,6 +125,33 @@
 #include "notation/internal/notationcomposingbridgehelpers.h"
 
 #include "composing/intonation/tuning_system.h"             // P6 dual-arm: TuningMode (deterministic tuning config)
+
+// OI-206 cost profile: per-process resident/peak memory (Windows). We do NOT #include <windows.h> — it
+// pollutes the global namespace with macros (SymId/KeyMode/CONST collisions in engraving/types/
+// propertyvalue.h, min/max, and more that would break the rest of this large TU). Instead we forward-
+// declare the minimal kernel32 psapi API. K32GetProcessMemoryInfo/GetCurrentProcess live in kernel32
+// (Win7+, x64), which MSVC links by default — no <windows.h>, no psapi.lib. The struct layout mirrors
+// PROCESS_MEMORY_COUNTERS exactly (DWORD=unsigned long, SIZE_T=size_t on x64).
+#ifdef _WIN32
+extern "C" {
+struct MU_PROCESS_MEMORY_COUNTERS {
+    unsigned long cb;
+    unsigned long PageFaultCount;
+    size_t PeakWorkingSetSize;
+    size_t WorkingSetSize;
+    size_t QuotaPeakPagedPoolUsage;
+    size_t QuotaPagedPoolUsage;
+    size_t QuotaPeakNonPagedPoolUsage;
+    size_t QuotaNonPagedPoolUsage;
+    size_t PagefileUsage;
+    size_t PeakPagefileUsage;
+};
+__declspec(dllimport) void* __stdcall GetCurrentProcess(void);
+__declspec(dllimport) int __stdcall K32GetProcessMemoryInfo(void* Process,
+                                                            MU_PROCESS_MEMORY_COUNTERS* counters,
+                                                            unsigned long cb);
+}
+#endif
 
 using mu::engraving::Chord;
 using mu::engraving::ChordRest;
@@ -1836,6 +1872,788 @@ TEST(NoteSeamLatency, DISABLED_Sweep)
     std::cout << "wrote " << outPath.toStdString() << std::endl;
 
     analysisCfg->setUseJointNotationRecord(false);   // leave the shared flag as the suite expects it
+}
+
+// ══ OI-206 / OI-203 ANALYSIS-COST PROFILE (READ-ONLY measurement) ═════════════════════════════════
+//
+// Dispatch cc_instruction_analysis_cost_profile.md. WHERE the analysis time goes, HOW it scales, and
+// which analysis-extent candidates are viable. MEASUREMENT ONLY — a DISABLED test-layer sweep (the
+// NoteSeamLatency / P3PerfBaseline pattern); NO production code is instrumented or modified.
+//
+// produceNotationRecord(score) is composed of FOUR separately-callable steps (jointnotationproducer.cpp):
+//   phase 1  buildAdapterFacts(score)                         — score reading / L1 fact extraction
+//   phase 2  JointTables::loadEmbedded + FittedAdapter        — embedded table/adapter/weight load (per call)
+//   phase 3  decodePiece(...)                                 — the §5 semi-Markov Viterbi decode
+//   phase 4  assembleNotationRecord(...)                      — derived facts + the §3.3 posterior slice
+// This instrument times each phase separately (so the split is real, not reconstructed) and additionally
+// isolates computePosteriorSlice (the §3.3 slice) inside phase 4. The content-scoring-vs-dynamic-program
+// split WITHIN phase 3 is measured on the byte-identical Python reference decoder (tools/joint_estimator/
+// gen_content_dp_split.py) — decodePiece is a single src/ call this read-only instrument may not carve.
+//
+// It runs the shared kPerfCorpus (chorale-scale, DCML-covered) + the 23 user-committed large scores
+// (tools/extra scores/large/ — orchestral; a class the adapter and decoder have never seen: a surprise
+// is a STOP). Two tests: LargeScoreCounts (cheap phases + counts + boundary/viewport — always safe) and
+// LargeScoreDecodeProfile (adds the decode; env LARGE_PROFILE_MAX_EVENTS caps which scores are decoded,
+// so the possibly-intractable largest are recorded counts-only and extrapolated, never force-run).
+//
+// Regenerate:
+//   ./pipeline_snapshot_tests.exe --gtest_also_run_disabled_tests --gtest_filter='*LargeScoreCounts*'
+//   LARGE_PROFILE_MAX_EVENTS=4000 ./pipeline_snapshot_tests.exe --gtest_also_run_disabled_tests \
+//       --gtest_filter='*LargeScoreDecodeProfile*'
+
+struct LargeScore {
+    const char* id;
+    const char* relPath;   // under PIPELINE_SNAPSHOT_CORPUS_ROOT (= repo root); the dir has a SPACE
+};
+
+// The 23 user-committed large scores (tools/extra scores/large/), ratified as the ground-truth-false
+// large-score set (docs/score_inventory.md). Orchestral / large-ensemble — the new size regime.
+constexpr LargeScore kLargeCorpus[] = {
+    { "bach_brandenburg3_bwv1048",   "tools/extra scores/large/bach-brandenburg-concerto-no-3-bwv-1048.mscz" },
+    { "bach_brandenburg3_short",     "tools/extra scores/large/bach-brandenburg-concerto-no-3.mscz" },
+    { "bach_brandenburg4_mvt3",      "tools/extra scores/large/bach-brandenburg-concerto-no-4-bwv-1049-mvt-iii-presto.mscz" },
+    { "bach_mass_bwv232_part1",      "tools/extra scores/large/bach-mass-in-b-minor-bwv-232-part-1.mscz" },
+    { "bach_art_of_fugue",           "tools/extra scores/large/bach-the-art-of-the-fugue.mscz" },
+    { "beethoven_sym7_i",            "tools/extra scores/large/beethoven-ludwig-van-symphony-no-7-op-92-i-poco-sostenuto.mscz" },
+    { "beethoven_sym9",              "tools/extra scores/large/beethoven-symphony-no-9-op-125.mscz" },
+    { "butterworth_green_willow",    "tools/extra scores/large/butterworth-the-banks-of-green-willow.mscz" },
+    { "dvorak_cello_concerto_mvt3",  "tools/extra scores/large/dvorak-cello-concerto-in-b-minor-movement-iii.mscz" },
+    { "dvorak_cello_concerto_mvt1",  "tools/extra scores/large/dvorak-cello-concerto-in-b-minor-mvt-1.mscz" },
+    { "dvorak_cello_concerto_mvt2",  "tools/extra scores/large/dvorak-cello-concerto-in-b-minor-mvt-ii.mscz" },
+    { "dvorak_sym9_i",               "tools/extra scores/large/dvorak-symphony-no-9-mvt-i.mscz" },
+    { "faure_piano_quintet2",        "tools/extra scores/large/faure-piano-quintet-no-2-op-115.mscz" },
+    { "gluck_iphigenie",             "tools/extra scores/large/gluck-iphigenie-en-aulide-vocal-score.mscz" },
+    { "haydn_sym8_le_soir",          "tools/extra scores/large/haydn-8th-symphony-le-soir.mscz" },
+    { "haydn_sym6",                  "tools/extra scores/large/haydn-symphony-no-6.mscz" },
+    { "holst_mercury",               "tools/extra scores/large/holst-openscore-transcription-of-mercury.mscz" },
+    { "holst_planets",               "tools/extra scores/large/holst-the-planets-op-32.mscz" },
+    { "mozart_jupiter_k551",         "tools/extra scores/large/mozart-symphony-no-41-jupiter-k-551.mscz" },
+    { "mozart_jupiter",              "tools/extra scores/large/mozart-symphony-no-41-jupiter.mscz" },
+    { "schubert_d810_death_maiden",  "tools/extra scores/large/string-quartet-in-d-minor-d-810-death-and-the-maiden-franz-schubert.mscz" },
+    { "beethoven_sym9_openscore",    "tools/extra scores/large/symphony-no9-op125-ludwig-van-beethoven-beethoven-symphony-no-9-op-125-arranged-bu-andrew-moranty-credit-to-openscore.mscz" },
+    { "tchaikovsky_1812",            "tools/extra scores/large/tchaikovsky-1812-overture.mscz" },
+};
+
+#ifdef _WIN32
+static size_t currentWorkingSetBytes()
+{
+    MU_PROCESS_MEMORY_COUNTERS pmc{};
+    if (K32GetProcessMemoryInfo(GetCurrentProcess(), &pmc,
+                                static_cast<unsigned long>(sizeof(pmc)))) {
+        return static_cast<size_t>(pmc.WorkingSetSize);
+    }
+    return 0;
+}
+static size_t peakWorkingSetBytes()
+{
+    MU_PROCESS_MEMORY_COUNTERS pmc{};
+    if (K32GetProcessMemoryInfo(GetCurrentProcess(), &pmc,
+                                static_cast<unsigned long>(sizeof(pmc)))) {
+        return static_cast<size_t>(pmc.PeakWorkingSetSize);
+    }
+    return 0;
+}
+#else
+static size_t currentWorkingSetBytes() { return 0; }
+static size_t peakWorkingSetBytes() { return 0; }
+#endif
+
+// ── file size (bytes) of a score on disk ──
+static qint64 fileSizeBytes(const QString& absPath)
+{
+    QFileInfo fi(absPath);
+    return fi.exists() ? fi.size() : -1;
+}
+
+// ── Task 4b: structural-boundary evidence per score, read straight from the engraving DOM (the same
+// cues phraseboundaryview.cpp reads: fermatas, structural barlines, rehearsal marks, all-part rests).
+// Returns the SORTED UNION of boundary ticks + a per-source count. All-part-rest spans are the maximal
+// gaps in the union of every note's [onset, onset+dur) interval that are >= restThresholdTicks. ──
+struct BoundaryEvidence {
+    int fermatas = 0;
+    int structuralBarlines = 0;   // double / final / repeat
+    int rehearsalMarks = 0;
+    int keySigChanges = 0;
+    int restSpans = 0;            // maximal all-part-rest gaps >= threshold
+    std::vector<int> boundaryTicks;   // sorted union of all of the above
+};
+
+static BoundaryEvidence collectBoundaryEvidence(MasterScore* score, int restThresholdTicks)
+{
+    using namespace mu::engraving;
+    BoundaryEvidence ev;
+    std::set<int> ticks;
+
+    const Measure* firstMeasure = score->firstMeasure();
+    if (!firstMeasure) {
+        return ev;
+    }
+
+    // fermatas + rehearsal marks — segment annotations (any segment).
+    for (const Segment* s = firstMeasure->first(); s; s = s->next1()) {
+        for (const EngravingItem* a : s->annotations()) {
+            if (!a) {
+                continue;
+            }
+            if (a->isFermata()) {
+                ++ev.fermatas;
+                ticks.insert(s->tick().ticks());
+            } else if (a->isRehearsalMark()) {
+                ++ev.rehearsalMarks;
+                ticks.insert(s->tick().ticks());
+            }
+        }
+    }
+
+    // structural barlines — double / final / repeat (a notational division).
+    for (const Measure* m = firstMeasure; m; m = m->nextMeasure()) {
+        const BarLineType bt = m->endBarLineType();
+        if (bt == BarLineType::DOUBLE || bt == BarLineType::END
+            || bt == BarLineType::END_REPEAT || bt == BarLineType::END_START_REPEAT) {
+            ++ev.structuralBarlines;
+            ticks.insert(m->endTick().ticks());
+        }
+        if (m->repeatStart()) {
+            ++ev.structuralBarlines;
+            ticks.insert(m->tick().ticks());
+        }
+    }
+
+    // mid-score key-signature CHANGE (staff 0's engraved signature differs from the prevailing one).
+    if (score->nstaves() > 0 && score->staff(0)) {
+        int prevKey = static_cast<int>(score->staff(0)->keySigEvent(Fraction(0, 1)).concertKey());
+        for (const Segment* s = firstMeasure->first(SegmentType::KeySig); s;
+             s = s->next1(SegmentType::KeySig)) {
+            const KeySig* ks = nullptr;
+            for (const EngravingItem* e : s->elist()) {
+                if (e && e->isKeySig()) { ks = toKeySig(e); break; }
+            }
+            if (!ks) { continue; }
+            const int key = static_cast<int>(ks->concertKey());
+            const int tick = s->tick().ticks();
+            if (key != prevKey && tick > 0) {
+                ++ev.keySigChanges;
+                ticks.insert(tick);
+            }
+            prevKey = key;
+        }
+    }
+
+    // all-part-rest spans — maximal gaps in the union of every note's sounding interval >= threshold.
+    std::vector<std::pair<int, int> > iv;   // [onset, onset+dur)
+    int maxEndTick = 0;
+    for (const Segment* s = score->firstSegment(SegmentType::ChordRest); s;
+         s = s->next1(SegmentType::ChordRest)) {
+        for (track_idx_t tr = 0; tr < score->ntracks(); ++tr) {
+            EngravingItem* e = s->element(tr);
+            if (e && e->isChord()) {
+                const int on = s->tick().ticks();
+                const int du = toChord(e)->actualTicks().ticks();
+                if (du > 0) {
+                    iv.emplace_back(on, on + du);
+                    maxEndTick = std::max(maxEndTick, on + du);
+                }
+            }
+        }
+    }
+    if (!iv.empty()) {
+        std::sort(iv.begin(), iv.end());
+        int coveredEnd = iv.front().first;   // start of the first sound
+        for (const auto& p : iv) {
+            if (p.first > coveredEnd) {       // a gap [coveredEnd, p.first)
+                if (p.first - coveredEnd >= restThresholdTicks) {
+                    ++ev.restSpans;
+                    ticks.insert(coveredEnd);
+                }
+            }
+            coveredEnd = std::max(coveredEnd, p.second);
+        }
+    }
+
+    ev.boundaryTicks.assign(ticks.begin(), ticks.end());
+    return ev;
+}
+
+// median of a vector (copy), 0 on empty.
+static double medOf(std::vector<double> v)
+{
+    return medianSorted(std::move(v));
+}
+
+// popcount for a 12-bit pc mask (uint16_t).
+static int pcPopcount(uint16_t m)
+{
+    int n = 0;
+    while (m) { m &= static_cast<uint16_t>(m - 1); ++n; }
+    return n;
+}
+
+// Count events UNCOVERABLE by the decoder's >=2-member content gate: an event is uncoverable iff every
+// <=segCap segment containing it has an onset-pc UNION with <2 distinct pcs (so no vocabulary class can
+// have >=2 members present, and no finite-content candidate covers it -> V[N] empty -> segs=0).
+static int countUncoverableEvents(const mu::composing::analysis::joint::Piece& piece, int segCap)
+{
+    const int n = static_cast<int>(piece.events.size());
+    int uncoverable = 0;
+    for (int e = 0; e < n; ++e) {
+        bool coverable = false;
+        // any segment [i, j) with i <= e < j <= min(n, i+segCap)
+        for (int i = std::max(0, e - segCap + 1); i <= e && !coverable; ++i) {
+            uint16_t onsetUnion = 0;
+            const int jmax = std::min(n, i + segCap);
+            for (int j = i + 1; j <= jmax; ++j) {
+                onsetUnion |= piece.evOnsetPcs[static_cast<size_t>(j - 1)];
+                if (j > e && pcPopcount(onsetUnion) >= 2) {   // this segment contains e and has >=2 pcs
+                    coverable = true;
+                    break;
+                }
+            }
+        }
+        if (!coverable) {
+            ++uncoverable;
+        }
+    }
+    return uncoverable;
+}
+
+// ── the size facts, phase-1/phase-2 timings, boundary evidence, and viewport density for one score.
+// Written by BOTH tests; the decode test adds phase 3/4 on top. ──
+struct ScoreProfile {
+    std::string id;
+    std::string sizeClass;   // "" for large corpus
+    bool loaded = false;
+    std::string error;
+    // counts
+    int staves = 0;
+    int parts = 0;
+    int measures = 0;
+    int scoreChordNotes = 0;   // sum of chord notes read from the DOM (whole score)
+    qint64 fileBytes = -1;
+    // adapter (phase 1) facts
+    bool adapterOk = false;
+    std::string adapterError;
+    int adapterNotes = 0;      // fx.piece.notes.size() — the fact adapter's note-event count
+    int adapterEvents = 0;     // fx.piece.events.size() — the event lattice size
+    bool multiMeter = false;
+    // segs=0 diagnosis: events with no onset pcs / no sounding pcs, and the longest consecutive run.
+    // The decoder's candidates use the union of evOnsetPcs over a segment (jointdecoder.cpp); a run of
+    // onset-empty events longer than segCap (4) cannot be bridged by any <=segCap segment with a
+    // candidate, so the semi-Markov DP cannot reach V[N] and returns complete=false with 0 segments.
+    int emptyOnsetEvents = 0;
+    int maxEmptyOnsetRun = 0;
+    int emptyOverlapEvents = 0;
+    int maxEmptyOverlapRun = 0;
+    // The decoder skips a candidate class unless >=2 of its members are present in the segment's ONSET-pc
+    // union (jointdecoder.cpp:444-445). So an event is UNCOVERABLE iff EVERY <=segCap segment containing
+    // it has an onset-pc union with <2 distinct pcs — no class can have 2 members present, so no finite-
+    // content candidate covers it, and V[N] cannot be reached (segs=0). This scan counts uncoverable
+    // events directly (a proxy: <2 distinct onset pcs necessarily fails the >=2-member gate).
+    int uncoverableEvents = 0;
+    // timings (ms, median of runs)
+    double phase1BuildFactsMs = 0.0;
+    double phase2LoadTablesMs = 0.0;
+    // memory (bytes)
+    size_t wsAfterLoadScore = 0;
+    size_t wsAfterBuildFacts = 0;
+    // boundary evidence
+    BoundaryEvidence boundary;
+    // Task 4b: the enclosing-unit sizes between consecutive structural boundaries, exact in MEASURES
+    // and in EVENTS (the tail is the failure mode — the distribution, not the mean). Includes the
+    // implicit first/last boundaries at the piece ends so a boundary-free piece yields ONE whole-piece
+    // unit rather than an empty list.
+    std::vector<int> gapMeasures;
+    std::vector<int> gapEvents;
+    // viewport (events in first K measures — a "screen" proxy)
+    int eventsFirst4Measures = 0;
+    int eventsFirst8Measures = 0;
+};
+
+// Map each boundary tick to its measure index + event index, then the unit sizes (gaps) between
+// consecutive boundaries, with the piece's own ends as implicit boundaries. Exact — no meter assumption.
+static void computeBoundaryGaps(MasterScore* score,
+                                const mu::composing::analysis::joint::Piece& piece,
+                                const std::vector<int>& boundaryTicks,
+                                std::vector<int>& gapMeasures, std::vector<int>& gapEvents)
+{
+    using namespace mu::engraving;
+    // measure-start ticks
+    std::vector<int> measureTicks;
+    for (Measure* m = score->firstMeasure(); m; m = m->nextMeasure()) {
+        measureTicks.push_back(m->tick().ticks());
+    }
+    const int nMeasures = static_cast<int>(measureTicks.size());
+    const int nEvents = static_cast<int>(piece.events.size());
+    // event-start ticks (sorted by construction)
+    std::vector<int> eventTicks;
+    eventTicks.reserve(piece.events.size());
+    for (const auto& e : piece.events) {
+        eventTicks.push_back(e.start);
+    }
+    auto measureIndexOf = [&](int tick) {
+        // last measure whose start <= tick
+        int idx = static_cast<int>(std::upper_bound(measureTicks.begin(), measureTicks.end(), tick)
+                                   - measureTicks.begin()) - 1;
+        return std::max(0, std::min(idx, nMeasures - 1));
+    };
+    auto eventIndexOf = [&](int tick) {
+        return static_cast<int>(std::lower_bound(eventTicks.begin(), eventTicks.end(), tick)
+                                - eventTicks.begin());
+    };
+    // boundary set with implicit piece ends
+    std::vector<int> bm, be;
+    bm.push_back(0);
+    be.push_back(0);
+    for (int t : boundaryTicks) {
+        bm.push_back(measureIndexOf(t));
+        be.push_back(eventIndexOf(t));
+    }
+    bm.push_back(nMeasures);
+    be.push_back(nEvents);
+    std::sort(bm.begin(), bm.end());
+    std::sort(be.begin(), be.end());
+    for (size_t i = 1; i < bm.size(); ++i) {
+        const int gm = bm[i] - bm[i - 1];
+        const int ge = be[i] - be[i - 1];
+        if (gm > 0 || ge > 0) {
+            gapMeasures.push_back(gm);
+            gapEvents.push_back(ge);
+        }
+    }
+}
+
+// count events (adapter lattice) whose start tick is < the tick at measure index `k` (0-based).
+static int eventsBeforeMeasure(MasterScore* score,
+                               const mu::composing::analysis::joint::Piece& piece, int k)
+{
+    using namespace mu::engraving;
+    int idx = 0, capTick = std::numeric_limits<int>::max();
+    for (Measure* m = score->firstMeasure(); m; m = m->nextMeasure(), ++idx) {
+        if (idx == k) { capTick = m->tick().ticks(); break; }
+    }
+    int n = 0;
+    for (const auto& ev : piece.events) {
+        if (ev.start < capTick) { ++n; }
+    }
+    return n;
+}
+
+// Run phases 1 (buildAdapterFacts) + 2 (embedded table/adapter/weight load) + the counts/boundary/
+// viewport facts for one already-loaded score. `runs` = timing repeats (median reported).
+static ScoreProfile profileCheapPhases(MasterScore* score, const std::string& id,
+                                       const std::string& sizeClass, const QString& absPath, int runs)
+{
+    using namespace mu::composing::analysis::joint;
+    ScoreProfile p;
+    p.id = id;
+    p.sizeClass = sizeClass;
+    p.loaded = true;
+    p.fileBytes = fileSizeBytes(absPath);
+
+    for (mu::engraving::Measure* m = score->firstMeasure(); m; m = m->nextMeasure()) {
+        ++p.measures;
+    }
+    p.staves = static_cast<int>(score->nstaves());
+    p.parts = static_cast<int>(score->parts().size());
+    for (mu::engraving::Segment* s = score->firstSegment(mu::engraving::SegmentType::ChordRest); s;
+         s = s->next1(mu::engraving::SegmentType::ChordRest)) {
+        for (mu::engraving::track_idx_t tr = 0; tr < score->ntracks(); ++tr) {
+            mu::engraving::EngravingItem* e = s->element(tr);
+            if (e && e->isChord()) {
+                p.scoreChordNotes += static_cast<int>(mu::engraving::toChord(e)->notes().size());
+            }
+        }
+    }
+
+    p.wsAfterLoadScore = currentWorkingSetBytes();
+
+    // phase 1 — buildAdapterFacts (score -> facts). Timed; the facts of the last run are kept.
+    std::vector<double> p1;
+    AdapterFacts fx;
+    for (int r = 0; r < runs; ++r) {
+        const auto t0 = std::chrono::steady_clock::now();
+        fx = buildAdapterFacts(score, id, /*excludeStaves=*/{});
+        const auto t1 = std::chrono::steady_clock::now();
+        p1.push_back(std::chrono::duration<double, std::milli>(t1 - t0).count());
+    }
+    p.phase1BuildFactsMs = medOf(p1);
+    p.wsAfterBuildFacts = currentWorkingSetBytes();
+    p.adapterOk = fx.ok;
+    if (!fx.ok) {
+        p.adapterError = fx.error;
+    } else {
+        p.adapterNotes = static_cast<int>(fx.piece.notes.size());
+        p.adapterEvents = static_cast<int>(fx.piece.events.size());
+        p.multiMeter = fx.multiMeter;
+        p.eventsFirst4Measures = eventsBeforeMeasure(score, fx.piece, 4);
+        p.eventsFirst8Measures = eventsBeforeMeasure(score, fx.piece, 8);
+        // segs=0 diagnosis: scan the event lattice for onset-empty / silent events and the longest runs.
+        int runOnset = 0, runOverlap = 0;
+        const int nev = static_cast<int>(fx.piece.events.size());
+        for (int e = 0; e < nev; ++e) {
+            const bool onsetEmpty = (fx.piece.evOnsetPcs[static_cast<size_t>(e)] == 0);
+            const bool overlapEmpty = (fx.piece.overlapPcs(e, e + 1) == 0);
+            if (onsetEmpty) {
+                ++p.emptyOnsetEvents; ++runOnset;
+                p.maxEmptyOnsetRun = std::max(p.maxEmptyOnsetRun, runOnset);
+            } else {
+                runOnset = 0;
+            }
+            if (overlapEmpty) {
+                ++p.emptyOverlapEvents; ++runOverlap;
+                p.maxEmptyOverlapRun = std::max(p.maxEmptyOverlapRun, runOverlap);
+            } else {
+                runOverlap = 0;
+            }
+        }
+        p.uncoverableEvents = countUncoverableEvents(fx.piece, /*segCap=*/4);
+    }
+
+    // phase 2 — embedded table + adapter + weight load (per-call; score-independent, timed here).
+    std::vector<double> p2;
+    for (int r = 0; r < runs; ++r) {
+        const auto t0 = std::chrono::steady_clock::now();
+        JointTables tables = JointTables::loadEmbedded("all");
+        Vocabulary vocab(tables);
+        const WeightVector selected = selectedWeights();
+        FittedAdapter adapter = FittedAdapter::loadEmbedded(selected);
+        const auto t1 = std::chrono::steady_clock::now();
+        p2.push_back(std::chrono::duration<double, std::milli>(t1 - t0).count());
+        if (!tables.loaded || !adapter.loaded()) {
+            p.adapterError += " [phase2 load failed]";
+        }
+        (void)vocab;
+    }
+    p.phase2LoadTablesMs = medOf(p2);
+
+    // boundary evidence + viewport (Task 4b/4c). Threshold: one whole note (1920 ticks) = a clear rest.
+    p.boundary = collectBoundaryEvidence(score, /*restThresholdTicks=*/1920);
+    if (fx.ok) {
+        computeBoundaryGaps(score, fx.piece, p.boundary.boundaryTicks, p.gapMeasures, p.gapEvents);
+    }
+    return p;
+}
+
+static QJsonObject profileToJson(const ScoreProfile& p)
+{
+    QJsonObject o;
+    o["id"] = QString::fromStdString(p.id);
+    if (!p.sizeClass.empty()) { o["sizeClass"] = QString::fromStdString(p.sizeClass); }
+    o["loaded"] = p.loaded;
+    if (!p.error.empty()) { o["error"] = QString::fromStdString(p.error); }
+    o["staves"] = p.staves;
+    o["parts"] = p.parts;
+    o["measures"] = p.measures;
+    o["scoreChordNotes"] = p.scoreChordNotes;
+    o["fileBytes"] = static_cast<double>(p.fileBytes);
+    o["adapterOk"] = p.adapterOk;
+    if (!p.adapterError.empty()) { o["adapterError"] = QString::fromStdString(p.adapterError); }
+    o["adapterNotes"] = p.adapterNotes;
+    o["adapterEvents"] = p.adapterEvents;
+    o["multiMeter"] = p.multiMeter;
+    o["emptyOnsetEvents"] = p.emptyOnsetEvents;
+    o["maxEmptyOnsetRun"] = p.maxEmptyOnsetRun;
+    o["emptyOverlapEvents"] = p.emptyOverlapEvents;
+    o["maxEmptyOverlapRun"] = p.maxEmptyOverlapRun;
+    o["uncoverableEvents"] = p.uncoverableEvents;
+    o["phase1_build_facts_ms"] = p.phase1BuildFactsMs;
+    o["phase2_load_tables_ms"] = p.phase2LoadTablesMs;
+    o["ws_after_load_score_bytes"] = static_cast<double>(p.wsAfterLoadScore);
+    o["ws_after_build_facts_bytes"] = static_cast<double>(p.wsAfterBuildFacts);
+    QJsonObject b;
+    b["fermatas"] = p.boundary.fermatas;
+    b["structuralBarlines"] = p.boundary.structuralBarlines;
+    b["rehearsalMarks"] = p.boundary.rehearsalMarks;
+    b["keySigChanges"] = p.boundary.keySigChanges;
+    b["restSpans"] = p.boundary.restSpans;
+    b["boundaryCount"] = static_cast<int>(p.boundary.boundaryTicks.size());
+    // gaps between consecutive boundary ticks (in ticks) — the tail is the failure mode (report max + list)
+    QJsonArray gaps;
+    for (size_t i = 1; i < p.boundary.boundaryTicks.size(); ++i) {
+        gaps.append(p.boundary.boundaryTicks[i] - p.boundary.boundaryTicks[i - 1]);
+    }
+    b["gapTicks"] = gaps;
+    // Task 4b: exact enclosing-unit sizes between structural boundaries (piece ends implicit), in
+    // measures and events; the tail is the failure mode, so the full distribution + the max are emitted.
+    QJsonArray gm, ge;
+    int maxGapMeasures = 0, maxGapEvents = 0;
+    for (int v : p.gapMeasures) { gm.append(v); maxGapMeasures = std::max(maxGapMeasures, v); }
+    for (int v : p.gapEvents) { ge.append(v); maxGapEvents = std::max(maxGapEvents, v); }
+    b["unitSizesMeasures"] = gm;
+    b["unitSizesEvents"] = ge;
+    b["maxUnitMeasures"] = maxGapMeasures;
+    b["maxUnitEvents"] = maxGapEvents;
+    b["nUnits"] = static_cast<int>(p.gapMeasures.size());
+    o["boundary"] = b;
+    o["eventsFirst4Measures"] = p.eventsFirst4Measures;
+    o["eventsFirst8Measures"] = p.eventsFirst8Measures;
+    return o;
+}
+
+// LargeScoreCounts — the ALWAYS-SAFE sweep: counts + phase 1 (buildAdapterFacts) + phase 2 (load) +
+// boundary/viewport, over kPerfCorpus + the 23 large scores. No decode; the first orchestral-adapter
+// exposure. Load or adapter failure is a FINDING (recorded), never silently dropped.
+TEST(LargeScoreCounts, DISABLED_Sweep)
+{
+    auto analysisCfg = muse::modularity::globalIoc()->resolve<
+        mu::composing::IComposingAnalysisConfiguration>("composing");
+    if (analysisCfg) {
+        analysisCfg->setUseRegionalAccumulation(true);
+        analysisCfg->setUseJointNotationRecord(true);
+    }
+
+    constexpr int kCountRuns = 3;
+    QJsonArray perfArr, largeArr;
+
+    auto runOne = [&](const std::string& id, const std::string& sizeClass, const QString& relPath,
+                      QJsonArray& into) {
+        const QString absPath = QStringLiteral(PIPELINE_SNAPSHOT_CORPUS_ROOT)
+                                + QLatin1Char('/') + relPath;
+        if (!QFileInfo::exists(absPath)) {
+            ScoreProfile p; p.id = id; p.error = "score file missing: " + absPath.toStdString();
+            into.append(profileToJson(p));
+            std::cout << "[counts] MISSING " << id << " (" << absPath.toStdString() << ")\n";
+            return;
+        }
+        MasterScore* score = ScoreRW::readScore(muse::String::fromQString(absPath),
+                                                /*isAbsolutePath=*/true);
+        if (!score) {
+            ScoreProfile p; p.id = id; p.error = "ScoreRW::readScore returned null (load failed)";
+            into.append(profileToJson(p));
+            std::cout << "[counts] LOAD-FAIL " << id << "\n";
+            return;
+        }
+        ScoreProfile p = profileCheapPhases(score, id, sizeClass, absPath, kCountRuns);
+        into.append(profileToJson(p));
+        std::cout << "[counts] " << id
+                  << " staves=" << p.staves << " parts=" << p.parts << " measures=" << p.measures
+                  << " scoreChordNotes=" << p.scoreChordNotes
+                  << " adapterOk=" << (p.adapterOk ? 1 : 0)
+                  << " adapterNotes=" << p.adapterNotes << " adapterEvents=" << p.adapterEvents
+                  << " p1ms=" << p.phase1BuildFactsMs << " p2ms=" << p.phase2LoadTablesMs
+                  << " boundaries=" << p.boundary.boundaryTicks.size()
+                  << " ws_facts_MB=" << (p.wsAfterBuildFacts / (1024.0 * 1024.0)) << "\n";
+        delete score;
+    };
+
+    for (const PerfScore& ps : kPerfCorpus) {
+        runOne(ps.id, ps.sizeClass, QString::fromUtf8(ps.relativePath), perfArr);
+    }
+    for (const LargeScore& ls : kLargeCorpus) {
+        runOne(ls.id, "", QString::fromUtf8(ls.relPath), largeArr);
+    }
+
+    QJsonObject root;
+    root["instrument"] = QStringLiteral("pipeline_snapshot_tests.cpp LargeScoreCounts.DISABLED_Sweep");
+    root["open_item"] = QStringLiteral("OI-206 / cc_instruction_analysis_cost_profile.md Task 0/1/4");
+    root["purpose"] = QStringLiteral(
+        "Per-score counts (notes as the fact adapter counts them, staves, parts, measures, file size), "
+        "phase 1 (buildAdapterFacts) + phase 2 (embedded table/weight load) timings + resident memory, "
+        "structural-boundary evidence (Task 4b), and viewport event density (Task 4c). No decode.");
+    root["rest_threshold_ticks"] = 1920;
+    root["runs_per_score"] = kCountRuns;
+    root["machine"] = QSysInfo::prettyProductName() + QStringLiteral(" / ")
+                      + QSysInfo::currentCpuArchitecture();
+    root["ticks_per_quarter"] = 480;
+    root["perfCorpus"] = perfArr;
+    root["largeCorpus"] = largeArr;
+
+    const QString outPath = QStringLiteral(PIPELINE_SNAPSHOT_CORPUS_ROOT)
+                            + QStringLiteral("/tools/notation_seams/large_score_profile_counts.json");
+    QDir().mkpath(QFileInfo(outPath).absolutePath());
+    const QByteArray bytes = serializeSnapshot(root).toUtf8();
+    QFile out(outPath);
+    ASSERT_TRUE(out.open(QIODevice::WriteOnly | QIODevice::Truncate)) << out.errorString().toStdString();
+    ASSERT_EQ(out.write(bytes), static_cast<qint64>(bytes.size()));
+    out.close();
+    std::cout << "wrote " << outPath.toStdString() << std::endl;
+    if (analysisCfg) { analysisCfg->setUseJointNotationRecord(false); }
+}
+
+// LargeScoreDecodeProfile — the FULL phase profile: phases 1-4 + the isolated §3.3 posterior slice +
+// peak resident memory around the decode. Env LARGE_PROFILE_MAX_EVENTS (0 = no cap) decodes only scores
+// whose adapter event count <= the cap; larger scores are recorded counts-only ("decodeSkipped") so the
+// possibly-intractable largest are extrapolated, never force-run (feedback_never_stop_long_running).
+TEST(LargeScoreDecodeProfile, DISABLED_Sweep)
+{
+    using namespace mu::composing::analysis::joint;
+    auto analysisCfg = muse::modularity::globalIoc()->resolve<
+        mu::composing::IComposingAnalysisConfiguration>("composing");
+    if (analysisCfg) {
+        analysisCfg->setUseRegionalAccumulation(true);
+        analysisCfg->setUseJointNotationRecord(true);
+    }
+
+    long capEvents = 0;
+    if (const char* env = std::getenv("LARGE_PROFILE_MAX_EVENTS")) {
+        capEvents = std::atol(env);
+    }
+    constexpr int kDecodeRuns = 3;
+
+    QJsonArray scoresArr;
+
+    auto runOne = [&](const std::string& id, const std::string& sizeClass, const QString& relPath) {
+        const QString absPath = QStringLiteral(PIPELINE_SNAPSHOT_CORPUS_ROOT)
+                                + QLatin1Char('/') + relPath;
+        QJsonObject o;
+        o["id"] = QString::fromStdString(id);
+        if (!sizeClass.empty()) { o["sizeClass"] = QString::fromStdString(sizeClass); }
+        if (!QFileInfo::exists(absPath)) {
+            o["error"] = QStringLiteral("score file missing");
+            scoresArr.append(o);
+            return;
+        }
+        MasterScore* score = ScoreRW::readScore(muse::String::fromQString(absPath),
+                                                /*isAbsolutePath=*/true);
+        if (!score) {
+            o["error"] = QStringLiteral("load failed");
+            scoresArr.append(o);
+            std::cout << "[decode] LOAD-FAIL " << id << "\n";
+            return;
+        }
+
+        // phase 1 — build facts (once; needed for the decode + the event count / cap decision).
+        const size_t wsBase = currentWorkingSetBytes();
+        AdapterFacts fx = buildAdapterFacts(score, id, /*excludeStaves=*/{});
+        o["adapterOk"] = fx.ok;
+        if (!fx.ok) {
+            o["adapterError"] = QString::fromStdString(fx.error);
+            scoresArr.append(o);
+            std::cout << "[decode] ADAPTER-FAIL " << id << " : " << fx.error << "\n";
+            delete score;
+            return;
+        }
+        const int nNotes = static_cast<int>(fx.piece.notes.size());
+        const int nEvents = static_cast<int>(fx.piece.events.size());
+        o["adapterNotes"] = nNotes;
+        o["adapterEvents"] = nEvents;
+        o["staves"] = static_cast<int>(score->nstaves());
+
+        if (capEvents > 0 && nEvents > capEvents) {
+            o["decodeSkipped"] = QStringLiteral("adapterEvents exceeds LARGE_PROFILE_MAX_EVENTS");
+            scoresArr.append(o);
+            std::cout << "[decode] SKIP " << id << " (events=" << nEvents << " > cap=" << capEvents << ")\n";
+            delete score;
+            return;
+        }
+
+        // phase 1 timing (re-timed cleanly, median of runs).
+        std::vector<double> p1;
+        for (int r = 0; r < kDecodeRuns; ++r) {
+            const auto t0 = std::chrono::steady_clock::now();
+            AdapterFacts f2 = buildAdapterFacts(score, id, {});
+            const auto t1 = std::chrono::steady_clock::now();
+            p1.push_back(std::chrono::duration<double, std::milli>(t1 - t0).count());
+            (void)f2;
+        }
+
+        // phase 2 — embedded load (timed; also the objects the decode needs).
+        std::vector<double> p2;
+        JointTables tables = JointTables::loadEmbedded("all");
+        WeightVector selected = selectedWeights();
+        FittedAdapter adapter = FittedAdapter::loadEmbedded(selected);
+        for (int r = 0; r < kDecodeRuns; ++r) {
+            const auto t0 = std::chrono::steady_clock::now();
+            JointTables t2 = JointTables::loadEmbedded("all");
+            Vocabulary v2(t2);
+            WeightVector w2 = selectedWeights();
+            FittedAdapter a2 = FittedAdapter::loadEmbedded(w2);
+            const auto t1 = std::chrono::steady_clock::now();
+            p2.push_back(std::chrono::duration<double, std::milli>(t1 - t0).count());
+            (void)v2; (void)a2;
+        }
+        Vocabulary vocab(tables);
+
+        // phase 3 — decodePiece. Peak resident memory captured around it. Fewer runs on big scores is
+        // not needed: we median kDecodeRuns; on a huge score even one run dominates. The cap protects us.
+        std::vector<double> p3;
+        const size_t wsBeforeDecode = currentWorkingSetBytes();
+        DecodeResult dr;
+        for (int r = 0; r < kDecodeRuns; ++r) {
+            ChordCache cache;
+            const auto t0 = std::chrono::steady_clock::now();
+            dr = decodePiece(fx.piece, adapter, vocab, cache, 4, fx.sigFifths, fx.declaredMode);
+            const auto t1 = std::chrono::steady_clock::now();
+            p3.push_back(std::chrono::duration<double, std::milli>(t1 - t0).count());
+        }
+        const size_t wsAfterDecode = currentWorkingSetBytes();
+
+        // phase 4 — assembleNotationRecord, and the ISOLATED §3.3 posterior slice (computePosteriorSlice).
+        std::vector<double> p4, p4slice;
+        for (int r = 0; r < kDecodeRuns; ++r) {
+            ChordCache cache;
+            const auto t0 = std::chrono::steady_clock::now();
+            NotationRecord rec = assembleNotationRecord(fx.piece, dr, fx.sigFifths, fx.declaredMode,
+                                                        adapter, vocab, cache);
+            const auto t1 = std::chrono::steady_clock::now();
+            p4.push_back(std::chrono::duration<double, std::milli>(t1 - t0).count());
+            (void)rec;
+        }
+        for (int r = 0; r < kDecodeRuns; ++r) {
+            ChordCache cache;
+            const auto t0 = std::chrono::steady_clock::now();
+            std::vector<SegmentSlice> slices = computePosteriorSlice(fx.piece, dr.segments, adapter,
+                                                                     vocab, cache);
+            const auto t1 = std::chrono::steady_clock::now();
+            p4slice.push_back(std::chrono::duration<double, std::milli>(t1 - t0).count());
+            (void)slices;
+        }
+
+        o["nSegments"] = static_cast<int>(dr.segments.size());
+        o["decodeComplete"] = dr.complete;   // segs=0 diagnosis: false => the DP reached no full-coverage path
+        o["phase1_build_facts_ms"] = medOf(p1);
+        o["phase2_load_tables_ms"] = medOf(p2);
+        o["phase3_decode_ms"] = medOf(p3);
+        o["phase4_assemble_ms"] = medOf(p4);
+        o["phase4_posterior_slice_ms"] = medOf(p4slice);
+        o["ws_base_bytes"] = static_cast<double>(wsBase);
+        o["ws_before_decode_bytes"] = static_cast<double>(wsBeforeDecode);
+        o["ws_after_decode_bytes"] = static_cast<double>(wsAfterDecode);
+        o["ws_decode_growth_bytes"] = static_cast<double>(
+            wsAfterDecode > wsBeforeDecode ? wsAfterDecode - wsBeforeDecode : 0);
+        o["peak_ws_bytes"] = static_cast<double>(peakWorkingSetBytes());
+        scoresArr.append(o);
+
+        std::cout << "[decode] " << id << " events=" << nEvents << " notes=" << nNotes
+                  << " segs=" << dr.segments.size()
+                  << " p1=" << medOf(p1) << " p2=" << medOf(p2) << " p3=" << medOf(p3)
+                  << " p4=" << medOf(p4) << " slice=" << medOf(p4slice)
+                  << " peakWS_MB=" << (peakWorkingSetBytes() / (1024.0 * 1024.0)) << "\n";
+        delete score;
+    };
+
+    for (const PerfScore& ps : kPerfCorpus) {
+        runOne(ps.id, ps.sizeClass, QString::fromUtf8(ps.relativePath));
+    }
+    for (const LargeScore& ls : kLargeCorpus) {
+        runOne(ls.id, "", QString::fromUtf8(ls.relPath));
+    }
+
+    QJsonObject root;
+    root["instrument"] = QStringLiteral("pipeline_snapshot_tests.cpp LargeScoreDecodeProfile.DISABLED_Sweep");
+    root["open_item"] = QStringLiteral("OI-206 / cc_instruction_analysis_cost_profile.md Task 1/2");
+    root["purpose"] = QStringLiteral(
+        "The full produceNotationRecord phase profile: phase 1 buildAdapterFacts, phase 2 embedded "
+        "table/weight load, phase 3 decodePiece, phase 4 assembleNotationRecord (+ the isolated §3.3 "
+        "computePosteriorSlice), with peak resident memory around the decode. LARGE_PROFILE_MAX_EVENTS "
+        "caps which scores are decoded (larger = counts-only, extrapolated).");
+    root["cap_events"] = static_cast<double>(capEvents);
+    root["runs_per_score"] = kDecodeRuns;
+    root["seg_cap"] = 4;
+    root["machine"] = QSysInfo::prettyProductName() + QStringLiteral(" / ")
+                      + QSysInfo::currentCpuArchitecture();
+    root["unit"] = QStringLiteral("milliseconds wall (std::chrono::steady_clock), median of runs; bytes for memory");
+    root["scores"] = scoresArr;
+
+    const QString outPath = QStringLiteral(PIPELINE_SNAPSHOT_CORPUS_ROOT)
+                            + QStringLiteral("/tools/notation_seams/large_score_decode_profile.json");
+    QDir().mkpath(QFileInfo(outPath).absolutePath());
+    const QByteArray bytes = serializeSnapshot(root).toUtf8();
+    QFile out(outPath);
+    ASSERT_TRUE(out.open(QIODevice::WriteOnly | QIODevice::Truncate)) << out.errorString().toStdString();
+    ASSERT_EQ(out.write(bytes), static_cast<qint64>(bytes.size()));
+    out.close();
+    std::cout << "wrote " << outPath.toStdString() << std::endl;
+    if (analysisCfg) { analysisCfg->setUseJointNotationRecord(false); }
 }
 
 // ── Stage 3.1b byte-identity A/B (uncached window vs cached window) ───────────
