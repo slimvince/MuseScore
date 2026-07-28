@@ -4,7 +4,7 @@
 > recorded across this repository, produced for a reader who knows music theory and software
 > architecture but nothing about this project's internal vocabulary. It is the human-readable
 > face of a mechanical harvest. The complete, verbatim, machine-readable list — every one of the
-> **15,192** decision-bearing statements the harvest found — lives beside this file in
+> **15,224** decision-bearing statements the harvest found — lives beside this file in
 > `decision_candidates.json` and `decision_candidates.csv`; that is the input the later
 > conformance audit consumes. **This document does not decide anything, does not judge whether a
 > statement is still in force, and does not check any decision against the code.** Those are the
@@ -18,7 +18,7 @@
 > identifiers (`DH-…`, i.e. decision-harvest candidate numbers) if a statement needs tracing there.
 >
 > **Scope of THIS document versus the machine list.** The harvest cast a deliberately wide net
-> and over-captured (15,192 candidates, of which 8,741 are in Claude Code's own session reports,
+> and over-captured (15,224 candidates, of which 8,741 are in Claude Code's own session reports,
 > which mostly *restate* decisions made elsewhere). This document presents the **canonical,
 > load-bearing** decisions — the ones a person actually needs to know — quoted from their
 > authoritative home, grouped by subject. A decision not written out here individually is still

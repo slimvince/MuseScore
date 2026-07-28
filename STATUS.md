@@ -5,6 +5,32 @@
 > Historical entries live in `STATUS_ARCHIVE.md` (reference-only, NOT part of the session-start
 > read) — a superseded entry moves there instead of accumulating here.
 
+*Last updated: 2026-07-28, LATEST+++ (CC — **THE DECISION CLUSTERING LAYER DELIVERED — MECHANICAL,
+READ-ONLY, NON-DESTRUCTIVE, NO ADJUDICATION; NO src/ change, NO golden/`tools/corpus/`/`tools/robust_stop/`
+movement, NO behavior change.** Dispatch `cc_instruction_decision_clustering.md`. Per the OI-222 remedy
+this entry is a POINTER — content lives in the artifacts + the [[OI-208]] note. **Deliverable:**
+`tools/audit/decisions/gen_decision_clusters.py` (sibling of the harvest, #6) + `decision_clusters.json`/
+`.csv` + `cluster_manifest.json` + `cluster_establishment.json` + the USER-facing worked preview
+`cluster_preview.md`. **★ IT CARRIES A STOP (#13): the dispatch's premise that the occurrences consolidate
+mechanically does NOT hold** — 15,224 candidates → **14,460 clusters, 14,274 singletons**; diagnosed cause:
+this repository restates decisions by PARAPHRASE, not by copying, so only **93** near-identical pairs exist
+corpus-wide and the threshold is not the lever (the whole 0.70–0.95 sweep spans 79 clusters). Worked
+counter-example: **46 statements about the Stage-3.1b shelving → 46 singleton clusters.** **The cluster
+count is NOT the decision count** — OI-208 ruling 3's consolidation remains judgment work in full. NOT
+worked around (sentence-level units / meaning-matching are method changes out of scope). **Established
+(#19), exactly:** `--establish` brute-forces every pair of the 13,894 eligible units — 93 exact / 93 found
+/ 0 missed / 0 spurious, recall+precision 1.0000; `--check` proves non-destructiveness (all 15,224 present,
+each in exactly one cluster, input sha256 unchanged); two runs byte-identical. **Also delivered:** the
+labelled boilerplate bucket (74 clusters / 373 occurrences, KEPT), 6 internally-divergent clusters (5
+outside the bucket) flagged and left unresolved, 1,876 evidence-pointer + 52 date+ratifier link groups
+(links only, never merges), a proposed representative per cluster by SOURCE AUTHORITY alone. **Doc-sync
+correction (#10/#17f):** the harvest's candidate counts were hand-transcribed one regeneration stale in
+`STATUS.md`, `open_items/OI-207.md` and `decision_inventory.md` (15,192/14,485) — corrected to the
+generated manifest's **15,224/14,514**. Dated note on [[OI-208]]. **NEXT (user): read
+`tools/audit/decisions/cluster_preview.md` and rule on the entry shape → then the FRIDAY OI-207
+adjudication, which must read the `ARCHITECTURE.md` per-layer specifications IN FULL.** Full detail: the
+preview + the [[OI-208]] note.)*
+
 *Last updated: 2026-07-28, LATEST++ (CC — **THE DECISION HARVEST DELIVERED — MECHANICAL, READ-ONLY, NO
 ADJUDICATION; NO src/ change, NO golden/`tools/corpus/`/`tools/robust_stop/` movement, NO behavior
 change.** Dispatch `cc_instruction_decision_harvest.md`. Per the OI-222 remedy this entry is a POINTER —
@@ -12,8 +38,8 @@ content lives in the artifacts + the register. **Deliverable:** the ONE candidat
 decision-bearing statements that turns Friday's OI-207 adjudication + OI-208 register from an unbounded
 prose-hunt into a bounded read — `tools/audit/decisions/` (`gen_decision_harvest.py` +
 `decision_candidates.json`/`.csv` + `manifest.json` + the human-readable `decision_inventory.md` written
-for the USER, subject-grouped, verbatim+plain-restatement, terminology-convention-clean). **15,192
-candidates / 14,485 distinct** across the governing docs + every `cowork_*`/`cc_*` + `docs/` + the
+for the USER, subject-grouped, verbatim+plain-restatement, terminology-convention-clean). **15,224
+candidates / 14,514 distinct** across the governing docs + every `cowork_*`/`cc_*` + `docs/` + the
 register + BOTH archives + `ARCHITECTURE.md` per-layer specs + production code comments; **status +
 conformance left EMPTY** for Friday (Task-2 register shape). **Established (#19): 10/10 seed recall,
 caught-at-home on all ten seeded known decisions, NO signature iteration needed;** diagnosed limitation —
