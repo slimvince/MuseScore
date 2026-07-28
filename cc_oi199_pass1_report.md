@@ -327,6 +327,98 @@ the auditor-not-amender rule, these are **declared to Cowork**, not acted on.
   the generated artifacts. A structural strength worth recording (it means the source carries almost no
   un-established tunable, unlike the L3/L4 scorers).
 
-## 7. Task 4 (unblind), Task 3 (freeze), and the reconciliation — appended after the freeze commit
+## 7. Task 4 — unblind, the register, and the reconciliation (written after the freeze `0ea3d31204`)
 
-*(This section is written AFTER the Task-3 freeze; see the appended §7 below and the register commit.)*
+**Withheld files first opened AFTER the freeze commit `0ea3d31204`, in order:** `OPEN_ITEMS.md`, the
+`open_items/OI-*.md` detail files (OI-215, OI-199), §S as an object of analysis. The freeze is the
+provenance boundary; the §0–§6 content above was fixed before it. *(The unavoidable exception — the
+whole point of OI-222 — is that S1/S2/S3 were already in my context from the mandatory `STATUS.md` read
+and the dispatch's inline §S, before Task 1.)*
+
+### 7.1 Register rows written (rule (c): index row + detail file in this commit)
+
+| OI | what | class |
+|---|---|---|
+| **OI-215** (existing) | S1 — the empty analysis on sparse texture. Read, not re-rowed; a pass-1 confirmation note appended. | STOP (#13) |
+| **OI-216** (new) | S2 — the C++ decode is `std::string`-keyed in the DP hot loop; appears slower than Python. | cost |
+| **OI-217** (new) | S3 — `buildAdapterFacts` is near-quadratic (repeated note scans). | cost |
+| **OI-218** (new) | S4 — incremental patching is UNMEASURED, not refuted (record). | correction of record |
+| **OI-219** (new) | S5 — the #17(b) prediction bands were not pre-registered (record). | process |
+| **OI-220** (new) | F-OI199-1 — the joint headers assert stale dormancy (#10). | doc-sync |
+| **OI-221** (new) | F-OI199-2 — two published record facts unconsumed (declared dormancy). | fact-publication |
+| **OI-222** (new) | F-OI199-5 — the blinding was defeated at the source (DT-20). | process |
+| **OI-223** (new) | F-OI199-6 — the prior-layer inventories are commit-stale (OI-95 class). | housekeeping |
+
+F-OI199-7 (the constant-clean positive finding) is recorded in the OI-199 detail file, not rowed (a
+strength, not an issue). F-OI199-3/4 map to OI-215/216/217. The OI-199 index row + detail carry the
+pass-1 delivery; certification remains WITHHELD.
+
+### 7.2 THE RECONCILIATION — and why it cannot be the clean measurement the sealing intended
+
+**★ The sealing was defeated before Task 1 (OI-222 / DT-20).** The three sealed findings were in my
+context from two mandatory sources — `STATUS.md`'s current top entry (a required read) states S1 with
+its exact line cites, S2 with the `std::string`-state hypothesis, and S3 with `events^1.80`; and the
+dispatch delivered §S inline. **So I cannot honestly report "found it blind."** I report instead the
+knowledge-independent question the artifacts *can* answer: **does a rigorous disposition + the P4
+structural characterization point at each finding's mechanism on its own merits, regardless of what I
+knew?** That is a real, useful measurement of the audit *method*'s reach — it just is not the
+blind-recall measurement the sealing wanted (which pass 2, a fresh session, must supply). I do not
+rationalize this; the leak is a finding about the method's delivery (OI-222), exactly the cheap lesson
+the sealing exists to produce.
+
+**The three-line verdict table** (verdict = does the method's ARTIFACT/disposition surface the
+mechanism on its merits; every line carries the blindness caveat):
+
+| finding | verdict | basis, and the honest limit |
+|---|---|---|
+| **S1** (content gate empties the analysis) | **ARTIFACT-SURFACED (structurally) — NOT blind** | The P4 characterization (§5.1) surfaces the `candidateStates` ≥2-member gate AND the explicitly-coded `V[N]`-empty branch (`:838-841`), and states the empty branch's population is sparse texture the chorale corpus does not exercise. **But:** a pure fire-rate ON THE PINNED (chorale) CORPUS would show the empty branch at **0%** and MISS the real-world failure entirely — surfacing S1 needs the *structural* read of `candidateStates` + the coded empty branch, not the corpus counters. And the pass was not blind (OI-222). So: the method's *structural* arm reaches S1; its *corpus-fire-rate* arm alone would miss it; blind recall is unproven here. |
+| **S2** (string-keyed DP; C++ slower) | **ARTIFACT-SURFACED (the cost cause) — NOT blind; direction unmeasured** | The disposition of the DP rows + §5.2 flag the `std::string`-keyed hot loop (stateEnc/keyEnc/to_string keys, `unordered_map<string>`) as the dominant per-candidate cost shape (→ OI-216) — a code-reading observation independent of timing. **But:** the *direction* of the comparison (C++ slower than Python) is Cowork's timing measurement; I did not re-measure it. And not blind (OI-222). |
+| **S3** (`buildAdapterFacts` super-linear) | **ARTIFACT-SURFACED (the scan cause) — NOT blind; exponent unmeasured** | §5.3 + the disposition of the fact-build flag the O(events·notes) event-lattice scan + the O(part²) `melodic` scan (→ OI-217) — a code-reading observation. **But:** the *exponent* (1.80) is Cowork's fit; I did not measure the scaling. And not blind (OI-222). |
+
+**What this tells the user about the remaining OI-199 partitions.** The mechanical audit method's
+*structural* arm (a rigorous per-row disposition + a code-read P4) demonstrably reaches all three
+sealed mechanisms — that is genuine evidence the deep passes are worth their cost. The method's
+*corpus-fire-rate* arm, run only on the fit corpus, would have MISSED the most important one (S1) —
+a concrete lesson: the deep passes must characterize behavior on **out-of-envelope inputs**, not only
+the pinned corpus, or they will rubber-stamp exactly the robustness cliffs that matter. And the whole
+"is the method blind" question is unanswered by this pass and must be re-measured by a genuinely blind
+pass 2 (fresh session, seeded error rate) with the OI-222 remedy applied — do not headline the withheld
+findings in a mandatory read; keep §S in a separate post-freeze artifact.
+
+### 7.3 Certification status
+
+**WITHHELD.** Pass 1 (blind enumerative) found **no correctness defect** in the joint module — a clean,
+well-tested, `probe_decoder`-parity port whose output surface carries the §3 contract facts and whose
+layering is forward-only bar one sanctioned pc-leaf back-edge; its risks are the cost/robustness
+shapes (OI-215/216/217, all declared to Cowork, none fixed) and the doc-sync/publication hygiene
+(OI-220/221). But certification needs BOTH passes plus the P6 error rate: pass 2 (a genuinely blind
+second reading in a fresh session, a seeded error rate at full vocabulary, the whole-scope DT-signature
+sweep) AND the partition-2/3 deep passes are owed, and this pass's blinding was compromised (OI-222).
+Certification is not self-granted; it returns to the user on the measured record after pass 2.
+
+## 8. Self-check (CLAUDE.md, run over the actual diff before reporting done)
+
+Re-read every touched file's diff against the guiding principles / conventions / gate policy /
+DEFECT_TYPES:
+- **#8 / auditor-not-amender:** no inference code, no fix — read-only; every discovered issue is a
+  register row, not a patch. The only code change is the `gen_inventory.py` tooling extension +
+  read-only disposition scripts. ✓
+- **#6 (one path):** the SAME `gen_inventory.py` extended (`--layer oi199`), no parallel tool; proven
+  inert for L1/L2/L3/L4/L5 (byte-identical vs a minimal joint-rule-only tool). ✓
+- **#15/#19 (verify at objects; establish):** every population tag and every load-bearing row verified
+  at the code + call sites (the dormancy contradiction, the publication grep, the crosslayer scan, the
+  content-gate/empty-branch, the DP string state, the fact-build scans); no inherited tag trusted. ✓
+- **#16 (reproducibility):** artifacts manifest-stamped (HEAD `5135764ed7`, corpus `c50002fee1`, script
+  blob sha); dispositions reproducible via `gen_joint_dispositions.py`. ✓
+- **Conventions (no self-invented labels):** verdicts are the L3/L4/L5 set verbatim
+  (SURVIVES/NO-ISSUE/ESTABLISHED/UNFIT/PUBLISHED/FORWARD-OK/BACK-EDGE-NOTE); tags follow the existing
+  `L4-SCORER`/`L5-DORMANT`/`INSTRUMENT-*` pattern (JOINT/CODEGEN/RECORD-SEAM/INSTRUMENT-JOINT/
+  INSTRUMENT-SEAMS); finding IDs follow the `F-L5-N` style. Reasons cite real repository names. ✓
+- **Scope:** no `src/` change, no constant tuned, no golden/`tools/corpus/`/`tools/robust_stop/`
+  movement, no behavior change. No counter was built (P4 via existing tests + structural read), so no
+  build/revert cycle and no byte-identity question arises; the compiled suites are unaffected (baseline
+  joint tests 78/78 confirmed at HEAD). ✓
+- **Git/shell rules:** `; echo "exit:$?"` on fallible commands; large output redirected; files staged
+  by name; the riding Cowork STATUS/handoff edits preserved; `cc_*.md` force-added; `origin` only. ✓
+- **A surprise is a STOP (#13):** the two STOP-class items — S1/OI-215 (already a rowed STOP) and the
+  DT-20 blinding failure (OI-222) — are surfaced, not built around; nothing was worked around. ✓
