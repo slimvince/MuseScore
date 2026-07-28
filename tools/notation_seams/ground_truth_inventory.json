@@ -1,0 +1,539 @@
+{
+ "provenance": {
+  "generator": "tools/notation_seams/gen_ground_truth_inventory.py",
+  "instrument_commit": "2e139d2a06bc2b127fcbdb27dc7ef7ebb529149e",
+  "open_item": "OI-206 / cc_instruction_analysis_cost_profile.md Task 5",
+  "note": "READ-ONLY enumeration of tools/dcml/. label counts = non-header TSV rows (coarse); largest_movement_measure_tags = <Measure> tag count in the largest .mscx per corpus (documentary size proxy, not exact bars). No download / convert / onboard.",
+  "chorale_baseline": "bach_chorales: SATB, ~7-57 measures/movement, 4 voices, largely diatonic; its RN ground truth lives in when_in_rome/ (the bach_chorales repo carries no harmonies/ on disk)."
+ },
+ "n_corpora": 42,
+ "n_corpora_with_annotations": 40,
+ "answer_larger_and_more_chromatic_than_a_chorale": {
+  "verdict": "YES",
+  "examples": [
+   {
+    "corpus": "ABC",
+    "era": "Classical→Romantic (Beethoven quartets)",
+    "chromaticism": "HIGH",
+    "scores_MS3": 70,
+    "harmony_tsvs": 70,
+    "total_labels": 28089,
+    "largest_movement_measure_tags": 1992,
+    "annotations_present": true
+   },
+   {
+    "corpus": "beethoven_piano_sonatas",
+    "era": "Classical→Romantic",
+    "chromaticism": "HIGH",
+    "scores_MS3": 91,
+    "harmony_tsvs": 64,
+    "total_labels": 21963,
+    "largest_movement_measure_tags": 382,
+    "annotations_present": true
+   },
+   {
+    "corpus": "mendelssohn_quartets",
+    "era": "Romantic",
+    "chromaticism": "HIGH",
+    "scores_MS3": 24,
+    "harmony_tsvs": 24,
+    "total_labels": 14758,
+    "largest_movement_measure_tags": 1484,
+    "annotations_present": true
+   },
+   {
+    "corpus": "chopin_mazurkas",
+    "era": "Romantic",
+    "chromaticism": "HIGH",
+    "scores_MS3": 56,
+    "harmony_tsvs": 55,
+    "total_labels": 9125,
+    "largest_movement_measure_tags": 450,
+    "annotations_present": true
+   },
+   {
+    "corpus": "grieg_lyric_pieces",
+    "era": "late Romantic",
+    "chromaticism": "HIGH",
+    "scores_MS3": 66,
+    "harmony_tsvs": 66,
+    "total_labels": 8236,
+    "largest_movement_measure_tags": 358,
+    "annotations_present": true
+   },
+   {
+    "corpus": "medtner_tales",
+    "era": "late Romantic",
+    "chromaticism": "VERY HIGH",
+    "scores_MS3": 19,
+    "harmony_tsvs": 19,
+    "total_labels": 6508,
+    "largest_movement_measure_tags": 1108,
+    "annotations_present": true
+   },
+   {
+    "corpus": "schubert_winterreise",
+    "era": "Romantic (Lieder)",
+    "chromaticism": "HIGH",
+    "scores_MS3": 24,
+    "harmony_tsvs": 48,
+    "total_labels": 6200,
+    "largest_movement_measure_tags": 327,
+    "annotations_present": true
+   },
+   {
+    "corpus": "liszt_pelerinage",
+    "era": "Romantic",
+    "chromaticism": "VERY HIGH",
+    "scores_MS3": 19,
+    "harmony_tsvs": 19,
+    "total_labels": 5070,
+    "largest_movement_measure_tags": 1122,
+    "annotations_present": true
+   },
+   {
+    "corpus": "tchaikovsky_seasons",
+    "era": "Romantic",
+    "chromaticism": "HIGH",
+    "scores_MS3": 12,
+    "harmony_tsvs": 12,
+    "total_labels": 3059,
+    "largest_movement_measure_tags": 398,
+    "annotations_present": true
+   },
+   {
+    "corpus": "dvorak_silhouettes",
+    "era": "late Romantic",
+    "chromaticism": "HIGH",
+    "scores_MS3": 12,
+    "harmony_tsvs": 12,
+    "total_labels": 1539,
+    "largest_movement_measure_tags": 144,
+    "annotations_present": true
+   }
+  ],
+  "wagner_tristan_on_disk": true
+ },
+ "corpora": [
+  {
+   "corpus": "ABC",
+   "era": "Classical→Romantic (Beethoven quartets)",
+   "chromaticism": "HIGH",
+   "scores_MS3": 70,
+   "harmony_tsvs": 70,
+   "total_labels": 28089,
+   "largest_movement_measure_tags": 1992,
+   "annotations_present": true
+  },
+  {
+   "corpus": "beethoven_piano_sonatas",
+   "era": "Classical→Romantic",
+   "chromaticism": "HIGH",
+   "scores_MS3": 91,
+   "harmony_tsvs": 64,
+   "total_labels": 21963,
+   "largest_movement_measure_tags": 382,
+   "annotations_present": true
+  },
+  {
+   "corpus": "kozeluh_sonatas",
+   "era": "(unclassified)",
+   "chromaticism": "(unclassified)",
+   "scores_MS3": 49,
+   "harmony_tsvs": 49,
+   "total_labels": 16598,
+   "largest_movement_measure_tags": 386,
+   "annotations_present": true
+  },
+  {
+   "corpus": "mozart_piano_sonatas",
+   "era": "Classical",
+   "chromaticism": "moderate",
+   "scores_MS3": 54,
+   "harmony_tsvs": 54,
+   "total_labels": 15272,
+   "largest_movement_measure_tags": 574,
+   "annotations_present": true
+  },
+  {
+   "corpus": "mendelssohn_quartets",
+   "era": "Romantic",
+   "chromaticism": "HIGH",
+   "scores_MS3": 24,
+   "harmony_tsvs": 24,
+   "total_labels": 14758,
+   "largest_movement_measure_tags": 1484,
+   "annotations_present": true
+  },
+  {
+   "corpus": "corelli",
+   "era": "Baroque",
+   "chromaticism": "low-moderate",
+   "scores_MS3": 149,
+   "harmony_tsvs": 149,
+   "total_labels": 14314,
+   "largest_movement_measure_tags": 216,
+   "annotations_present": true
+  },
+  {
+   "corpus": "scarlatti_sonatas",
+   "era": "late Baroque",
+   "chromaticism": "moderate",
+   "scores_MS3": 69,
+   "harmony_tsvs": 69,
+   "total_labels": 12490,
+   "largest_movement_measure_tags": 312,
+   "annotations_present": true
+  },
+  {
+   "corpus": "kleine_geistliche_konzerte",
+   "era": "Baroque",
+   "chromaticism": "moderate",
+   "scores_MS3": 56,
+   "harmony_tsvs": 55,
+   "total_labels": 11709,
+   "largest_movement_measure_tags": 1794,
+   "annotations_present": true
+  },
+  {
+   "corpus": "bach_en_fr_suites",
+   "era": "Baroque",
+   "chromaticism": "low-moderate",
+   "scores_MS3": 89,
+   "harmony_tsvs": 89,
+   "total_labels": 11312,
+   "largest_movement_measure_tags": 390,
+   "annotations_present": true
+  },
+  {
+   "corpus": "cpe_bach_keyboard",
+   "era": "(unclassified)",
+   "chromaticism": "(unclassified)",
+   "scores_MS3": 66,
+   "harmony_tsvs": 66,
+   "total_labels": 11191,
+   "largest_movement_measure_tags": 352,
+   "annotations_present": true
+  },
+  {
+   "corpus": "chopin_mazurkas",
+   "era": "Romantic",
+   "chromaticism": "HIGH",
+   "scores_MS3": 56,
+   "harmony_tsvs": 55,
+   "total_labels": 9125,
+   "largest_movement_measure_tags": 450,
+   "annotations_present": true
+  },
+  {
+   "corpus": "couperin_concerts",
+   "era": "Baroque",
+   "chromaticism": "low-moderate",
+   "scores_MS3": 91,
+   "harmony_tsvs": 84,
+   "total_labels": 8755,
+   "largest_movement_measure_tags": 186,
+   "annotations_present": true
+  },
+  {
+   "corpus": "grieg_lyric_pieces",
+   "era": "late Romantic",
+   "chromaticism": "HIGH",
+   "scores_MS3": 66,
+   "harmony_tsvs": 66,
+   "total_labels": 8236,
+   "largest_movement_measure_tags": 358,
+   "annotations_present": true
+  },
+  {
+   "corpus": "bach_solo",
+   "era": "Baroque",
+   "chromaticism": "low-moderate",
+   "scores_MS3": 68,
+   "harmony_tsvs": 68,
+   "total_labels": 7181,
+   "largest_movement_measure_tags": 355,
+   "annotations_present": true
+  },
+  {
+   "corpus": "medtner_tales",
+   "era": "late Romantic",
+   "chromaticism": "VERY HIGH",
+   "scores_MS3": 19,
+   "harmony_tsvs": 19,
+   "total_labels": 6508,
+   "largest_movement_measure_tags": 1108,
+   "annotations_present": true
+  },
+  {
+   "corpus": "schubert_winterreise",
+   "era": "Romantic (Lieder)",
+   "chromaticism": "HIGH",
+   "scores_MS3": 24,
+   "harmony_tsvs": 48,
+   "total_labels": 6200,
+   "largest_movement_measure_tags": 327,
+   "annotations_present": true
+  },
+  {
+   "corpus": "frescobaldi_fiori_musicali",
+   "era": "(unclassified)",
+   "chromaticism": "(unclassified)",
+   "scores_MS3": 47,
+   "harmony_tsvs": 48,
+   "total_labels": 5318,
+   "largest_movement_measure_tags": 248,
+   "annotations_present": true
+  },
+  {
+   "corpus": "liszt_pelerinage",
+   "era": "Romantic",
+   "chromaticism": "VERY HIGH",
+   "scores_MS3": 19,
+   "harmony_tsvs": 19,
+   "total_labels": 5070,
+   "largest_movement_measure_tags": 1122,
+   "annotations_present": true
+  },
+  {
+   "corpus": "jc_bach_sonatas",
+   "era": "(unclassified)",
+   "chromaticism": "(unclassified)",
+   "scores_MS3": 29,
+   "harmony_tsvs": 29,
+   "total_labels": 5063,
+   "largest_movement_measure_tags": 240,
+   "annotations_present": true
+  },
+  {
+   "corpus": "monteverdi_madrigals",
+   "era": "(unclassified)",
+   "chromaticism": "(unclassified)",
+   "scores_MS3": 19,
+   "harmony_tsvs": 19,
+   "total_labels": 3289,
+   "largest_movement_measure_tags": 885,
+   "annotations_present": true
+  },
+  {
+   "corpus": "tchaikovsky_seasons",
+   "era": "Romantic",
+   "chromaticism": "HIGH",
+   "scores_MS3": 12,
+   "harmony_tsvs": 12,
+   "total_labels": 3059,
+   "largest_movement_measure_tags": 398,
+   "annotations_present": true
+  },
+  {
+   "corpus": "peri_euridice",
+   "era": "early Baroque",
+   "chromaticism": "moderate",
+   "scores_MS3": 6,
+   "harmony_tsvs": 6,
+   "total_labels": 2884,
+   "largest_movement_measure_tags": 6048,
+   "annotations_present": true
+  },
+  {
+   "corpus": "wf_bach_sonatas",
+   "era": "(unclassified)",
+   "chromaticism": "(unclassified)",
+   "scores_MS3": 9,
+   "harmony_tsvs": 9,
+   "total_labels": 1753,
+   "largest_movement_measure_tags": 220,
+   "annotations_present": true
+  },
+  {
+   "corpus": "pleyel_quartets",
+   "era": "(unclassified)",
+   "chromaticism": "(unclassified)",
+   "scores_MS3": 6,
+   "harmony_tsvs": 6,
+   "total_labels": 1567,
+   "largest_movement_measure_tags": 1076,
+   "annotations_present": true
+  },
+  {
+   "corpus": "dvorak_silhouettes",
+   "era": "late Romantic",
+   "chromaticism": "HIGH",
+   "scores_MS3": 12,
+   "harmony_tsvs": 12,
+   "total_labels": 1539,
+   "largest_movement_measure_tags": 144,
+   "annotations_present": true
+  },
+  {
+   "corpus": "wagner_overtures",
+   "era": "Romantic (Tristan/Meistersinger)",
+   "chromaticism": "EXTREME — the most chromatic",
+   "scores_MS3": 2,
+   "harmony_tsvs": 2,
+   "total_labels": 1433,
+   "largest_movement_measure_tags": 444,
+   "annotations_present": true
+  },
+  {
+   "corpus": "c_schumann_lieder",
+   "era": "Romantic (Lieder)",
+   "chromaticism": "HIGH",
+   "scores_MS3": 12,
+   "harmony_tsvs": 12,
+   "total_labels": 1326,
+   "largest_movement_measure_tags": 165,
+   "annotations_present": true
+  },
+  {
+   "corpus": "bartok_bagatelles",
+   "era": "early modern",
+   "chromaticism": "VERY HIGH",
+   "scores_MS3": 14,
+   "harmony_tsvs": 14,
+   "total_labels": 1191,
+   "largest_movement_measure_tags": 438,
+   "annotations_present": true
+  },
+  {
+   "corpus": "pergolesi_stabat_mater",
+   "era": "(unclassified)",
+   "chromaticism": "(unclassified)",
+   "scores_MS3": 12,
+   "harmony_tsvs": 7,
+   "total_labels": 1189,
+   "largest_movement_measure_tags": 336,
+   "annotations_present": true
+  },
+  {
+   "corpus": "rachmaninoff_piano",
+   "era": "late Romantic",
+   "chromaticism": "VERY HIGH",
+   "scores_MS3": 22,
+   "harmony_tsvs": 22,
+   "total_labels": 1141,
+   "largest_movement_measure_tags": 88,
+   "annotations_present": true
+  },
+  {
+   "corpus": "debussy_suite_bergamasque",
+   "era": "Impressionist",
+   "chromaticism": "VERY HIGH",
+   "scores_MS3": 4,
+   "harmony_tsvs": 4,
+   "total_labels": 1013,
+   "largest_movement_measure_tags": 208,
+   "annotations_present": true
+  },
+  {
+   "corpus": "schumann_kinderszenen",
+   "era": "Romantic",
+   "chromaticism": "HIGH",
+   "scores_MS3": 13,
+   "harmony_tsvs": 13,
+   "total_labels": 948,
+   "largest_movement_measure_tags": 116,
+   "annotations_present": true
+  },
+  {
+   "corpus": "schumann_liederkreis",
+   "era": "Romantic (Lieder)",
+   "chromaticism": "HIGH",
+   "scores_MS3": 12,
+   "harmony_tsvs": 12,
+   "total_labels": 892,
+   "largest_movement_measure_tags": 216,
+   "annotations_present": true
+  },
+  {
+   "corpus": "ravel_piano",
+   "era": "Impressionist",
+   "chromaticism": "VERY HIGH",
+   "scores_MS3": 5,
+   "harmony_tsvs": 3,
+   "total_labels": 861,
+   "largest_movement_measure_tags": 302,
+   "annotations_present": true
+  },
+  {
+   "corpus": "couperin_clavecin",
+   "era": "Baroque",
+   "chromaticism": "low-moderate",
+   "scores_MS3": 9,
+   "harmony_tsvs": 9,
+   "total_labels": 717,
+   "largest_movement_measure_tags": 48,
+   "annotations_present": true
+  },
+  {
+   "corpus": "mahler_kindertotenlieder",
+   "era": "late Romantic (orch. song)",
+   "chromaticism": "VERY HIGH",
+   "scores_MS3": 5,
+   "harmony_tsvs": 5,
+   "total_labels": 595,
+   "largest_movement_measure_tags": 417,
+   "annotations_present": true
+  },
+  {
+   "corpus": "sweelinck_keyboard",
+   "era": "(unclassified)",
+   "chromaticism": "(unclassified)",
+   "scores_MS3": 1,
+   "harmony_tsvs": 1,
+   "total_labels": 501,
+   "largest_movement_measure_tags": 588,
+   "annotations_present": true
+  },
+  {
+   "corpus": "schulhoff_suite_dansante_en_jazz",
+   "era": "20th c. jazz-idiom",
+   "chromaticism": "VERY HIGH (extended)",
+   "scores_MS3": 6,
+   "harmony_tsvs": 6,
+   "total_labels": 488,
+   "largest_movement_measure_tags": 80,
+   "annotations_present": true
+  },
+  {
+   "corpus": "handel_keyboard",
+   "era": "(unclassified)",
+   "chromaticism": "(unclassified)",
+   "scores_MS3": 6,
+   "harmony_tsvs": 6,
+   "total_labels": 350,
+   "largest_movement_measure_tags": 26,
+   "annotations_present": true
+  },
+  {
+   "corpus": "poulenc_mouvements_perpetuels",
+   "era": "(unclassified)",
+   "chromaticism": "(unclassified)",
+   "scores_MS3": 3,
+   "harmony_tsvs": 3,
+   "total_labels": 278,
+   "largest_movement_measure_tags": 116,
+   "annotations_present": true
+  },
+  {
+   "corpus": "bach_chorales",
+   "era": "Baroque chorale",
+   "chromaticism": "low (diatonic) — the BASELINE",
+   "scores_MS3": 361,
+   "harmony_tsvs": 0,
+   "total_labels": 0,
+   "largest_movement_measure_tags": 114,
+   "annotations_present": false
+  },
+  {
+   "corpus": "when_in_rome",
+   "era": "annotation-only (no scores)",
+   "chromaticism": "mixed (RN analyses incl. the chorale GT)",
+   "scores_MS3": 0,
+   "harmony_tsvs": 0,
+   "total_labels": 0,
+   "largest_movement_measure_tags": null,
+   "annotations_present": false
+  }
+ ]
+}
