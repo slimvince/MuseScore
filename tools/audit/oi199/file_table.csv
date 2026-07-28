@@ -1,0 +1,300 @@
+file,tag,reason
+src/composing/CMakeLists.txt,L3+,build file — non-source
+src/composing/analysis/CMakeLists.txt,L3+,build file — non-source
+src/composing/analysis/chord/analysisutils.h,L3+,chord/decode layer (L4) — deferred to the L4 certification audit (chordslicedecoder is the L4 survivor; chordanalyzer.h types consumed cross-layer)
+src/composing/analysis/chord/chordanalyzer.cpp,RETIRES,R1 legacy chord competition + Gates A-L; R9 file-split — retires at E4 (roadmap R1/R9)
+src/composing/analysis/chord/chordanalyzer.h,L3+,chord/decode layer (L4) — deferred to the L4 certification audit (chordslicedecoder is the L4 survivor; chordanalyzer.h types consumed cross-layer)
+src/composing/analysis/chord/chorddiagnose.cpp,L3+,chord/decode layer (L4) — deferred to the L4 certification audit (chordslicedecoder is the L4 survivor; chordanalyzer.h types consumed cross-layer)
+src/composing/analysis/chord/chordpostpasses.cpp,L3+,chord/decode layer (L4) — deferred to the L4 certification audit (chordslicedecoder is the L4 survivor; chordanalyzer.h types consumed cross-layer)
+src/composing/analysis/chord/chordslicedecoder.cpp,L3+,chord/decode layer (L4) — deferred to the L4 certification audit (chordslicedecoder is the L4 survivor; chordanalyzer.h types consumed cross-layer)
+src/composing/analysis/chord/chordslicedecoder.h,L3+,chord/decode layer (L4) — deferred to the L4 certification audit (chordslicedecoder is the L4 survivor; chordanalyzer.h types consumed cross-layer)
+src/composing/analysis/chord/chordsymbolformatter.cpp,L3+,chord/decode layer (L4) — deferred to the L4 certification audit (chordslicedecoder is the L4 survivor; chordanalyzer.h types consumed cross-layer)
+src/composing/analysis/chord/chordvoicing.cpp,L3+,chord/decode layer (L4) — deferred to the L4 certification audit (chordslicedecoder is the L4 survivor; chordanalyzer.h types consumed cross-layer)
+src/composing/analysis/chord/keycollectionprobe.cpp,L3+,chord/decode layer (L4) — deferred to the L4 certification audit (chordslicedecoder is the L4 survivor; chordanalyzer.h types consumed cross-layer)
+src/composing/analysis/chord/keycollectionprobe.h,L3+,chord/decode layer (L4) — deferred to the L4 certification audit (chordslicedecoder is the L4 survivor; chordanalyzer.h types consumed cross-layer)
+src/composing/analysis/chord/postscoringgates.cpp,RETIRES,R1 legacy post-scoring Gates I/K/L — retires with the legacy competition at E4
+src/composing/analysis/decode/chordpathdecoder.h,L3+,L3 key-mode decoder scaffolding — deferred to the L3 audit
+src/composing/analysis/engravingbridge/phraseboundaryview.cpp,L1,Phrase-boundary primitive impl — L1.5 notation-derived view
+src/composing/analysis/engravingbridge/phraseboundaryview.h,L1,Phrase-boundary primitive — L1.5 notation-derived view (cowork_phrase_boundary_design.md)
+src/composing/analysis/engravingbridge/regiontonecollector.cpp,L1,Derived summary views impl — L1 §3/§5; check for legacy collectRegionTones residue (R-note)
+src/composing/analysis/engravingbridge/regiontonecollector.h,L1,Derived summary views over the note model (weightedPcView/soundingAt) — L1 §3/§5; check for legacy collectRegionTones residue
+src/composing/analysis/engravingbridge/regiontoneprimitives.cpp,L1,weightedPcView/soundingAt primitive impl — L1 derived views (layer1 design §3)
+src/composing/analysis/engravingbridge/spellingview.cpp,L1,Spelling view impl — L1.5 notation-derived reader (R4 survivor)
+src/composing/analysis/engravingbridge/spellingview.h,L1,Spelling view — L1.5 notation-derived reader (instruction L1 def; R4 shared-spelling-view survivor)
+src/composing/analysis/function/forwardoverride.cpp,L3+,function layer (L5) — deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)
+src/composing/analysis/function/forwardoverride.h,L3+,function layer (L5) — deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)
+src/composing/analysis/function/functioncadence.cpp,L3+,function layer (L5) — deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)
+src/composing/analysis/function/functioncadence.h,L3+,function layer (L5) — deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)
+src/composing/analysis/function/functionmodulation.cpp,L3+,function layer (L5) — deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)
+src/composing/analysis/function/functionmodulation.h,L3+,function layer (L5) — deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)
+src/composing/analysis/function/functionoutput.cpp,L3+,function layer (L5) — deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)
+src/composing/analysis/function/functionoutput.h,L3+,function layer (L5) — deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)
+src/composing/analysis/function/functionprogression.cpp,L3+,function layer (L5) — deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)
+src/composing/analysis/function/functionprogression.h,L3+,function layer (L5) — deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)
+src/composing/analysis/function/functionrelationallabel.cpp,L3+,function layer (L5) — deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)
+src/composing/analysis/function/functionrelationallabel.h,L3+,function layer (L5) — deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)
+src/composing/analysis/function/functionresolver.cpp,L3+,function layer (L5) — deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)
+src/composing/analysis/function/functionresolver.h,L3+,function layer (L5) — deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)
+src/composing/analysis/function/functionromannumeral.cpp,L3+,function layer (L5) — deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)
+src/composing/analysis/function/functionromannumeral.h,L3+,function layer (L5) — deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)
+src/composing/analysis/function/harmonicfunctionlayer.cpp,L3+,function layer (L5) — deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)
+src/composing/analysis/function/harmonicfunctionlayer.h,L3+,function layer (L5) — deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)
+src/composing/analysis/function/tonicizationlabeler.cpp,L3+,function layer (L5) — deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)
+src/composing/analysis/function/tonicizationlabeler.h,L3+,function layer (L5) — deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)
+src/composing/analysis/grouping/groupinglayer.cpp,L3+,grouping for display (L6) — deferred to the L6 audit
+src/composing/analysis/grouping/groupinglayer.h,L3+,grouping for display (L6) — deferred to the L6 audit
+src/composing/analysis/harmony/harmonicsegmenter.cpp,RETIRES,L2-LEGACY greedy-expand segmenter impl — retires R6; #12-check kAnchorMinScore/kRound2MinScore + greedy-expand interpretation
+src/composing/analysis/harmony/harmonicsegmenter.h,RETIRES,"L2-LEGACY greedy-expand segmenter — retires R6 (segment-first spine), superseded by the change-point slicer; #12-check the anchor thresholds"
+src/composing/analysis/joint/jointadapter.cpp,JOINT,joint estimator module source (OI-199 area a) — deep
+src/composing/analysis/joint/jointadapter.h,JOINT,joint estimator module source (OI-199 area a) — deep
+src/composing/analysis/joint/jointdecoder.cpp,JOINT,joint estimator module source (OI-199 area a) — deep
+src/composing/analysis/joint/jointdecoder.h,JOINT,joint estimator module source (OI-199 area a) — deep
+src/composing/analysis/joint/jointembeddedartifacts.cpp,CODEGEN-GENERATED,"GENERATED DATA population — 180 KB of verbatim-embedded JSON bytes (gen_embedded_tables.py, Decision D1); established by byte-equality vs the committed artifacts (the joint_embedded_tests drift guard), NOT by row disposition — file-level (dispatch area c)"
+src/composing/analysis/joint/jointembeddedartifacts.h,CODEGEN,codegen ACCESSOR surface (EmbeddedBlob / bytes() / sha256 declarations) over the generated .cpp — deep (dispatch area c)
+src/composing/analysis/joint/jointfactadapter.cpp,JOINT,joint estimator module source (OI-199 area a) — deep
+src/composing/analysis/joint/jointfactadapter.h,JOINT,joint estimator module source (OI-199 area a) — deep
+src/composing/analysis/joint/jointnotationproducer.cpp,JOINT,joint estimator module source (OI-199 area a) — deep
+src/composing/analysis/joint/jointnotationproducer.h,JOINT,joint estimator module source (OI-199 area a) — deep
+src/composing/analysis/joint/jointnotationrecord.cpp,JOINT,joint estimator module source (OI-199 area a) — deep
+src/composing/analysis/joint/jointnotationrecord.h,JOINT,joint estimator module source (OI-199 area a) — deep
+src/composing/analysis/joint/jointprimitives.cpp,JOINT,joint estimator module source (OI-199 area a) — deep
+src/composing/analysis/joint/jointprimitives.h,JOINT,joint estimator module source (OI-199 area a) — deep
+src/composing/analysis/joint/jointrender.cpp,JOINT,joint estimator module source (OI-199 area a) — deep
+src/composing/analysis/joint/jointrender.h,JOINT,joint estimator module source (OI-199 area a) — deep
+src/composing/analysis/joint/jointtables.cpp,JOINT,joint estimator module source (OI-199 area a) — deep
+src/composing/analysis/joint/jointtables.h,JOINT,joint estimator module source (OI-199 area a) — deep
+src/composing/analysis/joint/jointweights.cpp,JOINT,joint estimator module source (OI-199 area a) — deep
+src/composing/analysis/joint/jointweights.h,JOINT,joint estimator module source (OI-199 area a) — deep
+src/composing/analysis/joint/labelclass.cpp,JOINT,joint estimator module source (OI-199 area a) — deep
+src/composing/analysis/joint/labelclass.h,JOINT,joint estimator module source (OI-199 area a) — deep
+src/composing/analysis/key/keymodeanalyzer.cpp,L3+,key/mode layer (L3) — deferred to the L3 audit (keyresolver shrinks R5; keymodesequence is the L3 survivor)
+src/composing/analysis/key/keymodeanalyzer.h,L3+,key/mode layer (L3) — deferred to the L3 audit (keyresolver shrinks R5; keymodesequence is the L3 survivor)
+src/composing/analysis/key/keymodeformatting.cpp,L3+,key/mode layer (L3) — deferred to the L3 audit (keyresolver shrinks R5; keymodesequence is the L3 survivor)
+src/composing/analysis/key/keymodesequence.cpp,L3+,key/mode layer (L3) — deferred to the L3 audit (keyresolver shrinks R5; keymodesequence is the L3 survivor)
+src/composing/analysis/key/keymodesequence.h,L3+,key/mode layer (L3) — deferred to the L3 audit (keyresolver shrinks R5; keymodesequence is the L3 survivor)
+src/composing/analysis/key/keyresolver.cpp,L3+,key/mode layer (L3) — deferred to the L3 audit (keyresolver shrinks R5; keymodesequence is the L3 survivor)
+src/composing/analysis/key/keyresolver.h,L3+,key/mode layer (L3) — deferred to the L3 audit (keyresolver shrinks R5; keymodesequence is the L3 survivor)
+src/composing/analysis/key/modepriorpresets.cpp,L3+,key/mode layer (L3) — deferred to the L3 audit (keyresolver shrinks R5; keymodesequence is the L3 survivor)
+src/composing/analysis/key/modepriorpresets.h,L3+,key/mode layer (L3) — deferred to the L3 audit (keyresolver shrinks R5; keymodesequence is the L3 survivor)
+src/composing/analysis/notemodel/note_model.cpp,L1,Note-model core impl (build/tie-resolve/eligibility/query index) — Architectural Layer 1 (layer1 design §4/§6)
+src/composing/analysis/notemodel/note_model.h,L1,Note-model core (NoteModel/NoteQueryIndex) — Architectural Layer 1 fact layer (layer1 design §3/§5)
+src/composing/analysis/param/paramoverride.cpp,L3+,"param-override infrastructure — deferred (cross-cutting, not L1/L2)"
+src/composing/analysis/param/paramoverride.h,L3+,"param-override infrastructure — deferred (cross-cutting, not L1/L2)"
+src/composing/analysis/progression/progressionrecognizer.cpp,L3+,progression recognizer (L5 input) — deferred to the L5 audit
+src/composing/analysis/progression/progressionrecognizer.h,L3+,progression recognizer (L5 input) — deferred to the L5 audit
+src/composing/analysis/region/harmonicrhythm.h,L3+,region orchestration (L3 seam); regionanalyzer.cpp EMBEDS the legacy greedy-expand segmenter retiring R6 — deferred to the L3 audit
+src/composing/analysis/region/regionanalyzer.cpp,L3+,region orchestration (L3 seam); regionanalyzer.cpp EMBEDS the legacy greedy-expand segmenter retiring R6 — deferred to the L3 audit
+src/composing/analysis/region/regionanalyzer.h,L3+,region orchestration (L3 seam); regionanalyzer.cpp EMBEDS the legacy greedy-expand segmenter retiring R6 — deferred to the L3 audit
+src/composing/analysis/region/sparsechordrefinement.cpp,L3+,region orchestration (L3 seam); regionanalyzer.cpp EMBEDS the legacy greedy-expand segmenter retiring R6 — deferred to the L3 audit
+src/composing/analysis/region/sparsechordrefinement.h,L3+,region orchestration (L3 seam); regionanalyzer.cpp EMBEDS the legacy greedy-expand segmenter retiring R6 — deferred to the L3 audit
+src/composing/analysis/scoreharvest/metricweights.cpp,L1,Metric-weight primitive impl — L1.5 notation-derived value (layer2 design §8)
+src/composing/analysis/scoreharvest/metricweights.h,L1,Metric-weight primitive (regionMetricWeightForOnsetTick) — L1.5 (layer2 design §8 metric-weight contract)
+src/composing/analysis/section/cadencekeyanchor.cpp,L3+,section / cadence / joint-key (L3-L5); cadencekeyanchor R3 diagnostic — deferred
+src/composing/analysis/section/cadencekeyanchor.h,L3+,section / cadence / joint-key (L3-L5); cadencekeyanchor R3 diagnostic — deferred
+src/composing/analysis/section/jointkeydecision.cpp,L3+,section / cadence / joint-key (L3-L5); cadencekeyanchor R3 diagnostic — deferred
+src/composing/analysis/section/jointkeydecision.h,L3+,section / cadence / joint-key (L3-L5); cadencekeyanchor R3 diagnostic — deferred
+src/composing/analysis/section/localmodulationdetector.cpp,L3+,section / cadence / joint-key (L3-L5); cadencekeyanchor R3 diagnostic — deferred
+src/composing/analysis/section/localmodulationdetector.h,L3+,section / cadence / joint-key (L3-L5); cadencekeyanchor R3 diagnostic — deferred
+src/composing/analysis/section/sectionanalyzer.cpp,L3+,section / cadence / joint-key (L3-L5); cadencekeyanchor R3 diagnostic — deferred
+src/composing/analysis/section/sectionanalyzer.h,L3+,section / cadence / joint-key (L3-L5); cadencekeyanchor R3 diagnostic — deferred
+src/composing/analysis/section/sectioncadencedetection.cpp,L3+,section / cadence / joint-key (L3-L5); cadencekeyanchor R3 diagnostic — deferred
+src/composing/analysis/section/sectionrecordadapter.cpp,RECORD-SEAM,"the section record adapter impl (record -> AnalyzedSection: key areas via groupKeyAreas, cadence/pivot via detectCadences/detectPivotChords over the stored exposure); deep (area b)"
+src/composing/analysis/section/sectionrecordadapter.h,RECORD-SEAM,the SECTION RECORD ADAPTER surface — bridges the joint notation record to the section output (analyzeSectionFromRecord); deep (dispatch area b)
+src/composing/analysis/slicing/slicer.cpp,L2,Change-point slicer impl — Architectural Layer 2 survivor (layer2 design §4/§5)
+src/composing/analysis/slicing/slicer.h,L2,Change-point slicer (changePointSlices/Slice) — Architectural Layer 2 survivor (layer2 design §3)
+src/composing/analysis/types/analysistypes.h,L3+,shared analysis types (cross-layer) — deferred; note: carries metric/spelling/tone type decls consumed by L1
+src/composing/analysis/vocabulary/harmonicvocabulary.cpp,L3+,harmonic vocabulary (L4) — deferred to the L4 audit
+src/composing/analysis/vocabulary/harmonicvocabulary.h,L3+,harmonic vocabulary (L4) — deferred to the L4 audit
+src/composing/analysis/voiceleading/textureclassifier.cpp,L3+,voice-leading analysis (L4/L5); voicelinearview is a derived view but serves L4+ selection — deferred (boundary note in report P3)
+src/composing/analysis/voiceleading/textureclassifier.h,L3+,voice-leading analysis (L4/L5); voicelinearview is a derived view but serves L4+ selection — deferred (boundary note in report P3)
+src/composing/analysis/voiceleading/textureclassifierreference.h,L3+,voice-leading analysis (L4/L5); voicelinearview is a derived view but serves L4+ selection — deferred (boundary note in report P3)
+src/composing/analysis/voiceleading/voiceleadingprofiles.cpp,L3+,voice-leading analysis (L4/L5); voicelinearview is a derived view but serves L4+ selection — deferred (boundary note in report P3)
+src/composing/analysis/voiceleading/voiceleadingprofiles.h,L3+,voice-leading analysis (L4/L5); voicelinearview is a derived view but serves L4+ selection — deferred (boundary note in report P3)
+src/composing/analysis/voiceleading/voicelinearview.cpp,L3+,voice-leading analysis (L4/L5); voicelinearview is a derived view but serves L4+ selection — deferred (boundary note in report P3)
+src/composing/analysis/voiceleading/voicelinearview.h,L3+,voice-leading analysis (L4/L5); voicelinearview is a derived view but serves L4+ selection — deferred (boundary note in report P3)
+src/composing/analyzed_section.h,L3+,public output DTO — not L1/L2 analysis
+src/composing/composingconfiguration.cpp,L3+,module configuration — not L1/L2 analysis
+src/composing/composingconfiguration.h,L3+,module configuration — not L1/L2 analysis
+src/composing/composingmodule.cpp,L3+,module registration/wiring — not L1/L2 analysis
+src/composing/composingmodule.h,L3+,module registration/wiring — not L1/L2 analysis
+src/composing/icomposinganalysisconfiguration.h,L3+,config interface — not L1/L2 analysis
+src/composing/icomposingchordstaffconfiguration.h,L3+,config interface — not L1/L2 analysis
+src/composing/icomposingconfiguration.h,L3+,config interface — not L1/L2 analysis
+src/composing/intonation/CMakeLists.txt,L3+,"tuning subsystem — outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+src/composing/intonation/equal_temperament.h,L3+,"tuning subsystem — outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+src/composing/intonation/just_intonation.h,L3+,"tuning subsystem — outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+src/composing/intonation/kirnberger.h,L3+,"tuning subsystem — outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+src/composing/intonation/pythagorean.h,L3+,"tuning subsystem — outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+src/composing/intonation/quarter_comma_meantone.h,L3+,"tuning subsystem — outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+src/composing/intonation/tuning_keys.h,L3+,"tuning subsystem — outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+src/composing/intonation/tuning_registry.cpp,L3+,"tuning subsystem — outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+src/composing/intonation/tuning_system.h,L3+,"tuning subsystem — outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+src/composing/intonation/tuning_utils.h,L3+,"tuning subsystem — outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+src/composing/intonation/werckmeister.h,L3+,"tuning subsystem — outside the harmonic-analysis layer stack (separate concern), not L1/L2"
+src/composing/tests/CMakeLists.txt,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/analyzechord_robustness_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/cadencekeyanchor_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/chord_branch_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/chord_mismatch_report.txt,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/chordanalyzer_musicxml_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/chordanalyzer_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/chordsymbolformatter_branch_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/chordvoicing_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/comparison_utils.h,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/comparison_utils_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/chordanalyzer_catalog_jazz.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/chordanalyzer_catalog_standard.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/chordanalyzer_context.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/eb_compound.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/eb_compound.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/eb_dense.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/eb_dense.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/eb_pedal.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/eb_pedal.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/eb_steps.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/eb_steps.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/francis-poulenc-o-magnum-mysterium.mxl,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/jazz_smoke_test.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/mono_smoke_test.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/mono_smoke_test.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_dense_start.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_dense_start.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_flags.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_flags.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_grace.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_grace.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_long_sustain.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_long_sustain.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_slice_held_melody.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_slice_held_melody.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_slice_ineligible.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_slice_ineligible.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_slice_passing.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_slice_passing.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_slice_release.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_slice_release.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_slice_rest.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_slice_rest.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_solid_theory.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_staff_eligibility.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_staff_eligibility.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_tie_chain.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_tie_chain.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_two_staff.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_two_staff.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_unison.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/nm_unison.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/organ-sonata-n1-in-e-flat-major-bwv-525-i-allegro.mxl,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/pb_chorale.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/reachback_anchor.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/reachback_anchor.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/s1c_a_minor_amb.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/s1c_c_major.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/s1c_c_minor.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/s1c_g_dom7.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/s1c_g_minor.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/s1c_modulation_cg.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/s1c_modulation_cg.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/s1c_partial_cm.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/s1c_seg_absorb.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/s1c_seg_changes.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/s1c_seg_merge.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/s1c_unison_c.mscx,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/data/solid theory.musicxml,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/decode_chord_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/decode_keymode_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/decode_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/diagnose_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/engravingbridge_branch_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/environment.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/forwardoverride_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/functioncadence_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/functionlayer_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/functionmodulation_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/functionoutput_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/functionprogression_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/functionrelationallabel_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/functionresolver_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/functionromannumeral_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/gater_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/grouping_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/harmonicvocabulary_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/inference_presentation_boundary_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/joint_adapter_tests.cpp,JOINT-TEST,joint module test — P4 characterization input (file-level)
+src/composing/tests/joint_decoder_tests.cpp,JOINT-TEST,joint module test — P4 characterization input (file-level)
+src/composing/tests/joint_embedded_tests.cpp,CODEGEN-GUARD,"the CODEGEN DRIFT GUARD — asserts the generated jointembeddedartifacts bytes equal the committed artifacts (LF-normalized, OI-195); file-level (dispatch area c)"
+src/composing/tests/joint_modal_tests.cpp,JOINT-TEST,joint module test — P4 characterization input (file-level)
+src/composing/tests/joint_primitives_tests.cpp,JOINT-TEST,joint module test — P4 characterization input (file-level)
+src/composing/tests/joint_producer_tests.cpp,JOINT-TEST,joint module test — P4 characterization input (file-level)
+src/composing/tests/joint_record_tests.cpp,JOINT-TEST,joint module test — P4 characterization input (file-level)
+src/composing/tests/joint_slice_tests.cpp,JOINT-TEST,joint module test — P4 characterization input (file-level)
+src/composing/tests/joint_spelling_tests.cpp,JOINT-TEST,joint module test — P4 characterization input (file-level)
+src/composing/tests/joint_tables_tests.cpp,JOINT-TEST,joint module test — P4 characterization input (file-level)
+src/composing/tests/jointkeydecision_tests.cpp,JOINT-TEST,joint (key-decision) test — P4 characterization input (file-level)
+src/composing/tests/keymode_branch_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/keymodeanalyzer_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/l3_coverage_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/localmodulationdetector_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/modepriorpresets_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/nashville_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/note_model_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/note_notated_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/paramoverride_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/phraseboundaryview_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/postscoringgates_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/progressionrecognizer_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/reachback_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/regionanalysis_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/section_record_adapter_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/slicer_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/spellingview_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/synthetic_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/test_helpers.h,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/tonicizationlabeler_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/tuning_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/verify_chord_track.py,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/composing/tests/voiceleading_tests.cpp,L3+,test / fixture / test-data — out of L1/L2 source scope (L1/L2 regression tests noted in report P3)
+src/notation/internal/notationcomposingbridge.cpp,RECORD-SEAM,"record-arm consumer / shared bridge (OI-199 area b) — largely LEGACY-ARM/SHARED, only the record-arm rows are in scope; per-row arm split is a deep-pass task"
+src/notation/internal/notationcomposingbridge.h,RECORD-SEAM,"record-arm consumer / shared bridge (OI-199 area b) — largely LEGACY-ARM/SHARED, only the record-arm rows are in scope; per-row arm split is a deep-pass task"
+src/notation/internal/notationcomposingbridgehelpers.cpp,RECORD-SEAM,"record-arm consumer / shared bridge (OI-199 area b) — largely LEGACY-ARM/SHARED, only the record-arm rows are in scope; per-row arm split is a deep-pass task"
+src/notation/internal/notationcomposingbridgehelpers.h,RECORD-SEAM,"record-arm consumer / shared bridge (OI-199 area b) — largely LEGACY-ARM/SHARED, only the record-arm rows are in scope; per-row arm split is a deep-pass task"
+src/notation/internal/notationimplodebridge.cpp,RECORD-SEAM,"record-arm consumer / shared bridge (OI-199 area b) — largely LEGACY-ARM/SHARED, only the record-arm rows are in scope; per-row arm split is a deep-pass task"
+src/notation/internal/notationimplodebridge.h,RECORD-SEAM,"record-arm consumer / shared bridge (OI-199 area b) — largely LEGACY-ARM/SHARED, only the record-arm rows are in scope; per-row arm split is a deep-pass task"
+src/notation/internal/notationtuningbridge.cpp,RECORD-SEAM,"record-arm consumer / shared bridge (OI-199 area b) — largely LEGACY-ARM/SHARED, only the record-arm rows are in scope; per-row arm split is a deep-pass task"
+src/notation/internal/notationtuningbridge.h,RECORD-SEAM,"record-arm consumer / shared bridge (OI-199 area b) — largely LEGACY-ARM/SHARED, only the record-arm rows are in scope; per-row arm split is a deep-pass task"
+src/notation/internal/notationaccessibility.cpp,RECORD-SEAM,"record-arm consumer / shared bridge (OI-199 area b) — largely LEGACY-ARM/SHARED, only the record-arm rows are in scope; per-row arm split is a deep-pass task"
+src/notation/internal/notationaccessibility.h,RECORD-SEAM,"record-arm consumer / shared bridge (OI-199 area b) — largely LEGACY-ARM/SHARED, only the record-arm rows are in scope; per-row arm split is a deep-pass task"
+tools/joint_estimator/adoption_measure.py,INSTRUMENT-JOINT,joint-estimator instrument (fitting / parity / probe / codegen-source generator) — deep (area d)
+tools/joint_estimator/adoption_measure_b.py,INSTRUMENT-JOINT,joint-estimator instrument (fitting / parity / probe / codegen-source generator) — deep (area d)
+tools/joint_estimator/fit_run.py,INSTRUMENT-JOINT,joint-estimator instrument (fitting / parity / probe / codegen-source generator) — deep (area d)
+tools/joint_estimator/fit_weights.py,INSTRUMENT-JOINT,joint-estimator instrument (fitting / parity / probe / codegen-source generator) — deep (area d)
+tools/joint_estimator/gen_content_dp_split.py,INSTRUMENT-JOINT,joint-estimator instrument (fitting / parity / probe / codegen-source generator) — deep (area d)
+tools/joint_estimator/gen_count_inventory.py,INSTRUMENT-JOINT,joint-estimator instrument (fitting / parity / probe / codegen-source generator) — deep (area d)
+tools/joint_estimator/gen_decode_parity_ref.py,INSTRUMENT-JOINT,joint-estimator instrument (fitting / parity / probe / codegen-source generator) — deep (area d)
+tools/joint_estimator/gen_embedded_tables.py,CODEGEN,"the EMBEDDED-TABLE SOURCE GENERATOR (Decision D1) — turns the committed fitted artifacts into the compiled-in jointembeddedartifacts.{h,cpp}; deep (area c)"
+tools/joint_estimator/gen_factor_presence.py,INSTRUMENT-JOINT,joint-estimator instrument (fitting / parity / probe / codegen-source generator) — deep (area d)
+tools/joint_estimator/gen_fermata_boundary.py,INSTRUMENT-JOINT,joint-estimator instrument (fitting / parity / probe / codegen-source generator) — deep (area d)
+tools/joint_estimator/gen_fold_assignment.py,INSTRUMENT-JOINT,joint-estimator instrument (fitting / parity / probe / codegen-source generator) — deep (area d)
+tools/joint_estimator/gen_input_parity.py,INSTRUMENT-JOINT,joint-estimator instrument (fitting / parity / probe / codegen-source generator) — deep (area d)
+tools/joint_estimator/gen_label_tables.py,INSTRUMENT-JOINT,joint-estimator instrument (fitting / parity / probe / codegen-source generator) — deep (area d)
+tools/joint_estimator/gen_marginals_ref.py,INSTRUMENT-JOINT,joint-estimator instrument (fitting / parity / probe / codegen-source generator) — deep (area d)
+tools/joint_estimator/gen_mode_marginal.py,INSTRUMENT-JOINT,joint-estimator instrument (fitting / parity / probe / codegen-source generator) — deep (area d)
+tools/joint_estimator/gen_note_events.py,INSTRUMENT-JOINT,joint-estimator instrument (fitting / parity / probe / codegen-source generator) — deep (area d)
+tools/joint_estimator/gen_note_tables.py,INSTRUMENT-JOINT,joint-estimator instrument (fitting / parity / probe / codegen-source generator) — deep (area d)
+tools/joint_estimator/gen_posterior_slice.py,INSTRUMENT-JOINT,joint-estimator instrument (fitting / parity / probe / codegen-source generator) — deep (area d)
+tools/joint_estimator/gen_spelling_establishment.py,INSTRUMENT-JOINT,joint-estimator instrument (fitting / parity / probe / codegen-source generator) — deep (area d)
+tools/joint_estimator/gen_window_study.py,INSTRUMENT-JOINT,joint-estimator instrument (fitting / parity / probe / codegen-source generator) — deep (area d)
+tools/joint_estimator/gen_wir_alignment_probe.py,INSTRUMENT-JOINT,joint-estimator instrument (fitting / parity / probe / codegen-source generator) — deep (area d)
+tools/joint_estimator/normalize.py,INSTRUMENT-JOINT,joint-estimator instrument (fitting / parity / probe / codegen-source generator) — deep (area d)
+tools/joint_estimator/probe_decoder.py,INSTRUMENT-JOINT,joint-estimator instrument (fitting / parity / probe / codegen-source generator) — deep (area d)
+tools/joint_estimator/probe_desksim.py,INSTRUMENT-JOINT,joint-estimator instrument (fitting / parity / probe / codegen-source generator) — deep (area d)
+tools/joint_estimator/probe_run.py,INSTRUMENT-JOINT,joint-estimator instrument (fitting / parity / probe / codegen-source generator) — deep (area d)
+tools/joint_estimator/search_direct.py,INSTRUMENT-JOINT,joint-estimator instrument (fitting / parity / probe / codegen-source generator) — deep (area d)
+tools/joint_estimator/search_run.py,INSTRUMENT-JOINT,joint-estimator instrument (fitting / parity / probe / codegen-source generator) — deep (area d)
+tools/notation_seams/analyze_cost_profile.py,INSTRUMENT-SEAMS,notation-seams instrument (call-path facts / dual-arm classify / cost profile / golden reconcile) — deep (area d)
+tools/notation_seams/choose_exposure_constants.py,INSTRUMENT-SEAMS,notation-seams instrument (call-path facts / dual-arm classify / cost profile / golden reconcile) — deep (area d)
+tools/notation_seams/classify_dualarm.py,INSTRUMENT-SEAMS,notation-seams instrument (call-path facts / dual-arm classify / cost profile / golden reconcile) — deep (area d)
+tools/notation_seams/gen_callpath_facts.py,INSTRUMENT-SEAMS,notation-seams instrument (call-path facts / dual-arm classify / cost profile / golden reconcile) — deep (area d)
+tools/notation_seams/gen_editing_cycle.py,INSTRUMENT-SEAMS,notation-seams instrument (call-path facts / dual-arm classify / cost profile / golden reconcile) — deep (area d)
+tools/notation_seams/gen_ground_truth_inventory.py,INSTRUMENT-SEAMS,notation-seams instrument (call-path facts / dual-arm classify / cost profile / golden reconcile) — deep (area d)
+tools/notation_seams/reconcile_switch_goldens.py,INSTRUMENT-SEAMS,notation-seams instrument (call-path facts / dual-arm classify / cost profile / golden reconcile) — deep (area d)

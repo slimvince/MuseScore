@@ -1,7 +1,100 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE 2026-07-28 (SECOND SESSION, AFTERNOON) — THE OI-206 DIAGNOSIS RETURNED AND VERIFIED; THE PROBLEM IS NOT LATENCY BUT THE UNSETTLED ANALYSIS-EXTENT QUESTION; THE USER HAS STATED A STANDING LARGE-SCORE REQUIREMENT. THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE 2026-07-28 (THIRD) — THE COST PROFILE RETURNED WITH A STOP (OI-215: THE DECODER RETURNS NOTHING ON MOST ORCHESTRAL SCORES); OI-199 IS PULLED FORWARD AS THE ANSWER. THE CURRENT ENTRY POINT.
+
+**You (the next session) start clueless — this block is the entire handover.** Read, in order:
+(1) `CLAUDE.md` IN FULL; (2) `OPEN_ITEMS.md` (INDEX; status authoritative there only), opening at
+minimum **OI-215, OI-209, OI-210, OI-206, OI-203, OI-199, OI-198, OI-200, OI-207, OI-188, OI-84,
+OI-110, OI-39**; (3) this block, then the two earlier 2026-07-28 blocks below it; (4)
+`docs/p3_granularity_ab_3_1b.md` and `cowork_architecture_review_2026_07.md` §7; (5) the ratified
+`cowork_notation_adoption_increment.md` and `cowork_notation_output_contract.md`.
+
+**★ THE HEADLINE — A STOP, VERIFIED INDEPENDENTLY.** The analysis-cost dispatch delivered
+(`9f7a4cc4de`…`5135764ed7`, read-only scope held). **OI-215: the joint decoder returns an EMPTY
+analysis — 0 segments, `complete=false` — on 13 of the 23 committed large scores, every symphony
+among them.** Cowork verified the mechanism at the code rather than accepting the claim:
+`candidateStates` unions the segment's ONSET pitch classes (`jointdecoder.cpp:427-430`) and skips
+any candidate class where `present < min(2, |members|)` (`:445`); a window with fewer than two
+distinct onset pitch classes therefore admits nothing, and a single event uncoverable by any
+≤segCap window empties `V[N]` → `complete=false`, 0 segments (`:838-841`). Empirically confirmed
+(butterworth 0 segments after 13.8 s; holst_mercury 0 after 9.8 s). **Two corrections to CC's
+framing:** it is a **TEXTURE** finding, not a size finding — sustained or unison writing triggers
+it at any length — and the **all-or-nothing shape is itself a #12 failure**: no partial result,
+no explanation, the user simply sees nothing. **Also verified, and better than reported: the
+Tristan Prelude IS on disk with DCML annotations** (`tools/dcml/wagner_overtures/` — harmonies,
+notes, measures, and a reviewed file), resolving the architecture review §7's "[unverified]".
+
+**★ THREE COWORK FINDINGS BEYOND CC'S REPORT.** (i) **The C++ decoder appears SLOWER than the
+pure-Python reference** — chorale of 80 events: C++ decode 5,650 ms; Python reference, memoization
+off, 3,415 ms mean at 77.7 events. Build verified `RelWithDebInfo /O2 /Ob1 /DNDEBUG`, so a debug
+build is excluded. A #3 surprise that CC missed because it never compared its numbers against
+figures already committed in this repository. (ii) **`buildAdapterFacts` is near-quadratic**
+(`events^1.80`, R²=0.965) — reported as a scaling fact, not flagged as the surprise it is.
+(iii) **CC's conclusion that "incremental patching saves ≤40%" does not follow** — a cold-decode
+cost share is not a statement about what an edit forces; patching is **UNMEASURED, not refuted**,
+and the split is Python-derived besides. CC additionally declared a #17(b) shortfall: it
+registered none of its own prediction bands before measuring, and (iii) is precisely the
+interpretation error that guard exists to catch.
+
+**★ THE USER'S RULINGS THIS SESSION.** (1) **"Implementation efficiency is not very relevant"
+meant BUILD EFFORT, not runtime** — Cowork had misread it and built a framing on the misreading.
+The user's actual rule: **make it work first (best inference), compromise on performance only if
+performance proves to be a problem.** That does not demote runtime speed; it sequences it — and
+it means work that makes the same computation faster costs nothing on any principle axis and must
+be exhausted BEFORE anything that trades precision for speed. The effort dial and the extent
+question are **last resorts, not first ones**. (2) By that rule **OI-215 outranks the speed
+anomaly** — a decoder returning nothing is correctness, not cost. (3) **The anomaly and the
+quadratic are OI-199's subject matter**, so bespoke dispatches chasing them would duplicate the
+ratified review (#6 at the process level) — **OI-199 IS PULLED FORWARD.** The OI-84
+never-audit-code-about-to-be-deleted rule does not shield the joint module: the module is
+production on both surfaces and is **not** retiring, the legacy path is. (4) **Scope and order are
+decided by MEASUREMENT, not estimate** (alternative 2) — both prior large audits hit a feasibility
+stop at Task 1 and partitioned on measured counts, so guessing the partition is the thing
+precedent says does not work.
+
+**★ THE ACTIVE DISPATCH is `cc_instruction_oi199_pass1.md`** — the blind enumerative pass 1: the
+mechanical inventory across all four OI-199 areas (joint module / record path and seams / codegen
+/ new instruments) with **the legacy arm excluded by construction** (OI-84's A1: retiring code
+gets no audit, only the #12 check at deletion); a **feasibility stop with a partition proposal as
+the EXPECTED outcome**; the joint module holding first claim on deep dispositions at the prior
+passes' full verdict vocabulary (never a coarser one — the OI-100 lesson); the P3
+contract-direction check and P4 fire-rate characterization, any in-module counters following the
+**OI-110 disposition** (default-OFF, byte-identity proven, REVERTED in its own commit, hash
+recorded). **Cowork's amendment to OI-84's ordering: the INSTRUMENTS are the SECOND partition,
+not the last** — every figure steering this arc came from them, and #19 forbids trusting an
+unestablished instrument. **The three findings are SEALED in the dispatch's §S until after the
+freeze commit**, and Task 4 reconciles: did the blind pass find them on its own? That is #19
+applied to the audit itself — it establishes whether the method is worth the remaining
+partitions, rather than assuming it. **Certification is NOT granted by pass 1**; pass 2 is a
+fresh, fully blind session with a seeded error rate and the defect-type sweep, and certification
+is the user's to grant.
+
+**★ AFTER IT, in order:** pass 1's report and the partition ratification → OI-199 pass 2 → **the
+OI-215 decision surface** (with the classification question the user must settle: is fixing the
+decoder's candidate admission *completion* — the decoder cannot express an answer for legal input
+— or *refinement*, which #8 places behind the map and the reviews? Cowork reads it as completion;
+the user rules) → the **analysis-extent decision surface**, built on a reviewed module's numbers
+rather than on a price list we do not yet trust → OI-207 → the marginals C++ follow-up → OI-194 →
+the OI-180 map (still blocked by OI-206 + OI-207; note the legacy arm is ALSO the only working
+bounded-growing-cached interactive read) → OI-205(b) → OI-198/OI-200 → only then the inference era.
+
+**★ METHOD REMINDERS — three Cowork failures this session, recorded so they are not repeated.**
+(a) **Alternatives must be presented in FULL PROSE**, each pro and con naming the principle,
+guardrail or gate it rests on, each option rated on both the principles and the ultimate
+objective. Compressing that into short option-widget descriptions was rejected twice; the user
+accepted the prose form. (b) **Do not chase the most recent finding.** Cowork wrote a bespoke
+counters dispatch the moment the anomaly appeared — recency-driven, exactly the behaviour the
+user warns CC against — and it was withdrawn unhanded in favour of the plan's own instrument.
+Ask first where a finding belongs in the ratified sequence. (c) **Do not build a framing on an
+unconfirmed reading of the user's words** (the "implementation efficiency" misreading). Also
+standing: verify every CC claim at the objects (this session that yielded three findings CC
+missed); never bash for local files, git object reads by explicit SHA only.
+
+*(The two earlier 2026-07-28 blocks below are this arc's running record — kept for provenance.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE 2026-07-28 (SECOND) — THE OI-206 DIAGNOSIS RETURNED AND VERIFIED; THE PROBLEM IS NOT LATENCY BUT THE UNSETTLED ANALYSIS-EXTENT QUESTION; THE USER HAS STATED A STANDING LARGE-SCORE REQUIREMENT. (SUPERSEDED as the entry point by the block above.)
 
 **You (the next session) start clueless — this block is the entire handover.** Read, in order:
 (1) `CLAUDE.md` IN FULL; (2) `OPEN_ITEMS.md` — the lean INDEX, status authoritative THERE ONLY,

@@ -1,0 +1,179 @@
+file,line,type_owner,field_type,name,context
+src/composing/analysis/joint/jointdecoder.h,50,NoteRec,double,beat,double beat = 0.0;
+src/composing/analysis/joint/jointdecoder.h,55,EventRec,int,start,"int start = 0, end = 0, measure = 0, mc = 0, ferm = 0;"
+src/composing/analysis/joint/jointdecoder.h,56,EventRec,double,beat,double beat = 0.0;
+src/composing/analysis/joint/jointdecoder.h,61,Piece,std::string,stem,std::string stem;
+src/composing/analysis/joint/jointdecoder.h,62,Piece,std::vector<EventRec>,events,std::vector<EventRec> events;
+src/composing/analysis/joint/jointdecoder.h,63,Piece,std::vector<NoteRec>,notes,std::vector<NoteRec> notes;
+src/composing/analysis/joint/jointdecoder.h,64,Piece,int,nQuarter,int nQuarter = 0;
+src/composing/analysis/joint/jointdecoder.h,67,Piece,std::vector<std::vector<int> >,notesByEvent,std::vector<std::vector<int> > notesByEvent;    // note indices whose ONSET is in event e (non-anacrusis)
+src/composing/analysis/joint/jointdecoder.h,68,Piece,std::vector<std::optional<int> >,evBass,"std::vector<std::optional<int> > evBass;         // per event: lowest-midi note's pc, or none"
+src/composing/analysis/joint/jointdecoder.h,69,Piece,std::vector<PcMask>,evOnsetPcs,std::vector<PcMask> evOnsetPcs;                  // per event: onset pcs
+src/composing/analysis/joint/jointdecoder.h,70,Piece,std::vector<char>,evFermCtx,std::vector<char> evFermCtx;                     // per event: gfb fermata-context flag
+src/composing/analysis/joint/jointdecoder.h,71,Piece,"std::vector<std::array<int, 3> >",liveNotes,"std::vector<std::array<int, 3> > liveNotes;       // (onset, offset, pc) for non-anacrusis notes, by onset"
+src/composing/analysis/joint/jointdecoder.h,80,ChordInfo,std::optional<PcMask>,mem,std::optional<PcMask> mem;
+src/composing/analysis/joint/jointdecoder.h,81,ChordInfo,std::optional<std::vector<ChordFactor> >,fac,std::optional<std::vector<ChordFactor> > fac;
+src/composing/analysis/joint/jointdecoder.h,82,ChordInfo,std::optional<int>,root,std::optional<int> root;
+src/composing/analysis/joint/jointdecoder.h,112,SegmentSummary,int,i,"int i = 0, j = 0, startTick = 0, endTick = 0, tonicPc = 0;"
+src/composing/analysis/joint/jointdecoder.h,113,SegmentSummary,bool,isMajor,bool isMajor = true;
+src/composing/analysis/joint/jointdecoder.h,114,SegmentSummary,"std::string key,",classKey,"std::string key, classKey;"
+src/composing/analysis/joint/jointdecoder.h,115,SegmentSummary,std::optional<int>,rootPc,std::optional<int> rootPc;
+src/composing/analysis/joint/jointdecoder.h,116,SegmentSummary,"std::string degree, quality, inversion,",target,"std::string degree, quality, inversion, target;"
+src/composing/analysis/joint/jointdecoder.h,120,DecodeResult,std::string,stem,std::string stem;
+src/composing/analysis/joint/jointdecoder.h,121,DecodeResult,std::vector<SegmentSummary>,segments,std::vector<SegmentSummary> segments;
+src/composing/analysis/joint/jointdecoder.h,122,DecodeResult,double,totalScore,double totalScore = 0.0;
+src/composing/analysis/joint/jointdecoder.h,123,DecodeResult,int,nEvents,int nEvents = 0;
+src/composing/analysis/joint/jointdecoder.h,124,DecodeResult,bool,complete,bool complete = false;
+src/composing/analysis/joint/jointdecoder.h,139,PosteriorAxis,std::vector<std::string>,labels,std::vector<std::string> labels;   // key strings (key axis) or class keys (chord axis)
+src/composing/analysis/joint/jointdecoder.h,140,PosteriorAxis,std::vector<double>,scores,"std::vector<double> scores;        // weighted within-segment content score, lock-step with labels"
+src/composing/analysis/joint/jointdecoder.h,141,PosteriorAxis,int,committed,int committed = -1;                // index of the committed reading in labels/scores
+src/composing/analysis/joint/jointdecoder.h,144,SegmentSlice,PosteriorAxis,keyAxis,PosteriorAxis keyAxis;
+src/composing/analysis/joint/jointdecoder.h,145,SegmentSlice,PosteriorAxis,chordAxis,PosteriorAxis chordAxis;
+src/composing/analysis/joint/jointdecoder.h,170,LoadedCorpus,bool,ok,bool ok = false;
+src/composing/analysis/joint/jointdecoder.h,171,LoadedCorpus,std::string,error,std::string error;
+src/composing/analysis/joint/jointdecoder.h,172,LoadedCorpus,int,ticksPerQuarter,int ticksPerQuarter = 0;
+src/composing/analysis/joint/jointdecoder.h,173,LoadedCorpus,"std::map<std::string, Piece>",pieces,"std::map<std::string, Piece> pieces;"
+src/composing/analysis/joint/jointembeddedartifacts.h,50,EmbeddedBlob,const char* const*,chunks,const char* const* chunks;
+src/composing/analysis/joint/jointembeddedartifacts.h,51,EmbeddedBlob,std::size_t,chunkCount,std::size_t chunkCount;
+src/composing/analysis/joint/jointembeddedartifacts.h,52,EmbeddedBlob,std::size_t,byteLen,std::size_t byteLen;   ///< total verbatim byte length
+src/composing/analysis/joint/jointembeddedartifacts.h,53,EmbeddedBlob,const char*,sha256,const char* sha256;    ///< lowercase-hex sha256 of the verbatim bytes
+src/composing/analysis/joint/jointembeddedartifacts.h,54,EmbeddedBlob,const char*,name,const char* name;      ///< source artifact name
+src/composing/analysis/joint/jointfactadapter.h,73,AdapterFacts,bool,ok,bool ok = false;
+src/composing/analysis/joint/jointfactadapter.h,74,AdapterFacts,std::string,error,std::string error;
+src/composing/analysis/joint/jointfactadapter.h,76,AdapterFacts,Piece,piece,Piece piece;                          ///< notes/events populated + prepare() called.
+src/composing/analysis/joint/jointfactadapter.h,77,AdapterFacts,std::optional<int>,meterBeats,std::optional<int> meterBeats;        ///< first time-signature numerator (music21 _time_signature).
+src/composing/analysis/joint/jointfactadapter.h,78,AdapterFacts,std::optional<int>,meterBeatType,std::optional<int> meterBeatType;     ///< first time-signature denominator.
+src/composing/analysis/joint/jointfactadapter.h,79,AdapterFacts,bool,multiMeter,bool multiMeter = false;              ///< more than one distinct time signature.
+src/composing/analysis/joint/jointfactadapter.h,81,AdapterFacts,std::optional<int>,sigFifths,std::optional<int> sigFifths;         ///< initial key-signature fifths (read_xml_header init_fifths).
+src/composing/analysis/joint/jointfactadapter.h,82,AdapterFacts,std::string,declaredMode,"std::string declaredMode;             ///< ""major"" | ""minor"" | """" (read_xml_header declared_mode)."
+src/composing/analysis/joint/jointnotationproducer.h,56,NotationRecordResult,bool,ok,bool ok = false;
+src/composing/analysis/joint/jointnotationproducer.h,57,NotationRecordResult,std::string,error,"std::string error;          ///< human-readable cause, set iff !ok"
+src/composing/analysis/joint/jointnotationproducer.h,58,NotationRecordResult,NotationRecord,record,NotationRecord record;      ///< valid iff ok
+src/composing/analysis/joint/jointnotationproducer.h,96,NoteView,bool,found,bool found = false;
+src/composing/analysis/joint/jointnotationproducer.h,97,NoteView,int,segmentIndex,int segmentIndex = -1;
+src/composing/analysis/joint/jointnotationproducer.h,98,NoteView,const RecordSegment*,segment,const RecordSegment* segment = nullptr;   ///< &rec.segments[segmentIndex] when found
+src/composing/analysis/joint/jointnotationproducer.h,99,NoteView,const SegmentSlice*,slice,const SegmentSlice* slice = nullptr;      ///< &rec.slices[segmentIndex] when found (null if the
+src/composing/analysis/joint/jointnotationrecord.h,59,RecordProvenance,"std::vector<std::pair<std::string, std::string> >",tableArtifacts,"std::vector<std::pair<std::string, std::string> > tableArtifacts;   ///< (artifact name, sha256) ×5"
+src/composing/analysis/joint/jointnotationrecord.h,60,RecordProvenance,std::string,weightVectorIdentity,std::string weightVectorIdentity;                                   ///< the SELECTED weight identity
+src/composing/analysis/joint/jointnotationrecord.h,61,RecordProvenance,std::string,decoderVersion,std::string decoderVersion;                                         ///< the joint decoder's version
+src/composing/analysis/joint/jointnotationrecord.h,62,RecordProvenance,std::string,corpusGitHash,std::string corpusGitHash;                                          ///< the fitting corpus (tables provenance)
+src/composing/analysis/joint/jointnotationrecord.h,69,EventBassFact,int,eventIndex,int eventIndex = 0;                 ///< event index in the Piece's event lattice
+src/composing/analysis/joint/jointnotationrecord.h,70,EventBassFact,std::optional<int>,bassPc,std::optional<int> bassPc;          ///< the event's lowest-sounding pc (none if the event is empty)
+src/composing/analysis/joint/jointnotationrecord.h,71,EventBassFact,std::string,role,"std::string role;                   ///< the bass pc's factor role, or """" when it is not a member"
+src/composing/analysis/joint/jointnotationrecord.h,72,EventBassFact,std::optional<int>,spellingLof,"std::optional<int> spellingLof;     ///< the bass factor's tonal spelling (line-of-fifths, C=0), when"
+src/composing/analysis/joint/jointnotationrecord.h,80,RecordSegment,int,startTick,"int startTick = 0, endTick = 0;"
+src/composing/analysis/joint/jointnotationrecord.h,81,RecordSegment,int,tonicPc,int tonicPc = 0;
+src/composing/analysis/joint/jointnotationrecord.h,82,RecordSegment,bool,isMajor,bool isMajor = true;
+src/composing/analysis/joint/jointnotationrecord.h,83,RecordSegment,std::string,key,"std::string key;                    ///< the decoder key string (""Cmaj""/""Amin"")"
+src/composing/analysis/joint/jointnotationrecord.h,84,RecordSegment,std::string,classKey,std::string classKey;               ///< the vocabulary class identity
+src/composing/analysis/joint/jointnotationrecord.h,85,RecordSegment,"std::string degree, quality, inversion,",target,"std::string degree, quality, inversion, target;"
+src/composing/analysis/joint/jointnotationrecord.h,86,RecordSegment,std::optional<int>,rootPc,std::optional<int> rootPc;
+src/composing/analysis/joint/jointnotationrecord.h,89,RecordSegment,int,keySignatureFifths,"int keySignatureFifths = 0;                  ///< (tonic, mode) -> notated key-signature fifths"
+src/composing/analysis/joint/jointnotationrecord.h,90,RecordSegment,std::optional<int>,rootSpellingLof,"std::optional<int> rootSpellingLof;          ///< the root's tonal spelling (line-of-fifths, C=0);"
+src/composing/analysis/joint/jointnotationrecord.h,92,RecordSegment,std::vector<ChordFactor>,members,std::vector<ChordFactor> members;            ///< member pcs with factor roles (EMPTY for a chromatic
+src/composing/analysis/joint/jointnotationrecord.h,94,RecordSegment,std::optional<PcMask>,memberPcs,std::optional<PcMask> memberPcs;             ///< the raw member pc set (carries chromatic-class members
+src/composing/analysis/joint/jointnotationrecord.h,96,RecordSegment,std::string,chordSymbol,"std::string chordSymbol;                     ///< jointChordSymbol(rootPc, quality)"
+src/composing/analysis/joint/jointnotationrecord.h,97,RecordSegment,std::string,romanNumeral,std::string romanNumeral;                    ///< jointRenderRn (first-event bass role; batch-render form)
+src/composing/analysis/joint/jointnotationrecord.h,98,RecordSegment,bool,diatonicToKey,bool diatonicToKey = false;                  ///< the class-native diatonic-vs-chromatic/applied answer
+src/composing/analysis/joint/jointnotationrecord.h,99,RecordSegment,std::vector<EventBassFact>,bassPerEvent,"std::vector<EventBassFact> bassPerEvent;     ///< the per-event bass factor role over [i, j)"
+src/composing/analysis/joint/jointnotationrecord.h,100,RecordSegment,std::string,augSixthSubType,"std::string augSixthSubType;                 ///< ""Italian""/""German""/""French"" for an AugSixth class; else """""
+src/composing/analysis/joint/jointnotationrecord.h,112,ModalInflection,int,pcOffset,int pcOffset = 0;                ///< (note pc - tonic pc) mod 12 — the inflection identity
+src/composing/analysis/joint/jointnotationrecord.h,113,ModalInflection,int,notatedLofOffset,int notatedLofOffset = 0;        ///< the note's tonal spelling relative to the tonic (note lof - key
+src/composing/analysis/joint/jointnotationrecord.h,115,ModalInflection,long long,durationTicks,long long durationTicks = 0;     ///< summed notated duration of notes ONSETTING in the run at this cell
+src/composing/analysis/joint/jointnotationrecord.h,116,ModalInflection,int,onsetCount,int onsetCount = 0;              ///< number of such note onsets
+src/composing/analysis/joint/jointnotationrecord.h,120,ModalDegree,int,degree,int degree = 0;                  ///< 1..7 (the letter-based scale degree of the key)
+src/composing/analysis/joint/jointnotationrecord.h,121,ModalDegree,std::vector<ModalInflection>,inflections,std::vector<ModalInflection> inflections;
+src/composing/analysis/joint/jointnotationrecord.h,126,ModalKeyRun,int,startTick,"int startTick = 0, endTick = 0;"
+src/composing/analysis/joint/jointnotationrecord.h,127,ModalKeyRun,int,tonicPc,int tonicPc = 0;
+src/composing/analysis/joint/jointnotationrecord.h,128,ModalKeyRun,bool,isMajor,bool isMajor = true;
+src/composing/analysis/joint/jointnotationrecord.h,129,ModalKeyRun,std::vector<ModalDegree>,degrees,std::vector<ModalDegree> degrees;
+src/composing/analysis/joint/jointnotationrecord.h,134,NotationRecord,std::string,stem,std::string stem;
+src/composing/analysis/joint/jointnotationrecord.h,137,NotationRecord,int,spanStartTick,"int spanStartTick = 0, spanEndTick = 0;      ///< the analyzed span (ticks)"
+src/composing/analysis/joint/jointnotationrecord.h,138,NotationRecord,std::optional<int>,sigFifths,"std::optional<int> sigFifths;                ///< notated initial signature fifths, INPUT ECHO"
+src/composing/analysis/joint/jointnotationrecord.h,139,NotationRecord,std::string,declaredMode,"std::string declaredMode;                    ///< notated declared mode (""major""/""minor""/""""), INPUT ECHO"
+src/composing/analysis/joint/jointnotationrecord.h,143,NotationRecord,RecordProvenance,provenance,RecordProvenance provenance;
+src/composing/analysis/joint/jointnotationrecord.h,146,NotationRecord,std::vector<RecordSegment>,segments,std::vector<RecordSegment> segments;
+src/composing/analysis/joint/jointnotationrecord.h,149,NotationRecord,std::vector<SegmentSlice>,slices,std::vector<SegmentSlice> slices;
+src/composing/analysis/joint/jointnotationrecord.h,152,NotationRecord,std::vector<ModalKeyRun>,modalReading,std::vector<ModalKeyRun> modalReading;
+src/composing/analysis/joint/jointprimitives.h,84,ChordFactor,std::string,role,std::string role;
+src/composing/analysis/joint/jointprimitives.h,85,ChordFactor,int,pc,int pc;
+src/composing/analysis/joint/jointprimitives.h,92,Framework,bool,valid,bool valid = false;
+src/composing/analysis/joint/jointprimitives.h,93,Framework,int,fwTonic,int fwTonic = 0;
+src/composing/analysis/joint/jointprimitives.h,94,Framework,bool,fwMajor,bool fwMajor = true;
+src/composing/analysis/joint/jointprimitives.h,95,Framework,bool,hasRoot,bool hasRoot = false;
+src/composing/analysis/joint/jointprimitives.h,96,Framework,int,root,int root = 0;
+src/composing/analysis/joint/jointprimitives.h,173,Node,bool,isClass,bool isClass = false;
+src/composing/analysis/joint/jointprimitives.h,174,Node,LabelClass,cls,LabelClass cls;
+src/composing/analysis/joint/jointprimitives.h,175,Node,std::string,str,std::string str;
+src/composing/analysis/joint/jointtables.h,55,KatzRow,std::string,contextUsed,std::string contextUsed;
+src/composing/analysis/joint/jointtables.h,56,KatzRow,Dist,dist,Dist dist;
+src/composing/analysis/joint/jointtables.h,63,KatzTable,"std::unordered_map<std::string, KatzRow>",rows,"std::unordered_map<std::string, KatzRow> rows;"
+src/composing/analysis/joint/jointtables.h,64,KatzTable,"std::unordered_map<std::string, Dist>",levels,"std::unordered_map<std::string, Dist> levels;"
+src/composing/analysis/joint/jointtables.h,70,BoundaryCell,bool,present,bool present = false;
+src/composing/analysis/joint/jointtables.h,71,BoundaryCell,bool,reliable,bool reliable = false;
+src/composing/analysis/joint/jointtables.h,72,BoundaryCell,double,prob,double prob = 0.0;
+src/composing/analysis/joint/jointweights.h,49,WeightVector,"std::unordered_map<std::string, double>",w,"std::unordered_map<std::string, double> w;"
+src/notation/internal/notationcomposingbridge.h,60,NoteHarmonicContext,std::vector<mu::composing::analysis::ChordAnalysisResult>,chordResults,std::vector<mu::composing::analysis::ChordAnalysisResult> chordResults;
+src/notation/internal/notationcomposingbridge.h,61,NoteHarmonicContext,int,keyFifths,int keyFifths = 0;
+src/notation/internal/notationcomposingbridge.h,62,NoteHarmonicContext,mu::composing::analysis::KeySigMode,keyMode,mu::composing::analysis::KeySigMode keyMode = mu::composing::analysis::KeySigMode::Ionian;
+src/notation/internal/notationcomposingbridge.h,63,NoteHarmonicContext,double,keyConfidence,double keyConfidence = 0.0;
+src/notation/internal/notationcomposingbridge.h,71,NoteHarmonicContext,mu::composing::analysis::ChordTemporalExtensions,temporalExtensions,mu::composing::analysis::ChordTemporalExtensions temporalExtensions;
+src/notation/internal/notationcomposingbridge.h,77,NoteHarmonicContext,bool,wasRegional,bool wasRegional = true;
+src/notation/internal/notationcomposingbridge.h,84,NoteHarmonicContext,std::optional<mu::composing::analysis::KeyArea>,enclosingKeyArea,std::optional<mu::composing::analysis::KeyArea> enclosingKeyArea;
+src/notation/internal/notationcomposingbridge.h,180,FormattedChordResult,std::string,symbol,std::string symbol;
+src/notation/internal/notationcomposingbridge.h,181,FormattedChordResult,std::string,roman,std::string roman;
+src/notation/internal/notationcomposingbridge.h,182,FormattedChordResult,std::string,nashville,std::string nashville;
+tools/joint_estimator/fit_weights.py,253,UnitLattice,,__slots__,"__slots__ = (""stem"", ""lo"", ""hi"", ""n"", ""C"", ""is_head"", ""n_cand"", ""cand_span"", ""cand_kc"","
+tools/joint_estimator/fit_weights.py,433,WeightContext,,__slots__,"__slots__ = (""Ent"", ""Tc"", ""Lk"", ""stay"", ""TcL"", ""eLk"", ""eLkL"")"
+tools/joint_estimator/normalize.py,68,LabelClass,str,degree_base,"degree_base: str          # accidental + UPPER degree letter, e.g. 'I', 'V', 'bVI', 'It'"
+tools/joint_estimator/normalize.py,69,LabelClass,str,quality,quality: str              # derived from figure+case: Maj/Min/Dom7/Maj7/Min7/MinMaj7/Dim/Dim7/
+tools/joint_estimator/normalize.py,71,LabelClass,str,inversion,"inversion: str            # verbatim WiR inversion figure, markers stripped: '' 6 6/4 7 6/5 4/3 2 9 ..."
+tools/joint_estimator/normalize.py,72,LabelClass,str,target,"target: str               # applied tonicization target, case-preserved ('vi','V','III',''), '' if none"
+tools/joint_estimator/normalize.py,73,LabelClass,bool,raw_unnormalized,raw_unnormalized: bool = False
+tools/joint_estimator/probe_decoder.py,230,Adapter,,cadence_on,cadence_on = False
+tools/joint_estimator/probe_decoder.py,231,Adapter,,name,"name = ""abstract"""
+tools/joint_estimator/probe_decoder.py,236,Adapter,,w,w = None                          # set in __init__ of each concrete adapter
+tools/joint_estimator/probe_decoder.py,274,FittedAdapter,,name,"name = ""fitted"""
+tools/joint_estimator/probe_decoder.py,275,FittedAdapter,,cadence_on,cadence_on = True         # the cadence factor is scored iff its weights are nonzero. At the
+tools/joint_estimator/probe_decoder.py,592,Piece,str,stem,stem: str
+tools/joint_estimator/probe_decoder.py,593,Piece,list,events,"events: list          # [start,end,measure,beat,mc]"
+tools/joint_estimator/probe_decoder.py,594,Piece,list,notes,notes: list           # the 12-field note records
+tools/joint_estimator/probe_decoder.py,595,Piece,int,n_quarter,n_quarter: int
+tools/joint_estimator/probe_decoder.py,596,Piece,tuple,meter,meter: tuple
+tools/joint_estimator/probe_decoder.py,597,Piece,list,notes_by_event,notes_by_event: list = field(default_factory=list)   # per event: list of note records (onset in ev)
+tools/joint_estimator/probe_decoder.py,598,Piece,list,ev_bass,ev_bass: list = field(default_factory=list)           # per event: bass pc (lowest midi) or None
+tools/joint_estimator/probe_decoder.py,599,Piece,list,ev_onset_pcs,ev_onset_pcs: list = field(default_factory=list)       # per event: set of onset pcs
+tools/joint_estimator/probe_decoder.py,600,Piece,list,ev_ferm_ctx,ev_ferm_ctx: list = field(default_factory=list)         # per event: the boundary factor's fermata flag
+tools/joint_estimator/probe_decoder.py,601,Piece,list,_live_notes,"_live_notes: list = field(default_factory=list)        # (onset, offset, pc) for non-anacrusis notes"
+tools/joint_estimator/probe_decoder.py,602,Piece,dict,_win_cache,_win_cache: dict = field(default_factory=dict)          # arrival event -> approach-window pcs (★R1)
+tools/joint_estimator/probe_decoder.py,603,Piece,dict,_cad_cache,"_cad_cache: dict = field(default_factory=dict)          # (event, tonic, is_major) -> fired features"
+tools/joint_estimator/probe_decoder.py,997,Segment,int,i,i: int
+tools/joint_estimator/probe_decoder.py,998,Segment,int,j,j: int
+tools/joint_estimator/probe_decoder.py,999,Segment,int,tonic,tonic: int
+tools/joint_estimator/probe_decoder.py,1000,Segment,bool,is_major,is_major: bool
+tools/joint_estimator/probe_decoder.py,1001,Segment,str,cls_key,cls_key: str
+tools/joint_estimator/probe_decoder.py,1002,Segment,int,start_tick,start_tick: int
+tools/joint_estimator/probe_decoder.py,1003,Segment,int,end_tick,end_tick: int
+tools/joint_estimator/probe_decoder.py,1008,DecodeResult,str,stem,stem: str
+tools/joint_estimator/probe_decoder.py,1009,DecodeResult,list,segments,"segments: list           # list of dict (span, key, chord, score contributions summary)"
+tools/joint_estimator/probe_decoder.py,1010,DecodeResult,float,total_score,total_score: float
+tools/joint_estimator/probe_decoder.py,1011,DecodeResult,int,n_events,n_events: int
+tools/joint_estimator/probe_decoder.py,1012,DecodeResult,float,decode_seconds,decode_seconds: float
+tools/joint_estimator/probe_decoder.py,1013,DecodeResult,list,posterior,"posterior: list          # per segment: {best, best_score, runner_key, runner_score, gap}"
+tools/joint_estimator/probe_decoder.py,1014,DecodeResult,str,notes,"notes: str = """""
+tools/joint_estimator/probe_decoder.py,1015,DecodeResult,dict,cadence_fires,cadence_fires: dict = None    # WEIGHTLESS cadence-feature fire counts over the committed boundaries
+tools/joint_estimator/probe_desksim.py,85,ProvisionalAdapter,,name,"name = ""provisional(T0-T9)"""
+tools/joint_estimator/probe_desksim.py,86,ProvisionalAdapter,,cadence_on,cadence_on = True
+tools/joint_estimator/probe_desksim.py,266,Case,str,name,name: str
+tools/joint_estimator/probe_desksim.py,267,Case,object,piece,piece: object
+tools/joint_estimator/probe_desksim.py,268,Case,dict,hyps,hyps: dict           # label -> list of segments
+tools/joint_estimator/probe_desksim.py,269,Case,dict,expected,expected: dict       # label -> expected full total (desk-sim hand value)
+tools/joint_estimator/probe_desksim.py,270,Case,set,include,include: set
+tools/joint_estimator/probe_desksim.py,271,Case,bool,key_trans_stays,key_trans_stays: bool = True
+tools/joint_estimator/probe_desksim.py,272,Case,int,sig_fifths,sig_fifths: int = None
+tools/joint_estimator/probe_desksim.py,273,Case,str,declared_mode,"declared_mode: str = """""
+tools/joint_estimator/probe_desksim.py,274,Case,str,notes,"notes: str = """""
+tools/joint_estimator/probe_desksim.py,275,Case,dict,desk_cadence,desk_cadence: dict = None          # label -> the desk-sim's stated cadence contribution
+tools/joint_estimator/probe_desksim.py,276,Case,int,drop_prefix,drop_prefix: int = 0               # number of leading (shared-origin) segments the desk-sim drops
+tools/joint_estimator/probe_desksim.py,277,Case,str,kind,"kind: str = ""synthetic""            # 'synthetic' (strict structural gate) | 'corpus' (report)"
+tools/joint_estimator/search_direct.py,100,MaxContext,,__slots__,"__slots__ = (""Ent"", ""WL"", ""Lk"", ""stay"", ""wc"", ""wcad"", ""w_prior"", ""w_dmode"")"

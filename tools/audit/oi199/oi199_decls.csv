@@ -1,0 +1,83 @@
+file,line,type_owner,name,context
+src/composing/analysis/joint/jointadapter.h,46,<namespace>,log0Floor,inline double log0Floor() { return std::log(1e-9); }         // LOG0_FLOOR
+src/composing/analysis/joint/jointadapter.h,47,<namespace>,safeLog,double safeLog(double p);                                     // _safe_log
+src/composing/analysis/joint/jointadapter.h,70,<namespace>,cadenceWeight,"double cadenceWeight(const std::string& feature) const { return m_weights.get(""cad_"" + feature); }"
+src/composing/analysis/joint/jointadapter.h,71,<namespace>,anyCadenceWeight,bool anyCadenceWeight() const;
+src/composing/analysis/joint/jointadapter.h,74,<namespace>,priorLogp,"double priorLogp(int tonic, bool isMajor, std::optional<int> sigFifths, const std::string& declaredMode) const;"
+src/composing/analysis/joint/jointadapter.h,79,<namespace>,entryLogp,"double entryLogp(const LabelClass& cls, bool isMajor) const;"
+src/composing/analysis/joint/jointadapter.h,80,<namespace>,keyTransLogp,"double keyTransLogp(int tonicPrev, bool majorPrev, int tonic, bool isMajor) const;"
+src/composing/analysis/joint/jointadapter.h,81,<namespace>,chordTransLogp,"double chordTransLogp(const LabelClass& prev, const LabelClass& cls, bool isMajor) const;"
+src/composing/analysis/joint/jointadapter.h,84,<namespace>,spellingLogp,"double spellingLogp(const std::string& sbin, bool isMajor) const;"
+src/composing/analysis/joint/jointadapter.h,87,<namespace>,factorAbsentLogp,"double factorAbsentLogp(const std::string& role, const std::string& family) const;"
+src/composing/analysis/joint/jointadapter.h,88,<namespace>,boundaryLogp,"double boundaryLogp(const std::string& beatClass, bool isBoundary, bool fermCtx) const;"
+src/composing/analysis/joint/jointadapter.h,93,<namespace>,modeName,static const std::string& modeName(bool isMajor);
+src/composing/analysis/joint/jointadapter.h,94,<namespace>,modeMarginal,"const std::unordered_map<std::string, double>& modeMarginal(bool isMajor) const;"
+src/composing/analysis/joint/jointadapter.h,97,<namespace>,firstBucket,"std::optional<std::string> firstBucket(const Dist& dist, Node start, ParentFn parentFn) const;"
+src/composing/analysis/joint/jointdecoder.h,73,Piece,prepare,void prepare();
+src/composing/analysis/joint/jointdecoder.h,74,Piece,overlapPcs,"PcMask overlapPcs(int i, int j) const;           // pcs sounding in [start_i, end_{j-1})"
+src/composing/analysis/joint/jointdecoder.h,75,Piece,approachWindowPcs,PcMask approachWindowPcs(int i) const;           // pcs sounding in the 4 beats before event i (★R1)
+src/composing/analysis/joint/jointdecoder.h,88,<namespace>,get,"const ChordInfo& get(const LabelClass& cls, int tonic, bool isMajor);"
+src/composing/analysis/joint/jointdecoder.h,95,<namespace>,chromaticRootPc,"int chromaticRootPc(const LabelClass& cls, int tonic, bool isMajor);"
+src/composing/analysis/joint/jointdecoder.h,102,<namespace>,Vocabulary,explicit Vocabulary(const JointTables& tables);
+src/composing/analysis/joint/jointdecoder.h,104,<namespace>,find,const LabelClass* find(const std::string& ckey) const;
+src/composing/analysis/joint/jointdecoder.h,175,<namespace>,loadPiecesFromNoteEvents,LoadedCorpus loadPiecesFromNoteEvents(const std::string& noteEventsPath);
+src/composing/analysis/joint/jointembeddedartifacts.h,56,EmbeddedBlob,bytes,std::string bytes() const;   ///< reconstruct the verbatim file bytes
+src/composing/analysis/joint/jointnotationproducer.h,88,<namespace>,spanViewSegments,"std::vector<int> spanViewSegments(const NotationRecord& rec, int startTick, int endTick);"
+src/composing/analysis/joint/jointnotationproducer.h,102,<namespace>,noteView,"NoteView noteView(const NotationRecord& rec, int tick);"
+src/composing/analysis/joint/jointnotationrecord.h,178,<namespace>,recordDiatonicToKey,bool recordDiatonicToKey(const LabelClass& cls);
+src/composing/analysis/joint/jointnotationrecord.h,184,<namespace>,recordAugSixthSubType,"std::string recordAugSixthSubType(const Piece& piece, int i, int j, int tonicPc);"
+src/composing/analysis/joint/jointprimitives.h,100,<namespace>,startsWith,"bool startsWith(const std::string& s, const std::string& prefix);"
+src/composing/analysis/joint/jointprimitives.h,104,<namespace>,pcToFifths,int pcToFifths(int pc);
+src/composing/analysis/joint/jointprimitives.h,109,<namespace>,pcKeyName,const std::string& pcKeyName(int pc);
+src/composing/analysis/joint/jointprimitives.h,120,<namespace>,frameworkAndRoot,"Framework frameworkAndRoot(const LabelClass& cls, int tonic, bool isMajor);"
+src/composing/analysis/joint/jointprimitives.h,122,<namespace>,memberPcs,"std::optional<PcMask> memberPcs(const LabelClass& cls, int tonic, bool isMajor);"
+src/composing/analysis/joint/jointprimitives.h,124,<namespace>,chordFactorPcs,"std::optional<std::vector<ChordFactor> > chordFactorPcs(const LabelClass& cls, int tonic, bool isMajor);"
+src/composing/analysis/joint/jointprimitives.h,126,<namespace>,noteCategory,"std::string noteCategory(int pc, PcMask mem, int tonic, bool isMajor);"
+src/composing/analysis/joint/jointprimitives.h,128,<namespace>,keyCollectionMask,"PcMask keyCollectionMask(int tonic, bool isMajor);"
+src/composing/analysis/joint/jointprimitives.h,135,<namespace>,keySignatureFifths,"int keySignatureFifths(int tonicPc, bool isMajor, int referenceFifths);"
+src/composing/analysis/joint/jointprimitives.h,142,<namespace>,rootSpellingLof,"std::optional<int> rootSpellingLof(const LabelClass& cls, int tonicPc, bool isMajor, int referenceFifths);"
+src/composing/analysis/joint/jointprimitives.h,147,<namespace>,factorSpellingLof,"std::optional<int> factorSpellingLof(int rootLof, int rootPc, int factorPc);"
+src/composing/analysis/joint/jointprimitives.h,150,<namespace>,spellingBin,"std::string spellingBin(int rel, bool isMajor);"
+src/composing/analysis/joint/jointprimitives.h,152,<namespace>,spellingParent,std::optional<std::string> spellingParent(const std::string& cell);
+src/composing/analysis/joint/jointprimitives.h,156,<namespace>,emitDisplay,"std::string emitDisplay(const std::string& mc, const std::string& ap, const std::string& dp, bool tied);"
+src/composing/analysis/joint/jointprimitives.h,162,<namespace>,collectionFifths,"int collectionFifths(int tonic, bool isMajor);"
+src/composing/analysis/joint/jointprimitives.h,163,<namespace>,foldFifthsDiff,int foldFifthsDiff(int d);
+src/composing/analysis/joint/jointprimitives.h,164,<namespace>,cofDistance,"int cofDistance(int a, int b);"
+src/composing/analysis/joint/jointprimitives.h,165,<namespace>,keyChangeKind,"std::string keyChangeKind(int ta, bool ma, int tb, bool mb);"
+src/composing/analysis/joint/jointprimitives.h,168,<namespace>,t1CtxChain,std::vector<std::string> t1CtxChain(const LabelClass& fromCls);
+src/composing/analysis/joint/jointprimitives.h,169,<namespace>,t4CtxChain,"std::vector<std::string> t4CtxChain(const std::string& deg, const std::string& qual, const std::string& mode);"
+src/composing/analysis/joint/jointprimitives.h,183,<namespace>,t1OutcomeParent,std::optional<std::string> t1OutcomeParent(const Node& node);
+src/composing/analysis/joint/jointprimitives.h,184,<namespace>,t3EntryParent,std::optional<std::string> t3EntryParent(const Node& node);
+src/composing/analysis/joint/jointprimitives.h,185,<namespace>,appliedRelParent,std::optional<std::string> appliedRelParent(const Node& node);
+src/composing/analysis/joint/jointprimitives.h,188,<namespace>,relationCell,"std::string relationCell(const LabelClass& a, const LabelClass& b);"
+src/composing/analysis/joint/jointrender.h,51,<namespace>,jointOursQuality,std::string jointOursQuality(const std::string& quality);
+src/composing/analysis/joint/jointrender.h,56,<namespace>,jointChordSymbol,"std::string jointChordSymbol(std::optional<int> rootPc, const std::string& quality);"
+src/composing/analysis/joint/jointrender.h,63,<namespace>,jointRenderRn,"std::string jointRenderRn(const LabelClass& cls, const std::string& bassRole, bool hasSeventh);"
+src/composing/analysis/joint/jointtables.h,81,<namespace>,load,"static JointTables load(const std::string& artifactDir, const std::string& tableSet = ""all"");"
+src/composing/analysis/joint/jointtables.h,87,<namespace>,loadEmbedded,"static JointTables loadEmbedded(const std::string& tableSet = ""all"");"
+src/composing/analysis/joint/jointweights.h,53,WeightVector,get,double get(const std::string& name) const;
+src/composing/analysis/joint/jointweights.h,58,<namespace>,identityWeights,WeightVector identityWeights();
+src/composing/analysis/joint/jointweights.h,64,<namespace>,selectedWeights,WeightVector selectedWeights();
+src/composing/analysis/joint/labelclass.h,45,<namespace>,LabelClass,LabelClass() = default;
+src/composing/analysis/joint/labelclass.h,56,<namespace>,key,std::string key() const;
+src/composing/analysis/joint/labelclass.h,60,<namespace>,inversionFree,LabelClass inversionFree() const;
+src/composing/analysis/joint/labelclass.h,64,<namespace>,family,LabelClass family() const;
+src/composing/analysis/joint/labelclass.h,79,<namespace>,isSeventhQuality,bool isSeventhQuality(const std::string& quality);
+src/composing/analysis/joint/labelclass.h,84,<namespace>,classFromKey,LabelClass classFromKey(const std::string& key);
+src/notation/internal/notationcomposingbridge.h,90,<namespace>,harmonicAnnotation,std::string harmonicAnnotation(const mu::engraving::Note* note);
+src/notation/internal/notationcomposingbridge.h,94,<namespace>,analyzeNoteHarmonicContextDetails,NoteHarmonicContext analyzeNoteHarmonicContextDetails(const mu::engraving::Note* note);
+src/notation/internal/notationcomposingbridge.h,98,<namespace>,analyzeRestHarmonicContextDetails,NoteHarmonicContext analyzeRestHarmonicContextDetails(const mu::engraving::Rest* rest);
+src/notation/internal/notationcomposingbridge.h,127,<namespace>,clearHarmonicDecodeCache,void clearHarmonicDecodeCache();
+src/notation/internal/notationcomposingbridge.h,144,<namespace>,clearHarmonicDecodeCacheForTesting,void clearHarmonicDecodeCacheForTesting();
+src/notation/internal/notationcomposingbridge.h,148,<namespace>,harmonicDecodeCacheBuildCountForTesting,size_t harmonicDecodeCacheBuildCountForTesting();
+src/notation/internal/notationcomposingbridge.h,197,<namespace>,chordTrackExcludeStaves,std::set<size_t> chordTrackExcludeStaves(const mu::engraving::Score* sc);
+src/notation/internal/notationtuningbridge.h,42,<namespace>,hasTuningAnchorExpression,bool hasTuningAnchorExpression(const mu::engraving::Note* note);
+src/notation/internal/notationaccessibility.h,38,<namespace>,NotationAccessibility,NotationAccessibility(const Notation* notation);
+src/notation/internal/notationaccessibility.h,42,<namespace>,setMapToScreenFunc,void setMapToScreenFunc(const mu::engraving::AccessibleMapToScreenFunc& func) override;
+src/notation/internal/notationaccessibility.h,44,<namespace>,setEnabled,void setEnabled(bool enabled) override;
+src/notation/internal/notationaccessibility.h,47,<namespace>,score,const engraving::Score* score() const;
+src/notation/internal/notationaccessibility.h,48,<namespace>,selection,const engraving::Selection* selection() const;
+src/notation/internal/notationaccessibility.h,50,<namespace>,updateAccessibilityInfo,void updateAccessibilityInfo();
+src/notation/internal/notationaccessibility.h,52,<namespace>,setAccessibilityInfo,void setAccessibilityInfo(const QString& info);
+src/notation/internal/notationaccessibility.h,54,<namespace>,rangeAccessibilityInfo,QString rangeAccessibilityInfo() const;
+src/notation/internal/notationaccessibility.h,55,<namespace>,singleElementAccessibilityInfo,QString singleElementAccessibilityInfo() const;

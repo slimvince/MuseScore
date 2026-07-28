@@ -105,8 +105,8 @@ def _selected_layer(argv):
     return "l1l2"
 
 AUDIT_LAYER = _selected_layer(sys.argv)
-if AUDIT_LAYER not in ("l1l2", "l3", "l4", "l5"):
-    sys.stderr.write("unknown --layer %r (expected l1l2 | l3 | l4 | l5)\n" % AUDIT_LAYER)
+if AUDIT_LAYER not in ("l1l2", "l3", "l4", "l5", "oi199"):
+    sys.stderr.write("unknown --layer %r (expected l1l2 | l3 | l4 | l5 | oi199)\n" % AUDIT_LAYER)
     sys.exit(2)
 
 # ── The instruments scope (l5 only): a SECOND enumeration root beside src/composing ─
@@ -195,6 +195,8 @@ TAG_RULES = [
      "function layer (L5) — deferred to the L5 audit (harmonicfunctionlayer rename R7; forwardoverride/resolver are Tier-1 armed traps)"),
     ("src/composing/analysis/grouping/", "L3+",
      "grouping for display (L6) — deferred to the L6 audit"),
+    ("src/composing/analysis/joint/", "L3+",
+     "joint estimator module — deferred to the OI-199 comprehensive review (this module postdates the L1-L5 inventories)"),
     ("src/composing/analysis/key/", "L3+",
      "key/mode layer (L3) — deferred to the L3 audit (keyresolver shrinks R5; keymodesequence is the L3 survivor)"),
     ("src/composing/analysis/param/", "L3+",
@@ -236,13 +238,24 @@ elif AUDIT_LAYER == "l3":
     DEEP_TAGS = ("L3", "L3-MIXED")
 elif AUDIT_LAYER == "l4":
     DEEP_TAGS = ("L4-SCORER", "L4-DECODER", "L4-MIXED")
-else:  # l5
+elif AUDIT_LAYER == "l5":
     # L5-DORMANT = the dormant-but-surviving resolver pipeline (deep, C++);
     # INSTRUMENT = the Python measurement chain (deep, Python);
     # INSTRUMENT-HARNESS = batch_analyze.cpp (deep, C++).
     # L5-RETIRES / DEFERRED / NON-INSTRUMENT / INSTRUMENT-MANIFEST / INSTRUMENT-TEST
     # get file-level rows only (see L5_REFINE + INSTRUMENT_RULES for the reasons).
     DEEP_TAGS = ("L5-DORMANT", "INSTRUMENT", "INSTRUMENT-HARNESS")
+else:  # oi199 — the OI-199 comprehensive review, four areas (see OI199_REFINE + OI199 scope)
+    # (a) JOINT           = the joint estimator module source (deep, C++);
+    # (c) CODEGEN         = the embedded-table generator (.py) + accessor surface (.h) (deep);
+    # (b) RECORD-SEAM     = the record-arm consumers + section record adapter (deep, C++);
+    # (d) INSTRUMENT-JOINT = tools/joint_estimator/*.py (deep, Python);
+    # (d) INSTRUMENT-SEAMS = tools/notation_seams/*.py (deep, Python).
+    # File-level (NOT deep): CODEGEN-GENERATED (the 180 KB generated .cpp — a generated
+    # DATA population established by its drift guard, not by row disposition, per the
+    # dispatch), CODEGEN-GUARD (the drift-guard test), JOINT-TEST (the joint module's own
+    # tests — P4 characterization inputs, not deep source rows).
+    DEEP_TAGS = ("JOINT", "CODEGEN", "RECORD-SEAM", "INSTRUMENT-JOINT", "INSTRUMENT-SEAMS")
 
 # ── L3 (key/mode) tag refinement (applied over the base TAG_RULES iff --layer l3) ─
 # The base map coarsely tags the key/mode files L3+ ("deferred to the L3 audit").
@@ -616,6 +629,127 @@ def resolve_instrument_tag(path):
         if path.startswith(prefix):
             return tag, reason
     return "NON-INSTRUMENT", "tools/ file — out of instrument deep scope (file-level)"
+
+
+# ── OI-199 comprehensive-review scope (applied over the base TAG_RULES iff --layer oi199) ─
+# The user-directed comprehensive review of everything the L1-L5 certifications predate: the
+# joint estimator module (production on both surfaces, NOT retiring), the notation record path
+# and seams, the codegen machinery, and the new instruments. FOUR areas (dispatch
+# cc_instruction_oi199_pass1.md):
+#   (a) JOINT              — src/composing/analysis/joint/ source (deep, C++). The engagement's
+#                            production inference module; first claim on the deep dispositions.
+#   (a) JOINT-TEST         — the joint module's own tests (file-level; P4 characterization input).
+#   (c) CODEGEN            — the embedded-table GENERATOR (gen_embedded_tables.py) + the accessor
+#                            surface (jointembeddedartifacts.h) (deep).
+#   (c) CODEGEN-GENERATED  — jointembeddedartifacts.cpp: a GENERATED DATA population (180 KB of
+#                            verbatim-embedded JSON bytes on a few long lines), established by its
+#                            drift guard, NOT dispositioned row-by-row (file-level, per dispatch).
+#   (c) CODEGEN-GUARD      — the drift-guard test (joint_embedded_tests.cpp) (file-level).
+#   (b) RECORD-SEAM        — the record-arm consumers (notation bridges + accessibility) + the
+#                            section record adapter (deep, C++). NOTE: these files are largely
+#                            LEGACY-ARM / SHARED; only the record-arm rows are in the OI-199 scope.
+#                            The per-row record-arm / legacy-arm / shared split is a DEEP-PASS task
+#                            (its own partition); this inventory counts the FILE rows and the
+#                            record-arm entry sites, and flags the arm split as owed.
+#   (d) INSTRUMENT-JOINT   — tools/joint_estimator/*.py (deep, Python ast).
+#   (d) INSTRUMENT-SEAMS   — tools/notation_seams/*.py (deep, Python ast).
+# Ordered; FIRST match wins; exact repo-relative paths (forward slash). The generated .cpp, the
+# accessor .h, the section adapter, and the joint tests are named explicitly; every OTHER file in
+# src/composing/analysis/joint/ falls to the prefix catch (deep JOINT).
+OI199_REFINE = [
+    # ---- (c) codegen: the generated data population + accessor surface + drift guard ----
+    ("src/composing/analysis/joint/jointembeddedartifacts.cpp", "CODEGEN-GENERATED",
+     "GENERATED DATA population — 180 KB of verbatim-embedded JSON bytes (gen_embedded_tables.py, "
+     "Decision D1); established by byte-equality vs the committed artifacts (the joint_embedded_tests "
+     "drift guard), NOT by row disposition — file-level (dispatch area c)"),
+    ("src/composing/analysis/joint/jointembeddedartifacts.h", "CODEGEN",
+     "codegen ACCESSOR surface (EmbeddedBlob / bytes() / sha256 declarations) over the generated .cpp "
+     "— deep (dispatch area c)"),
+    # ---- (b) the section record adapter (joint record -> section output) ----
+    ("src/composing/analysis/section/sectionrecordadapter.h", "RECORD-SEAM",
+     "the SECTION RECORD ADAPTER surface — bridges the joint notation record to the section output "
+     "(analyzeSectionFromRecord); deep (dispatch area b)"),
+    ("src/composing/analysis/section/sectionrecordadapter.cpp", "RECORD-SEAM",
+     "the section record adapter impl (record -> AnalyzedSection: key areas via groupKeyAreas, "
+     "cadence/pivot via detectCadences/detectPivotChords over the stored exposure); deep (area b)"),
+    # ---- (a) the joint module's own tests (file-level; P4 route A) ----
+    ("src/composing/tests/joint_embedded_tests.cpp", "CODEGEN-GUARD",
+     "the CODEGEN DRIFT GUARD — asserts the generated jointembeddedartifacts bytes equal the committed "
+     "artifacts (LF-normalized, OI-195); file-level (dispatch area c)"),
+    ("src/composing/tests/joint_adapter_tests.cpp", "JOINT-TEST", "joint module test — P4 characterization input (file-level)"),
+    ("src/composing/tests/joint_decoder_tests.cpp", "JOINT-TEST", "joint module test — P4 characterization input (file-level)"),
+    ("src/composing/tests/joint_modal_tests.cpp", "JOINT-TEST", "joint module test — P4 characterization input (file-level)"),
+    ("src/composing/tests/joint_primitives_tests.cpp", "JOINT-TEST", "joint module test — P4 characterization input (file-level)"),
+    ("src/composing/tests/joint_producer_tests.cpp", "JOINT-TEST", "joint module test — P4 characterization input (file-level)"),
+    ("src/composing/tests/joint_record_tests.cpp", "JOINT-TEST", "joint module test — P4 characterization input (file-level)"),
+    ("src/composing/tests/joint_slice_tests.cpp", "JOINT-TEST", "joint module test — P4 characterization input (file-level)"),
+    ("src/composing/tests/joint_spelling_tests.cpp", "JOINT-TEST", "joint module test — P4 characterization input (file-level)"),
+    ("src/composing/tests/joint_tables_tests.cpp", "JOINT-TEST", "joint module test — P4 characterization input (file-level)"),
+    ("src/composing/tests/jointkeydecision_tests.cpp", "JOINT-TEST", "joint (key-decision) test — P4 characterization input (file-level)"),
+]
+
+# The curated src/notation record-arm scope (dispatch area b). The notation module is large; only
+# the record-path consumers the dispatch names are in scope. Each is a SECOND scope root (not in
+# the base src/composing list_tracked); tagged RECORD-SEAM.
+OI199_NOTATION_FILES = [
+    "src/notation/internal/notationcomposingbridge.cpp",
+    "src/notation/internal/notationcomposingbridge.h",
+    "src/notation/internal/notationcomposingbridgehelpers.cpp",
+    "src/notation/internal/notationcomposingbridgehelpers.h",
+    "src/notation/internal/notationimplodebridge.cpp",
+    "src/notation/internal/notationimplodebridge.h",
+    "src/notation/internal/notationtuningbridge.cpp",
+    "src/notation/internal/notationtuningbridge.h",
+    "src/notation/internal/notationaccessibility.cpp",
+    "src/notation/internal/notationaccessibility.h",
+]
+
+# The new-instrument scope roots (dispatch area d): every tracked .py under these two dirs.
+OI199_INSTRUMENT_DIRS = (
+    ("tools/joint_estimator/", "INSTRUMENT-JOINT",
+     "joint-estimator instrument (fitting / parity / probe / codegen-source generator) — deep (area d)"),
+    ("tools/notation_seams/", "INSTRUMENT-SEAMS",
+     "notation-seams instrument (call-path facts / dual-arm classify / cost profile / golden reconcile) — deep (area d)"),
+)
+
+
+def refine_oi199(path, tag, reason):
+    """In --layer oi199 mode, override the base tag for the src/composing review files. The
+    explicit OI199_REFINE list wins; every other src/composing/analysis/joint/ file is deep JOINT."""
+    for matcher, t, r in OI199_REFINE:
+        if path == matcher:
+            return t, r
+    if path.startswith("src/composing/analysis/joint/"):
+        return "JOINT", "joint estimator module source (OI-199 area a) — deep"
+    return tag, reason
+
+
+def list_oi199_extra_scope():
+    """The OI-199 scope roots BEYOND src/composing (which base list_tracked already covers):
+    the curated src/notation record-arm files + every tracked .py under the two instrument dirs.
+    Returns a list of (path, tag, reason). Mechanical + total over those roots (P1)."""
+    rows = []
+    for p in OI199_NOTATION_FILES:
+        rows.append((p, "RECORD-SEAM",
+                     "record-arm consumer / shared bridge (OI-199 area b) — largely LEGACY-ARM/SHARED, "
+                     "only the record-arm rows are in scope; per-row arm split is a deep-pass task"))
+    for l in sh(["git", "ls-files", "tools/joint_estimator/", "tools/notation_seams/"]).splitlines():
+        p = l.replace("\\", "/").strip()
+        if not p.endswith(".py"):
+            continue
+        # The embedded-table SOURCE generator is the area-(c) codegen machinery (it produces the
+        # compiled-in jointembeddedartifacts.cpp), NOT an area-(d) fitting/parity instrument — it
+        # lives in tools/joint_estimator/ only because that is where the fitted artifacts sit.
+        if p == "tools/joint_estimator/gen_embedded_tables.py":
+            rows.append((p, "CODEGEN",
+                         "the EMBEDDED-TABLE SOURCE GENERATOR (Decision D1) — turns the committed fitted "
+                         "artifacts into the compiled-in jointembeddedartifacts.{h,cpp}; deep (area c)"))
+            continue
+        for prefix, tag, reason in OI199_INSTRUMENT_DIRS:
+            if p.startswith(prefix):
+                rows.append((p, tag, reason))
+                break
+    return rows
 
 # control keywords that precede '(' but are NOT function names
 CTRL_KW = {"if", "for", "while", "switch", "catch", "return", "sizeof", "and", "or",
@@ -1114,11 +1248,17 @@ def main():
             tag, reason = refine_l4(p, tag, reason)
         elif AUDIT_LAYER == "l5":
             tag, reason = refine_l5_source(p, tag, reason)
+        elif AUDIT_LAYER == "oi199":
+            tag, reason = refine_oi199(p, tag, reason)
         file_rows.append({"file": p, "tag": tag or "UNTAGGED", "reason": reason or ""})
     # l5: the SECOND scope root — the tools/ instruments domain (mechanically total)
     if AUDIT_LAYER == "l5":
         for p in list_instrument_scope():
             tag, reason = resolve_instrument_tag(p)
+            file_rows.append({"file": p, "tag": tag, "reason": reason})
+    # oi199: the ADDITIONAL scope roots — the record-arm notation files + the new instruments
+    if AUDIT_LAYER == "oi199":
+        for p, tag, reason in list_oi199_extra_scope():
             file_rows.append({"file": p, "tag": tag, "reason": reason})
     if untagged:
         sys.stderr.write("P1 TOTALITY FAILURE — untagged files (add a TAG_RULES entry):\n")
@@ -1180,7 +1320,7 @@ def main():
               ["file", "line", "type_owner", "name", "context"])
     write_csv(os.path.join(OUT_DIR, PREFIX + "_crosslayer.csv"), all_cross,
               ["file", "line", "include", "resolved", "target_area"])
-    if AUDIT_LAYER == "l5":
+    if AUDIT_LAYER in ("l5", "oi199"):
         write_csv(os.path.join(OUT_DIR, PREFIX + "_io.csv"), all_io,
                   ["file", "line", "call", "func", "context"])
 
@@ -1189,7 +1329,7 @@ def main():
         "functions": all_funcs, "literals": all_lits, "branches": all_branches,
         "fields": all_fields, "decls": all_decls, "crosslayer": all_cross,
     }
-    if AUDIT_LAYER == "l5":
+    if AUDIT_LAYER in ("l5", "oi199"):
         inventory["io"] = all_io
     with open(os.path.join(OUT_DIR, "inventory.json"), "w", encoding="utf-8") as f:
         json.dump(inventory, f, indent=1)
@@ -1208,21 +1348,26 @@ def main():
             "l3": "EG-7 Layer-3 (key/mode) certification, PASS 1 (blind enumerative)",
             "l4": "EG-7 Layer-4 (chord) certification, PASS 1 (blind enumerative)",
             "l5": "EG-7 Layer-5 (function) + instruments certification, PASS 1 (blind enumerative)",
+            "oi199": "OI-199 comprehensive review (joint module + record path/seams + codegen + new instruments), PASS 1 (blind enumerative)",
         }[AUDIT_LAYER],
         "audit_layer": AUDIT_LAYER,
         "head_commit": head,
         "script_blob_sha": script_sha,
         "corpus_hash": CORPUS_HASH,
-        "scope_dir": SCOPE_DIR if AUDIT_LAYER != "l5" else (SCOPE_DIR + " + tools/ (instruments)"),
-        # extraction_method + the io total are l5-conditional so prior-layer manifests
-        # regenerate byte-identically (only the self-referential script_blob_sha evolves).
+        "scope_dir": (
+            SCOPE_DIR + " + tools/ (instruments)" if AUDIT_LAYER == "l5"
+            else SCOPE_DIR + " + src/notation/internal (record arm) + tools/joint_estimator + tools/notation_seams" if AUDIT_LAYER == "oi199"
+            else SCOPE_DIR),
+        # extraction_method + the io total are Python-scan-conditional (l5/oi199) so the
+        # prior C++-only-layer manifests regenerate byte-identically (only the self-referential
+        # script_blob_sha evolves).
         "extraction_method": (
-            "regex/brace-depth scan over comment/string/preproc-blanked C++; heuristic, over-capture-biased; see module docstring"
-            if AUDIT_LAYER != "l5" else
             "C++ (.cpp/.h): regex/brace-depth scan over comment/string/preproc-blanked source (heuristic, over-capture-biased). Python instruments (.py): exact `ast` scan (functions/literals/branches/class-fields/internal-imports/file-IO). See module docstring."
+            if AUDIT_LAYER in ("l5", "oi199") else
+            "regex/brace-depth scan over comment/string/preproc-blanked C++; heuristic, over-capture-biased; see module docstring"
         ),
         "totals": {
-            "tracked_files": len(files) + (len(list_instrument_scope()) if AUDIT_LAYER == "l5" else 0),
+            "tracked_files": len(files) + (len(list_instrument_scope()) if AUDIT_LAYER == "l5" else (len(list_oi199_extra_scope()) if AUDIT_LAYER == "oi199" else 0)),
             "file_table_rows": len(file_rows),
             "tag_counts": tag_counts,
             "deep_audited_files": len(deep),
@@ -1232,7 +1377,7 @@ def main():
             "fields": len(all_fields),
             "decls": len(all_decls),
             "crosslayer": len(all_cross),
-            **({"io": len(all_io)} if AUDIT_LAYER == "l5" else {}),
+            **({"io": len(all_io)} if AUDIT_LAYER in ("l5", "oi199") else {}),
         },
         "deep_audited_file_list": deep,
     }
