@@ -1,7 +1,89 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE 2026-07-26 — THE JOINT ESTIMATOR: DESK-SIMULATED, GATED, FITTED, BUILT, MEASURED, AND **ADOPTION USER-RATIFIED**. THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE 2026-07-28 — THE NOTATION-LAYER ADOPTION INCREMENT: RATIFIED, BUILT, SWITCHED, CLOSED — THE JOINT ESTIMATOR IS PRODUCTION ON BOTH SURFACES. A LIVE INTERACTIVE REGRESSION (OI-206) IS UNDER READ-ONLY INVESTIGATION. THE CURRENT ENTRY POINT.
+
+**You (the next session) start clueless — this block is the entire handover.** Read, in order:
+(1) `CLAUDE.md` IN FULL (note two things newer than its older text: the **decision-neutrality
+corollary** — reuse value/obsolescence cost SECONDARY, consumer-change impact and end-user
+behavior-change impact NO weight — and the register section's **index+detail shape**);
+(2) `OPEN_ITEMS.md` — now the lean INDEX (status authoritative THERE ONLY; narratives in
+`open_items/OI-<n>.md`) — current through **OI-208**; open AT MINIMUM the details of
+**OI-206, OI-207, OI-208, OI-203, OI-193, OI-194, OI-205**; (3) this block, then the dated
+running record below it (the whole 2026-07-26→28 arc, newest entries deepest in the
+2026-07-26 block's tail); (4) the ratified governing documents of this arc:
+`cowork_notation_adoption_increment.md` (the six rulings + §10) and
+`cowork_notation_output_contract.md` (WITH its dated amendments: full-list; display renderings
+are PRESENTATION derivations).
+
+**★ THE HEADLINE.** The notation-layer adoption increment ran end-to-end this arc, every step
+ratified and verified at the objects: the decision surface (A2 joint-native record / B-full
+posterior / C1 two-mode + un-rounded modal reading / D1 embedded tables / E publication split
++ the principles corollary — four writings, the three corrections now themselves ratified
+record); the contract; the consumption audit (75 fields); D1 codegen (+OI-195 LF fix); the
+posterior slice (bit-parity); the record assembly (spelling establishment 99.985 %, modal
+counter); the seams (producer + views; consumer re-plumb P0–P7 with the §4.1 gap-scale
+constants, the P2a/P4 gate unifications, P-strings presentation formatters + the permanent
+inference↔presentation boundary guard, OI-204 input-scoping); P6's dual-arm classified
+evidence (identical 2053 / inference-driven 6029 / presentation-rule 220 / unexplained 0);
+and **THE SWITCH (`2a81af273e`, user-ratified 2026-07-27)** — goldens refreshed with the
+diff reconciled against the P6 taxonomy, docs/register synced in the same commit. **The #23
+migration state is CLOSED on both surfaces.** The legacy path is compiled-dormant behind
+explicit flag-false, awaiting the OI-180 map — **which is BLOCKED (see below).**
+
+**★ THE LIVE SITUATION — READ CAREFULLY, IT GOVERNS THE NEXT ACTION.** (1) **OI-206**, a
+user-reported interactive regression on the switched build: single-note selection stalls
+3–4 s+ (highlight late, spacebar dead during the stall) — mechanism FIELD-ESTABLISHED +
+measured (the note-seam funnel runs one SYNCHRONOUS whole-score decode per single-note
+selection; measured ~5 s chorale → ~27 s sonata per query vs sub-microsecond memoized
+lookup). (2) **The 3.1b contradiction, a Cowork error owned:** whole-score interactive
+analysis had been A/B-FALSIFIED and SHELVED WITH EVIDENCE in the legacy era
+(`docs/p3_granularity_ab_3_1b.md`; archive :2957–2979; the Tristan review §7) — Cowork's
+seams dispatches specified whole-score anyway (#17a violation; the evidence lived in archives
+outside session-start reads). The user also confirmed the DESIGNED interactive shape at the
+record: read only what inference needs, extending temporally until satisfied (OI-18's
+never-coded §2.15 cluster). (3) Consequences rowed: **OI-207** (the decision-conformance
+audit — is anything ELSE implemented against a recorded decision; runs right after OI-206;
+the MAP does not proceed over unknown contradictions) and **OI-208** (the DECISIONS REGISTER
+proposal — the OPEN_ITEMS pattern for rulings; shape awaits user ratification). (4) The
+marginals arc is half-delivered: the Python reference's oracle PASSES on all 326 (OI-193's
+publication gate established); the C++ half is a queued follow-up with Cowork's dated
+logsumexp ruling on `cc_instruction_marginals.md` (bit-identity first; drift =
+STOP-and-characterize).
+
+**★ IN FLIGHT AT SESSION CLOSE: CC is executing `cc_instruction_oi206_investigation.md`**
+(read-only, fix-free): Task 1 the call-path confirmation (which selection kinds reach the
+funnel; produce-calls per event; synchronicity; no re-trigger loop; the field pattern
+reproduced by code facts); Task 2 the windowed-vs-whole-piece decode study FOR A (nested-span
+stability curves per query, smallest-stable-span distribution, GT accuracy per span, cost
+curve, #17b predictions recorded first). **THE FIRST ACTION OF THE NEXT SESSION: receive
+CC's report, verify it at the objects (git show by the reported SHAs + fresh file-tool
+reads), then present the OI-206 FIX DECISION SURFACE to the user** — alternatives (the keyed
+(score, change-token) record cache; off-thread/asynchronous status-bar computation; the
+bounded grow-until-stable interactive decode per the user's recorded design, its stopping
+criterion from the measured stability curves) with pros/cons EACH rated against the
+principles AND #4, the 3.1b evidence + Tristan review as required inputs. **THEN, in order:
+the fix build (post-ratification), OI-207, the marginals C++ follow-up (Tasks 3–4), OI-194,
+then the OI-180 map (unblocks only after OI-206+OI-207), OI-205(b), the OI-198/199/200
+reviews, and only then the inference era (OI-192 first).**
+
+**★ METHOD REMINDERS (this arc's additions — all standing).** Every choice to the user
+carries ALTERNATIVES with pros/cons rated against the guiding principles AND #4 — this arc
+required THREE rewrites before the discipline held; do not repeat. What exists (reuse value,
+obsolescence cost) is SECONDARY; consumer-change and end-user impact carry NO weight (the
+ratified corollary). Verify every CC claim at the objects; the never-bash rule holds (file
+tools for the live tree; bash ONLY for git-object reads by explicit SHA). Dispatches are
+FRESH SINGLE FILES per unit now (the seams-2 amendment-stack monolith confused CC — its
+banner says reference-only). The register is index+detail: rows in BOTH places per rule (c),
+status in the INDEX only. The muse TEST HARNESS does not apply registered config defaults —
+tests pin flags explicitly (production gets defaults via module onInit). CC's post-work
+machine shutdowns remain user-authorized.
+
+*(The 2026-07-26 block below is this arc's detailed running record — kept for provenance; it
+moves to `cowork_handoff_archive.md` at the next doc split.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE 2026-07-26 — THE JOINT ESTIMATOR: DESK-SIMULATED, GATED, FITTED, BUILT, MEASURED, AND **ADOPTION USER-RATIFIED**. (SUPERSEDED 2026-07-28 as the entry point — this arc's running record follows.)
 
 **You (the next session) start clueless — this block is the entire handover.** Read, in order:
 (1) `CLAUDE.md` in full (principles #1–#24 + corollaries; NOTE: its gate block (A) baselines are
@@ -441,6 +523,27 @@ direct opposition; priority, slots right after the OI-206 diagnosis; the map doe
 over unknown contradictions) **and OI-208** (the DECISIONS REGISTER proposal — the OPEN_ITEMS
 pattern for rulings, populated from OI-207, added to the session-start read; user ratification
 of the shape owed).**
+
+**★ MARGINALS TASKS 1–2 DELIVERED AND COWORK-VERIFIED (2026-07-28; `073da34bd8` latency
+measurement + `7dcfbf2096` the Python marginals reference, both verified at the objects).**
+The latency headline: per-query funnel cost ≈ whole-score produce, seconds-scale (~5 s
+chorale → ~27 s sonata); memoized `noteView` sub-microsecond — the ~10⁷–10⁸× gap that is the
+cache design's bound. The marginals oracle PASSES on all 326 (fwd==bwd 8.5e-14; max-plus ==
+decoder Δ=0; fit-arc logZ tie Δ=0; normalization 5.6e-16; synthetic hand-trace 3.3e-16;
+MAP-consistency positive) — OI-193's publication gate is established; Tasks 3–4 (C++ +
+record fields) partitioned to a follow-up. **Cowork's logsumexp ruling (dated amendment on
+the marginals dispatch): bit-identity FIRST** (the 2026-07-25 record: `std::log` == Python
+bit-for-bit on this platform; same operation order + Neumaier); a residual drift is
+STOP-and-characterize, never a self-ratified tolerance. **THE ACTIVE DISPATCH is
+`cc_instruction_oi206_investigation.md`** (read-only, before any fix): Task 1 the call-path
+confirmation (which selection kinds invoke the funnel; produce-calls per event; synchronous;
+no loop; the field pattern reproduced by code facts); Task 2 the windowed-vs-whole-piece
+decode study — the 3.1b transfer question measured FOR A: per-query stability curves over
+nested spans (4→whole measures), the smallest-stable-span distribution, ground-truth accuracy
+per span at the queried cells, the cost curve, predictions recorded first (#17b). AFTER IT:
+Cowork presents the OI-206 fix decision surface (cache / off-thread / bounded
+grow-until-stable with the measured stopping criterion); then OI-207; then the marginals C++
+follow-up.**
 
 **★★ OI-206 — A STOP-CLASS FIELD REPORT ARRIVED MID-FLIGHT (user, 2026-07-27, running the
 switched build): selection highlight NEVER renders (selection STATE works — status bar shows
