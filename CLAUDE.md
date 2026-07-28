@@ -718,10 +718,80 @@ Build commands via `Start-Process` are isolated from these rules (exit code not 
 - No confirmation prompts between analyse → implement → build → test steps
 - Commit only when explicitly asked
 - never hallucinate or guess, verified facts only - better ask first if unsure.
+- **NEVER WORK FROM MEMORY INSTEAD OF DOCUMENTED FACTS (user-directed, 2026-07-28; binds Cowork
+  and CC equally).** No assertion, design, decision, dispatch or report may rest on recalled or
+  inferred content when a documented source exists. Open the primary source and cite it
+  (file:line). This is STRONGER than the no-guessing rule above and is not satisfied by being
+  right: correct memory is indistinguishable from incorrect memory without checking, so "I was
+  probably right" is not a defence — and the check is what surfaces the parts the memory did not
+  contain. **Where the primary source is:** how a layer *should* work → **that layer's section in
+  `ARCHITECTURE.md`** (the primary place such decisions are recorded — not exclusively, but
+  first); a ruling → the ratified `cowork_*` decision document and its dated amendments (and, once
+  it exists, the decisions register, OI-208); current state and baselines → `STATUS.md` and
+  `CLAUDE.md` gate block (A); an open issue → the `OPEN_ITEMS.md` INDEX and its detail file;
+  what the code does → the code. **Founding instance:** on 2026-07-28 Cowork reasoned about note
+  collection from `ARCHITECTURE.md` §2.15 and the factorization document without opening the
+  Layer-2 specification, and reported the position as ambiguous; the specification states it
+  explicitly and twice (`ARCHITECTURE.md:1045-1053`, slice identity IS the eligible sounding-note
+  set with releases as boundaries; `:3134-3141`, actual sounding notes ranked the STRONGEST
+  evidence), which turned an "ambiguous spec, narrowed in implementation" reading into a
+  documented decision the implementation contradicts. The primary source was more specific than
+  the memory of it, which is the general case, not the exception.
 - **No self-invented labels, abbreviations, numbering schemes, or jargon** — in documents,
   register rows, commit messages, and conversation alike. Use the name a thing already has
   in the repository; if it has none, describe it in plain words. (User-directed, repeatedly;
   recorded 2026-07-11.)
+- **THE WRITING STANDARDS LIVE IN `cowork_design_doc_template.md` — read it before writing any
+  specification, design document, decision surface, or anything presented to the user.** Two
+  standards: **predicates must be qualified** (user, 2026-06-24 — every two-place word names its
+  argument; the mechanical check is to force the word to be followed by the thing it points at,
+  and a phrase the prose cannot supply is a hole), and **defined terms, plain vocabulary, no
+  shorthand** (user, 2026-07-02 — a terms table with nothing used before its row; no invented
+  synonyms; no insider compression, a jargon handle only after its rule has been stated; inherited
+  prose audited as hard as new). That file also carries the fourteen-section document structure,
+  the status-banner convention, and the implementation/test locator rule. It is the ONE home for
+  writing standards; the entry below sharpens its rule 5 and does not replace it (#6).
+- **MUSIC-THEORY WORDS ARE RESERVED FOR THEIR MUSIC-THEORY MEANING (user-directed, 2026-07-28;
+  sharpens `cowork_design_doc_template.md` rule 5 of 2026-07-02, whose own examples were *key*,
+  *bar* and *measure* — that rule said one declared sense per document; this makes the choice
+  mechanical rather than per-document. Binds Cowork and CC equally.)** Any term that coincides even slightly with music theory is used
+  ONLY in its musical sense. This is a music-analysis system: an ambiguous domain vocabulary makes
+  every document harder to read and every specification easier to misapply. The generalization of
+  the "instrument" case — that word means a violin, not a measurement script; say *measurement
+  tool*, *check*, *script*, or *generator*. Where a collision already exists in the tree it is NOT
+  renamed unilaterally: the pass is scoped and ratified as its own work item (some names carry
+  correspondence to the published research the design is grounded in, #1/#2, so the rename is a
+  decision surface, not a sweep). But **no NEW collision is introduced**, and **anything written
+  for the user avoids the collided sense entirely.** Known collisions in current use, as the
+  starting inventory: *instrument*, *score* (numerical vs musical), *key* (map key vs tonality),
+  *measure* (to measure vs the bar), *stem* (filename stem vs note stem), *note* (annotation vs
+  pitch event), *mode* (operating mode vs musical mode), *tie* (score tie-break vs notated tie),
+  *dynamic* (dynamic programming vs dynamics), *register* (issue register vs pitch register),
+  *beat* (to defeat vs the pulse), *scale* (to scale vs the collection), *figure* (a reported
+  figure vs figuration), *interval* (confidence interval vs pitch interval), *resolution* (of
+  detail vs of a dissonance), *sharpen* (to refine vs to raise a pitch), *flat* (a flat profile vs
+  the accidental), *root* (root cause vs chord root), *part* (a portion vs a musical part), *rest*
+  (the remainder vs the silence).
+  **THE DISAMBIGUATION CONVENTION (user-directed, 2026-07-28) — one rule covering every case:
+  THE BARE WORD ALWAYS CARRIES THE MUSICAL MEANING; EVERY NON-MUSICAL USE IS EXPLICITLY
+  QUALIFIED.** Bare *score* is the music — the numerical sense is always *candidate score* /
+  *content score* / *total score*, never bare. Bare *key* is tonality — the other is *map key* /
+  *cache key* / *lookup key*. Bare *measure* (noun) is the bar — the gauging sense is
+  *measurement* (the verb "to measure" is unambiguous and stays). Bare *note* is a pitch event —
+  the other is a *remark* / *annotation* / *entry*. Bare *mode* is the musical mode — the other is
+  *operating mode*. Bare *register* is pitch register — the other is *the open-items register*, in
+  full. Bare *tie* is the notated tie — the other is *tie-break*, always compound. Bare *dynamics*
+  is the musical marking — the other is *dynamic programming*, always in full. Likewise *stem*
+  (note stem; the other is *file name* / *piece identifier*), *interval* (pitch; the other is
+  *uncertainty range*), *figure* (figuration; the other is *number* / *value*), *resolution*
+  (harmonic; the other is *level of detail*), *scale* (the collection; the other is *grows with*),
+  *beat* (the pulse; never a verb for "outperformed"), *root* (chord root; the other is
+  *underlying cause*), *rest* (the silence; the other is *remainder*), *part* (musical part; the
+  other is *portion* / *component*), *flat* (the accidental; the other is *featureless*),
+  *instrument* (a violin; the other is *measurement tool* / *check* / *script*). This makes the
+  eventual cleanup a BOUNDED job rather than a rename: much of the tree already complies by
+  accident (`totalScore`, `content score`, `segmentContentScore` are qualified already), so only
+  the BARE uses in a non-musical sense need touching.
 
 ## The self-check after every coding exercise (user-directed, 2026-07-11)
 
