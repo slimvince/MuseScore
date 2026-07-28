@@ -1,0 +1,483 @@
+{
+ "establishes": "tools/audit/decisions/gen_decision_clusters.py \u2014 the MinHash+LSH near-identical-text grouping",
+ "method": "brute-force EXACT Jaccard over every pair of similarity-eligible units sharing at least one shingle (a pair sharing none has similarity 0, so the enumeration is complete), by sparse boolean matrix multiplication",
+ "input_sha256": "51850440b315e6e96c750798e5202aa6c2f5aa388fd7a37bcc13d9b37c73b94d",
+ "head_commit": "11ec8a4c3bb4a544bfeffb88036d08233ce62964",
+ "floor": 0.7,
+ "similarity_eligible_units": 13894,
+ "distinct_shingles": 699968,
+ "exact_pairs_at_or_above_floor": 93,
+ "pairs_found_by_the_tool": 93,
+ "missed_by_the_tool": 0,
+ "spurious_from_the_tool": 0,
+ "recall": 1.0,
+ "precision": 1.0,
+ "verdict": "ESTABLISHED",
+ "exact_pairs": [
+  {
+   "a": "DH-07914",
+   "b": "DH-07925",
+   "similarity": 0.9672
+  },
+  {
+   "a": "DH-00089",
+   "b": "DH-12680",
+   "similarity": 0.9621
+  },
+  {
+   "a": "DH-06327",
+   "b": "DH-10097",
+   "similarity": 0.95
+  },
+  {
+   "a": "DH-07079",
+   "b": "DH-07111",
+   "similarity": 0.9444
+  },
+  {
+   "a": "DH-09123",
+   "b": "DH-09143",
+   "similarity": 0.9333
+  },
+  {
+   "a": "DH-00329",
+   "b": "DH-04306",
+   "similarity": 0.9231
+  },
+  {
+   "a": "DH-04762",
+   "b": "DH-06851",
+   "similarity": 0.9231
+  },
+  {
+   "a": "DH-09824",
+   "b": "DH-13371",
+   "similarity": 0.9231
+  },
+  {
+   "a": "DH-07142",
+   "b": "DH-07200",
+   "similarity": 0.9167
+  },
+  {
+   "a": "DH-09210",
+   "b": "DH-09220",
+   "similarity": 0.9167
+  },
+  {
+   "a": "DH-09645",
+   "b": "DH-09658",
+   "similarity": 0.9167
+  },
+  {
+   "a": "DH-09364",
+   "b": "DH-12582",
+   "similarity": 0.9155
+  },
+  {
+   "a": "DH-00365",
+   "b": "DH-04524",
+   "similarity": 0.9091
+  },
+  {
+   "a": "DH-00445",
+   "b": "DH-04865",
+   "similarity": 0.9091
+  },
+  {
+   "a": "DH-07487",
+   "b": "DH-07509",
+   "similarity": 0.9091
+  },
+  {
+   "a": "DH-00273",
+   "b": "DH-01796",
+   "similarity": 0.9
+  },
+  {
+   "a": "DH-08254",
+   "b": "DH-11363",
+   "similarity": 0.8947
+  },
+  {
+   "a": "DH-06557",
+   "b": "DH-06571",
+   "similarity": 0.8929
+  },
+  {
+   "a": "DH-02743",
+   "b": "DH-06562",
+   "similarity": 0.8864
+  },
+  {
+   "a": "DH-07707",
+   "b": "DH-07893",
+   "similarity": 0.8723
+  },
+  {
+   "a": "DH-07872",
+   "b": "DH-07883",
+   "similarity": 0.8684
+  },
+  {
+   "a": "DH-07701",
+   "b": "DH-08405",
+   "similarity": 0.8654
+  },
+  {
+   "a": "DH-00599",
+   "b": "DH-06751",
+   "similarity": 0.8588
+  },
+  {
+   "a": "DH-12602",
+   "b": "DH-14171",
+   "similarity": 0.8582
+  },
+  {
+   "a": "DH-07889",
+   "b": "DH-07956",
+   "similarity": 0.8571
+  },
+  {
+   "a": "DH-06504",
+   "b": "DH-06505",
+   "similarity": 0.8333
+  },
+  {
+   "a": "DH-11077",
+   "b": "DH-14991",
+   "similarity": 0.8333
+  },
+  {
+   "a": "DH-07818",
+   "b": "DH-07893",
+   "similarity": 0.8298
+  },
+  {
+   "a": "DH-07859",
+   "b": "DH-07871",
+   "similarity": 0.8229
+  },
+  {
+   "a": "DH-05850",
+   "b": "DH-07152",
+   "similarity": 0.8182
+  },
+  {
+   "a": "DH-05850",
+   "b": "DH-07211",
+   "similarity": 0.8182
+  },
+  {
+   "a": "DH-05850",
+   "b": "DH-07251",
+   "similarity": 0.8182
+  },
+  {
+   "a": "DH-07152",
+   "b": "DH-07211",
+   "similarity": 0.8182
+  },
+  {
+   "a": "DH-07152",
+   "b": "DH-07251",
+   "similarity": 0.8182
+  },
+  {
+   "a": "DH-07211",
+   "b": "DH-07251",
+   "similarity": 0.8182
+  },
+  {
+   "a": "DH-13977",
+   "b": "DH-14126",
+   "similarity": 0.8182
+  },
+  {
+   "a": "DH-05886",
+   "b": "DH-07236",
+   "similarity": 0.8077
+  },
+  {
+   "a": "DH-14564",
+   "b": "DH-14592",
+   "similarity": 0.8077
+  },
+  {
+   "a": "DH-01766",
+   "b": "DH-05783",
+   "similarity": 0.8
+  },
+  {
+   "a": "DH-03597",
+   "b": "DH-12806",
+   "similarity": 0.8
+  },
+  {
+   "a": "DH-08174",
+   "b": "DH-11276",
+   "similarity": 0.8
+  },
+  {
+   "a": "DH-09223",
+   "b": "DH-09240",
+   "similarity": 0.8
+  },
+  {
+   "a": "DH-10900",
+   "b": "DH-11052",
+   "similarity": 0.8
+  },
+  {
+   "a": "DH-13854",
+   "b": "DH-14545",
+   "similarity": 0.8
+  },
+  {
+   "a": "DH-07732",
+   "b": "DH-07788",
+   "similarity": 0.7917
+  },
+  {
+   "a": "DH-07849",
+   "b": "DH-07906",
+   "similarity": 0.7875
+  },
+  {
+   "a": "DH-07936",
+   "b": "DH-07948",
+   "similarity": 0.7826
+  },
+  {
+   "a": "DH-08096",
+   "b": "DH-08164",
+   "similarity": 0.7778
+  },
+  {
+   "a": "DH-09528",
+   "b": "DH-12830",
+   "similarity": 0.7778
+  },
+  {
+   "a": "DH-09870",
+   "b": "DH-09880",
+   "similarity": 0.7778
+  },
+  {
+   "a": "DH-10552",
+   "b": "DH-10702",
+   "similarity": 0.7778
+  },
+  {
+   "a": "DH-12379",
+   "b": "DH-12393",
+   "similarity": 0.7778
+  },
+  {
+   "a": "DH-12379",
+   "b": "DH-12404",
+   "similarity": 0.7778
+  },
+  {
+   "a": "DH-12393",
+   "b": "DH-12404",
+   "similarity": 0.7778
+  },
+  {
+   "a": "DH-07914",
+   "b": "DH-07948",
+   "similarity": 0.7761
+  },
+  {
+   "a": "DH-08869",
+   "b": "DH-08888",
+   "similarity": 0.7742
+  },
+  {
+   "a": "DH-00709",
+   "b": "DH-00718",
+   "similarity": 0.7727
+  },
+  {
+   "a": "DH-04463",
+   "b": "DH-10139",
+   "similarity": 0.7692
+  },
+  {
+   "a": "DH-07482",
+   "b": "DH-10164",
+   "similarity": 0.7692
+  },
+  {
+   "a": "DH-04251",
+   "b": "DH-09856",
+   "similarity": 0.7667
+  },
+  {
+   "a": "DH-00249",
+   "b": "DH-02626",
+   "similarity": 0.7665
+  },
+  {
+   "a": "DH-08888",
+   "b": "DH-08906",
+   "similarity": 0.7586
+  },
+  {
+   "a": "DH-08337",
+   "b": "DH-11520",
+   "similarity": 0.7561
+  },
+  {
+   "a": "DH-06470",
+   "b": "DH-06477",
+   "similarity": 0.75
+  },
+  {
+   "a": "DH-07925",
+   "b": "DH-07948",
+   "similarity": 0.75
+  },
+  {
+   "a": "DH-08161",
+   "b": "DH-08385",
+   "similarity": 0.75
+  },
+  {
+   "a": "DH-09120",
+   "b": "DH-09141",
+   "similarity": 0.75
+  },
+  {
+   "a": "DH-09822",
+   "b": "DH-13369",
+   "similarity": 0.75
+  },
+  {
+   "a": "DH-07914",
+   "b": "DH-07936",
+   "similarity": 0.7465
+  },
+  {
+   "a": "DH-06580",
+   "b": "DH-07701",
+   "similarity": 0.7419
+  },
+  {
+   "a": "DH-07492",
+   "b": "DH-07515",
+   "similarity": 0.7391
+  },
+  {
+   "a": "DH-09711",
+   "b": "DH-13116",
+   "similarity": 0.7349
+  },
+  {
+   "a": "DH-08869",
+   "b": "DH-08906",
+   "similarity": 0.7333
+  },
+  {
+   "a": "DH-09891",
+   "b": "DH-13434",
+   "similarity": 0.7333
+  },
+  {
+   "a": "DH-08896",
+   "b": "DH-08906",
+   "similarity": 0.7308
+  },
+  {
+   "a": "DH-07804",
+   "b": "DH-07893",
+   "similarity": 0.7222
+  },
+  {
+   "a": "DH-07925",
+   "b": "DH-07936",
+   "similarity": 0.7222
+  },
+  {
+   "a": "DH-09217",
+   "b": "DH-09257",
+   "similarity": 0.7209
+  },
+  {
+   "a": "DH-07707",
+   "b": "DH-07818",
+   "similarity": 0.72
+  },
+  {
+   "a": "DH-07872",
+   "b": "DH-07948",
+   "similarity": 0.72
+  },
+  {
+   "a": "DH-07891",
+   "b": "DH-07957",
+   "similarity": 0.7195
+  },
+  {
+   "a": "DH-09223",
+   "b": "DH-09232",
+   "similarity": 0.7188
+  },
+  {
+   "a": "DH-09232",
+   "b": "DH-09240",
+   "similarity": 0.7188
+  },
+  {
+   "a": "DH-05421",
+   "b": "DH-13296",
+   "similarity": 0.7143
+  },
+  {
+   "a": "DH-00268",
+   "b": "DH-13354",
+   "similarity": 0.7108
+  },
+  {
+   "a": "DH-03771",
+   "b": "DH-06960",
+   "similarity": 0.7091
+  },
+  {
+   "a": "DH-06488",
+   "b": "DH-06498",
+   "similarity": 0.7083
+  },
+  {
+   "a": "DH-07849",
+   "b": "DH-07883",
+   "similarity": 0.7073
+  },
+  {
+   "a": "DH-06556",
+   "b": "DH-06570",
+   "similarity": 0.7059
+  },
+  {
+   "a": "DH-09127",
+   "b": "DH-09137",
+   "similarity": 0.7059
+  },
+  {
+   "a": "DH-08896",
+   "b": "DH-09044",
+   "similarity": 0.7037
+  },
+  {
+   "a": "DH-07883",
+   "b": "DH-07948",
+   "similarity": 0.7013
+  },
+  {
+   "a": "DH-08677",
+   "b": "DH-08728",
+   "similarity": 0.7
+  }
+ ]
+}

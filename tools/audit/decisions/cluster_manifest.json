@@ -1,0 +1,210 @@
+{
+ "instrument": "tools/audit/decisions/gen_decision_clusters.py",
+ "instrument_blob_sha": "64ef37a681d788877aa11af1e4f0eed42c14d5d6",
+ "purpose": "OI-207/OI-208 \u2014 the mechanical clustering LAYER over the decision harvest. Proposes which candidate statements are the same decision. NO adjudication: no status, no conformance, no supersession named.",
+ "input": {
+  "file": "tools/audit/decisions/decision_candidates.json",
+  "harvest_head_commit": "383429961f0c89870ba26ad94235befc1ac54cfc",
+  "total_candidates": 15224,
+  "distinct_statements": 14514
+ },
+ "head_commit": "11ec8a4c3bb4a544bfeffb88036d08233ce62964",
+ "input_candidates": 15224,
+ "signals": [
+  {
+   "signal": 1,
+   "name": "near-identical text",
+   "strength": "primary",
+   "definition": "Jaccard similarity of word 3-gram shingles on the normalized text, >= 0.80; statements shorter than 8 tokens are matched by EXACT normalized text only.",
+   "role": "forms the clusters"
+  },
+  {
+   "signal": 2,
+   "name": "shared evidence pointer",
+   "strength": "weaker",
+   "definition": "two clusters cite the same commit hash, document, open-item id or artifact path; a pointer shared by more than 25 clusters is reported as too common to be a signal.",
+   "role": "links clusters; NEVER merges them"
+  },
+  {
+   "signal": 3,
+   "name": "same date and same ratifier",
+   "strength": "weakest",
+   "definition": "two clusters carry the same date and the same ratifier; a pair shared by more than 25 clusters is reported as too common.",
+   "role": "corroborating only"
+  }
+ ],
+ "similarity_threshold": 0.8,
+ "shingle_width_words": 3,
+ "min_tokens_for_similarity": 8,
+ "minhash": {
+  "permutations": 256,
+  "bands": 32,
+  "rows_per_band": 8,
+  "band_50pct_similarity": 0.6484,
+  "generation_probability_at_threshold": 0.9972,
+  "caveat": "the two lowest sweep rungs (0.70, 0.75) are LOWER BOUNDS: the band configuration is tuned for the 0.80 operating point, so a small fraction of pairs below it is not generated."
+ },
+ "cluster_count": 14460,
+ "size_distribution": {
+  "1": 14274,
+  "2-5": 165,
+  "6-20": 16,
+  "21+": 5
+ },
+ "largest_cluster_occurrences": 230,
+ "clusters_formed_by_chaining": 1,
+ "internally_divergent_clusters": 6,
+ "internally_divergent_by_trigger": {
+  "numbers differ between members": 6
+ },
+ "internally_divergent_outside_the_boilerplate_bucket": 5,
+ "internally_divergent_largest": [
+  {
+   "cluster_id": "DC-00073",
+   "occurrences": 2,
+   "triggers": [
+    "numbers differ between members"
+   ],
+   "boilerplate_class": null,
+   "representative": "cowork_fb_redesign_design.md:310"
+  },
+  {
+   "cluster_id": "DC-00076",
+   "occurrences": 2,
+   "triggers": [
+    "numbers differ between members"
+   ],
+   "boilerplate_class": null,
+   "representative": "cowork_phase5_branch_backfill_spec.md:83"
+  },
+  {
+   "cluster_id": "DC-00078",
+   "occurrences": 2,
+   "triggers": [
+    "numbers differ between members"
+   ],
+   "boilerplate_class": null,
+   "representative": "docs/beam_widening_design.md:403"
+  },
+  {
+   "cluster_id": "DC-00091",
+   "occurrences": 2,
+   "triggers": [
+    "numbers differ between members"
+   ],
+   "boilerplate_class": null,
+   "representative": "cc_engage_pre_l5_refactor_report.md:165"
+  },
+  {
+   "cluster_id": "DC-00112",
+   "occurrences": 2,
+   "triggers": [
+    "numbers differ between members"
+   ],
+   "boilerplate_class": "dispatch_instruction",
+   "representative": "cc_instruction_l4_audit_pass1_oracle.md:146"
+  },
+  {
+   "cluster_id": "DC-00180",
+   "occurrences": 2,
+   "triggers": [
+    "numbers differ between members"
+   ],
+   "boilerplate_class": null,
+   "representative": "src/composing/analysis/types/analysistypes.h:273"
+  }
+ ],
+ "worked_counter_example": {
+  "name": "the Stage-3.1b shelving of whole-score interactive analysis",
+  "query": {
+   "must_match": "3\\.1b",
+   "and_match": "shelv|whole[- ]score|whole[- ]piece|overturn"
+  },
+  "matching_candidates": 46,
+  "distinct_clusters_they_fall_into": 46,
+  "all_in_singleton_clusters": true
+ },
+ "boilerplate": {
+  "clusters": 74,
+  "occurrences": 373,
+  "by_class": {
+   "document_scaffolding": {
+    "clusters": 24,
+    "occurrences": 214,
+    "rules": {
+     "heading or table header row, recurring": 24
+    }
+   },
+   "dispatch_instruction": {
+    "clusters": 50,
+    "occurrences": 159,
+    "rules": {
+     "push_target": 21,
+     "withheld_files": 2,
+     "stop_condition_line": 24,
+     "do_not_push": 1,
+     "self_check_line": 1,
+     "read_only_scope": 1
+    }
+   }
+  },
+  "policy": "KEPT, never deleted \u2014 bucketed and labelled by class so the adjudication can confirm the judgment a class at a time."
+ },
+ "evidence_links": {
+  "groups": 1876,
+  "pointers_too_common_to_be_a_signal": 193
+ },
+ "date_ratifier_links": {
+  "groups": 52,
+  "pairs_too_common_to_be_a_signal": 16
+ },
+ "diagnostics": {
+  "units_total": 14501,
+  "units_similarity_eligible": 13894,
+  "units_exact_only": 607,
+  "lsh_candidate_pairs": 176,
+  "verified_pairs_at_sweep_floor": 93,
+  "non_destructive": {
+   "input_candidates": 15224,
+   "candidates_placed_in_a_cluster": 15224,
+   "every_candidate_exactly_once": true,
+   "id_set_identical_to_input": true,
+   "input_sha256": "51850440b315e6e96c750798e5202aa6c2f5aa388fd7a37bcc13d9b37c73b94d",
+   "input_unchanged_by_this_tool": true,
+   "verdict": "PASS"
+  },
+  "threshold_sweep": {
+   "0.70": {
+    "clusters": 14419,
+    "largest_cluster_occurrences": 230
+   },
+   "0.75": {
+    "clusters": 14438,
+    "largest_cluster_occurrences": 230
+   },
+   "0.80": {
+    "clusters": 14460,
+    "largest_cluster_occurrences": 230
+   },
+   "0.85": {
+    "clusters": 14476,
+    "largest_cluster_occurrences": 230
+   },
+   "0.90": {
+    "clusters": 14485,
+    "largest_cluster_occurrences": 230
+   },
+   "0.95": {
+    "clusters": 14498,
+    "largest_cluster_occurrences": 230
+   }
+  }
+ },
+ "outputs": [
+  "decision_clusters.json",
+  "decision_clusters.csv",
+  "cluster_manifest.json",
+  "cluster_preview.md"
+ ],
+ "NOTE": "status, conformance and supersession are NOT decided here. The per-cluster representative is a PROPOSAL chosen by source authority alone. Every input candidate is present in exactly one cluster and remains individually readable in decision_candidates.json."
+}
