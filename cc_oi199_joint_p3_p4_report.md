@@ -323,8 +323,8 @@ rows lacked:
 - **Instrument commit (for a one-cherry-pick re-add, per OI-110): `a5d10a328d`.** The counters are
   reverted in their own final commit (`git checkout b14a523112 -- <the 3 files>`); **`git diff
   b14a523112 -- src/` is EMPTY after the revert (byte-identity proof).**
-- Suites after revert (built from the b14a523112-identical `src/`): composing `_[n]_`, notation `_[n]_`,
-  pipeline-snapshot goldens `_[n]_` — GREEN (see the revert commit message).
+- Suites after revert (rebuilt from the b14a523112-identical `src/`): **composing 1186, notation 61
+  (+4 known-skip xfails), pipeline-snapshot goldens 13 — GREEN.**
 - Register: **OI-224** (the two arms under-delivered at pass 1 — method finding on OI-199), **OI-225**
   (correction of record — the dispositions were not "generated not made"/void; the verdict-entropy guard
   withdrawn), **OI-226** (candidate admission has no ratified basis — the Task-2 finding, feeds OI-215's
