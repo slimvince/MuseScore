@@ -1,0 +1,220 @@
+{
+ "head_commit": "383429961f0c89870ba26ad94235befc1ac54cfc",
+ "caught_anywhere": 10,
+ "caught_at_home": 10,
+ "total": 10,
+ "results": [
+  {
+   "seed": "1 Stage-3.1b shelving of whole-score interactive analysis",
+   "caught_anywhere": true,
+   "caught_at_home": true,
+   "n_hits": 21,
+   "home_files": [
+    "src/notation/internal/notationcomposingbridge.cpp",
+    "docs/p3_granularity_ab_3_1b.md"
+   ],
+   "home_hit": {
+    "id": "DH-14548",
+    "file": "src/notation/internal/notationcomposingbridge.cpp",
+    "line": 331,
+    "needle": "whole-score decode was SHELVED"
+   },
+   "sample_hit": {
+    "id": "DH-00472",
+    "file": "STATUS.md",
+    "line": 158,
+    "needle": "was shelved"
+   }
+  },
+  {
+   "seed": "2 joint-native record ruling (Decision A2)",
+   "caught_anywhere": true,
+   "caught_at_home": true,
+   "n_hits": 12,
+   "home_files": [
+    "cowork_notation_output_contract.md"
+   ],
+   "home_hit": {
+    "id": "DH-02691",
+    "file": "cowork_notation_output_contract.md",
+    "line": 21,
+    "needle": "Decision A2"
+   },
+   "sample_hit": {
+    "id": "DH-00002",
+    "file": "ARCHITECTURE.md",
+    "line": 11,
+    "needle": "Decision A2"
+   }
+  },
+  {
+   "seed": "3 two-mode key ruling + published un-rounded modal reading (C1)",
+   "caught_anywhere": true,
+   "caught_at_home": true,
+   "n_hits": 43,
+   "home_files": [
+    "cowork_notation_output_contract.md"
+   ],
+   "home_hit": {
+    "id": "DH-02691",
+    "file": "cowork_notation_output_contract.md",
+    "line": 21,
+    "needle": "un-rounded publication of modal"
+   },
+   "sample_hit": {
+    "id": "DH-00002",
+    "file": "ARCHITECTURE.md",
+    "line": 11,
+    "needle": "un-rounded modal reading"
+   }
+  },
+  {
+   "seed": "4 embedded-tables ruling (Decision D1)",
+   "caught_anywhere": true,
+   "caught_at_home": true,
+   "n_hits": 32,
+   "home_files": [
+    "cowork_notation_output_contract.md"
+   ],
+   "home_hit": {
+    "id": "DH-02688",
+    "file": "cowork_notation_output_contract.md",
+    "line": 3,
+    "needle": "Decision D1"
+   },
+   "sample_hit": {
+    "id": "DH-00002",
+    "file": "ARCHITECTURE.md",
+    "line": 11,
+    "needle": "Decision D1"
+   }
+  },
+  {
+   "seed": "5 pedal-point ruling + voice-independence sharpening",
+   "caught_anywhere": true,
+   "caught_at_home": true,
+   "n_hits": 24,
+   "home_files": [
+    "cowork_notation_adoption_increment.md"
+   ],
+   "home_hit": {
+    "id": "DH-02683",
+    "file": "cowork_notation_adoption_increment.md",
+    "line": 477,
+    "needle": "pedal-point ruling"
+   },
+   "sample_hit": {
+    "id": "DH-00005",
+    "file": "ARCHITECTURE.md",
+    "line": 211,
+    "needle": "voice-independent pedal"
+   }
+  },
+  {
+   "seed": "6 decision-neutrality corollary (CLAUDE.md)",
+   "caught_anywhere": true,
+   "caught_at_home": true,
+   "n_hits": 22,
+   "home_files": [
+    "CLAUDE.md"
+   ],
+   "home_hit": {
+    "id": "DH-00248",
+    "file": "CLAUDE.md",
+    "line": 91,
+    "needle": "Decision-neutrality of the existing implementation"
+   },
+   "sample_hit": {
+    "id": "DH-00248",
+    "file": "CLAUDE.md",
+    "line": 91,
+    "needle": "Decision-neutrality of the existing implementation"
+   }
+  },
+  {
+   "seed": "7 full-candidate-list amendment to the output contract",
+   "caught_anywhere": true,
+   "caught_at_home": true,
+   "n_hits": 6,
+   "home_files": [
+    "cowork_notation_output_contract.md"
+   ],
+   "home_hit": {
+    "id": "DH-02697",
+    "file": "cowork_notation_output_contract.md",
+    "line": 108,
+    "needle": "FULL scoreable candidate lists"
+   },
+   "sample_hit": {
+    "id": "DH-00002",
+    "file": "ARCHITECTURE.md",
+    "line": 11,
+    "needle": "candidate lists"
+   }
+  },
+  {
+   "seed": "8 never-merge-upstream distribution constraint (CLAUDE.md)",
+   "caught_anywhere": true,
+   "caught_at_home": true,
+   "n_hits": 2,
+   "home_files": [
+    "CLAUDE.md"
+   ],
+   "home_hit": {
+    "id": "DH-00295",
+    "file": "CLAUDE.md",
+    "line": 673,
+    "needle": "FORK-LOCAL ONLY"
+   },
+   "sample_hit": {
+    "id": "DH-00295",
+    "file": "CLAUDE.md",
+    "line": 673,
+    "needle": "FORK-LOCAL ONLY"
+   }
+  },
+  {
+   "seed": "9 ratified robust-unit regression stop",
+   "caught_anywhere": true,
+   "caught_at_home": true,
+   "n_hits": 20,
+   "home_files": [
+    "CLAUDE.md"
+   ],
+   "home_hit": {
+    "id": "DH-00256",
+    "file": "CLAUDE.md",
+    "line": 228,
+    "needle": "THE ROBUST-UNIT REGRESSION STOP"
+   },
+   "sample_hit": {
+    "id": "DH-00256",
+    "file": "CLAUDE.md",
+    "line": 228,
+    "needle": "THE ROBUST-UNIT REGRESSION STOP"
+   }
+  },
+  {
+   "seed": "10 ordering rule: retirement map precedes the reviews",
+   "caught_anywhere": true,
+   "caught_at_home": true,
+   "n_hits": 9,
+   "home_files": [
+    "open_items/OI-205.md",
+    "OPEN_ITEMS.md"
+   ],
+   "home_hit": {
+    "id": "DH-00398",
+    "file": "OPEN_ITEMS.md",
+    "line": 177,
+    "needle": "AFTER the OI-180 retirement map"
+   },
+   "sample_hit": {
+    "id": "DH-00398",
+    "file": "OPEN_ITEMS.md",
+    "line": 177,
+    "needle": "AFTER the OI-180 retirement map"
+   }
+  }
+ ]
+}

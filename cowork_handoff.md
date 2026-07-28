@@ -1,7 +1,127 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE 2026-07-28 (FOURTH) — OI-199 PASS 1 RECEIVED; TWO PROCESS FAILURES, ONE COWORK'S; THE LIVE QUESTION IS NOW **IS OI-215 ALONE?** THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE 2026-07-28 (FIFTH) — OI-215 IS **NOT** ALONE; AND THE EMISSION ITSELF READS STRUCK NOTES WHERE THE RATIFIED SPEC SAYS PER TONE. THE FRIDAY CONFORMANCE ENUMERATION IS THE NEXT MAJOR EVENT. THE CURRENT ENTRY POINT.
+
+**You (the next session) start clueless — this block is the entire handover.** Read, in order:
+(1) `CLAUDE.md` IN FULL; (2) `OPEN_ITEMS.md` (INDEX), opening at minimum **OI-215, OI-226, OI-227,
+the emission-conformance row created by the active dispatch, OI-207, OI-208, OI-209, OI-210,
+OI-212, OI-199, OI-110**; (3) this block, then the four earlier 2026-07-28 blocks; (4)
+`cowork_joint_estimator_factorization.md` §2 (the 2026-07-19 granularity amendment) and §3.1–3.3
+(the emission, spelling and bass factors) — the specification the implementation departs from;
+(5) `docs/p3_granularity_ab_3_1b.md` and `cowork_architecture_review_2026_07.md` §7.
+
+**★ THE ANSWER: OI-215 IS NOT ALONE.** Verified at the objects (`a5d10a328d`/`e6fe053ad7`/
+`383429961f`; revert proven, `src/` diff empty). Over the 23 large scores — 172,611 events, **312
+uncoverable: 291 (93.3 %) the member-overlap gate on SPARSE windows, 21 (6.7 %) the fit /
+non-chord-tone-budget gate on DENSE chromatic tutti (OI-227)**. Opposite ends of the density
+spectrum, two different gates. **And on the fit corpus: ZERO admission-class failures of any
+kind.** The entire family is invisible on the population this decoder was fitted, parity-checked,
+adoption-measured and baselined against — which does not invalidate those figures but bounds what
+they establish (#9/#19). **OI-226: candidate admission has no ratified basis** in the §5 decode
+plan. CC's prediction discipline worked: 6/7 bands hit, the one miss the band it pre-registered as
+uncertain — #17(b) doing exactly its job.
+
+**★ THE DEEPER FINDING, AND THE USER'S CORRECTION THAT PRODUCED IT.** Cowork initially defended
+onset-weighting as "held notes are weaker evidence — real voice-leading theory". **The user
+refuted it: that reading is defensible only for decaying instruments; the fit corpus is voices and
+organ, sustaining throughout, so it never applied even where the model was fitted.** Checking the
+code then showed the gap is not confined to admission: **the ratified factorization specifies the
+pitch emission PER TONE, specifies the bass factor as "each event's SOUNDING bass", and carries a
+TIED-OVER PREPARATION covariate — while the implementation walks only tones whose ONSET falls in
+the segment.** A note already sounding contributes nothing to the pitch evidence for the stretch
+it sounds through; the sounding set is consulted in exactly one place, the missing-tone penalty,
+so a held note can spare a chord a penalty but never support it. No ratified statement authorizes
+the narrowing. **Two caveats carried honestly:** the literal phrase is "per tone", not "per
+sounding tone", so the definitive reading needs the surrounding definitions checked rather than
+inferred; and the note tables were FITTED by counting tones some particular way, so a correction
+without a refit would leave the model reading one thing through numbers calibrated to another —
+a real constraint on any fix. **The user's position, recorded: a sounding note is part of the
+sonority; whether it belongs to the chord is what the emission's chord-member / non-chord-tone
+categories are for.**
+
+**★ CONSEQUENCE: THE OI-215 FIX SURFACE IS DEFERRED, DELIBERATELY.** Admission and emission may
+share ONE defect — the model reading struck notes where the design says sounding. Designing an
+admission-only fix would be the patch-per-symptom error (#6/#7). The fix is designed ONCE, over
+the whole family, after the family is known.
+
+**★ USER DIRECTION (2026-07-28): the COMPLETE enumeration of gaps between decided methods —
+implicit and explicit — and the actual implementation runs on FRIDAY, on a higher-capacity
+model.** Cowork stated plainly that it could not deliver a complete enumeration from within a
+session, that doing so means reading every ratified decision, shelving and excluded alternative
+across two archives and the design corpus and checking each against the code, and that claiming
+completeness would be overreach. What runs NOW is its preparation.
+
+**★ THE ACTIVE DISPATCH is `cc_instruction_decision_harvest.md`** — mechanical, read-only,
+**NO adjudication**: extract every decision-bearing statement across both archives, every
+`cowork_*` document, `CLAUDE.md`, `ARCHITECTURE.md`, `docs/`, the register, the `cc_*` reports
+**and production code comments** (the 44-line Stage-3.1b block in `notationcomposingbridge.cpp`
+proves decisions live in code too) into ONE candidate list — verbatim with context, in the field
+shape a decisions register consumes, with **status and conformance left EMPTY for Friday**.
+Established the way any instrument must be (#19): measured recall against ten seeded known
+decisions, signatures iterated until recall is complete, every miss diagnosed. Its purpose is to
+convert an unbounded needle-hunt into a bounded adjudication so Friday's capacity is spent
+judging, not searching. It also rows the emission-conformance finding, which until then exists
+only in conversation. Over-capture is free; under-capture is the only real failure mode.
+
+**★ AFTER IT, in order:** Friday's **OI-207 adjudication** over the candidate list → the
+**decisions register (OI-208)**, whose shape awaits the user's ratification, added to the
+session-start read so a ruling binds mechanically rather than by memory → **then** the
+admission-plus-emission fix surface under the Premise Gate, designed once over the whole family
+→ the instruments partition, sealed and blind under the OI-222 remedy → OI-199 pass 2's blind
+reading and error rate → the analysis-extent decision → the record-seams partition. The OI-180
+map stays blocked. *(The user has ruled candidate admission is COMPLETION, not refinement, so #8
+permits the work — but that licenses deriving the correct rule from the model, never loosening a
+threshold until orchestral scores pass, which is per-case tuning and DT-2 forbids it.)*
+
+**★ THE KNOWN CONFORMANCE INVENTORY so far** (NOT an enumeration — what previous audits happened
+to find; Friday produces the enumeration): whole-score interactive analysis, shelved with evidence
+and specified anyway (OI-206/OI-210); the record producer dropping the ratified span parameter on
+all four seams (OI-212); the emission restricted to struck tones (the new row); the segmenter
+deciding chord identity from the tonic outside the owning layer (OI-175); a Layer-1.5 primitive
+running the full chord scorer (OI-165); reading the engraving structure below the fact layer
+(OI-98); four inequivalent definitions of one published fact (OI-173); the layer assumed
+tonic-independent that is not (OI-170). **Rules that were never decided at all:** candidate
+admission (OI-226), the notation-bridge constants (OI-182), the hand-set constant mass (OI-23),
+the fit manifest read by no code (OI-131), duplicated tables and constants (OI-92, OI-111,
+OI-196, OI-156). **The pattern:** almost every one is a shortcut across a layer boundary or a
+published surface — the two things the architecture is most explicit about. **The structural
+cause is diagnosed:** this project has a register for issues and none for decisions, and decision
+history lives in archives excluded from the session-start read (OI-208).
+
+**★★ THE RULE DIRECTED AT THIS SESSION'S CLOSE (user, 2026-07-28) — NOW IN `CLAUDE.md`
+CONVENTIONS, BINDING COWORK AND CC EQUALLY: NEVER WORK FROM MEMORY INSTEAD OF DOCUMENTED FACTS.**
+No assertion, design, decision, dispatch or report rests on recalled or inferred content where a
+documented source exists — open the primary source and cite it file:line. Stronger than the
+no-guessing rule, and not satisfied by being right: correct memory is indistinguishable from
+incorrect memory without the check, and the check is what surfaces what the memory did not
+contain. **Where the primary source is:** how a layer *should* work → **that layer's section in
+`ARCHITECTURE.md`, first**; a ruling → the ratified `cowork_*` document and its dated amendments
+(and the decisions register once OI-208 exists); state and baselines → `STATUS.md` + gate block
+(A); an open issue → the register INDEX and its detail file; what the code does → the code. The
+founding instance is this session's: Cowork reasoned about note collection from §2.15 and the
+factorization doc without opening the Layer-2 specification and reported the position as
+ambiguous — the specification states it explicitly and twice, and the primary source was more
+specific than the memory of it. That is the general case.
+
+**★ METHOD REMINDERS — the standing list.** Alternatives in **FULL PROSE**, each pro and con
+naming the principle it rests on, each option rated on both the principles and the ultimate
+objective; the option-widget compression was rejected twice and is not used. **Do not chase the
+most recent finding** — ask where it belongs in the ratified sequence. **Verify your own criticism
+against the precedent before levelling it** (the entropy-guard error: Cowork faulted CC's
+dispositions as void, then measured them against the certified L4 pass and found they carried MORE
+verdict diversity — withdrawn). **Do not build a framing on an unconfirmed reading of the user's
+words** ("implementation efficiency" meant BUILD EFFORT; the rule is *make it work first,
+compromise on performance only if performance proves a problem*). **Do not construct a defence for
+a mechanism before checking whether the repertoire supports it** (the decay argument, refuted by
+the user in one line). Withheld findings never enter a mandatory session-start read (OI-222).
+Verify every CC claim at the objects. Never bash for local files; git object reads by explicit SHA
+only.
+
+*(The four earlier 2026-07-28 blocks below are this arc's running record — kept for provenance.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE 2026-07-28 (FOURTH) — OI-199 PASS 1 RECEIVED; TWO PROCESS FAILURES, ONE COWORK'S; THE LIVE QUESTION IS NOW **IS OI-215 ALONE?** (SUPERSEDED as the entry point by the block above.)
 
 **You (the next session) start clueless — this block is the entire handover.** Read, in order:
 (1) `CLAUDE.md` IN FULL; (2) `OPEN_ITEMS.md` (INDEX), opening at minimum **OI-215, OI-216…OI-223,
