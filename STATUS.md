@@ -5,6 +5,22 @@
 > Historical entries live in `STATUS_ARCHIVE.md` (reference-only, NOT part of the session-start
 > read) — a superseded entry moves there instead of accumulating here.
 
+*Last updated: 2026-08-02, LATEST++ (CC — **★ PHASE 1 OF THE THREE-PHASE RULE IS DELIVERED: THE SPECIFICATIONS ARE
+COMPLETE AND TRUE.** READ-ONLY on code: no `src/` change, no golden / `tools/corpus/` / `tools/robust_stop/` movement,
+no behavior change, no fix, no design, no new decision. Dispatch `cc_instruction_spec_completion.md`. Per the OI-222
+remedy this entry is a **POINTER** — the content lives in the specifications themselves, in `DECISIONS.md`, and in the
+dated notes. **Two commits:** `b1af0fe54a` Task 1, the homing acts → `9df7f3ee9d` Task 2, the truth-sync. **Read, in
+this order:** the [[OI-237]] and [[OI-240]] notes (where each of the 20 decisions now lives, and the one tension named
+but NOT settled); the [[OI-232]] / [[OI-238]] / [[OI-242]] / [[OI-257]] / [[OI-236]] / [[OI-112]] notes (what each
+corrected statement now says); the [[OI-233]] and [[OI-107]] notes (**partial** discharge — what is still owed); and
+the [[OI-207]] note (**★ the deferred cluster-disposition regeneration is executed: the phase-2 residual is 5,204
+clusters, not 6,374 — measured split showing the whole move comes from regenerating at the ratified 231-entry backbone
+and NONE of it from the homing**). **Rows: 8 flipped RESOLVED** (OI-232/236/237/238/240/242/257/112), **2 partial with
+dated notes** (OI-233 — the rename pass over `ARCHITECTURE.md` still owed, still sequenced against OI-229; OI-107 —
+§4.1h's iteration-era figures still stale, **plus one NEWLY FOUND instance outside its stated scope: `CLAUDE.md`'s gate
+policy still lists the RETIRED Gate K**). All three guards PASS. **NEXT: phase 2 — issue-finding exhausted with
+measured coverage**, now measured against the specifications this pass completed.)*
+
 *Last updated: 2026-08-02, LATEST+ (Cowork — **★ THE THREE-PHASE SEQUENCING RULE IS RATIFIED (D-231, the
 new `CLAUDE.md` Conventions entry): NO FIX DESIGN until (1) the specifications are COMPLETE (every decision
 homed — conformance measured against the SPECIFICATIONS; the register stays the status ledger) and TRUE
