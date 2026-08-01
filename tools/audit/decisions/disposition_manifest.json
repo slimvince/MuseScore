@@ -1,0 +1,85 @@
+{
+ "instrument": "tools/audit/decisions/gen_cluster_dispositions.py",
+ "purpose": "OI-207 adjudication Task 3 — one recorded disposition per harvested cluster, by numbered bulk rule. NO cluster is left without one.",
+ "inputs": {
+  "candidates": {
+   "file": "tools/audit/decisions/decision_candidates.json",
+   "sha256": "51850440b315e6e96c750798e5202aa6c2f5aa388fd7a37bcc13d9b37c73b94d",
+   "total_candidates": 15224
+  },
+  "clusters": {
+   "file": "tools/audit/decisions/decision_clusters.json",
+   "sha256": "0615b1e61bf10332bbaa763c24304328814727936cc606bb32e9073e4675759c",
+   "cluster_count": 14460
+  },
+  "backbone": {
+   "file": "tools/audit/decisions/backbone_decisions.json",
+   "sha256": "6d22e9ae3a25ccbb585fa8b8262bfa3b551f65357597846029422ffedff2682e",
+   "decision_count": 115
+  }
+ },
+ "head_commit": "c9e0f17b610f3813c5340c8b17bda76b1035d414",
+ "disposition_vocabulary": [
+  "restates",
+  "not-a-decision",
+  "boilerplate",
+  "no-spec-home",
+  "unresolved"
+ ],
+ "rules": [
+  {
+   "id": "BR-1",
+   "rule": "The clustering layer already labelled this cluster boilerplate (a recurring heading, table header row, or standing dispatch instruction line). Confirmed, not re-judged.",
+   "clusters": 74
+  },
+  {
+   "id": "BR-2",
+   "rule": "Every occurrence in the cluster is a section HEADING. A heading names a subject; it does not state a decision.",
+   "clusters": 1099
+  },
+  {
+   "id": "BR-3",
+   "rule": "The cluster's text matches at least one backbone decision whose home IS a layer specification. Recorded as restating that decision (named).",
+   "clusters": 2603
+  },
+  {
+   "id": "BR-4",
+   "rule": "The cluster's text matches one or more backbone decisions, ALL of which are recorded outside any layer specification. Recorded as a decision with no layer-specification home (named) — the Task-4 documentation-gap class.",
+   "clusters": 1780
+  },
+  {
+   "id": "BR-5",
+   "rule": "The text is an instruction to a working session or dispatch scaffolding (a read-only / no-src-change banner, a push or commit instruction, a session-start reading instruction, a build-and-test instruction), not a decision about the system.",
+   "clusters": 215
+  },
+  {
+   "id": "BR-6",
+   "rule": "A Claude Code session report or dispatch whose text is a measurement or delivery narrative (it carries a figure, a test count, a commit hash, or a delivery/verification verb) and matches no backbone decision. A report of work done, not a ruling.",
+   "clusters": 1962
+  },
+  {
+   "id": "BR-7",
+   "rule": "A table row admitted by the harvest's BROAD signature tier only — an inventory or status cell, not a stated decision.",
+   "clusters": 353
+  },
+  {
+   "id": "BR-8",
+   "rule": "Residual: none of the above applies. Recorded UNRESOLVED — the honest outcome, and the count is a finding about the record's legibility.",
+   "clusters": 6374
+  }
+ ],
+ "disposition_counts": {
+  "restates": 2603,
+  "not-a-decision": 3629,
+  "boilerplate": 74,
+  "no-spec-home": 1780,
+  "unresolved": 6374
+ },
+ "completeness_check": {
+  "clusters": 14460,
+  "dispositioned": 14460,
+  "occurrences_covered": 15224,
+  "occurrences_total": 15224,
+  "complete": true
+ }
+}

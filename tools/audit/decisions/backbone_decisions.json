@@ -1,0 +1,2520 @@
+{
+  "header": {
+    "purpose": "OI-207 adjudication Task 1/2 - the BACKBONE decision list, enumerated by reading the ARCHITECTURE.md layer specifications in full. Hand-authored judgment; every entry carries an EXACT verbatim quote from its cited home, mechanically verified by gen_cluster_dispositions.py --verify.",
+    "method": "Specification-first. The harvest's 15,224 candidates are a searchable index and a backstop, not the backbone - a signature net cannot catch a decision written as plain specification (the three known misses: ARCHITECTURE.md:3134-3141, :1045, :3128-3130).",
+    "status_vocabulary": {
+      "live": "in force; nothing in the record supersedes, shelves or falsifies it",
+      "superseded-by": "a later ruling replaces it; the replacement is named",
+      "superseded-in-fact": "a later BUILD replaced what it governs without a ruling that names it; recorded as such, never inferred into 'superseded-by'",
+      "shelved-with-evidence": "withdrawn against cited measurement",
+      "falsified": "cited measurement contradicts it",
+      "deferred": "decided to be built later; the decision itself stands",
+      "not-stated": "the record does not say - NEVER inferred"
+    },
+    "home_rule": "OI-208 ruling 2 - a decision belongs in the OWNING LAYER'S SPECIFICATION. 'home' is where it IS recorded; 'home_is_layer_spec' false means the register points at a non-specification home, which is a documentation gap unless the decision is not a layer decision at all."
+  },
+  "groups": [
+    {
+      "id": "A",
+      "title": "The estimator architecture — the joint estimator"
+    },
+    {
+      "id": "B",
+      "title": "The notation output surface and the record path"
+    },
+    {
+      "id": "C",
+      "title": "Cross-cutting analysis contracts"
+    },
+    {
+      "id": "D",
+      "title": "Layer 1 — the note model"
+    },
+    {
+      "id": "E",
+      "title": "Layer 2 — the slicer"
+    },
+    {
+      "id": "F",
+      "title": "Layer 3 — key and mode"
+    },
+    {
+      "id": "G",
+      "title": "Layer 4 — chord identity"
+    },
+    {
+      "id": "H",
+      "title": "Layer 5 and Layer 6 — function, cadence, grouping"
+    },
+    {
+      "id": "I",
+      "title": "Module boundaries and code structure"
+    },
+    {
+      "id": "J",
+      "title": "Presentation and output conventions"
+    },
+    {
+      "id": "K",
+      "title": "Documentation governance"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D-001",
+      "group": "A",
+      "title": "Key, mode and chord are inferred by ONE joint decode",
+      "verbatim": "Key, mode, and chord are inferred by ONE probabilistic decode\n> over `(tonic, mode, chord)` with segmentation as a modeled (semi-Markov) variable and every enumerated clue\n> as a theory-grounded factor",
+      "plain": "The tonality, the major/minor character and the chord are not worked out one after another. They are worked out together, in a single pass that also decides where one chord ends and the next begins.",
+      "home": "ARCHITECTURE.md:4-6",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "2026-07-17",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "ARCHITECTURE.md:3 (GOVERNING DECISION banner); OPEN_ITEMS.md:15-26",
+      "patterns": [
+        "joint estimator",
+        "joint decode",
+        "GOVERNING (ARCHITECTURE )?DECISION",
+        "one probabilistic decode",
+        "\\(tonic, ?mode, ?chord\\)",
+        "estimator is JOINT",
+        "option A"
+      ]
+    },
+    {
+      "id": "D-002",
+      "group": "A",
+      "title": "The fitted tables and weights are compiled into the binary verbatim",
+      "verbatim": "compiles the five committed artifacts + the selected weight vector\n> VERBATIM (JSON bytes, not a parsed-structure codegen) into the generated `jointembeddedartifacts.{h,cpp}`",
+      "plain": "The numbers the estimator was trained on are built into the program at compile time rather than read from disk at run time, so a running copy cannot quietly disagree with the numbers we published.",
+      "home": "ARCHITECTURE.md:21-22",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:20 names it 'ratified Decision D1'; the ratifier and date are not stated at this home",
+      "patterns": [
+        "Decision D1",
+        "embedded (tables|artifacts)",
+        "jointembeddedartifacts",
+        "gen_embedded_tables",
+        "compiled-in constant data",
+        "drift guard"
+      ]
+    },
+    {
+      "id": "D-003",
+      "group": "A",
+      "title": "Inference is preset-independent; presets are presentation concerns",
+      "verbatim": "Inference is **preset-independent** (presets are\n> presentation concerns)",
+      "plain": "Choosing the Baroque, Jazz or Default preset changes nothing about what the estimator concludes; it changes only how the result is shown.",
+      "home": "ARCHITECTURE.md:33-34",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "2026-07-26",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "CLAUDE.md gate block (A), the OI-178 adoption; open_items/OI-178",
+      "patterns": [
+        "preset-independent",
+        "presets are presentation",
+        "preset independent"
+      ]
+    },
+    {
+      "id": "D-004",
+      "group": "A",
+      "title": "The decode state space and the segment cap",
+      "verbatim": "State = `24 keys × a ground-truth-derived Roman-numeral\n> vocabulary`, chord = scale-degree-valued (the chord symbol is the derived published fact from (key, degree)), segmentation is a modeled semi-Markov variable, seg_cap 4.",
+      "plain": "The estimator chooses among 24 tonalities and a list of chord roles read off the annotated corpus; a chord is named by its role in the key, and the chord symbol is worked out from that. One chord may span at most four consecutive events.",
+      "home": "ARCHITECTURE.md:31-33",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:43-44 cites cowork_joint_estimator_factorization.md as the full specification",
+      "patterns": [
+        "seg_cap",
+        "24 keys",
+        "scale-degree-valued",
+        "semi-Markov",
+        "degree vocabulary"
+      ]
+    },
+    {
+      "id": "D-005",
+      "group": "A",
+      "title": "The joint estimator is the production inference layer on the batch and corpus surface",
+      "verbatim": "the joint estimator\n> is now the PRODUCTION inference layer on the batch/corpus surface",
+      "plain": "Everything the measurement corpus is graded on now comes from the joint estimator, not from the older chord-by-chord pipeline.",
+      "home": "ARCHITECTURE.md:11-12",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "2026-07-26",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "CLAUDE.md gate block (A); tools/joint_estimator/adoption_record.json; open_items/OI-178",
+      "patterns": [
+        "OI-178",
+        "production inference layer",
+        "adoption record",
+        "batch/corpus surface"
+      ]
+    },
+    {
+      "id": "D-006",
+      "group": "A",
+      "title": "The published uncertainty surface is two full candidate lists, with no truncation",
+      "verbatim": "publishes, per\n> committed segment, the ESTABLISHED content-score uncertainty surface as two full candidate lists (no truncation\n> constant)",
+      "plain": "For every chord it commits to, the estimator also publishes how every other tonality and every other chord would have scored - the complete lists, not a top-few.",
+      "home": "ARCHITECTURE.md:46-49",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:46 names it 'the notation output-surface contract §3.3 GROUP (i)'",
+      "patterns": [
+        "posterior slice",
+        "computePosteriorSlice",
+        "no truncation constant",
+        "§3.3 GROUP",
+        "key axis.*chord axis"
+      ]
+    },
+    {
+      "id": "D-007",
+      "group": "A",
+      "title": "The published scores are log-scores, not probabilities",
+      "verbatim": "The scores are LOG-scores, NOT probabilities, and gaps\n> are score differences",
+      "plain": "The numbers beside each alternative are not chances of being right. They are model scores, and the difference between two of them is a score gap, not a percentage.",
+      "home": "ARCHITECTURE.md:54-55",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:54-56; the true-probability step is deferred to OI-193",
+      "patterns": [
+        "LOG-scores",
+        "not probabilities",
+        "score differences"
+      ]
+    },
+    {
+      "id": "D-008",
+      "group": "A",
+      "title": "The true probabilities are deferred to a later step",
+      "verbatim": "**GROUP (ii) forward-backward marginals are NOT delivered here — OI-193's later step.**",
+      "plain": "The proper probability for each reading - the kind that can be checked against how often it is actually right - has not been built yet; it is a named later piece of work.",
+      "home": "ARCHITECTURE.md:55",
+      "home_is_layer_spec": true,
+      "status": "deferred",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "open_items/OI-193 (OPEN)",
+      "patterns": [
+        "forward-backward marginal",
+        "OI-193",
+        "marginal posterior"
+      ]
+    },
+    {
+      "id": "D-009",
+      "group": "B",
+      "title": "The notation record is the ONE surface the in-app path reads, and it never re-decodes",
+      "verbatim": "assembles the ONE surface the in-app notation path will read (Decision A2), from the\n> decode outputs + the decode's prior inputs + the compiled-in provenance — it NEVER re-decodes and never reads the\n> score.",
+      "plain": "Everything the program shows you about harmony in the score comes from one assembled result. Nothing downstream re-runs the analysis or looks at the notes again.",
+      "home": "ARCHITECTURE.md:69-72",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:68 names 'Decision A2' and cites cowork_notation_output_contract.md §3.1-§3.4",
+      "patterns": [
+        "Decision A2",
+        "assembleNotationRecord",
+        "NotationRecord",
+        "notation output-surface",
+        "never re-decodes"
+      ]
+    },
+    {
+      "id": "D-010",
+      "group": "B",
+      "title": "The switch - the record path is the production in-app notation analysis",
+      "verbatim": "flipped `useJointNotationRecord`'s default to **ON**.",
+      "plain": "Since 27 July 2026 the harmony you see inside the program is produced by the joint estimator. The old path is still compiled in but is only reachable by explicitly turning the new one off.",
+      "home": "ARCHITECTURE.md:236",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "2026-07-27",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "ARCHITECTURE.md:232; CLAUDE.md gate block (A) 'STAGED SCOPE - CLOSED AT THE NOTATION SWITCH'; confirmed at composingconfiguration.cpp:178 Val(true)",
+      "patterns": [
+        "useJointNotationRecord",
+        "THE SWITCH",
+        "notation switch",
+        "record arm",
+        "record path"
+      ]
+    },
+    {
+      "id": "D-011",
+      "group": "B",
+      "title": "The producer decodes the WHOLE score once, and does not cache",
+      "verbatim": "WHOLE-score decode ONCE; deterministic; NO caching (a\n> later, measured concern — #17's funnel, not built speculatively).",
+      "plain": "Every request analyses the entire score from the beginning, every time, and nothing is remembered between requests.",
+      "home": "ARCHITECTURE.md:114-115",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "Recorded as specification, no ratification named. Conflicts with D-030 (bounded context) - see OPEN_ITEMS OI-210/OI-212/OI-231",
+      "patterns": [
+        "WHOLE-score decode",
+        "whole-score decode",
+        "produceNotationRecord",
+        "NO caching",
+        "whole-piece"
+      ]
+    },
+    {
+      "id": "D-012",
+      "group": "B",
+      "title": "Failure is unambiguous - never a partial record, never a silent fallback",
+      "verbatim": "never a partial record, never a silent fallback (#13).",
+      "plain": "If the analysis cannot be produced, the program says so and returns nothing. It never returns half an answer or quietly falls back to the old method.",
+      "home": "ARCHITECTURE.md:117",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:116-117; restated at :205-206 for the note seam",
+      "patterns": [
+        "never a partial record",
+        "no legacy fallback",
+        "UNAMBIGUOUS failure",
+        "silent fallback"
+      ]
+    },
+    {
+      "id": "D-013",
+      "group": "B",
+      "title": "Which staves feed the analysis is decided at the fact adapter, not by a later filter",
+      "verbatim": "INPUT selection at the fact\n> adapter (the layer that owns its input surface, #7), before the note enters the L1 fact view the decode reads; NOT a\n> consumer-side post-filter, NOT an inference change",
+      "plain": "When a staff is excluded from analysis - for instance the chord staff the program itself writes to - its notes are dropped before the analysis starts, not filtered out of the answer afterwards.",
+      "home": "ARCHITECTURE.md:119-121",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "2026-07-27",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "open_items/OI-204 (RESOLVED 2026-07-27); confirmed at jointnotationproducer.h:72-73",
+      "patterns": [
+        "excludeStaves",
+        "input-scoping",
+        "OI-204",
+        "chord-track exclude",
+        "self-feedback"
+      ]
+    },
+    {
+      "id": "D-014",
+      "group": "B",
+      "title": "The two seams read the record as pure views - no recomputation",
+      "verbatim": "The two §1 seams READ this record as pure VIEWS (#6, no recompute)",
+      "plain": "The two ways of asking the record a question - 'what is in this stretch of music' and 'what is at this moment' - only look things up. Neither works anything out for itself.",
+      "home": "ARCHITECTURE.md:125",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:125-131; confirmed at jointnotationproducer.h:86-90",
+      "patterns": [
+        "spanViewSegments",
+        "noteView",
+        "pure VIEWS",
+        "seam 2",
+        "span view"
+      ]
+    },
+    {
+      "id": "D-015",
+      "group": "B",
+      "title": "A boundary tick belongs to the segment it starts",
+      "verbatim": "a boundary\n> tick belongs to the segment it STARTS",
+      "plain": "When a moment is exactly where one chord ends and the next begins, it counts as belonging to the new chord.",
+      "home": "ARCHITECTURE.md:128-129",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:127-129",
+      "patterns": [
+        "belongs to the segment it STARTS",
+        "boundary tick"
+      ]
+    },
+    {
+      "id": "D-016",
+      "group": "B",
+      "title": "Display renderings are presentation; facts are published",
+      "verbatim": "display renderings are presentation, facts are published",
+      "plain": "The Roman numeral is a fact the estimator publishes. The chord symbol you read on screen and the Nashville number are ways of showing that fact, produced by the display code.",
+      "home": "ARCHITECTURE.md:148",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:147 names 'Decision D2 + the contract §3.3 amendment'",
+      "patterns": [
+        "Decision D2",
+        "PRESENTATION DERIVATION",
+        "display renderings are presentation",
+        "grading-form"
+      ]
+    },
+    {
+      "id": "D-017",
+      "group": "B",
+      "title": "The inference/presentation boundary is guarded mechanically, both ways",
+      "verbatim": "**THE BOUNDARY\n> IS PERMANENTLY GUARDED both ways** by a mechanical include-closure test",
+      "plain": "A test enforces that the analysis code cannot reach the display code and the display code cannot reach the analysis internals. The test itself is checked by deliberately breaking it.",
+      "home": "ARCHITECTURE.md:153-154",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:153-160; the guard carries a negative control",
+      "patterns": [
+        "inference_presentation_boundary",
+        "include-closure",
+        "PERMANENTLY GUARDED"
+      ]
+    },
+    {
+      "id": "D-018",
+      "group": "B",
+      "title": "The key-exposure bucket is decided once, at one site",
+      "verbatim": "The implode reads the stored bucket (#6 — one thresholding site per gate).",
+      "plain": "How confident the program is about the tonality is turned into 'below tentative / tentative / assertive' in exactly one place, and everything downstream reads that answer instead of deciding again.",
+      "home": "ARCHITECTURE.md:171",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "2026-07-27",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:165-171; open_items/OI-182 (EXECUTED at the record surface)",
+      "patterns": [
+        "keyExposureBucket",
+        "hasAssertiveExposure",
+        "exposure bucket",
+        "OI-182",
+        "kAssertiveKeyExposureGap",
+        "kTentativeKeyExposureGap"
+      ]
+    },
+    {
+      "id": "D-019",
+      "group": "B",
+      "title": "The record arm publishes the raw key-axis gap, with no remapping to 0..1",
+      "verbatim": "`keyConfidence` = the RAW §3.3\n> key-axis gap in nats (a model-internal quantity, NO [0,1] remap)",
+      "plain": "The confidence value carried on the record arm is the estimator's own raw score gap, on its own scale - deliberately not converted into a 0-to-1 number.",
+      "home": "ARCHITECTURE.md:198-199",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:169-170 and :198-199; confirmed at sectionrecordadapter.cpp:293. CONFLICTS with the ratified confidence contract rule U2 (D-032) and with the declared range of the field it is written into (keymodeanalyzer.h:111) - see OPEN_ITEMS OI-232",
+      "patterns": [
+        "raw gap",
+        "RAW §3.3",
+        "nats",
+        "NO \\[0,1\\] remap",
+        "no \\[0,1\\] remap"
+      ]
+    },
+    {
+      "id": "D-020",
+      "group": "B",
+      "title": "The interactive path bypasses the old window cache and has none of its own",
+      "verbatim": "The bounded-window decode\n> cache is BYPASSED on the record arm (a whole-score produce per invocation, the P3a/P4 pattern; a record cache is a later\n> measured concern",
+      "plain": "Clicking a note re-analyses the whole score. The old shortcut that reused a small window's work is not used on the new path, and no replacement has been built yet.",
+      "home": "ARCHITECTURE.md:206-208",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "2026-07-27",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "open_items/OI-203 (OPEN, priority raised post-switch); open_items/OI-206",
+      "patterns": [
+        "decode cache",
+        "record cache",
+        "OI-203",
+        "bounded-window decode cache",
+        "keyed .*cache"
+      ]
+    },
+    {
+      "id": "D-021",
+      "group": "B",
+      "title": "The pedal-point fields are suspended on the record arm",
+      "verbatim": "the pedal fields stay false/-1 (suspended, OI-194)",
+      "plain": "The new path does not yet mark pedal points - a sustained bass note the harmony moves over. The field is left empty rather than guessed.",
+      "home": "ARCHITECTURE.md:199",
+      "home_is_layer_spec": true,
+      "status": "deferred",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "open_items/OI-194 (OPEN - its own increment after the switch)",
+      "patterns": [
+        "OI-194",
+        "pedal.*suspend",
+        "isPedalPoint.*false",
+        "ornament-label"
+      ]
+    },
+    {
+      "id": "D-022",
+      "group": "C",
+      "title": "The founding principle - analyse at the finest grain, coarser views are derived",
+      "verbatim": "**The founding principle: analyze at the finest grain where harmony is well-defined, and make everything coarser a\n*derived view*.**",
+      "plain": "The analysis works on the smallest stretch over which the sounding harmony does not change. Phrases, key areas and sections are then read off that, never analysed directly.",
+      "home": "ARCHITECTURE.md:746-747",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "ARCHITECTURE.md:744 heading says '(ratified; full statements in cowork_target_architecture.md)'; the date and ratifier are not stated at this home",
+      "patterns": [
+        "finest grain",
+        "constant-sonority slice",
+        "derived view",
+        "atomic analysis unit"
+      ]
+    },
+    {
+      "id": "D-023",
+      "group": "C",
+      "title": "The atomic analysis unit is the constant-sonority slice, never the metric beat",
+      "verbatim": "The atomic analysis unit is the **constant-sonority slice** (L2), never the metric beat",
+      "plain": "The smallest thing analysed is a stretch during which exactly the same notes are sounding - not a beat of the bar.",
+      "home": "ARCHITECTURE.md:747",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "ARCHITECTURE.md:744-751. The joint estimator's own unit is the ONSET event (jointdecoder.h:67), not this slice - see OPEN_ITEMS OI-233",
+      "patterns": [
+        "never the metric beat",
+        "atomic analysis unit",
+        "constant-sonority slice"
+      ]
+    },
+    {
+      "id": "D-024",
+      "group": "C",
+      "title": "The fact layers are style-agnostic; style lives only in calibration",
+      "verbatim": "L1 (notes) and L2 (slicing) are **style-agnostic and\n  lossless** — they carry facts, never style. Style-specificity lives **only** in the *calibration* of the judgment\n  layers (their priors/weights), **never in structure**.",
+      "plain": "Reading the notes and cutting the music into constant-sound stretches works the same for every kind of music. Whether a piece is Baroque or jazz can change only the numbers the judging layers use, never the shape of the code.",
+      "home": "ARCHITECTURE.md:753-756",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "ARCHITECTURE.md:744 ratified banner; sharpens §2.1 (D-070)",
+      "patterns": [
+        "style-agnostic",
+        "only in the calibration",
+        "never in structure",
+        "Universality in the fact layers"
+      ]
+    },
+    {
+      "id": "D-025",
+      "group": "C",
+      "title": "Forward-only, with two scoped escapes",
+      "verbatim": "The **ratified** architecture (user-ratified;\n`cowork_target_architecture.md` §2) is **forward-only**:",
+      "plain": "Each stage was to pass its answer forward and never reach back. A confident earlier answer could be overturned only by re-running that one stretch forwards, and the one genuinely tangled key-versus-chord case got a narrow, gated exception.",
+      "home": "ARCHITECTURE.md:726-727",
+      "home_is_layer_spec": true,
+      "status": "superseded-in-fact",
+      "date": "2026-06-29",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "The 2026-07-17 governing decision (D-001) replaces the mechanism with ONE joint decode - the mechanism this block had ruled out. No supersession banner was added to §2.14 - see OPEN_ITEMS OI-234",
+      "patterns": [
+        "forward-only",
+        "forward-override",
+        "no back-edge",
+        "gated, constrained joint step",
+        "localized forward recompute"
+      ]
+    },
+    {
+      "id": "D-026",
+      "group": "C",
+      "title": "The global joint-lattice decode was measured inert (2026-06-29)",
+      "verbatim": "The subsequent investigation\n**measured the full joint cross-layer search INERT**",
+      "plain": "An earlier plan to search all the possibilities at once was tested and found to add nothing, so the effort was redirected into better evidence flowing forwards.",
+      "home": "ARCHITECTURE.md:723-724",
+      "home_is_layer_spec": true,
+      "status": "superseded-in-fact",
+      "date": "2026-06-29",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "The joint estimator (D-001) is a global joint decode and is in production on both surfaces. The record does not state how this measurement was reconciled with the later ruling - see OPEN_ITEMS OI-234",
+      "patterns": [
+        "measured INERT",
+        "joint cross-layer search",
+        "joint-lattice",
+        "hypothesis lattice"
+      ]
+    },
+    {
+      "id": "D-027",
+      "group": "C",
+      "title": "Every layer emits ranked candidates plus a confidence, never a forced point estimate",
+      "verbatim": "each layer is feed-forward and emits **ranked candidates + a confidence**, never a forced point estimate;",
+      "plain": "No stage is allowed to report only its single best answer. It reports the runners-up too, with a measure of how clear-cut the choice was.",
+      "home": "ARCHITECTURE.md:728",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "2026-06-29",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "The mechanism around it (D-025) is superseded in fact, but the ranked-alternatives requirement is carried forward by the joint estimator's published candidate lists (D-006)",
+      "patterns": [
+        "ranked candidates",
+        "ranked alternatives",
+        "never a forced point estimate",
+        "carried readings"
+      ]
+    },
+    {
+      "id": "D-028",
+      "group": "C",
+      "title": "The span typology - every layer names the span it operates on; bare 'region' is banned",
+      "verbatim": "\"Region\" unqualified is **banned** as\n  ambiguous; every layer names the span it operates on.",
+      "plain": "The word 'region' on its own is forbidden, because it hides which kind of stretch is meant. Each stretch has its own name: the chord-span, the key-span, the punctuation-span and so on.",
+      "home": "ARCHITECTURE.md:786-787",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "2026-07-02",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "ARCHITECTURE.md:765-772 records the rename CONFIRMED (user, 2026-07-02) and EXECUTED 2026-07-03 'propagated through every layer spec'. ARCHITECTURE.md itself still uses the banned word 216 times including section headings - see OPEN_ITEMS OI-235",
+      "patterns": [
+        "span typology",
+        "chord-span",
+        "punctuation-span",
+        "key-span",
+        "region.*banned",
+        "harmonic region.*chord-span"
+      ]
+    },
+    {
+      "id": "D-029",
+      "group": "C",
+      "title": "The verifiability contract",
+      "verbatim": "prefer what we can verify against ground truth (it is how we catch our own theory\n  errors); for sound theory we cannot verify against the current corpus, build it with an explicit\n  **alternative-confidence path** *and* an **\"empirically-unvalidated\" mark**, rather than refusing it",
+      "plain": "Prefer what we can check against annotated music. Where the theory is sound but we have nothing to check it against, build it anyway - but mark it as unchecked and give it its own confidence path.",
+      "home": "ARCHITECTURE.md:794-796",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "ARCHITECTURE.md:744 ratified banner",
+      "patterns": [
+        "verifiability contract",
+        "empirically-unvalidated",
+        "alternative-confidence path"
+      ]
+    },
+    {
+      "id": "D-030",
+      "group": "C",
+      "title": "Bounded context - cost scales with the working span, not the whole score",
+      "verbatim": "The binding scale requirements: **(R1)** cost scales with the working span, not the whole\n  score; **(R2)**\n  re-analysis is incremental over the dirty span plus a bounded margin; **(R3)** the working span is **extensible**",
+      "plain": "Analysis runs on what the user has selected. The work must grow with the size of that selection, not with the size of the piece; re-analysis after an edit must only redo the changed part; and a layer that needs more music asks for it rather than reading everything.",
+      "home": "ARCHITECTURE.md:800-802",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "2026-07-02",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "ARCHITECTURE.md:802-806 names cowork_bounded_context_design.md as the ONE detailed cross-layer spec and records the 2026-07-02 user directive making it 'the hard gate before L6'. DIRECTLY CONTRADICTED by D-011 (whole-score decode per query, no caching) - see OPEN_ITEMS OI-212/OI-231",
+      "patterns": [
+        "Bounded context",
+        "bounded_context",
+        "working span",
+        "R1.*R2.*R3",
+        "dirty span",
+        "append-only\\s+extension",
+        "incremental re-analysis"
+      ]
+    },
+    {
+      "id": "D-031",
+      "group": "C",
+      "title": "Whole-score analysis is the degenerate case, not the design",
+      "verbatim": "Whole-score analysis is the degenerate case (selection = score).",
+      "plain": "Analysing the whole piece is what happens when the user has selected the whole piece. It is not the normal mode of operation.",
+      "home": "ARCHITECTURE.md:802",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "2026-07-02",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "Same home as D-030. The record producer analyses the whole score regardless of the requested span (OI-212)",
+      "patterns": [
+        "degenerate case",
+        "selection = score"
+      ]
+    },
+    {
+      "id": "D-032",
+      "group": "C",
+      "title": "Every confidence crossing a layer boundary is in 0..1, class-declared, with its decision named",
+      "verbatim": "At a **layer boundary** (any value another layer may read), a confidence is **[0,1], class-declared, with\n  its decision named**. Unbounded internal scores are permitted *inside* a layer but must be squashed at the boundary.",
+      "plain": "Inside a stage, a confidence can be on any scale. The moment another stage can read it, it must be a 0-to-1 number, labelled with what kind of confidence it is and what decision it belongs to.",
+      "home": "cowork_confidence_contract.md:39-40",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-07-02",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "cowork_confidence_contract.md:3 'Status: RATIFIED (user, 2026-07-02)'. ARCHITECTURE.md:762 still calls it 'ratification-gated' - a stale status at the canonical home. Contradicted by D-019 on the production record arm - see OPEN_ITEMS OI-232",
+      "patterns": [
+        "confidence contract",
+        "confidence & calibration",
+        "Class M",
+        "Class P",
+        "U2",
+        "layer boundary.*confidence",
+        "squash"
+      ]
+    },
+    {
+      "id": "D-033",
+      "group": "C",
+      "title": "Each layer owns one evidence-source-times-question contribution and uses all of L1's information",
+      "verbatim": "each layer owns one *(evidence-source × question)*\n  contribution — stated as \"owns the *[named evidence]* contribution to *X*\", with what it does **not** own made\n  explicit — defers what needs later evidence (carried as ranked alternatives + an uncertain mark), and within its scope\n  uses *all* the information L1 carries losslessly (notated spelling, metric weight, voice).",
+      "plain": "Each stage answers one question from one kind of evidence, says plainly what it does not answer, hands unresolved cases forward as ranked options - and while it works, it uses everything the note reader preserved: how the note is spelt, where it falls in the bar, and which voice it is in.",
+      "home": "ARCHITECTURE.md:807-810",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "ARCHITECTURE.md:744 ratified banner. The joint emission reads only struck notes (OI-228) and the shared tone surface is voice-blind (OI-74)",
+      "patterns": [
+        "single-responsibility",
+        "evidence-source",
+        "minimality",
+        "maximal information",
+        "uses all the information"
+      ]
+    },
+    {
+      "id": "D-034",
+      "group": "C",
+      "title": "A new layer or axis is admitted only through three co-equal gates",
+      "verbatim": "**A new layer or axis is admitted only when it clears three co-equal gates,\n  all required:**",
+      "plain": "A new stage is added only if it carries one distinct responsibility, can be validated somehow, and buys something we can actually check. Carrying a distinct responsibility is enough on its own, even with no immediate accuracy gain.",
+      "home": "ARCHITECTURE.md:824-825",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "ARCHITECTURE.md:824-831",
+      "patterns": [
+        "three co-equal gates",
+        "separation of concerns",
+        "proportionality",
+        "Contrapunctus reminder"
+      ]
+    },
+    {
+      "id": "D-035",
+      "group": "C",
+      "title": "The effort setting - every cost-driving choice is a setting, never a hardcoded constant",
+      "verbatim": "**(a)** every cost-driving choice is an\nexplicit *setting*, never a hardcoded constant; **(b)** every optional expensive refinement is a cleanly separable on/off\nstage.",
+      "plain": "Anything that makes the analysis slower must be something the user or the caller can turn down, not a number baked into the code; and any expensive extra step must be separable so it can be switched off.",
+      "home": "ARCHITECTURE.md:739-741",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "2026-06-29",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "ARCHITECTURE.md:737-741. Not implemented: the effort setting does not exist and the decode's cost drivers (segment cap, key prune width) are compiled-in constants - tracked at OI-209/OI-210",
+      "patterns": [
+        "effort preset",
+        "quality setting",
+        "cost-driving choice",
+        "quality/ambition",
+        "separable on/off"
+      ]
+    },
+    {
+      "id": "D-036",
+      "group": "C",
+      "title": "Accumulating gates are a warning sign - add iteration, not more gates",
+      "verbatim": "When a feedforward layer acquires many gates\nand guards to compensate for missing upstream feedback, that is a symptom of missing\niteration — not a sign that the layer needs more gates.",
+      "plain": "If a stage keeps needing new special cases, the problem is that it is missing information from elsewhere. Adding another special case makes it worse.",
+      "home": "ARCHITECTURE.md:657-659",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:657-661; restated as an ongoing concern at :2131-2136",
+      "patterns": [
+        "Accumulating gates",
+        "accumulating scoring heuristics",
+        "more gates",
+        "heuristic patch"
+      ]
+    },
+    {
+      "id": "D-037",
+      "group": "D",
+      "title": "The note model is the single source of truth for what sounds, and reads the score once",
+      "verbatim": "**The lossless, tie-resolved NOTE MODEL — the single source of truth for \"what sounds.\"** `NoteModel::build(score)` reads the score **once**",
+      "plain": "One component reads the score and works out which notes are sounding when. Everything else asks it, and nothing else reads the score.",
+      "home": "ARCHITECTURE.md:1008",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:997-1008 (Layer 1 - Built+Live)",
+      "patterns": [
+        "note model",
+        "NoteModel",
+        "single source of truth for",
+        "lossless.*note",
+        "notemodel"
+      ]
+    },
+    {
+      "id": "D-038",
+      "group": "D",
+      "title": "Tied notes are one event; spans are answered by overlap with no horizon",
+      "verbatim": "Tied groups are merged into **one** span/onset (via the DOM `firstTiedNote`/`lastTiedNote`/`playTicksFraction`); spans are true `[onset,release)` answered by **overlap with no horizon** (the old 4-whole-note backward cap is gone).",
+      "plain": "A note tied across a barline counts once, starting where it was struck and ending where it stops. Asking what is sounding at a moment looks back as far as needed, with no arbitrary cut-off.",
+      "home": "ARCHITECTURE.md:1008",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1008; the behaviour change it caused is the ratified trade-off at :1026-1032",
+      "patterns": [
+        "tie de-inflation",
+        "tie-resolved",
+        "no horizon",
+        "backward cap",
+        "tied group"
+      ]
+    },
+    {
+      "id": "D-039",
+      "group": "D",
+      "title": "Ineligible notes are kept and flagged, never dropped",
+      "verbatim": "Grace / non-playing / invisible / staff-ineligible notes are **kept and flagged, never dropped**.",
+      "plain": "Notes that should not drive the analysis - grace notes, hidden notes, notes on a non-musical staff - are still recorded, marked as such. Nothing is thrown away.",
+      "home": "ARCHITECTURE.md:1008",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1008; the standing no-information-loss principle is CLAUDE.md #12",
+      "patterns": [
+        "kept and flagged",
+        "never dropped",
+        "staffEligible",
+        "no information loss"
+      ]
+    },
+    {
+      "id": "D-040",
+      "group": "D",
+      "title": "The tie-unresolved atoms are republished additively for the joint estimator",
+      "verbatim": "`notatedNotes()` republishes the tie-UNRESOLVED atoms — EVERY notated note incl. tie continuations, each with its OWN notated span, a `tieContinuation` flag, a `hasFermata` flag, and `resolvedIndex` linking to its tie-resolved `NoteEvent`",
+      "plain": "As well as merging tied notes, the note reader also publishes them separately, each with a marker saying it is a continuation. The joint estimator needs both views.",
+      "home": "ARCHITECTURE.md:1008",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1008 records it as 'Purely additive' under the OI-180 dual-path sanction",
+      "patterns": [
+        "notatedNotes",
+        "tie-UNRESOLVED",
+        "tieContinuation",
+        "resolvedIndex"
+      ]
+    },
+    {
+      "id": "D-041",
+      "group": "E",
+      "title": "The slicer output covers the domain with no gaps and no overlaps",
+      "verbatim": "returns an ordered, **covering, lossless** list of half-open `[start,end)` spans that **tile the domain with no gaps and no overlaps**",
+      "plain": "The music is cut into consecutive stretches that between them account for every moment exactly once.",
+      "home": "ARCHITECTURE.md:1045",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1035-1045 (Layer 2 - Built+Live)",
+      "patterns": [
+        "changePointSlices",
+        "no gaps and no overlaps",
+        "tile the domain",
+        "covering, lossless"
+      ]
+    },
+    {
+      "id": "D-042",
+      "group": "E",
+      "title": "Slice boundaries are every onset AND every release",
+      "verbatim": "Boundaries = the sorted-unique union of every **onset AND every release** of the **eligible** notes; consecutive boundaries form the slices.",
+      "plain": "A new stretch begins whenever any note starts and also whenever any note stops - because a note ending changes what is sounding just as much as a note beginning.",
+      "home": "ARCHITECTURE.md:1045",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1045. Cited by open_items/OI-228 as the primary source the joint emission departs from",
+      "patterns": [
+        "onset AND every release",
+        "every release",
+        "release.*boundar",
+        "sorted-unique union"
+      ]
+    },
+    {
+      "id": "D-043",
+      "group": "E",
+      "title": "Slice identity IS the eligible sounding-note set",
+      "verbatim": "**Slice identity is the eligible sounding-NOTE set** (not the octave-folded PC set — a\nunison/octave shrink is a real boundary though the PC set is unchanged).",
+      "plain": "What makes one stretch different from the next is the exact set of notes sounding through it - not merely which pitch names are present. Two voices collapsing onto the same note is a real change even though no pitch name was lost.",
+      "home": "ARCHITECTURE.md:1052-1053",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1052-1053. The joint decoder's per-event note set is ONSET-only (jointdecoder.h:67) - open_items/OI-228",
+      "patterns": [
+        "Slice identity",
+        "sounding-NOTE set",
+        "octave-folded",
+        "sounding note set"
+      ]
+    },
+    {
+      "id": "D-044",
+      "group": "E",
+      "title": "A note that opens no boundary still rides along in the slice's sounding set",
+      "verbatim": "A muted / invisible / non-tonal-staff note opens\n**no** boundary, yet still rides along in each slice's `overlapping()` set (passed through, not\ndropped).",
+      "plain": "A note that is not allowed to create a new stretch is still recorded as sounding during the stretches it spans.",
+      "home": "ARCHITECTURE.md:1049-1051",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1047-1053",
+      "patterns": [
+        "rides along",
+        "passed through, not",
+        "overlapping\\(\\)",
+        "passenger metadata"
+      ]
+    },
+    {
+      "id": "D-045",
+      "group": "E",
+      "title": "The slicer re-decides nothing about eligibility",
+      "verbatim": "**Boundaries over layer-1's eligibility annotation — never re-decided.**",
+      "plain": "Whether a note counts was settled by the note reader. The slicer reads that decision and does not second-guess it.",
+      "home": "ARCHITECTURE.md:1047",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1047-1049",
+      "patterns": [
+        "never re-decided",
+        "eligibility annotation",
+        "does not re-filter"
+      ]
+    },
+    {
+      "id": "D-046",
+      "group": "E",
+      "title": "Zero interpretation - the slicer applies no thresholds and no musical judgment",
+      "verbatim": "**Zero interpretation.** No thresholds, min-gap, merge, or snapping; no notion of\n\"ornamental/passing/structural\".",
+      "plain": "The cutting-up step makes no musical decisions at all. It does not decide that a note is ornamental, does not merge short stretches, and has no adjustable numbers.",
+      "home": "ARCHITECTURE.md:1072-1074",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1072-1080",
+      "patterns": [
+        "Zero interpretation",
+        "no thresholds",
+        "min-gap",
+        "ornamental/passing/structural"
+      ]
+    },
+    {
+      "id": "D-047",
+      "group": "E",
+      "title": "No special-casing of any note kind",
+      "verbatim": "**No special-casing of any note kind** — grace and tuplet\noutcomes fall out of the note-model spans as facts",
+      "plain": "Grace notes and tuplets need no special code. Their timing is a fact the note reader already carries, and the right answer falls out of it.",
+      "home": "ARCHITECTURE.md:1073-1075",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1072-1077",
+      "patterns": [
+        "No special-casing",
+        "grace and tuplet",
+        "needs no grace"
+      ]
+    },
+    {
+      "id": "D-048",
+      "group": "E",
+      "title": "Boundaries are necessary but not sufficient; over-grab is structurally impossible",
+      "verbatim": "Boundaries are **necessary but not sufficient** for\na chord change (the exhaustive candidate grid): a real chord change can never be missed\n(over-grab is structurally impossible), and the slicer never asserts a change",
+      "plain": "Every place a chord could change is offered as a candidate, so no real chord change can be missed. Whether a candidate is a real change is decided later, by a stage that judges harmony.",
+      "home": "ARCHITECTURE.md:1077-1079",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1077-1080",
+      "patterns": [
+        "necessary but not sufficient",
+        "over-grab",
+        "exhaustive candidate grid",
+        "never asserts a change"
+      ]
+    },
+    {
+      "id": "D-049",
+      "group": "E",
+      "title": "An interior stretch where everything rests is an explicit empty slice, not a gap",
+      "verbatim": "An interior span where all eligible voices rest is an **explicit\nEMPTY slice** (empty eligible overlap set), not a gap",
+      "plain": "Silence in the middle of the music is recorded as a stretch with nothing in it, rather than as a hole in the coverage.",
+      "home": "ARCHITECTURE.md:1063-1065",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1055-1066",
+      "patterns": [
+        "EMPTY slice",
+        "empty slice",
+        "all eligible voices rest"
+      ]
+    },
+    {
+      "id": "D-050",
+      "group": "E",
+      "title": "Slicing is clipped to the loaded span and never drags outside it",
+      "verbatim": "slicing never drags outside the loaded span",
+      "plain": "If only part of the piece has been loaded, notes sounding across the edge are cut at the edge. The analysis never reaches into music it was not given.",
+      "home": "ARCHITECTURE.md:1060",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1055-1062; cites cowork_layer2_reslice_design.md §2",
+      "patterns": [
+        "loaded span",
+        "sustained-in",
+        "sustained-out",
+        "clip is inert",
+        "re-slice equivalence"
+      ]
+    },
+    {
+      "id": "D-051",
+      "group": "F",
+      "title": "The production key/mode path is the sequence decoder, not the per-stretch resolver",
+      "verbatim": "**The production region key/mode path is the decoder, not the per-region resolver.**",
+      "plain": "The tonality is worked out for the whole piece at once, as a sequence, rather than separately for each stretch.",
+      "home": "ARCHITECTURE.md:1094",
+      "home_is_layer_spec": true,
+      "status": "superseded-by",
+      "superseded_by": "D-001",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "The joint estimator now decides key on both surfaces (D-005, D-010). The Layer-3 section still reads 'Built+Live' - see OPEN_ITEMS OI-236",
+      "patterns": [
+        "KeyModeSequenceDecoder",
+        "keymodesequence",
+        "sequence decoder",
+        "per-region resolver"
+      ]
+    },
+    {
+      "id": "D-052",
+      "group": "F",
+      "title": "The signature read and declared-mode mapping live in ONE shared function",
+      "verbatim": "The signature read + declared-mode\nmapping + declared-gated Baroque `partialSignatureCorrection` was lifted verbatim into a shared\npublic `resolveKeySignatureContext`, **called by both** the resolver and the wiring — so no\nsignature/partial-correction logic is duplicated.",
+      "plain": "Reading the printed key signature and turning it into a starting assumption happens in one place that both callers use, so the two cannot drift apart.",
+      "home": "ARCHITECTURE.md:1116-1119",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1114-1119",
+      "patterns": [
+        "resolveKeySignatureContext",
+        "partialSignatureCorrection",
+        "signature read"
+      ]
+    },
+    {
+      "id": "D-053",
+      "group": "F",
+      "title": "The tick-local path keeps the older resolver (the ratified P4-defer)",
+      "verbatim": "**P4 tick-local still uses `resolveKeyAndModeRanked` + `collectPitchContext`** (the ratified\n  P4-defer).",
+      "plain": "One narrow fallback - answering about a single moment when no surrounding stretch is available - still uses the older method. That was a deliberate deferral.",
+      "home": "ARCHITECTURE.md:1130-1131",
+      "home_is_layer_spec": true,
+      "status": "superseded-in-fact",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "On the switched build the note-seam funnel returns from the record arm before this fallback is reachable (notationcomposingbridge.cpp:728-738). The D-P4 revisit trigger (D-063) was never discharged",
+      "patterns": [
+        "P4 tick-local",
+        "P4-defer",
+        "P4-redecode",
+        "analyzeHarmonicContextLocallyAtTick",
+        "tickLocal"
+      ]
+    },
+    {
+      "id": "D-054",
+      "group": "F",
+      "title": "All 21 modes are scored against all 12 tonics; the harmonic major family is deferred",
+      "verbatim": "Harmonic major modes are\nsignificantly rarer as tonal centers than melodic and harmonic minor modes, and the\nvalidation corpus is unlikely to calibrate them well.",
+      "plain": "The key finder considers 21 scale types on each of the 12 possible tonics. The harmonic major family was left out because it is rare and we have no annotated music to calibrate it against.",
+      "home": "ARCHITECTURE.md:2214-2216",
+      "home_is_layer_spec": true,
+      "status": "deferred",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:2148-2149 (21 modes), :2213-2217 (harmonic major deferred)",
+      "patterns": [
+        "21 modes",
+        "Harmonic major modes",
+        "252 candidates",
+        "mode prior"
+      ]
+    },
+    {
+      "id": "D-055",
+      "group": "F",
+      "title": "The 21 mode priors are independent and user-configurable",
+      "verbatim": "**21 independent additive priors**, one per mode, user-configurable\n  via `IComposingAnalysisConfiguration::modePrior{ModeName}()`",
+      "plain": "How likely each scale type is considered to be is a separate adjustable number per scale type, exposed in the preferences.",
+      "home": "ARCHITECTURE.md:2162-2163",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:2162-2164, :3020-3073. Superseded on the production path by D-003 (inference is preset-independent)",
+      "patterns": [
+        "modePrior",
+        "21 independent",
+        "mode tier",
+        "ModePriorPreset"
+      ]
+    },
+    {
+      "id": "D-056",
+      "group": "F",
+      "title": "Notes always win - the notated key signature is a weak hint, not a bypass",
+      "verbatim": "The key/mode inferrer always runs. The notated key signature's `KeyMode` enum\n(`MAJOR`, `MINOR`, etc.) is no longer a bypass gate — it is passed as a weak hint\n(`declaredMode`) to `analyzeKeyMode()`",
+      "plain": "The key printed at the start of the score does not settle the question. It only nudges the answer; what the notes actually do decides.",
+      "home": "ARCHITECTURE.md:3120-3122",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:3118-3130",
+      "patterns": [
+        "Notes Always Win",
+        "declaredMode",
+        "weak hint",
+        "bypass gate"
+      ]
+    },
+    {
+      "id": "D-057",
+      "group": "F",
+      "title": "The priority of evidence - actual sounding notes are the strongest evidence",
+      "verbatim": "| Strongest | Actual sounding notes | what is literally happening now |",
+      "plain": "In deciding the key, what is actually sounding right now outranks the surrounding bars, which outrank the printed key signature, which outranks the major/minor tag on it.",
+      "home": "ARCHITECTURE.md:3138",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:3134-3141. Cited by open_items/OI-228 as the primary source the joint emission departs from. NOT catchable by the harvest's signature net - the reason this adjudication had to read the specifications in full",
+      "patterns": [
+        "Priority of evidence",
+        "Actual sounding notes",
+        "literally happening now",
+        "priority-of-evidence"
+      ]
+    },
+    {
+      "id": "D-058",
+      "group": "F",
+      "title": "The piece-start shortcut",
+      "verbatim": "when the\nanalysis tick is within the first 16 quarter-note beats (a separate constant from the 16-beat lookback window below —\nthey coincide in value, not by design), no prior result exists (`prevResult == nullptr`),\nand the key signature carries an explicit mode, the function returns the declared mode\nimmediately (confidence 0.5) rather than waiting for pitch evidence that cannot yet exist.",
+      "plain": "At the very start of a piece there is not yet enough music to judge the key, so if the score declares major or minor the program simply believes it, marked as a middling-confidence answer.",
+      "home": "ARCHITECTURE.md:3125-3129",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:3125-3130 calls it 'a deliberate pragmatic choice for the score opening, not a general bypass'. NOT catchable by the harvest's signature net",
+      "patterns": [
+        "piece-start shortcut",
+        "piece-start hysteresis",
+        "first 16 quarter-note",
+        "confidence 0.5"
+      ]
+    },
+    {
+      "id": "D-059",
+      "group": "F",
+      "title": "The temporal window - 16 beats back, 8 beats forward, decayed",
+      "verbatim": "The bridge uses a 16-beat lookback + 8-beat lookahead window:",
+      "plain": "To judge the key at a point, the program looks about four bars back and two bars forward, giving less weight to music further away.",
+      "home": "ARCHITECTURE.md:3163",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:3161-3173; legacy-arm only since the switch (D-010)",
+      "patterns": [
+        "LOOKBACK_BEATS",
+        "lookback \\+ 8-beat",
+        "16-beat lookback",
+        "time decay",
+        "0\\.7× per measure"
+      ]
+    },
+    {
+      "id": "D-060",
+      "group": "G",
+      "title": "The legacy chord analyzer is a vertical sonority analyzer - keep the boundary clean",
+      "verbatim": "Do not\nattempt to improve corpus agreement by adding heuristics to `RuleBasedChordAnalyzer`\nthat embed contextual assumptions — keep the vertical/contextual boundary clean.",
+      "plain": "The chord identifier is meant to say what chord the notes sounding at one moment spell, and nothing more. Improving its score by teaching it about what came before or after was explicitly forbidden.",
+      "home": "ARCHITECTURE.md:1877-1879",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1853-1879. Contradicted by the same document's §4.1b/§4.1d contextual bonuses, which score a candidate from the neighbouring chords - see OPEN_ITEMS OI-237",
+      "patterns": [
+        "vertical sonority analyzer",
+        "vertical/contextual boundary",
+        "contextual harmony layer",
+        "Design boundary"
+      ]
+    },
+    {
+      "id": "D-061",
+      "group": "G",
+      "title": "Gate thresholds are Baroque-calibrated and must not be loosened for other styles",
+      "verbatim": "They must not be\nloosened to accommodate other styles. When a gate causes regressions in a non-Baroque\npreset, the fix is either (a) a tighter structural entry condition that excludes the\nproblematic chord type in all styles, or (b) a preset-specific threshold value",
+      "plain": "The adjustable cut-offs in the chord scorer were tuned on Baroque music. If they misbehave on other music, tighten the entry condition for everyone or give that style its own value - never widen the Baroque one.",
+      "home": "ARCHITECTURE.md:1575-1579",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1573-1581; the same policy is in CLAUDE.md 'Gate threshold and preset policy'",
+      "patterns": [
+        "Gate threshold policy",
+        "Baroque-specific",
+        "must not be\\s+loosened",
+        "Never widen a Baroque-tuned",
+        "preset-specific threshold"
+      ]
+    },
+    {
+      "id": "D-062",
+      "group": "G",
+      "title": "Progression signals are withheld while segmentation is being explored",
+      "verbatim": "the progression signals are withheld\nduring `greedyExpandSegmentation`'s internal boundary-exploration calls, which run in\n`ScoringPhase::Segmentation` — prevents the bonus from biasing segmentation\nbefore the final per-region pass",
+      "plain": "While the program is still deciding where one chord ends and the next begins, the bonuses that reward a chord for fitting its neighbours are switched off, so that the answer does not bias the question.",
+      "home": "ARCHITECTURE.md:1776-1779",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1776-1779, :1816-1822; the residual coupling is recorded as debt at :2105-2112",
+      "patterns": [
+        "ScoringPhase",
+        "explorationMode",
+        "Segmentation phase",
+        "progression signals.*withheld"
+      ]
+    },
+    {
+      "id": "D-063",
+      "group": "G",
+      "title": "Cold context on the tick-local path is the accepted contract",
+      "verbatim": "Cold context on P4 is the **current contract**, documented and accepted (the same\nprecedent as the Stage 2.3 diagnose context banner: a path may legitimately analyze with less\ncontext, provided that is stated, not silent).",
+      "plain": "One narrow path analyses a moment without knowing what came before. That is allowed because it is written down, not hidden.",
+      "home": "ARCHITECTURE.md:1293-1295",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1284-1301. Its revisit trigger - 'Stage 3 design must state explicitly what P4 (and the bridge) consume from the decode' (:1299-1300) - has not been discharged by the joint/record design",
+      "patterns": [
+        "D-P4",
+        "D-BRIDGE",
+        "cold context",
+        "cold-analyzes",
+        "null context"
+      ]
+    },
+    {
+      "id": "D-064",
+      "group": "G",
+      "title": "The chord-scoring presets are a measurement-only artifact",
+      "verbatim": "The\nchord-scoring preset system is currently a **measurement-only artifact** of `batch_analyze`. Do\n**not** silently flip the live product onto preset chordPrefs",
+      "plain": "The Baroque and Jazz chord-scoring settings exist only in the measurement tool. The program the user runs has never used them, and switching it over would be a product decision, not a code tidy-up.",
+      "home": "ARCHITECTURE.md:1356-1359",
+      "home_is_layer_spec": true,
+      "status": "superseded-in-fact",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "D-003 makes inference preset-independent on the production path, so the divergence this decision manages no longer exists there; it still describes the legacy path",
+      "patterns": [
+        "D-PASS0",
+        "measurement-only artifact",
+        "kDefaultChordAnalyzerPreferences",
+        "preset chordPrefs"
+      ]
+    },
+    {
+      "id": "D-065",
+      "group": "G",
+      "title": "The look-ahead divergence between the two paths is intentional and load-bearing",
+      "verbatim": "**D1 — `excludeLookAheadOnDenseStart`** is **intentionally divergent and load-bearing.**",
+      "plain": "One setting deliberately differs between the measurement tool and the program, because making them the same made the program worse on a specific repertoire.",
+      "home": "ARCHITECTURE.md:1263",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1263-1266, restated at :1363-1366",
+      "patterns": [
+        "excludeLookAheadOnDenseStart",
+        "intentionally divergent",
+        "Corelli trio-sonata dominants"
+      ]
+    },
+    {
+      "id": "D-066",
+      "group": "G",
+      "title": "Chord symbols written in the score are never analyzer input",
+      "verbatim": "chord symbols must never be used as analyzer input in\nproduction because they are user content and may be incorrect.",
+      "plain": "The chord names already written in a score are the user's own text and may be wrong. The analysis reads only the notes, the key signature and the settings.",
+      "home": "ARCHITECTURE.md:2301-2302",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:2300-2302, restated as the retirement rationale's 'Core principle' at :2335-2337",
+      "patterns": [
+        "chord symbols are user-written",
+        "never be used as analyzer input",
+        "inject-written-root",
+        "Authoritative Chord Symbol"
+      ]
+    },
+    {
+      "id": "D-067",
+      "group": "G",
+      "title": "Jazz mode (chord-symbol-driven boundaries) is retired",
+      "verbatim": "**Status: Retired** — production analysis paths in commit 02e3733afb, tool-side surfaces in 69716deead. Chord symbols are no longer read by any analysis or tool path.",
+      "plain": "The separate jazz analysis mode that took its stretch boundaries from written chord symbols has been removed entirely.",
+      "home": "ARCHITECTURE.md:2269",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:2269, retirement rationale at :2324-2339",
+      "patterns": [
+        "Jazz Mode",
+        "jazzMode",
+        "analyzeScoreJazz",
+        "forceClassicalPath",
+        "Retirement rationale"
+      ]
+    },
+    {
+      "id": "D-068",
+      "group": "G",
+      "title": "The chord identifier needs at least three distinct pitch classes",
+      "verbatim": "Minimum 3 distinct pitch classes required. Returns empty vector if insufficient data.",
+      "plain": "With fewer than three different pitch names sounding, the chord identifier declines to answer rather than guessing.",
+      "home": "ARCHITECTURE.md:1605",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1605",
+      "patterns": [
+        "Minimum 3 distinct pitch classes",
+        "3-PC minimum",
+        "distinctPcs >= 3"
+      ]
+    },
+    {
+      "id": "D-069",
+      "group": "G",
+      "title": "Two identity modes for merged stretches - harmonic summary and as-written",
+      "verbatim": "**Harmonic summary mode** (status bar, analysis, tuning): region identity = root pitch\nclass + quality.",
+      "plain": "When neighbouring stretches are merged, they count as the same chord if the root and the major/minor character match. A second mode that would also require the exact voicing to match is designed but not built.",
+      "home": "ARCHITECTURE.md:1726-1727",
+      "home_is_layer_spec": true,
+      "status": "deferred",
+      "date": "2026-04-11",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1722 'Region identity modes (decided 2026-04-11)'; :1734-1736 records as-written mode deferred",
+      "patterns": [
+        "Region identity modes",
+        "As-written mode",
+        "Harmonic summary mode",
+        "octave dedup"
+      ]
+    },
+    {
+      "id": "D-070",
+      "group": "I",
+      "title": "Style behaviour is fully data-driven - no conditional logic on style identity",
+      "verbatim": "The C++ implementation contains no conditional logic based on style identity. All\nbehavioral differences between musical styles are expressed as parameter values in\nstyle JSON files.",
+      "plain": "Nowhere does the code ask 'is this jazz?'. Differences between styles are numbers in a settings file.",
+      "home": "ARCHITECTURE.md:388-390",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:381-384 states the §2 principles are 'hard constraints, not guidelines'; restated at §2.4 :435-438",
+      "patterns": [
+        "data-driven",
+        "style identity",
+        "no conditional logic based on style",
+        "styleName =="
+      ]
+    },
+    {
+      "id": "D-071",
+      "group": "I",
+      "title": "The analysis layer never produces display strings",
+      "verbatim": "Analysis components produce structured data — they never produce display strings.\nFormatting is handled by separate formatter classes.",
+      "plain": "The analysis returns facts. Turning those facts into text on screen is somebody else's job.",
+      "home": "ARCHITECTURE.md:431-432",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:429-433; mechanically guarded for the joint module by D-017",
+      "patterns": [
+        "display-agnostic",
+        "never produce display strings",
+        "analysis produces data",
+        "§2\\.3"
+      ]
+    },
+    {
+      "id": "D-072",
+      "group": "I",
+      "title": "The dependency rule - the analysis library knows nothing about the score format",
+      "verbatim": "This dependency order is **enforced**. Any code that would invert it (e.g. a composing header forward-declaring `mu::engraving::Note`) must be moved to the notation bridge layer.",
+      "plain": "The music-theory library must not know how MuseScore stores a score. Anything that needs both lives in a thin bridge layer in between.",
+      "home": "ARCHITECTURE.md:955",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:941-972, checklist at :1424-1431",
+      "patterns": [
+        "Dependency Rule",
+        "bridge function",
+        "bridge pattern",
+        "NO engraving dependency",
+        "notation bridge"
+      ]
+    },
+    {
+      "id": "D-073",
+      "group": "I",
+      "title": "Single implementation for shared logic; mirroring is a last resort",
+      "verbatim": "Any algorithm that must produce identical results in both the notation bridge and\n`batch_analyze` belongs in the `composing` module (`src/composing/`), not in either\nconsumer.",
+      "plain": "If the program and the measurement tool must agree, the code that makes them agree lives in one shared place. Copying it into both is a last resort that must be flagged as debt.",
+      "home": "ARCHITECTURE.md:484-486",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:482-515; the standing project-wide form is CLAUDE.md #6 (total unification)",
+      "patterns": [
+        "Single Implementation",
+        "total unification",
+        "one path per concern",
+        "do not copy-paste",
+        "§2\\.10"
+      ]
+    },
+    {
+      "id": "D-074",
+      "group": "I",
+      "title": "Analyze and suggest - never modify the score without explicit user action",
+      "verbatim": "The system presents analytical findings and suggestions. It never modifies the main score\nautomatically. All score modifications require explicit user action.",
+      "plain": "The program tells you what it thinks. It never changes your music unless you ask it to.",
+      "home": "ARCHITECTURE.md:475-477",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:473-480",
+      "patterns": [
+        "never modifies the main score",
+        "explicit user action",
+        "Analyze and Suggest"
+      ]
+    },
+    {
+      "id": "D-075",
+      "group": "I",
+      "title": "Interface-based design for machine-learning substitutability",
+      "verbatim": "Every component that may eventually be replaced or augmented by a machine learning\nmodel must be defined behind a pure abstract interface.",
+      "plain": "Anything that might one day be replaced by a trained model is hidden behind an interface, so the replacement can be dropped in without touching everything else.",
+      "home": "ARCHITECTURE.md:406-407",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:404-427; the substitution points are listed at §14.1",
+      "patterns": [
+        "IChordAnalyzer",
+        "IHarmonizer",
+        "abstract interface",
+        "ML substitutability",
+        "substitution point"
+      ]
+    },
+    {
+      "id": "D-076",
+      "group": "I",
+      "title": "Score inspection before diagnosis",
+      "verbatim": "Claude Code does not have direct score access and must not substitute\nstatistical inference for visual score inspection.",
+      "plain": "When a corpus number looks odd, somebody opens the actual music and looks at it before anyone changes code or runs more statistics.",
+      "home": "ARCHITECTURE.md:544-545",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:517-545",
+      "patterns": [
+        "Score Inspection Before Diagnosis",
+        "score inspection",
+        "must not substitute"
+      ]
+    },
+    {
+      "id": "D-077",
+      "group": "I",
+      "title": "The configuration interface is split into two narrow IoC interfaces",
+      "verbatim": "The implode bridge has no business knowing about status-bar display preferences; the analysis bridge has no business knowing about chord-staff output settings.",
+      "plain": "Settings are exposed through two small interfaces rather than one big one, so each component can only see the settings it actually needs.",
+      "home": "ARCHITECTURE.md:1404",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1394-1406, restated at :2967-2978",
+      "patterns": [
+        "IComposingAnalysisConfiguration",
+        "IComposingChordStaffConfiguration",
+        "IComposingConfiguration",
+        "modularity_interfaceInfo"
+      ]
+    },
+    {
+      "id": "D-078",
+      "group": "I",
+      "title": "The cross-layer value types live in a dependency-free leaf header",
+      "verbatim": "**The cross-layer value-types LEAF** — a dependency-free header (STL only; no `chord/`, `key/`, or engraving includes) holding the value types that cross the L1.5 / L3 / L4 boundaries",
+      "plain": "The small data types that several stages share live in one header that depends on nothing, which removed two places where a lower stage had to include a higher one.",
+      "home": "ARCHITECTURE.md:1238",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1238-1246",
+      "patterns": [
+        "analysistypes\\.h",
+        "value-types LEAF",
+        "types leaf",
+        "header back-edge"
+      ]
+    },
+    {
+      "id": "D-079",
+      "group": "H",
+      "title": "The function layer annotates and resolves; it never rewrites the committed chord",
+      "verbatim": "additive over L4 (it annotates and resolves; it never\nrewrites the committed chord identity)",
+      "plain": "The stage that works out a chord's role in the key may label it and settle open questions, but it may not change which chord was identified.",
+      "home": "ARCHITECTURE.md:1195-1196",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1192-1201 (Layer 5 - Built+Dormant, design ratified)",
+      "patterns": [
+        "function/cadence layer",
+        "never\\s+rewrites the committed",
+        "additive over L4",
+        "Roman numeral.*precise superset"
+      ]
+    },
+    {
+      "id": "D-080",
+      "group": "H",
+      "title": "Carried abstentions are resolved by selecting among the carried readings, never re-derived",
+      "verbatim": "the carried L4 abstentions are resolved by **selecting** among the carried readings (never re-derived)",
+      "plain": "Where the chord stage could not decide, the function stage picks from the options it was handed. It does not work the chord out again from the notes.",
+      "home": "ARCHITECTURE.md:1199-1200",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1192-1201",
+      "patterns": [
+        "carried readings",
+        "never re-derived",
+        "abstention.*resolved by",
+        "OpenQuestionLabel"
+      ]
+    },
+    {
+      "id": "D-081",
+      "group": "H",
+      "title": "The cadence detector is key-agnostic",
+      "verbatim": "The cadence\ndetector is **key-agnostic** (it votes for the key; it does not read a resolved key).",
+      "plain": "The part that spots cadences must not be told what key it is in - it is one of the things that decides the key, so reading the answer first would be circular.",
+      "home": "ARCHITECTURE.md:1199-1200",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1200. open_items/OI-166 records that the built detector is key-agnostic but CHORD-derived, not the bass-driven pre-scan specified",
+      "patterns": [
+        "key-agnostic",
+        "cadence detector",
+        "votes for the key",
+        "functioncadence"
+      ]
+    },
+    {
+      "id": "D-082",
+      "group": "H",
+      "title": "The grouping layer is additive, read-only, with no feedback",
+      "verbatim": "additive, read-only, no feedback into L5.",
+      "plain": "The stage that assembles phrases and key areas only organises what earlier stages decided. It never changes their answers.",
+      "home": "ARCHITECTURE.md:1207",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1203-1210 (Layer 6 - Design-only, v1 spec)",
+      "patterns": [
+        "grouping layer",
+        "no feedback into L5",
+        "key-areas",
+        "cowork_layer6_grouping_design"
+      ]
+    },
+    {
+      "id": "D-083",
+      "group": "H",
+      "title": "Hierarchy, periods and prolongation are out of the validatable core",
+      "verbatim": "Hierarchy,\nperiods/sentences, and prolongation are out of the validatable core (verifiability contract, §2.15).",
+      "plain": "Deeper structural theory - nested hierarchy, periods, prolongation - is deliberately left out, because we have no annotated music to check it against.",
+      "home": "ARCHITECTURE.md:1208-1209",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1203-1210, deriving from D-029",
+      "patterns": [
+        "out of the validatable core",
+        "prolongation",
+        "periods/sentences"
+      ]
+    },
+    {
+      "id": "D-084",
+      "group": "H",
+      "title": "The progression-schema recognizer is a consumer of the function layer, not a new layer",
+      "verbatim": "an L5 *consumer* (a prior + an annotation), not a new layer",
+      "plain": "Recognising well-known chord patterns is something that reads the finished analysis and annotates it. It is not another stage in the chain.",
+      "home": "ARCHITECTURE.md:1214",
+      "home_is_layer_spec": true,
+      "status": "deferred",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1212-1217 'Scaffolding-first, deferred'",
+      "patterns": [
+        "progression-schema",
+        "recognition consumer",
+        "Harmonic Vocabulary",
+        "schema recognizer"
+      ]
+    },
+    {
+      "id": "D-085",
+      "group": "H",
+      "title": "The voice-leading axis is a separate axis with its own layers",
+      "verbatim": "the **orthogonal voice-leading axis** with its own layers (where melodic phrases [MT] and\n  chord **voicing / arrangement** are analysed)",
+      "plain": "How the individual voices move is a second, independent line of analysis alongside the harmonic one, with its own stages.",
+      "home": "ARCHITECTURE.md:817-818",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "2026-07-03",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:818-821 records the foundation BUILT (dormant). ARCHITECTURE.md:1218-1219 still says the voice-leading layer is 'not built' - see OPEN_ITEMS OI-238",
+      "patterns": [
+        "voice-leading axis",
+        "voiceleading_axis",
+        "VL-A",
+        "VL-C",
+        "cross-ARI",
+        "texture classification"
+      ]
+    },
+    {
+      "id": "D-086",
+      "group": "J",
+      "title": "Roman numerals and Nashville numbers are presentation choices, not separate analyses",
+      "verbatim": "Roman numerals and Nashville numbers are **presentation choices**, not\n  separate analyses — they are alternative formatters on the same `ChordAnalysisResult`.",
+      "plain": "Showing the harmony as Roman numerals or as Nashville numbers is a choice of how to display one and the same analysis.",
+      "home": "ARCHITECTURE.md:2993-2995",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:2991-2995; consistent with D-016",
+      "patterns": [
+        "presentation choices",
+        "analyzeForChordFunction",
+        "alternative formatters"
+      ]
+    },
+    {
+      "id": "D-087",
+      "group": "J",
+      "title": "Display options live with the formatter, not with the analyzer preferences",
+      "verbatim": "Display options (`Options`) live in `ChordSymbolFormatter`, not in\n`ChordAnalyzerPreferences`, enforcing the analysis/display separation (principle 2.3).",
+      "plain": "Which spelling convention to use on screen is a formatter setting, kept away from the settings that affect the analysis itself.",
+      "home": "ARCHITECTURE.md:2706-2707",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:2672-2707",
+      "patterns": [
+        "ChordSymbolFormatter",
+        "NoteSpelling",
+        "formatSymbol",
+        "formatRomanNumeral",
+        "chordsymbolformatter"
+      ]
+    },
+    {
+      "id": "D-088",
+      "group": "J",
+      "title": "No automatic key signature injection",
+      "verbatim": "No automatic key signature\ninjection is planned.",
+      "plain": "The program will never add a key signature to your score by itself. It shows what it inferred in the chord staff and leaves the decision to you.",
+      "home": "ARCHITECTURE.md:3595-3596",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:3588-3596; an instance of D-074",
+      "patterns": [
+        "Key Signature Injection",
+        "key signature insertions",
+        "Not Planned"
+      ]
+    },
+    {
+      "id": "D-089",
+      "group": "J",
+      "title": "The legacy confidence exposure gates - 0.5 tentative, 0.8 assertive",
+      "verbatim": "- Above 0.8 — display without qualifier\n- 0.5–0.8 — append \"?\" to key/mode label\n- Below 0.5 — suppress key-dependent chord-track annotations rather than exposing a low-confidence key",
+      "plain": "On the old path, a key the program is unsure of is shown with a question mark, and one it is very unsure of is not shown at all rather than shown wrongly.",
+      "home": "ARCHITECTURE.md:3280-3282",
+      "home_is_layer_spec": true,
+      "status": "superseded-by",
+      "superseded_by": "D-018",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "The record arm replaces the 0.5/0.8 literals with the fitted nats constants (ARCHITECTURE.md:168-170); the literals are legacy-arm-only (sectionanalyzer.cpp::legacyKeyExposureBucket)",
+      "patterns": [
+        "confidence.*0\\.8",
+        "append \"\\?\"",
+        "tentative.*assertive",
+        "kAnnotateKeyConfidenceThreshold",
+        "legacyKeyExposureBucket"
+      ]
+    },
+    {
+      "id": "D-090",
+      "group": "J",
+      "title": "Abstention is a valid outcome - high precision before coverage",
+      "verbatim": "- high precision on exposed results\n- calibrated abstention when evidence is weak",
+      "plain": "The aim is not to put a label on everything. It is to be right about what we do label, and to say nothing when the evidence is thin.",
+      "home": "ARCHITECTURE.md:3300-3301",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:3287-3339",
+      "patterns": [
+        "calibrated abstention",
+        "high precision on exposed",
+        "coverage gains only after",
+        "abstention.*valid outcome"
+      ]
+    },
+    {
+      "id": "D-091",
+      "group": "K",
+      "title": "ARCHITECTURE.md is the canonical architecture document and wins every disagreement",
+      "verbatim": "**When any doc disagrees with\n> this one, this one wins, and a new ratified decision lands here first.**",
+      "plain": "Where two documents disagree about the architecture, this one is right, and a new ruling must be written into it before anywhere else.",
+      "home": "ARCHITECTURE.md:263-264",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "2026-06-29",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:256-264 'Doc governance (2026-06-29) - the hierarchy'",
+      "patterns": [
+        "canonical architecture doc",
+        "Doc governance",
+        "this one wins",
+        "not rival architecture docs"
+      ]
+    },
+    {
+      "id": "D-092",
+      "group": "K",
+      "title": "A cross-cutting contract is stated once and never redefined in a layer document",
+      "verbatim": "a **cross-cutting contract is stated once, here (§2.15), and never redefined in a\n> layer doc**",
+      "plain": "Rules that apply to every stage are written down in one place. A stage's own document may use such a rule but may not restate it in its own words.",
+      "home": "ARCHITECTURE.md:260-261",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "2026-06-29",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:256-264",
+      "patterns": [
+        "cross-cutting contract",
+        "stated once",
+        "never redefined"
+      ]
+    },
+    {
+      "id": "D-093",
+      "group": "K",
+      "title": "STATUS.md wins on current state; ARCHITECTURE.md on design",
+      "verbatim": "Where a\n> heading's status and STATUS.md disagree, STATUS.md wins. This section describes the **designs**.",
+      "plain": "For what is built right now, read STATUS.md. For what was decided, read this document. Where they disagree about built-or-not, STATUS.md is right.",
+      "home": "ARCHITECTURE.md:3102-3103",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:3101-3103, consistent with :251-254",
+      "patterns": [
+        "STATUS\\.md wins",
+        "Living design document",
+        "Update STATUS\\.md as your last act"
+      ]
+    },
+    {
+      "id": "D-094",
+      "group": "K",
+      "title": "Each layer carries exactly one build state",
+      "verbatim": "Each layer below is tagged with exactly one build state: **Built+Live** (wired into the\nproduction pipeline), **Built+Dormant** (built and tested but not wired — reachable only via diagnostics, byte-identical on\nproduction), or **Design-only** (specified, not yet built).",
+      "plain": "Every stage is labelled as live, built-but-not-connected, or designed-only - one label each, no ambiguity.",
+      "home": "ARCHITECTURE.md:986-988",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:986-989. Three layer tags and two prose statements are stale after the switch - see OPEN_ITEMS OI-236",
+      "patterns": [
+        "Built\\+Live",
+        "Built\\+Dormant",
+        "Design-only",
+        "Layer status legend"
+      ]
+    },
+    {
+      "id": "D-095",
+      "group": "A",
+      "title": "The dual path during the joint-estimator build is a declared, bounded, pre-ratified migration state",
+      "verbatim": "STAGED SCOPE (declared migration state, #23)",
+      "plain": "Building the new estimator beside the old one temporarily breaks the rule that there is one way to do each thing. That was declared in advance, bounded, and given a retirement plan.",
+      "home": "ARCHITECTURE.md:39",
+      "home_is_layer_spec": true,
+      "status": "superseded-in-fact",
+      "date": "2026-07-19",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "open_items/OI-180 (PROTOCOL RATIFIED 2026-07-19; forward exit EXECUTED on both surfaces 2026-07-27). The ARCHITECTURE.md text at :39-40 still says the notation layer stays legacy - see OPEN_ITEMS OI-236",
+      "patterns": [
+        "OI-180",
+        "STAGED SCOPE",
+        "dual path",
+        "retirement map",
+        "declared migration state",
+        "#23"
+      ]
+    },
+    {
+      "id": "D-096",
+      "group": "A",
+      "title": "Fitted values are fit once against ground truth, never per-case tuned",
+      "verbatim": "forms from theory, values fit ONCE against GT (#19), never per-case tuned",
+      "plain": "The shape of each piece of evidence comes from music theory. Its numerical strength is learned once from annotated music, and never adjusted to make a particular passage come out right.",
+      "home": "OPEN_ITEMS.md:26",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-07-17",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "OPEN_ITEMS.md:15-26 (the governing architecture decision banner). NOT recorded in any ARCHITECTURE.md layer specification - see OPEN_ITEMS OI-239",
+      "patterns": [
+        "fit ONCE",
+        "never per-case tuned",
+        "forms from theory",
+        "theory-grounded factor",
+        "term-level theory-grounding"
+      ]
+    },
+    {
+      "id": "D-097",
+      "group": "A",
+      "title": "Held-out evaluation and a capacity budget are declared before any fit",
+      "verbatim": "5-fold CV grouped by WiR file, all fitted objects train-fold-only, headline = pooled CV + piece-bootstrap CI",
+      "plain": "Before the estimator's numbers are learned, we say in advance which music will be held back to test them on, and how many numbers we are allowed to learn at all. The headline number is always the one measured on the held-back music.",
+      "home": "OPEN_ITEMS.md:123",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-07-19",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "open_items/OI-176 and OI-177 (PROTOCOL RATIFIED 2026-07-19). The standing principles are CLAUDE.md #20. NOT recorded in any ARCHITECTURE.md layer specification - see OPEN_ITEMS OI-239",
+      "patterns": [
+        "held-out",
+        "OI-176",
+        "OI-177",
+        "capacity budget",
+        "5-fold",
+        "fit/evaluation separation",
+        "k-fold"
+      ]
+    },
+    {
+      "id": "D-098",
+      "group": "A",
+      "title": "The exact-decode reserve - the declared prune was never adopted",
+      "verbatim": "the exact-decode reserve is the declared remedy (never budgeted at fitted weights)",
+      "plain": "The estimator was meant to be allowed to narrow its search when that gets too slow. The narrowing rule that was specified turned out to cost more than it saved, so the estimator still searches exactly - and how it actually narrows in practice was never specified.",
+      "home": "OPEN_ITEMS.md:185",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "open_items/OI-188 (OPEN - 'bounds every ceiling claim'); the admission rule actually in production has no ratified basis (open_items/OI-226)",
+      "patterns": [
+        "OI-188",
+        "exact-decode reserve",
+        "prune",
+        "reachability",
+        "force-added",
+        "circle-of-fifths"
+      ]
+    },
+    {
+      "id": "D-099",
+      "group": "C",
+      "title": "Negative evidence is information - a ruled-out possibility is carried, not dropped",
+      "verbatim": "Negative/exclusion evidence is information (\"finding by exclusion\") —\n   carry a ruled-out possibility at low confidence rather than dropping it, unless the exclusion is\n   recomputable from what is kept.",
+      "plain": "Knowing that something is not the case is itself useful. A reading that has been ruled out is kept at low confidence rather than thrown away, unless we could work out the exclusion again from what we did keep.",
+      "home": "CLAUDE.md",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-07-06",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "CLAUDE.md guiding principle #12, ratified 2026-07-06. NOT recorded in any ARCHITECTURE.md layer specification, though it governs every layer's output surface - see OPEN_ITEMS OI-239",
+      "patterns": [
+        "No information loss",
+        "finding by exclusion",
+        "exclusion evidence",
+        "#12"
+      ]
+    },
+    {
+      "id": "D-100",
+      "group": "C",
+      "title": "Every derived fact is published exactly once, on the producing layer's output surface",
+      "verbatim": "every derived analytical fact is **published exactly once, on the producing layer's output surface;\nconsumers read, never re-derive.**",
+      "plain": "Whatever a stage works out, it publishes; every later stage reads that instead of working it out again. A fact nobody reads must either name its future reader or be removed.",
+      "home": "CLAUDE.md",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-07-10",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "CLAUDE.md 'Fact-publication corollary to #6/#7/#12', ratified 2026-07-10, amended 2026-07-12 (publish EVIDENCE-class facts broadly, each carrying its establishment status). NOT recorded in any ARCHITECTURE.md layer specification - see OPEN_ITEMS OI-239",
+      "patterns": [
+        "published exactly once",
+        "fact-publication",
+        "consumers read, never re-derive",
+        "declared dormancy",
+        "evidence inventory",
+        "siloed facts"
+      ]
+    },
+    {
+      "id": "D-101",
+      "group": "G",
+      "title": "Contextual inversion bonuses fire only for major and minor candidates",
+      "verbatim": "Bonuses never fire for\nDiminished, HalfDiminished, Augmented, or Suspended candidates — only Major and Minor.",
+      "plain": "The bonuses that let a neighbouring chord tip an inversion reading were restricted to plain major and minor chords, after three earlier attempts without that restriction all made things worse.",
+      "home": "ARCHITECTURE.md:1643-1644",
+      "home_is_layer_spec": true,
+      "status": "superseded-by",
+      "superseded_by": "D-102",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1931-1939 records Iter 46 extending the same helpers to Augmented and HalfDiminished. The §4.1b statement carries no supersession note - see OPEN_ITEMS OI-240",
+      "patterns": [
+        "Safety constraints",
+        "never fire for",
+        "stepwiseBassInversionBonus",
+        "sameRootInversionBonus",
+        "three-attempt history"
+      ]
+    },
+    {
+      "id": "D-102",
+      "group": "G",
+      "title": "Augmented and half-diminished candidates receive the inversion bonuses too (Iter 46)",
+      "verbatim": "Extending these gates put Augmented and\nHalfDiminished inversion candidates on equal footing with Major/Minor.",
+      "plain": "The restriction above was later relaxed for augmented and half-diminished chords, because without the bonuses their correct inverted readings never reached the shortlist at all. It was the single largest improvement of that iteration path.",
+      "home": "ARCHITECTURE.md:1937-1939",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1929-1942 (Iter 46, commit 36bf4738a8)",
+      "patterns": [
+        "Iter 46",
+        "supportsContextualInversionBonuses",
+        "qualifiesForCompleteTriadInversionBonus",
+        "equal footing"
+      ]
+    },
+    {
+      "id": "D-103",
+      "group": "G",
+      "title": "Pedal-point detection is a second pass, accepted only on two conditions",
+      "verbatim": "**Pass 2** is triggered only when the Pass 1 bass PC is NOT a chord tone of the\nwinner.",
+      "plain": "When the lowest note does not belong to the chord the upper voices spell, the program re-analyses without it. It accepts that reading only if the upper voices give at least two different pitch names and the answer is clearly better than the next different-rooted one.",
+      "home": "ARCHITECTURE.md:3630-3631",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:3613-3643 'Status: Implemented (Session 18, master fb9a27ce9a)'. Suspended on the record arm - see D-021",
+      "patterns": [
+        "Pedal Point Detection",
+        "Two-Pass",
+        "pedalConfidenceThreshold",
+        "isBassChordTone",
+        "different-root competitor"
+      ]
+    },
+    {
+      "id": "D-104",
+      "group": "G",
+      "title": "The bass-is-root bonus is conditioned on corroborating support",
+      "verbatim": "`bassNoteRootBonus` is now conditioned on corroborating root-position support in the\naccumulated tones:",
+      "plain": "Being the lowest note no longer counts as strong evidence of being the chord's root unless the chord above actually supports that reading. Without a third or fifth above it, the bonus almost vanishes.",
+      "home": "ARCHITECTURE.md:3423-3424",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "2026-04-09",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:3400-3448; the failure it fixed is documented across four corpora at :3406-3419",
+      "patterns": [
+        "bassNoteRootBonus",
+        "bassRootThirdOnlyMultiplier",
+        "bassRootAloneMultiplier",
+        "bass-root"
+      ]
+    },
+    {
+      "id": "D-105",
+      "group": "G",
+      "title": "The spelling written in the score is read through ONE shared interpreter",
+      "verbatim": "read through the **shared** `engravingbridge::lineOfFifths` primitive (the Layer-1.5 spelling\n  view) — one interpreter, not a per-layer tpc copy.",
+      "plain": "How a note is spelt on the page - F sharp versus G flat - is interpreted in one shared place, not re-implemented by each stage that needs it.",
+      "home": "ARCHITECTURE.md:1173-1174",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:1171-1174. ARCHITECTURE.md:1182-1186 records the unification residual: the legacy scorer still carries its own second reader until the legacy path retires",
+      "patterns": [
+        "lineOfFifths",
+        "spelling-pin",
+        "tpc reader",
+        "one interpreter",
+        "tpcForPc",
+        "line-of-fifths"
+      ]
+    },
+    {
+      "id": "D-106",
+      "group": "J",
+      "title": "The augmented-sixth labels are gated to the Standard and Baroque presets",
+      "verbatim": "Gated to\nStandard and Baroque presets only. Jazz and Nashville presets continue to\nemit chromatic Roman numerals or chord symbols respectively.",
+      "plain": "The specific Italian, French and German augmented-sixth labels are shown only under the classical presets.",
+      "home": "ARCHITECTURE.md:3609-3611",
+      "home_is_layer_spec": true,
+      "status": "superseded-in-fact",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "open_items/OI-112 already records this preset-gating as stale; open_items/OI-201 records that the record arm collapses the family to a plain major triad symbol",
+      "patterns": [
+        "augmented sixth",
+        "aug-sixth",
+        "It\\+6",
+        "Ger\\+6",
+        "Fr\\+6",
+        "augSixthSubType"
+      ]
+    },
+    {
+      "id": "D-107",
+      "group": "I",
+      "title": "American English throughout",
+      "verbatim": "All identifiers, comments, and documentation use American English spelling.",
+      "plain": "Analyzer, not analyser; color, not colour.",
+      "home": "ARCHITECTURE.md:442",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:440-450; restated in CLAUDE.md Conventions",
+      "patterns": [
+        "American English",
+        "analyser",
+        "behaviour"
+      ]
+    },
+    {
+      "id": "D-108",
+      "group": "I",
+      "title": "Cross-platform by default",
+      "verbatim": "All code must run on every platform officially supported by MuseScore Studio: Windows,\nmacOS, and Linux.",
+      "plain": "Everything must work on Windows, macOS and Linux; platform-specific code is allowed only where unavoidable and must be walled off.",
+      "home": "ARCHITECTURE.md:626-627",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:624-630",
+      "patterns": [
+        "Cross-Platform by Default",
+        "every platform officially supported",
+        "platform-agnostic"
+      ]
+    },
+    {
+      "id": "D-109",
+      "group": "K",
+      "title": "The open-items register is the one home for every unresolved issue, and the index is the status of record",
+      "verbatim": "this file is the complete INDEX and\n> the **authoritative status surface**",
+      "plain": "Every known unresolved problem has exactly one row in one file, and that row - not the longer write-up beside it - is the official statement of where it stands.",
+      "home": "OPEN_ITEMS.md:9-10",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-07-26",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "OPEN_ITEMS.md:3-13; the standing rule is in CLAUDE.md 'The open-items register'",
+      "patterns": [
+        "OPEN_ITEMS",
+        "open-items register",
+        "authoritative status surface",
+        "index row AND its detail file"
+      ]
+    },
+    {
+      "id": "D-110",
+      "group": "K",
+      "title": "The decisions register records what was decided and its status - nothing else",
+      "verbatim": "**The register holds WHAT WAS DECIDED, and its status. Nothing else.** The proposed\n   `conformance` field is REMOVED.",
+      "plain": "This decisions register says what was decided and whether it still stands. Whether the code obeys it is tracked separately, in the open-items register, because those two things change on different clocks.",
+      "home": "open_items/OI-208.md:48-49",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-07-28",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "open_items/OI-208.md:46-67 (SHAPE RATIFIED, three rulings)",
+      "patterns": [
+        "decisions register",
+        "OI-208",
+        "conformance field",
+        "WHAT WAS DECIDED"
+      ]
+    },
+    {
+      "id": "D-111",
+      "group": "K",
+      "title": "A decision belongs in the owning layer's specification; the register is an index",
+      "verbatim": "**A decision belongs, wherever possible, in the OWNING LAYER'S SPECIFICATION** — that layer's\n   section of `ARCHITECTURE.md` — and the register is the **index and pointer**, never a\n   substitute home.",
+      "plain": "A decision about how a stage should work is written into that stage's part of the architecture document. This decisions register only points at it.",
+      "home": "open_items/OI-208.md:55-57",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-07-28",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "open_items/OI-208.md:46-67; follows the CLAUDE.md Conventions rule of 2026-07-28",
+      "patterns": [
+        "OWNING LAYER",
+        "layer specification",
+        "substitute home",
+        "documentation gap"
+      ]
+    },
+    {
+      "id": "D-112",
+      "group": "K",
+      "title": "Never work from memory instead of documented facts",
+      "verbatim": "No assertion, design, decision, dispatch or report may rest on recalled or\n  inferred content when a documented source exists. Open the primary source and cite it\n  (file:line).",
+      "plain": "If a document records something, read it and quote it rather than remembering it. Being right from memory does not count, because correct memory and incorrect memory look the same until you check.",
+      "home": "CLAUDE.md",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-07-28",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "CLAUDE.md Conventions, user-directed 2026-07-28; its founding instance is the Layer-2 note-collection reading that this adjudication's method is built to prevent",
+      "patterns": [
+        "NEVER WORK FROM MEMORY",
+        "primary source",
+        "documented facts",
+        "file:line"
+      ]
+    },
+    {
+      "id": "D-113",
+      "group": "K",
+      "title": "Music-theory words are reserved for their music-theory meaning",
+      "verbatim": "Any term that coincides even slightly with music theory is used\n  ONLY in its musical sense.",
+      "plain": "In this project a score is a piece of music, a key is a tonality, and a measure is a bar. Where a word is needed in its everyday computing sense, it must be qualified - candidate score, map key, measurement.",
+      "home": "CLAUDE.md",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-07-28",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "CLAUDE.md Conventions, user-directed 2026-07-28; open_items/OI-229 records the convention STANDING for new writing and the tree-wide cleanup as an unratified future work item",
+      "patterns": [
+        "music-theory word",
+        "reserved for their music",
+        "disambiguation convention",
+        "OI-229",
+        "terminology collision",
+        "bare word"
+      ]
+    },
+    {
+      "id": "D-114",
+      "group": "A",
+      "title": "The decoder commits its best path; there is no abstention on the key axis",
+      "verbatim": "**key-abstain 0** — A commits its MAP path, the OI-33 flag reads zero",
+      "plain": "The joint estimator always names a key. It never declines to answer on the key axis, so the abstention counter is always zero.",
+      "home": "CLAUDE.md",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-07-26",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "CLAUDE.md gate block (A), the OI-178 adoption baselines. NOT recorded in any ARCHITECTURE.md layer specification, and it sits in tension with D-090 (calibrated abstention) - see OPEN_ITEMS OI-239",
+      "patterns": [
+        "key-abstain",
+        "MAP path",
+        "abstain",
+        "OI-33"
+      ]
+    },
+    {
+      "id": "D-115",
+      "group": "C",
+      "title": "The regression stop is the granularity-robust unit; root governs, key and Roman numeral ride beside",
+      "verbatim": "the **class-(b) (pitch-class-decidable-root) root-disagree DURATION\n  must be NON-INCREASING** vs the committed reference — the *meaningful* functional errors never grow.",
+      "plain": "A change is allowed to ship only if the total amount of music on which we name the wrong chord root - counted where the root is decidable at all - does not grow. The key and the Roman numeral are watched alongside but do not govern.",
+      "home": "CLAUDE.md",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-07-06",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "CLAUDE.md gate block (A), ratified R10-b 2026-07-06; supersedes the batch case-identity stop preserved as block (C)",
+      "patterns": [
+        "robust.unit",
+        "class-\\(b\\)",
+        "root-disagree",
+        "non-increasing",
+        "robust_stop",
+        "hard stop",
+        "granularity-robust"
+      ]
+    }
+  ]
+}

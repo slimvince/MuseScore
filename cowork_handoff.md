@@ -1,7 +1,120 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE 2026-07-28 (FIFTH) — OI-215 IS **NOT** ALONE; AND THE EMISSION ITSELF READS STRUCK NOTES WHERE THE RATIFIED SPEC SAYS PER TONE. THE FRIDAY CONFORMANCE ENUMERATION IS THE NEXT MAJOR EVENT. THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE 2026-07-28 (SIXTH) — THE CONFORMANCE-ADJUDICATION ARC IS FULLY PREPARED AND **THE OI-207 ADJUDICATION IS IN FLIGHT** (the higher-capacity session, dispatch `cc_instruction_oi207_adjudication.md`). THE CURRENT ENTRY POINT.
+
+**You (the next session) start clueless — this block is the entire handover.** Read, in order:
+(1) `CLAUDE.md` IN FULL — it gained THREE Conventions entries this arc, all user-directed
+2026-07-28: **never work from memory instead of documented facts** (open the primary source, cite
+file:line; being right from memory does not satisfy it); **music-theory words are reserved for
+their musical meaning, and THE BARE WORD IS ALWAYS THE MUSICAL ONE** (bare *score* = the music,
+the numerical sense is always *candidate score*; bare *measure* = the bar; bare *key* = tonality;
+a script is a *measurement tool* or *check*, never an *instrument*); and the pointer to
+**`cowork_design_doc_template.md`** as the ONE home of the writing standards (predicates qualified;
+defined terms, plain vocabulary, no shorthand — read it before writing anything for the user).
+(2) `OPEN_ITEMS.md` (INDEX), opening at minimum **OI-207, OI-208 (its dated 2026-07-28 note
+carries the user's RATIFIED register shape), OI-228, OI-215/226/227, OI-229, OI-230, OI-209,
+OI-210, OI-212, OI-199, OI-206**; (3) this block, then the five earlier 2026-07-28 blocks below
+(the day's full arc: OI-206 diagnosis → cost profile → OI-215 → OI-199 pass 1 → the fire-count
+answer → the harvest/clustering preparation); (4) the active dispatch
+`cc_instruction_oi207_adjudication.md` — read it IN FULL before touching anything it owns.
+
+**★ WHERE THE PROJECT STANDS.** The joint estimator is production on both surfaces (the 2026-07-27
+switch). The live defect family: **the decoder reads STRUCK notes where the design says SOUNDING**
+— three admission gates with no ratified basis empty the whole analysis on 13 of 23 committed
+orchestral scores (OI-215 sparse-side, OI-227 dense-side, OI-226 no-basis), and the pitch/spelling
+emission walks onset-only note lists against a ratified specification that says per tone, with the
+fitted factor-presence table's own embedded provenance declaring overlap (sounding) membership
+PRIMARY and onset a cross-check (OI-228 — including measured 20–37-point presence differences ON
+CHORALES, so the miscount is not confined to orchestral repertoire). **The fix is DEFERRED BY
+DESIGN** until the whole family is known — the user ruled candidate admission is COMPLETION (not
+refinement, so #8 permits it), but the design happens ONCE over the family, never per symptom
+(#6/#7). **The OI-180 retirement map stays blocked** (the legacy arm is both the OI-206 revert
+escape and the only working bounded-growing-cached interactive read). The analysis-extent decision
+(OI-210) waits on trusted cost figures; the interactive latency (OI-203/206) waits on the extent
+decision; the instruments partition of OI-199 (sealed, blind, under the OI-222 remedy) and OI-199
+pass 2 wait behind the adjudication.
+
+**★ WHAT THIS ARC BUILT (the adjudication's prepared inputs, all committed and pushed, HEAD
+`c9e0f17b61`):** (1) **the harvest** — 15,224 decision-bearing statements from the whole
+repository including code comments, verbatim with context, recall-established 10/10 against seeded
+known decisions (`tools/audit/decisions/decision_candidates.json`/`.csv` + `manifest.json` +
+`seed_recall.json`); (2) **the clustering** — a NON-DESTRUCTIVE partition of all 15,224 into
+14,460 clusters (every candidate in exactly one; establishment exact, recall/precision 1.0), whose
+central finding is a STOP that reshaped the method: **this repository restates decisions by
+PARAPHRASE, not by copying** (14,274 singletons; the similarity threshold moves the count by 79
+across its whole range), so clustering did NOT reduce the judgment work; (3) **the readable
+faces** — `decision_inventory.md` (subject-grouped; to be RE-BANNERED by the adjudication as a
+reading sample, since "canonical, load-bearing" was a judgment made inside a no-adjudication
+dispatch) and `cluster_preview.md` (the five largest clusters as mock register entries — the
+user approved the format).
+
+**★ THE USER'S RATIFIED RULINGS THIS ARC (all recorded in OI-208's dated note and binding):**
+(1) **the decisions register records WHAT WAS DECIDED and its STATUS only — NO conformance
+field** (status changes only when someone rules again; conformance changes whenever code moves;
+one row holding both goes silently stale). **Non-conformance = ordinary `OPEN_ITEMS.md` rows**
+pointing back at the decision violated. (2) **A decision belongs, wherever possible, in the OWNING
+LAYER'S SPECIFICATION in `ARCHITECTURE.md`** — the register is the index and pointer, never a
+substitute home; a decision missing from its proper specification home is a DOCUMENTATION-GAP row.
+(3) **All 15,224 harvested statements must be taken care of in some way or another** — discharged
+mechanically via the cluster partition: every cluster reaches ONE recorded disposition (restates /
+not-a-decision / boilerplate / no-spec-home / unresolved — unresolved PERMITTED and wanted), bulk
+rules stated with counts, completeness checked by arithmetic against 14,460.
+
+**★ THE ADJUDICATION IN FLIGHT (`cc_instruction_oi207_adjudication.md`).** Method
+SPECIFICATION-FIRST, not harvest-first — the harvest cannot see decisions written as plain
+specification (three load-bearing ones are known-absent: the priority-of-evidence ranking
+`ARCHITECTURE.md:3134-3141`, the slicer boundary rule `:1045`, the piece-start shortcut
+`:3128-3130`), and the paraphrase finding killed consolidation-by-similarity. So: Task 1 the
+backbone enumerated from `ARCHITECTURE.md`'s per-layer sections read IN FULL; Task 2 status from
+the record only ("not stated" permitted, inference forbidden); Task 3 every cluster dispositioned;
+Task 4 the two gap classes as rows (documentation gaps; non-conformances, both sides quoted —
+NO fixes, NO `ARCHITECTURE.md` edits, writing a spec entry is a separate ratified act); Task 5
+the register itself, written to the user's readability standard, plus the inventory re-banner;
+Task 6 notes and close. A feasibility stop with a measured partition proposal is an ACCEPTED
+outcome. **When its report arrives: verify at the objects first** (git show by reported SHAs +
+fresh file-tool reads; check the completeness arithmetic yourself; spot-check dispositions and the
+register's citations against the sources).
+
+**★ AFTER THE ADJUDICATION, in order:** the user ratifies the register + the documentation-gap
+rows are worked off as ratified spec-writing acts → **the struck-vs-sounding family fix surface**
+under the Premise Gate (ONE design over OI-215/226/227/228; the OI-228 refit caveat is real — the
+note tables were fitted under some counting rule, so a decode correction without a refit may read
+one thing through numbers calibrated to another) → the instruments partition of OI-199 (sealed,
+blind) → OI-199 pass 2 → the analysis-extent decision surface (OI-210, with the 3.1b evidence +
+the Tristan review as required inputs) → OI-207's remaining scope if partitioned → the marginals
+C++ follow-up → OI-194 → the OI-180 map (unblocks only after OI-206 + OI-207 resolve) → OI-205(b)
+→ OI-198/OI-200 → only then the inference era (OI-192 first). **Deferred to a user discussion,
+rowed OI-230:** the writing-standards conformance question (does the doc tree conform; are
+documents in the enumeration's scope; the tree-wide terminology cleanup — OI-229 — unscoped).
+
+**★ METHOD REMINDERS — the standing list, sharpened by this arc's failures (all Cowork's, all
+recorded so they are not repeated).** (a) **Never work from memory** — now a Conventions rule
+with a founding instance: Cowork reasoned about note collection without opening the Layer-2
+specification, which states the answer explicitly and twice (`ARCHITECTURE.md:1045-1053`,
+`:3134-3141`). (b) **Verify a premise before building a dispatch on it** — Cowork turned a
+harvest hit-count ("21 hits") into "21 near-identical copies" and specified a clustering premise
+that the data refuted; the sweep result (79 clusters across the whole threshold range) was the
+measurement that caught it. (c) **Verify your own criticism against the precedent before
+levelling it** — Cowork declared CC's generated dispositions void, then measured the certified
+L4 pass and found it identical in kind; withdrawn. (d) **Alternatives in FULL PROSE** — each pro
+and con naming the principle it rests on, each option rated on both the principles and the
+ultimate objective; the option-widget compression was rejected twice. (e) **Do not chase the most
+recent finding** — ask where it belongs in the ratified sequence (a bespoke dispatch was written
+and withdrawn unhanded for exactly this). (f) **Everything written for the user follows the
+writing standards** (`cowork_design_doc_template.md`) and the bare-word terminology convention.
+(g) Verify every CC claim at the objects; CC's reports this arc were accurate but incomplete in
+what they compared (the C++-slower-than-Python anomaly sat unnoticed in CC's own table until
+Cowork compared it against committed figures). (h) Never bash for local files; git object reads by
+explicit SHA are the one sanctioned use. (i) Withheld findings never enter a mandatory
+session-start read (the OI-222 remedy — STATUS carries a pointer, content lives in post-freeze
+artifacts).
+
+*(The five earlier 2026-07-28 blocks below are the day's running record — kept for provenance;
+they move to `cowork_handoff_archive.md` at the next doc split.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE 2026-07-28 (FIFTH) — OI-215 IS **NOT** ALONE; AND THE EMISSION ITSELF READS STRUCK NOTES WHERE THE RATIFIED SPEC SAYS PER TONE. (SUPERSEDED as the entry point by the block above.)
 
 **You (the next session) start clueless — this block is the entire handover.** Read, in order:
 (1) `CLAUDE.md` IN FULL; (2) `OPEN_ITEMS.md` (INDEX), opening at minimum **OI-215, OI-226, OI-227,
