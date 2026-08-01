@@ -9,7 +9,9 @@
 COMPLETE AND TRUE.** READ-ONLY on code: no `src/` change, no golden / `tools/corpus/` / `tools/robust_stop/` movement,
 no behavior change, no fix, no design, no new decision. Dispatch `cc_instruction_spec_completion.md`. Per the OI-222
 remedy this entry is a **POINTER** — the content lives in the specifications themselves, in `DECISIONS.md`, and in the
-dated notes. **Two commits:** `b1af0fe54a` Task 1, the homing acts → `9df7f3ee9d` Task 2, the truth-sync. **Read, in
+dated notes. **Four commits:** `200a4e1087` an isolated line-ending normalization of `ARCHITECTURE.md`, split out by
+the standing self-check so it would not bury the real diff → `f833a2d2a9` Task 1, the homing acts → `ab336f43b5`
+Task 2, the truth-sync → `b0d932b6d0` Task 4, the rows and notes. **Read, in
 this order:** the [[OI-237]] and [[OI-240]] notes (where each of the 20 decisions now lives, and the one tension named
 but NOT settled); the [[OI-232]] / [[OI-238]] / [[OI-242]] / [[OI-257]] / [[OI-236]] / [[OI-112]] notes (what each
 corrected statement now says); the [[OI-233]] and [[OI-107]] notes (**partial** discharge — what is still owed); and
