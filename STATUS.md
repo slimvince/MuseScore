@@ -5,7 +5,25 @@
 > Historical entries live in `STATUS_ARCHIVE.md` (reference-only, NOT part of the session-start
 > read) — a superseded entry moves there instead of accumulating here.
 
-*Last updated: 2026-08-01, LATEST (CC — **THE OI-207 DECISION-CONFORMANCE ADJUDICATION IS DELIVERED, AND THE
+*Last updated: 2026-08-01, LATEST (CC — **THE DECISIONS REGISTER IS CORRECTED AND COMPLETED: `DECISIONS.md`,
+228 decisions, each now carrying its DEFENSE.** READ-ONLY: no `src/` change, no golden / `tools/corpus/` /
+`tools/robust_stop/` movement, no behavior change, no fix, no design, no `ARCHITECTURE.md` edit. Dispatch
+`cc_instruction_decisions_register_completion.md`. Per the OI-222 remedy this entry is a **POINTER** — the
+content lives in the register itself and in the dated notes on [[OI-207]] / [[OI-208]] / [[OI-237]]. **Read, in
+this order:** `DECISIONS.md`; the [[OI-207]] note (the corrections, the cause of the mis-aimed references, the
+completion numbers); the [[OI-208]] note (which rulings this pass honours and the living-surface half still owed
+— still the user's). **Four commits:** `80ad92f9d3` corrections → `243c7f679e` the rationale field →
+`3478e2ff61` the completion pass → `6b88604df5` findings and notes. **The riding CLAUDE.md Conventions entry of
+2026-08-01 — every design decision carries its defense at its home — is committed with the first.** **Three new
+register rows: OI-240** (★ twelve standing decisions recorded ONLY on a tracking surface — an open-item row or a
+handoff block — which is not a home; OI-237's sibling one level out), **OI-241** (★ no GENERAL rule states which
+existing MuseScore code our code may depend on — a missing ruling, the user's to make), **OI-242** (§12.1a's
+recorded reason is false at HEAD: the note-seam analysis costs seconds, not "well under 1ms"); [[OI-232]]
+extended five → eight stale which-code-is-running statements. **NEXT (user):** read the corrected and completed
+`DECISIONS.md` and ratify it; rule on OI-234 and OI-241; then the OI-208 living-surface question — the register
+is still not in `CLAUDE.md`'s session-start read, which is a governing-document edit and therefore yours.)*
+
+*Last updated: 2026-08-01, prior (CC — **THE OI-207 DECISION-CONFORMANCE ADJUDICATION IS DELIVERED, AND THE
 DECISIONS REGISTER EXISTS: `DECISIONS.md`.** READ-ONLY: no `src/` change, no golden / `tools/corpus/` /
 `tools/robust_stop/` movement, no behavior change, no fix, no design, no `ARCHITECTURE.md` edit. Dispatch
 `cc_instruction_oi207_adjudication.md`. Per the OI-222 remedy this entry is a **POINTER** — the content lives in

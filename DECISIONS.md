@@ -837,7 +837,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 > Grade the key-agreement column against BOTH the DCML global (home) and local key, both carried everywhere the key column appears. | measurement | ✅ RESOLVED 2026-07-12 (adoption d9b52ba969) — the dual column landed; local < home (the analyzer tracks the tonal home more faithfully); both views kept
 
-**In plain words.** There are two defensible questions about a key reading - does it match the key the piece is in, and does it match the key this passage is in - and the record carries both figures everywhere the key column appears, rather than choosing one.
+**In plain words.** There are two defensible questions about a key reading - does it match the key the piece is in, and does it match the key this passage is in - and the record carries both numbers everywhere the key column appears, rather than choosing one.
 
 **Why.** Measurement, OPEN_ITEMS.md:253: the local figure is lower than the home figure, which is itself the finding - the analyzer tracks the tonal home more faithfully than it tracks momentary tonicizations - so keeping only one column would have hidden a real property of the system.
 
@@ -2079,7 +2079,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 >   in the repository; if it has none, describe it in plain words. (User-directed, repeatedly;
 >   recorded 2026-07-11.)
 
-**In plain words.** A thing is called by the name it already has in the repository. If it has none, it is described in plain words rather than given a coined label - in documents, register rows, commit messages and conversation alike.
+**In plain words.** A thing is called by the name it already has in the repository. If it has none, it is described in plain words rather than given a coined label - in documents, rows of the open-items register, commit messages and conversation alike.
 
 **Why.** derivation not recorded.
 
@@ -2105,7 +2105,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 >   gap: the decode segment cap's value (4), the legacy 16-beats-back/8-forward window, the
 >   boundary-tick-belongs-to-the-segment-it-starts convention — each recorded with no derivation.
 
-**In plain words.** Wherever a design decision is written down - the owning layer's specification first - the record says WHY: the published research or algorithm it adopts, the measurement that decided it, or the constraint that forced it. Every design decision must be defendable and its defense written where the decision lives. Where the record has none, the register says 'derivation not recorded' rather than supplying one afterwards.
+**In plain words.** Wherever a design decision is written down - the owning layer's specification first - the record says WHY: the published research or algorithm it adopts, the measurement that decided it, or the constraint that forced it. Every design decision must be defendable and its defense written where the decision lives. Where the record has none, the decisions register says 'derivation not recorded' rather than supplying one afterwards.
 
 **Why.** Stated constraint, CLAUDE.md:801-802: this generalizes ARCHITECTURE.md §17.2 - every non-obvious scoring weight or threshold must explain its musical reasoning - from scoring values to design decisions as a class. The reason the gap is stated rather than filled: a defense written after the fact without a source is invention, which the never-work-from-memory rule forbids (CLAUDE.md:805-806).
 
@@ -2125,7 +2125,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > existing C++ codebase. It is not a plugin. It integrates directly with MuseScore's
 > score model, rendering pipeline, playback engine, and UI infrastructure.
 
-**In plain words.** The harmonic analysis is built into MuseScore Studio's own program code as a new part of it, not added on afterwards as a plugin. It uses MuseScore's own score model, engraving, playback and interface directly.
+**In plain words.** The harmonic analysis is built into MuseScore Studio's own program code as a new component of it, not added on afterwards as a plugin. It uses MuseScore's own score model, engraving, playback and interface directly.
 
 **Why.** Stated constraint, ARCHITECTURE.md:370-374: the analysis library itself has NO engraving dependency and is pure music theory; the bridge layer is what touches the engraving model. Being a module rather than a plugin is what lets that bridge exist at all.
 
@@ -2436,7 +2436,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** The step-by-step view of the analysis making its decisions exists so a developer can watch and judge it by eye and ear. It is not part of what a user gets.
 
-**Why.** Stated constraint, ARCHITECTURE.md:4430-4432: it exists to make musical correctness checkable by eye and ear rather than only through the automated agreement figures.
+**Why.** Stated constraint, ARCHITECTURE.md:4430-4432: it exists to make musical correctness checkable by eye and ear rather than only through the automated agreement numbers.
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
@@ -2799,7 +2799,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** The setting that hides the harmonic information from the status bar is there because some users find it distracting, not because the analysis is expensive. Switching it off does not skip the analysis.
 
-**Why.** Measurement named in the record, ARCHITECTURE.md:5825-5827: the analysis cost at this seam is 'well under 1ms'. ★ That figure is the LEGACY bounded-window path's; open_items/OI-203 and OI-206 record the record arm running a whole-score decode per selection, measured in seconds on large scores - so the reason this preference is not a performance control no longer holds as stated.
+**Why.** Measurement named in the record, ARCHITECTURE.md:5825-5827: the analysis cost at this seam is 'well under 1ms'. ★ That number is the LEGACY bounded-window path's; open_items/OI-203 and OI-206 record the record arm running a whole-score decode per selection, measured in seconds on large scores - so the reason this preference is not a performance control no longer holds as stated.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -2881,7 +2881,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > The following tools live in `tools/` and are **not part of the shipping product**.
 > They are compiled/run only in development builds (`MUE_BUILD_ENGRAVING_DEVTOOLS=ON`).
 
-**In plain words.** The batch analysis tool, the comparison scripts and the rest of the measurement toolchain are built only in development builds and never ship to a user.
+**In plain words.** The batch analysis tool, the comparison scripts and the remaining measurement tools are built only in development builds and never ship to a user.
 
 **Why.** derivation not recorded.
 
@@ -3139,9 +3139,9 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > 16. **Reproducibility.** Every measurement is stamped to corpus-hash + instrument-commit;
 >     snapshot the outgoing reference before any re-baseline.
 
-**In plain words.** A measurement records which music it was run on and which version of the measuring code produced it, and the previous reference figures are saved before new ones replace them.
+**In plain words.** A measurement records which music it was run on and which version of the measuring code produced it, and the previous reference numbers are saved before new ones replace them.
 
-**Why.** Stated constraint, CLAUDE.md:75-78 (#24): reproducibility bounds the error the measuring tools introduce, as the companion of the sampling error #24 bounds - so a figure without both is not interpretable.
+**Why.** Stated constraint, CLAUDE.md:75-78 (#24): reproducibility bounds the error the measuring tools introduce, as the companion of the sampling error #24 bounds - so a number without both is not interpretable.
 
 **Status.** LIVE · decided 2026-07-06 · ratified by user
 
@@ -3166,9 +3166,9 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 >     the false-negative path explicitly; (f) **no hand-transcribed measurement numbers** —
 >     figures enter docs only via generated artifacts (the `manifest.json` pattern).
 
-**In plain words.** Before anything that affects the analysis is built or even probed: every load-bearing causal claim is written down and labelled as an established fact, a published theory, or an assumption; every assumption gets a written numerical prediction BEFORE anything is measured; the mechanism is traced by hand through three to five real failing cases, asking first whether it fires at all and only then what it changes; any stand-in quantity must itself be justified; any claim that one thing cannot affect another must name how it could; and no figure enters a document by being typed in by hand.
+**In plain words.** Before anything that affects the analysis is built or even probed: every load-bearing causal claim is written down and labelled as an established fact, a published theory, or an assumption; every assumption gets a written numerical prediction BEFORE anything is measured; the mechanism is traced by hand through three to five real failing cases, asking first whether it fires at all and only then what it changes; any stand-in quantity must itself be justified; any claim that one thing cannot affect another must name how it could; and no number enters a document by being typed in by hand.
 
-**Why.** Measurement, CLAUDE.md:44-45: part (c)'s fire-first ordering is a ratified sharpening from a specific failure - the desk simulation that traced arithmetic through a mechanism which, on the real case, never fired. Part (f)'s reason is recorded across the register as the generated-artifact pattern: a hand-transcribed figure cannot be re-derived, and the harvest's own counts drifted one regeneration stale exactly that way.
+**Why.** Measurement, CLAUDE.md:44-45: part (c)'s fire-first ordering is a ratified sharpening from a specific failure - the desk simulation that traced arithmetic through a mechanism which, on the real case, never fired. Part (f)'s reason is recorded across the decisions register as the generated-artifact pattern: a hand-transcribed figure cannot be re-derived, and the harvest's own counts drifted one regeneration stale exactly that way.
 
 **Status.** LIVE · decided 2026-07-10 · ratified by user
 
@@ -3380,7 +3380,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** A Wagner act or a symphony must work. The user expects such scores to be a more common use than the chorales the system was fitted on. This is a standing requirement every later design is judged against, not a defect report.
 
-**Why.** Stated constraint, OPEN_ITEMS.md:157: the requirement is recorded together with the collision it creates - the joint estimator's ratified tractability envelope is chorale scale (60-150 events), and the fitted corpus is 326 Bach chorales by one composer.
+**Why.** Stated constraint, OPEN_ITEMS.md:157: the requirement is recorded together with the collision it creates - the joint estimator's ratified tractability envelope is chorale size (60-150 events), and the fitted corpus is 326 Bach chorales by one composer.
 
 **Status.** LIVE · decided 2026-07-28 · ratified by user
 
@@ -3392,9 +3392,9 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 > The effort control is ONE setting with several dials that must bound TEMPORALLY too; too early to implement until we know factually which parts must be switchable — which this dispatch's measurement establishes.
 
-**In plain words.** How hard the analysis works is a single setting the user turns, not several. Behind it sit several dials, and among the things it must be able to bound is how long the analysis takes. It is too early to build: which parts of the analysis have to be switchable is not yet known.
+**In plain words.** How hard the analysis works is a single setting the user turns, not several. Behind it sit several dials, and among the things it must be able to bound is how long the analysis takes. It is too early to build: which pieces of the analysis have to be switchable is not yet known.
 
-**Why.** Stated constraint, OPEN_ITEMS.md:157: it is too early to implement until we know FACTUALLY which parts must be switchable - which is a measurement, and the measurement is what the analysis-cost dispatch was for. The user's recorded prediction beside it: 'always read the entire score will VERY likely not survive (maybe only under some effort setting = EXTREME)'.
+**Why.** Stated constraint, OPEN_ITEMS.md:157: it is too early to implement until we know FACTUALLY which pieces must be switchable - which is a measurement, and the measurement is what the analysis-cost dispatch was for. The user's recorded prediction beside it: 'always read the entire score will VERY likely not survive (maybe only under some effort setting = EXTREME)'.
 
 **Status.** DEFERRED · decided 2026-07-28 · ratified by user
 
@@ -3451,7 +3451,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 > KEEP HELD — intonation IS a future feature** (the six §11.3 items + the tie limitation stay as a deliberate long-horizon hold, revisited at a natural pause in the analysis work). **AND the user stated the dependency that makes the hold strategic, recorded here and in the evidence inventory: the intonation feature will CONSUME the analysis facts** — knowing mode/chord/chord-function/progression enables just-intonation tuning decisions, especially in the TIME dimension (stay in tune over time vs allow drift) — i.e., intonation is a declared FUTURE CONSUMER of the published analysis surfaces, a concrete instance of the publish-evidence-broadly rationale.
 
-**In plain words.** The six unbuilt parts of the tuning design stay on the books as a deliberate long-horizon hold, revisited at a natural pause in the analysis work. The reason the hold is strategic rather than neglect: tuning will read the analysis - knowing the mode, the chord, its function and the progression is what lets a just-intonation decision be made, particularly the decision about staying in tune over time versus letting the pitch drift.
+**In plain words.** The six unbuilt pieces of the tuning design stay on the books as a deliberate long-horizon hold, revisited at a natural pause in the analysis work. The reason the hold is strategic rather than neglect: tuning will read the analysis - knowing the mode, the chord, its function and the progression is what lets a just-intonation decision be made, particularly the decision about staying in tune over time versus letting the pitch drift.
 
 **Why.** Stated constraint, open_items/OI-62.md:7: intonation is a named future CONSUMER of the published analysis surfaces - a concrete instance of the rule that evidence is published broadly so a future design can recognize facts it would never have thought to ask for (D-100's 2026-07-12 amendment).
 
@@ -3587,7 +3587,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** Before auditing the system exhaustively, the code is split into what survives and what is scheduled for removal. What is scheduled for removal is not audited at all. The only thing owed to it is a check, at the moment it is deleted, that nothing it knew is lost.
 
-**Why.** Stated constraint, OPEN_ITEMS.md:60: the alternative form - audit whatever you happen to touch - was rejected by the user as risky, because touching one per cent would audit one per cent while new work built on the unaudited rest, which is itself a violation of the no-unverified-premises principle at architecture scale. ★ The rule's own boundary is recorded too: at cowork_handoff.md:368-369 the user ruled it does NOT shield the joint module, which is production on both surfaces and is not retiring.
+**Why.** Stated constraint, OPEN_ITEMS.md:60: the alternative form - audit whatever you happen to touch - was rejected by the user as risky, because touching one per cent would audit one per cent while new work built on the unaudited rest, which is itself a violation of the no-unverified-premises principle across the whole architecture. ★ The rule's own boundary is recorded too: at cowork_handoff.md:368-369 the user ruled it does NOT shield the joint module, which is production on both surfaces and is not retiring.
 
 **Status.** LIVE · decided 2026-07-10 · ratified by user
 
