@@ -2273,7 +2273,7 @@
       "title": "The exact-decode reserve - the declared prune was never adopted",
       "verbatim": "the exact-decode reserve is the declared remedy (never budgeted at fitted weights)",
       "plain": "The estimator was meant to be allowed to narrow its search when that gets too slow. The narrowing rule that was specified turned out to cost more than it saved, so the estimator still searches exactly - and how it actually narrows in practice was never specified.",
-      "home": "OPEN_ITEMS.md:194",
+      "home": "OPEN_ITEMS.md:197",
       "home_is_layer_spec": false,
       "status": "live",
       "date": "not stated",
@@ -4608,7 +4608,7 @@
       "verbatim": "the parent-collection reduction ruled by the user + landed (800f1a12bf), key columns moved as predicted, root byte-identical; the two value-copies mechanically pinned",
       "plain": "When the analysis emits one of the five dominant-family exotic modes, grading reduces it to the MINOR key of the collection it belongs to - an emitted C-sharp Phrygian dominant is graded as F-sharp minor, the key it is the dominant of - rather than to the key its own tonic triad would name.",
       "rationale": "Measurement, CLAUDE.md:342-347: on the affected duration the parent-collection reading agrees with the published annotators on 67 % of the local key column, and the tonic-triad reading on 0 %. The consolidation moved only the key columns - root, Roman numeral, every root-failing run set and the hard-stop duration were byte-identical, run-difference +0/-0 on all presets.",
-      "home": "OPEN_ITEMS.md:222",
+      "home": "OPEN_ITEMS.md:225",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
       "status": "live",
@@ -4616,7 +4616,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "OPEN_ITEMS.md:222 (OI-132), ruled by the user 2026-07-13 and landed at 800f1a12bf. The adjudication probe is `cc_mode_grading_adjudication_probe_report.md`; the re-baseline record is `cc_key_grading_and_calibration_rebaseline_report.md`. It is implemented in ONE shared reduction, `compare_rn._our_key_tonic`, onto which the second key parser was folded (#6).",
+      "status_source": "OPEN_ITEMS.md:225 (OI-132), ruled by the user 2026-07-13 and landed at 800f1a12bf. The adjudication probe is `cc_mode_grading_adjudication_probe_report.md`; the re-baseline record is `cc_key_grading_and_calibration_rebaseline_report.md`. It is implemented in ONE shared reduction, `compare_rn._our_key_tonic`, onto which the second key parser was folded (#6).",
       "patterns": [
         "parent-collection reduction",
         "mode-grading adjudication"
@@ -4629,7 +4629,7 @@
       "verbatim": "Grade the key-agreement column against BOTH the DCML global (home) and local key, both carried everywhere the key column appears. | measurement | ✅ RESOLVED 2026-07-12 (adoption d9b52ba969) — the dual column landed; local < home (the analyzer tracks the tonal home more faithfully); both views kept",
       "plain": "There are two defensible questions about a key reading - does it match the key the piece is in, and does it match the key this passage is in - and the record carries both figures everywhere the key column appears, rather than choosing one.",
       "rationale": "Measurement, OPEN_ITEMS.md:253: the local figure is lower than the home figure, which is itself the finding - the analyzer tracks the tonal home more faithfully than it tracks momentary tonicizations - so keeping only one column would have hidden a real property of the system.",
-      "home": "OPEN_ITEMS.md:253",
+      "home": "OPEN_ITEMS.md:256",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
       "status": "live",
@@ -4637,7 +4637,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "OPEN_ITEMS.md:253 (OI-143), adopted at d9b52ba969. The current values are in the CLAUDE.md gate block (A): key-agree against the home key 56.14 %, against the local key 78.42 %.",
+      "status_source": "OPEN_ITEMS.md:256 (OI-143), adopted at d9b52ba969. The current values are in the CLAUDE.md gate block (A): key-agree against the home key 56.14 %, against the local key 78.42 %.",
       "patterns": [
         "key-grading convention",
         "BOTH the DCML global"
@@ -4650,7 +4650,7 @@
       "verbatim": "convention written + mechanically enforced (root counts an abstain as disagreement; key-agree excludes abstained cells; robust_stop_diff flags an abstain rise",
       "plain": "If the analysis declines to name a chord root, that counts as getting it wrong, so declining more often can never look like improving. On the key axis the declined cells are excluded from the percentage instead, and a rise in declining trips a flag in the comparison tool.",
       "rationale": "Stated constraint, OPEN_ITEMS.md:200: the metric is abstention-reducible - without the convention, a change that made the system decline more would raise the agreement figure without analysing anything better - and the convention was owed before any abstaining path could be gated on the stop at all.",
-      "home": "OPEN_ITEMS.md:200",
+      "home": "OPEN_ITEMS.md:203",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
       "status": "live",
@@ -4658,7 +4658,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "OPEN_ITEMS.md:200 (OI-33), resolved 2026-07-12 in the key-layer readiness wave 1. Its current reading on the production arm is D-114 - the decoder commits its best path, so the abstain counter reads zero.",
+      "status_source": "OPEN_ITEMS.md:203 (OI-33), resolved 2026-07-12 in the key-layer readiness wave 1. Its current reading on the production arm is D-114 - the decoder commits its best path, so the abstain counter reads zero.",
       "patterns": [
         "Abstain-aware robust-stop convention",
         "abstain as disagreement"
@@ -4913,6 +4913,46 @@
         "music21 version pin",
         "deliberate re-baseline"
       ]
+    },
+    {
+      "group": "I",
+      "title": "Read how MuseScore already does it, and never invent parallel infrastructure",
+      "verbatim": "Before implementing anything that touches MuseScore's existing infrastructure —\nUI panels, score traversal, playback, settings, localization — read how MuseScore\nalready does it and follow the same pattern. Do not invent parallel infrastructure.",
+      "plain": "Before touching anything MuseScore already provides - panels, walking the score, playback, settings, translation - the existing MuseScore code for it is read and followed. A second, parallel mechanism of our own is never created.",
+      "rationale": "Derivation not recorded as a separate defense. Its consequences are recorded across the document and are what the rule buys: the panel infrastructure (§12.1), the localization path (§12.1), the accessibility patterns (§12.1), the coding style (§17.1), and the preview pathway (§10.5) all resolve by this rule rather than by separate argument.",
+      "home": "ARCHITECTURE.md:469",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:467-471 (§2.8). No date or ratifier stated. This is the GENERAL form of the relationship to existing MuseScore code; the two scoped forms are D-072 (the analysis library depends on no engraving type) and D-073 (shared logic has one implementation). What none of the three states is which MuseScore interfaces our bridge code may call - see OPEN_ITEMS OI-241.",
+      "patterns": [
+        "Follow MuseScore's Existing Patterns",
+        "Do not invent parallel infrastructure"
+      ],
+      "id": "D-227"
+    },
+    {
+      "group": "I",
+      "title": "The bridge pattern - engraving types enter and leave at named free functions in the notation namespace",
+      "verbatim": "- Takes engraving types as input (Note*, Score*, Fraction, …)\n- Produces composing-domain results (ChordAnalysisResult, HarmonicRegion, …)\n- Lives in `mu::notation` namespace\n- Is declared in a `notation/internal/notation*bridge.h` header\n- Is defined in the corresponding `notation/internal/notation*bridge.cpp`\n\n**Callers** of bridge functions include only the notation-side bridge header, not composing headers, for the function itself. They may still include composing headers for the composing types in the function signature.\n",
+      "plain": "The only code that may take MuseScore's own score objects and turn them into analysis results is a plain function living on the notation side, declared in a bridge header and defined in the matching bridge source file. Whoever calls it includes the bridge header, not the analysis headers, for the call itself.",
+      "rationale": "Stated constraint, ARCHITECTURE.md:958-962: the analysis library is pure music theory and can be unit-tested in complete isolation - no score, no staves, no interface - which is what makes its test suite fast and reliable. If analysis headers imported engraving types the tests would have to link the whole engraving library, and more fundamentally the music theory would carry knowledge of one particular score format, a coupling that makes the algorithms harder to reuse or replace.",
+      "home": "ARCHITECTURE.md:966",
+      "home_is_layer_spec": true,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "ARCHITECTURE.md:964-975 (§3.3, the bridge pattern), with the enforcement statement at :955 (D-072) - any code that would invert the dependency order must be moved to the bridge layer. The bridge file inventory at :977-985 is the as-built list. No date or ratifier stated.",
+      "patterns": [
+        "bridge function",
+        "mu::notation namespace"
+      ],
+      "id": "D-228"
     }
   ]
 }

@@ -85,17 +85,17 @@ project's own and are defined here because they are used before any entry explai
 
 ## What is in this register, counted
 
-**226 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
+**228 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
 
 | | Count |
 |---|---|
-| Decisions recorded | **226** |
-| — of which live | 194 |
+| Decisions recorded | **228** |
+| — of which live | 196 |
 | — of which superseded in fact | 6 |
 | — of which superseded by | 4 |
 | — of which deferred | 22 |
-| Decisions whose date is not stated in the record | 157 |
-| Decisions whose ratifier is not stated in the record | 149 |
+| Decisions whose date is not stated in the record | 159 |
+| Decisions whose ratifier is not stated in the record | 151 |
 | Decisions recorded outside the specification that owns them | 67 |
 | — of which a documentation gap | 8 |
 | — of which recorded only on a tracking surface, with no home at all | 12 |
@@ -103,7 +103,7 @@ project's own and are defined here because they are used before any entry explai
 | — of which a decision about the process, correctly homed | 16 |
 | Decisions whose defense the record does not state | 45 |
 
-That last row is the one meant to fall. **181 of 226** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
+That last row is the one meant to fall. **183 of 228** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
 
 Alongside the register, every one of the harvested statements about decisions in this repository has been given a recorded disposition, so that none was silently passed over:
 
@@ -307,7 +307,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `OPEN_ITEMS.md:194`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `OPEN_ITEMS.md:197`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
 **Provenance.** open_items/OI-188 (OPEN - 'bounds every ceiling claim'); the admission rule actually in production has no ratified basis (open_items/OI-226)
 
@@ -829,9 +829,9 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **Status.** LIVE · decided 2026-07-13 · ratified by user
 
-**Home.** `OPEN_ITEMS.md:222`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `OPEN_ITEMS.md:225`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
-**Provenance.** OPEN_ITEMS.md:222 (OI-132), ruled by the user 2026-07-13 and landed at 800f1a12bf. The adjudication probe is `cc_mode_grading_adjudication_probe_report.md`; the re-baseline record is `cc_key_grading_and_calibration_rebaseline_report.md`. It is implemented in ONE shared reduction, `compare_rn._our_key_tonic`, onto which the second key parser was folded (#6).
+**Provenance.** OPEN_ITEMS.md:225 (OI-132), ruled by the user 2026-07-13 and landed at 800f1a12bf. The adjudication probe is `cc_mode_grading_adjudication_probe_report.md`; the re-baseline record is `cc_key_grading_and_calibration_rebaseline_report.md`. It is implemented in ONE shared reduction, `compare_rn._our_key_tonic`, onto which the second key parser was folded (#6).
 
 ### D-211 — Key agreement is reported against both the global home key and the local key
 
@@ -843,9 +843,9 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **Status.** LIVE · decided 2026-07-12 · ratified by user
 
-**Home.** `OPEN_ITEMS.md:253`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `OPEN_ITEMS.md:256`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
-**Provenance.** OPEN_ITEMS.md:253 (OI-143), adopted at d9b52ba969. The current values are in the CLAUDE.md gate block (A): key-agree against the home key 56.14 %, against the local key 78.42 %.
+**Provenance.** OPEN_ITEMS.md:256 (OI-143), adopted at d9b52ba969. The current values are in the CLAUDE.md gate block (A): key-agree against the home key 56.14 %, against the local key 78.42 %.
 
 ### D-212 — The regression stop is abstain-aware: an abstention counts as disagreement on root
 
@@ -857,9 +857,9 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **Status.** LIVE · decided 2026-07-12 · ratified by user
 
-**Home.** `OPEN_ITEMS.md:200`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `OPEN_ITEMS.md:203`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
-**Provenance.** OPEN_ITEMS.md:200 (OI-33), resolved 2026-07-12 in the key-layer readiness wave 1. Its current reading on the production arm is D-114 - the decoder commits its best path, so the abstain counter reads zero.
+**Provenance.** OPEN_ITEMS.md:203 (OI-33), resolved 2026-07-12 in the key-layer readiness wave 1. Its current reading on the production arm is D-114 - the decoder commits its best path, so the abstain counter reads zero.
 
 ---
 
@@ -1735,6 +1735,42 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 **Home.** `ARCHITECTURE.md:626-627`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** ARCHITECTURE.md:624-630
+
+### D-227 — Read how MuseScore already does it, and never invent parallel infrastructure
+
+> Before implementing anything that touches MuseScore's existing infrastructure —
+> UI panels, score traversal, playback, settings, localization — read how MuseScore
+> already does it and follow the same pattern. Do not invent parallel infrastructure.
+
+**In plain words.** Before touching anything MuseScore already provides - panels, walking the score, playback, settings, translation - the existing MuseScore code for it is read and followed. A second, parallel mechanism of our own is never created.
+
+**Why.** Derivation not recorded as a separate defense. Its consequences are recorded across the document and are what the rule buys: the panel infrastructure (§12.1), the localization path (§12.1), the accessibility patterns (§12.1), the coding style (§17.1), and the preview pathway (§10.5) all resolve by this rule rather than by separate argument.
+
+**Status.** LIVE · date not stated · ratifier not stated
+
+**Home.** `ARCHITECTURE.md:469`
+
+**Provenance.** ARCHITECTURE.md:467-471 (§2.8). No date or ratifier stated. This is the GENERAL form of the relationship to existing MuseScore code; the two scoped forms are D-072 (the analysis library depends on no engraving type) and D-073 (shared logic has one implementation). What none of the three states is which MuseScore interfaces our bridge code may call - see OPEN_ITEMS OI-241.
+
+### D-228 — The bridge pattern - engraving types enter and leave at named free functions in the notation namespace
+
+> - Takes engraving types as input (Note*, Score*, Fraction, …)
+> - Produces composing-domain results (ChordAnalysisResult, HarmonicRegion, …)
+> - Lives in `mu::notation` namespace
+> - Is declared in a `notation/internal/notation*bridge.h` header
+> - Is defined in the corresponding `notation/internal/notation*bridge.cpp`
+>
+> **Callers** of bridge functions include only the notation-side bridge header, not composing headers, for the function itself. They may still include composing headers for the composing types in the function signature.
+
+**In plain words.** The only code that may take MuseScore's own score objects and turn them into analysis results is a plain function living on the notation side, declared in a bridge header and defined in the matching bridge source file. Whoever calls it includes the bridge header, not the analysis headers, for the call itself.
+
+**Why.** Stated constraint, ARCHITECTURE.md:958-962: the analysis library is pure music theory and can be unit-tested in complete isolation - no score, no staves, no interface - which is what makes its test suite fast and reliable. If analysis headers imported engraving types the tests would have to link the whole engraving library, and more fundamentally the music theory would carry knowledge of one particular score format, a coupling that makes the algorithms harder to reuse or replace.
+
+**Status.** LIVE · date not stated · ratifier not stated
+
+**Home.** `ARCHITECTURE.md:966`
+
+**Provenance.** ARCHITECTURE.md:964-975 (§3.3, the bridge pattern), with the enforcement statement at :955 (D-072) - any code that would invert the dependency order must be moved to the bridge layer. The bridge file inventory at :977-985 is the as-built list. No date or ratifier stated.
 
 ---
 
