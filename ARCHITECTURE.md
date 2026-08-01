@@ -36,10 +36,15 @@
 > values) instead of the legacy `analyzeScore` pipeline; `tools/run_bach_preset.py
 > --joint-inference` regenerates the corpus; the committed regression reference `tools/robust_stop/` is graded on
 > it (root 77.03 / RN 64.12 / key-home 56.14 / key-local 78.42 %, class-(b) hard-stop 1,817,280 ticks per preset).
-> **STAGED SCOPE (declared migration state, #23):** the in-app **NOTATION layer stays on the legacy L1–L6 pipeline**
-> (`region::analyzeRegions` → `analyzeSection`); its migration is the OI-180 retirement map, whose first increment
-> carries the notation output-surface contract (from A's posterior — alternatives, exposure/confidence, cadences,
-> key areas) and the fitted-table packaging to the in-app runtime (the two gaps the adoption STOP surfaced). Full
+> **STAGED SCOPE — CLOSED AT THE NOTATION SWITCH, 2026-07-27 (corrected 2026-08-02, `OPEN_ITEMS.md` OI-232 item 1;
+> the sentence this replaces said the notation layer stays on the legacy pipeline, which the switch made false).** The
+> adoption above put the joint estimator on the batch/corpus surface only; **the notation switch put it on the in-app
+> NOTATION surface too** (`useJointNotationRecord` defaults ON — `composingconfiguration.cpp:178`). The declared
+> migration state (#23) is therefore CLOSED on both surfaces, and the legacy `region::analyzeRegions` →
+> `analyzeSection` path is compiled and dormant, awaiting deletion at the OI-180 retirement map. The first
+> increment named here — carrying the notation output-surface contract (from A's posterior — alternatives,
+> exposure/confidence, cadences, key areas) and the fitted-table packaging to the in-app runtime — is DELIVERED;
+> see "THE RECORD PATH" below, subsections (1)–(6). Full
 > spec: `cowork_joint_estimator_architecture.md`, `cowork_joint_estimator_factorization.md`; pre-fit gates
 > `cowork_prefit_gates.md`; adoption record `cc_adoption_measurement_report.md` / `tools/joint_estimator/adoption_record.json`.
 >
@@ -135,8 +140,10 @@
 > on bwv324/bwv362; the score wrapper == `buildAdapterFacts` + core on `pb_chorale.mscx`; the null-score failure
 > path; the span-view overlap incl. span-splitting; the note-view boundary rule; the empty-span / out-of-span edge
 > duties).
-> The layer sections (L1–L6) below remain the accurate description of the LEGACY pipeline — still live on the
-> notation path, dormant-compiled on the batch path.
+> The layer sections (L1–L6) below remain the accurate description of the LEGACY pipeline, which since the notation
+> switch is **dormant-compiled on BOTH surfaces** — the batch/corpus surface and the in-app notation surface alike.
+> (Corrected 2026-08-02, `OPEN_ITEMS.md` OI-232 item 2; the sentence this replaces had the two surfaces the wrong
+> way round, saying the legacy pipeline was still live on the notation path.)
 
 > **(2) The section adapter + the span-annotation consumer + the inference↔presentation boundary.**
 > The section layer's record path `analyzeSectionFromRecord` (`sectionrecordadapter`) derives the shared
@@ -816,12 +823,26 @@ contracts below all serve this principle. Their detailed statements live in the 
   fine-grain chord override. **Forward-only is a strong *default*, not dogma:** a sanctioned backward edge is admissible
   only as a deliberate, surfaced, measured, documented exception (justified by a plateau, scoped, gated,
   convergence-bounded, recorded). *The quantities this mechanism compares are governed by the **cross-layer confidence
-  & calibration contract** (`cowork_confidence_contract.md`, review amendment A-1, 2026-07-02, ratification-gated):
+  & calibration contract** (`cowork_confidence_contract.md`, review amendment A-1, **RATIFIED by the user
+  2026-07-02** — corrected 2026-08-02, `OPEN_ITEMS.md` OI-232 item 5: this parenthetical read
+  "ratification-gated", so a reader of the canonical document alone would have concluded the contract does not
+  yet bind, which is the precise reading under which the production record path departs from it, OI-231):
   every boundary confidence is [0,1], class-declared (margin vs calibrated probability), and cross-layer comparisons
-  happen only in the contract's declared frames.*
+  happen only in the contract's declared frames. The contract's own rule and its defense are stated as a
+  cross-cutting contract in the list below.*
 - **The span typology** — a "region" is a *family* of spans, each named by its bounding criterion. *(★ FAMILY RENAME
-  ✅ CONFIRMED (user, 2026-07-02) — ✅ EXECUTED at the merged Cowork doc pass (2026-07-03), propagated through every
-  layer spec + the dictionary: **harmonic region → chord-span** (the typology bans "region" unqualified, yet its
+  ✅ CONFIRMED (user, 2026-07-02) — ✅ EXECUTED at the merged Cowork doc pass (2026-07-03) across the **Cowork design
+  documents and the schema dictionary**. **Scope correction, 2026-08-02 (`OPEN_ITEMS.md` OI-233): this clause
+  claimed the rename was "propagated through every layer spec", and in THIS document — the canonical layer
+  specification — it was not. The bare word is still used throughout, including in four section headings a reader
+  navigates by (§3.3 "Region Analysis — Canonical Modules", §4.1 "Region identity modes", §11.5 "Region Analysis
+  and the Chord Track", §11.6 "Region Intonation") and in the load-bearing Layer-3 prose, where the reader must
+  work out unaided that "region" means the chord-span.** Bringing this document into line is a scoped terminology
+  pass and is NOT executed here: it must be sequenced against the standing music-theory-terminology convention
+  (`OPEN_ITEMS.md` OI-229), under which existing names are not renamed unilaterally, and it is a judgment call in
+  §11.5/§11.6, where "region" sometimes names a user-selected stretch rather than an analytical one. The ban itself
+  is unaffected and stands for all NEW text. The renames the 2026-07-03 pass did carry out:
+  **harmonic region → chord-span** (the typology bans "region" unqualified, yet its
   own atomic member carried the banned word; "the span one committed chord prevails over" is the criterion) ·
   latent **sequence-span → progression-schema-span** (D6, ratified) · latent **pedal span → pedal-point-span**
   (pedal point ≠ the piano's pedal) · **section-span / voice-leading-span** (suffix-consistent) · key-span /
@@ -1233,7 +1254,19 @@ byte-identical (composing 631/631, notation 53/53, snapshots 11/11 with no golde
 0/353 `.ours.json` byte-diffs on Baroque/Jazz/Default, gate unchanged at 53/24/53). See `cc_layer2_impl_report.md` (HELD), `cowork_layer2_slicing_design.md`,
 `cc_layer2_audit_dossier.md`.
 
-#### Layer 3 — key/mode is the sequence decoder (Built+Live)
+#### Layer 3 — key/mode is the sequence decoder (Built+Dormant)
+
+**Build-state correction, 2026-08-02 (`OPEN_ITEMS.md` OI-232 item 3; the tag read "Built+Live", which the
+two adoptions made false).** Layer 3's decoder no longer decides the key on either surface: the
+batch/corpus surface runs the joint estimator since the OI-178 adoption (2026-07-26) and the in-app
+notation surface since the notation switch (2026-07-27). Verified at the code: every production call site
+of this pipeline — `notationcomposingbridge.cpp:324-328` (the bounded-window section build behind the
+note-seam funnel's flag check at `:729-738`), `notationcomposingbridge.cpp:1509-1513` (the span emitter's
+legacy arm), `notationimplodebridge.cpp:1434-1441` (implode's legacy arm) and
+`notationtuningbridge.cpp:794` (the tuning region path's legacy arm) — sits in the `false` branch of
+`useJointNotationRecord`, whose default is `true` (`composingconfiguration.cpp:178`). The remaining
+callers are the `batch_analyze` diagnostics, which are development tools and are not shipped (§15). **The description below remains accurate for the dormant pipeline** and is retained as
+the record of what that pipeline does; it is no longer a description of what runs.
 
 **The production region key/mode path is the decoder, not the per-region resolver.** Step-1 wiring
 replaced the per-region `resolveKeyAndModeRanked` call with a single whole-score decode of
@@ -1287,7 +1320,16 @@ threshold and preset policy"); it retires when Layer 4 (function/cadence) pins t
 key moves with **P4 untouched**. Full provenance: `cc_layer3_wiring_report.md` (HELD),
 `cowork_layer3_keymode_design.md`.
 
-#### Layer 4 — the per-slice chord-symbol decoder (Built+Dormant — not wired; engages with L5)
+#### Layer 4 — the per-slice chord-symbol decoder (Built+Dormant — not wired)
+
+**Plan correction, 2026-08-02 (`OPEN_ITEMS.md` OI-232 item 3; the heading read "engages with L5", which
+no longer describes anything scheduled).** The "joint with Layer 5" production switch described below was
+the plan ratified 2026-06-26. It was overtaken by the joint estimator, which became the production
+inference layer on the batch/corpus surface (2026-07-26) and on the notation surface (2026-07-27) without
+any ruling that names the engage-with-L5 plan — a supersession in fact, not by decision (register entry
+D-051 records the same shape on Layer 3). The build state itself is unchanged and correct: Built+Dormant.
+**What becomes of this decoder is OPEN** — it is neither retired by a ruling nor scheduled; see the
+OI-180 retirement map.
 
 **Built, unit-tested, and graded — but NOT wired into the live pipeline.** Layer 4 of the rebuild is
 `ChordSliceDecoder` (`composing/analysis/chord/chordslicedecoder.{h,cpp}`): a per-slice chord-symbol
@@ -1359,10 +1401,14 @@ periods/sentences, and prolongation are out of the validatable core (verifiabili
   multi-chord patterns and substitutions from the **Harmonic Vocabulary** (§7) over the committed progression,
   disambiguates via the §2.14 forward-override, and annotates the recognised schema as an **L6 sequence-span**.
   Scaffolding-first, deferred. Spec: `cowork_progression_schema_design.md`.
-- **The future voice-leading layer** — the *horizontal* dimension (linear progressions, suspension chains, the
-  voice-leading skeletons that complete the galant schemata), **not built**; named so the dependency is explicit (the
-  functional-harmonic schemas are L5-reachable without it; the voice-leading-complete ones require it). It would read the
-  per-voice motion the L1 note model already carries losslessly.
+- **The voice-leading layer** — the *horizontal* dimension (linear progressions, suspension chains, the
+  voice-leading skeletons that complete the galant schemata); named so the dependency is explicit (the
+  functional-harmonic schemas are L5-reachable without it; the voice-leading-complete ones require it). It reads the
+  per-voice motion the L1 note model already carries losslessly. **Corrected 2026-08-02 (`OPEN_ITEMS.md` OI-232
+  item 4; this entry said "not built", contradicting §2.15 in the same document):** the axis-2 FOUNDATION is
+  **BUILT and dormant** as of 2026-07-03 — VL-A the voice-linear view, VL-B motion and interval profiles (facts),
+  VL-C texture classification — with VL-D…VL-H named and design-gated. The full status and the design are in §2.15
+  and `cowork_voiceleading_axis_design.md`.
 
 #### Region Analysis — Canonical Modules (Iter 97, complete; note-reading half superseded by Layer 1; region key/mode path superseded by Layer 3)
 
@@ -1620,33 +1666,43 @@ to the analyzer itself.
 ```cpp
 // Extension bitmask (P8b) — replaces 17 individual boolean fields.
 // Use hasExtension() / setExtension() / hasAnyNinth() / hasAnyThirteenth() helpers.
+// Bit order corrected 2026-08-02 (OPEN_ITEMS.md OI-107(b)): bits 4/5, 9/10 and 14/15
+// were listed swapped against chordanalyzer.h:213-230.  In-memory only — no serialized
+// form depends on it — but a reader deriving a mask from this listing would be wrong.
 enum class Extension : uint32_t {
     MinorSeventh      = 1u << 0,
     MajorSeventh      = 1u << 1,
     DiminishedSeventh = 1u << 2,
     AddedSixth        = 1u << 3,
-    NaturalNinth      = 1u << 4,
-    FlatNinth         = 1u << 5,
+    FlatNinth         = 1u << 4,
+    NaturalNinth      = 1u << 5,
     SharpNinth        = 1u << 6,
     NaturalEleventh   = 1u << 7,
     SharpEleventh     = 1u << 8,
-    NaturalThirteenth = 1u << 9,
-    FlatThirteenth    = 1u << 10,
+    FlatThirteenth    = 1u << 9,
+    NaturalThirteenth = 1u << 10,
     SharpThirteenth   = 1u << 11,
     FlatFifth         = 1u << 12,
     SharpFifth        = 1u << 13,
-    SixNine           = 1u << 14,
-    OmitsThird        = 1u << 15,
+    OmitsThird        = 1u << 14,
+    SixNine           = 1u << 15,
 };
 
+// Field list re-synced 2026-08-02 (OPEN_ITEMS.md OI-107(d)): naturalFifthPresent,
+// tiePriority, isPedalPoint and pedalBassPc were missing from this listing.
 struct ChordIdentity {
-    double score = 0.0;           // Raw confidence. Higher is better. Not normalized.
+    double score = 0.0;           // Raw template-match score. Higher is better. Ranking only.
     int rootPc = 0;               // Root pitch class (0-11, C=0)
     int rootTpc = -1;             // Root TPC for enharmonic display (-1 if unknown). See §5.14.
     int bassPc = 0;               // Bass pitch class (0-11)
     int bassTpc = -1;             // Bass TPC for enharmonic display (-1 if unknown)
+    bool naturalFifthPresent = false;  // P5 above root sounds; separates Ger+6 from It+6 (§5.11)
     ChordQuality quality = ChordQuality::Unknown;
+    int tiePriority = -1;         // Template index; matches snapshot cells back to candidates (E2c)
     uint32_t extensions = 0;      // Bitmask of Extension flags
+    bool isPedalPoint = false;    // Bass is a structural pedal point (§5.12; empty on the record
+                                  //   path — see §7.4's voice-independent successor)
+    int pedalBassPc = -1;         // Pedal bass pitch class; -1 when isPedalPoint is false
 };
 
 struct ChordFunction {
@@ -1682,7 +1738,10 @@ enum class ChordQuality {
 
 ```cpp
 struct ChordAnalyzerPreferences {
-    double bassNoteRootBonus = 0.65;          // Bonus when candidate root == bass note
+    double bassNoteRootBonus = 0.70;          // Bonus when candidate root == bass note
+                                              // (corrected 2026-08-02, OPEN_ITEMS.md OI-107(a):
+                                              //  documented 0.65, code default 0.70 at
+                                              //  analysis/types/analysistypes.h:196)
     double diatonicRootBonus = 0.30;          // Bonus when root is in the current key
     double tpcConsistencyBonusPerTone = 0.20; // Bonus per correctly-spelled chord tone
     double rootContinuityBonus = 0.40;        // Bonus for same root as preceding chord
@@ -1715,7 +1774,7 @@ The `StylePrior` commented-out code is the planned connection between
 is implemented, the active style will populate the analyzer's preferences.
 
 **Gate threshold policy**: the inversion-preference gate thresholds in
-`chordanalyzer.cpp` (Gate I: 0.45, Gate K: 0.20, Gate L: 0.35, etc.) are empirically
+`postscoringgates.cpp` (Gate I: 0.45, Gate L: 0.35, etc.) are empirically
 calibrated against the Baroque corpus and are Baroque-specific. They must not be
 loosened to accommodate other styles. When a gate causes regressions in a non-Baroque
 preset, the fix is either (a) a tighter structural entry condition that excludes the
@@ -1723,6 +1782,15 @@ problematic chord type in all styles, or (b) a preset-specific threshold value p
 through `ChordAnalyzerPreferences` — leaving the Baroque-tuned default unchanged.
 Both corpus presets (Baroque and Jazz) must pass BIR=false regression checks before
 any gate change is committed.
+
+**Two corrections, 2026-08-02 (`OPEN_ITEMS.md` OI-107(d)).** (1) The gates do not live in
+`chordanalyzer.cpp`: refactor-1 moved the post-scoring gate cluster to
+`analysis/chord/postscoringgates.cpp`, where the two surviving margin constants are declared
+(`:46` `kGateIMargin = 0.45`, `:47` `kGateLMargin = 0.35`). (2) **Gate K was RETIRED** at Stage 5
+on 2026-07-05 (design item D-7; `postscoringgates.cpp:49` records the constant's retirement and
+`:523` the gate's), so listing "Gate K: 0.20" as a live calibrated threshold was false. The same
+retired threshold is still listed in the `CLAUDE.md` gate-threshold policy; correcting a governing
+document is outside this pass's scope and is recorded as owed on OI-107.
 
 #### Public Interface
 
@@ -1766,7 +1834,8 @@ All notation bridge files (`notationcomposingbridge.cpp`, `notationcomposingbrid
 
 #### §4.1b — Contextual Inversion Resolution
 
-**Problem:** The `bassNoteRootBonus` (0.65) biases vertical analysis toward choosing the
+**Problem:** The `bassNoteRootBonus` (0.70 — corrected 2026-08-02, OI-107(a); this read 0.65)
+biases vertical analysis toward choosing the
 bass note as the chord root. For inverted chords (e.g. `Gm/Bb` with Bb in bass) this
 produces correct bass-root readings that disagree with music21's functional notation.
 74.3% of corpus disagreements have `bassIsRoot=true`. Local scoring fixes for 3-note
@@ -1784,10 +1853,26 @@ pipeline / function layer):
 | `stepwiseBassLookaheadBonus` | Bass moves by diatonic step TO next region (deferred) | 0.5 |
 | `sameRootInversionBonus` | Candidate root matches previous chord's root | 0.4 |
 
-**Safety constraints (lesson from three-attempt history):** Bonuses never fire for
-Diminished, HalfDiminished, Augmented, or Suspended candidates — only Major and Minor.
-The existing `inversionSuspicionMargin` / `inversionBonusReduction` mechanism is left
-unchanged.
+**Safety constraints (lesson from three-attempt history) — ⚠ SUPERSEDED BY ITER 46, see §4.1g.** As
+originally written: bonuses never fire for Diminished, HalfDiminished, Augmented, or Suspended
+candidates — only Major and Minor. The existing `inversionSuspicionMargin` /
+`inversionBonusReduction` mechanism is left unchanged.
+
+**Correction, 2026-08-02 (`OPEN_ITEMS.md` OI-236; the prohibition above carried no supersession note,
+so a reader met a hard-won safety constraint that the same document reverses later, in §4.1g).** Iter 46
+relaxed it, because keeping it made correct inverted readings unreachable — `C+/E`, `Yø7/X` and their
+kind fell below the `results[]` cutoff entirely — and relaxing it produced the largest single
+improvement of iteration path 1 (§4.1g). **The constraint that actually survives at HEAD, read off the
+code, differs between the two predicates:**
+
+- `supportsContextualInversionBonuses` (`chordanalyzer.cpp:855-870`) admits **Major, Minor, Augmented,
+  HalfDiminished**; **Diminished and Suspended candidates still never receive** the three contextual
+  inversion bonuses.
+- `qualifiesForCompleteTriadInversionBonus` (`chordanalyzer.cpp:829-853`) admits **Major, Minor,
+  Diminished, Augmented, HalfDiminished**; only **Suspended** is still excluded.
+
+No code change is owed — the code is the later behaviour and is correct; what was owed was saying so
+here.
 
 **`ChordTemporalContext` fields (§4.1b additions):**
 
@@ -2236,7 +2321,13 @@ project context. Findings are categorised below by priority and actionability.
 - **`ChordSymbolFormatter` in `chordanalyzer.h`** — a display-layer class declared
   alongside analysis types. Violates the analysis-is-display-agnostic principle
   (§2.3). **Fix:** move to its own `chordsymbolformatter.{h,cpp}` pair. Low risk,
-  low effort — a file move with no logic change.
+  low effort — a file move with no logic change. **PARTLY DONE — status corrected 2026-08-02
+  (`OPEN_ITEMS.md` OI-112(a)).** Refactor-1 moved the IMPLEMENTATION to
+  `analysis/chord/chordsymbolformatter.cpp`; the DECLARATIONS were intentionally left in
+  `chordanalyzer.h` and no `chordsymbolformatter.h` exists. The header half is the residue; it is
+  tracked as OI-108(b), and the boundary the item was written to protect is now enforced
+  mechanically both ways by `inference_presentation_boundary_tests` (see the record-path section
+  at the head of this document).
 
 **Defer until scoring stabilises:**
 
@@ -2815,7 +2906,12 @@ rate (7%) is a known, bounded limitation — not evidence of a miscalibrated pri
 
 ### 4.3 ChordSymbolFormatter
 
-**File:** `src/composing/analysis/chordanalyzer.h` (namespace within)
+**Files:** declared in `src/composing/analysis/chord/chordanalyzer.h` (namespace within);
+implemented in `src/composing/analysis/chord/chordsymbolformatter.cpp`. (Corrected 2026-08-02,
+`OPEN_ITEMS.md` OI-112(a): the single "File:" line predated refactor-1, which split the
+IMPLEMENTATION into its own translation unit while INTENTIONALLY keeping the declarations in
+`chordanalyzer.h` — there is no `chordsymbolformatter.h`. The backlog item in §4.1i that proposes
+creating one is annotated there.)
 
 **Purpose:** Formats `ChordAnalysisResult` into display strings. Kept separate from
 `ChordAnalyzer` so the analysis layer remains display-agnostic. This separation must
@@ -2864,9 +2960,12 @@ Standard (not yet supported in chord symbol output). Roman numerals and
 Nashville numbers do not use note names — they use degree integers and
 accidental tokens — so the spelling setting does not affect them.
 
-**Roman numeral scope:** The formatter emits Roman numerals up to the 7th level
-(e.g. `I7`, `IM7`, `iø7`). Extensions beyond the 7th (9th, 11th, 13th) are not
-yet emitted. Non-diatonic roots produce chromatic numerals by computing semitone
+**Roman numeral scope (corrected 2026-08-02, `OPEN_ITEMS.md` OI-112(b) — this paragraph said
+extensions beyond the 7th are "not yet emitted", which the corpus contradicts):** the formatter
+emits Roman numerals at the 7th level (e.g. `I7`, `IM7`, `iø7`) **and above** — `csfDiatonicRoman`
+appends `b9`/`#9`/`#11`/`b13` alterations when a seventh is present, and the `(add9)` / `(add11)` /
+`(add13)` forms when none is (`chordsymbolformatter.cpp:590-616`); the corpus counts are in the
+OI-112 row. Non-diatonic roots produce chromatic numerals by computing semitone
 distance from the mode tonic and prefixing with ♭ or ♯ as appropriate (preferring
 flat names). The quality/extension suffix is reused from the diatonic path. The
 test catalog covers the 7th level only; extending it is a natural future increment.
@@ -3029,14 +3128,22 @@ preserving `composing_analysis`'s module independence.
 
 ### 4.4 AnalysisUtils
 
-**File:** `src/composing/analysis/analysisutils.h`
+**File:** `src/composing/analysis/chord/analysisutils.h` (path and contents corrected 2026-08-02,
+`OPEN_ITEMS.md` OI-107(c): the path was given without the `chord/` component and three functions
+were missing.)
 
-Shared utilities used by both analyzers and the formatter:
+Shared utilities used by both analyzers and the formatter — the dependency-free pitch leaf, exempt
+from the inference/presentation include guard:
 
 - `normalizePc(int pitch)` — reduces any MIDI pitch to pitch class 0–11
 - `ionianTonicPcFromFifths(int fifths)` — converts circle-of-fifths position to
   the pitch class of the Ionian (major) tonic for that key signature
 - `endsWith(const std::string&, const char*)` — generic string suffix test
+- `diatonicMaskFromFifths(int fifths)` — the 12-bit mask of the pitch classes the key
+  signature's own collection contains (no tonic, no mode scale — see the OI-168 correction)
+- `collectionMask(int tonicPc, bool isMajor)` — the 12-bit mask of a major or minor collection
+  rooted at `tonicPc`
+- `pcInMask(uint16_t mask, int pc)` — membership test against either mask
 
 ### 4.5 Current Status Bar Integration
 
@@ -3750,9 +3857,16 @@ annotation. Universal across all presets.
 
 Explicit It+6, Fr+6, Ger+6 labels in the annotate path Roman numeral layer.
 These replace the generic chromatic Roman numeral (e.g. ♭VI) when the
-analyzer detects the specific augmented sixth interval pattern. Gated to
-Standard and Baroque presets only. Jazz and Nashville presets continue to
-emit chromatic Roman numerals or chord symbols respectively.
+analyzer detects the specific augmented sixth interval pattern.
+
+**Preset gating is NOT implemented — corrected 2026-08-02 (`OPEN_ITEMS.md` OI-112(c); this section
+asserted "Gated to Standard and Baroque presets only", and the code defers exactly that).**
+`formatRomanNumeral()` has no preset context, so the gate is explicitly deferred at the site
+(`chordsymbolformatter.cpp:882-883`) and the labels are emitted for every preset. The corpus shows
+no augmented-sixth label under the Jazz preset, but that is an upstream-analysis coincidence — the
+`SharpThirteenth` extension the classifier requires is not set there — and not the documented gate.
+**Whether the gate should exist at all is OPEN** and is not settled here; if it is wanted, the
+preset must first be threaded through the formatter.
 
 ### §5.12 Pedal Point Detection — Two-Pass Analysis
 
@@ -3835,20 +3949,54 @@ annotations are enabled.
 ### §5.13 Analyze-at-Tick Path Table
 
 Every entry point that runs harmonic analysis against a tick position is listed here.
-All analyze-at-tick paths go through a single classical path; there is no Jazz path,
-no path-selection flag, and no symbol reading anywhere in the analysis pipeline.
+There is no Jazz path and no symbol reading anywhere in the analysis pipeline.
+
+**★ Table re-synced 2026-08-02 (`OPEN_ITEMS.md` OI-238 and its dated note).** The paragraph above
+also said "no path-selection flag", and the table below described only the legacy arm. Both were
+false at HEAD. **There IS a path-selection flag, and it is the production default:** the single
+funnel `analyzeHarmonicContextAtTick` branches on `prefs->useJointNotationRecord()`
+(`notationcomposingbridge.cpp:728-738`) and returns from the record arm before any legacy code is
+reached; the flag's default is `true` (`composingconfiguration.cpp:178`). Three further corrections
+are folded in below: `prepareUserFacingHarmonicRegions()` no longer exists in the production tree
+(only a test comment and a corpus README still name it); the implode bridge contains **zero**
+references to `analyzeHarmonicContextAtTick`, and the tuning bridge calls
+`analyzeNoteHarmonicContext` (`:190`, `:547`) and `analyzeHarmonicRhythm` (`:794`) instead; and
+`populateChordTrack` does **not** re-analyze each stretch through `analyzeHarmonicContextAtTick`.
 
 #### Entry points
 
+Every row is what runs at HEAD. "Record arm" means `useJointNotationRecord == true`, the default;
+"legacy arm" means the explicit `false` branch, which is dormant.
+
 | Entry point | File | Caller | Notes |
 |---|---|---|---|
-| `harmonicAnnotation(note)` | `notationcomposingbridge.cpp` | `notationaccessibility.cpp` (status bar) | Calls `analyzeNoteHarmonicContextDetails()` → `analyzeNoteHarmonicContextRegionallyInWindow()`. Uses a bounded expanding window around the note's tick. |
-| `analyzeNoteHarmonicContext(note, …)` | `notationcomposingbridge.cpp` | `notationcontextmenumodel.cpp` | Same regional-window path as above; returns ranked candidates for context menu display. |
-| `analyzeHarmonicContextAtTick(score, tick, …)` | `notationcomposingbridge.cpp` | `notationtuningbridge.cpp`, `notationimplodebridge.cpp` | Tick-level query without a note anchor. Used by intonation (§11) and chord-track writer to re-analyze individual regions. |
-| `analyzeHarmonicRhythm(score, start, end, …)` | `notationharmonicrhythmbridge.cpp` | `prepareUserFacingHarmonicRegions()`, `batch_analyze` | Time-range scanner. Thin wrapper over `region::analyzeRegions()` (Iter 97); greedy-expand segmentation, no Jazz path, no symbol reading. |
-| `prepareUserFacingHarmonicRegions(score, start, end, …)` | `notationcomposingbridgehelpers.cpp` | `addHarmonicAnnotationsToSelection()`, `populateChordTrack()` (indirectly via `analyzeHarmonicRhythm`) | Thin wrapper: calls `analyzeHarmonicRhythm` then runs gap inference. |
-| `addHarmonicAnnotationsToSelection(score, …)` | `notationcomposingbridge.cpp` | `notationinteraction.cpp` (menu action) | Annotation write path. Calls `analyzeHarmonicRhythm` via `prepareUserFacingHarmonicRegions`; no special flags needed — the classical path reads only notes. |
-| `populateChordTrack(score, …)` | `notationimplodebridge.cpp` | `notationinteraction.cpp` (implode action) | Chord track write path. Uses `analyzeHarmonicRhythm` for boundary detection, then re-analyzes each region fresh via `analyzeHarmonicContextAtTick`. |
+| `harmonicAnnotation(note)` | `notationcomposingbridge.cpp` | `notationaccessibility.cpp` (status bar) | Calls `analyzeNoteHarmonicContextDetails()` → `analyzeHarmonicContextAtTick()`. |
+| `analyzeNoteHarmonicContext(note, …)` | `notationcomposingbridge.cpp` | `notationcontextmenumodel.cpp` (right-click), `notationtuningbridge.cpp:190/:547` (tune at a note) | Same funnel; returns ranked candidates. |
+| `analyzeRestHarmonicContextDetails(rest)` | `notationcomposingbridge.cpp:967-981` | `notationcontextmenumodel.cpp` (right-click on a rest) | Same funnel, anchored at the rest's tick. |
+| `analyzeHarmonicContextAtTick(score, tick, …)` | `notationcomposingbridge.cpp:703` | the three entries above — it has no other production caller | **THE funnel, and the path-selection site.** Record arm: `produceNotationRecord` (whole score, once) → `noteView(rec, tick)` → `buildNoteContextFromRecord`. Legacy arm: the bounded expanding-window path (`analyzeHarmonicContextRegionallyAtTick`), then the tick-local fallback. |
+| `analyzeHarmonicContextLocallyAtTick(…)` | `notationcomposingbridge.cpp:621` | **no production caller** — the record arm returns first (`:738`); reached only from the legacy arm's fallback (`:753`) and directly from `pipeline_snapshot_tests.cpp:569` | The P4 tick-local fallback. See the reachability entry below. |
+| `analyzeHarmonicRhythm(score, start, end, …)` | declared `notationcomposingbridge.h:161`, defined `notationharmonicrhythmbridge.cpp:69` | the legacy arms of the span emitter, implode and tuning; `batch_analyze` | Time-range scanner over `region::analyzeRegions()`. **The only entry that takes a time range** — and it is legacy-arm only. |
+| `addHarmonicAnnotationsToSelection(score, …)` | `notationcomposingbridge.cpp:1385` | `notationinteraction.cpp` (menu action) | Annotation write path. Record arm: `produceNotationRecord` → `analyzeSectionFromRecord` → `emitHarmonicAnnotations` (`:1491-1507`). Legacy arm: `analyzeHarmonicRhythm` → `analyzeSection` (`:1509-1519`). |
+| `populateChordTrack(score, …)` | `notationimplodebridge.cpp` | `notationinteraction.cpp` (implode action) | Chord track write path. Record arm: `produceNotationRecord` → `analyzeSectionFromRecord` → `emitImplodedChordTrack` (`:1409-1431`). Legacy arm: `analyzeHarmonicRhythm` → `analyzeSection` (`:1434-1441`). |
+| `applyRegionTuning(…)` | `notationtuningbridge.cpp` | `notationinteraction.cpp` (tune-selection action) | Record arm derives the tuning stretches from the record; legacy arm calls `analyzeHarmonicRhythm` (`:794`). |
+
+**What a tick query reads, and what it costs.** On the legacy arm a tick query analysed a bounded
+window around the tick. **On the record arm there is no such narrowing:** the funnel produces a
+WHOLE-SCORE record and looks the tick up in it (the producer decodes the whole score once and does
+not cache — see the record-path section at the head of this document). A reader consulting this
+table to learn what music a tick query reads, or what it costs, must read the record-arm row, not
+the `analyzeHarmonicRhythm` row. The input-scope consequence is the same question `OPEN_ITEMS.md`
+OI-212 tracks on the span seams; the cost consequence is OI-203/OI-206 and the §12.1a correction.
+
+**The P4 tick-local fallback's reachability (recorded 2026-08-02, OI-238).** §3.3's "D-P4" entry
+makes the tick-local cold-context fallback the current accepted contract, with a stated revisit
+trigger: the Stage-3 design must state explicitly what P4 and the bridge consume from the decode.
+Two things are now true and neither was written down. The joint/record design never stated it; and
+on the switched build `analyzeHarmonicContextLocallyAtTick` is **unreachable from the production
+funnel**, surviving as a direct call from the pipeline-snapshot suite alone. So that contract
+governs nothing on the shipped product, and the `tickLocal` golden section — which the switch
+reconciliation reported byte-identical — is measuring a path production no longer takes. Its
+coverage must not be over-read. **What to do about either fact is OPEN** and is not settled here.
 
 #### Order-of-annotation safety
 
@@ -4674,6 +4822,14 @@ path uses `greedyExpandSegmentation()`. Demo mode drives the same code path that
 produces live annotations.
 
 **Status:** Not yet started. Planned after §2.10 bridge unification is complete.
+
+**Premise correction, 2026-08-02 (`OPEN_ITEMS.md` OI-232, dated-note item 1).** The prerequisite and
+the whole premise above are false at HEAD: the production annotation path is the joint estimator's
+record path, which never calls `greedyExpandSegmentation()` (OI-175 records exactly that). So this
+section specifies a developer tool for a code path that no longer runs, and "the same code path that
+produces live annotations" no longer names anything live. **What the demo view should step through
+instead is OPEN** — it is a design question for the joint decoder, not a documentation fix, and it is
+not settled here.
 
 ---
 
@@ -5588,10 +5744,19 @@ distinct pitch classes are sounding (insufficient data for chord identification)
 
 ### 11.5 Region Analysis and the Chord Track
 
-**Status: Implemented** — `analyzeHarmonicRhythm()` is declared and defined in
-`notation/internal/notationcomposingbridge.h/.cpp`; `populateChordTrack()` is declared
-and defined in `notation/internal/notationimplodebridge.h/.cpp` (both in `mu::notation`
-namespace).  Exposed as the "Implode to chord track" action in the Tools menu (see §12.1b).
+**Status: Implemented, and running the RECORD path since the notation switch (2026-07-27).**
+`populateChordTrack()` is declared and defined in
+`notation/internal/notationimplodebridge.h/.cpp` (`mu::notation` namespace) and is exposed as the
+"Implode to chord track" action in the Tools menu (see §12.1b). **Corrected 2026-08-02
+(`OPEN_ITEMS.md` OI-232, dated-note item 2):** what the action runs is the joint estimator's record
+path — `produceNotationRecord` → `analyzeSectionFromRecord` → `emitImplodedChordTrack`
+(`notationimplodebridge.cpp:1409-1431`) — not `analyzeHarmonicRhythm()`, which is now the legacy
+arm's boundary source behind `useJointNotationRecord == false` (`:1434-1441`). A second, smaller
+correction of the same date: `analyzeHarmonicRhythm()` is DECLARED in
+`notation/internal/notationcomposingbridge.h:161` but DEFINED in
+`notation/internal/notationharmonicrhythmbridge.cpp:69`, not in `notationcomposingbridge.cpp`. **The
+description of the region machinery below remains accurate for the legacy arm** and is retained as the
+record of what that arm does.
 
 Single-note analysis (status bar display, single-chord tuning) is the foundation.
 Region analysis extends this to a time range, producing a complete harmonic analysis
@@ -5995,9 +6160,28 @@ management, keyboard navigation, screen reader hooks.
 
 A user preference controls whether harmonic analysis is shown in the status bar. This
 preference exists for UI clarity — some users find the chord and key information
-distracting, particularly when doing work unrelated to harmony. It is not a performance
-control: analysis cost is negligible (well under 1ms) and suppressing the display does
-not require skipping the analysis.
+distracting, particularly when doing work unrelated to harmony.
+
+**Corrected 2026-08-02 (`OPEN_ITEMS.md` OI-242).** This paragraph continued: *"It is not a
+performance control: analysis cost is negligible (well under 1ms) and suppressing the display does
+not require skipping the analysis."* **Both clauses are false on the production path since the
+notation switch (2026-07-27).**
+
+- **The cost is not negligible.** The note-seam funnel runs `produceNotationRecord` — a WHOLE-SCORE
+  decode — synchronously, once per single-note selection, with the legacy bounded-window cache
+  bypassed by construction. The measured latency is in the seconds range on the corpus and in the
+  seconds-to-tens-of-seconds range on the committed large scores (`OPEN_ITEMS.md` OI-206 for the
+  mechanism and the reproduced field pattern; OI-203 for the measurement,
+  `tools/joint_estimator/noteseam_latency.json`). The "well under 1 ms" number described the LEGACY
+  bounded-window path with its decode cache.
+- **Suppressing the display WOULD skip the analysis.** The note-seam status bar is the sole
+  per-selection payer: the other consumers (implode, tuning, annotate, the context menu) are
+  action-scoped, not selection-scoped (OI-206 Task 1). So on the production arm, suppressing the
+  display is precisely what would skip the per-selection analysis.
+
+The preference's stated PURPOSE — clarity, not cost — is untouched by this correction. **Whether it
+should also become a performance control is OPEN**: that depends on the OI-203/OI-206 remedy and is
+not settled here.
 
 The preference follows MuseScore's existing preferences infrastructure. Toggling it
 takes effect immediately on the next selection change without requiring a restart. When
@@ -6005,17 +6189,38 @@ disabled, the status bar reverts to standard MuseScore accessibility information
 
 ### 12.1b Menu Actions (Implemented)
 
-Two actions are registered in the Tools menu via `notationuiactions.cpp` and wired
-through `notationactioncontroller.cpp` and `appmenumodel.cpp`:
+**Completed 2026-08-02 (`OPEN_ITEMS.md` OI-257): this table listed two actions; the code registers
+nine that consume the harmonic analysis.** The two Tools-menu actions below are wired through
+`notationuiactions.cpp` → `notationactioncontroller.cpp` → `appmenumodel.cpp`; the other seven are
+listed beneath them.
 
 | Action ID | Menu label | Trigger |
 |-----------|-----------|---------|
 | `implode-to-chord-track` | Implode to chord track | Requires a range selection on a grand-staff part; analyzes all other staves and populates the selected part with a harmonic reduction |
 | `tune-selection` | Tune selection | Tunes the selected note or range using the user-preferred tuning system (§11.2a) |
 
-Both actions are gated by `canReceiveAction(actionCode)` in
-`NotationActionController`, which checks that a score is open and the required
-selection exists.
+Both are gated by `canReceiveAction(actionCode)` in `NotationActionController`, which checks that a
+score is open and the required selection exists.
+
+**The seven further harmonic-analysis actions.** Six are registered in `notationuiactions.cpp` and
+one is built by the context-menu model:
+
+| Action ID | Label | Registered at | What it writes |
+|---|---|---|---|
+| `add-chord-symbol-from-analysis` | Add chord symbol | `notationuiactions.cpp:1402` | the analyzed chord symbol at the selected element |
+| `add-roman-numeral-from-analysis` | Add Roman numeral | `:1408` | the analyzed Roman numeral at the selected element |
+| `add-nashville-number-from-analysis` | Add Nashville number | `:1414` | the analyzed Nashville number at the selected element |
+| `add-chord-symbols-to-selection` | Add chord symbols to selection | `:1420` | chord symbols across the whole selection |
+| `add-roman-numerals-to-selection` | Add Roman numerals to selection | `:1426` | Roman numerals across the whole selection |
+| `add-nashville-numbers-to-selection` | Add Nashville numbers to selection | `:1432` | Nashville numbers across the whole selection |
+| `compose-tune-as` | *(one entry per analyzed reading, under a "Tune as ⟨system⟩" submenu)* | built in `notationcontextmenumodel.cpp:174`, handled at `notationactioncontroller.cpp:387` | retunes the selected note's chord as the chosen reading |
+
+**The right-click chord anchor.** When the right-clicked element is a CHORD rather than a single
+note, the analysis is anchored on `chord->notes().front()` — the first note of the chord's note
+list (`notationcontextmenumodel.cpp:210-214`). **Derivation not recorded:** nothing in the record
+says why the first note is the right representative, and the list order is an engraving-model order,
+not a musical one. Recorded here so the choice is at least visible; **whether it is the right rule
+is OPEN** (`OPEN_ITEMS.md` OI-257) and is not settled here.
 
 The **"Implode to chord track"** submenu is rebuilt dynamically whenever:
 - A different score is opened (`currentNotationChanged`)
@@ -6304,12 +6509,18 @@ implemented and passing all targeted tests. See STATUS.md for test counts.
 2e — Pre-submission backlog items fixed: formatter sussus/bassIsRoot bugs
   (commit `4c35da17`), relative major/minor key ambiguity (commit `3ba80cb7`).
 
-#### Phase 3 — Submission fork preparation *(next)*
+#### Phase 3 — Submission fork preparation *(not started; NOT the next thing)*
 
 - Create submission scope document (`docs/submission_scope.md`)
 - Identify files in scope vs out of scope for the PR
 - Create fork branch containing only submittable code
 - Final PR readiness review
+
+**Corrected 2026-08-02 (`OPEN_ITEMS.md` OI-232, dated-note item 3):** this phase was marked *(next)*,
+which no session since 2026-04 has treated as the next thing — the whole intervening arc is the layer
+rebuild, the joint estimator, and the certification audits. It is recorded here as **not started**;
+**when it becomes next is OPEN** and is not settled here. `STATUS.md` is the authority on what the
+current next action actually is (§doc governance: `STATUS.md` wins on current state).
 
 ---
 

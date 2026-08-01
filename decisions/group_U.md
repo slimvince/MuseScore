@@ -85,7 +85,7 @@
 
 **In plain words.** While the analysis is still deciding where one chord ends and the next begins, none of the bonuses that look at neighbouring chords may score anything. Adding a new context bonus without that gate will make the segmentation worse.
 
-**Why.** Stated constraint: where a boundary falls decides which notes each candidate sees, and chord identity is itself a signal for where boundaries belong (ARCHITECTURE.md:686-689), so a context bonus scoring the exploratory passes lets the answer choose its own input. Its specification home is D-062.
+**Why.** Stated constraint: where a boundary falls decides which notes each candidate sees, and chord identity is itself a signal for where boundaries belong (ARCHITECTURE.md:693-696), so a context bonus scoring the exploratory passes lets the answer choose its own input. Its specification home is D-062.
 
 **Status.** LIVE · date not stated · ratifier not stated
 

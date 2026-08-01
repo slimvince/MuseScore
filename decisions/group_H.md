@@ -17,9 +17,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1339-1340`
+**Home.** `ARCHITECTURE.md:1381-1382`
 
-**Provenance.** ARCHITECTURE.md:1336-1345 (Layer 5 - Built+Dormant, design ratified)
+**Provenance.** ARCHITECTURE.md:1378-1387 (Layer 5 - Built+Dormant, design ratified)
 
 ### D-080 — Carried abstentions are resolved by selecting among the carried readings, never re-derived
 
@@ -31,9 +31,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1343-1344`
+**Home.** `ARCHITECTURE.md:1385-1386`
 
-**Provenance.** ARCHITECTURE.md:1336-1345
+**Provenance.** ARCHITECTURE.md:1378-1387
 
 ### D-081 — The cadence detector is key-agnostic
 
@@ -46,9 +46,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1343-1344`
+**Home.** `ARCHITECTURE.md:1385-1386`
 
-**Provenance.** ARCHITECTURE.md:1344. open_items/OI-166 records that the built detector is key-agnostic but CHORD-derived, not the bass-driven pre-scan specified
+**Provenance.** ARCHITECTURE.md:1386. open_items/OI-166 records that the built detector is key-agnostic but CHORD-derived, not the bass-driven pre-scan specified
 
 ### D-082 — The grouping layer is additive, read-only, with no feedback
 
@@ -60,9 +60,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1351`
+**Home.** `ARCHITECTURE.md:1393`
 
-**Provenance.** ARCHITECTURE.md:1347-1354 (Layer 6 - Design-only, v1 spec)
+**Provenance.** ARCHITECTURE.md:1389-1396 (Layer 6 - Design-only, v1 spec)
 
 ### D-083 — Hierarchy, periods and prolongation are out of the validatable core
 
@@ -75,9 +75,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1352-1353`
+**Home.** `ARCHITECTURE.md:1394-1395`
 
-**Provenance.** ARCHITECTURE.md:1347-1354, deriving from D-029
+**Provenance.** ARCHITECTURE.md:1389-1396, deriving from D-029
 
 ### D-084 — The progression-schema recognizer is a consumer of the function layer, not a new layer
 
@@ -89,9 +89,9 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1358`
+**Home.** `ARCHITECTURE.md:1400`
 
-**Provenance.** ARCHITECTURE.md:1356-1361 'Scaffolding-first, deferred'
+**Provenance.** ARCHITECTURE.md:1398-1403 'Scaffolding-first, deferred'
 
 ### D-085 — The voice-leading axis is a separate axis with its own layers
 
@@ -104,7 +104,7 @@
 
 **Status.** LIVE · decided 2026-07-03 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:874-875`
+**Home.** `ARCHITECTURE.md:895-896`
 
-**Provenance.** ARCHITECTURE.md:875-878 records the foundation BUILT (dormant). ARCHITECTURE.md:1362-1363 still says the voice-leading layer is 'not built' - see OPEN_ITEMS OI-232
+**Provenance.** ARCHITECTURE.md:896-899 records the foundation BUILT (dormant). ARCHITECTURE.md:1404-1404 still says the voice-leading layer is 'not built' - see OPEN_ITEMS OI-232
 

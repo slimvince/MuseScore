@@ -13,13 +13,13 @@
 
 **In plain words.** Showing the harmony as Roman numerals or as Nashville numbers is a choice of how to display one and the same analysis.
 
-**Why.** Stated constraint, ARCHITECTURE.md:5678-5680: Roman numerals and Nashville numbers encode identical information, so showing both on one staff would be redundant and would destroy legibility - which makes the choice a display preference, not two analyses.
+**Why.** Stated constraint, ARCHITECTURE.md:5843-5845: Roman numerals and Nashville numbers encode identical information, so showing both on one staff would be redundant and would destroy legibility - which makes the choice a display preference, not two analyses.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3138-3139`
+**Home.** `ARCHITECTURE.md:3245-3246`
 
-**Provenance.** ARCHITECTURE.md:3135-3139; consistent with D-016
+**Provenance.** ARCHITECTURE.md:3242-3246; consistent with D-016
 
 ### D-087 — Display options live with the formatter, not with the analyzer preferences
 
@@ -32,9 +32,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2850-2851`
+**Home.** `ARCHITECTURE.md:2946-2947`
 
-**Provenance.** ARCHITECTURE.md:2816-2851
+**Provenance.** ARCHITECTURE.md:2907-2947
 
 ### D-088 — No automatic key signature injection
 
@@ -43,13 +43,13 @@
 
 **In plain words.** The program will never add a key signature to your score by itself. It shows what it inferred in the chord staff and leaves the decision to you.
 
-**Why.** Stated constraint, ARCHITECTURE.md:520-525 (§2.9): writing a key signature into the score would be the system modifying the music without the user asking.
+**Why.** Stated constraint, ARCHITECTURE.md:527-532 (§2.9): writing a key signature into the score would be the system modifying the music without the user asking.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3739-3740`
+**Home.** `ARCHITECTURE.md:3846-3847`
 
-**Provenance.** ARCHITECTURE.md:3732-3740; an instance of D-074
+**Provenance.** ARCHITECTURE.md:3839-3847; an instance of D-074
 
 ### D-089 — The legacy confidence exposure gates - 0.5 tentative, 0.8 assertive
 
@@ -63,9 +63,9 @@
 
 **Status.** SUPERSEDED BY D-018 · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3424-3426`
+**Home.** `ARCHITECTURE.md:3531-3533`
 
-**Provenance.** The record arm replaces the 0.5/0.8 literals with the fitted nats constants (ARCHITECTURE.md:168-170); the literals are legacy-arm-only (sectionanalyzer.cpp::legacyKeyExposureBucket)
+**Provenance.** The record arm replaces the 0.5/0.8 literals with the fitted nats constants (ARCHITECTURE.md:175-177); the literals are legacy-arm-only (sectionanalyzer.cpp::legacyKeyExposureBucket)
 
 ### D-090 — Abstention is a valid outcome - high precision before coverage
 
@@ -74,19 +74,18 @@
 
 **In plain words.** The aim is not to put a label on everything. It is to be right about what we do label, and to say nothing when the evidence is thin.
 
-**Why.** Stated constraint, ARCHITECTURE.md:3438-3446 and its consumer rules at :5604-5612: the stated product target is not 'always emit a label' but high precision on exposed results, calibrated abstention when evidence is weak, and coverage gains only after precision is acceptable - so below the confidence bar the key-dependent annotations are suppressed rather than printed tentatively.
+**Why.** Stated constraint, ARCHITECTURE.md:3545-3553 and its consumer rules at :5604-5612: the stated product target is not 'always emit a label' but high precision on exposed results, calibrated abstention when evidence is weak, and coverage gains only after precision is acceptable - so below the confidence bar the key-dependent annotations are suppressed rather than printed tentatively.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3444-3445`
+**Home.** `ARCHITECTURE.md:3551-3552`
 
-**Provenance.** ARCHITECTURE.md:3431-3483
+**Provenance.** ARCHITECTURE.md:3538-3590
 
 ### D-106 — The augmented-sixth labels are gated to the Standard and Baroque presets
 
-> Gated to
-> Standard and Baroque presets only. Jazz and Nashville presets continue to
-> emit chromatic Roman numerals or chord symbols respectively.
+> **Preset gating is NOT implemented — corrected 2026-08-02 (`OPEN_ITEMS.md` OI-112(c); this section
+> asserted "Gated to Standard and Baroque presets only", and the code defers exactly that).**
 
 **In plain words.** The specific Italian, French and German augmented-sixth labels are shown only under the classical presets.
 
@@ -94,7 +93,7 @@
 
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3753-3755`
+**Home.** `ARCHITECTURE.md:3862-3863`
 
-**Provenance.** open_items/OI-112 already records this preset-gating as stale; open_items/OI-201 records that the record arm collapses the family to a plain major triad symbol
+**Provenance.** open_items/OI-112 already records this preset-gating as stale; open_items/OI-201 records that the record arm collapses the family to a plain major triad symbol ★ Verbatim RE-TAKEN 2026-08-02 (the phase-1 truth-sync): §5.11's assertion 'Gated to Standard and Baroque presets only' was corrected, since the formatter explicitly defers that gate for want of preset context (`chordsymbolformatter.cpp:882-883`) and emits the labels under every preset (OPEN_ITEMS OI-112(c) discharged). The decision's own words survive at the home, quoted inside the correction.
 

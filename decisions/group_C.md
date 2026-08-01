@@ -13,13 +13,13 @@
 
 **In plain words.** The analysis works on the smallest stretch over which the sounding harmony does not change. Phrases, key areas and sections are then read off that, never analysed directly.
 
-**Why.** Stated constraint, ARCHITECTURE.md:805-807: analysing at the finest grain is what makes segmentation a fact rather than a judgment (over-grab becomes structurally impossible), it aligns the architecture with the per-slice oracle measurement already built, and it matches the published state of the art - Contrapunctus labels every event.
+**Why.** Stated constraint, ARCHITECTURE.md:812-814: analysing at the finest grain is what makes segmentation a fact rather than a judgment (over-grab becomes structurally impossible), it aligns the architecture with the per-slice oracle measurement already built, and it matches the published state of the art - Contrapunctus labels every event.
 
 **Status.** LIVE · date not stated · ratified by user
 
-**Home.** `ARCHITECTURE.md:803-804`
+**Home.** `ARCHITECTURE.md:810-811`
 
-**Provenance.** ARCHITECTURE.md:801 heading says '(ratified; full statements in cowork_target_architecture.md)'; the date and ratifier are not stated at this home
+**Provenance.** ARCHITECTURE.md:808 heading says '(ratified; full statements in cowork_target_architecture.md)'; the date and ratifier are not stated at this home
 
 ### D-023 — The atomic analysis unit is the constant-sonority slice, never the metric beat
 
@@ -27,13 +27,13 @@
 
 **In plain words.** The smallest thing analysed is a stretch during which exactly the same notes are sounding - not a beat of the bar.
 
-**Why.** Same passage as D-022, ARCHITECTURE.md:803-807: the metric beat is not where harmony is well-defined; the constant-sonority slice is, and every coarser unit is derived from it.
+**Why.** Same passage as D-022, ARCHITECTURE.md:810-814: the metric beat is not where harmony is well-defined; the constant-sonority slice is, and every coarser unit is derived from it.
 
 **Status.** LIVE · date not stated · ratified by user
 
-**Home.** `ARCHITECTURE.md:804`
+**Home.** `ARCHITECTURE.md:811`
 
-**Provenance.** ARCHITECTURE.md:801-808. The joint estimator's own unit is the ONSET event (jointdecoder.h:67), not this slice - see OPEN_ITEMS OI-228
+**Provenance.** ARCHITECTURE.md:808-815. The joint estimator's own unit is the ONSET event (jointdecoder.h:67), not this slice - see OPEN_ITEMS OI-228
 
 ### D-024 — The fact layers are style-agnostic; style lives only in calibration
 
@@ -43,13 +43,13 @@
 
 **In plain words.** Reading the notes and cutting the music into constant-sound stretches works the same for every kind of music. Whether a piece is Baroque or jazz can change only the numbers the judging layers use, never the shape of the code.
 
-**Why.** Stated constraint, ARCHITECTURE.md:810-813: confining style to the calibration of the judgment layers sharpens §2.1 - not merely data-driven style, but style kept out of the layers that carry facts, so the fact surface cannot silently differ between styles.
+**Why.** Stated constraint, ARCHITECTURE.md:817-820: confining style to the calibration of the judgment layers sharpens §2.1 - not merely data-driven style, but style kept out of the layers that carry facts, so the fact surface cannot silently differ between styles.
 
 **Status.** LIVE · date not stated · ratified by user
 
-**Home.** `ARCHITECTURE.md:810-813`
+**Home.** `ARCHITECTURE.md:817-820`
 
-**Provenance.** ARCHITECTURE.md:801 ratified banner; sharpens §2.1 (D-070)
+**Provenance.** ARCHITECTURE.md:808 ratified banner; sharpens §2.1 (D-070)
 
 ### D-025 — Forward-only, with two scoped escapes
 
@@ -58,11 +58,11 @@
 
 **In plain words.** Each stage was to pass its answer forward and never reach back. A confident earlier answer could be overturned only by re-running that one stretch forwards, and the one genuinely tangled key-versus-chord case got a narrow, gated exception.
 
-**Why.** Measurement, ARCHITECTURE.md:780-783: the investigation measured the full joint cross-layer search INERT, and located the realisable gain in soft-evidence quality carried forward (calibrated confidence + ranked alternatives) rather than global cycling.
+**Why.** Measurement, ARCHITECTURE.md:787-790: the investigation measured the full joint cross-layer search INERT, and located the realisable gain in soft-evidence quality carried forward (calibrated confidence + ranked alternatives) rather than global cycling.
 
 **Status.** SUPERSEDED BY D-001 · decided 2026-06-29 · ratified by user
 
-**Home.** `ARCHITECTURE.md:783-784`
+**Home.** `ARCHITECTURE.md:790-791`
 
 **Provenance.** The 2026-07-17 governing decision (D-001) replaces the mechanism with ONE joint decode - the mechanism this block had ruled out. No supersession banner was added to §2.14 - see OPEN_ITEMS OI-234 ★ USER RULING 2026-08-02 (OI-234, reading 3): forward-only as the architecture ruling is SUPERSEDED BY D-001 (the 2026-07-17 joint decision, adopted 2026-07-26); the supersession now has a ruling naming it (was superseded-in-fact). The §2.14 scoping annotation records the ruling.
 
@@ -73,11 +73,11 @@
 
 **In plain words.** An earlier plan to search all the possibilities at once was tested and found to add nothing, so the effort was redirected into better evidence flowing forwards.
 
-**Why.** The measurement itself (ARCHITECTURE.md:780-781). What the record does NOT state is how it was reconciled with the 2026-07-17 joint estimator, which is one - see open_items/OI-234.
+**Why.** The measurement itself (ARCHITECTURE.md:787-788). What the record does NOT state is how it was reconciled with the 2026-07-17 joint estimator, which is one - see open_items/OI-234.
 
 **Status.** LIVE · decided 2026-06-29 · ratified by user
 
-**Home.** `ARCHITECTURE.md:780-781`
+**Home.** `ARCHITECTURE.md:787-788`
 
 **Provenance.** The joint estimator (D-001) is a global joint decode and is in production on both surfaces. The record does not state how this measurement was reconciled with the later ruling - see OPEN_ITEMS OI-234 ★ USER RULING 2026-08-02 (OI-234, reading 3): the finding STANDS FOR WHAT IT TESTED — cycling/re-ranking over the per-layer pipeline's carried candidate lists adds nothing, binding on that design class — and does NOT bear on the fitted semi-Markov joint decode (a different mechanism class). Returned to LIVE, scoped; the §2.14 annotation records the scoping (was superseded-in-fact).
 
@@ -87,11 +87,11 @@
 
 **In plain words.** No stage is allowed to report only its single best answer. It reports the runners-up too, with a measure of how clear-cut the choice was.
 
-**Why.** Stated constraint, ARCHITECTURE.md:726-728: irrevocable point estimates block iteration and provisional results with confidence metadata enable it, so every layer's output must carry the alternatives and the confidence a later layer would need to overturn it.
+**Why.** Stated constraint, ARCHITECTURE.md:733-735: irrevocable point estimates block iteration and provisional results with confidence metadata enable it, so every layer's output must carry the alternatives and the confidence a later layer would need to overturn it.
 
 **Status.** LIVE · decided 2026-06-29 · ratified by user
 
-**Home.** `ARCHITECTURE.md:785`
+**Home.** `ARCHITECTURE.md:792`
 
 **Provenance.** The mechanism around it (D-025) is superseded in fact, but the ranked-alternatives requirement is carried forward by the joint estimator's published candidate lists (D-006)
 
@@ -102,13 +102,13 @@
 
 **In plain words.** The word 'region' on its own is forbidden, because it hides which kind of stretch is meant. Each stretch has its own name: the chord-span, the key-span, the punctuation-span and so on.
 
-**Why.** Research citation, ARCHITECTURE.md:844 - the span typology follows the GTTM premise of independent structures (Lerdahl & Jackendoff); the ban on the bare word is because a 'region' is a FAMILY of spans and the unqualified word names none of them (:765, :786-787).
+**Why.** Research citation, ARCHITECTURE.md:865 - the span typology follows the GTTM premise of independent structures (Lerdahl & Jackendoff); the ban on the bare word is because a 'region' is a FAMILY of spans and the unqualified word names none of them (:765, :786-787).
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `ARCHITECTURE.md:843-844`
+**Home.** `ARCHITECTURE.md:864-865`
 
-**Provenance.** ARCHITECTURE.md:822-829 records the rename CONFIRMED (user, 2026-07-02) and EXECUTED 2026-07-03 'propagated through every layer spec'. ARCHITECTURE.md itself still uses the banned word 216 times including section headings - see OPEN_ITEMS OI-233
+**Provenance.** ARCHITECTURE.md:833-850 records the rename CONFIRMED (user, 2026-07-02) and EXECUTED 2026-07-03 'propagated through every layer spec'. ARCHITECTURE.md itself still uses the banned word 216 times including section headings - see OPEN_ITEMS OI-233
 
 ### D-029 — The verifiability contract
 
@@ -118,13 +118,13 @@
 
 **In plain words.** Prefer what we can check against annotated music. Where the theory is sound but we have nothing to check it against, build it anyway - but mark it as unchecked and give it its own confidence path.
 
-**Why.** Stated constraint, ARCHITECTURE.md:851-854: checking against ground truth is how we catch our own theory errors, and refusing sound theory we cannot yet check would forfeit the jazz and pop reach, where the theory exists and the corpus does not.
+**Why.** Stated constraint, ARCHITECTURE.md:872-875: checking against ground truth is how we catch our own theory errors, and refusing sound theory we cannot yet check would forfeit the jazz and pop reach, where the theory exists and the corpus does not.
 
 **Status.** LIVE · date not stated · ratified by user
 
-**Home.** `ARCHITECTURE.md:851-853`
+**Home.** `ARCHITECTURE.md:872-874`
 
-**Provenance.** ARCHITECTURE.md:801 ratified banner
+**Provenance.** ARCHITECTURE.md:808 ratified banner
 
 ### D-030 — Bounded context - cost scales with the working span, not the whole score
 
@@ -134,13 +134,13 @@
 
 **In plain words.** Analysis runs on what the user has selected. The work must grow with the size of that selection, not with the size of the piece; re-analysis after an edit must only redo the changed part; and a layer that needs more music asks for it rather than reading everything.
 
-**Why.** Stated constraint, ARCHITECTURE.md:855-859: the analysis runs on the user's selection, so a layer needing more must request an append-only extension from Layer 1 carrying a stop condition and a hard bound. The three binding scale requirements R1-R3 are stated there; the detailed cross-layer specification is `cowork_bounded_context_design.md`.
+**Why.** Stated constraint, ARCHITECTURE.md:876-880: the analysis runs on the user's selection, so a layer needing more must request an append-only extension from Layer 1 carrying a stop condition and a hard bound. The three binding scale requirements R1-R3 are stated there; the detailed cross-layer specification is `cowork_bounded_context_design.md`.
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `ARCHITECTURE.md:857-859`
+**Home.** `ARCHITECTURE.md:878-880`
 
-**Provenance.** ARCHITECTURE.md:859-863 names cowork_bounded_context_design.md as the ONE detailed cross-layer spec and records the 2026-07-02 user directive making it 'the hard gate before L6'. DIRECTLY CONTRADICTED by D-011 (whole-score decode per query, no caching) - see OPEN_ITEMS OI-210/OI-212
+**Provenance.** ARCHITECTURE.md:880-884 names cowork_bounded_context_design.md as the ONE detailed cross-layer spec and records the 2026-07-02 user directive making it 'the hard gate before L6'. DIRECTLY CONTRADICTED by D-011 (whole-score decode per query, no caching) - see OPEN_ITEMS OI-210/OI-212
 
 ### D-031 — Whole-score analysis is the degenerate case, not the design
 
@@ -148,11 +148,11 @@
 
 **In plain words.** Analysing the whole piece is what happens when the user has selected the whole piece. It is not the normal mode of operation.
 
-**Why.** Same passage, ARCHITECTURE.md:859: whole-score analysis is what the bounded-context rule produces when the selection happens to be the whole score - a case of the rule, not an exception to it.
+**Why.** Same passage, ARCHITECTURE.md:880: whole-score analysis is what the bounded-context rule produces when the selection happens to be the whole score - a case of the rule, not an exception to it.
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `ARCHITECTURE.md:859`
+**Home.** `ARCHITECTURE.md:880`
 
 **Provenance.** Same home as D-030. The record producer analyses the whole score regardless of the requested span (OI-212)
 
@@ -168,7 +168,7 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `ARCHITECTURE.md:889-891`
+**Home.** `ARCHITECTURE.md:910-912`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass, cc_instruction_spec_completion.md): the contract's own document `cowork_confidence_contract.md:39-40` (ratified there, user, 2026-07-02) remains the authoritative full statement; the rule is now stated in the cross-cutting contracts of the architecture document (§2.15), which is where a reader of the layers meets it. The stale 'ratification-gated' parenthetical in the §2.14 forward-override bullet of §2.15 is corrected in the same pass (OPEN_ITEMS OI-232, item 5). Contradicted by D-019 on the production record arm - see OPEN_ITEMS OI-231
 
@@ -181,13 +181,13 @@
 
 **In plain words.** Each stage owns one contribution and says plainly what it does not own, handing unresolved cases forward as ranked options. Owning one contribution does not narrow what it may look at: within its scope it uses all the information the note reader carries - how the note is spelt, where it falls in the bar, and which voice it is in.
 
-**Why.** Stated constraint, ARCHITECTURE.md:864-867: the single-responsibility half is what lets a layer say what it does NOT own, and the maximal-information half is what stops that ownership from being read as permission to ignore evidence Layer 1 already carries.
+**Why.** Stated constraint, ARCHITECTURE.md:885-888: the single-responsibility half is what lets a layer say what it does NOT own, and the maximal-information half is what stops that ownership from being read as permission to ignore evidence Layer 1 already carries.
 
 **Status.** LIVE · date not stated · ratified by user
 
-**Home.** `ARCHITECTURE.md:864-867`
+**Home.** `ARCHITECTURE.md:885-888`
 
-**Provenance.** ARCHITECTURE.md:801 ratified banner. The joint emission reads only struck notes (OI-228) and the shared tone surface is voice-blind (OI-74)
+**Provenance.** ARCHITECTURE.md:808 ratified banner. The joint emission reads only struck notes (OI-228) and the shared tone surface is voice-blind (OI-74)
 
 ### D-034 — A new layer or axis is admitted only through three co-equal gates
 
@@ -196,13 +196,13 @@
 
 **In plain words.** A new stage is added only if it carries one distinct responsibility, can be validated somehow, and buys something we can actually check. Carrying a distinct responsibility is enough on its own, even with no immediate accuracy gain.
 
-**Why.** Stated constraint, ARCHITECTURE.md:881-888: gate (1) separation of concerns is a structural mandate sufficient on its own even at zero accuracy gain; gates (2) verifiability and (3) proportionality exist against the opposite error, and the record names the reminder - Contrapunctus is competitive with the state of the art with NO explicit grouping layer.
+**Why.** Stated constraint, ARCHITECTURE.md:902-909: gate (1) separation of concerns is a structural mandate sufficient on its own even at zero accuracy gain; gates (2) verifiability and (3) proportionality exist against the opposite error, and the record names the reminder - Contrapunctus is competitive with the state of the art with NO explicit grouping layer.
 
 **Status.** LIVE · date not stated · ratified by user
 
-**Home.** `ARCHITECTURE.md:881-882`
+**Home.** `ARCHITECTURE.md:902-903`
 
-**Provenance.** ARCHITECTURE.md:881-888
+**Provenance.** ARCHITECTURE.md:902-909
 
 ### D-035 — The effort setting - every cost-driving choice is a setting, never a hardcoded constant
 
@@ -212,13 +212,13 @@
 
 **In plain words.** Anything that makes the analysis slower must be something the user or the caller can turn down, not a number baked into the code; and any expensive extra step must be separable so it can be switched off.
 
-**Why.** Stated constraint, ARCHITECTURE.md:794-798: the effort dial is a calibration knob, not a structural one, so its two standing rules follow - every cost-driving choice is an explicit setting, and every optional expensive refinement is a cleanly separable stage.
+**Why.** Stated constraint, ARCHITECTURE.md:801-805: the effort dial is a calibration knob, not a structural one, so its two standing rules follow - every cost-driving choice is an explicit setting, and every optional expensive refinement is a cleanly separable stage.
 
 **Status.** LIVE · decided 2026-06-29 · ratified by user
 
-**Home.** `ARCHITECTURE.md:796-798`
+**Home.** `ARCHITECTURE.md:803-805`
 
-**Provenance.** ARCHITECTURE.md:794-798. Not implemented: the effort setting does not exist and the decode's cost drivers (segment cap, key prune width) are compiled-in constants - tracked at OI-209/OI-210
+**Provenance.** ARCHITECTURE.md:801-805. Not implemented: the effort setting does not exist and the decode's cost drivers (segment cap, key prune width) are compiled-in constants - tracked at OI-209/OI-210
 
 ### D-036 — Accumulating gates are a warning sign - add iteration, not more gates
 
@@ -228,13 +228,13 @@
 
 **In plain words.** If a stage keeps needing new special cases, the problem is that it is missing information from elsewhere. Adding another special case makes it worse.
 
-**Why.** Stated constraint, ARCHITECTURE.md:702-706: each gate is a heuristic patch on a structural limitation, so a rising gate count is a symptom of missing iteration rather than an argument for more gates.
+**Why.** Stated constraint, ARCHITECTURE.md:709-713: each gate is a heuristic patch on a structural limitation, so a rising gate count is a symptom of missing iteration rather than an argument for more gates.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:702-704`
+**Home.** `ARCHITECTURE.md:709-711`
 
-**Provenance.** ARCHITECTURE.md:702-706; restated as an ongoing concern at :2131-2136
+**Provenance.** ARCHITECTURE.md:709-713; restated as an ongoing concern at :2131-2136
 
 ### D-099 — Negative evidence is information - a ruled-out possibility is carried, not dropped
 
@@ -248,7 +248,7 @@
 
 **Status.** LIVE · decided 2026-07-06 · ratified by user
 
-**Home.** `ARCHITECTURE.md:905-907`
+**Home.** `ARCHITECTURE.md:926-928`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): CLAUDE.md guiding principle #12, ratified by the user 2026-07-06, remains the standing principle; the layer-facing rule is now stated in the cross-cutting analysis contracts it governs. OPEN_ITEMS OI-237 closes on this move
 
@@ -263,7 +263,7 @@
 
 **Status.** LIVE · decided 2026-07-10 · ratified by user
 
-**Home.** `ARCHITECTURE.md:913-914`
+**Home.** `ARCHITECTURE.md:934-935`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): CLAUDE.md's 'Fact-publication corollary to #6/#7/#12' (ratified 2026-07-10, amended 2026-07-12 - publish EVIDENCE-class facts broadly, each carrying its establishment status) remains the standing corollary; the layer-facing rule is now stated in the cross-cutting analysis contracts. OPEN_ITEMS OI-237 closes on this move
 

@@ -14,7 +14,7 @@
 
 **In plain words.** The tonality, the major/minor character and the chord are not worked out one after another. They are worked out together, in a single pass that also decides where one chord ends and the next begins.
 
-**Why.** Theory basis cited at ARCHITECTURE.md:9 - `cowork_key_chord_joint_inference_grounding.md`; the forcing constraint is the circular dependency list at ARCHITECTURE.md:682-696 (key<->chord, segmentation<->chord, non-chord-tone<->chord, function<->chord identity), which a feed-forward pipeline cannot resolve correctly.
+**Why.** Theory basis cited at ARCHITECTURE.md:9 - `cowork_key_chord_joint_inference_grounding.md`; the forcing constraint is the circular dependency list at ARCHITECTURE.md:689-703 (key<->chord, segmentation<->chord, non-chord-tone<->chord, function<->chord identity), which a feed-forward pipeline cannot resolve correctly.
 
 **Status.** LIVE · decided 2026-07-17 · ratified by user
 
@@ -65,7 +65,7 @@
 
 **Home.** `ARCHITECTURE.md:31-33`
 
-**Provenance.** ARCHITECTURE.md:43-44 cites cowork_joint_estimator_factorization.md as the full specification. The cap's FORM is the established semi-Markov default (cowork_joint_estimator_factorization.md:112-114); the VALUE 4 has no recorded derivation anywhere in the record - derivation not recorded
+**Provenance.** ARCHITECTURE.md:48-49 cites cowork_joint_estimator_factorization.md as the full specification. The cap's FORM is the established semi-Markov default (cowork_joint_estimator_factorization.md:112-114); the VALUE 4 has no recorded derivation anywhere in the record - derivation not recorded
 
 ### D-005 — The joint estimator is the production inference layer on the batch and corpus surface
 
@@ -94,9 +94,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:47-49`
+**Home.** `ARCHITECTURE.md:52-54`
 
-**Provenance.** ARCHITECTURE.md:46 names it 'the notation output-surface contract §3.3 GROUP (i)'
+**Provenance.** ARCHITECTURE.md:51 names it 'the notation output-surface contract §3.3 GROUP (i)'
 
 ### D-007 — The published scores are log-scores, not probabilities
 
@@ -105,13 +105,13 @@
 
 **In plain words.** The numbers beside each alternative are not chances of being right. They are model scores, and the difference between two of them is a score gap, not a percentage.
 
-**Why.** Stated constraint, ARCHITECTURE.md:53-55: the published numbers are within-segment content scores re-scored by `segmentContentScore`, so they are log-scores and gaps are score differences; turning them into probabilities needs the forward-backward marginals, which are a separate later step.
+**Why.** Stated constraint, ARCHITECTURE.md:58-60: the published numbers are within-segment content scores re-scored by `segmentContentScore`, so they are log-scores and gaps are score differences; turning them into probabilities needs the forward-backward marginals, which are a separate later step.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:54-55`
+**Home.** `ARCHITECTURE.md:59-60`
 
-**Provenance.** ARCHITECTURE.md:54-56; the true-probability step is deferred to OI-193
+**Provenance.** ARCHITECTURE.md:59-61; the true-probability step is deferred to OI-193
 
 ### D-008 — The true probabilities are deferred to a later step
 
@@ -119,17 +119,18 @@
 
 **In plain words.** The proper probability for each reading - the kind that can be checked against how often it is actually right - has not been built yet; it is a named later piece of work.
 
-**Why.** Same constraint as D-007: the marginals the true probabilities require are not computed by the decode as it stands (ARCHITECTURE.md:55), so the step is named and deferred rather than approximated.
+**Why.** Same constraint as D-007: the marginals the true probabilities require are not computed by the decode as it stands (ARCHITECTURE.md:60), so the step is named and deferred rather than approximated.
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:55`
+**Home.** `ARCHITECTURE.md:60`
 
 **Provenance.** open_items/OI-193 (OPEN)
 
 ### D-095 — The dual path during the joint-estimator build is a declared, bounded, pre-ratified migration state
 
-> STAGED SCOPE (declared migration state, #23)
+> migration state (#23) is therefore CLOSED on both surfaces, and the legacy `region::analyzeRegions` →
+> `analyzeSection` path is compiled and dormant, awaiting deletion at the OI-180 retirement map. The first
 
 **In plain words.** Building the new estimator beside the old one temporarily breaks the rule that there is one way to do each thing. That was declared in advance, bounded, and given a retirement plan.
 
@@ -137,9 +138,9 @@
 
 **Status.** SUPERSEDED IN FACT · decided 2026-07-19 · ratified by user
 
-**Home.** `ARCHITECTURE.md:39`
+**Home.** `ARCHITECTURE.md:43-44`
 
-**Provenance.** open_items/OI-180 (PROTOCOL RATIFIED 2026-07-19; forward exit EXECUTED on both surfaces 2026-07-27). The ARCHITECTURE.md text at :39-40 still says the notation layer stays legacy - see OPEN_ITEMS OI-232
+**Provenance.** open_items/OI-180 (PROTOCOL RATIFIED 2026-07-19; forward exit EXECUTED on both surfaces 2026-07-27). The ARCHITECTURE.md text at :39-40 still says the notation layer stays legacy - see OPEN_ITEMS OI-232 ★ Verbatim RE-TAKEN 2026-08-02 (the phase-1 truth-sync): the sentence this entry quoted — 'STAGED SCOPE (declared migration state, #23): the in-app NOTATION layer stays on the legacy L1-L6 pipeline' — was false at HEAD and is corrected in place (OPEN_ITEMS OI-232 item 1). The decision itself is unchanged; what moved is the migration state's status, which the corrected text now states as CLOSED on both surfaces.
 
 ### D-096 — Fitted values are fit once against ground truth, never per-case tuned
 
@@ -152,7 +153,7 @@
 
 **Status.** LIVE · decided 2026-07-17 · ratified by user
 
-**Home.** `ARCHITECTURE.md:256-257`
+**Home.** `ARCHITECTURE.md:263-264`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:15-26, the governing architecture decision banner (user-ratified 2026-07-17), which tracks work and is not a specification home. OPEN_ITEMS OI-237 closes on this move
 
@@ -167,7 +168,7 @@
 
 **Status.** LIVE · decided 2026-07-19 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:263-264`
+**Home.** `ARCHITECTURE.md:270-271`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:123 (open_items/OI-176 and OI-177, PROTOCOL RATIFIED 2026-07-19, protocols in `cowork_prefit_gates.md`). The standing principle is CLAUDE.md #20. OPEN_ITEMS OI-237 closes on this move
 
@@ -182,7 +183,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:275-276`
+**Home.** `ARCHITECTURE.md:282-283`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:211 (open_items/OI-188, OPEN - 'bounds every ceiling claim'); the admission rule actually in production still has no ratified basis (open_items/OI-226). OPEN_ITEMS OI-237 closes on this move
 
@@ -197,7 +198,7 @@
 
 **Status.** LIVE · decided 2026-07-26 · ratified by user
 
-**Home.** `ARCHITECTURE.md:287-288`
+**Home.** `ARCHITECTURE.md:294-295`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only in the CLAUDE.md gate block (A), the OI-178 adoption baselines (user-ratified 2026-07-26). The tension with D-090 (calibrated abstention, ARCHITECTURE.md §5.7a) is NAMED at the new home and deliberately NOT resolved there - resolving it is later work. OPEN_ITEMS OI-237 closes on this move
 

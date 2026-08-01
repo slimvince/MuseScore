@@ -13,13 +13,13 @@
 
 **In plain words.** Unpitched percussion takes no part in working out the harmony and receives no tuning adjustment. Where a piano or organ is playing, the other instruments tune to it.
 
-**Why.** Stated constraint, ARCHITECTURE.md:4809-4810 and :4781-4782: a fixed-pitch instrument cannot adjust, so it is the natural reference - and its presence resets accumulated drift at every chord it plays.
+**Why.** Stated constraint, ARCHITECTURE.md:4965-4966 and :4781-4782: a fixed-pitch instrument cannot adjust, so it is the natural reference - and its presence resets accumulated drift at every chord it plays.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4822`
+**Home.** `ARCHITECTURE.md:4978`
 
-**Provenance.** ARCHITECTURE.md:4803-4823 (§11.2). No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:4959-4979 (§11.2). No date or ratifier stated.
 
 ### D-145 — One preference chooses the tuning system, and no tuning code hardcodes one
 
@@ -30,13 +30,13 @@
 
 **In plain words.** Which tuning system is in force is a single user setting, read afresh each time any tuning happens. No part of the tuning code has a system built into it.
 
-**Why.** Stated constraint, ARCHITECTURE.md:4825-4833 - #6, one path per concern: the same preference governs per-note tuning, chord-staff population and region tuning, so the three cannot silently disagree about what tuning the user asked for.
+**Why.** Stated constraint, ARCHITECTURE.md:4981-4989 - #6, one path per concern: the same preference governs per-note tuning, chord-staff population and region tuning, so the three cannot silently disagree about what tuning the user asked for.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4838`
+**Home.** `ARCHITECTURE.md:4994`
 
-**Provenance.** ARCHITECTURE.md:4825-4841 (§11.2a). No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:4981-4997 (§11.2a). No date or ratifier stated.
 
 ### D-146 — A tie chain is one indivisible tuning event, and its tuning comes from one authority note
 
@@ -47,13 +47,13 @@
 
 **In plain words.** Notes joined by ties are one sustained sound, so they are tuned once and never split apart. The tuning is worked out from a single note in the chain - the one carrying a tuning anchor if there is one, otherwise the first - and applied unchanged to the whole chain.
 
-**Why.** Stated constraint, ARCHITECTURE.md:5084-5085 and :4923-4924: a tie is a compositional instruction of continuity, so splitting it would contradict what the composer wrote; a user who wants the sustained sound retuned as the harmony moves writes a slur instead.
+**Why.** Stated constraint, ARCHITECTURE.md:5240-5241 and :4923-4924: a tie is a compositional instruction of continuity, so splitting it would contradict what the composer wrote; a user who wants the sustained sound retuned as the harmony moves writes a slur instead.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:5084`
+**Home.** `ARCHITECTURE.md:5240`
 
-**Provenance.** ARCHITECTURE.md:5084-5097 (§11.3c), with the region-tuning consequence at :5726-5729 (§11.6). No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:5240-5253 (§11.3c), with the region-tuning consequence at :5726-5729 (§11.6). No date or ratifier stated.
 
 ### D-147 — A slur, not a tie, joins the halves of a split note
 
@@ -65,13 +65,13 @@
 
 **In plain words.** When a sustained note must be retuned partway through, it is cut in two and the halves are joined with a slur rather than a tie.
 
-**Why.** Stated constraint, ARCHITECTURE.md:5524-5527: MuseScore's playback treats tied notes as one continuous sound with a single tuning value, so a tie would silently discard the second half's tuning; a slur produces two independent playback events, each able to carry its own offset.
+**Why.** Stated constraint, ARCHITECTURE.md:5680-5683: MuseScore's playback treats tied notes as one continuous sound with a single tuning value, so a tie would silently discard the second half's tuning; a slur produces two independent playback events, each able to carry its own offset.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:5523`
+**Home.** `ARCHITECTURE.md:5679`
 
-**Provenance.** ARCHITECTURE.md:5516-5527 (§11.4). No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:5672-5683 (§11.4). No date or ratifier stated.
 
 ### D-148 — The split is visible in the score; the invisible alternative is deferred
 
@@ -81,13 +81,13 @@
 
 **In plain words.** The reader sees two shorter notes joined by a slur where a note was retuned. The alternative - keeping the written note and hiding a silent playing copy - was designed and set aside.
 
-**Why.** Stated constraint, ARCHITECTURE.md:5530-5531: the visible split is the simplest correct approach and is fully undoable through MuseScore's own undo. The excluded alternative's recorded blocker (:5360-5363) is that it needs a visual indicator for tuning-applied notes before it is practical.
+**Why.** Stated constraint, ARCHITECTURE.md:5686-5687: the visible split is the simplest correct approach and is fully undoable through MuseScore's own undo. The excluded alternative's recorded blocker (:5360-5363) is that it needs a visual indicator for tuning-applied notes before it is practical.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:5529`
+**Home.** `ARCHITECTURE.md:5685`
 
-**Provenance.** ARCHITECTURE.md:5529-5536 (§11.4), with the deferred alternative recorded at `backlog_invisible_split.md`. No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:5685-5692 (§11.4), with the deferred alternative recorded at `backlog_invisible_split.md`. No date or ratifier stated.
 
 ### D-149 — Only visible, sounding notes enter the pitch-class collection
 
@@ -97,13 +97,13 @@
 
 **In plain words.** Notes marked invisible, and notes that do not play, take no part in identifying the chord - which also keeps any hidden note created by the tuning machinery out of the analysis.
 
-**Why.** Stated constraint, ARCHITECTURE.md:5554-5555: the filter excludes both silent notes and any future invisible tuning artifact, so tuning a passage cannot change what the analysis of that passage sees.
+**Why.** Stated constraint, ARCHITECTURE.md:5710-5711: the filter excludes both silent notes and any future invisible tuning artifact, so tuning a passage cannot change what the analysis of that passage sees.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:5553`
+**Home.** `ARCHITECTURE.md:5709`
 
-**Provenance.** ARCHITECTURE.md:5551-5555 (§11.4). No date or ratifier stated. The joint estimator's own eligibility flags are the Layer-1 fact surface (D-039/D-045).
+**Provenance.** ARCHITECTURE.md:5707-5711 (§11.4). No date or ratifier stated. The joint estimator's own eligibility flags are the Layer-1 fact surface (D-039/D-045).
 
 ### D-150 — The chord staff is the output, never an input to the analysis that fills it
 
@@ -112,13 +112,13 @@
 
 **In plain words.** When the harmonic reduction is written onto a staff, that staff's own contents are kept out of the analysis that produced them.
 
-**Why.** Stated constraint, ARCHITECTURE.md:5611: it prevents a feedback loop when the analysis is re-run over music that already carries its own reduction. The joint estimator's record path realizes the same rule at its own input surface - D-013, open_items/OI-204.
+**Why.** Stated constraint, ARCHITECTURE.md:5776: it prevents a feedback loop when the analysis is re-run over music that already carries its own reduction. The joint estimator's record path realizes the same rule at its own input surface - D-013, open_items/OI-204.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:5610`
+**Home.** `ARCHITECTURE.md:5775`
 
-**Provenance.** ARCHITECTURE.md:5601-5611 (§11.5). No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:5766-5776 (§11.5). No date or ratifier stated.
 
 ### D-151 — Populating the chord staff overwrites whatever is in the selected range
 
@@ -132,9 +132,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:5613`
+**Home.** `ARCHITECTURE.md:5778`
 
-**Provenance.** ARCHITECTURE.md:5613-5615 (§11.5). No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:5778-5780 (§11.5). No date or ratifier stated.
 
 ### D-152 — Roman numerals and Nashville numbers are never shown together on one staff
 
@@ -147,13 +147,13 @@
 
 **In plain words.** The chord staff shows one or the other beneath the music, chosen by preference, never both.
 
-**Why.** Stated constraint, ARCHITECTURE.md:5678-5680: the two notations encode identical information, so showing both would be redundant and would destroy legibility.
+**Why.** Stated constraint, ARCHITECTURE.md:5843-5845: the two notations encode identical information, so showing both would be redundant and would destroy legibility.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:5675`
+**Home.** `ARCHITECTURE.md:5840`
 
-**Provenance.** ARCHITECTURE.md:5675-5680 (§11.5); the same choice on the analysis side is D-086. No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:5840-5845 (§11.5); the same choice on the analysis side is D-086. No date or ratifier stated.
 
 ### D-153 — Interactive annotations are written in the score's normal colour; the batch pipeline writes red
 
@@ -168,11 +168,11 @@
 
 **In plain words.** When a person runs the annotation, what it writes looks like anything else they typed. When the headless batch tool runs it, everything it writes is red.
 
-**Why.** Stated constraint, ARCHITECTURE.md:5867-5873: the interactive output is meant to be publication-ready and indistinguishable from hand-entered symbols, while the red is a filter criterion that lets the automated review separate our inferred annotations from whatever the score already contained.
+**Why.** Stated constraint, ARCHITECTURE.md:6032-6038: the interactive output is meant to be publication-ready and indistinguishable from hand-entered symbols, while the red is a filter criterion that lets the automated review separate our inferred annotations from whatever the score already contained.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:5866`
+**Home.** `ARCHITECTURE.md:6031`
 
-**Provenance.** ARCHITECTURE.md:5864-5873 (§11.5). No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:6029-6038 (§11.5). No date or ratifier stated.
 

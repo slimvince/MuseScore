@@ -14,13 +14,13 @@
 
 **In plain words.** Nowhere does the code ask 'is this jazz?'. Differences between styles are numbers in a settings file.
 
-**Why.** Stated constraint, ARCHITECTURE.md:433-435 with the worked wrong/correct pair at :392-402: if behaviour branched on a style's identity, adding or renaming a style would require C++ changes; driving it from parameters means it never does.
+**Why.** Stated constraint, ARCHITECTURE.md:440-442 with the worked wrong/correct pair at :392-402: if behaviour branched on a style's identity, adding or renaming a style would require C++ changes; driving it from parameters means it never does.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:433-435`
+**Home.** `ARCHITECTURE.md:440-442`
 
-**Provenance.** ARCHITECTURE.md:426-429 states the §2 principles are 'hard constraints, not guidelines'; restated at §2.4 :435-438
+**Provenance.** ARCHITECTURE.md:433-436 states the §2 principles are 'hard constraints, not guidelines'; restated at §2.4 :435-438
 
 ### D-071 — The analysis layer never produces display strings
 
@@ -29,13 +29,13 @@
 
 **In plain words.** The analysis returns facts. Turning those facts into text on screen is somebody else's job.
 
-**Why.** Stated constraint, ARCHITECTURE.md:476-478: the separation is already established by `ChordSymbolFormatter`, and keeping it means the same analysis can be rendered several ways without the analysis knowing about any of them.
+**Why.** Stated constraint, ARCHITECTURE.md:483-485: the separation is already established by `ChordSymbolFormatter`, and keeping it means the same analysis can be rendered several ways without the analysis knowing about any of them.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:476-477`
+**Home.** `ARCHITECTURE.md:483-484`
 
-**Provenance.** ARCHITECTURE.md:474-478; mechanically guarded for the joint module by D-017
+**Provenance.** ARCHITECTURE.md:481-485; mechanically guarded for the joint module by D-017
 
 ### D-072 — The dependency rule - the analysis library knows nothing about the score format
 
@@ -47,9 +47,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1072`
+**Home.** `ARCHITECTURE.md:1093`
 
-**Provenance.** ARCHITECTURE.md:1058-1116, checklist at :1424-1431
+**Provenance.** ARCHITECTURE.md:1079-1137, checklist at :1424-1431
 
 ### D-073 — Single implementation for shared logic; mirroring is a last resort
 
@@ -59,13 +59,13 @@
 
 **In plain words.** If the program and the measurement tool must agree, the code that makes them agree lives in one shared place. Copying it into both is a last resort that must be flagged as debt.
 
-**Why.** Stated constraint, ARCHITECTURE.md:529-547: the notation bridge and `batch_analyze` must produce identical results, so shared logic lives in the composing module both call; mirroring is permitted only when a shared implementation is blocked by a dependency constraint, and then only with a marked technical-debt note.
+**Why.** Stated constraint, ARCHITECTURE.md:536-554: the notation bridge and `batch_analyze` must produce identical results, so shared logic lives in the composing module both call; mirroring is permitted only when a shared implementation is blocked by a dependency constraint, and then only with a marked technical-debt note.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:529-531`
+**Home.** `ARCHITECTURE.md:536-538`
 
-**Provenance.** ARCHITECTURE.md:527-560; the standing project-wide form is CLAUDE.md #6 (total unification)
+**Provenance.** ARCHITECTURE.md:534-567; the standing project-wide form is CLAUDE.md #6 (total unification)
 
 ### D-074 — Analyze and suggest - never modify the score without explicit user action
 
@@ -74,13 +74,13 @@
 
 **In plain words.** The program tells you what it thinks. It never changes your music unless you ask it to.
 
-**Why.** Stated constraint, ARCHITECTURE.md:520-525: the chord staff, the status bar and the panels are informational - they show what was inferred - and every change to the music is the user's explicit act through standard MuseScore editing.
+**Why.** Stated constraint, ARCHITECTURE.md:527-532: the chord staff, the status bar and the panels are informational - they show what was inferred - and every change to the music is the user's explicit act through standard MuseScore editing.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:520-522`
+**Home.** `ARCHITECTURE.md:527-529`
 
-**Provenance.** ARCHITECTURE.md:518-525
+**Provenance.** ARCHITECTURE.md:525-532
 
 ### D-075 — Interface-based design for machine-learning substitutability
 
@@ -89,13 +89,13 @@
 
 **In plain words.** Anything that might one day be replaced by a trained model is hidden behind an interface, so the replacement can be dropped in without touching everything else.
 
-**Why.** Stated constraint, ARCHITECTURE.md:451-453: the rest of the system depends only on the interface, so a machine-learning implementation can replace a rule-based one without any consumer changing.
+**Why.** Stated constraint, ARCHITECTURE.md:458-460: the rest of the system depends only on the interface, so a machine-learning implementation can replace a rule-based one without any consumer changing.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:451-452`
+**Home.** `ARCHITECTURE.md:458-459`
 
-**Provenance.** ARCHITECTURE.md:449-472; the substitution points are listed at §14.1
+**Provenance.** ARCHITECTURE.md:456-479; the substitution points are listed at §14.1
 
 ### D-076 — Score inspection before diagnosis
 
@@ -104,13 +104,13 @@
 
 **In plain words.** When a corpus number looks odd, somebody opens the actual music and looks at it before anyone changes code or runs more statistics.
 
-**Why.** Stated constraint, ARCHITECTURE.md:569-590: score inspection takes two minutes and answers what corpus statistics cannot - the actual texture, whether the chord staff is over-segmenting, whether the opening key is right - and Claude Code has no score access, so it must not substitute statistical inference for looking.
+**Why.** Stated constraint, ARCHITECTURE.md:576-597: score inspection takes two minutes and answers what corpus statistics cannot - the actual texture, whether the chord staff is over-segmenting, whether the opening key is right - and Claude Code has no score access, so it must not substitute statistical inference for looking.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:589-590`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `ARCHITECTURE.md:596-597`  — a project-wide convention with no owning layer; this is its correct home.
 
-**Provenance.** ARCHITECTURE.md:562-590
+**Provenance.** ARCHITECTURE.md:569-597
 
 ### D-077 — The configuration interface is split into two narrow IoC interfaces
 
@@ -122,9 +122,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1548`
+**Home.** `ARCHITECTURE.md:1594`
 
-**Provenance.** ARCHITECTURE.md:1538-1550, restated at :2967-2978
+**Provenance.** ARCHITECTURE.md:1584-1596, restated at :2967-2978
 
 ### D-078 — The cross-layer value types live in a dependency-free leaf header
 
@@ -136,9 +136,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1382`
+**Home.** `ARCHITECTURE.md:1428`
 
-**Provenance.** ARCHITECTURE.md:1382-1390
+**Provenance.** ARCHITECTURE.md:1428-1436
 
 ### D-107 — American English throughout
 
@@ -146,13 +146,13 @@
 
 **In plain words.** Analyzer, not analyser; color, not colour.
 
-**Why.** Stated constraint, ARCHITECTURE.md:485-495: MuseScore's own codebase is American English, so one spelling convention throughout is what keeps identifiers matching across the boundary.
+**Why.** Stated constraint, ARCHITECTURE.md:492-502: MuseScore's own codebase is American English, so one spelling convention throughout is what keeps identifiers matching across the boundary.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:487`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `ARCHITECTURE.md:494`  — a project-wide convention with no owning layer; this is its correct home.
 
-**Provenance.** ARCHITECTURE.md:485-495; restated in CLAUDE.md Conventions
+**Provenance.** ARCHITECTURE.md:492-502; restated in CLAUDE.md Conventions
 
 ### D-108 — Cross-platform by default
 
@@ -161,13 +161,13 @@
 
 **In plain words.** Everything must work on Windows, macOS and Linux; platform-specific code is allowed only where unavoidable and must be walled off.
 
-**Why.** Stated constraint, ARCHITECTURE.md:669-675: the code must run on every platform MuseScore Studio officially supports, so platform-specific code is permitted only when unavoidable and must be abstracted so the rest of the module stays platform-agnostic.
+**Why.** Stated constraint, ARCHITECTURE.md:676-682: the code must run on every platform MuseScore Studio officially supports, so platform-specific code is permitted only when unavoidable and must be abstracted so the rest of the module stays platform-agnostic.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:671-672`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `ARCHITECTURE.md:678-679`  — a project-wide convention with no owning layer; this is its correct home.
 
-**Provenance.** ARCHITECTURE.md:669-675
+**Provenance.** ARCHITECTURE.md:676-682
 
 ### D-227 — Read how MuseScore already does it, and never invent parallel infrastructure
 
@@ -181,9 +181,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:514`
+**Home.** `ARCHITECTURE.md:521`
 
-**Provenance.** ARCHITECTURE.md:512-516 (§2.8). No date or ratifier stated. This is the GENERAL form of the relationship to existing MuseScore code; the two scoped forms are D-072 (the analysis library depends on no engraving type) and D-073 (shared logic has one implementation). What none of the three states is which MuseScore interfaces our bridge code may call - see OPEN_ITEMS OI-241.
+**Provenance.** ARCHITECTURE.md:519-523 (§2.8). No date or ratifier stated. This is the GENERAL form of the relationship to existing MuseScore code; the two scoped forms are D-072 (the analysis library depends on no engraving type) and D-073 (shared logic has one implementation). What none of the three states is which MuseScore interfaces our bridge code may call - see OPEN_ITEMS OI-241.
 
 ### D-228 — The bridge pattern - engraving types enter and leave at named free functions in the notation namespace
 
@@ -197,13 +197,13 @@
 
 **In plain words.** The only code that may take MuseScore's own score objects and turn them into analysis results is a plain function living on the notation side, declared in a bridge header and defined in the matching bridge source file. Whoever calls it includes the bridge header, not the analysis headers, for the call itself.
 
-**Why.** Stated constraint, ARCHITECTURE.md:1102-1106: the analysis library is pure music theory and can be unit-tested in complete isolation - no score, no staves, no interface - which is what makes its test suite fast and reliable. If analysis headers imported engraving types the tests would have to link the whole engraving library, and more fundamentally the music theory would carry knowledge of one particular score format, a coupling that makes the algorithms harder to reuse or replace.
+**Why.** Stated constraint, ARCHITECTURE.md:1123-1127: the analysis library is pure music theory and can be unit-tested in complete isolation - no score, no staves, no interface - which is what makes its test suite fast and reliable. If analysis headers imported engraving types the tests would have to link the whole engraving library, and more fundamentally the music theory would carry knowledge of one particular score format, a coupling that makes the algorithms harder to reuse or replace.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1110`
+**Home.** `ARCHITECTURE.md:1131`
 
-**Provenance.** ARCHITECTURE.md:1108-1119 (§3.3, the bridge pattern), with the enforcement statement at :955 (D-072) - any code that would invert the dependency order must be moved to the bridge layer. The bridge file inventory at :977-985 is the as-built list. No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:1129-1140 (§3.3, the bridge pattern), with the enforcement statement at :955 (D-072) - any code that would invert the dependency order must be moved to the bridge layer. The bridge file inventory at :977-985 is the as-built list. No date or ratifier stated.
 
 ### D-229 — The MuseScore-dependency rule - one general rule for what our code may depend on
 
@@ -224,11 +224,11 @@
 
 **In plain words.** Three parts. The music-theory library uses no MuseScore code at all. The bridge code that connects analysis to the score reads the score only through the established bridge functions, and never uses layout results (positions, spacing) as analysis input - the note reader is the one sanctioned reading surface. And changing MuseScore's own code is allowed only to fix a defect blocking our feature, each change recorded, with its distribution (upstreamable or fork-only) decided and ratified case by case.
 
-**Why.** Stated at the rule's home (ARCHITECTURE.md:1094-1100): derived from the already-ratified scoped forms (the Dependency Rule, the bridge pattern, the local-patches constraints) rather than invented (#1); one rule where practice-by-example governed (#6/#7); the layout exclusion because layout is presentation downstream of the facts (a layout read entering analysis is a layer inversion and the self-feedback class); the per-instance patch ratification preserves #14 and reconciles the §1.2 contribution intent with the fork-local patch constraint.
+**Why.** Stated at the rule's home (ARCHITECTURE.md:1115-1121): derived from the already-ratified scoped forms (the Dependency Rule, the bridge pattern, the local-patches constraints) rather than invented (#1); one rule where practice-by-example governed (#6/#7); the layout exclusion because layout is presentation downstream of the facts (a layout read entering analysis is a layer inversion and the self-feedback class); the per-instance patch ratification preserves #14 and reconciles the §1.2 contribution intent with the fork-local patch constraint.
 
 **Status.** LIVE · decided 2026-08-02 · ratified by user
 
-**Home.** `ARCHITECTURE.md:1079-1092`
+**Home.** `ARCHITECTURE.md:1100-1113`
 
 **Provenance.** User ruling 2026-08-02 at the OI-241 adjudication (all recommendations adopted); written into ARCHITECTURE.md §3.3 in the same commit (the register's same-commit rule, D-230). open_items/OI-241.md records the gap this closes.
 

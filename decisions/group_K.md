@@ -13,13 +13,13 @@
 
 **In plain words.** Where two documents disagree about the architecture, this one is right, and a new ruling must be written into it before anywhere else.
 
-**Why.** Stated constraint, ARCHITECTURE.md:301-309: the per-layer design documents are the authoritative detail for their own scope but are not rival architecture documents; without one document that wins, a reader has no way to resolve a disagreement between two.
+**Why.** Stated constraint, ARCHITECTURE.md:308-316: the per-layer design documents are the authoritative detail for their own scope but are not rival architecture documents; without one document that wins, a reader has no way to resolve a disagreement between two.
 
 **Status.** LIVE · decided 2026-06-29 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:308-309`
+**Home.** `ARCHITECTURE.md:315-316`
 
-**Provenance.** ARCHITECTURE.md:301-309 'Doc governance (2026-06-29) - the hierarchy'
+**Provenance.** ARCHITECTURE.md:308-316 'Doc governance (2026-06-29) - the hierarchy'
 
 ### D-092 — A cross-cutting contract is stated once and never redefined in a layer document
 
@@ -28,13 +28,13 @@
 
 **In plain words.** Rules that apply to every stage are written down in one place. A stage's own document may use such a rule but may not restate it in its own words.
 
-**Why.** Same passage, ARCHITECTURE.md:305-306: a cross-cutting contract restated in a layer document is a second copy that can drift (#6); a layer document may USE the span typology or the verifiability contract, not redefine them.
+**Why.** Same passage, ARCHITECTURE.md:312-313: a cross-cutting contract restated in a layer document is a second copy that can drift (#6); a layer document may USE the span typology or the verifiability contract, not redefine them.
 
 **Status.** LIVE · decided 2026-06-29 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:305-306`
+**Home.** `ARCHITECTURE.md:312-313`
 
-**Provenance.** ARCHITECTURE.md:301-309
+**Provenance.** ARCHITECTURE.md:308-316
 
 ### D-093 — STATUS.md wins on current state; ARCHITECTURE.md on design
 
@@ -43,13 +43,13 @@
 
 **In plain words.** For what is built right now, read STATUS.md. For what was decided, read this document. Where they disagree about built-or-not, STATUS.md is right.
 
-**Why.** Stated constraint, ARCHITECTURE.md:296-299 and :3102-3103: the two documents move on different clocks - current state changes every session, design changes only when a decision changes - so each owns the question it can keep current.
+**Why.** Stated constraint, ARCHITECTURE.md:303-306 and :3102-3103: the two documents move on different clocks - current state changes every session, design changes only when a decision changes - so each owns the question it can keep current.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3246-3247`
+**Home.** `ARCHITECTURE.md:3353-3354`
 
-**Provenance.** ARCHITECTURE.md:3245-3247, consistent with :251-254
+**Provenance.** ARCHITECTURE.md:3352-3354, consistent with :251-254
 
 ### D-094 — Each layer carries exactly one build state
 
@@ -63,9 +63,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1130-1132`
+**Home.** `ARCHITECTURE.md:1151-1153`
 
-**Provenance.** ARCHITECTURE.md:1130-1133. Three layer tags and two prose statements are stale after the switch - see OPEN_ITEMS OI-232
+**Provenance.** ARCHITECTURE.md:1151-1154. Three layer tags and two prose statements are stale after the switch - see OPEN_ITEMS OI-232
 
 ### D-109 — The open-items register is the one home for every unresolved issue, and the index is the status of record
 
@@ -153,13 +153,13 @@
 
 **In plain words.** When a design decision changes, the change to this document goes in the same commit as the change to the code.
 
-**Why.** Stated constraint, ARCHITECTURE.md:6535: stale documentation is worse than no documentation, because it actively misleads.
+**Why.** Stated constraint, ARCHITECTURE.md:6746: stale documentation is worse than no documentation, because it actively misleads.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6534`
+**Home.** `ARCHITECTURE.md:6745`
 
-**Provenance.** ARCHITECTURE.md:6532-6537 (§18.4); the standing principle is CLAUDE.md #10 (D-174). No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:6743-6748 (§18.4); the standing principle is CLAUDE.md #10 (D-174). No date or ratifier stated.
 
 ### D-192 — A scoring change and its documentation land in the same commit
 

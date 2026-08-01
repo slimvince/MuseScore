@@ -14,13 +14,13 @@
 
 **In plain words.** The harmonic analysis is built into MuseScore Studio's own program code as a new component of it, not added on afterwards as a plugin. It uses MuseScore's own score model, engraving, playback and interface directly.
 
-**Why.** Stated constraint, ARCHITECTURE.md:415-419: the analysis library itself has NO engraving dependency and is pure music theory; the bridge layer is what touches the engraving model. Being a module rather than a plugin is what lets that bridge exist at all.
+**Why.** Stated constraint, ARCHITECTURE.md:422-426: the analysis library itself has NO engraving dependency and is pure music theory; the bridge layer is what touches the engraving model. Being a module rather than a plugin is what lets that bridge exist at all.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:369`
+**Home.** `ARCHITECTURE.md:376`
 
-**Provenance.** ARCHITECTURE.md:367-371 (§1.2). No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:374-378 (§1.2). No date or ratifier stated.
 
 ### D-117 — The long-term intent is an official contribution to MuseScore Studio
 
@@ -30,13 +30,13 @@
 
 **In plain words.** The aim is for this work eventually to become part of MuseScore Studio proper, so it is written to MuseScore's own coding, licensing and contribution rules from the start.
 
-**Why.** Derivation not recorded for the intent itself. What the record does state is the consequence it carries (ARCHITECTURE.md:374-375): following MuseScore's standards from the start is what keeps the contribution possible.
+**Why.** Derivation not recorded for the intent itself. What the record does state is the consequence it carries (ARCHITECTURE.md:381-382): following MuseScore's standards from the start is what keeps the contribution possible.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:373`
+**Home.** `ARCHITECTURE.md:380`
 
-**Provenance.** ARCHITECTURE.md:373-375 (§1.2); restated at ARCHITECTURE.md:6599-6601 (the composing module is 'intended as a future contribution'). ★ READ WITH the CLAUDE.md DISTRIBUTION CONSTRAINT (D-197): the MusicXML declared-mode import patch cfc7eb5e39 is FORK-LOCAL ONLY and must NEVER reach musescore/MuseScore. Two recorded positions - a general intent and a one-patch exception - and the record does not state how the general intent applies to the rest of the tree.
+**Provenance.** ARCHITECTURE.md:380-382 (§1.2); restated at ARCHITECTURE.md:6810-6812 (the composing module is 'intended as a future contribution'). ★ READ WITH the CLAUDE.md DISTRIBUTION CONSTRAINT (D-197): the MusicXML declared-mode import patch cfc7eb5e39 is FORK-LOCAL ONLY and must NEVER reach musescore/MuseScore. Two recorded positions - a general intent and a one-patch exception - and the record does not state how the general intent applies to the rest of the tree.
 
 ### D-118 — GPL v3, and every external library must be GPL v3 compatible
 
@@ -45,13 +45,13 @@
 
 **In plain words.** All the code is released under the GPL v3 licence, the same licence MuseScore Studio uses, and no outside library may be used unless its licence is compatible with that.
 
-**Why.** Stated constraint, ARCHITECTURE.md:379-380: consistency with MuseScore Studio's own open source licence. A GPL-incompatible library would make the code undistributable with MuseScore.
+**Why.** Stated constraint, ARCHITECTURE.md:386-387: consistency with MuseScore Studio's own open source licence. A GPL-incompatible library would make the code undistributable with MuseScore.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:379`
+**Home.** `ARCHITECTURE.md:386`
 
-**Provenance.** ARCHITECTURE.md:377-380 (§1.3). No date or ratifier stated. The per-file consequence is ARCHITECTURE.md:6432 - a GPL v3 header on every file.
+**Provenance.** ARCHITECTURE.md:384-387 (§1.3). No date or ratifier stated. The per-file consequence is ARCHITECTURE.md:6643 - a GPL v3 header on every file.
 
 ### D-119 — The MuseScore contributor licence agreement is signed before any pull request
 
@@ -64,9 +64,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:382`
+**Home.** `ARCHITECTURE.md:389`
 
-**Provenance.** ARCHITECTURE.md:382-383 (§1.3), restated at ARCHITECTURE.md:6528-6530 (§18.3). No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:389-390 (§1.3), restated at ARCHITECTURE.md:6739-6741 (§18.3). No date or ratifier stated.
 
 ### D-120 — MuseScore's coding style is followed, with clang-format run before every commit
 
@@ -78,13 +78,13 @@
 
 **In plain words.** The code looks like MuseScore's own code: the formatter configuration in the repository is run before every commit, names follow MuseScore's conventions, every file carries the GPL v3 header, and includes are ordered MuseScore's way.
 
-**Why.** Stated constraint, ARCHITECTURE.md:512-516 (§2.8): read how MuseScore already does a thing and follow the same pattern rather than inventing parallel infrastructure - the same reason that governs panels, score traversal, playback, settings and localization.
+**Why.** Stated constraint, ARCHITECTURE.md:519-523 (§2.8): read how MuseScore already does a thing and follow the same pattern rather than inventing parallel infrastructure - the same reason that governs panels, score traversal, playback, settings and localization.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6429`
+**Home.** `ARCHITECTURE.md:6640`
 
-**Provenance.** ARCHITECTURE.md:6427-6433 (§17.1). No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:6638-6644 (§17.1). No date or ratifier stated.
 
 ### D-121 — Where MuseScore's documentation practice is minimal, the higher standard applies
 
@@ -92,13 +92,13 @@
 
 **In plain words.** Following MuseScore's conventions does not mean copying how little it documents. Where MuseScore documents sparsely, this project documents properly instead.
 
-**Why.** Stated constraint, ARCHITECTURE.md:6487-6490 (§17.3): the analyzers are the most complex components in the codebase, and a musician with reasonable theoretical knowledge must be able to read them and understand why each decision was made.
+**Why.** Stated constraint, ARCHITECTURE.md:6698-6701 (§17.3): the analyzers are the most complex components in the codebase, and a musician with reasonable theoretical knowledge must be able to read them and understand why each decision was made.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6435`
+**Home.** `ARCHITECTURE.md:6646`
 
-**Provenance.** ARCHITECTURE.md:6427-6435 (§17.1). No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:6638-6646 (§17.1). No date or ratifier stated.
 
 ### D-122 — Every public class and method is documented in musical terms
 
@@ -110,13 +110,13 @@
 
 **In plain words.** A public class must say which musical idea it implements, what music it takes in, what it produces, and what it deliberately does not handle. A public method must say the same about the musical operation it performs, in musical terms rather than programming terms.
 
-**Why.** Stated constraint, ARCHITECTURE.md:497-501 (§2.6) with :6322-6323: the documentation is written so a person with reasonable musical knowledge and basic programming familiarity can read it, including MuseScore contributors with no familiarity with this codebase at all.
+**Why.** Stated constraint, ARCHITECTURE.md:504-508 (§2.6) with :6322-6323: the documentation is written so a person with reasonable musical knowledge and basic programming familiarity can read it, including MuseScore contributors with no familiarity with this codebase at all.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6439`
+**Home.** `ARCHITECTURE.md:6650`
 
-**Provenance.** ARCHITECTURE.md:6437-6449 (§17.2). No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:6648-6660 (§17.2). No date or ratifier stated.
 
 ### D-123 — Every non-obvious scoring weight or threshold explains its musical reasoning
 
@@ -124,13 +124,13 @@
 
 **In plain words.** A number in the scoring code that is not self-evident must be accompanied by the musical reason it has the value it has.
 
-**Why.** Stated constraint, ARCHITECTURE.md:6487-6490 (§17.3): the analyzers are the most complex components, and their weights and thresholds are where the musical judgment actually lives - an undocumented one is unreadable and unarguable.
+**Why.** Stated constraint, ARCHITECTURE.md:6698-6701 (§17.3): the analyzers are the most complex components, and their weights and thresholds are where the musical judgment actually lives - an undocumented one is unreadable and unarguable.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6451`
+**Home.** `ARCHITECTURE.md:6662`
 
-**Provenance.** ARCHITECTURE.md:6451 (§17.2). No date or ratifier stated. ★ This is the rule the 2026-08-01 CLAUDE.md Conventions entry generalizes from scoring values to design decisions as a class (D-195) - and the rule this register's rationale field serves.
+**Provenance.** ARCHITECTURE.md:6662 (§17.2). No date or ratifier stated. ★ This is the rule the 2026-08-01 CLAUDE.md Conventions entry generalizes from scoring values to design decisions as a class (D-195) - and the rule this register's rationale field serves.
 
 ### D-124 — The analyzer code must be readable by a musician
 
@@ -140,13 +140,13 @@
 
 **In plain words.** Every weight, threshold and rule of thumb in the chord and key analyzers carries its musical reason, to the standard that a musician with ordinary theoretical training can read the code and see why each choice was made.
 
-**Why.** Stated constraint, ARCHITECTURE.md:6487: these are the most complex components in the codebase, so they are where readability is worth the most.
+**Why.** Stated constraint, ARCHITECTURE.md:6698: these are the most complex components in the codebase, so they are where readability is worth the most.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6488`
+**Home.** `ARCHITECTURE.md:6699`
 
-**Provenance.** ARCHITECTURE.md:6485-6497 (§17.3), which gives a worked example from existing code (the circle-of-fifths interval deltas). No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:6696-6708 (§17.3), which gives a worked example from existing code (the circle-of-fifths interval deltas). No date or ratifier stated.
 
 ### D-125 — Every test documents the musical situation, the expected result, and what a failure means
 
@@ -157,13 +157,13 @@
 
 **In plain words.** A test says which musical situation it exercises, what the right answer is and why it is musically right, and what it would mean about the system if the test failed.
 
-**Why.** Stated constraint, ARCHITECTURE.md:6506-6507: the tests must be readable by MuseScore contributors with no deep familiarity with this codebase.
+**Why.** Stated constraint, ARCHITECTURE.md:6717-6718: the tests must be readable by MuseScore contributors with no deep familiarity with this codebase.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6501`
+**Home.** `ARCHITECTURE.md:6712`
 
-**Provenance.** ARCHITECTURE.md:6499-6507 (§17.4). No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:6710-6718 (§17.4). No date or ratifier stated.
 
 ### D-126 — One coherent piece of functionality per pull request
 
@@ -173,11 +173,11 @@
 
 **In plain words.** Each contribution offered back to MuseScore does one thing.
 
-**Why.** Stated constraint, ARCHITECTURE.md:6522-6524: large pull requests are hard to review, and the phased plan defines where the natural boundaries fall.
+**Why.** Stated constraint, ARCHITECTURE.md:6733-6735: large pull requests are hard to review, and the phased plan defines where the natural boundaries fall.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6522`
+**Home.** `ARCHITECTURE.md:6733`
 
-**Provenance.** ARCHITECTURE.md:6520-6524 (§18.2). No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:6731-6735 (§18.2). No date or ratifier stated.
 

@@ -14,13 +14,13 @@
 
 **In plain words.** Any new panel is built with the same window-docking and interface technology MuseScore already uses, after reading how MuseScore's existing panels are built. No parallel machinery is created.
 
-**Why.** Stated constraint, ARCHITECTURE.md:512-516 (§2.8): read how MuseScore already does it and follow the same pattern - the same rule that governs score traversal, playback, settings and localization.
+**Why.** Stated constraint, ARCHITECTURE.md:519-523 (§2.8): read how MuseScore already does it and follow the same pattern - the same rule that governs score traversal, playback, settings and localization.
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:5984`
+**Home.** `ARCHITECTURE.md:6149`
 
-**Provenance.** ARCHITECTURE.md:5982-5986 (§12.1); the panels themselves are planned (§12.2-§12.5). No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:6147-6151 (§12.1); the panels themselves are planned (§12.2-§12.5). No date or ratifier stated.
 
 ### D-155 — Every user-visible string goes through MuseScore's localization, in English and Swedish
 
@@ -33,9 +33,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:5988`
+**Home.** `ARCHITECTURE.md:6153`
 
-**Provenance.** ARCHITECTURE.md:5988-5989 (§12.1); listed in the Core scope at ARCHITECTURE.md:6395-6396. No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:6153-6154 (§12.1); listed in the Core scope at ARCHITECTURE.md:6606-6607. No date or ratifier stated.
 
 ### D-156 — Accessibility follows MuseScore's existing patterns
 
@@ -48,27 +48,25 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:5991`
+**Home.** `ARCHITECTURE.md:6156`
 
-**Provenance.** ARCHITECTURE.md:5991-5992 (§12.1); listed in the Core scope at ARCHITECTURE.md:6396. No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:6156-6157 (§12.1); listed in the Core scope at ARCHITECTURE.md:6607. No date or ratifier stated.
 
 ### D-157 — The harmonic-display preference exists for clarity, not for cost
 
 > A user preference controls whether harmonic analysis is shown in the status bar. This
 > preference exists for UI clarity — some users find the chord and key information
-> distracting, particularly when doing work unrelated to harmony. It is not a performance
-> control: analysis cost is negligible (well under 1ms) and suppressing the display does
-> not require skipping the analysis.
+> distracting, particularly when doing work unrelated to harmony.
 
 **In plain words.** The setting that hides the harmonic information from the status bar is there because some users find it distracting, not because the analysis is expensive. Switching it off does not skip the analysis.
 
-**Why.** Measurement named in the record, ARCHITECTURE.md:5998-6000: the analysis cost at this seam is 'well under 1ms'. ★ That number is the LEGACY bounded-window path's; open_items/OI-203 and OI-206 record the record arm running a whole-score decode per selection, measured in seconds on large scores - so the reason this preference is not a performance control no longer holds as stated.
+**Why.** Measurement named in the record, ARCHITECTURE.md:6163-6163: the analysis cost at this seam is 'well under 1ms'. ★ That number is the LEGACY bounded-window path's; open_items/OI-203 and OI-206 record the record arm running a whole-score decode per selection, measured in seconds on large scores - so the reason this preference is not a performance control no longer holds as stated.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:5996`
+**Home.** `ARCHITECTURE.md:6161-6163`
 
-**Provenance.** ARCHITECTURE.md:5994-6004 (§12.1a). No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:6159-6188 (§12.1a). No date or ratifier stated. ★ Verbatim RE-TAKEN 2026-08-02 (the phase-1 truth-sync): the paragraph's second half — 'It is not a performance control: analysis cost is negligible (well under 1ms) and suppressing the display does not require skipping the analysis' — is FALSE at HEAD on both clauses and is corrected in place (OPEN_ITEMS OI-242 discharged). The surviving quote is the decision proper: the preference exists for clarity. Whether it should also become a performance control is left OPEN at the home, not decided.
 
 ### D-158 — Our data lives in separate files inside the score archive; the score file is never touched
 
@@ -77,13 +75,13 @@
 
 **In plain words.** Constraints, branches, cached analysis and preferences travel with the score as extra files inside its archive, beside the standard MuseScore score file, which our code never modifies.
 
-**Why.** Stated trade-off, ARCHITECTURE.md:6074-6078: the score stays a valid standard MuseScore file with zero interference in MuseScore's own reading and writing, and our data travels with it. The accepted cost is stated too - exporting to MusicXML, PDF or MIDI loses it, which is acceptable because the workflow is MuseScore-native.
+**Why.** Stated trade-off, ARCHITECTURE.md:6279-6283: the score stays a valid standard MuseScore file with zero interference in MuseScore's own reading and writing, and our data travels with it. The accepted cost is stated too - exporting to MusicXML, PDF or MIDI loses it, which is acceptable because the workflow is MuseScore-native.
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6062`
+**Home.** `ARCHITECTURE.md:6267`
 
-**Provenance.** ARCHITECTURE.md:6060-6078 (§13.1), a planned component. No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:6265-6283 (§13.1), a planned component. No date or ratifier stated.
 
 ### D-159 — Every custom file carries a format version, and the score file is never rewritten by our persistence
 
@@ -97,9 +95,9 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6082`
+**Home.** `ARCHITECTURE.md:6287`
 
-**Provenance.** ARCHITECTURE.md:6080-6084 (§13.2), a planned component. No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:6285-6289 (§13.2), a planned component. No date or ratifier stated.
 
 ### D-160 — Arranger interactions are logged from the start, with consent, as future training data
 
@@ -110,13 +108,13 @@
 
 **In plain words.** Every suggestion a user accepts, changes or rejects is recorded - with their consent - as a labelled example for future machine learning.
 
-**Why.** Stated constraint, ARCHITECTURE.md:6127-6128: the recording exists to fill the corpus gap identified in the design phase, there being no existing labelled corpus of vocal jazz arranging decisions.
+**Why.** Stated constraint, ARCHITECTURE.md:6332-6333: the recording exists to fill the corpus gap identified in the design phase, there being no existing labelled corpus of vocal jazz arranging decisions.
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6125`
+**Home.** `ARCHITECTURE.md:6330`
 
-**Provenance.** ARCHITECTURE.md:6123-6140 (§14.2), a planned component. No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:6328-6345 (§14.2), a planned component. No date or ratifier stated.
 
 ### D-161 — Chord symbols already in a score are a second analyst's opinion, not ground truth
 
@@ -127,11 +125,11 @@
 
 **In plain words.** When the automated review meets a score that already carries chord symbols, it treats them as another analyst's reading. Disagreements are discussed, not scored as our errors.
 
-**Why.** Stated constraint, ARCHITECTURE.md:6159-6160, in the record's own words: two analysts may reach different but equally valid conclusions. Errors are scored only in Mode 3, against a known ground-truth corpus (:5989-5990) - the same distinction the project's standing rule draws between corroboration and ground truth.
+**Why.** Stated constraint, ARCHITECTURE.md:6364-6365, in the record's own words: two analysts may reach different but equally valid conclusions. Errors are scored only in Mode 3, against a known ground-truth corpus (:5989-5990) - the same distinction the project's standing rule draws between corroboration and ground truth.
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6157`
+**Home.** `ARCHITECTURE.md:6362`
 
-**Provenance.** ARCHITECTURE.md:6142-6167 (§14, the automated annotation review), marked planned. No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:6347-6372 (§14, the automated annotation review), marked planned. No date or ratifier stated.
 

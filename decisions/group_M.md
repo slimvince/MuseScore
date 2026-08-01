@@ -14,13 +14,13 @@
 
 **In plain words.** A musical style is a data file. The program code implements the mechanisms - voice leading, chord generation, voicing - and the style file supplies the numbers that make one style behave differently from another. Adding a style is never a code change.
 
-**Why.** Stated constraint, ARCHITECTURE.md:433-435 (§2.1) with the worked wrong/correct pair at :392-402: behaviour that branched on a style's identity would make every new or renamed style a code change.
+**Why.** Stated constraint, ARCHITECTURE.md:440-442 (§2.1) with the worked wrong/correct pair at :392-402: behaviour that branched on a style's identity would make every new or renamed style a code change.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4135`
+**Home.** `ARCHITECTURE.md:4283`
 
-**Provenance.** ARCHITECTURE.md:4133-4137 (§6.1); the principle it realizes is D-070 (§2.1). No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:4281-4285 (§6.1); the principle it realizes is D-070 (§2.1). No date or ratifier stated.
 
 ### D-129 — Style conflicts resolve by a declared priority - explicit overrides always win
 
@@ -35,9 +35,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4179`
+**Home.** `ARCHITECTURE.md:4327`
 
-**Provenance.** ARCHITECTURE.md:4179-4182 (§6.2). No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:4327-4330 (§6.2). No date or ratifier stated.
 
 ### D-130 — The style loader never names a style in code
 
@@ -46,13 +46,13 @@
 
 **In plain words.** The loader reads whatever style files it finds in the styles directory. No style's name appears anywhere in the program code.
 
-**Why.** Stated constraint, ARCHITECTURE.md:480-483 (§2.4): no comparison against a style name anywhere in the codebase - style-specific behaviour flows entirely through parameters.
+**Why.** Stated constraint, ARCHITECTURE.md:487-490 (§2.4): no comparison against a style name anywhere in the codebase - style-specific behaviour flows entirely through parameters.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4215`
+**Home.** `ARCHITECTURE.md:4363`
 
-**Provenance.** ARCHITECTURE.md:4213-4216 (§6.4); the principle it realizes is D-070 (§2.1/§2.4). No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:4361-4364 (§6.4); the principle it realizes is D-070 (§2.1/§2.4). No date or ratifier stated.
 
 ### D-131 — One shared style taxonomy, not two parallel vocabularies
 
@@ -64,13 +64,13 @@
 
 **In plain words.** The list of style families the presets choose from is the SAME list the harmonic vocabulary tags its entries with - one hierarchy, not two that can drift apart. A style earns a place on it only if its functional harmony is genuinely distinct, which is why free jazz and atonal music are not on it.
 
-**Why.** Stated constraint, ARCHITECTURE.md:4263-4265 - #6, one path per concern, applied to a vocabulary: two parallel taxonomies of the same thing would diverge, and the inclusion rule (a distinct functional-harmonic vocabulary) is what keeps the list from growing by analogy.
+**Why.** Stated constraint, ARCHITECTURE.md:4411-4413 - #6, one path per concern, applied to a vocabulary: two parallel taxonomies of the same thing would diverge, and the inclusion rule (a distinct functional-harmonic vocabulary) is what keeps the list from growing by analogy.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4261`
+**Home.** `ARCHITECTURE.md:4409`
 
-**Provenance.** ARCHITECTURE.md:4259-4269 (§6.7); full proposal `cowork_progression_schema_dictionary.md` §6/§12 and `cowork_style_clustering_plan.md`. No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:4407-4417 (§6.7); full proposal `cowork_progression_schema_dictionary.md` §6/§12 and `cowork_style_clustering_plan.md`. No date or ratifier stated.
 
 ### D-132 — The style taxonomy is a theory-based first version; grounding it empirically is committed work
 
@@ -79,13 +79,13 @@
 
 **In plain words.** The style families and their weights are currently drawn from music theory, not from data. Deriving both from corpora instead is recorded as work that will be done, not as an option.
 
-**Why.** Stated constraint, ARCHITECTURE.md:4266-4268: the clusters and their feature distributions are one data-derived object, and it is reachable for jazz and pop from lead-sheet corpora even where note-level ground truth is scarce - which is what makes the grounding committable rather than aspirational.
+**Why.** Stated constraint, ARCHITECTURE.md:4414-4416: the clusters and their feature distributions are one data-derived object, and it is reachable for jazz and pop from lead-sheet corpora even where note-level ground truth is scarce - which is what makes the grounding committable rather than aspirational.
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4265`
+**Home.** `ARCHITECTURE.md:4413`
 
-**Provenance.** ARCHITECTURE.md:4259-4269 (§6.7). No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:4407-4417 (§6.7). No date or ratifier stated.
 
 ### D-133 — The harmonic vocabulary is a queried reference component, not a layer of the analysis
 
@@ -95,11 +95,11 @@
 
 **In plain words.** The catalogue of progressions and substitutions is something the analysis stages ask questions of, not a stage they pass through. Its entries say where the theory comes from; whether that theory holds up against real music is the caller's question, not the catalogue's.
 
-**Why.** Stated constraint, ARCHITECTURE.md:4287 - the verifiability contract (D-029): reference knowledge grounded in established theory may be carried without corpus validation, provided the consumer that puts it under load is the one that must validate it.
+**Why.** Stated constraint, ARCHITECTURE.md:4435 - the verifiability contract (D-029): reference knowledge grounded in established theory may be carried without corpus validation, provided the consumer that puts it under load is the one that must validate it.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4285`
+**Home.** `ARCHITECTURE.md:4433`
 
-**Provenance.** ARCHITECTURE.md:4278-4292 (§7); own specification `cowork_progression_schema_dictionary.md`. No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:4426-4440 (§7); own specification `cowork_progression_schema_dictionary.md`. No date or ratifier stated.
 
