@@ -474,8 +474,9 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 ## Provenance of this register
 
-- Adjudication: the OI-207 decision-conformance adjudication, 2026-08-01, at commit `b1af0fe54a4adc3efe0f9b6c4d7375bf98ce01db`.
-- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `7654ed067258c1ba…`).
+- Adjudication: the OI-207 decision-conformance adjudication, 2026-08-01, at commit `58dea6702ac8aa9d5ef8b89244b94d587a75f7a5`.
+- Coverage figures above regenerated at commit `c993a833b901d27a4e63bd9b5564ff436a1a8331`.
+- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `6f0fe91a02bdf9db…`).
 - Harvest: `tools/audit/decisions/decision_candidates.json` (sha256 `51850440b315e6e9…`).
 - Clustering: `tools/audit/decisions/decision_clusters.json` (sha256 `0615b1e61bf10332…`).
 - Shape: `open_items/OI-208.md` (user-ratified 2026-07-28).

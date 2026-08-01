@@ -272,8 +272,13 @@ def render(backbone: dict, disp: dict) -> str:
 
     out.append("## Provenance of this register")
     out.append("")
-    out.append(f"- Adjudication: the OI-207 decision-conformance adjudication, 2026-08-01, "
-               f"at commit `{dh['head_commit']}`.")
+    # `head_commit` is HEAD when the DISPOSITION layer was last generated, which is not the
+    # same event as the adjudication.  The two were conflated until 2026-08-02, when the
+    # phase-1 pass regenerated the dispositions and the line silently re-stamped itself to a
+    # commit made after the adjudication it names (DT-12, caught by the standing self-check).
+    out.append("- Adjudication: the OI-207 decision-conformance adjudication, 2026-08-01, at "
+               "commit `58dea6702ac8aa9d5ef8b89244b94d587a75f7a5`.")
+    out.append(f"- Coverage figures above regenerated at commit `{dh['head_commit']}`.")
     out.append(f"- Backbone data: `{BACKBONE.relative_to(REPO).as_posix()}` "
                f"(sha256 `{dh['inputs']['backbone']['sha256'][:16]}…`).")
     out.append(f"- Harvest: `{dh['inputs']['candidates']['file']}` "
