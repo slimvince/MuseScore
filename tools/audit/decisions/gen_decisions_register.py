@@ -28,6 +28,8 @@ BACKBONE = HERE / "backbone_decisions.json"
 DISPOSITIONS = HERE / "cluster_dispositions.json"
 OUT = REPO / "DECISIONS.md"
 
+NO_RATIONALE = "derivation not recorded."
+
 STATUS_LABEL = {
     "live": "LIVE",
     "superseded-by": "SUPERSEDED BY",
@@ -57,7 +59,7 @@ PREAMBLE = """# DECISIONS — the decisions register
 
 ## How to read an entry
 
-Each entry has five parts.
+Each entry has six parts.
 
 - **The decision, verbatim** — quoted exactly from the document that records it, word for word.
   (Where the source wrote the passage inside a quotation block, its `>` markers are dropped so the
@@ -65,6 +67,11 @@ Each entry has five parts.
   that wording uses a word in a non-musical sense; the plain restatement beneath it does not.
 - **In plain words** — one or two sentences, written for a reader who knows music but not this
   project's private vocabulary.
+- **Why** — the defense the record gives for the decision: the published research or algorithm
+  adopted, the measurement that decided it, or the constraint that forced it, cited to where it
+  is written down. Where the record gives none, this reads **derivation not recorded** — the gap
+  is stated, never filled in afterwards from memory. (Standing rule: `CLAUDE.md` Conventions,
+  *every design decision carries its defense at its home*, user-directed 2026-08-01.)
 - **Status** — see the table below. Where the record does not say when a decision was made or
   who ratified it, the entry says **not stated**. Nothing is inferred.
 - **Home** — where the decision is actually recorded, as `file:line`. A decision about how a
@@ -132,6 +139,7 @@ def render(backbone: dict, disp: dict) -> str:
     nostated_date = sum(1 for d in decisions if d["date"] == "not stated")
     nostated_who = sum(1 for d in decisions if d["ratified_by"] == ["not stated"])
     nonspec = [d for d in decisions if not d.get("home_is_layer_spec")]
+    no_rationale = [d for d in decisions if not d.get("rationale")]
 
     out: list[str] = [PREAMBLE, ""]
 
@@ -153,6 +161,13 @@ def render(backbone: dict, disp: dict) -> str:
     out.append(f"| Decisions whose date is not stated in the record | {nostated_date} |")
     out.append(f"| Decisions whose ratifier is not stated in the record | {nostated_who} |")
     out.append(f"| Decisions recorded outside any layer specification | {len(nonspec)} |")
+    out.append(f"| Decisions whose defense the record does not state | {len(no_rationale)} |")
+    out.append("")
+    out.append(f"That last row is the one meant to fall. **{len(decisions) - len(no_rationale)} of "
+               f"{len(decisions)}** decisions here can point at the research, the measurement, or "
+               "the constraint that decided them; the rest cannot, and say so. Filling a gap means "
+               "recording the defense where the decision lives — never writing one afterwards from "
+               "memory.")
     out.append("")
     out.append("Alongside the register, every one of the harvested statements about decisions in "
                "this repository has been given a recorded disposition, so that none was silently "
@@ -200,6 +215,8 @@ def render(backbone: dict, disp: dict) -> str:
                 out.append(f"> {stripped}" if stripped.strip() else ">")
             out.append("")
             out.append(f"**In plain words.** {d['plain']}")
+            out.append("")
+            out.append(f"**Why.** {d.get('rationale') or NO_RATIONALE}")
             out.append("")
             st = STATUS_LABEL.get(d["status"], d["status"].upper())
             if d["status"] == "superseded-by" and d.get("superseded_by"):

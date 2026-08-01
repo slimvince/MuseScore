@@ -17,7 +17,7 @@
 
 ## How to read an entry
 
-Each entry has five parts.
+Each entry has six parts.
 
 - **The decision, verbatim** — quoted exactly from the document that records it, word for word.
   (Where the source wrote the passage inside a quotation block, its `>` markers are dropped so the
@@ -25,6 +25,11 @@ Each entry has five parts.
   that wording uses a word in a non-musical sense; the plain restatement beneath it does not.
 - **In plain words** — one or two sentences, written for a reader who knows music but not this
   project's private vocabulary.
+- **Why** — the defense the record gives for the decision: the published research or algorithm
+  adopted, the measurement that decided it, or the constraint that forced it, cited to where it
+  is written down. Where the record gives none, this reads **derivation not recorded** — the gap
+  is stated, never filled in afterwards from memory. (Standing rule: `CLAUDE.md` Conventions,
+  *every design decision carries its defense at its home*, user-directed 2026-08-01.)
 - **Status** — see the table below. Where the record does not say when a decision was made or
   who ratified it, the entry says **not stated**. Nothing is inferred.
 - **Home** — where the decision is actually recorded, as `file:line`. A decision about how a
@@ -87,6 +92,9 @@ project's own and are defined here because they are used before any entry explai
 | Decisions whose date is not stated in the record | 83 |
 | Decisions whose ratifier is not stated in the record | 86 |
 | Decisions recorded outside any layer specification | 16 |
+| Decisions whose defense the record does not state | 31 |
+
+That last row is the one meant to fall. **84 of 115** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
 
 Alongside the register, every one of the harvested statements about decisions in this repository has been given a recorded disposition, so that none was silently passed over:
 
@@ -125,6 +133,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** The tonality, the major/minor character and the chord are not worked out one after another. They are worked out together, in a single pass that also decides where one chord ends and the next begins.
 
+**Why.** Theory basis cited at ARCHITECTURE.md:9 - `cowork_key_chord_joint_inference_grounding.md`; the forcing constraint is the circular dependency list at ARCHITECTURE.md:637-651 (key<->chord, segmentation<->chord, non-chord-tone<->chord, function<->chord identity), which a feed-forward pipeline cannot resolve correctly.
+
 **Status.** LIVE · decided 2026-07-17 · ratified by user
 
 **Home.** `ARCHITECTURE.md:4-6`
@@ -137,6 +147,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > VERBATIM (JSON bytes, not a parsed-structure codegen) into the generated `jointembeddedartifacts.{h,cpp}`
 
 **In plain words.** The numbers the estimator was trained on are built into the program at compile time rather than read from disk at run time, so a running copy cannot quietly disagree with the numbers we published.
+
+**Why.** Stated constraint, ARCHITECTURE.md:22-23: compiling the fitted values into the binary provenance-LOCKS them at build time (#16/#19) so they cannot silently drift; the `joint_embedded_tests` drift guard (:27-29) is what makes the lock checkable.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -151,6 +163,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** Choosing the Baroque, Jazz or Default preset changes nothing about what the estimator concludes; it changes only how the result is shown.
 
+**Why.** derivation not recorded.
+
 **Status.** LIVE · decided 2026-07-26 · ratified by user
 
 **Home.** `ARCHITECTURE.md:33-34`
@@ -164,6 +178,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** The estimator chooses among 24 tonalities and a list of chord roles read off the annotated corpus; a chord is named by its role in the key, and the chord symbol is worked out from that. One chord may span at most four consecutive events.
 
+**Why.** derivation not recorded.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:31-33`
@@ -176,6 +192,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > is now the PRODUCTION inference layer on the batch/corpus surface
 
 **In plain words.** Everything the measurement corpus is graded on now comes from the joint estimator, not from the older chord-by-chord pipeline.
+
+**Why.** Measurement, ARCHITECTURE.md:37-38 and `tools/joint_estimator/adoption_record.json`: on the robust unit the joint decode reads root 77.03 / Roman numeral 64.12 / key-local 78.42 %, against the legacy pipeline's 66.04 / 46.33 / 65.99 %, and the class-(b) hard-stop duration falls 33 % (2,714,000 -> 1,817,280 ticks per preset).
 
 **Status.** LIVE · decided 2026-07-26 · ratified by user
 
@@ -191,6 +209,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** For every chord it commits to, the estimator also publishes how every other tonality and every other chord would have scored - the complete lists, not a top-few.
 
+**Why.** Stated constraint, `cowork_joint_estimator_factorization.md:173-175`: the full posterior, not only the best path, is retained for the published alternatives and the uncertainty surface (#12, no information loss) - the old carry and abstention policies re-express as posterior mass rather than ad-hoc lists.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:47-49`
@@ -204,6 +224,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** The numbers beside each alternative are not chances of being right. They are model scores, and the difference between two of them is a score gap, not a percentage.
 
+**Why.** Stated constraint, ARCHITECTURE.md:53-55: the published numbers are within-segment content scores re-scored by `segmentContentScore`, so they are log-scores and gaps are score differences; turning them into probabilities needs the forward-backward marginals, which are a separate later step.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:54-55`
@@ -215,6 +237,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > **GROUP (ii) forward-backward marginals are NOT delivered here — OI-193's later step.**
 
 **In plain words.** The proper probability for each reading - the kind that can be checked against how often it is actually right - has not been built yet; it is a named later piece of work.
+
+**Why.** Same constraint as D-007: the marginals the true probabilities require are not computed by the decode as it stands (ARCHITECTURE.md:55), so the step is named and deferred rather than approximated.
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
@@ -228,6 +252,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** Building the new estimator beside the old one temporarily breaks the rule that there is one way to do each thing. That was declared in advance, bounded, and given a retirement plan.
 
+**Why.** Stated constraint, `CLAUDE.md` principle #23 and open_items/OI-180: an end-state principle (#6, one path per concern) that a planned change must temporarily violate needs a lawful transition - the violation declared, bounded, and pre-ratified with a retirement map - so that migration is a first-class state rather than an undeclared exception.
+
 **Status.** SUPERSEDED IN FACT · decided 2026-07-19 · ratified by user
 
 **Home.** `ARCHITECTURE.md:39`
@@ -239,6 +265,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > forms from theory, values fit ONCE against GT (#19), never per-case tuned
 
 **In plain words.** The shape of each piece of evidence comes from music theory. Its numerical strength is learned once from annotated music, and never adjusted to make a particular passage come out right.
+
+**Why.** Stated constraint, OPEN_ITEMS.md:25 (the governing architecture decision banner) with `CLAUDE.md` #8 and DEFECT_TYPES.md DT-2: a value tuned per case is fitted to the case and measures nothing on the next one.
 
 **Status.** LIVE · decided 2026-07-17 · ratified by user
 
@@ -252,6 +280,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** Before the estimator's numbers are learned, we say in advance which music will be held back to test them on, and how many numbers we are allowed to learn at all. The headline number is always the one measured on the held-back music.
 
+**Why.** Stated constraint, `CLAUDE.md` #20: no value is graded on data that helped fit it, so the split and the capacity budget are declared BEFORE fitting and the headline claim is the held-out figure; a fitted-and-self-measured number is not established (#19). The ratified protocols are open_items/OI-176 (5-fold cross-validation grouped by ground-truth file) and OI-177 (parameter inventory, cell own-estimate only at count >= 20, <= 12 weights).
+
 **Status.** LIVE · decided 2026-07-19 · ratifier not stated
 
 **Home.** `OPEN_ITEMS.md:123`  ⚠ **home is not a layer specification** — a documentation gap; see `OPEN_ITEMS.md`.
@@ -264,6 +294,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** The estimator was meant to be allowed to narrow its search when that gets too slow. The narrowing rule that was specified turned out to cost more than it saved, so the estimator still searches exactly - and how it actually narrows in practice was never specified.
 
+**Why.** Stated constraint, `cowork_joint_estimator_factorization.md:170-173`: exact decode is expected tractable at chorale-scale event counts, and the reserve prune is an inference technique requiring its own established-loss measurement, never a silent heuristic. What the decoder actually prunes has no recorded derivation at all (open_items/OI-226).
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `OPEN_ITEMS.md:194`  ⚠ **home is not a layer specification** — a documentation gap; see `OPEN_ITEMS.md`.
@@ -275,6 +307,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > **key-abstain 0** — A commits its MAP path, the OI-33 flag reads zero
 
 **In plain words.** The joint estimator always names a key. It never declines to answer on the key axis, so the abstention counter is always zero.
+
+**Why.** derivation not recorded.
 
 **Status.** LIVE · decided 2026-07-26 · ratified by user
 
@@ -294,6 +328,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** Everything the program shows you about harmony in the score comes from one assembled result. Nothing downstream re-runs the analysis or looks at the notes again.
 
+**Why.** Stated constraint, ARCHITECTURE.md:125 and :71-72 - the seams read the record as pure views (#6, one path per concern): the record never re-decodes and never reads the score, so there is exactly one place the in-app answer comes from.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:70-72`
@@ -305,6 +341,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > flipped `useJointNotationRecord`'s default to **ON**.
 
 **In plain words.** Since 27 July 2026 the harmony you see inside the program is produced by the joint estimator. The old path is still compiled in but is only reachable by explicitly turning the new one off.
+
+**Why.** Measurement, ARCHITECTURE.md:239-244: every legacy->record difference in the refreshed pipeline-snapshot goldens was reconciled to the P6 classified taxonomy - 0 unexplained, 0 input-scoping, the non-flag-gated surfaces byte-identical - with the P6 report and the OI-178 adoption record cited as the switch's preconditions.
 
 **Status.** LIVE · decided 2026-07-27 · ratified by user
 
@@ -319,6 +357,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** Every request analyses the entire score from the beginning, every time, and nothing is remembered between requests.
 
+**Why.** Recorded for the no-caching half only, ARCHITECTURE.md:114-115: a cache is 'a later, measured concern - #17's funnel, not built speculatively'. The whole-score extent itself has no recorded derivation (open_items/OI-210 records that the last ruling on extent went the other way).
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:114-115`
@@ -330,6 +370,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > never a partial record, never a silent fallback (#13).
 
 **In plain words.** If the analysis cannot be produced, the program says so and returns nothing. It never returns half an answer or quietly falls back to the old method.
+
+**Why.** Stated constraint, ARCHITECTURE.md:117 - #13, a surprise is surfaced as a stop rather than built around: a partial record or a silent fallback would hide the failure from the caller.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -345,6 +387,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** When a staff is excluded from analysis - for instance the chord staff the program itself writes to - its notes are dropped before the analysis starts, not filtered out of the answer afterwards.
 
+**Why.** Stated constraint, ARCHITECTURE.md:119-123: input selection belongs at the layer that owns its input surface (#7), and doing it there is what stops a populated chord staff's own notes from being fed back into a re-analysis - the self-feedback hazard the legacy design guarded against (ARCHITECTURE.md:5437-5438).
+
 **Status.** LIVE · decided 2026-07-27 · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:119-121`
@@ -356,6 +400,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > The two §1 seams READ this record as pure VIEWS (#6, no recompute)
 
 **In plain words.** The two ways of asking the record a question - 'what is in this stretch of music' and 'what is at this moment' - only look things up. Neither works anything out for itself.
+
+**Why.** Stated constraint, ARCHITECTURE.md:125 - #6, one path per concern: a view cannot disagree with the record it reads, a second computation can.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -370,6 +416,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** When a moment is exactly where one chord ends and the next begins, it counts as belonging to the new chord.
 
+**Why.** derivation not recorded.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:128-129`
@@ -381,6 +429,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > display renderings are presentation, facts are published
 
 **In plain words.** The Roman numeral is a fact the estimator publishes. The chord symbol you read on screen and the Nashville number are ways of showing that fact, produced by the display code.
+
+**Why.** Stated constraint, ARCHITECTURE.md:147-148 (Decision D2 + the contract §3.3 amendment), resting on §2.3 (ARCHITECTURE.md:431-433): the analysis layer produces structured data and never display strings, a separation `ChordSymbolFormatter` already establishes.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -395,6 +445,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** A test enforces that the analysis code cannot reach the display code and the display code cannot reach the analysis internals. The test itself is checked by deliberately breaking it.
 
+**Why.** Stated constraint, ARCHITECTURE.md:154-159: the boundary D-071 draws is enforceable only mechanically, so an include-closure test asserts it in both directions and carries a negative control that fires on a perturbed include.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:153-154`
@@ -406,6 +458,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > The implode reads the stored bucket (#6 — one thresholding site per gate).
 
 **In plain words.** How confident the program is about the tonality is turned into 'below tentative / tentative / assertive' in exactly one place, and everything downstream reads that answer instead of deciding again.
+
+**Why.** Stated constraint, ARCHITECTURE.md:171 - #6, one thresholding site per gate: the bucket is set once at the section-layer set site and the implode reads it, instead of each consumer re-thresholding.
 
 **Status.** LIVE · decided 2026-07-27 · ratifier not stated
 
@@ -419,6 +473,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > key-axis gap in nats (a model-internal quantity, NO [0,1] remap)
 
 **In plain words.** The confidence value carried on the record arm is the estimator's own raw score gap, on its own scale - deliberately not converted into a 0-to-1 number.
+
+**Why.** derivation not recorded.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -434,6 +490,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** Clicking a note re-analyses the whole score. The old shortcut that reused a small window's work is not used on the new path, and no replacement has been built yet.
 
+**Why.** Stated constraint, ARCHITECTURE.md:207-209: bypassing the bounded-window cache is recorded as a cost, not a structural incompatibility - a record cache is 'a later measured concern', the same measure-before-build funnel as D-011.
+
 **Status.** LIVE · decided 2026-07-27 · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:206-208`
@@ -445,6 +503,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > the pedal fields stay false/-1 (suspended, OI-194)
 
 **In plain words.** The new path does not yet mark pedal points - a sustained bass note the harmony moves over. The field is left empty rather than guessed.
+
+**Why.** Stated constraint, open_items/OI-194.md:7: the labels' independent validation resource is not on disk, and coupling an open establishment question to the one commit whose verification must be airtight would mix the two (#22/#13); publication before validation is lawful only status-marked unvalidated with no consumer under load (#19).
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
@@ -463,6 +523,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** The analysis works on the smallest stretch over which the sounding harmony does not change. Phrases, key areas and sections are then read off that, never analysed directly.
 
+**Why.** Stated constraint, ARCHITECTURE.md:748-750: analysing at the finest grain is what makes segmentation a fact rather than a judgment (over-grab becomes structurally impossible), it aligns the architecture with the per-slice oracle measurement already built, and it matches the published state of the art - Contrapunctus labels every event.
+
 **Status.** LIVE · date not stated · ratified by user
 
 **Home.** `ARCHITECTURE.md:746-747`
@@ -474,6 +536,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > The atomic analysis unit is the **constant-sonority slice** (L2), never the metric beat
 
 **In plain words.** The smallest thing analysed is a stretch during which exactly the same notes are sounding - not a beat of the bar.
+
+**Why.** Same passage as D-022, ARCHITECTURE.md:746-750: the metric beat is not where harmony is well-defined; the constant-sonority slice is, and every coarser unit is derived from it.
 
 **Status.** LIVE · date not stated · ratified by user
 
@@ -489,6 +553,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** Reading the notes and cutting the music into constant-sound stretches works the same for every kind of music. Whether a piece is Baroque or jazz can change only the numbers the judging layers use, never the shape of the code.
 
+**Why.** Stated constraint, ARCHITECTURE.md:753-756: confining style to the calibration of the judgment layers sharpens §2.1 - not merely data-driven style, but style kept out of the layers that carry facts, so the fact surface cannot silently differ between styles.
+
 **Status.** LIVE · date not stated · ratified by user
 
 **Home.** `ARCHITECTURE.md:753-756`
@@ -501,6 +567,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > `cowork_target_architecture.md` §2) is **forward-only**:
 
 **In plain words.** Each stage was to pass its answer forward and never reach back. A confident earlier answer could be overturned only by re-running that one stretch forwards, and the one genuinely tangled key-versus-chord case got a narrow, gated exception.
+
+**Why.** Measurement, ARCHITECTURE.md:723-726: the investigation measured the full joint cross-layer search INERT, and located the realisable gain in soft-evidence quality carried forward (calibrated confidence + ranked alternatives) rather than global cycling.
 
 **Status.** SUPERSEDED IN FACT · decided 2026-06-29 · ratified by user
 
@@ -515,6 +583,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** An earlier plan to search all the possibilities at once was tested and found to add nothing, so the effort was redirected into better evidence flowing forwards.
 
+**Why.** The measurement itself (ARCHITECTURE.md:723-724). What the record does NOT state is how it was reconciled with the 2026-07-17 joint estimator, which is one - see open_items/OI-234.
+
 **Status.** SUPERSEDED IN FACT · decided 2026-06-29 · ratified by user
 
 **Home.** `ARCHITECTURE.md:723-724`
@@ -526,6 +596,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > each layer is feed-forward and emits **ranked candidates + a confidence**, never a forced point estimate;
 
 **In plain words.** No stage is allowed to report only its single best answer. It reports the runners-up too, with a measure of how clear-cut the choice was.
+
+**Why.** Stated constraint, ARCHITECTURE.md:681-683: irrevocable point estimates block iteration and provisional results with confidence metadata enable it, so every layer's output must carry the alternatives and the confidence a later layer would need to overturn it.
 
 **Status.** LIVE · decided 2026-06-29 · ratified by user
 
@@ -539,6 +611,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 >   ambiguous; every layer names the span it operates on.
 
 **In plain words.** The word 'region' on its own is forbidden, because it hides which kind of stretch is meant. Each stretch has its own name: the chord-span, the key-span, the punctuation-span and so on.
+
+**Why.** Research citation, ARCHITECTURE.md:787 - the span typology follows the GTTM premise of independent structures (Lerdahl & Jackendoff); the ban on the bare word is because a 'region' is a FAMILY of spans and the unqualified word names none of them (:765, :786-787).
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
@@ -554,6 +628,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** Prefer what we can check against annotated music. Where the theory is sound but we have nothing to check it against, build it anyway - but mark it as unchecked and give it its own confidence path.
 
+**Why.** Stated constraint, ARCHITECTURE.md:794-797: checking against ground truth is how we catch our own theory errors, and refusing sound theory we cannot yet check would forfeit the jazz and pop reach, where the theory exists and the corpus does not.
+
 **Status.** LIVE · date not stated · ratified by user
 
 **Home.** `ARCHITECTURE.md:794-796`
@@ -568,6 +644,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** Analysis runs on what the user has selected. The work must grow with the size of that selection, not with the size of the piece; re-analysis after an edit must only redo the changed part; and a layer that needs more music asks for it rather than reading everything.
 
+**Why.** Stated constraint, ARCHITECTURE.md:798-802: the analysis runs on the user's selection, so a layer needing more must request an append-only extension from Layer 1 carrying a stop condition and a hard bound. The three binding scale requirements R1-R3 are stated there; the detailed cross-layer specification is `cowork_bounded_context_design.md`.
+
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
 **Home.** `ARCHITECTURE.md:800-802`
@@ -579,6 +657,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > Whole-score analysis is the degenerate case (selection = score).
 
 **In plain words.** Analysing the whole piece is what happens when the user has selected the whole piece. It is not the normal mode of operation.
+
+**Why.** Same passage, ARCHITECTURE.md:802: whole-score analysis is what the bounded-context rule produces when the selection happens to be the whole score - a case of the rule, not an exception to it.
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
@@ -592,6 +672,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 >   its decision named**. Unbounded internal scores are permitted *inside* a layer but must be squashed at the boundary.
 
 **In plain words.** Inside a stage, a confidence can be on any scale. The moment another stage can read it, it must be a 0-to-1 number, labelled with what kind of confidence it is and what decision it belongs to.
+
+**Why.** Stated constraint, `cowork_confidence_contract.md:13-21` ('Why this contract exists'): the forward-override mechanism numerically compares a later layer's contradiction strength against an earlier layer's confidence, and those quantities are incommensurable by construction today - Layer 3 publishes a sequence margin, Layer 4 a three-part composite, Layer 5 an unbounded additive score. Fitting weights cannot repair a comparison between quantities with undefined semantics; it would bury the incoherence in fitted constants.
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
@@ -608,6 +690,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** Each stage owns one contribution and says plainly what it does not own, handing unresolved cases forward as ranked options. Owning one contribution does not narrow what it may look at: within its scope it uses all the information the note reader carries - how the note is spelt, where it falls in the bar, and which voice it is in.
 
+**Why.** Stated constraint, ARCHITECTURE.md:807-810: the single-responsibility half is what lets a layer say what it does NOT own, and the maximal-information half is what stops that ownership from being read as permission to ignore evidence Layer 1 already carries.
+
 **Status.** LIVE · date not stated · ratified by user
 
 **Home.** `ARCHITECTURE.md:807-810`
@@ -620,6 +704,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 >   all required:**
 
 **In plain words.** A new stage is added only if it carries one distinct responsibility, can be validated somehow, and buys something we can actually check. Carrying a distinct responsibility is enough on its own, even with no immediate accuracy gain.
+
+**Why.** Stated constraint, ARCHITECTURE.md:824-831: gate (1) separation of concerns is a structural mandate sufficient on its own even at zero accuracy gain; gates (2) verifiability and (3) proportionality exist against the opposite error, and the record names the reminder - Contrapunctus is competitive with the state of the art with NO explicit grouping layer.
 
 **Status.** LIVE · date not stated · ratified by user
 
@@ -635,6 +721,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** Anything that makes the analysis slower must be something the user or the caller can turn down, not a number baked into the code; and any expensive extra step must be separable so it can be switched off.
 
+**Why.** Stated constraint, ARCHITECTURE.md:737-741: the effort dial is a calibration knob, not a structural one, so its two standing rules follow - every cost-driving choice is an explicit setting, and every optional expensive refinement is a cleanly separable stage.
+
 **Status.** LIVE · decided 2026-06-29 · ratified by user
 
 **Home.** `ARCHITECTURE.md:739-741`
@@ -648,6 +736,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > iteration — not a sign that the layer needs more gates.
 
 **In plain words.** If a stage keeps needing new special cases, the problem is that it is missing information from elsewhere. Adding another special case makes it worse.
+
+**Why.** Stated constraint, ARCHITECTURE.md:657-661: each gate is a heuristic patch on a structural limitation, so a rising gate count is a symptom of missing iteration rather than an argument for more gates.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -663,6 +753,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** Knowing that something is not the case is itself useful. A reading that has been ruled out is kept at low confidence rather than thrown away, unless we could work out the exclusion again from what we did keep.
 
+**Why.** Stated constraint, `CLAUDE.md` #12: a ruled-out possibility is evidence - finding by exclusion - so it is carried at low confidence unless the exclusion is recomputable from what is kept.
+
 **Status.** LIVE · decided 2026-07-06 · ratified by user
 
 **Home.** `CLAUDE.md`  ⚠ **home is not a layer specification** — a documentation gap; see `OPEN_ITEMS.md`.
@@ -676,6 +768,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** Whatever a stage works out, it publishes on its own output surface; every later stage reads that instead of working it out again. Facts that are hints a later stage might one day use are published broadly even when nothing reads them yet, each carrying whether it has been established, because a consumer may not rely on an unestablished fact. What to do with a fact nobody reads is decided case by case: keep it with a named future reader stated, or remove it - and a reader outside the analysis counts.
 
+**Why.** Stated constraint, `CLAUDE.md` fact-publication corollary, with its evidence named there: `cowork_siloed_facts_audit.md` found 17 instances of facts being re-derived rather than read. The 2026-07-12 amendment's own recorded reason is the user's: a visible spread of published evidence lets a future design RECOGNIZE facts it would never have thought to ask for.
+
 **Status.** LIVE · decided 2026-07-10 · ratified by user
 
 **Home.** `CLAUDE.md`  ⚠ **home is not a layer specification** — a documentation gap; see `OPEN_ITEMS.md`.
@@ -688,6 +782,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 >   must be NON-INCREASING** vs the committed reference — the *meaningful* functional errors never grow.
 
 **In plain words.** A change is allowed to ship only if the total amount of music on which we name the wrong chord root - counted where the root is decidable at all - does not grow. The key and the Roman numeral are watched alongside but do not govern.
+
+**Why.** Measurement, `CLAUDE.md` gate block (C): the batch region gate it replaced under-counted the true per-onset root error by roughly 15 to 56 times - it measured a small music21-filtered corner in which pitch-class-undecidable rotations were about 53 % of the residual, against about 3.5 % on the robust unit - so the robust unit is governed by the meaningful errors and is segmentation-invariant by construction.
 
 **Status.** LIVE · decided 2026-07-06 · ratified by user
 
@@ -705,6 +801,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** One component reads the score and works out which notes are sounding when. Everything else asks it, and nothing else reads the score.
 
+**Why.** Stated constraint, ARCHITECTURE.md:1008: one read of the score into one queryable set is what makes the note model the single source of truth for what sounds; the alternative is several readers that can disagree.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:1008`
@@ -716,6 +814,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > Tied groups are merged into **one** span/onset (via the DOM `firstTiedNote`/`lastTiedNote`/`playTicksFraction`); spans are true `[onset,release)` answered by **overlap with no horizon** (the old 4-whole-note backward cap is gone).
 
 **In plain words.** A note tied across a barline counts once, starting where it was struck and ending where it stops. Asking what is sounding at a moment looks back as far as needed, with no arbitrary cut-off.
+
+**Why.** Stated constraint, ARCHITECTURE.md:1008: tied groups are merged into one span and one onset via the score model's own tie links, and spans are answered by overlap with no horizon - which retires the old four-whole-note backward cap that could miss a longer sustain.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -729,6 +829,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** Notes that should not drive the analysis - grace notes, hidden notes, notes on a non-musical staff - are still recorded, marked as such. Nothing is thrown away.
 
+**Why.** Stated constraint, ARCHITECTURE.md:1008, and #12: a dropped note is information lost for good, so ineligible notes are kept and flagged and each consumer decides what to do with them.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:1008`
@@ -740,6 +842,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > `notatedNotes()` republishes the tie-UNRESOLVED atoms — EVERY notated note incl. tie continuations, each with its OWN notated span, a `tieContinuation` flag, a `hasFermata` flag, and `resolvedIndex` linking to its tie-resolved `NoteEvent`
 
 **In plain words.** As well as merging tied notes, the note reader also publishes them separately, each with a marker saying it is a continuation. The joint estimator needs both views.
+
+**Why.** Stated constraint, ARCHITECTURE.md:1008: the tie-unresolved atoms carry the facts the tie-resolved surface discards and the joint estimator's event lattice and emission covariates need; publishing them additively keeps every existing consumer byte-identical.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -757,6 +861,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** The music is cut into consecutive stretches that between them account for every moment exactly once.
 
+**Why.** Stated constraint, ARCHITECTURE.md:1045: a covering, lossless tiling is what makes the slicer a fact rather than a judgment - every tick lands in exactly one slice, so nothing the score sounds can fall between slices.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:1045`
@@ -768,6 +874,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > Boundaries = the sorted-unique union of every **onset AND every release** of the **eligible** notes; consecutive boundaries form the slices.
 
 **In plain words.** A new stretch begins whenever any note starts and also whenever any note stops - because a note ending changes what is sounding just as much as a note beginning.
+
+**Why.** Stated constraint, ARCHITECTURE.md:1045 with :1077-1080: taking every onset AND every release makes the boundary set an exhaustive candidate grid - necessary but not sufficient - so a real chord change can never be missed and over-grab is structurally impossible.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -781,6 +889,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > unison/octave shrink is a real boundary though the PC set is unchanged).
 
 **In plain words.** What makes one stretch different from the next is the exact set of notes sounding through it - not merely which pitch names are present. Two voices collapsing onto the same note is a real change even though no pitch name was lost.
+
+**Why.** Stated constraint, ARCHITECTURE.md:1052-1053: identity is the note set and not the octave-folded pitch-class set, because a unison or octave shrink is a real boundary even though the pitch-class set is unchanged.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -796,6 +906,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** A note that is not allowed to create a new stretch is still recorded as sounding during the stretches it spans.
 
+**Why.** Stated constraint, ARCHITECTURE.md:1049-1051: a slice is 'constant TONAL sonority', so an ineligible note opens no boundary; dropping it as well would lose it (#12), and it is carried as passenger metadata instead.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:1049-1051`
@@ -807,6 +919,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > **Boundaries over layer-1's eligibility annotation — never re-decided.**
 
 **In plain words.** Whether a note counts was settled by the note reader. The slicer reads that decision and does not second-guess it.
+
+**Why.** Stated constraint, ARCHITECTURE.md:1047-1049: eligibility is Layer 1's decision, and a second filter in Layer 2 would be a second place the same question is answered (#6/#7).
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -821,6 +935,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** The cutting-up step makes no musical decisions at all. It does not decide that a note is ornamental, does not merge short stretches, and has no adjustable numbers.
 
+**Why.** Stated constraint, ARCHITECTURE.md:1072-1074: a threshold or a merge would make the slicer a judgment; with none, its output is a fact and the judgment stays where it belongs, in the layers that decide.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:1072-1074`
@@ -833,6 +949,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > outcomes fall out of the note-model spans as facts
 
 **In plain words.** Grace notes and tuplets need no special code. Their timing is a fact the note reader already carries, and the right answer falls out of it.
+
+**Why.** Stated constraint, ARCHITECTURE.md:1073-1077, verified at the source: a grace note carries onset = the parent chord's tick and duration = its nominal written value, and tuplet ticks are the model's real un-snapped ticks, so both fall out of the note-model spans as facts and the slicer needs no grace or tuplet code at all.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -848,6 +966,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** Every place a chord could change is offered as a candidate, so no real chord change can be missed. Whether a candidate is a real change is decided later, by a stage that judges harmony.
 
+**Why.** Stated constraint, ARCHITECTURE.md:1077-1080: because the boundary grid is exhaustive, the slicer never asserts a change - Layer 3 decides which boundaries are real and a later layer groups equal analyses.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:1077-1079`
@@ -861,6 +981,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** Silence in the middle of the music is recorded as a stretch with nothing in it, rather than as a hole in the coverage.
 
+**Why.** Stated constraint, ARCHITECTURE.md:1063-1065: an explicit empty slice falls out of the consecutive-boundary construction for free, and it keeps the covering guarantee (D-041) true through a silence, which a gap would break.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:1063-1065`
@@ -872,6 +994,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > slicing never drags outside the loaded span
 
 **In plain words.** The slicer cuts only within the span it was handed: a note sounding across the edge of that span is cut at the edge, and the slicer never reaches outside it. Widening what is analysed is the orchestration's job, not the slicer's, and re-slicing a wider span must reproduce the narrower one exactly - which is what makes widening safe.
+
+**Why.** Stated constraint, ARCHITECTURE.md:1055-1070 with `cowork_layer2_reslice_design.md` §2: the clip is what makes re-slice equivalence hold - re-slicing an enlarged span reproduces the narrower result, with interior change-points stable and only the edge slice abutting the artificial boundary extending - so extending the span is lawful rather than a re-analysis.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -889,6 +1013,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** The tonality is worked out for the whole piece at once, as a sequence, rather than separately for each stretch.
 
+**Why.** derivation not recorded.
+
 **Status.** SUPERSEDED BY D-001 · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:1094`
@@ -904,6 +1030,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** Reading the printed key signature and turning it into a starting assumption happens in one place that both callers use, so the two cannot drift apart.
 
+**Why.** derivation not recorded.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:1116-1119`
@@ -916,6 +1044,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 >   P4-defer).
 
 **In plain words.** One narrow fallback - answering about a single moment when no surrounding stretch is available - still uses the older method. That was a deliberate deferral.
+
+**Why.** derivation not recorded.
 
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
@@ -931,6 +1061,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** The key finder considers 21 scale types on each of the 12 possible tonics. The harmonic major family was left out because it is rare and we have no annotated music to calibrate it against.
 
+**Why.** Recorded for the DEFERRAL half only, ARCHITECTURE.md:2213-2217: the harmonic major modes are significantly rarer as tonal centers than the melodic and harmonic minor modes, and the validation corpus is unlikely to calibrate them well. Why the other 21 modes are all scored against all 12 tonics has no recorded derivation.
+
 **Status.** DEFERRED · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:2214-2216`
@@ -943,6 +1075,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 >   via `IComposingAnalysisConfiguration::modePrior{ModeName}()`
 
 **In plain words.** How likely each scale type is considered to be is a separate adjustable number per scale type, exposed in the preferences.
+
+**Why.** derivation not recorded.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -958,6 +1092,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** The key printed at the start of the score does not settle the question. It only nudges the answer; what the notes actually do decides.
 
+**Why.** Stated constraint, ARCHITECTURE.md:3120-3122: the notated signature is what the composer wrote down, not what the music does - a piece may modulate, be notated in a partial signature, or contradict its own signature - so it enters as a weak hint the sounding notes can outvote.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:3120-3122`
@@ -969,6 +1105,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > | Strongest | Actual sounding notes | what is literally happening now |
 
 **In plain words.** In deciding the key, what is actually sounding right now outranks the surrounding bars, which outrank the printed key signature, which outranks the major/minor tag on it.
+
+**Why.** Stated constraint, ARCHITECTURE.md:3134-3141: the priority table ranks the actual sounding notes the strongest evidence, above the notated signature and above any prior result, for the same reason as D-056.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -986,6 +1124,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** At the very start of a piece there is not yet enough music to judge the key, so if the score declares major or minor the program simply believes it, marked as a middling-confidence answer.
 
+**Why.** derivation not recorded.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:3125-3129`
@@ -997,6 +1137,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > The bridge uses a 16-beat lookback + 8-beat lookahead window:
 
 **In plain words.** To judge the key at a point, the program looks about four bars back and two bars forward, giving less weight to music further away.
+
+**Why.** derivation not recorded.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -1016,6 +1158,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** The chord identifier is meant to say what chord the notes sounding at one moment spell, and nothing more. Improving its score by teaching it about what came before or after was explicitly forbidden.
 
+**Why.** Measurement, ARCHITECTURE.md:1859-1879: the boundary is recorded as empirically validated against DCML annotations over four corpora (2026-04-06), and the residual disagreement is diagnosed rather than assumed - 95.8 % of the bass-is-root disagreements are three-note triads in inversion, which local note content cannot resolve. Improving past that ceiling is stated to need a contextual harmony layer, NOT heuristics inside the vertical analyzer. (The same section then specifies contextual bonuses - open_items/OI-235.)
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:1877-1879`
@@ -1030,6 +1174,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > problematic chord type in all styles, or (b) a preset-specific threshold value
 
 **In plain words.** The adjustable cut-offs in the chord scorer were tuned on Baroque music. If they misbehave on other music, tighten the entry condition for everyone or give that style its own value - never widen the Baroque one.
+
+**Why.** Measurement, ARCHITECTURE.md:1573-1581 and `CLAUDE.md` gate policy: the values are empirically calibrated against the Baroque corpus and are Baroque-specific, so loosening one to accommodate another style silently re-tunes the style they were measured on; the two sanctioned fixes are a tighter structural entry condition that excludes the chord type in all styles, or a preset-specific override leaving the Baroque default unchanged.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -1046,6 +1192,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** While the program is still deciding where one chord ends and the next begins, the bonuses that reward a chord for fitting its neighbours are switched off, so that the answer does not bias the question.
 
+**Why.** Stated constraint, ARCHITECTURE.md:1776-1779 (the withheld signals 'prevent the bonus from biasing segmentation before the final per-region pass') with :641-644: where a boundary falls decides which pitch classes land in each candidate's input, and chord identity is itself a signal for where boundaries should be - so letting progression signals score the exploratory passes would let the answer decide its own input.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:1776-1779`
@@ -1059,6 +1207,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > context, provided that is stated, not silent).
 
 **In plain words.** One narrow path analyses a moment without knowing what came before. That is allowed because it is written down, not hidden.
+
+**Why.** derivation not recorded.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -1074,6 +1224,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** The Baroque and Jazz chord-scoring settings exist only in the measurement tool. The program the user runs has never used them, and switching it over would be a product decision, not a code tidy-up.
 
+**Why.** derivation not recorded.
+
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:1356-1359`
@@ -1085,6 +1237,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > **D1 — `excludeLookAheadOnDenseStart`** is **intentionally divergent and load-bearing.**
 
 **In plain words.** One setting deliberately differs between the measurement tool and the program, because making them the same made the program worse on a specific repertoire.
+
+**Why.** derivation not recorded.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -1099,6 +1253,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** The chord names already written in a score are the user's own text and may be wrong. The analysis reads only the notes, the key signature and the settings.
 
+**Why.** Stated constraint, ARCHITECTURE.md:2300-2302: written chord symbols are USER CONTENT and may be incorrect, so reading them back as input would make the analyzer agree with whatever it was given rather than with the notes. The `--inject-written-root` flag is kept as a diagnostic upper bound and is explicitly not a production path.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:2301-2302`
@@ -1111,6 +1267,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** The separate jazz analysis mode that took its stretch boundaries from written chord symbols has been removed entirely.
 
+**Why.** derivation not recorded.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:2269`
@@ -1122,6 +1280,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > Minimum 3 distinct pitch classes required. Returns empty vector if insufficient data.
 
 **In plain words.** With fewer than three different pitch names sounding, the chord identifier declines to answer rather than guessing.
+
+**Why.** derivation not recorded.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -1136,6 +1296,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** When neighbouring stretches are merged, they count as the same chord if the root and the major/minor character match. A second mode that would also require the exact voicing to match is designed but not built.
 
+**Why.** derivation not recorded.
+
 **Status.** DEFERRED · decided 2026-04-11 · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:1726-1727`
@@ -1148,6 +1310,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > Diminished, HalfDiminished, Augmented, or Suspended candidates — only Major and Minor.
 
 **In plain words.** The bonuses that let a neighbouring chord tip an inversion reading were restricted to plain major and minor chords, after three earlier attempts without that restriction all made things worse.
+
+**Why.** Stated constraint, ARCHITECTURE.md:1643-1646: recorded as a hard-won safety constraint, the lesson of a three-attempt history in which the bonuses fired on qualities they were not measured on.
 
 **Status.** SUPERSEDED BY D-102 · date not stated · ratifier not stated
 
@@ -1162,6 +1326,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** The restriction above was later relaxed for augmented and half-diminished chords, because without the bonuses their correct inverted readings never reached the shortlist at all. It was the single largest improvement of that iteration path.
 
+**Why.** Measurement, ARCHITECTURE.md:1931-1939: keeping D-101's constraint made correct inverted readings unreachable, and extending the two helper predicates to augmented and half-diminished was 'the largest single improvement of iteration path 1'.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:1938-1939`
@@ -1174,6 +1340,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > winner.
 
 **In plain words.** When the lowest note does not belong to the chord the upper voices spell, the program re-analyses without it. It accepts that reading only if the upper voices give at least two different pitch names and the answer is clearly better than the next different-rooted one.
+
+**Why.** Stated constraint, ARCHITECTURE.md:3617-3622: a single pass over an organ point either forces a bass-root reading and suppresses the upper-voice harmony, or returns a slash chord with the wrong root when a template accidentally fits. The 'different-root competitor' detail carries its own recorded reason at :3640-3643 - several templates share a root, so a gap measured against rank 2 collapses to about 0.047 and blocks detection for bare triads.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -1188,6 +1356,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** Being the lowest note no longer counts as strong evidence of being the chord's root unless the chord above actually supports that reading. Without a third or fifth above it, the bonus almost vanishes.
 
+**Why.** Measurement, ARCHITECTURE.md:3405-3424: four corpora (Chopin mazurka, Mozart sonata, Corelli trio sonata, Beethoven quartet) were inspected at the score and found to share ONE mechanism - the bass moves faster than the harmonic rhythm, so each bass note independently takes the bonus and overrides the root the chord tones above already identify. The fix conditions the bonus on corroborating root-position support rather than shrinking it.
+
 **Status.** LIVE · decided 2026-04-09 · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:3423-3424`
@@ -1200,6 +1370,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 >   view) — one interpreter, not a per-layer tpc copy.
 
 **In plain words.** How a note is spelt on the page - F sharp versus G flat - is interpreted in one shared place, not re-implemented by each stage that needs it.
+
+**Why.** Stated constraint, ARCHITECTURE.md:1172-1174 - 'one interpreter, not a per-layer tpc copy' (#6): two interpreters of the notated spelling can disagree, and open_items/OI-173 records what that costs when it happens (four inequivalent definitions of the same predicate).
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -1218,6 +1390,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** The stage that works out a chord's role in the key may label it and settle open questions, but it may not change which chord was identified.
 
+**Why.** derivation not recorded.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:1195-1196`
@@ -1229,6 +1403,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > the carried L4 abstentions are resolved by **selecting** among the carried readings (never re-derived)
 
 **In plain words.** Where the chord stage could not decide, the function stage picks from the options it was handed. It does not work the chord out again from the notes.
+
+**Why.** derivation not recorded.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -1243,6 +1419,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** The part that spots cadences must not be told what key it is in - it is one of the things that decides the key, so reading the answer first would be circular.
 
+**Why.** derivation not recorded.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:1199-1200`
@@ -1254,6 +1432,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > additive, read-only, no feedback into L5.
 
 **In plain words.** The stage that assembles phrases and key areas only organises what earlier stages decided. It never changes their answers.
+
+**Why.** derivation not recorded.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -1268,6 +1448,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** Deeper structural theory - nested hierarchy, periods, prolongation - is deliberately left out, because we have no annotated music to check it against.
 
+**Why.** derivation not recorded.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:1208-1209`
@@ -1279,6 +1461,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > an L5 *consumer* (a prior + an annotation), not a new layer
 
 **In plain words.** Recognising well-known chord patterns is something that reads the finished analysis and annotates it. It is not another stage in the chain.
+
+**Why.** derivation not recorded.
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
@@ -1292,6 +1476,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 >   chord **voicing / arrangement** are analysed)
 
 **In plain words.** How the individual voices move is a second, independent line of analysis alongside the harmonic one, with its own stages.
+
+**Why.** derivation not recorded.
 
 **Status.** LIVE · decided 2026-07-03 · ratifier not stated
 
@@ -1311,6 +1497,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** Nowhere does the code ask 'is this jazz?'. Differences between styles are numbers in a settings file.
 
+**Why.** Stated constraint, ARCHITECTURE.md:388-390 with the worked wrong/correct pair at :392-402: if behaviour branched on a style's identity, adding or renaming a style would require C++ changes; driving it from parameters means it never does.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:388-390`
@@ -1324,6 +1512,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** The analysis returns facts. Turning those facts into text on screen is somebody else's job.
 
+**Why.** Stated constraint, ARCHITECTURE.md:431-433: the separation is already established by `ChordSymbolFormatter`, and keeping it means the same analysis can be rendered several ways without the analysis knowing about any of them.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:431-432`
@@ -1335,6 +1525,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > This dependency order is **enforced**. Any code that would invert it (e.g. a composing header forward-declaring `mu::engraving::Note`) must be moved to the notation bridge layer.
 
 **In plain words.** The music-theory library must not know how MuseScore stores a score. Anything that needs both lives in a thin bridge layer in between.
+
+**Why.** derivation not recorded.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -1350,6 +1542,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** If the program and the measurement tool must agree, the code that makes them agree lives in one shared place. Copying it into both is a last resort that must be flagged as debt.
 
+**Why.** Stated constraint, ARCHITECTURE.md:484-502: the notation bridge and `batch_analyze` must produce identical results, so shared logic lives in the composing module both call; mirroring is permitted only when a shared implementation is blocked by a dependency constraint, and then only with a marked technical-debt note.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:484-486`
@@ -1362,6 +1556,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > automatically. All score modifications require explicit user action.
 
 **In plain words.** The program tells you what it thinks. It never changes your music unless you ask it to.
+
+**Why.** Stated constraint, ARCHITECTURE.md:475-480: the chord staff, the status bar and the panels are informational - they show what was inferred - and every change to the music is the user's explicit act through standard MuseScore editing.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -1376,6 +1572,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** Anything that might one day be replaced by a trained model is hidden behind an interface, so the replacement can be dropped in without touching everything else.
 
+**Why.** Stated constraint, ARCHITECTURE.md:406-408: the rest of the system depends only on the interface, so a machine-learning implementation can replace a rule-based one without any consumer changing.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:406-407`
@@ -1389,6 +1587,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** When a corpus number looks odd, somebody opens the actual music and looks at it before anyone changes code or runs more statistics.
 
+**Why.** Stated constraint, ARCHITECTURE.md:524-545: score inspection takes two minutes and answers what corpus statistics cannot - the actual texture, whether the chord staff is over-segmenting, whether the opening key is right - and Claude Code has no score access, so it must not substitute statistical inference for looking.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:544-545`  ⚠ **home is not a layer specification** — a documentation gap; see `OPEN_ITEMS.md`.
@@ -1400,6 +1600,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > The implode bridge has no business knowing about status-bar display preferences; the analysis bridge has no business knowing about chord-staff output settings.
 
 **In plain words.** Settings are exposed through two small interfaces rather than one big one, so each component can only see the settings it actually needs.
+
+**Why.** derivation not recorded.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -1413,6 +1615,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** The small data types that several stages share live in one header that depends on nothing, which removed two places where a lower stage had to include a higher one.
 
+**Why.** derivation not recorded.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:1238`
@@ -1424,6 +1628,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > All identifiers, comments, and documentation use American English spelling.
 
 **In plain words.** Analyzer, not analyser; color, not colour.
+
+**Why.** Stated constraint, ARCHITECTURE.md:440-450: MuseScore's own codebase is American English, so one spelling convention throughout is what keeps identifiers matching across the boundary.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -1437,6 +1643,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > macOS, and Linux.
 
 **In plain words.** Everything must work on Windows, macOS and Linux; platform-specific code is allowed only where unavoidable and must be walled off.
+
+**Why.** Stated constraint, ARCHITECTURE.md:624-630: the code must run on every platform MuseScore Studio officially supports, so platform-specific code is permitted only when unavoidable and must be abstracted so the rest of the module stays platform-agnostic.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -1455,6 +1663,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** Showing the harmony as Roman numerals or as Nashville numbers is a choice of how to display one and the same analysis.
 
+**Why.** Stated constraint, ARCHITECTURE.md:5505-5507: Roman numerals and Nashville numbers encode identical information, so showing both on one staff would be redundant and would destroy legibility - which makes the choice a display preference, not two analyses.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:2994-2995`
@@ -1468,6 +1678,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** Which spelling convention to use on screen is a formatter setting, kept away from the settings that affect the analysis itself.
 
+**Why.** derivation not recorded.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:2706-2707`
@@ -1480,6 +1692,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > injection is planned.
 
 **In plain words.** The program will never add a key signature to your score by itself. It shows what it inferred in the chord staff and leaves the decision to you.
+
+**Why.** Stated constraint, ARCHITECTURE.md:475-480 (§2.9): writing a key signature into the score would be the system modifying the music without the user asking.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -1495,6 +1709,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** On the old path, a key the program is unsure of is shown with a question mark, and one it is very unsure of is not shown at all rather than shown wrongly.
 
+**Why.** derivation not recorded.
+
 **Status.** SUPERSEDED BY D-018 · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:3280-3282`
@@ -1507,6 +1723,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > - calibrated abstention when evidence is weak
 
 **In plain words.** The aim is not to put a label on everything. It is to be right about what we do label, and to say nothing when the evidence is thin.
+
+**Why.** Stated constraint, ARCHITECTURE.md:3294-3302 and its consumer rules at :5604-5612: the stated product target is not 'always emit a label' but high precision on exposed results, calibrated abstention when evidence is weak, and coverage gains only after precision is acceptable - so below the confidence bar the key-dependent annotations are suppressed rather than printed tentatively.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -1521,6 +1739,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > emit chromatic Roman numerals or chord symbols respectively.
 
 **In plain words.** The specific Italian, French and German augmented-sixth labels are shown only under the classical presets.
+
+**Why.** derivation not recorded.
 
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
@@ -1539,6 +1759,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** Where two documents disagree about the architecture, this one is right, and a new ruling must be written into it before anywhere else.
 
+**Why.** Stated constraint, ARCHITECTURE.md:256-264: the per-layer design documents are the authoritative detail for their own scope but are not rival architecture documents; without one document that wins, a reader has no way to resolve a disagreement between two.
+
 **Status.** LIVE · decided 2026-06-29 · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:263-264`
@@ -1552,6 +1774,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** Rules that apply to every stage are written down in one place. A stage's own document may use such a rule but may not restate it in its own words.
 
+**Why.** Same passage, ARCHITECTURE.md:260-261: a cross-cutting contract restated in a layer document is a second copy that can drift (#6); a layer document may USE the span typology or the verifiability contract, not redefine them.
+
 **Status.** LIVE · decided 2026-06-29 · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:260-261`
@@ -1564,6 +1788,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 > heading's status and STATUS.md disagree, STATUS.md wins. This section describes the **designs**.
 
 **In plain words.** For what is built right now, read STATUS.md. For what was decided, read this document. Where they disagree about built-or-not, STATUS.md is right.
+
+**Why.** Stated constraint, ARCHITECTURE.md:251-254 and :3102-3103: the two documents move on different clocks - current state changes every session, design changes only when a decision changes - so each owns the question it can keep current.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -1579,6 +1805,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** Every stage is labelled as live, built-but-not-connected, or designed-only - one label each, no ambiguity.
 
+**Why.** derivation not recorded.
+
 **Status.** LIVE · date not stated · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:986-988`
@@ -1592,6 +1820,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** Every known unresolved problem has exactly one row in one file, and that row - not the longer write-up beside it - is the official statement of where it stands.
 
+**Why.** Measurement, OPEN_ITEMS.md:3-5: the register was created after a full-repository sweep found 91 open items scattered across 12 tracking surfaces with 11 status contradictions.
+
 **Status.** LIVE · decided 2026-07-26 · ratified by user
 
 **Home.** `OPEN_ITEMS.md:5-10`  ⚠ **home is not a layer specification** — a documentation gap; see `OPEN_ITEMS.md`.
@@ -1604,6 +1834,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 >    `conformance` field is REMOVED.
 
 **In plain words.** This decisions register says what was decided and whether it still stands. Whether the code obeys it is tracked separately, in the open-items register, because those two things change on different clocks.
+
+**Why.** Stated constraint, open_items/OI-208.md:49-54 (the user's recorded rationale): a decision's status changes only when someone rules again, whereas whether the code obeys it changes every time the code moves. Holding both in one row produces a register that silently goes stale - the exact failure the issue register was created to end.
 
 **Status.** LIVE · decided 2026-07-28 · ratified by user
 
@@ -1619,6 +1851,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** A decision about how a stage should work is written into that stage's part of the architecture document. This decisions register only points at it.
 
+**Why.** Stated constraint, open_items/OI-208.md:55-62: the layer specification is where a reader looks for how a layer should work, so a register that held the decision instead of pointing at it would become a second home (#6) and the specification would stay silent.
+
 **Status.** LIVE · decided 2026-07-28 · ratified by user
 
 **Home.** `open_items/OI-208.md:55-57`  ⚠ **home is not a layer specification** — a documentation gap; see `OPEN_ITEMS.md`.
@@ -1633,6 +1867,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **In plain words.** If a document records something, read it and quote it rather than remembering it. Being right from memory does not count, because correct memory and incorrect memory look the same until you check.
 
+**Why.** Stated constraint, `CLAUDE.md` Conventions, with its founding instance recorded there: correct memory is indistinguishable from incorrect memory without checking, and the check is what surfaces the parts the memory did not contain - on 2026-07-28 the Layer-2 specification turned out to state explicitly and twice what had been reported as ambiguous.
+
 **Status.** LIVE · decided 2026-07-28 · ratified by user
 
 **Home.** `CLAUDE.md`  ⚠ **home is not a layer specification** — a documentation gap; see `OPEN_ITEMS.md`.
@@ -1645,6 +1881,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 >   ONLY in its musical sense.
 
 **In plain words.** In this project a score is a piece of music, a key is a tonality, and a measure is a bar. Where a word is needed in its everyday computing sense, it must be qualified - candidate score, map key, measurement.
+
+**Why.** Stated constraint, `CLAUDE.md` Conventions, user-directed 2026-07-28: this is a music-analysis system, so an ambiguous domain vocabulary makes every document harder to read and every specification easier to misapply.
 
 **Status.** LIVE · decided 2026-07-28 · ratified by user
 

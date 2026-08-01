@@ -88,7 +88,8 @@
         "\\(tonic, ?mode, ?chord\\)",
         "estimator is JOINT",
         "option A"
-      ]
+      ],
+      "rationale": "Theory basis cited at ARCHITECTURE.md:9 - `cowork_key_chord_joint_inference_grounding.md`; the forcing constraint is the circular dependency list at ARCHITECTURE.md:637-651 (key<->chord, segmentation<->chord, non-chord-tone<->chord, function<->chord identity), which a feed-forward pipeline cannot resolve correctly."
     },
     {
       "id": "D-002",
@@ -111,7 +112,8 @@
         "gen_embedded_tables",
         "compiled-in constant data",
         "drift guard"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:22-23: compiling the fitted values into the binary provenance-LOCKS them at build time (#16/#19) so they cannot silently drift; the `joint_embedded_tests` drift guard (:27-29) is what makes the lock checkable."
     },
     {
       "id": "D-003",
@@ -131,7 +133,8 @@
         "preset-independent",
         "presets are presentation",
         "preset independent"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-004",
@@ -153,7 +156,8 @@
         "scale-degree-valued",
         "semi-Markov",
         "degree vocabulary"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-005",
@@ -174,7 +178,8 @@
         "production inference layer",
         "adoption record",
         "batch/corpus surface"
-      ]
+      ],
+      "rationale": "Measurement, ARCHITECTURE.md:37-38 and `tools/joint_estimator/adoption_record.json`: on the robust unit the joint decode reads root 77.03 / Roman numeral 64.12 / key-local 78.42 %, against the legacy pipeline's 66.04 / 46.33 / 65.99 %, and the class-(b) hard-stop duration falls 33 % (2,714,000 -> 1,817,280 ticks per preset)."
     },
     {
       "id": "D-006",
@@ -196,7 +201,8 @@
         "no truncation constant",
         "§3.3 GROUP",
         "key axis.*chord axis"
-      ]
+      ],
+      "rationale": "Stated constraint, `cowork_joint_estimator_factorization.md:173-175`: the full posterior, not only the best path, is retained for the published alternatives and the uncertainty surface (#12, no information loss) - the old carry and abstention policies re-express as posterior mass rather than ad-hoc lists."
     },
     {
       "id": "D-007",
@@ -216,7 +222,8 @@
         "LOG-scores",
         "not probabilities",
         "score differences"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:53-55: the published numbers are within-segment content scores re-scored by `segmentContentScore`, so they are log-scores and gaps are score differences; turning them into probabilities needs the forward-backward marginals, which are a separate later step."
     },
     {
       "id": "D-008",
@@ -236,7 +243,8 @@
         "forward-backward marginal",
         "OI-193",
         "marginal posterior"
-      ]
+      ],
+      "rationale": "Same constraint as D-007: the marginals the true probabilities require are not computed by the decode as it stands (ARCHITECTURE.md:55), so the step is named and deferred rather than approximated."
     },
     {
       "id": "D-009",
@@ -258,7 +266,8 @@
         "NotationRecord",
         "notation output-surface",
         "never re-decodes"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:125 and :71-72 - the seams read the record as pure views (#6, one path per concern): the record never re-decodes and never reads the score, so there is exactly one place the in-app answer comes from."
     },
     {
       "id": "D-010",
@@ -280,7 +289,8 @@
         "notation switch",
         "record arm",
         "record path"
-      ]
+      ],
+      "rationale": "Measurement, ARCHITECTURE.md:239-244: every legacy->record difference in the refreshed pipeline-snapshot goldens was reconciled to the P6 classified taxonomy - 0 unexplained, 0 input-scoping, the non-flag-gated surfaces byte-identical - with the P6 report and the OI-178 adoption record cited as the switch's preconditions."
     },
     {
       "id": "D-011",
@@ -302,7 +312,8 @@
         "produceNotationRecord",
         "NO caching",
         "whole-piece"
-      ]
+      ],
+      "rationale": "Recorded for the no-caching half only, ARCHITECTURE.md:114-115: a cache is 'a later, measured concern - #17's funnel, not built speculatively'. The whole-score extent itself has no recorded derivation (open_items/OI-210 records that the last ruling on extent went the other way)."
     },
     {
       "id": "D-012",
@@ -323,7 +334,8 @@
         "no legacy fallback",
         "UNAMBIGUOUS failure",
         "silent fallback"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:117 - #13, a surprise is surfaced as a stop rather than built around: a partial record or a silent fallback would hide the failure from the caller."
     },
     {
       "id": "D-013",
@@ -345,7 +357,8 @@
         "OI-204",
         "chord-track exclude",
         "self-feedback"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:119-123: input selection belongs at the layer that owns its input surface (#7), and doing it there is what stops a populated chord staff's own notes from being fed back into a re-analysis - the self-feedback hazard the legacy design guarded against (ARCHITECTURE.md:5437-5438)."
     },
     {
       "id": "D-014",
@@ -367,7 +380,8 @@
         "pure VIEWS",
         "seam 2",
         "span view"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:125 - #6, one path per concern: a view cannot disagree with the record it reads, a second computation can."
     },
     {
       "id": "D-015",
@@ -386,7 +400,8 @@
       "patterns": [
         "belongs to the segment it STARTS",
         "boundary tick"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-016",
@@ -407,7 +422,8 @@
         "PRESENTATION DERIVATION",
         "display renderings are presentation",
         "grading-form"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:147-148 (Decision D2 + the contract §3.3 amendment), resting on §2.3 (ARCHITECTURE.md:431-433): the analysis layer produces structured data and never display strings, a separation `ChordSymbolFormatter` already establishes."
     },
     {
       "id": "D-017",
@@ -427,7 +443,8 @@
         "inference_presentation_boundary",
         "include-closure",
         "PERMANENTLY GUARDED"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:154-159: the boundary D-071 draws is enforceable only mechanically, so an include-closure test asserts it in both directions and carries a negative control that fires on a perturbed include."
     },
     {
       "id": "D-018",
@@ -450,7 +467,8 @@
         "OI-182",
         "kAssertiveKeyExposureGap",
         "kTentativeKeyExposureGap"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:171 - #6, one thresholding site per gate: the bucket is set once at the section-layer set site and the implode reads it, instead of each consumer re-thresholding."
     },
     {
       "id": "D-019",
@@ -472,7 +490,8 @@
         "nats",
         "NO \\[0,1\\] remap",
         "no \\[0,1\\] remap"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-020",
@@ -494,7 +513,8 @@
         "OI-203",
         "bounded-window decode cache",
         "keyed .*cache"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:207-209: bypassing the bounded-window cache is recorded as a cost, not a structural incompatibility - a record cache is 'a later measured concern', the same measure-before-build funnel as D-011."
     },
     {
       "id": "D-021",
@@ -515,7 +535,8 @@
         "pedal.*suspend",
         "isPedalPoint.*false",
         "ornament-label"
-      ]
+      ],
+      "rationale": "Stated constraint, open_items/OI-194.md:7: the labels' independent validation resource is not on disk, and coupling an open establishment question to the one commit whose verification must be airtight would mix the two (#22/#13); publication before validation is lawful only status-marked unvalidated with no consumer under load (#19)."
     },
     {
       "id": "D-022",
@@ -536,7 +557,8 @@
         "constant-sonority slice",
         "derived view",
         "atomic analysis unit"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:748-750: analysing at the finest grain is what makes segmentation a fact rather than a judgment (over-grab becomes structurally impossible), it aligns the architecture with the per-slice oracle measurement already built, and it matches the published state of the art - Contrapunctus labels every event."
     },
     {
       "id": "D-023",
@@ -556,7 +578,8 @@
         "never the metric beat",
         "atomic analysis unit",
         "constant-sonority slice"
-      ]
+      ],
+      "rationale": "Same passage as D-022, ARCHITECTURE.md:746-750: the metric beat is not where harmony is well-defined; the constant-sonority slice is, and every coarser unit is derived from it."
     },
     {
       "id": "D-024",
@@ -577,7 +600,8 @@
         "only in the calibration",
         "never in structure",
         "Universality in the fact layers"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:753-756: confining style to the calibration of the judgment layers sharpens §2.1 - not merely data-driven style, but style kept out of the layers that carry facts, so the fact surface cannot silently differ between styles."
     },
     {
       "id": "D-025",
@@ -599,7 +623,8 @@
         "no back-edge",
         "gated, constrained joint step",
         "localized forward recompute"
-      ]
+      ],
+      "rationale": "Measurement, ARCHITECTURE.md:723-726: the investigation measured the full joint cross-layer search INERT, and located the realisable gain in soft-evidence quality carried forward (calibrated confidence + ranked alternatives) rather than global cycling."
     },
     {
       "id": "D-026",
@@ -620,7 +645,8 @@
         "joint cross-layer search",
         "joint-lattice",
         "hypothesis lattice"
-      ]
+      ],
+      "rationale": "The measurement itself (ARCHITECTURE.md:723-724). What the record does NOT state is how it was reconciled with the 2026-07-17 joint estimator, which is one - see open_items/OI-234."
     },
     {
       "id": "D-027",
@@ -641,7 +667,8 @@
         "ranked alternatives",
         "never a forced point estimate",
         "carried readings"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:681-683: irrevocable point estimates block iteration and provisional results with confidence metadata enable it, so every layer's output must carry the alternatives and the confidence a later layer would need to overturn it."
     },
     {
       "id": "D-028",
@@ -664,7 +691,8 @@
         "key-span",
         "region.*banned",
         "harmonic region.*chord-span"
-      ]
+      ],
+      "rationale": "Research citation, ARCHITECTURE.md:787 - the span typology follows the GTTM premise of independent structures (Lerdahl & Jackendoff); the ban on the bare word is because a 'region' is a FAMILY of spans and the unqualified word names none of them (:765, :786-787)."
     },
     {
       "id": "D-029",
@@ -684,7 +712,8 @@
         "verifiability contract",
         "empirically-unvalidated",
         "alternative-confidence path"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:794-797: checking against ground truth is how we catch our own theory errors, and refusing sound theory we cannot yet check would forfeit the jazz and pop reach, where the theory exists and the corpus does not."
     },
     {
       "id": "D-030",
@@ -708,7 +737,8 @@
         "dirty span",
         "append-only\\s+extension",
         "incremental re-analysis"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:798-802: the analysis runs on the user's selection, so a layer needing more must request an append-only extension from Layer 1 carrying a stop condition and a hard bound. The three binding scale requirements R1-R3 are stated there; the detailed cross-layer specification is `cowork_bounded_context_design.md`."
     },
     {
       "id": "D-031",
@@ -727,7 +757,8 @@
       "patterns": [
         "degenerate case",
         "selection = score"
-      ]
+      ],
+      "rationale": "Same passage, ARCHITECTURE.md:802: whole-score analysis is what the bounded-context rule produces when the selection happens to be the whole score - a case of the rule, not an exception to it."
     },
     {
       "id": "D-032",
@@ -751,7 +782,8 @@
         "U2",
         "layer boundary.*confidence",
         "squash"
-      ]
+      ],
+      "rationale": "Stated constraint, `cowork_confidence_contract.md:13-21` ('Why this contract exists'): the forward-override mechanism numerically compares a later layer's contradiction strength against an earlier layer's confidence, and those quantities are incommensurable by construction today - Layer 3 publishes a sequence margin, Layer 4 a three-part composite, Layer 5 an unbounded additive score. Fitting weights cannot repair a comparison between quantities with undefined semantics; it would bury the incoherence in fitted constants."
     },
     {
       "id": "D-033",
@@ -773,7 +805,8 @@
         "minimality",
         "maximal information",
         "uses all the information"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:807-810: the single-responsibility half is what lets a layer say what it does NOT own, and the maximal-information half is what stops that ownership from being read as permission to ignore evidence Layer 1 already carries."
     },
     {
       "id": "D-034",
@@ -794,7 +827,8 @@
         "separation of concerns",
         "proportionality",
         "Contrapunctus reminder"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:824-831: gate (1) separation of concerns is a structural mandate sufficient on its own even at zero accuracy gain; gates (2) verifiability and (3) proportionality exist against the opposite error, and the record names the reminder - Contrapunctus is competitive with the state of the art with NO explicit grouping layer."
     },
     {
       "id": "D-035",
@@ -816,7 +850,8 @@
         "cost-driving choice",
         "quality/ambition",
         "separable on/off"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:737-741: the effort dial is a calibration knob, not a structural one, so its two standing rules follow - every cost-driving choice is an explicit setting, and every optional expensive refinement is a cleanly separable stage."
     },
     {
       "id": "D-036",
@@ -837,7 +872,8 @@
         "accumulating scoring heuristics",
         "more gates",
         "heuristic patch"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:657-661: each gate is a heuristic patch on a structural limitation, so a rising gate count is a symptom of missing iteration rather than an argument for more gates."
     },
     {
       "id": "D-037",
@@ -859,7 +895,8 @@
         "single source of truth for",
         "lossless.*note",
         "notemodel"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:1008: one read of the score into one queryable set is what makes the note model the single source of truth for what sounds; the alternative is several readers that can disagree."
     },
     {
       "id": "D-038",
@@ -881,7 +918,8 @@
         "no horizon",
         "backward cap",
         "tied group"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:1008: tied groups are merged into one span and one onset via the score model's own tie links, and spans are answered by overlap with no horizon - which retires the old four-whole-note backward cap that could miss a longer sustain."
     },
     {
       "id": "D-039",
@@ -902,7 +940,8 @@
         "never dropped",
         "staffEligible",
         "no information loss"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:1008, and #12: a dropped note is information lost for good, so ineligible notes are kept and flagged and each consumer decides what to do with them."
     },
     {
       "id": "D-040",
@@ -923,7 +962,8 @@
         "tie-UNRESOLVED",
         "tieContinuation",
         "resolvedIndex"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:1008: the tie-unresolved atoms carry the facts the tie-resolved surface discards and the joint estimator's event lattice and emission covariates need; publishing them additively keeps every existing consumer byte-identical."
     },
     {
       "id": "D-041",
@@ -944,7 +984,8 @@
         "no gaps and no overlaps",
         "tile the domain",
         "covering, lossless"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:1045: a covering, lossless tiling is what makes the slicer a fact rather than a judgment - every tick lands in exactly one slice, so nothing the score sounds can fall between slices."
     },
     {
       "id": "D-042",
@@ -965,7 +1006,8 @@
         "every release",
         "release.*boundar",
         "sorted-unique union"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:1045 with :1077-1080: taking every onset AND every release makes the boundary set an exhaustive candidate grid - necessary but not sufficient - so a real chord change can never be missed and over-grab is structurally impossible."
     },
     {
       "id": "D-043",
@@ -986,7 +1028,8 @@
         "sounding-NOTE set",
         "octave-folded",
         "sounding note set"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:1052-1053: identity is the note set and not the octave-folded pitch-class set, because a unison or octave shrink is a real boundary even though the pitch-class set is unchanged."
     },
     {
       "id": "D-044",
@@ -1007,7 +1050,8 @@
         "passed through, not",
         "overlapping\\(\\)",
         "passenger metadata"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:1049-1051: a slice is 'constant TONAL sonority', so an ineligible note opens no boundary; dropping it as well would lose it (#12), and it is carried as passenger metadata instead."
     },
     {
       "id": "D-045",
@@ -1027,7 +1071,8 @@
         "never re-decided",
         "eligibility annotation",
         "does not re-filter"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:1047-1049: eligibility is Layer 1's decision, and a second filter in Layer 2 would be a second place the same question is answered (#6/#7)."
     },
     {
       "id": "D-046",
@@ -1048,7 +1093,8 @@
         "no thresholds",
         "min-gap",
         "ornamental/passing/structural"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:1072-1074: a threshold or a merge would make the slicer a judgment; with none, its output is a fact and the judgment stays where it belongs, in the layers that decide."
     },
     {
       "id": "D-047",
@@ -1068,7 +1114,8 @@
         "No special-casing",
         "grace and tuplet",
         "needs no grace"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:1073-1077, verified at the source: a grace note carries onset = the parent chord's tick and duration = its nominal written value, and tuplet ticks are the model's real un-snapped ticks, so both fall out of the note-model spans as facts and the slicer needs no grace or tuplet code at all."
     },
     {
       "id": "D-048",
@@ -1089,7 +1136,8 @@
         "over-grab",
         "exhaustive candidate grid",
         "never asserts a change"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:1077-1080: because the boundary grid is exhaustive, the slicer never asserts a change - Layer 3 decides which boundaries are real and a later layer groups equal analyses."
     },
     {
       "id": "D-049",
@@ -1109,7 +1157,8 @@
         "EMPTY slice",
         "empty slice",
         "all eligible voices rest"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:1063-1065: an explicit empty slice falls out of the consecutive-boundary construction for free, and it keeps the covering guarantee (D-041) true through a silence, which a gap would break."
     },
     {
       "id": "D-050",
@@ -1131,7 +1180,8 @@
         "sustained-out",
         "clip is inert",
         "re-slice equivalence"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:1055-1070 with `cowork_layer2_reslice_design.md` §2: the clip is what makes re-slice equivalence hold - re-slicing an enlarged span reproduces the narrower result, with interior change-points stable and only the edge slice abutting the artificial boundary extending - so extending the span is lawful rather than a re-analysis."
     },
     {
       "id": "D-051",
@@ -1153,7 +1203,8 @@
         "keymodesequence",
         "sequence decoder",
         "per-region resolver"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-052",
@@ -1173,7 +1224,8 @@
         "resolveKeySignatureContext",
         "partialSignatureCorrection",
         "signature read"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-053",
@@ -1195,7 +1247,8 @@
         "P4-redecode",
         "analyzeHarmonicContextLocallyAtTick",
         "tickLocal"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-054",
@@ -1216,7 +1269,8 @@
         "Harmonic major modes",
         "252 candidates",
         "mode prior"
-      ]
+      ],
+      "rationale": "Recorded for the DEFERRAL half only, ARCHITECTURE.md:2213-2217: the harmonic major modes are significantly rarer as tonal centers than the melodic and harmonic minor modes, and the validation corpus is unlikely to calibrate them well. Why the other 21 modes are all scored against all 12 tonics has no recorded derivation."
     },
     {
       "id": "D-055",
@@ -1237,7 +1291,8 @@
         "21 independent",
         "mode tier",
         "ModePriorPreset"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-056",
@@ -1258,7 +1313,8 @@
         "declaredMode",
         "weak hint",
         "bypass gate"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:3120-3122: the notated signature is what the composer wrote down, not what the music does - a piece may modulate, be notated in a partial signature, or contradict its own signature - so it enters as a weak hint the sounding notes can outvote."
     },
     {
       "id": "D-057",
@@ -1279,7 +1335,8 @@
         "Actual sounding notes",
         "literally happening now",
         "priority-of-evidence"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:3134-3141: the priority table ranks the actual sounding notes the strongest evidence, above the notated signature and above any prior result, for the same reason as D-056."
     },
     {
       "id": "D-058",
@@ -1300,7 +1357,8 @@
         "piece-start hysteresis",
         "first 16 quarter-note",
         "confidence 0.5"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-059",
@@ -1322,7 +1380,8 @@
         "16-beat lookback",
         "time decay",
         "0\\.7× per measure"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-060",
@@ -1343,7 +1402,8 @@
         "vertical/contextual boundary",
         "contextual harmony layer",
         "Design boundary"
-      ]
+      ],
+      "rationale": "Measurement, ARCHITECTURE.md:1859-1879: the boundary is recorded as empirically validated against DCML annotations over four corpora (2026-04-06), and the residual disagreement is diagnosed rather than assumed - 95.8 % of the bass-is-root disagreements are three-note triads in inversion, which local note content cannot resolve. Improving past that ceiling is stated to need a contextual harmony layer, NOT heuristics inside the vertical analyzer. (The same section then specifies contextual bonuses - open_items/OI-235.)"
     },
     {
       "id": "D-061",
@@ -1365,7 +1425,8 @@
         "must not be\\s+loosened",
         "Never widen a Baroque-tuned",
         "preset-specific threshold"
-      ]
+      ],
+      "rationale": "Measurement, ARCHITECTURE.md:1573-1581 and `CLAUDE.md` gate policy: the values are empirically calibrated against the Baroque corpus and are Baroque-specific, so loosening one to accommodate another style silently re-tunes the style they were measured on; the two sanctioned fixes are a tighter structural entry condition that excludes the chord type in all styles, or a preset-specific override leaving the Baroque default unchanged."
     },
     {
       "id": "D-062",
@@ -1386,7 +1447,8 @@
         "explorationMode",
         "Segmentation phase",
         "progression signals.*withheld"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:1776-1779 (the withheld signals 'prevent the bonus from biasing segmentation before the final per-region pass') with :641-644: where a boundary falls decides which pitch classes land in each candidate's input, and chord identity is itself a signal for where boundaries should be - so letting progression signals score the exploratory passes would let the answer decide its own input."
     },
     {
       "id": "D-063",
@@ -1408,7 +1470,8 @@
         "cold context",
         "cold-analyzes",
         "null context"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-064",
@@ -1429,7 +1492,8 @@
         "measurement-only artifact",
         "kDefaultChordAnalyzerPreferences",
         "preset chordPrefs"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-065",
@@ -1449,7 +1513,8 @@
         "excludeLookAheadOnDenseStart",
         "intentionally divergent",
         "Corelli trio-sonata dominants"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-066",
@@ -1470,7 +1535,8 @@
         "never be used as analyzer input",
         "inject-written-root",
         "Authoritative Chord Symbol"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:2300-2302: written chord symbols are USER CONTENT and may be incorrect, so reading them back as input would make the analyzer agree with whatever it was given rather than with the notes. The `--inject-written-root` flag is kept as a diagnostic upper bound and is explicitly not a production path."
     },
     {
       "id": "D-067",
@@ -1492,7 +1558,8 @@
         "analyzeScoreJazz",
         "forceClassicalPath",
         "Retirement rationale"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-068",
@@ -1512,7 +1579,8 @@
         "Minimum 3 distinct pitch classes",
         "3-PC minimum",
         "distinctPcs >= 3"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-069",
@@ -1533,7 +1601,8 @@
         "As-written mode",
         "Harmonic summary mode",
         "octave dedup"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-070",
@@ -1554,7 +1623,8 @@
         "style identity",
         "no conditional logic based on style",
         "styleName =="
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:388-390 with the worked wrong/correct pair at :392-402: if behaviour branched on a style's identity, adding or renaming a style would require C++ changes; driving it from parameters means it never does."
     },
     {
       "id": "D-071",
@@ -1575,7 +1645,8 @@
         "never produce display strings",
         "analysis produces data",
         "§2\\.3"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:431-433: the separation is already established by `ChordSymbolFormatter`, and keeping it means the same analysis can be rendered several ways without the analysis knowing about any of them."
     },
     {
       "id": "D-072",
@@ -1597,7 +1668,8 @@
         "bridge pattern",
         "NO engraving dependency",
         "notation bridge"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-073",
@@ -1619,7 +1691,8 @@
         "one path per concern",
         "do not copy-paste",
         "§2\\.10"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:484-502: the notation bridge and `batch_analyze` must produce identical results, so shared logic lives in the composing module both call; mirroring is permitted only when a shared implementation is blocked by a dependency constraint, and then only with a marked technical-debt note."
     },
     {
       "id": "D-074",
@@ -1639,7 +1712,8 @@
         "never modifies the main score",
         "explicit user action",
         "Analyze and Suggest"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:475-480: the chord staff, the status bar and the panels are informational - they show what was inferred - and every change to the music is the user's explicit act through standard MuseScore editing."
     },
     {
       "id": "D-075",
@@ -1661,7 +1735,8 @@
         "abstract interface",
         "ML substitutability",
         "substitution point"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:406-408: the rest of the system depends only on the interface, so a machine-learning implementation can replace a rule-based one without any consumer changing."
     },
     {
       "id": "D-076",
@@ -1681,7 +1756,8 @@
         "Score Inspection Before Diagnosis",
         "score inspection",
         "must not substitute"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:524-545: score inspection takes two minutes and answers what corpus statistics cannot - the actual texture, whether the chord staff is over-segmenting, whether the opening key is right - and Claude Code has no score access, so it must not substitute statistical inference for looking."
     },
     {
       "id": "D-077",
@@ -1702,7 +1778,8 @@
         "IComposingChordStaffConfiguration",
         "IComposingConfiguration",
         "modularity_interfaceInfo"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-078",
@@ -1723,7 +1800,8 @@
         "value-types LEAF",
         "types leaf",
         "header back-edge"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-079",
@@ -1744,7 +1822,8 @@
         "never\\s+rewrites the committed",
         "additive over L4",
         "Roman numeral.*precise superset"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-080",
@@ -1765,7 +1844,8 @@
         "never re-derived",
         "abstention.*resolved by",
         "OpenQuestionLabel"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-081",
@@ -1786,7 +1866,8 @@
         "cadence detector",
         "votes for the key",
         "functioncadence"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-082",
@@ -1807,7 +1888,8 @@
         "no feedback into L5",
         "key-areas",
         "cowork_layer6_grouping_design"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-083",
@@ -1827,7 +1909,8 @@
         "out of the validatable core",
         "prolongation",
         "periods/sentences"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-084",
@@ -1848,7 +1931,8 @@
         "recognition consumer",
         "Harmonic Vocabulary",
         "schema recognizer"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-085",
@@ -1871,7 +1955,8 @@
         "VL-C",
         "cross-ARI",
         "texture classification"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-086",
@@ -1891,7 +1976,8 @@
         "presentation choices",
         "analyzeForChordFunction",
         "alternative formatters"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:5505-5507: Roman numerals and Nashville numbers encode identical information, so showing both on one staff would be redundant and would destroy legibility - which makes the choice a display preference, not two analyses."
     },
     {
       "id": "D-087",
@@ -1913,7 +1999,8 @@
         "formatSymbol",
         "formatRomanNumeral",
         "chordsymbolformatter"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-088",
@@ -1933,7 +2020,8 @@
         "Key Signature Injection",
         "key signature insertions",
         "Not Planned"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:475-480 (§2.9): writing a key signature into the score would be the system modifying the music without the user asking."
     },
     {
       "id": "D-089",
@@ -1956,7 +2044,8 @@
         "tentative.*assertive",
         "kAnnotateKeyConfidenceThreshold",
         "legacyKeyExposureBucket"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-090",
@@ -1977,7 +2066,8 @@
         "high precision on exposed",
         "coverage gains only after",
         "abstention.*valid outcome"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:3294-3302 and its consumer rules at :5604-5612: the stated product target is not 'always emit a label' but high precision on exposed results, calibrated abstention when evidence is weak, and coverage gains only after precision is acceptable - so below the confidence bar the key-dependent annotations are suppressed rather than printed tentatively."
     },
     {
       "id": "D-091",
@@ -1998,7 +2088,8 @@
         "Doc governance",
         "this one wins",
         "not rival architecture docs"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:256-264: the per-layer design documents are the authoritative detail for their own scope but are not rival architecture documents; without one document that wins, a reader has no way to resolve a disagreement between two."
     },
     {
       "id": "D-092",
@@ -2018,7 +2109,8 @@
         "cross-cutting contract",
         "stated once",
         "never redefined"
-      ]
+      ],
+      "rationale": "Same passage, ARCHITECTURE.md:260-261: a cross-cutting contract restated in a layer document is a second copy that can drift (#6); a layer document may USE the span typology or the verifiability contract, not redefine them."
     },
     {
       "id": "D-093",
@@ -2038,7 +2130,8 @@
         "STATUS\\.md wins",
         "Living design document",
         "Update STATUS\\.md as your last act"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:251-254 and :3102-3103: the two documents move on different clocks - current state changes every session, design changes only when a decision changes - so each owns the question it can keep current."
     },
     {
       "id": "D-094",
@@ -2059,7 +2152,8 @@
         "Built\\+Dormant",
         "Design-only",
         "Layer status legend"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-095",
@@ -2082,7 +2176,8 @@
         "retirement map",
         "declared migration state",
         "#23"
-      ]
+      ],
+      "rationale": "Stated constraint, `CLAUDE.md` principle #23 and open_items/OI-180: an end-state principle (#6, one path per concern) that a planned change must temporarily violate needs a lawful transition - the violation declared, bounded, and pre-ratified with a retirement map - so that migration is a first-class state rather than an undeclared exception."
     },
     {
       "id": "D-096",
@@ -2104,7 +2199,8 @@
         "forms from theory",
         "theory-grounded factor",
         "term-level theory-grounding"
-      ]
+      ],
+      "rationale": "Stated constraint, OPEN_ITEMS.md:25 (the governing architecture decision banner) with `CLAUDE.md` #8 and DEFECT_TYPES.md DT-2: a value tuned per case is fitted to the case and measures nothing on the next one."
     },
     {
       "id": "D-097",
@@ -2128,7 +2224,8 @@
         "5-fold",
         "fit/evaluation separation",
         "k-fold"
-      ]
+      ],
+      "rationale": "Stated constraint, `CLAUDE.md` #20: no value is graded on data that helped fit it, so the split and the capacity budget are declared BEFORE fitting and the headline claim is the held-out figure; a fitted-and-self-measured number is not established (#19). The ratified protocols are open_items/OI-176 (5-fold cross-validation grouped by ground-truth file) and OI-177 (parameter inventory, cell own-estimate only at count >= 20, <= 12 weights)."
     },
     {
       "id": "D-098",
@@ -2151,7 +2248,8 @@
         "reachability",
         "force-added",
         "circle-of-fifths"
-      ]
+      ],
+      "rationale": "Stated constraint, `cowork_joint_estimator_factorization.md:170-173`: exact decode is expected tractable at chorale-scale event counts, and the reserve prune is an inference technique requiring its own established-loss measurement, never a silent heuristic. What the decoder actually prunes has no recorded derivation at all (open_items/OI-226)."
     },
     {
       "id": "D-099",
@@ -2172,7 +2270,8 @@
         "finding by exclusion",
         "exclusion evidence",
         "#12"
-      ]
+      ],
+      "rationale": "Stated constraint, `CLAUDE.md` #12: a ruled-out possibility is evidence - finding by exclusion - so it is carried at low confidence unless the exclusion is recomputable from what is kept."
     },
     {
       "id": "D-100",
@@ -2195,7 +2294,8 @@
         "declared dormancy",
         "evidence inventory",
         "siloed facts"
-      ]
+      ],
+      "rationale": "Stated constraint, `CLAUDE.md` fact-publication corollary, with its evidence named there: `cowork_siloed_facts_audit.md` found 17 instances of facts being re-derived rather than read. The 2026-07-12 amendment's own recorded reason is the user's: a visible spread of published evidence lets a future design RECOGNIZE facts it would never have thought to ask for."
     },
     {
       "id": "D-101",
@@ -2218,7 +2318,8 @@
         "stepwiseBassInversionBonus",
         "sameRootInversionBonus",
         "three-attempt history"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:1643-1646: recorded as a hard-won safety constraint, the lesson of a three-attempt history in which the bonuses fired on qualities they were not measured on."
     },
     {
       "id": "D-102",
@@ -2239,7 +2340,8 @@
         "supportsContextualInversionBonuses",
         "qualifiesForCompleteTriadInversionBonus",
         "equal footing"
-      ]
+      ],
+      "rationale": "Measurement, ARCHITECTURE.md:1931-1939: keeping D-101's constraint made correct inverted readings unreachable, and extending the two helper predicates to augmented and half-diminished was 'the largest single improvement of iteration path 1'."
     },
     {
       "id": "D-103",
@@ -2261,7 +2363,8 @@
         "pedalConfidenceThreshold",
         "isBassChordTone",
         "different-root competitor"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:3617-3622: a single pass over an organ point either forces a bass-root reading and suppresses the upper-voice harmony, or returns a slash chord with the wrong root when a template accidentally fits. The 'different-root competitor' detail carries its own recorded reason at :3640-3643 - several templates share a root, so a gap measured against rank 2 collapses to about 0.047 and blocks detection for bare triads."
     },
     {
       "id": "D-104",
@@ -2282,7 +2385,8 @@
         "bassRootThirdOnlyMultiplier",
         "bassRootAloneMultiplier",
         "bass-root"
-      ]
+      ],
+      "rationale": "Measurement, ARCHITECTURE.md:3405-3424: four corpora (Chopin mazurka, Mozart sonata, Corelli trio sonata, Beethoven quartet) were inspected at the score and found to share ONE mechanism - the bass moves faster than the harmonic rhythm, so each bass note independently takes the bonus and overrides the root the chord tones above already identify. The fix conditions the bonus on corroborating root-position support rather than shrinking it."
     },
     {
       "id": "D-105",
@@ -2305,7 +2409,8 @@
         "one interpreter",
         "tpcForPc",
         "line-of-fifths"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:1172-1174 - 'one interpreter, not a per-layer tpc copy' (#6): two interpreters of the notated spelling can disagree, and open_items/OI-173 records what that costs when it happens (four inequivalent definitions of the same predicate)."
     },
     {
       "id": "D-106",
@@ -2328,7 +2433,8 @@
         "Ger\\+6",
         "Fr\\+6",
         "augSixthSubType"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-107",
@@ -2348,7 +2454,8 @@
         "American English",
         "analyser",
         "behaviour"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:440-450: MuseScore's own codebase is American English, so one spelling convention throughout is what keeps identifiers matching across the boundary."
     },
     {
       "id": "D-108",
@@ -2368,7 +2475,8 @@
         "Cross-Platform by Default",
         "every platform officially supported",
         "platform-agnostic"
-      ]
+      ],
+      "rationale": "Stated constraint, ARCHITECTURE.md:624-630: the code must run on every platform MuseScore Studio officially supports, so platform-specific code is permitted only when unavoidable and must be abstracted so the rest of the module stays platform-agnostic."
     },
     {
       "id": "D-109",
@@ -2389,7 +2497,8 @@
         "open-items register",
         "authoritative status surface",
         "index row AND its detail file"
-      ]
+      ],
+      "rationale": "Measurement, OPEN_ITEMS.md:3-5: the register was created after a full-repository sweep found 91 open items scattered across 12 tracking surfaces with 11 status contradictions."
     },
     {
       "id": "D-110",
@@ -2410,7 +2519,8 @@
         "OI-208",
         "conformance field",
         "WHAT WAS DECIDED"
-      ]
+      ],
+      "rationale": "Stated constraint, open_items/OI-208.md:49-54 (the user's recorded rationale): a decision's status changes only when someone rules again, whereas whether the code obeys it changes every time the code moves. Holding both in one row produces a register that silently goes stale - the exact failure the issue register was created to end."
     },
     {
       "id": "D-111",
@@ -2431,7 +2541,8 @@
         "layer specification",
         "substitute home",
         "documentation gap"
-      ]
+      ],
+      "rationale": "Stated constraint, open_items/OI-208.md:55-62: the layer specification is where a reader looks for how a layer should work, so a register that held the decision instead of pointing at it would become a second home (#6) and the specification would stay silent."
     },
     {
       "id": "D-112",
@@ -2452,7 +2563,8 @@
         "primary source",
         "documented facts",
         "file:line"
-      ]
+      ],
+      "rationale": "Stated constraint, `CLAUDE.md` Conventions, with its founding instance recorded there: correct memory is indistinguishable from incorrect memory without checking, and the check is what surfaces the parts the memory did not contain - on 2026-07-28 the Layer-2 specification turned out to state explicitly and twice what had been reported as ambiguous."
     },
     {
       "id": "D-113",
@@ -2475,7 +2587,8 @@
         "OI-229",
         "terminology collision",
         "bare word"
-      ]
+      ],
+      "rationale": "Stated constraint, `CLAUDE.md` Conventions, user-directed 2026-07-28: this is a music-analysis system, so an ambiguous domain vocabulary makes every document harder to read and every specification easier to misapply."
     },
     {
       "id": "D-114",
@@ -2496,7 +2609,8 @@
         "MAP path",
         "abstain",
         "OI-33"
-      ]
+      ],
+      "rationale": null
     },
     {
       "id": "D-115",
@@ -2520,7 +2634,8 @@
         "robust_stop",
         "hard stop",
         "granularity-robust"
-      ]
+      ],
+      "rationale": "Measurement, `CLAUDE.md` gate block (C): the batch region gate it replaced under-counted the true per-onset root error by roughly 15 to 56 times - it measured a small music21-filtered corner in which pitch-class-undecidable rotations were about 53 % of the residual, against about 3.5 % on the robust unit - so the robust unit is governed by the meaningful errors and is segmentation-invariant by construction."
     }
   ]
 }
