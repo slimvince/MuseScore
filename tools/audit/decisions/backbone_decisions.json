@@ -11,7 +11,13 @@
       "deferred": "decided to be built later; the decision itself stands",
       "not-stated": "the record does not say - NEVER inferred"
     },
-    "home_rule": "OI-208 ruling 2 - a decision belongs in the OWNING LAYER'S SPECIFICATION. 'home' is where it IS recorded; 'home_is_layer_spec' false means the register points at a non-specification home, which is a documentation gap unless the decision is not a layer decision at all."
+    "home_rule": "OI-208 ruling 2 - a decision belongs in the OWNING LAYER'S SPECIFICATION. 'home' is where it IS recorded; 'home_is_layer_spec' false means the register points at a non-specification home, which is a documentation gap unless the decision is not a layer decision at all.",
+    "scope": {
+      "read_in_full": "ARCHITECTURE.md lines 1-3981 — the preamble (the joint estimator, the posterior slice, the A-native notation record, the record path P0-P7, doc governance), §2 Architectural Principles including §2.14 and §2.15, §3.3 Module Boundaries including the Layer 1-6 specifications and the path-divergence decisions, §4 Existing Components (§4.1-§4.6), and §5 Planned Analysis Extensions (§5.1-§5.16). Plus, targeted and cited: CLAUDE.md, OPEN_ITEMS.md and its detail files, cowork_confidence_contract.md, cowork_design_doc_template.md.",
+      "not_read_in_full": "ARCHITECTURE.md lines 3982-6523 — §6 The Style System through §19 LLM Integration, plus the appendices. These specify the style system, the knowledge base, the generation components, the constraint system, visualization, intonation, the user interface, persistence, machine-learning readiness, development phases, the scope reference, coding standards, contributing, and LLM integration. None of them is a layer of the harmonic-analysis stack this adjudication was scoped to.",
+      "measured_remainder": "The harvest holds 241 candidate statements sourced to ARCHITECTURE.md: 176 fall in the read range and 65 in the unread range (31 of those admitted by the harvest's HIGH signature tier). Decisions stated only in the unread range are NOT in this register.",
+      "why_declared": "DEFECT_TYPES.md DT-26 — scope-assumed enumeration. A sweep that is complete inside its own file set reads as complete about the whole question. The scope and its measured remainder are therefore stated rather than left implicit."
+    }
   },
   "groups": [
     {
@@ -176,7 +182,7 @@
       "title": "The published uncertainty surface is two full candidate lists, with no truncation",
       "verbatim": "publishes, per\n> committed segment, the ESTABLISHED content-score uncertainty surface as two full candidate lists (no truncation\n> constant)",
       "plain": "For every chord it commits to, the estimator also publishes how every other tonality and every other chord would have scored - the complete lists, not a top-few.",
-      "home": "ARCHITECTURE.md:46-49",
+      "home": "ARCHITECTURE.md:47-49",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -238,7 +244,7 @@
       "title": "The notation record is the ONE surface the in-app path reads, and it never re-decodes",
       "verbatim": "assembles the ONE surface the in-app notation path will read (Decision A2), from the\n> decode outputs + the decode's prior inputs + the compiled-in provenance — it NEVER re-decodes and never reads the\n> score.",
       "plain": "Everything the program shows you about harmony in the score comes from one assembled result. Nothing downstream re-runs the analysis or looks at the notes again.",
-      "home": "ARCHITECTURE.md:69-72",
+      "home": "ARCHITECTURE.md:70-72",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -1873,7 +1879,7 @@
       "title": "Roman numerals and Nashville numbers are presentation choices, not separate analyses",
       "verbatim": "Roman numerals and Nashville numbers are **presentation choices**, not\n  separate analyses — they are alternative formatters on the same `ChordAnalysisResult`.",
       "plain": "Showing the harmony as Roman numerals or as Nashville numbers is a choice of how to display one and the same analysis.",
-      "home": "ARCHITECTURE.md:2993-2995",
+      "home": "ARCHITECTURE.md:2994-2995",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -2084,7 +2090,7 @@
       "title": "Fitted values are fit once against ground truth, never per-case tuned",
       "verbatim": "forms from theory, values fit ONCE against GT (#19), never per-case tuned",
       "plain": "The shape of each piece of evidence comes from music theory. Its numerical strength is learned once from annotated music, and never adjusted to make a particular passage come out right.",
-      "home": "OPEN_ITEMS.md:26",
+      "home": "OPEN_ITEMS.md:25",
       "home_is_layer_spec": false,
       "status": "live",
       "date": "2026-07-17",
@@ -2130,7 +2136,7 @@
       "title": "The exact-decode reserve - the declared prune was never adopted",
       "verbatim": "the exact-decode reserve is the declared remedy (never budgeted at fitted weights)",
       "plain": "The estimator was meant to be allowed to narrow its search when that gets too slow. The narrowing rule that was specified turned out to cost more than it saved, so the estimator still searches exactly - and how it actually narrows in practice was never specified.",
-      "home": "OPEN_ITEMS.md:185",
+      "home": "OPEN_ITEMS.md:194",
       "home_is_layer_spec": false,
       "status": "live",
       "date": "not stated",
@@ -2220,7 +2226,7 @@
       "title": "Augmented and half-diminished candidates receive the inversion bonuses too (Iter 46)",
       "verbatim": "Extending these gates put Augmented and\nHalfDiminished inversion candidates on equal footing with Major/Minor.",
       "plain": "The restriction above was later relaxed for augmented and half-diminished chords, because without the bonuses their correct inverted readings never reached the shortlist at all. It was the single largest improvement of that iteration path.",
-      "home": "ARCHITECTURE.md:1937-1939",
+      "home": "ARCHITECTURE.md:1938-1939",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -2370,7 +2376,7 @@
       "title": "The open-items register is the one home for every unresolved issue, and the index is the status of record",
       "verbatim": "this file is the complete INDEX and\n> the **authoritative status surface**",
       "plain": "Every known unresolved problem has exactly one row in one file, and that row - not the longer write-up beside it - is the official statement of where it stands.",
-      "home": "OPEN_ITEMS.md:9-10",
+      "home": "OPEN_ITEMS.md:5-10",
       "home_is_layer_spec": false,
       "status": "live",
       "date": "2026-07-26",

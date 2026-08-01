@@ -171,6 +171,18 @@ def render(backbone: dict, disp: dict) -> str:
                "`tools/audit/decisions/cluster_dispositions.csv` and "
                "`tools/audit/decisions/disposition_manifest.json`.")
     out.append("")
+    sc = backbone["header"].get("scope")
+    if sc:
+        out.append("### What was read, and what was not")
+        out.append("")
+        out.append(f"**Read in full.** {sc['read_in_full']}")
+        out.append("")
+        out.append(f"**Not read in full.** {sc['not_read_in_full']}")
+        out.append("")
+        out.append(f"**The remainder, measured.** {sc['measured_remainder']}")
+        out.append("")
+        out.append(f"*Why this is stated at all:* {sc['why_declared']}")
+        out.append("")
     out.append("---")
     out.append("")
 

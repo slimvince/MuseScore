@@ -136,31 +136,74 @@ def head_commit() -> str:
 
 # ── Establishment: every backbone quote must be findable at its cited home ────
 
+def find_start_line(lines: list[str], needle: str, span: int) -> int | None:
+    """First 1-based line at which `needle` (normalized) starts, or None."""
+    # A window of span+4 lines starting anywhere at or before the true start still contains the
+    # needle, so the FIRST match is up to 4 lines early. The LAST match is the true start.
+    window = span + 4
+    last = None
+    for i in range(len(lines)):
+        if not lines[i]:
+            continue
+        joined = re.sub(r"\s+", " ", " ".join(lines[i:i + window])).strip()
+        if needle in joined:
+            last = i + 1
+    return last
+
+
 def verify_backbone(backbone: dict) -> int:
-    misses = []
-    cache: dict[str, str] = {}
+    """Establishment (#19): every verbatim quote must exist at its cited home, AND the cited
+    line number must be where it actually starts (DT-12 — a stale anchor is a defect type)."""
+    misses, drifted, unanchored = [], [], []
+    text_cache: dict[str, str] = {}
+    line_cache: dict[str, list[str]] = {}
     for d in backbone["decisions"]:
         home = d["home"]
-        fname = home.split(":")[0]
+        parts = home.split(":")
+        fname = parts[0]
+        cited = None
+        if len(parts) > 1:
+            m = re.match(r"(\d+)", parts[1])
+            if m:
+                cited = int(m.group(1))
         path = REPO / fname
-        if fname not in cache:
+        if fname not in text_cache:
             if not path.exists():
                 misses.append((d["id"], home, "home file does not exist"))
-                cache[fname] = ""
+                text_cache[fname] = ""
+                line_cache[fname] = []
                 continue
-            cache[fname] = norm(path.read_text(encoding="utf-8", errors="replace"))
-        hay = cache[fname]
+            raw = path.read_text(encoding="utf-8", errors="replace")
+            text_cache[fname] = norm(raw)
+            line_cache[fname] = [re.sub(r"\s+", " ", re.sub(r"^\s*>+\s?", "", ln)).strip()
+                                 for ln in raw.splitlines()]
         needle = norm(d["verbatim"])
         if not needle:
             misses.append((d["id"], home, "empty verbatim"))
-        elif needle not in hay:
+            continue
+        if needle not in text_cache[fname]:
             misses.append((d["id"], home, "verbatim NOT FOUND in the cited home"))
-    print(f"backbone decisions: {len(backbone['decisions'])}")
-    print(f"verbatim quotes found at their cited home: "
-          f"{len(backbone['decisions']) - len(misses)}/{len(backbone['decisions'])}")
+            continue
+        if cited is None:
+            unanchored.append((d["id"], home))
+            continue
+        found = find_start_line(line_cache[fname], needle, len(d["verbatim"].splitlines()))
+        if found is None:
+            misses.append((d["id"], home, "found in the file but not resolvable to a start line"))
+        elif found != cited:
+            drifted.append((d["id"], home, found))
+
+    n = len(backbone["decisions"])
+    print(f"backbone decisions: {n}")
+    print(f"verbatim quotes found at their cited home: {n - len(misses)}/{n}")
+    print(f"cited line numbers correct: {n - len(misses) - len(drifted) - len(unanchored)}"
+          f"/{n - len(misses) - len(unanchored)}"
+          f"   ({len(unanchored)} cited to a file with no line number, by design)")
     for mid, home, why in misses:
         print(f"  MISS {mid} ({home}): {why}")
-    return 1 if misses else 0
+    for mid, home, found in drifted:
+        print(f"  LINE DRIFT {mid}: cited {home}, actually starts at line {found}")
+    return 1 if (misses or drifted) else 0
 
 
 # ── The disposition pass ─────────────────────────────────────────────────────

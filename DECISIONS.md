@@ -103,6 +103,16 @@ Alongside the register, every one of the harvested statements about decisions in
 
 The full disposition table, and the numbered rule behind each one, are in `tools/audit/decisions/cluster_dispositions.csv` and `tools/audit/decisions/disposition_manifest.json`.
 
+### What was read, and what was not
+
+**Read in full.** ARCHITECTURE.md lines 1-3981 — the preamble (the joint estimator, the posterior slice, the A-native notation record, the record path P0-P7, doc governance), §2 Architectural Principles including §2.14 and §2.15, §3.3 Module Boundaries including the Layer 1-6 specifications and the path-divergence decisions, §4 Existing Components (§4.1-§4.6), and §5 Planned Analysis Extensions (§5.1-§5.16). Plus, targeted and cited: CLAUDE.md, OPEN_ITEMS.md and its detail files, cowork_confidence_contract.md, cowork_design_doc_template.md.
+
+**Not read in full.** ARCHITECTURE.md lines 3982-6523 — §6 The Style System through §19 LLM Integration, plus the appendices. These specify the style system, the knowledge base, the generation components, the constraint system, visualization, intonation, the user interface, persistence, machine-learning readiness, development phases, the scope reference, coding standards, contributing, and LLM integration. None of them is a layer of the harmonic-analysis stack this adjudication was scoped to.
+
+**The remainder, measured.** The harvest holds 241 candidate statements sourced to ARCHITECTURE.md: 176 fall in the read range and 65 in the unread range (31 of those admitted by the harvest's HIGH signature tier). Decisions stated only in the unread range are NOT in this register.
+
+*Why this is stated at all:* DEFECT_TYPES.md DT-26 — scope-assumed enumeration. A sweep that is complete inside its own file set reads as complete about the whole question. The scope and its measured remainder are therefore stated rather than left implicit.
+
 ---
 
 ## A. The estimator architecture — the joint estimator
@@ -183,7 +193,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:46-49`
+**Home.** `ARCHITECTURE.md:47-49`
 
 **Provenance.** ARCHITECTURE.md:46 names it 'the notation output-surface contract §3.3 GROUP (i)'
 
@@ -232,7 +242,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **Status.** LIVE · decided 2026-07-17 · ratified by user
 
-**Home.** `OPEN_ITEMS.md:26`  ⚠ **home is not a layer specification** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `OPEN_ITEMS.md:25`  ⚠ **home is not a layer specification** — a documentation gap; see `OPEN_ITEMS.md`.
 
 **Provenance.** OPEN_ITEMS.md:15-26 (the governing architecture decision banner). NOT recorded in any ARCHITECTURE.md layer specification - see OPEN_ITEMS OI-239
 
@@ -256,7 +266,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `OPEN_ITEMS.md:185`  ⚠ **home is not a layer specification** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `OPEN_ITEMS.md:194`  ⚠ **home is not a layer specification** — a documentation gap; see `OPEN_ITEMS.md`.
 
 **Provenance.** open_items/OI-188 (OPEN - 'bounds every ceiling claim'); the admission rule actually in production has no ratified basis (open_items/OI-226)
 
@@ -286,7 +296,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:69-72`
+**Home.** `ARCHITECTURE.md:70-72`
 
 **Provenance.** ARCHITECTURE.md:68 names 'Decision A2' and cites cowork_notation_output_contract.md §3.1-§3.4
 
@@ -1154,7 +1164,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1937-1939`
+**Home.** `ARCHITECTURE.md:1938-1939`
 
 **Provenance.** ARCHITECTURE.md:1929-1942 (Iter 46, commit 36bf4738a8)
 
@@ -1447,7 +1457,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2993-2995`
+**Home.** `ARCHITECTURE.md:2994-2995`
 
 **Provenance.** ARCHITECTURE.md:2991-2995; consistent with D-016
 
@@ -1584,7 +1594,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **Status.** LIVE · decided 2026-07-26 · ratified by user
 
-**Home.** `OPEN_ITEMS.md:9-10`  ⚠ **home is not a layer specification** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `OPEN_ITEMS.md:5-10`  ⚠ **home is not a layer specification** — a documentation gap; see `OPEN_ITEMS.md`.
 
 **Provenance.** OPEN_ITEMS.md:3-13; the standing rule is in CLAUDE.md 'The open-items register'
 
@@ -1646,8 +1656,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 ## Provenance of this register
 
-- Adjudication: the OI-207 decision-conformance adjudication, 2026-08-01, at commit `c9e0f17b610f3813c5340c8b17bda76b1035d414`.
-- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `6d22e9ae3a25ccbb…`).
+- Adjudication: the OI-207 decision-conformance adjudication, 2026-08-01, at commit `58dea6702ac8aa9d5ef8b89244b94d587a75f7a5`.
+- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `433600ac00a8da2f…`).
 - Harvest: `tools/audit/decisions/decision_candidates.json` (sha256 `51850440b315e6e9…`).
 - Clustering: `tools/audit/decisions/decision_clusters.json` (sha256 `0615b1e61bf10332…`).
 - Shape: `open_items/OI-208.md` (user-ratified 2026-07-28).
