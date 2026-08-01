@@ -193,8 +193,30 @@ def verify_backbone(backbone: dict) -> int:
         elif found != cited:
             drifted.append((d["id"], home, found))
 
+    # Cross-reference guard.  The 2026-08-01 correction pass found 17 provenance references
+    # pointing at the wrong OPEN_ITEMS row, because they were written before the rows existed
+    # and never reconciled — including one to a number no row ever received.  A reference that
+    # names nothing is mechanically catchable, so it is caught here rather than by reading.
+    known_d = {d["id"] for d in backbone["decisions"]}
+    index_text = (REPO / "OPEN_ITEMS.md").read_text(encoding="utf-8", errors="replace")
+    known_oi = set(re.findall(r"^\| (OI-\d+) \|", index_text, re.M))
+    dangling = []
+    for d in backbone["decisions"]:
+        blob = " ".join(str(d.get(f, "")) for f in ("status_source", "rationale", "plain", "home"))
+        for ref in sorted(set(re.findall(r"\bD-\d+\b", blob))):
+            if ref not in known_d:
+                dangling.append((d["id"], ref, "no such register entry"))
+        for ref in sorted(set(re.findall(r"\bOI-\d+\b", blob))):
+            if ref not in known_oi:
+                dangling.append((d["id"], ref, "no such row in the OPEN_ITEMS.md index"))
+
     n = len(backbone["decisions"])
     print(f"backbone decisions: {n}")
+    print(f"cross-references resolving: {'ALL' if not dangling else f'{len(dangling)} DANGLING'}")
+    for did, ref, why in dangling:
+        print(f"  DANGLING {did} -> {ref}: {why}")
+    if dangling:
+        misses.append(("cross-references", "-", f"{len(dangling)} dangling"))
     print(f"verbatim quotes found at their cited home: {n - len(misses)}/{n}")
     print(f"cited line numbers correct: {n - len(misses) - len(drifted) - len(unanchored)}"
           f"/{n - len(misses) - len(unanchored)}"

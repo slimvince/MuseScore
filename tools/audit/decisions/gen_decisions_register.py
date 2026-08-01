@@ -30,6 +30,23 @@ OUT = REPO / "DECISIONS.md"
 
 NO_RATIONALE = "derivation not recorded."
 
+NONSPEC_MARK = {
+    "gap": "⚠ **home is not the specification that owns it** — a documentation gap; see "
+           "`OPEN_ITEMS.md`.",
+    "project-convention": "— a project-wide convention with no owning layer; this is its correct "
+                          "home.",
+    "process": "— a decision about how the work is done, not about the system; this is its "
+               "correct home.",
+    "unhomed": "⚠ **recorded only on a tracking surface** — an open-item row or a session handoff "
+               "block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.",
+}
+NONSPEC_LABEL = {
+    "gap": "a documentation gap",
+    "project-convention": "a project-wide convention, correctly homed",
+    "process": "a decision about the process, correctly homed",
+    "unhomed": "recorded only on a tracking surface, with no home at all",
+}
+
 STATUS_LABEL = {
     "live": "LIVE",
     "superseded-by": "SUPERSEDED BY",
@@ -75,9 +92,14 @@ Each entry has six parts.
 - **Status** — see the table below. Where the record does not say when a decision was made or
   who ratified it, the entry says **not stated**. Nothing is inferred.
 - **Home** — where the decision is actually recorded, as `file:line`. A decision about how a
-  layer should work belongs in that layer's section of `ARCHITECTURE.md`; entries marked
-  **home is not a layer specification** are decisions recorded somewhere else, which is a
-  documentation gap and carries an `OPEN_ITEMS.md` row.
+  layer should work belongs in that layer's section of `ARCHITECTURE.md`, and a decision about
+  anything else belongs in the specification that owns it. Where the home is neither, the entry
+  says which of four cases it is: a **documentation gap** (a decision that governs a layer or a
+  component, not findable from that layer's section — it carries an `OPEN_ITEMS.md` row); a
+  decision **recorded only on a tracking surface** (an open-item row or a session handoff block —
+  a place for tracking work, not a home for a standing decision); a **project-wide convention**
+  with no owning layer, correctly homed in `CLAUDE.md` or the architectural principles; or a
+  **decision about the process**, not about the system.
 - **Provenance** — where the status comes from, and any later ruling that bears on it.
 
 ### The status words
@@ -146,10 +168,13 @@ def render(backbone: dict, disp: dict) -> str:
     out.append("## What is in this register, counted")
     out.append("")
     out.append(f"**{len(decisions)} decisions**, grouped by subject. They were enumerated by reading "
-               "the `ARCHITECTURE.md` layer specifications in full, because a decision written as "
-               "plain specification carries no ruling vocabulary and no text search can find it. "
-               "Every verbatim quote below is mechanically checked to exist at the place it is "
-               "cited to (`gen_cluster_dispositions.py --verify`).")
+               "`ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain "
+               "specification carries no ruling vocabulary and no text search can find it, and by "
+               "following the recorded rulings that live only in an open-item row, a handoff "
+               "block, or one of the standing decision-bearing surfaces. Every verbatim quote "
+               "below is mechanically checked to exist at the place it is cited to, and to start "
+               "at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every "
+               "`D-…` and `OI-…` cross-reference is checked to resolve.")
     out.append("")
     out.append("| | Count |")
     out.append("|---|---|")
@@ -160,7 +185,11 @@ def render(backbone: dict, disp: dict) -> str:
             out.append(f"| — of which {STATUS_LABEL[st].lower()} | {status_counts[st]} |")
     out.append(f"| Decisions whose date is not stated in the record | {nostated_date} |")
     out.append(f"| Decisions whose ratifier is not stated in the record | {nostated_who} |")
-    out.append(f"| Decisions recorded outside any layer specification | {len(nonspec)} |")
+    out.append(f"| Decisions recorded outside the specification that owns them | {len(nonspec)} |")
+    for kind in ("gap", "unhomed", "project-convention", "process"):
+        k = sum(1 for d in nonspec if d.get("nonspec_kind", "gap") == kind)
+        if k:
+            out.append(f"| — of which {NONSPEC_LABEL[kind]} | {k} |")
     out.append(f"| Decisions whose defense the record does not state | {len(no_rationale)} |")
     out.append("")
     out.append(f"That last row is the one meant to fall. **{len(decisions) - len(no_rationale)} of "
@@ -227,7 +256,7 @@ def render(backbone: dict, disp: dict) -> str:
             out.append(f"**Status.** {st} · {when} · {who}")
             out.append("")
             homemark = "" if d.get("home_is_layer_spec") else \
-                "  ⚠ **home is not a layer specification** — a documentation gap; see `OPEN_ITEMS.md`."
+                "  " + NONSPEC_MARK.get(d.get("nonspec_kind", "gap"), NONSPEC_MARK["gap"])
             out.append(f"**Home.** `{d['home']}`{homemark}")
             out.append("")
             out.append(f"**Provenance.** {d['status_source']}")
