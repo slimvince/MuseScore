@@ -16,7 +16,7 @@
 
 **Status.** SUPERSEDED BY D-001 · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1133`
+**Home.** `ARCHITECTURE.md:1238`
 
 **Provenance.** The joint estimator now decides key on both surfaces (D-005, D-010). The Layer-3 section still reads 'Built+Live' - see OPEN_ITEMS OI-232
 
@@ -33,9 +33,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1155-1158`
+**Home.** `ARCHITECTURE.md:1260-1263`
 
-**Provenance.** ARCHITECTURE.md:1153-1158
+**Provenance.** ARCHITECTURE.md:1258-1263
 
 ### D-053 — The tick-local path keeps the older resolver (the ratified P4-defer)
 
@@ -48,7 +48,7 @@
 
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1169-1170`
+**Home.** `ARCHITECTURE.md:1274-1275`
 
 **Provenance.** On the switched build the note-seam funnel returns from the record arm before this fallback is reachable (notationcomposingbridge.cpp:728-738). The D-P4 revisit trigger (D-063) was never discharged
 
@@ -60,13 +60,13 @@
 
 **In plain words.** The key finder considers 21 scale types on each of the 12 possible tonics. The harmonic major family was left out because it is rare and we have no annotated music to calibrate it against.
 
-**Why.** Recorded for the DEFERRAL half only, ARCHITECTURE.md:2252-2256: the harmonic major modes are significantly rarer as tonal centers than the melodic and harmonic minor modes, and the validation corpus is unlikely to calibrate them well. Why the other 21 modes are all scored against all 12 tonics has no recorded derivation.
+**Why.** Recorded for the DEFERRAL half only, ARCHITECTURE.md:2357-2361: the harmonic major modes are significantly rarer as tonal centers than the melodic and harmonic minor modes, and the validation corpus is unlikely to calibrate them well. Why the other 21 modes are all scored against all 12 tonics has no recorded derivation.
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2253-2255`
+**Home.** `ARCHITECTURE.md:2358-2360`
 
-**Provenance.** ARCHITECTURE.md:2187-2188 (21 modes), :2213-2217 (harmonic major deferred)
+**Provenance.** ARCHITECTURE.md:2292-2293 (21 modes), :2213-2217 (harmonic major deferred)
 
 ### D-055 — The 21 mode priors are independent and user-configurable
 
@@ -79,9 +79,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2201-2202`
+**Home.** `ARCHITECTURE.md:2306-2307`
 
-**Provenance.** ARCHITECTURE.md:2201-2203, :3020-3073. Superseded on the production path by D-003 (inference is preset-independent)
+**Provenance.** ARCHITECTURE.md:2306-2308, :3020-3073. Superseded on the production path by D-003 (inference is preset-independent)
 
 ### D-056 — Notes always win - the notated key signature is a weak hint, not a bypass
 
@@ -91,13 +91,13 @@
 
 **In plain words.** The key printed at the start of the score does not settle the question. It only nudges the answer; what the notes actually do decides.
 
-**Why.** Stated constraint, ARCHITECTURE.md:3159-3161: the notated signature is what the composer wrote down, not what the music does - a piece may modulate, be notated in a partial signature, or contradict its own signature - so it enters as a weak hint the sounding notes can outvote.
+**Why.** Stated constraint, ARCHITECTURE.md:3264-3266: the notated signature is what the composer wrote down, not what the music does - a piece may modulate, be notated in a partial signature, or contradict its own signature - so it enters as a weak hint the sounding notes can outvote.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3159-3161`
+**Home.** `ARCHITECTURE.md:3264-3266`
 
-**Provenance.** ARCHITECTURE.md:3157-3169
+**Provenance.** ARCHITECTURE.md:3262-3274
 
 ### D-057 — The priority of evidence - actual sounding notes are the strongest evidence
 
@@ -105,13 +105,13 @@
 
 **In plain words.** In deciding the key, what is actually sounding right now outranks the surrounding bars, which outrank the printed key signature, which outranks the major/minor tag on it.
 
-**Why.** Stated constraint, ARCHITECTURE.md:3173-3180: the priority table ranks the actual sounding notes the strongest evidence, above the notated signature and above any prior result, for the same reason as D-056.
+**Why.** Stated constraint, ARCHITECTURE.md:3278-3285: the priority table ranks the actual sounding notes the strongest evidence, above the notated signature and above any prior result, for the same reason as D-056.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3177`
+**Home.** `ARCHITECTURE.md:3282`
 
-**Provenance.** ARCHITECTURE.md:3173-3180. Cited by open_items/OI-228 as the primary source the joint emission departs from. NOT catchable by the harvest's signature net - the reason this adjudication had to read the specifications in full
+**Provenance.** ARCHITECTURE.md:3278-3285. Cited by open_items/OI-228 as the primary source the joint emission departs from. NOT catchable by the harvest's signature net - the reason this adjudication had to read the specifications in full
 
 ### D-058 — The piece-start shortcut
 
@@ -127,9 +127,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3164-3168`
+**Home.** `ARCHITECTURE.md:3269-3273`
 
-**Provenance.** ARCHITECTURE.md:3164-3169 calls it 'a deliberate pragmatic choice for the score opening, not a general bypass'. NOT catchable by the harvest's signature net
+**Provenance.** ARCHITECTURE.md:3269-3274 calls it 'a deliberate pragmatic choice for the score opening, not a general bypass'. NOT catchable by the harvest's signature net
 
 ### D-059 — The temporal window - 16 beats back, 8 beats forward, decayed
 
@@ -141,7 +141,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3202`
+**Home.** `ARCHITECTURE.md:3307`
 
-**Provenance.** ARCHITECTURE.md:3200-3212; legacy-arm only since the switch (D-010). Derivation not recorded: the only stated basis for 16 and 8 is the in-code gloss '~4 measures in 4/4' / '~2 measures ahead' (ARCHITECTURE.md:3205-3206) - no theory citation and no measurement
+**Provenance.** ARCHITECTURE.md:3305-3317; legacy-arm only since the switch (D-010). Derivation not recorded: the only stated basis for 16 and 8 is the in-code gloss '~4 measures in 4/4' / '~2 measures ahead' (ARCHITECTURE.md:3310-3311) - no theory citation and no measurement
 

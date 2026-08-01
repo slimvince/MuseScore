@@ -85,7 +85,7 @@
 
 **In plain words.** While the analysis is still deciding where one chord ends and the next begins, none of the bonuses that look at neighbouring chords may score anything. Adding a new context bonus without that gate will make the segmentation worse.
 
-**Why.** Stated constraint: where a boundary falls decides which notes each candidate sees, and chord identity is itself a signal for where boundaries belong (ARCHITECTURE.md:641-644), so a context bonus scoring the exploratory passes lets the answer choose its own input. Its specification home is D-062.
+**Why.** Stated constraint: where a boundary falls decides which notes each candidate sees, and chord identity is itself a signal for where boundaries belong (ARCHITECTURE.md:686-689), so a context bonus scoring the exploratory passes lets the answer choose its own input. Its specification home is D-062.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -234,7 +234,7 @@
 
 **Home.** `BUILD_AND_TEST.md:285`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** BUILD_AND_TEST.md:285-289. The mechanical enforcement is the per-preset corpus manifest: the regeneration script exits nonzero on an incomplete corpus and the measurement refuses a directory whose manifest is missing or whose fingerprints do not match (CLAUDE.md:482-493).
+**Provenance.** BUILD_AND_TEST.md:285-289. The mechanical enforcement is the per-preset corpus manifest: the regeneration script exits nonzero on an incomplete corpus and the measurement refuses a directory whose manifest is missing or whose fingerprints do not match (CLAUDE.md:514-525).
 
 ### D-226 — The music21 export is version-pinned; regenerating it is a deliberate re-baseline
 

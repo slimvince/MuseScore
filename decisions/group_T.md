@@ -19,13 +19,13 @@
 
 **In plain words.** After every piece of work and before reporting it, the actual difference on disk in every touched file is re-read and checked against the principles, the conventions, the gate policies and the known defect types. Anything found is surfaced at once, never quietly shipped.
 
-**Why.** Stated constraint, CLAUDE.md:835-836: the check is of the work actually on disk, not of the intention - read the difference, not the memory of writing it. Which is the same reasoning as the never-work-from-memory rule, applied to one's own output.
+**Why.** Stated constraint, CLAUDE.md:867-868: the check is of the work actually on disk, not of the intention - read the difference, not the memory of writing it. Which is the same reasoning as the never-work-from-memory rule, applied to one's own output.
 
 **Status.** LIVE · decided 2026-07-11 · ratified by user
 
-**Home.** `CLAUDE.md:848`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:910`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** CLAUDE.md:827-836, user-directed 2026-07-11. Binds Claude Code and Cowork sessions alike.
+**Provenance.** CLAUDE.md:859-868, user-directed 2026-07-11. Binds Claude Code and Cowork sessions alike.
 
 ### D-197 — The distribution constraint - the import-fix patch is fork-local and never goes upstream
 
@@ -39,13 +39,13 @@
 
 **In plain words.** The MusicXML mode-import fix may live in the user's own fork of MuseScore and be pushed there. It must never be pushed, merged or otherwise contributed to the MuseScore project. Any action that would carry it toward the upstream repository stops work and is reported.
 
-**Why.** Stated constraint, CLAUDE.md:702: the upstream issue number cited beside the patch is the upstream BUG REPORT, and referencing it does not authorize contributing this patch. Upstream pushing is disabled in the repository and is to be kept so (:683-684).
+**Why.** Stated constraint, CLAUDE.md:734: the upstream issue number cited beside the patch is the upstream BUG REPORT, and referencing it does not authorize contributing this patch. Upstream pushing is disabled in the repository and is to be kept so (:683-684).
 
 **Status.** LIVE · decided 2026-06-15 · ratified by user
 
-**Home.** `CLAUDE.md:696`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:728`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** CLAUDE.md:696-702, user-directed 2026-06-15. ★ READ WITH the general contribution intent at ARCHITECTURE.md:328-330 - two recorded positions, a general intent to contribute and a named one-patch exception; the record does not state how the general intent applies to the rest of the tree.
+**Provenance.** CLAUDE.md:728-734, user-directed 2026-06-15. ★ READ WITH the general contribution intent at ARCHITECTURE.md:373-375 - two recorded positions, a general intent to contribute and a named one-patch exception; the record does not state how the general intent applies to the rest of the tree.
 
 ### D-198 — The Windows snap fix in the muse submodule is intentional and must not be reverted
 
@@ -67,13 +67,13 @@
 
 **In plain words.** Two lines were removed from MuseScore's Windows window-sizing code that told Windows the smallest allowed window was the whole screen. With them in place, a maximised MuseScore window could not be snapped into a screen zone - it stayed full-screen and lost its title-bar controls. The removal is deliberate and stays.
 
-**Why.** Stated constraint, CLAUDE.md:651-658: the removed lines set the minimum window size to the full monitor work area, which is what blocked snapping; the maximised-position constraints are correct and are kept. Upstream issue musescore/MuseScore#25823, introduced by upstream commit 4ad218709 (:643-644).
+**Why.** Stated constraint, CLAUDE.md:683-690: the removed lines set the minimum window size to the full monitor work area, which is what blocked snapping; the maximised-position constraints are correct and are kept. Upstream issue musescore/MuseScore#25823, introduced by upstream commit 4ad218709 (:643-644).
 
 **Status.** LIVE · decided 2026-05-14 · ratified by user
 
-**Home.** `CLAUDE.md:648`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:680`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** CLAUDE.md:646-662, applied 2026-05-14. Unrelated to the composing module; recorded so a dependency update does not silently overwrite it.
+**Provenance.** CLAUDE.md:678-694, applied 2026-05-14. Unrelated to the composing module; recorded so a dependency update does not silently overwrite it.
 
 ### D-199 — The MusicXML declared-mode import fix is intentional and must not be reverted
 
@@ -100,17 +100,19 @@
 
 **In plain words.** MuseScore's importer dropped a key signature that matched the prevailing one in number of sharps or flats even when it declared a different mode - so a piece written with no sharps or flats but marked minor lost that marking on import. The fix compares the mode as well as the accidental count, so a mode-bearing key signature survives.
 
-**Why.** Measurement, CLAUDE.md:685-688: the change is verified isolated to empty-signature scores - exactly 79 zero-signature analyses changed and no non-empty-signature piece moved - the regression gate is byte-identical on all three presets, and the round-trip of a zero-signature minor piece now preserves its mode. The underlying defect is upstream-unchanged code whose own comment flags the check as known-incomplete (CLAUDE.md:678-679, :673-674).
+**Why.** Measurement, CLAUDE.md:717-720: the change is verified isolated to empty-signature scores - exactly 79 zero-signature analyses changed and no non-empty-signature piece moved - the regression gate is byte-identical on all three presets, and the round-trip of a zero-signature minor piece now preserves its mode. The underlying defect is upstream-unchanged code whose own comment flags the check as known-incomplete (CLAUDE.md:710-711, :673-674).
 
 **Status.** LIVE · decided 2026-06-14 · ratified by user
 
-**Home.** `CLAUDE.md:669`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:701`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** CLAUDE.md:664-694, applied 2026-06-14, commit cfc7eb5e39. ★ Carries the distribution constraint above: fork-local only, never upstream.
+**Provenance.** CLAUDE.md:696-726, applied 2026-06-14, commit cfc7eb5e39. ★ Carries the distribution constraint above: fork-local only, never upstream.
 
 ### D-208 — A withheld finding never enters a mandatory session-start read
 
-> Remedy (OI-89 generalized): cross-check every required read + the dispatch body against every withholding requirement; keep §S in a separate post-freeze artifact; do not headline the withheld findings in a mandatory blind-pass read.
+> **A WITHHELD FINDING NEVER ENTERS A MANDATORY SESSION-START READ (user-ratified 2026-07-28).**
+> When a pass is run blind — a finding deliberately kept from the auditor so that whether they
+> rediscover it measures the audit's power — that finding must not appear in any document the
 
 **In plain words.** When a review is run blind - deliberately keeping a finding from the reader so that whether they rediscover it measures the review's power - that finding must not appear in any document the reader is required to open at the start. The status file carries a pointer; the content lives in a separate artifact opened only afterwards.
 
@@ -118,13 +120,15 @@
 
 **Status.** LIVE · decided 2026-07-28 · ratified by user
 
-**Home.** `OPEN_ITEMS.md:170`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `cowork_audit_protocol.md:56-58`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** OPEN_ITEMS.md:170 (OI-222) with open_items/OI-222.md; restated as a standing rule at cowork_handoff.md:230. Generalizes the earlier OI-89 instance of the same shape.
+**Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:170 (OI-222) with open_items/OI-222.md, and restated in a session handoff block. Homed under P5 of the audit protocol, which is the blinding rule it sharpens. Generalizes the earlier OI-89 instance of the same shape
 
 ### D-209 — Code that is about to be deleted gets no audit - only the no-information-loss check at deletion
 
-> (a) PARTITION the module by the retirement map R1–R9 — code that RETIRES at E4 gets NO audit, only the #12 interpretation-check at deletion (A1 verdict)
+> Applied BEFORE P1's enumeration. The module is partitioned against the retirement map: **code that
+> retires gets no audit at all** — the only thing owed to it is the #12 no-information-loss check at
+> the moment of deletion (does anything it knew go unrecorded?). The surviving stack is then audited
 
 **In plain words.** Before auditing the system exhaustively, the code is split into what survives and what is scheduled for removal. What is scheduled for removal is not audited at all. The only thing owed to it is a check, at the moment it is deleted, that nothing it knew is lost.
 
@@ -132,9 +136,9 @@
 
 **Status.** LIVE · decided 2026-07-10 · ratified by user
 
-**Home.** `open_items/OI-84.md:7`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `cowork_audit_protocol.md:103-105`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** open_items/OI-84.md:7 (OI-84), corrected 2026-07-10 at the user's challenge. The plan it belongs to is complete: every surviving layer certified on two passes each.
+**Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at open_items/OI-84.md:7 (OI-84), corrected 2026-07-10 at the user's challenge, on a row whose own status is COMPLETE. Homed as P9 of the audit protocol, with the 2026-07-28 boundary ruling (it does not shield the joint estimator module) stated beside it. The plan it belongs to is complete: every surviving layer certified on two passes each
 
 ### D-231 — Issue-exhaustion and specification completion before any fix design - the three-phase sequencing rule
 

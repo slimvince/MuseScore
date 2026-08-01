@@ -248,6 +248,51 @@
 > publication), OI-203 (the record-cache increment — the latency is now on the default path), and OI-201 (the aug-sixth
 > display-symbol completeness gap).
 
+> **★★ THE JOINT ESTIMATOR'S STANDING RULES — fitting, held-out evaluation, the search, and the key axis.**
+> Four rules govern the estimator described above. Each was ratified on the date given; all four were until
+> 2026-08-02 recorded only on tracking surfaces or in `CLAUDE.md`, which is why they are stated here — this
+> specification is where a reader looks for how the estimator must behave.
+>
+> **(a) Factor FORMS come from theory; factor VALUES are fit ONCE against ground truth and are never tuned
+> per case.** Every factor's shape is derived from established music theory before any number is attached to
+> it, and the numbers are then estimated in one fit event against the DCML ground truth — never adjusted
+> afterwards to make a particular passage come out right. *Why:* a value tuned to one passage is fitted to
+> that passage and measures nothing on the next one (`CLAUDE.md` #8; `DEFECT_TYPES.md` DT-2). Ratified by the
+> user 2026-07-17, with the governing decision at the head of this document (`OPEN_ITEMS.md:24-25`).
+>
+> **(b) The held-out split and the capacity budget are declared BEFORE any value is fit, and the headline
+> number is the held-out one.** The ratified protocol is five-fold cross-validation grouped by the shared
+> *When in Rome* analysis file, with every fitted object — vocabulary threshold, smoothing, regularization
+> strength included — estimated on training folds only; the headline is the pooled cross-validation number
+> with a piece-bootstrap 95 % uncertainty range. The capacity budget is a pre-fit parameter inventory: a cell
+> receives its own maximum-likelihood estimate only at a count of at least 20 and otherwise pools to a
+> declared parent, free parameters stay at or below one tenth of the token count, and the weight vector holds
+> at most 12 weights. *Why:* `CLAUDE.md` #20 — no value is graded on data that helped fit it, so a
+> fitted-and-self-measured number is not established (#19). Protocols ratified 2026-07-19
+> (`cowork_prefit_gates.md`; tracked at `open_items/OI-176.md` and `open_items/OI-177.md`); the ratifier of
+> that event is not named in the record.
+>
+> **(c) The decode is EXACT; the declared reserve prune was never adopted, and what the decoder does narrow
+> has no specified form.** Exact semi-Markov Viterbi over the joint state is the ratified search. A prune was
+> declared in reserve — restricting key-change candidates to a fitted-mass neighborhood on the circle of
+> fifths — to be used only if measurement showed exact decode intractable, and only with its own
+> established-loss measurement, never as a silent heuristic
+> (`cowork_joint_estimator_factorization.md:170-173`). It was never adopted: measured at the fitted weights
+> its cost is worse than exact decode. What the shipped decoder DOES narrow — the candidate-admission rule
+> that decides which chord classes a segment may even consider — has no specified form anywhere in this
+> architecture and no recorded basis. Both facts are open and are tracked at `OPEN_ITEMS.md` OI-188 (the
+> reachability bound on every ceiling claim) and OI-226 (admission has no ratified basis); neither is settled
+> here.
+>
+> **(d) On the key axis the decoder commits its maximum-a-posteriori path; it never abstains.** The estimator
+> always names a key for every committed segment, so the abstention counter the regression stop reads is
+> zero on the production arm. Recorded at the OI-178 adoption, user-ratified 2026-07-26 (`CLAUDE.md` gate
+> block (A)); **derivation not recorded** — the record gives no reason for committing rather than abstaining.
+> **This sits in tension with the abstention rule at §5.7a** ("calibrated
+> abstention when evidence is weak", an item in the high-precision-before-coverage target), which admits
+> declining to answer. The two statements are both in force in the record: §5.7a states the product target,
+> this rule states what the shipped decoder does on the key axis. Which governs is **not settled here**.
+
 > **Living design document.** Read this AND STATUS.md at the start of every development
 > session. ARCHITECTURE.md contains stable design decisions. STATUS.md contains current
 > implementation status and immediate next steps. Update STATUS.md as your last act when
@@ -841,6 +886,66 @@ contracts below all serve this principle. Their detailed statements live in the 
   accuracy we can *actually check*, never a slot filled for symmetry (the Contrapunctus reminder: SOTA-competitive with
   **no** explicit grouping layer — do not multiply layers for their own sake). Gate (1) is **not** subordinate to (2)–(3):
   a genuine second concern earns its own component regardless of the immediate metric.
+- **The cross-layer confidence contract — every confidence that crosses a layer boundary is bounded,
+  class-declared, and named to its decision.** At a layer boundary — any value another layer may read — a
+  confidence is **in [0,1], class-declared (a ranking margin or a calibrated probability), and stated
+  together with the decision it is the confidence of**. Unbounded content scores are permitted *inside* a
+  layer and must be squashed at the boundary. *Why:* the §2.14 confidence-weighted forward-override compares a
+  later layer's contradiction strength numerically against an earlier layer's confidence, and those two
+  quantities are incommensurable as published today — Layer 3 publishes a sequence margin, Layer 4 a
+  three-part composite, Layer 5 an unbounded additive content score — so the comparison has no defined
+  meaning, and fitting weights over it would bury the incoherence in fitted constants instead of repairing
+  it (`cowork_confidence_contract.md:13-21`). Ratified by the user 2026-07-02; the class vocabulary, the
+  squashing rules and the declared comparison frames are stated in full in `cowork_confidence_contract.md`,
+  which this contract points at rather than restates. **The production notation record path departs from
+  this contract**: it publishes the key-axis gap raw, in nats, with no remapping to [0,1] (the record path,
+  subsection (4) at the head of this document). The departure is recorded and unresolved at
+  `OPEN_ITEMS.md` OI-231; this contract is the standard that departure is measured against, not a
+  description of the shipped record path.
+- **Negative evidence is information — a ruled-out reading is carried, not dropped.** A layer that
+  eliminates a reading publishes the elimination rather than discarding it: the ruled-out reading is
+  carried on the output surface at low confidence, unless the elimination is recomputable from what that
+  surface does keep. *Why:* guiding principle #12 (`CLAUDE.md`), ratified by the user 2026-07-06 — finding
+  by exclusion is a result, and a surface that keeps only survivors cannot tell a later layer the
+  difference between a reading never considered and a reading considered and rejected. The
+  recomputable-exclusion exemption is what stops the rule from forcing every layer to publish its entire
+  candidate space.
+- **Every derived analytical fact is published exactly once, on the producing layer's output surface;
+  consumers read it and never re-derive it.** For **evidence-class** facts — hints a later design could
+  conceivably use — publication is broad even where no consumer is named yet, and each published evidence
+  fact carries its **establishment status** on the surface, because a consumer may not put an unestablished
+  fact under load (#19). A published fact that no one reads is either **declared dormant**, with its future
+  consumer named, or removed. *Why:* `cowork_siloed_facts_audit.md` found 17 instances of a fact being
+  re-derived by a consumer instead of read from its producer. Ratified by the user 2026-07-10 and amended
+  2026-07-12 (`CLAUDE.md`, the fact-publication corollary); the user's recorded reason for the broad-
+  publication amendment is that a visible spread of published evidence lets a future design recognize facts
+  it would never have thought to ask for. The catalog of what each layer discovers is
+  `cowork_evidence_inventory.md`, kept in step with these layer specifications as facts are adopted.
+
+### 2.16 Standing design requirements — very large scores, and the effort control
+
+Two requirements the user stated on 2026-07-28 at the analysis-cost review. They are **requirements, not
+defect reports**: every later inference and notation design is judged against them. Both were until
+2026-08-02 recorded only on an open-item row, which tracks work rather than housing a standing decision.
+
+- **Very large scores MUST be handled, and are expected to be a MORE COMMON use than our corpora.** A
+  Wagner act or a symphony has to produce an analysis; the user expects such music to be a more common
+  use of this system than the chorales it was fitted on. *Why:* stated by the user as a standing
+  requirement, and recorded together with the collision it creates — the joint estimator's ratified
+  tractability envelope is chorale size (roughly 60–150 events at exact decode) and its fitted material
+  is 326 Bach chorales by one composer, so the requirement names music the estimator was neither fitted
+  nor established on. Tracked at `OPEN_ITEMS.md` OI-209; the measured collision is OI-215 and OI-227 —
+  the decode returns an empty analysis on 13 of the 23 committed large scores.
+- **The effort control is ONE setting with several dials behind it, and among the quantities it must
+  bound is the TIME the analysis takes. DEFERRED.** How hard the analysis works is a single user-facing
+  setting, not several; several dials sit behind it; and a temporal bound is one of the things it must be
+  able to impose. *Why:* it is too early to build, because which parts of the analysis have to be
+  switchable is not yet known factually, and establishing that is a measurement rather than a design
+  choice. The user's prediction recorded beside the requirement, verbatim: *"always read the entire score
+  will VERY likely not survive (maybe only under some effort setting = EXTREME)."* The two older standing
+  design rules this control must satisfy are already stated in §2.14: every cost-driving choice is an
+  explicit setting, never a hardcoded constant; and every optional expensive refinement is a cleanly
+  separable on/off stage. Tracked at `OPEN_ITEMS.md` OI-209.
 
 ---
 
@@ -3651,7 +3756,12 @@ emit chromatic Roman numerals or chord symbols respectively.
 
 ### §5.12 Pedal Point Detection — Two-Pass Analysis
 
-**Status: Implemented (Session 18, master `fb9a27ce9a`).**
+**Status: Implemented (Session 18, master `fb9a27ce9a`).** **Superseded as a design by the
+voice-independent pedal-point class of the ornament vocabulary (§7.4, user-ratified 2026-07-26):** the
+two-pass detector described below can only see the lowest voice, and it retires with the legacy analysis
+path. The ornament class that replaces it is DEFERRED to its own increment (`OPEN_ITEMS.md` OI-194), so the
+two-pass detector below is still the code on the legacy arm; on the production record path the pedal fields
+are left empty.
 
 When the lowest-pitched tone in a window is structurally lighter than the upper
 voices — as in a dominant or tonic organ point — it may not belong to the chord
@@ -4228,6 +4338,19 @@ Style-specific ornament types:
 - Jazz: approach notes, encirclement, blues bend notation
 - Classical: ornament table per period
 
+**The pedal-point class is defined VOICE-INDEPENDENTLY (user-ratified 2026-07-26; DEFERRED to its own
+increment).** The ornament vocabulary carries a **pedal-point** class: a tone sustained — or continuously
+restruck — against changing harmony in **any** voice, sub-labeled by position as **bass**, **internal**, or
+**inverted**. This class supersedes the legacy bass-only pair of published facts, `isPedalPoint` and
+`pedalBassPc`. *Why:* the legacy facts are produced by an unestablished post-pass
+(`chordpostpasses.cpp:275`, the Iter-86/91 second pass specified at §5.12) that can only see the lowest
+voice, and it retires with the legacy analysis path; the voice-independent class instead comes from the
+joint estimator's own non-chord-tone emission categories, which do not privilege the bass. Ratified at the
+pedal-point ruling of the notation-adoption increment (`cowork_notation_adoption_increment.md` §7 + §10).
+**Status: DEFERRED.** It lands with the ornament-label publication, an increment of its own after the
+notation switch; until then the record path leaves the pedal fields empty and the `"X ped."` annotation is a
+declared gap. Tracked at `OPEN_ITEMS.md` OI-194.
+
 ---
 
 ## 8. Planned Generation Components
@@ -4652,6 +4775,17 @@ on a background thread via `QtConcurrent` to keep the UI responsive.
 ---
 
 ## 11. Intonation
+
+**Status of this whole section — HELD, and a declared future CONSUMER of the analysis (user-decided
+2026-07-13).** Intonation **is** a future feature: the six unbuilt items specified in §11.3a–g, together
+with the tie limitation recorded there, stay on the books as a deliberate long-horizon hold, revisited at a
+natural pause in the analysis work — not dropped, not scheduled. *Why the hold is strategic rather than
+neglect:* the user stated the dependency that makes it so — **the intonation feature will consume the
+analysis facts.** Knowing the mode, the chord, the chord's function and the progression is what lets a
+just-intonation decision be made, particularly the decision in the TIME dimension between staying in tune
+over time and allowing drift. Intonation is therefore a **named future consumer** of the published analysis
+surfaces, and a concrete instance of the rule in §2.15 that evidence-class facts are published broadly so a
+later design can recognize facts it would never have thought to ask for. Tracked at `OPEN_ITEMS.md` OI-62.
 
 ### 11.1 Tuning Systems
 
@@ -6236,6 +6370,17 @@ implemented and passing all targeted tests. See STATUS.md for test counts.
 ---
 
 ## 16. Scope Reference
+
+### Ground truth where none is published
+
+**A HUMAN acts as ground truth where no formal ground truth exists (user-decided 2026-07-13).** For
+repertoire nobody has published an analysis of, the reference answer is a person's judgment. That person
+may reach it by any method they choose, **including** letting an automated triage judge point them at the
+passages most likely to be wrong. Such a judge is therefore admitted as **guidance for the human**, never
+as a grader and never as the source of a reported number. *Why:* a language-model judge is not ground
+truth (#9, and the standing rule that music21 corroborates but never adjudicates), so it could not grade
+this system; the most it can do is triage. **When** this workflow starts is tied to the corpus-onboarding
+event and is itself open (`OPEN_ITEMS.md` OI-38; the deciding row is OI-56).
 
 ### Core — Must Be Implemented
 

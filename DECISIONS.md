@@ -107,11 +107,9 @@ project's own and are defined here because they are used before any entry explai
 | — of which deferred | 22 |
 | Decisions whose date is not stated in the record | 159 |
 | Decisions whose ratifier is not stated in the record | 151 |
-| Decisions recorded outside the specification that owns them | 69 |
-| — of which a documentation gap | 8 |
-| — of which recorded only on a tracking surface, with no home at all | 12 |
+| Decisions recorded outside the specification that owns them | 57 |
 | — of which a project-wide convention, correctly homed | 31 |
-| — of which a decision about the process, correctly homed | 18 |
+| — of which a decision about the process, correctly homed | 26 |
 | Decisions whose defense the record does not state | 45 |
 
 That last row is the one meant to fall. **186 of 231** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
@@ -123,11 +121,11 @@ Alongside the register, every one of the harvested statements about decisions in
 | Harvested statements | **15224** |
 | Groups of near-identical statements ("clusters") | **14460** |
 | Clusters carrying a recorded disposition | **14460** |
-| — restates | 2603 |
-| — not-a-decision | 3629 |
+| — restates | 5484 |
+| — not-a-decision | 3160 |
 | — boilerplate | 74 |
-| — no-spec-home | 1780 |
-| — unresolved | 6374 |
+| — no-spec-home | 538 |
+| — unresolved | 5204 |
 
 The full disposition table, and the numbered rule behind each one, are in `tools/audit/decisions/cluster_dispositions.csv` and `tools/audit/decisions/disposition_manifest.json`.
 
@@ -156,10 +154,10 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-007 | The published scores are log-scores, not probabilities | LIVE | `ARCHITECTURE.md` |
 | D-008 | The true probabilities are deferred to a later step | DEFERRED | `ARCHITECTURE.md` |
 | D-095 | The dual path during the joint-estimator build is a declared, bounded, pre-ratified migration state | SUPERSEDED IN FACT | `ARCHITECTURE.md` |
-| D-096 | Fitted values are fit once against ground truth, never per-case tuned | LIVE | `OPEN_ITEMS.md` ⚠gap |
-| D-097 | Held-out evaluation and a capacity budget are declared before any fit | LIVE | `OPEN_ITEMS.md` ⚠gap |
-| D-098 | The exact-decode reserve - the declared prune was never adopted | LIVE | `OPEN_ITEMS.md` ⚠gap |
-| D-114 | The decoder commits its best path; there is no abstention on the key axis | LIVE · derivation not recorded | `CLAUDE.md` ⚠gap |
+| D-096 | Fitted values are fit once against ground truth, never per-case tuned | LIVE | `ARCHITECTURE.md` |
+| D-097 | Held-out evaluation and a capacity budget are declared before any fit | LIVE | `ARCHITECTURE.md` |
+| D-098 | The exact-decode reserve - the declared prune was never adopted | LIVE | `ARCHITECTURE.md` |
+| D-114 | The decoder commits its best path; there is no abstention on the key axis | LIVE · derivation not recorded | `ARCHITECTURE.md` |
 
 ## B. The notation output surface and the record path — [full entries](decisions/group_B.md)
 
@@ -193,18 +191,18 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-029 | The verifiability contract | LIVE | `ARCHITECTURE.md` |
 | D-030 | Bounded context - cost scales with the working span, not the whole score | LIVE | `ARCHITECTURE.md` |
 | D-031 | Whole-score analysis is the degenerate case, not the design | LIVE | `ARCHITECTURE.md` |
-| D-032 | Every confidence crossing a layer boundary is in 0..1, class-declared, with its decision named | LIVE | `cowork_confidence_contract.md` ⚠gap |
+| D-032 | Every confidence crossing a layer boundary is in 0..1, class-declared, with its decision named | LIVE | `ARCHITECTURE.md` |
 | D-033 | Each layer owns one evidence-source-times-question contribution and uses all of L1's information | LIVE | `ARCHITECTURE.md` |
 | D-034 | A new layer or axis is admitted only through three co-equal gates | LIVE | `ARCHITECTURE.md` |
 | D-035 | The effort setting - every cost-driving choice is a setting, never a hardcoded constant | LIVE | `ARCHITECTURE.md` |
 | D-036 | Accumulating gates are a warning sign - add iteration, not more gates | LIVE | `ARCHITECTURE.md` |
-| D-099 | Negative evidence is information - a ruled-out possibility is carried, not dropped | LIVE | `CLAUDE.md` ⚠gap |
-| D-100 | Every derived fact is published exactly once, on the producing layer's output surface | LIVE | `CLAUDE.md` ⚠gap |
+| D-099 | Negative evidence is information - a ruled-out possibility is carried, not dropped | LIVE | `ARCHITECTURE.md` |
+| D-100 | Every derived fact is published exactly once, on the producing layer's output surface | LIVE | `ARCHITECTURE.md` |
 | D-115 | The regression stop is the granularity-robust unit; root governs, key and Roman numeral ride beside | LIVE | `CLAUDE.md` |
 | D-191 | The two-tier regression class policy - functional regression stops, rotation churn is tracked | LIVE | `CLAUDE.md` |
-| D-210 | An exotic mode is graded against its parent collection's minor key, not its own tonic triad | LIVE | `OPEN_ITEMS.md` ⚠tracking-surface-only |
-| D-211 | Key agreement is reported against both the global home key and the local key | LIVE | `OPEN_ITEMS.md` ⚠tracking-surface-only |
-| D-212 | The regression stop is abstain-aware: an abstention counts as disagreement on root | LIVE | `OPEN_ITEMS.md` ⚠tracking-surface-only |
+| D-210 | An exotic mode is graded against its parent collection's minor key, not its own tonic triad | LIVE | `CLAUDE.md` |
+| D-211 | Key agreement is reported against both the global home key and the local key | LIVE | `CLAUDE.md` |
+| D-212 | The regression stop is abstain-aware: an abstention counts as disagreement on root | LIVE | `CLAUDE.md` |
 
 ## D. Layer 1 — the note model — [full entries](decisions/group_D.md)
 
@@ -263,7 +261,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-103 | Pedal-point detection is a second pass, accepted only on two conditions | SUPERSEDED BY D-207 | `ARCHITECTURE.md` |
 | D-104 | The bass-is-root bonus is conditioned on corroborating support | LIVE | `ARCHITECTURE.md` |
 | D-105 | The spelling written in the score is read through ONE shared interpreter | LIVE | `ARCHITECTURE.md` |
-| D-207 | The pedal-point class is defined voice-independently, superseding the bass-only fact | DEFERRED | `open_items/OI-194.md` ⚠gap |
+| D-207 | The pedal-point class is defined voice-independently, superseding the bass-only fact | DEFERRED | `ARCHITECTURE.md` |
 
 ## H. Layer 5 and Layer 6 — function, cadence, grouping — [full entries](decisions/group_H.md)
 
@@ -435,13 +433,13 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-188 | The constrained-optimum ledger corollary | LIVE | `CLAUDE.md` |
 | D-189 | The scope of surprise, and the three-stage funnel | LIVE | `CLAUDE.md` |
 | D-190 | The decision-neutrality corollary - what exists carries no weight in choosing a design | LIVE | `CLAUDE.md` |
-| D-200 | Make it work first; compromise on performance only if performance proves a problem | LIVE | `cowork_handoff.md` ⚠tracking-surface-only |
-| D-201 | Very large scores must be handled, and are expected to be more common than our corpora | LIVE | `OPEN_ITEMS.md` ⚠tracking-surface-only |
-| D-202 | The effort control is one setting with several dials, and it must bound the time taken | DEFERRED | `OPEN_ITEMS.md` ⚠tracking-surface-only |
-| D-203 | Candidate admission is completion, not refinement - so #8 permits fixing it now | LIVE | `cowork_handoff.md` ⚠tracking-surface-only |
-| D-204 | One fix is designed once over the whole enumerated family, never per symptom | LIVE | `cowork_handoff.md` ⚠tracking-surface-only |
-| D-205 | A human acts as ground truth where no formal ground truth exists | LIVE | `open_items/OI-56.md` ⚠tracking-surface-only |
-| D-206 | Intonation is held as a future feature, and is a declared future consumer of the analysis | DEFERRED | `open_items/OI-62.md` ⚠tracking-surface-only |
+| D-200 | Make it work first; compromise on performance only if performance proves a problem | LIVE | `CLAUDE.md` |
+| D-201 | Very large scores must be handled, and are expected to be more common than our corpora | LIVE | `ARCHITECTURE.md` |
+| D-202 | The effort control is one setting with several dials, and it must bound the time taken | DEFERRED | `ARCHITECTURE.md` |
+| D-203 | Candidate admission is completion, not refinement - so #8 permits fixing it now | LIVE | `CLAUDE.md` |
+| D-204 | One fix is designed once over the whole enumerated family, never per symptom | LIVE | `CLAUDE.md` |
+| D-205 | A human acts as ground truth where no formal ground truth exists | LIVE | `ARCHITECTURE.md` |
+| D-206 | Intonation is held as a future feature, and is a declared future consumer of the analysis | DEFERRED | `ARCHITECTURE.md` |
 
 ## T. Standing process rules and local patches — [full entries](decisions/group_T.md)
 
@@ -451,8 +449,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-197 | The distribution constraint - the import-fix patch is fork-local and never goes upstream | LIVE | `CLAUDE.md` |
 | D-198 | The Windows snap fix in the muse submodule is intentional and must not be reverted | LIVE | `CLAUDE.md` |
 | D-199 | The MusicXML declared-mode import fix is intentional and must not be reverted | LIVE | `CLAUDE.md` |
-| D-208 | A withheld finding never enters a mandatory session-start read | LIVE | `OPEN_ITEMS.md` ⚠tracking-surface-only |
-| D-209 | Code that is about to be deleted gets no audit - only the no-information-loss check at deletion | LIVE | `open_items/OI-84.md` ⚠tracking-surface-only |
+| D-208 | A withheld finding never enters a mandatory session-start read | LIVE | `cowork_audit_protocol.md` |
+| D-209 | Code that is about to be deleted gets no audit - only the no-information-loss check at deletion | LIVE | `cowork_audit_protocol.md` |
 | D-231 | Issue-exhaustion and specification completion before any fix design - the three-phase sequencing rule | LIVE | `CLAUDE.md` |
 
 ## U. The standing decision-bearing surfaces — [full entries](decisions/group_U.md)
@@ -476,8 +474,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 ## Provenance of this register
 
-- Adjudication: the OI-207 decision-conformance adjudication, 2026-08-01, at commit `58dea6702ac8aa9d5ef8b89244b94d587a75f7a5`.
-- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `433600ac00a8da2f…`).
+- Adjudication: the OI-207 decision-conformance adjudication, 2026-08-01, at commit `b006dc15b5f696f2fc86ad72b97fae58d2119cd7`.
+- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `3e75bfd4add0b3c9…`).
 - Harvest: `tools/audit/decisions/decision_candidates.json` (sha256 `51850440b315e6e9…`).
 - Clustering: `tools/audit/decisions/decision_clusters.json` (sha256 `0615b1e61bf10332…`).
 - Shape: `open_items/OI-208.md` (user-ratified 2026-07-28).

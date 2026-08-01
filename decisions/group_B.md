@@ -73,7 +73,7 @@
 
 **In plain words.** When a staff is excluded from analysis - for instance the chord staff the program itself writes to - its notes are dropped before the analysis starts, not filtered out of the answer afterwards.
 
-**Why.** Stated constraint, ARCHITECTURE.md:119-123: input selection belongs at the layer that owns its input surface (#7), and doing it there is what stops a populated chord staff's own notes from being fed back into a re-analysis - the self-feedback hazard the legacy design guarded against (ARCHITECTURE.md:5476-5477).
+**Why.** Stated constraint, ARCHITECTURE.md:119-123: input selection belongs at the layer that owns its input surface (#7), and doing it there is what stops a populated chord staff's own notes from being fed back into a re-analysis - the self-feedback hazard the legacy design guarded against (ARCHITECTURE.md:5610-5611).
 
 **Status.** LIVE · decided 2026-07-27 · ratifier not stated
 
@@ -116,7 +116,7 @@
 
 **In plain words.** The Roman numeral is a fact the estimator publishes. The chord symbol you read on screen and the Nashville number are ways of showing that fact, produced by the display code.
 
-**Why.** Stated constraint, ARCHITECTURE.md:147-148 (Decision D2 + the contract §3.3 amendment), resting on §2.3 (ARCHITECTURE.md:431-433): the analysis layer produces structured data and never display strings, a separation `ChordSymbolFormatter` already establishes.
+**Why.** Stated constraint, ARCHITECTURE.md:147-148 (Decision D2 + the contract §3.3 amendment), resting on §2.3 (ARCHITECTURE.md:476-478): the analysis layer produces structured data and never display strings, a separation `ChordSymbolFormatter` already establishes.
 
 **Status.** LIVE · date not stated · ratifier not stated
 

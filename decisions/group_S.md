@@ -146,7 +146,7 @@
 
 **In plain words.** The documents describing the system never lag behind the system.
 
-**Why.** Stated constraint, ARCHITECTURE.md:6390: stale documentation is worse than no documentation because it actively misleads. The same-commit rule that operationalizes it is at ARCHITECTURE.md:6389-6392.
+**Why.** Stated constraint, ARCHITECTURE.md:6535: stale documentation is worse than no documentation because it actively misleads. The same-commit rule that operationalizes it is at ARCHITECTURE.md:6534-6537.
 
 **Status.** LIVE · date not stated · ratified by user
 
@@ -435,11 +435,9 @@
 
 ### D-200 — Make it work first; compromise on performance only if performance proves a problem
 
-> The user's actual rule: **make it work first (best inference), compromise on performance only if
-> performance proves to be a problem.** That does not demote runtime speed; it sequences it — and
-> it means work that makes the same computation faster costs nothing on any principle axis and must
-> be exhausted BEFORE anything that trades precision for speed. The effort dial and the extent
-> question are **last resorts, not first ones**.
+> **MAKE IT WORK FIRST; COMPROMISE ON PERFORMANCE ONLY IF PERFORMANCE PROVES TO BE A PROBLEM
+> (user-directed, 2026-07-28, at the analysis-cost session).** Getting the inference right comes
+> first. Runtime speed is traded against it only once slowness has actually turned out to be a
 
 **In plain words.** Getting the analysis right comes first. Speed is traded against it only once slowness has actually turned out to be a problem. That does not make speed unimportant - it puts it second: anything that makes the same computation faster is free on every principle and is done first, and the settings that buy speed by giving up precision are the last resort, not the first.
 
@@ -447,13 +445,14 @@
 
 **Status.** LIVE · decided 2026-07-28 · ratified by user
 
-**Home.** `cowork_handoff.md:360`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `CLAUDE.md:878-880`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** cowork_handoff.md:358-364, the user's rulings at the analysis-cost session, 2026-07-28; recorded again as a standing rule at cowork_handoff.md:227-228. It corrects a Cowork misreading of 'implementation efficiency is not very relevant', which meant BUILD effort, not runtime.
+**Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at cowork_handoff.md (the user's rulings at the analysis-cost session, 2026-07-28), a session handoff block that ages into an archive outside the session-start read. It corrects a Cowork misreading of 'implementation efficiency is not very relevant', which meant BUILD effort, not runtime. OPEN_ITEMS OI-240 closes on this move
 
 ### D-201 — Very large scores must be handled, and are expected to be more common than our corpora
 
-> User-directed 2026-07-28, in the user's words: very large scores MUST be handled and are expected to be a MORE COMMON use case than our corpora. A STANDING DESIGN REQUIREMENT (not a defect) — every subsequent inference/notation design is judged against it.
+> **Very large scores MUST be handled, and are expected to be a MORE COMMON use than our corpora.** A
+> Wagner act or a symphony has to produce an analysis; the user expects such music to be a more common
 
 **In plain words.** A Wagner act or a symphony must work. The user expects such scores to be a more common use than the chorales the system was fitted on. This is a standing requirement every later design is judged against, not a defect report.
 
@@ -461,13 +460,14 @@
 
 **Status.** LIVE · decided 2026-07-28 · ratified by user
 
-**Home.** `OPEN_ITEMS.md:157`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:931-932`
 
-**Provenance.** OPEN_ITEMS.md:157 (OI-209) with open_items/OI-209.md. Consumed by the analysis-extent question (OI-210), the corpus onboarding (OI-38), and the architecture step-back (OI-200). The measured collision is OI-215/OI-227 - the decode returns nothing on 13 of 23 committed large scores.
+**Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:157 (OI-209) with open_items/OI-209.md, which tracks the requirement rather than housing it. Consumed by the analysis-extent question (OI-210), the corpus onboarding (OI-38), and the architecture step-back (OI-200). The measured collision is OI-215/OI-227 - the decode returns nothing on 13 of 23 committed large scores. OPEN_ITEMS OI-240 closes on this move
 
 ### D-202 — The effort control is one setting with several dials, and it must bound the time taken
 
-> The effort control is ONE setting with several dials that must bound TEMPORALLY too; too early to implement until we know factually which parts must be switchable — which this dispatch's measurement establishes.
+> **The effort control is ONE setting with several dials behind it, and among the quantities it must
+> bound is the TIME the analysis takes. DEFERRED.** How hard the analysis works is a single user-facing
 
 **In plain words.** How hard the analysis works is a single setting the user turns, not several. Behind it sit several dials, and among the things it must be able to bound is how long the analysis takes. It is too early to build: which pieces of the analysis have to be switchable is not yet known.
 
@@ -475,15 +475,15 @@
 
 **Status.** DEFERRED · decided 2026-07-28 · ratified by user
 
-**Home.** `OPEN_ITEMS.md:157`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:939-940`
 
-**Provenance.** OPEN_ITEMS.md:157 (OI-209). The two standing design rules the effort dial must satisfy are older and are in the architecture document (D-035, ARCHITECTURE.md:751-753): every cost-driving choice is a setting, and every optional expensive refinement is cleanly separable.
+**Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:157 (OI-209). The two standing design rules the effort control must satisfy are older and are stated in ARCHITECTURE.md §2.14 (D-035). OPEN_ITEMS OI-240 closes on this move
 
 ### D-203 — Candidate admission is completion, not refinement - so #8 permits fixing it now
 
-> **The fix is DEFERRED BY
-> DESIGN** until the whole family is known — the user ruled candidate admission is COMPLETION (not
-> refinement, so #8 permits it)
+> **CANDIDATE ADMISSION IS COMPLETION, NOT REFINEMENT — so #8 permits fixing it now (user-ruled
+> 2026-07-28, at the OI-199 pass-2 session).** The rule that decides which chord classes the joint
+> decoder will even consider is a piece that was never finished, not a refinement of something already
 
 **In plain words.** The rule that decides which chords the decoder will even consider is not a refinement of something already built - it is a piece that was never finished. So the principle that forbids chasing visible analysis errors before the structure is complete does not block fixing it.
 
@@ -491,14 +491,15 @@
 
 **Status.** LIVE · decided 2026-07-28 · ratified by user
 
-**Home.** `cowork_handoff.md:29`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `CLAUDE.md:888-890`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** cowork_handoff.md:26-32, the user's ruling recorded at the OI-199 pass-2 session. Cross-read with STATUS.md's earlier note that the classification 'is the user's to settle' - this row records that it was settled.
+**Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at cowork_handoff.md, the user's ruling at the OI-199 pass-2 session, 2026-07-28. Homed beside #8 in CLAUDE.md because it is a ruling about what #8 permits; what the admission rule IS, and that it has no specified form, is in the estimator's own specification (D-098) and at OPEN_ITEMS OI-226. Cross-read with STATUS.md's earlier note that the classification 'is the user's to settle' - this row records that it was settled. OPEN_ITEMS OI-240 closes on this move
 
 ### D-204 — One fix is designed once over the whole enumerated family, never per symptom
 
-> but the design happens ONCE over the family, never per symptom
-> (#6/#7).
+> **ONE FIX IS DESIGNED ONCE OVER THE WHOLE ENUMERATED FAMILY, NEVER PER SYMPTOM (user-ruled
+> 2026-07-28, at the OI-199 pass-2 session).** When several observed faults turn out to share a cause,
+> the remedy is designed once for all of them together, at the layer that owns the cause; fixing
 
 **In plain words.** When several observed faults turn out to share a cause, the remedy is designed once for all of them together. Fixing whichever one is currently visible, on its own, is the error the one-path-per-concern and layer principles exist to prevent.
 
@@ -506,13 +507,15 @@
 
 **Status.** LIVE · decided 2026-07-28 · ratified by user
 
-**Home.** `cowork_handoff.md:31`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `CLAUDE.md:899-901`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** cowork_handoff.md:28-32, recorded at the OI-199 pass-2 session, 2026-07-28.
+**Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at cowork_handoff.md, recorded at the OI-199 pass-2 session, 2026-07-28. OPEN_ITEMS OI-240 closes on this move
 
 ### D-205 — A human acts as ground truth where no formal ground truth exists
 
-> a HUMAN acts as ground truth where no formal ground truth exists** — the human decides by any method they choose, INCLUDING using the triage judge as guidance. So the judge lands eventually as a guidance instrument for the human-as-ground-truth workflow (never a grader, never a graded number); the branch is preserved until then.
+> **A HUMAN acts as ground truth where no formal ground truth exists (user-decided 2026-07-13).** For
+> repertoire nobody has published an analysis of, the reference answer is a person's judgment. That person
+> may reach it by any method they choose, **including** letting an automated triage judge point them at the
 
 **In plain words.** For music nobody has published an analysis of, the reference answer is a person's judgment. They may reach it however they like, including by letting an automated judge point them at the passages most likely to be wrong. That judge is guidance for the human, never a grader and never a number we report.
 
@@ -520,13 +523,15 @@
 
 **Status.** LIVE · decided 2026-07-13 · ratified by user
 
-**Home.** `open_items/OI-56.md:7`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:6376-6378`
 
-**Provenance.** open_items/OI-56.md:7, decided by the user 2026-07-13. The when-question is tied to the corpus-onboarding event (OI-38) and the timing is itself open.
+**Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at open_items/OI-56.md:7, decided by the user 2026-07-13. The when-question is tied to the corpus-onboarding event (OI-38) and the timing is itself open. OPEN_ITEMS OI-240 closes on this move
 
 ### D-206 — Intonation is held as a future feature, and is a declared future consumer of the analysis
 
-> KEEP HELD — intonation IS a future feature** (the six §11.3 items + the tie limitation stay as a deliberate long-horizon hold, revisited at a natural pause in the analysis work). **AND the user stated the dependency that makes the hold strategic, recorded here and in the evidence inventory: the intonation feature will CONSUME the analysis facts** — knowing mode/chord/chord-function/progression enables just-intonation tuning decisions, especially in the TIME dimension (stay in tune over time vs allow drift) — i.e., intonation is a declared FUTURE CONSUMER of the published analysis surfaces, a concrete instance of the publish-evidence-broadly rationale.
+> **Status of this whole section — HELD, and a declared future CONSUMER of the analysis (user-decided
+> 2026-07-13).** Intonation **is** a future feature: the six unbuilt items specified in §11.3a–g, together
+> with the tie limitation recorded there, stay on the books as a deliberate long-horizon hold, revisited at a
 
 **In plain words.** The six unbuilt pieces of the tuning design stay on the books as a deliberate long-horizon hold, revisited at a natural pause in the analysis work. The reason the hold is strategic rather than neglect: tuning will read the analysis - knowing the mode, the chord, its function and the progression is what lets a just-intonation decision be made, particularly the decision about staying in tune over time versus letting the pitch drift.
 
@@ -534,7 +539,7 @@
 
 **Status.** DEFERRED · decided 2026-07-13 · ratified by user
 
-**Home.** `open_items/OI-62.md:7`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:4779-4781`
 
-**Provenance.** open_items/OI-62.md:7, decided by the user 2026-07-13. The six unbuilt items are specified at ARCHITECTURE.md §11.3a-g and confirmed absent from the code in the row.
+**Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at open_items/OI-62.md:7, decided by the user 2026-07-13. The six unbuilt items are specified at ARCHITECTURE.md §11.3a-g and confirmed absent from the code in that row. OPEN_ITEMS OI-240 closes on this move
 

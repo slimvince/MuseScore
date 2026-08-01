@@ -53,6 +53,19 @@ agent, no access to the first pass's dispositions) audits a stratified sample of
 rows; its dispositions are then diffed against the first pass. Its explicit mission is to
 find what the first pass missed — it is rewarded by disagreement, not agreement.
 
+**A WITHHELD FINDING NEVER ENTERS A MANDATORY SESSION-START READ (user-ratified 2026-07-28).**
+When a pass is run blind — a finding deliberately kept from the auditor so that whether they
+rediscover it measures the audit's power — that finding must not appear in any document the
+auditor is *required* to open, and must not be delivered inline in the dispatch body. `STATUS.md`
+carries a POINTER; the withheld content lives in a separate artifact opened only after the freeze
+commit. Before a blind pass is dispatched, every required read and the dispatch body are
+cross-checked against every withholding requirement. *Why:* measured failure — on the OI-199
+pass-1 blinding, the mandatory `STATUS.md` read carried the full text of all three sealed findings
+with line citations, and the dispatch delivered them inline as well; the reconciliation could then
+no longer report blind recall, only that the artifacts point at each mechanism on their merits.
+The same shape had already occurred once (the OI-89 instance), which is why the remedy is stated
+as a standing rule rather than a per-dispatch precaution. Tracked at `OPEN_ITEMS.md` OI-222.
+
 ## P6 — Establish the audit itself (#19): a measured residual-error rate
 
 Randomly sample N rows (random, not "interesting" — neutral processing order throughout, so
@@ -84,6 +97,22 @@ The order matters: blind-first prevents the catalog from anchoring enumeration (
 re-import the bias P1 removed); signatures suffer no anchoring, so they run second at full
 strength. Pass-1-vs-pass-2 disagreements feed the P6 error estimate. Certification requires
 BOTH passes complete.
+
+## P9 — Scope: code that is about to be deleted gets NO audit (user-corrected 2026-07-10)
+
+Applied BEFORE P1's enumeration. The module is partitioned against the retirement map: **code that
+retires gets no audit at all** — the only thing owed to it is the #12 no-information-loss check at
+the moment of deletion (does anything it knew go unrecorded?). The surviving stack is then audited
+exhaustively, layer by layer, in dependency order, which is the plan P1–P8 describes. *Why:* the
+alternative form — audit whatever a session happens to touch — was put to the user and REJECTED as
+risky: touching one per cent of the module would audit one per cent while new work built on the
+unaudited remainder, itself a #18 violation (an unverified premise carrying load) across the whole
+architecture. Recorded at `OPEN_ITEMS.md` OI-84, corrected 2026-07-10 at the user's challenge.
+
+**The rule's own boundary, ruled by the user 2026-07-28:** it does NOT shield the joint estimator
+module. That module is production on both the batch and the notation surface and is not retiring, so
+the retiring-code exemption does not reach it — which is why the OI-199 review was pulled forward
+onto it rather than deferred behind the retirement map.
 
 ## The one-line summary
 

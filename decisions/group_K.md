@@ -13,13 +13,13 @@
 
 **In plain words.** Where two documents disagree about the architecture, this one is right, and a new ruling must be written into it before anywhere else.
 
-**Why.** Stated constraint, ARCHITECTURE.md:256-264: the per-layer design documents are the authoritative detail for their own scope but are not rival architecture documents; without one document that wins, a reader has no way to resolve a disagreement between two.
+**Why.** Stated constraint, ARCHITECTURE.md:301-309: the per-layer design documents are the authoritative detail for their own scope but are not rival architecture documents; without one document that wins, a reader has no way to resolve a disagreement between two.
 
 **Status.** LIVE · decided 2026-06-29 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:263-264`
+**Home.** `ARCHITECTURE.md:308-309`
 
-**Provenance.** ARCHITECTURE.md:256-264 'Doc governance (2026-06-29) - the hierarchy'
+**Provenance.** ARCHITECTURE.md:301-309 'Doc governance (2026-06-29) - the hierarchy'
 
 ### D-092 — A cross-cutting contract is stated once and never redefined in a layer document
 
@@ -28,13 +28,13 @@
 
 **In plain words.** Rules that apply to every stage are written down in one place. A stage's own document may use such a rule but may not restate it in its own words.
 
-**Why.** Same passage, ARCHITECTURE.md:260-261: a cross-cutting contract restated in a layer document is a second copy that can drift (#6); a layer document may USE the span typology or the verifiability contract, not redefine them.
+**Why.** Same passage, ARCHITECTURE.md:305-306: a cross-cutting contract restated in a layer document is a second copy that can drift (#6); a layer document may USE the span typology or the verifiability contract, not redefine them.
 
 **Status.** LIVE · decided 2026-06-29 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:260-261`
+**Home.** `ARCHITECTURE.md:305-306`
 
-**Provenance.** ARCHITECTURE.md:256-264
+**Provenance.** ARCHITECTURE.md:301-309
 
 ### D-093 — STATUS.md wins on current state; ARCHITECTURE.md on design
 
@@ -43,13 +43,13 @@
 
 **In plain words.** For what is built right now, read STATUS.md. For what was decided, read this document. Where they disagree about built-or-not, STATUS.md is right.
 
-**Why.** Stated constraint, ARCHITECTURE.md:251-254 and :3102-3103: the two documents move on different clocks - current state changes every session, design changes only when a decision changes - so each owns the question it can keep current.
+**Why.** Stated constraint, ARCHITECTURE.md:296-299 and :3102-3103: the two documents move on different clocks - current state changes every session, design changes only when a decision changes - so each owns the question it can keep current.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3141-3142`
+**Home.** `ARCHITECTURE.md:3246-3247`
 
-**Provenance.** ARCHITECTURE.md:3140-3142, consistent with :251-254
+**Provenance.** ARCHITECTURE.md:3245-3247, consistent with :251-254
 
 ### D-094 — Each layer carries exactly one build state
 
@@ -63,9 +63,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1025-1027`
+**Home.** `ARCHITECTURE.md:1130-1132`
 
-**Provenance.** ARCHITECTURE.md:1025-1028. Three layer tags and two prose statements are stale after the switch - see OPEN_ITEMS OI-232
+**Provenance.** ARCHITECTURE.md:1130-1133. Three layer tags and two prose statements are stale after the switch - see OPEN_ITEMS OI-232
 
 ### D-109 — The open-items register is the one home for every unresolved issue, and the index is the status of record
 
@@ -153,13 +153,13 @@
 
 **In plain words.** When a design decision changes, the change to this document goes in the same commit as the change to the code.
 
-**Why.** Stated constraint, ARCHITECTURE.md:6390: stale documentation is worse than no documentation, because it actively misleads.
+**Why.** Stated constraint, ARCHITECTURE.md:6535: stale documentation is worse than no documentation, because it actively misleads.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6389`
+**Home.** `ARCHITECTURE.md:6534`
 
-**Provenance.** ARCHITECTURE.md:6387-6392 (§18.4); the standing principle is CLAUDE.md #10 (D-174). No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:6532-6537 (§18.4); the standing principle is CLAUDE.md #10 (D-174). No date or ratifier stated.
 
 ### D-192 — A scoring change and its documentation land in the same commit
 
@@ -175,13 +175,13 @@
 
 **In plain words.** Any commit that adds or changes a template, bonus, guard, gate or other scoring term in the chord analyzer must carry the matching update to the scoring-model document. They may never drift apart.
 
-**Why.** Stated constraint, CLAUDE.md:593-598: violating the scoring model's invariants without reading it first has caused several failed attempts, named in the record - the leading-tone ambiguity attempt, four attempts at one bonus, and a rotation-selector bypass. The staleness check is mechanical: the template count in the document must equal the array size in the code (CLAUDE.md:610-613).
+**Why.** Stated constraint, CLAUDE.md:625-630: violating the scoring model's invariants without reading it first has caused several failed attempts, named in the record - the leading-tone ambiguity attempt, four attempts at one bonus, and a rotation-selector bypass. The staleness check is mechanical: the template count in the document must equal the array size in the code (CLAUDE.md:642-645).
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `CLAUDE.md:600`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:632`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** CLAUDE.md:589-628. The document itself is `docs/scoring_model.md`.
+**Provenance.** CLAUDE.md:621-660. The document itself is `docs/scoring_model.md`.
 
 ### D-193 — The writing standards live in one place, and predicates must be qualified
 
@@ -198,13 +198,13 @@
 
 **In plain words.** Anything written as a specification, a design, a decision surface, or for the user follows two standards. Every word that relates two things must name the second one - the check is to force the word to be followed by the thing it points at, and a phrase the prose cannot supply is a hole in the thinking. And terms are defined before use, in plain vocabulary, with no invented synonyms and no insider shorthand.
 
-**Why.** Stated constraint, CLAUDE.md:767-768: inherited prose is audited as hard as new prose, so the standard is about the document a reader meets rather than about who wrote which sentence. The one-home rule is #6 applied to the standards themselves (CLAUDE.md:769-770).
+**Why.** Stated constraint, CLAUDE.md:799-800: inherited prose is audited as hard as new prose, so the standard is about the document a reader meets rather than about who wrote which sentence. The one-home rule is #6 applied to the standards themselves (CLAUDE.md:801-802).
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `CLAUDE.md:761`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:793`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** CLAUDE.md:761-770; predicate qualification user-directed 2026-06-24, defined terms user-directed 2026-07-02. The ONE home is `cowork_design_doc_template.md`, which also carries the fourteen-section document structure, the status-banner convention and the implementation/test locator rule. Conformance of the existing tree is open at OPEN_ITEMS OI-230.
+**Provenance.** CLAUDE.md:793-802; predicate qualification user-directed 2026-06-24, defined terms user-directed 2026-07-02. The ONE home is `cowork_design_doc_template.md`, which also carries the fourteen-section document structure, the status-banner convention and the implementation/test locator rule. Conformance of the existing tree is open at OPEN_ITEMS OI-230.
 
 ### D-194 — No self-invented labels, abbreviations, numbering schemes or jargon
 
@@ -219,9 +219,9 @@
 
 **Status.** LIVE · decided 2026-07-11 · ratified by user
 
-**Home.** `CLAUDE.md:757`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:789`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** CLAUDE.md:757-760, user-directed repeatedly and recorded 2026-07-11.
+**Provenance.** CLAUDE.md:789-792, user-directed repeatedly and recorded 2026-07-11.
 
 ### D-195 — Every design decision carries its defense at its home
 
@@ -241,13 +241,13 @@
 
 **In plain words.** Wherever a design decision is written down - the owning layer's specification first - the record says WHY: the published research or algorithm it adopts, the measurement that decided it, or the constraint that forced it. Every design decision must be defendable and its defense written where the decision lives. Where the record has none, the decisions register says 'derivation not recorded' rather than supplying one afterwards.
 
-**Why.** Stated constraint, CLAUDE.md:818-819: this generalizes ARCHITECTURE.md §17.2 - every non-obvious scoring weight or threshold must explain its musical reasoning - from scoring values to design decisions as a class. The reason the gap is stated rather than filled: a defense written after the fact without a source is invention, which the never-work-from-memory rule forbids (CLAUDE.md:822-823).
+**Why.** Stated constraint, CLAUDE.md:850-851: this generalizes ARCHITECTURE.md §17.2 - every non-obvious scoring weight or threshold must explain its musical reasoning - from scoring values to design decisions as a class. The reason the gap is stated rather than filled: a defense written after the fact without a source is invention, which the never-work-from-memory rule forbids (CLAUDE.md:854-855).
 
 **Status.** LIVE · decided 2026-08-01 · ratified by user
 
-**Home.** `CLAUDE.md:813`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:845`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** CLAUDE.md:813-825, user-directed 2026-08-01 at the decisions-register ratification review. The register's rationale field is what serves it; the founding instances the entry names are D-004's segment-cap value, D-059's window and D-015's boundary-tick convention.
+**Provenance.** CLAUDE.md:845-857, user-directed 2026-08-01 at the decisions-register ratification review. The register's rationale field is what serves it; the founding instances the entry names are D-004's segment-cap value, D-059's window and D-015's boundary-tick convention.
 
 ### D-230 — The decisions register is a mandatory session-start read, and a new ruling lands in the register in the commit that records it
 

@@ -14,7 +14,7 @@
 
 **In plain words.** The tonality, the major/minor character and the chord are not worked out one after another. They are worked out together, in a single pass that also decides where one chord ends and the next begins.
 
-**Why.** Theory basis cited at ARCHITECTURE.md:9 - `cowork_key_chord_joint_inference_grounding.md`; the forcing constraint is the circular dependency list at ARCHITECTURE.md:637-651 (key<->chord, segmentation<->chord, non-chord-tone<->chord, function<->chord identity), which a feed-forward pipeline cannot resolve correctly.
+**Why.** Theory basis cited at ARCHITECTURE.md:9 - `cowork_key_chord_joint_inference_grounding.md`; the forcing constraint is the circular dependency list at ARCHITECTURE.md:682-696 (key<->chord, segmentation<->chord, non-chord-tone<->chord, function<->chord identity), which a feed-forward pipeline cannot resolve correctly.
 
 **Status.** LIVE · decided 2026-07-17 · ratified by user
 
@@ -143,7 +143,8 @@
 
 ### D-096 — Fitted values are fit once against ground truth, never per-case tuned
 
-> forms from theory, values fit ONCE against GT (#19), never per-case tuned
+> **(a) Factor FORMS come from theory; factor VALUES are fit ONCE against ground truth and are never tuned
+> per case.** Every factor's shape is derived from established music theory before any number is attached to
 
 **In plain words.** The shape of each piece of evidence comes from music theory. Its numerical strength is learned once from annotated music, and never adjusted to make a particular passage come out right.
 
@@ -151,13 +152,14 @@
 
 **Status.** LIVE · decided 2026-07-17 · ratified by user
 
-**Home.** `OPEN_ITEMS.md:25`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:256-257`
 
-**Provenance.** OPEN_ITEMS.md:15-26 (the governing architecture decision banner). NOT recorded in any ARCHITECTURE.md layer specification - see OPEN_ITEMS OI-237
+**Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:15-26, the governing architecture decision banner (user-ratified 2026-07-17), which tracks work and is not a specification home. OPEN_ITEMS OI-237 closes on this move
 
 ### D-097 — Held-out evaluation and a capacity budget are declared before any fit
 
-> 5-fold CV grouped by WiR file, all fitted objects train-fold-only, headline = pooled CV + piece-bootstrap CI
+> **(b) The held-out split and the capacity budget are declared BEFORE any value is fit, and the headline
+> number is the held-out one.** The ratified protocol is five-fold cross-validation grouped by the shared
 
 **In plain words.** Before the estimator's numbers are learned, we say in advance which music will be held back to test them on, and how many numbers we are allowed to learn at all. The headline number is always the one measured on the held-back music.
 
@@ -165,13 +167,14 @@
 
 **Status.** LIVE · decided 2026-07-19 · ratifier not stated
 
-**Home.** `OPEN_ITEMS.md:123`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:263-264`
 
-**Provenance.** open_items/OI-176 and OI-177 (PROTOCOL RATIFIED 2026-07-19). The standing principles are CLAUDE.md #20. NOT recorded in any ARCHITECTURE.md layer specification - see OPEN_ITEMS OI-237
+**Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:123 (open_items/OI-176 and OI-177, PROTOCOL RATIFIED 2026-07-19, protocols in `cowork_prefit_gates.md`). The standing principle is CLAUDE.md #20. OPEN_ITEMS OI-237 closes on this move
 
 ### D-098 — The exact-decode reserve - the declared prune was never adopted
 
-> the exact-decode reserve is the declared remedy (never budgeted at fitted weights)
+> **(c) The decode is EXACT; the declared reserve prune was never adopted, and what the decoder does narrow
+> has no specified form.** Exact semi-Markov Viterbi over the joint state is the ratified search. A prune was
 
 **In plain words.** The estimator was meant to be allowed to narrow its search when that gets too slow. The narrowing rule that was specified turned out to cost more than it saved, so the estimator still searches exactly - and how it actually narrows in practice was never specified.
 
@@ -179,13 +182,14 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `OPEN_ITEMS.md:211`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:275-276`
 
-**Provenance.** open_items/OI-188 (OPEN - 'bounds every ceiling claim'); the admission rule actually in production has no ratified basis (open_items/OI-226)
+**Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:211 (open_items/OI-188, OPEN - 'bounds every ceiling claim'); the admission rule actually in production still has no ratified basis (open_items/OI-226). OPEN_ITEMS OI-237 closes on this move
 
 ### D-114 — The decoder commits its best path; there is no abstention on the key axis
 
-> **key-abstain 0** — A commits its MAP path, the OI-33 flag reads zero
+> **(d) On the key axis the decoder commits its maximum-a-posteriori path; it never abstains.** The estimator
+> always names a key for every committed segment, so the abstention counter the regression stop reads is
 
 **In plain words.** The joint estimator always names a key. It never declines to answer on the key axis, so the abstention counter is always zero.
 
@@ -193,7 +197,7 @@
 
 **Status.** LIVE · decided 2026-07-26 · ratified by user
 
-**Home.** `CLAUDE.md`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:287-288`
 
-**Provenance.** CLAUDE.md gate block (A), the OI-178 adoption baselines. NOT recorded in any ARCHITECTURE.md layer specification, and it sits in tension with D-090 (calibrated abstention) - see OPEN_ITEMS OI-237
+**Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only in the CLAUDE.md gate block (A), the OI-178 adoption baselines (user-ratified 2026-07-26). The tension with D-090 (calibrated abstention, ARCHITECTURE.md §5.7a) is NAMED at the new home and deliberately NOT resolved there - resolving it is later work. OPEN_ITEMS OI-237 closes on this move
 

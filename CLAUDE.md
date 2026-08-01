@@ -370,6 +370,38 @@ preserved in `tools/robust_stop/snapshot_2026-07-12_pre_oi142_oi143/`.*
   ratified**, the class-(b) duration non-increase **proven per preset**, the manifest re-stamped with
   the new corpus `git_hash`, and the **outgoing reference snapshotted first (O-12)**.
 
+**★ THE THREE GRADING CONVENTIONS THE ROBUST UNIT IS MEASURED UNDER (each ruled earlier; written into
+this block 2026-08-02 because until then they were recorded only on the open-items rows that tracked
+building them, which track work and are not a home for a standing convention).** Every number in this
+block depends on all three.
+
+- **An exotic mode is graded against its PARENT COLLECTION's minor key, not against its own tonic
+  triad** (user-ruled 2026-07-13, OI-132; landed `800f1a12bf`). When our analysis emits one of the five
+  dominant-family exotic modes, grading reduces it to the minor key of the collection it belongs to — an
+  emitted C♯ Phrygian dominant grades as F♯ minor, the key it is the dominant of. *Why:* measured — on
+  the affected duration the parent-collection reading agrees with the DCML annotators on **67 %** of the
+  local key column and the tonic-triad reading on **0 %** (`cc_mode_grading_adjudication_probe_report.md`).
+  The consolidation moved the key columns only: root, Roman numeral, every root-failing run set and the
+  class-(b) hard-stop duration were byte-identical, run-difference +0/−0 on all presets
+  (`cc_key_grading_and_calibration_rebaseline_report.md`). It is implemented in ONE shared reduction,
+  `compare_rn._our_key_tonic` (#6), onto which the second key parser was folded.
+- **Key agreement is reported against BOTH the global home key and the local key** (user-ratified
+  2026-07-12, OI-143; adopted `d9b52ba969`). Both columns are carried everywhere the key column appears;
+  neither replaces the other. *Why:* measured — the local percentage is lower than the home percentage, and that
+  difference is itself the finding (the analysis tracks the tonal home more faithfully than it tracks
+  momentary tonicizations), so keeping one column would have hidden a real property of the system.
+- **The stop is ABSTAIN-AWARE: on the root axis an abstention counts as a DISAGREEMENT** (ruled and
+  mechanically enforced 2026-07-12, OI-33). A cell where our analysis carries no root pitch class is
+  scored as a root disagreement; on the key axis abstained cells are instead **excluded from the
+  agreement denominator** and the abstain duration is published beside the percentage, with
+  `robust_stop_diff.py` flagging any rise in the candidate's abstain rate. *Why:* an agreement
+  percentage is abstention-reducible — without the convention a change that made the system decline more
+  often would raise the percentage without analysing anything better — and the convention was owed before any
+  abstaining path could be gated on this stop at all. The one abstain decision on the key axis is
+  `compare_rn._our_key_ident`; every graded surface routes through it rather than re-deciding what counts
+  as an abstention. On the production arm the decoder never abstains on the key axis, so the counter reads
+  zero (the joint estimator's standing rules (d), `ARCHITECTURE.md`).
+
 **★ A-8 DUAL-TRACK (MEASURED + RATIFIED, user, 2026-07-03; `cc_a8_rebaseline_measure_report.md`).** The
 **primary reported metric AND the Stage-5 fitting-objective basis** is the robust unit above: root
 governs, RN + key(home,local) tracked beside. **★ Ratified baselines — RE-BASELINED AT THE OI-178
@@ -842,6 +874,36 @@ Build commands via `Start-Process` are isolated from these rules (exit code not 
   with (its family), in what order, and what refits it forces — and only then does design begin.
   Rationale: #3/#5/#13 generalized from one defect family to the whole system, and the product is
   unshipped, so carrying known defects while knowledge completes costs no user anything.
+
+- **MAKE IT WORK FIRST; COMPROMISE ON PERFORMANCE ONLY IF PERFORMANCE PROVES TO BE A PROBLEM
+  (user-directed, 2026-07-28, at the analysis-cost session).** Getting the inference right comes
+  first. Runtime speed is traded against it only once slowness has actually turned out to be a
+  problem. This does not demote runtime speed, it **sequences** it: work that makes the *same*
+  computation faster costs nothing on any principle axis and must therefore be exhausted BEFORE
+  anything that trades precision for speed — which puts the effort control (`ARCHITECTURE.md` §2.16)
+  and the analysis-extent question **last**, not first. The rule was stated to correct a misreading of
+  an earlier remark that "implementation efficiency is not very relevant": that remark meant BUILD
+  effort, not runtime.
+
+- **CANDIDATE ADMISSION IS COMPLETION, NOT REFINEMENT — so #8 permits fixing it now (user-ruled
+  2026-07-28, at the OI-199 pass-2 session).** The rule that decides which chord classes the joint
+  decoder will even consider is a piece that was never finished, not a refinement of something already
+  built. #8 — no inference-problem-driven coding until every method sits in its correct layer — therefore
+  does NOT block fixing it. The classification is recorded here because it is a ruling about what #8
+  permits, and #8 lives here; what the admission rule actually is, and that it has no specified form, is
+  in the estimator's own specification (`ARCHITECTURE.md`, the joint estimator's standing rules, (c)) and
+  at `OPEN_ITEMS.md` OI-226. The licence is narrow: it permits deriving the correct admission rule from
+  the model, NOT loosening a threshold until orchestral scores pass, which is per-case tuning and DT-2
+  forbids it.
+
+- **ONE FIX IS DESIGNED ONCE OVER THE WHOLE ENUMERATED FAMILY, NEVER PER SYMPTOM (user-ruled
+  2026-07-28, at the OI-199 pass-2 session).** When several observed faults turn out to share a cause,
+  the remedy is designed once for all of them together, at the layer that owns the cause; fixing
+  whichever fault is currently visible, on its own, is the patch-per-symptom error that #6 (one path per
+  concern) and #7 (layer adherence) exist to prevent. A fix is therefore **deferred by design** until
+  the family is enumerated. The instance that produced the rule: the empty-decode cliff turned out to
+  have a sibling at the opposite end of the density spectrum (`OPEN_ITEMS.md` OI-227) and an
+  emission-side twin (OI-228), neither visible from the first symptom (OI-215).
 
 ## The self-check after every coding exercise (user-directed, 2026-07-11)
 

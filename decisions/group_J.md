@@ -13,13 +13,13 @@
 
 **In plain words.** Showing the harmony as Roman numerals or as Nashville numbers is a choice of how to display one and the same analysis.
 
-**Why.** Stated constraint, ARCHITECTURE.md:5544-5546: Roman numerals and Nashville numbers encode identical information, so showing both on one staff would be redundant and would destroy legibility - which makes the choice a display preference, not two analyses.
+**Why.** Stated constraint, ARCHITECTURE.md:5678-5680: Roman numerals and Nashville numbers encode identical information, so showing both on one staff would be redundant and would destroy legibility - which makes the choice a display preference, not two analyses.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3033-3034`
+**Home.** `ARCHITECTURE.md:3138-3139`
 
-**Provenance.** ARCHITECTURE.md:3030-3034; consistent with D-016
+**Provenance.** ARCHITECTURE.md:3135-3139; consistent with D-016
 
 ### D-087 — Display options live with the formatter, not with the analyzer preferences
 
@@ -32,9 +32,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2745-2746`
+**Home.** `ARCHITECTURE.md:2850-2851`
 
-**Provenance.** ARCHITECTURE.md:2711-2746
+**Provenance.** ARCHITECTURE.md:2816-2851
 
 ### D-088 — No automatic key signature injection
 
@@ -43,13 +43,13 @@
 
 **In plain words.** The program will never add a key signature to your score by itself. It shows what it inferred in the chord staff and leaves the decision to you.
 
-**Why.** Stated constraint, ARCHITECTURE.md:475-480 (§2.9): writing a key signature into the score would be the system modifying the music without the user asking.
+**Why.** Stated constraint, ARCHITECTURE.md:520-525 (§2.9): writing a key signature into the score would be the system modifying the music without the user asking.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3634-3635`
+**Home.** `ARCHITECTURE.md:3739-3740`
 
-**Provenance.** ARCHITECTURE.md:3627-3635; an instance of D-074
+**Provenance.** ARCHITECTURE.md:3732-3740; an instance of D-074
 
 ### D-089 — The legacy confidence exposure gates - 0.5 tentative, 0.8 assertive
 
@@ -63,7 +63,7 @@
 
 **Status.** SUPERSEDED BY D-018 · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3319-3321`
+**Home.** `ARCHITECTURE.md:3424-3426`
 
 **Provenance.** The record arm replaces the 0.5/0.8 literals with the fitted nats constants (ARCHITECTURE.md:168-170); the literals are legacy-arm-only (sectionanalyzer.cpp::legacyKeyExposureBucket)
 
@@ -74,13 +74,13 @@
 
 **In plain words.** The aim is not to put a label on everything. It is to be right about what we do label, and to say nothing when the evidence is thin.
 
-**Why.** Stated constraint, ARCHITECTURE.md:3333-3341 and its consumer rules at :5604-5612: the stated product target is not 'always emit a label' but high precision on exposed results, calibrated abstention when evidence is weak, and coverage gains only after precision is acceptable - so below the confidence bar the key-dependent annotations are suppressed rather than printed tentatively.
+**Why.** Stated constraint, ARCHITECTURE.md:3438-3446 and its consumer rules at :5604-5612: the stated product target is not 'always emit a label' but high precision on exposed results, calibrated abstention when evidence is weak, and coverage gains only after precision is acceptable - so below the confidence bar the key-dependent annotations are suppressed rather than printed tentatively.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3339-3340`
+**Home.** `ARCHITECTURE.md:3444-3445`
 
-**Provenance.** ARCHITECTURE.md:3326-3378
+**Provenance.** ARCHITECTURE.md:3431-3483
 
 ### D-106 — The augmented-sixth labels are gated to the Standard and Baroque presets
 
@@ -94,7 +94,7 @@
 
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3648-3650`
+**Home.** `ARCHITECTURE.md:3753-3755`
 
 **Provenance.** open_items/OI-112 already records this preset-gating as stale; open_items/OI-201 records that the record arm collapses the family to a plain major triad symbol
 
