@@ -5,7 +5,28 @@
 > Historical entries live in `STATUS_ARCHIVE.md` (reference-only, NOT part of the session-start
 > read) — a superseded entry moves there instead of accumulating here.
 
-*Last updated: 2026-08-01, LATEST (CC — **THE DECISIONS REGISTER IS CORRECTED AND COMPLETED: `DECISIONS.md`,
+*Last updated: 2026-08-02, LATEST (Cowork — **THE DECISIONS REGISTER IS RATIFIED AND IS NOW THE LIVING
+SURFACE; the four-perspective review pass is ROWED; two adjudications RULED.** Per the OI-222 remedy this
+entry is a POINTER — content lives in the register, the rows, and the dated notes. In ONE commit: (1) the
+user RATIFIED all 228 register entries (2026-08-02), and the register was re-emitted in the INDEX-PLUS-DETAIL
+shape (`DECISIONS.md` the lean index + `decisions/group_*.md`, the drift check covering all 21 files) after
+the one-file form outgrew rendering; (2) the user RULED [[OI-234]] (reading 3 — the 2026-06-29 inert finding
+stands for the cycling class it tested, does not bear on the joint decode; §2.14 annotated, D-025/D-026
+moved) and [[OI-241]] (the MuseScore-dependency rule adopted; `ARCHITECTURE.md` §3.3 + D-229); (3) the
+LIVING-SURFACE half landed — `DECISIONS.md` is a mandatory session-start read and a new ruling lands in the
+register in its recording commit (`CLAUDE.md` decisions-register section, D-230) — [[OI-208]] CLOSES;
+(4) the user-reviewed four-perspective review pass is rowed: **OI-243…OI-257** (headline [[OI-243]]/[[OI-244]]
+— the decode measured NOT transposition-equivariant, 66 % segment equivalence, mechanisms verified at source,
+repo-side re-run owed before load; the adapter input-surface census OI-245…253; the localization/accessibility
+non-conformance OI-254; the unreachable command OI-255; the test-gap list OI-256; doc-sync OI-257) + dated
+notes on OI-239/OI-228/OI-74/OI-213/OI-238 + the probe artifacts committed at
+`tools/joint_estimator/transposition_probe_2026_08_02/`. All guards PASS at this commit (register 230/230
+quotes, 223/223 anchors, refs ALL; open-items living check 257/257, originals byte-verbatim). **NEXT:** the
+struck-vs-sounding family design surface (now including the representation face OI-243/244 and the input-
+surface census), per the standing sequence; the OI-207 unresolved-residual second pass; OI-237/OI-240's
+specification-writing acts.)*
+
+*Last updated: 2026-08-01, prior (CC — **THE DECISIONS REGISTER IS CORRECTED AND COMPLETED: `DECISIONS.md`,
 228 decisions, each now carrying its DEFENSE.** READ-ONLY: no `src/` change, no golden / `tools/corpus/` /
 `tools/robust_stop/` movement, no behavior change, no fix, no design, no `ARCHITECTURE.md` edit. Dispatch
 `cc_instruction_decisions_register_completion.md`. Per the OI-222 remedy this entry is a **POINTER** — the

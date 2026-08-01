@@ -719,6 +719,18 @@ bespoke revision machinery. The quality levels above map onto beam width (Level 
 `docs/redesign_plan.md` "Architecture review addendum (2026-06-10)".
 
 **★ Reconciliation (2026-06-29) — SUPERSEDED: the joint-lattice decode gave way to forward-only + a gated step.**
+
+**★ Scoping annotation (user ruling, 2026-08-02, at the OI-234 decision-conflict adjudication — reading 3).**
+The finding below STANDS FOR WHAT IT TESTED and is not withdrawn: global cycling / re-ranking over
+the per-layer pipeline's carried candidate lists adds nothing, and that remains binding on any
+future cycling-style design (#12 — an exclusion is information). It DOES NOT BEAR ON the fitted
+semi-Markov joint decode ratified 2026-07-17 (the governing banner at the top of this document)
+and adopted 2026-07-26 — a different mechanism class (ONE generative decode over a joint
+(tonality, mode, chord) state space with fitted factors), whose gain was measured at the adoption
+(root agreement 66.0 → 77.0 on the robust unit). The "not by a joint decode" conclusion below is
+therefore scoped to lattice/beam cycling over per-layer candidates. Register entries D-025/D-026
+carry the scoped statuses.
+
 The 2026-06-10 "joint inference over a hypothesis lattice / global Viterbi–beam decode" above named the right
 *goal* (revise an earlier commitment on later evidence) but the wrong *mechanism*. The subsequent investigation
 **measured the full joint cross-layer search INERT** — the realisable gain is soft-evidence *quality* carried
@@ -953,6 +965,33 @@ preferences   ← injects both composing config interfaces
 ```
 
 This dependency order is **enforced**. Any code that would invert it (e.g. a composing header forward-declaring `mu::engraving::Note`) must be moved to the notation bridge layer.
+
+#### The MuseScore-Dependency Rule (user-ratified 2026-08-02, at the OI-241 adjudication)
+
+Which existing MuseScore code our code may depend on, stated once — the general rule the scoped
+forms in this document instantiate:
+
+1. **The analysis library (`composing`) depends on no MuseScore or engraving types** — the
+   Dependency Rule above, unchanged.
+2. **The bridge layer reads the score model only through the established bridge pattern, and
+   never layout-derived state as analysis input.** The Layer-1 note model is the single
+   sanctioned reading surface for analysis facts; positions, spacing and other layout products
+   are presentation outputs, readable only for placing presentation artifacts, never as
+   inference evidence (a layout read entering analysis is the OI-98 class, judged against this
+   rule).
+3. **Editing MuseScore's own code is admissible only for a defect blocking our feature.** Each
+   instance is recorded in `CLAUDE.md`'s local-patches section with a do-not-revert note and an
+   explicit per-instance distribution disposition (upstreamable or fork-local), ratified by the
+   user. The recorded contribution intent (§1.2) governs our module as a whole; distribution is
+   decided per patch — the fork-local constraint on the MusicXML mode-import patch is such an
+   instance, not a contradiction of the intent.
+
+*Why this rule: derived from the already-ratified scoped forms (the Dependency Rule, the bridge
+pattern, the local-patches constraints) rather than invented (#1); one rule where
+practice-by-example governed (#6/#7); the layout exclusion because layout is presentation
+downstream of the facts, and analysis consuming it is a layer inversion and the self-feedback
+class the input-scoping work guarded against; the per-instance patch ratification preserves #14
+and reconciles the §1.2 contribution intent with the fork-local patch constraint.*
 
 #### Why This Matters
 

@@ -149,6 +149,21 @@ discovered" means: every item has ONE index row, an owning layer, and a blocking
 #8-correct stage, never silently forgotten. (The byte-level split reconciliation instrument is
 `tools/open_items_split_check.py` → `open_items/split_reconciliation.json`.)
 
+## The decisions register (shape user-ratified 2026-07-28; content + living surface 2026-08-02)
+
+**The register is `DECISIONS.md` (the lean INDEX) + `decisions/group_<X>.md` (full entries: the
+verbatim decision, plain restatement, why, status, home, provenance).** It records WHAT WAS
+DECIDED and its STATUS, nothing else — non-conformance is tracked in `OPEN_ITEMS.md` as ordinary
+rows pointing back at the decision violated. Rules: (a) **read the INDEX `DECISIONS.md` at
+session start** (open group files as needed); (b) a dispatch, design or report touching a
+decision's subject CITES its register entry; (c) **a new ratification, shelving or falsification
+gets its register entry (data + regenerated files) IN the commit that records it**; (d) the
+register is a GENERATED surface — change `tools/audit/decisions/backbone_decisions.json` and
+regenerate (`gen_decisions_register.py`; its `--check` and `gen_cluster_dispositions.py
+--verify` guard drift, quote fidelity and reference resolution), never hand-edit the rendered
+files; (e) a decision belongs, wherever possible, in the OWNING LAYER'S SPECIFICATION — the
+register is the index and pointer, never a substitute home.
+
 ## Project context
 
 This is MuseScore Studio. The active development area is the `composing` module
@@ -186,10 +201,12 @@ Only stop and ask if:
 
 ## Build and test commands
 
-**Always read these two files at the start of every session:**
+**Always read these three files at the start of every session:**
 - `C:\s\MS\BUILD_AND_TEST.md` — authoritative commands for all build variants, both test suites, and all Python tools
 - `C:\s\MS\STATUS.md` — lean since the 2026-07-18 doc split: the current entries, active iteration/next
   action, and pointers to the ratified baselines (gate block (A) below)
+- `C:\s\MS\DECISIONS.md` — the decisions register's INDEX (see the register section above); rulings
+  bind mechanically only if every session reads them
 
 Do not rely on memory of previous sessions for baseline numbers or iteration state — read STATUS.md.
 `STATUS_ARCHIVE.md` and `cowork_handoff_archive.md` hold the superseded historical entries moved out

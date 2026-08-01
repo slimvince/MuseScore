@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-"""Generate DECISIONS.md — the decisions register (OI-208), in the ratified shape.
+"""Generate the decisions register (OI-208), in the ratified shape.
+
+Since 2026-08-02 (user-directed, at the 228-entry ratification review) the register is emitted
+in the INDEX-PLUS-DETAIL shape the open-items register ratified on 2026-07-26: `DECISIONS.md`
+is the LEAN INDEX (one table row per decision: ID, title, status, home), and the full entries
+(verbatim quote, plain restatement, Why, status, home, provenance) live in one generated file
+per group under `decisions/`. The register was previously one file; at 228 full entries it no
+longer rendered.
 
 The register is GENERATED from `backbone_decisions.json` (the adjudication's
 judgment) plus `cluster_dispositions.json` (the coverage figures), so that no
@@ -10,7 +17,7 @@ To change an entry, edit `backbone_decisions.json` and re-run this generator.
 
 Usage
     python tools/audit/decisions/gen_decisions_register.py
-    python tools/audit/decisions/gen_decisions_register.py --check   # regenerate and diff
+    python tools/audit/decisions/gen_decisions_register.py --check   # regenerate and diff ALL emitted files
 """
 
 from __future__ import annotations
@@ -68,11 +75,22 @@ PREAMBLE = """# DECISIONS — the decisions register
 >
 > **Shape ratified by the user, 2026-07-28** (`open_items/OI-208.md`, three rulings).
 > **Populated by the OI-207 decision-conformance adjudication, 2026-08-01.**
+> **Content RATIFIED by the user, 2026-08-02:** the 115 originally-enumerated entries with the
+> user's review corrections applied, and the 113 completion-pass entries (reviewed via the
+> pending-ratification reading aid). The register-level ratification does not overwrite
+> per-entry provenance — an entry saying "ratifier not stated" still means the original record
+> of THAT decision does not say; what the 2026-08-02 ratification establishes is that these
+> entries are the standing decisions of record.
 >
 > **GENERATED FILE — do not hand-edit.** Source of record:
 > `tools/audit/decisions/backbone_decisions.json`; generator
 > `tools/audit/decisions/gen_decisions_register.py`. Every number below is computed, never
 > transcribed.
+>
+> **This file is the INDEX** (the open-items register's index-plus-detail shape, applied here
+> 2026-08-02 when the one-file register outgrew rendering): one row per decision below; the FULL
+> entries — verbatim quote, plain restatement, Why, status, home, provenance — are in one
+> generated file per group under `decisions/`, linked from each group heading.
 
 ## How to read an entry
 
@@ -234,34 +252,22 @@ def render(backbone: dict, disp: dict) -> str:
         members = [d for d in decisions if d["group"] == g["id"]]
         if not members:
             continue
-        out.append(f"## {g['id']}. {g['title']}")
+        gfile = group_filename(g)
+        out.append(f"## {g['id']}. {g['title']} — [full entries]({gfile})")
         out.append("")
+        out.append("| ID | Decision | Status | Home |")
+        out.append("|---|---|---|---|")
         for d in members:
-            out.append(f"### {d['id']} — {d['title']}")
-            out.append("")
-            for line in d["verbatim"].splitlines():
-                stripped = re.sub(r"^\s*>+\s?", "", line)
-                out.append(f"> {stripped}" if stripped.strip() else ">")
-            out.append("")
-            out.append(f"**In plain words.** {d['plain']}")
-            out.append("")
-            out.append(f"**Why.** {d.get('rationale') or NO_RATIONALE}")
-            out.append("")
             st = STATUS_LABEL.get(d["status"], d["status"].upper())
             if d["status"] == "superseded-by" and d.get("superseded_by"):
                 st = f"{st} {d['superseded_by']}"
-            when = "date not stated" if d["date"] == "not stated" else f"decided {d['date']}"
-            who = ("ratifier not stated" if d["ratified_by"] == ["not stated"]
-                   else "ratified by " + ", ".join(d["ratified_by"]))
-            out.append(f"**Status.** {st} · {when} · {who}")
-            out.append("")
-            homemark = "" if d.get("home_is_layer_spec") else \
-                "  " + NONSPEC_MARK.get(d.get("nonspec_kind", "gap"), NONSPEC_MARK["gap"])
-            out.append(f"**Home.** `{d['home']}`{homemark}")
-            out.append("")
-            out.append(f"**Provenance.** {d['status_source']}")
-            out.append("")
-        out.append("---")
+            home = d["home"].split(":")[0]
+            homeflag = "" if d.get("home_is_layer_spec") else {
+                "gap": " ⚠gap", "unhomed": " ⚠tracking-surface-only",
+                "project-convention": "", "process": "",
+            }.get(d.get("nonspec_kind", "gap"), " ⚠gap")
+            why = "" if d.get("rationale") else " · derivation not recorded"
+            out.append(f"| {d['id']} | {d['title'].replace('|', '/')} | {st}{why} | `{home}`{homeflag} |")
         out.append("")
 
     out.append("## Provenance of this register")
@@ -282,25 +288,90 @@ def render(backbone: dict, disp: dict) -> str:
     return "\n".join(out) + "\n"
 
 
+def group_filename(g: dict) -> str:
+    return f"decisions/group_{g['id']}.md"
+
+
+def render_entry(d: dict) -> list[str]:
+    out: list[str] = []
+    out.append(f"### {d['id']} — {d['title']}")
+    out.append("")
+    for line in d["verbatim"].splitlines():
+        stripped = re.sub(r"^\s*>+\s?", "", line)
+        out.append(f"> {stripped}" if stripped.strip() else ">")
+    out.append("")
+    out.append(f"**In plain words.** {d['plain']}")
+    out.append("")
+    out.append(f"**Why.** {d.get('rationale') or NO_RATIONALE}")
+    out.append("")
+    st = STATUS_LABEL.get(d["status"], d["status"].upper())
+    if d["status"] == "superseded-by" and d.get("superseded_by"):
+        st = f"{st} {d['superseded_by']}"
+    when = "date not stated" if d["date"] == "not stated" else f"decided {d['date']}"
+    who = ("ratifier not stated" if d["ratified_by"] == ["not stated"]
+           else "ratified by " + ", ".join(d["ratified_by"]))
+    out.append(f"**Status.** {st} · {when} · {who}")
+    out.append("")
+    homemark = "" if d.get("home_is_layer_spec") else \
+        "  " + NONSPEC_MARK.get(d.get("nonspec_kind", "gap"), NONSPEC_MARK["gap"])
+    out.append(f"**Home.** `{d['home']}`{homemark}")
+    out.append("")
+    out.append(f"**Provenance.** {d['status_source']}")
+    out.append("")
+    return out
+
+
+def render_group_file(g: dict, members: list[dict]) -> str:
+    out: list[str] = []
+    out.append(f"# Decisions group {g['id']} — {g['title']}")
+    out.append("")
+    out.append("> **GENERATED FILE — do not hand-edit.** Part of the decisions register: the index,")
+    out.append("> the how-to-read guide and the terms table are `DECISIONS.md` (repository root);")
+    out.append("> the source of record is `tools/audit/decisions/backbone_decisions.json`; the")
+    out.append("> generator is `tools/audit/decisions/gen_decisions_register.py`. To change an")
+    out.append("> entry, edit the data and regenerate.")
+    out.append("")
+    for d in members:
+        out.extend(render_entry(d))
+    return "\n".join(out) + "\n"
+
+
+def emit_all(backbone: dict, disp: dict) -> dict[Path, str]:
+    files: dict[Path, str] = {OUT: render(backbone, disp)}
+    for g in backbone["groups"]:
+        members = [d for d in backbone["decisions"] if d["group"] == g["id"]]
+        if members:
+            files[REPO / group_filename(g)] = render_group_file(g, members)
+    return files
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--check", action="store_true",
-                    help="regenerate into memory and report whether the committed file matches")
+                    help="regenerate into memory and report whether every emitted file matches")
     args = ap.parse_args()
 
     backbone = json.loads(BACKBONE.read_text(encoding="utf-8"))
     disp = json.loads(DISPOSITIONS.read_text(encoding="utf-8"))
-    text = render(backbone, disp)
+    files = emit_all(backbone, disp)
 
     if args.check:
-        current = OUT.read_text(encoding="utf-8") if OUT.exists() else ""
-        same = current == text
-        print("DECISIONS.md " + ("matches the data" if same else "IS STALE vs the data"))
-        return 0 if same else 1
+        stale = [p for p, text in files.items()
+                 if (p.read_text(encoding="utf-8") if p.exists() else "") != text]
+        if stale:
+            for p in stale:
+                print(f"STALE vs the data: {p.relative_to(REPO).as_posix()}")
+            return 1
+        print(f"the register matches the data ({len(files)} files: the index + "
+              f"{len(files) - 1} group files)")
+        return 0
 
-    OUT.write_text(text, encoding="utf-8")
-    print(f"wrote {OUT.relative_to(REPO).as_posix()} "
-          f"({len(backbone['decisions'])} decisions, {len(text.splitlines())} lines)")
+    (REPO / "decisions").mkdir(exist_ok=True)
+    for p, text in files.items():
+        p.write_text(text, encoding="utf-8")
+    print(f"wrote {len(files)} files: DECISIONS.md (the index, "
+          f"{len(files[OUT].splitlines())} lines) + {len(files) - 1} group files under decisions/ "
+          f"({len(backbone['decisions'])} decisions)")
     return 0
 
 
