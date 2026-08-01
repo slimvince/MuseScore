@@ -146,7 +146,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "ARCHITECTURE.md:43-44 cites cowork_joint_estimator_factorization.md as the full specification",
+      "status_source": "ARCHITECTURE.md:43-44 cites cowork_joint_estimator_factorization.md as the full specification. The cap's FORM is the established semi-Markov default (cowork_joint_estimator_factorization.md:112-114); the VALUE 4 has no recorded derivation anywhere in the record - derivation not recorded",
       "patterns": [
         "seg_cap",
         "24 keys",
@@ -295,7 +295,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "Recorded as specification, no ratification named. Conflicts with D-030 (bounded context) - see OPEN_ITEMS OI-210/OI-212/OI-231",
+      "status_source": "Recorded as specification, no ratification named. Conflicts with D-030 (bounded context) - see OPEN_ITEMS OI-210 (the extent question) and OI-212 (the whole-score analysis input); the no-caching half is OI-203 (the deferred record cache) and OI-213 (the per-command multiplier)",
       "patterns": [
         "WHOLE-score decode",
         "whole-score decode",
@@ -382,7 +382,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "ARCHITECTURE.md:127-129",
+      "status_source": "ARCHITECTURE.md:127-129. Derivation not recorded: the convention is stated as a definition, with no alternative considered and no reason given",
       "patterns": [
         "belongs to the segment it STARTS",
         "boundary tick"
@@ -465,7 +465,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "ARCHITECTURE.md:169-170 and :198-199; confirmed at sectionrecordadapter.cpp:293. CONFLICTS with the ratified confidence contract rule U2 (D-032) and with the declared range of the field it is written into (keymodeanalyzer.h:111) - see OPEN_ITEMS OI-232",
+      "status_source": "ARCHITECTURE.md:169-170 and :198-199; confirmed at sectionrecordadapter.cpp:293. CONFLICTS with the ratified confidence contract rule U2 (D-032) and with the declared range of the field it is written into (keymodeanalyzer.h:111) - see OPEN_ITEMS OI-231",
       "patterns": [
         "raw gap",
         "RAW §3.3",
@@ -551,7 +551,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "ARCHITECTURE.md:744-751. The joint estimator's own unit is the ONSET event (jointdecoder.h:67), not this slice - see OPEN_ITEMS OI-233",
+      "status_source": "ARCHITECTURE.md:744-751. The joint estimator's own unit is the ONSET event (jointdecoder.h:67), not this slice - see OPEN_ITEMS OI-228",
       "patterns": [
         "never the metric beat",
         "atomic analysis unit",
@@ -656,7 +656,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "ARCHITECTURE.md:765-772 records the rename CONFIRMED (user, 2026-07-02) and EXECUTED 2026-07-03 'propagated through every layer spec'. ARCHITECTURE.md itself still uses the banned word 216 times including section headings - see OPEN_ITEMS OI-235",
+      "status_source": "ARCHITECTURE.md:765-772 records the rename CONFIRMED (user, 2026-07-02) and EXECUTED 2026-07-03 'propagated through every layer spec'. ARCHITECTURE.md itself still uses the banned word 216 times including section headings - see OPEN_ITEMS OI-233",
       "patterns": [
         "span typology",
         "chord-span",
@@ -699,7 +699,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "ARCHITECTURE.md:802-806 names cowork_bounded_context_design.md as the ONE detailed cross-layer spec and records the 2026-07-02 user directive making it 'the hard gate before L6'. DIRECTLY CONTRADICTED by D-011 (whole-score decode per query, no caching) - see OPEN_ITEMS OI-212/OI-231",
+      "status_source": "ARCHITECTURE.md:802-806 names cowork_bounded_context_design.md as the ONE detailed cross-layer spec and records the 2026-07-02 user directive making it 'the hard gate before L6'. DIRECTLY CONTRADICTED by D-011 (whole-score decode per query, no caching) - see OPEN_ITEMS OI-210/OI-212",
       "patterns": [
         "Bounded context",
         "bounded_context",
@@ -742,7 +742,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "cowork_confidence_contract.md:3 'Status: RATIFIED (user, 2026-07-02)'. ARCHITECTURE.md:762 still calls it 'ratification-gated' - a stale status at the canonical home. Contradicted by D-019 on the production record arm - see OPEN_ITEMS OI-232",
+      "status_source": "cowork_confidence_contract.md:3 'Status: RATIFIED (user, 2026-07-02)'. ARCHITECTURE.md:762 still calls it 'ratification-gated' - a stale status at the canonical home (OPEN_ITEMS OI-232, item 5). Contradicted by D-019 on the production record arm - see OPEN_ITEMS OI-231",
       "patterns": [
         "confidence contract",
         "confidence & calibration",
@@ -758,7 +758,7 @@
       "group": "C",
       "title": "Each layer owns one evidence-source-times-question contribution and uses all of L1's information",
       "verbatim": "each layer owns one *(evidence-source × question)*\n  contribution — stated as \"owns the *[named evidence]* contribution to *X*\", with what it does **not** own made\n  explicit — defers what needs later evidence (carried as ranked alternatives + an uncertain mark), and within its scope\n  uses *all* the information L1 carries losslessly (notated spelling, metric weight, voice).",
-      "plain": "Each stage answers one question from one kind of evidence, says plainly what it does not answer, hands unresolved cases forward as ranked options - and while it works, it uses everything the note reader preserved: how the note is spelt, where it falls in the bar, and which voice it is in.",
+      "plain": "Each stage owns one contribution and says plainly what it does not own, handing unresolved cases forward as ranked options. Owning one contribution does not narrow what it may look at: within its scope it uses all the information the note reader carries - how the note is spelt, where it falls in the bar, and which voice it is in.",
       "home": "ARCHITECTURE.md:807-810",
       "home_is_layer_spec": true,
       "status": "live",
@@ -1116,7 +1116,7 @@
       "group": "E",
       "title": "Slicing is clipped to the loaded span and never drags outside it",
       "verbatim": "slicing never drags outside the loaded span",
-      "plain": "If only part of the piece has been loaded, notes sounding across the edge are cut at the edge. The analysis never reaches into music it was not given.",
+      "plain": "The slicer cuts only within the span it was handed: a note sounding across the edge of that span is cut at the edge, and the slicer never reaches outside it. Widening what is analysed is the orchestration's job, not the slicer's, and re-slicing a wider span must reproduce the narrower one exactly - which is what makes widening safe.",
       "home": "ARCHITECTURE.md:1060",
       "home_is_layer_spec": true,
       "status": "live",
@@ -1147,7 +1147,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "The joint estimator now decides key on both surfaces (D-005, D-010). The Layer-3 section still reads 'Built+Live' - see OPEN_ITEMS OI-236",
+      "status_source": "The joint estimator now decides key on both surfaces (D-005, D-010). The Layer-3 section still reads 'Built+Live' - see OPEN_ITEMS OI-232",
       "patterns": [
         "KeyModeSequenceDecoder",
         "keymodesequence",
@@ -1315,7 +1315,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "ARCHITECTURE.md:3161-3173; legacy-arm only since the switch (D-010)",
+      "status_source": "ARCHITECTURE.md:3161-3173; legacy-arm only since the switch (D-010). Derivation not recorded: the only stated basis for 16 and 8 is the in-code gloss '~4 measures in 4/4' / '~2 measures ahead' (ARCHITECTURE.md:3166-3167) - no theory citation and no measurement",
       "patterns": [
         "LOOKBACK_BEATS",
         "lookback \\+ 8-beat",
@@ -1337,7 +1337,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "ARCHITECTURE.md:1853-1879. Contradicted by the same document's §4.1b/§4.1d contextual bonuses, which score a candidate from the neighbouring chords - see OPEN_ITEMS OI-237",
+      "status_source": "ARCHITECTURE.md:1853-1879. Contradicted by the same document's §4.1b/§4.1d contextual bonuses, which score a candidate from the neighbouring chords - see OPEN_ITEMS OI-235",
       "patterns": [
         "vertical sonority analyzer",
         "vertical/contextual boundary",
@@ -1863,7 +1863,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "ARCHITECTURE.md:818-821 records the foundation BUILT (dormant). ARCHITECTURE.md:1218-1219 still says the voice-leading layer is 'not built' - see OPEN_ITEMS OI-238",
+      "status_source": "ARCHITECTURE.md:818-821 records the foundation BUILT (dormant). ARCHITECTURE.md:1218-1219 still says the voice-leading layer is 'not built' - see OPEN_ITEMS OI-232",
       "patterns": [
         "voice-leading axis",
         "voiceleading_axis",
@@ -2053,7 +2053,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "ARCHITECTURE.md:986-989. Three layer tags and two prose statements are stale after the switch - see OPEN_ITEMS OI-236",
+      "status_source": "ARCHITECTURE.md:986-989. Three layer tags and two prose statements are stale after the switch - see OPEN_ITEMS OI-232",
       "patterns": [
         "Built\\+Live",
         "Built\\+Dormant",
@@ -2074,7 +2074,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "open_items/OI-180 (PROTOCOL RATIFIED 2026-07-19; forward exit EXECUTED on both surfaces 2026-07-27). The ARCHITECTURE.md text at :39-40 still says the notation layer stays legacy - see OPEN_ITEMS OI-236",
+      "status_source": "open_items/OI-180 (PROTOCOL RATIFIED 2026-07-19; forward exit EXECUTED on both surfaces 2026-07-27). The ARCHITECTURE.md text at :39-40 still says the notation layer stays legacy - see OPEN_ITEMS OI-232",
       "patterns": [
         "OI-180",
         "STAGED SCOPE",
@@ -2097,7 +2097,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "OPEN_ITEMS.md:15-26 (the governing architecture decision banner). NOT recorded in any ARCHITECTURE.md layer specification - see OPEN_ITEMS OI-239",
+      "status_source": "OPEN_ITEMS.md:15-26 (the governing architecture decision banner). NOT recorded in any ARCHITECTURE.md layer specification - see OPEN_ITEMS OI-237",
       "patterns": [
         "fit ONCE",
         "never per-case tuned",
@@ -2119,7 +2119,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "open_items/OI-176 and OI-177 (PROTOCOL RATIFIED 2026-07-19). The standing principles are CLAUDE.md #20. NOT recorded in any ARCHITECTURE.md layer specification - see OPEN_ITEMS OI-239",
+      "status_source": "open_items/OI-176 and OI-177 (PROTOCOL RATIFIED 2026-07-19). The standing principles are CLAUDE.md #20. NOT recorded in any ARCHITECTURE.md layer specification - see OPEN_ITEMS OI-237",
       "patterns": [
         "held-out",
         "OI-176",
@@ -2166,7 +2166,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "CLAUDE.md guiding principle #12, ratified 2026-07-06. NOT recorded in any ARCHITECTURE.md layer specification, though it governs every layer's output surface - see OPEN_ITEMS OI-239",
+      "status_source": "CLAUDE.md guiding principle #12, ratified 2026-07-06. NOT recorded in any ARCHITECTURE.md layer specification, though it governs every layer's output surface - see OPEN_ITEMS OI-237",
       "patterns": [
         "No information loss",
         "finding by exclusion",
@@ -2179,7 +2179,7 @@
       "group": "C",
       "title": "Every derived fact is published exactly once, on the producing layer's output surface",
       "verbatim": "every derived analytical fact is **published exactly once, on the producing layer's output surface;\nconsumers read, never re-derive.**",
-      "plain": "Whatever a stage works out, it publishes; every later stage reads that instead of working it out again. A fact nobody reads must either name its future reader or be removed.",
+      "plain": "Whatever a stage works out, it publishes on its own output surface; every later stage reads that instead of working it out again. Facts that are hints a later stage might one day use are published broadly even when nothing reads them yet, each carrying whether it has been established, because a consumer may not rely on an unestablished fact. What to do with a fact nobody reads is decided case by case: keep it with a named future reader stated, or remove it - and a reader outside the analysis counts.",
       "home": "CLAUDE.md",
       "home_is_layer_spec": false,
       "status": "live",
@@ -2187,7 +2187,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "CLAUDE.md 'Fact-publication corollary to #6/#7/#12', ratified 2026-07-10, amended 2026-07-12 (publish EVIDENCE-class facts broadly, each carrying its establishment status). NOT recorded in any ARCHITECTURE.md layer specification - see OPEN_ITEMS OI-239",
+      "status_source": "CLAUDE.md 'Fact-publication corollary to #6/#7/#12', ratified 2026-07-10, amended 2026-07-12 (publish EVIDENCE-class facts broadly, each carrying its establishment status). NOT recorded in any ARCHITECTURE.md layer specification - see OPEN_ITEMS OI-237",
       "patterns": [
         "published exactly once",
         "fact-publication",
@@ -2211,7 +2211,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "ARCHITECTURE.md:1931-1939 records Iter 46 extending the same helpers to Augmented and HalfDiminished. The §4.1b statement carries no supersession note - see OPEN_ITEMS OI-240",
+      "status_source": "ARCHITECTURE.md:1931-1939 records Iter 46 extending the same helpers to Augmented and HalfDiminished. The §4.1b statement carries no supersession note - see OPEN_ITEMS OI-236",
       "patterns": [
         "Safety constraints",
         "never fire for",
@@ -2490,7 +2490,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "CLAUDE.md gate block (A), the OI-178 adoption baselines. NOT recorded in any ARCHITECTURE.md layer specification, and it sits in tension with D-090 (calibrated abstention) - see OPEN_ITEMS OI-239",
+      "status_source": "CLAUDE.md gate block (A), the OI-178 adoption baselines. NOT recorded in any ARCHITECTURE.md layer specification, and it sits in tension with D-090 (calibrated abstention) - see OPEN_ITEMS OI-237",
       "patterns": [
         "key-abstain",
         "MAP path",

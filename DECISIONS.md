@@ -168,7 +168,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **Home.** `ARCHITECTURE.md:31-33`
 
-**Provenance.** ARCHITECTURE.md:43-44 cites cowork_joint_estimator_factorization.md as the full specification
+**Provenance.** ARCHITECTURE.md:43-44 cites cowork_joint_estimator_factorization.md as the full specification. The cap's FORM is the established semi-Markov default (cowork_joint_estimator_factorization.md:112-114); the VALUE 4 has no recorded derivation anywhere in the record - derivation not recorded
 
 ### D-005 — The joint estimator is the production inference layer on the batch and corpus surface
 
@@ -232,7 +232,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **Home.** `ARCHITECTURE.md:39`
 
-**Provenance.** open_items/OI-180 (PROTOCOL RATIFIED 2026-07-19; forward exit EXECUTED on both surfaces 2026-07-27). The ARCHITECTURE.md text at :39-40 still says the notation layer stays legacy - see OPEN_ITEMS OI-236
+**Provenance.** open_items/OI-180 (PROTOCOL RATIFIED 2026-07-19; forward exit EXECUTED on both surfaces 2026-07-27). The ARCHITECTURE.md text at :39-40 still says the notation layer stays legacy - see OPEN_ITEMS OI-232
 
 ### D-096 — Fitted values are fit once against ground truth, never per-case tuned
 
@@ -244,7 +244,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **Home.** `OPEN_ITEMS.md:25`  ⚠ **home is not a layer specification** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** OPEN_ITEMS.md:15-26 (the governing architecture decision banner). NOT recorded in any ARCHITECTURE.md layer specification - see OPEN_ITEMS OI-239
+**Provenance.** OPEN_ITEMS.md:15-26 (the governing architecture decision banner). NOT recorded in any ARCHITECTURE.md layer specification - see OPEN_ITEMS OI-237
 
 ### D-097 — Held-out evaluation and a capacity budget are declared before any fit
 
@@ -256,7 +256,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **Home.** `OPEN_ITEMS.md:123`  ⚠ **home is not a layer specification** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** open_items/OI-176 and OI-177 (PROTOCOL RATIFIED 2026-07-19). The standing principles are CLAUDE.md #20. NOT recorded in any ARCHITECTURE.md layer specification - see OPEN_ITEMS OI-239
+**Provenance.** open_items/OI-176 and OI-177 (PROTOCOL RATIFIED 2026-07-19). The standing principles are CLAUDE.md #20. NOT recorded in any ARCHITECTURE.md layer specification - see OPEN_ITEMS OI-237
 
 ### D-098 — The exact-decode reserve - the declared prune was never adopted
 
@@ -280,7 +280,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **Home.** `CLAUDE.md`  ⚠ **home is not a layer specification** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** CLAUDE.md gate block (A), the OI-178 adoption baselines. NOT recorded in any ARCHITECTURE.md layer specification, and it sits in tension with D-090 (calibrated abstention) - see OPEN_ITEMS OI-239
+**Provenance.** CLAUDE.md gate block (A), the OI-178 adoption baselines. NOT recorded in any ARCHITECTURE.md layer specification, and it sits in tension with D-090 (calibrated abstention) - see OPEN_ITEMS OI-237
 
 ---
 
@@ -323,7 +323,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **Home.** `ARCHITECTURE.md:114-115`
 
-**Provenance.** Recorded as specification, no ratification named. Conflicts with D-030 (bounded context) - see OPEN_ITEMS OI-210/OI-212/OI-231
+**Provenance.** Recorded as specification, no ratification named. Conflicts with D-030 (bounded context) - see OPEN_ITEMS OI-210 (the extent question) and OI-212 (the whole-score analysis input); the no-caching half is OI-203 (the deferred record cache) and OI-213 (the per-command multiplier)
 
 ### D-012 — Failure is unambiguous - never a partial record, never a silent fallback
 
@@ -374,7 +374,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **Home.** `ARCHITECTURE.md:128-129`
 
-**Provenance.** ARCHITECTURE.md:127-129
+**Provenance.** ARCHITECTURE.md:127-129. Derivation not recorded: the convention is stated as a definition, with no alternative considered and no reason given
 
 ### D-016 — Display renderings are presentation; facts are published
 
@@ -424,7 +424,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **Home.** `ARCHITECTURE.md:198-199`
 
-**Provenance.** ARCHITECTURE.md:169-170 and :198-199; confirmed at sectionrecordadapter.cpp:293. CONFLICTS with the ratified confidence contract rule U2 (D-032) and with the declared range of the field it is written into (keymodeanalyzer.h:111) - see OPEN_ITEMS OI-232
+**Provenance.** ARCHITECTURE.md:169-170 and :198-199; confirmed at sectionrecordadapter.cpp:293. CONFLICTS with the ratified confidence contract rule U2 (D-032) and with the declared range of the field it is written into (keymodeanalyzer.h:111) - see OPEN_ITEMS OI-231
 
 ### D-020 — The interactive path bypasses the old window cache and has none of its own
 
@@ -479,7 +479,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **Home.** `ARCHITECTURE.md:747`
 
-**Provenance.** ARCHITECTURE.md:744-751. The joint estimator's own unit is the ONSET event (jointdecoder.h:67), not this slice - see OPEN_ITEMS OI-233
+**Provenance.** ARCHITECTURE.md:744-751. The joint estimator's own unit is the ONSET event (jointdecoder.h:67), not this slice - see OPEN_ITEMS OI-228
 
 ### D-024 — The fact layers are style-agnostic; style lives only in calibration
 
@@ -544,7 +544,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **Home.** `ARCHITECTURE.md:786-787`
 
-**Provenance.** ARCHITECTURE.md:765-772 records the rename CONFIRMED (user, 2026-07-02) and EXECUTED 2026-07-03 'propagated through every layer spec'. ARCHITECTURE.md itself still uses the banned word 216 times including section headings - see OPEN_ITEMS OI-235
+**Provenance.** ARCHITECTURE.md:765-772 records the rename CONFIRMED (user, 2026-07-02) and EXECUTED 2026-07-03 'propagated through every layer spec'. ARCHITECTURE.md itself still uses the banned word 216 times including section headings - see OPEN_ITEMS OI-233
 
 ### D-029 — The verifiability contract
 
@@ -572,7 +572,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **Home.** `ARCHITECTURE.md:800-802`
 
-**Provenance.** ARCHITECTURE.md:802-806 names cowork_bounded_context_design.md as the ONE detailed cross-layer spec and records the 2026-07-02 user directive making it 'the hard gate before L6'. DIRECTLY CONTRADICTED by D-011 (whole-score decode per query, no caching) - see OPEN_ITEMS OI-212/OI-231
+**Provenance.** ARCHITECTURE.md:802-806 names cowork_bounded_context_design.md as the ONE detailed cross-layer spec and records the 2026-07-02 user directive making it 'the hard gate before L6'. DIRECTLY CONTRADICTED by D-011 (whole-score decode per query, no caching) - see OPEN_ITEMS OI-210/OI-212
 
 ### D-031 — Whole-score analysis is the degenerate case, not the design
 
@@ -597,7 +597,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **Home.** `cowork_confidence_contract.md:39-40`  ⚠ **home is not a layer specification** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** cowork_confidence_contract.md:3 'Status: RATIFIED (user, 2026-07-02)'. ARCHITECTURE.md:762 still calls it 'ratification-gated' - a stale status at the canonical home. Contradicted by D-019 on the production record arm - see OPEN_ITEMS OI-232
+**Provenance.** cowork_confidence_contract.md:3 'Status: RATIFIED (user, 2026-07-02)'. ARCHITECTURE.md:762 still calls it 'ratification-gated' - a stale status at the canonical home (OPEN_ITEMS OI-232, item 5). Contradicted by D-019 on the production record arm - see OPEN_ITEMS OI-231
 
 ### D-033 — Each layer owns one evidence-source-times-question contribution and uses all of L1's information
 
@@ -606,7 +606,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 >   explicit — defers what needs later evidence (carried as ranked alternatives + an uncertain mark), and within its scope
 >   uses *all* the information L1 carries losslessly (notated spelling, metric weight, voice).
 
-**In plain words.** Each stage answers one question from one kind of evidence, says plainly what it does not answer, hands unresolved cases forward as ranked options - and while it works, it uses everything the note reader preserved: how the note is spelt, where it falls in the bar, and which voice it is in.
+**In plain words.** Each stage owns one contribution and says plainly what it does not own, handing unresolved cases forward as ranked options. Owning one contribution does not narrow what it may look at: within its scope it uses all the information the note reader carries - how the note is spelt, where it falls in the bar, and which voice it is in.
 
 **Status.** LIVE · date not stated · ratified by user
 
@@ -667,20 +667,20 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **Home.** `CLAUDE.md`  ⚠ **home is not a layer specification** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** CLAUDE.md guiding principle #12, ratified 2026-07-06. NOT recorded in any ARCHITECTURE.md layer specification, though it governs every layer's output surface - see OPEN_ITEMS OI-239
+**Provenance.** CLAUDE.md guiding principle #12, ratified 2026-07-06. NOT recorded in any ARCHITECTURE.md layer specification, though it governs every layer's output surface - see OPEN_ITEMS OI-237
 
 ### D-100 — Every derived fact is published exactly once, on the producing layer's output surface
 
 > every derived analytical fact is **published exactly once, on the producing layer's output surface;
 > consumers read, never re-derive.**
 
-**In plain words.** Whatever a stage works out, it publishes; every later stage reads that instead of working it out again. A fact nobody reads must either name its future reader or be removed.
+**In plain words.** Whatever a stage works out, it publishes on its own output surface; every later stage reads that instead of working it out again. Facts that are hints a later stage might one day use are published broadly even when nothing reads them yet, each carrying whether it has been established, because a consumer may not rely on an unestablished fact. What to do with a fact nobody reads is decided case by case: keep it with a named future reader stated, or remove it - and a reader outside the analysis counts.
 
 **Status.** LIVE · decided 2026-07-10 · ratified by user
 
 **Home.** `CLAUDE.md`  ⚠ **home is not a layer specification** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** CLAUDE.md 'Fact-publication corollary to #6/#7/#12', ratified 2026-07-10, amended 2026-07-12 (publish EVIDENCE-class facts broadly, each carrying its establishment status). NOT recorded in any ARCHITECTURE.md layer specification - see OPEN_ITEMS OI-239
+**Provenance.** CLAUDE.md 'Fact-publication corollary to #6/#7/#12', ratified 2026-07-10, amended 2026-07-12 (publish EVIDENCE-class facts broadly, each carrying its establishment status). NOT recorded in any ARCHITECTURE.md layer specification - see OPEN_ITEMS OI-237
 
 ### D-115 — The regression stop is the granularity-robust unit; root governs, key and Roman numeral ride beside
 
@@ -871,7 +871,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 > slicing never drags outside the loaded span
 
-**In plain words.** If only part of the piece has been loaded, notes sounding across the edge are cut at the edge. The analysis never reaches into music it was not given.
+**In plain words.** The slicer cuts only within the span it was handed: a note sounding across the edge of that span is cut at the edge, and the slicer never reaches outside it. Widening what is analysed is the orchestration's job, not the slicer's, and re-slicing a wider span must reproduce the narrower one exactly - which is what makes widening safe.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -893,7 +893,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **Home.** `ARCHITECTURE.md:1094`
 
-**Provenance.** The joint estimator now decides key on both surfaces (D-005, D-010). The Layer-3 section still reads 'Built+Live' - see OPEN_ITEMS OI-236
+**Provenance.** The joint estimator now decides key on both surfaces (D-005, D-010). The Layer-3 section still reads 'Built+Live' - see OPEN_ITEMS OI-232
 
 ### D-052 — The signature read and declared-mode mapping live in ONE shared function
 
@@ -1002,7 +1002,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **Home.** `ARCHITECTURE.md:3163`
 
-**Provenance.** ARCHITECTURE.md:3161-3173; legacy-arm only since the switch (D-010)
+**Provenance.** ARCHITECTURE.md:3161-3173; legacy-arm only since the switch (D-010). Derivation not recorded: the only stated basis for 16 and 8 is the in-code gloss '~4 measures in 4/4' / '~2 measures ahead' (ARCHITECTURE.md:3166-3167) - no theory citation and no measurement
 
 ---
 
@@ -1020,7 +1020,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **Home.** `ARCHITECTURE.md:1877-1879`
 
-**Provenance.** ARCHITECTURE.md:1853-1879. Contradicted by the same document's §4.1b/§4.1d contextual bonuses, which score a candidate from the neighbouring chords - see OPEN_ITEMS OI-237
+**Provenance.** ARCHITECTURE.md:1853-1879. Contradicted by the same document's §4.1b/§4.1d contextual bonuses, which score a candidate from the neighbouring chords - see OPEN_ITEMS OI-235
 
 ### D-061 — Gate thresholds are Baroque-calibrated and must not be loosened for other styles
 
@@ -1153,7 +1153,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **Home.** `ARCHITECTURE.md:1643-1644`
 
-**Provenance.** ARCHITECTURE.md:1931-1939 records Iter 46 extending the same helpers to Augmented and HalfDiminished. The §4.1b statement carries no supersession note - see OPEN_ITEMS OI-240
+**Provenance.** ARCHITECTURE.md:1931-1939 records Iter 46 extending the same helpers to Augmented and HalfDiminished. The §4.1b statement carries no supersession note - see OPEN_ITEMS OI-236
 
 ### D-102 — Augmented and half-diminished candidates receive the inversion bonuses too (Iter 46)
 
@@ -1297,7 +1297,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **Home.** `ARCHITECTURE.md:817-818`
 
-**Provenance.** ARCHITECTURE.md:818-821 records the foundation BUILT (dormant). ARCHITECTURE.md:1218-1219 still says the voice-leading layer is 'not built' - see OPEN_ITEMS OI-238
+**Provenance.** ARCHITECTURE.md:818-821 records the foundation BUILT (dormant). ARCHITECTURE.md:1218-1219 still says the voice-leading layer is 'not built' - see OPEN_ITEMS OI-232
 
 ---
 
@@ -1583,7 +1583,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 
 **Home.** `ARCHITECTURE.md:986-988`
 
-**Provenance.** ARCHITECTURE.md:986-989. Three layer tags and two prose statements are stale after the switch - see OPEN_ITEMS OI-236
+**Provenance.** ARCHITECTURE.md:986-989. Three layer tags and two prose statements are stale after the switch - see OPEN_ITEMS OI-232
 
 ### D-109 — The open-items register is the one home for every unresolved issue, and the index is the status of record
 

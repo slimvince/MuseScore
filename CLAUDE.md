@@ -793,6 +793,20 @@ Build commands via `Start-Process` are isolated from these rules (exit code not 
   accident (`totalScore`, `content score`, `segmentContentScore` are qualified already), so only
   the BARE uses in a non-musical sense need touching.
 
+- **EVERY DESIGN DECISION CARRIES ITS DEFENSE AT ITS HOME (user-directed, 2026-08-01, at the
+  decisions-register ratification review).** Wherever a design decision is recorded — the owning
+  layer's specification in `ARCHITECTURE.md` first — the record states WHY the decision was made:
+  the published research or algorithm adopted (#1/#2), the measurement that decided it, or the
+  constraint that forced it. Every design decision must be defendable, and its defense documented
+  where the decision lives. This generalizes `ARCHITECTURE.md` §17.2 (every non-obvious scoring
+  weight or threshold must explain its musical reasoning) from scoring values to design decisions
+  as a class. The decisions register (`DECISIONS.md`) points at the defense; where a decision's
+  derivation is not in the record, the register says **"derivation not recorded"** — the gap is
+  stated, never filled in retroactively from memory (a defense written after the fact without a
+  source is invention, and the never-work-from-memory rule forbids it). Founding instances of the
+  gap: the decode segment cap's value (4), the legacy 16-beats-back/8-forward window, the
+  boundary-tick-belongs-to-the-segment-it-starts convention — each recorded with no derivation.
+
 ## The self-check after every coding exercise (user-directed, 2026-07-11)
 
 After EVERY coding exercise — code, scripts, instruments, and document edits alike —

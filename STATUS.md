@@ -5,6 +5,23 @@
 > Historical entries live in `STATUS_ARCHIVE.md` (reference-only, NOT part of the session-start
 > read) — a superseded entry moves there instead of accumulating here.
 
+*Last updated: 2026-08-01, LATEST (CC — **THE OI-207 DECISION-CONFORMANCE ADJUDICATION IS DELIVERED, AND THE
+DECISIONS REGISTER EXISTS: `DECISIONS.md`.** READ-ONLY: no `src/` change, no golden / `tools/corpus/` /
+`tools/robust_stop/` movement, no behavior change, no fix, no design, no `ARCHITECTURE.md` edit. Dispatch
+`cc_instruction_oi207_adjudication.md`. Per the OI-222 remedy this entry is a **POINTER** — the content lives in
+the register itself, in the generated artifacts, and in the dated notes on [[OI-207]] / [[OI-208]]. **Read, in this
+order:** `DECISIONS.md` (the register — 115 decisions, grouped by subject, each verbatim + a plain restatement +
+status + home + provenance; a GENERATED file, so no number in it is hand-transcribed); the [[OI-207]] dated note
+(method, the establishment figures, the coverage arithmetic, the nine findings); the [[OI-208]] dated note (which
+of the three ratified rulings the register honours, and the living-surface half that is still owed and is the
+user's to ratify). **Nine new register rows: OI-231…OI-239** — the headline three are **OI-231** (the production
+notation path publishes an unbounded score gap in a field whose declared contract is [0,1], against the RATIFIED
+cross-layer confidence contract), **OI-234** (two ratified positions on the inference mechanism cannot both stand
+— a user ruling owed), **OI-237** (sixteen decisions have no layer-specification home; seven are genuine gaps).
+**NEXT (user):** read `DECISIONS.md` and ratify it; rule on OI-234; then the OI-208 living-surface question — the
+register is not yet in `CLAUDE.md`'s session-start read, which is a governing-document edit and therefore
+yours.)*
+
 *Last updated: 2026-07-28, LATEST+++ (CC — **THE DECISION CLUSTERING LAYER DELIVERED — MECHANICAL,
 READ-ONLY, NON-DESTRUCTIVE, NO ADJUDICATION; NO src/ change, NO golden/`tools/corpus/`/`tools/robust_stop/`
 movement, NO behavior change.** Dispatch `cc_instruction_decision_clustering.md`. Per the OI-222 remedy
@@ -73,23 +90,6 @@ partition-2/3 deep passes still owed). **NEXT (Cowork/user): the OI-215/OI-227 d
 Premise Gate — ONE design at the candidate-admission layer covering the WHOLE family (both gates) + giving
 admission its first ratified basis (OI-226), never a per-symptom patch (#6/#7) → then the instruments
 partition + OI-199 pass 2.** Full detail: the report.)*
-
-*Last updated: 2026-08-01, LATEST (CC — **THE OI-207 DECISION-CONFORMANCE ADJUDICATION IS DELIVERED, AND THE
-DECISIONS REGISTER EXISTS: `DECISIONS.md`.** READ-ONLY: no `src/` change, no golden / `tools/corpus/` /
-`tools/robust_stop/` movement, no behavior change, no fix, no design, no `ARCHITECTURE.md` edit. Dispatch
-`cc_instruction_oi207_adjudication.md`. Per the OI-222 remedy this entry is a **POINTER** — the content lives in
-the register itself, in the generated artifacts, and in the dated notes on [[OI-207]] / [[OI-208]]. **Read, in this
-order:** `DECISIONS.md` (the register — 115 decisions, grouped by subject, each verbatim + a plain restatement +
-status + home + provenance; a GENERATED file, so no number in it is hand-transcribed); the [[OI-207]] dated note
-(method, the establishment figures, the coverage arithmetic, the nine findings); the [[OI-208]] dated note (which
-of the three ratified rulings the register honours, and the living-surface half that is still owed and is the
-user's to ratify). **Nine new register rows: OI-231…OI-239** — the headline three are **OI-231** (the production
-notation path publishes an unbounded score gap in a field whose declared contract is [0,1], against the RATIFIED
-cross-layer confidence contract), **OI-234** (two ratified positions on the inference mechanism cannot both stand
-— a user ruling owed), **OI-237** (sixteen decisions have no layer-specification home; seven are genuine gaps).
-**NEXT (user):** read `DECISIONS.md` and ratify it; rule on OI-234; then the OI-208 living-surface question — the
-register is not yet in `CLAUDE.md`'s session-start read, which is a governing-document edit and therefore
-yours.)*
 
 *Last updated: 2026-07-28, prior (Cowork session close — **THE OI-207 DECISION-CONFORMANCE ADJUDICATION IS IN FLIGHT** on the higher-capacity session, dispatch `cc_instruction_oi207_adjudication.md`, from HEAD `c9e0f17b61`. The full preparation arc (harvest 15,224 → non-destructive clustering 14,460 with the paraphrase STOP → the user's three ratified register rulings → the specification-first method) and the day's complete narrative are in **the sixth 2026-07-28 entry-point block of `cowork_handoff.md`** — read that block, not this line, as the handover. When the adjudication reports: VERIFY AT THE OBJECTS first (SHAs, the completeness arithmetic against 14,460, spot-checked citations), then the register ratification is the user's.)*
 
