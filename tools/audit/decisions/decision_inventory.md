@@ -1,14 +1,28 @@
-# The decision inventory — a readable map of what this project has decided
+# The decision inventory — a READING SAMPLE from the decision harvest
 
-> **What this document is.** A legible, subject-organized presentation of the decisions
-> recorded across this repository, produced for a reader who knows music theory and software
-> architecture but nothing about this project's internal vocabulary. It is the human-readable
-> face of a mechanical harvest. The complete, verbatim, machine-readable list — every one of the
+> **★ SUPERSEDED AS AN AUTHORITY (2026-08-01, the OI-207 adjudication). The decisions register is
+> `DECISIONS.md`.** Read that first; it is the one place a decision's status is recorded. This file
+> stays as a reading aid and for provenance.
+>
+> **What this document is — restated honestly.** A **reading sample**: a legible, subject-organized
+> selection of decision-bearing statements the mechanical harvest found, presented for a reader who
+> knows music theory and software architecture but nothing about this project's internal vocabulary.
+> **It is NOT authoritative and NOT complete.** Its earlier opening called the entries "the canonical,
+> load-bearing decisions", which is a completeness judgment — and the dispatch that produced this file
+> forbade adjudication, so no such judgment could have been made here. The 2026-08-01 adjudication
+> established the point concretely: the harvest's signature net cannot see a decision written as plain
+> specification, so load-bearing decisions were provably absent from it (the priority-of-evidence
+> ranking `ARCHITECTURE.md:3134-3141`, the slicer's boundary rule `:1045`, the piece-start shortcut
+> `:3128-3130`). The register was therefore built by reading the layer specifications in full, with
+> this harvest as the searchable index and the backstop it genuinely is.
+>
+> The complete, verbatim, machine-readable list — every one of the
 > **15,224** decision-bearing statements the harvest found — lives beside this file in
-> `decision_candidates.json` and `decision_candidates.csv`; that is the input the later
-> conformance audit consumes. **This document does not decide anything, does not judge whether a
-> statement is still in force, and does not check any decision against the code.** Those are the
-> next pass's work (the OI-207 conformance audit and the OI-208 decisions register).
+> `decision_candidates.json` and `decision_candidates.csv`. Every one of those statements now carries a
+> recorded disposition in `cluster_dispositions.csv` (the OI-207 adjudication, Task 3).
+> **This document does not decide anything, does not judge whether a
+> statement is still in force, and does not check any decision against the code.** Those were the
+> next pass's work, and it has run: `DECISIONS.md` (status) and `OPEN_ITEMS.md` (conformance).
 >
 > **How each entry reads.** Every entry gives the decision **verbatim** (the exact recorded
 > words, which the conformance audit depends on) followed by a one- or two-sentence **plain
@@ -19,12 +33,11 @@
 >
 > **Scope of THIS document versus the machine list.** The harvest cast a deliberately wide net
 > and over-captured (15,224 candidates, of which 8,741 are in Claude Code's own session reports,
-> which mostly *restate* decisions made elsewhere). This document presents the **canonical,
-> load-bearing** decisions — the ones a person actually needs to know — quoted from their
-> authoritative home, grouped by subject. A decision not written out here individually is still
-> in the machine list for the conformance audit; nothing was dropped, only prioritized for
-> reading. Where a subject has more load-bearing decisions than fit a single sitting, it is split
-> and the split is stated.
+> which mostly *restate* decisions made elsewhere). This document presents a **sample** of
+> decisions that seemed load-bearing on a first reading — quoted from the home the harvest recorded,
+> grouped by subject. It makes **no claim of completeness and no claim of authority**: a decision
+> absent from this file may still be load-bearing, and a decision present here may since have been
+> superseded. `DECISIONS.md` is where that is settled.
 
 ---
 
