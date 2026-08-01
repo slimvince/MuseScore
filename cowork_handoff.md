@@ -1,7 +1,61 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE 2026-07-28 (SIXTH) — THE CONFORMANCE-ADJUDICATION ARC IS FULLY PREPARED AND **THE OI-207 ADJUDICATION IS IN FLIGHT** (the higher-capacity session, dispatch `cc_instruction_oi207_adjudication.md`). THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE 2026-08-02 (SEVENTH) — THE DECISIONS REGISTER IS RATIFIED AND LIVING (231 entries); THE THREE-PHASE SEQUENCING RULE GOVERNS EVERYTHING; PHASE 1 IS DISPATCHED. THE CURRENT ENTRY POINT.
+
+**You (the next session) start clueless — this block is the entire handover.** Read, in order:
+(1) `CLAUDE.md` IN FULL — three additions since the sixth block, all user-directed: **every design
+decision carries its defense at its home** (2026-08-01); **the decisions-register section**
+(`DECISIONS.md` is now a MANDATORY session-start read; a new ruling lands in the register in the
+commit that records it — D-230); and **★ THE THREE-PHASE SEQUENCING RULE (2026-08-02, D-231),
+which governs all work now: NO FIX DESIGN until (phase 1) the specifications are complete (every
+decision homed — the register stays the status ledger, conformance is measured against the
+SPECIFICATIONS) and true (doc-sync debt corrected), and (phase 2) issue-finding is exhausted with
+measured coverage; then (phase 3) ONE prioritized fix plan, and only then design.** (2)
+`DECISIONS.md` (the INDEX; full entries under `decisions/group_*.md`). (3) `OPEN_ITEMS.md`
+(INDEX), opening at minimum **OI-243/OI-244** (★ the decode measured NOT transposition-equivariant
+— 66 % segment equivalence; spelling-anchor + prune-tie-break mechanisms verified at source;
+REPO-SIDE RE-RUN OWED before the finding carries load, #19), **OI-245…OI-257** (the adapter
+input-surface census, the localization/accessibility non-conformance, the unreachable command,
+the test-gap list), **OI-237/OI-240** (the homing acts phase 1 executes), **OI-207** (open only
+for the 6,374-cluster residual second pass), and the struck-vs-sounding family rows
+(OI-215/226/227/228 — fix DEFERRED, now behind phases 1–2 by the sequencing rule). (4) `STATUS.md`
+(the two 2026-08-02 entries). (5) The active dispatches, in order:
+**`cc_instruction_spec_completion.md`** (phase 1a homing + 1b truth-sync) then
+**`cc_instruction_oi207_residual_pass.md`** (phase 1c). Verify every CC report at the objects
+(SHAs + fresh reads + the guards re-run: `gen_decisions_register.py --check`,
+`gen_cluster_dispositions.py --verify`, `tools/open_items_split_check.py`).
+
+**★ WHERE THE PROJECT STANDS.** The register: 231 user-ratified entries, index-plus-detail shape,
+three mechanical guards, LIVING (session-start read + same-commit rule). Closed this arc: OI-208,
+OI-234 (reading 3 — the 2026-06-29 inert finding stands for the cycling class it tested, does not
+bear on the joint decode; §2.14 annotated), OI-241 (the MuseScore-dependency rule, ARCHITECTURE.md
+§3.3, D-229). The four-perspective review pass (perspective-inventory channels; the method paid:
+all four channels produced findings) is rowed as OI-243…OI-257 + five dated notes; probe artifacts
+committed at `tools/joint_estimator/transposition_probe_2026_08_02/`. The phase-2 exhaustion
+program after phase 1: the OI-199 measurement-tools partition (sealed, OI-222 remedy), the
+record-seams partition (OI-256 the prepared input), pass 2 with seeded error rate, the remaining
+perspective-inventory channels (`cowork_oi200_perspective_inventory.md` §6), OI-179. Phase 3 plans
+all fixes at their proper layers (#7) — the family design, the extent ruling
+(`cowork_extent_decision_surface.md`, gated on the measurement-tools audit), everything.
+
+**★ METHOD REMINDERS (this arc's additions to the standing list).** The user re-demanded
+2026-08-02: **choices are presented in FULL PROSE with pros and cons EACH naming the principle
+AND rated against the ultimate objective** — the option-widget compression failed AGAIN; do not
+repeat. Never work from memory (open the source, cite file:line). Bare-word terminology (the
+musical sense). Never bash to READ local files; use the file tools to EDIT tree files (a Cowork
+slip of 2026-08-02 — three dated notes appended via shell redirection — is on record; git
+plumbing (`write-tree`/`commit-tree`/`update-ref`) is the sanctioned commit path from the
+sandbox, where `git commit` times out on index refresh; a commit made this way bypasses hooks, so
+run every guard explicitly at the committed tree). Anchor-remap discipline: any insertion into
+`ARCHITECTURE.md`/`CLAUDE.md`/`OPEN_ITEMS.md` shifts line anchors — run
+`gen_cluster_dispositions.py --verify` and remap (the backbone JSON round-trips byte-identical at
+`json.dumps(indent=2, ensure_ascii=False)`, no trailing newline).
+
+*(The six earlier blocks below are the 2026-07-28 arc's record — kept for provenance.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE 2026-07-28 (SIXTH) — THE CONFORMANCE-ADJUDICATION ARC IS FULLY PREPARED AND **THE OI-207 ADJUDICATION IS IN FLIGHT** (the higher-capacity session, dispatch `cc_instruction_oi207_adjudication.md`). (SUPERSEDED as the entry point by the block above.)
 
 **You (the next session) start clueless — this block is the entire handover.** Read, in order:
 (1) `CLAUDE.md` IN FULL — it gained THREE Conventions entries this arc, all user-directed

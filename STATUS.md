@@ -5,7 +5,17 @@
 > Historical entries live in `STATUS_ARCHIVE.md` (reference-only, NOT part of the session-start
 > read) — a superseded entry moves there instead of accumulating here.
 
-*Last updated: 2026-08-02, LATEST (Cowork — **THE DECISIONS REGISTER IS RATIFIED AND IS NOW THE LIVING
+*Last updated: 2026-08-02, LATEST+ (Cowork — **★ THE THREE-PHASE SEQUENCING RULE IS RATIFIED (D-231, the
+new `CLAUDE.md` Conventions entry): NO FIX DESIGN until (1) the specifications are COMPLETE (every decision
+homed — conformance measured against the SPECIFICATIONS; the register stays the status ledger) and TRUE
+(doc-sync debt corrected), and (2) issue-finding is EXHAUSTED with measured coverage; then (3) ONE
+prioritized fix plan — only then design.** Per the OI-222 remedy this entry is a POINTER — the rule's full
+text is the `CLAUDE.md` entry; the phase-1 work is dispatched as `cc_instruction_spec_completion.md`
+(homing OI-237/OI-240 + the ARCHITECTURE.md truth-sync) followed by `cc_instruction_oi207_residual_pass.md`
+(the 6,374-cluster residual). The family fix, the extent ruling, and every other design surface now wait
+behind phases 1–2 BY RULE. Next session: the handoff's SEVENTH entry-point block.)*
+
+*Last updated: 2026-08-02, prior (Cowork — **THE DECISIONS REGISTER IS RATIFIED AND IS NOW THE LIVING
 SURFACE; the four-perspective review pass is ROWED; two adjudications RULED.** Per the OI-222 remedy this
 entry is a POINTER — content lives in the register, the rows, and the dated notes. In ONE commit: (1) the
 user RATIFIED all 228 register entries (2026-08-02), and the register was re-emitted in the INDEX-PLUS-DETAIL

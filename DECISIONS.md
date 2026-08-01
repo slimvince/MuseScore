@@ -96,25 +96,25 @@ project's own and are defined here because they are used before any entry explai
 
 ## What is in this register, counted
 
-**230 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
+**231 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
 
 | | Count |
 |---|---|
-| Decisions recorded | **230** |
-| — of which live | 199 |
+| Decisions recorded | **231** |
+| — of which live | 200 |
 | — of which superseded in fact | 4 |
 | — of which superseded by | 5 |
 | — of which deferred | 22 |
 | Decisions whose date is not stated in the record | 159 |
 | Decisions whose ratifier is not stated in the record | 151 |
-| Decisions recorded outside the specification that owns them | 68 |
+| Decisions recorded outside the specification that owns them | 69 |
 | — of which a documentation gap | 8 |
 | — of which recorded only on a tracking surface, with no home at all | 12 |
 | — of which a project-wide convention, correctly homed | 31 |
-| — of which a decision about the process, correctly homed | 17 |
+| — of which a decision about the process, correctly homed | 18 |
 | Decisions whose defense the record does not state | 45 |
 
-That last row is the one meant to fall. **185 of 230** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
+That last row is the one meant to fall. **186 of 231** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
 
 Alongside the register, every one of the harvested statements about decisions in this repository has been given a recorded disposition, so that none was silently passed over:
 
@@ -453,6 +453,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-199 | The MusicXML declared-mode import fix is intentional and must not be reverted | LIVE | `CLAUDE.md` |
 | D-208 | A withheld finding never enters a mandatory session-start read | LIVE | `OPEN_ITEMS.md` ⚠tracking-surface-only |
 | D-209 | Code that is about to be deleted gets no audit - only the no-information-loss check at deletion | LIVE | `open_items/OI-84.md` ⚠tracking-surface-only |
+| D-231 | Issue-exhaustion and specification completion before any fix design - the three-phase sequencing rule | LIVE | `CLAUDE.md` |
 
 ## U. The standing decision-bearing surfaces — [full entries](decisions/group_U.md)
 

@@ -824,6 +824,25 @@ Build commands via `Start-Process` are isolated from these rules (exit code not 
   gap: the decode segment cap's value (4), the legacy 16-beats-back/8-forward window, the
   boundary-tick-belongs-to-the-segment-it-starts convention — each recorded with no derivation.
 
+- **ISSUE-EXHAUSTION AND SPECIFICATION COMPLETION BEFORE ANY FIX DESIGN (user-directed,
+  2026-08-02; sharpens #8, which forbade inference-problem coding before layer completion — this
+  forbids fix DESIGN before knowledge completion).** Three phases, strictly ordered. **Phase 1 —
+  the specifications are made COMPLETE and TRUE:** every recorded decision is written into its
+  owning specification (the homing acts), with its defense, so that conformance is thereafter
+  measured against the specifications themselves — the decisions register remains the status
+  ledger (supersession, shelving, the same-commit rule), never the conformance reference; and the
+  specification text is corrected wherever it states something false at HEAD (the doc-sync debt),
+  because a specification cannot be the compliance standard while it misdescribes the code.
+  **Phase 2 — issue-finding is EXHAUSTED with measured coverage:** the remaining audit partitions
+  and the blind second pass with its seeded error rate, plus the enumerated discovery channels
+  (populations, oracles, invariants, residual decomposition, concept gaps, requirement side),
+  each search reporting its detection power, ending in the bounded trust statement — every
+  channel enumerated, every miss rate measured, every finding rowed. **Phase 3 — ONE prioritized
+  fix plan over the complete list** — where each fix lives (its proper layer), what it groups
+  with (its family), in what order, and what refits it forces — and only then does design begin.
+  Rationale: #3/#5/#13 generalized from one defect family to the whole system, and the product is
+  unshipped, so carrying known defects while knowledge completes costs no user anything.
+
 ## The self-check after every coding exercise (user-directed, 2026-07-11)
 
 After EVERY coding exercise — code, scripts, instruments, and document edits alike —

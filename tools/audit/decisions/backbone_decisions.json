@@ -4312,7 +4312,7 @@
       "verbatim": "After EVERY coding exercise — code, scripts, instruments, and document edits alike —\nand BEFORE reporting the work done: take a step back, re-read the actual diff of every\ntouched file, and check it against the guiding principles, the conventions, the gate and\nthreshold policies in this file, and the known problem types in `DEFECT_TYPES.md`. Any\nviolation found is surfaced immediately (its own `OPEN_ITEMS.md` row if it cannot be\ncorrected on the spot within the session's authorized scope), never silently shipped.\nThe check is of the work actually on disk, not of the intention — read the diff, not the\nmemory of writing it. This applies to CC sessions and Cowork sessions alike.",
       "plain": "After every piece of work and before reporting it, the actual difference on disk in every touched file is re-read and checked against the principles, the conventions, the gate policies and the known defect types. Anything found is surfaced at once, never quietly shipped.",
       "rationale": "Stated constraint, CLAUDE.md:835-836: the check is of the work actually on disk, not of the intention - read the difference, not the memory of writing it. Which is the same reasoning as the never-work-from-memory rule, applied to one's own output.",
-      "home": "CLAUDE.md:829",
+      "home": "CLAUDE.md:848",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -4989,6 +4989,24 @@
       "patterns": [],
       "rationale": "The diagnosed root cause of the Stage-3.1b contradiction: decision history lived in archives outside the session-start read, so a later build contradicted a recorded ruling unknowingly (open_items/OI-208.md). The register existed as a snapshot; this rule is what makes it the living surface (#10 applied to decisions; #6 one home).",
       "nonspec_kind": "process"
+    },
+    {
+      "id": "D-231",
+      "group": "T",
+      "title": "Issue-exhaustion and specification completion before any fix design - the three-phase sequencing rule",
+      "verbatim": "**ISSUE-EXHAUSTION AND SPECIFICATION COMPLETION BEFORE ANY FIX DESIGN (user-directed,\n2026-08-02; sharpens #8, which forbade inference-problem coding before layer completion — this\nforbids fix DESIGN before knowledge completion).**",
+      "plain": "Before any fix is even designed: first the specifications are made complete (every decision written into its owning specification, so conformance is measured against the specifications, with the decisions register kept only as the status ledger) and true (false statements corrected); then issue-finding is exhausted with each search's miss rate measured; then one prioritized plan covers every found issue - and only after that plan does design work begin.",
+      "rationale": "The user's principles #3/#5/#13 generalized from one defect family to the whole system (gather facts before building; a surprise means the fact basis was incomplete), plus the recorded fact that the product is unshipped, so carrying known defects while knowledge completes costs no user anything (CLAUDE.md, the Conventions entry of 2026-08-02, which states the three phases in full).",
+      "status": "live",
+      "date": "2026-08-02",
+      "ratified_by": [
+        "user"
+      ],
+      "home": "CLAUDE.md",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "process",
+      "status_source": "User ruling 2026-08-02 (the audits-before-design discussion; all three phases adopted as presented). Registered in the recording commit per D-230.",
+      "patterns": []
     }
   ]
 }

@@ -23,7 +23,7 @@
 
 **Status.** LIVE · decided 2026-07-11 · ratified by user
 
-**Home.** `CLAUDE.md:829`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:848`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:827-836, user-directed 2026-07-11. Binds Claude Code and Cowork sessions alike.
 
@@ -135,4 +135,20 @@
 **Home.** `open_items/OI-84.md:7`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
 **Provenance.** open_items/OI-84.md:7 (OI-84), corrected 2026-07-10 at the user's challenge. The plan it belongs to is complete: every surviving layer certified on two passes each.
+
+### D-231 — Issue-exhaustion and specification completion before any fix design - the three-phase sequencing rule
+
+> **ISSUE-EXHAUSTION AND SPECIFICATION COMPLETION BEFORE ANY FIX DESIGN (user-directed,
+> 2026-08-02; sharpens #8, which forbade inference-problem coding before layer completion — this
+> forbids fix DESIGN before knowledge completion).**
+
+**In plain words.** Before any fix is even designed: first the specifications are made complete (every decision written into its owning specification, so conformance is measured against the specifications, with the decisions register kept only as the status ledger) and true (false statements corrected); then issue-finding is exhausted with each search's miss rate measured; then one prioritized plan covers every found issue - and only after that plan does design work begin.
+
+**Why.** The user's principles #3/#5/#13 generalized from one defect family to the whole system (gather facts before building; a surprise means the fact basis was incomplete), plus the recorded fact that the product is unshipped, so carrying known defects while knowledge completes costs no user anything (CLAUDE.md, the Conventions entry of 2026-08-02, which states the three phases in full).
+
+**Status.** LIVE · decided 2026-08-02 · ratified by user
+
+**Home.** `CLAUDE.md`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** User ruling 2026-08-02 (the audits-before-design discussion; all three phases adopted as presented). Registered in the recording commit per D-230.
 
