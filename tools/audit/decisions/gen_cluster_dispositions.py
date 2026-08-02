@@ -152,9 +152,11 @@ UNRESOLVED_RESERVATIONS = {
                                    "they carry a ruling word. Each needs a reader.",
     "src test comments": "The BR-13 EXEMPTION SET — units the sweep refused because they carry "
                          "a ruling word. Each needs a reader.",
-    "cowork_* design documents": "The phase-1d wave's own partition: 21 of the 143 design "
-                                 "documents were read IN FULL and the rest were not. This is "
-                                 "the measured remainder and the next wave's input.",
+    "cowork_* design documents": "The phase-1d wave's own measured partition: part of this "
+                                 "surface was read IN FULL and the rest was not, the reading "
+                                 "list being larger than one session. The remainder, and the "
+                                 "per-file counts, are in the OI-207 dated note of 2026-08-02; "
+                                 "it is the next wave's input.",
     "docs/ design documents": "Same partition as the `cowork_*` surface — the measured "
                               "remainder of the phase-1d reading list.",
     "the two archives": "NOT read by the phase-1d wave and swept by NO rule, deliberately: the "
@@ -169,8 +171,6 @@ UNRESOLVED_RESERVATIONS = {
                                "word, which is where a non-conformance row quotes the decision "
                                "it violates. Each needs a reader.",
     "the session handoff": "The BR-15 exemption set — handoff prose carrying a ruling word.",
-    "governing: DEFECT_TYPES.md": "Catalog rows carrying a ruling word; the catalog itself is "
-                                  "register entry D-213.",
     "mixed sources": "Clusters whose occurrences span more than one surface. No bulk rule ever "
                      "sweeps one, by construction.",
 }

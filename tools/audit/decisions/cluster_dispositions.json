@@ -19,7 +19,7 @@
     "decision_count": 281
    }
   },
-  "head_commit": "042f8dde7966ab5ec96bbcfea5dccebeea468878",
+  "head_commit": "33a821d64c0e36ae1b0be9aeab5502cda5305666",
   "disposition_vocabulary": [
    "restates",
    "not-a-decision",
@@ -156,7 +156,7 @@
    "mixed sources": 9
   },
   "unresolved_reservation_by_surface": {
-   "cowork_* design documents": "The phase-1d wave's own partition: 21 of the 143 design documents were read IN FULL and the rest were not. This is the measured remainder and the next wave's input.",
+   "cowork_* design documents": "The phase-1d wave's own measured partition: part of this surface was read IN FULL and the rest was not, the reading list being larger than one session. The remainder, and the per-file counts, are in the OI-207 dated note of 2026-08-02; it is the next wave's input.",
    "docs/ design documents": "Same partition as the `cowork_*` surface — the measured remainder of the phase-1d reading list.",
    "cc_* session reports": "The BR-12 EXEMPTION SET — units the sweep refused because they carry a ruling word. Already judged once; each needs a reader.",
    "tools/ script comments": "RESERVED for the sealed measurement-tools partition (the second partition of the OI-199 review, Cowork's ordering amendment). These scripts ARE the subject of that review, and register entry D-281 — found by this wave — shows the surface carries real decisions, so a bulk sweep here would both pre-empt the review and be the blind class sweep the ruling-vocabulary guardrail exists to forbid.",

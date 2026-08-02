@@ -5,6 +5,27 @@
 > Historical entries live in `STATUS_ARCHIVE.md` (reference-only, NOT part of the session-start
 > read) — a superseded entry moves there instead of accumulating here.
 
+*Last updated: 2026-08-02, LATEST++++ (CC — **★ PHASE 1d: THE ENUMERATION WAVE OVER THE NEVER-READ SURFACES RAN, AND IT
+IS PARTIAL BY MEASUREMENT. The register is 254 → 281; the unresolved residual 2,935 → 2,879; three findings rowed; the
+two riding acts landed.** READ-ONLY on the system: no `src/` change, no golden / `tools/corpus/` / `tools/robust_stop/`
+movement, no behavior change, no fix, no design, **no ratification** — the 27 new decisions enter with the record's own
+status and go to the user in the report's RATIFICATION QUEUE. Dispatch `cc_instruction_phase1d_enumeration_wave.md`;
+report `cc_phase1d_enumeration_wave_report.md`. Per the OI-222 remedy this entry is a **POINTER** — the content lives in
+the report, the register, the manifest and the dated notes. **★ THE HEADLINE IS A MEASURED FEASIBILITY STOP, which the
+dispatch names an accepted outcome:** the mechanically-derived reading list is **145 files / 4.10 MB ≈ 1.35 M tokens** —
+larger than one session's whole context window before any other task is paid for. **21 documents were read IN FULL (195
+of 1,533 clusters); 124 are not, including both archives**, and the remainder is measured and partitioned rather than
+guessed at. **Read, in this order:** the [[OI-207]] note (the derived reading list, the declared priority and why the
+archives were deferred, the 27 entries, the Task-2 reservations, the arithmetic, and the two-partition handover — **it
+does NOT support closing the row**); the [[OI-208]] note (the same-commit rule honored twice, and the question the
+register's four-case home vocabulary cannot answer); then [[OI-268]], [[OI-269]], [[OI-270]], the three new rows, and
+the flipped [[OI-265]] / [[OI-266]]. **Four commits:** `19fbe9e271` Task 0, the two riding acts → `042f8dde79` the 27
+entries → `33a821d64c` Task 2, three bulk rules + a stated reason per surviving surface → the rows, notes and STATUS.
+All guards PASS (`--verify` 281/281 quotes, 276/276 anchors, references ALL; `--check` 14,460/14,460 clusters,
+15,224/15,224 occurrences; register `--check` across 21 files; open-items living check 270/270). **NEXT: the user
+ratifies (or corrects) D-255…D-281 and rules on OI-268/OI-269/OI-270; then the wave's second partition — the remaining
+1,084 design-document clusters and the 256 archive clusters — before phase 2 opens.**)*
+
 *Last updated: 2026-08-02, LATEST+++ (CC — **★ PHASE 1c: THE OI-207 RESIDUAL SECOND PASS IS DELIVERED. The
 unresolved residual is 5,204 → 2,935; the register is 231 → 254 decisions; two findings rowed.** READ-ONLY on the
 system: no `src/` change, no golden / `tools/corpus/` / `tools/robust_stop/` movement, no behavior change, no fix, no
