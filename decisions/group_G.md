@@ -838,7 +838,7 @@
 
 **Home.** `cowork_joint_key_chord_design.md:173-180`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step the document designs is shelved (**D-278**); this statement is about the two code paths and not about that step. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step the document designs is shelved (**D-278**); this statement is about the two code paths and not about that step. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
 ### D-380 — The carry's meaningful axis is DISTINCT ROOTS, and every above-threshold root is carried at graded confidence — a carry of winner-plus-one discards the third root on about a quarter of slices
 
@@ -858,7 +858,7 @@
 
 **Home.** `cowork_layer5_engagement_design.md:136-142`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The document's banner records `Status: DESIGN (CC, 2026-07-07)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The document's banner records `Status: DESIGN (CC, 2026-07-07)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
 ### D-381 — The carry must cap on DISTINCT ROOTS, not on voicings — the existing voicing-keyed cap gives no structural guarantee that a third root survives
 
@@ -880,7 +880,7 @@
 
 **Home.** `cowork_layer5_engagement_design.md:164-172`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. Recorded as an OWED change to the chord layer's carry construction, named so that the engagement design and the later build agree on the contract, and explicitly not built in that pass. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. Recorded as an OWED change to the chord layer's carry construction, named so that the engagement design and the later build agree on the contract, and explicitly not built in that pass. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
 ### D-385 — Pedal-point detection's home is DECIDED: a reader over the chord layer's carry that annotates a carried reading — never a second analysis that overwrites the winner
 
@@ -890,7 +890,7 @@
 >   decoder post-reader)** and feeds L5 selection *one* pedal-annotated candidate. It never owns `results.front()`
 >   and never writes back into the decoder's scoring — it reads the carry forward and annotates.
 
-**In plain words.** Deciding that a sustained bass note is a pedal — that the real harmony is the chord above it — is a chord-identity question, so it sits on the chord layer's output side, reading what that layer already carried. It marks one of the carried readings as the pedal reading and passes it on. It never takes ownership of the winning reading, never writes back into the scoring, and never replaces the set of alternatives; the original reading with the bass as the root survives at its own confidence.
+**In plain words.** Deciding that a SUSTAINED NOTE is a pedal - that the real harmony is the chord moving against it - is a chord-identity question, so the detector sits on the chord layer's output side, reading what that layer already carried. THE PEDALED NOTE CAN BE IN ANY VOICE: the bass pedal is the classic case, but the ratified pedal-point class is voice-independent (D-207), and this entry's home decision - an ADDITIVE reader that marks one carried reading as the pedal reading - applies unchanged whichever voice holds the note. It never takes ownership of the winning reading, never writes back into the scoring, and never replaces the set of alternatives; the original reading survives at its own confidence. (The source document's own wording says 'bass' - the legacy-era default; the voice-independent scope is the ruled one, user 2026-08-02 with D-207.)
 
 **Why.** Grounded in what the material actually is: a pedal stretch's notes are the sustained bass together with the chord above it, so the upper-voice reading — root not the bass, template excluding the bass note — is already one of the distinct-root alternatives the carry holds, and the confirmation margin the old code computed by hand is already the carry's own ranking. The record does not assume the equivalence: whether the carried alternative agrees with today's bass-stripped second analysis is flagged as an owed corpus measurement, and the fallback if it does not is named — still a carried attribute, still never a mutation.
 
@@ -898,7 +898,7 @@
 
 **Home.** `cowork_layer5_engagement_design.md:410-414`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. Part 1 of the same document had left the home open as a hinge; Part 2 records that it decides it. The build is separately hard-gated on the owed measurement being settled on an established pedal-dense corpus ([[OI-4]]). NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. Part 1 of the same document had left the home open as a hinge; Part 2 records that it decides it. The build is separately hard-gated on the owed measurement being settled on an established pedal-dense corpus ([[OI-4]]). NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ RATIFIED (user, 2026-08-02) with the plain restatement rephrased at the user's direction: the pedaled note can be a note OTHER than the bass - the voice-independent class (D-207) governs; the home decision (additive reader, never an overwriting second analysis) is unchanged by which voice holds the pedal.
 
 ### D-386 — No fourth hand-rolled scan for the best different-root alternative — the pedal reader consumes the carry's own ranking, or the one unified primitive
 
@@ -919,5 +919,5 @@
 
 **Home.** `cowork_layer5_engagement_design.md:445-452`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The unification it defers to is tracked as [[OI-11]]. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The unification it defers to is tracked as [[OI-11]]. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 

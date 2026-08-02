@@ -7322,7 +7322,7 @@
       "home": "cowork_layer3_keymode_design.md:60-72",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "no other architectural layer generates or re-scores key/mode candidates"
       ]
@@ -7342,7 +7342,7 @@
       "home": "cowork_layer3_keymode_design.md:129-133",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`, and the banner adds that the conditional sign-off was met by stating the recognized mode vocabulary explicitly — this passage is the other half of that statement. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`, and the banner adds that the conditional sign-off was met by stating the recognized mode vocabulary explicitly — this passage is the other half of that statement. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "never as the unrecognized scale itself"
       ]
@@ -7362,10 +7362,11 @@
       "home": "cowork_layer3_keymode_design.md:153-159",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. **Flagged in the phase-1h report as an instance of the [[OI-275]] question** — it sits against **D-003** (inference is preset-independent; presets are presentation concerns), and the record contains no ruling that names either statement against the other. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. **Flagged in the phase-1h report as an instance of the [[OI-275]] question** — it sits against **D-003** (inference is preset-independent; presets are presentation concerns), and the record contains no ruling that names either statement against the other. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ RATIFIED (user, 2026-08-02) UNDER THE OI-275 TRANSFER TREATMENT, as offered with the queue and adopted in the blanket ratification: the letter (the preset as a weak mode prior) stays home to the LEGACY Layer-3 path, LEGACY-marked; the live estimator is governed by D-003's measured preset-independence. The second instance of the OI-275 governing question, treated identically.",
       "patterns": [
         "first architectural layer where the user's style preset"
-      ]
+      ],
+      "legacy_subject": true
     },
     {
       "id": "D-346",
@@ -7382,7 +7383,7 @@
       "home": "cowork_layer3_keymode_design.md:230-239",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The date given is the date of the recorded ruling that the narrower alternative is to be settled by measurement and that the pooled rule is normative until then; the pooled rule itself is recorded as as-built and is not dated in the record. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The date given is the date of the recorded ruling that the narrower alternative is to be settled by measurement and that the pooled rule is normative until then; the pooled rule itself is recorded as as-built and is not dated in the record. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "union of those top-K sets across all slices"
       ]
@@ -7402,7 +7403,7 @@
       "home": "cowork_layer3_keymode_design.md:307-310",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "cheap-to-stay \\+ grows-with-key-distance"
       ]
@@ -7422,7 +7423,7 @@
       "home": "cowork_layer3_keymode_design.md:212-220",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "not semitone distance and not a",
         "There is no \"how many slices\" threshold"
@@ -7443,7 +7444,7 @@
       "home": "cowork_layer3_keymode_design.md:311-313",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "not\\s+the gap between the top two scores at the slice"
       ]
@@ -7463,7 +7464,7 @@
       "home": "cowork_layer3_keymode_design.md:16-18",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The record labels the closure `D-L3a` — a label from the document's own design-decision series, not a register identifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The record labels the closure `D-L3a` — a label from the document's own design-decision series, not a register identifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "CLOSED by D-L3a"
       ]
@@ -7483,7 +7484,7 @@
       "home": "cowork_layer3_keymode_design.md:314-315",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "A dedicated best-sequence decoder for key/mode"
       ]
@@ -7503,7 +7504,7 @@
       "home": "cowork_layer3_keymode_design.md:321-327",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "The bar, with its partition stated"
       ]
@@ -7523,7 +7524,7 @@
       "home": "cowork_layer3_keymode_design.md:337-342",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "Two quality goals, measured separately"
       ]
@@ -7543,7 +7544,7 @@
       "home": "cowork_layer3_keymode_design.md:402-410",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "decoder-private settings are exhausted"
       ]
@@ -7563,7 +7564,7 @@
       "home": "cowork_layer3_keymode_design.md:411-418",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "identified shared-scorer lever, measured"
       ]
@@ -7583,7 +7584,7 @@
       "home": "cowork_layer3_keymode_design.md:383-397",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "Brittle leading-tone presence-gate"
       ]
@@ -7603,7 +7604,7 @@
       "home": "cowork_layer3_keymode_design.md:497-506",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The surrounding deferred-enhancement entry is recorded per the user, 2026-06-22; the measured placement conclusion quoted here names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The surrounding deferred-enhancement entry is recorded per the user, 2026-06-22; the measured placement conclusion quoted here names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "not\\*\\* a standalone Layer-3 emission"
       ]
@@ -7623,7 +7624,7 @@
       "home": "cowork_layer3_keymode_design.md:507-520",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The record states the amendment (A-3) was ratified 2026-07-02 but does not name the ratifier at this home; the amendment set's own document banner is quoted in the phase-1g triage as `AMENDMENTS A-1…A-10 RATIFIED (user, 2026-07-02)`, and that document is in the phase-1h full-read set. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The record states the amendment (A-3) was ratified 2026-07-02 but does not name the ratifier at this home; the amendment set's own document banner is quoted in the phase-1g triage as `AMENDMENTS A-1…A-10 RATIFIED (user, 2026-07-02)`, and that document is in the phase-1h full-read set. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "Dominant-implication key evidence in the emission"
       ]
@@ -7643,7 +7644,7 @@
       "home": "cowork_score_census.md:30-33",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The document's banner records `Status: v1 DELIVERED (Cowork, 2026-07-02); for user disposition of the acquisition tiers (§5)` — the user disposition it names covers the acquisition tiers, not this rule. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The document's banner records `Status: v1 DELIVERED (Cowork, 2026-07-02); for user disposition of the acquisition tiers (§5)` — the user disposition it names covers the acquisition tiers, not this rule. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "a new corpus was discovered\" is a census"
       ]
@@ -7663,7 +7664,7 @@
       "home": "cowork_score_census.md:67-70",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "A source enters the registry only with all five fields decided"
       ]
@@ -7683,7 +7684,7 @@
       "home": "cowork_score_census.md:74-77",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "Dedupe by work, not by container"
       ]
@@ -7703,7 +7704,7 @@
       "home": "cowork_score_census.md:119-124",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "citation-closed"
       ]
@@ -7723,7 +7724,7 @@
       "home": "cowork_score_census.md:126-131",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "closed by ruling, not enumeration"
       ]
@@ -7743,7 +7744,7 @@
       "home": "cowork_score_census.md:166-171",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The section is headed as a user observation of 2026-07-03; the record says the trigger is instituted but does not name who instituted it. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The section is headed as a user observation of 2026-07-03; the record says the trigger is instituted but does not name who instituted it. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "does not discharge the duty"
       ]
@@ -7763,7 +7764,7 @@
       "home": "cowork_score_census.md:189-193",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The section is headed as a user question of 2026-07-03; its first run is recorded EXECUTED and DISPOSED 2026-07-04, with the user's rulings at that disposition recorded in the same paragraph. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The section is headed as a user question of 2026-07-03; its first run is recorded EXECUTED and DISPOSED 2026-07-04, with the user's rulings at that disposition recorded in the same paragraph. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "but the search is step 3 of 3"
       ]
@@ -7783,7 +7784,7 @@
       "home": "cowork_score_census.md:221",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The cell records `★ SCOPE RULING RATIFIED (user, 2026-07-04)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The cell records `★ SCOPE RULING RATIFIED (user, 2026-07-04)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "audio-domain, out of corpus scope"
       ]
@@ -7803,7 +7804,7 @@
       "home": "cowork_score_census.md:255-264",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The rule is recorded as the user's, 2026-07-03. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The rule is recorded as the user's, 2026-07-03. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "scored against\\s+the FULL needs-vector at intake"
       ]
@@ -7823,7 +7824,7 @@
       "home": "cowork_score_census.md:266-282",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The protocol is recorded as the user's, 2026-07-03. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The protocol is recorded as the user's, 2026-07-03. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "NEVER decided by enthusiasm or by default silence"
       ]
@@ -7843,7 +7844,7 @@
       "home": "cowork_score_census.md:216",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "never re-mistake it for GT"
       ]
@@ -7863,7 +7864,7 @@
       "home": "cowork_score_census.md:215",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "implied-polyphony half CONFIRMED ABSENT"
       ]
@@ -7883,7 +7884,7 @@
       "home": "cowork_score_census.md:219",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "no symbol→realization dataset exists"
       ]
@@ -7903,7 +7904,7 @@
       "home": "cowork_score_census.md:225",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The user's act recorded on this row is the ADOPTION of the need (2026-07-04); the build-not-download conclusion is a measured search outcome and names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The user's act recorded on this row is the ADOPTION of the need (2026-07-04); the build-not-download conclusion is a measured search outcome and names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "CONFIRMED build-not-download"
       ]
@@ -7923,7 +7924,7 @@
       "home": "cowork_score_census.md:208",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The cell marks it `(Wave-3 MEASURED, corrects the audit)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The cell marks it `(Wave-3 MEASURED, corrects the audit)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "the 27 TAVERN A/B pairs"
       ]
@@ -7943,7 +7944,7 @@
       "home": "cowork_score_census.md:208",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL, in the Wave-3 addendum text of the dual-annotator row. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL, in the Wave-3 addendum text of the dual-annotator row. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "RECORD-ONLY"
       ]
@@ -7963,7 +7964,7 @@
       "home": "cowork_score_census.md:220",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "all real label sources research-only/proprietary"
       ]
@@ -7983,7 +7984,7 @@
       "home": "cowork_joint_key_chord_design.md:77-96",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step this decision places was shelved against measurement and that shelving is register entry **D-278** (user-ratified 2026-07-07, re-ratified 2026-08-02), so the placement is shelved with it; the document's own banner says it is retained as the record and that the step is off the build inventory. **Reported, not statused as a supersession:** the option this decision REJECTED — one decision over a combined tonality-and-chord state — is what **D-001** later adopts as the production architecture, and no record connects the two; the user ruled at D-278's ratification that the shelving does not bear on D-001, and the two objections raised here are answered elsewhere in the record (the decision-neutrality corollary answers the rebuild objection; the adoption measurement answers the magnitude objection). NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step this decision places was shelved against measurement and that shelving is register entry **D-278** (user-ratified 2026-07-07, re-ratified 2026-08-02), so the placement is shelved with it; the document's own banner says it is retained as the record and that the step is off the build inventory. **Reported, not statused as a supersession:** the option this decision REJECTED — one decision over a combined tonality-and-chord state — is what **D-001** later adopts as the production architecture, and no record connects the two; the user ruled at D-278's ratification that the shelving does not bear on D-001, and the two objections raised here are answered elsewhere in the record (the decision-neutrality corollary answers the rebuild objection; the adoption measurement answers the magnitude objection). NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "a bounded coupling step, NOT a unified"
       ]
@@ -8003,7 +8004,7 @@
       "home": "cowork_joint_key_chord_design.md:136-140",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step the document designs is shelved (**D-278**); this prohibition is not about that step — it is stated as what any placement must avoid, and is flagged in the record as written so the build does not drift there. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step the document designs is shelved (**D-278**); this prohibition is not about that step — it is stated as what any placement must avoid, and is flagged in the record as written so the build does not drift there. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "A placement that WOULD violate acyclicity"
       ]
@@ -8023,7 +8024,7 @@
       "home": "cowork_joint_key_chord_design.md:173-180",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step the document designs is shelved (**D-278**); this statement is about the two code paths and not about that step. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step the document designs is shelved (**D-278**); this statement is about the two code paths and not about that step. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "cannot reproduce the multi-pass pipeline chord"
       ]
@@ -8043,7 +8044,7 @@
       "home": "cowork_joint_key_chord_design.md:266-272",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step the document designs is shelved (**D-278**); this statement is about what is and is not measurable, and stands independently of it — the same document records the shelving probe's own fire-rate as a structural proxy rather than the exact condition. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step the document designs is shelved (**D-278**); this statement is about what is and is not measurable, and stands independently of it — the same document records the shelving probe's own fire-rate as a structural proxy rather than the exact condition. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "not pre-computable read-only"
       ]
@@ -8063,7 +8064,7 @@
       "home": "cowork_layer5_engagement_design.md:136-142",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The document's banner records `Status: DESIGN (CC, 2026-07-07)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The document's banner records `Status: DESIGN (CC, 2026-07-07)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "load-bearing exclusion tail"
       ]
@@ -8083,7 +8084,7 @@
       "home": "cowork_layer5_engagement_design.md:164-172",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. Recorded as an OWED change to the chord layer's carry construction, named so that the engagement design and the later build agree on the contract, and explicitly not built in that pass. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. Recorded as an OWED change to the chord layer's carry construction, named so that the engagement design and the later build agree on the contract, and explicitly not built in that pass. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "distinct-root-first carry"
       ]
@@ -8103,7 +8104,7 @@
       "home": "cowork_layer5_engagement_design.md:187-198",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The document's banner records `Status: DESIGN (CC, 2026-07-07)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The document's banner records `Status: DESIGN (CC, 2026-07-07)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "select by joint consistency"
       ]
@@ -8123,7 +8124,7 @@
       "home": "cowork_layer5_engagement_design.md:212-217",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The document's banner records `Status: DESIGN (CC, 2026-07-07)`; the measured basis it consumes is the separately-ratified fine-grain-override finding. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The document's banner records `Status: DESIGN (CC, 2026-07-07)`; the measured basis it consumes is the separately-ratified fine-grain-override finding. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "progression only breaks ties"
       ]
@@ -8143,7 +8144,7 @@
       "home": "cowork_layer5_engagement_design.md:263-266",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The separate step this boundary reserves a place for was afterwards shelved against measurement (**D-278**); the boundary itself is a statement about what the function layer does not own and is unaffected by that shelving. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The separate step this boundary reserves a place for was afterwards shelved against measurement (**D-278**); the boundary itself is a statement about what the function layer does not own and is unaffected by that shelving. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "a \\*\\*distinct step, not L5 selection"
       ]
@@ -8153,7 +8154,7 @@
       "group": "G",
       "title": "Pedal-point detection's home is DECIDED: a reader over the chord layer's carry that annotates a carried reading — never a second analysis that overwrites the winner",
       "verbatim": "- **Home: a reader over the decoder's Layer-4 carry, emitting a pedal-annotated result — an additive annotation on\n  a carried reading, NOT a mutation of the winner.** Because the material it needs is the carry's distinct-root\n  distribution (§6.2), and chord identity is Layer 4, the reader sits at the **carry side (Layer-4 output / a\n  decoder post-reader)** and feeds L5 selection *one* pedal-annotated candidate. It never owns `results.front()`\n  and never writes back into the decoder's scoring — it reads the carry forward and annotates.",
-      "plain": "Deciding that a sustained bass note is a pedal — that the real harmony is the chord above it — is a chord-identity question, so it sits on the chord layer's output side, reading what that layer already carried. It marks one of the carried readings as the pedal reading and passes it on. It never takes ownership of the winning reading, never writes back into the scoring, and never replaces the set of alternatives; the original reading with the bass as the root survives at its own confidence.",
+      "plain": "Deciding that a SUSTAINED NOTE is a pedal - that the real harmony is the chord moving against it - is a chord-identity question, so the detector sits on the chord layer's output side, reading what that layer already carried. THE PEDALED NOTE CAN BE IN ANY VOICE: the bass pedal is the classic case, but the ratified pedal-point class is voice-independent (D-207), and this entry's home decision - an ADDITIVE reader that marks one carried reading as the pedal reading - applies unchanged whichever voice holds the note. It never takes ownership of the winning reading, never writes back into the scoring, and never replaces the set of alternatives; the original reading survives at its own confidence. (The source document's own wording says 'bass' - the legacy-era default; the voice-independent scope is the ruled one, user 2026-08-02 with D-207.)",
       "rationale": "Grounded in what the material actually is: a pedal stretch's notes are the sustained bass together with the chord above it, so the upper-voice reading — root not the bass, template excluding the bass note — is already one of the distinct-root alternatives the carry holds, and the confirmation margin the old code computed by hand is already the carry's own ranking. The record does not assume the equivalence: whether the carried alternative agrees with today's bass-stripped second analysis is flagged as an owed corpus measurement, and the fallback if it does not is named — still a carried attribute, still never a mutation.",
       "status": "live",
       "date": "2026-07-07",
@@ -8163,7 +8164,7 @@
       "home": "cowork_layer5_engagement_design.md:410-414",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. Part 1 of the same document had left the home open as a hinge; Part 2 records that it decides it. The build is separately hard-gated on the owed measurement being settled on an established pedal-dense corpus ([[OI-4]]). NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. Part 1 of the same document had left the home open as a hinge; Part 2 records that it decides it. The build is separately hard-gated on the owed measurement being settled on an established pedal-dense corpus ([[OI-4]]). NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ RATIFIED (user, 2026-08-02) with the plain restatement rephrased at the user's direction: the pedaled note can be a note OTHER than the bass - the voice-independent class (D-207) governs; the home decision (additive reader, never an overwriting second analysis) is unchanged by which voice holds the pedal.",
       "patterns": [
         "reader over the decoder's Layer-4 carry"
       ]
@@ -8183,7 +8184,7 @@
       "home": "cowork_layer5_engagement_design.md:445-452",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The unification it defers to is tracked as [[OI-11]]. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The unification it defers to is tracked as [[OI-11]]. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "adds \\*\\*no fourth\\s*\\n?\\s*scan"
       ]
@@ -8203,7 +8204,7 @@
       "home": "cowork_layer5_engagement_design.md:490-505",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The record notes it dissolves an earlier proposal for a new advisory field into an enrichment of the existing one. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The record notes it dissolves an earlier proposal for a new advisory field into an enrichment of the existing one. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "UNIFY into one structured open-mark"
       ]
@@ -8223,7 +8224,7 @@
       "home": "cowork_voiceleading_axis_design.md:519-522",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-07-03 — asks A1–A8 ratified in full)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-07-03 — asks A1–A8 ratified in full)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "motion-type-led features"
       ]
@@ -8243,7 +8244,7 @@
       "home": "cowork_voiceleading_axis_design.md:523-525",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A3, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A3, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "two-tier voice model"
       ]
@@ -8263,7 +8264,7 @@
       "home": "cowork_voiceleading_axis_design.md:526-529",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A4, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A4, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "at whole-selection granularity"
       ]
@@ -8283,7 +8284,7 @@
       "home": "cowork_voiceleading_axis_design.md:533-541",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A8, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A8, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "cross-axis dependency rule"
       ]
@@ -8303,7 +8304,7 @@
       "home": "cowork_voiceleading_axis_design.md:530-532",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A2's second half, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A2's second half, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "staged components behind design gates"
       ]
@@ -8323,7 +8324,7 @@
       "home": "cowork_voiceleading_axis_design.md:346-351",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document's banner records that this clarification was folded in BEFORE signing and that the signing ratified asks A1–A8 in full. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document's banner records that this clarification was folded in BEFORE signing and that the signing ratified asks A1–A8 in full. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "full ranked alternative list"
       ]
@@ -8343,7 +8344,7 @@
       "home": "cowork_voiceleading_axis_design.md:304-308",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-07-03 — asks A1–A8 ratified in full)` and, separately, that the top-note default is closed as-built. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-07-03 — asks A1–A8 ratified in full)` and, separately, that the top-note default is closed as-built. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "never silent, never per-source"
       ]
@@ -8363,7 +8364,7 @@
       "home": "cowork_voiceleading_axis_design.md:376-381",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. All three floor values are recorded as precision-phase constants, not fixed here. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. All three floor values are recorded as precision-phase constants, not fixed here. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "the three declared floors"
       ]
@@ -8383,7 +8384,7 @@
       "home": "cowork_voiceleading_axis_design.md:502-504",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A6, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A6, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "undefined, not zero"
       ]
@@ -8403,7 +8404,7 @@
       "home": "cowork_voiceleading_axis_design.md:693-696",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A7, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A7, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "the claims registry"
       ]
@@ -8423,7 +8424,7 @@
       "home": "cowork_voiceleading_axis_design.md:632-635",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document records this as one of two build declarations the design owed and the build closed; the closure names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document records this as one of two build declarations the design owed and the build closed; the closure names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "SEMITONE-EXACT"
       ]
@@ -8443,7 +8444,7 @@
       "home": "cowork_voiceleading_axis_design.md:368-371",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document records this as the second of two build declarations the design owed and the build closed, decided at build by measurement rather than at design time; the closure names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document records this as the second of two build declarations the design owed and the build closed, decided at build by measurement rather than at design time; the closure names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "z-scored\\s*\\n?\\s*concatenation"
       ]
@@ -8463,7 +8464,7 @@
       "home": "cowork_voiceleading_axis_design.md:688-690",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A5, recorded ratified in full at the banner. The propagation into the architecture document's span typology is recorded as riding the build. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A5, recorded ratified in full at the banner. The propagation into the architecture document's span typology is recorded as riding the build. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "the typology extension"
       ]

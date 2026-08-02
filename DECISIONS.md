@@ -29,7 +29,11 @@
 > restatements under the LEGACY-marking convention (an entry whose subject is the dormant
 > pipeline is explicitly marked, so a ruling about soon-deleted code is never mistaken for one
 > about the live solution); D-342 with the live-handling clarification. The ratification is of
-> each RULE itself; homes and provenance are bookkeeping. The register-level ratification does not overwrite
+> each RULE itself; homes and provenance are bookkeeping. **Seventh ratification event,
+> 2026-08-02:** the 58 phase-1h entries (D-343…D-400) — D-385 with its plain restatement
+> rephrased at the user's direction (the pedaled note can be in any voice, the D-207
+> voice-independent class governing); D-345 under the OI-275 transfer treatment (letter
+> legacy-homed and marked; D-003 governs the live estimator). The register-level ratification does not overwrite
 > per-entry provenance — an entry saying "ratifier not stated" still means the original record
 > of THAT decision does not say; what the 2026-08-02 ratifications establish is that these
 > entries are the standing decisions of record.
