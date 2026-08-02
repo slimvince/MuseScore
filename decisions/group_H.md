@@ -100,13 +100,13 @@
 
 **In plain words.** How the individual voices move is a second, independent line of analysis alongside the harmonic one, with its own stages.
 
-**Why.** derivation not recorded.
+**Why.** Argued in the axis's own design document against the three co-equal admission gates the architecture requires of any new axis (`cowork_voiceleading_axis_design.md:510-518`, decision D1). (1) Separation of concerns: linear structure is a distinct responsibility no harmonic layer may absorb, and the grouping layer's own specification excludes it explicitly. (2) Verifiability: the motion and interval statistics are facts, an oracle by construction; the texture classification validates under the discovery protocol; stream separation validates against the notated voices. (3) Proportionality: the axis buys a second style coordinate MEASURED orthogonal to the harmonic one — cross-agreement 0.030 over 1,283 dual-view pieces — plus an owner for the melodic phrase, the galant patterns and chord voicing, which are otherwise homeless, and the evidence base for the non-chord-tone lever the dormant full-spine measurement sized at about 45 % of the exact-match ceiling. The alternative weighed and rejected: folding the motion features into the harmonic spine's half-tier as another derived view, which would leave the judgment components (texture, phrases) with no home and mix this axis's concerns into that tier.
 
 **Status.** LIVE · decided 2026-07-03 · ratifier not stated
 
 **Home.** `ARCHITECTURE.md:895-896`
 
-**Provenance.** ARCHITECTURE.md:896-899 records the foundation BUILT (dormant). ARCHITECTURE.md:1415-1415 still says the voice-leading layer is 'not built' - see OPEN_ITEMS OI-232
+**Provenance.** ARCHITECTURE.md:896-899 records the foundation BUILT (dormant). ARCHITECTURE.md:1415-1415 still says the voice-leading layer is 'not built' - see OPEN_ITEMS OI-232 ★ 2026-08-02 (the phase-1h continuation wave): the recorded defense is FILLED from `cowork_voiceleading_axis_design.md` section 9 decision D1 and section 1, read IN FULL — the entry previously read 'derivation not recorded'. Written from the document, not from memory.
 
 ### D-248 — Tonicization labels are not implemented and are deferred
 

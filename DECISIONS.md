@@ -126,9 +126,9 @@ project's own and are defined here because they are used before any entry explai
 | — of which recorded only on a tracking surface, with no home at all | 27 |
 | — of which a project-wide convention, correctly homed | 34 |
 | — of which a decision about the process, correctly homed | 36 |
-| Decisions whose defense the record does not state | 45 |
+| Decisions whose defense the record does not state | 44 |
 
-That last row is the one meant to fall. **355 of 400** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
+That last row is the one meant to fall. **356 of 400** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
 
 Alongside the register, every one of the harvested statements about decisions in this repository has been given a recorded disposition, so that none was silently passed over:
 
@@ -138,10 +138,10 @@ Alongside the register, every one of the harvested statements about decisions in
 | Groups of near-identical statements ("clusters") | **14460** |
 | Clusters carrying a recorded disposition | **14460** |
 | — restates | 5511 |
-| — not-a-decision | 5561 |
+| — not-a-decision | 5555 |
 | — boilerplate | 74 |
-| — no-spec-home | 616 |
-| — unresolved | 2698 |
+| — no-spec-home | 639 |
+| — unresolved | 2681 |
 
 The full disposition table, and the numbered rule behind each one, are in `tools/audit/decisions/cluster_dispositions.csv` and `tools/audit/decisions/disposition_manifest.json`.
 
@@ -381,7 +381,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-082 | The grouping layer is additive, read-only, with no feedback | LIVE · derivation not recorded | `ARCHITECTURE.md` |
 | D-083 | Hierarchy, periods and prolongation are out of the validatable core | LIVE · derivation not recorded | `ARCHITECTURE.md` |
 | D-084 | The progression-schema recognizer is a consumer of the function layer, not a new layer | DEFERRED · derivation not recorded | `ARCHITECTURE.md` |
-| D-085 | The voice-leading axis is a separate axis with its own layers | LIVE · derivation not recorded | `ARCHITECTURE.md` |
+| D-085 | The voice-leading axis is a separate axis with its own layers | LIVE | `ARCHITECTURE.md` |
 | D-248 | Tonicization labels are not implemented and are deferred | DEFERRED | `ARCHITECTURE.md` |
 | D-291 | The tonicization labeller is NOT wired, and the metric is NOT changed to credit it - both would hide a real key error | LIVE | `cowork_handoff_archive.md` ⚠tracking-surface-only |
 | D-335 | The function layer outputs the Roman numeral; the tonic/subdominant/dominant summary is a derived read-out, never a stored output | LIVE | `cowork_layer5_function_design.md` ⚠gap |
@@ -660,8 +660,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 ## Provenance of this register
 
 - Adjudication: the OI-207 decision-conformance adjudication, 2026-08-01, at commit `58dea6702ac8aa9d5ef8b89244b94d587a75f7a5`.
-- Coverage figures above regenerated at commit `4cc81cfaed741dbd9aa165bbf166aacb5811a2f7`.
-- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `31cee4073e477b3c…`).
+- Coverage figures above regenerated at commit `2504911337d79d8a09e5f8f66454c5648e94ffcb`.
+- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `b609ce859ddb19f2…`).
 - Harvest: `tools/audit/decisions/decision_candidates.json` (sha256 `51850440b315e6e9…`).
 - Clustering: `tools/audit/decisions/decision_clusters.json` (sha256 `0615b1e61bf10332…`).
 - Shape: `open_items/OI-208.md` (user-ratified 2026-07-28).

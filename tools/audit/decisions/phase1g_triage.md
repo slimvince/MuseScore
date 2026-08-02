@@ -15,7 +15,7 @@
 | Design documents owning at least one unresolved cluster | **143** |
 | — read IN FULL by the phase-1d and phase-1f waves (distinct) | 22 |
 | — **unread, and classified below** | **121** |
-| Unresolved cluster attributions held by the unread set | 1008 |
+| Unresolved cluster attributions held by the unread set | 994 |
 
 ### ★ A correction of record: the unread population is 121, not 120
 
@@ -38,14 +38,14 @@ The commit that produced the 23/120 figures (`40739f38ba`) was itself a self-che
 
 | Class | Documents | Unresolved clusters | Proposed disposition |
 |---|---|---|---|
-| LIVE-SPEC | **80** | 840 | READ IN FULL |
+| LIVE-SPEC | **80** | 826 | READ IN FULL |
 | REPORT/NARRATIVE | **39** | 164 | EXCLUDE |
 | SUPERSEDED-ESTABLISHED | **1** | 2 | EXCLUDE |
 | EVIDENCE-FROZEN | **1** | 2 | EXCLUDE |
-| **total** | **121** | **1008** | |
+| **total** | **121** | **994** | |
 
 **Proposed EXCLUDE: 41 documents / 168 clusters / 0.54 MB (≈187k tokens).**
-**Remaining full-read set: 80 documents / 840 clusters / 1.80 MB (≈621k tokens)** — of which the five this session reads in full are 0.31 MB (≈108k tokens), leaving 1.49 MB (≈513k tokens) across 75 documents.
+**Remaining full-read set: 80 documents / 826 clusters / 1.80 MB (≈621k tokens)** — of which the five this session reads in full are 0.31 MB (≈108k tokens), leaving 1.49 MB (≈513k tokens) across 75 documents.
 
 *(Token estimates use the 3.04 characters-per-token ratio phase 1d measured on this repository's own prose against the Read tool's accounting, and phase 1f re-used unchanged.)*
 
@@ -60,31 +60,31 @@ Ordered by unresolved cluster count, the priority map the manifest gives. “Ver
 | 3 | `docs/scoring_model.md` | 35 | LIVE-SPEC | The authoritative scoring reference, a mandatory read for scoring sessions (`CLAUDE.md`) and the home of D-214…D-224. READ IN FULL this session. | READ IN FULL |
 | 4 | `docs/decoder_design.md` | 33 | LIVE-SPEC | The decoder design; the dispatch's own full-read set. READ IN FULL this session. | READ IN FULL |
 | 5 | `docs/redesign_plan.md` | 23 | LIVE-SPEC | The layered-evidence architecture plan; the dispatch's own full-read set. READ IN FULL this session. | READ IN FULL |
-| 6 | `cowork_score_census.md` | 21 | LIVE-SPEC | Banner: v1 DELIVERED, for user disposition of the acquisition tiers. §8c is the HOME of the fitting-pool licence constraint that [[OI-271]] turns on. | READ IN FULL |
-| 7 | `cowork_joint_key_chord_design.md` | 20 | LIVE-SPEC | Shelved by ratification (D-278) but retained as the architecture record; the design content itself — where the step lives, how key and chord couple — is registered nowhere. | READ IN FULL |
-| 8 | `cowork_layer5_engagement_design.md` | 20 | LIVE-SPEC | A design pass (CC, 2026-07-07) whose downstream owner-decisions are enumerated for follow-on passes; the engage-era agenda's fate is itself unrecorded ([[OI-259]]). | READ IN FULL |
-| 9 | `cowork_structural_integrity_audit.md` | 20 | LIVE-SPEC | A grounded catalogue that QUEUES named refactors as later user-ratified events; the queue is live. | READ IN FULL |
-| 10 | `cowork_voiceleading_axis_design.md` | 20 | LIVE-SPEC | Banner: AS-BUILT + SIGNED (user, 2026-07-03), asks A1–A8 ratified. | READ IN FULL |
-| 11 | `cowork_layer3_keymode_design.md` | 19 | LIVE-SPEC | Banner: SIGNED (user, 2026-06-22), WIRED — AS-BUILT Step 1, with named deferred follow-ups. | READ IN FULL |
-| 12 | `cowork_progression_schema_dictionary.md` | 19 | LIVE-SPEC | A component specification with a §0 terms table; the Harmonic Vocabulary's own home (D-133). | READ IN FULL |
-| 13 | `docs/implementation_roadmap.md` | 18 | LIVE-SPEC | The single tracker for every review conclusion, with two DO-NOT-FORGET structural refactors under a user mandate. | READ IN FULL |
-| 14 | `cowork_notation_adoption_increment.md` | 17 | LIVE-SPEC | Banner: ★ USER-RATIFIED 2026-07-26, five recommendations adopted. | READ IN FULL |
-| 15 | `cowork_phrase_boundary_design.md` | 17 | LIVE-SPEC | Banner: SIGNED (user, 2026-06-26), rev. 3. | READ IN FULL |
-| 16 | `docs/key_path_design.md` | 17 | LIVE-SPEC | A ratification-gated design; its banner says UNCOMMITTED while the file is tracked — itself worth a reader. | READ IN FULL |
-| 17 | `cowork_progression_schema_design.md` | 16 | LIVE-SPEC | Banner: ★ FULLY RATIFIED (user, 2026-07-02) — D5, D6, §4.5, §4.6. | READ IN FULL |
+| 6 | `cowork_structural_integrity_audit.md` | 20 | LIVE-SPEC | A grounded catalogue that QUEUES named refactors as later user-ratified events; the queue is live. | READ IN FULL |
+| 7 | `cowork_layer3_keymode_design.md` | 19 | LIVE-SPEC | Banner: SIGNED (user, 2026-06-22), WIRED — AS-BUILT Step 1, with named deferred follow-ups. | READ IN FULL |
+| 8 | `cowork_progression_schema_dictionary.md` | 19 | LIVE-SPEC | A component specification with a §0 terms table; the Harmonic Vocabulary's own home (D-133). | READ IN FULL |
+| 9 | `cowork_joint_key_chord_design.md` | 18 | LIVE-SPEC | Shelved by ratification (D-278) but retained as the architecture record; the design content itself — where the step lives, how key and chord couple — is registered nowhere. | READ IN FULL |
+| 10 | `cowork_layer5_engagement_design.md` | 18 | LIVE-SPEC | A design pass (CC, 2026-07-07) whose downstream owner-decisions are enumerated for follow-on passes; the engage-era agenda's fate is itself unrecorded ([[OI-259]]). | READ IN FULL |
+| 11 | `cowork_voiceleading_axis_design.md` | 18 | LIVE-SPEC | Banner: AS-BUILT + SIGNED (user, 2026-07-03), asks A1–A8 ratified. | READ IN FULL |
+| 12 | `docs/implementation_roadmap.md` | 18 | LIVE-SPEC | The single tracker for every review conclusion, with two DO-NOT-FORGET structural refactors under a user mandate. | READ IN FULL |
+| 13 | `cowork_notation_adoption_increment.md` | 17 | LIVE-SPEC | Banner: ★ USER-RATIFIED 2026-07-26, five recommendations adopted. | READ IN FULL |
+| 14 | `cowork_phrase_boundary_design.md` | 17 | LIVE-SPEC | Banner: SIGNED (user, 2026-06-26), rev. 3. | READ IN FULL |
+| 15 | `docs/key_path_design.md` | 17 | LIVE-SPEC | A ratification-gated design; its banner says UNCOMMITTED while the file is tracked — itself worth a reader. | READ IN FULL |
+| 16 | `cowork_progression_schema_design.md` | 16 | LIVE-SPEC | Banner: ★ FULLY RATIFIED (user, 2026-07-02) — D5, D6, §4.5, §4.6. | READ IN FULL |
+| 17 | `cowork_score_census.md` | 16 | LIVE-SPEC | Banner: v1 DELIVERED, for user disposition of the acquisition tiers. §8c is the HOME of the fitting-pool licence constraint that [[OI-271]] turns on. | READ IN FULL |
 | 18 | `cowork_fb_redesign_design.md` | 15 | LIVE-SPEC | A design plus an explicit decision surface for a separately-ratified build event. | READ IN FULL |
 | 19 | `cowork_idiom_discovery_design.md` | 15 | LIVE-SPEC | A design specification with a ratified extraction-tooling decision (D6) and resolved open items. | READ IN FULL |
 | 20 | `cowork_layer1_note_model_design.md` | 15 | LIVE-SPEC | Banner: AS-BUILT — the Layer-1 specification. | READ IN FULL |
 | 21 | `cowork_layer2_slicing_design.md` | 14 | LIVE-SPEC | Banner: AS-BUILT — the Layer-2 specification. | READ IN FULL |
 | 22 | `cowork_target_architecture.md` | 14 | LIVE-SPEC | Demoted to detailed design and rationale, but explicitly retains the FULL statements of the contracts that `ARCHITECTURE.md` only summarises — a partial supersession, not a total one. | READ IN FULL |
-| 23 | `docs/score_inventory.md` | 14 | LIVE-SPEC | A mandatory read for any score-touching task (`CLAUDE.md`, Score corpora) with hard rules of its own. | READ IN FULL |
-| 24 | `cowork_census_full_needs_audit.md` | 13 | LIVE-SPEC | Banner: ★ DISPOSED (user, 2026-07-04) — four §6-C rulings (N18/N19 ADOPTED, N15 RATIFIED, N20 as its own needs row). | READ IN FULL |
-| 25 | `cowork_phase2_architecture_review.md` | 13 | LIVE-SPEC | Carries the user's sequencing gate of 2026-06-17 (structural fixes before inference) and produces the architecture-fix order. | READ IN FULL |
-| 26 | `docs/llm_integration.md` | 13 | LIVE-SPEC | The language-model design; its decisions are registered (D-139…D-143) but all DEFERRED, and the document is their detail. | READ IN FULL |
-| 27 | `docs/phase4_recon.md` | 13 | REPORT/NARRATIVE | A dated read-only reconnaissance (`:3-4`) recommending an implementation shape; the retirement it scouted has since landed — [[OI-238]]'s resolution records that `prepareUserFacingHarmonicRegions` no longer exists in the production tree, verified at the code. Its ruling-vocabulary hits are ordinary prose (“convention”, “retired”, “must not proceed” inside a quoted dispatch condition). | **EXCLUDE** |
-| 28 | `cowork_l1l3_stabilization_plan.md` | 12 | LIVE-SPEC | Carries the user-ratified ordering principle of 2026-06-25 (build-it-right before tune-precision) and the per-step gates. | READ IN FULL |
-| 29 | `cowork_layer4_spec_review.md` | 12 | REPORT/NARRATIVE | Own header `:6`: “Status: findings only; the rewrite follows once these are agreed.” The reviewed document, `cowork_layer4_chordsymbol_design.md`, is in THIS session's full-read set, so the reviewed text is read directly rather than through its review. Zero ruling-vocabulary hits. | **EXCLUDE** |
-| 30 | `docs/layer_architecture_audit.md` | 12 | LIVE-SPEC | Claims supersession for LAYER 1 ONLY; the rest of the intended-vs-actual layer discussion carries no successor claim. | READ IN FULL |
+| 23 | `cowork_phase2_architecture_review.md` | 13 | LIVE-SPEC | Carries the user's sequencing gate of 2026-06-17 (structural fixes before inference) and produces the architecture-fix order. | READ IN FULL |
+| 24 | `docs/llm_integration.md` | 13 | LIVE-SPEC | The language-model design; its decisions are registered (D-139…D-143) but all DEFERRED, and the document is their detail. | READ IN FULL |
+| 25 | `docs/phase4_recon.md` | 13 | REPORT/NARRATIVE | A dated read-only reconnaissance (`:3-4`) recommending an implementation shape; the retirement it scouted has since landed — [[OI-238]]'s resolution records that `prepareUserFacingHarmonicRegions` no longer exists in the production tree, verified at the code. Its ruling-vocabulary hits are ordinary prose (“convention”, “retired”, “must not proceed” inside a quoted dispatch condition). | **EXCLUDE** |
+| 26 | `docs/score_inventory.md` | 13 | LIVE-SPEC | A mandatory read for any score-touching task (`CLAUDE.md`, Score corpora) with hard rules of its own. | READ IN FULL |
+| 27 | `cowork_l1l3_stabilization_plan.md` | 12 | LIVE-SPEC | Carries the user-ratified ordering principle of 2026-06-25 (build-it-right before tune-precision) and the per-step gates. | READ IN FULL |
+| 28 | `cowork_layer4_spec_review.md` | 12 | REPORT/NARRATIVE | Own header `:6`: “Status: findings only; the rewrite follows once these are agreed.” The reviewed document, `cowork_layer4_chordsymbol_design.md`, is in THIS session's full-read set, so the reviewed text is read directly rather than through its review. Zero ruling-vocabulary hits. | **EXCLUDE** |
+| 29 | `docs/layer_architecture_audit.md` | 12 | LIVE-SPEC | Claims supersession for LAYER 1 ONLY; the rest of the intended-vs-actual layer discussion carries no successor claim. | READ IN FULL |
+| 30 | `cowork_census_full_needs_audit.md` | 11 | LIVE-SPEC | Banner: ★ DISPOSED (user, 2026-07-04) — four §6-C rulings (N18/N19 ADOPTED, N15 RATIFIED, N20 as its own needs row). | READ IN FULL |
 | 31 | `docs/iter97_delta_characterization.md` | 11 | REPORT/NARRATIVE | “Read-only data report. No source changes were made” (`:3`), generated against a named iteration-era baseline. Zero ruling-vocabulary hits. | **EXCLUDE** |
 | 32 | `cowork_evidence_inventory.md` | 10 | LIVE-SPEC | The live catalog of every hint each layer finds, with standing obligations at [[OI-146]]. | READ IN FULL |
 | 33 | `cowork_gateA_unification_design.md` | 10 | LIVE-SPEC | Explicitly “the ratification surface” for a separate user-ratified build event. | READ IN FULL |

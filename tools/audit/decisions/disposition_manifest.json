@@ -14,11 +14,11 @@
   },
   "backbone": {
    "file": "tools/audit/decisions/backbone_decisions.json",
-   "sha256": "31cee4073e477b3c6e934f6624e240cee1580cfa86635c8eec6f1d704c0088e5",
-   "decision_count": 358
+   "sha256": "b609ce859ddb19f2ecc2211fb1ab9b9cd5b462402130d1b6a64cbf393db1ae5d",
+   "decision_count": 400
   }
  },
- "head_commit": "4cc81cfaed741dbd9aa165bbf166aacb5811a2f7",
+ "head_commit": "2504911337d79d8a09e5f8f66454c5648e94ffcb",
  "disposition_vocabulary": [
   "restates",
   "not-a-decision",
@@ -69,7 +69,7 @@
   {
    "id": "BR-4",
    "rule": "The cluster's text matches one or more backbone decisions, ALL of which are recorded outside any layer specification. Recorded as a decision with no layer-specification home (named) — the Task-4 documentation-gap class.",
-   "clusters": 616
+   "clusters": 639
   },
   {
    "id": "BR-5",
@@ -79,12 +79,12 @@
   {
    "id": "BR-6",
    "rule": "A Claude Code session report or dispatch whose text is a measurement or delivery narrative (it carries a figure, a test count, a commit hash, or a delivery/verification verb) and matches no backbone decision. A report of work done, not a ruling.",
-   "clusters": 1591
+   "clusters": 1587
   },
   {
    "id": "BR-7",
    "rule": "A table row admitted by the harvest's BROAD signature tier only — an inventory or status cell, not a stated decision.",
-   "clusters": 298
+   "clusters": 297
   },
   {
    "id": "BR-9",
@@ -104,7 +104,7 @@
   {
    "id": "BR-12",
    "rule": "The unit is in a Claude Code session REPORT (`cc_*.md` that is not a dispatch) and carries none of the stated ruling words. A report records work done. Same register-rule reasoning as BR-11. This is BR-6 widened from its narrative-pattern test to the whole report class, minus the ruling vocabulary.",
-   "clusters": 990
+   "clusters": 989
   },
   {
    "id": "BR-13",
@@ -139,24 +139,24 @@
   {
    "id": "BR-8",
    "rule": "Residual: none of the above applies. Recorded UNRESOLVED — the honest outcome, and the count is a finding about the record's legibility.",
-   "clusters": 2698
+   "clusters": 2681
   }
  ],
  "disposition_counts": {
   "restates": 5511,
-  "not-a-decision": 5561,
+  "not-a-decision": 5555,
   "boilerplate": 74,
-  "no-spec-home": 616,
-  "unresolved": 2698
+  "no-spec-home": 639,
+  "unresolved": 2681
  },
  "unresolved_partition_by_surface": {
-  "cowork_* design documents": 845,
-  "docs/ design documents": 400,
+  "cowork_* design documents": 832,
+  "docs/ design documents": 399,
   "cc_* session reports": 316,
   "tools/ script comments": 295,
   "cc_instruction_* dispatches": 290,
-  "src production comments": 276,
-  "the two archives": 95,
+  "src production comments": 275,
+  "the two archives": 93,
   "src test comments": 76,
   "governing: ARCHITECTURE.md": 55,
   "the open-items register": 17,
