@@ -265,6 +265,8 @@
 
 ### D-311 — The chord-analyzer file split happens once, after the retirements have settled — not before
 
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+
 > **the `chordanalyzer.cpp` file split (refactor #1) stays parked BY the ratified engage map** (R9 sequences it AFTER the E4 removals — "split once"; pulling it now would violate, not honor, the ratified order)
 
 **In plain words.** Breaking the large chord-analysis source file into smaller ones waits until the code that is going to be deleted has been deleted. Splitting first would mean splitting twice.

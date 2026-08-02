@@ -60,6 +60,16 @@ NONSPEC_LABEL = {
 LEGACY_MARK = ("⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion "
                "at the retirement map; it has no effect on the live solution (marking convention "
                "user-ratified 2026-08-02).")
+# The transfer variant. Rule (f) exists so that a ruling about soon-deleted code is never mistaken
+# for one about the live solution; where a ruling has explicitly carried the PRINCIPLE across to
+# the live design, the plain mark's "no effect on the live solution" would itself be the mistake
+# rule (f) forbids, so the mark says instead where the text lives and points at the transfer.
+LEGACY_TRANSFER_MARK = (
+    "⚠ **LEGACY IN ITS LETTER — TRANSFERRED IN ITS PRINCIPLE.** The text of this decision belongs "
+    "to the dormant pipeline awaiting deletion at the retirement map, and goes with it. Its "
+    "principle does NOT: a ruling carried that across to the live design, and the plain "
+    "restatement below names the ruling. Read it before concluding this decision lapsed "
+    "(marking convention user-ratified 2026-08-02).")
 
 STATUS_LABEL = {
     "live": "LIVE",
@@ -141,13 +151,25 @@ Each entry has six parts.
 - **Home** — where the decision is actually recorded, as `file:line`. A decision about how a
   layer should work belongs in that layer's section of `ARCHITECTURE.md`, and a decision about
   anything else belongs in the specification that owns it. Where the home is neither, the entry
-  says which of four cases it is: a **documentation gap** (a decision that governs a layer or a
+  says which of five cases it is: a **documentation gap** (a decision that governs a layer or a
   component, not findable from that layer's section — it carries an `OPEN_ITEMS.md` row); a
   decision **recorded only on a tracking surface** (an open-item row or a session handoff block —
   a place for tracking work, not a home for a standing decision); a **project-wide convention**
-  with no owning layer, correctly homed in `CLAUDE.md` or the architectural principles; or a
-  **decision about the process**, not about the system.
+  with no owning layer, correctly homed in `CLAUDE.md` or the architectural principles; a
+  **decision about the process**, not about the system; or a **ratified contract document** the
+  owning `ARCHITECTURE.md` section points at, which is a proper home (the fifth case, user-ratified
+  2026-08-02 at `open_items/OI-268.md` — the pointer, never a copy, is what a missing delegation
+  owes).
 - **Provenance** — where the status comes from, and any later ruling that bears on it.
+
+An entry may additionally carry **⚠ LEGACY**. That means its subject is the dormant pipeline
+awaiting deletion at the retirement map — a ruling about soon-deleted code, which a reader must
+never mistake for one about the live solution (marking convention user-ratified 2026-08-02;
+`CLAUDE.md`, the decisions-register section, rule (f)). The flag is about WHAT THE DECISION IS
+ABOUT, not about how old it is: a decision that governs the live solution carries no flag however
+early it was made. Where a LEGACY-marked decision's *principle* was separately transferred to the
+live design by a ruling, the entry's plain restatement says so — read it before concluding the
+principle lapsed with the code.
 
 ### The status words
 
@@ -293,10 +315,12 @@ def render(backbone: dict, disp: dict) -> str:
             home = d["home"].split(":")[0]
             homeflag = "" if d.get("home_is_layer_spec") else {
                 "gap": " ⚠gap", "unhomed": " ⚠tracking-surface-only",
-                "project-convention": "", "process": "",
+                "project-convention": "", "process": "", "contract-home": "",
             }.get(d.get("nonspec_kind", "gap"), " ⚠gap")
             why = "" if d.get("rationale") else " · derivation not recorded"
-            out.append(f"| {d['id']} | {d['title'].replace('|', '/')} | {st}{why} | `{home}`{homeflag} |")
+            legacy = " ⚠LEGACY" if d.get("legacy_subject") else ""
+            out.append(f"| {d['id']} | {d['title'].replace('|', '/')} | "
+                       f"{st}{legacy}{why} | `{home}`{homeflag} |")
         out.append("")
 
     out.append("## Provenance of this register")
@@ -331,7 +355,8 @@ def render_entry(d: dict) -> list[str]:
     out.append(f"### {d['id']} — {d['title']}")
     out.append("")
     if d.get("legacy_subject"):
-        out.append(LEGACY_MARK)
+        out.append(LEGACY_TRANSFER_MARK if d.get("legacy_principle_transferred")
+                   else LEGACY_MARK)
         out.append("")
     for line in d["verbatim"].splitlines():
         stripped = re.sub(r"^\s*>+\s?", "", line)

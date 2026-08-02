@@ -8,6 +8,8 @@
 
 ### D-051 — The production key/mode path is the sequence decoder, not the per-stretch resolver
 
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+
 > **The production region key/mode path is the decoder, not the per-region resolver.**
 
 **In plain words.** The tonality is worked out for the whole piece at once, as a sequence, rather than separately for each stretch.
@@ -21,6 +23,8 @@
 **Provenance.** The joint estimator now decides key on both surfaces (D-005, D-010). The Layer-3 section still reads 'Built+Live' - see OPEN_ITEMS OI-232
 
 ### D-052 — The signature read and declared-mode mapping live in ONE shared function
+
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
 
 > The signature read + declared-mode
 > mapping + declared-gated Baroque `partialSignatureCorrection` was lifted verbatim into a shared
@@ -39,6 +43,8 @@
 
 ### D-053 — The tick-local path keeps the older resolver (the ratified P4-defer)
 
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+
 > **P4 tick-local still uses `resolveKeyAndModeRanked` + `collectPitchContext`** (the ratified
 >   P4-defer).
 
@@ -53,6 +59,8 @@
 **Provenance.** On the switched build the note-seam funnel returns from the record arm before this fallback is reachable (notationcomposingbridge.cpp:728-738). The D-P4 revisit trigger (D-063) was never discharged
 
 ### D-054 — All 21 modes are scored against all 12 tonics; the harmonic major family is deferred
+
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
 
 > Harmonic major modes are
 > significantly rarer as tonal centers than melodic and harmonic minor modes, and the
@@ -69,6 +77,8 @@
 **Provenance.** ARCHITECTURE.md:2394-2395 (21 modes), :2213-2217 (harmonic major deferred)
 
 ### D-055 — The 21 mode priors are independent and user-configurable
+
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
 
 > **21 independent additive priors**, one per mode, user-configurable
 >   via `IComposingAnalysisConfiguration::modePrior{ModeName}()`
@@ -115,6 +125,8 @@
 
 ### D-058 — The piece-start shortcut
 
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+
 > when the
 > analysis tick is within the first 16 quarter-note beats (a separate constant from the 16-beat lookback window below —
 > they coincide in value, not by design), no prior result exists (`prevResult == nullptr`),
@@ -133,6 +145,8 @@
 
 ### D-059 — The temporal window - 16 beats back, 8 beats forward, decayed
 
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+
 > The bridge uses a 16-beat lookback + 8-beat lookahead window:
 
 **In plain words.** To judge the key at a point, the program looks about four bars back and two bars forward, giving less weight to music further away.
@@ -146,6 +160,8 @@
 **Provenance.** ARCHITECTURE.md:3423-3435; legacy-arm only since the switch (D-010). Derivation not recorded: the only stated basis for 16 and 8 is the in-code gloss '~4 measures in 4/4' / '~2 measures ahead' (ARCHITECTURE.md:3428-3429) - no theory citation and no measurement
 
 ### D-235 — Tonal-centre disambiguation may break a close tie but may not overturn a stronger raw winner
+
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
 
 > The key-signature path uses a separate focussed `tonalCenterScore` formula for the
 > final same-key-signature family decision, independent of the main scoring weights so
@@ -165,6 +181,8 @@
 
 ### D-287 — Key-as-distribution is SHELVED - its motivating case was already fixed and no live target was found
 
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+
 > 3. **Key-as-distribution — ⛔ SHELVED.** Motivating case (Corelli op01n08d) already
 >    fixed by `81978321e3`. No confirmed live target in corpus. `normalizedConfidence`
 >    structurally unreliable as scaling signal. See `docs/redesign_plan.md` §Step 3.
@@ -181,6 +199,8 @@
 
 ### D-290 — The key-agnostic local cadence approach is FALSIFIED at its precision ceiling
 
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+
 > - **★★ CADENCE-PRECISION INVESTIGATION: NEGATIVE — the key-agnostic LOCAL cadence approach has HIT ITS PRECISION CEILING (2026-06-15).**
 
 **In plain words.** Deciding the key from cadences found without knowing the key, one cadence at a time, was tested to its limit and cannot be made accurate enough to use. The remaining errors need either a long-range key decision or a different kind of model - not a better local cadence rule.
@@ -194,6 +214,8 @@
 **Provenance.** Recorded in `cowork_handoff_archive.md` (the 2026-06-15 cadence-precision-investigation block), citing `cc_cadence_precision_investigation_dossier.md`. Its scope is stated with it: measured on the Bach ground-truth corpus, non-Bach unmeasured. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).
 
 ### D-306 — The key layer's backward re-reading stays switched off in the shipped configuration
+
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
 
 > ★ USER DECIDED (2026-07-02): KEEP OFF.** `ReachBackOptions.enabled=false` stays the shipped default; activation re-opens only on the evidence follow-up
 
@@ -253,6 +275,8 @@
 
 ### D-344 — A scale outside the twenty-one recognized modes is reported as the best-fitting recognized mode, never as the unrecognized scale
 
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+
 > **Which key/modes Architectural Layer 3 does NOT recognize.** Any scale that is **not** one of those 21 seven-note
 > modes — in particular pentatonic and blues scales, the whole-tone scale, the octatonic (diminished) scale, and any
 > non-Western or microtonal scale (maqam, raga, and so on). A passage genuinely in one of these is reported as the
@@ -293,6 +317,8 @@
 
 ### D-346 — The candidate set for the whole-run tonality decision is the UNION of every stretch's best candidates, made available at every stretch
 
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+
 > **The candidate set for the sequence decision (the as-built rule,
 >    verified at `keymodesequence.cpp` `buildLattice`):** take each slice's top-K best-scoring candidates, and form the
 >    **union of those top-K sets across all slices** (plus any pinned candidates a sub-range re-decision must keep,
@@ -316,6 +342,8 @@
 
 ### D-347 — The cost of changing tonality is cheap-to-stay plus a term growing with tonal distance plus a large extra penalty on the relative major/minor switch
 
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+
 > - **Change cost = cheap-to-stay + grows-with-key-distance + a large relative-pair penalty.** Alternative considered:
 >   a single flat "don't flip too easily" margin. Chosen: the standard key-finding shape (a flat margin cannot make a
 >   near modulation cheaper than a remote one, nor guard the relative pair specifically); the starting amounts are
@@ -332,6 +360,8 @@
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
 ### D-348 — Tonal distance in the change cost is circle-of-fifths distance — not semitone distance, not differing scale tones — and brief-versus-sustained has no duration threshold at all
+
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
 
 > The change cost makes keeping the current key/mode cheap and changing it expensive — more expensive the
 > further the new key is from the current one, **measured as circle-of-fifths (key-signature) distance** (the number of
@@ -355,6 +385,8 @@
 
 ### D-349 — The key/mode confidence compares whole readings — the winning run against the best run forced to a different tonality there — not the top two candidates at that stretch
 
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+
 > - **Confidence = how much better the winning sequence is than the best different-key sequence at that slice** (not
 >   the gap between the top two scores at the slice on its own). Reason: the decision is the whole sequence, so the
 >   meaningful confidence compares whole sequences; the near-tied cases are exactly the ones to mark "uncertain."
@@ -371,6 +403,8 @@
 
 ### D-350 — Of the layer's two confidence numbers, the whole-run margin is the published one; the per-stretch emission sigmoid is demoted to a gate input and a diagnostic
 
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+
 > (The **sequence-margin confidence redesign** — which of the two boundary numbers is THE Layer-3
 > confidence — is **CLOSED by D-L3a, 2026-07-04**: the sequence margin is declared THE boundary confidence and the
 > emission sigmoid demoted to gate-input/diagnostic; only the Stage-5 calibration of the margin remains.)
@@ -386,6 +420,8 @@
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The record labels the closure `D-L3a` — a label from the document's own design-decision series, not a register identifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
 ### D-351 — The key/mode search is its own decoder; the chord decoder is not reused for it
+
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
 
 > - **A dedicated best-sequence decoder for key/mode.** Alternative considered: reuse the existing chord decoder.
 >   Chosen: a dedicated one — the existing decoder is specific to chords and cannot be reused.
@@ -441,6 +477,8 @@
 
 ### D-354 — The key/mode decoder's own settings are exhausted — no setting of its own moves the fixable error set, so the remaining headroom is not a decoder setting
 
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+
 > - **The decoder-private settings are exhausted (sweep, 2026-06-22).** A bounded sweep of every decoder-private
 >   setting found none that moves the **clean set** (§0; the fixable-within-key/mode miss subset defined in
 >   `cc_layer3_error_decomposition_report.md`) net-positive — sweep record: `cc_layer3_sweep_report.md`. Widening the
@@ -463,6 +501,8 @@
 
 ### D-355 — The identified key/mode lever is the shared scorer's scale-membership term, applied once to the shared scorer at the wiring step and gated on the corpus stop and the pinned outputs
 
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+
 > - **The identified shared-scorer lever, measured.** The stable-category under-weighting is carried by the scorer's
 >   *scale-membership* term, not its (inert) leading-tone term. Sharpening the out-of-candidate-scale penalty lifts
 >   *both* stable- and modulation-category accuracy with no trade-off (measured decode-only on the held-out test set at
@@ -483,6 +523,8 @@
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
 ### D-356 — The leading-note presence gate is brittle and its fix is a later key/mode emission step, not a foundation patch — and the scale-membership lever is measured NOT to fix it
+
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
 
 > - **★ Brittle leading-tone presence-gate — a non-Bach key regression (diagnosed 2026-06-25; verified at source).** The
 >   characteristic-pitch and true-leading-tone scorer terms are **hard-gated** on a `>0.1` window weight
@@ -512,6 +554,8 @@
 
 ### D-357 — Reading the notated spelling as tonality evidence belongs at the function layer, where function gates it — NOT as a standalone key/mode emission patch
 
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+
 > **MEASURED (read-only, 2026-06-22, `cc_layer3_tpc_keymeasure_report.md`):** a decode-only line-of-fifths tpc term is
 >   **genuine spelling signal** (its modulation-gain/stable-loss frontier beats a change-cost control on both presets)
 >   and helps modulation regions cleanly (+2–8 pts), **but** as a *standalone Layer-3* term it is only **marginal
@@ -534,6 +578,8 @@
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The surrounding deferred-enhancement entry is recorded per the user, 2026-06-22; the measured placement conclusion quoted here names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
 ### D-358 — A sonority shaped like a dominant is note-level evidence for the tonality it implies, and belongs in the key/mode emission — deferred, design-first
+
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
 
 > - **★ Dominant-implication key evidence in the emission (review amendment A-3, ratified 2026-07-02).** As built, the
 >   per-slice emission is **collection-fit only**: it scores how well a slice's pitch content matches each candidate

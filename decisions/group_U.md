@@ -28,6 +28,8 @@
 
 ### D-214 — The dim7 characteristic bonus is the rotation selector and may not simply be removed
 
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+
 > - **`dim7CharacteristicBonus` is the dim7 rotation selector.** Do not
 >   suppress without replacing the non-diatonic-♭♭7 mechanism (B3 lesson).
 
@@ -42,6 +44,8 @@
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
 ### D-215 — Gating the root-continuity bonus on a sparse predecessor is a dead end
+
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
 
 > - **`rootContinuityBonus` sparse-predecessor gate is a dead end** (Iter 98).
 >   Both density-based and inversion-aware variants tried; both regress
@@ -59,6 +63,8 @@
 
 ### D-216 — The stepwise-bass bonus's four gates are each load-bearing
 
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+
 > - **`w_stepIn`/`w_stepOut` has four gates, each load-bearing** — the
 >   `ScoringPhase::Final` call-site gate, root-position guard,
 >   first-inversion-m7-family surgical guard, power-quality exclusion. Each prevents
@@ -75,6 +81,8 @@
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
 ### D-217 — The segmentation phase must suppress every context-dependent bonus
+
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
 
 >   seq, and dim bonuses plus Gate R are all skipped in the Segmentation phase (gated at
 >   the `applyHarmonicFunction` call site, not inside the now-stateless bonus functions).
@@ -95,6 +103,8 @@
 
 ### D-218 — Template array sizes derive from one constant, so the compiler enforces them
 
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+
 >   constant since `a236a0ff21`, so the compiler enforces sizes. Adding a template =
 >   bump the constant + add the template/mask entries in the same edit (§9 step 5).
 >   The historical silent stack-buffer overrun from a missed matrix size is closed.
@@ -114,6 +124,8 @@
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
 ### D-219 — Gates B, C and D were unreachable and were removed; no temporal condition may be added to the enharmonic flip
+
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
 
 >   removed in the Stage-3 per-gate retirement audit (roadmap 3.4b) as a byte-identical change
 >   (0/353 × 3 configs, snapshots zero-diff). Gate A's swap later became the present branch of
@@ -142,6 +154,8 @@
 
 ### D-220 — The augmented-seventh guard requires both the major third and the augmented fifth
 
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+
 > - **`hasStructuralBass` gates inversion bonuses.** Sparse upper-register
 >   "bass" notes do not get inversion bonuses (Corelli op01n08d m2 b3).
 
@@ -157,6 +171,8 @@
 
 ### D-221 — A sparse upper-register lowest note does not earn inversion bonuses
 
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+
 >   live `results[0]` reference (Sub-9a lesson).
 
 **In plain words.** A low note that is thin and high in the texture is not treated as a structural bass, so the bonuses that reward a recognisable inversion do not fire for it.
@@ -170,6 +186,8 @@
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
 ### D-222 — If the diminished bonus rotates the winner to a non-diminished chord, the result without it is used
+
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
 
 >   fires only when at least one tone has `onsetAtRegionStart == true` or
 >   `distinctMetricPositions > 0` (i.e. came from `collectRegionTones`).
@@ -187,6 +205,8 @@
 
 ### D-223 — A gate that judges the pre-correction winner reads a snapshot, not the live result
 
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+
 > ---
 >
 > ## 9. How to add a new template safely (checklist)
@@ -202,6 +222,8 @@
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
 ### D-224 — Joint bass-and-chord scoring requires accumulated regional evidence
+
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
 
 > Derived from the B1, B2, and B3 lessons.
 >

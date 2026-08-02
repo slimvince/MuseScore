@@ -53,6 +53,8 @@
 
 ### D-089 — The legacy confidence exposure gates - 0.5 tentative, 0.8 assertive
 
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+
 > - Above 0.8 — display without qualifier
 > - 0.5–0.8 — append "?" to key/mode label
 > - Below 0.5 — suppress key-dependent chord-track annotations rather than exposing a low-confidence key
