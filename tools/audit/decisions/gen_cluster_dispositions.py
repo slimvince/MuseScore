@@ -329,6 +329,31 @@ def in_test_file(f: str) -> bool:
     return f.startswith("src/") and "/tests/" in f
 
 
+def surface(f: str) -> str:
+    """The source surface a file belongs to — the axis the unresolved residual is partitioned on."""
+    if in_test_file(f):
+        return "src test comments"
+    if f.startswith("src/"):
+        return "src production comments"
+    if f.startswith("tools/"):
+        return "tools/ script comments"
+    if f.startswith("docs/"):
+        return "docs/ design documents"
+    if in_open_items(f):
+        return "the open-items register"
+    if f in ("STATUS_ARCHIVE.md", "cowork_handoff_archive.md"):
+        return "the two archives"
+    if f == "cowork_handoff.md":
+        return "the session handoff"
+    if f.startswith("cowork_"):
+        return "cowork_* design documents"
+    if in_dispatch(f):
+        return "cc_instruction_* dispatches"
+    if f.startswith("cc_"):
+        return "cc_* session reports"
+    return f"governing: {f}"
+
+
 def disposition_pass(candidates, clusters, backbone):
     by_id = {c["id"]: c for c in candidates}
     matchers = build_matchers(backbone)
@@ -402,6 +427,7 @@ def disposition_pass(candidates, clusters, backbone):
             "decisions": decs,
             "categories": sorted(cats),
             "unit_kinds": sorted(kinds),
+            "surfaces": sorted({surface(f) for f in cl_files}),
             "files": cl["files"][:5] if cl.get("files") else sorted({
                 o["file"] for m in members for o in m["source_occurrences"]})[:5],
         })
@@ -454,6 +480,19 @@ def main() -> int:
 
     covered_occurrences = sum(r["size"] for r in rows)
 
+    # The unresolved residual's partition by source surface — the measured handover to the next
+    # pass over BR-8, COMPUTED here rather than counted by hand into a report (#17f).  Each cluster
+    # is counted exactly ONCE, so the partition sums to the unresolved total; a cluster whose
+    # occurrences span more than one surface is counted under "mixed sources".
+    partition = {}
+    for r in rows:
+        if r["disposition"] != "unresolved":
+            continue
+        s = r["surfaces"]
+        key = s[0] if len(s) == 1 else "mixed sources"
+        partition[key] = partition.get(key, 0) + 1
+    partition = dict(sorted(partition.items(), key=lambda kv: -kv[1]))
+
     header = {
         "instrument": "tools/audit/decisions/gen_cluster_dispositions.py",
         "purpose": "OI-207 adjudication Task 3 — one recorded disposition per harvested cluster, "
@@ -474,6 +513,7 @@ def main() -> int:
         "ruling_vocabulary_exempting_BR11_BR12_BR13": list(RULING_VOCABULARY),
         "rules": [{"id": rid, "rule": text, "clusters": rule_counts[rid]} for rid, text in RULES],
         "disposition_counts": disp_counts,
+        "unresolved_partition_by_surface": partition,
         "completeness_check": {
             "clusters": len(clusters),
             "dispositioned": len(rows),

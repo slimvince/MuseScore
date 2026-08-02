@@ -18,7 +18,7 @@
    "decision_count": 254
   }
  },
- "head_commit": "8f0c181a3c3a99b75fcc313e85d45b2665ea5c64",
+ "head_commit": "249fc81b6cb1df0792e36aa5f3cd0f84d135f40b",
  "disposition_vocabulary": [
   "restates",
   "not-a-decision",
@@ -123,6 +123,22 @@
   "boilerplate": 74,
   "no-spec-home": 551,
   "unresolved": 2935
+ },
+ "unresolved_partition_by_surface": {
+  "cowork_* design documents": 870,
+  "docs/ design documents": 407,
+  "cc_* session reports": 316,
+  "tools/ script comments": 296,
+  "cc_instruction_* dispatches": 294,
+  "src production comments": 277,
+  "the two archives": 256,
+  "src test comments": 76,
+  "governing: ARCHITECTURE.md": 55,
+  "the open-items register": 35,
+  "the session handoff": 30,
+  "governing: CLAUDE.md": 12,
+  "mixed sources": 9,
+  "governing: DEFECT_TYPES.md": 2
  },
  "completeness_check": {
   "clusters": 14460,

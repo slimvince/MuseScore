@@ -5,6 +5,24 @@
 > Historical entries live in `STATUS_ARCHIVE.md` (reference-only, NOT part of the session-start
 > read) — a superseded entry moves there instead of accumulating here.
 
+*Last updated: 2026-08-02, LATEST+++ (CC — **★ PHASE 1c: THE OI-207 RESIDUAL SECOND PASS IS DELIVERED. The
+unresolved residual is 5,204 → 2,935; the register is 231 → 254 decisions; two findings rowed.** READ-ONLY on the
+system: no `src/` change, no golden / `tools/corpus/` / `tools/robust_stop/` movement, no behavior change, no fix, no
+design, no `ARCHITECTURE.md` edit, **no ratification** — the 23 new decisions enter with the record's own status and go
+to the user in the report's RATIFICATION QUEUE. Dispatch `cc_instruction_oi207_residual_pass.md`; report
+`cc_oi207_residual_pass_report.md`. Per the OI-222 remedy this entry is a **POINTER** — the content lives in the report,
+the register, the manifest and the dated notes. **Read, in this order:** the [[OI-207]] note (the five new bulk rules
+with their counts and the ruling-vocabulary guardrail, the 23 new decisions and where they clustered, the final
+disposition table, and **the measured partition of the remaining 2,935 — computed by the tool, not counted by hand**);
+the [[OI-208]] note (the same-commit rule honored, and the tracking-surface-only count moving 0 → 6); then [[OI-265]]
+and [[OI-266]], the two new rows. **Three commits:** `8f0c181a3c` the bulk rules → `249fc81b6c` the register entries +
+the field-shape guard → the rows, notes and partition artifact. All guards PASS (`--verify` 254/254 quotes, 249/249
+anchors, references ALL; `--check` 14,460/14,460 clusters, 15,224/15,224 occurrences; register `--check` across 21
+files; open-items living check 266/266). **The remainder is an UNREAD population, not a set of hard cases**: 1,533 of
+the 2,935 sit in `cowork_*` / `docs/` design documents and the two archives, which have never been enumerated for the
+backbone — the next partition, and the natural input to the next homing wave. **NEXT: the user ratifies (or corrects)
+D-232…D-254; then phase 2 — issue-finding exhausted with measured coverage.**)*
+
 *Last updated: 2026-08-02, LATEST++ (CC — **★ PHASE 1 OF THE THREE-PHASE RULE IS DELIVERED: THE SPECIFICATIONS ARE
 COMPLETE AND TRUE.** READ-ONLY on code: no `src/` change, no golden / `tools/corpus/` / `tools/robust_stop/` movement,
 no behavior change, no fix, no design, no new decision. Dispatch `cc_instruction_spec_completion.md`. Per the OI-222
