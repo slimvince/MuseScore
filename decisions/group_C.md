@@ -384,7 +384,7 @@
 
 **Home.** `cowork_bounded_context_design.md:43-44`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** cowork_bounded_context_design.md:3 carries the status banner 'SIGNED (user, 2026-07-02)'; the invariant is stated at :43-44. The cross-cutting bounded-context bullet of ARCHITECTURE.md points at this document as the ONE cross-layer extension spec (:10). Found by the phase-1d enumeration wave, 2026-08-02.
+**Provenance.** cowork_bounded_context_design.md:3 carries the status banner 'SIGNED (user, 2026-07-02)'; the invariant is stated at :43-44. The cross-cutting bounded-context bullet of ARCHITECTURE.md points at this document as the ONE cross-layer extension spec (:10). Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
 ### D-261 — A layer never guesses how much context it needs - the amount is discovered by convergence
 
@@ -410,7 +410,7 @@
 
 **Home.** `cowork_bounded_context_design.md:57-69`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; the rule is items 5 and 6 of the bounded-context contract at :57-69. Found by the phase-1d enumeration wave, 2026-08-02.
+**Provenance.** cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; the rule is items 5 and 6 of the bounded-context contract at :57-69. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
 ### D-262 — The extension increment is chosen by the requesting layer, not by the layer that supplies the notes
 
@@ -432,7 +432,7 @@
 
 **Home.** `cowork_bounded_context_design.md:73-81`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; item 8 of the bounded-context contract at :73-81. Found by the phase-1d enumeration wave, 2026-08-02.
+**Provenance.** cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; item 8 of the bounded-context contract at :73-81. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
 ### D-263 — A refused or truncated extension is marked on the output, never silently absorbed
 
@@ -450,7 +450,7 @@
 
 **Home.** `cowork_bounded_context_design.md:82-86`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; item 10 of the bounded-context contract at :82-86, marked '(merged 2026-07-02)' from the killed duplicate contract document. Found by the phase-1d enumeration wave, 2026-08-02.
+**Provenance.** cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; item 10 of the bounded-context contract at :82-86, marked '(merged 2026-07-02)' from the killed duplicate contract document. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
 ### D-264 — Extension is an optimisation of load-more-then-rerun: any sequence of extensions equals one fresh run
 
@@ -469,7 +469,7 @@
 
 **Home.** `cowork_bounded_context_design.md:121-126`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; the equivalence invariant at :121-126, with the step-size independence obligation restated as a required test at :202-204. Found by the phase-1d enumeration wave, 2026-08-02.
+**Provenance.** cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; the equivalence invariant at :121-126, with the step-size independence obligation restated as a required test at :202-204. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
 ### D-265 — Asking a lower layer for more notes is a data-supply call, not a backward inference edge
 
@@ -488,7 +488,7 @@
 
 **Home.** `cowork_bounded_context_design.md:115-120`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; stated at :115-120 and again as an architecture decision at :188-189 ('recorded so the forward-only contract is not read as forbidding extension'). Bears on register entry D-025, the forward-only rule with two scoped escapes. Found by the phase-1d enumeration wave, 2026-08-02.
+**Provenance.** cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; stated at :115-120 and again as an architecture decision at :188-189 ('recorded so the forward-only contract is not read as forbidding extension'). Bears on register entry D-025, the forward-only rule with two scoped escapes. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
 ### D-266 — Layer 6 is prohibited until the bounded-context design is coded and regression-tested for Layers 1 to 5
 
@@ -529,7 +529,7 @@
 
 **Home.** `cowork_confidence_contract.md:25-34`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** cowork_confidence_contract.md:3, status banner 'RATIFIED (user, 2026-07-02)'; the two classes at :25-34. The contract names its architecture home as the cross-cutting contracts section (:6), where register entry D-032 records the boundary rule this classification underpins. Found by the phase-1d enumeration wave, 2026-08-02.
+**Provenance.** cowork_confidence_contract.md:3, status banner 'RATIFIED (user, 2026-07-02)'; the two classes at :25-34. The contract names its architecture home as the cross-cutting contracts section (:6), where register entry D-032 records the boundary rule this classification underpins. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
 ### D-268 — A confidence attaches to a named decision, is compared only within its class and a declared frame, and keeps its identity downstream
 
@@ -555,7 +555,7 @@
 
 **Home.** `cowork_confidence_contract.md:36-48`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** cowork_confidence_contract.md:3, status banner 'RATIFIED (user, 2026-07-02)'; rules U1 to U5 at :36-48. Rule U2 is the one already registered, as D-032, at its ARCHITECTURE.md home; U1, U3, U4 and U5 were not in the register. Found by the phase-1d enumeration wave, 2026-08-02.
+**Provenance.** cowork_confidence_contract.md:3, status banner 'RATIFIED (user, 2026-07-02)'; rules U1 to U5 at :36-48. Rule U2 is the one already registered, as D-032, at its ARCHITECTURE.md home; U1, U3, U4 and U5 were not in the register. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
 ### D-269 — The frame table is the one home of the override arithmetic; a new override site declares its frame before it is built
 
@@ -571,7 +571,7 @@
 
 **Home.** `cowork_confidence_contract.md:83-85`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** cowork_confidence_contract.md:3, status banner 'RATIFIED (user, 2026-07-02)'; the rule at :83-85, over the frame definition and the two built instances at :63-81. Found by the phase-1d enumeration wave, 2026-08-02.
+**Provenance.** cowork_confidence_contract.md:3, status banner 'RATIFIED (user, 2026-07-02)'; the rule at :83-85, over the frame definition and the two built instances at :63-81. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
 ### D-278 — The joint key-and-chord step is SHELVED - measured not to pay
 

@@ -213,7 +213,7 @@
 
 **Home.** `cowork_notation_output_contract.md:54-57`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** cowork_notation_output_contract.md:3 records the user's ratification, dated 2026-07-26, as specified and without amendments; the provenance rule at :52-57. Found by the phase-1d enumeration wave, 2026-08-02.
+**Provenance.** cowork_notation_output_contract.md:3 records the user's ratification, dated 2026-07-26, as specified and without amendments; the provenance rule at :52-57. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
 ### D-276 — Modal colour is published as un-rounded per-degree counts; no mode label is inferred or published anywhere
 
@@ -235,5 +235,5 @@
 
 **Home.** `cowork_notation_output_contract.md:139-147`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** cowork_notation_output_contract.md:3 records the user's ratification, dated 2026-07-26, as specified and without amendments; the modal reading at :137-147. Found by the phase-1d enumeration wave, 2026-08-02.
+**Provenance.** cowork_notation_output_contract.md:3 records the user's ratification, dated 2026-07-26, as specified and without amendments; the modal reading at :137-147. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 

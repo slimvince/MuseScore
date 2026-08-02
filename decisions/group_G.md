@@ -388,7 +388,7 @@
 
 **Home.** `docs/iteration_path1_summary.md:74-78`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** docs/iteration_path1_summary.md:74-78, recorded among the architecture decisions of the completed iteration path and stated there as 'now a standing rule for any future gate or scoring change'; no date or ratifier is stated at this home. Distinct from register entry D-066, which forbids chord symbols written in the SCORE as analyzer input; this forbids re-reading our own rendered output. Found by the phase-1d enumeration wave, 2026-08-02.
+**Provenance.** docs/iteration_path1_summary.md:74-78, recorded among the architecture decisions of the completed iteration path and stated there as 'now a standing rule for any future gate or scoring change'; no date or ratifier is stated at this home. Distinct from register entry D-066, which forbids chord symbols written in the SCORE as analyzer input; this forbids re-reading our own rendered output. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
 ### D-284 — Meta-finding: selection/competition is saturated, stop adding re-ranking gates - superseded by the gates doctrine and the adoption
 

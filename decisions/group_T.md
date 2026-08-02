@@ -310,7 +310,7 @@
 
 **Home.** `cowork_prune_pass_checklist.md:3-5`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** cowork_prune_pass_checklist.md:3 records it as a standing deferral in the user's own words ('back up now, tidy up files we don't want to publish later'), with the date and ratifier stated. Status is DEFERRED because the record says the pass has not run (:5 - 'Nothing here is to be acted on now - it is the to-do for the prune pass'). Found by the phase-1d enumeration wave, 2026-08-02.
+**Provenance.** cowork_prune_pass_checklist.md:3 records it as a standing deferral in the user's own words ('back up now, tidy up files we don't want to publish later'), with the date and ratifier stated. Status is DEFERRED because the record says the pass has not run (:5 - 'Nothing here is to be acted on now - it is the to-do for the prune pass'). Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
 ### D-259 — Every upstream contribution is checked against the distribution constraint before it is posted
 
@@ -327,7 +327,7 @@
 
 **Home.** `cowork_prune_pass_checklist.md:43-46`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** cowork_prune_pass_checklist.md:43 states it as 'a permanent rule' explicitly distinguished from the prune items around it; no date or ratifier is stated at this home. It operationalizes register entry D-197, the ratified distribution constraint, by naming the check that has to happen and when. Found by the phase-1d enumeration wave, 2026-08-02.
+**Provenance.** cowork_prune_pass_checklist.md:43 states it as 'a permanent rule' explicitly distinguished from the prune items around it; no date or ratifier is stated at this home. It operationalizes register entry D-197, the ratified distribution constraint, by naming the check that has to happen and when. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
 ### D-279 — The Stage-3 entry gate - seven conditions before any engagement wiring reaches production
 
@@ -344,5 +344,5 @@
 
 **Home.** `cowork_engage_arc_plan.md:64-67`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** cowork_engage_arc_plan.md:64 states the gate as 'ratified 2026-07-10 with #17-#19', with its evidence document cited; the conditions at :64-92 and the amendment note at :128-130. The last condition is registered separately as D-209, the retiring-code audit rule, at its cowork_audit_protocol.md home. Found by the phase-1d enumeration wave, 2026-08-02.
+**Provenance.** cowork_engage_arc_plan.md:64 states the gate as 'ratified 2026-07-10 with #17-#19', with its evidence document cited; the conditions at :64-92 and the amendment note at :128-130. The last condition is registered separately as D-209, the retiring-code audit rule, at its cowork_audit_protocol.md home. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 

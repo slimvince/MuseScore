@@ -16,7 +16,10 @@
 > themselves — the four intonation entries (D-244…D-247) ratified-for-now, to be reviewed when
 > that held feature's implementation is revisited; and D-248 (tonicization labels deferred)
 > ratified with its revisit to be PLANNED (row OI-267 — for maximum-precision inference the
-> feature may be needed). The register-level ratification does not overwrite
+> feature may be needed). **Third ratification event, 2026-08-02:** the 27 phase-1d entries
+> (D-255…D-281 — D-266 and D-278 under individual rulings recorded in their entries and at their
+> homes) and the four OI-270 split entries (D-282…D-285, each superseded-by its named
+> successors). The register-level ratification does not overwrite
 > per-entry provenance — an entry saying "ratifier not stated" still means the original record
 > of THAT decision does not say; what the 2026-08-02 ratifications establish is that these
 > entries are the standing decisions of record.

@@ -5487,7 +5487,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "cowork_design_doc_template.md:3 states it as a standing convention with the ratifier and date in the text. CLAUDE.md's Conventions entry names this file as the ONE home for writing standards and names this structure among what it carries, so the decision is correctly homed and was simply never in the register. Found by the phase-1d enumeration wave, 2026-08-02.",
+      "status_source": "cowork_design_doc_template.md:3 states it as a standing convention with the ratifier and date in the text. CLAUDE.md's Conventions entry names this file as the ONE home for writing standards and names this structure among what it carries, so the decision is correctly homed and was simply never in the register. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).",
       "patterns": [
         "Standing convention \\(user, 2026-06-22\\)",
         "synthesis of \\*\\*arc42\\*\\*",
@@ -5510,7 +5510,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "cowork_design_doc_template.md:75-78, stated as a convention in the file CLAUDE.md's Conventions entry names as the ONE home for writing standards; no date or ratifier is stated at this home. Found by the phase-1d enumeration wave, 2026-08-02.",
+      "status_source": "cowork_design_doc_template.md:75-78, stated as a convention in the file CLAUDE.md's Conventions entry names as the ONE home for writing standards; no date or ratifier is stated at this home. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).",
       "patterns": [
         "Status-banner convention",
         "DRAFT for sign-off",
@@ -5532,7 +5532,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "cowork_design_doc_template.md:82 ('The locator stays (user, 2026-06-24)') and :91 ('User mandate 2026-06-22, refined 2026-06-24'). Homed in the file CLAUDE.md's Conventions entry names as the ONE home for writing standards, which names the implementation/test locator rule among what it carries. Found by the phase-1d enumeration wave, 2026-08-02.",
+      "status_source": "cowork_design_doc_template.md:82 ('The locator stays (user, 2026-06-24)') and :91 ('User mandate 2026-06-22, refined 2026-06-24'). Homed in the file CLAUDE.md's Conventions entry names as the ONE home for writing standards, which names the implementation/test locator rule among what it carries. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).",
       "patterns": [
         "A spec carries a \\*\\*locator\\*\\*",
         "The locator \\*\\*stays\\*\\*",
@@ -5555,7 +5555,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "cowork_prune_pass_checklist.md:3 records it as a standing deferral in the user's own words ('back up now, tidy up files we don't want to publish later'), with the date and ratifier stated. Status is DEFERRED because the record says the pass has not run (:5 - 'Nothing here is to be acted on now - it is the to-do for the prune pass'). Found by the phase-1d enumeration wave, 2026-08-02.",
+      "status_source": "cowork_prune_pass_checklist.md:3 records it as a standing deferral in the user's own words ('back up now, tidy up files we don't want to publish later'), with the date and ratifier stated. Status is DEFERRED because the record says the pass has not run (:5 - 'Nothing here is to be acted on now - it is the to-do for the prune pass'). Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).",
       "patterns": [
         "Standing deferral \\(user, 2026-06-22\\)",
         "tidy up files we don't want to publish later",
@@ -5577,7 +5577,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "cowork_prune_pass_checklist.md:43 states it as 'a permanent rule' explicitly distinguished from the prune items around it; no date or ratifier is stated at this home. It operationalizes register entry D-197, the ratified distribution constraint, by naming the check that has to happen and when. Found by the phase-1d enumeration wave, 2026-08-02.",
+      "status_source": "cowork_prune_pass_checklist.md:43 states it as 'a permanent rule' explicitly distinguished from the prune items around it; no date or ratifier is stated at this home. It operationalizes register entry D-197, the ratified distribution constraint, by naming the check that has to happen and when. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).",
       "patterns": [
         "Standing guard \\(not a prune item",
         "checked against the CLAUDE.md distribution constraint",
@@ -5599,7 +5599,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "cowork_bounded_context_design.md:3 carries the status banner 'SIGNED (user, 2026-07-02)'; the invariant is stated at :43-44. The cross-cutting bounded-context bullet of ARCHITECTURE.md points at this document as the ONE cross-layer extension spec (:10). Found by the phase-1d enumeration wave, 2026-08-02.",
+      "status_source": "cowork_bounded_context_design.md:3 carries the status banner 'SIGNED (user, 2026-07-02)'; the invariant is stated at :43-44. The cross-cutting bounded-context bullet of ARCHITECTURE.md points at this document as the ONE cross-layer extension spec (:10). Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).",
       "patterns": [
         "The analysis output covers \\*\\*exactly the selection\\*\\*",
         "Context \\(evidence\\) span",
@@ -5621,7 +5621,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; the rule is items 5 and 6 of the bounded-context contract at :57-69. Found by the phase-1d enumeration wave, 2026-08-02.",
+      "status_source": "cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; the rule is items 5 and 6 of the bounded-context contract at :57-69. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).",
       "patterns": [
         "never \\*\\*guesses how much\\*\\*",
         "the amount is \\*\\*discovered, not chosen\\*\\*",
@@ -5644,7 +5644,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; item 8 of the bounded-context contract at :73-81. Found by the phase-1d enumeration wave, 2026-08-02.",
+      "status_source": "cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; item 8 of the bounded-context contract at :73-81. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).",
       "patterns": [
         "increment size\\*\\* - how much to load per step",
         "chosen by the requesting layer",
@@ -5666,7 +5666,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; item 10 of the bounded-context contract at :82-86, marked '(merged 2026-07-02)' from the killed duplicate contract document. Found by the phase-1d enumeration wave, 2026-08-02.",
+      "status_source": "cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; item 10 of the bounded-context contract at :82-86, marked '(merged 2026-07-02)' from the killed duplicate contract document. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).",
       "patterns": [
         "Denial/truncation is honest, never silent",
         "clipped-by-selection-edge",
@@ -5689,7 +5689,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; the equivalence invariant at :121-126, with the step-size independence obligation restated as a required test at :202-204. Found by the phase-1d enumeration wave, 2026-08-02.",
+      "status_source": "cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; the equivalence invariant at :121-126, with the step-size independence obligation restated as a required test at :202-204. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).",
       "patterns": [
         "Equivalence invariant",
         "single fresh run over the final loaded span",
@@ -5711,7 +5711,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; stated at :115-120 and again as an architecture decision at :188-189 ('recorded so the forward-only contract is not read as forbidding extension'). Bears on register entry D-025, the forward-only rule with two scoped escapes. Found by the phase-1d enumeration wave, 2026-08-02.",
+      "status_source": "cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; stated at :115-120 and again as an architecture decision at :188-189 ('recorded so the forward-only contract is not read as forbidding extension'). Bears on register entry D-025, the forward-only rule with two scoped escapes. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).",
       "patterns": [
         "data-supply call \\*\\*down\\*\\*",
         "not an analysis back-edge",
@@ -5755,7 +5755,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "cowork_confidence_contract.md:3, status banner 'RATIFIED (user, 2026-07-02)'; the two classes at :25-34. The contract names its architecture home as the cross-cutting contracts section (:6), where register entry D-032 records the boundary rule this classification underpins. Found by the phase-1d enumeration wave, 2026-08-02.",
+      "status_source": "cowork_confidence_contract.md:3, status banner 'RATIFIED (user, 2026-07-02)'; the two classes at :25-34. The contract names its architecture home as the cross-cutting contracts section (:6), where register entry D-032 records the boundary rule this classification underpins. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).",
       "patterns": [
         "two admissible confidence classes",
         "Class M - decision margin",
@@ -5779,7 +5779,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "cowork_confidence_contract.md:3, status banner 'RATIFIED (user, 2026-07-02)'; rules U1 to U5 at :36-48. Rule U2 is the one already registered, as D-032, at its ARCHITECTURE.md home; U1, U3, U4 and U5 were not in the register. Found by the phase-1d enumeration wave, 2026-08-02.",
+      "status_source": "cowork_confidence_contract.md:3, status banner 'RATIFIED (user, 2026-07-02)'; rules U1 to U5 at :36-48. Rule U2 is the one already registered, as D-032, at its ARCHITECTURE.md home; U1, U3, U4 and U5 were not in the register. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).",
       "patterns": [
         "A confidence attaches to a \\*\\*named decision\\*\\*",
         "only within one class and one declared frame",
@@ -5802,7 +5802,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "cowork_confidence_contract.md:3, status banner 'RATIFIED (user, 2026-07-02)'; the rule at :83-85, over the frame definition and the two built instances at :63-81. Found by the phase-1d enumeration wave, 2026-08-02.",
+      "status_source": "cowork_confidence_contract.md:3, status banner 'RATIFIED (user, 2026-07-02)'; the rule at :83-85, over the frame definition and the two built instances at :63-81. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).",
       "patterns": [
         "New frames require declaration here",
         "an undeclared cross-layer comparison is a contract violation",
@@ -5824,7 +5824,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "cowork_prefit_gates.md:3 records the user's ratification of all four protocols including the marked constants, dated 2026-07-19; the held-out protocol at :23-60. It is the protocol form of register entry D-097, which states the general rule at its ARCHITECTURE.md home. Found by the phase-1d enumeration wave, 2026-08-02.",
+      "status_source": "cowork_prefit_gates.md:3 records the user's ratification of all four protocols including the marked constants, dated 2026-07-19; the held-out protocol at :23-60. It is the protocol form of register entry D-097, which states the general rule at its ARCHITECTURE.md home. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).",
       "patterns": [
         "5-fold cross-validation",
         "pieces sharing an analysis file share a fold",
@@ -5846,7 +5846,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "cowork_prefit_gates.md:3 records the user's ratification of all four protocols including the marked constants, dated 2026-07-19; the capacity budget at :62-96, with the twelve-to-fourteen weight amendment recorded in place at :77-81 as a lawful protocol amendment. Found by the phase-1d enumeration wave, 2026-08-02.",
+      "status_source": "cowork_prefit_gates.md:3 records the user's ratification of all four protocols including the marked constants, dated 2026-07-19; the capacity budget at :62-96, with the twelve-to-fourteen weight amendment recorded in place at :77-81 as a lawful protocol amendment. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).",
       "patterns": [
         "capacity budget",
         "parameter inventory is published before fitting",
@@ -5868,7 +5868,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "cowork_prefit_gates.md:17-19 states the rule and :3-6 records its ratification, dated 2026-07-19. It applies principle #22 (a hard gate declares in advance how it handles the largest change it will meet), registered as D-185, to the pre-fit protocols. Found by the phase-1d enumeration wave, 2026-08-02.",
+      "status_source": "cowork_prefit_gates.md:17-19 states the rule and :3-6 records its ratification, dated 2026-07-19. It applies principle #22 (a hard gate declares in advance how it handles the largest change it will meet), registered as D-185, to the pre-fit protocols. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).",
       "patterns": [
         "prov-ratify",
         "protocol amendment \\(#22\\), not a tuning act",
@@ -5890,7 +5890,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "cowork_prefit_gates.md:3 records the user's ratification of all four protocols, dated 2026-07-19; the adoption protocol at :98-145, with the home-column amendment recorded in place at :123-129 as a lawful pre-measurement amendment. The event it governed is the OI-178 adoption, whose outcome is in the CLAUDE.md gate block. Found by the phase-1d enumeration wave, 2026-08-02.",
+      "status_source": "cowork_prefit_gates.md:3 records the user's ratification of all four protocols, dated 2026-07-19; the adoption protocol at :98-145, with the home-column amendment recorded in place at :123-129 as a lawful pre-measurement amendment. The event it governed is the OI-178 adoption, whose outcome is in the CLAUDE.md gate block. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).",
       "patterns": [
         "robust-stop architecture-adoption protocol",
         "negotiating the hard stop on a live diff",
@@ -5913,7 +5913,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "cowork_prefit_gates.md:3 records the user's ratification of all four protocols, dated 2026-07-19; the reverse map is item 5 of the dual-path sanction at :189-191. Register entry D-095 records the sanctioned dual path itself at its ARCHITECTURE.md home. Found by the phase-1d enumeration wave, 2026-08-02.",
+      "status_source": "cowork_prefit_gates.md:3 records the user's ratification of all four protocols, dated 2026-07-19; the reverse map is item 5 of the dual-path sanction at :189-191. Register entry D-095 records the sanctioned dual path itself at its ARCHITECTURE.md home. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).",
       "patterns": [
         "The reverse map \\(if A is not adopted\\)",
         "removed whole \\(one revertible commit\\)",
@@ -5935,7 +5935,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "cowork_notation_output_contract.md:3 records the user's ratification, dated 2026-07-26, as specified and without amendments; the provenance rule at :52-57. Found by the phase-1d enumeration wave, 2026-08-02.",
+      "status_source": "cowork_notation_output_contract.md:3 records the user's ratification, dated 2026-07-26, as specified and without amendments; the provenance rule at :52-57. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).",
       "patterns": [
         "Provenance on the surface",
         "provenance-less analysis cannot exist",
@@ -5957,7 +5957,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "cowork_notation_output_contract.md:3 records the user's ratification, dated 2026-07-26, as specified and without amendments; the modal reading at :137-147. Found by the phase-1d enumeration wave, 2026-08-02.",
+      "status_source": "cowork_notation_output_contract.md:3 records the user's ratification, dated 2026-07-26, as specified and without amendments; the modal reading at :137-147. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).",
       "patterns": [
         "un-rounded modal reading",
         "No 21-value mode label is inferred or published anywhere",
@@ -5979,7 +5979,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "cowork_engage_arc_plan.md:3 records the user's ratification of this plan, dated 2026-07-07; the gate at :97-102, amended 2026-07-10 to become the middle stage of the Premise-Gate funnel (:128-130). The CLAUDE.md principles provenance paragraph names this gate, in this file, as a companion standing rule; register entry D-189 records the funnel it sits in. Found by the phase-1d enumeration wave, 2026-08-02.",
+      "status_source": "cowork_engage_arc_plan.md:3 records the user's ratification of this plan, dated 2026-07-07; the gate at :97-102, amended 2026-07-10 to become the middle stage of the Premise-Gate funnel (:128-130). The CLAUDE.md principles provenance paragraph names this gate, in this file, as a companion standing rule; register entry D-189 records the funnel it sits in. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).",
       "patterns": [
         "MEASURE-BEFORE-BUILD",
         "byte-identity IS their prediction",
@@ -6023,7 +6023,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "cowork_engage_arc_plan.md:64 states the gate as 'ratified 2026-07-10 with #17-#19', with its evidence document cited; the conditions at :64-92 and the amendment note at :128-130. The last condition is registered separately as D-209, the retiring-code audit rule, at its cowork_audit_protocol.md home. Found by the phase-1d enumeration wave, 2026-08-02.",
+      "status_source": "cowork_engage_arc_plan.md:64 states the gate as 'ratified 2026-07-10 with #17-#19', with its evidence document cited; the conditions at :64-92 and the amendment note at :128-130. The last condition is registered separately as D-209, the retiring-code audit rule, at its cowork_audit_protocol.md home. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).",
       "patterns": [
         "STAGE-3 ENTRY GATE",
         "Tier-1 defusal is a PREREQUISITE",
@@ -6045,7 +6045,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "docs/iteration_path1_summary.md:74-78, recorded among the architecture decisions of the completed iteration path and stated there as 'now a standing rule for any future gate or scoring change'; no date or ratifier is stated at this home. Distinct from register entry D-066, which forbids chord symbols written in the SCORE as analyzer input; this forbids re-reading our own rendered output. Found by the phase-1d enumeration wave, 2026-08-02.",
+      "status_source": "docs/iteration_path1_summary.md:74-78, recorded among the architecture decisions of the completed iteration path and stated there as 'now a standing rule for any future gate or scoring change'; no date or ratifier is stated at this home. Distinct from register entry D-066, which forbids chord symbols written in the SCORE as analyzer input; this forbids re-reading our own rendered output. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).",
       "patterns": [
         "Gates operate on structured fields only",
         "no chord-symbol string parsing",
@@ -6067,7 +6067,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "docs/iteration_path1_summary.md:66-72, recorded among the architecture decisions of the completed iteration path; no date or ratifier is stated at this home. A decision about a MEASUREMENT TOOL and its floor, reported separately by the phase-1d enumeration wave (2026-08-02) so that the sealed measurement-tools partition can account for it.",
+      "status_source": "docs/iteration_path1_summary.md:66-72, recorded among the architecture decisions of the completed iteration path; no date or ratifier is stated at this home. A decision about a MEASUREMENT TOOL and its floor, reported separately by the phase-1d enumeration wave (2026-08-02) so that the sealed measurement-tools partition can account for it. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).",
       "patterns": [
         "batch_analyze output schema",
         "_matches_alternative",

@@ -560,5 +560,5 @@
 
 **Home.** `cowork_engage_arc_plan.md:97-102`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** cowork_engage_arc_plan.md:3 records the user's ratification of this plan, dated 2026-07-07; the gate at :97-102, amended 2026-07-10 to become the middle stage of the Premise-Gate funnel (:128-130). The CLAUDE.md principles provenance paragraph names this gate, in this file, as a companion standing rule; register entry D-189 records the funnel it sits in. Found by the phase-1d enumeration wave, 2026-08-02.
+**Provenance.** cowork_engage_arc_plan.md:3 records the user's ratification of this plan, dated 2026-07-07; the gate at :97-102, amended 2026-07-10 to become the middle stage of the Premise-Gate funnel (:128-130). The CLAUDE.md principles provenance paragraph names this gate, in this file, as a companion standing rule; register entry D-189 records the funnel it sits in. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 

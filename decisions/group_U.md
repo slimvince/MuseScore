@@ -275,5 +275,5 @@
 
 **Home.** `docs/iteration_path1_summary.md:66-72`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** docs/iteration_path1_summary.md:66-72, recorded among the architecture decisions of the completed iteration path; no date or ratifier is stated at this home. A decision about a MEASUREMENT TOOL and its floor, reported separately by the phase-1d enumeration wave (2026-08-02) so that the sealed measurement-tools partition can account for it.
+**Provenance.** docs/iteration_path1_summary.md:66-72, recorded among the architecture decisions of the completed iteration path; no date or ratifier is stated at this home. A decision about a MEASUREMENT TOOL and its floor, reported separately by the phase-1d enumeration wave (2026-08-02) so that the sealed measurement-tools partition can account for it. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
