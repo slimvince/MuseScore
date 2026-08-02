@@ -5,6 +5,31 @@
 > Historical entries live in `STATUS_ARCHIVE.md` (reference-only, NOT part of the session-start
 > read) — a superseded entry moves there instead of accumulating here.
 
+*Last updated: 2026-08-02, LATEST++++++++ (CC — **★ PHASE 1h: FIVE MORE LIVE-SPEC DOCUMENTS READ IN FULL. The register is 342 → 400; the unresolved
+residual 2,702 → 2,681; the D-085 defense FILLED; one finding rowed; the user's exclusion-list acceptance RECORDED ON THE ARTIFACT.** READ-ONLY on the
+system: no `src/` change, no golden / `tools/corpus/` / `tools/robust_stop/` movement, no behavior change, no fix, no design, no `ARCHITECTURE.md` edit,
+**no document's status banner edited**, **no ratification** — the 58 new decisions enter with the record's own status and go to the user in the report's
+RATIFICATION QUEUE. Dispatch `cc_instruction_phase1h_continue_live_spec.md`. Per the OI-222 remedy this entry is a **POINTER** — the content lives in the
+register, the artifact and the dated notes. **★ THE DISPATCH'S GOVERNING CONSTRAINT WAS OVERTAKEN MID-SESSION, IN THE USER'S FAVOUR:** the dispatch was
+written on the premise that "the exclusion list is NOT accepted", and the user accepted it in full at `4cc81cfaed` while this session was running. The
+reading order was unaffected (LIVE-SPEC in descending cluster order is exactly what the acceptance leaves), and the acceptance note's named follow-up is
+EXECUTED — the triage generator's preamble now carries the acceptance banner, and the line calling the list a PROPOSAL is corrected. **Read, in this
+order:** the [[OI-207]] note (what was read with its per-document yield, the 58 entries, the D-085 fill, the arithmetic, and the measured remainder —
+**32 of 143 read in full; 41 user-accepted exclusions; 70 documents / 573 clusters still owed, ≈4–6 sessions**); then [[OI-276]], the one new row; then the
+evidence notes on [[OI-268]] (58 more decisions on the design-document surface, gap count 54 → 112, plus ONE decision found recorded in TWO design
+documents), [[OI-272]] (**two more archive-homed decisions found ALSO living in a design document — and D-292's archive entry names that home in its own
+verbatim**, taking the overlap tally to five) and [[OI-275]] (**a SECOND instance of its governing question: the SIGNED Layer-3 specification makes the
+style preset a weak mode prior, against D-003's measured preset-independence**). **★ [[OI-276]] IS THE SHARP ONE:** three of the five documents state as
+current something false at HEAD, and the third is not a stale tense but a stale **acceptance criterion** — the SIGNED voice-leading specification names the
+gate its build must satisfy five times as the batch sets 53/24/53, a gate re-baselined 2026-07-05 and superseded in whole at R10-b 2026-07-06 (**D-115**).
+**Three commits:** `254dfdd445` the Layer-3 specification (16 entries) → `c840fd84bd` the acceptance banner → `d46050ca45` four more documents (42 entries
++ the D-085 fill) → the row, the notes and this pointer. NO new bulk rule — no bulk rule may lawfully sweep a design document, and this wave is a second
+demonstration of phase 1f's finding: five documents read in full moved their own cluster counts by 21 while producing 58 entries. All guards PASS
+(`--verify` 400/400 quotes, 394/394 anchors, references ALL; `--check` 14,460/14,460 clusters, 15,224/15,224 occurrences; register `--check` across 21
+files; the triage artifact reproduces from the data; open-items living check 276/276). **NEXT: the user ratifies (or corrects) D-343…D-400 and rules on
+[[OI-276]]; the pending [[OI-268]]/[[OI-272]]/[[OI-275]] rulings now have materially more evidence; then the remaining 70-document full read before phase 2
+opens.**)*
+
 *Last updated: 2026-08-02, LATEST+++++++ (CC — **★ PHASE 1g: THE UNREAD DESIGN-DOCUMENT POPULATION IS TRIAGED PER FILE, AND FIVE DOCUMENTS OF THE LIVE
 CORE ARE READ IN FULL. The register is 316 → 342; the unresolved residual 2,717 → 2,702; two findings rowed; the D-081 defense the phase-1f note left
 owed is FILLED.** READ-ONLY on the system: no `src/` change, no golden / `tools/corpus/` / `tools/robust_stop/` movement, no behavior change, no fix, no

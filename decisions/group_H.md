@@ -285,7 +285,7 @@
 > on the readingA/readingB pair. Engaged selection lifts *all* kinds to reason over the full distinct-root carry —
 > the SymmetricRotation arm is the structural precedent.
 
-**In plain words.** Choosing among the readings handed forward is done by picking the one that agrees best across all the evidence at once — the tonality, the root, the inversion and the bass — rather than the one that scores highest on any single measure. Everything else is carried on at graded confidence, and where nothing dominates the stretch is marked open. This generalizes what was built: only the symmetric-rotation case already reasoned over the whole set of alternatives, while every other case decided between just two readings.
+**In plain words.** Choosing among the readings handed forward is done by picking the one that agrees best across all the evidence at once — the tonality, the root, the inversion and the bass — rather than the one that scores highest on any one kind of evidence alone. Everything else is carried on at graded confidence, and where nothing dominates the stretch is marked open. This generalizes what was built: only the symmetric-rotation case already reasoned over the whole set of alternatives, while every other case decided between just two readings.
 
 **Why.** Grounded in the published result the record cites: the leading joint model wins the full Roman-numeral label while scoring LOWER on the individual heads — the payoff is the mutually consistent reading rather than a stronger vertical or progression score — and a second system's logit fusion confirms it. The record names this the direct analogue of the project's own selection problem.
 
@@ -563,7 +563,7 @@
 
 **In plain words.** Which numbers the texture decision is made from was not chosen by argument. Three candidates were tested against one criterion: reproduce the classes the earlier study established. Putting both kinds of statistic together after standardizing them reproduced those classes best. Putting them together without standardizing was ruled out in advance, because the sixteen interval numbers would simply outvote the four motion numbers.
 
-**Why.** Measured, with the figures recorded: nearest-centroid classification in the standardized combined space reproduces the ratified four-class partition at an agreement index of 0.791 and an accuracy of 0.918, against 0.716 for the two-stage alternative and 0.258 for motion alone. The declared tolerance was met with margin, so no stop fired. The resulting reference set ships as generated code with its full provenance — the run, the corpus state, the number of classes, the seed and the library version — and is refit at corpus waves under the same protocol as the harmonic taxonomy.
+**Why.** Measured, with the numbers recorded: nearest-centroid classification in the standardized combined space reproduces the ratified four-class partition at an agreement index of 0.791 and an accuracy of 0.918, against 0.716 for the two-stage alternative and 0.258 for motion alone. The declared tolerance was met with margin, so no stop fired. The resulting reference set ships as generated code with its full provenance — the run, the corpus state, the number of classes, the seed and the library version — and is refit at corpus waves under the same protocol as the harmonic taxonomy.
 
 **Status.** LIVE · decided 2026-07-03 · ratifier not stated
 

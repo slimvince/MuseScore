@@ -375,7 +375,7 @@
 >   holds** (the winner root differs across the carried keys); where (b) is false the re-decode agrees with the
 >   L3-argmax decode and the step passes through.
 
-**In plain words.** The population that a tonality-and-chord coupling would actually help is the set of places where naming a different tonality would change the chord. There is no way to identify that set by inspection: the only way to know the chord changes under an alternative tonality is to re-decide it under that tonality. So the exact condition cannot be measured before the re-decision exists, and every figure quoted for it before then is a structural stand-in, not the quantity itself.
+**In plain words.** The population that a tonality-and-chord coupling would actually help is the set of places where naming a different tonality would change the chord. There is no way to identify that set by inspection: the only way to know the chord changes under an alternative tonality is to re-decide it under that tonality. So the exact condition cannot be measured before the re-decision exists, and every number quoted for it before then is a structural stand-in, not the quantity itself.
 
 **Why.** Established by the attempt: the measurement report that went looking for this population found it computable nowhere, and the record names that finding as the reason. The consequence is designed around rather than assumed away — a cheap two-stage filter narrows the candidates first, the exact condition is computed only on those, and the coupled decision is committed only where it holds.
 
