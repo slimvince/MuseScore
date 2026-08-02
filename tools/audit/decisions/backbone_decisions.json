@@ -4326,7 +4326,7 @@
       "verbatim": "**★ DISTRIBUTION CONSTRAINT (user, 2026-06-15): FORK-LOCAL ONLY — NEVER merge upstream / to the\nMuseScore community.** This patch (`cfc7eb5e39`) is fine to have in the **central repo = the user's\nfork** (`origin` = `slimvince/MuseScore`) and may be pushed there, but it must **NEVER** be pushed or\nmerged to `upstream` (`musescore/MuseScore`) or otherwise contributed to the MuseScore community.\n`upstream` push is disabled in this repo; keep it so. Any future push/PR/merge that would carry\n`cfc7eb5e39` (or its content) toward `musescore/MuseScore` is a HARD STOP — surface, do not proceed.\n(The #9444 reference above is the upstream *bug report*; it does NOT authorize contributing THIS patch.)",
       "plain": "The MusicXML mode-import fix may live in the user's own fork of MuseScore and be pushed there. It must never be pushed, merged or otherwise contributed to the MuseScore project. Any action that would carry it toward the upstream repository stops work and is reported.",
       "rationale": "Stated constraint, CLAUDE.md:753: the upstream issue number cited beside the patch is the upstream BUG REPORT, and referencing it does not authorize contributing this patch. Upstream pushing is disabled in the repository and is to be kept so (:683-684).",
-      "home": "CLAUDE.md:747",
+      "home": "CLAUDE.md:728",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -4334,7 +4334,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "CLAUDE.md:747-753, user-directed 2026-06-15. ★ READ WITH the general contribution intent at ARCHITECTURE.md:380-382 - two recorded positions, a general intent to contribute and a named one-patch exception; the record does not state how the general intent applies to the rest of the tree.",
+      "status_source": "CLAUDE.md:728-753, user-directed 2026-06-15. ★ READ WITH the general contribution intent at ARCHITECTURE.md:380-382 - two recorded positions, a general intent to contribute and a named one-patch exception; the record does not state how the general intent applies to the rest of the tree.",
       "patterns": [
         "DISTRIBUTION CONSTRAINT",
         "FORK-LOCAL ONLY",
@@ -4369,7 +4369,7 @@
       "verbatim": "The dedup guarded the `KeySig` creation on **fifths only**:\n`if (oldkey != key.key() || key.custom() || key.isAtonal())`. At score start the\nprevailing key defaults to `{C, KeyMode::UNKNOWN}` (`KeyList::key()` →\n`setConcertKey(Key::C)`), so a **0-fifths** key signature carrying an explicit\n`<mode>` (e.g. `<fifths>0</fifths><mode>minor</mode>`) matched the prevailing fifths,\nthe whole `KeySig` was dropped, and the declared `<mode>` went with it →\n`KeyMode::UNKNOWN` downstream. Export *does* write `<mode>`\n(`exportmusicxml.cpp:2473`), so this broke export/import round-trip of `<mode>` and,\nin our pipeline, dropped the declared-mode anchor on ~79 zero-signature Bach stems\n(`cc_key_emission_headroom_dossier.md` — `declaredModeOrdinal=-1`). The maintainers'\nown `// TODO only if different custom key ?` flags the dedup as known-incomplete.\n\nThe fix: fetch the prevailing `KeySigEvent` (not just the `Key` fifths) and add an\n`oldKeySig.mode() != key.mode()` term to the guard, so a mode-bearing key at matching\nfifths is retained. A key matching the prevailing one in **both** fifths and mode (and\nnot custom/atonal) still produces **no** `KeySig`, so plain mode-less C-major scores are\nunaffected. Verified isolated to empty-signature scores (exactly 79 zero-sig `.ours.json`\nchanged, 0 non-empty-signature stems); BIR gate byte-identical on all three presets\n(Baroque 57 / Jazz 23 / Default 57); key-inference S2 −378 (Default). Round-trip of\n`bwv254` (0-fifths `<mode>minor</mode>`) now preserves `<mode>`.",
       "plain": "MuseScore's importer dropped a key signature that matched the prevailing one in number of sharps or flats even when it declared a different mode - so a piece written with no sharps or flats but marked minor lost that marking on import. The fix compares the mode as well as the accidental count, so a mode-bearing key signature survives.",
       "rationale": "Measurement, CLAUDE.md:736-739: the change is verified isolated to empty-signature scores - exactly 79 zero-signature analyses changed and no non-empty-signature piece moved - the regression gate is byte-identical on all three presets, and the round-trip of a zero-signature minor piece now preserves its mode. The underlying defect is upstream-unchanged code whose own comment flags the check as known-incomplete (CLAUDE.md:729-730, :673-674).",
-      "home": "CLAUDE.md:720",
+      "home": "CLAUDE.md:701",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",

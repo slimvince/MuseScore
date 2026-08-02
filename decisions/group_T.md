@@ -43,9 +43,9 @@
 
 **Status.** LIVE · decided 2026-06-15 · ratified by user
 
-**Home.** `CLAUDE.md:747`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:728`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** CLAUDE.md:747-753, user-directed 2026-06-15. ★ READ WITH the general contribution intent at ARCHITECTURE.md:380-382 - two recorded positions, a general intent to contribute and a named one-patch exception; the record does not state how the general intent applies to the rest of the tree.
+**Provenance.** CLAUDE.md:728-753, user-directed 2026-06-15. ★ READ WITH the general contribution intent at ARCHITECTURE.md:380-382 - two recorded positions, a general intent to contribute and a named one-patch exception; the record does not state how the general intent applies to the rest of the tree.
 
 ### D-198 — The Windows snap fix in the muse submodule is intentional and must not be reverted
 
@@ -104,7 +104,7 @@
 
 **Status.** LIVE · decided 2026-06-14 · ratified by user
 
-**Home.** `CLAUDE.md:720`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:701`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:715-745, applied 2026-06-14, commit cfc7eb5e39. ★ Carries the distribution constraint above: fork-local only, never upstream.
 
