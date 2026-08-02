@@ -558,7 +558,7 @@
 
 **Home.** `docs/redesign_plan.md:423-424`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
 ### D-320 — The absent-root guard is REVERTED and must not be retried — 'absent root means wrong reading' is false corpus-wide
 
@@ -578,7 +578,7 @@
 
 **Home.** `docs/redesign_plan.md:555-561`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
 ### D-321 — Winner selection compares candidate scores exactly, with no epsilon anywhere in the ranking
 
@@ -605,7 +605,7 @@
 
 **Home.** `docs/scoring_model.md:201-214`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
 ### D-322 — Any change to optimization flags or to the order of the scoring arithmetic requires a full corpus A/B on both presets
 
@@ -624,7 +624,7 @@
 
 **Home.** `docs/scoring_model.md:222-227`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
 ### D-324 — Retirement of a post-scoring rule is global — a rule still doing work on any one preset is retained for all
 
@@ -639,7 +639,7 @@
 
 **Home.** `docs/scoring_model.md:827-828`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
 ### D-325 — A correction rule that changes a committed chord's identity is retired or folded in BEFORE the search is widened past it
 
@@ -656,7 +656,7 @@
 
 **Home.** `docs/decoder_design.md:675-678`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/decoder_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/decoder_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
 ### D-326 — The chord-path search emits the whole path with every stretch's alternatives and margins, not the committed reading alone
 
@@ -671,7 +671,7 @@
 
 **Home.** `docs/decoder_design.md:694-695`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/decoder_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/decoder_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
 ### D-327 — The root-continuity guard reads the reconstructed inversion credit, superseding the designed sounding-third test
 
@@ -693,7 +693,7 @@
 
 **Home.** `docs/decoder_design.md:408-416`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/decoder_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/decoder_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
 ### D-328 — A wider search cannot fix the arpeggio root failure — the wrong reading IS the global optimum, so only re-weighting or joint segmentation can
 
@@ -712,7 +712,7 @@
 
 **Home.** `docs/decoder_design.md:558-563`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/decoder_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/decoder_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
 ### D-329 — Completeness of the candidate list is the priority — a chord never listed can never be chosen
 
@@ -730,7 +730,7 @@
 
 **Home.** `cowork_layer4_chordsymbol_design.md:208-212`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
 ### D-330 — Never a pooled recompute — the chord is never re-derived from several stretches' notes thrown together
 
@@ -748,7 +748,7 @@
 
 **Home.** `cowork_layer4_chordsymbol_design.md:394-398`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
 ### D-331 — Every chord decision carries its ranked alternatives and its confidence — committed, inherited, and abstained alike, never pruned
 
@@ -765,7 +765,7 @@
 
 **Home.** `cowork_layer4_chordsymbol_design.md:576-579`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
 ### D-332 — A carried alternative's added notes are marked UNKNOWN rather than asserted absent — never synthesized
 
@@ -781,7 +781,7 @@
 
 **Home.** `cowork_layer4_chordsymbol_design.md:366-368`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
 ### D-333 — The membership tie-break's direction is an idiom-calibrated number, never a branch on style — the three-tier structure is fixed
 
@@ -796,7 +796,7 @@
 
 **Home.** `cowork_layer4_chordsymbol_design.md:606-607`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
 ### D-334 — The bare-fifth chord type stays in the catalogue structurally; whether it wins is an idiom-calibrated number
 
@@ -813,5 +813,107 @@
 
 **Home.** `cowork_layer4_chordsymbol_design.md:617-620`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
+
+### D-378 — Re-deciding a chord under a different tonality is well-defined ONLY on the decoder path — the legacy multi-pass emission cannot be faithfully re-decoded, and a naive re-emit injects a measured ~6 % same-tonality root-flip artifact
+
+> **Faithfulness (the J-key-iii constraint, discharged).** J-key-iii deferred the chord axis because a *faithful*
+> per-region re-emission "cannot reproduce the multi-pass pipeline chord" — the legacy production chord is emitted
+> mid-pipeline (before Pass-3 tone merging), so a naïve re-emit injects ~6% same-key root-flip artifact `[code]`
+> (`regionanalyzer.cpp:388-393`). The **faithful mechanism it named is the engaged `ChordSliceDecoder`**: a **pure
+> function of (slices, key)**, so re-decoding under a different key is well-defined and reproducible — no multi-pass
+> artifact. **This is why the joint step is E4-adjacent** (§4): it builds on the engaged decoder, not the retiring
+> legacy `analyzeChord` seam. On the legacy path a faithful re-decode does not exist; on the decoder path it is
+> the decoder's own contract.
+
+**In plain words.** Asking what chord the analysis would name if the tonality were different is a meaningful question only where the chord decision is a pure function of the notes and the tonality. On the older multi-stage path it is not: the chord is emitted part-way through, before a later merging step, so simply re-emitting it produces about six per cent of root changes that have nothing to do with the tonality at all. On the decoder path the same question is well defined and reproducible, because answering it is what that decoder's own contract already promises.
+
+**Why.** Measured: the naive re-emit's artifact rate on the older path is stated as about six per cent of same-tonality root flips, cited at the orchestrator source that records the deferral. The record uses it to discharge a deferral made earlier by name — the earlier wiring deferred the chord axis for want of a faithful mechanism, and this identifies that mechanism as the engaged decoder rather than declaring the problem solved.
+
+**Status.** LIVE · decided 2026-07-07 · ratifier not stated
+
+**Home.** `cowork_joint_key_chord_design.md:173-180`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step the document designs is shelved (**D-278**); this statement is about the two code paths and not about that step. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-380 — The carry's meaningful axis is DISTINCT ROOTS, and every above-threshold root is carried at graded confidence — a carry of winner-plus-one discards the third root on about a quarter of slices
+
+> The decisive fan-out finding `[data]`: a **≥3rd distinct root clears threshold on 25.1 % / 16.1 % / 24.9 %** of
+> slices. This is exactly the **load-bearing exclusion tail** (#12, finding-by-exclusion): the ruled-out and
+> low-confidence roots are **information**, not noise — they are where selection (§3) and the eventual joint step
+> (§4.3) earn their keep. The contract therefore requires: **carry every above-threshold distinct root, each at its
+> graded confidence; carry ruled-out roots at low confidence rather than dropping them.** A carry that surfaces only
+> the winner + one alternate (the legacy cap-of-3 + single diff-root append) **discards the ≥3rd root on ~¼ of
+> slices** — a #12 violation the engaged carry must not inherit.
+
+**In plain words.** What one stretch of music offers is many candidate spellings of very few chord roots: measured, about five candidate readings but only about two distinct roots. So what is handed forward is a distribution over distinct roots, each with its best voicing, its variant set, and its own confidence. A third distinct root passes the bar on roughly a quarter of stretches, and those ruled-out and low-confidence roots are information, not noise — they are where the later selection and any tonality-chord coupling earn their keep. A carry that offers only the winner and one alternative throws the third root away on a quarter of stretches.
+
+**Why.** Measured on the corpus: per competing stretch the above-threshold set is wide in readings but narrow in roots — median five, four and five readings against median two, one and two distinct roots — and a third distinct root clears the bar on 25.1 %, 16.1 % and 24.9 % of stretches. The record names the principle it serves: principle #12, finding by exclusion — a ruled-out possibility is carried at low confidence rather than dropped.
+
+**Status.** LIVE · decided 2026-07-07 · ratifier not stated
+
+**Home.** `cowork_layer5_engagement_design.md:136-142`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The document's banner records `Status: DESIGN (CC, 2026-07-07)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-381 — The carry must cap on DISTINCT ROOTS, not on voicings — the existing voicing-keyed cap gives no structural guarantee that a third root survives
+
+> **The owed guarantee (structure only; R5).** The engaged carry must **preserve distinct roots explicitly**, not as
+> a by-product of a voicing cap. The declared *shape*: a **distinct-root-first carry** — for each distinct root above
+> threshold, carry its best voicing + its variant set + its confidence, and cap on **distinct roots** (with each
+> root's own variant depth bounded), rather than capping on a flat voicing list. The exclusion tail (#12) is carried
+> as the low-confidence roots below the primary set. **The exact cap depths (how many distinct roots, how deep each
+> root's variant set) are precision-phase constants (R5)** — the fan-out distribution (p90 ≈ 4 roots, max 11)
+> informs the *floor*, but the value is fitted later, not here. This is an **owed change to the decoder's carry
+> construction** (Layer 4 / E4), named here so the engagement design and E4 agree on the contract; it is not built
+> in this pass.
+
+**In plain words.** The limit on how many alternatives are kept counts spellings, not roots, so the allowance can be used up entirely by inversions and template variants of the top two roots before a third root is reached. Keeping a third root is therefore a by-product rather than a guarantee. The shape owed is the other way round: for each distinct root above the bar, carry its best voicing, its variants and its confidence, and set the limit on the number of roots, with each root's variant depth bounded separately.
+
+**Why.** A structural argument, and the record says so explicitly rather than claiming a measurement: the limit being keyed on voicings is what makes the guarantee absent, independently of how many voicings the current limit happens to admit — a count the record notes was not separately measured on that path. The measured fan-out informs only the floor for the eventual limit; the value itself is left to the fitting phase, not chosen here.
+
+**Status.** DEFERRED · decided 2026-07-07 · ratifier not stated
+
+**Home.** `cowork_layer5_engagement_design.md:164-172`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. Recorded as an OWED change to the chord layer's carry construction, named so that the engagement design and the later build agree on the contract, and explicitly not built in that pass. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-385 — Pedal-point detection's home is DECIDED: a reader over the chord layer's carry that annotates a carried reading — never a second analysis that overwrites the winner
+
+> - **Home: a reader over the decoder's Layer-4 carry, emitting a pedal-annotated result — an additive annotation on
+>   a carried reading, NOT a mutation of the winner.** Because the material it needs is the carry's distinct-root
+>   distribution (§6.2), and chord identity is Layer 4, the reader sits at the **carry side (Layer-4 output / a
+>   decoder post-reader)** and feeds L5 selection *one* pedal-annotated candidate. It never owns `results.front()`
+>   and never writes back into the decoder's scoring — it reads the carry forward and annotates.
+
+**In plain words.** Deciding that a sustained bass note is a pedal — that the real harmony is the chord above it — is a chord-identity question, so it sits on the chord layer's output side, reading what that layer already carried. It marks one of the carried readings as the pedal reading and passes it on. It never takes ownership of the winning reading, never writes back into the scoring, and never replaces the set of alternatives; the original reading with the bass as the root survives at its own confidence.
+
+**Why.** Grounded in what the material actually is: a pedal stretch's notes are the sustained bass together with the chord above it, so the upper-voice reading — root not the bass, template excluding the bass note — is already one of the distinct-root alternatives the carry holds, and the confirmation margin the old code computed by hand is already the carry's own ranking. The record does not assume the equivalence: whether the carried alternative agrees with today's bass-stripped second analysis is flagged as an owed corpus measurement, and the fallback if it does not is named — still a carried attribute, still never a mutation.
+
+**Status.** LIVE · decided 2026-07-07 · ratifier not stated
+
+**Home.** `cowork_layer5_engagement_design.md:410-414`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. Part 1 of the same document had left the home open as a hinge; Part 2 records that it decides it. The build is separately hard-gated on the owed measurement being settled on an established pedal-dense corpus ([[OI-4]]). NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-386 — No fourth hand-rolled scan for the best different-root alternative — the pedal reader consumes the carry's own ranking, or the one unified primitive
+
+> The confirmation margin (§6.1 (ii)) is the **"best different-root alternative"** decision the audit catalogues as
+> computed 4× (`[audit §1.3]`, FQ-1). Under the engaged carry it is served two-ways-that-are-one: the decoder already
+> **reads** the best different-root reading from its carry (`chordslicedecoder.cpp:927-930` `[code]`), and FQ-1
+> unifies that scan into one primitive (`[audit]` FQ-1, sequenced into E4 — Stage-1 STOP-reported the four legacy
+> scans are *not* byte-identically one, so the unification lands with the decoder, not pre-L5). The pedal reader
+> therefore **consumes the carry's distinct-root margin** (or the FQ-1 primitive over the carry) — it adds **no fourth
+> scan**. This is the concrete pedal instance of Part 1 §2.2's load-bearing exclusion tail: the ≥2nd distinct root's
+> carried confidence *is* the pedal confirmation signal.
+
+**In plain words.** Finding the strongest alternative with a different root is a decision the code already makes in four separate places. The pedal reader adds no fifth: it reads the margin straight off the ranked distinct roots the chord layer already carried, or through the single shared routine that unification replaces the four with. The second-strongest root's carried confidence is the pedal confirmation signal.
+
+**Why.** It is principle #6 applied to a duplication the structural audit catalogued and counted: four copies of the same different-root decision. The record also states why the unification lands with the decoder rather than before it — an earlier stage reported that the four existing scans are not byte-identically the same routine, so folding them is a change that must ride the decoder's own build.
+
+**Status.** LIVE · decided 2026-07-07 · ratifier not stated
+
+**Home.** `cowork_layer5_engagement_design.md:445-452`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The unification it defers to is tracked as [[OI-11]]. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
 

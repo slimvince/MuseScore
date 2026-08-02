@@ -754,5 +754,23 @@
 
 **Home.** `cowork_layer5_function_design.md:637-648`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
+
+### D-377 — The forbidden back-edge, stated concretely: a chord decision may NOT write into the committed tonality and re-run the tonality decode — a coupled decision is OWNED by its own bounded box, never patched backward
+
+> **A placement that WOULD violate acyclicity** (flagged so the build does not drift there): letting L4's chord
+> decision write back into L3's *committed* region key as a side effect and then re-running L3's whole-score
+> Viterbi — that is the back-edge #7 forbids. The design avoids it by making the joint step the **owner** of the
+> coupled (key,chord) decision (it does the re-rank locally, in its own bounded beam) rather than a **feedback
+> patch** on L3.
+
+**In plain words.** There is one shape that would break the rule against a later stage feeding an earlier one, and it is named so that no build drifts into it: letting the chord decision alter the tonality that has already been committed, and then re-running the whole tonality search over the piece. The permitted shape is the opposite — whatever owns the coupled decision makes it locally, inside its own bounded search, and publishes one settled answer forward. A new decision box, never a feedback patch on an existing stage.
+
+**Why.** It is the concrete form of the forward-only control-flow contract the architecture already carries, written down at the one place a design could plausibly have violated it. The record states why the permitted shape is safe: the coupled box reads only what the earlier stage has already emitted and carried — the ranked alternatives it published as its exclusion tail — and drives the later decoder forward as a pure function, so neither direction is a cycle.
+
+**Status.** LIVE · decided 2026-07-07 · ratifier not stated
+
+**Home.** `cowork_joint_key_chord_design.md:136-140`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step the document designs is shelved (**D-278**); this prohibition is not about that step — it is stated as what any placement must avoid, and is flagged in the record as written so the build does not drift there. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
 

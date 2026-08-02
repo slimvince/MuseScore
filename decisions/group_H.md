@@ -157,7 +157,7 @@
 
 **Home.** `cowork_layer5_function_design.md:612-617`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
 ### D-336 — Cadence detection is key-agnostic and votes for the key rather than reading one
 
@@ -175,7 +175,7 @@
 
 **Home.** `cowork_layer5_function_design.md:618-622`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
 ### D-337 — A lean toward another degree is a tonicization by default; a key change needs a confirming cadence AND persistence, expressed as a change-cost
 
@@ -191,7 +191,7 @@
 
 **Home.** `cowork_layer5_function_design.md:623-625`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
 ### D-338 — The function layer selects among the chord layer's carried readings and never re-derives a chord from the notes
 
@@ -208,7 +208,7 @@
 
 **Home.** `cowork_layer5_function_design.md:627-630`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
 ### D-340 — The reading the function layer emits IS the selected source's committed identity, carried whole — never rebuilt field by field
 
@@ -229,7 +229,7 @@
 
 **Home.** `cowork_layer5_function_design.md:547-554`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
 ### D-341 — The licensed root-motion set is completed by theory — the ascending fifth, the descending second and the diatonic diminished fifth are added
 
@@ -252,7 +252,7 @@
 
 **Home.** `cowork_layer5_function_design.md:888-897`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
 ### D-342 — Putting the function layer into production is DEFERRED INDEFINITELY — the posture is a dormant build with ground-truth validation
 
@@ -269,4 +269,321 @@
 **Home.** `cowork_layer5_function_design.md:696-698`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.
+
+### D-382 — The function layer selects by JOINT CONSISTENCY across tonality, root, inversion and bass — not by maximizing any one score — and every ambiguity kind reasons over the full carried distribution
+
+> The decisive published lesson `[research]` §2: **select by joint consistency across key / root / inversion /
+> bass**, not by maximizing any single score. ChordGNN wins the full Roman-numeral label while scoring *lower* on
+> the individual heads — the payoff is the mutually-consistent reading, not a stronger vertical or progression
+> score; AnalysisGNN's logit-fusion confirms it. This is the direct analog of our selection problem and the steer
+> for the L5 objective.
+>
+> So engaged Layer 5's selection, for each slice, reasons over the **graded distinct-root distribution including the
+> exclusion tail** (§2, #12) and picks the reading that is **maximally consistent across the evidence channels**,
+> carrying the rest at graded confidence and open-marking where no reading dominates. This **generalizes**
+> `resolveAbstained` (§1.2): today only the SymmetricRotation arm reasons over the full pool; the other arms decide
+> on the readingA/readingB pair. Engaged selection lifts *all* kinds to reason over the full distinct-root carry —
+> the SymmetricRotation arm is the structural precedent.
+
+**In plain words.** Choosing among the readings handed forward is done by picking the one that agrees best across all the evidence at once — the tonality, the root, the inversion and the bass — rather than the one that scores highest on any single measure. Everything else is carried on at graded confidence, and where nothing dominates the stretch is marked open. This generalizes what was built: only the symmetric-rotation case already reasoned over the whole set of alternatives, while every other case decided between just two readings.
+
+**Why.** Grounded in the published result the record cites: the leading joint model wins the full Roman-numeral label while scoring LOWER on the individual heads — the payoff is the mutually consistent reading rather than a stronger vertical or progression score — and a second system's logit fusion confirms it. The record names this the direct analogue of the project's own selection problem.
+
+**Status.** LIVE · decided 2026-07-07 · ratifier not stated
+
+**Home.** `cowork_layer5_engagement_design.md:187-198`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The document's banner records `Status: DESIGN (CC, 2026-07-07)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-383 — Bass, spelling and tonality-consistency DECIDE; a licensed progression is only a tie-break among already-consistent readings and may never override a committed root
+
+> The **re-ordering vs the as-built resolver** is the load-bearing structural change: the built `resolveAbstained`
+> leads with `isLicensedProgression` (the weak channel) as its *primary* separator (Transition/ShareTone arms). The
+> research says bass/inversion + spelling + key-consistency are the primary channels and progression is the
+> tie-break. Engaged selection **re-orders** so the load-bearing channels decide and progression only breaks ties
+> among mutually-consistent readings. *(The channel weights and the deciding margin are precision-phase, R5 — only
+> the ordering/direction is fixed here.)*
+
+**In plain words.** The built resolver leads with whether one chord progresses plausibly into the next, and that is the wrong lead. The evidence that actually carries root correctness is the bass and inversion, the written spelling, and how well a root fits the tonality of the passage. Whether the progression is a licensed one is a tidy signal that turns out to be uncorrelated with getting the root right, so it is demoted: it may separate readings that are already equally consistent, and it may never overturn a root the vertical evidence committed to. Only the ordering is fixed here; the weights are left to the fitting phase.
+
+**Why.** Two independent grounds, both cited: published work dissociating the bass from pitch-class content, showing both independently drive expectation, and work on spelling disambiguation — against the project's own measurement, in which the progression-driven override fired 1,043 times for 53 corrections and 809 harms, moving a correct root to a wrong one on about 78 % of its fires. The demotion is therefore the structural form of a measured finding, not a preference.
+
+**Status.** LIVE · decided 2026-07-07 · ratifier not stated
+
+**Home.** `cowork_layer5_engagement_design.md:212-217`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The document's banner records `Status: DESIGN (CC, 2026-07-07)`; the measured basis it consumes is the separately-ratified fine-grain-override finding. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-384 — Re-ranking the tonality under chord evidence is a SEPARATE step, never part of the function layer's selection — the function layer reasons inside a tonality already fixed
+
+> - **The joint key↔chord step (O-18 / contract C3)** is a **distinct step, not L5 selection.** L5 selection reasons
+>   within a *fixed* region key; the joint step is the coupled machinery that **re-ranks the key under chord
+>   evidence** (and vice versa) — the "carry a beam of (key, chord) hypotheses and let downstream chord evidence
+>   re-rank the key" of `[research]` §3. It is the home of the C3 "genuinely-coupled key↔chord minority."
+
+**In plain words.** The function stage chooses among readings within a tonality that has already been settled; it never re-opens which tonality that is. Anything that re-ranks the tonality in the light of the chords, or the chords in the light of the tonality, is a distinct piece of machinery upstream of it, and that piece owns the small population of places where the two genuinely depend on each other.
+
+**Why.** The boundary is drawn so that the forward-only control-flow contract is kept: the function stage reads the chord layer's carry forward and never re-derives, and any coupling machinery is a bounded instance of the same forward discipline — a declared exception with its own closure — rather than a free search back across stages.
+
+**Status.** LIVE · decided 2026-07-07 · ratifier not stated
+
+**Home.** `cowork_layer5_engagement_design.md:263-266`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The separate step this boundary reserves a place for was afterwards shelved against measurement (**D-278**); the boundary itself is a statement about what the function layer does not own and is unaffected by that shelving. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-387 — A contradiction between the function context and a committed chord is surfaced on the ONE open mark, enriched with a reason — not on a second parallel flag, and not by overloading the plain undecided mark
+
+> **The #6-clean vehicle: UNIFY into one structured open-mark carrying its REASON/KIND.** Promote the boolean
+> `openMark` (across the three structs and their assembly) to a small open-mark annotation that names *why* the slice
+> is marked — one channel, distinct kinds:
+> - **`Undecided`** — the case-3 abstain / §15-13 both-licensed honest-carry (today's `openMark = true` semantics,
+>   preserved exactly);
+> - **`FunctionContextContradiction`** — the F-B case: **the reading stays the L4 commit** (`overrodeCommit` stays
+>   **false**, `reading` = the committed chord — the additive-not-replace contract `ResolvedReading` already declares,
+>   `functionresolver.h:160-165` `[code]`), and the annotation carries the contradiction as calibrated uncertainty
+>   (§7.3).
+>
+> This **reuses the existing open-mark carry path** (no new field threaded through three structs) and **dissolves
+> `[fb §4.2]`'s "new advisory field" into "the existing open-mark, enriched with a reason"** — a unification, not a
+> parallel channel, exactly the instruction's licensed outcome ("a *unified* advisory, not a duplicate"). It composes
+> with the existing `ResolutionBasis` transparency enum (`functionresolver.h:151-158`): the demoted
+> `ResolutionBasis::FineGrainOverride` value becomes an **annotation basis** (renamed/re-valued to
+> `FineGrainContradiction` — an owed spec edit, §8.2), never an override basis.
+
+**In plain words.** When the functional context disagrees with a chord the earlier stage committed to confidently, that disagreement is recorded as a reason on the single existing open mark, alongside the genuinely-undecided reason it already carries. Two shapes were rejected. Setting the plain undecided mark would be wrong in meaning: the chord stage was not undecided, it committed, and the reading is carried unchanged. Adding a second flag beside the open mark would be two fields on the same object meaning the same thing, threaded through the same three places.
+
+**Why.** Both rejections are argued at the code and the argument is recorded with them: the plain mark's declared meaning is 'no decided answer — genuinely undecidable', so using it here would tell the display that nothing was decided when something was, which is an information loss; and a parallel flag duplicates a channel, which principle #6 forbids. The unification also composes with the existing transparency enumeration, whose override value is re-valued to a contradiction value in the same act.
+
+**Status.** LIVE · decided 2026-07-07 · ratifier not stated
+
+**Home.** `cowork_layer5_engagement_design.md:490-505`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The record notes it dissolves an earlier proposal for a new advisory field into an enrichment of the existing one. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-388 — Texture is read primarily from HOW VOICES MOVE TOGETHER, not from how far each line leaps — the interval-led alternative was measured weaker and partly an encoding artifact
+
+> - **D2 — motion-type-led features.** Measured (§4): the ablation is decisive, and the motion view is the
+>   extraction-robust one (it never explodes chords; it grouped exploded chamber corpora with the chorales, ruling
+>   out an encoding artifact). *Alternative rejected:* interval-profile-led (the pilot's view) — weaker (≤0.20) and
+>   partly a chordal-density artifact by the study's own caveat.
+
+**In plain words.** What separates one texture from another is the pattern of parallel, similar, contrary and oblique motion between pairs of lines. The rates of those four motion types alone recover the texture structure; the statistics of how far each single line moves do not, and are used only as a secondary description of melodic complexity.
+
+**Why.** Measured, and decisively: motion-type rates alone recover the texture structure at an agreement index of 0.37 to 0.46 where interval profiles alone reach at most 0.20. The motion view is also the extraction-robust one — it never explodes chords, and it grouped chamber corpora encoded with exploded chords together with the chorales, which rules out an encoding artifact. The rejected alternative carries the study's own caveat that its signal is partly an artifact of how densely chords are written.
+
+**Status.** LIVE · decided 2026-07-03 · ratified by the user
+
+**Home.** `cowork_voiceleading_axis_design.md:519-522`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-07-03 — asks A1–A8 ratified in full)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-389 — A notated voice is a FACT and an inferred perceptual line is a JUDGMENT — the two are separate types and are never conflated
+
+> - **D3 — two-tier voice model: notated voice = fact; stream = inference.** Never conflated; enforced by the §0
+>   one-sense rule and the type system (VoiceLine vs Stream). *Alternative rejected:* a single "voice" concept with
+>   a quality flag — exactly the silent fact/judgment mixing the universality principle forbids.
+
+**In plain words.** The line the score actually writes and the line a listener hears are different things and are kept apart, in the words used and in the types the code carries. The written one is a fact taken from the score; the heard one is always called a stream, is always marked inferred, and carries its own confidence. Merging them into one idea with a quality flag was considered and rejected.
+
+**Why.** The rejection has a principled ground: one idea with a quality flag is exactly the silent mixing of fact with judgment that the universality principle forbids — the fact layers must stay style-agnostic and free of inference, so a value that is sometimes read and sometimes guessed cannot live in one field. The separation is enforced twice over, by the document's one-sense vocabulary rule and by the type system.
+
+**Status.** LIVE · decided 2026-07-03 · ratified by the user
+
+**Home.** `cowork_voiceleading_axis_design.md:523-525`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A3, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-390 — The first version classifies the WHOLE selection as one texture — classifying within a piece is deferred behind a measurement, because the evidence is per-piece
+
+> - **D4 — texture classification is v1's only judgment, at whole-selection granularity.** The evidence is
+>   per-piece; a per-span claim would be assumption-based code. The refinement is a named cheap measurement first
+>   (§15-1). *Alternative rejected:* shipping windowed per-span classification now — knowledge-based-coding
+>   violation.
+
+**In plain words.** The study that established the texture classes measured whole pieces. Whether the same statistics, computed over a moving window, would find the places where the texture changes inside a piece has not been measured. So the first version gives the whole selection one texture, and finding several within it waits on that measurement. Shipping the windowed version now was considered and rejected as building on an assumption.
+
+**Why.** The rejection cites the project's own rule that a component's build is earned by the measurement behind it: a per-stretch claim on per-piece evidence would be assumption-based code. The record also notes what the deferral does and does not cost — the output type is already a series of texture stretches, so the refinement changes how many there are, not the shape of anything.
+
+**Status.** LIVE · decided 2026-07-03 · ratified by the user
+
+**Home.** `cowork_voiceleading_axis_design.md:526-529`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A4, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-391 — Reads between the two analysis dimensions are admissible only where the combined dependency graph stays acyclic — harmonic layers may take voice-leading FACTS freely; a voice-leading component may take a committed harmonic result only if nothing that result depends on consumes it back
+
+> - **D6 — the cross-axis dependency rule (acyclicity by declaration).** Cross-axis reads are admissible only where
+>   the combined two-axis dependency graph stays acyclic, checked at each wiring: (a) harmonic layers may consume
+>   axis-2 **facts** (VL-A/B, L1-derived only) freely — e.g. the future L4 non-chord-tone filter — because facts
+>   depend on no harmonic inference; (b) an axis-2 component may consume a **committed harmonic output** (VL-F
+>   reads L3's key) provided nothing that harmonic layer depends on, directly or transitively, consumes that
+>   axis-2 component. VL-F→L3 is safe (L3 consumes no axis-2 output; the planned L4 filter consumes only VL-A/B,
+>   which don't depend on VL-F). Each future wiring re-states this check in its instruction. *Alternative
+>   rejected:* a blanket "axis 2 reads nothing harmonic" — it would make schema recognition impossible for no
+>   structural gain.
+
+**In plain words.** The harmonic analysis and the voice-leading analysis may read each other, under one rule checked at every wiring. A harmonic stage may freely use the voice-leading facts derived straight from the notes, because those depend on no harmonic decision. A voice-leading component may use a harmonic result that has already been committed — recognizing a stock pattern needs scale degrees, and scale degrees need the tonality — but only if nothing that harmonic stage depends on, directly or through others, reads that component back. A blanket ban on reading anything harmonic was considered and rejected.
+
+**Why.** The rejection is argued on what it would cost against what it would buy: forbidding every harmonic read would make pattern recognition impossible for no structural gain, since the one planned read is safe under the rule and is shown to be — the tonality stage consumes nothing from this dimension, and the planned non-chord-tone filter consumes only the facts, which do not depend on the pattern recognizer. Each future wiring re-states the check rather than inheriting this one.
+
+**Status.** LIVE · decided 2026-07-03 · ratified by the user
+
+**Home.** `cowork_voiceleading_axis_design.md:533-541`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A8, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-392 — The later voice-leading components are CLAIMS WITH OWNERS, not builds — each clears its own design document and its own evidence before any instruction exists
+
+> - **D5 — staged components behind design gates.** VL-D/E/F/G/H are claims with owners, not builds; each clears its
+>   own design + footing before an instruction exists. This is the proportionality gate applied *inside* the axis —
+>   no slot-filling (the Contrapunctus reminder). *Alternative rejected:* one monolithic axis build.
+
+**In plain words.** Stream separation, phrase segmentation, pattern recognition, voicing analysis and part-writing advice are all named and assigned, but none is built. Each first needs its own design document and the evidence to stand on. Building the whole dimension in one go was considered and rejected.
+
+**Why.** The record names the principle and the failure it guards against: this is the proportionality admission gate applied inside the dimension rather than only at its border, and the guard is against slot-filling — building a component because a slot exists for it rather than because evidence earned it.
+
+**Status.** LIVE · decided 2026-07-03 · ratified by the user
+
+**Home.** `cowork_voiceleading_axis_design.md:530-532`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A2's second half, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-393 — Every voice-leading inference publishes the committed answer AND the FULL ranked list of all alternatives with their weights — nothing below the top is discarded
+
+> - **Output — the committed class PLUS the full ranked alternative list (zero information loss; ratification
+>   clarification, user 2026-07-03):** the span's voice-leading idiom from the four-class taxonomy (§0) is the
+>   TOP of a **fully ranked list of ALL class fits, each carried with its weight** — nothing below the top is
+>   discarded; a downstream consumer (and Stage-5 calibration) sees everything VL-C saw. This is the ARCH §2.15
+>   minimality-plus-maximal-information contract applied here (the same carried-alternatives discipline as L4's
+>   ranked chord readings).
+
+**In plain words.** The texture stage does not publish only the class it chose. It publishes every class it considered, ranked, each with the weight it earned, so that anything reading it later — including the calibration step — sees exactly what the stage saw. Nothing below the winner is thrown away.
+
+**Why.** It is the carried-alternatives contract the architecture already states, applied here rather than restated: the same discipline the chord layer's ranked readings follow. The record notes the clarification it rode: facts carry no alternatives by construction, but a choice made at the fact level — which reduction rule was applied — is a declared parameter of the query, recoverable at zero loss from the lossless note model.
+
+**Status.** LIVE · decided 2026-07-03 · ratified by the user
+
+**Home.** `cowork_voiceleading_axis_design.md:346-351`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document's banner records that this clarification was folded in BEFORE signing and that the signing ratified asks A1–A8 in full. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-394 — Reducing a chord-bearing voice to one line is a DECLARED parameter of the request, uniform across sources — never silent, never chosen per source; the first version offers exactly one rule
+
+> - **Reduction is declared, uniform, and per-query — never silent, never per-source.** A consumer needing one line
+>   from a chordal voice names a reduction rule (v1 provides exactly one: **top-note** — the highest sounding pitch
+>   per event, the study's curated-branch rule). The rule is a parameter of the *query*, carried in the output's
+>   provenance. This single uniform rule is what retires the study's per-source explosion asymmetry (its View-A
+>   caveat) when the production extractor is built.
+
+**In plain words.** Where a written voice carries chords rather than single notes, anything needing one line from it must name the rule that picks that line, and the rule travels with the answer as provenance. There is one rule in the first version: take the highest sounding pitch. It is applied the same way everywhere, which is what removes the uneven treatment the exploratory study had between its sources.
+
+**Why.** The record ties it to a measured problem in the study it inherits from: the study reduced differently per source, which is recorded as a caveat on its own results, and one uniform declared rule is what retires that asymmetry when the production extractor is built. Declaring the rule per request rather than fixing it globally also keeps it inspectable — the record's standing complaint against the alternative is that a silent reduction makes its effects invisible rather than absent.
+
+**Status.** LIVE · decided 2026-07-03 · ratified by the user
+
+**Home.** `cowork_voiceleading_axis_design.md:304-308`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-07-03 — asks A1–A8 ratified in full)` and, separately, that the top-note default is closed as-built. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-395 — Three named floors govern abstention, and the FIT floor is the one that lets a passage resembling NO known texture decline rather than be forced to its nearest
+
+> - **Honest marks — the three declared floors (named once here, used by these names everywhere):** the
+>   **evidential floor** (minimum motion-sample count for a profile to support a decision), the **margin floor**
+>   (minimum best-vs-second-best margin), and the **fit floor** (minimum absolute fit of the best class).
+>   Abstention (uniform semantics, contract U5) fires when the margin is below the margin floor **or** the best fit
+>   is below the fit floor — the second clause is what makes a span resembling *no* reference class abstain rather
+>   than be forced to its nearest class (a relative margin alone cannot deliver that).
+
+**In plain words.** The texture stage declines to answer under three named conditions: too few motion samples to support any decision, too small a lead of the best class over the second, or too poor an absolute fit of the best class. The third is the one that matters for music the taxonomy does not cover: without it, a passage unlike every known class would still be assigned to whichever class it least resembled, because a lead over the second-best says nothing about whether either fits.
+
+**Why.** The reason is stated with the rule and is a logical one rather than a measured one: a relative margin alone cannot deliver off-taxonomy abstention. The record also notes that the floor was added in response to an independent adversarial audit, as one of that audit's three high-severity findings — the abstention the design promised was not deliverable by the mechanism it specified until this floor existed.
+
+**Status.** LIVE · decided 2026-07-03 · ratified by the user
+
+**Home.** `cowork_voiceleading_axis_design.md:376-381`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. All three floor values are recorded as precision-phase constants, not fixed here. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-396 — The voice-leading dimension covers NOTATED music only, and its style coordinate is UNDEFINED — not zero — for sources that carry no voices
+
+> - **Coverage declaration (honest, structural).** The axis analyses **notated music only** — lead-sheet sources
+>   carry no voices, so the voice-leading coordinate of the 2-D style structure is simply *undefined* for them
+>   (undefined, not zero, in every consumer). This is a representational fact, not a corpus accident.
+
+**In plain words.** This dimension reads the lines a score writes, so a source that carries no lines at all, such as a lead sheet, has no voice-leading character to read. Every consumer must treat that coordinate as undefined rather than as zero, because a missing measurement is not a measurement of nothing.
+
+**Why.** The record grounds it as a property of the representation rather than of the corpora held: a lead sheet does not fail to have voices for want of a better encoding, it has none by what it is. The distinction between undefined and zero is what stops a downstream consumer from reading absence as a low score.
+
+**Status.** LIVE · decided 2026-07-03 · ratified by the user
+
+**Home.** `cowork_voiceleading_axis_design.md:502-504`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A6, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-397 — The homeless analysis objects are ASSIGNED to named owners on the voice-leading dimension — the stock patterns, the melodic phrase, chord voicing, and part-writing advice — as claims, discharged only at each owner's own ratified design
+
+> - **A7 — the claims registry:** VL-F claims the six voice-leading-defined Vocabulary entries; VL-E claims the
+>   melodic phrase [MT]; VL-G claims voicing/arrangement (the dictionary §5.3 exclusion); VL-H claims part-writing
+>   checking & suggestion (the advisory consumer, incl. the VL-B per-sample motion-event export that serves it).
+>   Recorded as claims with owners, discharged only at each component's own ratified design.
+
+**In plain words.** Four kinds of analysis object that previously had no owner are assigned here: the stock eighteenth-century patterns and the chromatic line cliché, which the chord dictionary already flags as belonging to this dimension; the melodic phrase; chord voicing and arrangement, which the dictionary explicitly excludes from its own scope; and checking and advising on part-writing. Each is recorded as a claim with an owner, not as work started, and the claim is settled only when that owner's own design is ratified.
+
+**Why.** The assignment is grounded in what defines each object: the stock patterns are defined primarily by a paired outer-voice scale-degree skeleton — that is, by voice leading — which the built chord catalogue already records with a voice-leading-defined flag on six entries, verified at that catalogue. The phrase assignment is the other side of a ruling already made on the harmonic side, where the grouping layer deliberately does not segment the melodic phrase.
+
+**Status.** LIVE · decided 2026-07-03 · ratified by the user
+
+**Home.** `cowork_voiceleading_axis_design.md:693-696`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A7, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-398 — Parallel motion is judged SEMITONE-EXACT, not by generic diatonic size — a same-direction move whose semitone interval changes counts as similar motion
+
+> 2. **The "parallel" interval-preservation convention** (semitone-exact vs generic-diatonic) — ✅ **CLOSED at build
+>    (AS-BUILT, 2026-07-03): SEMITONE-EXACT.** Verified at `voiceleading2.py` `_motion`: `parallel` iff both voices
+>    move the same direction AND `(pu1−pv1)==(pu0−pv0)` on signed MIDI pitches (a same-direction move whose semitone
+>    interval changes is `similar`). Replicated exactly in `voiceleadingprofiles.cpp classifyMotion` (oracle-tested).
+
+**In plain words.** Two lines count as moving in parallel only when they move the same way and the distance between them in semitones is unchanged. A pair moving the same way from a major third to a minor third is therefore similar motion, not parallel, even though both are thirds. The alternative — counting by the size of the interval as written on the staff, so that any third to any third is parallel — was the open question, and this is the answer.
+
+**Why.** Settled by replication rather than by choice: the convention was read off the exploratory study's own motion classifier at source and reproduced exactly in the production code, which is oracle-tested against it. Fixing it this way is what makes the production implementation reproduce the study's features, which the design requires of it.
+
+**Status.** LIVE · decided 2026-07-03 · ratifier not stated
+
+**Home.** `cowork_voiceleading_axis_design.md:632-635`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document records this as one of two build declarations the design owed and the build closed; the closure names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-399 — The texture feature space was decided BY MEASUREMENT among three named candidates — the standardized combination of both views won; the unstandardized combination was rejected before testing for a measured dilution
+
+> **★ AS-BUILT: the winner is the z-scored
+>   concatenation (ABz)** — measured by `run_vl_feature_space.py` (nearest-centroid reproduction of the ratified AB K=4
+>   partition, cap=80/source, seed 0): **ABz ARI 0.791 / accuracy 0.918**, two-stage 0.716, motion-only 0.258 (raw
+>   concatenation rejected a priori).
+
+**In plain words.** Which numbers the texture decision is made from was not chosen by argument. Three candidates were tested against one criterion: reproduce the classes the earlier study established. Putting both kinds of statistic together after standardizing them reproduced those classes best. Putting them together without standardizing was ruled out in advance, because the sixteen interval numbers would simply outvote the four motion numbers.
+
+**Why.** Measured, with the figures recorded: nearest-centroid classification in the standardized combined space reproduces the ratified four-class partition at an agreement index of 0.791 and an accuracy of 0.918, against 0.716 for the two-stage alternative and 0.258 for motion alone. The declared tolerance was met with margin, so no stop fired. The resulting reference set ships as generated code with its full provenance — the run, the corpus state, the number of classes, the seed and the library version — and is refit at corpus waves under the same protocol as the harmonic taxonomy.
+
+**Status.** LIVE · decided 2026-07-03 · ratifier not stated
+
+**Home.** `cowork_voiceleading_axis_design.md:368-371`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document records this as the second of two build declarations the design owed and the build closed, decided at build by measurement rather than at design time; the closure names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-400 — A PER-VOICE span kind is admitted to the span typology — melodic phrases overlap across voices by construction and tile only within one voice
+
+> - **A5 — the typology extension:** admit the **per-voice span kind** (phrase-spans: overlapping across voices by
+>   construction, tiling within one voice) into ARCHITECTURE §2.15 — needed before VL-E's design can be written
+>   against the typology.
+
+**In plain words.** Until now every kind of span the analysis produces cuts across all the music at once. The melodic phrase does not: in contrapuntal writing the voices' phrases run concurrently and out of step with one another, as a fugue's staggered entries do. So a per-voice kind of span is admitted to the catalogue of span kinds, which is what a phrase-segmentation design can then be written against.
+
+**Why.** Grounded in the musical fact it has to represent: phrases in contrapuntal textures are concurrent, overlapping and out of phase across voices, so they cannot be expressed as a partition of the music into successive stretches. The record also states what is deliberately not asserted — that consecutive phrases within one voice tile it exactly — because phrase elision makes a shared boundary note a real case, recorded as an open question for the segmentation design rather than assumed away.
+
+**Status.** LIVE · decided 2026-07-03 · ratified by the user
+
+**Home.** `cowork_voiceleading_axis_design.md:688-690`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A5, recorded ratified in full at the banner. The propagation into the architecture document's span typology is recorded as riding the build. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
 

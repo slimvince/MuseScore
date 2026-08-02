@@ -105,3 +105,266 @@
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md` (the jazz-corpus status block). It is the standing evidence behind [[OI-7]] (establish a jazz ground-truth corpus or de-scope the Jazz correctness claims) and behind the A-7 empirically-unvalidated mark. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).
 
+### D-359 — Discovering a new corpus counts as a CENSUS DEFECT — the fix is to enumerate its container to closure, never to ingest the one repository
+
+> **The standing process rule this census institutes:** from now on, *"a new corpus was discovered" is a census
+> defect* — the fix is to add its **container** to the table above and re-enumerate that container to closure, not to
+> ingest one repo and move on. **Re-sweep cadence: yearly** (new ISMIR proceedings + the `mirdata` loader list + the
+> `ismir/mir-datasets` index are the mechanical catch-alls), and at any Stage-5/6 corpus decision.
+
+**In plain words.** When a collection of music or of published analyses turns up that the census does not list, that is treated as a fault in the census rather than as good luck. The remedy is to add the whole container it came from — the organization, the meta-collection, the index — and walk that container to its end. Ingesting the single find and moving on is what produced the recurring pattern of rediscovery. The census is re-swept yearly against fixed indexes, and again at any corpus decision.
+
+**Why.** Diagnosed from the project's own history: every previous hunt was keyword-driven sampling — search, take the good hits, stop when the current question is answered — which finds exemplars and never closure. The census's opening section states that diagnosis, and the trigger case is named: the DCML Wagner overtures corpus, found only during the 2026-07-02 architecture review.
+
+**Status.** LIVE · decided 2026-07-02 · ratifier not stated
+
+**Home.** `cowork_score_census.md:30-33`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The document's banner records `Status: v1 DELIVERED (Cowork, 2026-07-02); for user disposition of the acquisition tiers (§5)` — the user disposition it names covers the acquisition tiers, not this rule. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-360 — A corpus enters the registry only with all five admission fields decided — annotation type, score alignment, format, licence class, decision tier
+
+> A source enters the registry only with all five fields decided: **(a) GT type** (RN / chords / key / cadence /
+> phrase / none); **(b) machine-readable score alignment** (symbolic score + annotation anchored to it — chords-only or
+> audio-aligned sets are research-tier at best); **(c) format** (parseable today vs converter needed); **(d) license
+> class** (PD/CC0/CC-BY committable; NC/unclear → hash-pin-only, the established mechanism); **(e) decision tier** (§5).
+
+**In plain words.** No collection is recorded as usable until five things are settled about it: what kind of published analysis it carries, if any; whether that analysis is anchored to a machine-readable score; whether the format can be read today or needs a converter; which licence class it falls in; and which decision tier it enters at. A collection whose annotations are not anchored to a score, or that is aligned only to audio, is research material at best.
+
+**Why.** The five fields are the ones the downstream decisions actually consume: the licence class is what the shipped-parameter constraint reads (**D-292**), the alignment field is what separates gradable material from research material, and the tier is what the acquisition instruction acts on. Sources whose licence is non-commercial or unclear are admitted hash-pinned only, which the census records as the established mechanism.
+
+**Status.** LIVE · decided 2026-07-02 · ratifier not stated
+
+**Home.** `cowork_score_census.md:67-70`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-361 — Corpora are de-duplicated by WORK, not by container — and a work in the regression corpus is excluded as reference data from every other container
+
+> The containers re-encode the same works (WiR↔DCML↔ChoCo; KernScores↔craigsapp↔music21↔MuseData; GigaMIDI absorbs
+> Lakh/MetaMIDI). **Dedupe by work, not by container** — the registry keys on (composer, work, movement), and a work
+> entering the gate corpus from one container is excluded as GT from every other (the M3 contamination lesson,
+> generalized).
+
+**In plain words.** The big collections re-publish each other's music, so counting collections double-counts the music. The registry is therefore keyed on composer, work and movement. And once a piece is in the corpus a change is graded against, that same piece may not be used as reference data from any other collection it also appears in.
+
+**Why.** The exclusion rule is the generalization of a failure the project already had: the census names it the M3 contamination lesson — the shared-directory failure mode in which one style setting's output was measured against another's. Contamination by re-encoding is the same failure arriving through a different door.
+
+**Status.** LIVE · decided 2026-07-02 · ratifier not stated
+
+**Home.** `cowork_score_census.md:74-77`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-362 — What the census may claim, stated exactly: closure over the enumerated containers, a citation-closure argument for gradable harmony reference data, and a BOUNDED claim for everything else
+
+> **What the census can prove:** closure **over the enumerated container classes** (§1). **The strong claim:**
+> gate-grade common-practice RN/harmony GT is **citation-closed** — the field is small and cross-citing, so every
+> serious GT corpus is used by a SOTA paper, aggregated by WiR/ChoCo, or indexed by mirdata/awesome-lists within ~a
+> year of release; a corpus outside all of those is almost certainly not gate-grade. **The bounded (not closed)
+> claim:** plain-score collections and peripheral/niche GT — the risk lives in **unknown containers** (Zenodo-only
+> deposits, national-library editions, non-English sources, brand-new releases), which no enumeration can prove absent.
+
+**In plain words.** The census proves only closure over the containers it lists. Its strong claim is narrower: published Roman-numeral and harmony reference data good enough to grade against is closed by citation, because the field is small and cross-citing, so any serious such corpus is used by a leading paper, absorbed into one of the two meta-collections, or listed in the standard indexes within about a year. Plain music collections and niche reference data get only a bounded claim: the risk sits in containers nobody has named, and no enumeration can prove those absent.
+
+**Why.** Stated as the answer to a user question of 2026-07-02, and written this way for a named reason recorded elsewhere in the register: `DEFECT_TYPES.md` DT-26, scope-assumed enumeration — a sweep complete inside its own file set reads as complete about the whole question unless its scope and remainder are said out loud.
+
+**Status.** LIVE · decided 2026-07-02 · ratifier not stated
+
+**Home.** `cowork_score_census.md:119-124`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-363 — Four named reasons license leaving a source un-enumerated — and non-Western symbolic music is closed by RULING, not by enumeration
+
+> **Why some sources are deliberately not fully enumerated:** (a) **unwalkable** (MuseScore.com ToS beyond PDMX; IMSLP
+> = PDF scans without a symbolic index) — cost exceeds value, content mostly non-machine-readable; (b) **mechanically
+> closable later** (craigsapp via `humdrum-tools/humdrum-data`; DLC piece counts at clone time) — closure rides the
+> acquisition instruction; (c) **snippet-verified rows** ([reported] marks) — a budget choice made visible, verified at
+> acquisition; (d) **out of analytical scope by decision** (non-Western symbolic sets — the tonal model class does not
+> cover them; review F-15) — closed by ruling, not enumeration.
+
+**In plain words.** Some sources are deliberately not walked to the end, and each has a stated reason: the source cannot be walked at all, or its content is not machine-readable; it can be closed mechanically later and that closure rides the acquisition step; a row was verified only from a search snippet, a budget choice made visible and settled when the source is acquired; or the material is outside what the analysis covers by decision. Non-Western symbolic music is in that last class: the tonal model does not cover it, so it is closed by ruling rather than by counting.
+
+**Why.** Each reason is tied to what it costs or to what already decides it: the unwalkable sources are ones where cost exceeds value and the content is mostly not machine-readable; the mechanically closable ones ride an acquisition step already scheduled; the snippet-verified rows are verified at the moment of acquisition; and the scope ruling on non-Western material cites the external architecture review's finding F-15.
+
+**Status.** LIVE · decided 2026-07-02 · ratifier not stated
+
+**Home.** `cowork_score_census.md:126-131`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-364 — Every new analysis purpose triggers its own corpus sweep BEFORE its design document is signed — having enumerated the container does not discharge the duty to ask the new question of it
+
+> **The standing trigger instituted (complements the yearly re-sweep + the wave triggers):** whenever a **new
+> analysis purpose** enters the project — a new axis, a new component with a GT need, a new lever class — a
+> **targeted, purpose-specific census sweep runs for that purpose** before its design doc is signed (the axis-2
+> §6b sweep is the founding precedent: three census-grade finds in one pass, two on corpora already held). The
+> sweep's finds enter via the census as always; "we already enumerated the container" does not discharge the duty
+> to ASK THE NEW QUESTION against it.
+
+**In plain words.** A census is only as complete as the list of questions it was asked with. So whenever a new purpose enters the project — a new analytical axis, a new component needing reference data, a new class of evidence — a search aimed at that purpose runs before that component's design is signed off. Already having walked a collection is not a reason to skip it: the new question must be put to it.
+
+**Why.** Diagnosed from the repeated pattern the user observed, with two mechanisms named: collections are walked lazily by design, so their contents surface only when a wave walks them; and enumeration done with one axis's questions in mind cannot see reference data for a purpose that did not yet exist. The founding precedent is recorded — the second axis's own sweep returned three census-grade finds in one pass, two of them on collections already held.
+
+**Status.** LIVE · decided 2026-07-03 · ratifier not stated
+
+**Home.** `cowork_score_census.md:166-171`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The section is headed as a user observation of 2026-07-03; the record says the trigger is instituted but does not name who instituted it. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-365 — A corpus search driven by the SUM of all needs is worth running, but it is step 3 of 3 — the needs list and the re-scoring of what is already enumerated come first
+
+> **The question that created this section:** is a corpus search useful that is NOT driven by one architectural
+> need — the "need" being the sum of all needs? **Answer: yes, but the search is step 3 of 3.** The sum of all
+> needs must first exist as an artifact, and once it does, re-scoring the EXISTING enumeration against it is
+> cheaper and likely higher-yield than new searching (the Wave-2 lesson: the finds were already inside enumerated
+> containers — the dismissals were purpose-relative, made with harmonic-axis eyes only).
+
+**In plain words.** Searching against everything the project needs at once is useful, but only after two cheaper steps. First the full list of needs has to exist as a written artifact. Then every collection already enumerated is re-scored against that list, without searching at all. Only what is still uncovered afterwards is searched for.
+
+**Why.** Measured by the second wave's own outcome: its finds were already inside collections the census had enumerated — what had missed them was that the earlier dismissals were purpose-relative, made with only the harmonic axis in mind. Re-scoring what is already listed is therefore both cheaper than searching and likelier to yield.
+
+**Status.** LIVE · decided 2026-07-03 · ratifier not stated
+
+**Home.** `cowork_score_census.md:189-193`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The section is headed as a user question of 2026-07-03; its first run is recorded EXECUTED and DISPOSED 2026-07-04, with the user's rulings at that disposition recorded in the same paragraph. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-367 — A corpus found FOR one need is scored against the WHOLE needs list at intake, and every annotation layer it carries is inventoried — never tagged to the purpose that found it
+
+> **The intake rule (user, 2026-07-03 — the converse of step 2):** a find made FOR one need is **scored against
+> the FULL needs-vector at intake**, never single-purpose-tagged. Three consequences, each binding:
+> 1. **Already-satisfied needs stay open to supersession** — a new find may serve a "passed" need better or
+>    cheaper than its current bed; the intake scoring records that even when no action follows.
+> 2. **Future/inactive needs get pre-coverage** — a find's coverage of a not-yet-active column is recorded at
+>    intake, so when that purpose's §8b sweep eventually runs it starts non-empty.
+> 3. **Every GT LAYER of a container is inventoried at intake, not just the layer that motivated the find** — the
+>    founding counter-example: the JHT entered for the harmonic idiom study and its hierarchical TREE annotations
+>    (a distinct GT layer, lever R-7's footing) went unrecorded until a different question was asked at it a week
+>    later. The registry's per-row needs-coverage note (audit step 2) is where the intake scoring lands.
+
+**In plain words.** When a collection is acquired for one purpose, it is assessed against every need the project has, not just that one. Three things follow and all bind: a need already considered covered stays open to being covered better or more cheaply; a need not yet active gets its coverage recorded now, so that when its own sweep runs it starts non-empty; and every distinct layer of annotation the collection carries is inventoried, not only the layer that motivated acquiring it.
+
+**Why.** The third consequence has a founding counter-example on the record: a jazz collection was acquired for a study of harmonic idiom, and its hierarchical tree annotations — a separate annotation layer, and the footing for a later analytical lever — went unrecorded until a different question was put to it a week later.
+
+**Status.** LIVE · decided 2026-07-03 · ratified by the user
+
+**Home.** `cowork_score_census.md:255-264`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The rule is recorded as the user's, 2026-07-03. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-368 — When new material bears on an already-settled conclusion, the rework question is settled by a recorded protocol — record, measure cheaply, then fork on whether it CONTRADICTS or merely enriches
+
+> **The supersession decision protocol (user, 2026-07-03 — what happens when a find serves an already-passed
+> need):** a "go back and rework now" vs "postpone" question is NEVER decided by enthusiasm or by default silence.
+> The protocol, reusing the project's standing shapes:
+> 1. **Record first:** the finding lands as an open item in the affected component's §15 (open items) + a STATUS
+>    plan line — it cannot get lost regardless of the decision.
+> 2. **Cheap impact measurement before any decision** (investigate-by-default): a read-only re-validation of the
+>    component's signed conclusions against the new material. The question it answers: does the new bed
+>    **contradict** a conclusion the design rests on, or merely **enrich/extend** the validation?
+> 3. **The fork, by measured outcome:**
+>    - **Contradiction (a premise-invalidation):** surfaced IMMEDIATELY as a tripwire event (the D5-test pattern) —
+>      the user decides rework-now vs accept-with-recorded-caveat; downstream work that builds on the invalidated
+>      conclusion is named in the surfacing (the compounding cost of waiting is part of the decision material).
+>    - **Enrichment only:** DEFAULT = postpone to the component's next natural touch (the §15 item carries it);
+>      pulling the rework forward is a user priority call, informed by the measurement.
+> 4. **The decision is the user's in both branches** — the protocol fixes what is measured and what is recorded,
+>    never the outcome. (This is the corpus-side analogue of the gate re-baseline discipline: evidence first,
+>    deliberate ratification second, nothing reopened by silence.)
+
+**In plain words.** If material turns up that bears on a question already considered closed, whether to go back and redo the work is never decided by enthusiasm or by saying nothing. The finding is recorded first, so it cannot be lost either way. Then a cheap read-only check asks one question: does the new material contradict a conclusion the design rests on, or does it only enrich the checking of it. A contradiction is surfaced at once as a tripwire, naming the later work that would compound, and the user decides between redoing it now and accepting it with the caveat recorded. Enrichment alone is postponed by default to the component's next natural touch. In both branches the decision is the user's; the protocol fixes only what gets measured and what gets written down.
+
+**Why.** The protocol is assembled from shapes the project already uses, and the record says so: it is the corpus-side analogue of the discipline for re-baselining a regression gate — evidence first, deliberate ratification second, nothing reopened by silence — and the contradiction branch reuses the existing tripwire pattern.
+
+**Status.** LIVE · decided 2026-07-03 · ratified by the user
+
+**Home.** `cowork_score_census.md:266-282`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The protocol is recorded as the user's, 2026-07-03. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-369 — The DCML figured-bass repository is a REALIZATION SCRIPT, not reference data — walked and recorded so it is never mistaken for reference data again
+
+> **DCMLab/figured-bass WALKED = a realization SCRIPT, N10-NEGATIVE** (never re-mistake it for GT).
+
+**In plain words.** A repository long listed as a possible source of figured-bass reference data was opened and read: it contains code that realizes a figured bass, not annotations to grade against. It is recorded as a confirmed negative so the mistake is not repeated. The real figured-bass reference data is the Bach chorale figured-bass set, and a third source is a column already present in the corpora held, which the reader currently drops.
+
+**Why.** Established by walking the repository, at the third corpus wave, 2026-07-04, provenance `cc_corpus_wave3_report.md`; the finding also promoted the row out of the residual-risk list into the enumerated containers. It is exclusion evidence in the sense principle #12 names: a ruled-out possibility recorded rather than dropped, because the exclusion is not recomputable from what is kept.
+
+**Status.** LIVE · decided 2026-07-04 · ratifier not stated
+
+**Home.** `cowork_score_census.md:216`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-370 — Reference data for implied polyphony does not exist and the negative is FINAL — the two candidate sets were never released
+
+> **implied-polyphony half CONFIRMED ABSENT** (VoiSe/Gray-Bunescu never released; final).
+
+**In plain words.** For music where a single line implies several voices, there is no published set of human annotations to grade against: the two datasets that would have provided it were never released. The negative is recorded as final, so the search is not repeated. The related but distinct case — music where the separate voices are actually written out — does have candidates, and three of them have been acquired.
+
+**Why.** Established by the union search of 2026-07-04, recorded in `cowork_union_search_record.md` §1, which separates the two halves of the need and reports the outcome of each. Recorded rather than dropped under principle #12: a confirmed absence is information, and it bounds what the voice-leading axis's own target task can be validated against.
+
+**Status.** LIVE · decided 2026-07-04 · ratifier not stated
+
+**Home.** `cowork_score_census.md:215`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-371 — No dataset pairs an ornament sign with its written-out realization — confirmed absent, so the ornament expansion ships rule-based and unvalidated, as predicted
+
+> **negative CONFIRMED** — no symbol→realization dataset exists; nearest = Batik-plays-Mozart (trill realizations recoverable by heuristic, unlabeled; ★ multi-need: also carries harmony+cadence GT on 12 Mozart sonatas); R-1 ships rule-based/unvalidated as predicted; build-paths recorded
+
+**In plain words.** Nothing published pairs an ornament as notated with the notes a performer would actually play, so there is no way to grade an ornament expansion against human reference data. The nearest thing is a performance corpus from which trills could be recovered by rule, unlabelled. The consequence is accepted and was predicted in advance: the ornament expansion ships as rules, unvalidated, and the routes by which such a dataset could be built are recorded.
+
+**Why.** Established by the union search of 2026-07-04, recorded in `cowork_union_search_record.md` §2. The record notes that the nearest source is multi-purpose — it also carries harmony and cadence reference data over twelve Mozart sonatas — which is the intake rule (**D-367**) working as written.
+
+**Status.** LIVE · decided 2026-07-04 · ratifier not stated
+
+**Home.** `cowork_score_census.md:219`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-372 — Marked part-writing errors must be BUILT, not downloaded — no public dataset exists and the two commercial holders keep theirs closed
+
+> **no public dataset exists — CONFIRMED build-not-download** (Harmonia/Artusi hold it commercially closed). Validation seeds found: the Dahn manuscript-checked 46 consecutive-5th/8ve instances in the Bach chorales + Fitsioris-Conklin 18 (real-music positives, small transcription job) + the synthetic-violation route. Construction owned by VL-H's design gate
+
+**In plain words.** There is no public collection of part-writing exercises with the mistakes marked, and the two teaching products that hold such material keep it closed. Building one is therefore the only route, and that construction belongs to the design step of the component that needs it. Seeds for validating it were found: a manuscript-checked list of consecutive fifths and octaves in the Bach chorales, a small second list of real-music instances, and the route of generating violations deliberately.
+
+**Why.** Established by the union search of 2026-07-04, recorded in `cowork_union_search_record.md` §5, which names the two commercial holders and the three validation seeds. The need itself was adopted by the user on 2026-07-04 at the full-needs audit's disposition.
+
+**Status.** LIVE · decided 2026-07-04 · ratifier not stated
+
+**Home.** `cowork_score_census.md:225`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The user's act recorded on this row is the ADOPTION of the need (2026-07-04); the build-not-download conclusion is a measured search outcome and names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-373 — The only dual-annotator reference data actually on disk is the 27 TAVERN A/B pairs — the assumed second source was measured to have ZERO overlap
+
+> the on-disk co-located dual set = **the 27 TAVERN A/B pairs** (Beethoven 17 + Mozart 10, verified at the WiR clone AND by Cowork glob). The audit's "Tymoczko-vs-DCML pairs" are NOT co-located: within WiR the two analyst sets sit on disjoint pieces (overlap **0**; DCML 988 / Tymoczko 419 analyses); CROSS-container pairs (WiR-Tymoczko × the separate `tools/dcml/` DCML corpora) remain possible but need identity work — recorded, not assumed.
+
+**In plain words.** Calibrating how far human analysts disagree needs two independent analyses of the same music. Only one such set is actually held: twenty-seven pieces analysed twice. The other source that had been assumed to provide it does not: inside the meta-collection the two analysts' sets sit on entirely different pieces, with no overlap at all. Pairing across separate collections might still be possible, but that would need identity work first, and it is recorded as a possibility rather than assumed.
+
+**Why.** Measured at the third corpus wave, 2026-07-04, and verified twice independently — at the checked-out copy and by a second glob. The correction matters because it bounds what the confidence-calibration work can be fitted on, and because principle #21 makes the accuracy of reference data itself a measured quantity rather than an assumption.
+
+**Status.** LIVE · decided 2026-07-04 · ratifier not stated
+
+**Home.** `cowork_score_census.md:208`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The cell marks it `(Wave-3 MEASURED, corrects the audit)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-374 — The flexible multi-reading chorale annotations are RECORD-ONLY — they overlap the regression repertoire, so any use over those pieces is a future user ruling
+
+> ⚠ **RECORD-ONLY** (its 371 Bach chorales overlap the gate repertoire; any use over gate pieces is a future user ruling — census §4 dedupe)
+
+**In plain words.** A second set of human analyses over Bach chorales was found, one that records several valid readings per moment rather than a single one. Most of its chorales are the same pieces the analysis is graded against, so using it over those pieces would be exactly the contamination the de-duplication rule forbids. It is recorded and pinned but not used, and putting it to work over those pieces is a decision reserved for the user.
+
+**Why.** The restriction follows directly from the registered de-duplication rule (**D-361**): a work already in the corpus a change is graded against is excluded as reference data from every other container it appears in. The record also carries the walk's own caveat — the analyses ship as a package binary, with only the scores in plain notation.
+
+**Status.** LIVE · decided 2026-07-04 · ratifier not stated
+
+**Home.** `cowork_score_census.md:208`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL, in the Wave-3 addendum text of the dual-annotator row. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+

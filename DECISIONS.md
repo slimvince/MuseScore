@@ -109,26 +109,26 @@ project's own and are defined here because they are used before any entry explai
 
 ## What is in this register, counted
 
-**358 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
+**400 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
 
 | | Count |
 |---|---|
-| Decisions recorded | **358** |
-| — of which live | 303 |
+| Decisions recorded | **400** |
+| — of which live | 343 |
 | — of which superseded in fact | 5 |
 | — of which superseded by | 9 |
-| — of which deferred | 40 |
-| — of which shelved with evidence | 1 |
+| — of which deferred | 41 |
+| — of which shelved with evidence | 2 |
 | Decisions whose date is not stated in the record | 198 |
-| Decisions whose ratifier is not stated in the record | 214 |
-| Decisions recorded outside the specification that owns them | 167 |
-| — of which a documentation gap | 70 |
+| Decisions whose ratifier is not stated in the record | 241 |
+| Decisions recorded outside the specification that owns them | 209 |
+| — of which a documentation gap | 112 |
 | — of which recorded only on a tracking surface, with no home at all | 27 |
 | — of which a project-wide convention, correctly homed | 34 |
 | — of which a decision about the process, correctly homed | 36 |
 | Decisions whose defense the record does not state | 45 |
 
-That last row is the one meant to fall. **313 of 358** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
+That last row is the one meant to fall. **355 of 400** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
 
 Alongside the register, every one of the harvested statements about decisions in this repository has been given a recorded disposition, so that none was silently passed over:
 
@@ -181,6 +181,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-274 | The reverse map - if the new estimator is not adopted it is removed whole, and the retirement map is void | LIVE | `cowork_prefit_gates.md` ⚠gap |
 | D-283 | Meta-finding: never learn keys, the lever is keychain structure - superseded by the joint estimator and the forms-from-theory rule | SUPERSEDED BY D-001 and D-096 | `cowork_architecture_reassessment.md` ⚠gap |
 | D-285 | Meta-finding: embellishment is chord-first, never a richer vocabulary - absorbed by the emission design and the ornament-label increment | SUPERSEDED BY the ratified factorization emission design (D-004 and the OI-194 increment) | `cowork_architecture_reassessment.md` ⚠gap |
+| D-376 | The joint key-and-chord step was designed as a BOUNDED COUPLING over the two existing decoders, and the unified single-state alternative was REJECTED — the option later adopted as the production architecture | SHELVED WITH EVIDENCE | `cowork_joint_key_chord_design.md` ⚠gap |
+| D-379 | Whether an alternative tonality would change the chord CANNOT be measured without re-deciding under it — the exact coupled-case condition is not computable read-only, which is why it stayed unmeasured | LIVE | `cowork_joint_key_chord_design.md` ⚠gap |
 
 ## B. The notation output surface and the record path — [full entries](decisions/group_B.md)
 
@@ -249,6 +251,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-297 | Correction of record: never computing a possibility is not information loss; only discarding a computed one is | LIVE | `cowork_handoff_archive.md` ⚠tracking-surface-only |
 | D-313 | A confidence map is monotone or it is not fitted — a non-monotone curve is an upstream finding, not a mapping target | LIVE | `cowork_stage5_fitter_design.md` ⚠gap |
 | D-339 | A confident earlier decision can be overturned by decisive later evidence, through ONE confidence-weighted forward-recompute mechanism — architecture-wide | LIVE | `cowork_layer5_function_design.md` ⚠gap |
+| D-377 | The forbidden back-edge, stated concretely: a chord decision may NOT write into the committed tonality and re-run the tonality decode — a coupled decision is OWNED by its own bounded box, never patched backward | LIVE | `cowork_joint_key_chord_design.md` ⚠gap |
 
 ## D. Layer 1 — the note model — [full entries](decisions/group_D.md)
 
@@ -362,6 +365,11 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-332 | A carried alternative's added notes are marked UNKNOWN rather than asserted absent — never synthesized | LIVE | `cowork_layer4_chordsymbol_design.md` ⚠gap |
 | D-333 | The membership tie-break's direction is an idiom-calibrated number, never a branch on style — the three-tier structure is fixed | LIVE | `cowork_layer4_chordsymbol_design.md` ⚠gap |
 | D-334 | The bare-fifth chord type stays in the catalogue structurally; whether it wins is an idiom-calibrated number | LIVE | `cowork_layer4_chordsymbol_design.md` ⚠gap |
+| D-378 | Re-deciding a chord under a different tonality is well-defined ONLY on the decoder path — the legacy multi-pass emission cannot be faithfully re-decoded, and a naive re-emit injects a measured ~6 % same-tonality root-flip artifact | LIVE | `cowork_joint_key_chord_design.md` ⚠gap |
+| D-380 | The carry's meaningful axis is DISTINCT ROOTS, and every above-threshold root is carried at graded confidence — a carry of winner-plus-one discards the third root on about a quarter of slices | LIVE | `cowork_layer5_engagement_design.md` ⚠gap |
+| D-381 | The carry must cap on DISTINCT ROOTS, not on voicings — the existing voicing-keyed cap gives no structural guarantee that a third root survives | DEFERRED | `cowork_layer5_engagement_design.md` ⚠gap |
+| D-385 | Pedal-point detection's home is DECIDED: a reader over the chord layer's carry that annotates a carried reading — never a second analysis that overwrites the winner | LIVE | `cowork_layer5_engagement_design.md` ⚠gap |
+| D-386 | No fourth hand-rolled scan for the best different-root alternative — the pedal reader consumes the carry's own ranking, or the one unified primitive | LIVE | `cowork_layer5_engagement_design.md` ⚠gap |
 
 ## H. Layer 5 and Layer 6 — function, cadence, grouping — [full entries](decisions/group_H.md)
 
@@ -383,6 +391,23 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-340 | The reading the function layer emits IS the selected source's committed identity, carried whole — never rebuilt field by field | LIVE | `cowork_layer5_function_design.md` ⚠gap |
 | D-341 | The licensed root-motion set is completed by theory — the ascending fifth, the descending second and the diatonic diminished fifth are added | LIVE | `cowork_layer5_function_design.md` ⚠gap |
 | D-342 | Putting the function layer into production is DEFERRED INDEFINITELY — the posture is a dormant build with ground-truth validation | DEFERRED · derivation not recorded | `cowork_layer5_function_design.md` ⚠gap |
+| D-382 | The function layer selects by JOINT CONSISTENCY across tonality, root, inversion and bass — not by maximizing any one score — and every ambiguity kind reasons over the full carried distribution | LIVE | `cowork_layer5_engagement_design.md` ⚠gap |
+| D-383 | Bass, spelling and tonality-consistency DECIDE; a licensed progression is only a tie-break among already-consistent readings and may never override a committed root | LIVE | `cowork_layer5_engagement_design.md` ⚠gap |
+| D-384 | Re-ranking the tonality under chord evidence is a SEPARATE step, never part of the function layer's selection — the function layer reasons inside a tonality already fixed | LIVE | `cowork_layer5_engagement_design.md` ⚠gap |
+| D-387 | A contradiction between the function context and a committed chord is surfaced on the ONE open mark, enriched with a reason — not on a second parallel flag, and not by overloading the plain undecided mark | LIVE | `cowork_layer5_engagement_design.md` ⚠gap |
+| D-388 | Texture is read primarily from HOW VOICES MOVE TOGETHER, not from how far each line leaps — the interval-led alternative was measured weaker and partly an encoding artifact | LIVE | `cowork_voiceleading_axis_design.md` ⚠gap |
+| D-389 | A notated voice is a FACT and an inferred perceptual line is a JUDGMENT — the two are separate types and are never conflated | LIVE | `cowork_voiceleading_axis_design.md` ⚠gap |
+| D-390 | The first version classifies the WHOLE selection as one texture — classifying within a piece is deferred behind a measurement, because the evidence is per-piece | LIVE | `cowork_voiceleading_axis_design.md` ⚠gap |
+| D-391 | Reads between the two analysis dimensions are admissible only where the combined dependency graph stays acyclic — harmonic layers may take voice-leading FACTS freely; a voice-leading component may take a committed harmonic result only if nothing that result depends on consumes it back | LIVE | `cowork_voiceleading_axis_design.md` ⚠gap |
+| D-392 | The later voice-leading components are CLAIMS WITH OWNERS, not builds — each clears its own design document and its own evidence before any instruction exists | LIVE | `cowork_voiceleading_axis_design.md` ⚠gap |
+| D-393 | Every voice-leading inference publishes the committed answer AND the FULL ranked list of all alternatives with their weights — nothing below the top is discarded | LIVE | `cowork_voiceleading_axis_design.md` ⚠gap |
+| D-394 | Reducing a chord-bearing voice to one line is a DECLARED parameter of the request, uniform across sources — never silent, never chosen per source; the first version offers exactly one rule | LIVE | `cowork_voiceleading_axis_design.md` ⚠gap |
+| D-395 | Three named floors govern abstention, and the FIT floor is the one that lets a passage resembling NO known texture decline rather than be forced to its nearest | LIVE | `cowork_voiceleading_axis_design.md` ⚠gap |
+| D-396 | The voice-leading dimension covers NOTATED music only, and its style coordinate is UNDEFINED — not zero — for sources that carry no voices | LIVE | `cowork_voiceleading_axis_design.md` ⚠gap |
+| D-397 | The homeless analysis objects are ASSIGNED to named owners on the voice-leading dimension — the stock patterns, the melodic phrase, chord voicing, and part-writing advice — as claims, discharged only at each owner's own ratified design | LIVE | `cowork_voiceleading_axis_design.md` ⚠gap |
+| D-398 | Parallel motion is judged SEMITONE-EXACT, not by generic diatonic size — a same-direction move whose semitone interval changes counts as similar motion | LIVE | `cowork_voiceleading_axis_design.md` ⚠gap |
+| D-399 | The texture feature space was decided BY MEASUREMENT among three named candidates — the standardized combination of both views won; the unstandardized combination was rejected before testing for a measured dilution | LIVE | `cowork_voiceleading_axis_design.md` ⚠gap |
+| D-400 | A PER-VOICE span kind is admitted to the span typology — melodic phrases overlap across voices by construction and tile only within one voice | LIVE | `cowork_voiceleading_axis_design.md` ⚠gap |
 
 ## I. Module boundaries and code structure — [full entries](decisions/group_I.md)
 
@@ -462,6 +487,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-126 | One coherent piece of functionality per pull request | LIVE | `ARCHITECTURE.md` |
 | D-292 | The fitting-pool licence constraint - values that ship are fitted only on freely-licensed music | LIVE | `cowork_handoff_archive.md` ⚠tracking-surface-only |
 | D-315 | A one-line fix was made to MuseScore's own chord-symbol parser and is live in the fork | LIVE | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
+| D-375 | Every real source of difficulty labels is research-only or proprietary — a difficulty-grading feature needs a licence path before it can be sold | LIVE | `cowork_score_census.md` ⚠gap |
 
 ## M. The style system and the knowledge base — [full entries](decisions/group_M.md)
 
@@ -507,6 +533,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-245 | Voice role comes from staff position or explicit assignment; automatic melody detection is deferred | DEFERRED | `ARCHITECTURE.md` |
 | D-246 | Fixed-pitch instruments are deferred, and will never receive tuning offsets | DEFERRED | `ARCHITECTURE.md` |
 | D-247 | An anchor note stays at 12-TET, is never split, and is excluded from drift and centering | LIVE | `ARCHITECTURE.md` |
+| D-366 | Recorded-performance intonation material is OUT of corpus scope — the intonation features are validated by theory and by listening | LIVE | `cowork_score_census.md` ⚠gap |
 
 ## P. The user interface, persistence, and machine-learning readiness — [full entries](decisions/group_P.md)
 
@@ -531,6 +558,21 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-308 | A newly acquired corpus enters as research material; the frozen regression corpus stays the gate until a deliberate re-baseline | LIVE | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
 | D-309 | A corpus the analysis handles badly stays on the roadmap marked deferred; it is more valuable than one that confirms what already works | LIVE | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
 | D-310 | Jazz accuracy is not measurable on the corpora held: the low agreement is missing bass and piano voicings, not a scoring failure | LIVE | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
+| D-359 | Discovering a new corpus counts as a CENSUS DEFECT — the fix is to enumerate its container to closure, never to ingest the one repository | LIVE | `cowork_score_census.md` ⚠gap |
+| D-360 | A corpus enters the registry only with all five admission fields decided — annotation type, score alignment, format, licence class, decision tier | LIVE | `cowork_score_census.md` ⚠gap |
+| D-361 | Corpora are de-duplicated by WORK, not by container — and a work in the regression corpus is excluded as reference data from every other container | LIVE | `cowork_score_census.md` ⚠gap |
+| D-362 | What the census may claim, stated exactly: closure over the enumerated containers, a citation-closure argument for gradable harmony reference data, and a BOUNDED claim for everything else | LIVE | `cowork_score_census.md` ⚠gap |
+| D-363 | Four named reasons license leaving a source un-enumerated — and non-Western symbolic music is closed by RULING, not by enumeration | LIVE | `cowork_score_census.md` ⚠gap |
+| D-364 | Every new analysis purpose triggers its own corpus sweep BEFORE its design document is signed — having enumerated the container does not discharge the duty to ask the new question of it | LIVE | `cowork_score_census.md` ⚠gap |
+| D-365 | A corpus search driven by the SUM of all needs is worth running, but it is step 3 of 3 — the needs list and the re-scoring of what is already enumerated come first | LIVE | `cowork_score_census.md` ⚠gap |
+| D-367 | A corpus found FOR one need is scored against the WHOLE needs list at intake, and every annotation layer it carries is inventoried — never tagged to the purpose that found it | LIVE | `cowork_score_census.md` ⚠gap |
+| D-368 | When new material bears on an already-settled conclusion, the rework question is settled by a recorded protocol — record, measure cheaply, then fork on whether it CONTRADICTS or merely enriches | LIVE | `cowork_score_census.md` ⚠gap |
+| D-369 | The DCML figured-bass repository is a REALIZATION SCRIPT, not reference data — walked and recorded so it is never mistaken for reference data again | LIVE | `cowork_score_census.md` ⚠gap |
+| D-370 | Reference data for implied polyphony does not exist and the negative is FINAL — the two candidate sets were never released | LIVE | `cowork_score_census.md` ⚠gap |
+| D-371 | No dataset pairs an ornament sign with its written-out realization — confirmed absent, so the ornament expansion ships rule-based and unvalidated, as predicted | LIVE | `cowork_score_census.md` ⚠gap |
+| D-372 | Marked part-writing errors must be BUILT, not downloaded — no public dataset exists and the two commercial holders keep theirs closed | LIVE | `cowork_score_census.md` ⚠gap |
+| D-373 | The only dual-annotator reference data actually on disk is the 27 TAVERN A/B pairs — the assumed second source was measured to have ZERO overlap | LIVE | `cowork_score_census.md` ⚠gap |
+| D-374 | The flexible multi-reading chorale annotations are RECORD-ONLY — they overlap the regression repertoire, so any use over those pieces is a future user ruling | LIVE | `cowork_score_census.md` ⚠gap |
 
 ## S. The guiding principles — [full entries](decisions/group_S.md)
 

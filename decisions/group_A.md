@@ -332,3 +332,56 @@
 
 **Provenance.** Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommendations adopted): SUPERSEDED BY the named later ratified decisions — the governing status derives from the record's dates and explicitness, not from resolving the original statement's ambiguity. The second-partition read of the archives is instructed to flag anything refining these.
 
+### D-376 — The joint key-and-chord step was designed as a BOUNDED COUPLING over the two existing decoders, and the unified single-state alternative was REJECTED — the option later adopted as the production architecture
+
+> **Decision: (B) — a bounded coupling step.** Grounded, not by preference but by three binding constraints:
+>
+> 1. **#7 (adhere to layers) + #6 (no duplication).** L3 (`key/keymodesequence`) and L4 (`chord/chordslicedecoder`)
+>    are **built as separate layers, each with its own decoder, carry, and confidence** `[code]`. Option (A)
+>    discards both built decoders and re-lays the pipeline into one joint-state decoder — a rebuild of what is
+>    built (#6 violation) and a re-layering (#7 violation). Raphael & Stoddard's single state is a *modeling*
+>    choice `[research]` §3; the **recurring recipe** the literature actually prescribes (a **beam of (key, chord)
+>    hypotheses** + a **key-transition prior** + the **chord re-decoded under alternative keys**, `[research]` §3)
+>    is realizable in *either* factoring. We pick the factoring that fits the built layers — the bounded coupling
+>    over the two existing decoders.
+> 2. **Magnitude realism `[research]` §3.** The joint win is **qualitative, concentrated on the hard/coupled
+>    cases** (the ~13.5% coupled core `[data]`; low single-digit points elsewhere). Collapsing the whole pipeline
+>    into a joint state to serve a minority is disproportionate. A bounded coupling that **fires only on the
+>    coupled minority** (the C3 trigger, §3) and is a **pass-through on the ~86.5% majority** is the proportionate
+>    realization — and it keeps the majority path byte-identical (a #12 property: no information moved where no
+>    coupling exists).
+> 3. **The acyclicity / forward-only control-flow contract (§8 / §9-D7; L5 engagement §4.1 `[code]`).** The
+>    architecture forbids a back-edge L3←L4; the only cross-layer recompute is the §8 **localized,
+>    convergence-bounded, one-pass-closure** mechanism. Option (A) would not violate acyclicity (it has no
+>    layers to cycle between), but (B) must be designed to respect it — and it does (§1.3).
+
+**In plain words.** When the coupling of tonality and chord was designed, two shapes were on the table: one decision over a single combined state holding tonic, mode and chord together, or the two existing stages kept apart with a bounded coupling between them. The bounded coupling was chosen, for three stated reasons: the two stages are already built as separate decoders and the combined state would discard both and re-lay the pipeline; the gain is concentrated on a small hard minority, so re-laying the whole pipeline to serve it is disproportionate; and the coupling can be built forward-only, respecting the rule against a later stage reaching back into an earlier one. The step was afterwards shelved against measurement, and the option rejected here is the shape the production engine now has.
+
+**Why.** Three constraints are given as the defense, and the record distinguishes them from preference: principles #6 and #7 (the combined state discards two built decoders and re-lays the pipeline); magnitude realism, citing the research grounding and the measured coupled minority of about 13.5 % of stretches, against which collapsing the whole pipeline is disproportionate; and the forward-only control-flow contract. The record also states what the published literature does and does not settle: the single combined state is a modeling choice, while the recipe the literature actually prescribes — a beam of tonality-and-chord hypotheses, a tonality-transition prior, and the chord re-decoded under alternative tonalities — is realizable in either factoring.
+
+**Status.** SHELVED WITH EVIDENCE · decided 2026-07-07 · ratified by the user
+
+**Home.** `cowork_joint_key_chord_design.md:77-96`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step this decision places was shelved against measurement and that shelving is register entry **D-278** (user-ratified 2026-07-07, re-ratified 2026-08-02), so the placement is shelved with it; the document's own banner says it is retained as the record and that the step is off the build inventory. **Reported, not statused as a supersession:** the option this decision REJECTED — one decision over a combined tonality-and-chord state — is what **D-001** later adopts as the production architecture, and no record connects the two; the user ruled at D-278's ratification that the shelving does not bear on D-001, and the two objections raised here are answered elsewhere in the record (the decision-neutrality corollary answers the rebuild objection; the adoption measurement answers the magnitude objection). NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-379 — Whether an alternative tonality would change the chord CANNOT be measured without re-deciding under it — the exact coupled-case condition is not computable read-only, which is why it stayed unmeasured
+
+> **(b) — the chord actually flips — computed BY the step's own per-key re-decode (§2.2).** This is the exact
+>   condition, and it is **not pre-computable read-only** — you can only know the winner flips under a carried key
+>   by *re-decoding under it*. This is precisely why C3 was found "un-computable read-only"
+>   (`cc_engage_c3_measurement_report.md` §2.3): (b) IS the owed build. In the engaged step it is computed on the
+>   pre-filtered (a)∧(a′) candidate set, and the step **commits a coupled (re-ranked) decision only where (b)
+>   holds** (the winner root differs across the carried keys); where (b) is false the re-decode agrees with the
+>   L3-argmax decode and the step passes through.
+
+**In plain words.** The population that a tonality-and-chord coupling would actually help is the set of places where naming a different tonality would change the chord. There is no way to identify that set by inspection: the only way to know the chord changes under an alternative tonality is to re-decide it under that tonality. So the exact condition cannot be measured before the re-decision exists, and every figure quoted for it before then is a structural stand-in, not the quantity itself.
+
+**Why.** Established by the attempt: the measurement report that went looking for this population found it computable nowhere, and the record names that finding as the reason. The consequence is designed around rather than assumed away — a cheap two-stage filter narrows the candidates first, the exact condition is computed only on those, and the coupled decision is committed only where it holds.
+
+**Status.** LIVE · decided 2026-07-07 · ratifier not stated
+
+**Home.** `cowork_joint_key_chord_design.md:266-272`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step the document designs is shelved (**D-278**); this statement is about what is and is not measurable, and stands independently of it — the same document records the shelving probe's own fire-rate as a structural proxy rather than the exact condition. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+

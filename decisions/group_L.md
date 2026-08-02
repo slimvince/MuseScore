@@ -212,3 +212,17 @@
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md`. VERIFIED AT THE OBJECTS 2026-08-02: commit `b1ba746` deletes exactly that one line from `src/engraving/dom/chordlist.cpp`, only an upstream header-update commit has touched the file since, and the line is absent at HEAD. This is a THIRD edit to MuseScore's own code beside **D-198** and **D-199**, and it is not in `CLAUDE.md`'s “Local patches — do not revert” section, which carries exactly two subsections; the non-conformance against the ruled **D-229** is rowed at [[OI-273]]. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).
 
+### D-375 — Every real source of difficulty labels is research-only or proprietary — a difficulty-grading feature needs a licence path before it can be sold
+
+> **T-32 caveat: all real label sources research-only/proprietary — commercial use needs a license path.**
+
+**In plain words.** For rating how hard a piece is to play, every collection that carries real labels is either restricted to research or is commercial property; no machine-readable dump from the examination boards or the standard publisher grading exists. So the feature can be built and studied, but shipping it commercially needs a licence arranged first.
+
+**Why.** Established by the union search of 2026-07-04, recorded in `cowork_union_search_record.md` §3, which enumerates the four candidate sources and the restriction on each. The caveat is the harder sibling of the shipped-parameter licence constraint (**D-292**): there the freely-licensed pool exists and merely has to be declared; here no commercially usable label source exists at all.
+
+**Status.** LIVE · decided 2026-07-04 · ratifier not stated
+
+**Home.** `cowork_score_census.md:220`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+

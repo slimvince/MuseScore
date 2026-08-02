@@ -257,3 +257,17 @@
 
 **Provenance.** ARCHITECTURE.md:5322-5334; the FreeDrift behaviour is restated at :5448-5453 ★ RATIFIED-FOR-NOW (user, 2026-08-02): to be REVIEWED when the intonation feature's implementation is revisited (the OI-62 held feature).
 
+### D-366 — Recorded-performance intonation material is OUT of corpus scope — the intonation features are validated by theory and by listening
+
+> | N15 | performed-intonation reference material | T-21/T-24 | **★ SCOPE RULING RATIFIED (user, 2026-07-04):** audio-domain, out of corpus scope; T-21/T-24 validate by theory/listening |
+
+**In plain words.** Reference material for how performers actually tune is audio, not notation, and is ruled outside what the corpus collection covers. The two intonation features that would have consumed it are validated instead against tuning theory and by ear.
+
+**Why.** derivation not recorded — the record states the ruling and its consequence but gives no reason beyond the material being audio-domain.
+
+**Status.** LIVE · decided 2026-07-04 · ratified by the user
+
+**Home.** `cowork_score_census.md:221`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The cell records `★ SCOPE RULING RATIFIED (user, 2026-07-04)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+

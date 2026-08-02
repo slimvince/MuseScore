@@ -1985,7 +1985,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "ARCHITECTURE.md:896-899 records the foundation BUILT (dormant). ARCHITECTURE.md:1415-1415 still says the voice-leading layer is 'not built' - see OPEN_ITEMS OI-232",
+      "status_source": "ARCHITECTURE.md:896-899 records the foundation BUILT (dormant). ARCHITECTURE.md:1415-1415 still says the voice-leading layer is 'not built' - see OPEN_ITEMS OI-232 ★ 2026-08-02 (the phase-1h continuation wave): the recorded defense is FILLED from `cowork_voiceleading_axis_design.md` section 9 decision D1 and section 1, read IN FULL — the entry previously read 'derivation not recorded'. Written from the document, not from memory.",
       "patterns": [
         "voice-leading axis",
         "voiceleading_axis",
@@ -1994,7 +1994,7 @@
         "cross-ARI",
         "texture classification"
       ],
-      "rationale": null
+      "rationale": "Argued in the axis's own design document against the three co-equal admission gates the architecture requires of any new axis (`cowork_voiceleading_axis_design.md:510-518`, decision D1). (1) Separation of concerns: linear structure is a distinct responsibility no harmonic layer may absorb, and the grouping layer's own specification excludes it explicitly. (2) Verifiability: the motion and interval statistics are facts, an oracle by construction; the texture classification validates under the discovery protocol; stream separation validates against the notated voices. (3) Proportionality: the axis buys a second style coordinate MEASURED orthogonal to the harmonic one — cross-agreement 0.030 over 1,283 dual-view pieces — plus an owner for the melodic phrase, the galant patterns and chord voicing, which are otherwise homeless, and the evidence base for the non-chord-tone lever the dormant full-spine measurement sized at about 45 % of the exact-match ceiling. The alternative weighed and rejected: folding the motion features into the harmonic spine's half-tier as another derived view, which would leave the judgment components (texture, phrases) with no home and mix this axis's concerns into that tier."
     },
     {
       "id": "D-086",
@@ -6837,7 +6837,7 @@
       "home": "docs/redesign_plan.md:423-424",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "Do not retry any Phase D tone-aggregation approach"
       ]
@@ -6857,7 +6857,7 @@
       "home": "docs/redesign_plan.md:555-561",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "Do not retry the absent-root guard"
       ]
@@ -6877,7 +6877,7 @@
       "home": "docs/scoring_model.md:201-214",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "there is no\\s+epsilon anywhere in the ranking"
       ]
@@ -6897,7 +6897,7 @@
       "home": "docs/scoring_model.md:222-227",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "requires a full corpus A/B on both presets"
       ]
@@ -6917,7 +6917,7 @@
       "home": "docs/scoring_model.md:292-296",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "Do not reintroduce `keyTonicPc \\+ scale` for a membership test"
       ]
@@ -6937,7 +6937,7 @@
       "home": "docs/scoring_model.md:827-828",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "Retirement is global, so a rule live on ANY carrier is retained"
       ]
@@ -6957,7 +6957,7 @@
       "home": "docs/decoder_design.md:675-678",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/decoder_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/decoder_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "identity-mutating gates are\\s+retired/folded BEFORE the beam widens"
       ]
@@ -6977,7 +6977,7 @@
       "home": "docs/decoder_design.md:694-695",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/decoder_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/decoder_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "emit the full path \\+ per-node alternatives"
       ]
@@ -6997,7 +6997,7 @@
       "home": "docs/decoder_design.md:408-416",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/decoder_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/decoder_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "Gate R reads the \\*\\*pipeline-reconstructed full"
       ]
@@ -7017,7 +7017,7 @@
       "home": "docs/decoder_design.md:558-563",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/decoder_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/decoder_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "the transient\\s+is not low-scoring"
       ]
@@ -7037,7 +7037,7 @@
       "home": "cowork_layer4_chordsymbol_design.md:208-212",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "[Cc]ompleteness is the priority",
         "a chord never listed can never be chosen"
@@ -7058,7 +7058,7 @@
       "home": "cowork_layer4_chordsymbol_design.md:394-398",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "Never a pooled recompute"
       ]
@@ -7078,7 +7078,7 @@
       "home": "cowork_layer4_chordsymbol_design.md:576-579",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "filled before the trichotomy and never pruned"
       ]
@@ -7098,7 +7098,7 @@
       "home": "cowork_layer4_chordsymbol_design.md:366-368",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "never asserted absent, and never synthesized"
       ]
@@ -7118,7 +7118,7 @@
       "home": "cowork_layer4_chordsymbol_design.md:606-607",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "never a structural branch"
       ]
@@ -7138,7 +7138,7 @@
       "home": "cowork_layer4_chordsymbol_design.md:617-620",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "never a structural per-idiom branch"
       ]
@@ -7158,7 +7158,7 @@
       "home": "cowork_layer5_function_design.md:612-617",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "the three-role summary is a derived read-out"
       ]
@@ -7178,7 +7178,7 @@
       "home": "cowork_layer5_function_design.md:618-622",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "Cadence detection is key-agnostic and votes for the key"
       ]
@@ -7198,7 +7198,7 @@
       "home": "cowork_layer5_function_design.md:623-625",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "Tonicization is the default; modulation requires cadence confirmation"
       ]
@@ -7218,7 +7218,7 @@
       "home": "cowork_layer5_function_design.md:627-630",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "it never re-derives"
       ]
@@ -7238,7 +7238,7 @@
       "home": "cowork_layer5_function_design.md:637-648",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "A confident earlier inference can be overturned by decisive later evidence"
       ]
@@ -7258,7 +7258,7 @@
       "home": "cowork_layer5_function_design.md:547-554",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "the emitted reading IS the selected source's committed identity"
       ]
@@ -7278,7 +7278,7 @@
       "home": "cowork_layer5_function_design.md:888-897",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "§5\\.0 grammar completion"
       ]
@@ -7622,6 +7622,846 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The record states the amendment (A-3) was ratified 2026-07-02 but does not name the ratifier at this home; the amendment set's own document banner is quoted in the phase-1g triage as `AMENDMENTS A-1…A-10 RATIFIED (user, 2026-07-02)`, and that document is in the phase-1h full-read set. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
       "patterns": [
         "Dominant-implication key evidence in the emission"
+      ]
+    },
+    {
+      "id": "D-359",
+      "group": "Q",
+      "title": "Discovering a new corpus counts as a CENSUS DEFECT — the fix is to enumerate its container to closure, never to ingest the one repository",
+      "verbatim": "**The standing process rule this census institutes:** from now on, *\"a new corpus was discovered\" is a census\ndefect* — the fix is to add its **container** to the table above and re-enumerate that container to closure, not to\ningest one repo and move on. **Re-sweep cadence: yearly** (new ISMIR proceedings + the `mirdata` loader list + the\n`ismir/mir-datasets` index are the mechanical catch-alls), and at any Stage-5/6 corpus decision.",
+      "plain": "When a collection of music or of published analyses turns up that the census does not list, that is treated as a fault in the census rather than as good luck. The remedy is to add the whole container it came from — the organization, the meta-collection, the index — and walk that container to its end. Ingesting the single find and moving on is what produced the recurring pattern of rediscovery. The census is re-swept yearly against fixed indexes, and again at any corpus decision.",
+      "rationale": "Diagnosed from the project's own history: every previous hunt was keyword-driven sampling — search, take the good hits, stop when the current question is answered — which finds exemplars and never closure. The census's opening section states that diagnosis, and the trigger case is named: the DCML Wagner overtures corpus, found only during the 2026-07-02 architecture review.",
+      "status": "live",
+      "date": "2026-07-02",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_score_census.md:30-33",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The document's banner records `Status: v1 DELIVERED (Cowork, 2026-07-02); for user disposition of the acquisition tiers (§5)` — the user disposition it names covers the acquisition tiers, not this rule. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "a new corpus was discovered\" is a census"
+      ]
+    },
+    {
+      "id": "D-360",
+      "group": "Q",
+      "title": "A corpus enters the registry only with all five admission fields decided — annotation type, score alignment, format, licence class, decision tier",
+      "verbatim": "A source enters the registry only with all five fields decided: **(a) GT type** (RN / chords / key / cadence /\nphrase / none); **(b) machine-readable score alignment** (symbolic score + annotation anchored to it — chords-only or\naudio-aligned sets are research-tier at best); **(c) format** (parseable today vs converter needed); **(d) license\nclass** (PD/CC0/CC-BY committable; NC/unclear → hash-pin-only, the established mechanism); **(e) decision tier** (§5).",
+      "plain": "No collection is recorded as usable until five things are settled about it: what kind of published analysis it carries, if any; whether that analysis is anchored to a machine-readable score; whether the format can be read today or needs a converter; which licence class it falls in; and which decision tier it enters at. A collection whose annotations are not anchored to a score, or that is aligned only to audio, is research material at best.",
+      "rationale": "The five fields are the ones the downstream decisions actually consume: the licence class is what the shipped-parameter constraint reads (**D-292**), the alignment field is what separates gradable material from research material, and the tier is what the acquisition instruction acts on. Sources whose licence is non-commercial or unclear are admitted hash-pinned only, which the census records as the established mechanism.",
+      "status": "live",
+      "date": "2026-07-02",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_score_census.md:67-70",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "A source enters the registry only with all five fields decided"
+      ]
+    },
+    {
+      "id": "D-361",
+      "group": "Q",
+      "title": "Corpora are de-duplicated by WORK, not by container — and a work in the regression corpus is excluded as reference data from every other container",
+      "verbatim": "The containers re-encode the same works (WiR↔DCML↔ChoCo; KernScores↔craigsapp↔music21↔MuseData; GigaMIDI absorbs\nLakh/MetaMIDI). **Dedupe by work, not by container** — the registry keys on (composer, work, movement), and a work\nentering the gate corpus from one container is excluded as GT from every other (the M3 contamination lesson,\ngeneralized).",
+      "plain": "The big collections re-publish each other's music, so counting collections double-counts the music. The registry is therefore keyed on composer, work and movement. And once a piece is in the corpus a change is graded against, that same piece may not be used as reference data from any other collection it also appears in.",
+      "rationale": "The exclusion rule is the generalization of a failure the project already had: the census names it the M3 contamination lesson — the shared-directory failure mode in which one style setting's output was measured against another's. Contamination by re-encoding is the same failure arriving through a different door.",
+      "status": "live",
+      "date": "2026-07-02",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_score_census.md:74-77",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "Dedupe by work, not by container"
+      ]
+    },
+    {
+      "id": "D-362",
+      "group": "Q",
+      "title": "What the census may claim, stated exactly: closure over the enumerated containers, a citation-closure argument for gradable harmony reference data, and a BOUNDED claim for everything else",
+      "verbatim": "**What the census can prove:** closure **over the enumerated container classes** (§1). **The strong claim:**\ngate-grade common-practice RN/harmony GT is **citation-closed** — the field is small and cross-citing, so every\nserious GT corpus is used by a SOTA paper, aggregated by WiR/ChoCo, or indexed by mirdata/awesome-lists within ~a\nyear of release; a corpus outside all of those is almost certainly not gate-grade. **The bounded (not closed)\nclaim:** plain-score collections and peripheral/niche GT — the risk lives in **unknown containers** (Zenodo-only\ndeposits, national-library editions, non-English sources, brand-new releases), which no enumeration can prove absent.",
+      "plain": "The census proves only closure over the containers it lists. Its strong claim is narrower: published Roman-numeral and harmony reference data good enough to grade against is closed by citation, because the field is small and cross-citing, so any serious such corpus is used by a leading paper, absorbed into one of the two meta-collections, or listed in the standard indexes within about a year. Plain music collections and niche reference data get only a bounded claim: the risk sits in containers nobody has named, and no enumeration can prove those absent.",
+      "rationale": "Stated as the answer to a user question of 2026-07-02, and written this way for a named reason recorded elsewhere in the register: `DEFECT_TYPES.md` DT-26, scope-assumed enumeration — a sweep complete inside its own file set reads as complete about the whole question unless its scope and remainder are said out loud.",
+      "status": "live",
+      "date": "2026-07-02",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_score_census.md:119-124",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "citation-closed"
+      ]
+    },
+    {
+      "id": "D-363",
+      "group": "Q",
+      "title": "Four named reasons license leaving a source un-enumerated — and non-Western symbolic music is closed by RULING, not by enumeration",
+      "verbatim": "**Why some sources are deliberately not fully enumerated:** (a) **unwalkable** (MuseScore.com ToS beyond PDMX; IMSLP\n= PDF scans without a symbolic index) — cost exceeds value, content mostly non-machine-readable; (b) **mechanically\nclosable later** (craigsapp via `humdrum-tools/humdrum-data`; DLC piece counts at clone time) — closure rides the\nacquisition instruction; (c) **snippet-verified rows** ([reported] marks) — a budget choice made visible, verified at\nacquisition; (d) **out of analytical scope by decision** (non-Western symbolic sets — the tonal model class does not\ncover them; review F-15) — closed by ruling, not enumeration.",
+      "plain": "Some sources are deliberately not walked to the end, and each has a stated reason: the source cannot be walked at all, or its content is not machine-readable; it can be closed mechanically later and that closure rides the acquisition step; a row was verified only from a search snippet, a budget choice made visible and settled when the source is acquired; or the material is outside what the analysis covers by decision. Non-Western symbolic music is in that last class: the tonal model does not cover it, so it is closed by ruling rather than by counting.",
+      "rationale": "Each reason is tied to what it costs or to what already decides it: the unwalkable sources are ones where cost exceeds value and the content is mostly not machine-readable; the mechanically closable ones ride an acquisition step already scheduled; the snippet-verified rows are verified at the moment of acquisition; and the scope ruling on non-Western material cites the external architecture review's finding F-15.",
+      "status": "live",
+      "date": "2026-07-02",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_score_census.md:126-131",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "closed by ruling, not enumeration"
+      ]
+    },
+    {
+      "id": "D-364",
+      "group": "Q",
+      "title": "Every new analysis purpose triggers its own corpus sweep BEFORE its design document is signed — having enumerated the container does not discharge the duty to ask the new question of it",
+      "verbatim": "**The standing trigger instituted (complements the yearly re-sweep + the wave triggers):** whenever a **new\nanalysis purpose** enters the project — a new axis, a new component with a GT need, a new lever class — a\n**targeted, purpose-specific census sweep runs for that purpose** before its design doc is signed (the axis-2\n§6b sweep is the founding precedent: three census-grade finds in one pass, two on corpora already held). The\nsweep's finds enter via the census as always; \"we already enumerated the container\" does not discharge the duty\nto ASK THE NEW QUESTION against it.",
+      "plain": "A census is only as complete as the list of questions it was asked with. So whenever a new purpose enters the project — a new analytical axis, a new component needing reference data, a new class of evidence — a search aimed at that purpose runs before that component's design is signed off. Already having walked a collection is not a reason to skip it: the new question must be put to it.",
+      "rationale": "Diagnosed from the repeated pattern the user observed, with two mechanisms named: collections are walked lazily by design, so their contents surface only when a wave walks them; and enumeration done with one axis's questions in mind cannot see reference data for a purpose that did not yet exist. The founding precedent is recorded — the second axis's own sweep returned three census-grade finds in one pass, two of them on collections already held.",
+      "status": "live",
+      "date": "2026-07-03",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_score_census.md:166-171",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The section is headed as a user observation of 2026-07-03; the record says the trigger is instituted but does not name who instituted it. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "does not discharge the duty"
+      ]
+    },
+    {
+      "id": "D-365",
+      "group": "Q",
+      "title": "A corpus search driven by the SUM of all needs is worth running, but it is step 3 of 3 — the needs list and the re-scoring of what is already enumerated come first",
+      "verbatim": "**The question that created this section:** is a corpus search useful that is NOT driven by one architectural\nneed — the \"need\" being the sum of all needs? **Answer: yes, but the search is step 3 of 3.** The sum of all\nneeds must first exist as an artifact, and once it does, re-scoring the EXISTING enumeration against it is\ncheaper and likely higher-yield than new searching (the Wave-2 lesson: the finds were already inside enumerated\ncontainers — the dismissals were purpose-relative, made with harmonic-axis eyes only).",
+      "plain": "Searching against everything the project needs at once is useful, but only after two cheaper steps. First the full list of needs has to exist as a written artifact. Then every collection already enumerated is re-scored against that list, without searching at all. Only what is still uncovered afterwards is searched for.",
+      "rationale": "Measured by the second wave's own outcome: its finds were already inside collections the census had enumerated — what had missed them was that the earlier dismissals were purpose-relative, made with only the harmonic axis in mind. Re-scoring what is already listed is therefore both cheaper than searching and likelier to yield.",
+      "status": "live",
+      "date": "2026-07-03",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_score_census.md:189-193",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The section is headed as a user question of 2026-07-03; its first run is recorded EXECUTED and DISPOSED 2026-07-04, with the user's rulings at that disposition recorded in the same paragraph. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "but the search is step 3 of 3"
+      ]
+    },
+    {
+      "id": "D-366",
+      "group": "O",
+      "title": "Recorded-performance intonation material is OUT of corpus scope — the intonation features are validated by theory and by listening",
+      "verbatim": "| N15 | performed-intonation reference material | T-21/T-24 | **★ SCOPE RULING RATIFIED (user, 2026-07-04):** audio-domain, out of corpus scope; T-21/T-24 validate by theory/listening |",
+      "plain": "Reference material for how performers actually tune is audio, not notation, and is ruled outside what the corpus collection covers. The two intonation features that would have consumed it are validated instead against tuning theory and by ear.",
+      "rationale": "derivation not recorded — the record states the ruling and its consequence but gives no reason beyond the material being audio-domain.",
+      "status": "live",
+      "date": "2026-07-04",
+      "ratified_by": [
+        "the user"
+      ],
+      "home": "cowork_score_census.md:221",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The cell records `★ SCOPE RULING RATIFIED (user, 2026-07-04)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "audio-domain, out of corpus scope"
+      ]
+    },
+    {
+      "id": "D-367",
+      "group": "Q",
+      "title": "A corpus found FOR one need is scored against the WHOLE needs list at intake, and every annotation layer it carries is inventoried — never tagged to the purpose that found it",
+      "verbatim": "**The intake rule (user, 2026-07-03 — the converse of step 2):** a find made FOR one need is **scored against\nthe FULL needs-vector at intake**, never single-purpose-tagged. Three consequences, each binding:\n1. **Already-satisfied needs stay open to supersession** — a new find may serve a \"passed\" need better or\n   cheaper than its current bed; the intake scoring records that even when no action follows.\n2. **Future/inactive needs get pre-coverage** — a find's coverage of a not-yet-active column is recorded at\n   intake, so when that purpose's §8b sweep eventually runs it starts non-empty.\n3. **Every GT LAYER of a container is inventoried at intake, not just the layer that motivated the find** — the\n   founding counter-example: the JHT entered for the harmonic idiom study and its hierarchical TREE annotations\n   (a distinct GT layer, lever R-7's footing) went unrecorded until a different question was asked at it a week\n   later. The registry's per-row needs-coverage note (audit step 2) is where the intake scoring lands.",
+      "plain": "When a collection is acquired for one purpose, it is assessed against every need the project has, not just that one. Three things follow and all bind: a need already considered covered stays open to being covered better or more cheaply; a need not yet active gets its coverage recorded now, so that when its own sweep runs it starts non-empty; and every distinct layer of annotation the collection carries is inventoried, not only the layer that motivated acquiring it.",
+      "rationale": "The third consequence has a founding counter-example on the record: a jazz collection was acquired for a study of harmonic idiom, and its hierarchical tree annotations — a separate annotation layer, and the footing for a later analytical lever — went unrecorded until a different question was put to it a week later.",
+      "status": "live",
+      "date": "2026-07-03",
+      "ratified_by": [
+        "the user"
+      ],
+      "home": "cowork_score_census.md:255-264",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The rule is recorded as the user's, 2026-07-03. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "scored against\\s+the FULL needs-vector at intake"
+      ]
+    },
+    {
+      "id": "D-368",
+      "group": "Q",
+      "title": "When new material bears on an already-settled conclusion, the rework question is settled by a recorded protocol — record, measure cheaply, then fork on whether it CONTRADICTS or merely enriches",
+      "verbatim": "**The supersession decision protocol (user, 2026-07-03 — what happens when a find serves an already-passed\nneed):** a \"go back and rework now\" vs \"postpone\" question is NEVER decided by enthusiasm or by default silence.\nThe protocol, reusing the project's standing shapes:\n1. **Record first:** the finding lands as an open item in the affected component's §15 (open items) + a STATUS\n   plan line — it cannot get lost regardless of the decision.\n2. **Cheap impact measurement before any decision** (investigate-by-default): a read-only re-validation of the\n   component's signed conclusions against the new material. The question it answers: does the new bed\n   **contradict** a conclusion the design rests on, or merely **enrich/extend** the validation?\n3. **The fork, by measured outcome:**\n   - **Contradiction (a premise-invalidation):** surfaced IMMEDIATELY as a tripwire event (the D5-test pattern) —\n     the user decides rework-now vs accept-with-recorded-caveat; downstream work that builds on the invalidated\n     conclusion is named in the surfacing (the compounding cost of waiting is part of the decision material).\n   - **Enrichment only:** DEFAULT = postpone to the component's next natural touch (the §15 item carries it);\n     pulling the rework forward is a user priority call, informed by the measurement.\n4. **The decision is the user's in both branches** — the protocol fixes what is measured and what is recorded,\n   never the outcome. (This is the corpus-side analogue of the gate re-baseline discipline: evidence first,\n   deliberate ratification second, nothing reopened by silence.)",
+      "plain": "If material turns up that bears on a question already considered closed, whether to go back and redo the work is never decided by enthusiasm or by saying nothing. The finding is recorded first, so it cannot be lost either way. Then a cheap read-only check asks one question: does the new material contradict a conclusion the design rests on, or does it only enrich the checking of it. A contradiction is surfaced at once as a tripwire, naming the later work that would compound, and the user decides between redoing it now and accepting it with the caveat recorded. Enrichment alone is postponed by default to the component's next natural touch. In both branches the decision is the user's; the protocol fixes only what gets measured and what gets written down.",
+      "rationale": "The protocol is assembled from shapes the project already uses, and the record says so: it is the corpus-side analogue of the discipline for re-baselining a regression gate — evidence first, deliberate ratification second, nothing reopened by silence — and the contradiction branch reuses the existing tripwire pattern.",
+      "status": "live",
+      "date": "2026-07-03",
+      "ratified_by": [
+        "the user"
+      ],
+      "home": "cowork_score_census.md:266-282",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The protocol is recorded as the user's, 2026-07-03. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "NEVER decided by enthusiasm or by default silence"
+      ]
+    },
+    {
+      "id": "D-369",
+      "group": "Q",
+      "title": "The DCML figured-bass repository is a REALIZATION SCRIPT, not reference data — walked and recorded so it is never mistaken for reference data again",
+      "verbatim": "**DCMLab/figured-bass WALKED = a realization SCRIPT, N10-NEGATIVE** (never re-mistake it for GT).",
+      "plain": "A repository long listed as a possible source of figured-bass reference data was opened and read: it contains code that realizes a figured bass, not annotations to grade against. It is recorded as a confirmed negative so the mistake is not repeated. The real figured-bass reference data is the Bach chorale figured-bass set, and a third source is a column already present in the corpora held, which the reader currently drops.",
+      "rationale": "Established by walking the repository, at the third corpus wave, 2026-07-04, provenance `cc_corpus_wave3_report.md`; the finding also promoted the row out of the residual-risk list into the enumerated containers. It is exclusion evidence in the sense principle #12 names: a ruled-out possibility recorded rather than dropped, because the exclusion is not recomputable from what is kept.",
+      "status": "live",
+      "date": "2026-07-04",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_score_census.md:216",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "never re-mistake it for GT"
+      ]
+    },
+    {
+      "id": "D-370",
+      "group": "Q",
+      "title": "Reference data for implied polyphony does not exist and the negative is FINAL — the two candidate sets were never released",
+      "verbatim": "**implied-polyphony half CONFIRMED ABSENT** (VoiSe/Gray-Bunescu never released; final).",
+      "plain": "For music where a single line implies several voices, there is no published set of human annotations to grade against: the two datasets that would have provided it were never released. The negative is recorded as final, so the search is not repeated. The related but distinct case — music where the separate voices are actually written out — does have candidates, and three of them have been acquired.",
+      "rationale": "Established by the union search of 2026-07-04, recorded in `cowork_union_search_record.md` §1, which separates the two halves of the need and reports the outcome of each. Recorded rather than dropped under principle #12: a confirmed absence is information, and it bounds what the voice-leading axis's own target task can be validated against.",
+      "status": "live",
+      "date": "2026-07-04",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_score_census.md:215",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "implied-polyphony half CONFIRMED ABSENT"
+      ]
+    },
+    {
+      "id": "D-371",
+      "group": "Q",
+      "title": "No dataset pairs an ornament sign with its written-out realization — confirmed absent, so the ornament expansion ships rule-based and unvalidated, as predicted",
+      "verbatim": "**negative CONFIRMED** — no symbol→realization dataset exists; nearest = Batik-plays-Mozart (trill realizations recoverable by heuristic, unlabeled; ★ multi-need: also carries harmony+cadence GT on 12 Mozart sonatas); R-1 ships rule-based/unvalidated as predicted; build-paths recorded",
+      "plain": "Nothing published pairs an ornament as notated with the notes a performer would actually play, so there is no way to grade an ornament expansion against human reference data. The nearest thing is a performance corpus from which trills could be recovered by rule, unlabelled. The consequence is accepted and was predicted in advance: the ornament expansion ships as rules, unvalidated, and the routes by which such a dataset could be built are recorded.",
+      "rationale": "Established by the union search of 2026-07-04, recorded in `cowork_union_search_record.md` §2. The record notes that the nearest source is multi-purpose — it also carries harmony and cadence reference data over twelve Mozart sonatas — which is the intake rule (**D-367**) working as written.",
+      "status": "live",
+      "date": "2026-07-04",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_score_census.md:219",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "no symbol→realization dataset exists"
+      ]
+    },
+    {
+      "id": "D-372",
+      "group": "Q",
+      "title": "Marked part-writing errors must be BUILT, not downloaded — no public dataset exists and the two commercial holders keep theirs closed",
+      "verbatim": "**no public dataset exists — CONFIRMED build-not-download** (Harmonia/Artusi hold it commercially closed). Validation seeds found: the Dahn manuscript-checked 46 consecutive-5th/8ve instances in the Bach chorales + Fitsioris-Conklin 18 (real-music positives, small transcription job) + the synthetic-violation route. Construction owned by VL-H's design gate",
+      "plain": "There is no public collection of part-writing exercises with the mistakes marked, and the two teaching products that hold such material keep it closed. Building one is therefore the only route, and that construction belongs to the design step of the component that needs it. Seeds for validating it were found: a manuscript-checked list of consecutive fifths and octaves in the Bach chorales, a small second list of real-music instances, and the route of generating violations deliberately.",
+      "rationale": "Established by the union search of 2026-07-04, recorded in `cowork_union_search_record.md` §5, which names the two commercial holders and the three validation seeds. The need itself was adopted by the user on 2026-07-04 at the full-needs audit's disposition.",
+      "status": "live",
+      "date": "2026-07-04",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_score_census.md:225",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The user's act recorded on this row is the ADOPTION of the need (2026-07-04); the build-not-download conclusion is a measured search outcome and names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "CONFIRMED build-not-download"
+      ]
+    },
+    {
+      "id": "D-373",
+      "group": "Q",
+      "title": "The only dual-annotator reference data actually on disk is the 27 TAVERN A/B pairs — the assumed second source was measured to have ZERO overlap",
+      "verbatim": "the on-disk co-located dual set = **the 27 TAVERN A/B pairs** (Beethoven 17 + Mozart 10, verified at the WiR clone AND by Cowork glob). The audit's \"Tymoczko-vs-DCML pairs\" are NOT co-located: within WiR the two analyst sets sit on disjoint pieces (overlap **0**; DCML 988 / Tymoczko 419 analyses); CROSS-container pairs (WiR-Tymoczko × the separate `tools/dcml/` DCML corpora) remain possible but need identity work — recorded, not assumed.",
+      "plain": "Calibrating how far human analysts disagree needs two independent analyses of the same music. Only one such set is actually held: twenty-seven pieces analysed twice. The other source that had been assumed to provide it does not: inside the meta-collection the two analysts' sets sit on entirely different pieces, with no overlap at all. Pairing across separate collections might still be possible, but that would need identity work first, and it is recorded as a possibility rather than assumed.",
+      "rationale": "Measured at the third corpus wave, 2026-07-04, and verified twice independently — at the checked-out copy and by a second glob. The correction matters because it bounds what the confidence-calibration work can be fitted on, and because principle #21 makes the accuracy of reference data itself a measured quantity rather than an assumption.",
+      "status": "live",
+      "date": "2026-07-04",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_score_census.md:208",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The cell marks it `(Wave-3 MEASURED, corrects the audit)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "the 27 TAVERN A/B pairs"
+      ]
+    },
+    {
+      "id": "D-374",
+      "group": "Q",
+      "title": "The flexible multi-reading chorale annotations are RECORD-ONLY — they overlap the regression repertoire, so any use over those pieces is a future user ruling",
+      "verbatim": "⚠ **RECORD-ONLY** (its 371 Bach chorales overlap the gate repertoire; any use over gate pieces is a future user ruling — census §4 dedupe)",
+      "plain": "A second set of human analyses over Bach chorales was found, one that records several valid readings per moment rather than a single one. Most of its chorales are the same pieces the analysis is graded against, so using it over those pieces would be exactly the contamination the de-duplication rule forbids. It is recorded and pinned but not used, and putting it to work over those pieces is a decision reserved for the user.",
+      "rationale": "The restriction follows directly from the registered de-duplication rule (**D-361**): a work already in the corpus a change is graded against is excluded as reference data from every other container it appears in. The record also carries the walk's own caveat — the analyses ship as a package binary, with only the scores in plain notation.",
+      "status": "live",
+      "date": "2026-07-04",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_score_census.md:208",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL, in the Wave-3 addendum text of the dual-annotator row. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "RECORD-ONLY"
+      ]
+    },
+    {
+      "id": "D-375",
+      "group": "L",
+      "title": "Every real source of difficulty labels is research-only or proprietary — a difficulty-grading feature needs a licence path before it can be sold",
+      "verbatim": "**T-32 caveat: all real label sources research-only/proprietary — commercial use needs a license path.**",
+      "plain": "For rating how hard a piece is to play, every collection that carries real labels is either restricted to research or is commercial property; no machine-readable dump from the examination boards or the standard publisher grading exists. So the feature can be built and studied, but shipping it commercially needs a licence arranged first.",
+      "rationale": "Established by the union search of 2026-07-04, recorded in `cowork_union_search_record.md` §3, which enumerates the four candidate sources and the restriction on each. The caveat is the harder sibling of the shipped-parameter licence constraint (**D-292**): there the freely-licensed pool exists and merely has to be declared; here no commercially usable label source exists at all.",
+      "status": "live",
+      "date": "2026-07-04",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_score_census.md:220",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "all real label sources research-only/proprietary"
+      ]
+    },
+    {
+      "id": "D-376",
+      "group": "A",
+      "title": "The joint key-and-chord step was designed as a BOUNDED COUPLING over the two existing decoders, and the unified single-state alternative was REJECTED — the option later adopted as the production architecture",
+      "verbatim": "**Decision: (B) — a bounded coupling step.** Grounded, not by preference but by three binding constraints:\n\n1. **#7 (adhere to layers) + #6 (no duplication).** L3 (`key/keymodesequence`) and L4 (`chord/chordslicedecoder`)\n   are **built as separate layers, each with its own decoder, carry, and confidence** `[code]`. Option (A)\n   discards both built decoders and re-lays the pipeline into one joint-state decoder — a rebuild of what is\n   built (#6 violation) and a re-layering (#7 violation). Raphael & Stoddard's single state is a *modeling*\n   choice `[research]` §3; the **recurring recipe** the literature actually prescribes (a **beam of (key, chord)\n   hypotheses** + a **key-transition prior** + the **chord re-decoded under alternative keys**, `[research]` §3)\n   is realizable in *either* factoring. We pick the factoring that fits the built layers — the bounded coupling\n   over the two existing decoders.\n2. **Magnitude realism `[research]` §3.** The joint win is **qualitative, concentrated on the hard/coupled\n   cases** (the ~13.5% coupled core `[data]`; low single-digit points elsewhere). Collapsing the whole pipeline\n   into a joint state to serve a minority is disproportionate. A bounded coupling that **fires only on the\n   coupled minority** (the C3 trigger, §3) and is a **pass-through on the ~86.5% majority** is the proportionate\n   realization — and it keeps the majority path byte-identical (a #12 property: no information moved where no\n   coupling exists).\n3. **The acyclicity / forward-only control-flow contract (§8 / §9-D7; L5 engagement §4.1 `[code]`).** The\n   architecture forbids a back-edge L3←L4; the only cross-layer recompute is the §8 **localized,\n   convergence-bounded, one-pass-closure** mechanism. Option (A) would not violate acyclicity (it has no\n   layers to cycle between), but (B) must be designed to respect it — and it does (§1.3).",
+      "plain": "When the coupling of tonality and chord was designed, two shapes were on the table: one decision over a single combined state holding tonic, mode and chord together, or the two existing stages kept apart with a bounded coupling between them. The bounded coupling was chosen, for three stated reasons: the two stages are already built as separate decoders and the combined state would discard both and re-lay the pipeline; the gain is concentrated on a small hard minority, so re-laying the whole pipeline to serve it is disproportionate; and the coupling can be built forward-only, respecting the rule against a later stage reaching back into an earlier one. The step was afterwards shelved against measurement, and the option rejected here is the shape the production engine now has.",
+      "rationale": "Three constraints are given as the defense, and the record distinguishes them from preference: principles #6 and #7 (the combined state discards two built decoders and re-lays the pipeline); magnitude realism, citing the research grounding and the measured coupled minority of about 13.5 % of stretches, against which collapsing the whole pipeline is disproportionate; and the forward-only control-flow contract. The record also states what the published literature does and does not settle: the single combined state is a modeling choice, while the recipe the literature actually prescribes — a beam of tonality-and-chord hypotheses, a tonality-transition prior, and the chord re-decoded under alternative tonalities — is realizable in either factoring.",
+      "status": "shelved-with-evidence",
+      "date": "2026-07-07",
+      "ratified_by": [
+        "the user"
+      ],
+      "home": "cowork_joint_key_chord_design.md:77-96",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step this decision places was shelved against measurement and that shelving is register entry **D-278** (user-ratified 2026-07-07, re-ratified 2026-08-02), so the placement is shelved with it; the document's own banner says it is retained as the record and that the step is off the build inventory. **Reported, not statused as a supersession:** the option this decision REJECTED — one decision over a combined tonality-and-chord state — is what **D-001** later adopts as the production architecture, and no record connects the two; the user ruled at D-278's ratification that the shelving does not bear on D-001, and the two objections raised here are answered elsewhere in the record (the decision-neutrality corollary answers the rebuild objection; the adoption measurement answers the magnitude objection). NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "a bounded coupling step, NOT a unified"
+      ]
+    },
+    {
+      "id": "D-377",
+      "group": "C",
+      "title": "The forbidden back-edge, stated concretely: a chord decision may NOT write into the committed tonality and re-run the tonality decode — a coupled decision is OWNED by its own bounded box, never patched backward",
+      "verbatim": "**A placement that WOULD violate acyclicity** (flagged so the build does not drift there): letting L4's chord\ndecision write back into L3's *committed* region key as a side effect and then re-running L3's whole-score\nViterbi — that is the back-edge #7 forbids. The design avoids it by making the joint step the **owner** of the\ncoupled (key,chord) decision (it does the re-rank locally, in its own bounded beam) rather than a **feedback\npatch** on L3.",
+      "plain": "There is one shape that would break the rule against a later stage feeding an earlier one, and it is named so that no build drifts into it: letting the chord decision alter the tonality that has already been committed, and then re-running the whole tonality search over the piece. The permitted shape is the opposite — whatever owns the coupled decision makes it locally, inside its own bounded search, and publishes one settled answer forward. A new decision box, never a feedback patch on an existing stage.",
+      "rationale": "It is the concrete form of the forward-only control-flow contract the architecture already carries, written down at the one place a design could plausibly have violated it. The record states why the permitted shape is safe: the coupled box reads only what the earlier stage has already emitted and carried — the ranked alternatives it published as its exclusion tail — and drives the later decoder forward as a pure function, so neither direction is a cycle.",
+      "status": "live",
+      "date": "2026-07-07",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_joint_key_chord_design.md:136-140",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step the document designs is shelved (**D-278**); this prohibition is not about that step — it is stated as what any placement must avoid, and is flagged in the record as written so the build does not drift there. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "A placement that WOULD violate acyclicity"
+      ]
+    },
+    {
+      "id": "D-378",
+      "group": "G",
+      "title": "Re-deciding a chord under a different tonality is well-defined ONLY on the decoder path — the legacy multi-pass emission cannot be faithfully re-decoded, and a naive re-emit injects a measured ~6 % same-tonality root-flip artifact",
+      "verbatim": "**Faithfulness (the J-key-iii constraint, discharged).** J-key-iii deferred the chord axis because a *faithful*\nper-region re-emission \"cannot reproduce the multi-pass pipeline chord\" — the legacy production chord is emitted\nmid-pipeline (before Pass-3 tone merging), so a naïve re-emit injects ~6% same-key root-flip artifact `[code]`\n(`regionanalyzer.cpp:388-393`). The **faithful mechanism it named is the engaged `ChordSliceDecoder`**: a **pure\nfunction of (slices, key)**, so re-decoding under a different key is well-defined and reproducible — no multi-pass\nartifact. **This is why the joint step is E4-adjacent** (§4): it builds on the engaged decoder, not the retiring\nlegacy `analyzeChord` seam. On the legacy path a faithful re-decode does not exist; on the decoder path it is\nthe decoder's own contract.",
+      "plain": "Asking what chord the analysis would name if the tonality were different is a meaningful question only where the chord decision is a pure function of the notes and the tonality. On the older multi-stage path it is not: the chord is emitted part-way through, before a later merging step, so simply re-emitting it produces about six per cent of root changes that have nothing to do with the tonality at all. On the decoder path the same question is well defined and reproducible, because answering it is what that decoder's own contract already promises.",
+      "rationale": "Measured: the naive re-emit's artifact rate on the older path is stated as about six per cent of same-tonality root flips, cited at the orchestrator source that records the deferral. The record uses it to discharge a deferral made earlier by name — the earlier wiring deferred the chord axis for want of a faithful mechanism, and this identifies that mechanism as the engaged decoder rather than declaring the problem solved.",
+      "status": "live",
+      "date": "2026-07-07",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_joint_key_chord_design.md:173-180",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step the document designs is shelved (**D-278**); this statement is about the two code paths and not about that step. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "cannot reproduce the multi-pass pipeline chord"
+      ]
+    },
+    {
+      "id": "D-379",
+      "group": "A",
+      "title": "Whether an alternative tonality would change the chord CANNOT be measured without re-deciding under it — the exact coupled-case condition is not computable read-only, which is why it stayed unmeasured",
+      "verbatim": "**(b) — the chord actually flips — computed BY the step's own per-key re-decode (§2.2).** This is the exact\n  condition, and it is **not pre-computable read-only** — you can only know the winner flips under a carried key\n  by *re-decoding under it*. This is precisely why C3 was found \"un-computable read-only\"\n  (`cc_engage_c3_measurement_report.md` §2.3): (b) IS the owed build. In the engaged step it is computed on the\n  pre-filtered (a)∧(a′) candidate set, and the step **commits a coupled (re-ranked) decision only where (b)\n  holds** (the winner root differs across the carried keys); where (b) is false the re-decode agrees with the\n  L3-argmax decode and the step passes through.",
+      "plain": "The population that a tonality-and-chord coupling would actually help is the set of places where naming a different tonality would change the chord. There is no way to identify that set by inspection: the only way to know the chord changes under an alternative tonality is to re-decide it under that tonality. So the exact condition cannot be measured before the re-decision exists, and every figure quoted for it before then is a structural stand-in, not the quantity itself.",
+      "rationale": "Established by the attempt: the measurement report that went looking for this population found it computable nowhere, and the record names that finding as the reason. The consequence is designed around rather than assumed away — a cheap two-stage filter narrows the candidates first, the exact condition is computed only on those, and the coupled decision is committed only where it holds.",
+      "status": "live",
+      "date": "2026-07-07",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_joint_key_chord_design.md:266-272",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step the document designs is shelved (**D-278**); this statement is about what is and is not measurable, and stands independently of it — the same document records the shelving probe's own fire-rate as a structural proxy rather than the exact condition. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "not pre-computable read-only"
+      ]
+    },
+    {
+      "id": "D-380",
+      "group": "G",
+      "title": "The carry's meaningful axis is DISTINCT ROOTS, and every above-threshold root is carried at graded confidence — a carry of winner-plus-one discards the third root on about a quarter of slices",
+      "verbatim": "The decisive fan-out finding `[data]`: a **≥3rd distinct root clears threshold on 25.1 % / 16.1 % / 24.9 %** of\nslices. This is exactly the **load-bearing exclusion tail** (#12, finding-by-exclusion): the ruled-out and\nlow-confidence roots are **information**, not noise — they are where selection (§3) and the eventual joint step\n(§4.3) earn their keep. The contract therefore requires: **carry every above-threshold distinct root, each at its\ngraded confidence; carry ruled-out roots at low confidence rather than dropping them.** A carry that surfaces only\nthe winner + one alternate (the legacy cap-of-3 + single diff-root append) **discards the ≥3rd root on ~¼ of\nslices** — a #12 violation the engaged carry must not inherit.",
+      "plain": "What one stretch of music offers is many candidate spellings of very few chord roots: measured, about five candidate readings but only about two distinct roots. So what is handed forward is a distribution over distinct roots, each with its best voicing, its variant set, and its own confidence. A third distinct root passes the bar on roughly a quarter of stretches, and those ruled-out and low-confidence roots are information, not noise — they are where the later selection and any tonality-chord coupling earn their keep. A carry that offers only the winner and one alternative throws the third root away on a quarter of stretches.",
+      "rationale": "Measured on the corpus: per competing stretch the above-threshold set is wide in readings but narrow in roots — median five, four and five readings against median two, one and two distinct roots — and a third distinct root clears the bar on 25.1 %, 16.1 % and 24.9 % of stretches. The record names the principle it serves: principle #12, finding by exclusion — a ruled-out possibility is carried at low confidence rather than dropped.",
+      "status": "live",
+      "date": "2026-07-07",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_layer5_engagement_design.md:136-142",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The document's banner records `Status: DESIGN (CC, 2026-07-07)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "load-bearing exclusion tail"
+      ]
+    },
+    {
+      "id": "D-381",
+      "group": "G",
+      "title": "The carry must cap on DISTINCT ROOTS, not on voicings — the existing voicing-keyed cap gives no structural guarantee that a third root survives",
+      "verbatim": "**The owed guarantee (structure only; R5).** The engaged carry must **preserve distinct roots explicitly**, not as\na by-product of a voicing cap. The declared *shape*: a **distinct-root-first carry** — for each distinct root above\nthreshold, carry its best voicing + its variant set + its confidence, and cap on **distinct roots** (with each\nroot's own variant depth bounded), rather than capping on a flat voicing list. The exclusion tail (#12) is carried\nas the low-confidence roots below the primary set. **The exact cap depths (how many distinct roots, how deep each\nroot's variant set) are precision-phase constants (R5)** — the fan-out distribution (p90 ≈ 4 roots, max 11)\ninforms the *floor*, but the value is fitted later, not here. This is an **owed change to the decoder's carry\nconstruction** (Layer 4 / E4), named here so the engagement design and E4 agree on the contract; it is not built\nin this pass.",
+      "plain": "The limit on how many alternatives are kept counts spellings, not roots, so the allowance can be used up entirely by inversions and template variants of the top two roots before a third root is reached. Keeping a third root is therefore a by-product rather than a guarantee. The shape owed is the other way round: for each distinct root above the bar, carry its best voicing, its variants and its confidence, and set the limit on the number of roots, with each root's variant depth bounded separately.",
+      "rationale": "A structural argument, and the record says so explicitly rather than claiming a measurement: the limit being keyed on voicings is what makes the guarantee absent, independently of how many voicings the current limit happens to admit — a count the record notes was not separately measured on that path. The measured fan-out informs only the floor for the eventual limit; the value itself is left to the fitting phase, not chosen here.",
+      "status": "deferred",
+      "date": "2026-07-07",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_layer5_engagement_design.md:164-172",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. Recorded as an OWED change to the chord layer's carry construction, named so that the engagement design and the later build agree on the contract, and explicitly not built in that pass. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "distinct-root-first carry"
+      ]
+    },
+    {
+      "id": "D-382",
+      "group": "H",
+      "title": "The function layer selects by JOINT CONSISTENCY across tonality, root, inversion and bass — not by maximizing any one score — and every ambiguity kind reasons over the full carried distribution",
+      "verbatim": "The decisive published lesson `[research]` §2: **select by joint consistency across key / root / inversion /\nbass**, not by maximizing any single score. ChordGNN wins the full Roman-numeral label while scoring *lower* on\nthe individual heads — the payoff is the mutually-consistent reading, not a stronger vertical or progression\nscore; AnalysisGNN's logit-fusion confirms it. This is the direct analog of our selection problem and the steer\nfor the L5 objective.\n\nSo engaged Layer 5's selection, for each slice, reasons over the **graded distinct-root distribution including the\nexclusion tail** (§2, #12) and picks the reading that is **maximally consistent across the evidence channels**,\ncarrying the rest at graded confidence and open-marking where no reading dominates. This **generalizes**\n`resolveAbstained` (§1.2): today only the SymmetricRotation arm reasons over the full pool; the other arms decide\non the readingA/readingB pair. Engaged selection lifts *all* kinds to reason over the full distinct-root carry —\nthe SymmetricRotation arm is the structural precedent.",
+      "plain": "Choosing among the readings handed forward is done by picking the one that agrees best across all the evidence at once — the tonality, the root, the inversion and the bass — rather than the one that scores highest on any single measure. Everything else is carried on at graded confidence, and where nothing dominates the stretch is marked open. This generalizes what was built: only the symmetric-rotation case already reasoned over the whole set of alternatives, while every other case decided between just two readings.",
+      "rationale": "Grounded in the published result the record cites: the leading joint model wins the full Roman-numeral label while scoring LOWER on the individual heads — the payoff is the mutually consistent reading rather than a stronger vertical or progression score — and a second system's logit fusion confirms it. The record names this the direct analogue of the project's own selection problem.",
+      "status": "live",
+      "date": "2026-07-07",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_layer5_engagement_design.md:187-198",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The document's banner records `Status: DESIGN (CC, 2026-07-07)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "select by joint consistency"
+      ]
+    },
+    {
+      "id": "D-383",
+      "group": "H",
+      "title": "Bass, spelling and tonality-consistency DECIDE; a licensed progression is only a tie-break among already-consistent readings and may never override a committed root",
+      "verbatim": "The **re-ordering vs the as-built resolver** is the load-bearing structural change: the built `resolveAbstained`\nleads with `isLicensedProgression` (the weak channel) as its *primary* separator (Transition/ShareTone arms). The\nresearch says bass/inversion + spelling + key-consistency are the primary channels and progression is the\ntie-break. Engaged selection **re-orders** so the load-bearing channels decide and progression only breaks ties\namong mutually-consistent readings. *(The channel weights and the deciding margin are precision-phase, R5 — only\nthe ordering/direction is fixed here.)*",
+      "plain": "The built resolver leads with whether one chord progresses plausibly into the next, and that is the wrong lead. The evidence that actually carries root correctness is the bass and inversion, the written spelling, and how well a root fits the tonality of the passage. Whether the progression is a licensed one is a tidy signal that turns out to be uncorrelated with getting the root right, so it is demoted: it may separate readings that are already equally consistent, and it may never overturn a root the vertical evidence committed to. Only the ordering is fixed here; the weights are left to the fitting phase.",
+      "rationale": "Two independent grounds, both cited: published work dissociating the bass from pitch-class content, showing both independently drive expectation, and work on spelling disambiguation — against the project's own measurement, in which the progression-driven override fired 1,043 times for 53 corrections and 809 harms, moving a correct root to a wrong one on about 78 % of its fires. The demotion is therefore the structural form of a measured finding, not a preference.",
+      "status": "live",
+      "date": "2026-07-07",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_layer5_engagement_design.md:212-217",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The document's banner records `Status: DESIGN (CC, 2026-07-07)`; the measured basis it consumes is the separately-ratified fine-grain-override finding. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "progression only breaks ties"
+      ]
+    },
+    {
+      "id": "D-384",
+      "group": "H",
+      "title": "Re-ranking the tonality under chord evidence is a SEPARATE step, never part of the function layer's selection — the function layer reasons inside a tonality already fixed",
+      "verbatim": "- **The joint key↔chord step (O-18 / contract C3)** is a **distinct step, not L5 selection.** L5 selection reasons\n  within a *fixed* region key; the joint step is the coupled machinery that **re-ranks the key under chord\n  evidence** (and vice versa) — the \"carry a beam of (key, chord) hypotheses and let downstream chord evidence\n  re-rank the key\" of `[research]` §3. It is the home of the C3 \"genuinely-coupled key↔chord minority.\"",
+      "plain": "The function stage chooses among readings within a tonality that has already been settled; it never re-opens which tonality that is. Anything that re-ranks the tonality in the light of the chords, or the chords in the light of the tonality, is a distinct piece of machinery upstream of it, and that piece owns the small population of places where the two genuinely depend on each other.",
+      "rationale": "The boundary is drawn so that the forward-only control-flow contract is kept: the function stage reads the chord layer's carry forward and never re-derives, and any coupling machinery is a bounded instance of the same forward discipline — a declared exception with its own closure — rather than a free search back across stages.",
+      "status": "live",
+      "date": "2026-07-07",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_layer5_engagement_design.md:263-266",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The separate step this boundary reserves a place for was afterwards shelved against measurement (**D-278**); the boundary itself is a statement about what the function layer does not own and is unaffected by that shelving. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "a \\*\\*distinct step, not L5 selection"
+      ]
+    },
+    {
+      "id": "D-385",
+      "group": "G",
+      "title": "Pedal-point detection's home is DECIDED: a reader over the chord layer's carry that annotates a carried reading — never a second analysis that overwrites the winner",
+      "verbatim": "- **Home: a reader over the decoder's Layer-4 carry, emitting a pedal-annotated result — an additive annotation on\n  a carried reading, NOT a mutation of the winner.** Because the material it needs is the carry's distinct-root\n  distribution (§6.2), and chord identity is Layer 4, the reader sits at the **carry side (Layer-4 output / a\n  decoder post-reader)** and feeds L5 selection *one* pedal-annotated candidate. It never owns `results.front()`\n  and never writes back into the decoder's scoring — it reads the carry forward and annotates.",
+      "plain": "Deciding that a sustained bass note is a pedal — that the real harmony is the chord above it — is a chord-identity question, so it sits on the chord layer's output side, reading what that layer already carried. It marks one of the carried readings as the pedal reading and passes it on. It never takes ownership of the winning reading, never writes back into the scoring, and never replaces the set of alternatives; the original reading with the bass as the root survives at its own confidence.",
+      "rationale": "Grounded in what the material actually is: a pedal stretch's notes are the sustained bass together with the chord above it, so the upper-voice reading — root not the bass, template excluding the bass note — is already one of the distinct-root alternatives the carry holds, and the confirmation margin the old code computed by hand is already the carry's own ranking. The record does not assume the equivalence: whether the carried alternative agrees with today's bass-stripped second analysis is flagged as an owed corpus measurement, and the fallback if it does not is named — still a carried attribute, still never a mutation.",
+      "status": "live",
+      "date": "2026-07-07",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_layer5_engagement_design.md:410-414",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. Part 1 of the same document had left the home open as a hinge; Part 2 records that it decides it. The build is separately hard-gated on the owed measurement being settled on an established pedal-dense corpus ([[OI-4]]). NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "reader over the decoder's Layer-4 carry"
+      ]
+    },
+    {
+      "id": "D-386",
+      "group": "G",
+      "title": "No fourth hand-rolled scan for the best different-root alternative — the pedal reader consumes the carry's own ranking, or the one unified primitive",
+      "verbatim": "The confirmation margin (§6.1 (ii)) is the **\"best different-root alternative\"** decision the audit catalogues as\ncomputed 4× (`[audit §1.3]`, FQ-1). Under the engaged carry it is served two-ways-that-are-one: the decoder already\n**reads** the best different-root reading from its carry (`chordslicedecoder.cpp:927-930` `[code]`), and FQ-1\nunifies that scan into one primitive (`[audit]` FQ-1, sequenced into E4 — Stage-1 STOP-reported the four legacy\nscans are *not* byte-identically one, so the unification lands with the decoder, not pre-L5). The pedal reader\ntherefore **consumes the carry's distinct-root margin** (or the FQ-1 primitive over the carry) — it adds **no fourth\nscan**. This is the concrete pedal instance of Part 1 §2.2's load-bearing exclusion tail: the ≥2nd distinct root's\ncarried confidence *is* the pedal confirmation signal.",
+      "plain": "Finding the strongest alternative with a different root is a decision the code already makes in four separate places. The pedal reader adds no fifth: it reads the margin straight off the ranked distinct roots the chord layer already carried, or through the single shared routine that unification replaces the four with. The second-strongest root's carried confidence is the pedal confirmation signal.",
+      "rationale": "It is principle #6 applied to a duplication the structural audit catalogued and counted: four copies of the same different-root decision. The record also states why the unification lands with the decoder rather than before it — an earlier stage reported that the four existing scans are not byte-identically the same routine, so folding them is a change that must ride the decoder's own build.",
+      "status": "live",
+      "date": "2026-07-07",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_layer5_engagement_design.md:445-452",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The unification it defers to is tracked as [[OI-11]]. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "adds \\*\\*no fourth\\s*\\n?\\s*scan"
+      ]
+    },
+    {
+      "id": "D-387",
+      "group": "H",
+      "title": "A contradiction between the function context and a committed chord is surfaced on the ONE open mark, enriched with a reason — not on a second parallel flag, and not by overloading the plain undecided mark",
+      "verbatim": "**The #6-clean vehicle: UNIFY into one structured open-mark carrying its REASON/KIND.** Promote the boolean\n`openMark` (across the three structs and their assembly) to a small open-mark annotation that names *why* the slice\nis marked — one channel, distinct kinds:\n- **`Undecided`** — the case-3 abstain / §15-13 both-licensed honest-carry (today's `openMark = true` semantics,\n  preserved exactly);\n- **`FunctionContextContradiction`** — the F-B case: **the reading stays the L4 commit** (`overrodeCommit` stays\n  **false**, `reading` = the committed chord — the additive-not-replace contract `ResolvedReading` already declares,\n  `functionresolver.h:160-165` `[code]`), and the annotation carries the contradiction as calibrated uncertainty\n  (§7.3).\n\nThis **reuses the existing open-mark carry path** (no new field threaded through three structs) and **dissolves\n`[fb §4.2]`'s \"new advisory field\" into \"the existing open-mark, enriched with a reason\"** — a unification, not a\nparallel channel, exactly the instruction's licensed outcome (\"a *unified* advisory, not a duplicate\"). It composes\nwith the existing `ResolutionBasis` transparency enum (`functionresolver.h:151-158`): the demoted\n`ResolutionBasis::FineGrainOverride` value becomes an **annotation basis** (renamed/re-valued to\n`FineGrainContradiction` — an owed spec edit, §8.2), never an override basis.",
+      "plain": "When the functional context disagrees with a chord the earlier stage committed to confidently, that disagreement is recorded as a reason on the single existing open mark, alongside the genuinely-undecided reason it already carries. Two shapes were rejected. Setting the plain undecided mark would be wrong in meaning: the chord stage was not undecided, it committed, and the reading is carried unchanged. Adding a second flag beside the open mark would be two fields on the same object meaning the same thing, threaded through the same three places.",
+      "rationale": "Both rejections are argued at the code and the argument is recorded with them: the plain mark's declared meaning is 'no decided answer — genuinely undecidable', so using it here would tell the display that nothing was decided when something was, which is an information loss; and a parallel flag duplicates a channel, which principle #6 forbids. The unification also composes with the existing transparency enumeration, whose override value is re-valued to a contradiction value in the same act.",
+      "status": "live",
+      "date": "2026-07-07",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_layer5_engagement_design.md:490-505",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The record notes it dissolves an earlier proposal for a new advisory field into an enrichment of the existing one. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "UNIFY into one structured open-mark"
+      ]
+    },
+    {
+      "id": "D-388",
+      "group": "H",
+      "title": "Texture is read primarily from HOW VOICES MOVE TOGETHER, not from how far each line leaps — the interval-led alternative was measured weaker and partly an encoding artifact",
+      "verbatim": "- **D2 — motion-type-led features.** Measured (§4): the ablation is decisive, and the motion view is the\n  extraction-robust one (it never explodes chords; it grouped exploded chamber corpora with the chorales, ruling\n  out an encoding artifact). *Alternative rejected:* interval-profile-led (the pilot's view) — weaker (≤0.20) and\n  partly a chordal-density artifact by the study's own caveat.",
+      "plain": "What separates one texture from another is the pattern of parallel, similar, contrary and oblique motion between pairs of lines. The rates of those four motion types alone recover the texture structure; the statistics of how far each single line moves do not, and are used only as a secondary description of melodic complexity.",
+      "rationale": "Measured, and decisively: motion-type rates alone recover the texture structure at an agreement index of 0.37 to 0.46 where interval profiles alone reach at most 0.20. The motion view is also the extraction-robust one — it never explodes chords, and it grouped chamber corpora encoded with exploded chords together with the chorales, which rules out an encoding artifact. The rejected alternative carries the study's own caveat that its signal is partly an artifact of how densely chords are written.",
+      "status": "live",
+      "date": "2026-07-03",
+      "ratified_by": [
+        "the user"
+      ],
+      "home": "cowork_voiceleading_axis_design.md:519-522",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-07-03 — asks A1–A8 ratified in full)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "motion-type-led features"
+      ]
+    },
+    {
+      "id": "D-389",
+      "group": "H",
+      "title": "A notated voice is a FACT and an inferred perceptual line is a JUDGMENT — the two are separate types and are never conflated",
+      "verbatim": "- **D3 — two-tier voice model: notated voice = fact; stream = inference.** Never conflated; enforced by the §0\n  one-sense rule and the type system (VoiceLine vs Stream). *Alternative rejected:* a single \"voice\" concept with\n  a quality flag — exactly the silent fact/judgment mixing the universality principle forbids.",
+      "plain": "The line the score actually writes and the line a listener hears are different things and are kept apart, in the words used and in the types the code carries. The written one is a fact taken from the score; the heard one is always called a stream, is always marked inferred, and carries its own confidence. Merging them into one idea with a quality flag was considered and rejected.",
+      "rationale": "The rejection has a principled ground: one idea with a quality flag is exactly the silent mixing of fact with judgment that the universality principle forbids — the fact layers must stay style-agnostic and free of inference, so a value that is sometimes read and sometimes guessed cannot live in one field. The separation is enforced twice over, by the document's one-sense vocabulary rule and by the type system.",
+      "status": "live",
+      "date": "2026-07-03",
+      "ratified_by": [
+        "the user"
+      ],
+      "home": "cowork_voiceleading_axis_design.md:523-525",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A3, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "two-tier voice model"
+      ]
+    },
+    {
+      "id": "D-390",
+      "group": "H",
+      "title": "The first version classifies the WHOLE selection as one texture — classifying within a piece is deferred behind a measurement, because the evidence is per-piece",
+      "verbatim": "- **D4 — texture classification is v1's only judgment, at whole-selection granularity.** The evidence is\n  per-piece; a per-span claim would be assumption-based code. The refinement is a named cheap measurement first\n  (§15-1). *Alternative rejected:* shipping windowed per-span classification now — knowledge-based-coding\n  violation.",
+      "plain": "The study that established the texture classes measured whole pieces. Whether the same statistics, computed over a moving window, would find the places where the texture changes inside a piece has not been measured. So the first version gives the whole selection one texture, and finding several within it waits on that measurement. Shipping the windowed version now was considered and rejected as building on an assumption.",
+      "rationale": "The rejection cites the project's own rule that a component's build is earned by the measurement behind it: a per-stretch claim on per-piece evidence would be assumption-based code. The record also notes what the deferral does and does not cost — the output type is already a series of texture stretches, so the refinement changes how many there are, not the shape of anything.",
+      "status": "live",
+      "date": "2026-07-03",
+      "ratified_by": [
+        "the user"
+      ],
+      "home": "cowork_voiceleading_axis_design.md:526-529",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A4, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "at whole-selection granularity"
+      ]
+    },
+    {
+      "id": "D-391",
+      "group": "H",
+      "title": "Reads between the two analysis dimensions are admissible only where the combined dependency graph stays acyclic — harmonic layers may take voice-leading FACTS freely; a voice-leading component may take a committed harmonic result only if nothing that result depends on consumes it back",
+      "verbatim": "- **D6 — the cross-axis dependency rule (acyclicity by declaration).** Cross-axis reads are admissible only where\n  the combined two-axis dependency graph stays acyclic, checked at each wiring: (a) harmonic layers may consume\n  axis-2 **facts** (VL-A/B, L1-derived only) freely — e.g. the future L4 non-chord-tone filter — because facts\n  depend on no harmonic inference; (b) an axis-2 component may consume a **committed harmonic output** (VL-F\n  reads L3's key) provided nothing that harmonic layer depends on, directly or transitively, consumes that\n  axis-2 component. VL-F→L3 is safe (L3 consumes no axis-2 output; the planned L4 filter consumes only VL-A/B,\n  which don't depend on VL-F). Each future wiring re-states this check in its instruction. *Alternative\n  rejected:* a blanket \"axis 2 reads nothing harmonic\" — it would make schema recognition impossible for no\n  structural gain.",
+      "plain": "The harmonic analysis and the voice-leading analysis may read each other, under one rule checked at every wiring. A harmonic stage may freely use the voice-leading facts derived straight from the notes, because those depend on no harmonic decision. A voice-leading component may use a harmonic result that has already been committed — recognizing a stock pattern needs scale degrees, and scale degrees need the tonality — but only if nothing that harmonic stage depends on, directly or through others, reads that component back. A blanket ban on reading anything harmonic was considered and rejected.",
+      "rationale": "The rejection is argued on what it would cost against what it would buy: forbidding every harmonic read would make pattern recognition impossible for no structural gain, since the one planned read is safe under the rule and is shown to be — the tonality stage consumes nothing from this dimension, and the planned non-chord-tone filter consumes only the facts, which do not depend on the pattern recognizer. Each future wiring re-states the check rather than inheriting this one.",
+      "status": "live",
+      "date": "2026-07-03",
+      "ratified_by": [
+        "the user"
+      ],
+      "home": "cowork_voiceleading_axis_design.md:533-541",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A8, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "cross-axis dependency rule"
+      ]
+    },
+    {
+      "id": "D-392",
+      "group": "H",
+      "title": "The later voice-leading components are CLAIMS WITH OWNERS, not builds — each clears its own design document and its own evidence before any instruction exists",
+      "verbatim": "- **D5 — staged components behind design gates.** VL-D/E/F/G/H are claims with owners, not builds; each clears its\n  own design + footing before an instruction exists. This is the proportionality gate applied *inside* the axis —\n  no slot-filling (the Contrapunctus reminder). *Alternative rejected:* one monolithic axis build.",
+      "plain": "Stream separation, phrase segmentation, pattern recognition, voicing analysis and part-writing advice are all named and assigned, but none is built. Each first needs its own design document and the evidence to stand on. Building the whole dimension in one go was considered and rejected.",
+      "rationale": "The record names the principle and the failure it guards against: this is the proportionality admission gate applied inside the dimension rather than only at its border, and the guard is against slot-filling — building a component because a slot exists for it rather than because evidence earned it.",
+      "status": "live",
+      "date": "2026-07-03",
+      "ratified_by": [
+        "the user"
+      ],
+      "home": "cowork_voiceleading_axis_design.md:530-532",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A2's second half, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "staged components behind design gates"
+      ]
+    },
+    {
+      "id": "D-393",
+      "group": "H",
+      "title": "Every voice-leading inference publishes the committed answer AND the FULL ranked list of all alternatives with their weights — nothing below the top is discarded",
+      "verbatim": "- **Output — the committed class PLUS the full ranked alternative list (zero information loss; ratification\n  clarification, user 2026-07-03):** the span's voice-leading idiom from the four-class taxonomy (§0) is the\n  TOP of a **fully ranked list of ALL class fits, each carried with its weight** — nothing below the top is\n  discarded; a downstream consumer (and Stage-5 calibration) sees everything VL-C saw. This is the ARCH §2.15\n  minimality-plus-maximal-information contract applied here (the same carried-alternatives discipline as L4's\n  ranked chord readings).",
+      "plain": "The texture stage does not publish only the class it chose. It publishes every class it considered, ranked, each with the weight it earned, so that anything reading it later — including the calibration step — sees exactly what the stage saw. Nothing below the winner is thrown away.",
+      "rationale": "It is the carried-alternatives contract the architecture already states, applied here rather than restated: the same discipline the chord layer's ranked readings follow. The record notes the clarification it rode: facts carry no alternatives by construction, but a choice made at the fact level — which reduction rule was applied — is a declared parameter of the query, recoverable at zero loss from the lossless note model.",
+      "status": "live",
+      "date": "2026-07-03",
+      "ratified_by": [
+        "the user"
+      ],
+      "home": "cowork_voiceleading_axis_design.md:346-351",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document's banner records that this clarification was folded in BEFORE signing and that the signing ratified asks A1–A8 in full. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "full ranked alternative list"
+      ]
+    },
+    {
+      "id": "D-394",
+      "group": "H",
+      "title": "Reducing a chord-bearing voice to one line is a DECLARED parameter of the request, uniform across sources — never silent, never chosen per source; the first version offers exactly one rule",
+      "verbatim": "- **Reduction is declared, uniform, and per-query — never silent, never per-source.** A consumer needing one line\n  from a chordal voice names a reduction rule (v1 provides exactly one: **top-note** — the highest sounding pitch\n  per event, the study's curated-branch rule). The rule is a parameter of the *query*, carried in the output's\n  provenance. This single uniform rule is what retires the study's per-source explosion asymmetry (its View-A\n  caveat) when the production extractor is built.",
+      "plain": "Where a written voice carries chords rather than single notes, anything needing one line from it must name the rule that picks that line, and the rule travels with the answer as provenance. There is one rule in the first version: take the highest sounding pitch. It is applied the same way everywhere, which is what removes the uneven treatment the exploratory study had between its sources.",
+      "rationale": "The record ties it to a measured problem in the study it inherits from: the study reduced differently per source, which is recorded as a caveat on its own results, and one uniform declared rule is what retires that asymmetry when the production extractor is built. Declaring the rule per request rather than fixing it globally also keeps it inspectable — the record's standing complaint against the alternative is that a silent reduction makes its effects invisible rather than absent.",
+      "status": "live",
+      "date": "2026-07-03",
+      "ratified_by": [
+        "the user"
+      ],
+      "home": "cowork_voiceleading_axis_design.md:304-308",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-07-03 — asks A1–A8 ratified in full)` and, separately, that the top-note default is closed as-built. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "never silent, never per-source"
+      ]
+    },
+    {
+      "id": "D-395",
+      "group": "H",
+      "title": "Three named floors govern abstention, and the FIT floor is the one that lets a passage resembling NO known texture decline rather than be forced to its nearest",
+      "verbatim": "- **Honest marks — the three declared floors (named once here, used by these names everywhere):** the\n  **evidential floor** (minimum motion-sample count for a profile to support a decision), the **margin floor**\n  (minimum best-vs-second-best margin), and the **fit floor** (minimum absolute fit of the best class).\n  Abstention (uniform semantics, contract U5) fires when the margin is below the margin floor **or** the best fit\n  is below the fit floor — the second clause is what makes a span resembling *no* reference class abstain rather\n  than be forced to its nearest class (a relative margin alone cannot deliver that).",
+      "plain": "The texture stage declines to answer under three named conditions: too few motion samples to support any decision, too small a lead of the best class over the second, or too poor an absolute fit of the best class. The third is the one that matters for music the taxonomy does not cover: without it, a passage unlike every known class would still be assigned to whichever class it least resembled, because a lead over the second-best says nothing about whether either fits.",
+      "rationale": "The reason is stated with the rule and is a logical one rather than a measured one: a relative margin alone cannot deliver off-taxonomy abstention. The record also notes that the floor was added in response to an independent adversarial audit, as one of that audit's three high-severity findings — the abstention the design promised was not deliverable by the mechanism it specified until this floor existed.",
+      "status": "live",
+      "date": "2026-07-03",
+      "ratified_by": [
+        "the user"
+      ],
+      "home": "cowork_voiceleading_axis_design.md:376-381",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. All three floor values are recorded as precision-phase constants, not fixed here. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "the three declared floors"
+      ]
+    },
+    {
+      "id": "D-396",
+      "group": "H",
+      "title": "The voice-leading dimension covers NOTATED music only, and its style coordinate is UNDEFINED — not zero — for sources that carry no voices",
+      "verbatim": "- **Coverage declaration (honest, structural).** The axis analyses **notated music only** — lead-sheet sources\n  carry no voices, so the voice-leading coordinate of the 2-D style structure is simply *undefined* for them\n  (undefined, not zero, in every consumer). This is a representational fact, not a corpus accident.",
+      "plain": "This dimension reads the lines a score writes, so a source that carries no lines at all, such as a lead sheet, has no voice-leading character to read. Every consumer must treat that coordinate as undefined rather than as zero, because a missing measurement is not a measurement of nothing.",
+      "rationale": "The record grounds it as a property of the representation rather than of the corpora held: a lead sheet does not fail to have voices for want of a better encoding, it has none by what it is. The distinction between undefined and zero is what stops a downstream consumer from reading absence as a low score.",
+      "status": "live",
+      "date": "2026-07-03",
+      "ratified_by": [
+        "the user"
+      ],
+      "home": "cowork_voiceleading_axis_design.md:502-504",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A6, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "undefined, not zero"
+      ]
+    },
+    {
+      "id": "D-397",
+      "group": "H",
+      "title": "The homeless analysis objects are ASSIGNED to named owners on the voice-leading dimension — the stock patterns, the melodic phrase, chord voicing, and part-writing advice — as claims, discharged only at each owner's own ratified design",
+      "verbatim": "- **A7 — the claims registry:** VL-F claims the six voice-leading-defined Vocabulary entries; VL-E claims the\n  melodic phrase [MT]; VL-G claims voicing/arrangement (the dictionary §5.3 exclusion); VL-H claims part-writing\n  checking & suggestion (the advisory consumer, incl. the VL-B per-sample motion-event export that serves it).\n  Recorded as claims with owners, discharged only at each component's own ratified design.",
+      "plain": "Four kinds of analysis object that previously had no owner are assigned here: the stock eighteenth-century patterns and the chromatic line cliché, which the chord dictionary already flags as belonging to this dimension; the melodic phrase; chord voicing and arrangement, which the dictionary explicitly excludes from its own scope; and checking and advising on part-writing. Each is recorded as a claim with an owner, not as work started, and the claim is settled only when that owner's own design is ratified.",
+      "rationale": "The assignment is grounded in what defines each object: the stock patterns are defined primarily by a paired outer-voice scale-degree skeleton — that is, by voice leading — which the built chord catalogue already records with a voice-leading-defined flag on six entries, verified at that catalogue. The phrase assignment is the other side of a ruling already made on the harmonic side, where the grouping layer deliberately does not segment the melodic phrase.",
+      "status": "live",
+      "date": "2026-07-03",
+      "ratified_by": [
+        "the user"
+      ],
+      "home": "cowork_voiceleading_axis_design.md:693-696",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A7, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "the claims registry"
+      ]
+    },
+    {
+      "id": "D-398",
+      "group": "H",
+      "title": "Parallel motion is judged SEMITONE-EXACT, not by generic diatonic size — a same-direction move whose semitone interval changes counts as similar motion",
+      "verbatim": "2. **The \"parallel\" interval-preservation convention** (semitone-exact vs generic-diatonic) — ✅ **CLOSED at build\n   (AS-BUILT, 2026-07-03): SEMITONE-EXACT.** Verified at `voiceleading2.py` `_motion`: `parallel` iff both voices\n   move the same direction AND `(pu1−pv1)==(pu0−pv0)` on signed MIDI pitches (a same-direction move whose semitone\n   interval changes is `similar`). Replicated exactly in `voiceleadingprofiles.cpp classifyMotion` (oracle-tested).",
+      "plain": "Two lines count as moving in parallel only when they move the same way and the distance between them in semitones is unchanged. A pair moving the same way from a major third to a minor third is therefore similar motion, not parallel, even though both are thirds. The alternative — counting by the size of the interval as written on the staff, so that any third to any third is parallel — was the open question, and this is the answer.",
+      "rationale": "Settled by replication rather than by choice: the convention was read off the exploratory study's own motion classifier at source and reproduced exactly in the production code, which is oracle-tested against it. Fixing it this way is what makes the production implementation reproduce the study's features, which the design requires of it.",
+      "status": "live",
+      "date": "2026-07-03",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_voiceleading_axis_design.md:632-635",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document records this as one of two build declarations the design owed and the build closed; the closure names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "SEMITONE-EXACT"
+      ]
+    },
+    {
+      "id": "D-399",
+      "group": "H",
+      "title": "The texture feature space was decided BY MEASUREMENT among three named candidates — the standardized combination of both views won; the unstandardized combination was rejected before testing for a measured dilution",
+      "verbatim": "**★ AS-BUILT: the winner is the z-scored\n  concatenation (ABz)** — measured by `run_vl_feature_space.py` (nearest-centroid reproduction of the ratified AB K=4\n  partition, cap=80/source, seed 0): **ABz ARI 0.791 / accuracy 0.918**, two-stage 0.716, motion-only 0.258 (raw\n  concatenation rejected a priori).",
+      "plain": "Which numbers the texture decision is made from was not chosen by argument. Three candidates were tested against one criterion: reproduce the classes the earlier study established. Putting both kinds of statistic together after standardizing them reproduced those classes best. Putting them together without standardizing was ruled out in advance, because the sixteen interval numbers would simply outvote the four motion numbers.",
+      "rationale": "Measured, with the figures recorded: nearest-centroid classification in the standardized combined space reproduces the ratified four-class partition at an agreement index of 0.791 and an accuracy of 0.918, against 0.716 for the two-stage alternative and 0.258 for motion alone. The declared tolerance was met with margin, so no stop fired. The resulting reference set ships as generated code with its full provenance — the run, the corpus state, the number of classes, the seed and the library version — and is refit at corpus waves under the same protocol as the harmonic taxonomy.",
+      "status": "live",
+      "date": "2026-07-03",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_voiceleading_axis_design.md:368-371",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document records this as the second of two build declarations the design owed and the build closed, decided at build by measurement rather than at design time; the closure names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "z-scored\\s*\\n?\\s*concatenation"
+      ]
+    },
+    {
+      "id": "D-400",
+      "group": "H",
+      "title": "A PER-VOICE span kind is admitted to the span typology — melodic phrases overlap across voices by construction and tile only within one voice",
+      "verbatim": "- **A5 — the typology extension:** admit the **per-voice span kind** (phrase-spans: overlapping across voices by\n  construction, tiling within one voice) into ARCHITECTURE §2.15 — needed before VL-E's design can be written\n  against the typology.",
+      "plain": "Until now every kind of span the analysis produces cuts across all the music at once. The melodic phrase does not: in contrapuntal writing the voices' phrases run concurrently and out of step with one another, as a fugue's staggered entries do. So a per-voice kind of span is admitted to the catalogue of span kinds, which is what a phrase-segmentation design can then be written against.",
+      "rationale": "Grounded in the musical fact it has to represent: phrases in contrapuntal textures are concurrent, overlapping and out of phase across voices, so they cannot be expressed as a partition of the music into successive stretches. The record also states what is deliberately not asserted — that consecutive phrases within one voice tile it exactly — because phrase elision makes a shared boundary note a real case, recorded as an open question for the segmentation design rather than assumed away.",
+      "status": "live",
+      "date": "2026-07-03",
+      "ratified_by": [
+        "the user"
+      ],
+      "home": "cowork_voiceleading_axis_design.md:688-690",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A5, recorded ratified in full at the banner. The propagation into the architecture document's span typology is recorded as riding the build. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.",
+      "patterns": [
+        "the typology extension"
       ]
     }
   ]
