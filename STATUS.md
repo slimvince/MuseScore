@@ -22,8 +22,12 @@ verbatim**, taking the overlap tally to five) and [[OI-275]] (**a SECOND instanc
 style preset a weak mode prior, against D-003's measured preset-independence**). **★ [[OI-276]] IS THE SHARP ONE:** three of the five documents state as
 current something false at HEAD, and the third is not a stale tense but a stale **acceptance criterion** — the SIGNED voice-leading specification names the
 gate its build must satisfy five times as the batch sets 53/24/53, a gate re-baselined 2026-07-05 and superseded in whole at R10-b 2026-07-06 (**D-115**).
-**Three commits:** `254dfdd445` the Layer-3 specification (16 entries) → `c840fd84bd` the acceptance banner → `d46050ca45` four more documents (42 entries
-+ the D-085 fill) → the row, the notes and this pointer. NO new bulk rule — no bulk rule may lawfully sweep a design document, and this wave is a second
+**The commit sequence, corrected against what the messages say:** `254dfdd445` the Layer-3
+specification (16 entries) → `c840fd84bd` the acceptance banner → **`2504911337`, the USER's ratification of D-319…D-341, which was made while this
+session's second batch sat in the working tree and therefore ALSO carries all 42 of those entries and the D-085 fill** → `d46050ca45`, which consequently
+carries only the regenerated dispositions, manifest and triage artifact although its message describes the 42 entries → the row, the notes and this
+pointer. Nothing was lost either way (the 23 ratification markers are present at HEAD; D-317/D-318/D-342 correctly carry none), and pushed history is not
+rewritten — the correction lives in the [[OI-207]] note. NO new bulk rule — no bulk rule may lawfully sweep a design document, and this wave is a second
 demonstration of phase 1f's finding: five documents read in full moved their own cluster counts by 21 while producing 58 entries. All guards PASS
 (`--verify` 400/400 quotes, 394/394 anchors, references ALL; `--check` 14,460/14,460 clusters, 15,224/15,224 occurrences; register `--check` across 21
 files; the triage artifact reproduces from the data; open-items living check 276/276). **NEXT: the user ratifies (or corrects) D-343…D-400 and rules on
