@@ -625,7 +625,7 @@
 
 **Home.** `cowork_handoff_archive.md:2964`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
-**Provenance.** Recorded in the 2026-06-12 Stage-3.1b block of `cowork_handoff_archive.md` and in `docs/p3_granularity_ab_3_1b.md`. NOT superseded by any later ruling: `OPEN_ITEMS.md` OI-210 records that the extent question was then PARKED pending the granularity-robust metric (which has existed since 2026-07-06) and is now implemented as whole-piece by dispatch specification with no ruling — so the shelving stands on the record and the implementation departs from it. Found by the phase-1e second-partition archive read, 2026-08-02.
+**Provenance.** Recorded in the 2026-06-12 Stage-3.1b block of `cowork_handoff_archive.md` and in `docs/p3_granularity_ab_3_1b.md`. NOT superseded by any later ruling: `OPEN_ITEMS.md` OI-210 records that the extent question was then PARKED pending the granularity-robust metric (which has existed since 2026-07-06) and is now implemented as whole-piece by dispatch specification with no ruling — so the shelving stands on the record and the implementation departs from it. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).
 
 ### D-288 — Beam widening is SHELVED - a wider search cannot fix the failure class it was proposed for
 
@@ -641,7 +641,7 @@
 
 **Home.** `cowork_handoff_archive.md:3029`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
-**Provenance.** Recorded in `cowork_handoff_archive.md` (the 2026-06-13 strategic-pivot block); `docs/beam_widening_design.md` was banner-shelved and retained for its derivation. Found by the phase-1e second-partition archive read, 2026-08-02.
+**Provenance.** Recorded in `cowork_handoff_archive.md` (the 2026-06-13 strategic-pivot block); `docs/beam_widening_design.md` was banner-shelved and retained for its derivation. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).
 
 ### D-289 — Meta-principle: precision lives in the evidence and the functional labelling, not in the search
 
@@ -658,7 +658,7 @@
 
 **Home.** `cowork_handoff_archive.md:3082`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
-**Provenance.** Recorded in `cowork_handoff_archive.md` (the 2026-06-13 Stage-4 design-investigation block) and `docs/implementation_roadmap.md`. ★ FLAGGED against the OI-270 meta-findings (D-282…D-285): this is an EARLIER and independently-derived statement of the same insight as D-284 (selection and competition are saturated). It does not change D-284's ruled status; it dates and corroborates it. It was itself later RECONCILED rather than overturned: `cowork_handoff_archive.md:3920-3921` records that the joint decode's value is broad-evidence integration, NOT search — "search is about zero" having been measured over a FIXED NARROW evidence surface. Found by the phase-1e second-partition archive read, 2026-08-02.
+**Provenance.** Recorded in `cowork_handoff_archive.md` (the 2026-06-13 Stage-4 design-investigation block) and `docs/implementation_roadmap.md`. ★ FLAGGED against the OI-270 meta-findings (D-282…D-285): this is an EARLIER and independently-derived statement of the same insight as D-284 (selection and competition are saturated). It does not change D-284's ruled status; it dates and corroborates it. It was itself later RECONCILED rather than overturned: `cowork_handoff_archive.md:3920-3921` records that the joint decode's value is broad-evidence integration, NOT search — "search is about zero" having been measured over a FIXED NARROW evidence surface. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).
 
 ### D-293 — Fitted values are fitted per IDIOM, never for a user preset; presets are regression surfaces and delivery carriers
 
@@ -674,7 +674,7 @@
 
 **Home.** `cowork_handoff_archive.md:2363`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
-**Provenance.** Recorded in `cowork_handoff_archive.md` (the Stage-5 fitter block) as design constraint 4c of `cowork_stage5_fitter_design.md`. Consistent with, and earlier than, D-003 (inference is preset-independent; presets are presentation concerns) — this states the FITTING side of the same separation. Found by the phase-1e second-partition archive read, 2026-08-02.
+**Provenance.** Recorded in `cowork_handoff_archive.md` (the Stage-5 fitter block) as design constraint 4c of `cowork_stage5_fitter_design.md`. Consistent with, and earlier than, D-003 (inference is preset-independent; presets are presentation concerns) — this states the FITTING side of the same separation. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).
 
 ### D-294 — The only ground truth is the human annotation; the algorithmic analysis is a filter, and no self-annotation ever enters a measurement
 
@@ -694,7 +694,7 @@
 
 **Home.** `cowork_handoff_archive.md:2844`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
-**Provenance.** Recorded in `cowork_handoff_archive.md` (the corpus-audit block, as the ground-truth verdict). The human-annotation-only requirement it names was delivered as the granularity-robust unit (D-115), whose own text carries the clause "music21 is NOT ground truth"; the two further clauses — never describe a measurement as ground-truth agreement, and no self-annotation in any measurement — are recorded ONLY here. Found by the phase-1e second-partition archive read, 2026-08-02.
+**Provenance.** Recorded in `cowork_handoff_archive.md` (the corpus-audit block, as the ground-truth verdict). The human-annotation-only requirement it names was delivered as the granularity-robust unit (D-115), whose own text carries the clause "music21 is NOT ground truth"; the two further clauses — never describe a measurement as ground-truth agreement, and no self-annotation in any measurement — are recorded ONLY here. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).
 
 ### D-297 — Correction of record: never computing a possibility is not information loss; only discarding a computed one is
 
@@ -713,5 +713,5 @@
 
 **Home.** `cowork_handoff_archive.md:1532`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
-**Provenance.** Recorded in `cowork_handoff_archive.md` (the 2026-07-07 entry-point block) as a dated correction. It scopes D-099 / principle #12 and is recorded nowhere that a reader of #12 would find. Found by the phase-1e second-partition archive read, 2026-08-02.
+**Provenance.** Recorded in `cowork_handoff_archive.md` (the 2026-07-07 entry-point block) as a dated correction. It scopes D-099 / principle #12 and is recorded nowhere that a reader of #12 would find. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).
 

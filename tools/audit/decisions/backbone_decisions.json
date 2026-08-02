@@ -6167,7 +6167,7 @@
       "home": "cowork_handoff_archive.md:2964",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in the 2026-06-12 Stage-3.1b block of `cowork_handoff_archive.md` and in `docs/p3_granularity_ab_3_1b.md`. NOT superseded by any later ruling: `OPEN_ITEMS.md` OI-210 records that the extent question was then PARKED pending the granularity-robust metric (which has existed since 2026-07-06) and is now implemented as whole-piece by dispatch specification with no ruling — so the shelving stands on the record and the implementation departs from it. Found by the phase-1e second-partition archive read, 2026-08-02.",
+      "status_source": "Recorded in the 2026-06-12 Stage-3.1b block of `cowork_handoff_archive.md` and in `docs/p3_granularity_ab_3_1b.md`. NOT superseded by any later ruling: `OPEN_ITEMS.md` OI-210 records that the extent question was then PARKED pending the granularity-robust metric (which has existed since 2026-07-06) and is now implemented as whole-piece by dispatch specification with no ruling — so the shelving stands on the record and the implementation departs from it. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).",
       "patterns": [
         "whole-score SHELVED with evidence",
         "whole-score variant SHELVED with evidence",
@@ -6189,7 +6189,7 @@
       "home": "cowork_handoff_archive.md:5272",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `cowork_handoff_archive.md` (the redesign-sequence block) and in the 2026-06-08 `STATUS_ARCHIVE.md` entry, both pointing at `docs/redesign_plan.md` Step 3. The shelving names its own re-open condition — a confirmed case where the correct key sits at rank 1 or 2 — so it is a shelving with a stated trigger, not a permanent exclusion. Found by the phase-1e second-partition archive read, 2026-08-02. Note for a future reader: the joint estimator (D-001) carries a full posterior by construction, so the concern this shelving withdrew is met by a different design, not by reviving this one.",
+      "status_source": "Recorded in `cowork_handoff_archive.md` (the redesign-sequence block) and in the 2026-06-08 `STATUS_ARCHIVE.md` entry, both pointing at `docs/redesign_plan.md` Step 3. The shelving names its own re-open condition — a confirmed case where the correct key sits at rank 1 or 2 — so it is a shelving with a stated trigger, not a permanent exclusion. Found by the phase-1e second-partition archive read, 2026-08-02. Note for a future reader: the joint estimator (D-001) carries a full posterior by construction, so the concern this shelving withdrew is met by a different design, not by reviving this one. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).",
       "patterns": [
         "[Kk]ey-as-distribution\\b[^.\\n]{0,40}SHELVED",
         "Step 3 \\(key-as-distribution\\) is shelved"
@@ -6210,7 +6210,7 @@
       "home": "cowork_handoff_archive.md:3029",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `cowork_handoff_archive.md` (the 2026-06-13 strategic-pivot block); `docs/beam_widening_design.md` was banner-shelved and retained for its derivation. Found by the phase-1e second-partition archive read, 2026-08-02.",
+      "status_source": "Recorded in `cowork_handoff_archive.md` (the 2026-06-13 strategic-pivot block); `docs/beam_widening_design.md` was banner-shelved and retained for its derivation. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).",
       "patterns": [
         "beam-widening\\s+SHELVED",
         "beam widening; also notes beam\\s+shelved",
@@ -6232,7 +6232,7 @@
       "home": "cowork_handoff_archive.md:3082",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `cowork_handoff_archive.md` (the 2026-06-13 Stage-4 design-investigation block) and `docs/implementation_roadmap.md`. ★ FLAGGED against the OI-270 meta-findings (D-282…D-285): this is an EARLIER and independently-derived statement of the same insight as D-284 (selection and competition are saturated). It does not change D-284's ruled status; it dates and corroborates it. It was itself later RECONCILED rather than overturned: `cowork_handoff_archive.md:3920-3921` records that the joint decode's value is broad-evidence integration, NOT search — \"search is about zero\" having been measured over a FIXED NARROW evidence surface. Found by the phase-1e second-partition archive read, 2026-08-02.",
+      "status_source": "Recorded in `cowork_handoff_archive.md` (the 2026-06-13 Stage-4 design-investigation block) and `docs/implementation_roadmap.md`. ★ FLAGGED against the OI-270 meta-findings (D-282…D-285): this is an EARLIER and independently-derived statement of the same insight as D-284 (selection and competition are saturated). It does not change D-284's ruled status; it dates and corroborates it. It was itself later RECONCILED rather than overturned: `cowork_handoff_archive.md:3920-3921` records that the joint decode's value is broad-evidence integration, NOT search — \"search is about zero\" having been measured over a FIXED NARROW evidence surface. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).",
       "patterns": [
         "precision lives in\\s+emission \\+ functional labeling, NOT search/path",
         "precision lives in the emission model \\+ functional\\s+labeling, NOT in search/decode"
@@ -6253,7 +6253,7 @@
       "home": "cowork_handoff_archive.md:3896",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `cowork_handoff_archive.md` (the 2026-06-15 cadence-precision-investigation block), citing `cc_cadence_precision_investigation_dossier.md`. Its scope is stated with it: measured on the Bach ground-truth corpus, non-Bach unmeasured. Found by the phase-1e second-partition archive read, 2026-08-02.",
+      "status_source": "Recorded in `cowork_handoff_archive.md` (the 2026-06-15 cadence-precision-investigation block), citing `cc_cadence_precision_investigation_dossier.md`. Its scope is stated with it: measured on the Bach ground-truth corpus, non-Bach unmeasured. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).",
       "patterns": [
         "the key-agnostic LOCAL cadence approach has HIT ITS PRECISION CEILING"
       ]
@@ -6273,7 +6273,7 @@
       "home": "cowork_handoff_archive.md:3833",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `cowork_handoff_archive.md` (the 2026-06-14 metric-check block), citing `cc_tonicization_modulation_metric_dossier.md`. The same block relocates the largest accuracy slice from the function layer to the key layer. Found by the phase-1e second-partition archive read, 2026-08-02.",
+      "status_source": "Recorded in `cowork_handoff_archive.md` (the 2026-06-14 metric-check block), citing `cc_tonicization_modulation_metric_dossier.md`. The same block relocates the largest accuracy slice from the function layer to the key layer. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).",
       "patterns": [
         "\\*\\*Do NOT wire 6-tonic-i\\*\\*",
         "Crediting rule NOT warranted"
@@ -6294,7 +6294,7 @@
       "home": "cowork_handoff_archive.md:2478",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `cowork_handoff_archive.md` (the queue block, marked BINDING on the fitter design), naming `cowork_score_census.md` §8c as the constraint's own block and `cowork_stage5_fitter_design.md` §2/§3a as where it binds. ★ Load-bearing at HEAD and NOT reconciled anywhere in the record this pass read: the joint estimator's tables and weights are fitted on the DCML ground truth, which this constraint names as non-commercial-class and therefore validation-only. Whether the constraint was amended, scoped, or simply not carried forward is not stated. Found by the phase-1e second-partition archive read, 2026-08-02; rowed. ★ RULED by the user 2026-08-02 (OI-271, reading 1): THE CONSTRAINT BINDS, reaffirmed as written. Consequence recorded with the census's own nuance (cowork_score_census.md:239-248): the constraint's class list places the WiR analyses (CC-BY-SA) in the SHIPPABLE pool and the DCML corpora in the NC class — and the record names the 326-chorale ground truth 'WiR/DCML' interchangeably — so the practical consequence turns on a VERIFICATION not yet made: establish at the objects which class the fitted tables' annotation source falls in. If NC-class, the current fitted values are development/validation only and ship-intended values are fitted on the licensed pool at the corpus-onboarding event (OI-38, where the licensing and precision motives converge); if CC-BY-SA, the fit conforms and that establishment is recorded. The verification is OI-271's remaining action.",
+      "status_source": "Recorded in `cowork_handoff_archive.md` (the queue block, marked BINDING on the fitter design), naming `cowork_score_census.md` §8c as the constraint's own block and `cowork_stage5_fitter_design.md` §2/§3a as where it binds. ★ Load-bearing at HEAD and NOT reconciled anywhere in the record this pass read: the joint estimator's tables and weights are fitted on the DCML ground truth, which this constraint names as non-commercial-class and therefore validation-only. Whether the constraint was amended, scoped, or simply not carried forward is not stated. Found by the phase-1e second-partition archive read, 2026-08-02; rowed. ★ RULED by the user 2026-08-02 (OI-271, reading 1): THE CONSTRAINT BINDS, reaffirmed as written. Consequence recorded with the census's own nuance (cowork_score_census.md:239-248): the constraint's class list places the WiR analyses (CC-BY-SA) in the SHIPPABLE pool and the DCML corpora in the NC class — and the record names the 326-chorale ground truth 'WiR/DCML' interchangeably — so the practical consequence turns on a VERIFICATION not yet made: establish at the objects which class the fitted tables' annotation source falls in. If NC-class, the current fitted values are development/validation only and ship-intended values are fitted on the licensed pool at the corpus-onboarding event (OI-38, where the licensing and precision motives converge); if CC-BY-SA, the fit conforms and that establishment is recorded. The verification is OI-271's remaining action. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).",
       "patterns": [
         "FITTING-POOL LICENSE CONSTRAINT",
         "ship-intended weights fit only on the PD/CC0/CC-BY pool"
@@ -6315,7 +6315,7 @@
       "home": "cowork_handoff_archive.md:2363",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `cowork_handoff_archive.md` (the Stage-5 fitter block) as design constraint 4c of `cowork_stage5_fitter_design.md`. Consistent with, and earlier than, D-003 (inference is preset-independent; presets are presentation concerns) — this states the FITTING side of the same separation. Found by the phase-1e second-partition archive read, 2026-08-02.",
+      "status_source": "Recorded in `cowork_handoff_archive.md` (the Stage-5 fitter block) as design constraint 4c of `cowork_stage5_fitter_design.md`. Consistent with, and earlier than, D-003 (inference is preset-independent; presets are presentation concerns) — this states the FITTING side of the same separation. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).",
       "patterns": [
         "OPTIMIZE FOR IDIOMS ONLY"
       ]
@@ -6335,7 +6335,7 @@
       "home": "cowork_handoff_archive.md:2844",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `cowork_handoff_archive.md` (the corpus-audit block, as the ground-truth verdict). The human-annotation-only requirement it names was delivered as the granularity-robust unit (D-115), whose own text carries the clause \"music21 is NOT ground truth\"; the two further clauses — never describe a measurement as ground-truth agreement, and no self-annotation in any measurement — are recorded ONLY here. Found by the phase-1e second-partition archive read, 2026-08-02.",
+      "status_source": "Recorded in `cowork_handoff_archive.md` (the corpus-audit block, as the ground-truth verdict). The human-annotation-only requirement it names was delivered as the granularity-robust unit (D-115), whose own text carries the clause \"music21 is NOT ground truth\"; the two further clauses — never describe a measurement as ground-truth agreement, and no self-annotation in any measurement — are recorded ONLY here. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).",
       "patterns": [
         "the ONLY ground truth\\s+is the human annotation",
         "music21 is NOT ground truth",
@@ -6357,7 +6357,7 @@
       "home": "cowork_handoff_archive.md:2507",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `cowork_handoff_archive.md` (the standing-records block) as item E-14 of `cowork_product_tool_register.md`, with a note that a pointer into the architecture document was owed at its next edit. This pass found no such pointer in the register's own home census, so the owed act appears undischarged. Found by the phase-1e second-partition archive read, 2026-08-02.",
+      "status_source": "Recorded in `cowork_handoff_archive.md` (the standing-records block) as item E-14 of `cowork_product_tool_register.md`, with a note that a pointer into the architecture document was owed at its next edit. This pass found no such pointer in the register's own home census, so the owed act appears undischarged. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).",
       "patterns": [
         "ZERO INFORMATION LOSS TO THE END USER"
       ]
@@ -6377,7 +6377,7 @@
       "home": "cowork_handoff_archive.md:3732",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `cowork_handoff_archive.md` (the 2026-06-14 Stage-4c block) as a standing lesson. Bears directly on D-229, the general MuseScore-dependency rule the user adopted 2026-08-02: this is the EDIT-versus-READ half, stated a month and a half earlier and consistent with it. D-229 adds what the bridge may read (the score model through the bridge pattern, never layout-derived state) and when an edit to MuseScore's own code is admissible. Found by the phase-1e second-partition archive read, 2026-08-02.",
+      "status_source": "Recorded in `cowork_handoff_archive.md` (the 2026-06-14 Stage-4c block) as a standing lesson. Bears directly on D-229, the general MuseScore-dependency rule the user adopted 2026-08-02: this is the EDIT-versus-READ half, stated a month and a half earlier and consistent with it. D-229 adds what the bridge may read (the score model through the bridge pattern, never layout-derived state) and when an edit to MuseScore's own code is admissible. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).",
       "patterns": [
         "FERMATA/OFF-LIMITS CLARIFICATION",
         "engraving is ALLOWED from any code we may edit"
@@ -6398,7 +6398,7 @@
       "home": "cowork_handoff_archive.md:1532",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `cowork_handoff_archive.md` (the 2026-07-07 entry-point block) as a dated correction. It scopes D-099 / principle #12 and is recorded nowhere that a reader of #12 would find. Found by the phase-1e second-partition archive read, 2026-08-02.",
+      "status_source": "Recorded in `cowork_handoff_archive.md` (the 2026-07-07 entry-point block) as a dated correction. It scopes D-099 / principle #12 and is recorded nowhere that a reader of #12 would find. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).",
       "patterns": [
         "#12 CORRECTION \\(recorded",
         "you cannot lose what you never had"
@@ -6419,7 +6419,7 @@
       "home": "cowork_handoff_archive.md:3771",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `cowork_handoff_archive.md` (the 2026-06-14 option-C block) as a new standing method, pointing at the handoff's standing block and the roadmap. Realised as the dependency-ordered per-layer certification plan (`OPEN_ITEMS.md` OI-84, complete 2026-07-12) and as the audit protocol's pass ordering. Found by the phase-1e second-partition archive read, 2026-08-02.",
+      "status_source": "Recorded in `cowork_handoff_archive.md` (the 2026-06-14 option-C block) as a new standing method, pointing at the handoff's standing block and the roadmap. Realised as the dependency-ordered per-layer certification plan (`OPEN_ITEMS.md` OI-84, complete 2026-07-12) and as the audit protocol's pass ordering. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).",
       "patterns": [
         "NEW STANDING METHOD recorded \\(user\\): layer-by-layer audit"
       ]
@@ -6439,7 +6439,7 @@
       "home": "cowork_handoff_archive.md:4967",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `cowork_handoff_archive.md` (the failure-cluster block). This is the statement the 2026-08-02 residual pass cited as its worked example of a real ruling sitting inside the unresolved residual (`open_items/OI-207.md`, the residual-pass note), now entered. Found by the phase-1e second-partition archive read, 2026-08-02.",
+      "status_source": "Recorded in `cowork_handoff_archive.md` (the failure-cluster block). This is the statement the 2026-08-02 residual pass cited as its worked example of a real ruling sitting inside the unresolved residual (`open_items/OI-207.md`, the residual-pass note), now entered. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).",
       "patterns": [
         "Do NOT add a negative-margin guard"
       ]

@@ -85,7 +85,10 @@ PREAMBLE = """# DECISIONS — the decisions register
 > feature may be needed). **Third ratification event, 2026-08-02:** the 27 phase-1d entries
 > (D-255…D-281 — D-266 and D-278 under individual rulings recorded in their entries and at their
 > homes) and the four OI-270 split entries (D-282…D-285, each superseded-by its named
-> successors). The register-level ratification does not overwrite
+> successors). **Fourth ratification event, 2026-08-02:** the 14 phase-1e archive entries
+> (D-286…D-299 — D-286 the Stage-3.1b shelving, the audit's founding case; D-292 under its
+> individual OI-271 ruling, the constraint reaffirmed BINDING with the licence-class
+> verification as the remaining action). The register-level ratification does not overwrite
 > per-entry provenance — an entry saying "ratifier not stated" still means the original record
 > of THAT decision does not say; what the 2026-08-02 ratifications establish is that these
 > entries are the standing decisions of record.
