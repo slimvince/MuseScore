@@ -198,13 +198,13 @@
 
 **In plain words.** Anything written as a specification, a design, a decision surface, or for the user follows two standards. Every word that relates two things must name the second one - the check is to force the word to be followed by the thing it points at, and a phrase the prose cannot supply is a hole in the thinking. And terms are defined before use, in plain vocabulary, with no invented synonyms and no insider shorthand.
 
-**Why.** Stated constraint, CLAUDE.md:799-800: inherited prose is audited as hard as new prose, so the standard is about the document a reader meets rather than about who wrote which sentence. The one-home rule is #6 applied to the standards themselves (CLAUDE.md:801-802).
+**Why.** Stated constraint, CLAUDE.md:818-819: inherited prose is audited as hard as new prose, so the standard is about the document a reader meets rather than about who wrote which sentence. The one-home rule is #6 applied to the standards themselves (CLAUDE.md:820-821).
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `CLAUDE.md:793`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:812`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** CLAUDE.md:793-802; predicate qualification user-directed 2026-06-24, defined terms user-directed 2026-07-02. The ONE home is `cowork_design_doc_template.md`, which also carries the fourteen-section document structure, the status-banner convention and the implementation/test locator rule. Conformance of the existing tree is open at OPEN_ITEMS OI-230.
+**Provenance.** CLAUDE.md:812-821; predicate qualification user-directed 2026-06-24, defined terms user-directed 2026-07-02. The ONE home is `cowork_design_doc_template.md`, which also carries the fourteen-section document structure, the status-banner convention and the implementation/test locator rule. Conformance of the existing tree is open at OPEN_ITEMS OI-230.
 
 ### D-194 — No self-invented labels, abbreviations, numbering schemes or jargon
 
@@ -219,9 +219,9 @@
 
 **Status.** LIVE · decided 2026-07-11 · ratified by user
 
-**Home.** `CLAUDE.md:789`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:808`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** CLAUDE.md:789-792, user-directed repeatedly and recorded 2026-07-11.
+**Provenance.** CLAUDE.md:808-811, user-directed repeatedly and recorded 2026-07-11.
 
 ### D-195 — Every design decision carries its defense at its home
 
@@ -241,13 +241,13 @@
 
 **In plain words.** Wherever a design decision is written down - the owning layer's specification first - the record says WHY: the published research or algorithm it adopts, the measurement that decided it, or the constraint that forced it. Every design decision must be defendable and its defense written where the decision lives. Where the record has none, the decisions register says 'derivation not recorded' rather than supplying one afterwards.
 
-**Why.** Stated constraint, CLAUDE.md:850-851: this generalizes ARCHITECTURE.md §17.2 - every non-obvious scoring weight or threshold must explain its musical reasoning - from scoring values to design decisions as a class. The reason the gap is stated rather than filled: a defense written after the fact without a source is invention, which the never-work-from-memory rule forbids (CLAUDE.md:854-855).
+**Why.** Stated constraint, CLAUDE.md:869-870: this generalizes ARCHITECTURE.md §17.2 - every non-obvious scoring weight or threshold must explain its musical reasoning - from scoring values to design decisions as a class. The reason the gap is stated rather than filled: a defense written after the fact without a source is invention, which the never-work-from-memory rule forbids (CLAUDE.md:873-874).
 
 **Status.** LIVE · decided 2026-08-01 · ratified by user
 
-**Home.** `CLAUDE.md:845`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:864`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** CLAUDE.md:845-857, user-directed 2026-08-01 at the decisions-register ratification review. The register's rationale field is what serves it; the founding instances the entry names are D-004's segment-cap value, D-059's window and D-015's boundary-tick convention.
+**Provenance.** CLAUDE.md:864-876, user-directed 2026-08-01 at the decisions-register ratification review. The register's rationale field is what serves it; the founding instances the entry names are D-004's segment-cap value, D-059's window and D-015's boundary-tick convention.
 
 ### D-230 — The decisions register is a mandatory session-start read, and a new ruling lands in the register in the commit that records it
 
@@ -350,5 +350,5 @@
 
 **Home.** `STATUS_ARCHIVE.md:242`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
-**Provenance.** Recorded in `STATUS_ARCHIVE.md` (session 21e, the gap-analysis rulings). It is NOT in `cowork_design_doc_template.md`, which is the ratified home of the writing standards and states the implementation/test locator rule without this constraint on the locator's form — checked at the source. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.
+**Provenance.** Recorded in `STATUS_ARCHIVE.md` (session 21e, the gap-analysis rulings). It is NOT in `cowork_design_doc_template.md`, which is the ratified home of the writing standards and states the implementation/test locator rule without this constraint on the locator's form — checked at the source. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).
 

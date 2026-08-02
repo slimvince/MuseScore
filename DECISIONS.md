@@ -22,7 +22,9 @@
 > successors). **Fourth ratification event, 2026-08-02:** the 14 phase-1e archive entries
 > (D-286…D-299 — D-286 the Stage-3.1b shelving, the audit's founding case; D-292 under its
 > individual OI-271 ruling, the constraint reaffirmed BINDING with the licence-class
-> verification as the remaining action). The register-level ratification does not overwrite
+> verification as the remaining action). **Fifth ratification event, 2026-08-02:** the 16
+> phase-1f entries (D-300…D-315) and D-316 (the third local patch recorded with its
+> upstreamable disposition, the OI-273 ruling). The register-level ratification does not overwrite
 > per-entry provenance — an entry saying "ratifier not stated" still means the original record
 > of THAT decision does not say; what the 2026-08-02 ratifications establish is that these
 > entries are the standing decisions of record.
@@ -107,26 +109,26 @@ project's own and are defined here because they are used before any entry explai
 
 ## What is in this register, counted
 
-**315 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
+**316 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
 
 | | Count |
 |---|---|
-| Decisions recorded | **315** |
-| — of which live | 262 |
+| Decisions recorded | **316** |
+| — of which live | 263 |
 | — of which superseded in fact | 5 |
 | — of which superseded by | 9 |
 | — of which deferred | 38 |
 | — of which shelved with evidence | 1 |
 | Decisions whose date is not stated in the record | 195 |
 | Decisions whose ratifier is not stated in the record | 194 |
-| Decisions recorded outside the specification that owns them | 124 |
+| Decisions recorded outside the specification that owns them | 125 |
 | — of which a documentation gap | 28 |
 | — of which recorded only on a tracking surface, with no home at all | 27 |
 | — of which a project-wide convention, correctly homed | 34 |
-| — of which a decision about the process, correctly homed | 35 |
+| — of which a decision about the process, correctly homed | 36 |
 | Decisions whose defense the record does not state | 45 |
 
-That last row is the one meant to fall. **270 of 315** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
+That last row is the one meant to fall. **271 of 316** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
 
 Alongside the register, every one of the harvested statements about decisions in this repository has been given a recorded disposition, so that none was silently passed over:
 
@@ -549,6 +551,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-279 | The Stage-3 entry gate - seven conditions before any engagement wiring reaches production | LIVE | `cowork_engage_arc_plan.md` ⚠gap |
 | D-298 | The layer-by-layer audit - each layer is audited once its pieces are in place | LIVE | `cowork_handoff_archive.md` ⚠tracking-surface-only |
 | D-314 | A correction rule kept for structural reasons must keep producing evidence that it still fires | LIVE | `cowork_stage5_fitter_design.md` ⚠gap |
+| D-316 | The chord-symbol parser sussus fix is a recorded local patch with an UPSTREAMABLE distribution disposition | LIVE | `CLAUDE.md` |
 
 ## U. The standing decision-bearing surfaces — [full entries](decisions/group_U.md)
 

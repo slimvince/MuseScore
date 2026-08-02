@@ -19,13 +19,13 @@
 
 **In plain words.** After every piece of work and before reporting it, the actual difference on disk in every touched file is re-read and checked against the principles, the conventions, the gate policies and the known defect types. Anything found is surfaced at once, never quietly shipped.
 
-**Why.** Stated constraint, CLAUDE.md:867-868: the check is of the work actually on disk, not of the intention - read the difference, not the memory of writing it. Which is the same reasoning as the never-work-from-memory rule, applied to one's own output.
+**Why.** Stated constraint, CLAUDE.md:886-887: the check is of the work actually on disk, not of the intention - read the difference, not the memory of writing it. Which is the same reasoning as the never-work-from-memory rule, applied to one's own output.
 
 **Status.** LIVE · decided 2026-07-11 · ratified by user
 
-**Home.** `CLAUDE.md:953`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:972`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** CLAUDE.md:859-868, user-directed 2026-07-11. Binds Claude Code and Cowork sessions alike.
+**Provenance.** CLAUDE.md:878-887, user-directed 2026-07-11. Binds Claude Code and Cowork sessions alike.
 
 ### D-197 — The distribution constraint - the import-fix patch is fork-local and never goes upstream
 
@@ -39,13 +39,13 @@
 
 **In plain words.** The MusicXML mode-import fix may live in the user's own fork of MuseScore and be pushed there. It must never be pushed, merged or otherwise contributed to the MuseScore project. Any action that would carry it toward the upstream repository stops work and is reported.
 
-**Why.** Stated constraint, CLAUDE.md:734: the upstream issue number cited beside the patch is the upstream BUG REPORT, and referencing it does not authorize contributing this patch. Upstream pushing is disabled in the repository and is to be kept so (:683-684).
+**Why.** Stated constraint, CLAUDE.md:753: the upstream issue number cited beside the patch is the upstream BUG REPORT, and referencing it does not authorize contributing this patch. Upstream pushing is disabled in the repository and is to be kept so (:683-684).
 
 **Status.** LIVE · decided 2026-06-15 · ratified by user
 
-**Home.** `CLAUDE.md:728`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:747`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** CLAUDE.md:728-734, user-directed 2026-06-15. ★ READ WITH the general contribution intent at ARCHITECTURE.md:380-382 - two recorded positions, a general intent to contribute and a named one-patch exception; the record does not state how the general intent applies to the rest of the tree.
+**Provenance.** CLAUDE.md:747-753, user-directed 2026-06-15. ★ READ WITH the general contribution intent at ARCHITECTURE.md:380-382 - two recorded positions, a general intent to contribute and a named one-patch exception; the record does not state how the general intent applies to the rest of the tree.
 
 ### D-198 — The Windows snap fix in the muse submodule is intentional and must not be reverted
 
@@ -67,13 +67,13 @@
 
 **In plain words.** Two lines were removed from MuseScore's Windows window-sizing code that told Windows the smallest allowed window was the whole screen. With them in place, a maximised MuseScore window could not be snapped into a screen zone - it stayed full-screen and lost its title-bar controls. The removal is deliberate and stays.
 
-**Why.** Stated constraint, CLAUDE.md:683-690: the removed lines set the minimum window size to the full monitor work area, which is what blocked snapping; the maximised-position constraints are correct and are kept. Upstream issue musescore/MuseScore#25823, introduced by upstream commit 4ad218709 (:643-644).
+**Why.** Stated constraint, CLAUDE.md:683-709: the removed lines set the minimum window size to the full monitor work area, which is what blocked snapping; the maximised-position constraints are correct and are kept. Upstream issue musescore/MuseScore#25823, introduced by upstream commit 4ad218709 (:643-644).
 
 **Status.** LIVE · decided 2026-05-14 · ratified by user
 
 **Home.** `CLAUDE.md:680`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** CLAUDE.md:678-694, applied 2026-05-14. Unrelated to the composing module; recorded so a dependency update does not silently overwrite it.
+**Provenance.** CLAUDE.md:678-713, applied 2026-05-14. Unrelated to the composing module; recorded so a dependency update does not silently overwrite it.
 
 ### D-199 — The MusicXML declared-mode import fix is intentional and must not be reverted
 
@@ -100,13 +100,13 @@
 
 **In plain words.** MuseScore's importer dropped a key signature that matched the prevailing one in number of sharps or flats even when it declared a different mode - so a piece written with no sharps or flats but marked minor lost that marking on import. The fix compares the mode as well as the accidental count, so a mode-bearing key signature survives.
 
-**Why.** Measurement, CLAUDE.md:717-720: the change is verified isolated to empty-signature scores - exactly 79 zero-signature analyses changed and no non-empty-signature piece moved - the regression gate is byte-identical on all three presets, and the round-trip of a zero-signature minor piece now preserves its mode. The underlying defect is upstream-unchanged code whose own comment flags the check as known-incomplete (CLAUDE.md:710-711, :673-674).
+**Why.** Measurement, CLAUDE.md:736-739: the change is verified isolated to empty-signature scores - exactly 79 zero-signature analyses changed and no non-empty-signature piece moved - the regression gate is byte-identical on all three presets, and the round-trip of a zero-signature minor piece now preserves its mode. The underlying defect is upstream-unchanged code whose own comment flags the check as known-incomplete (CLAUDE.md:729-730, :673-674).
 
 **Status.** LIVE · decided 2026-06-14 · ratified by user
 
-**Home.** `CLAUDE.md:701`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:720`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** CLAUDE.md:696-726, applied 2026-06-14, commit cfc7eb5e39. ★ Carries the distribution constraint above: fork-local only, never upstream.
+**Provenance.** CLAUDE.md:715-745, applied 2026-06-14, commit cfc7eb5e39. ★ Carries the distribution constraint above: fork-local only, never upstream.
 
 ### D-208 — A withheld finding never enters a mandatory session-start read
 
@@ -178,7 +178,7 @@
 
 **Status.** LIVE · decided 2026-07-05 · ratified by user
 
-**Home.** `CLAUDE.md:908-920`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:927-939`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1589-1598, under the standing-rule heading 'FULL DECISION SURFACE BEFORE ANY CHOICE QUESTION' at cowork_handoff.md:1587 ('user mandate 2026-07-05'), with the instituting record at STATUS_ARCHIVE.md:202 - a session handoff block, which is a place for tracking a handover and not a home for a standing rule. Homed in the CLAUDE.md Conventions section, where this project's standing session-method rules live. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -271,7 +271,7 @@
 
 **Status.** LIVE · decided 2026-06-21 · ratified by user
 
-**Home.** `CLAUDE.md:922-940`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:941-959`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1669-1680, under the standing-rule heading 'COWORK MUST NOT HALLUCINATE OR ASSUME - VERIFY AT SOURCE (user mandate 2026-06-21)' at cowork_handoff.md:1642 - a session handoff block. Homed in the CLAUDE.md Conventions section. Its scope is taken FROM THE RECORD, not decided here: that heading and D-252's own text ('Cowork MAY: read source files via the file tools - NOT bash') both state it as a planning-side rule, so the homed entry says so and says the mandated build, test and measurement commands are unaffected. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -292,7 +292,7 @@
 
 **Status.** LIVE · decided 2026-06-14 · ratified by user
 
-**Home.** `CLAUDE.md:942-949`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:961-968`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1792-1796, under the standing-rule heading 'INVESTIGATE BY DEFAULT - NEVER ASK investigate vs proceed (user mandate 2026-06-14)' at cowork_handoff.md:1790 - a session handoff block. Homed in the CLAUDE.md Conventions section, beside principle #5, which it operationalizes. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -374,5 +374,22 @@
 
 **Home.** `cowork_stage5_fitter_design.md:1471`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Recorded in `cowork_stage5_fitter_design.md` (SIGNED, user, 2026-07-04) at open item O-10, and tracked as a standing obligation at [[OI-36]] — which is an open-items row, not a home. Found by the phase-1f final-partition wave, 2026-08-02, reading `cowork_stage5_fitter_design.md` in full (SIGNED, user, 2026-07-04). NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.
+**Provenance.** Recorded in `cowork_stage5_fitter_design.md` (SIGNED, user, 2026-07-04) at open item O-10, and tracked as a standing obligation at [[OI-36]] — which is an open-items row, not a home. Found by the phase-1f final-partition wave, 2026-08-02, reading `cowork_stage5_fitter_design.md` in full (SIGNED, user, 2026-07-04). NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).
+
+### D-316 — The chord-symbol parser sussus fix is a recorded local patch with an UPSTREAMABLE distribution disposition
+
+> **★ DISTRIBUTION DISPOSITION (user-ratified 2026-08-02): UPSTREAMABLE** — a general parser
+> defect fix with no fork-specific content; contributing it to `musescore/MuseScore` is permitted
+> and consistent with the §1.2 contribution intent (contrast the MusicXML mode-import patch above,
+> which stays fork-local).
+
+**In plain words.** The one-line fix to MuseScore’s chord-symbol parser (the removal of a redundant assignment that caused the "sussus" double rendering, applied 2026-04-15) is now a recorded, protected local patch, and its distribution ruling is: it MAY be contributed upstream - unlike the MusicXML mode-import patch, which must never be.
+
+**Why.** The MuseScore-dependency rule (D-229, ARCHITECTURE.md §3.3): every edit to MuseScore’s own code is recorded in the local-patches section with a per-instance distribution disposition ratified by the user. Found unrecorded by the phase-1f enumeration (OI-273 - the third such edit, the first two already recorded); disposition upstreamable because the fix is a general parser defect with no fork-specific content (the commit message and diff at b1ba7464 are the evidence).
+
+**Status.** LIVE · decided 2026-08-02 · ratified by user
+
+**Home.** `CLAUDE.md`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** User ruling 2026-08-02 (OI-273 option (i)); the CLAUDE.md local-patches subsection added in the same commit (the register’s same-commit rule).
 

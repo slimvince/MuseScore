@@ -67,7 +67,7 @@
 
 **Home.** `STATUS_ARCHIVE.md:250`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
-**Provenance.** Recorded in `STATUS_ARCHIVE.md` (session 21, at the user's ratification of the external architecture review's corpus-expansion amendment). Related but distinct from **D-225** (a corpus is regenerated before its baseline figures are updated) and from the re-baseline discipline in `CLAUDE.md` gate block (A). Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.
+**Provenance.** Recorded in `STATUS_ARCHIVE.md` (session 21, at the user's ratification of the external architecture review's corpus-expansion amendment). Related but distinct from **D-225** (a corpus is regenerated before its baseline figures are updated) and from the re-baseline discipline in `CLAUDE.md` gate block (A). Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).
 
 ### D-309 — A corpus the analysis handles badly stays on the roadmap marked deferred; it is more valuable than one that confirms what already works
 
@@ -86,7 +86,7 @@
 
 **Home.** `STATUS_ARCHIVE.md:2938`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
-**Provenance.** Recorded in `STATUS_ARCHIVE.md` as the stated design principle of the validation-corpus roadmap. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.
+**Provenance.** Recorded in `STATUS_ARCHIVE.md` as the stated design principle of the validation-corpus roadmap. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).
 
 ### D-310 — Jazz accuracy is not measurable on the corpora held: the low agreement is missing bass and piano voicings, not a scoring failure
 
@@ -103,5 +103,5 @@
 
 **Home.** `STATUS_ARCHIVE.md:1580`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
-**Provenance.** Recorded in `STATUS_ARCHIVE.md` (the jazz-corpus status block). It is the standing evidence behind [[OI-7]] (establish a jazz ground-truth corpus or de-scope the Jazz correctness claims) and behind the A-7 empirically-unvalidated mark. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.
+**Provenance.** Recorded in `STATUS_ARCHIVE.md` (the jazz-corpus status block). It is the standing evidence behind [[OI-7]] (establish a jazz ground-truth corpus or de-scope the Jazz correctness claims) and behind the A-7 empirically-unvalidated mark. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).
 

@@ -4241,8 +4241,8 @@
       "title": "The writing standards live in one place, and predicates must be qualified",
       "verbatim": "- **THE WRITING STANDARDS LIVE IN `cowork_design_doc_template.md` — read it before writing any\n  specification, design document, decision surface, or anything presented to the user.** Two\n  standards: **predicates must be qualified** (user, 2026-06-24 — every two-place word names its\n  argument; the mechanical check is to force the word to be followed by the thing it points at,\n  and a phrase the prose cannot supply is a hole), and **defined terms, plain vocabulary, no\n  shorthand** (user, 2026-07-02 — a terms table with nothing used before its row; no invented\n  synonyms; no insider compression, a jargon handle only after its rule has been stated; inherited\n  prose audited as hard as new). That file also carries the fourteen-section document structure,\n  the status-banner convention, and the implementation/test locator rule. It is the ONE home for\n  writing standards; the entry below sharpens its rule 5 and does not replace it (#6).",
       "plain": "Anything written as a specification, a design, a decision surface, or for the user follows two standards. Every word that relates two things must name the second one - the check is to force the word to be followed by the thing it points at, and a phrase the prose cannot supply is a hole in the thinking. And terms are defined before use, in plain vocabulary, with no invented synonyms and no insider shorthand.",
-      "rationale": "Stated constraint, CLAUDE.md:799-800: inherited prose is audited as hard as new prose, so the standard is about the document a reader meets rather than about who wrote which sentence. The one-home rule is #6 applied to the standards themselves (CLAUDE.md:801-802).",
-      "home": "CLAUDE.md:793",
+      "rationale": "Stated constraint, CLAUDE.md:818-819: inherited prose is audited as hard as new prose, so the standard is about the document a reader meets rather than about who wrote which sentence. The one-home rule is #6 applied to the standards themselves (CLAUDE.md:820-821).",
+      "home": "CLAUDE.md:812",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -4250,7 +4250,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "CLAUDE.md:793-802; predicate qualification user-directed 2026-06-24, defined terms user-directed 2026-07-02. The ONE home is `cowork_design_doc_template.md`, which also carries the fourteen-section document structure, the status-banner convention and the implementation/test locator rule. Conformance of the existing tree is open at OPEN_ITEMS OI-230.",
+      "status_source": "CLAUDE.md:812-821; predicate qualification user-directed 2026-06-24, defined terms user-directed 2026-07-02. The ONE home is `cowork_design_doc_template.md`, which also carries the fourteen-section document structure, the status-banner convention and the implementation/test locator rule. Conformance of the existing tree is open at OPEN_ITEMS OI-230.",
       "patterns": [
         "WRITING STANDARDS LIVE IN",
         "predicates must be qualified",
@@ -4264,7 +4264,7 @@
       "verbatim": "- **No self-invented labels, abbreviations, numbering schemes, or jargon** — in documents,\n  register rows, commit messages, and conversation alike. Use the name a thing already has\n  in the repository; if it has none, describe it in plain words. (User-directed, repeatedly;\n  recorded 2026-07-11.)",
       "plain": "A thing is called by the name it already has in the repository. If it has none, it is described in plain words rather than given a coined label - in documents, rows of the open-items register, commit messages and conversation alike.",
       "rationale": null,
-      "home": "CLAUDE.md:789",
+      "home": "CLAUDE.md:808",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -4272,7 +4272,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "CLAUDE.md:789-792, user-directed repeatedly and recorded 2026-07-11.",
+      "status_source": "CLAUDE.md:808-811, user-directed repeatedly and recorded 2026-07-11.",
       "patterns": [
         "No self-invented labels"
       ]
@@ -4283,8 +4283,8 @@
       "title": "Every design decision carries its defense at its home",
       "verbatim": "- **EVERY DESIGN DECISION CARRIES ITS DEFENSE AT ITS HOME (user-directed, 2026-08-01, at the\n  decisions-register ratification review).** Wherever a design decision is recorded — the owning\n  layer's specification in `ARCHITECTURE.md` first — the record states WHY the decision was made:\n  the published research or algorithm adopted (#1/#2), the measurement that decided it, or the\n  constraint that forced it. Every design decision must be defendable, and its defense documented\n  where the decision lives. This generalizes `ARCHITECTURE.md` §17.2 (every non-obvious scoring\n  weight or threshold must explain its musical reasoning) from scoring values to design decisions\n  as a class. The decisions register (`DECISIONS.md`) points at the defense; where a decision's\n  derivation is not in the record, the register says **\"derivation not recorded\"** — the gap is\n  stated, never filled in retroactively from memory (a defense written after the fact without a\n  source is invention, and the never-work-from-memory rule forbids it). Founding instances of the\n  gap: the decode segment cap's value (4), the legacy 16-beats-back/8-forward window, the\n  boundary-tick-belongs-to-the-segment-it-starts convention — each recorded with no derivation.",
       "plain": "Wherever a design decision is written down - the owning layer's specification first - the record says WHY: the published research or algorithm it adopts, the measurement that decided it, or the constraint that forced it. Every design decision must be defendable and its defense written where the decision lives. Where the record has none, the decisions register says 'derivation not recorded' rather than supplying one afterwards.",
-      "rationale": "Stated constraint, CLAUDE.md:850-851: this generalizes ARCHITECTURE.md §17.2 - every non-obvious scoring weight or threshold must explain its musical reasoning - from scoring values to design decisions as a class. The reason the gap is stated rather than filled: a defense written after the fact without a source is invention, which the never-work-from-memory rule forbids (CLAUDE.md:854-855).",
-      "home": "CLAUDE.md:845",
+      "rationale": "Stated constraint, CLAUDE.md:869-870: this generalizes ARCHITECTURE.md §17.2 - every non-obvious scoring weight or threshold must explain its musical reasoning - from scoring values to design decisions as a class. The reason the gap is stated rather than filled: a defense written after the fact without a source is invention, which the never-work-from-memory rule forbids (CLAUDE.md:873-874).",
+      "home": "CLAUDE.md:864",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -4292,7 +4292,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "CLAUDE.md:845-857, user-directed 2026-08-01 at the decisions-register ratification review. The register's rationale field is what serves it; the founding instances the entry names are D-004's segment-cap value, D-059's window and D-015's boundary-tick convention.",
+      "status_source": "CLAUDE.md:864-876, user-directed 2026-08-01 at the decisions-register ratification review. The register's rationale field is what serves it; the founding instances the entry names are D-004's segment-cap value, D-059's window and D-015's boundary-tick convention.",
       "patterns": [
         "EVERY DESIGN DECISION CARRIES ITS DEFENSE",
         "derivation not recorded"
@@ -4304,8 +4304,8 @@
       "title": "The self-check: re-read the diff against the principles before reporting",
       "verbatim": "After EVERY coding exercise — code, scripts, instruments, and document edits alike —\nand BEFORE reporting the work done: take a step back, re-read the actual diff of every\ntouched file, and check it against the guiding principles, the conventions, the gate and\nthreshold policies in this file, and the known problem types in `DEFECT_TYPES.md`. Any\nviolation found is surfaced immediately (its own `OPEN_ITEMS.md` row if it cannot be\ncorrected on the spot within the session's authorized scope), never silently shipped.\nThe check is of the work actually on disk, not of the intention — read the diff, not the\nmemory of writing it. This applies to CC sessions and Cowork sessions alike.",
       "plain": "After every piece of work and before reporting it, the actual difference on disk in every touched file is re-read and checked against the principles, the conventions, the gate policies and the known defect types. Anything found is surfaced at once, never quietly shipped.",
-      "rationale": "Stated constraint, CLAUDE.md:867-868: the check is of the work actually on disk, not of the intention - read the difference, not the memory of writing it. Which is the same reasoning as the never-work-from-memory rule, applied to one's own output.",
-      "home": "CLAUDE.md:953",
+      "rationale": "Stated constraint, CLAUDE.md:886-887: the check is of the work actually on disk, not of the intention - read the difference, not the memory of writing it. Which is the same reasoning as the never-work-from-memory rule, applied to one's own output.",
+      "home": "CLAUDE.md:972",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -4313,7 +4313,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "CLAUDE.md:859-868, user-directed 2026-07-11. Binds Claude Code and Cowork sessions alike.",
+      "status_source": "CLAUDE.md:878-887, user-directed 2026-07-11. Binds Claude Code and Cowork sessions alike.",
       "patterns": [
         "self-check after every coding exercise",
         "read the diff, not the"
@@ -4325,8 +4325,8 @@
       "title": "The distribution constraint - the import-fix patch is fork-local and never goes upstream",
       "verbatim": "**★ DISTRIBUTION CONSTRAINT (user, 2026-06-15): FORK-LOCAL ONLY — NEVER merge upstream / to the\nMuseScore community.** This patch (`cfc7eb5e39`) is fine to have in the **central repo = the user's\nfork** (`origin` = `slimvince/MuseScore`) and may be pushed there, but it must **NEVER** be pushed or\nmerged to `upstream` (`musescore/MuseScore`) or otherwise contributed to the MuseScore community.\n`upstream` push is disabled in this repo; keep it so. Any future push/PR/merge that would carry\n`cfc7eb5e39` (or its content) toward `musescore/MuseScore` is a HARD STOP — surface, do not proceed.\n(The #9444 reference above is the upstream *bug report*; it does NOT authorize contributing THIS patch.)",
       "plain": "The MusicXML mode-import fix may live in the user's own fork of MuseScore and be pushed there. It must never be pushed, merged or otherwise contributed to the MuseScore project. Any action that would carry it toward the upstream repository stops work and is reported.",
-      "rationale": "Stated constraint, CLAUDE.md:734: the upstream issue number cited beside the patch is the upstream BUG REPORT, and referencing it does not authorize contributing this patch. Upstream pushing is disabled in the repository and is to be kept so (:683-684).",
-      "home": "CLAUDE.md:728",
+      "rationale": "Stated constraint, CLAUDE.md:753: the upstream issue number cited beside the patch is the upstream BUG REPORT, and referencing it does not authorize contributing this patch. Upstream pushing is disabled in the repository and is to be kept so (:683-684).",
+      "home": "CLAUDE.md:747",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -4334,7 +4334,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "CLAUDE.md:728-734, user-directed 2026-06-15. ★ READ WITH the general contribution intent at ARCHITECTURE.md:380-382 - two recorded positions, a general intent to contribute and a named one-patch exception; the record does not state how the general intent applies to the rest of the tree.",
+      "status_source": "CLAUDE.md:747-753, user-directed 2026-06-15. ★ READ WITH the general contribution intent at ARCHITECTURE.md:380-382 - two recorded positions, a general intent to contribute and a named one-patch exception; the record does not state how the general intent applies to the rest of the tree.",
       "patterns": [
         "DISTRIBUTION CONSTRAINT",
         "FORK-LOCAL ONLY",
@@ -4347,7 +4347,7 @@
       "title": "The Windows snap fix in the muse submodule is intentional and must not be reverted",
       "verbatim": "**File:** `muse/framework/ui/internal/platform/windows/winwindowscontroller.cpp`  \n**Function:** `calculateWindowSize()`\n\nTwo lines were removed that set `ptMinTrackSize` equal to the full monitor work\narea inside the `WM_GETMINMAXINFO` handler. This told Windows the minimum\nallowed window size was the entire screen, which prevented Windows Snap from\nresizing a maximised MuseScore window into a chosen snap zone (the window\nstayed full-screen and lost its title-bar controls).\n\nThe fix: `ptMaxSize` and `ptMaxPosition` are kept (they correctly constrain the\nmaximised position); `ptMinTrackSize` is intentionally left unset.\n\nUpstream issue: musescore/MuseScore#25823 (related cousins: #21344, #16794).  \nIntroduced by upstream commit `4ad218709` (5 Aug 2025).  \n**Do not restore the `ptMinTrackSize` lines.**",
       "plain": "Two lines were removed from MuseScore's Windows window-sizing code that told Windows the smallest allowed window was the whole screen. With them in place, a maximised MuseScore window could not be snapped into a screen zone - it stayed full-screen and lost its title-bar controls. The removal is deliberate and stays.",
-      "rationale": "Stated constraint, CLAUDE.md:683-690: the removed lines set the minimum window size to the full monitor work area, which is what blocked snapping; the maximised-position constraints are correct and are kept. Upstream issue musescore/MuseScore#25823, introduced by upstream commit 4ad218709 (:643-644).",
+      "rationale": "Stated constraint, CLAUDE.md:683-709: the removed lines set the minimum window size to the full monitor work area, which is what blocked snapping; the maximised-position constraints are correct and are kept. Upstream issue musescore/MuseScore#25823, introduced by upstream commit 4ad218709 (:643-644).",
       "home": "CLAUDE.md:680",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
@@ -4356,7 +4356,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "CLAUDE.md:678-694, applied 2026-05-14. Unrelated to the composing module; recorded so a dependency update does not silently overwrite it.",
+      "status_source": "CLAUDE.md:678-713, applied 2026-05-14. Unrelated to the composing module; recorded so a dependency update does not silently overwrite it.",
       "patterns": [
         "Windows Snap fix",
         "ptMinTrackSize"
@@ -4368,8 +4368,8 @@
       "title": "The MusicXML declared-mode import fix is intentional and must not be reverted",
       "verbatim": "The dedup guarded the `KeySig` creation on **fifths only**:\n`if (oldkey != key.key() || key.custom() || key.isAtonal())`. At score start the\nprevailing key defaults to `{C, KeyMode::UNKNOWN}` (`KeyList::key()` →\n`setConcertKey(Key::C)`), so a **0-fifths** key signature carrying an explicit\n`<mode>` (e.g. `<fifths>0</fifths><mode>minor</mode>`) matched the prevailing fifths,\nthe whole `KeySig` was dropped, and the declared `<mode>` went with it →\n`KeyMode::UNKNOWN` downstream. Export *does* write `<mode>`\n(`exportmusicxml.cpp:2473`), so this broke export/import round-trip of `<mode>` and,\nin our pipeline, dropped the declared-mode anchor on ~79 zero-signature Bach stems\n(`cc_key_emission_headroom_dossier.md` — `declaredModeOrdinal=-1`). The maintainers'\nown `// TODO only if different custom key ?` flags the dedup as known-incomplete.\n\nThe fix: fetch the prevailing `KeySigEvent` (not just the `Key` fifths) and add an\n`oldKeySig.mode() != key.mode()` term to the guard, so a mode-bearing key at matching\nfifths is retained. A key matching the prevailing one in **both** fifths and mode (and\nnot custom/atonal) still produces **no** `KeySig`, so plain mode-less C-major scores are\nunaffected. Verified isolated to empty-signature scores (exactly 79 zero-sig `.ours.json`\nchanged, 0 non-empty-signature stems); BIR gate byte-identical on all three presets\n(Baroque 57 / Jazz 23 / Default 57); key-inference S2 −378 (Default). Round-trip of\n`bwv254` (0-fifths `<mode>minor</mode>`) now preserves `<mode>`.",
       "plain": "MuseScore's importer dropped a key signature that matched the prevailing one in number of sharps or flats even when it declared a different mode - so a piece written with no sharps or flats but marked minor lost that marking on import. The fix compares the mode as well as the accidental count, so a mode-bearing key signature survives.",
-      "rationale": "Measurement, CLAUDE.md:717-720: the change is verified isolated to empty-signature scores - exactly 79 zero-signature analyses changed and no non-empty-signature piece moved - the regression gate is byte-identical on all three presets, and the round-trip of a zero-signature minor piece now preserves its mode. The underlying defect is upstream-unchanged code whose own comment flags the check as known-incomplete (CLAUDE.md:710-711, :673-674).",
-      "home": "CLAUDE.md:701",
+      "rationale": "Measurement, CLAUDE.md:736-739: the change is verified isolated to empty-signature scores - exactly 79 zero-signature analyses changed and no non-empty-signature piece moved - the regression gate is byte-identical on all three presets, and the round-trip of a zero-signature minor piece now preserves its mode. The underlying defect is upstream-unchanged code whose own comment flags the check as known-incomplete (CLAUDE.md:729-730, :673-674).",
+      "home": "CLAUDE.md:720",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -4377,7 +4377,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "CLAUDE.md:696-726, applied 2026-06-14, commit cfc7eb5e39. ★ Carries the distribution constraint above: fork-local only, never upstream.",
+      "status_source": "CLAUDE.md:715-745, applied 2026-06-14, commit cfc7eb5e39. ★ Carries the distribution constraint above: fork-local only, never upstream.",
       "patterns": [
         "MusicXML declared-mode import fix",
         "addKey",
@@ -4391,7 +4391,7 @@
       "verbatim": "**MAKE IT WORK FIRST; COMPROMISE ON PERFORMANCE ONLY IF PERFORMANCE PROVES TO BE A PROBLEM\n(user-directed, 2026-07-28, at the analysis-cost session).** Getting the inference right comes\nfirst. Runtime speed is traded against it only once slowness has actually turned out to be a",
       "plain": "Getting the analysis right comes first. Speed is traded against it only once slowness has actually turned out to be a problem. That does not make speed unimportant - it puts it second: anything that makes the same computation faster is free on every principle and is done first, and the settings that buy speed by giving up precision are the last resort, not the first.",
       "rationale": "Stated constraint, cowork_handoff.md:361-364: work that makes the same computation faster costs nothing on any principle axis, so it must be exhausted BEFORE anything that trades precision for speed - which is what sequences the effort dial and the analysis-extent question last rather than demoting them.",
-      "home": "CLAUDE.md:878-880",
+      "home": "CLAUDE.md:897-899",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -4452,7 +4452,7 @@
       "verbatim": "**CANDIDATE ADMISSION IS COMPLETION, NOT REFINEMENT — so #8 permits fixing it now (user-ruled\n2026-07-28, at the OI-199 pass-2 session).** The rule that decides which chord classes the joint\ndecoder will even consider is a piece that was never finished, not a refinement of something already",
       "plain": "The rule that decides which chords the decoder will even consider is not a refinement of something already built - it is a piece that was never finished. So the principle that forbids chasing visible analysis errors before the structure is complete does not block fixing it.",
       "rationale": "Stated constraint, cowork_handoff.md:31-32: the design happens ONCE over the whole family, never per symptom (#6/#7) - which is why the fix is deferred until the family is enumerated even though #8 permits it. The measured family: OI-215 (the sparse member-overlap gate), OI-227 (the dense fit gate), OI-226 (admission has no ratified basis), OI-228 (the emission reads struck rather than sounding notes).",
-      "home": "CLAUDE.md:888-890",
+      "home": "CLAUDE.md:907-909",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -4473,7 +4473,7 @@
       "verbatim": "**ONE FIX IS DESIGNED ONCE OVER THE WHOLE ENUMERATED FAMILY, NEVER PER SYMPTOM (user-ruled\n2026-07-28, at the OI-199 pass-2 session).** When several observed faults turn out to share a cause,\nthe remedy is designed once for all of them together, at the layer that owns the cause; fixing",
       "plain": "When several observed faults turn out to share a cause, the remedy is designed once for all of them together. Fixing whichever one is currently visible, on its own, is the error the one-path-per-concern and layer principles exist to prevent.",
       "rationale": "Stated constraint, cowork_handoff.md:28-29 and #3: the fix is deferred BY DESIGN until the whole family is known, because designing over part of a family is the patch-per-symptom error. The instance that produced the rule: the empty-decode cliff turned out to have a sibling at the opposite end of the density spectrum (OI-227) and an emission-side twin (OI-228), neither visible from the first symptom.",
-      "home": "CLAUDE.md:899-901",
+      "home": "CLAUDE.md:918-920",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -5343,7 +5343,7 @@
       "title": "The whole decision surface is delivered as user-visible text before any choice question",
       "verbatim": "- **THE WHOLE DECISION SURFACE IS DELIVERED AS USER-VISIBLE TEXT BEFORE ANY CHOICE QUESTION (user\n  mandate 2026-07-05; homed here 2026-08-02 from `cowork_handoff.md`, `OPEN_ITEMS.md` OI-266).**\n  Never present the user with options before the entire situation has been explained in a message the\n  user has actually seen. The decision surface — what is being decided, the background, what each\n  option means, the risks both ways, and the recommendation with its reason — is delivered as\n  user-visible text FIRST, via the verbatim message channel or as the turn's final response. For a\n  **consequential** decision (a ratification, an adoption, a retirement, a checkpoint ruling) the\n  choice question goes in a SEPARATE, LATER turn: the user reads first, then is asked. **A decision\n  answered blind is voidable** — re-present the surface and re-confirm. *Why:* the mechanism is\n  stated with the rule — prose written between tool calls is summarized rather than shown verbatim,\n  so an explanation placed \"just before\" a question widget may never reach the user and the question\n  arrives blind. Its first application is on the record: the 2026-07-05 verdict-14 and 2.2c\n  ratifications were re-presented and re-confirmed.",
       "plain": "Before the user is asked to choose, the situation is explained in a message the user has actually read: what is being decided, the background, what each option means, the risks both ways, and the recommendation. For a consequential call the question comes in a later turn. A decision answered blind can be voided and re-asked.",
-      "home": "CLAUDE.md:908-920",
+      "home": "CLAUDE.md:927-939",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -5435,7 +5435,7 @@
       "title": "Working-tree files are read with the file tools; bash is limited to git object queries by explicit hash",
       "verbatim": "- **WORKING-TREE FILES ARE READ WITH THE FILE TOOLS; SHELL ACCESS IS LIMITED TO GIT OBJECT QUERIES BY\n  EXPLICIT HASH (user mandate 2026-06-21; homed here 2026-08-02 from `cowork_handoff.md`,\n  `OPEN_ITEMS.md` OI-266).** Local file content, existence, line counts and searches always go\n  through the file tools (Read / Grep / Glob), never through shell text utilities — no `cat`, `wc`,\n  `grep`, `sed`, `head`, `tail`, `git status` or `git diff` on working-tree files. Shell access is\n  permitted **only** for read-only git OBJECT queries named by an explicit commit hash taken from a\n  session's own commit report (`git show <sha>:path`, `git show --stat <sha>`, `git cat-file`,\n  `git diff <shaA> <shaB>`). A branch tip or index read — `git rev-parse HEAD`, `git status`,\n  `git log` — is never trusted for what is current. A `bad object` or missing-object error is a\n  **staleness signal: surface it, never guess around it.** *Why:* measured failure — a stale mount\n  made the shell path return wrong content and raise a false corruption alarm while the file tools\n  read the live disk correctly; the git-object exception survives because content-addressed reads are\n  self-verifying, erroring loudly rather than returning silently-wrong content. **Scope, as the\n  record states it:** this is a standing rule for the PLANNING side — it is stated under the heading\n  \"COWORK MUST NOT HALLUCINATE OR ASSUME — VERIFY AT SOURCE\", and the role-separation rule beside it\n  spells out the same restriction as one of the things \"Cowork MAY\" do. It is homed here because\n  `CLAUDE.md` is where this project's shared standing rules live, not because its scope widens: the\n  build, test and measurement commands `BUILD_AND_TEST.md` and the sections above mandate are\n  unaffected, and nothing in the record extends the file-tools restriction to them.",
       "plain": "File content, existence, line counts and searches are read through the file tools, never through shell text utilities on the working tree. Shell access is allowed only for read-only git object queries named by an explicit commit hash, which are content-addressed and fail loudly when stale. A branch tip or index read is never trusted for what is current.",
-      "home": "CLAUDE.md:922-940",
+      "home": "CLAUDE.md:941-959",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -5459,7 +5459,7 @@
       "title": "Investigate by default; never ask the user whether to investigate or proceed",
       "verbatim": "- **INVESTIGATE BY DEFAULT; NEVER ASK THE USER WHETHER TO INVESTIGATE OR PROCEED (user mandate\n  2026-06-14; homed here 2026-08-02 from `cowork_handoff.md`, `OPEN_ITEMS.md` OI-266).** Wherever a\n  step could be investigated or measured BEFORE it is committed to, it is measured first — and that\n  is not put to the user as a choice. When such a fork is reached, the read-only investigation or\n  measurement is written and run directly, byte-identical where possible. *Why:* the user's standing\n  answer to \"investigate, or go in some direction\" is always *investigate*, so asking spends a turn\n  to learn nothing; this is the never-guess rule's logical end — gather the cheap evidence before any\n  commitment — and it operationalizes principle #5 (investigate when facts may be scarce).",
       "plain": "Wherever a step could be measured before it is committed to, it is measured first, and that is not put to the user as a choice. When the planning side reaches such a fork it writes the read-only investigation instruction directly.",
-      "home": "CLAUDE.md:942-949",
+      "home": "CLAUDE.md:961-968",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -6459,7 +6459,7 @@
       "home": "STATUS_ARCHIVE.md:1136",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `STATUS_ARCHIVE.md` (the Iter-37 carried-forward block and its fenced deferral record at `:1090-1106`). `docs/scoring_model.md` §8, the standing home for scoring dead ends, does not mention Gate M — checked, not assumed. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.",
+      "status_source": "Recorded in `STATUS_ARCHIVE.md` (the Iter-37 carried-forward block and its fenced deferral record at `:1090-1106`). `docs/scoring_model.md` §8, the standing home for scoring dead ends, does not mention Gate M — checked, not assumed. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).",
       "patterns": [
         "Gate M \\(Minor.Diminished TYPE-A\\): DEFERRED"
       ]
@@ -6479,7 +6479,7 @@
       "home": "STATUS_ARCHIVE.md:1138",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `STATUS_ARCHIVE.md` (the Iter-39 carried-forward block and its fenced deferral record at `:1110-1131`). Absent from `docs/scoring_model.md` §8 — checked. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.",
+      "status_source": "Recorded in `STATUS_ARCHIVE.md` (the Iter-39 carried-forward block and its fenced deferral record at `:1110-1131`). Absent from `docs/scoring_model.md` §8 — checked. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).",
       "patterns": [
         "Gate N \\(Major.Minor TYPE-A\\): DEFERRED"
       ]
@@ -6499,7 +6499,7 @@
       "home": "STATUS_ARCHIVE.md:2768",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `STATUS_ARCHIVE.md` as the closing statement of the “Inversion Fix — Final Conclusion” block. Absent from `docs/scoring_model.md` §8. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.",
+      "status_source": "Recorded in `STATUS_ARCHIVE.md` as the closing statement of the “Inversion Fix — Final Conclusion” block. Absent from `docs/scoring_model.md` §8. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).",
       "patterns": [
         "further local scoring fixes for inversions"
       ]
@@ -6519,7 +6519,7 @@
       "home": "STATUS_ARCHIVE.md:963",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `STATUS_ARCHIVE.md`'s “architectural memos retained as guardrails” list. It is load-bearing now: the non-chord-tone filter is the named lever at [[OI-55]] and [[OI-68]], and `docs/nct_detection_design.md` exists on disk. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.",
+      "status_source": "Recorded in `STATUS_ARCHIVE.md`'s “architectural memos retained as guardrails” list. It is load-bearing now: the non-chord-tone filter is the named lever at [[OI-55]] and [[OI-68]], and `docs/nct_detection_design.md` exists on disk. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).",
       "patterns": [
         "must be Shape A \\(NCT-aware chord ID\\) not Shape B"
       ]
@@ -6539,7 +6539,7 @@
       "home": "STATUS_ARCHIVE.md:943",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `STATUS_ARCHIVE.md`; the design memo it names, `docs/extension_stripping_policy.md`, exists on disk. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.",
+      "status_source": "Recorded in `STATUS_ARCHIVE.md`; the design memo it names, `docs/extension_stripping_policy.md`, exists on disk. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).",
       "patterns": [
         "analyzers always emit maximal output"
       ]
@@ -6559,7 +6559,7 @@
       "home": "STATUS_ARCHIVE.md:961",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `STATUS_ARCHIVE.md`'s “architectural memos retained as guardrails” list. It sharpens **D-066** (chord symbols written in the score are never analyzer input) from one annotation kind to a content test over all of them. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.",
+      "status_source": "Recorded in `STATUS_ARCHIVE.md`'s “architectural memos retained as guardrails” list. It sharpens **D-066** (chord symbols written in the score are never analyzer input) from one annotation kind to a content test over all of them. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).",
       "patterns": [
         "Generalized chord-symbol-ban \\(content-based"
       ]
@@ -6579,7 +6579,7 @@
       "home": "STATUS_ARCHIVE.md:232",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `STATUS_ARCHIVE.md` (session 21j). The Layer-3 specification records the reach-back facility but not this shipped-default ruling. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.",
+      "status_source": "Recorded in `STATUS_ARCHIVE.md` (session 21j). The Layer-3 specification records the reach-back facility but not this shipped-default ruling. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).",
       "patterns": [
         "ReachBackOptions\\.enabled=false. stays the shipped default"
       ]
@@ -6599,7 +6599,7 @@
       "home": "STATUS_ARCHIVE.md:242",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `STATUS_ARCHIVE.md` (session 21e, the gap-analysis rulings). It is NOT in `cowork_design_doc_template.md`, which is the ratified home of the writing standards and states the implementation/test locator rule without this constraint on the locator's form — checked at the source. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.",
+      "status_source": "Recorded in `STATUS_ARCHIVE.md` (session 21e, the gap-analysis rulings). It is NOT in `cowork_design_doc_template.md`, which is the ratified home of the writing standards and states the implementation/test locator rule without this constraint on the locator's form — checked at the source. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).",
       "patterns": [
         "function/. anchor, not raw line number"
       ]
@@ -6619,7 +6619,7 @@
       "home": "STATUS_ARCHIVE.md:250",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `STATUS_ARCHIVE.md` (session 21, at the user's ratification of the external architecture review's corpus-expansion amendment). Related but distinct from **D-225** (a corpus is regenerated before its baseline figures are updated) and from the re-baseline discipline in `CLAUDE.md` gate block (A). Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.",
+      "status_source": "Recorded in `STATUS_ARCHIVE.md` (session 21, at the user's ratification of the external architecture review's corpus-expansion amendment). Related but distinct from **D-225** (a corpus is regenerated before its baseline figures are updated) and from the re-baseline discipline in `CLAUDE.md` gate block (A). Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).",
       "patterns": [
         "new corpora enter as research-tier"
       ]
@@ -6639,7 +6639,7 @@
       "home": "STATUS_ARCHIVE.md:2938",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `STATUS_ARCHIVE.md` as the stated design principle of the validation-corpus roadmap. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.",
+      "status_source": "Recorded in `STATUS_ARCHIVE.md` as the stated design principle of the validation-corpus roadmap. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).",
       "patterns": [
         "kept on the roadmap and labeled .Deferred"
       ]
@@ -6659,7 +6659,7 @@
       "home": "STATUS_ARCHIVE.md:1580",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `STATUS_ARCHIVE.md` (the jazz-corpus status block). It is the standing evidence behind [[OI-7]] (establish a jazz ground-truth corpus or de-scope the Jazz correctness claims) and behind the A-7 empirically-unvalidated mark. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.",
+      "status_source": "Recorded in `STATUS_ARCHIVE.md` (the jazz-corpus status block). It is the standing evidence behind [[OI-7]] (establish a jazz ground-truth corpus or de-scope the Jazz correctness claims) and behind the A-7 empirically-unvalidated mark. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).",
       "patterns": [
         "not scoring failures\\. No accepted jazz-specific"
       ]
@@ -6679,7 +6679,7 @@
       "home": "STATUS_ARCHIVE.md:166",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `STATUS_ARCHIVE.md` (session 22i, the Stage-5 planning checkpoint) as a ruling read off the ratified retirement map. It is load-bearing now beyond its original subject: [[OI-205]] half (b) cites it as “the ratified Stage-3.5 file-split lesson (restructure ONCE, after the boundaries stabilize)” to time the `ARCHITECTURE.md` restructure. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.",
+      "status_source": "Recorded in `STATUS_ARCHIVE.md` (session 22i, the Stage-5 planning checkpoint) as a ruling read off the ratified retirement map. It is load-bearing now beyond its original subject: [[OI-205]] half (b) cites it as “the ratified Stage-3.5 file-split lesson (restructure ONCE, after the boundaries stabilize)” to time the `ARCHITECTURE.md` restructure. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).",
       "patterns": [
         "stays parked BY the ratified engage map"
       ]
@@ -6699,7 +6699,7 @@
       "home": "cowork_stage5_fitter_design.md:992",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Recorded in `cowork_stage5_fitter_design.md` (SIGNED, user, 2026-07-04) at open item O-11, and again in `STATUS_ARCHIVE.md:186`. It is the origin of the full-output-surface half of principle #15 (**D-178**): the same entry records the evidence-method lesson that inertness evidence must measure the winner AND the carry. Found by the phase-1f final-partition wave, 2026-08-02, reading `cowork_stage5_fitter_design.md` in full (SIGNED, user, 2026-07-04). NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.",
+      "status_source": "Recorded in `cowork_stage5_fitter_design.md` (SIGNED, user, 2026-07-04) at open item O-11, and again in `STATUS_ARCHIVE.md:186`. It is the origin of the full-output-surface half of principle #15 (**D-178**): the same entry records the evidence-method lesson that inertness evidence must measure the winner AND the carry. Found by the phase-1f final-partition wave, 2026-08-02, reading `cowork_stage5_fitter_design.md` in full (SIGNED, user, 2026-07-04). NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).",
       "patterns": [
         "alternatives\\[\\]. IS inside the byte-identity acceptance contract"
       ]
@@ -6719,7 +6719,7 @@
       "home": "cowork_stage5_fitter_design.md:673",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Recorded in `cowork_stage5_fitter_design.md` (SIGNED, user, 2026-07-04) as the eighth of its numbered architecture decisions, and applied in the same document at §4.5: the one measured non-monotone row was deferred and declared rather than mapped. Found by the phase-1f final-partition wave, 2026-08-02, reading `cowork_stage5_fitter_design.md` in full (SIGNED, user, 2026-07-04). NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.",
+      "status_source": "Recorded in `cowork_stage5_fitter_design.md` (SIGNED, user, 2026-07-04) as the eighth of its numbered architecture decisions, and applied in the same document at §4.5: the one measured non-monotone row was deferred and declared rather than mapped. Found by the phase-1f final-partition wave, 2026-08-02, reading `cowork_stage5_fitter_design.md` in full (SIGNED, user, 2026-07-04). NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).",
       "patterns": [
         "Calibration maps are monotone or deferred"
       ]
@@ -6739,7 +6739,7 @@
       "home": "cowork_stage5_fitter_design.md:1471",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Recorded in `cowork_stage5_fitter_design.md` (SIGNED, user, 2026-07-04) at open item O-10, and tracked as a standing obligation at [[OI-36]] — which is an open-items row, not a home. Found by the phase-1f final-partition wave, 2026-08-02, reading `cowork_stage5_fitter_design.md` in full (SIGNED, user, 2026-07-04). NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.",
+      "status_source": "Recorded in `cowork_stage5_fitter_design.md` (SIGNED, user, 2026-07-04) at open item O-10, and tracked as a standing obligation at [[OI-36]] — which is an open-items row, not a home. Found by the phase-1f final-partition wave, 2026-08-02, reading `cowork_stage5_fitter_design.md` in full (SIGNED, user, 2026-07-04). NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).",
       "patterns": [
         "RETAINED structural rules carry"
       ]
@@ -6759,10 +6759,28 @@
       "home": "STATUS_ARCHIVE.md:2251",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `STATUS_ARCHIVE.md`. VERIFIED AT THE OBJECTS 2026-08-02: commit `b1ba746` deletes exactly that one line from `src/engraving/dom/chordlist.cpp`, only an upstream header-update commit has touched the file since, and the line is absent at HEAD. This is a THIRD edit to MuseScore's own code beside **D-198** and **D-199**, and it is not in `CLAUDE.md`'s “Local patches — do not revert” section, which carries exactly two subsections; the non-conformance against the ruled **D-229** is rowed at [[OI-273]]. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.",
+      "status_source": "Recorded in `STATUS_ARCHIVE.md`. VERIFIED AT THE OBJECTS 2026-08-02: commit `b1ba746` deletes exactly that one line from `src/engraving/dom/chordlist.cpp`, only an upstream header-update commit has touched the file since, and the line is absent at HEAD. This is a THIRD edit to MuseScore's own code beside **D-198** and **D-199**, and it is not in `CLAUDE.md`'s “Local patches — do not revert” section, which carries exactly two subsections; the non-conformance against the ruled **D-229** is rowed at [[OI-273]]. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).",
       "patterns": [
         "One-line fix in MuseScore core"
       ]
+    },
+    {
+      "id": "D-316",
+      "group": "T",
+      "title": "The chord-symbol parser sussus fix is a recorded local patch with an UPSTREAMABLE distribution disposition",
+      "verbatim": "**★ DISTRIBUTION DISPOSITION (user-ratified 2026-08-02): UPSTREAMABLE** — a general parser\ndefect fix with no fork-specific content; contributing it to `musescore/MuseScore` is permitted\nand consistent with the §1.2 contribution intent (contrast the MusicXML mode-import patch above,\nwhich stays fork-local).",
+      "plain": "The one-line fix to MuseScore’s chord-symbol parser (the removal of a redundant assignment that caused the \"sussus\" double rendering, applied 2026-04-15) is now a recorded, protected local patch, and its distribution ruling is: it MAY be contributed upstream - unlike the MusicXML mode-import patch, which must never be.",
+      "rationale": "The MuseScore-dependency rule (D-229, ARCHITECTURE.md §3.3): every edit to MuseScore’s own code is recorded in the local-patches section with a per-instance distribution disposition ratified by the user. Found unrecorded by the phase-1f enumeration (OI-273 - the third such edit, the first two already recorded); disposition upstreamable because the fix is a general parser defect with no fork-specific content (the commit message and diff at b1ba7464 are the evidence).",
+      "status": "live",
+      "date": "2026-08-02",
+      "ratified_by": [
+        "user"
+      ],
+      "home": "CLAUDE.md",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "process",
+      "status_source": "User ruling 2026-08-02 (OI-273 option (i)); the CLAUDE.md local-patches subsection added in the same commit (the register’s same-commit rule).",
+      "patterns": []
     }
   ]
 }

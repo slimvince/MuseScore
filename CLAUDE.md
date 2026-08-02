@@ -733,6 +733,25 @@ merged to `upstream` (`musescore/MuseScore`) or otherwise contributed to the Mus
 `cfc7eb5e39` (or its content) toward `musescore/MuseScore` is a HARD STOP — surface, do not proceed.
 (The #9444 reference above is the upstream *bug report*; it does NOT authorize contributing THIS patch.)
 
+### Chord-symbol parser "sussus" fix — `ParsedChord::parse` (applied 2026-04-15; recorded 2026-08-02)
+
+**File:** `src/engraving/dom/chordlist.cpp`
+**Function:** `ParsedChord::parse()` (~line 990)
+**Commit:** `b1ba7464`
+
+One line removed: the redundant case-sensitive `tok1 = u"sus"` assignment beside the correct
+lowercase `tok1L = u"sus"` path. The redundant assignment was the underlying cause of the
+"sussus" double-rendering defect in chord-symbol display. Found unrecorded by the phase-1f
+enumeration (`OPEN_ITEMS.md` OI-273) and recorded here under the MuseScore-dependency rule
+(`ARCHITECTURE.md` §3.3, D-229: every edit to MuseScore's own code recorded with a per-instance
+distribution disposition).
+
+**★ DISTRIBUTION DISPOSITION (user-ratified 2026-08-02): UPSTREAMABLE** — a general parser
+defect fix with no fork-specific content; contributing it to `musescore/MuseScore` is permitted
+and consistent with the §1.2 contribution intent (contrast the MusicXML mode-import patch above,
+which stays fork-local). **Do not revert; do not let dependency updates overwrite without
+approval.** Register entry D-316.
+
 ## VS Code extension — bash command rules (MANDATORY, every session)
 
 The Claude Code VS Code extension (v2.1.141+) has a 15-second stall detector. If the
