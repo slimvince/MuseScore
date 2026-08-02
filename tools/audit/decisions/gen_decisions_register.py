@@ -46,13 +46,20 @@ NONSPEC_MARK = {
                "correct home.",
     "unhomed": "⚠ **recorded only on a tracking surface** — an open-item row or a session handoff "
                "block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.",
+    "contract-home": "— homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` "
+                     "section points to: a proper home (the fifth home case, user-ratified "
+                     "2026-08-02 at OI-268).",
 }
 NONSPEC_LABEL = {
     "gap": "a documentation gap",
     "project-convention": "a project-wide convention, correctly homed",
     "process": "a decision about the process, correctly homed",
     "unhomed": "recorded only on a tracking surface, with no home at all",
+    "contract-home": "homed in a ratified contract document (a proper home)",
 }
+LEGACY_MARK = ("⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion "
+               "at the retirement map; it has no effect on the live solution (marking convention "
+               "user-ratified 2026-08-02).")
 
 STATUS_LABEL = {
     "live": "LIVE",
@@ -90,7 +97,12 @@ PREAMBLE = """# DECISIONS — the decisions register
 > individual OI-271 ruling, the constraint reaffirmed BINDING with the licence-class
 > verification as the remaining action). **Fifth ratification event, 2026-08-02:** the 16
 > phase-1f entries (D-300…D-315) and D-316 (the third local patch recorded with its
-> upstreamable disposition, the OI-273 ruling). The register-level ratification does not overwrite
+> upstreamable disposition, the OI-273 ruling). **Sixth ratification event, 2026-08-02:** the 26
+> phase-1g entries (D-317…D-342) — D-319…D-341 directly; D-317/D-318 with rephrased plain
+> restatements under the LEGACY-marking convention (an entry whose subject is the dormant
+> pipeline is explicitly marked, so a ruling about soon-deleted code is never mistaken for one
+> about the live solution); D-342 with the live-handling clarification. The ratification is of
+> each RULE itself; homes and provenance are bookkeeping. The register-level ratification does not overwrite
 > per-entry provenance — an entry saying "ratifier not stated" still means the original record
 > of THAT decision does not say; what the 2026-08-02 ratifications establish is that these
 > entries are the standing decisions of record.
@@ -314,6 +326,9 @@ def render_entry(d: dict) -> list[str]:
     out: list[str] = []
     out.append(f"### {d['id']} — {d['title']}")
     out.append("")
+    if d.get("legacy_subject"):
+        out.append(LEGACY_MARK)
+        out.append("")
     for line in d["verbatim"].splitlines():
         stripped = re.sub(r"^\s*>+\s?", "", line)
         out.append(f"> {stripped}" if stripped.strip() else ">")

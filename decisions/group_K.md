@@ -179,7 +179,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `CLAUDE.md:632`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:638`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:621-660. The document itself is `docs/scoring_model.md`.
 
@@ -202,9 +202,9 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `CLAUDE.md:812`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:818`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** CLAUDE.md:812-821; predicate qualification user-directed 2026-06-24, defined terms user-directed 2026-07-02. The ONE home is `cowork_design_doc_template.md`, which also carries the fourteen-section document structure, the status-banner convention and the implementation/test locator rule. Conformance of the existing tree is open at OPEN_ITEMS OI-230.
+**Provenance.** CLAUDE.md:818-821; predicate qualification user-directed 2026-06-24, defined terms user-directed 2026-07-02. The ONE home is `cowork_design_doc_template.md`, which also carries the fourteen-section document structure, the status-banner convention and the implementation/test locator rule. Conformance of the existing tree is open at OPEN_ITEMS OI-230.
 
 ### D-194 — No self-invented labels, abbreviations, numbering schemes or jargon
 
@@ -219,9 +219,9 @@
 
 **Status.** LIVE · decided 2026-07-11 · ratified by user
 
-**Home.** `CLAUDE.md:808`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:814`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** CLAUDE.md:808-811, user-directed repeatedly and recorded 2026-07-11.
+**Provenance.** CLAUDE.md:814-811, user-directed repeatedly and recorded 2026-07-11.
 
 ### D-195 — Every design decision carries its defense at its home
 
@@ -245,9 +245,9 @@
 
 **Status.** LIVE · decided 2026-08-01 · ratified by user
 
-**Home.** `CLAUDE.md:864`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:870`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** CLAUDE.md:864-876, user-directed 2026-08-01 at the decisions-register ratification review. The register's rationale field is what serves it; the founding instances the entry names are D-004's segment-cap value, D-059's window and D-015's boundary-tick convention.
+**Provenance.** CLAUDE.md:870-876, user-directed 2026-08-01 at the decisions-register ratification review. The register's rationale field is what serves it; the founding instances the entry names are D-004's segment-cap value, D-059's window and D-015's boundary-tick convention.
 
 ### D-230 — The decisions register is a mandatory session-start read, and a new ruling lands in the register in the commit that records it
 

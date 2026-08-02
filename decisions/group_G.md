@@ -514,6 +514,8 @@
 
 ### D-317 — The backward-walk boundary change is a dead end — do not retry it
 
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+
 > **Falsified.** The boundary-touching predecessors are OTHER chord tones (C, Eb for
 > bwv102.7; G, B for bwv261), not the root. The root attacks later. Changing the
 > condition to `< startTickInt` would add C/Eb or G/B to the failing slice but would
@@ -521,7 +523,7 @@
 > 5 notation-display paths); the parent-scope calls correctly use `<= startTickInt` to
 > exclude the previous chord's terminal notes. Do not retry this fix.
 
-**In plain words.** Letting the analysis pick up notes that stop exactly where a stretch begins was tried as a way to recover a missing chord root. It does not recover the root, and the line of work is closed.
+**In plain words.** LEGACY (the analyzer awaiting deletion): a one-tick boundary fix was tried and closed - counting notes that stop exactly where a stretch begins as belonging to that stretch, in the hope of recovering a missing chord root. Measured: the boundary-touching notes are other chord tones (the root attacks later), and five display paths depend on the current convention. A boundary-membership dead end ONLY - it says nothing about extending the temporal context the analysis reads, which is a decided live capability (the extensible working span, D-030).
 
 **Why.** Measured and named in the record: the notes that touch the boundary are other chord tones, not the root, which attacks a quarter-note later; and the same walk is used at twelve call sites, five of them notation display, where excluding the previous chord's terminal notes is correct.
 
@@ -529,13 +531,15 @@
 
 **Home.** `docs/redesign_plan.md:372-377`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02) as a LEGACY-scoped dead end with no effect on the going solution; plain restatement rephrased at the user's direction to preclude the temporal-context misreading.
 
 ### D-318 — A short-region external merger is a dead end — do not retry it
 
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+
 > Do not retry a short-region external merger. The tones are already aggregated.
 
-**In plain words.** Adding a pass that merges very short neighbouring stretches was tried and closed: by the time such a pass could run, the stretches it was meant to merge have already been merged by an earlier step.
+**In plain words.** LEGACY (the segmenter awaiting deletion): a proposed after-the-fact pass merging very short neighbouring stretches was tried and closed - measured, its trigger never fires, because the earlier inline same-root merge has already combined them. A prohibition on re-adding one redundant merger pass - nothing about collecting notes over time or extending context.
 
 **Why.** Measured: the spot-check found zero qualifying runs across all thirteen failing Baroque scores, both target cases included — the trigger was dead code, because the existing same-root inline merge inside the first pass already combines the arpeggio micro-stretches (`docs/redesign_plan.md`, the short-region-merger dead-end block, `cc_phase_d_merger_report.md`).
 
@@ -543,7 +547,7 @@
 
 **Home.** `docs/redesign_plan.md:394`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02) as a LEGACY-scoped dead end with no effect on the going solution; plain restatement rephrased at the user's direction to preclude the temporal-context misreading.
 
 ### D-319 — Re-analysing the merged aggregate is a dead end — no tone-aggregation approach fixes the arpeggio root failure
 
@@ -730,7 +734,7 @@
 
 **Home.** `cowork_layer4_chordsymbol_design.md:208-212`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ TRANSFER RULING (user, 2026-08-02, OI-275 reading 1-with-transfer): the PRINCIPLE binds the joint estimator's family design - candidate admission complete by default, any prune derived, measured for established loss, and ratified (the factorization's own reserve clause); the document's letter stays home to the legacy scorer. D-329 is the family design's ratified admission premise (OI-215/226/227/228/243/244).
 
 ### D-330 — Never a pooled recompute — the chord is never re-derived from several stretches' notes thrown together
 

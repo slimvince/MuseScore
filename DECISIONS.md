@@ -24,7 +24,12 @@
 > individual OI-271 ruling, the constraint reaffirmed BINDING with the licence-class
 > verification as the remaining action). **Fifth ratification event, 2026-08-02:** the 16
 > phase-1f entries (D-300…D-315) and D-316 (the third local patch recorded with its
-> upstreamable disposition, the OI-273 ruling). The register-level ratification does not overwrite
+> upstreamable disposition, the OI-273 ruling). **Sixth ratification event, 2026-08-02:** the 26
+> phase-1g entries (D-317…D-342) — D-319…D-341 directly; D-317/D-318 with rephrased plain
+> restatements under the LEGACY-marking convention (an entry whose subject is the dormant
+> pipeline is explicitly marked, so a ruling about soon-deleted code is never mistaken for one
+> about the live solution); D-342 with the live-handling clarification. The ratification is of
+> each RULE itself; homes and provenance are bookkeeping. The register-level ratification does not overwrite
 > per-entry provenance — an entry saying "ratifier not stated" still means the original record
 > of THAT decision does not say; what the 2026-08-02 ratifications establish is that these
 > entries are the standing decisions of record.

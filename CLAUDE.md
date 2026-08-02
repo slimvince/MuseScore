@@ -162,7 +162,12 @@ register is a GENERATED surface — change `tools/audit/decisions/backbone_decis
 regenerate (`gen_decisions_register.py`; its `--check` and `gen_cluster_dispositions.py
 --verify` guard drift, quote fidelity and reference resolution), never hand-edit the rendered
 files; (e) a decision belongs, wherever possible, in the OWNING LAYER'S SPECIFICATION — the
-register is the index and pointer, never a substitute home.
+register is the index and pointer, never a substitute home; (f) an entry whose subject is the
+LEGACY surface (the dormant pipeline awaiting deletion) is explicitly marked LEGACY — a reader
+must never mistake a ruling about soon-deleted code for one about the live solution (user,
+2026-08-02); (g) a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to is
+a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268 — the pointer, never a
+copy, is what a missing delegation owes).
 
 ## Project context
 
@@ -242,7 +247,8 @@ Only run `--update-goldens` when the output change is verified correct.
 
 ## Gate threshold and preset policy
 
-Gate thresholds (e.g. Gate I: 0.45, Gate K: 0.20, Gate L: 0.35) are **calibrated
+Gate thresholds (e.g. Gate I: 0.45, Gate L: 0.35; Gate K is retired — removed from this list
+by user ruling 2026-08-02, OI-260) are **calibrated
 against the Baroque corpus** and are intentionally Baroque-specific. Do NOT adjust
 them to accommodate other musical styles.
 
