@@ -1,0 +1,1977 @@
+{
+ "sample": [
+  "bwv10.7",
+  "bwv153.1",
+  "bwv2.6",
+  "bwv245.37",
+  "bwv271",
+  "bwv297",
+  "bwv321",
+  "bwv347",
+  "bwv373",
+  "bwv398",
+  "bwv420",
+  "bwv55.5"
+ ],
+ "seg_cap": 4,
+ "note_events_git_hash": "e3d17c325d24e0de1213440043cbf02ac14f3d3e",
+ "conditions": {
+  "bwv10.7": {
+   "sig_fifths": -2,
+   "declared_mode": "minor",
+   "total_score_ref": -122.2849882764082,
+   "total_score_obs": -141.3381973888,
+   "total_score_delta": -19.053209112391812,
+   "score_bit_identical": false,
+   "n_segments_ref": 38,
+   "n_segments_obs": 39,
+   "boundaries_identical": false,
+   "boundary_diff": {
+    "ref_only": [
+     [
+      5280,
+      6240
+     ],
+     [
+      6240,
+      7680
+     ],
+     [
+      28800,
+      30720
+     ],
+     [
+      30720,
+      32640
+     ],
+     [
+      32640,
+      33600
+     ]
+    ],
+    "obs_only": [
+     [
+      5280,
+      5760
+     ],
+     [
+      5760,
+      6720
+     ],
+     [
+      6720,
+      7680
+     ],
+     [
+      28800,
+      30240
+     ],
+     [
+      30240,
+      32160
+     ],
+     [
+      32160,
+      33600
+     ]
+    ]
+   },
+   "n_segments_compared": 38,
+   "n_segments_matched": 32,
+   "bit_identical": false,
+   "violations": [
+    {
+     "seg_index": 0,
+     "tick": 0,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       0,
+       960
+      ],
+      "tonic_pc": 10,
+      "is_major": true,
+      "class_key": "VI | Min |  | ",
+      "root_pc": 7
+     },
+     "observed": {
+      "span": [
+       0,
+       960
+      ],
+      "tonic_pc": 7,
+      "is_major": false,
+      "class_key": "I | Min |  | ",
+      "root_pc": 7
+     }
+    },
+    {
+     "seg_index": 9,
+     "tick": 5280,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       5280,
+       6240
+      ],
+      "tonic_pc": 10,
+      "is_major": true,
+      "class_key": "IV | Maj |  | ",
+      "root_pc": 3
+     },
+     "observed": {
+      "span": [
+       5280,
+       5760
+      ],
+      "tonic_pc": 10,
+      "is_major": true,
+      "class_key": "VI | Min |  | ",
+      "root_pc": 7
+     }
+    },
+    {
+     "seg_index": 10,
+     "tick": 6240,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       6240,
+       7680
+      ],
+      "tonic_pc": 10,
+      "is_major": true,
+      "class_key": "V | Maj |  | ",
+      "root_pc": 5
+     },
+     "observed": {
+      "span": [
+       5760,
+       6720
+      ],
+      "tonic_pc": 10,
+      "is_major": true,
+      "class_key": "II | Min7 |  | ",
+      "root_pc": 0
+     }
+    },
+    {
+     "seg_index": 27,
+     "tick": 28800,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       28800,
+       30720
+      ],
+      "tonic_pc": 10,
+      "is_major": true,
+      "class_key": "V | Maj |  | ",
+      "root_pc": 5
+     },
+     "observed": {
+      "span": [
+       28800,
+       30240
+      ],
+      "tonic_pc": 5,
+      "is_major": true,
+      "class_key": "V | Maj |  | IV",
+      "root_pc": 5
+     }
+    },
+    {
+     "seg_index": 28,
+     "tick": 30720,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       30720,
+       32640
+      ],
+      "tonic_pc": 7,
+      "is_major": false,
+      "class_key": "II | Min |  | ",
+      "root_pc": 9
+     },
+     "observed": {
+      "span": [
+       30240,
+       32160
+      ],
+      "tonic_pc": 5,
+      "is_major": true,
+      "class_key": "V | Dom7 |  | ",
+      "root_pc": 0
+     }
+    },
+    {
+     "seg_index": 29,
+     "tick": 32640,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       32640,
+       33600
+      ],
+      "tonic_pc": 7,
+      "is_major": false,
+      "class_key": "I | Min |  | ",
+      "root_pc": 7
+     },
+     "observed": {
+      "span": [
+       32160,
+       33600
+      ],
+      "tonic_pc": 7,
+      "is_major": false,
+      "class_key": "I | Min |  | ",
+      "root_pc": 7
+     }
+    }
+   ],
+   "transform_meta": {
+    "doubled_part": 0,
+    "n_doubled": 46,
+    "part_mean_midi": 72.04,
+    "piece_min_midi": 43,
+    "n_parts": 4
+   }
+  },
+  "bwv153.1": {
+   "sig_fifths": 1,
+   "declared_mode": "minor",
+   "total_score_ref": -112.55675258885249,
+   "total_score_obs": -134.3989468941509,
+   "total_score_delta": -21.842194305298406,
+   "score_bit_identical": false,
+   "n_segments_ref": 29,
+   "n_segments_obs": 31,
+   "boundaries_identical": false,
+   "boundary_diff": {
+    "ref_only": [
+     [
+      0,
+      1920
+     ],
+     [
+      1920,
+      2880
+     ]
+    ],
+    "obs_only": [
+     [
+      0,
+      960
+     ],
+     [
+      960,
+      1440
+     ],
+     [
+      1440,
+      2400
+     ],
+     [
+      2400,
+      2880
+     ]
+    ]
+   },
+   "n_segments_compared": 29,
+   "n_segments_matched": 24,
+   "bit_identical": false,
+   "violations": [
+    {
+     "seg_index": 0,
+     "tick": 0,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       0,
+       1920
+      ],
+      "tonic_pc": 9,
+      "is_major": false,
+      "class_key": "I | Min |  | ",
+      "root_pc": 9
+     },
+     "observed": {
+      "span": [
+       0,
+       960
+      ],
+      "tonic_pc": 4,
+      "is_major": false,
+      "class_key": "IV | Min |  | ",
+      "root_pc": 9
+     }
+    },
+    {
+     "seg_index": 1,
+     "tick": 1920,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       1920,
+       2880
+      ],
+      "tonic_pc": 9,
+      "is_major": false,
+      "class_key": "V | Maj |  | ",
+      "root_pc": 4
+     },
+     "observed": {
+      "span": [
+       1440,
+       2400
+      ],
+      "tonic_pc": 9,
+      "is_major": false,
+      "class_key": "I | Min |  | ",
+      "root_pc": 9
+     }
+    },
+    {
+     "seg_index": 8,
+     "tick": 6240,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       6240,
+       6960
+      ],
+      "tonic_pc": 9,
+      "is_major": false,
+      "class_key": "V | Maj |  | ",
+      "root_pc": 4
+     },
+     "observed": {
+      "span": [
+       6240,
+       6960
+      ],
+      "tonic_pc": 9,
+      "is_major": false,
+      "class_key": "III | AugMaj7 |  | ",
+      "root_pc": 0
+     }
+    },
+    {
+     "seg_index": 27,
+     "tick": 18000,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       18000,
+       18720
+      ],
+      "tonic_pc": 4,
+      "is_major": true,
+      "class_key": "VII | Dim7 |  | ",
+      "root_pc": 3
+     },
+     "observed": {
+      "span": [
+       18000,
+       18720
+      ],
+      "tonic_pc": 9,
+      "is_major": false,
+      "class_key": "VII | Dim7 |  | V",
+      "root_pc": 3
+     }
+    },
+    {
+     "seg_index": 28,
+     "tick": 18720,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       18720,
+       19200
+      ],
+      "tonic_pc": 4,
+      "is_major": true,
+      "class_key": "I | Maj |  | ",
+      "root_pc": 4
+     },
+     "observed": {
+      "span": [
+       18720,
+       19200
+      ],
+      "tonic_pc": 9,
+      "is_major": false,
+      "class_key": "V | Maj |  | ",
+      "root_pc": 4
+     }
+    }
+   ],
+   "transform_meta": {
+    "doubled_part": 0,
+    "n_doubled": 47,
+    "part_mean_midi": 70.83,
+    "piece_min_midi": 45,
+    "n_parts": 4
+   }
+  },
+  "bwv2.6": {
+   "sig_fifths": -1,
+   "declared_mode": "minor",
+   "total_score_ref": -106.09567518561606,
+   "total_score_obs": -124.47848681118069,
+   "total_score_delta": -18.382811625564628,
+   "score_bit_identical": false,
+   "n_segments_ref": 32,
+   "n_segments_obs": 35,
+   "boundaries_identical": false,
+   "boundary_diff": {
+    "ref_only": [
+     [
+      4320,
+      5760
+     ],
+     [
+      16320,
+      16800
+     ],
+     [
+      16800,
+      17760
+     ]
+    ],
+    "obs_only": [
+     [
+      4320,
+      4800
+     ],
+     [
+      4800,
+      5040
+     ],
+     [
+      5040,
+      5760
+     ],
+     [
+      16320,
+      16560
+     ],
+     [
+      16560,
+      17280
+     ],
+     [
+      17280,
+      17760
+     ]
+    ]
+   },
+   "n_segments_compared": 32,
+   "n_segments_matched": 27,
+   "bit_identical": false,
+   "violations": [
+    {
+     "seg_index": 6,
+     "tick": 3840,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       3840,
+       4320
+      ],
+      "tonic_pc": 0,
+      "is_major": false,
+      "class_key": "VI | Maj |  | ",
+      "root_pc": 8
+     },
+     "observed": {
+      "span": [
+       3840,
+       4320
+      ],
+      "tonic_pc": 5,
+      "is_major": false,
+      "class_key": "III | Maj |  | ",
+      "root_pc": 8
+     }
+    },
+    {
+     "seg_index": 7,
+     "tick": 4320,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       4320,
+       5760
+      ],
+      "tonic_pc": 7,
+      "is_major": false,
+      "class_key": "VII | Dim7 |  | V",
+      "root_pc": 1
+     },
+     "observed": {
+      "span": [
+       4320,
+       4800
+      ],
+      "tonic_pc": 5,
+      "is_major": false,
+      "class_key": "VII | Dim7 |  | iii",
+      "root_pc": 7
+     }
+    },
+    {
+     "seg_index": 8,
+     "tick": 5760,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       5760,
+       6240
+      ],
+      "tonic_pc": 7,
+      "is_major": false,
+      "class_key": "V | Maj |  | ",
+      "root_pc": 2
+     },
+     "observed": {
+      "span": [
+       5760,
+       6240
+      ],
+      "tonic_pc": 7,
+      "is_major": false,
+      "class_key": "V | Dom7 |  | ",
+      "root_pc": 2
+     }
+    },
+    {
+     "seg_index": 26,
+     "tick": 16320,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       16320,
+       16800
+      ],
+      "tonic_pc": 7,
+      "is_major": false,
+      "class_key": "I | Min |  | ",
+      "root_pc": 7
+     },
+     "observed": {
+      "span": [
+       16320,
+       16560
+      ],
+      "tonic_pc": 7,
+      "is_major": false,
+      "class_key": "I | Min |  | ",
+      "root_pc": 7
+     }
+    },
+    {
+     "seg_index": 27,
+     "tick": 16800,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       16800,
+       17760
+      ],
+      "tonic_pc": 0,
+      "is_major": false,
+      "class_key": "I | Min |  | ",
+      "root_pc": 0
+     },
+     "observed": {
+      "span": [
+       16560,
+       17280
+      ],
+      "tonic_pc": 0,
+      "is_major": false,
+      "class_key": "I | Min |  | ",
+      "root_pc": 0
+     }
+    }
+   ],
+   "transform_meta": {
+    "doubled_part": 0,
+    "n_doubled": 44,
+    "part_mean_midi": 68.84,
+    "piece_min_midi": 43,
+    "n_parts": 4
+   }
+  },
+  "bwv245.37": {
+   "sig_fifths": -3,
+   "declared_mode": "minor",
+   "total_score_ref": -148.89159192772965,
+   "total_score_obs": -178.20853362021873,
+   "total_score_delta": -29.31694169248908,
+   "score_bit_identical": false,
+   "n_segments_ref": 42,
+   "n_segments_obs": 44,
+   "boundaries_identical": false,
+   "boundary_diff": {
+    "ref_only": [
+     [
+      6240,
+      7680
+     ],
+     [
+      7680,
+      9120
+     ],
+     [
+      21600,
+      23040
+     ]
+    ],
+    "obs_only": [
+     [
+      6240,
+      6720
+     ],
+     [
+      6720,
+      8640
+     ],
+     [
+      8640,
+      9120
+     ],
+     [
+      21600,
+      21840
+     ],
+     [
+      21840,
+      23040
+     ]
+    ]
+   },
+   "n_segments_compared": 42,
+   "n_segments_matched": 38,
+   "bit_identical": false,
+   "violations": [
+    {
+     "seg_index": 10,
+     "tick": 6240,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       6240,
+       7680
+      ],
+      "tonic_pc": 10,
+      "is_major": false,
+      "class_key": "V | Maj |  | ",
+      "root_pc": 5
+     },
+     "observed": {
+      "span": [
+       6240,
+       6720
+      ],
+      "tonic_pc": 1,
+      "is_major": true,
+      "class_key": "VI | Min |  | ",
+      "root_pc": 10
+     }
+    },
+    {
+     "seg_index": 11,
+     "tick": 7680,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       7680,
+       9120
+      ],
+      "tonic_pc": 10,
+      "is_major": false,
+      "class_key": "I | Min |  | ",
+      "root_pc": 10
+     },
+     "observed": {
+      "span": [
+       6720,
+       8640
+      ],
+      "tonic_pc": 10,
+      "is_major": false,
+      "class_key": "V | Maj |  | ",
+      "root_pc": 5
+     }
+    },
+    {
+     "seg_index": 29,
+     "tick": 21120,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       21120,
+       21600
+      ],
+      "tonic_pc": 10,
+      "is_major": false,
+      "class_key": "IV | Min |  | ",
+      "root_pc": 3
+     },
+     "observed": {
+      "span": [
+       21120,
+       21600
+      ],
+      "tonic_pc": 1,
+      "is_major": true,
+      "class_key": "II | Min |  | ",
+      "root_pc": 3
+     }
+    },
+    {
+     "seg_index": 30,
+     "tick": 21600,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       21600,
+       23040
+      ],
+      "tonic_pc": 10,
+      "is_major": false,
+      "class_key": "V | Maj |  | ",
+      "root_pc": 5
+     },
+     "observed": {
+      "span": [
+       21600,
+       21840
+      ],
+      "tonic_pc": 1,
+      "is_major": true,
+      "class_key": "IV | Maj |  | ",
+      "root_pc": 6
+     }
+    }
+   ],
+   "transform_meta": {
+    "doubled_part": 0,
+    "n_doubled": 62,
+    "part_mean_midi": 70.98,
+    "piece_min_midi": 42,
+    "n_parts": 4
+   }
+  },
+  "bwv271": {
+   "sig_fifths": 2,
+   "declared_mode": "major",
+   "total_score_ref": -111.3488377892625,
+   "total_score_obs": -130.53286459424393,
+   "total_score_delta": -19.18402680498143,
+   "score_bit_identical": false,
+   "n_segments_ref": 34,
+   "n_segments_obs": 34,
+   "boundaries_identical": false,
+   "boundary_diff": {
+    "ref_only": [
+     [
+      3840,
+      4800
+     ],
+     [
+      4800,
+      5760
+     ],
+     [
+      5760,
+      6240
+     ]
+    ],
+    "obs_only": [
+     [
+      3840,
+      4320
+     ],
+     [
+      4320,
+      5280
+     ],
+     [
+      5280,
+      6240
+     ]
+    ]
+   },
+   "n_segments_compared": 34,
+   "n_segments_matched": 30,
+   "bit_identical": false,
+   "violations": [
+    {
+     "seg_index": 7,
+     "tick": 3840,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       3840,
+       4800
+      ],
+      "tonic_pc": 11,
+      "is_major": false,
+      "class_key": "V | Maj |  | ",
+      "root_pc": 6
+     },
+     "observed": {
+      "span": [
+       3840,
+       4320
+      ],
+      "tonic_pc": 2,
+      "is_major": true,
+      "class_key": "V | Maj |  | vi",
+      "root_pc": 6
+     }
+    },
+    {
+     "seg_index": 8,
+     "tick": 4800,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       4800,
+       5760
+      ],
+      "tonic_pc": 11,
+      "is_major": false,
+      "class_key": "I | Min |  | ",
+      "root_pc": 11
+     },
+     "observed": {
+      "span": [
+       4320,
+       5280
+      ],
+      "tonic_pc": 2,
+      "is_major": true,
+      "class_key": "VI | Min |  | ",
+      "root_pc": 11
+     }
+    },
+    {
+     "seg_index": 9,
+     "tick": 5760,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       5760,
+       6240
+      ],
+      "tonic_pc": 11,
+      "is_major": false,
+      "class_key": "V | Maj |  | ",
+      "root_pc": 6
+     },
+     "observed": {
+      "span": [
+       5280,
+       6240
+      ],
+      "tonic_pc": 11,
+      "is_major": false,
+      "class_key": "V | Maj |  | ",
+      "root_pc": 6
+     }
+    },
+    {
+     "seg_index": 21,
+     "tick": 15360,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       15360,
+       15840
+      ],
+      "tonic_pc": 9,
+      "is_major": true,
+      "class_key": "V | Maj |  | ",
+      "root_pc": 4
+     },
+     "observed": {
+      "span": [
+       15360,
+       15840
+      ],
+      "tonic_pc": 9,
+      "is_major": true,
+      "class_key": "V | Dom7 |  | ",
+      "root_pc": 4
+     }
+    }
+   ],
+   "transform_meta": {
+    "doubled_part": 0,
+    "n_doubled": 43,
+    "part_mean_midi": 70.21,
+    "piece_min_midi": 42,
+    "n_parts": 4
+   }
+  },
+  "bwv297": {
+   "sig_fifths": 0,
+   "declared_mode": "minor",
+   "total_score_ref": -115.7701501626362,
+   "total_score_obs": -135.13792217461398,
+   "total_score_delta": -19.367772011977777,
+   "score_bit_identical": false,
+   "n_segments_ref": 36,
+   "n_segments_obs": 36,
+   "boundaries_identical": false,
+   "boundary_diff": {
+    "ref_only": [
+     [
+      9360,
+      9600
+     ],
+     [
+      9600,
+      10080
+     ],
+     [
+      19200,
+      20160
+     ]
+    ],
+    "obs_only": [
+     [
+      9360,
+      10080
+     ],
+     [
+      19200,
+      19680
+     ],
+     [
+      19680,
+      20160
+     ]
+    ]
+   },
+   "n_segments_compared": 36,
+   "n_segments_matched": 28,
+   "bit_identical": false,
+   "violations": [
+    {
+     "seg_index": 12,
+     "tick": 9120,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       9120,
+       9360
+      ],
+      "tonic_pc": 5,
+      "is_major": true,
+      "class_key": "II | Min |  | ",
+      "root_pc": 7
+     },
+     "observed": {
+      "span": [
+       9120,
+       9360
+      ],
+      "tonic_pc": 5,
+      "is_major": true,
+      "class_key": "VI | Min |  | IV",
+      "root_pc": 7
+     }
+    },
+    {
+     "seg_index": 13,
+     "tick": 9360,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       9360,
+       9600
+      ],
+      "tonic_pc": 5,
+      "is_major": true,
+      "class_key": "V | Maj |  | ",
+      "root_pc": 0
+     },
+     "observed": {
+      "span": [
+       9360,
+       10080
+      ],
+      "tonic_pc": 5,
+      "is_major": true,
+      "class_key": "V | Maj |  | IV",
+      "root_pc": 5
+     }
+    },
+    {
+     "seg_index": 14,
+     "tick": 9600,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       9600,
+       10080
+      ],
+      "tonic_pc": 5,
+      "is_major": true,
+      "class_key": "I | Maj |  | ",
+      "root_pc": 5
+     },
+     "observed": {
+      "span": [
+       9360,
+       10080
+      ],
+      "tonic_pc": 5,
+      "is_major": true,
+      "class_key": "V | Maj |  | IV",
+      "root_pc": 5
+     }
+    },
+    {
+     "seg_index": 15,
+     "tick": 10080,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       10080,
+       10560
+      ],
+      "tonic_pc": 5,
+      "is_major": true,
+      "class_key": "IV | Maj |  | ",
+      "root_pc": 10
+     },
+     "observed": {
+      "span": [
+       10080,
+       10560
+      ],
+      "tonic_pc": 5,
+      "is_major": true,
+      "class_key": "II | Min7 |  | ",
+      "root_pc": 7
+     }
+    },
+    {
+     "seg_index": 19,
+     "tick": 12000,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       12000,
+       12480
+      ],
+      "tonic_pc": 2,
+      "is_major": false,
+      "class_key": "IV | Min |  | ",
+      "root_pc": 7
+     },
+     "observed": {
+      "span": [
+       12000,
+       12480
+      ],
+      "tonic_pc": 2,
+      "is_major": false,
+      "class_key": "II | HalfDim7 |  | ",
+      "root_pc": 4
+     }
+    },
+    {
+     "seg_index": 22,
+     "tick": 13920,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       13920,
+       14880
+      ],
+      "tonic_pc": 5,
+      "is_major": true,
+      "class_key": "V | Maj |  | IV",
+      "root_pc": 5
+     },
+     "observed": {
+      "span": [
+       13920,
+       14880
+      ],
+      "tonic_pc": 5,
+      "is_major": true,
+      "class_key": "I | Maj |  | ",
+      "root_pc": 5
+     }
+    },
+    {
+     "seg_index": 23,
+     "tick": 14880,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       14880,
+       15360
+      ],
+      "tonic_pc": 5,
+      "is_major": true,
+      "class_key": "III | Min7 |  | ",
+      "root_pc": 9
+     },
+     "observed": {
+      "span": [
+       14880,
+       15360
+      ],
+      "tonic_pc": 5,
+      "is_major": true,
+      "class_key": "V | Maj |  | ",
+      "root_pc": 0
+     }
+    },
+    {
+     "seg_index": 33,
+     "tick": 19200,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       19200,
+       20160
+      ],
+      "tonic_pc": 5,
+      "is_major": true,
+      "class_key": "II | Min |  | ",
+      "root_pc": 7
+     },
+     "observed": {
+      "span": [
+       19200,
+       19680
+      ],
+      "tonic_pc": 5,
+      "is_major": true,
+      "class_key": "VI | Min |  | IV",
+      "root_pc": 7
+     }
+    }
+   ],
+   "transform_meta": {
+    "doubled_part": 0,
+    "n_doubled": 46,
+    "part_mean_midi": 68.96,
+    "piece_min_midi": 38,
+    "n_parts": 4
+   }
+  },
+  "bwv321": {
+   "sig_fifths": -2,
+   "declared_mode": "major",
+   "total_score_ref": -77.38396179555431,
+   "total_score_obs": -91.2073324985986,
+   "total_score_delta": -13.82337070304429,
+   "score_bit_identical": false,
+   "n_segments_ref": 26,
+   "n_segments_obs": 26,
+   "boundaries_identical": true,
+   "n_segments_compared": 26,
+   "n_segments_matched": 26,
+   "bit_identical": false,
+   "violations": [],
+   "transform_meta": {
+    "doubled_part": 0,
+    "n_doubled": 33,
+    "part_mean_midi": 72.58,
+    "piece_min_midi": 41,
+    "n_parts": 4
+   }
+  },
+  "bwv347": {
+   "sig_fifths": 3,
+   "declared_mode": "major",
+   "total_score_ref": -126.36167415009717,
+   "total_score_obs": -149.87030293119184,
+   "total_score_delta": -23.50862878109467,
+   "score_bit_identical": false,
+   "n_segments_ref": 40,
+   "n_segments_obs": 40,
+   "boundaries_identical": false,
+   "boundary_diff": {
+    "ref_only": [
+     [
+      18240,
+      19200
+     ],
+     [
+      19200,
+      19680
+     ],
+     [
+      19680,
+      20640
+     ]
+    ],
+    "obs_only": [
+     [
+      18240,
+      19680
+     ],
+     [
+      19680,
+      20160
+     ],
+     [
+      20160,
+      20640
+     ]
+    ]
+   },
+   "n_segments_compared": 40,
+   "n_segments_matched": 34,
+   "bit_identical": false,
+   "violations": [
+    {
+     "seg_index": 13,
+     "tick": 7680,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       7680,
+       8160
+      ],
+      "tonic_pc": 4,
+      "is_major": true,
+      "class_key": "VI | Min |  | ",
+      "root_pc": 1
+     },
+     "observed": {
+      "span": [
+       7680,
+       8160
+      ],
+      "tonic_pc": 9,
+      "is_major": true,
+      "class_key": "VI | Min |  | V",
+      "root_pc": 1
+     }
+    },
+    {
+     "seg_index": 14,
+     "tick": 8160,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       8160,
+       9120
+      ],
+      "tonic_pc": 9,
+      "is_major": true,
+      "class_key": "VI | Min |  | ",
+      "root_pc": 6
+     },
+     "observed": {
+      "span": [
+       8160,
+       9120
+      ],
+      "tonic_pc": 9,
+      "is_major": true,
+      "class_key": "IV | Maj7 |  | ",
+      "root_pc": 2
+     }
+    },
+    {
+     "seg_index": 27,
+     "tick": 16320,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       16320,
+       17280
+      ],
+      "tonic_pc": 9,
+      "is_major": true,
+      "class_key": "VI | Min |  | V",
+      "root_pc": 1
+     },
+     "observed": {
+      "span": [
+       16320,
+       17280
+      ],
+      "tonic_pc": 9,
+      "is_major": true,
+      "class_key": "III | Min7 |  | ",
+      "root_pc": 1
+     }
+    },
+    {
+     "seg_index": 30,
+     "tick": 18240,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       18240,
+       19200
+      ],
+      "tonic_pc": 9,
+      "is_major": true,
+      "class_key": "VI | Min |  | V",
+      "root_pc": 1
+     },
+     "observed": {
+      "span": [
+       18240,
+       19680
+      ],
+      "tonic_pc": 9,
+      "is_major": true,
+      "class_key": "V | Dom7 |  | ",
+      "root_pc": 4
+     }
+    },
+    {
+     "seg_index": 31,
+     "tick": 19200,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       19200,
+       19680
+      ],
+      "tonic_pc": 9,
+      "is_major": true,
+      "class_key": "VI | Min |  | IV",
+      "root_pc": 11
+     },
+     "observed": {
+      "span": [
+       18240,
+       19680
+      ],
+      "tonic_pc": 9,
+      "is_major": true,
+      "class_key": "V | Dom7 |  | ",
+      "root_pc": 4
+     }
+    },
+    {
+     "seg_index": 32,
+     "tick": 19680,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       19680,
+       20640
+      ],
+      "tonic_pc": 9,
+      "is_major": true,
+      "class_key": "II | Min7 |  | ",
+      "root_pc": 11
+     },
+     "observed": {
+      "span": [
+       19680,
+       20160
+      ],
+      "tonic_pc": 9,
+      "is_major": true,
+      "class_key": "VI | Min |  | ",
+      "root_pc": 6
+     }
+    }
+   ],
+   "transform_meta": {
+    "doubled_part": 0,
+    "n_doubled": 53,
+    "part_mean_midi": 70.74,
+    "piece_min_midi": 40,
+    "n_parts": 4
+   }
+  },
+  "bwv373": {
+   "sig_fifths": 1,
+   "declared_mode": "major",
+   "total_score_ref": -82.18001561928958,
+   "total_score_obs": -95.26919427814944,
+   "total_score_delta": -13.089178658859865,
+   "score_bit_identical": false,
+   "n_segments_ref": 25,
+   "n_segments_obs": 25,
+   "boundaries_identical": true,
+   "n_segments_compared": 25,
+   "n_segments_matched": 25,
+   "bit_identical": false,
+   "violations": [],
+   "transform_meta": {
+    "doubled_part": 0,
+    "n_doubled": 32,
+    "part_mean_midi": 67.59,
+    "piece_min_midi": 36,
+    "n_parts": 4
+   }
+  },
+  "bwv398": {
+   "sig_fifths": 2,
+   "declared_mode": "major",
+   "total_score_ref": -132.94149827909658,
+   "total_score_obs": -159.3437962491784,
+   "total_score_delta": -26.402297970081833,
+   "score_bit_identical": false,
+   "n_segments_ref": 38,
+   "n_segments_obs": 37,
+   "boundaries_identical": false,
+   "boundary_diff": {
+    "ref_only": [
+     [
+      12960,
+      13440
+     ],
+     [
+      13440,
+      13920
+     ],
+     [
+      14400,
+      14880
+     ],
+     [
+      14880,
+      15840
+     ]
+    ],
+    "obs_only": [
+     [
+      12960,
+      13920
+     ],
+     [
+      14400,
+      14640
+     ],
+     [
+      14640,
+      15840
+     ]
+    ]
+   },
+   "n_segments_compared": 38,
+   "n_segments_matched": 28,
+   "bit_identical": false,
+   "violations": [
+    {
+     "seg_index": 10,
+     "tick": 8640,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       8640,
+       9120
+      ],
+      "tonic_pc": 2,
+      "is_major": true,
+      "class_key": "II | Min |  | ",
+      "root_pc": 4
+     },
+     "observed": {
+      "span": [
+       8640,
+       9120
+      ],
+      "tonic_pc": 2,
+      "is_major": true,
+      "class_key": "VI | Min |  | IV",
+      "root_pc": 4
+     }
+    },
+    {
+     "seg_index": 11,
+     "tick": 9120,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       9120,
+       10080
+      ],
+      "tonic_pc": 2,
+      "is_major": true,
+      "class_key": "V | Maj |  | ",
+      "root_pc": 9
+     },
+     "observed": {
+      "span": [
+       9120,
+       10080
+      ],
+      "tonic_pc": 2,
+      "is_major": true,
+      "class_key": "V | Dom7 |  | ",
+      "root_pc": 9
+     }
+    },
+    {
+     "seg_index": 15,
+     "tick": 12480,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       12480,
+       12960
+      ],
+      "tonic_pc": 2,
+      "is_major": true,
+      "class_key": "V | Dom7 |  | V",
+      "root_pc": 4
+     },
+     "observed": {
+      "span": [
+       12480,
+       12960
+      ],
+      "tonic_pc": 9,
+      "is_major": true,
+      "class_key": "V | Maj |  | ",
+      "root_pc": 4
+     }
+    },
+    {
+     "seg_index": 16,
+     "tick": 12960,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       12960,
+       13440
+      ],
+      "tonic_pc": 2,
+      "is_major": true,
+      "class_key": "V | Maj |  | ",
+      "root_pc": 9
+     },
+     "observed": {
+      "span": [
+       12960,
+       13920
+      ],
+      "tonic_pc": 9,
+      "is_major": true,
+      "class_key": "I | Maj |  | ",
+      "root_pc": 9
+     }
+    },
+    {
+     "seg_index": 17,
+     "tick": 13440,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       13440,
+       13920
+      ],
+      "tonic_pc": 2,
+      "is_major": true,
+      "class_key": "I | Maj |  | ",
+      "root_pc": 2
+     },
+     "observed": {
+      "span": [
+       12960,
+       13920
+      ],
+      "tonic_pc": 9,
+      "is_major": true,
+      "class_key": "I | Maj |  | ",
+      "root_pc": 9
+     }
+    },
+    {
+     "seg_index": 18,
+     "tick": 13920,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       13920,
+       14400
+      ],
+      "tonic_pc": 2,
+      "is_major": true,
+      "class_key": "V | Maj |  | ",
+      "root_pc": 9
+     },
+     "observed": {
+      "span": [
+       13920,
+       14400
+      ],
+      "tonic_pc": 9,
+      "is_major": true,
+      "class_key": "I | Maj |  | ",
+      "root_pc": 9
+     }
+    },
+    {
+     "seg_index": 19,
+     "tick": 14400,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       14400,
+       14880
+      ],
+      "tonic_pc": 2,
+      "is_major": true,
+      "class_key": "V | Maj |  | V",
+      "root_pc": 4
+     },
+     "observed": {
+      "span": [
+       14400,
+       14640
+      ],
+      "tonic_pc": 9,
+      "is_major": true,
+      "class_key": "V | Maj |  | ",
+      "root_pc": 4
+     }
+    },
+    {
+     "seg_index": 20,
+     "tick": 14880,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       14880,
+       15840
+      ],
+      "tonic_pc": 2,
+      "is_major": true,
+      "class_key": "V | Maj |  | ",
+      "root_pc": 9
+     },
+     "observed": {
+      "span": [
+       14640,
+       15840
+      ],
+      "tonic_pc": 9,
+      "is_major": true,
+      "class_key": "I | Maj |  | ",
+      "root_pc": 9
+     }
+    },
+    {
+     "seg_index": 31,
+     "tick": 24480,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       24480,
+       24960
+      ],
+      "tonic_pc": 2,
+      "is_major": true,
+      "class_key": "VI | Min |  | ",
+      "root_pc": 11
+     },
+     "observed": {
+      "span": [
+       24480,
+       24960
+      ],
+      "tonic_pc": 11,
+      "is_major": false,
+      "class_key": "I | Min |  | ",
+      "root_pc": 11
+     }
+    },
+    {
+     "seg_index": 32,
+     "tick": 24960,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       24960,
+       25440
+      ],
+      "tonic_pc": 2,
+      "is_major": true,
+      "class_key": "V | Maj |  | vi",
+      "root_pc": 6
+     },
+     "observed": {
+      "span": [
+       24960,
+       25440
+      ],
+      "tonic_pc": 11,
+      "is_major": false,
+      "class_key": "V | Maj |  | ",
+      "root_pc": 6
+     }
+    }
+   ],
+   "transform_meta": {
+    "doubled_part": 0,
+    "n_doubled": 58,
+    "part_mean_midi": 69.09,
+    "piece_min_midi": 45,
+    "n_parts": 4
+   }
+  },
+  "bwv420": {
+   "sig_fifths": 0,
+   "declared_mode": "minor",
+   "total_score_ref": -110.0428975199125,
+   "total_score_obs": -130.23189544909891,
+   "total_score_delta": -20.188997929186414,
+   "score_bit_identical": false,
+   "n_segments_ref": 31,
+   "n_segments_obs": 31,
+   "boundaries_identical": true,
+   "n_segments_compared": 31,
+   "n_segments_matched": 31,
+   "bit_identical": false,
+   "violations": [],
+   "transform_meta": {
+    "doubled_part": 0,
+    "n_doubled": 45,
+    "part_mean_midi": 72.38,
+    "piece_min_midi": 38,
+    "n_parts": 4
+   }
+  },
+  "bwv55.5": {
+   "sig_fifths": -2,
+   "declared_mode": "major",
+   "total_score_ref": -110.91130257371204,
+   "total_score_obs": -131.43939052052187,
+   "total_score_delta": -20.528087946809833,
+   "score_bit_identical": false,
+   "n_segments_ref": 37,
+   "n_segments_obs": 36,
+   "boundaries_identical": false,
+   "boundary_diff": {
+    "ref_only": [
+     [
+      960,
+      1440
+     ],
+     [
+      1440,
+      1920
+     ],
+     [
+      12480,
+      13440
+     ],
+     [
+      16320,
+      16800
+     ],
+     [
+      16800,
+      17280
+     ]
+    ],
+    "obs_only": [
+     [
+      960,
+      1920
+     ],
+     [
+      12480,
+      12960
+     ],
+     [
+      12960,
+      13440
+     ],
+     [
+      16320,
+      17280
+     ]
+    ]
+   },
+   "n_segments_compared": 37,
+   "n_segments_matched": 31,
+   "bit_identical": false,
+   "violations": [
+    {
+     "seg_index": 2,
+     "tick": 960,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       960,
+       1440
+      ],
+      "tonic_pc": 10,
+      "is_major": true,
+      "class_key": "I | Maj |  | ",
+      "root_pc": 10
+     },
+     "observed": {
+      "span": [
+       960,
+       1920
+      ],
+      "tonic_pc": 10,
+      "is_major": true,
+      "class_key": "I | Maj |  | ",
+      "root_pc": 10
+     }
+    },
+    {
+     "seg_index": 3,
+     "tick": 1440,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       1440,
+       1920
+      ],
+      "tonic_pc": 10,
+      "is_major": true,
+      "class_key": "VI | Min |  | ",
+      "root_pc": 7
+     },
+     "observed": {
+      "span": [
+       960,
+       1920
+      ],
+      "tonic_pc": 10,
+      "is_major": true,
+      "class_key": "I | Maj |  | ",
+      "root_pc": 10
+     }
+    },
+    {
+     "seg_index": 20,
+     "tick": 12480,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       12480,
+       13440
+      ],
+      "tonic_pc": 3,
+      "is_major": true,
+      "class_key": "I | Maj |  | ",
+      "root_pc": 3
+     },
+     "observed": {
+      "span": [
+       12480,
+       12960
+      ],
+      "tonic_pc": 3,
+      "is_major": true,
+      "class_key": "I | Maj |  | ",
+      "root_pc": 3
+     }
+    },
+    {
+     "seg_index": 21,
+     "tick": 13440,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       13440,
+       13920
+      ],
+      "tonic_pc": 3,
+      "is_major": true,
+      "class_key": "IV | Maj |  | ",
+      "root_pc": 8
+     },
+     "observed": {
+      "span": [
+       13440,
+       13920
+      ],
+      "tonic_pc": 3,
+      "is_major": true,
+      "class_key": "II | Min7 |  | ",
+      "root_pc": 5
+     }
+    },
+    {
+     "seg_index": 26,
+     "tick": 16320,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       16320,
+       16800
+      ],
+      "tonic_pc": 10,
+      "is_major": true,
+      "class_key": "I | Maj |  | ",
+      "root_pc": 10
+     },
+     "observed": {
+      "span": [
+       16320,
+       17280
+      ],
+      "tonic_pc": 10,
+      "is_major": true,
+      "class_key": "I | Maj |  | ",
+      "root_pc": 10
+     }
+    },
+    {
+     "seg_index": 27,
+     "tick": 16800,
+     "type": "boundary_or_label_at_tick",
+     "expected": {
+      "span": [
+       16800,
+       17280
+      ],
+      "tonic_pc": 10,
+      "is_major": true,
+      "class_key": "VI | Min |  | ",
+      "root_pc": 7
+     },
+     "observed": {
+      "span": [
+       16320,
+       17280
+      ],
+      "tonic_pc": 10,
+      "is_major": true,
+      "class_key": "I | Maj |  | ",
+      "root_pc": 10
+     }
+    }
+   ],
+   "transform_meta": {
+    "doubled_part": 0,
+    "n_doubled": 47,
+    "part_mean_midi": 74.28,
+    "piece_min_midi": 46,
+    "n_parts": 4
+   }
+  }
+ },
+ "totals": {
+  "pieces": 12,
+  "bit_identical_pieces": 0,
+  "score_decreased_pieces": 12,
+  "segments_compared": 408,
+  "segments_matched": 354
+ },
+ "complete": true
+}

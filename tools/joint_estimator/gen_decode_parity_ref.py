@@ -9,6 +9,14 @@ of the 'all' fit) — recording, per piece, the FULL-PRECISION total score + the
 to 3 decimals and is identity-only; this reference carries unrounded scores for both arms so the C++
 decode parity can be checked to 1e-6 relative (the build dispatch's Task-2 bar) on both arms.
 
+ESTABLISHMENT NOTE — WHY THE TOLERANCE IS RELATIVE AND NOT EXACT (measured 2026-08-02, the
+input-order permutation probe, `invariance_probes_2026_08_02/`): permuting the input note list
+leaves the committed surface identical on 36/36 conditions (1224/1224 segments; no boundary
+moved), but total_score is NOT bit-stable — 4 of 36 conditions wobble at ulp scale (max |delta|
+2.842e-14), because the emission/spelling accumulation runs in input-note order and
+floating-point addition is not associative. So a parity gate comparing total scores at EXACT
+equality would flake; the abs<1e-6 bar above is safe and must stay a tolerance.
+
 Config is probe_run's exactly: seg_cap 4, leftover option 2a ("freq"), table_set "all",
 signature/declared-mode from the xml header. Output: decode_parity_ref.json.
 """

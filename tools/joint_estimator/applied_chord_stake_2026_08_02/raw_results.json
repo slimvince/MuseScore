@@ -1,0 +1,252 @@
+{
+ "corpus": "tools/corpus/baroque (committed; inference preset-independent)",
+ "wir_covered_stems": 326,
+ "our_applied_label_violations": [],
+ "n_our_applied_label_violations": 0,
+ "durations_ticks": {
+  "scored": 8300640,
+  "ra_rnd": 1072080,
+  "rn_dis": 2978400,
+  "applied": 340920,
+  "root_dis": 1906320,
+  "root_dis_applied": 103320,
+  "rn_dis_applied": 134520,
+  "ra_rnd_applied": 31200
+ },
+ "cell_counts": {
+  "scored": 18858,
+  "ra_rnd": 2229,
+  "applied": 876,
+  "root_dis": 4980,
+  "root_dis_applied": 278,
+  "ra_rnd_applied": 89
+ },
+ "measure_1_applied_share_of_scored_pct": 4.11,
+ "measure_2_applied_share_of_root_disagree_pct": 5.42,
+ "measure_3_applied_share_of_rootagree_rndisagree_pct": 2.91,
+ "measure_4_fifth_offset_share_among_applied_rootdis_pct_dur": 29.38,
+ "measure_4_fifth_offset_share_among_applied_rootdis_pct_cells": 25.54,
+ "derived_applied_share_of_total_rn_disagree_pct": 4.52,
+ "derived_rn_agree_pct_check": 64.12,
+ "derived_root_agree_pct_check": 77.03,
+ "applied_bucket_duration": {
+  "partial": 156120,
+  "root_err": 103320,
+  "exact": 50280,
+  "quality_disagree": 12000,
+  "key_disagree": 19200
+ },
+ "applied_rootdis_offset_histogram_dur": {
+  "5": 23040,
+  "3": 14160,
+  "6": 10320,
+  "8": 9360,
+  "4": 9240,
+  "1": 8640,
+  "9": 8520,
+  "7": 7320,
+  "10": 5520,
+  "11": 4080,
+  "2": 3120
+ },
+ "applied_rootdis_offset_histogram_cells": {
+  "5": 54,
+  "3": 43,
+  "6": 36,
+  "4": 26,
+  "1": 25,
+  "8": 23,
+  "9": 18,
+  "7": 17,
+  "10": 17,
+  "11": 11,
+  "2": 8
+ },
+ "top_gt_applied_labels_by_duration": {
+  "V6/5/V": 36720,
+  "viio7/V": 23760,
+  "V7/IV": 19920,
+  "viio6/V": 17040,
+  "V6/vi": 17040,
+  "V2/IV": 13680,
+  "V6/5/iv": 13440,
+  "V6/5/IV": 11880,
+  "V6/III": 11040,
+  "V6/V": 10080,
+  "V/V": 9600,
+  "V6/5/vi": 7200,
+  "viio7/iv": 6480,
+  "V/vi": 6120,
+  "viio4/3/V": 6000,
+  "V6/5/ii": 6000,
+  "V6/iv": 5520,
+  "V7/V": 4800,
+  "viio6/iv": 4800,
+  "vii/o7/V": 4800
+ },
+ "per_piece_top10_applied_share": [
+  {
+   "stem": "bwv244.32",
+   "scored": 20640,
+   "applied_share_pct": 20.93,
+   "applied_dur": 4320,
+   "rn_dis_applied_dur": 480,
+   "rn_dis_dur": 5280
+  },
+  {
+   "stem": "bwv179.6",
+   "scored": 16800,
+   "applied_share_pct": 18.57,
+   "applied_dur": 3120,
+   "rn_dis_applied_dur": 1440,
+   "rn_dis_dur": 9000
+  },
+  {
+   "stem": "bwv248.46-5",
+   "scored": 22080,
+   "applied_share_pct": 16.3,
+   "applied_dur": 3600,
+   "rn_dis_applied_dur": 2640,
+   "rn_dis_dur": 6000
+  },
+  {
+   "stem": "bwv244.46",
+   "scored": 20640,
+   "applied_share_pct": 15.12,
+   "applied_dur": 3120,
+   "rn_dis_applied_dur": 960,
+   "rn_dis_dur": 10080
+  },
+  {
+   "stem": "bwv244.25",
+   "scored": 22560,
+   "applied_share_pct": 14.89,
+   "applied_dur": 3360,
+   "rn_dis_applied_dur": 1440,
+   "rn_dis_dur": 11280
+  },
+  {
+   "stem": "bwv419",
+   "scored": 22560,
+   "applied_share_pct": 14.89,
+   "applied_dur": 3360,
+   "rn_dis_applied_dur": 1200,
+   "rn_dis_dur": 12480
+  },
+  {
+   "stem": "bwv65.2",
+   "scored": 22560,
+   "applied_share_pct": 14.89,
+   "applied_dur": 3360,
+   "rn_dis_applied_dur": 480,
+   "rn_dis_dur": 11520
+  },
+  {
+   "stem": "bwv395",
+   "scored": 22560,
+   "applied_share_pct": 13.83,
+   "applied_dur": 3120,
+   "rn_dis_applied_dur": 2160,
+   "rn_dis_dur": 10560
+  },
+  {
+   "stem": "bwv60.5",
+   "scored": 36480,
+   "applied_share_pct": 13.16,
+   "applied_dur": 4800,
+   "rn_dis_applied_dur": 1440,
+   "rn_dis_dur": 14160
+  },
+  {
+   "stem": "bwv48.3",
+   "scored": 18720,
+   "applied_share_pct": 12.82,
+   "applied_dur": 2400,
+   "rn_dis_applied_dur": 480,
+   "rn_dis_dur": 7440
+  }
+ ],
+ "per_piece_top10_applied_rn_cost": [
+  {
+   "stem": "bwv245.40",
+   "scored": 53280,
+   "applied_share_pct": 9.91,
+   "applied_dur": 5280,
+   "rn_dis_applied_dur": 4560,
+   "rn_dis_dur": 39120
+  },
+  {
+   "stem": "bwv282",
+   "scored": 25920,
+   "applied_share_pct": 11.11,
+   "applied_dur": 2880,
+   "rn_dis_applied_dur": 2880,
+   "rn_dis_dur": 11160
+  },
+  {
+   "stem": "bwv383",
+   "scored": 50400,
+   "applied_share_pct": 7.86,
+   "applied_dur": 3960,
+   "rn_dis_applied_dur": 2760,
+   "rn_dis_dur": 21360
+  },
+  {
+   "stem": "bwv248.46-5",
+   "scored": 22080,
+   "applied_share_pct": 16.3,
+   "applied_dur": 3600,
+   "rn_dis_applied_dur": 2640,
+   "rn_dis_dur": 6000
+  },
+  {
+   "stem": "bwv342",
+   "scored": 34560,
+   "applied_share_pct": 9.72,
+   "applied_dur": 3360,
+   "rn_dis_applied_dur": 2400,
+   "rn_dis_dur": 15840
+  },
+  {
+   "stem": "bwv395",
+   "scored": 22560,
+   "applied_share_pct": 13.83,
+   "applied_dur": 3120,
+   "rn_dis_applied_dur": 2160,
+   "rn_dis_dur": 10560
+  },
+  {
+   "stem": "bwv276",
+   "scored": 56160,
+   "applied_share_pct": 7.69,
+   "applied_dur": 4320,
+   "rn_dis_applied_dur": 1920,
+   "rn_dis_dur": 21840
+  },
+  {
+   "stem": "bwv280",
+   "scored": 26400,
+   "applied_share_pct": 9.09,
+   "applied_dur": 2400,
+   "rn_dis_applied_dur": 1920,
+   "rn_dis_dur": 12960
+  },
+  {
+   "stem": "bwv362",
+   "scored": 50400,
+   "applied_share_pct": 10.48,
+   "applied_dur": 5280,
+   "rn_dis_applied_dur": 1920,
+   "rn_dis_dur": 22800
+  },
+  {
+   "stem": "bwv392",
+   "scored": 22560,
+   "applied_share_pct": 10.64,
+   "applied_dur": 2400,
+   "rn_dis_applied_dur": 1920,
+   "rn_dis_dur": 8400
+  }
+ ],
+ "per_piece_zero_applied_count": 56
+}

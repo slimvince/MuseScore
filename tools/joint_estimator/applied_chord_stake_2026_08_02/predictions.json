@@ -1,0 +1,34 @@
+{
+ "registered_at": "2026-08-02T12:41:25.053943",
+ "registered_before_measurement": true,
+ "predictions": {
+  "1_gt_applied_share_of_scored_duration_pct": {
+   "band": [
+    5,
+    12
+   ],
+   "basis": "Bach chorales use applied dominants regularly but briefly; typical annotation corpora put secondary functions in the single-digit percent range of time."
+  },
+  "2_applied_share_of_root_disagree_duration_pct": {
+   "band": [
+    15,
+    35
+   ],
+   "basis": "Applied chords are enriched among disagreements: reading V/x as the local-key function mis-roots by a fifth; but most root disagreement has other causes (segmentation, symmetric sonorities, key errors)."
+  },
+  "3_applied_share_of_root_agree_rn_disagree_duration_pct": {
+   "band": [
+    10,
+    25
+   ],
+   "basis": "When we name the right root under the wrong degree (V/V heard as II), the pair lands in key_disagree; applied labels should be a visible but minority slice of that bucket."
+  },
+  "4_fifth_offset_share_among_applied_root_disagree_pct": {
+   "band": [
+    40,
+    70
+   ],
+   "basis": "The canonical failure reads V/Y as a chord of the local key: GT roots V-of-Y, we root Y or the local V, both a fifth away; other offsets (thirds, semitone leading-tone readings of viio/x) take the rest."
+  }
+ }
+}

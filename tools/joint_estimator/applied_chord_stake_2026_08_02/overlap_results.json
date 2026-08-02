@@ -1,0 +1,37 @@
+{
+ "scored_dur": 8300640,
+ "ours_applied_dur": 715920,
+ "ours_applied_cells": 1756,
+ "ours_applied_share_pct": 8.62,
+ "ours_applied_and_gt_applied_dur": 130680,
+ "all_rootdis_offset_dur": {
+  "5": 476520,
+  "3": 291240,
+  "7": 261000,
+  "9": 172200,
+  "10": 157560,
+  "2": 131280,
+  "8": 124320,
+  "4": 113400,
+  "1": 80760,
+  "6": 66720,
+  "11": 31320
+ },
+ "all_rootdis_offset_cells": {
+  "5": 1195,
+  "3": 793,
+  "7": 644,
+  "9": 436,
+  "10": 425,
+  "2": 328,
+  "8": 317,
+  "4": 296,
+  "1": 245,
+  "6": 214,
+  "11": 87
+ },
+ "fifth_family_total_dur": 737520,
+ "fifth_family_total_cells": 1839,
+ "fifth_family_applied_dur": 30360,
+ "applied_share_of_fifth_family_pct": 4.12
+}

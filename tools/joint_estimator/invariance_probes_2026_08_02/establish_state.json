@@ -1,0 +1,130 @@
+{
+ "sample": [
+  "bwv10.7",
+  "bwv153.1",
+  "bwv2.6",
+  "bwv245.37",
+  "bwv271",
+  "bwv297",
+  "bwv321",
+  "bwv347",
+  "bwv373",
+  "bwv398",
+  "bwv420",
+  "bwv55.5"
+ ],
+ "note_events_git_hash": "e3d17c325d24e0de1213440043cbf02ac14f3d3e",
+ "seg_cap": 4,
+ "results": {
+  "bwv10.7": {
+   "ok": true,
+   "seg_match": true,
+   "score_match": true,
+   "n_seg": 38,
+   "score_got": -122.2849882764082,
+   "score_exp": -122.2849882764082,
+   "decode_seconds": 3.38
+  },
+  "bwv153.1": {
+   "ok": true,
+   "seg_match": true,
+   "score_match": true,
+   "n_seg": 29,
+   "score_got": -112.55675258885249,
+   "score_exp": -112.55675258885249,
+   "decode_seconds": 2.72
+  },
+  "bwv2.6": {
+   "ok": true,
+   "seg_match": true,
+   "score_match": true,
+   "n_seg": 32,
+   "score_got": -106.09567518561606,
+   "score_exp": -106.09567518561606,
+   "decode_seconds": 2.09
+  },
+  "bwv245.37": {
+   "ok": true,
+   "seg_match": true,
+   "score_match": true,
+   "n_seg": 42,
+   "score_got": -148.89159192772965,
+   "score_exp": -148.89159192772965,
+   "decode_seconds": 3.48
+  },
+  "bwv271": {
+   "ok": true,
+   "seg_match": true,
+   "score_match": true,
+   "n_seg": 34,
+   "score_got": -111.3488377892625,
+   "score_exp": -111.3488377892625,
+   "decode_seconds": 2.99
+  },
+  "bwv297": {
+   "ok": true,
+   "seg_match": true,
+   "score_match": true,
+   "n_seg": 36,
+   "score_got": -115.77015016263618,
+   "score_exp": -115.7701501626362,
+   "decode_seconds": 3.35
+  },
+  "bwv321": {
+   "ok": true,
+   "seg_match": true,
+   "score_match": true,
+   "n_seg": 26,
+   "score_got": -77.38396179555434,
+   "score_exp": -77.38396179555431,
+   "decode_seconds": 2.99
+  },
+  "bwv347": {
+   "ok": true,
+   "seg_match": true,
+   "score_match": true,
+   "n_seg": 40,
+   "score_got": -126.36167415009717,
+   "score_exp": -126.36167415009717,
+   "decode_seconds": 3.67
+  },
+  "bwv373": {
+   "ok": true,
+   "seg_match": true,
+   "score_match": true,
+   "n_seg": 25,
+   "score_got": -82.18001561928958,
+   "score_exp": -82.18001561928958,
+   "decode_seconds": 2.84
+  },
+  "bwv398": {
+   "ok": true,
+   "seg_match": true,
+   "score_match": true,
+   "n_seg": 38,
+   "score_got": -132.94149827909658,
+   "score_exp": -132.94149827909658,
+   "decode_seconds": 4.16
+  },
+  "bwv420": {
+   "ok": true,
+   "seg_match": true,
+   "score_match": true,
+   "n_seg": 31,
+   "score_got": -110.0428975199125,
+   "score_exp": -110.0428975199125,
+   "decode_seconds": 2.6
+  },
+  "bwv55.5": {
+   "ok": true,
+   "seg_match": true,
+   "score_match": true,
+   "n_seg": 37,
+   "score_got": -110.91130257371204,
+   "score_exp": -110.91130257371204,
+   "decode_seconds": 3.94
+  }
+ },
+ "ok_all": true,
+ "complete": true
+}
