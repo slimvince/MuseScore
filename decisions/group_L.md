@@ -18,7 +18,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:376`
+**Home.** `ARCHITECTURE.md:380`
 
 **Provenance.** ARCHITECTURE.md:374-378 (§1.2). No date or ratifier stated.
 
@@ -34,7 +34,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:380`
+**Home.** `ARCHITECTURE.md:384`
 
 **Provenance.** ARCHITECTURE.md:380-382 (§1.2); restated at ARCHITECTURE.md:6821-6823 (the composing module is 'intended as a future contribution'). ★ READ WITH the CLAUDE.md DISTRIBUTION CONSTRAINT (D-197): the MusicXML declared-mode import patch cfc7eb5e39 is FORK-LOCAL ONLY and must NEVER reach musescore/MuseScore. Two recorded positions - a general intent and a one-patch exception - and the record does not state how the general intent applies to the rest of the tree.
 
@@ -49,7 +49,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:386`
+**Home.** `ARCHITECTURE.md:390`
 
 **Provenance.** ARCHITECTURE.md:384-387 (§1.3). No date or ratifier stated. The per-file consequence is ARCHITECTURE.md:6654 - a GPL v3 header on every file.
 
@@ -64,7 +64,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:389`
+**Home.** `ARCHITECTURE.md:393`
 
 **Provenance.** ARCHITECTURE.md:389-390 (§1.3), restated at ARCHITECTURE.md:6750-6752 (§18.3). No date or ratifier stated.
 
@@ -82,7 +82,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6651`
+**Home.** `ARCHITECTURE.md:6663`
 
 **Provenance.** ARCHITECTURE.md:6649-6655 (§17.1). No date or ratifier stated.
 
@@ -96,7 +96,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6657`
+**Home.** `ARCHITECTURE.md:6669`
 
 **Provenance.** ARCHITECTURE.md:6649-6657 (§17.1). No date or ratifier stated.
 
@@ -114,7 +114,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6661`
+**Home.** `ARCHITECTURE.md:6673`
 
 **Provenance.** ARCHITECTURE.md:6659-6671 (§17.2). No date or ratifier stated.
 
@@ -128,7 +128,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6673`
+**Home.** `ARCHITECTURE.md:6685`
 
 **Provenance.** ARCHITECTURE.md:6673 (§17.2). No date or ratifier stated. ★ This is the rule the 2026-08-01 CLAUDE.md Conventions entry generalizes from scoring values to design decisions as a class (D-195) - and the rule this register's rationale field serves.
 
@@ -144,7 +144,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6710`
+**Home.** `ARCHITECTURE.md:6722`
 
 **Provenance.** ARCHITECTURE.md:6707-6719 (§17.3), which gives a worked example from existing code (the circle-of-fifths interval deltas). No date or ratifier stated.
 
@@ -161,7 +161,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6723`
+**Home.** `ARCHITECTURE.md:6735`
 
 **Provenance.** ARCHITECTURE.md:6721-6729 (§17.4). No date or ratifier stated.
 
@@ -177,7 +177,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6744`
+**Home.** `ARCHITECTURE.md:6756`
 
 **Provenance.** ARCHITECTURE.md:6742-6746 (§18.2). No date or ratifier stated.
 

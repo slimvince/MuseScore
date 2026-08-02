@@ -18,7 +18,7 @@
 
 **Status.** SUPERSEDED BY D-001 · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1271`
+**Home.** `ARCHITECTURE.md:1279`
 
 **Provenance.** The joint estimator now decides key on both surfaces (D-005, D-010). The Layer-3 section still reads 'Built+Live' - see OPEN_ITEMS OI-232
 
@@ -37,7 +37,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1293-1296`
+**Home.** `ARCHITECTURE.md:1301-1304`
 
 **Provenance.** ARCHITECTURE.md:1291-1296
 
@@ -54,7 +54,7 @@
 
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1307-1308`
+**Home.** `ARCHITECTURE.md:1315-1316`
 
 **Provenance.** On the switched build the note-seam funnel returns from the record arm before this fallback is reachable (notationcomposingbridge.cpp:728-738). The D-P4 revisit trigger (D-063) was never discharged
 
@@ -72,7 +72,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2460-2462`
+**Home.** `ARCHITECTURE.md:2472-2474`
 
 **Provenance.** ARCHITECTURE.md:2394-2395 (21 modes), :2213-2217 (harmonic major deferred)
 
@@ -89,7 +89,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2408-2409`
+**Home.** `ARCHITECTURE.md:2420-2421`
 
 **Provenance.** ARCHITECTURE.md:2408-2410, :3020-3073. Superseded on the production path by D-003 (inference is preset-independent)
 
@@ -105,7 +105,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3382-3384`
+**Home.** `ARCHITECTURE.md:3394-3396`
 
 **Provenance.** ARCHITECTURE.md:3380-3392
 
@@ -119,7 +119,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3400`
+**Home.** `ARCHITECTURE.md:3412`
 
 **Provenance.** ARCHITECTURE.md:3396-3403. Cited by open_items/OI-228 as the primary source the joint emission departs from. NOT catchable by the harvest's signature net - the reason this adjudication had to read the specifications in full
 
@@ -139,7 +139,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3387-3391`
+**Home.** `ARCHITECTURE.md:3399-3403`
 
 **Provenance.** ARCHITECTURE.md:3387-3392 calls it 'a deliberate pragmatic choice for the score opening, not a general bypass'. NOT catchable by the harvest's signature net
 
@@ -155,7 +155,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3425`
+**Home.** `ARCHITECTURE.md:3437`
 
 **Provenance.** ARCHITECTURE.md:3423-3435; legacy-arm only since the switch (D-010). Derivation not recorded: the only stated basis for 16 and 8 is the in-code gloss '~4 measures in 4/4' / '~2 measures ahead' (ARCHITECTURE.md:3428-3429) - no theory citation and no measurement
 
@@ -175,7 +175,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2414-2418`
+**Home.** `ARCHITECTURE.md:2426-2430`
 
 **Provenance.** ARCHITECTURE.md:2414-2418; the same guard is listed among the key-path scoring terms at :2480-2482 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -269,7 +269,7 @@
 
 **Status.** LIVE · decided 2026-06-22 · ratified by the user
 
-**Home.** `cowork_layer3_keymode_design.md:60-72`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer3_keymode_design.md:60-72`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -289,7 +289,7 @@
 
 **Status.** LIVE · decided 2026-06-22 · ratified by the user
 
-**Home.** `cowork_layer3_keymode_design.md:129-133`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer3_keymode_design.md:129-133`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`, and the banner adds that the conditional sign-off was met by stating the recognized mode vocabulary explicitly — this passage is the other half of that statement. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -311,7 +311,7 @@
 
 **Status.** LIVE · decided 2026-06-22 · ratified by the user
 
-**Home.** `cowork_layer3_keymode_design.md:153-159`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer3_keymode_design.md:153-159`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. **Flagged in the phase-1h report as an instance of the [[OI-275]] question** — it sits against **D-003** (inference is preset-independent; presets are presentation concerns), and the record contains no ruling that names either statement against the other. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ RATIFIED (user, 2026-08-02) UNDER THE OI-275 TRANSFER TREATMENT, as offered with the queue and adopted in the blanket ratification: the letter (the preset as a weak mode prior) stays home to the LEGACY Layer-3 path, LEGACY-marked; the live estimator is governed by D-003's measured preset-independence. The second instance of the OI-275 governing question, treated identically.
 
@@ -336,7 +336,7 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratifier not stated
 
-**Home.** `cowork_layer3_keymode_design.md:230-239`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer3_keymode_design.md:230-239`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The date given is the date of the recorded ruling that the narrower alternative is to be settled by measurement and that the pooled rule is normative until then; the pooled rule itself is recorded as as-built and is not dated in the record. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -355,7 +355,7 @@
 
 **Status.** LIVE · decided 2026-06-22 · ratified by the user
 
-**Home.** `cowork_layer3_keymode_design.md:307-310`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer3_keymode_design.md:307-310`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -379,7 +379,7 @@
 
 **Status.** LIVE · decided 2026-06-22 · ratified by the user
 
-**Home.** `cowork_layer3_keymode_design.md:212-220`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer3_keymode_design.md:212-220`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -397,7 +397,7 @@
 
 **Status.** LIVE · decided 2026-06-22 · ratified by the user
 
-**Home.** `cowork_layer3_keymode_design.md:311-313`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer3_keymode_design.md:311-313`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -415,7 +415,7 @@
 
 **Status.** LIVE · decided 2026-07-04 · ratifier not stated
 
-**Home.** `cowork_layer3_keymode_design.md:16-18`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer3_keymode_design.md:16-18`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The record labels the closure `D-L3a` — a label from the document's own design-decision series, not a register identifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -432,7 +432,7 @@
 
 **Status.** LIVE · decided 2026-06-22 · ratified by the user
 
-**Home.** `cowork_layer3_keymode_design.md:314-315`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer3_keymode_design.md:314-315`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -452,7 +452,7 @@
 
 **Status.** LIVE · decided 2026-06-22 · ratified by the user
 
-**Home.** `cowork_layer3_keymode_design.md:321-327`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer3_keymode_design.md:321-327`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -471,7 +471,7 @@
 
 **Status.** LIVE · decided 2026-06-22 · ratified by the user
 
-**Home.** `cowork_layer3_keymode_design.md:337-342`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer3_keymode_design.md:337-342`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -495,7 +495,7 @@
 
 **Status.** LIVE · decided 2026-06-22 · ratifier not stated
 
-**Home.** `cowork_layer3_keymode_design.md:402-410`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer3_keymode_design.md:402-410`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -518,7 +518,7 @@
 
 **Status.** LIVE · decided 2026-06-22 · ratifier not stated
 
-**Home.** `cowork_layer3_keymode_design.md:411-418`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer3_keymode_design.md:411-418`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -548,7 +548,7 @@
 
 **Status.** LIVE · decided 2026-06-25 · ratifier not stated
 
-**Home.** `cowork_layer3_keymode_design.md:383-397`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer3_keymode_design.md:383-397`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -573,7 +573,7 @@
 
 **Status.** LIVE · decided 2026-06-22 · ratifier not stated
 
-**Home.** `cowork_layer3_keymode_design.md:497-506`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer3_keymode_design.md:497-506`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The surrounding deferred-enhancement entry is recorded per the user, 2026-06-22; the measured placement conclusion quoted here names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -602,7 +602,7 @@
 
 **Status.** DEFERRED · decided 2026-07-02 · ratifier not stated
 
-**Home.** `cowork_layer3_keymode_design.md:507-520`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer3_keymode_design.md:507-520`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The record states the amendment (A-3) was ratified 2026-07-02 but does not name the ratifier at this home; the amendment set's own document banner is quoted in the phase-1g triage as `AMENDMENTS A-1…A-10 RATIFIED (user, 2026-07-02)`, and that document is in the phase-1h full-read set. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 

@@ -279,6 +279,8 @@
 > (`cowork_prefit_gates.md`; tracked at `open_items/OI-176.md` and `open_items/OI-177.md`); the ratifier of
 > that event is not named in the record.
 >
+> *Delegation pointer (the fifth home case, user-ratified 2026-08-02): the fitting event's own design contract is `cowork_stage5_fitter_design.md` (SIGNED, user, 2026-07-04) — D-312…D-314 — which this specification points at and does not restate.*
+>
 > **(c) The decode is EXACT; the declared reserve prune was never adopted, and what the decoder does narrow
 > has no specified form.** Exact semi-Markov Viterbi over the joint state is the ratified search. A prune was
 > declared in reserve — restricting key-change candidates to a fitted-mass neighborhood on the circle of
@@ -290,6 +292,8 @@
 > architecture and no recorded basis. Both facts are open and are tracked at `OPEN_ITEMS.md` OI-188 (the
 > reachability bound on every ceiling claim) and OI-226 (admission has no ratified basis); neither is settled
 > here.
+>
+> *Tried and closed on the search — do not retry; the register carries each with its measurement: D-288 (beam widening, shelved), D-328 (a wider search over the same scoring, refuted), D-278 (the joint key-and-chord step over the two legacy decoders, shelved).*
 >
 > **(d) On the key axis the decoder commits its maximum-a-posteriori path; it never abstains.** The estimator
 > always names a key for every committed segment, so the abstention counter the regression stop reads is
@@ -1268,6 +1272,10 @@ legacy arm), `notationimplodebridge.cpp:1434-1441` (implode's legacy arm) and
 callers are the `batch_analyze` diagnostics, which are development tools and are not shipped (§15). **The description below remains accurate for the dormant pipeline** and is retained as
 the record of what that pipeline does; it is no longer a description of what runs.
 
+**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.
+
+**Tried and closed on this layer — do not retry; the register carries each with its evidence: D-287 (key-as-distribution, shelved), D-290 (the key-agnostic local cadence approach, falsified).**
+
 **The production region key/mode path is the decoder, not the per-region resolver.** Step-1 wiring
 replaced the per-region `resolveKeyAndModeRanked` call with a single whole-score decode of
 `KeyModeSequenceDecoder` (`composing/analysis/key/keymodesequence.{h,cpp}`, the Layer-3
@@ -1330,6 +1338,10 @@ any ruling that names the engage-with-L5 plan — a supersession in fact, not by
 D-051 records the same shape on Layer 3). The build state itself is unchanged and correct: Built+Dormant.
 **What becomes of this decoder is OPEN** — it is neither retired by a ruling nor scheduled; see the
 OI-180 retirement map.
+
+**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer4_chordsymbol_design.md` (SIGNED, user, 2026-06-24) — D-329…D-334 — which this section points at and does not restate.
+
+**Tried and closed on the chord layer — do not retry; the register carries each with its measurement: D-215, D-299, D-300, D-301, D-302, D-317, D-318, D-319, D-320, D-328.**
 
 **Scope of the description below, 2026-08-02 (`OPEN_ITEMS.md` OI-265).** As on Layer 3, **the
 description below remains accurate for the dormant decoder** and is retained as the record of what

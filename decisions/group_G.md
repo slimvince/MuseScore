@@ -20,7 +20,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2117-2119`
+**Home.** `ARCHITECTURE.md:2129-2131`
 
 **Provenance.** ARCHITECTURE.md:2093-2119. Contradicted by the same document's §4.1b/§4.1d contextual bonuses, which score a candidate from the neighbouring chords - see OPEN_ITEMS OI-235
 
@@ -39,7 +39,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1789-1793`
+**Home.** `ARCHITECTURE.md:1801-1805`
 
 **Provenance.** ARCHITECTURE.md:1787-1795; the same policy is in CLAUDE.md 'Gate threshold and preset policy'
 
@@ -58,7 +58,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2016-2019`
+**Home.** `ARCHITECTURE.md:2028-2031`
 
 **Provenance.** ARCHITECTURE.md:2016-2019, :1816-1822; the residual coupling is recorded as debt at :2105-2112
 
@@ -76,7 +76,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1494-1496`
+**Home.** `ARCHITECTURE.md:1506-1508`
 
 **Provenance.** ARCHITECTURE.md:1485-1502. Its revisit trigger - 'Stage 3 design must state explicitly what P4 (and the bridge) consume from the decode' (:1299-1300) - has not been discharged by the joint/record design
 
@@ -94,7 +94,7 @@
 
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1557-1560`
+**Home.** `ARCHITECTURE.md:1569-1572`
 
 **Provenance.** D-003 makes inference preset-independent on the production path, so the divergence this decision manages no longer exists there; it still describes the legacy path
 
@@ -110,7 +110,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1464`
+**Home.** `ARCHITECTURE.md:1476`
 
 **Provenance.** ARCHITECTURE.md:1464-1467, restated at :1363-1366
 
@@ -125,7 +125,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2547-2548`
+**Home.** `ARCHITECTURE.md:2559-2560`
 
 **Provenance.** ARCHITECTURE.md:2546-2548, restated as the retirement rationale's 'Core principle' at :2335-2337
 
@@ -139,7 +139,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2515`
+**Home.** `ARCHITECTURE.md:2527`
 
 **Provenance.** ARCHITECTURE.md:2515, retirement rationale at :2324-2339
 
@@ -155,7 +155,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1828`
+**Home.** `ARCHITECTURE.md:1840`
 
 **Provenance.** ARCHITECTURE.md:1828
 
@@ -172,7 +172,7 @@
 
 **Status.** DEFERRED · decided 2026-04-11 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1966-1967`
+**Home.** `ARCHITECTURE.md:1978-1979`
 
 **Provenance.** ARCHITECTURE.md:1962 'Region identity modes (decided 2026-04-11)'; :1734-1736 records as-written mode deferred
 
@@ -190,7 +190,7 @@
 
 **Status.** SUPERSEDED BY D-102 · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1867-1869`
+**Home.** `ARCHITECTURE.md:1879-1881`
 
 **Provenance.** ARCHITECTURE.md:2171-2179 records Iter 46 extending the same helpers to Augmented and HalfDiminished. The §4.1b statement carries no supersession note - see OPEN_ITEMS OI-236 ★ Verbatim RE-TAKEN 2026-08-02 (the phase-1 truth-sync): the §4.1b passage now carries the supersession note it lacked, and states the constraint that actually survives at HEAD, which differs between the two helper predicates (OPEN_ITEMS OI-236 discharged). The decision's own words are preserved in place, marked 'As originally written'.
 
@@ -207,7 +207,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2178-2179`
+**Home.** `ARCHITECTURE.md:2190-2191`
 
 **Provenance.** ARCHITECTURE.md:2169-2182 (Iter 46, commit 36bf4738a8)
 
@@ -224,7 +224,7 @@
 
 **Status.** SUPERSEDED BY D-207 · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3904-3905`
+**Home.** `ARCHITECTURE.md:3916-3917`
 
 **Provenance.** ARCHITECTURE.md:3882-3917 'Status: Implemented (Session 18, master fb9a27ce9a)'. Suspended on the record arm - see D-021. SUPERSEDED BY D-207 - open_items/OI-194.md:7 records the ratified successor (user, 2026-07-26): the voice-independent pedal-point class replaces this bass-only second pass and the `isPedalPoint`/`pedalBassPc` fact it produces
 
@@ -241,7 +241,7 @@
 
 **Status.** LIVE · decided 2026-04-09 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3685-3686`
+**Home.** `ARCHITECTURE.md:3697-3698`
 
 **Provenance.** ARCHITECTURE.md:3662-3710; the failure it fixed is documented across four corpora at :3406-3419
 
@@ -256,7 +256,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1370-1371`
+**Home.** `ARCHITECTURE.md:1382-1383`
 
 **Provenance.** ARCHITECTURE.md:1368-1371. ARCHITECTURE.md:1379-1383 records the unification residual: the legacy scorer still carries its own second reader until the legacy path retires
 
@@ -273,7 +273,7 @@
 
 **Status.** DEFERRED · decided 2026-07-26 · ratified by user
 
-**Home.** `ARCHITECTURE.md:4500-4503`
+**Home.** `ARCHITECTURE.md:4512-4515`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at open_items/OI-194.md:7, sharpened at the P1 pedal-point ruling, user-ratified 2026-07-26 at the consumption-audit verification (`cowork_notation_adoption_increment.md` §7 + §10). DEFERRED: it lands with the ornament-label publication, its own increment after the notation switch; until then the record arm leaves the pedal fields empty (D-021) and the 'X ped.' annotation is a declared gap. §5.12, which specifies the superseded two-pass detector, now carries a pointer to §7.4. OPEN_ITEMS OI-237 closes on this move
 
@@ -289,7 +289,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2609-2611`
+**Home.** `ARCHITECTURE.md:2621-2623`
 
 **Provenance.** ARCHITECTURE.md:2587 heads the section "Future: Authoritative Chord Symbol Mode"; the current rule is that written symbols are never analyzer input (register entry D-066) ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -307,7 +307,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2620-2624`
+**Home.** `ARCHITECTURE.md:2632-2636`
 
 **Provenance.** ARCHITECTURE.md:2587 (the section is headed Future); register entry D-066 records the rule in force today ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -325,7 +325,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2765-2769`
+**Home.** `ARCHITECTURE.md:2777-2781`
 
 **Provenance.** ARCHITECTURE.md:2735 heads the section "Phase 1b - Minimal Monophonic Fallback Without Chord Symbols"; ARCHITECTURE.md:3507-3514 records monophonic input as planned ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -346,7 +346,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2774-2781`
+**Home.** `ARCHITECTURE.md:2786-2793`
 
 **Provenance.** ARCHITECTURE.md:2735 (the Phase 1b section heading); the stop conditions are stated with the rule ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -361,7 +361,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2791-2792`
+**Home.** `ARCHITECTURE.md:2803-2804`
 
 **Provenance.** ARCHITECTURE.md:2735 (the Phase 1b section heading); the named parameters are listed at :2783-2790 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -376,7 +376,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2821-2822`
+**Home.** `ARCHITECTURE.md:2833-2834`
 
 **Provenance.** ARCHITECTURE.md:2807 heads "Phase 2 - Full Monophonic Engine" ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -392,7 +392,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2849-2851`
+**Home.** `ARCHITECTURE.md:2861-2863`
 
 **Provenance.** ARCHITECTURE.md:2824 heads "Unified Orchestration Layer", part of the provisional phased plan recorded at :3498-3503 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -542,7 +542,7 @@
 
 **Status.** LIVE · decided 2026-07-05 · ratified by the user
 
-**Home.** `cowork_stage5_fitter_design.md:992`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_stage5_fitter_design.md:992`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Recorded in `cowork_stage5_fitter_design.md` (SIGNED, user, 2026-07-04) at open item O-11, and again in `STATUS_ARCHIVE.md:186`. It is the origin of the full-output-surface half of principle #15 (**D-178**): the same entry records the evidence-method lesson that inertness evidence must measure the winner AND the carry. Found by the phase-1f final-partition wave, 2026-08-02, reading `cowork_stage5_fitter_design.md` in full (SIGNED, user, 2026-07-04). NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).
 
@@ -786,7 +786,7 @@
 
 **Status.** LIVE · decided 2026-06-24 · ratified by the user
 
-**Home.** `cowork_layer4_chordsymbol_design.md:208-212`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer4_chordsymbol_design.md:208-212`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ TRANSFER RULING (user, 2026-08-02, OI-275 reading 1-with-transfer): the PRINCIPLE binds the joint estimator's family design - candidate admission complete by default, any prune derived, measured for established loss, and ratified (the factorization's own reserve clause); the document's letter stays home to the legacy scorer. D-329 is the family design's ratified admission premise (OI-215/226/227/228/243/244).
 
@@ -804,7 +804,7 @@
 
 **Status.** LIVE · decided 2026-06-24 · ratified by the user
 
-**Home.** `cowork_layer4_chordsymbol_design.md:394-398`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer4_chordsymbol_design.md:394-398`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
@@ -821,7 +821,7 @@
 
 **Status.** LIVE · decided 2026-06-26 · ratified by the user
 
-**Home.** `cowork_layer4_chordsymbol_design.md:576-579`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer4_chordsymbol_design.md:576-579`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
@@ -837,7 +837,7 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratifier not stated
 
-**Home.** `cowork_layer4_chordsymbol_design.md:366-368`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer4_chordsymbol_design.md:366-368`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
@@ -852,7 +852,7 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratifier not stated
 
-**Home.** `cowork_layer4_chordsymbol_design.md:606-607`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer4_chordsymbol_design.md:606-607`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
@@ -869,7 +869,7 @@
 
 **Status.** LIVE · decided 2026-07-05 · ratifier not stated
 
-**Home.** `cowork_layer4_chordsymbol_design.md:617-620`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer4_chordsymbol_design.md:617-620`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 

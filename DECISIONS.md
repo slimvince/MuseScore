@@ -143,7 +143,7 @@ project's own and are defined here because they are used before any entry explai
 | Decisions whose date is not stated in the record | 198 |
 | Decisions whose ratifier is not stated in the record | 241 |
 | Decisions recorded outside the specification that owns them | 209 |
-| — of which a documentation gap | 74 |
+| — of which a documentation gap | 49 |
 | — of which recorded only on a tracking surface, with no home at all | 27 |
 | — of which a project-wide convention, correctly homed | 34 |
 | — of which a decision about the process, correctly homed | 36 |
@@ -270,7 +270,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-293 | Fitted values are fitted per IDIOM, never for a user preset; presets are regression surfaces and delivery carriers | LIVE | `cowork_handoff_archive.md` ⚠tracking-surface-only |
 | D-294 | The only ground truth is the human annotation; the algorithmic analysis is a filter, and no self-annotation ever enters a measurement | LIVE | `cowork_handoff_archive.md` ⚠tracking-surface-only |
 | D-297 | Correction of record: never computing a possibility is not information loss; only discarding a computed one is | LIVE | `cowork_handoff_archive.md` ⚠tracking-surface-only |
-| D-313 | A confidence map is monotone or it is not fitted — a non-monotone curve is an upstream finding, not a mapping target | LIVE | `cowork_stage5_fitter_design.md` ⚠gap |
+| D-313 | A confidence map is monotone or it is not fitted — a non-monotone curve is an upstream finding, not a mapping target | LIVE | `cowork_stage5_fitter_design.md` |
 | D-339 | A confident earlier decision can be overturned by decisive later evidence, through ONE confidence-weighted forward-recompute mechanism — architecture-wide | LIVE | `cowork_layer5_function_design.md` |
 | D-377 | The forbidden back-edge, stated concretely: a chord decision may NOT write into the committed tonality and re-run the tonality decode — a coupled decision is OWNED by its own bounded box, never patched backward | LIVE | `cowork_joint_key_chord_design.md` ⚠gap |
 
@@ -316,22 +316,22 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-290 | The key-agnostic local cadence approach is FALSIFIED at its precision ceiling | LIVE ⚠LEGACY | `cowork_handoff_archive.md` ⚠tracking-surface-only |
 | D-306 | The key layer's backward re-reading stays switched off in the shipped configuration | LIVE ⚠LEGACY | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
 | D-323 | Asking whether a pitch belongs to the key is a question about the collection, never about the tonic — the tonic-anchored form must not return | LIVE | `docs/scoring_model.md` ⚠gap |
-| D-343 | The key/mode layer owns the candidate space and the note-evidence model outright; the residual is SELECTED from its carried alternatives, never re-scored | LIVE | `cowork_layer3_keymode_design.md` ⚠gap |
-| D-344 | A scale outside the twenty-one recognized modes is reported as the best-fitting recognized mode, never as the unrecognized scale | LIVE ⚠LEGACY | `cowork_layer3_keymode_design.md` ⚠gap |
-| D-345 | The style preset first enters the analysis at the key/mode layer, as a deliberately weak prior over the modes that the note evidence overrides | LIVE ⚠LEGACY | `cowork_layer3_keymode_design.md` ⚠gap |
-| D-346 | The candidate set for the whole-run tonality decision is the UNION of every stretch's best candidates, made available at every stretch | LIVE ⚠LEGACY | `cowork_layer3_keymode_design.md` ⚠gap |
-| D-347 | The cost of changing tonality is cheap-to-stay plus a term growing with tonal distance plus a large extra penalty on the relative major/minor switch | LIVE ⚠LEGACY | `cowork_layer3_keymode_design.md` ⚠gap |
-| D-348 | Tonal distance in the change cost is circle-of-fifths distance — not semitone distance, not differing scale tones — and brief-versus-sustained has no duration threshold at all | LIVE ⚠LEGACY | `cowork_layer3_keymode_design.md` ⚠gap |
-| D-349 | The key/mode confidence compares whole readings — the winning run against the best run forced to a different tonality there — not the top two candidates at that stretch | LIVE ⚠LEGACY | `cowork_layer3_keymode_design.md` ⚠gap |
-| D-350 | Of the layer's two confidence numbers, the whole-run margin is the published one; the per-stretch emission sigmoid is demoted to a gate input and a diagnostic | LIVE ⚠LEGACY | `cowork_layer3_keymode_design.md` ⚠gap |
-| D-351 | The key/mode search is its own decoder; the chord decoder is not reused for it | LIVE ⚠LEGACY | `cowork_layer3_keymode_design.md` ⚠gap |
-| D-352 | The key/mode grading bar splits the cases first: agreement where the published analyses are unanimous, any recorded reading (or an uncertain mark) where they are not | LIVE | `cowork_layer3_keymode_design.md` ⚠gap |
-| D-353 | The key/mode layer is graded on two goals kept apart — agreement where the notes decide, and whether its own uncertainty lands on the genuinely ambiguous cases | LIVE | `cowork_layer3_keymode_design.md` ⚠gap |
-| D-354 | The key/mode decoder's own settings are exhausted — no setting of its own moves the fixable error set, so the remaining headroom is not a decoder setting | LIVE ⚠LEGACY | `cowork_layer3_keymode_design.md` ⚠gap |
-| D-355 | The identified key/mode lever is the shared scorer's scale-membership term, applied once to the shared scorer at the wiring step and gated on the corpus stop and the pinned outputs | LIVE ⚠LEGACY | `cowork_layer3_keymode_design.md` ⚠gap |
-| D-356 | The leading-note presence gate is brittle and its fix is a later key/mode emission step, not a foundation patch — and the scale-membership lever is measured NOT to fix it | LIVE ⚠LEGACY | `cowork_layer3_keymode_design.md` ⚠gap |
-| D-357 | Reading the notated spelling as tonality evidence belongs at the function layer, where function gates it — NOT as a standalone key/mode emission patch | LIVE ⚠LEGACY | `cowork_layer3_keymode_design.md` ⚠gap |
-| D-358 | A sonority shaped like a dominant is note-level evidence for the tonality it implies, and belongs in the key/mode emission — deferred, design-first | DEFERRED ⚠LEGACY | `cowork_layer3_keymode_design.md` ⚠gap |
+| D-343 | The key/mode layer owns the candidate space and the note-evidence model outright; the residual is SELECTED from its carried alternatives, never re-scored | LIVE | `cowork_layer3_keymode_design.md` |
+| D-344 | A scale outside the twenty-one recognized modes is reported as the best-fitting recognized mode, never as the unrecognized scale | LIVE ⚠LEGACY | `cowork_layer3_keymode_design.md` |
+| D-345 | The style preset first enters the analysis at the key/mode layer, as a deliberately weak prior over the modes that the note evidence overrides | LIVE ⚠LEGACY | `cowork_layer3_keymode_design.md` |
+| D-346 | The candidate set for the whole-run tonality decision is the UNION of every stretch's best candidates, made available at every stretch | LIVE ⚠LEGACY | `cowork_layer3_keymode_design.md` |
+| D-347 | The cost of changing tonality is cheap-to-stay plus a term growing with tonal distance plus a large extra penalty on the relative major/minor switch | LIVE ⚠LEGACY | `cowork_layer3_keymode_design.md` |
+| D-348 | Tonal distance in the change cost is circle-of-fifths distance — not semitone distance, not differing scale tones — and brief-versus-sustained has no duration threshold at all | LIVE ⚠LEGACY | `cowork_layer3_keymode_design.md` |
+| D-349 | The key/mode confidence compares whole readings — the winning run against the best run forced to a different tonality there — not the top two candidates at that stretch | LIVE ⚠LEGACY | `cowork_layer3_keymode_design.md` |
+| D-350 | Of the layer's two confidence numbers, the whole-run margin is the published one; the per-stretch emission sigmoid is demoted to a gate input and a diagnostic | LIVE ⚠LEGACY | `cowork_layer3_keymode_design.md` |
+| D-351 | The key/mode search is its own decoder; the chord decoder is not reused for it | LIVE ⚠LEGACY | `cowork_layer3_keymode_design.md` |
+| D-352 | The key/mode grading bar splits the cases first: agreement where the published analyses are unanimous, any recorded reading (or an uncertain mark) where they are not | LIVE | `cowork_layer3_keymode_design.md` |
+| D-353 | The key/mode layer is graded on two goals kept apart — agreement where the notes decide, and whether its own uncertainty lands on the genuinely ambiguous cases | LIVE | `cowork_layer3_keymode_design.md` |
+| D-354 | The key/mode decoder's own settings are exhausted — no setting of its own moves the fixable error set, so the remaining headroom is not a decoder setting | LIVE ⚠LEGACY | `cowork_layer3_keymode_design.md` |
+| D-355 | The identified key/mode lever is the shared scorer's scale-membership term, applied once to the shared scorer at the wiring step and gated on the corpus stop and the pinned outputs | LIVE ⚠LEGACY | `cowork_layer3_keymode_design.md` |
+| D-356 | The leading-note presence gate is brittle and its fix is a later key/mode emission step, not a foundation patch — and the scale-membership lever is measured NOT to fix it | LIVE ⚠LEGACY | `cowork_layer3_keymode_design.md` |
+| D-357 | Reading the notated spelling as tonality evidence belongs at the function layer, where function gates it — NOT as a standalone key/mode emission patch | LIVE ⚠LEGACY | `cowork_layer3_keymode_design.md` |
+| D-358 | A sonority shaped like a dominant is note-level evidence for the tonality it implies, and belongs in the key/mode emission — deferred, design-first | DEFERRED ⚠LEGACY | `cowork_layer3_keymode_design.md` |
 
 ## G. Layer 4 — chord identity — [full entries](decisions/group_G.md)
 
@@ -368,7 +368,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-302 | No further local scoring fix for inversions may be attempted — the remaining divergence is not an analyzer defect | LIVE ⚠LEGACY | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
 | D-303 | Non-chord-tone detection is deferred, and if built it must be chord identification that knows about non-chord tones, never stripping after the fact | DEFERRED | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
 | D-305 | The ban on reading written harmony as analyzer input is decided by what an annotation says, not by how it is stored | LIVE | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
-| D-312 | The carried alternative readings are inside the byte-identity acceptance contract — same winner with different alternatives is a behavior change | LIVE | `cowork_stage5_fitter_design.md` ⚠gap |
+| D-312 | The carried alternative readings are inside the byte-identity acceptance contract — same winner with different alternatives is a behavior change | LIVE | `cowork_stage5_fitter_design.md` |
 | D-317 | The backward-walk boundary change is a dead end — do not retry it | LIVE ⚠LEGACY | `docs/redesign_plan.md` ⚠gap |
 | D-318 | A short-region external merger is a dead end — do not retry it | LIVE ⚠LEGACY | `docs/redesign_plan.md` ⚠gap |
 | D-319 | Re-analysing the merged aggregate is a dead end — no tone-aggregation approach fixes the arpeggio root failure | LIVE ⚠LEGACY | `docs/redesign_plan.md` ⚠gap |
@@ -380,12 +380,12 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-326 | The chord-path search emits the whole path with every stretch's alternatives and margins, not the committed reading alone | LIVE ⚠LEGACY | `docs/decoder_design.md` ⚠gap |
 | D-327 | The root-continuity guard reads the reconstructed inversion credit, superseding the designed sounding-third test | LIVE ⚠LEGACY | `docs/decoder_design.md` ⚠gap |
 | D-328 | A wider search cannot fix the arpeggio root failure — the wrong reading IS the global optimum, so only re-weighting or joint segmentation can | LIVE ⚠LEGACY | `docs/decoder_design.md` ⚠gap |
-| D-329 | Completeness of the candidate list is the priority — a chord never listed can never be chosen | LIVE ⚠LEGACY | `cowork_layer4_chordsymbol_design.md` ⚠gap |
-| D-330 | Never a pooled recompute — the chord is never re-derived from several stretches' notes thrown together | LIVE | `cowork_layer4_chordsymbol_design.md` ⚠gap |
-| D-331 | Every chord decision carries its ranked alternatives and its confidence — committed, inherited, and abstained alike, never pruned | LIVE | `cowork_layer4_chordsymbol_design.md` ⚠gap |
-| D-332 | A carried alternative's added notes are marked UNKNOWN rather than asserted absent — never synthesized | LIVE | `cowork_layer4_chordsymbol_design.md` ⚠gap |
-| D-333 | The membership tie-break's direction is an idiom-calibrated number, never a branch on style — the three-tier structure is fixed | LIVE | `cowork_layer4_chordsymbol_design.md` ⚠gap |
-| D-334 | The bare-fifth chord type stays in the catalogue structurally; whether it wins is an idiom-calibrated number | LIVE | `cowork_layer4_chordsymbol_design.md` ⚠gap |
+| D-329 | Completeness of the candidate list is the priority — a chord never listed can never be chosen | LIVE ⚠LEGACY | `cowork_layer4_chordsymbol_design.md` |
+| D-330 | Never a pooled recompute — the chord is never re-derived from several stretches' notes thrown together | LIVE | `cowork_layer4_chordsymbol_design.md` |
+| D-331 | Every chord decision carries its ranked alternatives and its confidence — committed, inherited, and abstained alike, never pruned | LIVE | `cowork_layer4_chordsymbol_design.md` |
+| D-332 | A carried alternative's added notes are marked UNKNOWN rather than asserted absent — never synthesized | LIVE | `cowork_layer4_chordsymbol_design.md` |
+| D-333 | The membership tie-break's direction is an idiom-calibrated number, never a branch on style — the three-tier structure is fixed | LIVE | `cowork_layer4_chordsymbol_design.md` |
+| D-334 | The bare-fifth chord type stays in the catalogue structurally; whether it wins is an idiom-calibrated number | LIVE | `cowork_layer4_chordsymbol_design.md` |
 | D-378 | Re-deciding a chord under a different tonality is well-defined ONLY on the decoder path — the legacy multi-pass emission cannot be faithfully re-decoded, and a naive re-emit injects a measured ~6 % same-tonality root-flip artifact | LIVE ⚠LEGACY | `cowork_joint_key_chord_design.md` ⚠gap |
 | D-380 | The carry's meaningful axis is DISTINCT ROOTS, and every above-threshold root is carried at graded confidence — a carry of winner-plus-one discards the third root on about a quarter of slices | LIVE ⚠LEGACY | `cowork_layer5_engagement_design.md` ⚠gap |
 | D-381 | The carry must cap on DISTINCT ROOTS, not on voicings — the existing voicing-keyed cap gives no structural guarantee that a third root survives | DEFERRED ⚠LEGACY | `cowork_layer5_engagement_design.md` ⚠gap |
@@ -655,7 +655,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-259 | Every upstream contribution is checked against the distribution constraint before it is posted | LIVE | `cowork_prune_pass_checklist.md` |
 | D-279 | The Stage-3 entry gate - seven conditions before any engagement wiring reaches production | LIVE | `cowork_engage_arc_plan.md` ⚠gap |
 | D-298 | The layer-by-layer audit - each layer is audited once its pieces are in place | LIVE | `cowork_handoff_archive.md` ⚠tracking-surface-only |
-| D-314 | A correction rule kept for structural reasons must keep producing evidence that it still fires | LIVE | `cowork_stage5_fitter_design.md` ⚠gap |
+| D-314 | A correction rule kept for structural reasons must keep producing evidence that it still fires | LIVE | `cowork_stage5_fitter_design.md` |
 | D-316 | The chord-symbol parser sussus fix is a recorded local patch with an UPSTREAMABLE distribution disposition | LIVE | `CLAUDE.md` |
 
 ## U. The standing decision-bearing surfaces — [full entries](decisions/group_U.md)

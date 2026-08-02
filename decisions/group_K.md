@@ -17,7 +17,7 @@
 
 **Status.** LIVE · decided 2026-06-29 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:315-316`
+**Home.** `ARCHITECTURE.md:319-320`
 
 **Provenance.** ARCHITECTURE.md:308-316 'Doc governance (2026-06-29) - the hierarchy'
 
@@ -32,7 +32,7 @@
 
 **Status.** LIVE · decided 2026-06-29 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:312-313`
+**Home.** `ARCHITECTURE.md:316-317`
 
 **Provenance.** ARCHITECTURE.md:308-316
 
@@ -47,7 +47,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3364-3365`
+**Home.** `ARCHITECTURE.md:3376-3377`
 
 **Provenance.** ARCHITECTURE.md:3363-3365, consistent with :251-254
 
@@ -63,7 +63,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1151-1153`
+**Home.** `ARCHITECTURE.md:1155-1157`
 
 **Provenance.** ARCHITECTURE.md:1151-1154. Three layer tags and two prose statements are stale after the switch - see OPEN_ITEMS OI-232
 
@@ -157,7 +157,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6756`
+**Home.** `ARCHITECTURE.md:6768`
 
 **Provenance.** ARCHITECTURE.md:6754-6759 (§18.4); the standing principle is CLAUDE.md #10 (D-174). No date or ratifier stated.
 
@@ -276,7 +276,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:601-603`
+**Home.** `ARCHITECTURE.md:605-607`
 
 **Provenance.** ARCHITECTURE.md:601-603 (stated as a standing reading instruction in the document itself) ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 

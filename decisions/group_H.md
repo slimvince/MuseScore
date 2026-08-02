@@ -17,7 +17,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1392-1393`
+**Home.** `ARCHITECTURE.md:1404-1405`
 
 **Provenance.** ARCHITECTURE.md:1389-1398 (Layer 5 - Built+Dormant, design ratified)
 
@@ -31,7 +31,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1396-1397`
+**Home.** `ARCHITECTURE.md:1408-1409`
 
 **Provenance.** ARCHITECTURE.md:1389-1398
 
@@ -46,7 +46,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1396-1397`
+**Home.** `ARCHITECTURE.md:1408-1409`
 
 **Provenance.** ARCHITECTURE.md:1397. open_items/OI-166 records that the built detector is key-agnostic but CHORD-derived, not the bass-driven pre-scan specified. Defense filled 2026-08-02 by the phase-1g triage wave from `cowork_layer5_function_design.md` §9-D2/§5.2 — the act the phase-1f note named and left for the wave that reads that document; the register entry for the same decision at its design-document home is D-336
 
@@ -60,7 +60,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1404`
+**Home.** `ARCHITECTURE.md:1416`
 
 **Provenance.** ARCHITECTURE.md:1400-1407 (Layer 6 - Design-only, v1 spec)
 
@@ -75,7 +75,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1405-1406`
+**Home.** `ARCHITECTURE.md:1417-1418`
 
 **Provenance.** ARCHITECTURE.md:1400-1407, deriving from D-029
 
@@ -89,7 +89,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1411`
+**Home.** `ARCHITECTURE.md:1423`
 
 **Provenance.** ARCHITECTURE.md:1409-1414 'Scaffolding-first, deferred'
 
@@ -104,7 +104,7 @@
 
 **Status.** LIVE · decided 2026-07-03 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:895-896`
+**Home.** `ARCHITECTURE.md:899-900`
 
 **Provenance.** ARCHITECTURE.md:896-899 records the foundation BUILT (dormant). ARCHITECTURE.md:1415-1415 still says the voice-leading layer is 'not built' - see OPEN_ITEMS OI-232 ★ 2026-08-02 (the phase-1h continuation wave): the recorded defense is FILLED from `cowork_voiceleading_axis_design.md` section 9 decision D1 and section 1, read IN FULL — the entry previously read 'derivation not recorded'. Written from the document, not from memory.
 
@@ -122,7 +122,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6012-6014`
+**Home.** `ARCHITECTURE.md:6024-6026`
 
 **Provenance.** ARCHITECTURE.md:6012-6014. Section 5.10 (ARCHITECTURE.md:3860) is the tonicization section; the memory-held backlog item is recorded in the same terms. ★ RATIFIED (user, 2026-08-02) with the revisit to be PLANNED: for the ultimate objective (maximum-precision inference) the feature may be needed — the ground truth annotates applied chords, so not producing them costs Roman-numeral agreement wherever the annotator wrote one. Row OI-267 carries the planning obligation, including the OI-53 tension (a live classifier emitting V7/x was found on the legacy path while this entry's home says not implemented). ★ SCOPE CORRECTED 2026-08-02 (CC, at the phase-1i delivery acts, on Cowork's measured probe finding B-1, user-reviewed): the entry's verbatim is a statement about the LEGACY `ChordFunction` structure, and its plain restatement wrongly generalized it to the whole system. The production joint estimator — the inference layer on both surfaces since the OI-178 adoption — DOES emit applied labels (`src/composing/analysis/joint/jointrender.h:62-63`; measured 8.62 % of scored duration, with exact matches against applied ground truth: `tools/joint_estimator/applied_chord_stake_2026_08_02/`). The OI-53 tension named above is therefore substantially ANSWERED: the joint surface emits applied labels, the legacy `ChordFunction` structure does not carry them. The decision itself is unchanged and stays DEFERRED for the surface it governs; what changed is the recorded scope.
 

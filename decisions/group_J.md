@@ -17,7 +17,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3256-3257`
+**Home.** `ARCHITECTURE.md:3268-3269`
 
 **Provenance.** ARCHITECTURE.md:3253-3257; consistent with D-016
 
@@ -32,7 +32,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2957-2958`
+**Home.** `ARCHITECTURE.md:2969-2970`
 
 **Provenance.** ARCHITECTURE.md:2918-2958
 
@@ -47,7 +47,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3857-3858`
+**Home.** `ARCHITECTURE.md:3869-3870`
 
 **Provenance.** ARCHITECTURE.md:3850-3858; an instance of D-074
 
@@ -65,7 +65,7 @@
 
 **Status.** SUPERSEDED BY D-018 · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3542-3544`
+**Home.** `ARCHITECTURE.md:3554-3556`
 
 **Provenance.** The record arm replaces the 0.5/0.8 literals with the fitted nats constants (ARCHITECTURE.md:175-177); the literals are legacy-arm-only (sectionanalyzer.cpp::legacyKeyExposureBucket)
 
@@ -80,7 +80,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3562-3563`
+**Home.** `ARCHITECTURE.md:3574-3575`
 
 **Provenance.** ARCHITECTURE.md:3549-3601
 
@@ -95,7 +95,7 @@
 
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3873-3874`
+**Home.** `ARCHITECTURE.md:3885-3886`
 
 **Provenance.** open_items/OI-112 already records this preset-gating as stale; open_items/OI-201 records that the record arm collapses the family to a plain major triad symbol ★ Verbatim RE-TAKEN 2026-08-02 (the phase-1 truth-sync): §5.11's assertion 'Gated to Standard and Baroque presets only' was corrected, since the formatter explicitly defers that gate for want of preset context (`chordsymbolformatter.cpp:882-883`) and emits the labels under every preset (OPEN_ITEMS OI-112(c) discharged). The decision's own words survive at the home, quoted inside the correction.
 
@@ -115,7 +115,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:664-670`
+**Home.** `ARCHITECTURE.md:668-674`
 
 **Provenance.** ARCHITECTURE.md:664-674 (Rule 16), restated in the retired-session record at STATUS_ARCHIVE.md:2247 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 

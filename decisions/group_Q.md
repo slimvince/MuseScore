@@ -17,7 +17,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6421`
+**Home.** `ARCHITECTURE.md:6433`
 
 **Provenance.** ARCHITECTURE.md:6419-6422 (§15). No date or ratifier stated.
 
@@ -34,7 +34,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6430`
+**Home.** `ARCHITECTURE.md:6442`
 
 **Provenance.** ARCHITECTURE.md:6424-6433 (§15). No date or ratifier stated.
 
@@ -51,7 +51,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6640`
+**Home.** `ARCHITECTURE.md:6652`
 
 **Provenance.** ARCHITECTURE.md:6594-6643 (§16), which sorts the whole feature set into Core / Important / Prepared / Out of scope. No date or ratifier stated.
 

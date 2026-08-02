@@ -17,7 +17,7 @@
 
 **Status.** LIVE · date not stated · ratified by user
 
-**Home.** `ARCHITECTURE.md:810-811`
+**Home.** `ARCHITECTURE.md:814-815`
 
 **Provenance.** ARCHITECTURE.md:808 heading says '(ratified; full statements in cowork_target_architecture.md)'; the date and ratifier are not stated at this home
 
@@ -31,7 +31,7 @@
 
 **Status.** LIVE · date not stated · ratified by user
 
-**Home.** `ARCHITECTURE.md:811`
+**Home.** `ARCHITECTURE.md:815`
 
 **Provenance.** ARCHITECTURE.md:808-815. The joint estimator's own unit is the ONSET event (jointdecoder.h:67), not this slice - see OPEN_ITEMS OI-228
 
@@ -47,7 +47,7 @@
 
 **Status.** LIVE · date not stated · ratified by user
 
-**Home.** `ARCHITECTURE.md:817-820`
+**Home.** `ARCHITECTURE.md:821-824`
 
 **Provenance.** ARCHITECTURE.md:808 ratified banner; sharpens §2.1 (D-070)
 
@@ -62,7 +62,7 @@
 
 **Status.** SUPERSEDED BY D-001 · decided 2026-06-29 · ratified by user
 
-**Home.** `ARCHITECTURE.md:790-791`
+**Home.** `ARCHITECTURE.md:794-795`
 
 **Provenance.** The 2026-07-17 governing decision (D-001) replaces the mechanism with ONE joint decode - the mechanism this block had ruled out. No supersession banner was added to §2.14 - see OPEN_ITEMS OI-234 ★ USER RULING 2026-08-02 (OI-234, reading 3): forward-only as the architecture ruling is SUPERSEDED BY D-001 (the 2026-07-17 joint decision, adopted 2026-07-26); the supersession now has a ruling naming it (was superseded-in-fact). The §2.14 scoping annotation records the ruling.
 
@@ -77,7 +77,7 @@
 
 **Status.** LIVE · decided 2026-06-29 · ratified by user
 
-**Home.** `ARCHITECTURE.md:787-788`
+**Home.** `ARCHITECTURE.md:791-792`
 
 **Provenance.** The joint estimator (D-001) is a global joint decode and is in production on both surfaces. The record does not state how this measurement was reconciled with the later ruling - see OPEN_ITEMS OI-234 ★ USER RULING 2026-08-02 (OI-234, reading 3): the finding STANDS FOR WHAT IT TESTED — cycling/re-ranking over the per-layer pipeline's carried candidate lists adds nothing, binding on that design class — and does NOT bear on the fitted semi-Markov joint decode (a different mechanism class). Returned to LIVE, scoped; the §2.14 annotation records the scoping (was superseded-in-fact).
 
@@ -91,7 +91,7 @@
 
 **Status.** LIVE · decided 2026-06-29 · ratified by user
 
-**Home.** `ARCHITECTURE.md:792`
+**Home.** `ARCHITECTURE.md:796`
 
 **Provenance.** The mechanism around it (D-025) is superseded in fact, but the ranked-alternatives requirement is carried forward by the joint estimator's published candidate lists (D-006)
 
@@ -106,7 +106,7 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `ARCHITECTURE.md:864-865`
+**Home.** `ARCHITECTURE.md:868-869`
 
 **Provenance.** ARCHITECTURE.md:833-850 records the rename CONFIRMED (user, 2026-07-02) and EXECUTED 2026-07-03 'propagated through every layer spec'. ARCHITECTURE.md itself still uses the banned word 216 times including section headings - see OPEN_ITEMS OI-233
 
@@ -122,7 +122,7 @@
 
 **Status.** LIVE · date not stated · ratified by user
 
-**Home.** `ARCHITECTURE.md:872-874`
+**Home.** `ARCHITECTURE.md:876-878`
 
 **Provenance.** ARCHITECTURE.md:808 ratified banner
 
@@ -138,7 +138,7 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `ARCHITECTURE.md:878-880`
+**Home.** `ARCHITECTURE.md:882-884`
 
 **Provenance.** ARCHITECTURE.md:880-884 names cowork_bounded_context_design.md as the ONE detailed cross-layer spec and records the 2026-07-02 user directive making it 'the hard gate before L6'. DIRECTLY CONTRADICTED by D-011 (whole-score decode per query, no caching) - see OPEN_ITEMS OI-210/OI-212
 
@@ -152,7 +152,7 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `ARCHITECTURE.md:880`
+**Home.** `ARCHITECTURE.md:884`
 
 **Provenance.** Same home as D-030. The record producer analyses the whole score regardless of the requested span (OI-212)
 
@@ -168,7 +168,7 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `ARCHITECTURE.md:910-912`
+**Home.** `ARCHITECTURE.md:914-916`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass, cc_instruction_spec_completion.md): the contract's own document `cowork_confidence_contract.md:39-40` (ratified there, user, 2026-07-02) remains the authoritative full statement; the rule is now stated in the cross-cutting contracts of the architecture document (§2.15), which is where a reader of the layers meets it. The stale 'ratification-gated' parenthetical in the §2.14 forward-override bullet of §2.15 is corrected in the same pass (OPEN_ITEMS OI-232, item 5). Contradicted by D-019 on the production record arm - see OPEN_ITEMS OI-231
 
@@ -185,7 +185,7 @@
 
 **Status.** LIVE · date not stated · ratified by user
 
-**Home.** `ARCHITECTURE.md:885-888`
+**Home.** `ARCHITECTURE.md:889-892`
 
 **Provenance.** ARCHITECTURE.md:808 ratified banner. The joint emission reads only struck notes (OI-228) and the shared tone surface is voice-blind (OI-74)
 
@@ -200,7 +200,7 @@
 
 **Status.** LIVE · date not stated · ratified by user
 
-**Home.** `ARCHITECTURE.md:902-903`
+**Home.** `ARCHITECTURE.md:906-907`
 
 **Provenance.** ARCHITECTURE.md:902-909
 
@@ -216,7 +216,7 @@
 
 **Status.** LIVE · decided 2026-06-29 · ratified by user
 
-**Home.** `ARCHITECTURE.md:803-805`
+**Home.** `ARCHITECTURE.md:807-809`
 
 **Provenance.** ARCHITECTURE.md:801-805. Not implemented: the effort setting does not exist and the decode's cost drivers (segment cap, key prune width) are compiled-in constants - tracked at OI-209/OI-210
 
@@ -232,7 +232,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:709-711`
+**Home.** `ARCHITECTURE.md:713-715`
 
 **Provenance.** ARCHITECTURE.md:709-713; restated as an ongoing concern at :2131-2136
 
@@ -248,7 +248,7 @@
 
 **Status.** LIVE · decided 2026-07-06 · ratified by user
 
-**Home.** `ARCHITECTURE.md:926-928`
+**Home.** `ARCHITECTURE.md:930-932`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): CLAUDE.md guiding principle #12, ratified by the user 2026-07-06, remains the standing principle; the layer-facing rule is now stated in the cross-cutting analysis contracts it governs. OPEN_ITEMS OI-237 closes on this move
 
@@ -263,7 +263,7 @@
 
 **Status.** LIVE · decided 2026-07-10 · ratified by user
 
-**Home.** `ARCHITECTURE.md:934-935`
+**Home.** `ARCHITECTURE.md:938-939`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): CLAUDE.md's 'Fact-publication corollary to #6/#7/#12' (ratified 2026-07-10, amended 2026-07-12 - publish EVIDENCE-class facts broadly, each carrying its establishment status) remains the standing corollary; the layer-facing rule is now stated in the cross-cutting analysis contracts. OPEN_ITEMS OI-237 closes on this move
 
@@ -369,7 +369,7 @@
 
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3567-3575`
+**Home.** `ARCHITECTURE.md:3579-3587`
 
 **Provenance.** The band is stated at ARCHITECTURE.md:3567-3575. The governing measurement surface is now the robust unit ratified at R10-b (CLAUDE.md gate block (A)), whose figures are reported per preset on a different unit; no ruling names this band as replaced. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -733,7 +733,7 @@
 
 **Status.** LIVE · decided 2026-07-04 · ratified by the user
 
-**Home.** `cowork_stage5_fitter_design.md:673`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_stage5_fitter_design.md:673`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Recorded in `cowork_stage5_fitter_design.md` (SIGNED, user, 2026-07-04) as the eighth of its numbered architecture decisions, and applied in the same document at §4.5: the one measured non-monotone row was deferred and declared rather than mapped. Found by the phase-1f final-partition wave, 2026-08-02, reading `cowork_stage5_fitter_design.md` in full (SIGNED, user, 2026-07-04). NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).
 

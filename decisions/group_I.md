@@ -18,7 +18,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:440-442`
+**Home.** `ARCHITECTURE.md:444-446`
 
 **Provenance.** ARCHITECTURE.md:433-436 states the §2 principles are 'hard constraints, not guidelines'; restated at §2.4 :435-438
 
@@ -33,7 +33,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:483-484`
+**Home.** `ARCHITECTURE.md:487-488`
 
 **Provenance.** ARCHITECTURE.md:481-485; mechanically guarded for the joint module by D-017
 
@@ -47,7 +47,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1093`
+**Home.** `ARCHITECTURE.md:1097`
 
 **Provenance.** ARCHITECTURE.md:1079-1137, checklist at :1424-1431
 
@@ -63,7 +63,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:536-538`
+**Home.** `ARCHITECTURE.md:540-542`
 
 **Provenance.** ARCHITECTURE.md:534-567; the standing project-wide form is CLAUDE.md #6 (total unification)
 
@@ -78,7 +78,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:527-529`
+**Home.** `ARCHITECTURE.md:531-533`
 
 **Provenance.** ARCHITECTURE.md:525-532
 
@@ -93,7 +93,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:458-459`
+**Home.** `ARCHITECTURE.md:462-463`
 
 **Provenance.** ARCHITECTURE.md:456-479; the substitution points are listed at §14.1
 
@@ -108,7 +108,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:596-597`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `ARCHITECTURE.md:600-601`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** ARCHITECTURE.md:569-597
 
@@ -122,7 +122,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1605`
+**Home.** `ARCHITECTURE.md:1617`
 
 **Provenance.** ARCHITECTURE.md:1595-1607, restated at :2967-2978
 
@@ -136,7 +136,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1439`
+**Home.** `ARCHITECTURE.md:1451`
 
 **Provenance.** ARCHITECTURE.md:1439-1447
 
@@ -150,7 +150,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:494`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `ARCHITECTURE.md:498`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** ARCHITECTURE.md:492-502; restated in CLAUDE.md Conventions
 
@@ -165,7 +165,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:678-679`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `ARCHITECTURE.md:682-683`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** ARCHITECTURE.md:676-682
 
@@ -181,7 +181,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:521`
+**Home.** `ARCHITECTURE.md:525`
 
 **Provenance.** ARCHITECTURE.md:519-523 (§2.8). No date or ratifier stated. This is the GENERAL form of the relationship to existing MuseScore code; the two scoped forms are D-072 (the analysis library depends on no engraving type) and D-073 (shared logic has one implementation). What none of the three states is which MuseScore interfaces our bridge code may call - see OPEN_ITEMS OI-241.
 
@@ -201,7 +201,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1131`
+**Home.** `ARCHITECTURE.md:1135`
 
 **Provenance.** ARCHITECTURE.md:1129-1140 (§3.3, the bridge pattern), with the enforcement statement at :955 (D-072) - any code that would invert the dependency order must be moved to the bridge layer. The bridge file inventory at :977-985 is the as-built list. No date or ratifier stated.
 
@@ -228,7 +228,7 @@
 
 **Status.** LIVE · decided 2026-08-02 · ratified by user
 
-**Home.** `ARCHITECTURE.md:1100-1113`
+**Home.** `ARCHITECTURE.md:1104-1117`
 
 **Provenance.** User ruling 2026-08-02 at the OI-241 adjudication (all recommendations adopted); written into ARCHITECTURE.md §3.3 in the same commit (the register's same-commit rule, D-230). open_items/OI-241.md records the gap this closes.
 
@@ -244,7 +244,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:623-625`
+**Home.** `ARCHITECTURE.md:627-629`
 
 **Provenance.** ARCHITECTURE.md:623-625 (Rule 14) and :649 (the one-run-one-result statement) ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 

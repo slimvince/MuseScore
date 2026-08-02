@@ -18,7 +18,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4294`
+**Home.** `ARCHITECTURE.md:4306`
 
 **Provenance.** ARCHITECTURE.md:4292-4296 (§6.1); the principle it realizes is D-070 (§2.1). No date or ratifier stated.
 
@@ -35,7 +35,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4338`
+**Home.** `ARCHITECTURE.md:4350`
 
 **Provenance.** ARCHITECTURE.md:4338-4341 (§6.2). No date or ratifier stated.
 
@@ -50,7 +50,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4374`
+**Home.** `ARCHITECTURE.md:4386`
 
 **Provenance.** ARCHITECTURE.md:4372-4375 (§6.4); the principle it realizes is D-070 (§2.1/§2.4). No date or ratifier stated.
 
@@ -68,7 +68,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4420`
+**Home.** `ARCHITECTURE.md:4432`
 
 **Provenance.** ARCHITECTURE.md:4418-4428 (§6.7); full proposal `cowork_progression_schema_dictionary.md` §6/§12 and `cowork_style_clustering_plan.md`. No date or ratifier stated.
 
@@ -83,7 +83,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4424`
+**Home.** `ARCHITECTURE.md:4436`
 
 **Provenance.** ARCHITECTURE.md:4418-4428 (§6.7). No date or ratifier stated.
 
@@ -99,7 +99,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4444`
+**Home.** `ARCHITECTURE.md:4456`
 
 **Provenance.** ARCHITECTURE.md:4437-4451 (§7); own specification `cowork_progression_schema_dictionary.md`. No date or ratifier stated.
 
