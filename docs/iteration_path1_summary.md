@@ -115,6 +115,19 @@ See ARCHITECTURE.md §4.1g for the per-cluster table.
   three weeks before being detected, and only the documented baseline (held
   in a binary in `ninja_build_rel/`) made the loss visible at all.
 
+  > **Annotation, 2026-08-02 (user-ruled, `OPEN_ITEMS.md` OI-269).** This lesson
+  > is about **what a commit must contain**, not about **when to commit**. Read it
+  > as: *in the commit the user asks for, nothing pipeline-affecting is left
+  > behind.* A session does not decide on its own judgment to commit — `CLAUDE.md`
+  > Conventions states the standing rule, "Commit only when explicitly asked", and
+  > that rule governs the timing. The two do not conflict once the lesson is read
+  > as a rule about commit content: the user decides that a commit is made; this
+  > lesson decides what goes into it. The failure the lesson records is not in
+  > dispute and is the recorded defense of register entry **D-281** — a change to
+  > the measurement tool was lost to a hard reset and went undetected for three
+  > weeks, visible only because a stale binary still held the documented baseline.
+  > The lesson's original text above is preserved unchanged.
+
 - **The §2.10 duplication is a persistent source of divergence risk.**
   `detectHarmonicBoundariesJaccard` exists in both
   `notationcomposingbridgehelpers.cpp` and `tools/batch_analyze.cpp` with
