@@ -81,11 +81,50 @@ RULES = [
              "verb) and matches no backbone decision. A report of work done, not a ruling."),
     ("BR-7", "A table row admitted by the harvest's BROAD signature tier only — an inventory or "
              "status cell, not a stated decision."),
+    # ── BR-9 … BR-13 were added by the OI-207 residual second pass (2026-08-02).  Each
+    #    clears a class the first pass left in BR-8, and each is stated so it can be
+    #    disputed a class at a time.  All five run AFTER BR-3/BR-4, so a cluster that
+    #    names a backbone decision is never swept by them.
+    ("BR-9", "The unit is a list lead-in: with markdown stripped its text ends in a colon and "
+             "contains no sentence-ending period before it, so it introduces a list whose items "
+             "are separate units. Like a heading (BR-2) it names a subject and states nothing."),
+    ("BR-10", "The unit is a row, or a section header, of the OPEN-ITEMS REGISTER (`OPEN_ITEMS.md` "
+              "or `open_items/OI-*.md`). That register records issues, their status and their "
+              "provenance; the ratified ruling 1 on `open_items/OI-208.md` puts decisions in the "
+              "decisions register and non-conformance here. A row of it is a tracked issue."),
+    ("BR-11", "The unit is in a Claude Code DISPATCH (`cc_instruction_*.md`) and carries none of "
+              "the stated ruling words (RULING_VOCABULARY below). A dispatch is an instruction to "
+              "a working session — scope, task, stop condition, reporting requirement. The ratified "
+              "decisions-register rules make a dispatch a CITER of decisions (rule (b)) and put a "
+              "new ratification in the register in the commit that records it (rule (c)), so a "
+              "dispatch is never a home of record."),
+    ("BR-12", "The unit is in a Claude Code session REPORT (`cc_*.md` that is not a dispatch) and "
+              "carries none of the stated ruling words. A report records work done. Same "
+              "register-rule reasoning as BR-11. This is BR-6 widened from its narrative-pattern "
+              "test to the whole report class, minus the ruling vocabulary."),
+    ("BR-13", "The unit is a comment in a TEST file (`src/**/tests/**`) and carries none of the "
+              "stated ruling words. A test comment states what the test pins; the decision it pins "
+              "is stated in the specification, which is where BR-3 finds it."),
     ("BR-8", "Residual: none of the above applies. Recorded UNRESOLVED — the honest outcome, and "
              "the count is a finding about the record's legibility."),
 ]
 
 HEADING_KINDS = {"heading"}
+
+# The ruling vocabulary that EXEMPTS a unit from the BR-11 / BR-12 / BR-13 sweeps.  A unit
+# in a dispatch, a report or a test file that uses any of these words is NOT swept: it is
+# left in BR-8 for a reader.  The list is stated here, and echoed into the manifest, so the
+# boundary of each sweep is reviewable rather than implicit.
+RULING_VOCABULARY = [
+    r"\bratified\b", r"\bratification\b", r"\bshelved\b", r"\bfalsifie[sd]\b",
+    r"\bdead end\b", r"\bdo not (re-?attempt|retry|re-?try|pursue|add|use|revert|remove)\b",
+    r"\bDECIDED\b", r"\bDECISION\b", r"\bthe rule is\b", r"\bmust not\b",
+    r"\bforbidden\b", r"\bnever (add|use|read|be|do|widen|assume)\b",
+    r"\buser[- ](ruled|directed|ratified|decision|mandate)\b",
+    r"\brejected\b", r"\bwithdrawn\b", r"\boverturned\b", r"\bsuperseded by\b",
+    r"\bretired\b", r"\bdeferred (to|until|indefinitely)\b", r"\bstanding rule\b",
+    r"\bpolicy\b", r"\bconvention\b",
+]
 
 SESSION_INSTRUCTION_PATTERNS = [
     r"\bread[- ]only\b.*\b(no|zero)\b.*\b(src/|code|behavior|behaviour|commit|build)\b",
@@ -238,11 +277,48 @@ def build_matchers(backbone: dict):
     return out
 
 
+def strip_markdown(text: str) -> str:
+    """Drop emphasis/code/quote/heading marks and collapse whitespace, for the BR-9 shape test."""
+    return re.sub(r"\s+", " ", re.sub(r"[*_`>#]", "", text)).strip()
+
+
+def is_list_leadin(text: str) -> bool:
+    """BR-9: ends in a colon with no sentence-ending period before it."""
+    t = strip_markdown(text)
+    return t.endswith(":") and "." not in t.rstrip(":")
+
+
+def files_of(members) -> set:
+    return {o["file"] for m in members for o in m["source_occurrences"]}
+
+
+def _all(files, pred) -> bool:
+    """True when the cluster is wholly inside the named class (a mixed cluster is never swept)."""
+    return bool(files) and all(pred(f) for f in files)
+
+
+def in_open_items(f: str) -> bool:
+    return f == "OPEN_ITEMS.md" or f.startswith("open_items/")
+
+
+def in_dispatch(f: str) -> bool:
+    return f.startswith("cc_instruction_")
+
+
+def in_session_report(f: str) -> bool:
+    return f.startswith("cc_") and not f.startswith("cc_instruction_")
+
+
+def in_test_file(f: str) -> bool:
+    return f.startswith("src/") and "/tests/" in f
+
+
 def disposition_pass(candidates, clusters, backbone):
     by_id = {c["id"]: c for c in candidates}
     matchers = build_matchers(backbone)
     sess = [re.compile(p, re.IGNORECASE | re.MULTILINE) for p in SESSION_INSTRUCTION_PATTERNS]
     rep = [re.compile(p, re.IGNORECASE) for p in REPORT_NARRATIVE_PATTERNS]
+    ruling = [re.compile(p, re.IGNORECASE) for p in RULING_VOCABULARY]
 
     rows = []
     rule_counts = {rid: 0 for rid, _ in RULES}
@@ -261,6 +337,9 @@ def disposition_pass(candidates, clusters, backbone):
         kinds = {m["unit_kind"] for m in members}
         cats = {m["category"] for m in members}
         tiers = {m["tier"] for m in members}
+
+        cl_files = files_of(members)
+        carries_ruling_word = any(p.search(joined) for p in ruling)
 
         named, named_spec, named_nospec = [], [], []
         for did, is_spec, pats in matchers:
@@ -282,6 +361,18 @@ def disposition_pass(candidates, clusters, backbone):
             rule, disp, decs = "BR-6", "not-a-decision", []
         elif kinds == {"table_row"} and tiers == {"broad"}:
             rule, disp, decs = "BR-7", "not-a-decision", []
+        elif all(is_list_leadin(t) for t in texts):
+            rule, disp, decs = "BR-9", "not-a-decision", []
+        elif _all(cl_files, in_open_items) and (
+                kinds <= {"table_row"} or all(
+                    strip_markdown(t).startswith("Section ") for t in texts)):
+            rule, disp, decs = "BR-10", "not-a-decision", []
+        elif _all(cl_files, in_dispatch) and not carries_ruling_word:
+            rule, disp, decs = "BR-11", "not-a-decision", []
+        elif _all(cl_files, in_session_report) and not carries_ruling_word:
+            rule, disp, decs = "BR-12", "not-a-decision", []
+        elif _all(cl_files, in_test_file) and not carries_ruling_word:
+            rule, disp, decs = "BR-13", "not-a-decision", []
         else:
             rule, disp, decs = "BR-8", "unresolved", []
 
@@ -364,6 +455,7 @@ def main() -> int:
         },
         "head_commit": head_commit(),
         "disposition_vocabulary": list(DISPOSITIONS),
+        "ruling_vocabulary_exempting_BR11_BR12_BR13": list(RULING_VOCABULARY),
         "rules": [{"id": rid, "rule": text, "clusters": rule_counts[rid]} for rid, text in RULES],
         "disposition_counts": disp_counts,
         "completeness_check": {
