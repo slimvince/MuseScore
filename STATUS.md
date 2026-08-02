@@ -5,6 +5,29 @@
 > Historical entries live in `STATUS_ARCHIVE.md` (reference-only, NOT part of the session-start
 > read) — a superseded entry moves there instead of accumulating here.
 
+*Last updated: 2026-08-02, LATEST++++++ (CC — **★ PHASE 1f: THE FINAL ENUMERATION PARTITION RAN. `STATUS_ARCHIVE.md` IS NOW READ IN FULL, AND WITH IT
+BOTH ARCHIVES; the design-document partition is NOT finished and its remainder is measured. The register is 299 → 315; the unresolved residual
+2,794 → 2,717; one finding rowed; the riding [[OI-271]] licence-class verification RAN.** READ-ONLY on the system: no `src/` change, no golden /
+`tools/corpus/` / `tools/robust_stop/` movement, no behavior change, no fix, no design, no `ARCHITECTURE.md` edit, **no ratification** — the 16 new
+decisions enter with the record's own status and go to the user in the report's RATIFICATION QUEUE. Dispatch `cc_instruction_phase1f_final_partition.md`.
+Per the OI-222 remedy this entry is a **POINTER** — the content lives in the register, the manifest and the dated notes. **★ THE HEADLINE IS A FINDING
+ABOUT THE MEASUREMENT ITSELF: the unresolved-cluster count is NOT a measurement of coverage for design documents.** Reading two of them IN FULL moved
+their counts by 2 while producing 3 register entries, because no bulk rule may lawfully sweep a design document ([[OI-268]] records 22 standing decisions
+living on that surface) — so phase 1d's and 1e's partition metric counts what a mechanical rule can classify, not what has been read; the honest figure is
+**documents read in full, now 23 of 145**. **Read, in this order:** the [[OI-207]] note (what was read, the correction of phase-1e's own token estimate,
+the sixteen entries by KIND, the **D-282…D-285 flag section** — one corroborating flag, an earlier and independent derivation of D-284/D-289 in
+`docs/beam_widening_design.md` §3.3 — the arithmetic, the methodological finding, and the measured remainder with the top of the unread list); the
+[[OI-271]] note (**the verification RAN: the NC reading is REFUTED, the CC-BY-SA reading is not established either**, and the row narrows rather than
+closing); then [[OI-273]], the one new row, and the evidence notes on [[OI-268]] / [[OI-272]]. **★ THE ARCHIVE CLASS IS NOW COMPLETE AND IT IS LARGER
+THAN FOURTEEN:** thirteen more archive-homed decisions raise the tracking-surface-only count 14 → 27, including three standing *do-not-retry*
+prohibitions absent from `docs/scoring_model.md` §8 (D-300/D-301/D-302) and **D-315 — a THIRD live edit to MuseScore's own code, verified at the objects,
+absent from `CLAUDE.md`'s local-patches section and carrying no distribution disposition ([[OI-273]]; [[OI-241]]'s count was one short)**. **★ ONE new
+bulk rule, BR-18**, over `STATUS_ARCHIVE.md`'s non-ruling prose (69 clusters) — licensed by the full read and by nothing else, mirroring BR-17 one file
+over. All guards PASS (`--verify` 315/315 quotes, 310/310 anchors, references ALL; `--check` 14,460/14,460 clusters, 15,224/15,224 occurrences; register
+`--check` across 21 files; open-items living check 273/273). **NEXT: the user ratifies (or corrects) D-300…D-315 and rules on [[OI-273]], and on
+[[OI-268]] TOGETHER WITH [[OI-272]] (one ruling session, now over a complete archive population); then phase 1's last remaining partition — 1,262
+design-document clusters across 122 unread files, ≈2.7 MB — before phase 2 opens.**)*
+
 *Last updated: 2026-08-02, LATEST+++++ (CC — **★ PHASE 1e: THE SECOND ENUMERATION PARTITION RAN. THE ARCHIVES WERE TAKEN FIRST, AS
 DIRECTED: `cowork_handoff_archive.md` IS READ IN FULL; `STATUS_ARCHIVE.md` IS READ IN PART WITH A MEASURED REMAINDER. The register is
 281 → 299; the unresolved residual 2,879 → 2,794; two findings rowed; the OI-269 riding act landed.** READ-ONLY on the system: no
