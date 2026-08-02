@@ -5,6 +5,8 @@
 > **What this is.** The user's decision surface for an exclusion list. Phase 1's end state is the unread design-document population at zero **or** an explicit, user-accepted exclusion list. An exclusion list built on unread contents would be the blind sweep the guardrails forbid, so every proposed exclusion here is defended per file, by established supersession or established class — never by guess.
 >
 > **What this is NOT.** No document's status banner is edited by this pass. Classifying is not bannering. Nothing here is a ratification, and nothing here closes a register row.
+>
+> **★ THE EXCLUSION LIST IS ACCEPTED — the user, 2026-08-02, all 41 as tabled.** Recorded at `open_items/OI-207.md` (the dated note of that date), which states the acceptance covers exactly the 41 documents proposed for exclusion below, each with its per-file verification citation: 1 SUPERSEDED-ESTABLISHED, 1 EVIDENCE-FROZEN (its decision registered as **D-286**, and flagged as remaining the evidence base of the OPEN extent question [[OI-210]] — excluded from the DECISION read, not withdrawn from phase 3), and 39 REPORT/NARRATIVE in six evidenced families. **Phase 1's completion basis is therefore: the 80 LIVE-SPEC documents read IN FULL, plus this accepted 41-document exclusion.** What was accepted is the DOCUMENT LIST, not the cluster counts beside it: every count here is recomputed at each generation and falls as documents are read, because reading a design document in full resolves some of its clusters into register entries. A count that has moved is therefore not an amendment to what the user accepted.
 
 ## The population, derived
 
@@ -13,7 +15,7 @@
 | Design documents owning at least one unresolved cluster | **143** |
 | — read IN FULL by the phase-1d and phase-1f waves (distinct) | 22 |
 | — **unread, and classified below** | **121** |
-| Unresolved cluster attributions held by the unread set | 1012 |
+| Unresolved cluster attributions held by the unread set | 1008 |
 
 ### ★ A correction of record: the unread population is 121, not 120
 
@@ -36,14 +38,14 @@ The commit that produced the 23/120 figures (`40739f38ba`) was itself a self-che
 
 | Class | Documents | Unresolved clusters | Proposed disposition |
 |---|---|---|---|
-| LIVE-SPEC | **80** | 844 | READ IN FULL |
+| LIVE-SPEC | **80** | 840 | READ IN FULL |
 | REPORT/NARRATIVE | **39** | 164 | EXCLUDE |
 | SUPERSEDED-ESTABLISHED | **1** | 2 | EXCLUDE |
 | EVIDENCE-FROZEN | **1** | 2 | EXCLUDE |
-| **total** | **121** | **1012** | |
+| **total** | **121** | **1008** | |
 
 **Proposed EXCLUDE: 41 documents / 168 clusters / 0.54 MB (≈187k tokens).**
-**Remaining full-read set: 80 documents / 844 clusters / 1.80 MB (≈621k tokens)** — of which the five this session reads in full are 0.31 MB (≈108k tokens), leaving 1.49 MB (≈513k tokens) across 75 documents.
+**Remaining full-read set: 80 documents / 840 clusters / 1.80 MB (≈621k tokens)** — of which the five this session reads in full are 0.31 MB (≈108k tokens), leaving 1.49 MB (≈513k tokens) across 75 documents.
 
 *(Token estimates use the 3.04 characters-per-token ratio phase 1d measured on this repository's own prose against the Read tool's accounting, and phase 1f re-used unchanged.)*
 
@@ -57,13 +59,13 @@ Ordered by unresolved cluster count, the priority map the manifest gives. “Ver
 | 2 | `cowork_layer5_function_design.md` | 35 | LIVE-SPEC | Signed Layer-5 specification; the dispatch's own full-read set. READ IN FULL this session. | READ IN FULL |
 | 3 | `docs/scoring_model.md` | 35 | LIVE-SPEC | The authoritative scoring reference, a mandatory read for scoring sessions (`CLAUDE.md`) and the home of D-214…D-224. READ IN FULL this session. | READ IN FULL |
 | 4 | `docs/decoder_design.md` | 33 | LIVE-SPEC | The decoder design; the dispatch's own full-read set. READ IN FULL this session. | READ IN FULL |
-| 5 | `cowork_layer3_keymode_design.md` | 23 | LIVE-SPEC | Banner: SIGNED (user, 2026-06-22), WIRED — AS-BUILT Step 1, with named deferred follow-ups. | READ IN FULL |
-| 6 | `docs/redesign_plan.md` | 23 | LIVE-SPEC | The layered-evidence architecture plan; the dispatch's own full-read set. READ IN FULL this session. | READ IN FULL |
-| 7 | `cowork_score_census.md` | 21 | LIVE-SPEC | Banner: v1 DELIVERED, for user disposition of the acquisition tiers. §8c is the HOME of the fitting-pool licence constraint that [[OI-271]] turns on. | READ IN FULL |
-| 8 | `cowork_joint_key_chord_design.md` | 20 | LIVE-SPEC | Shelved by ratification (D-278) but retained as the architecture record; the design content itself — where the step lives, how key and chord couple — is registered nowhere. | READ IN FULL |
-| 9 | `cowork_layer5_engagement_design.md` | 20 | LIVE-SPEC | A design pass (CC, 2026-07-07) whose downstream owner-decisions are enumerated for follow-on passes; the engage-era agenda's fate is itself unrecorded ([[OI-259]]). | READ IN FULL |
-| 10 | `cowork_structural_integrity_audit.md` | 20 | LIVE-SPEC | A grounded catalogue that QUEUES named refactors as later user-ratified events; the queue is live. | READ IN FULL |
-| 11 | `cowork_voiceleading_axis_design.md` | 20 | LIVE-SPEC | Banner: AS-BUILT + SIGNED (user, 2026-07-03), asks A1–A8 ratified. | READ IN FULL |
+| 5 | `docs/redesign_plan.md` | 23 | LIVE-SPEC | The layered-evidence architecture plan; the dispatch's own full-read set. READ IN FULL this session. | READ IN FULL |
+| 6 | `cowork_score_census.md` | 21 | LIVE-SPEC | Banner: v1 DELIVERED, for user disposition of the acquisition tiers. §8c is the HOME of the fitting-pool licence constraint that [[OI-271]] turns on. | READ IN FULL |
+| 7 | `cowork_joint_key_chord_design.md` | 20 | LIVE-SPEC | Shelved by ratification (D-278) but retained as the architecture record; the design content itself — where the step lives, how key and chord couple — is registered nowhere. | READ IN FULL |
+| 8 | `cowork_layer5_engagement_design.md` | 20 | LIVE-SPEC | A design pass (CC, 2026-07-07) whose downstream owner-decisions are enumerated for follow-on passes; the engage-era agenda's fate is itself unrecorded ([[OI-259]]). | READ IN FULL |
+| 9 | `cowork_structural_integrity_audit.md` | 20 | LIVE-SPEC | A grounded catalogue that QUEUES named refactors as later user-ratified events; the queue is live. | READ IN FULL |
+| 10 | `cowork_voiceleading_axis_design.md` | 20 | LIVE-SPEC | Banner: AS-BUILT + SIGNED (user, 2026-07-03), asks A1–A8 ratified. | READ IN FULL |
+| 11 | `cowork_layer3_keymode_design.md` | 19 | LIVE-SPEC | Banner: SIGNED (user, 2026-06-22), WIRED — AS-BUILT Step 1, with named deferred follow-ups. | READ IN FULL |
 | 12 | `cowork_progression_schema_dictionary.md` | 19 | LIVE-SPEC | A component specification with a §0 terms table; the Harmonic Vocabulary's own home (D-133). | READ IN FULL |
 | 13 | `docs/implementation_roadmap.md` | 18 | LIVE-SPEC | The single tracker for every review conclusion, with two DO-NOT-FORGET structural refactors under a user mandate. | READ IN FULL |
 | 14 | `cowork_notation_adoption_increment.md` | 17 | LIVE-SPEC | Banner: ★ USER-RATIFIED 2026-07-26, five recommendations adopted. | READ IN FULL |
@@ -180,4 +182,4 @@ Ordered by unresolved cluster count, the priority map the manifest gives. “Ver
 - Derived from `tools/audit/decisions/decision_clusters.json` and `tools/audit/decisions/cluster_dispositions.json` at the commit this file is committed in.
 - The read set: `cc_phase1d_enumeration_wave_report.md` Task 1 (21 documents) and `open_items/OI-207.md` phase-1f dated note (2 documents, one of them a repeat).
 - Dispatch: `cc_instruction_phase1g_triage.md`, Task 1. Author: CC, 2026-08-02.
-- Nothing in this file is ratified. The exclusion list is a PROPOSAL; the user accepts, amends or rejects it.
+- Nothing in this file is a ratification of a DECISION. The exclusion list was a proposal when this file was first generated and is now ACCEPTED (the user, 2026-08-02, all 41 as tabled — `open_items/OI-207.md`); the classification of the 80 LIVE-SPEC documents carries no such acceptance and needs none, since its disposition is to read them.

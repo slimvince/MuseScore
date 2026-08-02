@@ -455,6 +455,20 @@ def build(unread: dict[str, int], surface_total: int, read: set) -> str:
     A("> **What this is NOT.** No document's status banner is edited by this pass. "
       "Classifying is not bannering. Nothing here is a ratification, and nothing here "
       "closes a register row.")
+    A(">")
+    A("> **★ THE EXCLUSION LIST IS ACCEPTED — the user, 2026-08-02, all 41 as tabled.** "
+      "Recorded at `open_items/OI-207.md` (the dated note of that date), which states the "
+      "acceptance covers exactly the 41 documents proposed for exclusion below, each with "
+      "its per-file verification citation: 1 SUPERSEDED-ESTABLISHED, 1 EVIDENCE-FROZEN "
+      "(its decision registered as **D-286**, and flagged as remaining the evidence base "
+      "of the OPEN extent question [[OI-210]] — excluded from the DECISION read, not "
+      "withdrawn from phase 3), and 39 REPORT/NARRATIVE in six evidenced families. "
+      "**Phase 1's completion basis is therefore: the 80 LIVE-SPEC documents read IN FULL, "
+      "plus this accepted 41-document exclusion.** What was accepted is the DOCUMENT LIST, "
+      "not the cluster counts beside it: every count here is recomputed at each generation "
+      "and falls as documents are read, because reading a design document in full resolves "
+      "some of its clusters into register entries. A count that has moved is therefore not "
+      "an amendment to what the user accepted.")
     A("")
     A("## The population, derived")
     A("")
@@ -558,8 +572,11 @@ def build(unread: dict[str, int], surface_total: int, read: set) -> str:
     A("- The read set: `cc_phase1d_enumeration_wave_report.md` Task 1 (21 documents) and "
       "`open_items/OI-207.md` phase-1f dated note (2 documents, one of them a repeat).")
     A("- Dispatch: `cc_instruction_phase1g_triage.md`, Task 1. Author: CC, 2026-08-02.")
-    A("- Nothing in this file is ratified. The exclusion list is a PROPOSAL; the user "
-      "accepts, amends or rejects it.")
+    A("- Nothing in this file is a ratification of a DECISION. The exclusion list was a "
+      "proposal when this file was first generated and is now ACCEPTED (the user, "
+      "2026-08-02, all 41 as tabled — `open_items/OI-207.md`); the classification of the "
+      "80 LIVE-SPEC documents carries no such acceptance and needs none, since its "
+      "disposition is to read them.")
     A("")
     return "\n".join(L)
 
