@@ -129,10 +129,10 @@ Alongside the register, every one of the harvested statements about decisions in
 | Groups of near-identical statements ("clusters") | **14460** |
 | Clusters carrying a recorded disposition | **14460** |
 | — restates | 5511 |
-| — not-a-decision | 5385 |
+| — not-a-decision | 5418 |
 | — boilerplate | 74 |
-| — no-spec-home | 574 |
-| — unresolved | 2916 |
+| — no-spec-home | 578 |
+| — unresolved | 2879 |
 
 The full disposition table, and the numbered rule behind each one, are in `tools/audit/decisions/cluster_dispositions.csv` and `tools/audit/decisions/disposition_manifest.json`.
 
@@ -532,8 +532,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 ## Provenance of this register
 
 - Adjudication: the OI-207 decision-conformance adjudication, 2026-08-01, at commit `58dea6702ac8aa9d5ef8b89244b94d587a75f7a5`.
-- Coverage figures above regenerated at commit `19fbe9e2714f3f5d65db753e4d999e57e7f15649`.
-- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `defaa1463821104a…`).
+- Coverage figures above regenerated at commit `042f8dde7966ab5ec96bbcfea5dccebeea468878`.
+- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `deb5632de9513861…`).
 - Harvest: `tools/audit/decisions/decision_candidates.json` (sha256 `51850440b315e6e9…`).
 - Clustering: `tools/audit/decisions/decision_clusters.json` (sha256 `0615b1e61bf10332…`).
 - Shape: `open_items/OI-208.md` (user-ratified 2026-07-28).

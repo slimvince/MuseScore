@@ -105,9 +105,75 @@ RULES = [
     ("BR-13", "The unit is a comment in a TEST file (`src/**/tests/**`) and carries none of the "
               "stated ruling words. A test comment states what the test pins; the decision it pins "
               "is stated in the specification, which is where BR-3 finds it."),
+    # ── BR-14 … BR-16 were added by the phase-1d enumeration wave (2026-08-02).  Each widens an
+    #    existing rule's stated reasoning to prose of the same surface, under the SAME ruling
+    #    vocabulary, and each runs after BR-3/BR-4.  The wave deliberately added NO rule over
+    #    `tools/` script comments or `src` production comments: those two surfaces are RESERVED
+    #    (see UNRESOLVED_RESERVATIONS below), because sweeping them would pre-empt the sealed
+    #    measurement-tools partition and the scoring-model reading that own them.
+    ("BR-14", "The unit is narrative prose of the OPEN-ITEMS register (`OPEN_ITEMS.md` or "
+              "`open_items/OI-*.md`) that is not a row or a section header, and carries none of "
+              "the stated ruling words. BR-10's reasoning, widened from the rows to the prose "
+              "around them: a detail file carries narrative and provenance only and is never a "
+              "status of record (its own standing banner), so its prose tracks an issue."),
+    ("BR-15", "The unit is in the SESSION HANDOFF (`cowork_handoff.md`) and carries none of the "
+              "stated ruling words. A handoff block hands a session over; `OPEN_ITEMS.md` OI-240 "
+              "and OI-266 establish that it tracks work and is not a home for a standing "
+              "decision, and the six standing rules that were recorded there are now homed "
+              "(D-249…D-254). Same register-rule reasoning as BR-11/BR-12."),
+    ("BR-16", "The unit is a row of the defect-type catalog (`DEFECT_TYPES.md`). The catalog "
+              "itself is register entry D-213; a row of it is a catalogued problem TYPE with its "
+              "detection signature, which is a diagnostic aid, not a decision about the system."),
     ("BR-8", "Residual: none of the above applies. Recorded UNRESOLVED — the honest outcome, and "
              "the count is a finding about the record's legibility."),
 ]
+
+# ── The RESERVATIONS (phase-1d enumeration wave, 2026-08-02) ──────────────────
+# Why the residue is what it is, per surface, stated so that what remains is a JUDGED residue
+# with a reason rather than an unread one.  These do NOT change any disposition — every cluster
+# below stays `unresolved`.  They are emitted into the manifest beside the partition counts so a
+# later pass reads the reason with the number.
+UNRESOLVED_RESERVATIONS = {
+    "tools/ script comments":
+        "RESERVED for the sealed measurement-tools partition (the second partition of the "
+        "OI-199 review, Cowork's ordering amendment). These scripts ARE the subject of that "
+        "review, and register entry D-281 — found by this wave — shows the surface carries real "
+        "decisions, so a bulk sweep here would both pre-empt the review and be the blind class "
+        "sweep the ruling-vocabulary guardrail exists to forbid.",
+    "src production comments":
+        "RESERVED for a reading against `docs/scoring_model.md` §4/§8. These are largely the "
+        "musical-reasoning comments register entry D-123 REQUIRES at every non-obvious scoring "
+        "weight, so they state design decisions with their defense (D-195) and cannot be swept "
+        "as narrative; settling each means comparing it with the scoring model's own §4 term "
+        "table and §8 constraint list, which is a reading this wave did not reach.",
+    "cc_* session reports": "The BR-12 EXEMPTION SET — units the sweep refused because they "
+                            "carry a ruling word. Already judged once; each needs a reader.",
+    "cc_instruction_* dispatches": "The BR-11 EXEMPTION SET — units the sweep refused because "
+                                   "they carry a ruling word. Each needs a reader.",
+    "src test comments": "The BR-13 EXEMPTION SET — units the sweep refused because they carry "
+                         "a ruling word. Each needs a reader.",
+    "cowork_* design documents": "The phase-1d wave's own partition: 21 of the 143 design "
+                                 "documents were read IN FULL and the rest were not. This is "
+                                 "the measured remainder and the next wave's input.",
+    "docs/ design documents": "Same partition as the `cowork_*` surface — the measured "
+                              "remainder of the phase-1d reading list.",
+    "the two archives": "NOT read by the phase-1d wave and swept by NO rule, deliberately: the "
+                        "founding case of this audit (the Stage-3.1b shelving) lived in one of "
+                        "them, so they must be read, never swept.",
+    "governing: ARCHITECTURE.md": "Already READ IN FULL by the 2026-08-01 completion pass; this "
+                                  "residue is prose that reading judged not to state a distinct "
+                                  "decision. Judged, not unread.",
+    "governing: CLAUDE.md": "Already READ IN FULL by the 2026-08-01 completion pass; same "
+                            "character as the ARCHITECTURE.md residue.",
+    "the open-items register": "The BR-14 exemption set — open-items prose carrying a ruling "
+                               "word, which is where a non-conformance row quotes the decision "
+                               "it violates. Each needs a reader.",
+    "the session handoff": "The BR-15 exemption set — handoff prose carrying a ruling word.",
+    "governing: DEFECT_TYPES.md": "Catalog rows carrying a ruling word; the catalog itself is "
+                                  "register entry D-213.",
+    "mixed sources": "Clusters whose occurrences span more than one surface. No bulk rule ever "
+                     "sweeps one, by construction.",
+}
 
 HEADING_KINDS = {"heading"}
 
@@ -329,6 +395,14 @@ def in_test_file(f: str) -> bool:
     return f.startswith("src/") and "/tests/" in f
 
 
+def in_handoff(f: str) -> bool:
+    return f == "cowork_handoff.md"
+
+
+def in_defect_types(f: str) -> bool:
+    return f == "DEFECT_TYPES.md"
+
+
 def surface(f: str) -> str:
     """The source surface a file belongs to — the axis the unresolved residual is partitioned on."""
     if in_test_file(f):
@@ -414,6 +488,12 @@ def disposition_pass(candidates, clusters, backbone):
             rule, disp, decs = "BR-12", "not-a-decision", []
         elif _all(cl_files, in_test_file) and not carries_ruling_word:
             rule, disp, decs = "BR-13", "not-a-decision", []
+        elif _all(cl_files, in_open_items) and not carries_ruling_word:
+            rule, disp, decs = "BR-14", "not-a-decision", []
+        elif _all(cl_files, in_handoff) and not carries_ruling_word:
+            rule, disp, decs = "BR-15", "not-a-decision", []
+        elif _all(cl_files, in_defect_types):
+            rule, disp, decs = "BR-16", "not-a-decision", []
         else:
             rule, disp, decs = "BR-8", "unresolved", []
 
@@ -514,6 +594,13 @@ def main() -> int:
         "rules": [{"id": rid, "rule": text, "clusters": rule_counts[rid]} for rid, text in RULES],
         "disposition_counts": disp_counts,
         "unresolved_partition_by_surface": partition,
+        # Every surviving surface's stated reason, so the residue is JUDGED, not merely counted.
+        # A surface that appears in the partition without a reason here is a gap in this block,
+        # and is emitted as such rather than silently omitted.
+        "unresolved_reservation_by_surface": {
+            k: UNRESOLVED_RESERVATIONS.get(k, "NO REASON STATED — this surface needs one.")
+            for k in partition
+        },
         "completeness_check": {
             "clusters": len(clusters),
             "dispositioned": len(rows),

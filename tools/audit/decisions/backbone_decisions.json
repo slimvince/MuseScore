@@ -5355,7 +5355,9 @@
       "patterns": [
         "FULL DECISION SURFACE BEFORE ANY CHOICE QUESTION",
         "Never present the user with options before the ENTIRE situation",
-        "A decision answered blind is voidable"
+        "A decision answered blind is voidable",
+        "The decision surface \\(what is being decided, the background",
+        "the choice\\s+question goes in a SEPARATE, LATER turn"
       ],
       "rationale": "The mechanism is stated with the rule: prose written between tool calls is summarized rather than shown verbatim, so an explanation placed just before a question widget can never reach the user and the question arrives blind (cowork_handoff.md:1590-1592). Its first application is recorded: the 2026-07-05 verdict-14 and 2.2c ratifications were re-presented and re-confirmed."
     },
@@ -5377,7 +5379,9 @@
       "patterns": [
         "Do NOT write CC instructions ahead of need",
         "PARKED` banner",
-        "NEXT instruction is written only when its predecessor's report is ratified"
+        "NEXT instruction is written only when its predecessor's report is ratified",
+        "The dispatch QUEUE is a plan, not files",
+        "At most ONE instruction is dispatched"
       ],
       "rationale": "The reasons are stated with the rule: pre-written instructions go stale as their premises change under them, risk being skipped, and risk out-of-order execution (cowork_handoff.md:1606-1607)."
     },
@@ -5419,7 +5423,9 @@
       "status_source": "Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1630-1638, under 'STANDING RULE FOR COWORK (read every session)' at cowork_handoff.md:1628 - a session handoff block. Homed in the new dispatch-protocol section of the audit protocol, beside P5's withheld-finding rule and P8's pass ordering, which are already rules about how a dispatch is written and sequenced; that section's lead-in states that these three rules govern every dispatch and not only the audits above it. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).",
       "patterns": [
         "Cowork writes instruction files\\. CC executes them",
-        "Violating this rule has broken the codebase twice"
+        "Violating this rule has broken the codebase twice",
+        "Cowork MAY: read source files",
+        "Cowork MUST NOT: spawn agents that run build"
       ],
       "rationale": "The evidence is stated with the rule: violating it has broken the codebase twice, at the E1 and E2b increments (cowork_handoff.md:1638)."
     },
@@ -5441,7 +5447,9 @@
       "patterns": [
         "ALWAYS the file tools \\(Read / Grep / Glob\\)",
         "permitted ONLY for read-only git OBJECT queries",
-        "NEVER trust `git rev-parse HEAD`"
+        "NEVER trust `git rev-parse HEAD`",
+        "Local file CONTENT, existence, line counts, searches",
+        "`bash` is permitted ONLY for read-only git OBJECT queries"
       ],
       "rationale": "The failure that produced it is stated in the record: a stale mount made the shell path return wrong content and triggered a false corruption alarm, while the file tools read the live disk correctly (cowork_handoff.md:1665-1667). The git-object exception is justified by self-verification: a stale object errors rather than returning silently-wrong content."
     },
