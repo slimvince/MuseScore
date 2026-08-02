@@ -5,6 +5,32 @@
 > Historical entries live in `STATUS_ARCHIVE.md` (reference-only, NOT part of the session-start
 > read) — a superseded entry moves there instead of accumulating here.
 
+*Last updated: 2026-08-02, LATEST+++++++ (CC — **★ PHASE 1g: THE UNREAD DESIGN-DOCUMENT POPULATION IS TRIAGED PER FILE, AND FIVE DOCUMENTS OF THE LIVE
+CORE ARE READ IN FULL. The register is 316 → 342; the unresolved residual 2,717 → 2,702; two findings rowed; the D-081 defense the phase-1f note left
+owed is FILLED.** READ-ONLY on the system: no `src/` change, no golden / `tools/corpus/` / `tools/robust_stop/` movement, no behavior change, no fix, no
+design, no `ARCHITECTURE.md` edit, **no document's status banner edited** (classifying is not bannering), **no ratification** — the 26 new decisions enter
+with the record's own status and go to the user in the report's RATIFICATION QUEUE. Dispatch `cc_instruction_phase1g_triage.md`. Per the OI-222 remedy this
+entry is a **POINTER** — the content lives in the triage artifact, the register and the dated notes. **★ THE DELIVERABLE IS A DECISION SURFACE, NOT A
+SWEEP: `tools/audit/decisions/phase1g_triage.md`** — all 121 unread design documents classified LIVE-SPEC / SUPERSEDED-ESTABLISHED / REPORT-NARRATIVE /
+EVIDENCE-FROZEN, **LIVE-SPEC the default for any unclear case**, and a verification citation on EVERY proposed exclusion (not only the two classes the
+dispatch requires one for). Result **80 READ IN FULL / 41 proposed EXCLUDE**. A generated file, so no count in it is transcribed. **★ THE CLASSIFICATION
+WAS CHECKED MECHANICALLY, AND THAT CHANGED THE ANSWER TWICE** — sweeping each exclusion candidate for the disposition manifest's own ruling vocabulary
+returned `cowork_term_theory_grounding.md` (header: "Nothing here decides anything"; `:330-351`: five ✅ DECIDED 2026-07-19) and
+`cowork_layer5_function_methods.md` (`:33`: ★ DECIDED, user, 2026-06-26) to LIVE-SPEC. **Read, in this order:** the [[OI-207]] note (the correction of
+record — the unread population was **121, not 120**, `docs/beam_widening_design.md` being in BOTH prior read lists; the triage; the twenty-six entries by
+KIND; the **D-282…D-285 flag section**, one flag that CORROBORATES for the second time from a second document; the discharged D-081 lead; the arithmetic;
+and the measured remainder — **27 of 143 read, 116 unread, 75 of them still a full read**); then the [[OI-272]] note (**★ a correction of that row's own
+premise: at least THREE of the fourteen archive-homed decisions, D-286 included — the audit's FOUNDING CASE — also live in design documents, and D-287's
+archive entry says so; the diagnosis changes from "buried in an archive" to "recorded three times, none of them a session-start read"**); the [[OI-268]]
+note (the design-surface count 25 → **51**); then [[OI-274]] and [[OI-275]], the two new rows. **★ [[OI-275]] IS THE SHARP ONE:** the SIGNED Layer-4
+specification makes COMPLETE candidate listing the governing design decision (**D-329**, three times over, with a measured defense), while the production
+decoder's admission prunes and returns **0 segments on 13 of 23 large scores** — which turns [[OI-226]]'s *absence* of a basis into an *opposition* to a
+ratified statement, and turns on a question the record does not answer: **does a SIGNED layer specification bind the joint estimator?** All guards PASS
+(`--verify` 342/342 quotes, 336/336 anchors, references ALL; `--check` 14,460/14,460 clusters, 15,224/15,224 occurrences; register `--check` across 21
+files; the triage artifact reproduces from the data; open-items living check 275/275). **NEXT: the user accepts (or amends) the exclusion list and
+ratifies (or corrects) D-317…D-342; rules on [[OI-275]], and on [[OI-268]] TOGETHER WITH [[OI-272]] (now over a population the two rows share more of than
+either assumed); then the remaining 75-document full read before phase 2 opens.**)*
+
 *Last updated: 2026-08-02, LATEST++++++ (CC — **★ PHASE 1f: THE FINAL ENUMERATION PARTITION RAN. `STATUS_ARCHIVE.md` IS NOW READ IN FULL, AND WITH IT
 BOTH ARCHIVES; the design-document partition is NOT finished and its remainder is measured. The register is 299 → 315; the unresolved residual
 2,794 → 2,717; one finding rowed; the riding [[OI-271]] licence-class verification RAN.** READ-ONLY on the system: no `src/` change, no golden /
