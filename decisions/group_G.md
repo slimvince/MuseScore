@@ -390,3 +390,18 @@
 
 **Provenance.** docs/iteration_path1_summary.md:74-78, recorded among the architecture decisions of the completed iteration path and stated there as 'now a standing rule for any future gate or scoring change'; no date or ratifier is stated at this home. Distinct from register entry D-066, which forbids chord symbols written in the SCORE as analyzer input; this forbids re-reading our own rendered output. Found by the phase-1d enumeration wave, 2026-08-02.
 
+### D-284 — Meta-finding: selection/competition is saturated, stop adding re-ranking gates - superseded by the gates doctrine and the adoption
+
+> - **Selection/competition is saturated** — stop adding re-ranking heuristics/gates; the residual is
+>   candidate-generation, key-quality, or floor.
+
+**In plain words.** Stop investing in the legacy scorer’s gate and re-ranking surface; the remaining error lives in candidate generation and key quality. The doctrine lives on generalized in the ratified accumulating-gates rule, and the mechanism it warned about was retired wholesale when the joint estimator replaced the legacy selection surface.
+
+**Why.** Record-derivable: D-036 (accumulating gates are a warning sign - add iteration, not more gates) carries the standing doctrine; D-001/D-010 retired the legacy selection surface on both production paths (compiled-dormant, awaiting the retirement map).
+
+**Status.** SUPERSEDED BY D-036 with D-001/D-010 · date not stated · ratifier not stated
+
+**Home.** `cowork_architecture_reassessment.md:99-100`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommendations adopted): SUPERSEDED BY the named later ratified decisions — the governing status derives from the record's dates and explicitness, not from resolving the original statement's ambiguity. The second-partition read of the archives is instructed to flag anything refining these.
+

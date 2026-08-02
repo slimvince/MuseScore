@@ -102,6 +102,15 @@ it much more sharply than phase-2 did.
 - *(Optional, borrowed)* a `--diff-prose`-style guard so STATUS.md / scoring_model.md numbers can't silently
   outrun the narrative; out-of-sample CV if we ever train.
 
+> **★ Dated annotation (user ruling, 2026-08-02, the OI-270 split).** The four §4 meta-findings
+> above are now register entries **D-282…D-285**, each ruled **SUPERSEDED BY** its named later
+> ratified successors (D-282 → D-115/D-191; D-283 → D-001/D-096; D-284 → D-036 with D-001/D-010;
+> D-285 → the factorization emission design and the OI-194 increment). Their ratification was
+> never recorded in this document (the §5 "Ratify:" below received no recorded answer —
+> open-items row OI-270); the 2026-08-02 ruling settles their standing without inferring what the
+> unanswered recommendation would have decided. The second-partition archive read is instructed
+> to flag anything that refines these four.
+
 ## 5. Recommendation
 
 Ratify: (a) **abandon the anchor** (architecture correct), **defer C2**, **re-classify X2**, close them in the

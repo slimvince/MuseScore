@@ -101,25 +101,25 @@ project's own and are defined here because they are used before any entry explai
 
 ## What is in this register, counted
 
-**281 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
+**285 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
 
 | | Count |
 |---|---|
-| Decisions recorded | **281** |
+| Decisions recorded | **285** |
 | — of which live | 236 |
 | — of which superseded in fact | 5 |
-| — of which superseded by | 5 |
+| — of which superseded by | 9 |
 | — of which deferred | 34 |
 | — of which shelved with evidence | 1 |
-| Decisions whose date is not stated in the record | 182 |
-| Decisions whose ratifier is not stated in the record | 174 |
-| Decisions recorded outside the specification that owns them | 90 |
-| — of which a documentation gap | 21 |
+| Decisions whose date is not stated in the record | 186 |
+| Decisions whose ratifier is not stated in the record | 178 |
+| Decisions recorded outside the specification that owns them | 94 |
+| — of which a documentation gap | 25 |
 | — of which a project-wide convention, correctly homed | 34 |
 | — of which a decision about the process, correctly homed | 35 |
 | Decisions whose defense the record does not state | 45 |
 
-That last row is the one meant to fall. **236 of 281** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
+That last row is the one meant to fall. **240 of 285** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
 
 Alongside the register, every one of the harvested statements about decisions in this repository has been given a recorded disposition, so that none was silently passed over:
 
@@ -170,6 +170,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-272 | The protocol constants are protocol, not tuning - changing one is an amendment, never a fitting act | LIVE | `cowork_prefit_gates.md` ⚠gap |
 | D-273 | The architecture-adoption variant of the hard regression stop, written before any diff existed | LIVE | `cowork_prefit_gates.md` ⚠gap |
 | D-274 | The reverse map - if the new estimator is not adopted it is removed whole, and the retirement map is void | LIVE | `cowork_prefit_gates.md` ⚠gap |
+| D-283 | Meta-finding: never learn keys, the lever is keychain structure - superseded by the joint estimator and the forms-from-theory rule | SUPERSEDED BY D-001 and D-096 | `cowork_architecture_reassessment.md` ⚠gap |
+| D-285 | Meta-finding: embellishment is chord-first, never a richer vocabulary - absorbed by the emission design and the ornament-label increment | SUPERSEDED BY the ratified factorization emission design (D-004 and the OI-194 increment) | `cowork_architecture_reassessment.md` ⚠gap |
 
 ## B. The notation output surface and the record path — [full entries](decisions/group_B.md)
 
@@ -229,6 +231,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-268 | A confidence attaches to a named decision, is compared only within its class and a declared frame, and keeps its identity downstream | LIVE | `cowork_confidence_contract.md` ⚠gap |
 | D-269 | The frame table is the one home of the override arithmetic; a new override site declares its frame before it is built | LIVE | `cowork_confidence_contract.md` ⚠gap |
 | D-278 | The joint key-and-chord step is SHELVED - measured not to pay | SHELVED WITH EVIDENCE | `cowork_engage_arc_plan.md` ⚠gap |
+| D-282 | Meta-finding: the oracle/tier metric, never a bare proxy - superseded by the robust-unit stop and the two-tier policy | SUPERSEDED BY D-115 and D-191 | `cowork_architecture_reassessment.md` ⚠gap |
 
 ## D. Layer 1 — the note model — [full entries](decisions/group_D.md)
 
@@ -297,6 +300,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-241 | The monophonic local-grouping problem is deferred to Phase 2 | DEFERRED | `ARCHITECTURE.md` |
 | D-242 | Vertical and monophonic raw scores are never compared directly | DEFERRED | `ARCHITECTURE.md` |
 | D-280 | Gates read structured fields only - never a chord symbol string and never a Roman numeral | LIVE | `docs/iteration_path1_summary.md` ⚠gap |
+| D-284 | Meta-finding: selection/competition is saturated, stop adding re-ranking gates - superseded by the gates doctrine and the adoption | SUPERSEDED BY D-036 with D-001/D-010 | `cowork_architecture_reassessment.md` ⚠gap |
 
 ## H. Layer 5 and Layer 6 — function, cadence, grouping — [full entries](decisions/group_H.md)
 

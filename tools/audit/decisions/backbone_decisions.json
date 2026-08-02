@@ -6075,6 +6075,82 @@
       ],
       "rationale": "The failure that produced it is recorded with it: the change was lost to a hard reset and went undetected for three weeks, and only a stale binary holding the documented baseline made the loss visible at all. It is principle #19 applied to a measurement tool - a figure produced without these fields is not the figure it claims to be.",
       "verbatim": "3. **batch_analyze output schema**: `batch_analyze.cpp` must emit\n   `rootPitchClass`, `bassPitchClass`, `quality`, `bassIsRoot` on every\n   alternative entry. This activates the previously-dormant\n   `_matches_alternative` reclassification in `compare_analyses.py` and is the\n   floor below which corpus measurements revert to pre-Iter-36 counts (~700\n   BIR=false). Committed in Iter 36 (recovered in `5df8421114` after a git\n   reset lost the original commit)."
+    },
+    {
+      "id": "D-282",
+      "group": "C",
+      "title": "Meta-finding: the oracle/tier metric, never a bare proxy - superseded by the robust-unit stop and the two-tier policy",
+      "verbatim": "- **Oracle/tier metric, never a bare proxy** (BIR rewards wrong-root=bass). Make the dual metric standing.",
+      "plain": "Never grade the analysis on the bare bass-is-root number, which rewards a wrong chord root that happens to be the bass; use the oracle-checked, tiered measurement. Its content became standing through the robust-unit regression stop and the two-tier class policy.",
+      "rationale": "The stated reason is in the finding itself (the bare proxy rewards wrong-root-equals-bass); the successors carry their own measured defenses (D-115: the batch proxy under-counted the true per-onset error ~15-56x; D-191: decidable vs undecidable roots graded differently).",
+      "status": "superseded-by",
+      "superseded_by": "D-115 and D-191",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_architecture_reassessment.md:97",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommendations adopted): SUPERSEDED BY the named later ratified decisions — the governing status derives from the record's dates and explicitness, not from resolving the original statement's ambiguity. The second-partition read of the archives is instructed to flag anything refining these.",
+      "patterns": []
+    },
+    {
+      "id": "D-283",
+      "group": "A",
+      "title": "Meta-finding: never learn keys, the lever is keychain structure - superseded by the joint estimator and the forms-from-theory rule",
+      "verbatim": "- **Never learn keys; the lever is keychain structure (cadence precision).** Settled from both sides.",
+      "plain": "A rejection of a learned key detector in favour of structural levers, cadence precision above all. Whichever reading was intended, the later explicit ratifications govern: the joint estimator infers the key inside a theory-declared generative form whose factor values are fitted once against ground truth, and its cadence factor carries the structural insight forward. This finding binds nothing the current design does.",
+      "rationale": "The supersession stands on dates and explicitness alone: D-001 (2026-07-17, ratified, adopted with measurement 2026-07-26) and D-096 (forms from theory, values fit once, never per-case tuned) are later, explicit, user-ratified decisions on the same subject. Ruled so that no future reader treats this as a live prohibition over the key axis (the risk that made OI-270 matter).",
+      "status": "superseded-by",
+      "superseded_by": "D-001 and D-096",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_architecture_reassessment.md:98",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommendations adopted): SUPERSEDED BY the named later ratified decisions — the governing status derives from the record's dates and explicitness, not from resolving the original statement's ambiguity. The second-partition read of the archives is instructed to flag anything refining these.",
+      "patterns": []
+    },
+    {
+      "id": "D-284",
+      "group": "G",
+      "title": "Meta-finding: selection/competition is saturated, stop adding re-ranking gates - superseded by the gates doctrine and the adoption",
+      "verbatim": "- **Selection/competition is saturated** — stop adding re-ranking heuristics/gates; the residual is\n  candidate-generation, key-quality, or floor.",
+      "plain": "Stop investing in the legacy scorer’s gate and re-ranking surface; the remaining error lives in candidate generation and key quality. The doctrine lives on generalized in the ratified accumulating-gates rule, and the mechanism it warned about was retired wholesale when the joint estimator replaced the legacy selection surface.",
+      "rationale": "Record-derivable: D-036 (accumulating gates are a warning sign - add iteration, not more gates) carries the standing doctrine; D-001/D-010 retired the legacy selection surface on both production paths (compiled-dormant, awaiting the retirement map).",
+      "status": "superseded-by",
+      "superseded_by": "D-036 with D-001/D-010",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_architecture_reassessment.md:99-100",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommendations adopted): SUPERSEDED BY the named later ratified decisions — the governing status derives from the record's dates and explicitness, not from resolving the original statement's ambiguity. The second-partition read of the archives is instructed to flag anything refining these.",
+      "patterns": []
+    },
+    {
+      "id": "D-285",
+      "group": "A",
+      "title": "Meta-finding: embellishment is chord-first, never a richer vocabulary - absorbed by the emission design and the ornament-label increment",
+      "verbatim": "- **Embellishment = chord-first** (segmentation + NCT post-process), never union re-derive / richer vocabulary.",
+      "plain": "Ornamental tones are handled by classifying them against the committed chord - segmentation first, then a non-chord-tone post-process - never by widening the chord vocabulary until every embellishment is a chord. The ratified factorization’s emission carries exactly this shape (chord-member and non-chord-tone categories), and the ornament-label publication is its own ratified increment.",
+      "rationale": "Absorbed by ratified successors: the factorization’s emission categories (D-004’s ground-truth-derived compact vocabulary + the per-tone emission’s membership categories) and the OI-194 ornament-label increment. Ruled bindingly BEFORE the phase-3 family design so the struck-versus-sounding emission fix keeps non-chord-tone handling in the emission’s categories rather than solving its problems by vocabulary inflation.",
+      "status": "superseded-by",
+      "superseded_by": "the ratified factorization emission design (D-004 and the OI-194 increment)",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_architecture_reassessment.md:101",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommendations adopted): SUPERSEDED BY the named later ratified decisions — the governing status derives from the record's dates and explicitness, not from resolving the original statement's ambiguity. The second-partition read of the archives is instructed to flag anything refining these.",
+      "patterns": []
     }
   ]
 }
