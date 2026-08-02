@@ -5,6 +5,31 @@
 > Historical entries live in `STATUS_ARCHIVE.md` (reference-only, NOT part of the session-start
 > read) — a superseded entry moves there instead of accumulating here.
 
+*Last updated: 2026-08-02, LATEST+++++++++ (CC — **★ PHASE 1i: THE DELIVERY ACTS. The user's rulings on [[OI-268]], [[OI-272]] and [[OI-275]] are EXECUTED on the
+data; the probe findings are ROWED; one more LIVE-SPEC document is read in full. The register is 400 → 405; the unresolved residual 2,681 → 2,679; two rows
+opened; 75 entries LEGACY-marked; 63 contract-homed; six pointer lines written into `ARCHITECTURE.md`.** READ-ONLY on the system: no `src/` change, no golden /
+`tools/corpus/` / `tools/robust_stop/` movement, no behavior change, no fix, no design, no inference change, **no document's status banner edited**, **no
+ratification** — the five new decisions enter with the record's own status and go to the user in the report's RATIFICATION QUEUE. Dispatch
+`cc_instruction_phase1i_delivery_acts.md`. Per the OI-222 remedy this entry is a **POINTER** — the content lives in the register, the rows and the dated notes.
+**Read, in this order:** [[OI-277]], the new row (**★ the emission is NOTE-COUNT-weighted: an octave doubling that changes no pitch class, no bass and no event
+lattice moves 13.2 % of committed segments and re-cuts the segmentation on 9 of 12 pieces — fit and decode AGREE, so this is a MODEL PROPERTY BY TRAINED DESIGN,
+NOT the [[OI-228]] mismatch class, and it is the third face of the what-does-the-emission-read family); then the [[OI-267]] note (**both owed items ANSWERED**:
+the production joint renderer DOES emit applied labels, so **D-248's scope is corrected** to the legacy `ChordFunction` structure it actually describes, and the
+measured stake is a **+1.62-point** hard ceiling with the suspected [[OI-192]] kinship **REFUTED both ways**); then the [[OI-268]] note (the re-classification
+executed in two waves, 63 of 112, with the remaining 49 listed against the criterion each fails); then **[[OI-272]], which does NOT flip and says why**; then
+[[OI-278]], the second new row; then the [[OI-207]] note. **★ TWO THINGS THE USER SHOULD SEE FIRST.** (1) **[[OI-272]] could not be delivered whole and was not
+pretended otherwise:** the ruling it executes requires live constraints to be HOMED into the owning specification — writing rule text — while the dispatch's own
+hard stop permits `ARCHITECTURE.md` edits ONLY as the pointer class; the pointer half landed, the homing half (~12 live constraints + 4 process rules) is
+declared undone. (2) **A contradiction was found in the LEGACY convention itself and not shipped:** the [[OI-275]] ruling directs D-329 to be LEGACY-marked while
+its PRINCIPLE binds the live family design, but the single marker's fixed wording asserts "no effect on the live solution" — false for D-329 and exactly the
+mistake rule (f) exists to prevent; the marker now has a transfer variant used only where a ruling carried the principle across. **Also fixed on the way:** the
+index's home-flag lookup had no `contract-home` case and would have printed a spurious "gap" warning on every re-classified entry, and the LEGACY mark was
+invisible on the INDEX — the surface a session is REQUIRED to read. All guards PASS (`--verify` 405/405 quotes, 399/399 anchors, references ALL — after **159
+anchors were re-aimed one by one from the drift report's own line numbers**, never by an assumed threshold; `--check` 14,460/14,460 clusters, 15,224/15,224
+occurrences; register `--check` across 21 files; open-items living check 278/278). **NEXT: the user ratifies (or corrects) D-401…D-405 and the 75-entry LEGACY
+set; rules on [[OI-278]]; and settles the two questions [[OI-268]]'s note leaves — the four documents with no status banner, and whether a Cowork ratification
+counts. Then the homing half of [[OI-272]], and the remaining 69-document full read before phase 2 opens.**)*
+
 *Last updated: 2026-08-02, LATEST++++++++ (CC — **★ PHASE 1h: FIVE MORE LIVE-SPEC DOCUMENTS READ IN FULL. The register is 342 → 400; the unresolved
 residual 2,702 → 2,681; the D-085 defense FILLED; one finding rowed; the user's exclusion-list acceptance RECORDED ON THE ARTIFACT.** READ-ONLY on the
 system: no `src/` change, no golden / `tools/corpus/` / `tools/robust_stop/` movement, no behavior change, no fix, no design, no `ARCHITECTURE.md` edit,

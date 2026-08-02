@@ -14,11 +14,11 @@
   },
   "backbone": {
    "file": "tools/audit/decisions/backbone_decisions.json",
-   "sha256": "080840ea7def828e12a2ed39523f77d400593ee05c5a203514eca461524b5848",
-   "decision_count": 400
+   "sha256": "86e94eb2d2f9fcab2ebb8217657db1d6789e72214779c1c61d81098e0cafe2ec",
+   "decision_count": 405
   }
  },
- "head_commit": "d46050ca452f45d5e366ae805bb3785a7a62cffd",
+ "head_commit": "ebda0889f2f6c6076df4a0041008733b8d2296d8",
  "disposition_vocabulary": [
   "restates",
   "not-a-decision",
@@ -69,7 +69,7 @@
   {
    "id": "BR-4",
    "rule": "The cluster's text matches one or more backbone decisions, ALL of which are recorded outside any layer specification. Recorded as a decision with no layer-specification home (named) — the Task-4 documentation-gap class.",
-   "clusters": 639
+   "clusters": 642
   },
   {
    "id": "BR-5",
@@ -79,7 +79,7 @@
   {
    "id": "BR-6",
    "rule": "A Claude Code session report or dispatch whose text is a measurement or delivery narrative (it carries a figure, a test count, a commit hash, or a delivery/verification verb) and matches no backbone decision. A report of work done, not a ruling.",
-   "clusters": 1587
+   "clusters": 1586
   },
   {
    "id": "BR-7",
@@ -139,18 +139,18 @@
   {
    "id": "BR-8",
    "rule": "Residual: none of the above applies. Recorded UNRESOLVED — the honest outcome, and the count is a finding about the record's legibility.",
-   "clusters": 2681
+   "clusters": 2679
   }
  ],
  "disposition_counts": {
   "restates": 5511,
-  "not-a-decision": 5555,
+  "not-a-decision": 5554,
   "boilerplate": 74,
-  "no-spec-home": 639,
-  "unresolved": 2681
+  "no-spec-home": 642,
+  "unresolved": 2679
  },
  "unresolved_partition_by_surface": {
-  "cowork_* design documents": 832,
+  "cowork_* design documents": 830,
   "docs/ design documents": 399,
   "cc_* session reports": 316,
   "tools/ script comments": 295,

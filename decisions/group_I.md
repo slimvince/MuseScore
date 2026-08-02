@@ -279,3 +279,40 @@
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md` (session 22i, the Stage-5 planning checkpoint) as a ruling read off the ratified retirement map. It is load-bearing now beyond its original subject: [[OI-205]] half (b) cites it as “the ratified Stage-3.5 file-split lesson (restructure ONCE, after the boundaries stabilize)” to time the `ARCHITECTURE.md` restructure. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).
 
+### D-401 — The refactor sequencing call — the portable unification wins run before Layer 5, the legacy-path tangles fold into the decoder engagement, and the file split is last
+
+> **In one line:** *pre-L5 = FQ-1, FQ-3, FQ-5, FQ-6, FQ-7 (portable unification wins); part-of-L5/E4 = FQ-2,
+> FQ-4, FQ-8 (the legacy-path tangles the decoder + §6-block dissolution retire); then R9 splits the file
+> last.* This adds no new stage — it slots the audit's fixes into the plan the roadmap already has.
+
+**In plain words.** The structural debt found across the built layers is ordered into one sequence rather than fixed as it was found. What is independent of which analysis path runs — the shared different-root scan, moving the neighbour-chord computation out of the derived-view layer, the duplicated fact-layer helpers, the two disagreeing alternative-list views, and sourcing the key decoder's constants from shared symbols — is done first, because none of it depends on the replacement decoder. The tangles that live in the legacy chord path fold into the engagement that retires that path, because fixing them separately would be work thrown away. Splitting the large chord-analysis source file comes last, after the deletions, so it is split once.
+
+**Why.** The record gives the reason as a measured property of the code, not a preference: the anchor tangle sits in code the engagement retires, and its clean target is ALREADY BUILT in the dormant decoder (§1.4, cited to `chord/chordslicedecoder.cpp:746-789`), so a standalone refactor of the legacy carry substrate would be throwaway work on retiring code — while three slices are genuine early wins precisely because they are path-independent or serve both paths (§4).
+
+**Status.** LIVE · decided 2026-07-07 · ratifier not stated
+
+**Home.** `cowork_structural_integrity_audit.md:316-318`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1i continuation wave, 2026-08-02, reading `cowork_structural_integrity_audit.md` IN FULL. The document's banner records `Status: read-only grounded catalogue (CC, 2026-07-07; Engage arc #6)` — an authored catalogue, not a ratified contract. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1i ratification queue. The document itself says the sequencing call is brought to the user (`:345-346`), and the record does not show that happening. What the record DOES show is a delegation: the user-RATIFIED `cowork_engage_arc_plan.md` (2026-07-07) states that it 'does not re-derive the fix details — those live in `cowork_structural_integrity_audit.md` (§3 fix-queue, §4 sequencing)'. Whether a ratified plan's delegation ratifies the delegated content is the [[OI-268]] question in another form; it is NOT decided here, and the entry carries the record's own status.
+
+### D-404 — Relocating the neighbour-chord temporal-context computation out of the derived-view layer is DEFERRED to the decoder engagement, which owns regional temporal context
+
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+
+> - **FQ-3 — ⛔ STOP-and-deferred to E4 (UNCLEAR-7 resolved → fold into E4).** Byte-identically relocatable
+>   and decoder-independent, BUT E4-entangled: the decoder (already seeded by `findTemporalContext` at
+>   `regionanalyzer.cpp:899-902`, `decoder.commit()≡advanceTemporalContext`) is the E4-decided owner of
+>   regional temporal context (ARCHITECTURE.md D-P4/D-BRIDGE/1068: the cold walk is superseded). Relocating
+>   to an interim L4 home now is the "redone at E4" case; most-invasive item (new region unit + notation
+>   wrapper + test relocation). Deferred, not forced (report §6).
+
+**In plain words.** A view-only helper in the derived-view layer runs the whole chord-decision pipeline twice to work out the identity of the neighbouring chords — a decision-layer computation living in a layer that is supposed only to expose views of the notes. Moving it was verified to be possible without changing any output, but it was deferred: the replacement decoder is the decided owner of regional temporal context, so an interim home would be built and then undone.
+
+**Why.** The record gives both halves. The reason it is a violation is grounded at the code (the derived-view primitive instantiates the chord analyzer and runs the full decision pipeline twice, on the live path). The reason it is deferred rather than fixed is that the decoder is already seeded by this same helper and its commit step is the temporal-context advance, so the ownership move belongs to the engagement — making an interim relocation the redone-later case, and it is also the most-invasive item in the queue (a new region unit, a notation wrapper, and a test relocation).
+
+**Status.** DEFERRED · decided 2026-07-07 · ratifier not stated
+
+**Home.** `cowork_structural_integrity_audit.md:270-275`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1i continuation wave, 2026-08-02, reading `cowork_structural_integrity_audit.md` IN FULL. The document's banner records `Status: read-only grounded catalogue (CC, 2026-07-07; Engage arc #6)` — an authored catalogue, not a ratified contract. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1i ratification queue. Recorded as '⛔ STOP-and-deferred to E4'. The deferral's target — the engagement of the dormant decoder with the function layer — was itself overtaken by the joint estimator without any ruling that names it (`ARCHITECTURE.md`'s Layer-4 plan correction, 2026-08-02; `OPEN_ITEMS.md` OI-259 re-dispositions the engage-era agenda), so what becomes of this deferral is open.
+

@@ -709,7 +709,7 @@ DC-00707,1,restates,BR-3,D-025;D-032;D-097;D-099;D-105;D-114;D-115;D-119;D-180;D
 DC-00708,1,restates,BR-3,D-025;D-032;D-099;D-114;D-115;D-119,governing,paragraph,STATUS_ARCHIVE.md
 DC-00709,1,restates,BR-3,D-025;D-032;D-099;D-114;D-115;D-119,governing,paragraph,STATUS_ARCHIVE.md
 DC-00710,1,restates,BR-3,D-099;D-115;D-119;D-380,governing,paragraph,STATUS_ARCHIVE.md
-DC-00711,1,restates,BR-3,D-063;D-115;D-119,governing,paragraph,STATUS_ARCHIVE.md
+DC-00711,1,restates,BR-3,D-063;D-115;D-119;D-405,governing,paragraph,STATUS_ARCHIVE.md
 DC-00712,1,restates,BR-3,D-099;D-119,governing,paragraph,STATUS_ARCHIVE.md
 DC-00713,1,restates,BR-3,D-099;D-115;D-119;D-191,governing,paragraph,STATUS_ARCHIVE.md
 DC-00714,1,restates,BR-3,D-032;D-094;D-099;D-105;D-114;D-115;D-119,governing,paragraph,STATUS_ARCHIVE.md
@@ -1267,7 +1267,7 @@ DC-01265,1,not-a-decision,BR-5,,governing,paragraph,cowork_handoff_archive.md
 DC-01266,1,restates,BR-3,D-025;D-032;D-099;D-114;D-115;D-119,governing,bullet,cowork_handoff_archive.md
 DC-01267,1,restates,BR-3,D-099;D-115;D-119,governing,paragraph,cowork_handoff_archive.md
 DC-01268,1,unresolved,BR-8,,governing,bullet,cowork_handoff_archive.md
-DC-01269,1,restates,BR-3,D-055;D-063;D-078;D-115;D-119,governing,paragraph,cowork_handoff_archive.md
+DC-01269,1,restates,BR-3,D-055;D-063;D-078;D-115;D-119;D-405,governing,paragraph,cowork_handoff_archive.md
 DC-01270,1,restates,BR-3,D-032;D-094;D-097;D-099;D-105;D-115;D-119;D-183,governing,paragraph,cowork_handoff_archive.md
 DC-01271,1,restates,BR-3,D-099;D-115;D-119,governing,paragraph,cowork_handoff_archive.md
 DC-01272,1,restates,BR-3,D-094;D-099;D-105;D-119,governing,paragraph,cowork_handoff_archive.md
@@ -3435,10 +3435,10 @@ DC-03433,1,unresolved,BR-8,,cowork_docs,paragraph,cowork_structural_integrity_au
 DC-03434,1,not-a-decision,BR-7,,cowork_docs,table_row,cowork_structural_integrity_audit.md
 DC-03435,1,restates,BR-3,D-032,cowork_docs,table_row,cowork_structural_integrity_audit.md
 DC-03436,1,restates,BR-3,D-055;D-078,cowork_docs,bullet,cowork_structural_integrity_audit.md
-DC-03437,1,unresolved,BR-8,,cowork_docs,bullet,cowork_structural_integrity_audit.md
+DC-03437,1,no-spec-home,BR-4,D-405,cowork_docs,bullet,cowork_structural_integrity_audit.md
 DC-03438,1,unresolved,BR-8,,cowork_docs,bullet,cowork_structural_integrity_audit.md
-DC-03439,1,restates,BR-3,D-119,cowork_docs,bullet,cowork_structural_integrity_audit.md
-DC-03440,1,restates,BR-3,D-063,cowork_docs,bullet,cowork_structural_integrity_audit.md
+DC-03439,1,restates,BR-3,D-119;D-403,cowork_docs,bullet,cowork_structural_integrity_audit.md
+DC-03440,1,restates,BR-3,D-063;D-404,cowork_docs,bullet,cowork_structural_integrity_audit.md
 DC-03441,1,unresolved,BR-8,,cowork_docs,paragraph,cowork_structural_integrity_audit.md
 DC-03442,1,unresolved,BR-8,,cowork_docs,bullet,cowork_structural_integrity_audit.md
 DC-03443,1,restates,BR-3,D-095;D-186,cowork_docs,paragraph,cowork_structural_integrity_audit.md
@@ -3447,7 +3447,7 @@ DC-03445,1,restates,BR-3,D-032,cowork_docs,bullet,cowork_structural_integrity_au
 DC-03446,1,not-a-decision,BR-9,,cowork_docs,paragraph,cowork_structural_integrity_audit.md
 DC-03447,1,unresolved,BR-8,,cowork_docs,bullet,cowork_structural_integrity_audit.md
 DC-03448,1,unresolved,BR-8,,cowork_docs,bullet,cowork_structural_integrity_audit.md
-DC-03449,1,unresolved,BR-8,,cowork_docs,paragraph,cowork_structural_integrity_audit.md
+DC-03449,1,no-spec-home,BR-4,D-401,cowork_docs,paragraph,cowork_structural_integrity_audit.md
 DC-03450,1,not-a-decision,BR-2,,cowork_docs,heading,cowork_structural_integrity_audit.md
 DC-03451,1,unresolved,BR-8,,cowork_docs,bullet,cowork_structural_integrity_audit.md
 DC-03452,1,unresolved,BR-8,,cowork_docs,bullet,cowork_structural_integrity_audit.md
@@ -5650,7 +5650,7 @@ DC-05648,1,unresolved,BR-8,,cc_reports,paragraph,cc_engage_pre_l5_refactor_repor
 DC-05649,1,restates,BR-3,D-063,cc_reports,paragraph,cc_engage_pre_l5_refactor_report.md
 DC-05650,1,not-a-decision,BR-6,,cc_reports,bullet,cc_engage_pre_l5_refactor_report.md
 DC-05651,1,restates,BR-3,D-119;D-176,cc_reports,bullet,cc_engage_pre_l5_refactor_report.md
-DC-05652,1,not-a-decision,BR-6,,cc_reports,paragraph,cc_engage_pre_l5_refactor_report.md
+DC-05652,1,no-spec-home,BR-4,D-405,cc_reports,paragraph,cc_engage_pre_l5_refactor_report.md
 DC-05653,1,restates,BR-3,D-099;D-119;D-179,cc_reports,blockquote,cc_engage_stage3_joint_measure_report.md
 DC-05654,1,not-a-decision,BR-6,,cc_reports,bullet,cc_engage_stage3_joint_measure_report.md
 DC-05655,1,not-a-decision,BR-6,,cc_reports,paragraph,cc_engage_stage3_joint_measure_report.md

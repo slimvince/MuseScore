@@ -979,5 +979,46 @@
 
 **Home.** `cowork_layer5_engagement_design.md:445-452`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The unification it defers to is tracked as [[OI-11]]. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The unification it defers to is tracked as [[OI-11]]. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ FLAG (CC, 2026-08-02, the phase-1i full read of `cowork_structural_integrity_audit.md`): the SECOND alternative this entry offers — 'through the one unified primitive' — was measured at the code NOT to exist. The four different-root scans are not one decision (divergent predicate: root-only at three sites, root+quality at the fourth; divergent element type and result-use), and the promote-to-front primitive is not the vehicle; the unification was reported as a STOP and declared for an adjudication the record does not show being made (**D-403**; rowed [[OI-278]]). The FIRST alternative — reading the margin off the carry's own ranking — is untouched. Recorded as a flag, not as a status change: the entry is not withdrawn and nothing is inferred about what replaces the second alternative.
+
+### D-402 — The inversion-append is a pure cap artifact that dissolves when the cap is removed; the below-threshold bass promotion is a targeted promotion that stays
+
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+
+> **One honest discrimination (a true cap-artifact vs a legitimate targeted promotion):** Iter 91 (#6) uses
+> `kPromoteAppendOnly` with `stopBelowThreshold=false` — it can pull a **below-threshold** bass-rooted target.
+> That reach is **not** dissolved by uncapping-at-threshold; it is a genuinely different, deliberate targeted
+> promotion (it wants a specific structural target regardless of score). So: the **inversion-append (#4) is a
+> pure cap-artifact that dissolves**; Iter 91's below-threshold pull is a targeted promotion that stays. This
+> is exactly the VIOLATION-vs-legitimate line the audit must draw.
+
+**In plain words.** The legacy chord path keeps at most three readings per stretch, and a patch was added to reach past that limit and re-insert the best reading with a DIFFERENT root, which the limit was routinely crowding out. Removing the limit makes that patch dead code by construction, because an uncapped build already pushes every above-threshold reading in score order — so limit and patch cancel. One thing does NOT cancel with them: the separate promotion that can pull a bass-rooted reading scoring BELOW the threshold, which wants a specific structural target regardless of score and therefore survives the uncapping as a deliberate rule in its own right.
+
+**Why.** Derived from the code and then measured, not assumed: the append only ever pulls a candidate already at or above the threshold, so an uncapped threshold-only build is a strict superset of what the append can add (§1.2, cited to `harmonicfunctionlayer.cpp:521-547`); and the workaround is load-bearing rather than an edge case — it fires on 36.2 % of Baroque and 36.1 % of Default regions (§1.5, measured over all three per-preset corpora, and declared a floor because the untruncated candidate set is not serialized).
+
+**Status.** LIVE · decided 2026-07-07 · ratifier not stated
+
+**Home.** `cowork_structural_integrity_audit.md:87-92`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1i continuation wave, 2026-08-02, reading `cowork_structural_integrity_audit.md` IN FULL. The document's banner records `Status: read-only grounded catalogue (CC, 2026-07-07; Engage arc #6)` — an authored catalogue, not a ratified contract. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1i ratification queue. The same section states the consequence that keeps this from being a free edit: removing the cap changes the SERIALIZED carry, which is a behavior change on `.ours.json` bytes and therefore a ratified adoption under the robust-stop explained-diff and re-baseline discipline (`CLAUDE.md` gate block (A)). Nothing was changed.
+
+### D-403 — STOP, not forced: the four best-different-root scans are NOT one decision at code, so the one-decision-four-sites premise over-counts
+
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+
+> - **FQ-1 — ⛔ STOP-and-reported (not forced).** At code the four scans are NOT one decision: divergent
+>   "differs" predicate (rootPc-only #1/#2/#3 vs `sameChordSymbol` = root+quality #4), element type, and
+>   result-use; no byte-identical single primitive exists and `promoteToWinner` (promote-to-front of a
+>   *specific* target) is not the vehicle. The "one decision, four sites" premise over-counts at code
+>   granularity — declared for Cowork adjudication (report §5).
+
+**In plain words.** The audit had catalogued the search for the strongest reading with a different root as one decision implemented in four places, and queued unifying it as the first portable win. Executing that found the premise false at the code: the four sites do not even ask the same question — three compare roots alone while the fourth compares root AND quality — and they differ in what they operate on and what they do with the answer, so no single primitive reproduces all four unchanged. The unification was reported as a stop rather than forced through, and left for adjudication.
+
+**Why.** Measured at the code during the attempt, and named site by site: the differing predicate (root-only at three sites versus same-chord-symbol at the fourth), the differing element type, and the differing use of the result; and the vehicle proposed for the unification, the promote-to-front primitive, does something else (it promotes a SPECIFIC target to the front) so it cannot carry the scan.
+
+**Status.** LIVE · decided 2026-07-07 · ratifier not stated
+
+**Home.** `cowork_structural_integrity_audit.md:265-269`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1i continuation wave, 2026-08-02, reading `cowork_structural_integrity_audit.md` IN FULL. The document's banner records `Status: read-only grounded catalogue (CC, 2026-07-07; Engage arc #6)` — an authored catalogue, not a ratified contract. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1i ratification queue. The record says this was 'declared for Cowork adjudication (report §5)' and the adjudication is not recorded anywhere this pass read — rowed at [[OI-278]]. It bears on **D-386**, which permits the pedal reader to take its margin either from the carry's own ranking or 'through the one unified primitive': the first alternative stands, the second was measured not to exist at code, and D-386's own record does not say so.
 

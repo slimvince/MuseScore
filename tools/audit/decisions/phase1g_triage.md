@@ -15,7 +15,7 @@
 | Design documents owning at least one unresolved cluster | **143** |
 | — read IN FULL by the phase-1d and phase-1f waves (distinct) | 22 |
 | — **unread, and classified below** | **121** |
-| Unresolved cluster attributions held by the unread set | 994 |
+| Unresolved cluster attributions held by the unread set | 992 |
 
 ### ★ A correction of record: the unread population is 121, not 120
 
@@ -38,14 +38,14 @@ The commit that produced the 23/120 figures (`40739f38ba`) was itself a self-che
 
 | Class | Documents | Unresolved clusters | Proposed disposition |
 |---|---|---|---|
-| LIVE-SPEC | **80** | 826 | READ IN FULL |
+| LIVE-SPEC | **80** | 824 | READ IN FULL |
 | REPORT/NARRATIVE | **39** | 164 | EXCLUDE |
 | SUPERSEDED-ESTABLISHED | **1** | 2 | EXCLUDE |
 | EVIDENCE-FROZEN | **1** | 2 | EXCLUDE |
-| **total** | **121** | **994** | |
+| **total** | **121** | **992** | |
 
 **Proposed EXCLUDE: 41 documents / 168 clusters / 0.54 MB (≈187k tokens).**
-**Remaining full-read set: 80 documents / 826 clusters / 1.80 MB (≈621k tokens)** — of which the five this session reads in full are 0.31 MB (≈108k tokens), leaving 1.49 MB (≈513k tokens) across 75 documents.
+**Remaining full-read set: 80 documents / 824 clusters / 1.80 MB (≈621k tokens)** — of which the five this session reads in full are 0.31 MB (≈108k tokens), leaving 1.49 MB (≈513k tokens) across 75 documents.
 
 *(Token estimates use the 3.04 characters-per-token ratio phase 1d measured on this repository's own prose against the Read tool's accounting, and phase 1f re-used unchanged.)*
 
@@ -60,11 +60,11 @@ Ordered by unresolved cluster count, the priority map the manifest gives. “Ver
 | 3 | `docs/scoring_model.md` | 35 | LIVE-SPEC | The authoritative scoring reference, a mandatory read for scoring sessions (`CLAUDE.md`) and the home of D-214…D-224. READ IN FULL this session. | READ IN FULL |
 | 4 | `docs/decoder_design.md` | 33 | LIVE-SPEC | The decoder design; the dispatch's own full-read set. READ IN FULL this session. | READ IN FULL |
 | 5 | `docs/redesign_plan.md` | 23 | LIVE-SPEC | The layered-evidence architecture plan; the dispatch's own full-read set. READ IN FULL this session. | READ IN FULL |
-| 6 | `cowork_structural_integrity_audit.md` | 20 | LIVE-SPEC | A grounded catalogue that QUEUES named refactors as later user-ratified events; the queue is live. | READ IN FULL |
-| 7 | `cowork_layer3_keymode_design.md` | 19 | LIVE-SPEC | Banner: SIGNED (user, 2026-06-22), WIRED — AS-BUILT Step 1, with named deferred follow-ups. | READ IN FULL |
-| 8 | `cowork_progression_schema_dictionary.md` | 19 | LIVE-SPEC | A component specification with a §0 terms table; the Harmonic Vocabulary's own home (D-133). | READ IN FULL |
-| 9 | `cowork_joint_key_chord_design.md` | 18 | LIVE-SPEC | Shelved by ratification (D-278) but retained as the architecture record; the design content itself — where the step lives, how key and chord couple — is registered nowhere. | READ IN FULL |
-| 10 | `cowork_layer5_engagement_design.md` | 18 | LIVE-SPEC | A design pass (CC, 2026-07-07) whose downstream owner-decisions are enumerated for follow-on passes; the engage-era agenda's fate is itself unrecorded ([[OI-259]]). | READ IN FULL |
+| 6 | `cowork_layer3_keymode_design.md` | 19 | LIVE-SPEC | Banner: SIGNED (user, 2026-06-22), WIRED — AS-BUILT Step 1, with named deferred follow-ups. | READ IN FULL |
+| 7 | `cowork_progression_schema_dictionary.md` | 19 | LIVE-SPEC | A component specification with a §0 terms table; the Harmonic Vocabulary's own home (D-133). | READ IN FULL |
+| 8 | `cowork_joint_key_chord_design.md` | 18 | LIVE-SPEC | Shelved by ratification (D-278) but retained as the architecture record; the design content itself — where the step lives, how key and chord couple — is registered nowhere. | READ IN FULL |
+| 9 | `cowork_layer5_engagement_design.md` | 18 | LIVE-SPEC | A design pass (CC, 2026-07-07) whose downstream owner-decisions are enumerated for follow-on passes; the engage-era agenda's fate is itself unrecorded ([[OI-259]]). | READ IN FULL |
+| 10 | `cowork_structural_integrity_audit.md` | 18 | LIVE-SPEC | A grounded catalogue that QUEUES named refactors as later user-ratified events; the queue is live. | READ IN FULL |
 | 11 | `cowork_voiceleading_axis_design.md` | 18 | LIVE-SPEC | Banner: AS-BUILT + SIGNED (user, 2026-07-03), asks A1–A8 ratified. | READ IN FULL |
 | 12 | `docs/implementation_roadmap.md` | 18 | LIVE-SPEC | The single tracker for every review conclusion, with two DO-NOT-FORGET structural refactors under a user mandate. | READ IN FULL |
 | 13 | `cowork_notation_adoption_increment.md` | 17 | LIVE-SPEC | Banner: ★ USER-RATIFIED 2026-07-26, five recommendations adopted. | READ IN FULL |

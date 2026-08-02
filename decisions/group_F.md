@@ -606,3 +606,21 @@
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The record states the amendment (A-3) was ratified 2026-07-02 but does not name the ratifier at this home; the amendment set's own document banner is quoted in the phase-1g triage as `AMENDMENTS A-1…A-10 RATIFIED (user, 2026-07-02)`, and that document is in the phase-1h full-read set. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
+### D-405 — The full ranked key resolve retained as a segmentation seed is KEPT — adjudicated load-bearing, not dead scoring work
+
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+
+> - **FQ-7 — ✅ RESOLVED `56b06462db`.** S8 constants sourced from the shared symbols. **S9 adjudicated
+>   KEPT (load-bearing, NOT dead):** the `resolveKeyAndModeRanked@585` feeds `greedyExpandSegmentation@851`
+>   + `findTemporalContext@900` (the grid); dropping it would move the grid. Report-only, no change.
+
+**In plain words.** The legacy region path runs the heavy ranked key resolution and appears to use only its top answer as a starting point for cutting the music into regions, which looked like retained work with no purpose. It was checked and kept: its result feeds the region-grid expansion and the neighbour-chord context, so removing it would move the grid — a behavior change, not a cleanup.
+
+**Why.** Adjudicated at the code during the pre-Layer-5 refactor stage, with the two consumers named (the greedy segmentation expansion and the temporal-context walk) and the consequence stated: dropping it would move the grid. Recorded as report-only, with no change made.
+
+**Status.** LIVE · decided 2026-07-07 · ratifier not stated
+
+**Home.** `cowork_structural_integrity_audit.md:260-262`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1i continuation wave, 2026-08-02, reading `cowork_structural_integrity_audit.md` IN FULL. The document's banner records `Status: read-only grounded catalogue (CC, 2026-07-07; Engage arc #6)` — an authored catalogue, not a ratified contract. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1i ratification queue. Recorded in the Stage-1 build-status section beside the resolved constant-sourcing item; the byte-identity of that stage is stated in the same section (0-diff `.ours.json` 352x3, robust stop PASS, the batch case-identity sets 52/24/52).
+
