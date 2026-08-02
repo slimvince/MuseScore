@@ -109,26 +109,26 @@ project's own and are defined here because they are used before any entry explai
 
 ## What is in this register, counted
 
-**316 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
+**342 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
 
 | | Count |
 |---|---|
-| Decisions recorded | **316** |
-| — of which live | 263 |
+| Decisions recorded | **342** |
+| — of which live | 288 |
 | — of which superseded in fact | 5 |
 | — of which superseded by | 9 |
-| — of which deferred | 38 |
+| — of which deferred | 39 |
 | — of which shelved with evidence | 1 |
-| Decisions whose date is not stated in the record | 195 |
-| Decisions whose ratifier is not stated in the record | 194 |
-| Decisions recorded outside the specification that owns them | 125 |
-| — of which a documentation gap | 28 |
+| Decisions whose date is not stated in the record | 198 |
+| Decisions whose ratifier is not stated in the record | 207 |
+| Decisions recorded outside the specification that owns them | 151 |
+| — of which a documentation gap | 54 |
 | — of which recorded only on a tracking surface, with no home at all | 27 |
 | — of which a project-wide convention, correctly homed | 34 |
 | — of which a decision about the process, correctly homed | 36 |
 | Decisions whose defense the record does not state | 45 |
 
-That last row is the one meant to fall. **271 of 316** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
+That last row is the one meant to fall. **297 of 342** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
 
 Alongside the register, every one of the harvested statements about decisions in this repository has been given a recorded disposition, so that none was silently passed over:
 
@@ -138,10 +138,10 @@ Alongside the register, every one of the harvested statements about decisions in
 | Groups of near-identical statements ("clusters") | **14460** |
 | Clusters carrying a recorded disposition | **14460** |
 | — restates | 5511 |
-| — not-a-decision | 5564 |
+| — not-a-decision | 5562 |
 | — boilerplate | 74 |
-| — no-spec-home | 594 |
-| — unresolved | 2717 |
+| — no-spec-home | 611 |
+| — unresolved | 2702 |
 
 The full disposition table, and the numbered rule behind each one, are in `tools/audit/decisions/cluster_dispositions.csv` and `tools/audit/decisions/disposition_manifest.json`.
 
@@ -248,6 +248,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-294 | The only ground truth is the human annotation; the algorithmic analysis is a filter, and no self-annotation ever enters a measurement | LIVE | `cowork_handoff_archive.md` ⚠tracking-surface-only |
 | D-297 | Correction of record: never computing a possibility is not information loss; only discarding a computed one is | LIVE | `cowork_handoff_archive.md` ⚠tracking-surface-only |
 | D-313 | A confidence map is monotone or it is not fitted — a non-monotone curve is an upstream finding, not a mapping target | LIVE | `cowork_stage5_fitter_design.md` ⚠gap |
+| D-339 | A confident earlier decision can be overturned by decisive later evidence, through ONE confidence-weighted forward-recompute mechanism — architecture-wide | LIVE | `cowork_layer5_function_design.md` ⚠gap |
 
 ## D. Layer 1 — the note model — [full entries](decisions/group_D.md)
 
@@ -290,6 +291,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-287 | Key-as-distribution is SHELVED - its motivating case was already fixed and no live target was found | LIVE | `cowork_handoff_archive.md` ⚠tracking-surface-only |
 | D-290 | The key-agnostic local cadence approach is FALSIFIED at its precision ceiling | LIVE | `cowork_handoff_archive.md` ⚠tracking-surface-only |
 | D-306 | The key layer's backward re-reading stays switched off in the shipped configuration | LIVE | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
+| D-323 | Asking whether a pitch belongs to the key is a question about the collection, never about the tonic — the tonic-anchored form must not return | LIVE | `docs/scoring_model.md` ⚠gap |
 
 ## G. Layer 4 — chord identity — [full entries](decisions/group_G.md)
 
@@ -327,6 +329,23 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-303 | Non-chord-tone detection is deferred, and if built it must be chord identification that knows about non-chord tones, never stripping after the fact | DEFERRED | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
 | D-305 | The ban on reading written harmony as analyzer input is decided by what an annotation says, not by how it is stored | LIVE | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
 | D-312 | The carried alternative readings are inside the byte-identity acceptance contract — same winner with different alternatives is a behavior change | LIVE | `cowork_stage5_fitter_design.md` ⚠gap |
+| D-317 | The backward-walk boundary change is a dead end — do not retry it | LIVE | `docs/redesign_plan.md` ⚠gap |
+| D-318 | A short-region external merger is a dead end — do not retry it | LIVE | `docs/redesign_plan.md` ⚠gap |
+| D-319 | Re-analysing the merged aggregate is a dead end — no tone-aggregation approach fixes the arpeggio root failure | LIVE | `docs/redesign_plan.md` ⚠gap |
+| D-320 | The absent-root guard is REVERTED and must not be retried — 'absent root means wrong reading' is false corpus-wide | LIVE | `docs/redesign_plan.md` ⚠gap |
+| D-321 | Winner selection compares candidate scores exactly, with no epsilon anywhere in the ranking | LIVE | `docs/scoring_model.md` ⚠gap |
+| D-322 | Any change to optimization flags or to the order of the scoring arithmetic requires a full corpus A/B on both presets | LIVE | `docs/scoring_model.md` ⚠gap |
+| D-324 | Retirement of a post-scoring rule is global — a rule still doing work on any one preset is retained for all | LIVE | `docs/scoring_model.md` ⚠gap |
+| D-325 | A correction rule that changes a committed chord's identity is retired or folded in BEFORE the search is widened past it | LIVE | `docs/decoder_design.md` ⚠gap |
+| D-326 | The chord-path search emits the whole path with every stretch's alternatives and margins, not the committed reading alone | LIVE | `docs/decoder_design.md` ⚠gap |
+| D-327 | The root-continuity guard reads the reconstructed inversion credit, superseding the designed sounding-third test | LIVE | `docs/decoder_design.md` ⚠gap |
+| D-328 | A wider search cannot fix the arpeggio root failure — the wrong reading IS the global optimum, so only re-weighting or joint segmentation can | LIVE | `docs/decoder_design.md` ⚠gap |
+| D-329 | Completeness of the candidate list is the priority — a chord never listed can never be chosen | LIVE | `cowork_layer4_chordsymbol_design.md` ⚠gap |
+| D-330 | Never a pooled recompute — the chord is never re-derived from several stretches' notes thrown together | LIVE | `cowork_layer4_chordsymbol_design.md` ⚠gap |
+| D-331 | Every chord decision carries its ranked alternatives and its confidence — committed, inherited, and abstained alike, never pruned | LIVE | `cowork_layer4_chordsymbol_design.md` ⚠gap |
+| D-332 | A carried alternative's added notes are marked UNKNOWN rather than asserted absent — never synthesized | LIVE | `cowork_layer4_chordsymbol_design.md` ⚠gap |
+| D-333 | The membership tie-break's direction is an idiom-calibrated number, never a branch on style — the three-tier structure is fixed | LIVE | `cowork_layer4_chordsymbol_design.md` ⚠gap |
+| D-334 | The bare-fifth chord type stays in the catalogue structurally; whether it wins is an idiom-calibrated number | LIVE | `cowork_layer4_chordsymbol_design.md` ⚠gap |
 
 ## H. Layer 5 and Layer 6 — function, cadence, grouping — [full entries](decisions/group_H.md)
 
@@ -334,13 +353,20 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 |---|---|---|---|
 | D-079 | The function layer annotates and resolves; it never rewrites the committed chord | LIVE · derivation not recorded | `ARCHITECTURE.md` |
 | D-080 | Carried abstentions are resolved by selecting among the carried readings, never re-derived | LIVE · derivation not recorded | `ARCHITECTURE.md` |
-| D-081 | The cadence detector is key-agnostic | LIVE · derivation not recorded | `ARCHITECTURE.md` |
+| D-081 | The cadence detector is key-agnostic | LIVE | `ARCHITECTURE.md` |
 | D-082 | The grouping layer is additive, read-only, with no feedback | LIVE · derivation not recorded | `ARCHITECTURE.md` |
 | D-083 | Hierarchy, periods and prolongation are out of the validatable core | LIVE · derivation not recorded | `ARCHITECTURE.md` |
 | D-084 | The progression-schema recognizer is a consumer of the function layer, not a new layer | DEFERRED · derivation not recorded | `ARCHITECTURE.md` |
 | D-085 | The voice-leading axis is a separate axis with its own layers | LIVE · derivation not recorded | `ARCHITECTURE.md` |
 | D-248 | Tonicization labels are not implemented and are deferred | DEFERRED | `ARCHITECTURE.md` |
 | D-291 | The tonicization labeller is NOT wired, and the metric is NOT changed to credit it - both would hide a real key error | LIVE | `cowork_handoff_archive.md` ⚠tracking-surface-only |
+| D-335 | The function layer outputs the Roman numeral; the tonic/subdominant/dominant summary is a derived read-out, never a stored output | LIVE | `cowork_layer5_function_design.md` ⚠gap |
+| D-336 | Cadence detection is key-agnostic and votes for the key rather than reading one | LIVE | `cowork_layer5_function_design.md` ⚠gap |
+| D-337 | A lean toward another degree is a tonicization by default; a key change needs a confirming cadence AND persistence, expressed as a change-cost | LIVE | `cowork_layer5_function_design.md` ⚠gap |
+| D-338 | The function layer selects among the chord layer's carried readings and never re-derives a chord from the notes | LIVE | `cowork_layer5_function_design.md` ⚠gap |
+| D-340 | The reading the function layer emits IS the selected source's committed identity, carried whole — never rebuilt field by field | LIVE | `cowork_layer5_function_design.md` ⚠gap |
+| D-341 | The licensed root-motion set is completed by theory — the ascending fifth, the descending second and the diatonic diminished fifth are added | LIVE | `cowork_layer5_function_design.md` ⚠gap |
+| D-342 | Putting the function layer into production is DEFERRED INDEFINITELY — the posture is a dormant build with ground-truth validation | DEFERRED · derivation not recorded | `cowork_layer5_function_design.md` ⚠gap |
 
 ## I. Module boundaries and code structure — [full entries](decisions/group_I.md)
 
@@ -576,8 +602,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 ## Provenance of this register
 
 - Adjudication: the OI-207 decision-conformance adjudication, 2026-08-01, at commit `58dea6702ac8aa9d5ef8b89244b94d587a75f7a5`.
-- Coverage figures above regenerated at commit `3a186549bbd5c30ffda36cd0f21668dcb72e0d07`.
-- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `66191dac61df9153…`).
+- Coverage figures above regenerated at commit `6e9a8aeaaffdfd5fea873bcc383080c0a7b5db77`.
+- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `90af03a43ea3931f…`).
 - Harvest: `tools/audit/decisions/decision_candidates.json` (sha256 `51850440b315e6e9…`).
 - Clustering: `tools/audit/decisions/decision_clusters.json` (sha256 `0615b1e61bf10332…`).
 - Shape: `open_items/OI-208.md` (user-ratified 2026-07-28).

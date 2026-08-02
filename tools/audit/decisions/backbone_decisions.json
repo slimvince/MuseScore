@@ -1898,14 +1898,14 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "ARCHITECTURE.md:1397. open_items/OI-166 records that the built detector is key-agnostic but CHORD-derived, not the bass-driven pre-scan specified",
+      "status_source": "ARCHITECTURE.md:1397. open_items/OI-166 records that the built detector is key-agnostic but CHORD-derived, not the bass-driven pre-scan specified. Defense filled 2026-08-02 by the phase-1g triage wave from `cowork_layer5_function_design.md` §9-D2/§5.2 — the act the phase-1f note named and left for the wave that reads that document; the register entry for the same decision at its design-document home is D-336",
       "patterns": [
         "key-agnostic",
         "cadence detector",
         "votes for the key",
         "functioncadence"
       ],
-      "rationale": null
+      "rationale": "Both rejected alternatives are named with their defect at the layer's own design document (`cowork_layer5_function_design.md` §9-D2, the same decision entered as **D-336**): the earlier key-dependent detector is circular and conflates the perfect with the imperfect cadence, and a single-chord interval test false-positives on tonic-to-subdominant and tonic-to-dominant because it tests whether the leading tone is *present* rather than whether it *resolves*. The same document records the approach's ratified limit (§5.2): a plain V-to-I and a plain I-to-IV are exact transpositions, so the resolution event alone cannot separate them — which is why the phrase gate, the dominant seventh, and the key layer's aggregation of the tonic votes carry the discrimination rather than the detector."
     },
     {
       "id": "D-082",
@@ -6781,6 +6781,527 @@
       "nonspec_kind": "process",
       "status_source": "User ruling 2026-08-02 (OI-273 option (i)); the CLAUDE.md local-patches subsection added in the same commit (the register’s same-commit rule).",
       "patterns": []
+    },
+    {
+      "id": "D-317",
+      "group": "G",
+      "title": "The backward-walk boundary change is a dead end — do not retry it",
+      "verbatim": "**Falsified.** The boundary-touching predecessors are OTHER chord tones (C, Eb for\nbwv102.7; G, B for bwv261), not the root. The root attacks later. Changing the\ncondition to `< startTickInt` would add C/Eb or G/B to the failing slice but would\nnot add Ab or F#. Furthermore, the backward walk exists in 12 call sites (including\n5 notation-display paths); the parent-scope calls correctly use `<= startTickInt` to\nexclude the previous chord's terminal notes. Do not retry this fix.",
+      "plain": "Letting the analysis pick up notes that stop exactly where a stretch begins was tried as a way to recover a missing chord root. It does not recover the root, and the line of work is closed.",
+      "rationale": "Measured and named in the record: the notes that touch the boundary are other chord tones, not the root, which attacks a quarter-note later; and the same walk is used at twelve call sites, five of them notation display, where excluding the previous chord's terminal notes is correct.",
+      "status": "live",
+      "date": "2026-06-09",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "docs/redesign_plan.md:372-377",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "patterns": [
+        "Do not retry this fix"
+      ]
+    },
+    {
+      "id": "D-318",
+      "group": "G",
+      "title": "A short-region external merger is a dead end — do not retry it",
+      "verbatim": "Do not retry a short-region external merger. The tones are already aggregated.",
+      "plain": "Adding a pass that merges very short neighbouring stretches was tried and closed: by the time such a pass could run, the stretches it was meant to merge have already been merged by an earlier step.",
+      "rationale": "Measured: the spot-check found zero qualifying runs across all thirteen failing Baroque scores, both target cases included — the trigger was dead code, because the existing same-root inline merge inside the first pass already combines the arpeggio micro-stretches (`docs/redesign_plan.md`, the short-region-merger dead-end block, `cc_phase_d_merger_report.md`).",
+      "status": "live",
+      "date": "2026-06-09",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "docs/redesign_plan.md:394",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "patterns": [
+        "Do not retry a short-region external merger"
+      ]
+    },
+    {
+      "id": "D-319",
+      "group": "G",
+      "title": "Re-analysing the merged aggregate is a dead end — no tone-aggregation approach fixes the arpeggio root failure",
+      "verbatim": "Do not retry any Phase D tone-aggregation approach for Δ=+7a. The tones are already\ncorrect; the predecessor signal is wrong.",
+      "plain": "Pooling an arpeggio's notes and re-reading the chord from the pool was implemented, measured, and reverted: pooling makes the answer worse, because the wrong note sounds for longer than the right one. The evidence was never the problem.",
+      "rationale": "Measured with the full implementation in place: on the two target scores the wrong root still wins the aggregate by 0.15 and 0.225, because the aggregate is duration-weighted and the wrong note carries 720 ticks against the root's 480; the run regressed both presets and was reverted (`cc_phase_d_merger_report.md` Part B+). The vertical scorer already prefers the correct root in the stretch where that root actually sounds.",
+      "status": "live",
+      "date": "2026-06-09",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "docs/redesign_plan.md:423-424",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "patterns": [
+        "Do not retry any Phase D tone-aggregation approach"
+      ]
+    },
+    {
+      "id": "D-320",
+      "group": "G",
+      "title": "The absent-root guard is REVERTED and must not be retried — 'absent root means wrong reading' is false corpus-wide",
+      "verbatim": "- **Do not retry the absent-root guard.** It was implemented 2026-06-08 and caused a net\n  regression: 2 fixed (bwv301, bwv269), 4 broken (bwv227.1, bwv342 are DCML-correct absent-root\n  readings; 2 further cascade regressions from `previousRootPc` propagation). The cascade problem\n  is structural: any guard that changes a committed root changes `previousRootPc` for all\n  downstream regions, triggering `rootContinuityBonus` changes across 6 snapshot goldens. The\n  premise \"absent root ⇒ wrong reading\" is false corpus-wide. **The guard was reverted entirely.**\n  The correct next coding task is **Step 1 (free wiring)** from the redesign sequence above.",
+      "plain": "A rule that rejected any chord whose own root is not sounding was built, measured, and removed entirely. It fixed two cases and broke four, and the premise behind it is false across the corpus: sometimes the published human analysis names a chord whose root is not sounding.",
+      "rationale": "Measured: two fixed against four broken, two of the four being readings the ground truth itself makes with an absent root, and two further cascade regressions from propagating the changed root forward. The cascade is structural — any guard that changes a committed root changes the predecessor every later stretch reads.",
+      "status": "live",
+      "date": "2026-06-08",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "docs/redesign_plan.md:555-561",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "patterns": [
+        "Do not retry the absent-root guard"
+      ]
+    },
+    {
+      "id": "D-321",
+      "group": "G",
+      "title": "Winner selection compares candidate scores exactly, with no epsilon anywhere in the ranking",
+      "verbatim": "Winner selection compares candidate scores with **exact `double` comparisons — there is no\nepsilon anywhere in the ranking.** The final per-bass comparator (`harmonicfunctionlayer.cpp`,\n`applyHarmonicFunction`) is, in order:\n\n1. `a.score != b.score` → higher `score` wins (exact inequality on the raw `double`);\n2. else lower `tiePriority` wins (`tiePriority` is the template index — see §2 ordering);\n3. else lower `rootPc` wins.\n\nThis is fully deterministic **given identical floating-point evaluation**: the same inputs\non the same build always produce the same winner. The `tiePriority`-then-`rootPc` keys\nresolve genuine exact score ties (identical PC sets across enharmonic templates, e.g.\nSus4♭5 ordered before HalfDim). The omission of an epsilon is intentional — an epsilon\nwould make the order depend on a threshold that is itself uncalibrated, and would mask\nrather than resolve near-ties.",
+      "plain": "Two candidate readings are ordered by comparing their numbers exactly, with no tolerance band; exact ties are broken by a declared order. This is deliberate.",
+      "rationale": "Stated with its reason at the home: a tolerance band would make the order depend on a threshold that is itself uncalibrated, and would hide near-ties instead of resolving them. The tie-break keys resolve the genuine exact ties that arise between enharmonically identical readings.",
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "docs/scoring_model.md:201-214",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "patterns": [
+        "there is no\\s+epsilon anywhere in the ranking"
+      ]
+    },
+    {
+      "id": "D-322",
+      "group": "G",
+      "title": "Any change to optimization flags or to the order of the scoring arithmetic requires a full corpus A/B on both presets",
+      "verbatim": "These could **flip** under any change that re-associates the floating-point arithmetic:\ndifferent compiler / optimization flags (`-ffast-math`, `/fp:fast`, FMA contraction),\na different platform's libm, or a reordering of the summation in the score expression\n`(basisIndep + bassDep) × complexityFactor × augFactor + wComplete + wSeq [+ wDim] [+ step]`.\nTreat the exact evaluation order as load-bearing: **any change to optimization flags or to\nthe order of the scoring arithmetic requires a full corpus A/B on both presets** before it",
+      "plain": "Because candidate scores are compared exactly, re-ordering the arithmetic or changing compiler optimization settings can flip a reading that was decided by a hair. Such a change is not trusted to leave the output unchanged until it has been checked against the whole corpus on both tuning presets.",
+      "rationale": "Grounded in two named near-tie classes that sit within a hair of each other — the roughly 0.02-margin class and one score at 1.92 against 1.90 — either of which flips under a re-association of the score expression.",
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "docs/scoring_model.md:222-227",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "patterns": [
+        "requires a full corpus A/B on both presets"
+      ]
+    },
+    {
+      "id": "D-323",
+      "group": "F",
+      "title": "Asking whether a pitch belongs to the key is a question about the collection, never about the tonic — the tonic-anchored form must not return",
+      "verbatim": "**⚠ Do not reintroduce `keyTonicPc + scale` for a membership test.** A scale-DEGREE is tonic-relative\nby definition and legitimately uses that pair (`buildChordResult`); a membership question must not.\nNote that `buildChordResult`'s `diatonicToKey` flag and the Gate I / Gate L `invRootIsDiatonic` checks\n(`postscoringgates.cpp`) still answer a *collection* question through the *tonic* pair and so still\ncarry the OI-168 defect — they are declared, not fixed (see `OPEN_ITEMS.md` OI-170).",
+      "plain": "A test of the form 'is this note in the key' must read the key signature's own collection of notes, never a scale laid out from a tonic. Asking about a scale degree is a different question and may legitimately use the tonic.",
+      "rationale": "Measured: until 2026-07-14 both key-consuming scoring terms tested a set built from the mode's own tonic, which equals the signature's collection for nineteen of the twenty-one modes and is a semitone off for two — sharing only two of seven notes there. The correction moved exactly one committed chord and made it agree with the ground truth.",
+      "status": "live",
+      "date": "2026-07-14",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "docs/scoring_model.md:292-296",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "patterns": [
+        "Do not reintroduce `keyTonicPc \\+ scale` for a membership test"
+      ]
+    },
+    {
+      "id": "D-324",
+      "group": "G",
+      "title": "Retirement of a post-scoring rule is global — a rule still doing work on any one preset is retained for all",
+      "verbatim": "  Baroque but 18 load-bearing Jazz firing sites, §1.2). Retirement is global, so a rule live on ANY\n  carrier is retained.",
+      "plain": "A correction rule is either removed everywhere or kept everywhere. If it still changes an answer under any one of the tuning presets, it stays.",
+      "rationale": "Applied in the ratified retirement audit: four rules were retired only after each was shown to change zero winners on all three presets and to be output-identical when removed, while four others were retained precisely because they remained load-bearing on at least one preset.",
+      "status": "live",
+      "date": "2026-07-05",
+      "ratified_by": [
+        "the user"
+      ],
+      "home": "docs/scoring_model.md:827-828",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "patterns": [
+        "Retirement is global, so a rule live on ANY carrier is retained"
+      ]
+    },
+    {
+      "id": "D-325",
+      "group": "G",
+      "title": "A correction rule that changes a committed chord's identity is retired or folded in BEFORE the search is widened past it",
+      "verbatim": "  **DECIDED (Cowork ratification, 2026-06-12):** (a) — identity-mutating gates are\n  retired/folded BEFORE the beam widens past them; **3.4 leads 3.2 for those gates** (a\n  gate that mutates root/quality/bass feeds backward edges, so it cannot be cleanly\n  separated from a wider-beam decode). §12 sequencing note updated to match.",
+      "plain": "Where a later correction can change which chord was committed, that correction is removed or absorbed into the scoring before the search is allowed to consider more alternatives — otherwise the search would be reading a predecessor that a later step is still going to change.",
+      "rationale": "Stated with its reason at the home: a rule that changes a committed root, quality or bass feeds the backward-looking evidence, so it cannot be cleanly separated from a wider search. The alternative — searching against uncorrected identities with a documented re-decision — was considered and not taken.",
+      "status": "live",
+      "date": "2026-06-12",
+      "ratified_by": [
+        "Cowork"
+      ],
+      "home": "docs/decoder_design.md:675-678",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/decoder_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "patterns": [
+        "identity-mutating gates are\\s+retired/folded BEFORE the beam widens"
+      ]
+    },
+    {
+      "id": "D-326",
+      "group": "G",
+      "title": "The chord-path search emits the whole path with every stretch's alternatives and margins, not the committed reading alone",
+      "verbatim": "  **DECIDED (Cowork ratification, 2026-06-12):** emit the full path + per-node alternatives\n  + margins (evidence-forwarding) — Stage 6 functional labeling consumes the alternatives;",
+      "plain": "The search hands forward, for each stretch, the chosen reading together with the readings it beat and by how much — because the layer above chooses among them.",
+      "rationale": "Stated at the home as the evidence-forwarding principle applied to the search's own output: the function layer consumes the alternatives, and the committed reading is the first element of the path by construction.",
+      "status": "live",
+      "date": "2026-06-12",
+      "ratified_by": [
+        "Cowork"
+      ],
+      "home": "docs/decoder_design.md:694-695",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/decoder_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "patterns": [
+        "emit the full path \\+ per-node alternatives"
+      ]
+    },
+    {
+      "id": "D-327",
+      "group": "G",
+      "title": "The root-continuity guard reads the reconstructed inversion credit, superseding the designed sounding-third test",
+      "verbatim": "**Ratified form (Cowork, 2026-06-12).** Gate R reads the **pipeline-reconstructed full\nbasisDep** (`cell.basisDep + fn::inversionContextBonus(...)`, which Pass A computes for the\nscore anyway) via the 3-arg `gateRZeroesRootContinuity` overload. This is byte-identical to\nthe old proxy on every quality (it reads the same total credit), is fully intra-layer\n(closes the cross-layer dependency the redesign set out to remove — audit Finding 6), and\nhas no Dim gap. The \"direct pcWeight third\" mechanism was an approximation of the proxy's\ntrue semantics (`cappedInv == 0`); reading the true semantics is the faithful execution of\nthe redesign's *intent*. The originally designed mechanism text is retained above for the\nrecord but is not what shipped.",
+      "plain": "The guard that withholds the continue-the-same-root reward asks whether the candidate earned any inversion credit at all, rather than testing directly whether its third is sounding. The two agree everywhere except on diminished chords, where the direct test would be wrong.",
+      "rationale": "Derived, not assumed: under the guard's only firing conditions the bass-root bonus is necessarily zero and the smallest inversion bonus strictly exceeds the largest penalty, so the old test fires exactly when no inversion credit was earned. The direct sounding-third test diverges on diminished chords, whose only credit additionally requires stepwise bass — a condition no vertical test can see — producing an output-visible swing.",
+      "status": "live",
+      "date": "2026-06-12",
+      "ratified_by": [
+        "Cowork"
+      ],
+      "home": "docs/decoder_design.md:408-416",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/decoder_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "patterns": [
+        "Gate R reads the \\*\\*pipeline-reconstructed full"
+      ]
+    },
+    {
+      "id": "D-328",
+      "group": "G",
+      "title": "A wider search cannot fix the arpeggio root failure — the wrong reading IS the global optimum, so only re-weighting or joint segmentation can",
+      "verbatim": "wrong-root micro-region is the **HIGHEST-scoring node** (locally correct — the DCML root\nis absent from its tones), so the continued-root path is the **genuine global optimum** a\ndecode finds *exactly as greedy does* (greedy 5.775 > correct 5.600 on bwv102.7; gap =\nrcb 0.40 − margin 0.225). The \"rcb edge **from a low-scoring transient** does not survive\nagainst the path through the correct root\" premise is therefore **wrong** — the transient\nis not low-scoring. Re-ranking cannot fix Δ=+7a; only **re-weighting** (Stage-5 rcb",
+      "plain": "On the arpeggio failures the locally wrong reading is not a weak transient that a broader search would discard: it is the best-scoring reading, so a broader search finds exactly what the narrow one found. Fixing it needs different weights or a different segmentation, not a wider search.",
+      "rationale": "Derived from the search lattice and verified three times, including against an independent earlier derivation: on the founding score the wrong path scores 5.775 against the correct path's 5.600, the gap being the continuity reward minus the margin. The premise the earlier verdict rested on — that the transient scores low — is measured false.",
+      "status": "live",
+      "date": "2026-06-13",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "docs/decoder_design.md:558-563",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/decoder_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "patterns": [
+        "the transient\\s+is not low-scoring"
+      ]
+    },
+    {
+      "id": "D-329",
+      "group": "G",
+      "title": "Completeness of the candidate list is the priority — a chord never listed can never be chosen",
+      "verbatim": "1. **List the possible chords.** From the slice's pitches, generate **every** tertian chord the pitches could spell —\n   each basic type at each root — and score each by how well the pitches fit it. **Completeness is the priority:** a\n   chord never listed can never be chosen, and the measured dominant error is \"the right chord was never on the list,\"\n   not \"the wrong one was picked among good options.\" The fit measure is the one stated in §5 (present chord tones\n   credited; absent ones a mild shortfall; extra notes carried to the membership decision, not penalised as wrong",
+      "plain": "For each stretch the analysis first generates every chord the sounding notes could spell, and only then chooses among them. Leaving a chord off the list is the error that matters most, because nothing downstream can recover it.",
+      "rationale": "Measured: the dominant remaining error is that the right chord was never on the list, not that the wrong one was picked among good options — which is why complete listing is chosen over a strong re-ranker on a cheap partial list, and why a learned re-ranker is a later refinement over the complete list, never a substitute for it.",
+      "status": "live",
+      "date": "2026-06-24",
+      "ratified_by": [
+        "the user"
+      ],
+      "home": "cowork_layer4_chordsymbol_design.md:208-212",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "patterns": [
+        "[Cc]ompleteness is the priority",
+        "a chord never listed can never be chosen"
+      ]
+    },
+    {
+      "id": "D-330",
+      "group": "G",
+      "title": "Never a pooled recompute — the chord is never re-derived from several stretches' notes thrown together",
+      "verbatim": "- **Never a pooled recompute** (the authoritative statement of this prohibition). Membership is judged per slice\n  against the prevailing chord; the layer never pools several slices' pitches into one bag and re-derives a chord from\n  the bag — that over-reads, treating every passing note as a chord tone, and was the failure that motivated the\n  rebuild (§13). The note model stays the lossless source so membership is decided from the real notes, not a lossy\n  aggregate.",
+      "plain": "The analysis never gathers the notes of several consecutive stretches into one bag and reads a chord off the bag. Each note's membership is judged in its own stretch against the prevailing chord.",
+      "rationale": "Named as the failure that motivated the rebuild: pooling over-reads, because every passing note enters the bag and inflates the chord. Keeping the note model as the lossless source means membership is decided from the real notes rather than from a lossy aggregate.",
+      "status": "live",
+      "date": "2026-06-24",
+      "ratified_by": [
+        "the user"
+      ],
+      "home": "cowork_layer4_chordsymbol_design.md:394-398",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "patterns": [
+        "Never a pooled recompute"
+      ]
+    },
+    {
+      "id": "D-331",
+      "group": "G",
+      "title": "Every chord decision carries its ranked alternatives and its confidence — committed, inherited, and abstained alike, never pruned",
+      "verbatim": "  carries its ranked `alternatives` (together with the prevailing chord) and its `confidenceModel` on **every**\n  decision — Commit and\n  Inherit included, filled before the trichotomy and never pruned — so Layer 5 overrides **by selecting among the readings\n  this layer carried** (never by re-deriving), and the carried confidence is the quantity its override threshold scales",
+      "plain": "Whatever the chord layer decides for a stretch, it carries the readings it did not choose and how sure it was. That carry is what lets the layer above correct a decision by choosing among readings rather than working the notes out again.",
+      "rationale": "Verified at the source when the overturnable-commit principle was ratified: the carry is filled before the commit/inherit/abstain choice is made and is never pruned, which is what makes the override safe, and the carried confidence is the quantity the override threshold scales against. A lock-in test pins the carry.",
+      "status": "live",
+      "date": "2026-06-26",
+      "ratified_by": [
+        "the user"
+      ],
+      "home": "cowork_layer4_chordsymbol_design.md:576-579",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "patterns": [
+        "filled before the trichotomy and never pruned"
+      ]
+    },
+    {
+      "id": "D-332",
+      "group": "G",
+      "title": "A carried alternative's added notes are marked UNKNOWN rather than asserted absent — never synthesized",
+      "verbatim": "`extensionsKnown` = true); a carried *alternative*'s extensions are copied from the scorer's own ranked result where\nthat cell produced one, else left **honest-carry** (extensions = 0, `extensionsKnown` = **false** — the seventh is\n*unknown*, never asserted absent, and never synthesized). A Layer-5 consumer reads the extensions only when",
+      "plain": "When the chord layer carries a reading it did not choose, it states its added notes (the seventh, ninth and so on) only where they were genuinely worked out. Otherwise it says they are unknown — it never claims there are none, and never invents them.",
+      "rationale": "The information-loss principle applied to the carry: an unknown that is recorded as an absence would be read downstream as a fact. A consumer reads the added notes only when they are marked known and otherwise stays at triad level, so an honest gap is a coverage limit rather than a wrong answer.",
+      "status": "live",
+      "date": "2026-07-02",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_layer4_chordsymbol_design.md:366-368",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "patterns": [
+        "never asserted absent, and never synthesized"
+      ]
+    },
+    {
+      "id": "D-333",
+      "group": "G",
+      "title": "The membership tie-break's direction is an idiom-calibrated number, never a branch on style — the three-tier structure is fixed",
+      "verbatim": "  **idiom-calibrated** (the style-only-in-calibration contract, ARCHITECTURE.md §2.15) — record the threshold as a\n  preset/idiom constant at the precision phase (§0), never a structural branch. Source: `cowork_architecture_review_2026_07.md` §7 (F-12, A-10).",
+      "plain": "How a note that steps on one side only is judged depends on the style: in chorale writing an accented foreign note is usually a real chord note, in late-romantic writing it usually is not. That difference is carried as a number set per idiom, never as a separate code path per style; the three-tier rule itself does not vary.",
+      "rationale": "Grounded in the external architecture review's late-romantic simulation, which found that long accented appoggiaturas are the norm in that idiom, so the same weight evidence should lean the other way — and in the standing contract that style lives only in calibration.",
+      "status": "live",
+      "date": "2026-07-02",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_layer4_chordsymbol_design.md:606-607",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "patterns": [
+        "never a structural branch"
+      ]
+    },
+    {
+      "id": "D-334",
+      "group": "G",
+      "title": "The bare-fifth chord type stays in the catalogue structurally; whether it wins is an idiom-calibrated number",
+      "verbatim": "  honest quality-abstention reading for genuinely third-less textures — E-14 zero information loss), and its\n  **competitiveness is an idiom-calibrated constant** (`kPowerChord3PcPenalty` — the Stage-5 manifest already\n  declares it idiom-varying), never a structural per-idiom branch: a large idiom-#2 value effectively yields the\n  dyad to context-completed triads, a small idiom-#4 value lets C5 stand. **Measured support (Stage-5 Phase 2.1,",
+      "plain": "Whether a root-and-fifth with no third counts as a chord is a question music theory itself answers differently by style. The pattern therefore stays available to every style, and how strongly it competes is set per idiom rather than switched on and off by style.",
+      "rationale": "Grounded in the theory both ways — common-practice theory requires three pitches for a chord while popular practice treats the power chord as a standard label — and measured: the fit's feasible direction on the Bach data raises the penalty, aligning with the common-practice answer, while the blocked direction gains root agreement only because the objective is quality-silent and adds meaningful functional errors.",
+      "status": "live",
+      "date": "2026-07-05",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_layer4_chordsymbol_design.md:617-620",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "patterns": [
+        "never a structural per-idiom branch"
+      ]
+    },
+    {
+      "id": "D-335",
+      "group": "H",
+      "title": "The function layer outputs the Roman numeral; the tonic/subdominant/dominant summary is a derived read-out, never a stored output",
+      "verbatim": "- **D1 — Output the Roman numeral; the three-role summary is a derived read-out (decided, user, 2026-06-26).** The Roman\n  numeral is the complete, precise analysis and is what the reference corpora evaluate; the three-role summary\n  (tonic/subdominant/dominant) is deterministically derivable from it and therefore lossy to store as a primary output.\n  *Rejected:* a first-class three-role analysis — it would have to resolve the few context-dependent role cases, which no\n  reference data can verify, violating the build-only-what-we-can-verify discipline. The read-out, if built for\n  accessibility, defaults those cases to their tonic-side bucket. (Full reasoning: methods catalog §1.)",
+      "plain": "The layer's answer is the Roman numeral — the complete, precise reading. The coarse three-role label can be worked out from it whenever a display needs it, so it is never stored or used to drive the analysis.",
+      "rationale": "Measured against the field: every published autonomous Roman-numeral system represents and evaluates the analysis as the numeral's components and none emits a three-role head. A first-class three-role analysis is rejected because it would have to resolve context-dependent role cases no reference data can verify.",
+      "status": "live",
+      "date": "2026-06-26",
+      "ratified_by": [
+        "the user"
+      ],
+      "home": "cowork_layer5_function_design.md:612-617",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "patterns": [
+        "the three-role summary is a derived read-out"
+      ]
+    },
+    {
+      "id": "D-336",
+      "group": "H",
+      "title": "Cadence detection is key-agnostic and votes for the key rather than reading one",
+      "verbatim": "- **D2 — Cadence detection is key-agnostic and votes for the key; it does not read a resolved key.** *Rejected:* the prior\n  key-dependent detector, which is circular and conflates the perfect with the imperfect cadence; and the single-chord\n  interval test, which false-positives on tonic-to-subdominant and tonic-to-dominant because it tests leading-tone\n  presence (the major third of any major triad) rather than leading-tone resolution. The event-pair feature test with the\n  phrase gate is the corrected design.",
+      "plain": "Points of harmonic closure are found without being told the key, and each one casts a vote for what the key is. Reading a key that a cadence is supposed to help decide would be circular.",
+      "rationale": "Both rejected alternatives are named with their defect: the earlier key-dependent detector is circular and conflates the perfect with the imperfect cadence, and a single-chord interval test false-positives on tonic-to-subdominant and tonic-to-dominant because it tests whether the leading tone is present rather than whether it resolves. The layer's own recorded limit is that a plain V-to-I and a plain I-to-IV are exact transpositions, so the resolution event alone cannot separate them — which is why the phrase gate, the seventh, and the key layer's aggregation carry the discrimination.",
+      "status": "live",
+      "date": "2026-06-26",
+      "ratified_by": [
+        "the user"
+      ],
+      "home": "cowork_layer5_function_design.md:618-622",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "patterns": [
+        "Cadence detection is key-agnostic and votes for the key"
+      ]
+    },
+    {
+      "id": "D-337",
+      "group": "H",
+      "title": "A lean toward another degree is a tonicization by default; a key change needs a confirming cadence AND persistence, expressed as a change-cost",
+      "verbatim": "- **D3 — Tonicization is the default; modulation requires cadence confirmation plus persistence, as a change-cost.**\n  *Rejected:* a fixed-duration rule (no published threshold exists and the boundary is a continuum); and resolving the\n  distinction in the key layer (it needs function). The hysteresis over the local-key decision matches the ground-truth",
+      "plain": "When the music leans toward a note other than the home tonic, the home key holds and the chord is written as an applied chord. The key changes only when a cadence confirms the new key and the music stays in it; how long it must stay is a cost that falls as the candidate area grows, not a fixed number of bars.",
+      "rationale": "Both alternatives are rejected with reasons: a fixed-duration rule has no published threshold and the boundary is a genuine continuum, and resolving the distinction in the key layer cannot work because it needs function. The hysteresis form is chosen because it matches the ground-truth annotation convention.",
+      "status": "live",
+      "date": "2026-06-26",
+      "ratified_by": [
+        "the user"
+      ],
+      "home": "cowork_layer5_function_design.md:623-625",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "patterns": [
+        "Tonicization is the default; modulation requires cadence confirmation"
+      ]
+    },
+    {
+      "id": "D-338",
+      "group": "H",
+      "title": "The function layer selects among the chord layer's carried readings and never re-derives a chord from the notes",
+      "verbatim": "- **D4 — The layer selects among Layer 4's carried readings; it never re-derives.** *Rejected:* re-scoring the slice from\n  the notes (that is Layer 4's job and would duplicate it) — the structural content of the ratified resolution-by-\n  selection: a case separable by a note cue is a lower-layer case, a case separable only by function is this layer's,\n  leaving no third box.",
+      "plain": "Where the chord layer left a stretch open, this layer picks one of the readings that layer carried. It never goes back to the notes and works out a chord of its own.",
+      "rationale": "Structural, and stated as such: a case separable by a note cue is a lower-layer case and a case separable only by function is this layer's, which leaves no third box — so re-scoring from the notes would duplicate the layer below.",
+      "status": "live",
+      "date": "2026-06-26",
+      "ratified_by": [
+        "the user"
+      ],
+      "home": "cowork_layer5_function_design.md:627-630",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "patterns": [
+        "it never re-derives"
+      ]
+    },
+    {
+      "id": "D-339",
+      "group": "C",
+      "title": "A confident earlier decision can be overturned by decisive later evidence, through ONE confidence-weighted forward-recompute mechanism — architecture-wide",
+      "verbatim": "- **D7 — A confident earlier inference can be overturned by decisive later evidence, via one general\n  confidence-weighted forward-recompute mechanism (decided, user, 2026-06-26; see §8).** Every later layer brings its\n  independent evidence to bear on every earlier inference; agreement reinforces, and a *confident* commit is overturned\n  only when the contradicting evidence crosses a threshold scaled to the earlier layer's confidence — firing a localized,\n  forward, convergence-bounded recompute. The two channels this layer needs (the modulation recompute §5.4 and the\n  fine-grain chord override §5.5/§10) are **instances** of this one mechanism. *Rejected:* (a) treating each override as a\n  bespoke one-off (it hides that they are the same mechanism and makes generalizing a rewrite); (b) a hard\n  confidence-gate that locks confident commits permanently (a confidently-wrong commit must stay recoverable — this is\n  what gives the precision phase tunable per-channel thresholds); (c) a backward re-derivation or full joint cross-layer\n  search (measured inert — the gain is soft-evidence quality carried forward, not cycling). The mechanism and its\n  direction are fixed here; the thresholds are precision-phase. **This decision is architecture-wide** (it generalizes the\n  forward-only control-flow contract for all layers, not just this one) — to be promoted into the target-architecture",
+      "plain": "Every later stage brings its own evidence to bear on every earlier decision. Agreement strengthens it; disagreement overturns it only when the contradicting evidence is strong enough, and how strong depends on how sure the earlier stage was. When that happens the affected passage is re-read forward once, and the overturned decision is then closed for the rest of the pass.",
+      "rationale": "Three alternatives are rejected with reasons: treating each override as a one-off hides that they are the same mechanism; a hard gate that locks confident decisions permanently makes a confidently-wrong decision unrecoverable; and a backward re-derivation or full joint cross-layer search was measured inert, the gain being soft-evidence quality carried forward rather than cycling. Confidence is what sets the bar to overturn, which is what gives the later calibration phase a tunable lever instead of an absolute veto.",
+      "status": "live",
+      "date": "2026-06-26",
+      "ratified_by": [
+        "the user"
+      ],
+      "home": "cowork_layer5_function_design.md:637-648",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "patterns": [
+        "A confident earlier inference can be overturned by decisive later evidence"
+      ]
+    },
+    {
+      "id": "D-340",
+      "group": "H",
+      "title": "The reading the function layer emits IS the selected source's committed identity, carried whole — never rebuilt field by field",
+      "verbatim": "**The carried chord identity is emitted VERBATIM (carry-fix 2, 2026-07-02).** \"Additive, does not replace\" is literal at\nthe struct level: the reading this layer emits for a slice is the *selected source's committed identity carried whole*\n(root + quality + committed **bass/inversion** + the Layer-4-carried **extensions** with their natural-fifth and\nextensions-known flags),\nnever a reconstruction from the §5.0 `{root, quality}` progression projection. A standing commit emits its own `chosen`;\na neighbour-selected override emits that neighbour's identity as-is; an abstain resolution emits the selected carried\nreading — honest-carry `extensionsKnown=false` (unknown, not asserted-absent) states included. This is what lets the\ndownstream base Roman numeral render the figured-bass inversion (65/43/42) and the applied-seventh (`V7/x`) from the",
+      "plain": "When this layer keeps, overrides or resolves a reading, it passes on the chosen reading's own record intact — its bass, its inversion, its added notes. It never reassembles a reading from the root and quality alone, which would silently drop the rest.",
+      "rationale": "Stated with the loss it prevents: rebuilding from the progression's root-and-quality projection would flatten the committed bass and inversion and the carried added notes, so the figured-bass inversion and the applied seventh could no longer be rendered from what the chord layer actually committed. A neighbour-root with this stretch's bass is not a carried candidate, so it is not synthesized.",
+      "status": "live",
+      "date": "2026-07-02",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_layer5_function_design.md:547-554",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "patterns": [
+        "the emitted reading IS the selected source's committed identity"
+      ]
+    },
+    {
+      "id": "D-341",
+      "group": "H",
+      "title": "The licensed root-motion set is completed by theory — the ascending fifth, the descending second and the diatonic diminished fifth are added",
+      "verbatim": "12. **★ §5.0 grammar completion (found 2026-07-02 by the D5 consistency check — ★ RATIFIED by the user 2026-07-03;\n    the §5.0 enumeration is amended, the code increment is pending).** The licensed\n    root-motion set descended from the old scoring-bonus signals and omitted three theory-licensed motions the\n    catalog's\n    own musically-correct entries exercise: **ascending fifth / plagal motion** (IV→I, I→V — tonic-to-dominant!),\n    **descending second** (the Phrygian/Andalusian step), and the **diatonic diminished fifth** (the IV→viiᵒ link of\n    the full circle). The amendment: extend `isLicensedProgression` (+ this §5.0's enumeration, now done) accordingly\n    — algorithmic\n    completion per theory, NOT tuning; its own small dormant increment with tests; the consumer's consistency test\n    then tightens to the clean assert. Evidence: the 6-entry/**11-motion** failure table, measured, enumerated and",
+      "plain": "The list of chord-to-chord root motions the analysis treats as real functional progressions was inherited from an older scoring mechanism and left out three motions that standard theory licenses and the project's own catalogue uses. They are added. This is completing an algorithm against theory, not tuning it.",
+      "rationale": "Measured by the catalogue-versus-grammar consistency check: six catalogue entries exercising eleven motions failed against the grammar as coded, and the eleven are enumerated and pinned in the consumer's own test. The three missing motions are tonic-to-dominant and plagal motion, the Phrygian step, and the diminished fifth that closes the circle of fifths.",
+      "status": "live",
+      "date": "2026-07-03",
+      "ratified_by": [
+        "the user"
+      ],
+      "home": "cowork_layer5_function_design.md:888-897",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "patterns": [
+        "§5\\.0 grammar completion"
+      ]
+    },
+    {
+      "id": "D-342",
+      "group": "H",
+      "title": "Putting the function layer into production is DEFERRED INDEFINITELY — the posture is a dormant build with ground-truth validation",
+      "verbatim": "- **Engagement framing.** References to an \"engagement hard-stop\" / \"before any production switch\" (§5/§10) remain true\n  *conditionally* — engagement (Phase 5d) is **deferred indefinitely** (production out of scope; the posture is dormant\n  build + ground-truth validation). The hard-stops apply *if* a switch is ever made; they are not pending work.",
+      "plain": "Switching the function layer on in the product is not scheduled. It is built and checked against published human analyses, and stays inactive; the conditions written for a switch apply if one is ever made, and are not outstanding work.",
+      "rationale": null,
+      "status": "deferred",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "home": "cowork_layer5_function_design.md:696-698",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.",
+      "patterns": [
+        "engagement \\(Phase 5d\\) is \\*\\*deferred indefinitely\\*\\*"
+      ]
     }
   ]
 }

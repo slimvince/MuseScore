@@ -14,11 +14,11 @@
   },
   "backbone": {
    "file": "tools/audit/decisions/backbone_decisions.json",
-   "sha256": "66191dac61df91533bc73c2fe4cf9ffb1e3eefbebcd36c71f37d89738062d8a5",
-   "decision_count": 315
+   "sha256": "90af03a43ea3931f4f495ac7faf505de8335f217d41cbe38dbf345828418dcf6",
+   "decision_count": 342
   }
  },
- "head_commit": "3a186549bbd5c30ffda36cd0f21668dcb72e0d07",
+ "head_commit": "6e9a8aeaaffdfd5fea873bcc383080c0a7b5db77",
  "disposition_vocabulary": [
   "restates",
   "not-a-decision",
@@ -69,7 +69,7 @@
   {
    "id": "BR-4",
    "rule": "The cluster's text matches one or more backbone decisions, ALL of which are recorded outside any layer specification. Recorded as a decision with no layer-specification home (named) — the Task-4 documentation-gap class.",
-   "clusters": 594
+   "clusters": 611
   },
   {
    "id": "BR-5",
@@ -84,7 +84,7 @@
   {
    "id": "BR-7",
    "rule": "A table row admitted by the harvest's BROAD signature tier only — an inventory or status cell, not a stated decision.",
-   "clusters": 299
+   "clusters": 298
   },
   {
    "id": "BR-9",
@@ -104,7 +104,7 @@
   {
    "id": "BR-12",
    "rule": "The unit is in a Claude Code session REPORT (`cc_*.md` that is not a dispatch) and carries none of the stated ruling words. A report records work done. Same register-rule reasoning as BR-11. This is BR-6 widened from its narrative-pattern test to the whole report class, minus the ruling vocabulary.",
-   "clusters": 992
+   "clusters": 991
   },
   {
    "id": "BR-13",
@@ -139,24 +139,24 @@
   {
    "id": "BR-8",
    "rule": "Residual: none of the above applies. Recorded UNRESOLVED — the honest outcome, and the count is a finding about the record's legibility.",
-   "clusters": 2717
+   "clusters": 2702
   }
  ],
  "disposition_counts": {
   "restates": 5511,
-  "not-a-decision": 5564,
+  "not-a-decision": 5562,
   "boilerplate": 74,
-  "no-spec-home": 594,
-  "unresolved": 2717
+  "no-spec-home": 611,
+  "unresolved": 2702
  },
  "unresolved_partition_by_surface": {
-  "cowork_* design documents": 855,
-  "docs/ design documents": 407,
+  "cowork_* design documents": 849,
+  "docs/ design documents": 400,
   "cc_* session reports": 316,
   "tools/ script comments": 295,
-  "cc_instruction_* dispatches": 291,
+  "cc_instruction_* dispatches": 290,
   "src production comments": 276,
-  "the two archives": 96,
+  "the two archives": 95,
   "src test comments": 76,
   "governing: ARCHITECTURE.md": 55,
   "the open-items register": 17,
@@ -165,8 +165,8 @@
   "mixed sources": 9
  },
  "unresolved_reservation_by_surface": {
-  "cowork_* design documents": "A MEASURED PARTITION, still open. 23 of the 143 documents on this surface and the `docs/` one are read IN FULL — 21 by the phase-1d wave (whose note does not split them between the two surfaces, so neither does this one) plus `cowork_stage5_fitter_design.md`, its single largest holder at 55 clusters, by phase-1f; 120 are unread, the reading list being larger than one session. NO BULK RULE is written over this surface even where a document HAS been read in full, and that is deliberate: BR-17/BR-18's reasoning is that a tracking surface is not a home for a standing decision, and a ratified design document is exactly the opposite — OI-268 records that 22 standing decisions live on this surface. A read design document therefore yields entries, not a sweep. The per-file remainder is in the OI-207 dated note of 2026-08-02 (phase-1f).",
-  "docs/ design documents": "Same treatment as the `cowork_*` surface, and the same reason for having no bulk rule. `docs/beam_widening_design.md` (38 clusters) was read in full by phase-1f; the measured remainder is in the OI-207 dated note of 2026-08-02 (phase-1f).",
+  "cowork_* design documents": "A MEASURED PARTITION, still open. **27 of the 143 documents on this surface and the `docs/` one are read IN FULL** — 21 by the phase-1d wave (whose note does not split them between the two surfaces, so neither does this one), `cowork_stage5_fitter_design.md` (its single largest holder at 55 clusters) by phase-1f, and five by the phase-1g triage wave (`cowork_layer4_chordsymbol_design.md`, `cowork_layer5_function_design.md`, `docs/decoder_design.md`, `docs/scoring_model.md`, `docs/redesign_plan.md`). **116 are unread.** Correction of record carried by phase 1g: `docs/beam_widening_design.md` appears in BOTH the phase-1d and the phase-1f read lists, so the pre-1g distinct count was 22, not the 23 the record stated, and the pre-1g unread population was 121, not 120. NO BULK RULE is written over this surface even where a document HAS been read in full, and that is deliberate: BR-17/BR-18's reasoning is that a tracking surface is not a home for a standing decision, and a ratified design document is exactly the opposite — OI-268 records the standing decisions living on this surface. A read design document therefore yields entries, not a sweep. The per-file classification of the whole unread population is `tools/audit/decisions/phase1g_triage.md`.",
+  "docs/ design documents": "Same treatment as the `cowork_*` surface, and the same reason for having no bulk rule. `docs/beam_widening_design.md` was read in full by phase-1d and again by phase-1f; `docs/decoder_design.md`, `docs/scoring_model.md` and `docs/redesign_plan.md` by phase-1g. The per-file classification of the unread remainder is `tools/audit/decisions/phase1g_triage.md`.",
   "cc_* session reports": "The BR-12 EXEMPTION SET — units the sweep refused because they carry a ruling word. Already judged once; each needs a reader.",
   "tools/ script comments": "RESERVED for the sealed measurement-tools partition (the second partition of the OI-199 review, Cowork's ordering amendment). These scripts ARE the subject of that review, and register entry D-281 — found by this wave — shows the surface carries real decisions, so a bulk sweep here would both pre-empt the review and be the blind class sweep the ruling-vocabulary guardrail exists to forbid.",
   "cc_instruction_* dispatches": "The BR-11 EXEMPTION SET — units the sweep refused because they carry a ruling word. Each needs a reader.",

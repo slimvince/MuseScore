@@ -207,3 +207,21 @@
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md` (session 21j). The Layer-3 specification records the reach-back facility but not this shipped-default ruling. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).
 
+### D-323 — Asking whether a pitch belongs to the key is a question about the collection, never about the tonic — the tonic-anchored form must not return
+
+> **⚠ Do not reintroduce `keyTonicPc + scale` for a membership test.** A scale-DEGREE is tonic-relative
+> by definition and legitimately uses that pair (`buildChordResult`); a membership question must not.
+> Note that `buildChordResult`'s `diatonicToKey` flag and the Gate I / Gate L `invRootIsDiatonic` checks
+> (`postscoringgates.cpp`) still answer a *collection* question through the *tonic* pair and so still
+> carry the OI-168 defect — they are declared, not fixed (see `OPEN_ITEMS.md` OI-170).
+
+**In plain words.** A test of the form 'is this note in the key' must read the key signature's own collection of notes, never a scale laid out from a tonic. Asking about a scale degree is a different question and may legitimately use the tonic.
+
+**Why.** Measured: until 2026-07-14 both key-consuming scoring terms tested a set built from the mode's own tonic, which equals the signature's collection for nineteen of the twenty-one modes and is a semitone off for two — sharing only two of seven notes there. The correction moved exactly one committed chord and made it agree with the ground truth.
+
+**Status.** LIVE · decided 2026-07-14 · ratifier not stated
+
+**Home.** `docs/scoring_model.md:292-296`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.
+

@@ -13,7 +13,7 @@
 | Design documents owning at least one unresolved cluster | **143** |
 | — read IN FULL by the phase-1d and phase-1f waves (distinct) | 22 |
 | — **unread, and classified below** | **121** |
-| Unresolved cluster attributions held by the unread set | 1025 |
+| Unresolved cluster attributions held by the unread set | 1012 |
 
 ### ★ A correction of record: the unread population is 121, not 120
 
@@ -36,14 +36,14 @@ The commit that produced the 23/120 figures (`40739f38ba`) was itself a self-che
 
 | Class | Documents | Unresolved clusters | Proposed disposition |
 |---|---|---|---|
-| LIVE-SPEC | **80** | 857 | READ IN FULL |
+| LIVE-SPEC | **80** | 844 | READ IN FULL |
 | REPORT/NARRATIVE | **39** | 164 | EXCLUDE |
 | SUPERSEDED-ESTABLISHED | **1** | 2 | EXCLUDE |
 | EVIDENCE-FROZEN | **1** | 2 | EXCLUDE |
-| **total** | **121** | **1025** | |
+| **total** | **121** | **1012** | |
 
 **Proposed EXCLUDE: 41 documents / 168 clusters / 0.54 MB (≈187k tokens).**
-**Remaining full-read set: 80 documents / 857 clusters / 1.80 MB (≈621k tokens)** — of which the five this session reads in full are 0.31 MB (≈108k tokens), leaving 1.49 MB (≈513k tokens) across 75 documents.
+**Remaining full-read set: 80 documents / 844 clusters / 1.80 MB (≈621k tokens)** — of which the five this session reads in full are 0.31 MB (≈108k tokens), leaving 1.49 MB (≈513k tokens) across 75 documents.
 
 *(Token estimates use the 3.04 characters-per-token ratio phase 1d measured on this repository's own prose against the Read tool's accounting, and phase 1f re-used unchanged.)*
 
@@ -53,12 +53,12 @@ Ordered by unresolved cluster count, the priority map the manifest gives. “Ver
 
 | # | Document | Clusters | Class | Verification / reason | Disposition |
 |---|---|---|---|---|---|
-| 1 | `cowork_layer4_chordsymbol_design.md` | 43 | LIVE-SPEC | Signed Layer-4 specification; the dispatch's own full-read set. READ IN FULL this session. | READ IN FULL |
-| 2 | `cowork_layer5_function_design.md` | 36 | LIVE-SPEC | Signed Layer-5 specification; the dispatch's own full-read set. READ IN FULL this session. | READ IN FULL |
-| 3 | `docs/decoder_design.md` | 36 | LIVE-SPEC | The decoder design; the dispatch's own full-read set. READ IN FULL this session. | READ IN FULL |
-| 4 | `docs/scoring_model.md` | 35 | LIVE-SPEC | The authoritative scoring reference, a mandatory read for scoring sessions (`CLAUDE.md`) and the home of D-214…D-224. READ IN FULL this session. | READ IN FULL |
-| 5 | `docs/redesign_plan.md` | 27 | LIVE-SPEC | The layered-evidence architecture plan; the dispatch's own full-read set. READ IN FULL this session. | READ IN FULL |
-| 6 | `cowork_layer3_keymode_design.md` | 23 | LIVE-SPEC | Banner: SIGNED (user, 2026-06-22), WIRED — AS-BUILT Step 1, with named deferred follow-ups. | READ IN FULL |
+| 1 | `cowork_layer4_chordsymbol_design.md` | 38 | LIVE-SPEC | Signed Layer-4 specification; the dispatch's own full-read set. READ IN FULL this session. | READ IN FULL |
+| 2 | `cowork_layer5_function_design.md` | 35 | LIVE-SPEC | Signed Layer-5 specification; the dispatch's own full-read set. READ IN FULL this session. | READ IN FULL |
+| 3 | `docs/scoring_model.md` | 35 | LIVE-SPEC | The authoritative scoring reference, a mandatory read for scoring sessions (`CLAUDE.md`) and the home of D-214…D-224. READ IN FULL this session. | READ IN FULL |
+| 4 | `docs/decoder_design.md` | 33 | LIVE-SPEC | The decoder design; the dispatch's own full-read set. READ IN FULL this session. | READ IN FULL |
+| 5 | `cowork_layer3_keymode_design.md` | 23 | LIVE-SPEC | Banner: SIGNED (user, 2026-06-22), WIRED — AS-BUILT Step 1, with named deferred follow-ups. | READ IN FULL |
+| 6 | `docs/redesign_plan.md` | 23 | LIVE-SPEC | The layered-evidence architecture plan; the dispatch's own full-read set. READ IN FULL this session. | READ IN FULL |
 | 7 | `cowork_score_census.md` | 21 | LIVE-SPEC | Banner: v1 DELIVERED, for user disposition of the acquisition tiers. §8c is the HOME of the fitting-pool licence constraint that [[OI-271]] turns on. | READ IN FULL |
 | 8 | `cowork_joint_key_chord_design.md` | 20 | LIVE-SPEC | Shelved by ratification (D-278) but retained as the architecture record; the design content itself — where the step lives, how key and chord couple — is registered nowhere. | READ IN FULL |
 | 9 | `cowork_layer5_engagement_design.md` | 20 | LIVE-SPEC | A design pass (CC, 2026-07-07) whose downstream owner-decisions are enumerated for follow-on passes; the engage-era agenda's fate is itself unrecorded ([[OI-259]]). | READ IN FULL |

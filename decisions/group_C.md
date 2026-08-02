@@ -731,3 +731,28 @@
 
 **Provenance.** Recorded in `cowork_stage5_fitter_design.md` (SIGNED, user, 2026-07-04) as the eighth of its numbered architecture decisions, and applied in the same document at §4.5: the one measured non-monotone row was deferred and declared rather than mapped. Found by the phase-1f final-partition wave, 2026-08-02, reading `cowork_stage5_fitter_design.md` in full (SIGNED, user, 2026-07-04). NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).
 
+### D-339 — A confident earlier decision can be overturned by decisive later evidence, through ONE confidence-weighted forward-recompute mechanism — architecture-wide
+
+> - **D7 — A confident earlier inference can be overturned by decisive later evidence, via one general
+>   confidence-weighted forward-recompute mechanism (decided, user, 2026-06-26; see §8).** Every later layer brings its
+>   independent evidence to bear on every earlier inference; agreement reinforces, and a *confident* commit is overturned
+>   only when the contradicting evidence crosses a threshold scaled to the earlier layer's confidence — firing a localized,
+>   forward, convergence-bounded recompute. The two channels this layer needs (the modulation recompute §5.4 and the
+>   fine-grain chord override §5.5/§10) are **instances** of this one mechanism. *Rejected:* (a) treating each override as a
+>   bespoke one-off (it hides that they are the same mechanism and makes generalizing a rewrite); (b) a hard
+>   confidence-gate that locks confident commits permanently (a confidently-wrong commit must stay recoverable — this is
+>   what gives the precision phase tunable per-channel thresholds); (c) a backward re-derivation or full joint cross-layer
+>   search (measured inert — the gain is soft-evidence quality carried forward, not cycling). The mechanism and its
+>   direction are fixed here; the thresholds are precision-phase. **This decision is architecture-wide** (it generalizes the
+>   forward-only control-flow contract for all layers, not just this one) — to be promoted into the target-architecture
+
+**In plain words.** Every later stage brings its own evidence to bear on every earlier decision. Agreement strengthens it; disagreement overturns it only when the contradicting evidence is strong enough, and how strong depends on how sure the earlier stage was. When that happens the affected passage is re-read forward once, and the overturned decision is then closed for the rest of the pass.
+
+**Why.** Three alternatives are rejected with reasons: treating each override as a one-off hides that they are the same mechanism; a hard gate that locks confident decisions permanently makes a confidently-wrong decision unrecoverable; and a backward re-derivation or full joint cross-layer search was measured inert, the gain being soft-evidence quality carried forward rather than cycling. Confidence is what sets the bar to overturn, which is what gives the later calibration phase a tunable lever instead of an absolute veto.
+
+**Status.** LIVE · decided 2026-06-26 · ratified by the user
+
+**Home.** `cowork_layer5_function_design.md:637-648`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.
+
