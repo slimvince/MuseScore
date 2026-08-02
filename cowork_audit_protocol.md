@@ -125,3 +125,47 @@ caught.
 *Cowork, session 36. First application: the L1/L2 certification audit (OI-84). The protocol
 is itself subject to #16: each audit stamps the inventory-generation script + corpus hash it
 ran under, so a certification is reproducible.*
+
+---
+
+## The dispatch protocol these audits are commissioned and run under
+
+**Homed here 2026-08-02 (`OPEN_ITEMS.md` OI-266; register entries D-250, D-251, D-252).** Every
+audit above is commissioned as a written instruction to a working session and executed by that
+session; P5's withheld-finding rule and P8's blind-pass-first ordering are already rules about how
+that instruction is *written* and *sequenced*. The three rules below are the rest of that protocol.
+They stood for months recorded only in `cowork_handoff.md`, which is a place for tracking a
+handover, not a home for a standing rule — the finding that produced this section. **Their scope is
+wider than this document's audits**: they govern every dispatch, and this document is their home
+because it is where the project's dispatch-construction rules already live.
+
+### One side writes the instruction files and the other executes them, never the reverse
+
+**Cowork writes instruction files. CC executes them. Never the other way around.** When the user
+says "go", "execute", or names an increment, the response is that the instruction is ready at its
+`cc_instruction_*.md` path and should be given to the executing session. The planning side **may**
+read source files via the file tools, write `.md` instruction files, and update `cowork_handoff.md`
+and `STATUS.md` after a report lands. It **must not** edit anything under `src/`, run builds, or
+spawn agents that run build commands or modify `src/`. *Why:* violating this rule has broken the
+codebase twice, at the E1 and E2b increments — the evidence is stated with the rule itself.
+
+### Dispatches are written only when they are next; a parked instruction is revalidated first
+
+**Do not write instructions ahead of need.** At most **one** instruction is dispatched or being
+executed at a time. The next instruction is written only once its predecessor's report is ratified
+and it is actually the next dispatch — never speculatively. Upcoming work is recorded as **plan
+lines** (the roadmap, the `STATUS.md` "next" entry), not as pre-written instruction files. Any
+instruction file that exists but is not the active dispatch carries a **`⏸ PARKED` banner** and must
+be revalidated against the then-current `STATUS.md` and HEAD immediately before dispatch, receiving
+a dated dispatch note; an executing session must not run a parked instruction without that note.
+*Why:* the three failure modes are stated with the rule — a pre-written instruction goes stale as
+its premises change under it, risks being skipped, and risks out-of-order execution.
+
+### A running dispatch is never interrupted or steered mid-flight
+
+**No mid-flight steering (user, 2026-07-05):** a running session is never interrupted or relayed to.
+Every instruction must therefore be **self-sufficient** — every foreseeable fork is carried inside
+it as a stop or branch rule, and anything not covered waits for the report and is ruled at
+verification. The only mid-run channel is the one the executing session itself opens, its own STOP
+question, answered when it asks. *Why:* the evidence is stated with the rule — interruptions have
+several times proven disastrous.

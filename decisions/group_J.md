@@ -13,13 +13,13 @@
 
 **In plain words.** Showing the harmony as Roman numerals or as Nashville numbers is a choice of how to display one and the same analysis.
 
-**Why.** Stated constraint, ARCHITECTURE.md:5843-5845: Roman numerals and Nashville numbers encode identical information, so showing both on one staff would be redundant and would destroy legibility - which makes the choice a display preference, not two analyses.
+**Why.** Stated constraint, ARCHITECTURE.md:5854-5856: Roman numerals and Nashville numbers encode identical information, so showing both on one staff would be redundant and would destroy legibility - which makes the choice a display preference, not two analyses.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3245-3246`
+**Home.** `ARCHITECTURE.md:3256-3257`
 
-**Provenance.** ARCHITECTURE.md:3242-3246; consistent with D-016
+**Provenance.** ARCHITECTURE.md:3253-3257; consistent with D-016
 
 ### D-087 — Display options live with the formatter, not with the analyzer preferences
 
@@ -32,9 +32,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2946-2947`
+**Home.** `ARCHITECTURE.md:2957-2958`
 
-**Provenance.** ARCHITECTURE.md:2907-2947
+**Provenance.** ARCHITECTURE.md:2918-2958
 
 ### D-088 — No automatic key signature injection
 
@@ -47,9 +47,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3846-3847`
+**Home.** `ARCHITECTURE.md:3857-3858`
 
-**Provenance.** ARCHITECTURE.md:3839-3847; an instance of D-074
+**Provenance.** ARCHITECTURE.md:3850-3858; an instance of D-074
 
 ### D-089 — The legacy confidence exposure gates - 0.5 tentative, 0.8 assertive
 
@@ -63,7 +63,7 @@
 
 **Status.** SUPERSEDED BY D-018 · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3531-3533`
+**Home.** `ARCHITECTURE.md:3542-3544`
 
 **Provenance.** The record arm replaces the 0.5/0.8 literals with the fitted nats constants (ARCHITECTURE.md:175-177); the literals are legacy-arm-only (sectionanalyzer.cpp::legacyKeyExposureBucket)
 
@@ -74,13 +74,13 @@
 
 **In plain words.** The aim is not to put a label on everything. It is to be right about what we do label, and to say nothing when the evidence is thin.
 
-**Why.** Stated constraint, ARCHITECTURE.md:3545-3553 and its consumer rules at :5604-5612: the stated product target is not 'always emit a label' but high precision on exposed results, calibrated abstention when evidence is weak, and coverage gains only after precision is acceptable - so below the confidence bar the key-dependent annotations are suppressed rather than printed tentatively.
+**Why.** Stated constraint, ARCHITECTURE.md:3556-3564 and its consumer rules at :5604-5612: the stated product target is not 'always emit a label' but high precision on exposed results, calibrated abstention when evidence is weak, and coverage gains only after precision is acceptable - so below the confidence bar the key-dependent annotations are suppressed rather than printed tentatively.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3551-3552`
+**Home.** `ARCHITECTURE.md:3562-3563`
 
-**Provenance.** ARCHITECTURE.md:3538-3590
+**Provenance.** ARCHITECTURE.md:3549-3601
 
 ### D-106 — The augmented-sixth labels are gated to the Standard and Baroque presets
 
@@ -93,7 +93,7 @@
 
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3862-3863`
+**Home.** `ARCHITECTURE.md:3873-3874`
 
 **Provenance.** open_items/OI-112 already records this preset-gating as stale; open_items/OI-201 records that the record arm collapses the family to a plain major triad symbol ★ Verbatim RE-TAKEN 2026-08-02 (the phase-1 truth-sync): §5.11's assertion 'Gated to Standard and Baroque presets only' was corrected, since the formatter explicitly defers that gate for want of preset context (`chordsymbolformatter.cpp:882-883`) and emits the labels under every preset (OPEN_ITEMS OI-112(c) discharged). The decision's own words survive at the home, quoted inside the correction.
 

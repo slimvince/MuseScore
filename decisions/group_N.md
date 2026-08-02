@@ -13,13 +13,13 @@
 
 **In plain words.** A caller asking for a voicing says which style it wants, never which voicing technique. The style decides whether the answer is a drop-2, a shell, a chorale spacing or something else, and in what proportion.
 
-**Why.** Stated constraint, ARCHITECTURE.md:4544-4547: keeping the interface voicing-type agnostic is what lets a new voicing type be added as a generator implementation plus a style parameter, without the interface changing.
+**Why.** Stated constraint, ARCHITECTURE.md:4555-4558: keeping the interface voicing-type agnostic is what lets a new voicing type be added as a generator implementation plus a style parameter, without the interface changing.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4552`
+**Home.** `ARCHITECTURE.md:4563`
 
-**Provenance.** ARCHITECTURE.md:4539-4561 (§8.2); the principle it realizes is D-070 (§2.1). No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:4550-4572 (§8.2); the principle it realizes is D-070 (§2.1). No date or ratifier stated.
 
 ### D-135 — A fixed element is a hard constraint the optimizer may never modify
 
@@ -32,9 +32,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4721`
+**Home.** `ARCHITECTURE.md:4732`
 
-**Provenance.** ARCHITECTURE.md:4683-4722 (§9.1-§9.2). No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:4694-4733 (§9.1-§9.2). No date or ratifier stated.
 
 ### D-136 — The inference demo view is a developer tool and is not shipped
 
@@ -43,13 +43,13 @@
 
 **In plain words.** The step-by-step view of the analysis making its decisions exists so a developer can watch and judge it by eye and ear. It is not part of what a user gets.
 
-**Why.** Stated constraint, ARCHITECTURE.md:4740-4742: it exists to make musical correctness checkable by eye and ear rather than only through the automated agreement numbers.
+**Why.** Stated constraint, ARCHITECTURE.md:4751-4753: it exists to make musical correctness checkable by eye and ear rather than only through the automated agreement numbers.
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4736`
+**Home.** `ARCHITECTURE.md:4747`
 
-**Provenance.** ARCHITECTURE.md:4734-4824 (§10.0), whose own status line reads 'Not yet started'. No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:4745-4835 (§10.0), whose own status line reads 'Not yet started'. No date or ratifier stated.
 
 ### D-137 — The harmony maps are our own visual design, and are chosen partly to avoid intellectual-property claims
 
@@ -59,13 +59,13 @@
 
 **In plain words.** The planned map of harmonic function draws on published chord-scale theory but is laid out our own way, not copied from the commercial product that inspired it.
 
-**Why.** Stated constraint, ARCHITECTURE.md:4877 and :4573: the circle of fifths and the Tonnetz were chosen partly because they carry no intellectual-property claim - the Tonnetz being a nineteenth-century mathematical structure - and the same reasoning is what forces an original layout for the functional map.
+**Why.** Stated constraint, ARCHITECTURE.md:4888 and :4573: the circle of fifths and the Tonnetz were chosen partly because they carry no intellectual-property claim - the Tonnetz being a nineteenth-century mathematical structure - and the same reasoning is what forces an original layout for the functional map.
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4895`
+**Home.** `ARCHITECTURE.md:4906`
 
-**Provenance.** ARCHITECTURE.md:4874-4897 (§10.2-§10.4), all three marked planned. No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:4885-4908 (§10.2-§10.4), all three marked planned. No date or ratifier stated.
 
 ### D-138 — Chord preview uses MuseScore's note-input pathway, not the playback pipeline
 
@@ -76,13 +76,13 @@
 
 **In plain words.** Clicking a chord on a harmony map plays it through the same quick path MuseScore uses when you hear a note as you enter it, not through full score playback.
 
-**Why.** Stated constraint, ARCHITECTURE.md:4927-4929: the full playback pipeline has too much delay for interactive exploration, and the inference runs on a background thread so the interface stays responsive.
+**Why.** Stated constraint, ARCHITECTURE.md:4938-4940: the full playback pipeline has too much delay for interactive exploration, and the inference runs on a background thread so the interface stays responsive.
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4926`
+**Home.** `ARCHITECTURE.md:4937`
 
-**Provenance.** ARCHITECTURE.md:4899-4929 (§10.5), a planned component. No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:4910-4940 (§10.5), a planned component. No date or ratifier stated.
 
 ### D-139 — The language model holds no object references - every tool call carries its own musical address
 
@@ -93,13 +93,13 @@
 
 **In plain words.** When a language model asks the program to do something, it names the place in the music each time. It never holds a handle to an object in the score.
 
-**Why.** Stated constraint, ARCHITECTURE.md:6778-6779: no proxy objects, no element handles and no lifecycle management - recorded as both the right model for this kind of interaction and the simpler one to implement.
+**Why.** Stated constraint, ARCHITECTURE.md:6789-6790: no proxy objects, no element handles and no lifecycle management - recorded as both the right model for this kind of interaction and the simpler one to implement.
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6776`
+**Home.** `ARCHITECTURE.md:6787`
 
-**Provenance.** ARCHITECTURE.md:6769-6779 (§19.2), a planned module; full design `docs/llm_integration.md`. No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:6780-6790 (§19.2), a planned module; full design `docs/llm_integration.md`. No date or ratifier stated.
 
 ### D-140 — The language model is a search agent and is never given the whole score
 
@@ -111,13 +111,13 @@
 
 **In plain words.** Rather than being handed the entire score, the language model is given tools to find what it needs and fetches it piece by piece - the way a person reads a large document by searching it.
 
-**Why.** Stated constraint, ARCHITECTURE.md:6784-6785: because the model reads what it fetches, the quality of that serialization - clean, hierarchical, beat-aligned, free of layout noise - is the critical foundation.
+**Why.** Stated constraint, ARCHITECTURE.md:6795-6796: because the model reads what it fetches, the quality of that serialization - clean, hierarchical, beat-aligned, free of layout noise - is the critical foundation.
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6781`
+**Home.** `ARCHITECTURE.md:6792`
 
-**Provenance.** ARCHITECTURE.md:6769-6785 (§19.2), a planned module. No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:6780-6796 (§19.2), a planned module. No date or ratifier stated.
 
 ### D-141 — The language model sees what the user set, not what the engraving engine derived
 
@@ -129,13 +129,13 @@
 
 **In plain words.** The model is shown the composer's own choices - pitches, dynamics, articulation, colour, lyrics, visibility - and not the results of laying the music out, such as positions, beam geometry or stem lengths.
 
-**Why.** Stated constraint, ARCHITECTURE.md:6791: MuseScore's own property system is the practical boundary between the two, so the split is enforceable rather than judged case by case.
+**Why.** Stated constraint, ARCHITECTURE.md:6802: MuseScore's own property system is the practical boundary between the two, so the split is enforceable rather than judged case by case.
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6787`
+**Home.** `ARCHITECTURE.md:6798`
 
-**Provenance.** ARCHITECTURE.md:6769-6791 (§19.2), a planned module. No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:6780-6802 (§19.2), a planned module. No date or ratifier stated.
 
 ### D-142 — The composing module is the language model's context provider; the model never re-derives harmony
 
@@ -147,13 +147,13 @@
 
 **In plain words.** Every stretch of music sent to a language model arrives with our harmonic analysis already attached - chord symbols, Roman numerals, key, harmonic rhythm. The model reads that; it does not work the harmony out from the notes itself.
 
-**Why.** Stated constraint, ARCHITECTURE.md:6806-6808: the same analysis also drives the validation step that checks voice leading and harmonic consistency before a generated change reaches the score, so one analysis serves both directions.
+**Why.** Stated constraint, ARCHITECTURE.md:6817-6819: the same analysis also drives the validation step that checks voice leading and harmonic consistency before a generated change reaches the score, so one analysis serves both directions.
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6800`
+**Home.** `ARCHITECTURE.md:6811`
 
-**Provenance.** ARCHITECTURE.md:6798-6812 (§19.3), a planned module. No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:6809-6823 (§19.3), a planned module. No date or ratifier stated.
 
 ### D-143 — The language-model bridge is built as a module but confined to the core access layer, so it can become a plugin
 
@@ -164,11 +164,11 @@
 
 **In plain words.** It is written inside the program for speed of development, but restricted to the same narrow interface a plugin would have, so that moving it out to a plugin later is straightforward.
 
-**Why.** Stated constraint, ARCHITECTURE.md:6814-6819: with a properly designed plugin interface the bridge does not need to live in the core at all - it becomes optional, independently updatable, provider-agnostic and open to community alternatives - so the constraint is what keeps that end state reachable.
+**Why.** Stated constraint, ARCHITECTURE.md:6825-6830: with a properly designed plugin interface the bridge does not need to live in the core at all - it becomes optional, independently updatable, provider-agnostic and open to community alternatives - so the constraint is what keeps that end state reachable.
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6821`
+**Home.** `ARCHITECTURE.md:6832`
 
-**Provenance.** ARCHITECTURE.md:6814-6824 (§19.4), a planned module; full argument `docs/llm_integration.md` §11. No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:6825-6835 (§19.4), a planned module; full argument `docs/llm_integration.md` §11. No date or ratifier stated.
 

@@ -122,9 +122,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1594`
+**Home.** `ARCHITECTURE.md:1605`
 
-**Provenance.** ARCHITECTURE.md:1584-1596, restated at :2967-2978
+**Provenance.** ARCHITECTURE.md:1595-1607, restated at :2967-2978
 
 ### D-078 — The cross-layer value types live in a dependency-free leaf header
 
@@ -136,9 +136,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1428`
+**Home.** `ARCHITECTURE.md:1439`
 
-**Provenance.** ARCHITECTURE.md:1428-1436
+**Provenance.** ARCHITECTURE.md:1439-1447
 
 ### D-107 — American English throughout
 

@@ -17,9 +17,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6410`
+**Home.** `ARCHITECTURE.md:6421`
 
-**Provenance.** ARCHITECTURE.md:6408-6411 (§15). No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:6419-6422 (§15). No date or ratifier stated.
 
 ### D-163 — The batch tool deliberately skips post-load layout
 
@@ -30,13 +30,13 @@
 
 **In plain words.** The headless analysis tool never lays the music out on the page, because it only ever reads the logical structure.
 
-**Why.** Stated constraint, ARCHITECTURE.md:6420-6422: skipping the layout avoids a legacy cache overflow crash on some scores (Mozart K533-3 is named) without changing the harmonic-analysis output at all.
+**Why.** Stated constraint, ARCHITECTURE.md:6431-6433: skipping the layout avoids a legacy cache overflow crash on some scores (Mozart K533-3 is named) without changing the harmonic-analysis output at all.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6419`
+**Home.** `ARCHITECTURE.md:6430`
 
-**Provenance.** ARCHITECTURE.md:6413-6422 (§15). No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:6424-6433 (§15). No date or ratifier stated.
 
 ### D-164 — What is out of scope, and what degrades gracefully at the boundary
 
@@ -51,7 +51,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6629`
+**Home.** `ARCHITECTURE.md:6640`
 
-**Provenance.** ARCHITECTURE.md:6583-6632 (§16), which sorts the whole feature set into Core / Important / Prepared / Out of scope. No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:6594-6643 (§16), which sorts the whole feature set into Core / Important / Prepared / Out of scope. No date or ratifier stated.
 

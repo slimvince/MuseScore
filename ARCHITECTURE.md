@@ -1331,6 +1331,17 @@ D-051 records the same shape on Layer 3). The build state itself is unchanged an
 **What becomes of this decoder is OPEN** — it is neither retired by a ruling nor scheduled; see the
 OI-180 retirement map.
 
+**Scope of the description below, 2026-08-02 (`OPEN_ITEMS.md` OI-265).** As on Layer 3, **the
+description below remains accurate for the dormant decoder** and is retained as the record of what
+that decoder does; it is not a description of what runs. It carries one sentence about what runs —
+that production chord analysis still runs the legacy `analyzeChord` + post-scoring gates (§4.1) —
+which was true when written and is **false at HEAD**: the joint estimator produces the committed
+chord reading on the batch/corpus surface since the OI-178 adoption (2026-07-26) and on the in-app
+notation surface since the notation switch (2026-07-27), where `useJointNotationRecord` defaults to
+`true` (`composingconfiguration.cpp:178`). The legacy `analyzeChord` path is compiled and dormant
+beside this decoder, and retires with it at the OI-180 map. Read that sentence as the legacy
+pipeline's own frame at the time the decoder was built, not as a statement about today.
+
 **Built, unit-tested, and graded — but NOT wired into the live pipeline.** Layer 4 of the rebuild is
 `ChordSliceDecoder` (`composing/analysis/chord/chordslicedecoder.{h,cpp}`): a per-slice chord-symbol
 decoder over the Layer-2 slices, mirroring the Layer-3 key/mode decoder's shape. Production chord

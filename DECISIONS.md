@@ -113,9 +113,8 @@ project's own and are defined here because they are used before any entry explai
 | Decisions whose date is not stated in the record | 178 |
 | Decisions whose ratifier is not stated in the record | 170 |
 | Decisions recorded outside the specification that owns them | 63 |
-| — of which recorded only on a tracking surface, with no home at all | 6 |
 | — of which a project-wide convention, correctly homed | 31 |
-| — of which a decision about the process, correctly homed | 26 |
+| — of which a decision about the process, correctly homed | 32 |
 | Decisions whose defense the record does not state | 45 |
 
 That last row is the one meant to fall. **209 of 254** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
@@ -475,12 +474,12 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-208 | A withheld finding never enters a mandatory session-start read | LIVE | `cowork_audit_protocol.md` |
 | D-209 | Code that is about to be deleted gets no audit - only the no-information-loss check at deletion | LIVE | `cowork_audit_protocol.md` |
 | D-231 | Issue-exhaustion and specification completion before any fix design - the three-phase sequencing rule | LIVE | `CLAUDE.md` |
-| D-249 | The whole decision surface is delivered as user-visible text before any choice question | LIVE | `cowork_handoff.md` ⚠tracking-surface-only |
-| D-250 | Dispatches are written only when they are next; a parked instruction is revalidated first | LIVE | `cowork_handoff.md` ⚠tracking-surface-only |
-| D-251 | A running dispatch is never interrupted or steered mid-flight; every instruction is self-sufficient | LIVE | `cowork_handoff.md` ⚠tracking-surface-only |
-| D-252 | One side writes the instruction files and the other executes them, never the reverse | LIVE | `cowork_handoff.md` ⚠tracking-surface-only |
-| D-253 | Working-tree files are read with the file tools; bash is limited to git object queries by explicit hash | LIVE | `cowork_handoff.md` ⚠tracking-surface-only |
-| D-254 | Investigate by default; never ask the user whether to investigate or proceed | LIVE | `cowork_handoff.md` ⚠tracking-surface-only |
+| D-249 | The whole decision surface is delivered as user-visible text before any choice question | LIVE | `CLAUDE.md` |
+| D-250 | Dispatches are written only when they are next; a parked instruction is revalidated first | LIVE | `cowork_audit_protocol.md` |
+| D-251 | A running dispatch is never interrupted or steered mid-flight; every instruction is self-sufficient | LIVE | `cowork_audit_protocol.md` |
+| D-252 | One side writes the instruction files and the other executes them, never the reverse | LIVE | `cowork_audit_protocol.md` |
+| D-253 | Working-tree files are read with the file tools; bash is limited to git object queries by explicit hash | LIVE | `CLAUDE.md` |
+| D-254 | Investigate by default; never ask the user whether to investigate or proceed | LIVE | `CLAUDE.md` |
 
 ## U. The standing decision-bearing surfaces — [full entries](decisions/group_U.md)
 
@@ -504,8 +503,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 ## Provenance of this register
 
 - Adjudication: the OI-207 decision-conformance adjudication, 2026-08-01, at commit `58dea6702ac8aa9d5ef8b89244b94d587a75f7a5`.
-- Coverage figures above regenerated at commit `9bf55580c4d3a77b96b18547e13043b62197319e`.
-- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `75ed69c5775e6d17…`).
+- Coverage figures above regenerated at commit `91802e4d37a8ae9a9a360261df6981e522bb6555`.
+- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `43cb9abb15fc5a79…`).
 - Harvest: `tools/audit/decisions/decision_candidates.json` (sha256 `51850440b315e6e9…`).
 - Clustering: `tools/audit/decisions/decision_clusters.json` (sha256 `0615b1e61bf10332…`).
 - Shape: `open_items/OI-208.md` (user-ratified 2026-07-28).

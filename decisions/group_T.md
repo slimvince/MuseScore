@@ -23,7 +23,7 @@
 
 **Status.** LIVE · decided 2026-07-11 · ratified by user
 
-**Home.** `CLAUDE.md:910`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:953`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:859-868, user-directed 2026-07-11. Binds Claude Code and Cowork sessions alike.
 
@@ -158,16 +158,19 @@
 
 ### D-249 — The whole decision surface is delivered as user-visible text before any choice question
 
-> **Never present the user with options before the ENTIRE situation has been explained in a message the
-> user has actually seen.** Mechanism note (the failure that made the rule): Cowork prose written between
-> tool calls is summarized, not shown verbatim — so an explanation "just before" a question widget may
-> never reach the user, and the question arrives blind. The rules:
-> 1. The decision surface (what is being decided, the background, each option's meaning, risks both ways,
->    the recommendation and why) is delivered as user-visible text FIRST — via the verbatim message
->    channel or as the turn's final response.
-> 2. For consequential decisions (ratifications, adoptions, retirements, checkpoint rulings), the choice
->    question goes in a SEPARATE, LATER turn — the user reads first, then is asked.
-> 3. A decision answered blind is voidable: re-present the surface and re-confirm.
+> - **THE WHOLE DECISION SURFACE IS DELIVERED AS USER-VISIBLE TEXT BEFORE ANY CHOICE QUESTION (user
+>   mandate 2026-07-05; homed here 2026-08-02 from `cowork_handoff.md`, `OPEN_ITEMS.md` OI-266).**
+>   Never present the user with options before the entire situation has been explained in a message the
+>   user has actually seen. The decision surface — what is being decided, the background, what each
+>   option means, the risks both ways, and the recommendation with its reason — is delivered as
+>   user-visible text FIRST, via the verbatim message channel or as the turn's final response. For a
+>   **consequential** decision (a ratification, an adoption, a retirement, a checkpoint ruling) the
+>   choice question goes in a SEPARATE, LATER turn: the user reads first, then is asked. **A decision
+>   answered blind is voidable** — re-present the surface and re-confirm. *Why:* the mechanism is
+>   stated with the rule — prose written between tool calls is summarized rather than shown verbatim,
+>   so an explanation placed "just before" a question widget may never reach the user and the question
+>   arrives blind. Its first application is on the record: the 2026-07-05 verdict-14 and 2.2c
+>   ratifications were re-presented and re-confirmed.
 
 **In plain words.** Before the user is asked to choose, the situation is explained in a message the user has actually read: what is being decided, the background, what each option means, the risks both ways, and the recommendation. For a consequential call the question comes in a later turn. A decision answered blind can be voided and re-asked.
 
@@ -175,23 +178,21 @@
 
 **Status.** LIVE · decided 2026-07-05 · ratified by user
 
-**Home.** `cowork_handoff.md:1589-1598`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `CLAUDE.md:908-920`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** cowork_handoff.md:1587 (the standing-rule heading, "user mandate 2026-07-05"); the instituting record is at STATUS_ARCHIVE.md:202 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
+**Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1589-1598, under the standing-rule heading 'FULL DECISION SURFACE BEFORE ANY CHOICE QUESTION' at cowork_handoff.md:1587 ('user mandate 2026-07-05'), with the instituting record at STATUS_ARCHIVE.md:202 - a session handoff block, which is a place for tracking a handover and not a home for a standing rule. Homed in the CLAUDE.md Conventions section, where this project's standing session-method rules live. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
 ### D-250 — Dispatches are written only when they are next; a parked instruction is revalidated first
 
-> **Do NOT write CC instructions ahead of need.** Pre-written instructions go stale (their premises change under
-> them), risk being skipped, and risk out-of-order execution. The rules:
-> 1. **At most ONE instruction is dispatched/being-executed at a time** (single CC, single worktree unless the user
->    explicitly sets up a second).
-> 2. **The NEXT instruction is written only when its predecessor's report is ratified** and it is actually the next
->    dispatch — never speculatively.
-> 3. **The dispatch QUEUE is a plan, not files:** upcoming work is recorded as plan lines (roadmap / STATUS "next"),
->    not as pre-written instruction files.
-> 4. **Any instruction file that exists but is not the active dispatch carries a `⏸ PARKED` banner** and MUST be
->    revalidated by Cowork against the then-current STATUS/HEAD immediately before dispatch, receiving a dated
->    DISPATCH note. CC must not execute a parked instruction without that note.
+> **Do not write instructions ahead of need.** At most **one** instruction is dispatched or being
+> executed at a time. The next instruction is written only once its predecessor's report is ratified
+> and it is actually the next dispatch — never speculatively. Upcoming work is recorded as **plan
+> lines** (the roadmap, the `STATUS.md` "next" entry), not as pre-written instruction files. Any
+> instruction file that exists but is not the active dispatch carries a **`⏸ PARKED` banner** and must
+> be revalidated against the then-current `STATUS.md` and HEAD immediately before dispatch, receiving
+> a dated dispatch note; an executing session must not run a parked instruction without that note.
+> *Why:* the three failure modes are stated with the rule — a pre-written instruction goes stale as
+> its premises change under it, risks being skipped, and risks out-of-order execution.
 
 **In plain words.** One instruction is dispatched at a time, and the next is written only once its predecessor's report is ratified. Upcoming work lives as plan lines, not as pre-written instruction files. An instruction file that is not the active one carries a parked banner and must be revalidated against the current state before it is dispatched.
 
@@ -199,17 +200,18 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `cowork_handoff.md:1606-1616`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `cowork_audit_protocol.md:154-162`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** cowork_handoff.md:1606-1616 (stated as standing rules under the handoff's standing-rules block) ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
+**Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1606-1616, stated as standing rules under the handoff's standing-rules block - a session handoff block. Homed in the new dispatch-protocol section of the audit protocol. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
 ### D-251 — A running dispatch is never interrupted or steered mid-flight; every instruction is self-sufficient
 
-> 5. **NO MID-FLIGHT STEERING (user, 2026-07-05): a running CC is never interrupted or relayed to** —
->    interruptions have several times proven disastrous. Every instruction must therefore be
->    SELF-SUFFICIENT: all foreseeable forks carried as in-instruction STOP/branch rules; anything not
->    covered waits for the report and is ruled at verification. The only mid-run channel is the one CC
->    itself opens (its own STOP question), answered when CC asks.
+> **No mid-flight steering (user, 2026-07-05):** a running session is never interrupted or relayed to.
+> Every instruction must therefore be **self-sufficient** — every foreseeable fork is carried inside
+> it as a stop or branch rule, and anything not covered waits for the report and is ruled at
+> verification. The only mid-run channel is the one the executing session itself opens, its own STOP
+> question, answered when it asks. *Why:* the evidence is stated with the rule — interruptions have
+> several times proven disastrous.
 
 **In plain words.** Once a working session is executing an instruction, nothing is relayed into it. Every foreseeable fork is written into the instruction as a stop or branch rule; anything not covered waits for the report. The only mid-run channel is a question the session itself raises.
 
@@ -217,21 +219,19 @@
 
 **Status.** LIVE · decided 2026-07-05 · ratified by user
 
-**Home.** `cowork_handoff.md:1617-1621`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `cowork_audit_protocol.md:166-171`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** cowork_handoff.md:1617 ("NO MID-FLIGHT STEERING (user, 2026-07-05)") ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
+**Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1617-1621 ('NO MID-FLIGHT STEERING (user, 2026-07-05)') - a session handoff block. Homed in the new dispatch-protocol section of the audit protocol. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
 ### D-252 — One side writes the instruction files and the other executes them, never the reverse
 
-> **Cowork writes instruction files. CC executes them. Never the other way around.**
->
-> - When the user says "go", "do E2b", "execute", or similar: the response is
->   "The instruction is ready at `cc_instruction_X.md` — give it to CC."
-> - Cowork MAY: read source files **via the file tools (Read / Grep / Glob) — NOT bash** (see the NEVER-BASH
->   standing rule below), write `.md` instruction files, update `cowork_handoff.md` / `STATUS.md` summaries after CC reports.
-> - Cowork MUST NOT: spawn agents that run build commands or modify `src/` files;
->   use Edit/Write tools on anything under `src/`; use bash redirects on source files.
-> - Violating this rule has broken the codebase twice (E1, E2b). Do not do it again.
+> **Cowork writes instruction files. CC executes them. Never the other way around.** When the user
+> says "go", "execute", or names an increment, the response is that the instruction is ready at its
+> `cc_instruction_*.md` path and should be given to the executing session. The planning side **may**
+> read source files via the file tools, write `.md` instruction files, and update `cowork_handoff.md`
+> and `STATUS.md` after a report lands. It **must not** edit anything under `src/`, run builds, or
+> spawn agents that run build commands or modify `src/`. *Why:* violating this rule has broken the
+> codebase twice, at the E1 and E2b increments — the evidence is stated with the rule itself.
 
 **In plain words.** The planning side writes instruction files and may read sources and update the summary documents; it does not edit anything under src/, run builds, or spawn agents that do. The executing side runs the instruction.
 
@@ -239,24 +239,31 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `cowork_handoff.md:1630-1638`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `cowork_audit_protocol.md:144-150`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** cowork_handoff.md:1628 ("STANDING RULE FOR COWORK (read every session)") ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
+**Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1630-1638, under 'STANDING RULE FOR COWORK (read every session)' at cowork_handoff.md:1628 - a session handoff block. Homed in the new dispatch-protocol section of the audit protocol, beside P5's withheld-finding rule and P8's pass ordering, which are already rules about how a dispatch is written and sequenced; that section's lead-in states that these three rules govern every dispatch and not only the audits above it. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
 ### D-253 — Working-tree files are read with the file tools; bash is limited to git object queries by explicit hash
 
-> - **Local file CONTENT, existence, line counts, searches → ALWAYS the file tools (Read / Grep / Glob).** NEVER `bash`
->   `cat` / `wc` / `grep` / `sed` / `head` / `tail` / `git status` / `git diff` on working-tree files. *(Supersedes the
->   older "read source via grep/cat/sed -n" line in the first standing rule above — that path is the stale one.)*
-> - **`bash` is permitted ONLY for read-only git OBJECT queries, BY EXPLICIT SHA from CC's commit report** (option B,
->   user-ratified): `git show <sha>:path`, `git show --stat <sha>`, `git cat-file`, `git diff <shaA> <shaB>`. These are
->   content-addressed and **self-verifying** — a stale/unsynced object errors loudly (`bad object`), never returns
->   silently-wrong content.
-> - **NEVER trust `git rev-parse HEAD` / `git status` / `git log`(branch tip) for "what is current"** — those read
->   mutable refs/index that can be stale. Take the SHA from CC's report, read by that SHA, corroborate with a fresh
->   file-tool read.
-> - A `bad object` / missing-object error = a **staleness signal → surface it, do not guess.** Mount refresh is
->   host-side only (CC `touch`es the file on Windows, or restart the session).
+> - **WORKING-TREE FILES ARE READ WITH THE FILE TOOLS; SHELL ACCESS IS LIMITED TO GIT OBJECT QUERIES BY
+>   EXPLICIT HASH (user mandate 2026-06-21; homed here 2026-08-02 from `cowork_handoff.md`,
+>   `OPEN_ITEMS.md` OI-266).** Local file content, existence, line counts and searches always go
+>   through the file tools (Read / Grep / Glob), never through shell text utilities — no `cat`, `wc`,
+>   `grep`, `sed`, `head`, `tail`, `git status` or `git diff` on working-tree files. Shell access is
+>   permitted **only** for read-only git OBJECT queries named by an explicit commit hash taken from a
+>   session's own commit report (`git show <sha>:path`, `git show --stat <sha>`, `git cat-file`,
+>   `git diff <shaA> <shaB>`). A branch tip or index read — `git rev-parse HEAD`, `git status`,
+>   `git log` — is never trusted for what is current. A `bad object` or missing-object error is a
+>   **staleness signal: surface it, never guess around it.** *Why:* measured failure — a stale mount
+>   made the shell path return wrong content and raise a false corruption alarm while the file tools
+>   read the live disk correctly; the git-object exception survives because content-addressed reads are
+>   self-verifying, erroring loudly rather than returning silently-wrong content. **Scope, as the
+>   record states it:** this is a standing rule for the PLANNING side — it is stated under the heading
+>   "COWORK MUST NOT HALLUCINATE OR ASSUME — VERIFY AT SOURCE", and the role-separation rule beside it
+>   spells out the same restriction as one of the things "Cowork MAY" do. It is homed here because
+>   `CLAUDE.md` is where this project's shared standing rules live, not because its scope widens: the
+>   build, test and measurement commands `BUILD_AND_TEST.md` and the sections above mandate are
+>   unaffected, and nothing in the record extends the file-tools restriction to them.
 
 **In plain words.** File content, existence, line counts and searches are read through the file tools, never through shell text utilities on the working tree. Shell access is allowed only for read-only git object queries named by an explicit commit hash, which are content-addressed and fail loudly when stale. A branch tip or index read is never trusted for what is current.
 
@@ -264,17 +271,20 @@
 
 **Status.** LIVE · decided 2026-06-21 · ratified by user
 
-**Home.** `cowork_handoff.md:1669-1680`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `CLAUDE.md:922-940`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** cowork_handoff.md:1642 ("COWORK MUST NOT HALLUCINATE OR ASSUME — VERIFY AT SOURCE (user mandate 2026-06-21)"), under which this rule is stated ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
+**Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1669-1680, under the standing-rule heading 'COWORK MUST NOT HALLUCINATE OR ASSUME - VERIFY AT SOURCE (user mandate 2026-06-21)' at cowork_handoff.md:1642 - a session handoff block. Homed in the CLAUDE.md Conventions section. Its scope is taken FROM THE RECORD, not decided here: that heading and D-252's own text ('Cowork MAY: read source files via the file tools - NOT bash') both state it as a planning-side rule, so the homed entry says so and says the mandated build, test and measurement commands are unaffected. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
 ### D-254 — Investigate by default; never ask the user whether to investigate or proceed
 
-> **Whenever a step could be investigated/measured BEFORE committing, ALWAYS investigate first — and do NOT
-> present it to the user as a choice.** The user's standing answer to "investigate or go in some direction"
-> is *always investigate*, so asking wastes a turn. This is the never-guess principle's logical end: gather
-> the cheap evidence before any commitment, by default. When Cowork hits such a fork, it writes the
-> investigation/measurement instruction directly (read-only / byte-identical where possible).
+> - **INVESTIGATE BY DEFAULT; NEVER ASK THE USER WHETHER TO INVESTIGATE OR PROCEED (user mandate
+>   2026-06-14; homed here 2026-08-02 from `cowork_handoff.md`, `OPEN_ITEMS.md` OI-266).** Wherever a
+>   step could be investigated or measured BEFORE it is committed to, it is measured first — and that
+>   is not put to the user as a choice. When such a fork is reached, the read-only investigation or
+>   measurement is written and run directly, byte-identical where possible. *Why:* the user's standing
+>   answer to "investigate, or go in some direction" is always *investigate*, so asking spends a turn
+>   to learn nothing; this is the never-guess rule's logical end — gather the cheap evidence before any
+>   commitment — and it operationalizes principle #5 (investigate when facts may be scarce).
 
 **In plain words.** Wherever a step could be measured before it is committed to, it is measured first, and that is not put to the user as a choice. When the planning side reaches such a fork it writes the read-only investigation instruction directly.
 
@@ -282,7 +292,7 @@
 
 **Status.** LIVE · decided 2026-06-14 · ratified by user
 
-**Home.** `cowork_handoff.md:1792-1796`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `CLAUDE.md:942-949`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** cowork_handoff.md:1790 ("INVESTIGATE BY DEFAULT — NEVER ASK 'investigate vs proceed' (user mandate 2026-06-14)") ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
+**Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1792-1796, under the standing-rule heading 'INVESTIGATE BY DEFAULT - NEVER ASK investigate vs proceed (user mandate 2026-06-14)' at cowork_handoff.md:1790 - a session handoff block. Homed in the CLAUDE.md Conventions section, beside principle #5, which it operationalizes. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 

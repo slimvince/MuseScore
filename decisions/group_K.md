@@ -47,9 +47,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3353-3354`
+**Home.** `ARCHITECTURE.md:3364-3365`
 
-**Provenance.** ARCHITECTURE.md:3352-3354, consistent with :251-254
+**Provenance.** ARCHITECTURE.md:3363-3365, consistent with :251-254
 
 ### D-094 — Each layer carries exactly one build state
 
@@ -153,13 +153,13 @@
 
 **In plain words.** When a design decision changes, the change to this document goes in the same commit as the change to the code.
 
-**Why.** Stated constraint, ARCHITECTURE.md:6746: stale documentation is worse than no documentation, because it actively misleads.
+**Why.** Stated constraint, ARCHITECTURE.md:6757: stale documentation is worse than no documentation, because it actively misleads.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6745`
+**Home.** `ARCHITECTURE.md:6756`
 
-**Provenance.** ARCHITECTURE.md:6743-6748 (§18.4); the standing principle is CLAUDE.md #10 (D-174). No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:6754-6759 (§18.4); the standing principle is CLAUDE.md #10 (D-174). No date or ratifier stated.
 
 ### D-192 — A scoring change and its documentation land in the same commit
 

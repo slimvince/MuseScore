@@ -14,13 +14,13 @@
 
 **In plain words.** The chord identifier is meant to say what chord the notes sounding at one moment spell, and nothing more. Improving its score by teaching it about what came before or after was explicitly forbidden.
 
-**Why.** Measurement, ARCHITECTURE.md:2088-2108: the boundary is recorded as empirically validated against DCML annotations over four corpora (2026-04-06), and the residual disagreement is diagnosed rather than assumed - 95.8 % of the bass-is-root disagreements are three-note triads in inversion, which local note content cannot resolve. Improving past that ceiling is stated to need a contextual harmony layer, NOT heuristics inside the vertical analyzer. (The same section then specifies contextual bonuses - open_items/OI-235.)
+**Why.** Measurement, ARCHITECTURE.md:2099-2119: the boundary is recorded as empirically validated against DCML annotations over four corpora (2026-04-06), and the residual disagreement is diagnosed rather than assumed - 95.8 % of the bass-is-root disagreements are three-note triads in inversion, which local note content cannot resolve. Improving past that ceiling is stated to need a contextual harmony layer, NOT heuristics inside the vertical analyzer. (The same section then specifies contextual bonuses - open_items/OI-235.)
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2106-2108`
+**Home.** `ARCHITECTURE.md:2117-2119`
 
-**Provenance.** ARCHITECTURE.md:2082-2108. Contradicted by the same document's §4.1b/§4.1d contextual bonuses, which score a candidate from the neighbouring chords - see OPEN_ITEMS OI-235
+**Provenance.** ARCHITECTURE.md:2093-2119. Contradicted by the same document's §4.1b/§4.1d contextual bonuses, which score a candidate from the neighbouring chords - see OPEN_ITEMS OI-235
 
 ### D-061 — Gate thresholds are Baroque-calibrated and must not be loosened for other styles
 
@@ -31,13 +31,13 @@
 
 **In plain words.** The adjustable cut-offs in the chord scorer were tuned on Baroque music. If they misbehave on other music, tighten the entry condition for everyone or give that style its own value - never widen the Baroque one.
 
-**Why.** Measurement, ARCHITECTURE.md:1776-1784 and `CLAUDE.md` gate policy: the values are empirically calibrated against the Baroque corpus and are Baroque-specific, so loosening one to accommodate another style silently re-tunes the style they were measured on; the two sanctioned fixes are a tighter structural entry condition that excludes the chord type in all styles, or a preset-specific override leaving the Baroque default unchanged.
+**Why.** Measurement, ARCHITECTURE.md:1787-1795 and `CLAUDE.md` gate policy: the values are empirically calibrated against the Baroque corpus and are Baroque-specific, so loosening one to accommodate another style silently re-tunes the style they were measured on; the two sanctioned fixes are a tighter structural entry condition that excludes the chord type in all styles, or a preset-specific override leaving the Baroque default unchanged.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1778-1782`
+**Home.** `ARCHITECTURE.md:1789-1793`
 
-**Provenance.** ARCHITECTURE.md:1776-1784; the same policy is in CLAUDE.md 'Gate threshold and preset policy'
+**Provenance.** ARCHITECTURE.md:1787-1795; the same policy is in CLAUDE.md 'Gate threshold and preset policy'
 
 ### D-062 — Progression signals are withheld while segmentation is being explored
 
@@ -48,13 +48,13 @@
 
 **In plain words.** While the program is still deciding where one chord ends and the next begins, the bonuses that reward a chord for fitting its neighbours are switched off, so that the answer does not bias the question.
 
-**Why.** Stated constraint, ARCHITECTURE.md:2005-2008 (the withheld signals 'prevent the bonus from biasing segmentation before the final per-region pass') with :641-644: where a boundary falls decides which pitch classes land in each candidate's input, and chord identity is itself a signal for where boundaries should be - so letting progression signals score the exploratory passes would let the answer decide its own input.
+**Why.** Stated constraint, ARCHITECTURE.md:2016-2019 (the withheld signals 'prevent the bonus from biasing segmentation before the final per-region pass') with :641-644: where a boundary falls decides which pitch classes land in each candidate's input, and chord identity is itself a signal for where boundaries should be - so letting progression signals score the exploratory passes would let the answer decide its own input.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2005-2008`
+**Home.** `ARCHITECTURE.md:2016-2019`
 
-**Provenance.** ARCHITECTURE.md:2005-2008, :1816-1822; the residual coupling is recorded as debt at :2105-2112
+**Provenance.** ARCHITECTURE.md:2016-2019, :1816-1822; the residual coupling is recorded as debt at :2105-2112
 
 ### D-063 — Cold context on the tick-local path is the accepted contract
 
@@ -68,9 +68,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1483-1485`
+**Home.** `ARCHITECTURE.md:1494-1496`
 
-**Provenance.** ARCHITECTURE.md:1474-1491. Its revisit trigger - 'Stage 3 design must state explicitly what P4 (and the bridge) consume from the decode' (:1299-1300) - has not been discharged by the joint/record design
+**Provenance.** ARCHITECTURE.md:1485-1502. Its revisit trigger - 'Stage 3 design must state explicitly what P4 (and the bridge) consume from the decode' (:1299-1300) - has not been discharged by the joint/record design
 
 ### D-064 — The chord-scoring presets are a measurement-only artifact
 
@@ -84,7 +84,7 @@
 
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1546-1549`
+**Home.** `ARCHITECTURE.md:1557-1560`
 
 **Provenance.** D-003 makes inference preset-independent on the production path, so the divergence this decision manages no longer exists there; it still describes the legacy path
 
@@ -98,9 +98,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1453`
+**Home.** `ARCHITECTURE.md:1464`
 
-**Provenance.** ARCHITECTURE.md:1453-1456, restated at :1363-1366
+**Provenance.** ARCHITECTURE.md:1464-1467, restated at :1363-1366
 
 ### D-066 — Chord symbols written in the score are never analyzer input
 
@@ -109,13 +109,13 @@
 
 **In plain words.** The chord names already written in a score are the user's own text and may be wrong. The analysis reads only the notes, the key signature and the settings.
 
-**Why.** Stated constraint, ARCHITECTURE.md:2535-2537: written chord symbols are USER CONTENT and may be incorrect, so reading them back as input would make the analyzer agree with whatever it was given rather than with the notes. The `--inject-written-root` flag is kept as a diagnostic upper bound and is explicitly not a production path.
+**Why.** Stated constraint, ARCHITECTURE.md:2546-2548: written chord symbols are USER CONTENT and may be incorrect, so reading them back as input would make the analyzer agree with whatever it was given rather than with the notes. The `--inject-written-root` flag is kept as a diagnostic upper bound and is explicitly not a production path.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2536-2537`
+**Home.** `ARCHITECTURE.md:2547-2548`
 
-**Provenance.** ARCHITECTURE.md:2535-2537, restated as the retirement rationale's 'Core principle' at :2335-2337
+**Provenance.** ARCHITECTURE.md:2546-2548, restated as the retirement rationale's 'Core principle' at :2335-2337
 
 ### D-067 — Jazz mode (chord-symbol-driven boundaries) is retired
 
@@ -127,9 +127,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2504`
+**Home.** `ARCHITECTURE.md:2515`
 
-**Provenance.** ARCHITECTURE.md:2504, retirement rationale at :2324-2339
+**Provenance.** ARCHITECTURE.md:2515, retirement rationale at :2324-2339
 
 ### D-068 — The chord identifier needs at least three distinct pitch classes
 
@@ -141,9 +141,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1817`
+**Home.** `ARCHITECTURE.md:1828`
 
-**Provenance.** ARCHITECTURE.md:1817
+**Provenance.** ARCHITECTURE.md:1828
 
 ### D-069 — Two identity modes for merged stretches - harmonic summary and as-written
 
@@ -156,9 +156,9 @@
 
 **Status.** DEFERRED · decided 2026-04-11 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1955-1956`
+**Home.** `ARCHITECTURE.md:1966-1967`
 
-**Provenance.** ARCHITECTURE.md:1951 'Region identity modes (decided 2026-04-11)'; :1734-1736 records as-written mode deferred
+**Provenance.** ARCHITECTURE.md:1962 'Region identity modes (decided 2026-04-11)'; :1734-1736 records as-written mode deferred
 
 ### D-101 — Contextual inversion bonuses fire only for major and minor candidates
 
@@ -168,13 +168,13 @@
 
 **In plain words.** The bonuses that let a neighbouring chord tip an inversion reading were restricted to plain major and minor chords, after three earlier attempts without that restriction all made things worse.
 
-**Why.** Stated constraint, ARCHITECTURE.md:1856-1856: recorded as a hard-won safety constraint, the lesson of a three-attempt history in which the bonuses fired on qualities they were not measured on.
+**Why.** Stated constraint, ARCHITECTURE.md:1867-1867: recorded as a hard-won safety constraint, the lesson of a three-attempt history in which the bonuses fired on qualities they were not measured on.
 
 **Status.** SUPERSEDED BY D-102 · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1856-1858`
+**Home.** `ARCHITECTURE.md:1867-1869`
 
-**Provenance.** ARCHITECTURE.md:2160-2168 records Iter 46 extending the same helpers to Augmented and HalfDiminished. The §4.1b statement carries no supersession note - see OPEN_ITEMS OI-236 ★ Verbatim RE-TAKEN 2026-08-02 (the phase-1 truth-sync): the §4.1b passage now carries the supersession note it lacked, and states the constraint that actually survives at HEAD, which differs between the two helper predicates (OPEN_ITEMS OI-236 discharged). The decision's own words are preserved in place, marked 'As originally written'.
+**Provenance.** ARCHITECTURE.md:2171-2179 records Iter 46 extending the same helpers to Augmented and HalfDiminished. The §4.1b statement carries no supersession note - see OPEN_ITEMS OI-236 ★ Verbatim RE-TAKEN 2026-08-02 (the phase-1 truth-sync): the §4.1b passage now carries the supersession note it lacked, and states the constraint that actually survives at HEAD, which differs between the two helper predicates (OPEN_ITEMS OI-236 discharged). The decision's own words are preserved in place, marked 'As originally written'.
 
 ### D-102 — Augmented and half-diminished candidates receive the inversion bonuses too (Iter 46)
 
@@ -183,13 +183,13 @@
 
 **In plain words.** The restriction above was later relaxed for augmented and half-diminished chords, because without the bonuses their correct inverted readings never reached the shortlist at all. It was the single largest improvement of that iteration path.
 
-**Why.** Measurement, ARCHITECTURE.md:2160-2168: keeping D-101's constraint made correct inverted readings unreachable, and extending the two helper predicates to augmented and half-diminished was 'the largest single improvement of iteration path 1'.
+**Why.** Measurement, ARCHITECTURE.md:2171-2179: keeping D-101's constraint made correct inverted readings unreachable, and extending the two helper predicates to augmented and half-diminished was 'the largest single improvement of iteration path 1'.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2167-2168`
+**Home.** `ARCHITECTURE.md:2178-2179`
 
-**Provenance.** ARCHITECTURE.md:2158-2171 (Iter 46, commit 36bf4738a8)
+**Provenance.** ARCHITECTURE.md:2169-2182 (Iter 46, commit 36bf4738a8)
 
 ### D-103 — Pedal-point detection is a second pass, accepted only on two conditions
 
@@ -198,13 +198,13 @@
 
 **In plain words.** When the lowest note does not belong to the chord the upper voices spell, the program re-analyses without it. It accepts that reading only if the upper voices give at least two different pitch names and the answer is clearly better than the next different-rooted one.
 
-**Why.** Stated constraint, ARCHITECTURE.md:3880-3885: a single pass over an organ point either forces a bass-root reading and suppresses the upper-voice harmony, or returns a slash chord with the wrong root when a template accidentally fits. The 'different-root competitor' detail carries its own recorded reason at :3640-3643 - several templates share a root, so a gap measured against rank 2 collapses to about 0.047 and blocks detection for bare triads.
+**Why.** Stated constraint, ARCHITECTURE.md:3891-3896: a single pass over an organ point either forces a bass-root reading and suppresses the upper-voice harmony, or returns a slash chord with the wrong root when a template accidentally fits. The 'different-root competitor' detail carries its own recorded reason at :3640-3643 - several templates share a root, so a gap measured against rank 2 collapses to about 0.047 and blocks detection for bare triads.
 
 **Status.** SUPERSEDED BY D-207 · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3893-3894`
+**Home.** `ARCHITECTURE.md:3904-3905`
 
-**Provenance.** ARCHITECTURE.md:3871-3906 'Status: Implemented (Session 18, master fb9a27ce9a)'. Suspended on the record arm - see D-021. SUPERSEDED BY D-207 - open_items/OI-194.md:7 records the ratified successor (user, 2026-07-26): the voice-independent pedal-point class replaces this bass-only second pass and the `isPedalPoint`/`pedalBassPc` fact it produces
+**Provenance.** ARCHITECTURE.md:3882-3917 'Status: Implemented (Session 18, master fb9a27ce9a)'. Suspended on the record arm - see D-021. SUPERSEDED BY D-207 - open_items/OI-194.md:7 records the ratified successor (user, 2026-07-26): the voice-independent pedal-point class replaces this bass-only second pass and the `isPedalPoint`/`pedalBassPc` fact it produces
 
 ### D-104 — The bass-is-root bonus is conditioned on corroborating support
 
@@ -213,13 +213,13 @@
 
 **In plain words.** Being the lowest note no longer counts as strong evidence of being the chord's root unless the chord above actually supports that reading. Without a third or fifth above it, the bonus almost vanishes.
 
-**Why.** Measurement, ARCHITECTURE.md:3656-3675: four corpora (Chopin mazurka, Mozart sonata, Corelli trio sonata, Beethoven quartet) were inspected at the score and found to share ONE mechanism - the bass moves faster than the harmonic rhythm, so each bass note independently takes the bonus and overrides the root the chord tones above already identify. The fix conditions the bonus on corroborating root-position support rather than shrinking it.
+**Why.** Measurement, ARCHITECTURE.md:3667-3686: four corpora (Chopin mazurka, Mozart sonata, Corelli trio sonata, Beethoven quartet) were inspected at the score and found to share ONE mechanism - the bass moves faster than the harmonic rhythm, so each bass note independently takes the bonus and overrides the root the chord tones above already identify. The fix conditions the bonus on corroborating root-position support rather than shrinking it.
 
 **Status.** LIVE · decided 2026-04-09 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3674-3675`
+**Home.** `ARCHITECTURE.md:3685-3686`
 
-**Provenance.** ARCHITECTURE.md:3651-3699; the failure it fixed is documented across four corpora at :3406-3419
+**Provenance.** ARCHITECTURE.md:3662-3710; the failure it fixed is documented across four corpora at :3406-3419
 
 ### D-105 — The spelling written in the score is read through ONE shared interpreter
 
@@ -228,13 +228,13 @@
 
 **In plain words.** How a note is spelt on the page - F sharp versus G flat - is interpreted in one shared place, not re-implemented by each stage that needs it.
 
-**Why.** Stated constraint, ARCHITECTURE.md:1358-1360 - 'one interpreter, not a per-layer tpc copy' (#6): two interpreters of the notated spelling can disagree, and open_items/OI-173 records what that costs when it happens (four inequivalent definitions of the same predicate).
+**Why.** Stated constraint, ARCHITECTURE.md:1369-1371 - 'one interpreter, not a per-layer tpc copy' (#6): two interpreters of the notated spelling can disagree, and open_items/OI-173 records what that costs when it happens (four inequivalent definitions of the same predicate).
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1359-1360`
+**Home.** `ARCHITECTURE.md:1370-1371`
 
-**Provenance.** ARCHITECTURE.md:1357-1360. ARCHITECTURE.md:1368-1372 records the unification residual: the legacy scorer still carries its own second reader until the legacy path retires
+**Provenance.** ARCHITECTURE.md:1368-1371. ARCHITECTURE.md:1379-1383 records the unification residual: the legacy scorer still carries its own second reader until the legacy path retires
 
 ### D-207 — The pedal-point class is defined voice-independently, superseding the bass-only fact
 
@@ -249,7 +249,7 @@
 
 **Status.** DEFERRED · decided 2026-07-26 · ratified by user
 
-**Home.** `ARCHITECTURE.md:4489-4492`
+**Home.** `ARCHITECTURE.md:4500-4503`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at open_items/OI-194.md:7, sharpened at the P1 pedal-point ruling, user-ratified 2026-07-26 at the consumption-audit verification (`cowork_notation_adoption_increment.md` §7 + §10). DEFERRED: it lands with the ornament-label publication, its own increment after the notation switch; until then the record arm leaves the pedal fields empty (D-021) and the 'X ped.' annotation is a declared gap. §5.12, which specifies the superseded two-pass detector, now carries a pointer to §7.4. OPEN_ITEMS OI-237 closes on this move
 
@@ -261,13 +261,13 @@
 
 **In plain words.** If written chord symbols are ever treated as authoritative input, the authority is carried by each symbol. A single switch for a whole score is rejected.
 
-**Why.** The reason is stated with the decision: one score may carry both trusted lead-sheet annotations and untrusted draft symbols, so a per-score toggle is too coarse-grained (ARCHITECTURE.md:2598-2600).
+**Why.** The reason is stated with the decision: one score may carry both trusted lead-sheet annotations and untrusted draft symbols, so a per-score toggle is too coarse-grained (ARCHITECTURE.md:2609-2611).
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2598-2600`
+**Home.** `ARCHITECTURE.md:2609-2611`
 
-**Provenance.** ARCHITECTURE.md:2576 heads the section "Future: Authoritative Chord Symbol Mode"; the current rule is that written symbols are never analyzer input (register entry D-066) ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
+**Provenance.** ARCHITECTURE.md:2587 heads the section "Future: Authoritative Chord Symbol Mode"; the current rule is that written symbols are never analyzer input (register entry D-066) ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
 ### D-237 — Only a symbol marked trusted becomes analyzer input; an untrusted symbol is never read
 
@@ -283,9 +283,9 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2609-2613`
+**Home.** `ARCHITECTURE.md:2620-2624`
 
-**Provenance.** ARCHITECTURE.md:2576 (the section is headed Future); register entry D-066 records the rule in force today ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
+**Provenance.** ARCHITECTURE.md:2587 (the section is headed Future); register entry D-066 records the rule in force today ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
 ### D-238 — Two pitch classes may nominate a chord but may not finalize one; one pitch class may not
 
@@ -297,13 +297,13 @@
 
 **In plain words.** In the monophonic fallback, a slice with only two distinct pitch classes can propose candidates but cannot settle the chord without context; a single pitch class cannot settle one at all and may only keep an existing reading alive.
 
-**Why.** The reason is stated beside the rule: it avoids over-interpretation of isolated tones (ARCHITECTURE.md:2760-2761).
+**Why.** The reason is stated beside the rule: it avoids over-interpretation of isolated tones (ARCHITECTURE.md:2771-2772).
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2754-2758`
+**Home.** `ARCHITECTURE.md:2765-2769`
 
-**Provenance.** ARCHITECTURE.md:2724 heads the section "Phase 1b - Minimal Monophonic Fallback Without Chord Symbols"; ARCHITECTURE.md:3496-3503 records monophonic input as planned ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
+**Provenance.** ARCHITECTURE.md:2735 heads the section "Phase 1b - Minimal Monophonic Fallback Without Chord Symbols"; ARCHITECTURE.md:3507-3514 records monophonic input as planned ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
 ### D-239 — Chord identity stays local; expansion is by one neighbouring region and is bounded
 
@@ -322,9 +322,9 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2763-2770`
+**Home.** `ARCHITECTURE.md:2774-2781`
 
-**Provenance.** ARCHITECTURE.md:2724 (the Phase 1b section heading); the stop conditions are stated with the rule ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
+**Provenance.** ARCHITECTURE.md:2735 (the Phase 1b section heading); the stop conditions are stated with the rule ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
 ### D-240 — The monophonic smoothing terms are tunable parameters, not prose-only rules
 
@@ -337,9 +337,9 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2780-2781`
+**Home.** `ARCHITECTURE.md:2791-2792`
 
-**Provenance.** ARCHITECTURE.md:2724 (the Phase 1b section heading); the named parameters are listed at :2783-2790 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
+**Provenance.** ARCHITECTURE.md:2735 (the Phase 1b section heading); the named parameters are listed at :2783-2790 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
 ### D-241 — The monophonic local-grouping problem is deferred to Phase 2
 
@@ -348,13 +348,13 @@
 
 **In plain words.** Deciding how to group a single melodic line into harmonic units is left to the later, full monophonic engine rather than attempted in the minimal fallback.
 
-**Why.** The reason is stated with the deferral: local grouping is the hardest part of monophonic inference (ARCHITECTURE.md:2810-2811).
+**Why.** The reason is stated with the deferral: local grouping is the hardest part of monophonic inference (ARCHITECTURE.md:2821-2822).
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2810-2811`
+**Home.** `ARCHITECTURE.md:2821-2822`
 
-**Provenance.** ARCHITECTURE.md:2796 heads "Phase 2 - Full Monophonic Engine" ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
+**Provenance.** ARCHITECTURE.md:2807 heads "Phase 2 - Full Monophonic Engine" ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
 ### D-242 — Vertical and monophonic raw scores are never compared directly
 
@@ -364,11 +364,11 @@
 
 **In plain words.** The layer that combines the two chord engines may not put their raw numbers side by side. The two engines weigh different evidence, so their confidences must be calibrated onto a common footing first.
 
-**Why.** The reason is stated with the rule: the two engines use different evidence models (ARCHITECTURE.md:2839-2840). It is the same commensurability constraint the cross-layer confidence contract states generally (register entry D-032).
+**Why.** The reason is stated with the rule: the two engines use different evidence models (ARCHITECTURE.md:2850-2851). It is the same commensurability constraint the cross-layer confidence contract states generally (register entry D-032).
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2838-2840`
+**Home.** `ARCHITECTURE.md:2849-2851`
 
-**Provenance.** ARCHITECTURE.md:2813 heads "Unified Orchestration Layer", part of the provisional phased plan recorded at :3498-3503 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
+**Provenance.** ARCHITECTURE.md:2824 heads "Unified Orchestration Layer", part of the provisional phased plan recorded at :3498-3503 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 

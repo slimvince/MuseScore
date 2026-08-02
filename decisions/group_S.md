@@ -146,7 +146,7 @@
 
 **In plain words.** The documents describing the system never lag behind the system.
 
-**Why.** Stated constraint, ARCHITECTURE.md:6746: stale documentation is worse than no documentation because it actively misleads. The same-commit rule that operationalizes it is at ARCHITECTURE.md:6745-6748.
+**Why.** Stated constraint, ARCHITECTURE.md:6757: stale documentation is worse than no documentation because it actively misleads. The same-commit rule that operationalizes it is at ARCHITECTURE.md:6756-6759.
 
 **Status.** LIVE · date not stated · ratified by user
 
@@ -523,7 +523,7 @@
 
 **Status.** LIVE · decided 2026-07-13 · ratified by user
 
-**Home.** `ARCHITECTURE.md:6587-6589`
+**Home.** `ARCHITECTURE.md:6598-6600`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at open_items/OI-56.md:7, decided by the user 2026-07-13. The when-question is tied to the corpus-onboarding event (OI-38) and the timing is itself open. OPEN_ITEMS OI-240 closes on this move
 
@@ -539,7 +539,7 @@
 
 **Status.** DEFERRED · decided 2026-07-13 · ratified by user
 
-**Home.** `ARCHITECTURE.md:4935-4937`
+**Home.** `ARCHITECTURE.md:4946-4948`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at open_items/OI-62.md:7, decided by the user 2026-07-13. The six unbuilt items are specified at ARCHITECTURE.md §11.3a-g and confirmed absent from the code in that row. OPEN_ITEMS OI-240 closes on this move
 

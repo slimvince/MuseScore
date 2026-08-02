@@ -73,7 +73,7 @@
 
 **In plain words.** When a staff is excluded from analysis - for instance the chord staff the program itself writes to - its notes are dropped before the analysis starts, not filtered out of the answer afterwards.
 
-**Why.** Stated constraint, ARCHITECTURE.md:124-128: input selection belongs at the layer that owns its input surface (#7), and doing it there is what stops a populated chord staff's own notes from being fed back into a re-analysis - the self-feedback hazard the legacy design guarded against (ARCHITECTURE.md:5775-5776).
+**Why.** Stated constraint, ARCHITECTURE.md:124-128: input selection belongs at the layer that owns its input surface (#7), and doing it there is what stops a populated chord staff's own notes from being fed back into a re-analysis - the self-feedback hazard the legacy design guarded against (ARCHITECTURE.md:5786-5787).
 
 **Status.** LIVE · decided 2026-07-27 · ratifier not stated
 

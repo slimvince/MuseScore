@@ -17,9 +17,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1381-1382`
+**Home.** `ARCHITECTURE.md:1392-1393`
 
-**Provenance.** ARCHITECTURE.md:1378-1387 (Layer 5 - Built+Dormant, design ratified)
+**Provenance.** ARCHITECTURE.md:1389-1398 (Layer 5 - Built+Dormant, design ratified)
 
 ### D-080 — Carried abstentions are resolved by selecting among the carried readings, never re-derived
 
@@ -31,9 +31,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1385-1386`
+**Home.** `ARCHITECTURE.md:1396-1397`
 
-**Provenance.** ARCHITECTURE.md:1378-1387
+**Provenance.** ARCHITECTURE.md:1389-1398
 
 ### D-081 — The cadence detector is key-agnostic
 
@@ -46,9 +46,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1385-1386`
+**Home.** `ARCHITECTURE.md:1396-1397`
 
-**Provenance.** ARCHITECTURE.md:1386. open_items/OI-166 records that the built detector is key-agnostic but CHORD-derived, not the bass-driven pre-scan specified
+**Provenance.** ARCHITECTURE.md:1397. open_items/OI-166 records that the built detector is key-agnostic but CHORD-derived, not the bass-driven pre-scan specified
 
 ### D-082 — The grouping layer is additive, read-only, with no feedback
 
@@ -60,9 +60,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1393`
+**Home.** `ARCHITECTURE.md:1404`
 
-**Provenance.** ARCHITECTURE.md:1389-1396 (Layer 6 - Design-only, v1 spec)
+**Provenance.** ARCHITECTURE.md:1400-1407 (Layer 6 - Design-only, v1 spec)
 
 ### D-083 — Hierarchy, periods and prolongation are out of the validatable core
 
@@ -75,9 +75,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1394-1395`
+**Home.** `ARCHITECTURE.md:1405-1406`
 
-**Provenance.** ARCHITECTURE.md:1389-1396, deriving from D-029
+**Provenance.** ARCHITECTURE.md:1400-1407, deriving from D-029
 
 ### D-084 — The progression-schema recognizer is a consumer of the function layer, not a new layer
 
@@ -89,9 +89,9 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1400`
+**Home.** `ARCHITECTURE.md:1411`
 
-**Provenance.** ARCHITECTURE.md:1398-1403 'Scaffolding-first, deferred'
+**Provenance.** ARCHITECTURE.md:1409-1414 'Scaffolding-first, deferred'
 
 ### D-085 — The voice-leading axis is a separate axis with its own layers
 
@@ -106,7 +106,7 @@
 
 **Home.** `ARCHITECTURE.md:895-896`
 
-**Provenance.** ARCHITECTURE.md:896-899 records the foundation BUILT (dormant). ARCHITECTURE.md:1404-1404 still says the voice-leading layer is 'not built' - see OPEN_ITEMS OI-232
+**Provenance.** ARCHITECTURE.md:896-899 records the foundation BUILT (dormant). ARCHITECTURE.md:1415-1415 still says the voice-leading layer is 'not built' - see OPEN_ITEMS OI-232
 
 ### D-248 — Tonicization labels are not implemented and are deferred
 
@@ -116,11 +116,11 @@
 
 **In plain words.** Applied-chord labels such as V/V are not produced. The data structure has no field for the relative root, and the feature waits on a standalone implementation.
 
-**Why.** The constraint is stated in the record: `ChordFunction` carries no `relativeRoot` or secondary-dominant field, so the label has nowhere to live (ARCHITECTURE.md:6002-6003).
+**Why.** The constraint is stated in the record: `ChordFunction` carries no `relativeRoot` or secondary-dominant field, so the label has nowhere to live (ARCHITECTURE.md:6013-6014).
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6001-6003`
+**Home.** `ARCHITECTURE.md:6012-6014`
 
-**Provenance.** ARCHITECTURE.md:6001-6003. Section 5.10 (ARCHITECTURE.md:3849) is the tonicization section; the memory-held backlog item is recorded in the same terms. ★ RATIFIED (user, 2026-08-02) with the revisit to be PLANNED: for the ultimate objective (maximum-precision inference) the feature may be needed — the ground truth annotates applied chords, so not producing them costs Roman-numeral agreement wherever the annotator wrote one. Row OI-267 carries the planning obligation, including the OI-53 tension (a live classifier emitting V7/x was found on the legacy path while this entry's home says not implemented).
+**Provenance.** ARCHITECTURE.md:6012-6014. Section 5.10 (ARCHITECTURE.md:3860) is the tonicization section; the memory-held backlog item is recorded in the same terms. ★ RATIFIED (user, 2026-08-02) with the revisit to be PLANNED: for the ultimate objective (maximum-precision inference) the feature may be needed — the ground truth annotates applied chords, so not producing them costs Roman-numeral agreement wherever the annotator wrote one. Row OI-267 carries the planning obligation, including the OI-53 tension (a live classifier emitting V7/x was found on the legacy path while this entry's home says not implemented).
 

@@ -905,6 +905,49 @@ Build commands via `Start-Process` are isolated from these rules (exit code not 
   have a sibling at the opposite end of the density spectrum (`OPEN_ITEMS.md` OI-227) and an
   emission-side twin (OI-228), neither visible from the first symptom (OI-215).
 
+- **THE WHOLE DECISION SURFACE IS DELIVERED AS USER-VISIBLE TEXT BEFORE ANY CHOICE QUESTION (user
+  mandate 2026-07-05; homed here 2026-08-02 from `cowork_handoff.md`, `OPEN_ITEMS.md` OI-266).**
+  Never present the user with options before the entire situation has been explained in a message the
+  user has actually seen. The decision surface — what is being decided, the background, what each
+  option means, the risks both ways, and the recommendation with its reason — is delivered as
+  user-visible text FIRST, via the verbatim message channel or as the turn's final response. For a
+  **consequential** decision (a ratification, an adoption, a retirement, a checkpoint ruling) the
+  choice question goes in a SEPARATE, LATER turn: the user reads first, then is asked. **A decision
+  answered blind is voidable** — re-present the surface and re-confirm. *Why:* the mechanism is
+  stated with the rule — prose written between tool calls is summarized rather than shown verbatim,
+  so an explanation placed "just before" a question widget may never reach the user and the question
+  arrives blind. Its first application is on the record: the 2026-07-05 verdict-14 and 2.2c
+  ratifications were re-presented and re-confirmed.
+
+- **WORKING-TREE FILES ARE READ WITH THE FILE TOOLS; SHELL ACCESS IS LIMITED TO GIT OBJECT QUERIES BY
+  EXPLICIT HASH (user mandate 2026-06-21; homed here 2026-08-02 from `cowork_handoff.md`,
+  `OPEN_ITEMS.md` OI-266).** Local file content, existence, line counts and searches always go
+  through the file tools (Read / Grep / Glob), never through shell text utilities — no `cat`, `wc`,
+  `grep`, `sed`, `head`, `tail`, `git status` or `git diff` on working-tree files. Shell access is
+  permitted **only** for read-only git OBJECT queries named by an explicit commit hash taken from a
+  session's own commit report (`git show <sha>:path`, `git show --stat <sha>`, `git cat-file`,
+  `git diff <shaA> <shaB>`). A branch tip or index read — `git rev-parse HEAD`, `git status`,
+  `git log` — is never trusted for what is current. A `bad object` or missing-object error is a
+  **staleness signal: surface it, never guess around it.** *Why:* measured failure — a stale mount
+  made the shell path return wrong content and raise a false corruption alarm while the file tools
+  read the live disk correctly; the git-object exception survives because content-addressed reads are
+  self-verifying, erroring loudly rather than returning silently-wrong content. **Scope, as the
+  record states it:** this is a standing rule for the PLANNING side — it is stated under the heading
+  "COWORK MUST NOT HALLUCINATE OR ASSUME — VERIFY AT SOURCE", and the role-separation rule beside it
+  spells out the same restriction as one of the things "Cowork MAY" do. It is homed here because
+  `CLAUDE.md` is where this project's shared standing rules live, not because its scope widens: the
+  build, test and measurement commands `BUILD_AND_TEST.md` and the sections above mandate are
+  unaffected, and nothing in the record extends the file-tools restriction to them.
+
+- **INVESTIGATE BY DEFAULT; NEVER ASK THE USER WHETHER TO INVESTIGATE OR PROCEED (user mandate
+  2026-06-14; homed here 2026-08-02 from `cowork_handoff.md`, `OPEN_ITEMS.md` OI-266).** Wherever a
+  step could be investigated or measured BEFORE it is committed to, it is measured first — and that
+  is not put to the user as a choice. When such a fork is reached, the read-only investigation or
+  measurement is written and run directly, byte-identical where possible. *Why:* the user's standing
+  answer to "investigate, or go in some direction" is always *investigate*, so asking spends a turn
+  to learn nothing; this is the never-guess rule's logical end — gather the cheap evidence before any
+  commitment — and it operationalizes principle #5 (investigate when facts may be scarce).
+
 ## The self-check after every coding exercise (user-directed, 2026-07-11)
 
 After EVERY coding exercise — code, scripts, instruments, and document edits alike —

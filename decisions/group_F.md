@@ -60,13 +60,13 @@
 
 **In plain words.** The key finder considers 21 scale types on each of the 12 possible tonics. The harmonic major family was left out because it is rare and we have no annotated music to calibrate it against.
 
-**Why.** Recorded for the DEFERRAL half only, ARCHITECTURE.md:2448-2452: the harmonic major modes are significantly rarer as tonal centers than the melodic and harmonic minor modes, and the validation corpus is unlikely to calibrate them well. Why the other 21 modes are all scored against all 12 tonics has no recorded derivation.
+**Why.** Recorded for the DEFERRAL half only, ARCHITECTURE.md:2459-2463: the harmonic major modes are significantly rarer as tonal centers than the melodic and harmonic minor modes, and the validation corpus is unlikely to calibrate them well. Why the other 21 modes are all scored against all 12 tonics has no recorded derivation.
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2449-2451`
+**Home.** `ARCHITECTURE.md:2460-2462`
 
-**Provenance.** ARCHITECTURE.md:2383-2384 (21 modes), :2213-2217 (harmonic major deferred)
+**Provenance.** ARCHITECTURE.md:2394-2395 (21 modes), :2213-2217 (harmonic major deferred)
 
 ### D-055 — The 21 mode priors are independent and user-configurable
 
@@ -79,9 +79,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2397-2398`
+**Home.** `ARCHITECTURE.md:2408-2409`
 
-**Provenance.** ARCHITECTURE.md:2397-2399, :3020-3073. Superseded on the production path by D-003 (inference is preset-independent)
+**Provenance.** ARCHITECTURE.md:2408-2410, :3020-3073. Superseded on the production path by D-003 (inference is preset-independent)
 
 ### D-056 — Notes always win - the notated key signature is a weak hint, not a bypass
 
@@ -91,13 +91,13 @@
 
 **In plain words.** The key printed at the start of the score does not settle the question. It only nudges the answer; what the notes actually do decides.
 
-**Why.** Stated constraint, ARCHITECTURE.md:3371-3373: the notated signature is what the composer wrote down, not what the music does - a piece may modulate, be notated in a partial signature, or contradict its own signature - so it enters as a weak hint the sounding notes can outvote.
+**Why.** Stated constraint, ARCHITECTURE.md:3382-3384: the notated signature is what the composer wrote down, not what the music does - a piece may modulate, be notated in a partial signature, or contradict its own signature - so it enters as a weak hint the sounding notes can outvote.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3371-3373`
+**Home.** `ARCHITECTURE.md:3382-3384`
 
-**Provenance.** ARCHITECTURE.md:3369-3381
+**Provenance.** ARCHITECTURE.md:3380-3392
 
 ### D-057 — The priority of evidence - actual sounding notes are the strongest evidence
 
@@ -105,13 +105,13 @@
 
 **In plain words.** In deciding the key, what is actually sounding right now outranks the surrounding bars, which outrank the printed key signature, which outranks the major/minor tag on it.
 
-**Why.** Stated constraint, ARCHITECTURE.md:3385-3392: the priority table ranks the actual sounding notes the strongest evidence, above the notated signature and above any prior result, for the same reason as D-056.
+**Why.** Stated constraint, ARCHITECTURE.md:3396-3403: the priority table ranks the actual sounding notes the strongest evidence, above the notated signature and above any prior result, for the same reason as D-056.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3389`
+**Home.** `ARCHITECTURE.md:3400`
 
-**Provenance.** ARCHITECTURE.md:3385-3392. Cited by open_items/OI-228 as the primary source the joint emission departs from. NOT catchable by the harvest's signature net - the reason this adjudication had to read the specifications in full
+**Provenance.** ARCHITECTURE.md:3396-3403. Cited by open_items/OI-228 as the primary source the joint emission departs from. NOT catchable by the harvest's signature net - the reason this adjudication had to read the specifications in full
 
 ### D-058 — The piece-start shortcut
 
@@ -127,9 +127,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3376-3380`
+**Home.** `ARCHITECTURE.md:3387-3391`
 
-**Provenance.** ARCHITECTURE.md:3376-3381 calls it 'a deliberate pragmatic choice for the score opening, not a general bypass'. NOT catchable by the harvest's signature net
+**Provenance.** ARCHITECTURE.md:3387-3392 calls it 'a deliberate pragmatic choice for the score opening, not a general bypass'. NOT catchable by the harvest's signature net
 
 ### D-059 — The temporal window - 16 beats back, 8 beats forward, decayed
 
@@ -141,9 +141,9 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3414`
+**Home.** `ARCHITECTURE.md:3425`
 
-**Provenance.** ARCHITECTURE.md:3412-3424; legacy-arm only since the switch (D-010). Derivation not recorded: the only stated basis for 16 and 8 is the in-code gloss '~4 measures in 4/4' / '~2 measures ahead' (ARCHITECTURE.md:3417-3418) - no theory citation and no measurement
+**Provenance.** ARCHITECTURE.md:3423-3435; legacy-arm only since the switch (D-010). Derivation not recorded: the only stated basis for 16 and 8 is the in-code gloss '~4 measures in 4/4' / '~2 measures ahead' (ARCHITECTURE.md:3428-3429) - no theory citation and no measurement
 
 ### D-235 — Tonal-centre disambiguation may break a close tie but may not overturn a stronger raw winner
 
@@ -159,7 +159,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2403-2407`
+**Home.** `ARCHITECTURE.md:2414-2418`
 
-**Provenance.** ARCHITECTURE.md:2403-2407; the same guard is listed among the key-path scoring terms at :2480-2482 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
+**Provenance.** ARCHITECTURE.md:2414-2418; the same guard is listed among the key-path scoring terms at :2480-2482 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
