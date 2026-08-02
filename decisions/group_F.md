@@ -225,3 +225,336 @@
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue.
 
+### D-343 — The key/mode layer owns the candidate space and the note-evidence model outright; the residual is SELECTED from its carried alternatives, never re-scored
+
+> Architectural Layer 3 owns two things outright: the **candidate space** (the 252 key/modes) and the
+> **note-evidence model** — how well each candidate fits the pitch content and the sequence. No other architectural layer
+> infers key/mode from the notes, and no other architectural layer generates or re-scores key/mode candidates. What
+> Architectural Layer 3 does **not** own is the *final arbitration of the cases the notes alone cannot decide* (relative
+> major versus minor; a modulation/tonicization seam): that residual — handed forward as the ranked alternatives plus the
+> "uncertain" mark — is settled by Architectural Layer 5 using **functional evidence** (chord, cadence,
+> function) that Architectural Layer 3 structurally cannot have. So key/mode inference is split along an **evidence
+> boundary**: Architectural Layer 3 contributes the note evidence and resolves everything the notes can resolve; the
+> gated step — Architectural Layer 5's carried-readings resolution, entered under the conditions its own spec states
+> (`cowork_layer5_function_design.md` §5.5) — contributes the functional evidence and resolves only the flagged
+> residual — by **selecting among
+> Architectural Layer 3's carried alternatives**, never by inventing a candidate or re-scoring from the notes (that
+> note-evidence model has exactly one home).
+
+**In plain words.** Working out the tonality from the notes happens in exactly one place: that stage owns the list of possible tonalities and the model of how well each fits the notes, and no other stage infers a tonality from the notes or generates or re-scores a tonality candidate. What the notes cannot settle — relative major against relative minor, and where one tonality gives way to the next — is handed on with the ranked runners-up, and the later function stage settles it by choosing one of those runners-up, never by inventing a candidate or scoring the notes again.
+
+**Why.** The record gives the reason with the decision: the split follows an evidence boundary — the later stage has functional evidence (chord, cadence, function) that the note stage 'structurally cannot have', and the note-evidence model 'has exactly one home' (principle #6, one path per concern). The passage cites the open item that settled who resolves the residual: O1, resolved and user-ratified 2026-06-24, evidence `cowork_uncertain_resolver_investigation.md` (`cowork_layer3_keymode_design.md:73-76`).
+
+**Status.** LIVE · decided 2026-06-22 · ratified by the user
+
+**Home.** `cowork_layer3_keymode_design.md:60-72`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-344 — A scale outside the twenty-one recognized modes is reported as the best-fitting recognized mode, never as the unrecognized scale
+
+> **Which key/modes Architectural Layer 3 does NOT recognize.** Any scale that is **not** one of those 21 seven-note
+> modes — in particular pentatonic and blues scales, the whole-tone scale, the octatonic (diminished) scale, and any
+> non-Western or microtonal scale (maqam, raga, and so on). A passage genuinely in one of these is reported as the
+> **best-fitting** of the 21 recognized modes — the candidate with the highest local-fit score under the §5 sequence
+> decision, not by any separate scale-distance measure — never as the unrecognized scale itself.
+
+**In plain words.** Music written in a scale the analysis does not know — pentatonic, blues, whole-tone, octatonic, or any non-Western or microtonal scale — is reported as whichever of the twenty-one recognized modes fits the notes best, chosen by the ordinary whole-run decision rather than by any separate similarity measurement. The unrecognized scale is never named as such.
+
+**Why.** derivation not recorded
+
+**Status.** LIVE · decided 2026-06-22 · ratified by the user
+
+**Home.** `cowork_layer3_keymode_design.md:129-133`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`, and the banner adds that the conditional sign-off was met by stating the recognized mode vocabulary explicitly — this passage is the other half of that statement. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-345 — The style preset first enters the analysis at the key/mode layer, as a deliberately weak prior over the modes that the note evidence overrides
+
+> - **This is the first architectural layer where the user's style preset (Standard / Baroque / Jazz / …) is used.**
+>   Architectural Layers 1 and 2 are pure facts and use no preset. The preset enters here as a **weak prior on which
+>   of the 21 modes are likely in this style** — the per-mode bias values in the scorer (Baroque pushes the prior
+>   toward major and minor; Jazz raises the modal and altered modes; "Standard" sits between). It is deliberately
+>   weak: the note evidence is primary and overrides it, so the preset only tips genuinely ambiguous cases (the same
+>   stance taken toward the written key signature). The preset is used again in later architectural layers (chord
+>   symbols, function); this layer is only where it *first* applies.
+
+**In plain words.** The user's style setting has no effect on reading the notes or cutting the music into stretches; the first place it acts is the tonality decision, where it nudges which of the twenty-one modes are expected in that style. The nudge is deliberately small: the notes decide, and the setting only tips cases the notes leave genuinely open.
+
+**Why.** The record gives the reason in the same passage: the note evidence is primary and overrides the prior, so the setting only tips genuinely ambiguous cases — the same stance the layer takes toward the written key signature (`cowork_layer3_keymode_design.md:156-158`).
+
+**Status.** LIVE · decided 2026-06-22 · ratified by the user
+
+**Home.** `cowork_layer3_keymode_design.md:153-159`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. **Flagged in the phase-1h report as an instance of the [[OI-275]] question** — it sits against **D-003** (inference is preset-independent; presets are presentation concerns), and the record contains no ruling that names either statement against the other. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-346 — The candidate set for the whole-run tonality decision is the UNION of every stretch's best candidates, made available at every stretch
+
+> **The candidate set for the sequence decision (the as-built rule,
+>    verified at `keymodesequence.cpp` `buildLattice`):** take each slice's top-K best-scoring candidates, and form the
+>    **union of those top-K sets across all slices** (plus any pinned candidates a sub-range re-decision must keep,
+>    §5's last paragraph); every candidate in that union is then available **at every slice**. This is how the
+>    established key survives a brief excursion: a key that made the top K anywhere in the run remains selectable at
+>    the slices where it locally scored below the top K, so the change cost — not candidate elimination — decides
+>    whether the excursion switches the key. *(A per-slice alternative — explicitly injecting only the incumbent
+>    decoded key into each slice's list rather than the whole union — is not decidable by argument against the union;
+>    ruled 2026-07-02 (gap-analysis ruling #2, `cc_gap_analysis_report.md`) to be resolved by a decode-only A/B at the
+>    next Layer-3-touching increment. The union is the as-built and the spec's normative rule until that measurement rules otherwise.)*
+
+**In plain words.** Each stretch of music proposes its own few best-fitting tonalities; the decision then pools all of those proposals and lets every one of them be chosen at every stretch. That is what lets an established tonality survive a brief excursion — a tonality that scored well anywhere in the passage stays available where it locally scored badly, so the cost of changing tonality, not the loss of the candidate, decides whether the excursion counts as a change.
+
+**Why.** The record states the mechanism as the reason: pooling is how the established tonality survives a brief excursion, so that the change cost — 'not candidate elimination' — decides the outcome. The narrower alternative (injecting only the incumbent tonality into each stretch's list) is recorded as not decidable by argument and is assigned to a measurement: ruled 2026-07-02 (gap-analysis ruling #2, `cc_gap_analysis_report.md`) to be settled by a decode-only A/B at the next key/mode increment, with the pooled rule normative until then.
+
+**Status.** LIVE · decided 2026-07-02 · ratifier not stated
+
+**Home.** `cowork_layer3_keymode_design.md:230-239`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The date given is the date of the recorded ruling that the narrower alternative is to be settled by measurement and that the pooled rule is normative until then; the pooled rule itself is recorded as as-built and is not dated in the record. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-347 — The cost of changing tonality is cheap-to-stay plus a term growing with tonal distance plus a large extra penalty on the relative major/minor switch
+
+> - **Change cost = cheap-to-stay + grows-with-key-distance + a large relative-pair penalty.** Alternative considered:
+>   a single flat "don't flip too easily" margin. Chosen: the standard key-finding shape (a flat margin cannot make a
+>   near modulation cheaper than a remote one, nor guard the relative pair specifically); the starting amounts are
+>   taken from the existing margin values and tuned later.
+
+**In plain words.** Staying in the current tonality costs nothing; changing costs a base amount, plus more the further away the new tonality is, plus a large extra amount for the specific switch between a major key and its relative minor. A single flat 'do not flip too easily' margin was considered and rejected.
+
+**Why.** The record states the reason with the alternative it rejects: a flat margin cannot make a near modulation cheaper than a remote one, nor guard the relative major/minor pair specifically; the shape chosen is the standard one in the key-finding literature (§14 cites the hidden-Markov key path with a high self-transition — Nápoles López, DLfM 2019; Gedizlioğlu & Erol, 2024). The starting amounts are taken from the existing margin values and tuned later.
+
+**Status.** LIVE · decided 2026-06-22 · ratified by the user
+
+**Home.** `cowork_layer3_keymode_design.md:307-310`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-348 — Tonal distance in the change cost is circle-of-fifths distance — not semitone distance, not differing scale tones — and brief-versus-sustained has no duration threshold at all
+
+> The change cost makes keeping the current key/mode cheap and changing it expensive — more expensive the
+> further the new key is from the current one, **measured as circle-of-fifths (key-signature) distance** (the number of
+> signature steps between the two keys' parent tonics; `C`→`F♯` and `C`→`G♭` both = 6 — not semitone distance and not a
+> count of differing scale tones), and most expensive of all between relative major and relative minor (the hardest
+> pair). The effect: a brief excursion is not worth the change cost over so few slices, so it stays in the original key;
+> a sustained modulation is worth it, so the key changes; and the relative-major-versus-minor choice is settled by which
+> reading fits the whole run of music, not one ambiguous slice. **There is no "how many slices" threshold for
+> brief-versus-sustained — it is purely this fit-versus-cost arithmetic** (a duration threshold a reader might expect
+> does not exist).
+
+**In plain words.** How far apart two tonalities are, for the purpose of the change cost, is counted in steps around the circle of fifths — the number of key-signature steps between them — so C to F sharp and C to G flat are both six. It is not the distance in semitones and not a count of how many scale notes differ. And nothing anywhere counts how long an excursion lasts: whether a passage reads as a passing tonicization or as a real change of tonality falls out of the fit-against-cost arithmetic alone.
+
+**Why.** The record states the consequence as the reason: over a few stretches the accumulated better fit does not repay the change cost, so a brief excursion stays; over a sustained one it does, so the tonality changes; and the relative major/minor choice is settled by which reading fits the whole run rather than by one ambiguous stretch. The passage flags the absent duration threshold explicitly because a reader would expect one.
+
+**Status.** LIVE · decided 2026-06-22 · ratified by the user
+
+**Home.** `cowork_layer3_keymode_design.md:212-220`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-349 — The key/mode confidence compares whole readings — the winning run against the best run forced to a different tonality there — not the top two candidates at that stretch
+
+> - **Confidence = how much better the winning sequence is than the best different-key sequence at that slice** (not
+>   the gap between the top two scores at the slice on its own). Reason: the decision is the whole sequence, so the
+>   meaningful confidence compares whole sequences; the near-tied cases are exactly the ones to mark "uncertain."
+
+**In plain words.** How sure the analysis is about the tonality at one stretch is measured by re-running the whole passage with that stretch forced to a different tonality and seeing how much worse the best such reading is. It is not the gap between the two best-scoring candidates at that stretch on its own.
+
+**Why.** The record states the reason: the decision being made is the whole run, so the meaningful comparison is between whole runs; and the near-tied cases the comparison exposes are exactly the ones the layer should mark uncertain.
+
+**Status.** LIVE · decided 2026-06-22 · ratified by the user
+
+**Home.** `cowork_layer3_keymode_design.md:311-313`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-350 — Of the layer's two confidence numbers, the whole-run margin is the published one; the per-stretch emission sigmoid is demoted to a gate input and a diagnostic
+
+> (The **sequence-margin confidence redesign** — which of the two boundary numbers is THE Layer-3
+> confidence — is **CLOSED by D-L3a, 2026-07-04**: the sequence margin is declared THE boundary confidence and the
+> emission sigmoid demoted to gate-input/diagnostic; only the Stage-5 calibration of the margin remains.)
+
+**In plain words.** The tonality stage computes two different measures of how sure it is. The one that crosses the boundary to any other stage is the whole-run margin; the per-stretch one is kept only as an input to an internal threshold and for diagnosis. Only calibrating the published margin remains to be done.
+
+**Why.** derivation not recorded — the record states the closure and the outcome but gives no defense for choosing the whole-run margin over the per-stretch sigmoid. The neighbouring defense that IS recorded is for the margin's FORM, not for its selection as the published number (**D-349**), and the classification that constrains it is the cross-layer confidence contract's Class M — a ranking margin, never a calibrated probability (**D-267**, `cowork_layer3_keymode_design.md:39`).
+
+**Status.** LIVE · decided 2026-07-04 · ratifier not stated
+
+**Home.** `cowork_layer3_keymode_design.md:16-18`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The record labels the closure `D-L3a` — a label from the document's own design-decision series, not a register identifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-351 — The key/mode search is its own decoder; the chord decoder is not reused for it
+
+> - **A dedicated best-sequence decoder for key/mode.** Alternative considered: reuse the existing chord decoder.
+>   Chosen: a dedicated one — the existing decoder is specific to chords and cannot be reused.
+
+**In plain words.** Finding the best run of tonalities uses a decoder written for that job. Reusing the existing chord decoder was considered and rejected, because that one is specific to chords.
+
+**Why.** The record states the reason with the alternative: the existing decoder is specific to chords and cannot be reused.
+
+**Status.** LIVE · decided 2026-06-22 · ratified by the user
+
+**Home.** `cowork_layer3_keymode_design.md:314-315`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-352 — The key/mode grading bar splits the cases first: agreement where the published analyses are unanimous, any recorded reading (or an uncertain mark) where they are not
+
+> The bar, with its partition stated: a case counts as **unambiguous** when the ground-truth
+>   annotation gives a single local key/mode there, records no alternative reading, and (where more than one published
+>   analysis covers the piece) the analyses agree; every other case — a recorded alternative reading, disagreeing
+>   published analyses, or a modal passage the major/minor-only ground truth cannot represent (§1) — counts as
+>   **genuinely ambiguous**. On the unambiguous cases the bar is agreement with the single reading; on the ambiguous
+>   cases the bar is met when the layer's answer equals **one of the recorded readings** (that is what "defensible"
+>   means here) or the case is marked "uncertain."
+
+**In plain words.** A case counts as unambiguous when the published human analysis gives one tonality there, records no alternative, and — where more than one published analysis covers the piece — the analyses agree. Everything else counts as genuinely ambiguous: a recorded alternative, disagreeing analyses, or a modal passage the major/minor-only human analysis cannot express. On the unambiguous cases the analysis must match the single reading; on the ambiguous ones it must match one of the recorded readings or declare itself unsure.
+
+**Why.** The record ties the partition to a stated limitation of the reference analyses: they are major/minor only, so a modal reading can be produced but cannot be checked against them (`cowork_layer3_keymode_design.md:133-136`, §11's second bullet). Grading is done on a held-out set of pieces the layer was not tuned on.
+
+**Status.** LIVE · decided 2026-06-22 · ratified by the user
+
+**Home.** `cowork_layer3_keymode_design.md:321-327`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-353 — The key/mode layer is graded on two goals kept apart — agreement where the notes decide, and whether its own uncertainty lands on the genuinely ambiguous cases
+
+> - **Two quality goals, measured separately.** (1) *Accuracy on the resolvable cases* — agreement with the human
+>   analyses where the notes decide; and (2) *calibration of uncertainty* — whether the "uncertain" mark and the
+>   confidence actually land on the genuinely ambiguous slices (a reliability curve over confidence; the precision and
+>   recall of the "uncertain" mark on the error set; and whether the true key is carried among the alternatives). The
+>   second goal is what backs the claim that Architectural Layer 3 is clearer about ambiguity than a single forced
+>   label, so it is graded in its own right, not folded into accuracy.
+
+**In plain words.** Two things are measured, and neither is folded into the other. First, does the tonality agree with the published human analysis where the notes settle it. Second, is the layer's own declared uncertainty honest — whether the unsure mark and the confidence actually fall on the genuinely ambiguous stretches, and whether the true tonality is among the runners-up it carried.
+
+**Why.** The record states the reason: the second goal is what backs the claim that this layer is clearer about ambiguity than a single forced label would be, so it is graded in its own right rather than absorbed into the accuracy number.
+
+**Status.** LIVE · decided 2026-06-22 · ratified by the user
+
+**Home.** `cowork_layer3_keymode_design.md:337-342`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-354 — The key/mode decoder's own settings are exhausted — no setting of its own moves the fixable error set, so the remaining headroom is not a decoder setting
+
+> - **The decoder-private settings are exhausted (sweep, 2026-06-22).** A bounded sweep of every decoder-private
+>   setting found none that moves the **clean set** (§0; the fixable-within-key/mode miss subset defined in
+>   `cc_layer3_error_decomposition_report.md`) net-positive — sweep record: `cc_layer3_sweep_report.md`. Widening the
+>   per-slice window recovers the **stable measurement category** (the grading corpus's spans whose ground-truth key is
+>   constant) but destroys tracking on the **modulation category** (spans containing a ground-truth key change);
+>   lowering the change cost is net-negative on Baroque (a Jazz-only gain that would need
+>   preset-conditioning the decoder settings — deferred); the candidate count is already saturated; the
+>   alternatives-kept count is output-only. So the bounded-headroom fix is **not** a decoder knob — it is the one shared
+>   lever below.
+
+**In plain words.** Every setting private to the tonality decoder was swept, and none of them improves the part of the error that is genuinely fixable from the notes. Widening the per-stretch listening window helps passages of constant tonality but wrecks passages that change tonality; lowering the change cost is a net loss on the Baroque material; the number of candidates kept is already saturated; the number of runners-up carried only affects output. So the remaining headroom lies outside the decoder.
+
+**Why.** Measured: a bounded sweep of every decoder-private setting, 2026-06-22, graded against the fixable-error subset defined in `cc_layer3_error_decomposition_report.md`; sweep record `cc_layer3_sweep_report.md`. The per-setting outcomes are enumerated in the entry itself, so the conclusion is stated with the evidence that produced it.
+
+**Status.** LIVE · decided 2026-06-22 · ratifier not stated
+
+**Home.** `cowork_layer3_keymode_design.md:402-410`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-355 — The identified key/mode lever is the shared scorer's scale-membership term, applied once to the shared scorer at the wiring step and gated on the corpus stop and the pinned outputs
+
+> - **The identified shared-scorer lever, measured.** The stable-category under-weighting is carried by the scorer's
+>   *scale-membership* term, not its (inert) leading-tone term. Sharpening the out-of-candidate-scale penalty lifts
+>   *both* stable- and modulation-category accuracy with no trade-off (measured decode-only on the held-out test set at
+>   coarse-region granularity: a net +57…+73 regions corrected on Baroque / +38…+68 on Jazz, depending on the sharpen
+>   step — `cc_layer3_sweep_report.md` §3);
+>   raising the leading-tone weight instead collapses accuracy. This is the change handed to the wiring increment, where
+>   it is applied once to the shared scorer and must clear the project BIR gate and the snapshots (its production-side
+>   magnitude is a wiring-time calibration; only its direction is validated so far).
+
+**In plain words.** The under-weighting on passages of constant tonality is carried by the term that asks how well the sounding notes belong to a candidate's scale, not by the leading-note term, which is inert. Sharpening the penalty for notes outside the candidate scale improves both constant-tonality and changing-tonality passages with no trade-off; raising the leading-note weight instead collapses accuracy. The change is applied once, to the one shared scorer, at the step that replaces the older per-stretch code, and must clear the project's corpus regression stop and the pinned outputs.
+
+**Why.** Measured decode-only on the held-out test set: a net gain of roughly 57 to 73 corrected stretches on the Baroque material and 38 to 68 on the Jazz material depending on the sharpening step (`cc_layer3_sweep_report.md` §3). The entry states its own limit: only the direction is validated so far, the production-side magnitude being a calibration at the wiring step.
+
+**Status.** LIVE · decided 2026-06-22 · ratifier not stated
+
+**Home.** `cowork_layer3_keymode_design.md:411-418`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-356 — The leading-note presence gate is brittle and its fix is a later key/mode emission step, not a foundation patch — and the scale-membership lever is measured NOT to fix it
+
+> - **★ Brittle leading-tone presence-gate — a non-Bach key regression (diagnosed 2026-06-25; verified at source).** The
+>   characteristic-pitch and true-leading-tone scorer terms are **hard-gated** on a `>0.1` window weight
+>   (`keymodeanalyzer.cpp`, the char/leading-tone term gates — cited by function per the no-raw-line-numbers policy): a
+>   key's leading tone that is *present but weak* (below the gate) is treated as
+>   **absent**, so the key is denied its anchors *and* penalized. On the Mozart K279 opening the C-major leading tone
+>   (B♮) carries weight **0.093** — a hair under the gate — so C major is flipped to **F major** (whose leading tone E
+>   is C's ever-present third). The old 24-beat resolver cleared the gate; the wired 4-beat window does not, and the
+>   window-width relation is **non-monotonic**, so simply widening it is not a clean fix. This is a **general
+>   non-Bach-opening fragility**, structurally **invisible to the Bach-only BIR gate** (the notation tests are the guard
+>   that caught it). The **scale-membership lever does NOT fix it** (measured: 15× the scale penalty never flips F→C —
+>   the char/lt terms are *presence-gated*, not weight-scaled). **Fix = de-brittle the gate (weight-scale the char/lt
+>   terms); a Layer-3 emission increment scheduled for **Phase B, item B2** of the stabilization plan
+>   (`cowork_l1l3_stabilization_plan.md`) — leading-tone de-brittling is inference-quality, behind the inference
+>   firewall (§0), *not* the Phase-4 tpc (tonal pitch class, §0) capability foundation —
+>   not a foundation patch.** Full diagnosis: `cc_keyregression_diagnosis_report.md`.
+
+**In plain words.** Two of the scoring terms treat a leading note that is present but faint as if it were absent, so the tonality is denied its anchor and penalised as well. On the opening of Mozart's K279 the C major leading note carries just under the threshold, and C major is read as F major instead. The older wide listening window cleared the threshold and the narrower one in use does not, and the relation to window width is not monotone, so simply widening it is not a clean fix. Making the terms scale with weight instead of switching on a threshold is scheduled as a later tonality-quality step, behind the rule that separates structural work from tuning. Sharpening the scale-membership penalty — the lever that helps elsewhere — was measured at fifteen times its strength and never fixes this case.
+
+**Why.** Measured and verified at source, 2026-06-25: the leading note carries weight 0.093 against a threshold of 0.1; the scale-membership lever was tested at fifteen times the penalty and never flips the reading, because the two terms are gated on presence rather than scaled by weight. Full diagnosis `cc_keyregression_diagnosis_report.md`. The entry also records that this fragility is structurally invisible to the Bach-only corpus stop and was caught by the notation tests instead.
+
+**Status.** LIVE · decided 2026-06-25 · ratifier not stated
+
+**Home.** `cowork_layer3_keymode_design.md:383-397`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-357 — Reading the notated spelling as tonality evidence belongs at the function layer, where function gates it — NOT as a standalone key/mode emission patch
+
+> **MEASURED (read-only, 2026-06-22, `cc_layer3_tpc_keymeasure_report.md`):** a decode-only line-of-fifths tpc term is
+>   **genuine spelling signal** (its modulation-gain/stable-loss frontier beats a change-cost control on both presets)
+>   and helps modulation regions cleanly (+2–8 pts), **but** as a *standalone Layer-3* term it is only **marginal
+>   overall** (best net +0.5 Baroque / +0.6 Jazz at a low weight) because it **hurts stable regions** — it over-switches
+>   on tonicizations. That stable cost is exactly the **tonicization-vs-modulation discriminator that function (Layer 5)
+>   supplies**, and the term is structurally **blind to same-signature ambiguity** (relative-pair / modal rotation). So
+>   the right home for this retrofit is **Architectural Layer 5 (function)**, where function gates the
+>   spelling signal — admitting the clean modulation gain without the stable cost — **not** a standalone Layer-3 emission
+>   patch. This is why L4-first is the disciplined order (no clean standalone L3 win is being skipped). (Upper-bound
+>   caveat: engraved corpus; MIDI spelling would see less.)
+
+**In plain words.** Using how an accidental is written — G sharp against A flat — as evidence for the tonality is real signal and helps passages that change tonality cleanly, but on its own at the tonality stage it is barely a net gain, because it over-switches on passing tonicizations and is blind to the cases where two tonalities share the same key signature. Telling a passing tonicization from a real change is exactly what the later function stage supplies, so that is where this evidence is read.
+
+**Why.** Measured read-only, 2026-06-22, `cc_layer3_tpc_keymeasure_report.md`: a decode-only line-of-fifths term beats a change-cost control on both style settings and gains two to eight points on changing-tonality passages, but nets only about +0.5 and +0.6 overall because of what it costs on constant-tonality passages. The entry states its own limit: an engraved corpus is an upper bound, and material without written spelling would see less.
+
+**Status.** LIVE · decided 2026-06-22 · ratifier not stated
+
+**Home.** `cowork_layer3_keymode_design.md:497-506`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The surrounding deferred-enhancement entry is recorded per the user, 2026-06-22; the measured placement conclusion quoted here names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+
+### D-358 — A sonority shaped like a dominant is note-level evidence for the tonality it implies, and belongs in the key/mode emission — deferred, design-first
+
+> - **★ Dominant-implication key evidence in the emission (review amendment A-3, ratified 2026-07-02).** As built, the
+>   per-slice emission is **collection-fit only**: it scores how well a slice's pitch content matches each candidate
+>   key/mode's scale, and carries no evidence from the *shape* of the sounding sonority. But a sonority shaped like a
+>   dominant seventh or leading-tone seventh is strong **note-level** evidence for the key it implies (its tritone
+>   resolves into exactly one major and one minor tonic pair) — evidence readable from the notes alone, **before and
+>   without any chord decision**, so it belongs in this layer's emission without breaking the evidence split (Layer 5
+>   still owns *resolution-confirmed* evidence — the cadence votes). The gap is what the external review's Tristan
+>   simulation exposed (F-10: keys established by **dominant implication**, tonic arrivals denied → collection-fit is
+>   near-flat and the decoder rides on inertia → systematic under-modulation), and it also bears on the measured
+>   relative-pair floor (the implied tonic disambiguates the shared collection). **Shape:** a sonority-shape term in the
+>   per-slice emission (pitch-set → implied-tonic fit contribution); decoder structure unchanged; weight
+>   precision-phase. **Status:** deferred — design-first, measured before wiring like every increment (the tpc-term
+>   lesson above applies: measure the stable-region cost, not just the modulation gain). Source:
+>   `cowork_architecture_review_2026_07.md` §7/§9 (F-10, A-3).
+
+**In plain words.** As built, the per-stretch tonality score asks only how well the sounding notes fit each candidate's scale, and carries nothing about the shape of the sonority. But a chord shaped like a dominant seventh or a leading-note seventh points at one major and one minor tonic, and that is readable from the notes alone, before any chord is named — so it belongs in the tonality stage without breaking the evidence split. It is deferred, to be designed and measured before it is wired, and the measurement must include what it costs on passages of constant tonality, not only what it gains on passages that change.
+
+**Why.** Grounded in the external architecture review's Wagner simulation: where tonalities are established by dominant implication and tonic arrivals are withheld, the scale-fit score is near-flat and the decision rides on inertia, giving systematic under-modulation (finding F-10). It also bears on the measured floor for the relative major/minor pair, since the implied tonic distinguishes two readings that share one collection. Source `cowork_architecture_review_2026_07.md` §7/§9.
+
+**Status.** DEFERRED · decided 2026-07-02 · ratifier not stated
+
+**Home.** `cowork_layer3_keymode_design.md:507-520`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The record states the amendment (A-3) was ratified 2026-07-02 but does not name the ratifier at this home; the amendment set's own document banner is quoted in the phase-1g triage as `AMENDMENTS A-1…A-10 RATIFIED (user, 2026-07-02)`, and that document is in the phase-1h full-read set. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue.
+

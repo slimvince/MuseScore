@@ -109,26 +109,26 @@ project's own and are defined here because they are used before any entry explai
 
 ## What is in this register, counted
 
-**342 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
+**358 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
 
 | | Count |
 |---|---|
-| Decisions recorded | **342** |
-| — of which live | 288 |
+| Decisions recorded | **358** |
+| — of which live | 303 |
 | — of which superseded in fact | 5 |
 | — of which superseded by | 9 |
-| — of which deferred | 39 |
+| — of which deferred | 40 |
 | — of which shelved with evidence | 1 |
 | Decisions whose date is not stated in the record | 198 |
-| Decisions whose ratifier is not stated in the record | 207 |
-| Decisions recorded outside the specification that owns them | 151 |
-| — of which a documentation gap | 54 |
+| Decisions whose ratifier is not stated in the record | 214 |
+| Decisions recorded outside the specification that owns them | 167 |
+| — of which a documentation gap | 70 |
 | — of which recorded only on a tracking surface, with no home at all | 27 |
 | — of which a project-wide convention, correctly homed | 34 |
 | — of which a decision about the process, correctly homed | 36 |
 | Decisions whose defense the record does not state | 45 |
 
-That last row is the one meant to fall. **297 of 342** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
+That last row is the one meant to fall. **313 of 358** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
 
 Alongside the register, every one of the harvested statements about decisions in this repository has been given a recorded disposition, so that none was silently passed over:
 
@@ -138,10 +138,10 @@ Alongside the register, every one of the harvested statements about decisions in
 | Groups of near-identical statements ("clusters") | **14460** |
 | Clusters carrying a recorded disposition | **14460** |
 | — restates | 5511 |
-| — not-a-decision | 5562 |
+| — not-a-decision | 5561 |
 | — boilerplate | 74 |
-| — no-spec-home | 611 |
-| — unresolved | 2702 |
+| — no-spec-home | 616 |
+| — unresolved | 2698 |
 
 The full disposition table, and the numbered rule behind each one, are in `tools/audit/decisions/cluster_dispositions.csv` and `tools/audit/decisions/disposition_manifest.json`.
 
@@ -292,6 +292,22 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-290 | The key-agnostic local cadence approach is FALSIFIED at its precision ceiling | LIVE | `cowork_handoff_archive.md` ⚠tracking-surface-only |
 | D-306 | The key layer's backward re-reading stays switched off in the shipped configuration | LIVE | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
 | D-323 | Asking whether a pitch belongs to the key is a question about the collection, never about the tonic — the tonic-anchored form must not return | LIVE | `docs/scoring_model.md` ⚠gap |
+| D-343 | The key/mode layer owns the candidate space and the note-evidence model outright; the residual is SELECTED from its carried alternatives, never re-scored | LIVE | `cowork_layer3_keymode_design.md` ⚠gap |
+| D-344 | A scale outside the twenty-one recognized modes is reported as the best-fitting recognized mode, never as the unrecognized scale | LIVE | `cowork_layer3_keymode_design.md` ⚠gap |
+| D-345 | The style preset first enters the analysis at the key/mode layer, as a deliberately weak prior over the modes that the note evidence overrides | LIVE | `cowork_layer3_keymode_design.md` ⚠gap |
+| D-346 | The candidate set for the whole-run tonality decision is the UNION of every stretch's best candidates, made available at every stretch | LIVE | `cowork_layer3_keymode_design.md` ⚠gap |
+| D-347 | The cost of changing tonality is cheap-to-stay plus a term growing with tonal distance plus a large extra penalty on the relative major/minor switch | LIVE | `cowork_layer3_keymode_design.md` ⚠gap |
+| D-348 | Tonal distance in the change cost is circle-of-fifths distance — not semitone distance, not differing scale tones — and brief-versus-sustained has no duration threshold at all | LIVE | `cowork_layer3_keymode_design.md` ⚠gap |
+| D-349 | The key/mode confidence compares whole readings — the winning run against the best run forced to a different tonality there — not the top two candidates at that stretch | LIVE | `cowork_layer3_keymode_design.md` ⚠gap |
+| D-350 | Of the layer's two confidence numbers, the whole-run margin is the published one; the per-stretch emission sigmoid is demoted to a gate input and a diagnostic | LIVE | `cowork_layer3_keymode_design.md` ⚠gap |
+| D-351 | The key/mode search is its own decoder; the chord decoder is not reused for it | LIVE | `cowork_layer3_keymode_design.md` ⚠gap |
+| D-352 | The key/mode grading bar splits the cases first: agreement where the published analyses are unanimous, any recorded reading (or an uncertain mark) where they are not | LIVE | `cowork_layer3_keymode_design.md` ⚠gap |
+| D-353 | The key/mode layer is graded on two goals kept apart — agreement where the notes decide, and whether its own uncertainty lands on the genuinely ambiguous cases | LIVE | `cowork_layer3_keymode_design.md` ⚠gap |
+| D-354 | The key/mode decoder's own settings are exhausted — no setting of its own moves the fixable error set, so the remaining headroom is not a decoder setting | LIVE | `cowork_layer3_keymode_design.md` ⚠gap |
+| D-355 | The identified key/mode lever is the shared scorer's scale-membership term, applied once to the shared scorer at the wiring step and gated on the corpus stop and the pinned outputs | LIVE | `cowork_layer3_keymode_design.md` ⚠gap |
+| D-356 | The leading-note presence gate is brittle and its fix is a later key/mode emission step, not a foundation patch — and the scale-membership lever is measured NOT to fix it | LIVE | `cowork_layer3_keymode_design.md` ⚠gap |
+| D-357 | Reading the notated spelling as tonality evidence belongs at the function layer, where function gates it — NOT as a standalone key/mode emission patch | LIVE | `cowork_layer3_keymode_design.md` ⚠gap |
+| D-358 | A sonority shaped like a dominant is note-level evidence for the tonality it implies, and belongs in the key/mode emission — deferred, design-first | DEFERRED | `cowork_layer3_keymode_design.md` ⚠gap |
 
 ## G. Layer 4 — chord identity — [full entries](decisions/group_G.md)
 
@@ -602,8 +618,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 ## Provenance of this register
 
 - Adjudication: the OI-207 decision-conformance adjudication, 2026-08-01, at commit `58dea6702ac8aa9d5ef8b89244b94d587a75f7a5`.
-- Coverage figures above regenerated at commit `6e9a8aeaaffdfd5fea873bcc383080c0a7b5db77`.
-- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `90af03a43ea3931f…`).
+- Coverage figures above regenerated at commit `4cc81cfaed741dbd9aa165bbf166aacb5811a2f7`.
+- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `31cee4073e477b3c…`).
 - Harvest: `tools/audit/decisions/decision_candidates.json` (sha256 `51850440b315e6e9…`).
 - Clustering: `tools/audit/decisions/decision_clusters.json` (sha256 `0615b1e61bf10332…`).
 - Shape: `open_items/OI-208.md` (user-ratified 2026-07-28).
