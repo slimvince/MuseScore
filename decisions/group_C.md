@@ -498,7 +498,7 @@
 > 2. **Coded, L1–L5:** L1 build-selection + extend seam (interim rebuild allowed, §8); L2 re-slice-on-extend (done);
 >    L3 reach-back activated as this design's request (from gated-off) ; L4's request-or-truncate path (uncoded today,
 
-**In plain words.** The grouping layer's track does not resume until this cross-layer design is ratified, implemented across Layers 1 to 5, and regression-tested against the listed acceptance conditions - including the equivalence invariant, step-size independence, denial provenance, termination, and byte-identity of the whole-score degenerate case against the corpus gate.
+**In plain words.** The grouping layer's track does not resume until this cross-layer design is ratified, implemented across Layers 1 to 5, and regression-tested against the listed acceptance conditions - including the equivalence invariant, step-size independence, denial provenance, termination, and byte-identity of the whole-score degenerate case against the corpus gate. RULING (user, 2026-08-02): the gate itself STANDS and transfers to the current architecture; the design's §11 acceptance list is DEPRECATED — not to be used, not even relevant — and the acceptance conditions are restated against the current stack in the phase-3 plan (with OI-259).
 
 **Why.** The reason is the design's own opening argument (cowork_bounded_context_design.md:14-16): the whole-score assumption is foundational, so building more layers on it bakes it deeper and unwinding it afterward is a cross-cutting, expensive retrofit. Gating the next layer on the contract being real, not merely written, is what stops that.
 
@@ -506,7 +506,7 @@
 
 **Home.** `cowork_bounded_context_design.md:213-217`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** cowork_bounded_context_design.md:3-4 records it in the status banner as 'THE GATE (user directive, same day)', and the acceptance list is the numbered section at :213-223. Found by the phase-1d enumeration wave, 2026-08-02.
+**Provenance.** cowork_bounded_context_design.md:3-4 records it in the status banner as 'THE GATE (user directive, same day)', and the acceptance list is the numbered section at :213-223. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, option (b) with the acceptance list explicitly deprecated) — the dated annotation at the home records it; the restatement obligation joins the phase-3 plan via OI-259.
 
 ### D-267 — There are exactly two admissible confidence classes, and no layer may claim a calibrated probability until one is fitted
 
@@ -586,7 +586,7 @@
 > gate applies to **precision claims** ("will building X make analysis more correct?" — measure first); the
 > **structural refactors** (decoder-replaces-tangle, the migrations) are justified by cleanliness and verified
 
-**In plain words.** The separate joint key-and-chord decision was measured before being built and does not pay: about a tenth of a percentage point net over roughly 6200 stretches, with harm at three quarters to nine tenths of the correction, an oracle ceiling under a percentage point, and a firing rate of 1.4 per cent. The cause is that the carried alternative keys are siblings within one collection, so the chord is almost always stable across them. It drops off the build inventory.
+**In plain words.** The separate joint key-and-chord decision was measured before being built and does not pay: about a tenth of a percentage point net over roughly 6200 stretches, with harm at three quarters to nine tenths of the correction, an oracle ceiling under a percentage point, and a firing rate of 1.4 per cent. The cause is that the carried alternative keys are siblings within one collection, so the chord is almost always stable across them. It drops off the build inventory. DEPRECATION MADE EXPLICIT (user, 2026-08-02): the shelved step's subject is deprecated legacy-era machinery, to be entirely discarded with the legacy path at the retirement map; the shelving binds that class only and does not bear on the joint estimator (D-001), a different mechanism class.
 
 **Why.** The measurement is stated with the shelving, and so is the principle #12 reconciliation: the key alternatives ARE carried, so the key discovery is not discarded; the chord under an alternative key is never computed in this path, so nothing computed is discarded; and the measured 1.4 per cent where it would differ is even-odds noise. Choosing not to compute a measured-worthless possibility is an evidence-based decision, not information loss.
 
@@ -594,5 +594,5 @@
 
 **Home.** `cowork_engage_arc_plan.md:103-112`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** cowork_engage_arc_plan.md:3 records the user's ratification of this plan, dated 2026-07-07; the shelving at :103-112, with the measurement cited to its report and the no-information-loss reconciliation stated in place. Found by the phase-1d enumeration wave, 2026-08-02 - the class this audit exists for: a shelving with evidence, recorded only in a design document.
+**Provenance.** cowork_engage_arc_plan.md:3 records the user's ratification of this plan, dated 2026-07-07; the shelving at :103-112, with the measurement cited to its report and the no-information-loss reconciliation stated in place. Found by the phase-1d enumeration wave, 2026-08-02 - the class this audit exists for: a shelving with evidence, recorded only in a design document. ★ RATIFIED (user, 2026-08-02, option (a) with the deprecation made extremely clear) — the scoping annotation is at the home (the dated annotation beneath the shelving); the subject is legacy-era, will be entirely discarded at the OI-180 retirement map, and the shelving does not bear on D-001.
 

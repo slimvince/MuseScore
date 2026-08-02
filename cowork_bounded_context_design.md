@@ -222,7 +222,14 @@ score" is simply the special case "selection = score." This is what keeps the ba
    **byte-identity with the corpus gate 53/24/53**.
 4. Then the L6 track resumes (its TSV-oracle instruction un-parks, then the L6 dormant build).
 
-## 9. Glossary
+> **★ Dated annotation (user ruling, 2026-08-02, at the D-266 ratification).** THE GATE ITSELF
+> STANDS AND TRANSFERS to the current architecture: Layer 6 does not resume until a
+> bounded-context implementation is coded and regression-tested in the architecture that
+> actually ships. **THE ACCEPTANCE LIST ABOVE (items 1–4) IS DEPRECATED — NOT TO BE USED, NOT
+> EVEN RELEVANT:** it names layers, seams and a corpus gate of the superseded legacy stack (the
+> 53/24/53 batch stop was itself superseded 2026-07-06). The acceptance conditions are to be
+> RESTATED against the current stack as part of the phase-3 plan (with the engage-era
+> re-disposition, open-items row OI-259). Register entry D-266 carries this ruling.
 
 **Selection span** — the user's selected range; the output span. **Loaded span** — what Architectural Layer 1 currently
 holds (selection ⊆ loaded ⊆ score). **Context / evidence span** — loaded minus selection; used as evidence, never

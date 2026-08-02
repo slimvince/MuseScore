@@ -114,6 +114,15 @@ gate applies to **precision claims** ("will building X make analysis more correc
 does the rebuilt path (decoder carry + the intended selection) beat the LEGACY path against the DCML ground
 truth? — the go/no-go on the whole engagement, before E4 is built.
 
+> **★ Dated annotation (user ruling, 2026-08-02, at the D-278 ratification).** The shelving above
+> stands as recorded, WITH THIS MADE EXTREMELY CLEAR: its subject — the bolt-on joint key↔chord
+> re-ranking step over the LEGACY pipeline's carried candidates — is DEPRECATED legacy-era
+> machinery that will be ENTIRELY DISCARDED with the legacy path at the retirement map. The
+> shelving's measurement binds that class only; it does not bear on the joint estimator (register
+> entry D-001, ratified 2026-07-17, adopted 2026-07-26), which is a different mechanism class —
+> one generative decode over a joint state space, not a re-ranking of legacy candidates. Register
+> entry D-278 carries this scoping.
+
 **Stage 4 — R9: the `chordanalyzer.cpp` file split (OWED #1), LAST.** "Split once," after the E4 removals.
 
 **Stage 5 — the moratorium lifts (#8): the PRECISION work (#4).** Recover the corrections the fine-grain
