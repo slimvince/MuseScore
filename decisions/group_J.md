@@ -117,3 +117,20 @@
 
 **Provenance.** ARCHITECTURE.md:664-674 (Rule 16), restated in the retired-session record at STATUS_ARCHIVE.md:2247 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
+### D-295 — Zero information loss to the end user - every inferred object must be displayable
+
+>   R-map at its next edit) and **E-14** (user-stated principle: ZERO INFORMATION LOSS TO THE END USER — every
+>   inferred object displayable; progressive disclosure yes, structural hiding no; ARCH pointer rides ARCH's next
+>   edit). Market probe recorded: no comparable engine anywhere in the MuseScore GitHub space; plugins hand-annotate
+>   what our layers infer.
+
+**In plain words.** Anything the analysis works out must be capable of being shown to the user. Showing it gradually, so the display is not overwhelming, is fine; leaving something permanently unreachable because the interface has no place for it is not.
+
+**Why.** A user-stated principle. It is the display-side counterpart of the no-information-loss principle (D-099, principle #12), which governs what the analysis may discard internally; this governs what the interface may withhold.
+
+**Status.** LIVE · date not stated · ratified by the user
+
+**Home.** `cowork_handoff_archive.md:2507`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+
+**Provenance.** Recorded in `cowork_handoff_archive.md` (the standing-records block) as item E-14 of `cowork_product_tool_register.md`, with a note that a pointer into the architecture document was owed at its next edit. This pass found no such pointer in the register's own home census, so the owed act appears undischarged. Found by the phase-1e second-partition archive read, 2026-08-02.
+

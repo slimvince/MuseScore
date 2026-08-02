@@ -163,3 +163,33 @@
 
 **Provenance.** ARCHITECTURE.md:2414-2418; the same guard is listed among the key-path scoring terms at :2480-2482 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
+### D-287 — Key-as-distribution is SHELVED - its motivating case was already fixed and no live target was found
+
+> 3. **Key-as-distribution — ⛔ SHELVED.** Motivating case (Corelli op01n08d) already
+>    fixed by `81978321e3`. No confirmed live target in corpus. `normalizedConfidence`
+>    structurally unreliable as scaling signal. See `docs/redesign_plan.md` §Step 3.
+
+**In plain words.** Carrying a ranked distribution of key candidates forward, instead of one committed key, was withdrawn: the one failure it was designed to fix had already been fixed another way, no other case in the corpus needed it, and the confidence number it would have been weighted by is not trustworthy.
+
+**Why.** Measured and cited in the record: the motivating case (Corelli op01n08d read in G minor instead of C minor) was already fixed by the partial-signature correction `81978321e3`, the resolver returns C minor at rank 0 for every stretch, and no case was found where the correct key sits at rank 1 or 2 (`cc_step3_key_investigation_report.md`). A second reason is recorded beside it: the confidence field is re-ranked without being recomputed, so it reads anywhere from 0.025 to 1.00 on one correctly-keyed piece and cannot scale anything.
+
+**Status.** LIVE · decided 2026-06-08 · ratifier not stated
+
+**Home.** `cowork_handoff_archive.md:5272`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+
+**Provenance.** Recorded in `cowork_handoff_archive.md` (the redesign-sequence block) and in the 2026-06-08 `STATUS_ARCHIVE.md` entry, both pointing at `docs/redesign_plan.md` Step 3. The shelving names its own re-open condition — a confirmed case where the correct key sits at rank 1 or 2 — so it is a shelving with a stated trigger, not a permanent exclusion. Found by the phase-1e second-partition archive read, 2026-08-02. Note for a future reader: the joint estimator (D-001) carries a full posterior by construction, so the concern this shelving withdrew is met by a different design, not by reviving this one.
+
+### D-290 — The key-agnostic local cadence approach is FALSIFIED at its precision ceiling
+
+> - **★★ CADENCE-PRECISION INVESTIGATION: NEGATIVE — the key-agnostic LOCAL cadence approach has HIT ITS PRECISION CEILING (2026-06-15).**
+
+**In plain words.** Deciding the key from cadences found without knowing the key, one cadence at a time, was tested to its limit and cannot be made accurate enough to use. The remaining errors need either a long-range key decision or a different kind of model - not a better local cadence rule.
+
+**Why.** Measured with a byte-matched reimplementation (the Python re-implementation reproduced the committed analysis exactly on all 326 pieces, so the simulation is trustworthy): the chromatic-leading-tone gate is orthogonal to correctness (about 45 % of true modulations and about 50 % of false ones carry a diatonic leading tone), and the relative-pair signals were already spent by the existing aggregation. Ceiling approximately 50-58 % precision at 18-22 % recall, below the bar the wiring step required.
+
+**Status.** LIVE · decided 2026-06-15 · ratifier not stated
+
+**Home.** `cowork_handoff_archive.md:3896`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+
+**Provenance.** Recorded in `cowork_handoff_archive.md` (the 2026-06-15 cadence-precision-investigation block), citing `cc_cadence_precision_investigation_dossier.md`. Its scope is stated with it: measured on the Bach ground-truth corpus, non-Bach unmeasured. Found by the phase-1e second-partition archive read, 2026-08-02.
+

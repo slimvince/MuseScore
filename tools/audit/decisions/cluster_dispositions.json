@@ -15,11 +15,11 @@
    },
    "backbone": {
     "file": "tools/audit/decisions/backbone_decisions.json",
-    "sha256": "deb5632de9513861da192728e1708de08804d19f25406af605b3bf5eef2abb3b",
-    "decision_count": 281
+    "sha256": "ce4f01e51e07a980914d08e62b212c04bc72a2bbfda4d338c54f7316ce21130f",
+    "decision_count": 299
    }
   },
-  "head_commit": "33a821d64c0e36ae1b0be9aeab5502cda5305666",
+  "head_commit": "a20240f1c891a83912cbfbb5754959faa7ac10e6",
   "disposition_vocabulary": [
    "restates",
    "not-a-decision",
@@ -70,7 +70,7 @@
    {
     "id": "BR-4",
     "rule": "The cluster's text matches one or more backbone decisions, ALL of which are recorded outside any layer specification. Recorded as a decision with no layer-specification home (named) — the Task-4 documentation-gap class.",
-    "clusters": 578
+    "clusters": 586
    },
    {
     "id": "BR-5",
@@ -80,7 +80,7 @@
    {
     "id": "BR-6",
     "rule": "A Claude Code session report or dispatch whose text is a measurement or delivery narrative (it carries a figure, a test count, a commit hash, or a delivery/verification verb) and matches no backbone decision. A report of work done, not a ruling.",
-    "clusters": 1593
+    "clusters": 1591
    },
    {
     "id": "BR-7",
@@ -128,17 +128,22 @@
     "clusters": 2
    },
    {
+    "id": "BR-17",
+    "rule": "The unit is in the SESSION-HANDOFF ARCHIVE (`cowork_handoff_archive.md`) and carries none of the stated ruling words. BR-15's reasoning, and ONLY because the phase-1e second-partition wave READ THIS FILE IN FULL (all 5,704 lines, 2026-08-02): the archive is the handoff's own superseded blocks moved verbatim, and `OPEN_ITEMS.md` OI-240/OI-266 establish that a handoff block tracks work and is not a home for a standing decision. The archives are swept by no rule until they are read — the founding case of this audit lived in one of them — so `STATUS_ARCHIVE.md`, read only in part, deliberately gets NO rule.",
+    "clusters": 79
+   },
+   {
     "id": "BR-8",
     "rule": "Residual: none of the above applies. Recorded UNRESOLVED — the honest outcome, and the count is a finding about the record's legibility.",
-    "clusters": 2879
+    "clusters": 2794
    }
   ],
   "disposition_counts": {
    "restates": 5511,
-   "not-a-decision": 5418,
+   "not-a-decision": 5495,
    "boilerplate": 74,
-   "no-spec-home": 578,
-   "unresolved": 2879
+   "no-spec-home": 586,
+   "unresolved": 2794
   },
   "unresolved_partition_by_surface": {
    "cowork_* design documents": 857,
@@ -147,7 +152,7 @@
    "tools/ script comments": 295,
    "cc_instruction_* dispatches": 291,
    "src production comments": 276,
-   "the two archives": 256,
+   "the two archives": 171,
    "src test comments": 76,
    "governing: ARCHITECTURE.md": 55,
    "the open-items register": 17,
@@ -162,7 +167,7 @@
    "tools/ script comments": "RESERVED for the sealed measurement-tools partition (the second partition of the OI-199 review, Cowork's ordering amendment). These scripts ARE the subject of that review, and register entry D-281 — found by this wave — shows the surface carries real decisions, so a bulk sweep here would both pre-empt the review and be the blind class sweep the ruling-vocabulary guardrail exists to forbid.",
    "cc_instruction_* dispatches": "The BR-11 EXEMPTION SET — units the sweep refused because they carry a ruling word. Each needs a reader.",
    "src production comments": "RESERVED for a reading against `docs/scoring_model.md` §4/§8. These are largely the musical-reasoning comments register entry D-123 REQUIRES at every non-obvious scoring weight, so they state design decisions with their defense (D-195) and cannot be swept as narrative; settling each means comparing it with the scoring model's own §4 term table and §8 constraint list, which is a reading this wave did not reach.",
-   "the two archives": "NOT read by the phase-1d wave and swept by NO rule, deliberately: the founding case of this audit (the Stage-3.1b shelving) lived in one of them, so they must be read, never swept.",
+   "the two archives": "PARTIALLY READ by the phase-1e second-partition wave, 2026-08-02, and therefore now a SPLIT surface. `cowork_handoff_archive.md` was READ IN FULL (5,704 lines), which is what licenses BR-17 over its non-ruling prose; the units that survive from it are the BR-17 exemption set — they carry a ruling word and each needs a reader. `STATUS_ARCHIVE.md` was read only in part (lines 1-118 and 301-929 of 3,861, which is the majority of the file by content — its dated entries are extremely long lines), so it gets NO rule at all and its whole unresolved share is UNREAD. The measured remainder is in the OI-207 dated note of 2026-08-02. The archives are never swept before being read: the founding case of this audit (the Stage-3.1b shelving, now register entry D-286) lived in one of them.",
    "src test comments": "The BR-13 EXEMPTION SET — units the sweep refused because they carry a ruling word. Each needs a reader.",
    "governing: ARCHITECTURE.md": "Already READ IN FULL by the 2026-08-01 completion pass; this residue is prose that reading judged not to state a distinct decision. Judged, not unread.",
    "the open-items register": "The BR-14 exemption set — open-items prose carrying a ruling word, which is where a non-conformance row quotes the decision it violates. Each needs a reader.",
@@ -9279,7 +9284,8 @@
    "rule": "BR-3",
    "decisions": [
     "D-115",
-    "D-161"
+    "D-161",
+    "D-294"
    ],
    "categories": [
     "governing"
@@ -16117,7 +16123,8 @@
     "D-097",
     "D-099",
     "D-119",
-    "D-183"
+    "D-183",
+    "D-292"
    ],
    "categories": [
     "governing"
@@ -16172,7 +16179,8 @@
     "D-104",
     "D-119",
     "D-183",
-    "D-186"
+    "D-186",
+    "D-293"
    ],
    "categories": [
     "governing"
@@ -17521,7 +17529,8 @@
    "rule": "BR-3",
    "decisions": [
     "D-115",
-    "D-119"
+    "D-119",
+    "D-288"
    ],
    "categories": [
     "governing"
@@ -17909,9 +17918,11 @@
   {
    "cluster_id": "DC-00803",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
-   "decisions": [],
+   "disposition": "no-spec-home",
+   "rule": "BR-4",
+   "decisions": [
+    "D-287"
+   ],
    "categories": [
     "governing"
    ],
@@ -24907,8 +24918,8 @@
   {
    "cluster_id": "DC-01139",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -25069,8 +25080,8 @@
   {
    "cluster_id": "DC-01147",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -25152,8 +25163,8 @@
   {
    "cluster_id": "DC-01151",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -25171,8 +25182,8 @@
   {
    "cluster_id": "DC-01152",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -25355,8 +25366,8 @@
   {
    "cluster_id": "DC-01161",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -25708,8 +25719,8 @@
   {
    "cluster_id": "DC-01178",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -25808,8 +25819,8 @@
   {
    "cluster_id": "DC-01183",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -25869,8 +25880,8 @@
   {
    "cluster_id": "DC-01186",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -25907,8 +25918,8 @@
   {
    "cluster_id": "DC-01188",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -25945,8 +25956,8 @@
   {
    "cluster_id": "DC-01190",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -25964,8 +25975,8 @@
   {
    "cluster_id": "DC-01191",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -26066,8 +26077,8 @@
   {
    "cluster_id": "DC-01196",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -26427,8 +26438,8 @@
   {
    "cluster_id": "DC-01213",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -26491,8 +26502,8 @@
   {
    "cluster_id": "DC-01216",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -26715,8 +26726,8 @@
   {
    "cluster_id": "DC-01226",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -27122,8 +27133,8 @@
   {
    "cluster_id": "DC-01244",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -27231,7 +27242,8 @@
    "disposition": "restates",
    "rule": "BR-3",
    "decisions": [
-    "D-099"
+    "D-099",
+    "D-297"
    ],
    "categories": [
     "governing"
@@ -27249,8 +27261,8 @@
   {
    "cluster_id": "DC-01250",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -27377,8 +27389,8 @@
   {
    "cluster_id": "DC-01256",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -27396,8 +27408,8 @@
   {
    "cluster_id": "DC-01257",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -27415,8 +27427,8 @@
   {
    "cluster_id": "DC-01258",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -27434,8 +27446,8 @@
   {
    "cluster_id": "DC-01259",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -27870,8 +27882,8 @@
   {
    "cluster_id": "DC-01278",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -27910,8 +27922,8 @@
   {
    "cluster_id": "DC-01280",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -27972,8 +27984,8 @@
   {
    "cluster_id": "DC-01283",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -28102,8 +28114,8 @@
   {
    "cluster_id": "DC-01289",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -28177,7 +28189,8 @@
     "D-097",
     "D-115",
     "D-119",
-    "D-183"
+    "D-183",
+    "D-293"
    ],
    "categories": [
     "governing"
@@ -28376,8 +28389,8 @@
   {
    "cluster_id": "DC-01302",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -28398,7 +28411,8 @@
    "disposition": "restates",
    "rule": "BR-3",
    "decisions": [
-    "D-119"
+    "D-119",
+    "D-292"
    ],
    "categories": [
     "governing"
@@ -28416,8 +28430,8 @@
   {
    "cluster_id": "DC-01304",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -28479,8 +28493,8 @@
   {
    "cluster_id": "DC-01307",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -28544,8 +28558,8 @@
   {
    "cluster_id": "DC-01310",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -28668,8 +28682,8 @@
   {
    "cluster_id": "DC-01316",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -28687,8 +28701,8 @@
   {
    "cluster_id": "DC-01317",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -28706,8 +28720,8 @@
   {
    "cluster_id": "DC-01318",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -28746,8 +28760,8 @@
   {
    "cluster_id": "DC-01320",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -28975,7 +28989,8 @@
    "rule": "BR-3",
    "decisions": [
     "D-161",
-    "D-179"
+    "D-179",
+    "D-294"
    ],
    "categories": [
     "governing"
@@ -29095,8 +29110,8 @@
   {
    "cluster_id": "DC-01337",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -29114,8 +29129,8 @@
   {
    "cluster_id": "DC-01338",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -29136,7 +29151,8 @@
    "disposition": "restates",
    "rule": "BR-3",
    "decisions": [
-    "D-063"
+    "D-063",
+    "D-286"
    ],
    "categories": [
     "governing"
@@ -29213,8 +29229,8 @@
   {
    "cluster_id": "DC-01343",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -29272,9 +29288,11 @@
   {
    "cluster_id": "DC-01346",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
-   "decisions": [],
+   "disposition": "no-spec-home",
+   "rule": "BR-4",
+   "decisions": [
+    "D-288"
+   ],
    "categories": [
     "governing"
    ],
@@ -29320,7 +29338,8 @@
    "decisions": [
     "D-119",
     "D-181",
-    "D-182"
+    "D-182",
+    "D-289"
    ],
    "categories": [
     "governing"
@@ -29338,8 +29357,8 @@
   {
    "cluster_id": "DC-01349",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -29357,8 +29376,8 @@
   {
    "cluster_id": "DC-01350",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -29439,8 +29458,8 @@
   {
    "cluster_id": "DC-01354",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -29458,8 +29477,8 @@
   {
    "cluster_id": "DC-01355",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -29555,8 +29574,8 @@
   {
    "cluster_id": "DC-01360",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -29717,8 +29736,8 @@
   {
    "cluster_id": "DC-01368",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -29797,8 +29816,8 @@
   {
    "cluster_id": "DC-01372",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -30221,8 +30240,8 @@
   {
    "cluster_id": "DC-01392",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -30283,8 +30302,8 @@
   {
    "cluster_id": "DC-01395",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -30640,8 +30659,8 @@
   {
    "cluster_id": "DC-01412",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -30662,7 +30681,8 @@
    "disposition": "restates",
    "rule": "BR-3",
    "decisions": [
-    "D-119"
+    "D-119",
+    "D-291"
    ],
    "categories": [
     "governing"
@@ -30680,9 +30700,11 @@
   {
    "cluster_id": "DC-01414",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
-   "decisions": [],
+   "disposition": "no-spec-home",
+   "rule": "BR-4",
+   "decisions": [
+    "D-291"
+   ],
    "categories": [
     "governing"
    ],
@@ -30699,8 +30721,8 @@
   {
    "cluster_id": "DC-01415",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -30840,8 +30862,8 @@
   {
    "cluster_id": "DC-01422",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -30863,7 +30885,8 @@
    "rule": "BR-3",
    "decisions": [
     "D-081",
-    "D-119"
+    "D-119",
+    "D-290"
    ],
    "categories": [
     "governing"
@@ -30921,8 +30944,8 @@
   {
    "cluster_id": "DC-01426",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -31069,7 +31092,8 @@
    "disposition": "restates",
    "rule": "BR-3",
    "decisions": [
-    "D-119"
+    "D-119",
+    "D-289"
    ],
    "categories": [
     "governing"
@@ -31098,7 +31122,8 @@
     "D-115",
     "D-119",
     "D-179",
-    "D-181"
+    "D-181",
+    "D-287"
    ],
    "categories": [
     "governing"
@@ -31116,8 +31141,8 @@
   {
    "cluster_id": "DC-01435",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -31135,8 +31160,8 @@
   {
    "cluster_id": "DC-01436",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -31154,8 +31179,8 @@
   {
    "cluster_id": "DC-01437",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -31173,8 +31198,8 @@
   {
    "cluster_id": "DC-01438",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -31234,8 +31259,8 @@
   {
    "cluster_id": "DC-01441",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -31253,8 +31278,8 @@
   {
    "cluster_id": "DC-01442",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -31272,8 +31297,8 @@
   {
    "cluster_id": "DC-01443",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -31464,8 +31489,8 @@
   {
    "cluster_id": "DC-01453",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -31483,8 +31508,8 @@
   {
    "cluster_id": "DC-01454",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -31580,8 +31605,8 @@
   {
    "cluster_id": "DC-01459",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -31696,8 +31721,8 @@
   {
    "cluster_id": "DC-01465",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -31753,8 +31778,8 @@
   {
    "cluster_id": "DC-01468",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -31810,8 +31835,8 @@
   {
    "cluster_id": "DC-01471",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -31829,8 +31854,8 @@
   {
    "cluster_id": "DC-01472",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -31867,8 +31892,8 @@
   {
    "cluster_id": "DC-01474",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -31905,8 +31930,8 @@
   {
    "cluster_id": "DC-01476",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -31943,8 +31968,8 @@
   {
    "cluster_id": "DC-01478",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -32000,9 +32025,11 @@
   {
    "cluster_id": "DC-01481",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
-   "decisions": [],
+   "disposition": "no-spec-home",
+   "rule": "BR-4",
+   "decisions": [
+    "D-299"
+   ],
    "categories": [
     "governing"
    ],
@@ -32040,8 +32067,8 @@
   {
    "cluster_id": "DC-01483",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -32080,8 +32107,8 @@
   {
    "cluster_id": "DC-01485",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -32160,8 +32187,8 @@
   {
    "cluster_id": "DC-01489",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -32179,9 +32206,11 @@
   {
    "cluster_id": "DC-01490",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
-   "decisions": [],
+   "disposition": "no-spec-home",
+   "rule": "BR-4",
+   "decisions": [
+    "D-287"
+   ],
    "categories": [
     "governing"
    ],
@@ -32198,8 +32227,8 @@
   {
    "cluster_id": "DC-01491",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -32255,9 +32284,11 @@
   {
    "cluster_id": "DC-01494",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
-   "decisions": [],
+   "disposition": "no-spec-home",
+   "rule": "BR-4",
+   "decisions": [
+    "D-287"
+   ],
    "categories": [
     "governing"
    ],
@@ -32428,8 +32459,8 @@
   {
    "cluster_id": "DC-01503",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -32447,8 +32478,8 @@
   {
    "cluster_id": "DC-01504",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -32485,8 +32516,8 @@
   {
    "cluster_id": "DC-01506",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -32504,8 +32535,8 @@
   {
    "cluster_id": "DC-01507",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -32563,8 +32594,8 @@
   {
    "cluster_id": "DC-01510",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -32582,8 +32613,8 @@
   {
    "cluster_id": "DC-01511",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -32601,8 +32632,8 @@
   {
    "cluster_id": "DC-01512",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -32620,8 +32651,8 @@
   {
    "cluster_id": "DC-01513",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -32658,8 +32689,8 @@
   {
    "cluster_id": "DC-01515",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
+   "disposition": "not-a-decision",
+   "rule": "BR-17",
    "decisions": [],
    "categories": [
     "governing"
@@ -37600,7 +37631,8 @@
    "rule": "BR-3",
    "decisions": [
     "D-119",
-    "D-161"
+    "D-161",
+    "D-294"
    ],
    "categories": [
     "cowork_docs"
@@ -63646,7 +63678,8 @@
    "disposition": "restates",
    "rule": "BR-3",
    "decisions": [
-    "D-119"
+    "D-119",
+    "D-295"
    ],
    "categories": [
     "cowork_docs"
@@ -65854,7 +65887,8 @@
    "disposition": "restates",
    "rule": "BR-3",
    "decisions": [
-    "D-119"
+    "D-119",
+    "D-292"
    ],
    "categories": [
     "cowork_docs"
@@ -68138,7 +68172,8 @@
    "rule": "BR-3",
    "decisions": [
     "D-092",
-    "D-255"
+    "D-255",
+    "D-292"
    ],
    "categories": [
     "cowork_docs"
@@ -68699,7 +68734,8 @@
    "disposition": "restates",
    "rule": "BR-3",
    "decisions": [
-    "D-119"
+    "D-119",
+    "D-292"
    ],
    "categories": [
     "cowork_docs"
@@ -68766,7 +68802,8 @@
    "disposition": "restates",
    "rule": "BR-3",
    "decisions": [
-    "D-119"
+    "D-119",
+    "D-293"
    ],
    "categories": [
     "cowork_docs"
@@ -77669,7 +77706,8 @@
    "disposition": "restates",
    "rule": "BR-3",
    "decisions": [
-    "D-119"
+    "D-119",
+    "D-288"
    ],
    "categories": [
     "docs"
@@ -81373,7 +81411,8 @@
    "rule": "BR-3",
    "decisions": [
     "D-115",
-    "D-161"
+    "D-161",
+    "D-294"
    ],
    "categories": [
     "docs"
@@ -81396,7 +81435,8 @@
    "decisions": [
     "D-097",
     "D-119",
-    "D-183"
+    "D-183",
+    "D-292"
    ],
    "categories": [
     "docs"
@@ -97626,7 +97666,8 @@
     "D-115",
     "D-119",
     "D-161",
-    "D-205"
+    "D-205",
+    "D-294"
    ],
    "categories": [
     "open_items"
@@ -105699,7 +105740,8 @@
    "disposition": "restates",
    "rule": "BR-3",
    "decisions": [
-    "D-161"
+    "D-161",
+    "D-294"
    ],
    "categories": [
     "cc_reports"
@@ -124202,7 +124244,8 @@
    "rule": "BR-3",
    "decisions": [
     "D-115",
-    "D-161"
+    "D-161",
+    "D-294"
    ],
    "categories": [
     "cc_reports"
@@ -183449,7 +183492,8 @@
    "rule": "BR-3",
    "decisions": [
     "D-054",
-    "D-058"
+    "D-058",
+    "D-287"
    ],
    "categories": [
     "cc_reports"
@@ -183547,9 +183591,11 @@
   {
    "cluster_id": "DC-09018",
    "size": 1,
-   "disposition": "not-a-decision",
-   "rule": "BR-6",
-   "decisions": [],
+   "disposition": "no-spec-home",
+   "rule": "BR-4",
+   "decisions": [
+    "D-287"
+   ],
    "categories": [
     "cc_reports"
    ],
@@ -185450,7 +185496,8 @@
    "decisions": [
     "D-097",
     "D-119",
-    "D-183"
+    "D-183",
+    "D-292"
    ],
    "categories": [
     "cc_reports"
@@ -249924,9 +249971,11 @@
   {
    "cluster_id": "DC-12346",
    "size": 1,
-   "disposition": "not-a-decision",
-   "rule": "BR-6",
-   "decisions": [],
+   "disposition": "no-spec-home",
+   "rule": "BR-4",
+   "decisions": [
+    "D-292"
+   ],
    "categories": [
     "cc_reports"
    ],
@@ -255647,7 +255696,8 @@
    "rule": "BR-3",
    "decisions": [
     "D-115",
-    "D-161"
+    "D-161",
+    "D-294"
    ],
    "categories": [
     "cc_reports"

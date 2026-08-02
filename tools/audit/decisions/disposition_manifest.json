@@ -14,11 +14,11 @@
   },
   "backbone": {
    "file": "tools/audit/decisions/backbone_decisions.json",
-   "sha256": "deb5632de9513861da192728e1708de08804d19f25406af605b3bf5eef2abb3b",
-   "decision_count": 281
+   "sha256": "ce4f01e51e07a980914d08e62b212c04bc72a2bbfda4d338c54f7316ce21130f",
+   "decision_count": 299
   }
  },
- "head_commit": "33a821d64c0e36ae1b0be9aeab5502cda5305666",
+ "head_commit": "a20240f1c891a83912cbfbb5754959faa7ac10e6",
  "disposition_vocabulary": [
   "restates",
   "not-a-decision",
@@ -69,7 +69,7 @@
   {
    "id": "BR-4",
    "rule": "The cluster's text matches one or more backbone decisions, ALL of which are recorded outside any layer specification. Recorded as a decision with no layer-specification home (named) — the Task-4 documentation-gap class.",
-   "clusters": 578
+   "clusters": 586
   },
   {
    "id": "BR-5",
@@ -79,7 +79,7 @@
   {
    "id": "BR-6",
    "rule": "A Claude Code session report or dispatch whose text is a measurement or delivery narrative (it carries a figure, a test count, a commit hash, or a delivery/verification verb) and matches no backbone decision. A report of work done, not a ruling.",
-   "clusters": 1593
+   "clusters": 1591
   },
   {
    "id": "BR-7",
@@ -127,17 +127,22 @@
    "clusters": 2
   },
   {
+   "id": "BR-17",
+   "rule": "The unit is in the SESSION-HANDOFF ARCHIVE (`cowork_handoff_archive.md`) and carries none of the stated ruling words. BR-15's reasoning, and ONLY because the phase-1e second-partition wave READ THIS FILE IN FULL (all 5,704 lines, 2026-08-02): the archive is the handoff's own superseded blocks moved verbatim, and `OPEN_ITEMS.md` OI-240/OI-266 establish that a handoff block tracks work and is not a home for a standing decision. The archives are swept by no rule until they are read — the founding case of this audit lived in one of them — so `STATUS_ARCHIVE.md`, read only in part, deliberately gets NO rule.",
+   "clusters": 79
+  },
+  {
    "id": "BR-8",
    "rule": "Residual: none of the above applies. Recorded UNRESOLVED — the honest outcome, and the count is a finding about the record's legibility.",
-   "clusters": 2879
+   "clusters": 2794
   }
  ],
  "disposition_counts": {
   "restates": 5511,
-  "not-a-decision": 5418,
+  "not-a-decision": 5495,
   "boilerplate": 74,
-  "no-spec-home": 578,
-  "unresolved": 2879
+  "no-spec-home": 586,
+  "unresolved": 2794
  },
  "unresolved_partition_by_surface": {
   "cowork_* design documents": 857,
@@ -146,7 +151,7 @@
   "tools/ script comments": 295,
   "cc_instruction_* dispatches": 291,
   "src production comments": 276,
-  "the two archives": 256,
+  "the two archives": 171,
   "src test comments": 76,
   "governing: ARCHITECTURE.md": 55,
   "the open-items register": 17,
@@ -161,7 +166,7 @@
   "tools/ script comments": "RESERVED for the sealed measurement-tools partition (the second partition of the OI-199 review, Cowork's ordering amendment). These scripts ARE the subject of that review, and register entry D-281 — found by this wave — shows the surface carries real decisions, so a bulk sweep here would both pre-empt the review and be the blind class sweep the ruling-vocabulary guardrail exists to forbid.",
   "cc_instruction_* dispatches": "The BR-11 EXEMPTION SET — units the sweep refused because they carry a ruling word. Each needs a reader.",
   "src production comments": "RESERVED for a reading against `docs/scoring_model.md` §4/§8. These are largely the musical-reasoning comments register entry D-123 REQUIRES at every non-obvious scoring weight, so they state design decisions with their defense (D-195) and cannot be swept as narrative; settling each means comparing it with the scoring model's own §4 term table and §8 constraint list, which is a reading this wave did not reach.",
-  "the two archives": "NOT read by the phase-1d wave and swept by NO rule, deliberately: the founding case of this audit (the Stage-3.1b shelving) lived in one of them, so they must be read, never swept.",
+  "the two archives": "PARTIALLY READ by the phase-1e second-partition wave, 2026-08-02, and therefore now a SPLIT surface. `cowork_handoff_archive.md` was READ IN FULL (5,704 lines), which is what licenses BR-17 over its non-ruling prose; the units that survive from it are the BR-17 exemption set — they carry a ruling word and each needs a reader. `STATUS_ARCHIVE.md` was read only in part (lines 1-118 and 301-929 of 3,861, which is the majority of the file by content — its dated entries are extremely long lines), so it gets NO rule at all and its whole unresolved share is UNREAD. The measured remainder is in the OI-207 dated note of 2026-08-02. The archives are never swept before being read: the founding case of this audit (the Stage-3.1b shelving, now register entry D-286) lived in one of them.",
   "src test comments": "The BR-13 EXEMPTION SET — units the sweep refused because they carry a ruling word. Each needs a reader.",
   "governing: ARCHITECTURE.md": "Already READ IN FULL by the 2026-08-01 completion pass; this residue is prose that reading judged not to state a distinct decision. Judged, not unread.",
   "the open-items register": "The BR-14 exemption set — open-items prose carrying a ruling word, which is where a non-conformance row quotes the decision it violates. Each needs a reader.",

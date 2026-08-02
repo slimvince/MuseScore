@@ -124,6 +124,14 @@ RULES = [
     ("BR-16", "The unit is a row of the defect-type catalog (`DEFECT_TYPES.md`). The catalog "
               "itself is register entry D-213; a row of it is a catalogued problem TYPE with its "
               "detection signature, which is a diagnostic aid, not a decision about the system."),
+    ("BR-17", "The unit is in the SESSION-HANDOFF ARCHIVE (`cowork_handoff_archive.md`) and carries "
+              "none of the stated ruling words. BR-15's reasoning, and ONLY because the phase-1e "
+              "second-partition wave READ THIS FILE IN FULL (all 5,704 lines, 2026-08-02): the "
+              "archive is the handoff's own superseded blocks moved verbatim, and `OPEN_ITEMS.md` "
+              "OI-240/OI-266 establish that a handoff block tracks work and is not a home for a "
+              "standing decision. The archives are swept by no rule until they are read — the "
+              "founding case of this audit lived in one of them — so `STATUS_ARCHIVE.md`, read only "
+              "in part, deliberately gets NO rule."),
     ("BR-8", "Residual: none of the above applies. Recorded UNRESOLVED — the honest outcome, and "
              "the count is a finding about the record's legibility."),
 ]
@@ -159,9 +167,17 @@ UNRESOLVED_RESERVATIONS = {
                                  "it is the next wave's input.",
     "docs/ design documents": "Same partition as the `cowork_*` surface — the measured "
                               "remainder of the phase-1d reading list.",
-    "the two archives": "NOT read by the phase-1d wave and swept by NO rule, deliberately: the "
-                        "founding case of this audit (the Stage-3.1b shelving) lived in one of "
-                        "them, so they must be read, never swept.",
+    "the two archives": "PARTIALLY READ by the phase-1e second-partition wave, 2026-08-02, and "
+                        "therefore now a SPLIT surface. `cowork_handoff_archive.md` was READ IN "
+                        "FULL (5,704 lines), which is what licenses BR-17 over its non-ruling "
+                        "prose; the units that survive from it are the BR-17 exemption set — they "
+                        "carry a ruling word and each needs a reader. `STATUS_ARCHIVE.md` was read "
+                        "only in part (lines 1-118 and 301-929 of 3,861, which is the majority of "
+                        "the file by content — its dated entries are extremely long lines), so it "
+                        "gets NO rule at all and its whole unresolved share is UNREAD. The measured "
+                        "remainder is in the OI-207 dated note of 2026-08-02. The archives are "
+                        "never swept before being read: the founding case of this audit (the "
+                        "Stage-3.1b shelving, now register entry D-286) lived in one of them.",
     "governing: ARCHITECTURE.md": "Already READ IN FULL by the 2026-08-01 completion pass; this "
                                   "residue is prose that reading judged not to state a distinct "
                                   "decision. Judged, not unread.",
@@ -399,6 +415,19 @@ def in_handoff(f: str) -> bool:
     return f == "cowork_handoff.md"
 
 
+def in_read_handoff_archive(f: str) -> bool:
+    """`cowork_handoff_archive.md` — the SESSION-HANDOFF ARCHIVE.
+
+    This predicate exists only because the phase-1e second-partition wave READ THIS FILE
+    IN FULL (all 5,704 lines, 2026-08-02).  The archives are otherwise swept by NO rule, on
+    purpose: the founding case of the decision-conformance audit (the Stage-3.1b shelving)
+    lived in one of them, and a blind class sweep is exactly how it went missing.  Reading
+    the surface is what licenses the rule; `STATUS_ARCHIVE.md` was read only in part and
+    therefore has NO rule of its own.
+    """
+    return f == "cowork_handoff_archive.md"
+
+
 def in_defect_types(f: str) -> bool:
     return f == "DEFECT_TYPES.md"
 
@@ -494,6 +523,8 @@ def disposition_pass(candidates, clusters, backbone):
             rule, disp, decs = "BR-15", "not-a-decision", []
         elif _all(cl_files, in_defect_types):
             rule, disp, decs = "BR-16", "not-a-decision", []
+        elif _all(cl_files, in_read_handoff_archive) and not carries_ruling_word:
+            rule, disp, decs = "BR-17", "not-a-decision", []
         else:
             rule, disp, decs = "BR-8", "unresolved", []
 

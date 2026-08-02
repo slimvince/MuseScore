@@ -405,3 +405,18 @@
 
 **Provenance.** Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommendations adopted): SUPERSEDED BY the named later ratified decisions — the governing status derives from the record's dates and explicitness, not from resolving the original statement's ambiguity. The second-partition read of the archives is instructed to flag anything refining these.
 
+### D-299 — No negative-margin guard may be added - it would break every intentional backward-swap gate
+
+> **Do NOT add a negative-margin guard** — would break Gate J and all other
+> intentional backward-swap gates (B/C/D/E/F/G/H/I/K/L, Iter 91).
+
+**In plain words.** A rule that refuses to let a later correction step overturn the leading reading when the margin against it is negative must not be added. Several correction steps exist precisely to overturn a leading reading, and such a rule would disable all of them.
+
+**Why.** A structural prohibition, stated with the mechanism: the named correction steps promote a reading that was behind on the raw score, so a guard keyed on that margin removes their reason to exist.
+
+**Status.** LIVE · date not stated · ratifier not stated
+
+**Home.** `cowork_handoff_archive.md:4967`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+
+**Provenance.** Recorded in `cowork_handoff_archive.md` (the failure-cluster block). This is the statement the 2026-08-02 residual pass cited as its worked example of a real ruling sitting inside the unresolved residual (`open_items/OI-207.md`, the residual-pass note), now entered. Found by the phase-1e second-partition archive read, 2026-08-02.
+

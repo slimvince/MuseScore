@@ -248,3 +248,18 @@
 
 **Provenance.** ARCHITECTURE.md:623-625 (Rule 14) and :649 (the one-run-one-result statement) ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
+### D-296 — READING MuseScore's engraving code is allowed from anywhere we may edit; only EDITING the notation and engraving code is off limits
+
+> - **★ FERMATA/OFF-LIMITS CLARIFICATION (user, 2026-06-14) — corrects a Cowork over-statement:** *reading/calling*
+>   engraving is ALLOWED from any code we may edit; only *editing* `src/notation`/`src/engraving` CODE is off-limits.
+
+**In plain words.** Our code may call into and read from MuseScore's own score and engraving code wherever we are allowed to write. What is out of bounds is changing MuseScore's notation and engraving source itself.
+
+**Why.** A user correction of an over-statement that had conflated the two. Its worked consequence is recorded with it: a measurement that needed fermatas read them in the batch tool, which already loads the score, and passed them into our own analysis through our own input structure - zero edits outside our area.
+
+**Status.** LIVE · decided 2026-06-14 · ratified by the user
+
+**Home.** `cowork_handoff_archive.md:3732`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+
+**Provenance.** Recorded in `cowork_handoff_archive.md` (the 2026-06-14 Stage-4c block) as a standing lesson. Bears directly on D-229, the general MuseScore-dependency rule the user adopted 2026-08-02: this is the EDIT-versus-READ half, stated a month and a half earlier and consistent with it. D-229 adds what the bridge may read (the score model through the bridge pattern, never layout-derived state) and when an edit to MuseScore's own code is admissible. Found by the phase-1e second-partition archive read, 2026-08-02.
+
