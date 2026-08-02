@@ -15,11 +15,11 @@
    },
    "backbone": {
     "file": "tools/audit/decisions/backbone_decisions.json",
-    "sha256": "3e8bfe0b701da1c71efc2b7496a837bf82ac9218b9e1b4d816fe0dbf9024e45c",
+    "sha256": "75ed69c5775e6d17596dc0a32ee2867000557b2f733b72781243c8fbdc032ff8",
     "decision_count": 254
    }
   },
-  "head_commit": "249fc81b6cb1df0792e36aa5f3cd0f84d135f40b",
+  "head_commit": "9bf55580c4d3a77b96b18547e13043b62197319e",
   "disposition_vocabulary": [
    "restates",
    "not-a-decision",

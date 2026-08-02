@@ -247,6 +247,21 @@ restatements.
 4. **The dispatch's 5,204 needed no correction.** It matched `disposition_manifest.json` at HEAD
    exactly. Recorded because the dispatch flagged the figure as a correction of the register's
    published 6,374 and asked that every count read 5,204.
+5. **The entry-appending script reflowed the whole backbone file.** It wrote back with
+   `json.dumps(indent=1)`; the file's established form is `indent=2` with no trailing newline. So
+   the addition commit `249fc81b6c` shows **5,469 added / 4,999 removed** for a change that is
+   actually **470 added / 0 removed**. *Diagnosis and proof it is formatting only:* the 231
+   pre-existing entries are object-identical, the header and group list are untouched, and the order
+   is still sorted by id — checked by loading both blobs and comparing. *Remedy, shipped in its own
+   commit:* the serialization is restored, so the file measures +470 / −0 against the pre-pass blob
+   and every future diff of it is readable. The three commits were left as they are rather than
+   rewritten — the tree is what matters, and it is right.
+6. **BR-9 would have swept a cluster with no resolvable members.** `all(...)` over an empty sequence
+   is true, so a cluster whose member ids all failed to resolve would have been dispositioned
+   not-a-decision. *Diagnosis:* it cannot happen today — the clustering layer's `--check` proves
+   every candidate sits in exactly one cluster — so this is defensive, and regenerating with the
+   guard leaves every count identical (unresolved 2,935 either way). Guarded anyway, because the
+   rule's stated meaning is "the text is a lead-in", and no text is not a lead-in.
 
 ## 9. What this pass did not do
 

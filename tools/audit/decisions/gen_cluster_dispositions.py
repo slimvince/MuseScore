@@ -402,7 +402,7 @@ def disposition_pass(candidates, clusters, backbone):
             rule, disp, decs = "BR-6", "not-a-decision", []
         elif kinds == {"table_row"} and tiers == {"broad"}:
             rule, disp, decs = "BR-7", "not-a-decision", []
-        elif all(is_list_leadin(t) for t in texts):
+        elif texts and all(is_list_leadin(t) for t in texts):
             rule, disp, decs = "BR-9", "not-a-decision", []
         elif _all(cl_files, in_open_items) and (
                 kinds <= {"table_row"} or all(
