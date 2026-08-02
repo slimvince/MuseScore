@@ -122,5 +122,5 @@
 
 **Home.** `ARCHITECTURE.md:6001-6003`
 
-**Provenance.** ARCHITECTURE.md:6001-6003. Section 5.10 (ARCHITECTURE.md:3849) is the tonicization section; the memory-held backlog item is recorded in the same terms.
+**Provenance.** ARCHITECTURE.md:6001-6003. Section 5.10 (ARCHITECTURE.md:3849) is the tonicization section; the memory-held backlog item is recorded in the same terms. ★ RATIFIED (user, 2026-08-02) with the revisit to be PLANNED: for the ultimate objective (maximum-precision inference) the feature may be needed — the ground truth annotates applied chords, so not producing them costs Roman-numeral agreement wherever the annotator wrote one. Row OI-267 carries the planning obligation, including the OI-53 tension (a live classifier emitting V7/x was found on the legacy path while this entry's home says not implemented).
 

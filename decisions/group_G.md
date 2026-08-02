@@ -267,7 +267,7 @@
 
 **Home.** `ARCHITECTURE.md:2598-2600`
 
-**Provenance.** ARCHITECTURE.md:2576 heads the section "Future: Authoritative Chord Symbol Mode"; the current rule is that written symbols are never analyzer input (register entry D-066)
+**Provenance.** ARCHITECTURE.md:2576 heads the section "Future: Authoritative Chord Symbol Mode"; the current rule is that written symbols are never analyzer input (register entry D-066) ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
 ### D-237 — Only a symbol marked trusted becomes analyzer input; an untrusted symbol is never read
 
@@ -285,7 +285,7 @@
 
 **Home.** `ARCHITECTURE.md:2609-2613`
 
-**Provenance.** ARCHITECTURE.md:2576 (the section is headed Future); register entry D-066 records the rule in force today
+**Provenance.** ARCHITECTURE.md:2576 (the section is headed Future); register entry D-066 records the rule in force today ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
 ### D-238 — Two pitch classes may nominate a chord but may not finalize one; one pitch class may not
 
@@ -303,7 +303,7 @@
 
 **Home.** `ARCHITECTURE.md:2754-2758`
 
-**Provenance.** ARCHITECTURE.md:2724 heads the section "Phase 1b - Minimal Monophonic Fallback Without Chord Symbols"; ARCHITECTURE.md:3496-3503 records monophonic input as planned
+**Provenance.** ARCHITECTURE.md:2724 heads the section "Phase 1b - Minimal Monophonic Fallback Without Chord Symbols"; ARCHITECTURE.md:3496-3503 records monophonic input as planned ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
 ### D-239 — Chord identity stays local; expansion is by one neighbouring region and is bounded
 
@@ -324,7 +324,7 @@
 
 **Home.** `ARCHITECTURE.md:2763-2770`
 
-**Provenance.** ARCHITECTURE.md:2724 (the Phase 1b section heading); the stop conditions are stated with the rule
+**Provenance.** ARCHITECTURE.md:2724 (the Phase 1b section heading); the stop conditions are stated with the rule ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
 ### D-240 — The monophonic smoothing terms are tunable parameters, not prose-only rules
 
@@ -339,7 +339,7 @@
 
 **Home.** `ARCHITECTURE.md:2780-2781`
 
-**Provenance.** ARCHITECTURE.md:2724 (the Phase 1b section heading); the named parameters are listed at :2783-2790
+**Provenance.** ARCHITECTURE.md:2724 (the Phase 1b section heading); the named parameters are listed at :2783-2790 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
 ### D-241 — The monophonic local-grouping problem is deferred to Phase 2
 
@@ -354,7 +354,7 @@
 
 **Home.** `ARCHITECTURE.md:2810-2811`
 
-**Provenance.** ARCHITECTURE.md:2796 heads "Phase 2 - Full Monophonic Engine"
+**Provenance.** ARCHITECTURE.md:2796 heads "Phase 2 - Full Monophonic Engine" ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
 ### D-242 — Vertical and monophonic raw scores are never compared directly
 
@@ -370,5 +370,5 @@
 
 **Home.** `ARCHITECTURE.md:2838-2840`
 
-**Provenance.** ARCHITECTURE.md:2813 heads "Unified Orchestration Layer", part of the provisional phased plan recorded at :3498-3503
+**Provenance.** ARCHITECTURE.md:2813 heads "Unified Orchestration Layer", part of the provisional phased plan recorded at :3498-3503 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 

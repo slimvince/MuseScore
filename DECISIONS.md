@@ -11,9 +11,14 @@
 > **Populated by the OI-207 decision-conformance adjudication, 2026-08-01.**
 > **Content RATIFIED by the user, 2026-08-02:** the 115 originally-enumerated entries with the
 > user's review corrections applied, and the 113 completion-pass entries (reviewed via the
-> pending-ratification reading aid). The register-level ratification does not overwrite
+> pending-ratification reading aid). **Second ratification event, 2026-08-02:** the 23
+> residual-pass entries (D-232…D-254), with two qualifications recorded in the entries
+> themselves — the four intonation entries (D-244…D-247) ratified-for-now, to be reviewed when
+> that held feature's implementation is revisited; and D-248 (tonicization labels deferred)
+> ratified with its revisit to be PLANNED (row OI-267 — for maximum-precision inference the
+> feature may be needed). The register-level ratification does not overwrite
 > per-entry provenance — an entry saying "ratifier not stated" still means the original record
-> of THAT decision does not say; what the 2026-08-02 ratification establishes is that these
+> of THAT decision does not say; what the 2026-08-02 ratifications establish is that these
 > entries are the standing decisions of record.
 >
 > **GENERATED FILE — do not hand-edit.** Source of record:

@@ -161,5 +161,5 @@
 
 **Home.** `ARCHITECTURE.md:2403-2407`
 
-**Provenance.** ARCHITECTURE.md:2403-2407; the same guard is listed among the key-path scoring terms at :2480-2482
+**Provenance.** ARCHITECTURE.md:2403-2407; the same guard is listed among the key-path scoring terms at :2480-2482 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 

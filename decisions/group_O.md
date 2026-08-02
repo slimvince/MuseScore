@@ -197,7 +197,7 @@
 
 **Home.** `ARCHITECTURE.md:5069-5078`
 
-**Provenance.** ARCHITECTURE.md:5077-5078 states it is not a current implementation target; the same deferral is recorded in the retired-session record at STATUS_ARCHIVE.md:2335
+**Provenance.** ARCHITECTURE.md:5077-5078 states it is not a current implementation target; the same deferral is recorded in the retired-session record at STATUS_ARCHIVE.md:2335 ★ RATIFIED-FOR-NOW (user, 2026-08-02): to be REVIEWED when the intonation feature's implementation is revisited (the OI-62 held feature).
 
 ### D-245 — Voice role comes from staff position or explicit assignment; automatic melody detection is deferred
 
@@ -213,7 +213,7 @@
 
 **Home.** `ARCHITECTURE.md:5192-5194`
 
-**Provenance.** ARCHITECTURE.md:5192-5194 states the deferral
+**Provenance.** ARCHITECTURE.md:5192-5194 states the deferral ★ RATIFIED-FOR-NOW (user, 2026-08-02): to be REVIEWED when the intonation feature's implementation is revisited (the OI-62 held feature).
 
 ### D-246 — Fixed-pitch instruments are deferred, and will never receive tuning offsets
 
@@ -229,7 +229,7 @@
 
 **Home.** `ARCHITECTURE.md:5293-5295`
 
-**Provenance.** ARCHITECTURE.md:5293-5295 states both the deferral and the eventual behaviour
+**Provenance.** ARCHITECTURE.md:5293-5295 states both the deferral and the eventual behaviour ★ RATIFIED-FOR-NOW (user, 2026-08-02): to be REVIEWED when the intonation feature's implementation is revisited (the OI-62 held feature).
 
 ### D-247 — An anchor note stays at 12-TET, is never split, and is excluded from drift and centering
 
@@ -255,5 +255,5 @@
 
 **Home.** `ARCHITECTURE.md:5311-5323`
 
-**Provenance.** ARCHITECTURE.md:5311-5323; the FreeDrift behaviour is restated at :5448-5453
+**Provenance.** ARCHITECTURE.md:5311-5323; the FreeDrift behaviour is restated at :5448-5453 ★ RATIFIED-FOR-NOW (user, 2026-08-02): to be REVIEWED when the intonation feature's implementation is revisited (the OI-62 held feature).
 

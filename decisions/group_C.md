@@ -369,5 +369,5 @@
 
 **Home.** `ARCHITECTURE.md:3556-3564`
 
-**Provenance.** The band is stated at ARCHITECTURE.md:3556-3564. The governing measurement surface is now the robust unit ratified at R10-b (CLAUDE.md gate block (A)), whose figures are reported per preset on a different unit; no ruling names this band as replaced.
+**Provenance.** The band is stated at ARCHITECTURE.md:3556-3564. The governing measurement surface is now the robust unit ratified at R10-b (CLAUDE.md gate block (A)), whose figures are reported per preset on a different unit; no ruling names this band as replaced. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 

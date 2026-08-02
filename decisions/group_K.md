@@ -278,5 +278,5 @@
 
 **Home.** `ARCHITECTURE.md:601-603`
 
-**Provenance.** ARCHITECTURE.md:601-603 (stated as a standing reading instruction in the document itself)
+**Provenance.** ARCHITECTURE.md:601-603 (stated as a standing reading instruction in the document itself) ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 

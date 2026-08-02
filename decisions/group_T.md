@@ -177,7 +177,7 @@
 
 **Home.** `cowork_handoff.md:1589-1598`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
-**Provenance.** cowork_handoff.md:1587 (the standing-rule heading, "user mandate 2026-07-05"); the instituting record is at STATUS_ARCHIVE.md:202
+**Provenance.** cowork_handoff.md:1587 (the standing-rule heading, "user mandate 2026-07-05"); the instituting record is at STATUS_ARCHIVE.md:202 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
 ### D-250 — Dispatches are written only when they are next; a parked instruction is revalidated first
 
@@ -201,7 +201,7 @@
 
 **Home.** `cowork_handoff.md:1606-1616`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
-**Provenance.** cowork_handoff.md:1606-1616 (stated as standing rules under the handoff's standing-rules block)
+**Provenance.** cowork_handoff.md:1606-1616 (stated as standing rules under the handoff's standing-rules block) ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
 ### D-251 — A running dispatch is never interrupted or steered mid-flight; every instruction is self-sufficient
 
@@ -219,7 +219,7 @@
 
 **Home.** `cowork_handoff.md:1617-1621`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
-**Provenance.** cowork_handoff.md:1617 ("NO MID-FLIGHT STEERING (user, 2026-07-05)")
+**Provenance.** cowork_handoff.md:1617 ("NO MID-FLIGHT STEERING (user, 2026-07-05)") ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
 ### D-252 — One side writes the instruction files and the other executes them, never the reverse
 
@@ -241,7 +241,7 @@
 
 **Home.** `cowork_handoff.md:1630-1638`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
-**Provenance.** cowork_handoff.md:1628 ("STANDING RULE FOR COWORK (read every session)")
+**Provenance.** cowork_handoff.md:1628 ("STANDING RULE FOR COWORK (read every session)") ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
 ### D-253 — Working-tree files are read with the file tools; bash is limited to git object queries by explicit hash
 
@@ -266,7 +266,7 @@
 
 **Home.** `cowork_handoff.md:1669-1680`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
-**Provenance.** cowork_handoff.md:1642 ("COWORK MUST NOT HALLUCINATE OR ASSUME — VERIFY AT SOURCE (user mandate 2026-06-21)"), under which this rule is stated
+**Provenance.** cowork_handoff.md:1642 ("COWORK MUST NOT HALLUCINATE OR ASSUME — VERIFY AT SOURCE (user mandate 2026-06-21)"), under which this rule is stated ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
 ### D-254 — Investigate by default; never ask the user whether to investigate or proceed
 
@@ -284,5 +284,5 @@
 
 **Home.** `cowork_handoff.md:1792-1796`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
-**Provenance.** cowork_handoff.md:1790 ("INVESTIGATE BY DEFAULT — NEVER ASK 'investigate vs proceed' (user mandate 2026-06-14)")
+**Provenance.** cowork_handoff.md:1790 ("INVESTIGATE BY DEFAULT — NEVER ASK 'investigate vs proceed' (user mandate 2026-06-14)") ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
