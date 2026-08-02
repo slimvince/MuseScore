@@ -179,7 +179,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `CLAUDE.md:638`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:641`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:621-660. The document itself is `docs/scoring_model.md`.
 
@@ -198,13 +198,13 @@
 
 **In plain words.** Anything written as a specification, a design, a decision surface, or for the user follows two standards. Every word that relates two things must name the second one - the check is to force the word to be followed by the thing it points at, and a phrase the prose cannot supply is a hole in the thinking. And terms are defined before use, in plain vocabulary, with no invented synonyms and no insider shorthand.
 
-**Why.** Stated constraint, CLAUDE.md:818-819: inherited prose is audited as hard as new prose, so the standard is about the document a reader meets rather than about who wrote which sentence. The one-home rule is #6 applied to the standards themselves (CLAUDE.md:820-821).
+**Why.** Stated constraint, CLAUDE.md:821-819: inherited prose is audited as hard as new prose, so the standard is about the document a reader meets rather than about who wrote which sentence. The one-home rule is #6 applied to the standards themselves (CLAUDE.md:820-821).
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `CLAUDE.md:818`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:821`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** CLAUDE.md:818-821; predicate qualification user-directed 2026-06-24, defined terms user-directed 2026-07-02. The ONE home is `cowork_design_doc_template.md`, which also carries the fourteen-section document structure, the status-banner convention and the implementation/test locator rule. Conformance of the existing tree is open at OPEN_ITEMS OI-230.
+**Provenance.** CLAUDE.md:821-821; predicate qualification user-directed 2026-06-24, defined terms user-directed 2026-07-02. The ONE home is `cowork_design_doc_template.md`, which also carries the fourteen-section document structure, the status-banner convention and the implementation/test locator rule. Conformance of the existing tree is open at OPEN_ITEMS OI-230.
 
 ### D-194 — No self-invented labels, abbreviations, numbering schemes or jargon
 
@@ -219,9 +219,9 @@
 
 **Status.** LIVE · decided 2026-07-11 · ratified by user
 
-**Home.** `CLAUDE.md:814`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:817`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** CLAUDE.md:814-811, user-directed repeatedly and recorded 2026-07-11.
+**Provenance.** CLAUDE.md:817-811, user-directed repeatedly and recorded 2026-07-11.
 
 ### D-195 — Every design decision carries its defense at its home
 
@@ -245,9 +245,9 @@
 
 **Status.** LIVE · decided 2026-08-01 · ratified by user
 
-**Home.** `CLAUDE.md:870`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:873`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** CLAUDE.md:870-876, user-directed 2026-08-01 at the decisions-register ratification review. The register's rationale field is what serves it; the founding instances the entry names are D-004's segment-cap value, D-059's window and D-015's boundary-tick convention.
+**Provenance.** CLAUDE.md:873-876, user-directed 2026-08-01 at the decisions-register ratification review. The register's rationale field is what serves it; the founding instances the entry names are D-004's segment-cap value, D-059's window and D-015's boundary-tick convention.
 
 ### D-230 — The decisions register is a mandatory session-start read, and a new ruling lands in the register in the commit that records it
 

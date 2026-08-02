@@ -167,7 +167,10 @@ LEGACY surface (the dormant pipeline awaiting deletion) is explicitly marked LEG
 must never mistake a ruling about soon-deleted code for one about the live solution (user,
 2026-08-02); (g) a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to is
 a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268 — the pointer, never a
-copy, is what a missing delegation owes).
+copy, is what a missing delegation owes); the document's ratification is the user's directly OR
+TRANSITIVE — a user-ratified surface explicitly delegating to the document carries the user's
+authority to it (user, 2026-08-02, at the phase-1i banner/authority review) — an assistant's
+stamp alone never confers contract-home status.
 
 ## Project context
 

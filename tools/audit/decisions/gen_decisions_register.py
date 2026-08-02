@@ -116,7 +116,11 @@ PREAMBLE = """# DECISIONS — the decisions register
 > 2026-08-02:** the 58 phase-1h entries (D-343…D-400) — D-385 with its plain restatement
 > rephrased at the user's direction (the pedaled note can be in any voice, the D-207
 > voice-independent class governing); D-345 under the OI-275 transfer treatment (letter
-> legacy-homed and marked; D-003 governs the live estimator). The register-level ratification does not overwrite
+> legacy-homed and marked; D-003 governs the live estimator). **Eighth ratification event,
+> 2026-08-02:** the 5 phase-1i entries (D-401…D-405), the 79-entry LEGACY-marked set confirmed
+> as drawn (mechanism marked, surviving principle not), the OI-278 ruling (FQ-1 lapses with the
+> legacy path; D-386's phantom second alternative struck), and the transitive-authority
+> refinement of the contract-home case. The register-level ratification does not overwrite
 > per-entry provenance — an entry saying "ratifier not stated" still means the original record
 > of THAT decision does not say; what the 2026-08-02 ratifications establish is that these
 > entries are the standing decisions of record.
