@@ -202,3 +202,105 @@
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only in the CLAUDE.md gate block (A), the OI-178 adoption baselines (user-ratified 2026-07-26). The tension with D-090 (calibrated abstention, ARCHITECTURE.md §5.7a) is NAMED at the new home and deliberately NOT resolved there - resolving it is later work. OPEN_ITEMS OI-237 closes on this move
 
+### D-270 — The held-out evaluation protocol - five-fold cross-validation grouped by ground-truth analysis file
+
+> 2. **The split: 5-fold cross-validation [prov-ratify] over the 326 WiR-covered pieces, grouped by
+>    WiR analysis file.** The 326 pieces resolve to 324 distinct analysis files (`docs/score_inventory.md`
+>    — some chorales share an analysis); pieces sharing an analysis file share a fold (leakage guard).
+>    Fold assignment is generated once with a fixed, committed seed and committed as a stamped artifact
+>    (`tools/` + manifest, the #17f pattern); it never changes across fit events (a re-split is a
+>    protocol amendment).
+> 3. **Everything fitted is fitted inside the training folds only** — the generative tables, the
+>    combination weights, AND the fitted structure choices: the degree vocabulary's count threshold and
+>    pooling, the smoothing constants, the L2 penalty. Model selection (λ, thresholds) uses inner
+>    validation within the training folds; the held-out fold is touched exactly once, by the final
+>    fitted model of that fold.
+
+**In plain words.** Evaluation splits the 326 ground-truth-covered pieces into five folds, grouped so that pieces sharing one ground-truth analysis file share a fold. Fold assignment is generated once from a fixed committed seed and never changes. Everything fitted - the tables, the weights, and the fitted structure choices such as the vocabulary threshold, the smoothing constants and the penalty - is fitted inside the training folds only; the held-out fold is touched exactly once, by that fold's final model.
+
+**Why.** The protocol names what it prevents (cowork_prefit_gates.md:25-28): a headline figure graded on data that helped fit it, including the subtle forms - a vocabulary derived from all-corpus counts, a smoothing constant chosen on the grading data, a threshold checked against the final metric. The grouping rule is a stated leakage guard: some chorales share an analysis file.
+
+**Status.** LIVE · decided 2026-07-19 · ratified by user
+
+**Home.** `cowork_prefit_gates.md:32-42`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** cowork_prefit_gates.md:3 records the user's ratification of all four protocols including the marked constants, dated 2026-07-19; the held-out protocol at :23-60. It is the protocol form of register entry D-097, which states the general rule at its ARCHITECTURE.md home. Found by the phase-1d enumeration wave, 2026-08-02.
+
+### D-271 — The capacity budget - a cell keeps its own estimate only above a stated count, and free parameters are bounded against the training tokens
+
+>    table, its dimensions, its raw cell-count histogram from the training data, and the resulting free
+>    parameter count. No prose-only budget.
+> 2. **Budget rule:** a table cell keeps its own maximum-likelihood estimate iff its training count
+>    ≥ 20 [prov-ratify]; below that it is pooled to its declared parent class (the pooling hierarchy
+>    declared per table in the artifact) under additive smoothing with a single declared α per table.
+>    The degree vocabulary's rare-class pooling (factorization §1) is the same rule applied to the state
+>    space itself.
+> 3. **Global sanity bound:** total effective free parameters ≤ training tokens / 10 [prov-ratify],
+>    verified in the artifact. The combination-weight vector stays ≤ 14 weights, L2-penalized, per the
+>    ratified staged-fitting decision. *(Amended ≤ 12 → ≤ 14 by user ratification 2026-07-19 at the
+>    weight-fit dispatch: the ratified factorization gives the four cadence features their own fitted
+>    weights, putting the enumerated vector at 12–13; the amendment is the lawful #22 path — capacity
+>    impact nil, thousands of training tokens per weight either way. Original text: "≤ 12 weights (one
+>    per factor plus the declared-mode strength)".)*
+
+**In plain words.** Before any fit, the parameter inventory is published as a generated artifact: every table, its dimensions, its raw cell-count histogram and its resulting free-parameter count. A table cell keeps its own maximum-likelihood estimate only if its training count reaches twenty; below that it is pooled into its declared parent class under smoothing. Total effective free parameters stay at or below one tenth of the training tokens, and the combination-weight vector stays at or below fourteen weights with a penalty.
+
+**Why.** The protocol names what it prevents (cowork_prefit_gates.md:64-65): overfitting in one shot on a 326-piece single-composer corpus, and hand-picking hidden inside the words 'derived from counts'. Publishing the inventory as a generated artifact before fitting is principle #17(f) applied to the fit itself - the budget cannot be asserted in prose after the fact.
+
+**Status.** LIVE · decided 2026-07-19 · ratified by user
+
+**Home.** `cowork_prefit_gates.md:68-81`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** cowork_prefit_gates.md:3 records the user's ratification of all four protocols including the marked constants, dated 2026-07-19; the capacity budget at :62-96, with the twelve-to-fourteen weight amendment recorded in place at :77-81 as a lawful protocol amendment. Found by the phase-1d enumeration wave, 2026-08-02.
+
+### D-272 — The protocol constants are protocol, not tuning - changing one is an amendment, never a fitting act
+
+> Provisional numeric choices inside the protocols (fold count, cell-count threshold, confidence level)
+> are marked **[prov-ratify]** — they become binding at ratification but remain protocol constants, not
+> fitted values; changing one later is a protocol amendment (#22), not a tuning act.
+
+**In plain words.** The numeric choices inside the pre-fit protocols - the fold count, the cell-count threshold, the confidence level - become binding when the protocols are ratified but remain protocol constants rather than fitted values. Changing one later is a governance amendment, not an act of tuning.
+
+**Why.** It closes the route by which a governance constant becomes a knob: without the distinction, a fold count or a pooling threshold could be moved in response to a disappointing measurement and the move would look like ordinary calibration. The document states the same rule twice (cowork_prefit_gates.md:5-6 and :17-19), once for the ratification and once for the constants themselves.
+
+**Status.** LIVE · decided 2026-07-19 · ratified by user
+
+**Home.** `cowork_prefit_gates.md:17-19`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** cowork_prefit_gates.md:17-19 states the rule and :3-6 records its ratification, dated 2026-07-19. It applies principle #22 (a hard gate declares in advance how it handles the largest change it will meet), registered as D-185, to the pre-fit protocols. Found by the phase-1d enumeration wave, 2026-08-02.
+
+### D-273 — The architecture-adoption variant of the hard regression stop, written before any diff existed
+
+> 3. **Adoption PASS requires ALL of:**
+>    - **(i) Held-out:** A's key-agree vs the LOCAL key exceeds the current baseline beyond the
+>      piece-bootstrap CI on every preset; root-agree and RN-agree do not degrade beyond the CI (#24 —
+>      a difference within the CI is not a finding, in either direction). **(i-b) The modulation-rate
+>      guard:** A's key changes per piece sit within 0.75×–1.25× of the ground truth's rate. **The
+>      key-HOME column is TRACKED with a mandatory explained decomposition** against the computed GT
+
+**In plain words.** Adopting an architecture replacement in place of the incremental hard stop requires all of: the held-out key agreement against the local key beating the baseline beyond the stated confidence interval on every preset with root and Roman-numeral agreement not degrading beyond it; a modulation-rate guard keeping key changes per piece within a quarter of the ground truth's rate; a net decrease in the class-(b) root-disagree duration on every preset with every added failing run enumerated, classified and individually diagnosed; class-(a) tracked; and user ratification of the whole record as one revertible commit that re-baselines the reference.
+
+**Why.** The protocol names what it prevents (cowork_prefit_gates.md:100-103): negotiating the hard stop on a live diff. The incremental non-increase ratchet was written for incremental change, and an architecture replacement moves runs in both directions by design - so the exceptional-event variant is written while no diff exists, which is principle #22's requirement (register entry D-185).
+
+**Status.** LIVE · decided 2026-07-19 · ratified by user
+
+**Home.** `cowork_prefit_gates.md:116-121`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** cowork_prefit_gates.md:3 records the user's ratification of all four protocols, dated 2026-07-19; the adoption protocol at :98-145, with the home-column amendment recorded in place at :123-129 as a lawful pre-measurement amendment. The event it governed is the OI-178 adoption, whose outcome is in the CLAUDE.md gate block. Found by the phase-1d enumeration wave, 2026-08-02.
+
+### D-274 — The reverse map - if the new estimator is not adopted it is removed whole, and the retirement map is void
+
+> 5. **The reverse map (if A is not adopted):** A's module is removed whole (one revertible commit), the
+>    fold/fit artifacts are kept as measurement history, and the retirement map is void — declared now
+>    so non-adoption has a lawful exit too.
+
+**In plain words.** Non-adoption has a declared lawful exit, written at the same time as the adoption path: the new module is removed in one revertible commit, the fold and fit artifacts are kept as measurement history, and the retirement map that would have deleted the superseded code never executes.
+
+**Why.** It is principle #23 (an end-state principle needs a lawful transition) applied in both directions: the sanction that permits two paths for one concern must say how the duplication ends whichever way the decision goes, so that a declared migration state cannot quietly become a permanent one.
+
+**Status.** LIVE · decided 2026-07-19 · ratified by user
+
+**Home.** `cowork_prefit_gates.md:189-191`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** cowork_prefit_gates.md:3 records the user's ratification of all four protocols, dated 2026-07-19; the reverse map is item 5 of the dual-path sanction at :189-191. Register entry D-095 records the sanctioned dual path itself at its ARCHITECTURE.md home. Found by the phase-1d enumeration wave, 2026-08-02.
+

@@ -198,3 +198,42 @@
 
 **Provenance.** open_items/OI-194 (OPEN - its own increment after the switch)
 
+### D-275 — Every published record carries its own instrument provenance; a provenance-less analysis cannot exist
+
+> Every published record carries its instrument provenance: the embedded table set's source-artifact
+> hashes and the selected weight-vector identity (both compiled in per Decision D1), plus the
+> decoder's version. A consumer — and any future measurement — can always answer "which fitted
+> values produced this analysis" from the record itself; a provenance-less analysis cannot exist.
+
+**In plain words.** Each record published for the notation path carries the source-artifact hashes of the fitted table set, the identity of the selected weight vector, and the decoder's version. A consumer, or any later measurement, can always answer which fitted values produced a given analysis from the analysis itself.
+
+**Why.** It is principle #16 (every measurement stamped to its corpus and its tooling) applied at the record level rather than at the measurement level: an analysis that has left the module can otherwise no longer be attributed to the values that produced it, which makes any later reproduction check impossible.
+
+**Status.** LIVE · decided 2026-07-26 · ratified by user
+
+**Home.** `cowork_notation_output_contract.md:54-57`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** cowork_notation_output_contract.md:3 records the user's ratification, dated 2026-07-26, as specified and without amendments; the provenance rule at :52-57. Found by the phase-1d enumeration wave, 2026-08-02.
+
+### D-276 — Modal colour is published as un-rounded per-degree counts; no mode label is inferred or published anywhere
+
+> For each key run and each scale degree 1..7 of its key: the sounding duration and onset count of
+> EVERY chromatic inflection of that degree actually observed in the run (computed from the
+> published L1 note facts relative to (tonic, mode)). This is the whole publication — counted,
+> un-rounded, nothing hand-set: minor's variable 6̂/7̂ (Dorian color, subtonic-vs-leading-tone),
+> major's lowered 7̂ (Mixolydian color) or raised 4̂ (Lydian color), and every borrowing appear as
+> their actual counts. The presentation layer may FORMAT a reading from it ("Dorian-leaning"); the
+> published fact is the counts, with establishment status (§5.4). No 21-value mode label is
+> inferred or published anywhere (C1); the two-mode key plus this table informationally dominates
+> the retired labels (#12).
+
+**In plain words.** For each key run and each scale degree, the record publishes the sounding duration and onset count of every chromatic inflection of that degree actually observed. That is the whole publication - counted, un-rounded, nothing hand-set - so minor's variable sixth and seventh, major's lowered seventh or raised fourth, and every borrowing appear as their actual counts. A presentation layer may format a reading from it; no twenty-one-value mode label is inferred or published.
+
+**Why.** The reason is stated with the decision (cowork_notation_output_contract.md:146-147): the two-mode key plus the count table informationally dominates the retired mode labels, so publishing counts rather than a label loses nothing (#12) while removing an inference nobody had established. Register entry D-054 records the twenty-one-mode vocabulary this supersedes on the record surface.
+
+**Status.** LIVE · decided 2026-07-26 · ratified by user
+
+**Home.** `cowork_notation_output_contract.md:139-147`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** cowork_notation_output_contract.md:3 records the user's ratification, dated 2026-07-26, as specified and without amendments; the modal reading at :137-147. Found by the phase-1d enumeration wave, 2026-08-02.
+

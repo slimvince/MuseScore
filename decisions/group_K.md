@@ -280,3 +280,61 @@
 
 **Provenance.** ARCHITECTURE.md:601-603 (stated as a standing reading instruction in the document itself) ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
+### D-255 — Every design document follows one fourteen-section structure, synthesized from three published standards
+
+> **Standing convention (user, 2026-06-22):** every architecture/design document in this project follows the
+> section structure below — a synthesis of **arc42** (the 12-section architecture template) and **IEEE 1016**
+> (Software Design Descriptions) + the viewpoints idea of **ISO/IEC/IEEE 42010**. Two arc42 sections —
+> **Deployment view** and **Human-interface design** — are **N/A** for our backend analysis modules (no separate
+> hardware/runtime deployment; no UI); each doc states that omission once rather than padding.
+
+**In plain words.** Every architecture or design document in this project uses the same section order, taken from arc42, IEEE 1016 and ISO/IEC/IEEE 42010. The two arc42 sections that do not apply to a backend analysis module - deployment view and human-interface design - are declared not applicable once per document instead of being padded out.
+
+**Why.** The sources are cited with the decision: arc42 (the 12-section architecture template), IEEE 1016 (Software Design Descriptions) and the viewpoints idea of ISO/IEC/IEEE 42010 (cowork_design_doc_template.md:4-9) - published standards rather than an invented house style, which is principle #1 applied to documentation.
+
+**Status.** LIVE · decided 2026-06-22 · ratified by user
+
+**Home.** `cowork_design_doc_template.md:3-7`  — a project-wide convention with no owning layer; this is its correct home.
+
+**Provenance.** cowork_design_doc_template.md:3 states it as a standing convention with the ratifier and date in the text. CLAUDE.md's Conventions entry names this file as the ONE home for writing standards and names this structure among what it carries, so the decision is correctly homed and was simply never in the register. Found by the phase-1d enumeration wave, 2026-08-02.
+
+### D-256 — Every design document opens with one of four declared status banners
+
+> ## Status-banner convention
+> Each doc opens with a one-line status: **DRAFT for sign-off** / **SIGNED (date)** / **AS-BUILT (date + commits)** /
+> **SUPERSEDED (→ pointer)**. The all-documentation-in-sync standing rule applies: when the code or a decision
+> changes, the doc moves with it.
+
+**In plain words.** A design document states its status in one line at the top: draft for sign-off, signed with a date, as-built with a date and commits, or superseded with a pointer to what replaced it. When the code or a decision moves, the document moves with it.
+
+**Why.** Stated with the rule: it binds the all-documentation-in-sync standing rule (#10) to a visible per-document marker, so a reader can tell at a glance whether what they are reading is a proposal, a ratified contract, or a superseded record.
+
+**Status.** LIVE · date not stated · ratifier not stated
+
+**Home.** `cowork_design_doc_template.md:75-78`  — a project-wide convention with no owning layer; this is its correct home.
+
+**Provenance.** cowork_design_doc_template.md:75-78, stated as a convention in the file CLAUDE.md's Conventions entry names as the ONE home for writing standards; no date or ratifier is stated at this home. Found by the phase-1d enumeration wave, 2026-08-02.
+
+### D-257 — A specification carries a locator to its code and tests; code mechanics never do the explaining
+
+> straight from the architecture to the code and to the tests that protect it. The locator **stays** (user, 2026-06-24).
+> What is *not* allowed is code **mechanics** doing explanatory work in the prose — function/type/variable names used to
+> *explain the algorithm*, code formulas, or commit hashes woven into the reasoning. The line: the algorithm is
+> described in plain architect/music-theory language; the *pointer to where it lives* is a short, clearly-marked
+> reference, not prose.
+> - **Implementation locator** — the headers and `.cpp` files — in Section 3 (Context & scope), as a labelled pointer.
+> - **Test locator** — the unit-test file(s) and any corpus/property validation tool — in Section 10 (Quality &
+>   testing).
+> (Deferred for layers not yet built; added when they are. A layer mid-rebuild names its current location, marked as
+> such. User mandate 2026-06-22, refined 2026-06-24.)
+
+**In plain words.** A specification names the files that hold its implementation and the files that hold its tests, as a short labelled pointer, so a reader can go from the architecture straight to the code. What is not allowed is code mechanics doing the explanatory work: function, type and variable names used to explain the algorithm, code formulas, or commit hashes woven into the reasoning. The algorithm is described in plain architectural and music-theory language.
+
+**Why.** The line is drawn in the rule itself (cowork_design_doc_template.md:84-86): a pointer to where something lives is a reference, while naming code to explain the algorithm makes the prose unreadable to the musician the documentation standard requires it to serve (register entry D-124, the readable-by-a-musician rule).
+
+**Status.** LIVE · decided 2026-06-24 · ratified by user
+
+**Home.** `cowork_design_doc_template.md:82-91`  — a project-wide convention with no owning layer; this is its correct home.
+
+**Provenance.** cowork_design_doc_template.md:82 ('The locator stays (user, 2026-06-24)') and :91 ('User mandate 2026-06-22, refined 2026-06-24'). Homed in the file CLAUDE.md's Conventions entry names as the ONE home for writing standards, which names the implementation/test locator rule among what it carries. Found by the phase-1d enumeration wave, 2026-08-02.
+

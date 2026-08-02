@@ -14,11 +14,11 @@
   },
   "backbone": {
    "file": "tools/audit/decisions/backbone_decisions.json",
-   "sha256": "43cb9abb15fc5a790c637cfd497a8fa60fb615b651f0f01d13261ebd7d11d265",
-   "decision_count": 254
+   "sha256": "defaa1463821104a0fe6993cf6a46727f7dce124a68c942fcfa8b6ac9e148610",
+   "decision_count": 281
   }
  },
- "head_commit": "91802e4d37a8ae9a9a360261df6981e522bb6555",
+ "head_commit": "19fbe9e2714f3f5d65db753e4d999e57e7f15649",
  "disposition_vocabulary": [
   "restates",
   "not-a-decision",
@@ -69,12 +69,12 @@
   {
    "id": "BR-4",
    "rule": "The cluster's text matches one or more backbone decisions, ALL of which are recorded outside any layer specification. Recorded as a decision with no layer-specification home (named) — the Task-4 documentation-gap class.",
-   "clusters": 551
+   "clusters": 574
   },
   {
    "id": "BR-5",
    "rule": "The text is an instruction to a working session or dispatch scaffolding (a read-only / no-src-change banner, a push or commit instruction, a session-start reading instruction, a build-and-test instruction), not a decision about the system.",
-   "clusters": 169
+   "clusters": 168
   },
   {
    "id": "BR-6",
@@ -94,7 +94,7 @@
   {
    "id": "BR-10",
    "rule": "The unit is a row, or a section header, of the OPEN-ITEMS REGISTER (`OPEN_ITEMS.md` or `open_items/OI-*.md`). That register records issues, their status and their provenance; the ratified ruling 1 on `open_items/OI-208.md` puts decisions in the decisions register and non-conformance here. A row of it is a tracked issue.",
-   "clusters": 29
+   "clusters": 28
   },
   {
    "id": "BR-11",
@@ -104,37 +104,37 @@
   {
    "id": "BR-12",
    "rule": "The unit is in a Claude Code session REPORT (`cc_*.md` that is not a dispatch) and carries none of the stated ruling words. A report records work done. Same register-rule reasoning as BR-11. This is BR-6 widened from its narrative-pattern test to the whole report class, minus the ruling vocabulary.",
-   "clusters": 993
+   "clusters": 992
   },
   {
    "id": "BR-13",
    "rule": "The unit is a comment in a TEST file (`src/**/tests/**`) and carries none of the stated ruling words. A test comment states what the test pins; the decision it pins is stated in the specification, which is where BR-3 finds it.",
-   "clusters": 164
+   "clusters": 163
   },
   {
    "id": "BR-8",
    "rule": "Residual: none of the above applies. Recorded UNRESOLVED — the honest outcome, and the count is a finding about the record's legibility.",
-   "clusters": 2935
+   "clusters": 2916
   }
  ],
  "disposition_counts": {
   "restates": 5511,
-  "not-a-decision": 5389,
+  "not-a-decision": 5385,
   "boilerplate": 74,
-  "no-spec-home": 551,
-  "unresolved": 2935
+  "no-spec-home": 574,
+  "unresolved": 2916
  },
  "unresolved_partition_by_surface": {
-  "cowork_* design documents": 870,
+  "cowork_* design documents": 857,
   "docs/ design documents": 407,
   "cc_* session reports": 316,
-  "tools/ script comments": 296,
-  "cc_instruction_* dispatches": 294,
-  "src production comments": 277,
+  "tools/ script comments": 295,
+  "cc_instruction_* dispatches": 291,
+  "src production comments": 276,
   "the two archives": 256,
   "src test comments": 76,
   "governing: ARCHITECTURE.md": 55,
-  "the open-items register": 35,
+  "the open-items register": 34,
   "the session handoff": 30,
   "governing: CLAUDE.md": 12,
   "mixed sources": 9,

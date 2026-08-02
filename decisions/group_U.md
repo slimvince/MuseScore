@@ -257,3 +257,23 @@
 
 **Provenance.** tools/REPRODUCIBILITY.md:139-155, recorded as audit finding C2. The pinned version is 9.9.1, enforced in `tools/music21_batch.py` (MUSIC21_PIN), which refuses to regenerate on a mismatch unless explicitly overridden. Note the asymmetry the record itself states: the version copied into each corpus manifest is informational and is NOT validated.
 
+### D-281 — The batch measurement tool must emit the structured fields on every alternative, or the corpus figures silently revert
+
+> 3. **batch_analyze output schema**: `batch_analyze.cpp` must emit
+>    `rootPitchClass`, `bassPitchClass`, `quality`, `bassIsRoot` on every
+>    alternative entry. This activates the previously-dormant
+>    `_matches_alternative` reclassification in `compare_analyses.py` and is the
+>    floor below which corpus measurements revert to pre-Iter-36 counts (~700
+>    BIR=false). Committed in Iter 36 (recovered in `5df8421114` after a git
+>    reset lost the original commit).
+
+**In plain words.** The batch analysis tool emits root pitch class, bass pitch class, quality and bass-is-root on every alternative entry, not only on the winner. Those fields activate the comparison script's reclassification of readings where the corroborating source matches our second or third candidate; without them the corpus measurement silently reverts to its earlier counts.
+
+**Why.** The failure that produced it is recorded with it: the change was lost to a hard reset and went undetected for three weeks, and only a stale binary holding the documented baseline made the loss visible at all. It is principle #19 applied to a measurement tool - a figure produced without these fields is not the figure it claims to be.
+
+**Status.** LIVE · date not stated · ratifier not stated
+
+**Home.** `docs/iteration_path1_summary.md:66-72`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** docs/iteration_path1_summary.md:66-72, recorded among the architecture decisions of the completed iteration path; no date or ratifier is stated at this home. A decision about a MEASUREMENT TOOL and its floor, reported separately by the phase-1d enumeration wave (2026-08-02) so that the sealed measurement-tools partition can account for it.
+

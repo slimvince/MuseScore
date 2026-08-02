@@ -543,3 +543,22 @@
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at open_items/OI-62.md:7, decided by the user 2026-07-13. The six unbuilt items are specified at ARCHITECTURE.md §11.3a-g and confirmed absent from the code in that row. OPEN_ITEMS OI-240 closes on this move
 
+### D-277 — Measure before build - and a byte-identical structural refactor is exempt, because byte-identity is its prediction
+
+> **★ MEASURE-BEFORE-BUILD (ratified 2026-07-07, arc #12 lesson) — since 2026-07-10 the MIDDLE stage of the
+> #17 Premise-Gate funnel: desk-simulate (hours) → read-only probe (a session) → build (an arc).** Every
+> Stage-3+ item additionally owes a #17 premise ledger (FACT/THEORY/ASSUMPTION), a written quantitative
+> prediction per assumption, and a desk simulation over known failing cases BEFORE its probe or build is opened
+> (see CLAUDE.md #17–#19 + `cowork_premise_gate_reflection.md`). Byte-identical structural refactors are exempt
+> from the prediction requirement — byte-identity IS their prediction. A build whose case rests on an *anticipated*
+
+**In plain words.** A build whose case rests on an anticipated precision gain is measured read-only before it is built. The gate applies to precision claims - will building this make the analysis more correct - and not to structural refactors, which are justified by cleanliness and verified byte-identical, owing no precision measurement. A byte-identical structural refactor is exempt from the written-prediction requirement because byte-identity is its prediction.
+
+**Why.** The exemption's reason is stated with the rule (cowork_engage_arc_plan.md:101-113): the requirement exists to stop a precision claim being built before it is checked, and a refactor that must come out byte-identical has already stated its falsifiable prediction. The instance that produced the gate is recorded beside it - the joint key-and-chord step, measured not to pay before it was built.
+
+**Status.** LIVE · decided 2026-07-07 · ratified by user
+
+**Home.** `cowork_engage_arc_plan.md:97-102`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** cowork_engage_arc_plan.md:3 records the user's ratification of this plan, dated 2026-07-07; the gate at :97-102, amended 2026-07-10 to become the middle stage of the Premise-Gate funnel (:128-130). The CLAUDE.md principles provenance paragraph names this gate, in this file, as a companion standing rule; register entry D-189 records the funnel it sits in. Found by the phase-1d enumeration wave, 2026-08-02.
+

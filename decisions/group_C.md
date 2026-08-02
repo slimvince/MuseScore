@@ -371,3 +371,228 @@
 
 **Provenance.** The band is stated at ARCHITECTURE.md:3567-3575. The governing measurement surface is now the robust unit ratified at R10-b (CLAUDE.md gate block (A)), whose figures are reported per preset on a different unit; no ruling names this band as replaced. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
+### D-260 — Analysis output covers exactly the selection; everything loaded beyond it is evidence, never a result
+
+> **Invariant.** The analysis output covers **exactly the selection**; everything outside it is evidence, never a
+> result.
+
+**In plain words.** The user's selection is the output span: labels are emitted only for it. Music loaded from outside the selection is pulled in as evidence for judging the selection's edges and is never itself labelled.
+
+**Why.** Stated with the rule (cowork_bounded_context_design.md:21-26): the shipped product analyses the part of the score the user selected, and a layer often needs evidence from outside it to judge its edges. Separating the output span from the loaded span is what lets a layer read more music without changing what the user asked to have analysed.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Home.** `cowork_bounded_context_design.md:43-44`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** cowork_bounded_context_design.md:3 carries the status banner 'SIGNED (user, 2026-07-02)'; the invariant is stated at :43-44. The cross-cutting bounded-context bullet of ARCHITECTURE.md points at this document as the ONE cross-layer extension spec (:10). Found by the phase-1d enumeration wave, 2026-08-02.
+
+### D-261 — A layer never guesses how much context it needs - the amount is discovered by convergence
+
+> 3. A layer must distinguish **"unavailable because not loaded"** (→ request extension) from **"unavailable because the
+>    score starts/ends here"** (→ proceed, truncated). Architectural Layer 1 reports which.
+> 4. A layer **outputs analysis only for the selection**; extended context is evidence, never labelled.
+> 5. A layer **never guesses how much** more context it needs — guessing an amount is the un-knowledge-based move this
+>    contract forbids. It knows *what* it needs, not how far away that is, so it **extends incrementally and stops on a
+>    principled condition**; the amount is **discovered, not chosen**.
+> 6. The principled stop is **convergence**: extend until the layer's **in-selection output stops changing** with
+>    further context. This is self-validating — you have enough context exactly when adding more does not change the
+>    answer — and it is what keeps the result independent of the extension step size (the equivalence invariant, §4). In
+>    practice a layer uses a **domain proxy that *implies* convergence** rather than re-checking its whole output each
+>    step (Architectural Layer 3 reach-back: *"a settled, stable prevailing key is in view"* — once a confident earlier
+>    key is established, the change-cost/decay means reaching further back will not move the selection's leading-edge
+>    key). The proxy is validated **once, in design**, to imply convergence.
+
+**In plain words.** A layer knows what evidence it needs but not how far away it is, so it never picks an amount. It extends the loaded span incrementally and stops on a principled condition: convergence, meaning its in-selection output stops changing as more context arrives. In practice it uses a domain proxy that implies convergence, and the proxy is validated once, at design time.
+
+**Why.** The reason is stated with the rule (cowork_bounded_context_design.md:61-68): guessing an amount is the un-knowledge-based move the contract exists to forbid, and convergence is self-validating - you have enough context exactly when adding more does not change the answer - which is also what makes the result independent of the extension step size.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Home.** `cowork_bounded_context_design.md:57-69`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; the rule is items 5 and 6 of the bounded-context contract at :57-69. Found by the phase-1d enumeration wave, 2026-08-02.
+
+### D-262 — The extension increment is chosen by the requesting layer, not by the layer that supplies the notes
+
+>    layer; it is not fixed and not Architectural Layer 1's to decide.** Architectural Layer 1 is domain-blind, and no
+>    single size fits every layer (Architectural Layer 3 probes at phrase/measure scale, Architectural Layer 4 at
+>    harmony/slice scale), so the requester sets it to **its own natural inference scale** — the smallest step that
+>    could plausibly change its output (knowledge, not a guess). It is an **efficiency knob only**: a larger increment
+>    means fewer round-trips (and perhaps a slightly larger final loaded span), never a different answer, because
+>    convergence (item 6) fixes the result. Mechanically this is forced — the requester owns the *extend → re-infer →
+>    re-check* loop, and Architectural Layer 1's *extend* executes **exactly the one requested step and never evaluates
+>    convergence** (that would be inference, which it does not do), so the increment can only be a per-call parameter
+>    from the requester.
+
+**In plain words.** How much music to load per extension step is set by the layer asking for it, in its own natural inference scale, because the note supplier is domain-blind and no single step size fits every layer. The increment is an efficiency knob only - a larger step means fewer round trips, never a different answer, because convergence fixes the result.
+
+**Why.** Two reasons are stated with the rule (cowork_bounded_context_design.md:74-81): the supplying layer holds no analysis knowledge, so it cannot know the smallest step that could plausibly change an answer; and it is mechanically forced anyway, because the supplier executes exactly one requested step and never evaluates convergence, which would be inference it does not do.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Home.** `cowork_bounded_context_design.md:73-81`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; item 8 of the bounded-context contract at :73-81. Found by the phase-1d enumeration wave, 2026-08-02.
+
+### D-263 — A refused or truncated extension is marked on the output, never silently absorbed
+
+> 10. **Denial/truncation is honest, never silent (merged 2026-07-02).** When an extension is refused (hard bound,
+>    score boundary at a *selection* edge with the stop condition unmet, or a driver-level safety cap), the layer
+>    proceeds on truncated evidence AND the affected output carries **`clipped-by-selection-edge`** provenance
+>    (+ `cue-denied` where a request was actually refused) — a truncated result is never presented as a complete one.
+>    Layer 6 (when resumed) surfaces these marks and the `extension-cue` tag (its §5.1 amendment); it never acts on them.
+
+**In plain words.** When an extension is refused - by a hard bound, by the score's own start or end at a selection edge with the stop condition unmet, or by a safety cap - the layer proceeds on truncated evidence AND the affected output carries provenance saying so. A truncated result is never presented as a complete one.
+
+**Why.** It is principle #12 (no information loss) applied to the extension protocol: the fact that a layer wanted more evidence and could not get it is itself information a consumer needs, and dropping it would make a truncated reading indistinguishable from a fully-evidenced one.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Home.** `cowork_bounded_context_design.md:82-86`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; item 10 of the bounded-context contract at :82-86, marked '(merged 2026-07-02)' from the killed duplicate contract document. Found by the phase-1d enumeration wave, 2026-08-02.
+
+### D-264 — Extension is an optimisation of load-more-then-rerun: any sequence of extensions equals one fresh run
+
+> - **Equivalence invariant (the correctness guard).** The result after **any** sequence of extensions must equal a
+>   **single fresh run over the final loaded span** — extension is an optimisation of *"load more, then run from
+>   scratch,"* never a different computation. In practice the forward cascade is **bounded**: the new context changes
+>   inference only where it actually reaches (a carried-in key affects the leading-edge slices and decays inward), so
+>   only the affected slices re-infer — the same locality that makes the stop condition terminate, and which composes
+>   with the existing *"re-analyse a sub-range"* capability.
+
+**In plain words.** The result after any sequence of extensions must equal a single fresh run over the final loaded span. Extension exists to avoid recomputing from scratch; it is never allowed to be a different computation, and the analysis must not depend on how many steps reached a given span.
+
+**Why.** Stated as the correctness guard for the whole protocol: without it, incremental extension could silently produce an answer no single run would produce, and the result would depend on the extension granularity rather than on the music. It is the same guarantee re-slice equivalence gives Layer 2 (register entry D-050).
+
+**Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Home.** `cowork_bounded_context_design.md:121-126`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; the equivalence invariant at :121-126, with the step-size independence obligation restated as a required test at :202-204. Found by the phase-1d enumeration wave, 2026-08-02.
+
+### D-265 — Asking a lower layer for more notes is a data-supply call, not a backward inference edge
+
+> - **The re-inference cascade IS the forward-only contract, not an exception to it.** The extension **request** is a
+>   data-supply call **down** to Architectural Layer 1 (a higher layer using a lower layer's service — control, not
+>   inference). The new notes and every re-inference then flow **forward** (Architectural Layer 1 → 2 → 3 → …), exactly
+>   as on a first run. **Inference never flows backward** — a later layer re-inferring cannot alter an earlier layer's
+>   result. So an extension is precisely *"ask down for more raw material, then infer forward again,"* with no backward
+>   inference edge anywhere; this is what makes it consistent with the project's forward-only analysis contract.
+
+**In plain words.** An extension request travels down the stack to the note supplier, and the new notes and every re-inference then flow forward through the layers exactly as on a first run. Inference never flows backward: a later layer re-inferring cannot alter an earlier layer's result. So extension is consistent with the forward-only contract rather than an exception to it.
+
+**Why.** The distinction is drawn in the rule itself (cowork_bounded_context_design.md:115-118): a higher layer using a lower layer's service is control, not inference. It is recorded precisely because a reader could otherwise read the forward-only contract as forbidding extension, which would block the whole bounded-context design.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Home.** `cowork_bounded_context_design.md:115-120`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; stated at :115-120 and again as an architecture decision at :188-189 ('recorded so the forward-only contract is not read as forbidding extension'). Bears on register entry D-025, the forward-only rule with two scoped escapes. Found by the phase-1d enumeration wave, 2026-08-02.
+
+### D-266 — Layer 6 is prohibited until the bounded-context design is coded and regression-tested for Layers 1 to 5
+
+> ## §11 Acceptance (the L6 gate — user directive 2026-07-02)
+>
+> 1. This design **ratified** (it was never signed; sign-off is now the first step).
+> 2. **Coded, L1–L5:** L1 build-selection + extend seam (interim rebuild allowed, §8); L2 re-slice-on-extend (done);
+>    L3 reach-back activated as this design's request (from gated-off) ; L4's request-or-truncate path (uncoded today,
+
+**In plain words.** The grouping layer's track does not resume until this cross-layer design is ratified, implemented across Layers 1 to 5, and regression-tested against the listed acceptance conditions - including the equivalence invariant, step-size independence, denial provenance, termination, and byte-identity of the whole-score degenerate case against the corpus gate.
+
+**Why.** The reason is the design's own opening argument (cowork_bounded_context_design.md:14-16): the whole-score assumption is foundational, so building more layers on it bakes it deeper and unwinding it afterward is a cross-cutting, expensive retrofit. Gating the next layer on the contract being real, not merely written, is what stops that.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Home.** `cowork_bounded_context_design.md:213-217`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** cowork_bounded_context_design.md:3-4 records it in the status banner as 'THE GATE (user directive, same day)', and the acceptance list is the numbered section at :213-223. Found by the phase-1d enumeration wave, 2026-08-02.
+
+### D-267 — There are exactly two admissible confidence classes, and no layer may claim a calibrated probability until one is fitted
+
+> Every published confidence declares exactly one **class**:
+>
+> - **Class M — decision margin.** "How much better is the chosen reading than the best *different* reading, under this
+>   layer's own scoring?" A margin is a **rank statement**, not a probability. Raw margins are unbounded and
+>   scorer-scale-dependent, so a Class-M confidence is published only **squashed to [0,1]** by a fixed monotone map
+>   (the map's constants are precision-phase; the map itself is declared per layer). Class M is what every layer can
+>   compute today.
+> - **Class P — calibrated probability.** "With what empirical frequency is a decision at this confidence correct,
+>   measured against ground truth?" Class P is the **Stage-5 target**: a fitted reliability map per (layer × decision
+>   type) converts the Class-M value into Class P. Until fitted, no layer may claim Class P.
+
+**In plain words.** Every published confidence declares one of two classes. A decision margin says how much better the chosen reading is than the best different one under that layer's own scoring - a rank statement, not a probability, published only after being squashed into the zero-to-one range. A calibrated probability says with what measured frequency a decision at this confidence is correct; it is the later target, and until its reliability map is fitted no layer may claim it.
+
+**Why.** Stated with the contract (cowork_confidence_contract.md:14-21): the architecture's forward-override mechanism numerically compares confidences across layers, and those quantities were incommensurable by construction - one layer publishing a sequence margin, another a composite, another an unbounded additive score against a clamped comparison. Weight fitting cannot repair a comparison between quantities with undefined semantics; it would only bury the incoherence in fitted constants.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Home.** `cowork_confidence_contract.md:25-34`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** cowork_confidence_contract.md:3, status banner 'RATIFIED (user, 2026-07-02)'; the two classes at :25-34. The contract names its architecture home as the cross-cutting contracts section (:6), where register entry D-032 records the boundary rule this classification underpins. Found by the phase-1d enumeration wave, 2026-08-02.
+
+### D-268 — A confidence attaches to a named decision, is compared only within its class and a declared frame, and keeps its identity downstream
+
+> **Rules of use:**
+> - **U1.** A confidence attaches to a **named decision** (key-of-slice, chord-of-slice, membership-of-note,
+>   cadence-vote, boundary-strength, function-of-unit) — never to "the layer" in general.
+> - **U2.** At a **layer boundary** (any value another layer may read), a confidence is **[0,1], class-declared, with
+>   its decision named**. Unbounded internal scores are permitted *inside* a layer but must be squashed at the boundary.
+> - **U3.** A consumer may compare two confidences **only within one class and one declared frame** (§4). Treating a
+>   Class-M margin as a probability (or comparing two Class-M values produced by different scorers without a declared
+>   conversion) is a contract violation.
+> - **U4. Provenance.** A carried-forward confidence keeps its (source layer, decision, class) identity; no silent
+>   re-interpretation downstream.
+> - **U5. Abstention.** The "uncertain" mark ≡ the decision's confidence is below the layer's declared bar (a
+>   precision-phase constant). Abstention semantics are therefore uniform: *low confidence in the declared class*, not
+>   a separate ad-hoc judgment.
+
+**In plain words.** Five rules of use. A confidence belongs to a named decision, never to a layer in general. At a layer boundary it is zero-to-one, class-declared and decision-named. A consumer may compare two confidences only within one class and one declared comparison frame. A carried-forward confidence keeps its source layer, decision and class, with no silent reinterpretation. An abstention means the decision's confidence is below that layer's declared bar - the same meaning everywhere, not a separate ad-hoc judgment.
+
+**Why.** Each rule names the failure it prevents (cowork_confidence_contract.md:41-48): treating a margin as a probability, comparing two margins from different scorers without a declared conversion, and re-interpreting a carried confidence downstream are all named as contract violations. The abstention rule exists so that 'uncertain' means one thing across layers rather than being re-invented per layer.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Home.** `cowork_confidence_contract.md:36-48`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** cowork_confidence_contract.md:3, status banner 'RATIFIED (user, 2026-07-02)'; rules U1 to U5 at :36-48. Rule U2 is the one already registered, as D-032, at its ARCHITECTURE.md home; U1, U3, U4 and U5 were not in the register. Found by the phase-1d enumeration wave, 2026-08-02.
+
+### D-269 — The frame table is the one home of the override arithmetic; a new override site declares its frame before it is built
+
+> **New frames require declaration here.** Any future override site (e.g. the A-4 cadence-less confirmation channels;
+> the recognition consumer's schema-contradiction override, `cowork_progression_schema_design.md` §2) must add its
+> frame row to this section before build — an undeclared cross-layer comparison is a contract violation.
+
+**In plain words.** Every place where one layer's contradiction strength is compared against another layer's confidence is a declared frame - a triple of incumbent confidence, contradiction measure, and the conversion that makes them comparable - and all of them live in one section. Any future override site must add its frame row there before it is built; an undeclared cross-layer comparison is a contract violation.
+
+**Why.** It is principle #6 (one path per concern) applied to the override arithmetic: the contract exists because the same comparison was being re-stated with different semantics at each site. Stating it once, with each instance's conversion declared, is what makes the threshold interpretable rather than an arbitrary scale factor.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Home.** `cowork_confidence_contract.md:83-85`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** cowork_confidence_contract.md:3, status banner 'RATIFIED (user, 2026-07-02)'; the rule at :83-85, over the frame definition and the two built instances at :63-81. Found by the phase-1d enumeration wave, 2026-08-02.
+
+### D-278 — The joint key-and-chord step is SHELVED - measured not to pay
+
+> precision gain is measured read-only **before** it is built, exactly as the joint step was. **The joint key↔chord
+> step is SHELVED — measured NOT to pay** (arc #12: net +0.05–0.16 pp over ~6200 regions, harm 75–90 % of
+> correction, oracle ceiling +0.6 pp, coupled-minority net ~0, fire-rate only 1.4 % — the carried alternative
+> keys are diatonic-collection siblings so the chord is almost always key-stable). It **drops off the Stage-3
+> build inventory.** The #12 reconciliation (no loss): the key alternatives ARE carried (the key discovery is not
+> discarded); the chord under an alternative key is **never computed** in this path (so nothing computed is
+> discarded), and the measurement shows the ~1.4 % where it would differ is 50/50 noise — choosing not to compute
+> a *measured-worthless* possibility is an evidence-based decision, not information loss. **Distinction:** this
+> gate applies to **precision claims** ("will building X make analysis more correct?" — measure first); the
+> **structural refactors** (decoder-replaces-tangle, the migrations) are justified by cleanliness and verified
+
+**In plain words.** The separate joint key-and-chord decision was measured before being built and does not pay: about a tenth of a percentage point net over roughly 6200 stretches, with harm at three quarters to nine tenths of the correction, an oracle ceiling under a percentage point, and a firing rate of 1.4 per cent. The cause is that the carried alternative keys are siblings within one collection, so the chord is almost always stable across them. It drops off the build inventory.
+
+**Why.** The measurement is stated with the shelving, and so is the principle #12 reconciliation: the key alternatives ARE carried, so the key discovery is not discarded; the chord under an alternative key is never computed in this path, so nothing computed is discarded; and the measured 1.4 per cent where it would differ is even-odds noise. Choosing not to compute a measured-worthless possibility is an evidence-based decision, not information loss.
+
+**Status.** SHELVED WITH EVIDENCE · decided 2026-07-07 · ratified by user
+
+**Home.** `cowork_engage_arc_plan.md:103-112`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** cowork_engage_arc_plan.md:3 records the user's ratification of this plan, dated 2026-07-07; the shelving at :103-112, with the measurement cited to its report and the no-information-loss reconciliation stated in place. Found by the phase-1d enumeration wave, 2026-08-02 - the class this audit exists for: a shelving with evidence, recorded only in a design document.
+

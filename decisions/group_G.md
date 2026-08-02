@@ -372,3 +372,21 @@
 
 **Provenance.** ARCHITECTURE.md:2824 heads "Unified Orchestration Layer", part of the provisional phased plan recorded at :3498-3503 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
+### D-280 — Gates read structured fields only - never a chord symbol string and never a Roman numeral
+
+> 4. **Gates operate on structured fields only**: no chord-symbol string parsing,
+>    no Roman-numeral inference. This is now a standing rule for any future gate
+>    or scoring change. Symbol- and Roman-numeral-derived signals are too lossy
+>    and too entangled with the formatter to be reliable inputs to chord
+>    classification.
+
+**In plain words.** Any gate or scoring rule reads structured analysis fields. It never parses a chord-symbol string and never infers from a Roman numeral. Signals derived from symbols or Roman numerals are too lossy and too entangled with the formatter to be reliable inputs to chord classification.
+
+**Why.** The reason is stated with the rule: symbol- and Roman-numeral-derived signals are lossy and entangled with the formatter. It is the inference/presentation boundary (register entries D-016 and D-017) stated as an input restriction - reading the rendered form back in would make an analysis depend on its own presentation layer.
+
+**Status.** LIVE · date not stated · ratifier not stated
+
+**Home.** `docs/iteration_path1_summary.md:74-78`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** docs/iteration_path1_summary.md:74-78, recorded among the architecture decisions of the completed iteration path and stated there as 'now a standing rule for any future gate or scoring change'; no date or ratifier is stated at this home. Distinct from register entry D-066, which forbids chord symbols written in the SCORE as analyzer input; this forbids re-reading our own rendered output. Found by the phase-1d enumeration wave, 2026-08-02.
+
