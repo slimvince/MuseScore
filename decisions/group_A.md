@@ -80,7 +80,7 @@
 
 **Home.** `ARCHITECTURE.md:11-12`
 
-**Provenance.** CLAUDE.md gate block (A); tools/joint_estimator/adoption_record.json; open_items/OI-178
+**Provenance.** CLAUDE.md gate block (A); tools/joint_estimator/adoption_record.json; open_items/OI-178 Note (2026-08-02): production on the batch/corpus surface is a development/measurement posture, not distribution; the fitting-pool licence constraint (D-292, reaffirmed binding) governs what may SHIP — see OI-271.
 
 ### D-006 — The published uncertainty surface is two full candidate lists, with no truncation
 
