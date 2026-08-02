@@ -15,11 +15,11 @@
    },
    "backbone": {
     "file": "tools/audit/decisions/backbone_decisions.json",
-    "sha256": "6d787baa764f972904ad8e5c31ac78c1bd489b51897b1def1ca2f29337f5ffff",
+    "sha256": "66191dac61df91533bc73c2fe4cf9ffb1e3eefbebcd36c71f37d89738062d8a5",
     "decision_count": 315
    }
   },
-  "head_commit": "dcaa00868113fdd54e590e8af7dbc8b25eb4dc06",
+  "head_commit": "3a186549bbd5c30ffda36cd0f21668dcb72e0d07",
   "disposition_vocabulary": [
    "restates",
    "not-a-decision",
@@ -166,7 +166,7 @@
    "mixed sources": 9
   },
   "unresolved_reservation_by_surface": {
-   "cowork_* design documents": "A MEASURED PARTITION, still open. Part of this surface was read IN FULL by the phase-1d wave (21 documents) and one more — `cowork_stage5_fitter_design.md`, the single largest holder at 55 clusters — by phase-1f; the rest was not, the reading list being larger than one session. NO BULK RULE is written over this surface even where a document HAS been read in full, and that is deliberate: BR-17/BR-18's reasoning is that a tracking surface is not a home for a standing decision, and a ratified design document is exactly the opposite — OI-268 records that 22 standing decisions live on this surface. A read design document therefore yields entries, not a sweep. The per-file remainder is in the OI-207 dated note of 2026-08-02 (phase-1f).",
+   "cowork_* design documents": "A MEASURED PARTITION, still open. 23 of the 143 documents on this surface and the `docs/` one are read IN FULL — 21 by the phase-1d wave (whose note does not split them between the two surfaces, so neither does this one) plus `cowork_stage5_fitter_design.md`, its single largest holder at 55 clusters, by phase-1f; 120 are unread, the reading list being larger than one session. NO BULK RULE is written over this surface even where a document HAS been read in full, and that is deliberate: BR-17/BR-18's reasoning is that a tracking surface is not a home for a standing decision, and a ratified design document is exactly the opposite — OI-268 records that 22 standing decisions live on this surface. A read design document therefore yields entries, not a sweep. The per-file remainder is in the OI-207 dated note of 2026-08-02 (phase-1f).",
    "docs/ design documents": "Same treatment as the `cowork_*` surface, and the same reason for having no bulk rule. `docs/beam_widening_design.md` (38 clusters) was read in full by phase-1f; the measured remainder is in the OI-207 dated note of 2026-08-02 (phase-1f).",
    "cc_* session reports": "The BR-12 EXEMPTION SET — units the sweep refused because they carry a ruling word. Already judged once; each needs a reader.",
    "tools/ script comments": "RESERVED for the sealed measurement-tools partition (the second partition of the OI-199 review, Cowork's ordering amendment). These scripts ARE the subject of that review, and register entry D-281 — found by this wave — shows the surface carries real decisions, so a bulk sweep here would both pre-empt the review and be the blind class sweep the ruling-vocabulary guardrail exists to forbid.",

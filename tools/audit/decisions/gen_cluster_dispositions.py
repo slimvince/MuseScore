@@ -169,10 +169,12 @@ UNRESOLVED_RESERVATIONS = {
                                    "they carry a ruling word. Each needs a reader.",
     "src test comments": "The BR-13 EXEMPTION SET — units the sweep refused because they carry "
                          "a ruling word. Each needs a reader.",
-    "cowork_* design documents": "A MEASURED PARTITION, still open. Part of this surface was read "
-                                 "IN FULL by the phase-1d wave (21 documents) and one more — "
-                                 "`cowork_stage5_fitter_design.md`, the single largest holder at "
-                                 "55 clusters — by phase-1f; the rest was not, the reading list "
+    "cowork_* design documents": "A MEASURED PARTITION, still open. 23 of the 143 documents on "
+                                 "this surface and the `docs/` one are read IN FULL — 21 by the "
+                                 "phase-1d wave (whose note does not split them between the two "
+                                 "surfaces, so neither does this one) plus "
+                                 "`cowork_stage5_fitter_design.md`, its single largest holder at "
+                                 "55 clusters, by phase-1f; 120 are unread, the reading list "
                                  "being larger than one session. NO BULK RULE is written over "
                                  "this surface even where a document HAS been read in full, and "
                                  "that is deliberate: BR-17/BR-18's reasoning is that a tracking "
