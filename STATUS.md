@@ -5,6 +5,30 @@
 > Historical entries live in `STATUS_ARCHIVE.md` (reference-only, NOT part of the session-start
 > read) — a superseded entry moves there instead of accumulating here.
 
+*Last updated: 2026-08-02, LATEST+++++ (CC — **★ PHASE 1e: THE SECOND ENUMERATION PARTITION RAN. THE ARCHIVES WERE TAKEN FIRST, AS
+DIRECTED: `cowork_handoff_archive.md` IS READ IN FULL; `STATUS_ARCHIVE.md` IS READ IN PART WITH A MEASURED REMAINDER. The register is
+281 → 299; the unresolved residual 2,879 → 2,794; two findings rowed; the OI-269 riding act landed.** READ-ONLY on the system: no
+`src/` change, no golden / `tools/corpus/` / `tools/robust_stop/` movement, no behavior change, no fix, no design, no
+`ARCHITECTURE.md` edit, **no ratification** — the 14 new decisions enter with the record's own status and go to the user in the
+report's RATIFICATION QUEUE. Dispatch `cc_instruction_phase1e_second_partition.md`. Per the OI-222 remedy this entry is a
+**POINTER** — the content lives in the register, the manifest and the dated notes. **★ THE HEADLINE IS THAT THE AUDIT'S OWN FOUNDING
+CASE IS NOW IN THE REGISTER:** D-286, the Stage-3.1b SHELVING WITH EVIDENCE of whole-score interactive analysis, is entered LIVE —
+the decision a later build contradicted, which is why [[OI-207]] exists. Three shelvings, one falsification and two standing
+prohibitions all enter LIVE, because the record contains no later ruling that names any of them. **Read, in this order:** the
+[[OI-207]] note (what was read line-by-line, why the read stopped where it did, the fourteen entries by KIND, the **D-282…D-285 flag
+section** — one flag, D-289, which dates and corroborates D-284 rather than disturbing it, and no ratification event for any of the
+four was found — the disposition arithmetic, and the measured remainder); the [[OI-268]] note (the **OI-268 evidence duty
+discharged**: the archive shows a ratified design document treated as a HOME under #6, cited as authority — which makes the
+fifth-case reading the one the record's conduct supports, but adopting it on conduct would be inferring a ruling, so the user still
+rules); then [[OI-271]] and [[OI-272]], the two new rows, and the flipped [[OI-269]]. **★ ONE new bulk rule, BR-17**, over the
+handoff archive's non-ruling prose (79 clusters) — licensed by the read and by nothing else; `STATUS_ARCHIVE.md`, read only in part,
+deliberately gets NO rule and its 99 unresolved clusters are marked UNREAD, not judged. All guards PASS (`--verify` 299/299 quotes,
+294/294 anchors, references ALL; `--check` 14,460/14,460 clusters, 15,224/15,224 occurrences; register `--check` across 21 files;
+open-items living check 272/272). **NEXT: the user ratifies (or corrects) D-286…D-299 and rules on OI-271, and on OI-272 TOGETHER
+WITH OI-268 (one ruling session — the answer to "does ruling 2 reach a delegated contract document?" bounds what is owed for an
+archive); then the wave's third partition — the 1,084 design-document clusters, untouched by this wave, and the 99 remaining
+`STATUS_ARCHIVE.md` clusters — before phase 2 opens.**)*
+
 *Last updated: 2026-08-02, LATEST++++ (CC — **★ PHASE 1d: THE ENUMERATION WAVE OVER THE NEVER-READ SURFACES RAN, AND IT
 IS PARTIAL BY MEASUREMENT. The register is 254 → 281; the unresolved residual 2,935 → 2,879; three findings rowed; the
 two riding acts landed.** READ-ONLY on the system: no `src/` change, no golden / `tools/corpus/` / `tools/robust_stop/`
