@@ -193,3 +193,17 @@
 
 **Provenance.** Recorded in `cowork_handoff_archive.md` (the 2026-06-15 cadence-precision-investigation block), citing `cc_cadence_precision_investigation_dossier.md`. Its scope is stated with it: measured on the Bach ground-truth corpus, non-Bach unmeasured. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).
 
+### D-306 — The key layer's backward re-reading stays switched off in the shipped configuration
+
+> ★ USER DECIDED (2026-07-02): KEEP OFF.** `ReachBackOptions.enabled=false` stays the shipped default; activation re-opens only on the evidence follow-up
+
+**In plain words.** The key analysis has a facility for going back and re-reading an earlier stretch once later evidence arrives. It is built but switched off, and turning it on is reopened only when a specific piece of evidence has been gathered.
+
+**Why.** Measured and judged insufficient: an A/B run showed the designed effect is material (roughly 35–45 % of interior range queries change, almost all of them anchoring the leading key) but the timing comparison was confounded (one arm cold, the other warm), so the evidence needed to justify switching it on — interleaved timing plus an adjudicated sample of the changed outputs — was named and not yet gathered (`STATUS_ARCHIVE.md:232`).
+
+**Status.** LIVE · decided 2026-07-02 · ratified by the user
+
+**Home.** `STATUS_ARCHIVE.md:232`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+
+**Provenance.** Recorded in `STATUS_ARCHIVE.md` (session 21j). The Layer-3 specification records the reach-back facility but not this shipped-default ruling. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.
+

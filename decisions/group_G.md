@@ -420,3 +420,95 @@
 
 **Provenance.** Recorded in `cowork_handoff_archive.md` (the failure-cluster block). This is the statement the 2026-08-02 residual pass cited as its worked example of a real ruling sitting inside the unresolved residual (`open_items/OI-207.md`, the residual-pass note), now entered. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).
 
+### D-300 — Gate M (minor read as diminished) is DEFERRED and must not be retried without a new runtime signal
+
+> **Gate M (Minor→Diminished TYPE-A): DEFERRED — do not retry.** See Iter 37 entry above.
+> Requires DCML harmonic context not available at runtime.
+
+**In plain words.** A proposed correction rule that would have re-read a minor chord as a diminished one on the same root is abandoned. It is not to be attempted again unless some new evidence becomes available while the music is being analysed.
+
+**Why.** Measured: 8 genuine cases against 25 false positives, and the record states that no field or combination of fields available at analysis time separates the two — the eight genuine cases split into two groups, each sharing an identical structural profile with a large false-positive cluster, and the leading-tone hypothesis was tested and falsified on all eight (`STATUS_ARCHIVE.md:1090-1106`).
+
+**Status.** DEFERRED · decided 2026-05-09 · ratifier not stated
+
+**Home.** `STATUS_ARCHIVE.md:1136`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+
+**Provenance.** Recorded in `STATUS_ARCHIVE.md` (the Iter-37 carried-forward block and its fenced deferral record at `:1090-1106`). `docs/scoring_model.md` §8, the standing home for scoring dead ends, does not mention Gate M — checked, not assumed. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.
+
+### D-301 — Gate N (major read as an inverted minor) is DEFERRED and must not be retried without a multi-region model
+
+> **Gate N (Major→Minor TYPE-A): DEFERRED — do not retry.** See Iter 39 entry above.
+> FP:genuine = 45:1 (270:6 at threshold=0.30). Same limitation as Gate M.
+> The 6 genuine cases (vi/3 in major key) remain as unresolvable BIR=true errors.
+
+**In plain words.** A proposed correction rule that would have re-read a root-position major chord as the first inversion of a minor chord is abandoned. Six real cases were found against roughly two hundred and seventy wrong firings, so it is not to be attempted again without a model that reads several chords together.
+
+**Why.** Measured and diagnosed: the pattern is architecturally endemic — the submediant in first inversion always scores close to the tonic in any major key, so it recurs across more than 125 corpus pieces, and neither a diatonic-root check, a key-mode guard nor a tighter margin reduces the false-positive count (`STATUS_ARCHIVE.md:1110-1131`).
+
+**Status.** DEFERRED · decided 2026-05-09 · ratifier not stated
+
+**Home.** `STATUS_ARCHIVE.md:1138`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+
+**Provenance.** Recorded in `STATUS_ARCHIVE.md` (the Iter-39 carried-forward block and its fenced deferral record at `:1110-1131`). Absent from `docs/scoring_model.md` §8 — checked. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.
+
+### D-302 — No further local scoring fix for inversions may be attempted — the remaining divergence is not an analyzer defect
+
+> **Current baseline is the correct production baseline. Do not attempt
+> further local scoring fixes for inversions.**
+
+**In plain words.** Trying to correct which note of a chord is treated as its root by adjusting the numbers a single sonority earns in isolation is closed as a line of work. What remains is a genuine difference between reading a sonority on its own and reading it by its role in the music.
+
+**Why.** Six weeks of investigation across four corpora and six fix attempts, with five stated conclusions: 95.8 % of the genuine cases are bare three-note triads for which bass-as-root is the statistically correct default; the four-note cases already score correctly; the added-sixth against seventh-chord ambiguity is a data impossibility; no spelling-bonus window exists (a bonus large enough to correct the triads breaks every sixth-chord convention — 20 catalog regressions against 0 corpus improvements); and the remainder is legitimate divergence between vertical sonority analysis and functional annotation (`STATUS_ARCHIVE.md:2731-2769`).
+
+**Status.** LIVE · date not stated · ratifier not stated
+
+**Home.** `STATUS_ARCHIVE.md:2768`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+
+**Provenance.** Recorded in `STATUS_ARCHIVE.md` as the closing statement of the “Inversion Fix — Final Conclusion” block. Absent from `docs/scoring_model.md` §8. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.
+
+### D-303 — Non-chord-tone detection is deferred, and if built it must be chord identification that knows about non-chord tones, never stripping after the fact
+
+> NCT detection deferred until LLM-triage corpus data exists; if pursued, must be Shape A (NCT-aware chord ID) not Shape B (post-analysis stripping)
+
+**In plain words.** Deciding which sounding notes do not belong to the chord is postponed. When it is built, the knowledge must enter the chord decision itself; removing notes from an answer after the chord has been named is ruled out.
+
+**Why.** derivation not recorded
+
+**Status.** DEFERRED · date not stated · ratifier not stated
+
+**Home.** `STATUS_ARCHIVE.md:963`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+
+**Provenance.** Recorded in `STATUS_ARCHIVE.md`'s “architectural memos retained as guardrails” list. It is load-bearing now: the non-chord-tone filter is the named lever at [[OI-55]] and [[OI-68]], and `docs/nct_detection_design.md` exists on disk. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.
+
+### D-305 — The ban on reading written harmony as analyzer input is decided by what an annotation says, not by how it is stored
+
+> Generalized chord-symbol-ban (content-based, not storage-type-based — covers Romans, function/cadence/key annotations; structural metadata like key sig still allowed)
+
+**In plain words.** Our analysis must not read any harmonic annotation already in the score — not a chord symbol, not a Roman numeral, not a function, cadence or key label — whatever kind of score object holds it. Ordinary notational metadata such as the key signature is still allowed.
+
+**Why.** derivation not recorded
+
+**Status.** LIVE · date not stated · ratifier not stated
+
+**Home.** `STATUS_ARCHIVE.md:961`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+
+**Provenance.** Recorded in `STATUS_ARCHIVE.md`'s “architectural memos retained as guardrails” list. It sharpens **D-066** (chord symbols written in the score are never analyzer input) from one annotation kind to a content test over all of them. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.
+
+### D-312 — The carried alternative readings are inside the byte-identity acceptance contract — same winner with different alternatives is a behavior change
+
+> RULED:
+> `alternatives[]` IS inside the byte-identity acceptance contract** — the carried alternatives are a
+> load-bearing output surface (the L4 §15 O1b carry contract: L5 overrides select among carried
+> readings; E-14 makes them user-visible), so "same winner, different alternatives" is a behavior
+> change.
+
+**In plain words.** When a change is claimed to leave the analysis untouched, the claim covers the ranked runner-up readings as well as the chosen one. A change that keeps the same answer but alters the alternatives beneath it is a change in behaviour and must be ratified as one.
+
+**Why.** Grounded in two recorded facts: the function layer selects among the carried readings rather than re-deriving them, so they are an input to a later decision; and they are shown to the user, so altering them alters the product. The founding case measured it — a retirement that was winner-identical on all 352 scores altered the alternatives on 36 of them (`cowork_stage5_fitter_design.md:1299-1308`).
+
+**Status.** LIVE · decided 2026-07-05 · ratified by the user
+
+**Home.** `cowork_stage5_fitter_design.md:992`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Recorded in `cowork_stage5_fitter_design.md` (SIGNED, user, 2026-07-04) at open item O-11, and again in `STATUS_ARCHIVE.md:186`. It is the origin of the full-output-surface half of principle #15 (**D-178**): the same entry records the evidence-method lesson that inertness evidence must measure the winner AND the carry. Found by the phase-1f final-partition wave, 2026-08-02, reading `cowork_stage5_fitter_design.md` in full (SIGNED, user, 2026-07-04). NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.
+

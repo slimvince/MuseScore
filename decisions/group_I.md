@@ -263,3 +263,17 @@
 
 **Provenance.** Recorded in `cowork_handoff_archive.md` (the 2026-06-14 Stage-4c block) as a standing lesson. Bears directly on D-229, the general MuseScore-dependency rule the user adopted 2026-08-02: this is the EDIT-versus-READ half, stated a month and a half earlier and consistent with it. D-229 adds what the bridge may read (the score model through the bridge pattern, never layout-derived state) and when an edit to MuseScore's own code is admissible. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).
 
+### D-311 — The chord-analyzer file split happens once, after the retirements have settled — not before
+
+> **the `chordanalyzer.cpp` file split (refactor #1) stays parked BY the ratified engage map** (R9 sequences it AFTER the E4 removals — "split once"; pulling it now would violate, not honor, the ratified order)
+
+**In plain words.** Breaking the large chord-analysis source file into smaller ones waits until the code that is going to be deleted has been deleted. Splitting first would mean splitting twice.
+
+**Why.** The reason is stated with the rule — “split once”: the retirement map already sequences the split after the removals, so performing it earlier would produce a structure the removals then invalidate.
+
+**Status.** DEFERRED · date not stated · ratifier not stated
+
+**Home.** `STATUS_ARCHIVE.md:166`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+
+**Provenance.** Recorded in `STATUS_ARCHIVE.md` (session 22i, the Stage-5 planning checkpoint) as a ruling read off the ratified retirement map. It is load-bearing now beyond its original subject: [[OI-205]] half (b) cites it as “the ratified Stage-3.5 file-split lesson (restructure ONCE, after the boundaries stabilize)” to time the `ARCHITECTURE.md` restructure. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.
+

@@ -107,26 +107,26 @@ project's own and are defined here because they are used before any entry explai
 
 ## What is in this register, counted
 
-**299 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
+**315 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
 
 | | Count |
 |---|---|
-| Decisions recorded | **299** |
-| — of which live | 250 |
+| Decisions recorded | **315** |
+| — of which live | 262 |
 | — of which superseded in fact | 5 |
 | — of which superseded by | 9 |
-| — of which deferred | 34 |
+| — of which deferred | 38 |
 | — of which shelved with evidence | 1 |
-| Decisions whose date is not stated in the record | 189 |
-| Decisions whose ratifier is not stated in the record | 184 |
-| Decisions recorded outside the specification that owns them | 108 |
-| — of which a documentation gap | 25 |
-| — of which recorded only on a tracking surface, with no home at all | 14 |
+| Decisions whose date is not stated in the record | 195 |
+| Decisions whose ratifier is not stated in the record | 194 |
+| Decisions recorded outside the specification that owns them | 124 |
+| — of which a documentation gap | 28 |
+| — of which recorded only on a tracking surface, with no home at all | 27 |
 | — of which a project-wide convention, correctly homed | 34 |
 | — of which a decision about the process, correctly homed | 35 |
 | Decisions whose defense the record does not state | 45 |
 
-That last row is the one meant to fall. **254 of 299** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
+That last row is the one meant to fall. **270 of 315** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
 
 Alongside the register, every one of the harvested statements about decisions in this repository has been given a recorded disposition, so that none was silently passed over:
 
@@ -136,10 +136,10 @@ Alongside the register, every one of the harvested statements about decisions in
 | Groups of near-identical statements ("clusters") | **14460** |
 | Clusters carrying a recorded disposition | **14460** |
 | — restates | 5511 |
-| — not-a-decision | 5495 |
+| — not-a-decision | 5564 |
 | — boilerplate | 74 |
-| — no-spec-home | 586 |
-| — unresolved | 2794 |
+| — no-spec-home | 594 |
+| — unresolved | 2717 |
 
 The full disposition table, and the numbered rule behind each one, are in `tools/audit/decisions/cluster_dispositions.csv` and `tools/audit/decisions/disposition_manifest.json`.
 
@@ -245,6 +245,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-293 | Fitted values are fitted per IDIOM, never for a user preset; presets are regression surfaces and delivery carriers | LIVE | `cowork_handoff_archive.md` ⚠tracking-surface-only |
 | D-294 | The only ground truth is the human annotation; the algorithmic analysis is a filter, and no self-annotation ever enters a measurement | LIVE | `cowork_handoff_archive.md` ⚠tracking-surface-only |
 | D-297 | Correction of record: never computing a possibility is not information loss; only discarding a computed one is | LIVE | `cowork_handoff_archive.md` ⚠tracking-surface-only |
+| D-313 | A confidence map is monotone or it is not fitted — a non-monotone curve is an upstream finding, not a mapping target | LIVE | `cowork_stage5_fitter_design.md` ⚠gap |
 
 ## D. Layer 1 — the note model — [full entries](decisions/group_D.md)
 
@@ -286,6 +287,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-235 | Tonal-centre disambiguation may break a close tie but may not overturn a stronger raw winner | LIVE | `ARCHITECTURE.md` |
 | D-287 | Key-as-distribution is SHELVED - its motivating case was already fixed and no live target was found | LIVE | `cowork_handoff_archive.md` ⚠tracking-surface-only |
 | D-290 | The key-agnostic local cadence approach is FALSIFIED at its precision ceiling | LIVE | `cowork_handoff_archive.md` ⚠tracking-surface-only |
+| D-306 | The key layer's backward re-reading stays switched off in the shipped configuration | LIVE | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
 
 ## G. Layer 4 — chord identity — [full entries](decisions/group_G.md)
 
@@ -317,6 +319,12 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-280 | Gates read structured fields only - never a chord symbol string and never a Roman numeral | LIVE | `docs/iteration_path1_summary.md` ⚠gap |
 | D-284 | Meta-finding: selection/competition is saturated, stop adding re-ranking gates - superseded by the gates doctrine and the adoption | SUPERSEDED BY D-036 with D-001/D-010 | `cowork_architecture_reassessment.md` ⚠gap |
 | D-299 | No negative-margin guard may be added - it would break every intentional backward-swap gate | LIVE | `cowork_handoff_archive.md` ⚠tracking-surface-only |
+| D-300 | Gate M (minor read as diminished) is DEFERRED and must not be retried without a new runtime signal | DEFERRED | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
+| D-301 | Gate N (major read as an inverted minor) is DEFERRED and must not be retried without a multi-region model | DEFERRED | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
+| D-302 | No further local scoring fix for inversions may be attempted — the remaining divergence is not an analyzer defect | LIVE | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
+| D-303 | Non-chord-tone detection is deferred, and if built it must be chord identification that knows about non-chord tones, never stripping after the fact | DEFERRED | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
+| D-305 | The ban on reading written harmony as analyzer input is decided by what an annotation says, not by how it is stored | LIVE | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
+| D-312 | The carried alternative readings are inside the byte-identity acceptance contract — same winner with different alternatives is a behavior change | LIVE | `cowork_stage5_fitter_design.md` ⚠gap |
 
 ## H. Layer 5 and Layer 6 — function, cadence, grouping — [full entries](decisions/group_H.md)
 
@@ -352,6 +360,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-229 | The MuseScore-dependency rule - one general rule for what our code may depend on | LIVE | `ARCHITECTURE.md` |
 | D-233 | Build and test commands run synchronously; one run, one result | LIVE | `ARCHITECTURE.md` |
 | D-296 | READING MuseScore's engraving code is allowed from anywhere we may edit; only EDITING the notation and engraving code is off limits | LIVE | `cowork_handoff_archive.md` ⚠tracking-surface-only |
+| D-311 | The chord-analyzer file split happens once, after the retirements have settled — not before | DEFERRED | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
 
 ## J. Presentation and output conventions — [full entries](decisions/group_J.md)
 
@@ -365,6 +374,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-106 | The augmented-sixth labels are gated to the Standard and Baroque presets | SUPERSEDED IN FACT · derivation not recorded | `ARCHITECTURE.md` |
 | D-234 | A chord symbol string must be valid under chords_std.xml; chords.xml is not relied on | LIVE | `ARCHITECTURE.md` |
 | D-295 | Zero information loss to the end user - every inferred object must be displayable | LIVE | `cowork_handoff_archive.md` ⚠tracking-surface-only |
+| D-304 | The analyzer always emits its fullest reading; simplifying it happens only when comparing against a corpus, never in the product | LIVE | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
 
 ## K. Documentation governance — [full entries](decisions/group_K.md)
 
@@ -389,6 +399,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-255 | Every design document follows one fourteen-section structure, synthesized from three published standards | LIVE | `cowork_design_doc_template.md` |
 | D-256 | Every design document opens with one of four declared status banners | LIVE | `cowork_design_doc_template.md` |
 | D-257 | A specification carries a locator to its code and tests; code mechanics never do the explaining | LIVE | `cowork_design_doc_template.md` |
+| D-307 | A specification cites code by function or section anchor, never by raw line number | LIVE | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
 
 ## L. Licensing, contribution, and coding standards — [full entries](decisions/group_L.md)
 
@@ -406,6 +417,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-125 | Every test documents the musical situation, the expected result, and what a failure means | LIVE | `ARCHITECTURE.md` |
 | D-126 | One coherent piece of functionality per pull request | LIVE | `ARCHITECTURE.md` |
 | D-292 | The fitting-pool licence constraint - values that ship are fitted only on freely-licensed music | LIVE | `cowork_handoff_archive.md` ⚠tracking-surface-only |
+| D-315 | A one-line fix was made to MuseScore's own chord-symbol parser and is live in the fork | LIVE | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
 
 ## M. The style system and the knowledge base — [full entries](decisions/group_M.md)
 
@@ -472,6 +484,9 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-162 | The development tools are not part of the shipping product | LIVE · derivation not recorded | `ARCHITECTURE.md` |
 | D-163 | The batch tool deliberately skips post-load layout | LIVE | `ARCHITECTURE.md` |
 | D-164 | What is out of scope, and what degrades gracefully at the boundary | LIVE · derivation not recorded | `ARCHITECTURE.md` |
+| D-308 | A newly acquired corpus enters as research material; the frozen regression corpus stays the gate until a deliberate re-baseline | LIVE | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
+| D-309 | A corpus the analysis handles badly stays on the roadmap marked deferred; it is more valuable than one that confirms what already works | LIVE | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
+| D-310 | Jazz accuracy is not measurable on the corpora held: the low agreement is missing bass and piano voicings, not a scoring failure | LIVE | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
 
 ## S. The guiding principles — [full entries](decisions/group_S.md)
 
@@ -533,6 +548,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-259 | Every upstream contribution is checked against the distribution constraint before it is posted | LIVE | `cowork_prune_pass_checklist.md` |
 | D-279 | The Stage-3 entry gate - seven conditions before any engagement wiring reaches production | LIVE | `cowork_engage_arc_plan.md` ⚠gap |
 | D-298 | The layer-by-layer audit - each layer is audited once its pieces are in place | LIVE | `cowork_handoff_archive.md` ⚠tracking-surface-only |
+| D-314 | A correction rule kept for structural reasons must keep producing evidence that it still fires | LIVE | `cowork_stage5_fitter_design.md` ⚠gap |
 
 ## U. The standing decision-bearing surfaces — [full entries](decisions/group_U.md)
 
@@ -557,8 +573,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 ## Provenance of this register
 
 - Adjudication: the OI-207 decision-conformance adjudication, 2026-08-01, at commit `58dea6702ac8aa9d5ef8b89244b94d587a75f7a5`.
-- Coverage figures above regenerated at commit `de8bc78579ee26ab1288cd33bbdf3eba94121251`.
-- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `ce4f01e51e07a980…`).
+- Coverage figures above regenerated at commit `dcaa00868113fdd54e590e8af7dbc8b25eb4dc06`.
+- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `6d787baa764f9729…`).
 - Harvest: `tools/audit/decisions/decision_candidates.json` (sha256 `51850440b315e6e9…`).
 - Clustering: `tools/audit/decisions/decision_clusters.json` (sha256 `0615b1e61bf10332…`).
 - Shape: `open_items/OI-208.md` (user-ratified 2026-07-28).

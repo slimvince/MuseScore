@@ -338,3 +338,17 @@
 
 **Provenance.** cowork_design_doc_template.md:82 ('The locator stays (user, 2026-06-24)') and :91 ('User mandate 2026-06-22, refined 2026-06-24'). Homed in the file CLAUDE.md's Conventions entry names as the ONE home for writing standards, which names the implementation/test locator rule among what it carries. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
+### D-307 — A specification cites code by function or section anchor, never by raw line number
+
+> **(#9 stale line-number citations)** RULED with a POLICY: specs cite by **function/§ anchor, not raw line number** (numbers rot)
+
+**In plain words.** When a design document points at the code, it names the function or the section, not the line. Line numbers go stale as soon as the file above them changes.
+
+**Why.** The defect it answers is measured in the record: the gap analysis found stale line-number citations across the layer specifications, and the rule was made a policy at the same ruling that fixed them (`STATUS_ARCHIVE.md:242`).
+
+**Status.** LIVE · decided 2026-07-02 · ratified by Cowork
+
+**Home.** `STATUS_ARCHIVE.md:242`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+
+**Provenance.** Recorded in `STATUS_ARCHIVE.md` (session 21e, the gap-analysis rulings). It is NOT in `cowork_design_doc_template.md`, which is the ratified home of the writing standards and states the implementation/test locator rule without this constraint on the locator's form — checked at the source. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.
+

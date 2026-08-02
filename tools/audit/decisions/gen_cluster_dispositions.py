@@ -130,8 +130,17 @@ RULES = [
               "archive is the handoff's own superseded blocks moved verbatim, and `OPEN_ITEMS.md` "
               "OI-240/OI-266 establish that a handoff block tracks work and is not a home for a "
               "standing decision. The archives are swept by no rule until they are read — the "
-              "founding case of this audit lived in one of them — so `STATUS_ARCHIVE.md`, read only "
-              "in part, deliberately gets NO rule."),
+              "founding case of this audit lived in one of them."),
+    ("BR-18", "The unit is in the STATUS ARCHIVE (`STATUS_ARCHIVE.md`) and carries none of the "
+              "stated ruling words. BR-17's rule one file over, and ONLY because the file is now "
+              "READ IN FULL — the phase-1e wave read lines 1-118 and 301-929, the phase-1f wave "
+              "read the measured remainder (lines 119-300 and 930-3,861, 2026-08-02). Until then "
+              "this surface deliberately carried NO rule and its residual share was marked UNREAD "
+              "rather than judged. A superseded dated STATUS entry hands a session over and "
+              "reports work done; `OPEN_ITEMS.md` OI-240/OI-266 establish that a tracking surface "
+              "is not a home for a standing decision, and `STATUS.md:5-6` declares this file "
+              "reference-only. The read is what licenses the rule, and the ruling-vocabulary "
+              "exemption still holds every statement that carries a ruling word back for a reader."),
     ("BR-8", "Residual: none of the above applies. Recorded UNRESOLVED — the honest outcome, and "
              "the count is a finding about the record's legibility."),
 ]
@@ -160,24 +169,33 @@ UNRESOLVED_RESERVATIONS = {
                                    "they carry a ruling word. Each needs a reader.",
     "src test comments": "The BR-13 EXEMPTION SET — units the sweep refused because they carry "
                          "a ruling word. Each needs a reader.",
-    "cowork_* design documents": "The phase-1d wave's own measured partition: part of this "
-                                 "surface was read IN FULL and the rest was not, the reading "
-                                 "list being larger than one session. The remainder, and the "
-                                 "per-file counts, are in the OI-207 dated note of 2026-08-02; "
-                                 "it is the next wave's input.",
-    "docs/ design documents": "Same partition as the `cowork_*` surface — the measured "
-                              "remainder of the phase-1d reading list.",
-    "the two archives": "PARTIALLY READ by the phase-1e second-partition wave, 2026-08-02, and "
-                        "therefore now a SPLIT surface. `cowork_handoff_archive.md` was READ IN "
-                        "FULL (5,704 lines), which is what licenses BR-17 over its non-ruling "
-                        "prose; the units that survive from it are the BR-17 exemption set — they "
-                        "carry a ruling word and each needs a reader. `STATUS_ARCHIVE.md` was read "
-                        "only in part (lines 1-118 and 301-929 of 3,861, which is the majority of "
-                        "the file by content — its dated entries are extremely long lines), so it "
-                        "gets NO rule at all and its whole unresolved share is UNREAD. The measured "
-                        "remainder is in the OI-207 dated note of 2026-08-02. The archives are "
-                        "never swept before being read: the founding case of this audit (the "
-                        "Stage-3.1b shelving, now register entry D-286) lived in one of them.",
+    "cowork_* design documents": "A MEASURED PARTITION, still open. Part of this surface was read "
+                                 "IN FULL by the phase-1d wave (21 documents) and one more — "
+                                 "`cowork_stage5_fitter_design.md`, the single largest holder at "
+                                 "55 clusters — by phase-1f; the rest was not, the reading list "
+                                 "being larger than one session. NO BULK RULE is written over "
+                                 "this surface even where a document HAS been read in full, and "
+                                 "that is deliberate: BR-17/BR-18's reasoning is that a tracking "
+                                 "surface is not a home for a standing decision, and a ratified "
+                                 "design document is exactly the opposite — OI-268 records that "
+                                 "22 standing decisions live on this surface. A read design "
+                                 "document therefore yields entries, not a sweep. The per-file "
+                                 "remainder is in the OI-207 dated note of 2026-08-02 (phase-1f).",
+    "docs/ design documents": "Same treatment as the `cowork_*` surface, and the same reason for "
+                              "having no bulk rule. `docs/beam_widening_design.md` (38 clusters) "
+                              "was read in full by phase-1f; the measured remainder is in the "
+                              "OI-207 dated note of 2026-08-02 (phase-1f).",
+    "the two archives": "BOTH ARE NOW READ IN FULL — `cowork_handoff_archive.md` (5,704 lines) by "
+                        "the phase-1e second-partition wave, `STATUS_ARCHIVE.md` (3,861 lines) "
+                        "across phase-1e (lines 1-118 and 301-929) and phase-1f (the measured "
+                        "remainder, lines 119-300 and 930-3,861), all 2026-08-02. That is what "
+                        "licenses BR-17 and BR-18 over their non-ruling prose. What survives here "
+                        "is the two rules' EXEMPTION SET: units that carry a ruling word, held "
+                        "back by the guardrail for a reader rather than swept. The archives are "
+                        "never swept before being read — the founding case of this audit (the "
+                        "Stage-3.1b shelving, now register entry D-286) lived in one of them, and "
+                        "so do the two standing 'do not retry' gate deferrals this wave entered "
+                        "(D-300, D-301) and the third MuseScore-core edit (D-315, rowed OI-273).",
     "governing: ARCHITECTURE.md": "Already READ IN FULL by the 2026-08-01 completion pass; this "
                                   "residue is prose that reading judged not to state a distinct "
                                   "decision. Judged, not unread.",
@@ -422,10 +440,25 @@ def in_read_handoff_archive(f: str) -> bool:
     IN FULL (all 5,704 lines, 2026-08-02).  The archives are otherwise swept by NO rule, on
     purpose: the founding case of the decision-conformance audit (the Stage-3.1b shelving)
     lived in one of them, and a blind class sweep is exactly how it went missing.  Reading
-    the surface is what licenses the rule; `STATUS_ARCHIVE.md` was read only in part and
-    therefore has NO rule of its own.
+    the surface is what licenses the rule.
     """
     return f == "cowork_handoff_archive.md"
+
+
+def in_read_status_archive(f: str) -> bool:
+    """`STATUS_ARCHIVE.md` — the STATUS ARCHIVE.
+
+    BR-17's predicate, one file over.  It exists only because the file is now READ IN FULL:
+    the phase-1e wave read lines 1-118 and 301-929, the phase-1f wave read the measured
+    remainder (lines 119-300 and 930-3,861, 2026-08-02).  Until the second half was read this
+    surface deliberately carried no rule at all and its share of the residual was marked
+    UNREAD rather than judged.  Same reasoning as BR-17: a superseded dated STATUS entry hands
+    a session over and reports work done; `OPEN_ITEMS.md` OI-240 and OI-266 establish that a
+    tracking surface is not a home for a standing decision, and `STATUS.md:5-6` declares this
+    file reference-only.  The ruling-vocabulary exemption still applies, so every statement in
+    it that carries a ruling word survives for a reader.
+    """
+    return f == "STATUS_ARCHIVE.md"
 
 
 def in_defect_types(f: str) -> bool:
@@ -525,6 +558,8 @@ def disposition_pass(candidates, clusters, backbone):
             rule, disp, decs = "BR-16", "not-a-decision", []
         elif _all(cl_files, in_read_handoff_archive) and not carries_ruling_word:
             rule, disp, decs = "BR-17", "not-a-decision", []
+        elif _all(cl_files, in_read_status_archive) and not carries_ruling_word:
+            rule, disp, decs = "BR-18", "not-a-decision", []
         else:
             rule, disp, decs = "BR-8", "unresolved", []
 

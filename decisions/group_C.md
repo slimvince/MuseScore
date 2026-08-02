@@ -715,3 +715,19 @@
 
 **Provenance.** Recorded in `cowork_handoff_archive.md` (the 2026-07-07 entry-point block) as a dated correction. It scopes D-099 / principle #12 and is recorded nowhere that a reader of #12 would find. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).
 
+### D-313 — A confidence map is monotone or it is not fitted — a non-monotone curve is an upstream finding, not a mapping target
+
+> **D-8 Calibration maps are monotone or deferred.** A non-monotone empirical curve (L5 combinedBoundary) is
+> an upstream finding, not a mapping target — fitting a non-monotone map would launder an inference defect
+> into the confidence semantics. (Contract R4/R5 monotonicity carries this.)
+
+**In plain words.** Turning a layer's internal confidence number into a statement about how often it is right is only done when a higher number really does mean more often right. Where the measured curve goes the wrong way in places, that is reported as a fault in the layer, not smoothed over by the map.
+
+**Why.** Stated with the rule: fitting a non-monotone map would launder an inference defect into the confidence semantics — the map would make a mis-ordered confidence read as a well-ordered probability. The confidence contract's monotonicity rules carry the same requirement.
+
+**Status.** LIVE · decided 2026-07-04 · ratified by the user
+
+**Home.** `cowork_stage5_fitter_design.md:673`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Recorded in `cowork_stage5_fitter_design.md` (SIGNED, user, 2026-07-04) as the eighth of its numbered architecture decisions, and applied in the same document at §4.5: the one measured non-monotone row was deferred and declared rather than mapped. Found by the phase-1f final-partition wave, 2026-08-02, reading `cowork_stage5_fitter_design.md` in full (SIGNED, user, 2026-07-04). NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.
+

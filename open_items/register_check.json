@@ -1,8 +1,8 @@
 {
  "mode": "living",
  "baseline_commit": "cb246a7580",
- "index_item_count": 272,
- "detail_file_count": 272,
+ "index_item_count": 273,
+ "detail_file_count": 273,
  "baseline_item_count": 200,
  "post_baseline_ids": [
   "OI-201",
@@ -76,7 +76,8 @@
   "OI-269",
   "OI-270",
   "OI-271",
-  "OI-272"
+  "OI-272",
+  "OI-273"
  ],
  "bijection_ok": true,
  "index_duplicate_ids": [],
@@ -2798,6 +2799,16 @@
   },
   {
    "id": "OI-272",
+   "post_baseline": true,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": null,
+   "ok": true
+  },
+  {
+   "id": "OI-273",
    "post_baseline": true,
    "index_present": true,
    "detail_present": true,

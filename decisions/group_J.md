@@ -134,3 +134,17 @@
 
 **Provenance.** Recorded in `cowork_handoff_archive.md` (the standing-records block) as item E-14 of `cowork_product_tool_register.md`, with a note that a pointer into the architecture document was owed at its next edit. This pass found no such pointer in the register's own home census, so the owed act appears undischarged. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).
 
+### D-304 — The analyzer always emits its fullest reading; simplifying it happens only when comparing against a corpus, never in the product
+
+> Extension-stripping policy implemented as test-only utility (`stripSymbol`, `classifyComparison`); never in production. Per principle in memory `project_no_stripping_in_production.md` — analyzers always emit maximal output, stripping happens only at corpus-comparison boundaries. Design memo: `docs/extension_stripping_policy.md`.
+
+**In plain words.** When our analysis names a chord it states everything it found, including the added notes above the basic triad. Cutting that back to a plainer name is something only the comparison machinery may do, so that a difference of notation is not counted as a difference of analysis.
+
+**Why.** The stated principle is that the analyzer reports what it found; the record shows the measured consequence — applying the comparison-side simplification reduced the pinned baseline from 135 differences to 10 (`STATUS_ARCHIVE.md:944`), which is the size of the notation-convention difference the rule keeps out of the analysis.
+
+**Status.** LIVE · date not stated · ratifier not stated
+
+**Home.** `STATUS_ARCHIVE.md:943`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+
+**Provenance.** Recorded in `STATUS_ARCHIVE.md`; the design memo it names, `docs/extension_stripping_policy.md`, exists on disk. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue.
+
