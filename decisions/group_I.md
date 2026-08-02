@@ -232,3 +232,19 @@
 
 **Provenance.** User ruling 2026-08-02 at the OI-241 adjudication (all recommendations adopted); written into ARCHITECTURE.md §3.3 in the same commit (the register's same-commit rule, D-230). open_items/OI-241.md records the gap this closes.
 
+### D-233 — Build and test commands run synchronously; one run, one result
+
+> **Rule 14 — Shell discipline for long-running commands**
+>
+> All build and test commands must run synchronously (foreground). Never use background jobs or split output.
+
+**In plain words.** Every build and test command is run in the foreground and its output is read whole. A command is never backgrounded, never killed and re-run differently, and never silently re-run: unexpected output is reported and instructions asked for.
+
+**Why.** Derivation not recorded. The record states the rule and its correct/incorrect patterns (ARCHITECTURE.md:627-649) but not the incident or measurement that produced it.
+
+**Status.** LIVE · date not stated · ratifier not stated
+
+**Home.** `ARCHITECTURE.md:623-625`
+
+**Provenance.** ARCHITECTURE.md:623-625 (Rule 14) and :649 (the one-run-one-result statement)
+

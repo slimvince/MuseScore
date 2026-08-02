@@ -108,3 +108,19 @@
 
 **Provenance.** ARCHITECTURE.md:896-899 records the foundation BUILT (dormant). ARCHITECTURE.md:1404-1404 still says the voice-leading layer is 'not built' - see OPEN_ITEMS OI-232
 
+### D-248 — Tonicization labels are not implemented and are deferred
+
+> - Tonicization labels (V/V, V/ii, V/IV etc.) — **NOT YET IMPLEMENTED**
+>   (deferred; no `relativeRoot`/secondary-dominant field in
+>   `ChordFunction`; requires standalone implementation first)
+
+**In plain words.** Applied-chord labels such as V/V are not produced. The data structure has no field for the relative root, and the feature waits on a standalone implementation.
+
+**Why.** The constraint is stated in the record: `ChordFunction` carries no `relativeRoot` or secondary-dominant field, so the label has nowhere to live (ARCHITECTURE.md:6002-6003).
+
+**Status.** DEFERRED · date not stated · ratifier not stated
+
+**Home.** `ARCHITECTURE.md:6001-6003`
+
+**Provenance.** ARCHITECTURE.md:6001-6003. Section 5.10 (ARCHITECTURE.md:3849) is the tonicization section; the memory-held backlog item is recorded in the same terms.
+

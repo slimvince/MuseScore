@@ -156,3 +156,133 @@
 
 **Provenance.** User ruling 2026-08-02 (the audits-before-design discussion; all three phases adopted as presented). Registered in the recording commit per D-230.
 
+### D-249 — The whole decision surface is delivered as user-visible text before any choice question
+
+> **Never present the user with options before the ENTIRE situation has been explained in a message the
+> user has actually seen.** Mechanism note (the failure that made the rule): Cowork prose written between
+> tool calls is summarized, not shown verbatim — so an explanation "just before" a question widget may
+> never reach the user, and the question arrives blind. The rules:
+> 1. The decision surface (what is being decided, the background, each option's meaning, risks both ways,
+>    the recommendation and why) is delivered as user-visible text FIRST — via the verbatim message
+>    channel or as the turn's final response.
+> 2. For consequential decisions (ratifications, adoptions, retirements, checkpoint rulings), the choice
+>    question goes in a SEPARATE, LATER turn — the user reads first, then is asked.
+> 3. A decision answered blind is voidable: re-present the surface and re-confirm.
+
+**In plain words.** Before the user is asked to choose, the situation is explained in a message the user has actually read: what is being decided, the background, what each option means, the risks both ways, and the recommendation. For a consequential call the question comes in a later turn. A decision answered blind can be voided and re-asked.
+
+**Why.** The mechanism is stated with the rule: prose written between tool calls is summarized rather than shown verbatim, so an explanation placed just before a question widget can never reach the user and the question arrives blind (cowork_handoff.md:1590-1592). Its first application is recorded: the 2026-07-05 verdict-14 and 2.2c ratifications were re-presented and re-confirmed.
+
+**Status.** LIVE · decided 2026-07-05 · ratified by user
+
+**Home.** `cowork_handoff.md:1589-1598`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+
+**Provenance.** cowork_handoff.md:1587 (the standing-rule heading, "user mandate 2026-07-05"); the instituting record is at STATUS_ARCHIVE.md:202
+
+### D-250 — Dispatches are written only when they are next; a parked instruction is revalidated first
+
+> **Do NOT write CC instructions ahead of need.** Pre-written instructions go stale (their premises change under
+> them), risk being skipped, and risk out-of-order execution. The rules:
+> 1. **At most ONE instruction is dispatched/being-executed at a time** (single CC, single worktree unless the user
+>    explicitly sets up a second).
+> 2. **The NEXT instruction is written only when its predecessor's report is ratified** and it is actually the next
+>    dispatch — never speculatively.
+> 3. **The dispatch QUEUE is a plan, not files:** upcoming work is recorded as plan lines (roadmap / STATUS "next"),
+>    not as pre-written instruction files.
+> 4. **Any instruction file that exists but is not the active dispatch carries a `⏸ PARKED` banner** and MUST be
+>    revalidated by Cowork against the then-current STATUS/HEAD immediately before dispatch, receiving a dated
+>    DISPATCH note. CC must not execute a parked instruction without that note.
+
+**In plain words.** One instruction is dispatched at a time, and the next is written only once its predecessor's report is ratified. Upcoming work lives as plan lines, not as pre-written instruction files. An instruction file that is not the active one carries a parked banner and must be revalidated against the current state before it is dispatched.
+
+**Why.** The reasons are stated with the rule: pre-written instructions go stale as their premises change under them, risk being skipped, and risk out-of-order execution (cowork_handoff.md:1606-1607).
+
+**Status.** LIVE · date not stated · ratifier not stated
+
+**Home.** `cowork_handoff.md:1606-1616`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+
+**Provenance.** cowork_handoff.md:1606-1616 (stated as standing rules under the handoff's standing-rules block)
+
+### D-251 — A running dispatch is never interrupted or steered mid-flight; every instruction is self-sufficient
+
+> 5. **NO MID-FLIGHT STEERING (user, 2026-07-05): a running CC is never interrupted or relayed to** —
+>    interruptions have several times proven disastrous. Every instruction must therefore be
+>    SELF-SUFFICIENT: all foreseeable forks carried as in-instruction STOP/branch rules; anything not
+>    covered waits for the report and is ruled at verification. The only mid-run channel is the one CC
+>    itself opens (its own STOP question), answered when CC asks.
+
+**In plain words.** Once a working session is executing an instruction, nothing is relayed into it. Every foreseeable fork is written into the instruction as a stop or branch rule; anything not covered waits for the report. The only mid-run channel is a question the session itself raises.
+
+**Why.** The evidence is stated with the rule: interruptions have several times proven disastrous (cowork_handoff.md:1618).
+
+**Status.** LIVE · decided 2026-07-05 · ratified by user
+
+**Home.** `cowork_handoff.md:1617-1621`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+
+**Provenance.** cowork_handoff.md:1617 ("NO MID-FLIGHT STEERING (user, 2026-07-05)")
+
+### D-252 — One side writes the instruction files and the other executes them, never the reverse
+
+> **Cowork writes instruction files. CC executes them. Never the other way around.**
+>
+> - When the user says "go", "do E2b", "execute", or similar: the response is
+>   "The instruction is ready at `cc_instruction_X.md` — give it to CC."
+> - Cowork MAY: read source files **via the file tools (Read / Grep / Glob) — NOT bash** (see the NEVER-BASH
+>   standing rule below), write `.md` instruction files, update `cowork_handoff.md` / `STATUS.md` summaries after CC reports.
+> - Cowork MUST NOT: spawn agents that run build commands or modify `src/` files;
+>   use Edit/Write tools on anything under `src/`; use bash redirects on source files.
+> - Violating this rule has broken the codebase twice (E1, E2b). Do not do it again.
+
+**In plain words.** The planning side writes instruction files and may read sources and update the summary documents; it does not edit anything under src/, run builds, or spawn agents that do. The executing side runs the instruction.
+
+**Why.** The evidence is stated with the rule: violating it has broken the codebase twice, at the E1 and E2b increments (cowork_handoff.md:1638).
+
+**Status.** LIVE · date not stated · ratifier not stated
+
+**Home.** `cowork_handoff.md:1630-1638`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+
+**Provenance.** cowork_handoff.md:1628 ("STANDING RULE FOR COWORK (read every session)")
+
+### D-253 — Working-tree files are read with the file tools; bash is limited to git object queries by explicit hash
+
+> - **Local file CONTENT, existence, line counts, searches → ALWAYS the file tools (Read / Grep / Glob).** NEVER `bash`
+>   `cat` / `wc` / `grep` / `sed` / `head` / `tail` / `git status` / `git diff` on working-tree files. *(Supersedes the
+>   older "read source via grep/cat/sed -n" line in the first standing rule above — that path is the stale one.)*
+> - **`bash` is permitted ONLY for read-only git OBJECT queries, BY EXPLICIT SHA from CC's commit report** (option B,
+>   user-ratified): `git show <sha>:path`, `git show --stat <sha>`, `git cat-file`, `git diff <shaA> <shaB>`. These are
+>   content-addressed and **self-verifying** — a stale/unsynced object errors loudly (`bad object`), never returns
+>   silently-wrong content.
+> - **NEVER trust `git rev-parse HEAD` / `git status` / `git log`(branch tip) for "what is current"** — those read
+>   mutable refs/index that can be stale. Take the SHA from CC's report, read by that SHA, corroborate with a fresh
+>   file-tool read.
+> - A `bad object` / missing-object error = a **staleness signal → surface it, do not guess.** Mount refresh is
+>   host-side only (CC `touch`es the file on Windows, or restart the session).
+
+**In plain words.** File content, existence, line counts and searches are read through the file tools, never through shell text utilities on the working tree. Shell access is allowed only for read-only git object queries named by an explicit commit hash, which are content-addressed and fail loudly when stale. A branch tip or index read is never trusted for what is current.
+
+**Why.** The failure that produced it is stated in the record: a stale mount made the shell path return wrong content and triggered a false corruption alarm, while the file tools read the live disk correctly (cowork_handoff.md:1665-1667). The git-object exception is justified by self-verification: a stale object errors rather than returning silently-wrong content.
+
+**Status.** LIVE · decided 2026-06-21 · ratified by user
+
+**Home.** `cowork_handoff.md:1669-1680`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+
+**Provenance.** cowork_handoff.md:1642 ("COWORK MUST NOT HALLUCINATE OR ASSUME — VERIFY AT SOURCE (user mandate 2026-06-21)"), under which this rule is stated
+
+### D-254 — Investigate by default; never ask the user whether to investigate or proceed
+
+> **Whenever a step could be investigated/measured BEFORE committing, ALWAYS investigate first — and do NOT
+> present it to the user as a choice.** The user's standing answer to "investigate or go in some direction"
+> is *always investigate*, so asking wastes a turn. This is the never-guess principle's logical end: gather
+> the cheap evidence before any commitment, by default. When Cowork hits such a fork, it writes the
+> investigation/measurement instruction directly (read-only / byte-identical where possible).
+
+**In plain words.** Wherever a step could be measured before it is committed to, it is measured first, and that is not put to the user as a choice. When the planning side reaches such a fork it writes the read-only investigation instruction directly.
+
+**Why.** The reason is stated with the rule: the user's standing answer to that question is always to investigate, so asking wastes a turn; it is the never-guess principle's logical end (cowork_handoff.md:1793-1795). Register entry D-169 records the principle (#5) this operationalizes.
+
+**Status.** LIVE · decided 2026-06-14 · ratified by user
+
+**Home.** `cowork_handoff.md:1792-1796`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+
+**Provenance.** cowork_handoff.md:1790 ("INVESTIGATE BY DEFAULT — NEVER ASK 'investigate vs proceed' (user mandate 2026-06-14)")
+

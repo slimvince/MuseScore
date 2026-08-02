@@ -349,3 +349,25 @@
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:217 (OI-33), resolved 2026-07-12 in the key-layer readiness wave 1. Its current reading on the production arm is D-114 - the decoder commits its best path, so the abstain counter reads zero. OPEN_ITEMS OI-240 closes on this move
 
+### D-243 — The planning band for the vertical engine, and the corpora excluded from it
+
+> For planning purposes, the current vertical tertian engine plus targeted texture
+> fixes should be expected to plateau around 65–75% exact external root+quality
+> agreement on **full-texture tonal corpora** (SATB choral, chamber, full piano
+> accompaniment). This band applies specifically to region-centric DCML comparison
+> methodology. Thin-texture corpora (Mozart piano sonatas, C.P.E. Bach keyboard,
+> solo melody) are excluded from this target — they require a separate inference
+> strategy and should not be compared against the same band. The When in Rome and
+> music21-surface comparisons use different methodologies and are not directly
+> comparable to this figure.
+
+**In plain words.** For planning, the vertical engine plus texture fixes is expected to settle around 65-75 % exact root-and-quality agreement on full-texture tonal music, measured region-centrically against DCML annotations. Thin-texture corpora are outside that target and are not judged against it, and figures from other comparison methods are not comparable to it.
+
+**Why.** The constraint stated in the record: the band is tied to one comparison methodology (region-centric DCML), and mixing methodologies is what makes a figure incomparable (ARCHITECTURE.md:3559-3564).
+
+**Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
+
+**Home.** `ARCHITECTURE.md:3556-3564`
+
+**Provenance.** The band is stated at ARCHITECTURE.md:3556-3564. The governing measurement surface is now the robust unit ratified at R10-b (CLAUDE.md gate block (A)), whose figures are reported per preset on a different unit; no ruling names this band as replaced.
+

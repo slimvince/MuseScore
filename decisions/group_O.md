@@ -176,3 +176,84 @@
 
 **Provenance.** ARCHITECTURE.md:6029-6038 (§11.5). No date or ratifier stated.
 
+### D-244 — Choosing an interval family for an ambiguous sonority is deferred; fixed tables are used
+
+> Another deferred design question is **which interval family to prefer for
+> ambiguous sonorities**.  The current shipped tuning systems use fixed lookup
+> tables (for example, 5-limit just intonation uses 9/5 for a minor seventh and
+> 15/8 for a major seventh) rather than a style-aware policy that can choose
+> between alternatives such as 5-limit dominant sevenths versus septimal
+> "harmonic sevenths" (7/4), or other competing targets for altered/extended
+> sonorities.  This is not specific to seventh chords — similar ambiguity also
+> appears in tritones, minor sonorities, diminished/augmented chords, and larger
+> extensions.  This choice architecture should be explored later, but it is not a
+> current implementation target.
+
+**In plain words.** When more than one pure interval could be targeted - a 5-limit minor seventh against a septimal one, and the same choice for tritones, minor and altered sonorities - the tuning systems keep their fixed lookup tables. A style-aware choice is left for later.
+
+**Why.** Derivation not recorded. The record states the design space and that it is deferred, but not the measurement or constraint behind the deferral.
+
+**Status.** DEFERRED · date not stated · ratifier not stated
+
+**Home.** `ARCHITECTURE.md:5069-5078`
+
+**Provenance.** ARCHITECTURE.md:5077-5078 states it is not a current implementation target; the same deferral is recorded in the retired-session record at STATUS_ARCHIVE.md:2335
+
+### D-245 — Voice role comes from staff position or explicit assignment; automatic melody detection is deferred
+
+> Automatic melody detection is deferred. For now, voice role is determined by staff position
+> or explicit user assignment — not automatic detection. Per-staff override of voice role is
+> a future extension.
+
+**In plain words.** Which voice counts as the melody is taken from where it sits in the score or from what the user says. Working it out automatically is left for later, as is a per-staff override.
+
+**Why.** Derivation not recorded.
+
+**Status.** DEFERRED · date not stated · ratifier not stated
+
+**Home.** `ARCHITECTURE.md:5192-5194`
+
+**Provenance.** ARCHITECTURE.md:5192-5194 states the deferral
+
+### D-246 — Fixed-pitch instruments are deferred, and will never receive tuning offsets
+
+> Fixed-pitch instruments (piano, organ, fretted guitar) are deferred — their handling is not
+> yet implemented. When implemented, they will serve as absolute anchors that other
+> instruments tune to, and will never receive tuning offsets themselves.
+
+**In plain words.** Piano, organ and fretted guitar are not handled yet. When they are, they will be the fixed reference other instruments tune to, and will not be retuned themselves.
+
+**Why.** The constraint is the instruments themselves: their pitch is fixed by construction, so a tuning offset cannot be applied to them (ARCHITECTURE.md:5293-5295).
+
+**Status.** DEFERRED · date not stated · ratifier not stated
+
+**Home.** `ARCHITECTURE.md:5293-5295`
+
+**Provenance.** ARCHITECTURE.md:5293-5295 states both the deferral and the eventual behaviour
+
+### D-247 — An anchor note stays at 12-TET, is never split, and is excluded from drift and centering
+
+> **Rules for anchor notes:**
+> - **Zero tuning offset** — the note is left exactly at 12-TET.
+> - **Never split** — anchor notes are not divided at harmonic boundaries.
+> - **Not a FreeDrift reference** — in FreeDrift mode the anchor note is
+>   excluded from the drift reference hierarchy (P1/P2/P3); it sits at 0 ¢
+>   and other notes accumulate drift around it.
+> - **Excluded from zero-sum centering** — other voices in the harmonic region
+>   absorb the full centering correction; the anchor contributes zero.
+> - Applies to the specific note carrying the Expression only — subsequent notes
+>   on the same staff are not automatically anchored.
+>
+> **Priority:** Highest. Overrides all duration-based, context-based, and
+> FreeDrift reference hierarchy rules.
+
+**In plain words.** A note carrying the anchor expression is left exactly at equal temperament. It is not divided at a harmonic boundary, it is not used as the drift reference in FreeDrift, and it takes no share of the zero-sum centering correction. Only that one note is anchored, and the rule outranks every duration-, context- and drift-based rule.
+
+**Why.** Derivation not recorded. The record states the rules and their priority but not the musical reasoning or measurement behind the priority.
+
+**Status.** LIVE · date not stated · ratifier not stated
+
+**Home.** `ARCHITECTURE.md:5311-5323`
+
+**Provenance.** ARCHITECTURE.md:5311-5323; the FreeDrift behaviour is restated at :5448-5453
+

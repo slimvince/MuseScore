@@ -264,3 +264,19 @@
 
 **Provenance.** User ruling 2026-08-02 (the living-surface half of OI-208, all recommendations adopted); the CLAUDE.md decisions-register section + the session-start read list, edited in the same commit.
 
+### D-232 — The section numbers are authoritative; the "Rule N" labels are a legacy flat numbering
+
+> *The "Rule N" labels in §2.11–§2.12 are a legacy flat numbering of the coding/process rules and do not align with the
+> §-numbers (and appear out of order); the **§-numbers are authoritative**. Read each "Rule N" as a local name for the
+> rule stated beside it, not a cross-reference to a numbered list.*
+
+**In plain words.** Where a coding or process rule in sections 2.11-2.12 carries a "Rule N" label, that label is only a local name for the rule beside it. The section number is what identifies the rule.
+
+**Why.** The constraint that forced it, stated in the quote: the flat numbering does not align with the section numbers and appears out of order, so reading a "Rule N" label as a cross-reference sends the reader to the wrong rule.
+
+**Status.** LIVE · date not stated · ratifier not stated
+
+**Home.** `ARCHITECTURE.md:601-603`
+
+**Provenance.** ARCHITECTURE.md:601-603 (stated as a standing reading instruction in the document itself)
+

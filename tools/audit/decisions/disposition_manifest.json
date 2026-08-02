@@ -14,17 +14,41 @@
   },
   "backbone": {
    "file": "tools/audit/decisions/backbone_decisions.json",
-   "sha256": "6f0fe91a02bdf9dbaf64a10cd852ea0dbf4bb58cb9865330994e98403be38229",
-   "decision_count": 231
+   "sha256": "3e8bfe0b701da1c71efc2b7496a837bf82ac9218b9e1b4d816fe0dbf9024e45c",
+   "decision_count": 254
   }
  },
- "head_commit": "c993a833b901d27a4e63bd9b5564ff436a1a8331",
+ "head_commit": "8f0c181a3c3a99b75fcc313e85d45b2665ea5c64",
  "disposition_vocabulary": [
   "restates",
   "not-a-decision",
   "boilerplate",
   "no-spec-home",
   "unresolved"
+ ],
+ "ruling_vocabulary_exempting_BR11_BR12_BR13": [
+  "\\bratified\\b",
+  "\\bratification\\b",
+  "\\bshelved\\b",
+  "\\bfalsifie[sd]\\b",
+  "\\bdead end\\b",
+  "\\bdo not (re-?attempt|retry|re-?try|pursue|add|use|revert|remove)\\b",
+  "\\bDECIDED\\b",
+  "\\bDECISION\\b",
+  "\\bthe rule is\\b",
+  "\\bmust not\\b",
+  "\\bforbidden\\b",
+  "\\bnever (add|use|read|be|do|widen|assume)\\b",
+  "\\buser[- ](ruled|directed|ratified|decision|mandate)\\b",
+  "\\brejected\\b",
+  "\\bwithdrawn\\b",
+  "\\boverturned\\b",
+  "\\bsuperseded by\\b",
+  "\\bretired\\b",
+  "\\bdeferred (to|until|indefinitely)\\b",
+  "\\bstanding rule\\b",
+  "\\bpolicy\\b",
+  "\\bconvention\\b"
  ],
  "rules": [
   {
@@ -40,12 +64,12 @@
   {
    "id": "BR-3",
    "rule": "The cluster's text matches at least one backbone decision whose home IS a layer specification. Recorded as restating that decision (named).",
-   "clusters": 5484
+   "clusters": 5511
   },
   {
    "id": "BR-4",
    "rule": "The cluster's text matches one or more backbone decisions, ALL of which are recorded outside any layer specification. Recorded as a decision with no layer-specification home (named) — the Task-4 documentation-gap class.",
-   "clusters": 538
+   "clusters": 551
   },
   {
    "id": "BR-5",
@@ -63,17 +87,42 @@
    "clusters": 299
   },
   {
+   "id": "BR-9",
+   "rule": "The unit is a list lead-in: with markdown stripped its text ends in a colon and contains no sentence-ending period before it, so it introduces a list whose items are separate units. Like a heading (BR-2) it names a subject and states nothing.",
+   "clusters": 157
+  },
+  {
+   "id": "BR-10",
+   "rule": "The unit is a row, or a section header, of the OPEN-ITEMS REGISTER (`OPEN_ITEMS.md` or `open_items/OI-*.md`). That register records issues, their status and their provenance; the ratified ruling 1 on `open_items/OI-208.md` puts decisions in the decisions register and non-conformance here. A row of it is a tracked issue.",
+   "clusters": 29
+  },
+  {
+   "id": "BR-11",
+   "rule": "The unit is in a Claude Code DISPATCH (`cc_instruction_*.md`) and carries none of the stated ruling words (RULING_VOCABULARY below). A dispatch is an instruction to a working session — scope, task, stop condition, reporting requirement. The ratified decisions-register rules make a dispatch a CITER of decisions (rule (b)) and put a new ratification in the register in the commit that records it (rule (c)), so a dispatch is never a home of record.",
+   "clusters": 886
+  },
+  {
+   "id": "BR-12",
+   "rule": "The unit is in a Claude Code session REPORT (`cc_*.md` that is not a dispatch) and carries none of the stated ruling words. A report records work done. Same register-rule reasoning as BR-11. This is BR-6 widened from its narrative-pattern test to the whole report class, minus the ruling vocabulary.",
+   "clusters": 993
+  },
+  {
+   "id": "BR-13",
+   "rule": "The unit is a comment in a TEST file (`src/**/tests/**`) and carries none of the stated ruling words. A test comment states what the test pins; the decision it pins is stated in the specification, which is where BR-3 finds it.",
+   "clusters": 164
+  },
+  {
    "id": "BR-8",
    "rule": "Residual: none of the above applies. Recorded UNRESOLVED — the honest outcome, and the count is a finding about the record's legibility.",
-   "clusters": 5204
+   "clusters": 2935
   }
  ],
  "disposition_counts": {
-  "restates": 5484,
-  "not-a-decision": 3160,
+  "restates": 5511,
+  "not-a-decision": 5389,
   "boilerplate": 74,
-  "no-spec-home": 538,
-  "unresolved": 5204
+  "no-spec-home": 551,
+  "unresolved": 2935
  },
  "completeness_check": {
   "clusters": 14460,

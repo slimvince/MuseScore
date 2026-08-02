@@ -145,3 +145,21 @@
 
 **Provenance.** ARCHITECTURE.md:3412-3424; legacy-arm only since the switch (D-010). Derivation not recorded: the only stated basis for 16 and 8 is the in-code gloss '~4 measures in 4/4' / '~2 measures ahead' (ARCHITECTURE.md:3417-3418) - no theory citation and no measurement
 
+### D-235 — Tonal-centre disambiguation may break a close tie but may not overturn a stronger raw winner
+
+> The key-signature path uses a separate focussed `tonalCenterScore` formula for the
+> final same-key-signature family decision, independent of the main scoring weights so
+> both can be tuned without cross-interference. For diatonic family decisions, tonal-
+> centre disambiguation is now guarded by the raw candidate score: it may break close
+> same-key-signature ties, but it must not overturn a materially stronger raw winner.
+
+**In plain words.** The same-key-signature family decision is scored by its own formula, separate from the main key weights. On diatonic families that separate decision is allowed to settle a near-tie, but a candidate that already wins the raw scoring by a clear margin stands.
+
+**Why.** The constraint stated in the record: the two formulas are kept independent so both can be tuned without cross-interference; the raw-score guard bounds what the secondary formula may do. The measurement that set the guard's bar is not recorded.
+
+**Status.** LIVE · date not stated · ratifier not stated
+
+**Home.** `ARCHITECTURE.md:2403-2407`
+
+**Provenance.** ARCHITECTURE.md:2403-2407; the same guard is listed among the key-path scoring terms at :2480-2482
+

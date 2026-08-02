@@ -249,6 +249,22 @@ def verify_backbone(backbone: dict) -> int:
             if ref not in known_oi:
                 dangling.append((d["id"], ref, "no such row in the OPEN_ITEMS.md index"))
 
+    # Field-shape guard.  The register renders `ratified_by` as either "ratifier not stated"
+    # (the list ["not stated"]) or "ratified by <names>".  An EMPTY list renders as a dangling
+    # "ratified by " with nothing after it — a silent-empty render, caught here rather than by
+    # a reader.  Same for an empty date.  Found by the OI-207 residual second pass, on its own
+    # first write of new entries (the standing self-check, reading the diff).
+    shape = []
+    for d in backbone["decisions"]:
+        if not d.get("ratified_by"):
+            shape.append((d["id"], "ratified_by is empty — use [\"not stated\"]"))
+        if not d.get("date"):
+            shape.append((d["id"], "date is empty — use \"not stated\""))
+    for did, why in shape:
+        print(f"  FIELD SHAPE {did}: {why}")
+    if shape:
+        misses.append(("field shapes", "-", f"{len(shape)} empty required field(s)"))
+
     n = len(backbone["decisions"])
     print(f"backbone decisions: {n}")
     print(f"cross-references resolving: {'ALL' if not dangling else f'{len(dangling)} DANGLING'}")

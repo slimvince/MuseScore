@@ -96,23 +96,24 @@ project's own and are defined here because they are used before any entry explai
 
 ## What is in this register, counted
 
-**231 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
+**254 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
 
 | | Count |
 |---|---|
-| Decisions recorded | **231** |
-| — of which live | 200 |
-| — of which superseded in fact | 4 |
+| Decisions recorded | **254** |
+| — of which live | 211 |
+| — of which superseded in fact | 5 |
 | — of which superseded by | 5 |
-| — of which deferred | 22 |
-| Decisions whose date is not stated in the record | 159 |
-| Decisions whose ratifier is not stated in the record | 151 |
-| Decisions recorded outside the specification that owns them | 57 |
+| — of which deferred | 33 |
+| Decisions whose date is not stated in the record | 178 |
+| Decisions whose ratifier is not stated in the record | 170 |
+| Decisions recorded outside the specification that owns them | 63 |
+| — of which recorded only on a tracking surface, with no home at all | 6 |
 | — of which a project-wide convention, correctly homed | 31 |
 | — of which a decision about the process, correctly homed | 26 |
 | Decisions whose defense the record does not state | 45 |
 
-That last row is the one meant to fall. **186 of 231** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
+That last row is the one meant to fall. **209 of 254** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
 
 Alongside the register, every one of the harvested statements about decisions in this repository has been given a recorded disposition, so that none was silently passed over:
 
@@ -121,11 +122,11 @@ Alongside the register, every one of the harvested statements about decisions in
 | Harvested statements | **15224** |
 | Groups of near-identical statements ("clusters") | **14460** |
 | Clusters carrying a recorded disposition | **14460** |
-| — restates | 5484 |
-| — not-a-decision | 3160 |
+| — restates | 5511 |
+| — not-a-decision | 5389 |
 | — boilerplate | 74 |
-| — no-spec-home | 538 |
-| — unresolved | 5204 |
+| — no-spec-home | 551 |
+| — unresolved | 2935 |
 
 The full disposition table, and the numbered rule behind each one, are in `tools/audit/decisions/cluster_dispositions.csv` and `tools/audit/decisions/disposition_manifest.json`.
 
@@ -203,6 +204,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-210 | An exotic mode is graded against its parent collection's minor key, not its own tonic triad | LIVE | `CLAUDE.md` |
 | D-211 | Key agreement is reported against both the global home key and the local key | LIVE | `CLAUDE.md` |
 | D-212 | The regression stop is abstain-aware: an abstention counts as disagreement on root | LIVE | `CLAUDE.md` |
+| D-243 | The planning band for the vertical engine, and the corpora excluded from it | SUPERSEDED IN FACT | `ARCHITECTURE.md` |
 
 ## D. Layer 1 — the note model — [full entries](decisions/group_D.md)
 
@@ -241,6 +243,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-057 | The priority of evidence - actual sounding notes are the strongest evidence | LIVE | `ARCHITECTURE.md` |
 | D-058 | The piece-start shortcut | LIVE · derivation not recorded | `ARCHITECTURE.md` |
 | D-059 | The temporal window - 16 beats back, 8 beats forward, decayed | LIVE · derivation not recorded | `ARCHITECTURE.md` |
+| D-235 | Tonal-centre disambiguation may break a close tie but may not overturn a stronger raw winner | LIVE | `ARCHITECTURE.md` |
 
 ## G. Layer 4 — chord identity — [full entries](decisions/group_G.md)
 
@@ -262,6 +265,13 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-104 | The bass-is-root bonus is conditioned on corroborating support | LIVE | `ARCHITECTURE.md` |
 | D-105 | The spelling written in the score is read through ONE shared interpreter | LIVE | `ARCHITECTURE.md` |
 | D-207 | The pedal-point class is defined voice-independently, superseding the bass-only fact | DEFERRED | `ARCHITECTURE.md` |
+| D-236 | Chord-symbol trust is per symbol, not a per-score preference | DEFERRED | `ARCHITECTURE.md` |
+| D-237 | Only a symbol marked trusted becomes analyzer input; an untrusted symbol is never read | DEFERRED | `ARCHITECTURE.md` |
+| D-238 | Two pitch classes may nominate a chord but may not finalize one; one pitch class may not | DEFERRED | `ARCHITECTURE.md` |
+| D-239 | Chord identity stays local; expansion is by one neighbouring region and is bounded | DEFERRED | `ARCHITECTURE.md` |
+| D-240 | The monophonic smoothing terms are tunable parameters, not prose-only rules | DEFERRED | `ARCHITECTURE.md` |
+| D-241 | The monophonic local-grouping problem is deferred to Phase 2 | DEFERRED | `ARCHITECTURE.md` |
+| D-242 | Vertical and monophonic raw scores are never compared directly | DEFERRED | `ARCHITECTURE.md` |
 
 ## H. Layer 5 and Layer 6 — function, cadence, grouping — [full entries](decisions/group_H.md)
 
@@ -274,6 +284,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-083 | Hierarchy, periods and prolongation are out of the validatable core | LIVE · derivation not recorded | `ARCHITECTURE.md` |
 | D-084 | The progression-schema recognizer is a consumer of the function layer, not a new layer | DEFERRED · derivation not recorded | `ARCHITECTURE.md` |
 | D-085 | The voice-leading axis is a separate axis with its own layers | LIVE · derivation not recorded | `ARCHITECTURE.md` |
+| D-248 | Tonicization labels are not implemented and are deferred | DEFERRED | `ARCHITECTURE.md` |
 
 ## I. Module boundaries and code structure — [full entries](decisions/group_I.md)
 
@@ -293,6 +304,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-227 | Read how MuseScore already does it, and never invent parallel infrastructure | LIVE | `ARCHITECTURE.md` |
 | D-228 | The bridge pattern - engraving types enter and leave at named free functions in the notation namespace | LIVE | `ARCHITECTURE.md` |
 | D-229 | The MuseScore-dependency rule - one general rule for what our code may depend on | LIVE | `ARCHITECTURE.md` |
+| D-233 | Build and test commands run synchronously; one run, one result | LIVE | `ARCHITECTURE.md` |
 
 ## J. Presentation and output conventions — [full entries](decisions/group_J.md)
 
@@ -304,6 +316,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-089 | The legacy confidence exposure gates - 0.5 tentative, 0.8 assertive | SUPERSEDED BY D-018 · derivation not recorded | `ARCHITECTURE.md` |
 | D-090 | Abstention is a valid outcome - high precision before coverage | LIVE | `ARCHITECTURE.md` |
 | D-106 | The augmented-sixth labels are gated to the Standard and Baroque presets | SUPERSEDED IN FACT · derivation not recorded | `ARCHITECTURE.md` |
+| D-234 | A chord symbol string must be valid under chords_std.xml; chords.xml is not relied on | LIVE | `ARCHITECTURE.md` |
 
 ## K. Documentation governance — [full entries](decisions/group_K.md)
 
@@ -324,6 +337,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-194 | No self-invented labels, abbreviations, numbering schemes or jargon | LIVE · derivation not recorded | `CLAUDE.md` |
 | D-195 | Every design decision carries its defense at its home | LIVE | `CLAUDE.md` |
 | D-230 | The decisions register is a mandatory session-start read, and a new ruling lands in the register in the commit that records it | LIVE | `CLAUDE.md` |
+| D-232 | The section numbers are authoritative; the "Rule N" labels are a legacy flat numbering | LIVE | `ARCHITECTURE.md` |
 
 ## L. Licensing, contribution, and coding standards — [full entries](decisions/group_L.md)
 
@@ -381,6 +395,10 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-151 | Populating the chord staff overwrites whatever is in the selected range | LIVE · derivation not recorded | `ARCHITECTURE.md` |
 | D-152 | Roman numerals and Nashville numbers are never shown together on one staff | LIVE | `ARCHITECTURE.md` |
 | D-153 | Interactive annotations are written in the score's normal colour; the batch pipeline writes red | LIVE | `ARCHITECTURE.md` |
+| D-244 | Choosing an interval family for an ambiguous sonority is deferred; fixed tables are used | DEFERRED | `ARCHITECTURE.md` |
+| D-245 | Voice role comes from staff position or explicit assignment; automatic melody detection is deferred | DEFERRED | `ARCHITECTURE.md` |
+| D-246 | Fixed-pitch instruments are deferred, and will never receive tuning offsets | DEFERRED | `ARCHITECTURE.md` |
+| D-247 | An anchor note stays at 12-TET, is never split, and is excluded from drift and centering | LIVE | `ARCHITECTURE.md` |
 
 ## P. The user interface, persistence, and machine-learning readiness — [full entries](decisions/group_P.md)
 
@@ -452,6 +470,12 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-208 | A withheld finding never enters a mandatory session-start read | LIVE | `cowork_audit_protocol.md` |
 | D-209 | Code that is about to be deleted gets no audit - only the no-information-loss check at deletion | LIVE | `cowork_audit_protocol.md` |
 | D-231 | Issue-exhaustion and specification completion before any fix design - the three-phase sequencing rule | LIVE | `CLAUDE.md` |
+| D-249 | The whole decision surface is delivered as user-visible text before any choice question | LIVE | `cowork_handoff.md` ⚠tracking-surface-only |
+| D-250 | Dispatches are written only when they are next; a parked instruction is revalidated first | LIVE | `cowork_handoff.md` ⚠tracking-surface-only |
+| D-251 | A running dispatch is never interrupted or steered mid-flight; every instruction is self-sufficient | LIVE | `cowork_handoff.md` ⚠tracking-surface-only |
+| D-252 | One side writes the instruction files and the other executes them, never the reverse | LIVE | `cowork_handoff.md` ⚠tracking-surface-only |
+| D-253 | Working-tree files are read with the file tools; bash is limited to git object queries by explicit hash | LIVE | `cowork_handoff.md` ⚠tracking-surface-only |
+| D-254 | Investigate by default; never ask the user whether to investigate or proceed | LIVE | `cowork_handoff.md` ⚠tracking-surface-only |
 
 ## U. The standing decision-bearing surfaces — [full entries](decisions/group_U.md)
 
@@ -475,8 +499,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 ## Provenance of this register
 
 - Adjudication: the OI-207 decision-conformance adjudication, 2026-08-01, at commit `58dea6702ac8aa9d5ef8b89244b94d587a75f7a5`.
-- Coverage figures above regenerated at commit `c993a833b901d27a4e63bd9b5564ff436a1a8331`.
-- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `6f0fe91a02bdf9db…`).
+- Coverage figures above regenerated at commit `8f0c181a3c3a99b75fcc313e85d45b2665ea5c64`.
+- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `3e8bfe0b701da1c7…`).
 - Harvest: `tools/audit/decisions/decision_candidates.json` (sha256 `51850440b315e6e9…`).
 - Clustering: `tools/audit/decisions/decision_clusters.json` (sha256 `0615b1e61bf10332…`).
 - Shape: `open_items/OI-208.md` (user-ratified 2026-07-28).

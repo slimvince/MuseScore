@@ -97,3 +97,23 @@
 
 **Provenance.** open_items/OI-112 already records this preset-gating as stale; open_items/OI-201 records that the record arm collapses the family to a plain major triad symbol ★ Verbatim RE-TAKEN 2026-08-02 (the phase-1 truth-sync): §5.11's assertion 'Gated to Standard and Baroque presets only' was corrected, since the formatter explicitly defers that gate for want of preset context (`chordsymbolformatter.cpp:882-883`) and emits the labels under every preset (OPEN_ITEMS OI-112(c) discharged). The decision's own words survive at the home, quoted inside the correction.
 
+### D-234 — A chord symbol string must be valid under chords_std.xml; chords.xml is not relied on
+
+> **Rule 16 — Do not rely on chords.xml**
+>
+> MuseScore has two chord description files:
+> - `share/chords/chords_std.xml` — the active standard chord list used by default in all scores
+> - `share/chords/chords.xml` — legacy file, likely deprecated, contains known bugs and inconsistencies with the parser
+>
+> When our formatter produces a chord symbol string, it must be valid according to `chords_std.xml` only. Do not add chord symbol strings that exist only in `chords.xml` — they will fail to parse correctly under the Standard chord style and may produce corrupted output.
+
+**In plain words.** MuseScore ships two chord description files. Everything our formatter emits must parse under the active one, chords_std.xml. A string that exists only in the legacy chords.xml is not used.
+
+**Why.** The measurement that decided it is cited in the record: `9sus` exists in chords.xml (id=134) and not in chords_std.xml, and under the Standard chord style it triggers `generateDescription()`, producing the corrupted `Fsussus9` render (ARCHITECTURE.md:672). The remedy named there is `sus(add9)`.
+
+**Status.** LIVE · date not stated · ratifier not stated
+
+**Home.** `ARCHITECTURE.md:664-670`
+
+**Provenance.** ARCHITECTURE.md:664-674 (Rule 16), restated in the retired-session record at STATUS_ARCHIVE.md:2247
+

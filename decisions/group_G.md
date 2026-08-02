@@ -253,3 +253,122 @@
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at open_items/OI-194.md:7, sharpened at the P1 pedal-point ruling, user-ratified 2026-07-26 at the consumption-audit verification (`cowork_notation_adoption_increment.md` §7 + §10). DEFERRED: it lands with the ornament-label publication, its own increment after the notation switch; until then the record arm leaves the pedal fields empty (D-021) and the 'X ped.' annotation is a declared gap. §5.12, which specifies the superseded two-pass detector, now carries a pointer to §7.4. OPEN_ITEMS OI-237 closes on this move
 
+### D-236 — Chord-symbol trust is per symbol, not a per-score preference
+
+> **Per-symbol trust, not per-score preference.** A per-score toggle is explicitly
+> rejected — too coarse-grained, since a single score may contain both trusted
+> lead-sheet-style annotations and untrusted draft symbols.
+
+**In plain words.** If written chord symbols are ever treated as authoritative input, the authority is carried by each symbol. A single switch for a whole score is rejected.
+
+**Why.** The reason is stated with the decision: one score may carry both trusted lead-sheet annotations and untrusted draft symbols, so a per-score toggle is too coarse-grained (ARCHITECTURE.md:2598-2600).
+
+**Status.** DEFERRED · date not stated · ratifier not stated
+
+**Home.** `ARCHITECTURE.md:2598-2600`
+
+**Provenance.** ARCHITECTURE.md:2576 heads the section "Future: Authoritative Chord Symbol Mode"; the current rule is that written symbols are never analyzer input (register entry D-066)
+
+### D-237 — Only a symbol marked trusted becomes analyzer input; an untrusted symbol is never read
+
+> **Analyzer semantics:** Only when a `Harmony` element has `trusted = true` does it
+> become boundary AND identity input for the harmonic region it opens. The analyzed
+> root and quality are taken from the written symbol, not from note-based inference.
+> Untrusted symbols remain comparison metadata only and are never read by the analysis
+> pipeline.
+
+**In plain words.** Under the planned authoritative-symbol mode, a written chord symbol opens a region and names its chord only when it is marked trusted. An untrusted symbol stays comparison metadata and the analysis never reads it.
+
+**Why.** Derivation not recorded. The record states the semantics but not the evidence or constraint that fixed them.
+
+**Status.** DEFERRED · date not stated · ratifier not stated
+
+**Home.** `ARCHITECTURE.md:2609-2613`
+
+**Provenance.** ARCHITECTURE.md:2576 (the section is headed Future); register entry D-066 records the rule in force today
+
+### D-238 — Two pitch classes may nominate a chord but may not finalize one; one pitch class may not
+
+> Initial rule:
+> - 2 distinct pitch classes may nominate a candidate set
+> - 2-PC evidence alone must not finalize a chord without contextual support
+> - 1-PC evidence is insufficient for independent chord resolution and may only
+>   participate in continuity-preserving abstention logic
+
+**In plain words.** In the monophonic fallback, a slice with only two distinct pitch classes can propose candidates but cannot settle the chord without context; a single pitch class cannot settle one at all and may only keep an existing reading alive.
+
+**Why.** The reason is stated beside the rule: it avoids over-interpretation of isolated tones (ARCHITECTURE.md:2760-2761).
+
+**Status.** DEFERRED · date not stated · ratifier not stated
+
+**Home.** `ARCHITECTURE.md:2754-2758`
+
+**Provenance.** ARCHITECTURE.md:2724 heads the section "Phase 1b - Minimal Monophonic Fallback Without Chord Symbols"; ARCHITECTURE.md:3496-3503 records monophonic input as planned
+
+### D-239 — Chord identity stays local; expansion is by one neighbouring region and is bounded
+
+> **Bounded expansion in Phase 1b:**
+> Chord identity should remain local. When a local group is too weak to resolve,
+> the analyzer may expand by one neighboring region and re-score. Expansion is
+> bounded and should stop when:
+> - confidence crosses threshold
+> - top-vs-second margin crosses threshold
+> - the same winner survives repeated expansion
+> - the hard expansion cap is reached
+
+**In plain words.** When a group of notes is too weak to resolve on its own, the analyzer may take in one neighbouring region and score again. It stops as soon as confidence or the margin crosses its threshold, the winner repeats, or the expansion cap is reached.
+
+**Why.** Derivation not recorded. The stop conditions are stated; the thresholds and the cap are left to be calibrated (see register entry D-240).
+
+**Status.** DEFERRED · date not stated · ratifier not stated
+
+**Home.** `ARCHITECTURE.md:2763-2770`
+
+**Provenance.** ARCHITECTURE.md:2724 (the Phase 1b section heading); the stop conditions are stated with the rule
+
+### D-240 — The monophonic smoothing terms are tunable parameters, not prose-only rules
+
+> These terms must be implemented as tunable parameters rather than prose-only
+> rules.
+
+**In plain words.** The margins and thresholds that govern the monophonic fallback's smoothing are implemented as named settings, so they can be changed and measured rather than being buried in prose.
+
+**Why.** Derivation not recorded. The record states the requirement and names the parameters it produces, but not the incident or principle that forced it.
+
+**Status.** DEFERRED · date not stated · ratifier not stated
+
+**Home.** `ARCHITECTURE.md:2780-2781`
+
+**Provenance.** ARCHITECTURE.md:2724 (the Phase 1b section heading); the named parameters are listed at :2783-2790
+
+### D-241 — The monophonic local-grouping problem is deferred to Phase 2
+
+> The local grouping problem is intentionally deferred to Phase 2 because it is
+> the hardest part of monophonic inference.
+
+**In plain words.** Deciding how to group a single melodic line into harmonic units is left to the later, full monophonic engine rather than attempted in the minimal fallback.
+
+**Why.** The reason is stated with the deferral: local grouping is the hardest part of monophonic inference (ARCHITECTURE.md:2810-2811).
+
+**Status.** DEFERRED · date not stated · ratifier not stated
+
+**Home.** `ARCHITECTURE.md:2810-2811`
+
+**Provenance.** ARCHITECTURE.md:2796 heads "Phase 2 - Full Monophonic Engine"
+
+### D-242 — Vertical and monophonic raw scores are never compared directly
+
+> The unified layer must not compare vertical and monophonic raw scores directly.
+> The two engines use different evidence models and therefore require explicit
+> confidence calibration.
+
+**In plain words.** The layer that combines the two chord engines may not put their raw numbers side by side. The two engines weigh different evidence, so their confidences must be calibrated onto a common footing first.
+
+**Why.** The reason is stated with the rule: the two engines use different evidence models (ARCHITECTURE.md:2839-2840). It is the same commensurability constraint the cross-layer confidence contract states generally (register entry D-032).
+
+**Status.** DEFERRED · date not stated · ratifier not stated
+
+**Home.** `ARCHITECTURE.md:2838-2840`
+
+**Provenance.** ARCHITECTURE.md:2813 heads "Unified Orchestration Layer", part of the provisional phased plan recorded at :3498-3503
+
