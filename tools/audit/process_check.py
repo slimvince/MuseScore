@@ -25,7 +25,7 @@ against.  That limit is not a caveat bolted on afterwards; it is measured, per k
 by `--establish` (see below), and the measurement is the artifact
 `tools/audit/process_check_establishment.json`.
 
-ESTABLISHMENT (#19).  An instrument is trusted only after being positively established, never
+ESTABLISHMENT (#19).  A measurement tool is trusted only after being positively established, never
 because it is merely unfalsified.  `--establish` runs the check over the recorded instances of
 each failure shape — the eight cited at D-434's home — and over a control set of text that is
 correct, and reports the detection rate and the false-positive rate.  A check that does not find
@@ -247,7 +247,7 @@ def establish() -> dict:
              "now": "REMOVED from the control set — the check was right about it. It "
                     "transcribes a quantity and cites a FILE but no FIELD, and D-431 requires "
                     "an artifact AND a field. Recorded rather than deleted quietly, because a "
-                    "control set silently edited to make an instrument look better measures "
+                    "control set silently edited to make a check look better measures "
                     "nothing (#19)."},
         ],
         "what_this_measures": "The check reads TEXT. A premise that is WRONG but CITED is "

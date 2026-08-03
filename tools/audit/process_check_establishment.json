@@ -132,7 +132,7 @@
     {
       "text": "The register is 431 entries at `tools/audit/decisions/backbone_decisions.json`.",
       "was": "written into the control set as correct text",
-      "now": "REMOVED from the control set — the check was right about it. It transcribes a quantity and cites a FILE but no FIELD, and D-431 requires an artifact AND a field. Recorded rather than deleted quietly, because a control set silently edited to make an instrument look better measures nothing (#19)."
+      "now": "REMOVED from the control set — the check was right about it. It transcribes a quantity and cites a FILE but no FIELD, and D-431 requires an artifact AND a field. Recorded rather than deleted quietly, because a control set silently edited to make a check look better measures nothing (#19)."
     }
   ],
   "what_this_measures": "The check reads TEXT. A premise that is WRONG but CITED is invisible to it by construction, so the instances it misses are the ones that arrived with a citation to a secondary surface. The detection rate below is therefore a property of the failure shapes, not a score to be improved by tuning the patterns — tuning them to catch a specific specimen would measure nothing."
