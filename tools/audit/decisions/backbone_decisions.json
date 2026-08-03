@@ -8634,6 +8634,196 @@
       ],
       "legacy_subject": true,
       "verbatim": "- **FQ-7 — ✅ RESOLVED `56b06462db`.** S8 constants sourced from the shared symbols. **S9 adjudicated\n  KEPT (load-bearing, NOT dead):** the `resolveKeyAndModeRanked@585` feeds `greedyExpandSegmentation@851`\n  + `findTemporalContext@900` (the grid); dropping it would move the grid. Report-only, no change."
+    },
+    {
+      "id": "D-406",
+      "group": "M",
+      "title": "The catalog owns the NAMED progressions and substitutions; the pairwise licensing grammar is owned by the function layer — the two are never derived from each other",
+      "verbatim": "**The D5 dependency map (one owner per concern — restated here, mirrored in code).** Two places know about chord\nsuccessions: **this component** owns the **named progressions and substitutions** (the catalog); **Layer 5's\n`functionprogression`** owns the **pairwise licensing grammar** (which root motions are licensed at all). *Changing the\ncatalog* → change this component only (the grammar never needs an edit; but a new entry must pass the **consistency\ntest** — every adjacent chord pair licensed — or it is mis-encoded OR a genuine grammar gap). *Changing the grammar* →\nchange `functionprogression` only. The two are **not derived from each other**; the **only coupling is the consistency\ntest**, and it runs **one way (catalog → grammar)**. Owner ruling: D5 (`cowork_progression_schema_design.md` §6),",
+      "plain": "Two places in the system know about which chords may follow which. This reference catalog holds the named progressions and substitutions; the function layer holds the separate rule about which root motions are allowed at all. Neither is computed from the other. The single link between them runs one way: every adjacent pair in a new catalog entry must be allowed by the grammar, and a pair that is not is either a mis-encoded entry or a genuine gap in the grammar.",
+      "home": "cowork_progression_schema_dictionary.md:35-41",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status": "live",
+      "date": "2026-07-02",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "`cowork_progression_schema_dictionary.md`:41-46 records the owner ruling as D5 of `cowork_progression_schema_design.md` §6, user-ratified 2026-07-02, with the cross-referencing comment blocks at `functionprogression.h` and `harmonicvocabulary.h` and the test at `progressionrecognizer_tests.cpp`. Beside D-341, which is the grammar-completion amendment this ruling's consistency test produced. NOTE: this document uses the label 'D5' for TWO different decisions — this ownership ruling (§1) and the harmonic-scope component decision (§7, entered as D-408) — which is a collision in the document's own local labelling, not in this register. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue.",
+      "patterns": [
+        "D5 dependency map",
+        "only coupling is the consistency",
+        "one way \\(catalog"
+      ],
+      "rationale": "One owner per concern (guiding principle #6), applied to a case where two components could each plausibly have held the knowledge. The one-way consistency test is what keeps the split honest, and it has already earned itself: running it at the consumer build on 2026-07-02 found 6 entries using 11 root motions the grammar did not license, all of them musically correct — so they were ruled grammar gaps rather than catalog errors, and the amendment closing them was ratified 2026-07-03."
+    },
+    {
+      "id": "D-407",
+      "group": "M",
+      "title": "The vocabulary supplies ranked candidates and DECIDES nothing — the threshold, the style weighting and what to do with a candidate are the consumer's",
+      "verbatim": "- **Decide anything.** The matching threshold, the style weighting, and the choice of what to do with a candidate are the\n  **consumer's**; the component only supplies ranked candidates.",
+      "plain": "The catalog answers questions and hands back a ranked list. How good a match has to be before it counts, how much weight a style carries, and what is done with the answer are all decided by whatever is asking, never by the catalog.",
+      "home": "cowork_progression_schema_dictionary.md:53-54",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "`cowork_progression_schema_dictionary.md`:52-54 (§2, what it does not do), with the firewall line at :244-246 (§6). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue.",
+      "patterns": [
+        "only supplies ranked candidates",
+        "the firewall line"
+      ],
+      "rationale": "Stated in the document as the firewall line (§6): the component holds structural content and returns ranked structural matches, while the weighting, the threshold and the decision are precision-phase work at the consumer. Adding or correcting an entry is a content change here; tuning how strongly an entry fires is a change there. This keeps the catalog free of fitted values, so it can be shared by an analysis consumer and a future composition consumer that would weight it differently."
+    },
+    {
+      "id": "D-408",
+      "group": "M",
+      "title": "Voice-leading is a DIFFERENT DIMENSION and is not held in the harmonic vocabulary — a schema defined by its voice-leading is present only by its harmonic pattern",
+      "verbatim": "- **Hold voice-leading.** It is the **harmonic** vocabulary — chords and functions. Voice-leading (the motion of\n  individual voices — for example the melodic lines that, together with the harmony, complete a galant schema) is a\n  **different dimension**, held elsewhere (a future voice-leading layer, or a separate voice-leading vocabulary). A schema\n  conventionally defined by voice-leading is present here **only by its harmonic pattern**; its voice-leading is held\n  elsewhere and combined when the complete schema is recognised.",
+      "plain": "This catalog holds chords and functions. How individual voices move is a separate dimension kept elsewhere. Patterns that musicians define partly by their melodic lines — the galant schemata among them — appear here by their chord pattern alone, and are only fully recognised when the voice-leading side is brought in from where it lives.",
+      "home": "cowork_progression_schema_dictionary.md:55-59",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status": "live",
+      "date": "2026-06-29",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "`cowork_progression_schema_dictionary.md`:55-59 (§2), restated as component decision D5 at :261-263 (§7) with its rejected alternative, and carried as a risk at :279-280 (§9). Consistent with `ARCHITECTURE.md` §7, which states the same exclusion. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue.",
+      "patterns": [
+        "Hold voice-leading",
+        "only by its harmonic pattern"
+      ],
+      "rationale": "Recorded as component decision D5 with its rejected alternative: holding voice-leading here was considered and refused because it is a different dimension with its own future layer. The consequence is carried as a stated risk (§9) rather than hidden — a consumer must not read a galant entry as full schema recognition."
+    },
+    {
+      "id": "D-409",
+      "group": "M",
+      "title": "There is no binary match or no-match — only a score on a ranked list, and the list may be EMPTY",
+      "verbatim": "consumer applies its own style weighting and its own threshold; there is no binary match/no-match, only the score (as the\ninference layers carry ranked alternatives with confidence). **The list may be empty** — for *recognise* (nothing\nmatches), for *suggest follow/precede* (no progression fits), and for *suggest replace* (no substitution applies) — and a\nconsumer must handle an empty result, never assuming a non-empty one.",
+      "plain": "A query never comes back with a yes or a no. It comes back with a ranked list of candidates, each carrying a number saying how well it fits, and the list is sometimes empty. Anything asking must cope with an empty answer and must never assume there is one.",
+      "home": "cowork_progression_schema_dictionary.md:121-124",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "`cowork_progression_schema_dictionary.md`:114-124 (§4). Beside D-027, the cross-cutting contract that every layer emits ranked candidates plus a confidence rather than a forced point estimate. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue.",
+      "patterns": [
+        "no binary match/no-match",
+        "must handle an empty result"
+      ],
+      "rationale": "Stated with the rule: this is the same shape the inference layers use, which carry ranked alternatives with a confidence rather than a forced single answer (the cross-cutting contract, D-027). Requiring the consumer to handle an empty list is what stops a recogniser from inventing a match to have something to return."
+    },
+    {
+      "id": "D-410",
+      "group": "M",
+      "title": "The first version matches EXACTLY AND WHOLE; the partial matcher is deferred with its decision structure already fixed and only its constants left open",
+      "verbatim": "  substitution), and the returned entry then carries that mapping for the substituted member. **As built (v1) the\n  realisation is exact and whole** — every member matched, full length, no partial spans; the declared Stage-5\n  **partial matcher** relaxes this by crediting matched members with penalties for gaps and substitutions (that\n  decision structure — credit per matched member, order preserved, length credited, substituted members admitted at a\n  penalty — is fixed here; its constants are the consumer's precision-phase weights).",
+      "plain": "As built, a pattern is recognised only when every one of its members is present, in order, at full length. The looser matcher that credits partial matches is planned, and its shape is already decided — credit for each matched member, order preserved, length counted, members reached through a substitution admitted at a cost. What is not decided is the size of those costs, which are fitted later at whatever is asking.",
+      "home": "cowork_progression_schema_dictionary.md:102-106",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status": "deferred",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "`cowork_progression_schema_dictionary.md`:96-106 (§4 recognise) and :114-118 (the match score under the partial matcher). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue.",
+      "patterns": [
+        "realisation is exact and whole",
+        "partial matcher"
+      ],
+      "rationale": "The split follows the project's firewall between structure and fitted values: the decision structure is settled now, in the specification, so the later fitting event chooses numbers rather than a design. The as-built exactness is verified at the recogniser rather than asserted — the document records that no intermediate score can arise in the first version because no partial match can."
+    },
+    {
+      "id": "D-411",
+      "group": "M",
+      "title": "The Axis loop is ONE entry in one canonical rotation — its other rotations become rotation-tolerant matching on that entry, never three more entries",
+      "verbatim": "  variant `1̂–♭7̂–♭6̂–5̂`); Andalusian cadence `i–bVII–bVI–V`; doo-wop `I–vi–IV–V`; Axis `I–V–vi–IV` — **rotation rule (as built, verified at the catalog):** ONE entry, encoded in the canonical\n  rotation `I–V–vi–IV` only; the v1 exact matcher therefore recognises only that order, and admitting the other three\n  rotations (as rotation-tolerant matching on this one entry, never as three more entries) is a declared decision for\n  the Stage-5 partial matcher;",
+      "plain": "The four-chord pop loop that can start on any of its four chords is stored once, in one chosen order. The first version therefore recognises only that order. Recognising the other three starting points is a planned change to how matching works on that single entry, and explicitly not a decision to store the loop four times.",
+      "home": "cowork_progression_schema_dictionary.md:185-188",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status": "deferred",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "`cowork_progression_schema_dictionary.md`:185-188 (§5.2, the bass-line and pop loops). Same class as the circle-of-fifths entry-point rule (D-412): both fix what a realisation of one entry is allowed to look like. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue.",
+      "patterns": [
+        "rotation rule \\(as built",
+        "never as three more entries"
+      ],
+      "rationale": "The reason is in the rule itself: storing a rotation as a separate entry would make one convention into four records, which is the duplication the catalog's one-entry-per-convention organisation exists to avoid (§6, one encyclopedia, not per-style silos). Recorded as verified at the catalog rather than assumed."
+    },
+    {
+      "id": "D-412",
+      "group": "M",
+      "title": "The circle-of-fifths entry is the FULL cycle, and a realisation may enter at any member and run contiguously to the final tonic",
+      "verbatim": "- **Sequences** `[common-practice + jazz]` — circle-of-fifths (the full cycle `I–IV–viio–iii–vi–ii–V–I`; the common\n  tail is its last members, `iii–vi–ii–V–I` — **entry-point rule:** the skeleton is the full cycle and a realisation\n  may enter at any member, running contiguously to the final `I`); descending-thirds (`I–vi–IV–ii`, extendable by",
+      "plain": "The circle-of-fifths sequence is stored once as the whole cycle rather than as the several shorter tails musicians commonly write. A passage counts as realising it if it joins the cycle at any point and then runs without a break to the closing tonic.",
+      "home": "cowork_progression_schema_dictionary.md:179-181",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "`cowork_progression_schema_dictionary.md`:179-181 (§5.2, sequences). The descending-thirds entry beside it carries the same kind of rule, stated as a continuation rule rather than an ellipsis. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue.",
+      "patterns": [
+        "entry-point rule",
+        "may enter at any member"
+      ],
+      "rationale": "The same organisation reason as the rotation rule: the common short tail is a way of entering the one pattern, not a second pattern, so it is expressed as a matching rule on one entry rather than as extra records. The document states the rule where the entry is defined, so a reader cannot meet the entry without meeting what counts as realising it."
+    },
+    {
+      "id": "D-413",
+      "group": "M",
+      "title": "Upper-structure and rootless VOICING substitution is outside the harmonic vocabulary — it is a voicing, not a function",
+      "verbatim": "- **Upper-structure / voicing substitution** `[jazz]` — a *voicing* device (rootless, upper-structure triads, sus); it is\n  a voicing, not a function, so it is **outside this component** (noted only so it is not mistaken for a function-level\n  substitution).",
+      "plain": "Jazz devices that change how a chord is spread across the instrument, rather than which function it fills, are not substitutions in this catalog's sense and are deliberately not held here. The exclusion is written down only so that nobody mistakes them for function-level substitutions.",
+      "home": "cowork_progression_schema_dictionary.md:220-222",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status": "live",
+      "date": "2026-06-29",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "`cowork_progression_schema_dictionary.md`:220-222 (§5.3, the substitution operations). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue.",
+      "patterns": [
+        "Upper-structure / voicing substitution",
+        "a voicing, not a function"
+      ],
+      "rationale": "Follows from the component's stated scope: the catalog holds functions and the operations that replace one function with another, and a voicing device changes neither. The record notes the exclusion is stated defensively rather than because anything asked for it."
+    },
+    {
+      "id": "D-414",
+      "group": "M",
+      "title": "The catalog is GENERATIVE where it can be and enumerated only where it must be",
+      "verbatim": "- **D3 — Generative where possible, enumerated where necessary.** The secondary/substitute apparatus is parameterised by\n  target degree; only the named recurring patterns are enumerated. *Rejected:* a fully enumerated flat list (combinatorial,\n  and it hides the systematic structure).",
+      "plain": "The systematic part of harmony — the applied and substitute chords that exist for every degree of the scale — is stored once as a pattern with the degree left open, and produced on demand. Only the patterns that have individual names and cannot be generated are written out one by one.",
+      "home": "cowork_progression_schema_dictionary.md:255-257",
+      "home_is_layer_spec": false,
+      "nonspec_kind": "gap",
+      "status": "live",
+      "date": "2026-06-29",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "`cowork_progression_schema_dictionary.md`:255-257 (§7, component decision D3), with the organisation it produces at :136-139 (§5) and the generative spine at :141-166 (§5.1). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue.",
+      "patterns": [
+        "Generative where possible",
+        "generative where it can be"
+      ],
+      "rationale": "Recorded as component decision D3 with its rejected alternative: a fully enumerated flat list was refused as combinatorial and because it hides the systematic structure that makes the applied and substitute apparatus one idea rather than dozens."
     }
   ]
 }

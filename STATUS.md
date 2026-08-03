@@ -5,6 +5,32 @@
 > Historical entries live in `STATUS_ARCHIVE.md` (reference-only, NOT part of the session-start
 > read) — a superseded entry moves there instead of accumulating here.
 
+*Last updated: 2026-08-03, LATEST++++++++++ (CC — **★ PHASE 1j: THE OI-272 HOMING HALF IS DELIVERED AND THAT ROW CLOSES; THE TRANSITIVE-AUTHORITY RULE IS APPLIED AND
+DECIDES ONE DOCUMENT OF NINE; ONE MORE LIVE-SPEC DOCUMENT IS READ IN FULL. The register is 405 → 414; the unresolved residual 2,679 → 2,674; one row opened; 16
+decisions homed off tracking surfaces; 8 re-classified contract-home.** READ-ONLY on the system: no `src/` change, no golden / `tools/corpus/` / `tools/robust_stop/`
+movement, no behavior change, no fix, no design, no inference change, **no document's status banner edited**, **no ratification** — the nine new decisions enter with
+the record's own status and go to the user in the report's RATIFICATION QUEUE. Dispatch `cc_instruction_phase1j_homing_and_reads.md`. Per the OI-222 remedy this entry
+is a **POINTER** — the content lives in the specifications themselves, the register and the dated notes. **Read, in this order:** [[OI-272]]'s note (**the row FLIPS**
+— the sixteen owed homing acts, each with where it now lives; the two judgments stated rather than absorbed: D-292 got a homed restatement because the census fails
+the contract-home criteria, and the homed text carries [[OI-271]]'s licence question as still OPEN rather than converting it into a specification statement; D-311 was
+home-moved with NO text written because the rule already stands verbatim in the user-ratified arc plan); then [[OI-268]]'s note (**the transitive-authority
+verification: ONE document of nine passes** — `cowork_layer5_engagement_design.md`, whose authority runs through `cowork_engage_arc_plan.md`'s three by-name
+delegations, so D-380…D-387 are contract-home and the missing `ARCHITECTURE.md` pointer is written; `docs/decoder_design.md` and `cowork_score_census.md` FAIL with
+their evidence cited, and `cowork_structural_integrity_audit.md` fails on the second half of the criterion though its transitive ratification is genuine — excluded on
+exactly the ground phase 1i used for the arc plan itself, which is what keeps the criterion from softening; **one correction of record: the Cowork-ratification
+question decides TWENTY-ONE entries, not the eight the phase-1i note said**); then **[[OI-279]], the one new row**; then [[OI-207]]'s note. **★ THE ONE THING THE USER
+SHOULD SEE FIRST — [[OI-279]]:** `ARCHITECTURE.md` §6.7 presents the hand-made GENRE style taxonomy as canonical and calls it "a theory-based v1", while
+`cowork_progression_schema_dictionary.md:317-330` records the **five-idiom set as RATIFIED 2026-06-30 and ENCODED**, explicitly superseding it — the superseded list
+printed there being word for word the one §6.7 still shows — and §6.7 cites that very document as its authority. **Register entries D-131 and D-132 quote the stale
+text as their verbatim**, so the register currently records a retired taxonomy as the standing decision. It is the [[OI-232]]/[[OI-274]]/[[OI-276]] class in the
+CANONICAL document, which **D-091** makes the winner of every disagreement — and correcting it is a change to what a ratified decision says, not a homing, so it was
+rowed and NOT executed. **Two commits:** `88fd87e9d1` the homing + the transitive re-classification → the nine entries, the row, the notes and this pointer. All guards
+PASS (`--verify` 414/414 quotes, 408/408 anchors — **182 re-aimed one by one from the drift report's own line numbers, never by an assumed shift** — references ALL;
+`--check` 21/21 files; dispositions 14,460/14,460 clusters, 15,224/15,224 occurrences; open-items living check 279/279). **NEXT: the user ratifies (or corrects)
+D-406…D-414; rules on [[OI-279]]; and answers the FOUR STATUS-BANNER PROPOSALS in the report's ASK section (`docs/redesign_plan.md`, `docs/scoring_model.md`,
+`docs/iteration_path1_summary.md`, `cowork_architecture_reassessment.md`) — which between them decide 14 entries' home class. Then the remaining 64-document full read
+before phase 2 opens.**)*
+
 *Last updated: 2026-08-02, LATEST+++++++++ (CC — **★ PHASE 1i: THE DELIVERY ACTS. The user's rulings on [[OI-268]], [[OI-272]] and [[OI-275]] are EXECUTED on the
 data; the probe findings are ROWED; one more LIVE-SPEC document is read in full. The register is 400 → 405; the unresolved residual 2,681 → 2,679; two rows
 opened; 75 entries LEGACY-marked; 63 contract-homed; six pointer lines written into `ARCHITECTURE.md`.** READ-ONLY on the system: no `src/` change, no golden /

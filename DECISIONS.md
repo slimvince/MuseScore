@@ -134,26 +134,26 @@ project's own and are defined here because they are used before any entry explai
 
 ## What is in this register, counted
 
-**405 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
+**414 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
 
 | | Count |
 |---|---|
-| Decisions recorded | **405** |
-| — of which live | 347 |
+| Decisions recorded | **414** |
+| — of which live | 354 |
 | — of which superseded in fact | 5 |
 | — of which superseded by | 9 |
-| — of which deferred | 42 |
+| — of which deferred | 44 |
 | — of which shelved with evidence | 2 |
-| Decisions whose date is not stated in the record | 198 |
-| Decisions whose ratifier is not stated in the record | 246 |
-| Decisions recorded outside the specification that owns them | 204 |
-| — of which a documentation gap | 47 |
+| Decisions whose date is not stated in the record | 203 |
+| Decisions whose ratifier is not stated in the record | 254 |
+| Decisions recorded outside the specification that owns them | 213 |
+| — of which a documentation gap | 56 |
 | — of which recorded only on a tracking surface, with no home at all | 11 |
 | — of which a project-wide convention, correctly homed | 35 |
 | — of which a decision about the process, correctly homed | 40 |
 | Decisions whose defense the record does not state | 44 |
 
-That last row is the one meant to fall. **361 of 405** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
+That last row is the one meant to fall. **370 of 414** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
 
 Alongside the register, every one of the harvested statements about decisions in this repository has been given a recorded disposition, so that none was silently passed over:
 
@@ -162,11 +162,11 @@ Alongside the register, every one of the harvested statements about decisions in
 | Harvested statements | **15224** |
 | Groups of near-identical statements ("clusters") | **14460** |
 | Clusters carrying a recorded disposition | **14460** |
-| — restates | 5511 |
-| — not-a-decision | 5554 |
+| — restates | 5514 |
+| — not-a-decision | 5553 |
 | — boilerplate | 74 |
-| — no-spec-home | 642 |
-| — unresolved | 2679 |
+| — no-spec-home | 645 |
+| — unresolved | 2674 |
 
 The full disposition table, and the numbered rule behind each one, are in `tools/audit/decisions/cluster_dispositions.csv` and `tools/audit/decisions/disposition_manifest.json`.
 
@@ -529,6 +529,15 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-131 | One shared style taxonomy, not two parallel vocabularies | LIVE | `ARCHITECTURE.md` |
 | D-132 | The style taxonomy is a theory-based first version; grounding it empirically is committed work | DEFERRED | `ARCHITECTURE.md` |
 | D-133 | The harmonic vocabulary is a queried reference component, not a layer of the analysis | LIVE | `ARCHITECTURE.md` |
+| D-406 | The catalog owns the NAMED progressions and substitutions; the pairwise licensing grammar is owned by the function layer — the two are never derived from each other | LIVE | `cowork_progression_schema_dictionary.md` ⚠gap |
+| D-407 | The vocabulary supplies ranked candidates and DECIDES nothing — the threshold, the style weighting and what to do with a candidate are the consumer's | LIVE | `cowork_progression_schema_dictionary.md` ⚠gap |
+| D-408 | Voice-leading is a DIFFERENT DIMENSION and is not held in the harmonic vocabulary — a schema defined by its voice-leading is present only by its harmonic pattern | LIVE | `cowork_progression_schema_dictionary.md` ⚠gap |
+| D-409 | There is no binary match or no-match — only a score on a ranked list, and the list may be EMPTY | LIVE | `cowork_progression_schema_dictionary.md` ⚠gap |
+| D-410 | The first version matches EXACTLY AND WHOLE; the partial matcher is deferred with its decision structure already fixed and only its constants left open | DEFERRED | `cowork_progression_schema_dictionary.md` ⚠gap |
+| D-411 | The Axis loop is ONE entry in one canonical rotation — its other rotations become rotation-tolerant matching on that entry, never three more entries | DEFERRED | `cowork_progression_schema_dictionary.md` ⚠gap |
+| D-412 | The circle-of-fifths entry is the FULL cycle, and a realisation may enter at any member and run contiguously to the final tonic | LIVE | `cowork_progression_schema_dictionary.md` ⚠gap |
+| D-413 | Upper-structure and rootless VOICING substitution is outside the harmonic vocabulary — it is a voicing, not a function | LIVE | `cowork_progression_schema_dictionary.md` ⚠gap |
+| D-414 | The catalog is GENERATIVE where it can be and enumerated only where it must be | LIVE | `cowork_progression_schema_dictionary.md` ⚠gap |
 
 ## N. Generation, constraints, visualization, and the LLM integration — [full entries](decisions/group_N.md)
 
@@ -690,8 +699,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 ## Provenance of this register
 
 - Adjudication: the OI-207 decision-conformance adjudication, 2026-08-01, at commit `58dea6702ac8aa9d5ef8b89244b94d587a75f7a5`.
-- Coverage figures above regenerated at commit `ebda0889f2f6c6076df4a0041008733b8d2296d8`.
-- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `86e94eb2d2f9fcab…`).
+- Coverage figures above regenerated at commit `88fd87e9d16e2eacca38c9dd8ea4c1e4a43d7b27`.
+- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `5e3c48f1aa5c9271…`).
 - Harvest: `tools/audit/decisions/decision_candidates.json` (sha256 `51850440b315e6e9…`).
 - Clustering: `tools/audit/decisions/decision_clusters.json` (sha256 `0615b1e61bf10332…`).
 - Shape: `open_items/OI-208.md` (user-ratified 2026-07-28).
