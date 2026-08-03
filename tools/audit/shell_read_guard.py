@@ -96,7 +96,21 @@ GIT_OBJECT_READ = re.compile(
 # the "fires on legitimate work" failure. `tools/audit/changed_paths.py` is that way, so the raw
 # command now costs nothing. `git log` and `git rev-parse HEAD` stay unblocked: no tool replaces
 # them, and the reasoning that admits `git status` does not reach them.
-GIT_STATUS = re.compile(r"\bgit\s+(?:-C\s+\S+\s+)?status\b")
+#
+# THE TEST IS ON THE SUBCOMMAND'S POSITION, NOT ON THE PHRASE ANYWHERE IN THE COMMAND — the same
+# shape the text-utility test already uses, and not a special case bolted on. A pattern search
+# over the whole command was tried first and produced a FALSE DENY the moment it was armed: a
+# `git commit` whose message QUOTES this very rule was blocked, because the words "git status"
+# appear in the prose. A commit message, a heredoc body and a quoted argument are all text, and
+# the guard must read what is being RUN.
+def git_status_invocation(rest: list[str]) -> bool:
+    """True when the words after `git` are an actual `status` invocation."""
+    j = 0
+    if j < len(rest) and rest[j] == "-C":
+        j += 2
+    while j < len(rest) and rest[j].startswith("-"):
+        j += 1
+    return j < len(rest) and rest[j].strip("'\"") == "status"
 
 # The sanctioned enumeration must never be denied by the guard that makes it necessary.
 ENUMERATION_TOOL = "changed_paths.py"
@@ -154,20 +168,18 @@ def tokenize(segment: str, group_quotes: bool = True) -> list[str]:
 
 def decide(command: str, group_quotes: bool = True) -> tuple[bool, str]:
     """(deny, reason). A command is denied when a text utility names a repository path."""
-    if ENUMERATION_TOOL in command:
-        return False, ("runs the sanctioned changed-path enumeration "
-                       "(`tools/audit/changed_paths.py`)")
     if GIT_OBJECT_READ.search(command):
         # The whole command is a git-object pipeline; a text utility downstream of it is
         # formatting object output, not reading the working tree.
         return False, "reads a git object by explicit hash — the sanctioned exemption"
-    if GIT_STATUS.search(command):
-        return True, ("`git status` is not trusted for what is current — `CLAUDE.md` "
-                      "Conventions, register entry D-253. The sanctioned way to enumerate "
-                      "which paths changed is `python tools/audit/changed_paths.py` "
-                      "(`--staged`, or `--commit <hash>`), which reports paths and status "
-                      "codes and cannot return file content.")
+    exempt = False
     for seg in split_segments(command):
+        # The enumeration exemption is judged PER SEGMENT, never over the whole command: a
+        # whole-command exemption would let `cat CLAUDE.md; python …/changed_paths.py` through
+        # on the strength of its second half.
+        if ENUMERATION_TOOL in seg:
+            exempt = True
+            continue
         tokens = tokenize(seg, group_quotes)
         i = 0
         while i < len(tokens) and ENV_ASSIGN.match(tokens[i]):
@@ -177,6 +189,12 @@ def decide(command: str, group_quotes: bool = True) -> tuple[bool, str]:
         util = os.path.basename(tokens[i].strip("'\"")).lower()
         if util.endswith(".exe"):
             util = util[:-4]
+        if util == "git" and git_status_invocation(tokens[i + 1:]):
+            return True, ("`git status` is not trusted for what is current — `CLAUDE.md` "
+                          "Conventions, register entry D-253. The sanctioned way to enumerate "
+                          "which paths changed is `python tools/audit/changed_paths.py` "
+                          "(`--staged`, or `--commit <hash>`), which reports paths and status "
+                          "codes and cannot return file content.")
         if util not in TEXT_UTILITIES:
             continue
         targets = [t for t in tokens[i + 1:] if not OPTION.match(t)]
@@ -190,6 +208,9 @@ def decide(command: str, group_quotes: bool = True) -> tuple[bool, str]:
                           "counts and searches go through the file tools (Read / Grep / Glob) — "
                           "`CLAUDE.md` Conventions, register entry D-253. Shell reads are for "
                           "read-only git OBJECT queries by explicit hash.")
+    if exempt:
+        return False, ("runs the sanctioned changed-path enumeration "
+                       "(`tools/audit/changed_paths.py`), and no other segment is denied")
     return False, "no text utility is aimed at a repository path"
 
 
@@ -217,6 +238,12 @@ SANCTIONED = [
     # The sanctioned enumeration, which the guard must never deny.
     "python tools/audit/changed_paths.py --staged",
     "python tools/audit/changed_paths.py --commit 32d9b47933",
+    # A SECOND MEASURED FALSE DENY, live, in the same wave that added the `git status` rule: a
+    # commit whose message QUOTES the rule was blocked, because a pattern search over the whole
+    # command cannot tell prose from an invocation. Fixed by testing the subcommand's POSITION.
+    "git commit -q -m 'the `git status` denial is now affordable'",
+    "git commit -q -F -",
+    "echo 'denying `git status` costs nothing now' > /tmp/note.txt",
 ]
 
 # FORBIDDEN: the forms `CLAUDE.md` itself names as the rule's target.
@@ -238,6 +265,10 @@ FORBIDDEN = [
     # A quoted pattern aimed at a REPOSITORY path: the tokenizer fix must not turn the false
     # deny it removes into a false NEGATIVE here.
     "grep -n \"Full spec:\" ARCHITECTURE.md > /tmp/spec.txt",
+    # The BYPASS the enumeration exemption would open if it were judged over the whole command
+    # instead of per segment. Found by re-reading the diff before committing, not by a report.
+    "cat CLAUDE.md; python tools/audit/changed_paths.py --staged",
+    "python tools/audit/changed_paths.py --staged && head -50 ARCHITECTURE.md",
 ]
 
 

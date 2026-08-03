@@ -7,7 +7,7 @@
     "disableAllHooks and managed allowManagedHooksOnly switch it off. A guard, not a boundary."
   ],
   "sanctioned": {
-    "total": 15,
+    "total": 18,
     "false_denies": 0,
     "false_deny_rate": 0.0,
     "rows": [
@@ -79,18 +79,33 @@
       {
         "command": "python tools/audit/changed_paths.py --staged",
         "denied": false,
-        "reason": "runs the sanctioned changed-path enumeration (`tools/audit/changed_paths.py`)"
+        "reason": "runs the sanctioned changed-path enumeration (`tools/audit/changed_paths.py`), and no other segment is denied"
       },
       {
         "command": "python tools/audit/changed_paths.py --commit 32d9b47933",
         "denied": false,
-        "reason": "runs the sanctioned changed-path enumeration (`tools/audit/changed_paths.py`)"
+        "reason": "runs the sanctioned changed-path enumeration (`tools/audit/changed_paths.py`), and no other segment is denied"
+      },
+      {
+        "command": "git commit -q -m 'the `git status` denial is now affordable'",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "git commit -q -F -",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "echo 'denying `git status` costs nothing now' > /tmp/note.txt",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
       }
     ]
   },
   "forbidden": {
-    "total": 12,
-    "denied": 12,
+    "total": 14,
+    "denied": 14,
     "deny_rate": 1.0,
     "rows": [
       {
@@ -152,6 +167,16 @@
         "command": "grep -n \"Full spec:\" ARCHITECTURE.md > /tmp/spec.txt",
         "denied": true,
         "reason": "`grep` is aimed at a path inside this repository (ARCHITECTURE.md, >). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "cat CLAUDE.md; python tools/audit/changed_paths.py --staged",
+        "denied": true,
+        "reason": "`cat` is aimed at a path inside this repository (CLAUDE.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "python tools/audit/changed_paths.py --staged && head -50 ARCHITECTURE.md",
+        "denied": true,
+        "reason": "`head` is aimed at a path inside this repository (ARCHITECTURE.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
       }
     ]
   },
@@ -167,12 +192,12 @@
       "false_denies_on_the_sanctioned_set": {
         "with_the_fix": 0,
         "without_it": 1,
-        "of": 15
+        "of": 18
       },
       "detection_on_the_forbidden_set": {
-        "with_the_fix": 12,
-        "without_it": 12,
-        "of": 12
+        "with_the_fix": 14,
+        "without_it": 14,
+        "of": 14
       },
       "the_revert_condition": "The dispatch says: if the fix raises false denies elsewhere, revert and report. Compare the two figures above — a rise is the condition, and it is published either way rather than inferred."
     }
