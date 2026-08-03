@@ -82,9 +82,9 @@
     ]
   },
   "control": {
-    "total": 8,
-    "flagged": 0,
-    "false_positive_rate": 0.0,
+    "total": 9,
+    "flagged": 1,
+    "false_positive_rate": 0.111,
     "rows": [
       {
         "text": "The counts are at `tools/audit/decisions/phase1p_delegation_bar.json` → `pre_apply_check`.",
@@ -125,6 +125,73 @@
         "text": "The dispatch was written before the check existed, so it is itself unchecked by it.",
         "flagged": false,
         "rules_fired": []
+      },
+      {
+        "text": "The insertions here are at three different depths in two files, so no single offset is correct anywhere.",
+        "flagged": true,
+        "rules_fired": [
+          "D-431 bare quantity"
+        ]
+      }
+    ]
+  },
+  "word_form_extension_2026_08_03": {
+    "what_changed": "The bare-quantity rule now reads numbers written as WORDS as well as digits, from the SAME unit list (one home, #6) and under the SAME exclusion: a spelled-out number with no recognized unit is ordinary prose, exactly as a small integer with no unit is.",
+    "why_it_is_maintenance_and_not_tuning": "It closes a CLASS — every word form of a rule already in force — rather than a specimen. D-436 keeps a mechanism on measured detection and a false-positive rate at or near zero, so both are re-measured here and published either way.",
+    "the_dispatch_premise_is_REFUTED": "The phase-1r dispatch ordered this change on the ground that `four local patches` was missed BECAUSE it was spelled out. It was not: the digit form `4 edits` is missed too, because `edits` is not in the unit list and a small integer with no unit is excluded by construction. See the probe row whose `should_flag` is false and whose `why` says so. The noun was NOT added to the unit list — that would be tuning to the named specimen, which `what_this_measures` below forbids — so the specimen remains a stated blind spot.",
+    "detection_over_the_recorded_instances": {
+      "with_the_word_rule": 5,
+      "without_it": 5,
+      "of": 8
+    },
+    "false_positives_on_the_control_set": {
+      "with_the_word_rule": 1,
+      "without_it": 0,
+      "of": 9
+    },
+    "the_false_positive_this_change_costs": "ONE, and it is published rather than designed around. The phase-1r dispatch's own §3 sentence — 'the insertions here are at three different depths in two files' — is flagged, because `files` is in the shared unit list. It was added to the control set when the check found it, so the rate above shows the rise. JUDGMENT, recorded as one: it is KEPT. The false positive is not a class the word rule introduces — the DIGIT form `in 2 files` is flagged identically by the rule already in force, so reverting the word rule would not remove the false positive, only make the check disagree with itself about how a number is spelled. The condition the dispatch set for reverting is a MATERIAL rise; one instance, whose cause pre-dates the change, is reported as not material and is left for the user to overrule.",
+    "probe": [
+      {
+        "text": "Twelve documents yielded zero.",
+        "should_flag": true,
+        "why": "A measured count with a recognized unit, written as a word. The digit form `12 documents` is flagged; nothing but the spelling differs.",
+        "flagged": true,
+        "flagged_without_the_word_rule": false
+      },
+      {
+        "text": "The pass moved twenty-seven entries.",
+        "should_flag": true,
+        "why": "Same class, compound word form.",
+        "flagged": true,
+        "flagged_without_the_word_rule": false
+      },
+      {
+        "text": "One fix is designed once over the whole enumerated family, never per symptom.",
+        "should_flag": false,
+        "why": "`CLAUDE.md`'s own rule heading. A word number with no unit is ordinary prose.",
+        "flagged": false,
+        "flagged_without_the_word_rule": false
+      },
+      {
+        "text": "Three phases, strictly ordered.",
+        "should_flag": false,
+        "why": "`CLAUDE.md`'s own text. No unit, so not a quantity — as `3` with no unit is not.",
+        "flagged": false,
+        "flagged_without_the_word_rule": false
+      },
+      {
+        "text": "There are exactly two admissible confidence classes.",
+        "should_flag": false,
+        "why": "A rule, not a measurement; `classes` is not a unit.",
+        "flagged": false,
+        "flagged_without_the_word_rule": false
+      },
+      {
+        "text": "`CLAUDE.md` carries four edits to code this project does not own.",
+        "should_flag": false,
+        "why": "THE SPECIMEN THE DISPATCH NAMED, and the word rule does NOT catch it — `edits` is not in the unit list, so the DIGIT form is missed too. Recorded as a not-detected probe rather than closed by adding the noun, which would be tuning to the specimen.",
+        "flagged": false,
+        "flagged_without_the_word_rule": false
       }
     ]
   },

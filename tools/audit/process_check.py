@@ -65,18 +65,48 @@ CITES = [CITE_ARTIFACT, CITE_LINE, CITE_BARE_LINE, CITE_ROW, CITE_SECTION, CITE_
 # percentage, a ratio "N of M", a signed change.  Ordinary prose numbers ("one", "the three
 # surfaces", a date, a principle number "#17", a section "§8c", a line ":193") are not
 # quantities in this sense and are excluded by construction below.
+#
+# THE UNIT LIST HAS ONE HOME (#6). Both the digit rule and the word rule below are built from
+# it, so a unit added for one is a unit for the other and the two cannot drift apart.
+UNIT = r"(%|pp\b|ticks\b|entries\b|entry\b|clusters\b|rows\b|documents\b|files\b|of\s+\d+)"
+
 QUANTITY = re.compile(
     r"(?<![\w.#§:$-])"                       # not part of an identifier, a #ref, a §, a :line
     r"(\d{1,3}(?:[,   ]\d{3})+|\d+(?:\.\d+)?)"
     r""  # the class above holds four thousands separators this repository's prose uses:
     r""  # comma, narrow no-break space, no-break space, plain space. Superseded form follows: [,  , ]\d{3})+|\d+(?:\.\d+)?)"
-    r"\s*(%|pp\b|ticks\b|entries\b|entry\b|clusters\b|rows\b|documents\b|files\b|of\s+\d+)?"
+    r"\s*" + UNIT + r"?"
 )
 # Numbers that are never a measured quantity in this project's prose.
 NOT_A_QUANTITY = re.compile(
     r"^(?:19|20)\d{2}$"                      # a year
     r"|^\d{1,2}$"                            # small ordinals: "the 3 surfaces", "#5", "step 2"
 )
+
+# ── the same rule, for numbers written as words (added 2026-08-03, phase 1r) ──
+# WHAT THIS CLOSES, and what it deliberately does not.  A count written `12 documents` is read
+# by the digit rule; written `twelve documents` it was invisible, and nothing but the spelling
+# differed.  That is a CLASS — the word forms of the rule already in force — so the word rule is
+# built from the SAME unit list and carries the SAME exclusion: a spelled-out number with no
+# recognized unit is ordinary prose ("one path per concern", "the three surfaces") and is not a
+# quantity, exactly as `4` with no unit is not.
+#
+# WHAT IT IS NOT, stated because the reason it was asked for turns out to be wrong.  The
+# phase-1r dispatch named `four local patches` as the specimen and gave SPELLING as the reason
+# it was missed.  Measured, that diagnosis is refuted and the establishment artifact records it:
+# the digit form `4 edits` is missed too, because the noun is not in the unit list and a small
+# integer with no unit is excluded by construction.  Adding that noun would be tuning to the
+# specimen, which this check's own establishment note forbids — so it is NOT added, and that
+# miss stands as a stated blind spot rather than being closed by a special case.
+NUMBER_WORD = (
+    r"(?:twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)[- ]"
+    r"(?:one|two|three|four|five|six|seven|eight|nine)"
+    r"|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety"
+    r"|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen"
+    r"|one|two|three|four|five|six|seven|eight|nine"
+)
+WORD_QUANTITY = re.compile(
+    r"(?<![\w-])(" + NUMBER_WORD + r")\s+" + UNIT, re.I)
 
 # ── what counts as a claim about the code ────────────────────────────────────
 # A sentence asserting runtime or structural fact about our own code.  The vocabulary is drawn
@@ -133,8 +163,12 @@ def has_citation(s: str) -> bool:
     return any(rx.search(s) for rx in CITES)
 
 
-def bare_quantities(s: str) -> list[str]:
+def bare_quantities(s: str, words: bool = True) -> list[str]:
     found = []
+    if words:
+        # A spelled-out number is a quantity only WITH a unit — the word analogue of the
+        # small-ordinal exclusion below, and the whole of what the word rule adds.
+        found += [m.group(0).strip() for m in WORD_QUANTITY.finditer(s)]
     for m in QUANTITY.finditer(s):
         val, unit = m.group(1), m.group(2)
         # A unit OVERRIDES the small-number exclusion. Without this the exclusion swallows the
@@ -148,10 +182,10 @@ def bare_quantities(s: str) -> list[str]:
     return found
 
 
-def check_text(text: str, name: str) -> list[dict]:
+def check_text(text: str, name: str, words: bool = True) -> list[dict]:
     findings: list[dict] = []
     for line, s, is_heading in sentences(text):
-        qs = [] if is_heading else bare_quantities(s)
+        qs = [] if is_heading else bare_quantities(s, words=words)
         if qs and not has_citation(s):
             findings.append({"file": name, "line": line, "rule": "D-431 bare quantity",
                              "detail": ", ".join(qs[:4]), "sentence": s[:200]})
@@ -207,24 +241,68 @@ CONTROL = [
     "The user ruled this on 2026-08-03 and it is register entry D-430.",
     "Three surfaces were searched; each mention was then read in place.",
     "The dispatch was written before the check existed, so it is itself unchecked by it.",
+    # ADDED 2026-08-03 (phase 1r), and it is a MEASURED FALSE POSITIVE, not a passing row.
+    # The phase-1r dispatch's own §3 says this; it is an instruction about where edits landed,
+    # not an assertion of a measured amount, and the check flags it because `files` is in the
+    # unit list. It is recorded here rather than left out, because a control set chosen to make
+    # a check look clean measures nothing (#19) — the same reason the row below was removed.
+    "The insertions here are at three different depths in two files, so no single offset is "
+    "correct anywhere.",
+]
+
+
+def _run(text: str, name: str, words: bool = True) -> list[dict]:
+    f = check_text(text + "\n\n## Self-check\n", name, words=words)
+    return [x for x in f if x["rule"] != "D-434 missing self-check section"]
+
+
+# The word-form change is maintenance on a KEPT mechanism (D-436), so it is re-established
+# rather than asserted: the same two sets are run with the word rule OFF and ON, and BOTH
+# figures are published. A rise in the false-positive rate is the condition the phase-1r
+# dispatch names for reverting it, so it must be visible and not inferred.
+WORD_PROBE = [
+    {"text": "Twelve documents yielded zero.", "should_flag": True,
+     "why": "A measured count with a recognized unit, written as a word. The digit form "
+            "`12 documents` is flagged; nothing but the spelling differs."},
+    {"text": "The pass moved twenty-seven entries.", "should_flag": True,
+     "why": "Same class, compound word form."},
+    {"text": "One fix is designed once over the whole enumerated family, never per symptom.",
+     "should_flag": False,
+     "why": "`CLAUDE.md`'s own rule heading. A word number with no unit is ordinary prose."},
+    {"text": "Three phases, strictly ordered.", "should_flag": False,
+     "why": "`CLAUDE.md`'s own text. No unit, so not a quantity — as `3` with no unit is not."},
+    {"text": "There are exactly two admissible confidence classes.", "should_flag": False,
+     "why": "A rule, not a measurement; `classes` is not a unit."},
+    {"text": "`CLAUDE.md` carries four edits to code this project does not own.",
+     "should_flag": False,
+     "why": "THE SPECIMEN THE DISPATCH NAMED, and the word rule does NOT catch it — `edits` "
+            "is not in the unit list, so the DIGIT form is missed too. Recorded as a "
+            "not-detected probe rather than closed by adding the noun, which would be tuning "
+            "to the specimen."},
 ]
 
 
 def establish() -> dict:
     rows = []
     for inst in KNOWN_INSTANCES:
-        f = check_text(inst["text"] + "\n\n## Self-check\n", "<known-" + inst["id"] + ">")
-        f = [x for x in f if x["rule"] != "D-434 missing self-check section"]
+        f = _run(inst["text"], "<known-" + inst["id"] + ">")
         rows.append({**inst, "detected": bool(f),
                      "rules_fired": sorted({x["rule"] for x in f})})
     fp = []
     for i, s in enumerate(CONTROL):
-        f = check_text(s + "\n\n## Self-check\n", f"<control-{i}>")
-        f = [x for x in f if x["rule"] != "D-434 missing self-check section"]
+        f = _run(s, f"<control-{i}>")
         fp.append({"text": s, "flagged": bool(f),
                    "rules_fired": sorted({x["rule"] for x in f})})
     detected = sum(1 for r in rows if r["detected"])
     flagged = sum(1 for r in fp if r["flagged"])
+
+    # the same two sets, with the word rule off — the before/after the dispatch requires
+    off_known = sum(1 for i in KNOWN_INSTANCES if _run(i["text"], "<k>", words=False))
+    off_ctrl = sum(1 for s in CONTROL if _run(s, "<c>", words=False))
+    probe = [{**p,
+              "flagged": bool(_run(p["text"], "<probe>")),
+              "flagged_without_the_word_rule": bool(_run(p["text"], "<probe>", words=False))}
+             for p in WORD_PROBE]
     return {
         "purpose": "Establishment (#19) of tools/audit/process_check.py: its detection power "
                    "against the recorded instances the rule was ruled on, and its "
@@ -239,6 +317,47 @@ def establish() -> dict:
             "total": len(fp), "flagged": flagged,
             "false_positive_rate": round(flagged / len(fp), 3),
             "rows": fp,
+        },
+        "word_form_extension_2026_08_03": {
+            "what_changed": "The bare-quantity rule now reads numbers written as WORDS as well "
+                            "as digits, from the SAME unit list (one home, #6) and under the "
+                            "SAME exclusion: a spelled-out number with no recognized unit is "
+                            "ordinary prose, exactly as a small integer with no unit is.",
+            "why_it_is_maintenance_and_not_tuning": "It closes a CLASS — every word form of a "
+                                                    "rule already in force — rather than a "
+                                                    "specimen. D-436 keeps a mechanism on "
+                                                    "measured detection and a false-positive "
+                                                    "rate at or near zero, so both are "
+                                                    "re-measured here and published either way.",
+            "the_dispatch_premise_is_REFUTED": "The phase-1r dispatch ordered this change on "
+                                               "the ground that `four local patches` was missed "
+                                               "BECAUSE it was spelled out. It was not: the "
+                                               "digit form `4 edits` is missed too, because "
+                                               "`edits` is not in the unit list and a small "
+                                               "integer with no unit is excluded by "
+                                               "construction. See the probe row whose "
+                                               "`should_flag` is false and whose `why` says so. "
+                                               "The noun was NOT added to the unit list — that "
+                                               "would be tuning to the named specimen, which "
+                                               "`what_this_measures` below forbids — so the "
+                                               "specimen remains a stated blind spot.",
+            "detection_over_the_recorded_instances": {
+                "with_the_word_rule": detected, "without_it": off_known, "of": len(rows)},
+            "false_positives_on_the_control_set": {
+                "with_the_word_rule": flagged, "without_it": off_ctrl, "of": len(fp)},
+            "the_false_positive_this_change_costs": "ONE, and it is published rather than "
+                "designed around. The phase-1r dispatch's own §3 sentence — 'the insertions "
+                "here are at three different depths in two files' — is flagged, because `files` "
+                "is in the shared unit list. It was added to the control set when the check "
+                "found it, so the rate above shows the rise. JUDGMENT, recorded as one: it is "
+                "KEPT. The false positive is not a class the word rule introduces — the DIGIT "
+                "form `in 2 files` is flagged identically by the rule already in force, so "
+                "reverting the word rule would not remove the false positive, only make the "
+                "check disagree with itself about how a number is spelled. The condition the "
+                "dispatch set for reverting is a MATERIAL rise; one instance, whose cause "
+                "pre-dates the change, is reported as not material and is left for the user to "
+                "overrule.",
+            "probe": probe,
         },
         "control_reclassified_during_establishment": [
             {"text": "The register is 431 entries at "

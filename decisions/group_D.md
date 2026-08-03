@@ -16,7 +16,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1233`
+**Home.** `ARCHITECTURE.md:1244`
 
 **Provenance.** ARCHITECTURE.md:1162-1173 (Layer 1 - Built+Live)
 
@@ -30,7 +30,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1233`
+**Home.** `ARCHITECTURE.md:1244`
 
 **Provenance.** ARCHITECTURE.md:1173; the behaviour change it caused is the ratified trade-off at :1026-1032
 
@@ -44,7 +44,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1233`
+**Home.** `ARCHITECTURE.md:1244`
 
 **Provenance.** ARCHITECTURE.md:1173; the standing no-information-loss principle is CLAUDE.md #12
 
@@ -58,7 +58,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1233`
+**Home.** `ARCHITECTURE.md:1244`
 
 **Provenance.** ARCHITECTURE.md:1173 records it as 'Purely additive' under the OI-180 dual-path sanction
 

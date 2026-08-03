@@ -18,7 +18,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:75-77`
+**Home.** `ARCHITECTURE.md:82-84`
 
 **Provenance.** ARCHITECTURE.md:73 names 'Decision A2' and cites cowork_notation_output_contract.md §3.1-§3.4
 
@@ -32,7 +32,7 @@
 
 **Status.** LIVE · decided 2026-07-27 · ratified by user
 
-**Home.** `ARCHITECTURE.md:243`
+**Home.** `ARCHITECTURE.md:250`
 
 **Provenance.** ARCHITECTURE.md:239; CLAUDE.md gate block (A) 'STAGED SCOPE - CLOSED AT THE NOTATION SWITCH'; confirmed at composingconfiguration.cpp:178 Val(true)
 
@@ -47,7 +47,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:119-120`
+**Home.** `ARCHITECTURE.md:126-127`
 
 **Provenance.** Recorded as specification, no ratification named. Conflicts with D-030 (bounded context) - see OPEN_ITEMS OI-210 (the extent question) and OI-212 (the whole-score analysis input); the no-caching half is OI-203 (the deferred record cache) and OI-213 (the per-command multiplier)
 
@@ -61,7 +61,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:122`
+**Home.** `ARCHITECTURE.md:129`
 
 **Provenance.** ARCHITECTURE.md:121-122; restated at :205-206 for the note seam
 
@@ -77,7 +77,7 @@
 
 **Status.** LIVE · decided 2026-07-27 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:124-126`
+**Home.** `ARCHITECTURE.md:131-133`
 
 **Provenance.** open_items/OI-204 (RESOLVED 2026-07-27); confirmed at jointnotationproducer.h:72-73
 
@@ -91,7 +91,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:130`
+**Home.** `ARCHITECTURE.md:137`
 
 **Provenance.** ARCHITECTURE.md:130-136; confirmed at jointnotationproducer.h:86-90
 
@@ -106,7 +106,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:133-134`
+**Home.** `ARCHITECTURE.md:140-141`
 
 **Provenance.** ARCHITECTURE.md:132-134. Derivation not recorded: the convention is stated as a definition, with no alternative considered and no reason given
 
@@ -120,7 +120,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:155`
+**Home.** `ARCHITECTURE.md:162`
 
 **Provenance.** ARCHITECTURE.md:154 names 'Decision D2 + the contract §3.3 amendment'
 
@@ -135,7 +135,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:160-161`
+**Home.** `ARCHITECTURE.md:167-168`
 
 **Provenance.** ARCHITECTURE.md:160-167; the guard carries a negative control
 
@@ -149,7 +149,7 @@
 
 **Status.** LIVE · decided 2026-07-27 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:178`
+**Home.** `ARCHITECTURE.md:185`
 
 **Provenance.** ARCHITECTURE.md:172-178; open_items/OI-182 (EXECUTED at the record surface)
 
@@ -164,7 +164,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:205-206`
+**Home.** `ARCHITECTURE.md:212-213`
 
 **Provenance.** ARCHITECTURE.md:176-177 and :198-199; confirmed at sectionrecordadapter.cpp:293. CONFLICTS with the ratified confidence contract rule U2 (D-032) and with the declared range of the field it is written into (keymodeanalyzer.h:111) - see OPEN_ITEMS OI-231
 
@@ -180,7 +180,7 @@
 
 **Status.** LIVE · decided 2026-07-27 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:213-215`
+**Home.** `ARCHITECTURE.md:220-222`
 
 **Provenance.** open_items/OI-203 (OPEN, priority raised post-switch); open_items/OI-206
 
@@ -194,7 +194,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:206`
+**Home.** `ARCHITECTURE.md:213`
 
 **Provenance.** open_items/OI-194 (OPEN - its own increment after the switch)
 
@@ -213,9 +213,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_notation_output_contract.md:54-57`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_notation_output_contract.md:54-57`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§2** — `## 2. Provenance on the surface (#16/#19)` (heading at line 52). The delegation names sections, and no delegation names this one. Decided by **D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `contract-home` to `gap`; the former class is kept here rather than overwritten (#12).
+**Home section.** **§2** — `## 2. Provenance on the surface (#16/#19)` (heading at line 52). A delegation at ARCHITECTURE.md:79 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** cowork_notation_output_contract.md:3 records the user's ratification, dated 2026-07-26, as specified and without amendments; the provenance rule at :52-57. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
@@ -241,7 +241,7 @@
 
 **Home.** `cowork_notation_output_contract.md:139-147`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§3.4** — `### 3.4 Per key run — the un-rounded modal reading (C1; ratified decision 1 delivered)` (heading at line 137). A delegation at ARCHITECTURE.md:73 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§3.4** — `### 3.4 Per key run — the un-rounded modal reading (C1; ratified decision 1 delivered)` (heading at line 137). A delegation at ARCHITECTURE.md:79 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** cowork_notation_output_contract.md:3 records the user's ratification, dated 2026-07-26, as specified and without amendments; the modal reading at :137-147. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 

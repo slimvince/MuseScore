@@ -17,7 +17,7 @@
 
 **Status.** LIVE · decided 2026-06-29 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:346-347`
+**Home.** `ARCHITECTURE.md:353-354`
 
 **Provenance.** ARCHITECTURE.md:308-316 'Doc governance (2026-06-29) - the hierarchy'
 
@@ -32,7 +32,7 @@
 
 **Status.** LIVE · decided 2026-06-29 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:343-344`
+**Home.** `ARCHITECTURE.md:350-351`
 
 **Provenance.** ARCHITECTURE.md:308-316
 
@@ -47,7 +47,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3474-3475`
+**Home.** `ARCHITECTURE.md:3487-3488`
 
 **Provenance.** ARCHITECTURE.md:3363-3365, consistent with :251-254
 
@@ -63,7 +63,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1211-1213`
+**Home.** `ARCHITECTURE.md:1222-1224`
 
 **Provenance.** ARCHITECTURE.md:1151-1154. Three layer tags and two prose statements are stale after the switch - see OPEN_ITEMS OI-232
 
@@ -157,7 +157,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6918`
+**Home.** `ARCHITECTURE.md:6931`
 
 **Provenance.** ARCHITECTURE.md:6754-6759 (§18.4); the standing principle is CLAUDE.md #10 (D-174). No date or ratifier stated.
 
@@ -179,7 +179,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `CLAUDE.md:707`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:722`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:621-660. The document itself is `docs/scoring_model.md`.
 
@@ -202,7 +202,7 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `CLAUDE.md:899`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:914`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:821-821; predicate qualification user-directed 2026-06-24, defined terms user-directed 2026-07-02. The ONE home is `cowork_design_doc_template.md`, which also carries the fourteen-section document structure, the status-banner convention and the implementation/test locator rule. Conformance of the existing tree is open at OPEN_ITEMS OI-230.
 
@@ -219,7 +219,7 @@
 
 **Status.** LIVE · decided 2026-07-11 · ratified by user
 
-**Home.** `CLAUDE.md:895`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:910`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:817-811, user-directed repeatedly and recorded 2026-07-11.
 
@@ -245,7 +245,7 @@
 
 **Status.** LIVE · decided 2026-08-01 · ratified by user
 
-**Home.** `CLAUDE.md:951`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:966`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:873-876, user-directed 2026-08-01 at the decisions-register ratification review. The register's rationale field is what serves it; the founding instances the entry names are D-004's segment-cap value, D-059's window and D-015's boundary-tick convention.
 
@@ -278,7 +278,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:632-634`
+**Home.** `ARCHITECTURE.md:639-641`
 
 **Provenance.** ARCHITECTURE.md:601-603 (stated as a standing reading instruction in the document itself) ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -409,17 +409,21 @@
 > **(h) THE UNIT OF (g) IS A SECTION, NOT A
 > DOCUMENT (user, 2026-08-03): a home is a SECTION of a document, admitted when a user-ratified
 > surface delegates a stated concern to that section BY NAME and that section STATES RULES rather
-> than recording findings.**
+> than recording findings.** The surrounding document's kind and its status banner are not the
+> test. **GRANULARITY — stated explicitly so it is not re-interpreted (user, 2026-08-03, at the
+> phase-1q whole-document reading): a delegation naming a DOCUMENT reaches ALL of its sections; a
+> delegation naming SECTIONS reaches only those; and the rule-stating half is judged PER SECTION in
+> both cases.**
 
-**In plain words.** Whether a design document counts as the proper home of a decision is decided about the SECTION the decision sits in, not about the document as a whole. A section qualifies when a document the user has ratified points a named concern at that section by name, and when the section lays down rules rather than reporting what was found. What kind of document surrounds the section, and what its status banner says, do not enter the test.
+**In plain words.** Whether a design document counts as the proper home of a decision is decided about the SECTION the decision sits in, not about the document as a whole. A section qualifies when a document the user has ratified points a named concern at that section by name, and when the section lays down rules rather than reporting what was found. What kind of document surrounds the section, and what its status banner says, do not enter the test. Where the pointer names the whole document and no section, it reaches every section of it; where it names sections, it reaches only those. Either way, whether a section lays down rules is asked section by section.
 
-**Why.** Measured, at the case that refutes the document-level form. `ARCHITECTURE.md`:319 delegates the shipped-parameter licence-pool constraint to `cowork_score_census.md` §8c — a block that states three binding rules (the fitting-pool licence constraint, the intake rule, the supersession protocol) — inside a document whose kind is a census, so a test applied to the document excludes the block along with it. That case was found by the phase-1m measurement of the document-kind test, which reported it as the one structural finding the kind ruling did not answer (`OPEN_ITEMS.md` OI-281, second measurement note, §6).
+**Why.** Measured, at the case that refutes the document-level form. `ARCHITECTURE.md`:319 delegates the shipped-parameter licence-pool constraint to `cowork_score_census.md` §8c — a block that states three binding rules (the fitting-pool licence constraint, the intake rule, the supersession protocol) — inside a document whose kind is a census, so a test applied to the document excludes the block along with it. That case was found by the phase-1m measurement of the document-kind test, which reported it as the one structural finding the kind ruling did not answer (`OPEN_ITEMS.md` OI-281, second measurement note, §6). **The granularity clause's own defense, stated with it:** the strict reading — that a delegation must name a section or it admits nothing — would evict every document delegated as a whole, signed layer specifications among them, on the accident of how a pointer happens to be phrased, and would make this rule retroactively destructive rather than refining; it was ruled to let a SECTION be a home where the surrounding document is not, never to require every delegation to name sections.
 
 **Status.** LIVE · decided 2026-08-03 · ratified by user
 
-**Home.** `CLAUDE.md:173`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:181`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** User ruling of 2026-08-03 (the fifth ruling set of that date), applied at phase 1n; dispatch `cc_instruction_phase1n_criterion_premise_and_reading_regime.md` §2. **It SUPERSEDES, and does not falsify, the two tests that preceded it** — the delegation-specificity criterion ruled and measured earlier the same day (`OPEN_ITEMS.md` OI-281, first measurement note) and the document-kind test ruled and measured later the same day (same row, second note). Both were proxies for this test, and each produced the evidence that located its own error: the specificity criterion's residue turned out to be its third clause used as a judgment, and the kind test's residue turned out to be that kind is a property of the DOCUMENT while a delegation points at a SECTION. Recorded that way so a reader meets one derivation rather than three rival tests. **Applied STAGED, as the ruling directs:** only to the entries where section granularity decides something — the ambiguous population of the kind test plus the `cowork_score_census.md` entries, 46 entries across 5 documents — with everything else migrating as its document is next touched. The staging is stated in the register's own scope note (`header.scope.home_granularity`) so the mixed field cannot be misread. **The tooling cost was measured BEFORE any entry was changed, against a stop criterion declared in the dispatch before the diff existed (#22):** the change is confined to an additive per-entry field plus the generator and checker that read it; `home` itself is untouched, so the quote-verification path, the anchor check and the drift report are byte-unchanged and no existing anchor needed re-aiming. The section is DERIVED from the home document's own headings and the entry's own cited line by `tools/audit/decisions/gen_section_homes.py`, whose `--check` re-derives it, so no section is transcribed and none can go stale when a heading moves. Guard (g) is untouched: the delegation confers, and only the user writes a delegation into `ARCHITECTURE.md`. NOT RATIFIED as an ENTRY — it goes to the user in the phase-1n ratification queue. **THE STAGING ENDED 2026-08-03 (phase 1q):** the user ruled the criterion applied to the whole home population in one pass, so both halves — the delegation half and the states-rules half — now decide every entry the criteria reach, and the register's home field is no longer of mixed granularity. The applier is `tools/audit/decisions/gen_home_classification.py`, which replaces `gen_section_homes.py` (two appliers of one criterion is the duplication #6 forbids). How a WHOLE-DOCUMENT delegation is read — it reaches every section — is an interpretation of this ruling's *BY NAME* clause, taken on the record's own precedent at `OPEN_ITEMS.md` OI-290 and recorded, with the strict alternative it rejects, at `backbone_decisions.json` → `section_home_criterion.whole_document_reading`.
+**Provenance.** User ruling of 2026-08-03 (the fifth ruling set of that date), applied at phase 1n; dispatch `cc_instruction_phase1n_criterion_premise_and_reading_regime.md` §2. **It SUPERSEDES, and does not falsify, the two tests that preceded it** — the delegation-specificity criterion ruled and measured earlier the same day (`OPEN_ITEMS.md` OI-281, first measurement note) and the document-kind test ruled and measured later the same day (same row, second note). Both were proxies for this test, and each produced the evidence that located its own error: the specificity criterion's residue turned out to be its third clause used as a judgment, and the kind test's residue turned out to be that kind is a property of the DOCUMENT while a delegation points at a SECTION. Recorded that way so a reader meets one derivation rather than three rival tests. **Applied STAGED, as the ruling directs:** only to the entries where section granularity decides something — the ambiguous population of the kind test plus the `cowork_score_census.md` entries, 46 entries across 5 documents — with everything else migrating as its document is next touched. The staging is stated in the register's own scope note (`header.scope.home_granularity`) so the mixed field cannot be misread. **The tooling cost was measured BEFORE any entry was changed, against a stop criterion declared in the dispatch before the diff existed (#22):** the change is confined to an additive per-entry field plus the generator and checker that read it; `home` itself is untouched, so the quote-verification path, the anchor check and the drift report are byte-unchanged and no existing anchor needed re-aiming. The section is DERIVED from the home document's own headings and the entry's own cited line by `tools/audit/decisions/gen_section_homes.py`, whose `--check` re-derives it, so no section is transcribed and none can go stale when a heading moves. Guard (g) is untouched: the delegation confers, and only the user writes a delegation into `ARCHITECTURE.md`. NOT RATIFIED as an ENTRY — it goes to the user in the phase-1n ratification queue. **THE STAGING ENDED 2026-08-03 (phase 1q):** the user ruled the criterion applied to the whole home population in one pass, so both halves — the delegation half and the states-rules half — now decide every entry the criteria reach, and the register's home field is no longer of mixed granularity. The applier is `tools/audit/decisions/gen_home_classification.py`, which replaces `gen_section_homes.py` (two appliers of one criterion is the duplication #6 forbids). How a WHOLE-DOCUMENT delegation is read — it reaches every section — was, at phase 1q, an interpretation of this ruling's *BY NAME* clause, taken on the record's own precedent at `OPEN_ITEMS.md` OI-290 and recorded, with the strict alternative it rejects, at `backbone_decisions.json` → `section_home_criterion.whole_document_reading`. **THE VERBATIM ABOVE WAS RE-TAKEN 2026-08-03 (phase 1r), because the user WROTE THAT INTERPRETATION INTO THE RULE.** The GRANULARITY clause — a delegation naming a document reaches all its sections, a delegation naming sections reaches only those, and the rule-stating half is judged per section in both cases — was ruled by the **user on 2026-08-03** at the phase-1q whole-document reading and written into `CLAUDE.md` rule (h) itself. It is recorded here as a **SCOPE CLARIFICATION of this decision, not as a separate decision**, and deliberately gets no sibling entry (#6): it fixes what this ruling's own *BY NAME* clause reaches when a delegation names no section, introduces no new criterion, changes nothing about which surfaces may delegate (that is D-432), and reaffirms rather than alters the states-rules half. What it does change is the record's option space — before it, the strict alternative was recorded as available to the user; after it, the strict reading is closed. **The verbatim this replaces, preserved (#12):** *"**(h) THE UNIT OF (g) IS A SECTION, NOT A DOCUMENT (user, 2026-08-03): a home is a SECTION of a document, admitted when a user-ratified surface delegates a stated concern to that section BY NAME and that section STATES RULES rather than recording findings.**"* — the same opening sentence, ending at *recording findings*, without the kind/banner sentence and without the granularity clause.
 
 ### D-432 — What counts as a delegation, graded by form — the clause the section-level criterion did not touch
 
@@ -439,9 +443,9 @@
 
 **Status.** LIVE · decided 2026-08-03 · ratified by user
 
-**Home.** `CLAUDE.md:193`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:208`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** User ruling of 2026-08-03 (the seventh ruling set of that date, W2 — 'grade the forms and set the bar'), homed at phase 1p as rule (i) of the decisions-register section, beside (g) and (h) which it completes. **RECORDED AT PHASE 1p, APPLIED AT PHASE 1q.** The dispatch ordered a check before applying it — *does this bar change the verdict for any document the register currently classifies `contract-home`?* — and predicted no, on the ground that the admitted set was reached on explicit delegation clauses. The check was run in a generator (`tools/audit/decisions/gen_phase1p_delegation_bar.py` → `pre_apply_check`) and the prediction is **REFUTED**: the bar excludes documents the register currently admits. Under the dispatch's own instruction that is a #13 STOP, so no entry's home class was changed and the non-conformance is rowed at `OPEN_ITEMS.md` OI-291. The generator applies nothing — it only reads the backbone. NOT RATIFIED as an ENTRY — it goes to the user in the phase-1p ratification queue. **APPLIED 2026-08-03 (phase 1q, the user's ruling of that date, option A3):** the user ruled ONE re-classification pass over the whole home population rather than a forward-only migration or a revision of the bar, with a WRITE LIST for the homes the record means to keep. The pass is `tools/audit/decisions/gen_home_classification.py` → `phase1q_reclassification.json`; its `totals` carry the movement and its `write_list` the drafted delegations, which go to the user because only the user writes one. `OPEN_ITEMS.md` OI-291 flips with that provenance.
+**Provenance.** User ruling of 2026-08-03 (the seventh ruling set of that date, W2 — 'grade the forms and set the bar'), homed at phase 1p as rule (i) of the decisions-register section, beside (g) and (h) which it completes. **RECORDED AT PHASE 1p, APPLIED AT PHASE 1q.** The dispatch ordered a check before applying it — *does this bar change the verdict for any document the register currently classifies `contract-home`?* — and predicted no, on the ground that the admitted set was reached on explicit delegation clauses. The check was run in a generator (`tools/audit/decisions/gen_phase1p_delegation_bar.py` → `pre_apply_check`) and the prediction is **REFUTED**: the bar excludes documents the register currently admits. Under the dispatch's own instruction that is a #13 STOP, so no entry's home class was changed and the non-conformance is rowed at `OPEN_ITEMS.md` OI-291. The generator applies nothing — it only reads the backbone. NOT RATIFIED as an ENTRY — it goes to the user in the phase-1p ratification queue. **APPLIED 2026-08-03 (phase 1q, the user's ruling of that date, option A3):** the user ruled ONE re-classification pass over the whole home population rather than a forward-only migration or a revision of the bar, with a WRITE LIST for the homes the record means to keep. The pass is `tools/audit/decisions/gen_home_classification.py` → `phase1q_reclassification.json`; its `totals` carry the movement and its `write_list` the drafted delegations, which go to the user because only the user writes one. `OPEN_ITEMS.md` OI-291 flips with that provenance. **THE WRITE LIST CAME BACK WRITTEN, 2026-08-03 (phase 1r).** The user wrote a delegation for each of the six documents the pass emitted, and the pass was re-run against them: all six move, two only in part (`tools/audit/decisions/phase1q_reclassification.json` -> `the_phase_1r_re_run`; `OPEN_ITEMS.md` OI-293 closes). The bar itself is unchanged — what changed is the wordings it reads, which is the outcome the ruling was designed to produce. The pre-apply check still reports STOP over the same three documents: four delegation grades moved today, so the grades the check was run against are frozen at `gen_phase1p_delegation_bar.py` -> `GRADE_AT_PHASE_1P` while `FORMS` stays live for the classifier (#12, and one live grade with one home, #6). **This entry's own defense now cites two line numbers that have moved** — the same act shifted `ARCHITECTURE.md`, and no tool re-aims a line number quoted inside a rule's prose; carried at `OPEN_ITEMS.md` OI-294.
 
 ### D-433 — A shelved section can be a home — shelving is a status, not a kind
 
@@ -455,7 +459,7 @@
 
 **Status.** LIVE · decided 2026-08-03 · ratified by user
 
-**Home.** `CLAUDE.md:187`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:202`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** User ruling of 2026-08-03 (the seventh ruling set of that date, W3), homed at phase 1p inside the decisions-register section's rule (h), whose kind half it clarifies. **Its one candidate application did NOT follow**, and the reason is recorded rather than left implied: the document it would have admitted, `cowork_joint_key_chord_design.md`, is delegated only by a parenthetical naming inside a bulleted list (`cowork_engage_arc_plan.md:44`), which **D-432** does not admit — so the four entries homed there stay `gap` for a different reason than the one this ruling removes. NOT RATIFIED as an ENTRY — it goes to the user in the phase-1p ratification queue.
 
@@ -477,7 +481,7 @@
 
 **Status.** LIVE · decided 2026-08-03 · ratified by user
 
-**Home.** `CLAUDE.md:210`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:225`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** User ruling of 2026-08-03 (the eighth ruling set of that date, X2 — 'draft a proper delegation rather than an exception'), homed at phase 1q as rule (j) of the decisions-register section, beside (g), (h) and (i) whose interaction it fixes. It resolves the collision the phase-1p wave reported and did not settle: that wave's own §4 ordered `cowork_engage_arc_plan.md`'s three entries ADMITTED on the test *names it by name for a stated concern*, while **D-432** excludes that naming as a provenance attribution. **The bar governs and the phase-1p §4 admission is superseded on this point**, recorded rather than dropped; the remedy for the arc plan is a drafted delegation on the phase-1q write list (`tools/audit/decisions/phase1q_reclassification.json` → `write_list`), which goes to the user because only the user writes a delegation. NOT RATIFIED as an ENTRY — it goes to the user in the phase-1q ratification queue.
+**Provenance.** User ruling of 2026-08-03 (the eighth ruling set of that date, X2 — 'draft a proper delegation rather than an exception'), homed at phase 1q as rule (j) of the decisions-register section, beside (g), (h) and (i) whose interaction it fixes. It resolves the collision the phase-1p wave reported and did not settle: that wave's own §4 ordered `cowork_engage_arc_plan.md`'s three entries ADMITTED on the test *names it by name for a stated concern*, while **D-432** excludes that naming as a provenance attribution. **The bar governs and the phase-1p §4 admission is superseded on this point**, recorded rather than dropped; the remedy for the arc plan is a drafted delegation on the phase-1q write list (`tools/audit/decisions/phase1q_reclassification.json` → `write_list`), which goes to the user because only the user writes a delegation. NOT RATIFIED as an ENTRY — it goes to the user in the phase-1q ratification queue. **THIS ENTRY'S RATIONALE IS STALE AT HEAD, and is left standing rather than rewritten (2026-08-03, phase 1r).** It says the bar excludes `cowork_engage_arc_plan.md` as a delegation TARGET "because the only naming of it is inside a list of citations (`CLAUDE.md:129-130`)" — true when the ruling was made, and no longer true: on the user's direction the OI-293 write list wrote an explicit delegation clause into `CLAUDE.md` for exactly this document, so its three entries are now `contract-home`. **The RULING is untouched by that** — (j) says delegating and being a home are different tests, and the arc plan became a home by being delegated to, which is the rule working rather than an exception to it. What is stale is the verbatim's closing clause, *"and today none does"*, a factual statement inside user-ruled text that this session may not edit; it is rowed at `OPEN_ITEMS.md` OI-294 for the user.
 

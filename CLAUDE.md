@@ -130,6 +130,14 @@ adoption increment's decision surface — analysis in `cowork_notation_adoption_
 (`cowork_engage_arc_plan.md`, now the middle stage of the #17 funnel), and the doc-sync,
 layer, and gate policies below.*
 
+**Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293
+write list).** The ratified contract for the ORDER OF WORK from here to the precision phase — the
+arc sequence, the MEASURE-BEFORE-BUILD gate, and the Stage-4 rules — is `cowork_engage_arc_plan.md`
+(RATIFIED by the user, 2026-07-07) — D-278, D-279, D-311 — which this file points at and does not
+restate. *(The naming in the paragraph above is a citation inside a list, which rule (i) does not
+admit as a delegation; and rule (j) records that a document being a SOURCE of delegations does not
+make it a delegation TARGET. This paragraph is what makes it one.)*
+
 ## The open-items register (user-directed, 2026-07-10; split into index + detail files, user-ratified 2026-07-26)
 
 **The register is `OPEN_ITEMS.md` (the lean INDEX) + `open_items/OI-<n>.md` (one detail file per
@@ -174,7 +182,14 @@ stamp alone never confers contract-home status; **(h) THE UNIT OF (g) IS A SECTI
 DOCUMENT (user, 2026-08-03): a home is a SECTION of a document, admitted when a user-ratified
 surface delegates a stated concern to that section BY NAME and that section STATES RULES rather
 than recording findings.** The surrounding document's kind and its status banner are not the
-test. *Why:* measured, at the case that refutes the document-level form — `ARCHITECTURE.md:319`
+test. **GRANULARITY — stated explicitly so it is not re-interpreted (user, 2026-08-03, at the
+phase-1q whole-document reading): a delegation naming a DOCUMENT reaches ALL of its sections; a
+delegation naming SECTIONS reaches only those; and the rule-stating half is judged PER SECTION in
+both cases.** *Why the granularity clause:* the strict reading — that a delegation must name a
+section or it admits nothing — would evict every document delegated as a whole, signed layer
+specifications among them, on the accident of how a pointer happens to be phrased, and would make (h) retroactively destructive
+rather than refining. (h) was ruled to let a SECTION be a home where the surrounding document is
+not; it was never ruled to require every delegation to name sections. *Why (h) itself:* measured, at the case that refutes the document-level form — `ARCHITECTURE.md:319`
 delegates the shipped-parameter licence-pool constraint to `cowork_score_census.md` **§8c**, a
 block that states three binding rules, inside a document whose kind is a census; a test applied
 to the document excludes the block along with it. **(h) subsumes the two tests that preceded it

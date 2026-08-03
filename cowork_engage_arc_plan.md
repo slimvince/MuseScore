@@ -41,8 +41,13 @@ held (no `src/`, no build, no corpus write, no constant fitted/tuned):**
 - **arc #9 — the carry + selection architecture** (`cowork_layer5_engagement_design.md` Part 1 §1–§5): the
   distinct-root carry contract with the exclusion tail preserved (#12); selection-by-joint-consistency
   (bass/spelling/key-consistency load-bearing, progression demoted to a non-override tie-break).
-- **arc #10 — the joint key-and-chord step** (`cowork_joint_key_chord_design.md`): the coupled key↔chord decision
-  as a generalization of `decideJointKey`, B1–B4 owed build enumerated, owed measurements flagged.
+- **arc #10 — the joint key-and-chord step.** The ratified contract for the coupled key↔chord decision, and for its
+  SHELVING with the evidence that produced it, is `cowork_joint_key_chord_design.md` — D-376…D-379 — which this plan
+  delegates to by name and does not restate. Its four entries sit in §1.1, §1.3, §2.2 and §3.1; the delegation names
+  the document, and a document-level delegation reaches all of its sections (`CLAUDE.md` rule (h), the granularity
+  clause). Content: the coupled key↔chord decision as a generalization of `decideJointKey`, B1–B4 owed build
+  enumerated, owed measurements flagged. *(Delegation written 2026-08-03 on the user's direction, the OI-293 write
+  list; the previous parenthetical naming was a citation, which rule (i) does not admit.)*
 - **arc #11 — pedal detection's home + the F-B annotate mechanics** (`cowork_layer5_engagement_design.md` Part 2
   §6–§10; `cc_engage_l5_pedal_annotate_design_report.md`): pedal placed as a **reader over the carry** (the
   audit's clobber/re-scan/defensive-disable symptoms dissolved); F-B demoted to an **annotation on the unified

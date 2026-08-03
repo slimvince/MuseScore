@@ -48,6 +48,12 @@
 > spec: `cowork_joint_estimator_architecture.md`, `cowork_joint_estimator_factorization.md`; pre-fit gates
 > `cowork_prefit_gates.md`; adoption record `cc_adoption_measurement_report.md` / `tools/joint_estimator/adoption_record.json`.
 >
+> **Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The
+> ratified contract for the PRE-FIT PROTOCOLS this estimator's fitting must satisfy — the five-fold split, the
+> cell-count threshold, the tokens-per-parameter floor and the piece-bootstrap interval — is `cowork_prefit_gates.md`
+> (USER-RATIFIED 2026-07-19, `:1`) — D-270…D-274 — which this section points at and does not restate. *(The naming
+> above is a citation inside a list; `CLAUDE.md` rule (i) does not admit that form as a delegation.)*
+>
 > **POSTERIOR SLICE — the notation output-surface contract §3.3 GROUP (i) (as-built, ADDITIVE; the decode is
 > unchanged).** `jointdecoder::computePosteriorSlice(piece, segments, adapter, vocab, cache)` publishes, per
 > committed segment, the ESTABLISHED content-score uncertainty surface as two full candidate lists (no truncation
@@ -71,7 +77,8 @@
 > near-miss is a defect, not a tolerance).
 >
 > **NOTATION OUTPUT-SURFACE RECORD — the A-native record (as-built, DORMANT; contract `cowork_notation_output_contract.md`
-> §3.1–§3.4).** `joint::assembleNotationRecord(piece, result, sigFifths, declaredMode, adapter, vocab, cache)`
+> §2–§3.4 — widened 2026-08-03 on the user's direction, the OI-293 write list, from §3.1–§3.4: the provenance rule that
+> §3.1's own text depends on is in §2).** `joint::assembleNotationRecord(piece, result, sigFifths, declaredMode, adapter, vocab, cache)`
 > (`jointnotationrecord`) assembles the ONE surface the in-app notation path will read (Decision A2), from the
 > decode outputs + the decode's prior inputs + the compiled-in provenance — it NEVER re-decodes and never reads the
 > score. **§3.1** the piece block: analyzed span, the signature-fifths/declared-mode INPUT ECHO (the adapter exposes
@@ -899,7 +906,11 @@ contracts below all serve this principle. Their detailed statements live in the 
   **★ voice-leading-span — criterion given (2026-07-03):** the span **one texture classification prevails over** — a
   maximal run carrying one voice-leading idiom; owner = the axis-2 texture classifier **VL-C**; v1 = the whole selection
   (one span) until the §15-1 per-span measurement refines it. Criterion + build home:
-  `cowork_voiceleading_axis_design.md` §0/§5.3 (AS-BUILT). *(section-span / pedal-point-span remain latent.)*
+  `cowork_voiceleading_axis_design.md` §0/§5.1/§5.3/§8/§9 (AS-BUILT) — **widened 2026-08-03 on the user's direction
+  (the OI-293 write list) from §0/§5.3, which named too few sections**: the VL-A representation contract (§5.1), the
+  crosscutting rules (§8) and the architecture decisions (§9) are inside the delegated concern and sat outside the
+  named ones. §15/§16 are deliberately NOT named — they are ratification asks, not rule-stating sections.
+  *(section-span / pedal-point-span remain latent.)*
 - **The verifiability contract** — prefer what we can verify against ground truth (it is how we catch our own theory
   errors); for sound theory we cannot verify against the current corpus, build it with an explicit
   **alternative-confidence path** *and* an **"empirically-unvalidated" mark**, rather than refusing it (this governs the
@@ -1481,6 +1492,8 @@ rewrites the committed chord identity). Built dormant + byte-identical (Phase 5c
 where the carried L4 abstentions are resolved by **selecting** among the carried readings (never re-derived). The cadence
 detector is **key-agnostic** (it votes for the key; it does not read a resolved key). Full spec:
 `cowork_layer5_function_design.md`.
+
+**Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-335…D-342 — which this section points at and does not restate. *(The "Full spec:" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph is the delegation the record relied on and never had.)*
 
 **Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory "is enumerated at `cowork_layer5_engagement_design.md` §9.2" (`:53-55`).
 

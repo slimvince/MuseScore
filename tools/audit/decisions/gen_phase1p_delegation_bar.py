@@ -48,6 +48,17 @@ section-level consequence, is not recomputed here: the phase-1q pass covers ever
 than the five documents then at section granularity, and two computations of one thing is the
 duplication #6 forbids.
 
+THE SAME PROBLEM REACHED THE GRADES (amended 2026-08-03, phase 1r).  On 2026-08-03 the user WROTE
+delegations for four documents (the OI-293 write list), which moves their FORMS grade — and FORMS
+must move, because `gen_home_classification.py` imports it to classify against the delegations
+that exist TODAY, and a second grade table would be the duplication #6 forbids.  Recomputing the
+pre-apply check from the moved grades would drop two of its three documents and shrink
+`entries_affected_by_the_bar`, destroying the finding exactly as recomputing the classes would
+have.  So the grades are frozen the same way the classes are: FORMS is LIVE, `GRADE_AT_PHASE_1P`
+records what the four carried when the check ran, and the check reads the frozen values while
+every row also reports its live grade beside them.  A document enters that block only once its
+delegation has actually changed, so it cannot shadow a grade that never moved.
+
 Run:  python tools/audit/decisions/gen_phase1p_delegation_bar.py [--check]
 """
 from __future__ import annotations
@@ -147,10 +158,13 @@ FORMS: dict[str, tuple[str, str, str, str]] = {
         "the second half of D-430 and is not decided here."),
 
     "cowork_layer5_function_design.md": (
-        BARE_CITATION, "ARCHITECTURE.md",
-        "it does not read a resolved key). Full spec:",
-        "The bar's first excluded form, word for word — and the line the ruling's own "
-        "defense cites, because the line immediately beneath it is a delegation clause."),
+        CLAUSE, "ARCHITECTURE.md",
+        "The ratified contract for this layer's function, cadence and tonicization decisions is",
+        "The bar's first named form, word for word. WRITTEN 2026-08-03 on the user's "
+        "direction (the OI-293 write list); until then the strongest naming was the bare "
+        "appended citation on the line above it, which is why this document sat on the "
+        "write list. The 'Full spec:' line is retained beside it and is still the ruling's "
+        "own worked example of the excluded form."),
     "docs/redesign_plan.md": (
         BARE_CITATION, "ARCHITECTURE.md",
         "Design reference: `docs/redesign_plan.md`",
@@ -158,38 +172,84 @@ FORMS: dict[str, tuple[str, str, str, str]] = {
         "blocks `ARCHITECTURE.md` itself banners SUPERSEDED — the phase-1l ground, which "
         "the bar does not need.)"),
     "cowork_prefit_gates.md": (
-        PROVENANCE, "ARCHITECTURE.md",
-        "`cowork_prefit_gates.md`; adoption record",
-        "A naming inside a list of citations — the bar's second excluded form, word for "
-        "word. Its other naming records where a protocol was ratified, the same form's "
-        "other half."),
+        CLAUSE, "ARCHITECTURE.md",
+        "ratified contract for the PRE-FIT PROTOCOLS",
+        "The bar's first named form. WRITTEN 2026-08-03 on the user's direction (the "
+        "OI-293 write list); until then the strongest naming was a provenance attribution "
+        "— the document inside a list of citations, and a parenthetical recording where "
+        "the protocols were ratified. Both of those namings are retained."),
     "cowork_notation_adoption_increment.md": (
         PROVENANCE, "ARCHITECTURE.md",
         "pedal-point ruling of the notation-adoption increment",
         "A parenthetical recording where a ruling was made. Its `CLAUDE.md` naming "
         "('analysis in `…` §2') is the same form."),
     "cowork_engage_arc_plan.md": (
-        PROVENANCE, "CLAUDE.md",
-        "⛔ TOTAL UNIFICATION rule (`cowork_handoff.md`), the MEASURE-BEFORE-BUILD gate",
-        "A naming inside a list of citations — literally a list ('Companion standing rules "
-        "elsewhere: A (x), B (y), and C below'), and a parenthetical. It DOES name the "
-        "document by name for a stated concern, which is the test the phase-1p dispatch "
-        "§4 states for admitting this document; the bar is stricter than that test, and "
-        "the collision is reported rather than resolved."),
+        CLAUSE, "CLAUDE.md",
+        "The ratified contract for the ORDER OF WORK from here to the precision phase",
+        "The bar's first named form. WRITTEN 2026-08-03 on the user's direction (the "
+        "OI-293 write list), in `CLAUDE.md` beside the citation list it supplements. Until "
+        "then the strongest naming was that list — a provenance attribution — which is the "
+        "W4 collision **D-435** settled in the bar's favour. Note that this document is "
+        "ALSO one of the three surfaces delegations are read FROM; D-435 is the ruling that "
+        "the two roles are independent, so being a delegation TARGET here is a separate "
+        "fact from being a delegating SURFACE."),
     "cowork_joint_key_chord_design.md": (
-        PROVENANCE, "cowork_engage_arc_plan.md",
-        "**arc #10 — the joint key-and-chord step**",
-        "A parenthetical naming inside a bulleted list of arcs, and it names no section — "
-        "beside arc #9 and arc #11 in the same list, which DO name their target's sections."),
+        CLAUSE, "cowork_engage_arc_plan.md",
+        "The ratified contract for the coupled key↔chord decision",
+        "The bar's first named form. WRITTEN 2026-08-03 on the user's direction (the "
+        "OI-293 write list), into the arc-#10 bullet, which is the shape arcs #9 and #11 "
+        "two bullets away already used. Until then the naming was a parenthetical inside a "
+        "bulleted list of arcs, naming no section — a provenance attribution."),
 
     "cowork_architecture_reassessment.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    # ------------------------------------------------------------------
+    # (the four regraded rows above are the ONLY ones whose grade has moved since phase 1p;
+    #  GRADE_AT_PHASE_1P below records what they were, and is what the pre-apply check reads)
+    # ------------------------------------------------------------------
     "docs/decoder_design.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
     "docs/implementation_roadmap.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
     "docs/iteration_path1_summary.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+}
+
+
+# ---------------------------------------------------------------------------
+# FROZEN — the grade each regraded document carried WHEN THE PRE-APPLY CHECK WAS RUN.
+#
+# WHY THIS EXISTS.  FORMS above is the LIVE grade, and it must be: `gen_home_classification.py`
+# imports it to classify against the delegations that exist TODAY, and two grade tables would be
+# the duplication #6 forbids.  But the pre-apply check is a HISTORICAL finding — the phase-1p
+# prediction was REFUTED, and `OPEN_ITEMS.md` OI-291 and **D-432** both cite it.  On 2026-08-03
+# the user WROTE delegations for four of these documents (the OI-293 write list), which moves
+# their live grade; recomputing the check from the moved grades would drop two of its three
+# documents and shrink `entries_affected_by_the_bar`, quietly destroying the finding (#12).
+#
+# This is the same pattern the class figures already use: the classes are read frozen from
+# `home_section.class_before_phase1q`, and the grades are read frozen from here.  A document
+# appears below ONLY once its delegation has actually changed; every other document's check row
+# comes from the live FORMS grade, so this block cannot silently shadow a grade that never moved.
+#
+#   document -> (form, citation as recorded at phase 1p, what the naming was)
+GRADE_AT_PHASE_1P: dict[str, tuple[str, str, str]] = {
+    "cowork_layer5_function_design.md": (
+        BARE_CITATION, "ARCHITECTURE.md:1482",
+        "\"…it does not read a resolved key). Full spec:\" — the bar's first excluded form, "
+        "word for word, and the line the ruling's own defense cites."),
+    "cowork_prefit_gates.md": (
+        PROVENANCE, "ARCHITECTURE.md:49",
+        "\"…`cowork_prefit_gates.md`; adoption record…\" — a naming inside a list of "
+        "citations; its other naming recorded where the protocols were ratified."),
+    "cowork_engage_arc_plan.md": (
+        PROVENANCE, "CLAUDE.md:129",
+        "\"Companion standing rules elsewhere: … the MEASURE-BEFORE-BUILD gate "
+        "(`cowork_engage_arc_plan.md`, …)\" — a naming inside a list of citations."),
+    "cowork_joint_key_chord_design.md": (
+        PROVENANCE, "cowork_engage_arc_plan.md:44",
+        "\"**arc #10 — the joint key-and-chord step**\" — a parenthetical naming inside a "
+        "bulleted list of arcs, naming no section."),
 }
 
 
@@ -291,27 +351,41 @@ def main() -> int:
         else:
             line, text = locate(surface, anchor)
             verdict = "ADMIT" if form in ADMITTING else "EXCLUDE"
+
+        # The grade the pre-apply check was RUN AGAINST. Identical to the live grade unless
+        # the delegation has since been written, in which case it is read frozen from above.
+        frozen = GRADE_AT_PHASE_1P.get(doc)
+        form_1p = frozen[0] if frozen else form
+        cite_1p = frozen[1] if frozen else (f"{surface}:{line}" if line else None)
+        verdict_1p = ("EXCLUDE" if form_1p == NOT_NAMED
+                      else ("ADMIT" if form_1p in ADMITTING else "EXCLUDE"))
+
         cur_ch = rec["current"]["contract-home"]
         cur_gap = rec["current"]["gap"]
         movement = "none"
-        if verdict == "ADMIT" and cur_gap:
+        if verdict_1p == "ADMIT" and cur_gap:
             movement = "WOULD MOVE IN"
-        elif verdict == "EXCLUDE" and cur_ch:
+        elif verdict_1p == "EXCLUDE" and cur_ch:
             movement = "WOULD MOVE OUT"
-        tally[verdict] += len(rec["entries"])
+        tally[verdict_1p] += len(rec["entries"])
         rows.append({
             "document": doc,
             "entries": len(rec["entries"]),
             "entry_ids": rec["entries"],
             "current_contract_home": cur_ch,
             "current_gap": cur_gap,
-            "form": form,
-            "delegation_citation": (f"{surface}:{line}" if line else None),
-            "delegation_line": (text.strip() if text else None),
-            "why_this_grade": why,
-            "verdict": verdict,
+            "form": form_1p,
+            "delegation_citation": cite_1p,
+            "form_now": form,
+            "delegation_citation_now": (f"{surface}:{line}" if line else None),
+            "delegation_line_now": (text.strip() if text else None),
+            "delegation_written_since_the_check": bool(frozen),
+            "what_the_naming_was_at_the_check": (frozen[2] if frozen else None),
+            "why_this_grade_now": why,
+            "verdict": verdict_1p,
+            "verdict_now": verdict,
             "movement": movement,
-            "decided_by_the_bar": form != NOT_NAMED,
+            "decided_by_the_bar": form_1p != NOT_NAMED,
             "mentions_in_ratified_surfaces": seen.get(doc, []),
         })
 
@@ -355,6 +429,16 @@ def main() -> int:
         "purpose": "phase 1p — the delegation bar (W2) measured over the whole home "
                    "population, the pre-apply check the dispatch orders, and the §8c "
                    "mixed-section figure Task 1 rows. NOTHING IS APPLIED HERE.",
+        "the_grades_below_are_the_ones_the_check_was_run_against":
+            "`form`, `delegation_citation`, `verdict`, `movement` and `verdict_totals` are AS "
+            "OF THE CHECK. Where the user has since WRITTEN a delegation (the OI-293 write "
+            "list, 2026-08-03), the row additionally carries `form_now`, "
+            "`delegation_citation_now` and `verdict_now`, and "
+            "`delegation_written_since_the_check` is true. The live grade lives once, in this "
+            "tool's FORMS table, which `gen_home_classification.py` imports (#6); the frozen "
+            "grade lives once, in GRADE_AT_PHASE_1P, and exists because recomputing the check "
+            "from the moved grades would drop two of its three documents and destroy the "
+            "finding OI-291 and D-432 both cite (#12).",
         "this_is_a_pre_apply_record":
             "The class figures below are the ones the check was RUN AGAINST, read from each "
             "entry's `home_section.class_before_phase1q` — the value the phase-1q pass records "

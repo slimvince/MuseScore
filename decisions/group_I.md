@@ -18,7 +18,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:471-473`
+**Home.** `ARCHITECTURE.md:478-480`
 
 **Provenance.** ARCHITECTURE.md:433-436 states the §2 principles are 'hard constraints, not guidelines'; restated at §2.4 :435-438
 
@@ -33,7 +33,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:514-515`
+**Home.** `ARCHITECTURE.md:521-522`
 
 **Provenance.** ARCHITECTURE.md:481-485; mechanically guarded for the joint module by D-017
 
@@ -47,7 +47,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1143`
+**Home.** `ARCHITECTURE.md:1154`
 
 **Provenance.** ARCHITECTURE.md:1079-1137, checklist at :1424-1431
 
@@ -63,7 +63,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:567-569`
+**Home.** `ARCHITECTURE.md:574-576`
 
 **Provenance.** ARCHITECTURE.md:534-567; the standing project-wide form is CLAUDE.md #6 (total unification)
 
@@ -78,7 +78,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:558-560`
+**Home.** `ARCHITECTURE.md:565-567`
 
 **Provenance.** ARCHITECTURE.md:525-532
 
@@ -93,7 +93,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:489-490`
+**Home.** `ARCHITECTURE.md:496-497`
 
 **Provenance.** ARCHITECTURE.md:456-479; the substitution points are listed at §14.1
 
@@ -108,7 +108,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:627-628`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `ARCHITECTURE.md:634-635`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** ARCHITECTURE.md:569-597
 
@@ -122,7 +122,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1692`
+**Home.** `ARCHITECTURE.md:1705`
 
 **Provenance.** ARCHITECTURE.md:1595-1607, restated at :2967-2978
 
@@ -136,7 +136,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1526`
+**Home.** `ARCHITECTURE.md:1539`
 
 **Provenance.** ARCHITECTURE.md:1439-1447
 
@@ -150,7 +150,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:525`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `ARCHITECTURE.md:532`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** ARCHITECTURE.md:492-502; restated in CLAUDE.md Conventions
 
@@ -165,7 +165,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:709-710`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `ARCHITECTURE.md:716-717`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** ARCHITECTURE.md:676-682
 
@@ -181,7 +181,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:552`
+**Home.** `ARCHITECTURE.md:559`
 
 **Provenance.** ARCHITECTURE.md:519-523 (§2.8). No date or ratifier stated. This is the GENERAL form of the relationship to existing MuseScore code; the two scoped forms are D-072 (the analysis library depends on no engraving type) and D-073 (shared logic has one implementation). What none of the three states is which MuseScore interfaces our bridge code may call - see OPEN_ITEMS OI-241.
 
@@ -201,7 +201,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1191`
+**Home.** `ARCHITECTURE.md:1202`
 
 **Provenance.** ARCHITECTURE.md:1129-1140 (§3.3, the bridge pattern), with the enforcement statement at :955 (D-072) - any code that would invert the dependency order must be moved to the bridge layer. The bridge file inventory at :977-985 is the as-built list. No date or ratifier stated.
 
@@ -228,7 +228,7 @@
 
 **Status.** LIVE · decided 2026-08-02 · ratified by user
 
-**Home.** `ARCHITECTURE.md:1150-1163`
+**Home.** `ARCHITECTURE.md:1161-1174`
 
 **Provenance.** User ruling 2026-08-02 at the OI-241 adjudication (all recommendations adopted); written into ARCHITECTURE.md §3.3 in the same commit (the register's same-commit rule, D-230). open_items/OI-241.md records the gap this closes.
 
@@ -246,7 +246,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:654-656`
+**Home.** `ARCHITECTURE.md:661-663`
 
 **Provenance.** ARCHITECTURE.md:623-625 (Rule 14) and :649 (the one-run-one-result statement) ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -264,7 +264,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:1164-1166`
+**Home.** `ARCHITECTURE.md:1175-1177`
 
 **Provenance.** Recorded in `cowork_handoff_archive.md` (the 2026-06-14 Stage-4c block) as a standing lesson. Bears directly on D-229, the general MuseScore-dependency rule the user adopted 2026-08-02: this is the EDIT-versus-READ half, stated a month and a half earlier and consistent with it. D-229 adds what the bridge may read (the score model through the bridge pattern, never layout-derived state) and when an edit to MuseScore's own code is admissible. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written as clause 4 of the MuseScore-Dependency Rule in `ARCHITECTURE.md` §3.3, beside D-229 — the home this row's own text named. Former home preserved (#12): `cowork_handoff_archive.md:3732`, the 2026-06-14 Stage-4c block.
 
@@ -280,9 +280,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_engage_arc_plan.md:126`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_engage_arc_plan.md:131`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **“The stages”** — `## The stages (in principle order)` (heading at line 19). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit**.
+**Home section.** **“The stages”** — `## The stages (in principle order)` (heading at line 19). A delegation at CLAUDE.md:134 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md` (session 22i, the Stage-5 planning checkpoint) as a ruling read off the ratified retirement map. It is load-bearing now beyond its original subject: [[OI-205]] half (b) cites it as “the ratified Stage-3.5 file-split lesson (restructure ONCE, after the boundaries stabilize)” to time the `ARCHITECTURE.md` restructure. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOME MOVED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]) — NO specification text was written, because the rule already stands verbatim in a user-ratified document that owns the concern: `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) is 'the standing reference for the order of work', and its Stage 4 states the split is last and why. Former home preserved (#12): `STATUS_ARCHIVE.md:166`, session 22i. The arc plan is NOT a contract home (it is a plan, not a contract for a layer — the phase-1i criterion), so the classification stays 'gap'; what changes is that the decision is no longer recorded ONLY on a tracking surface. D-401 restates the same sequencing at the 2026-08-02 structural audit; the two are consistent and neither supersedes the other. ★ RESTATED 2026-08-03 (user ruling on `OPEN_ITEMS.md` OI-286, applied at phase 1m). **Former title, preserved (#12):** “The chord-analyzer file split happens once, after the retirements have settled — not before”. **Former status, preserved (#12): DEFERRED** — stale, because the act it defers was performed on 2026-06-17 as commit `41f7c65f63` (verified at the object; register entry **D-427**), before this ruling was even read off the retirement map at the 2026-07-03 Stage-5 checkpoint. The new status is **SUPERSEDED IN FACT** in the register's exact sense: a later BUILD performed what this decision governs, and no ruling names it — it is deliberately not upgraded to “superseded by”. **The verbatim and its home are unchanged**, because `cowork_engage_arc_plan.md` still says what it says and a ratified surface is annotated, never rewritten. **What does NOT lapse:** the once-only lesson, which `OPEN_ITEMS.md` OI-205 half (b) cites as “the ratified Stage-3.5 file-split lesson (restructure ONCE, after the boundaries stabilize)” to time the `ARCHITECTURE.md` restructure; that citation stands and is unaffected by this entry's status. **The LEGACY mark is REMOVED from this entry**, not by a sweep but on established evidence: its subject is `chordanalyzer.cpp`, which `STATUS_ARCHIVE.md`:114 records as surviving the engagement (“R9 *splits* `chordanalyzer.cpp`, does not delete it”), and one of the five translation units the split produced, `chordsymbolformatter.cpp`, is run by the record arm at `notationimplodebridge.cpp`:1170. This entry is one of the two demonstrated errors that caused the LEGACY marker's wording to be weakened on the same date; the other is D-329, and the re-verification of the whole marked set is `OPEN_ITEMS.md` OI-289. The renames half of OWED refactor #1, which this entry never covered, is **D-428**.
 

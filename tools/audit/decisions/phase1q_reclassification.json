@@ -9,7 +9,7 @@
     "the delegation-specificity criterion — superseded by D-430",
     "the document-kind test — superseded by D-430"
   ],
-  "the_reading_of_a_whole_document_delegation": "A delegation that names a DOCUMENT and no section reaches EVERY section of it; a delegation that names SECTIONS reaches those sections and their subsections and no others. This is an interpretation of D-430's \"delegates a stated concern to that section BY NAME\", and the ground is the record's own precedent rather than a preference: `OPEN_ITEMS.md` OI-290 states in terms that \"`ARCHITECTURE.md:1331` delegates 'this layer' and admits all sixteen of that document's entries\", recorded there as the reason the narrower reading was not adopted. THE STRICT ALTERNATIVE IS RECORDED AND NOT ADOPTED: read literally, a whole-document delegation names no section, so no section of it would be admitted and the seven whole-document homes would lose every entry between them. That reading is available to the user; it is not this pass's, and the pass says so rather than letting the choice pass unnoticed.",
+  "the_reading_of_a_whole_document_delegation": "A delegation that names a DOCUMENT and no section reaches EVERY section of it; a delegation that names SECTIONS reaches those sections and their subsections and no others; and the rule-stating half is judged PER SECTION in both cases. **THIS IS NOW PART OF THE RULE, NOT AN INTERPRETATION OF IT (user, 2026-08-03, phase 1r).** At phase 1q it was this pass's reading of D-430's \"delegates a stated concern to that section BY NAME\", taken on the record's own precedent rather than a preference — `OPEN_ITEMS.md` OI-290 states in terms that \"`ARCHITECTURE.md:1331` delegates 'this layer' and admits all sixteen of that document's entries\" — and the strict alternative was recorded as available to the user. The user then WROTE the reading into `CLAUDE.md` rule (h) itself as the GRANULARITY clause, so D-430's verbatim now carries it and the strict alternative is CLOSED. Its defense, stated with it: the strict reading would evict every document delegated as a whole, signed layer specifications among them, on the accident of how a pointer happens to be phrased, making the rule retroactively destructive rather than refining. THE STRICT ALTERNATIVE, PRESERVED (#12): read literally, a whole-document delegation names no section, so no section of it would be admitted and the seven whole-document homes would lose every entry between them.",
   "population": {
     "entries": 134,
     "documents": 22
@@ -20,16 +20,16 @@
       "gap": 38
     },
     "class_after": {
-      "contract-home": 71,
-      "gap": 63
+      "contract-home": 98,
+      "gap": 36
     },
-    "entries_moved": 45,
-    "moved_to_gap": 35,
-    "moved_to_contract_home": 10,
+    "entries_moved": 32,
+    "moved_to_gap": 15,
+    "moved_to_contract_home": 17,
     "decided_by": {
-      "D-430, the section-level unit": 93,
-      "D-432, the delegation bar": 27,
-      "clause (a), the fifth home case (OI-268)": 14
+      "D-430, the section-level unit": 113,
+      "clause (a), the fifth home case (OI-268)": 14,
+      "D-432, the delegation bar": 7
     }
   },
   "by_document": {
@@ -45,7 +45,7 @@
       "moves_in": 0,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:912",
+      "delegation_at": "ARCHITECTURE.md:923",
       "delegation_line": "detailed cross-layer spec for this contract is **`cowork_bounded_context_design.md`** — the request→supply→bounded-",
       "sections": {
         "§2": {
@@ -101,7 +101,7 @@
       "moves_in": 0,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:951",
+      "delegation_at": "ARCHITECTURE.md:962",
       "delegation_line": "squashing rules and the declared comparison frames are stated in full in `cowork_confidence_contract.md`,",
       "sections": {
         "§2": {
@@ -131,61 +131,62 @@
         "contract-home": 5
       },
       "after": {
-        "gap": 5
+        "contract-home": 5
       },
-      "moves_out": 5,
+      "moves_out": 0,
       "moves_in": 0,
-      "delegation_form": "provenance-attribution",
-      "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:49",
-      "delegation_line": "> `cowork_prefit_gates.md`; adoption record `cc_adoption_measurement_report.md` / `tools/joint_estimator/adoption_record.json`.",
+      "delegation_form": "explicit-delegation-clause",
+      "delegation_scope": "document",
+      "delegation_at": "ARCHITECTURE.md:52",
+      "delegation_line": "> ratified contract for the PRE-FIT PROTOCOLS this estimator's fitting must satisfy — the five-fold split, the",
       "sections": {
         "“The held-out evaluation protocol”": {
           "heading_line": 23,
-          "delegated": null,
-          "states_rules": null,
+          "delegated": true,
+          "states_rules": true,
           "entries": [
             "D-270"
           ],
-          "class_after": "gap"
+          "class_after": "contract-home"
         },
         "“The capacity budget”": {
           "heading_line": 62,
-          "delegated": null,
-          "states_rules": null,
+          "delegated": true,
+          "states_rules": true,
           "entries": [
             "D-271"
           ],
-          "class_after": "gap"
+          "class_after": "contract-home"
         },
         "the opening block (above the first section heading)": {
           "heading_line": 1,
-          "delegated": null,
-          "states_rules": null,
+          "delegated": true,
+          "states_rules": true,
           "entries": [
             "D-272"
           ],
-          "class_after": "gap"
+          "class_after": "contract-home"
         },
         "“The robust-stop architecture-adoption protocol”": {
           "heading_line": 98,
-          "delegated": null,
-          "states_rules": null,
+          "delegated": true,
+          "states_rules": true,
           "entries": [
             "D-273"
           ],
-          "class_after": "gap"
+          "class_after": "contract-home"
         },
         "“The sanctioned dual path and the retirement map”": {
           "heading_line": 147,
-          "delegated": null,
-          "states_rules": null,
+          "delegated": true,
+          "states_rules": true,
           "entries": [
             "D-274"
           ],
-          "class_after": "gap"
+          "class_after": "contract-home"
         }
-      }
+      },
+      "moves_in_since_phase1q": 5
     },
     "cowork_notation_output_contract.md": {
       "entries": 2,
@@ -193,24 +194,23 @@
         "contract-home": 2
       },
       "after": {
-        "gap": 1,
-        "contract-home": 1
+        "contract-home": 2
       },
-      "moves_out": 1,
+      "moves_out": 0,
       "moves_in": 0,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:73",
+      "delegation_at": "ARCHITECTURE.md:79",
       "delegation_line": "> **NOTATION OUTPUT-SURFACE RECORD — the A-native record (as-built, DORMANT; contract `cowork_notation_output_contract.md`",
       "sections": {
         "§2": {
           "heading_line": 52,
-          "delegated": false,
-          "states_rules": null,
+          "delegated": true,
+          "states_rules": true,
           "entries": [
             "D-275"
           ],
-          "class_after": "gap"
+          "class_after": "contract-home"
         },
         "§3.4": {
           "heading_line": 137,
@@ -221,7 +221,8 @@
           ],
           "class_after": "contract-home"
         }
-      }
+      },
+      "moves_in_since_phase1q": 1
     },
     "cowork_engage_arc_plan.md": {
       "entries": 3,
@@ -229,27 +230,28 @@
         "gap": 3
       },
       "after": {
-        "gap": 3
+        "contract-home": 3
       },
       "moves_out": 0,
-      "moves_in": 0,
-      "delegation_form": "provenance-attribution",
-      "delegation_scope": "none",
-      "delegation_at": "CLAUDE.md:129",
-      "delegation_line": "⛔ TOTAL UNIFICATION rule (`cowork_handoff.md`), the MEASURE-BEFORE-BUILD gate",
+      "moves_in": 3,
+      "delegation_form": "explicit-delegation-clause",
+      "delegation_scope": "document",
+      "delegation_at": "CLAUDE.md:134",
+      "delegation_line": "write list).** The ratified contract for the ORDER OF WORK from here to the precision phase — the",
       "sections": {
         "“The stages”": {
           "heading_line": 19,
-          "delegated": null,
-          "states_rules": null,
+          "delegated": true,
+          "states_rules": true,
           "entries": [
             "D-278",
             "D-279",
             "D-311"
           ],
-          "class_after": "gap"
+          "class_after": "contract-home"
         }
-      }
+      },
+      "moves_in_since_phase1q": 3
     },
     "docs/iteration_path1_summary.md": {
       "entries": 2,
@@ -319,7 +321,7 @@
       "moves_in": 0,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:285",
+      "delegation_at": "ARCHITECTURE.md:292",
       "delegation_line": "> *Delegation pointer (the fifth home case, user-ratified 2026-08-02): the fitting event's own design contract is `cowork_stage5_fitter_design.md` (SIGNED, user, 2026-07-04) — D-312…D-314 — which this specification points at and does not restate.*",
       "sections": {
         "“§15 Open items & ratification asks”": {
@@ -355,7 +357,7 @@
       "moves_in": 0,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:777",
+      "delegation_at": "ARCHITECTURE.md:784",
       "delegation_line": "arpeggio-resolved chord identities as input. Design reference: `docs/redesign_plan.md`",
       "sections": {
         "“Dead end: `noteEnd <= startTickInt` → `noteEnd < startTickInt`”": {
@@ -408,7 +410,7 @@
       "moves_in": 0,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "CLAUDE.md:698",
+      "delegation_at": "CLAUDE.md:713",
       "delegation_line": "**Read `docs/scoring_model.md` at the start of any session that touches scoring",
       "sections": {
         "“Floating-point tie policy”": {
@@ -498,7 +500,7 @@
       "moves_in": 0,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1407",
+      "delegation_at": "ARCHITECTURE.md:1418",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer4_chordsymbol_design.md` (SIGNED, user, 2026-06-24) — D-329…D-334 — which this section points at and does not restate.",
       "sections": {
         "§4": {
@@ -547,19 +549,20 @@
         "contract-home": 8
       },
       "after": {
-        "gap": 8
+        "contract-home": 7,
+        "gap": 1
       },
-      "moves_out": 8,
+      "moves_out": 1,
       "moves_in": 0,
-      "delegation_form": "bare-appended-citation",
-      "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:1482",
-      "delegation_line": "detector is **key-agnostic** (it votes for the key; it does not read a resolved key). Full spec:",
+      "delegation_form": "explicit-delegation-clause",
+      "delegation_scope": "document",
+      "delegation_at": "ARCHITECTURE.md:1496",
+      "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-335…D-342 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph is the delegation the record relied on and never had.)*",
       "sections": {
         "§9": {
           "heading_line": 611,
-          "delegated": null,
-          "states_rules": null,
+          "delegated": true,
+          "states_rules": true,
           "entries": [
             "D-335",
             "D-336",
@@ -567,21 +570,21 @@
             "D-338",
             "D-339"
           ],
-          "class_after": "gap"
+          "class_after": "contract-home"
         },
         "§7": {
           "heading_line": 537,
-          "delegated": null,
-          "states_rules": null,
+          "delegated": true,
+          "states_rules": true,
           "entries": [
             "D-340"
           ],
-          "class_after": "gap"
+          "class_after": "contract-home"
         },
         "§15": {
           "heading_line": 782,
-          "delegated": null,
-          "states_rules": null,
+          "delegated": true,
+          "states_rules": false,
           "entries": [
             "D-341"
           ],
@@ -589,14 +592,15 @@
         },
         "§11": {
           "heading_line": 669,
-          "delegated": null,
-          "states_rules": null,
+          "delegated": true,
+          "states_rules": true,
           "entries": [
             "D-342"
           ],
-          "class_after": "gap"
+          "class_after": "contract-home"
         }
-      }
+      },
+      "moves_in_since_phase1q": 7
     },
     "cowork_layer3_keymode_design.md": {
       "entries": 16,
@@ -611,7 +615,7 @@
       "moves_in": 0,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1331",
+      "delegation_at": "ARCHITECTURE.md:1342",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "sections": {
         "§1": {
@@ -718,7 +722,7 @@
       "moves_in": 0,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:319",
+      "delegation_at": "ARCHITECTURE.md:326",
       "delegation_line": "> own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c. **Which class",
       "sections": {
         "§1": {
@@ -794,52 +798,53 @@
         "gap": 4
       },
       "after": {
-        "gap": 4
+        "contract-home": 4
       },
       "moves_out": 0,
-      "moves_in": 0,
-      "delegation_form": "provenance-attribution",
-      "delegation_scope": "none",
+      "moves_in": 4,
+      "delegation_form": "explicit-delegation-clause",
+      "delegation_scope": "document",
       "delegation_at": "cowork_engage_arc_plan.md:44",
-      "delegation_line": "- **arc #10 — the joint key-and-chord step** (`cowork_joint_key_chord_design.md`): the coupled key↔chord decision",
+      "delegation_line": "- **arc #10 — the joint key-and-chord step.** The ratified contract for the coupled key↔chord decision, and for its",
       "sections": {
         "“§1.1 The decision: a BOUNDED coupling step, NOT a unified `(key,chord)` hidden state”": {
           "heading_line": 70,
-          "delegated": null,
-          "states_rules": null,
+          "delegated": true,
+          "states_rules": true,
           "entries": [
             "D-376"
           ],
-          "class_after": "gap"
+          "class_after": "contract-home"
         },
         "“§1.3 How it avoids re-introducing a cross-layer cycle”": {
           "heading_line": 118,
-          "delegated": null,
-          "states_rules": null,
+          "delegated": true,
+          "states_rules": true,
           "entries": [
             "D-377"
           ],
-          "class_after": "gap"
+          "class_after": "contract-home"
         },
         "“§2.2 The chord re-decoded under each carried key”": {
           "heading_line": 164,
-          "delegated": null,
-          "states_rules": null,
+          "delegated": true,
+          "states_rules": true,
           "entries": [
             "D-378"
           ],
-          "class_after": "gap"
+          "class_after": "contract-home"
         },
         "“§3.1 The trigger, grounded in C3”": {
           "heading_line": 249,
-          "delegated": null,
-          "states_rules": null,
+          "delegated": true,
+          "states_rules": true,
           "entries": [
             "D-379"
           ],
-          "class_after": "gap"
+          "class_after": "contract-home"
         }
-      }
+      },
+      "moves_in_since_phase1q": 4
     },
     "cowork_layer5_engagement_design.md": {
       "entries": 8,
@@ -853,7 +858,7 @@
       "moves_in": 0,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:1485",
+      "delegation_at": "ARCHITECTURE.md:1498",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory \"is enumerated at `cowork_layer5_engagement_design.md` §9.2\" (`:53-55`).",
       "sections": {
         "“§2.2 The exclusion tail is load-bearing and must be carried”": {
@@ -936,20 +941,20 @@
         "contract-home": 13
       },
       "after": {
-        "gap": 10,
-        "contract-home": 3
+        "contract-home": 10,
+        "gap": 3
       },
-      "moves_out": 10,
+      "moves_out": 3,
       "moves_in": 0,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:901",
+      "delegation_at": "ARCHITECTURE.md:908",
       "delegation_line": "(one span) until the §15-1 per-span measurement refines it. Criterion + build home:",
       "sections": {
         "§9": {
           "heading_line": 508,
-          "delegated": false,
-          "states_rules": null,
+          "delegated": true,
+          "states_rules": true,
           "entries": [
             "D-388",
             "D-389",
@@ -957,7 +962,7 @@
             "D-391",
             "D-392"
           ],
-          "class_after": "gap"
+          "class_after": "contract-home"
         },
         "§5.3": {
           "heading_line": 338,
@@ -972,21 +977,21 @@
         },
         "§5.1": {
           "heading_line": 289,
-          "delegated": false,
-          "states_rules": null,
+          "delegated": true,
+          "states_rules": true,
           "entries": [
             "D-394"
           ],
-          "class_after": "gap"
+          "class_after": "contract-home"
         },
         "§8": {
           "heading_line": 484,
-          "delegated": false,
-          "states_rules": null,
+          "delegated": true,
+          "states_rules": true,
           "entries": [
             "D-396"
           ],
-          "class_after": "gap"
+          "class_after": "contract-home"
         },
         "§16": {
           "heading_line": 680,
@@ -1007,7 +1012,8 @@
           ],
           "class_after": "gap"
         }
-      }
+      },
+      "moves_in_since_phase1q": 7
     },
     "cowork_structural_integrity_audit.md": {
       "entries": 5,
@@ -1068,7 +1074,7 @@
       "moves_in": 9,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:4592",
+      "delegation_at": "ARCHITECTURE.md:4605",
       "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "sections": {
         "§1": {
@@ -1187,7 +1193,7 @@
       "moves_in": 0,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4662",
+      "delegation_at": "ARCHITECTURE.md:4675",
       "delegation_line": "pedal-point ruling of the notation-adoption increment (`cowork_notation_adoption_increment.md` §7 + §10).",
       "sections": {
         "the opening block (above the first section heading)": {
@@ -1230,13 +1236,15 @@
       "section_heading_line": 33,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:912",
+      "delegation_at": "ARCHITECTURE.md:923",
       "delegation_line": "detailed cross-layer spec for this contract is **`cowork_bounded_context_design.md`** — the request→supply→bounded-",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -1248,13 +1256,15 @@
       "section_heading_line": 51,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:912",
+      "delegation_at": "ARCHITECTURE.md:923",
       "delegation_line": "detailed cross-layer spec for this contract is **`cowork_bounded_context_design.md`** — the request→supply→bounded-",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -1266,13 +1276,15 @@
       "section_heading_line": 51,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:912",
+      "delegation_at": "ARCHITECTURE.md:923",
       "delegation_line": "detailed cross-layer spec for this contract is **`cowork_bounded_context_design.md`** — the request→supply→bounded-",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -1284,13 +1296,15 @@
       "section_heading_line": 51,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:912",
+      "delegation_at": "ARCHITECTURE.md:923",
       "delegation_line": "detailed cross-layer spec for this contract is **`cowork_bounded_context_design.md`** — the request→supply→bounded-",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -1302,13 +1316,15 @@
       "section_heading_line": 96,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:912",
+      "delegation_at": "ARCHITECTURE.md:923",
       "delegation_line": "detailed cross-layer spec for this contract is **`cowork_bounded_context_design.md`** — the request→supply→bounded-",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -1320,13 +1336,15 @@
       "section_heading_line": 96,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:912",
+      "delegation_at": "ARCHITECTURE.md:923",
       "delegation_line": "detailed cross-layer spec for this contract is **`cowork_bounded_context_design.md`** — the request→supply→bounded-",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -1338,13 +1356,15 @@
       "section_heading_line": 193,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:912",
+      "delegation_at": "ARCHITECTURE.md:923",
       "delegation_line": "detailed cross-layer spec for this contract is **`cowork_bounded_context_design.md`** — the request→supply→bounded-",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -1356,13 +1376,15 @@
       "section_heading_line": 23,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:951",
+      "delegation_at": "ARCHITECTURE.md:962",
       "delegation_line": "squashing rules and the declared comparison frames are stated in full in `cowork_confidence_contract.md`,",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -1374,13 +1396,15 @@
       "section_heading_line": 23,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:951",
+      "delegation_at": "ARCHITECTURE.md:962",
       "delegation_line": "squashing rules and the declared comparison frames are stated in full in `cowork_confidence_contract.md`,",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -1392,13 +1416,15 @@
       "section_heading_line": 63,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:951",
+      "delegation_at": "ARCHITECTURE.md:962",
       "delegation_line": "squashing rules and the declared comparison frames are stated in full in `cowork_confidence_contract.md`,",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -1408,16 +1434,18 @@
       "home": "cowork_prefit_gates.md:32-42",
       "section": "“The held-out evaluation protocol”",
       "section_heading_line": 23,
-      "delegation_form": "provenance-attribution",
-      "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:49",
-      "delegation_line": "> `cowork_prefit_gates.md`; adoption record `cc_adoption_measurement_report.md` / `tools/joint_estimator/adoption_record.json`.",
-      "section_delegated": null,
-      "section_states_rules": null,
+      "delegation_form": "explicit-delegation-clause",
+      "delegation_scope": "document",
+      "delegation_at": "ARCHITECTURE.md:52",
+      "delegation_line": "> ratified contract for the PRE-FIT PROTOCOLS this estimator's fitting must satisfy — the five-fold split, the",
+      "section_delegated": true,
+      "section_states_rules": true,
       "class_before_phase1q": "contract-home",
-      "class_after": "gap",
-      "moves": true,
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit"
+      "class_before_phase1r": "gap",
+      "class_after": "contract-home",
+      "moves": false,
+      "moves_since_phase1q": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-271",
@@ -1426,16 +1454,18 @@
       "home": "cowork_prefit_gates.md:68-81",
       "section": "“The capacity budget”",
       "section_heading_line": 62,
-      "delegation_form": "provenance-attribution",
-      "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:49",
-      "delegation_line": "> `cowork_prefit_gates.md`; adoption record `cc_adoption_measurement_report.md` / `tools/joint_estimator/adoption_record.json`.",
-      "section_delegated": null,
-      "section_states_rules": null,
+      "delegation_form": "explicit-delegation-clause",
+      "delegation_scope": "document",
+      "delegation_at": "ARCHITECTURE.md:52",
+      "delegation_line": "> ratified contract for the PRE-FIT PROTOCOLS this estimator's fitting must satisfy — the five-fold split, the",
+      "section_delegated": true,
+      "section_states_rules": true,
       "class_before_phase1q": "contract-home",
-      "class_after": "gap",
-      "moves": true,
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit"
+      "class_before_phase1r": "gap",
+      "class_after": "contract-home",
+      "moves": false,
+      "moves_since_phase1q": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-272",
@@ -1444,16 +1474,18 @@
       "home": "cowork_prefit_gates.md:17-19",
       "section": "the opening block (above the first section heading)",
       "section_heading_line": 1,
-      "delegation_form": "provenance-attribution",
-      "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:49",
-      "delegation_line": "> `cowork_prefit_gates.md`; adoption record `cc_adoption_measurement_report.md` / `tools/joint_estimator/adoption_record.json`.",
-      "section_delegated": null,
-      "section_states_rules": null,
+      "delegation_form": "explicit-delegation-clause",
+      "delegation_scope": "document",
+      "delegation_at": "ARCHITECTURE.md:52",
+      "delegation_line": "> ratified contract for the PRE-FIT PROTOCOLS this estimator's fitting must satisfy — the five-fold split, the",
+      "section_delegated": true,
+      "section_states_rules": true,
       "class_before_phase1q": "contract-home",
-      "class_after": "gap",
-      "moves": true,
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit"
+      "class_before_phase1r": "gap",
+      "class_after": "contract-home",
+      "moves": false,
+      "moves_since_phase1q": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-273",
@@ -1462,16 +1494,18 @@
       "home": "cowork_prefit_gates.md:116-121",
       "section": "“The robust-stop architecture-adoption protocol”",
       "section_heading_line": 98,
-      "delegation_form": "provenance-attribution",
-      "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:49",
-      "delegation_line": "> `cowork_prefit_gates.md`; adoption record `cc_adoption_measurement_report.md` / `tools/joint_estimator/adoption_record.json`.",
-      "section_delegated": null,
-      "section_states_rules": null,
+      "delegation_form": "explicit-delegation-clause",
+      "delegation_scope": "document",
+      "delegation_at": "ARCHITECTURE.md:52",
+      "delegation_line": "> ratified contract for the PRE-FIT PROTOCOLS this estimator's fitting must satisfy — the five-fold split, the",
+      "section_delegated": true,
+      "section_states_rules": true,
       "class_before_phase1q": "contract-home",
-      "class_after": "gap",
-      "moves": true,
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit"
+      "class_before_phase1r": "gap",
+      "class_after": "contract-home",
+      "moves": false,
+      "moves_since_phase1q": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-274",
@@ -1480,16 +1514,18 @@
       "home": "cowork_prefit_gates.md:189-191",
       "section": "“The sanctioned dual path and the retirement map”",
       "section_heading_line": 147,
-      "delegation_form": "provenance-attribution",
-      "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:49",
-      "delegation_line": "> `cowork_prefit_gates.md`; adoption record `cc_adoption_measurement_report.md` / `tools/joint_estimator/adoption_record.json`.",
-      "section_delegated": null,
-      "section_states_rules": null,
+      "delegation_form": "explicit-delegation-clause",
+      "delegation_scope": "document",
+      "delegation_at": "ARCHITECTURE.md:52",
+      "delegation_line": "> ratified contract for the PRE-FIT PROTOCOLS this estimator's fitting must satisfy — the five-fold split, the",
+      "section_delegated": true,
+      "section_states_rules": true,
       "class_before_phase1q": "contract-home",
-      "class_after": "gap",
-      "moves": true,
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit"
+      "class_before_phase1r": "gap",
+      "class_after": "contract-home",
+      "moves": false,
+      "moves_since_phase1q": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-275",
@@ -1500,14 +1536,16 @@
       "section_heading_line": 52,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:73",
+      "delegation_at": "ARCHITECTURE.md:79",
       "delegation_line": "> **NOTATION OUTPUT-SURFACE RECORD — the A-native record (as-built, DORMANT; contract `cowork_notation_output_contract.md`",
-      "section_delegated": false,
-      "section_states_rules": null,
+      "section_delegated": true,
+      "section_states_rules": true,
       "class_before_phase1q": "contract-home",
-      "class_after": "gap",
-      "moves": true,
-      "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section"
+      "class_before_phase1r": "gap",
+      "class_after": "contract-home",
+      "moves": false,
+      "moves_since_phase1q": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-276",
@@ -1518,50 +1556,56 @@
       "section_heading_line": 137,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:73",
+      "delegation_at": "ARCHITECTURE.md:79",
       "delegation_line": "> **NOTATION OUTPUT-SURFACE RECORD — the A-native record (as-built, DORMANT; contract `cowork_notation_output_contract.md`",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-278",
       "title": "The joint key-and-chord step is SHELVED - measured not to pay",
       "document": "cowork_engage_arc_plan.md",
-      "home": "cowork_engage_arc_plan.md:103-112",
+      "home": "cowork_engage_arc_plan.md:108-117",
       "section": "“The stages”",
       "section_heading_line": 19,
-      "delegation_form": "provenance-attribution",
-      "delegation_scope": "none",
-      "delegation_at": "CLAUDE.md:129",
-      "delegation_line": "⛔ TOTAL UNIFICATION rule (`cowork_handoff.md`), the MEASURE-BEFORE-BUILD gate",
-      "section_delegated": null,
-      "section_states_rules": null,
+      "delegation_form": "explicit-delegation-clause",
+      "delegation_scope": "document",
+      "delegation_at": "CLAUDE.md:134",
+      "delegation_line": "write list).** The ratified contract for the ORDER OF WORK from here to the precision phase — the",
+      "section_delegated": true,
+      "section_states_rules": true,
       "class_before_phase1q": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit"
+      "class_before_phase1r": "gap",
+      "class_after": "contract-home",
+      "moves": true,
+      "moves_since_phase1q": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-279",
       "title": "The Stage-3 entry gate - seven conditions before any engagement wiring reaches production",
       "document": "cowork_engage_arc_plan.md",
-      "home": "cowork_engage_arc_plan.md:64-67",
+      "home": "cowork_engage_arc_plan.md:69-72",
       "section": "“The stages”",
       "section_heading_line": 19,
-      "delegation_form": "provenance-attribution",
-      "delegation_scope": "none",
-      "delegation_at": "CLAUDE.md:129",
-      "delegation_line": "⛔ TOTAL UNIFICATION rule (`cowork_handoff.md`), the MEASURE-BEFORE-BUILD gate",
-      "section_delegated": null,
-      "section_states_rules": null,
+      "delegation_form": "explicit-delegation-clause",
+      "delegation_scope": "document",
+      "delegation_at": "CLAUDE.md:134",
+      "delegation_line": "write list).** The ratified contract for the ORDER OF WORK from here to the precision phase — the",
+      "section_delegated": true,
+      "section_states_rules": true,
       "class_before_phase1q": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit"
+      "class_before_phase1r": "gap",
+      "class_after": "contract-home",
+      "moves": true,
+      "moves_since_phase1q": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-280",
@@ -1577,8 +1621,10 @@
       "section_delegated": null,
       "section_states_rules": null,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": true,
+      "moves_since_phase1q": false,
       "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
     },
     {
@@ -1595,8 +1641,10 @@
       "section_delegated": null,
       "section_states_rules": null,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": true,
+      "moves_since_phase1q": false,
       "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
     },
     {
@@ -1613,8 +1661,10 @@
       "section_delegated": null,
       "section_states_rules": null,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": true,
+      "moves_since_phase1q": false,
       "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
     },
     {
@@ -1631,8 +1681,10 @@
       "section_delegated": null,
       "section_states_rules": null,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": true,
+      "moves_since_phase1q": false,
       "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
     },
     {
@@ -1649,8 +1701,10 @@
       "section_delegated": null,
       "section_states_rules": null,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": true,
+      "moves_since_phase1q": false,
       "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
     },
     {
@@ -1667,27 +1721,31 @@
       "section_delegated": null,
       "section_states_rules": null,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": true,
+      "moves_since_phase1q": false,
       "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
     },
     {
       "id": "D-311",
       "title": "The chord-analyzer file split happens once — the SEQUENCING is spent (the split happened first, not last); the once-only LESSON is what carries forward",
       "document": "cowork_engage_arc_plan.md",
-      "home": "cowork_engage_arc_plan.md:126",
+      "home": "cowork_engage_arc_plan.md:131",
       "section": "“The stages”",
       "section_heading_line": 19,
-      "delegation_form": "provenance-attribution",
-      "delegation_scope": "none",
-      "delegation_at": "CLAUDE.md:129",
-      "delegation_line": "⛔ TOTAL UNIFICATION rule (`cowork_handoff.md`), the MEASURE-BEFORE-BUILD gate",
-      "section_delegated": null,
-      "section_states_rules": null,
+      "delegation_form": "explicit-delegation-clause",
+      "delegation_scope": "document",
+      "delegation_at": "CLAUDE.md:134",
+      "delegation_line": "write list).** The ratified contract for the ORDER OF WORK from here to the precision phase — the",
+      "section_delegated": true,
+      "section_states_rules": true,
       "class_before_phase1q": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit"
+      "class_before_phase1r": "gap",
+      "class_after": "contract-home",
+      "moves": true,
+      "moves_since_phase1q": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-312",
@@ -1698,13 +1756,15 @@
       "section_heading_line": 908,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:285",
+      "delegation_at": "ARCHITECTURE.md:292",
       "delegation_line": "> *Delegation pointer (the fifth home case, user-ratified 2026-08-02): the fitting event's own design contract is `cowork_stage5_fitter_design.md` (SIGNED, user, 2026-07-04) — D-312…D-314 — which this specification points at and does not restate.*",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -1716,13 +1776,15 @@
       "section_heading_line": 623,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:285",
+      "delegation_at": "ARCHITECTURE.md:292",
       "delegation_line": "> *Delegation pointer (the fifth home case, user-ratified 2026-08-02): the fitting event's own design contract is `cowork_stage5_fitter_design.md` (SIGNED, user, 2026-07-04) — D-312…D-314 — which this specification points at and does not restate.*",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -1734,13 +1796,15 @@
       "section_heading_line": 908,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:285",
+      "delegation_at": "ARCHITECTURE.md:292",
       "delegation_line": "> *Delegation pointer (the fifth home case, user-ratified 2026-08-02): the fitting event's own design contract is `cowork_stage5_fitter_design.md` (SIGNED, user, 2026-07-04) — D-312…D-314 — which this specification points at and does not restate.*",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -1752,13 +1816,15 @@
       "section_heading_line": 372,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:777",
+      "delegation_at": "ARCHITECTURE.md:784",
       "delegation_line": "arpeggio-resolved chord identities as input. Design reference: `docs/redesign_plan.md`",
       "section_delegated": null,
       "section_states_rules": null,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": true,
+      "moves_since_phase1q": false,
       "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit"
     },
     {
@@ -1770,13 +1836,15 @@
       "section_heading_line": 387,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:777",
+      "delegation_at": "ARCHITECTURE.md:784",
       "delegation_line": "arpeggio-resolved chord identities as input. Design reference: `docs/redesign_plan.md`",
       "section_delegated": null,
       "section_states_rules": null,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": true,
+      "moves_since_phase1q": false,
       "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit"
     },
     {
@@ -1788,13 +1856,15 @@
       "section_heading_line": 404,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:777",
+      "delegation_at": "ARCHITECTURE.md:784",
       "delegation_line": "arpeggio-resolved chord identities as input. Design reference: `docs/redesign_plan.md`",
       "section_delegated": null,
       "section_states_rules": null,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": true,
+      "moves_since_phase1q": false,
       "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit"
     },
     {
@@ -1806,13 +1876,15 @@
       "section_heading_line": 561,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:777",
+      "delegation_at": "ARCHITECTURE.md:784",
       "delegation_line": "arpeggio-resolved chord identities as input. Design reference: `docs/redesign_plan.md`",
       "section_delegated": null,
       "section_states_rules": null,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": true,
+      "moves_since_phase1q": false,
       "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit"
     },
     {
@@ -1824,13 +1896,15 @@
       "section_heading_line": 210,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "CLAUDE.md:698",
+      "delegation_at": "CLAUDE.md:713",
       "delegation_line": "**Read `docs/scoring_model.md` at the start of any session that touches scoring",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -1842,13 +1916,15 @@
       "section_heading_line": 210,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "CLAUDE.md:698",
+      "delegation_at": "CLAUDE.md:713",
       "delegation_line": "**Read `docs/scoring_model.md` at the start of any session that touches scoring",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -1860,13 +1936,15 @@
       "section_heading_line": 246,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "CLAUDE.md:698",
+      "delegation_at": "CLAUDE.md:713",
       "delegation_line": "**Read `docs/scoring_model.md` at the start of any session that touches scoring",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -1878,13 +1956,15 @@
       "section_heading_line": 752,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "CLAUDE.md:698",
+      "delegation_at": "CLAUDE.md:713",
       "delegation_line": "**Read `docs/scoring_model.md` at the start of any session that touches scoring",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -1901,8 +1981,10 @@
       "section_delegated": null,
       "section_states_rules": null,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
     },
     {
@@ -1919,8 +2001,10 @@
       "section_delegated": null,
       "section_states_rules": null,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
     },
     {
@@ -1937,8 +2021,10 @@
       "section_delegated": null,
       "section_states_rules": null,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
     },
     {
@@ -1955,8 +2041,10 @@
       "section_delegated": null,
       "section_states_rules": null,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
     },
     {
@@ -1968,13 +2056,15 @@
       "section_heading_line": 204,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1407",
+      "delegation_at": "ARCHITECTURE.md:1418",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer4_chordsymbol_design.md` (SIGNED, user, 2026-06-24) — D-329…D-334 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -1986,13 +2076,15 @@
       "section_heading_line": 386,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1407",
+      "delegation_at": "ARCHITECTURE.md:1418",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer4_chordsymbol_design.md` (SIGNED, user, 2026-06-24) — D-329…D-334 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2004,13 +2096,15 @@
       "section_heading_line": 559,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1407",
+      "delegation_at": "ARCHITECTURE.md:1418",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer4_chordsymbol_design.md` (SIGNED, user, 2026-06-24) — D-329…D-334 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2022,13 +2116,15 @@
       "section_heading_line": 349,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1407",
+      "delegation_at": "ARCHITECTURE.md:1418",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer4_chordsymbol_design.md` (SIGNED, user, 2026-06-24) — D-329…D-334 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2040,13 +2136,15 @@
       "section_heading_line": 559,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1407",
+      "delegation_at": "ARCHITECTURE.md:1418",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer4_chordsymbol_design.md` (SIGNED, user, 2026-06-24) — D-329…D-334 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2058,13 +2156,15 @@
       "section_heading_line": 559,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1407",
+      "delegation_at": "ARCHITECTURE.md:1418",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer4_chordsymbol_design.md` (SIGNED, user, 2026-06-24) — D-329…D-334 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2074,16 +2174,18 @@
       "home": "cowork_layer5_function_design.md:612-617",
       "section": "§9",
       "section_heading_line": 611,
-      "delegation_form": "bare-appended-citation",
-      "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:1482",
-      "delegation_line": "detector is **key-agnostic** (it votes for the key; it does not read a resolved key). Full spec:",
-      "section_delegated": null,
-      "section_states_rules": null,
+      "delegation_form": "explicit-delegation-clause",
+      "delegation_scope": "document",
+      "delegation_at": "ARCHITECTURE.md:1496",
+      "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-335…D-342 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph is the delegation the record relied on and never had.)*",
+      "section_delegated": true,
+      "section_states_rules": true,
       "class_before_phase1q": "contract-home",
-      "class_after": "gap",
-      "moves": true,
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit"
+      "class_before_phase1r": "gap",
+      "class_after": "contract-home",
+      "moves": false,
+      "moves_since_phase1q": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-336",
@@ -2092,16 +2194,18 @@
       "home": "cowork_layer5_function_design.md:618-622",
       "section": "§9",
       "section_heading_line": 611,
-      "delegation_form": "bare-appended-citation",
-      "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:1482",
-      "delegation_line": "detector is **key-agnostic** (it votes for the key; it does not read a resolved key). Full spec:",
-      "section_delegated": null,
-      "section_states_rules": null,
+      "delegation_form": "explicit-delegation-clause",
+      "delegation_scope": "document",
+      "delegation_at": "ARCHITECTURE.md:1496",
+      "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-335…D-342 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph is the delegation the record relied on and never had.)*",
+      "section_delegated": true,
+      "section_states_rules": true,
       "class_before_phase1q": "contract-home",
-      "class_after": "gap",
-      "moves": true,
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit"
+      "class_before_phase1r": "gap",
+      "class_after": "contract-home",
+      "moves": false,
+      "moves_since_phase1q": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-337",
@@ -2110,16 +2214,18 @@
       "home": "cowork_layer5_function_design.md:623-625",
       "section": "§9",
       "section_heading_line": 611,
-      "delegation_form": "bare-appended-citation",
-      "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:1482",
-      "delegation_line": "detector is **key-agnostic** (it votes for the key; it does not read a resolved key). Full spec:",
-      "section_delegated": null,
-      "section_states_rules": null,
+      "delegation_form": "explicit-delegation-clause",
+      "delegation_scope": "document",
+      "delegation_at": "ARCHITECTURE.md:1496",
+      "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-335…D-342 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph is the delegation the record relied on and never had.)*",
+      "section_delegated": true,
+      "section_states_rules": true,
       "class_before_phase1q": "contract-home",
-      "class_after": "gap",
-      "moves": true,
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit"
+      "class_before_phase1r": "gap",
+      "class_after": "contract-home",
+      "moves": false,
+      "moves_since_phase1q": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-338",
@@ -2128,16 +2234,18 @@
       "home": "cowork_layer5_function_design.md:627-630",
       "section": "§9",
       "section_heading_line": 611,
-      "delegation_form": "bare-appended-citation",
-      "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:1482",
-      "delegation_line": "detector is **key-agnostic** (it votes for the key; it does not read a resolved key). Full spec:",
-      "section_delegated": null,
-      "section_states_rules": null,
+      "delegation_form": "explicit-delegation-clause",
+      "delegation_scope": "document",
+      "delegation_at": "ARCHITECTURE.md:1496",
+      "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-335…D-342 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph is the delegation the record relied on and never had.)*",
+      "section_delegated": true,
+      "section_states_rules": true,
       "class_before_phase1q": "contract-home",
-      "class_after": "gap",
-      "moves": true,
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit"
+      "class_before_phase1r": "gap",
+      "class_after": "contract-home",
+      "moves": false,
+      "moves_since_phase1q": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-339",
@@ -2146,16 +2254,18 @@
       "home": "cowork_layer5_function_design.md:637-648",
       "section": "§9",
       "section_heading_line": 611,
-      "delegation_form": "bare-appended-citation",
-      "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:1482",
-      "delegation_line": "detector is **key-agnostic** (it votes for the key; it does not read a resolved key). Full spec:",
-      "section_delegated": null,
-      "section_states_rules": null,
+      "delegation_form": "explicit-delegation-clause",
+      "delegation_scope": "document",
+      "delegation_at": "ARCHITECTURE.md:1496",
+      "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-335…D-342 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph is the delegation the record relied on and never had.)*",
+      "section_delegated": true,
+      "section_states_rules": true,
       "class_before_phase1q": "contract-home",
-      "class_after": "gap",
-      "moves": true,
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit"
+      "class_before_phase1r": "gap",
+      "class_after": "contract-home",
+      "moves": false,
+      "moves_since_phase1q": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-340",
@@ -2164,16 +2274,18 @@
       "home": "cowork_layer5_function_design.md:547-554",
       "section": "§7",
       "section_heading_line": 537,
-      "delegation_form": "bare-appended-citation",
-      "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:1482",
-      "delegation_line": "detector is **key-agnostic** (it votes for the key; it does not read a resolved key). Full spec:",
-      "section_delegated": null,
-      "section_states_rules": null,
+      "delegation_form": "explicit-delegation-clause",
+      "delegation_scope": "document",
+      "delegation_at": "ARCHITECTURE.md:1496",
+      "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-335…D-342 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph is the delegation the record relied on and never had.)*",
+      "section_delegated": true,
+      "section_states_rules": true,
       "class_before_phase1q": "contract-home",
-      "class_after": "gap",
-      "moves": true,
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit"
+      "class_before_phase1r": "gap",
+      "class_after": "contract-home",
+      "moves": false,
+      "moves_since_phase1q": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-341",
@@ -2182,16 +2294,18 @@
       "home": "cowork_layer5_function_design.md:888-897",
       "section": "§15",
       "section_heading_line": 782,
-      "delegation_form": "bare-appended-citation",
-      "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:1482",
-      "delegation_line": "detector is **key-agnostic** (it votes for the key; it does not read a resolved key). Full spec:",
-      "section_delegated": null,
-      "section_states_rules": null,
+      "delegation_form": "explicit-delegation-clause",
+      "delegation_scope": "document",
+      "delegation_at": "ARCHITECTURE.md:1496",
+      "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-335…D-342 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph is the delegation the record relied on and never had.)*",
+      "section_delegated": true,
+      "section_states_rules": false,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": true,
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit"
+      "moves_since_phase1q": false,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS"
     },
     {
       "id": "D-342",
@@ -2200,16 +2314,18 @@
       "home": "cowork_layer5_function_design.md:696-698",
       "section": "§11",
       "section_heading_line": 669,
-      "delegation_form": "bare-appended-citation",
-      "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:1482",
-      "delegation_line": "detector is **key-agnostic** (it votes for the key; it does not read a resolved key). Full spec:",
-      "section_delegated": null,
-      "section_states_rules": null,
+      "delegation_form": "explicit-delegation-clause",
+      "delegation_scope": "document",
+      "delegation_at": "ARCHITECTURE.md:1496",
+      "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-335…D-342 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph is the delegation the record relied on and never had.)*",
+      "section_delegated": true,
+      "section_states_rules": true,
       "class_before_phase1q": "contract-home",
-      "class_after": "gap",
-      "moves": true,
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit"
+      "class_before_phase1r": "gap",
+      "class_after": "contract-home",
+      "moves": false,
+      "moves_since_phase1q": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-343",
@@ -2220,13 +2336,15 @@
       "section_heading_line": 52,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1331",
+      "delegation_at": "ARCHITECTURE.md:1342",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2238,13 +2356,15 @@
       "section_heading_line": 52,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1331",
+      "delegation_at": "ARCHITECTURE.md:1342",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2256,13 +2376,15 @@
       "section_heading_line": 138,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1331",
+      "delegation_at": "ARCHITECTURE.md:1342",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2274,13 +2396,15 @@
       "section_heading_line": 224,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1331",
+      "delegation_at": "ARCHITECTURE.md:1342",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2292,13 +2416,15 @@
       "section_heading_line": 295,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1331",
+      "delegation_at": "ARCHITECTURE.md:1342",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2310,13 +2436,15 @@
       "section_heading_line": 206,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1331",
+      "delegation_at": "ARCHITECTURE.md:1342",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2328,13 +2456,15 @@
       "section_heading_line": 295,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1331",
+      "delegation_at": "ARCHITECTURE.md:1342",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2346,13 +2476,15 @@
       "section_heading_line": 1,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1331",
+      "delegation_at": "ARCHITECTURE.md:1342",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": false,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": true,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS"
     },
     {
@@ -2364,13 +2496,15 @@
       "section_heading_line": 295,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1331",
+      "delegation_at": "ARCHITECTURE.md:1342",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2382,13 +2516,15 @@
       "section_heading_line": 317,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1331",
+      "delegation_at": "ARCHITECTURE.md:1342",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2400,13 +2536,15 @@
       "section_heading_line": 317,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1331",
+      "delegation_at": "ARCHITECTURE.md:1342",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2418,13 +2556,15 @@
       "section_heading_line": 349,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1331",
+      "delegation_at": "ARCHITECTURE.md:1342",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2436,13 +2576,15 @@
       "section_heading_line": 349,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1331",
+      "delegation_at": "ARCHITECTURE.md:1342",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2454,13 +2596,15 @@
       "section_heading_line": 349,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1331",
+      "delegation_at": "ARCHITECTURE.md:1342",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2472,13 +2616,15 @@
       "section_heading_line": 480,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1331",
+      "delegation_at": "ARCHITECTURE.md:1342",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2490,13 +2636,15 @@
       "section_heading_line": 480,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1331",
+      "delegation_at": "ARCHITECTURE.md:1342",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2508,13 +2656,15 @@
       "section_heading_line": 13,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:319",
+      "delegation_at": "ARCHITECTURE.md:326",
       "delegation_line": "> own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c. **Which class",
       "section_delegated": false,
       "section_states_rules": null,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section"
     },
     {
@@ -2526,13 +2676,15 @@
       "section_heading_line": 65,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:319",
+      "delegation_at": "ARCHITECTURE.md:326",
       "delegation_line": "> own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c. **Which class",
       "section_delegated": false,
       "section_states_rules": null,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section"
     },
     {
@@ -2544,13 +2696,15 @@
       "section_heading_line": 72,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:319",
+      "delegation_at": "ARCHITECTURE.md:326",
       "delegation_line": "> own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c. **Which class",
       "section_delegated": false,
       "section_states_rules": null,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section"
     },
     {
@@ -2562,13 +2716,15 @@
       "section_heading_line": 117,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:319",
+      "delegation_at": "ARCHITECTURE.md:326",
       "delegation_line": "> own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c. **Which class",
       "section_delegated": false,
       "section_states_rules": null,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section"
     },
     {
@@ -2580,13 +2736,15 @@
       "section_heading_line": 117,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:319",
+      "delegation_at": "ARCHITECTURE.md:326",
       "delegation_line": "> own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c. **Which class",
       "section_delegated": false,
       "section_states_rules": null,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section"
     },
     {
@@ -2598,13 +2756,15 @@
       "section_heading_line": 150,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:319",
+      "delegation_at": "ARCHITECTURE.md:326",
       "delegation_line": "> own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c. **Which class",
       "section_delegated": false,
       "section_states_rules": null,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section"
     },
     {
@@ -2616,13 +2776,15 @@
       "section_heading_line": 187,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:319",
+      "delegation_at": "ARCHITECTURE.md:326",
       "delegation_line": "> own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c. **Which class",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2634,13 +2796,15 @@
       "section_heading_line": 187,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:319",
+      "delegation_at": "ARCHITECTURE.md:326",
       "delegation_line": "> own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c. **Which class",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2652,13 +2816,15 @@
       "section_heading_line": 187,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:319",
+      "delegation_at": "ARCHITECTURE.md:326",
       "delegation_line": "> own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c. **Which class",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2670,13 +2836,15 @@
       "section_heading_line": 187,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:319",
+      "delegation_at": "ARCHITECTURE.md:326",
       "delegation_line": "> own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c. **Which class",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2688,13 +2856,15 @@
       "section_heading_line": 187,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:319",
+      "delegation_at": "ARCHITECTURE.md:326",
       "delegation_line": "> own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c. **Which class",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2706,13 +2876,15 @@
       "section_heading_line": 187,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:319",
+      "delegation_at": "ARCHITECTURE.md:326",
       "delegation_line": "> own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c. **Which class",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2724,13 +2896,15 @@
       "section_heading_line": 187,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:319",
+      "delegation_at": "ARCHITECTURE.md:326",
       "delegation_line": "> own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c. **Which class",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2742,13 +2916,15 @@
       "section_heading_line": 187,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:319",
+      "delegation_at": "ARCHITECTURE.md:326",
       "delegation_line": "> own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c. **Which class",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2760,13 +2936,15 @@
       "section_heading_line": 187,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:319",
+      "delegation_at": "ARCHITECTURE.md:326",
       "delegation_line": "> own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c. **Which class",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2778,13 +2956,15 @@
       "section_heading_line": 187,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:319",
+      "delegation_at": "ARCHITECTURE.md:326",
       "delegation_line": "> own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c. **Which class",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2796,13 +2976,15 @@
       "section_heading_line": 187,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:319",
+      "delegation_at": "ARCHITECTURE.md:326",
       "delegation_line": "> own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c. **Which class",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2812,16 +2994,18 @@
       "home": "cowork_joint_key_chord_design.md:77-96",
       "section": "“§1.1 The decision: a BOUNDED coupling step, NOT a unified `(key,chord)` hidden state”",
       "section_heading_line": 70,
-      "delegation_form": "provenance-attribution",
-      "delegation_scope": "none",
+      "delegation_form": "explicit-delegation-clause",
+      "delegation_scope": "document",
       "delegation_at": "cowork_engage_arc_plan.md:44",
-      "delegation_line": "- **arc #10 — the joint key-and-chord step** (`cowork_joint_key_chord_design.md`): the coupled key↔chord decision",
-      "section_delegated": null,
-      "section_states_rules": null,
+      "delegation_line": "- **arc #10 — the joint key-and-chord step.** The ratified contract for the coupled key↔chord decision, and for its",
+      "section_delegated": true,
+      "section_states_rules": true,
       "class_before_phase1q": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit"
+      "class_before_phase1r": "gap",
+      "class_after": "contract-home",
+      "moves": true,
+      "moves_since_phase1q": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-377",
@@ -2830,16 +3014,18 @@
       "home": "cowork_joint_key_chord_design.md:136-140",
       "section": "“§1.3 How it avoids re-introducing a cross-layer cycle”",
       "section_heading_line": 118,
-      "delegation_form": "provenance-attribution",
-      "delegation_scope": "none",
+      "delegation_form": "explicit-delegation-clause",
+      "delegation_scope": "document",
       "delegation_at": "cowork_engage_arc_plan.md:44",
-      "delegation_line": "- **arc #10 — the joint key-and-chord step** (`cowork_joint_key_chord_design.md`): the coupled key↔chord decision",
-      "section_delegated": null,
-      "section_states_rules": null,
+      "delegation_line": "- **arc #10 — the joint key-and-chord step.** The ratified contract for the coupled key↔chord decision, and for its",
+      "section_delegated": true,
+      "section_states_rules": true,
       "class_before_phase1q": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit"
+      "class_before_phase1r": "gap",
+      "class_after": "contract-home",
+      "moves": true,
+      "moves_since_phase1q": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-378",
@@ -2848,16 +3034,18 @@
       "home": "cowork_joint_key_chord_design.md:173-180",
       "section": "“§2.2 The chord re-decoded under each carried key”",
       "section_heading_line": 164,
-      "delegation_form": "provenance-attribution",
-      "delegation_scope": "none",
+      "delegation_form": "explicit-delegation-clause",
+      "delegation_scope": "document",
       "delegation_at": "cowork_engage_arc_plan.md:44",
-      "delegation_line": "- **arc #10 — the joint key-and-chord step** (`cowork_joint_key_chord_design.md`): the coupled key↔chord decision",
-      "section_delegated": null,
-      "section_states_rules": null,
+      "delegation_line": "- **arc #10 — the joint key-and-chord step.** The ratified contract for the coupled key↔chord decision, and for its",
+      "section_delegated": true,
+      "section_states_rules": true,
       "class_before_phase1q": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit"
+      "class_before_phase1r": "gap",
+      "class_after": "contract-home",
+      "moves": true,
+      "moves_since_phase1q": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-379",
@@ -2866,16 +3054,18 @@
       "home": "cowork_joint_key_chord_design.md:266-272",
       "section": "“§3.1 The trigger, grounded in C3”",
       "section_heading_line": 249,
-      "delegation_form": "provenance-attribution",
-      "delegation_scope": "none",
+      "delegation_form": "explicit-delegation-clause",
+      "delegation_scope": "document",
       "delegation_at": "cowork_engage_arc_plan.md:44",
-      "delegation_line": "- **arc #10 — the joint key-and-chord step** (`cowork_joint_key_chord_design.md`): the coupled key↔chord decision",
-      "section_delegated": null,
-      "section_states_rules": null,
+      "delegation_line": "- **arc #10 — the joint key-and-chord step.** The ratified contract for the coupled key↔chord decision, and for its",
+      "section_delegated": true,
+      "section_states_rules": true,
       "class_before_phase1q": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit"
+      "class_before_phase1r": "gap",
+      "class_after": "contract-home",
+      "moves": true,
+      "moves_since_phase1q": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-380",
@@ -2886,13 +3076,15 @@
       "section_heading_line": 135,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:1485",
+      "delegation_at": "ARCHITECTURE.md:1498",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory \"is enumerated at `cowork_layer5_engagement_design.md` §9.2\" (`:53-55`).",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2904,13 +3096,15 @@
       "section_heading_line": 144,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:1485",
+      "delegation_at": "ARCHITECTURE.md:1498",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory \"is enumerated at `cowork_layer5_engagement_design.md` §9.2\" (`:53-55`).",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2922,13 +3116,15 @@
       "section_heading_line": 186,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:1485",
+      "delegation_at": "ARCHITECTURE.md:1498",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory \"is enumerated at `cowork_layer5_engagement_design.md` §9.2\" (`:53-55`).",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2940,13 +3136,15 @@
       "section_heading_line": 200,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:1485",
+      "delegation_at": "ARCHITECTURE.md:1498",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory \"is enumerated at `cowork_layer5_engagement_design.md` §9.2\" (`:53-55`).",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2958,13 +3156,15 @@
       "section_heading_line": 255,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:1485",
+      "delegation_at": "ARCHITECTURE.md:1498",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory \"is enumerated at `cowork_layer5_engagement_design.md` §9.2\" (`:53-55`).",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2976,13 +3176,15 @@
       "section_heading_line": 406,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:1485",
+      "delegation_at": "ARCHITECTURE.md:1498",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory \"is enumerated at `cowork_layer5_engagement_design.md` §9.2\" (`:53-55`).",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -2994,13 +3196,15 @@
       "section_heading_line": 444,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:1485",
+      "delegation_at": "ARCHITECTURE.md:1498",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory \"is enumerated at `cowork_layer5_engagement_design.md` §9.2\" (`:53-55`).",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -3012,13 +3216,15 @@
       "section_heading_line": 468,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:1485",
+      "delegation_at": "ARCHITECTURE.md:1498",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory \"is enumerated at `cowork_layer5_engagement_design.md` §9.2\" (`:53-55`).",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -3030,14 +3236,16 @@
       "section_heading_line": 508,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:901",
+      "delegation_at": "ARCHITECTURE.md:908",
       "delegation_line": "(one span) until the §15-1 per-span measurement refines it. Criterion + build home:",
-      "section_delegated": false,
-      "section_states_rules": null,
+      "section_delegated": true,
+      "section_states_rules": true,
       "class_before_phase1q": "contract-home",
-      "class_after": "gap",
-      "moves": true,
-      "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section"
+      "class_before_phase1r": "gap",
+      "class_after": "contract-home",
+      "moves": false,
+      "moves_since_phase1q": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-389",
@@ -3048,14 +3256,16 @@
       "section_heading_line": 508,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:901",
+      "delegation_at": "ARCHITECTURE.md:908",
       "delegation_line": "(one span) until the §15-1 per-span measurement refines it. Criterion + build home:",
-      "section_delegated": false,
-      "section_states_rules": null,
+      "section_delegated": true,
+      "section_states_rules": true,
       "class_before_phase1q": "contract-home",
-      "class_after": "gap",
-      "moves": true,
-      "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section"
+      "class_before_phase1r": "gap",
+      "class_after": "contract-home",
+      "moves": false,
+      "moves_since_phase1q": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-390",
@@ -3066,14 +3276,16 @@
       "section_heading_line": 508,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:901",
+      "delegation_at": "ARCHITECTURE.md:908",
       "delegation_line": "(one span) until the §15-1 per-span measurement refines it. Criterion + build home:",
-      "section_delegated": false,
-      "section_states_rules": null,
+      "section_delegated": true,
+      "section_states_rules": true,
       "class_before_phase1q": "contract-home",
-      "class_after": "gap",
-      "moves": true,
-      "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section"
+      "class_before_phase1r": "gap",
+      "class_after": "contract-home",
+      "moves": false,
+      "moves_since_phase1q": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-391",
@@ -3084,14 +3296,16 @@
       "section_heading_line": 508,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:901",
+      "delegation_at": "ARCHITECTURE.md:908",
       "delegation_line": "(one span) until the §15-1 per-span measurement refines it. Criterion + build home:",
-      "section_delegated": false,
-      "section_states_rules": null,
+      "section_delegated": true,
+      "section_states_rules": true,
       "class_before_phase1q": "contract-home",
-      "class_after": "gap",
-      "moves": true,
-      "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section"
+      "class_before_phase1r": "gap",
+      "class_after": "contract-home",
+      "moves": false,
+      "moves_since_phase1q": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-392",
@@ -3102,14 +3316,16 @@
       "section_heading_line": 508,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:901",
+      "delegation_at": "ARCHITECTURE.md:908",
       "delegation_line": "(one span) until the §15-1 per-span measurement refines it. Criterion + build home:",
-      "section_delegated": false,
-      "section_states_rules": null,
+      "section_delegated": true,
+      "section_states_rules": true,
       "class_before_phase1q": "contract-home",
-      "class_after": "gap",
-      "moves": true,
-      "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section"
+      "class_before_phase1r": "gap",
+      "class_after": "contract-home",
+      "moves": false,
+      "moves_since_phase1q": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-393",
@@ -3120,13 +3336,15 @@
       "section_heading_line": 338,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:901",
+      "delegation_at": "ARCHITECTURE.md:908",
       "delegation_line": "(one span) until the §15-1 per-span measurement refines it. Criterion + build home:",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -3138,14 +3356,16 @@
       "section_heading_line": 289,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:901",
+      "delegation_at": "ARCHITECTURE.md:908",
       "delegation_line": "(one span) until the §15-1 per-span measurement refines it. Criterion + build home:",
-      "section_delegated": false,
-      "section_states_rules": null,
+      "section_delegated": true,
+      "section_states_rules": true,
       "class_before_phase1q": "contract-home",
-      "class_after": "gap",
-      "moves": true,
-      "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section"
+      "class_before_phase1r": "gap",
+      "class_after": "contract-home",
+      "moves": false,
+      "moves_since_phase1q": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-395",
@@ -3156,13 +3376,15 @@
       "section_heading_line": 338,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:901",
+      "delegation_at": "ARCHITECTURE.md:908",
       "delegation_line": "(one span) until the §15-1 per-span measurement refines it. Criterion + build home:",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -3174,14 +3396,16 @@
       "section_heading_line": 484,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:901",
+      "delegation_at": "ARCHITECTURE.md:908",
       "delegation_line": "(one span) until the §15-1 per-span measurement refines it. Criterion + build home:",
-      "section_delegated": false,
-      "section_states_rules": null,
+      "section_delegated": true,
+      "section_states_rules": true,
       "class_before_phase1q": "contract-home",
-      "class_after": "gap",
-      "moves": true,
-      "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section"
+      "class_before_phase1r": "gap",
+      "class_after": "contract-home",
+      "moves": false,
+      "moves_since_phase1q": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-397",
@@ -3192,13 +3416,15 @@
       "section_heading_line": 680,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:901",
+      "delegation_at": "ARCHITECTURE.md:908",
       "delegation_line": "(one span) until the §15-1 per-span measurement refines it. Criterion + build home:",
       "section_delegated": false,
       "section_states_rules": null,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": true,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section"
     },
     {
@@ -3210,13 +3436,15 @@
       "section_heading_line": 624,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:901",
+      "delegation_at": "ARCHITECTURE.md:908",
       "delegation_line": "(one span) until the §15-1 per-span measurement refines it. Criterion + build home:",
       "section_delegated": false,
       "section_states_rules": null,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": true,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section"
     },
     {
@@ -3228,13 +3456,15 @@
       "section_heading_line": 338,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:901",
+      "delegation_at": "ARCHITECTURE.md:908",
       "delegation_line": "(one span) until the §15-1 per-span measurement refines it. Criterion + build home:",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -3246,13 +3476,15 @@
       "section_heading_line": 680,
       "delegation_form": "named-home-with-sections",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:901",
+      "delegation_at": "ARCHITECTURE.md:908",
       "delegation_line": "(one span) until the §15-1 per-span measurement refines it. Criterion + build home:",
       "section_delegated": false,
       "section_states_rules": null,
       "class_before_phase1q": "contract-home",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": true,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section"
     },
     {
@@ -3269,8 +3501,10 @@
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": true,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -3287,8 +3521,10 @@
       "section_delegated": false,
       "section_states_rules": null,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section"
     },
     {
@@ -3305,8 +3541,10 @@
       "section_delegated": true,
       "section_states_rules": false,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS"
     },
     {
@@ -3323,8 +3561,10 @@
       "section_delegated": true,
       "section_states_rules": false,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS"
     },
     {
@@ -3341,8 +3581,10 @@
       "section_delegated": true,
       "section_states_rules": false,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS"
     },
     {
@@ -3354,13 +3596,15 @@
       "section_heading_line": 21,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:4592",
+      "delegation_at": "ARCHITECTURE.md:4605",
       "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": true,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -3372,13 +3616,15 @@
       "section_heading_line": 48,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:4592",
+      "delegation_at": "ARCHITECTURE.md:4605",
       "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": true,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -3390,13 +3636,15 @@
       "section_heading_line": 48,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:4592",
+      "delegation_at": "ARCHITECTURE.md:4605",
       "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": true,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -3408,13 +3656,15 @@
       "section_heading_line": 84,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:4592",
+      "delegation_at": "ARCHITECTURE.md:4605",
       "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": true,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -3426,13 +3676,15 @@
       "section_heading_line": 84,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:4592",
+      "delegation_at": "ARCHITECTURE.md:4605",
       "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": true,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -3444,13 +3696,15 @@
       "section_heading_line": 168,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:4592",
+      "delegation_at": "ARCHITECTURE.md:4605",
       "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": true,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -3462,13 +3716,15 @@
       "section_heading_line": 168,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:4592",
+      "delegation_at": "ARCHITECTURE.md:4605",
       "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": true,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -3480,13 +3736,15 @@
       "section_heading_line": 200,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:4592",
+      "delegation_at": "ARCHITECTURE.md:4605",
       "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": true,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -3498,13 +3756,15 @@
       "section_heading_line": 248,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:4592",
+      "delegation_at": "ARCHITECTURE.md:4605",
       "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "section_delegated": true,
       "section_states_rules": true,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "contract-home",
       "class_after": "contract-home",
       "moves": true,
+      "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -3521,8 +3781,10 @@
       "section_delegated": null,
       "section_states_rules": null,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
     },
     {
@@ -3539,8 +3801,10 @@
       "section_delegated": null,
       "section_states_rules": null,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
     },
     {
@@ -3557,8 +3821,10 @@
       "section_delegated": null,
       "section_states_rules": null,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
     },
     {
@@ -3575,8 +3841,10 @@
       "section_delegated": null,
       "section_states_rules": null,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
     },
     {
@@ -3588,13 +3856,15 @@
       "section_heading_line": 1,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4662",
+      "delegation_at": "ARCHITECTURE.md:4675",
       "delegation_line": "pedal-point ruling of the notation-adoption increment (`cowork_notation_adoption_increment.md` §7 + §10).",
       "section_delegated": null,
       "section_states_rules": null,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit"
     },
     {
@@ -3606,13 +3876,15 @@
       "section_heading_line": 215,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4662",
+      "delegation_at": "ARCHITECTURE.md:4675",
       "delegation_line": "pedal-point ruling of the notation-adoption increment (`cowork_notation_adoption_increment.md` §7 + §10).",
       "section_delegated": null,
       "section_states_rules": null,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit"
     },
     {
@@ -3624,53 +3896,219 @@
       "section_heading_line": 394,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4662",
+      "delegation_at": "ARCHITECTURE.md:4675",
       "delegation_line": "pedal-point ruling of the notation-adoption increment (`cowork_notation_adoption_increment.md` §7 + §10).",
       "section_delegated": null,
       "section_states_rules": null,
       "class_before_phase1q": "gap",
+      "class_before_phase1r": "gap",
       "class_after": "gap",
       "moves": false,
+      "moves_since_phase1q": false,
       "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit"
     }
   ],
+  "the_phase_1r_re_run": {
+    "why": "The user WROTE delegations on 2026-08-03 (the OI-293 write list) for the six documents this pass had reported losing entries. The pass therefore runs a SECOND time, over classes it had itself moved. `class_before_phase1q` still holds the state before the FIRST run, so `totals` and `by_document` below are unchanged in meaning; this block is the movement caused by the written delegations alone.",
+    "entries_moved_since_phase1q": 27,
+    "moved_to_contract_home": [
+      {
+        "id": "D-270",
+        "document": "cowork_prefit_gates.md",
+        "section": "“The held-out evaluation protocol”",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-271",
+        "document": "cowork_prefit_gates.md",
+        "section": "“The capacity budget”",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-272",
+        "document": "cowork_prefit_gates.md",
+        "section": "the opening block (above the first section heading)",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-273",
+        "document": "cowork_prefit_gates.md",
+        "section": "“The robust-stop architecture-adoption protocol”",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-274",
+        "document": "cowork_prefit_gates.md",
+        "section": "“The sanctioned dual path and the retirement map”",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-275",
+        "document": "cowork_notation_output_contract.md",
+        "section": "§2",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-278",
+        "document": "cowork_engage_arc_plan.md",
+        "section": "“The stages”",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-279",
+        "document": "cowork_engage_arc_plan.md",
+        "section": "“The stages”",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-311",
+        "document": "cowork_engage_arc_plan.md",
+        "section": "“The stages”",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-335",
+        "document": "cowork_layer5_function_design.md",
+        "section": "§9",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-336",
+        "document": "cowork_layer5_function_design.md",
+        "section": "§9",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-337",
+        "document": "cowork_layer5_function_design.md",
+        "section": "§9",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-338",
+        "document": "cowork_layer5_function_design.md",
+        "section": "§9",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-339",
+        "document": "cowork_layer5_function_design.md",
+        "section": "§9",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-340",
+        "document": "cowork_layer5_function_design.md",
+        "section": "§7",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-342",
+        "document": "cowork_layer5_function_design.md",
+        "section": "§11",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-376",
+        "document": "cowork_joint_key_chord_design.md",
+        "section": "“§1.1 The decision: a BOUNDED coupling step, NOT a unified `(key,chord)` hidden state”",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-377",
+        "document": "cowork_joint_key_chord_design.md",
+        "section": "“§1.3 How it avoids re-introducing a cross-layer cycle”",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-378",
+        "document": "cowork_joint_key_chord_design.md",
+        "section": "“§2.2 The chord re-decoded under each carried key”",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-379",
+        "document": "cowork_joint_key_chord_design.md",
+        "section": "“§3.1 The trigger, grounded in C3”",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-388",
+        "document": "cowork_voiceleading_axis_design.md",
+        "section": "§9",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-389",
+        "document": "cowork_voiceleading_axis_design.md",
+        "section": "§9",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-390",
+        "document": "cowork_voiceleading_axis_design.md",
+        "section": "§9",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-391",
+        "document": "cowork_voiceleading_axis_design.md",
+        "section": "§9",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-392",
+        "document": "cowork_voiceleading_axis_design.md",
+        "section": "§9",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-394",
+        "document": "cowork_voiceleading_axis_design.md",
+        "section": "§5.1",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-396",
+        "document": "cowork_voiceleading_axis_design.md",
+        "section": "§8",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      }
+    ],
+    "moved_to_gap": [],
+    "write_list_documents_that_did_not_move_in_whole": [
+      "cowork_layer5_function_design.md",
+      "cowork_voiceleading_axis_design.md"
+    ]
+  },
   "moved_out": [
-    {
-      "id": "D-270",
-      "document": "cowork_prefit_gates.md",
-      "section": "“The held-out evaluation protocol”",
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit"
-    },
-    {
-      "id": "D-271",
-      "document": "cowork_prefit_gates.md",
-      "section": "“The capacity budget”",
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit"
-    },
-    {
-      "id": "D-272",
-      "document": "cowork_prefit_gates.md",
-      "section": "the opening block (above the first section heading)",
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit"
-    },
-    {
-      "id": "D-273",
-      "document": "cowork_prefit_gates.md",
-      "section": "“The robust-stop architecture-adoption protocol”",
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit"
-    },
-    {
-      "id": "D-274",
-      "document": "cowork_prefit_gates.md",
-      "section": "“The sanctioned dual path and the retirement map”",
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit"
-    },
-    {
-      "id": "D-275",
-      "document": "cowork_notation_output_contract.md",
-      "section": "§2",
-      "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section"
-    },
     {
       "id": "D-280",
       "document": "docs/iteration_path1_summary.md",
@@ -3732,100 +4170,16 @@
       "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit"
     },
     {
-      "id": "D-335",
-      "document": "cowork_layer5_function_design.md",
-      "section": "§9",
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit"
-    },
-    {
-      "id": "D-336",
-      "document": "cowork_layer5_function_design.md",
-      "section": "§9",
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit"
-    },
-    {
-      "id": "D-337",
-      "document": "cowork_layer5_function_design.md",
-      "section": "§9",
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit"
-    },
-    {
-      "id": "D-338",
-      "document": "cowork_layer5_function_design.md",
-      "section": "§9",
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit"
-    },
-    {
-      "id": "D-339",
-      "document": "cowork_layer5_function_design.md",
-      "section": "§9",
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit"
-    },
-    {
-      "id": "D-340",
-      "document": "cowork_layer5_function_design.md",
-      "section": "§7",
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit"
-    },
-    {
       "id": "D-341",
       "document": "cowork_layer5_function_design.md",
       "section": "§15",
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit"
-    },
-    {
-      "id": "D-342",
-      "document": "cowork_layer5_function_design.md",
-      "section": "§11",
-      "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit"
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS"
     },
     {
       "id": "D-350",
       "document": "cowork_layer3_keymode_design.md",
       "section": "the opening block (above the first section heading)",
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS"
-    },
-    {
-      "id": "D-388",
-      "document": "cowork_voiceleading_axis_design.md",
-      "section": "§9",
-      "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section"
-    },
-    {
-      "id": "D-389",
-      "document": "cowork_voiceleading_axis_design.md",
-      "section": "§9",
-      "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section"
-    },
-    {
-      "id": "D-390",
-      "document": "cowork_voiceleading_axis_design.md",
-      "section": "§9",
-      "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section"
-    },
-    {
-      "id": "D-391",
-      "document": "cowork_voiceleading_axis_design.md",
-      "section": "§9",
-      "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section"
-    },
-    {
-      "id": "D-392",
-      "document": "cowork_voiceleading_axis_design.md",
-      "section": "§9",
-      "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section"
-    },
-    {
-      "id": "D-394",
-      "document": "cowork_voiceleading_axis_design.md",
-      "section": "§5.1",
-      "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section"
-    },
-    {
-      "id": "D-396",
-      "document": "cowork_voiceleading_axis_design.md",
-      "section": "§8",
-      "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section"
     },
     {
       "id": "D-397",
@@ -3847,6 +4201,48 @@
     }
   ],
   "moved_in": [
+    {
+      "id": "D-278",
+      "document": "cowork_engage_arc_plan.md",
+      "section": "“The stages”",
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+    },
+    {
+      "id": "D-279",
+      "document": "cowork_engage_arc_plan.md",
+      "section": "“The stages”",
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+    },
+    {
+      "id": "D-311",
+      "document": "cowork_engage_arc_plan.md",
+      "section": "“The stages”",
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+    },
+    {
+      "id": "D-376",
+      "document": "cowork_joint_key_chord_design.md",
+      "section": "“§1.1 The decision: a BOUNDED coupling step, NOT a unified `(key,chord)` hidden state”",
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+    },
+    {
+      "id": "D-377",
+      "document": "cowork_joint_key_chord_design.md",
+      "section": "“§1.3 How it avoids re-introducing a cross-layer cycle”",
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+    },
+    {
+      "id": "D-378",
+      "document": "cowork_joint_key_chord_design.md",
+      "section": "“§2.2 The chord re-decoded under each carried key”",
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+    },
+    {
+      "id": "D-379",
+      "document": "cowork_joint_key_chord_design.md",
+      "section": "“§3.1 The trigger, grounded in C3”",
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+    },
     {
       "id": "D-401",
       "document": "cowork_structural_integrity_audit.md",

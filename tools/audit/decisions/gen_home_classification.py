@@ -262,6 +262,12 @@ def classify(backbone: dict) -> tuple[list[dict], list[dict]]:
         prior = d.get("home_section") or {}
         former = prior.get("former_class", d.get("nonspec_kind"))
         before = prior.get("class_before_phase1q", d.get("nonspec_kind"))
+        # A third frozen epoch. The user WROTE delegations on 2026-08-03 (the OI-293 write
+        # list), so this pass runs a second time over classes the first pass already moved.
+        # Without an epoch of its own, the phase-1q RESULT — the class each entry carried
+        # between the two passes — is overwritten and lost (#12). Frozen the same way the
+        # others are: read back from the entry, so a re-run cannot overwrite it.
+        before_1r = prior.get("class_before_phase1r", d.get("nonspec_kind"))
         hs = {
             "heading_line": hline,
             "section": ("#" * hlevel) + " " + htext,
@@ -274,6 +280,7 @@ def classify(backbone: dict) -> tuple[list[dict], list[dict]]:
             "decided_by": decided_by,
             "former_class": former,
             "class_before_phase1q": before,
+            "class_before_phase1r": before_1r,
         }
         if d.get("home_section") != hs:
             changed.append({"id": d["id"], "what": "home_section", "to": hs["label"]})
@@ -290,8 +297,10 @@ def classify(backbone: dict) -> tuple[list[dict], list[dict]]:
             "delegation_form": st["form"], "delegation_scope": st["scope"],
             "delegation_at": st["citation"], "delegation_line": st["delegation_line"],
             "section_delegated": delegated, "section_states_rules": states_rules,
-            "class_before_phase1q": before, "class_after": want,
-            "moves": before != want, "decided_by": decided_by,
+            "class_before_phase1q": before, "class_before_phase1r": before_1r,
+            "class_after": want,
+            "moves": before != want, "moves_since_phase1q": before_1r != want,
+            "decided_by": decided_by,
         })
 
     unused = [f"{k[0]}:{k[1]}" for k, v in used_kind.items() if not v]
@@ -327,6 +336,10 @@ def build_artifact(backbone: dict, rows: list[dict]) -> dict:
             rec["moves_out"] += 1
         if r["moves"] and r["class_after"] == "contract-home":
             rec["moves_in"] += 1
+        if r["moves_since_phase1q"] and r["class_after"] == "gap":
+            rec["moves_out_since_phase1q"] = rec.get("moves_out_since_phase1q", 0) + 1
+        if r["moves_since_phase1q"] and r["class_after"] == "contract-home":
+            rec["moves_in_since_phase1q"] = rec.get("moves_in_since_phase1q", 0) + 1
         s = rec["sections"].setdefault(r["section"], {
             "heading_line": r["section_heading_line"], "delegated": r["section_delegated"],
             "states_rules": r["section_states_rules"], "entries": [], "class_after": r["class_after"],
@@ -339,6 +352,7 @@ def build_artifact(backbone: dict, rows: list[dict]) -> dict:
     moved = [r for r in rows if r["moves"]]
     out_rows = [r for r in moved if r["class_after"] == "gap"]
     in_rows = [r for r in moved if r["class_after"] == "contract-home"]
+    moved_1r = [r for r in rows if r["moves_since_phase1q"]]
 
     return {
         "purpose": "phase 1q — THE ONE RE-CLASSIFICATION PASS. Every ratified home criterion "
@@ -367,6 +381,27 @@ def build_artifact(backbone: dict, rows: list[dict]) -> dict:
         },
         "by_document": per_doc,
         "entries": rows,
+        "the_phase_1r_re_run": {
+            "why": "The user WROTE delegations on 2026-08-03 (the OI-293 write list) for the "
+                   "six documents this pass had reported losing entries. The pass therefore "
+                   "runs a SECOND time, over classes it had itself moved. `class_before_"
+                   "phase1q` still holds the state before the FIRST run, so `totals` and "
+                   "`by_document` below are unchanged in meaning; this block is the movement "
+                   "caused by the written delegations alone.",
+            "entries_moved_since_phase1q": len(moved_1r),
+            "moved_to_contract_home": [
+                {"id": r["id"], "document": r["document"], "section": r["section"],
+                 "from": r["class_before_phase1r"], "decided_by": r["decided_by"]}
+                for r in moved_1r if r["class_after"] == "contract-home"],
+            "moved_to_gap": [
+                {"id": r["id"], "document": r["document"], "section": r["section"],
+                 "from": r["class_before_phase1r"], "decided_by": r["decided_by"]}
+                for r in moved_1r if r["class_after"] == "gap"],
+            "write_list_documents_that_did_not_move_in_whole": sorted({
+                r["document"] for r in rows
+                if r["class_after"] == "gap"
+                and r["document"] in {w["document"] for w in crit["write_list"]}}),
+        },
         "moved_out": [{"id": r["id"], "document": r["document"], "section": r["section"],
                        "decided_by": r["decided_by"]} for r in out_rows],
         "moved_in": [{"id": r["id"], "document": r["document"], "section": r["section"],
@@ -420,6 +455,18 @@ def main() -> int:
     for doc, rec in sorted(artifact["by_document"].items()):
         if rec["moves_out"] or rec["moves_in"]:
             print(f"    {doc}: −{rec['moves_out']} / +{rec['moves_in']}")
+    p1r = artifact["the_phase_1r_re_run"]
+    print(f"  since phase 1q (the written delegations alone): "
+          f"{p1r['entries_moved_since_phase1q']} moved "
+          f"(to contract-home {len(p1r['moved_to_contract_home'])}, "
+          f"to gap {len(p1r['moved_to_gap'])})")
+    for doc, rec in sorted(artifact["by_document"].items()):
+        o, i = rec.get("moves_out_since_phase1q", 0), rec.get("moves_in_since_phase1q", 0)
+        if o or i:
+            print(f"    {doc}: −{o} / +{i}")
+    if p1r["write_list_documents_that_did_not_move_in_whole"]:
+        print("  write-list documents still holding a `gap` entry: "
+              + ", ".join(p1r["write_list_documents_that_did_not_move_in_whole"]))
 
     if args.check:
         bad = 0
