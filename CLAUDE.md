@@ -184,6 +184,27 @@ proxy for it and each of which produced the evidence locating its own error. (g)
 untouched: the delegation confers, and only the user writes a delegation into `ARCHITECTURE.md`.
 Applied **staged** — an entry is brought to section granularity where that decides something,
 so the register's home field is deliberately mixed and says so in its own scope note.
+**A SHELVED SECTION CAN BE A HOME — SHELVING IS A STATUS, NOT A KIND (user, 2026-08-03).** A
+section whose rules are shelved still STATES rules, and the register records shelvings with their
+evidence, so a shelved decision needs a home exactly as a live one does (#12). *Why:* stated with
+the ruling — the kind half of (h) asks what a section DOES, and a status banner does not change
+that. This also retires the phrase *"stable enough to be cited"* wherever it survives: it is a
+clause of the superseded delegation-specificity criterion, and leaving it in the tracking prose
+invites a fourth criterion. **(i) WHAT COUNTS AS A DELEGATION, GRADED BY FORM (user, 2026-08-03).**
+(h) turns on a user-ratified surface DELEGATING a stated concern to a section; (i) fixes which
+wordings do that, and it is the clause (h) deliberately did not touch. **ADMITTED:** an **explicit
+delegation clause** — *"The ratified contract for this layer is X"*, *"The ONE detailed cross-layer
+spec for this contract is X"*, *"formalised as an independent knowledge-base component with its own
+spec (X)"* — or **a named home with sections** — *"Criterion + build home: X §0/§5.3"*. **NOT
+ADMITTED:** a **bare appended citation** — *"Full spec: X."* — or a **provenance attribution**,
+meaning a naming inside a list of citations, or a parenthetical recording where something was
+ratified. *Why:* the canonical document distinguishes the two acts in ADJACENT LINES —
+`ARCHITECTURE.md:1482` ends *"Full spec:"* and names its target on the next line, while `:1485`
+immediately beneath is a delegation clause that names its target AND its sections. The distinction
+is `ARCHITECTURE.md`'s own, not a preference. **(i) IS RECORDED AND NOT YET APPLIED:** the check
+ordered before applying it — does the bar change the verdict for any document the register
+currently classifies `contract-home`? — came back yes, so the re-classification is a STOP at
+`OPEN_ITEMS.md` OI-291 and the register's home classes are unchanged by it.
 
 ## Project context
 

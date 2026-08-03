@@ -1,0 +1,122 @@
+{
+  "purpose": "Establishment (#19) of tools/audit/shell_read_guard.py: its deny rate on the forms CLAUDE.md names, and its FALSE-deny rate on real commands this repository issues. A guard that fires on legitimate use gets switched off, so the false-deny rate is the figure that decides whether it may be armed.",
+  "coverage_limits": [
+    "Project-scoped: it binds sessions that run in this directory and read this project's settings. Whether the WRITING side does is not established, so the rule must not be described as enforced for both sides.",
+    "The text-utility half only. The branch-tip/index half of D-253 (git status, git log, git rev-parse HEAD are never trusted for what is current) is deliberately not enforced.",
+    "disableAllHooks and managed allowManagedHooksOnly switch it off. A guard, not a boundary."
+  ],
+  "sanctioned": {
+    "total": 12,
+    "false_denies": 0,
+    "false_deny_rate": 0.0,
+    "rows": [
+      {
+        "command": "python tools/audit/decisions/gen_phase1p_delegation_bar.py",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "PYTHONIOENCODING=utf-8 python tools/audit/process_check.py --establish",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "cd C:\\s\\MS && python tools/open_items_split_check.py > /tmp/split_1p.txt 2>&1",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "git show ccc3086ab3:cowork_joint_key_chord_design.md 2>&1 | head -20",
+        "denied": false,
+        "reason": "reads a git object by explicit hash — the sanctioned exemption"
+      },
+      {
+        "command": "git show --stat 41f7c65f63",
+        "denied": false,
+        "reason": "reads a git object by explicit hash — the sanctioned exemption"
+      },
+      {
+        "command": "git diff 41f7c65f63 ccc3086ab3 -- docs/scoring_model.md | head -40",
+        "denied": false,
+        "reason": "reads a git object by explicit hash — the sanctioned exemption"
+      },
+      {
+        "command": "head -50 /tmp/snap_out.txt",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "tail -14 \"C:/Users/vince/AppData/Local/Temp/claude/c--s-MS/x/scratchpad/est.txt\"",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "./composing_tests.exe; echo \"exit:$?\"",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "powershell.exe -Command \"Start-Process 'C:\\s\\MS\\setup_and_build.bat' -Wait -NoNewWindow\"",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "git commit -m 'docs(cowork): phase 1p'",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "echo \"exit:$?\"",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      }
+    ]
+  },
+  "forbidden": {
+    "total": 8,
+    "denied": 8,
+    "deny_rate": 1.0,
+    "rows": [
+      {
+        "command": "cat CLAUDE.md",
+        "denied": true,
+        "reason": "`cat` is aimed at a path inside this repository (CLAUDE.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "grep -n \"pattern\" src/composing/chordanalyzer.cpp",
+        "denied": true,
+        "reason": "`grep` is aimed at a path inside this repository (src/composing/chordanalyzer.cpp). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "head -50 ARCHITECTURE.md",
+        "denied": true,
+        "reason": "`head` is aimed at a path inside this repository (ARCHITECTURE.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "tail -20 tools/audit/decisions/backbone_decisions.json",
+        "denied": true,
+        "reason": "`tail` is aimed at a path inside this repository (tools/audit/decisions/backbone_decisions.json). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "sed -n '1,20p' STATUS.md",
+        "denied": true,
+        "reason": "`sed` is aimed at a path inside this repository ('1,20p', STATUS.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "wc -l OPEN_ITEMS.md",
+        "denied": true,
+        "reason": "`wc` is aimed at a path inside this repository (OPEN_ITEMS.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "rg --files-with-matches 'delegation' open_items/",
+        "denied": true,
+        "reason": "`rg` is aimed at a path inside this repository (open_items/). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "cat C:/s/MS/DECISIONS.md",
+        "denied": true,
+        "reason": "`cat` is aimed at a path inside this repository (C:/s/MS/DECISIONS.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      }
+    ]
+  }
+}

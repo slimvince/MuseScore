@@ -1,0 +1,131 @@
+{
+  "purpose": "A run of tools/audit/process_check.py over named dispatches or reports. Generated so a report cites this file rather than transcribing what the check found (D-431).",
+  "rules": [
+    "D-431 bare quantity",
+    "D-431 uncited code claim",
+    "D-434 missing self-check section"
+  ],
+  "files_scanned": [
+    "cc_instruction_phase1p_home_rulings_and_mechanisms.md",
+    "cc_instruction_phase1n_criterion_premise_and_reading_regime.md",
+    "cc_instruction_phase1m_dispositions_and_measurements.md"
+  ],
+  "findings_total": 14,
+  "by_file": {
+    "cc_instruction_phase1p_home_rulings_and_mechanisms.md": {
+      "findings": 1,
+      "rows": [
+        {
+          "file": "cc_instruction_phase1p_home_rulings_and_mechanisms.md",
+          "line": 0,
+          "rule": "D-434 missing self-check section",
+          "detail": "no heading matching 'self-check'",
+          "sentence": ""
+        }
+      ]
+    },
+    "cc_instruction_phase1n_criterion_premise_and_reading_regime.md": {
+      "findings": 4,
+      "rows": [
+        {
+          "file": "cc_instruction_phase1n_criterion_premise_and_reading_regime.md",
+          "line": 100,
+          "rule": "D-431 uncited code claim",
+          "detail": "call sites",
+          "sentence": "`open_items/OI-288.md:54-61` frames it: both production call sites of `findTemporalContext`"
+        },
+        {
+          "file": "cc_instruction_phase1n_criterion_premise_and_reading_regime.md",
+          "line": 104,
+          "rule": "D-431 uncited code claim",
+          "detail": "call sites",
+          "sentence": "Are those two the **only** production call sites? Enumerate every caller."
+        },
+        {
+          "file": "cc_instruction_phase1n_criterion_premise_and_reading_regime.md",
+          "line": 120,
+          "rule": "D-431 uncited code claim",
+          "detail": "call site",
+          "sentence": "- if the primitive dies with the legacy arm, every call site is on retiring code, D-428 is **not"
+        },
+        {
+          "file": "cc_instruction_phase1n_criterion_premise_and_reading_regime.md",
+          "line": 0,
+          "rule": "D-434 missing self-check section",
+          "detail": "no heading matching 'self-check'",
+          "sentence": ""
+        }
+      ]
+    },
+    "cc_instruction_phase1m_dispositions_and_measurements.md": {
+      "findings": 9,
+      "rows": [
+        {
+          "file": "cc_instruction_phase1m_dispositions_and_measurements.md",
+          "line": 12,
+          "rule": "D-431 bare quantity",
+          "detail": "40 of 143",
+          "sentence": "> read count stays at 40 of 143 this wave."
+        },
+        {
+          "file": "cc_instruction_phase1m_dispositions_and_measurements.md",
+          "line": 70,
+          "rule": "D-431 uncited code claim",
+          "detail": "dormant",
+          "sentence": "**(2) The gate dissolution — OWED, subject NOT wholly dormant.** The dissolution of the post-hoc"
+        },
+        {
+          "file": "cc_instruction_phase1m_dispositions_and_measurements.md",
+          "line": 71,
+          "rule": "D-431 uncited code claim",
+          "detail": "dormant",
+          "sentence": "Its subject is dormant on the main"
+        },
+        {
+          "file": "cc_instruction_phase1m_dispositions_and_measurements.md",
+          "line": 73,
+          "rule": "D-431 uncited code claim",
+          "detail": "reachable",
+          "sentence": "post-hoc correction layer by construction — **but it is reachable on the live notation arm**:"
+        },
+        {
+          "file": "cc_instruction_phase1m_dispositions_and_measurements.md",
+          "line": 116,
+          "rule": "D-431 bare quantity",
+          "detail": "2231",
+          "sentence": "we have is 0/2231 on the perf corpus;"
+        },
+        {
+          "file": "cc_instruction_phase1m_dispositions_and_measurements.md",
+          "line": 153,
+          "rule": "D-431 bare quantity",
+          "detail": "131",
+          "sentence": "Re-run the 131-entry population from phase 1l's Task 7 under the kind test."
+        },
+        {
+          "file": "cc_instruction_phase1m_dispositions_and_measurements.md",
+          "line": 159,
+          "rule": "D-431 bare quantity",
+          "detail": "17 entries",
+          "sentence": "is a census — a findings kind — so its **17 entries should move OUT**, against phase 1l's"
+        },
+        {
+          "file": "cc_instruction_phase1m_dispositions_and_measurements.md",
+          "line": 173,
+          "rule": "D-431 bare quantity",
+          "detail": "40 documents",
+          "sentence": "Over the **40 documents already read**, measure decision yield: entries produced per document,"
+        },
+        {
+          "file": "cc_instruction_phase1m_dispositions_and_measurements.md",
+          "line": 0,
+          "rule": "D-434 missing self-check section",
+          "detail": "no heading matching 'self-check'",
+          "sentence": ""
+        }
+      ]
+    }
+  },
+  "clean_files": [],
+  "establishment": "tools/audit/process_check_establishment.json — the check's measured detection power and false-positive rate. Read it before reading a count here as coverage."
+}

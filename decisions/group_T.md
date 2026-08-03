@@ -23,7 +23,7 @@
 
 **Status.** LIVE · decided 2026-07-11 · ratified by user
 
-**Home.** `CLAUDE.md:1015`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1036`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:878-887, user-directed 2026-07-11. Binds Claude Code and Cowork sessions alike.
 
@@ -43,7 +43,7 @@
 
 **Status.** LIVE · decided 2026-06-15 · ratified by user
 
-**Home.** `CLAUDE.md:771`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:792`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:737-753, user-directed 2026-06-15. ★ READ WITH the general contribution intent at ARCHITECTURE.md:380-382 - two recorded positions, a general intent to contribute and a named one-patch exception; the record does not state how the general intent applies to the rest of the tree.
 
@@ -71,7 +71,7 @@
 
 **Status.** LIVE · decided 2026-05-14 · ratified by user
 
-**Home.** `CLAUDE.md:723`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:744`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:678-713, applied 2026-05-14. Unrelated to the composing module; recorded so a dependency update does not silently overwrite it.
 
@@ -104,7 +104,7 @@
 
 **Status.** LIVE · decided 2026-06-14 · ratified by user
 
-**Home.** `CLAUDE.md:744`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:765`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:715-745, applied 2026-06-14, commit cfc7eb5e39. ★ Carries the distribution constraint above: fork-local only, never upstream.
 
@@ -180,7 +180,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `CLAUDE.md:970-982`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:991-1003`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1589-1598, under the standing-rule heading 'FULL DECISION SURFACE BEFORE ANY CHOICE QUESTION' at cowork_handoff.md:1587 ('user mandate 2026-07-05'), with the instituting record at STATUS_ARCHIVE.md:202 - a session handoff block, which is a place for tracking a handover and not a home for a standing rule. Homed in the CLAUDE.md Conventions section, where this project's standing session-method rules live. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -281,7 +281,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `CLAUDE.md:984-1002`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1005-1023`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1669-1680, under the standing-rule heading 'COWORK MUST NOT HALLUCINATE OR ASSUME - VERIFY AT SOURCE (user mandate 2026-06-21)' at cowork_handoff.md:1642 - a session handoff block. Homed in the CLAUDE.md Conventions section. Its scope is taken FROM THE RECORD, not decided here: that heading and D-252's own text ('Cowork MAY: read source files via the file tools - NOT bash') both state it as a planning-side rule, so the homed entry says so and says the mandated build, test and measurement commands are unaffected. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -304,7 +304,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `CLAUDE.md:1004-1011`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1025-1032`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1792-1796, under the standing-rule heading 'INVESTIGATE BY DEFAULT - NEVER ASK investigate vs proceed (user mandate 2026-06-14)' at cowork_handoff.md:1790 - a session handoff block. Homed in the CLAUDE.md Conventions section, beside principle #5, which it operationalizes. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -499,4 +499,19 @@
 **Home.** `cowork_audit_protocol.md:187`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** User ruling of 2026-08-03 (the fifth ruling set of that date), homed at phase 1n in `cowork_audit_protocol.md`'s dispatch-protocol section beside **D-250**, **D-251** and **D-252**, which is the established home for rules about how a dispatch is written. It is `CLAUDE.md` principle **#17(f)** — no hand-transcribed measurement numbers — applied where it was being ignored: #17(f) was written for DOCUMENTS and was honored there, and dispatches and session reports were treated as outside it on the unstated ground that they are working correspondence rather than record. They are not: a dispatch's premise becomes the next session's starting assumption and a report's figure becomes the next report's baseline. **The register-side instance of the same shape is `OPEN_ITEMS.md` OI-283** — a hand-typed coverage claim inside a generated file — whose remedy is now one instance of this general rule rather than a one-off; that row carries a dated note saying so and does NOT close, its own remedy still being owed. NOT RATIFIED as an ENTRY — it goes to the user in the phase-1n ratification queue.
+
+### D-434 — The writing side runs the standing self-check before a dispatch is released, and records its output
+
+> **before a dispatch or a decision surface is released, the writing side
+> runs the standing self-check over it and RECORDS the output.**
+
+**In plain words.** The standing self-check — re-read what is actually on disk and check it against the principles, the conventions and the known defect types before reporting — applies to the side that WRITES the working instructions, not only to the side that executes them. It runs before the instruction is handed over, and its output is written down.
+
+**Why.** Measured on this protocol's own output: eight instances in which a dispatch or a report carried a wrong premise or an underived figure that the standing self-check would have caught, each cited at the rule's home to the row or artifact that records it, and every one of them found by the EXECUTING side running the check the writing side had not. `CLAUDE.md`'s self-check already binds both sides in its own words (*"code, scripts, instruments, and document edits alike"*); what was missing was a statement of it where the rules about writing a dispatch live, and a mechanism that makes its absence visible.
+
+**Status.** LIVE · decided 2026-08-03 · ratified by user
+
+**Home.** `cowork_audit_protocol.md:241`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** User ruling of 2026-08-03 (the seventh ruling set of that date, W5), homed at phase 1p in `cowork_audit_protocol.md`'s dispatch-protocol section beside **D-431**, which is the established home for rules about how a dispatch is written (D-250, D-251, D-252 also live there). **The rule carries its own mechanism**, so that it is more than a habit: every dispatch and every session report carries a SELF-CHECK SECTION answering a named five-item checklist — the guiding principles, the conventions, the figures-and-premises rule (D-431), the file-tools rule, and uncertainty on any comparison (#24) — and the section's ABSENCE is a failure `tools/audit/process_check.py` reports. The check's own detection power against the eight instances is measured rather than claimed, at `tools/audit/process_check_establishment.json`. NOT RATIFIED as an ENTRY — it goes to the user in the phase-1p ratification queue.
 

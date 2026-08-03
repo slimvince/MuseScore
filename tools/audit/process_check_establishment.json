@@ -1,0 +1,139 @@
+{
+  "purpose": "Establishment (#19) of tools/audit/process_check.py: its detection power against the recorded instances the rule was ruled on, and its false-positive rate on text that is correct. Nothing here is a claim; every row carries the record it came from.",
+  "known_instances": {
+    "total": 8,
+    "detected": 5,
+    "detection_rate": 0.625,
+    "rows": [
+      {
+        "id": "a",
+        "record": "OPEN_ITEMS.md OI-286",
+        "what": "a dispatch premise about a delivered refactor, refuted at the commit",
+        "text": "Half (1) of the mandate is still owed and parked against retiring code.",
+        "detected": false,
+        "rules_fired": []
+      },
+      {
+        "id": "b",
+        "record": "OPEN_ITEMS.md OI-288",
+        "what": "a dispatch premise about a live code path, refuted at the control flow",
+        "text": "The gate layer is reachable on the live notation arm through the tick-local fallback.",
+        "detected": true,
+        "rules_fired": [
+          "D-431 uncited code claim"
+        ]
+      },
+      {
+        "id": "c",
+        "record": "OPEN_ITEMS.md OI-288, its own text correction",
+        "what": "a retirement-map citation that says what the cited rows do not",
+        "text": "R1/R5/R6 delete both of them.",
+        "detected": false,
+        "rules_fired": []
+      },
+      {
+        "id": "d",
+        "record": "OPEN_ITEMS.md OI-281",
+        "what": "a criterion released at document granularity when its evidence was at section granularity",
+        "text": "A document is a contract home when it is of a kind that states rules.",
+        "detected": false,
+        "rules_fired": []
+      },
+      {
+        "id": "e",
+        "record": "STATUS.md, the phase-1l entry",
+        "what": "a ratified-marker count estimated rather than derived",
+        "text": "The register carries thirty-odd ratification markers, so about 30 entries are affected.",
+        "detected": true,
+        "rules_fired": [
+          "D-431 bare quantity"
+        ]
+      },
+      {
+        "id": "f",
+        "record": "OPEN_ITEMS.md OI-289",
+        "what": "a LEGACY-mark set size three surfaces of record state differently",
+        "text": "The LEGACY-marked set is 75 entries.",
+        "detected": true,
+        "rules_fired": [
+          "D-431 bare quantity"
+        ]
+      },
+      {
+        "id": "g",
+        "record": "tools/audit/decisions/phase1m_measurements.json task6_reading_yield",
+        "what": "a reading-coverage count carried forward for three waves",
+        "text": "38 of 143 design documents have been read in full.",
+        "detected": true,
+        "rules_fired": [
+          "D-431 bare quantity"
+        ]
+      },
+      {
+        "id": "h",
+        "record": "tools/audit/decisions/phase1n_reading_regime.json proxy.ordering_decision",
+        "what": "a comparison asserted without its uncertainty, against #24",
+        "text": "The key is the strongest of the three proxies, at 0.745 against 0.61 and 0.58.",
+        "detected": true,
+        "rules_fired": [
+          "D-431 bare quantity"
+        ]
+      }
+    ]
+  },
+  "control": {
+    "total": 8,
+    "flagged": 0,
+    "false_positive_rate": 0.0,
+    "rows": [
+      {
+        "text": "The counts are at `tools/audit/decisions/phase1p_delegation_bar.json` → `pre_apply_check`.",
+        "flagged": false,
+        "rules_fired": []
+      },
+      {
+        "text": "The record arm returns early at `notationcomposingbridge.cpp:737` whenever the flag is set.",
+        "flagged": false,
+        "rules_fired": []
+      },
+      {
+        "text": "`ARCHITECTURE.md:319` delegates the licence-pool constraint to the census §8c.",
+        "flagged": false,
+        "rules_fired": []
+      },
+      {
+        "text": "The register's size is `tools/audit/decisions/backbone_decisions.json` -> `decisions`.",
+        "flagged": false,
+        "rules_fired": []
+      },
+      {
+        "text": "Both call sites are on the legacy arm (`regionanalyzer.cpp:921`, `notationcomposingbridge.cpp:651`).",
+        "flagged": false,
+        "rules_fired": []
+      },
+      {
+        "text": "The user ruled this on 2026-08-03 and it is register entry D-430.",
+        "flagged": false,
+        "rules_fired": []
+      },
+      {
+        "text": "Three surfaces were searched; each mention was then read in place.",
+        "flagged": false,
+        "rules_fired": []
+      },
+      {
+        "text": "The dispatch was written before the check existed, so it is itself unchecked by it.",
+        "flagged": false,
+        "rules_fired": []
+      }
+    ]
+  },
+  "control_reclassified_during_establishment": [
+    {
+      "text": "The register is 431 entries at `tools/audit/decisions/backbone_decisions.json`.",
+      "was": "written into the control set as correct text",
+      "now": "REMOVED from the control set — the check was right about it. It transcribes a quantity and cites a FILE but no FIELD, and D-431 requires an artifact AND a field. Recorded rather than deleted quietly, because a control set silently edited to make an instrument look better measures nothing (#19)."
+    }
+  ],
+  "what_this_measures": "The check reads TEXT. A premise that is WRONG but CITED is invisible to it by construction, so the instances it misses are the ones that arrived with a citation to a secondary surface. The detection rate below is therefore a property of the failure shapes, not a score to be improved by tuning the patterns — tuning them to catch a specific specimen would measure nothing."
+}

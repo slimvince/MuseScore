@@ -231,3 +231,40 @@ and not only dispatches: every one of them originated in a report's own prose an
 next dispatch as fact. `OPEN_ITEMS.md` **OI-283** is the register-side instance of the same shape — a
 hand-typed coverage claim inside a generated file — and its remedy is now one instance of this general
 rule rather than a one-off.
+
+### The writing side runs the standing self-check too, before a dispatch is released
+
+**Ruled by the user, 2026-08-03.** `CLAUDE.md`'s standing self-check already binds both sides in its
+own words — *"code, scripts, instruments, and document edits alike — and BEFORE reporting the work
+done… The check is of the work actually on disk, not of the intention"*. It has been observed on the
+EXECUTING side and not on the WRITING side. It is therefore stated here, where the rules about how a
+dispatch is written live: **before a dispatch or a decision surface is released, the writing side
+runs the standing self-check over it and RECORDS the output.** Releasing without that record is the
+same defect as shipping a diff unchecked.
+
+**The mechanism, so this is more than a habit.** Every dispatch and every session report carries a
+**self-check section**, and its ABSENCE is a failure the process check reports
+(`tools/audit/process_check.py`). The checklist the section answers, item by item:
+
+1. **The guiding principles** — which of #1–#24 the work touches, and whether it conforms.
+2. **The conventions** — American English; no self-invented labels, abbreviations or numbering; the
+   music-theory words used only in their musical sense, every non-musical use qualified.
+3. **The figures-and-premises rule** — every quantity named as an artifact and a field, every premise
+   cited to the primary source it can be checked at (**D-431** above).
+4. **The file-tools rule** — working-tree content read with the file tools; shell only for read-only
+   git object queries by explicit hash and for the sanctioned scripts (`CLAUDE.md` Conventions).
+5. **Uncertainty on any comparison** — a difference asserted between two measured quantities carries
+   its uncertainty, or is not asserted (**#24**).
+
+*Why:* measured, on this protocol's own output, and each instance is cited to the row or artifact
+that records it rather than restated here — **(a)** a dispatch premise about a delivered refactor,
+refuted at the commit (`OPEN_ITEMS.md` OI-286); **(b)** a dispatch premise about a live code path,
+refuted at the control flow (OI-288); **(c)** a retirement-map citation corrected inside that same
+row's own text; **(d)** a criterion released at document granularity when its own evidence was at
+section granularity (OI-281); **(e)** a ratified-marker count estimated rather than derived
+(`STATUS.md`, the phase-1l entry); **(f)** a LEGACY-mark set size that three surfaces of record state
+differently (OI-289); **(g)** a reading-coverage count carried forward for three waves
+(`tools/audit/decisions/phase1m_measurements.json` → `task6_reading_yield`); and **(h)** a comparison
+between three proxies asserted without its uncertainty, against #24
+(`tools/audit/decisions/phase1n_reading_regime.json` → `proxy.ordering_decision`). Every one of the
+eight was found by the EXECUTING side, running the check the writing side had not.

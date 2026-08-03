@@ -1,0 +1,1114 @@
+{
+  "purpose": "phase 1p — the delegation bar (W2) measured over the whole home population, the pre-apply check the dispatch orders, and the §8c mixed-section figure Task 1 rows. NOTHING IS APPLIED HERE.",
+  "the_bar": {
+    "admitted_forms": [
+      "explicit-delegation-clause",
+      "named-home-with-sections"
+    ],
+    "not_admitted_forms": [
+      "bare-appended-citation",
+      "provenance-attribution"
+    ],
+    "clause_a_failure": "not-named-in-any-ratified-surface",
+    "ruling": "User, 2026-08-03 (phase 1p, W2 — option 4B, 'grade the forms and set the bar'). It settles clause (b) of the contract-home criterion, which D-430 (the section-level unit) deliberately did not touch.",
+    "defense": "ARCHITECTURE.md's 'Full spec:' line sits immediately above a line that is an explicit delegation clause; the canonical document distinguishes the two acts in adjacent lines. Both are located and quoted in `the_defense` below, from the file."
+  },
+  "the_defense": {
+    "bare_appended_citation": {
+      "at": "ARCHITECTURE.md:1482",
+      "line": "detector is **key-agnostic** (it votes for the key; it does not read a resolved key). Full spec:"
+    },
+    "explicit_delegation_clause": {
+      "at": "ARCHITECTURE.md:1485",
+      "line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory \"is enumerated at `cowork_layer5_engagement_design.md` §9.2\" (`:53-55`)."
+    }
+  },
+  "population": {
+    "entries": 134,
+    "documents": 22,
+    "note": "the register's `contract-home` + `gap` entries — the classes the criterion reaches. `process`, `project-convention` and `unhomed` are outside it."
+  },
+  "verdict_totals": {
+    "ADMIT": 93,
+    "EXCLUDE": 41
+  },
+  "documents": [
+    {
+      "document": "cowork_score_census.md",
+      "entries": 17,
+      "entry_ids": [
+        "D-359",
+        "D-360",
+        "D-361",
+        "D-362",
+        "D-363",
+        "D-364",
+        "D-365",
+        "D-366",
+        "D-367",
+        "D-368",
+        "D-369",
+        "D-370",
+        "D-371",
+        "D-372",
+        "D-373",
+        "D-374",
+        "D-375"
+      ],
+      "current_contract_home": 11,
+      "current_gap": 6,
+      "form": "named-home-with-sections",
+      "delegation_citation": "ARCHITECTURE.md:319",
+      "delegation_line": "> own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c. **Which class",
+      "why_this_grade": "A named home with a section — the case the section-level ruling (D-430) was made on, inside a passage the section marks user-ratified.",
+      "verdict": "ADMIT",
+      "movement": "WOULD MOVE IN",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "ARCHITECTURE.md:319",
+        "CLAUDE.md:178",
+        "CLAUDE.md:422"
+      ]
+    },
+    {
+      "document": "cowork_layer3_keymode_design.md",
+      "entries": 16,
+      "entry_ids": [
+        "D-343",
+        "D-344",
+        "D-345",
+        "D-346",
+        "D-347",
+        "D-348",
+        "D-349",
+        "D-350",
+        "D-351",
+        "D-352",
+        "D-353",
+        "D-354",
+        "D-355",
+        "D-356",
+        "D-357",
+        "D-358"
+      ],
+      "current_contract_home": 16,
+      "current_gap": 0,
+      "form": "explicit-delegation-clause",
+      "delegation_citation": "ARCHITECTURE.md:1331",
+      "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
+      "why_this_grade": "The bar's first named form, word for word.",
+      "verdict": "ADMIT",
+      "movement": "none",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "ARCHITECTURE.md:1331",
+        "ARCHITECTURE.md:1347",
+        "ARCHITECTURE.md:1394"
+      ]
+    },
+    {
+      "document": "cowork_voiceleading_axis_design.md",
+      "entries": 13,
+      "entry_ids": [
+        "D-388",
+        "D-389",
+        "D-390",
+        "D-391",
+        "D-392",
+        "D-393",
+        "D-394",
+        "D-395",
+        "D-396",
+        "D-397",
+        "D-398",
+        "D-399",
+        "D-400"
+      ],
+      "current_contract_home": 13,
+      "current_gap": 0,
+      "form": "named-home-with-sections",
+      "delegation_citation": "ARCHITECTURE.md:901",
+      "delegation_line": "(one span) until the §15-1 per-span measurement refines it. Criterion + build home:",
+      "why_this_grade": "The bar's second named form, word for word — it is the bar's own worked example.",
+      "verdict": "ADMIT",
+      "movement": "none",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "ARCHITECTURE.md:902",
+        "ARCHITECTURE.md:930",
+        "ARCHITECTURE.md:1509"
+      ]
+    },
+    {
+      "document": "cowork_progression_schema_dictionary.md",
+      "entries": 9,
+      "entry_ids": [
+        "D-406",
+        "D-407",
+        "D-408",
+        "D-409",
+        "D-410",
+        "D-411",
+        "D-412",
+        "D-413",
+        "D-414"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 9,
+      "form": "explicit-delegation-clause",
+      "delegation_citation": "ARCHITECTURE.md:4592",
+      "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
+      "why_this_grade": "The bar's third named form, word for word.",
+      "verdict": "ADMIT",
+      "movement": "WOULD MOVE IN",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "ARCHITECTURE.md:340",
+        "ARCHITECTURE.md:4539",
+        "ARCHITECTURE.md:4541",
+        "ARCHITECTURE.md:4547",
+        "ARCHITECTURE.md:4571",
+        "ARCHITECTURE.md:4581",
+        "ARCHITECTURE.md:4593"
+      ]
+    },
+    {
+      "document": "cowork_layer5_engagement_design.md",
+      "entries": 8,
+      "entry_ids": [
+        "D-380",
+        "D-381",
+        "D-382",
+        "D-383",
+        "D-384",
+        "D-385",
+        "D-386",
+        "D-387"
+      ],
+      "current_contract_home": 8,
+      "current_gap": 0,
+      "form": "explicit-delegation-clause",
+      "delegation_citation": "ARCHITECTURE.md:1485",
+      "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory \"is enumerated at `cowork_layer5_engagement_design.md` §9.2\" (`:53-55`).",
+      "why_this_grade": "The bar's first named form, and it names its target's sections as well (Part 1 §1–§5, Part 2 §6–§10). Independently carried by the arc plan's three by-name delegations, which is what kept this precedent honest at phase 1l.",
+      "verdict": "ADMIT",
+      "movement": "none",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "ARCHITECTURE.md:1485",
+        "cowork_engage_arc_plan.md:41",
+        "cowork_engage_arc_plan.md:46",
+        "cowork_engage_arc_plan.md:55"
+      ]
+    },
+    {
+      "document": "cowork_layer5_function_design.md",
+      "entries": 8,
+      "entry_ids": [
+        "D-335",
+        "D-336",
+        "D-337",
+        "D-338",
+        "D-339",
+        "D-340",
+        "D-341",
+        "D-342"
+      ],
+      "current_contract_home": 8,
+      "current_gap": 0,
+      "form": "bare-appended-citation",
+      "delegation_citation": "ARCHITECTURE.md:1482",
+      "delegation_line": "detector is **key-agnostic** (it votes for the key; it does not read a resolved key). Full spec:",
+      "why_this_grade": "The bar's first excluded form, word for word — and the line the ruling's own defense cites, because the line immediately beneath it is a delegation clause.",
+      "verdict": "EXCLUDE",
+      "movement": "WOULD MOVE OUT",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "ARCHITECTURE.md:1483"
+      ]
+    },
+    {
+      "document": "cowork_bounded_context_design.md",
+      "entries": 7,
+      "entry_ids": [
+        "D-260",
+        "D-261",
+        "D-262",
+        "D-263",
+        "D-264",
+        "D-265",
+        "D-266"
+      ],
+      "current_contract_home": 7,
+      "current_gap": 0,
+      "form": "explicit-delegation-clause",
+      "delegation_citation": "ARCHITECTURE.md:912",
+      "delegation_line": "detailed cross-layer spec for this contract is **`cowork_bounded_context_design.md`** — the request→supply→bounded-",
+      "why_this_grade": "The bar's second named form, word for word.",
+      "verdict": "ADMIT",
+      "movement": "none",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "ARCHITECTURE.md:912"
+      ]
+    },
+    {
+      "document": "cowork_layer4_chordsymbol_design.md",
+      "entries": 6,
+      "entry_ids": [
+        "D-329",
+        "D-330",
+        "D-331",
+        "D-332",
+        "D-333",
+        "D-334"
+      ],
+      "current_contract_home": 6,
+      "current_gap": 0,
+      "form": "explicit-delegation-clause",
+      "delegation_citation": "ARCHITECTURE.md:1407",
+      "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer4_chordsymbol_design.md` (SIGNED, user, 2026-06-24) — D-329…D-334 — which this section points at and does not restate.",
+      "why_this_grade": "The bar's first named form, word for word.",
+      "verdict": "ADMIT",
+      "movement": "none",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "ARCHITECTURE.md:1407",
+        "ARCHITECTURE.md:1471"
+      ]
+    },
+    {
+      "document": "cowork_prefit_gates.md",
+      "entries": 5,
+      "entry_ids": [
+        "D-270",
+        "D-271",
+        "D-272",
+        "D-273",
+        "D-274"
+      ],
+      "current_contract_home": 5,
+      "current_gap": 0,
+      "form": "provenance-attribution",
+      "delegation_citation": "ARCHITECTURE.md:49",
+      "delegation_line": "> `cowork_prefit_gates.md`; adoption record `cc_adoption_measurement_report.md` / `tools/joint_estimator/adoption_record.json`.",
+      "why_this_grade": "A naming inside a list of citations — the bar's second excluded form, word for word. Its other naming records where a protocol was ratified, the same form's other half.",
+      "verdict": "EXCLUDE",
+      "movement": "WOULD MOVE OUT",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "ARCHITECTURE.md:49",
+        "ARCHITECTURE.md:282"
+      ]
+    },
+    {
+      "document": "cowork_structural_integrity_audit.md",
+      "entries": 5,
+      "entry_ids": [
+        "D-401",
+        "D-402",
+        "D-403",
+        "D-404",
+        "D-405"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 5,
+      "form": "named-home-with-sections",
+      "delegation_citation": "cowork_engage_arc_plan.md:4",
+      "delegation_line": "> precision phase. It does not re-derive the fix details — those live in `cowork_structural_integrity_audit.md`",
+      "why_this_grade": "A named home with sections (§3 fix-queue, §4 sequencing), from a user-ratified surface. The bar admits the DELEGATION; whether the named sections state rules is the second half of D-430 and is not decided here.",
+      "verdict": "ADMIT",
+      "movement": "WOULD MOVE IN",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "cowork_engage_arc_plan.md:4",
+        "cowork_engage_arc_plan.md:140"
+      ]
+    },
+    {
+      "document": "cowork_architecture_reassessment.md",
+      "entries": 4,
+      "entry_ids": [
+        "D-282",
+        "D-283",
+        "D-284",
+        "D-285"
+      ],
+      "current_contract_home": 4,
+      "current_gap": 0,
+      "form": "not-named-in-any-ratified-surface",
+      "delegation_citation": null,
+      "delegation_line": null,
+      "why_this_grade": "Named in none of the three surfaces; verified mechanically here.",
+      "verdict": "EXCLUDE",
+      "movement": "WOULD MOVE OUT",
+      "decided_by_the_bar": false,
+      "mentions_in_ratified_surfaces": []
+    },
+    {
+      "document": "cowork_joint_key_chord_design.md",
+      "entries": 4,
+      "entry_ids": [
+        "D-376",
+        "D-377",
+        "D-378",
+        "D-379"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 4,
+      "form": "provenance-attribution",
+      "delegation_citation": "cowork_engage_arc_plan.md:44",
+      "delegation_line": "- **arc #10 — the joint key-and-chord step** (`cowork_joint_key_chord_design.md`): the coupled key↔chord decision",
+      "why_this_grade": "A parenthetical naming inside a bulleted list of arcs, and it names no section — beside arc #9 and arc #11 in the same list, which DO name their target's sections.",
+      "verdict": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "cowork_engage_arc_plan.md:44"
+      ]
+    },
+    {
+      "document": "docs/decoder_design.md",
+      "entries": 4,
+      "entry_ids": [
+        "D-325",
+        "D-326",
+        "D-327",
+        "D-328"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 4,
+      "form": "not-named-in-any-ratified-surface",
+      "delegation_citation": null,
+      "delegation_line": null,
+      "why_this_grade": "Named in none of the three surfaces; verified mechanically here.",
+      "verdict": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": false,
+      "mentions_in_ratified_surfaces": []
+    },
+    {
+      "document": "docs/implementation_roadmap.md",
+      "entries": 4,
+      "entry_ids": [
+        "D-419",
+        "D-421",
+        "D-422",
+        "D-423"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 4,
+      "form": "not-named-in-any-ratified-surface",
+      "delegation_citation": null,
+      "delegation_line": null,
+      "why_this_grade": "Named in none of the three surfaces; verified mechanically here.",
+      "verdict": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": false,
+      "mentions_in_ratified_surfaces": []
+    },
+    {
+      "document": "docs/redesign_plan.md",
+      "entries": 4,
+      "entry_ids": [
+        "D-317",
+        "D-318",
+        "D-319",
+        "D-320"
+      ],
+      "current_contract_home": 4,
+      "current_gap": 0,
+      "form": "bare-appended-citation",
+      "delegation_citation": "ARCHITECTURE.md:777",
+      "delegation_line": "arpeggio-resolved chord identities as input. Design reference: `docs/redesign_plan.md`",
+      "why_this_grade": "A bare appended citation. (Two of its three namings additionally sit inside blocks `ARCHITECTURE.md` itself banners SUPERSEDED — the phase-1l ground, which the bar does not need.)",
+      "verdict": "EXCLUDE",
+      "movement": "WOULD MOVE OUT",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "ARCHITECTURE.md:777",
+        "ARCHITECTURE.md:791",
+        "ARCHITECTURE.md:802"
+      ]
+    },
+    {
+      "document": "docs/scoring_model.md",
+      "entries": 4,
+      "entry_ids": [
+        "D-321",
+        "D-322",
+        "D-323",
+        "D-324"
+      ],
+      "current_contract_home": 4,
+      "current_gap": 0,
+      "form": "explicit-delegation-clause",
+      "delegation_citation": "CLAUDE.md:687",
+      "delegation_line": "**Read `docs/scoring_model.md` at the start of any session that touches scoring",
+      "why_this_grade": "A whole standing section that makes the document a mandatory read, calls it the authoritative reference for the scoring pipeline, and binds a same-commit sync rule to it. Stronger than any single clause in the bar's examples.",
+      "verdict": "ADMIT",
+      "movement": "none",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "ARCHITECTURE.md:2149",
+        "CLAUDE.md:683",
+        "CLAUDE.md:685",
+        "CLAUDE.md:687",
+        "CLAUDE.md:698",
+        "CLAUDE.md:706",
+        "CLAUDE.md:725"
+      ]
+    },
+    {
+      "document": "cowork_confidence_contract.md",
+      "entries": 3,
+      "entry_ids": [
+        "D-267",
+        "D-268",
+        "D-269"
+      ],
+      "current_contract_home": 3,
+      "current_gap": 0,
+      "form": "explicit-delegation-clause",
+      "delegation_citation": "ARCHITECTURE.md:951",
+      "delegation_line": "squashing rules and the declared comparison frames are stated in full in `cowork_confidence_contract.md`,",
+      "why_this_grade": "An instruction to read the document instead of the section — the delegation clause's shape, in different words.",
+      "verdict": "ADMIT",
+      "movement": "none",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "ARCHITECTURE.md:857",
+        "ARCHITECTURE.md:950",
+        "ARCHITECTURE.md:951"
+      ]
+    },
+    {
+      "document": "cowork_engage_arc_plan.md",
+      "entries": 3,
+      "entry_ids": [
+        "D-278",
+        "D-279",
+        "D-311"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 3,
+      "form": "provenance-attribution",
+      "delegation_citation": "CLAUDE.md:129",
+      "delegation_line": "⛔ TOTAL UNIFICATION rule (`cowork_handoff.md`), the MEASURE-BEFORE-BUILD gate",
+      "why_this_grade": "A naming inside a list of citations — literally a list ('Companion standing rules elsewhere: A (x), B (y), and C below'), and a parenthetical. It DOES name the document by name for a stated concern, which is the test the phase-1p dispatch §4 states for admitting this document; the bar is stricter than that test, and the collision is reported rather than resolved.",
+      "verdict": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "ARCHITECTURE.md:1485",
+        "CLAUDE.md:130"
+      ]
+    },
+    {
+      "document": "cowork_notation_adoption_increment.md",
+      "entries": 3,
+      "entry_ids": [
+        "D-424",
+        "D-425",
+        "D-426"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 3,
+      "form": "provenance-attribution",
+      "delegation_citation": "ARCHITECTURE.md:4662",
+      "delegation_line": "pedal-point ruling of the notation-adoption increment (`cowork_notation_adoption_increment.md` §7 + §10).",
+      "why_this_grade": "A parenthetical recording where a ruling was made. Its `CLAUDE.md` naming ('analysis in `…` §2') is the same form.",
+      "verdict": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "ARCHITECTURE.md:4662",
+        "CLAUDE.md:128"
+      ]
+    },
+    {
+      "document": "cowork_stage5_fitter_design.md",
+      "entries": 3,
+      "entry_ids": [
+        "D-312",
+        "D-313",
+        "D-314"
+      ],
+      "current_contract_home": 3,
+      "current_gap": 0,
+      "form": "explicit-delegation-clause",
+      "delegation_citation": "ARCHITECTURE.md:285",
+      "delegation_line": "> *Delegation pointer (the fifth home case, user-ratified 2026-08-02): the fitting event's own design contract is `cowork_stage5_fitter_design.md` (SIGNED, user, 2026-07-04) — D-312…D-314 — which this specification points at and does not restate.*",
+      "why_this_grade": "A delegation clause of the 'the X for this Y is Z' shape.",
+      "verdict": "ADMIT",
+      "movement": "none",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "ARCHITECTURE.md:285",
+        "cowork_engage_arc_plan.md:141"
+      ]
+    },
+    {
+      "document": "cowork_notation_output_contract.md",
+      "entries": 2,
+      "entry_ids": [
+        "D-275",
+        "D-276"
+      ],
+      "current_contract_home": 2,
+      "current_gap": 0,
+      "form": "named-home-with-sections",
+      "delegation_citation": "ARCHITECTURE.md:73",
+      "delegation_line": "> **NOTATION OUTPUT-SURFACE RECORD — the A-native record (as-built, DORMANT; contract `cowork_notation_output_contract.md`",
+      "why_this_grade": "A JUDGMENT, recorded as one: the naming sits inside a parenthesis, which the bar associates with the excluded provenance form — but it names the document's ROLE ('contract') and the SECTIONS it delegates (§3.1–§3.4), and it records no ratification event. The excluded parenthetical form is the one that records WHERE SOMETHING WAS RATIFIED; this one names a home.",
+      "verdict": "ADMIT",
+      "movement": "none",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "ARCHITECTURE.md:73"
+      ]
+    },
+    {
+      "document": "docs/iteration_path1_summary.md",
+      "entries": 2,
+      "entry_ids": [
+        "D-280",
+        "D-281"
+      ],
+      "current_contract_home": 2,
+      "current_gap": 0,
+      "form": "not-named-in-any-ratified-surface",
+      "delegation_citation": null,
+      "delegation_line": null,
+      "why_this_grade": "Named in none of the three surfaces; verified mechanically here.",
+      "verdict": "EXCLUDE",
+      "movement": "WOULD MOVE OUT",
+      "decided_by_the_bar": false,
+      "mentions_in_ratified_surfaces": []
+    }
+  ],
+  "pre_apply_check": {
+    "question": "Does this bar change the verdict for any document the register currently classifies contract-home?",
+    "prediction_in_the_dispatch": "It should not — the admitted set was reached on explicit delegation clauses.",
+    "documents_currently_admitted_that_the_BAR_excludes": [
+      {
+        "document": "cowork_layer5_function_design.md",
+        "entries": 8,
+        "form": "bare-appended-citation",
+        "at": "ARCHITECTURE.md:1482"
+      },
+      {
+        "document": "cowork_prefit_gates.md",
+        "entries": 5,
+        "form": "provenance-attribution",
+        "at": "ARCHITECTURE.md:49"
+      },
+      {
+        "document": "docs/redesign_plan.md",
+        "entries": 4,
+        "form": "bare-appended-citation",
+        "at": "ARCHITECTURE.md:777"
+      }
+    ],
+    "entries_affected_by_the_bar": 17,
+    "documents_currently_admitted_that_FAIL_CLAUSE_(a)_ANYWAY": [
+      {
+        "document": "cowork_architecture_reassessment.md",
+        "entries": 4
+      },
+      {
+        "document": "docs/iteration_path1_summary.md",
+        "entries": 2
+      }
+    ],
+    "entries_affected_without_the_bar": 6,
+    "verdict": "STOP — the prediction is REFUTED"
+  },
+  "section_level_consequence": {
+    "scope": "only the entries already at SECTION granularity (the staged population of D-430). Every other entry is reported at DOCUMENT level above; bringing it to section granularity is a separate act.",
+    "by_document": {
+      "cowork_prefit_gates.md": {
+        "entries": 5,
+        "would_move": 5,
+        "to_contract_home": 0,
+        "to_gap": 5
+      },
+      "cowork_layer5_function_design.md": {
+        "entries": 8,
+        "would_move": 8,
+        "to_contract_home": 0,
+        "to_gap": 8
+      },
+      "cowork_score_census.md": {
+        "entries": 17,
+        "would_move": 0,
+        "to_contract_home": 0,
+        "to_gap": 0
+      },
+      "cowork_voiceleading_axis_design.md": {
+        "entries": 13,
+        "would_move": 10,
+        "to_contract_home": 0,
+        "to_gap": 10
+      },
+      "cowork_notation_adoption_increment.md": {
+        "entries": 3,
+        "would_move": 0,
+        "to_contract_home": 0,
+        "to_gap": 0
+      }
+    },
+    "entries": [
+      {
+        "id": "D-270",
+        "document": "cowork_prefit_gates.md",
+        "section": "“The held-out evaluation protocol”",
+        "delegated_section": false,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": true
+      },
+      {
+        "id": "D-271",
+        "document": "cowork_prefit_gates.md",
+        "section": "“The capacity budget”",
+        "delegated_section": false,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": true
+      },
+      {
+        "id": "D-272",
+        "document": "cowork_prefit_gates.md",
+        "section": "the opening block (above the first section heading)",
+        "delegated_section": false,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": true
+      },
+      {
+        "id": "D-273",
+        "document": "cowork_prefit_gates.md",
+        "section": "“The robust-stop architecture-adoption protocol”",
+        "delegated_section": false,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": true
+      },
+      {
+        "id": "D-274",
+        "document": "cowork_prefit_gates.md",
+        "section": "“The sanctioned dual path and the retirement map”",
+        "delegated_section": false,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": true
+      },
+      {
+        "id": "D-335",
+        "document": "cowork_layer5_function_design.md",
+        "section": "§9",
+        "delegated_section": false,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": true
+      },
+      {
+        "id": "D-336",
+        "document": "cowork_layer5_function_design.md",
+        "section": "§9",
+        "delegated_section": false,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": true
+      },
+      {
+        "id": "D-337",
+        "document": "cowork_layer5_function_design.md",
+        "section": "§9",
+        "delegated_section": false,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": true
+      },
+      {
+        "id": "D-338",
+        "document": "cowork_layer5_function_design.md",
+        "section": "§9",
+        "delegated_section": false,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": true
+      },
+      {
+        "id": "D-339",
+        "document": "cowork_layer5_function_design.md",
+        "section": "§9",
+        "delegated_section": false,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": true
+      },
+      {
+        "id": "D-340",
+        "document": "cowork_layer5_function_design.md",
+        "section": "§7",
+        "delegated_section": false,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": true
+      },
+      {
+        "id": "D-341",
+        "document": "cowork_layer5_function_design.md",
+        "section": "§15",
+        "delegated_section": false,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": true
+      },
+      {
+        "id": "D-342",
+        "document": "cowork_layer5_function_design.md",
+        "section": "§11",
+        "delegated_section": false,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": true
+      },
+      {
+        "id": "D-359",
+        "document": "cowork_score_census.md",
+        "section": "§1",
+        "delegated_section": false,
+        "current_class": "gap",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": false
+      },
+      {
+        "id": "D-360",
+        "document": "cowork_score_census.md",
+        "section": "§3",
+        "delegated_section": false,
+        "current_class": "gap",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": false
+      },
+      {
+        "id": "D-361",
+        "document": "cowork_score_census.md",
+        "section": "§4",
+        "delegated_section": false,
+        "current_class": "gap",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": false
+      },
+      {
+        "id": "D-362",
+        "document": "cowork_score_census.md",
+        "section": "§8",
+        "delegated_section": false,
+        "current_class": "gap",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": false
+      },
+      {
+        "id": "D-363",
+        "document": "cowork_score_census.md",
+        "section": "§8",
+        "delegated_section": false,
+        "current_class": "gap",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": false
+      },
+      {
+        "id": "D-364",
+        "document": "cowork_score_census.md",
+        "section": "§8b",
+        "delegated_section": false,
+        "current_class": "gap",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": false
+      },
+      {
+        "id": "D-365",
+        "document": "cowork_score_census.md",
+        "section": "§8c",
+        "delegated_section": true,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "contract-home",
+        "moves": false
+      },
+      {
+        "id": "D-366",
+        "document": "cowork_score_census.md",
+        "section": "§8c",
+        "delegated_section": true,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "contract-home",
+        "moves": false
+      },
+      {
+        "id": "D-367",
+        "document": "cowork_score_census.md",
+        "section": "§8c",
+        "delegated_section": true,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "contract-home",
+        "moves": false
+      },
+      {
+        "id": "D-368",
+        "document": "cowork_score_census.md",
+        "section": "§8c",
+        "delegated_section": true,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "contract-home",
+        "moves": false
+      },
+      {
+        "id": "D-369",
+        "document": "cowork_score_census.md",
+        "section": "§8c",
+        "delegated_section": true,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "contract-home",
+        "moves": false
+      },
+      {
+        "id": "D-370",
+        "document": "cowork_score_census.md",
+        "section": "§8c",
+        "delegated_section": true,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "contract-home",
+        "moves": false
+      },
+      {
+        "id": "D-371",
+        "document": "cowork_score_census.md",
+        "section": "§8c",
+        "delegated_section": true,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "contract-home",
+        "moves": false
+      },
+      {
+        "id": "D-372",
+        "document": "cowork_score_census.md",
+        "section": "§8c",
+        "delegated_section": true,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "contract-home",
+        "moves": false
+      },
+      {
+        "id": "D-373",
+        "document": "cowork_score_census.md",
+        "section": "§8c",
+        "delegated_section": true,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "contract-home",
+        "moves": false
+      },
+      {
+        "id": "D-374",
+        "document": "cowork_score_census.md",
+        "section": "§8c",
+        "delegated_section": true,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "contract-home",
+        "moves": false
+      },
+      {
+        "id": "D-375",
+        "document": "cowork_score_census.md",
+        "section": "§8c",
+        "delegated_section": true,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "contract-home",
+        "moves": false
+      },
+      {
+        "id": "D-388",
+        "document": "cowork_voiceleading_axis_design.md",
+        "section": "§9",
+        "delegated_section": false,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": true
+      },
+      {
+        "id": "D-389",
+        "document": "cowork_voiceleading_axis_design.md",
+        "section": "§9",
+        "delegated_section": false,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": true
+      },
+      {
+        "id": "D-390",
+        "document": "cowork_voiceleading_axis_design.md",
+        "section": "§9",
+        "delegated_section": false,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": true
+      },
+      {
+        "id": "D-391",
+        "document": "cowork_voiceleading_axis_design.md",
+        "section": "§9",
+        "delegated_section": false,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": true
+      },
+      {
+        "id": "D-392",
+        "document": "cowork_voiceleading_axis_design.md",
+        "section": "§9",
+        "delegated_section": false,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": true
+      },
+      {
+        "id": "D-393",
+        "document": "cowork_voiceleading_axis_design.md",
+        "section": "§5.3",
+        "delegated_section": true,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "contract-home",
+        "moves": false
+      },
+      {
+        "id": "D-394",
+        "document": "cowork_voiceleading_axis_design.md",
+        "section": "§5.1",
+        "delegated_section": false,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": true
+      },
+      {
+        "id": "D-395",
+        "document": "cowork_voiceleading_axis_design.md",
+        "section": "§5.3",
+        "delegated_section": true,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "contract-home",
+        "moves": false
+      },
+      {
+        "id": "D-396",
+        "document": "cowork_voiceleading_axis_design.md",
+        "section": "§8",
+        "delegated_section": false,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": true
+      },
+      {
+        "id": "D-397",
+        "document": "cowork_voiceleading_axis_design.md",
+        "section": "§16",
+        "delegated_section": false,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": true
+      },
+      {
+        "id": "D-398",
+        "document": "cowork_voiceleading_axis_design.md",
+        "section": "§15",
+        "delegated_section": false,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": true
+      },
+      {
+        "id": "D-399",
+        "document": "cowork_voiceleading_axis_design.md",
+        "section": "§5.3",
+        "delegated_section": true,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "contract-home",
+        "moves": false
+      },
+      {
+        "id": "D-400",
+        "document": "cowork_voiceleading_axis_design.md",
+        "section": "§16",
+        "delegated_section": false,
+        "current_class": "contract-home",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": true
+      },
+      {
+        "id": "D-424",
+        "document": "cowork_notation_adoption_increment.md",
+        "section": "the opening block (above the first section heading)",
+        "delegated_section": false,
+        "current_class": "gap",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": false
+      },
+      {
+        "id": "D-425",
+        "document": "cowork_notation_adoption_increment.md",
+        "section": "§4",
+        "delegated_section": false,
+        "current_class": "gap",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": false
+      },
+      {
+        "id": "D-426",
+        "document": "cowork_notation_adoption_increment.md",
+        "section": "§7",
+        "delegated_section": true,
+        "current_class": "gap",
+        "class_under_the_bar_plus_D430": "gap",
+        "moves": false
+      }
+    ]
+  },
+  "census_8c_mixed_section": {
+    "needs_vector_table": {
+      "first_row_line": 207,
+      "last_row_line": 226,
+      "row_count": 20
+    },
+    "admitted_in_8c": [
+      "D-365",
+      "D-366",
+      "D-367",
+      "D-368",
+      "D-369",
+      "D-370",
+      "D-371",
+      "D-372",
+      "D-373",
+      "D-374",
+      "D-375"
+    ],
+    "of_those_rows_of_the_findings_table": [
+      "D-366",
+      "D-369",
+      "D-370",
+      "D-371",
+      "D-372",
+      "D-373",
+      "D-374",
+      "D-375"
+    ],
+    "of_those_not_rows_of_the_table": [
+      "D-365",
+      "D-367",
+      "D-368"
+    ],
+    "note": "Task 1's figure. The phase-1n note on `open_items/OI-281.md` (§4) and the phase-1n `STATUS.md` entry both say NINE of the eleven are rows of the table; derived from the file the count is what `of_those_rows_of_the_findings_table` holds."
+  }
+}

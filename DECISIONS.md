@@ -174,30 +174,30 @@ project's own and are defined here because they are used before any entry explai
 
 ## What is in this register, counted
 
-**431 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
+**434 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
 
 | | Count |
 |---|---|
-| Decisions recorded | **431** |
-| — of which live | 368 |
+| Decisions recorded | **434** |
+| — of which live | 371 |
 | — of which superseded in fact | 6 |
 | — of which superseded by | 9 |
 | — of which deferred | 46 |
 | — of which shelved with evidence | 2 |
 | Decisions whose date is not stated in the record | 205 |
 | Decisions whose ratifier is not stated in the record | 258 |
-| Decisions recorded outside the specification that owns them | 230 |
+| Decisions recorded outside the specification that owns them | 233 |
 | — of which a documentation gap | 38 |
 | — of which recorded only on a tracking surface, with no home at all | 11 |
 | — of which a project-wide convention, correctly homed | 35 |
-| — of which a decision about the process, correctly homed | 50 |
+| — of which a decision about the process, correctly homed | 53 |
 | Decisions whose defense the record does not state | 44 |
 | Entries whose own ratification the provenance records | 187 |
 | Entries whose home is recorded at SECTION granularity | 46 |
 
-The second-to-last row is about the DECISIONS; the last is about the ENTRIES. **187 of 431** entries carry a recorded event at which the entry itself — this quote, this restatement, this status — was reviewed and ratified. The remaining 244 do not carry one in their own provenance; the register-level ratification events listed in the preamble are the place to look for those, and nothing is inferred from them into the per-entry field.
+The second-to-last row is about the DECISIONS; the last is about the ENTRIES. **187 of 434** entries carry a recorded event at which the entry itself — this quote, this restatement, this status — was reviewed and ratified. The remaining 247 do not carry one in their own provenance; the register-level ratification events listed in the preamble are the place to look for those, and nothing is inferred from them into the per-entry field.
 
-That last row is the one meant to fall. **387 of 431** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
+That last row is the one meant to fall. **390 of 434** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
 
 Alongside the register, every one of the harvested statements about decisions in this repository has been given a recorded disposition, so that none was silently passed over:
 
@@ -563,6 +563,8 @@ THE HOME FIELD IS MIXED GRANULARITY, deliberately, from 2026-08-03. The user rul
 | D-420 | One cross-layer extension specification, and the duplicate written the same day is killed into it | LIVE | 2026-08-03 · user | `docs/implementation_roadmap.md` |
 | D-424 | A decision surface names the principle behind every pro and con, and rates every option on two axes | LIVE | — | `cowork_notation_adoption_increment.md` the opening block (above the first section heading) ⚠gap |
 | D-430 | The contract-home criterion's unit is a SECTION of a document, not the document | LIVE | — | `CLAUDE.md` |
+| D-432 | What counts as a delegation, graded by form — the clause the section-level criterion did not touch | LIVE | — | `CLAUDE.md` |
+| D-433 | A shelved section can be a home — shelving is a status, not a kind | LIVE | — | `CLAUDE.md` |
 
 ## L. Licensing, contribution, and coding standards — [full entries](decisions/group_L.md)
 
@@ -744,6 +746,7 @@ THE HOME FIELD IS MIXED GRANULARITY, deliberately, from 2026-08-03. The user rul
 | D-417 | The engage criteria — six gates that must all hold, a staged plan, and the user ratification event | LIVE | 2026-08-03 · user | `docs/implementation_roadmap.md` |
 | D-418 | The retirement map — nothing retires by silence; ten named retirements, each with its trigger and its order | LIVE | 2026-08-03 · user | `docs/implementation_roadmap.md` |
 | D-431 | A figure enters a dispatch or a report by citation to a generated artifact, never by transcription — and so does a premise | LIVE | — | `cowork_audit_protocol.md` |
+| D-434 | The writing side runs the standing self-check before a dispatch is released, and records its output | LIVE | — | `cowork_audit_protocol.md` |
 
 ## U. The standing decision-bearing surfaces — [full entries](decisions/group_U.md)
 
