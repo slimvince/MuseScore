@@ -445,7 +445,7 @@
 
 **Status.** LIVE · decided 2026-07-28 · ratified by user
 
-**Home.** `CLAUDE.md:906-908`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:927-929`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at cowork_handoff.md (the user's rulings at the analysis-cost session, 2026-07-28), a session handoff block that ages into an archive outside the session-start read. It corrects a Cowork misreading of 'implementation efficiency is not very relevant', which meant BUILD effort, not runtime. OPEN_ITEMS OI-240 closes on this move
 
@@ -460,7 +460,7 @@
 
 **Status.** LIVE · decided 2026-07-28 · ratified by user
 
-**Home.** `ARCHITECTURE.md:956-957`
+**Home.** `ARCHITECTURE.md:1000-1001`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:157 (OI-209) with open_items/OI-209.md, which tracks the requirement rather than housing it. Consumed by the analysis-extent question (OI-210), the corpus onboarding (OI-38), and the architecture step-back (OI-200). The measured collision is OI-215/OI-227 - the decode returns nothing on 13 of 23 committed large scores. OPEN_ITEMS OI-240 closes on this move
 
@@ -475,7 +475,7 @@
 
 **Status.** DEFERRED · decided 2026-07-28 · ratified by user
 
-**Home.** `ARCHITECTURE.md:964-965`
+**Home.** `ARCHITECTURE.md:1008-1009`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:157 (OI-209). The two standing design rules the effort control must satisfy are older and are stated in ARCHITECTURE.md §2.14 (D-035). OPEN_ITEMS OI-240 closes on this move
 
@@ -491,7 +491,7 @@
 
 **Status.** LIVE · decided 2026-07-28 · ratified by user
 
-**Home.** `CLAUDE.md:916-918`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:937-939`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at cowork_handoff.md, the user's ruling at the OI-199 pass-2 session, 2026-07-28. Homed beside #8 in CLAUDE.md because it is a ruling about what #8 permits; what the admission rule IS, and that it has no specified form, is in the estimator's own specification (D-098) and at OPEN_ITEMS OI-226. Cross-read with STATUS.md's earlier note that the classification 'is the user's to settle' - this row records that it was settled. OPEN_ITEMS OI-240 closes on this move
 
@@ -507,7 +507,7 @@
 
 **Status.** LIVE · decided 2026-07-28 · ratified by user
 
-**Home.** `CLAUDE.md:927-929`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:948-950`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at cowork_handoff.md, recorded at the OI-199 pass-2 session, 2026-07-28. OPEN_ITEMS OI-240 closes on this move
 
@@ -523,7 +523,7 @@
 
 **Status.** LIVE · decided 2026-07-13 · ratified by user
 
-**Home.** `ARCHITECTURE.md:6610-6612`
+**Home.** `ARCHITECTURE.md:6714-6716`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at open_items/OI-56.md:7, decided by the user 2026-07-13. The when-question is tied to the corpus-onboarding event (OI-38) and the timing is itself open. OPEN_ITEMS OI-240 closes on this move
 
@@ -539,7 +539,7 @@
 
 **Status.** DEFERRED · decided 2026-07-13 · ratified by user
 
-**Home.** `ARCHITECTURE.md:4958-4960`
+**Home.** `ARCHITECTURE.md:5054-5056`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at open_items/OI-62.md:7, decided by the user 2026-07-13. The six unbuilt items are specified at ARCHITECTURE.md §11.3a-g and confirmed absent from the code in that row. OPEN_ITEMS OI-240 closes on this move
 

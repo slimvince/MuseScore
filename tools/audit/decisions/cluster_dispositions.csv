@@ -754,7 +754,7 @@ DC-00752,1,restates,BR-3,D-025;D-028;D-030;D-032;D-034;D-119,governing,paragraph
 DC-00753,1,restates,BR-3,D-084;D-119,governing,paragraph,STATUS_ARCHIVE.md
 DC-00754,1,restates,BR-3,D-034;D-084,governing,paragraph,STATUS_ARCHIVE.md
 DC-00755,1,restates,BR-3,D-119,governing,paragraph,STATUS_ARCHIVE.md
-DC-00756,1,no-spec-home,BR-4,D-306,governing,paragraph,STATUS_ARCHIVE.md
+DC-00756,1,restates,BR-3,D-306,governing,paragraph,STATUS_ARCHIVE.md
 DC-00757,1,restates,BR-3,D-030;D-032;D-098;D-119,governing,paragraph,STATUS_ARCHIVE.md
 DC-00758,1,restates,BR-3,D-030;D-095;D-186;D-263,governing,paragraph,STATUS_ARCHIVE.md
 DC-00759,1,restates,BR-3,D-050;D-263,governing,paragraph,STATUS_ARCHIVE.md
@@ -827,7 +827,7 @@ DC-00825,1,unresolved,BR-8,,governing,bullet,STATUS_ARCHIVE.md
 DC-00826,1,not-a-decision,BR-18,,governing,bullet,STATUS_ARCHIVE.md
 DC-00827,1,not-a-decision,BR-18,,governing,bullet,STATUS_ARCHIVE.md
 DC-00828,1,restates,BR-3,D-119;D-304,governing,bullet,STATUS_ARCHIVE.md
-DC-00829,1,no-spec-home,BR-4,D-303,governing,bullet,STATUS_ARCHIVE.md
+DC-00829,1,restates,BR-3,D-303,governing,bullet,STATUS_ARCHIVE.md
 DC-00830,1,unresolved,BR-8,,governing,bullet,STATUS_ARCHIVE.md
 DC-00831,1,not-a-decision,BR-18,,governing,bullet,STATUS_ARCHIVE.md
 DC-00832,1,restates,BR-3,D-073,governing,paragraph,STATUS_ARCHIVE.md
@@ -12344,7 +12344,7 @@ DC-12342,1,not-a-decision,BR-6,,cc_reports,bullet,cc_stage4d_i_report.md
 DC-12343,1,not-a-decision,BR-6,,cc_reports,bullet,cc_stage4d_i_report.md
 DC-12344,1,not-a-decision,BR-12,,cc_reports,bullet,cc_stage4d_i_report.md
 DC-12345,1,not-a-decision,BR-6,,cc_reports,paragraph,cc_stage4d_i_report.md
-DC-12346,1,no-spec-home,BR-4,D-292,cc_reports,table_row,cc_stage5_phase0_report.md
+DC-12346,1,restates,BR-3,D-292,cc_reports,table_row,cc_stage5_phase0_report.md
 DC-12347,1,restates,BR-3,D-085,cc_reports,bullet,cc_stage5_phase0_report.md
 DC-12348,1,not-a-decision,BR-6,,cc_reports,bullet,cc_stage5_phase0_report.md
 DC-12349,1,not-a-decision,BR-2,,cc_reports,heading,cc_stage5_phase0_report.md

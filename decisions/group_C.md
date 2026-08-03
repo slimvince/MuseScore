@@ -17,7 +17,7 @@
 
 **Status.** LIVE · date not stated · ratified by user
 
-**Home.** `ARCHITECTURE.md:814-815`
+**Home.** `ARCHITECTURE.md:839-840`
 
 **Provenance.** ARCHITECTURE.md:808 heading says '(ratified; full statements in cowork_target_architecture.md)'; the date and ratifier are not stated at this home
 
@@ -31,7 +31,7 @@
 
 **Status.** LIVE · date not stated · ratified by user
 
-**Home.** `ARCHITECTURE.md:815`
+**Home.** `ARCHITECTURE.md:840`
 
 **Provenance.** ARCHITECTURE.md:808-815. The joint estimator's own unit is the ONSET event (jointdecoder.h:67), not this slice - see OPEN_ITEMS OI-228
 
@@ -47,7 +47,7 @@
 
 **Status.** LIVE · date not stated · ratified by user
 
-**Home.** `ARCHITECTURE.md:821-824`
+**Home.** `ARCHITECTURE.md:846-849`
 
 **Provenance.** ARCHITECTURE.md:808 ratified banner; sharpens §2.1 (D-070)
 
@@ -62,7 +62,7 @@
 
 **Status.** SUPERSEDED BY D-001 · decided 2026-06-29 · ratified by user
 
-**Home.** `ARCHITECTURE.md:794-795`
+**Home.** `ARCHITECTURE.md:819-820`
 
 **Provenance.** The 2026-07-17 governing decision (D-001) replaces the mechanism with ONE joint decode - the mechanism this block had ruled out. No supersession banner was added to §2.14 - see OPEN_ITEMS OI-234 ★ USER RULING 2026-08-02 (OI-234, reading 3): forward-only as the architecture ruling is SUPERSEDED BY D-001 (the 2026-07-17 joint decision, adopted 2026-07-26); the supersession now has a ruling naming it (was superseded-in-fact). The §2.14 scoping annotation records the ruling.
 
@@ -77,7 +77,7 @@
 
 **Status.** LIVE · decided 2026-06-29 · ratified by user
 
-**Home.** `ARCHITECTURE.md:791-792`
+**Home.** `ARCHITECTURE.md:816-817`
 
 **Provenance.** The joint estimator (D-001) is a global joint decode and is in production on both surfaces. The record does not state how this measurement was reconciled with the later ruling - see OPEN_ITEMS OI-234 ★ USER RULING 2026-08-02 (OI-234, reading 3): the finding STANDS FOR WHAT IT TESTED — cycling/re-ranking over the per-layer pipeline's carried candidate lists adds nothing, binding on that design class — and does NOT bear on the fitted semi-Markov joint decode (a different mechanism class). Returned to LIVE, scoped; the §2.14 annotation records the scoping (was superseded-in-fact).
 
@@ -91,7 +91,7 @@
 
 **Status.** LIVE · decided 2026-06-29 · ratified by user
 
-**Home.** `ARCHITECTURE.md:796`
+**Home.** `ARCHITECTURE.md:821`
 
 **Provenance.** The mechanism around it (D-025) is superseded in fact, but the ranked-alternatives requirement is carried forward by the joint estimator's published candidate lists (D-006)
 
@@ -106,7 +106,7 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `ARCHITECTURE.md:868-869`
+**Home.** `ARCHITECTURE.md:893-894`
 
 **Provenance.** ARCHITECTURE.md:833-850 records the rename CONFIRMED (user, 2026-07-02) and EXECUTED 2026-07-03 'propagated through every layer spec'. ARCHITECTURE.md itself still uses the banned word 216 times including section headings - see OPEN_ITEMS OI-233
 
@@ -122,7 +122,7 @@
 
 **Status.** LIVE · date not stated · ratified by user
 
-**Home.** `ARCHITECTURE.md:876-878`
+**Home.** `ARCHITECTURE.md:901-903`
 
 **Provenance.** ARCHITECTURE.md:808 ratified banner
 
@@ -138,7 +138,7 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `ARCHITECTURE.md:882-884`
+**Home.** `ARCHITECTURE.md:907-909`
 
 **Provenance.** ARCHITECTURE.md:880-884 names cowork_bounded_context_design.md as the ONE detailed cross-layer spec and records the 2026-07-02 user directive making it 'the hard gate before L6'. DIRECTLY CONTRADICTED by D-011 (whole-score decode per query, no caching) - see OPEN_ITEMS OI-210/OI-212
 
@@ -152,7 +152,7 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `ARCHITECTURE.md:884`
+**Home.** `ARCHITECTURE.md:909`
 
 **Provenance.** Same home as D-030. The record producer analyses the whole score regardless of the requested span (OI-212)
 
@@ -168,7 +168,7 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `ARCHITECTURE.md:914-916`
+**Home.** `ARCHITECTURE.md:939-941`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass, cc_instruction_spec_completion.md): the contract's own document `cowork_confidence_contract.md:39-40` (ratified there, user, 2026-07-02) remains the authoritative full statement; the rule is now stated in the cross-cutting contracts of the architecture document (§2.15), which is where a reader of the layers meets it. The stale 'ratification-gated' parenthetical in the §2.14 forward-override bullet of §2.15 is corrected in the same pass (OPEN_ITEMS OI-232, item 5). Contradicted by D-019 on the production record arm - see OPEN_ITEMS OI-231
 
@@ -185,7 +185,7 @@
 
 **Status.** LIVE · date not stated · ratified by user
 
-**Home.** `ARCHITECTURE.md:889-892`
+**Home.** `ARCHITECTURE.md:914-917`
 
 **Provenance.** ARCHITECTURE.md:808 ratified banner. The joint emission reads only struck notes (OI-228) and the shared tone surface is voice-blind (OI-74)
 
@@ -200,7 +200,7 @@
 
 **Status.** LIVE · date not stated · ratified by user
 
-**Home.** `ARCHITECTURE.md:906-907`
+**Home.** `ARCHITECTURE.md:931-932`
 
 **Provenance.** ARCHITECTURE.md:902-909
 
@@ -216,7 +216,7 @@
 
 **Status.** LIVE · decided 2026-06-29 · ratified by user
 
-**Home.** `ARCHITECTURE.md:807-809`
+**Home.** `ARCHITECTURE.md:832-834`
 
 **Provenance.** ARCHITECTURE.md:801-805. Not implemented: the effort setting does not exist and the decode's cost drivers (segment cap, key prune width) are compiled-in constants - tracked at OI-209/OI-210
 
@@ -232,7 +232,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:713-715`
+**Home.** `ARCHITECTURE.md:738-740`
 
 **Provenance.** ARCHITECTURE.md:709-713; restated as an ongoing concern at :2131-2136
 
@@ -248,7 +248,7 @@
 
 **Status.** LIVE · decided 2026-07-06 · ratified by user
 
-**Home.** `ARCHITECTURE.md:930-932`
+**Home.** `ARCHITECTURE.md:955-957`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): CLAUDE.md guiding principle #12, ratified by the user 2026-07-06, remains the standing principle; the layer-facing rule is now stated in the cross-cutting analysis contracts it governs. OPEN_ITEMS OI-237 closes on this move
 
@@ -263,7 +263,7 @@
 
 **Status.** LIVE · decided 2026-07-10 · ratified by user
 
-**Home.** `ARCHITECTURE.md:938-939`
+**Home.** `ARCHITECTURE.md:972-973`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): CLAUDE.md's 'Fact-publication corollary to #6/#7/#12' (ratified 2026-07-10, amended 2026-07-12 - publish EVIDENCE-class facts broadly, each carrying its establishment status) remains the standing corollary; the layer-facing rule is now stated in the cross-cutting analysis contracts. OPEN_ITEMS OI-237 closes on this move
 
@@ -297,7 +297,7 @@
 
 **Status.** LIVE · decided 2026-06-22 · ratified by user
 
-**Home.** `CLAUDE.md:461`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:482`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:443-486, block (B), carried over unchanged to the robust unit at R10-b. Full provenance `cowork_gate_policy_amendment.md`. The four guardrails that make the tracked class conditional - verified at the score per case, default to the barred class on any doubt, the barred class non-increasing, case identities recorded - are at CLAUDE.md:464-473.
 
@@ -313,7 +313,7 @@
 
 **Status.** LIVE · decided 2026-07-13 · ratified by user
 
-**Home.** `CLAUDE.md:387-389`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:408-410`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:239 (OI-132), ruled by the user 2026-07-13 and landed at 800f1a12bf. The adjudication probe is `cc_mode_grading_adjudication_probe_report.md`; the re-baseline record is `cc_key_grading_and_calibration_rebaseline_report.md`. It is implemented in ONE shared reduction, `compare_rn._our_key_tonic`, onto which the second key parser was folded (#6). OPEN_ITEMS OI-240 closes on this move
 
@@ -329,7 +329,7 @@
 
 **Status.** LIVE · decided 2026-07-12 · ratified by user
 
-**Home.** `CLAUDE.md:397-399`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:418-420`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:270 (OI-143), adopted at d9b52ba969. The current values are in the CLAUDE.md gate block (A): key-agree against the home key 56.14 %, against the local key 78.42 %. OPEN_ITEMS OI-240 closes on this move
 
@@ -345,7 +345,7 @@
 
 **Status.** LIVE · decided 2026-07-12 · ratified by user
 
-**Home.** `CLAUDE.md:402-404`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:423-425`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:217 (OI-33), resolved 2026-07-12 in the key-layer readiness wave 1. Its current reading on the production arm is D-114 - the decoder commits its best path, so the abstain counter reads zero. OPEN_ITEMS OI-240 closes on this move
 
@@ -369,7 +369,7 @@
 
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3579-3587`
+**Home.** `ARCHITECTURE.md:3675-3683`
 
 **Provenance.** The band is stated at ARCHITECTURE.md:3567-3575. The governing measurement surface is now the robust unit ratified at R10-b (CLAUDE.md gate block (A)), whose figures are reported per preset on a different unit; no ruling names this band as replaced. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -668,9 +668,9 @@
 
 ### D-293 — Fitted values are fitted per IDIOM, never for a user preset; presets are regression surfaces and delivery carriers
 
-> **★ NEW USER MANDATE (recorded as design constraint 4c): OPTIMIZE FOR IDIOMS ONLY — never for the current
-> user presets;** presets = regression surfaces + delivery carriers; ONE fit per idiom; the end-user-facing
-> preset question is a separate later product decision. **★ CHECKPOINT P0 RATIFIED (user): 61 tunable / 17
+> **(f) Values are fitted per IDIOM, never for a user preset.** One fit event per musical idiom — a body of
+> repertoire sharing a practice — and no value is ever adjusted to make a named preset come out right. A
+> preset is a regression surface and a carrier for delivering a fitted set; which presets an end user should
 
 **In plain words.** Numbers are fitted once per musical idiom - a body of repertoire that shares a practice - and never tuned to match one of the program's named presets. A preset is a way of delivering a set of values and a surface to check for regressions; which presets a user should see is a separate product question, decided later.
 
@@ -678,19 +678,15 @@
 
 **Status.** LIVE · date not stated · ratified by the user
 
-**Home.** `cowork_handoff_archive.md:2363`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:323-325`
 
-**Provenance.** Recorded in `cowork_handoff_archive.md` (the Stage-5 fitter block) as design constraint 4c of `cowork_stage5_fitter_design.md`. Consistent with, and earlier than, D-003 (inference is preset-independent; presets are presentation concerns) — this states the FITTING side of the same separation. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).
+**Provenance.** Recorded in `cowork_handoff_archive.md` (the Stage-5 fitter block) as design constraint 4c of `cowork_stage5_fitter_design.md`. Consistent with, and earlier than, D-003 (inference is preset-independent; presets are presentation concerns) — this states the FITTING side of the same separation. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): stated as standing rule (f) of the joint estimator's specification. Former home preserved (#12): `cowork_handoff_archive.md:2363`, the Stage-5 fitter block, as design constraint 4c.
 
 ### D-294 — The only ground truth is the human annotation; the algorithmic analysis is a filter, and no self-annotation ever enters a measurement
 
->   Ground-truth verdict (sharpened by user mandate 2026-06-10): **the ONLY ground truth
->   is the human annotation (WiR/DCML); music21 is NOT ground truth** — it is an
->   algorithmic noise filter, and the 13/7 "genuine" counts are a music21-filtered LOWER
->   BOUND on human-adjudicated errors (cases where music21 sides with us against DCML are
->   excluded by an algorithm's opinion). Never describe the gate as "ground-truth
->   agreement." Stage 5 must evaluate a DCML-only gate variant (roadmap 5.2). No
->   self-annotations in any gate; catalog/goldens correctly used as regression pins only.
+> - **THE ONLY GROUND TRUTH IS THE HUMAN ANNOTATION. The algorithmic analysis is a noise filter, never a
+>   standard of correctness** (user mandate 2026-06-10; homed here 2026-08-02 from `cowork_handoff_archive.md`,
+>   `OPEN_ITEMS.md` OI-272). Accuracy is measured against the published human analyses — *When in Rome* /
 
 **In plain words.** Accuracy is measured against published human analyses only. The second, computer-generated analysis is a noise filter, not a standard of correctness, so a measurement that uses it reports a lower bound rather than an agreement rate - and must never be described as agreement with ground truth. Our own outputs and our own test fixtures are never used as a standard of correctness; they pin behaviour against change and nothing more.
 
@@ -698,18 +694,15 @@
 
 **Status.** LIVE · decided 2026-06-10 · ratified by the user
 
-**Home.** `cowork_handoff_archive.md:2844`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `CLAUDE.md:395-397`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** Recorded in `cowork_handoff_archive.md` (the corpus-audit block, as the ground-truth verdict). The human-annotation-only requirement it names was delivered as the granularity-robust unit (D-115), whose own text carries the clause "music21 is NOT ground truth"; the two further clauses — never describe a measurement as ground-truth agreement, and no self-annotation in any measurement — are recorded ONLY here. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).
+**Provenance.** Recorded in `cowork_handoff_archive.md` (the corpus-audit block, as the ground-truth verdict). The human-annotation-only requirement it names was delivered as the granularity-robust unit (D-115), whose own text carries the clause "music21 is NOT ground truth"; the two further clauses — never describe a measurement as ground-truth agreement, and no self-annotation in any measurement — are recorded ONLY here. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]] — measurement conventions go to the gate block): written into `CLAUDE.md` gate block (A) as the FIRST of the four grading conventions the robust unit is measured under, carrying all three clauses the archive held alone. Former home preserved (#12): `cowork_handoff_archive.md:2844`, the corpus-audit block.
 
 ### D-297 — Correction of record: never computing a possibility is not information loss; only discarding a computed one is
 
-> **★ #12 CORRECTION (recorded — the earlier "recomputable" framing was WRONG):** on the shelved joint step,
-> the chord under an alternative key is **NEVER COMPUTED** in this path — so nothing computed is discarded (no
-> #12 violation). The key alternatives ARE carried (the key discovery is preserved). Not computing a
-> *measured-worthless* possibility (the ~1.4 % where it differs is 50/50 noise) is an **evidence-based
-> decision, not information loss** — you cannot lose what you never had. ("Recompute a discarded thing" WOULD
-> be a #12 violation; that is not what happens here.)
+>   **The rule's boundary, stated because an earlier framing got it wrong: NEVER COMPUTING a possibility is
+>   not information loss; only DISCARDING a computed one is.** A layer that decides, on measured evidence,
+>   not to work out a particular alternative at all has lost nothing — you cannot lose what you never had.
 
 **In plain words.** The no-information-loss principle forbids throwing away something the analysis has worked out. It does not require working out everything that could be worked out. Deciding, on measured evidence, not to compute a possibility is an ordinary design decision - you cannot lose what you never had.
 
@@ -717,9 +710,9 @@
 
 **Status.** LIVE · decided 2026-07-07 · ratifier not stated
 
-**Home.** `cowork_handoff_archive.md:1532`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:963-965`
 
-**Provenance.** Recorded in `cowork_handoff_archive.md` (the 2026-07-07 entry-point block) as a dated correction. It scopes D-099 / principle #12 and is recorded nowhere that a reader of #12 would find. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).
+**Provenance.** Recorded in `cowork_handoff_archive.md` (the 2026-07-07 entry-point block) as a dated correction. It scopes D-099 / principle #12 and is recorded nowhere that a reader of #12 would find. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written into `ARCHITECTURE.md` §2.15 as the boundary clause of the negative-evidence contract, beside D-099 — the home this row's own text named. Former home preserved (#12): `cowork_handoff_archive.md:1532`, the 2026-07-07 entry-point block.
 
 ### D-313 — A confidence map is monotone or it is not fitted — a non-monotone curve is an upstream finding, not a mapping target
 

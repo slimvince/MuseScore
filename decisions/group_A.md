@@ -153,7 +153,7 @@
 
 **Status.** LIVE · decided 2026-07-17 · ratified by user
 
-**Home.** `ARCHITECTURE.md:263-264`
+**Home.** `ARCHITECTURE.md:264-265`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:15-26, the governing architecture decision banner (user-ratified 2026-07-17), which tracks work and is not a specification home. OPEN_ITEMS OI-237 closes on this move
 
@@ -168,7 +168,7 @@
 
 **Status.** LIVE · decided 2026-07-19 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:270-271`
+**Home.** `ARCHITECTURE.md:271-272`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:123 (open_items/OI-176 and OI-177, PROTOCOL RATIFIED 2026-07-19, protocols in `cowork_prefit_gates.md`). The standing principle is CLAUDE.md #20. OPEN_ITEMS OI-237 closes on this move
 
@@ -183,7 +183,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:284-285`
+**Home.** `ARCHITECTURE.md:285-286`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:211 (open_items/OI-188, OPEN - 'bounds every ceiling claim'); the admission rule actually in production still has no ratified basis (open_items/OI-226). OPEN_ITEMS OI-237 closes on this move
 
@@ -198,7 +198,7 @@
 
 **Status.** LIVE · decided 2026-07-26 · ratified by user
 
-**Home.** `ARCHITECTURE.md:298-299`
+**Home.** `ARCHITECTURE.md:299-300`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only in the CLAUDE.md gate block (A), the OI-178 adoption baselines (user-ratified 2026-07-26). The tension with D-090 (calibrated abstention, ARCHITECTURE.md §5.7a) is NAMED at the new home and deliberately NOT resolved there - resolving it is later work. OPEN_ITEMS OI-237 closes on this move
 

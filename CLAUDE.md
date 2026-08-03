@@ -378,12 +378,33 @@ preserved in `tools/robust_stop/snapshot_2026-07-12_pre_oi142_oi143/`.*
   commit — the run-level set-diff (removals/additions, each with class) **explained per case and
   ratified**, the class-(b) duration non-increase **proven per preset**, the manifest re-stamped with
   the new corpus `git_hash`, and the **outgoing reference snapshotted first (O-12)**.
+- **A NEWLY ACQUIRED CORPUS ENTERS AS RESEARCH MATERIAL; the frozen corpus above stays the gate until a
+  deliberate re-baseline** (user-ratified 2026-07-02; homed here 2026-08-02 from `STATUS_ARCHIVE.md`,
+  `OPEN_ITEMS.md` OI-272). Music brought into the project for study does not become part of the pass/fail
+  check by arriving. Promoting any of it into the gate is the separate, deliberate re-baseline act the
+  bullet above describes, with its snapshot and its ratification. *Why:* **derivation not recorded** — the
+  record states the rule without giving a reason for it. Distinct from the regenerate-before-restamp rule
+  (`BUILD_AND_TEST.md`), which governs the order of operations once a corpus is already the gate; the same
+  research-tier-on-entry rule is stated on the corpus side at `cowork_score_census.md`'s decision-tier block.
 
-**★ THE THREE GRADING CONVENTIONS THE ROBUST UNIT IS MEASURED UNDER (each ruled earlier; written into
+**★ THE FOUR GRADING CONVENTIONS THE ROBUST UNIT IS MEASURED UNDER (each ruled earlier; written into
 this block 2026-08-02 because until then they were recorded only on the open-items rows that tracked
-building them, which track work and are not a home for a standing convention).** Every number in this
-block depends on all three.
+building them, or on a session-handoff archive — surfaces that track work and are not a home for a
+standing convention).** Every number in this block depends on all four.
 
+- **THE ONLY GROUND TRUTH IS THE HUMAN ANNOTATION. The algorithmic analysis is a noise filter, never a
+  standard of correctness** (user mandate 2026-06-10; homed here 2026-08-02 from `cowork_handoff_archive.md`,
+  `OPEN_ITEMS.md` OI-272). Accuracy is measured against the published human analyses — *When in Rome* /
+  DCML — and against nothing else. music21 is an algorithmic second opinion used to filter noise, so a
+  count taken through it is a LOWER BOUND on human-adjudicated error, not an agreement rate. Three clauses
+  follow from that and are part of the convention: **(i)** a measurement filtered through the algorithmic
+  analysis is never described as "ground-truth agreement"; **(ii)** the human-annotation-only variant is
+  the one that governs — delivered as the variant-(b) DCML-only unit above; **(iii)** **no self-annotation
+  ever enters a measurement** — our own outputs, the catalog and the goldens are regression pins that hold
+  behaviour against change, never a standard of correctness. *Why:* stated with the mandate — where the
+  algorithmic analysis sides with us against the human annotator the case is excluded by an algorithm's
+  opinion, so the count understates the human-adjudicated error; and a system graded against its own
+  output measures only that it has not changed.
 - **An exotic mode is graded against its PARENT COLLECTION's minor key, not against its own tonic
   triad** (user-ruled 2026-07-13, OI-132; landed `800f1a12bf`). When our analysis emits one of the five
   dominant-family exotic modes, grading reduces it to the minor key of the collection it belongs to — an

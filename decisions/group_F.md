@@ -18,7 +18,7 @@
 
 **Status.** SUPERSEDED BY D-001 · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1279`
+**Home.** `ARCHITECTURE.md:1342`
 
 **Provenance.** The joint estimator now decides key on both surfaces (D-005, D-010). The Layer-3 section still reads 'Built+Live' - see OPEN_ITEMS OI-232
 
@@ -37,7 +37,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1301-1304`
+**Home.** `ARCHITECTURE.md:1364-1367`
 
 **Provenance.** ARCHITECTURE.md:1291-1296
 
@@ -54,7 +54,7 @@
 
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1315-1316`
+**Home.** `ARCHITECTURE.md:1378-1379`
 
 **Provenance.** On the switched build the note-seam funnel returns from the record arm before this fallback is reachable (notationcomposingbridge.cpp:728-738). The D-P4 revisit trigger (D-063) was never discharged
 
@@ -72,7 +72,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2472-2474`
+**Home.** `ARCHITECTURE.md:2545-2547`
 
 **Provenance.** ARCHITECTURE.md:2394-2395 (21 modes), :2213-2217 (harmonic major deferred)
 
@@ -89,7 +89,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2420-2421`
+**Home.** `ARCHITECTURE.md:2493-2494`
 
 **Provenance.** ARCHITECTURE.md:2408-2410, :3020-3073. Superseded on the production path by D-003 (inference is preset-independent)
 
@@ -105,7 +105,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3394-3396`
+**Home.** `ARCHITECTURE.md:3490-3492`
 
 **Provenance.** ARCHITECTURE.md:3380-3392
 
@@ -119,7 +119,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3412`
+**Home.** `ARCHITECTURE.md:3508`
 
 **Provenance.** ARCHITECTURE.md:3396-3403. Cited by open_items/OI-228 as the primary source the joint emission departs from. NOT catchable by the harvest's signature net - the reason this adjudication had to read the specifications in full
 
@@ -139,7 +139,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3399-3403`
+**Home.** `ARCHITECTURE.md:3495-3499`
 
 **Provenance.** ARCHITECTURE.md:3387-3392 calls it 'a deliberate pragmatic choice for the score opening, not a general bypass'. NOT catchable by the harvest's signature net
 
@@ -155,7 +155,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3437`
+**Home.** `ARCHITECTURE.md:3533`
 
 **Provenance.** ARCHITECTURE.md:3423-3435; legacy-arm only since the switch (D-010). Derivation not recorded: the only stated basis for 16 and 8 is the in-code gloss '~4 measures in 4/4' / '~2 measures ahead' (ARCHITECTURE.md:3428-3429) - no theory citation and no measurement
 
@@ -175,7 +175,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2426-2430`
+**Home.** `ARCHITECTURE.md:2499-2503`
 
 **Provenance.** ARCHITECTURE.md:2414-2418; the same guard is listed among the key-path scoring terms at :2480-2482 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -217,7 +217,9 @@
 
 ⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
 
-> ★ USER DECIDED (2026-07-02): KEEP OFF.** `ReachBackOptions.enabled=false` stays the shipped default; activation re-opens only on the evidence follow-up
+> **The backward re-reading facility stays SWITCHED OFF in the shipped configuration.** This layer carries a
+> facility for returning to an earlier stretch and re-reading it once later evidence has arrived
+> (`ReachBackOptions`). It is built, and `enabled = false` is the shipped default; turning it on is reopened
 
 **In plain words.** The key analysis has a facility for going back and re-reading an earlier stretch once later evidence arrives. It is built but switched off, and turning it on is reopened only when a specific piece of evidence has been gathered.
 
@@ -225,9 +227,9 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by the user
 
-**Home.** `STATUS_ARCHIVE.md:232`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:1333-1335`
 
-**Provenance.** Recorded in `STATUS_ARCHIVE.md` (session 21j). The Layer-3 specification records the reach-back facility but not this shipped-default ruling. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).
+**Provenance.** Recorded in `STATUS_ARCHIVE.md` (session 21j). The Layer-3 specification records the reach-back facility but not this shipped-default ruling. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written into the Layer-3 section of `ARCHITECTURE.md` §3.3, whose description of the dormant pipeline is the frame this ruling belongs in — the specification recorded the reach-back facility and not the shipped-default ruling, which is the gap the phase-1h note identified. Former home preserved (#12): `STATUS_ARCHIVE.md:232`, session 21j.
 
 ### D-323 — Asking whether a pitch belongs to the key is a question about the collection, never about the tonic — the tonic-anchored form must not return
 

@@ -89,3 +89,13 @@ reference, not prose.
   testing).
 (Deferred for layers not yet built; added when they are. A layer mid-rebuild names its current location, marked as
 such. User mandate 2026-06-22, refined 2026-06-24.)
+
+**The locator's FORM: cite by function or by section anchor, never by a raw line number** (ruled 2026-07-02;
+homed here 2026-08-02 from `STATUS_ARCHIVE.md`, `OPEN_ITEMS.md` OI-272 — this is the writing standards' one
+home, and the locator rule above stated no constraint on the locator's shape). A specification points at
+`ParsedChord::parse()` or at `§4.3 The bridge inventory`, not at `chordlist.cpp:993`. *Why:* measured — the
+gap analysis of 2026-07-02 found stale line-number citations across the layer specifications, because a line
+number rots the moment anything above it changes, and the rule was made a policy at the same ruling that
+repaired them. Ratified by Cowork, not by the user. The rule governs the *locator*; quoting a specific line
+in a finding or a register entry, where the anchor is checked mechanically, is a different act and is
+unaffected.

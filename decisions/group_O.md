@@ -17,7 +17,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:5001`
+**Home.** `ARCHITECTURE.md:5097`
 
 **Provenance.** ARCHITECTURE.md:4970-4990 (§11.2). No date or ratifier stated.
 
@@ -34,7 +34,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:5017`
+**Home.** `ARCHITECTURE.md:5113`
 
 **Provenance.** ARCHITECTURE.md:4992-5008 (§11.2a). No date or ratifier stated.
 
@@ -51,7 +51,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:5263`
+**Home.** `ARCHITECTURE.md:5359`
 
 **Provenance.** ARCHITECTURE.md:5251-5264 (§11.3c), with the region-tuning consequence at :5726-5729 (§11.6). No date or ratifier stated.
 
@@ -69,7 +69,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:5702`
+**Home.** `ARCHITECTURE.md:5798`
 
 **Provenance.** ARCHITECTURE.md:5683-5694 (§11.4). No date or ratifier stated.
 
@@ -85,7 +85,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:5708`
+**Home.** `ARCHITECTURE.md:5804`
 
 **Provenance.** ARCHITECTURE.md:5696-5703 (§11.4), with the deferred alternative recorded at `backlog_invisible_split.md`. No date or ratifier stated.
 
@@ -101,7 +101,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:5732`
+**Home.** `ARCHITECTURE.md:5828`
 
 **Provenance.** ARCHITECTURE.md:5718-5722 (§11.4). No date or ratifier stated. The joint estimator's own eligibility flags are the Layer-1 fact surface (D-039/D-045).
 
@@ -116,7 +116,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:5798`
+**Home.** `ARCHITECTURE.md:5894`
 
 **Provenance.** ARCHITECTURE.md:5777-5787 (§11.5). No date or ratifier stated.
 
@@ -132,7 +132,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:5801`
+**Home.** `ARCHITECTURE.md:5897`
 
 **Provenance.** ARCHITECTURE.md:5789-5791 (§11.5). No date or ratifier stated.
 
@@ -151,7 +151,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:5863`
+**Home.** `ARCHITECTURE.md:5959`
 
 **Provenance.** ARCHITECTURE.md:5851-5856 (§11.5); the same choice on the analysis side is D-086. No date or ratifier stated.
 
@@ -172,7 +172,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6054`
+**Home.** `ARCHITECTURE.md:6150`
 
 **Provenance.** ARCHITECTURE.md:6040-6049 (§11.5). No date or ratifier stated.
 
@@ -195,7 +195,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:5092-5101`
+**Home.** `ARCHITECTURE.md:5188-5197`
 
 **Provenance.** ARCHITECTURE.md:5088-5089 states it is not a current implementation target; the same deferral is recorded in the retired-session record at STATUS_ARCHIVE.md:2335 ★ RATIFIED-FOR-NOW (user, 2026-08-02): to be REVIEWED when the intonation feature's implementation is revisited (the OI-62 held feature).
 
@@ -211,7 +211,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:5215-5217`
+**Home.** `ARCHITECTURE.md:5311-5313`
 
 **Provenance.** ARCHITECTURE.md:5203-5205 states the deferral ★ RATIFIED-FOR-NOW (user, 2026-08-02): to be REVIEWED when the intonation feature's implementation is revisited (the OI-62 held feature).
 
@@ -227,7 +227,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:5316-5318`
+**Home.** `ARCHITECTURE.md:5412-5414`
 
 **Provenance.** ARCHITECTURE.md:5304-5306 states both the deferral and the eventual behaviour ★ RATIFIED-FOR-NOW (user, 2026-08-02): to be REVIEWED when the intonation feature's implementation is revisited (the OI-62 held feature).
 
@@ -253,7 +253,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:5334-5346`
+**Home.** `ARCHITECTURE.md:5430-5442`
 
 **Provenance.** ARCHITECTURE.md:5322-5334; the FreeDrift behaviour is restated at :5448-5453 ★ RATIFIED-FOR-NOW (user, 2026-08-02): to be REVIEWED when the intonation feature's implementation is revisited (the OI-62 held feature).
 

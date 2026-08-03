@@ -17,7 +17,7 @@
 
 **Status.** LIVE · decided 2026-06-29 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:319-320`
+**Home.** `ARCHITECTURE.md:344-345`
 
 **Provenance.** ARCHITECTURE.md:308-316 'Doc governance (2026-06-29) - the hierarchy'
 
@@ -32,7 +32,7 @@
 
 **Status.** LIVE · decided 2026-06-29 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:316-317`
+**Home.** `ARCHITECTURE.md:341-342`
 
 **Provenance.** ARCHITECTURE.md:308-316
 
@@ -47,7 +47,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3376-3377`
+**Home.** `ARCHITECTURE.md:3472-3473`
 
 **Provenance.** ARCHITECTURE.md:3363-3365, consistent with :251-254
 
@@ -63,7 +63,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1155-1157`
+**Home.** `ARCHITECTURE.md:1209-1211`
 
 **Provenance.** ARCHITECTURE.md:1151-1154. Three layer tags and two prose statements are stale after the switch - see OPEN_ITEMS OI-232
 
@@ -157,7 +157,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6768`
+**Home.** `ARCHITECTURE.md:6872`
 
 **Provenance.** ARCHITECTURE.md:6754-6759 (§18.4); the standing principle is CLAUDE.md #10 (D-174). No date or ratifier stated.
 
@@ -179,7 +179,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `CLAUDE.md:641`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:662`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:621-660. The document itself is `docs/scoring_model.md`.
 
@@ -202,7 +202,7 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `CLAUDE.md:821`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:842`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:821-821; predicate qualification user-directed 2026-06-24, defined terms user-directed 2026-07-02. The ONE home is `cowork_design_doc_template.md`, which also carries the fourteen-section document structure, the status-banner convention and the implementation/test locator rule. Conformance of the existing tree is open at OPEN_ITEMS OI-230.
 
@@ -219,7 +219,7 @@
 
 **Status.** LIVE · decided 2026-07-11 · ratified by user
 
-**Home.** `CLAUDE.md:817`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:838`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:817-811, user-directed repeatedly and recorded 2026-07-11.
 
@@ -245,7 +245,7 @@
 
 **Status.** LIVE · decided 2026-08-01 · ratified by user
 
-**Home.** `CLAUDE.md:873`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:894`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:873-876, user-directed 2026-08-01 at the decisions-register ratification review. The register's rationale field is what serves it; the founding instances the entry names are D-004's segment-cap value, D-059's window and D-015's boundary-tick convention.
 
@@ -276,7 +276,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:605-607`
+**Home.** `ARCHITECTURE.md:630-632`
 
 **Provenance.** ARCHITECTURE.md:601-603 (stated as a standing reading instruction in the document itself) ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -340,7 +340,9 @@
 
 ### D-307 — A specification cites code by function or section anchor, never by raw line number
 
-> **(#9 stale line-number citations)** RULED with a POLICY: specs cite by **function/§ anchor, not raw line number** (numbers rot)
+> **The locator's FORM: cite by function or by section anchor, never by a raw line number** (ruled 2026-07-02;
+> homed here 2026-08-02 from `STATUS_ARCHIVE.md`, `OPEN_ITEMS.md` OI-272 — this is the writing standards' one
+> home, and the locator rule above stated no constraint on the locator's shape). A specification points at
 
 **In plain words.** When a design document points at the code, it names the function or the section, not the line. Line numbers go stale as soon as the file above them changes.
 
@@ -348,7 +350,7 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by Cowork
 
-**Home.** `STATUS_ARCHIVE.md:242`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `cowork_design_doc_template.md:93-95`  — a project-wide convention with no owning layer; this is its correct home.
 
-**Provenance.** Recorded in `STATUS_ARCHIVE.md` (session 21e, the gap-analysis rulings). It is NOT in `cowork_design_doc_template.md`, which is the ratified home of the writing standards and states the implementation/test locator rule without this constraint on the locator's form — checked at the source. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).
+**Provenance.** Recorded in `STATUS_ARCHIVE.md` (session 21e, the gap-analysis rulings). It is NOT in `cowork_design_doc_template.md`, which is the ratified home of the writing standards and states the implementation/test locator rule without this constraint on the locator's form — checked at the source. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written into `cowork_design_doc_template.md` beside the implementation/test locator rule (D-257) it constrains. Homed THERE rather than in `CLAUDE.md` because `CLAUDE.md`'s own Conventions entry names that file the ONE home for the writing standards (#6), and the phase-1f entry recorded the gap as the locator rule stating no constraint on the locator's form. Former home preserved (#12): `STATUS_ARCHIVE.md:242`, session 21e.
 

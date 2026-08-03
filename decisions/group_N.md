@@ -17,7 +17,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4575`
+**Home.** `ARCHITECTURE.md:4671`
 
 **Provenance.** ARCHITECTURE.md:4550-4572 (§8.2); the principle it realizes is D-070 (§2.1). No date or ratifier stated.
 
@@ -32,7 +32,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4744`
+**Home.** `ARCHITECTURE.md:4840`
 
 **Provenance.** ARCHITECTURE.md:4694-4733 (§9.1-§9.2). No date or ratifier stated.
 
@@ -47,7 +47,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4759`
+**Home.** `ARCHITECTURE.md:4855`
 
 **Provenance.** ARCHITECTURE.md:4745-4835 (§10.0), whose own status line reads 'Not yet started'. No date or ratifier stated.
 
@@ -63,7 +63,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4918`
+**Home.** `ARCHITECTURE.md:5014`
 
 **Provenance.** ARCHITECTURE.md:4885-4908 (§10.2-§10.4), all three marked planned. No date or ratifier stated.
 
@@ -80,7 +80,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4949`
+**Home.** `ARCHITECTURE.md:5045`
 
 **Provenance.** ARCHITECTURE.md:4910-4940 (§10.5), a planned component. No date or ratifier stated.
 
@@ -97,7 +97,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6799`
+**Home.** `ARCHITECTURE.md:6903`
 
 **Provenance.** ARCHITECTURE.md:6780-6790 (§19.2), a planned module; full design `docs/llm_integration.md`. No date or ratifier stated.
 
@@ -115,7 +115,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6804`
+**Home.** `ARCHITECTURE.md:6908`
 
 **Provenance.** ARCHITECTURE.md:6780-6796 (§19.2), a planned module. No date or ratifier stated.
 
@@ -133,7 +133,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6810`
+**Home.** `ARCHITECTURE.md:6914`
 
 **Provenance.** ARCHITECTURE.md:6780-6802 (§19.2), a planned module. No date or ratifier stated.
 
@@ -151,7 +151,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6823`
+**Home.** `ARCHITECTURE.md:6927`
 
 **Provenance.** ARCHITECTURE.md:6809-6823 (§19.3), a planned module. No date or ratifier stated.
 
@@ -168,7 +168,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6844`
+**Home.** `ARCHITECTURE.md:6948`
 
 **Provenance.** ARCHITECTURE.md:6825-6835 (§19.4), a planned module; full argument `docs/llm_integration.md` §11. No date or ratifier stated.
 

@@ -17,7 +17,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3268-3269`
+**Home.** `ARCHITECTURE.md:3364-3365`
 
 **Provenance.** ARCHITECTURE.md:3253-3257; consistent with D-016
 
@@ -32,7 +32,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2969-2970`
+**Home.** `ARCHITECTURE.md:3065-3066`
 
 **Provenance.** ARCHITECTURE.md:2918-2958
 
@@ -47,7 +47,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3869-3870`
+**Home.** `ARCHITECTURE.md:3965-3966`
 
 **Provenance.** ARCHITECTURE.md:3850-3858; an instance of D-074
 
@@ -65,7 +65,7 @@
 
 **Status.** SUPERSEDED BY D-018 · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3554-3556`
+**Home.** `ARCHITECTURE.md:3650-3652`
 
 **Provenance.** The record arm replaces the 0.5/0.8 literals with the fitted nats constants (ARCHITECTURE.md:175-177); the literals are legacy-arm-only (sectionanalyzer.cpp::legacyKeyExposureBucket)
 
@@ -80,7 +80,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3574-3575`
+**Home.** `ARCHITECTURE.md:3670-3671`
 
 **Provenance.** ARCHITECTURE.md:3549-3601
 
@@ -95,7 +95,7 @@
 
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3885-3886`
+**Home.** `ARCHITECTURE.md:3981-3982`
 
 **Provenance.** open_items/OI-112 already records this preset-gating as stale; open_items/OI-201 records that the record arm collapses the family to a plain major triad symbol ★ Verbatim RE-TAKEN 2026-08-02 (the phase-1 truth-sync): §5.11's assertion 'Gated to Standard and Baroque presets only' was corrected, since the formatter explicitly defers that gate for want of preset context (`chordsymbolformatter.cpp:882-883`) and emits the labels under every preset (OPEN_ITEMS OI-112(c) discharged). The decision's own words survive at the home, quoted inside the correction.
 
@@ -115,16 +115,15 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:668-674`
+**Home.** `ARCHITECTURE.md:693-699`
 
 **Provenance.** ARCHITECTURE.md:664-674 (Rule 16), restated in the retired-session record at STATUS_ARCHIVE.md:2247 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
 ### D-295 — Zero information loss to the end user - every inferred object must be displayable
 
->   R-map at its next edit) and **E-14** (user-stated principle: ZERO INFORMATION LOSS TO THE END USER — every
->   inferred object displayable; progressive disclosure yes, structural hiding no; ARCH pointer rides ARCH's next
->   edit). Market probe recorded: no comparable engine anywhere in the MuseScore GitHub space; plugins hand-annotate
->   what our layers infer.
+> **The governing requirement over everything in this section: ZERO INFORMATION LOSS TO THE END USER — every
+> inferred object must be displayable.** Anything the analysis works out has to be capable of being shown.
+> Revealing it gradually, so that a display is not overwhelming, is the intended design; leaving something the
 
 **In plain words.** Anything the analysis works out must be capable of being shown to the user. Showing it gradually, so the display is not overwhelming, is fine; leaving something permanently unreachable because the interface has no place for it is not.
 
@@ -132,13 +131,15 @@
 
 **Status.** LIVE · date not stated · ratified by the user
 
-**Home.** `cowork_handoff_archive.md:2507`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:6266-6268`
 
-**Provenance.** Recorded in `cowork_handoff_archive.md` (the standing-records block) as item E-14 of `cowork_product_tool_register.md`, with a note that a pointer into the architecture document was owed at its next edit. This pass found no such pointer in the register's own home census, so the owed act appears undischarged. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).
+**Provenance.** Recorded in `cowork_handoff_archive.md` (the standing-records block) as item E-14 of `cowork_product_tool_register.md`, with a note that a pointer into the architecture document was owed at its next edit. This pass found no such pointer in the register's own home census, so the owed act appears undischarged. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written at the head of `ARCHITECTURE.md` §12 as the governing requirement over the user interface. This also discharges the pointer-into-the-architecture-document act the archive recorded as owed at its next edit. Former home preserved (#12): `cowork_handoff_archive.md:2507`, the standing-records block, as item E-14 of `cowork_product_tool_register.md`.
 
 ### D-304 — The analyzer always emits its fullest reading; simplifying it happens only when comparing against a corpus, never in the product
 
-> Extension-stripping policy implemented as test-only utility (`stripSymbol`, `classifyComparison`); never in production. Per principle in memory `project_no_stripping_in_production.md` — analyzers always emit maximal output, stripping happens only at corpus-comparison boundaries. Design memo: `docs/extension_stripping_policy.md`.
+> - **The analysis always emits its FULLEST reading; simplifying a reading is a comparison-side act and
+>   never a product one.** When a layer names a chord it states everything it found, the added notes above
+>   the basic triad included. Cutting a name back to a plainer one — dropping an extension so that two
 
 **In plain words.** When our analysis names a chord it states everything it found, including the added notes above the basic triad. Cutting that back to a plainer name is something only the comparison machinery may do, so that a difference of notation is not counted as a difference of analysis.
 
@@ -146,7 +147,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `STATUS_ARCHIVE.md:943`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:983-985`
 
-**Provenance.** Recorded in `STATUS_ARCHIVE.md`; the design memo it names, `docs/extension_stripping_policy.md`, exists on disk. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).
+**Provenance.** Recorded in `STATUS_ARCHIVE.md`; the design memo it names, `docs/extension_stripping_policy.md`, exists on disk. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written into `ARCHITECTURE.md` §2.15 as a cross-cutting analysis contract, which is that section's declared scope. Former home preserved (#12): `STATUS_ARCHIVE.md:943`.
 

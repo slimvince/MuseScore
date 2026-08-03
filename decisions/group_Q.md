@@ -17,7 +17,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6433`
+**Home.** `ARCHITECTURE.md:6537`
 
 **Provenance.** ARCHITECTURE.md:6419-6422 (§15). No date or ratifier stated.
 
@@ -34,7 +34,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6442`
+**Home.** `ARCHITECTURE.md:6546`
 
 **Provenance.** ARCHITECTURE.md:6424-6433 (§15). No date or ratifier stated.
 
@@ -51,13 +51,15 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6652`
+**Home.** `ARCHITECTURE.md:6756`
 
 **Provenance.** ARCHITECTURE.md:6594-6643 (§16), which sorts the whole feature set into Core / Important / Prepared / Out of scope. No date or ratifier stated.
 
 ### D-308 — A newly acquired corpus enters as research material; the frozen regression corpus stays the gate until a deliberate re-baseline
 
-> new corpora enter as research-tier, the frozen Bach gate stays the regression gate until a deliberate re-baseline
+> - **A NEWLY ACQUIRED CORPUS ENTERS AS RESEARCH MATERIAL; the frozen corpus above stays the gate until a
+>   deliberate re-baseline** (user-ratified 2026-07-02; homed here 2026-08-02 from `STATUS_ARCHIVE.md`,
+>   `OPEN_ITEMS.md` OI-272). Music brought into the project for study does not become part of the pass/fail
 
 **In plain words.** Music brought into the project for study does not become part of the pass/fail check by arriving. The frozen set the regression check runs on changes only by a separate, deliberate act.
 
@@ -65,18 +67,15 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by the user
 
-**Home.** `STATUS_ARCHIVE.md:250`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `CLAUDE.md:381-383`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** Recorded in `STATUS_ARCHIVE.md` (session 21, at the user's ratification of the external architecture review's corpus-expansion amendment). Related but distinct from **D-225** (a corpus is regenerated before its baseline figures are updated) and from the re-baseline discipline in `CLAUDE.md` gate block (A). Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).
+**Provenance.** Recorded in `STATUS_ARCHIVE.md` (session 21, at the user's ratification of the external architecture review's corpus-expansion amendment). Related but distinct from **D-225** (a corpus is regenerated before its baseline figures are updated) and from the re-baseline discipline in `CLAUDE.md` gate block (A). Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]] — measurement conventions go to the gate block): written into `CLAUDE.md` gate block (A) beside the re-baseline discipline it bounds. Former home preserved (#12): `STATUS_ARCHIVE.md:250`. The same rule is stated on the corpus side at `cowork_score_census.md`'s decision-tier block, which the homed text names.
 
 ### D-309 — A corpus the analysis handles badly stays on the roadmap marked deferred; it is more valuable than one that confirms what already works
 
-> **Corpora that produce poor results under current vertical analysis
-> are kept on the roadmap and labeled "Deferred".** They become
-> validation targets as the analyzer gains new capabilities (melodic
-> accumulation, arpeggio inference, jazz mode). A corpus that exposes
-> a gap in our analysis is more valuable than one that confirms what
-> we already do well.
+> 7. **A corpus the analysis currently handles BADLY is kept on the roadmap and marked
+>    deferred — never dropped.** Music that produces poor results under the analysis as it
+>    stands stays listed, becoming the validation target of the next capability built
 
 **In plain words.** Music our analysis currently does poorly on is not dropped from the plan. It is marked as waiting, and becomes the test of the next capability we build.
 
@@ -84,16 +83,15 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `STATUS_ARCHIVE.md:2938`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `docs/score_inventory.md:357-359`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** Recorded in `STATUS_ARCHIVE.md` as the stated design principle of the validation-corpus roadmap. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).
+**Provenance.** Recorded in `STATUS_ARCHIVE.md` as the stated design principle of the validation-corpus roadmap. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written as hard rule 7 of `docs/score_inventory.md`, the document `CLAUDE.md` directs every score or corpus task to read first. Former home preserved (#12): `STATUS_ARCHIVE.md:2938`, the validation-corpus roadmap.
 
 ### D-310 — Jazz accuracy is not measurable on the corpora held: the low agreement is missing bass and piano voicings, not a scoring failure
 
-> The lower agreement rates on available jazz corpora are therefore corpus artifacts —
-> missing bass and piano voicings — not scoring failures. No accepted jazz-specific
-> scoring changes remain in the analyzer, and no new jazz scoring work is planned on the
-> current corpora.
+> **The standing consequence: jazz accuracy is NOT MEASURABLE on the corpora we hold, and no
+> jazz-specific scoring work is planned on them.** The low agreement on the jazz material in the
+> project is a property of the material — melody-and-chord-symbol transcriptions with the bass and
 
 **In plain words.** The jazz scores we hold are melody-and-chord-symbol transcriptions with the bass and the piano chords left out, so our analysis has too few notes to work from. The poor agreement measures the material, not the analysis, and no jazz-specific scoring work is planned until scores with the missing parts written out are available.
 
@@ -101,9 +99,9 @@
 
 **Status.** LIVE · decided 2026-04-08 · ratifier not stated
 
-**Home.** `STATUS_ARCHIVE.md:1580`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:2649-2651`
 
-**Provenance.** Recorded in `STATUS_ARCHIVE.md` (the jazz-corpus status block). It is the standing evidence behind [[OI-7]] (establish a jazz ground-truth corpus or de-scope the Jazz correctness claims) and behind the A-7 empirically-unvalidated mark. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).
+**Provenance.** Recorded in `STATUS_ARCHIVE.md` (the jazz-corpus status block). It is the standing evidence behind [[OI-7]] (establish a jazz ground-truth corpus or de-scope the Jazz correctness claims) and behind the A-7 empirically-unvalidated mark. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written into `ARCHITECTURE.md` §4.2's jazz-validation block, directly beneath the bass-injection measurement that is its defense. Former home preserved (#12): `STATUS_ARCHIVE.md:1580`, the jazz-corpus status block.
 
 ### D-359 — Discovering a new corpus counts as a CENSUS DEFECT — the fix is to enumerate its container to closure, never to ingest the one repository
 

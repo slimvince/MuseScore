@@ -114,6 +114,18 @@ module. That module is production on both the batch and the notation surface and
 the retiring-code exemption does not reach it — which is why the OI-199 review was pulled forward
 onto it rather than deferred behind the retirement map.
 
+## P10 — Verification is organised BY LAYER: a layer is audited once its pieces are in place (user-recorded standing method, 2026-06-14)
+
+Auditing is not something done to each change in isolation. When a layer's pieces are built, that layer is
+audited as a whole, and the work moves on only then. This is the verification model for the back half of the
+programme, and it is what P9's dependency-ordered partition and P8's two runs are the method OF: P10 says
+*when* an audit is owed, P8/P9 say *how* it is run and over what. *Why:* a user-recorded standing method —
+the alternative, verifying per change, was what left the module with a coverage figure nobody could state.
+It was realised as the dependency-ordered per-layer certification plan (`OPEN_ITEMS.md` OI-84, complete
+2026-07-12), which is the same rule applied end to end. Ratified by the user 2026-06-14; homed here
+2026-08-02 from `cowork_handoff_archive.md` (`OPEN_ITEMS.md` OI-272), a surface two governing documents
+declare outside the session-start read.
+
 ## The one-line summary
 
 Bias picks queries; so remove queries — machine-generated total inventory (P1), fixed rubric

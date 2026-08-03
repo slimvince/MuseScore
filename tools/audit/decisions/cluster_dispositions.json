@@ -15,11 +15,11 @@
    },
    "backbone": {
     "file": "tools/audit/decisions/backbone_decisions.json",
-    "sha256": "86e94eb2d2f9fcab2ebb8217657db1d6789e72214779c1c61d81098e0cafe2ec",
+    "sha256": "0b4d57590debe3e3f3567bd7a908527b90a9bfb736b2217523b7932dbd25c764",
     "decision_count": 405
    }
   },
-  "head_commit": "ebda0889f2f6c6076df4a0041008733b8d2296d8",
+  "head_commit": "0fde58786c6ea80af5ec40f1ffa0855aae7033b1",
   "disposition_vocabulary": [
    "restates",
    "not-a-decision",
@@ -65,12 +65,12 @@
    {
     "id": "BR-3",
     "rule": "The cluster's text matches at least one backbone decision whose home IS a layer specification. Recorded as restating that decision (named).",
-    "clusters": 5511
+    "clusters": 5514
    },
    {
     "id": "BR-4",
     "rule": "The cluster's text matches one or more backbone decisions, ALL of which are recorded outside any layer specification. Recorded as a decision with no layer-specification home (named) — the Task-4 documentation-gap class.",
-    "clusters": 642
+    "clusters": 639
    },
    {
     "id": "BR-5",
@@ -144,10 +144,10 @@
    }
   ],
   "disposition_counts": {
-   "restates": 5511,
+   "restates": 5514,
    "not-a-decision": 5554,
    "boilerplate": 74,
-   "no-spec-home": 642,
+   "no-spec-home": 639,
    "unresolved": 2679
   },
   "unresolved_partition_by_surface": {
@@ -16875,8 +16875,8 @@
   {
    "cluster_id": "DC-00756",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
+   "disposition": "restates",
+   "rule": "BR-3",
    "decisions": [
     "D-306"
    ],
@@ -18463,8 +18463,8 @@
   {
    "cluster_id": "DC-00829",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
+   "disposition": "restates",
+   "rule": "BR-3",
    "decisions": [
     "D-303"
    ],
@@ -250158,8 +250158,8 @@
   {
    "cluster_id": "DC-12346",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
+   "disposition": "restates",
+   "rule": "BR-3",
    "decisions": [
     "D-292"
    ],

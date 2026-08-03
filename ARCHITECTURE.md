@@ -255,8 +255,9 @@
 > publication), OI-203 (the record-cache increment — the latency is now on the default path), and OI-201 (the aug-sixth
 > display-symbol completeness gap).
 
-> **★★ THE JOINT ESTIMATOR'S STANDING RULES — fitting, held-out evaluation, the search, and the key axis.**
-> Four rules govern the estimator described above. Each was ratified on the date given; all four were until
+> **★★ THE JOINT ESTIMATOR'S STANDING RULES — fitting, held-out evaluation, the search, the key axis, and
+> what the fitting pool may contain.**
+> Six rules govern the estimator described above. Each was ratified on the date given; all six were until
 > 2026-08-02 recorded only on tracking surfaces or in `CLAUDE.md`, which is why they are stated here — this
 > specification is where a reader looks for how the estimator must behave.
 >
@@ -303,6 +304,30 @@
 > abstention when evidence is weak", an item in the high-precision-before-coverage target), which admits
 > declining to answer. The two statements are both in force in the record: §5.7a states the product target,
 > this rule states what the shipped decoder does on the key axis. Which governs is **not settled here**.
+>
+> **(e) A value that SHIPS may be fitted only on freely-licensed music.** The pool a ship-intended weight or
+> table is estimated on is restricted to public-domain, CC0 and CC-BY sources. Music carrying a
+> non-commercial licence or no stated licence — the record names the DCML corpora, MCMA and Essen — may be
+> used to validate and to check, never to fit a value that is distributed. The fitting design states its
+> objective-source and its validation-source split explicitly, so which pool produced which number is
+> readable rather than reconstructed. *Why:* a fitted value inherits the licence terms of the corpus it was
+> estimated on, and this project ships under GPL v3 (§1.3), so a value fitted on a non-commercial pool
+> cannot lawfully be distributed with the product. Ratified by the user 2026-07-04 as binding on the fitter
+> design; reaffirmed as written by the user 2026-08-02 at the `OPEN_ITEMS.md` OI-271 ruling. The constraint's
+> own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c. **Which class
+> the 326-chorale ground truth actually falls in is NOT settled:** the licence-class verification of
+> 2026-08-02 established that the *When in Rome* analyses this fit reads are not a DCML-lab corpus and are
+> therefore not the non-commercial class the constraint assumed, and did not establish CC-BY-SA either; the
+> narrowed question is open at OI-271.
+>
+> **(f) Values are fitted per IDIOM, never for a user preset.** One fit event per musical idiom — a body of
+> repertoire sharing a practice — and no value is ever adjusted to make a named preset come out right. A
+> preset is a regression surface and a carrier for delivering a fitted set; which presets an end user should
+> see is a separate product question, decided later and not by the fitting event. The Bach fit is an idiom
+> fit delivered through more than one carrier. *Why:* a user mandate, recorded as constraint 4c of the
+> fitting design; it is the fitting-side statement of the same separation the adopted estimator makes on the
+> inference side (inference is preset-independent, presets are presentation concerns — stated at the head of
+> this document). Ratified by the user; the record does not date the mandate.
 
 > **Living design document.** Read this AND STATUS.md at the start of every development
 > session. ARCHITECTURE.md contains stable design decisions. STATUS.md contains current
@@ -935,6 +960,15 @@ contracts below all serve this principle. Their detailed statements live in the 
   difference between a reading never considered and a reading considered and rejected. The
   recomputable-exclusion exemption is what stops the rule from forcing every layer to publish its entire
   candidate space.
+  **The rule's boundary, stated because an earlier framing got it wrong: NEVER COMPUTING a possibility is
+  not information loss; only DISCARDING a computed one is.** A layer that decides, on measured evidence,
+  not to work out a particular alternative at all has lost nothing — you cannot lose what you never had.
+  What the rule forbids is computing a reading and then dropping it off the output surface. *Why:*
+  recorded as an explicit correction of a framing that had called the same situation a violation of this
+  principle. The worked case is the shelved joint key-and-chord step: the chord under an alternative
+  tonality is never computed on that path, the tonality alternatives themselves ARE carried, and the
+  roughly 1.4 % of slices where the alternative would have differed was measured to be an even split —
+  that is, noise. Decided 2026-07-07; the record does not name the ratifier.
 - **Every derived analytical fact is published exactly once, on the producing layer's output surface;
   consumers read it and never re-derive it.** For **evidence-class** facts — hints a later design could
   conceivably use — publication is broad even where no consumer is named yet, and each published evidence
@@ -946,6 +980,16 @@ contracts below all serve this principle. Their detailed statements live in the 
   publication amendment is that a visible spread of published evidence lets a future design recognize facts
   it would never have thought to ask for. The catalog of what each layer discovers is
   `cowork_evidence_inventory.md`, kept in step with these layer specifications as facts are adopted.
+- **The analysis always emits its FULLEST reading; simplifying a reading is a comparison-side act and
+  never a product one.** When a layer names a chord it states everything it found, the added notes above
+  the basic triad included. Cutting a name back to a plainer one — dropping an extension so that two
+  differently-notated readings can be compared — belongs only to the machinery that grades us against a
+  published corpus, and must not exist on any path a user's result travels. *Why:* measured — applying
+  the comparison-side simplification reduced a pinned baseline from 135 differences to 10, which is the
+  size of the pure notation-convention difference the rule keeps out of the analysis; without the rule
+  that difference would be counted as analytical disagreement. Implemented as a test-only utility
+  (`stripSymbol`, `classifyComparison`) with the design memo `docs/extension_stripping_policy.md`; the
+  record states neither a date nor a ratifier for the rule itself.
 
 ### 2.16 Standing design requirements — very large scores, and the effort control
 
@@ -1115,6 +1159,16 @@ forms in this document instantiate:
    user. The recorded contribution intent (§1.2) governs our module as a whole; distribution is
    decided per patch — the fork-local constraint on the MusicXML mode-import patch is such an
    instance, not a contradiction of the intent.
+4. **READING and CALLING MuseScore's engraving code is allowed from anywhere we may edit; only EDITING
+   the notation and engraving source is off limits.** Clause 3's prohibition is on changing
+   `src/notation` and `src/engraving` code, not on consulting it: any code we are entitled to write may
+   read from and call into MuseScore's score and engraving model. *Why:* a user correction, 2026-06-14,
+   of an over-statement that had conflated the two, with its worked consequence recorded beside it — a
+   measurement that needed fermatas read them in the batch tool, which already loads the score, and
+   passed them into our own analysis through our own input structure, so nothing outside our area was
+   edited. Clause 2 above is the narrower rule that still governs what such a read may be used FOR: the
+   Layer-1 note model is the only sanctioned reading surface for analysis facts, and layout-derived
+   state is never inference evidence.
 
 *Why this rule: derived from the already-ratified scoped forms (the Dependency Rule, the bridge
 pattern, the local-patches constraints) rather than invented (#1); one rule where
@@ -1276,6 +1330,15 @@ the record of what that pipeline does; it is no longer a description of what run
 
 **Tried and closed on this layer — do not retry; the register carries each with its evidence: D-287 (key-as-distribution, shelved), D-290 (the key-agnostic local cadence approach, falsified).**
 
+**The backward re-reading facility stays SWITCHED OFF in the shipped configuration.** This layer carries a
+facility for returning to an earlier stretch and re-reading it once later evidence has arrived
+(`ReachBackOptions`). It is built, and `enabled = false` is the shipped default; turning it on is reopened
+only on a named evidence follow-up, not on judgment. *Why:* measured and judged insufficient — an A/B run
+showed the designed effect is material (roughly 35–45 % of interior range queries change, almost all of
+them anchoring the leading key), but the timing comparison was confounded, one arm cold and the other
+warm, so the evidence needed to justify switching it on — interleaved timing plus an adjudicated sample of
+the changed outputs — was named and has not been gathered. Decided by the user 2026-07-02.
+
 **The production region key/mode path is the decoder, not the per-region resolver.** Step-1 wiring
 replaced the per-region `resolveKeyAndModeRanked` call with a single whole-score decode of
 `KeyModeSequenceDecoder` (`composing/analysis/key/keymodesequence.{h,cpp}`, the Layer-3
@@ -1343,6 +1406,14 @@ OI-180 retirement map.
 
 **Tried and closed on the chord layer — do not retry; the register carries each with its measurement: D-215, D-299, D-300, D-301, D-302, D-317, D-318, D-319, D-320, D-328.**
 
+**Deciding which sounding notes do not belong to the chord is DEFERRED — and when it is built, the
+knowledge enters the chord decision itself, never a removal afterwards.** Non-chord-tone detection waits
+for the annotated material it needs. Its shape is constrained in advance: chord identification that knows
+about non-chord tones, not a pass that names a chord and then strips notes out of the answer. *Why:*
+**derivation not recorded** — the record states the constraint without giving the reason for it. It is
+load-bearing now: the non-chord-tone filter is the named lever at `OPEN_ITEMS.md` OI-55 and OI-68, and
+`docs/nct_detection_design.md` exists. The record states neither a date nor a ratifier.
+
 **Scope of the description below, 2026-08-02 (`OPEN_ITEMS.md` OI-265).** As on Layer 3, **the
 description below remains accurate for the dormant decoder** and is retained as the record of what
 that decoder does; it is not a description of what runs. It carries one sentence about what runs —
@@ -1408,6 +1479,8 @@ rewrites the committed chord identity). Built dormant + byte-identical (Phase 5c
 where the carried L4 abstentions are resolved by **selecting** among the carried readings (never re-derived). The cadence
 detector is **key-agnostic** (it votes for the key; it does not read a resolved key). Full spec:
 `cowork_layer5_function_design.md`.
+
+**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory "is enumerated at `cowork_layer5_engagement_design.md` §9.2" (`:53-55`).
 
 #### Layer 6 — the grouping layer (Design-only — v1 spec)
 
@@ -2559,9 +2632,32 @@ The `--inject-written-root` flag in `batch_analyze` provides a diagnostic upper 
 It is not a production path: chord symbols must never be used as analyzer input in
 production because they are user content and may be incorrect.
 
+**The ban is decided by WHAT AN ANNOTATION SAYS, not by how the score stores it.** No harmonic
+annotation already written in a score may be read as analyzer input — not a chord symbol, not a
+Roman numeral, not a function, cadence or key label — whatever kind of score object happens to
+carry it. Ordinary notational metadata that states no harmonic reading, the key signature among
+it, remains admissible. *Why:* **derivation not recorded** — the record states the
+generalization without giving the reason for widening it. It sharpens the chord-symbol ban above
+from one annotation kind to a content test over all of them, and it is what makes that ban
+proof against a rewording: an analysis of ours cannot be laundered back in as evidence by being
+stored in a different element type. The record states neither a date nor a ratifier.
+
 Known gap: no freely available corpus of jazz scores with complete written-out bass
 and piano voicings has yet been found. This is an open corpus-availability problem,
 not an analyzer design problem.
+
+**The standing consequence: jazz accuracy is NOT MEASURABLE on the corpora we hold, and no
+jazz-specific scoring work is planned on them.** The low agreement on the jazz material in the
+project is a property of the material — melody-and-chord-symbol transcriptions with the bass and
+the piano chords left out — not of the scoring model. No accepted jazz-specific scoring change
+remains in the analyzer, and none is planned until scores carrying the missing parts are
+available. *Why:* measured, by the bass-injection experiment above — supplying the missing root
+before analysis moved one jazz corpus from 39.8 % to 98.3 % and another from 18.0 % to 99.9 %,
+which is what identifies the shortfall as absent material rather than mis-scoring. Decided
+2026-04-08; the record does not name the ratifier. This is the standing evidence behind
+`OPEN_ITEMS.md` OI-7 (establish a jazz ground-truth corpus or de-scope the Jazz correctness
+claims) and behind the empirically-unvalidated mark the verifiability contract (§2.15) requires
+in exactly this situation.
 
 ##### Original problem statement (historical record)
 
@@ -6166,6 +6262,14 @@ helper, eliminating duplicated mutation logic.
 ---
 
 ## 12. User Interface
+
+**The governing requirement over everything in this section: ZERO INFORMATION LOSS TO THE END USER — every
+inferred object must be displayable.** Anything the analysis works out has to be capable of being shown.
+Revealing it gradually, so that a display is not overwhelming, is the intended design; leaving something the
+analysis produced permanently unreachable because no part of the interface has a place for it is not
+permitted. *Why:* a user-stated principle. It is the display-side counterpart of the no-information-loss
+principle (§2.15, guiding principle #12), which governs what the analysis may discard internally — this
+governs what the interface may withhold. Ratified by the user; the record does not date it.
 
 ### 12.1 MuseScore Panel Integration
 

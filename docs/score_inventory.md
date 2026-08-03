@@ -354,6 +354,17 @@ round in `cc_acquisition_round_report.md`).
 6. **Measure BIR off the per-preset dirs only** (`tools/corpus/baroque|jazz`), never
    a flat or hand-assembled dir — `characterise_bir_false.py` validates the manifest
    for exactly this reason.
+7. **A corpus the analysis currently handles BADLY is kept on the roadmap and marked
+   deferred — never dropped.** Music that produces poor results under the analysis as it
+   stands stays listed, becoming the validation target of the next capability built
+   (melodic accumulation, arpeggio inference, and the rest). *Why:* stated with the rule —
+   a corpus that exposes a gap in the analysis is worth more than one that confirms what
+   we already do well, so a poor result is information about what to build, not a reason
+   to discard the material. Homed here 2026-08-02 from `STATUS_ARCHIVE.md`
+   (`OPEN_ITEMS.md` OI-272); the record states neither a date nor a ratifier. The
+   companion rule on the other side — a newly acquired corpus enters as research material
+   and the frozen corpus stays the gate until a deliberate re-baseline — is in
+   `CLAUDE.md` gate block (A).
 
 ---
 
