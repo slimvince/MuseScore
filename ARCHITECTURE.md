@@ -967,7 +967,7 @@ contracts below all serve this principle. Their detailed statements live in the 
   recorded as an explicit correction of a framing that had called the same situation a violation of this
   principle. The worked case is the shelved joint key-and-chord step: the chord under an alternative
   tonality is never computed on that path, the tonality alternatives themselves ARE carried, and the
-  roughly 1.4 % of slices where the alternative would have differed was measured to be an even split —
+  roughly 1.4 % of cases where the alternative would have differed was measured to be an even split —
   that is, noise. Decided 2026-07-07; the record does not name the ratifier.
 - **Every derived analytical fact is published exactly once, on the producing layer's output surface;
   consumers read it and never re-derive it.** For **evidence-class** facts — hints a later design could
