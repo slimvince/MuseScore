@@ -195,6 +195,8 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `ARCHITECTURE.md:5232-5241`
 
 **Provenance.** ARCHITECTURE.md:5088-5089 states it is not a current implementation target; the same deferral is recorded in the retired-session record at STATUS_ARCHIVE.md:2335 ★ RATIFIED-FOR-NOW (user, 2026-08-02): to be REVIEWED when the intonation feature's implementation is revisited (the OI-62 held feature).
@@ -211,6 +213,8 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `ARCHITECTURE.md:5355-5357`
 
 **Provenance.** ARCHITECTURE.md:5203-5205 states the deferral ★ RATIFIED-FOR-NOW (user, 2026-08-02): to be REVIEWED when the intonation feature's implementation is revisited (the OI-62 held feature).
@@ -226,6 +230,8 @@
 **Why.** The constraint is the instruments themselves: their pitch is fixed by construction, so a tuning offset cannot be applied to them (ARCHITECTURE.md:5304-5306).
 
 **Status.** DEFERRED · date not stated · ratifier not stated
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `ARCHITECTURE.md:5456-5458`
 
@@ -253,6 +259,8 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `ARCHITECTURE.md:5474-5486`
 
 **Provenance.** ARCHITECTURE.md:5322-5334; the FreeDrift behaviour is restated at :5448-5453 ★ RATIFIED-FOR-NOW (user, 2026-08-02): to be REVIEWED when the intonation feature's implementation is revisited (the OI-62 held feature).
@@ -266,6 +274,8 @@
 **Why.** derivation not recorded — the record states the ruling and its consequence but gives no reason beyond the material being audio-domain.
 
 **Status.** LIVE · decided 2026-07-04 · ratified by the user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_score_census.md:221`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 

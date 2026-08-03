@@ -124,6 +124,8 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
+**Entry ratified.** 2026-08-03 · by user
+
 **Home.** `cowork_progression_schema_dictionary.md:35-41`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
 **Provenance.** `cowork_progression_schema_dictionary.md`:41-46 records the owner ruling as D5 of `cowork_progression_schema_design.md` §6, user-ratified 2026-07-02, with the cross-referencing comment blocks at `functionprogression.h` and `harmonicvocabulary.h` and the test at `progressionrecognizer_tests.cpp`. Beside D-341, which is the grammar-completion amendment this ruling's consistency test produced. NOTE: this document uses the label 'D5' for TWO different decisions — this ownership ruling (§1) and the harmonic-scope component decision (§7, entered as D-408) — which is a collision in the document's own local labelling, not in this register. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1j queue presented at `cowork_pending_ratifications_next_session.md` §2 — the ratification is of the RULE itself, with the status exactly as the record states it; it does not supply a date or a ratifier the original record never had, and the 'not stated' facts above stand unchanged (#12). The `gap` home flag also stands: the dictionary's banner still reads 'component spec, v1 draft (2026-06-29)', so the fifth home case's banner half is unmet — that is the open question rowed as `OPEN_ITEMS.md` OI-281, deliberately NOT resolved by editing this document's banner.)
@@ -138,6 +140,8 @@
 **Why.** Stated in the document as the firewall line (§6): the component holds structural content and returns ranked structural matches, while the weighting, the threshold and the decision are precision-phase work at the consumer. Adding or correcting an entry is a content change here; tuning how strongly an entry fires is a change there. This keeps the catalog free of fitted values, so it can be shared by an analysis consumer and a future composition consumer that would weight it differently.
 
 **Status.** LIVE · date not stated · ratifier not stated
+
+**Entry ratified.** 2026-08-03 · by user
 
 **Home.** `cowork_progression_schema_dictionary.md:53-54`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
@@ -157,6 +161,8 @@
 
 **Status.** LIVE · decided 2026-06-29 · ratifier not stated
 
+**Entry ratified.** 2026-08-03 · by user
+
 **Home.** `cowork_progression_schema_dictionary.md:55-59`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
 **Provenance.** `cowork_progression_schema_dictionary.md`:55-59 (§2), restated as component decision D5 at :261-263 (§7) with its rejected alternative, and carried as a risk at :279-280 (§9). Consistent with `ARCHITECTURE.md` §7, which states the same exclusion. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1j queue presented at `cowork_pending_ratifications_next_session.md` §2 — the ratification is of the RULE itself, with the status exactly as the record states it; it does not supply a date or a ratifier the original record never had, and the 'not stated' facts above stand unchanged (#12). The `gap` home flag also stands: the dictionary's banner still reads 'component spec, v1 draft (2026-06-29)', so the fifth home case's banner half is unmet — that is the open question rowed as `OPEN_ITEMS.md` OI-281, deliberately NOT resolved by editing this document's banner.)
@@ -173,6 +179,8 @@
 **Why.** Stated with the rule: this is the same shape the inference layers use, which carry ranked alternatives with a confidence rather than a forced single answer (the cross-cutting contract, D-027). Requiring the consumer to handle an empty list is what stops a recogniser from inventing a match to have something to return.
 
 **Status.** LIVE · date not stated · ratifier not stated
+
+**Entry ratified.** 2026-08-03 · by user
 
 **Home.** `cowork_progression_schema_dictionary.md:121-124`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
@@ -192,6 +200,8 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
+**Entry ratified.** 2026-08-03 · by user
+
 **Home.** `cowork_progression_schema_dictionary.md:102-106`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
 **Provenance.** `cowork_progression_schema_dictionary.md`:96-106 (§4 recognise) and :114-118 (the match score under the partial matcher). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1j queue presented at `cowork_pending_ratifications_next_session.md` §2 — the ratification is of the RULE itself, with the status exactly as the record states it; it does not supply a date or a ratifier the original record never had, and the 'not stated' facts above stand unchanged (#12). The `gap` home flag also stands: the dictionary's banner still reads 'component spec, v1 draft (2026-06-29)', so the fifth home case's banner half is unmet — that is the open question rowed as `OPEN_ITEMS.md` OI-281, deliberately NOT resolved by editing this document's banner.)
@@ -209,6 +219,8 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
+**Entry ratified.** 2026-08-03 · by user
+
 **Home.** `cowork_progression_schema_dictionary.md:185-188`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
 **Provenance.** `cowork_progression_schema_dictionary.md`:185-188 (§5.2, the bass-line and pop loops). Same class as the circle-of-fifths entry-point rule (D-412): both fix what a realisation of one entry is allowed to look like. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1j queue presented at `cowork_pending_ratifications_next_session.md` §2 — the ratification is of the RULE itself, with the status exactly as the record states it; it does not supply a date or a ratifier the original record never had, and the 'not stated' facts above stand unchanged (#12). The `gap` home flag also stands: the dictionary's banner still reads 'component spec, v1 draft (2026-06-29)', so the fifth home case's banner half is unmet — that is the open question rowed as `OPEN_ITEMS.md` OI-281, deliberately NOT resolved by editing this document's banner.)
@@ -224,6 +236,8 @@
 **Why.** The same organisation reason as the rotation rule: the common short tail is a way of entering the one pattern, not a second pattern, so it is expressed as a matching rule on one entry rather than as extra records. The document states the rule where the entry is defined, so a reader cannot meet the entry without meeting what counts as realising it.
 
 **Status.** LIVE · date not stated · ratifier not stated
+
+**Entry ratified.** 2026-08-03 · by user
 
 **Home.** `cowork_progression_schema_dictionary.md:179-181`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
@@ -241,6 +255,8 @@
 
 **Status.** LIVE · decided 2026-06-29 · ratifier not stated
 
+**Entry ratified.** 2026-08-03 · by user
+
 **Home.** `cowork_progression_schema_dictionary.md:220-222`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
 **Provenance.** `cowork_progression_schema_dictionary.md`:220-222 (§5.3, the substitution operations). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1j queue presented at `cowork_pending_ratifications_next_session.md` §2 — the ratification is of the RULE itself, with the status exactly as the record states it; it does not supply a date or a ratifier the original record never had, and the 'not stated' facts above stand unchanged (#12). The `gap` home flag also stands: the dictionary's banner still reads 'component spec, v1 draft (2026-06-29)', so the fifth home case's banner half is unmet — that is the open question rowed as `OPEN_ITEMS.md` OI-281, deliberately NOT resolved by editing this document's banner.)
@@ -256,6 +272,8 @@
 **Why.** Recorded as component decision D3 with its rejected alternative: a fully enumerated flat list was refused as combinatorial and because it hides the systematic structure that makes the applied and substitute apparatus one idea rather than dozens.
 
 **Status.** LIVE · decided 2026-06-29 · ratifier not stated
+
+**Entry ratified.** 2026-08-03 · by user
 
 **Home.** `cowork_progression_schema_dictionary.md:255-257`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
@@ -279,7 +297,9 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `docs/implementation_roadmap.md:183`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Entry ratified.** 2026-08-03 · by user
 
-**Provenance.** `docs/implementation_roadmap.md`:183-191, recorded as a standing trigger of the user, 2026-07-02, beside the census's own standing rule that discovering a new corpus is a census defect (register entry D-359). It governs the style taxonomy that `ARCHITECTURE.md` §6.7 owns and is recorded in a plan rather than at that home, hence the documentation-gap flag. Load-bearing for the 2026-08-03 §6.7 restatement: the five idioms are stated there as empirically discovered, and this is the rule that keeps that claim current. The record notes two corpus waves executed and ratified (2026-07-02, 2026-07-03), the second checking the trigger and finding it NOT fired. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue.
+**Home.** `docs/implementation_roadmap.md:220`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** `docs/implementation_roadmap.md`:183-191, recorded as a standing trigger of the user, 2026-07-02, beside the census's own standing rule that discovering a new corpus is a census defect (register entry D-359). It governs the style taxonomy that `ARCHITECTURE.md` §6.7 owns and is recorded in a plan rather than at that home, hence the documentation-gap flag. Load-bearing for the 2026-08-03 §6.7 restatement: the five idioms are stated there as empirically discovered, and this is the rule that keeps that claim current. The record notes two corpus waves executed and ratified (2026-07-02, 2026-07-03), the second checking the trigger and finding it NOT fired. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 

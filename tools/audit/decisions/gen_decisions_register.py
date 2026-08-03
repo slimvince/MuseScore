@@ -123,7 +123,21 @@ PREAMBLE = """# DECISIONS — the decisions register
 > refinement of the contract-home case. The register-level ratification does not overwrite
 > per-entry provenance — an entry saying "ratifier not stated" still means the original record
 > of THAT decision does not say; what the 2026-08-02 ratifications establish is that these
-> entries are the standing decisions of record.
+> entries are the standing decisions of record. **Ninth ratification event, 2026-08-03:** the 9
+> phase-1j entries (D-406…D-414), the four status banners behind fourteen contract-home
+> re-classifications, and the OI-279 ruling that corrected `ARCHITECTURE.md` §6.7 over the five
+> idioms (with the D-132 narrowing). **Tenth ratification event, 2026-08-03:** the 9 phase-1l entries
+> (D-415…D-423), ratified AS DRAFTED with the statuses exactly as the record states them — and,
+> recorded separately because they are separate acts, the OI-284 scope ruling on D-417 (the engage
+> criteria govern engaging the dormant spine, not the joint estimator's adoption) and the OI-285
+> ruling committing the ratification surfaces. **D-416's disposition was NOT written**: the check the
+> ruling depended on did not confirm its premise, and the STOP is recorded in that entry's provenance
+> and at `OPEN_ITEMS.md` OI-286.
+>
+> **From 2026-08-03 each entry carries its own ratification as a FIELD**, not only as prose inside
+> the provenance — see *Entry ratified* below. It is backfilled mechanically from the provenance
+> markers and from nowhere else; where an entry shows none, its own provenance records none, and the
+> register-level events above are where to look.
 >
 > **GENERATED FILE — do not hand-edit.** Source of record:
 > `tools/audit/decisions/backbone_decisions.json`; generator
@@ -137,7 +151,7 @@ PREAMBLE = """# DECISIONS — the decisions register
 
 ## How to read an entry
 
-Each entry has six parts.
+Each entry has six parts, and a seventh where the record states one.
 
 - **The decision, verbatim** — quoted exactly from the document that records it, word for word.
   (Where the source wrote the passage inside a quotation block, its `>` markers are dropped so the
@@ -152,6 +166,14 @@ Each entry has six parts.
   *every design decision carries its defense at its home*, user-directed 2026-08-01.)
 - **Status** — see the table below. Where the record does not say when a decision was made or
   who ratified it, the entry says **not stated**. Nothing is inferred.
+- **Entry ratified** — when this REGISTER ENTRY was reviewed and ratified, and by whom. This is a
+  different event from the decision itself: a decision made in June 2026 by whoever made it can have
+  its entry — the quote, the restatement, the status — ratified much later, and conflating the two
+  would falsify one of them. The line appears only where the entry's own provenance records such an
+  event; its absence means the provenance does not record one, not that the entry was rejected. The
+  register-level ratification events are listed in the preamble above. (Field added 2026-08-03 on the
+  user's ruling of that date; before it, an entry ratification could only be read out of the
+  provenance prose.)
 - **Home** — where the decision is actually recorded, as `file:line`. A decision about how a
   layer should work belongs in that layer's section of `ARCHITECTURE.md`, and a decision about
   anything else belongs in the specification that owns it. Where the home is neither, the entry
@@ -235,6 +257,7 @@ def render(backbone: dict, disp: dict) -> str:
     nostated_who = sum(1 for d in decisions if d["ratified_by"] == ["not stated"])
     nonspec = [d for d in decisions if not d.get("home_is_layer_spec")]
     no_rationale = [d for d in decisions if not d.get("rationale")]
+    entry_ratified = [d for d in decisions if d.get("entry_ratified")]
 
     out: list[str] = [PREAMBLE, ""]
 
@@ -264,6 +287,15 @@ def render(backbone: dict, disp: dict) -> str:
         if k:
             out.append(f"| — of which {NONSPEC_LABEL[kind]} | {k} |")
     out.append(f"| Decisions whose defense the record does not state | {len(no_rationale)} |")
+    out.append(f"| Entries whose own ratification the provenance records | {len(entry_ratified)} |")
+    out.append("")
+    out.append(f"The second-to-last row is about the DECISIONS; the last is about the ENTRIES. "
+               f"**{len(entry_ratified)} of {len(decisions)}** entries carry a recorded event at "
+               "which the entry itself — this quote, this restatement, this status — was reviewed "
+               "and ratified. The remaining "
+               f"{len(decisions) - len(entry_ratified)} do not carry one in their own provenance; "
+               "the register-level ratification events listed in the preamble are the place to look "
+               "for those, and nothing is inferred from them into the per-entry field.")
     out.append("")
     out.append(f"That last row is the one meant to fall. **{len(decisions) - len(no_rationale)} of "
                f"{len(decisions)}** decisions here can point at the research, the measurement, or "
@@ -310,8 +342,8 @@ def render(backbone: dict, disp: dict) -> str:
         gfile = group_filename(g)
         out.append(f"## {g['id']}. {g['title']} — [full entries]({gfile})")
         out.append("")
-        out.append("| ID | Decision | Status | Home |")
-        out.append("|---|---|---|---|")
+        out.append("| ID | Decision | Status | Entry ratified | Home |")
+        out.append("|---|---|---|---|---|")
         for d in members:
             st = STATUS_LABEL.get(d["status"], d["status"].upper())
             if d["status"] == "superseded-by" and d.get("superseded_by"):
@@ -323,8 +355,10 @@ def render(backbone: dict, disp: dict) -> str:
             }.get(d.get("nonspec_kind", "gap"), " ⚠gap")
             why = "" if d.get("rationale") else " · derivation not recorded"
             legacy = " ⚠LEGACY" if d.get("legacy_subject") else ""
+            er = d.get("entry_ratified")
+            erc = f"{er['date']} · {', '.join(er['by'])}" if er else "—"
             out.append(f"| {d['id']} | {d['title'].replace('|', '/')} | "
-                       f"{st}{legacy}{why} | `{home}`{homeflag} |")
+                       f"{st}{legacy}{why} | {erc} | `{home}`{homeflag} |")
         out.append("")
 
     out.append("## Provenance of this register")
@@ -378,6 +412,10 @@ def render_entry(d: dict) -> list[str]:
            else "ratified by " + ", ".join(d["ratified_by"]))
     out.append(f"**Status.** {st} · {when} · {who}")
     out.append("")
+    er = d.get("entry_ratified")
+    if er:
+        out.append(f"**Entry ratified.** {er['date']} · by {', '.join(er['by'])}")
+        out.append("")
     homemark = "" if d.get("home_is_layer_spec") else \
         "  " + NONSPEC_MARK.get(d.get("nonspec_kind", "gap"), NONSPEC_MARK["gap"])
     out.append(f"**Home.** `{d['home']}`{homemark}")

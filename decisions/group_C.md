@@ -369,6 +369,8 @@
 
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `ARCHITECTURE.md:3675-3683`
 
 **Provenance.** The band is stated at ARCHITECTURE.md:3567-3575. The governing measurement surface is now the robust unit ratified at R10-b (CLAUDE.md gate block (A)), whose figures are reported per preset on a different unit; no ruling names this band as replaced. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
@@ -383,6 +385,8 @@
 **Why.** Stated with the rule (cowork_bounded_context_design.md:21-26): the shipped product analyses the part of the score the user selected, and a layer often needs evidence from outside it to judge its edges. Separating the output span from the loaded span is what lets a layer read more music without changing what the user asked to have analysed.
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_bounded_context_design.md:43-44`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
@@ -410,6 +414,8 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_bounded_context_design.md:57-69`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; the rule is items 5 and 6 of the bounded-context contract at :57-69. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
@@ -432,6 +438,8 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_bounded_context_design.md:73-81`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; item 8 of the bounded-context contract at :73-81. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
@@ -449,6 +457,8 @@
 **Why.** It is principle #12 (no information loss) applied to the extension protocol: the fact that a layer wanted more evidence and could not get it is itself information a consumer needs, and dropping it would make a truncated reading indistinguishable from a fully-evidenced one.
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_bounded_context_design.md:82-86`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
@@ -469,6 +479,8 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_bounded_context_design.md:121-126`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; the equivalence invariant at :121-126, with the step-size independence obligation restated as a required test at :202-204. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
@@ -488,6 +500,8 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_bounded_context_design.md:115-120`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; stated at :115-120 and again as an architecture decision at :188-189 ('recorded so the forward-only contract is not read as forbidding extension'). Bears on register entry D-025, the forward-only rule with two scoped escapes. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
@@ -505,6 +519,8 @@
 **Why.** The reason is the design's own opening argument (cowork_bounded_context_design.md:14-16): the whole-score assumption is foundational, so building more layers on it bakes it deeper and unwinding it afterward is a cross-cutting, expensive retrofit. Gating the next layer on the contract being real, not merely written, is what stops that.
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_bounded_context_design.md:213-217`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
@@ -528,6 +544,8 @@
 **Why.** Stated with the contract (cowork_confidence_contract.md:14-21): the architecture's forward-override mechanism numerically compares confidences across layers, and those quantities were incommensurable by construction - one layer publishing a sequence margin, another a composite, another an unbounded additive score against a clamped comparison. Weight fitting cannot repair a comparison between quantities with undefined semantics; it would only bury the incoherence in fitted constants.
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_confidence_contract.md:25-34`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
@@ -555,6 +573,8 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_confidence_contract.md:36-48`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** cowork_confidence_contract.md:3, status banner 'RATIFIED (user, 2026-07-02)'; rules U1 to U5 at :36-48. Rule U2 is the one already registered, as D-032, at its ARCHITECTURE.md home; U1, U3, U4 and U5 were not in the register. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
@@ -570,6 +590,8 @@
 **Why.** It is principle #6 (one path per concern) applied to the override arithmetic: the contract exists because the same comparison was being re-stated with different semantics at each site. Stating it once, with each instance's conversion declared, is what makes the threshold interpretable rather than an arbitrary scale factor.
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_confidence_contract.md:83-85`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
@@ -595,6 +617,8 @@
 **Why.** The measurement is stated with the shelving, and so is the principle #12 reconciliation: the key alternatives ARE carried, so the key discovery is not discarded; the chord under an alternative key is never computed in this path, so nothing computed is discarded; and the measured 1.4 per cent where it would differ is even-odds noise. Choosing not to compute a measured-worthless possibility is an evidence-based decision, not information loss.
 
 **Status.** SHELVED WITH EVIDENCE · decided 2026-07-07 · ratified by user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_engage_arc_plan.md:103-112`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
@@ -627,6 +651,8 @@
 
 **Status.** LIVE · decided 2026-06-12 · ratified by Cowork
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_handoff_archive.md:2964`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
 **Provenance.** Recorded in the 2026-06-12 Stage-3.1b block of `cowork_handoff_archive.md` and in `docs/p3_granularity_ab_3_1b.md`. NOT superseded by any later ruling: `OPEN_ITEMS.md` OI-210 records that the extent question was then PARKED pending the granularity-robust metric (which has existed since 2026-07-06) and is now implemented as whole-piece by dispatch specification with no ruling — so the shelving stands on the record and the implementation departs from it. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).
@@ -645,6 +671,8 @@
 
 **Status.** LIVE · decided 2026-06-13 · ratified by the user (directive), on Cowork's verification
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_handoff_archive.md:3029`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
 **Provenance.** Recorded in `cowork_handoff_archive.md` (the 2026-06-13 strategic-pivot block); `docs/beam_widening_design.md` was banner-shelved and retained for its derivation. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).
@@ -662,6 +690,8 @@
 
 **Status.** LIVE · decided 2026-06-13 · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_handoff_archive.md:3082`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
 **Provenance.** Recorded in `cowork_handoff_archive.md` (the 2026-06-13 Stage-4 design-investigation block) and `docs/implementation_roadmap.md`. ★ FLAGGED against the OI-270 meta-findings (D-282…D-285): this is an EARLIER and independently-derived statement of the same insight as D-284 (selection and competition are saturated). It does not change D-284's ruled status; it dates and corroborates it. It was itself later RECONCILED rather than overturned: `cowork_handoff_archive.md:3920-3921` records that the joint decode's value is broad-evidence integration, NOT search — "search is about zero" having been measured over a FIXED NARROW evidence surface. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).
@@ -677,6 +707,8 @@
 **Why.** A user mandate, recorded as constraint 4c of the fitting design. Its consequence is stated with it: ONE fit per idiom, and the Bach fit is an idiom fit delivered through two carriers.
 
 **Status.** LIVE · date not stated · ratified by the user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `ARCHITECTURE.md:323-325`
 
@@ -694,6 +726,8 @@
 
 **Status.** LIVE · decided 2026-06-10 · ratified by the user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `CLAUDE.md:395-397`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Recorded in `cowork_handoff_archive.md` (the corpus-audit block, as the ground-truth verdict). The human-annotation-only requirement it names was delivered as the granularity-robust unit (D-115), whose own text carries the clause "music21 is NOT ground truth"; the two further clauses — never describe a measurement as ground-truth agreement, and no self-annotation in any measurement — are recorded ONLY here. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]] — measurement conventions go to the gate block): written into `CLAUDE.md` gate block (A) as the FIRST of the four grading conventions the robust unit is measured under, carrying all three clauses the archive held alone. Former home preserved (#12): `cowork_handoff_archive.md:2844`, the corpus-audit block.
@@ -710,6 +744,8 @@
 
 **Status.** LIVE · decided 2026-07-07 · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `ARCHITECTURE.md:963-965`
 
 **Provenance.** Recorded in `cowork_handoff_archive.md` (the 2026-07-07 entry-point block) as a dated correction. It scopes D-099 / principle #12 and is recorded nowhere that a reader of #12 would find. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written into `ARCHITECTURE.md` §2.15 as the boundary clause of the negative-evidence contract, beside D-099 — the home this row's own text named. Former home preserved (#12): `cowork_handoff_archive.md:1532`, the 2026-07-07 entry-point block.
@@ -725,6 +761,8 @@
 **Why.** Stated with the rule: fitting a non-monotone map would launder an inference defect into the confidence semantics — the map would make a mis-ordered confidence read as a well-ordered probability. The confidence contract's monotonicity rules carry the same requirement.
 
 **Status.** LIVE · decided 2026-07-04 · ratified by the user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_stage5_fitter_design.md:673`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
@@ -751,6 +789,8 @@
 
 **Status.** LIVE · decided 2026-06-26 · ratified by the user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_layer5_function_design.md:637-648`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
@@ -769,6 +809,8 @@
 
 **Status.** LIVE · decided 2026-07-07 · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_joint_key_chord_design.md:136-140`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step the document designs is shelved (**D-278**); this prohibition is not about that step — it is stated as what any placement must avoid, and is flagged in the record as written so the build does not drift there. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
@@ -784,7 +826,9 @@
 
 **Status.** DEFERRED · decided 2026-07-04 · ratifier not stated
 
-**Home.** `docs/implementation_roadmap.md:460`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Entry ratified.** 2026-08-03 · by user
 
-**Provenance.** `docs/implementation_roadmap.md`:460-461, recorded at the Stage-5 fitter design's signing: "Stage-5 design SIGNED 2026-07-04 … A-3 ruled = Jazz fit deferred to the jazz-GT conversion". The document states the DESIGN was signed that day but does not say who ruled A-3, so the ratifier is NOT STATED. A-3 is one of the ten external-review amendments the record marks user-ratified 2026-07-02 at `:148-151`, but that ratification is of the amendment, not of this later disposition of it. Beside D-310 (jazz accuracy not measurable) and `OPEN_ITEMS.md` OI-7 (establish a jazz ground truth or de-scope the jazz claims). Recorded in a plan rather than in the fitter's own specification, hence the documentation-gap flag. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue.
+**Home.** `docs/implementation_roadmap.md:497`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** `docs/implementation_roadmap.md`:460-461, recorded at the Stage-5 fitter design's signing: "Stage-5 design SIGNED 2026-07-04 … A-3 ruled = Jazz fit deferred to the jazz-GT conversion". The document states the DESIGN was signed that day but does not say who ruled A-3, so the ratifier is NOT STATED. A-3 is one of the ten external-review amendments the record marks user-ratified 2026-07-02 at `:148-151`, but that ratification is of the amendment, not of this later disposition of it. Beside D-310 (jazz accuracy not measurable) and `OPEN_ITEMS.md` OI-7 (establish a jazz ground truth or de-scope the jazz claims). Recorded in a plan rather than in the fitter's own specification, hence the documentation-gap flag. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 

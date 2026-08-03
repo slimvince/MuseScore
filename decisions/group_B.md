@@ -211,6 +211,8 @@
 
 **Status.** LIVE · decided 2026-07-26 · ratified by user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_notation_output_contract.md:54-57`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** cowork_notation_output_contract.md:3 records the user's ratification, dated 2026-07-26, as specified and without amendments; the provenance rule at :52-57. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
@@ -232,6 +234,8 @@
 **Why.** The reason is stated with the decision (cowork_notation_output_contract.md:146-147): the two-mode key plus the count table informationally dominates the retired mode labels, so publishing counts rather than a label loses nothing (#12) while removing an inference nobody had established. Register entry D-054 records the twenty-one-mode vocabulary this supersedes on the record surface.
 
 **Status.** LIVE · decided 2026-07-26 · ratified by user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_notation_output_contract.md:139-147`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 

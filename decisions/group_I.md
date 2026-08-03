@@ -244,6 +244,8 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `ARCHITECTURE.md:652-654`
 
 **Provenance.** ARCHITECTURE.md:623-625 (Rule 14) and :649 (the one-run-one-result statement) ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
@@ -259,6 +261,8 @@
 **Why.** A user correction of an over-statement that had conflated the two. Its worked consequence is recorded with it: a measurement that needed fermatas read them in the batch tool, which already loads the score, and passed them into our own analysis through our own input structure - zero edits outside our area.
 
 **Status.** LIVE · decided 2026-06-14 · ratified by the user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `ARCHITECTURE.md:1162-1164`
 
@@ -276,6 +280,8 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_engage_arc_plan.md:126`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md` (session 22i, the Stage-5 planning checkpoint) as a ruling read off the ratified retirement map. It is load-bearing now beyond its original subject: [[OI-205]] half (b) cites it as “the ratified Stage-3.5 file-split lesson (restructure ONCE, after the boundaries stabilize)” to time the `ARCHITECTURE.md` restructure. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOME MOVED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]) — NO specification text was written, because the rule already stands verbatim in a user-ratified document that owns the concern: `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) is 'the standing reference for the order of work', and its Stage 4 states the split is last and why. Former home preserved (#12): `STATUS_ARCHIVE.md:166`, session 22i. The arc plan is NOT a contract home (it is a plan, not a contract for a layer — the phase-1i criterion), so the classification stays 'gap'; what changes is that the decision is no longer recorded ONLY on a tracking surface. D-401 restates the same sequencing at the 2026-08-02 structural audit; the two are consistent and neither supersedes the other.
@@ -291,6 +297,8 @@
 **Why.** The record gives the reason as a measured property of the code, not a preference: the anchor tangle sits in code the engagement retires, and its clean target is ALREADY BUILT in the dormant decoder (§1.4, cited to `chord/chordslicedecoder.cpp:746-789`), so a standalone refactor of the legacy carry substrate would be throwaway work on retiring code — while three slices are genuine early wins precisely because they are path-independent or serve both paths (§4).
 
 **Status.** LIVE · decided 2026-07-07 · ratifier not stated
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_structural_integrity_audit.md:316-318`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
@@ -313,6 +321,8 @@
 
 **Status.** DEFERRED · decided 2026-07-07 · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_structural_integrity_audit.md:270-275`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
 **Provenance.** Found by the phase-1i continuation wave, 2026-08-02, reading `cowork_structural_integrity_audit.md` IN FULL. The document's banner records `Status: read-only grounded catalogue (CC, 2026-07-07; Engage arc #6)` — an authored catalogue, not a ratified contract. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1i ratification queue. Recorded as '⛔ STOP-and-deferred to E4'. The deferral's target — the engagement of the dormant decoder with the function layer — was itself overtaken by the joint estimator without any ruling that names it (`ARCHITECTURE.md`'s Layer-4 plan correction, 2026-08-02; `OPEN_ITEMS.md` OI-259 re-dispositions the engage-era agenda), so what becomes of this deferral is open. ★ RATIFIED (user, 2026-08-02, the phase-1i queue).
@@ -332,7 +342,9 @@
 
 **Status.** LIVE · decided 2026-06-14 · ratified by user
 
-**Home.** `docs/implementation_roadmap.md:20`  — a decision about how the work is done, not about the system; this is its correct home.
+**Entry ratified.** 2026-08-03 · by user
 
-**Provenance.** `docs/implementation_roadmap.md`:20-25, recorded as a user mandate of 2026-06-14 and mirrored, the record says, in `cowork_handoff.md`'s top standing block. Beside register entry D-311, which records the FILE-SPLIT half alone as deferred until after the retirements, and D-401, which sequences it last; the half registered nowhere until now is the gate-dissolution, together with the surfacing obligation that covers both. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue.
+**Home.** `docs/implementation_roadmap.md:28`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** `docs/implementation_roadmap.md`:20-25, recorded as a user mandate of 2026-06-14 and mirrored, the record says, in `cowork_handoff.md`'s top standing block. Beside register entry D-311, which records the FILE-SPLIT half alone as deferred until after the retirements, and D-401, which sequences it last; the half registered nowhere until now is the gate-dissolution, together with the surfacing obligation that covers both. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.) ★ THE PHASE-1l DISPOSITION WAS NOT WRITTEN — the check that had to precede it did not confirm its premise, so it is a STOP (#13) rather than a ruling. What the check found, at the code and the record, 2026-08-03: HALF (1)'s file split is DELIVERED, not owed — committed `41f7c65f63` on 2026-06-17 ('split chordanalyzer.cpp into single-responsibility layer TUs (byte-identical)'), three days after this mandate deferred it, producing the five sibling translation units `chordsymbolformatter.cpp` / `chordvoicing.cpp` / `chorddiagnose.cpp` / `chordpostpasses.cpp` / `postscoringgates.cpp` beside the residual oracle, and recorded as the current layout at `docs/scoring_model.md`:26-37. It IS the same named act as D-311's R9 — `docs/implementation_roadmap.md` writes 'R9 `chordanalyzer.cpp` file-split (OWED refactor #1)' in so many words. HALF (1)'s iteration-API RENAMES are NOT done: `applyIter8691Pedal` is still the declared name in `chordanalyzer.h`, defined in `chordpostpasses.cpp` and called from `sectionanalyzer.cpp`:450 and `regionanalyzer.cpp`:1011. And the premise that both halves' subjects are legacy is FALSE: one of the five translation units the split produced, `chordsymbolformatter.cpp`, is LIVE production code on the record arm (`notationimplodebridge.cpp`:1159-1170 and :1189-1191 call `formatSymbol` / `formatNashvilleNumber` on the record arm explicitly; `sectionrecordadapter.h`:69-71 names them the record path's presentation derivations), and `STATUS_ARCHIVE.md`:114 records the residual `chordanalyzer.cpp` as one that 'SURVIVES the engagement; R9 *splits* `chordanalyzer.cpp`, does not delete it'. A disposition of 'superseded by D-418 — the subject is deleted rather than refactored' would therefore have been false of the subject. The contradiction of record this surfaced is rowed as `OPEN_ITEMS.md` OI-286; the disposition itself waits on the user. The surfacing obligation stands in the meantime, unchanged.
 

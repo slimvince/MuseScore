@@ -178,6 +178,8 @@
 
 **Status.** LIVE · decided 2026-07-05 · ratified by user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `CLAUDE.md:957-969`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1589-1598, under the standing-rule heading 'FULL DECISION SURFACE BEFORE ANY CHOICE QUESTION' at cowork_handoff.md:1587 ('user mandate 2026-07-05'), with the instituting record at STATUS_ARCHIVE.md:202 - a session handoff block, which is a place for tracking a handover and not a home for a standing rule. Homed in the CLAUDE.md Conventions section, where this project's standing session-method rules live. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
@@ -200,6 +202,8 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_audit_protocol.md:166-174`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1606-1616, stated as standing rules under the handoff's standing-rules block - a session handoff block. Homed in the new dispatch-protocol section of the audit protocol. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
@@ -218,6 +222,8 @@
 **Why.** The evidence is stated with the rule: interruptions have several times proven disastrous (cowork_handoff.md:1618).
 
 **Status.** LIVE · decided 2026-07-05 · ratified by user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_audit_protocol.md:178-183`  — a decision about how the work is done, not about the system; this is its correct home.
 
@@ -238,6 +244,8 @@
 **Why.** The evidence is stated with the rule: violating it has broken the codebase twice, at the E1 and E2b increments (cowork_handoff.md:1638).
 
 **Status.** LIVE · date not stated · ratifier not stated
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_audit_protocol.md:156-162`  — a decision about how the work is done, not about the system; this is its correct home.
 
@@ -271,6 +279,8 @@
 
 **Status.** LIVE · decided 2026-06-21 · ratified by user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `CLAUDE.md:971-989`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1669-1680, under the standing-rule heading 'COWORK MUST NOT HALLUCINATE OR ASSUME - VERIFY AT SOURCE (user mandate 2026-06-21)' at cowork_handoff.md:1642 - a session handoff block. Homed in the CLAUDE.md Conventions section. Its scope is taken FROM THE RECORD, not decided here: that heading and D-252's own text ('Cowork MAY: read source files via the file tools - NOT bash') both state it as a planning-side rule, so the homed entry says so and says the mandated build, test and measurement commands are unaffected. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
@@ -292,6 +302,8 @@
 
 **Status.** LIVE · decided 2026-06-14 · ratified by user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `CLAUDE.md:991-998`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1792-1796, under the standing-rule heading 'INVESTIGATE BY DEFAULT - NEVER ASK investigate vs proceed (user mandate 2026-06-14)' at cowork_handoff.md:1790 - a session handoff block. Homed in the CLAUDE.md Conventions section, beside principle #5, which it operationalizes. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
@@ -307,6 +319,8 @@
 **Why.** The reason is stated with the deferral: backing the work up to the fork now is worth more than keeping the fork publishable at every moment, so the publishability question is batched into one pass rather than paid per commit. Related: register entry D-197, the distribution constraint.
 
 **Status.** DEFERRED · decided 2026-06-22 · ratified by user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_prune_pass_checklist.md:3-5`  — a decision about how the work is done, not about the system; this is its correct home.
 
@@ -325,6 +339,8 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_prune_pass_checklist.md:43-46`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** cowork_prune_pass_checklist.md:43 states it as 'a permanent rule' explicitly distinguished from the prune items around it; no date or ratifier is stated at this home. It operationalizes register entry D-197, the ratified distribution constraint, by naming the check that has to happen and when. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
@@ -342,6 +358,8 @@
 
 **Status.** LIVE · decided 2026-07-10 · ratified by user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_engage_arc_plan.md:64-67`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
 **Provenance.** cowork_engage_arc_plan.md:64 states the gate as 'ratified 2026-07-10 with #17-#19', with its evidence document cited; the conditions at :64-92 and the amendment note at :128-130. The last condition is registered separately as D-209, the retiring-code audit rule, at its cowork_audit_protocol.md home. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
@@ -358,6 +376,8 @@
 
 **Status.** LIVE · decided 2026-06-14 · ratified by the user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_audit_protocol.md:117-119`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Recorded in `cowork_handoff_archive.md` (the 2026-06-14 option-C block) as a new standing method, pointing at the handoff's standing block and the roadmap. Realised as the dependency-ordered per-layer certification plan (`OPEN_ITEMS.md` OI-84, complete 2026-07-12) and as the audit protocol's pass ordering. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]] — process rules go to `CLAUDE.md` or the audit protocol): written as P10 of `cowork_audit_protocol.md`, beside P8 and P9, which are the method this rule says WHEN to apply. Former home preserved (#12): `cowork_handoff_archive.md:3771`, the 2026-06-14 option-C block.
@@ -372,6 +392,8 @@
 **Why.** The failure it answers is on the record: two rules' founding cases were silently absorbed upstream, leaving the rules dead and undetected for weeks, because nothing measured rule liveness (`cowork_stage5_fitter_design.md:1471-1478`).
 
 **Status.** LIVE · decided 2026-07-05 · ratified by the user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_stage5_fitter_design.md:1471`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
@@ -406,9 +428,11 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
+**Entry ratified.** 2026-08-03 · by user
+
 **Home.** `docs/implementation_roadmap.md:10`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** `docs/implementation_roadmap.md`:10-12, stated as "Standing rule for this roadmap". The document is dated 2026-06-10 at `:3`; no date or ratifier is stated for the rule itself. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue.
+**Provenance.** `docs/implementation_roadmap.md`:10-12, stated as "Standing rule for this roadmap". The document is dated 2026-06-10 at `:3`; no date or ratifier is stated for the rule itself. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
 ### D-417 — The engage criteria — six gates that must all hold, a staged plan, and the user ratification event
 
@@ -428,9 +452,11 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `docs/implementation_roadmap.md:122`  — a decision about how the work is done, not about the system; this is its correct home.
+**Entry ratified.** 2026-08-03 · by user
 
-**Provenance.** `docs/implementation_roadmap.md`:122-137, recorded as RATIFIED by the user 2026-07-02 and folded here from `cowork_engage_criteria.md`, which the same passage declares a tombstone — "this roadmap is the single home", an explicit home declaration. ★ AN OBSERVATION, NOT A STATUS CHANGE: the production switch that actually happened took a different route — the joint estimator was adopted on the batch surface 2026-07-26 (D-005) and on the notation surface 2026-07-27 (D-010), by the OI-178/notation-switch arc, not by this document's E1-E5 staging, and the criteria's G1 names a dormant L6 that was never built. The record contains no ruling that supersedes these criteria, so the entry carries the record's own status (LIVE) and the observation is recorded rather than resolved; it is rowed as `OPEN_ITEMS.md` OI-284. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue.
+**Home.** `docs/implementation_roadmap.md:141`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** `docs/implementation_roadmap.md`:122-137, recorded as RATIFIED by the user 2026-07-02 and folded here from `cowork_engage_criteria.md`, which the same passage declares a tombstone — "this roadmap is the single home", an explicit home declaration. ★ AN OBSERVATION, NOT A STATUS CHANGE: the production switch that actually happened took a different route — the joint estimator was adopted on the batch surface 2026-07-26 (D-005) and on the notation surface 2026-07-27 (D-010), by the OI-178/notation-switch arc, not by this document's E1-E5 staging, and the criteria's G1 names a dormant L6 that was never built. The record contains no ruling that supersedes these criteria, so the entry carries the record's own status (LIVE) and the observation is recorded rather than resolved; it is rowed as `OPEN_ITEMS.md` OI-284. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.) ★ SCOPED by the user, 2026-08-03 (the OI-284 question, ruled option (iii) — a narrower SUBJECT, a different subject): these criteria govern engaging the DORMANT L4/L5 SPINE, not the joint estimator's adoption. They STAY LIVE and are NOT retired; what was ruled is what they are about. The production switch that happened put a different architecture into production through its own ratified decision surface — the OI-178 batch adoption 2026-07-26 (D-005) and the notation switch 2026-07-27 (D-010) — so the criteria never applied to it; and what they do gate is moot, because the dormant spine they gate is what D-418's retirement map deletes. G1's 'L6 built dormant' requirement therefore needs no satisfying. ★ THE RULING IS A RECONSTRUCTION OF SCOPE AND IS LABELLED AS ONE: the record states the narrowing nowhere — the criteria as written do not say which architecture they govern — so the scope was ruled by the user rather than read out of a text that does not contain it. Recorded at the home (`docs/implementation_roadmap.md`, the annotation beneath the engage block) and at `OPEN_ITEMS.md` OI-284.
 
 ### D-418 — The retirement map — nothing retires by silence; ten named retirements, each with its trigger and its order
 
@@ -449,7 +475,9 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `docs/implementation_roadmap.md:138`  — a decision about how the work is done, not about the system; this is its correct home.
+**Entry ratified.** 2026-08-03 · by user
 
-**Provenance.** `docs/implementation_roadmap.md`:138-145, part of the same block the record marks RATIFIED by the user 2026-07-02. It is live and load-bearing now: `CLAUDE.md`'s gate block (A) states that the dormant legacy notation path awaits deletion "at the OI-180 retirement map, now fully live", and `OPEN_ITEMS.md` OI-180 tracks it. R10 is already discharged — the batch gate was superseded by the robust unit at R10-b, 2026-07-06 (D-115). Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue.
+**Home.** `docs/implementation_roadmap.md:157`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** `docs/implementation_roadmap.md`:138-145, part of the same block the record marks RATIFIED by the user 2026-07-02. It is live and load-bearing now: `CLAUDE.md`'s gate block (A) states that the dormant legacy notation path awaits deletion "at the OI-180 retirement map, now fully live", and `OPEN_ITEMS.md` OI-180 tracks it. R10 is already discharged — the batch gate was superseded by the robust unit at R10-b, 2026-07-06 (D-115). Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 

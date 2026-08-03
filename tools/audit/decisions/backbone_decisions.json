@@ -5048,7 +5048,13 @@
         "Rule N.{0,40}legacy flat numbering",
         "\\u00a7-numbers are authoritative"
       ],
-      "rationale": "The constraint that forced it, stated in the quote: the flat numbering does not align with the section numbers and appears out of order, so reading a \"Rule N\" label as a cross-reference sends the reader to the wrong rule."
+      "rationale": "The constraint that forced it, stated in the quote: the flat numbering does not align with the section numbers and appears out of order, so reading a \"Rule N\" label as a cross-reference sends the reader to the wrong rule.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-233",
@@ -5069,7 +5075,13 @@
         "One run, one result",
         "Never use background jobs"
       ],
-      "rationale": "Derivation not recorded. The record states the rule and its correct/incorrect patterns (ARCHITECTURE.md:627-649) but not the incident or measurement that produced it."
+      "rationale": "Derivation not recorded. The record states the rule and its correct/incorrect patterns (ARCHITECTURE.md:627-649) but not the incident or measurement that produced it.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-234",
@@ -5090,7 +5102,13 @@
         "valid according to `?chords_std\\.xml`? only",
         "chords\\.xml is deprecated/buggy"
       ],
-      "rationale": "The measurement that decided it is cited in the record: `9sus` exists in chords.xml (id=134) and not in chords_std.xml, and under the Standard chord style it triggers `generateDescription()`, producing the corrupted `Fsussus9` render (ARCHITECTURE.md:672). The remedy named there is `sus(add9)`."
+      "rationale": "The measurement that decided it is cited in the record: `9sus` exists in chords.xml (id=134) and not in chords_std.xml, and under the Standard chord style it triggers `generateDescription()`, producing the corrupted `Fsussus9` render (ARCHITECTURE.md:672). The remedy named there is `sus(add9)`.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-235",
@@ -5112,7 +5130,13 @@
         "raw-score guard before tonal-centre can overturn"
       ],
       "rationale": "The constraint stated in the record: the two formulas are kept independent so both can be tuned without cross-interference; the raw-score guard bounds what the secondary formula may do. The measurement that set the guard's bar is not recorded.",
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-236",
@@ -5132,7 +5156,13 @@
         "Per-symbol trust, not per-score preference",
         "per-score toggle is explicitly\\s+rejected"
       ],
-      "rationale": "The reason is stated with the decision: one score may carry both trusted lead-sheet annotations and untrusted draft symbols, so a per-score toggle is too coarse-grained (ARCHITECTURE.md:2609-2611)."
+      "rationale": "The reason is stated with the decision: one score may carry both trusted lead-sheet annotations and untrusted draft symbols, so a per-score toggle is too coarse-grained (ARCHITECTURE.md:2609-2611).",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-237",
@@ -5152,7 +5182,13 @@
         "trusted\\s*=\\s*true` does it\\s*become boundary AND identity input",
         "Untrusted symbols remain comparison metadata only"
       ],
-      "rationale": "Derivation not recorded. The record states the semantics but not the evidence or constraint that fixed them."
+      "rationale": "Derivation not recorded. The record states the semantics but not the evidence or constraint that fixed them.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-238",
@@ -5172,7 +5208,13 @@
         "2-PC evidence alone must not finalize a chord",
         "1-PC evidence is insufficient for independent chord resolution"
       ],
-      "rationale": "The reason is stated beside the rule: it avoids over-interpretation of isolated tones (ARCHITECTURE.md:2771-2772)."
+      "rationale": "The reason is stated beside the rule: it avoids over-interpretation of isolated tones (ARCHITECTURE.md:2771-2772).",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-239",
@@ -5192,7 +5234,13 @@
         "Bounded expansion in Phase 1b",
         "expand by one neighboring region and re-score"
       ],
-      "rationale": "Derivation not recorded. The stop conditions are stated; the thresholds and the cap are left to be calibrated (see register entry D-240)."
+      "rationale": "Derivation not recorded. The stop conditions are stated; the thresholds and the cap are left to be calibrated (see register entry D-240).",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-240",
@@ -5212,7 +5260,13 @@
         "implemented as tunable parameters rather than prose-only",
         "monoWeakGroupOverrideMargin"
       ],
-      "rationale": "Derivation not recorded. The record states the requirement and names the parameters it produces, but not the incident or principle that forced it."
+      "rationale": "Derivation not recorded. The record states the requirement and names the parameters it produces, but not the incident or principle that forced it.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-241",
@@ -5231,7 +5285,13 @@
       "patterns": [
         "local grouping problem is intentionally deferred to Phase 2"
       ],
-      "rationale": "The reason is stated with the deferral: local grouping is the hardest part of monophonic inference (ARCHITECTURE.md:2821-2822)."
+      "rationale": "The reason is stated with the deferral: local grouping is the hardest part of monophonic inference (ARCHITECTURE.md:2821-2822).",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-242",
@@ -5250,7 +5310,13 @@
       "patterns": [
         "must not compare vertical and monophonic raw scores directly"
       ],
-      "rationale": "The reason is stated with the rule: the two engines use different evidence models (ARCHITECTURE.md:2850-2851). It is the same commensurability constraint the cross-layer confidence contract states generally (register entry D-032)."
+      "rationale": "The reason is stated with the rule: the two engines use different evidence models (ARCHITECTURE.md:2850-2851). It is the same commensurability constraint the cross-layer confidence contract states generally (register entry D-032).",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-243",
@@ -5271,7 +5337,13 @@
         "Thin-texture corpora .{0,60}excluded from this target"
       ],
       "rationale": "The constraint stated in the record: the band is tied to one comparison methodology (region-centric DCML), and mixing methodologies is what makes a figure incomparable (ARCHITECTURE.md:3570-3575).",
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-244",
@@ -5291,7 +5363,13 @@
         "which interval family to prefer for\\s*ambiguous sonorities",
         "Style-aware interval-family selection for ambiguous sonorities"
       ],
-      "rationale": "Derivation not recorded. The record states the design space and that it is deferred, but not the measurement or constraint behind the deferral."
+      "rationale": "Derivation not recorded. The record states the design space and that it is deferred, but not the measurement or constraint behind the deferral.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-245",
@@ -5311,7 +5389,13 @@
         "Automatic melody detection is deferred",
         "voice role is determined by staff position"
       ],
-      "rationale": "Derivation not recorded."
+      "rationale": "Derivation not recorded.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-246",
@@ -5331,7 +5415,13 @@
         "Fixed-pitch instruments \\(piano, organ, fretted guitar\\) are deferred",
         "never receive tuning offsets themselves"
       ],
-      "rationale": "The constraint is the instruments themselves: their pitch is fixed by construction, so a tuning offset cannot be applied to them (ARCHITECTURE.md:5304-5306)."
+      "rationale": "The constraint is the instruments themselves: their pitch is fixed by construction, so a tuning offset cannot be applied to them (ARCHITECTURE.md:5304-5306).",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-247",
@@ -5352,7 +5442,13 @@
         "Never split.{0,60}anchor notes are not divided at harmonic boundaries",
         "Excluded from zero-sum centering"
       ],
-      "rationale": "Derivation not recorded. The record states the rules and their priority but not the musical reasoning or measurement behind the priority."
+      "rationale": "Derivation not recorded. The record states the rules and their priority but not the musical reasoning or measurement behind the priority.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-248",
@@ -5372,7 +5468,13 @@
         "Tonicization labels \\(V/V, V/ii, V/IV etc\\.\\).{0,40}NOT YET IMPLEMENTED"
       ],
       "rationale": "The constraint is stated in the record: `ChordFunction` carries no `relativeRoot` or secondary-dominant field, so the label has nowhere to live (ARCHITECTURE.md:6013-6014).",
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-249",
@@ -5396,7 +5498,13 @@
         "The decision surface \\(what is being decided, the background",
         "the choice\\s+question goes in a SEPARATE, LATER turn"
       ],
-      "rationale": "The mechanism is stated with the rule: prose written between tool calls is summarized rather than shown verbatim, so an explanation placed just before a question widget can never reach the user and the question arrives blind (cowork_handoff.md:1590-1592). Its first application is recorded: the 2026-07-05 verdict-14 and 2.2c ratifications were re-presented and re-confirmed."
+      "rationale": "The mechanism is stated with the rule: prose written between tool calls is summarized rather than shown verbatim, so an explanation placed just before a question widget can never reach the user and the question arrives blind (cowork_handoff.md:1590-1592). Its first application is recorded: the 2026-07-05 verdict-14 and 2.2c ratifications were re-presented and re-confirmed.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-250",
@@ -5420,7 +5528,13 @@
         "The dispatch QUEUE is a plan, not files",
         "At most ONE instruction is dispatched"
       ],
-      "rationale": "The reasons are stated with the rule: pre-written instructions go stale as their premises change under them, risk being skipped, and risk out-of-order execution (cowork_handoff.md:1606-1607)."
+      "rationale": "The reasons are stated with the rule: pre-written instructions go stale as their premises change under them, risk being skipped, and risk out-of-order execution (cowork_handoff.md:1606-1607).",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-251",
@@ -5441,7 +5555,13 @@
         "NO MID-FLIGHT STEERING",
         "a running CC is never interrupted or relayed to"
       ],
-      "rationale": "The evidence is stated with the rule: interruptions have several times proven disastrous (cowork_handoff.md:1618)."
+      "rationale": "The evidence is stated with the rule: interruptions have several times proven disastrous (cowork_handoff.md:1618).",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-252",
@@ -5464,7 +5584,13 @@
         "Cowork MAY: read source files",
         "Cowork MUST NOT: spawn agents that run build"
       ],
-      "rationale": "The evidence is stated with the rule: violating it has broken the codebase twice, at the E1 and E2b increments (cowork_handoff.md:1638)."
+      "rationale": "The evidence is stated with the rule: violating it has broken the codebase twice, at the E1 and E2b increments (cowork_handoff.md:1638).",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-253",
@@ -5488,7 +5614,13 @@
         "Local file CONTENT, existence, line counts, searches",
         "`bash` is permitted ONLY for read-only git OBJECT queries"
       ],
-      "rationale": "The failure that produced it is stated in the record: a stale mount made the shell path return wrong content and triggered a false corruption alarm, while the file tools read the live disk correctly (cowork_handoff.md:1665-1667). The git-object exception is justified by self-verification: a stale object errors rather than returning silently-wrong content."
+      "rationale": "The failure that produced it is stated in the record: a stale mount made the shell path return wrong content and triggered a false corruption alarm, while the file tools read the live disk correctly (cowork_handoff.md:1665-1667). The git-object exception is justified by self-verification: a stale object errors rather than returning silently-wrong content.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-254",
@@ -5509,7 +5641,13 @@
         "INVESTIGATE BY DEFAULT",
         "ALWAYS investigate first — and do NOT\\s*present it to the user as a choice"
       ],
-      "rationale": "The reason is stated with the rule: the user's standing answer to that question is always to investigate, so asking wastes a turn; it is the never-guess principle's logical end (cowork_handoff.md:1793-1795). Register entry D-169 records the principle (#5) this operationalizes."
+      "rationale": "The reason is stated with the rule: the user's standing answer to that question is always to investigate, so asking wastes a turn; it is the never-guess principle's logical end (cowork_handoff.md:1793-1795). Register entry D-169 records the principle (#5) this operationalizes.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-255",
@@ -5532,7 +5670,13 @@
         "Deployment view.*Human-interface design"
       ],
       "rationale": "The sources are cited with the decision: arc42 (the 12-section architecture template), IEEE 1016 (Software Design Descriptions) and the viewpoints idea of ISO/IEC/IEEE 42010 (cowork_design_doc_template.md:4-9) - published standards rather than an invented house style, which is principle #1 applied to documentation.",
-      "verbatim": "> **Standing convention (user, 2026-06-22):** every architecture/design document in this project follows the\n> section structure below — a synthesis of **arc42** (the 12-section architecture template) and **IEEE 1016**\n> (Software Design Descriptions) + the viewpoints idea of **ISO/IEC/IEEE 42010**. Two arc42 sections —\n> **Deployment view** and **Human-interface design** — are **N/A** for our backend analysis modules (no separate\n> hardware/runtime deployment; no UI); each doc states that omission once rather than padding."
+      "verbatim": "> **Standing convention (user, 2026-06-22):** every architecture/design document in this project follows the\n> section structure below — a synthesis of **arc42** (the 12-section architecture template) and **IEEE 1016**\n> (Software Design Descriptions) + the viewpoints idea of **ISO/IEC/IEEE 42010**. Two arc42 sections —\n> **Deployment view** and **Human-interface design** — are **N/A** for our backend analysis modules (no separate\n> hardware/runtime deployment; no UI); each doc states that omission once rather than padding.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-256",
@@ -5554,7 +5698,13 @@
         "AS-BUILT \\(date \\+ commits\\)"
       ],
       "rationale": "Stated with the rule: it binds the all-documentation-in-sync standing rule (#10) to a visible per-document marker, so a reader can tell at a glance whether what they are reading is a proposal, a ratified contract, or a superseded record.",
-      "verbatim": "## Status-banner convention\nEach doc opens with a one-line status: **DRAFT for sign-off** / **SIGNED (date)** / **AS-BUILT (date + commits)** /\n**SUPERSEDED (→ pointer)**. The all-documentation-in-sync standing rule applies: when the code or a decision\nchanges, the doc moves with it."
+      "verbatim": "## Status-banner convention\nEach doc opens with a one-line status: **DRAFT for sign-off** / **SIGNED (date)** / **AS-BUILT (date + commits)** /\n**SUPERSEDED (→ pointer)**. The all-documentation-in-sync standing rule applies: when the code or a decision\nchanges, the doc moves with it.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-257",
@@ -5577,7 +5727,13 @@
         "code \\*\\*mechanics\\*\\* doing explanatory work"
       ],
       "rationale": "The line is drawn in the rule itself (cowork_design_doc_template.md:84-86): a pointer to where something lives is a reference, while naming code to explain the algorithm makes the prose unreadable to the musician the documentation standard requires it to serve (register entry D-124, the readable-by-a-musician rule).",
-      "verbatim": "straight from the architecture to the code and to the tests that protect it. The locator **stays** (user, 2026-06-24).\nWhat is *not* allowed is code **mechanics** doing explanatory work in the prose — function/type/variable names used to\n*explain the algorithm*, code formulas, or commit hashes woven into the reasoning. The line: the algorithm is\ndescribed in plain architect/music-theory language; the *pointer to where it lives* is a short, clearly-marked\nreference, not prose.\n- **Implementation locator** — the headers and `.cpp` files — in Section 3 (Context & scope), as a labelled pointer.\n- **Test locator** — the unit-test file(s) and any corpus/property validation tool — in Section 10 (Quality &\n  testing).\n(Deferred for layers not yet built; added when they are. A layer mid-rebuild names its current location, marked as\nsuch. User mandate 2026-06-22, refined 2026-06-24.)"
+      "verbatim": "straight from the architecture to the code and to the tests that protect it. The locator **stays** (user, 2026-06-24).\nWhat is *not* allowed is code **mechanics** doing explanatory work in the prose — function/type/variable names used to\n*explain the algorithm*, code formulas, or commit hashes woven into the reasoning. The line: the algorithm is\ndescribed in plain architect/music-theory language; the *pointer to where it lives* is a short, clearly-marked\nreference, not prose.\n- **Implementation locator** — the headers and `.cpp` files — in Section 3 (Context & scope), as a labelled pointer.\n- **Test locator** — the unit-test file(s) and any corpus/property validation tool — in Section 10 (Quality &\n  testing).\n(Deferred for layers not yet built; added when they are. A layer mid-rebuild names its current location, marked as\nsuch. User mandate 2026-06-22, refined 2026-06-24.)",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-258",
@@ -5599,7 +5755,13 @@
         "PRUNE / TIDY PASS checklist"
       ],
       "rationale": "The reason is stated with the deferral: backing the work up to the fork now is worth more than keeping the fork publishable at every moment, so the publishability question is batched into one pass rather than paid per commit. Related: register entry D-197, the distribution constraint.",
-      "verbatim": "> **Standing deferral (user, 2026-06-22):** \"back up now, tidy up files we don't want to publish later.\" This is the\n> running list of prune/tidy decisions to make **before any publish** of the fork (`origin = slimvince/MuseScore`).\n> Nothing here is to be acted on now — it is the to-do for the prune pass. Keep appending as items arise."
+      "verbatim": "> **Standing deferral (user, 2026-06-22):** \"back up now, tidy up files we don't want to publish later.\" This is the\n> running list of prune/tidy decisions to make **before any publish** of the fork (`origin = slimvince/MuseScore`).\n> Nothing here is to be acted on now — it is the to-do for the prune pass. Keep appending as items arise.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-259",
@@ -5621,7 +5783,13 @@
         "is a \\*\\*HARD STOP\\*\\* - never"
       ],
       "rationale": "The instance that produced it is recorded in the same file (cowork_prune_pass_checklist.md:7-18): a draft comment for the upstream issue was written carrying the constrained patch's content, before the constraint existed, and survives in the fork's history. The rule generalizes the one-patch prohibition into a pre-post check on every upstream contribution.",
-      "verbatim": "## 6. Standing guard (not a prune item — a permanent rule)\n- **Any** upstream GitHub comment / PR / contribution must be checked against the CLAUDE.md distribution constraint\n  **before** posting. A draft carrying a fork-local-constrained patch (`cfc7eb5e39`, #9444) is a **HARD STOP** — never\n  post. Non-constrained reports (e.g. #24673) are the user's normal call."
+      "verbatim": "## 6. Standing guard (not a prune item — a permanent rule)\n- **Any** upstream GitHub comment / PR / contribution must be checked against the CLAUDE.md distribution constraint\n  **before** posting. A draft carrying a fork-local-constrained patch (`cfc7eb5e39`, #9444) is a **HARD STOP** — never\n  post. Non-constrained reports (e.g. #24673) are the user's normal call.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-260",
@@ -5643,7 +5811,13 @@
         "evidence, never a result"
       ],
       "rationale": "Stated with the rule (cowork_bounded_context_design.md:21-26): the shipped product analyses the part of the score the user selected, and a layer often needs evidence from outside it to judge its edges. Separating the output span from the loaded span is what lets a layer read more music without changing what the user asked to have analysed.",
-      "verbatim": "**Invariant.** The analysis output covers **exactly the selection**; everything outside it is evidence, never a\nresult."
+      "verbatim": "**Invariant.** The analysis output covers **exactly the selection**; everything outside it is evidence, never a\nresult.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-261",
@@ -5666,7 +5840,13 @@
         "in-selection output stops changing"
       ],
       "rationale": "The reason is stated with the rule (cowork_bounded_context_design.md:61-68): guessing an amount is the un-knowledge-based move the contract exists to forbid, and convergence is self-validating - you have enough context exactly when adding more does not change the answer - which is also what makes the result independent of the extension step size.",
-      "verbatim": "3. A layer must distinguish **\"unavailable because not loaded\"** (→ request extension) from **\"unavailable because the\n   score starts/ends here\"** (→ proceed, truncated). Architectural Layer 1 reports which.\n4. A layer **outputs analysis only for the selection**; extended context is evidence, never labelled.\n5. A layer **never guesses how much** more context it needs — guessing an amount is the un-knowledge-based move this\n   contract forbids. It knows *what* it needs, not how far away that is, so it **extends incrementally and stops on a\n   principled condition**; the amount is **discovered, not chosen**.\n6. The principled stop is **convergence**: extend until the layer's **in-selection output stops changing** with\n   further context. This is self-validating — you have enough context exactly when adding more does not change the\n   answer — and it is what keeps the result independent of the extension step size (the equivalence invariant, §4). In\n   practice a layer uses a **domain proxy that *implies* convergence** rather than re-checking its whole output each\n   step (Architectural Layer 3 reach-back: *\"a settled, stable prevailing key is in view\"* — once a confident earlier\n   key is established, the change-cost/decay means reaching further back will not move the selection's leading-edge\n   key). The proxy is validated **once, in design**, to imply convergence."
+      "verbatim": "3. A layer must distinguish **\"unavailable because not loaded\"** (→ request extension) from **\"unavailable because the\n   score starts/ends here\"** (→ proceed, truncated). Architectural Layer 1 reports which.\n4. A layer **outputs analysis only for the selection**; extended context is evidence, never labelled.\n5. A layer **never guesses how much** more context it needs — guessing an amount is the un-knowledge-based move this\n   contract forbids. It knows *what* it needs, not how far away that is, so it **extends incrementally and stops on a\n   principled condition**; the amount is **discovered, not chosen**.\n6. The principled stop is **convergence**: extend until the layer's **in-selection output stops changing** with\n   further context. This is self-validating — you have enough context exactly when adding more does not change the\n   answer — and it is what keeps the result independent of the extension step size (the equivalence invariant, §4). In\n   practice a layer uses a **domain proxy that *implies* convergence** rather than re-checking its whole output each\n   step (Architectural Layer 3 reach-back: *\"a settled, stable prevailing key is in view\"* — once a confident earlier\n   key is established, the change-cost/decay means reaching further back will not move the selection's leading-edge\n   key). The proxy is validated **once, in design**, to imply convergence.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-262",
@@ -5688,7 +5868,13 @@
         "efficiency knob only"
       ],
       "rationale": "Two reasons are stated with the rule (cowork_bounded_context_design.md:74-81): the supplying layer holds no analysis knowledge, so it cannot know the smallest step that could plausibly change an answer; and it is mechanically forced anyway, because the supplier executes exactly one requested step and never evaluates convergence, which would be inference it does not do.",
-      "verbatim": "   layer; it is not fixed and not Architectural Layer 1's to decide.** Architectural Layer 1 is domain-blind, and no\n   single size fits every layer (Architectural Layer 3 probes at phrase/measure scale, Architectural Layer 4 at\n   harmony/slice scale), so the requester sets it to **its own natural inference scale** — the smallest step that\n   could plausibly change its output (knowledge, not a guess). It is an **efficiency knob only**: a larger increment\n   means fewer round-trips (and perhaps a slightly larger final loaded span), never a different answer, because\n   convergence (item 6) fixes the result. Mechanically this is forced — the requester owns the *extend → re-infer →\n   re-check* loop, and Architectural Layer 1's *extend* executes **exactly the one requested step and never evaluates\n   convergence** (that would be inference, which it does not do), so the increment can only be a per-call parameter\n   from the requester."
+      "verbatim": "   layer; it is not fixed and not Architectural Layer 1's to decide.** Architectural Layer 1 is domain-blind, and no\n   single size fits every layer (Architectural Layer 3 probes at phrase/measure scale, Architectural Layer 4 at\n   harmony/slice scale), so the requester sets it to **its own natural inference scale** — the smallest step that\n   could plausibly change its output (knowledge, not a guess). It is an **efficiency knob only**: a larger increment\n   means fewer round-trips (and perhaps a slightly larger final loaded span), never a different answer, because\n   convergence (item 6) fixes the result. Mechanically this is forced — the requester owns the *extend → re-infer →\n   re-check* loop, and Architectural Layer 1's *extend* executes **exactly the one requested step and never evaluates\n   convergence** (that would be inference, which it does not do), so the increment can only be a per-call parameter\n   from the requester.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-263",
@@ -5711,7 +5897,13 @@
         "truncated result is never presented as a complete one"
       ],
       "rationale": "It is principle #12 (no information loss) applied to the extension protocol: the fact that a layer wanted more evidence and could not get it is itself information a consumer needs, and dropping it would make a truncated reading indistinguishable from a fully-evidenced one.",
-      "verbatim": "10. **Denial/truncation is honest, never silent (merged 2026-07-02).** When an extension is refused (hard bound,\n   score boundary at a *selection* edge with the stop condition unmet, or a driver-level safety cap), the layer\n   proceeds on truncated evidence AND the affected output carries **`clipped-by-selection-edge`** provenance\n   (+ `cue-denied` where a request was actually refused) — a truncated result is never presented as a complete one.\n   Layer 6 (when resumed) surfaces these marks and the `extension-cue` tag (its §5.1 amendment); it never acts on them."
+      "verbatim": "10. **Denial/truncation is honest, never silent (merged 2026-07-02).** When an extension is refused (hard bound,\n   score boundary at a *selection* edge with the stop condition unmet, or a driver-level safety cap), the layer\n   proceeds on truncated evidence AND the affected output carries **`clipped-by-selection-edge`** provenance\n   (+ `cue-denied` where a request was actually refused) — a truncated result is never presented as a complete one.\n   Layer 6 (when resumed) surfaces these marks and the `extension-cue` tag (its §5.1 amendment); it never acts on them.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-264",
@@ -5733,7 +5925,13 @@
         "never a different computation"
       ],
       "rationale": "Stated as the correctness guard for the whole protocol: without it, incremental extension could silently produce an answer no single run would produce, and the result would depend on the extension granularity rather than on the music. It is the same guarantee re-slice equivalence gives Layer 2 (register entry D-050).",
-      "verbatim": "- **Equivalence invariant (the correctness guard).** The result after **any** sequence of extensions must equal a\n  **single fresh run over the final loaded span** — extension is an optimisation of *\"load more, then run from\n  scratch,\"* never a different computation. In practice the forward cascade is **bounded**: the new context changes\n  inference only where it actually reaches (a carried-in key affects the leading-edge slices and decays inward), so\n  only the affected slices re-infer — the same locality that makes the stop condition terminate, and which composes\n  with the existing *\"re-analyse a sub-range\"* capability."
+      "verbatim": "- **Equivalence invariant (the correctness guard).** The result after **any** sequence of extensions must equal a\n  **single fresh run over the final loaded span** — extension is an optimisation of *\"load more, then run from\n  scratch,\"* never a different computation. In practice the forward cascade is **bounded**: the new context changes\n  inference only where it actually reaches (a carried-in key affects the leading-edge slices and decays inward), so\n  only the affected slices re-infer — the same locality that makes the stop condition terminate, and which composes\n  with the existing *\"re-analyse a sub-range\"* capability.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-265",
@@ -5755,7 +5953,13 @@
         "re-inference cascade IS the forward-only contract"
       ],
       "rationale": "The distinction is drawn in the rule itself (cowork_bounded_context_design.md:115-118): a higher layer using a lower layer's service is control, not inference. It is recorded precisely because a reader could otherwise read the forward-only contract as forbidding extension, which would block the whole bounded-context design.",
-      "verbatim": "- **The re-inference cascade IS the forward-only contract, not an exception to it.** The extension **request** is a\n  data-supply call **down** to Architectural Layer 1 (a higher layer using a lower layer's service — control, not\n  inference). The new notes and every re-inference then flow **forward** (Architectural Layer 1 → 2 → 3 → …), exactly\n  as on a first run. **Inference never flows backward** — a later layer re-inferring cannot alter an earlier layer's\n  result. So an extension is precisely *\"ask down for more raw material, then infer forward again,\"* with no backward\n  inference edge anywhere; this is what makes it consistent with the project's forward-only analysis contract."
+      "verbatim": "- **The re-inference cascade IS the forward-only contract, not an exception to it.** The extension **request** is a\n  data-supply call **down** to Architectural Layer 1 (a higher layer using a lower layer's service — control, not\n  inference). The new notes and every re-inference then flow **forward** (Architectural Layer 1 → 2 → 3 → …), exactly\n  as on a first run. **Inference never flows backward** — a later layer re-inferring cannot alter an earlier layer's\n  result. So an extension is precisely *\"ask down for more raw material, then infer forward again,\"* with no backward\n  inference edge anywhere; this is what makes it consistent with the project's forward-only analysis contract.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-266",
@@ -5777,7 +5981,13 @@
         "Acceptance \\(the L6 gate"
       ],
       "rationale": "The reason is the design's own opening argument (cowork_bounded_context_design.md:14-16): the whole-score assumption is foundational, so building more layers on it bakes it deeper and unwinding it afterward is a cross-cutting, expensive retrofit. Gating the next layer on the contract being real, not merely written, is what stops that.",
-      "verbatim": "## §11 Acceptance (the L6 gate — user directive 2026-07-02)\n\n1. This design **ratified** (it was never signed; sign-off is now the first step).\n2. **Coded, L1–L5:** L1 build-selection + extend seam (interim rebuild allowed, §8); L2 re-slice-on-extend (done);\n   L3 reach-back activated as this design's request (from gated-off) ; L4's request-or-truncate path (uncoded today,"
+      "verbatim": "## §11 Acceptance (the L6 gate — user directive 2026-07-02)\n\n1. This design **ratified** (it was never signed; sign-off is now the first step).\n2. **Coded, L1–L5:** L1 build-selection + extend seam (interim rebuild allowed, §8); L2 re-slice-on-extend (done);\n   L3 reach-back activated as this design's request (from gated-off) ; L4's request-or-truncate path (uncoded today,",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-267",
@@ -5801,7 +6011,13 @@
         "no layer may claim Class P"
       ],
       "rationale": "Stated with the contract (cowork_confidence_contract.md:14-21): the architecture's forward-override mechanism numerically compares confidences across layers, and those quantities were incommensurable by construction - one layer publishing a sequence margin, another a composite, another an unbounded additive score against a clamped comparison. Weight fitting cannot repair a comparison between quantities with undefined semantics; it would only bury the incoherence in fitted constants.",
-      "verbatim": "Every published confidence declares exactly one **class**:\n\n- **Class M — decision margin.** \"How much better is the chosen reading than the best *different* reading, under this\n  layer's own scoring?\" A margin is a **rank statement**, not a probability. Raw margins are unbounded and\n  scorer-scale-dependent, so a Class-M confidence is published only **squashed to [0,1]** by a fixed monotone map\n  (the map's constants are precision-phase; the map itself is declared per layer). Class M is what every layer can\n  compute today.\n- **Class P — calibrated probability.** \"With what empirical frequency is a decision at this confidence correct,\n  measured against ground truth?\" Class P is the **Stage-5 target**: a fitted reliability map per (layer × decision\n  type) converts the Class-M value into Class P. Until fitted, no layer may claim Class P."
+      "verbatim": "Every published confidence declares exactly one **class**:\n\n- **Class M — decision margin.** \"How much better is the chosen reading than the best *different* reading, under this\n  layer's own scoring?\" A margin is a **rank statement**, not a probability. Raw margins are unbounded and\n  scorer-scale-dependent, so a Class-M confidence is published only **squashed to [0,1]** by a fixed monotone map\n  (the map's constants are precision-phase; the map itself is declared per layer). Class M is what every layer can\n  compute today.\n- **Class P — calibrated probability.** \"With what empirical frequency is a decision at this confidence correct,\n  measured against ground truth?\" Class P is the **Stage-5 target**: a fitted reliability map per (layer × decision\n  type) converts the Class-M value into Class P. Until fitted, no layer may claim Class P.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-268",
@@ -5824,7 +6040,13 @@
         "Abstention semantics are therefore uniform"
       ],
       "rationale": "Each rule names the failure it prevents (cowork_confidence_contract.md:41-48): treating a margin as a probability, comparing two margins from different scorers without a declared conversion, and re-interpreting a carried confidence downstream are all named as contract violations. The abstention rule exists so that 'uncertain' means one thing across layers rather than being re-invented per layer.",
-      "verbatim": "**Rules of use:**\n- **U1.** A confidence attaches to a **named decision** (key-of-slice, chord-of-slice, membership-of-note,\n  cadence-vote, boundary-strength, function-of-unit) — never to \"the layer\" in general.\n- **U2.** At a **layer boundary** (any value another layer may read), a confidence is **[0,1], class-declared, with\n  its decision named**. Unbounded internal scores are permitted *inside* a layer but must be squashed at the boundary.\n- **U3.** A consumer may compare two confidences **only within one class and one declared frame** (§4). Treating a\n  Class-M margin as a probability (or comparing two Class-M values produced by different scorers without a declared\n  conversion) is a contract violation.\n- **U4. Provenance.** A carried-forward confidence keeps its (source layer, decision, class) identity; no silent\n  re-interpretation downstream.\n- **U5. Abstention.** The \"uncertain\" mark ≡ the decision's confidence is below the layer's declared bar (a\n  precision-phase constant). Abstention semantics are therefore uniform: *low confidence in the declared class*, not\n  a separate ad-hoc judgment."
+      "verbatim": "**Rules of use:**\n- **U1.** A confidence attaches to a **named decision** (key-of-slice, chord-of-slice, membership-of-note,\n  cadence-vote, boundary-strength, function-of-unit) — never to \"the layer\" in general.\n- **U2.** At a **layer boundary** (any value another layer may read), a confidence is **[0,1], class-declared, with\n  its decision named**. Unbounded internal scores are permitted *inside* a layer but must be squashed at the boundary.\n- **U3.** A consumer may compare two confidences **only within one class and one declared frame** (§4). Treating a\n  Class-M margin as a probability (or comparing two Class-M values produced by different scorers without a declared\n  conversion) is a contract violation.\n- **U4. Provenance.** A carried-forward confidence keeps its (source layer, decision, class) identity; no silent\n  re-interpretation downstream.\n- **U5. Abstention.** The \"uncertain\" mark ≡ the decision's confidence is below the layer's declared bar (a\n  precision-phase constant). Abstention semantics are therefore uniform: *low confidence in the declared class*, not\n  a separate ad-hoc judgment.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-269",
@@ -5846,7 +6068,13 @@
         "The comparison frames"
       ],
       "rationale": "It is principle #6 (one path per concern) applied to the override arithmetic: the contract exists because the same comparison was being re-stated with different semantics at each site. Stating it once, with each instance's conversion declared, is what makes the threshold interpretable rather than an arbitrary scale factor.",
-      "verbatim": "**New frames require declaration here.** Any future override site (e.g. the A-4 cadence-less confirmation channels;\nthe recognition consumer's schema-contradiction override, `cowork_progression_schema_design.md` §2) must add its\nframe row to this section before build — an undeclared cross-layer comparison is a contract violation."
+      "verbatim": "**New frames require declaration here.** Any future override site (e.g. the A-4 cadence-less confirmation channels;\nthe recognition consumer's schema-contradiction override, `cowork_progression_schema_design.md` §2) must add its\nframe row to this section before build — an undeclared cross-layer comparison is a contract violation.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-270",
@@ -5868,7 +6096,13 @@
         "held-out fold is touched exactly once"
       ],
       "rationale": "The protocol names what it prevents (cowork_prefit_gates.md:25-28): a headline figure graded on data that helped fit it, including the subtle forms - a vocabulary derived from all-corpus counts, a smoothing constant chosen on the grading data, a threshold checked against the final metric. The grouping rule is a stated leakage guard: some chorales share an analysis file.",
-      "verbatim": "2. **The split: 5-fold cross-validation [prov-ratify] over the 326 WiR-covered pieces, grouped by\n   WiR analysis file.** The 326 pieces resolve to 324 distinct analysis files (`docs/score_inventory.md`\n   — some chorales share an analysis); pieces sharing an analysis file share a fold (leakage guard).\n   Fold assignment is generated once with a fixed, committed seed and committed as a stamped artifact\n   (`tools/` + manifest, the #17f pattern); it never changes across fit events (a re-split is a\n   protocol amendment).\n3. **Everything fitted is fitted inside the training folds only** — the generative tables, the\n   combination weights, AND the fitted structure choices: the degree vocabulary's count threshold and\n   pooling, the smoothing constants, the L2 penalty. Model selection (λ, thresholds) uses inner\n   validation within the training folds; the held-out fold is touched exactly once, by the final\n   fitted model of that fold."
+      "verbatim": "2. **The split: 5-fold cross-validation [prov-ratify] over the 326 WiR-covered pieces, grouped by\n   WiR analysis file.** The 326 pieces resolve to 324 distinct analysis files (`docs/score_inventory.md`\n   — some chorales share an analysis); pieces sharing an analysis file share a fold (leakage guard).\n   Fold assignment is generated once with a fixed, committed seed and committed as a stamped artifact\n   (`tools/` + manifest, the #17f pattern); it never changes across fit events (a re-split is a\n   protocol amendment).\n3. **Everything fitted is fitted inside the training folds only** — the generative tables, the\n   combination weights, AND the fitted structure choices: the degree vocabulary's count threshold and\n   pooling, the smoothing constants, the L2 penalty. Model selection (λ, thresholds) uses inner\n   validation within the training folds; the held-out fold is touched exactly once, by the final\n   fitted model of that fold.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-271",
@@ -5890,7 +6124,13 @@
         "total effective free parameters"
       ],
       "rationale": "The protocol names what it prevents (cowork_prefit_gates.md:64-65): overfitting in one shot on a 326-piece single-composer corpus, and hand-picking hidden inside the words 'derived from counts'. Publishing the inventory as a generated artifact before fitting is principle #17(f) applied to the fit itself - the budget cannot be asserted in prose after the fact.",
-      "verbatim": "   table, its dimensions, its raw cell-count histogram from the training data, and the resulting free\n   parameter count. No prose-only budget.\n2. **Budget rule:** a table cell keeps its own maximum-likelihood estimate iff its training count\n   ≥ 20 [prov-ratify]; below that it is pooled to its declared parent class (the pooling hierarchy\n   declared per table in the artifact) under additive smoothing with a single declared α per table.\n   The degree vocabulary's rare-class pooling (factorization §1) is the same rule applied to the state\n   space itself.\n3. **Global sanity bound:** total effective free parameters ≤ training tokens / 10 [prov-ratify],\n   verified in the artifact. The combination-weight vector stays ≤ 14 weights, L2-penalized, per the\n   ratified staged-fitting decision. *(Amended ≤ 12 → ≤ 14 by user ratification 2026-07-19 at the\n   weight-fit dispatch: the ratified factorization gives the four cadence features their own fitted\n   weights, putting the enumerated vector at 12–13; the amendment is the lawful #22 path — capacity\n   impact nil, thousands of training tokens per weight either way. Original text: \"≤ 12 weights (one\n   per factor plus the declared-mode strength)\".)*"
+      "verbatim": "   table, its dimensions, its raw cell-count histogram from the training data, and the resulting free\n   parameter count. No prose-only budget.\n2. **Budget rule:** a table cell keeps its own maximum-likelihood estimate iff its training count\n   ≥ 20 [prov-ratify]; below that it is pooled to its declared parent class (the pooling hierarchy\n   declared per table in the artifact) under additive smoothing with a single declared α per table.\n   The degree vocabulary's rare-class pooling (factorization §1) is the same rule applied to the state\n   space itself.\n3. **Global sanity bound:** total effective free parameters ≤ training tokens / 10 [prov-ratify],\n   verified in the artifact. The combination-weight vector stays ≤ 14 weights, L2-penalized, per the\n   ratified staged-fitting decision. *(Amended ≤ 12 → ≤ 14 by user ratification 2026-07-19 at the\n   weight-fit dispatch: the ratified factorization gives the four cadence features their own fitted\n   weights, putting the enumerated vector at 12–13; the amendment is the lawful #22 path — capacity\n   impact nil, thousands of training tokens per weight either way. Original text: \"≤ 12 weights (one\n   per factor plus the declared-mode strength)\".)*",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-272",
@@ -5912,7 +6152,13 @@
         "remain protocol constants, not"
       ],
       "rationale": "It closes the route by which a governance constant becomes a knob: without the distinction, a fold count or a pooling threshold could be moved in response to a disappointing measurement and the move would look like ordinary calibration. The document states the same rule twice (cowork_prefit_gates.md:5-6 and :17-19), once for the ratification and once for the constants themselves.",
-      "verbatim": "Provisional numeric choices inside the protocols (fold count, cell-count threshold, confidence level)\nare marked **[prov-ratify]** — they become binding at ratification but remain protocol constants, not\nfitted values; changing one later is a protocol amendment (#22), not a tuning act."
+      "verbatim": "Provisional numeric choices inside the protocols (fold count, cell-count threshold, confidence level)\nare marked **[prov-ratify]** — they become binding at ratification but remain protocol constants, not\nfitted values; changing one later is a protocol amendment (#22), not a tuning act.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-273",
@@ -5935,7 +6181,13 @@
         "Adoption PASS requires ALL of"
       ],
       "rationale": "The protocol names what it prevents (cowork_prefit_gates.md:100-103): negotiating the hard stop on a live diff. The incremental non-increase ratchet was written for incremental change, and an architecture replacement moves runs in both directions by design - so the exceptional-event variant is written while no diff exists, which is principle #22's requirement (register entry D-185).",
-      "verbatim": "3. **Adoption PASS requires ALL of:**\n   - **(i) Held-out:** A's key-agree vs the LOCAL key exceeds the current baseline beyond the\n     piece-bootstrap CI on every preset; root-agree and RN-agree do not degrade beyond the CI (#24 —\n     a difference within the CI is not a finding, in either direction). **(i-b) The modulation-rate\n     guard:** A's key changes per piece sit within 0.75×–1.25× of the ground truth's rate. **The\n     key-HOME column is TRACKED with a mandatory explained decomposition** against the computed GT"
+      "verbatim": "3. **Adoption PASS requires ALL of:**\n   - **(i) Held-out:** A's key-agree vs the LOCAL key exceeds the current baseline beyond the\n     piece-bootstrap CI on every preset; root-agree and RN-agree do not degrade beyond the CI (#24 —\n     a difference within the CI is not a finding, in either direction). **(i-b) The modulation-rate\n     guard:** A's key changes per piece sit within 0.75×–1.25× of the ground truth's rate. **The\n     key-HOME column is TRACKED with a mandatory explained decomposition** against the computed GT",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-274",
@@ -5957,7 +6209,13 @@
         "so non-adoption has a lawful exit too"
       ],
       "rationale": "It is principle #23 (an end-state principle needs a lawful transition) applied in both directions: the sanction that permits two paths for one concern must say how the duplication ends whichever way the decision goes, so that a declared migration state cannot quietly become a permanent one.",
-      "verbatim": "5. **The reverse map (if A is not adopted):** A's module is removed whole (one revertible commit), the\n   fold/fit artifacts are kept as measurement history, and the retirement map is void — declared now\n   so non-adoption has a lawful exit too."
+      "verbatim": "5. **The reverse map (if A is not adopted):** A's module is removed whole (one revertible commit), the\n   fold/fit artifacts are kept as measurement history, and the retirement map is void — declared now\n   so non-adoption has a lawful exit too.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-275",
@@ -5979,7 +6237,13 @@
         "which fitted values produced this analysis"
       ],
       "rationale": "It is principle #16 (every measurement stamped to its corpus and its tooling) applied at the record level rather than at the measurement level: an analysis that has left the module can otherwise no longer be attributed to the values that produced it, which makes any later reproduction check impossible.",
-      "verbatim": "Every published record carries its instrument provenance: the embedded table set's source-artifact\nhashes and the selected weight-vector identity (both compiled in per Decision D1), plus the\ndecoder's version. A consumer — and any future measurement — can always answer \"which fitted\nvalues produced this analysis\" from the record itself; a provenance-less analysis cannot exist."
+      "verbatim": "Every published record carries its instrument provenance: the embedded table set's source-artifact\nhashes and the selected weight-vector identity (both compiled in per Decision D1), plus the\ndecoder's version. A consumer — and any future measurement — can always answer \"which fitted\nvalues produced this analysis\" from the record itself; a provenance-less analysis cannot exist.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-276",
@@ -6001,7 +6265,13 @@
         "the published fact is the counts"
       ],
       "rationale": "The reason is stated with the decision (cowork_notation_output_contract.md:146-147): the two-mode key plus the count table informationally dominates the retired mode labels, so publishing counts rather than a label loses nothing (#12) while removing an inference nobody had established. Register entry D-054 records the twenty-one-mode vocabulary this supersedes on the record surface.",
-      "verbatim": "For each key run and each scale degree 1..7 of its key: the sounding duration and onset count of\nEVERY chromatic inflection of that degree actually observed in the run (computed from the\npublished L1 note facts relative to (tonic, mode)). This is the whole publication — counted,\nun-rounded, nothing hand-set: minor's variable 6̂/7̂ (Dorian color, subtonic-vs-leading-tone),\nmajor's lowered 7̂ (Mixolydian color) or raised 4̂ (Lydian color), and every borrowing appear as\ntheir actual counts. The presentation layer may FORMAT a reading from it (\"Dorian-leaning\"); the\npublished fact is the counts, with establishment status (§5.4). No 21-value mode label is\ninferred or published anywhere (C1); the two-mode key plus this table informationally dominates\nthe retired labels (#12)."
+      "verbatim": "For each key run and each scale degree 1..7 of its key: the sounding duration and onset count of\nEVERY chromatic inflection of that degree actually observed in the run (computed from the\npublished L1 note facts relative to (tonic, mode)). This is the whole publication — counted,\nun-rounded, nothing hand-set: minor's variable 6̂/7̂ (Dorian color, subtonic-vs-leading-tone),\nmajor's lowered 7̂ (Mixolydian color) or raised 4̂ (Lydian color), and every borrowing appear as\ntheir actual counts. The presentation layer may FORMAT a reading from it (\"Dorian-leaning\"); the\npublished fact is the counts, with establishment status (§5.4). No 21-value mode label is\ninferred or published anywhere (C1); the two-mode key plus this table informationally dominates\nthe retired labels (#12).",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-277",
@@ -6023,7 +6293,13 @@
         "measured read-only \\*\\*before\\*\\* it is built"
       ],
       "rationale": "The exemption's reason is stated with the rule (cowork_engage_arc_plan.md:101-113): the requirement exists to stop a precision claim being built before it is checked, and a refactor that must come out byte-identical has already stated its falsifiable prediction. The instance that produced the gate is recorded beside it - the joint key-and-chord step, measured not to pay before it was built.",
-      "verbatim": "**★ MEASURE-BEFORE-BUILD (ratified 2026-07-07, arc #12 lesson) — since 2026-07-10 the MIDDLE stage of the\n#17 Premise-Gate funnel: desk-simulate (hours) → read-only probe (a session) → build (an arc).** Every\nStage-3+ item additionally owes a #17 premise ledger (FACT/THEORY/ASSUMPTION), a written quantitative\nprediction per assumption, and a desk simulation over known failing cases BEFORE its probe or build is opened\n(see CLAUDE.md #17–#19 + `cowork_premise_gate_reflection.md`). Byte-identical structural refactors are exempt\nfrom the prediction requirement — byte-identity IS their prediction. A build whose case rests on an *anticipated*"
+      "verbatim": "**★ MEASURE-BEFORE-BUILD (ratified 2026-07-07, arc #12 lesson) — since 2026-07-10 the MIDDLE stage of the\n#17 Premise-Gate funnel: desk-simulate (hours) → read-only probe (a session) → build (an arc).** Every\nStage-3+ item additionally owes a #17 premise ledger (FACT/THEORY/ASSUMPTION), a written quantitative\nprediction per assumption, and a desk simulation over known failing cases BEFORE its probe or build is opened\n(see CLAUDE.md #17–#19 + `cowork_premise_gate_reflection.md`). Byte-identical structural refactors are exempt\nfrom the prediction requirement — byte-identity IS their prediction. A build whose case rests on an *anticipated*",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-278",
@@ -6046,7 +6322,13 @@
       ],
       "rationale": "The measurement is stated with the shelving, and so is the principle #12 reconciliation: the key alternatives ARE carried, so the key discovery is not discarded; the chord under an alternative key is never computed in this path, so nothing computed is discarded; and the measured 1.4 per cent where it would differ is even-odds noise. Choosing not to compute a measured-worthless possibility is an evidence-based decision, not information loss.",
       "verbatim": "precision gain is measured read-only **before** it is built, exactly as the joint step was. **The joint key↔chord\nstep is SHELVED — measured NOT to pay** (arc #12: net +0.05–0.16 pp over ~6200 regions, harm 75–90 % of\ncorrection, oracle ceiling +0.6 pp, coupled-minority net ~0, fire-rate only 1.4 % — the carried alternative\nkeys are diatonic-collection siblings so the chord is almost always key-stable). It **drops off the Stage-3\nbuild inventory.** The #12 reconciliation (no loss): the key alternatives ARE carried (the key discovery is not\ndiscarded); the chord under an alternative key is **never computed** in this path (so nothing computed is\ndiscarded), and the measurement shows the ~1.4 % where it would differ is 50/50 noise — choosing not to compute\na *measured-worthless* possibility is an evidence-based decision, not information loss. **Distinction:** this\ngate applies to **precision claims** (\"will building X make analysis more correct?\" — measure first); the\n**structural refactors** (decoder-replaces-tangle, the migrations) are justified by cleanliness and verified",
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-279",
@@ -6068,7 +6350,13 @@
         "DEPENDENCY-ORDERED AUDIT CERTIFICATION"
       ],
       "rationale": "Each condition names the measurement or the absence that produced it (cowork_engage_arc_plan.md:66-92): the override measured at minus 756, the missing establishment record for the decode chain, the pedal premise at agreement 0.20 to 0.50 on two to five cases, and the failed calibration that stands as the warning against assuming a fit will repair an incoherent quantity. It is principle #18 at architecture scale - new construction may not carry load on unaudited foundations.",
-      "verbatim": "**★ STAGE-3 ENTRY GATE (ratified 2026-07-10 with #17–#19; evidence `cowork_l1_l5_premise_debt_audit.md`).**\nBefore any E4/L5 engagement wiring can reach production:\n- **(EG-1) Tier-1 defusal is a PREREQUISITE, not an inventory item:** the resolver selection re-ordering\n  (arc #9 — the as-built `resolveAbstained` still selects progression-first at confidence 1.0, the channel"
+      "verbatim": "**★ STAGE-3 ENTRY GATE (ratified 2026-07-10 with #17–#19; evidence `cowork_l1_l5_premise_debt_audit.md`).**\nBefore any E4/L5 engagement wiring can reach production:\n- **(EG-1) Tier-1 defusal is a PREREQUISITE, not an inventory item:** the resolver selection re-ordering\n  (arc #9 — the as-built `resolveAbstained` still selects progression-first at confidence 1.0, the channel",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-280",
@@ -6090,7 +6378,13 @@
         "no Roman-numeral inference"
       ],
       "rationale": "The reason is stated with the rule: symbol- and Roman-numeral-derived signals are lossy and entangled with the formatter. It is the inference/presentation boundary (register entries D-016 and D-017) stated as an input restriction - reading the rendered form back in would make an analysis depend on its own presentation layer.",
-      "verbatim": "4. **Gates operate on structured fields only**: no chord-symbol string parsing,\n   no Roman-numeral inference. This is now a standing rule for any future gate\n   or scoring change. Symbol- and Roman-numeral-derived signals are too lossy\n   and too entangled with the formatter to be reliable inputs to chord\n   classification."
+      "verbatim": "4. **Gates operate on structured fields only**: no chord-symbol string parsing,\n   no Roman-numeral inference. This is now a standing rule for any future gate\n   or scoring change. Symbol- and Roman-numeral-derived signals are too lossy\n   and too entangled with the formatter to be reliable inputs to chord\n   classification.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-281",
@@ -6112,7 +6406,13 @@
         "floor below which corpus measurements revert"
       ],
       "rationale": "The failure that produced it is recorded with it: the change was lost to a hard reset and went undetected for three weeks, and only a stale binary holding the documented baseline made the loss visible at all. It is principle #19 applied to a measurement tool - a figure produced without these fields is not the figure it claims to be.",
-      "verbatim": "3. **batch_analyze output schema**: `batch_analyze.cpp` must emit\n   `rootPitchClass`, `bassPitchClass`, `quality`, `bassIsRoot` on every\n   alternative entry. This activates the previously-dormant\n   `_matches_alternative` reclassification in `compare_analyses.py` and is the\n   floor below which corpus measurements revert to pre-Iter-36 counts (~700\n   BIR=false). Committed in Iter 36 (recovered in `5df8421114` after a git\n   reset lost the original commit)."
+      "verbatim": "3. **batch_analyze output schema**: `batch_analyze.cpp` must emit\n   `rootPitchClass`, `bassPitchClass`, `quality`, `bassIsRoot` on every\n   alternative entry. This activates the previously-dormant\n   `_matches_alternative` reclassification in `compare_analyses.py` and is the\n   floor below which corpus measurements revert to pre-Iter-36 counts (~700\n   BIR=false). Committed in Iter 36 (recovered in `5df8421114` after a git\n   reset lost the original commit).",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-282",
@@ -6211,7 +6511,13 @@
         "whole-score SHELVED with evidence",
         "whole-score variant SHELVED with evidence",
         "bounded-window cache \\(CC's recommendation\\)"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-287",
@@ -6233,7 +6539,13 @@
         "[Kk]ey-as-distribution\\b[^.\\n]{0,40}SHELVED",
         "Step 3 \\(key-as-distribution\\) is shelved"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-288",
@@ -6256,7 +6568,13 @@
         "beam widening; also notes beam\\s+shelved",
         "`docs/beam_widening_design\\.md` SHELVED"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-289",
@@ -6277,7 +6595,13 @@
       "patterns": [
         "precision lives in\\s+emission \\+ functional labeling, NOT search/path",
         "precision lives in the emission model \\+ functional\\s+labeling, NOT in search/decode"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-290",
@@ -6298,7 +6622,13 @@
       "patterns": [
         "the key-agnostic LOCAL cadence approach has HIT ITS PRECISION CEILING"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-291",
@@ -6319,7 +6649,13 @@
       "patterns": [
         "\\*\\*Do NOT wire 6-tonic-i\\*\\*",
         "Crediting rule NOT warranted"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-292",
@@ -6339,7 +6675,13 @@
       "patterns": [
         "FITTING-POOL LICENSE CONSTRAINT",
         "ship-intended weights fit only on the PD/CC0/CC-BY pool"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-293",
@@ -6358,7 +6700,13 @@
       "status_source": "Recorded in `cowork_handoff_archive.md` (the Stage-5 fitter block) as design constraint 4c of `cowork_stage5_fitter_design.md`. Consistent with, and earlier than, D-003 (inference is preset-independent; presets are presentation concerns) — this states the FITTING side of the same separation. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): stated as standing rule (f) of the joint estimator's specification. Former home preserved (#12): `cowork_handoff_archive.md:2363`, the Stage-5 fitter block, as design constraint 4c.",
       "patterns": [
         "OPTIMIZE FOR IDIOMS ONLY"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-294",
@@ -6380,7 +6728,13 @@
         "the ONLY ground truth\\s+is the human annotation",
         "music21 is NOT ground truth",
         "Never describe the gate as \\\"ground-truth"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-295",
@@ -6399,7 +6753,13 @@
       "status_source": "Recorded in `cowork_handoff_archive.md` (the standing-records block) as item E-14 of `cowork_product_tool_register.md`, with a note that a pointer into the architecture document was owed at its next edit. This pass found no such pointer in the register's own home census, so the owed act appears undischarged. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written at the head of `ARCHITECTURE.md` §12 as the governing requirement over the user interface. This also discharges the pointer-into-the-architecture-document act the archive recorded as owed at its next edit. Former home preserved (#12): `cowork_handoff_archive.md:2507`, the standing-records block, as item E-14 of `cowork_product_tool_register.md`.",
       "patterns": [
         "ZERO INFORMATION LOSS TO THE END USER"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-296",
@@ -6419,7 +6779,13 @@
       "patterns": [
         "FERMATA/OFF-LIMITS CLARIFICATION",
         "engraving is ALLOWED from any code we may edit"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-297",
@@ -6439,7 +6805,13 @@
       "patterns": [
         "#12 CORRECTION \\(recorded",
         "you cannot lose what you never had"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-298",
@@ -6459,7 +6831,13 @@
       "status_source": "Recorded in `cowork_handoff_archive.md` (the 2026-06-14 option-C block) as a new standing method, pointing at the handoff's standing block and the roadmap. Realised as the dependency-ordered per-layer certification plan (`OPEN_ITEMS.md` OI-84, complete 2026-07-12) and as the audit protocol's pass ordering. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]] — process rules go to `CLAUDE.md` or the audit protocol): written as P10 of `cowork_audit_protocol.md`, beside P8 and P9, which are the method this rule says WHEN to apply. Former home preserved (#12): `cowork_handoff_archive.md:3771`, the 2026-06-14 option-C block.",
       "patterns": [
         "NEW STANDING METHOD recorded \\(user\\): layer-by-layer audit"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-299",
@@ -6480,7 +6858,13 @@
       "patterns": [
         "Do NOT add a negative-margin guard"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-300",
@@ -6501,7 +6885,13 @@
       "patterns": [
         "Gate M \\(Minor.Diminished TYPE-A\\): DEFERRED"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-301",
@@ -6522,7 +6912,13 @@
       "patterns": [
         "Gate N \\(Major.Minor TYPE-A\\): DEFERRED"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-302",
@@ -6543,7 +6939,13 @@
       "patterns": [
         "further local scoring fixes for inversions"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-303",
@@ -6562,7 +6964,13 @@
       "status_source": "Recorded in `STATUS_ARCHIVE.md`'s “architectural memos retained as guardrails” list. It is load-bearing now: the non-chord-tone filter is the named lever at [[OI-55]] and [[OI-68]], and `docs/nct_detection_design.md` exists on disk. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written into the Layer-4 section of `ARCHITECTURE.md` §3.3 as a deferred capability with its shape constrained in advance. The defense stays 'derivation not recorded' — the record gives none and none was invented. Former home preserved (#12): `STATUS_ARCHIVE.md:963`, the architectural-memos list.",
       "patterns": [
         "must be Shape A \\(NCT-aware chord ID\\) not Shape B"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-304",
@@ -6581,7 +6989,13 @@
       "status_source": "Recorded in `STATUS_ARCHIVE.md`; the design memo it names, `docs/extension_stripping_policy.md`, exists on disk. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written into `ARCHITECTURE.md` §2.15 as a cross-cutting analysis contract, which is that section's declared scope. Former home preserved (#12): `STATUS_ARCHIVE.md:943`.",
       "patterns": [
         "analyzers always emit maximal output"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-305",
@@ -6600,7 +7014,13 @@
       "status_source": "Recorded in `STATUS_ARCHIVE.md`'s “architectural memos retained as guardrails” list. It sharpens **D-066** (chord symbols written in the score are never analyzer input) from one annotation kind to a content test over all of them. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written beside D-066 in `ARCHITECTURE.md` §4.2, where the chord-symbol ban it generalizes already stood. The defense stays 'derivation not recorded'. Former home preserved (#12): `STATUS_ARCHIVE.md:961`.",
       "patterns": [
         "Generalized chord-symbol-ban \\(content-based"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-306",
@@ -6620,7 +7040,13 @@
       "patterns": [
         "ReachBackOptions\\.enabled=false. stays the shipped default"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-307",
@@ -6640,7 +7066,13 @@
       "status_source": "Recorded in `STATUS_ARCHIVE.md` (session 21e, the gap-analysis rulings). It is NOT in `cowork_design_doc_template.md`, which is the ratified home of the writing standards and states the implementation/test locator rule without this constraint on the locator's form — checked at the source. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written into `cowork_design_doc_template.md` beside the implementation/test locator rule (D-257) it constrains. Homed THERE rather than in `CLAUDE.md` because `CLAUDE.md`'s own Conventions entry names that file the ONE home for the writing standards (#6), and the phase-1f entry recorded the gap as the locator rule stating no constraint on the locator's form. Former home preserved (#12): `STATUS_ARCHIVE.md:242`, session 21e.",
       "patterns": [
         "function/. anchor, not raw line number"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-308",
@@ -6660,7 +7092,13 @@
       "status_source": "Recorded in `STATUS_ARCHIVE.md` (session 21, at the user's ratification of the external architecture review's corpus-expansion amendment). Related but distinct from **D-225** (a corpus is regenerated before its baseline figures are updated) and from the re-baseline discipline in `CLAUDE.md` gate block (A). Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]] — measurement conventions go to the gate block): written into `CLAUDE.md` gate block (A) beside the re-baseline discipline it bounds. Former home preserved (#12): `STATUS_ARCHIVE.md:250`. The same rule is stated on the corpus side at `cowork_score_census.md`'s decision-tier block, which the homed text names.",
       "patterns": [
         "new corpora enter as research-tier"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-309",
@@ -6680,7 +7118,13 @@
       "status_source": "Recorded in `STATUS_ARCHIVE.md` as the stated design principle of the validation-corpus roadmap. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written as hard rule 7 of `docs/score_inventory.md`, the document `CLAUDE.md` directs every score or corpus task to read first. Former home preserved (#12): `STATUS_ARCHIVE.md:2938`, the validation-corpus roadmap.",
       "patterns": [
         "kept on the roadmap and labeled .Deferred"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-310",
@@ -6699,7 +7143,13 @@
       "status_source": "Recorded in `STATUS_ARCHIVE.md` (the jazz-corpus status block). It is the standing evidence behind [[OI-7]] (establish a jazz ground-truth corpus or de-scope the Jazz correctness claims) and behind the A-7 empirically-unvalidated mark. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written into `ARCHITECTURE.md` §4.2's jazz-validation block, directly beneath the bass-injection measurement that is its defense. Former home preserved (#12): `STATUS_ARCHIVE.md:1580`, the jazz-corpus status block.",
       "patterns": [
         "not scoring failures\\. No accepted jazz-specific"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-311",
@@ -6720,7 +7170,13 @@
       "patterns": [
         "stays parked BY the ratified engage map"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-312",
@@ -6740,7 +7196,13 @@
       "status_source": "Recorded in `cowork_stage5_fitter_design.md` (SIGNED, user, 2026-07-04) at open item O-11, and again in `STATUS_ARCHIVE.md:186`. It is the origin of the full-output-surface half of principle #15 (**D-178**): the same entry records the evidence-method lesson that inertness evidence must measure the winner AND the carry. Found by the phase-1f final-partition wave, 2026-08-02, reading `cowork_stage5_fitter_design.md` in full (SIGNED, user, 2026-07-04). NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).",
       "patterns": [
         "alternatives\\[\\]. IS inside the byte-identity acceptance contract"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-313",
@@ -6760,7 +7222,13 @@
       "status_source": "Recorded in `cowork_stage5_fitter_design.md` (SIGNED, user, 2026-07-04) as the eighth of its numbered architecture decisions, and applied in the same document at §4.5: the one measured non-monotone row was deferred and declared rather than mapped. Found by the phase-1f final-partition wave, 2026-08-02, reading `cowork_stage5_fitter_design.md` in full (SIGNED, user, 2026-07-04). NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).",
       "patterns": [
         "Calibration maps are monotone or deferred"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-314",
@@ -6780,7 +7248,13 @@
       "status_source": "Recorded in `cowork_stage5_fitter_design.md` (SIGNED, user, 2026-07-04) at open item O-10, and tracked as a standing obligation at [[OI-36]] — which is an open-items row, not a home. Found by the phase-1f final-partition wave, 2026-08-02, reading `cowork_stage5_fitter_design.md` in full (SIGNED, user, 2026-07-04). NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).",
       "patterns": [
         "RETAINED structural rules carry"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-315",
@@ -6800,7 +7274,13 @@
       "status_source": "Recorded in `STATUS_ARCHIVE.md`. VERIFIED AT THE OBJECTS 2026-08-02: commit `b1ba746` deletes exactly that one line from `src/engraving/dom/chordlist.cpp`, only an upstream header-update commit has touched the file since, and the line is absent at HEAD. This is a THIRD edit to MuseScore's own code beside **D-198** and **D-199**, and it is not in `CLAUDE.md`'s “Local patches — do not revert” section, which carries exactly two subsections; the non-conformance against the ruled **D-229** is rowed at [[OI-273]]. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).",
       "patterns": [
         "One-line fix in MuseScore core"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-316",
@@ -6839,7 +7319,13 @@
       "patterns": [
         "Do not retry this fix"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-318",
@@ -6860,7 +7346,13 @@
       "patterns": [
         "Do not retry a short-region external merger"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-319",
@@ -6881,7 +7373,13 @@
       "patterns": [
         "Do not retry any Phase D tone-aggregation approach"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-320",
@@ -6902,7 +7400,13 @@
       "patterns": [
         "Do not retry the absent-root guard"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-321",
@@ -6923,7 +7427,13 @@
       "patterns": [
         "there is no\\s+epsilon anywhere in the ranking"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-322",
@@ -6944,7 +7454,13 @@
       "patterns": [
         "requires a full corpus A/B on both presets"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-323",
@@ -6964,7 +7480,13 @@
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.",
       "patterns": [
         "Do not reintroduce `keyTonicPc \\+ scale` for a membership test"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-324",
@@ -6985,7 +7507,13 @@
       "patterns": [
         "Retirement is global, so a rule live on ANY carrier is retained"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-325",
@@ -7006,7 +7534,13 @@
       "patterns": [
         "identity-mutating gates are\\s+retired/folded BEFORE the beam widens"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-326",
@@ -7027,7 +7561,13 @@
       "patterns": [
         "emit the full path \\+ per-node alternatives"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-327",
@@ -7048,7 +7588,13 @@
       "patterns": [
         "Gate R reads the \\*\\*pipeline-reconstructed full"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-328",
@@ -7069,7 +7615,13 @@
       "patterns": [
         "the transient\\s+is not low-scoring"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-329",
@@ -7092,7 +7644,13 @@
         "a chord never listed can never be chosen"
       ],
       "legacy_subject": true,
-      "legacy_principle_transferred": true
+      "legacy_principle_transferred": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-330",
@@ -7112,7 +7670,13 @@
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "Never a pooled recompute"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-331",
@@ -7132,7 +7696,13 @@
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "filled before the trichotomy and never pruned"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-332",
@@ -7152,7 +7722,13 @@
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "never asserted absent, and never synthesized"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-333",
@@ -7172,7 +7748,13 @@
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "never a structural branch"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-334",
@@ -7192,7 +7774,13 @@
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "never a structural per-idiom branch"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-335",
@@ -7212,7 +7800,13 @@
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "the three-role summary is a derived read-out"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-336",
@@ -7232,7 +7826,13 @@
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "Cadence detection is key-agnostic and votes for the key"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-337",
@@ -7252,7 +7852,13 @@
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "Tonicization is the default; modulation requires cadence confirmation"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-338",
@@ -7272,7 +7878,13 @@
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "it never re-derives"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-339",
@@ -7292,7 +7904,13 @@
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "A confident earlier inference can be overturned by decisive later evidence"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-340",
@@ -7312,7 +7930,13 @@
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "the emitted reading IS the selected source's committed identity"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-341",
@@ -7332,7 +7956,13 @@
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
       "patterns": [
         "§5\\.0 grammar completion"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-342",
@@ -7353,7 +7983,13 @@
       "patterns": [
         "engagement \\(Phase 5d\\) is \\*\\*deferred indefinitely\\*\\*"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-343",
@@ -7373,7 +8009,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "no other architectural layer generates or re-scores key/mode candidates"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-344",
@@ -7394,7 +8036,13 @@
       "patterns": [
         "never as the unrecognized scale itself"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-345",
@@ -7415,7 +8063,13 @@
       "patterns": [
         "first architectural layer where the user's style preset"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-346",
@@ -7436,7 +8090,13 @@
       "patterns": [
         "union of those top-K sets across all slices"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-347",
@@ -7457,7 +8117,13 @@
       "patterns": [
         "cheap-to-stay \\+ grows-with-key-distance"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-348",
@@ -7479,7 +8145,13 @@
         "not semitone distance and not a",
         "There is no \"how many slices\" threshold"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-349",
@@ -7500,7 +8172,13 @@
       "patterns": [
         "not\\s+the gap between the top two scores at the slice"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-350",
@@ -7521,7 +8199,13 @@
       "patterns": [
         "CLOSED by D-L3a"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-351",
@@ -7542,7 +8226,13 @@
       "patterns": [
         "A dedicated best-sequence decoder for key/mode"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-352",
@@ -7562,7 +8252,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "The bar, with its partition stated"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-353",
@@ -7582,7 +8278,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "Two quality goals, measured separately"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-354",
@@ -7603,7 +8305,13 @@
       "patterns": [
         "decoder-private settings are exhausted"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-355",
@@ -7624,7 +8332,13 @@
       "patterns": [
         "identified shared-scorer lever, measured"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-356",
@@ -7645,7 +8359,13 @@
       "patterns": [
         "Brittle leading-tone presence-gate"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-357",
@@ -7666,7 +8386,13 @@
       "patterns": [
         "not\\*\\* a standalone Layer-3 emission"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-358",
@@ -7687,7 +8413,13 @@
       "patterns": [
         "Dominant-implication key evidence in the emission"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-359",
@@ -7707,7 +8439,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The document's banner records `Status: v1 DELIVERED (Cowork, 2026-07-02); for user disposition of the acquisition tiers (§5)` — the user disposition it names covers the acquisition tiers, not this rule. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "a new corpus was discovered\" is a census"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-360",
@@ -7727,7 +8465,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "A source enters the registry only with all five fields decided"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-361",
@@ -7747,7 +8491,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "Dedupe by work, not by container"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-362",
@@ -7767,7 +8517,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "citation-closed"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-363",
@@ -7787,7 +8543,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "closed by ruling, not enumeration"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-364",
@@ -7807,7 +8569,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The section is headed as a user observation of 2026-07-03; the record says the trigger is instituted but does not name who instituted it. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "does not discharge the duty"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-365",
@@ -7827,7 +8595,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The section is headed as a user question of 2026-07-03; its first run is recorded EXECUTED and DISPOSED 2026-07-04, with the user's rulings at that disposition recorded in the same paragraph. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "but the search is step 3 of 3"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-366",
@@ -7847,7 +8621,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The cell records `★ SCOPE RULING RATIFIED (user, 2026-07-04)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "audio-domain, out of corpus scope"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-367",
@@ -7867,7 +8647,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The rule is recorded as the user's, 2026-07-03. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "scored against\\s+the FULL needs-vector at intake"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-368",
@@ -7887,7 +8673,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The protocol is recorded as the user's, 2026-07-03. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "NEVER decided by enthusiasm or by default silence"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-369",
@@ -7907,7 +8699,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "never re-mistake it for GT"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-370",
@@ -7927,7 +8725,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "implied-polyphony half CONFIRMED ABSENT"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-371",
@@ -7947,7 +8751,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "no symbol→realization dataset exists"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-372",
@@ -7967,7 +8777,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The user's act recorded on this row is the ADOPTION of the need (2026-07-04); the build-not-download conclusion is a measured search outcome and names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "CONFIRMED build-not-download"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-373",
@@ -7987,7 +8803,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The cell marks it `(Wave-3 MEASURED, corrects the audit)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "the 27 TAVERN A/B pairs"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-374",
@@ -8007,7 +8829,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL, in the Wave-3 addendum text of the dual-annotator row. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "RECORD-ONLY"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-375",
@@ -8027,7 +8855,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "all real label sources research-only/proprietary"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-376",
@@ -8048,7 +8882,13 @@
       "patterns": [
         "a bounded coupling step, NOT a unified"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-377",
@@ -8068,7 +8908,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step the document designs is shelved (**D-278**); this prohibition is not about that step — it is stated as what any placement must avoid, and is flagged in the record as written so the build does not drift there. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "A placement that WOULD violate acyclicity"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-378",
@@ -8089,7 +8935,13 @@
       "patterns": [
         "cannot reproduce the multi-pass pipeline chord"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-379",
@@ -8109,7 +8961,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step the document designs is shelved (**D-278**); this statement is about what is and is not measurable, and stands independently of it — the same document records the shelving probe's own fire-rate as a structural proxy rather than the exact condition. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "not pre-computable read-only"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-380",
@@ -8130,7 +8988,13 @@
       "patterns": [
         "load-bearing exclusion tail"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-381",
@@ -8151,7 +9015,13 @@
       "patterns": [
         "distinct-root-first carry"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-382",
@@ -8171,7 +9041,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The document's banner records `Status: DESIGN (CC, 2026-07-07)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ RE-CLASSIFIED contract-home 2026-08-02 (CC, phase 1j, under the TRANSITIVE-AUTHORITY refinement of the fifth home case, user 2026-08-02): `cowork_layer5_engagement_design.md` carries a status banner and its authority is the user's transitively — the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arc #9 to it by name (`:41`), arc #11 to it by name (`:46`), and states that the Stage-3 build inventory 'is enumerated at `cowork_layer5_engagement_design.md` §9.2' (`:53-55`). The missing `ARCHITECTURE.md` delegation pointer — the gap the ruling says a missing delegation owes — was written into the Layer-5 section in the same commit.",
       "patterns": [
         "select by joint consistency"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-383",
@@ -8191,7 +9067,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The document's banner records `Status: DESIGN (CC, 2026-07-07)`; the measured basis it consumes is the separately-ratified fine-grain-override finding. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ RE-CLASSIFIED contract-home 2026-08-02 (CC, phase 1j, under the TRANSITIVE-AUTHORITY refinement of the fifth home case, user 2026-08-02): `cowork_layer5_engagement_design.md` carries a status banner and its authority is the user's transitively — the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arc #9 to it by name (`:41`), arc #11 to it by name (`:46`), and states that the Stage-3 build inventory 'is enumerated at `cowork_layer5_engagement_design.md` §9.2' (`:53-55`). The missing `ARCHITECTURE.md` delegation pointer — the gap the ruling says a missing delegation owes — was written into the Layer-5 section in the same commit.",
       "patterns": [
         "progression only breaks ties"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-384",
@@ -8211,7 +9093,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The separate step this boundary reserves a place for was afterwards shelved against measurement (**D-278**); the boundary itself is a statement about what the function layer does not own and is unaffected by that shelving. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ RE-CLASSIFIED contract-home 2026-08-02 (CC, phase 1j, under the TRANSITIVE-AUTHORITY refinement of the fifth home case, user 2026-08-02): `cowork_layer5_engagement_design.md` carries a status banner and its authority is the user's transitively — the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arc #9 to it by name (`:41`), arc #11 to it by name (`:46`), and states that the Stage-3 build inventory 'is enumerated at `cowork_layer5_engagement_design.md` §9.2' (`:53-55`). The missing `ARCHITECTURE.md` delegation pointer — the gap the ruling says a missing delegation owes — was written into the Layer-5 section in the same commit.",
       "patterns": [
         "a \\*\\*distinct step, not L5 selection"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-385",
@@ -8231,7 +9119,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. Part 1 of the same document had left the home open as a hinge; Part 2 records that it decides it. The build is separately hard-gated on the owed measurement being settled on an established pedal-dense corpus ([[OI-4]]). NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ RATIFIED (user, 2026-08-02) with the plain restatement rephrased at the user's direction: the pedaled note can be a note OTHER than the bass - the voice-independent class (D-207) governs; the home decision (additive reader, never an overwriting second analysis) is unchanged by which voice holds the pedal. ★ RE-CLASSIFIED contract-home 2026-08-02 (CC, phase 1j, under the TRANSITIVE-AUTHORITY refinement of the fifth home case, user 2026-08-02): `cowork_layer5_engagement_design.md` carries a status banner and its authority is the user's transitively — the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arc #9 to it by name (`:41`), arc #11 to it by name (`:46`), and states that the Stage-3 build inventory 'is enumerated at `cowork_layer5_engagement_design.md` §9.2' (`:53-55`). The missing `ARCHITECTURE.md` delegation pointer — the gap the ruling says a missing delegation owes — was written into the Layer-5 section in the same commit.",
       "patterns": [
         "reader over the decoder's Layer-4 carry"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-386",
@@ -8251,7 +9145,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The unification it defers to is tracked as [[OI-11]]. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ FLAG (CC, 2026-08-02, the phase-1i full read of `cowork_structural_integrity_audit.md`): the SECOND alternative this entry offers — 'through the one unified primitive' — was measured at the code NOT to exist. The four different-root scans are not one decision (divergent predicate: root-only at three sites, root+quality at the fourth; divergent element type and result-use), and the promote-to-front primitive is not the vehicle; the unification was reported as a STOP and declared for an adjudication the record does not show being made (**D-403**; rowed [[OI-278]]). The FIRST alternative — reading the margin off the carry's own ranking — is untouched. Recorded as a flag, not as a status change: the entry is not withdrawn and nothing is inferred about what replaces the second alternative. ★ ANNOTATED (user ruling 2026-08-02, OI-278): the second alternative struck (D-403's measurement); the first alternative is the decision's operative content. ★ RE-CLASSIFIED contract-home 2026-08-02 (CC, phase 1j, under the TRANSITIVE-AUTHORITY refinement of the fifth home case, user 2026-08-02): `cowork_layer5_engagement_design.md` carries a status banner and its authority is the user's transitively — the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arc #9 to it by name (`:41`), arc #11 to it by name (`:46`), and states that the Stage-3 build inventory 'is enumerated at `cowork_layer5_engagement_design.md` §9.2' (`:53-55`). The missing `ARCHITECTURE.md` delegation pointer — the gap the ruling says a missing delegation owes — was written into the Layer-5 section in the same commit.",
       "patterns": [
         "adds \\*\\*no fourth\\s*\\n?\\s*scan"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-387",
@@ -8271,7 +9171,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The record notes it dissolves an earlier proposal for a new advisory field into an enrichment of the existing one. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ RE-CLASSIFIED contract-home 2026-08-02 (CC, phase 1j, under the TRANSITIVE-AUTHORITY refinement of the fifth home case, user 2026-08-02): `cowork_layer5_engagement_design.md` carries a status banner and its authority is the user's transitively — the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arc #9 to it by name (`:41`), arc #11 to it by name (`:46`), and states that the Stage-3 build inventory 'is enumerated at `cowork_layer5_engagement_design.md` §9.2' (`:53-55`). The missing `ARCHITECTURE.md` delegation pointer — the gap the ruling says a missing delegation owes — was written into the Layer-5 section in the same commit.",
       "patterns": [
         "UNIFY into one structured open-mark"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-388",
@@ -8291,7 +9197,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-07-03 — asks A1–A8 ratified in full)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "motion-type-led features"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-389",
@@ -8311,7 +9223,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A3, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "two-tier voice model"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-390",
@@ -8331,7 +9249,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A4, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "at whole-selection granularity"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-391",
@@ -8351,7 +9275,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A8, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "cross-axis dependency rule"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-392",
@@ -8371,7 +9301,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A2's second half, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "staged components behind design gates"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-393",
@@ -8391,7 +9327,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document's banner records that this clarification was folded in BEFORE signing and that the signing ratified asks A1–A8 in full. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "full ranked alternative list"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-394",
@@ -8411,7 +9353,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-07-03 — asks A1–A8 ratified in full)` and, separately, that the top-note default is closed as-built. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "never silent, never per-source"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-395",
@@ -8431,7 +9379,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. All three floor values are recorded as precision-phase constants, not fixed here. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "the three declared floors"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-396",
@@ -8451,7 +9405,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A6, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "undefined, not zero"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-397",
@@ -8471,7 +9431,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A7, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "the claims registry"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-398",
@@ -8491,7 +9457,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document records this as one of two build declarations the design owed and the build closed; the closure names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "SEMITONE-EXACT"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-399",
@@ -8511,7 +9483,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document records this as the second of two build declarations the design owed and the build closed, decided at build by measurement rather than at design time; the closure names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "z-scored\\s*\\n?\\s*concatenation"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-400",
@@ -8531,7 +9509,13 @@
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A5, recorded ratified in full at the banner. The propagation into the architecture document's span typology is recorded as riding the build. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
       "patterns": [
         "the typology extension"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-401",
@@ -8552,7 +9536,13 @@
         "pre-L5 = FQ-1, FQ-3, FQ-5, FQ-6, FQ-7"
       ],
       "legacy_subject": false,
-      "verbatim": "**In one line:** *pre-L5 = FQ-1, FQ-3, FQ-5, FQ-6, FQ-7 (portable unification wins); part-of-L5/E4 = FQ-2,\nFQ-4, FQ-8 (the legacy-path tangles the decoder + §6-block dissolution retire); then R9 splits the file\nlast.* This adds no new stage — it slots the audit's fixes into the plan the roadmap already has."
+      "verbatim": "**In one line:** *pre-L5 = FQ-1, FQ-3, FQ-5, FQ-6, FQ-7 (portable unification wins); part-of-L5/E4 = FQ-2,\nFQ-4, FQ-8 (the legacy-path tangles the decoder + §6-block dissolution retire); then R9 splits the file\nlast.* This adds no new stage — it slots the audit's fixes into the plan the roadmap already has.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-402",
@@ -8573,7 +9563,13 @@
         "pure cap-artifact that dissolves"
       ],
       "legacy_subject": true,
-      "verbatim": "**One honest discrimination (a true cap-artifact vs a legitimate targeted promotion):** Iter 91 (#6) uses\n`kPromoteAppendOnly` with `stopBelowThreshold=false` — it can pull a **below-threshold** bass-rooted target.\nThat reach is **not** dissolved by uncapping-at-threshold; it is a genuinely different, deliberate targeted\npromotion (it wants a specific structural target regardless of score). So: the **inversion-append (#4) is a\npure cap-artifact that dissolves**; Iter 91's below-threshold pull is a targeted promotion that stays. This\nis exactly the VIOLATION-vs-legitimate line the audit must draw."
+      "verbatim": "**One honest discrimination (a true cap-artifact vs a legitimate targeted promotion):** Iter 91 (#6) uses\n`kPromoteAppendOnly` with `stopBelowThreshold=false` — it can pull a **below-threshold** bass-rooted target.\nThat reach is **not** dissolved by uncapping-at-threshold; it is a genuinely different, deliberate targeted\npromotion (it wants a specific structural target regardless of score). So: the **inversion-append (#4) is a\npure cap-artifact that dissolves**; Iter 91's below-threshold pull is a targeted promotion that stays. This\nis exactly the VIOLATION-vs-legitimate line the audit must draw.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-403",
@@ -8594,7 +9590,13 @@
         "the four scans are NOT one decision"
       ],
       "legacy_subject": true,
-      "verbatim": "- **FQ-1 — ⛔ STOP-and-reported (not forced).** At code the four scans are NOT one decision: divergent\n  \"differs\" predicate (rootPc-only #1/#2/#3 vs `sameChordSymbol` = root+quality #4), element type, and\n  result-use; no byte-identical single primitive exists and `promoteToWinner` (promote-to-front of a\n  *specific* target) is not the vehicle. The \"one decision, four sites\" premise over-counts at code\n  granularity — declared for Cowork adjudication (report §5)."
+      "verbatim": "- **FQ-1 — ⛔ STOP-and-reported (not forced).** At code the four scans are NOT one decision: divergent\n  \"differs\" predicate (rootPc-only #1/#2/#3 vs `sameChordSymbol` = root+quality #4), element type, and\n  result-use; no byte-identical single primitive exists and `promoteToWinner` (promote-to-front of a\n  *specific* target) is not the vehicle. The \"one decision, four sites\" premise over-counts at code\n  granularity — declared for Cowork adjudication (report §5).",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-404",
@@ -8615,7 +9617,13 @@
         "STOP-and-deferred to E4"
       ],
       "legacy_subject": true,
-      "verbatim": "- **FQ-3 — ⛔ STOP-and-deferred to E4 (UNCLEAR-7 resolved → fold into E4).** Byte-identically relocatable\n  and decoder-independent, BUT E4-entangled: the decoder (already seeded by `findTemporalContext` at\n  `regionanalyzer.cpp:899-902`, `decoder.commit()≡advanceTemporalContext`) is the E4-decided owner of\n  regional temporal context (ARCHITECTURE.md D-P4/D-BRIDGE/1068: the cold walk is superseded). Relocating\n  to an interim L4 home now is the \"redone at E4\" case; most-invasive item (new region unit + notation\n  wrapper + test relocation). Deferred, not forced (report §6)."
+      "verbatim": "- **FQ-3 — ⛔ STOP-and-deferred to E4 (UNCLEAR-7 resolved → fold into E4).** Byte-identically relocatable\n  and decoder-independent, BUT E4-entangled: the decoder (already seeded by `findTemporalContext` at\n  `regionanalyzer.cpp:899-902`, `decoder.commit()≡advanceTemporalContext`) is the E4-decided owner of\n  regional temporal context (ARCHITECTURE.md D-P4/D-BRIDGE/1068: the cold walk is superseded). Relocating\n  to an interim L4 home now is the \"redone at E4\" case; most-invasive item (new region unit + notation\n  wrapper + test relocation). Deferred, not forced (report §6).",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-405",
@@ -8636,7 +9644,13 @@
         "S9 adjudicated"
       ],
       "legacy_subject": true,
-      "verbatim": "- **FQ-7 — ✅ RESOLVED `56b06462db`.** S8 constants sourced from the shared symbols. **S9 adjudicated\n  KEPT (load-bearing, NOT dead):** the `resolveKeyAndModeRanked@585` feeds `greedyExpandSegmentation@851`\n  + `findTemporalContext@900` (the grid); dropping it would move the grid. Report-only, no change."
+      "verbatim": "- **FQ-7 — ✅ RESOLVED `56b06462db`.** S8 constants sourced from the shared symbols. **S9 adjudicated\n  KEPT (load-bearing, NOT dead):** the `resolveKeyAndModeRanked@585` feeds `greedyExpandSegmentation@851`\n  + `findTemporalContext@900` (the grid); dropping it would move the grid. Report-only, no change.",
+      "entry_ratified": {
+        "date": "2026-08-02",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-406",
@@ -8658,7 +9672,13 @@
         "only coupling is the consistency",
         "one way \\(catalog"
       ],
-      "rationale": "One owner per concern (guiding principle #6), applied to a case where two components could each plausibly have held the knowledge. The one-way consistency test is what keeps the split honest, and it has already earned itself: running it at the consumer build on 2026-07-02 found 6 entries using 11 root motions the grammar did not license, all of them musically correct — so they were ruled grammar gaps rather than catalog errors, and the amendment closing them was ratified 2026-07-03."
+      "rationale": "One owner per concern (guiding principle #6), applied to a case where two components could each plausibly have held the knowledge. The one-way consistency test is what keeps the split honest, and it has already earned itself: running it at the consumer build on 2026-07-02 found 6 entries using 11 root motions the grammar did not license, all of them musically correct — so they were ruled grammar gaps rather than catalog errors, and the amendment closing them was ratified 2026-07-03.",
+      "entry_ratified": {
+        "date": "2026-08-03",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-407",
@@ -8679,7 +9699,13 @@
         "only supplies ranked candidates",
         "the firewall line"
       ],
-      "rationale": "Stated in the document as the firewall line (§6): the component holds structural content and returns ranked structural matches, while the weighting, the threshold and the decision are precision-phase work at the consumer. Adding or correcting an entry is a content change here; tuning how strongly an entry fires is a change there. This keeps the catalog free of fitted values, so it can be shared by an analysis consumer and a future composition consumer that would weight it differently."
+      "rationale": "Stated in the document as the firewall line (§6): the component holds structural content and returns ranked structural matches, while the weighting, the threshold and the decision are precision-phase work at the consumer. Adding or correcting an entry is a content change here; tuning how strongly an entry fires is a change there. This keeps the catalog free of fitted values, so it can be shared by an analysis consumer and a future composition consumer that would weight it differently.",
+      "entry_ratified": {
+        "date": "2026-08-03",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-408",
@@ -8700,7 +9726,13 @@
         "Hold voice-leading",
         "only by its harmonic pattern"
       ],
-      "rationale": "Recorded as component decision D5 with its rejected alternative: holding voice-leading here was considered and refused because it is a different dimension with its own future layer. The consequence is carried as a stated risk (§9) rather than hidden — a consumer must not read a galant entry as full schema recognition."
+      "rationale": "Recorded as component decision D5 with its rejected alternative: holding voice-leading here was considered and refused because it is a different dimension with its own future layer. The consequence is carried as a stated risk (§9) rather than hidden — a consumer must not read a galant entry as full schema recognition.",
+      "entry_ratified": {
+        "date": "2026-08-03",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-409",
@@ -8721,7 +9753,13 @@
         "no binary match/no-match",
         "must handle an empty result"
       ],
-      "rationale": "Stated with the rule: this is the same shape the inference layers use, which carry ranked alternatives with a confidence rather than a forced single answer (the cross-cutting contract, D-027). Requiring the consumer to handle an empty list is what stops a recogniser from inventing a match to have something to return."
+      "rationale": "Stated with the rule: this is the same shape the inference layers use, which carry ranked alternatives with a confidence rather than a forced single answer (the cross-cutting contract, D-027). Requiring the consumer to handle an empty list is what stops a recogniser from inventing a match to have something to return.",
+      "entry_ratified": {
+        "date": "2026-08-03",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-410",
@@ -8742,7 +9780,13 @@
         "realisation is exact and whole",
         "partial matcher"
       ],
-      "rationale": "The split follows the project's firewall between structure and fitted values: the decision structure is settled now, in the specification, so the later fitting event chooses numbers rather than a design. The as-built exactness is verified at the recogniser rather than asserted — the document records that no intermediate score can arise in the first version because no partial match can."
+      "rationale": "The split follows the project's firewall between structure and fitted values: the decision structure is settled now, in the specification, so the later fitting event chooses numbers rather than a design. The as-built exactness is verified at the recogniser rather than asserted — the document records that no intermediate score can arise in the first version because no partial match can.",
+      "entry_ratified": {
+        "date": "2026-08-03",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-411",
@@ -8763,7 +9807,13 @@
         "rotation rule \\(as built",
         "never as three more entries"
       ],
-      "rationale": "The reason is in the rule itself: storing a rotation as a separate entry would make one convention into four records, which is the duplication the catalog's one-entry-per-convention organisation exists to avoid (§6, one encyclopedia, not per-style silos). Recorded as verified at the catalog rather than assumed."
+      "rationale": "The reason is in the rule itself: storing a rotation as a separate entry would make one convention into four records, which is the duplication the catalog's one-entry-per-convention organisation exists to avoid (§6, one encyclopedia, not per-style silos). Recorded as verified at the catalog rather than assumed.",
+      "entry_ratified": {
+        "date": "2026-08-03",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-412",
@@ -8784,7 +9834,13 @@
         "entry-point rule",
         "may enter at any member"
       ],
-      "rationale": "The same organisation reason as the rotation rule: the common short tail is a way of entering the one pattern, not a second pattern, so it is expressed as a matching rule on one entry rather than as extra records. The document states the rule where the entry is defined, so a reader cannot meet the entry without meeting what counts as realising it."
+      "rationale": "The same organisation reason as the rotation rule: the common short tail is a way of entering the one pattern, not a second pattern, so it is expressed as a matching rule on one entry rather than as extra records. The document states the rule where the entry is defined, so a reader cannot meet the entry without meeting what counts as realising it.",
+      "entry_ratified": {
+        "date": "2026-08-03",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-413",
@@ -8805,7 +9861,13 @@
         "Upper-structure / voicing substitution",
         "a voicing, not a function"
       ],
-      "rationale": "Follows from the component's stated scope: the catalog holds functions and the operations that replace one function with another, and a voicing device changes neither. The record notes the exclusion is stated defensively rather than because anything asked for it."
+      "rationale": "Follows from the component's stated scope: the catalog holds functions and the operations that replace one function with another, and a voicing device changes neither. The record notes the exclusion is stated defensively rather than because anything asked for it.",
+      "entry_ratified": {
+        "date": "2026-08-03",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-414",
@@ -8826,7 +9888,13 @@
         "Generative where possible",
         "generative where it can be"
       ],
-      "rationale": "Recorded as component decision D3 with its rejected alternative: a fully enumerated flat list was refused as combinatorial and because it hides the systematic structure that makes the applied and substitute apparatus one idea rather than dozens."
+      "rationale": "Recorded as component decision D3 with its rejected alternative: a fully enumerated flat list was refused as combinatorial and because it hides the systematic structure that makes the applied and substitute apparatus one idea rather than dozens.",
+      "entry_ratified": {
+        "date": "2026-08-03",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-415",
@@ -8843,11 +9911,17 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "`docs/implementation_roadmap.md`:10-12, stated as \"Standing rule for this roadmap\". The document is dated 2026-06-10 at `:3`; no date or ratifier is stated for the rule itself. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue.",
+      "status_source": "`docs/implementation_roadmap.md`:10-12, stated as \"Standing rule for this roadmap\". The document is dated 2026-06-10 at `:3`; no date or ratifier is stated for the rule itself. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)",
       "patterns": [
         "Standing rule for this roadmap",
         "only be marked done with the evidence listed"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-03",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-416",
@@ -8856,7 +9930,7 @@
       "verbatim": "**⛔ TWO DEFERRED STRUCTURAL REFACTORS — DO NOT FORGET (user mandate 2026-06-14):** (1) **Stage 3.5**\nthe physical split of `chordanalyzer.cpp` along the layer seams + iteration-API renames — DEFERRED until\nthe layer boundaries stabilize; (2) **Stage 5** the dissolution of the post-hoc gate-correction layer\n(Gates A–L) into fitted weights — the gates are still load-bearing (3.4 retired none). Neither blocks the\ncurrent Stage-4 key work, but both are OWED and must be surfaced at every planning checkpoint until done.\nMirrored in `cowork_handoff.md` (top standing block).",
       "plain": "Two pieces of restructuring were postponed rather than dropped: splitting the large chord-analysis source file along its layer seams (with the iteration-era function names renamed), and dissolving the layer of after-the-fact correction rules into fitted weights. Neither may be quietly forgotten — each planning checkpoint has to raise them until they are done.",
       "rationale": "Each half carries its own stated reason. The file split waits because the layer boundaries have not stabilized — splitting before they do would mean splitting twice (the same reason register entry D-311 records as \"split once\"). The correction-rule dissolution waits because the rules are still load-bearing: the gate-retirement stage retired none of them, so removing them now would remove work nothing else does. The surfacing obligation is the remedy for the failure mode a deferral has — a postponed item with no carrier becomes a dropped one.",
-      "home": "docs/implementation_roadmap.md:20",
+      "home": "docs/implementation_roadmap.md:28",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -8864,11 +9938,17 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "`docs/implementation_roadmap.md`:20-25, recorded as a user mandate of 2026-06-14 and mirrored, the record says, in `cowork_handoff.md`'s top standing block. Beside register entry D-311, which records the FILE-SPLIT half alone as deferred until after the retirements, and D-401, which sequences it last; the half registered nowhere until now is the gate-dissolution, together with the surfacing obligation that covers both. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue.",
+      "status_source": "`docs/implementation_roadmap.md`:20-25, recorded as a user mandate of 2026-06-14 and mirrored, the record says, in `cowork_handoff.md`'s top standing block. Beside register entry D-311, which records the FILE-SPLIT half alone as deferred until after the retirements, and D-401, which sequences it last; the half registered nowhere until now is the gate-dissolution, together with the surfacing obligation that covers both. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.) ★ THE PHASE-1l DISPOSITION WAS NOT WRITTEN — the check that had to precede it did not confirm its premise, so it is a STOP (#13) rather than a ruling. What the check found, at the code and the record, 2026-08-03: HALF (1)'s file split is DELIVERED, not owed — committed `41f7c65f63` on 2026-06-17 ('split chordanalyzer.cpp into single-responsibility layer TUs (byte-identical)'), three days after this mandate deferred it, producing the five sibling translation units `chordsymbolformatter.cpp` / `chordvoicing.cpp` / `chorddiagnose.cpp` / `chordpostpasses.cpp` / `postscoringgates.cpp` beside the residual oracle, and recorded as the current layout at `docs/scoring_model.md`:26-37. It IS the same named act as D-311's R9 — `docs/implementation_roadmap.md` writes 'R9 `chordanalyzer.cpp` file-split (OWED refactor #1)' in so many words. HALF (1)'s iteration-API RENAMES are NOT done: `applyIter8691Pedal` is still the declared name in `chordanalyzer.h`, defined in `chordpostpasses.cpp` and called from `sectionanalyzer.cpp`:450 and `regionanalyzer.cpp`:1011. And the premise that both halves' subjects are legacy is FALSE: one of the five translation units the split produced, `chordsymbolformatter.cpp`, is LIVE production code on the record arm (`notationimplodebridge.cpp`:1159-1170 and :1189-1191 call `formatSymbol` / `formatNashvilleNumber` on the record arm explicitly; `sectionrecordadapter.h`:69-71 names them the record path's presentation derivations), and `STATUS_ARCHIVE.md`:114 records the residual `chordanalyzer.cpp` as one that 'SURVIVES the engagement; R9 *splits* `chordanalyzer.cpp`, does not delete it'. A disposition of 'superseded by D-418 — the subject is deleted rather than refactored' would therefore have been false of the subject. The contradiction of record this surfaced is rowed as `OPEN_ITEMS.md` OI-286; the disposition itself waits on the user. The surfacing obligation stands in the meantime, unchanged.",
       "patterns": [
         "TWO DEFERRED STRUCTURAL REFACTORS",
         "surfaced at every planning checkpoint"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-03",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-417",
@@ -8877,7 +9957,7 @@
       "verbatim": "**★★ ENGAGE CRITERIA + RETIREMENT MAP (RATIFIED user 2026-07-02; FOLDED here from `cowork_engage_criteria.md`\n2026-07-02 — that file is now a tombstone; this roadmap is the single home).** Replaces \"engage deferred\nindefinitely\" with \"deferred until these CRITERIA (date open)\"; E3 is its own user-ratification event.\n- **Gates (all must hold):** **G1** spine complete: L4+L5 dormant-validated (✅) + **L6 built dormant** + the A-1\n  contract as-built deltas closed (D-L3a remains). **G2** (measured by the E0 instrument): zero new class-(b) on the\n  case-identity gate; class-(a) per the two-tier policy; **RN vs DCML ≥ legacy on the granularity-robust unit**, all\n  presets; correct-abstention scored separately from wrong commits. **G3** perf: p95 ≤ legacy×1.10 (✅ measured\n  ~3.7× faster). **G4** coverage sealed + snapshot-strategy declared in advance. **G5** docs synced same increment.\n  **G6** user ratifies E3.",
       "plain": "Putting the rebuilt analysis layers into production is no longer \"postponed indefinitely\" but \"postponed until six named conditions all hold\": the layer stack complete and validated while dormant; no new meaningful chord-root errors and Roman numerals at least as good as the old path on the measurement unit that does not move with how finely the music is cut; speed within a tenth of the old path; test coverage sealed with the snapshot strategy declared beforehand; documentation updated in the same step; and the user ratifying the switch. Turning it on by default is its own user decision, not a step inside an engineering plan.",
       "rationale": "The reason is the roadmap's founding ordering principle — no surprises: each stage carries an explicit verification gate that must pass before the next starts (`:6-8`), and a production switch is the largest such step. Two of the six gates cite measurements rather than judgment (the class-(b) and two-tier policy under register entries D-115/D-191, and a measured speed comparison recorded as ~3.7x faster), and the sixth reserves the switch itself to the user, which is guiding principle #14 applied to the biggest behavior change the programme had.",
-      "home": "docs/implementation_roadmap.md:122",
+      "home": "docs/implementation_roadmap.md:141",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -8885,11 +9965,17 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "`docs/implementation_roadmap.md`:122-137, recorded as RATIFIED by the user 2026-07-02 and folded here from `cowork_engage_criteria.md`, which the same passage declares a tombstone — \"this roadmap is the single home\", an explicit home declaration. ★ AN OBSERVATION, NOT A STATUS CHANGE: the production switch that actually happened took a different route — the joint estimator was adopted on the batch surface 2026-07-26 (D-005) and on the notation surface 2026-07-27 (D-010), by the OI-178/notation-switch arc, not by this document's E1-E5 staging, and the criteria's G1 names a dormant L6 that was never built. The record contains no ruling that supersedes these criteria, so the entry carries the record's own status (LIVE) and the observation is recorded rather than resolved; it is rowed as `OPEN_ITEMS.md` OI-284. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue.",
+      "status_source": "`docs/implementation_roadmap.md`:122-137, recorded as RATIFIED by the user 2026-07-02 and folded here from `cowork_engage_criteria.md`, which the same passage declares a tombstone — \"this roadmap is the single home\", an explicit home declaration. ★ AN OBSERVATION, NOT A STATUS CHANGE: the production switch that actually happened took a different route — the joint estimator was adopted on the batch surface 2026-07-26 (D-005) and on the notation surface 2026-07-27 (D-010), by the OI-178/notation-switch arc, not by this document's E1-E5 staging, and the criteria's G1 names a dormant L6 that was never built. The record contains no ruling that supersedes these criteria, so the entry carries the record's own status (LIVE) and the observation is recorded rather than resolved; it is rowed as `OPEN_ITEMS.md` OI-284. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.) ★ SCOPED by the user, 2026-08-03 (the OI-284 question, ruled option (iii) — a narrower SUBJECT, a different subject): these criteria govern engaging the DORMANT L4/L5 SPINE, not the joint estimator's adoption. They STAY LIVE and are NOT retired; what was ruled is what they are about. The production switch that happened put a different architecture into production through its own ratified decision surface — the OI-178 batch adoption 2026-07-26 (D-005) and the notation switch 2026-07-27 (D-010) — so the criteria never applied to it; and what they do gate is moot, because the dormant spine they gate is what D-418's retirement map deletes. G1's 'L6 built dormant' requirement therefore needs no satisfying. ★ THE RULING IS A RECONSTRUCTION OF SCOPE AND IS LABELLED AS ONE: the record states the narrowing nowhere — the criteria as written do not say which architecture they govern — so the scope was ruled by the user rather than read out of a text that does not contain it. Recorded at the home (`docs/implementation_roadmap.md`, the annotation beneath the engage block) and at `OPEN_ITEMS.md` OI-284.",
       "patterns": [
         "ENGAGE CRITERIA \\+ RETIREMENT MAP",
         "Gates \\(all must hold\\)"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-03",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-418",
@@ -8898,7 +9984,7 @@
       "verbatim": "- **Retirement map (nothing retires by silence):** R1 legacy chord competition + Gates A–L (E4, or Stage 5 if\n  first — the OWED refactor #2); R2 legacy circular cadence detector (needs the two notation-bridge call-site\n  migrations first — gap-analysis Rider 4); R3 `cadencekeyanchor` kept-as-diagnostic through E4, retire post-E5\n  review; R4 dual tpc reader → the shared spelling view (rides R1); R5 `resolveKeyAndModeRanked`+`collectPitchContext`\n  shrink (P4-redecode; seed S2 at E4; grading baseline may persist as diagnostic); R6 segment-first spine (E4);\n  R7 `harmonicfunctionlayer` rename (rides R1); R8 legacy confidence sentinels (rides R1/R5); R9 `chordanalyzer.cpp`\n  file-split (OWED refactor #1) AFTER E4 removals — split once; R10 batch-region gate superseded by the robust unit\n  as primary (with G2/Stage 5), case-identity + two-tier policy carry over.",
       "plain": "Every piece of the old analysis path that is to be removed is named in advance, with what must happen first and where in the order it sits — ten of them, from the old chord competition and its correction rules through to splitting the large source file last, once, after the deletions. Nothing is retired by simply ceasing to mention it.",
       "rationale": "The principle is stated in the heading itself — nothing retires by silence — and it is guiding principle #12 applied to code: a component that disappears without a recorded decision takes the reason it existed with it. The ordering constraints each carry their own stated cause: two call sites must migrate before the old cadence detector goes; the file split is last so it happens once (register entry D-311); the old batch measurement gate is superseded rather than deleted, its case-identity and two-tier policy carried over (D-115, D-191).",
-      "home": "docs/implementation_roadmap.md:138",
+      "home": "docs/implementation_roadmap.md:157",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -8906,10 +9992,16 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "`docs/implementation_roadmap.md`:138-145, part of the same block the record marks RATIFIED by the user 2026-07-02. It is live and load-bearing now: `CLAUDE.md`'s gate block (A) states that the dormant legacy notation path awaits deletion \"at the OI-180 retirement map, now fully live\", and `OPEN_ITEMS.md` OI-180 tracks it. R10 is already discharged — the batch gate was superseded by the robust unit at R10-b, 2026-07-06 (D-115). Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue.",
+      "status_source": "`docs/implementation_roadmap.md`:138-145, part of the same block the record marks RATIFIED by the user 2026-07-02. It is live and load-bearing now: `CLAUDE.md`'s gate block (A) states that the dormant legacy notation path awaits deletion \"at the OI-180 retirement map, now fully live\", and `OPEN_ITEMS.md` OI-180 tracks it. R10 is already discharged — the batch gate was superseded by the robust unit at R10-b, 2026-07-06 (D-115). Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)",
       "patterns": [
         "nothing retires by silence"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-03",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-419",
@@ -8918,7 +10010,7 @@
       "verbatim": "3. **Recognition consumer** — build + wire: the encyclopedia becomes L5's multi-chord disambiguation prior (the §5.5\n   resolver + the §8 forward-override) and L6's sequence-span annotation. **This is the step where L5 takes advantage of\n   the encyclopedia AND the five idioms** (the active idiom-mixture weights the matches). Until this exists, L5 does not\n   touch the encyclopedia.",
       "plain": "The reference catalog of named progressions and the function layer are connected by a separate piece of work that has not been built. Until it is, the function layer makes no use of the catalog at all — it is not a partial or optional connection, it is absent. That piece is also where the five idioms first do any work, by weighting which catalog entries count.",
       "rationale": "It follows from the ratified build order stated at `:54` — encyclopedia, then the grouping layer, then wire the consumer — and from the catalog's own contract that it supplies ranked candidates and decides nothing (register entry D-407): with no consumer, there is nothing to receive the candidates, so a partial connection would be a consumer built by accident and unratified. Register entry D-084 records the same shape from the other side: the progression-schema recognizer is a CONSUMER of the function layer, not a new layer.",
-      "home": "docs/implementation_roadmap.md:59",
+      "home": "docs/implementation_roadmap.md:78",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
       "status": "live",
@@ -8926,10 +10018,16 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "`docs/implementation_roadmap.md`:59-62, inside the forward increment sequence whose header (`:54`) calls the order \"ratified\" — encyclopedia, then L6, then wire the consumer — without naming who ratified it or when; the surrounding block is dated 2026-06-30 at `:36`. The date recorded here is that block's date and the ratifier is NOT STATED, because the text asserts ratification without attributing it. The constraint governs Layer 5 and is recorded in a plan rather than in the Layer-5 specification, hence the documentation-gap flag. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue.",
+      "status_source": "`docs/implementation_roadmap.md`:59-62, inside the forward increment sequence whose header (`:54`) calls the order \"ratified\" — encyclopedia, then L6, then wire the consumer — without naming who ratified it or when; the surrounding block is dated 2026-06-30 at `:36`. The date recorded here is that block's date and the ratifier is NOT STATED, because the text asserts ratification without attributing it. The constraint governs Layer 5 and is recorded in a plan rather than in the Layer-5 specification, hence the documentation-gap flag. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)",
       "patterns": [
         "Until this exists, L5 does not"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-03",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-420",
@@ -8938,7 +10036,7 @@
       "verbatim": "extension behavior is specified → CODED → REGRESSION-TESTED for L1–L5. ★ CONSOLIDATION (same day, user directive\nagainst doc sprawl): the pre-existing `cowork_bounded_context_design.md` (DRAFT, never signed — found to already\nspecify the request→supply→bounded-recompute protocol, superiorly: \"the amount is discovered, not chosen\",\nrequester-owned convergence loops) is THE one cross-layer extension spec; the day's duplicate\n`cowork_temporal_extension_contract.md` is KILLED into it (merged: L5 discovery rule + PINNED decision-context\nextent [also folded into L5 spec §5.0], L4 decision-relevance sharpening, denial provenance, gate-proof framing,\nthe §11 acceptance list = the L6 gate). Sequence: SIGN `cowork_bounded_context_design.md` → coding+test instruction",
       "plain": "Two documents were specifying the same thing — how a layer that has reached the edge of the music it has read asks for more. The older one was kept as the single specification, on the ground that it already stated the protocol better (the amount of extra music is discovered by convergence rather than chosen, and the layer that asked owns the loop), and the same-day duplicate was merged into it and removed.",
       "rationale": "The stated ground is twofold and both halves are recorded: the user's directive against document sprawl, which is guiding principle #6 (one path per concern) applied to specifications rather than code; and a comparison of the two texts that found the surviving one superior on the substance — it already specified the request, supply and bounded-recompute protocol, with the amount discovered rather than chosen and the requester owning the convergence loop. The merge is recorded item by item, so nothing in the killed document was lost (#12).",
-      "home": "docs/implementation_roadmap.md:113",
+      "home": "docs/implementation_roadmap.md:132",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -8946,11 +10044,17 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "`docs/implementation_roadmap.md`:113-119, recorded as a user directive of 2026-07-02, in the same block as the Layer-6 prohibition it accompanies (register entry D-266, whose home is the surviving document). The surviving specification `cowork_bounded_context_design.md` is a contract home under the fifth home case and carries seven register entries (D-260...D-266); the killed document `cowork_temporal_extension_contract.md` is named here with its merged contents enumerated. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue.",
+      "status_source": "`docs/implementation_roadmap.md`:113-119, recorded as a user directive of 2026-07-02, in the same block as the Layer-6 prohibition it accompanies (register entry D-266, whose home is the surviving document). The surviving specification `cowork_bounded_context_design.md` is a contract home under the fifth home case and carries seven register entries (D-260...D-266); the killed document `cowork_temporal_extension_contract.md` is named here with its merged contents enumerated. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)",
       "patterns": [
         "is THE one cross-layer extension spec",
         "is KILLED into it"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-03",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-421",
@@ -8959,7 +10063,7 @@
       "verbatim": "  **★ Standing trigger (user, 2026-07-02): idiom re-discovery rides each corpus wave.** After each material corpus\n  change (each wave; the yearly census re-sweep), re-run the `idiom_discovery/` pipeline under the v1 protocol\n  (multi-seed stability, cap-robustness, source-leakage/ARI confound test) on the **dev set + external research\n  corpora only** (held-out material excluded — discovery outputs become shipped parameters). Primary question:\n  do the five ratified idioms **reproduce**? Falsifiable v2 edges: does #5 Chromatic-coloristic split (the K=6\n  candidate) under the new chromatic mass; where do Wagner/Liszt land (#2 vs #5 — the era≠axis re-test); does\n  early-modal material (Monteverdi/Sweelinck) separate or fold into #4. A changed cluster set is a **ratified\n  taxonomy-revision event** (it propagates to StyleTag values + the vocabulary entry mapping — post-swap it is a\n  migration, not a relabel). Plan line only — the instruction is written just-in-time after the triggering wave.",
       "plain": "Whenever the body of music the project holds changes materially, the study that discovered the five idioms is re-run under the same protocol, to ask whether the five reproduce. It is run only on the development set and outside research corpora, never on the music held back for evaluation, because what the study produces becomes a shipped parameter. If the clusters come out different, that is a taxonomy revision and needs its own ratification — it changes the tags on every catalog entry, so after the tags were encoded it is a migration, not a relabel.",
       "rationale": "The held-out exclusion is stated with the rule and is guiding principle #20 (fit and evaluation separated) applied to an unsupervised study: discovery outputs become shipped parameters, so material used to discover them can never also measure them. The re-run itself is the standing consequence of the finding the study rests on — that the categories are empirical rather than asserted (`cowork_style_taxonomy_proposal.md:11-30`) — which means new music can falsify them; the record names the falsifiable edges in advance (does idiom five split under new chromatic mass, where do Wagner and Liszt land, does early modal material separate), which is what makes the trigger a test rather than a formality.",
-      "home": "docs/implementation_roadmap.md:183",
+      "home": "docs/implementation_roadmap.md:220",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
       "status": "live",
@@ -8967,11 +10071,17 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "`docs/implementation_roadmap.md`:183-191, recorded as a standing trigger of the user, 2026-07-02, beside the census's own standing rule that discovering a new corpus is a census defect (register entry D-359). It governs the style taxonomy that `ARCHITECTURE.md` §6.7 owns and is recorded in a plan rather than at that home, hence the documentation-gap flag. Load-bearing for the 2026-08-03 §6.7 restatement: the five idioms are stated there as empirically discovered, and this is the rule that keeps that claim current. The record notes two corpus waves executed and ratified (2026-07-02, 2026-07-03), the second checking the trigger and finding it NOT fired. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue.",
+      "status_source": "`docs/implementation_roadmap.md`:183-191, recorded as a standing trigger of the user, 2026-07-02, beside the census's own standing rule that discovering a new corpus is a census defect (register entry D-359). It governs the style taxonomy that `ARCHITECTURE.md` §6.7 owns and is recorded in a plan rather than at that home, hence the documentation-gap flag. Load-bearing for the 2026-08-03 §6.7 restatement: the five idioms are stated there as empirically discovered, and this is the rule that keeps that claim current. The record notes two corpus waves executed and ratified (2026-07-02, 2026-07-03), the second checking the trigger and finding it NOT fired. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)",
       "patterns": [
         "idiom re-discovery rides each corpus wave",
         "ratified\\s+taxonomy-revision event"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-03",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-422",
@@ -8980,7 +10090,7 @@
       "verbatim": "**Stage-5 design SIGNED 2026-07-04:** `cowork_stage5_fitter_design.md`; A-3 ruled = Jazz fit deferred to the\njazz-GT conversion (the idiom-#2 Baroque/Default target is fitted now).",
       "plain": "Fitting the analysis constants for jazz waits until jazz music with published human analyses can be converted into a form the fitter can use. What is fitted now is the one idiom the held annotated music covers — the classical common-practice one, which is what the two non-jazz presets deliver.",
       "rationale": "It follows from a measured constraint recorded elsewhere in the register: jazz accuracy is not measurable on the corpora held, because the jazz material is melody-and-chord-symbol transcription with the bass and piano voicings absent (D-310, whose defense is a bass-injection experiment moving agreement from 39.8 % to 98.3 % on one corpus and 18.0 % to 99.9 % on another). Fitting against material that cannot measure the result would be fitting without evaluation, which guiding principle #20 forbids.",
-      "home": "docs/implementation_roadmap.md:460",
+      "home": "docs/implementation_roadmap.md:497",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
       "status": "deferred",
@@ -8988,10 +10098,16 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "`docs/implementation_roadmap.md`:460-461, recorded at the Stage-5 fitter design's signing: \"Stage-5 design SIGNED 2026-07-04 … A-3 ruled = Jazz fit deferred to the jazz-GT conversion\". The document states the DESIGN was signed that day but does not say who ruled A-3, so the ratifier is NOT STATED. A-3 is one of the ten external-review amendments the record marks user-ratified 2026-07-02 at `:148-151`, but that ratification is of the amendment, not of this later disposition of it. Beside D-310 (jazz accuracy not measurable) and `OPEN_ITEMS.md` OI-7 (establish a jazz ground truth or de-scope the jazz claims). Recorded in a plan rather than in the fitter's own specification, hence the documentation-gap flag. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue.",
+      "status_source": "`docs/implementation_roadmap.md`:460-461, recorded at the Stage-5 fitter design's signing: \"Stage-5 design SIGNED 2026-07-04 … A-3 ruled = Jazz fit deferred to the jazz-GT conversion\". The document states the DESIGN was signed that day but does not say who ruled A-3, so the ratifier is NOT STATED. A-3 is one of the ten external-review amendments the record marks user-ratified 2026-07-02 at `:148-151`, but that ratification is of the amendment, not of this later disposition of it. Beside D-310 (jazz accuracy not measurable) and `OPEN_ITEMS.md` OI-7 (establish a jazz ground truth or de-scope the jazz claims). Recorded in a plan rather than in the fitter's own specification, hence the documentation-gap flag. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)",
       "patterns": [
         "Jazz fit deferred to the"
-      ]
+      ],
+      "entry_ratified": {
+        "date": "2026-08-03",
+        "by": [
+          "user"
+        ]
+      }
     },
     {
       "id": "D-423",
@@ -9000,7 +10116,7 @@
       "verbatim": "- The \"do not\" rules (no new gates, no threshold widening, no rcb gating) remain in force\n  through all stages; Stage 3.4 is the only sanctioned way gates change.",
       "plain": "LEGACY (the chord analyzer awaiting deletion): three prohibitions hold for the whole programme — no new after-the-fact correction rules, no widening of a threshold, and no gating of the root-continuity bonus. The only sanctioned way any of those correction rules changes is the deliberate per-rule retirement stage, where a rule is removed only once the replacement reproduces the fixes it was pinned to.",
       "rationale": "Each prohibition carries its defense elsewhere in the register rather than here: accumulating gates are a warning sign, and the answer is iteration rather than more gates (D-036); gate thresholds are calibrated against the Baroque corpus and must not be loosened for another style (D-061); gating the root-continuity bonus on a sparse predecessor was measured a dead end (D-215). What this statement adds is the single sanctioned channel — the retirement stage's per-gate differential proof obligation (`:414`) — which is what stops the rules changing by accretion.",
-      "home": "docs/implementation_roadmap.md:520",
+      "home": "docs/implementation_roadmap.md:557",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
       "status": "live",
@@ -9008,11 +10124,17 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "`docs/implementation_roadmap.md`:520-521, in the closing section relating the roadmap to the earlier phase plan, stated as remaining \"in force through all stages\". No date or ratifier is stated. Its subject is the legacy vertical scorer's post-scoring gate layer, dormant on both production surfaces since 2026-07-26/27, hence the LEGACY mark; the three underlying prohibitions (D-036, D-061, D-215) carry their own scopes. The natural home is `docs/scoring_model.md` §8, where the other standing constraints and dead ends on that layer live, hence the documentation-gap flag. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue.",
+      "status_source": "`docs/implementation_roadmap.md`:520-521, in the closing section relating the roadmap to the earlier phase plan, stated as remaining \"in force through all stages\". No date or ratifier is stated. Its subject is the legacy vertical scorer's post-scoring gate layer, dormant on both production surfaces since 2026-07-26/27, hence the LEGACY mark; the three underlying prohibitions (D-036, D-061, D-215) carry their own scopes. The natural home is `docs/scoring_model.md` §8, where the other standing constraints and dead ends on that layer live, hence the documentation-gap flag. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)",
       "patterns": [
         "only sanctioned way gates change"
       ],
-      "legacy_subject": true
+      "legacy_subject": true,
+      "entry_ratified": {
+        "date": "2026-08-03",
+        "by": [
+          "user"
+        ]
+      }
     }
   ]
 }

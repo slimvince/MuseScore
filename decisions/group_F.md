@@ -175,6 +175,8 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `ARCHITECTURE.md:2499-2503`
 
 **Provenance.** ARCHITECTURE.md:2414-2418; the same guard is listed among the key-path scoring terms at :2480-2482 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
@@ -193,6 +195,8 @@
 
 **Status.** LIVE · decided 2026-06-08 · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_handoff_archive.md:5272`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
 **Provenance.** Recorded in `cowork_handoff_archive.md` (the redesign-sequence block) and in the 2026-06-08 `STATUS_ARCHIVE.md` entry, both pointing at `docs/redesign_plan.md` Step 3. The shelving names its own re-open condition — a confirmed case where the correct key sits at rank 1 or 2 — so it is a shelving with a stated trigger, not a permanent exclusion. Found by the phase-1e second-partition archive read, 2026-08-02. Note for a future reader: the joint estimator (D-001) carries a full posterior by construction, so the concern this shelving withdrew is met by a different design, not by reviving this one. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).
@@ -208,6 +212,8 @@
 **Why.** Measured with a byte-matched reimplementation (the Python re-implementation reproduced the committed analysis exactly on all 326 pieces, so the simulation is trustworthy): the chromatic-leading-tone gate is orthogonal to correctness (about 45 % of true modulations and about 50 % of false ones carry a diatonic leading tone), and the relative-pair signals were already spent by the existing aggregation. Ceiling approximately 50-58 % precision at 18-22 % recall, below the bar the wiring step required.
 
 **Status.** LIVE · decided 2026-06-15 · ratifier not stated
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_handoff_archive.md:3896`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
@@ -227,6 +233,8 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by the user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `ARCHITECTURE.md:1333-1335`
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md` (session 21j). The Layer-3 specification records the reach-back facility but not this shipped-default ruling. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written into the Layer-3 section of `ARCHITECTURE.md` §3.3, whose description of the dormant pipeline is the frame this ruling belongs in — the specification recorded the reach-back facility and not the shipped-default ruling, which is the gap the phase-1h note identified. Former home preserved (#12): `STATUS_ARCHIVE.md:232`, session 21j.
@@ -244,6 +252,8 @@
 **Why.** Measured: until 2026-07-14 both key-consuming scoring terms tested a set built from the mode's own tonic, which equals the signature's collection for nineteen of the twenty-one modes and is a semitone off for two — sharing only two of seven notes there. The correction moved exactly one committed chord and made it agree with the ground truth.
 
 **Status.** LIVE · decided 2026-07-14 · ratifier not stated
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `docs/scoring_model.md:303-307`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
@@ -271,6 +281,8 @@
 
 **Status.** LIVE · decided 2026-06-22 · ratified by the user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_layer3_keymode_design.md:60-72`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
@@ -290,6 +302,8 @@
 **Why.** derivation not recorded
 
 **Status.** LIVE · decided 2026-06-22 · ratified by the user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_layer3_keymode_design.md:129-133`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
@@ -312,6 +326,8 @@
 **Why.** The record gives the reason in the same passage: the note evidence is primary and overrides the prior, so the setting only tips genuinely ambiguous cases — the same stance the layer takes toward the written key signature (`cowork_layer3_keymode_design.md:156-158`).
 
 **Status.** LIVE · decided 2026-06-22 · ratified by the user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_layer3_keymode_design.md:153-159`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
@@ -338,6 +354,8 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_layer3_keymode_design.md:230-239`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The date given is the date of the recorded ruling that the narrower alternative is to be settled by measurement and that the pooled rule is normative until then; the pooled rule itself is recorded as as-built and is not dated in the record. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
@@ -356,6 +374,8 @@
 **Why.** The record states the reason with the alternative it rejects: a flat margin cannot make a near modulation cheaper than a remote one, nor guard the relative major/minor pair specifically; the shape chosen is the standard one in the key-finding literature (§14 cites the hidden-Markov key path with a high self-transition — Nápoles López, DLfM 2019; Gedizlioğlu & Erol, 2024). The starting amounts are taken from the existing margin values and tuned later.
 
 **Status.** LIVE · decided 2026-06-22 · ratified by the user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_layer3_keymode_design.md:307-310`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
@@ -381,6 +401,8 @@
 
 **Status.** LIVE · decided 2026-06-22 · ratified by the user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_layer3_keymode_design.md:212-220`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
@@ -398,6 +420,8 @@
 **Why.** The record states the reason: the decision being made is the whole run, so the meaningful comparison is between whole runs; and the near-tied cases the comparison exposes are exactly the ones the layer should mark uncertain.
 
 **Status.** LIVE · decided 2026-06-22 · ratified by the user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_layer3_keymode_design.md:311-313`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
@@ -417,6 +441,8 @@
 
 **Status.** LIVE · decided 2026-07-04 · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_layer3_keymode_design.md:16-18`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The record labels the closure `D-L3a` — a label from the document's own design-decision series, not a register identifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
@@ -433,6 +459,8 @@
 **Why.** The record states the reason with the alternative: the existing decoder is specific to chords and cannot be reused.
 
 **Status.** LIVE · decided 2026-06-22 · ratified by the user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_layer3_keymode_design.md:314-315`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
@@ -454,6 +482,8 @@
 
 **Status.** LIVE · decided 2026-06-22 · ratified by the user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_layer3_keymode_design.md:321-327`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
@@ -472,6 +502,8 @@
 **Why.** The record states the reason: the second goal is what backs the claim that this layer is clearer about ambiguity than a single forced label would be, so it is graded in its own right rather than absorbed into the accuracy number.
 
 **Status.** LIVE · decided 2026-06-22 · ratified by the user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_layer3_keymode_design.md:337-342`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
@@ -497,6 +529,8 @@
 
 **Status.** LIVE · decided 2026-06-22 · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_layer3_keymode_design.md:402-410`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
@@ -519,6 +553,8 @@
 **Why.** Measured decode-only on the held-out test set: a net gain of roughly 57 to 73 corrected stretches on the Baroque material and 38 to 68 on the Jazz material depending on the sharpening step (`cc_layer3_sweep_report.md` §3). The entry states its own limit: only the direction is validated so far, the production-side magnitude being a calibration at the wiring step.
 
 **Status.** LIVE · decided 2026-06-22 · ratifier not stated
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_layer3_keymode_design.md:411-418`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
@@ -550,6 +586,8 @@
 
 **Status.** LIVE · decided 2026-06-25 · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_layer3_keymode_design.md:383-397`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
@@ -574,6 +612,8 @@
 **Why.** Measured read-only, 2026-06-22, `cc_layer3_tpc_keymeasure_report.md`: a decode-only line-of-fifths term beats a change-cost control on both style settings and gains two to eight points on changing-tonality passages, but nets only about +0.5 and +0.6 overall because of what it costs on constant-tonality passages. The entry states its own limit: an engraved corpus is an upper bound, and material without written spelling would see less.
 
 **Status.** LIVE · decided 2026-06-22 · ratifier not stated
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_layer3_keymode_design.md:497-506`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
@@ -604,6 +644,8 @@
 
 **Status.** DEFERRED · decided 2026-07-02 · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_layer3_keymode_design.md:507-520`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The record states the amendment (A-3) was ratified 2026-07-02 but does not name the ratifier at this home; the amendment set's own document banner is quoted in the phase-1g triage as `AMENDMENTS A-1…A-10 RATIFIED (user, 2026-07-02)`, and that document is in the phase-1h full-read set. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
@@ -621,6 +663,8 @@
 **Why.** Adjudicated at the code during the pre-Layer-5 refactor stage, with the two consumers named (the greedy segmentation expansion and the temporal-context walk) and the consequence stated: dropping it would move the grid. Recorded as report-only, with no change made.
 
 **Status.** LIVE · decided 2026-07-07 · ratifier not stated
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_structural_integrity_audit.md:260-262`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 

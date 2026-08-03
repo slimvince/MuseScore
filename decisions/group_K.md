@@ -276,6 +276,8 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `ARCHITECTURE.md:630-632`
 
 **Provenance.** ARCHITECTURE.md:601-603 (stated as a standing reading instruction in the document itself) ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
@@ -294,6 +296,8 @@
 
 **Status.** LIVE · decided 2026-06-22 · ratified by user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_design_doc_template.md:3-7`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** cowork_design_doc_template.md:3 states it as a standing convention with the ratifier and date in the text. CLAUDE.md's Conventions entry names this file as the ONE home for writing standards and names this structure among what it carries, so the decision is correctly homed and was simply never in the register. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
@@ -310,6 +314,8 @@
 **Why.** Stated with the rule: it binds the all-documentation-in-sync standing rule (#10) to a visible per-document marker, so a reader can tell at a glance whether what they are reading is a proposal, a ratified contract, or a superseded record.
 
 **Status.** LIVE · date not stated · ratifier not stated
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_design_doc_template.md:75-78`  — a project-wide convention with no owning layer; this is its correct home.
 
@@ -334,6 +340,8 @@
 
 **Status.** LIVE · decided 2026-06-24 · ratified by user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_design_doc_template.md:82-91`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** cowork_design_doc_template.md:82 ('The locator stays (user, 2026-06-24)') and :91 ('User mandate 2026-06-22, refined 2026-06-24'). Homed in the file CLAUDE.md's Conventions entry names as the ONE home for writing standards, which names the implementation/test locator rule among what it carries. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
@@ -349,6 +357,8 @@
 **Why.** The defect it answers is measured in the record: the gap analysis found stale line-number citations across the layer specifications, and the rule was made a policy at the same ruling that fixed them (`STATUS_ARCHIVE.md:242`).
 
 **Status.** LIVE · decided 2026-07-02 · ratified by Cowork
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_design_doc_template.md:93-95`  — a project-wide convention with no owning layer; this is its correct home.
 
@@ -370,7 +380,9 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `docs/implementation_roadmap.md:113`  — a decision about how the work is done, not about the system; this is its correct home.
+**Entry ratified.** 2026-08-03 · by user
 
-**Provenance.** `docs/implementation_roadmap.md`:113-119, recorded as a user directive of 2026-07-02, in the same block as the Layer-6 prohibition it accompanies (register entry D-266, whose home is the surviving document). The surviving specification `cowork_bounded_context_design.md` is a contract home under the fifth home case and carries seven register entries (D-260...D-266); the killed document `cowork_temporal_extension_contract.md` is named here with its merged contents enumerated. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue.
+**Home.** `docs/implementation_roadmap.md:132`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** `docs/implementation_roadmap.md`:113-119, recorded as a user directive of 2026-07-02, in the same block as the Layer-6 prohibition it accompanies (register entry D-266, whose home is the surviving document). The surviving specification `cowork_bounded_context_design.md` is a contract home under the fifth home case and carries seven register entries (D-260...D-266); the killed document `cowork_temporal_extension_contract.md` is named here with its merged contents enumerated. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 

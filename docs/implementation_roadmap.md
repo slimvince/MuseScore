@@ -17,6 +17,14 @@ split was re-measured under the corrected parser → **47/57 Baroque / 81/23 Jaz
 = the then-57/23 gate; the L3-wiring delta later moved it → 53/24/53). Authoritative identity
 sets: CLAUDE.md gate section.)**
 
+> **★ HISTORICAL — the baselines above are the SUPERSEDED batch gate** (annotation 2026-08-03, CC, at
+> `OPEN_ITEMS.md` OI-284). The batch case-identity gate named above (BIR 24/13 · 35/7, re-baselined here to
+> 53/24/53) was re-baselined once more to 52/24/52 on 2026-07-05 and **superseded in whole at R10-b,
+> 2026-07-06**, by the granularity-robust union-of-boundaries unit — the class-(b) root-disagree duration
+> non-increase, `CLAUDE.md` gate block (A), register entry **D-115**. `CLAUDE.md` block (C) keeps the batch
+> sets as historical reference only. Read the paragraph above as the gate that governed Stages 0–2 when it
+> was written, never as an acceptance criterion a build should now try to satisfy.
+
 **⛔ TWO DEFERRED STRUCTURAL REFACTORS — DO NOT FORGET (user mandate 2026-06-14):** (1) **Stage 3.5**
 the physical split of `chordanalyzer.cpp` along the layer seams + iteration-API renames — DEFERRED until
 the layer boundaries stabilize; (2) **Stage 5** the dissolution of the post-hoc gate-correction layer
@@ -38,6 +46,17 @@ target (canonical: `ARCHITECTURE.md`): L1 notes → L2 slicing → L3 key/mode �
 the **Harmonic Vocabulary** (encyclopedia — an independent queried component) and a **recognition consumer** that wires
 it into L5/L6. Every analysis layer is **built dormant and validated byte-identically against the frozen references**
 (the legacy path + DCML ground truth); the production switch ("engage") is **deferred indefinitely**.
+
+> **★ SCOPING SENTENCE — what runs at HEAD** (annotation 2026-08-03, CC, at `OPEN_ITEMS.md` OI-284). The
+> paragraph above and the table below describe the world as it stood on 2026-06-30, and they remain an
+> accurate description of the **dormant** six-layer spine; **they are not a description of what runs.** At
+> HEAD the production inference layer is the **joint estimator** — on the batch and corpus surface since
+> 2026-07-26 (register entry **D-005**) and on the in-app notation surface since 2026-07-27 (**D-010**,
+> `useJointNotationRecord` defaulting true). `CLAUDE.md` gate block (A) records the migration CLOSED on both
+> surfaces, with the legacy path compiled and dormant, awaiting deletion at the retirement map below. So
+> "the production switch ('engage') is **deferred indefinitely**" is false at HEAD in its plain reading: a
+> production switch did happen, by a different arc and with a different architecture. For what that means
+> for the engage criteria below, read their own scope ruling there.
 
 | Layer / component | Status | Note |
 |---|---|---|
@@ -144,6 +163,24 @@ indefinitely" with "deferred until these CRITERIA (date open)"; E3 is its own us
   file-split (OWED refactor #1) AFTER E4 removals — split once; R10 batch-region gate superseded by the robust unit
   as primary (with G2/Stage 5), case-identity + two-tier policy carry over.
 - **Wording sweep** ("indefinitely" → "until the criteria above, date open") rides the next docs commit.
+
+> **★ SCOPE RULING — these criteria govern engaging the DORMANT L4/L5 SPINE, not the joint estimator's
+> adoption** (user, 2026-08-03; recorded at `OPEN_ITEMS.md` OI-284, register entry **D-417**). The criteria
+> above are user-ratified (2026-07-02) and **stay LIVE** — nothing retires them. What the user ruled is their
+> SUBJECT. The production switch that actually happened put a DIFFERENT architecture into production — the
+> joint estimator — and it went through its own ratified decision surface: the OI-178 batch adoption of
+> 2026-07-26 (**D-005**) and the notation switch of 2026-07-27 (**D-010**). These criteria therefore never
+> applied to it. What they do gate — engaging the dormant L4/L5/L6 spine and its recognition consumer — is
+> moot, because that spine is what the retirement map above deletes (**D-418**). In particular, **G1's "L6
+> built dormant" requirement needs no satisfying**: L6 was never built, is prohibited until the
+> bounded-context contract is coded and regression-tested (**D-266**), and the switch G1 gated has already
+> happened by another route.
+>
+> *This is a RECONSTRUCTION of scope, and it is labelled as one.* The record states the narrowing nowhere —
+> the criteria as written do not say which architecture they govern — so the user ruled the scope on
+> 2026-08-03, rather than a session reading a narrowing out of text that does not contain one. The
+> **retirement map** above is untouched by this ruling and is live and load-bearing now: `CLAUDE.md` gate
+> block (A) points the dormant legacy notation path's deletion at it.
 
 **★★ EXTERNAL ARCHITECTURE REVIEW — AMENDMENTS RATIFIED (user, 2026-07-02).** The full external review
 (`cowork_architecture_review_2026_07.md` — 18 findings F-1…F-18, no structural fault, no redesign) is delivered and its

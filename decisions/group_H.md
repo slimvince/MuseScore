@@ -122,6 +122,8 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `ARCHITECTURE.md:6164-6166`
 
 **Provenance.** ARCHITECTURE.md:6012-6014. Section 5.10 (ARCHITECTURE.md:3860) is the tonicization section; the memory-held backlog item is recorded in the same terms. ★ RATIFIED (user, 2026-08-02) with the revisit to be PLANNED: for the ultimate objective (maximum-precision inference) the feature may be needed — the ground truth annotates applied chords, so not producing them costs Roman-numeral agreement wherever the annotator wrote one. Row OI-267 carries the planning obligation, including the OI-53 tension (a live classifier emitting V7/x was found on the legacy path while this entry's home says not implemented). ★ SCOPE CORRECTED 2026-08-02 (CC, at the phase-1i delivery acts, on Cowork's measured probe finding B-1, user-reviewed): the entry's verbatim is a statement about the LEGACY `ChordFunction` structure, and its plain restatement wrongly generalized it to the whole system. The production joint estimator — the inference layer on both surfaces since the OI-178 adoption — DOES emit applied labels (`src/composing/analysis/joint/jointrender.h:62-63`; measured 8.62 % of scored duration, with exact matches against applied ground truth: `tools/joint_estimator/applied_chord_stake_2026_08_02/`). The OI-53 tension named above is therefore substantially ANSWERED: the joint surface emits applied labels, the legacy `ChordFunction` structure does not carry them. The decision itself is unchanged and stays DEFERRED for the surface it governs; what changed is the recorded scope.
@@ -137,6 +139,8 @@
 **Why.** Measured: of the affected cases 92.7 % are cadence-confirmed local keys in the ground truth and 79.2 % last five chords or more, so the annotator's modulation is correct for about 97 % of them; only 2.7 % are brief enough for either reading to be defensible. The comparison already credits the label by root and quality, so it does not over-penalise - it MASKS. Recorded as the clearest win of the measure-before-building rule: without the check the labeller would have shipped and improved the number while worsening the output.
 
 **Status.** LIVE · decided 2026-06-14 · ratifier not stated
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_handoff_archive.md:3833`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
@@ -157,6 +161,8 @@
 
 **Status.** LIVE · decided 2026-06-26 · ratified by the user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_layer5_function_design.md:612-617`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
@@ -175,6 +181,8 @@
 
 **Status.** LIVE · decided 2026-06-26 · ratified by the user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_layer5_function_design.md:618-622`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
@@ -190,6 +198,8 @@
 **Why.** Both alternatives are rejected with reasons: a fixed-duration rule has no published threshold and the boundary is a genuine continuum, and resolving the distinction in the key layer cannot work because it needs function. The hysteresis form is chosen because it matches the ground-truth annotation convention.
 
 **Status.** LIVE · decided 2026-06-26 · ratified by the user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_layer5_function_design.md:623-625`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
@@ -207,6 +217,8 @@
 **Why.** Structural, and stated as such: a case separable by a note cue is a lower-layer case and a case separable only by function is this layer's, which leaves no third box — so re-scoring from the notes would duplicate the layer below.
 
 **Status.** LIVE · decided 2026-06-26 · ratified by the user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_layer5_function_design.md:627-630`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
@@ -228,6 +240,8 @@
 **Why.** Stated with the loss it prevents: rebuilding from the progression's root-and-quality projection would flatten the committed bass and inversion and the carried added notes, so the figured-bass inversion and the applied seventh could no longer be rendered from what the chord layer actually committed. A neighbour-root with this stretch's bass is not a carried candidate, so it is not synthesized.
 
 **Status.** LIVE · decided 2026-07-02 · ratifier not stated
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_layer5_function_design.md:547-554`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
@@ -252,6 +266,8 @@
 
 **Status.** LIVE · decided 2026-07-03 · ratified by the user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_layer5_function_design.md:888-897`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
@@ -269,6 +285,8 @@
 **Why.** derivation not recorded.
 
 **Status.** DEFERRED · date not stated · ratifier not stated
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_layer5_function_design.md:696-698`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
@@ -295,6 +313,8 @@
 
 **Status.** LIVE · decided 2026-07-07 · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_layer5_engagement_design.md:187-198`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The document's banner records `Status: DESIGN (CC, 2026-07-07)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ RE-CLASSIFIED contract-home 2026-08-02 (CC, phase 1j, under the TRANSITIVE-AUTHORITY refinement of the fifth home case, user 2026-08-02): `cowork_layer5_engagement_design.md` carries a status banner and its authority is the user's transitively — the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arc #9 to it by name (`:41`), arc #11 to it by name (`:46`), and states that the Stage-3 build inventory 'is enumerated at `cowork_layer5_engagement_design.md` §9.2' (`:53-55`). The missing `ARCHITECTURE.md` delegation pointer — the gap the ruling says a missing delegation owes — was written into the Layer-5 section in the same commit.
@@ -314,6 +334,8 @@
 
 **Status.** LIVE · decided 2026-07-07 · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_layer5_engagement_design.md:212-217`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The document's banner records `Status: DESIGN (CC, 2026-07-07)`; the measured basis it consumes is the separately-ratified fine-grain-override finding. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ RE-CLASSIFIED contract-home 2026-08-02 (CC, phase 1j, under the TRANSITIVE-AUTHORITY refinement of the fifth home case, user 2026-08-02): `cowork_layer5_engagement_design.md` carries a status banner and its authority is the user's transitively — the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arc #9 to it by name (`:41`), arc #11 to it by name (`:46`), and states that the Stage-3 build inventory 'is enumerated at `cowork_layer5_engagement_design.md` §9.2' (`:53-55`). The missing `ARCHITECTURE.md` delegation pointer — the gap the ruling says a missing delegation owes — was written into the Layer-5 section in the same commit.
@@ -330,6 +352,8 @@
 **Why.** The boundary is drawn so that the forward-only control-flow contract is kept: the function stage reads the chord layer's carry forward and never re-derives, and any coupling machinery is a bounded instance of the same forward discipline — a declared exception with its own closure — rather than a free search back across stages.
 
 **Status.** LIVE · decided 2026-07-07 · ratifier not stated
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_layer5_engagement_design.md:263-266`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
@@ -360,6 +384,8 @@
 
 **Status.** LIVE · decided 2026-07-07 · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_layer5_engagement_design.md:490-505`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The record notes it dissolves an earlier proposal for a new advisory field into an enrichment of the existing one. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ RE-CLASSIFIED contract-home 2026-08-02 (CC, phase 1j, under the TRANSITIVE-AUTHORITY refinement of the fifth home case, user 2026-08-02): `cowork_layer5_engagement_design.md` carries a status banner and its authority is the user's transitively — the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arc #9 to it by name (`:41`), arc #11 to it by name (`:46`), and states that the Stage-3 build inventory 'is enumerated at `cowork_layer5_engagement_design.md` §9.2' (`:53-55`). The missing `ARCHITECTURE.md` delegation pointer — the gap the ruling says a missing delegation owes — was written into the Layer-5 section in the same commit.
@@ -377,6 +403,8 @@
 
 **Status.** LIVE · decided 2026-07-03 · ratified by the user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_voiceleading_axis_design.md:519-522`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-07-03 — asks A1–A8 ratified in full)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
@@ -392,6 +420,8 @@
 **Why.** The rejection has a principled ground: one idea with a quality flag is exactly the silent mixing of fact with judgment that the universality principle forbids — the fact layers must stay style-agnostic and free of inference, so a value that is sometimes read and sometimes guessed cannot live in one field. The separation is enforced twice over, by the document's one-sense vocabulary rule and by the type system.
 
 **Status.** LIVE · decided 2026-07-03 · ratified by the user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_voiceleading_axis_design.md:523-525`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
@@ -409,6 +439,8 @@
 **Why.** The rejection cites the project's own rule that a component's build is earned by the measurement behind it: a per-stretch claim on per-piece evidence would be assumption-based code. The record also notes what the deferral does and does not cost — the output type is already a series of texture stretches, so the refinement changes how many there are, not the shape of anything.
 
 **Status.** LIVE · decided 2026-07-03 · ratified by the user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_voiceleading_axis_design.md:526-529`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
@@ -432,6 +464,8 @@
 
 **Status.** LIVE · decided 2026-07-03 · ratified by the user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_voiceleading_axis_design.md:533-541`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A8, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
@@ -447,6 +481,8 @@
 **Why.** The record names the principle and the failure it guards against: this is the proportionality admission gate applied inside the dimension rather than only at its border, and the guard is against slot-filling — building a component because a slot exists for it rather than because evidence earned it.
 
 **Status.** LIVE · decided 2026-07-03 · ratified by the user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_voiceleading_axis_design.md:530-532`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
@@ -467,6 +503,8 @@
 
 **Status.** LIVE · decided 2026-07-03 · ratified by the user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_voiceleading_axis_design.md:346-351`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document's banner records that this clarification was folded in BEFORE signing and that the signing ratified asks A1–A8 in full. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
@@ -484,6 +522,8 @@
 **Why.** The record ties it to a measured problem in the study it inherits from: the study reduced differently per source, which is recorded as a caveat on its own results, and one uniform declared rule is what retires that asymmetry when the production extractor is built. Declaring the rule per request rather than fixing it globally also keeps it inspectable — the record's standing complaint against the alternative is that a silent reduction makes its effects invisible rather than absent.
 
 **Status.** LIVE · decided 2026-07-03 · ratified by the user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_voiceleading_axis_design.md:304-308`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
@@ -504,6 +544,8 @@
 
 **Status.** LIVE · decided 2026-07-03 · ratified by the user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_voiceleading_axis_design.md:376-381`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. All three floor values are recorded as precision-phase constants, not fixed here. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
@@ -519,6 +561,8 @@
 **Why.** The record grounds it as a property of the representation rather than of the corpora held: a lead sheet does not fail to have voices for want of a better encoding, it has none by what it is. The distinction between undefined and zero is what stops a downstream consumer from reading absence as a low score.
 
 **Status.** LIVE · decided 2026-07-03 · ratified by the user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_voiceleading_axis_design.md:502-504`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
@@ -537,6 +581,8 @@
 
 **Status.** LIVE · decided 2026-07-03 · ratified by the user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_voiceleading_axis_design.md:693-696`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A7, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
@@ -553,6 +599,8 @@
 **Why.** Settled by replication rather than by choice: the convention was read off the exploratory study's own motion classifier at source and reproduced exactly in the production code, which is oracle-tested against it. Fixing it this way is what makes the production implementation reproduce the study's features, which the design requires of it.
 
 **Status.** LIVE · decided 2026-07-03 · ratifier not stated
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_voiceleading_axis_design.md:632-635`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
@@ -571,6 +619,8 @@
 
 **Status.** LIVE · decided 2026-07-03 · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_voiceleading_axis_design.md:368-371`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document records this as the second of two build declarations the design owed and the build closed, decided at build by measurement rather than at design time; the closure names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
@@ -586,6 +636,8 @@
 **Why.** Grounded in the musical fact it has to represent: phrases in contrapuntal textures are concurrent, overlapping and out of phase across voices, so they cannot be expressed as a partition of the music into successive stretches. The record also states what is deliberately not asserted — that consecutive phrases within one voice tile it exactly — because phrase elision makes a shared boundary note a real case, recorded as an open question for the segmentation design rather than assumed away.
 
 **Status.** LIVE · decided 2026-07-03 · ratified by the user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_voiceleading_axis_design.md:688-690`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
@@ -604,7 +656,9 @@
 
 **Status.** LIVE · decided 2026-06-30 · ratifier not stated
 
-**Home.** `docs/implementation_roadmap.md:59`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Entry ratified.** 2026-08-03 · by user
 
-**Provenance.** `docs/implementation_roadmap.md`:59-62, inside the forward increment sequence whose header (`:54`) calls the order "ratified" — encyclopedia, then L6, then wire the consumer — without naming who ratified it or when; the surrounding block is dated 2026-06-30 at `:36`. The date recorded here is that block's date and the ratifier is NOT STATED, because the text asserts ratification without attributing it. The constraint governs Layer 5 and is recorded in a plan rather than in the Layer-5 specification, hence the documentation-gap flag. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue.
+**Home.** `docs/implementation_roadmap.md:78`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** `docs/implementation_roadmap.md`:59-62, inside the forward increment sequence whose header (`:54`) calls the order "ratified" — encyclopedia, then L6, then wire the consumer — without naming who ratified it or when; the surrounding block is dated 2026-06-30 at `:36`. The date recorded here is that block's date and the ratifier is NOT STATED, because the text asserts ratification without attributing it. The constraint governs Layer 5 and is recorded in a plan rather than in the Layer-5 specification, hence the documentation-gap flag. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 

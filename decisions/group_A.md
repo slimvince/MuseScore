@@ -222,6 +222,8 @@
 
 **Status.** LIVE · decided 2026-07-19 · ratified by user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_prefit_gates.md:32-42`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** cowork_prefit_gates.md:3 records the user's ratification of all four protocols including the marked constants, dated 2026-07-19; the held-out protocol at :23-60. It is the protocol form of register entry D-097, which states the general rule at its ARCHITECTURE.md home. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
@@ -249,6 +251,8 @@
 
 **Status.** LIVE · decided 2026-07-19 · ratified by user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_prefit_gates.md:68-81`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** cowork_prefit_gates.md:3 records the user's ratification of all four protocols including the marked constants, dated 2026-07-19; the capacity budget at :62-96, with the twelve-to-fourteen weight amendment recorded in place at :77-81 as a lawful protocol amendment. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
@@ -264,6 +268,8 @@
 **Why.** It closes the route by which a governance constant becomes a knob: without the distinction, a fold count or a pooling threshold could be moved in response to a disappointing measurement and the move would look like ordinary calibration. The document states the same rule twice (cowork_prefit_gates.md:5-6 and :17-19), once for the ratification and once for the constants themselves.
 
 **Status.** LIVE · decided 2026-07-19 · ratified by user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_prefit_gates.md:17-19`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
@@ -284,6 +290,8 @@
 
 **Status.** LIVE · decided 2026-07-19 · ratified by user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_prefit_gates.md:116-121`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** cowork_prefit_gates.md:3 records the user's ratification of all four protocols, dated 2026-07-19; the adoption protocol at :98-145, with the home-column amendment recorded in place at :123-129 as a lawful pre-measurement amendment. The event it governed is the OI-178 adoption, whose outcome is in the CLAUDE.md gate block. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
@@ -299,6 +307,8 @@
 **Why.** It is principle #23 (an end-state principle needs a lawful transition) applied in both directions: the sanction that permits two paths for one concern must say how the duplication ends whichever way the decision goes, so that a declared migration state cannot quietly become a permanent one.
 
 **Status.** LIVE · decided 2026-07-19 · ratified by user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_prefit_gates.md:189-191`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
@@ -363,6 +373,8 @@
 
 **Status.** SHELVED WITH EVIDENCE · decided 2026-07-07 · ratified by the user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_joint_key_chord_design.md:77-96`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step this decision places was shelved against measurement and that shelving is register entry **D-278** (user-ratified 2026-07-07, re-ratified 2026-08-02), so the placement is shelved with it; the document's own banner says it is retained as the record and that the step is off the build inventory. **Reported, not statused as a supersession:** the option this decision REJECTED — one decision over a combined tonality-and-chord state — is what **D-001** later adopts as the production architecture, and no record connects the two; the user ruled at D-278's ratification that the shelving does not bear on D-001, and the two objections raised here are answered elsewhere in the record (the decision-neutrality corollary answers the rebuild objection; the adoption measurement answers the magnitude objection). NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
@@ -382,6 +394,8 @@
 **Why.** Established by the attempt: the measurement report that went looking for this population found it computable nowhere, and the record names that finding as the reason. The consequence is designed around rather than assumed away — a cheap two-stage filter narrows the candidates first, the exact condition is computed only on those, and the coupled decision is committed only where it holds.
 
 **Status.** LIVE · decided 2026-07-07 · ratifier not stated
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_joint_key_chord_design.md:266-272`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 

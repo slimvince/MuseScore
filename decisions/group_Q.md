@@ -67,6 +67,8 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by the user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `CLAUDE.md:381-383`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md` (session 21, at the user's ratification of the external architecture review's corpus-expansion amendment). Related but distinct from **D-225** (a corpus is regenerated before its baseline figures are updated) and from the re-baseline discipline in `CLAUDE.md` gate block (A). Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]] — measurement conventions go to the gate block): written into `CLAUDE.md` gate block (A) beside the re-baseline discipline it bounds. Former home preserved (#12): `STATUS_ARCHIVE.md:250`. The same rule is stated on the corpus side at `cowork_score_census.md`'s decision-tier block, which the homed text names.
@@ -83,6 +85,8 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `docs/score_inventory.md:357-359`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md` as the stated design principle of the validation-corpus roadmap. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written as hard rule 7 of `docs/score_inventory.md`, the document `CLAUDE.md` directs every score or corpus task to read first. Former home preserved (#12): `STATUS_ARCHIVE.md:2938`, the validation-corpus roadmap.
@@ -98,6 +102,8 @@
 **Why.** Measured: a bass-injection experiment that supplied the missing root before analysis raised one jazz corpus from 39.8 % to 98.3 % and another from 18.0 % to 99.9 % agreement, which is what identifies the shortfall as missing material rather than mis-scoring (`STATUS_ARCHIVE.md:1575-1583`).
 
 **Status.** LIVE · decided 2026-04-08 · ratifier not stated
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `ARCHITECTURE.md:2649-2651`
 
@@ -116,6 +122,8 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_score_census.md:30-33`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The document's banner records `Status: v1 DELIVERED (Cowork, 2026-07-02); for user disposition of the acquisition tiers (§5)` — the user disposition it names covers the acquisition tiers, not this rule. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
@@ -133,6 +141,8 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_score_census.md:67-70`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
@@ -149,6 +159,8 @@
 **Why.** The exclusion rule is the generalization of a failure the project already had: the census names it the M3 contamination lesson — the shared-directory failure mode in which one style setting's output was measured against another's. Contamination by re-encoding is the same failure arriving through a different door.
 
 **Status.** LIVE · decided 2026-07-02 · ratifier not stated
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_score_census.md:74-77`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
@@ -169,6 +181,8 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_score_census.md:119-124`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
@@ -187,6 +201,8 @@
 **Why.** Each reason is tied to what it costs or to what already decides it: the unwalkable sources are ones where cost exceeds value and the content is mostly not machine-readable; the mechanically closable ones ride an acquisition step already scheduled; the snippet-verified rows are verified at the moment of acquisition; and the scope ruling on non-Western material cites the external architecture review's finding F-15.
 
 **Status.** LIVE · decided 2026-07-02 · ratifier not stated
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_score_census.md:126-131`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
@@ -207,6 +223,8 @@
 
 **Status.** LIVE · decided 2026-07-03 · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_score_census.md:166-171`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The section is headed as a user observation of 2026-07-03; the record says the trigger is instituted but does not name who instituted it. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
@@ -224,6 +242,8 @@
 **Why.** Measured by the second wave's own outcome: its finds were already inside collections the census had enumerated — what had missed them was that the earlier dismissals were purpose-relative, made with only the harmonic axis in mind. Re-scoring what is already listed is therefore both cheaper than searching and likelier to yield.
 
 **Status.** LIVE · decided 2026-07-03 · ratifier not stated
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_score_census.md:189-193`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
@@ -247,6 +267,8 @@
 **Why.** The third consequence has a founding counter-example on the record: a jazz collection was acquired for a study of harmonic idiom, and its hierarchical tree annotations — a separate annotation layer, and the footing for a later analytical lever — went unrecorded until a different question was put to it a week later.
 
 **Status.** LIVE · decided 2026-07-03 · ratified by the user
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_score_census.md:255-264`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
@@ -278,6 +300,8 @@
 
 **Status.** LIVE · decided 2026-07-03 · ratified by the user
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_score_census.md:266-282`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The protocol is recorded as the user's, 2026-07-03. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
@@ -291,6 +315,8 @@
 **Why.** Established by walking the repository, at the third corpus wave, 2026-07-04, provenance `cc_corpus_wave3_report.md`; the finding also promoted the row out of the residual-risk list into the enumerated containers. It is exclusion evidence in the sense principle #12 names: a ruled-out possibility recorded rather than dropped, because the exclusion is not recomputable from what is kept.
 
 **Status.** LIVE · decided 2026-07-04 · ratifier not stated
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_score_census.md:216`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
@@ -306,6 +332,8 @@
 
 **Status.** LIVE · decided 2026-07-04 · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_score_census.md:215`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
@@ -319,6 +347,8 @@
 **Why.** Established by the union search of 2026-07-04, recorded in `cowork_union_search_record.md` §2. The record notes that the nearest source is multi-purpose — it also carries harmony and cadence reference data over twelve Mozart sonatas — which is the intake rule (**D-367**) working as written.
 
 **Status.** LIVE · decided 2026-07-04 · ratifier not stated
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_score_census.md:219`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
@@ -334,6 +364,8 @@
 
 **Status.** LIVE · decided 2026-07-04 · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_score_census.md:225`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The user's act recorded on this row is the ADOPTION of the need (2026-07-04); the build-not-download conclusion is a measured search outcome and names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
@@ -348,6 +380,8 @@
 
 **Status.** LIVE · decided 2026-07-04 · ratifier not stated
 
+**Entry ratified.** 2026-08-02 · by user
+
 **Home.** `cowork_score_census.md:208`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The cell marks it `(Wave-3 MEASURED, corrects the audit)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
@@ -361,6 +395,8 @@
 **Why.** The restriction follows directly from the registered de-duplication rule (**D-361**): a work already in the corpus a change is graded against is excluded as reference data from every other container it appears in. The record also carries the walk's own caveat — the analyses ship as a package binary, with only the scores in plain notation.
 
 **Status.** LIVE · decided 2026-07-04 · ratifier not stated
+
+**Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_score_census.md:208`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
