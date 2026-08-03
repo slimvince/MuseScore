@@ -23,7 +23,7 @@
 
 **Status.** LIVE · decided 2026-07-11 · ratified by user
 
-**Home.** `CLAUDE.md:1133`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1147`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:878-887, user-directed 2026-07-11. Binds Claude Code and Cowork sessions alike.
 
@@ -180,7 +180,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `CLAUDE.md:1088-1100`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1102-1114`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1589-1598, under the standing-rule heading 'FULL DECISION SURFACE BEFORE ANY CHOICE QUESTION' at cowork_handoff.md:1587 ('user mandate 2026-07-05'), with the instituting record at STATUS_ARCHIVE.md:202 - a session handoff block, which is a place for tracking a handover and not a home for a standing rule. Homed in the CLAUDE.md Conventions section, where this project's standing session-method rules live. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -281,7 +281,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `CLAUDE.md:1102-1120`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1116-1134`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1669-1680, under the standing-rule heading 'COWORK MUST NOT HALLUCINATE OR ASSUME - VERIFY AT SOURCE (user mandate 2026-06-21)' at cowork_handoff.md:1642 - a session handoff block. Homed in the CLAUDE.md Conventions section. Its scope is taken FROM THE RECORD, not decided here: that heading and D-252's own text ('Cowork MAY: read source files via the file tools - NOT bash') both state it as a planning-side rule, so the homed entry says so and says the mandated build, test and measurement commands are unaffected. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -304,7 +304,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `CLAUDE.md:1122-1129`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1136-1143`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1792-1796, under the standing-rule heading 'INVESTIGATE BY DEFAULT - NEVER ASK investigate vs proceed (user mandate 2026-06-14)' at cowork_handoff.md:1790 - a session handoff block. Homed in the CLAUDE.md Conventions section, beside principle #5, which it operationalizes. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -519,25 +519,28 @@
 
 **Provenance.** User ruling of 2026-08-03 (the seventh ruling set of that date, W5), homed at phase 1p in `cowork_audit_protocol.md`'s dispatch-protocol section beside **D-431**, which is the established home for rules about how a dispatch is written (D-250, D-251, D-252 also live there). **The rule carries its own mechanism**, so that it is more than a habit: every dispatch and every session report carries a SELF-CHECK SECTION answering a named five-item checklist — the guiding principles, the conventions, the figures-and-premises rule (D-431), the file-tools rule, and uncertainty on any comparison (#24) — and the section's ABSENCE is a failure `tools/audit/process_check.py` reports. The check's own detection power against the eight instances is measured rather than claimed, at `tools/audit/process_check_establishment.json`. NOT RATIFIED as an ENTRY — it goes to the user in the phase-1p ratification queue.
 
-### D-436 — A mechanism is kept on three measured conditions — automatic, detection rate, false-positive rate — not on whether it retires prose
+### D-436 — A mechanism is judged on three measured conditions — automatic, detection rate, false-positive rate — and a failing one is REPORTED, not automatically removed
 
-> **Ruled by the user, 2026-08-03.** A mechanism built to enforce one of these rules is kept when
-> **it runs automatically with no human step, it has a measured detection rate against known
-> instances of the failure it is for, and it has a measured false-positive rate at or near zero on
-> legitimate work.** All three are measurable and none is judged. A mechanism that fails any of them
-> is not kept: one needing a human step is a reminder, one with no measured detection rate is
-> unestablished (#19), and one that fires on legitimate work gets switched off, which is worse than
-> having none.
+> **Ruled by the user, 2026-08-03; AMENDED by the user the same day (the eleventh ruling set).** A
+> mechanism built to enforce one of these rules is judged on three conditions: **it runs
+> automatically with no human step, it has a measured detection rate against known instances of the
+> failure it is for, and it has a measured false-positive rate at or near zero on legitimate work.**
+> All three are measurable and none is judged. **A mechanism that fails any of them is REPORTED —
+> with the condition it fails, the measurement that shows it, and the reason that condition exists.
+> It is NOT removed automatically: keeping it or removing it is the user's ruling.** The reasons the
+> conditions exist are unchanged, and they are what the report must carry: one needing a human step
+> is a reminder, one with no measured detection rate is unestablished (#19), and **one that fires on
+> legitimate work gets switched off, which is worse than having none.**
 
-**In plain words.** Whether a check or guard built to enforce a process rule is worth keeping is decided by three things that can be measured: it runs by itself with no human step; it has been measured against known instances of the failure it exists for, and found them; and it has been measured against legitimate work, and hardly ever fires on it. Whether it lets some written rule be deleted is not part of the test.
+**In plain words.** Whether a check or guard built to enforce a process rule is trustworthy is measured on three things: it runs by itself with no human step; it has been measured against known instances of the failure it exists for, and found them; and it has been measured against legitimate work, and hardly ever fires on it. A mechanism that fails one of these is reported — with the condition it failed and why that condition exists — and whether it is kept or removed is the user's call, not the measuring session's. Whether it lets some written rule be deleted is not part of the test.
 
-**Why.** The test it replaces was a structural proxy standing in for a behavioral quantity, unvalidated — the substitution principle #17(d) forbids. What is at stake is whether the running burden or the failure rate falls, and prose retirement measures neither. The instance that exposed it is on the record: both mechanisms built under the withdrawn test were reported as retiring no prose (`OPEN_ITEMS.md` OI-292, and `tools/audit/claude_md_rule_triage.json` → `what_was_executed`), while each removes a failure mode — so the proxy graded them failures for a reason unrelated to what they do.
+**Why.** Two rulings on the same day, and the second amends the first. **The test both replace** was a structural proxy standing in for a behavioral quantity, unvalidated — the substitution principle #17(d) forbids. What is at stake is whether the running burden or the failure rate falls, and prose retirement measures neither. The instance that exposed it is on the record: both mechanisms built under the withdrawn test were reported as retiring no prose (`OPEN_ITEMS.md` OI-292, and `tools/audit/claude_md_rule_triage.json` → `what_was_executed`), while each removes a failure mode — so the proxy graded them failures for a reason unrelated to what they do. **The amendment's own defense** is that the first form made failure self-executing ("is not kept"), which puts a removal decision inside a measurement; measuring is the session's act and deciding what a failing measurement means is the user's. It weakens nothing — a mechanism failing the detection-rate condition is still unestablished under #19 and still may not be put under load — and it stops a failing mechanism disappearing without a ruling, which would destroy the measurement's own evidence (#12).
 
 **Status.** LIVE · decided 2026-08-03 · ratified by user
 
 **Home.** `cowork_audit_protocol.md:274`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** User ruling of 2026-08-03 (the eighth ruling set of that date, X3), homed at phase 1q in `cowork_audit_protocol.md`'s dispatch-protocol section beside **D-431** and **D-434**, which is the established home for rules about how a dispatch is written and checked. **It WITHDRAWS a test the planning side had stated and this project had been working under** — *a mechanism must retire the prose it replaces, or it is apparatus growth* — and the withdrawal is recorded with its reason rather than left as a silent change of standard. The two mechanisms built under the withdrawn test are KEPT under this one, and their establishment artifacts carry their measured rates: `tools/audit/process_check_establishment.json` and `tools/audit/shell_read_guard_establishment.json`. The guard's third condition holds only while it is ARMED, which is the user's act on the user's machine; until then it is recorded as an expected-failing check rather than as coverage (`OPEN_ITEMS.md` OI-292). NOT RATIFIED as an ENTRY — it goes to the user in the phase-1q ratification queue.
+**Provenance.** User ruling of 2026-08-03 (the eighth ruling set of that date, X3), homed at phase 1q in `cowork_audit_protocol.md`'s dispatch-protocol section beside **D-431** and **D-434**, which is the established home for rules about how a dispatch is written and checked. **It WITHDRAWS a test the planning side had stated and this project had been working under** — *a mechanism must retire the prose it replaces, or it is apparatus growth* — and the withdrawal is recorded with its reason rather than left as a silent change of standard. The two mechanisms built under the withdrawn test are KEPT under this one, and their establishment artifacts carry their measured rates: `tools/audit/process_check_establishment.json` and `tools/audit/shell_read_guard_establishment.json`. The guard's third condition holds only while it is ARMED, which is the user's act on the user's machine; until then it is recorded as an expected-failing check rather than as coverage (`OPEN_ITEMS.md` OI-292). **★ AMENDED by the user 2026-08-03 (the eleventh ruling set, AA5) and re-taken at phase 1u: the criterion INFORMS; removal or retention is the user's ruling.** The three conditions and their stated reasons are unchanged — including the false-positive reason, *one that fires on legitimate work gets switched off, which is worse than having none*, which is why that condition exists and which survives the amendment intact. What changed is who decides the consequence. **The FORMER VERBATIM is preserved here (#12), being the text the entry carried before the amendment:** "**Ruled by the user, 2026-08-03.** A mechanism built to enforce one of these rules is kept when **it runs automatically with no human step, it has a measured detection rate against known instances of the failure it is for, and it has a measured false-positive rate at or near zero on legitimate work.** All three are measurable and none is judged. A mechanism that fails any of them is not kept: one needing a human step is a reminder, one with no measured detection rate is unestablished (#19), and one that fires on legitimate work gets switched off, which is worse than having none." **The amendment's first application is on the record in the same wave:** the shell-read guard has two shapes its established corpora do not cover — a common existence-listing command and a path outside the repository — and under the amended rule they are REPORTED and rowed for the false-deny establishment run rather than either added to the denied set unestablished or the guard treated as failing and dropped (`OPEN_ITEMS.md` OI-292, OI-300). NOT RATIFIED as an ENTRY — it goes to the user in the phase-1q ratification queue, with the amendment above added at phase 1u.
 
 ### D-437 — Phase 3 waits on the phase-2 items that could find another member of the family being designed for, not on all of phase 2
 
@@ -552,7 +555,7 @@
 
 **Home.** `CLAUDE.md:1035-1053`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** User ruling 2026-08-03, transmitted in the phase-1o dispatch cc_instruction_phase1o_gate_partition_and_probe_rerun.md §2.1; applied and homed at CLAUDE.md's D-231 entry in the recording commit per D-230. The partition itself is generated at tools/audit/phase3_gate_partition.json.
+**Provenance.** User ruling 2026-08-03, transmitted in the phase-1o dispatch cc_instruction_phase1o_gate_partition_and_probe_rerun.md §2.1; applied and homed at CLAUDE.md's D-231 entry in the recording commit per D-230. The partition itself is generated at tools/audit/phase3_gate_partition.json. **★ THE PER-ITEM VERDICTS WERE ACCEPTED BY THE USER 2026-08-03 (the eleventh ruling set, AA1) — accepted AS GENERATED, with the accounting of what the ruling's measured effect actually was recorded beside them.** That accounting is a block of the artifact, `what_the_partition_measured`, and no figure of it is restated here (#17f, D-431); its structural counts read fields rather than prose, and the one judgment a text test could not make honestly is carried as quoted sentences for the reader instead of as a number. **In plain words: most items GATE, several of them because their search space has ALREADY produced a member of the family rather than on the doubt default, and the narrowing bites in exactly one place** — the family design need not wait for phase 2's bounded trust statement to be WRITTEN, only for the gating searches to have RUN. **★ THE PLANNING PREDICTION THAT RECOMMENDED THIS RULING IS REFUTED AND IS RECORDED AS SUCH** (#17b applied to a planning claim): Cowork's decision surface said the option *"removes the largest share of the blocking for the smallest loss of rigor"*, and the second half holds while the first does not. **The RULING stands** — it was ruled by the user on its own terms and is not disturbed by its advocate's forecast being wrong; what the record must not do is let a later session inherit the expectation instead of the result. Full statement at the artifact's `what_the_partition_measured.the_refuted_planning_prediction`. **A second premise of the same wave was checked at the document and came back different too**: the claim about which of the four channels the phase-2 clause omits actually matter is not what the inventory supports, and the inventory's own statement that history mining is "run to completion" is not true at HEAD — both at `assumption_A1_of_the_phase1u_dispatch`. No verdict moved on either finding.
 
 ### D-438 — Open-items register rows whose subject is this project's own tracking and documentation apparatus gate nothing — but an establishment obligation always gates
 

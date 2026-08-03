@@ -620,6 +620,230 @@ A1 = {
 }
 
 
+# --------------------------------------------------------------------------------------
+# The SECOND assumption about the channel enumeration, declared by the phase-1u dispatch and
+# checked at the inventory document itself (not at the session report it came from). Recorded
+# here beside A1 because it is the same premise, narrowed, and a reader comparing the two must
+# not have to reconstruct which wave said what.
+# --------------------------------------------------------------------------------------
+A1_PHASE1U = {
+    "as_stated_in_the_dispatch": (
+        "That the inventory holds TEN channels, and that of the four the rule's phase-2 clause "
+        "omits, the fresh-reader channel and history mining are the two that matter - the latter "
+        "being the OI-207 residual second pass, which gates."
+    ),
+    "its_declared_source": (
+        "a session report (the phase-1o report), which is a secondary surface; the dispatch "
+        "labelled it an ASSUMPTION for exactly that reason and ordered it checked at the "
+        "document before anything rested on it."
+    ),
+    "how_it_was_checked": (
+        "cowork_oi200_perspective_inventory.md read in full, and the rule's own clause read at "
+        "CLAUDE.md. Both are primary sources for what they respectively state."
+    ),
+    "verdict": "PARTLY CONFIRMED, PARTLY DIFFERENT - reported, not reconciled",
+    "findings": [
+        {
+            "kind": "the channel count",
+            "verdict": "CONFIRMED",
+            "finding": (
+                "The inventory's section 4 enumerates ten channels, headed 'Channel 1' through "
+                "'Channel 10'. The rule's clause names six subjects, which map onto channels 1, "
+                "2, 3, 5, 6 and 7; the four it does not name are 4, 8, 9 and 10. Both halves of "
+                "the arithmetic hold at the documents."
+            ),
+        },
+        {
+            "kind": "which omissions matter",
+            "verdict": "DIFFERENT",
+            "finding": (
+                "'The fresh-reader channel and history mining are the two that matter' is not "
+                "what the document supports, because it merges two different senses of matter. "
+                "On the sense that decides anything - does the omission add a GATING wait the "
+                "rule's six subjects would not otherwise have named? - the answer is channel 9 "
+                "AND channel 10, not 8 and 9: channel 10 (defect-signature sweeps) is a distinct "
+                "search the rule names nowhere and is GATING on this partition's own verdict. "
+                "Channel 8 matters in the other sense: it is a distinct search, but it IS the "
+                "audit passes the rule names separately, so counting it as an additional wait "
+                "would double-count work already enumerated - which is why this partition "
+                "carries it with an explicit duplicate_of. Channel 4 is not a distinct search at "
+                "all; the inventory says of it 'Proposed probe: none new - the channel is already "
+                "mandated'. Under either sense taken alone, the phrase names the wrong pair."
+            ),
+        },
+        {
+            "kind": "the inventory's own claim about channel 9 is stale at HEAD",
+            "verdict": "DIFFERENT - and this one is a statement of fact in the draft, not a "
+                       "reading of it",
+            "finding": (
+                "The inventory says of history mining: 'Proposed probe: none new - the "
+                "adjudication is this channel run to completion.' The OI-207 adjudication is not "
+                "run to completion at HEAD. Its residual second pass RAN on 2026-08-02, and work "
+                "continues on both of its faces: the unresolved cluster residual is a live figure "
+                "(tools/audit/decisions/disposition_manifest.json -> "
+                "disposition_counts.unresolved) and the owed full document reads are tracked on "
+                "the row itself. So the dispatch's gloss - 'history mining, being the OI-207 "
+                "residual second pass' - is also imprecise in the other direction: what remains "
+                "of this channel is the CONTINUING residual and reading work, not an unrun second "
+                "pass. The verdict GATING is unaffected either way; what is corrected is the "
+                "description of why."
+            ),
+        },
+    ],
+    "what_this_does_not_change": (
+        "No verdict in this partition moves. A1 of phase 1u was a premise about the ENUMERATION, "
+        "and the enumeration each verdict is stated against is the SUBJECT the rule names, with "
+        "the draft's channel number used as a locator only - which is the property that makes "
+        "the partition survive a correction to the draft."
+    ),
+}
+
+
+# --------------------------------------------------------------------------------------
+# WHAT THE PARTITION MEASURED — recorded 2026-08-03 when the user ACCEPTED the verdicts
+# (eleventh ruling set, AA1: "accept, and record that the ruling's measured effect was
+# small"). The verdicts above are unchanged; this block is the accounting the acceptance
+# ordered, and the counts in it are DERIVED from the items rather than authored.
+# --------------------------------------------------------------------------------------
+THE_ACCEPTANCE = (
+    "The per-item verdicts above are ACCEPTED as generated (user, 2026-08-03). Nothing in "
+    "the partition was re-argued or re-classified at the acceptance; what the acceptance "
+    "added is the record below of what the partition's effect actually was, because a "
+    "narrowing ruling whose measured effect is small must say so where the ruling is read."
+)
+
+# Cowork's planning claim for this option, quoted from the decision surface that carried it
+# (cc_instruction_phase1u_partition_record_and_directory.md §2). The quote is preserved HERE
+# because .gitignore excludes /cc_instruction_*.md as a class, so the surface that made the
+# claim is not itself in the record (#12 -- the claim survives its source).
+THE_REFUTED_PLANNING_PREDICTION = {
+    "the_claim_verbatim": (
+        "removes the largest share of the blocking for the smallest loss of rigor"
+    ),
+    "who_made_it_and_where": (
+        "Cowork, on the decision surface that put this option to the user "
+        "(cc_instruction_phase1u_partition_record_and_directory.md, section 2). Not a user "
+        "statement: the ruling is the user's, the prediction that recommended it is Cowork's."
+    ),
+    "verdict": "REFUTED",
+    "what_actually_happened": (
+        "The loss of rigor is indeed small - that half holds. The blocking removed is NOT the "
+        "largest share and is not a large share: the counts below show the great majority of "
+        "items GATING, most of them on demonstrated grounds rather than on the doubt default, "
+        "and the narrowing reaches exactly one item that any search would have had to run "
+        "anyway. A reader arriving at this ruling later must meet the result, not inherit the "
+        "expectation that sold it."
+    ),
+    "why_this_is_recorded_and_not_quietly_dropped": (
+        "CLAUDE.md #17(b) applied to a PLANNING claim: a written quantitative expectation that "
+        "misses its band is the finding, and the same rule that forbids smoothing a measurement "
+        "result forbids smoothing the prediction that justified the measurement. The RULING "
+        "stands - it was ruled by the user on its own terms and is not disturbed by its "
+        "advocate's forecast being wrong."
+    ),
+}
+
+# What the narrowing actually buys, stated once in plain words. The item it names is derived
+# below by verdict, never transcribed.
+WHERE_THE_NARROWING_BITES = (
+    "The family design need not wait for phase 2's bounded trust statement to be WRITTEN, "
+    "only for the gating searches to have RUN. That is the whole of the practical effect. "
+    "What the trust statement still governs is unchanged: the completeness claim phase 2 "
+    "ends with is not made until it exists."
+)
+
+
+def _default_sentences(reason: str):
+    """Return the sentences of an authored reason that speak about the doubt default, so the
+    classification below can be CHECKED against the words rather than trusted."""
+    out = []
+    for sent in re.split(r"(?<=[.;])\s+", reason):
+        if re.search(r"\bdefault\b", sent, re.I):
+            out.append(sent.strip())
+    return out
+
+
+def measured_effect(items):
+    """Derive what the partition measured. Every figure here is computed from the items."""
+    gating = [i for i in items if i["verdict"] == GATING]
+    non_gating = [i for i in items if i["verdict"] == NON_GATING]
+
+    # STRUCTURAL, not a reading of prose: an item's search space HAS ALREADY produced a member
+    # of the family. This is the strongest form the criterion can be satisfied in.
+    produced = {i["id"]: i["family_rows_this_item_has_already_produced"]
+                for i in items if i.get("family_rows_this_item_has_already_produced")}
+    covered = sorted({r for rows in produced.values() for r in rows})
+    demonstrated = [i for i in gating if i["id"] in produced]
+    # An item marked duplicate_of adds no wait of its own; counting it as a distinct producing
+    # search would overstate how many independent spaces have drawn blood.
+    demonstrated_distinct = [i for i in demonstrated if not i.get("duplicate_of")]
+
+    establishment = [i for i in gating if i.get("exempt_as_establishment_obligation")]
+
+    # The doubt default: the sentences that speak about it, carried verbatim and NOT scored.
+    # See how_the_doubt_default_was_counted below for why there is no count here.
+    default_use = [{"id": i["id"], "sentences": _default_sentences(i["reason"])}
+                   for i in gating if _default_sentences(i["reason"])]
+
+    return {
+        "the_acceptance": THE_ACCEPTANCE,
+        "headline": (
+            "MOST ITEMS GATE, AND THE NARROWING BITES IN ONE PLACE. The ruling is a real "
+            "narrowing and a small one."
+        ),
+        "counts": {
+            "items": len(items),
+            "gating": len(gating),
+            "non_gating": len(non_gating),
+            "gating_whose_space_has_already_produced_a_family_row": len(demonstrated),
+            "gating_whose_space_has_already_produced_a_family_row_ids": [i["id"] for i in demonstrated],
+            "of_those_independent_searches_not_duplicates": len(demonstrated_distinct),
+            "of_those_independent_searches_not_duplicates_ids": [i["id"] for i in demonstrated_distinct],
+            "gating_as_establishment_obligations": len(establishment),
+            "gating_as_establishment_obligations_ids": [i["id"] for i in establishment],
+            "gating_items_whose_reason_discusses_the_doubt_default": len(default_use),
+            "gating_items_whose_reason_discusses_the_doubt_default_ids": [d["id"] for d in default_use],
+        },
+        "how_the_doubt_default_was_counted": {
+            "the_answer": "IT IS NOT COUNTED, DELIBERATELY.",
+            "why": (
+                "Whether an item gates BECAUSE of the doubt default or gates anyway and merely "
+                "mentions it is a judgment about authored prose, and two attempts to decide it "
+                "mechanically inside this tool both got it wrong: a substring test read P2-A3 as "
+                "resting on the default when its reason says in terms that 'it does not need the "
+                "default', and a phrase list then read P2-C6 as disclaiming the default when its "
+                "reason says the default applies AND a positive path exists beside it. A text "
+                "test standing in for that judgment is a structural proxy for a behavioural "
+                "quantity, unvalidated - the substitution CLAUDE.md #17(d) forbids, and the same "
+                "substitution register entry D-436 was ruled to withdraw elsewhere. So the "
+                "sentences are carried verbatim and the reader judges."
+            ),
+            "what_is_safe_to_say": (
+                "The structural counts above are safe because they read fields, not prose: an "
+                "item's search space either has already produced a family row or it has not, and "
+                "an item either carries the establishment-obligation flag or it does not."
+            ),
+            "the_sentences_that_discuss_the_default": default_use,
+        },
+        "what_demonstrated_means_here": (
+            "Not that the item is judged likely to yield another family member, but that its "
+            "search space HAS ALREADY yielded one. That is the strongest form the criterion "
+            "can be satisfied in, and it is why most of the wait is not a doubt call."
+        ),
+        "family_rows_already_produced_by_item": produced,
+        "family_rows_of_the_eight_already_traced_to_an_item": covered,
+        "family_rows_of_the_eight_not_yet_traced_to_any_item": sorted(
+            set(THE_FAMILY) - set(covered)),
+        "where_the_narrowing_bites": WHERE_THE_NARROWING_BITES,
+        "the_refuted_planning_prediction": THE_REFUTED_PLANNING_PREDICTION,
+        "what_this_does_NOT_change": (
+            "No fix, no design and no inference change is authorized by the acceptance, and "
+            "phase 1 is not complete. The gate is narrowed, not opened - the same statement "
+            "the ruling itself carries."
+        ),
+    }
+
+
 def _norm(s: str) -> str:
     """Normalize for location: collapse whitespace, and fold the dash and quote characters the
     record uses into ASCII so an authored quote need not carry them byte-exactly."""
@@ -743,7 +967,9 @@ def build():
             "member. The partition is falsified by a NON-GATING item scoring true; it is "
             "corroborated, never proven, by GATING items scoring either way."
         ),
+        "what_the_partition_measured": measured_effect(items),
         "assumption_A1_of_the_dispatch": A1,
+        "assumption_A1_of_the_phase1u_dispatch": A1_PHASE1U,
         "quote_verification": {
             "checked": len(verifications),
             "located": len(verifications) - len(unlocated),

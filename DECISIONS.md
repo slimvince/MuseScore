@@ -752,7 +752,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-418 | The retirement map — nothing retires by silence; ten named retirements, each with its trigger and its order | LIVE | 2026-08-03 · user | `docs/implementation_roadmap.md` |
 | D-431 | A figure enters a dispatch or a report by citation to a generated artifact, never by transcription — and so does a premise | LIVE | — | `cowork_audit_protocol.md` |
 | D-434 | The writing side runs the standing self-check before a dispatch is released, and records its output | LIVE | — | `cowork_audit_protocol.md` |
-| D-436 | A mechanism is kept on three measured conditions — automatic, detection rate, false-positive rate — not on whether it retires prose | LIVE | — | `cowork_audit_protocol.md` |
+| D-436 | A mechanism is judged on three measured conditions — automatic, detection rate, false-positive rate — and a failing one is REPORTED, not automatically removed | LIVE | — | `cowork_audit_protocol.md` |
 | D-437 | Phase 3 waits on the phase-2 items that could find another member of the family being designed for, not on all of phase 2 | LIVE | — | `CLAUDE.md` |
 | D-438 | Open-items register rows whose subject is this project's own tracking and documentation apparatus gate nothing — but an establishment obligation always gates | LIVE | — | `CLAUDE.md` |
 

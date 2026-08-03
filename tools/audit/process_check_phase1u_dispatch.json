@@ -1,0 +1,35 @@
+{
+  "purpose": "A run of tools/audit/process_check.py over named dispatches or reports. Generated so a report cites this file rather than transcribing what the check found (D-431).",
+  "rules": [
+    "D-431 bare quantity",
+    "D-431 uncited code claim",
+    "D-434 missing self-check section"
+  ],
+  "files_scanned": [
+    "cc_instruction_phase1u_partition_record_and_directory.md"
+  ],
+  "findings_total": 2,
+  "by_file": {
+    "cc_instruction_phase1u_partition_record_and_directory.md": {
+      "findings": 2,
+      "rows": [
+        {
+          "file": "cc_instruction_phase1u_partition_record_and_directory.md",
+          "line": 47,
+          "rule": "D-431 bare quantity",
+          "detail": "2.1",
+          "sentence": "omitted set are from a session report.** → checked at **Task 2.1**."
+        },
+        {
+          "file": "cc_instruction_phase1u_partition_record_and_directory.md",
+          "line": 49,
+          "rule": "D-431 bare quantity",
+          "detail": "4.1",
+          "sentence": "at **Task 4.1**, not assumed."
+        }
+      ]
+    }
+  },
+  "clean_files": [],
+  "establishment": "tools/audit/process_check_establishment.json — the check's measured detection power and false-positive rate. Read it before reading a count here as coverage."
+}

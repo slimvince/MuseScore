@@ -6,7 +6,7 @@
 > :112-130. Not a current plan.
 >
 > *Banner ratified by the user, 2026-08-03 — drafted at phase 1j, presented at
-> `cowork_pending_ratifications_next_session.md` §1, applied at phase 1k. It makes this document a
+> `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1, applied at phase 1k. It makes this document a
 > contract home for D-280 and D-281 (the fifth home case, `CLAUDE.md` decisions-register rule (g)).
 > Anchor note, not part of the ratified text: the banner's ":112-130" was written against the
 > pre-banner line numbers, and inserting the banner shifted the commit-timing lesson and its dated

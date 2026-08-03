@@ -1054,6 +1054,20 @@ Build commands via `Start-Process` are isolated from these rules (exit code not 
   cites); no verdict or count is restated here (#17f, D-431). **An establishment obligation (#19)
   always gates, whatever its subject** — see the open-items register section's non-gating
   declaration, where that clause is stated once and is not repeated here (#6).
+  **★ NOTE ON PHASE 2 — THE ENUMERATION THIS CLAUSE RELIES ON IS NOT RATIFIED (recorded 2026-08-03;
+  the clause itself is unchanged).** Phase 2 above names *"the enumerated discovery channels"* and
+  then lists six subjects. The only place in the record where those channels are actually enumerated
+  is `cowork_oi200_perspective_inventory.md`, whose own banner reads *"STATUS: DRAFT for
+  discussion"* and whose §9 records that its one requested decision has not been taken. So a
+  user-directed rule leans on an unratified draft, and the six subjects under-name what that draft
+  holds. **The gap is stated here, not filled:** the six subjects bind on this clause's own
+  authority and nothing else is imported from the draft; the phase-3 gate partition therefore states
+  each verdict against the SUBJECT this clause names, using the draft's channel numbers as locators
+  only. **The ratification is owed**, its reading surface is
+  `ratification_surfaces/cowork_perspective_inventory_ratification.md`, and until the user rules,
+  no claim about phase 2's coverage rests on the draft's structure. Tracked at `OPEN_ITEMS.md`
+  OI-298 — an apparatus row under the non-gating declaration above, so it blocks nothing and stays
+  owed.
 
 - **MAKE IT WORK FIRST; COMPROMISE ON PERFORMANCE ONLY IF PERFORMANCE PROVES TO BE A PROBLEM
   (user-directed, 2026-07-28, at the analysis-cost session).** Getting the inference right comes

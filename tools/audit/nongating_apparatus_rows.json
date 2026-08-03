@@ -13,9 +13,9 @@
   "the_two_stops": "The tool refuses to run if a first-cut candidate has no authored verdict, and refuses an authored verdict for a row that is not an open candidate - so the table cannot drift away from the register without failing loudly."
  },
  "population": {
-  "rows_parsed": 297,
-  "open_rows": 214,
-  "first_cut_candidates": 44,
+  "rows_parsed": 301,
+  "open_rows": 217,
+  "first_cut_candidates": 47,
   "first_cut_vocabulary": [
    "doc-sync",
    "docs /",
@@ -37,8 +37,8 @@
   ]
  },
  "totals": {
-  "non_gating": 20,
-  "gates": 24,
+  "non_gating": 22,
+  "gates": 25,
   "non_gating_ids": [
    "OI-205",
    "OI-219",
@@ -48,10 +48,12 @@
    "OI-280",
    "OI-281",
    "OI-282",
-   "OI-287",
    "OI-290",
    "OI-296",
    "OI-297",
+   "OI-298",
+   "OI-299",
+   "OI-301",
    "OI-46",
    "OI-47",
    "OI-48",
@@ -70,10 +72,12 @@
     "OI-280",
     "OI-281",
     "OI-282",
-    "OI-287",
     "OI-290",
     "OI-296",
     "OI-297",
+    "OI-298",
+    "OI-299",
+    "OI-301",
     "OI-46",
     "OI-47",
     "OI-48",
@@ -93,6 +97,9 @@
    "#19 establishment obligation": [
     "OI-283",
     "OI-289"
+   ],
+   "an establishment obligation (#19) - the exemption, not the criterion": [
+    "OI-300"
    ],
    "an instrument a measurement depends on": [
     "OI-150",
@@ -416,14 +423,6 @@
    "gate_ground": "#19 establishment obligation"
   },
   {
-   "id": "OI-287",
-   "title": "The ratification surfaces and the dispatches have no directory of their own, and moving them re-aims cited paths",
-   "subject_column": "doc-sync / repository organization",
-   "verdict": "NON-GATING",
-   "reason": "Where the ratification surfaces and the dispatches are filed, and how cited paths are re-aimed when they move. Repository organization; the files are committed and durable already.",
-   "class_basis": "tracking/documentation apparatus - the user's own phrase"
-  },
-  {
    "id": "OI-289",
    "title": "The 80 LEGACY-marked register entries were SWEPT, never verified — and two of them were wrong",
    "subject_column": "E — verification owed / decisions register",
@@ -464,6 +463,38 @@
    "class_basis": "tracking/documentation apparatus - the user's own phrase"
   },
   {
+   "id": "OI-298",
+   "title": "`CLAUDE.md`'s phase-2 clause leans on an UNRATIFIED DRAFT for the enumeration it requires",
+   "subject_column": "doc-sync / governance",
+   "verdict": "NON-GATING",
+   "reason": "A binding rule POINTS at an enumeration the user has not ratified. What is owed is a pointer and a ratification status - the user's own apparatus examples - and the six subjects the clause itself names bind on the clause's own authority either way, so nothing about the analysis or its inputs turns on the ruling. It is deliberately NOT read as specification completion: no specification is incomplete or false here, and the clause was left unchanged precisely so that remains true.",
+   "class_basis": "tracking/documentation apparatus - the user's own phrase"
+  },
+  {
+   "id": "OI-299",
+   "title": "The open-items INDEX rows are paragraph-length narratives duplicating their detail files, and a correction reached one and not the other",
+   "subject_column": "doc-sync / #6",
+   "verdict": "NON-GATING",
+   "reason": "The SHAPE of the open-items index: whether a row carries its narrative or points at it. Tracking apparatus in the user's own words, and the register's own status of record is not what changes. Its establishment run is named on the row and gates on its own account under the exemption below - the row's apparatus half does not carry the obligation with it.",
+   "class_basis": "tracking/documentation apparatus - the user's own phrase"
+  },
+  {
+   "id": "OI-300",
+   "title": "The shell-read guard owes a false-deny establishment run over three shapes its corpora do not contain",
+   "subject_column": "process / mechanisation debt (#19)",
+   "verdict": "GATES",
+   "reason": "Its whole subject is a mechanism's MEASURED false-deny and detection rates over two shapes its corpora do not contain. Classified GATES on the exemption alone, and the exemption is what makes the classification easy: an establishment obligation always gates whatever its subject, because backgrounding one is how it never happens. The apparatus test is not reached and is not applied.",
+   "gate_ground": "an establishment obligation (#19) - the exemption, not the criterion"
+  },
+  {
+   "id": "OI-301",
+   "title": "`tools/open_items_split_check.py --split-baseline` overwrites the frozen split reconciliation with a failing report, and nothing warns",
+   "subject_column": "process / audit tooling",
+   "verdict": "NON-GATING",
+   "reason": "A tracking-surface check's REPORTING behaviour: a historical mode overwrites the frozen split-reconciliation artifact with a failing report. Apparatus by the user's own line - what is owed is that a check stop destroying a filing record. Classified with [[OI-297]] and apart from OI-292 on the same ground the OI-297 verdict states: no measurement of the analysis depends on it, and the register's health is separately established by the LIVING mode, which passes. Its fix's establishment run gates on its own account under the exemption.",
+   "class_basis": "tracking/documentation apparatus - the user's own phrase"
+  },
+  {
    "id": "OI-150",
    "title": "BUILD_AND_TEST.md stale test baselines",
    "subject_column": "doc-sync",
@@ -488,18 +519,32 @@
    "class_basis": "the row's own recorded status already says it gates nothing"
   }
  ],
+ "retired_verdicts": {
+  "what_this_is": "Verdicts for rows that have since CLOSED. The tool stops on a live verdict naming a row the INDEX no longer carries open - correctly, since that is how a stale declaration survives an unnoticed resolution - and deleting the reasoning would lose it (#12), so it is preserved here. Never counted; if the row reopens, the tool stops until the verdict is moved back.",
+  "entries": {
+   "OI-287": {
+    "verdict": "NON-GATING",
+    "class_basis_or_ground": "user",
+    "reason": "Where the ratification surfaces and the dispatches are filed, and how cited paths are re-aimed when they move. Repository organization; the files are committed and durable already.",
+    "closed": "RESOLVED 2026-08-03 (phase 1u, Task 4) - the directory `ratification_surfaces/` created, ten files moved, every citation re-aimed per citation."
+   }
+  }
+ },
  "assumption_A3_of_the_dispatch": {
   "as_stated_in_the_dispatch": "That OI-280, OI-282, OI-287 and OI-274's body-tense half are the complete apparatus-row set.",
   "its_declared_source": "Cowork has read each of those rows, but not that the set is exhaustive.",
   "verdict": "DIFFERS in both directions - reported, not reconciled",
   "confirmed": [
    "OI-280",
-   "OI-282",
-   "OI-287"
+   "OI-282"
   ],
   "refuted": [
    "OI-274"
   ],
+  "closed_since_the_declaration": [
+   "OI-287"
+  ],
+  "closed_note": "A row A3 named that has since been RESOLVED is neither a confirmation nor a refutation: it left the population rather than changing class. Its verdict is kept at `retired_verdicts`.",
   "refuted_note": "OI-274 is NOT apparatus. Its subject is a mandatory session-start read that states in the present tense that a dormant scorer is what runs; correcting a false statement about what runs is phase 1's own subject, not leftover-capacity work.",
   "not_in_A3_but_derived": [
    "OI-205",
@@ -511,6 +556,9 @@
    "OI-290",
    "OI-296",
    "OI-297",
+   "OI-298",
+   "OI-299",
+   "OI-301",
    "OI-46",
    "OI-47",
    "OI-48",

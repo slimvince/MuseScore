@@ -83,6 +83,19 @@ FIRST_CUT_VOCAB = [
 #     "row-says"  - the row's own recorded status already says it gates nothing
 #   gate_ground is recorded ONLY on GATES rows.
 # --------------------------------------------------------------------------------------
+# Verdicts for rows that have since CLOSED. The tool stops on a live verdict naming a row the
+# INDEX no longer carries open -- correctly, since that is how a stale declaration survives an
+# unnoticed resolution. But deleting the reasoning would lose it (#12), so a closed row's
+# verdict moves here: preserved, carried into the artifact as history, and never counted.
+RETIRED_VERDICTS = {
+    "OI-287": (NON_GATING, "user",
+               "Where the ratification surfaces and the dispatches are filed, and how cited "
+               "paths are re-aimed when they move. Repository organization; the files are "
+               "committed and durable already.",
+               "RESOLVED 2026-08-03 (phase 1u, Task 4) - the directory `ratification_surfaces/` "
+               "created, ten files moved, every citation re-aimed per citation."),
+}
+
 V = {
     # ------------------------------------------------------------------ NON-GATING
     "OI-46": (NON_GATING, "user",
@@ -155,10 +168,7 @@ V = {
                "next day. The falsehood is real but it sits in a tracking surface: the analysis "
                "fact it concerns - the five-idiom set - is correctly recorded in the canonical "
                "document and in the register, so no specification of the analysis is wrong."),
-    "OI-287": (NON_GATING, "user",
-               "Where the ratification surfaces and the dispatches are filed, and how cited "
-               "paths are re-aimed when they move. Repository organization; the files are "
-               "committed and durable already."),
+    # OI-287's verdict moved to RETIRED_VERDICTS on 2026-08-03 when the row closed.
     "OI-290": (NON_GATING, "user",
                "A section of a corpus document mixes rules and findings, which the home "
                "criterion then classifies as one block. A SECTION-BOUNDARY defect in how the "
@@ -174,6 +184,35 @@ V = {
     "OI-296": (NON_GATING, "user",
                "A sweep for ratified rules recorded in tracking sections rather than in the "
                "section they amend. Where a rule is FILED, not what it says."),
+    "OI-298": (NON_GATING, "user",
+               "A binding rule POINTS at an enumeration the user has not ratified. What is owed "
+               "is a pointer and a ratification status - the user's own apparatus examples - and "
+               "the six subjects the clause itself names bind on the clause's own authority "
+               "either way, so nothing about the analysis or its inputs turns on the ruling. It "
+               "is deliberately NOT read as specification completion: no specification is "
+               "incomplete or false here, and the clause was left unchanged precisely so that "
+               "remains true."),
+    "OI-301": (NON_GATING, "user",
+               "A tracking-surface check's REPORTING behaviour: a historical mode overwrites the "
+               "frozen split-reconciliation artifact with a failing report. Apparatus by the "
+               "user's own line - what is owed is that a check stop destroying a filing record. "
+               "Classified with [[OI-297]] and apart from OI-292 on the same ground the OI-297 "
+               "verdict states: no measurement of the analysis depends on it, and the register's "
+               "health is separately established by the LIVING mode, which passes. Its fix's "
+               "establishment run gates on its own account under the exemption."),
+    "OI-299": (NON_GATING, "user",
+               "The SHAPE of the open-items index: whether a row carries its narrative or points "
+               "at it. Tracking apparatus in the user's own words, and the register's own status "
+               "of record is not what changes. Its establishment run is named on the row and "
+               "gates on its own account under the exemption below - the row's apparatus half "
+               "does not carry the obligation with it."),
+    # ---------------------------------------------------------------------- GATES
+    "OI-300": (GATES, "an establishment obligation (#19) - the exemption, not the criterion",
+               "Its whole subject is a mechanism's MEASURED false-deny and detection rates over "
+               "two shapes its corpora do not contain. Classified GATES on the exemption alone, "
+               "and the exemption is what makes the classification easy: an establishment "
+               "obligation always gates whatever its subject, because backgrounding one is how "
+               "it never happens. The apparatus test is not reached and is not applied."),
     # ---------------------------------------------------------------------- GATES
     "OI-45": (GATES, "specification completeness",
               "Half of it is stale anchors, which would be apparatus - but the other half is a "
@@ -321,8 +360,14 @@ def build():
            if any(v.lower() in r["subject_column"].lower() for v in FIRST_CUT_VOCAB)]
     cut_ids = [r["id"] for r in cut]
 
-    missing = [i for i in cut_ids if i not in V]
+    missing = [i for i in cut_ids if i not in V and i not in RETIRED_VERDICTS]
     stray = [i for i in V if i not in cut_ids]
+    # A retired verdict must name a row that is genuinely no longer an open candidate; if the
+    # row reopens, the verdict must come back to V rather than sit silently in history.
+    wrongly_retired = [i for i in RETIRED_VERDICTS if i in cut_ids]
+    if wrongly_retired:
+        raise SystemExit("STOP: retired verdicts for rows that are open first-cut candidates "
+                         "again: " + ", ".join(sorted(wrongly_retired)))
     if missing:
         raise SystemExit("STOP: first-cut candidates with no authored verdict: "
                          + ", ".join(sorted(missing)))
@@ -358,8 +403,13 @@ def build():
 
     ng_ids = sorted(i["id"] for i in non_gating)
     a3_ids = ["OI-274", "OI-280", "OI-282", "OI-287"]
-    a3_confirmed = [i for i in a3_ids if i in ng_ids]
-    a3_refuted = [i for i in a3_ids if i not in ng_ids]
+    # A row that has since CLOSED is neither a confirmation nor a refutation of the assumption:
+    # it left the population rather than changing class. Counting it as refuted would report a
+    # movement that never happened.
+    a3_closed = [i for i in a3_ids if i in RETIRED_VERDICTS]
+    a3_live = [i for i in a3_ids if i not in a3_closed]
+    a3_confirmed = [i for i in a3_live if i in ng_ids]
+    a3_refuted = [i for i in a3_live if i not in ng_ids]
     a3_missed = [i for i in ng_ids if i not in a3_ids]
 
     return {
@@ -407,11 +457,31 @@ def build():
             },
         },
         "items": items,
+        "retired_verdicts": {
+            "what_this_is": (
+                "Verdicts for rows that have since CLOSED. The tool stops on a live verdict "
+                "naming a row the INDEX no longer carries open - correctly, since that is how a "
+                "stale declaration survives an unnoticed resolution - and deleting the reasoning "
+                "would lose it (#12), so it is preserved here. Never counted; if the row reopens, "
+                "the tool stops until the verdict is moved back."
+            ),
+            "entries": {
+                rid: {"verdict": v, "class_basis_or_ground": g, "reason": reason,
+                      "closed": closed}
+                for rid, (v, g, reason, closed) in sorted(RETIRED_VERDICTS.items())
+            },
+        },
         "assumption_A3_of_the_dispatch": dict(
             A3,
             verdict="DIFFERS in both directions - reported, not reconciled",
             confirmed=a3_confirmed,
             refuted=a3_refuted,
+            closed_since_the_declaration=a3_closed,
+            closed_note=(
+                "A row A3 named that has since been RESOLVED is neither a confirmation nor a "
+                "refutation: it left the population rather than changing class. Its verdict is "
+                "kept at `retired_verdicts`."
+            ),
             refuted_note=(
                 "OI-274 is NOT apparatus. Its subject is a mandatory session-start read that "
                 "states in the present tense that a dormant scorer is what runs; correcting a "

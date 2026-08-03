@@ -15,9 +15,9 @@ unratified ones; LEGACY badges render on the index; full entries under `decision
 finding, the user's ruling pending), **OI-207** (open: 64 documents still owed reading),
 **OI-277** (the note-count emission finding — family-design input), the family rows
 (OI-215/226/227/228/243/244/246/277 — the fix waits on phase 3; D-329's completeness principle is
-their RATIFIED admission premise). (4) **`cowork_pending_ratifications_next_session.md` — THE
+their RATIFIED admission premise). (4) **`ratification_surfaces/cowork_pending_ratifications_next_session.md` — THE
 USER'S FIRST READ: the four banner drafts, the D-406…D-414 queue
-(`cowork_decisions_pending_ratification_8.md`), and the OI-279 ruling surface with the D-132
+(`ratification_surfaces/cowork_decisions_pending_ratification_8.md`), and the OI-279 ruling surface with the D-132
 narrowing recommendation.** (5) `STATUS.md`'s top entries.
 
 **★ WHERE PHASE 1 STANDS.** Specifications: COMPLETE for every ratified constraint (the OI-272

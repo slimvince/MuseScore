@@ -269,15 +269,29 @@ between three proxies asserted without its uncertainty, against #24
 (`tools/audit/decisions/phase1n_reading_regime.json` → `proxy.ordering_decision`). Every one of the
 eight was found by the EXECUTING side, running the check the writing side had not.
 
-### When a mechanism is worth keeping — the three measured conditions
+### The three measured conditions a mechanism is judged on — and who decides when one fails
 
-**Ruled by the user, 2026-08-03.** A mechanism built to enforce one of these rules is kept when
-**it runs automatically with no human step, it has a measured detection rate against known
-instances of the failure it is for, and it has a measured false-positive rate at or near zero on
-legitimate work.** All three are measurable and none is judged. A mechanism that fails any of them
-is not kept: one needing a human step is a reminder, one with no measured detection rate is
-unestablished (#19), and one that fires on legitimate work gets switched off, which is worse than
-having none.
+**Ruled by the user, 2026-08-03; AMENDED by the user the same day (the eleventh ruling set).** A
+mechanism built to enforce one of these rules is judged on three conditions: **it runs
+automatically with no human step, it has a measured detection rate against known instances of the
+failure it is for, and it has a measured false-positive rate at or near zero on legitimate work.**
+All three are measurable and none is judged. **A mechanism that fails any of them is REPORTED —
+with the condition it fails, the measurement that shows it, and the reason that condition exists.
+It is NOT removed automatically: keeping it or removing it is the user's ruling.** The reasons the
+conditions exist are unchanged, and they are what the report must carry: one needing a human step
+is a reminder, one with no measured detection rate is unestablished (#19), and **one that fires on
+legitimate work gets switched off, which is worse than having none.**
+
+**What the amendment changed, and what it did not.** The three conditions are untouched; so is the
+requirement that each be measured rather than judged. What changed is the CONSEQUENCE. The rule as
+first stated made failure self-executing — a mechanism failing a condition "is not kept" — which
+puts a removal decision inside a measurement. The two are different acts: measuring is the
+session's, deciding what a failing measurement means is the user's. The criterion now **informs**
+that decision instead of pre-empting it. *Why the change is not a weakening:* nothing is trusted
+that was not trusted before — a mechanism failing the detection-rate condition is still
+unestablished under #19 and still may not be put under load; what it may no longer do is disappear
+without a ruling, which would destroy the measurement's own evidence (#12) and hide the failure
+from the person whose rule the mechanism enforces.
 
 **The test this replaces, and why it was withdrawn.** The preceding rule — stated by the planning
 side in the phase-1p dispatch (§6.4) — was *a mechanism must retire the prose it replaces, or it

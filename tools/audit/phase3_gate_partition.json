@@ -642,6 +642,122 @@
  },
  "the_stop": "A NON-GATING item that yields a family member is a #13 STOP. It means the partition was wrong; the gate widens to include that item, the family enumeration is re-opened, and any family design already begun stops until it is closed again.",
  "the_check": "As each item runs, its `the_check` block records whether it produced a family member. The partition is falsified by a NON-GATING item scoring true; it is corroborated, never proven, by GATING items scoring either way.",
+ "what_the_partition_measured": {
+  "the_acceptance": "The per-item verdicts above are ACCEPTED as generated (user, 2026-08-03). Nothing in the partition was re-argued or re-classified at the acceptance; what the acceptance added is the record below of what the partition's effect actually was, because a narrowing ruling whose measured effect is small must say so where the ruling is read.",
+  "headline": "MOST ITEMS GATE, AND THE NARROWING BITES IN ONE PLACE. The ruling is a real narrowing and a small one.",
+  "counts": {
+   "items": 17,
+   "gating": 14,
+   "non_gating": 3,
+   "gating_whose_space_has_already_produced_a_family_row": 5,
+   "gating_whose_space_has_already_produced_a_family_row_ids": [
+    "P2-A2",
+    "P2-P2",
+    "P2-C1",
+    "P2-C3",
+    "P2-C8"
+   ],
+   "of_those_independent_searches_not_duplicates": 4,
+   "of_those_independent_searches_not_duplicates_ids": [
+    "P2-A2",
+    "P2-P2",
+    "P2-C1",
+    "P2-C3"
+   ],
+   "gating_as_establishment_obligations": 2,
+   "gating_as_establishment_obligations_ids": [
+    "P2-OI283",
+    "P2-OI289"
+   ],
+   "gating_items_whose_reason_discusses_the_doubt_default": 4,
+   "gating_items_whose_reason_discusses_the_doubt_default_ids": [
+    "P2-A3",
+    "P2-C6",
+    "P2-C10",
+    "P2-OI283"
+   ]
+  },
+  "how_the_doubt_default_was_counted": {
+   "the_answer": "IT IS NOT COUNTED, DELIBERATELY.",
+   "why": "Whether an item gates BECAUSE of the doubt default or gates anyway and merely mentions it is a judgment about authored prose, and two attempts to decide it mechanically inside this tool both got it wrong: a substring test read P2-A3 as resting on the default when its reason says in terms that 'it does not need the default', and a phrase list then read P2-C6 as disclaiming the default when its reason says the default applies AND a positive path exists beside it. A text test standing in for that judgment is a structural proxy for a behavioural quantity, unvalidated - the substitution CLAUDE.md #17(d) forbids, and the same substitution register entry D-436 was ruled to withdraw elsewhere. So the sentences are carried verbatim and the reader judges.",
+   "what_is_safe_to_say": "The structural counts above are safe because they read fields, not prose: an item's search space either has already produced a family row or it has not, and an item either carries the establishment-obligation flag or it does not.",
+   "the_sentences_that_discuss_the_default": [
+    {
+     "id": "P2-A3",
+     "sentences": [
+      "Under the stated default this would be GATING on doubt alone;",
+      "it does not need the default."
+     ]
+    },
+    {
+     "id": "P2-C6",
+     "sentences": [
+      "The channel's scope does not settle it, so the stated default applies - AND there is a positive path, so the default is not doing the work alone: the published lines differ from us precisely in what they take as input (pitch-class profiles versus note-level events, duration-weighted versus onset-weighted membership) and in what chord vocabularies they admit, so a concept-inventory comparison can produce both an (a) and a (b) fact."
+     ]
+    },
+    {
+     "id": "P2-C10",
+     "sentences": [
+      "The stated default, applied honestly."
+     ]
+    },
+    {
+     "id": "P2-OI283",
+     "sentences": [
+      "On the criterion: an unread range of the canonical document can hold a decision about the input surface, so the coverage claim is a bound on where an (a) or (b) fact could still be hiding, and the scope does not settle that - the default applies."
+     ]
+    }
+   ]
+  },
+  "what_demonstrated_means_here": "Not that the item is judged likely to yield another family member, but that its search space HAS ALREADY yielded one. That is the strongest form the criterion can be satisfied in, and it is why most of the wait is not a doubt call.",
+  "family_rows_already_produced_by_item": {
+   "P2-A2": [
+    "OI-243",
+    "OI-244",
+    "OI-277"
+   ],
+   "P2-P2": [
+    "OI-226",
+    "OI-227",
+    "OI-228"
+   ],
+   "P2-C1": [
+    "OI-215",
+    "OI-227"
+   ],
+   "P2-C3": [
+    "OI-243",
+    "OI-244",
+    "OI-277"
+   ],
+   "P2-C8": [
+    "OI-226",
+    "OI-227",
+    "OI-228"
+   ]
+  },
+  "family_rows_of_the_eight_already_traced_to_an_item": [
+   "OI-215",
+   "OI-226",
+   "OI-227",
+   "OI-228",
+   "OI-243",
+   "OI-244",
+   "OI-277"
+  ],
+  "family_rows_of_the_eight_not_yet_traced_to_any_item": [
+   "OI-246"
+  ],
+  "where_the_narrowing_bites": "The family design need not wait for phase 2's bounded trust statement to be WRITTEN, only for the gating searches to have RUN. That is the whole of the practical effect. What the trust statement still governs is unchanged: the completeness claim phase 2 ends with is not made until it exists.",
+  "the_refuted_planning_prediction": {
+   "the_claim_verbatim": "removes the largest share of the blocking for the smallest loss of rigor",
+   "who_made_it_and_where": "Cowork, on the decision surface that put this option to the user (cc_instruction_phase1u_partition_record_and_directory.md, section 2). Not a user statement: the ruling is the user's, the prediction that recommended it is Cowork's.",
+   "verdict": "REFUTED",
+   "what_actually_happened": "The loss of rigor is indeed small - that half holds. The blocking removed is NOT the largest share and is not a large share: the counts below show the great majority of items GATING, most of them on demonstrated grounds rather than on the doubt default, and the narrowing reaches exactly one item that any search would have had to run anyway. A reader arriving at this ruling later must meet the result, not inherit the expectation that sold it.",
+   "why_this_is_recorded_and_not_quietly_dropped": "CLAUDE.md #17(b) applied to a PLANNING claim: a written quantitative expectation that misses its band is the finding, and the same rule that forbids smoothing a measurement result forbids smoothing the prediction that justified the measurement. The RULING stands - it was ruled by the user on its own terms and is not disturbed by its advocate's forecast being wrong."
+  },
+  "what_this_does_NOT_change": "No fix, no design and no inference change is authorized by the acceptance, and phase 1 is not complete. The gate is narrowed, not opened - the same statement the ruling itself carries."
+ },
  "assumption_A1_of_the_dispatch": {
   "as_stated_in_the_dispatch": "That phase 2's channel program is the measurement-tools partition of OI-199, the record-seams partition, OI-199 pass 2, the remaining perspective-inventory channels, and OI-179.",
   "its_declared_source": "a session handoff block, which is a secondary surface",
@@ -664,6 +780,30 @@
     "finding": "The rule that binds is user-directed; the enumeration it points at is an unratified Cowork draft (STATUS: DRAFT for discussion, 2026-08-01) whose own §9 records that its one requested decision has not been taken. Nothing here depends on the draft's authority - each verdict is stated against the SUBJECT the rule names - but a reader must not take the ten-channel structure for a ratified program."
    }
   ]
+ },
+ "assumption_A1_of_the_phase1u_dispatch": {
+  "as_stated_in_the_dispatch": "That the inventory holds TEN channels, and that of the four the rule's phase-2 clause omits, the fresh-reader channel and history mining are the two that matter - the latter being the OI-207 residual second pass, which gates.",
+  "its_declared_source": "a session report (the phase-1o report), which is a secondary surface; the dispatch labelled it an ASSUMPTION for exactly that reason and ordered it checked at the document before anything rested on it.",
+  "how_it_was_checked": "cowork_oi200_perspective_inventory.md read in full, and the rule's own clause read at CLAUDE.md. Both are primary sources for what they respectively state.",
+  "verdict": "PARTLY CONFIRMED, PARTLY DIFFERENT - reported, not reconciled",
+  "findings": [
+   {
+    "kind": "the channel count",
+    "verdict": "CONFIRMED",
+    "finding": "The inventory's section 4 enumerates ten channels, headed 'Channel 1' through 'Channel 10'. The rule's clause names six subjects, which map onto channels 1, 2, 3, 5, 6 and 7; the four it does not name are 4, 8, 9 and 10. Both halves of the arithmetic hold at the documents."
+   },
+   {
+    "kind": "which omissions matter",
+    "verdict": "DIFFERENT",
+    "finding": "'The fresh-reader channel and history mining are the two that matter' is not what the document supports, because it merges two different senses of matter. On the sense that decides anything - does the omission add a GATING wait the rule's six subjects would not otherwise have named? - the answer is channel 9 AND channel 10, not 8 and 9: channel 10 (defect-signature sweeps) is a distinct search the rule names nowhere and is GATING on this partition's own verdict. Channel 8 matters in the other sense: it is a distinct search, but it IS the audit passes the rule names separately, so counting it as an additional wait would double-count work already enumerated - which is why this partition carries it with an explicit duplicate_of. Channel 4 is not a distinct search at all; the inventory says of it 'Proposed probe: none new - the channel is already mandated'. Under either sense taken alone, the phrase names the wrong pair."
+   },
+   {
+    "kind": "the inventory's own claim about channel 9 is stale at HEAD",
+    "verdict": "DIFFERENT - and this one is a statement of fact in the draft, not a reading of it",
+    "finding": "The inventory says of history mining: 'Proposed probe: none new - the adjudication is this channel run to completion.' The OI-207 adjudication is not run to completion at HEAD. Its residual second pass RAN on 2026-08-02, and work continues on both of its faces: the unresolved cluster residual is a live figure (tools/audit/decisions/disposition_manifest.json -> disposition_counts.unresolved) and the owed full document reads are tracked on the row itself. So the dispatch's gloss - 'history mining, being the OI-207 residual second pass' - is also imprecise in the other direction: what remains of this channel is the CONTINUING residual and reading work, not an unrun second pass. The verdict GATING is unaffected either way; what is corrected is the description of why."
+   }
+  ],
+  "what_this_does_not_change": "No verdict in this partition moves. A1 of phase 1u was a premise about the ENUMERATION, and the enumeration each verdict is stated against is the SUBJECT the rule names, with the draft's channel number used as a locator only - which is the property that makes the partition survive a correction to the draft."
  },
  "quote_verification": {
   "checked": 20,

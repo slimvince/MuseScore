@@ -6,7 +6,7 @@
 > constraints and dead ends remain in force and must not be retried.
 >
 > *Banner ratified by the user, 2026-08-03 — drafted at phase 1j, presented at
-> `cowork_pending_ratifications_next_session.md` §1, applied at phase 1k. It makes this document a
+> `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1, applied at phase 1k. It makes this document a
 > contract home for the decisions registered against it (the fifth home case, `CLAUDE.md`
 > decisions-register rule (g)). The body's present tense is NOT corrected by this banner —
 > `OPEN_ITEMS.md` OI-274 stays open for that.*

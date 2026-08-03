@@ -1,0 +1,761 @@
+{
+ "purpose": "The derived membership of the OI-287 ratification-surface directory, and the per-citation census the move must re-aim from. Dispatches are OUT OF SCOPE by the ruling of 2026-08-03 (option 4A, the ratification surfaces only); .gitignore excludes /cc_instruction_*.md and /cc_*.md as a class, so a directory for them would either force-add every one or stand half empty.",
+ "generated_by": "tools/audit/gen_ratification_surface_set.py",
+ "generated_for": "cc_instruction_phase1u_partition_record_and_directory.md, Task 4",
+ "the_instruction": "Derive that set from what register entries actually cite as ratification provenance, not from a list.",
+ "readings": {
+  "class": {
+   "what_it_is": "Every root-level document whose own opening declares it a ratification queue or ratification review aid, cited or not. The candidate population, and the only reading that is a property of the documents themselves.",
+   "members": [
+    "cowork_decisions_pending_ratification.md",
+    "cowork_decisions_pending_ratification_2.md",
+    "cowork_decisions_pending_ratification_3.md",
+    "cowork_decisions_pending_ratification_4.md",
+    "cowork_decisions_pending_ratification_5.md",
+    "cowork_decisions_pending_ratification_6.md",
+    "cowork_decisions_pending_ratification_7.md",
+    "cowork_decisions_pending_ratification_8.md",
+    "cowork_decisions_ratification_delta.md",
+    "cowork_pending_ratifications_next_session.md",
+    "cowork_pending_rulings_2026_08_02.md"
+   ],
+   "detail": {
+    "cowork_pending_rulings_2026_08_02.md": {
+     "title": "# Pending rulings — ratified in conversation 2026-08-02, to be APPLIED the moment phase 1h lands",
+     "banner": [
+      "> **STATUS: RULED BY THE USER, APPLICATION HELD** — phase 1h is mid-flight on the register",
+      "> surface, so these are carried here (never conversation-only) and land in ONE commit right",
+      "> after 1h's report is verified. This file is superseded by that commit and then removable.",
+      "## 1. The LEGACY-marking convention (user, 2026-08-02) — a standing rule"
+     ],
+     "sits_at": "cowork_pending_rulings_2026_08_02.md",
+     "filed": false
+    },
+    "cowork_decisions_pending_ratification.md": {
+     "title": "# The 113 decisions pending ratification — complete entries — ★ RATIFIED BY THE USER 2026-08-02",
+     "banner": [
+      "> **GENERATED REVIEW AID (Cowork, 2026-08-02; regenerate with the one-off in the session record).**",
+      "> Exactly the entries added by the completion pass (D-116 and above), rendered CHARACTER-IDENTICAL",
+      "> to the register's group files by the register generator's own entry renderer — verbatim quote,",
+      "> plain restatement, Why, status, home, provenance. The how-to-read guide and the terms table are",
+      "> in `DECISIONS.md`. The 115 entries you already reviewed are NOT here; their post-review changes",
+      "> are summarized in `cowork_decisions_ratification_delta.md` Part A."
+     ],
+     "sits_at": "ratification_surfaces/cowork_decisions_pending_ratification.md",
+     "filed": true
+    },
+    "cowork_decisions_pending_ratification_2.md": {
+     "title": "# The 23 decisions pending ratification (D-232…D-254) — complete entries",
+     "banner": [
+      "> **GENERATED REVIEW AID (Cowork, 2026-08-02).** Found by the OI-207 residual second pass over the",
+      "> 5,204 unresolved clusters; entered into the register with status taken from the record only —",
+      "> RATIFICATION IS YOURS. Rendered character-identical to the register by its own entry renderer.",
+      "> The two judgments CC flagged as yours, not mechanical: D-243's superseded-in-fact status, and",
+      "> whether a handover document counts as a home for a working-protocol rule (the six handoff-homed",
+      "> entries — OI-266)."
+     ],
+     "sits_at": "ratification_surfaces/cowork_decisions_pending_ratification_2.md",
+     "filed": true
+    },
+    "cowork_decisions_pending_ratification_3.md": {
+     "title": "# The 27 decisions pending ratification (D-255…D-281) — complete entries",
+     "banner": [
+      "> **GENERATED REVIEW AID (Cowork, 2026-08-02).** Found by the phase-1d enumeration wave (21 of",
+      "> 145 documents read in full; the measured remainder is the second partition). Entered with",
+      "> status from the record only — RATIFICATION IS YOURS. Rendered by the register's own entry",
+      "> renderer. Highest-stakes entries: D-278 (the joint key-and-chord step SHELVED WITH EVIDENCE,",
+      "> recorded only in a design document — the 3.1b failure shape) and D-266 (a live prohibition on",
+      "> resuming Layer 6, sitting where no session-start read opens)."
+     ],
+     "sits_at": "ratification_surfaces/cowork_decisions_pending_ratification_3.md",
+     "filed": true
+    },
+    "cowork_decisions_pending_ratification_4.md": {
+     "title": "# The 14 decisions pending ratification (D-286…D-299) — complete entries",
+     "banner": [
+      "> **GENERATED REVIEW AID (Cowork, 2026-08-02).** Found by the phase-1e archive partition",
+      "> (`cowork_handoff_archive.md` read in full; `STATUS_ARCHIVE.md` in part, remainder measured).",
+      "> Entered with status from the record only — RATIFICATION IS YOURS. All enter LIVE (no later",
+      "> ruling names any of them — itself the finding). Headline: D-286, the Stage-3.1b shelving —",
+      "> the audit's founding case, never registered until now. D-292 (the fitting-pool licence",
+      "> constraint) carries the OI-271 conflict — see the decision surface in chat."
+     ],
+     "sits_at": "ratification_surfaces/cowork_decisions_pending_ratification_4.md",
+     "filed": true
+    },
+    "cowork_decisions_pending_ratification_5.md": {
+     "title": "# The 16 decisions pending ratification (D-300…D-315) — complete entries",
+     "banner": [
+      "> **GENERATED REVIEW AID (Cowork, 2026-08-02).** Found by phase 1f (the STATUS archive completed",
+      "> in full + two design documents). Entered with status from the record only — RATIFICATION IS",
+      "> YOURS. Notable: three do-not-retry prohibitions absent from the scoring model's own dead-end",
+      "> section (D-300/301/302), and D-310 — the measured jazz bass-injection evidence behind the",
+      "> OI-7 jazz-validation gate."
+     ],
+     "sits_at": "ratification_surfaces/cowork_decisions_pending_ratification_5.md",
+     "filed": true
+    },
+    "cowork_decisions_pending_ratification_6.md": {
+     "title": "# The 26 decisions pending ratification (D-317…D-342) — complete entries",
+     "banner": [
+      "> **GENERATED REVIEW AID (Cowork, 2026-08-02).** Found by phase 1g's five live-core full reads",
+      "> (the SIGNED Layer-4 and Layer-5 designs, the ratified decoder design, the scoring model, the",
+      "> redesign plan). Entered with status from the record only — RATIFICATION IS YOURS. Notable:",
+      "> D-329 (complete candidate listing as the governing Layer-4 design decision — the OI-275",
+      "> conflict's ratified side) and D-317…D-320 (four measured do-not-retry prohibitions missing",
+      "> from the scoring model's own dead-end section)."
+     ],
+     "sits_at": "ratification_surfaces/cowork_decisions_pending_ratification_6.md",
+     "filed": true
+    },
+    "cowork_decisions_pending_ratification_7.md": {
+     "title": "# The 58 decisions pending ratification (D-343…D-400) — complete entries",
+     "banner": [
+      "> **GENERATED REVIEW AID (Cowork, 2026-08-02).** Found by phase 1h's four full reads (the SIGNED",
+      "> Layer-3 key/mode design, the score census, the shelved-but-retained joint key-chord design, the",
+      "> Layer-5 engagement design, the AS-BUILT+SIGNED voice-leading axis design). Entered with status",
+      "> from the record only — RATIFICATION IS YOURS. **One entry carries a known conflict for your",
+      "> attention: D-345** (the SIGNED Layer-3 specification makes the style preset a weak mode prior)",
+      "> stands against D-003's measured preset-independence — the second instance of the OI-275"
+     ],
+     "sits_at": "ratification_surfaces/cowork_decisions_pending_ratification_7.md",
+     "filed": true
+    },
+    "cowork_decisions_pending_ratification_8.md": {
+     "title": "# The 9 decisions pending ratification (D-406…D-414) — complete entries",
+     "banner": [
+      "> **GENERATED REVIEW AID (Cowork, 2026-08-02).** From the phase-1j full read of",
+      "> `cowork_progression_schema_dictionary.md` (the schema dictionary and the five-idiom style",
+      "> taxonomy, RATIFIED 2026-06-30 per its own record). Entered with status from the record only —",
+      "> RATIFICATION IS YOURS. The companion ruling is OI-279: `ARCHITECTURE.md` §6.7 still shows the",
+      "> RETIRED hand-made genre taxonomy as canonical, and register entries D-131/D-132 quote that",
+      "> stale text."
+     ],
+     "sits_at": "ratification_surfaces/cowork_decisions_pending_ratification_8.md",
+     "filed": true
+    },
+    "cowork_decisions_ratification_delta.md": {
+     "title": "# The ratification delta — what changed in DECISIONS.md since the version the user reviewed",
+     "banner": [
+      "> **GENERATED REVIEW AID (Cowork, 2026-08-02).** The tables below are extracted mechanically from",
+      "> `tools/audit/decisions/backbone_decisions.json` (the register's source of record), never",
+      "> retyped. Purpose: `DECISIONS.md` (228 entries) no longer renders comfortably; the user reviewed",
+      "> and commented on the 115-entry version, whose review corrections are already applied. This file",
+      "> shows ONLY what has changed since that reviewed version, so ratification can proceed without",
+      "> re-reading the whole register. Drill into any entry by its D-number in `DECISIONS.md`."
+     ],
+     "sits_at": "ratification_surfaces/cowork_decisions_ratification_delta.md",
+     "filed": true
+    },
+    "cowork_pending_ratifications_next_session.md": {
+     "title": "# Pending ratifications for the next session (carried out of the 2026-08-02 close)",
+     "banner": [
+      "> **STATUS: RULED AND APPLIED (user, 2026-08-03) — SUPERSEDED BY ITS OWN EXECUTION.** Everything",
+      "> below was read and ruled by the user on 2026-08-03; the rulings were applied at phase 1k",
+      "> (dispatch `cc_instruction_phase1k_apply_rulings.md`). **Nothing here is pending.** Retained",
+      "> unedited beneath, under #12, as the record of what was put to the user and in what words — the",
+      "> ruling is only readable against the surface it answered.",
+      ">"
+     ],
+     "sits_at": "ratification_surfaces/cowork_pending_ratifications_next_session.md",
+     "filed": true
+    }
+   }
+  },
+  "direct": {
+   "what_it_is": "Members of the class a register entry's provenance field names in a sentence about ratification.",
+   "members": [
+    "cowork_pending_ratifications_next_session.md"
+   ],
+   "detail": {
+    "cowork_pending_ratifications_next_session.md": {
+     "entries": [
+      "D-280",
+      "D-281",
+      "D-282",
+      "D-283",
+      "D-284",
+      "D-285",
+      "D-317",
+      "D-318",
+      "D-319",
+      "D-320",
+      "D-321",
+      "D-322",
+      "D-323",
+      "D-324",
+      "D-406",
+      "D-407",
+      "D-408",
+      "D-409",
+      "D-410",
+      "D-411",
+      "D-412",
+      "D-413",
+      "D-414"
+     ],
+     "sentences": [
+      "★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1).",
+      "★ RATIFIED (user, 2026-08-03, the phase-1j queue presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §2 — the ratification is of the RULE itself, with the status exactly as the record states it; it does not supply a date or a ratifier the original record never had, and the 'not stated' facts above stand unchanged (#12)."
+     ]
+    }
+   }
+  },
+  "reached": {
+   "what_it_is": "Members of the class a DIRECT member names in turn, and which are not themselves direct. The register cites a queue document's section; that section's content is a pointer to the complete-entry aid, so a reader following the provenance lands on both.",
+   "members": [
+    "cowork_decisions_pending_ratification_8.md"
+   ],
+   "detail": {
+    "cowork_decisions_pending_ratification_8.md": {
+     "named_by": [
+      "cowork_pending_ratifications_next_session.md"
+     ],
+     "at": [
+      {
+       "file": "cowork_pending_ratifications_next_session.md",
+       "line": 55,
+       "text": "The complete entries: `cowork_decisions_pending_ratification_8.md` (nine, from the schema"
+      }
+     ]
+    }
+   }
+  }
+ },
+ "the_ambiguity_this_produces": {
+  "statement": "The three readings do not pick out the same set, and the difference is not a rounding: DIRECT is what the instruction asks for literally, and CLASS is what the ruling's own words ('the ratification surfaces', plural) describe.",
+  "why_it_matters": "A directory built on DIRECT alone holds one file and leaves its siblings in the repository root, which does not do what the ruling asked for. A directory built on CLASS holds every document of the kind, including ones no register entry cites.",
+  "what_was_done_and_the_ground_for_it": "CLASS was moved, minus any member outside the record (see `members_not_moved`). Ground: the ruling says 'the ratification surfaces' in the plural and the class test is what identifies them; the instruction's 'not from a list' is satisfied because CLASS is derived from each document's own banner rather than enumerated by hand; and the per-citation re-aim the constraint mandates is performed over every citation of every member either way, so the choice changes which files move and not how safely. If the narrower reading was meant, the reversal is one move per file and this artifact names them."
+ },
+ "census_scope": {
+  "extensions": [
+   ".md",
+   ".json",
+   ".py",
+   ".txt"
+  ],
+  "excluded_directories": [
+   ".git",
+   ".venv",
+   "__pycache__",
+   "build.release",
+   "corpus",
+   "dcml",
+   "fonts",
+   "muse",
+   "ninja_build_rel",
+   "node_modules",
+   "share",
+   "src",
+   "thirdparty",
+   "vtest"
+  ],
+  "files_scanned": 72369,
+  "verification": "The exclusions are verified, not assumed. An earlier form of this tool walked the WHOLE tree including every excluded directory, and an independent whole-tree content search was run with the file tools over the same member names. Both returned the same citing-file set as the scoped walk below."
+ },
+ "citation_census": {
+  "cowork_decisions_pending_ratification.md": [
+   {
+    "file": "OPEN_ITEMS.md",
+    "line": 154,
+    "text": "| OI-207 | ★★ THE DECISION-CONFORMANCE AUDIT (user-directed 2026-07-27, at the 3.1b contradiction): is anything else implemented in DIRECT opposition to a recorded decision? | Read-only, priority: enumerate every recorded ruling/shelving/falsification/dead-end across the archives and design docs (th",
+    "carries_directory": true
+   },
+   {
+    "file": "open_items/OI-208.md",
+    "line": 195,
+    "text": "`ratification_surfaces/cowork_decisions_pending_ratification.md` (complete entries, rendered by the register",
+    "carries_directory": true
+   }
+  ],
+  "cowork_decisions_pending_ratification_2.md": [
+   {
+    "file": "cc_instruction_phase1l_rulings_and_reads.md",
+    "line": 146,
+    "text": "(`cowork_decisions_pending_ratification_2.md` … `_8.md`). Their content is the text the user read;",
+    "carries_directory": false
+   },
+   {
+    "file": "OPEN_ITEMS.md",
+    "line": 314,
+    "text": "| OI-285 | The eight ratification-surface documents are UNCOMMITTED, and the register cites two of them as the provenance of ratified decisions | Verified at the objects against `b6be14097e`: `cowork_pending_ratifications_next_session.md` is **absent from the commit** (\"exists on disk, but not in\"),",
+    "carries_directory": false
+   },
+   {
+    "file": "open_items/OI-285.md",
+    "line": 16,
+    "text": "| `cowork_decisions_pending_ratification_2.md` … `_8.md` (seven files) | **untracked** |",
+    "carries_directory": false
+   },
+   {
+    "file": "open_items/OI-285.md",
+    "line": 37,
+    "text": "**Seven were not.** `cowork_decisions_pending_ratification_2.md` … `_8.md` are another session's",
+    "carries_directory": false
+   },
+   {
+    "file": "open_items/OI-285.md",
+    "line": 107,
+    "text": "`cowork_decisions_pending_ratification_2.md` … `_8.md`. Not edited, not reformatted, not",
+    "carries_directory": false
+   }
+  ],
+  "cowork_decisions_pending_ratification_3.md": [],
+  "cowork_decisions_pending_ratification_4.md": [],
+  "cowork_decisions_pending_ratification_5.md": [],
+  "cowork_decisions_pending_ratification_6.md": [],
+  "cowork_decisions_pending_ratification_7.md": [],
+  "cowork_decisions_pending_ratification_8.md": [
+   {
+    "file": "cowork_handoff.md",
+    "line": 20,
+    "text": "(`ratification_surfaces/cowork_decisions_pending_ratification_8.md`), and the OI-279 ruling surface with the D-132",
+    "carries_directory": true
+   },
+   {
+    "file": "OPEN_ITEMS.md",
+    "line": 314,
+    "text": "| OI-285 | The eight ratification-surface documents are UNCOMMITTED, and the register cites two of them as the provenance of ratified decisions | Verified at the objects against `b6be14097e`: `cowork_pending_ratifications_next_session.md` is **absent from the commit** (\"exists on disk, but not in\"),",
+    "carries_directory": false
+   },
+   {
+    "file": "STATUS.md",
+    "line": 286,
+    "text": "report, the D-406…D-414 queue via `ratification_surfaces/cowork_decisions_pending_ratification_8.md`, the OI-279 ruling surface",
+    "carries_directory": true
+   },
+   {
+    "file": "open_items/OI-285.md",
+    "line": 23,
+    "text": "and that file in turn names `cowork_decisions_pending_ratification_8.md` as where the nine complete",
+    "carries_directory": false
+   },
+   {
+    "file": "open_items/OI-287.md",
+    "line": 21,
+    "text": "`cowork_decisions_pending_ratification_8.md`. Moving a file re-points every citation of it. That is",
+    "carries_directory": false
+   },
+   {
+    "file": "ratification_surfaces/cowork_pending_ratifications_next_session.md",
+    "line": 55,
+    "text": "The complete entries: `cowork_decisions_pending_ratification_8.md` (nine, from the schema",
+    "carries_directory": false
+   }
+  ],
+  "cowork_decisions_ratification_delta.md": [
+   {
+    "file": "ratification_surfaces/cowork_decisions_pending_ratification.md",
+    "line": 8,
+    "text": "> are summarized in `cowork_decisions_ratification_delta.md` Part A.",
+    "carries_directory": false
+   }
+  ],
+  "cowork_pending_ratifications_next_session.md": [
+   {
+    "file": "cc_instruction_phase1k_ratification_application_and_reads.md",
+    "line": 228,
+    "text": "`cowork_pending_ratifications_next_session.md` is **superseded by this dispatch's execution**: flip",
+    "carries_directory": false
+   },
+   {
+    "file": "cowork_architecture_reassessment.md",
+    "line": 9,
+    "text": "> `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1, applied at phase 1k. It makes this document a",
+    "carries_directory": true
+   },
+   {
+    "file": "cowork_handoff.md",
+    "line": 18,
+    "text": "their RATIFIED admission premise). (4) **`ratification_surfaces/cowork_pending_ratifications_next_session.md` — THE",
+    "carries_directory": true
+   },
+   {
+    "file": "OPEN_ITEMS.md",
+    "line": 308,
+    "text": "| OI-279 | ★ `ARCHITECTURE.md` §6.7 states the RETIRED genre style taxonomy as the canonical one, and two register entries quote that stale text | The [[OI-232]]/[[OI-274]]/[[OI-276]] class in the CANONICAL document, which **D-091** makes the winner of every disagreement. §6.7 (`:4526-4536`) present",
+    "carries_directory": true
+   },
+   {
+    "file": "OPEN_ITEMS.md",
+    "line": 314,
+    "text": "| OI-285 | The eight ratification-surface documents are UNCOMMITTED, and the register cites two of them as the provenance of ratified decisions | Verified at the objects against `b6be14097e`: `cowork_pending_ratifications_next_session.md` is **absent from the commit** (\"exists on disk, but not in\"),",
+    "carries_directory": false
+   },
+   {
+    "file": "STATUS.md",
+    "line": 67,
+    "text": "register matches the data across 21 files; dispositions 14,460/14,460 clusters, 15,224/15,224 occurrences; open-items living check 285/285). `ratification_surfaces/cowork_pending_ratifications_next_session.md`",
+    "carries_directory": true
+   },
+   {
+    "file": "STATUS.md",
+    "line": 285,
+    "text": "read is **`ratification_surfaces/cowork_pending_ratifications_next_session.md`** (the four banner drafts quoted from the phase-1j",
+    "carries_directory": true
+   },
+   {
+    "file": "decisions/group_A.md",
+    "line": 341,
+    "text": "**Provenance.** Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommendat",
+    "carries_directory": true
+   },
+   {
+    "file": "decisions/group_A.md",
+    "line": 357,
+    "text": "**Provenance.** Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommendat",
+    "carries_directory": true
+   },
+   {
+    "file": "decisions/group_C.md",
+    "line": 663,
+    "text": "**Provenance.** Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommendat",
+    "carries_directory": true
+   },
+   {
+    "file": "decisions/group_F.md",
+    "line": 262,
+    "text": "**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itsel",
+    "carries_directory": true
+   },
+   {
+    "file": "decisions/group_G.md",
+    "line": 433,
+    "text": "**Provenance.** docs/iteration_path1_summary.md:74-78, recorded among the architecture decisions of the completed iteration path and stated there as 'now a standing rule for any future gate or scoring change'; no date or ratifier is stated at this home. Distinct from register entry D-066, which forb",
+    "carries_directory": true
+   },
+   {
+    "file": "decisions/group_G.md",
+    "line": 452,
+    "text": "**Provenance.** Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommendat",
+    "carries_directory": true
+   },
+   {
+    "file": "decisions/group_G.md",
+    "line": 612,
+    "text": "**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02) as a LEGACY-scoped dead end with no effect on the going so",
+    "carries_directory": true
+   },
+   {
+    "file": "decisions/group_G.md",
+    "line": 632,
+    "text": "**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02) as a LEGACY-scoped dead end with no effect on the going so",
+    "carries_directory": true
+   },
+   {
+    "file": "decisions/group_G.md",
+    "line": 653,
+    "text": "**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itsel",
+    "carries_directory": true
+   },
+   {
+    "file": "decisions/group_G.md",
+    "line": 679,
+    "text": "**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itsel",
+    "carries_directory": true
+   },
+   {
+    "file": "decisions/group_G.md",
+    "line": 712,
+    "text": "**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itsel",
+    "carries_directory": true
+   },
+   {
+    "file": "decisions/group_G.md",
+    "line": 737,
+    "text": "**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itsel",
+    "carries_directory": true
+   },
+   {
+    "file": "decisions/group_G.md",
+    "line": 758,
+    "text": "**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itsel",
+    "carries_directory": true
+   },
+   {
+    "file": "decisions/group_M.md",
+    "line": 133,
+    "text": "**Provenance.** `cowork_progression_schema_dictionary.md`:41-46 records the owner ruling as D5 of `cowork_progression_schema_design.md` §6, user-ratified 2026-07-02, with the cross-referencing comment blocks at `functionprogression.h` and `harmonicvocabulary.h` and the test at `progressionrecognizer",
+    "carries_directory": true
+   },
+   {
+    "file": "decisions/group_M.md",
+    "line": 152,
+    "text": "**Provenance.** `cowork_progression_schema_dictionary.md`:52-54 (§2, what it does not do), with the firewall line at :244-246 (§6). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'c",
+    "carries_directory": true
+   },
+   {
+    "file": "decisions/group_M.md",
+    "line": 174,
+    "text": "**Provenance.** `cowork_progression_schema_dictionary.md`:55-59 (§2), restated as component decision D5 at :261-263 (§7) with its rejected alternative, and carried as a risk at :279-280 (§9). Consistent with `ARCHITECTURE.md` §7, which states the same exclusion. Found by the phase-1j continuation wa",
+    "carries_directory": true
+   },
+   {
+    "file": "decisions/group_M.md",
+    "line": 195,
+    "text": "**Provenance.** `cowork_progression_schema_dictionary.md`:114-124 (§4). Beside D-027, the cross-cutting contract that every layer emits ranked candidates plus a confidence rather than a forced point estimate. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dic",
+    "carries_directory": true
+   },
+   {
+    "file": "decisions/group_M.md",
+    "line": 217,
+    "text": "**Provenance.** `cowork_progression_schema_dictionary.md`:96-106 (§4 recognise) and :114-118 (the match score under the partial matcher). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner re",
+    "carries_directory": true
+   },
+   {
+    "file": "decisions/group_M.md",
+    "line": 238,
+    "text": "**Provenance.** `cowork_progression_schema_dictionary.md`:185-188 (§5.2, the bass-line and pop loops). Same class as the circle-of-fifths entry-point rule (D-412): both fix what a realisation of one entry is allowed to look like. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_p",
+    "carries_directory": true
+   },
+   {
+    "file": "decisions/group_M.md",
+    "line": 258,
+    "text": "**Provenance.** `cowork_progression_schema_dictionary.md`:179-181 (§5.2, sequences). The descending-thirds entry beside it carries the same kind of rule, stated as a continuation rule rather than an ellipsis. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dic",
+    "carries_directory": true
+   },
+   {
+    "file": "decisions/group_M.md",
+    "line": 278,
+    "text": "**Provenance.** `cowork_progression_schema_dictionary.md`:220-222 (§5.3, the substitution operations). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026",
+    "carries_directory": true
+   },
+   {
+    "file": "decisions/group_M.md",
+    "line": 298,
+    "text": "**Provenance.** `cowork_progression_schema_dictionary.md`:255-257 (§7, component decision D3), with the organisation it produces at :136-139 (§5) and the generative spine at :141-166 (§5.1). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FUL",
+    "carries_directory": true
+   },
+   {
+    "file": "decisions/group_U.md",
+    "line": 304,
+    "text": "**Provenance.** docs/iteration_path1_summary.md:66-72, recorded among the architecture decisions of the completed iteration path; no date or ratifier is stated at this home. A decision about a MEASUREMENT TOOL and its floor, reported separately by the phase-1d enumeration wave (2026-08-02) so that t",
+    "carries_directory": true
+   },
+   {
+    "file": "docs/iteration_path1_summary.md",
+    "line": 9,
+    "text": "> `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1, applied at phase 1k. It makes this document a",
+    "carries_directory": true
+   },
+   {
+    "file": "docs/redesign_plan.md",
+    "line": 8,
+    "text": "> `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1, applied at phase 1k. It makes this document a",
+    "carries_directory": true
+   },
+   {
+    "file": "docs/scoring_model.md",
+    "line": 9,
+    "text": "> `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1, applied at phase 1k. It makes this document a",
+    "carries_directory": true
+   },
+   {
+    "file": "open_items/OI-279.md",
+    "line": 72,
+    "text": "**The ruling.** The user was presented two options at `ratification_surfaces/cowork_pending_ratifications_next_session.md`",
+    "carries_directory": true
+   },
+   {
+    "file": "open_items/OI-285.md",
+    "line": 15,
+    "text": "| `cowork_pending_ratifications_next_session.md` | **absent** — `git cat-file` reports \"exists on disk, but not in\" the commit |",
+    "carries_directory": false
+   },
+   {
+    "file": "open_items/OI-285.md",
+    "line": 22,
+    "text": "ratification as \"the phase-1j queue presented at `cowork_pending_ratifications_next_session.md` §2\",",
+    "carries_directory": false
+   },
+   {
+    "file": "open_items/OI-285.md",
+    "line": 31,
+    "text": "**One file was committed:** `cowork_pending_ratifications_next_session.md`, because the phase-1k",
+    "carries_directory": false
+   },
+   {
+    "file": "open_items/OI-287.md",
+    "line": 20,
+    "text": "`cowork_pending_ratifications_next_session.md` §2\", and that document in turn names",
+    "carries_directory": false
+   },
+   {
+    "file": "tools/audit/decisions/backbone_decisions.json",
+    "line": 7320,
+    "text": "\"status_source\": \"docs/iteration_path1_summary.md:74-78, recorded among the architecture decisions of the completed iteration path and stated there as 'now a standing rule for any future gate or scoring change'; no date or ratifier is stated at this home. Distinct from register entry D-066, which fo",
+    "carries_directory": true
+   },
+   {
+    "file": "tools/audit/decisions/backbone_decisions.json",
+    "line": 7361,
+    "text": "\"status_source\": \"docs/iteration_path1_summary.md:66-72, recorded among the architecture decisions of the completed iteration path; no date or ratifier is stated at this home. A decision about a MEASUREMENT TOOL and its floor, reported separately by the phase-1d enumeration wave (2026-08-02) so that",
+    "carries_directory": true
+   },
+   {
+    "file": "tools/audit/decisions/backbone_decisions.json",
+    "line": 7405,
+    "text": "\"status_source\": \"Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommend",
+    "carries_directory": true
+   },
+   {
+    "file": "tools/audit/decisions/backbone_decisions.json",
+    "line": 7437,
+    "text": "\"status_source\": \"Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommend",
+    "carries_directory": true
+   },
+   {
+    "file": "tools/audit/decisions/backbone_decisions.json",
+    "line": 7469,
+    "text": "\"status_source\": \"Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommend",
+    "carries_directory": true
+   },
+   {
+    "file": "tools/audit/decisions/backbone_decisions.json",
+    "line": 7502,
+    "text": "\"status_source\": \"Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommend",
+    "carries_directory": true
+   },
+   {
+    "file": "tools/audit/decisions/backbone_decisions.json",
+    "line": 8393,
+    "text": "\"status_source\": \"Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02) as a LEGACY-scoped dead end with no effect on the going ",
+    "carries_directory": true
+   },
+   {
+    "file": "tools/audit/decisions/backbone_decisions.json",
+    "line": 8433,
+    "text": "\"status_source\": \"Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02) as a LEGACY-scoped dead end with no effect on the going ",
+    "carries_directory": true
+   },
+   {
+    "file": "tools/audit/decisions/backbone_decisions.json",
+    "line": 8473,
+    "text": "\"status_source\": \"Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE its",
+    "carries_directory": true
+   },
+   {
+    "file": "tools/audit/decisions/backbone_decisions.json",
+    "line": 8513,
+    "text": "\"status_source\": \"Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE its",
+    "carries_directory": true
+   },
+   {
+    "file": "tools/audit/decisions/backbone_decisions.json",
+    "line": 8553,
+    "text": "\"status_source\": \"Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE its",
+    "carries_directory": true
+   },
+   {
+    "file": "tools/audit/decisions/backbone_decisions.json",
+    "line": 8593,
+    "text": "\"status_source\": \"Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE its",
+    "carries_directory": true
+   },
+   {
+    "file": "tools/audit/decisions/backbone_decisions.json",
+    "line": 8633,
+    "text": "\"status_source\": \"Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE its",
+    "carries_directory": true
+   },
+   {
+    "file": "tools/audit/decisions/backbone_decisions.json",
+    "line": 8672,
+    "text": "\"status_source\": \"Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE its",
+    "carries_directory": true
+   },
+   {
+    "file": "tools/audit/decisions/backbone_decisions.json",
+    "line": 11901,
+    "text": "\"status_source\": \"`cowork_progression_schema_dictionary.md`:41-46 records the owner ruling as D5 of `cowork_progression_schema_design.md` §6, user-ratified 2026-07-02, with the cross-referencing comment blocks at `functionprogression.h` and `harmonicvocabulary.h` and the test at `progressionrecogniz",
+    "carries_directory": true
+   },
+   {
+    "file": "tools/audit/decisions/backbone_decisions.json",
+    "line": 11942,
+    "text": "\"status_source\": \"`cowork_progression_schema_dictionary.md`:52-54 (§2, what it does not do), with the firewall line at :244-246 (§6). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads ",
+    "carries_directory": true
+   },
+   {
+    "file": "tools/audit/decisions/backbone_decisions.json",
+    "line": 11982,
+    "text": "\"status_source\": \"`cowork_progression_schema_dictionary.md`:55-59 (§2), restated as component decision D5 at :261-263 (§7) with its rejected alternative, and carried as a risk at :279-280 (§9). Consistent with `ARCHITECTURE.md` §7, which states the same exclusion. Found by the phase-1j continuation ",
+    "carries_directory": true
+   },
+   {
+    "file": "tools/audit/decisions/backbone_decisions.json",
+    "line": 12022,
+    "text": "\"status_source\": \"`cowork_progression_schema_dictionary.md`:114-124 (§4). Beside D-027, the cross-cutting contract that every layer emits ranked candidates plus a confidence rather than a forced point estimate. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_d",
+    "carries_directory": true
+   },
+   {
+    "file": "tools/audit/decisions/backbone_decisions.json",
+    "line": 12062,
+    "text": "\"status_source\": \"`cowork_progression_schema_dictionary.md`:96-106 (§4 recognise) and :114-118 (the match score under the partial matcher). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner ",
+    "carries_directory": true
+   },
+   {
+    "file": "tools/audit/decisions/backbone_decisions.json",
+    "line": 12102,
+    "text": "\"status_source\": \"`cowork_progression_schema_dictionary.md`:185-188 (§5.2, the bass-line and pop loops). Same class as the circle-of-fifths entry-point rule (D-412): both fix what a realisation of one entry is allowed to look like. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork",
+    "carries_directory": true
+   },
+   {
+    "file": "tools/audit/decisions/backbone_decisions.json",
+    "line": 12142,
+    "text": "\"status_source\": \"`cowork_progression_schema_dictionary.md`:179-181 (§5.2, sequences). The descending-thirds entry beside it carries the same kind of rule, stated as a continuation rule rather than an ellipsis. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_d",
+    "carries_directory": true
+   },
+   {
+    "file": "tools/audit/decisions/backbone_decisions.json",
+    "line": 12182,
+    "text": "\"status_source\": \"`cowork_progression_schema_dictionary.md`:220-222 (§5.3, the substitution operations). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (20",
+    "carries_directory": true
+   },
+   {
+    "file": "tools/audit/decisions/backbone_decisions.json",
+    "line": 12222,
+    "text": "\"status_source\": \"`cowork_progression_schema_dictionary.md`:255-257 (§7, component decision D3), with the organisation it produces at :136-139 (§5) and the generative spine at :141-166 (§5.1). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN F",
+    "carries_directory": true
+   }
+  ],
+  "cowork_pending_rulings_2026_08_02.md": []
+ },
+ "citation_totals": {
+  "cowork_decisions_pending_ratification.md": 2,
+  "cowork_decisions_pending_ratification_2.md": 5,
+  "cowork_decisions_pending_ratification_3.md": 0,
+  "cowork_decisions_pending_ratification_4.md": 0,
+  "cowork_decisions_pending_ratification_5.md": 0,
+  "cowork_decisions_pending_ratification_6.md": 0,
+  "cowork_decisions_pending_ratification_7.md": 0,
+  "cowork_decisions_pending_ratification_8.md": 6,
+  "cowork_decisions_ratification_delta.md": 1,
+  "cowork_pending_ratifications_next_session.md": 61,
+  "cowork_pending_rulings_2026_08_02.md": 0
+ },
+ "citing_files": [
+  "OPEN_ITEMS.md",
+  "STATUS.md",
+  "cc_instruction_phase1k_ratification_application_and_reads.md",
+  "cc_instruction_phase1l_rulings_and_reads.md",
+  "cowork_architecture_reassessment.md",
+  "cowork_handoff.md",
+  "decisions/group_A.md",
+  "decisions/group_C.md",
+  "decisions/group_F.md",
+  "decisions/group_G.md",
+  "decisions/group_M.md",
+  "decisions/group_U.md",
+  "docs/iteration_path1_summary.md",
+  "docs/redesign_plan.md",
+  "docs/scoring_model.md",
+  "open_items/OI-208.md",
+  "open_items/OI-279.md",
+  "open_items/OI-285.md",
+  "open_items/OI-287.md",
+  "ratification_surfaces/cowork_decisions_pending_ratification.md",
+  "ratification_surfaces/cowork_pending_ratifications_next_session.md",
+  "tools/audit/decisions/backbone_decisions.json"
+ ]
+}

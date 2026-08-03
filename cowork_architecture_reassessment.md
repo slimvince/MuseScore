@@ -6,7 +6,7 @@
 > live prohibition.
 >
 > *Banner ratified by the user, 2026-08-03 — drafted at phase 1j, presented at
-> `cowork_pending_ratifications_next_session.md` §1, applied at phase 1k. It makes this document a
+> `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1, applied at phase 1k. It makes this document a
 > contract home for D-282…D-285 (the fifth home case, `CLAUDE.md` decisions-register rule (g)).*
 
 > **Trigger.** Two inputs landed together: (1) CC's anchor-redesign dossier ABANDONED the union-recompute and

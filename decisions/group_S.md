@@ -445,7 +445,7 @@
 
 **Status.** LIVE · decided 2026-07-28 · ratified by user
 
-**Home.** `CLAUDE.md:1058-1060`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1072-1074`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at cowork_handoff.md (the user's rulings at the analysis-cost session, 2026-07-28), a session handoff block that ages into an archive outside the session-start read. It corrects a Cowork misreading of 'implementation efficiency is not very relevant', which meant BUILD effort, not runtime. OPEN_ITEMS OI-240 closes on this move
 
@@ -491,7 +491,7 @@
 
 **Status.** LIVE · decided 2026-07-28 · ratified by user
 
-**Home.** `CLAUDE.md:1068-1070`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1082-1084`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at cowork_handoff.md, the user's ruling at the OI-199 pass-2 session, 2026-07-28. Homed beside #8 in CLAUDE.md because it is a ruling about what #8 permits; what the admission rule IS, and that it has no specified form, is in the estimator's own specification (D-098) and at OPEN_ITEMS OI-226. Cross-read with STATUS.md's earlier note that the classification 'is the user's to settle' - this row records that it was settled. OPEN_ITEMS OI-240 closes on this move
 
@@ -507,7 +507,7 @@
 
 **Status.** LIVE · decided 2026-07-28 · ratified by user
 
-**Home.** `CLAUDE.md:1079-1081`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1093-1095`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at cowork_handoff.md, recorded at the OI-199 pass-2 session, 2026-07-28. OPEN_ITEMS OI-240 closes on this move
 

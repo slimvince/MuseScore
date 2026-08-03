@@ -1,0 +1,625 @@
+{
+ "purpose": "The per-citation re-aim of every reference to a moved ratification surface. OI-287's constraint: per citation, from the report's own output, never by an assumed path rewrite.",
+ "generated_by": "tools/audit/reaim_ratification_surface_paths.py",
+ "new_directory": "ratification_surfaces",
+ "dry_run": false,
+ "totals": {
+  "citations": 75,
+  "re_aimed": 36,
+  "left": 39,
+  "stops": 0
+ },
+ "left_by_reason": [
+  "A dispatch. .gitignore excludes /cc_instruction_*.md and /cc_*.md as a class, so these are not in the record; and they are another wave's working instruction, which this wave does not edit. Reported rather than changed.",
+  "Rendered from tools/audit/decisions/backbone_decisions.json by gen_decisions_register.py. Editing it would be undone at the next regeneration and would hide the citation that actually needs correcting. Re-aimed at the source.",
+  "The BODY of a ratification surface. D-249 makes the surface part of the ruling, and OI-285's resolution states that a ratification surface which has been tidied is no longer the surface that was ratified. The citation also resolves unchanged, both files now sitting in the same directory.",
+  "The OI-285 row is a HISTORICAL FINDING about the state of these files at commit b6be14097e ('absent from the commit', 'untracked') and about what phase 1l then did ('committed IN PLACE, at their current paths'). Both statements are true of the paths as they then were; re-aiming them would make the record assert a directory that did not exist at that commit. The new location is carried by the dated note added to open_items/OI-285.md.",
+  "This row IS the historical finding about these files' location and committed state. Every citation in it is either a statement about the state at commit b6be14097e, a quotation of the register's provenance wording, or the narrative of what phase 1l did at the paths as they then were. Re-aiming any of them rewrites history rather than a pointer. The new location is carried by the dated note appended to this file.",
+  "This row is the argument FOR the move, quoting the citation chain as it stood before it. Its dated resolution note carries the new paths."
+ ],
+ "re_aimed": [
+  {
+   "file": "OPEN_ITEMS.md",
+   "line": 154,
+   "member": "cowork_decisions_pending_ratification.md",
+   "reason": "Live pointers in open-item rows: a reader following one must be able to open the file.",
+   "before": "| OI-207 | ★★ THE DECISION-CONFORMANCE AUDIT (user-directed 2026-07-27, at the 3.1b contradiction): is anything else implemented in DIRECT opposition to a recorded decision? | Read-only, priority: enu",
+   "after": "| OI-207 | ★★ THE DECISION-CONFORMANCE AUDIT (user-directed 2026-07-27, at the 3.1b contradiction): is anything else implemented in DIRECT opposition to a recorded decision? | Read-only, priority: enu"
+  },
+  {
+   "file": "OPEN_ITEMS.md",
+   "line": 308,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "Live pointers in open-item rows: a reader following one must be able to open the file.",
+   "before": "| OI-279 | ★ `ARCHITECTURE.md` §6.7 states the RETIRED genre style taxonomy as the canonical one, and two register entries quote that stale text | The [[OI-232]]/[[OI-274]]/[[OI-276]] class in the CAN",
+   "after": "| OI-279 | ★ `ARCHITECTURE.md` §6.7 states the RETIRED genre style taxonomy as the canonical one, and two register entries quote that stale text | The [[OI-232]]/[[OI-274]]/[[OI-276]] class in the CAN"
+  },
+  {
+   "file": "STATUS.md",
+   "line": 67,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "Live pointers in session entries naming what to read.",
+   "before": "register matches the data across 21 files; dispositions 14,460/14,460 clusters, 15,224/15,224 occurrences; open-items living check 285/285). `cowork_pending_ratifications_next_session.md`",
+   "after": "register matches the data across 21 files; dispositions 14,460/14,460 clusters, 15,224/15,224 occurrences; open-items living check 285/285). `ratification_surfaces/cowork_pending_ratifications_next_se"
+  },
+  {
+   "file": "STATUS.md",
+   "line": 285,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "Live pointers in session entries naming what to read.",
+   "before": "read is **`cowork_pending_ratifications_next_session.md`** (the four banner drafts quoted from the phase-1j",
+   "after": "read is **`ratification_surfaces/cowork_pending_ratifications_next_session.md`** (the four banner drafts quoted from the phase-1j"
+  },
+  {
+   "file": "STATUS.md",
+   "line": 286,
+   "member": "cowork_decisions_pending_ratification_8.md",
+   "reason": "Live pointers in session entries naming what to read.",
+   "before": "report, the D-406…D-414 queue via `cowork_decisions_pending_ratification_8.md`, the OI-279 ruling surface",
+   "after": "report, the D-406…D-414 queue via `ratification_surfaces/cowork_decisions_pending_ratification_8.md`, the OI-279 ruling surface"
+  },
+  {
+   "file": "cowork_architecture_reassessment.md",
+   "line": 9,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "A live pointer in the document's own status banner, naming where its banner was ratified.",
+   "before": "> `cowork_pending_ratifications_next_session.md` §1, applied at phase 1k. It makes this document a",
+   "after": "> `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1, applied at phase 1k. It makes this document a"
+  },
+  {
+   "file": "cowork_handoff.md",
+   "line": 18,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "Live pointers in the handoff's reading list.",
+   "before": "their RATIFIED admission premise). (4) **`cowork_pending_ratifications_next_session.md` — THE",
+   "after": "their RATIFIED admission premise). (4) **`ratification_surfaces/cowork_pending_ratifications_next_session.md` — THE"
+  },
+  {
+   "file": "cowork_handoff.md",
+   "line": 20,
+   "member": "cowork_decisions_pending_ratification_8.md",
+   "reason": "Live pointers in the handoff's reading list.",
+   "before": "(`cowork_decisions_pending_ratification_8.md`), and the OI-279 ruling surface with the D-132",
+   "after": "(`ratification_surfaces/cowork_decisions_pending_ratification_8.md`), and the OI-279 ruling surface with the D-132"
+  },
+  {
+   "file": "docs/iteration_path1_summary.md",
+   "line": 9,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "A live pointer in the document's own status banner.",
+   "before": "> `cowork_pending_ratifications_next_session.md` §1, applied at phase 1k. It makes this document a",
+   "after": "> `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1, applied at phase 1k. It makes this document a"
+  },
+  {
+   "file": "docs/redesign_plan.md",
+   "line": 8,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "A live pointer in the document's own status banner.",
+   "before": "> `cowork_pending_ratifications_next_session.md` §1, applied at phase 1k. It makes this document a",
+   "after": "> `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1, applied at phase 1k. It makes this document a"
+  },
+  {
+   "file": "docs/scoring_model.md",
+   "line": 9,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "A live pointer in the document's own status banner.",
+   "before": "> `cowork_pending_ratifications_next_session.md` §1, applied at phase 1k. It makes this document a",
+   "after": "> `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1, applied at phase 1k. It makes this document a"
+  },
+  {
+   "file": "open_items/OI-208.md",
+   "line": 195,
+   "member": "cowork_decisions_pending_ratification.md",
+   "reason": "A live pointer to where the complete entries are rendered.",
+   "before": "`cowork_decisions_pending_ratification.md` (complete entries, rendered by the register",
+   "after": "`ratification_surfaces/cowork_decisions_pending_ratification.md` (complete entries, rendered by the register"
+  },
+  {
+   "file": "open_items/OI-279.md",
+   "line": 72,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "A live pointer to the surface on which the two options were presented.",
+   "before": "**The ruling.** The user was presented two options at `cowork_pending_ratifications_next_session.md`",
+   "after": "**The ruling.** The user was presented two options at `ratification_surfaces/cowork_pending_ratifications_next_session.md`"
+  },
+  {
+   "file": "tools/audit/decisions/backbone_decisions.json",
+   "line": 7320,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "The register's SOURCE OF RECORD. These provenance fields are the citations OI-287 names as the reason the move is its own act; they are live pointers and they are what the rendered group files are generated from, so this is the ONE place they are corrected.",
+   "before": "\"status_source\": \"docs/iteration_path1_summary.md:74-78, recorded among the architecture decisions of the completed iteration path and stated there as 'now a standing rule for any future gate or scori",
+   "after": "\"status_source\": \"docs/iteration_path1_summary.md:74-78, recorded among the architecture decisions of the completed iteration path and stated there as 'now a standing rule for any future gate or scori"
+  },
+  {
+   "file": "tools/audit/decisions/backbone_decisions.json",
+   "line": 7361,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "The register's SOURCE OF RECORD. These provenance fields are the citations OI-287 names as the reason the move is its own act; they are live pointers and they are what the rendered group files are generated from, so this is the ONE place they are corrected.",
+   "before": "\"status_source\": \"docs/iteration_path1_summary.md:66-72, recorded among the architecture decisions of the completed iteration path; no date or ratifier is stated at this home. A decision about a MEASU",
+   "after": "\"status_source\": \"docs/iteration_path1_summary.md:66-72, recorded among the architecture decisions of the completed iteration path; no date or ratifier is stated at this home. A decision about a MEASU"
+  },
+  {
+   "file": "tools/audit/decisions/backbone_decisions.json",
+   "line": 7405,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "The register's SOURCE OF RECORD. These provenance fields are the citations OI-287 names as the reason the move is its own act; they are live pointers and they are what the rendered group files are generated from, so this is the ONE place they are corrected.",
+   "before": "\"status_source\": \"Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, ",
+   "after": "\"status_source\": \"Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, "
+  },
+  {
+   "file": "tools/audit/decisions/backbone_decisions.json",
+   "line": 7437,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "The register's SOURCE OF RECORD. These provenance fields are the citations OI-287 names as the reason the move is its own act; they are live pointers and they are what the rendered group files are generated from, so this is the ONE place they are corrected.",
+   "before": "\"status_source\": \"Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, ",
+   "after": "\"status_source\": \"Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, "
+  },
+  {
+   "file": "tools/audit/decisions/backbone_decisions.json",
+   "line": 7469,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "The register's SOURCE OF RECORD. These provenance fields are the citations OI-287 names as the reason the move is its own act; they are live pointers and they are what the rendered group files are generated from, so this is the ONE place they are corrected.",
+   "before": "\"status_source\": \"Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, ",
+   "after": "\"status_source\": \"Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, "
+  },
+  {
+   "file": "tools/audit/decisions/backbone_decisions.json",
+   "line": 7502,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "The register's SOURCE OF RECORD. These provenance fields are the citations OI-287 names as the reason the move is its own act; they are live pointers and they are what the rendered group files are generated from, so this is the ONE place they are corrected.",
+   "before": "\"status_source\": \"Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, ",
+   "after": "\"status_source\": \"Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, "
+  },
+  {
+   "file": "tools/audit/decisions/backbone_decisions.json",
+   "line": 8393,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "The register's SOURCE OF RECORD. These provenance fields are the citations OI-287 names as the reason the move is its own act; they are live pointers and they are what the rendered group files are generated from, so this is the ONE place they are corrected.",
+   "before": "\"status_source\": \"Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratifi",
+   "after": "\"status_source\": \"Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratifi"
+  },
+  {
+   "file": "tools/audit/decisions/backbone_decisions.json",
+   "line": 8433,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "The register's SOURCE OF RECORD. These provenance fields are the citations OI-287 names as the reason the move is its own act; they are live pointers and they are what the rendered group files are generated from, so this is the ONE place they are corrected.",
+   "before": "\"status_source\": \"Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratifi",
+   "after": "\"status_source\": \"Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratifi"
+  },
+  {
+   "file": "tools/audit/decisions/backbone_decisions.json",
+   "line": 8473,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "The register's SOURCE OF RECORD. These provenance fields are the citations OI-287 names as the reason the move is its own act; they are live pointers and they are what the rendered group files are generated from, so this is the ONE place they are corrected.",
+   "before": "\"status_source\": \"Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratifi",
+   "after": "\"status_source\": \"Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratifi"
+  },
+  {
+   "file": "tools/audit/decisions/backbone_decisions.json",
+   "line": 8513,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "The register's SOURCE OF RECORD. These provenance fields are the citations OI-287 names as the reason the move is its own act; they are live pointers and they are what the rendered group files are generated from, so this is the ONE place they are corrected.",
+   "before": "\"status_source\": \"Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratifi",
+   "after": "\"status_source\": \"Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratifi"
+  },
+  {
+   "file": "tools/audit/decisions/backbone_decisions.json",
+   "line": 8553,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "The register's SOURCE OF RECORD. These provenance fields are the citations OI-287 names as the reason the move is its own act; they are live pointers and they are what the rendered group files are generated from, so this is the ONE place they are corrected.",
+   "before": "\"status_source\": \"Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratifi",
+   "after": "\"status_source\": \"Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratifi"
+  },
+  {
+   "file": "tools/audit/decisions/backbone_decisions.json",
+   "line": 8593,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "The register's SOURCE OF RECORD. These provenance fields are the citations OI-287 names as the reason the move is its own act; they are live pointers and they are what the rendered group files are generated from, so this is the ONE place they are corrected.",
+   "before": "\"status_source\": \"Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratifi",
+   "after": "\"status_source\": \"Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratifi"
+  },
+  {
+   "file": "tools/audit/decisions/backbone_decisions.json",
+   "line": 8633,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "The register's SOURCE OF RECORD. These provenance fields are the citations OI-287 names as the reason the move is its own act; they are live pointers and they are what the rendered group files are generated from, so this is the ONE place they are corrected.",
+   "before": "\"status_source\": \"Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratifi",
+   "after": "\"status_source\": \"Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratifi"
+  },
+  {
+   "file": "tools/audit/decisions/backbone_decisions.json",
+   "line": 8672,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "The register's SOURCE OF RECORD. These provenance fields are the citations OI-287 names as the reason the move is its own act; they are live pointers and they are what the rendered group files are generated from, so this is the ONE place they are corrected.",
+   "before": "\"status_source\": \"Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratifi",
+   "after": "\"status_source\": \"Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratifi"
+  },
+  {
+   "file": "tools/audit/decisions/backbone_decisions.json",
+   "line": 11901,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "The register's SOURCE OF RECORD. These provenance fields are the citations OI-287 names as the reason the move is its own act; they are live pointers and they are what the rendered group files are generated from, so this is the ONE place they are corrected.",
+   "before": "\"status_source\": \"`cowork_progression_schema_dictionary.md`:41-46 records the owner ruling as D5 of `cowork_progression_schema_design.md` §6, user-ratified 2026-07-02, with the cross-referencing comme",
+   "after": "\"status_source\": \"`cowork_progression_schema_dictionary.md`:41-46 records the owner ruling as D5 of `cowork_progression_schema_design.md` §6, user-ratified 2026-07-02, with the cross-referencing comme"
+  },
+  {
+   "file": "tools/audit/decisions/backbone_decisions.json",
+   "line": 11942,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "The register's SOURCE OF RECORD. These provenance fields are the citations OI-287 names as the reason the move is its own act; they are live pointers and they are what the rendered group files are generated from, so this is the ONE place they are corrected.",
+   "before": "\"status_source\": \"`cowork_progression_schema_dictionary.md`:52-54 (§2, what it does not do), with the firewall line at :244-246 (§6). Found by the phase-1j continuation wave, 2026-08-02, reading `cowo",
+   "after": "\"status_source\": \"`cowork_progression_schema_dictionary.md`:52-54 (§2, what it does not do), with the firewall line at :244-246 (§6). Found by the phase-1j continuation wave, 2026-08-02, reading `cowo"
+  },
+  {
+   "file": "tools/audit/decisions/backbone_decisions.json",
+   "line": 11982,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "The register's SOURCE OF RECORD. These provenance fields are the citations OI-287 names as the reason the move is its own act; they are live pointers and they are what the rendered group files are generated from, so this is the ONE place they are corrected.",
+   "before": "\"status_source\": \"`cowork_progression_schema_dictionary.md`:55-59 (§2), restated as component decision D5 at :261-263 (§7) with its rejected alternative, and carried as a risk at :279-280 (§9). Consis",
+   "after": "\"status_source\": \"`cowork_progression_schema_dictionary.md`:55-59 (§2), restated as component decision D5 at :261-263 (§7) with its rejected alternative, and carried as a risk at :279-280 (§9). Consis"
+  },
+  {
+   "file": "tools/audit/decisions/backbone_decisions.json",
+   "line": 12022,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "The register's SOURCE OF RECORD. These provenance fields are the citations OI-287 names as the reason the move is its own act; they are live pointers and they are what the rendered group files are generated from, so this is the ONE place they are corrected.",
+   "before": "\"status_source\": \"`cowork_progression_schema_dictionary.md`:114-124 (§4). Beside D-027, the cross-cutting contract that every layer emits ranked candidates plus a confidence rather than a forced point",
+   "after": "\"status_source\": \"`cowork_progression_schema_dictionary.md`:114-124 (§4). Beside D-027, the cross-cutting contract that every layer emits ranked candidates plus a confidence rather than a forced point"
+  },
+  {
+   "file": "tools/audit/decisions/backbone_decisions.json",
+   "line": 12062,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "The register's SOURCE OF RECORD. These provenance fields are the citations OI-287 names as the reason the move is its own act; they are live pointers and they are what the rendered group files are generated from, so this is the ONE place they are corrected.",
+   "before": "\"status_source\": \"`cowork_progression_schema_dictionary.md`:96-106 (§4 recognise) and :114-118 (the match score under the partial matcher). Found by the phase-1j continuation wave, 2026-08-02, reading",
+   "after": "\"status_source\": \"`cowork_progression_schema_dictionary.md`:96-106 (§4 recognise) and :114-118 (the match score under the partial matcher). Found by the phase-1j continuation wave, 2026-08-02, reading"
+  },
+  {
+   "file": "tools/audit/decisions/backbone_decisions.json",
+   "line": 12102,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "The register's SOURCE OF RECORD. These provenance fields are the citations OI-287 names as the reason the move is its own act; they are live pointers and they are what the rendered group files are generated from, so this is the ONE place they are corrected.",
+   "before": "\"status_source\": \"`cowork_progression_schema_dictionary.md`:185-188 (§5.2, the bass-line and pop loops). Same class as the circle-of-fifths entry-point rule (D-412): both fix what a realisation of one",
+   "after": "\"status_source\": \"`cowork_progression_schema_dictionary.md`:185-188 (§5.2, the bass-line and pop loops). Same class as the circle-of-fifths entry-point rule (D-412): both fix what a realisation of one"
+  },
+  {
+   "file": "tools/audit/decisions/backbone_decisions.json",
+   "line": 12142,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "The register's SOURCE OF RECORD. These provenance fields are the citations OI-287 names as the reason the move is its own act; they are live pointers and they are what the rendered group files are generated from, so this is the ONE place they are corrected.",
+   "before": "\"status_source\": \"`cowork_progression_schema_dictionary.md`:179-181 (§5.2, sequences). The descending-thirds entry beside it carries the same kind of rule, stated as a continuation rule rather than an",
+   "after": "\"status_source\": \"`cowork_progression_schema_dictionary.md`:179-181 (§5.2, sequences). The descending-thirds entry beside it carries the same kind of rule, stated as a continuation rule rather than an"
+  },
+  {
+   "file": "tools/audit/decisions/backbone_decisions.json",
+   "line": 12182,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "The register's SOURCE OF RECORD. These provenance fields are the citations OI-287 names as the reason the move is its own act; they are live pointers and they are what the rendered group files are generated from, so this is the ONE place they are corrected.",
+   "before": "\"status_source\": \"`cowork_progression_schema_dictionary.md`:220-222 (§5.3, the substitution operations). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_diction",
+   "after": "\"status_source\": \"`cowork_progression_schema_dictionary.md`:220-222 (§5.3, the substitution operations). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_diction"
+  },
+  {
+   "file": "tools/audit/decisions/backbone_decisions.json",
+   "line": 12222,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "reason": "The register's SOURCE OF RECORD. These provenance fields are the citations OI-287 names as the reason the move is its own act; they are live pointers and they are what the rendered group files are generated from, so this is the ONE place they are corrected.",
+   "before": "\"status_source\": \"`cowork_progression_schema_dictionary.md`:255-257 (§7, component decision D3), with the organisation it produces at :136-139 (§5) and the generative spine at :141-166 (§5.1). Found b",
+   "after": "\"status_source\": \"`cowork_progression_schema_dictionary.md`:255-257 (§7, component decision D3), with the organisation it produces at :136-139 (§5) and the generative spine at :141-166 (§5.1). Found b"
+  }
+ ],
+ "left": [
+  {
+   "file": "OPEN_ITEMS.md",
+   "line": 314,
+   "member": "cowork_decisions_pending_ratification_2.md",
+   "verdict": "LEAVE",
+   "reason": "The OI-285 row is a HISTORICAL FINDING about the state of these files at commit b6be14097e ('absent from the commit', 'untracked') and about what phase 1l then did ('committed IN PLACE, at their current paths'). Both statements are true of the paths as they then were; re-aiming them would make the record assert a directory that did not exist at that commit. The new location is carried by the dated note added to open_items/OI-285.md.",
+   "recorded_text": "| OI-285 | The eight ratification-surface documents are UNCOMMITTED, and the register cites two of them as the provenance of ratified decisions | Verified at the objects against `b6be14097e`: `cowork_pending_ratifications_next_session.md` is **absent from the commit** (\"exists on disk, but not in\"),"
+  },
+  {
+   "file": "OPEN_ITEMS.md",
+   "line": 314,
+   "member": "cowork_decisions_pending_ratification_8.md",
+   "verdict": "LEAVE",
+   "reason": "The OI-285 row is a HISTORICAL FINDING about the state of these files at commit b6be14097e ('absent from the commit', 'untracked') and about what phase 1l then did ('committed IN PLACE, at their current paths'). Both statements are true of the paths as they then were; re-aiming them would make the record assert a directory that did not exist at that commit. The new location is carried by the dated note added to open_items/OI-285.md.",
+   "recorded_text": "| OI-285 | The eight ratification-surface documents are UNCOMMITTED, and the register cites two of them as the provenance of ratified decisions | Verified at the objects against `b6be14097e`: `cowork_pending_ratifications_next_session.md` is **absent from the commit** (\"exists on disk, but not in\"),"
+  },
+  {
+   "file": "OPEN_ITEMS.md",
+   "line": 314,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "verdict": "LEAVE",
+   "reason": "The OI-285 row is a HISTORICAL FINDING about the state of these files at commit b6be14097e ('absent from the commit', 'untracked') and about what phase 1l then did ('committed IN PLACE, at their current paths'). Both statements are true of the paths as they then were; re-aiming them would make the record assert a directory that did not exist at that commit. The new location is carried by the dated note added to open_items/OI-285.md.",
+   "recorded_text": "| OI-285 | The eight ratification-surface documents are UNCOMMITTED, and the register cites two of them as the provenance of ratified decisions | Verified at the objects against `b6be14097e`: `cowork_pending_ratifications_next_session.md` is **absent from the commit** (\"exists on disk, but not in\"),"
+  },
+  {
+   "file": "cc_instruction_phase1k_ratification_application_and_reads.md",
+   "line": 228,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "verdict": "LEAVE",
+   "reason": "A dispatch. .gitignore excludes /cc_instruction_*.md and /cc_*.md as a class, so these are not in the record; and they are another wave's working instruction, which this wave does not edit. Reported rather than changed.",
+   "recorded_text": "`cowork_pending_ratifications_next_session.md` is **superseded by this dispatch's execution**: flip"
+  },
+  {
+   "file": "cc_instruction_phase1l_rulings_and_reads.md",
+   "line": 146,
+   "member": "cowork_decisions_pending_ratification_2.md",
+   "verdict": "LEAVE",
+   "reason": "A dispatch. .gitignore excludes /cc_instruction_*.md and /cc_*.md as a class, so these are not in the record; and they are another wave's working instruction, which this wave does not edit. Reported rather than changed.",
+   "recorded_text": "(`cowork_decisions_pending_ratification_2.md` … `_8.md`). Their content is the text the user read;"
+  },
+  {
+   "file": "cowork_decisions_pending_ratification.md",
+   "line": 8,
+   "member": "cowork_decisions_ratification_delta.md",
+   "verdict": "LEAVE",
+   "reason": "The BODY of a ratification surface. D-249 makes the surface part of the ruling, and OI-285's resolution states that a ratification surface which has been tidied is no longer the surface that was ratified. The citation also resolves unchanged, both files now sitting in the same directory.",
+   "recorded_text": "> are summarized in `cowork_decisions_ratification_delta.md` Part A."
+  },
+  {
+   "file": "cowork_pending_ratifications_next_session.md",
+   "line": 55,
+   "member": "cowork_decisions_pending_ratification_8.md",
+   "verdict": "LEAVE",
+   "reason": "The BODY of a ratification surface. D-249 makes the surface part of the ruling, and OI-285's resolution states that a ratification surface which has been tidied is no longer the surface that was ratified. The citation also resolves unchanged, both files now sitting in the same directory.",
+   "recorded_text": "The complete entries: `cowork_decisions_pending_ratification_8.md` (nine, from the schema"
+  },
+  {
+   "file": "decisions/group_A.md",
+   "line": 341,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "verdict": "LEAVE - GENERATED",
+   "reason": "Rendered from tools/audit/decisions/backbone_decisions.json by gen_decisions_register.py. Editing it would be undone at the next regeneration and would hide the citation that actually needs correcting. Re-aimed at the source.",
+   "recorded_text": "**Provenance.** Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommendat"
+  },
+  {
+   "file": "decisions/group_A.md",
+   "line": 357,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "verdict": "LEAVE - GENERATED",
+   "reason": "Rendered from tools/audit/decisions/backbone_decisions.json by gen_decisions_register.py. Editing it would be undone at the next regeneration and would hide the citation that actually needs correcting. Re-aimed at the source.",
+   "recorded_text": "**Provenance.** Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommendat"
+  },
+  {
+   "file": "decisions/group_C.md",
+   "line": 663,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "verdict": "LEAVE - GENERATED",
+   "reason": "Rendered from tools/audit/decisions/backbone_decisions.json by gen_decisions_register.py. Editing it would be undone at the next regeneration and would hide the citation that actually needs correcting. Re-aimed at the source.",
+   "recorded_text": "**Provenance.** Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommendat"
+  },
+  {
+   "file": "decisions/group_F.md",
+   "line": 262,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "verdict": "LEAVE - GENERATED",
+   "reason": "Rendered from tools/audit/decisions/backbone_decisions.json by gen_decisions_register.py. Editing it would be undone at the next regeneration and would hide the citation that actually needs correcting. Re-aimed at the source.",
+   "recorded_text": "**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itsel"
+  },
+  {
+   "file": "decisions/group_G.md",
+   "line": 433,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "verdict": "LEAVE - GENERATED",
+   "reason": "Rendered from tools/audit/decisions/backbone_decisions.json by gen_decisions_register.py. Editing it would be undone at the next regeneration and would hide the citation that actually needs correcting. Re-aimed at the source.",
+   "recorded_text": "**Provenance.** docs/iteration_path1_summary.md:74-78, recorded among the architecture decisions of the completed iteration path and stated there as 'now a standing rule for any future gate or scoring change'; no date or ratifier is stated at this home. Distinct from register entry D-066, which forb"
+  },
+  {
+   "file": "decisions/group_G.md",
+   "line": 452,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "verdict": "LEAVE - GENERATED",
+   "reason": "Rendered from tools/audit/decisions/backbone_decisions.json by gen_decisions_register.py. Editing it would be undone at the next regeneration and would hide the citation that actually needs correcting. Re-aimed at the source.",
+   "recorded_text": "**Provenance.** Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommendat"
+  },
+  {
+   "file": "decisions/group_G.md",
+   "line": 612,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "verdict": "LEAVE - GENERATED",
+   "reason": "Rendered from tools/audit/decisions/backbone_decisions.json by gen_decisions_register.py. Editing it would be undone at the next regeneration and would hide the citation that actually needs correcting. Re-aimed at the source.",
+   "recorded_text": "**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02) as a LEGACY-scoped dead end with no effect on the going so"
+  },
+  {
+   "file": "decisions/group_G.md",
+   "line": 632,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "verdict": "LEAVE - GENERATED",
+   "reason": "Rendered from tools/audit/decisions/backbone_decisions.json by gen_decisions_register.py. Editing it would be undone at the next regeneration and would hide the citation that actually needs correcting. Re-aimed at the source.",
+   "recorded_text": "**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02) as a LEGACY-scoped dead end with no effect on the going so"
+  },
+  {
+   "file": "decisions/group_G.md",
+   "line": 653,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "verdict": "LEAVE - GENERATED",
+   "reason": "Rendered from tools/audit/decisions/backbone_decisions.json by gen_decisions_register.py. Editing it would be undone at the next regeneration and would hide the citation that actually needs correcting. Re-aimed at the source.",
+   "recorded_text": "**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itsel"
+  },
+  {
+   "file": "decisions/group_G.md",
+   "line": 679,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "verdict": "LEAVE - GENERATED",
+   "reason": "Rendered from tools/audit/decisions/backbone_decisions.json by gen_decisions_register.py. Editing it would be undone at the next regeneration and would hide the citation that actually needs correcting. Re-aimed at the source.",
+   "recorded_text": "**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itsel"
+  },
+  {
+   "file": "decisions/group_G.md",
+   "line": 712,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "verdict": "LEAVE - GENERATED",
+   "reason": "Rendered from tools/audit/decisions/backbone_decisions.json by gen_decisions_register.py. Editing it would be undone at the next regeneration and would hide the citation that actually needs correcting. Re-aimed at the source.",
+   "recorded_text": "**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itsel"
+  },
+  {
+   "file": "decisions/group_G.md",
+   "line": 737,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "verdict": "LEAVE - GENERATED",
+   "reason": "Rendered from tools/audit/decisions/backbone_decisions.json by gen_decisions_register.py. Editing it would be undone at the next regeneration and would hide the citation that actually needs correcting. Re-aimed at the source.",
+   "recorded_text": "**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itsel"
+  },
+  {
+   "file": "decisions/group_G.md",
+   "line": 758,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "verdict": "LEAVE - GENERATED",
+   "reason": "Rendered from tools/audit/decisions/backbone_decisions.json by gen_decisions_register.py. Editing it would be undone at the next regeneration and would hide the citation that actually needs correcting. Re-aimed at the source.",
+   "recorded_text": "**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itsel"
+  },
+  {
+   "file": "decisions/group_M.md",
+   "line": 133,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "verdict": "LEAVE - GENERATED",
+   "reason": "Rendered from tools/audit/decisions/backbone_decisions.json by gen_decisions_register.py. Editing it would be undone at the next regeneration and would hide the citation that actually needs correcting. Re-aimed at the source.",
+   "recorded_text": "**Provenance.** `cowork_progression_schema_dictionary.md`:41-46 records the owner ruling as D5 of `cowork_progression_schema_design.md` §6, user-ratified 2026-07-02, with the cross-referencing comment blocks at `functionprogression.h` and `harmonicvocabulary.h` and the test at `progressionrecognizer"
+  },
+  {
+   "file": "decisions/group_M.md",
+   "line": 152,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "verdict": "LEAVE - GENERATED",
+   "reason": "Rendered from tools/audit/decisions/backbone_decisions.json by gen_decisions_register.py. Editing it would be undone at the next regeneration and would hide the citation that actually needs correcting. Re-aimed at the source.",
+   "recorded_text": "**Provenance.** `cowork_progression_schema_dictionary.md`:52-54 (§2, what it does not do), with the firewall line at :244-246 (§6). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'c"
+  },
+  {
+   "file": "decisions/group_M.md",
+   "line": 174,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "verdict": "LEAVE - GENERATED",
+   "reason": "Rendered from tools/audit/decisions/backbone_decisions.json by gen_decisions_register.py. Editing it would be undone at the next regeneration and would hide the citation that actually needs correcting. Re-aimed at the source.",
+   "recorded_text": "**Provenance.** `cowork_progression_schema_dictionary.md`:55-59 (§2), restated as component decision D5 at :261-263 (§7) with its rejected alternative, and carried as a risk at :279-280 (§9). Consistent with `ARCHITECTURE.md` §7, which states the same exclusion. Found by the phase-1j continuation wa"
+  },
+  {
+   "file": "decisions/group_M.md",
+   "line": 195,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "verdict": "LEAVE - GENERATED",
+   "reason": "Rendered from tools/audit/decisions/backbone_decisions.json by gen_decisions_register.py. Editing it would be undone at the next regeneration and would hide the citation that actually needs correcting. Re-aimed at the source.",
+   "recorded_text": "**Provenance.** `cowork_progression_schema_dictionary.md`:114-124 (§4). Beside D-027, the cross-cutting contract that every layer emits ranked candidates plus a confidence rather than a forced point estimate. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dic"
+  },
+  {
+   "file": "decisions/group_M.md",
+   "line": 217,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "verdict": "LEAVE - GENERATED",
+   "reason": "Rendered from tools/audit/decisions/backbone_decisions.json by gen_decisions_register.py. Editing it would be undone at the next regeneration and would hide the citation that actually needs correcting. Re-aimed at the source.",
+   "recorded_text": "**Provenance.** `cowork_progression_schema_dictionary.md`:96-106 (§4 recognise) and :114-118 (the match score under the partial matcher). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner re"
+  },
+  {
+   "file": "decisions/group_M.md",
+   "line": 238,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "verdict": "LEAVE - GENERATED",
+   "reason": "Rendered from tools/audit/decisions/backbone_decisions.json by gen_decisions_register.py. Editing it would be undone at the next regeneration and would hide the citation that actually needs correcting. Re-aimed at the source.",
+   "recorded_text": "**Provenance.** `cowork_progression_schema_dictionary.md`:185-188 (§5.2, the bass-line and pop loops). Same class as the circle-of-fifths entry-point rule (D-412): both fix what a realisation of one entry is allowed to look like. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_p"
+  },
+  {
+   "file": "decisions/group_M.md",
+   "line": 258,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "verdict": "LEAVE - GENERATED",
+   "reason": "Rendered from tools/audit/decisions/backbone_decisions.json by gen_decisions_register.py. Editing it would be undone at the next regeneration and would hide the citation that actually needs correcting. Re-aimed at the source.",
+   "recorded_text": "**Provenance.** `cowork_progression_schema_dictionary.md`:179-181 (§5.2, sequences). The descending-thirds entry beside it carries the same kind of rule, stated as a continuation rule rather than an ellipsis. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dic"
+  },
+  {
+   "file": "decisions/group_M.md",
+   "line": 278,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "verdict": "LEAVE - GENERATED",
+   "reason": "Rendered from tools/audit/decisions/backbone_decisions.json by gen_decisions_register.py. Editing it would be undone at the next regeneration and would hide the citation that actually needs correcting. Re-aimed at the source.",
+   "recorded_text": "**Provenance.** `cowork_progression_schema_dictionary.md`:220-222 (§5.3, the substitution operations). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026"
+  },
+  {
+   "file": "decisions/group_M.md",
+   "line": 298,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "verdict": "LEAVE - GENERATED",
+   "reason": "Rendered from tools/audit/decisions/backbone_decisions.json by gen_decisions_register.py. Editing it would be undone at the next regeneration and would hide the citation that actually needs correcting. Re-aimed at the source.",
+   "recorded_text": "**Provenance.** `cowork_progression_schema_dictionary.md`:255-257 (§7, component decision D3), with the organisation it produces at :136-139 (§5) and the generative spine at :141-166 (§5.1). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FUL"
+  },
+  {
+   "file": "decisions/group_U.md",
+   "line": 304,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "verdict": "LEAVE - GENERATED",
+   "reason": "Rendered from tools/audit/decisions/backbone_decisions.json by gen_decisions_register.py. Editing it would be undone at the next regeneration and would hide the citation that actually needs correcting. Re-aimed at the source.",
+   "recorded_text": "**Provenance.** docs/iteration_path1_summary.md:66-72, recorded among the architecture decisions of the completed iteration path; no date or ratifier is stated at this home. A decision about a MEASUREMENT TOOL and its floor, reported separately by the phase-1d enumeration wave (2026-08-02) so that t"
+  },
+  {
+   "file": "open_items/OI-285.md",
+   "line": 16,
+   "member": "cowork_decisions_pending_ratification_2.md",
+   "verdict": "LEAVE",
+   "reason": "This row IS the historical finding about these files' location and committed state. Every citation in it is either a statement about the state at commit b6be14097e, a quotation of the register's provenance wording, or the narrative of what phase 1l did at the paths as they then were. Re-aiming any of them rewrites history rather than a pointer. The new location is carried by the dated note appended to this file.",
+   "recorded_text": "| `cowork_decisions_pending_ratification_2.md` … `_8.md` (seven files) | **untracked** |"
+  },
+  {
+   "file": "open_items/OI-285.md",
+   "line": 37,
+   "member": "cowork_decisions_pending_ratification_2.md",
+   "verdict": "LEAVE",
+   "reason": "This row IS the historical finding about these files' location and committed state. Every citation in it is either a statement about the state at commit b6be14097e, a quotation of the register's provenance wording, or the narrative of what phase 1l did at the paths as they then were. Re-aiming any of them rewrites history rather than a pointer. The new location is carried by the dated note appended to this file.",
+   "recorded_text": "**Seven were not.** `cowork_decisions_pending_ratification_2.md` … `_8.md` are another session's"
+  },
+  {
+   "file": "open_items/OI-285.md",
+   "line": 107,
+   "member": "cowork_decisions_pending_ratification_2.md",
+   "verdict": "LEAVE",
+   "reason": "This row IS the historical finding about these files' location and committed state. Every citation in it is either a statement about the state at commit b6be14097e, a quotation of the register's provenance wording, or the narrative of what phase 1l did at the paths as they then were. Re-aiming any of them rewrites history rather than a pointer. The new location is carried by the dated note appended to this file.",
+   "recorded_text": "`cowork_decisions_pending_ratification_2.md` … `_8.md`. Not edited, not reformatted, not"
+  },
+  {
+   "file": "open_items/OI-285.md",
+   "line": 23,
+   "member": "cowork_decisions_pending_ratification_8.md",
+   "verdict": "LEAVE",
+   "reason": "This row IS the historical finding about these files' location and committed state. Every citation in it is either a statement about the state at commit b6be14097e, a quotation of the register's provenance wording, or the narrative of what phase 1l did at the paths as they then were. Re-aiming any of them rewrites history rather than a pointer. The new location is carried by the dated note appended to this file.",
+   "recorded_text": "and that file in turn names `cowork_decisions_pending_ratification_8.md` as where the nine complete"
+  },
+  {
+   "file": "open_items/OI-285.md",
+   "line": 15,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "verdict": "LEAVE",
+   "reason": "This row IS the historical finding about these files' location and committed state. Every citation in it is either a statement about the state at commit b6be14097e, a quotation of the register's provenance wording, or the narrative of what phase 1l did at the paths as they then were. Re-aiming any of them rewrites history rather than a pointer. The new location is carried by the dated note appended to this file.",
+   "recorded_text": "| `cowork_pending_ratifications_next_session.md` | **absent** — `git cat-file` reports \"exists on disk, but not in\" the commit |"
+  },
+  {
+   "file": "open_items/OI-285.md",
+   "line": 22,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "verdict": "LEAVE",
+   "reason": "This row IS the historical finding about these files' location and committed state. Every citation in it is either a statement about the state at commit b6be14097e, a quotation of the register's provenance wording, or the narrative of what phase 1l did at the paths as they then were. Re-aiming any of them rewrites history rather than a pointer. The new location is carried by the dated note appended to this file.",
+   "recorded_text": "ratification as \"the phase-1j queue presented at `cowork_pending_ratifications_next_session.md` §2\","
+  },
+  {
+   "file": "open_items/OI-285.md",
+   "line": 31,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "verdict": "LEAVE",
+   "reason": "This row IS the historical finding about these files' location and committed state. Every citation in it is either a statement about the state at commit b6be14097e, a quotation of the register's provenance wording, or the narrative of what phase 1l did at the paths as they then were. Re-aiming any of them rewrites history rather than a pointer. The new location is carried by the dated note appended to this file.",
+   "recorded_text": "**One file was committed:** `cowork_pending_ratifications_next_session.md`, because the phase-1k"
+  },
+  {
+   "file": "open_items/OI-287.md",
+   "line": 21,
+   "member": "cowork_decisions_pending_ratification_8.md",
+   "verdict": "LEAVE",
+   "reason": "This row is the argument FOR the move, quoting the citation chain as it stood before it. Its dated resolution note carries the new paths.",
+   "recorded_text": "`cowork_decisions_pending_ratification_8.md`. Moving a file re-points every citation of it. That is"
+  },
+  {
+   "file": "open_items/OI-287.md",
+   "line": 20,
+   "member": "cowork_pending_ratifications_next_session.md",
+   "verdict": "LEAVE",
+   "reason": "This row is the argument FOR the move, quoting the citation chain as it stood before it. Its dated resolution note carries the new paths.",
+   "recorded_text": "`cowork_pending_ratifications_next_session.md` §2\", and that document in turn names"
+  }
+ ],
+ "stops": []
+}
