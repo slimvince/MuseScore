@@ -250,7 +250,7 @@
    "thirdparty",
    "vtest"
   ],
-  "files_scanned": 72369,
+  "files_scanned": 72373,
   "verification": "The exclusions are verified, not assumed. An earlier form of this tool walked the WHOLE tree including every excluded directory, and an independent whole-tree content search was run with the file tools over the same member names. Both returned the same citing-file set as the scoped walk below."
  },
  "citation_census": {
@@ -320,7 +320,7 @@
    },
    {
     "file": "STATUS.md",
-    "line": 286,
+    "line": 290,
     "text": "report, the D-406…D-414 queue via `ratification_surfaces/cowork_decisions_pending_ratification_8.md`, the OI-279 ruling surface",
     "carries_directory": true
    },
@@ -384,13 +384,13 @@
    },
    {
     "file": "STATUS.md",
-    "line": 67,
+    "line": 71,
     "text": "register matches the data across 21 files; dispositions 14,460/14,460 clusters, 15,224/15,224 occurrences; open-items living check 285/285). `ratification_surfaces/cowork_pending_ratifications_next_session.md`",
     "carries_directory": true
    },
    {
     "file": "STATUS.md",
-    "line": 285,
+    "line": 289,
     "text": "read is **`ratification_surfaces/cowork_pending_ratifications_next_session.md`** (the four banner drafts quoted from the phase-1j",
     "carries_directory": true
    },
@@ -719,7 +719,26 @@
     "carries_directory": true
    }
   ],
-  "cowork_pending_rulings_2026_08_02.md": []
+  "cowork_pending_rulings_2026_08_02.md": [
+   {
+    "file": "OPEN_ITEMS.md",
+    "line": 316,
+    "text": "| OI-287 | The ratification surfaces and the dispatches have no directory of their own, and moving them re-aims cited paths | The filing half of the user's 2026-08-03 ruling on [[OI-285]] — \"commit them, and give the class a directory\". The commit half is executed at phase 1l, **in place**; this row",
+    "carries_directory": false
+   },
+   {
+    "file": "open_items/OI-285.md",
+    "line": 130,
+    "text": "exception is `cowork_pending_rulings_2026_08_02.md`, which is untracked and was left where it is,",
+    "carries_directory": false
+   },
+   {
+    "file": "open_items/OI-287.md",
+    "line": 91,
+    "text": "**One member was NOT moved, deliberately:** `cowork_pending_rulings_2026_08_02.md` is untracked, and",
+    "carries_directory": false
+   }
+  ]
  },
  "citation_totals": {
   "cowork_decisions_pending_ratification.md": 2,
@@ -732,7 +751,7 @@
   "cowork_decisions_pending_ratification_8.md": 6,
   "cowork_decisions_ratification_delta.md": 1,
   "cowork_pending_ratifications_next_session.md": 61,
-  "cowork_pending_rulings_2026_08_02.md": 0
+  "cowork_pending_rulings_2026_08_02.md": 3
  },
  "citing_files": [
   "OPEN_ITEMS.md",

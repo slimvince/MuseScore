@@ -1,6 +1,20 @@
 # The perspective inventory — how this project searches for what it does not know
 
-> **STATUS: DRAFT for discussion (Cowork, 2026-08-01).** Prepared at the user's direction while the
+> **★ STATUS: §4 RATIFIED BY THE USER 2026-08-03 — THE ONE HOME FOR THE ENUMERATED DISCOVERY
+> CHANNELS.** `CLAUDE.md`'s phase-2 clause (register entry **D-231**) now POINTS at §4 instead of
+> listing six subjects of its own, so §4's ten channels are the enumeration of record and the
+> clause carries no second, shorter list (#6). Ratified together with the scope ruling written into
+> §4 — which of channels 4, 8, 9 and 10 that clause reaches — and after the correction of record in
+> channel 9, which was applied FIRST so that nothing untrue was ratified. Register entry **D-439**.
+>
+> **★ WHAT THE RATIFICATION DOES NOT DO, stated so a later reader does not assume more was decided
+> than was.** The **§6 program is NOT adopted**, in whole or in part. **OI-200 is not pulled
+> forward**, and this document's own §9 request — adopt, amend or reject the §6 program — **stays
+> open and untaken**. No probe, fix, design or inference change is authorized. **Phase 1 is not
+> complete.** What was ratified is the ENUMERATION and its scope, and nothing else.
+>
+> *Drafted as:* **STATUS: DRAFT for discussion (Cowork, 2026-08-01).** Prepared at the user's
+> direction while the
 > OI-207 adjudication is in flight, as an input to the architecture step-back (the open-items
 > register row OI-200), whose scheduled turn is after the OI-198/OI-199 reviews. Nothing here is
 > ratified; nothing here edits the open-items register (the adjudication dispatch owns that surface
@@ -8,7 +22,11 @@
 > row, so no new row is required. This is a methodology decision surface, not a component design;
 > the fourteen-section component structure applies where it maps (a terms table, decisions with
 > alternatives, related work) — the building-block, runtime, data-design and deployment sections are
-> not applicable and that omission is stated once, here.
+> not applicable and that omission is stated once, here. *(The drafted banner is preserved verbatim
+> under #12 — the two clauses about the register and about OI-200's schedule still hold; what the
+> ratification changes is the first clause, "nothing here is ratified", and it changes it for §4
+> only. The reading surface the user ruled from is
+> `ratification_surfaces/cowork_perspective_inventory_ratification.md`.)*
 
 ---
 
@@ -228,8 +246,26 @@ inventory adds only the explicit instruction that each pass REPORT its seeded de
 falsifications and dead ends against the current tree. **Why it works:** it targets class 3
 (unknown knowns) directly, and class 3 is where this project demonstrably bled. **Precedent:**
 the 3.1b contradiction; the whole OI-207 adjudication now in flight. **Proposed probe:** none
-new — the adjudication is this channel run to completion, and the decisions register plus its
+new — the OI-207 adjudication is this channel **IN FLIGHT, not run to completion**: its residual
+second pass ran on 2026-08-02, and both of its faces are still live at HEAD — the unresolved
+cluster residual (`tools/audit/decisions/disposition_manifest.json` →
+`disposition_counts.unresolved`, the rule BR-8 population the manifest's own text calls "the
+honest outcome") and the owed full document reads (tracked on the `OPEN_ITEMS.md` OI-207 row,
+whose correction of record of 2026-08-03 states how many design documents are read in full and
+how many are owed, and whose proposal is to read them all and carry no tail). Running the
+adjudication to completion is what discharges this channel; the decisions register plus its
 session-start-read rule is the mechanism that keeps the class empty afterward.
+
+> **★ CORRECTION OF RECORD (2026-08-03, made immediately before the ratification below).** The
+> sentence above formerly read, verbatim: *"**Proposed probe:** none new — the adjudication is
+> this channel run to completion, and the decisions register plus its session-start-read rule is
+> the mechanism that keeps the class empty afterward."* That was untrue of both faces at HEAD.
+> It was corrected BEFORE the ratification rather than after it, on the user's ruling of
+> 2026-08-03, because ruling this channel's scope while its own text said the work was finished
+> would have ratified a contradiction. The former wording is preserved here under principle #12;
+> nothing else in this channel's text changed, and no verdict of
+> `tools/audit/phase3_gate_partition.json` moves — that partition states each verdict against
+> the SUBJECT `CLAUDE.md`'s clause names, using this document's channel numbers as locators only.
 
 ### Channel 10 — Defect-signature sweeps (the honest limit, stated)
 
@@ -240,7 +276,47 @@ regression, not discovery — with one exception worth naming: the catalog GROWS
 ask "is this a new defect TYPE?" and feed the catalog, which then converts one unknown into a
 sweepable known class forever.
 
-## §5 Measuring the search itself — how ignorance is bounded without being enumerated
+### Which of these channels `CLAUDE.md`'s phase-2 clause reaches — ruled by the user, 2026-08-03
+
+`CLAUDE.md`'s phase-2 clause names *"the enumerated discovery channels"* and, as of the same
+2026-08-03 act that ratified this section, points here for them. **Until that act it listed six
+subjects of its own** — populations, oracles, invariants, residual decomposition, concept gaps,
+requirement side — which are channels 1, 2, 3, 5, 6 and 7 above; the four it never named are 4, 8,
+9 and 10. Those four are what a pointer would otherwise leave ambiguous, so the user ruled on
+2026-08-03 what the clause reaches, each verdict resting on the channel's own text rather than on a
+judgment made here:
+
+- **Channel 9 (history mining) — IN.** It is a distinct search, and the clause named it nowhere:
+  neither the six subjects nor the two items stated before them (the remaining audit partitions;
+  the blind second pass with its seeded error rate) is history mining. It also gates the phase-3
+  family design on the partition's own verdict.
+- **Channel 4 (prediction-first operation) — ALREADY REACHED, and it adds nothing.** Its own text
+  says *"none new — the channel is already mandated"*: it is an obligation carried BY the other
+  probes, not a search of its own, so there is nothing for the clause to reach separately.
+- **Channel 8 (fresh-reader passes) — ALREADY REACHED.** Its own text says *"already scheduled —
+  OI-199 pass 2 and partitions 2–3 run exactly this"*, and those are precisely the two items the
+  clause states in the words immediately preceding the channel half. Naming it again would
+  double-count work the clause already enumerates.
+- **Channel 10 (defect-signature sweeps) — NOT a discovery channel**, on its own account: it
+  states in terms that *"by construction they cannot find a class nobody has named"*, and that
+  *"their role in this program is inventory completeness and regression, not discovery."* Its
+  catalog-feeding role is noted rather than dropped — every finding from channels 1 through 9
+  asks whether it is a new defect TYPE, and the catalog converts each answered yes into a
+  sweepable known class.
+
+**What this ruling does not touch: the phase-3 gate partition's verdicts.** That partition asks a
+different question of the same channels — *must the struck-versus-sounding family design WAIT on
+this item?* — and answers it against the item's search space, not against the clause's reach. The
+two answers can differ without contradicting, and for channel 10 they do: a sweep cannot find a
+new defect CLASS (so the clause does not reach it as a discovery channel) while a sweep for the
+family's already-named classes can still find another INSTANCE (so the family design waits on it).
+`tools/audit/phase3_gate_partition.json` carries that verdict with its reason, unchanged by this
+ruling, and now carries the ruling itself beside them (its `the_channel_enumeration_source.the_scope_ruling`
+block) so that a reader of the artifact meets both answers together. One consequence is recorded
+there rather than silently corrected: that artifact's per-item `kind` field labels channel 10 a
+discovery channel, which the ruling above supersedes. The field is left standing because a
+registered prediction is not re-touched after the fact; this section is the authority on what the
+clause reaches. — how ignorance is bounded without being enumerated
 
 The question "did we find everything?" is unanswerable. The question "what fraction does this
 method find?" is measurable, and the project already owns the machinery:

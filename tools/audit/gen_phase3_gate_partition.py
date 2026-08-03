@@ -75,15 +75,27 @@ RULE_SOURCE = {
         "The defining source for phase 2. The user-directed three-phase rule (register entry "
         "D-231), Conventions section, 2026-08-02. Its phase-2 clause names, in order: the "
         "remaining audit partitions; the blind second pass with its seeded error rate; the "
-        "enumerated discovery channels (populations, oracles, invariants, residual "
-        "decomposition, concept gaps, requirement side); the per-search detection-power "
-        "report; and the bounded trust statement."
+        "enumerated discovery channels; the per-search detection-power report; and the bounded "
+        "trust statement."
+    ),
+    "how_the_channel_half_reads_at_HEAD": (
+        "CHANGED 2026-08-03 BY THE RATIFICATION, and stated here because this partition was "
+        "recorded against the earlier wording. The clause formerly listed six channel subjects of "
+        "its own - populations, oracles, invariants, residual decomposition, concept gaps, "
+        "requirement side - and now POINTS at cowork_oi200_perspective_inventory.md section 4 "
+        "instead, that section being the ratified one home for the list (D-439). The per-item "
+        "fields named_by_the_rule and rule_phrase below therefore describe the clause AS IT STOOD "
+        "WHEN THIS PREDICTION WAS RECORDED, which is what they are for; they are preserved rather "
+        "than rewritten, because a prediction's record of its own basis is not re-touched after "
+        "the fact. The six subjects map onto channels 1, 2, 3, 5, 6 and 7."
     ),
 }
 
 CHANNEL_ENUMERATION_SOURCE = {
     "file": "cowork_oi200_perspective_inventory.md",
-    "expected_line": 104,
+    # Re-aimed 2026-08-03 from this generator's own drift report (104 -> 122), per citation: the
+    # ratification's banner and the channel-9 correction both insert above this line.
+    "expected_line": 122,
     "quote": "## §4 The perspective inventory - the channels, each with its principle, precedent, and proposed probes",
     "what_it_is": (
         "The only place in the record where 'the enumerated discovery channels' the rule names "
@@ -92,14 +104,76 @@ CHANNEL_ENUMERATION_SOURCE = {
     ),
     "status_of_this_source": {
         "banner_expected_line": 3,
-        "banner_quote": "> **STATUS: DRAFT for discussion (Cowork, 2026-08-01).** Prepared at the user's direction while the",
+        "banner_quote": "> **★ STATUS: §4 RATIFIED BY THE USER 2026-08-03 — THE ONE HOME FOR THE ENUMERATED DISCOVERY",
         "consequence": (
-            "REPORTED, NOT WORKED AROUND. The rule D-231 states is user-directed and binding; the "
-            "enumeration it points at is an unratified Cowork draft whose own §9 says its one "
-            "requested decision - adopt, amend or reject the §6 program - has not been taken. So "
-            "the six channel subjects the rule names ARE binding, and the ten-channel structure "
-            "this partition classifies against is a draft. Every verdict below is therefore stated "
-            "against the SUBJECT the rule names, with the draft's channel number as a locator only."
+            "RATIFIED 2026-08-03 - THE WORKAROUND BELOW IS RETIRED. Section 4 of this document is "
+            "now the user-ratified one home for the enumerated discovery channels (register entry "
+            "D-439), and CLAUDE.md's phase-2 clause points at it rather than listing six subjects "
+            "of its own. The verdicts below are UNCHANGED and are not re-stated on the new "
+            "authority: they were recorded as a prediction before the classified items ran, and "
+            "that is what makes them falsifiable."
+        ),
+        "what_this_retires": (
+            "The stated workaround this block formerly carried, preserved verbatim under principle "
+            "#12: 'REPORTED, NOT WORKED AROUND. The rule D-231 states is user-directed and "
+            "binding; the enumeration it points at is an unratified Cowork draft whose own section "
+            "9 says its one requested decision - adopt, amend or reject the section 6 program - "
+            "has not been taken. So the six channel subjects the rule names ARE binding, and the "
+            "ten-channel structure this partition classifies against is a draft. Every verdict "
+            "below is therefore stated against the SUBJECT the rule names, with the draft's "
+            "channel number as a locator only.' The last sentence of it remains TRUE of how the "
+            "verdicts were authored, and that is exactly why the ratification changes none of "
+            "them; what is retired is the caveat that the structure had no authority."
+        ),
+        "what_the_ratification_did_not_do": (
+            "The inventory's section 6 program is NOT adopted, in whole or in part. OPEN_ITEMS.md "
+            "OI-200 is not pulled forward, and the inventory's own section 9 request - adopt, "
+            "amend or reject that program - stays open and untaken. No probe, fix, design or "
+            "inference change is authorized. Phase 1 is not complete."
+        ),
+    },
+    "the_scope_ruling": {
+        "ruled": "user, 2026-08-03; register entry D-439",
+        "home": (
+            "cowork_oi200_perspective_inventory.md section 4, the subsection headed 'Which of "
+            "these channels CLAUDE.md's phase-2 clause reaches'. That section is the authority; "
+            "this block records it beside the verdicts so a reader of this artifact meets both."
+        ),
+        "the_question_it_answers": (
+            "Which of the inventory's ten channels does CLAUDE.md's phase-2 clause REACH? This is "
+            "a DIFFERENT question from the one every verdict below answers, which is whether the "
+            "struck-versus-sounding family design must WAIT on an item. The two can differ "
+            "without contradicting."
+        ),
+        "verdicts": {
+            "channel 9 - history mining": (
+                "IN. A distinct search the clause names nowhere - neither its subjects nor the "
+                "two items stated before them is history mining."
+            ),
+            "channel 4 - prediction-first operation": (
+                "ALREADY REACHED, and adds nothing. Its own text: 'none new - the channel is "
+                "already mandated'. An obligation carried BY the other probes, not a search of "
+                "its own."
+            ),
+            "channel 8 - fresh-reader passes": (
+                "ALREADY REACHED. Its own text: 'already scheduled - OI-199 pass 2 and partitions "
+                "2-3 run exactly this', which are the two items the clause states in the words "
+                "immediately preceding the channel half."
+            ),
+            "channel 10 - defect-signature sweeps": (
+                "NOT a discovery channel, on its own account: 'by construction they cannot find a "
+                "class nobody has named', 'their role in this program is inventory completeness "
+                "and regression, not discovery'. Its catalog-feeding role is noted, not dropped."
+            ),
+        },
+        "where_it_meets_a_verdict_below_and_they_differ": (
+            "Channel 10. Item P2-C10 is GATING - a sweep for the family's ALREADY-NAMED classes "
+            "can find another INSTANCE, and the criterion asks about members, not classes - while "
+            "the scope ruling says the clause does not reach channel 10 as a discovery channel, "
+            "because it cannot find a new CLASS. Both hold. One consequence is recorded rather "
+            "than silently corrected: item P2-C10's 'kind' field reads 'discovery channel', which "
+            "the ruling supersedes. The field is left standing because a registered prediction is "
+            "not re-touched after the fact."
         ),
     },
 }
@@ -196,7 +270,7 @@ ITEMS = [
         "rule_phrase": "populations",
         "source": {
             "file": "cowork_oi200_perspective_inventory.md",
-            "expected_line": 113,
+            "expected_line": 131,  # re-aimed 2026-08-03 from the drift report (113 -> 131)
             "quote": "### Channel 1 - Population variation (vary the INPUT)",
         },
         "scope_basis": (
@@ -220,7 +294,7 @@ ITEMS = [
         "rule_phrase": "oracles",
         "source": {
             "file": "cowork_oi200_perspective_inventory.md",
-            "expected_line": 129,
+            "expected_line": 147,  # re-aimed 2026-08-03 from the drift report (129 -> 147)
             "quote": "### Channel 2 - Oracle multiplication (vary the REFERENCE)",
         },
         "scope_basis": (
@@ -248,7 +322,7 @@ ITEMS = [
         "rule_phrase": "invariants",
         "source": {
             "file": "cowork_oi200_perspective_inventory.md",
-            "expected_line": 142,
+            "expected_line": 160,  # re-aimed 2026-08-03 from the drift report (142 -> 160)
             "quote": "### Channel 3 - Invariant and metamorphic checks (vary the QUESTION)",
         },
         "scope_basis": (
@@ -272,7 +346,7 @@ ITEMS = [
         "rule_phrase": "residual decomposition",
         "source": {
             "file": "cowork_oi200_perspective_inventory.md",
-            "expected_line": 170,
+            "expected_line": 188,  # re-aimed 2026-08-03 from the drift report (170 -> 188)
             "quote": "### Channel 5 - Residual decomposition (vary the GRAIN of attention)",
         },
         "scope_basis": (
@@ -298,7 +372,7 @@ ITEMS = [
         "rule_phrase": "concept gaps",
         "source": {
             "file": "cowork_oi200_perspective_inventory.md",
-            "expected_line": 183,
+            "expected_line": 201,  # re-aimed 2026-08-03 from the drift report (183 -> 201)
             "quote": "### Channel 6 - Public-research comparison (vary the CONCEPTUAL FRAME)",
         },
         "scope_basis": (
@@ -326,7 +400,7 @@ ITEMS = [
         "rule_phrase": "requirement side",
         "source": {
             "file": "cowork_oi200_perspective_inventory.md",
-            "expected_line": 199,
+            "expected_line": 217,  # re-aimed 2026-08-03 from the drift report (199 -> 217)
             "quote": "### Channel 7 - Requirement-side enumeration (vary the DIRECTION - outside-in)",
         },
         "scope_basis": (
@@ -352,7 +426,7 @@ ITEMS = [
         "rule_phrase": None,
         "source": {
             "file": "cowork_oi200_perspective_inventory.md",
-            "expected_line": 161,
+            "expected_line": 179,  # re-aimed 2026-08-03 from the drift report (161 -> 179)
             "quote": "### Channel 4 - Prediction-first operation (vary the EXPECTATION)",
         },
         "scope_basis": (
@@ -376,7 +450,7 @@ ITEMS = [
         "rule_phrase": None,
         "source": {
             "file": "cowork_oi200_perspective_inventory.md",
-            "expected_line": 212,
+            "expected_line": 230,  # re-aimed 2026-08-03 from the drift report (212 -> 230)
             "quote": "### Channel 8 - Fresh-reader passes with measured power (vary the OBSERVER)",
         },
         "scope_basis": (
@@ -401,7 +475,7 @@ ITEMS = [
         "rule_phrase": None,
         "source": {
             "file": "cowork_oi200_perspective_inventory.md",
-            "expected_line": 225,
+            "expected_line": 243,  # re-aimed 2026-08-03 from the drift report (225 -> 243)
             "quote": "### Channel 9 - History mining (vary the TIME of observation)",
         },
         "scope_basis": (
@@ -428,7 +502,10 @@ ITEMS = [
         "rule_phrase": None,
         "source": {
             "file": "cowork_oi200_perspective_inventory.md",
-            "expected_line": 234,
+            # Re-aimed 2026-08-03 from the drift report (234 -> 270). NOTE THE DIFFERENT OFFSET:
+            # channels 1-9 moved +18 and this one moved +36, because the channel-9 correction
+            # inserts between them. This is why the re-aim is per citation and never a shift.
+            "expected_line": 270,
             "quote": "### Channel 10 - Defect-signature sweeps (the honest limit, stated)",
         },
         "scope_basis": (
@@ -454,7 +531,7 @@ ITEMS = [
         "rule_phrase": "each search reporting its detection power, ending in the bounded trust statement",
         "source": {
             "file": "CLAUDE.md",
-            "expected_line": 1029,   # re-aimed 2026-08-03 from the drift report (1005 -> 1029)
+            "expected_line": 1031,   # re-aimed 2026-08-03 from the drift report (1029 -> 1031)
             "quote": "each search reporting its detection power, ending in the bounded trust statement - every",
         },
         "scope_basis": (

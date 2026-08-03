@@ -1,6 +1,26 @@
 # The perspective inventory — put to the user for ratification
 
-> **STATUS: AWAITING THE USER.** Nothing here is applied. This is the reading surface for one
+> **★ STATUS: RULED AND APPLIED (user, 2026-08-03) — SUPERSEDED BY ITS OWN EXECUTION.** The user
+> read §5 below and ruled **option (c) with option (b)'s correction folded in**: amend the scope,
+> correct channel 9, then ratify — because channel 9 is both the scope gap of §4(a) and the stale
+> statement of §4(b), and ruling its scope while its own text said the work was finished would have
+> ratified a contradiction. Applied at phase 1v (dispatch
+> `cc_instruction_phase1v_channel_ratification.md`); register entry **D-439**; the row it closed is
+> `OPEN_ITEMS.md` OI-298. **Nothing here is pending.** The §7 act list below was executed in full,
+> in that order, plus the scope ruling §5(c) asked for.
+>
+> **What the ruling did NOT decide, because §6 below promises it:** the inventory's §6 program is
+> NOT adopted, in whole or in part; OI-200 is not pulled forward and the inventory's own §9 request
+> stays open and untaken; no probe, fix, design or inference change is authorized; phase 1 is not
+> complete.
+>
+> **Retained unedited beneath, under #12** — a ruling is only readable against the surface it
+> answered (**D-249**). In particular §1 and §4(a) below describe `CLAUDE.md`'s phase-2 clause as
+> naming six subjects in a parenthesis: that was true when this surface was written and is what the
+> user read; the ruling is what changed it.
+>
+> *Drafted as:* **STATUS: AWAITING THE USER.** Nothing here is applied. This is the reading surface
+> for one
 > decision: whether `cowork_oi200_perspective_inventory.md` becomes the ONE home for the discovery
 > channels that `CLAUDE.md`'s phase-2 clause relies on. Prepared 2026-08-03 (CC, phase 1u, Task 2)
 > on the user's ruling of the same date (option 2B: *the inventory becomes the one home and is

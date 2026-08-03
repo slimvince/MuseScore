@@ -1,0 +1,63 @@
+{
+  "purpose": "A run of tools/audit/process_check.py over named dispatches or reports. Generated so a report cites this file rather than transcribing what the check found (D-431).",
+  "rules": [
+    "D-431 bare quantity",
+    "D-431 uncited code claim",
+    "D-434 missing self-check section"
+  ],
+  "files_scanned": [
+    "cc_instruction_phase1v_channel_ratification.md"
+  ],
+  "findings_total": 6,
+  "by_file": {
+    "cc_instruction_phase1v_channel_ratification.md": {
+      "findings": 6,
+      "rows": [
+        {
+          "file": "cc_instruction_phase1v_channel_ratification.md",
+          "line": 44,
+          "rule": "D-431 bare quantity",
+          "detail": "3.1",
+          "sentence": "Cowork has this from the reading surface, which is a secondary source. → **Task 3.1**."
+        },
+        {
+          "file": "cc_instruction_phase1v_channel_ratification.md",
+          "line": 48,
+          "rule": "D-431 bare quantity",
+          "detail": "3.2",
+          "sentence": "established before that correction is written.** → **Task 3.2**."
+        },
+        {
+          "file": "cc_instruction_phase1v_channel_ratification.md",
+          "line": 70,
+          "rule": "D-431 bare quantity",
+          "detail": "3.1",
+          "sentence": "**3.1** Read the inventory's banner at the document and report it verbatim."
+        },
+        {
+          "file": "cc_instruction_phase1v_channel_ratification.md",
+          "line": 149,
+          "rule": "D-431 bare quantity",
+          "detail": "2.2",
+          "sentence": "**Task 2.2 finding the adjudication complete is"
+        },
+        {
+          "file": "cc_instruction_phase1v_channel_ratification.md",
+          "line": 166,
+          "rule": "D-431 bare quantity",
+          "detail": "3.2, 3.1",
+          "sentence": "- **Consistency.** Checked: Task 3.2's scope ruling and Task 3.1's correction are the same channel,"
+        },
+        {
+          "file": "cc_instruction_phase1v_channel_ratification.md",
+          "line": 167,
+          "rule": "D-431 bare quantity",
+          "detail": "3.3",
+          "sentence": "Task 4's disclaimers bound what Task 3.3 flips; nothing here"
+        }
+      ]
+    }
+  },
+  "clean_files": [],
+  "establishment": "tools/audit/process_check_establishment.json — the check's measured detection power and false-positive rate. Read it before reading a count here as coverage."
+}

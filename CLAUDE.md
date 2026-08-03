@@ -1024,8 +1024,10 @@ Build commands via `Start-Process` are isolated from these rules (exit code not 
   specification text is corrected wherever it states something false at HEAD (the doc-sync debt),
   because a specification cannot be the compliance standard while it misdescribes the code.
   **Phase 2 — issue-finding is EXHAUSTED with measured coverage:** the remaining audit partitions
-  and the blind second pass with its seeded error rate, plus the enumerated discovery channels
-  (populations, oracles, invariants, residual decomposition, concept gaps, requirement side),
+  and the blind second pass with its seeded error rate, plus the enumerated discovery channels —
+  **enumerated at `cowork_oi200_perspective_inventory.md` §4, which is the ONE home for that list
+  (user-ratified 2026-08-03, D-439); that section's own scope ruling states which of its channels
+  this clause reaches, and this clause lists none of them itself (#6)** —
   each search reporting its detection power, ending in the bounded trust statement — every
   channel enumerated, every miss rate measured, every finding rowed. **Phase 3 — ONE prioritized
   fix plan over the complete list** — where each fix lives (its proper layer), what it groups
@@ -1054,20 +1056,36 @@ Build commands via `Start-Process` are isolated from these rules (exit code not 
   cites); no verdict or count is restated here (#17f, D-431). **An establishment obligation (#19)
   always gates, whatever its subject** — see the open-items register section's non-gating
   declaration, where that clause is stated once and is not repeated here (#6).
-  **★ NOTE ON PHASE 2 — THE ENUMERATION THIS CLAUSE RELIES ON IS NOT RATIFIED (recorded 2026-08-03;
-  the clause itself is unchanged).** Phase 2 above names *"the enumerated discovery channels"* and
-  then lists six subjects. The only place in the record where those channels are actually enumerated
-  is `cowork_oi200_perspective_inventory.md`, whose own banner reads *"STATUS: DRAFT for
-  discussion"* and whose §9 records that its one requested decision has not been taken. So a
-  user-directed rule leans on an unratified draft, and the six subjects under-name what that draft
-  holds. **The gap is stated here, not filled:** the six subjects bind on this clause's own
-  authority and nothing else is imported from the draft; the phase-3 gate partition therefore states
-  each verdict against the SUBJECT this clause names, using the draft's channel numbers as locators
-  only. **The ratification is owed**, its reading surface is
+  **★ NOTE ON PHASE 2 — THE ENUMERATION THIS CLAUSE POINTS AT IS RATIFIED (user, 2026-08-03;
+  D-439).** `cowork_oi200_perspective_inventory.md` §4 is the ONE home for the enumerated discovery
+  channels, and that section carries the user's ruling of which of its channels this clause reaches:
+  channel 9 (history mining) is IN; channels 4 and 8 are ALREADY REACHED by what this clause names
+  elsewhere (channel 4 is an obligation carried by the other probes and not a search of its own;
+  channel 8 is the audit passes and the blind second pass, which the phase-2 clause above names in
+  the words immediately preceding its channel half); channel 10 is NOT a discovery channel on its
+  own account, its catalog-feeding role noted
+  rather than dropped. **What the ratification did NOT do:** the inventory's §6 program is NOT
+  adopted, `OPEN_ITEMS.md` OI-200 is not pulled forward, that document's own §9 request stays open
+  and untaken, no probe/fix/design/inference change is authorized, and phase 1 is not complete.
+  The reading surface the ruling was taken from is
+  `ratification_surfaces/cowork_perspective_inventory_ratification.md`; the gap it closed was
+  tracked at `OPEN_ITEMS.md` OI-298.
+  *(Former text, preserved under #12 — recorded 2026-08-03 at phase 1u, one wave before the
+  ratification, when this clause still listed six subjects of its own:* "★ NOTE ON PHASE 2 — THE
+  ENUMERATION THIS CLAUSE RELIES ON IS NOT RATIFIED (recorded 2026-08-03; the clause itself is
+  unchanged). Phase 2 above names *"the enumerated discovery channels"* and then lists six
+  subjects. The only place in the record where those channels are actually enumerated is
+  `cowork_oi200_perspective_inventory.md`, whose own banner reads *"STATUS: DRAFT for discussion"*
+  and whose §9 records that its one requested decision has not been taken. So a user-directed rule
+  leans on an unratified draft, and the six subjects under-name what that draft holds. The gap is
+  stated here, not filled: the six subjects bind on this clause's own authority and nothing else is
+  imported from the draft; the phase-3 gate partition therefore states each verdict against the
+  SUBJECT this clause names, using the draft's channel numbers as locators only. The ratification
+  is owed, its reading surface is
   `ratification_surfaces/cowork_perspective_inventory_ratification.md`, and until the user rules,
   no claim about phase 2's coverage rests on the draft's structure. Tracked at `OPEN_ITEMS.md`
   OI-298 — an apparatus row under the non-gating declaration above, so it blocks nothing and stays
-  owed.
+  owed."*)*
 
 - **MAKE IT WORK FIRST; COMPROMISE ON PERFORMANCE ONLY IF PERFORMANCE PROVES TO BE A PROBLEM
   (user-directed, 2026-07-28, at the analysis-cost session).** Getting the inference right comes
