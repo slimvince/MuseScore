@@ -79,6 +79,11 @@ import subprocess
 import sys
 import tempfile
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from output_encoding import use_utf8_output      # noqa: E402  (path set above)
+
+use_utf8_output()   # OI-297 — the findings must survive a non-console stdout
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 ESTABLISH_OUT = os.path.join(HERE, "changed_paths_establishment.json")

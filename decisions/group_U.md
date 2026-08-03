@@ -59,7 +59,7 @@
 
 **Home.** `docs/scoring_model.md:926`
 
-**Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
+**Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry. **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1420 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
 
 ### D-216 — The stepwise-bass bonus's four gates are each load-bearing
 
@@ -250,13 +250,13 @@
 
 **In plain words.** The measurement scripts read files produced by an earlier run. Updating a recorded baseline without regenerating those files first produces a number that silently describes an older state of the system.
 
-**Why.** Stated constraint, BUILD_AND_TEST.md:286-287: the script reads existing analysis files and will silently report stale numbers if they are not current - silently being the operative word, since nothing about the output reveals it.
+**Why.** Stated constraint, BUILD_AND_TEST.md:336-337: the script reads existing analysis files and will silently report stale numbers if they are not current - silently being the operative word, since nothing about the output reveals it.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `BUILD_AND_TEST.md:285`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `BUILD_AND_TEST.md:335`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** BUILD_AND_TEST.md:285-289. The mechanical enforcement is the per-preset corpus manifest: the regeneration script exits nonzero on an incomplete corpus and the measurement refuses a directory whose manifest is missing or whose fingerprints do not match (CLAUDE.md:514-525).
+**Provenance.** BUILD_AND_TEST.md:335-339. The mechanical enforcement is the per-preset corpus manifest: the regeneration script exits nonzero on an incomplete corpus and the measurement refuses a directory whose manifest is missing or whose fingerprints do not match (CLAUDE.md:514-525).
 
 ### D-226 — The music21 export is version-pinned; regenerating it is a deliberate re-baseline
 

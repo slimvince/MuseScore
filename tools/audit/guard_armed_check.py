@@ -55,6 +55,11 @@ ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 GUARD = os.path.join(HERE, "shell_read_guard.py")
 GUARD_REL = "tools/audit/shell_read_guard.py"
 
+sys.path.insert(0, HERE)
+from output_encoding import use_utf8_output      # noqa: E402  (path set above)
+
+use_utf8_output()   # OI-297 — the findings must survive a non-console stdout
+
 # The settings files a session running in this directory reads, in the order the harness
 # resolves them.  The user-level file is included because arming there would also arm this
 # directory, and reporting it as unarmed would then be wrong.

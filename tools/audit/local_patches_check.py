@@ -61,6 +61,11 @@ ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 CLAUDE_MD = os.path.join(ROOT, "CLAUDE.md")
 ESTABLISH_OUT = os.path.join(HERE, "local_patches_establishment.json")
 
+sys.path.insert(0, HERE)
+from output_encoding import use_utf8_output      # noqa: E402  (path set above)
+
+use_utf8_output()   # OI-297 — the findings must survive a non-console stdout
+
 SECTION_HEADING = "## Local patches — do not revert"
 SUPERSEDED = re.compile(r"\*\*★?\s*SUPERSEDED UPSTREAM\s*\(([^)]*)\)\s*:?\*\*(.*)", re.I)
 UPSTREAM_REF = re.compile(r"\b[0-9a-f]{7,40}\b|\bv?\d+\.\d+(?:\.\d+)?\b|\brelease\s+\S+", re.I)

@@ -42,7 +42,11 @@ ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 BACKBONE = os.path.join(HERE, "backbone_decisions.json")
 
 sys.path.insert(0, HERE)
+sys.path.insert(0, os.path.dirname(HERE))
+from output_encoding import use_utf8_output      # noqa: E402  (path set above)
 import gen_cluster_dispositions as gcd          # noqa: E402  (norm + find_start_line)
+
+use_utf8_output()   # OI-297 — the findings must survive a non-console stdout
 
 
 def drifted(backbone: dict) -> list[tuple[dict, int, int, str]]:

@@ -50,6 +50,11 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parent.parent.parent
 
+sys.path.insert(0, str(HERE.parent))
+from output_encoding import use_utf8_output      # noqa: E402  (path set above)
+
+use_utf8_output()   # OI-297 — the findings must survive a non-console stdout
+
 CANDIDATES = HERE / "decision_candidates.json"
 CLUSTERS = HERE / "decision_clusters.json"
 BACKBONE = HERE / "backbone_decisions.json"

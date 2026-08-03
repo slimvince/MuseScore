@@ -32,6 +32,11 @@ import json
 import os
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from output_encoding import use_utf8_output      # noqa: E402  (path set above)
+
+use_utf8_output()   # OI-297 — the findings must survive a non-console stdout
+
 REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 CENSUS = os.path.join(REPO, "tools", "audit", "ratification_surface_set.json")
 OUT = os.path.join(REPO, "tools", "audit", "ratification_surface_reaim.json")

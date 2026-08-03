@@ -21,8 +21,29 @@ powershell.exe -Command "Start-Process 'C:\s\MS\setup_and_build.bat' -Wait -NoNe
 
 **Run batch_analyze:**
 ```
-/c/s/MS/ninja_build_rel/batch_analyze.exe "<score>" --preset Jazz
+/c/s/MS/ninja_build_rel/batch_analyze.exe "<score>" "<out.ours.json>" --preset Jazz --joint-inference C:/s/MS/tools/joint_estimator
 ```
+
+**★ THE `--joint-inference` FLAG IS NOT OPTIONAL FOR A PRODUCTION MEASUREMENT (corrected
+2026-08-03; this line previously showed the invocation without it).** The joint estimator is the
+production inference layer on the batch/corpus surface (CLAUDE.md gate block (A), the OI-178
+adoption), but **the flag defaults OFF** — `jointInferenceDir` is initialised empty at
+`tools/batch_analyze.cpp:4917` and the joint path runs only under `if (!jointInferenceDir.empty())`
+at `:5590`. **Without the flag, `batch_analyze` runs the legacy `analyzeScore` pipeline** — the
+dormant one awaiting deletion at the OI-180 retirement map. A session that follows a flag-less
+recipe measures the wrong system and will not be told.
+
+**When it may be omitted**, each case for a stated reason:
+
+- **a legacy-path diagnostic that is meant to run the legacy path** — the retired batch stop
+  (§2, Corpus Regression Check) and the `--section-level` view (§4), both marked as such where
+  they appear;
+- **a return-early diagnostic dump** (`--dump-*`, `--decode-*`, the joint parity drivers), which
+  returns before any analysis and is byte-identical either way;
+- **`--help`**, and `test_batch_analyze_regressions.py`, which pins the tool's own behaviour.
+
+Anything else — any measurement whose number is meant to describe what this system does — takes
+the flag. `run_bach_preset.py` passes it through (`--joint-inference DIR`, `:352`, `:436`).
 
 **Invoke ninja directly (without cmd.exe):**
 ```
@@ -154,8 +175,29 @@ Run after any change to `tools/batch_analyze.cpp`.
 
 ### Corpus Regression Check
 
-For any gate addition or modification, run BOTH presets and confirm zero BIR=false
-regression in each before committing:
+**★ THIS IS THE RETIRED BATCH STOP, AND THESE COMMANDS REGENERATE THROUGH THE LEGACY PIPELINE
+(stated 2026-08-03; the commands themselves are unchanged).** The governing hard stop is the
+robust unit in CLAUDE.md gate block (A), not this. `characterise_bir_false.py` is kept as a
+per-region diagnostic, and its `52/24/52` case-identity sets are LEGACY-pipeline figures — so the
+regen below correctly omits `--joint-inference`, because adding it would measure a different
+system than the one those sets describe.
+
+**★ BUT THE OUTPUT DIRECTORY IS THE PRODUCTION ONE, AND THAT IS THE TRAP.** `run_bach_preset.py`
+**clean-slates** its `--output-dir` before regenerating, and `tools/corpus/<preset>` is the dir
+`tools/a8_rebaseline_measure.py` reads for the block-(A) hard stop (`:290-294`, default corpus
+root `tools/corpus`). Running the commands below **as written replaces the joint-estimator corpus
+with legacy output** — after which any robust-stop measurement compares the legacy pipeline
+against a joint-estimator reference, and says nothing about a regression. **The manifest does not
+catch it:** `tools/corpus/baroque/corpus_manifest.json` records the binary, the score
+fingerprints and `git_hash` (today `d615152c51`, the OI-178 adoption) but carries **no field
+saying which inference arm produced the corpus**, so the contamination guard validates a swapped
+corpus without complaint. Tracked at `OPEN_ITEMS.md` OI-307.
+
+**The commands below are UNCHANGED** — they are the procedure of record, and CLAUDE.md gate block
+(C) carries the same two pairs. **Redirecting them to a scratch dir would fix the hazard, and it
+is deliberately not done here:** that is a change to a procedure a user-ratified surface also
+states, so it is reported for a ruling rather than taken (OI-307), and this note is the warning
+in the meantime.
 
 ```
 # Baroque (primary — per-preset dir, regenerated + manifest-stamped)
@@ -165,6 +207,14 @@ cd C:\s\MS && python tools/characterise_bir_false.py --corpus-dir tools/corpus/b
 # Jazz (independent dir — no shared state, run in any order)
 cd C:\s\MS && python tools/run_bach_preset.py --preset Jazz --output-dir tools/corpus/jazz
 cd C:\s\MS && python tools/characterise_bir_false.py --corpus-dir tools/corpus/jazz
+```
+
+**Regenerating the PRODUCTION corpus — the arm gate block (A) is baselined on — takes the flag:**
+
+```
+cd C:\s\MS && python tools/run_bach_preset.py --preset Baroque --output-dir tools/corpus/baroque --joint-inference C:/s/MS/tools/joint_estimator
+cd C:\s\MS && python tools/run_bach_preset.py --preset Jazz    --output-dir tools/corpus/jazz    --joint-inference C:/s/MS/tools/joint_estimator
+cd C:\s\MS && python tools/run_bach_preset.py --preset Default --output-dir tools/corpus/default --joint-inference C:/s/MS/tools/joint_estimator
 ```
 
 **Stage 2.2a (M3 fix):** each preset now has its own dir under `tools/corpus/` and a
@@ -330,7 +380,11 @@ cd C:\s\MS\ninja_build_rel
 ./batch_analyze.exe --help
 ```
 
-**`--section-level` (Stage 2.2-ii diagnostic flag, default OFF).** Runs the
+**`--section-level` (Stage 2.2-ii diagnostic flag, default OFF) — a LEGACY-path view, and
+correctly shown without `--joint-inference`.** The joint path returns at
+`tools/batch_analyze.cpp:5590`, before the section pipeline this flag drives is reached, so the
+two do not combine: what `--section-level` shows is the legacy region stream at measure-aligned
+granularity, which is what it was built to show. Runs the
 user-facing section pipeline (`analyzeSection`: measure layout, gap-tone
 insertion, key/mode stabilization, sparse-quality refinement) on top of the batch
 region stream, giving the measure-aligned (per-beat) view instead of the coarse

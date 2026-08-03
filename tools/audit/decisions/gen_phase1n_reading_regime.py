@@ -40,7 +40,11 @@ ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 OUT = os.path.join(HERE, "phase1n_reading_regime.json")
 
 sys.path.insert(0, HERE)
+sys.path.insert(0, os.path.dirname(HERE))
+from output_encoding import use_utf8_output      # noqa: E402  (path set above)
 import gen_phase1m_measurements as p1m          # noqa: E402
+
+use_utf8_output()   # OI-297 — the findings must survive a non-console stdout
 import gen_phase1g_triage as triage             # noqa: E402
 
 # ── AUTHORED (1/2) — the wave-capacity anchor ────────────────────────────────

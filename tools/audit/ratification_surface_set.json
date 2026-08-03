@@ -250,7 +250,7 @@
    "thirdparty",
    "vtest"
   ],
-  "files_scanned": 72373,
+  "files_scanned": 72379,
   "verification": "The exclusions are verified, not assumed. An earlier form of this tool walked the WHOLE tree including every excluded directory, and an independent whole-tree content search was run with the file tools over the same member names. Both returned the same citing-file set as the scoped walk below."
  },
  "citation_census": {

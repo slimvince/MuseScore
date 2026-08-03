@@ -27,7 +27,13 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
-sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from output_encoding import use_utf8_output      # noqa: E402  (path set above)
+
+# Was a hand-written `sys.stdout.reconfigure(...)` line here — one of ~70 copies of the same
+# concern across `tools/`, which is why the checks written WITHOUT the copy are the ones that
+# crashed (OI-297).  Routed through the one module instead (#6).
+use_utf8_output()
 
 _ROOT = Path(__file__).resolve().parent.parent.parent
 DEFAULT_REGISTER = _ROOT / "OPEN_ITEMS.md"

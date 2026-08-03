@@ -47,6 +47,11 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 ESTABLISH_OUT = os.path.join(HERE, "process_check_establishment.json")
 
+sys.path.insert(0, HERE)
+from output_encoding import use_utf8_output      # noqa: E402  (path set above)
+
+use_utf8_output()   # OI-297 — the findings must survive a non-console stdout
+
 # ── what counts as a citation ────────────────────────────────────────────────
 # An ARTIFACT-AND-FIELD citation: a .json/.csv path followed by an arrow and a field path, in
 # either order of surrounding punctuation.  A DOCUMENT-AND-LINE citation: `path:123` or

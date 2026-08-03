@@ -699,7 +699,7 @@
 
 **Home.** `cowork_handoff_archive.md:3029`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
-**Provenance.** Recorded in `cowork_handoff_archive.md` (the 2026-06-13 strategic-pivot block); `docs/beam_widening_design.md` was banner-shelved and retained for its derivation. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).
+**Provenance.** Recorded in `cowork_handoff_archive.md` (the 2026-06-13 strategic-pivot block); `docs/beam_widening_design.md` was banner-shelved and retained for its derivation. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the search (at line 306 on 2026-08-03), under *"Tried and closed on the search — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
 
 ### D-289 — Meta-principle: precision lives in the evidence and the functional labelling, not in the search
 

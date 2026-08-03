@@ -26,6 +26,11 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from output_encoding import use_utf8_output      # noqa: E402  (path set above)
+
+use_utf8_output()   # OI-297 — the findings must survive a non-console stdout
+
 ROOT = Path(__file__).resolve().parent.parent.parent
 OUT = ROOT / "tools" / "audit" / "phase3_gate_partition.json"
 

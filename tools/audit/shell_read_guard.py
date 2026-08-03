@@ -79,6 +79,11 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 ESTABLISH_OUT = os.path.join(HERE, "shell_read_guard_establishment.json")
 
+sys.path.insert(0, HERE)
+from output_encoding import use_utf8_output      # noqa: E402  (path set above)
+
+use_utf8_output()   # OI-297 — the findings must survive a non-console stdout
+
 # The utilities `CLAUDE.md` names, plus the obvious siblings of each.
 TEXT_UTILITIES = {
     "cat", "head", "tail", "sed", "awk", "grep", "egrep", "fgrep", "rg", "wc",

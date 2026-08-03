@@ -37,6 +37,11 @@ CLUSTERS = os.path.join(HERE, "decision_clusters.json")
 DISPOS = os.path.join(HERE, "cluster_dispositions.json")
 OUT = os.path.join(HERE, "phase1g_triage.md")
 
+sys.path.insert(0, os.path.dirname(HERE))
+from output_encoding import use_utf8_output      # noqa: E402  (path set above)
+
+use_utf8_output()   # OI-297 — the findings must survive a non-console stdout
+
 # Characters per token, measured on this repository's own prose by the phase-1d wave
 # against the Read tool's accounting (STATUS_ARCHIVE.md: 789,462 characters / 259,766
 # tokens) and re-used unchanged by phase 1f.

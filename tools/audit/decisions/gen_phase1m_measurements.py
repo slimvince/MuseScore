@@ -51,7 +51,11 @@ DISPOS = os.path.join(HERE, "cluster_dispositions.json")
 OUT = os.path.join(HERE, "phase1m_measurements.json")
 
 sys.path.insert(0, HERE)
+sys.path.insert(0, os.path.dirname(HERE))
+from output_encoding import use_utf8_output      # noqa: E402  (path set above)
 import gen_phase1g_triage as triage          # noqa: E402  (the read set + the classification)
+
+use_utf8_output()   # OI-297 — the findings must survive a non-console stdout
 
 # Characters per token, measured on this repository's own prose by the phase-1d wave and
 # re-used unchanged by phases 1f and 1g.

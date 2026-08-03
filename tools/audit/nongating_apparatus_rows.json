@@ -13,9 +13,9 @@
   "the_two_stops": "The tool refuses to run if a first-cut candidate has no authored verdict, and refuses an authored verdict for a row that is not an open candidate - so the table cannot drift away from the register without failing loudly."
  },
  "population": {
-  "rows_parsed": 301,
-  "open_rows": 217,
-  "first_cut_candidates": 47,
+  "rows_parsed": 311,
+  "open_rows": 226,
+  "first_cut_candidates": 49,
   "first_cut_vocabulary": [
    "doc-sync",
    "docs /",
@@ -38,7 +38,7 @@
  },
  "totals": {
   "non_gating": 22,
-  "gates": 25,
+  "gates": 27,
   "non_gating_ids": [
    "OI-205",
    "OI-219",
@@ -95,8 +95,11 @@
   },
   "gates_by_ground": {
    "#19 establishment obligation": [
-    "OI-283",
-    "OI-289"
+    "OI-283"
+   ],
+   "a statement about the analysis's build state": [
+    "OI-303",
+    "OI-304"
    ],
    "an establishment obligation (#19) - the exemption, not the criterion": [
     "OI-300"
@@ -131,6 +134,9 @@
    ],
    "the default - out of the declared class": [
     "OI-154"
+   ],
+   "the default - the row's own scope does not settle it": [
+    "OI-302"
    ],
    "the default - the row's scope does not settle it": [
     "OI-292"
@@ -423,14 +429,6 @@
    "gate_ground": "#19 establishment obligation"
   },
   {
-   "id": "OI-289",
-   "title": "The 80 LEGACY-marked register entries were SWEPT, never verified — and two of them were wrong",
-   "subject_column": "E — verification owed / decisions register",
-   "verdict": "GATES",
-   "reason": "Gates on the exemption, and independently on the criterion: the marked set includes D-329, complete candidate listing, which is the family design's ratified admission premise and whose marking already failed once.",
-   "gate_ground": "#19 establishment obligation"
-  },
-  {
    "id": "OI-290",
    "title": "`cowork_score_census.md` §8c is a rule-stating section that also holds a findings table, and most entries admitted through it are rows of that table",
    "subject_column": "doc-sync / #10",
@@ -480,7 +478,7 @@
   },
   {
    "id": "OI-300",
-   "title": "The shell-read guard owes a false-deny establishment run over four shapes its corpora do not contain",
+   "title": "The shell-read guard owes a false-deny establishment run over five shapes its corpora do not contain",
    "subject_column": "process / mechanisation debt (#19)",
    "verdict": "GATES",
    "reason": "Its whole subject is a mechanism's MEASURED false-deny and detection rates over two shapes its corpora do not contain. Classified GATES on the exemption alone, and the exemption is what makes the classification easy: an establishment obligation always gates whatever its subject, because backgrounding one is how it never happens. The apparatus test is not reached and is not applied.",
@@ -493,6 +491,30 @@
    "verdict": "NON-GATING",
    "reason": "A tracking-surface check's REPORTING behaviour: a historical mode overwrites the frozen split-reconciliation artifact with a failing report. Apparatus by the user's own line - what is owed is that a check stop destroying a filing record. Classified with [[OI-297]] and apart from OI-292 on the same ground the OI-297 verdict states: no measurement of the analysis depends on it, and the register's health is separately established by the LIVING mode, which passes. Its fix's establishment run gates on its own account under the exemption.",
    "class_basis": "tracking/documentation apparatus - the user's own phrase"
+  },
+  {
+   "id": "OI-302",
+   "title": "The LEGACY mark has a THIRD meaning the register cannot express — the subject is dormant and the prohibition is LIVE",
+   "subject_column": "E — user adjudication / decisions register",
+   "verdict": "GATES",
+   "reason": "Half (a) IS apparatus: whether the decisions register gains a field for a mark whose subject is dormant while its prohibition is live. The other halves are not. Whether D-423's three prohibitions bind the LIVE design is a ruling about what the family design may do, and D-055's half is a factual question about production code (a preference registered unconditionally whose consumer is the legacy scorer). A row that is not wholly apparatus, or whose subject its own text does not settle, GATES by the declaration's own default - the declaration only ever removes a wait where the row supports removing it.",
+   "gate_ground": "the default - the row's own scope does not settle it"
+  },
+  {
+   "id": "OI-303",
+   "title": "Six comments in `src/` and `tools/` still describe the production record arm as \"default OFF\", or the record section adapter as having no caller",
+   "subject_column": "F — doc-sync debt (#10)",
+   "verdict": "GATES",
+   "reason": "Six comments in src/ and tools/ say the record arm is 'default OFF' and that the record section adapter has no caller. D-438's line inside the documentation rows makes a correction to a statement about the analysis or its BUILD STATE gating, and every one of the six is exactly that - they are where a reader goes to learn which analysis arm runs, and all six name the dormant one.",
+   "gate_ground": "a statement about the analysis's build state"
+  },
+  {
+   "id": "OI-304",
+   "title": "Two dated annotations still assert the opposite of **D-428** as corrected one wave later",
+   "subject_column": "F — doc-sync debt (#10)",
+   "verdict": "GATES",
+   "reason": "Two dated annotations assert that the owed iteration-API renames have a subject including LIVE Layer-1.5 code; D-428 was corrected against the call sites one wave later and records that every use sits on the legacy arm. What is owed is the correction of a statement about which code is live - the same D-438 clause as [[OI-303]], not a filing or a pointer.",
+   "gate_ground": "a statement about the analysis's build state"
   },
   {
    "id": "OI-150",
@@ -527,6 +549,12 @@
     "class_basis_or_ground": "user",
     "reason": "Where the ratification surfaces and the dispatches are filed, and how cited paths are re-aimed when they move. Repository organization; the files are committed and durable already.",
     "closed": "RESOLVED 2026-08-03 (phase 1u, Task 4) - the directory `ratification_surfaces/` created, ten files moved, every citation re-aimed per citation."
+   },
+   "OI-289": {
+    "verdict": "GATES",
+    "class_basis_or_ground": "#19 establishment obligation",
+    "reason": "Gates on the exemption, and independently on the criterion: the marked set includes D-329, complete candidate listing, which is the family design's ratified admission premise and whose marking already failed once.",
+    "closed": "VERIFIED 2026-08-03 (phase 1w) - the whole marked set re-verified against the live-reachability test, 0 marks established wrong and 0 corrected, the convention not in question. Its residues opened as OI-302 (which gates), OI-303 and OI-304."
    }
   }
  },

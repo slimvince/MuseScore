@@ -45,6 +45,11 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 CANDIDATES = os.path.join(HERE, "decision_candidates.json")
 
+sys.path.insert(0, os.path.dirname(HERE))
+from output_encoding import use_utf8_output      # noqa: E402  (path set above)
+
+use_utf8_output()   # OI-297 — the findings must survive a non-console stdout
+
 # ── Declared parameters (every one is reported in the manifest) ───────────────
 #
 # SIM_THRESHOLD — the Jaccard similarity (on word 3-gram shingles) at or above

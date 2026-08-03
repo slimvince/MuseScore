@@ -30,6 +30,11 @@ import json
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from output_encoding import use_utf8_output      # noqa: E402  (path set above)
+
+use_utf8_output()   # OI-297 — the findings must survive a non-console stdout
+
 ROOT = Path(__file__).resolve().parent.parent
 ROOT = ROOT.parent
 INDEX = ROOT / "OPEN_ITEMS.md"
@@ -94,6 +99,13 @@ RETIRED_VERDICTS = {
                "committed and durable already.",
                "RESOLVED 2026-08-03 (phase 1u, Task 4) - the directory `ratification_surfaces/` "
                "created, ten files moved, every citation re-aimed per citation."),
+    "OI-289": (GATES, "#19 establishment obligation",
+               "Gates on the exemption, and independently on the criterion: the marked set "
+               "includes D-329, complete candidate listing, which is the family design's ratified "
+               "admission premise and whose marking already failed once.",
+               "VERIFIED 2026-08-03 (phase 1w) - the whole marked set re-verified against the "
+               "live-reachability test, 0 marks established wrong and 0 corrected, the convention "
+               "not in question. Its residues opened as OI-302 (which gates), OI-303 and OI-304."),
 }
 
 V = {
@@ -206,7 +218,33 @@ V = {
                "of record is not what changes. Its establishment run is named on the row and "
                "gates on its own account under the exemption below - the row's apparatus half "
                "does not carry the obligation with it."),
+    # OI-305 and OI-306 (rowed 2026-08-03, phase 1w) are NOT first-cut candidates -- the
+    # over-inclusive vocabulary does not reach their subject columns -- so no verdict is authored
+    # for them here. The tool refuses one for a non-candidate, correctly: a hand-added verdict for a
+    # row the cut never proposed would be the hand-listing CLAUDE.md forbids. Both therefore carry
+    # the default, which is that they GATE.
     # ---------------------------------------------------------------------- GATES
+    "OI-302": (GATES, "the default - the row's own scope does not settle it",
+               "Half (a) IS apparatus: whether the decisions register gains a field for a mark "
+               "whose subject is dormant while its prohibition is live. The other halves are not. "
+               "Whether D-423's three prohibitions bind the LIVE design is a ruling about what the "
+               "family design may do, and D-055's half is a factual question about production code "
+               "(a preference registered unconditionally whose consumer is the legacy scorer). A "
+               "row that is not wholly apparatus, or whose subject its own text does not settle, "
+               "GATES by the declaration's own default - the declaration only ever removes a wait "
+               "where the row supports removing it."),
+    "OI-303": (GATES, "a statement about the analysis's build state",
+               "Six comments in src/ and tools/ say the record arm is 'default OFF' and that the "
+               "record section adapter has no caller. D-438's line inside the documentation rows "
+               "makes a correction to a statement about the analysis or its BUILD STATE gating, "
+               "and every one of the six is exactly that - they are where a reader goes to learn "
+               "which analysis arm runs, and all six name the dormant one."),
+    "OI-304": (GATES, "a statement about the analysis's build state",
+               "Two dated annotations assert that the owed iteration-API renames have a subject "
+               "including LIVE Layer-1.5 code; D-428 was corrected against the call sites one wave "
+               "later and records that every use sits on the legacy arm. What is owed is the "
+               "correction of a statement about which code is live - the same D-438 clause as "
+               "[[OI-303]], not a filing or a pointer."),
     "OI-300": (GATES, "an establishment obligation (#19) - the exemption, not the criterion",
                "Its whole subject is a mechanism's MEASURED false-deny and detection rates over "
                "two shapes its corpora do not contain. Classified GATES on the exemption alone, "
@@ -310,10 +348,7 @@ V = {
                "coverage claim bounds which parts of the canonical document any "
                "decision-conformance finding could have come from, so an unread range could still "
                "hold a decision about the input surface."),
-    "OI-289": (GATES, "#19 establishment obligation",
-               "Gates on the exemption, and independently on the criterion: the marked set "
-               "includes D-329, complete candidate listing, which is the family design's ratified "
-               "admission premise and whose marking already failed once."),
+    # OI-289's verdict moved to RETIRED_VERDICTS on 2026-08-03 when the row was verified.
     "OI-292": (GATES, "the default - the row's scope does not settle it",
                "Most of the row is enforcement machinery for governing-document rules, which is "
                "apparatus - but two of its ten members are measurement rules (uncertainty on "

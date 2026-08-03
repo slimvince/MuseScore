@@ -5428,7 +5428,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.",
+      "status_source": "docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry. **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1420 on 2026-08-03), under *\"Tried and closed on the chord layer — do not retry\"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.",
       "patterns": [],
       "legacy_subject": true
     },
@@ -5600,8 +5600,8 @@
       "title": "A corpus is regenerated before its baseline figures are updated",
       "verbatim": "**IMPORTANT — corpus JSONs must be regenerated before updating baselines.**\n`analyze_inversion_errors.py` reads existing `.ours.json` files and will silently\nreport stale numbers if those files are not current. Whenever you update the BIR\nbaselines here, you must first regenerate the corpus (as above), then run the script\nagainst the per-preset dir and record the new figures.",
       "plain": "The measurement scripts read files produced by an earlier run. Updating a recorded baseline without regenerating those files first produces a number that silently describes an older state of the system.",
-      "rationale": "Stated constraint, BUILD_AND_TEST.md:286-287: the script reads existing analysis files and will silently report stale numbers if they are not current - silently being the operative word, since nothing about the output reveals it.",
-      "home": "BUILD_AND_TEST.md:285",
+      "rationale": "Stated constraint, BUILD_AND_TEST.md:336-337: the script reads existing analysis files and will silently report stale numbers if they are not current - silently being the operative word, since nothing about the output reveals it.",
+      "home": "BUILD_AND_TEST.md:335",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -5609,7 +5609,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "BUILD_AND_TEST.md:285-289. The mechanical enforcement is the per-preset corpus manifest: the regeneration script exits nonzero on an incomplete corpus and the measurement refuses a directory whose manifest is missing or whose fingerprints do not match (CLAUDE.md:514-525).",
+      "status_source": "BUILD_AND_TEST.md:335-339. The mechanical enforcement is the per-preset corpus manifest: the regeneration script exits nonzero on an incomplete corpus and the measurement refuses a directory whose manifest is missing or whose fingerprints do not match (CLAUDE.md:514-525).",
       "patterns": [
         "must be regenerated before updating baselines",
         "silently report stale numbers"
@@ -7558,7 +7558,7 @@
       "home": "cowork_handoff_archive.md:5272",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `cowork_handoff_archive.md` (the redesign-sequence block) and in the 2026-06-08 `STATUS_ARCHIVE.md` entry, both pointing at `docs/redesign_plan.md` Step 3. The shelving names its own re-open condition — a confirmed case where the correct key sits at rank 1 or 2 — so it is a shelving with a stated trigger, not a permanent exclusion. Found by the phase-1e second-partition archive read, 2026-08-02. Note for a future reader: the joint estimator (D-001) carries a full posterior by construction, so the concern this shelving withdrew is met by a different design, not by reviving this one. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).",
+      "status_source": "Recorded in `cowork_handoff_archive.md` (the redesign-sequence block) and in the 2026-06-08 `STATUS_ARCHIVE.md` entry, both pointing at `docs/redesign_plan.md` Step 3. The shelving names its own re-open condition — a confirmed case where the correct key sits at rank 1 or 2 — so it is a shelving with a stated trigger, not a permanent exclusion. Found by the phase-1e second-partition archive read, 2026-08-02. Note for a future reader: the joint estimator (D-001) carries a full posterior by construction, so the concern this shelving withdrew is met by a different design, not by reviving this one. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the key layer (at line 1344 on 2026-08-03), under *\"Tried and closed on this layer — do not retry\"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.",
       "patterns": [
         "[Kk]ey-as-distribution\\b[^.\\n]{0,40}SHELVED",
         "Step 3 \\(key-as-distribution\\) is shelved"
@@ -7586,7 +7586,7 @@
       "home": "cowork_handoff_archive.md:3029",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `cowork_handoff_archive.md` (the 2026-06-13 strategic-pivot block); `docs/beam_widening_design.md` was banner-shelved and retained for its derivation. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).",
+      "status_source": "Recorded in `cowork_handoff_archive.md` (the 2026-06-13 strategic-pivot block); `docs/beam_widening_design.md` was banner-shelved and retained for its derivation. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the search (at line 306 on 2026-08-03), under *\"Tried and closed on the search — do not retry\"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.",
       "patterns": [
         "beam-widening\\s+SHELVED",
         "beam widening; also notes beam\\s+shelved",
@@ -7642,7 +7642,7 @@
       "home": "cowork_handoff_archive.md:3896",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `cowork_handoff_archive.md` (the 2026-06-15 cadence-precision-investigation block), citing `cc_cadence_precision_investigation_dossier.md`. Its scope is stated with it: measured on the Bach ground-truth corpus, non-Bach unmeasured. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).",
+      "status_source": "Recorded in `cowork_handoff_archive.md` (the 2026-06-15 cadence-precision-investigation block), citing `cc_cadence_precision_investigation_dossier.md`. Its scope is stated with it: measured on the Bach ground-truth corpus, non-Bach unmeasured. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the key layer (at line 1344 on 2026-08-03), under *\"Tried and closed on this layer — do not retry\"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.",
       "patterns": [
         "the key-agnostic LOCAL cadence approach has HIT ITS PRECISION CEILING"
       ],
@@ -7878,7 +7878,7 @@
       "home": "cowork_handoff_archive.md:4967",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `cowork_handoff_archive.md` (the failure-cluster block). This is the statement the 2026-08-02 residual pass cited as its worked example of a real ruling sitting inside the unresolved residual (`open_items/OI-207.md`, the residual-pass note), now entered. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue).",
+      "status_source": "Recorded in `cowork_handoff_archive.md` (the failure-cluster block). This is the statement the 2026-08-02 residual pass cited as its worked example of a real ruling sitting inside the unresolved residual (`open_items/OI-207.md`, the residual-pass note), now entered. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1420 on 2026-08-03), under *\"Tried and closed on the chord layer — do not retry\"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.",
       "patterns": [
         "Do NOT add a negative-margin guard"
       ],
@@ -7905,7 +7905,7 @@
       "home": "STATUS_ARCHIVE.md:1147",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `STATUS_ARCHIVE.md` (the Iter-37 carried-forward block and its fenced deferral record at `:1090-1106`). `docs/scoring_model.md` §8, the standing home for scoring dead ends, does not mention Gate M — checked, not assumed. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).",
+      "status_source": "Recorded in `STATUS_ARCHIVE.md` (the Iter-37 carried-forward block and its fenced deferral record at `:1090-1106`). `docs/scoring_model.md` §8, the standing home for scoring dead ends, does not mention Gate M — checked, not assumed. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1420 on 2026-08-03), under *\"Tried and closed on the chord layer — do not retry\"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.",
       "patterns": [
         "Gate M \\(Minor.Diminished TYPE-A\\): DEFERRED"
       ],
@@ -7932,7 +7932,7 @@
       "home": "STATUS_ARCHIVE.md:1149",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `STATUS_ARCHIVE.md` (the Iter-39 carried-forward block and its fenced deferral record at `:1110-1131`). Absent from `docs/scoring_model.md` §8 — checked. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).",
+      "status_source": "Recorded in `STATUS_ARCHIVE.md` (the Iter-39 carried-forward block and its fenced deferral record at `:1110-1131`). Absent from `docs/scoring_model.md` §8 — checked. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1420 on 2026-08-03), under *\"Tried and closed on the chord layer — do not retry\"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.",
       "patterns": [
         "Gate N \\(Major.Minor TYPE-A\\): DEFERRED"
       ],
@@ -7959,7 +7959,7 @@
       "home": "STATUS_ARCHIVE.md:2779",
       "home_is_layer_spec": false,
       "nonspec_kind": "unhomed",
-      "status_source": "Recorded in `STATUS_ARCHIVE.md` as the closing statement of the “Inversion Fix — Final Conclusion” block. Absent from `docs/scoring_model.md` §8. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).",
+      "status_source": "Recorded in `STATUS_ARCHIVE.md` as the closing statement of the “Inversion Fix — Final Conclusion” block. Absent from `docs/scoring_model.md` §8. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1420 on 2026-08-03), under *\"Tried and closed on the chord layer — do not retry\"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.",
       "patterns": [
         "further local scoring fixes for inversions"
       ],
@@ -8390,7 +8390,7 @@
       "home": "docs/redesign_plan.md:380-385",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02) as a LEGACY-scoped dead end with no effect on the going solution; plain restatement rephrased at the user's direction to preclude the temporal-context misreading. ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02) as a LEGACY-scoped dead end with no effect on the going solution; plain restatement rephrased at the user's direction to preclude the temporal-context misreading. ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched. **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1420 on 2026-08-03), under *\"Tried and closed on the chord layer — do not retry\"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.",
       "patterns": [
         "Do not retry this fix"
       ],
@@ -8430,7 +8430,7 @@
       "home": "docs/redesign_plan.md:402",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02) as a LEGACY-scoped dead end with no effect on the going solution; plain restatement rephrased at the user's direction to preclude the temporal-context misreading. ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02) as a LEGACY-scoped dead end with no effect on the going solution; plain restatement rephrased at the user's direction to preclude the temporal-context misreading. ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched. **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1420 on 2026-08-03), under *\"Tried and closed on the chord layer — do not retry\"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.",
       "patterns": [
         "Do not retry a short-region external merger"
       ],
@@ -8470,7 +8470,7 @@
       "home": "docs/redesign_plan.md:431-432",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched. **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1420 on 2026-08-03), under *\"Tried and closed on the chord layer — do not retry\"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.",
       "patterns": [
         "Do not retry any Phase D tone-aggregation approach"
       ],
@@ -8510,7 +8510,7 @@
       "home": "docs/redesign_plan.md:563-569",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched. **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1420 on 2026-08-03), under *\"Tried and closed on the chord layer — do not retry\"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.",
       "patterns": [
         "Do not retry the absent-root guard"
       ],
@@ -8829,7 +8829,7 @@
       "home": "docs/decoder_design.md:558-563",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/decoder_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/decoder_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1420 on 2026-08-03), under *\"Tried and closed on the chord layer — do not retry\"*; the search (at line 306 on 2026-08-03), under *\"Tried and closed on the search — do not retry\"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.",
       "patterns": [
         "the transient\\s+is not low-scoring"
       ],

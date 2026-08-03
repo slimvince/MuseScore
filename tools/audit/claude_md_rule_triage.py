@@ -42,6 +42,11 @@ ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 BACKBONE = os.path.join(HERE, "decisions", "backbone_decisions.json")
 OUT = os.path.join(HERE, "claude_md_rule_triage.json")
 
+sys.path.insert(0, HERE)
+from output_encoding import use_utf8_output      # noqa: E402  (path set above)
+
+use_utf8_output()   # OI-297 — the findings must survive a non-console stdout
+
 EXISTS, OWED, KNOWLEDGE = "MECHANISM-EXISTS", "MECHANISABLE-AND-NOT", "KNOWLEDGE"
 
 # AUTHORED — the class per rule, and the mechanism or the ground.

@@ -1,8 +1,8 @@
 {
  "mode": "living",
  "baseline_commit": "cb246a7580",
- "index_item_count": 301,
- "detail_file_count": 301,
+ "index_item_count": 311,
+ "detail_file_count": 311,
  "baseline_item_count": 200,
  "post_baseline_ids": [
   "OI-201",
@@ -105,7 +105,17 @@
   "OI-298",
   "OI-299",
   "OI-300",
-  "OI-301"
+  "OI-301",
+  "OI-302",
+  "OI-303",
+  "OI-304",
+  "OI-305",
+  "OI-306",
+  "OI-307",
+  "OI-308",
+  "OI-309",
+  "OI-310",
+  "OI-311"
  ],
  "bijection_ok": true,
  "index_duplicate_ids": [],
@@ -3117,6 +3127,106 @@
   },
   {
    "id": "OI-301",
+   "post_baseline": true,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": null,
+   "ok": true
+  },
+  {
+   "id": "OI-302",
+   "post_baseline": true,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": null,
+   "ok": true
+  },
+  {
+   "id": "OI-303",
+   "post_baseline": true,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": null,
+   "ok": true
+  },
+  {
+   "id": "OI-304",
+   "post_baseline": true,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": null,
+   "ok": true
+  },
+  {
+   "id": "OI-305",
+   "post_baseline": true,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": null,
+   "ok": true
+  },
+  {
+   "id": "OI-306",
+   "post_baseline": true,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": null,
+   "ok": true
+  },
+  {
+   "id": "OI-307",
+   "post_baseline": true,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": null,
+   "ok": true
+  },
+  {
+   "id": "OI-308",
+   "post_baseline": true,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": null,
+   "ok": true
+  },
+  {
+   "id": "OI-309",
+   "post_baseline": true,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": null,
+   "ok": true
+  },
+  {
+   "id": "OI-310",
+   "post_baseline": true,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": null,
+   "ok": true
+  },
+  {
+   "id": "OI-311",
    "post_baseline": true,
    "index_present": true,
    "detail_present": true,

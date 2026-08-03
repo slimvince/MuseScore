@@ -1,0 +1,476 @@
+{
+  "purpose": "Every guard in the record, run and recorded: which passed, which failed, and for each failure the complete output it produced. The list is derived and authored against each other so neither an addition nor a deletion is silent.",
+  "generated_by": "tools/audit/gen_guard_state.py",
+  "generated_for": "cc_instruction_phase1x_guard_visibility_and_commit.md, Task 2",
+  "why_this_run_can_be_trusted_where_earlier_ones_could_not": "Every guard here routes its printing through tools/audit/output_encoding.py, so a findings list can no longer be truncated by a character the console cannot encode. Before that fix, a check could exit non-zero having printed a clean-looking summary and none of what it found -- which is how OPEN_ITEMS.md OI-305 went unreported.",
+  "the_population": {
+    "derived": [
+      "tools/audit/changed_paths.py",
+      "tools/audit/claude_md_rule_triage.py",
+      "tools/audit/decisions/gen_cluster_dispositions.py",
+      "tools/audit/decisions/gen_decision_clusters.py",
+      "tools/audit/decisions/gen_decisions_register.py",
+      "tools/audit/decisions/gen_home_classification.py",
+      "tools/audit/decisions/gen_live_prohibition_pointers.py",
+      "tools/audit/decisions/gen_phase1g_triage.py",
+      "tools/audit/decisions/gen_phase1m_measurements.py",
+      "tools/audit/decisions/gen_phase1n_reading_regime.py",
+      "tools/audit/decisions/gen_phase1p_delegation_bar.py",
+      "tools/audit/decisions/gen_phase1w_legacy_verification.py",
+      "tools/audit/decisions/reaim_home_anchors.py",
+      "tools/audit/gen_nongating_apparatus_rows.py",
+      "tools/audit/gen_phase3_gate_partition.py",
+      "tools/audit/local_patches_check.py",
+      "tools/audit/output_encoding.py",
+      "tools/audit/process_check.py",
+      "tools/audit/shell_read_guard.py"
+    ],
+    "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
+    "authored_entries": 27,
+    "unclassified_candidates": [],
+    "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
+    "outside_tools_audit_authored_by_name": [
+      "tools/notation_seams/gen_callpath_facts.py",
+      "tools/open_items_split_check.py"
+    ]
+  },
+  "not_run": [
+    {
+      "tool": "tools/audit/gen_ratification_surface_set.py",
+      "why": "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its census counts files in the tree, so any wave that adds a file changes it by construction -- running it here would silently fold this session's new files into the previous wave's uncommitted record. That is the OPEN_ITEMS.md OI-301 hazard, and the missing --check is the defect to fix, not the run to force."
+    },
+    {
+      "tool": "tools/audit/reaim_ratification_surface_paths.py",
+      "why": "NOT RUN: an applier, not a guard -- it re-aims citations and reports what it changed. Its --dry-run classifies but returns no pass/fail verdict about the tree."
+    }
+  ],
+  "runs": [
+    {
+      "tool": "tools/audit/register_lint.py",
+      "args": [],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "REGISTER LINT: OPEN_ITEMS.md — 311 row IDs",
+        "REGISTER LINT: PASS — every row ID is unique"
+      ],
+      "stderr": [],
+      "what_it_checks": "the open-items row-ID uniqueness lint"
+    },
+    {
+      "tool": "tools/audit/local_patches_check.py",
+      "args": [],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "  [PRESENT] muse/framework/ui/internal/platform/windows/winwindowscontroller.cpp  — Windows Snap fix — `muse` submodule (applied 2026-05-14)",
+        "  [PRESENT] src/importexport/musicxml/internal/import/importmusicxmlpass2.cpp  — MusicXML declared-mode import fix (Stage 4a, applied 2026-06-14)",
+        "  [PRESENT] src/engraving/dom/chordlist.cpp  — Chord-symbol parser \"sussus\" fix — `ParsedChord::parse` (applied 2026-04-15; recorded 2026-08-02)",
+        "3 recorded patch(es); 0 failing or stopped"
+      ],
+      "stderr": [],
+      "what_it_checks": "the three recorded local patches are still present at HEAD"
+    },
+    {
+      "tool": "tools/audit/local_patches_check.py",
+      "args": [
+        "--establish",
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the local-patches establishment artifact re-derives"
+      ],
+      "stderr": [],
+      "what_it_checks": "that same check's own establishment, verified rather than re-measured"
+    },
+    {
+      "tool": "tools/audit/guard_armed_check.py",
+      "args": [],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "settings files read: .claude\\settings.json, .claude\\settings.local.json, C:\\Users\\vince\\.claude\\settings.json",
+        "  declared in .claude\\settings.json:",
+        "      hooks.PreToolUse.0.hooks.0.args.0 = C:\\s\\MS\\tools\\audit\\shell_read_guard.py",
+        "ARMED — a PreToolUse hook runs the shell-read guard.",
+        "Coverage limits stand and are stated in the guard itself: the text-utility half plus `git status`, sessions in this directory only, and a declaration is not proof the hook fired."
+      ],
+      "stderr": [],
+      "what_it_checks": "the shell-read guard is declared as a PreToolUse hook"
+    },
+    {
+      "tool": "tools/audit/process_check.py",
+      "args": [
+        "--establish",
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the process-check establishment artifact re-derives"
+      ],
+      "stderr": [],
+      "what_it_checks": "the process check's measured detection and false-positive rates re-derive"
+    },
+    {
+      "tool": "tools/audit/shell_read_guard.py",
+      "args": [
+        "--establish",
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the shell-read-guard establishment artifact re-derives"
+      ],
+      "stderr": [],
+      "what_it_checks": "the shell guard's measured deny and false-deny rates re-derive"
+    },
+    {
+      "tool": "tools/audit/output_encoding.py",
+      "args": [
+        "--establish",
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the output-encoding establishment artifact re-derives",
+        "  1_without_the_fix_the_print_crashes: REPRODUCES",
+        "  2_with_the_fix_the_whole_output_arrives: FIXED",
+        "  3_a_deliberate_non_zero_exit_still_exits_non_zero: FAILURE PRESERVED",
+        "  4_an_unrelated_exception_still_ends_the_process: EXCEPTION PRESERVED",
+        "established: True"
+      ],
+      "stderr": [],
+      "what_it_checks": "the output-encoding fix's own establishment re-derives"
+    },
+    {
+      "tool": "tools/audit/changed_paths.py",
+      "args": [
+        "--establish"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "wrote tools\\audit\\changed_paths_establishment.json",
+        "  clean tree reports nothing: True",
+        "  the known set at the working_tree: exact=True (6 record(s))",
+        "  the known set at the staged: exact=True (5 record(s))",
+        "  the known set at the at_the_commit: exact=True (6 record(s))",
+        "  refuses a ref where a hash is required: True",
+        "  refuses an unsanctioned enumeration: True"
+      ],
+      "stderr": [],
+      "what_it_checks": "the changed-path enumeration tool, measured against a known set; it has no verify-only mode, and writes its establishment artifact on every run"
+    },
+    {
+      "tool": "tools/audit/claude_md_rule_triage.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 1,
+      "verdict": "FAIL",
+      "stdout": [],
+      "stderr": [
+        "CLAUDE.md rule(s) with no authored triage: ['D-437', 'D-438', 'D-439']"
+      ],
+      "what_it_checks": "every CLAUDE.md rule carries an authored mechanisation triage"
+    },
+    {
+      "tool": "tools/audit/gen_phase3_gate_partition.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "PASS: phase3_gate_partition.json re-derives byte-identically (14 gating / 3 non-gating of 17; 20/20 quotes located)"
+      ],
+      "stderr": [],
+      "what_it_checks": "the registered phase-3 gate partition re-derives"
+    },
+    {
+      "tool": "tools/audit/gen_nongating_apparatus_rows.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "PASS: nongating_apparatus_rows.json re-derives byte-identically (22 non-gating / 27 gates of 49 candidates over 226 open rows)"
+      ],
+      "stderr": [],
+      "what_it_checks": "the non-gating apparatus-row declaration re-derives from the INDEX"
+    },
+    {
+      "tool": "tools/audit/decisions/gen_decisions_register.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the register matches the data (21 files: the index + 20 group files)"
+      ],
+      "stderr": [],
+      "what_it_checks": "the rendered register matches its source data across every emitted file"
+    },
+    {
+      "tool": "tools/audit/decisions/gen_cluster_dispositions.py",
+      "args": [
+        "--verify"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "backbone decisions: 439",
+        "cross-references resolving: ALL",
+        "verbatim quotes found at their cited home: 439/439",
+        "cited line numbers correct: 433/433   (6 cited to a file with no line number, by design)"
+      ],
+      "stderr": [],
+      "what_it_checks": "every register entry's verbatim quote and cited line is found at its home"
+    },
+    {
+      "tool": "tools/audit/decisions/gen_cluster_dispositions.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "clusters in:  14460",
+        "dispositioned: 14460",
+        "OVERALL PASS"
+      ],
+      "stderr": [],
+      "what_it_checks": "the cluster dispositions re-derive"
+    },
+    {
+      "tool": "tools/audit/decisions/gen_home_classification.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 1,
+      "verdict": "FAIL",
+      "stdout": [
+        "population: 134 entries / 22 documents",
+        "  before: {'contract-home': 96, 'gap': 38}",
+        "  after:  {'contract-home': 99, 'gap': 35}",
+        "  moved:  31  (to gap 14, to contract-home 17)",
+        "    cowork_architecture_reassessment.md: −4 / +0",
+        "    cowork_engage_arc_plan.md: −0 / +3",
+        "    cowork_joint_key_chord_design.md: −0 / +4",
+        "    cowork_layer3_keymode_design.md: −1 / +0",
+        "    cowork_progression_schema_dictionary.md: −0 / +9",
+        "    cowork_structural_integrity_audit.md: −0 / +1",
+        "    cowork_voiceleading_axis_design.md: −3 / +0",
+        "    docs/iteration_path1_summary.md: −2 / +0",
+        "    docs/redesign_plan.md: −4 / +0",
+        "  since phase 1q (the written delegations alone): 28 moved (to contract-home 28, to gap 0)",
+        "    cowork_engage_arc_plan.md: −0 / +3",
+        "    cowork_joint_key_chord_design.md: −0 / +4",
+        "    cowork_layer5_function_design.md: −0 / +8",
+        "    cowork_notation_output_contract.md: −0 / +1",
+        "    cowork_prefit_gates.md: −0 / +5",
+        "    cowork_voiceleading_axis_design.md: −0 / +7",
+        "  write-list documents still holding a `gap` entry: cowork_voiceleading_axis_design.md",
+        "STALE vs the files: 4 classification field(s) do not re-derive",
+        "   {\"id\": \"D-321\", \"what\": \"home_section\", \"to\": \"“Floating-point tie policy”\"}",
+        "   {\"id\": \"D-322\", \"what\": \"home_section\", \"to\": \"“Floating-point tie policy”\"}",
+        "   {\"id\": \"D-323\", \"what\": \"home_section\", \"to\": \"“`dim7CharacteristicBonus`”\"}",
+        "   {\"id\": \"D-324\", \"what\": \"home_section\", \"to\": \"“§6a. The unified promotion primitive `promoteToWinner()`”\"}",
+        "STALE vs the files: phase1q_reclassification.json does not re-derive"
+      ],
+      "stderr": [],
+      "what_it_checks": "every home-section field re-derives from the documents' own headings"
+    },
+    {
+      "tool": "tools/audit/decisions/gen_phase1p_delegation_bar.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 1,
+      "verdict": "FAIL",
+      "stdout": [
+        "STALE vs the files: phase1p_delegation_bar.json does not re-derive"
+      ],
+      "stderr": [],
+      "what_it_checks": "the delegation-bar pre-apply record re-derives"
+    },
+    {
+      "tool": "tools/audit/decisions/gen_phase1n_reading_regime.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 1,
+      "verdict": "FAIL",
+      "stdout": [
+        "STALE vs the data: tools\\audit\\decisions\\phase1n_reading_regime.json"
+      ],
+      "stderr": [],
+      "what_it_checks": "the reading regime re-derives"
+    },
+    {
+      "tool": "tools/audit/decisions/gen_phase1m_measurements.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 1,
+      "verdict": "FAIL",
+      "stdout": [
+        "STALE vs the data: tools\\audit\\decisions\\phase1m_measurements.json"
+      ],
+      "stderr": [],
+      "what_it_checks": "the phase-1m measurements re-derive"
+    },
+    {
+      "tool": "tools/audit/decisions/gen_phase1g_triage.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 1,
+      "verdict": "FAIL",
+      "stdout": [
+        "DRIFT: phase1g_triage.md differs from a fresh generation"
+      ],
+      "stderr": [],
+      "what_it_checks": "the phase-1g triage re-derives"
+    },
+    {
+      "tool": "tools/audit/decisions/gen_decision_clusters.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "non-destructiveness check: PASS",
+        "  input_candidates                   15224",
+        "  candidates_placed_in_a_cluster     15224",
+        "  every_candidate_exactly_once       True",
+        "  id_set_identical_to_input          True",
+        "  input_sha256                       51850440b315e6e96c750798e5202aa6c2f5aa388fd7a37bcc13d9b37c73b94d",
+        "  input_unchanged_by_this_tool       True",
+        "  verdict                            PASS"
+      ],
+      "stderr": [],
+      "what_it_checks": "the decision clusters re-derive"
+    },
+    {
+      "tool": "tools/audit/decisions/gen_phase1w_legacy_verification.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "phase1w: A1 held; 81 entries derived; 34 anchors located; 5 recorded figures located"
+      ],
+      "stderr": [],
+      "what_it_checks": "the legacy-mark verification re-derives, and its declared premises still hold"
+    },
+    {
+      "tool": "tools/audit/decisions/reaim_home_anchors.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "anchors drifted: 0"
+      ],
+      "stderr": [],
+      "what_it_checks": "no register home anchor has drifted"
+    },
+    {
+      "tool": "tools/audit/decisions/gen_live_prohibition_pointers.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "  the chord layer: ARCHITECTURE.md:1420 lists 10 entry(ies)",
+        "  the key layer: ARCHITECTURE.md:1344 lists 2 entry(ies)",
+        "  the search: ARCHITECTURE.md:306 lists 3 entry(ies)",
+        "class members (derived from the verification): 13",
+        "every live-prohibition entry carries its pointer, as derived"
+      ],
+      "stderr": [],
+      "what_it_checks": "every entry the phase-1w verification puts in the live-prohibition class carries its pointer to the specification section that restates it as binding"
+    },
+    {
+      "tool": "tools/open_items_split_check.py",
+      "args": [],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "living mode: index=311 detail=311 baseline=200 post-baseline=111",
+        "OVERALL PASS � bijection holds, no detail file carries a status of its own, and all 200 original items stay byte-verbatim (report: open_items\\register_check.json)"
+      ],
+      "stderr": [],
+      "what_it_checks": "the open-items index/detail bijection, and the original items still byte-verbatim"
+    },
+    {
+      "tool": "tools/notation_seams/gen_callpath_facts.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "OK: all 38 anchors verified at HEAD 3af0e34f9c"
+      ],
+      "stderr": [],
+      "what_it_checks": "the notation-seam call-path anchors are still where the artifact says"
+    }
+  ],
+  "summary": {
+    "run": 25,
+    "passing": 19,
+    "failing": 6,
+    "failing_tools": [
+      {
+        "tool": "tools/audit/claude_md_rule_triage.py",
+        "args": [
+          "--check"
+        ]
+      },
+      {
+        "tool": "tools/audit/decisions/gen_home_classification.py",
+        "args": [
+          "--check"
+        ]
+      },
+      {
+        "tool": "tools/audit/decisions/gen_phase1p_delegation_bar.py",
+        "args": [
+          "--check"
+        ]
+      },
+      {
+        "tool": "tools/audit/decisions/gen_phase1n_reading_regime.py",
+        "args": [
+          "--check"
+        ]
+      },
+      {
+        "tool": "tools/audit/decisions/gen_phase1m_measurements.py",
+        "args": [
+          "--check"
+        ]
+      },
+      {
+        "tool": "tools/audit/decisions/gen_phase1g_triage.py",
+        "args": [
+          "--check"
+        ]
+      }
+    ],
+    "not_run": 2
+  }
+}

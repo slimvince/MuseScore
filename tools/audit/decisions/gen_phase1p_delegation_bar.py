@@ -74,6 +74,11 @@ ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 BACKBONE = os.path.join(HERE, "backbone_decisions.json")
 OUT = os.path.join(HERE, "phase1p_delegation_bar.json")
 
+sys.path.insert(0, os.path.dirname(HERE))
+from output_encoding import use_utf8_output      # noqa: E402  (path set above)
+
+use_utf8_output()   # OI-297 — the findings must survive a non-console stdout
+
 # The three surfaces whose USER ratification is not in question — the same three phases 1l
 # and 1m searched, and the only places a delegation can come from under the criterion.
 RATIFIED_SURFACES = ["ARCHITECTURE.md", "CLAUDE.md", "cowork_engage_arc_plan.md"]

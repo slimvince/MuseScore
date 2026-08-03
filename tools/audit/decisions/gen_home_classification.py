@@ -71,9 +71,13 @@ BACKBONE = os.path.join(HERE, "backbone_decisions.json")
 OUT = os.path.join(HERE, "phase1q_reclassification.json")
 
 sys.path.insert(0, HERE)
+sys.path.insert(0, os.path.dirname(HERE))
+from output_encoding import use_utf8_output      # noqa: E402  (path set above)
 from gen_phase1p_delegation_bar import (          # noqa: E402  (path set above)
     FORMS, ADMITTING, NOT_NAMED, locate, mentions,
 )
+
+use_utf8_output()   # OI-297 — the `STALE vs the files:` block must survive a non-console stdout
 
 HEADING = re.compile(r"^(#{1,6})\s+(.*\S)\s*$")
 
