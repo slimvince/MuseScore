@@ -1,0 +1,2051 @@
+{
+  "header": {
+    "purpose": "The OI-207 reading regime, registered BEFORE the reads it governs. The owed documents ordered by the stronger proxy, a predicted yield band per document registered in advance, the wave schedule packed against a measured capacity, and the statement that NO TAIL IS BOUNDED.",
+    "generator": "tools/audit/decisions/gen_phase1n_reading_regime.py",
+    "ruling": "User, 2026-08-03: read every owed document, bound no tail, order by the stronger proxy, and register the predicted bands before reading so the proxy is established out-of-sample rather than merely used.",
+    "authored_inputs": [
+      "CAPACITY_ANCHOR_WAVE",
+      "BAND_RULE"
+    ],
+    "derived_from": [
+      "backbone_decisions.json",
+      "gen_phase1m_measurements.py (the read/owed partition and the file facts)",
+      "gen_phase1g_triage.py (the user-accepted exclusions)",
+      "the three user-ratified surfaces",
+      "the files themselves"
+    ]
+  },
+  "partition": {
+    "design_document_surface": 143,
+    "read_in_full": 36,
+    "user_accepted_exclusions_not_read": 41,
+    "owed_a_full_read": 66,
+    "partition_check": true,
+    "owed_total_bytes": 1169705,
+    "owed_est_tokens": 384770,
+    "owed_total_unresolved_clusters": 499
+  },
+  "proxy": {
+    "label": "STRUCTURAL PROXY STANDING IN FOR A BEHAVIOURAL QUANTITY, UNVALIDATED (#17d). Length and unresolved-cluster count measure how much text a document holds; yield measures how many standing decisions it records that no other home carries. The second is not recoverable from the first -- phase 1f's own methodological finding is that reading two documents in full moved their cluster counts by 2 while producing 3 register entries. The correlations below are FITTED AND SELF-MEASURED on the 36 documents whose yield is known (#20), and the measured set contains counter-examples at the top of the proxy's own range. No bound may rest on this proxy until it is tested out-of-sample, and the registration below is what makes that test possible.",
+    "correlations_with_yield_on_the_read_set": {
+      "document_length_lines": {
+        "spearman_rho_average_ties": 0.6859,
+        "spearman_rho_ordinal_ties": 0.7557,
+        "difference_between_tie_rules": -0.0698,
+        "ci95_on_the_average_ties_figure": [
+          0.445,
+          0.8342
+        ],
+        "n": 36
+      },
+      "unresolved_cluster_count": {
+        "spearman_rho_average_ties": 0.5647,
+        "spearman_rho_ordinal_ties": 0.6636,
+        "difference_between_tie_rules": -0.0988,
+        "ci95_on_the_average_ties_figure": [
+          0.2711,
+          0.7622
+        ],
+        "n": 36
+      },
+      "named_in_a_user_ratified_surface_count": {
+        "spearman_rho_average_ties": 0.6818,
+        "spearman_rho_ordinal_ties": 0.7261,
+        "difference_between_tie_rules": -0.0444,
+        "ci95_on_the_average_ties_figure": [
+          0.4388,
+          0.8318
+        ],
+        "n": 36
+      },
+      "named_in_a_user_ratified_surface_boolean": {
+        "spearman_rho_average_ties": 0.6682,
+        "spearman_rho_ordinal_ties": 0.6963,
+        "difference_between_tie_rules": -0.0281,
+        "ci95_on_the_average_ties_figure": [
+          0.4185,
+          0.824
+        ],
+        "n": 36
+      }
+    },
+    "ranking_strongest_first": [
+      "document_length_lines",
+      "named_in_a_user_ratified_surface_count",
+      "named_in_a_user_ratified_surface_boolean",
+      "unresolved_cluster_count"
+    ],
+    "strongest": "document_length_lines",
+    "ordering_decision": {
+      "key": "document_length_lines",
+      "point_estimate_ranking": [
+        "document_length_lines",
+        "named_in_a_user_ratified_surface_count",
+        "named_in_a_user_ratified_surface_boolean",
+        "unresolved_cluster_count"
+      ],
+      "indistinguishable_from_the_key_at_95pct": [
+        "named_in_a_user_ratified_surface_count",
+        "named_in_a_user_ratified_surface_boolean",
+        "unresolved_cluster_count"
+      ],
+      "is_the_key_measurably_the_strongest": false,
+      "how_the_key_was_chosen": "By point estimate, and then — where another proxy is indistinguishable from it at 95 % — by a stated tie-break, NOT by the correlation. Document length wins the tie-break because it is the only one of the three that is simultaneously the reading COST, so the ordering and the wave packing rest on one measurement rather than two, and because it is defined for every owed document with no reference to another artifact.",
+      "what_this_corrects": "The proposal this regime implements held that length outranks BOTH other proxies. Recomputed here under the standard average-ties convention, length outranks the unresolved-cluster count, but the count-form of `named in a user-ratified surface` is within four thousandths of it with heavily overlapping intervals. Under #24 that difference is not a finding, so the claim that length is THE stronger proxy is not established between the top two and is not made here."
+    },
+    "tie_rule_finding": "AVERAGE ties is the convention adopted here: it is the standard Spearman definition, and ordinal ties make the figure depend on the order the documents happen to be listed in. Both are reported so the size of the choice is visible -- `difference_between_tie_rules` above -- rather than being a hidden source of two irreconcilable numbers.",
+    "reproduction_of_the_phase1m_figures": "ATTEMPTED AND NOT ACHIEVED, reported as such. The phase-1m OI-207 note records 0.745 for length, 0.628 for the cluster count and 0.530 for named-in-a-ratified-surface. Length reproduces to within a tie rule (ordinal ties give 0.7557). The cluster count does not reproduce under either tie rule. Named-in-a-ratified-surface does not reproduce under either tie rule NOR under either definition of the feature -- the count form and the boolean form are both above 0.66, against a recorded 0.530 -- so the gap is attributable to neither of the two candidate explanations. It cannot be attributed further, because the phase-1m figures were computed outside `gen_phase1m_measurements.py`, which contains no correlation code, so there is nothing to diff against. That is the whole case for the 2026-08-03 figures ruling (register entry D-431) in one measurement: a transcribed figure with no generator behind it cannot be reproduced, cannot be corrected, and cannot even be diagnosed.",
+    "counter_examples_inside_the_measured_set": "Named rather than left for a reader to find: the two documents whose yield the length proxy gets most wrong are in `proxy_counter_examples` below."
+  },
+  "proxy_counter_examples": [
+    {
+      "document": "cowork_stage5_fitter_design.md",
+      "lines": 1534,
+      "unresolved_clusters": 53,
+      "yield": 3,
+      "length_tercile": "long"
+    },
+    {
+      "document": "docs/beam_widening_design.md",
+      "lines": 558,
+      "unresolved_clusters": 37,
+      "yield": 0,
+      "length_tercile": "long"
+    },
+    {
+      "document": "cowork_notation_adoption_increment.md",
+      "lines": 516,
+      "unresolved_clusters": 15,
+      "yield": 3,
+      "length_tercile": "long"
+    }
+  ],
+  "bands": {
+    "rule": "Terciles of the READ set's own line-count distribution. An owed document is assigned the tercile its line count falls in, and the prediction is that tercile's observed yield range: minimum, median and maximum entries per document, with the tercile mean as the point prediction. The band is min-to-max over roughly twelve observations, which is wide on purpose -- a narrower band would assert precision the 36-document sample does not carry.",
+    "length_tercile_cuts_lines": [
+      131,
+      516
+    ],
+    "by_tercile": {
+      "short": {
+        "read_documents_in_this_tercile": 12,
+        "observed_yield_min": 0.0,
+        "observed_yield_median": 0.0,
+        "observed_yield_max": 4.0,
+        "observed_yield_mean": 0.83,
+        "zero_yield_documents": 9
+      },
+      "medium": {
+        "read_documents_in_this_tercile": 12,
+        "observed_yield_min": 0.0,
+        "observed_yield_median": 4.0,
+        "observed_yield_max": 17.0,
+        "observed_yield_mean": 4.83,
+        "zero_yield_documents": 2
+      },
+      "long": {
+        "read_documents_in_this_tercile": 12,
+        "observed_yield_min": 0.0,
+        "observed_yield_median": 7.0,
+        "observed_yield_max": 16.0,
+        "observed_yield_mean": 7.67,
+        "zero_yield_documents": 1
+      }
+    },
+    "registration": "These bands are REGISTERED NOW, before any owed document is read. Every later read wave writes the actual yield into `actual_yield_when_read` on the owed row it read, and reports it against `predicted_yield_band`. That makes the proxy tested as a by-product of the reading rather than by a separate study, and it is the only route by which a tail could ever become boundable."
+  },
+  "no_tail_is_bounded": {
+    "statement": "EVERY owed document is read in full. No tail is carried, sampled or predicted away.",
+    "reason": "A bound over a carried tail would have to rest on the proxy above, and the proxy is fitted and self-measured on the read set with counter-examples inside it. That is exactly the structural proxy standing in for a behavioural quantity that #17(d) forbids putting under load, and #20 forbids grading it on the data that fitted it. A bound resting only on an unvalidated proxy is not a bound.",
+    "the_one_bound_that_does_hold": "The 41 user-accepted exclusions, each carrying a per-file verification citation (`tools/audit/decisions/phase1g_triage.md`). That is a bound over a partition the user accepted after seeing each file's evidence, which is a different thing from a bound a session predicted."
+  },
+  "schedule": {
+    "capacity_anchor": {
+      "wave": "1h",
+      "documents": 5,
+      "lines": 2544,
+      "bytes": 235059,
+      "est_tokens": 77322,
+      "why": "The one wave in the record whose session was spent reading: phase 1h read five documents in one session. Phases 1i-1l read one document each and each states that the wave's other tasks consumed the session, so they measure the cost of mixing ruling work with reading -- the cost the dedicated-wave regime exists to remove -- and are not a capacity measurement. The anchor's token size is computed from the five files here, not taken from that wave's prose."
+    },
+    "packing_rule": "The ordered owed list is packed greedily into waves, each wave taking documents in reading order until the next one would exceed the anchor wave's measured token size. A single document larger than the anchor gets a wave of its own rather than being split.",
+    "implied_wave_count": 6,
+    "waves": [
+      {
+        "documents": [
+          "docs/llm_integration.md",
+          "cowork_factorization_desk_simulation.md",
+          "docs/key_path_design.md",
+          "cowork_layer6_grouping_design.md",
+          "docs/layer_architecture_audit.md",
+          "cowork_target_architecture.md"
+        ],
+        "est_tokens": 73769,
+        "wave": 1
+      },
+      {
+        "documents": [
+          "docs/unified_analysis_pipeline.md",
+          "cowork_term_theory_grounding.md",
+          "cowork_phrase_boundary_design.md",
+          "docs/precision_metric_design.md",
+          "docs/score_inventory.md",
+          "cowork_fb_redesign_design.md",
+          "cowork_architecture_review_2026_07.md",
+          "docs/symbol_input_audit.md"
+        ],
+        "est_tokens": 72692,
+        "wave": 2
+      },
+      {
+        "documents": [
+          "cowork_progression_schema_design.md",
+          "cowork_gateA_unification_design.md",
+          "cowork_census_full_needs_audit.md",
+          "cowork_layer1_note_model_design.md",
+          "cowork_evidence_inventory.md",
+          "cowork_joint_estimator_architecture.md",
+          "cowork_sensitive_cell_probe.md",
+          "docs/iter92_joint_bass_chord_scoring.md",
+          "docs/back_half_design.md",
+          "cowork_layer2_slicing_design.md",
+          "cowork_idiom_discovery_design.md"
+        ],
+        "est_tokens": 75896,
+        "wave": 3
+      },
+      {
+        "documents": [
+          "cowork_audit_protocol.md",
+          "docs/extension_stripping_policy.md",
+          "cowork_idiom_discovery_findings.md",
+          "cowork_l1l3_stabilization_plan.md",
+          "docs/nct_detection_design.md",
+          "cowork_eg2_scoping.md",
+          "cowork_joint_estimator_factorization.md",
+          "cowork_audit_obligation_map.md",
+          "cowork_layer1_tone_collection_design.md",
+          "docs/stage4b_design.md",
+          "docs/key_detection_baroque_partial_signature.md",
+          "cowork_l1l4_architecture_audit.md",
+          "cowork_phase2_architecture_review.md",
+          "cowork_information_loss_audit.md"
+        ],
+        "est_tokens": 75067,
+        "wave": 4
+      },
+      {
+        "documents": [
+          "cowork_layer5_function_methods.md",
+          "cowork_union_search_record.md",
+          "cowork_style_taxonomy_proposal.md",
+          "cowork_l1_l5_premise_debt_audit.md",
+          "cowork_l1l4_completion_ledger.md",
+          "docs/stage4c_cadence_key_design.md",
+          "docs/iter90_bass_as_root_promotion_shelved.md",
+          "docs/architecture_joint_inference.md",
+          "docs/layer_audit_plan.md",
+          "cowork_layer3_reachback_design.md",
+          "cowork_style_clustering_plan.md",
+          "cowork_tpc_capability_design.md",
+          "cowork_adjudication_dossier.md",
+          "cowork_layer1_extend_design.md",
+          "cowork_phase5c_l5_build_plan.md",
+          "cowork_uncertain_resolver_investigation.md",
+          "cowork_layer3_keymode_impl_design.md",
+          "cowork_layer2_reslice_design.md",
+          "docs/stage4d_local_modulation_design.md",
+          "cowork_key_mode_inference_diagnosis.md",
+          "cowork_phrase_boundary_methods.md"
+        ],
+        "est_tokens": 74849,
+        "wave": 5
+      },
+      {
+        "documents": [
+          "cowork_delta_check_dispositions.md",
+          "cowork_eg1_premise_checks.md",
+          "cowork_phase5b_l4_build_plan.md",
+          "cowork_types_header_design.md",
+          "cowork_gate_policy_amendment.md",
+          "cowork_l1l4_review_charter.md"
+        ],
+        "est_tokens": 12497,
+        "wave": 6
+      }
+    ]
+  },
+  "read_rows": [
+    {
+      "lines": 130,
+      "bytes": 11080,
+      "est_tokens": 3645,
+      "unresolved_clusters": 12,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [
+        "SUPERSEDED"
+      ],
+      "document": "cowork_architecture_reassessment.md",
+      "waves": [
+        "1d"
+      ],
+      "yield": 4
+    },
+    {
+      "lines": 46,
+      "bytes": 3569,
+      "est_tokens": 1174,
+      "unresolved_clusters": 4,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "cowork_audit_harmonicfunctionlayer.md",
+      "waves": [
+        "1d"
+      ],
+      "yield": 0
+    },
+    {
+      "lines": 44,
+      "bytes": 3407,
+      "est_tokens": 1121,
+      "unresolved_clusters": 3,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "cowork_audit_jointkeydecision.md",
+      "waves": [
+        "1d"
+      ],
+      "yield": 0
+    },
+    {
+      "lines": 49,
+      "bytes": 3489,
+      "est_tokens": 1148,
+      "unresolved_clusters": 5,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "cowork_audit_postscoringgates.md",
+      "waves": [
+        "1d"
+      ],
+      "yield": 0
+    },
+    {
+      "lines": 41,
+      "bytes": 2940,
+      "est_tokens": 967,
+      "unresolved_clusters": 3,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "cowork_audit_regionanalyzer.md",
+      "waves": [
+        "1d"
+      ],
+      "yield": 0
+    },
+    {
+      "lines": 45,
+      "bytes": 3550,
+      "est_tokens": 1168,
+      "unresolved_clusters": 3,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "cowork_audit_remaining_layers.md",
+      "waves": [
+        "1d"
+      ],
+      "yield": 0
+    },
+    {
+      "lines": 254,
+      "bytes": 23139,
+      "est_tokens": 7612,
+      "unresolved_clusters": 16,
+      "named_in_ratified_surfaces": 1,
+      "banner_words": [
+        "SIGNED"
+      ],
+      "document": "cowork_bounded_context_design.md",
+      "waves": [
+        "1d"
+      ],
+      "yield": 7
+    },
+    {
+      "lines": 131,
+      "bytes": 17278,
+      "est_tokens": 5684,
+      "unresolved_clusters": 4,
+      "named_in_ratified_surfaces": 3,
+      "banner_words": [
+        "RATIFIED"
+      ],
+      "document": "cowork_confidence_contract.md",
+      "waves": [
+        "1d"
+      ],
+      "yield": 3
+    },
+    {
+      "lines": 101,
+      "bytes": 8713,
+      "est_tokens": 2866,
+      "unresolved_clusters": 7,
+      "named_in_ratified_surfaces": 2,
+      "banner_words": [],
+      "document": "cowork_design_doc_template.md",
+      "waves": [
+        "1d"
+      ],
+      "yield": 4
+    },
+    {
+      "lines": 143,
+      "bytes": 12266,
+      "est_tokens": 4035,
+      "unresolved_clusters": 5,
+      "named_in_ratified_surfaces": 2,
+      "banner_words": [
+        "RATIFIED"
+      ],
+      "document": "cowork_engage_arc_plan.md",
+      "waves": [
+        "1d"
+      ],
+      "yield": 4
+    },
+    {
+      "lines": 386,
+      "bytes": 31666,
+      "est_tokens": 10416,
+      "unresolved_clusters": 18,
+      "named_in_ratified_surfaces": 1,
+      "banner_words": [
+        "SHELVED",
+        "DESIGN"
+      ],
+      "document": "cowork_joint_key_chord_design.md",
+      "waves": [
+        "1h"
+      ],
+      "yield": 4
+    },
+    {
+      "lines": 520,
+      "bytes": 52111,
+      "est_tokens": 17142,
+      "unresolved_clusters": 19,
+      "named_in_ratified_surfaces": 3,
+      "banner_words": [
+        "SIGNED",
+        "AS-BUILT"
+      ],
+      "document": "cowork_layer3_keymode_design.md",
+      "waves": [
+        "1h"
+      ],
+      "yield": 16
+    },
+    {
+      "lines": 629,
+      "bytes": 59109,
+      "est_tokens": 19444,
+      "unresolved_clusters": 38,
+      "named_in_ratified_surfaces": 2,
+      "banner_words": [
+        "SIGNED",
+        "AS-BUILT"
+      ],
+      "document": "cowork_layer4_chordsymbol_design.md",
+      "waves": [
+        "1g"
+      ],
+      "yield": 6
+    },
+    {
+      "lines": 659,
+      "bytes": 55483,
+      "est_tokens": 18251,
+      "unresolved_clusters": 18,
+      "named_in_ratified_surfaces": 4,
+      "banner_words": [
+        "DESIGN"
+      ],
+      "document": "cowork_layer5_engagement_design.md",
+      "waves": [
+        "1h"
+      ],
+      "yield": 8
+    },
+    {
+      "lines": 910,
+      "bytes": 90408,
+      "est_tokens": 29739,
+      "unresolved_clusters": 35,
+      "named_in_ratified_surfaces": 1,
+      "banner_words": [
+        "SIGNED"
+      ],
+      "document": "cowork_layer5_function_design.md",
+      "waves": [
+        "1g"
+      ],
+      "yield": 8
+    },
+    {
+      "lines": 74,
+      "bytes": 6247,
+      "est_tokens": 2055,
+      "unresolved_clusters": 9,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "cowork_layer5_spec_review.md",
+      "waves": [
+        "1d"
+      ],
+      "yield": 0
+    },
+    {
+      "lines": 516,
+      "bytes": 36677,
+      "est_tokens": 12065,
+      "unresolved_clusters": 15,
+      "named_in_ratified_surfaces": 2,
+      "banner_words": [
+        "USER-RATIFIED",
+        "RATIFIED"
+      ],
+      "document": "cowork_notation_adoption_increment.md",
+      "waves": [
+        "1l"
+      ],
+      "yield": 3
+    },
+    {
+      "lines": 242,
+      "bytes": 17685,
+      "est_tokens": 5817,
+      "unresolved_clusters": 3,
+      "named_in_ratified_surfaces": 1,
+      "banner_words": [
+        "USER-RATIFIED",
+        "RATIFIED"
+      ],
+      "document": "cowork_notation_output_contract.md",
+      "waves": [
+        "1d"
+      ],
+      "yield": 2
+    },
+    {
+      "lines": 111,
+      "bytes": 9784,
+      "est_tokens": 3218,
+      "unresolved_clusters": 12,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "cowork_phase5_branch_backfill_spec.md",
+      "waves": [
+        "1d"
+      ],
+      "yield": 0
+    },
+    {
+      "lines": 204,
+      "bytes": 16186,
+      "est_tokens": 5324,
+      "unresolved_clusters": 7,
+      "named_in_ratified_surfaces": 2,
+      "banner_words": [
+        "USER-RATIFIED",
+        "RATIFIED"
+      ],
+      "document": "cowork_prefit_gates.md",
+      "waves": [
+        "1d"
+      ],
+      "yield": 5
+    },
+    {
+      "lines": 157,
+      "bytes": 10429,
+      "est_tokens": 3431,
+      "unresolved_clusters": 5,
+      "named_in_ratified_surfaces": 3,
+      "banner_words": [
+        "RATIFIED"
+      ],
+      "document": "cowork_premise_gate_reflection.md",
+      "waves": [
+        "1d"
+      ],
+      "yield": 0
+    },
+    {
+      "lines": 339,
+      "bytes": 31111,
+      "est_tokens": 10234,
+      "unresolved_clusters": 14,
+      "named_in_ratified_surfaces": 7,
+      "banner_words": [],
+      "document": "cowork_progression_schema_dictionary.md",
+      "waves": [
+        "1j"
+      ],
+      "yield": 9
+    },
+    {
+      "lines": 46,
+      "bytes": 3785,
+      "est_tokens": 1245,
+      "unresolved_clusters": 4,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [
+        "SUPERSEDED"
+      ],
+      "document": "cowork_prune_pass_checklist.md",
+      "waves": [
+        "1d"
+      ],
+      "yield": 2
+    },
+    {
+      "lines": 282,
+      "bytes": 34852,
+      "est_tokens": 11464,
+      "unresolved_clusters": 16,
+      "named_in_ratified_surfaces": 3,
+      "banner_words": [
+        "DELIVERED"
+      ],
+      "document": "cowork_score_census.md",
+      "waves": [
+        "1h"
+      ],
+      "yield": 17
+    },
+    {
+      "lines": 168,
+      "bytes": 12026,
+      "est_tokens": 3956,
+      "unresolved_clusters": 14,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [
+        "AS-BUILT"
+      ],
+      "document": "cowork_spec_language_sweep.md",
+      "waves": [
+        "1d"
+      ],
+      "yield": 0
+    },
+    {
+      "lines": 1534,
+      "bytes": 146353,
+      "est_tokens": 48142,
+      "unresolved_clusters": 53,
+      "named_in_ratified_surfaces": 2,
+      "banner_words": [
+        "SIGNED"
+      ],
+      "document": "cowork_stage5_fitter_design.md",
+      "waves": [
+        "1f"
+      ],
+      "yield": 3
+    },
+    {
+      "lines": 356,
+      "bytes": 34488,
+      "est_tokens": 11345,
+      "unresolved_clusters": 18,
+      "named_in_ratified_surfaces": 2,
+      "banner_words": [],
+      "document": "cowork_structural_integrity_audit.md",
+      "waves": [
+        "1i"
+      ],
+      "yield": 5
+    },
+    {
+      "lines": 697,
+      "bytes": 60947,
+      "est_tokens": 20048,
+      "unresolved_clusters": 18,
+      "named_in_ratified_surfaces": 3,
+      "banner_words": [
+        "AS-BUILT"
+      ],
+      "document": "cowork_voiceleading_axis_design.md",
+      "waves": [
+        "1h"
+      ],
+      "yield": 13
+    },
+    {
+      "lines": 558,
+      "bytes": 38340,
+      "est_tokens": 12612,
+      "unresolved_clusters": 37,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [
+        "SHELVED",
+        "DRAFT"
+      ],
+      "document": "docs/beam_widening_design.md",
+      "waves": [
+        "1d",
+        "1f"
+      ],
+      "yield": 0
+    },
+    {
+      "lines": 767,
+      "bytes": 55813,
+      "est_tokens": 18360,
+      "unresolved_clusters": 33,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [
+        "RATIFIED"
+      ],
+      "document": "docs/decoder_design.md",
+      "waves": [
+        "1g"
+      ],
+      "yield": 4
+    },
+    {
+      "lines": 610,
+      "bytes": 64370,
+      "est_tokens": 21174,
+      "unresolved_clusters": 15,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "docs/implementation_roadmap.md",
+      "waves": [
+        "1k"
+      ],
+      "yield": 12
+    },
+    {
+      "lines": 157,
+      "bytes": 9029,
+      "est_tokens": 2970,
+      "unresolved_clusters": 7,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "docs/iteration_path1_summary.md",
+      "waves": [
+        "1d"
+      ],
+      "yield": 2
+    },
+    {
+      "lines": 662,
+      "bytes": 38258,
+      "est_tokens": 12585,
+      "unresolved_clusters": 23,
+      "named_in_ratified_surfaces": 3,
+      "banner_words": [
+        "SUPERSEDED",
+        "LIVE"
+      ],
+      "document": "docs/redesign_plan.md",
+      "waves": [
+        "1g"
+      ],
+      "yield": 4
+    },
+    {
+      "lines": 122,
+      "bytes": 9055,
+      "est_tokens": 2979,
+      "unresolved_clusters": 13,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [
+        "DRAFT"
+      ],
+      "document": "docs/scoped_joint_design.md",
+      "waves": [
+        "1d"
+      ],
+      "yield": 0
+    },
+    {
+      "lines": 1253,
+      "bytes": 83310,
+      "est_tokens": 27405,
+      "unresolved_clusters": 35,
+      "named_in_ratified_surfaces": 7,
+      "banner_words": [
+        "LIVE"
+      ],
+      "document": "docs/scoring_model.md",
+      "waves": [
+        "1g"
+      ],
+      "yield": 15
+    },
+    {
+      "lines": 127,
+      "bytes": 8548,
+      "est_tokens": 2812,
+      "unresolved_clusters": 13,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [
+        "DRAFT"
+      ],
+      "document": "docs/stage6_functional_layer_design.md",
+      "waves": [
+        "1d"
+      ],
+      "yield": 0
+    }
+  ],
+  "owed_rows": [
+    {
+      "lines": 786,
+      "bytes": 34758,
+      "est_tokens": 11434,
+      "unresolved_clusters": 13,
+      "named_in_ratified_surfaces": 4,
+      "banner_words": [],
+      "document": "docs/llm_integration.md",
+      "length_tercile": "long",
+      "predicted_yield_band": [
+        0.0,
+        16.0
+      ],
+      "predicted_yield_point": 7.67,
+      "actual_yield_when_read": null,
+      "surface": "docs",
+      "reading_order": 1
+    },
+    {
+      "lines": 607,
+      "bytes": 47051,
+      "est_tokens": 15477,
+      "unresolved_clusters": 7,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [
+        "USER-RATIFIED",
+        "RATIFIED"
+      ],
+      "document": "cowork_factorization_desk_simulation.md",
+      "length_tercile": "long",
+      "predicted_yield_band": [
+        0.0,
+        16.0
+      ],
+      "predicted_yield_point": 7.67,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 2
+    },
+    {
+      "lines": 480,
+      "bytes": 34384,
+      "est_tokens": 11311,
+      "unresolved_clusters": 17,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [
+        "DRAFT"
+      ],
+      "document": "docs/key_path_design.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "docs",
+      "reading_order": 3
+    },
+    {
+      "lines": 459,
+      "bytes": 43066,
+      "est_tokens": 14166,
+      "unresolved_clusters": 10,
+      "named_in_ratified_surfaces": 3,
+      "banner_words": [
+        "AS-BUILT"
+      ],
+      "document": "cowork_layer6_grouping_design.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 4
+    },
+    {
+      "lines": 438,
+      "bytes": 24440,
+      "est_tokens": 8039,
+      "unresolved_clusters": 12,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "docs/layer_architecture_audit.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "docs",
+      "reading_order": 5
+    },
+    {
+      "lines": 418,
+      "bytes": 40560,
+      "est_tokens": 13342,
+      "unresolved_clusters": 14,
+      "named_in_ratified_surfaces": 5,
+      "banner_words": [],
+      "document": "cowork_target_architecture.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 6
+    },
+    {
+      "lines": 397,
+      "bytes": 19641,
+      "est_tokens": 6461,
+      "unresolved_clusters": 9,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "docs/unified_analysis_pipeline.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "docs",
+      "reading_order": 7
+    },
+    {
+      "lines": 392,
+      "bytes": 30997,
+      "est_tokens": 10196,
+      "unresolved_clusters": 10,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "cowork_term_theory_grounding.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 8
+    },
+    {
+      "lines": 386,
+      "bytes": 38712,
+      "est_tokens": 12734,
+      "unresolved_clusters": 17,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [
+        "SIGNED"
+      ],
+      "document": "cowork_phrase_boundary_design.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 9
+    },
+    {
+      "lines": 383,
+      "bytes": 29710,
+      "est_tokens": 9773,
+      "unresolved_clusters": 8,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [
+        "DRAFT"
+      ],
+      "document": "docs/precision_metric_design.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "docs",
+      "reading_order": 10
+    },
+    {
+      "lines": 377,
+      "bytes": 25353,
+      "est_tokens": 8340,
+      "unresolved_clusters": 13,
+      "named_in_ratified_surfaces": 1,
+      "banner_words": [],
+      "document": "docs/score_inventory.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "docs",
+      "reading_order": 11
+    },
+    {
+      "lines": 355,
+      "bytes": 27968,
+      "est_tokens": 9200,
+      "unresolved_clusters": 15,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [
+        "DESIGN"
+      ],
+      "document": "cowork_fb_redesign_design.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 12
+    },
+    {
+      "lines": 350,
+      "bytes": 32561,
+      "est_tokens": 10711,
+      "unresolved_clusters": 9,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [
+        "RATIFIED",
+        "DELIVERED"
+      ],
+      "document": "cowork_architecture_review_2026_07.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 13
+    },
+    {
+      "lines": 346,
+      "bytes": 16041,
+      "est_tokens": 5277,
+      "unresolved_clusters": 6,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "docs/symbol_input_audit.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "docs",
+      "reading_order": 14
+    },
+    {
+      "lines": 332,
+      "bytes": 30958,
+      "est_tokens": 10184,
+      "unresolved_clusters": 16,
+      "named_in_ratified_surfaces": 2,
+      "banner_words": [],
+      "document": "cowork_progression_schema_design.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 15
+    },
+    {
+      "lines": 308,
+      "bytes": 21348,
+      "est_tokens": 7022,
+      "unresolved_clusters": 10,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [
+        "DESIGN"
+      ],
+      "document": "cowork_gateA_unification_design.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 16
+    },
+    {
+      "lines": 287,
+      "bytes": 21873,
+      "est_tokens": 7195,
+      "unresolved_clusters": 11,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [
+        "RATIFIED",
+        "DELIVERED"
+      ],
+      "document": "cowork_census_full_needs_audit.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 17
+    },
+    {
+      "lines": 278,
+      "bytes": 25893,
+      "est_tokens": 8517,
+      "unresolved_clusters": 15,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [
+        "AS-BUILT"
+      ],
+      "document": "cowork_layer1_note_model_design.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 18
+    },
+    {
+      "lines": 267,
+      "bytes": 17876,
+      "est_tokens": 5880,
+      "unresolved_clusters": 10,
+      "named_in_ratified_surfaces": 2,
+      "banner_words": [],
+      "document": "cowork_evidence_inventory.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 19
+    },
+    {
+      "lines": 258,
+      "bytes": 22673,
+      "est_tokens": 7458,
+      "unresolved_clusters": 7,
+      "named_in_ratified_surfaces": 3,
+      "banner_words": [],
+      "document": "cowork_joint_estimator_architecture.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 20
+    },
+    {
+      "lines": 258,
+      "bytes": 19563,
+      "est_tokens": 6435,
+      "unresolved_clusters": 10,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [
+        "USER-RATIFIED",
+        "RATIFIED"
+      ],
+      "document": "cowork_sensitive_cell_probe.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 21
+    },
+    {
+      "lines": 243,
+      "bytes": 10870,
+      "est_tokens": 3576,
+      "unresolved_clusters": 4,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "docs/iter92_joint_bass_chord_scoring.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "docs",
+      "reading_order": 22
+    },
+    {
+      "lines": 242,
+      "bytes": 17186,
+      "est_tokens": 5653,
+      "unresolved_clusters": 9,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [
+        "DRAFT"
+      ],
+      "document": "docs/back_half_design.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "docs",
+      "reading_order": 23
+    },
+    {
+      "lines": 239,
+      "bytes": 21862,
+      "est_tokens": 7191,
+      "unresolved_clusters": 14,
+      "named_in_ratified_surfaces": 1,
+      "banner_words": [
+        "AS-BUILT"
+      ],
+      "document": "cowork_layer2_slicing_design.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 24
+    },
+    {
+      "lines": 235,
+      "bytes": 20625,
+      "est_tokens": 6785,
+      "unresolved_clusters": 15,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "cowork_idiom_discovery_design.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 25
+    },
+    {
+      "lines": 233,
+      "bytes": 16925,
+      "est_tokens": 5567,
+      "unresolved_clusters": 3,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "cowork_audit_protocol.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 26
+    },
+    {
+      "lines": 232,
+      "bytes": 10681,
+      "est_tokens": 3513,
+      "unresolved_clusters": 2,
+      "named_in_ratified_surfaces": 1,
+      "banner_words": [],
+      "document": "docs/extension_stripping_policy.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "docs",
+      "reading_order": 27
+    },
+    {
+      "lines": 228,
+      "bytes": 20294,
+      "est_tokens": 6676,
+      "unresolved_clusters": 2,
+      "named_in_ratified_surfaces": 1,
+      "banner_words": [],
+      "document": "cowork_idiom_discovery_findings.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 28
+    },
+    {
+      "lines": 222,
+      "bytes": 19228,
+      "est_tokens": 6325,
+      "unresolved_clusters": 12,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "cowork_l1l3_stabilization_plan.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 29
+    },
+    {
+      "lines": 219,
+      "bytes": 10148,
+      "est_tokens": 3338,
+      "unresolved_clusters": 4,
+      "named_in_ratified_surfaces": 1,
+      "banner_words": [],
+      "document": "docs/nct_detection_design.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "docs",
+      "reading_order": 30
+    },
+    {
+      "lines": 217,
+      "bytes": 18546,
+      "est_tokens": 6101,
+      "unresolved_clusters": 6,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "cowork_eg2_scoping.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 31
+    },
+    {
+      "lines": 214,
+      "bytes": 18449,
+      "est_tokens": 6069,
+      "unresolved_clusters": 5,
+      "named_in_ratified_surfaces": 2,
+      "banner_words": [
+        "USER-RATIFIED",
+        "RATIFIED"
+      ],
+      "document": "cowork_joint_estimator_factorization.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 32
+    },
+    {
+      "lines": 200,
+      "bytes": 19342,
+      "est_tokens": 6362,
+      "unresolved_clusters": 6,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "cowork_audit_obligation_map.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 33
+    },
+    {
+      "lines": 197,
+      "bytes": 15862,
+      "est_tokens": 5218,
+      "unresolved_clusters": 6,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "cowork_layer1_tone_collection_design.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 34
+    },
+    {
+      "lines": 197,
+      "bytes": 14163,
+      "est_tokens": 4659,
+      "unresolved_clusters": 10,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [
+        "DRAFT"
+      ],
+      "document": "docs/stage4b_design.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "docs",
+      "reading_order": 35
+    },
+    {
+      "lines": 189,
+      "bytes": 11742,
+      "est_tokens": 3862,
+      "unresolved_clusters": 5,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "docs/key_detection_baroque_partial_signature.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "docs",
+      "reading_order": 36
+    },
+    {
+      "lines": 183,
+      "bytes": 16289,
+      "est_tokens": 5358,
+      "unresolved_clusters": 7,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "cowork_l1l4_architecture_audit.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 37
+    },
+    {
+      "lines": 178,
+      "bytes": 15355,
+      "est_tokens": 5051,
+      "unresolved_clusters": 13,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "cowork_phase2_architecture_review.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 38
+    },
+    {
+      "lines": 174,
+      "bytes": 21183,
+      "est_tokens": 6968,
+      "unresolved_clusters": 6,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "cowork_information_loss_audit.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 39
+    },
+    {
+      "lines": 171,
+      "bytes": 16148,
+      "est_tokens": 5312,
+      "unresolved_clusters": 10,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "cowork_layer5_function_methods.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 40
+    },
+    {
+      "lines": 156,
+      "bytes": 13509,
+      "est_tokens": 4444,
+      "unresolved_clusters": 9,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [
+        "DELIVERED"
+      ],
+      "document": "cowork_union_search_record.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 41
+    },
+    {
+      "lines": 152,
+      "bytes": 12772,
+      "est_tokens": 4201,
+      "unresolved_clusters": 7,
+      "named_in_ratified_surfaces": 5,
+      "banner_words": [
+        "RATIFIED"
+      ],
+      "document": "cowork_style_taxonomy_proposal.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 42
+    },
+    {
+      "lines": 143,
+      "bytes": 10555,
+      "est_tokens": 3472,
+      "unresolved_clusters": 4,
+      "named_in_ratified_surfaces": 2,
+      "banner_words": [],
+      "document": "cowork_l1_l5_premise_debt_audit.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 43
+    },
+    {
+      "lines": 141,
+      "bytes": 12913,
+      "est_tokens": 4248,
+      "unresolved_clusters": 9,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "cowork_l1l4_completion_ledger.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 44
+    },
+    {
+      "lines": 141,
+      "bytes": 9815,
+      "est_tokens": 3229,
+      "unresolved_clusters": 6,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [
+        "DRAFT"
+      ],
+      "document": "docs/stage4c_cadence_key_design.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "docs",
+      "reading_order": 45
+    },
+    {
+      "lines": 137,
+      "bytes": 6036,
+      "est_tokens": 1986,
+      "unresolved_clusters": 3,
+      "named_in_ratified_surfaces": 1,
+      "banner_words": [],
+      "document": "docs/iter90_bass_as_root_promotion_shelved.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "docs",
+      "reading_order": 46
+    },
+    {
+      "lines": 136,
+      "bytes": 9884,
+      "est_tokens": 3251,
+      "unresolved_clusters": 4,
+      "named_in_ratified_surfaces": 1,
+      "banner_words": [],
+      "document": "docs/architecture_joint_inference.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "docs",
+      "reading_order": 47
+    },
+    {
+      "lines": 133,
+      "bytes": 9849,
+      "est_tokens": 3240,
+      "unresolved_clusters": 8,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "docs/layer_audit_plan.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "docs",
+      "reading_order": 48
+    },
+    {
+      "lines": 131,
+      "bytes": 12191,
+      "est_tokens": 4010,
+      "unresolved_clusters": 10,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "cowork_layer3_reachback_design.md",
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 49
+    },
+    {
+      "lines": 130,
+      "bytes": 11887,
+      "est_tokens": 3910,
+      "unresolved_clusters": 4,
+      "named_in_ratified_surfaces": 2,
+      "banner_words": [],
+      "document": "cowork_style_clustering_plan.md",
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 50
+    },
+    {
+      "lines": 130,
+      "bytes": 12124,
+      "est_tokens": 3988,
+      "unresolved_clusters": 5,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "cowork_tpc_capability_design.md",
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 51
+    },
+    {
+      "lines": 128,
+      "bytes": 11777,
+      "est_tokens": 3874,
+      "unresolved_clusters": 5,
+      "named_in_ratified_surfaces": 1,
+      "banner_words": [
+        "RATIFIED"
+      ],
+      "document": "cowork_adjudication_dossier.md",
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 52
+    },
+    {
+      "lines": 127,
+      "bytes": 10911,
+      "est_tokens": 3589,
+      "unresolved_clusters": 5,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [
+        "DRAFT"
+      ],
+      "document": "cowork_layer1_extend_design.md",
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 53
+    },
+    {
+      "lines": 126,
+      "bytes": 11608,
+      "est_tokens": 3818,
+      "unresolved_clusters": 5,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [
+        "SIGNED",
+        "DRAFT"
+      ],
+      "document": "cowork_phase5c_l5_build_plan.md",
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 54
+    },
+    {
+      "lines": 122,
+      "bytes": 9742,
+      "est_tokens": 3205,
+      "unresolved_clusters": 5,
+      "named_in_ratified_surfaces": 1,
+      "banner_words": [],
+      "document": "cowork_uncertain_resolver_investigation.md",
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 55
+    },
+    {
+      "lines": 119,
+      "bytes": 10609,
+      "est_tokens": 3490,
+      "unresolved_clusters": 2,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [
+        "DESIGN"
+      ],
+      "document": "cowork_layer3_keymode_impl_design.md",
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 56
+    },
+    {
+      "lines": 116,
+      "bytes": 10128,
+      "est_tokens": 3332,
+      "unresolved_clusters": 2,
+      "named_in_ratified_surfaces": 1,
+      "banner_words": [],
+      "document": "cowork_layer2_reslice_design.md",
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 57
+    },
+    {
+      "lines": 114,
+      "bytes": 7764,
+      "est_tokens": 2554,
+      "unresolved_clusters": 4,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [
+        "DRAFT"
+      ],
+      "document": "docs/stage4d_local_modulation_design.md",
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield_when_read": null,
+      "surface": "docs",
+      "reading_order": 58
+    },
+    {
+      "lines": 111,
+      "bytes": 7074,
+      "est_tokens": 2327,
+      "unresolved_clusters": 1,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "cowork_key_mode_inference_diagnosis.md",
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 59
+    },
+    {
+      "lines": 107,
+      "bytes": 10243,
+      "est_tokens": 3369,
+      "unresolved_clusters": 6,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "cowork_phrase_boundary_methods.md",
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 60
+    },
+    {
+      "lines": 97,
+      "bytes": 8894,
+      "est_tokens": 2926,
+      "unresolved_clusters": 6,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "cowork_delta_check_dispositions.md",
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 61
+    },
+    {
+      "lines": 89,
+      "bytes": 6156,
+      "est_tokens": 2025,
+      "unresolved_clusters": 1,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [],
+      "document": "cowork_eg1_premise_checks.md",
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 62
+    },
+    {
+      "lines": 84,
+      "bytes": 7421,
+      "est_tokens": 2441,
+      "unresolved_clusters": 4,
+      "named_in_ratified_surfaces": 1,
+      "banner_words": [],
+      "document": "cowork_phase5b_l4_build_plan.md",
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 63
+    },
+    {
+      "lines": 70,
+      "bytes": 6021,
+      "est_tokens": 1981,
+      "unresolved_clusters": 2,
+      "named_in_ratified_surfaces": 0,
+      "banner_words": [
+        "AS-BUILT"
+      ],
+      "document": "cowork_types_header_design.md",
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 64
+    },
+    {
+      "lines": 68,
+      "bytes": 5212,
+      "est_tokens": 1714,
+      "unresolved_clusters": 1,
+      "named_in_ratified_surfaces": 1,
+      "banner_words": [
+        "DRAFT"
+      ],
+      "document": "cowork_gate_policy_amendment.md",
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 65
+    },
+    {
+      "lines": 52,
+      "bytes": 4286,
+      "est_tokens": 1410,
+      "unresolved_clusters": 3,
+      "named_in_ratified_surfaces": 1,
+      "banner_words": [],
+      "document": "cowork_l1l4_review_charter.md",
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield_when_read": null,
+      "surface": "cowork",
+      "reading_order": 66
+    }
+  ]
+}

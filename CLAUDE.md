@@ -170,7 +170,20 @@ a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268 — the p
 copy, is what a missing delegation owes); the document's ratification is the user's directly OR
 TRANSITIVE — a user-ratified surface explicitly delegating to the document carries the user's
 authority to it (user, 2026-08-02, at the phase-1i banner/authority review) — an assistant's
-stamp alone never confers contract-home status.
+stamp alone never confers contract-home status; **(h) THE UNIT OF (g) IS A SECTION, NOT A
+DOCUMENT (user, 2026-08-03): a home is a SECTION of a document, admitted when a user-ratified
+surface delegates a stated concern to that section BY NAME and that section STATES RULES rather
+than recording findings.** The surrounding document's kind and its status banner are not the
+test. *Why:* measured, at the case that refutes the document-level form — `ARCHITECTURE.md:319`
+delegates the shipped-parameter licence-pool constraint to `cowork_score_census.md` **§8c**, a
+block that states three binding rules, inside a document whose kind is a census; a test applied
+to the document excludes the block along with it. **(h) subsumes the two tests that preceded it
+rather than replacing them** — the delegation-specificity criterion (2026-08-03, measured at
+`OPEN_ITEMS.md` OI-281) and the document-kind test (2026-08-03, same row) — each of which was a
+proxy for it and each of which produced the evidence locating its own error. (g)'s guard is
+untouched: the delegation confers, and only the user writes a delegation into `ARCHITECTURE.md`.
+Applied **staged** — an entry is brought to section granularity where that decides something,
+so the register's home field is deliberately mixed and says so in its own scope note.
 
 ## Project context
 

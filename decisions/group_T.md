@@ -23,7 +23,7 @@
 
 **Status.** LIVE · decided 2026-07-11 · ratified by user
 
-**Home.** `CLAUDE.md:1002`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1015`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:878-887, user-directed 2026-07-11. Binds Claude Code and Cowork sessions alike.
 
@@ -43,7 +43,7 @@
 
 **Status.** LIVE · decided 2026-06-15 · ratified by user
 
-**Home.** `CLAUDE.md:758`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:771`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:737-753, user-directed 2026-06-15. ★ READ WITH the general contribution intent at ARCHITECTURE.md:380-382 - two recorded positions, a general intent to contribute and a named one-patch exception; the record does not state how the general intent applies to the rest of the tree.
 
@@ -71,7 +71,7 @@
 
 **Status.** LIVE · decided 2026-05-14 · ratified by user
 
-**Home.** `CLAUDE.md:710`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:723`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:678-713, applied 2026-05-14. Unrelated to the composing module; recorded so a dependency update does not silently overwrite it.
 
@@ -104,7 +104,7 @@
 
 **Status.** LIVE · decided 2026-06-14 · ratified by user
 
-**Home.** `CLAUDE.md:731`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:744`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:715-745, applied 2026-06-14, commit cfc7eb5e39. ★ Carries the distribution constraint above: fork-local only, never upstream.
 
@@ -180,7 +180,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `CLAUDE.md:957-969`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:970-982`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1589-1598, under the standing-rule heading 'FULL DECISION SURFACE BEFORE ANY CHOICE QUESTION' at cowork_handoff.md:1587 ('user mandate 2026-07-05'), with the instituting record at STATUS_ARCHIVE.md:202 - a session handoff block, which is a place for tracking a handover and not a home for a standing rule. Homed in the CLAUDE.md Conventions section, where this project's standing session-method rules live. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -281,7 +281,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `CLAUDE.md:971-989`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:984-1002`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1669-1680, under the standing-rule heading 'COWORK MUST NOT HALLUCINATE OR ASSUME - VERIFY AT SOURCE (user mandate 2026-06-21)' at cowork_handoff.md:1642 - a session handoff block. Homed in the CLAUDE.md Conventions section. Its scope is taken FROM THE RECORD, not decided here: that heading and D-252's own text ('Cowork MAY: read source files via the file tools - NOT bash') both state it as a planning-side rule, so the homed entry says so and says the mandated build, test and measurement commands are unaffected. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -304,7 +304,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `CLAUDE.md:991-998`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1004-1011`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1792-1796, under the standing-rule heading 'INVESTIGATE BY DEFAULT - NEVER ASK investigate vs proceed (user mandate 2026-06-14)' at cowork_handoff.md:1790 - a session handoff block. Homed in the CLAUDE.md Conventions section, beside principle #5, which it operationalizes. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -395,7 +395,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_stage5_fitter_design.md:1482`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
+**Home.** `cowork_stage5_fitter_design.md:1482`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
 **Provenance.** Recorded in `cowork_stage5_fitter_design.md` (SIGNED, user, 2026-07-04) at open item O-10, and tracked as a standing obligation at [[OI-36]] — which is an open-items row, not a home. Found by the phase-1f final-partition wave, 2026-08-02, reading `cowork_stage5_fitter_design.md` in full (SIGNED, user, 2026-07-04). NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).
 
@@ -480,4 +480,23 @@
 **Home.** `docs/implementation_roadmap.md:180`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** `docs/implementation_roadmap.md`:138-145, part of the same block the record marks RATIFIED by the user 2026-07-02. It is live and load-bearing now: `CLAUDE.md`'s gate block (A) states that the dormant legacy notation path awaits deletion "at the OI-180 retirement map, now fully live", and `OPEN_ITEMS.md` OI-180 tracks it. R10 is already discharged — the batch gate was superseded by the robust unit at R10-b, 2026-07-06 (D-115). Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+
+### D-431 — A figure enters a dispatch or a report by citation to a generated artifact, never by transcription — and so does a premise
+
+> A quantity may not be copied into a dispatch or into a session
+> report as a literal value. It is named as **an artifact and a field** — *`tools/audit/decisions/
+> phase1m_measurements.json` → `task6_reading_yield.owed_a_full_read`* — and the reader takes the value
+> from the artifact. The same holds for a **premise**: a claim of fact about the code, the corpus or
+> the record is cited to the primary source it can be checked at, never carried across from a surface
+> that merely repeats it.
+
+**In plain words.** A number is never written into a working instruction or a session report as a literal; the instruction names the generated file and the field it lives in, and the reader looks it up. A claim of fact is treated the same way: it is cited to the place it can be checked, not to a document that merely repeats it. Both the side that writes the instructions and the side that writes the reports are bound.
+
+**Why.** Measured over the three waves that ran under the dispatch protocol before the ruling: five instances, each a value or a premise taken from a secondary surface rather than a primary one, and each caught by a dispatch's own ordered check rather than by the writer's reading — a dispatch premise refuted at the commit (`OPEN_ITEMS.md` OI-286), a dispatch premise refuted at the control flow (OI-288), a coverage count that rode forward unchecked for three waves (OI-207, the 2026-08-03 note §0), three rank correlations reported with no generator behind them, and a total transcribed from an artifact that then moved inside the same wave. All five are enumerated with their citations at the rule's home.
+
+**Status.** LIVE · decided 2026-08-03 · ratified by user
+
+**Home.** `cowork_audit_protocol.md:187`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** User ruling of 2026-08-03 (the fifth ruling set of that date), homed at phase 1n in `cowork_audit_protocol.md`'s dispatch-protocol section beside **D-250**, **D-251** and **D-252**, which is the established home for rules about how a dispatch is written. It is `CLAUDE.md` principle **#17(f)** — no hand-transcribed measurement numbers — applied where it was being ignored: #17(f) was written for DOCUMENTS and was honored there, and dispatches and session reports were treated as outside it on the unstated ground that they are working correspondence rather than record. They are not: a dispatch's premise becomes the next session's starting assumption and a report's figure becomes the next report's baseline. **The register-side instance of the same shape is `OPEN_ITEMS.md` OI-283** — a hand-typed coverage claim inside a generated file — whose remedy is now one instance of this general rule rather than a one-off; that row carries a dated note saying so and does NOT close, its own remedy still being owed. NOT RATIFIED as an ENTRY — it goes to the user in the phase-1n ratification queue.
 

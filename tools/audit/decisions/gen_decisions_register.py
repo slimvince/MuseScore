@@ -46,9 +46,11 @@ NONSPEC_MARK = {
                "correct home.",
     "unhomed": "⚠ **recorded only on a tracking surface** — an open-item row or a session handoff "
                "block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.",
-    "contract-home": "— homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` "
+    "contract-home": "— homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` "
                      "section points to: a proper home (the fifth home case, user-ratified "
-                     "2026-08-02 at OI-268).",
+                     "2026-08-02 at OI-268; its unit narrowed from the document to the "
+                     "SECTION by the user's ruling of 2026-08-03 — see *Home section* below "
+                     "where the entry carries one).",
 }
 NONSPEC_LABEL = {
     "gap": "a documentation gap",
@@ -198,6 +200,14 @@ Each entry has six parts, and a seventh where the record states one.
   owning `ARCHITECTURE.md` section points at, which is a proper home (the fifth case, user-ratified
   2026-08-02 at `open_items/OI-268.md` — the pointer, never a copy, is what a missing delegation
   owes).
+- **Home section** — which SECTION of the home document the decision is recorded in, and whether a
+  user-ratified surface delegates to that section. The user narrowed the fifth home case's unit from
+  the document to the section on 2026-08-03, and the narrowing is applied **staged**: an entry carries
+  this line only where section granularity decides something. Its absence means the entry has not been
+  brought to section granularity yet — never that the whole document is claimed as the home. The
+  section itself is derived from the home document's own headings and this entry's own cited line, and
+  is re-derived by a check, so it cannot go stale when a heading moves. See *The home field's
+  granularity* below.
 - **Provenance** — where the status comes from, and any later ruling that bears on it.
 
 An entry may additionally carry **⚠ LEGACY**. That means its subject is the dormant pipeline
@@ -280,6 +290,7 @@ def render(backbone: dict, disp: dict) -> str:
     nonspec = [d for d in decisions if not d.get("home_is_layer_spec")]
     no_rationale = [d for d in decisions if not d.get("rationale")]
     entry_ratified = [d for d in decisions if d.get("entry_ratified")]
+    section_homed = [d for d in decisions if d.get("home_section")]
 
     out: list[str] = [PREAMBLE, ""]
 
@@ -310,6 +321,7 @@ def render(backbone: dict, disp: dict) -> str:
             out.append(f"| — of which {NONSPEC_LABEL[kind]} | {k} |")
     out.append(f"| Decisions whose defense the record does not state | {len(no_rationale)} |")
     out.append(f"| Entries whose own ratification the provenance records | {len(entry_ratified)} |")
+    out.append(f"| Entries whose home is recorded at SECTION granularity | {len(section_homed)} |")
     out.append("")
     out.append(f"The second-to-last row is about the DECISIONS; the last is about the ENTRIES. "
                f"**{len(entry_ratified)} of {len(decisions)}** entries carry a recorded event at "
@@ -343,6 +355,17 @@ def render(backbone: dict, disp: dict) -> str:
                "`tools/audit/decisions/disposition_manifest.json`.")
     out.append("")
     sc = backbone["header"].get("scope")
+    if sc and sc.get("home_granularity"):
+        out.append("### The home field's granularity — mixed, and why")
+        out.append("")
+        out.append(sc["home_granularity"])
+        out.append("")
+        crit = backbone.get("section_home_criterion")
+        if crit:
+            out.append(f"> **The criterion, as ruled.** {crit['ruling']}")
+            out.append(">")
+            out.append(f"> **What it supersedes.** {crit['supersedes']}")
+            out.append("")
     if sc:
         out.append("### What was read, and what was not")
         out.append("")
@@ -379,8 +402,10 @@ def render(backbone: dict, disp: dict) -> str:
             legacy = " ⚠LEGACY" if d.get("legacy_subject") else ""
             er = d.get("entry_ratified")
             erc = f"{er['date']} · {', '.join(er['by'])}" if er else "—"
+            hs = d.get("home_section")
+            sect = f" {hs['label']}" if hs else ""
             out.append(f"| {d['id']} | {d['title'].replace('|', '/')} | "
-                       f"{st}{legacy}{why} | {erc} | `{home}`{homeflag} |")
+                       f"{st}{legacy}{why} | {erc} | `{home}`{sect}{homeflag} |")
         out.append("")
 
     out.append("## Provenance of this register")
@@ -442,6 +467,25 @@ def render_entry(d: dict) -> list[str]:
         "  " + NONSPEC_MARK.get(d.get("nonspec_kind", "gap"), NONSPEC_MARK["gap"])
     out.append(f"**Home.** `{d['home']}`{homemark}")
     out.append("")
+    hs = d.get("home_section")
+    if hs:
+        bits = [f"**Home section.** **{hs['label']}** — `{hs['section']}` "
+                f"(heading at line {hs['heading_line']})."]
+        if hs["delegated"]:
+            bits.append(f"Delegated by {hs['delegation']}.")
+        else:
+            bits.append("No delegation from a user-ratified surface names this section.")
+        if hs["verdict"] == "UNDECIDED":
+            bits.append("The criterion decides nothing here: whether the delegation naming "
+                        "this document DELEGATES or merely CITES is unresolved, and the "
+                        "2026-08-03 ruling changed the criterion's unit, not that clause. "
+                        "The home class below is the one this entry already carried.")
+        elif hs["former_class"] and hs["former_class"] != d.get("nonspec_kind"):
+            bits.append(f"Home class **re-classified 2026-08-03** from `{hs['former_class']}` "
+                        f"to `{d.get('nonspec_kind')}` under the section-level criterion; the "
+                        "former class is kept here rather than overwritten (#12).")
+        out.append(" ".join(bits))
+        out.append("")
     out.append(f"**Provenance.** {d['status_source']}")
     out.append("")
     return out

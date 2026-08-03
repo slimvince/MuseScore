@@ -277,7 +277,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_score_census.md:221`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_score_census.md:221`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§8c** — `## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)` (heading at line 187). Delegated by ARCHITECTURE.md:319 — "The constraint's own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c". Home class **re-classified 2026-08-03** from `gap` to `contract-home` under the section-level criterion; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The cell records `★ SCOPE RULING RATIFIED (user, 2026-07-04)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 

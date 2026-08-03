@@ -179,7 +179,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `CLAUDE.md:662`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:675`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:621-660. The document itself is `docs/scoring_model.md`.
 
@@ -202,7 +202,7 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `CLAUDE.md:842`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:855`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:821-821; predicate qualification user-directed 2026-06-24, defined terms user-directed 2026-07-02. The ONE home is `cowork_design_doc_template.md`, which also carries the fourteen-section document structure, the status-banner convention and the implementation/test locator rule. Conformance of the existing tree is open at OPEN_ITEMS OI-230.
 
@@ -219,7 +219,7 @@
 
 **Status.** LIVE · decided 2026-07-11 · ratified by user
 
-**Home.** `CLAUDE.md:838`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:851`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:817-811, user-directed repeatedly and recorded 2026-07-11.
 
@@ -245,7 +245,7 @@
 
 **Status.** LIVE · decided 2026-08-01 · ratified by user
 
-**Home.** `CLAUDE.md:894`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:907`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:873-876, user-directed 2026-08-01 at the decisions-register ratification review. The register's rationale field is what serves it; the founding instances the entry names are D-004's segment-cap value, D-059's window and D-015's boundary-tick convention.
 
@@ -400,5 +400,24 @@
 
 **Home.** `cowork_notation_adoption_increment.md:18`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **the opening block (above the first section heading)** — `# The notation-layer adoption increment — decision surface (★ USER-RATIFIED 2026-07-26)` (heading at line 1). No delegation from a user-ratified surface names this section. The criterion decides nothing here: whether the delegation naming this document DELEGATES or merely CITES is unresolved, and the 2026-08-03 ruling changed the criterion's unit, not that clause. The home class below is the one this entry already carried.
+
 **Provenance.** `cowork_notation_adoption_increment.md`:17-20, the first of three rulings the document records the user making at its drafting, each dated 2026-07-26 and each given as a correction to a prior writing. Rulings 2 and 3 of the same list were codified as the decision-neutrality corollary and are registered as D-190, homed in `CLAUDE.md`; ruling 1 was not, and is registered here. Its natural home is `cowork_design_doc_template.md`, which `CLAUDE.md` Conventions makes the ONE home for the writing standards (the same reasoning that placed D-307 there), hence the documentation-gap flag. Found by the phase-1l continuation wave, 2026-08-03, reading `cowork_notation_adoption_increment.md` IN FULL (the OI-207 reading list's next document, 17 unresolved clusters). The document carries a status banner and is user-ratified 2026-07-26, but NO user-ratified surface names it — it is absent from `ARCHITECTURE.md`, `CLAUDE.md` and `cowork_engage_arc_plan.md` alike (measured this session at Task 7) — so it is not a contract home under either the phase-1i criterion or the delegation-specificity criterion the user ruled 2026-08-03. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1l ratification queue.
+
+### D-430 — The contract-home criterion's unit is a SECTION of a document, not the document
+
+> **(h) THE UNIT OF (g) IS A SECTION, NOT A
+> DOCUMENT (user, 2026-08-03): a home is a SECTION of a document, admitted when a user-ratified
+> surface delegates a stated concern to that section BY NAME and that section STATES RULES rather
+> than recording findings.**
+
+**In plain words.** Whether a design document counts as the proper home of a decision is decided about the SECTION the decision sits in, not about the document as a whole. A section qualifies when a document the user has ratified points a named concern at that section by name, and when the section lays down rules rather than reporting what was found. What kind of document surrounds the section, and what its status banner says, do not enter the test.
+
+**Why.** Measured, at the case that refutes the document-level form. `ARCHITECTURE.md`:319 delegates the shipped-parameter licence-pool constraint to `cowork_score_census.md` §8c — a block that states three binding rules (the fitting-pool licence constraint, the intake rule, the supersession protocol) — inside a document whose kind is a census, so a test applied to the document excludes the block along with it. That case was found by the phase-1m measurement of the document-kind test, which reported it as the one structural finding the kind ruling did not answer (`OPEN_ITEMS.md` OI-281, second measurement note, §6).
+
+**Status.** LIVE · decided 2026-08-03 · ratified by user
+
+**Home.** `CLAUDE.md:173`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** User ruling of 2026-08-03 (the fifth ruling set of that date), applied at phase 1n; dispatch `cc_instruction_phase1n_criterion_premise_and_reading_regime.md` §2. **It SUPERSEDES, and does not falsify, the two tests that preceded it** — the delegation-specificity criterion ruled and measured earlier the same day (`OPEN_ITEMS.md` OI-281, first measurement note) and the document-kind test ruled and measured later the same day (same row, second note). Both were proxies for this test, and each produced the evidence that located its own error: the specificity criterion's residue turned out to be its third clause used as a judgment, and the kind test's residue turned out to be that kind is a property of the DOCUMENT while a delegation points at a SECTION. Recorded that way so a reader meets one derivation rather than three rival tests. **Applied STAGED, as the ruling directs:** only to the entries where section granularity decides something — the ambiguous population of the kind test plus the `cowork_score_census.md` entries, 46 entries across 5 documents — with everything else migrating as its document is next touched. The staging is stated in the register's own scope note (`header.scope.home_granularity`) so the mixed field cannot be misread. **The tooling cost was measured BEFORE any entry was changed, against a stop criterion declared in the dispatch before the diff existed (#22):** the change is confined to an additive per-entry field plus the generator and checker that read it; `home` itself is untouched, so the quote-verification path, the anchor check and the drift report are byte-unchanged and no existing anchor needed re-aiming. The section is DERIVED from the home document's own headings and the entry's own cited line by `tools/audit/decisions/gen_section_homes.py`, whose `--check` re-derives it, so no section is transcribed and none can go stale when a heading moves. Guard (g) is untouched: the delegation confers, and only the user writes a delegation into `ARCHITECTURE.md`. NOT RATIFIED as an ENTRY — it goes to the user in the phase-1n ratification queue.
 

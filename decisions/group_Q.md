@@ -69,7 +69,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `CLAUDE.md:381-383`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:394-396`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md` (session 21, at the user's ratification of the external architecture review's corpus-expansion amendment). Related but distinct from **D-225** (a corpus is regenerated before its baseline figures are updated) and from the re-baseline discipline in `CLAUDE.md` gate block (A). Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]] — measurement conventions go to the gate block): written into `CLAUDE.md` gate block (A) beside the re-baseline discipline it bounds. Former home preserved (#12): `STATUS_ARCHIVE.md:250`. The same rule is stated on the corpus side at `cowork_score_census.md`'s decision-tier block, which the homed text names.
 
@@ -126,6 +126,8 @@
 
 **Home.** `cowork_score_census.md:30-33`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **§1** — `## 1. Why corpora kept being "discovered" — and the method that closes it` (heading at line 13). No delegation from a user-ratified surface names this section.
+
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The document's banner records `Status: v1 DELIVERED (Cowork, 2026-07-02); for user disposition of the acquisition tiers (§5)` — the user disposition it names covers the acquisition tiers, not this rule. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
 ### D-360 — A corpus enters the registry only with all five admission fields decided — annotation type, score alignment, format, licence class, decision tier
@@ -145,6 +147,8 @@
 
 **Home.** `cowork_score_census.md:67-70`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **§3** — `## 3. Inclusion criteria (what "a corpus we can use" means)` (heading at line 65). No delegation from a user-ratified surface names this section.
+
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
 ### D-361 — Corpora are de-duplicated by WORK, not by container — and a work in the regression corpus is excluded as reference data from every other container
@@ -163,6 +167,8 @@
 **Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_score_census.md:74-77`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **§4** — `## 4. Overlap hazard (the accounting rule)` (heading at line 72). No delegation from a user-ratified surface names this section.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -185,6 +191,8 @@
 
 **Home.** `cowork_score_census.md:119-124`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **§8** — `## 8. The comprehensiveness claim, precisely stated — and the mitigation plan (added 2026-07-02, user question)` (heading at line 117). No delegation from a user-ratified surface names this section.
+
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
 ### D-363 — Four named reasons license leaving a source un-enumerated — and non-Western symbolic music is closed by RULING, not by enumeration
@@ -205,6 +213,8 @@
 **Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_score_census.md:126-131`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **§8** — `## 8. The comprehensiveness claim, precisely stated — and the mitigation plan (added 2026-07-02, user question)` (heading at line 117). No delegation from a user-ratified surface names this section.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -227,6 +237,8 @@
 
 **Home.** `cowork_score_census.md:166-171`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **§8b** — `## 8b. The recurring-discovery finding, and the PURPOSE-DRIVEN sweep trigger (user observation, 2026-07-03)` (heading at line 150). No delegation from a user-ratified surface names this section.
+
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The section is headed as a user observation of 2026-07-03; the record says the trigger is instituted but does not name who instituted it. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
 ### D-365 — A corpus search driven by the SUM of all needs is worth running, but it is step 3 of 3 — the needs list and the re-scoring of what is already enumerated come first
@@ -245,7 +257,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_score_census.md:189-193`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_score_census.md:189-193`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§8c** — `## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)` (heading at line 187). Delegated by ARCHITECTURE.md:319 — "The constraint's own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c". Home class **re-classified 2026-08-03** from `gap` to `contract-home` under the section-level criterion; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The section is headed as a user question of 2026-07-03; its first run is recorded EXECUTED and DISPOSED 2026-07-04, with the user's rulings at that disposition recorded in the same paragraph. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -270,7 +284,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_score_census.md:255-264`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_score_census.md:255-264`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§8c** — `## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)` (heading at line 187). Delegated by ARCHITECTURE.md:319 — "The constraint's own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c". Home class **re-classified 2026-08-03** from `gap` to `contract-home` under the section-level criterion; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The rule is recorded as the user's, 2026-07-03. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -302,7 +318,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_score_census.md:266-282`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_score_census.md:266-282`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§8c** — `## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)` (heading at line 187). Delegated by ARCHITECTURE.md:319 — "The constraint's own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c". Home class **re-classified 2026-08-03** from `gap` to `contract-home` under the section-level criterion; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The protocol is recorded as the user's, 2026-07-03. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -318,7 +336,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_score_census.md:216`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_score_census.md:216`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§8c** — `## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)` (heading at line 187). Delegated by ARCHITECTURE.md:319 — "The constraint's own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c". Home class **re-classified 2026-08-03** from `gap` to `contract-home` under the section-level criterion; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -334,7 +354,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_score_census.md:215`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_score_census.md:215`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§8c** — `## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)` (heading at line 187). Delegated by ARCHITECTURE.md:319 — "The constraint's own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c". Home class **re-classified 2026-08-03** from `gap` to `contract-home` under the section-level criterion; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -350,7 +372,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_score_census.md:219`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_score_census.md:219`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§8c** — `## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)` (heading at line 187). Delegated by ARCHITECTURE.md:319 — "The constraint's own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c". Home class **re-classified 2026-08-03** from `gap` to `contract-home` under the section-level criterion; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -366,7 +390,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_score_census.md:225`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_score_census.md:225`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§8c** — `## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)` (heading at line 187). Delegated by ARCHITECTURE.md:319 — "The constraint's own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c". Home class **re-classified 2026-08-03** from `gap` to `contract-home` under the section-level criterion; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The user's act recorded on this row is the ADOPTION of the need (2026-07-04); the build-not-download conclusion is a measured search outcome and names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -382,7 +408,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_score_census.md:208`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_score_census.md:208`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§8c** — `## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)` (heading at line 187). Delegated by ARCHITECTURE.md:319 — "The constraint's own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c". Home class **re-classified 2026-08-03** from `gap` to `contract-home` under the section-level criterion; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The cell marks it `(Wave-3 MEASURED, corrects the audit)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -398,7 +426,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_score_census.md:208`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_score_census.md:208`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§8c** — `## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)` (heading at line 187). Delegated by ARCHITECTURE.md:319 — "The constraint's own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c". Home class **re-classified 2026-08-03** from `gap` to `contract-home` under the section-level criterion; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL, in the Wave-3 addendum text of the dual-annotator row. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 

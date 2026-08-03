@@ -1,6 +1,7 @@
 {
   "header": {
     "purpose": "phase-1m Tasks 5 and 6 — the KIND test measured and NOT applied, and the reading yield measured with the owed partition ranked. Nothing here changes any entry's home class or reorders any reading list.",
+    "superseded": "THE KIND TEST THIS TOOL MEASURES IS SUPERSEDED (user, 2026-08-03; register entry D-430, `CLAUDE.md` decisions-register rule (h)). The criterion's unit is now a SECTION of a document, not the document, which is what the kind test's own §6 structural finding pointed at. This tool is KEPT and kept CURRENT rather than frozen, for two reasons: its Task-6 partition is still the live read/owed derivation that `gen_phase1n_reading_regime.py` imports, and a generated artifact that no longer regenerates is the drift the project forbids. The consequence a reader must hold: from 2026-08-03 the task5 block re-runs a SUPERSEDED test against the CURRENT classes, so its `moves_in` and `moves_out` are no longer the pre-application figures the phase-1m report quotes — most visibly, `cowork_score_census.md`'s entries are now `contract-home` under the section criterion, so the kind test now reports them moving OUT. The pre-application measurement is preserved as the phase-1m dated note on `open_items/OI-281.md`; the section criterion's own measurement is the phase-1n note on the same row.",
     "generator": "tools/audit/decisions/gen_phase1m_measurements.py",
     "authored_inputs": [
       "KIND",
@@ -30,8 +31,8 @@
     "population_entries": 134,
     "population_documents": 22,
     "current_classes": {
-      "contract-home": 85,
-      "gap": 49
+      "contract-home": 96,
+      "gap": 38
     },
     "verdict_totals": {
       "EXCLUDE": 40,
@@ -39,7 +40,7 @@
       "AMBIGUOUS": 29
     },
     "entries_moving_in": 16,
-    "entries_moving_out": 10,
+    "entries_moving_out": 21,
     "entries_ambiguous": 29,
     "moves_in": [
       [
@@ -56,6 +57,10 @@
       ]
     ],
     "moves_out": [
+      [
+        "cowork_score_census.md",
+        11
+      ],
       [
         "cowork_architecture_reassessment.md",
         4
@@ -118,17 +123,18 @@
           "D-374",
           "D-375"
         ],
-        "current_contract_home": 0,
-        "current_gap": 17,
+        "current_contract_home": 11,
+        "current_gap": 6,
         "kind": "records-findings",
         "kind_citation": "`:1-3` 'The score & corpus census — once-and-for-all, enumerated to closure … The definitive census of obtainable symbolic scores and harmonic ground-truth corpora'. A census. (See `kind_unclear_notes` — §8c inside it does state a rule.)",
         "delegation": "pass",
         "delegation_citation": "`ARCHITECTURE.md:317` 'The constraint's own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c', inside a user-ratified passage; and `CLAUDE.md:388`",
         "verdict": "EXCLUDE",
-        "movement": "none",
+        "movement": "MOVES OUT",
         "mentions_in_ratified_surfaces": [
           "ARCHITECTURE.md:319",
-          "CLAUDE.md:388"
+          "CLAUDE.md:178",
+          "CLAUDE.md:401"
         ]
       },
       {
@@ -497,12 +503,12 @@
         "movement": "none",
         "mentions_in_ratified_surfaces": [
           "ARCHITECTURE.md:2149",
-          "CLAUDE.md:649",
-          "CLAUDE.md:651",
-          "CLAUDE.md:653",
+          "CLAUDE.md:662",
           "CLAUDE.md:664",
-          "CLAUDE.md:672",
-          "CLAUDE.md:691"
+          "CLAUDE.md:666",
+          "CLAUDE.md:677",
+          "CLAUDE.md:685",
+          "CLAUDE.md:704"
         ]
       },
       {
@@ -639,8 +645,8 @@
     "yield_min": 0,
     "yield_zero_documents": 12,
     "documents_carrying_90pct_of_yield": 18,
-    "owed_total_bytes": 1165726,
-    "owed_est_tokens": 383462,
+    "owed_total_bytes": 1169705,
+    "owed_est_tokens": 384770,
     "owed_total_unresolved_clusters": 499,
     "read_rows": [
       {
@@ -656,7 +662,7 @@
         "banner_words": [
           "DELIVERED"
         ],
-        "named_in_ratified_surfaces": 2
+        "named_in_ratified_surfaces": 3
       },
       {
         "document": "cowork_layer3_keymode_design.md",
@@ -1315,7 +1321,7 @@
         "banner_words": [],
         "named_in_ratified_surfaces": 1,
         "named_where": [
-          "CLAUDE.md:696"
+          "CLAUDE.md:709"
         ],
         "surface": "docs"
       },
@@ -1773,7 +1779,7 @@
         "banner_words": [],
         "named_in_ratified_surfaces": 1,
         "named_where": [
-          "CLAUDE.md:606"
+          "CLAUDE.md:619"
         ],
         "surface": "cowork"
       },
@@ -1882,9 +1888,9 @@
       {
         "document": "cowork_audit_protocol.md",
         "unresolved_clusters": 3,
-        "lines": 183,
-        "bytes": 12946,
-        "est_tokens": 4259,
+        "lines": 233,
+        "bytes": 16925,
+        "est_tokens": 5567,
         "banner_words": [],
         "named_in_ratified_surfaces": 0,
         "named_where": [],
@@ -2003,7 +2009,7 @@
         ],
         "named_in_ratified_surfaces": 1,
         "named_where": [
-          "CLAUDE.md:508"
+          "CLAUDE.md:521"
         ],
         "surface": "cowork"
       },

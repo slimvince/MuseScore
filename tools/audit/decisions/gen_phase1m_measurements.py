@@ -464,6 +464,22 @@ def main() -> int:
             "purpose": "phase-1m Tasks 5 and 6 — the KIND test measured and NOT applied, and "
                        "the reading yield measured with the owed partition ranked. Nothing "
                        "here changes any entry's home class or reorders any reading list.",
+            "superseded": (
+                "THE KIND TEST THIS TOOL MEASURES IS SUPERSEDED (user, 2026-08-03; register "
+                "entry D-430, `CLAUDE.md` decisions-register rule (h)). The criterion's unit is "
+                "now a SECTION of a document, not the document, which is what the kind test's "
+                "own §6 structural finding pointed at. This tool is KEPT and kept CURRENT "
+                "rather than frozen, for two reasons: its Task-6 partition is still the live "
+                "read/owed derivation that `gen_phase1n_reading_regime.py` imports, and a "
+                "generated artifact that no longer regenerates is the drift the project "
+                "forbids. The consequence a reader must hold: from 2026-08-03 the task5 block "
+                "re-runs a SUPERSEDED test against the CURRENT classes, so its `moves_in` and "
+                "`moves_out` are no longer the pre-application figures the phase-1m report "
+                "quotes — most visibly, `cowork_score_census.md`'s entries are now "
+                "`contract-home` under the section criterion, so the kind test now reports "
+                "them moving OUT. The pre-application measurement is preserved as the "
+                "phase-1m dated note on `open_items/OI-281.md`; the section criterion's own "
+                "measurement is the phase-1n note on the same row."),
             "generator": "tools/audit/decisions/gen_phase1m_measurements.py",
             "authored_inputs": ["KIND", "DELEGATION", "READ_WAVES"],
             "derived_from": ["backbone_decisions.json", "decision_clusters.json",

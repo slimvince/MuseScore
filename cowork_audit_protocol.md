@@ -181,3 +181,53 @@ it as a stop or branch rule, and anything not covered waits for the report and i
 verification. The only mid-run channel is the one the executing session itself opens, its own STOP
 question, answered when it asks. *Why:* the evidence is stated with the rule — interruptions have
 several times proven disastrous.
+
+### A figure enters a dispatch or a report by CITATION to a generated artifact, never by transcription
+
+**Ruled by the user, 2026-08-03.** A quantity may not be copied into a dispatch or into a session
+report as a literal value. It is named as **an artifact and a field** — *`tools/audit/decisions/
+phase1m_measurements.json` → `task6_reading_yield.owed_a_full_read`* — and the reader takes the value
+from the artifact. The same holds for a **premise**: a claim of fact about the code, the corpus or
+the record is cited to the primary source it can be checked at, never carried across from a surface
+that merely repeats it.
+
+This is `CLAUDE.md` principle **#17(f)** — *no hand-transcribed measurement numbers; figures enter
+docs only via generated artifacts* — applied where it was being ignored. #17(f) was written for
+DOCUMENTS and was honored there: the decisions register, the disposition manifest and the phase
+measurement artifacts are all generated. Dispatches and session reports were treated as outside it,
+on the unstated ground that they are working correspondence rather than record. They are not outside
+it: a dispatch's premise becomes the next session's starting assumption, and a report's figure
+becomes the next report's baseline. **Both sides are bound — the writing side's dispatches and the
+executing side's reports alike.**
+
+*Why:* measured, over the three waves that ran under this protocol before the ruling. Each instance
+is a value or a premise taken from a secondary surface rather than a primary one, and each was caught
+by a dispatch's own ordered check rather than by the writer's reading:
+
+1. **A dispatch premise refuted at the commit.** The phase-1l dispatch held one half of the
+   two-deferred-refactors mandate to be owed against retiring code; the file split it names had been
+   delivered on 2026-06-17, and five later records — two of them user-ratified surfaces — still called
+   it parked. `OPEN_ITEMS.md` OI-286.
+2. **A dispatch premise refuted at the control flow.** The phase-1m dispatch held the post-hoc gate
+   layer reachable on the live notation arm through the tick-local fallback; the record arm returns
+   above that fallback whenever the record flag is set, which is its default. `OPEN_ITEMS.md` OI-288.
+3. **A coverage count that rode forward unchecked for three waves.** "38 of 143 read" was 34 by its
+   own stated basis; the difference was carried into 39 and then 40 before the partition was derived
+   mechanically and came out at 36 read / 41 excluded / 66 owed. The `OPEN_ITEMS.md` OI-207 note of
+   2026-08-03, §0.
+4. **Three rank correlations reported with no generator behind them.** The proxy figures in that same
+   note were computed outside `gen_phase1m_measurements.py` — the tool contains no correlation code —
+   so a second recomputation returned a different value for the strongest of the three, and the
+   difference could not be attributed because neither computation was reproducible.
+5. **A total transcribed from an artifact that then moved inside the same wave.** The same note states
+   a yield of 157 entries over the documents read in full; the committed artifact's
+   `task6_reading_yield.yield_total_entries_homed_in_read_documents` reads 160, because three register
+   entries homed in an already-read document were added after the sentence was written. `--check`
+   passes, so the artifact is current and the sentence is not.
+
+Instances 1 and 2 are the reason the rule covers premises and not only numbers: a wrong premise costs
+a whole task, where a wrong figure costs a sentence. Instances 3 to 5 are the reason it covers reports
+and not only dispatches: every one of them originated in a report's own prose and was inherited by the
+next dispatch as fact. `OPEN_ITEMS.md` **OI-283** is the register-side instance of the same shape — a
+hand-typed coverage claim inside a generated file — and its remedy is now one instance of this general
+rule rather than a one-off.
