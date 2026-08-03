@@ -36,6 +36,18 @@ WHAT IS AUTHORED AND WHAT IS DERIVED.
              section-level consequence for the five documents already at section
              granularity; and the `cowork_score_census.md` §8c table-row count.
 
+THIS ARTIFACT IS A PRE-APPLY RECORD, AND IT STAYS ONE (amended 2026-08-03, phase 1q).  The
+user ruled the bar APPLIED, in one pass over the whole population
+(`tools/audit/decisions/gen_home_classification.py`), so the register's present classes are the
+POST-apply ones.  Recomputing this artifact from them would report "PROCEED — the prediction
+holds" and quietly destroy the finding `OPEN_ITEMS.md` OI-291 and **D-432** both cite (#12).  It
+therefore reads each entry's class from `home_section.class_before_phase1q` — the value the pass
+recorded and never overwrites — so the pre-apply check keeps reporting what it found, while the
+delegation citations stay live against the files.  The one block that WAS superseded, the
+section-level consequence, is not recomputed here: the phase-1q pass covers every entry rather
+than the five documents then at section granularity, and two computations of one thing is the
+duplication #6 forbids.
+
 Run:  python tools/audit/decisions/gen_phase1p_delegation_bar.py [--check]
 """
 from __future__ import annotations
@@ -224,6 +236,19 @@ def census_table_rows() -> dict:
     return {"first_row_line": min(rows), "last_row_line": max(rows), "row_count": len(rows)}
 
 
+def pre_apply_kind(d: dict) -> str | None:
+    """The entry's home class BEFORE the phase-1q pass applied the bar.
+
+    The pass records it once, on the entry, and never overwrites it; reading it here is what
+    keeps this artifact a record of the state the check was run against rather than a
+    recomputation over the state the check caused.
+    """
+    hs = d.get("home_section")
+    if hs and "class_before_phase1q" in hs:
+        return hs["class_before_phase1q"]
+    return d.get("nonspec_kind")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--check", action="store_true",
@@ -235,13 +260,13 @@ def main() -> int:
 
     population = [d for d in decisions
                   if not d.get("home_is_layer_spec")
-                  and d.get("nonspec_kind") in ("contract-home", "gap")]
+                  and pre_apply_kind(d) in ("contract-home", "gap")]
     per_doc: dict[str, dict] = {}
     for d in population:
         doc = d["home"].split(":")[0].replace("\\", "/")
         rec = per_doc.setdefault(doc, {"entries": [], "current": collections.Counter()})
         rec["entries"].append(d["id"])
-        rec["current"][d["nonspec_kind"]] += 1
+        rec["current"][pre_apply_kind(d)] += 1
 
     unknown = sorted(set(per_doc) - set(FORMS))
     if unknown:
@@ -312,35 +337,6 @@ def main() -> int:
                     else "PROCEED — the prediction holds"),
     }
 
-    # ── the section-level consequence, for the documents already at that granularity ──
-    section_rows = []
-    for d in decisions:
-        hs = d.get("home_section")
-        if not hs:
-            continue
-        doc = d["home"].split(":")[0].replace("\\", "/")
-        docverdict = next(r["verdict"] for r in rows if r["document"] == doc)
-        if docverdict == "ADMIT":
-            want = "contract-home" if hs["delegated"] else "gap"
-        else:
-            want = "gap"
-        section_rows.append({
-            "id": d["id"], "document": doc, "section": hs["label"],
-            "delegated_section": hs["delegated"],
-            "current_class": d.get("nonspec_kind"),
-            "class_under_the_bar_plus_D430": want,
-            "moves": want != d.get("nonspec_kind"),
-        })
-    sect_summary: dict[str, dict] = {}
-    for r in section_rows:
-        s = sect_summary.setdefault(r["document"], {"entries": 0, "would_move": 0,
-                                                    "to_contract_home": 0, "to_gap": 0})
-        s["entries"] += 1
-        if r["moves"]:
-            s["would_move"] += 1
-            s["to_contract_home" if r["class_under_the_bar_plus_D430"] == "contract-home"
-              else "to_gap"] += 1
-
     # ── Task 1's figure: how many §8c-admitted entries are rows of the findings table ──
     tbl = census_table_rows()
     admitted_8c = [d for d in decisions
@@ -359,6 +355,20 @@ def main() -> int:
         "purpose": "phase 1p — the delegation bar (W2) measured over the whole home "
                    "population, the pre-apply check the dispatch orders, and the §8c "
                    "mixed-section figure Task 1 rows. NOTHING IS APPLIED HERE.",
+        "this_is_a_pre_apply_record":
+            "The class figures below are the ones the check was RUN AGAINST, read from each "
+            "entry's `home_section.class_before_phase1q` — the value the phase-1q pass records "
+            "once and never overwrites. The user ruled the bar APPLIED on 2026-08-03, so the "
+            "register's PRESENT classes are the post-apply ones and are at "
+            "`tools/audit/decisions/phase1q_reclassification.json`. Recomputing this artifact "
+            "from the present classes would report that the prediction holds and destroy the "
+            "finding OI-291 and D-432 both cite (#12).",
+        "section_level_consequence_moved":
+            "The block that stood here reported what the section-level criterion would do to "
+            "the five documents then at section granularity. It is SUPERSEDED, not deleted: the "
+            "phase-1q pass computes it for every entry of the population, at "
+            "`tools/audit/decisions/phase1q_reclassification.json` → `by_document` and "
+            "`entries`. Two computations of one thing is the duplication #6 forbids.",
         "the_bar": {
             "admitted_forms": [CLAUSE, NAMED_SECTIONS],
             "not_admitted_forms": [BARE_CITATION, PROVENANCE],
@@ -385,13 +395,6 @@ def main() -> int:
         "verdict_totals": dict(tally),
         "documents": rows,
         "pre_apply_check": check,
-        "section_level_consequence": {
-            "scope": "only the entries already at SECTION granularity (the staged "
-                     "population of D-430). Every other entry is reported at DOCUMENT "
-                     "level above; bringing it to section granularity is a separate act.",
-            "by_document": sect_summary,
-            "entries": section_rows,
-        },
         "census_8c_mixed_section": {
             "needs_vector_table": tbl,
             "admitted_in_8c": [d["id"] for d in admitted_8c],

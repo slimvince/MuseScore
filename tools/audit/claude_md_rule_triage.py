@@ -124,13 +124,19 @@ TRIAGE: dict[str, tuple[str, str]] = {
                       "`tools/audit/process_check.py` reports a missing self-check section "
                       "(D-434). Whether the check was actually run over the diff is not "
                       "mechanical."),
-    "D-197": (OWED, "Grouped with D-198, D-199 and D-316: a check that each recorded local "
-                    "patch is still present in the file it patches. All four are stated as "
-                    "do-not-revert against a dependency update, which is precisely the silent "
-                    "failure a check catches and a reader does not. **This is the strongest "
-                    "candidate in the owed set.**"),
-    "D-198": (OWED, "See D-197 — the same check covers all four local patches."),
-    "D-199": (OWED, "See D-197 — the same check covers all four local patches."),
+    "D-197": (EXISTS, "BUILT at phase 1q: `tools/audit/local_patches_check.py` verifies each "
+                      "recorded patch is present at HEAD, deriving its patch list from "
+                      "`CLAUDE.md`'s own section so a newly recorded patch is covered without a "
+                      "code change, and STOPPING on a recorded patch it has no marker for. "
+                      "Established at `tools/audit/local_patches_establishment.json` by "
+                      "detecting deliberately unpatched content. PARTIAL for THIS entry: D-197 "
+                      "is the FORK-LOCAL distribution constraint on D-199's patch, not a patch "
+                      "of its own, and no check enforces a distribution constraint — a push is "
+                      "the act it forbids."),
+    "D-198": (EXISTS, "See D-197 — the same check covers the recorded patches. CLAUDE.md's "
+                      "section carries THREE patch subsections; the four entries here include "
+                      "D-197, which is a disposition rather than a patch."),
+    "D-199": (EXISTS, "See D-197 — the same check covers the recorded patches."),
     "D-200": (KNOWLEDGE, "A sequencing rule about when a trade-off may be considered."),
     "D-203": (KNOWLEDGE, "A ruling about what another rule permits."),
     "D-204": (KNOWLEDGE, "Whether two faults share a cause is the diagnosis itself."),
@@ -162,15 +168,24 @@ TRIAGE: dict[str, tuple[str, str]] = {
                     "could refuse to measure against material not marked gate-tier. The rule "
                     "names exactly that condition, and nothing enforces it — a newly arrived "
                     "corpus is kept out of the gate by discipline alone."),
-    "D-316": (OWED, "See D-197 — the same check covers all four local patches."),
-    "D-430": (EXISTS, "`tools/audit/decisions/gen_section_homes.py --check` re-derives every "
-                      "staged section home from its document's own headings."),
-    "D-432": (EXISTS, "MEASUREMENT ONLY, and deliberately: "
-                      "`tools/audit/decisions/gen_phase1p_delegation_bar.py` grades every "
-                      "delegation and reports what the bar would move. It applies nothing — "
-                      "the application is stopped at `OPEN_ITEMS.md` OI-291."),
+    "D-316": (EXISTS, "See D-197 — the same check covers the recorded patches."),
+    "D-430": (EXISTS, "`tools/audit/decisions/gen_home_classification.py --check` re-derives "
+                      "every entry's section home from its document's own headings, and the "
+                      "class the criterion gives it. (It replaced `gen_section_homes.py`, which "
+                      "applied this ruling to a staged subset.)"),
+    "D-432": (EXISTS, "APPLIED at phase 1q by the same tool as D-430: the bar's per-document "
+                      "form grade is authored once in "
+                      "`tools/audit/decisions/gen_phase1p_delegation_bar.py`'s FORMS table, "
+                      "whose anchors are LOCATED in the delegating file on every run, so a "
+                      "delegation that moves or is reworded stops the pass rather than passing "
+                      "a stale citation."),
     "D-433": (EXISTS, "Same tool as D-432; the shelving question never enters its verdict, "
                       "which is what the ruling says."),
+    "D-435": (EXISTS, "The two roles are separate inputs to the same pass and cannot be "
+                      "conflated by it: the DELEGATING side is the fixed list of three "
+                      "user-ratified surfaces the pass searches, and the TARGET side is the "
+                      "home document being graded. A surface being in the first list gives it "
+                      "no standing in the second."),
 }
 
 
@@ -221,15 +236,27 @@ def main() -> int:
             "count": len(owed),
             "rowed_at": "OPEN_ITEMS.md OI-292",
             "ids": [r["id"] for r in owed],
-            "strongest_candidate": "D-197/D-198/D-199/D-316 — the four local patches. All four "
-                                   "are stated as do-not-revert against a dependency update, "
-                                   "which is a silent failure a check catches and a reader "
-                                   "does not.",
+            "strongest_candidate": "BUILT at phase 1q. It was D-197/D-198/D-199/D-316, the "
+                                   "local patches, stated as do-not-revert against a dependency "
+                                   "update — the silent failure a check catches and a reader "
+                                   "does not. `tools/audit/local_patches_check.py` now covers "
+                                   "them, so they have left the defect set; what remains of "
+                                   "D-197 is its distribution constraint, which no check can "
+                                   "enforce.",
         },
-        "what_was_executed": "NOTHING. No CLAUDE.md text was retired. Two mechanisms were "
-                             "BUILT in this wave and are recorded above against the rules they "
-                             "cover (D-196, D-253); neither let any prose be deleted, and that "
-                             "is stated rather than glossed.",
+        "what_was_executed": "NO CLAUDE.md TEXT WAS RETIRED, at phase 1p or at phase 1q. That "
+                             "was recorded here as a failure under the test then in force — a "
+                             "mechanism must retire the prose it replaces, or it is apparatus "
+                             "growth — and the USER WITHDREW THAT TEST on 2026-08-03 as a "
+                             "structural proxy standing in for a behavioral quantity, "
+                             "unvalidated (#17d). The test from here is three measured "
+                             "conditions (register entry D-436, homed at "
+                             "cowork_audit_protocol.md): runs automatically with no human step; "
+                             "a measured detection rate against known instances; a measured "
+                             "false-positive rate at or near zero. Four mechanisms now stand "
+                             "against rules in this table (D-196, D-253, D-430/D-432, "
+                             "D-197's group), each with an establishment artifact; none retires "
+                             "prose, and under D-436 that is no longer a defect.",
         "rules": rows,
     }
     text = json.dumps(artifact, indent=2, ensure_ascii=False) + "\n"

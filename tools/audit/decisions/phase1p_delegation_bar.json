@@ -1,5 +1,7 @@
 {
   "purpose": "phase 1p — the delegation bar (W2) measured over the whole home population, the pre-apply check the dispatch orders, and the §8c mixed-section figure Task 1 rows. NOTHING IS APPLIED HERE.",
+  "this_is_a_pre_apply_record": "The class figures below are the ones the check was RUN AGAINST, read from each entry's `home_section.class_before_phase1q` — the value the phase-1q pass records once and never overwrites. The user ruled the bar APPLIED on 2026-08-03, so the register's PRESENT classes are the post-apply ones and are at `tools/audit/decisions/phase1q_reclassification.json`. Recomputing this artifact from the present classes would report that the prediction holds and destroy the finding OI-291 and D-432 both cite (#12).",
+  "section_level_consequence_moved": "The block that stood here reported what the section-level criterion would do to the five documents then at section granularity. It is SUPERSEDED, not deleted: the phase-1q pass computes it for every entry of the population, at `tools/audit/decisions/phase1q_reclassification.json` → `by_document` and `entries`. Two computations of one thing is the duplication #6 forbids.",
   "the_bar": {
     "admitted_forms": [
       "explicit-delegation-clause",
@@ -67,7 +69,7 @@
       "mentions_in_ratified_surfaces": [
         "ARCHITECTURE.md:319",
         "CLAUDE.md:178",
-        "CLAUDE.md:422"
+        "CLAUDE.md:433"
       ]
     },
     {
@@ -443,7 +445,7 @@
       "current_contract_home": 4,
       "current_gap": 0,
       "form": "explicit-delegation-clause",
-      "delegation_citation": "CLAUDE.md:687",
+      "delegation_citation": "CLAUDE.md:698",
       "delegation_line": "**Read `docs/scoring_model.md` at the start of any session that touches scoring",
       "why_this_grade": "A whole standing section that makes the document a mandatory read, calls it the authoritative reference for the scoring pipeline, and binds a same-commit sync rule to it. Stronger than any single clause in the bar's examples.",
       "verdict": "ADMIT",
@@ -451,12 +453,12 @@
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
         "ARCHITECTURE.md:2149",
-        "CLAUDE.md:683",
-        "CLAUDE.md:685",
-        "CLAUDE.md:687",
+        "CLAUDE.md:694",
+        "CLAUDE.md:696",
         "CLAUDE.md:698",
-        "CLAUDE.md:706",
-        "CLAUDE.md:725"
+        "CLAUDE.md:709",
+        "CLAUDE.md:717",
+        "CLAUDE.md:736"
       ]
     },
     {
@@ -501,7 +503,8 @@
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
         "ARCHITECTURE.md:1485",
-        "CLAUDE.md:130"
+        "CLAUDE.md:130",
+        "CLAUDE.md:213"
       ]
     },
     {
@@ -623,457 +626,6 @@
     ],
     "entries_affected_without_the_bar": 6,
     "verdict": "STOP — the prediction is REFUTED"
-  },
-  "section_level_consequence": {
-    "scope": "only the entries already at SECTION granularity (the staged population of D-430). Every other entry is reported at DOCUMENT level above; bringing it to section granularity is a separate act.",
-    "by_document": {
-      "cowork_prefit_gates.md": {
-        "entries": 5,
-        "would_move": 5,
-        "to_contract_home": 0,
-        "to_gap": 5
-      },
-      "cowork_layer5_function_design.md": {
-        "entries": 8,
-        "would_move": 8,
-        "to_contract_home": 0,
-        "to_gap": 8
-      },
-      "cowork_score_census.md": {
-        "entries": 17,
-        "would_move": 0,
-        "to_contract_home": 0,
-        "to_gap": 0
-      },
-      "cowork_voiceleading_axis_design.md": {
-        "entries": 13,
-        "would_move": 10,
-        "to_contract_home": 0,
-        "to_gap": 10
-      },
-      "cowork_notation_adoption_increment.md": {
-        "entries": 3,
-        "would_move": 0,
-        "to_contract_home": 0,
-        "to_gap": 0
-      }
-    },
-    "entries": [
-      {
-        "id": "D-270",
-        "document": "cowork_prefit_gates.md",
-        "section": "“The held-out evaluation protocol”",
-        "delegated_section": false,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": true
-      },
-      {
-        "id": "D-271",
-        "document": "cowork_prefit_gates.md",
-        "section": "“The capacity budget”",
-        "delegated_section": false,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": true
-      },
-      {
-        "id": "D-272",
-        "document": "cowork_prefit_gates.md",
-        "section": "the opening block (above the first section heading)",
-        "delegated_section": false,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": true
-      },
-      {
-        "id": "D-273",
-        "document": "cowork_prefit_gates.md",
-        "section": "“The robust-stop architecture-adoption protocol”",
-        "delegated_section": false,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": true
-      },
-      {
-        "id": "D-274",
-        "document": "cowork_prefit_gates.md",
-        "section": "“The sanctioned dual path and the retirement map”",
-        "delegated_section": false,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": true
-      },
-      {
-        "id": "D-335",
-        "document": "cowork_layer5_function_design.md",
-        "section": "§9",
-        "delegated_section": false,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": true
-      },
-      {
-        "id": "D-336",
-        "document": "cowork_layer5_function_design.md",
-        "section": "§9",
-        "delegated_section": false,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": true
-      },
-      {
-        "id": "D-337",
-        "document": "cowork_layer5_function_design.md",
-        "section": "§9",
-        "delegated_section": false,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": true
-      },
-      {
-        "id": "D-338",
-        "document": "cowork_layer5_function_design.md",
-        "section": "§9",
-        "delegated_section": false,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": true
-      },
-      {
-        "id": "D-339",
-        "document": "cowork_layer5_function_design.md",
-        "section": "§9",
-        "delegated_section": false,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": true
-      },
-      {
-        "id": "D-340",
-        "document": "cowork_layer5_function_design.md",
-        "section": "§7",
-        "delegated_section": false,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": true
-      },
-      {
-        "id": "D-341",
-        "document": "cowork_layer5_function_design.md",
-        "section": "§15",
-        "delegated_section": false,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": true
-      },
-      {
-        "id": "D-342",
-        "document": "cowork_layer5_function_design.md",
-        "section": "§11",
-        "delegated_section": false,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": true
-      },
-      {
-        "id": "D-359",
-        "document": "cowork_score_census.md",
-        "section": "§1",
-        "delegated_section": false,
-        "current_class": "gap",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": false
-      },
-      {
-        "id": "D-360",
-        "document": "cowork_score_census.md",
-        "section": "§3",
-        "delegated_section": false,
-        "current_class": "gap",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": false
-      },
-      {
-        "id": "D-361",
-        "document": "cowork_score_census.md",
-        "section": "§4",
-        "delegated_section": false,
-        "current_class": "gap",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": false
-      },
-      {
-        "id": "D-362",
-        "document": "cowork_score_census.md",
-        "section": "§8",
-        "delegated_section": false,
-        "current_class": "gap",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": false
-      },
-      {
-        "id": "D-363",
-        "document": "cowork_score_census.md",
-        "section": "§8",
-        "delegated_section": false,
-        "current_class": "gap",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": false
-      },
-      {
-        "id": "D-364",
-        "document": "cowork_score_census.md",
-        "section": "§8b",
-        "delegated_section": false,
-        "current_class": "gap",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": false
-      },
-      {
-        "id": "D-365",
-        "document": "cowork_score_census.md",
-        "section": "§8c",
-        "delegated_section": true,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "contract-home",
-        "moves": false
-      },
-      {
-        "id": "D-366",
-        "document": "cowork_score_census.md",
-        "section": "§8c",
-        "delegated_section": true,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "contract-home",
-        "moves": false
-      },
-      {
-        "id": "D-367",
-        "document": "cowork_score_census.md",
-        "section": "§8c",
-        "delegated_section": true,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "contract-home",
-        "moves": false
-      },
-      {
-        "id": "D-368",
-        "document": "cowork_score_census.md",
-        "section": "§8c",
-        "delegated_section": true,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "contract-home",
-        "moves": false
-      },
-      {
-        "id": "D-369",
-        "document": "cowork_score_census.md",
-        "section": "§8c",
-        "delegated_section": true,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "contract-home",
-        "moves": false
-      },
-      {
-        "id": "D-370",
-        "document": "cowork_score_census.md",
-        "section": "§8c",
-        "delegated_section": true,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "contract-home",
-        "moves": false
-      },
-      {
-        "id": "D-371",
-        "document": "cowork_score_census.md",
-        "section": "§8c",
-        "delegated_section": true,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "contract-home",
-        "moves": false
-      },
-      {
-        "id": "D-372",
-        "document": "cowork_score_census.md",
-        "section": "§8c",
-        "delegated_section": true,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "contract-home",
-        "moves": false
-      },
-      {
-        "id": "D-373",
-        "document": "cowork_score_census.md",
-        "section": "§8c",
-        "delegated_section": true,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "contract-home",
-        "moves": false
-      },
-      {
-        "id": "D-374",
-        "document": "cowork_score_census.md",
-        "section": "§8c",
-        "delegated_section": true,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "contract-home",
-        "moves": false
-      },
-      {
-        "id": "D-375",
-        "document": "cowork_score_census.md",
-        "section": "§8c",
-        "delegated_section": true,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "contract-home",
-        "moves": false
-      },
-      {
-        "id": "D-388",
-        "document": "cowork_voiceleading_axis_design.md",
-        "section": "§9",
-        "delegated_section": false,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": true
-      },
-      {
-        "id": "D-389",
-        "document": "cowork_voiceleading_axis_design.md",
-        "section": "§9",
-        "delegated_section": false,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": true
-      },
-      {
-        "id": "D-390",
-        "document": "cowork_voiceleading_axis_design.md",
-        "section": "§9",
-        "delegated_section": false,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": true
-      },
-      {
-        "id": "D-391",
-        "document": "cowork_voiceleading_axis_design.md",
-        "section": "§9",
-        "delegated_section": false,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": true
-      },
-      {
-        "id": "D-392",
-        "document": "cowork_voiceleading_axis_design.md",
-        "section": "§9",
-        "delegated_section": false,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": true
-      },
-      {
-        "id": "D-393",
-        "document": "cowork_voiceleading_axis_design.md",
-        "section": "§5.3",
-        "delegated_section": true,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "contract-home",
-        "moves": false
-      },
-      {
-        "id": "D-394",
-        "document": "cowork_voiceleading_axis_design.md",
-        "section": "§5.1",
-        "delegated_section": false,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": true
-      },
-      {
-        "id": "D-395",
-        "document": "cowork_voiceleading_axis_design.md",
-        "section": "§5.3",
-        "delegated_section": true,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "contract-home",
-        "moves": false
-      },
-      {
-        "id": "D-396",
-        "document": "cowork_voiceleading_axis_design.md",
-        "section": "§8",
-        "delegated_section": false,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": true
-      },
-      {
-        "id": "D-397",
-        "document": "cowork_voiceleading_axis_design.md",
-        "section": "§16",
-        "delegated_section": false,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": true
-      },
-      {
-        "id": "D-398",
-        "document": "cowork_voiceleading_axis_design.md",
-        "section": "§15",
-        "delegated_section": false,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": true
-      },
-      {
-        "id": "D-399",
-        "document": "cowork_voiceleading_axis_design.md",
-        "section": "§5.3",
-        "delegated_section": true,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "contract-home",
-        "moves": false
-      },
-      {
-        "id": "D-400",
-        "document": "cowork_voiceleading_axis_design.md",
-        "section": "§16",
-        "delegated_section": false,
-        "current_class": "contract-home",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": true
-      },
-      {
-        "id": "D-424",
-        "document": "cowork_notation_adoption_increment.md",
-        "section": "the opening block (above the first section heading)",
-        "delegated_section": false,
-        "current_class": "gap",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": false
-      },
-      {
-        "id": "D-425",
-        "document": "cowork_notation_adoption_increment.md",
-        "section": "§4",
-        "delegated_section": false,
-        "current_class": "gap",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": false
-      },
-      {
-        "id": "D-426",
-        "document": "cowork_notation_adoption_increment.md",
-        "section": "§7",
-        "delegated_section": true,
-        "current_class": "gap",
-        "class_under_the_bar_plus_D430": "gap",
-        "moves": false
-      }
-    ]
   },
   "census_8c_mixed_section": {
     "needs_vector_table": {
