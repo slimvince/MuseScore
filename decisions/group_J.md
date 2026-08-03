@@ -17,7 +17,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3364-3365`
+**Home.** `ARCHITECTURE.md:3366-3367`
 
 **Provenance.** ARCHITECTURE.md:3253-3257; consistent with D-016
 
@@ -32,7 +32,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3065-3066`
+**Home.** `ARCHITECTURE.md:3067-3068`
 
 **Provenance.** ARCHITECTURE.md:2918-2958
 
@@ -47,13 +47,13 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3965-3966`
+**Home.** `ARCHITECTURE.md:3967-3968`
 
 **Provenance.** ARCHITECTURE.md:3850-3858; an instance of D-074
 
 ### D-089 — The legacy confidence exposure gates - 0.5 tentative, 0.8 assertive
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > - Above 0.8 — display without qualifier
 > - 0.5–0.8 — append "?" to key/mode label
@@ -65,7 +65,7 @@
 
 **Status.** SUPERSEDED BY D-018 · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3650-3652`
+**Home.** `ARCHITECTURE.md:3652-3654`
 
 **Provenance.** The record arm replaces the 0.5/0.8 literals with the fitted nats constants (ARCHITECTURE.md:175-177); the literals are legacy-arm-only (sectionanalyzer.cpp::legacyKeyExposureBucket)
 
@@ -80,7 +80,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3670-3671`
+**Home.** `ARCHITECTURE.md:3672-3673`
 
 **Provenance.** ARCHITECTURE.md:3549-3601
 
@@ -95,7 +95,7 @@
 
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3981-3982`
+**Home.** `ARCHITECTURE.md:3983-3984`
 
 **Provenance.** open_items/OI-112 already records this preset-gating as stale; open_items/OI-201 records that the record arm collapses the family to a plain major triad symbol ★ Verbatim RE-TAKEN 2026-08-02 (the phase-1 truth-sync): §5.11's assertion 'Gated to Standard and Baroque presets only' was corrected, since the formatter explicitly defers that gate for want of preset context (`chordsymbolformatter.cpp:882-883`) and emits the labels under every preset (OPEN_ITEMS OI-112(c) discharged). The decision's own words survive at the home, quoted inside the correction.
 
@@ -117,7 +117,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:693-699`
+**Home.** `ARCHITECTURE.md:695-701`
 
 **Provenance.** ARCHITECTURE.md:664-674 (Rule 16), restated in the retired-session record at STATUS_ARCHIVE.md:2247 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -135,7 +135,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:6310-6312`
+**Home.** `ARCHITECTURE.md:6312-6314`
 
 **Provenance.** Recorded in `cowork_handoff_archive.md` (the standing-records block) as item E-14 of `cowork_product_tool_register.md`, with a note that a pointer into the architecture document was owed at its next edit. This pass found no such pointer in the register's own home census, so the owed act appears undischarged. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written at the head of `ARCHITECTURE.md` §12 as the governing requirement over the user interface. This also discharges the pointer-into-the-architecture-document act the archive recorded as owed at its next edit. Former home preserved (#12): `cowork_handoff_archive.md:2507`, the standing-records block, as item E-14 of `cowork_product_tool_register.md`.
 
@@ -153,7 +153,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:983-985`
+**Home.** `ARCHITECTURE.md:985-987`
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md`; the design memo it names, `docs/extension_stripping_policy.md`, exists on disk. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written into `ARCHITECTURE.md` §2.15 as a cross-cutting analysis contract, which is that section's declared scope. Former home preserved (#12): `STATUS_ARCHIVE.md:943`.
 

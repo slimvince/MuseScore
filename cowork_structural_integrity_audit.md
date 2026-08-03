@@ -313,6 +313,16 @@ Stage-5 if first"):**
 **Stage 4 — R9 (after the E4 removals; OWED refactor #1):**
 - The `chordanalyzer.cpp` file split — **"split once"** after the removals, exactly as parked.
 
+> **★ CORRECTION OF STATE — "exactly as parked" was already false when this audit was written**
+> (annotation 2026-08-03, CC, on the user's ruling of that date; `OPEN_ITEMS.md` **OI-286**, register
+> entry **D-427**). The split was committed as `41f7c65f63` on **2026-06-17**, twenty days before this
+> audit of 2026-07-07 — 2,178 lines into five sibling translation units, verified at the object.
+> "Split once" holds in the sense that exactly one split has happened; the *sequencing* it states
+> (after the E4 removals) was not followed, and no second split is licensed by that. The line is
+> preserved unedited (#12). What Stage 4 still owes of refactor #1 is the **iteration-API renames**
+> (**D-428**), whose subject includes live Layer-1.5 code and therefore does not retire with the
+> legacy path.
+
 **In one line:** *pre-L5 = FQ-1, FQ-3, FQ-5, FQ-6, FQ-7 (portable unification wins); part-of-L5/E4 = FQ-2,
 FQ-4, FQ-8 (the legacy-path tangles the decoder + §6-block dissolution retire); then R9 splits the file
 last.* This adds no new stage — it slots the audit's fixes into the plan the roadmap already has.

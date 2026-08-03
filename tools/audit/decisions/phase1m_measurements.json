@@ -1,0 +1,2023 @@
+{
+  "header": {
+    "purpose": "phase-1m Tasks 5 and 6 — the KIND test measured and NOT applied, and the reading yield measured with the owed partition ranked. Nothing here changes any entry's home class or reorders any reading list.",
+    "generator": "tools/audit/decisions/gen_phase1m_measurements.py",
+    "authored_inputs": [
+      "KIND",
+      "DELEGATION",
+      "READ_WAVES"
+    ],
+    "derived_from": [
+      "backbone_decisions.json",
+      "decision_clusters.json",
+      "cluster_dispositions.json",
+      "gen_phase1g_triage.py",
+      "the three user-ratified surfaces",
+      "the files themselves"
+    ],
+    "read_wave_sources": {
+      "1d": "`gen_phase1g_triage.py` PHASE1D_READ, sourced to `cc_phase1d_enumeration_wave_report.md`'s Task-1 table",
+      "1f": "`gen_phase1g_triage.py` PHASE1F_READ, sourced to the OI-207 dated note of 2026-08-02 (`docs/beam_widening_design.md` is in BOTH lists)",
+      "1g": "`gen_phase1g_triage.py` TASK2_FULL_READ — the five the phase-1g dispatch sent to a full read in the same session",
+      "1h": "`open_items/OI-207.md:223-229` — the phase-1h note's own read table",
+      "1i": "`open_items/OI-207.md`, the phase-1i dated note (D-401…D-405)",
+      "1j": "`open_items/OI-207.md`, the phase-1j dated note (D-406…D-414)",
+      "1k": "`open_items/OI-207.md:1052-1055` — the phase-1k note (D-415…D-423)",
+      "1l": "`open_items/OI-207.md:1119-1122` — the phase-1l note (D-424…D-426)"
+    }
+  },
+  "task5_kind_test": {
+    "population_entries": 134,
+    "population_documents": 22,
+    "current_classes": {
+      "contract-home": 85,
+      "gap": 49
+    },
+    "verdict_totals": {
+      "EXCLUDE": 40,
+      "ADMIT": 65,
+      "AMBIGUOUS": 29
+    },
+    "entries_moving_in": 16,
+    "entries_moving_out": 10,
+    "entries_ambiguous": 29,
+    "moves_in": [
+      [
+        "cowork_progression_schema_dictionary.md",
+        9
+      ],
+      [
+        "cowork_joint_key_chord_design.md",
+        4
+      ],
+      [
+        "cowork_engage_arc_plan.md",
+        3
+      ]
+    ],
+    "moves_out": [
+      [
+        "cowork_architecture_reassessment.md",
+        4
+      ],
+      [
+        "docs/redesign_plan.md",
+        4
+      ],
+      [
+        "docs/iteration_path1_summary.md",
+        2
+      ]
+    ],
+    "ambiguous_documents": [
+      [
+        "cowork_voiceleading_axis_design.md",
+        13,
+        13,
+        0
+      ],
+      [
+        "cowork_layer5_function_design.md",
+        8,
+        8,
+        0
+      ],
+      [
+        "cowork_prefit_gates.md",
+        5,
+        5,
+        0
+      ],
+      [
+        "cowork_notation_adoption_increment.md",
+        3,
+        0,
+        3
+      ]
+    ],
+    "rows": [
+      {
+        "document": "cowork_score_census.md",
+        "entries": 17,
+        "entry_ids": [
+          "D-359",
+          "D-360",
+          "D-361",
+          "D-362",
+          "D-363",
+          "D-364",
+          "D-365",
+          "D-366",
+          "D-367",
+          "D-368",
+          "D-369",
+          "D-370",
+          "D-371",
+          "D-372",
+          "D-373",
+          "D-374",
+          "D-375"
+        ],
+        "current_contract_home": 0,
+        "current_gap": 17,
+        "kind": "records-findings",
+        "kind_citation": "`:1-3` 'The score & corpus census — once-and-for-all, enumerated to closure … The definitive census of obtainable symbolic scores and harmonic ground-truth corpora'. A census. (See `kind_unclear_notes` — §8c inside it does state a rule.)",
+        "delegation": "pass",
+        "delegation_citation": "`ARCHITECTURE.md:317` 'The constraint's own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c', inside a user-ratified passage; and `CLAUDE.md:388`",
+        "verdict": "EXCLUDE",
+        "movement": "none",
+        "mentions_in_ratified_surfaces": [
+          "ARCHITECTURE.md:319",
+          "CLAUDE.md:388"
+        ]
+      },
+      {
+        "document": "cowork_layer3_keymode_design.md",
+        "entries": 16,
+        "entry_ids": [
+          "D-343",
+          "D-344",
+          "D-345",
+          "D-346",
+          "D-347",
+          "D-348",
+          "D-349",
+          "D-350",
+          "D-351",
+          "D-352",
+          "D-353",
+          "D-354",
+          "D-355",
+          "D-356",
+          "D-357",
+          "D-358"
+        ],
+        "current_contract_home": 16,
+        "current_gap": 0,
+        "kind": "states-rules",
+        "kind_citation": "`:1` 'Architectural Layer 3 — KEY/MODE — Architecture & Design'; SIGNED (user, 2026-06-22). A layer specification: it states how the layer must behave.",
+        "delegation": "pass",
+        "delegation_citation": "`ARCHITECTURE.md:1329` 'The ratified contract for this layer is …'",
+        "verdict": "ADMIT",
+        "movement": "none",
+        "mentions_in_ratified_surfaces": [
+          "ARCHITECTURE.md:1331",
+          "ARCHITECTURE.md:1347",
+          "ARCHITECTURE.md:1394"
+        ]
+      },
+      {
+        "document": "cowork_voiceleading_axis_design.md",
+        "entries": 13,
+        "entry_ids": [
+          "D-388",
+          "D-389",
+          "D-390",
+          "D-391",
+          "D-392",
+          "D-393",
+          "D-394",
+          "D-395",
+          "D-396",
+          "D-397",
+          "D-398",
+          "D-399",
+          "D-400"
+        ],
+        "current_contract_home": 13,
+        "current_gap": 0,
+        "kind": "states-rules",
+        "kind_citation": "`:1` 'The voice-leading axis (axis 2) — architecture and foundation components (design)'; AS-BUILT + SIGNED (user, 2026-07-03). A design.",
+        "delegation": "unclear",
+        "delegation_citation": "`ARCHITECTURE.md:900` 'Criterion + build home: `…` §0/§5.3 (AS-BUILT)', `:928` 'design-gated (`…`)', `:1507`. Each names a concern; none is the 'the ratified contract for X is Y' form. Does 'build home' delegate, or cite?",
+        "verdict": "AMBIGUOUS",
+        "movement": "none",
+        "mentions_in_ratified_surfaces": [
+          "ARCHITECTURE.md:902",
+          "ARCHITECTURE.md:930",
+          "ARCHITECTURE.md:1509"
+        ]
+      },
+      {
+        "document": "cowork_progression_schema_dictionary.md",
+        "entries": 9,
+        "entry_ids": [
+          "D-406",
+          "D-407",
+          "D-408",
+          "D-409",
+          "D-410",
+          "D-411",
+          "D-412",
+          "D-413",
+          "D-414"
+        ],
+        "current_contract_home": 0,
+        "current_gap": 9,
+        "kind": "states-rules",
+        "kind_citation": "`:1` 'The Harmonic Vocabulary — progression & substitution knowledge base (component spec)'; `:3` 'component spec … Specified by rule and content.' A component specification — the kind the dispatch names explicitly.",
+        "delegation": "pass",
+        "delegation_citation": "`ARCHITECTURE.md:4591` 'formalised as an independent knowledge-base component with its own spec (`…`)'; `:4539` declines to restate its content in terms",
+        "verdict": "ADMIT",
+        "movement": "MOVES IN",
+        "mentions_in_ratified_surfaces": [
+          "ARCHITECTURE.md:340",
+          "ARCHITECTURE.md:4539",
+          "ARCHITECTURE.md:4541",
+          "ARCHITECTURE.md:4547",
+          "ARCHITECTURE.md:4571",
+          "ARCHITECTURE.md:4581",
+          "ARCHITECTURE.md:4593"
+        ]
+      },
+      {
+        "document": "cowork_layer5_engagement_design.md",
+        "entries": 8,
+        "entry_ids": [
+          "D-380",
+          "D-381",
+          "D-382",
+          "D-383",
+          "D-384",
+          "D-385",
+          "D-386",
+          "D-387"
+        ],
+        "current_contract_home": 8,
+        "current_gap": 0,
+        "kind": "states-rules",
+        "kind_citation": "`:1` 'Layer-5 engagement design — Part 1: the CARRY and the SELECTION architecture'; `:2` 'READ-ONLY architectural design pass'. A design: it states how engaged Layer 5 must read the carry and select among the carried readings.",
+        "delegation": "pass",
+        "delegation_citation": "`ARCHITECTURE.md:1483` the delegation pointer, AND independently `cowork_engage_arc_plan.md:41`, `:46`, `:53-55`",
+        "verdict": "ADMIT",
+        "movement": "none",
+        "mentions_in_ratified_surfaces": [
+          "ARCHITECTURE.md:1485",
+          "cowork_engage_arc_plan.md:41",
+          "cowork_engage_arc_plan.md:46",
+          "cowork_engage_arc_plan.md:55"
+        ]
+      },
+      {
+        "document": "cowork_layer5_function_design.md",
+        "entries": 8,
+        "entry_ids": [
+          "D-335",
+          "D-336",
+          "D-337",
+          "D-338",
+          "D-339",
+          "D-340",
+          "D-341",
+          "D-342"
+        ],
+        "current_contract_home": 8,
+        "current_gap": 0,
+        "kind": "states-rules",
+        "kind_citation": "`:1` 'Architectural Layer 5 — FUNCTION … — Architecture & Design'; SIGNED (user, 2026-06-26). A layer specification.",
+        "delegation": "unclear",
+        "delegation_citation": "`ARCHITECTURE.md:1480-1481` 'Full spec: `cowork_layer5_function_design.md`.' — two words of concern and nothing more, appended to a paragraph; compare `:1483` directly beneath it, which IS a delegation clause",
+        "verdict": "AMBIGUOUS",
+        "movement": "none",
+        "mentions_in_ratified_surfaces": [
+          "ARCHITECTURE.md:1483"
+        ]
+      },
+      {
+        "document": "cowork_bounded_context_design.md",
+        "entries": 7,
+        "entry_ids": [
+          "D-260",
+          "D-261",
+          "D-262",
+          "D-263",
+          "D-264",
+          "D-265",
+          "D-266"
+        ],
+        "current_contract_home": 7,
+        "current_gap": 0,
+        "kind": "states-rules",
+        "kind_citation": "`:1` 'Bounded context & selection-extension — cross-layer architecture & design'; SIGNED (user, 2026-07-02), and `:2-3` makes it a build GATE. A cross-layer contract.",
+        "delegation": "pass",
+        "delegation_citation": "`ARCHITECTURE.md:909-913` 'The ONE detailed cross-layer spec for this contract is …'",
+        "verdict": "ADMIT",
+        "movement": "none",
+        "mentions_in_ratified_surfaces": [
+          "ARCHITECTURE.md:912"
+        ]
+      },
+      {
+        "document": "cowork_layer4_chordsymbol_design.md",
+        "entries": 6,
+        "entry_ids": [
+          "D-329",
+          "D-330",
+          "D-331",
+          "D-332",
+          "D-333",
+          "D-334"
+        ],
+        "current_contract_home": 6,
+        "current_gap": 0,
+        "kind": "states-rules",
+        "kind_citation": "`:1` 'Architectural Layer 4 — CHORD SYMBOL (with NON-CHORD TONES) — Architecture & Design'; SIGNED (user, 2026-06-24). A layer specification.",
+        "delegation": "pass",
+        "delegation_citation": "`ARCHITECTURE.md:1405` 'The ratified contract for this layer is …'",
+        "verdict": "ADMIT",
+        "movement": "none",
+        "mentions_in_ratified_surfaces": [
+          "ARCHITECTURE.md:1407",
+          "ARCHITECTURE.md:1471"
+        ]
+      },
+      {
+        "document": "cowork_prefit_gates.md",
+        "entries": 5,
+        "entry_ids": [
+          "D-270",
+          "D-271",
+          "D-272",
+          "D-273",
+          "D-274"
+        ],
+        "current_contract_home": 5,
+        "current_gap": 0,
+        "kind": "states-rules",
+        "kind_citation": "`:1-5` 'The pre-fit gates for the joint estimator … the four protocols … changing any protocol constant hereafter is a protocol amendment (#22), not a tuning act.' Protocols are rules.",
+        "delegation": "unclear",
+        "delegation_citation": "`ARCHITECTURE.md:49` in a list of citations and `:280` 'Protocols ratified 2026-07-19 (`…`)' — attributions of where something was ratified, not instructions to read it instead of the section",
+        "verdict": "AMBIGUOUS",
+        "movement": "none",
+        "mentions_in_ratified_surfaces": [
+          "ARCHITECTURE.md:49",
+          "ARCHITECTURE.md:282"
+        ]
+      },
+      {
+        "document": "cowork_structural_integrity_audit.md",
+        "entries": 5,
+        "entry_ids": [
+          "D-401",
+          "D-402",
+          "D-403",
+          "D-404",
+          "D-405"
+        ],
+        "current_contract_home": 0,
+        "current_gap": 5,
+        "kind": "records-findings",
+        "kind_citation": "`:1-2` 'Structural-Integrity Audit … Status: read-only grounded catalogue'; `:5-6` 'Every fix named here is a later, separate, user-ratified refactor — this document queues them, it does not act.' An audit, by its own account.",
+        "delegation": "pass",
+        "delegation_citation": "`cowork_engage_arc_plan.md:4` (RATIFIED user 2026-07-07) 'It does not re-derive the fix details — those live in `cowork_structural_integrity_audit.md` (§3 fix-queue, §4 sequencing)'",
+        "verdict": "EXCLUDE",
+        "movement": "none",
+        "mentions_in_ratified_surfaces": [
+          "cowork_engage_arc_plan.md:4",
+          "cowork_engage_arc_plan.md:140"
+        ]
+      },
+      {
+        "document": "cowork_architecture_reassessment.md",
+        "entries": 4,
+        "entry_ids": [
+          "D-282",
+          "D-283",
+          "D-284",
+          "D-285"
+        ],
+        "current_contract_home": 4,
+        "current_gap": 0,
+        "kind": "records-findings",
+        "kind_citation": "`:1-2` 'Architecture & Implementation-Plan RE-ASSESSMENT (2026-06-20) … Status: PLANNING RE-ASSESSMENT — ITS FOUR META-FINDINGS WERE RULED SUPERSEDED'. It records findings; the findings themselves were ruled superseded (OI-270).",
+        "delegation": "fail",
+        "delegation_citation": "NOT NAMED in any of the three surfaces (re-derived mechanically this session)",
+        "verdict": "EXCLUDE",
+        "movement": "MOVES OUT",
+        "mentions_in_ratified_surfaces": []
+      },
+      {
+        "document": "cowork_joint_key_chord_design.md",
+        "entries": 4,
+        "entry_ids": [
+          "D-376",
+          "D-377",
+          "D-378",
+          "D-379"
+        ],
+        "current_contract_home": 0,
+        "current_gap": 4,
+        "kind": "states-rules",
+        "kind_citation": "`:1` 'The joint key-and-chord step — architecture design'. A design. The kind test does not ask whether it is shelved — that was the clause the kind test REPLACES.",
+        "delegation": "pass",
+        "delegation_citation": "`cowork_engage_arc_plan.md:44` 'arc #10 — the joint key-and-chord step (`…`)' — by name, for a stated concern",
+        "verdict": "ADMIT",
+        "movement": "MOVES IN",
+        "mentions_in_ratified_surfaces": [
+          "cowork_engage_arc_plan.md:44"
+        ]
+      },
+      {
+        "document": "docs/decoder_design.md",
+        "entries": 4,
+        "entry_ids": [
+          "D-325",
+          "D-326",
+          "D-327",
+          "D-328"
+        ],
+        "current_contract_home": 0,
+        "current_gap": 4,
+        "kind": "states-rules",
+        "kind_citation": "`:1-2` 'Stage 3 — Chord-Path Decoder Design … design-only, no production code'. A design.",
+        "delegation": "fail",
+        "delegation_citation": "NOT NAMED in any of the three surfaces (re-derived mechanically this session)",
+        "verdict": "EXCLUDE",
+        "movement": "none",
+        "mentions_in_ratified_surfaces": []
+      },
+      {
+        "document": "docs/implementation_roadmap.md",
+        "entries": 4,
+        "entry_ids": [
+          "D-419",
+          "D-421",
+          "D-422",
+          "D-423"
+        ],
+        "current_contract_home": 0,
+        "current_gap": 4,
+        "kind": "kind-unclear",
+        "kind_citation": "BOTH at once. `:5-6` 'This document is the single tracker ensuring every review conclusion is addressed' — a tracking surface; `:10-11` 'Standing rule for this roadmap: an item may only be marked done with the evidence listed in its verify column' and `:141-164` the user-ratified engage criteria + retirement map — rules. The dispatch's own §6.1 names this population.",
+        "delegation": "fail",
+        "delegation_citation": "NOT NAMED in any of the three surfaces (re-derived mechanically this session) — though it calls itself 'the single tracker'",
+        "verdict": "EXCLUDE",
+        "movement": "none",
+        "mentions_in_ratified_surfaces": []
+      },
+      {
+        "document": "docs/redesign_plan.md",
+        "entries": 4,
+        "entry_ids": [
+          "D-317",
+          "D-318",
+          "D-319",
+          "D-320"
+        ],
+        "current_contract_home": 4,
+        "current_gap": 0,
+        "kind": "kind-unclear",
+        "kind_citation": "A plan by kind (`:1` 'Redesign Plan — Layered Comprehensive Evidence Architecture'), converted to a record by a USER-RATIFIED banner (`:2-4`, ratified 2026-08-03): 'SUPERSEDED AS A PLAN — RETAINED AS THE RECORD OF WHAT WAS TRIED AND CLOSED'. Kind and status disagree, and the banner here is not a self-description but a ruling.",
+        "delegation": "fail",
+        "delegation_citation": "Named three times (`ARCHITECTURE.md:775`, `:789`, `:800`), each a citation ('Design reference: …'), and two sit inside blocks `ARCHITECTURE.md:783-786` itself banners SUPERSEDED, 'retained only as history — do not build to it'",
+        "verdict": "EXCLUDE",
+        "movement": "MOVES OUT",
+        "mentions_in_ratified_surfaces": [
+          "ARCHITECTURE.md:777",
+          "ARCHITECTURE.md:791",
+          "ARCHITECTURE.md:802"
+        ]
+      },
+      {
+        "document": "docs/scoring_model.md",
+        "entries": 4,
+        "entry_ids": [
+          "D-321",
+          "D-322",
+          "D-323",
+          "D-324"
+        ],
+        "current_contract_home": 4,
+        "current_gap": 0,
+        "kind": "states-rules",
+        "kind_citation": "`:2` 'LIVE MANDATORY REFERENCE — the scoring pipeline's one specification'. A specification. (Its §8 constraints are stated to remain in force; that the mechanism it describes is dormant is a subject question, not a kind question.)",
+        "delegation": "pass",
+        "delegation_citation": "`CLAUDE.md:651-691` — a standing section naming it, making it a mandatory read and binding a same-commit sync rule to it",
+        "verdict": "ADMIT",
+        "movement": "none",
+        "mentions_in_ratified_surfaces": [
+          "ARCHITECTURE.md:2149",
+          "CLAUDE.md:649",
+          "CLAUDE.md:651",
+          "CLAUDE.md:653",
+          "CLAUDE.md:664",
+          "CLAUDE.md:672",
+          "CLAUDE.md:691"
+        ]
+      },
+      {
+        "document": "cowork_confidence_contract.md",
+        "entries": 3,
+        "entry_ids": [
+          "D-267",
+          "D-268",
+          "D-269"
+        ],
+        "current_contract_home": 3,
+        "current_gap": 0,
+        "kind": "states-rules",
+        "kind_citation": "`:3-5` 'This is a **contract document** — it fixes definitions, normalization requirements, comparison rules, and calibration obligations'. It says in terms that it states what shall be.",
+        "delegation": "pass",
+        "delegation_citation": "`ARCHITECTURE.md:948-949` '…are stated in full in `cowork_confidence_contract.md`'",
+        "verdict": "ADMIT",
+        "movement": "none",
+        "mentions_in_ratified_surfaces": [
+          "ARCHITECTURE.md:857",
+          "ARCHITECTURE.md:950",
+          "ARCHITECTURE.md:951"
+        ]
+      },
+      {
+        "document": "cowork_engage_arc_plan.md",
+        "entries": 3,
+        "entry_ids": [
+          "D-278",
+          "D-279",
+          "D-311"
+        ],
+        "current_contract_home": 0,
+        "current_gap": 3,
+        "kind": "states-rules",
+        "kind_citation": "`:1-5` 'The Engage-Arc Path Forward — ratified, principle-grounded … The standing reference for the order of work … This document fixes the **order and the principle behind each step**'. A binding plan — the kind the dispatch names explicitly.",
+        "delegation": "pass",
+        "delegation_citation": "`CLAUDE.md:130` names it for a stated concern — the MEASURE-BEFORE-BUILD gate, 'now the middle stage of the #17 funnel'",
+        "verdict": "ADMIT",
+        "movement": "MOVES IN",
+        "mentions_in_ratified_surfaces": [
+          "ARCHITECTURE.md:1485",
+          "CLAUDE.md:130"
+        ]
+      },
+      {
+        "document": "cowork_notation_adoption_increment.md",
+        "entries": 3,
+        "entry_ids": [
+          "D-424",
+          "D-425",
+          "D-426"
+        ],
+        "current_contract_home": 0,
+        "current_gap": 3,
+        "kind": "kind-unclear",
+        "kind_citation": "`:1` 'The notation-layer adoption increment — decision surface'. A decision surface presents options and records the rulings made on them: the options are findings, the rulings are rules. The dispatch's kind list contains no entry for this shape.",
+        "delegation": "unclear",
+        "delegation_citation": "★ CORRECTION OF RECORD: phase 1l recorded this document as 'named in NONE of the three surfaces'. It is named in two — `ARCHITECTURE.md:4660` 'the pedal-point ruling of the notation-adoption increment (`…` §7 + §10)' and `CLAUDE.md:128` 'analysis in `…` §2'. Both name a concern; both are attributions of where a ruling's analysis lives, the same shape as `cowork_prefit_gates.md`, so the verdict is UNCLEAR, not FAIL",
+        "verdict": "AMBIGUOUS",
+        "movement": "none",
+        "mentions_in_ratified_surfaces": [
+          "ARCHITECTURE.md:4662",
+          "CLAUDE.md:128"
+        ]
+      },
+      {
+        "document": "cowork_stage5_fitter_design.md",
+        "entries": 3,
+        "entry_ids": [
+          "D-312",
+          "D-313",
+          "D-314"
+        ],
+        "current_contract_home": 3,
+        "current_gap": 0,
+        "kind": "states-rules",
+        "kind_citation": "`:1` 'Stage-5 Weight-Fitting (\"the fitter\") — Design'; SIGNED (user, 2026-07-04). A design: it states the protocol the fit must follow.",
+        "delegation": "pass",
+        "delegation_citation": "`ARCHITECTURE.md:283` 'the fitting event's own design contract is …'",
+        "verdict": "ADMIT",
+        "movement": "none",
+        "mentions_in_ratified_surfaces": [
+          "ARCHITECTURE.md:285",
+          "cowork_engage_arc_plan.md:141"
+        ]
+      },
+      {
+        "document": "cowork_notation_output_contract.md",
+        "entries": 2,
+        "entry_ids": [
+          "D-275",
+          "D-276"
+        ],
+        "current_contract_home": 2,
+        "current_gap": 0,
+        "kind": "states-rules",
+        "kind_citation": "`:1` 'The notation output-surface contract — the A-native record'; `:6-7` 'This is the contract-drafting step'. A contract.",
+        "delegation": "pass",
+        "delegation_citation": "`ARCHITECTURE.md:73` '…contract `cowork_notation_output_contract.md`'",
+        "verdict": "ADMIT",
+        "movement": "none",
+        "mentions_in_ratified_surfaces": [
+          "ARCHITECTURE.md:73"
+        ]
+      },
+      {
+        "document": "docs/iteration_path1_summary.md",
+        "entries": 2,
+        "entry_ids": [
+          "D-280",
+          "D-281"
+        ],
+        "current_contract_home": 2,
+        "current_gap": 0,
+        "kind": "records-findings",
+        "kind_citation": "`:1-2` 'Iteration Path 1 — Closing Summary … Status: ITERATION-ERA RECORD (path 1) … Not a current plan.' A closing record.",
+        "delegation": "fail",
+        "delegation_citation": "NOT NAMED in any of the three surfaces (re-derived mechanically this session)",
+        "verdict": "EXCLUDE",
+        "movement": "MOVES OUT",
+        "mentions_in_ratified_surfaces": []
+      }
+    ]
+  },
+  "task6_reading_yield": {
+    "design_document_surface": 143,
+    "read_in_full": 36,
+    "user_accepted_exclusions_not_read": 41,
+    "owed_a_full_read": 66,
+    "partition_check": true,
+    "yield_total_entries_homed_in_read_documents": 160,
+    "yield_max": 17,
+    "yield_min": 0,
+    "yield_zero_documents": 12,
+    "documents_carrying_90pct_of_yield": 18,
+    "owed_total_bytes": 1165726,
+    "owed_est_tokens": 383462,
+    "owed_total_unresolved_clusters": 499,
+    "read_rows": [
+      {
+        "document": "cowork_score_census.md",
+        "waves": [
+          "1h"
+        ],
+        "entries_homed_here": 17,
+        "entries_whose_provenance_names_this_read": 17,
+        "unresolved_clusters_now": 16,
+        "lines": 282,
+        "bytes": 34852,
+        "banner_words": [
+          "DELIVERED"
+        ],
+        "named_in_ratified_surfaces": 2
+      },
+      {
+        "document": "cowork_layer3_keymode_design.md",
+        "waves": [
+          "1h"
+        ],
+        "entries_homed_here": 16,
+        "entries_whose_provenance_names_this_read": 16,
+        "unresolved_clusters_now": 19,
+        "lines": 520,
+        "bytes": 52111,
+        "banner_words": [
+          "SIGNED",
+          "AS-BUILT"
+        ],
+        "named_in_ratified_surfaces": 3
+      },
+      {
+        "document": "docs/scoring_model.md",
+        "waves": [
+          "1g"
+        ],
+        "entries_homed_here": 15,
+        "entries_whose_provenance_names_this_read": 4,
+        "unresolved_clusters_now": 35,
+        "lines": 1253,
+        "bytes": 83310,
+        "banner_words": [
+          "LIVE"
+        ],
+        "named_in_ratified_surfaces": 7
+      },
+      {
+        "document": "cowork_voiceleading_axis_design.md",
+        "waves": [
+          "1h"
+        ],
+        "entries_homed_here": 13,
+        "entries_whose_provenance_names_this_read": 13,
+        "unresolved_clusters_now": 18,
+        "lines": 697,
+        "bytes": 60947,
+        "banner_words": [
+          "AS-BUILT"
+        ],
+        "named_in_ratified_surfaces": 3
+      },
+      {
+        "document": "docs/implementation_roadmap.md",
+        "waves": [
+          "1k"
+        ],
+        "entries_homed_here": 12,
+        "entries_whose_provenance_names_this_read": 9,
+        "unresolved_clusters_now": 15,
+        "lines": 610,
+        "bytes": 64370,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0
+      },
+      {
+        "document": "cowork_progression_schema_dictionary.md",
+        "waves": [
+          "1j"
+        ],
+        "entries_homed_here": 9,
+        "entries_whose_provenance_names_this_read": 9,
+        "unresolved_clusters_now": 14,
+        "lines": 339,
+        "bytes": 31111,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 7
+      },
+      {
+        "document": "cowork_layer5_engagement_design.md",
+        "waves": [
+          "1h"
+        ],
+        "entries_homed_here": 8,
+        "entries_whose_provenance_names_this_read": 8,
+        "unresolved_clusters_now": 18,
+        "lines": 659,
+        "bytes": 55483,
+        "banner_words": [
+          "DESIGN"
+        ],
+        "named_in_ratified_surfaces": 4
+      },
+      {
+        "document": "cowork_layer5_function_design.md",
+        "waves": [
+          "1g"
+        ],
+        "entries_homed_here": 8,
+        "entries_whose_provenance_names_this_read": 8,
+        "unresolved_clusters_now": 35,
+        "lines": 910,
+        "bytes": 90408,
+        "banner_words": [
+          "SIGNED"
+        ],
+        "named_in_ratified_surfaces": 1
+      },
+      {
+        "document": "cowork_bounded_context_design.md",
+        "waves": [
+          "1d"
+        ],
+        "entries_homed_here": 7,
+        "entries_whose_provenance_names_this_read": 0,
+        "unresolved_clusters_now": 16,
+        "lines": 254,
+        "bytes": 23139,
+        "banner_words": [
+          "SIGNED"
+        ],
+        "named_in_ratified_surfaces": 1
+      },
+      {
+        "document": "cowork_layer4_chordsymbol_design.md",
+        "waves": [
+          "1g"
+        ],
+        "entries_homed_here": 6,
+        "entries_whose_provenance_names_this_read": 6,
+        "unresolved_clusters_now": 38,
+        "lines": 629,
+        "bytes": 59109,
+        "banner_words": [
+          "SIGNED",
+          "AS-BUILT"
+        ],
+        "named_in_ratified_surfaces": 2
+      },
+      {
+        "document": "cowork_prefit_gates.md",
+        "waves": [
+          "1d"
+        ],
+        "entries_homed_here": 5,
+        "entries_whose_provenance_names_this_read": 0,
+        "unresolved_clusters_now": 7,
+        "lines": 204,
+        "bytes": 16186,
+        "banner_words": [
+          "USER-RATIFIED",
+          "RATIFIED"
+        ],
+        "named_in_ratified_surfaces": 2
+      },
+      {
+        "document": "cowork_structural_integrity_audit.md",
+        "waves": [
+          "1i"
+        ],
+        "entries_homed_here": 5,
+        "entries_whose_provenance_names_this_read": 5,
+        "unresolved_clusters_now": 18,
+        "lines": 356,
+        "bytes": 34488,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 2
+      },
+      {
+        "document": "cowork_architecture_reassessment.md",
+        "waves": [
+          "1d"
+        ],
+        "entries_homed_here": 4,
+        "entries_whose_provenance_names_this_read": 0,
+        "unresolved_clusters_now": 12,
+        "lines": 130,
+        "bytes": 11080,
+        "banner_words": [
+          "SUPERSEDED"
+        ],
+        "named_in_ratified_surfaces": 0
+      },
+      {
+        "document": "cowork_design_doc_template.md",
+        "waves": [
+          "1d"
+        ],
+        "entries_homed_here": 4,
+        "entries_whose_provenance_names_this_read": 0,
+        "unresolved_clusters_now": 7,
+        "lines": 101,
+        "bytes": 8713,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0
+      },
+      {
+        "document": "cowork_engage_arc_plan.md",
+        "waves": [
+          "1d"
+        ],
+        "entries_homed_here": 4,
+        "entries_whose_provenance_names_this_read": 0,
+        "unresolved_clusters_now": 5,
+        "lines": 143,
+        "bytes": 12266,
+        "banner_words": [
+          "RATIFIED"
+        ],
+        "named_in_ratified_surfaces": 2
+      },
+      {
+        "document": "cowork_joint_key_chord_design.md",
+        "waves": [
+          "1h"
+        ],
+        "entries_homed_here": 4,
+        "entries_whose_provenance_names_this_read": 4,
+        "unresolved_clusters_now": 18,
+        "lines": 386,
+        "bytes": 31666,
+        "banner_words": [
+          "SHELVED",
+          "DESIGN"
+        ],
+        "named_in_ratified_surfaces": 1
+      },
+      {
+        "document": "docs/decoder_design.md",
+        "waves": [
+          "1g"
+        ],
+        "entries_homed_here": 4,
+        "entries_whose_provenance_names_this_read": 4,
+        "unresolved_clusters_now": 33,
+        "lines": 767,
+        "bytes": 55813,
+        "banner_words": [
+          "RATIFIED"
+        ],
+        "named_in_ratified_surfaces": 0
+      },
+      {
+        "document": "docs/redesign_plan.md",
+        "waves": [
+          "1g"
+        ],
+        "entries_homed_here": 4,
+        "entries_whose_provenance_names_this_read": 4,
+        "unresolved_clusters_now": 23,
+        "lines": 662,
+        "bytes": 38258,
+        "banner_words": [
+          "SUPERSEDED",
+          "LIVE"
+        ],
+        "named_in_ratified_surfaces": 3
+      },
+      {
+        "document": "cowork_confidence_contract.md",
+        "waves": [
+          "1d"
+        ],
+        "entries_homed_here": 3,
+        "entries_whose_provenance_names_this_read": 0,
+        "unresolved_clusters_now": 4,
+        "lines": 131,
+        "bytes": 17278,
+        "banner_words": [
+          "RATIFIED"
+        ],
+        "named_in_ratified_surfaces": 3
+      },
+      {
+        "document": "cowork_notation_adoption_increment.md",
+        "waves": [
+          "1l"
+        ],
+        "entries_homed_here": 3,
+        "entries_whose_provenance_names_this_read": 3,
+        "unresolved_clusters_now": 15,
+        "lines": 516,
+        "bytes": 36677,
+        "banner_words": [
+          "USER-RATIFIED",
+          "RATIFIED"
+        ],
+        "named_in_ratified_surfaces": 2
+      },
+      {
+        "document": "cowork_stage5_fitter_design.md",
+        "waves": [
+          "1f"
+        ],
+        "entries_homed_here": 3,
+        "entries_whose_provenance_names_this_read": 0,
+        "unresolved_clusters_now": 53,
+        "lines": 1534,
+        "bytes": 146353,
+        "banner_words": [
+          "SIGNED"
+        ],
+        "named_in_ratified_surfaces": 2
+      },
+      {
+        "document": "cowork_notation_output_contract.md",
+        "waves": [
+          "1d"
+        ],
+        "entries_homed_here": 2,
+        "entries_whose_provenance_names_this_read": 0,
+        "unresolved_clusters_now": 3,
+        "lines": 242,
+        "bytes": 17685,
+        "banner_words": [
+          "USER-RATIFIED",
+          "RATIFIED"
+        ],
+        "named_in_ratified_surfaces": 1
+      },
+      {
+        "document": "cowork_prune_pass_checklist.md",
+        "waves": [
+          "1d"
+        ],
+        "entries_homed_here": 2,
+        "entries_whose_provenance_names_this_read": 0,
+        "unresolved_clusters_now": 4,
+        "lines": 46,
+        "bytes": 3785,
+        "banner_words": [
+          "SUPERSEDED"
+        ],
+        "named_in_ratified_surfaces": 0
+      },
+      {
+        "document": "docs/iteration_path1_summary.md",
+        "waves": [
+          "1d"
+        ],
+        "entries_homed_here": 2,
+        "entries_whose_provenance_names_this_read": 0,
+        "unresolved_clusters_now": 7,
+        "lines": 157,
+        "bytes": 9029,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0
+      },
+      {
+        "document": "cowork_audit_harmonicfunctionlayer.md",
+        "waves": [
+          "1d"
+        ],
+        "entries_homed_here": 0,
+        "entries_whose_provenance_names_this_read": 0,
+        "unresolved_clusters_now": 4,
+        "lines": 46,
+        "bytes": 3569,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0
+      },
+      {
+        "document": "cowork_audit_jointkeydecision.md",
+        "waves": [
+          "1d"
+        ],
+        "entries_homed_here": 0,
+        "entries_whose_provenance_names_this_read": 0,
+        "unresolved_clusters_now": 3,
+        "lines": 44,
+        "bytes": 3407,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0
+      },
+      {
+        "document": "cowork_audit_postscoringgates.md",
+        "waves": [
+          "1d"
+        ],
+        "entries_homed_here": 0,
+        "entries_whose_provenance_names_this_read": 0,
+        "unresolved_clusters_now": 5,
+        "lines": 49,
+        "bytes": 3489,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0
+      },
+      {
+        "document": "cowork_audit_regionanalyzer.md",
+        "waves": [
+          "1d"
+        ],
+        "entries_homed_here": 0,
+        "entries_whose_provenance_names_this_read": 0,
+        "unresolved_clusters_now": 3,
+        "lines": 41,
+        "bytes": 2940,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0
+      },
+      {
+        "document": "cowork_audit_remaining_layers.md",
+        "waves": [
+          "1d"
+        ],
+        "entries_homed_here": 0,
+        "entries_whose_provenance_names_this_read": 0,
+        "unresolved_clusters_now": 3,
+        "lines": 45,
+        "bytes": 3550,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0
+      },
+      {
+        "document": "cowork_layer5_spec_review.md",
+        "waves": [
+          "1d"
+        ],
+        "entries_homed_here": 0,
+        "entries_whose_provenance_names_this_read": 0,
+        "unresolved_clusters_now": 9,
+        "lines": 74,
+        "bytes": 6247,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0
+      },
+      {
+        "document": "cowork_phase5_branch_backfill_spec.md",
+        "waves": [
+          "1d"
+        ],
+        "entries_homed_here": 0,
+        "entries_whose_provenance_names_this_read": 0,
+        "unresolved_clusters_now": 12,
+        "lines": 111,
+        "bytes": 9784,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0
+      },
+      {
+        "document": "cowork_premise_gate_reflection.md",
+        "waves": [
+          "1d"
+        ],
+        "entries_homed_here": 0,
+        "entries_whose_provenance_names_this_read": 0,
+        "unresolved_clusters_now": 5,
+        "lines": 157,
+        "bytes": 10429,
+        "banner_words": [
+          "RATIFIED"
+        ],
+        "named_in_ratified_surfaces": 0
+      },
+      {
+        "document": "cowork_spec_language_sweep.md",
+        "waves": [
+          "1d"
+        ],
+        "entries_homed_here": 0,
+        "entries_whose_provenance_names_this_read": 0,
+        "unresolved_clusters_now": 14,
+        "lines": 168,
+        "bytes": 12026,
+        "banner_words": [
+          "AS-BUILT"
+        ],
+        "named_in_ratified_surfaces": 0
+      },
+      {
+        "document": "docs/beam_widening_design.md",
+        "waves": [
+          "1d",
+          "1f"
+        ],
+        "entries_homed_here": 0,
+        "entries_whose_provenance_names_this_read": 0,
+        "unresolved_clusters_now": 37,
+        "lines": 558,
+        "bytes": 38340,
+        "banner_words": [
+          "SHELVED",
+          "DRAFT"
+        ],
+        "named_in_ratified_surfaces": 0
+      },
+      {
+        "document": "docs/scoped_joint_design.md",
+        "waves": [
+          "1d"
+        ],
+        "entries_homed_here": 0,
+        "entries_whose_provenance_names_this_read": 0,
+        "unresolved_clusters_now": 13,
+        "lines": 122,
+        "bytes": 9055,
+        "banner_words": [
+          "DRAFT"
+        ],
+        "named_in_ratified_surfaces": 0
+      },
+      {
+        "document": "docs/stage6_functional_layer_design.md",
+        "waves": [
+          "1d"
+        ],
+        "entries_homed_here": 0,
+        "entries_whose_provenance_names_this_read": 0,
+        "unresolved_clusters_now": 13,
+        "lines": 127,
+        "bytes": 8548,
+        "banner_words": [
+          "DRAFT"
+        ],
+        "named_in_ratified_surfaces": 0
+      }
+    ],
+    "owed_rows": [
+      {
+        "document": "cowork_phrase_boundary_design.md",
+        "unresolved_clusters": 17,
+        "lines": 386,
+        "bytes": 38712,
+        "est_tokens": 12734,
+        "banner_words": [
+          "SIGNED"
+        ],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      },
+      {
+        "document": "docs/key_path_design.md",
+        "unresolved_clusters": 17,
+        "lines": 480,
+        "bytes": 34384,
+        "est_tokens": 11311,
+        "banner_words": [
+          "DRAFT"
+        ],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "docs"
+      },
+      {
+        "document": "cowork_progression_schema_design.md",
+        "unresolved_clusters": 16,
+        "lines": 332,
+        "bytes": 30958,
+        "est_tokens": 10184,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 2,
+        "named_where": [
+          "ARCHITECTURE.md:341",
+          "ARCHITECTURE.md:1501"
+        ],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_fb_redesign_design.md",
+        "unresolved_clusters": 15,
+        "lines": 355,
+        "bytes": 27968,
+        "est_tokens": 9200,
+        "banner_words": [
+          "DESIGN"
+        ],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_idiom_discovery_design.md",
+        "unresolved_clusters": 15,
+        "lines": 235,
+        "bytes": 20625,
+        "est_tokens": 6785,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_layer1_note_model_design.md",
+        "unresolved_clusters": 15,
+        "lines": 278,
+        "bytes": 25893,
+        "est_tokens": 8517,
+        "banner_words": [
+          "AS-BUILT"
+        ],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_layer2_slicing_design.md",
+        "unresolved_clusters": 14,
+        "lines": 239,
+        "bytes": 21862,
+        "est_tokens": 7191,
+        "banner_words": [
+          "AS-BUILT"
+        ],
+        "named_in_ratified_surfaces": 1,
+        "named_where": [
+          "ARCHITECTURE.md:1314"
+        ],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_target_architecture.md",
+        "unresolved_clusters": 14,
+        "lines": 418,
+        "bytes": 40560,
+        "est_tokens": 13342,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 5,
+        "named_where": [
+          "ARCHITECTURE.md:345",
+          "ARCHITECTURE.md:359",
+          "ARCHITECTURE.md:822",
+          "ARCHITECTURE.md:839",
+          "ARCHITECTURE.md:1225"
+        ],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_phase2_architecture_review.md",
+        "unresolved_clusters": 13,
+        "lines": 178,
+        "bytes": 15355,
+        "est_tokens": 5051,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      },
+      {
+        "document": "docs/llm_integration.md",
+        "unresolved_clusters": 13,
+        "lines": 786,
+        "bytes": 34758,
+        "est_tokens": 11434,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 4,
+        "named_where": [
+          "ARCHITECTURE.md:2458",
+          "ARCHITECTURE.md:6927",
+          "ARCHITECTURE.md:6997",
+          "ARCHITECTURE.md:7008"
+        ],
+        "surface": "docs"
+      },
+      {
+        "document": "docs/score_inventory.md",
+        "unresolved_clusters": 13,
+        "lines": 377,
+        "bytes": 25353,
+        "est_tokens": 8340,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 1,
+        "named_where": [
+          "CLAUDE.md:696"
+        ],
+        "surface": "docs"
+      },
+      {
+        "document": "cowork_l1l3_stabilization_plan.md",
+        "unresolved_clusters": 12,
+        "lines": 222,
+        "bytes": 19228,
+        "est_tokens": 6325,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      },
+      {
+        "document": "docs/layer_architecture_audit.md",
+        "unresolved_clusters": 12,
+        "lines": 438,
+        "bytes": 24440,
+        "est_tokens": 8039,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "docs"
+      },
+      {
+        "document": "cowork_census_full_needs_audit.md",
+        "unresolved_clusters": 11,
+        "lines": 287,
+        "bytes": 21873,
+        "est_tokens": 7195,
+        "banner_words": [
+          "RATIFIED",
+          "DELIVERED"
+        ],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_evidence_inventory.md",
+        "unresolved_clusters": 10,
+        "lines": 267,
+        "bytes": 17876,
+        "est_tokens": 5880,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 2,
+        "named_where": [
+          "ARCHITECTURE.md:984",
+          "CLAUDE.md:98"
+        ],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_gateA_unification_design.md",
+        "unresolved_clusters": 10,
+        "lines": 308,
+        "bytes": 21348,
+        "est_tokens": 7022,
+        "banner_words": [
+          "DESIGN"
+        ],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_layer3_reachback_design.md",
+        "unresolved_clusters": 10,
+        "lines": 131,
+        "bytes": 12191,
+        "est_tokens": 4010,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_layer5_function_methods.md",
+        "unresolved_clusters": 10,
+        "lines": 171,
+        "bytes": 16148,
+        "est_tokens": 5312,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_layer6_grouping_design.md",
+        "unresolved_clusters": 10,
+        "lines": 459,
+        "bytes": 43066,
+        "est_tokens": 14166,
+        "banner_words": [
+          "AS-BUILT"
+        ],
+        "named_in_ratified_surfaces": 3,
+        "named_where": [
+          "ARCHITECTURE.md:887",
+          "ARCHITECTURE.md:932",
+          "ARCHITECTURE.md:1494"
+        ],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_sensitive_cell_probe.md",
+        "unresolved_clusters": 10,
+        "lines": 258,
+        "bytes": 19563,
+        "est_tokens": 6435,
+        "banner_words": [
+          "USER-RATIFIED",
+          "RATIFIED"
+        ],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_term_theory_grounding.md",
+        "unresolved_clusters": 10,
+        "lines": 392,
+        "bytes": 30997,
+        "est_tokens": 10196,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      },
+      {
+        "document": "docs/stage4b_design.md",
+        "unresolved_clusters": 10,
+        "lines": 197,
+        "bytes": 14163,
+        "est_tokens": 4659,
+        "banner_words": [
+          "DRAFT"
+        ],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "docs"
+      },
+      {
+        "document": "cowork_architecture_review_2026_07.md",
+        "unresolved_clusters": 9,
+        "lines": 350,
+        "bytes": 32561,
+        "est_tokens": 10711,
+        "banner_words": [
+          "RATIFIED",
+          "DELIVERED"
+        ],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_l1l4_completion_ledger.md",
+        "unresolved_clusters": 9,
+        "lines": 141,
+        "bytes": 12913,
+        "est_tokens": 4248,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_union_search_record.md",
+        "unresolved_clusters": 9,
+        "lines": 156,
+        "bytes": 13509,
+        "est_tokens": 4444,
+        "banner_words": [
+          "DELIVERED"
+        ],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      },
+      {
+        "document": "docs/back_half_design.md",
+        "unresolved_clusters": 9,
+        "lines": 242,
+        "bytes": 17186,
+        "est_tokens": 5653,
+        "banner_words": [
+          "DRAFT"
+        ],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "docs"
+      },
+      {
+        "document": "docs/unified_analysis_pipeline.md",
+        "unresolved_clusters": 9,
+        "lines": 397,
+        "bytes": 19641,
+        "est_tokens": 6461,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "docs"
+      },
+      {
+        "document": "docs/layer_audit_plan.md",
+        "unresolved_clusters": 8,
+        "lines": 133,
+        "bytes": 9849,
+        "est_tokens": 3240,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "docs"
+      },
+      {
+        "document": "docs/precision_metric_design.md",
+        "unresolved_clusters": 8,
+        "lines": 383,
+        "bytes": 29710,
+        "est_tokens": 9773,
+        "banner_words": [
+          "DRAFT"
+        ],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "docs"
+      },
+      {
+        "document": "cowork_factorization_desk_simulation.md",
+        "unresolved_clusters": 7,
+        "lines": 607,
+        "bytes": 47051,
+        "est_tokens": 15477,
+        "banner_words": [
+          "USER-RATIFIED",
+          "RATIFIED"
+        ],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_joint_estimator_architecture.md",
+        "unresolved_clusters": 7,
+        "lines": 258,
+        "bytes": 22673,
+        "est_tokens": 7458,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 3,
+        "named_where": [
+          "ARCHITECTURE.md:4",
+          "ARCHITECTURE.md:48",
+          "CLAUDE.md:126"
+        ],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_l1l4_architecture_audit.md",
+        "unresolved_clusters": 7,
+        "lines": 183,
+        "bytes": 16289,
+        "est_tokens": 5358,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_style_taxonomy_proposal.md",
+        "unresolved_clusters": 7,
+        "lines": 152,
+        "bytes": 12772,
+        "est_tokens": 4201,
+        "banner_words": [
+          "RATIFIED"
+        ],
+        "named_in_ratified_surfaces": 5,
+        "named_where": [
+          "ARCHITECTURE.md:4546",
+          "ARCHITECTURE.md:4555",
+          "ARCHITECTURE.md:4561",
+          "ARCHITECTURE.md:4579",
+          "ARCHITECTURE.md:4582"
+        ],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_audit_obligation_map.md",
+        "unresolved_clusters": 6,
+        "lines": 200,
+        "bytes": 19342,
+        "est_tokens": 6362,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_delta_check_dispositions.md",
+        "unresolved_clusters": 6,
+        "lines": 97,
+        "bytes": 8894,
+        "est_tokens": 2926,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_eg2_scoping.md",
+        "unresolved_clusters": 6,
+        "lines": 217,
+        "bytes": 18546,
+        "est_tokens": 6101,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_information_loss_audit.md",
+        "unresolved_clusters": 6,
+        "lines": 174,
+        "bytes": 21183,
+        "est_tokens": 6968,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_layer1_tone_collection_design.md",
+        "unresolved_clusters": 6,
+        "lines": 197,
+        "bytes": 15862,
+        "est_tokens": 5218,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_phrase_boundary_methods.md",
+        "unresolved_clusters": 6,
+        "lines": 107,
+        "bytes": 10243,
+        "est_tokens": 3369,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      },
+      {
+        "document": "docs/stage4c_cadence_key_design.md",
+        "unresolved_clusters": 6,
+        "lines": 141,
+        "bytes": 9815,
+        "est_tokens": 3229,
+        "banner_words": [
+          "DRAFT"
+        ],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "docs"
+      },
+      {
+        "document": "docs/symbol_input_audit.md",
+        "unresolved_clusters": 6,
+        "lines": 346,
+        "bytes": 16041,
+        "est_tokens": 5277,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "docs"
+      },
+      {
+        "document": "cowork_adjudication_dossier.md",
+        "unresolved_clusters": 5,
+        "lines": 128,
+        "bytes": 11777,
+        "est_tokens": 3874,
+        "banner_words": [
+          "RATIFIED"
+        ],
+        "named_in_ratified_surfaces": 1,
+        "named_where": [
+          "CLAUDE.md:95"
+        ],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_joint_estimator_factorization.md",
+        "unresolved_clusters": 5,
+        "lines": 214,
+        "bytes": 18449,
+        "est_tokens": 6069,
+        "banner_words": [
+          "USER-RATIFIED",
+          "RATIFIED"
+        ],
+        "named_in_ratified_surfaces": 2,
+        "named_where": [
+          "ARCHITECTURE.md:48",
+          "ARCHITECTURE.md:292"
+        ],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_layer1_extend_design.md",
+        "unresolved_clusters": 5,
+        "lines": 127,
+        "bytes": 10911,
+        "est_tokens": 3589,
+        "banner_words": [
+          "DRAFT"
+        ],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_phase5c_l5_build_plan.md",
+        "unresolved_clusters": 5,
+        "lines": 126,
+        "bytes": 11608,
+        "est_tokens": 3818,
+        "banner_words": [
+          "SIGNED",
+          "DRAFT"
+        ],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_tpc_capability_design.md",
+        "unresolved_clusters": 5,
+        "lines": 130,
+        "bytes": 12124,
+        "est_tokens": 3988,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_uncertain_resolver_investigation.md",
+        "unresolved_clusters": 5,
+        "lines": 122,
+        "bytes": 9742,
+        "est_tokens": 3205,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 1,
+        "named_where": [
+          "CLAUDE.md:606"
+        ],
+        "surface": "cowork"
+      },
+      {
+        "document": "docs/key_detection_baroque_partial_signature.md",
+        "unresolved_clusters": 5,
+        "lines": 189,
+        "bytes": 11742,
+        "est_tokens": 3862,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "docs"
+      },
+      {
+        "document": "cowork_l1_l5_premise_debt_audit.md",
+        "unresolved_clusters": 4,
+        "lines": 143,
+        "bytes": 10555,
+        "est_tokens": 3472,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 2,
+        "named_where": [
+          "cowork_engage_arc_plan.md:64",
+          "cowork_engage_arc_plan.md:139"
+        ],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_phase5b_l4_build_plan.md",
+        "unresolved_clusters": 4,
+        "lines": 84,
+        "bytes": 7421,
+        "est_tokens": 2441,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 1,
+        "named_where": [
+          "ARCHITECTURE.md:1471"
+        ],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_style_clustering_plan.md",
+        "unresolved_clusters": 4,
+        "lines": 130,
+        "bytes": 11887,
+        "est_tokens": 3910,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 2,
+        "named_where": [
+          "ARCHITECTURE.md:4569",
+          "ARCHITECTURE.md:4582"
+        ],
+        "surface": "cowork"
+      },
+      {
+        "document": "docs/architecture_joint_inference.md",
+        "unresolved_clusters": 4,
+        "lines": 136,
+        "bytes": 9884,
+        "est_tokens": 3251,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 1,
+        "named_where": [
+          "ARCHITECTURE.md:836"
+        ],
+        "surface": "docs"
+      },
+      {
+        "document": "docs/iter92_joint_bass_chord_scoring.md",
+        "unresolved_clusters": 4,
+        "lines": 243,
+        "bytes": 10870,
+        "est_tokens": 3576,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "docs"
+      },
+      {
+        "document": "docs/nct_detection_design.md",
+        "unresolved_clusters": 4,
+        "lines": 219,
+        "bytes": 10148,
+        "est_tokens": 3338,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 1,
+        "named_where": [
+          "ARCHITECTURE.md:1417"
+        ],
+        "surface": "docs"
+      },
+      {
+        "document": "docs/stage4d_local_modulation_design.md",
+        "unresolved_clusters": 4,
+        "lines": 114,
+        "bytes": 7764,
+        "est_tokens": 2554,
+        "banner_words": [
+          "DRAFT"
+        ],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "docs"
+      },
+      {
+        "document": "cowork_audit_protocol.md",
+        "unresolved_clusters": 3,
+        "lines": 183,
+        "bytes": 12946,
+        "est_tokens": 4259,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_l1l4_review_charter.md",
+        "unresolved_clusters": 3,
+        "lines": 52,
+        "bytes": 4286,
+        "est_tokens": 1410,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 1,
+        "named_where": [
+          "ARCHITECTURE.md:1459"
+        ],
+        "surface": "cowork"
+      },
+      {
+        "document": "docs/iter90_bass_as_root_promotion_shelved.md",
+        "unresolved_clusters": 3,
+        "lines": 137,
+        "bytes": 6036,
+        "est_tokens": 1986,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 1,
+        "named_where": [
+          "ARCHITECTURE.md:3958"
+        ],
+        "surface": "docs"
+      },
+      {
+        "document": "cowork_idiom_discovery_findings.md",
+        "unresolved_clusters": 2,
+        "lines": 228,
+        "bytes": 20294,
+        "est_tokens": 6676,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 1,
+        "named_where": [
+          "ARCHITECTURE.md:4551"
+        ],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_layer2_reslice_design.md",
+        "unresolved_clusters": 2,
+        "lines": 116,
+        "bytes": 10128,
+        "est_tokens": 3332,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 1,
+        "named_where": [
+          "ARCHITECTURE.md:1285"
+        ],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_layer3_keymode_impl_design.md",
+        "unresolved_clusters": 2,
+        "lines": 119,
+        "bytes": 10609,
+        "est_tokens": 3490,
+        "banner_words": [
+          "DESIGN"
+        ],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_types_header_design.md",
+        "unresolved_clusters": 2,
+        "lines": 70,
+        "bytes": 6021,
+        "est_tokens": 1981,
+        "banner_words": [
+          "AS-BUILT"
+        ],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      },
+      {
+        "document": "docs/extension_stripping_policy.md",
+        "unresolved_clusters": 2,
+        "lines": 232,
+        "bytes": 10681,
+        "est_tokens": 3513,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 1,
+        "named_where": [
+          "ARCHITECTURE.md:993"
+        ],
+        "surface": "docs"
+      },
+      {
+        "document": "cowork_eg1_premise_checks.md",
+        "unresolved_clusters": 1,
+        "lines": 89,
+        "bytes": 6156,
+        "est_tokens": 2025,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_gate_policy_amendment.md",
+        "unresolved_clusters": 1,
+        "lines": 68,
+        "bytes": 5212,
+        "est_tokens": 1714,
+        "banner_words": [
+          "DRAFT"
+        ],
+        "named_in_ratified_surfaces": 1,
+        "named_where": [
+          "CLAUDE.md:508"
+        ],
+        "surface": "cowork"
+      },
+      {
+        "document": "cowork_key_mode_inference_diagnosis.md",
+        "unresolved_clusters": 1,
+        "lines": 111,
+        "bytes": 7074,
+        "est_tokens": 2327,
+        "banner_words": [],
+        "named_in_ratified_surfaces": 0,
+        "named_where": [],
+        "surface": "cowork"
+      }
+    ]
+  }
+}

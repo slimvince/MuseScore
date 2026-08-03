@@ -17,7 +17,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1475-1476`
+**Home.** `ARCHITECTURE.md:1477-1478`
 
 **Provenance.** ARCHITECTURE.md:1389-1398 (Layer 5 - Built+Dormant, design ratified)
 
@@ -31,7 +31,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1479-1480`
+**Home.** `ARCHITECTURE.md:1481-1482`
 
 **Provenance.** ARCHITECTURE.md:1389-1398
 
@@ -46,7 +46,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1479-1480`
+**Home.** `ARCHITECTURE.md:1481-1482`
 
 **Provenance.** ARCHITECTURE.md:1397. open_items/OI-166 records that the built detector is key-agnostic but CHORD-derived, not the bass-driven pre-scan specified. Defense filled 2026-08-02 by the phase-1g triage wave from `cowork_layer5_function_design.md` §9-D2/§5.2 — the act the phase-1f note named and left for the wave that reads that document; the register entry for the same decision at its design-document home is D-336
 
@@ -60,7 +60,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1489`
+**Home.** `ARCHITECTURE.md:1491`
 
 **Provenance.** ARCHITECTURE.md:1400-1407 (Layer 6 - Design-only, v1 spec)
 
@@ -75,7 +75,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1490-1491`
+**Home.** `ARCHITECTURE.md:1492-1493`
 
 **Provenance.** ARCHITECTURE.md:1400-1407, deriving from D-029
 
@@ -89,7 +89,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1496`
+**Home.** `ARCHITECTURE.md:1498`
 
 **Provenance.** ARCHITECTURE.md:1409-1414 'Scaffolding-first, deferred'
 
@@ -104,13 +104,13 @@
 
 **Status.** LIVE · decided 2026-07-03 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:924-925`
+**Home.** `ARCHITECTURE.md:926-927`
 
 **Provenance.** ARCHITECTURE.md:896-899 records the foundation BUILT (dormant). ARCHITECTURE.md:1415-1415 still says the voice-leading layer is 'not built' - see OPEN_ITEMS OI-232 ★ 2026-08-02 (the phase-1h continuation wave): the recorded defense is FILLED from `cowork_voiceleading_axis_design.md` section 9 decision D1 and section 1, read IN FULL — the entry previously read 'derivation not recorded'. Written from the document, not from memory.
 
 ### D-248 — Tonicization labels are not implemented and are deferred
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > - Tonicization labels (V/V, V/ii, V/IV etc.) — **NOT YET IMPLEMENTED**
 >   (deferred; no `relativeRoot`/secondary-dominant field in
@@ -124,7 +124,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:6164-6166`
+**Home.** `ARCHITECTURE.md:6166-6168`
 
 **Provenance.** ARCHITECTURE.md:6012-6014. Section 5.10 (ARCHITECTURE.md:3860) is the tonicization section; the memory-held backlog item is recorded in the same terms. ★ RATIFIED (user, 2026-08-02) with the revisit to be PLANNED: for the ultimate objective (maximum-precision inference) the feature may be needed — the ground truth annotates applied chords, so not producing them costs Roman-numeral agreement wherever the annotator wrote one. Row OI-267 carries the planning obligation, including the OI-53 tension (a live classifier emitting V7/x was found on the legacy path while this entry's home says not implemented). ★ SCOPE CORRECTED 2026-08-02 (CC, at the phase-1i delivery acts, on Cowork's measured probe finding B-1, user-reviewed): the entry's verbatim is a statement about the LEGACY `ChordFunction` structure, and its plain restatement wrongly generalized it to the whole system. The production joint estimator — the inference layer on both surfaces since the OI-178 adoption — DOES emit applied labels (`src/composing/analysis/joint/jointrender.h:62-63`; measured 8.62 % of scored duration, with exact matches against applied ground truth: `tools/joint_estimator/applied_chord_stake_2026_08_02/`). The OI-53 tension named above is therefore substantially ANSWERED: the joint surface emits applied labels, the legacy `ChordFunction` structure does not carry them. The decision itself is unchanged and stays DEFERRED for the surface it governs; what changed is the recorded scope.
 
@@ -274,7 +274,7 @@
 
 ### D-342 — Putting the function layer into production is DEFERRED INDEFINITELY — the posture is a dormant build with ground-truth validation
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > - **Engagement framing.** References to an "engagement hard-stop" / "before any production switch" (§5/§10) remain true
 >   *conditionally* — engagement (Phase 5d) is **deferred indefinitely** (production out of scope; the posture is dormant
@@ -658,7 +658,7 @@
 
 **Entry ratified.** 2026-08-03 · by user
 
-**Home.** `docs/implementation_roadmap.md:78`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `docs/implementation_roadmap.md:101`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
 **Provenance.** `docs/implementation_roadmap.md`:59-62, inside the forward increment sequence whose header (`:54`) calls the order "ratified" — encyclopedia, then L6, then wire the consumer — without naming who ratified it or when; the surrounding block is dated 2026-06-30 at `:36`. The date recorded here is that block's date and the ratifier is NOT STATED, because the text asserts ratification without attributing it. The constraint governs Layer 5 and is recorded in a plan rather than in the Layer-5 specification, hence the documentation-gap flag. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 

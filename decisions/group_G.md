@@ -8,7 +8,7 @@
 
 ### D-060 — The legacy chord analyzer is a vertical sonority analyzer - keep the boundary clean
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > Do not
 > attempt to improve corpus agreement by adding heuristics to `RuleBasedChordAnalyzer`
@@ -20,13 +20,13 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2202-2204`
+**Home.** `ARCHITECTURE.md:2204-2206`
 
 **Provenance.** ARCHITECTURE.md:2093-2119. Contradicted by the same document's §4.1b/§4.1d contextual bonuses, which score a candidate from the neighbouring chords - see OPEN_ITEMS OI-235
 
 ### D-061 — Gate thresholds are Baroque-calibrated and must not be loosened for other styles
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > They must not be
 > loosened to accommodate other styles. When a gate causes regressions in a non-Baroque
@@ -39,13 +39,13 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1874-1878`
+**Home.** `ARCHITECTURE.md:1876-1880`
 
 **Provenance.** ARCHITECTURE.md:1787-1795; the same policy is in CLAUDE.md 'Gate threshold and preset policy'
 
 ### D-062 — Progression signals are withheld while segmentation is being explored
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > the progression signals are withheld
 > during `greedyExpandSegmentation`'s internal boundary-exploration calls, which run in
@@ -58,13 +58,13 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2101-2104`
+**Home.** `ARCHITECTURE.md:2103-2106`
 
 **Provenance.** ARCHITECTURE.md:2016-2019, :1816-1822; the residual coupling is recorded as debt at :2105-2112
 
 ### D-063 — Cold context on the tick-local path is the accepted contract
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > Cold context on P4 is the **current contract**, documented and accepted (the same
 > precedent as the Stage 2.3 diagnose context banner: a path may legitimately analyze with less
@@ -76,13 +76,13 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1579-1581`
+**Home.** `ARCHITECTURE.md:1581-1583`
 
 **Provenance.** ARCHITECTURE.md:1485-1502. Its revisit trigger - 'Stage 3 design must state explicitly what P4 (and the bridge) consume from the decode' (:1299-1300) - has not been discharged by the joint/record design
 
 ### D-064 — The chord-scoring presets are a measurement-only artifact
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > The
 > chord-scoring preset system is currently a **measurement-only artifact** of `batch_analyze`. Do
@@ -94,13 +94,13 @@
 
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1642-1645`
+**Home.** `ARCHITECTURE.md:1644-1647`
 
 **Provenance.** D-003 makes inference preset-independent on the production path, so the divergence this decision manages no longer exists there; it still describes the legacy path
 
 ### D-065 — The look-ahead divergence between the two paths is intentional and load-bearing
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > **D1 — `excludeLookAheadOnDenseStart`** is **intentionally divergent and load-bearing.**
 
@@ -110,7 +110,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1549`
+**Home.** `ARCHITECTURE.md:1551`
 
 **Provenance.** ARCHITECTURE.md:1464-1467, restated at :1363-1366
 
@@ -125,7 +125,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2632-2633`
+**Home.** `ARCHITECTURE.md:2634-2635`
 
 **Provenance.** ARCHITECTURE.md:2546-2548, restated as the retirement rationale's 'Core principle' at :2335-2337
 
@@ -139,13 +139,13 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2600`
+**Home.** `ARCHITECTURE.md:2602`
 
 **Provenance.** ARCHITECTURE.md:2515, retirement rationale at :2324-2339
 
 ### D-068 — The chord identifier needs at least three distinct pitch classes
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > Minimum 3 distinct pitch classes required. Returns empty vector if insufficient data.
 
@@ -155,13 +155,13 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1913`
+**Home.** `ARCHITECTURE.md:1915`
 
 **Provenance.** ARCHITECTURE.md:1828
 
 ### D-069 — Two identity modes for merged stretches - harmonic summary and as-written
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > **Harmonic summary mode** (status bar, analysis, tuning): region identity = root pitch
 > class + quality.
@@ -172,13 +172,13 @@
 
 **Status.** DEFERRED · decided 2026-04-11 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2051-2052`
+**Home.** `ARCHITECTURE.md:2053-2054`
 
 **Provenance.** ARCHITECTURE.md:1962 'Region identity modes (decided 2026-04-11)'; :1734-1736 records as-written mode deferred
 
 ### D-101 — Contextual inversion bonuses fire only for major and minor candidates
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > **Safety constraints (lesson from three-attempt history) — ⚠ SUPERSEDED BY ITER 46, see §4.1g.** As
 > originally written: bonuses never fire for Diminished, HalfDiminished, Augmented, or Suspended
@@ -190,13 +190,13 @@
 
 **Status.** SUPERSEDED BY D-102 · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1952-1954`
+**Home.** `ARCHITECTURE.md:1954-1956`
 
 **Provenance.** ARCHITECTURE.md:2171-2179 records Iter 46 extending the same helpers to Augmented and HalfDiminished. The §4.1b statement carries no supersession note - see OPEN_ITEMS OI-236 ★ Verbatim RE-TAKEN 2026-08-02 (the phase-1 truth-sync): the §4.1b passage now carries the supersession note it lacked, and states the constraint that actually survives at HEAD, which differs between the two helper predicates (OPEN_ITEMS OI-236 discharged). The decision's own words are preserved in place, marked 'As originally written'.
 
 ### D-102 — Augmented and half-diminished candidates receive the inversion bonuses too (Iter 46)
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > Extending these gates put Augmented and
 > HalfDiminished inversion candidates on equal footing with Major/Minor.
@@ -207,13 +207,13 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2263-2264`
+**Home.** `ARCHITECTURE.md:2265-2266`
 
 **Provenance.** ARCHITECTURE.md:2169-2182 (Iter 46, commit 36bf4738a8)
 
 ### D-103 — Pedal-point detection is a second pass, accepted only on two conditions
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > **Pass 2** is triggered only when the Pass 1 bass PC is NOT a chord tone of the
 > winner.
@@ -224,13 +224,13 @@
 
 **Status.** SUPERSEDED BY D-207 · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4012-4013`
+**Home.** `ARCHITECTURE.md:4014-4015`
 
 **Provenance.** ARCHITECTURE.md:3882-3917 'Status: Implemented (Session 18, master fb9a27ce9a)'. Suspended on the record arm - see D-021. SUPERSEDED BY D-207 - open_items/OI-194.md:7 records the ratified successor (user, 2026-07-26): the voice-independent pedal-point class replaces this bass-only second pass and the `isPedalPoint`/`pedalBassPc` fact it produces
 
 ### D-104 — The bass-is-root bonus is conditioned on corroborating support
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > `bassNoteRootBonus` is now conditioned on corroborating root-position support in the
 > accumulated tones:
@@ -241,7 +241,7 @@
 
 **Status.** LIVE · decided 2026-04-09 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3793-3794`
+**Home.** `ARCHITECTURE.md:3795-3796`
 
 **Provenance.** ARCHITECTURE.md:3662-3710; the failure it fixed is documented across four corpora at :3406-3419
 
@@ -256,7 +256,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1453-1454`
+**Home.** `ARCHITECTURE.md:1455-1456`
 
 **Provenance.** ARCHITECTURE.md:1368-1371. ARCHITECTURE.md:1379-1383 records the unification residual: the legacy scorer still carries its own second reader until the legacy path retires
 
@@ -273,7 +273,7 @@
 
 **Status.** DEFERRED · decided 2026-07-26 · ratified by user
 
-**Home.** `ARCHITECTURE.md:4652-4655`
+**Home.** `ARCHITECTURE.md:4654-4657`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at open_items/OI-194.md:7, sharpened at the P1 pedal-point ruling, user-ratified 2026-07-26 at the consumption-audit verification (`cowork_notation_adoption_increment.md` §7 + §10). DEFERRED: it lands with the ornament-label publication, its own increment after the notation switch; until then the record arm leaves the pedal fields empty (D-021) and the 'X ped.' annotation is a declared gap. §5.12, which specifies the superseded two-pass detector, now carries a pointer to §7.4. OPEN_ITEMS OI-237 closes on this move
 
@@ -291,7 +291,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:2717-2719`
+**Home.** `ARCHITECTURE.md:2719-2721`
 
 **Provenance.** ARCHITECTURE.md:2587 heads the section "Future: Authoritative Chord Symbol Mode"; the current rule is that written symbols are never analyzer input (register entry D-066) ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -311,7 +311,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:2728-2732`
+**Home.** `ARCHITECTURE.md:2730-2734`
 
 **Provenance.** ARCHITECTURE.md:2587 (the section is headed Future); register entry D-066 records the rule in force today ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -331,7 +331,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:2873-2877`
+**Home.** `ARCHITECTURE.md:2875-2879`
 
 **Provenance.** ARCHITECTURE.md:2735 heads the section "Phase 1b - Minimal Monophonic Fallback Without Chord Symbols"; ARCHITECTURE.md:3507-3514 records monophonic input as planned ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -354,7 +354,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:2882-2889`
+**Home.** `ARCHITECTURE.md:2884-2891`
 
 **Provenance.** ARCHITECTURE.md:2735 (the Phase 1b section heading); the stop conditions are stated with the rule ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -371,7 +371,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:2899-2900`
+**Home.** `ARCHITECTURE.md:2901-2902`
 
 **Provenance.** ARCHITECTURE.md:2735 (the Phase 1b section heading); the named parameters are listed at :2783-2790 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -388,7 +388,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:2929-2930`
+**Home.** `ARCHITECTURE.md:2931-2932`
 
 **Provenance.** ARCHITECTURE.md:2807 heads "Phase 2 - Full Monophonic Engine" ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -406,7 +406,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:2957-2959`
+**Home.** `ARCHITECTURE.md:2959-2961`
 
 **Provenance.** ARCHITECTURE.md:2824 heads "Unified Orchestration Layer", part of the provisional phased plan recorded at :3498-3503 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -432,7 +432,7 @@
 
 ### D-284 — Meta-finding: selection/competition is saturated, stop adding re-ranking gates - superseded by the gates doctrine and the adoption
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > - **Selection/competition is saturated** — stop adding re-ranking heuristics/gates; the residual is
 >   candidate-generation, key-quality, or floor.
@@ -449,7 +449,7 @@
 
 ### D-299 — No negative-margin guard may be added - it would break every intentional backward-swap gate
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > **Do NOT add a negative-margin guard** — would break Gate J and all other
 > intentional backward-swap gates (B/C/D/E/F/G/H/I/K/L, Iter 91).
@@ -468,7 +468,7 @@
 
 ### D-300 — Gate M (minor read as diminished) is DEFERRED and must not be retried without a new runtime signal
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > **Gate M (Minor→Diminished TYPE-A): DEFERRED — do not retry.** See Iter 37 entry above.
 > Requires DCML harmonic context not available at runtime.
@@ -481,13 +481,13 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `STATUS_ARCHIVE.md:1136`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `STATUS_ARCHIVE.md:1147`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md` (the Iter-37 carried-forward block and its fenced deferral record at `:1090-1106`). `docs/scoring_model.md` §8, the standing home for scoring dead ends, does not mention Gate M — checked, not assumed. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).
 
 ### D-301 — Gate N (major read as an inverted minor) is DEFERRED and must not be retried without a multi-region model
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > **Gate N (Major→Minor TYPE-A): DEFERRED — do not retry.** See Iter 39 entry above.
 > FP:genuine = 45:1 (270:6 at threshold=0.30). Same limitation as Gate M.
@@ -501,13 +501,13 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `STATUS_ARCHIVE.md:1138`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `STATUS_ARCHIVE.md:1149`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md` (the Iter-39 carried-forward block and its fenced deferral record at `:1110-1131`). Absent from `docs/scoring_model.md` §8 — checked. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).
 
 ### D-302 — No further local scoring fix for inversions may be attempted — the remaining divergence is not an analyzer defect
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > **Current baseline is the correct production baseline. Do not attempt
 > further local scoring fixes for inversions.**
@@ -520,7 +520,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `STATUS_ARCHIVE.md:2768`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `STATUS_ARCHIVE.md:2779`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md` as the closing statement of the “Inversion Fix — Final Conclusion” block. Absent from `docs/scoring_model.md` §8. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).
 
@@ -538,7 +538,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:1409-1411`
+**Home.** `ARCHITECTURE.md:1411-1413`
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md`'s “architectural memos retained as guardrails” list. It is load-bearing now: the non-chord-tone filter is the named lever at [[OI-55]] and [[OI-68]], and `docs/nct_detection_design.md` exists on disk. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written into the Layer-4 section of `ARCHITECTURE.md` §3.3 as a deferred capability with its shape constrained in advance. The defense stays 'derivation not recorded' — the record gives none and none was invented. Former home preserved (#12): `STATUS_ARCHIVE.md:963`, the architectural-memos list.
 
@@ -556,7 +556,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:2635-2637`
+**Home.** `ARCHITECTURE.md:2637-2639`
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md`'s “architectural memos retained as guardrails” list. It sharpens **D-066** (chord symbols written in the score are never analyzer input) from one annotation kind to a content test over all of them. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written beside D-066 in `ARCHITECTURE.md` §4.2, where the chord-symbol ban it generalizes already stood. The defense stays 'derivation not recorded'. Former home preserved (#12): `STATUS_ARCHIVE.md:961`.
 
@@ -576,13 +576,13 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_stage5_fitter_design.md:992`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
+**Home.** `cowork_stage5_fitter_design.md:1003`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Recorded in `cowork_stage5_fitter_design.md` (SIGNED, user, 2026-07-04) at open item O-11, and again in `STATUS_ARCHIVE.md:186`. It is the origin of the full-output-surface half of principle #15 (**D-178**): the same entry records the evidence-method lesson that inertness evidence must measure the winner AND the carry. Found by the phase-1f final-partition wave, 2026-08-02, reading `cowork_stage5_fitter_design.md` in full (SIGNED, user, 2026-07-04). NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).
 
 ### D-317 — The backward-walk boundary change is a dead end — do not retry it
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > **Falsified.** The boundary-touching predecessors are OTHER chord tones (C, Eb for
 > bwv102.7; G, B for bwv261), not the root. The root attacks later. Changing the
@@ -605,7 +605,7 @@
 
 ### D-318 — A short-region external merger is a dead end — do not retry it
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > Do not retry a short-region external merger. The tones are already aggregated.
 
@@ -623,7 +623,7 @@
 
 ### D-319 — Re-analysing the merged aggregate is a dead end — no tone-aggregation approach fixes the arpeggio root failure
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > Do not retry any Phase D tone-aggregation approach for Δ=+7a. The tones are already
 > correct; the predecessor signal is wrong.
@@ -642,7 +642,7 @@
 
 ### D-320 — The absent-root guard is REVERTED and must not be retried — 'absent root means wrong reading' is false corpus-wide
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > - **Do not retry the absent-root guard.** It was implemented 2026-06-08 and caused a net
 >   regression: 2 fixed (bwv301, bwv269), 4 broken (bwv227.1, bwv342 are DCML-correct absent-root
@@ -666,7 +666,7 @@
 
 ### D-321 — Winner selection compares candidate scores exactly, with no epsilon anywhere in the ranking
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > Winner selection compares candidate scores with **exact `double` comparisons — there is no
 > epsilon anywhere in the ranking.** The final per-bass comparator (`harmonicfunctionlayer.cpp`,
@@ -697,7 +697,7 @@
 
 ### D-322 — Any change to optimization flags or to the order of the scoring arithmetic requires a full corpus A/B on both presets
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > These could **flip** under any change that re-associates the floating-point arithmetic:
 > different compiler / optimization flags (`-ffast-math`, `/fp:fast`, FMA contraction),
@@ -720,7 +720,7 @@
 
 ### D-324 — Retirement of a post-scoring rule is global — a rule still doing work on any one preset is retained for all
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 >   Baroque but 18 load-bearing Jazz firing sites, §1.2). Retirement is global, so a rule live on ANY
 >   carrier is retained.
@@ -739,7 +739,7 @@
 
 ### D-325 — A correction rule that changes a committed chord's identity is retired or folded in BEFORE the search is widened past it
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 >   **DECIDED (Cowork ratification, 2026-06-12):** (a) — identity-mutating gates are
 >   retired/folded BEFORE the beam widens past them; **3.4 leads 3.2 for those gates** (a
@@ -760,7 +760,7 @@
 
 ### D-326 — The chord-path search emits the whole path with every stretch's alternatives and margins, not the committed reading alone
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 >   **DECIDED (Cowork ratification, 2026-06-12):** emit the full path + per-node alternatives
 >   + margins (evidence-forwarding) — Stage 6 functional labeling consumes the alternatives;
@@ -779,7 +779,7 @@
 
 ### D-327 — The root-continuity guard reads the reconstructed inversion credit, superseding the designed sounding-third test
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > **Ratified form (Cowork, 2026-06-12).** Gate R reads the **pipeline-reconstructed full
 > basisDep** (`cell.basisDep + fn::inversionContextBonus(...)`, which Pass A computes for the
@@ -805,7 +805,7 @@
 
 ### D-328 — A wider search cannot fix the arpeggio root failure — the wrong reading IS the global optimum, so only re-weighting or joint segmentation can
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > wrong-root micro-region is the **HIGHEST-scoring node** (locally correct — the DCML root
 > is absent from its tones), so the continued-root path is the **genuine global optimum** a
@@ -943,7 +943,7 @@
 
 ### D-378 — Re-deciding a chord under a different tonality is well-defined ONLY on the decoder path — the legacy multi-pass emission cannot be faithfully re-decoded, and a naive re-emit injects a measured ~6 % same-tonality root-flip artifact
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > **Faithfulness (the J-key-iii constraint, discharged).** J-key-iii deferred the chord axis because a *faithful*
 > per-region re-emission "cannot reproduce the multi-pass pipeline chord" — the legacy production chord is emitted
@@ -968,7 +968,7 @@
 
 ### D-380 — The carry's meaningful axis is DISTINCT ROOTS, and every above-threshold root is carried at graded confidence — a carry of winner-plus-one discards the third root on about a quarter of slices
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > The decisive fan-out finding `[data]`: a **≥3rd distinct root clears threshold on 25.1 % / 16.1 % / 24.9 %** of
 > slices. This is exactly the **load-bearing exclusion tail** (#12, finding-by-exclusion): the ruled-out and
@@ -992,7 +992,7 @@
 
 ### D-381 — The carry must cap on DISTINCT ROOTS, not on voicings — the existing voicing-keyed cap gives no structural guarantee that a third root survives
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > **The owed guarantee (structure only; R5).** The engaged carry must **preserve distinct roots explicitly**, not as
 > a by-product of a voicing cap. The declared *shape*: a **distinct-root-first carry** — for each distinct root above
@@ -1061,7 +1061,7 @@
 
 ### D-402 — The inversion-append is a pure cap artifact that dissolves when the cap is removed; the below-threshold bass promotion is a targeted promotion that stays
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > **One honest discrimination (a true cap-artifact vs a legitimate targeted promotion):** Iter 91 (#6) uses
 > `kPromoteAppendOnly` with `stopBelowThreshold=false` — it can pull a **below-threshold** bass-rooted target.
@@ -1084,7 +1084,7 @@
 
 ### D-403 — STOP, not forced: the four best-different-root scans are NOT one decision at code, so the one-decision-four-sites premise over-counts
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > - **FQ-1 — ⛔ STOP-and-reported (not forced).** At code the four scans are NOT one decision: divergent
 >   "differs" predicate (rootPc-only #1/#2/#3 vs `sameChordSymbol` = root+quality #4), element type, and
@@ -1106,7 +1106,7 @@
 
 ### D-423 — The gate-retirement stage is the only sanctioned way the post-scoring gates change, and three do-not rules hold through every stage
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > - The "do not" rules (no new gates, no threshold widening, no rcb gating) remain in force
 >   through all stages; Stage 3.4 is the only sanctioned way gates change.
@@ -1119,7 +1119,7 @@
 
 **Entry ratified.** 2026-08-03 · by user
 
-**Home.** `docs/implementation_roadmap.md:557`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `docs/implementation_roadmap.md:609`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
 **Provenance.** `docs/implementation_roadmap.md`:520-521, in the closing section relating the roadmap to the earlier phase plan, stated as remaining "in force through all stages". No date or ratifier is stated. Its subject is the legacy vertical scorer's post-scoring gate layer, dormant on both production surfaces since 2026-07-26/27, hence the LEGACY mark; the three underlying prohibitions (D-036, D-061, D-215) carry their own scopes. The natural home is `docs/scoring_model.md` §8, where the other standing constraints and dead ends on that layer live, hence the documentation-gap flag. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 

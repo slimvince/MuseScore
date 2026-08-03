@@ -17,7 +17,7 @@
 
 **Status.** LIVE · date not stated · ratified by user
 
-**Home.** `ARCHITECTURE.md:839-840`
+**Home.** `ARCHITECTURE.md:841-842`
 
 **Provenance.** ARCHITECTURE.md:808 heading says '(ratified; full statements in cowork_target_architecture.md)'; the date and ratifier are not stated at this home
 
@@ -31,7 +31,7 @@
 
 **Status.** LIVE · date not stated · ratified by user
 
-**Home.** `ARCHITECTURE.md:840`
+**Home.** `ARCHITECTURE.md:842`
 
 **Provenance.** ARCHITECTURE.md:808-815. The joint estimator's own unit is the ONSET event (jointdecoder.h:67), not this slice - see OPEN_ITEMS OI-228
 
@@ -47,7 +47,7 @@
 
 **Status.** LIVE · date not stated · ratified by user
 
-**Home.** `ARCHITECTURE.md:846-849`
+**Home.** `ARCHITECTURE.md:848-851`
 
 **Provenance.** ARCHITECTURE.md:808 ratified banner; sharpens §2.1 (D-070)
 
@@ -62,7 +62,7 @@
 
 **Status.** SUPERSEDED BY D-001 · decided 2026-06-29 · ratified by user
 
-**Home.** `ARCHITECTURE.md:819-820`
+**Home.** `ARCHITECTURE.md:821-822`
 
 **Provenance.** The 2026-07-17 governing decision (D-001) replaces the mechanism with ONE joint decode - the mechanism this block had ruled out. No supersession banner was added to §2.14 - see OPEN_ITEMS OI-234 ★ USER RULING 2026-08-02 (OI-234, reading 3): forward-only as the architecture ruling is SUPERSEDED BY D-001 (the 2026-07-17 joint decision, adopted 2026-07-26); the supersession now has a ruling naming it (was superseded-in-fact). The §2.14 scoping annotation records the ruling.
 
@@ -77,7 +77,7 @@
 
 **Status.** LIVE · decided 2026-06-29 · ratified by user
 
-**Home.** `ARCHITECTURE.md:816-817`
+**Home.** `ARCHITECTURE.md:818-819`
 
 **Provenance.** The joint estimator (D-001) is a global joint decode and is in production on both surfaces. The record does not state how this measurement was reconciled with the later ruling - see OPEN_ITEMS OI-234 ★ USER RULING 2026-08-02 (OI-234, reading 3): the finding STANDS FOR WHAT IT TESTED — cycling/re-ranking over the per-layer pipeline's carried candidate lists adds nothing, binding on that design class — and does NOT bear on the fitted semi-Markov joint decode (a different mechanism class). Returned to LIVE, scoped; the §2.14 annotation records the scoping (was superseded-in-fact).
 
@@ -91,7 +91,7 @@
 
 **Status.** LIVE · decided 2026-06-29 · ratified by user
 
-**Home.** `ARCHITECTURE.md:821`
+**Home.** `ARCHITECTURE.md:823`
 
 **Provenance.** The mechanism around it (D-025) is superseded in fact, but the ranked-alternatives requirement is carried forward by the joint estimator's published candidate lists (D-006)
 
@@ -106,7 +106,7 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `ARCHITECTURE.md:893-894`
+**Home.** `ARCHITECTURE.md:895-896`
 
 **Provenance.** ARCHITECTURE.md:833-850 records the rename CONFIRMED (user, 2026-07-02) and EXECUTED 2026-07-03 'propagated through every layer spec'. ARCHITECTURE.md itself still uses the banned word 216 times including section headings - see OPEN_ITEMS OI-233
 
@@ -122,7 +122,7 @@
 
 **Status.** LIVE · date not stated · ratified by user
 
-**Home.** `ARCHITECTURE.md:901-903`
+**Home.** `ARCHITECTURE.md:903-905`
 
 **Provenance.** ARCHITECTURE.md:808 ratified banner
 
@@ -138,7 +138,7 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `ARCHITECTURE.md:907-909`
+**Home.** `ARCHITECTURE.md:909-911`
 
 **Provenance.** ARCHITECTURE.md:880-884 names cowork_bounded_context_design.md as the ONE detailed cross-layer spec and records the 2026-07-02 user directive making it 'the hard gate before L6'. DIRECTLY CONTRADICTED by D-011 (whole-score decode per query, no caching) - see OPEN_ITEMS OI-210/OI-212
 
@@ -152,7 +152,7 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `ARCHITECTURE.md:909`
+**Home.** `ARCHITECTURE.md:911`
 
 **Provenance.** Same home as D-030. The record producer analyses the whole score regardless of the requested span (OI-212)
 
@@ -168,7 +168,7 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `ARCHITECTURE.md:939-941`
+**Home.** `ARCHITECTURE.md:941-943`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass, cc_instruction_spec_completion.md): the contract's own document `cowork_confidence_contract.md:39-40` (ratified there, user, 2026-07-02) remains the authoritative full statement; the rule is now stated in the cross-cutting contracts of the architecture document (§2.15), which is where a reader of the layers meets it. The stale 'ratification-gated' parenthetical in the §2.14 forward-override bullet of §2.15 is corrected in the same pass (OPEN_ITEMS OI-232, item 5). Contradicted by D-019 on the production record arm - see OPEN_ITEMS OI-231
 
@@ -185,7 +185,7 @@
 
 **Status.** LIVE · date not stated · ratified by user
 
-**Home.** `ARCHITECTURE.md:914-917`
+**Home.** `ARCHITECTURE.md:916-919`
 
 **Provenance.** ARCHITECTURE.md:808 ratified banner. The joint emission reads only struck notes (OI-228) and the shared tone surface is voice-blind (OI-74)
 
@@ -200,7 +200,7 @@
 
 **Status.** LIVE · date not stated · ratified by user
 
-**Home.** `ARCHITECTURE.md:931-932`
+**Home.** `ARCHITECTURE.md:933-934`
 
 **Provenance.** ARCHITECTURE.md:902-909
 
@@ -216,7 +216,7 @@
 
 **Status.** LIVE · decided 2026-06-29 · ratified by user
 
-**Home.** `ARCHITECTURE.md:832-834`
+**Home.** `ARCHITECTURE.md:834-836`
 
 **Provenance.** ARCHITECTURE.md:801-805. Not implemented: the effort setting does not exist and the decode's cost drivers (segment cap, key prune width) are compiled-in constants - tracked at OI-209/OI-210
 
@@ -232,7 +232,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:738-740`
+**Home.** `ARCHITECTURE.md:740-742`
 
 **Provenance.** ARCHITECTURE.md:709-713; restated as an ongoing concern at :2131-2136
 
@@ -248,7 +248,7 @@
 
 **Status.** LIVE · decided 2026-07-06 · ratified by user
 
-**Home.** `ARCHITECTURE.md:955-957`
+**Home.** `ARCHITECTURE.md:957-959`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): CLAUDE.md guiding principle #12, ratified by the user 2026-07-06, remains the standing principle; the layer-facing rule is now stated in the cross-cutting analysis contracts it governs. OPEN_ITEMS OI-237 closes on this move
 
@@ -263,7 +263,7 @@
 
 **Status.** LIVE · decided 2026-07-10 · ratified by user
 
-**Home.** `ARCHITECTURE.md:972-973`
+**Home.** `ARCHITECTURE.md:974-975`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): CLAUDE.md's 'Fact-publication corollary to #6/#7/#12' (ratified 2026-07-10, amended 2026-07-12 - publish EVIDENCE-class facts broadly, each carrying its establishment status) remains the standing corollary; the layer-facing rule is now stated in the cross-cutting analysis contracts. OPEN_ITEMS OI-237 closes on this move
 
@@ -351,7 +351,7 @@
 
 ### D-243 — The planning band for the vertical engine, and the corpora excluded from it
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > For planning purposes, the current vertical tertian engine plus targeted texture
 > fixes should be expected to plateau around 65–75% exact external root+quality
@@ -371,7 +371,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:3675-3683`
+**Home.** `ARCHITECTURE.md:3677-3685`
 
 **Provenance.** The band is stated at ARCHITECTURE.md:3567-3575. The governing measurement surface is now the robust unit ratified at R10-b (CLAUDE.md gate block (A)), whose figures are reported per preset on a different unit; no ruling names this band as replaced. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -599,7 +599,7 @@
 
 ### D-278 — The joint key-and-chord step is SHELVED - measured not to pay
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > precision gain is measured read-only **before** it is built, exactly as the joint step was. **The joint key↔chord
 > step is SHELVED — measured NOT to pay** (arc #12: net +0.05–0.16 pp over ~6200 regions, harm 75–90 % of
@@ -659,7 +659,7 @@
 
 ### D-288 — Beam widening is SHELVED - a wider search cannot fix the failure class it was proposed for
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > - **⚠ STRATEGIC PIVOT (2026-06-13, Cowork-verified + user-directed): beam-widening
 >   SHELVED; the back half of the roadmap is being re-grounded on measured precision
@@ -710,7 +710,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:323-325`
+**Home.** `ARCHITECTURE.md:325-327`
 
 **Provenance.** Recorded in `cowork_handoff_archive.md` (the Stage-5 fitter block) as design constraint 4c of `cowork_stage5_fitter_design.md`. Consistent with, and earlier than, D-003 (inference is preset-independent; presets are presentation concerns) — this states the FITTING side of the same separation. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): stated as standing rule (f) of the joint estimator's specification. Former home preserved (#12): `cowork_handoff_archive.md:2363`, the Stage-5 fitter block, as design constraint 4c.
 
@@ -746,7 +746,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:963-965`
+**Home.** `ARCHITECTURE.md:965-967`
 
 **Provenance.** Recorded in `cowork_handoff_archive.md` (the 2026-07-07 entry-point block) as a dated correction. It scopes D-099 / principle #12 and is recorded nowhere that a reader of #12 would find. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written into `ARCHITECTURE.md` §2.15 as the boundary clause of the negative-evidence contract, beside D-099 — the home this row's own text named. Former home preserved (#12): `cowork_handoff_archive.md:1532`, the 2026-07-07 entry-point block.
 
@@ -764,7 +764,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_stage5_fitter_design.md:673`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
+**Home.** `cowork_stage5_fitter_design.md:684`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
 **Provenance.** Recorded in `cowork_stage5_fitter_design.md` (SIGNED, user, 2026-07-04) as the eighth of its numbered architecture decisions, and applied in the same document at §4.5: the one measured non-monotone row was deferred and declared rather than mapped. Found by the phase-1f final-partition wave, 2026-08-02, reading `cowork_stage5_fitter_design.md` in full (SIGNED, user, 2026-07-04). NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).
 
@@ -828,7 +828,7 @@
 
 **Entry ratified.** 2026-08-03 · by user
 
-**Home.** `docs/implementation_roadmap.md:497`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `docs/implementation_roadmap.md:549`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
 **Provenance.** `docs/implementation_roadmap.md`:460-461, recorded at the Stage-5 fitter design's signing: "Stage-5 design SIGNED 2026-07-04 … A-3 ruled = Jazz fit deferred to the jazz-GT conversion". The document states the DESIGN was signed that day but does not say who ruled A-3, so the ratifier is NOT STATED. A-3 is one of the ten external-review amendments the record marks user-ratified 2026-07-02 at `:148-151`, but that ratification is of the amendment, not of this later disposition of it. Beside D-310 (jazz accuracy not measurable) and `OPEN_ITEMS.md` OI-7 (establish a jazz ground truth or de-scope the jazz claims). Recorded in a plan rather than in the fitter's own specification, hence the documentation-gap flag. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 

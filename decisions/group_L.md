@@ -18,7 +18,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:405`
+**Home.** `ARCHITECTURE.md:407`
 
 **Provenance.** ARCHITECTURE.md:374-378 (§1.2). No date or ratifier stated.
 
@@ -34,7 +34,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:409`
+**Home.** `ARCHITECTURE.md:411`
 
 **Provenance.** ARCHITECTURE.md:380-382 (§1.2); restated at ARCHITECTURE.md:6821-6823 (the composing module is 'intended as a future contribution'). ★ READ WITH the CLAUDE.md DISTRIBUTION CONSTRAINT (D-197): the MusicXML declared-mode import patch cfc7eb5e39 is FORK-LOCAL ONLY and must NEVER reach musescore/MuseScore. Two recorded positions - a general intent and a one-patch exception - and the record does not state how the general intent applies to the rest of the tree.
 
@@ -49,7 +49,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:415`
+**Home.** `ARCHITECTURE.md:417`
 
 **Provenance.** ARCHITECTURE.md:384-387 (§1.3). No date or ratifier stated. The per-file consequence is ARCHITECTURE.md:6654 - a GPL v3 header on every file.
 
@@ -64,7 +64,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:418`
+**Home.** `ARCHITECTURE.md:420`
 
 **Provenance.** ARCHITECTURE.md:389-390 (§1.3), restated at ARCHITECTURE.md:6750-6752 (§18.3). No date or ratifier stated.
 
@@ -82,7 +82,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6811`
+**Home.** `ARCHITECTURE.md:6813`
 
 **Provenance.** ARCHITECTURE.md:6649-6655 (§17.1). No date or ratifier stated.
 
@@ -96,7 +96,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6817`
+**Home.** `ARCHITECTURE.md:6819`
 
 **Provenance.** ARCHITECTURE.md:6649-6657 (§17.1). No date or ratifier stated.
 
@@ -114,7 +114,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6821`
+**Home.** `ARCHITECTURE.md:6823`
 
 **Provenance.** ARCHITECTURE.md:6659-6671 (§17.2). No date or ratifier stated.
 
@@ -128,7 +128,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6833`
+**Home.** `ARCHITECTURE.md:6835`
 
 **Provenance.** ARCHITECTURE.md:6673 (§17.2). No date or ratifier stated. ★ This is the rule the 2026-08-01 CLAUDE.md Conventions entry generalizes from scoring values to design decisions as a class (D-195) - and the rule this register's rationale field serves.
 
@@ -144,7 +144,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6870`
+**Home.** `ARCHITECTURE.md:6872`
 
 **Provenance.** ARCHITECTURE.md:6707-6719 (§17.3), which gives a worked example from existing code (the circle-of-fifths interval deltas). No date or ratifier stated.
 
@@ -161,7 +161,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6883`
+**Home.** `ARCHITECTURE.md:6885`
 
 **Provenance.** ARCHITECTURE.md:6721-6729 (§17.4). No date or ratifier stated.
 
@@ -177,7 +177,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6904`
+**Home.** `ARCHITECTURE.md:6906`
 
 **Provenance.** ARCHITECTURE.md:6742-6746 (§18.2). No date or ratifier stated.
 
@@ -195,7 +195,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:308-310`
+**Home.** `ARCHITECTURE.md:310-312`
 
 **Provenance.** Recorded in `cowork_handoff_archive.md` (the queue block, marked BINDING on the fitter design), naming `cowork_score_census.md` §8c as the constraint's own block and `cowork_stage5_fitter_design.md` §2/§3a as where it binds. ★ Load-bearing at HEAD and NOT reconciled anywhere in the record this pass read: the joint estimator's tables and weights are fitted on the DCML ground truth, which this constraint names as non-commercial-class and therefore validation-only. Whether the constraint was amended, scoped, or simply not carried forward is not stated. Found by the phase-1e second-partition archive read, 2026-08-02; rowed. ★ RULED by the user 2026-08-02 (OI-271, reading 1): THE CONSTRAINT BINDS, reaffirmed as written. Consequence recorded with the census's own nuance (cowork_score_census.md:239-248): the constraint's class list places the WiR analyses (CC-BY-SA) in the SHIPPABLE pool and the DCML corpora in the NC class — and the record names the 326-chorale ground truth 'WiR/DCML' interchangeably — so the practical consequence turns on a VERIFICATION not yet made: establish at the objects which class the fitted tables' annotation source falls in. If NC-class, the current fitted values are development/validation only and ship-intended values are fitted on the licensed pool at the corpus-onboarding event (OI-38, where the licensing and precision motives converge); if CC-BY-SA, the fit conforms and that establishment is recorded. The verification is OI-271's remaining action. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). ★ LICENCE-CLASS VERIFICATION AT THE OBJECTS (CC, 2026-08-02, the phase-1f wave, executing the remaining action of the [[OI-271]] ruling). What the fit actually reads: the generators stamp `ground_truth_substrate: dcml_parser.load_wir_regions` and point `WIR_DIR` at `tools/dcml/when_in_rome`, whose loader reads `Corpus/Early_Choral/Bach,_Johann_Sebastian/Chorales/<NNN>/analysis.txt`. ESTABLISHED: (1) that source is NOT a DCML-lab corpus — the DCML corpora sit in sibling directories each carrying its own CC BY-NC-SA 4.0 licence file, while `when_in_rome` is a clone of MarkGotham/When-in-Rome with no licence file at all; so the NC reading this row assumed is REFUTED. (2) NOTHING under `tools/dcml/` is committed to this repository — the whole tree is ignored (`.gitignore:24`) and `git ls-files tools/dcml/when_in_rome` returns zero, so no annotation file is distributed by this fork today. (3) The When-in-Rome README grants CC BY-SA 4.0 to “new content in this repository, including the new analyses, code, and the conversion (specifically) of existing analyses” and defers analyses that originated elsewhere to their original source — and it lists the Bach chorales under “Corpora originating elsewhere” as RomanText analyses by Dmitri Tymoczko and colleagues needing no conversion. (4) No chorale analysis file names a licence or a source: 0 of 371 carry a Source header, against the README’s own claim that links to the original sources appear “within every analysis.txt file”; each names only an analyst and a proofreader, and the per-folder `remote.json` records `analysis_source` as a relative path, not a licensed origin. The scores themselves are the music21 public-domain chorale edition and are not in doubt. VERDICT: the class is NOT NC, and NOT unambiguously CC-BY-SA either — the remaining question is narrower than the row’s and is a question for the WiR maintainers, not for this record. No guess is entered; [[OI-271]] stays open on that narrowed question. ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): the constraint is now stated as standing rule (e) of the joint estimator's own specification, with its defense and its ratifying event. Former home preserved (#12): `cowork_handoff_archive.md:2478`, the queue block, marked BINDING on the fitter design. The constraint's detailed per-licence-class block remains `cowork_score_census.md` §8c, which the homed rule cites; that document is NOT a contract home (Cowork-delivered banner, no user-ratified delegation — the phase-1j transitive-authority verification), which is why a homed restatement was owed rather than a pointer.
 
@@ -211,7 +211,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `STATUS_ARCHIVE.md:2251`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `STATUS_ARCHIVE.md:2262`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md`. VERIFIED AT THE OBJECTS 2026-08-02: commit `b1ba746` deletes exactly that one line from `src/engraving/dom/chordlist.cpp`, only an upstream header-update commit has touched the file since, and the line is absent at HEAD. This is a THIRD edit to MuseScore's own code beside **D-198** and **D-199**, and it is not in `CLAUDE.md`'s “Local patches — do not revert” section, which carries exactly two subsections; the non-conformance against the ruled **D-229** is rowed at [[OI-273]]. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).
 

@@ -106,6 +106,17 @@ later decision; the §15-13 weight is a fitted preference over an existing decis
 signal); candidate levers R-1…R-10 (none commissioned; §14 disposes R-11/R-12/R-13, the three
 Stage-5-neighborhood method levers); the engage decision itself (E3 is its own user event).
 
+> **★ CORRECTION OF STATE — the scope-out line above ("the `chordanalyzer.cpp` file split (OWED
+> refactor #1 — **parked by ratified R9**)") names an act that was already DELIVERED when this design
+> was written** (annotation 2026-08-03, CC, on the user's ruling of that date; `OPEN_ITEMS.md`
+> **OI-286**, register entry **D-427**). The split was committed as `41f7c65f63` on **2026-06-17**,
+> seventeen days before this design of 2026-07-04. **The scope-out itself is unaffected in substance:**
+> what this arc excludes it still excludes, and the sentence is preserved unedited (#12). Two things a
+> reader should carry forward. **(i)** The **iteration-API renames** — the other half of OWED refactor
+> #1 — are genuinely still owed (**D-428**), and their subject includes live Layer-1.5 code, so they
+> are not disposed of by the retirement map. **(ii)** This arc's own §6-block dissolution IS OWED
+> refactor #2 (**D-429**), and it is the half this document's scope-in list carries.
+
 **Status.** DRAFT for sign-off. No implementation exists; locators are deferred until built.
 
 ---

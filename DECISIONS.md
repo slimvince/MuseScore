@@ -114,6 +114,16 @@ early it was made. Where a LEGACY-marked decision's *principle* was separately t
 live design by a ruling, the entry's plain restatement says so — read it before concluding the
 principle lapsed with the code.
 
+**What the mark does NOT say** (wording weakened by the user's ruling of 2026-08-03). Until that
+date the mark ended *"it has no effect on the live solution"*. That was a claim about the live
+system which the marking pass never checked, and it failed twice — at D-329, whose principle a
+later ruling carried across to the live family design, and at D-311, whose subject produced
+`chordsymbolformatter.cpp`, which the record arm runs. A swept population with two demonstrated
+errors is not established (#19), so the clause was removed rather than re-argued: the mark now
+states only what the decision is ABOUT. **A LEGACY mark is therefore not evidence that the marked
+subject is unreachable**, and no design may put load on it as though it were. The full
+re-verification of the marked set against a live-reachability test is `OPEN_ITEMS.md` OI-289.
+
 ### The status words
 
 | Status | Meaning |
@@ -156,29 +166,29 @@ project's own and are defined here because they are used before any entry explai
 
 ## What is in this register, counted
 
-**426 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
+**429 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
 
 | | Count |
 |---|---|
-| Decisions recorded | **426** |
-| — of which live | 365 |
-| — of which superseded in fact | 5 |
+| Decisions recorded | **429** |
+| — of which live | 366 |
+| — of which superseded in fact | 6 |
 | — of which superseded by | 9 |
-| — of which deferred | 45 |
+| — of which deferred | 46 |
 | — of which shelved with evidence | 2 |
 | Decisions whose date is not stated in the record | 205 |
 | Decisions whose ratifier is not stated in the record | 258 |
-| Decisions recorded outside the specification that owns them | 225 |
+| Decisions recorded outside the specification that owns them | 228 |
 | — of which a documentation gap | 49 |
 | — of which recorded only on a tracking surface, with no home at all | 11 |
 | — of which a project-wide convention, correctly homed | 35 |
-| — of which a decision about the process, correctly homed | 45 |
+| — of which a decision about the process, correctly homed | 48 |
 | Decisions whose defense the record does not state | 44 |
 | Entries whose own ratification the provenance records | 187 |
 
-The second-to-last row is about the DECISIONS; the last is about the ENTRIES. **187 of 426** entries carry a recorded event at which the entry itself — this quote, this restatement, this status — was reviewed and ratified. The remaining 239 do not carry one in their own provenance; the register-level ratification events listed in the preamble are the place to look for those, and nothing is inferred from them into the per-entry field.
+The second-to-last row is about the DECISIONS; the last is about the ENTRIES. **187 of 429** entries carry a recorded event at which the entry itself — this quote, this restatement, this status — was reviewed and ratified. The remaining 242 do not carry one in their own provenance; the register-level ratification events listed in the preamble are the place to look for those, and nothing is inferred from them into the per-entry field.
 
-That last row is the one meant to fall. **382 of 426** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
+That last row is the one meant to fall. **385 of 429** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
 
 Alongside the register, every one of the harvested statements about decisions in this repository has been given a recorded disposition, so that none was silently passed over:
 
@@ -487,10 +497,13 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-229 | The MuseScore-dependency rule - one general rule for what our code may depend on | LIVE | — | `ARCHITECTURE.md` |
 | D-233 | Build and test commands run synchronously; one run, one result | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-296 | READING MuseScore's engraving code is allowed from anywhere we may edit; only EDITING the notation and engraving code is off limits | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
-| D-311 | The chord-analyzer file split happens once, after the retirements have settled — not before | DEFERRED ⚠LEGACY | 2026-08-02 · user | `cowork_engage_arc_plan.md` ⚠gap |
+| D-311 | The chord-analyzer file split happens once — the SEQUENCING is spent (the split happened first, not last); the once-only LESSON is what carries forward | SUPERSEDED IN FACT | 2026-08-02 · user | `cowork_engage_arc_plan.md` ⚠gap |
 | D-401 | The refactor sequencing call — the portable unification wins run before Layer 5, the legacy-path tangles fold into the decoder engagement, and the file split is last | LIVE | 2026-08-02 · user | `cowork_structural_integrity_audit.md` ⚠gap |
 | D-404 | Relocating the neighbour-chord temporal-context computation out of the derived-view layer is DEFERRED to the decoder engagement, which owns regional temporal context | DEFERRED ⚠LEGACY | 2026-08-02 · user | `cowork_structural_integrity_audit.md` ⚠gap |
 | D-416 | Two structural refactors are DEFERRED and OWED, and must be surfaced at every planning checkpoint until done | LIVE | 2026-08-03 · user | `docs/implementation_roadmap.md` |
+| D-427 | Component (1a) of the two-deferred-refactors mandate — the physical `chordanalyzer.cpp` file split: DELIVERED 2026-06-17 | LIVE | — | `docs/implementation_roadmap.md` |
+| D-428 | Component (1b) of the two-deferred-refactors mandate — the iteration-vocabulary API renames: STILL OWED, on partly-live code | DEFERRED | — | `docs/implementation_roadmap.md` |
+| D-429 | Component (2) of the two-deferred-refactors mandate — dissolving the post-hoc gate-correction layer into fitted weights: STILL OWED, and its PRINCIPLE binds the live design | DEFERRED ⚠LEGACY | — | `docs/implementation_roadmap.md` |
 
 ## J. Presentation and output conventions — [full entries](decisions/group_J.md)
 
@@ -736,8 +749,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 ## Provenance of this register
 
 - Adjudication: the OI-207 decision-conformance adjudication, 2026-08-01, at commit `58dea6702ac8aa9d5ef8b89244b94d587a75f7a5`.
-- Coverage figures above regenerated at commit `be5097f74090617e05098820fc4dfd8d8dab5b7e`.
-- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `f0eba5439ed576f2…`).
+- Coverage figures above regenerated at commit `e31b6768d272bd4c1b6bb07a5128ce802f27cc32`.
+- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `3b82979b7c040b8d…`).
 - Harvest: `tools/audit/decisions/decision_candidates.json` (sha256 `51850440b315e6e9…`).
 - Clustering: `tools/audit/decisions/decision_clusters.json` (sha256 `0615b1e61bf10332…`).
 - Shape: `open_items/OI-208.md` (user-ratified 2026-07-28).

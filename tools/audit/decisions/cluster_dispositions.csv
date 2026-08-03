@@ -3862,7 +3862,7 @@ DC-03860,1,unresolved,BR-8,,docs,bullet,docs/format_symbol_audit.md
 DC-03861,1,unresolved,BR-8,,docs,paragraph,docs/format_symbol_audit.md
 DC-03862,1,restates,BR-3,D-119,docs,paragraph,docs/format_symbol_audit.md
 DC-03863,1,restates,BR-3,D-119;D-415,docs,paragraph,docs/implementation_roadmap.md
-DC-03864,1,no-spec-home,BR-4,D-416,docs,paragraph,docs/implementation_roadmap.md
+DC-03864,1,no-spec-home,BR-4,D-416;D-429,docs,paragraph,docs/implementation_roadmap.md
 DC-03865,1,unresolved,BR-8,,docs,paragraph,docs/implementation_roadmap.md
 DC-03866,1,restates,BR-3,D-025;D-084,docs,paragraph,docs/implementation_roadmap.md
 DC-03867,1,restates,BR-3,D-051,docs,table_row,docs/implementation_roadmap.md

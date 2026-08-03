@@ -28,7 +28,7 @@
 
 ### D-214 — The dim7 characteristic bonus is the rotation selector and may not simply be removed
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > - **`dim7CharacteristicBonus` is the dim7 rotation selector.** Do not
 >   suppress without replacing the non-diatonic-♭♭7 mechanism (B3 lesson).
@@ -45,7 +45,7 @@
 
 ### D-215 — Gating the root-continuity bonus on a sparse predecessor is a dead end
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > - **`rootContinuityBonus` sparse-predecessor gate is a dead end** (Iter 98).
 >   Both density-based and inversion-aware variants tried; both regress
@@ -63,7 +63,7 @@
 
 ### D-216 — The stepwise-bass bonus's four gates are each load-bearing
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > - **`w_stepIn`/`w_stepOut` has four gates, each load-bearing** — the
 >   `ScoringPhase::Final` call-site gate, root-position guard,
@@ -82,7 +82,7 @@
 
 ### D-217 — The segmentation phase must suppress every context-dependent bonus
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 >   seq, and dim bonuses plus Gate R are all skipped in the Segmentation phase (gated at
 >   the `applyHarmonicFunction` call site, not inside the now-stateless bonus functions).
@@ -103,7 +103,7 @@
 
 ### D-218 — Template array sizes derive from one constant, so the compiler enforces them
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 >   constant since `a236a0ff21`, so the compiler enforces sizes. Adding a template =
 >   bump the constant + add the template/mask entries in the same edit (§9 step 5).
@@ -125,7 +125,7 @@
 
 ### D-219 — Gates B, C and D were unreachable and were removed; no temporal condition may be added to the enharmonic flip
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 >   removed in the Stage-3 per-gate retirement audit (roadmap 3.4b) as a byte-identical change
 >   (0/353 × 3 configs, snapshots zero-diff). Gate A's swap later became the present branch of
@@ -154,7 +154,7 @@
 
 ### D-220 — The augmented-seventh guard requires both the major third and the augmented fifth
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > - **`hasStructuralBass` gates inversion bonuses.** Sparse upper-register
 >   "bass" notes do not get inversion bonuses (Corelli op01n08d m2 b3).
@@ -171,7 +171,7 @@
 
 ### D-221 — A sparse upper-register lowest note does not earn inversion bonuses
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 >   live `results[0]` reference (Sub-9a lesson).
 
@@ -187,7 +187,7 @@
 
 ### D-222 — If the diminished bonus rotates the winner to a non-diminished chord, the result without it is used
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 >   fires only when at least one tone has `onsetAtRegionStart == true` or
 >   `distinctMetricPositions > 0` (i.e. came from `collectRegionTones`).
@@ -205,7 +205,7 @@
 
 ### D-223 — A gate that judges the pre-correction winner reads a snapshot, not the live result
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > ---
 >
@@ -223,7 +223,7 @@
 
 ### D-224 — Joint bass-and-chord scoring requires accumulated regional evidence
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > Derived from the B1, B2, and B3 lessons.
 >

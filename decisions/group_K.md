@@ -17,7 +17,7 @@
 
 **Status.** LIVE · decided 2026-06-29 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:344-345`
+**Home.** `ARCHITECTURE.md:346-347`
 
 **Provenance.** ARCHITECTURE.md:308-316 'Doc governance (2026-06-29) - the hierarchy'
 
@@ -32,7 +32,7 @@
 
 **Status.** LIVE · decided 2026-06-29 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:341-342`
+**Home.** `ARCHITECTURE.md:343-344`
 
 **Provenance.** ARCHITECTURE.md:308-316
 
@@ -47,7 +47,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3472-3473`
+**Home.** `ARCHITECTURE.md:3474-3475`
 
 **Provenance.** ARCHITECTURE.md:3363-3365, consistent with :251-254
 
@@ -63,7 +63,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1209-1211`
+**Home.** `ARCHITECTURE.md:1211-1213`
 
 **Provenance.** ARCHITECTURE.md:1151-1154. Three layer tags and two prose statements are stale after the switch - see OPEN_ITEMS OI-232
 
@@ -157,7 +157,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6916`
+**Home.** `ARCHITECTURE.md:6918`
 
 **Provenance.** ARCHITECTURE.md:6754-6759 (§18.4); the standing principle is CLAUDE.md #10 (D-174). No date or ratifier stated.
 
@@ -278,7 +278,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:630-632`
+**Home.** `ARCHITECTURE.md:632-634`
 
 **Provenance.** ARCHITECTURE.md:601-603 (stated as a standing reading instruction in the document itself) ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -382,7 +382,7 @@
 
 **Entry ratified.** 2026-08-03 · by user
 
-**Home.** `docs/implementation_roadmap.md:132`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `docs/implementation_roadmap.md:155`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** `docs/implementation_roadmap.md`:113-119, recorded as a user directive of 2026-07-02, in the same block as the Layer-6 prohibition it accompanies (register entry D-266, whose home is the surviving document). The surviving specification `cowork_bounded_context_design.md` is a contract home under the fifth home case and carries seven register entries (D-260...D-266); the killed document `cowork_temporal_extension_contract.md` is named here with its merged contents enumerated. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 

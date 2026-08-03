@@ -16,7 +16,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1268`
+**Home.** `ARCHITECTURE.md:1270`
 
 **Provenance.** ARCHITECTURE.md:1200-1210 (Layer 2 - Built+Live)
 
@@ -30,7 +30,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1268`
+**Home.** `ARCHITECTURE.md:1270`
 
 **Provenance.** ARCHITECTURE.md:1210. Cited by open_items/OI-228 as the primary source the joint emission departs from
 
@@ -45,7 +45,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1275-1276`
+**Home.** `ARCHITECTURE.md:1277-1278`
 
 **Provenance.** ARCHITECTURE.md:1217-1218. The joint decoder's per-event note set is ONSET-only (jointdecoder.h:67) - open_items/OI-228
 
@@ -61,7 +61,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1272-1274`
+**Home.** `ARCHITECTURE.md:1274-1276`
 
 **Provenance.** ARCHITECTURE.md:1212-1218
 
@@ -75,7 +75,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1270`
+**Home.** `ARCHITECTURE.md:1272`
 
 **Provenance.** ARCHITECTURE.md:1212-1214
 
@@ -90,7 +90,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1295-1297`
+**Home.** `ARCHITECTURE.md:1297-1299`
 
 **Provenance.** ARCHITECTURE.md:1237-1245
 
@@ -105,7 +105,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1296-1298`
+**Home.** `ARCHITECTURE.md:1298-1300`
 
 **Provenance.** ARCHITECTURE.md:1237-1242
 
@@ -121,7 +121,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1300-1302`
+**Home.** `ARCHITECTURE.md:1302-1304`
 
 **Provenance.** ARCHITECTURE.md:1242-1245
 
@@ -136,7 +136,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1286-1288`
+**Home.** `ARCHITECTURE.md:1288-1290`
 
 **Provenance.** ARCHITECTURE.md:1220-1231
 
@@ -150,7 +150,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1283`
+**Home.** `ARCHITECTURE.md:1285`
 
 **Provenance.** ARCHITECTURE.md:1220-1227; cites cowork_layer2_reslice_design.md §2
 

@@ -268,6 +268,8 @@
 > that passage and measures nothing on the next one (`CLAUDE.md` #8; `DEFECT_TYPES.md` DT-2). Ratified by the
 > user 2026-07-17, with the governing decision at the head of this document (`OPEN_ITEMS.md:24-25`).
 >
+> *Pointer, not a seventh rule (added 2026-08-03 on the user's D-416 ruling; register entry **D-429**): the standing mandate of 2026-06-14 to dissolve the legacy post-hoc gate-correction layer into fitted weights carries a principle for THIS estimator — a correction belongs in a factor's fitted value, never in a layer of after-the-fact corrections laid over the decode. It is not restated as a rule here because it is the same separation rule (a) makes on the fitting side, and a second copy would be a #6 violation; it is recorded once, at **D-429**, as a binding constraint on the phase-3 family design. Nothing in this architecture specifies a post-hoc correction layer for the estimator, and the legacy Gates A–L layer the mandate names retires at the retirement map's R1 (**D-418**) — but neither fact discharges the mandate, and it is not treated as discharged.*
+>
 > **(b) The held-out split and the capacity budget are declared BEFORE any value is fit, and the headline
 > number is the held-out one.** The ratified protocol is five-fold cross-validation grouped by the shared
 > *When in Rome* analysis file, with every fitted object — vocabulary threshold, smoothing, regularization

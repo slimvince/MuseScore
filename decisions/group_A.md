@@ -168,7 +168,7 @@
 
 **Status.** LIVE · decided 2026-07-19 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:271-272`
+**Home.** `ARCHITECTURE.md:273-274`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:123 (open_items/OI-176 and OI-177, PROTOCOL RATIFIED 2026-07-19, protocols in `cowork_prefit_gates.md`). The standing principle is CLAUDE.md #20. OPEN_ITEMS OI-237 closes on this move
 
@@ -183,7 +183,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:285-286`
+**Home.** `ARCHITECTURE.md:287-288`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:211 (open_items/OI-188, OPEN - 'bounds every ceiling claim'); the admission rule actually in production still has no ratified basis (open_items/OI-226). OPEN_ITEMS OI-237 closes on this move
 
@@ -198,7 +198,7 @@
 
 **Status.** LIVE · decided 2026-07-26 · ratified by user
 
-**Home.** `ARCHITECTURE.md:299-300`
+**Home.** `ARCHITECTURE.md:301-302`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only in the CLAUDE.md gate block (A), the OI-178 adoption baselines (user-ratified 2026-07-26). The tension with D-090 (calibrated abstention, ARCHITECTURE.md §5.7a) is NAMED at the new home and deliberately NOT resolved there - resolving it is later work. OPEN_ITEMS OI-237 closes on this move
 
@@ -344,7 +344,7 @@
 
 ### D-376 — The joint key-and-chord step was designed as a BOUNDED COUPLING over the two existing decoders, and the unified single-state alternative was REJECTED — the option later adopted as the production architecture
 
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map; it has no effect on the live solution (marking convention user-ratified 2026-08-02).
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
 > **Decision: (B) — a bounded coupling step.** Grounded, not by preference but by three binding constraints:
 >

@@ -32,6 +32,29 @@ the layer boundaries stabilize; (2) **Stage 5** the dissolution of the post-hoc 
 current Stage-4 key work, but both are OWED and must be surfaced at every planning checkpoint until done.
 Mirrored in `cowork_handoff.md` (top standing block).
 
+> **★ STATE CORRECTION — half (1)'s FILE SPLIT IS DELIVERED; what is still owed of it is the RENAMES**
+> (annotation 2026-08-03, CC, on the user's ruling of that date; rowed at `OPEN_ITEMS.md` **OI-286**).
+> The mandate above is quoted unchanged and its ratification is untouched — what is corrected is the
+> record of what has since been done. The user ruled the mandate into its **three real components**,
+> each dispositioned on its own evidence (register entries **D-427**, **D-428**, **D-429**, all three
+> carrying **D-416** as their parent, and the split of one mandate into three labelled as the
+> reconstruction it is):
+>
+> - **(1a) the physical split of `chordanalyzer.cpp` — DELIVERED**, commit `41f7c65f63` (2026-06-17,
+>   verified at the object), 2,178 lines moved into five sibling translation units, touching nothing
+>   else but `CMakeLists.txt` and `docs/scoring_model.md`. That is **three days after** this mandate
+>   deferred it. `docs/scoring_model.md:26-37` records the resulting layout as current.
+> - **(1b) the iteration-API renames — STILL OWED**, and their subject is **partly LIVE code, not
+>   legacy**: `applyIter8691Pedal` is still the declared name, and one of its call sites is the
+>   Layer-1.5→Layer-4 fact cycle `OPEN_ITEMS.md` OI-165 records as *"not currently scheduled to die"*.
+>   Item **3.5** below names this half; read the annotation there.
+> - **(2) the dissolution of the post-hoc gate-correction layer — STILL OWED**, its subject reached
+>   only through the legacy chord path (retirement map **R1** below).
+>
+> The **surfacing obligation stands** for (1b) and (2) until they are done. Five later records still
+> called half (1) owed and parked, none noting the delivery; each now carries a correction, and this
+> is the first of them.
+
 **★ BACK-HALF VERIFICATION METHOD (user, 2026-06-14): LAYER-BY-LAYER AUDIT.** Once every piece is in its
 correct layer, audit each layer in isolation — state its single responsibility, check correct + complete
 against THAT responsibility only (inputs assumed correct, consumers ignored), pin gaps as that layer's
@@ -163,6 +186,22 @@ indefinitely" with "deferred until these CRITERIA (date open)"; E3 is its own us
   file-split (OWED refactor #1) AFTER E4 removals — split once; R10 batch-region gate superseded by the robust unit
   as primary (with G2/Stage 5), case-identity + two-tier policy carry over.
 - **Wording sweep** ("indefinitely" → "until the criteria above, date open") rides the next docs commit.
+
+> **★ R9 IS DELIVERED — the split happened on 2026-06-17, BEFORE the E4 removals it is sequenced
+> after** (annotation 2026-08-03, CC, on the user's ruling of that date; `OPEN_ITEMS.md` **OI-286**,
+> register entry **D-427**). R9's text above is quoted unchanged and the retirement map's ratification
+> (**D-418**, user, 2026-07-02) is untouched: what is corrected is that R9 describes an act **already
+> performed**. Commit `41f7c65f63` (2026-06-17, verified at the object) split `chordanalyzer.cpp` into
+> five sibling translation units; `docs/scoring_model.md:26-37` records the layout as current. Two
+> consequences a reader must not miss. **(i)** "Split once" was honoured in the sense that matters —
+> there has been exactly one split — but it was performed *before* the removals, not after, so the
+> sequencing this line states was not followed and no second split is thereby licensed. **(ii)** R9's
+> own framing — a retirement — never fitted its subject: `STATUS_ARCHIVE.md:114` records the residual
+> `chordanalyzer.cpp` as one that *"SURVIVES the engagement; R9 splits `chordanalyzer.cpp`, does not
+> delete it"*, and one of the five units the split produced, `chordsymbolformatter.cpp`, is **live
+> production code on the record arm** (`notationimplodebridge.cpp:1159-1170`, `:1189-1191`;
+> `sectionrecordadapter.h:69-71`). **R9 is therefore discharged as to the split**; the iteration-API
+> renames of the same roadmap item (3.5) are **not**, and are tracked as **D-428**.
 
 > **★ SCOPE RULING — these criteria govern engaging the DORMANT L4/L5 SPINE, not the joint estimator's
 > adoption** (user, 2026-08-03; recorded at `OPEN_ITEMS.md` OI-284, register entry **D-417**). The criteria
@@ -451,6 +490,19 @@ byte-identity bridge so there is a no-surprise verification gate at every step.
 | 3.4 | Retire gates A–L one at a time: a gate is removed only when the decoder reproduces its pinned fixes (Stage 1.1 tests are the proof obligations). Gates J and R expected to survive longest (structural, healthy). **Stage-1a obligations:** the post-bonus quality-guard winner scan is first-wins on exact ties (ordering sensitivity), and the diff-root append never appends sub-threshold candidates — the decoder must either reproduce or consciously re-decide both (`cc_stage1a_report.md` F2/F5) | Part 1; audit F7 | per-gate differential report |
 | 3.4b | Remove dead Gates B/C/D (provably unreachable — stage1b F1) as part of the gate-retirement work, NOT before (their removal is byte-identical but belongs to the deliberate per-gate retirement audit) | stage1b F1 | byte-identical removal commit |
 | 3.5 | Split `chordanalyzer.cpp` along the now-real layer seams; rename iteration-vocabulary APIs (`applyIter8691Pedal` → descriptive names) — the split is motivated here, not before | Part 2 Q3.1/3.2 | file map in ARCHITECTURE.md |
+
+> **★ ITEM 3.5 IS HALF DONE** (annotation 2026-08-03, CC, on the user's ruling of that date;
+> `OPEN_ITEMS.md` **OI-286**). The **split** is delivered — commit `41f7c65f63`, 2026-06-17, register
+> entry **D-427**. The **renames are not** (**D-428**): `applyIter8691Pedal` is still the declared
+> name in `chordanalyzer.h:729`, defined at `chordpostpasses.cpp:119`, and called from
+> `sectionanalyzer.cpp:450`, `regionanalyzer.cpp:1011`/`:1229`/`:1419`, `harmonicsegmenter.cpp:394`/
+> `:403`/`:546`/`:743`/`:820`/`:912`, `notationcomposingbridge.cpp:663`,
+> `regiontoneprimitives.cpp:511`/`:569`, `chorddiagnose.cpp:172` and `chordanalyzer.h:752`, plus the
+> test suites. **The renames are ordinary technical debt on partly-live code, NOT legacy work:**
+> `regiontoneprimitives.cpp` is the Layer-1.5 primitive of the live fact cycle `OPEN_ITEMS.md` OI-165
+> records as *"not currently scheduled to die"*, so this half does not simply disappear with the
+> retirement map. Renaming a symbol is a code change and is out of scope while the three-phase rule
+> (**D-231**) holds; the item is recorded here, not performed.
 
 **3.2 ↔ 3.4 ordering (Q3 DECIDED, Cowork ratification 2026-06-12).** For any gate that mutates
 root/quality/bass identity, **3.4 retirement of that gate leads 3.2 beam-widening past it** —

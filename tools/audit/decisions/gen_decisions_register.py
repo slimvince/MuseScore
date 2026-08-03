@@ -57,13 +57,25 @@ NONSPEC_LABEL = {
     "unhomed": "recorded only on a tracking surface, with no home at all",
     "contract-home": "homed in a ratified contract document (a proper home)",
 }
+# The marker's wording was WEAKENED on 2026-08-03 (user ruling, phase 1m Task 4) to what the mark
+# is actually established to say.  It used to end "; it has no effect on the live solution" — a
+# claim about the LIVE system that the mark itself never checked, and that failed twice: at D-329
+# (whose principle a ruling carried across to the live family design, which is why the transfer
+# variant below exists) and at D-311 (whose subject, the `chordanalyzer.cpp` split, produced
+# `chordsymbolformatter.cpp`, run by the record arm at `notationimplodebridge.cpp`:1170).  A swept
+# population with two demonstrated errors is not established (#19), so the clause is removed rather
+# than re-argued; the full re-verification of the marked set is `OPEN_ITEMS.md` OI-289.
 LEGACY_MARK = ("⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion "
-               "at the retirement map; it has no effect on the live solution (marking convention "
-               "user-ratified 2026-08-02).")
+               "at the retirement map (marking convention user-ratified 2026-08-02; wording "
+               "weakened by the user's ruling of 2026-08-03 — the mark states what the decision "
+               "is ABOUT, and makes no claim about the live solution).")
 # The transfer variant. Rule (f) exists so that a ruling about soon-deleted code is never mistaken
 # for one about the live solution; where a ruling has explicitly carried the PRINCIPLE across to
-# the live design, the plain mark's "no effect on the live solution" would itself be the mistake
-# rule (f) forbids, so the mark says instead where the text lives and points at the transfer.
+# the live design, the plain mark alone would leave a reader concluding the principle lapsed with
+# the code, so this variant says instead where the text lives and points at the transfer. (It was
+# introduced at phase 1i because the plain mark then ASSERTED "no effect on the live solution",
+# which was false of D-329; that clause is gone as of 2026-08-03, and the variant survives on its
+# own ground — a transferred principle is worth saying, not merely worth not-denying.)
 LEGACY_TRANSFER_MARK = (
     "⚠ **LEGACY IN ITS LETTER — TRANSFERRED IN ITS PRINCIPLE.** The text of this decision belongs "
     "to the dormant pipeline awaiting deletion at the retirement map, and goes with it. Its "
@@ -196,6 +208,16 @@ ABOUT, not about how old it is: a decision that governs the live solution carrie
 early it was made. Where a LEGACY-marked decision's *principle* was separately transferred to the
 live design by a ruling, the entry's plain restatement says so — read it before concluding the
 principle lapsed with the code.
+
+**What the mark does NOT say** (wording weakened by the user's ruling of 2026-08-03). Until that
+date the mark ended *"it has no effect on the live solution"*. That was a claim about the live
+system which the marking pass never checked, and it failed twice — at D-329, whose principle a
+later ruling carried across to the live family design, and at D-311, whose subject produced
+`chordsymbolformatter.cpp`, which the record arm runs. A swept population with two demonstrated
+errors is not established (#19), so the clause was removed rather than re-argued: the mark now
+states only what the decision is ABOUT. **A LEGACY mark is therefore not evidence that the marked
+subject is unreachable**, and no design may put load on it as though it were. The full
+re-verification of the marked set against a live-reachability test is `OPEN_ITEMS.md` OI-289.
 
 ### The status words
 
