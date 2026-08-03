@@ -268,3 +268,30 @@ differently (OI-289); **(g)** a reading-coverage count carried forward for three
 between three proxies asserted without its uncertainty, against #24
 (`tools/audit/decisions/phase1n_reading_regime.json` → `proxy.ordering_decision`). Every one of the
 eight was found by the EXECUTING side, running the check the writing side had not.
+
+### When a mechanism is worth keeping — the three measured conditions
+
+**Ruled by the user, 2026-08-03.** A mechanism built to enforce one of these rules is kept when
+**it runs automatically with no human step, it has a measured detection rate against known
+instances of the failure it is for, and it has a measured false-positive rate at or near zero on
+legitimate work.** All three are measurable and none is judged. A mechanism that fails any of them
+is not kept: one needing a human step is a reminder, one with no measured detection rate is
+unestablished (#19), and one that fires on legitimate work gets switched off, which is worse than
+having none.
+
+**The test this replaces, and why it was withdrawn.** The preceding rule — stated by the planning
+side in the phase-1p dispatch (§6.4) — was *a mechanism must retire the prose it replaces, or it
+is apparatus growth.* The user withdrew it on 2026-08-03 because it is a **structural proxy
+standing in for a behavioral quantity, and an unvalidated one** — principle #17(d), which forbids
+exactly that substitution. What is at stake is whether the running burden or the failure rate
+falls; prose retirement measures neither. A rule may legitimately need stating for a human reader
+**and** be enforced by a machine — that is not the duplication #6 forbids, as this register
+demonstrates, being a generated surface whose source of record is a separate data file.
+
+**The two mechanisms built under the withdrawn test are KEPT under this one**, and their
+establishment artifacts are where their figures live rather than being restated here:
+`tools/audit/process_check.py` (`tools/audit/process_check_establishment.json`) and
+`tools/audit/shell_read_guard.py` (`tools/audit/shell_read_guard_establishment.json`). Neither
+retires any prose, which is why they failed the withdrawn test and is not a defect under this one.
+The guard's third condition is met only while it is ARMED; until it is, that is recorded as an
+expected-failing check rather than as coverage (`OPEN_ITEMS.md` OI-292).

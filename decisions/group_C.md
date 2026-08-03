@@ -297,7 +297,7 @@
 
 **Status.** LIVE · decided 2026-06-22 · ratified by user
 
-**Home.** `CLAUDE.md:516`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:527`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:443-486, block (B), carried over unchanged to the robust unit at R10-b. Full provenance `cowork_gate_policy_amendment.md`. The four guardrails that make the tracked class conditional - verified at the score per case, default to the barred class on any doubt, the barred class non-increasing, case identities recorded - are at CLAUDE.md:464-473.
 
@@ -313,7 +313,7 @@
 
 **Status.** LIVE · decided 2026-07-13 · ratified by user
 
-**Home.** `CLAUDE.md:442-444`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:453-455`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:239 (OI-132), ruled by the user 2026-07-13 and landed at 800f1a12bf. The adjudication probe is `cc_mode_grading_adjudication_probe_report.md`; the re-baseline record is `cc_key_grading_and_calibration_rebaseline_report.md`. It is implemented in ONE shared reduction, `compare_rn._our_key_tonic`, onto which the second key parser was folded (#6). OPEN_ITEMS OI-240 closes on this move
 
@@ -329,7 +329,7 @@
 
 **Status.** LIVE · decided 2026-07-12 · ratified by user
 
-**Home.** `CLAUDE.md:452-454`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:463-465`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:270 (OI-143), adopted at d9b52ba969. The current values are in the CLAUDE.md gate block (A): key-agree against the home key 56.14 %, against the local key 78.42 %. OPEN_ITEMS OI-240 closes on this move
 
@@ -345,7 +345,7 @@
 
 **Status.** LIVE · decided 2026-07-12 · ratified by user
 
-**Home.** `CLAUDE.md:457-459`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:468-470`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:217 (OI-33), resolved 2026-07-12 in the key-layer readiness wave 1. Its current reading on the production arm is D-114 - the decoder commits its best path, so the abstain counter reads zero. OPEN_ITEMS OI-240 closes on this move
 
@@ -390,6 +390,8 @@
 
 **Home.** `cowork_bounded_context_design.md:43-44`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
+**Home section.** **§2** — `## 2. The three spans (the core distinction)` (heading at line 33). A delegation at ARCHITECTURE.md:912 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+
 **Provenance.** cowork_bounded_context_design.md:3 carries the status banner 'SIGNED (user, 2026-07-02)'; the invariant is stated at :43-44. The cross-cutting bounded-context bullet of ARCHITECTURE.md points at this document as the ONE cross-layer extension spec (:10). Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
 ### D-261 — A layer never guesses how much context it needs - the amount is discovered by convergence
@@ -418,6 +420,8 @@
 
 **Home.** `cowork_bounded_context_design.md:57-69`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
+**Home section.** **§3** — `## 3. The bounded-context contract (what every layer obeys)` (heading at line 51). A delegation at ARCHITECTURE.md:912 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+
 **Provenance.** cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; the rule is items 5 and 6 of the bounded-context contract at :57-69. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
 ### D-262 — The extension increment is chosen by the requesting layer, not by the layer that supplies the notes
@@ -442,6 +446,8 @@
 
 **Home.** `cowork_bounded_context_design.md:73-81`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
+**Home section.** **§3** — `## 3. The bounded-context contract (what every layer obeys)` (heading at line 51). A delegation at ARCHITECTURE.md:912 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+
 **Provenance.** cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; item 8 of the bounded-context contract at :73-81. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
 ### D-263 — A refused or truncated extension is marked on the output, never silently absorbed
@@ -461,6 +467,8 @@
 **Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_bounded_context_design.md:82-86`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§3** — `## 3. The bounded-context contract (what every layer obeys)` (heading at line 51). A delegation at ARCHITECTURE.md:912 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; item 10 of the bounded-context contract at :82-86, marked '(merged 2026-07-02)' from the killed duplicate contract document. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
@@ -483,6 +491,8 @@
 
 **Home.** `cowork_bounded_context_design.md:121-126`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
+**Home section.** **§4** — `## 4. The protocol — request → supply → bounded recompute` (heading at line 96). A delegation at ARCHITECTURE.md:912 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+
 **Provenance.** cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; the equivalence invariant at :121-126, with the step-size independence obligation restated as a required test at :202-204. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
 ### D-265 — Asking a lower layer for more notes is a data-supply call, not a backward inference edge
@@ -504,6 +514,8 @@
 
 **Home.** `cowork_bounded_context_design.md:115-120`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
+**Home section.** **§4** — `## 4. The protocol — request → supply → bounded recompute` (heading at line 96). A delegation at ARCHITECTURE.md:912 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+
 **Provenance.** cowork_bounded_context_design.md:3, status banner 'SIGNED (user, 2026-07-02)'; stated at :115-120 and again as an architecture decision at :188-189 ('recorded so the forward-only contract is not read as forbidding extension'). Bears on register entry D-025, the forward-only rule with two scoped escapes. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
 ### D-266 — Layer 6 is prohibited until the bounded-context design is coded and regression-tested for Layers 1 to 5
@@ -523,6 +535,8 @@
 **Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_bounded_context_design.md:213-217`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§8** — `## 8. Risks & the non-trivial parts` (heading at line 193). A delegation at ARCHITECTURE.md:912 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** cowork_bounded_context_design.md:3-4 records it in the status banner as 'THE GATE (user directive, same day)', and the acceptance list is the numbered section at :213-223. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, option (b) with the acceptance list explicitly deprecated) — the dated annotation at the home records it; the restatement obligation joins the phase-3 plan via OI-259.
 
@@ -548,6 +562,8 @@
 **Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_confidence_contract.md:25-34`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§2** — `## 2. Definitions — the two admissible confidence classes` (heading at line 23). A delegation at ARCHITECTURE.md:951 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** cowork_confidence_contract.md:3, status banner 'RATIFIED (user, 2026-07-02)'; the two classes at :25-34. The contract names its architecture home as the cross-cutting contracts section (:6), where register entry D-032 records the boundary rule this classification underpins. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
@@ -577,6 +593,8 @@
 
 **Home.** `cowork_confidence_contract.md:36-48`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
+**Home section.** **§2** — `## 2. Definitions — the two admissible confidence classes` (heading at line 23). A delegation at ARCHITECTURE.md:951 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+
 **Provenance.** cowork_confidence_contract.md:3, status banner 'RATIFIED (user, 2026-07-02)'; rules U1 to U5 at :36-48. Rule U2 is the one already registered, as D-032, at its ARCHITECTURE.md home; U1, U3, U4 and U5 were not in the register. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
 ### D-269 — The frame table is the one home of the override arithmetic; a new override site declares its frame before it is built
@@ -594,6 +612,8 @@
 **Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_confidence_contract.md:83-85`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§4** — `## 4. The comparison frames (the §8 override arithmetic, stated once)` (heading at line 63). A delegation at ARCHITECTURE.md:951 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** cowork_confidence_contract.md:3, status banner 'RATIFIED (user, 2026-07-02)'; the rule at :83-85, over the frame definition and the two built instances at :63-81. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
@@ -622,6 +642,8 @@
 
 **Home.** `cowork_engage_arc_plan.md:103-112`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **“The stages”** — `## The stages (in principle order)` (heading at line 19). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit**.
+
 **Provenance.** cowork_engage_arc_plan.md:3 records the user's ratification of this plan, dated 2026-07-07; the shelving at :103-112, with the measurement cited to its report and the no-information-loss reconciliation stated in place. Found by the phase-1d enumeration wave, 2026-08-02 - the class this audit exists for: a shelving with evidence, recorded only in a design document. ★ RATIFIED (user, 2026-08-02, option (a) with the deprecation made extremely clear) — the scoping annotation is at the home (the dated annotation beneath the shelving); the subject is legacy-era, will be entirely discarded at the OI-180 retirement map, and the shelving does not bear on D-001.
 
 ### D-282 — Meta-finding: the oracle/tier metric, never a bare proxy - superseded by the robust-unit stop and the two-tier policy
@@ -634,7 +656,9 @@
 
 **Status.** SUPERSEDED BY D-115 and D-191 · date not stated · ratifier not stated
 
-**Home.** `cowork_architecture_reassessment.md:106`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_architecture_reassessment.md:106`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **§4** — `## 4. Meta-findings to institutionalize (cross-cutting)` (heading at line 104). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `contract-home` to `gap`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommendations adopted): SUPERSEDED BY the named later ratified decisions — the governing status derives from the record's dates and explicitness, not from resolving the original statement's ambiguity. The second-partition read of the archives is instructed to flag anything refining these. ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.
 
@@ -728,7 +752,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `CLAUDE.md:429-431`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:440-442`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Recorded in `cowork_handoff_archive.md` (the corpus-audit block, as the ground-truth verdict). The human-annotation-only requirement it names was delivered as the granularity-robust unit (D-115), whose own text carries the clause "music21 is NOT ground truth"; the two further clauses — never describe a measurement as ground-truth agreement, and no self-annotation in any measurement — are recorded ONLY here. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]] — measurement conventions go to the gate block): written into `CLAUDE.md` gate block (A) as the FIRST of the four grading conventions the robust unit is measured under, carrying all three clauses the archive held alone. Former home preserved (#12): `cowork_handoff_archive.md:2844`, the corpus-audit block.
 
@@ -766,6 +790,8 @@
 
 **Home.** `cowork_stage5_fitter_design.md:684`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
+**Home section.** **§9** — `## 9. Architecture decisions` (heading at line 623). A delegation at ARCHITECTURE.md:285 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+
 **Provenance.** Recorded in `cowork_stage5_fitter_design.md` (SIGNED, user, 2026-07-04) as the eighth of its numbered architecture decisions, and applied in the same document at §4.5: the one measured non-monotone row was deferred and declared rather than mapped. Found by the phase-1f final-partition wave, 2026-08-02, reading `cowork_stage5_fitter_design.md` in full (SIGNED, user, 2026-07-04). NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).
 
 ### D-339 — A confident earlier decision can be overturned by decisive later evidence, through ONE confidence-weighted forward-recompute mechanism — architecture-wide
@@ -791,9 +817,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_layer5_function_design.md:637-648`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_layer5_function_design.md:637-648`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Home section.** **§9** — `## 9. Architecture decisions (with the alternatives weighed)` (heading at line 611). No delegation from a user-ratified surface names this section. The criterion decides nothing here: whether the delegation naming this document DELEGATES or merely CITES is unresolved, and the 2026-08-03 ruling changed the criterion's unit, not that clause. The home class below is the one this entry already carried.
+**Home section.** **§9** — `## 9. Architecture decisions (with the alternatives weighed)` (heading at line 611). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `contract-home` to `gap`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
@@ -815,6 +841,8 @@
 
 **Home.** `cowork_joint_key_chord_design.md:136-140`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **“§1.3 How it avoids re-introducing a cross-layer cycle”** — `### §1.3 How it avoids re-introducing a cross-layer cycle (#7)` (heading at line 118). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit**.
+
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step the document designs is shelved (**D-278**); this prohibition is not about that step — it is stated as what any placement must avoid, and is flagged in the record as written so the build does not drift there. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
 ### D-422 — The jazz fit is deferred to the jazz ground-truth conversion; only the classical common-practice idiom is fitted now
@@ -831,6 +859,8 @@
 **Entry ratified.** 2026-08-03 · by user
 
 **Home.** `docs/implementation_roadmap.md:549`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **“Stage 5”** — `## Stage 5 — Fit the weights *(stop hand-tuning)*` (heading at line 532). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
 
 **Provenance.** `docs/implementation_roadmap.md`:460-461, recorded at the Stage-5 fitter design's signing: "Stage-5 design SIGNED 2026-07-04 … A-3 ruled = Jazz fit deferred to the jazz-GT conversion". The document states the DESIGN was signed that day but does not say who ruled A-3, so the ratifier is NOT STATED. A-3 is one of the ten external-review amendments the record marks user-ratified 2026-07-02 at `:148-151`, but that ratification is of the amendment, not of this later disposition of it. Beside D-310 (jazz accuracy not measurable) and `OPEN_ITEMS.md` OI-7 (establish a jazz ground truth or de-scope the jazz claims). Recorded in a plan rather than in the fitter's own specification, hence the documentation-gap flag. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 

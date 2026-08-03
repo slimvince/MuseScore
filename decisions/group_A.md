@@ -224,9 +224,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_prefit_gates.md:32-42`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_prefit_gates.md:32-42`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Home section.** **“The held-out evaluation protocol”** — `## The held-out evaluation protocol (OI-176; gates the fit event; #20/#19/#16)` (heading at line 23). No delegation from a user-ratified surface names this section. The criterion decides nothing here: whether the delegation naming this document DELEGATES or merely CITES is unresolved, and the 2026-08-03 ruling changed the criterion's unit, not that clause. The home class below is the one this entry already carried.
+**Home section.** **“The held-out evaluation protocol”** — `## The held-out evaluation protocol (OI-176; gates the fit event; #20/#19/#16)` (heading at line 23). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `contract-home` to `gap`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** cowork_prefit_gates.md:3 records the user's ratification of all four protocols including the marked constants, dated 2026-07-19; the held-out protocol at :23-60. It is the protocol form of register entry D-097, which states the general rule at its ARCHITECTURE.md home. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
@@ -255,9 +255,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_prefit_gates.md:68-81`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_prefit_gates.md:68-81`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Home section.** **“The capacity budget”** — `## The capacity budget (OI-177; gates the fit event; #20)` (heading at line 62). No delegation from a user-ratified surface names this section. The criterion decides nothing here: whether the delegation naming this document DELEGATES or merely CITES is unresolved, and the 2026-08-03 ruling changed the criterion's unit, not that clause. The home class below is the one this entry already carried.
+**Home section.** **“The capacity budget”** — `## The capacity budget (OI-177; gates the fit event; #20)` (heading at line 62). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `contract-home` to `gap`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** cowork_prefit_gates.md:3 records the user's ratification of all four protocols including the marked constants, dated 2026-07-19; the capacity budget at :62-96, with the twelve-to-fourteen weight amendment recorded in place at :77-81 as a lawful protocol amendment. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
@@ -275,9 +275,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_prefit_gates.md:17-19`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_prefit_gates.md:17-19`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Home section.** **the opening block (above the first section heading)** — `# The pre-fit gates for the joint estimator (OI-176 / OI-177 / OI-178 / OI-180) — ★ USER-RATIFIED 2026-07-19` (heading at line 1). No delegation from a user-ratified surface names this section. The criterion decides nothing here: whether the delegation naming this document DELEGATES or merely CITES is unresolved, and the 2026-08-03 ruling changed the criterion's unit, not that clause. The home class below is the one this entry already carried.
+**Home section.** **the opening block (above the first section heading)** — `# The pre-fit gates for the joint estimator (OI-176 / OI-177 / OI-178 / OI-180) — ★ USER-RATIFIED 2026-07-19` (heading at line 1). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `contract-home` to `gap`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** cowork_prefit_gates.md:17-19 states the rule and :3-6 records its ratification, dated 2026-07-19. It applies principle #22 (a hard gate declares in advance how it handles the largest change it will meet), registered as D-185, to the pre-fit protocols. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
@@ -298,9 +298,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_prefit_gates.md:116-121`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_prefit_gates.md:116-121`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Home section.** **“The robust-stop architecture-adoption protocol”** — `## The robust-stop architecture-adoption protocol (OI-178; before A's first measured decode; #22/#24)` (heading at line 98). No delegation from a user-ratified surface names this section. The criterion decides nothing here: whether the delegation naming this document DELEGATES or merely CITES is unresolved, and the 2026-08-03 ruling changed the criterion's unit, not that clause. The home class below is the one this entry already carried.
+**Home section.** **“The robust-stop architecture-adoption protocol”** — `## The robust-stop architecture-adoption protocol (OI-178; before A's first measured decode; #22/#24)` (heading at line 98). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `contract-home` to `gap`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** cowork_prefit_gates.md:3 records the user's ratification of all four protocols, dated 2026-07-19; the adoption protocol at :98-145, with the home-column amendment recorded in place at :123-129 as a lawful pre-measurement amendment. The event it governed is the OI-178 adoption, whose outcome is in the CLAUDE.md gate block. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
@@ -318,9 +318,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_prefit_gates.md:189-191`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_prefit_gates.md:189-191`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Home section.** **“The sanctioned dual path and the retirement map”** — `## The sanctioned dual path and the retirement map (OI-180; #23/#6/#15)` (heading at line 147). No delegation from a user-ratified surface names this section. The criterion decides nothing here: whether the delegation naming this document DELEGATES or merely CITES is unresolved, and the 2026-08-03 ruling changed the criterion's unit, not that clause. The home class below is the one this entry already carried.
+**Home section.** **“The sanctioned dual path and the retirement map”** — `## The sanctioned dual path and the retirement map (OI-180; #23/#6/#15)` (heading at line 147). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `contract-home` to `gap`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** cowork_prefit_gates.md:3 records the user's ratification of all four protocols, dated 2026-07-19; the reverse map is item 5 of the dual-path sanction at :189-191. Register entry D-095 records the sanctioned dual path itself at its ARCHITECTURE.md home. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
@@ -334,7 +334,9 @@
 
 **Status.** SUPERSEDED BY D-001 and D-096 · date not stated · ratifier not stated
 
-**Home.** `cowork_architecture_reassessment.md:107`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_architecture_reassessment.md:107`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **§4** — `## 4. Meta-findings to institutionalize (cross-cutting)` (heading at line 104). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `contract-home` to `gap`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommendations adopted): SUPERSEDED BY the named later ratified decisions — the governing status derives from the record's dates and explicitness, not from resolving the original statement's ambiguity. The second-partition read of the archives is instructed to flag anything refining these. ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.
 
@@ -348,7 +350,9 @@
 
 **Status.** SUPERSEDED BY the ratified factorization emission design (D-004 and the OI-194 increment) · date not stated · ratifier not stated
 
-**Home.** `cowork_architecture_reassessment.md:110`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_architecture_reassessment.md:110`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **§4** — `## 4. Meta-findings to institutionalize (cross-cutting)` (heading at line 104). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `contract-home` to `gap`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommendations adopted): SUPERSEDED BY the named later ratified decisions — the governing status derives from the record's dates and explicitness, not from resolving the original statement's ambiguity. The second-partition read of the archives is instructed to flag anything refining these. ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.
 
@@ -387,6 +391,8 @@
 
 **Home.** `cowork_joint_key_chord_design.md:77-96`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **“§1.1 The decision: a BOUNDED coupling step, NOT a unified `(key,chord)` hidden state”** — `### §1.1 The decision: a BOUNDED coupling step, NOT a unified `(key,chord)` hidden state` (heading at line 70). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit**.
+
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step this decision places was shelved against measurement and that shelving is register entry **D-278** (user-ratified 2026-07-07, re-ratified 2026-08-02), so the placement is shelved with it; the document's own banner says it is retained as the record and that the step is off the build inventory. **Reported, not statused as a supersession:** the option this decision REJECTED — one decision over a combined tonality-and-chord state — is what **D-001** later adopts as the production architecture, and no record connects the two; the user ruled at D-278's ratification that the shelving does not bear on D-001, and the two objections raised here are answered elsewhere in the record (the decision-neutrality corollary answers the rebuild objection; the adoption measurement answers the magnitude objection). NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
 ### D-379 — Whether an alternative tonality would change the chord CANNOT be measured without re-deciding under it — the exact coupled-case condition is not computable read-only, which is why it stayed unmeasured
@@ -408,6 +414,8 @@
 **Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_joint_key_chord_design.md:266-272`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **“§3.1 The trigger, grounded in C3”** — `### §3.1 The trigger, grounded in C3` (heading at line 249). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step the document designs is shelved (**D-278**); this statement is about what is and is not measurable, and stands independently of it — the same document records the shelving probe's own fire-rate as a structural proxy rather than the exact condition. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 

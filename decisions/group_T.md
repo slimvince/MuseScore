@@ -23,7 +23,7 @@
 
 **Status.** LIVE · decided 2026-07-11 · ratified by user
 
-**Home.** `CLAUDE.md:1036`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1059`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:878-887, user-directed 2026-07-11. Binds Claude Code and Cowork sessions alike.
 
@@ -43,7 +43,7 @@
 
 **Status.** LIVE · decided 2026-06-15 · ratified by user
 
-**Home.** `CLAUDE.md:792`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:815`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:737-753, user-directed 2026-06-15. ★ READ WITH the general contribution intent at ARCHITECTURE.md:380-382 - two recorded positions, a general intent to contribute and a named one-patch exception; the record does not state how the general intent applies to the rest of the tree.
 
@@ -71,7 +71,7 @@
 
 **Status.** LIVE · decided 2026-05-14 · ratified by user
 
-**Home.** `CLAUDE.md:744`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:767`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:678-713, applied 2026-05-14. Unrelated to the composing module; recorded so a dependency update does not silently overwrite it.
 
@@ -104,7 +104,7 @@
 
 **Status.** LIVE · decided 2026-06-14 · ratified by user
 
-**Home.** `CLAUDE.md:765`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:788`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:715-745, applied 2026-06-14, commit cfc7eb5e39. ★ Carries the distribution constraint above: fork-local only, never upstream.
 
@@ -180,7 +180,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `CLAUDE.md:991-1003`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1014-1026`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1589-1598, under the standing-rule heading 'FULL DECISION SURFACE BEFORE ANY CHOICE QUESTION' at cowork_handoff.md:1587 ('user mandate 2026-07-05'), with the instituting record at STATUS_ARCHIVE.md:202 - a session handoff block, which is a place for tracking a handover and not a home for a standing rule. Homed in the CLAUDE.md Conventions section, where this project's standing session-method rules live. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -281,7 +281,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `CLAUDE.md:1005-1023`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1028-1046`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1669-1680, under the standing-rule heading 'COWORK MUST NOT HALLUCINATE OR ASSUME - VERIFY AT SOURCE (user mandate 2026-06-21)' at cowork_handoff.md:1642 - a session handoff block. Homed in the CLAUDE.md Conventions section. Its scope is taken FROM THE RECORD, not decided here: that heading and D-252's own text ('Cowork MAY: read source files via the file tools - NOT bash') both state it as a planning-side rule, so the homed entry says so and says the mandated build, test and measurement commands are unaffected. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -304,7 +304,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `CLAUDE.md:1025-1032`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1048-1055`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1792-1796, under the standing-rule heading 'INVESTIGATE BY DEFAULT - NEVER ASK investigate vs proceed (user mandate 2026-06-14)' at cowork_handoff.md:1790 - a session handoff block. Homed in the CLAUDE.md Conventions section, beside principle #5, which it operationalizes. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -362,6 +362,8 @@
 
 **Home.** `cowork_engage_arc_plan.md:64-67`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **“The stages”** — `## The stages (in principle order)` (heading at line 19). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit**.
+
 **Provenance.** cowork_engage_arc_plan.md:64 states the gate as 'ratified 2026-07-10 with #17-#19', with its evidence document cited; the conditions at :64-92 and the amendment note at :128-130. The last condition is registered separately as D-209, the retiring-code audit rule, at its cowork_audit_protocol.md home. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
 ### D-298 — The layer-by-layer audit - each layer is audited once its pieces are in place
@@ -396,6 +398,8 @@
 **Entry ratified.** 2026-08-02 · by user
 
 **Home.** `cowork_stage5_fitter_design.md:1482`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **“§15 Open items & ratification asks”** — `## §15 Open items & ratification asks` (heading at line 908). A delegation at ARCHITECTURE.md:285 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Recorded in `cowork_stage5_fitter_design.md` (SIGNED, user, 2026-07-04) at open item O-10, and tracked as a standing obligation at [[OI-36]] — which is an open-items row, not a home. Found by the phase-1f final-partition wave, 2026-08-02, reading `cowork_stage5_fitter_design.md` in full (SIGNED, user, 2026-07-04). NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).
 
@@ -514,4 +518,24 @@
 **Home.** `cowork_audit_protocol.md:241`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** User ruling of 2026-08-03 (the seventh ruling set of that date, W5), homed at phase 1p in `cowork_audit_protocol.md`'s dispatch-protocol section beside **D-431**, which is the established home for rules about how a dispatch is written (D-250, D-251, D-252 also live there). **The rule carries its own mechanism**, so that it is more than a habit: every dispatch and every session report carries a SELF-CHECK SECTION answering a named five-item checklist — the guiding principles, the conventions, the figures-and-premises rule (D-431), the file-tools rule, and uncertainty on any comparison (#24) — and the section's ABSENCE is a failure `tools/audit/process_check.py` reports. The check's own detection power against the eight instances is measured rather than claimed, at `tools/audit/process_check_establishment.json`. NOT RATIFIED as an ENTRY — it goes to the user in the phase-1p ratification queue.
+
+### D-436 — A mechanism is kept on three measured conditions — automatic, detection rate, false-positive rate — not on whether it retires prose
+
+> **Ruled by the user, 2026-08-03.** A mechanism built to enforce one of these rules is kept when
+> **it runs automatically with no human step, it has a measured detection rate against known
+> instances of the failure it is for, and it has a measured false-positive rate at or near zero on
+> legitimate work.** All three are measurable and none is judged. A mechanism that fails any of them
+> is not kept: one needing a human step is a reminder, one with no measured detection rate is
+> unestablished (#19), and one that fires on legitimate work gets switched off, which is worse than
+> having none.
+
+**In plain words.** Whether a check or guard built to enforce a process rule is worth keeping is decided by three things that can be measured: it runs by itself with no human step; it has been measured against known instances of the failure it exists for, and found them; and it has been measured against legitimate work, and hardly ever fires on it. Whether it lets some written rule be deleted is not part of the test.
+
+**Why.** The test it replaces was a structural proxy standing in for a behavioral quantity, unvalidated — the substitution principle #17(d) forbids. What is at stake is whether the running burden or the failure rate falls, and prose retirement measures neither. The instance that exposed it is on the record: both mechanisms built under the withdrawn test were reported as retiring no prose (`OPEN_ITEMS.md` OI-292, and `tools/audit/claude_md_rule_triage.json` → `what_was_executed`), while each removes a failure mode — so the proxy graded them failures for a reason unrelated to what they do.
+
+**Status.** LIVE · decided 2026-08-03 · ratified by user
+
+**Home.** `cowork_audit_protocol.md:274`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** User ruling of 2026-08-03 (the eighth ruling set of that date, X3), homed at phase 1q in `cowork_audit_protocol.md`'s dispatch-protocol section beside **D-431** and **D-434**, which is the established home for rules about how a dispatch is written and checked. **It WITHDRAWS a test the planning side had stated and this project had been working under** — *a mechanism must retire the prose it replaces, or it is apparatus growth* — and the withdrawal is recorded with its reason rather than left as a silent change of standard. The two mechanisms built under the withdrawn test are KEPT under this one, and their establishment artifacts carry their measured rates: `tools/audit/process_check_establishment.json` and `tools/audit/shell_read_guard_establishment.json`. The guard's third condition holds only while it is ARMED, which is the user's act on the user's machine; until then it is recorded as an expected-failing check rather than as coverage (`OPEN_ITEMS.md` OI-292). NOT RATIFIED as an ENTRY — it goes to the user in the phase-1q ratification queue.
 

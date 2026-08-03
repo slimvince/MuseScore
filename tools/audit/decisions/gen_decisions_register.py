@@ -356,7 +356,7 @@ def render(backbone: dict, disp: dict) -> str:
     out.append("")
     sc = backbone["header"].get("scope")
     if sc and sc.get("home_granularity"):
-        out.append("### The home field's granularity — mixed, and why")
+        out.append("### The home field's granularity, and what sets a home class")
         out.append("")
         out.append(sc["home_granularity"])
         out.append("")
@@ -365,6 +365,11 @@ def render(backbone: dict, disp: dict) -> str:
             out.append(f"> **The criterion, as ruled.** {crit['ruling']}")
             out.append(">")
             out.append(f"> **What it supersedes.** {crit['supersedes']}")
+            out.append(">")
+            out.append(f"> **How a whole-document delegation is read.** "
+                       f"{crit['whole_document_reading']}")
+            out.append(">")
+            out.append(f"> **Scope of application.** {crit['scope_of_application']}")
             out.append("")
     if sc:
         out.append("### What was read, and what was not")
@@ -472,18 +477,21 @@ def render_entry(d: dict) -> list[str]:
         bits = [f"**Home section.** **{hs['label']}** — `{hs['section']}` "
                 f"(heading at line {hs['heading_line']})."]
         if hs["delegated"]:
-            bits.append(f"Delegated by {hs['delegation']}.")
+            bits.append(f"A delegation at {hs['delegation']} reaches this section.")
+        elif hs["delegated"] is False:
+            bits.append("The delegation names sections, and no delegation names this one.")
         else:
-            bits.append("No delegation from a user-ratified surface names this section.")
-        if hs["verdict"] == "UNDECIDED":
-            bits.append("The criterion decides nothing here: whether the delegation naming "
-                        "this document DELEGATES or merely CITES is unresolved, and the "
-                        "2026-08-03 ruling changed the criterion's unit, not that clause. "
-                        "The home class below is the one this entry already carried.")
-        elif hs["former_class"] and hs["former_class"] != d.get("nonspec_kind"):
-            bits.append(f"Home class **re-classified 2026-08-03** from `{hs['former_class']}` "
-                        f"to `{d.get('nonspec_kind')}` under the section-level criterion; the "
-                        "former class is kept here rather than overwritten (#12).")
+            bits.append("Not reached: the document's delegation is graded before any section "
+                        "question arises.")
+        bits.append(f"Decided by **{hs['decided_by']}**.")
+        if hs["class_before_phase1q"] != d.get("nonspec_kind"):
+            bits.append(f"Home class **re-classified 2026-08-03** (the one re-classification "
+                        f"pass) from `{hs['class_before_phase1q']}` to "
+                        f"`{d.get('nonspec_kind')}`; the former class is kept here rather than "
+                        "overwritten (#12).")
+        if hs["former_class"] not in (None, hs["class_before_phase1q"]):
+            bits.append(f"Its class before the phase-1n staged application was "
+                        f"`{hs['former_class']}`.")
         out.append(" ".join(bits))
         out.append("")
     out.append(f"**Provenance.** {d['status_source']}")

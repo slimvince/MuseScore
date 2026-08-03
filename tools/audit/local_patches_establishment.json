@@ -1,0 +1,147 @@
+{
+  "purpose": "Establishment (#19) of tools/audit/local_patches_check.py: that it DETECTS a deliberately absent patch, not only that it passes on the present ones. A check that only ever passes is not established.",
+  "patch_list_source": "derived from CLAUDE.md's 'Local patches — do not revert' section; the subsections and their `**File:**` lines are read from the document, never hard-coded here.",
+  "at_head": {
+    "patches": 3,
+    "present": 3,
+    "retired": 0,
+    "failing": 0,
+    "stopped": 0,
+    "rows": [
+      {
+        "title": "Windows Snap fix — `muse` submodule (applied 2026-05-14)",
+        "file": "muse/framework/ui/internal/platform/windows/winwindowscontroller.cpp",
+        "commit": null,
+        "superseded": null,
+        "markers": [
+          {
+            "kind": "removed",
+            "pattern": "ptMinTrackSize\\s*\\.\\s*[xy]\\s*=",
+            "why": "the two assignments the patch removed, which set the minimum window size to the full monitor work area inside the WM_GETMINMAXINFO handler. `CLAUDE.md`: \"Do not restore the `ptMinTrackSize` lines.\"",
+            "ok": true,
+            "problem": null
+          },
+          {
+            "kind": "added",
+            "pattern": "Do NOT set ptMinTrackSize here",
+            "why": "the guard comment the patch left in place of the removed lines. It is this project's own text, so its presence is positive evidence of the patch rather than of upstream's shape.",
+            "ok": true,
+            "problem": null
+          }
+        ],
+        "verdict": "PRESENT"
+      },
+      {
+        "title": "MusicXML declared-mode import fix (Stage 4a, applied 2026-06-14)",
+        "file": "src/importexport/musicxml/internal/import/importmusicxmlpass2.cpp",
+        "commit": null,
+        "superseded": null,
+        "markers": [
+          {
+            "kind": "added",
+            "pattern": "oldKeySig\\.mode\\(\\)\\s*!=\\s*key\\.mode\\(\\)",
+            "why": "the mode term the patch adds to the KeySig-dedup guard, without which a 0-fifths key signature carrying an explicit <mode> is dropped.",
+            "ok": true,
+            "problem": null
+          },
+          {
+            "kind": "added",
+            "pattern": "const\\s+KeySigEvent\\s+oldKeySig",
+            "why": "the prevailing KeySigEvent the patch fetches so the guard can read the mode at all; upstream reads only the Key fifths.",
+            "ok": true,
+            "problem": null
+          }
+        ],
+        "verdict": "PRESENT"
+      },
+      {
+        "title": "Chord-symbol parser \"sussus\" fix — `ParsedChord::parse` (applied 2026-04-15; recorded 2026-08-02)",
+        "file": "src/engraving/dom/chordlist.cpp",
+        "commit": "b1ba7464",
+        "superseded": null,
+        "markers": [
+          {
+            "kind": "removed",
+            "pattern": "tok1\\s*=\\s*u\"sus\"",
+            "why": "the redundant case-sensitive assignment the patch removed — the underlying cause of the \"sussus\" double-rendering defect. The correct lowercase path `tok1L = u\"sus\"` is upstream's and stays.",
+            "ok": true,
+            "problem": null
+          }
+        ],
+        "verdict": "PRESENT"
+      }
+    ]
+  },
+  "detection_synthetic": {
+    "instances": 5,
+    "detected": 5,
+    "detection_rate": 1.0,
+    "rows": [
+      {
+        "file": "muse/framework/ui/internal/platform/windows/winwindowscontroller.cpp",
+        "marker": "ptMinTrackSize\\s*\\.\\s*[xy]\\s*=",
+        "kind": "removed",
+        "how_the_patch_was_undone": "re-inserted the text the patch removed",
+        "verdict_on_the_unpatched_content": "FAIL",
+        "detected": true
+      },
+      {
+        "file": "muse/framework/ui/internal/platform/windows/winwindowscontroller.cpp",
+        "marker": "Do NOT set ptMinTrackSize here",
+        "kind": "added",
+        "how_the_patch_was_undone": "deleted the text the patch added",
+        "verdict_on_the_unpatched_content": "FAIL",
+        "detected": true
+      },
+      {
+        "file": "src/importexport/musicxml/internal/import/importmusicxmlpass2.cpp",
+        "marker": "oldKeySig\\.mode\\(\\)\\s*!=\\s*key\\.mode\\(\\)",
+        "kind": "added",
+        "how_the_patch_was_undone": "deleted the text the patch added",
+        "verdict_on_the_unpatched_content": "FAIL",
+        "detected": true
+      },
+      {
+        "file": "src/importexport/musicxml/internal/import/importmusicxmlpass2.cpp",
+        "marker": "const\\s+KeySigEvent\\s+oldKeySig",
+        "kind": "added",
+        "how_the_patch_was_undone": "deleted the text the patch added",
+        "verdict_on_the_unpatched_content": "FAIL",
+        "detected": true
+      },
+      {
+        "file": "src/engraving/dom/chordlist.cpp",
+        "marker": "tok1\\s*=\\s*u\"sus\"",
+        "kind": "removed",
+        "how_the_patch_was_undone": "re-inserted the text the patch removed",
+        "verdict_on_the_unpatched_content": "FAIL",
+        "detected": true
+      }
+    ]
+  },
+  "detection_from_the_record": {
+    "instances_available": 1,
+    "detected": 1,
+    "rows": [
+      {
+        "file": "muse/framework/ui/internal/platform/windows/winwindowscontroller.cpp",
+        "available": false,
+        "why_not": "the `CLAUDE.md` subsection records no `**Commit:**` field, so the pre-patch object cannot be named by explicit hash. The synthetic instance above is this patch's whole establishment."
+      },
+      {
+        "file": "src/importexport/musicxml/internal/import/importmusicxmlpass2.cpp",
+        "available": false,
+        "why_not": "the `CLAUDE.md` subsection records no `**Commit:**` field, so the pre-patch object cannot be named by explicit hash. The synthetic instance above is this patch's whole establishment."
+      },
+      {
+        "file": "src/engraving/dom/chordlist.cpp",
+        "available": true,
+        "commit": "b1ba7464",
+        "object_read": "b1ba7464^:src/engraving/dom/chordlist.cpp",
+        "verdict_on_the_real_unpatched_file": "FAIL",
+        "detected": true
+      }
+    ]
+  },
+  "what_this_does_not_measure": "A false-positive rate. There is no population of legitimate edits that could trip this check: a marker fires only when the patched text itself moves, which is the event it exists for. Stating that rather than reporting a zero measured over nothing."
+}

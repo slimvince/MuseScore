@@ -213,7 +213,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_notation_output_contract.md:54-57`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_notation_output_contract.md:54-57`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **§2** — `## 2. Provenance on the surface (#16/#19)` (heading at line 52). The delegation names sections, and no delegation names this one. Decided by **D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `contract-home` to `gap`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** cowork_notation_output_contract.md:3 records the user's ratification, dated 2026-07-26, as specified and without amendments; the provenance rule at :52-57. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
@@ -239,6 +241,8 @@
 
 **Home.** `cowork_notation_output_contract.md:139-147`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
+**Home section.** **§3.4** — `### 3.4 Per key run — the un-rounded modal reading (C1; ratified decision 1 delivered)` (heading at line 137). A delegation at ARCHITECTURE.md:73 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+
 **Provenance.** cowork_notation_output_contract.md:3 records the user's ratification, dated 2026-07-26, as specified and without amendments; the modal reading at :137-147. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
 ### D-425 — The uncertainty surface's contract IS the full posterior; the local slice is the first delivered step, and the completion is a named step, never an indefinite upgrade
@@ -258,7 +262,7 @@
 
 **Home.** `cowork_notation_adoption_increment.md:282`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Home section.** **§4** — `## 4. Decision B — what the published posterior IS (the uncertainty surface)` (heading at line 215). No delegation from a user-ratified surface names this section. The criterion decides nothing here: whether the delegation naming this document DELEGATES or merely CITES is unresolved, and the 2026-08-03 ruling changed the criterion's unit, not that clause. The home class below is the one this entry already carried.
+**Home section.** **§4** — `## 4. Decision B — what the published posterior IS (the uncertainty surface)` (heading at line 215). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit**.
 
 **Provenance.** `cowork_notation_adoption_increment.md`:282-287, the Decision-B recommendation, which the document's §9 records the user granting on 2026-07-26 — "B-full (slice-first, completion rowed OI-193)" — and its opening banner repeats. Distinct from D-006 (the record publishes two full candidate lists with no truncation) and from D-007/D-008 (the published values are log-scores, with true probabilities deferred), which govern what the RECORD carries and in what units; this governs what the uncertainty surface IS by contract, and it carries the anti-regression guard. The completion step is tracked as `OPEN_ITEMS.md` OI-193. Its natural home is the notation output-surface contract `cowork_notation_output_contract.md`, which `ARCHITECTURE.md`:73 names and which is a contract home (D-275/D-276), hence the documentation-gap flag. Found by the phase-1l continuation wave, 2026-08-03, reading `cowork_notation_adoption_increment.md` IN FULL (the OI-207 reading list's next document, 17 unresolved clusters). The document carries a status banner and is user-ratified 2026-07-26, but NO user-ratified surface names it — it is absent from `ARCHITECTURE.md`, `CLAUDE.md` and `cowork_engage_arc_plan.md` alike (measured this session at Task 7) — so it is not a contract home under either the phase-1i criterion or the delegation-specificity criterion the user ruled 2026-08-03. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1l ratification queue.
 
@@ -275,7 +279,7 @@
 
 **Home.** `cowork_notation_adoption_increment.md:436`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Home section.** **§7** — `## 7. Decision E — scheduling the two ratified presentation publications` (heading at line 394). Delegated by ARCHITECTURE.md:4662 (verdict on clause (b) UNRESOLVED). The criterion decides nothing here: whether the delegation naming this document DELEGATES or merely CITES is unresolved, and the 2026-08-03 ruling changed the criterion's unit, not that clause. The home class below is the one this entry already carried.
+**Home section.** **§7** — `## 7. Decision E — scheduling the two ratified presentation publications` (heading at line 394). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit**.
 
 **Provenance.** `cowork_notation_adoption_increment.md`:436-437, the Decision-E recommendation, which §9 records the user granting on 2026-07-26 — "the E split (modal reading in-increment; ornament labels rowed OI-194)". The ornament increment is `OPEN_ITEMS.md` OI-194, and D-207 (the voice-independent pedal-point class, DEFERRED) is one of the classes it carries. The modal-reading half is delivered and registered as D-276, homed in the notation output-surface contract; what is registered HERE is the SCHEDULING decision and its establishment reason, which lives in neither. Its natural home is that same contract, hence the documentation-gap flag. Found by the phase-1l continuation wave, 2026-08-03, reading `cowork_notation_adoption_increment.md` IN FULL (the OI-207 reading list's next document, 17 unresolved clusters). The document carries a status banner and is user-ratified 2026-07-26, but NO user-ratified surface names it — it is absent from `ARCHITECTURE.md`, `CLAUDE.md` and `cowork_engage_arc_plan.md` alike (measured this session at Task 7) — so it is not a contract home under either the phase-1i criterion or the delegation-specificity criterion the user ruled 2026-08-03. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1l ratification queue.
 

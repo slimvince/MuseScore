@@ -182,8 +182,8 @@ rather than replacing them** — the delegation-specificity criterion (2026-08-0
 `OPEN_ITEMS.md` OI-281) and the document-kind test (2026-08-03, same row) — each of which was a
 proxy for it and each of which produced the evidence locating its own error. (g)'s guard is
 untouched: the delegation confers, and only the user writes a delegation into `ARCHITECTURE.md`.
-Applied **staged** — an entry is brought to section granularity where that decides something,
-so the register's home field is deliberately mixed and says so in its own scope note.
+Applied **in full 2026-08-03** — first staged to the entries where section granularity decided
+something, then, on the user's ruling below, to the whole home population in one pass.
 **A SHELVED SECTION CAN BE A HOME — SHELVING IS A STATUS, NOT A KIND (user, 2026-08-03).** A
 section whose rules are shelved still STATES rules, and the register records shelvings with their
 evidence, so a shelved decision needs a home exactly as a live one does (#12). *Why:* stated with
@@ -201,10 +201,21 @@ meaning a naming inside a list of citations, or a parenthetical recording where 
 ratified. *Why:* the canonical document distinguishes the two acts in ADJACENT LINES —
 `ARCHITECTURE.md:1482` ends *"Full spec:"* and names its target on the next line, while `:1485`
 immediately beneath is a delegation clause that names its target AND its sections. The distinction
-is `ARCHITECTURE.md`'s own, not a preference. **(i) IS RECORDED AND NOT YET APPLIED:** the check
-ordered before applying it — does the bar change the verdict for any document the register
-currently classifies `contract-home`? — came back yes, so the re-classification is a STOP at
-`OPEN_ITEMS.md` OI-291 and the register's home classes are unchanged by it.
+is `ARCHITECTURE.md`'s own, not a preference. **(i) IS APPLIED (user, 2026-08-03, at OI-291):** the
+check ordered before applying it — does the bar change the verdict for any document the register
+currently classifies `contract-home`? — came back yes, and the user ruled **ONE re-classification
+pass over the whole home population**, with a **write list** for the homes the record means to keep,
+rather than a forward-only migration or a revision of the bar. The pass is generated, never
+hand-classified, and every entry keeps the class it carried before it (#12).
+**(j) DELEGATING TO A DOCUMENT AND BEING A HOME ARE DIFFERENT TESTS WITH DIFFERENT SUBJECTS (user,
+2026-08-03).** To DELEGATE, a surface must itself be user-ratified; to BE a home, a section must be
+delegated to. A document may satisfy one and fail the other, and neither role implies the other. So
+`cowork_engage_arc_plan.md` — a user-ratified surface the criterion USES as a source of delegations
+— is not thereby a delegation TARGET: whether any section of it is a home turns on whether some
+user-ratified surface delegates a concern to it in a form (i) admits, and today none does. *Why:*
+the question was asked in exactly that form, and the two roles had been running together in the
+tracking prose; stating them apart is what keeps (i) a mechanical test rather than one with a
+case-by-case exception.
 
 ## Project context
 
@@ -738,6 +749,18 @@ corpora) and the JSON registries (`tools/corpus_registry.json`,
 The following changes have been made intentionally to fix bugs unrelated to the
 composing module. Do **not** revert them, and do not let build scripts or
 dependency updates overwrite them without explicit approval.
+
+**★ THIS SECTION IS A CHECK'S INPUT (2026-08-03).** `tools/audit/local_patches_check.py` derives
+its patch list from the `###` subsections below and their `**File:**` lines, and verifies each
+patch is still present at HEAD — the silent failure a dependency update produces, which nothing
+else here would catch. Two things follow for whoever edits this section. **(1) A new patch needs a
+`###` subsection with a `**File:**` line**, and the check then STOPS until a presence marker for
+it is added to the tool: a recorded patch that is not tested must never read as a clean run.
+**(2) A patch upstream later fixes is RETIRED by one line in its own subsection**, in this form —
+`**★ SUPERSEDED UPSTREAM (YYYY-MM-DD):** <what upstream did>; upstream <commit-or-release>.` The
+marking must name the upstream commit or release that supersedes the patch; a marking without one
+is a STOP, so a patch cannot be retired by assertion. A retired patch is reported RETIRED and its
+marker is no longer tested.
 
 ### Windows Snap fix — `muse` submodule (applied 2026-05-14)
 
