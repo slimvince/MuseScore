@@ -591,3 +591,20 @@
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A5, recorded ratified in full at the banner. The propagation into the architecture document's span typology is recorded as riding the build. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
+### D-419 — Until the recognition consumer is built, the function layer does not touch the harmonic vocabulary
+
+> 3. **Recognition consumer** — build + wire: the encyclopedia becomes L5's multi-chord disambiguation prior (the §5.5
+>    resolver + the §8 forward-override) and L6's sequence-span annotation. **This is the step where L5 takes advantage of
+>    the encyclopedia AND the five idioms** (the active idiom-mixture weights the matches). Until this exists, L5 does not
+>    touch the encyclopedia.
+
+**In plain words.** The reference catalog of named progressions and the function layer are connected by a separate piece of work that has not been built. Until it is, the function layer makes no use of the catalog at all — it is not a partial or optional connection, it is absent. That piece is also where the five idioms first do any work, by weighting which catalog entries count.
+
+**Why.** It follows from the ratified build order stated at `:54` — encyclopedia, then the grouping layer, then wire the consumer — and from the catalog's own contract that it supplies ranked candidates and decides nothing (register entry D-407): with no consumer, there is nothing to receive the candidates, so a partial connection would be a consumer built by accident and unratified. Register entry D-084 records the same shape from the other side: the progression-schema recognizer is a CONSUMER of the function layer, not a new layer.
+
+**Status.** LIVE · decided 2026-06-30 · ratifier not stated
+
+**Home.** `docs/implementation_roadmap.md:59`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** `docs/implementation_roadmap.md`:59-62, inside the forward increment sequence whose header (`:54`) calls the order "ratified" — encyclopedia, then L6, then wire the consumer — without naming who ratified it or when; the surrounding block is dated 2026-06-30 at `:36`. The date recorded here is that block's date and the ratifier is NOT STATED, because the text asserts ratification without attributing it. The constraint governs Layer 5 and is recorded in a plan rather than in the Layer-5 specification, hence the documentation-gap flag. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue.
+

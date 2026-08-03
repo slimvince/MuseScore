@@ -394,3 +394,62 @@
 
 **Provenance.** User ruling 2026-08-02 (OI-273 option (i)); the CLAUDE.md local-patches subsection added in the same commit (the register’s same-commit rule).
 
+### D-415 — An item on the roadmap may be marked done only with the evidence its own verify column names
+
+> **Standing rule for this roadmap:** an item may only be marked done with the evidence listed
+> in its "verify" column. Stages are sequential; items within a stage can run in any order
+> unless noted.
+
+**In plain words.** A planned item counts as finished only when the specific evidence written beside it has actually been produced — not when someone judges it done. Stages run in order; items inside one stage may run in any order unless the item says otherwise.
+
+**Why.** The reason is the roadmap's own ordering principle, stated three lines above at `:6-8`: no surprises — verify and pin each layer, gate and method before building on it, so every stage has an explicit verification gate that must pass before the next stage starts. The evidence column is what makes that gate checkable rather than asserted.
+
+**Status.** LIVE · date not stated · ratifier not stated
+
+**Home.** `docs/implementation_roadmap.md:10`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** `docs/implementation_roadmap.md`:10-12, stated as "Standing rule for this roadmap". The document is dated 2026-06-10 at `:3`; no date or ratifier is stated for the rule itself. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue.
+
+### D-417 — The engage criteria — six gates that must all hold, a staged plan, and the user ratification event
+
+> **★★ ENGAGE CRITERIA + RETIREMENT MAP (RATIFIED user 2026-07-02; FOLDED here from `cowork_engage_criteria.md`
+> 2026-07-02 — that file is now a tombstone; this roadmap is the single home).** Replaces "engage deferred
+> indefinitely" with "deferred until these CRITERIA (date open)"; E3 is its own user-ratification event.
+> - **Gates (all must hold):** **G1** spine complete: L4+L5 dormant-validated (✅) + **L6 built dormant** + the A-1
+>   contract as-built deltas closed (D-L3a remains). **G2** (measured by the E0 instrument): zero new class-(b) on the
+>   case-identity gate; class-(a) per the two-tier policy; **RN vs DCML ≥ legacy on the granularity-robust unit**, all
+>   presets; correct-abstention scored separately from wrong commits. **G3** perf: p95 ≤ legacy×1.10 (✅ measured
+>   ~3.7× faster). **G4** coverage sealed + snapshot-strategy declared in advance. **G5** docs synced same increment.
+>   **G6** user ratifies E3.
+
+**In plain words.** Putting the rebuilt analysis layers into production is no longer "postponed indefinitely" but "postponed until six named conditions all hold": the layer stack complete and validated while dormant; no new meaningful chord-root errors and Roman numerals at least as good as the old path on the measurement unit that does not move with how finely the music is cut; speed within a tenth of the old path; test coverage sealed with the snapshot strategy declared beforehand; documentation updated in the same step; and the user ratifying the switch. Turning it on by default is its own user decision, not a step inside an engineering plan.
+
+**Why.** The reason is the roadmap's founding ordering principle — no surprises: each stage carries an explicit verification gate that must pass before the next starts (`:6-8`), and a production switch is the largest such step. Two of the six gates cite measurements rather than judgment (the class-(b) and two-tier policy under register entries D-115/D-191, and a measured speed comparison recorded as ~3.7x faster), and the sixth reserves the switch itself to the user, which is guiding principle #14 applied to the biggest behavior change the programme had.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Home.** `docs/implementation_roadmap.md:122`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** `docs/implementation_roadmap.md`:122-137, recorded as RATIFIED by the user 2026-07-02 and folded here from `cowork_engage_criteria.md`, which the same passage declares a tombstone — "this roadmap is the single home", an explicit home declaration. ★ AN OBSERVATION, NOT A STATUS CHANGE: the production switch that actually happened took a different route — the joint estimator was adopted on the batch surface 2026-07-26 (D-005) and on the notation surface 2026-07-27 (D-010), by the OI-178/notation-switch arc, not by this document's E1-E5 staging, and the criteria's G1 names a dormant L6 that was never built. The record contains no ruling that supersedes these criteria, so the entry carries the record's own status (LIVE) and the observation is recorded rather than resolved; it is rowed as `OPEN_ITEMS.md` OI-284. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue.
+
+### D-418 — The retirement map — nothing retires by silence; ten named retirements, each with its trigger and its order
+
+> - **Retirement map (nothing retires by silence):** R1 legacy chord competition + Gates A–L (E4, or Stage 5 if
+>   first — the OWED refactor #2); R2 legacy circular cadence detector (needs the two notation-bridge call-site
+>   migrations first — gap-analysis Rider 4); R3 `cadencekeyanchor` kept-as-diagnostic through E4, retire post-E5
+>   review; R4 dual tpc reader → the shared spelling view (rides R1); R5 `resolveKeyAndModeRanked`+`collectPitchContext`
+>   shrink (P4-redecode; seed S2 at E4; grading baseline may persist as diagnostic); R6 segment-first spine (E4);
+>   R7 `harmonicfunctionlayer` rename (rides R1); R8 legacy confidence sentinels (rides R1/R5); R9 `chordanalyzer.cpp`
+>   file-split (OWED refactor #1) AFTER E4 removals — split once; R10 batch-region gate superseded by the robust unit
+>   as primary (with G2/Stage 5), case-identity + two-tier policy carry over.
+
+**In plain words.** Every piece of the old analysis path that is to be removed is named in advance, with what must happen first and where in the order it sits — ten of them, from the old chord competition and its correction rules through to splitting the large source file last, once, after the deletions. Nothing is retired by simply ceasing to mention it.
+
+**Why.** The principle is stated in the heading itself — nothing retires by silence — and it is guiding principle #12 applied to code: a component that disappears without a recorded decision takes the reason it existed with it. The ordering constraints each carry their own stated cause: two call sites must migrate before the old cadence detector goes; the file split is last so it happens once (register entry D-311); the old batch measurement gate is superseded rather than deleted, its case-identity and two-tier policy carried over (D-115, D-191).
+
+**Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Home.** `docs/implementation_roadmap.md:138`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** `docs/implementation_roadmap.md`:138-145, part of the same block the record marks RATIFIED by the user 2026-07-02. It is live and load-bearing now: `CLAUDE.md`'s gate block (A) states that the dormant legacy notation path awaits deletion "at the OI-180 retirement map, now fully live", and `OPEN_ITEMS.md` OI-180 tracks it. R10 is already discharged — the batch gate was superseded by the robust unit at R10-b, 2026-07-06 (D-115). Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue.
+

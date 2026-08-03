@@ -317,3 +317,22 @@
 
 **Provenance.** Found by the phase-1i continuation wave, 2026-08-02, reading `cowork_structural_integrity_audit.md` IN FULL. The document's banner records `Status: read-only grounded catalogue (CC, 2026-07-07; Engage arc #6)` — an authored catalogue, not a ratified contract. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1i ratification queue. Recorded as '⛔ STOP-and-deferred to E4'. The deferral's target — the engagement of the dormant decoder with the function layer — was itself overtaken by the joint estimator without any ruling that names it (`ARCHITECTURE.md`'s Layer-4 plan correction, 2026-08-02; `OPEN_ITEMS.md` OI-259 re-dispositions the engage-era agenda), so what becomes of this deferral is open. ★ RATIFIED (user, 2026-08-02, the phase-1i queue).
 
+### D-416 — Two structural refactors are DEFERRED and OWED, and must be surfaced at every planning checkpoint until done
+
+> **⛔ TWO DEFERRED STRUCTURAL REFACTORS — DO NOT FORGET (user mandate 2026-06-14):** (1) **Stage 3.5**
+> the physical split of `chordanalyzer.cpp` along the layer seams + iteration-API renames — DEFERRED until
+> the layer boundaries stabilize; (2) **Stage 5** the dissolution of the post-hoc gate-correction layer
+> (Gates A–L) into fitted weights — the gates are still load-bearing (3.4 retired none). Neither blocks the
+> current Stage-4 key work, but both are OWED and must be surfaced at every planning checkpoint until done.
+> Mirrored in `cowork_handoff.md` (top standing block).
+
+**In plain words.** Two pieces of restructuring were postponed rather than dropped: splitting the large chord-analysis source file along its layer seams (with the iteration-era function names renamed), and dissolving the layer of after-the-fact correction rules into fitted weights. Neither may be quietly forgotten — each planning checkpoint has to raise them until they are done.
+
+**Why.** Each half carries its own stated reason. The file split waits because the layer boundaries have not stabilized — splitting before they do would mean splitting twice (the same reason register entry D-311 records as "split once"). The correction-rule dissolution waits because the rules are still load-bearing: the gate-retirement stage retired none of them, so removing them now would remove work nothing else does. The surfacing obligation is the remedy for the failure mode a deferral has — a postponed item with no carrier becomes a dropped one.
+
+**Status.** LIVE · decided 2026-06-14 · ratified by user
+
+**Home.** `docs/implementation_roadmap.md:20`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** `docs/implementation_roadmap.md`:20-25, recorded as a user mandate of 2026-06-14 and mirrored, the record says, in `cowork_handoff.md`'s top standing block. Beside register entry D-311, which records the FILE-SPLIT half alone as deferred until after the retirements, and D-401, which sequences it last; the half registered nowhere until now is the gate-dissolution, together with the surfacing obligation that covers both. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue.
+

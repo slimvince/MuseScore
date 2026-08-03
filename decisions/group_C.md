@@ -773,3 +773,18 @@
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step the document designs is shelved (**D-278**); this prohibition is not about that step — it is stated as what any placement must avoid, and is flagged in the record as written so the build does not drift there. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
+### D-422 — The jazz fit is deferred to the jazz ground-truth conversion; only the classical common-practice idiom is fitted now
+
+> **Stage-5 design SIGNED 2026-07-04:** `cowork_stage5_fitter_design.md`; A-3 ruled = Jazz fit deferred to the
+> jazz-GT conversion (the idiom-#2 Baroque/Default target is fitted now).
+
+**In plain words.** Fitting the analysis constants for jazz waits until jazz music with published human analyses can be converted into a form the fitter can use. What is fitted now is the one idiom the held annotated music covers — the classical common-practice one, which is what the two non-jazz presets deliver.
+
+**Why.** It follows from a measured constraint recorded elsewhere in the register: jazz accuracy is not measurable on the corpora held, because the jazz material is melody-and-chord-symbol transcription with the bass and piano voicings absent (D-310, whose defense is a bass-injection experiment moving agreement from 39.8 % to 98.3 % on one corpus and 18.0 % to 99.9 % on another). Fitting against material that cannot measure the result would be fitting without evaluation, which guiding principle #20 forbids.
+
+**Status.** DEFERRED · decided 2026-07-04 · ratifier not stated
+
+**Home.** `docs/implementation_roadmap.md:460`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** `docs/implementation_roadmap.md`:460-461, recorded at the Stage-5 fitter design's signing: "Stage-5 design SIGNED 2026-07-04 … A-3 ruled = Jazz fit deferred to the jazz-GT conversion". The document states the DESIGN was signed that day but does not say who ruled A-3, so the ratifier is NOT STATED. A-3 is one of the ten external-review amendments the record marks user-ratified 2026-07-02 at `:148-151`, but that ratification is of the amendment, not of this later disposition of it. Beside D-310 (jazz accuracy not measurable) and `OPEN_ITEMS.md` OI-7 (establish a jazz ground truth or de-scope the jazz claims). Recorded in a plan rather than in the fitter's own specification, hence the documentation-gap flag. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue.
+

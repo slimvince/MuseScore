@@ -261,3 +261,25 @@
 
 **Provenance.** `cowork_progression_schema_dictionary.md`:255-257 (§7, component decision D3), with the organisation it produces at :136-139 (§5) and the generative spine at :141-166 (§5.1). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1j queue presented at `cowork_pending_ratifications_next_session.md` §2 — the ratification is of the RULE itself, with the status exactly as the record states it; it does not supply a date or a ratifier the original record never had, and the 'not stated' facts above stand unchanged (#12). The `gap` home flag also stands: the dictionary's banner still reads 'component spec, v1 draft (2026-06-29)', so the fifth home case's banner half is unmet — that is the open question rowed as `OPEN_ITEMS.md` OI-281, deliberately NOT resolved by editing this document's banner.)
 
+### D-421 — Idiom re-discovery rides every corpus wave, on research material only, and a changed cluster set is its own ratification event
+
+>   **★ Standing trigger (user, 2026-07-02): idiom re-discovery rides each corpus wave.** After each material corpus
+>   change (each wave; the yearly census re-sweep), re-run the `idiom_discovery/` pipeline under the v1 protocol
+>   (multi-seed stability, cap-robustness, source-leakage/ARI confound test) on the **dev set + external research
+>   corpora only** (held-out material excluded — discovery outputs become shipped parameters). Primary question:
+>   do the five ratified idioms **reproduce**? Falsifiable v2 edges: does #5 Chromatic-coloristic split (the K=6
+>   candidate) under the new chromatic mass; where do Wagner/Liszt land (#2 vs #5 — the era≠axis re-test); does
+>   early-modal material (Monteverdi/Sweelinck) separate or fold into #4. A changed cluster set is a **ratified
+>   taxonomy-revision event** (it propagates to StyleTag values + the vocabulary entry mapping — post-swap it is a
+>   migration, not a relabel). Plan line only — the instruction is written just-in-time after the triggering wave.
+
+**In plain words.** Whenever the body of music the project holds changes materially, the study that discovered the five idioms is re-run under the same protocol, to ask whether the five reproduce. It is run only on the development set and outside research corpora, never on the music held back for evaluation, because what the study produces becomes a shipped parameter. If the clusters come out different, that is a taxonomy revision and needs its own ratification — it changes the tags on every catalog entry, so after the tags were encoded it is a migration, not a relabel.
+
+**Why.** The held-out exclusion is stated with the rule and is guiding principle #20 (fit and evaluation separated) applied to an unsupervised study: discovery outputs become shipped parameters, so material used to discover them can never also measure them. The re-run itself is the standing consequence of the finding the study rests on — that the categories are empirical rather than asserted (`cowork_style_taxonomy_proposal.md:11-30`) — which means new music can falsify them; the record names the falsifiable edges in advance (does idiom five split under new chromatic mass, where do Wagner and Liszt land, does early modal material separate), which is what makes the trigger a test rather than a formality.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Home.** `docs/implementation_roadmap.md:183`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** `docs/implementation_roadmap.md`:183-191, recorded as a standing trigger of the user, 2026-07-02, beside the census's own standing rule that discovering a new corpus is a census defect (register entry D-359). It governs the style taxonomy that `ARCHITECTURE.md` §6.7 owns and is recorded in a plan rather than at that home, hence the documentation-gap flag. Load-bearing for the 2026-08-03 §6.7 restatement: the five idioms are stated there as empirically discovered, and this is the rule that keeps that claim current. The record notes two corpus waves executed and ratified (2026-07-02, 2026-07-03), the second checking the trigger and finding it NOT fired. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue.
+

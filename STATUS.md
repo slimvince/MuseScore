@@ -5,6 +5,32 @@
 > Historical entries live in `STATUS_ARCHIVE.md` (reference-only, NOT part of the session-start
 > read) — a superseded entry moves there instead of accumulating here.
 
+*Last updated: 2026-08-03, LATEST+++++++++++ (CC — **★ PHASE 1k: THE USER'S FIVE RULINGS OF 2026-08-03 ARE APPLIED, AND ONE MORE LIVE-SPEC DOCUMENT IS READ IN FULL. The register
+is 414 → 423; the documentation-gap home count 56 → 42; the unresolved residual 2,674 → 2,670; five rows opened, one flipped; nine entries RATIFIED and fourteen
+re-classified contract-home.** READ-ONLY on the system: no `src/` change, no golden / `tools/corpus/` / `tools/robust_stop/` movement, no behavior change, no fix, no
+design, no inference change. Dispatch `cc_instruction_phase1k_apply_rulings.md`. Per the OI-222 remedy this entry is a **POINTER** — the content lives in the
+specifications, the register and the dated notes. **Read, in this order:** [[OI-279]]'s note (**the row FLIPS** — the two options as they were put to the user and which
+was taken, then what the corrected `ARCHITECTURE.md` §6.7 now says, point by point, including the five-idiom set's OWN admission basis quoted from the record rather
+than the retired genre list's inclusion rule carried across by analogy); then **[[OI-284]]**, [[OI-282]], [[OI-283]], [[OI-285]], **[[OI-280]] and [[OI-281]]**, the five new rows;
+then [[OI-207]]'s note (the roadmap read, its nine entries by KIND, the arithmetic and the measured remainder). **★ THE THREE THINGS THE USER SHOULD SEE FIRST.**
+(1) **[[OI-281]] is a question, not a finding, and it is the user's:** does an `ARCHITECTURE.md` delegation pointer confer contract-home status on a document that
+self-declares "v1 draft"? Nine entries (D-406…D-414) carry a gap flag for exactly this, and their ratification as RULES does not decide it. **Both readings are stated
+and neither is chosen**, with phase 1i's own precedent recorded cutting both ways; the scope is stated honestly — the answer applies to every draft the canonical
+document points at — and it is the sibling of [[OI-268]]'s still-open Cowork-ratification question over 21 entries, which must answer consistently. It was deliberately
+NOT resolved by editing the dictionary's banner, which would have decided it by fiat and for one document only. (2) **[[OI-284]]: the SINGLE TRACKER is stale in three
+places** — `docs/implementation_roadmap.md` records L4/L5 as dormant and the production switch as "deferred indefinitely" (false at HEAD, D-005/D-010); its
+user-ratified engage criteria describe a route not taken and require a layer that was never built; and it names the batch case-identity gate, superseded in whole at
+R10-b (D-115), as its hard baseline. **Whether the ratified engage criteria still bind is left to the user** — nothing in the record retires them, and a session may not
+decide by annotation that a ratified gate lapsed. (3) **D-421, found in that read, bears on this session's own other work:** idiom re-discovery rides every corpus wave,
+on research material only because discovery outputs become shipped parameters, and a changed cluster set is a ratification event — the standing rule that keeps §6.7's
+"empirically discovered" claim current, and it was recorded only in the roadmap. **Also on the way:** §6.5's terminology note, whose examples came from the retired genre
+families, was corrected in the same act so the restatement would not leave it contradicting the section it cites; and 74 register anchors were re-aimed **one by one
+from the drift report's own line numbers**, never by an assumed shift. All guards PASS (`--verify` 423/423 quotes, 417/417 anchors, references ALL; `--check` the
+register matches the data across 21 files; dispositions 14,460/14,460 clusters, 15,224/15,224 occurrences; open-items living check 285/285). `cowork_pending_ratifications_next_session.md`
+is flipped to RULED AND APPLIED, its surface retained unedited beneath (#12) — **and COMMITTED, because it turned out never to have been** ([[OI-285]]: the eight
+ratification surfaces are uncommitted and the register cites two of them; the other seven are named, not added, because they are another session's files). **NEXT: the user ratifies (or corrects) D-415…D-423; rules on [[OI-281]] together with
+[[OI-268]]'s Cowork-ratification sibling, and on [[OI-284]]'s engage-criteria question. Then the remaining 63-document full read before phase 2 opens.**)*
+
 *Last updated: 2026-08-03, LATEST++++++++++ (CC — **★ PHASE 1j: THE OI-272 HOMING HALF IS DELIVERED AND THAT ROW CLOSES; THE TRANSITIVE-AUTHORITY RULE IS APPLIED AND
 DECIDES ONE DOCUMENT OF NINE; ONE MORE LIVE-SPEC DOCUMENT IS READ IN FULL. The register is 405 → 414; the unresolved residual 2,679 → 2,674; one row opened; 16
 decisions homed off tracking surfaces; 8 re-classified contract-home.** READ-ONLY on the system: no `src/` change, no golden / `tools/corpus/` / `tools/robust_stop/`

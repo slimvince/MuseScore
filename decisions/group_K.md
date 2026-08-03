@@ -354,3 +354,23 @@
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md` (session 21e, the gap-analysis rulings). It is NOT in `cowork_design_doc_template.md`, which is the ratified home of the writing standards and states the implementation/test locator rule without this constraint on the locator's form — checked at the source. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written into `cowork_design_doc_template.md` beside the implementation/test locator rule (D-257) it constrains. Homed THERE rather than in `CLAUDE.md` because `CLAUDE.md`'s own Conventions entry names that file the ONE home for the writing standards (#6), and the phase-1f entry recorded the gap as the locator rule stating no constraint on the locator's form. Former home preserved (#12): `STATUS_ARCHIVE.md:242`, session 21e.
 
+### D-420 — One cross-layer extension specification, and the duplicate written the same day is killed into it
+
+> extension behavior is specified → CODED → REGRESSION-TESTED for L1–L5. ★ CONSOLIDATION (same day, user directive
+> against doc sprawl): the pre-existing `cowork_bounded_context_design.md` (DRAFT, never signed — found to already
+> specify the request→supply→bounded-recompute protocol, superiorly: "the amount is discovered, not chosen",
+> requester-owned convergence loops) is THE one cross-layer extension spec; the day's duplicate
+> `cowork_temporal_extension_contract.md` is KILLED into it (merged: L5 discovery rule + PINNED decision-context
+> extent [also folded into L5 spec §5.0], L4 decision-relevance sharpening, denial provenance, gate-proof framing,
+> the §11 acceptance list = the L6 gate). Sequence: SIGN `cowork_bounded_context_design.md` → coding+test instruction
+
+**In plain words.** Two documents were specifying the same thing — how a layer that has reached the edge of the music it has read asks for more. The older one was kept as the single specification, on the ground that it already stated the protocol better (the amount of extra music is discovered by convergence rather than chosen, and the layer that asked owns the loop), and the same-day duplicate was merged into it and removed.
+
+**Why.** The stated ground is twofold and both halves are recorded: the user's directive against document sprawl, which is guiding principle #6 (one path per concern) applied to specifications rather than code; and a comparison of the two texts that found the surviving one superior on the substance — it already specified the request, supply and bounded-recompute protocol, with the amount discovered rather than chosen and the requester owning the convergence loop. The merge is recorded item by item, so nothing in the killed document was lost (#12).
+
+**Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Home.** `docs/implementation_roadmap.md:113`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** `docs/implementation_roadmap.md`:113-119, recorded as a user directive of 2026-07-02, in the same block as the Layer-6 prohibition it accompanies (register entry D-266, whose home is the surviving document). The surviving specification `cowork_bounded_context_design.md` is a contract home under the fifth home case and carries seven register entries (D-260...D-266); the killed document `cowork_temporal_extension_contract.md` is named here with its merged contents enumerated. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue.
+

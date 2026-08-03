@@ -14,11 +14,11 @@
   },
   "backbone": {
    "file": "tools/audit/decisions/backbone_decisions.json",
-   "sha256": "015ceaf2a1cf1f467e3ae97446501c6d78999ef44e1d2f19594fecd77de879ac",
-   "decision_count": 414
+   "sha256": "797851a06aa54b05be88594b2840ea5582cbe04e7b6a620ca4be36b9ec1ad5c3",
+   "decision_count": 423
   }
  },
- "head_commit": "b6be14097e68b356d391b37872f698f99d8b6053",
+ "head_commit": "7454abe5db4e169fcbdc43440c018b1add4db31b",
  "disposition_vocabulary": [
   "restates",
   "not-a-decision",
@@ -69,7 +69,7 @@
   {
    "id": "BR-4",
    "rule": "The cluster's text matches one or more backbone decisions, ALL of which are recorded outside any layer specification. Recorded as a decision with no layer-specification home (named) — the Task-4 documentation-gap class.",
-   "clusters": 645
+   "clusters": 649
   },
   {
    "id": "BR-5",
@@ -139,22 +139,22 @@
   {
    "id": "BR-8",
    "rule": "Residual: none of the above applies. Recorded UNRESOLVED — the honest outcome, and the count is a finding about the record's legibility.",
-   "clusters": 2674
+   "clusters": 2670
   }
  ],
  "disposition_counts": {
   "restates": 5515,
   "not-a-decision": 5552,
   "boilerplate": 74,
-  "no-spec-home": 645,
-  "unresolved": 2674
+  "no-spec-home": 649,
+  "unresolved": 2670
  },
  "unresolved_partition_by_surface": {
   "cowork_* design documents": 825,
-  "docs/ design documents": 399,
+  "docs/ design documents": 396,
   "cc_* session reports": 316,
   "tools/ script comments": 295,
-  "cc_instruction_* dispatches": 290,
+  "cc_instruction_* dispatches": 289,
   "src production comments": 275,
   "the two archives": 93,
   "src test comments": 76,
