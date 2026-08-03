@@ -15,11 +15,11 @@
    },
    "backbone": {
     "file": "tools/audit/decisions/backbone_decisions.json",
-    "sha256": "5e3c48f1aa5c9271ff01edfb443e65e1a0ac83b1d8bd6e10cb544a8144c77c54",
+    "sha256": "015ceaf2a1cf1f467e3ae97446501c6d78999ef44e1d2f19594fecd77de879ac",
     "decision_count": 414
    }
   },
-  "head_commit": "88fd87e9d16e2eacca38c9dd8ea4c1e4a43d7b27",
+  "head_commit": "b6be14097e68b356d391b37872f698f99d8b6053",
   "disposition_vocabulary": [
    "restates",
    "not-a-decision",
@@ -65,7 +65,7 @@
    {
     "id": "BR-3",
     "rule": "The cluster's text matches at least one backbone decision whose home IS a layer specification. Recorded as restating that decision (named).",
-    "clusters": 5514
+    "clusters": 5515
    },
    {
     "id": "BR-4",
@@ -90,7 +90,7 @@
    {
     "id": "BR-9",
     "rule": "The unit is a list lead-in: with markdown stripped its text ends in a colon and contains no sentence-ending period before it, so it introduces a list whose items are separate units. Like a heading (BR-2) it names a subject and states nothing.",
-    "clusters": 157
+    "clusters": 156
    },
    {
     "id": "BR-10",
@@ -144,8 +144,8 @@
    }
   ],
   "disposition_counts": {
-   "restates": 5514,
-   "not-a-decision": 5553,
+   "restates": 5515,
+   "not-a-decision": 5552,
    "boilerplate": 74,
    "no-spec-home": 645,
    "unresolved": 2674
@@ -64870,7 +64870,8 @@
    "rule": "BR-3",
    "decisions": [
     "D-106",
-    "D-119"
+    "D-119",
+    "D-132"
    ],
    "categories": [
     "cowork_docs"
@@ -65105,7 +65106,8 @@
    "rule": "BR-3",
    "decisions": [
     "D-084",
-    "D-119"
+    "D-119",
+    "D-132"
    ],
    "categories": [
     "cowork_docs"
@@ -70418,7 +70420,8 @@
    "rule": "BR-3",
    "decisions": [
     "D-070",
-    "D-119"
+    "D-119",
+    "D-132"
    ],
    "categories": [
     "cowork_docs"
@@ -72660,9 +72663,11 @@
   {
    "cluster_id": "DC-03472",
    "size": 1,
-   "disposition": "not-a-decision",
-   "rule": "BR-9",
-   "decisions": [],
+   "disposition": "restates",
+   "rule": "BR-3",
+   "decisions": [
+    "D-132"
+   ],
    "categories": [
     "cowork_docs"
    ],

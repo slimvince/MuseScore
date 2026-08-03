@@ -147,7 +147,7 @@ project's own and are defined here because they are used before any entry explai
 | Decisions whose date is not stated in the record | 203 |
 | Decisions whose ratifier is not stated in the record | 254 |
 | Decisions recorded outside the specification that owns them | 213 |
-| — of which a documentation gap | 56 |
+| — of which a documentation gap | 42 |
 | — of which recorded only on a tracking surface, with no home at all | 11 |
 | — of which a project-wide convention, correctly homed | 35 |
 | — of which a decision about the process, correctly homed | 40 |
@@ -162,8 +162,8 @@ Alongside the register, every one of the harvested statements about decisions in
 | Harvested statements | **15224** |
 | Groups of near-identical statements ("clusters") | **14460** |
 | Clusters carrying a recorded disposition | **14460** |
-| — restates | 5514 |
-| — not-a-decision | 5553 |
+| — restates | 5515 |
+| — not-a-decision | 5552 |
 | — boilerplate | 74 |
 | — no-spec-home | 645 |
 | — unresolved | 2674 |
@@ -204,8 +204,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-272 | The protocol constants are protocol, not tuning - changing one is an amendment, never a fitting act | LIVE | `cowork_prefit_gates.md` |
 | D-273 | The architecture-adoption variant of the hard regression stop, written before any diff existed | LIVE | `cowork_prefit_gates.md` |
 | D-274 | The reverse map - if the new estimator is not adopted it is removed whole, and the retirement map is void | LIVE | `cowork_prefit_gates.md` |
-| D-283 | Meta-finding: never learn keys, the lever is keychain structure - superseded by the joint estimator and the forms-from-theory rule | SUPERSEDED BY D-001 and D-096 | `cowork_architecture_reassessment.md` ⚠gap |
-| D-285 | Meta-finding: embellishment is chord-first, never a richer vocabulary - absorbed by the emission design and the ornament-label increment | SUPERSEDED BY the ratified factorization emission design (D-004 and the OI-194 increment) | `cowork_architecture_reassessment.md` ⚠gap |
+| D-283 | Meta-finding: never learn keys, the lever is keychain structure - superseded by the joint estimator and the forms-from-theory rule | SUPERSEDED BY D-001 and D-096 | `cowork_architecture_reassessment.md` |
+| D-285 | Meta-finding: embellishment is chord-first, never a richer vocabulary - absorbed by the emission design and the ornament-label increment | SUPERSEDED BY the ratified factorization emission design (D-004 and the OI-194 increment) | `cowork_architecture_reassessment.md` |
 | D-376 | The joint key-and-chord step was designed as a BOUNDED COUPLING over the two existing decoders, and the unified single-state alternative was REJECTED — the option later adopted as the production architecture | SHELVED WITH EVIDENCE ⚠LEGACY | `cowork_joint_key_chord_design.md` ⚠gap |
 | D-379 | Whether an alternative tonality would change the chord CANNOT be measured without re-deciding under it — the exact coupled-case condition is not computable read-only, which is why it stayed unmeasured | LIVE | `cowork_joint_key_chord_design.md` ⚠gap |
 
@@ -267,7 +267,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-268 | A confidence attaches to a named decision, is compared only within its class and a declared frame, and keeps its identity downstream | LIVE | `cowork_confidence_contract.md` |
 | D-269 | The frame table is the one home of the override arithmetic; a new override site declares its frame before it is built | LIVE | `cowork_confidence_contract.md` |
 | D-278 | The joint key-and-chord step is SHELVED - measured not to pay | SHELVED WITH EVIDENCE ⚠LEGACY | `cowork_engage_arc_plan.md` ⚠gap |
-| D-282 | Meta-finding: the oracle/tier metric, never a bare proxy - superseded by the robust-unit stop and the two-tier policy | SUPERSEDED BY D-115 and D-191 | `cowork_architecture_reassessment.md` ⚠gap |
+| D-282 | Meta-finding: the oracle/tier metric, never a bare proxy - superseded by the robust-unit stop and the two-tier policy | SUPERSEDED BY D-115 and D-191 | `cowork_architecture_reassessment.md` |
 | D-286 | Whole-score interactive analysis was SHELVED WITH EVIDENCE; the bounded window is the ratified reading | LIVE | `cowork_handoff_archive.md` ⚠tracking-surface-only |
 | D-288 | Beam widening is SHELVED - a wider search cannot fix the failure class it was proposed for | LIVE ⚠LEGACY | `cowork_handoff_archive.md` ⚠tracking-surface-only |
 | D-289 | Meta-principle: precision lives in the evidence and the functional labelling, not in the search | LIVE | `cowork_handoff_archive.md` ⚠tracking-surface-only |
@@ -319,7 +319,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-287 | Key-as-distribution is SHELVED - its motivating case was already fixed and no live target was found | LIVE ⚠LEGACY | `cowork_handoff_archive.md` ⚠tracking-surface-only |
 | D-290 | The key-agnostic local cadence approach is FALSIFIED at its precision ceiling | LIVE ⚠LEGACY | `cowork_handoff_archive.md` ⚠tracking-surface-only |
 | D-306 | The key layer's backward re-reading stays switched off in the shipped configuration | LIVE ⚠LEGACY | `ARCHITECTURE.md` |
-| D-323 | Asking whether a pitch belongs to the key is a question about the collection, never about the tonic — the tonic-anchored form must not return | LIVE | `docs/scoring_model.md` ⚠gap |
+| D-323 | Asking whether a pitch belongs to the key is a question about the collection, never about the tonic — the tonic-anchored form must not return | LIVE | `docs/scoring_model.md` |
 | D-343 | The key/mode layer owns the candidate space and the note-evidence model outright; the residual is SELECTED from its carried alternatives, never re-scored | LIVE | `cowork_layer3_keymode_design.md` |
 | D-344 | A scale outside the twenty-one recognized modes is reported as the best-fitting recognized mode, never as the unrecognized scale | LIVE ⚠LEGACY | `cowork_layer3_keymode_design.md` |
 | D-345 | The style preset first enters the analysis at the key/mode layer, as a deliberately weak prior over the modes that the note evidence overrides | LIVE ⚠LEGACY | `cowork_layer3_keymode_design.md` |
@@ -365,8 +365,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-240 | The monophonic smoothing terms are tunable parameters, not prose-only rules | DEFERRED | `ARCHITECTURE.md` |
 | D-241 | The monophonic local-grouping problem is deferred to Phase 2 | DEFERRED | `ARCHITECTURE.md` |
 | D-242 | Vertical and monophonic raw scores are never compared directly | DEFERRED | `ARCHITECTURE.md` |
-| D-280 | Gates read structured fields only - never a chord symbol string and never a Roman numeral | LIVE | `docs/iteration_path1_summary.md` ⚠gap |
-| D-284 | Meta-finding: selection/competition is saturated, stop adding re-ranking gates - superseded by the gates doctrine and the adoption | SUPERSEDED BY D-036 with D-001/D-010 ⚠LEGACY | `cowork_architecture_reassessment.md` ⚠gap |
+| D-280 | Gates read structured fields only - never a chord symbol string and never a Roman numeral | LIVE | `docs/iteration_path1_summary.md` |
+| D-284 | Meta-finding: selection/competition is saturated, stop adding re-ranking gates - superseded by the gates doctrine and the adoption | SUPERSEDED BY D-036 with D-001/D-010 ⚠LEGACY | `cowork_architecture_reassessment.md` |
 | D-299 | No negative-margin guard may be added - it would break every intentional backward-swap gate | LIVE ⚠LEGACY | `cowork_handoff_archive.md` ⚠tracking-surface-only |
 | D-300 | Gate M (minor read as diminished) is DEFERRED and must not be retried without a new runtime signal | DEFERRED ⚠LEGACY | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
 | D-301 | Gate N (major read as an inverted minor) is DEFERRED and must not be retried without a multi-region model | DEFERRED ⚠LEGACY | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
@@ -374,13 +374,13 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-303 | Non-chord-tone detection is deferred, and if built it must be chord identification that knows about non-chord tones, never stripping after the fact | DEFERRED | `ARCHITECTURE.md` |
 | D-305 | The ban on reading written harmony as analyzer input is decided by what an annotation says, not by how it is stored | LIVE | `ARCHITECTURE.md` |
 | D-312 | The carried alternative readings are inside the byte-identity acceptance contract — same winner with different alternatives is a behavior change | LIVE | `cowork_stage5_fitter_design.md` |
-| D-317 | The backward-walk boundary change is a dead end — do not retry it | LIVE ⚠LEGACY | `docs/redesign_plan.md` ⚠gap |
-| D-318 | A short-region external merger is a dead end — do not retry it | LIVE ⚠LEGACY | `docs/redesign_plan.md` ⚠gap |
-| D-319 | Re-analysing the merged aggregate is a dead end — no tone-aggregation approach fixes the arpeggio root failure | LIVE ⚠LEGACY | `docs/redesign_plan.md` ⚠gap |
-| D-320 | The absent-root guard is REVERTED and must not be retried — 'absent root means wrong reading' is false corpus-wide | LIVE ⚠LEGACY | `docs/redesign_plan.md` ⚠gap |
-| D-321 | Winner selection compares candidate scores exactly, with no epsilon anywhere in the ranking | LIVE ⚠LEGACY | `docs/scoring_model.md` ⚠gap |
-| D-322 | Any change to optimization flags or to the order of the scoring arithmetic requires a full corpus A/B on both presets | LIVE ⚠LEGACY | `docs/scoring_model.md` ⚠gap |
-| D-324 | Retirement of a post-scoring rule is global — a rule still doing work on any one preset is retained for all | LIVE ⚠LEGACY | `docs/scoring_model.md` ⚠gap |
+| D-317 | The backward-walk boundary change is a dead end — do not retry it | LIVE ⚠LEGACY | `docs/redesign_plan.md` |
+| D-318 | A short-region external merger is a dead end — do not retry it | LIVE ⚠LEGACY | `docs/redesign_plan.md` |
+| D-319 | Re-analysing the merged aggregate is a dead end — no tone-aggregation approach fixes the arpeggio root failure | LIVE ⚠LEGACY | `docs/redesign_plan.md` |
+| D-320 | The absent-root guard is REVERTED and must not be retried — 'absent root means wrong reading' is false corpus-wide | LIVE ⚠LEGACY | `docs/redesign_plan.md` |
+| D-321 | Winner selection compares candidate scores exactly, with no epsilon anywhere in the ranking | LIVE ⚠LEGACY | `docs/scoring_model.md` |
+| D-322 | Any change to optimization flags or to the order of the scoring arithmetic requires a full corpus A/B on both presets | LIVE ⚠LEGACY | `docs/scoring_model.md` |
+| D-324 | Retirement of a post-scoring rule is global — a rule still doing work on any one preset is retained for all | LIVE ⚠LEGACY | `docs/scoring_model.md` |
 | D-325 | A correction rule that changes a committed chord's identity is retired or folded in BEFORE the search is widened past it | LIVE ⚠LEGACY | `docs/decoder_design.md` ⚠gap |
 | D-326 | The chord-path search emits the whole path with every stretch's alternatives and margins, not the committed reading alone | LIVE ⚠LEGACY | `docs/decoder_design.md` ⚠gap |
 | D-327 | The root-continuity guard reads the reconstructed inversion credit, superseding the designed sounding-third test | LIVE ⚠LEGACY | `docs/decoder_design.md` ⚠gap |
@@ -527,7 +527,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-129 | Style conflicts resolve by a declared priority - explicit overrides always win | LIVE · derivation not recorded | `ARCHITECTURE.md` |
 | D-130 | The style loader never names a style in code | LIVE | `ARCHITECTURE.md` |
 | D-131 | One shared style taxonomy, not two parallel vocabularies | LIVE | `ARCHITECTURE.md` |
-| D-132 | The style taxonomy is a theory-based first version; grounding it empirically is committed work | DEFERRED | `ARCHITECTURE.md` |
+| D-132 | The remaining empirical grounding is the per-preset WEIGHTS alone; the clusters half is delivered by the ratified five-idiom set | DEFERRED | `ARCHITECTURE.md` |
 | D-133 | The harmonic vocabulary is a queried reference component, not a layer of the analysis | LIVE | `ARCHITECTURE.md` |
 | D-406 | The catalog owns the NAMED progressions and substitutions; the pairwise licensing grammar is owned by the function layer — the two are never derived from each other | LIVE | `cowork_progression_schema_dictionary.md` ⚠gap |
 | D-407 | The vocabulary supplies ranked candidates and DECIDES nothing — the threshold, the style weighting and what to do with a candidate are the consumer's | LIVE | `cowork_progression_schema_dictionary.md` ⚠gap |
@@ -694,13 +694,13 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-224 | Joint bass-and-chord scoring requires accumulated regional evidence | LIVE ⚠LEGACY · derivation not recorded | `docs/scoring_model.md` |
 | D-225 | A corpus is regenerated before its baseline figures are updated | LIVE | `BUILD_AND_TEST.md` |
 | D-226 | The music21 export is version-pinned; regenerating it is a deliberate re-baseline | LIVE | `tools/REPRODUCIBILITY.md` |
-| D-281 | The batch measurement tool must emit the structured fields on every alternative, or the corpus figures silently revert | LIVE | `docs/iteration_path1_summary.md` ⚠gap |
+| D-281 | The batch measurement tool must emit the structured fields on every alternative, or the corpus figures silently revert | LIVE | `docs/iteration_path1_summary.md` |
 
 ## Provenance of this register
 
 - Adjudication: the OI-207 decision-conformance adjudication, 2026-08-01, at commit `58dea6702ac8aa9d5ef8b89244b94d587a75f7a5`.
-- Coverage figures above regenerated at commit `88fd87e9d16e2eacca38c9dd8ea4c1e4a43d7b27`.
-- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `5e3c48f1aa5c9271…`).
+- Coverage figures above regenerated at commit `b6be14097e68b356d391b37872f698f99d8b6053`.
+- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `015ceaf2a1cf1f46…`).
 - Harvest: `tools/audit/decisions/decision_candidates.json` (sha256 `51850440b315e6e9…`).
 - Clustering: `tools/audit/decisions/decision_clusters.json` (sha256 `0615b1e61bf10332…`).
 - Shape: `open_items/OI-208.md` (user-ratified 2026-07-28).

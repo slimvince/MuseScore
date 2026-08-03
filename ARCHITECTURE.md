@@ -4502,8 +4502,10 @@ private:
 
 ### 6.5 Initial Styles
 
-*Terminology: these are **style instances** (individual JSON style files), distinct from the **style families** of the
-§6.7 taxonomy (Baroque, swing, bebop, …). A style file is a leaf; a family is a taxonomy node a preset selects on.*
+*Terminology: these are **style instances** (individual JSON style files), distinct from the **idioms** of the §6.7
+taxonomy (Diatonic-functional, Seventh-functional, …). A style file is a leaf; an idiom is a taxonomy node a preset
+selects on. (Corrected 2026-08-03 with the §6.7 restatement — this note previously gave the retired genre families
+"Baroque, swing, bebop" as its examples.)*
 
 The five initial styles are chosen for maximum architectural diversity — they stress-test
 the schema by requiring different parameter sets:
@@ -4525,15 +4527,57 @@ what extensions are expected, and how scoring weights are adjusted.
 
 ### 6.7 The canonical style taxonomy (shared with the Harmonic Vocabulary)
 
-The style vocabulary the presets select on is **one shared, hierarchical taxonomy** (common-practice / jazz / vernacular
-families — Baroque, Classical/galant, Romantic; trad, swing/songbook, bebop, hard-bop, cool, modal; blues, ragtime,
-gospel-soul, rock, pop, folk, barbershop) — the **same** set the Harmonic Vocabulary (§7) tags its entries with, not two
-parallel vocabularies. Inclusion rule: a style is listed iff it has a **distinct functional-harmonic vocabulary** (free
-jazz / atonal excluded). It is a **theory-based v1**; **empirically grounding** it — deriving the clusters *and* the
-per-style weights by clustering corpora — is committed future work (`cowork_style_clustering_plan.md`): the clusters and
-their feature distributions are one data-derived object, reachable for jazz/pop from **lead-sheet** corpora even where
-note-level analysis ground truth is scarce. Full proposal + the surveyed corpora:
-`cowork_progression_schema_dictionary.md` §6/§12, `cowork_style_clustering_plan.md`.
+The style vocabulary the presets select on is **one shared taxonomy** — the **five idioms**: *Diatonic-functional* ·
+*Chromatic-functional* · *Seventh-functional* · *Triadic-modal* · *Chromatic-coloristic* — with **mode** (major/minor)
+and **chromaticism** (diatonic/chromatic) carried beside them as two **orthogonal cross-attributes**, not folded into
+the idiom names. Tags are **multi-valued**: one entry may carry several idioms. It is the **same** set the Harmonic
+Vocabulary (§7) tags its entries with, **not two parallel vocabularies** — that shared-set property is what this section
+exists to state, and it is unaffected by the 2026-06-30 replacement of the list itself. *Why one shared set:* a
+vocabulary private to the Harmonic Vocabulary would need a brittle preset→tag mapping and would drift from the presets
+(`cowork_progression_schema_dictionary.md:227-229`, `:258-260`) — principle #6, one path per concern, applied to a
+vocabulary. Each idiom is glossed once, in the proposal's own words, at
+`cowork_progression_schema_dictionary.md:229-237`; it is not restated here (a cross-cutting definition is stated once,
+§2.15).
+
+**Ratified by the user 2026-06-30 and ENCODED.** The placeholder `{Baroque, Jazz, Default}` StyleTag is **retired**,
+replaced in the dormant `harmonicvocabulary` component by `enum class Idiom` + `IdiomSet`; the per-entry re-tag is
+`cowork_idiom_entry_mapping.md` (`cowork_style_taxonomy_proposal.md:3-9`;
+`cowork_progression_schema_dictionary.md:317-330`, `:239`).
+
+**The five idioms are EMPIRICALLY DISCOVERED, not theory-derived.** This section previously called the taxonomy "a
+theory-based v1", which understated what is established. Cross-tradition clustering over 5,243 pieces
+(`cowork_idiom_discovery_findings.md:122`, v1.5, cap-robust) found that harmony is **not organised by genre** —
+tradition-ARI ≈ 0.3, weak and robust — and that the robust structure is these five progression idioms plus the two
+cross-axes. The corroborations: Baroque, galant and Classical share **one** idiom (Chromatic-functional), so era is not
+an axis; folk collapses into Diatonic-functional; and the harmonically dense, genre-defying corpora all converge on
+Chromatic-coloristic (`cowork_style_taxonomy_proposal.md:11-30`).
+
+**The admission basis is the robustness check.** An idiom is admitted iff it survives the discovery study's
+cap-robustness sweep: "the candidate sixth (modal/static-7th jazz) failed the robustness check at every cap *even with
+targeted modal-jazz data added* (Impro-Visor + weimar), so five is the defensible set. The sixth is a real musical
+distinction **deferred** to a higher-K / explicit-static-harmony-feature study — not a committed idiom"
+(`cowork_style_taxonomy_proposal.md:58-61`). The two cross-axes are kept separate on the no-information-loss principle
+(#12): separating loses no information, while folding would either lose major/minor or double the idiom count (`:62-64`).
+*The retired genre taxonomy below carried a different inclusion rule — a style was listed iff it had a distinct
+functional-harmonic vocabulary, free jazz and atonal excluded. That rule belonged to the genre list and is retired with
+it; it is not carried across to the idioms by analogy.*
+
+**What remains future work is the per-preset WEIGHTS, not the clusters.** Presets become named **idiom-weightings** over
+the five — a distribution over the idioms rather than a name picked from a list — and deriving those weights by
+clustering corpora is the committed work (`cowork_style_clustering_plan.md`); the weighting itself is a joint decision
+with the preset system and the recognition consumer's job, not the Harmonic Vocabulary's
+(`cowork_progression_schema_dictionary.md:317-330`). The **clusters half is delivered**: the clusters *are* the five
+idioms, discovered and encoded. Register entry D-132 is narrowed to the weights accordingly.
+
+**Superseded genre taxonomy — historical context only (retired 2026-06-30, kept under #12).** This is the list this
+section itself presented as canonical until 2026-08-03: common-practice / jazz / vernacular families — Baroque,
+Classical/galant, Romantic; trad, swing/songbook, bebop, hard-bop, cool, modal; blues, ragtime, gospel-soul, rock, pop,
+folk, barbershop. It was a hand-made, theory-based first version. Genre names survive only as possible **user-facing
+labels** over idiom-mixtures, never as axes — the discovery study's own result is that era and genre are not the
+structure (`cowork_style_taxonomy_proposal.md:87-99`).
+
+Full proposal + the surveyed corpora: `cowork_progression_schema_dictionary.md` §6/§12,
+`cowork_style_taxonomy_proposal.md`, `cowork_style_clustering_plan.md`.
 
 ---
 

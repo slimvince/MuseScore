@@ -1,8 +1,8 @@
 {
  "mode": "living",
  "baseline_commit": "cb246a7580",
- "index_item_count": 279,
- "detail_file_count": 279,
+ "index_item_count": 283,
+ "detail_file_count": 283,
  "baseline_item_count": 200,
  "post_baseline_ids": [
   "OI-201",
@@ -83,7 +83,11 @@
   "OI-276",
   "OI-277",
   "OI-278",
-  "OI-279"
+  "OI-279",
+  "OI-280",
+  "OI-281",
+  "OI-282",
+  "OI-283"
  ],
  "bijection_ok": true,
  "index_duplicate_ids": [],
@@ -2875,6 +2879,46 @@
   },
   {
    "id": "OI-279",
+   "post_baseline": true,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": null,
+   "ok": true
+  },
+  {
+   "id": "OI-280",
+   "post_baseline": true,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": null,
+   "ok": true
+  },
+  {
+   "id": "OI-281",
+   "post_baseline": true,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": null,
+   "ok": true
+  },
+  {
+   "id": "OI-282",
+   "post_baseline": true,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": null,
+   "ok": true
+  },
+  {
+   "id": "OI-283",
    "post_baseline": true,
    "index_present": true,
    "detail_present": true,

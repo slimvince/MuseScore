@@ -1,5 +1,14 @@
 # Iteration Path 1 — Closing Summary
 
+> **Status: ITERATION-ERA RECORD (path 1).** Two of its rules are standing and registered — gates
+> read structured fields only (D-280) and the batch measurement tool must emit the structured fields
+> on every alternative (D-281); its commit-timing lesson is reconciled by the dated annotation at
+> :112-130. Not a current plan.
+>
+> *Banner ratified by the user, 2026-08-03 — drafted at phase 1j, presented at
+> `cowork_pending_ratifications_next_session.md` §1, applied at phase 1k. It makes this document a
+> contract home for D-280 and D-281 (the fifth home case, `CLAUDE.md` decisions-register rule (g)).*
+
 ## Scope
 
 Incremental improvement of the chord analyser in `src/composing/` via diagnostic

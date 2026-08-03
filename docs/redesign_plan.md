@@ -1,5 +1,13 @@
 # Redesign Plan — Layered Comprehensive Evidence Architecture
 
+> **Status: SUPERSEDED AS A PLAN — RETAINED AS THE RECORD OF WHAT WAS TRIED AND CLOSED.** Its four
+> dead ends (D-317…D-320) are LIVE prohibitions about the legacy chord path; nothing else here is a
+> current plan.
+>
+> *Banner ratified by the user, 2026-08-03 — drafted at phase 1j, presented at
+> `cowork_pending_ratifications_next_session.md` §1, applied at phase 1k. It makes this document a
+> contract home for D-317…D-320 (the fifth home case, `CLAUDE.md` decisions-register rule (g)).*
+
 *Written 2026-06-08. Updated 2026-06-09 (comprehensive evidence flow; iteration language dropped).
 Updated 2026-06-10 (architecture-review addendum: lattice + global decode named as the Phase E target — see final section).*
 *Authors: Cowork + CC architectural session.*

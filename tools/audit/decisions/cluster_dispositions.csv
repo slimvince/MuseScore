@@ -3088,7 +3088,7 @@ DC-03086,1,unresolved,BR-8,,cowork_docs,bullet,cowork_progression_schema_diction
 DC-03087,1,restates,BR-3,D-119;D-410;D-411,cowork_docs,bullet,cowork_progression_schema_dictionary.md
 DC-03088,1,unresolved,BR-8,,cowork_docs,bullet,cowork_progression_schema_dictionary.md
 DC-03089,1,unresolved,BR-8,,cowork_docs,bullet,cowork_progression_schema_dictionary.md
-DC-03090,1,restates,BR-3,D-106;D-119,cowork_docs,bullet,cowork_progression_schema_dictionary.md
+DC-03090,1,restates,BR-3,D-106;D-119;D-132,cowork_docs,bullet,cowork_progression_schema_dictionary.md
 DC-03091,1,no-spec-home,BR-4,D-407,cowork_docs,bullet,cowork_progression_schema_dictionary.md
 DC-03092,1,not-a-decision,BR-2,,cowork_docs,heading,cowork_progression_schema_dictionary.md
 DC-03093,1,unresolved,BR-8,,cowork_docs,bullet,cowork_progression_schema_dictionary.md
@@ -3100,7 +3100,7 @@ DC-03098,1,unresolved,BR-8,,cowork_docs,bullet,cowork_progression_schema_diction
 DC-03099,1,unresolved,BR-8,,cowork_docs,bullet,cowork_progression_schema_dictionary.md
 DC-03100,1,unresolved,BR-8,,cowork_docs,bullet,cowork_progression_schema_dictionary.md
 DC-03101,1,unresolved,BR-8,,cowork_docs,bullet,cowork_progression_schema_dictionary.md
-DC-03102,1,restates,BR-3,D-084;D-119,cowork_docs,bullet,cowork_progression_schema_dictionary.md
+DC-03102,1,restates,BR-3,D-084;D-119;D-132,cowork_docs,bullet,cowork_progression_schema_dictionary.md
 DC-03103,1,restates,BR-3,D-119;D-132,cowork_docs,paragraph,cowork_progression_schema_dictionary.md
 DC-03104,1,unresolved,BR-8,,cowork_docs,bullet,cowork_progression_schema_dictionary.md
 DC-03105,1,not-a-decision,BR-2,,cowork_docs,heading,cowork_prune_pass_checklist.md
@@ -3360,7 +3360,7 @@ DC-03358,1,unresolved,BR-8,,cowork_docs,paragraph,cowork_stage5_fitter_design.md
 DC-03359,1,unresolved,BR-8,,cowork_docs,paragraph,cowork_stage5_fitter_design.md
 DC-03360,1,no-spec-home,BR-4,D-313,cowork_docs,paragraph,cowork_stage5_fitter_design.md
 DC-03361,1,restates,BR-3,D-115;D-119,cowork_docs,paragraph,cowork_stage5_fitter_design.md
-DC-03362,1,restates,BR-3,D-070;D-119,cowork_docs,paragraph,cowork_stage5_fitter_design.md
+DC-03362,1,restates,BR-3,D-070;D-119;D-132,cowork_docs,paragraph,cowork_stage5_fitter_design.md
 DC-03363,1,restates,BR-3,D-119,cowork_docs,paragraph,cowork_stage5_fitter_design.md
 DC-03364,1,unresolved,BR-8,,cowork_docs,bullet,cowork_stage5_fitter_design.md
 DC-03365,1,unresolved,BR-8,,cowork_docs,bullet,cowork_stage5_fitter_design.md
@@ -3470,7 +3470,7 @@ DC-03468,1,unresolved,BR-8,,cowork_docs,bullet,cowork_style_taxonomy_proposal.md
 DC-03469,1,unresolved,BR-8,,cowork_docs,bullet,cowork_style_taxonomy_proposal.md
 DC-03470,1,restates,BR-3,D-025,cowork_docs,bullet,cowork_style_taxonomy_proposal.md
 DC-03471,1,not-a-decision,BR-2,,cowork_docs,heading,cowork_style_taxonomy_proposal.md
-DC-03472,1,not-a-decision,BR-9,,cowork_docs,paragraph,cowork_style_taxonomy_proposal.md
+DC-03472,1,restates,BR-3,D-132,cowork_docs,paragraph,cowork_style_taxonomy_proposal.md
 DC-03473,1,restates,BR-3,D-119,cowork_docs,bullet,cowork_style_taxonomy_proposal.md
 DC-03474,1,unresolved,BR-8,,cowork_docs,bullet,cowork_style_taxonomy_proposal.md
 DC-03475,1,restates,BR-3,D-119,cowork_docs,bullet,cowork_style_taxonomy_proposal.md

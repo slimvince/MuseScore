@@ -2791,7 +2791,7 @@
       "verbatim": "Follow MuseScore's existing coding style throughout:\n- Formatting defined in `.clang-format` — run clang-format before every commit\n- Naming conventions — consistent with existing MuseScore code\n- File headers — GPL v3 license header on every file (see existing files for template)\n- Include ordering — follow MuseScore's convention",
       "plain": "The code looks like MuseScore's own code: the formatter configuration in the repository is run before every commit, names follow MuseScore's conventions, every file carries the GPL v3 header, and includes are ordered MuseScore's way.",
       "rationale": "Stated constraint, ARCHITECTURE.md:519-523 (§2.8): read how MuseScore already does a thing and follow the same pattern rather than inventing parallel infrastructure - the same reason that governs panels, score traversal, playback, settings and localization.",
-      "home": "ARCHITECTURE.md:6767",
+      "home": "ARCHITECTURE.md:6811",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -2811,7 +2811,7 @@
       "verbatim": "Where MuseScore's documentation practice is minimal, use good practice instead.",
       "plain": "Following MuseScore's conventions does not mean copying how little it documents. Where MuseScore documents sparsely, this project documents properly instead.",
       "rationale": "Stated constraint, ARCHITECTURE.md:6709-6712 (§17.3): the analyzers are the most complex components in the codebase, and a musician with reasonable theoretical knowledge must be able to read them and understand why each decision was made.",
-      "home": "ARCHITECTURE.md:6773",
+      "home": "ARCHITECTURE.md:6817",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -2830,7 +2830,7 @@
       "verbatim": "Every public class must have a documentation comment explaining:\n- What musical concept it implements\n- What it receives as input (in musical terms)\n- What it produces as output (in musical terms)\n- What it does not handle (important for setting expectations)",
       "plain": "A public class must say which musical idea it implements, what music it takes in, what it produces, and what it deliberately does not handle. A public method must say the same about the musical operation it performs, in musical terms rather than programming terms.",
       "rationale": "Stated constraint, ARCHITECTURE.md:504-508 (§2.6) with :6322-6323: the documentation is written so a person with reasonable musical knowledge and basic programming familiarity can read it, including MuseScore contributors with no familiarity with this codebase at all.",
-      "home": "ARCHITECTURE.md:6777",
+      "home": "ARCHITECTURE.md:6821",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -2850,7 +2850,7 @@
       "verbatim": "Every non-obvious scoring weight or threshold must explain its musical reasoning.",
       "plain": "A number in the scoring code that is not self-evident must be accompanied by the musical reason it has the value it has.",
       "rationale": "Stated constraint, ARCHITECTURE.md:6709-6712 (§17.3): the analyzers are the most complex components, and their weights and thresholds are where the musical judgment actually lives - an undocumented one is unreadable and unarguable.",
-      "home": "ARCHITECTURE.md:6789",
+      "home": "ARCHITECTURE.md:6833",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -2870,7 +2870,7 @@
       "verbatim": "Every scoring weight, threshold, and heuristic must be documented with its musical\nrationale. A musician with reasonable theoretical knowledge must be able to read the\nanalyzer code and understand why each decision was made.",
       "plain": "Every weight, threshold and rule of thumb in the chord and key analyzers carries its musical reason, to the standard that a musician with ordinary theoretical training can read the code and see why each choice was made.",
       "rationale": "Stated constraint, ARCHITECTURE.md:6709: these are the most complex components in the codebase, so they are where readability is worth the most.",
-      "home": "ARCHITECTURE.md:6826",
+      "home": "ARCHITECTURE.md:6870",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -2890,7 +2890,7 @@
       "verbatim": "Every test must document:\n- What musical situation is being tested\n- What the expected result is and why it is musically correct\n- What a failure would indicate about the system's behavior",
       "plain": "A test says which musical situation it exercises, what the right answer is and why it is musically right, and what it would mean about the system if the test failed.",
       "rationale": "Stated constraint, ARCHITECTURE.md:6728-6729: the tests must be readable by MuseScore contributors with no deep familiarity with this codebase.",
-      "home": "ARCHITECTURE.md:6839",
+      "home": "ARCHITECTURE.md:6883",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -2909,7 +2909,7 @@
       "verbatim": "Each pull request should implement one coherent piece of functionality. Large\npull requests are hard to review. The phased plan in Section 15 defines natural\nPR boundaries.",
       "plain": "Each contribution offered back to MuseScore does one thing.",
       "rationale": "Stated constraint, ARCHITECTURE.md:6744-6746: large pull requests are hard to review, and the phased plan defines where the natural boundaries fall.",
-      "home": "ARCHITECTURE.md:6860",
+      "home": "ARCHITECTURE.md:6904",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -2929,7 +2929,7 @@
       "verbatim": "When an architectural decision changes — update this document in the same commit.\nStale documentation is worse than no documentation because it actively misleads.\nClaude Code should update relevant sections of this document as its last act when\na session changes an architectural decision.",
       "plain": "When a design decision changes, the change to this document goes in the same commit as the change to the code.",
       "rationale": "Stated constraint, ARCHITECTURE.md:6757: stale documentation is worse than no documentation, because it actively misleads.",
-      "home": "ARCHITECTURE.md:6872",
+      "home": "ARCHITECTURE.md:6916",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -3005,40 +3005,43 @@
       "id": "D-131",
       "group": "M",
       "title": "One shared style taxonomy, not two parallel vocabularies",
-      "verbatim": "The style vocabulary the presets select on is **one shared, hierarchical taxonomy** (common-practice / jazz / vernacular\nfamilies — Baroque, Classical/galant, Romantic; trad, swing/songbook, bebop, hard-bop, cool, modal; blues, ragtime,\ngospel-soul, rock, pop, folk, barbershop) — the **same** set the Harmonic Vocabulary (§7) tags its entries with, not two\nparallel vocabularies. Inclusion rule: a style is listed iff it has a **distinct functional-harmonic vocabulary** (free\njazz / atonal excluded).",
-      "plain": "The list of style families the presets choose from is the SAME list the harmonic vocabulary tags its entries with - one hierarchy, not two that can drift apart. A style earns a place on it only if its functional harmony is genuinely distinct, which is why free jazz and atonal music are not on it.",
-      "rationale": "Stated constraint, ARCHITECTURE.md:4422-4424 - #6, one path per concern, applied to a vocabulary: two parallel taxonomies of the same thing would diverge, and the inclusion rule (a distinct functional-harmonic vocabulary) is what keeps the list from growing by analogy.",
-      "home": "ARCHITECTURE.md:4528",
+      "verbatim": "The style vocabulary the presets select on is **one shared taxonomy** — the **five idioms**: *Diatonic-functional* ·\n*Chromatic-functional* · *Seventh-functional* · *Triadic-modal* · *Chromatic-coloristic* — with **mode** (major/minor)\nand **chromaticism** (diatonic/chromatic) carried beside them as two **orthogonal cross-attributes**, not folded into\nthe idiom names. Tags are **multi-valued**: one entry may carry several idioms. It is the **same** set the Harmonic\nVocabulary (§7) tags its entries with, **not two parallel vocabularies** — that shared-set property is what this section\nexists to state, and it is unaffected by the 2026-06-30 replacement of the list itself.",
+      "plain": "The list of style categories the presets choose from is the SAME list the harmonic vocabulary tags its entries with — one shared set, not two that can drift apart. That set is the five idioms (Diatonic-functional, Chromatic-functional, Seventh-functional, Triadic-modal, Chromatic-coloristic), with major/minor and diatonic/chromatic carried separately beside them; an entry may carry more than one idiom.",
+      "rationale": "One path per concern (guiding principle #6) applied to a vocabulary, with the failure mode named at `cowork_progression_schema_dictionary.md:227-229` and `:258-260`: a tag set private to the harmonic vocabulary would need a brittle preset-to-tag mapping and would drift from the presets. The set itself is empirically decided rather than asserted — cross-tradition clustering over 5,243 pieces found harmony is not organised by genre (tradition-ARI about 0.3, robust across caps) and that the robust structure is these five progression idioms plus the two cross-axes (`cowork_style_taxonomy_proposal.md:11-30`, `cowork_idiom_discovery_findings.md:122`).",
+      "home": "ARCHITECTURE.md:4530",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "ARCHITECTURE.md:4418-4428 (§6.7); full proposal `cowork_progression_schema_dictionary.md` §6/§12 and `cowork_style_clustering_plan.md`. No date or ratifier stated.",
+      "status_source": "`ARCHITECTURE.md`:4528-4579 (§6.7). The SUBJECT is unchanged — one shared style taxonomy, not two parallel vocabularies — and the property it records survived the taxonomy's replacement intact. ★ VERBATIM RE-TAKEN 2026-08-03 (CC, phase 1k) from the corrected §6.7, on the user's OI-279 ruling of the same date (option (a): order the doc-sync correction, the genre list retained as marked historical context). The FORMER verbatim, preserved here under #12, quoted the retired hand-made genre taxonomy: \"The style vocabulary the presets select on is **one shared, hierarchical taxonomy** (common-practice / jazz / vernacular families — Baroque, Classical/galant, Romantic; trad, swing/songbook, bebop, hard-bop, cool, modal; blues, ragtime, gospel-soul, rock, pop, folk, barbershop) — the **same** set the Harmonic Vocabulary (§7) tags its entries with, not two parallel vocabularies. Inclusion rule: a style is listed iff it has a **distinct functional-harmonic vocabulary** (free jazz / atonal excluded).\" That list was superseded by the five-idiom set, ratified by the user 2026-06-30 and encoded (`cowork_progression_schema_dictionary.md:317-330`); the old inclusion rule belonged to the genre list and is retired with it, NOT carried across to the idioms — the idioms' own admission basis is the discovery study's cap-robustness check (`cowork_style_taxonomy_proposal.md:58-61`), now stated in §6.7. No date or ratifier is stated for the shared-taxonomy decision itself.",
       "patterns": [
         "one shared, hierarchical taxonomy",
+        "one shared taxonomy",
         "not two parallel vocabularies"
       ]
     },
     {
       "id": "D-132",
       "group": "M",
-      "title": "The style taxonomy is a theory-based first version; grounding it empirically is committed work",
-      "verbatim": "It is a **theory-based v1**; **empirically grounding** it — deriving the clusters *and* the\nper-style weights by clustering corpora — is committed future work (`cowork_style_clustering_plan.md`)",
-      "plain": "The style families and their weights are currently drawn from music theory, not from data. Deriving both from corpora instead is recorded as work that will be done, not as an option.",
-      "rationale": "Stated constraint, ARCHITECTURE.md:4425-4427: the clusters and their feature distributions are one data-derived object, and it is reachable for jazz and pop from lead-sheet corpora even where note-level ground truth is scarce - which is what makes the grounding committable rather than aspirational.",
-      "home": "ARCHITECTURE.md:4532",
+      "title": "The remaining empirical grounding is the per-preset WEIGHTS alone; the clusters half is delivered by the ratified five-idiom set",
+      "verbatim": "**What remains future work is the per-preset WEIGHTS, not the clusters.** Presets become named **idiom-weightings** over\nthe five — a distribution over the idioms rather than a name picked from a list — and deriving those weights by\nclustering corpora is the committed work (`cowork_style_clustering_plan.md`); the weighting itself is a joint decision\nwith the preset system and the recognition consumer's job, not the Harmonic Vocabulary's\n(`cowork_progression_schema_dictionary.md:317-330`). The **clusters half is delivered**: the clusters *are* the five\nidioms, discovered and encoded.",
+      "plain": "Grounding the style system in data was recorded as two pieces of committed work: discovering the categories, and measuring how strongly each one weighs in each preset. The first is done — the five idioms were discovered from corpora, ratified and encoded. What is still owed is the second: a per-preset weighting over those five, derived by clustering corpora rather than asserted.",
+      "rationale": "The narrowing is decided by what was delivered: the five idioms are the clusters, discovered empirically over 5,243 pieces and ratified by the user 2026-06-30 (`cowork_style_taxonomy_proposal.md`, `cowork_progression_schema_dictionary.md:317-330`), so a status deferring that half would defer delivered work. The weights half remains genuinely owed and carries its own defense at `cowork_style_clustering_plan.md`:20-30 — the per-style progression and substitution statistics are load-bearing for a future chord-suggestion tool, and a well-calibrated style prior is one of the sub-point inference gains the best-possible-inferrer goal is made of.",
+      "home": "ARCHITECTURE.md:4565",
       "home_is_layer_spec": true,
       "status": "deferred",
       "date": "not stated",
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "ARCHITECTURE.md:4418-4428 (§6.7). No date or ratifier stated.",
+      "status_source": "`ARCHITECTURE.md`:4565-4570 (§6.7). ★ NARROWED and VERBATIM RE-TAKEN 2026-08-03 (CC, phase 1k) on the user's OI-279 ruling of the same date, sub-ruling (i): DEFERRED over the **per-preset weights alone**; the CLUSTERS half is SUPERSEDED BY the five-idiom ratification of 2026-06-30 (`cowork_style_taxonomy_proposal.md:3-9`; the encoded `enum class Idiom` + `IdiomSet`). The FORMER verbatim, preserved here under #12, made no such split: \"It is a **theory-based v1**; **empirically grounding** it — deriving the clusters *and* the per-style weights by clustering corpora — is committed future work (`cowork_style_clustering_plan.md`)\" — whose \"theory-based v1\" characterization was itself false in the other direction, the five idioms being empirically discovered. The former scope was therefore undifferentiated over two halves of which one was already delivered. No date or ratifier is stated for the original deferral; the narrowing is the user's, 2026-08-03. Note: `cowork_style_clustering_plan.md` itself still presents BOTH halves as future work and carries no annotation of the delivery — rowed as `OPEN_ITEMS.md` OI-282.",
       "patterns": [
         "theory-based v1",
-        "empirically grounding"
+        "empirically grounding",
+        "per-preset WEIGHTS, not the clusters",
+        "idiom-weightings"
       ]
     },
     {
@@ -3048,7 +3051,7 @@
       "verbatim": "It is reference knowledge **queried** by the layers and by\nfuture tools, **not a pipeline layer**. Entries carry **provenance** (established theory), not a ground-truth-validation\nstatus — validation is the *consumer's* concern (verifiability contract, §2.15).",
       "plain": "The catalogue of progressions and substitutions is something the analysis stages ask questions of, not a stage they pass through. Its entries say where the theory comes from; whether that theory holds up against real music is the caller's question, not the catalogue's.",
       "rationale": "Stated constraint, ARCHITECTURE.md:4446 - the verifiability contract (D-029): reference knowledge grounded in established theory may be carried without corpus validation, provided the consumer that puts it under load is the one that must validate it.",
-      "home": "ARCHITECTURE.md:4552",
+      "home": "ARCHITECTURE.md:4596",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -3068,7 +3071,7 @@
       "verbatim": "    // Style determines which voicing types are used and in what proportion.\n    // Never call with a specific voicing type directly — encode that in the style.",
       "plain": "A caller asking for a voicing says which style it wants, never which voicing technique. The style decides whether the answer is a drop-2, a shell, a chorale spacing or something else, and in what proportion.",
       "rationale": "Stated constraint, ARCHITECTURE.md:4555-4558: keeping the interface voicing-type agnostic is what lets a new voicing type be added as a generator implementation plus a style parameter, without the interface changing.",
-      "home": "ARCHITECTURE.md:4671",
+      "home": "ARCHITECTURE.md:4715",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -3087,7 +3090,7 @@
       "verbatim": "Fixed elements are hard constraints in the voice leading optimizer — they anchor\nthe dynamic programming search. The optimizer guarantees never modifying them.",
       "plain": "Anything the user has pinned - a note, a voice, a chord, a passage - anchors the search for good voice leading. The optimizer works around it and never changes it.",
       "rationale": null,
-      "home": "ARCHITECTURE.md:4840",
+      "home": "ARCHITECTURE.md:4884",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -3107,7 +3110,7 @@
       "verbatim": "A step-through visualization of the inference pipeline, for use by developers\nduring quality assurance and algorithmic development. Not shipped to end users.",
       "plain": "The step-by-step view of the analysis making its decisions exists so a developer can watch and judge it by eye and ear. It is not part of what a user gets.",
       "rationale": "Stated constraint, ARCHITECTURE.md:4751-4753: it exists to make musical correctness checkable by eye and ear rather than only through the automated agreement numbers.",
-      "home": "ARCHITECTURE.md:4855",
+      "home": "ARCHITECTURE.md:4899",
       "home_is_layer_spec": true,
       "status": "deferred",
       "date": "not stated",
@@ -3127,7 +3130,7 @@
       "verbatim": "MTH Pro-style map based on Berklee chord-scale theory (Nettles, Levine). Positions\nchords by functional region (tonic, subdominant, dominant) and shows available\ntensions. Our own visual design — not a reproduction of MTH Pro's specific layout.",
       "plain": "The planned map of harmonic function draws on published chord-scale theory but is laid out our own way, not copied from the commercial product that inspired it.",
       "rationale": "Stated constraint, ARCHITECTURE.md:4888 and :4573: the circle of fifths and the Tonnetz were chosen partly because they carry no intellectual-property claim - the Tonnetz being a nineteenth-century mathematical structure - and the same reasoning is what forces an original layout for the functional map.",
-      "home": "ARCHITECTURE.md:5014",
+      "home": "ARCHITECTURE.md:5058",
       "home_is_layer_spec": true,
       "status": "deferred",
       "date": "not stated",
@@ -3147,7 +3150,7 @@
       "verbatim": "**Implementation note:** Use MuseScore's note-input preview pathway (same as hearing\na note when clicking in input mode) — not the full score playback pipeline. The\nfull pipeline has too much latency for interactive map exploration. Inference runs\non a background thread via `QtConcurrent` to keep the UI responsive.",
       "plain": "Clicking a chord on a harmony map plays it through the same quick path MuseScore uses when you hear a note as you enter it, not through full score playback.",
       "rationale": "Stated constraint, ARCHITECTURE.md:4938-4940: the full playback pipeline has too much delay for interactive exploration, and the inference runs on a background thread so the interface stays responsive.",
-      "home": "ARCHITECTURE.md:5045",
+      "home": "ARCHITECTURE.md:5089",
       "home_is_layer_spec": true,
       "status": "deferred",
       "date": "not stated",
@@ -3167,7 +3170,7 @@
       "verbatim": "**Stateless tool-call model.** The LLM does not hold object references. Each\ntool call carries its own musical address. No proxy objects, no EID handles,\nno lifecycle management. This is the right model for LLM interaction and the\nsimpler one to implement.",
       "plain": "When a language model asks the program to do something, it names the place in the music each time. It never holds a handle to an object in the score.",
       "rationale": "Stated constraint, ARCHITECTURE.md:6789-6790: no proxy objects, no element handles and no lifecycle management - recorded as both the right model for this kind of interaction and the simpler one to implement.",
-      "home": "ARCHITECTURE.md:6903",
+      "home": "ARCHITECTURE.md:6947",
       "home_is_layer_spec": true,
       "status": "deferred",
       "date": "not stated",
@@ -3186,7 +3189,7 @@
       "verbatim": "**LLM as search agent.** The LLM is never given a full score dump. It has\nsearch tools (`find_notes`, `get_part`, `get_measure`, `search_harmony`) and\nfetches what it needs iteratively — exactly as Claude Code uses Grep and Read\nin a large codebase. Serialization quality is the critical foundation: clean,\nhierarchical, beat-aligned, free of layout noise.",
       "plain": "Rather than being handed the entire score, the language model is given tools to find what it needs and fetches it piece by piece - the way a person reads a large document by searching it.",
       "rationale": "Stated constraint, ARCHITECTURE.md:6795-6796: because the model reads what it fetches, the quality of that serialization - clean, hierarchical, beat-aligned, free of layout noise - is the critical foundation.",
-      "home": "ARCHITECTURE.md:6908",
+      "home": "ARCHITECTURE.md:6952",
       "home_is_layer_spec": true,
       "status": "deferred",
       "date": "not stated",
@@ -3206,7 +3209,7 @@
       "verbatim": "**Intentional vs. computed.** The LLM sees everything the user deliberately\nset (pitch, dynamics, articulation, note color, lyrics formatting, visibility).\nIt does not see what the engraving engine derived (positions, beam geometry,\nstem lengths, `LayoutData`). The `Pid` property system is the practical\nboundary.",
       "plain": "The model is shown the composer's own choices - pitches, dynamics, articulation, colour, lyrics, visibility - and not the results of laying the music out, such as positions, beam geometry or stem lengths.",
       "rationale": "Stated constraint, ARCHITECTURE.md:6802: MuseScore's own property system is the practical boundary between the two, so the split is enforceable rather than judged case by case.",
-      "home": "ARCHITECTURE.md:6914",
+      "home": "ARCHITECTURE.md:6958",
       "home_is_layer_spec": true,
       "status": "deferred",
       "date": "not stated",
@@ -3226,7 +3229,7 @@
       "verbatim": "The composing module (`src/composing/`) is the LLM's context provider. Its\nharmonic analysis output (chord symbols, Roman numerals, key inference,\nharmonic rhythm) is included in every score section sent to the LLM. The LLM\ndoes not re-derive harmony from raw pitch data — it receives pre-digested\nmusical context.",
       "plain": "Every stretch of music sent to a language model arrives with our harmonic analysis already attached - chord symbols, Roman numerals, key, harmonic rhythm. The model reads that; it does not work the harmony out from the notes itself.",
       "rationale": "Stated constraint, ARCHITECTURE.md:6817-6819: the same analysis also drives the validation step that checks voice leading and harmonic consistency before a generated change reaches the score, so one analysis serves both directions.",
-      "home": "ARCHITECTURE.md:6927",
+      "home": "ARCHITECTURE.md:6971",
       "home_is_layer_spec": true,
       "status": "deferred",
       "date": "not stated",
@@ -3246,7 +3249,7 @@
       "verbatim": "**Build strategy:** Implement the LLM bridge as a native module initially for\nspeed, but strictly constrained to the Core Access Layer only (never bypassing\nit to the DOM). When the plugin API matures, migration to a plugin is then\nstraightforward. See `docs/llm_integration.md §11` for the full argument.",
       "plain": "It is written inside the program for speed of development, but restricted to the same narrow interface a plugin would have, so that moving it out to a plugin later is straightforward.",
       "rationale": "Stated constraint, ARCHITECTURE.md:6825-6830: with a properly designed plugin interface the bridge does not need to live in the core at all - it becomes optional, independently updatable, provider-agnostic and open to community alternatives - so the constraint is what keeps that end state reachable.",
-      "home": "ARCHITECTURE.md:6948",
+      "home": "ARCHITECTURE.md:6992",
       "home_is_layer_spec": true,
       "status": "deferred",
       "date": "not stated",
@@ -3266,7 +3269,7 @@
       "verbatim": "Percussion instruments are excluded from both harmonic analysis and intonation.\nFixed-pitch instruments (piano) serve as intonation anchors when present.",
       "plain": "Unpitched percussion takes no part in working out the harmony and receives no tuning adjustment. Where a piano or organ is playing, the other instruments tune to it.",
       "rationale": "Stated constraint, ARCHITECTURE.md:4976-4977 and :4781-4782: a fixed-pitch instrument cannot adjust, so it is the natural reference - and its presence resets accumulated drift at every chord it plays.",
-      "home": "ARCHITECTURE.md:5097",
+      "home": "ARCHITECTURE.md:5141",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -3286,7 +3289,7 @@
       "verbatim": "All tuning code paths read the preference at call time via `preferredTuningSystem()`\n(defined in `notationtuningbridge.cpp`), which resolves the key through\n`TuningRegistry::byKey()` with a `JustIntonation` fallback if the key is unset or\nunknown.  No tuning code hardcodes a specific system.",
       "plain": "Which tuning system is in force is a single user setting, read afresh each time any tuning happens. No part of the tuning code has a system built into it.",
       "rationale": "Stated constraint, ARCHITECTURE.md:4992-5000 - #6, one path per concern: the same preference governs per-note tuning, chord-staff population and region tuning, so the three cannot silently disagree about what tuning the user asked for.",
-      "home": "ARCHITECTURE.md:5113",
+      "home": "ARCHITECTURE.md:5157",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -3306,7 +3309,7 @@
       "verbatim": "**Tied notes:** A non-partial tie chain explicitly carries a compositional instruction of\ncontinuity. For region tuning, the entire non-partial tie chain is treated as one tuning\nevent. The chain must not be split. Its tuning is set from a single authority note and\nprotected thereafter; later harmonic regions tune around that established pitch.",
       "plain": "Notes joined by ties are one sustained sound, so they are tuned once and never split apart. The tuning is worked out from a single note in the chain - the one carrying a tuning anchor if there is one, otherwise the first - and applied unchanged to the whole chain.",
       "rationale": "Stated constraint, ARCHITECTURE.md:5251-5252 and :4923-4924: a tie is a compositional instruction of continuity, so splitting it would contradict what the composer wrote; a user who wants the sustained sound retuned as the harmony moves writes a slur instead.",
-      "home": "ARCHITECTURE.md:5359",
+      "home": "ARCHITECTURE.md:5403",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -3326,7 +3329,7 @@
       "verbatim": "A **slur** (not a tie) connects the two halves.  This is a deliberate choice:\nMuseScore's playback engine treats tied notes as one continuous sound with a single\ntuning value, so a tie would silently discard note_B's tuning.  A slur produces two\nindependent playback events with legato articulation, allowing each half to carry\nits own tuning offset.",
       "plain": "When a sustained note must be retuned partway through, it is cut in two and the halves are joined with a slur rather than a tie.",
       "rationale": "Stated constraint, ARCHITECTURE.md:5691-5694: MuseScore's playback treats tied notes as one continuous sound with a single tuning value, so a tie would silently discard the second half's tuning; a slur produces two independent playback events, each able to carry its own offset.",
-      "home": "ARCHITECTURE.md:5798",
+      "home": "ARCHITECTURE.md:5842",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -3346,7 +3349,7 @@
       "verbatim": "The split is **visible** — the score shows two shorter notes connected by a slur.\nThis is the simplest correct approach and is fully undoable via MuseScore's standard\nundo system.",
       "plain": "The reader sees two shorter notes joined by a slur where a note was retuned. The alternative - keeping the written note and hiding a silent playing copy - was designed and set aside.",
       "rationale": "Stated constraint, ARCHITECTURE.md:5697-5698: the visible split is the simplest correct approach and is fully undoable through MuseScore's own undo. The excluded alternative's recorded blocker (:5360-5363) is that it needs a visual indicator for tuning-applied notes before it is practical.",
-      "home": "ARCHITECTURE.md:5804",
+      "home": "ARCHITECTURE.md:5848",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -3366,7 +3369,7 @@
       "verbatim": "Chord analysis filters notes with `visible = true` and `play = true`, excluding\nboth silent notes and any future invisible tuning artifacts from the pitch-class\ncollection.",
       "plain": "Notes marked invisible, and notes that do not play, take no part in identifying the chord - which also keeps any hidden note created by the tuning machinery out of the analysis.",
       "rationale": "Stated constraint, ARCHITECTURE.md:5721-5722: the filter excludes both silent notes and any future invisible tuning artifact, so tuning a passage cannot change what the analysis of that passage sees.",
-      "home": "ARCHITECTURE.md:5828",
+      "home": "ARCHITECTURE.md:5872",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -3386,7 +3389,7 @@
       "verbatim": "The target staff is excluded from the analysis input — it is the output, not a\nsource.  This prevents feedback loops when re-running the analysis.",
       "plain": "When the harmonic reduction is written onto a staff, that staff's own contents are kept out of the analysis that produced them.",
       "rationale": "Stated constraint, ARCHITECTURE.md:5787: it prevents a feedback loop when the analysis is re-run over music that already carries its own reduction. The joint estimator's record path realizes the same rule at its own input surface - D-013, open_items/OI-204.",
-      "home": "ARCHITECTURE.md:5894",
+      "home": "ARCHITECTURE.md:5938",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -3406,7 +3409,7 @@
       "verbatim": "**Any existing content in the selected region is overwritten.**  Re-analysis after\nscore edits simply selects the same range and runs again.  If the user wants to\npreserve a previous analysis, they can undo or copy it elsewhere first.",
       "plain": "Running the reduction again over the same passage replaces what is there. Keeping an earlier analysis is the user's job - undo it, or copy it somewhere else first.",
       "rationale": null,
-      "home": "ARCHITECTURE.md:5897",
+      "home": "ARCHITECTURE.md:5941",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -3425,7 +3428,7 @@
       "verbatim": "**Chord function notation** attached below the treble staff — either\n`HarmonyType::ROMAN` (Roman numerals) or `HarmonyType::NASHVILLE` (Nashville\nnumbers), selected by the \"Chord function notation\" preference (None / Roman\nnumerals / Nashville numbers).  Roman and Nashville are mutually exclusive on\nthe staff because they encode identical information; displaying both would be\nredundant and legibility-destroying.",
       "plain": "The chord staff shows one or the other beneath the music, chosen by preference, never both.",
       "rationale": "Stated constraint, ARCHITECTURE.md:5854-5856: the two notations encode identical information, so showing both would be redundant and would destroy legibility.",
-      "home": "ARCHITECTURE.md:5959",
+      "home": "ARCHITECTURE.md:6003",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -3445,7 +3448,7 @@
       "verbatim": "Interactive annotate path (human use): annotations written in score default\ncolor (black). Publication-ready, indistinguishable from manually entered\nsymbols. No user preference exposed.\n\nAutomated pipeline (`batch_analyze` headless): annotations written in red,\nhardcoded in `tools/batch_analyze.cpp`. Never exposed to human user. Used by\n`auto_review.py` to filter our inferred annotations from pre-existing score\ncontent by color comparison.",
       "plain": "When a person runs the annotation, what it writes looks like anything else they typed. When the headless batch tool runs it, everything it writes is red.",
       "rationale": "Stated constraint, ARCHITECTURE.md:6043-6049: the interactive output is meant to be publication-ready and indistinguishable from hand-entered symbols, while the red is a filter criterion that lets the automated review separate our inferred annotations from whatever the score already contained.",
-      "home": "ARCHITECTURE.md:6150",
+      "home": "ARCHITECTURE.md:6194",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -3465,7 +3468,7 @@
       "verbatim": "New panels follow MuseScore's existing panel architecture — KDDockWidgets for\npanel management, QML for UI components. Do not create parallel infrastructure.\nRead how existing MuseScore panels are implemented before creating new ones.",
       "plain": "Any new panel is built with the same window-docking and interface technology MuseScore already uses, after reading how MuseScore's existing panels are built. No parallel machinery is created.",
       "rationale": "Stated constraint, ARCHITECTURE.md:519-523 (§2.8): read how MuseScore already does it and follow the same pattern - the same rule that governs score traversal, playback, settings and localization.",
-      "home": "ARCHITECTURE.md:6276",
+      "home": "ARCHITECTURE.md:6320",
       "home_is_layer_spec": true,
       "status": "deferred",
       "date": "not stated",
@@ -3485,7 +3488,7 @@
       "verbatim": "All user-visible strings use MuseScore's existing Qt localization infrastructure\n(`.ts` files, Qt Linguist). English and Swedish translations provided for all new strings.",
       "plain": "Text a user can read is translatable through MuseScore's own translation system, and every new string is supplied in English and Swedish.",
       "rationale": null,
-      "home": "ARCHITECTURE.md:6280",
+      "home": "ARCHITECTURE.md:6324",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -3505,7 +3508,7 @@
       "verbatim": "Accessibility follows MuseScore's existing Qt accessibility patterns — focus\nmanagement, keyboard navigation, screen reader hooks.",
       "plain": "Keyboard navigation, focus handling and screen-reader support are done the way MuseScore already does them.",
       "rationale": null,
-      "home": "ARCHITECTURE.md:6283",
+      "home": "ARCHITECTURE.md:6327",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -3524,7 +3527,7 @@
       "verbatim": "A user preference controls whether harmonic analysis is shown in the status bar. This\npreference exists for UI clarity — some users find the chord and key information\ndistracting, particularly when doing work unrelated to harmony.",
       "plain": "The setting that hides the harmonic information from the status bar is there because some users find it distracting, not because the analysis is expensive. Switching it off does not skip the analysis.",
       "rationale": "Measurement named in the record, ARCHITECTURE.md:6174-6174: the analysis cost at this seam is 'well under 1ms'. ★ That number is the LEGACY bounded-window path's; open_items/OI-203 and OI-206 record the record arm running a whole-score decode per selection, measured in seconds on large scores - so the reason this preference is not a performance control no longer holds as stated.",
-      "home": "ARCHITECTURE.md:6288-6290",
+      "home": "ARCHITECTURE.md:6332-6334",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -3544,7 +3547,7 @@
       "verbatim": "MuseScore's MSCZ format is a ZIP archive. Our metadata lives as additional files\nwithin the archive alongside `score.mscx`:",
       "plain": "Constraints, branches, cached analysis and preferences travel with the score as extra files inside its archive, beside the standard MuseScore score file, which our code never modifies.",
       "rationale": "Stated trade-off, ARCHITECTURE.md:6290-6294: the score stays a valid standard MuseScore file with zero interference in MuseScore's own reading and writing, and our data travels with it. The accepted cost is stated too - exporting to MusicXML, PDF or MIDI loses it, which is acceptable because the workflow is MuseScore-native.",
-      "home": "ARCHITECTURE.md:6394",
+      "home": "ARCHITECTURE.md:6438",
       "home_is_layer_spec": true,
       "status": "deferred",
       "date": "not stated",
@@ -3564,7 +3567,7 @@
       "verbatim": "All our custom files include a format version field. When the format changes,\nmigration code handles existing files. The score.mscx is never modified by our\npersistence layer.",
       "plain": "Each of our own files records which version of its format it is, so older files can be migrated when the format changes; the standard MuseScore score file inside the archive is never rewritten by us.",
       "rationale": null,
-      "home": "ARCHITECTURE.md:6414",
+      "home": "ARCHITECTURE.md:6458",
       "home_is_layer_spec": true,
       "status": "deferred",
       "date": "not stated",
@@ -3584,7 +3587,7 @@
       "verbatim": "The system logs arranger interactions from the start — with user consent — as\nfuture ML training data. Every suggestion accepted, modified, or rejected is a\nlabeled training example specific to vocal jazz arranging, filling the corpus gap\nidentified in the design phase.",
       "plain": "Every suggestion a user accepts, changes or rejects is recorded - with their consent - as a labelled example for future machine learning.",
       "rationale": "Stated constraint, ARCHITECTURE.md:6343-6344: the recording exists to fill the corpus gap identified in the design phase, there being no existing labelled corpus of vocal jazz arranging decisions.",
-      "home": "ARCHITECTURE.md:6457",
+      "home": "ARCHITECTURE.md:6501",
       "home_is_layer_spec": true,
       "status": "deferred",
       "date": "not stated",
@@ -3604,7 +3607,7 @@
       "verbatim": "Mode 2 — Pre-existing symbols present: treated as a second analyst's opinion,\nnot ground truth. Judge comments on agreements and disagreements without\nscoring disagreements as errors. Framing: \"two analysts may reach different\nbut equally valid conclusions.\"",
       "plain": "When the automated review meets a score that already carries chord symbols, it treats them as another analyst's reading. Disagreements are discussed, not scored as our errors.",
       "rationale": "Stated constraint, ARCHITECTURE.md:6375-6376, in the record's own words: two analysts may reach different but equally valid conclusions. Errors are scored only in Mode 3, against a known ground-truth corpus (:5989-5990) - the same distinction the project's standing rule draws between corroboration and ground truth.",
-      "home": "ARCHITECTURE.md:6489",
+      "home": "ARCHITECTURE.md:6533",
       "home_is_layer_spec": true,
       "status": "deferred",
       "date": "not stated",
@@ -3624,7 +3627,7 @@
       "verbatim": "The following tools live in `tools/` and are **not part of the shipping product**.\nThey are compiled/run only in development builds (`MUE_BUILD_ENGRAVING_DEVTOOLS=ON`).",
       "plain": "The batch analysis tool, the comparison scripts and the remaining measurement tools are built only in development builds and never ship to a user.",
       "rationale": null,
-      "home": "ARCHITECTURE.md:6537",
+      "home": "ARCHITECTURE.md:6581",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -3644,7 +3647,7 @@
       "verbatim": "and `iex_musicxml` — no notation module required. Because the tool only consumes\nlogical score structure, it deliberately skips forced post-load layout; this avoids\nlegacy native MSCX cache-overflow crashes (for example Mozart `K533-3`) without\nchanging the emitted harmonic-analysis JSON.",
       "plain": "The headless analysis tool never lays the music out on the page, because it only ever reads the logical structure.",
       "rationale": "Stated constraint, ARCHITECTURE.md:6431-6433: skipping the layout avoids a legacy cache overflow crash on some scores (Mozart K533-3 is named) without changing the harmonic-analysis output at all.",
-      "home": "ARCHITECTURE.md:6546",
+      "home": "ARCHITECTURE.md:6590",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -3664,7 +3667,7 @@
       "verbatim": "Live and real-time operation, film synchronization, adaptive game music, non-Western\ntraditions (graceful degradation at boundary), post-tonal and serial music (graceful\ndegradation at boundary), audio transcription from recording, spatial music, extended\ntechniques as primary language.",
       "plain": "Live performance, film and game synchronization, audio transcription, spatial music and extended techniques as a primary language are not attempted. Non-Western traditions and post-tonal music are not attempted either, but the system is required to fail gracefully where it meets them rather than producing confident nonsense.",
       "rationale": null,
-      "home": "ARCHITECTURE.md:6756",
+      "home": "ARCHITECTURE.md:6800",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -4514,7 +4517,7 @@
       "verbatim": "**A HUMAN acts as ground truth where no formal ground truth exists (user-decided 2026-07-13).** For\nrepertoire nobody has published an analysis of, the reference answer is a person's judgment. That person\nmay reach it by any method they choose, **including** letting an automated triage judge point them at the",
       "plain": "For music nobody has published an analysis of, the reference answer is a person's judgment. They may reach it however they like, including by letting an automated judge point them at the passages most likely to be wrong. That judge is guidance for the human, never a grader and never a number we report.",
       "rationale": "Stated constraint, open_items/OI-56.md:7: a language-model judge is not ground truth (#9, and the standing rule that music21 corroborates but does not adjudicate), so it could never grade us - at most it can triage, by pointing a human at the scores most likely wrong.",
-      "home": "ARCHITECTURE.md:6714-6716",
+      "home": "ARCHITECTURE.md:6758-6760",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "2026-07-13",
@@ -4534,7 +4537,7 @@
       "verbatim": "**Status of this whole section — HELD, and a declared future CONSUMER of the analysis (user-decided\n2026-07-13).** Intonation **is** a future feature: the six unbuilt items specified in §11.3a–g, together\nwith the tie limitation recorded there, stay on the books as a deliberate long-horizon hold, revisited at a",
       "plain": "The six unbuilt pieces of the tuning design stay on the books as a deliberate long-horizon hold, revisited at a natural pause in the analysis work. The reason the hold is strategic rather than neglect: tuning will read the analysis - knowing the mode, the chord, its function and the progression is what lets a just-intonation decision be made, particularly the decision about staying in tune over time versus letting the pitch drift.",
       "rationale": "Stated constraint, open_items/OI-62.md:7: intonation is a named future CONSUMER of the published analysis surfaces - a concrete instance of the rule that evidence is published broadly so a future design can recognize facts it would never have thought to ask for (D-100's 2026-07-12 amendment).",
-      "home": "ARCHITECTURE.md:5054-5056",
+      "home": "ARCHITECTURE.md:5098-5100",
       "home_is_layer_spec": true,
       "status": "deferred",
       "date": "2026-07-13",
@@ -4555,7 +4558,7 @@
       "verbatim": "**The pedal-point class is defined VOICE-INDEPENDENTLY (user-ratified 2026-07-26; DEFERRED to its own\nincrement).** The ornament vocabulary carries a **pedal-point** class: a tone sustained — or continuously\nrestruck — against changing harmony in **any** voice, sub-labeled by position as **bass**, **internal**, or\n**inverted**. This class supersedes the legacy bass-only pair of published facts, `isPedalPoint` and",
       "plain": "A pedal point is a note held - or struck again and again - while the harmony changes around it, in ANY voice, not only the bass. It is labelled by where it sits: in the bass, inside the texture, or above it. This replaces the older fact, which could only see a pedal in the lowest voice.",
       "rationale": "Stated constraint, open_items/OI-194.md:7: the legacy fact was produced by an unestablished post-pass and retires with the legacy path; the voice-independent class comes from the emission's own non-chord-tone categories, which do not privilege the bass. Two unresolved audit rows are recorded as dispositioned by this ruling.",
-      "home": "ARCHITECTURE.md:4608-4611",
+      "home": "ARCHITECTURE.md:4652-4655",
       "home_is_layer_spec": true,
       "status": "deferred",
       "date": "2026-07-26",
@@ -4701,7 +4704,7 @@
       "verbatim": "- **`dim7CharacteristicBonus` is the dim7 rotation selector.** Do not\n  suppress without replacing the non-diatonic-♭♭7 mechanism (B3 lesson).",
       "plain": "The bonus that makes a diminished-seventh chord prefer one rotation over another is what selects the rotation. Removing it without putting an equivalent mechanism in its place breaks the choice.",
       "rationale": "Measurement named in the record: the B3 lesson - an attempt that suppressed it and had no replacement for the non-diatonic double-flat-seventh mechanism.",
-      "home": "docs/scoring_model.md:912",
+      "home": "docs/scoring_model.md:923",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -4719,7 +4722,7 @@
       "verbatim": "- **`rootContinuityBonus` sparse-predecessor gate is a dead end** (Iter 98).\n  Both density-based and inversion-aware variants tried; both regress\n  mozart_k280-1 IV→V65 Alberti bass.",
       "plain": "Making the bonus that rewards keeping the same root depend on how much evidence the previous chord had was tried in two forms and abandoned.",
       "rationale": "Measurement named in the record: both the density-based and the inversion-aware variants regress the same passage - a Mozart sonata movement's Alberti-bass progression from the subdominant to the dominant in first inversion.",
-      "home": "docs/scoring_model.md:915",
+      "home": "docs/scoring_model.md:926",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -4737,7 +4740,7 @@
       "verbatim": "- **`w_stepIn`/`w_stepOut` has four gates, each load-bearing** — the\n  `ScoringPhase::Final` call-site gate, root-position guard,\n  first-inversion-m7-family surgical guard, power-quality exclusion. Each prevents\n  a specific documented regression.\n",
       "plain": "The bonus for a bass moving by step is switched off in four situations, and each of the four is there because it prevented a specific regression that was actually observed.",
       "rationale": "Measurement named in the record: each gate prevents a specific documented regression.",
-      "home": "docs/scoring_model.md:919",
+      "home": "docs/scoring_model.md:930",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -4755,7 +4758,7 @@
       "verbatim": "  seq, and dim bonuses plus Gate R are all skipped in the Segmentation phase (gated at\n  the `applyHarmonicFunction` call site, not inside the now-stateless bonus functions).\n  Adding a new context bonus without gating it on `applyProgressionSignals` /\n  `ScoringPhase::Final` will cause segmentation regressions.\n\n- **Template arrays update atomically under `analysis::kTemplateCount`.** All",
       "plain": "While the analysis is still deciding where one chord ends and the next begins, none of the bonuses that look at neighbouring chords may score anything. Adding a new context bonus without that gate will make the segmentation worse.",
       "rationale": "Stated constraint: where a boundary falls decides which notes each candidate sees, and chord identity is itself a signal for where boundaries belong (ARCHITECTURE.md:693-696), so a context bonus scoring the exploratory passes lets the answer choose its own input. Its specification home is D-062.",
-      "home": "docs/scoring_model.md:925",
+      "home": "docs/scoring_model.md:936",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -4773,7 +4776,7 @@
       "verbatim": "  constant since `a236a0ff21`, so the compiler enforces sizes. Adding a template =\n  bump the constant + add the template/mask entries in the same edit (§9 step 5).\n  The historical silent stack-buffer overrun from a missed matrix size is closed.\n  (Stage 2.3 removed the `kDiagTemplates` mirror — one fewer site to keep in sync.)\n\n- **Gate A subsumed Gates B/C/D — now removed (Stage 3.4b, historical); Gate A itself\n  unified into `promoteToWinner`/FM2 (2026-07-06, §6a).** Gate A's entry conditions were a",
       "plain": "Every array whose length must equal the number of chord templates takes that length from a single named constant. Adding a template means changing the constant and adding the template in the same edit.",
       "rationale": "Measurement named in the record: the historical failure was a silent stack buffer overrun from a missed matrix resize, caught during an attempted template addition; deriving the extents from the constant closes it.",
-      "home": "docs/scoring_model.md:932",
+      "home": "docs/scoring_model.md:943",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -4791,7 +4794,7 @@
       "verbatim": "  removed in the Stage-3 per-gate retirement audit (roadmap 3.4b) as a byte-identical change\n  (0/353 × 3 configs, snapshots zero-diff). Gate A's swap later became the present branch of\n  the unified `promoteToWinner()` primitive under the FM2 rule (byte-identical, full surface).\n  Constraint going forward: do not add temporal conditions to the enharmonic flip — there is\n  no longer a B/C/D safety net; any forward/window/consecutive-stepwise variant of the\n  Major-add6 ↔ Minor flip must be reintroduced explicitly and tested.\n\n- **B2 aug7 guard requires BOTH M3 and aug5** (`||` not `&&`). M3-only was\n  tried and reverted (Schumann D-major, Corelli G-major snapshot flips).\n\n- **Gate thresholds are Baroque-calibrated.** Do not widen Baroque-tuned\n  thresholds to accommodate Jazz or other styles (see CLAUDE.md \"Gate\n  threshold and preset policy\"). Use a tighter structural guard or a\n  preset-specific override instead.",
       "plain": "Three post-scoring gates turned out to be unreachable, because the conditions of the gate before them were a strict subset of theirs, and they were deleted. The constraint that follows: nothing that depends on time or on neighbouring chords may be added to the major-with-added-sixth against minor flip, because the safety net those gates provided is gone.",
       "rationale": "Measurement named in the record: the removal was proven byte-identical - 0 differences across 353 pieces in three configurations, with the snapshot tests showing no difference either.",
-      "home": "docs/scoring_model.md:940",
+      "home": "docs/scoring_model.md:951",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -4809,7 +4812,7 @@
       "verbatim": "- **`hasStructuralBass` gates inversion bonuses.** Sparse upper-register\n  \"bass\" notes do not get inversion bonuses (Corelli op01n08d m2 b3).\n",
       "plain": "The guard fires only when both intervals are present, not when either one is. Requiring only the third was tried and reverted.",
       "rationale": "Measurement named in the record: the either-one form flipped snapshots on a Schumann piece in D major and a Corelli piece in G major.",
-      "home": "docs/scoring_model.md:955",
+      "home": "docs/scoring_model.md:966",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -4827,7 +4830,7 @@
       "verbatim": "  live `results[0]` reference (Sub-9a lesson).\n",
       "plain": "A low note that is thin and high in the texture is not treated as a structural bass, so the bonuses that reward a recognisable inversion do not fire for it.",
       "rationale": "Measurement named in the record: a Corelli trio-sonata movement, measure 2 beat 3.",
-      "home": "docs/scoring_model.md:964",
+      "home": "docs/scoring_model.md:975",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -4845,7 +4848,7 @@
       "verbatim": "  fires only when at least one tone has `onsetAtRegionStart == true` or\n  `distinctMetricPositions > 0` (i.e. came from `collectRegionTones`).\n  Single-tick / status-bar / unit-test paths use the legacy single-bass path.",
       "plain": "The bonus that favours diminished readings can, in the course of comparing bass notes, end up electing a winner that is not diminished at all. When that happens the analysis falls back to the answer it had before the bonus was applied.",
       "rationale": null,
-      "home": "docs/scoring_model.md:967",
+      "home": "docs/scoring_model.md:978",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -4863,7 +4866,7 @@
       "verbatim": "---\n\n## 9. How to add a new template safely (checklist)",
       "plain": "Where a gate has to compare against whatever the analysis thought before a correction was applied, it reads a copy taken beforehand rather than the current top result, which the correction may already have changed.",
       "rationale": "Measurement named in the record: the lesson came from a specific numbered attempt in which the live reference had already moved.",
-      "home": "docs/scoring_model.md:971",
+      "home": "docs/scoring_model.md:982",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -4881,7 +4884,7 @@
       "verbatim": "Derived from the B1, B2, and B3 lessons.\n\n1. **Read the existing template nearest to yours.** Understand its intervals,\n   TPC deltas, and which existing terms / guards apply to it.\n",
       "plain": "The scoring that considers the bass note and the chord together only switches on when the notes came from accumulating a whole stretch of music. The single-moment paths - the status bar, a unit test - use the simpler single-bass scoring.",
       "rationale": null,
-      "home": "docs/scoring_model.md:975",
+      "home": "docs/scoring_model.md:986",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -5276,7 +5279,7 @@
       "title": "Choosing an interval family for an ambiguous sonority is deferred; fixed tables are used",
       "verbatim": "Another deferred design question is **which interval family to prefer for\nambiguous sonorities**.  The current shipped tuning systems use fixed lookup\ntables (for example, 5-limit just intonation uses 9/5 for a minor seventh and\n15/8 for a major seventh) rather than a style-aware policy that can choose\nbetween alternatives such as 5-limit dominant sevenths versus septimal\n\"harmonic sevenths\" (7/4), or other competing targets for altered/extended\nsonorities.  This is not specific to seventh chords — similar ambiguity also\nappears in tritones, minor sonorities, diminished/augmented chords, and larger\nextensions.  This choice architecture should be explored later, but it is not a\ncurrent implementation target.",
       "plain": "When more than one pure interval could be targeted - a 5-limit minor seventh against a septimal one, and the same choice for tritones, minor and altered sonorities - the tuning systems keep their fixed lookup tables. A style-aware choice is left for later.",
-      "home": "ARCHITECTURE.md:5188-5197",
+      "home": "ARCHITECTURE.md:5232-5241",
       "home_is_layer_spec": true,
       "status": "deferred",
       "date": "not stated",
@@ -5296,7 +5299,7 @@
       "title": "Voice role comes from staff position or explicit assignment; automatic melody detection is deferred",
       "verbatim": "Automatic melody detection is deferred. For now, voice role is determined by staff position\nor explicit user assignment — not automatic detection. Per-staff override of voice role is\na future extension.",
       "plain": "Which voice counts as the melody is taken from where it sits in the score or from what the user says. Working it out automatically is left for later, as is a per-staff override.",
-      "home": "ARCHITECTURE.md:5311-5313",
+      "home": "ARCHITECTURE.md:5355-5357",
       "home_is_layer_spec": true,
       "status": "deferred",
       "date": "not stated",
@@ -5316,7 +5319,7 @@
       "title": "Fixed-pitch instruments are deferred, and will never receive tuning offsets",
       "verbatim": "Fixed-pitch instruments (piano, organ, fretted guitar) are deferred — their handling is not\nyet implemented. When implemented, they will serve as absolute anchors that other\ninstruments tune to, and will never receive tuning offsets themselves.",
       "plain": "Piano, organ and fretted guitar are not handled yet. When they are, they will be the fixed reference other instruments tune to, and will not be retuned themselves.",
-      "home": "ARCHITECTURE.md:5412-5414",
+      "home": "ARCHITECTURE.md:5456-5458",
       "home_is_layer_spec": true,
       "status": "deferred",
       "date": "not stated",
@@ -5336,7 +5339,7 @@
       "title": "An anchor note stays at 12-TET, is never split, and is excluded from drift and centering",
       "verbatim": "**Rules for anchor notes:**\n- **Zero tuning offset** — the note is left exactly at 12-TET.\n- **Never split** — anchor notes are not divided at harmonic boundaries.\n- **Not a FreeDrift reference** — in FreeDrift mode the anchor note is\n  excluded from the drift reference hierarchy (P1/P2/P3); it sits at 0 ¢\n  and other notes accumulate drift around it.\n- **Excluded from zero-sum centering** — other voices in the harmonic region\n  absorb the full centering correction; the anchor contributes zero.\n- Applies to the specific note carrying the Expression only — subsequent notes\n  on the same staff are not automatically anchored.\n\n**Priority:** Highest. Overrides all duration-based, context-based, and\nFreeDrift reference hierarchy rules.",
       "plain": "A note carrying the anchor expression is left exactly at equal temperament. It is not divided at a harmonic boundary, it is not used as the drift reference in FreeDrift, and it takes no share of the zero-sum centering correction. Only that one note is anchored, and the rule outranks every duration-, context- and drift-based rule.",
-      "home": "ARCHITECTURE.md:5430-5442",
+      "home": "ARCHITECTURE.md:5474-5486",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -5357,7 +5360,7 @@
       "title": "Tonicization labels are not implemented and are deferred",
       "verbatim": "- Tonicization labels (V/V, V/ii, V/IV etc.) — **NOT YET IMPLEMENTED**\n  (deferred; no `relativeRoot`/secondary-dominant field in\n  `ChordFunction`; requires standalone implementation first)",
       "plain": "On the LEGACY function layer, applied-chord labels such as V/V are not produced: `ChordFunction` (`src/composing/analysis/chord/chordanalyzer.h:287`) has no field for the relative root, so the annotate path's tonicization layer waits on a standalone implementation. SCOPE CORRECTED 2026-08-02 — this describes the legacy structure ONLY. The production joint estimator's renderer DOES emit applied labels: `jointRenderRn` adds the applied \"/target\" suffix (`src/composing/analysis/joint/jointrender.h:62-63`), and on the committed corpus 8.62 % of scored duration carries an applied label in our Roman numeral, including 50,280 ticks of EXACT matches against applied ground truth.",
-      "home": "ARCHITECTURE.md:6120-6122",
+      "home": "ARCHITECTURE.md:6164-6166",
       "home_is_layer_spec": true,
       "status": "deferred",
       "date": "not stated",
@@ -6072,15 +6075,15 @@
       "group": "G",
       "title": "Gates read structured fields only - never a chord symbol string and never a Roman numeral",
       "plain": "Any gate or scoring rule reads structured analysis fields. It never parses a chord-symbol string and never infers from a Roman numeral. Signals derived from symbols or Roman numerals are too lossy and too entangled with the formatter to be reliable inputs to chord classification.",
-      "home": "docs/iteration_path1_summary.md:74-78",
+      "home": "docs/iteration_path1_summary.md:83-87",
       "home_is_layer_spec": false,
-      "nonspec_kind": "gap",
+      "nonspec_kind": "contract-home",
       "status": "live",
       "date": "not stated",
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "docs/iteration_path1_summary.md:74-78, recorded among the architecture decisions of the completed iteration path and stated there as 'now a standing rule for any future gate or scoring change'; no date or ratifier is stated at this home. Distinct from register entry D-066, which forbids chord symbols written in the SCORE as analyzer input; this forbids re-reading our own rendered output. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).",
+      "status_source": "docs/iteration_path1_summary.md:74-78, recorded among the architecture decisions of the completed iteration path and stated there as 'now a standing rule for any future gate or scoring change'; no date or ratifier is stated at this home. Distinct from register entry D-066, which forbids chord symbols written in the SCORE as analyzer input; this forbids re-reading our own rendered output. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.",
       "patterns": [
         "Gates operate on structured fields only",
         "no chord-symbol string parsing",
@@ -6094,15 +6097,15 @@
       "group": "U",
       "title": "The batch measurement tool must emit the structured fields on every alternative, or the corpus figures silently revert",
       "plain": "The batch analysis tool emits root pitch class, bass pitch class, quality and bass-is-root on every alternative entry, not only on the winner. Those fields activate the comparison script's reclassification of readings where the corroborating source matches our second or third candidate; without them the corpus measurement silently reverts to its earlier counts.",
-      "home": "docs/iteration_path1_summary.md:66-72",
+      "home": "docs/iteration_path1_summary.md:75-81",
       "home_is_layer_spec": false,
-      "nonspec_kind": "gap",
+      "nonspec_kind": "contract-home",
       "status": "live",
       "date": "not stated",
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "docs/iteration_path1_summary.md:66-72, recorded among the architecture decisions of the completed iteration path; no date or ratifier is stated at this home. A decision about a MEASUREMENT TOOL and its floor, reported separately by the phase-1d enumeration wave (2026-08-02) so that the sealed measurement-tools partition can account for it. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).",
+      "status_source": "docs/iteration_path1_summary.md:66-72, recorded among the architecture decisions of the completed iteration path; no date or ratifier is stated at this home. A decision about a MEASUREMENT TOOL and its floor, reported separately by the phase-1d enumeration wave (2026-08-02) so that the sealed measurement-tools partition can account for it. ★ RATIFIED (user, 2026-08-02, the phase-1d queue). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.",
       "patterns": [
         "batch_analyze output schema",
         "_matches_alternative",
@@ -6124,10 +6127,10 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_architecture_reassessment.md:97",
+      "home": "cowork_architecture_reassessment.md:106",
       "home_is_layer_spec": false,
-      "nonspec_kind": "gap",
-      "status_source": "Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommendations adopted): SUPERSEDED BY the named later ratified decisions — the governing status derives from the record's dates and explicitness, not from resolving the original statement's ambiguity. The second-partition read of the archives is instructed to flag anything refining these.",
+      "nonspec_kind": "contract-home",
+      "status_source": "Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommendations adopted): SUPERSEDED BY the named later ratified decisions — the governing status derives from the record's dates and explicitness, not from resolving the original statement's ambiguity. The second-partition read of the archives is instructed to flag anything refining these. ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.",
       "patterns": []
     },
     {
@@ -6143,10 +6146,10 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_architecture_reassessment.md:98",
+      "home": "cowork_architecture_reassessment.md:107",
       "home_is_layer_spec": false,
-      "nonspec_kind": "gap",
-      "status_source": "Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommendations adopted): SUPERSEDED BY the named later ratified decisions — the governing status derives from the record's dates and explicitness, not from resolving the original statement's ambiguity. The second-partition read of the archives is instructed to flag anything refining these.",
+      "nonspec_kind": "contract-home",
+      "status_source": "Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommendations adopted): SUPERSEDED BY the named later ratified decisions — the governing status derives from the record's dates and explicitness, not from resolving the original statement's ambiguity. The second-partition read of the archives is instructed to flag anything refining these. ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.",
       "patterns": []
     },
     {
@@ -6162,10 +6165,10 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_architecture_reassessment.md:99-100",
+      "home": "cowork_architecture_reassessment.md:108-109",
       "home_is_layer_spec": false,
-      "nonspec_kind": "gap",
-      "status_source": "Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommendations adopted): SUPERSEDED BY the named later ratified decisions — the governing status derives from the record's dates and explicitness, not from resolving the original statement's ambiguity. The second-partition read of the archives is instructed to flag anything refining these.",
+      "nonspec_kind": "contract-home",
+      "status_source": "Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommendations adopted): SUPERSEDED BY the named later ratified decisions — the governing status derives from the record's dates and explicitness, not from resolving the original statement's ambiguity. The second-partition read of the archives is instructed to flag anything refining these. ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.",
       "patterns": [],
       "legacy_subject": true
     },
@@ -6182,10 +6185,10 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_architecture_reassessment.md:101",
+      "home": "cowork_architecture_reassessment.md:110",
       "home_is_layer_spec": false,
-      "nonspec_kind": "gap",
-      "status_source": "Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommendations adopted): SUPERSEDED BY the named later ratified decisions — the governing status derives from the record's dates and explicitness, not from resolving the original statement's ambiguity. The second-partition read of the archives is instructed to flag anything refining these.",
+      "nonspec_kind": "contract-home",
+      "status_source": "Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommendations adopted): SUPERSEDED BY the named later ratified decisions — the governing status derives from the record's dates and explicitness, not from resolving the original statement's ambiguity. The second-partition read of the archives is instructed to flag anything refining these. ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.",
       "patterns": []
     },
     {
@@ -6391,7 +6394,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "ARCHITECTURE.md:6266-6268",
+      "home": "ARCHITECTURE.md:6310-6312",
       "home_is_layer_spec": true,
       "status_source": "Recorded in `cowork_handoff_archive.md` (the standing-records block) as item E-14 of `cowork_product_tool_register.md`, with a note that a pointer into the architecture document was owed at its next edit. This pass found no such pointer in the register's own home census, so the owed act appears undischarged. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written at the head of `ARCHITECTURE.md` §12 as the governing requirement over the user interface. This also discharges the pointer-into-the-architecture-document act the archive recorded as owed at its next edit. Former home preserved (#12): `cowork_handoff_archive.md:2507`, the standing-records block, as item E-14 of `cowork_product_tool_register.md`.",
       "patterns": [
@@ -6829,10 +6832,10 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "docs/redesign_plan.md:372-377",
+      "home": "docs/redesign_plan.md:380-385",
       "home_is_layer_spec": false,
-      "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02) as a LEGACY-scoped dead end with no effect on the going solution; plain restatement rephrased at the user's direction to preclude the temporal-context misreading.",
+      "nonspec_kind": "contract-home",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02) as a LEGACY-scoped dead end with no effect on the going solution; plain restatement rephrased at the user's direction to preclude the temporal-context misreading. ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.",
       "patterns": [
         "Do not retry this fix"
       ],
@@ -6850,10 +6853,10 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "docs/redesign_plan.md:394",
+      "home": "docs/redesign_plan.md:402",
       "home_is_layer_spec": false,
-      "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02) as a LEGACY-scoped dead end with no effect on the going solution; plain restatement rephrased at the user's direction to preclude the temporal-context misreading.",
+      "nonspec_kind": "contract-home",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02) as a LEGACY-scoped dead end with no effect on the going solution; plain restatement rephrased at the user's direction to preclude the temporal-context misreading. ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.",
       "patterns": [
         "Do not retry a short-region external merger"
       ],
@@ -6871,10 +6874,10 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "docs/redesign_plan.md:423-424",
+      "home": "docs/redesign_plan.md:431-432",
       "home_is_layer_spec": false,
-      "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
+      "nonspec_kind": "contract-home",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.",
       "patterns": [
         "Do not retry any Phase D tone-aggregation approach"
       ],
@@ -6892,10 +6895,10 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "docs/redesign_plan.md:555-561",
+      "home": "docs/redesign_plan.md:563-569",
       "home_is_layer_spec": false,
-      "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
+      "nonspec_kind": "contract-home",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.",
       "patterns": [
         "Do not retry the absent-root guard"
       ],
@@ -6913,10 +6916,10 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "docs/scoring_model.md:201-214",
+      "home": "docs/scoring_model.md:212-225",
       "home_is_layer_spec": false,
-      "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
+      "nonspec_kind": "contract-home",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.",
       "patterns": [
         "there is no\\s+epsilon anywhere in the ranking"
       ],
@@ -6934,10 +6937,10 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "docs/scoring_model.md:222-227",
+      "home": "docs/scoring_model.md:233-238",
       "home_is_layer_spec": false,
-      "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
+      "nonspec_kind": "contract-home",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.",
       "patterns": [
         "requires a full corpus A/B on both presets"
       ],
@@ -6955,10 +6958,10 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "docs/scoring_model.md:292-296",
+      "home": "docs/scoring_model.md:303-307",
       "home_is_layer_spec": false,
-      "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
+      "nonspec_kind": "contract-home",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.",
       "patterns": [
         "Do not reintroduce `keyTonicPc \\+ scale` for a membership test"
       ]
@@ -6975,10 +6978,10 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "docs/scoring_model.md:827-828",
+      "home": "docs/scoring_model.md:838-839",
       "home_is_layer_spec": false,
-      "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
+      "nonspec_kind": "contract-home",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.",
       "patterns": [
         "Retirement is global, so a rule live on ANY carrier is retained"
       ],
@@ -8649,7 +8652,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "`cowork_progression_schema_dictionary.md`:41-46 records the owner ruling as D5 of `cowork_progression_schema_design.md` §6, user-ratified 2026-07-02, with the cross-referencing comment blocks at `functionprogression.h` and `harmonicvocabulary.h` and the test at `progressionrecognizer_tests.cpp`. Beside D-341, which is the grammar-completion amendment this ruling's consistency test produced. NOTE: this document uses the label 'D5' for TWO different decisions — this ownership ruling (§1) and the harmonic-scope component decision (§7, entered as D-408) — which is a collision in the document's own local labelling, not in this register. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue.",
+      "status_source": "`cowork_progression_schema_dictionary.md`:41-46 records the owner ruling as D5 of `cowork_progression_schema_design.md` §6, user-ratified 2026-07-02, with the cross-referencing comment blocks at `functionprogression.h` and `harmonicvocabulary.h` and the test at `progressionrecognizer_tests.cpp`. Beside D-341, which is the grammar-completion amendment this ruling's consistency test produced. NOTE: this document uses the label 'D5' for TWO different decisions — this ownership ruling (§1) and the harmonic-scope component decision (§7, entered as D-408) — which is a collision in the document's own local labelling, not in this register. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1j queue presented at `cowork_pending_ratifications_next_session.md` §2 — the ratification is of the RULE itself, with the status exactly as the record states it; it does not supply a date or a ratifier the original record never had, and the 'not stated' facts above stand unchanged (#12). The `gap` home flag also stands: the dictionary's banner still reads 'component spec, v1 draft (2026-06-29)', so the fifth home case's banner half is unmet — that is the open question rowed as `OPEN_ITEMS.md` OI-281, deliberately NOT resolved by editing this document's banner.)",
       "patterns": [
         "D5 dependency map",
         "only coupling is the consistency",
@@ -8671,7 +8674,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "`cowork_progression_schema_dictionary.md`:52-54 (§2, what it does not do), with the firewall line at :244-246 (§6). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue.",
+      "status_source": "`cowork_progression_schema_dictionary.md`:52-54 (§2, what it does not do), with the firewall line at :244-246 (§6). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1j queue presented at `cowork_pending_ratifications_next_session.md` §2 — the ratification is of the RULE itself, with the status exactly as the record states it; it does not supply a date or a ratifier the original record never had, and the 'not stated' facts above stand unchanged (#12). The `gap` home flag also stands: the dictionary's banner still reads 'component spec, v1 draft (2026-06-29)', so the fifth home case's banner half is unmet — that is the open question rowed as `OPEN_ITEMS.md` OI-281, deliberately NOT resolved by editing this document's banner.)",
       "patterns": [
         "only supplies ranked candidates",
         "the firewall line"
@@ -8692,7 +8695,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "`cowork_progression_schema_dictionary.md`:55-59 (§2), restated as component decision D5 at :261-263 (§7) with its rejected alternative, and carried as a risk at :279-280 (§9). Consistent with `ARCHITECTURE.md` §7, which states the same exclusion. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue.",
+      "status_source": "`cowork_progression_schema_dictionary.md`:55-59 (§2), restated as component decision D5 at :261-263 (§7) with its rejected alternative, and carried as a risk at :279-280 (§9). Consistent with `ARCHITECTURE.md` §7, which states the same exclusion. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1j queue presented at `cowork_pending_ratifications_next_session.md` §2 — the ratification is of the RULE itself, with the status exactly as the record states it; it does not supply a date or a ratifier the original record never had, and the 'not stated' facts above stand unchanged (#12). The `gap` home flag also stands: the dictionary's banner still reads 'component spec, v1 draft (2026-06-29)', so the fifth home case's banner half is unmet — that is the open question rowed as `OPEN_ITEMS.md` OI-281, deliberately NOT resolved by editing this document's banner.)",
       "patterns": [
         "Hold voice-leading",
         "only by its harmonic pattern"
@@ -8713,7 +8716,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "`cowork_progression_schema_dictionary.md`:114-124 (§4). Beside D-027, the cross-cutting contract that every layer emits ranked candidates plus a confidence rather than a forced point estimate. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue.",
+      "status_source": "`cowork_progression_schema_dictionary.md`:114-124 (§4). Beside D-027, the cross-cutting contract that every layer emits ranked candidates plus a confidence rather than a forced point estimate. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1j queue presented at `cowork_pending_ratifications_next_session.md` §2 — the ratification is of the RULE itself, with the status exactly as the record states it; it does not supply a date or a ratifier the original record never had, and the 'not stated' facts above stand unchanged (#12). The `gap` home flag also stands: the dictionary's banner still reads 'component spec, v1 draft (2026-06-29)', so the fifth home case's banner half is unmet — that is the open question rowed as `OPEN_ITEMS.md` OI-281, deliberately NOT resolved by editing this document's banner.)",
       "patterns": [
         "no binary match/no-match",
         "must handle an empty result"
@@ -8734,7 +8737,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "`cowork_progression_schema_dictionary.md`:96-106 (§4 recognise) and :114-118 (the match score under the partial matcher). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue.",
+      "status_source": "`cowork_progression_schema_dictionary.md`:96-106 (§4 recognise) and :114-118 (the match score under the partial matcher). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1j queue presented at `cowork_pending_ratifications_next_session.md` §2 — the ratification is of the RULE itself, with the status exactly as the record states it; it does not supply a date or a ratifier the original record never had, and the 'not stated' facts above stand unchanged (#12). The `gap` home flag also stands: the dictionary's banner still reads 'component spec, v1 draft (2026-06-29)', so the fifth home case's banner half is unmet — that is the open question rowed as `OPEN_ITEMS.md` OI-281, deliberately NOT resolved by editing this document's banner.)",
       "patterns": [
         "realisation is exact and whole",
         "partial matcher"
@@ -8755,7 +8758,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "`cowork_progression_schema_dictionary.md`:185-188 (§5.2, the bass-line and pop loops). Same class as the circle-of-fifths entry-point rule (D-412): both fix what a realisation of one entry is allowed to look like. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue.",
+      "status_source": "`cowork_progression_schema_dictionary.md`:185-188 (§5.2, the bass-line and pop loops). Same class as the circle-of-fifths entry-point rule (D-412): both fix what a realisation of one entry is allowed to look like. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1j queue presented at `cowork_pending_ratifications_next_session.md` §2 — the ratification is of the RULE itself, with the status exactly as the record states it; it does not supply a date or a ratifier the original record never had, and the 'not stated' facts above stand unchanged (#12). The `gap` home flag also stands: the dictionary's banner still reads 'component spec, v1 draft (2026-06-29)', so the fifth home case's banner half is unmet — that is the open question rowed as `OPEN_ITEMS.md` OI-281, deliberately NOT resolved by editing this document's banner.)",
       "patterns": [
         "rotation rule \\(as built",
         "never as three more entries"
@@ -8776,7 +8779,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "`cowork_progression_schema_dictionary.md`:179-181 (§5.2, sequences). The descending-thirds entry beside it carries the same kind of rule, stated as a continuation rule rather than an ellipsis. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue.",
+      "status_source": "`cowork_progression_schema_dictionary.md`:179-181 (§5.2, sequences). The descending-thirds entry beside it carries the same kind of rule, stated as a continuation rule rather than an ellipsis. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1j queue presented at `cowork_pending_ratifications_next_session.md` §2 — the ratification is of the RULE itself, with the status exactly as the record states it; it does not supply a date or a ratifier the original record never had, and the 'not stated' facts above stand unchanged (#12). The `gap` home flag also stands: the dictionary's banner still reads 'component spec, v1 draft (2026-06-29)', so the fifth home case's banner half is unmet — that is the open question rowed as `OPEN_ITEMS.md` OI-281, deliberately NOT resolved by editing this document's banner.)",
       "patterns": [
         "entry-point rule",
         "may enter at any member"
@@ -8797,7 +8800,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "`cowork_progression_schema_dictionary.md`:220-222 (§5.3, the substitution operations). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue.",
+      "status_source": "`cowork_progression_schema_dictionary.md`:220-222 (§5.3, the substitution operations). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1j queue presented at `cowork_pending_ratifications_next_session.md` §2 — the ratification is of the RULE itself, with the status exactly as the record states it; it does not supply a date or a ratifier the original record never had, and the 'not stated' facts above stand unchanged (#12). The `gap` home flag also stands: the dictionary's banner still reads 'component spec, v1 draft (2026-06-29)', so the fifth home case's banner half is unmet — that is the open question rowed as `OPEN_ITEMS.md` OI-281, deliberately NOT resolved by editing this document's banner.)",
       "patterns": [
         "Upper-structure / voicing substitution",
         "a voicing, not a function"
@@ -8818,7 +8821,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "`cowork_progression_schema_dictionary.md`:255-257 (§7, component decision D3), with the organisation it produces at :136-139 (§5) and the generative spine at :141-166 (§5.1). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue.",
+      "status_source": "`cowork_progression_schema_dictionary.md`:255-257 (§7, component decision D3), with the organisation it produces at :136-139 (§5) and the generative spine at :141-166 (§5.1). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1j queue presented at `cowork_pending_ratifications_next_session.md` §2 — the ratification is of the RULE itself, with the status exactly as the record states it; it does not supply a date or a ratifier the original record never had, and the 'not stated' facts above stand unchanged (#12). The `gap` home flag also stands: the dictionary's banner still reads 'component spec, v1 draft (2026-06-29)', so the fifth home case's banner half is unmet — that is the open question rowed as `OPEN_ITEMS.md` OI-281, deliberately NOT resolved by editing this document's banner.)",
       "patterns": [
         "Generative where possible",
         "generative where it can be"

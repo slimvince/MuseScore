@@ -1,5 +1,14 @@
 # Cowork — Architecture & Implementation-Plan RE-ASSESSMENT (2026-06-20)
 
+> **Status: PLANNING RE-ASSESSMENT — ITS FOUR META-FINDINGS WERE RULED SUPERSEDED** (user,
+> 2026-08-02, OI-270): D-282→D-115/D-191, D-283→D-001/D-096, D-284→D-036 with D-001/D-010,
+> D-285→the ratified factorization emission design. Retained for the derivations; none of it is a
+> live prohibition.
+>
+> *Banner ratified by the user, 2026-08-03 — drafted at phase 1j, presented at
+> `cowork_pending_ratifications_next_session.md` §1, applied at phase 1k. It makes this document a
+> contract home for D-282…D-285 (the fifth home case, `CLAUDE.md` decisions-register rule (g)).*
+
 > **Trigger.** Two inputs landed together: (1) CC's anchor-redesign dossier ABANDONED the union-recompute and
 > found production's segmentation-based embellishment discrimination already correct; (2) the Contrapunctus
 > study + its referenced papers (AugmentedNet, AnalysisGNN, the JNMR suspension paper, the open benchmark) gave

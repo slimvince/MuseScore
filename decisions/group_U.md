@@ -39,7 +39,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:912`
+**Home.** `docs/scoring_model.md:923`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
@@ -57,7 +57,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:915`
+**Home.** `docs/scoring_model.md:926`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
@@ -76,7 +76,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:919`
+**Home.** `docs/scoring_model.md:930`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
@@ -97,7 +97,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:925`
+**Home.** `docs/scoring_model.md:936`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
@@ -119,7 +119,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:932`
+**Home.** `docs/scoring_model.md:943`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
@@ -148,7 +148,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:940`
+**Home.** `docs/scoring_model.md:951`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
@@ -165,7 +165,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:955`
+**Home.** `docs/scoring_model.md:966`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
@@ -181,7 +181,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:964`
+**Home.** `docs/scoring_model.md:975`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
@@ -199,7 +199,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:967`
+**Home.** `docs/scoring_model.md:978`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
@@ -217,7 +217,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:971`
+**Home.** `docs/scoring_model.md:982`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
@@ -236,7 +236,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:975`
+**Home.** `docs/scoring_model.md:986`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
@@ -295,7 +295,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/iteration_path1_summary.md:66-72`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `docs/iteration_path1_summary.md:75-81`  — homed in a RATIFIED CONTRACT DOCUMENT the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268).
 
-**Provenance.** docs/iteration_path1_summary.md:66-72, recorded among the architecture decisions of the completed iteration path; no date or ratifier is stated at this home. A decision about a MEASUREMENT TOOL and its floor, reported separately by the phase-1d enumeration wave (2026-08-02) so that the sealed measurement-tools partition can account for it. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
+**Provenance.** docs/iteration_path1_summary.md:66-72, recorded among the architecture decisions of the completed iteration path; no date or ratifier is stated at this home. A decision about a MEASUREMENT TOOL and its floor, reported separately by the phase-1d enumeration wave (2026-08-02) so that the sealed measurement-tools partition can account for it. ★ RATIFIED (user, 2026-08-02, the phase-1d queue). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.
 
