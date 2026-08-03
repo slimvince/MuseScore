@@ -419,6 +419,17 @@ def main() -> int:
                             "taking documents in reading order until the next one would exceed "
                             "the anchor wave's measured token size. A single document larger "
                             "than the anchor gets a wave of its own rather than being split.",
+            "what_this_does_not_model": (
+                "TOKENS ONLY. The anchor measures one session that read FIVE documents totalling "
+                "its token size; packing by tokens alone therefore produces later waves holding "
+                "far more documents than five at the same token budget, because the owed tail is "
+                "made of short documents. Two things could bind a reading session -- the volume "
+                "read, and the per-document overhead of opening, judging and entering each one -- "
+                "and only the first is modelled here, because only the first is measured. If the "
+                "second binds, the later waves are optimistic and the wave count is a LOWER "
+                "BOUND. This is stated rather than hedged around: the same protocol that tests "
+                "the yield proxy tests this too, since each wave's actual document count and "
+                "actual yield are recorded against the plan."),
             "implied_wave_count": len(waves),
             "waves": waves,
         },
