@@ -215,7 +215,20 @@ dated notes** (OI-233 — the rename pass over `ARCHITECTURE.md` still owed, sti
 policy still lists the RETIRED Gate K**). All three guards PASS. **NEXT: phase 2 — issue-finding exhausted with
 measured coverage**, now measured against the specifications this pass completed.)*
 
-*Last updated: 2026-08-02, LATEST+ (Cowork — **★ THE THREE-PHASE SEQUENCING RULE IS RATIFIED (D-231, the
+*Last updated: 2026-08-03, LATEST (Cowork session close — **PHASE 1 IS DEEP IN ITS FINAL READS; a
+PENDING-RATIFICATION PACKET awaits the user in the next session.** Per the OI-222 remedy this entry is a
+POINTER: the entire handover is **the EIGHTH entry-point block of `cowork_handoff.md`**; the user's first
+read is **`cowork_pending_ratifications_next_session.md`** (the four banner drafts quoted from the phase-1j
+report, the D-406…D-414 queue via `cowork_decisions_pending_ratification_8.md`, the OI-279 ruling surface
+with the D-132 narrowing). State: register 414 entries (405 user-ratified, eight events); every ruled
+constraint HOMED (OI-272 flipped at phase 1j); reads 38/143 with 64 owed (≈3 sessions); OI-207 open for
+exactly that remainder; the three-phase rule (D-231) governs — no fix design before phases 1–2 complete.
+The jazz realization loop is designed and rowed (OI-7/OI-38 dated notes,
+`cowork_jazz_realization_qa_instrument.md`; Effendi user-admitted, hash-pin-only). ONE local commit awaits
+push (this close). NEXT: the user rules on the packet → phase 1k applies the rulings + continues the
+reads → the completion statement → phase 2 opens with the sealed measurement-tools partition.)*
+
+*Last updated: 2026-08-02, prior (Cowork — **★ THE THREE-PHASE SEQUENCING RULE IS RATIFIED (D-231, the
 new `CLAUDE.md` Conventions entry): NO FIX DESIGN until (1) the specifications are COMPLETE (every decision
 homed — conformance measured against the SPECIFICATIONS; the register stays the status ledger) and TRUE
 (doc-sync debt corrected), and (2) issue-finding is EXHAUSTED with measured coverage; then (3) ONE

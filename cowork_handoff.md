@@ -1,7 +1,55 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE 2026-08-02 (SEVENTH) — THE DECISIONS REGISTER IS RATIFIED AND LIVING (231 entries); THE THREE-PHASE SEQUENCING RULE GOVERNS EVERYTHING; PHASE 1 IS DISPATCHED. THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE 2026-08-02/03 (EIGHTH) — PHASE 1 IS DEEP IN ITS FINAL READS (38/143; the register at 414, 405 USER-RATIFIED across eight events); EVERY RULED CONSTRAINT IS HOMED; A PENDING-RATIFICATION PACKET AWAITS THE USER. THE CURRENT ENTRY POINT.
+
+**You (the next session) start clueless — this block is the entire handover.** Read, in order:
+(1) `CLAUDE.md` IN FULL — since the seventh block it gained: the decisions-register section's
+rules **(f)** LEGACY marking (+ the transfer variant for principle-carrying entries), **(g)** the
+contract-home fifth case WITH the transitive-authority refinement (an assistant's stamp alone
+never confers it); gate block (A) now opens with the FOUR GRADING CONVENTIONS (D-294 homed
+first); the Gate K line is corrected; the three-phase rule (D-231) still governs — NO fix design
+until phases 1–2 complete. (2) `DECISIONS.md` (the INDEX — 414 entries; D-406…D-414 are the ONLY
+unratified ones; LEGACY badges render on the index; full entries under `decisions/group_*.md`).
+(3) `OPEN_ITEMS.md` (INDEX) opening at minimum **OI-279** (the canonical §6.7 stale-taxonomy
+finding, the user's ruling pending), **OI-207** (open: 64 documents still owed reading),
+**OI-277** (the note-count emission finding — family-design input), the family rows
+(OI-215/226/227/228/243/244/246/277 — the fix waits on phase 3; D-329's completeness principle is
+their RATIFIED admission premise). (4) **`cowork_pending_ratifications_next_session.md` — THE
+USER'S FIRST READ: the four banner drafts, the D-406…D-414 queue
+(`cowork_decisions_pending_ratification_8.md`), and the OI-279 ruling surface with the D-132
+narrowing recommendation.** (5) `STATUS.md`'s top entries.
+
+**★ WHERE PHASE 1 STANDS.** Specifications: COMPLETE for every ratified constraint (the OI-272
+homing landed — 16 rules written into their owning specifications in phase 1j; OI-268/272/275
+closed; the 63+8 contract-home re-classifications done; the transitive-authority verdicts
+recorded: one document of nine passes). Reads: 38 of 143 in full; the user's accepted exclusion
+list covers 41; **64 remain (≈3 sessions)** — next `docs/implementation_roadmap.md` (18), then
+three at 17. The disposition residual is 2,674 with generated stated reasons. OI-207 stays open
+until the reads finish; then the PHASE-1 COMPLETION STATEMENT, then phase 2 (the SEALED
+measurement-tools partition first; the jazz realization loop — designed, Effendi
+user-admitted hash-pin-only, `cowork_jazz_realization_qa_instrument.md`, rowed on OI-7/OI-38 —
+sits in phase 2's program).
+
+**★ THE WORKING RHYTHM THAT GOT US HERE (keep it):** CC executes dispatches (fresh single files,
+push-first when Cowork commits are pending — Cowork CANNOT push, no credentials); Cowork verifies
+EVERY report at the objects (git by SHA + guards re-run live + spot-reads) and presents
+ratification queues as generated reading files; the user rules; rulings are applied in their
+recording commit (the same-commit rule, D-230) with the sixth…eighth-event pattern in the
+register preamble; **the register surface is SINGLE-WRITER** (the one mid-flight interleave is on
+record — do not repeat); anchor drifts are fixed PER-CITATION from the `--verify` drift report,
+never by an assumed threshold; the backbone JSON round-trips byte-identical at
+`json.dumps(indent=2, ensure_ascii=False)` no trailing newline; git commits from the Cowork
+sandbox go via plumbing (`write-tree`/`commit-tree`/`update-ref` — `git commit` times out on
+index refresh) with every guard run explicitly at the committed tree. Choices to the user: FULL
+PROSE, each pro/con naming its principle AND rated on the ultimate objective — the option-widget
+compression has failed twice; never again. Bare words carry the musical meaning. Never work from
+memory — open the source, cite file:line.
+
+*(The seventh block below is the day's earlier record — kept for provenance.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE 2026-08-02 (SEVENTH) — THE DECISIONS REGISTER IS RATIFIED AND LIVING (231 entries); THE THREE-PHASE SEQUENCING RULE GOVERNS EVERYTHING; PHASE 1 IS DISPATCHED. (SUPERSEDED as the entry point by the block above.)
 
 **You (the next session) start clueless — this block is the entire handover.** Read, in order:
 (1) `CLAUDE.md` IN FULL — three additions since the sixth block, all user-directed: **every design
