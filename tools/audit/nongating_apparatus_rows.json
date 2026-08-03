@@ -1,0 +1,532 @@
+{
+ "purpose": "The NON-GATING apparatus declaration: which OPEN register rows gate no stage and are worked in leftover capacity. It removes a wait; it authorizes no fix, no design and no inference change.",
+ "generated_by": "tools/audit/gen_nongating_apparatus_rows.py",
+ "generated_for": "cc_instruction_phase1o_gate_partition_and_probe_rerun.md, Task 3",
+ "the_ruling": "Rows whose subject is this project's own tracking and documentation apparatus are declared NON-GATING - worked in leftover capacity, gating nothing (user, 2026-08-03).",
+ "the_criterion": "Does the row's subject bear on the analysis, its inputs, or an instrument a measurement depends on? If yes it gates.",
+ "the_exemption": "An establishment obligation (#19) ALWAYS gates, whatever its subject - backgrounding an establishment obligation is how it never happens.",
+ "the_default": "A row that is not apparatus, or whose subject the row does not settle, GATES. The declaration only ever removes a wait where the row's own text supports removing it.",
+ "the_line_this_derivation_draws": "A documentation row is APPARATUS when what is owed is a pointer, an anchor, a label, a banner, a filing decision or a section boundary - something that states nothing false about the analysis. A documentation row GATES when what is owed is a correction to a statement about the analysis or its build state, or the completion of a specification - because phase 1's own text makes specifications COMPLETE and TRUE the thing that must precede everything else.",
+ "what_is_authored_and_what_is_derived": {
+  "derived": "the row population and its OPEN subset, parsed from OPEN_ITEMS.md; the over-inclusive first cut on each row's own subject column; every count",
+  "authored": "the per-row verdict and its reason, read at the row itself",
+  "the_two_stops": "The tool refuses to run if a first-cut candidate has no authored verdict, and refuses an authored verdict for a row that is not an open candidate - so the table cannot drift away from the register without failing loudly."
+ },
+ "population": {
+  "rows_parsed": 297,
+  "open_rows": 214,
+  "first_cut_candidates": 44,
+  "first_cut_vocabulary": [
+   "doc-sync",
+   "docs /",
+   "doc",
+   "process",
+   "housekeeping",
+   "audit tooling",
+   "harness",
+   "substrate hygiene",
+   "decisions register",
+   "documentation gap",
+   "repository organization",
+   "registry",
+   "tests /",
+   "convention",
+   "ARCHITECTURE doc",
+   "planning",
+   "held /"
+  ]
+ },
+ "totals": {
+  "non_gating": 20,
+  "gates": 24,
+  "non_gating_ids": [
+   "OI-205",
+   "OI-219",
+   "OI-229",
+   "OI-230",
+   "OI-233",
+   "OI-280",
+   "OI-281",
+   "OI-282",
+   "OI-287",
+   "OI-290",
+   "OI-296",
+   "OI-297",
+   "OI-46",
+   "OI-47",
+   "OI-48",
+   "OI-49",
+   "OI-50",
+   "OI-58",
+   "OI-85",
+   "OI-99"
+  ],
+  "non_gating_by_class_basis": {
+   "user": [
+    "OI-205",
+    "OI-229",
+    "OI-230",
+    "OI-233",
+    "OI-280",
+    "OI-281",
+    "OI-282",
+    "OI-287",
+    "OI-290",
+    "OI-296",
+    "OI-297",
+    "OI-46",
+    "OI-47",
+    "OI-48",
+    "OI-49",
+    "OI-50",
+    "OI-85",
+    "OI-99"
+   ],
+   "widening": [
+    "OI-219"
+   ],
+   "row-says": [
+    "OI-58"
+   ]
+  },
+  "gates_by_ground": {
+   "#19 establishment obligation": [
+    "OI-283",
+    "OI-289"
+   ],
+   "an instrument a measurement depends on": [
+    "OI-150",
+    "OI-222",
+    "OI-223",
+    "OI-256",
+    "OI-95"
+   ],
+   "specification completeness": [
+    "OI-183",
+    "OI-45"
+   ],
+   "specification truth": [
+    "OI-105",
+    "OI-107",
+    "OI-121",
+    "OI-220",
+    "OI-274",
+    "OI-276"
+   ],
+   "the analysis": [
+    "OI-146",
+    "OI-207",
+    "OI-63"
+   ],
+   "the analysis's inputs": [
+    "OI-239",
+    "OI-57"
+   ],
+   "the default - out of the declared class": [
+    "OI-154"
+   ],
+   "the default - the row's scope does not settle it": [
+    "OI-292"
+   ],
+   "the record already names it a phase-3 input": [
+    "OI-259",
+    "OI-267"
+   ]
+  }
+ },
+ "items": [
+  {
+   "id": "OI-99",
+   "title": "L3 pass-2 dangling doc-reference",
+   "subject_column": "L3 doc",
+   "verdict": "NON-GATING",
+   "reason": "Two production comments cite a document that does not exist. A dangling POINTER: nothing false is stated about the analysis, and the owed act is to re-point or drop the citation.",
+   "class_basis": "tracking/documentation apparatus - the user's own phrase"
+  },
+  {
+   "id": "OI-105",
+   "title": "L4 decoder doc/naming precision",
+   "subject_column": "L4 doc",
+   "verdict": "GATES",
+   "reason": "Two FALSE STATEMENTS, not pointers: a predicate's name says semitone where it answers true for a whole tone, and a manifest note says the decoder is not called by batch_analyze. Both describe the analysis wrongly.",
+   "gate_ground": "specification truth"
+  },
+  {
+   "id": "OI-107",
+   "title": "L4 oracle ARCHITECTURE.md doc drifts",
+   "subject_column": "ARCHITECTURE doc",
+   "verdict": "GATES",
+   "reason": "Stale scoring values, a wrong bit order and pre-refactor gate descriptions in the canonical document - statements about the analysis that are false at HEAD, with part still owed after the phase-1 truth-sync.",
+   "gate_ground": "specification truth"
+  },
+  {
+   "id": "OI-121",
+   "title": "L5 doc-sync (§15-12 grammar)",
+   "subject_column": "L5 doc (Cowork)",
+   "verdict": "GATES",
+   "reason": "The Layer-5 design document future-tenses a grammar completion that has landed. A false statement about what is built, which is exactly phase 1's subject.",
+   "gate_ground": "specification truth"
+  },
+  {
+   "id": "OI-146",
+   "title": "The evidence inventory + layer-specification sync",
+   "subject_column": "key-layer / doc",
+   "verdict": "GATES",
+   "reason": "The evidence inventory is the live catalog of what each layer discovers, and the layer specifications update from it as facts are adopted. Its subject is analysis facts, not the paperwork about them.",
+   "gate_ground": "the analysis"
+  },
+  {
+   "id": "OI-183",
+   "title": "scoring_model.md symbol-level coverage gap",
+   "subject_column": "scoring_model doc",
+   "verdict": "GATES",
+   "reason": "Twelve of thirty-two override-registered scoring constants have no by-name mention in the scoring specification. Incompleteness of a specification, the same ground as OI-45.",
+   "gate_ground": "specification completeness"
+  },
+  {
+   "id": "OI-207",
+   "title": "★★ THE DECISION-CONFORMANCE AUDIT (user-directed 2026-07-27, at the 3.1b contradiction): is anything else implemented in DIRECT opposition to a recorded decision?",
+   "subject_column": "repo-wide / process",
+   "verdict": "GATES",
+   "reason": "The decision-conformance audit searches the implementation for opposition to recorded decisions; its residual second pass is a phase-2 discovery channel and is classified GATING in the phase-3 gate partition. The two verdicts must agree and do.",
+   "gate_ground": "the analysis"
+  },
+  {
+   "id": "OI-219",
+   "title": "Process: #17(b) pre-registered prediction bands were not registered before measuring (analysis-cost dispatch)",
+   "subject_column": "process / methodology",
+   "verdict": "NON-GATING",
+   "reason": "A WIDENING, stated so the user can correct it: the subject is this project's own methodology record, which is process apparatus rather than tracking or documentation apparatus. It is admitted because the row itself settles the bearing test - it records that the measurements stand and that what was lost was the guard against motivated interpretation, so no instrument is in doubt. The row is record-only and asks for no work.",
+   "class_basis": "process apparatus - a WIDENING of the user's phrase, stated as a judgment and the user's to correct"
+  },
+  {
+   "id": "OI-220",
+   "title": "The joint module's headers uniformly assert a DORMANCY the code has outgrown (a #10 doc-sync lag post-switch)",
+   "subject_column": "joint module / #10 doc-sync (DT-12)",
+   "verdict": "GATES",
+   "reason": "Six or more joint-module headers say the module is dormant with no production consumer while it IS the production notation analysis. The same class as the scoring document's stale present tense, inside the analysis's own headers.",
+   "gate_ground": "specification truth"
+  },
+  {
+   "id": "OI-222",
+   "title": "The OI-199 pass-1 blinding was DEFEATED at the source (STATUS.md + the inline §S both leaked the sealed findings) — DT-20",
+   "subject_column": "process / DT-20",
+   "verdict": "GATES",
+   "reason": "The blinding of an audit pass was defeated at the source, so that pass's knowledge-free-discovery claim is compromised. #19 treats a search as a measurement tool, and phase 2's bounded trust statement is arithmetic over exactly these detection-power claims.",
+   "gate_ground": "an instrument a measurement depends on"
+  },
+  {
+   "id": "OI-223",
+   "title": "The committed prior-layer audit inventories (l1l2/l3/l4/l5) are commit-stale vs HEAD (OI-95 class, one level up)",
+   "subject_column": "housekeeping / DT-12 (OI-95 class)",
+   "verdict": "GATES",
+   "reason": "The committed per-layer audit inventories are commit-stale, so a session that reads them instead of regenerating measures a build that no longer exists. Phase 2's remaining partitions are the sessions that would read them.",
+   "gate_ground": "an instrument a measurement depends on"
+  },
+  {
+   "id": "OI-229",
+   "title": "Music-theory terminology collision — the reserved-word convention is now STANDING; the existing tree is not renamed unilaterally",
+   "subject_column": "docs / convention",
+   "verdict": "NON-GATING",
+   "reason": "The convention is already LIVE for new writing; what remains open is a tree-wide rename that the user has ruled is not done unilaterally. A rename changes no rule, no reading and no behaviour - it changes which word carries which sense.",
+   "class_basis": "tracking/documentation apparatus - the user's own phrase"
+  },
+  {
+   "id": "OI-230",
+   "title": "The writing-standards conformance question — DEFERRED by the user to the Friday discussion",
+   "subject_column": "docs / process",
+   "verdict": "NON-GATING",
+   "reason": "The writing-standards conformance question, and the user has already DEFERRED it to a discussion. Its subject is how this project's documents are written.",
+   "class_basis": "tracking/documentation apparatus - the user's own phrase"
+  },
+  {
+   "id": "OI-233",
+   "title": "NON-CONFORMANCE: the ratified ban on the bare word \"region\" was recorded EXECUTED \"through every layer spec\", but the canonical layer specifications still use it 216 times",
+   "subject_column": "ARCHITECTURE doc / #10",
+   "verdict": "NON-GATING",
+   "reason": "Classified WITH OI-229 deliberately, because they are one subject and judging them apart would make the verdict turn on which document a reader opened. The FALSE EXECUTION CLAIM - the part that stated something untrue - is already corrected; what stays owed is the vocabulary pass over the canonical document, sequenced against OI-229 by the row's own text.",
+   "class_basis": "tracking/documentation apparatus - the user's own phrase"
+  },
+  {
+   "id": "OI-259",
+   "title": "The engage-era agenda (Stage-3 entry gate, E4 rows, R1–R9, E1–E5) was overtaken by the joint estimator; no recorded plan states those rows' fate",
+   "subject_column": "E — user adjudication / architecture planning",
+   "verdict": "GATES",
+   "reason": "Its own status reads 'phase-3 input (D-231)': every engage-era row needs one fate before the prioritized fix plan can cover the complete list.",
+   "gate_ground": "the record already names it a phase-3 input"
+  },
+  {
+   "id": "OI-267",
+   "title": "D-248's revisit must be PLANNED: tonicization labels are deferred, but for maximum-precision inference they may be needed",
+   "subject_column": "E — user-directed planning / phase-3 input",
+   "verdict": "GATES",
+   "reason": "Its own subject column reads 'user-directed planning / phase-3 input', and the question is whether tonicization labels are needed for maximum-precision inference - an analysis-output question.",
+   "gate_ground": "the record already names it a phase-3 input"
+  },
+  {
+   "id": "OI-239",
+   "title": "The joint fact adapter re-implements the Layer-2 boundary rule with three behavioural differences, and no layer specification records that it does",
+   "subject_column": "joint module / #6 + documentation gap",
+   "verdict": "GATES",
+   "reason": "The joint fact adapter re-implements the Layer-2 boundary rule with three behavioural differences and no specification records that it does. The adapter IS the input surface; this is the same subject as the family rows on note eligibility and representation.",
+   "gate_ground": "the analysis's inputs"
+  },
+  {
+   "id": "OI-256",
+   "title": "Record-arm test-coverage gaps against #11, enumerated — the production interactive path's seams are largely untested; every large-score test is a DISABLED measurement, not a gate",
+   "subject_column": "tests / #11",
+   "verdict": "GATES",
+   "reason": "The production interactive path's seams are largely untested and every large-score test is a disabled measurement rather than a gate. The row is also named as the input list for the record-seams audit partition, which gates.",
+   "gate_ground": "an instrument a measurement depends on"
+  },
+  {
+   "id": "OI-205",
+   "title": "STATUS.md and ARCHITECTURE.md have grown too large (render + human/LLM context capacity)",
+   "subject_column": "docs / #10",
+   "verdict": "NON-GATING",
+   "reason": "Half (b), the only open half, is a RESTRUCTURE of two documents that have grown too large - a filing and rendering question that states nothing false. Carried with it, because the row states it and the declaration must not hide it: the row's own recorded timing puts the restructure BEFORE the OI-198/199/200 reviews consume the document, which is a sequencing constraint on phase 2's conduct and not a gate on the family design.",
+   "class_basis": "tracking/documentation apparatus - the user's own phrase"
+  },
+  {
+   "id": "OI-85",
+   "title": "L1/L2-audit Task-0 git-state incident",
+   "subject_column": "harness / convention",
+   "verdict": "NON-GATING",
+   "reason": "A session-harness convention owed after a git-state incident: a plumbing commit ends with an index refresh and a disk-versus-HEAD verify. The subject is how this project handles its own repository, not what the analysis reads.",
+   "class_basis": "tracking/documentation apparatus - the user's own phrase"
+  },
+  {
+   "id": "OI-95",
+   "title": "L3-audit tooling debt",
+   "subject_column": "audit tooling",
+   "verdict": "GATES",
+   "reason": "A duplicate disposition generator and line-stale audit inventories. The disposition generators are the instruments the audit passes run through, and phase 2's remaining partitions are audit passes.",
+   "gate_ground": "an instrument a measurement depends on"
+  },
+  {
+   "id": "OI-154",
+   "title": "Explainability as a future end-user feature",
+   "subject_column": "held / long-horizon",
+   "verdict": "GATES",
+   "reason": "Explainability as an end-user feature is a product requirement, not this project's tracking or documentation apparatus, so the declaration does not reach it and the default applies. Recorded honestly: the row's own status is 'held' pending an unrelated publication wave, so nothing turns on the verdict today.",
+   "gate_ground": "the default - out of the declared class"
+  },
+  {
+   "id": "OI-57",
+   "title": "Corpus QA systematic pass",
+   "subject_column": "corpus / registry",
+   "verdict": "GATES",
+   "reason": "The extra-scores registry is stale and unvalidated against what is on disk, and the row states the registry must be accurate and mechanically validated before any of those scores is used. A corpus register is an input to every measurement taken on it (#9).",
+   "gate_ground": "the analysis's inputs"
+  },
+  {
+   "id": "OI-45",
+   "title": "scoring_model §4/§6 stale anchors",
+   "subject_column": "doc-sync",
+   "verdict": "GATES",
+   "reason": "Half of it is stale anchors, which would be apparatus - but the other half is a scoring constant with no entry in the scoring specification at all, and phase 1 requires specifications COMPLETE, not only true. The whole row gates with its gating half.",
+   "gate_ground": "specification completeness"
+  },
+  {
+   "id": "OI-46",
+   "title": "Audit §3/§4 tables contradict §3.1 build-status",
+   "subject_column": "doc-sync",
+   "verdict": "NON-GATING",
+   "reason": "What is owed is 'annotate the tables' - a consistency banner inside the structural-integrity audit, a tracking document. Nothing about the analysis is stated falsely by the tables; two records disagree about a stage's build status.",
+   "class_basis": "tracking/documentation apparatus - the user's own phrase"
+  },
+  {
+   "id": "OI-47",
+   "title": "STATUS.md submission-era sections contradict governing docs",
+   "subject_column": "doc-sync",
+   "verdict": "NON-GATING",
+   "reason": "The subject is four superseded sections of STATUS.md, a tracking surface, and the owed act is explicitly the BANNER half - marking them historical. The triage half, which was the part that touched what is true of the analysis, is discharged.",
+   "class_basis": "tracking/documentation apparatus - the user's own phrase"
+  },
+  {
+   "id": "OI-48",
+   "title": "backlog_chord_track_flag.md dangling reference",
+   "subject_column": "doc-sync",
+   "verdict": "NON-GATING",
+   "reason": "A dangling reference to a memory file from two documents; the row states in terms that nothing is lost and that the code substance rides OI-61. What is owed is re-pointing a citation.",
+   "class_basis": "tracking/documentation apparatus - the user's own phrase"
+  },
+  {
+   "id": "OI-49",
+   "title": "D-L3a \"closed\" vs \"remains\"",
+   "subject_column": "doc-sync",
+   "verdict": "NON-GATING",
+   "reason": "Two records disagree about whether one decision is closed. What is owed is reconciling the records; neither statement is about how the analysis behaves.",
+   "class_basis": "tracking/documentation apparatus - the user's own phrase"
+  },
+  {
+   "id": "OI-50",
+   "title": "FQ-2 \"decided at Stage 2\" vs \"enumerated-not-resolved\"",
+   "subject_column": "doc-sync",
+   "verdict": "NON-GATING",
+   "reason": "The same shape as OI-49 one document over - 'annotate the arc plan' where two records describe one question's disposition differently.",
+   "class_basis": "tracking/documentation apparatus - the user's own phrase"
+  },
+  {
+   "id": "OI-274",
+   "title": "`docs/scoring_model.md` describes the legacy scorer as WHAT RUNS, in a document `CLAUDE.md` makes a mandatory session-start read",
+   "subject_column": "doc-sync / #10 (DT-12)",
+   "verdict": "GATES",
+   "reason": "REPORTED AS A DIFFERENCE from the dispatch's assumption A3, which put this row's body-tense half in the apparatus set. The document opens by stating that the legacy scorer IS the bottom-up vertical-sonority scorer and keeps that present tense throughout, while that scorer is dormant on both production surfaces - and `CLAUDE.md` directs every scoring session to read it with no other mandated read correcting it. A false statement about what runs, in a mandatory read, is the phase-1 truth class, not a banner.",
+   "gate_ground": "specification truth"
+  },
+  {
+   "id": "OI-276",
+   "title": "Three LIVE-SPEC design documents state as CURRENT something false at HEAD — and one names a REGRESSION GATE that no longer exists",
+   "subject_column": "doc-sync / #10 (DT-12)",
+   "verdict": "GATES",
+   "reason": "Three live-specification documents state as current what is false at HEAD, and one names as its acceptance criterion, five times, a regression gate superseded in whole. A stale criterion is not a description - it is what a future build would try to satisfy.",
+   "gate_ground": "specification truth"
+  },
+  {
+   "id": "OI-280",
+   "title": "`cowork_progression_schema_dictionary.md` uses the label \"D5\" for two different decisions",
+   "subject_column": "doc-sync / documentation gap",
+   "verdict": "NON-GATING",
+   "reason": "One label, 'D5', naming two unrelated rulings from two private numbering series. A LABEL defect: both decisions' content is ratified and unaffected, and the owed act is to name each label's series or drop the private labels.",
+   "class_basis": "tracking/documentation apparatus - the user's own phrase"
+  },
+  {
+   "id": "OI-281",
+   "title": "★ Does an `ARCHITECTURE.md` delegation pointer confer contract-home status on a document that self-declares \"v1 draft\"?",
+   "subject_column": "E — user adjudication / documentation gap",
+   "verdict": "NON-GATING",
+   "reason": "Whether a delegation pointer confers contract-home status - a question about how the decisions register classifies homes. It moves no decision's content and no statement about the analysis.",
+   "class_basis": "tracking/documentation apparatus - the user's own phrase"
+  },
+  {
+   "id": "OI-282",
+   "title": "`cowork_style_clustering_plan.md` still presents the CLUSTERS half as future work, a day after it was delivered and ratified",
+   "subject_column": "doc-sync / #10 (DT-12)",
+   "verdict": "NON-GATING",
+   "reason": "A PLAN document still presents as future work a half delivered and ratified the next day. The falsehood is real but it sits in a tracking surface: the analysis fact it concerns - the five-idiom set - is correctly recorded in the canonical document and in the register, so no specification of the analysis is wrong.",
+   "class_basis": "tracking/documentation apparatus - the user's own phrase"
+  },
+  {
+   "id": "OI-283",
+   "title": "The decisions register's coverage claim states a stale `ARCHITECTURE.md` line count, and nothing keeps it current",
+   "subject_column": "doc-sync / #10, #17(f)",
+   "verdict": "GATES",
+   "reason": "Gates on the exemption, and independently on the criterion: the register's coverage claim bounds which parts of the canonical document any decision-conformance finding could have come from, so an unread range could still hold a decision about the input surface.",
+   "gate_ground": "#19 establishment obligation"
+  },
+  {
+   "id": "OI-287",
+   "title": "The ratification surfaces and the dispatches have no directory of their own, and moving them re-aims cited paths",
+   "subject_column": "doc-sync / repository organization",
+   "verdict": "NON-GATING",
+   "reason": "Where the ratification surfaces and the dispatches are filed, and how cited paths are re-aimed when they move. Repository organization; the files are committed and durable already.",
+   "class_basis": "tracking/documentation apparatus - the user's own phrase"
+  },
+  {
+   "id": "OI-289",
+   "title": "The 80 LEGACY-marked register entries were SWEPT, never verified — and two of them were wrong",
+   "subject_column": "E — verification owed / decisions register",
+   "verdict": "GATES",
+   "reason": "Gates on the exemption, and independently on the criterion: the marked set includes D-329, complete candidate listing, which is the family design's ratified admission premise and whose marking already failed once.",
+   "gate_ground": "#19 establishment obligation"
+  },
+  {
+   "id": "OI-290",
+   "title": "`cowork_score_census.md` §8c is a rule-stating section that also holds a findings table, and most entries admitted through it are rows of that table",
+   "subject_column": "doc-sync / #10",
+   "verdict": "NON-GATING",
+   "reason": "A section of a corpus document mixes rules and findings, which the home criterion then classifies as one block. A SECTION-BOUNDARY defect in how the register homes entries; the eleven entries themselves stand.",
+   "class_basis": "tracking/documentation apparatus - the user's own phrase"
+  },
+  {
+   "id": "OI-292",
+   "title": "Ten `CLAUDE.md` rules could be enforced by a mechanism and are not; the strongest is that no check confirms the four local patches are still present",
+   "subject_column": "process / mechanisation debt",
+   "verdict": "GATES",
+   "reason": "Most of the row is enforcement machinery for governing-document rules, which is apparatus - but two of its ten members are measurement rules (uncertainty on every reported comparison; the research-tier-on-entry rule the corpus manifest would carry) and a third guards the local patches to MuseScore's own code. Those bear on instruments and on the system, so the default applies to the row as a whole rather than splitting a row the register keeps as one.",
+   "gate_ground": "the default - the row's scope does not settle it"
+  },
+  {
+   "id": "OI-296",
+   "title": "Sweep for ratified rules parked in tracking sections — D-341 is unlikely to be the only one",
+   "subject_column": "doc-sync / decisions register",
+   "verdict": "NON-GATING",
+   "reason": "A sweep for ratified rules recorded in tracking sections rather than in the section they amend. Where a rule is FILED, not what it says.",
+   "class_basis": "tracking/documentation apparatus - the user's own phrase"
+  },
+  {
+   "id": "OI-297",
+   "title": "`tools/audit/process_check.py` truncates its own findings list on a Windows console — it crashes mid-print and exits non-zero after writing a complete artifact",
+   "subject_column": "process / audit tooling",
+   "verdict": "NON-GATING",
+   "reason": "A check over DISPATCHES AND REPORTS truncates its console output; the JSON artifact every citation actually uses is written first and is complete, so no recorded figure is affected and no measurement of the analysis depends on it. Classified apart from OI-292 deliberately, and the difference is stated so the pair does not read as inconsistent: OI-292 gates because two of its members are measurement rules and a third guards the local patches to MuseScore's own code, while this row's whole subject is one tool's stdout rendering over documents.",
+   "class_basis": "tracking/documentation apparatus - the user's own phrase"
+  },
+  {
+   "id": "OI-150",
+   "title": "BUILD_AND_TEST.md stale test baselines",
+   "subject_column": "doc-sync",
+   "verdict": "GATES",
+   "reason": "The recorded test baselines are stale and the notation line hides four xfails. A baseline is what a regression is measured against.",
+   "gate_ground": "an instrument a measurement depends on"
+  },
+  {
+   "id": "OI-63",
+   "title": "S7 full mode-prior single-sourcing",
+   "subject_column": "substrate hygiene",
+   "verdict": "GATES",
+   "reason": "The mode prior is an analysis quantity; single-sourcing it is a #6 act inside the analysis, not in the paperwork.",
+   "gate_ground": "the analysis"
+  },
+  {
+   "id": "OI-58",
+   "title": "Known-Gaps survivors (3 sub-claims)",
+   "subject_column": "held / various owners",
+   "verdict": "NON-GATING",
+   "reason": "Admitted on the row's own recorded status, not on the apparatus class: it says 'none gates any stage' in terms, and names the three owners. The declaration records what the register already holds.",
+   "class_basis": "the row's own recorded status already says it gates nothing"
+  }
+ ],
+ "assumption_A3_of_the_dispatch": {
+  "as_stated_in_the_dispatch": "That OI-280, OI-282, OI-287 and OI-274's body-tense half are the complete apparatus-row set.",
+  "its_declared_source": "Cowork has read each of those rows, but not that the set is exhaustive.",
+  "verdict": "DIFFERS in both directions - reported, not reconciled",
+  "confirmed": [
+   "OI-280",
+   "OI-282",
+   "OI-287"
+  ],
+  "refuted": [
+   "OI-274"
+  ],
+  "refuted_note": "OI-274 is NOT apparatus. Its subject is a mandatory session-start read that states in the present tense that a dormant scorer is what runs; correcting a false statement about what runs is phase 1's own subject, not leftover-capacity work.",
+  "not_in_A3_but_derived": [
+   "OI-205",
+   "OI-219",
+   "OI-229",
+   "OI-230",
+   "OI-233",
+   "OI-281",
+   "OI-290",
+   "OI-296",
+   "OI-297",
+   "OI-46",
+   "OI-47",
+   "OI-48",
+   "OI-49",
+   "OI-50",
+   "OI-58",
+   "OI-85",
+   "OI-99"
+  ],
+  "missed_note": "The rows A3 did not name are mostly the older doc-sync backlog - dangling references, contradicting records, banner acts - plus the register-machinery rows opened in the last several waves and the two terminology rows. A3 was not wrong about the four it looked at; it had not looked at the population."
+ },
+ "relation_to_the_phase3_gate_partition": "Different question, different population, and the two must not be read as one. `tools/audit/phase3_gate_partition.json` classifies the items of PHASE 2 against whether they could find another member of the struck-versus-sounding family; this artifact classifies OPEN REGISTER ROWS against whether their subject bears on the analysis at all. A row can be non-gating for the family design and still gate its own stage, or the reverse. Where both artifacts speak about the same object they agree by construction, because the establishment exemption is stated once and applies in both.",
+ "what_this_declaration_does_NOT_do": [
+  "It does not close any row. A NON-GATING row stays open and stays owed.",
+  "It does not reach an establishment obligation (#19), which always gates.",
+  "It does not authorize any fix, design or inference change.",
+  "It does not decide phase 1's own completion: a NON-GATING row is still work phase 1 may be waiting on for its own reasons, and this artifact says only that no stage waits on it."
+ ]
+}

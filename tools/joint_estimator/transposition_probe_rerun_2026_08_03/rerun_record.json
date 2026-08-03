@@ -1,0 +1,27 @@
+{
+ "purpose": "Repository-side re-run of the transposition-equivariance probe, the first action OI-243 owes before its finding carries load (#19).",
+ "apparatus": "tools/joint_estimator/transposition_probe_2026_08_02/run_probe.py",
+ "driver": "tools/joint_estimator/transposition_probe_rerun_2026_08_03/rerun_repo_side.py",
+ "what_the_driver_changed": {
+  "REPO": {
+   "committed": "\\sessions\\adoring-admiring-fermi\\mnt\\MS",
+   "here": "C:\\s\\MS",
+   "why": "an absolute sandbox path that exists on no machine in this repository"
+  },
+  "OUT": {
+   "committed": "\\sessions\\adoring-admiring-fermi\\mnt\\outputs\\transposition_probe",
+   "here": "C:\\s\\MS\\tools\\joint_estimator\\transposition_probe_rerun_2026_08_03",
+   "why": "artifacts go to this run's own directory; the repository is read-only"
+  },
+  "BUDGET": {
+   "committed": 33.0,
+   "here": "effectively unlimited",
+   "why": "the committed value is a sandbox call cap with resumable state on disk; raising it is equivalent to invoking the script repeatedly and changes no measured value"
+  },
+  "nothing_else": "SEG_CAP, SHIFTS and K_TO_F are asserted equal to the committed values before the run; every function is the committed one"
+ },
+ "establish_rc": 0,
+ "establish_seconds": 45.1,
+ "transpose_rc": 0,
+ "transpose_seconds": 110.5
+}

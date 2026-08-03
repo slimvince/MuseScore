@@ -23,7 +23,7 @@
 
 **Status.** LIVE · decided 2026-07-11 · ratified by user
 
-**Home.** `CLAUDE.md:1087`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1133`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:878-887, user-directed 2026-07-11. Binds Claude Code and Cowork sessions alike.
 
@@ -43,7 +43,7 @@
 
 **Status.** LIVE · decided 2026-06-15 · ratified by user
 
-**Home.** `CLAUDE.md:843`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:867`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:737-753, user-directed 2026-06-15. ★ READ WITH the general contribution intent at ARCHITECTURE.md:380-382 - two recorded positions, a general intent to contribute and a named one-patch exception; the record does not state how the general intent applies to the rest of the tree.
 
@@ -71,7 +71,7 @@
 
 **Status.** LIVE · decided 2026-05-14 · ratified by user
 
-**Home.** `CLAUDE.md:795`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:819`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:678-713, applied 2026-05-14. Unrelated to the composing module; recorded so a dependency update does not silently overwrite it.
 
@@ -104,7 +104,7 @@
 
 **Status.** LIVE · decided 2026-06-14 · ratified by user
 
-**Home.** `CLAUDE.md:816`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:840`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:715-745, applied 2026-06-14, commit cfc7eb5e39. ★ Carries the distribution constraint above: fork-local only, never upstream.
 
@@ -180,7 +180,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `CLAUDE.md:1042-1054`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1088-1100`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1589-1598, under the standing-rule heading 'FULL DECISION SURFACE BEFORE ANY CHOICE QUESTION' at cowork_handoff.md:1587 ('user mandate 2026-07-05'), with the instituting record at STATUS_ARCHIVE.md:202 - a session handoff block, which is a place for tracking a handover and not a home for a standing rule. Homed in the CLAUDE.md Conventions section, where this project's standing session-method rules live. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -281,7 +281,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `CLAUDE.md:1056-1074`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1102-1120`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1669-1680, under the standing-rule heading 'COWORK MUST NOT HALLUCINATE OR ASSUME - VERIFY AT SOURCE (user mandate 2026-06-21)' at cowork_handoff.md:1642 - a session handoff block. Homed in the CLAUDE.md Conventions section. Its scope is taken FROM THE RECORD, not decided here: that heading and D-252's own text ('Cowork MAY: read source files via the file tools - NOT bash') both state it as a planning-side rule, so the homed entry says so and says the mandated build, test and measurement commands are unaffected. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -304,7 +304,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `CLAUDE.md:1076-1083`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1122-1129`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1792-1796, under the standing-rule heading 'INVESTIGATE BY DEFAULT - NEVER ASK investigate vs proceed (user mandate 2026-06-14)' at cowork_handoff.md:1790 - a session handoff block. Homed in the CLAUDE.md Conventions section, beside principle #5, which it operationalizes. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -538,4 +538,34 @@
 **Home.** `cowork_audit_protocol.md:274`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** User ruling of 2026-08-03 (the eighth ruling set of that date, X3), homed at phase 1q in `cowork_audit_protocol.md`'s dispatch-protocol section beside **D-431** and **D-434**, which is the established home for rules about how a dispatch is written and checked. **It WITHDRAWS a test the planning side had stated and this project had been working under** — *a mechanism must retire the prose it replaces, or it is apparatus growth* — and the withdrawal is recorded with its reason rather than left as a silent change of standard. The two mechanisms built under the withdrawn test are KEPT under this one, and their establishment artifacts carry their measured rates: `tools/audit/process_check_establishment.json` and `tools/audit/shell_read_guard_establishment.json`. The guard's third condition holds only while it is ARMED, which is the user's act on the user's machine; until then it is recorded as an expected-failing check rather than as coverage (`OPEN_ITEMS.md` OI-292). NOT RATIFIED as an ENTRY — it goes to the user in the phase-1q ratification queue.
+
+### D-437 — Phase 3 waits on the phase-2 items that could find another member of the family being designed for, not on all of phase 2
+
+> **★ QUALIFICATION — PHASE 3 WAITS ON THE PHASE-2 ITEMS THAT COULD FIND ANOTHER MEMBER OF THE
+>   FAMILY BEING DESIGNED FOR, NOT ON ALL OF PHASE 2 (user-ruled 2026-08-03).**
+
+**In plain words.** A family design waits only on those phase-2 searches whose search space could contain a fact about the thing that family is about — for the struck-versus-sounding family, about what the decoder or the emission reads or about how candidates are admitted. Where an item's scope does not settle the question it still gates. Narrowing the gate does not open it: no fix, design or inference change is authorized, and the partition is recorded as a falsifiable prediction whose refutation by a non-gating item is a #13 STOP.
+
+**Why.** D-231's phase gate was ratified so that a defect family is KNOWN before it is designed for — the standing one-fix-per-family rule of 2026-07-28 is what it protects. An item that cannot touch what the model reads or how candidates are admitted cannot change what the family is, so making the design wait on it buys no protection and spends time the fix plan is owed. The error in the other direction is bounded by the stated default: an item whose scope does not settle the question gates.
+
+**Status.** LIVE · decided 2026-08-03 · ratified by user
+
+**Home.** `CLAUDE.md:1035-1053`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** User ruling 2026-08-03, transmitted in the phase-1o dispatch cc_instruction_phase1o_gate_partition_and_probe_rerun.md §2.1; applied and homed at CLAUDE.md's D-231 entry in the recording commit per D-230. The partition itself is generated at tools/audit/phase3_gate_partition.json.
+
+### D-438 — Open-items register rows whose subject is this project's own tracking and documentation apparatus gate nothing — but an establishment obligation always gates
+
+> **★ QUALIFICATION OF RULE (b) — THE APPARATUS ROWS ARE DECLARED NON-GATING (user-ruled
+> 2026-08-03).**
+
+**In plain words.** An open row of the open-items register whose subject is this project's own tracking or documentation apparatus stays open and stays owed but blocks no stage; it is worked in leftover capacity. The test is whether the row's subject bears on the analysis, its inputs, or an instrument a measurement depends on — if yes it gates — and inside the documentation rows the line is what is owed: a pointer, anchor, label, banner, filing decision or section boundary is apparatus, while correcting a statement about the analysis or completing a specification gates. A row that is not apparatus, or whose subject its own text does not settle, gates. An establishment obligation (#19) always gates, whatever its subject.
+
+**Why.** The open-items register is this project's own record-keeping, and a rule that lets its housekeeping block the work it exists to track inverts what it was created for; the cost of the error in the other direction is bounded by the stated default (anything not settled gates). The establishment exemption is not discretionary because backgrounding an establishment obligation is how it never happens, and #19 exists precisely because a thing merely unfalsified is not established.
+
+**Status.** LIVE · decided 2026-08-03 · ratified by user
+
+**Home.** `CLAUDE.md:160-181`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** User ruling 2026-08-03, transmitted in the phase-1o dispatch cc_instruction_phase1o_gate_partition_and_probe_rerun.md §3; applied and homed at CLAUDE.md's open-items register section, qualifying rule (b), in the recording commit per D-230. The derived set is generated at tools/audit/nongating_apparatus_rows.json.
 

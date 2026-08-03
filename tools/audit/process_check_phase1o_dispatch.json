@@ -1,0 +1,56 @@
+{
+  "purpose": "A run of tools/audit/process_check.py over named dispatches or reports. Generated so a report cites this file rather than transcribing what the check found (D-431).",
+  "rules": [
+    "D-431 bare quantity",
+    "D-431 uncited code claim",
+    "D-434 missing self-check section"
+  ],
+  "files_scanned": [
+    "cc_instruction_phase1o_gate_partition_and_probe_rerun.md"
+  ],
+  "findings_total": 5,
+  "by_file": {
+    "cc_instruction_phase1o_gate_partition_and_probe_rerun.md": {
+      "findings": 5,
+      "rows": [
+        {
+          "file": "cc_instruction_phase1o_gate_partition_and_probe_rerun.md",
+          "line": 55,
+          "rule": "D-431 bare quantity",
+          "detail": "2.2",
+          "sentence": "**Task 2.2**."
+        },
+        {
+          "file": "cc_instruction_phase1o_gate_partition_and_probe_rerun.md",
+          "line": 57,
+          "rule": "D-431 uncited code claim",
+          "detail": "call sites",
+          "sentence": "Layer-1.5 primitive's call sites — a claim the phase-1n wave reported as false at the map's own"
+        },
+        {
+          "file": "cc_instruction_phase1o_gate_partition_and_probe_rerun.md",
+          "line": 59,
+          "rule": "D-431 bare quantity",
+          "detail": "4.2",
+          "sentence": "correction reached the detail file only is **not established**. → checked at **Task 4.2**."
+        },
+        {
+          "file": "cc_instruction_phase1o_gate_partition_and_probe_rerun.md",
+          "line": 62,
+          "rule": "D-431 bare quantity",
+          "detail": "3.1",
+          "sentence": "**Task 3.1**, not assumed."
+        },
+        {
+          "file": "cc_instruction_phase1o_gate_partition_and_probe_rerun.md",
+          "line": 217,
+          "rule": "D-431 bare quantity",
+          "detail": "3.2",
+          "sentence": "what gates, and Task 3.2 exempts the two #19 rows so neither narrowing reaches an establishment"
+        }
+      ]
+    }
+  },
+  "clean_files": [],
+  "establishment": "tools/audit/process_check_establishment.json — the check's measured detection power and false-positive rate. Read it before reading a count here as coverage."
+}

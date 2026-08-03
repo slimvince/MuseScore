@@ -1,0 +1,959 @@
+{
+ "purpose": "The repository-side re-run of the transposition-equivariance probe, scored against the committed run and against the predictions registered before it ran. This is the action OPEN_ITEMS.md OI-243 names as owed before its finding, and OI-244's, carries any load (#19).",
+ "generated_by": "tools/joint_estimator/transposition_probe_rerun_2026_08_03/analyze_rerun.py",
+ "committed_run": "tools/joint_estimator/transposition_probe_2026_08_02/",
+ "this_run": "tools/joint_estimator/transposition_probe_rerun_2026_08_03/",
+ "shared_inputs_checked": {
+  "sample_pieces": [
+   "bwv10.7",
+   "bwv153.1",
+   "bwv2.6",
+   "bwv245.37",
+   "bwv271",
+   "bwv297",
+   "bwv321",
+   "bwv347",
+   "bwv373",
+   "bwv398",
+   "bwv420",
+   "bwv55.5"
+  ],
+  "note_events_corpus_git_hash": "e3d17c325d24e0de1213440043cbf02ac14f3d3e",
+  "seg_cap": 4
+ },
+ "A_reproduction": {
+  "establishment": {
+   "passes_the_apparatus_criterion": true,
+   "criterion": "same segment list, and total score within the committed tolerance 1e-06 - the apparatus's own definition of established",
+   "segments_bit_identical": true,
+   "total_scores_bit_identical": 10,
+   "max_abs_total_score_diff": 2.842170943040401e-14,
+   "pieces": 12,
+   "ok_here": 12,
+   "header_crosscheck_ok_here": 12,
+   "float_note": "Where the two runs' total scores differ they differ at the last representable places of a double, ten or more orders of magnitude inside the apparatus's own tolerance and far below any margin that could move a decode. The two runs execute on different Python builds and therefore different C library transcendental functions; this was the risk registered in predictions.md as R1, with a predicted consequence of zero decode flips. The segment lists are bit-identical on every piece and every condition, which is that consequence measured.",
+   "rows": [
+    {
+     "stem": "bwv10.7",
+     "in_both": true,
+     "ok_here": true,
+     "ok_committed": true,
+     "n_seg_here": 38,
+     "n_seg_committed": 38,
+     "total_score_abs_diff": 0.0,
+     "header_crosscheck_ok_here": true
+    },
+    {
+     "stem": "bwv153.1",
+     "in_both": true,
+     "ok_here": true,
+     "ok_committed": true,
+     "n_seg_here": 29,
+     "n_seg_committed": 29,
+     "total_score_abs_diff": 0.0,
+     "header_crosscheck_ok_here": true
+    },
+    {
+     "stem": "bwv2.6",
+     "in_both": true,
+     "ok_here": true,
+     "ok_committed": true,
+     "n_seg_here": 32,
+     "n_seg_committed": 32,
+     "total_score_abs_diff": 0.0,
+     "header_crosscheck_ok_here": true
+    },
+    {
+     "stem": "bwv245.37",
+     "in_both": true,
+     "ok_here": true,
+     "ok_committed": true,
+     "n_seg_here": 42,
+     "n_seg_committed": 42,
+     "total_score_abs_diff": 0.0,
+     "header_crosscheck_ok_here": true
+    },
+    {
+     "stem": "bwv271",
+     "in_both": true,
+     "ok_here": true,
+     "ok_committed": true,
+     "n_seg_here": 34,
+     "n_seg_committed": 34,
+     "total_score_abs_diff": 0.0,
+     "header_crosscheck_ok_here": true
+    },
+    {
+     "stem": "bwv297",
+     "in_both": true,
+     "ok_here": true,
+     "ok_committed": true,
+     "n_seg_here": 36,
+     "n_seg_committed": 36,
+     "total_score_abs_diff": 1.4210854715202004e-14,
+     "header_crosscheck_ok_here": true
+    },
+    {
+     "stem": "bwv321",
+     "in_both": true,
+     "ok_here": true,
+     "ok_committed": true,
+     "n_seg_here": 26,
+     "n_seg_committed": 26,
+     "total_score_abs_diff": 2.842170943040401e-14,
+     "header_crosscheck_ok_here": true
+    },
+    {
+     "stem": "bwv347",
+     "in_both": true,
+     "ok_here": true,
+     "ok_committed": true,
+     "n_seg_here": 40,
+     "n_seg_committed": 40,
+     "total_score_abs_diff": 0.0,
+     "header_crosscheck_ok_here": true
+    },
+    {
+     "stem": "bwv373",
+     "in_both": true,
+     "ok_here": true,
+     "ok_committed": true,
+     "n_seg_here": 25,
+     "n_seg_committed": 25,
+     "total_score_abs_diff": 0.0,
+     "header_crosscheck_ok_here": true
+    },
+    {
+     "stem": "bwv398",
+     "in_both": true,
+     "ok_here": true,
+     "ok_committed": true,
+     "n_seg_here": 38,
+     "n_seg_committed": 38,
+     "total_score_abs_diff": 0.0,
+     "header_crosscheck_ok_here": true
+    },
+    {
+     "stem": "bwv420",
+     "in_both": true,
+     "ok_here": true,
+     "ok_committed": true,
+     "n_seg_here": 31,
+     "n_seg_committed": 31,
+     "total_score_abs_diff": 0.0,
+     "header_crosscheck_ok_here": true
+    },
+    {
+     "stem": "bwv55.5",
+     "in_both": true,
+     "ok_here": true,
+     "ok_committed": true,
+     "n_seg_here": 37,
+     "n_seg_committed": 37,
+     "total_score_abs_diff": 0.0,
+     "header_crosscheck_ok_here": true
+    }
+   ]
+  },
+  "conditions": {
+   "total": 36,
+   "identical": 36,
+   "diverged": [],
+   "max_total_score_delta_abs_diff": 0.0,
+   "rows": [
+    {
+     "condition": "bwv10.7|+2",
+     "in_both": true,
+     "matched_here": 27,
+     "matched_committed": 27,
+     "compared_here": 38,
+     "compared_committed": 38,
+     "boundaries_identical_here": false,
+     "boundaries_identical_committed": false,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 11,
+     "n_violations_committed": 11,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv10.7|+6",
+     "in_both": true,
+     "matched_here": 27,
+     "matched_committed": 27,
+     "compared_here": 38,
+     "compared_committed": 38,
+     "boundaries_identical_here": false,
+     "boundaries_identical_committed": false,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 11,
+     "n_violations_committed": 11,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv10.7|-3",
+     "in_both": true,
+     "matched_here": 25,
+     "matched_committed": 25,
+     "compared_here": 38,
+     "compared_committed": 38,
+     "boundaries_identical_here": false,
+     "boundaries_identical_committed": false,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 13,
+     "n_violations_committed": 13,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv153.1|+2",
+     "in_both": true,
+     "matched_here": 19,
+     "matched_committed": 19,
+     "compared_here": 29,
+     "compared_committed": 29,
+     "boundaries_identical_here": false,
+     "boundaries_identical_committed": false,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 10,
+     "n_violations_committed": 10,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv153.1|+6",
+     "in_both": true,
+     "matched_here": 12,
+     "matched_committed": 12,
+     "compared_here": 29,
+     "compared_committed": 29,
+     "boundaries_identical_here": false,
+     "boundaries_identical_committed": false,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 17,
+     "n_violations_committed": 17,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv153.1|-3",
+     "in_both": true,
+     "matched_here": 11,
+     "matched_committed": 11,
+     "compared_here": 29,
+     "compared_committed": 29,
+     "boundaries_identical_here": false,
+     "boundaries_identical_committed": false,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 18,
+     "n_violations_committed": 18,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv2.6|+2",
+     "in_both": true,
+     "matched_here": 22,
+     "matched_committed": 22,
+     "compared_here": 32,
+     "compared_committed": 32,
+     "boundaries_identical_here": false,
+     "boundaries_identical_committed": false,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 10,
+     "n_violations_committed": 10,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv2.6|+6",
+     "in_both": true,
+     "matched_here": 0,
+     "matched_committed": 0,
+     "compared_here": 32,
+     "compared_committed": 32,
+     "boundaries_identical_here": false,
+     "boundaries_identical_committed": false,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 32,
+     "n_violations_committed": 32,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv2.6|-3",
+     "in_both": true,
+     "matched_here": 16,
+     "matched_committed": 16,
+     "compared_here": 32,
+     "compared_committed": 32,
+     "boundaries_identical_here": false,
+     "boundaries_identical_committed": false,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 16,
+     "n_violations_committed": 16,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv245.37|+2",
+     "in_both": true,
+     "matched_here": 24,
+     "matched_committed": 24,
+     "compared_here": 42,
+     "compared_committed": 42,
+     "boundaries_identical_here": false,
+     "boundaries_identical_committed": false,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 18,
+     "n_violations_committed": 18,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv245.37|+6",
+     "in_both": true,
+     "matched_here": 14,
+     "matched_committed": 14,
+     "compared_here": 42,
+     "compared_committed": 42,
+     "boundaries_identical_here": false,
+     "boundaries_identical_committed": false,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 28,
+     "n_violations_committed": 28,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv245.37|-3",
+     "in_both": true,
+     "matched_here": 19,
+     "matched_committed": 19,
+     "compared_here": 42,
+     "compared_committed": 42,
+     "boundaries_identical_here": false,
+     "boundaries_identical_committed": false,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 23,
+     "n_violations_committed": 23,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv271|+2",
+     "in_both": true,
+     "matched_here": 23,
+     "matched_committed": 23,
+     "compared_here": 34,
+     "compared_committed": 34,
+     "boundaries_identical_here": false,
+     "boundaries_identical_committed": false,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 11,
+     "n_violations_committed": 11,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv271|+6",
+     "in_both": true,
+     "matched_here": 21,
+     "matched_committed": 21,
+     "compared_here": 34,
+     "compared_committed": 34,
+     "boundaries_identical_here": false,
+     "boundaries_identical_committed": false,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 13,
+     "n_violations_committed": 13,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv271|-3",
+     "in_both": true,
+     "matched_here": 22,
+     "matched_committed": 22,
+     "compared_here": 34,
+     "compared_committed": 34,
+     "boundaries_identical_here": false,
+     "boundaries_identical_committed": false,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 12,
+     "n_violations_committed": 12,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv297|+2",
+     "in_both": true,
+     "matched_here": 36,
+     "matched_committed": 36,
+     "compared_here": 36,
+     "compared_committed": 36,
+     "boundaries_identical_here": true,
+     "boundaries_identical_committed": true,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 0,
+     "n_violations_committed": 0,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv297|+6",
+     "in_both": true,
+     "matched_here": 2,
+     "matched_committed": 2,
+     "compared_here": 36,
+     "compared_committed": 36,
+     "boundaries_identical_here": false,
+     "boundaries_identical_committed": false,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 34,
+     "n_violations_committed": 34,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv297|-3",
+     "in_both": true,
+     "matched_here": 23,
+     "matched_committed": 23,
+     "compared_here": 36,
+     "compared_committed": 36,
+     "boundaries_identical_here": false,
+     "boundaries_identical_committed": false,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 13,
+     "n_violations_committed": 13,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv321|+2",
+     "in_both": true,
+     "matched_here": 26,
+     "matched_committed": 26,
+     "compared_here": 26,
+     "compared_committed": 26,
+     "boundaries_identical_here": true,
+     "boundaries_identical_committed": true,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 0,
+     "n_violations_committed": 0,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv321|+6",
+     "in_both": true,
+     "matched_here": 16,
+     "matched_committed": 16,
+     "compared_here": 26,
+     "compared_committed": 26,
+     "boundaries_identical_here": false,
+     "boundaries_identical_committed": false,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 10,
+     "n_violations_committed": 10,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv321|-3",
+     "in_both": true,
+     "matched_here": 26,
+     "matched_committed": 26,
+     "compared_here": 26,
+     "compared_committed": 26,
+     "boundaries_identical_here": true,
+     "boundaries_identical_committed": true,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 0,
+     "n_violations_committed": 0,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv347|+2",
+     "in_both": true,
+     "matched_here": 34,
+     "matched_committed": 34,
+     "compared_here": 40,
+     "compared_committed": 40,
+     "boundaries_identical_here": false,
+     "boundaries_identical_committed": false,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 6,
+     "n_violations_committed": 6,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv347|+6",
+     "in_both": true,
+     "matched_here": 26,
+     "matched_committed": 26,
+     "compared_here": 40,
+     "compared_committed": 40,
+     "boundaries_identical_here": false,
+     "boundaries_identical_committed": false,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 14,
+     "n_violations_committed": 14,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv347|-3",
+     "in_both": true,
+     "matched_here": 22,
+     "matched_committed": 22,
+     "compared_here": 40,
+     "compared_committed": 40,
+     "boundaries_identical_here": false,
+     "boundaries_identical_committed": false,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 18,
+     "n_violations_committed": 18,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv373|+2",
+     "in_both": true,
+     "matched_here": 25,
+     "matched_committed": 25,
+     "compared_here": 25,
+     "compared_committed": 25,
+     "boundaries_identical_here": true,
+     "boundaries_identical_committed": true,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 0,
+     "n_violations_committed": 0,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv373|+6",
+     "in_both": true,
+     "matched_here": 21,
+     "matched_committed": 21,
+     "compared_here": 25,
+     "compared_committed": 25,
+     "boundaries_identical_here": false,
+     "boundaries_identical_committed": false,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 4,
+     "n_violations_committed": 4,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv373|-3",
+     "in_both": true,
+     "matched_here": 19,
+     "matched_committed": 19,
+     "compared_here": 25,
+     "compared_committed": 25,
+     "boundaries_identical_here": true,
+     "boundaries_identical_committed": true,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 6,
+     "n_violations_committed": 6,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv398|+2",
+     "in_both": true,
+     "matched_here": 38,
+     "matched_committed": 38,
+     "compared_here": 38,
+     "compared_committed": 38,
+     "boundaries_identical_here": true,
+     "boundaries_identical_committed": true,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 0,
+     "n_violations_committed": 0,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv398|+6",
+     "in_both": true,
+     "matched_here": 28,
+     "matched_committed": 28,
+     "compared_here": 38,
+     "compared_committed": 38,
+     "boundaries_identical_here": true,
+     "boundaries_identical_committed": true,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 10,
+     "n_violations_committed": 10,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv398|-3",
+     "in_both": true,
+     "matched_here": 26,
+     "matched_committed": 26,
+     "compared_here": 38,
+     "compared_committed": 38,
+     "boundaries_identical_here": false,
+     "boundaries_identical_committed": false,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 12,
+     "n_violations_committed": 12,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv420|+2",
+     "in_both": true,
+     "matched_here": 29,
+     "matched_committed": 29,
+     "compared_here": 31,
+     "compared_committed": 31,
+     "boundaries_identical_here": false,
+     "boundaries_identical_committed": false,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 2,
+     "n_violations_committed": 2,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv420|+6",
+     "in_both": true,
+     "matched_here": 4,
+     "matched_committed": 4,
+     "compared_here": 31,
+     "compared_committed": 31,
+     "boundaries_identical_here": false,
+     "boundaries_identical_committed": false,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 27,
+     "n_violations_committed": 27,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv420|-3",
+     "in_both": true,
+     "matched_here": 21,
+     "matched_committed": 21,
+     "compared_here": 31,
+     "compared_committed": 31,
+     "boundaries_identical_here": false,
+     "boundaries_identical_committed": false,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 10,
+     "n_violations_committed": 10,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv55.5|+2",
+     "in_both": true,
+     "matched_here": 37,
+     "matched_committed": 37,
+     "compared_here": 37,
+     "compared_committed": 37,
+     "boundaries_identical_here": true,
+     "boundaries_identical_committed": true,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 0,
+     "n_violations_committed": 0,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv55.5|+6",
+     "in_both": true,
+     "matched_here": 34,
+     "matched_committed": 34,
+     "compared_here": 37,
+     "compared_committed": 37,
+     "boundaries_identical_here": false,
+     "boundaries_identical_committed": false,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 3,
+     "n_violations_committed": 3,
+     "violation_identities_equal": true,
+     "identical": true
+    },
+    {
+     "condition": "bwv55.5|-3",
+     "in_both": true,
+     "matched_here": 36,
+     "matched_committed": 36,
+     "compared_here": 37,
+     "compared_committed": 37,
+     "boundaries_identical_here": true,
+     "boundaries_identical_committed": true,
+     "total_score_delta_abs_diff": 0.0,
+     "n_violations_here": 1,
+     "n_violations_committed": 1,
+     "violation_identities_equal": true,
+     "identical": true
+    }
+   ]
+  },
+  "verdict": "REPRODUCED - the apparatus establishes here (same segments, scores within its own tolerance), and all 36 transposed conditions match the committed run condition for condition and violation identity for violation identity. The only difference anywhere is two total scores at the last places of a double; see establishment.float_note."
+ },
+ "B_separation_the_dispatch_asked_for": {
+  "definitions_registered_before_measuring": {
+   "BND": "every violation in a condition whose segment boundaries moved - NOT defensible: segmenting the same sounding music differently is not a spelling choice",
+   "COLLAPSE": "a condition matching <= 10% of its segments; a subset of BND, reported separately - NOT defensible",
+   "LBL-PRUNE": "a label-only violation whose expected state was not in the candidate set - NOT defensible: that is the admission prune (OI-244), not a spelling judgment",
+   "LBL-ENH": "a label-only violation at k = +6 with the expected state in the candidate set - THE DEFENSIBLE UPPER BOUND: +6 is the one shift whose spelling the declared convention had to choose arbitrarily",
+   "LBL-OTHER": "a label-only violation at k = +2 or -3 with the expected state in the candidate set - NOT defensible: those shifts have an unambiguous engraver spelling"
+  },
+  "totals": {
+   "violations": 413,
+   "BND": 396,
+   "LBL_PRUNE": 5,
+   "LBL_ENH_defensible_upper_bound": 10,
+   "LBL_OTHER": 2,
+   "defensible_fraction": 0.024213,
+   "not_defensible_fraction": 0.975787,
+   "boundary_moved_conditions": 27,
+   "conditions": 36
+  },
+  "collapse_conditions": [
+   {
+    "condition": "bwv2.6|+6",
+    "matched": 0,
+    "compared": 32,
+    "total_score_delta": -12.96777
+   },
+   {
+    "condition": "bwv297|+6",
+    "matched": 2,
+    "compared": 36,
+    "total_score_delta": -15.015062
+   }
+  ],
+  "near_collapse_conditions": {
+   "note": "conditions matching between 10% and 20% of their segments - reported because the registered numeric threshold and the committed report's prose phrase 'three near-total collapses' do not pick out the same set, and the difference is a definitional one inside the prediction, not a fact about the decoder",
+   "conditions": [
+    {
+     "condition": "bwv420|+6",
+     "matched": 4,
+     "compared": 31,
+     "matched_fraction": 0.129,
+     "total_score_delta": -15.81164
+    }
+   ]
+  },
+  "per_shift": {
+   "-3": {
+    "compared": 408,
+    "matched": 266,
+    "violations": 142,
+    "conditions": 12,
+    "boundaries_identical": 3
+   },
+   "2": {
+    "compared": 408,
+    "matched": 340,
+    "violations": 68,
+    "conditions": 12,
+    "boundaries_identical": 5
+   },
+   "6": {
+    "compared": 408,
+    "matched": 205,
+    "violations": 203,
+    "conditions": 12,
+    "boundaries_identical": 1
+   }
+  },
+  "members": {
+   "LBL-PRUNE": [
+    {
+     "condition": "bwv373|-3",
+     "tick": 10080,
+     "seg_index": 13
+    },
+    {
+     "condition": "bwv373|-3",
+     "tick": 11040,
+     "seg_index": 15
+    },
+    {
+     "condition": "bwv373|-3",
+     "tick": 12000,
+     "seg_index": 17
+    },
+    {
+     "condition": "bwv373|-3",
+     "tick": 12480,
+     "seg_index": 18
+    },
+    {
+     "condition": "bwv55.5|-3",
+     "tick": 10560,
+     "seg_index": 18
+    }
+   ],
+   "LBL-ENH": [
+    {
+     "condition": "bwv398|+6",
+     "tick": 12480,
+     "seg_index": 15
+    },
+    {
+     "condition": "bwv398|+6",
+     "tick": 12960,
+     "seg_index": 16
+    },
+    {
+     "condition": "bwv398|+6",
+     "tick": 13440,
+     "seg_index": 17
+    },
+    {
+     "condition": "bwv398|+6",
+     "tick": 13920,
+     "seg_index": 18
+    },
+    {
+     "condition": "bwv398|+6",
+     "tick": 14400,
+     "seg_index": 19
+    },
+    {
+     "condition": "bwv398|+6",
+     "tick": 14880,
+     "seg_index": 20
+    },
+    {
+     "condition": "bwv398|+6",
+     "tick": 21600,
+     "seg_index": 27
+    },
+    {
+     "condition": "bwv398|+6",
+     "tick": 24480,
+     "seg_index": 31
+    },
+    {
+     "condition": "bwv398|+6",
+     "tick": 24960,
+     "seg_index": 32
+    },
+    {
+     "condition": "bwv398|+6",
+     "tick": 25440,
+     "seg_index": 33
+    }
+   ],
+   "LBL-OTHER": [
+    {
+     "condition": "bwv373|-3",
+     "tick": 10560,
+     "seg_index": 14
+    },
+    {
+     "condition": "bwv373|-3",
+     "tick": 11520,
+     "seg_index": 16
+    }
+   ]
+  },
+  "bnd_conditions": [
+   "bwv10.7|+2",
+   "bwv10.7|+6",
+   "bwv10.7|-3",
+   "bwv153.1|+2",
+   "bwv153.1|+6",
+   "bwv153.1|-3",
+   "bwv2.6|+2",
+   "bwv2.6|+6",
+   "bwv2.6|-3",
+   "bwv245.37|+2",
+   "bwv245.37|+6",
+   "bwv245.37|-3",
+   "bwv271|+2",
+   "bwv271|+6",
+   "bwv271|-3",
+   "bwv297|+6",
+   "bwv297|-3",
+   "bwv321|+6",
+   "bwv347|+2",
+   "bwv347|+6",
+   "bwv347|-3",
+   "bwv373|+6",
+   "bwv398|-3",
+   "bwv420|+2",
+   "bwv420|+6",
+   "bwv420|-3",
+   "bwv55.5|+6"
+  ],
+  "what_this_says": "The defensible share is the ONLY part of the measured non-equivariance that an engraver's spelling choice could account for. Everything else is the same sounding music segmented differently, a reading the prune removed from the candidate list, or a flip at a shift whose spelling was never ambiguous."
+ },
+ "predictions_scored": [
+  {
+   "id": "R1",
+   "claim": "establishment reproduces 12/12, segments and total score",
+   "registered": "12/12 exact",
+   "measured": "apparatus criterion PASS 12/12; segments bit-identical True; total scores bit-identical 10/12, max |diff| 2.84217e-14",
+   "verdict": "CONFIRMED AT THE APPARATUS CRITERION - the word 'exact' in the registered claim is refuted at two pieces by about 1e-14, which is the R1-risk below arriving with its predicted consequence (zero decode flips) intact"
+  },
+  {
+   "id": "R1-risk",
+   "claim": "a different C library could differ in the last place; predicted incidence zero and predicted consequence zero decode flips",
+   "registered": "zero incidence, zero flips",
+   "measured": "incidence 2 of 12 pieces (max |diff| 2.84217e-14); flips 0 - every segment list bit-identical and max |transposed total-score delta difference| over 36 conditions = 0.0",
+   "verdict": "PARTLY REFUTED - the incidence half is wrong (two pieces differ), the consequence half is CONFIRMED (nothing moved). The registered follow-up question - near-tie flip or something moved - is answered by the diff magnitude: about 1e-14 is a floating-point last place, not a moved input"
+  },
+  {
+   "id": "R1-header",
+   "claim": "header cross-check true on all 12",
+   "registered": "12",
+   "measured": "12",
+   "verdict": "CONFIRMED"
+  },
+  {
+   "id": "R2",
+   "claim": "the transposed conditions reproduce the committed figures exactly",
+   "registered": "811/1224 matched; 9 of 36 boundary-identical; 413 violations; every condition and violation identity equal",
+   "measured": "811/1224 matched; 9 of 36 boundary-identical; 413 violations; 36/36 conditions identical",
+   "verdict": "CONFIRMED"
+  },
+  {
+   "id": "R3-BND",
+   "claim": "boundary movement is about 96 % of the violations",
+   "registered": "BND about 396 of 413 (about 95.9 %); 27 of 36 conditions boundary-moved",
+   "measured": "BND 396 of 413 (95.9%); 27 of 36 boundary-moved",
+   "verdict": "CONFIRMED"
+  },
+  {
+   "id": "R3-COLLAPSE",
+   "claim": "three collapse conditions, all at +6",
+   "registered": "3 (bwv2.6|+6, bwv297|+6, bwv420|+6), under a threshold registered as <= 10% of segments matched",
+   "measured": "2 at the registered threshold: ['bwv2.6|+6', 'bwv297|+6']; near-collapse (<= 20%): ['bwv420|+6']",
+   "verdict": "REFUTED AS REGISTERED, and the fault is in the prediction, not the data: the numeric threshold and the named list were registered in the same breath and do not pick out the same set - bwv420|+6 matches 4 of 31 segments, which is above the 10 % line and which the committed report's looser prose phrase 'near-total collapse' includes. Nothing about the decoder is in question; all three conditions are boundary-moved and none is defensible either way"
+  },
+  {
+   "id": "R3-PRUNE",
+   "claim": "five label-only violations are the admission prune",
+   "registered": "5",
+   "measured": "5",
+   "verdict": "CONFIRMED"
+  },
+  {
+   "id": "R3-ENH",
+   "claim": "the DEFENSIBLE upper bound is 10 of 413, band 8-10",
+   "registered": "8-10 violations (about 1.9-2.4 %)",
+   "measured": "10 of 413 (2.42%)",
+   "verdict": "CONFIRMED"
+  }
+ ],
+ "what_this_does_NOT_settle": "It re-measures; it does not fix. The disposition of OI-243 and OI-244 belongs to the family design at its own stage, over the whole family at once."
+}
