@@ -156,29 +156,29 @@ project's own and are defined here because they are used before any entry explai
 
 ## What is in this register, counted
 
-**423 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
+**426 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
 
 | | Count |
 |---|---|
-| Decisions recorded | **423** |
-| — of which live | 362 |
+| Decisions recorded | **426** |
+| — of which live | 365 |
 | — of which superseded in fact | 5 |
 | — of which superseded by | 9 |
 | — of which deferred | 45 |
 | — of which shelved with evidence | 2 |
 | Decisions whose date is not stated in the record | 205 |
 | Decisions whose ratifier is not stated in the record | 258 |
-| Decisions recorded outside the specification that owns them | 222 |
-| — of which a documentation gap | 46 |
+| Decisions recorded outside the specification that owns them | 225 |
+| — of which a documentation gap | 49 |
 | — of which recorded only on a tracking surface, with no home at all | 11 |
 | — of which a project-wide convention, correctly homed | 35 |
 | — of which a decision about the process, correctly homed | 45 |
 | Decisions whose defense the record does not state | 44 |
 | Entries whose own ratification the provenance records | 187 |
 
-The second-to-last row is about the DECISIONS; the last is about the ENTRIES. **187 of 423** entries carry a recorded event at which the entry itself — this quote, this restatement, this status — was reviewed and ratified. The remaining 236 do not carry one in their own provenance; the register-level ratification events listed in the preamble are the place to look for those, and nothing is inferred from them into the per-entry field.
+The second-to-last row is about the DECISIONS; the last is about the ENTRIES. **187 of 426** entries carry a recorded event at which the entry itself — this quote, this restatement, this status — was reviewed and ratified. The remaining 239 do not carry one in their own provenance; the register-level ratification events listed in the preamble are the place to look for those, and nothing is inferred from them into the per-entry field.
 
-That last row is the one meant to fall. **379 of 423** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
+That last row is the one meant to fall. **382 of 426** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
 
 Alongside the register, every one of the harvested statements about decisions in this repository has been given a recorded disposition, so that none was silently passed over:
 
@@ -190,8 +190,8 @@ Alongside the register, every one of the harvested statements about decisions in
 | — restates | 5515 |
 | — not-a-decision | 5552 |
 | — boilerplate | 74 |
-| — no-spec-home | 649 |
-| — unresolved | 2670 |
+| — no-spec-home | 651 |
+| — unresolved | 2668 |
 
 The full disposition table, and the numbered rule behind each one, are in `tools/audit/decisions/cluster_dispositions.csv` and `tools/audit/decisions/disposition_manifest.json`.
 
@@ -253,6 +253,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-021 | The pedal-point fields are suspended on the record arm | DEFERRED | — | `ARCHITECTURE.md` |
 | D-275 | Every published record carries its own instrument provenance; a provenance-less analysis cannot exist | LIVE | 2026-08-02 · user | `cowork_notation_output_contract.md` |
 | D-276 | Modal colour is published as un-rounded per-degree counts; no mode label is inferred or published anywhere | LIVE | 2026-08-02 · user | `cowork_notation_output_contract.md` |
+| D-425 | The uncertainty surface's contract IS the full posterior; the local slice is the first delivered step, and the completion is a named step, never an indefinite upgrade | LIVE | — | `cowork_notation_adoption_increment.md` ⚠gap |
+| D-426 | The modal reading lands inside the notation increment; the ornament labels get their own increment, with the tracking row created at ruling time | LIVE | — | `cowork_notation_adoption_increment.md` ⚠gap |
 
 ## C. Cross-cutting analysis contracts — [full entries](decisions/group_C.md)
 
@@ -529,6 +531,7 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 | D-257 | A specification carries a locator to its code and tests; code mechanics never do the explaining | LIVE | 2026-08-02 · user | `cowork_design_doc_template.md` |
 | D-307 | A specification cites code by function or section anchor, never by raw line number | LIVE | 2026-08-02 · user | `cowork_design_doc_template.md` |
 | D-420 | One cross-layer extension specification, and the duplicate written the same day is killed into it | LIVE | 2026-08-03 · user | `docs/implementation_roadmap.md` |
+| D-424 | A decision surface names the principle behind every pro and con, and rates every option on two axes | LIVE | — | `cowork_notation_adoption_increment.md` ⚠gap |
 
 ## L. Licensing, contribution, and coding standards — [full entries](decisions/group_L.md)
 
@@ -733,8 +736,8 @@ The full disposition table, and the numbered rule behind each one, are in `tools
 ## Provenance of this register
 
 - Adjudication: the OI-207 decision-conformance adjudication, 2026-08-01, at commit `58dea6702ac8aa9d5ef8b89244b94d587a75f7a5`.
-- Coverage figures above regenerated at commit `16f1f1775e3910f522d3d981903efd1f590e35e4`.
-- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `dea927703bab308a…`).
+- Coverage figures above regenerated at commit `be5097f74090617e05098820fc4dfd8d8dab5b7e`.
+- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `f0eba5439ed576f2…`).
 - Harvest: `tools/audit/decisions/decision_candidates.json` (sha256 `51850440b315e6e9…`).
 - Clustering: `tools/audit/decisions/decision_clusters.json` (sha256 `0615b1e61bf10332…`).
 - Shape: `open_items/OI-208.md` (user-ratified 2026-07-28).

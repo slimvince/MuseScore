@@ -15,11 +15,11 @@
    },
    "backbone": {
     "file": "tools/audit/decisions/backbone_decisions.json",
-    "sha256": "dea927703bab308a55bce5d52483daee2d1edf753ae60d7c0c2024263764be72",
-    "decision_count": 423
+    "sha256": "f0eba5439ed576f24495b8e043b9bf55ffc4626e6603c9e884fe59401fae96f3",
+    "decision_count": 426
    }
   },
-  "head_commit": "16f1f1775e3910f522d3d981903efd1f590e35e4",
+  "head_commit": "be5097f74090617e05098820fc4dfd8d8dab5b7e",
   "disposition_vocabulary": [
    "restates",
    "not-a-decision",
@@ -70,7 +70,7 @@
    {
     "id": "BR-4",
     "rule": "The cluster's text matches one or more backbone decisions, ALL of which are recorded outside any layer specification. Recorded as a decision with no layer-specification home (named) — the Task-4 documentation-gap class.",
-    "clusters": 649
+    "clusters": 651
    },
    {
     "id": "BR-5",
@@ -140,18 +140,18 @@
    {
     "id": "BR-8",
     "rule": "Residual: none of the above applies. Recorded UNRESOLVED — the honest outcome, and the count is a finding about the record's legibility.",
-    "clusters": 2670
+    "clusters": 2668
    }
   ],
   "disposition_counts": {
    "restates": 5515,
    "not-a-decision": 5552,
    "boilerplate": 74,
-   "no-spec-home": 649,
-   "unresolved": 2670
+   "no-spec-home": 651,
+   "unresolved": 2668
   },
   "unresolved_partition_by_surface": {
-   "cowork_* design documents": 825,
+   "cowork_* design documents": 823,
    "docs/ design documents": 396,
    "cc_* session reports": 316,
    "tools/ script comments": 295,
@@ -1735,7 +1735,8 @@
     "D-095",
     "D-119",
     "D-190",
-    "D-276"
+    "D-276",
+    "D-426"
    ],
    "categories": [
     "cc_reports",
@@ -58862,9 +58863,11 @@
   {
    "cluster_id": "DC-02797",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
-   "decisions": [],
+   "disposition": "no-spec-home",
+   "rule": "BR-4",
+   "decisions": [
+    "D-425"
+   ],
    "categories": [
     "cowork_docs"
    ],
@@ -59371,9 +59374,11 @@
   {
    "cluster_id": "DC-02822",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
-   "decisions": [],
+   "disposition": "no-spec-home",
+   "rule": "BR-4",
+   "decisions": [
+    "D-426"
+   ],
    "categories": [
     "cowork_docs"
    ],

@@ -5,6 +5,30 @@
 > Historical entries live in `STATUS_ARCHIVE.md` (reference-only, NOT part of the session-start
 > read) — a superseded entry moves there instead of accumulating here.
 
+*Last updated: 2026-08-03, LATEST++++++++++++ (CC — **★ PHASE 1l: THE USER'S SECOND RULING SET OF 2026-08-03 IS APPLIED — EXCEPT ONE, WHICH STOPPED ON ITS OWN PREMISE. The register is
+423 → 426; the unresolved residual 2,670 → 2,668; nine entries RATIFIED; the register gains an ENTRY-RATIFICATION FIELD; two rows FLIP, two open; one more LIVE-SPEC document read in
+full.** READ-ONLY on the system: no `src/` change, no golden / `tools/corpus/` / `tools/robust_stop/` movement, no behavior change, no fix, no design, no inference change. Dispatch
+**`cc_instruction_phase1l_rulings_and_reads.md`** (cite it by THAT name — phase 1k's two commits cited a filename that exists nowhere, repaired at [[OI-285]]). Per the OI-222 remedy this
+entry is a **POINTER** — the content lives in the specifications, the register and the dated notes. **★ THE ONE THING THE USER SHOULD SEE FIRST — [[OI-286]], and it is a STOP.** Task 2
+ordered a disposition for **D-416** (the two owed structural refactors) on a stated premise, and made the code check precede the ruling. The check refuted the premise twice over, so **the
+disposition was NOT written**: (a) half (1)'s file split is **DELIVERED** — commit `41f7c65f63`, 2026-06-17, *three days after* the 2026-06-14 mandate deferred it — and it IS the same
+named act as D-311's R9, which the roadmap calls "OWED refactor #1" in so many words; (b) **five later records, two of them user-ratified surfaces** (the retirement map **D-418**; D-311
+itself), still call it owed and parked, none noting the delivery; (c) **part of the subject is LIVE production code** — `chordsymbolformatter.cpp`, one of the five units the split
+produced, runs on the record arm — so "superseded by D-418, the subject deleted rather than refactored" would have been false of the subject. What IS still owed is the iteration-API
+renames, undone. **Read, in this order:** [[OI-286]]; then **[[OI-281]]'s measurement note** (the ruled delegation-specificity criterion MEASURED and deliberately NOT applied — 131
+entries, 36 move on the clean cases, **but 33 are genuinely ambiguous, more than the clean net movement of +16, so the criterion does not determine the direction of its own effect**;
+both phase-1i precedents land where they were — no #13 STOP — though `cowork_structural_integrity_audit.md` now hangs on the JUDGMENT clause alone; **and the criterion does not ANSWER
+[[OI-268]]'s Cowork-ratification sibling, it makes it MOOT**); then [[OI-284]]'s note (**the row FLIPS** — the engage criteria govern engaging the DORMANT spine, not the joint
+estimator's adoption; D-417 stays LIVE and SCOPED, its entry saying in terms that this is a **reconstruction of scope, labelled as one**; three annotations at the roadmap, the retirement
+map explicitly excluded); then [[OI-285]] (**FLIPS for the COMMIT half only** — seven surfaces committed IN PLACE unchanged, plus an EIGHTH its own enumeration missed, the phase-1k
+dispatch; the directory half carried on the new [[OI-287]]); then [[OI-207]]'s note (the read, its three entries, and why the yield is three and not eight). **Also delivered:** the
+register's new **entry-ratification field**, backfilled MECHANICALLY from the ★ RATIFIED provenance marker and nowhere else — 187 of 426, 0 markers unmatched, the 236 without one
+reported rather than guessed at; the dispatch estimated "thirty-odd" and the true count is 178 before this wave's nine. All guards PASS at the committed tree (`--verify` 426/426 quotes,
+420/420 anchors, references ALL; `--check` the register matches the data across 21 files; dispositions 14,460/14,460 clusters, 15,224/15,224 occurrences; open-items living check
+287/287). **NEXT: the user rules on [[OI-286]] — is half (1) discharged, and what becomes of R9 and D-311 — before D-416 can be dispositioned at all; ratifies (or corrects) D-424…D-426;
+and answers [[OI-281]]'s two follow-on questions (does "Full spec: `X`" delegate or only cite — 26 entries; is a SHELVED document stable enough to be cited — 9) before any
+re-classification runs. Then the remaining 62-document full read before phase 2 opens.**)*
+
 *Last updated: 2026-08-03, LATEST+++++++++++ (CC — **★ PHASE 1k: THE USER'S FIVE RULINGS OF 2026-08-03 ARE APPLIED, AND ONE MORE LIVE-SPEC DOCUMENT IS READ IN FULL. The register
 is 414 → 423; the documentation-gap home count 56 → 42; the unresolved residual 2,674 → 2,670; five rows opened, one flipped; nine entries RATIFIED and fourteen
 re-classified contract-home.** READ-ONLY on the system: no `src/` change, no golden / `tools/corpus/` / `tools/robust_stop/` movement, no behavior change, no fix, no

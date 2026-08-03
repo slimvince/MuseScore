@@ -68,7 +68,7 @@ DC-00066,2,unresolved,BR-8,,cc_reports;governing,paragraph,ARCHITECTURE.md;cc_st
 DC-00067,2,restates,BR-3,D-097;D-183,governing,bullet,ARCHITECTURE.md;STATUS_ARCHIVE.md
 DC-00068,2,restates,BR-3,D-073;D-119;D-170;D-190,cc_reports;governing,paragraph,CLAUDE.md;cc_instruction_notation_consumption_audit.md
 DC-00069,2,restates,BR-3,D-115;D-119,cowork_docs;governing,bullet;paragraph,CLAUDE.md;cowork_gate_policy_amendment.md
-DC-00070,2,restates,BR-3,D-008;D-021;D-095;D-119;D-190;D-276,cc_reports;governing,paragraph,STATUS_ARCHIVE.md;cc_instruction_notation_consumption_audit.md
+DC-00070,2,restates,BR-3,D-008;D-021;D-095;D-119;D-190;D-276;D-426,cc_reports;governing,paragraph,STATUS_ARCHIVE.md;cc_instruction_notation_consumption_audit.md
 DC-00071,2,boilerplate,BR-1,,cc_reports;governing,blockquote;paragraph,STATUS_ARCHIVE.md;cc_instruction_commit_idiom_work.md
 DC-00072,2,unresolved,BR-8,,governing,table_row,STATUS_ARCHIVE.md
 DC-00073,2,restates,BR-3,D-115;D-119,cc_reports;cowork_docs,bullet,cc_engage_c3_measurement_report.md;cowork_fb_redesign_design.md
@@ -2795,7 +2795,7 @@ DC-02793,1,restates,BR-3,D-099;D-119,cowork_docs,bullet,cowork_notation_adoption
 DC-02794,1,unresolved,BR-8,,cowork_docs,bullet,cowork_notation_adoption_increment.md
 DC-02795,1,restates,BR-3,D-119,cowork_docs,bullet,cowork_notation_adoption_increment.md
 DC-02796,1,restates,BR-3,D-099;D-119,cowork_docs,paragraph,cowork_notation_adoption_increment.md
-DC-02797,1,unresolved,BR-8,,cowork_docs,paragraph,cowork_notation_adoption_increment.md
+DC-02797,1,no-spec-home,BR-4,D-425,cowork_docs,paragraph,cowork_notation_adoption_increment.md
 DC-02798,1,not-a-decision,BR-2,,cowork_docs,heading,cowork_notation_adoption_increment.md
 DC-02799,1,restates,BR-3,D-054;D-276,cowork_docs,paragraph,cowork_notation_adoption_increment.md
 DC-02800,1,restates,BR-3,D-119;D-182,cowork_docs,bullet,cowork_notation_adoption_increment.md
@@ -2820,7 +2820,7 @@ DC-02818,1,restates,BR-3,D-097,cowork_docs,bullet,cowork_notation_adoption_incre
 DC-02819,1,unresolved,BR-8,,cowork_docs,paragraph,cowork_notation_adoption_increment.md
 DC-02820,1,restates,BR-3,D-095;D-119,cowork_docs,bullet,cowork_notation_adoption_increment.md
 DC-02821,1,restates,BR-3,D-095;D-119,cowork_docs,bullet,cowork_notation_adoption_increment.md
-DC-02822,1,unresolved,BR-8,,cowork_docs,paragraph,cowork_notation_adoption_increment.md
+DC-02822,1,no-spec-home,BR-4,D-426,cowork_docs,paragraph,cowork_notation_adoption_increment.md
 DC-02823,1,not-a-decision,BR-2,,cowork_docs,heading,cowork_notation_adoption_increment.md
 DC-02824,1,restates,BR-3,D-009;D-018;D-099;D-112;D-119,cowork_docs,bullet,cowork_notation_adoption_increment.md
 DC-02825,1,restates,BR-3,D-010;D-095,cowork_docs,bullet,cowork_notation_adoption_increment.md
