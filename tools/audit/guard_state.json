@@ -2,6 +2,7 @@
   "purpose": "Every guard in the record, run and recorded: which passed, which failed, and for each failure the complete output it produced. The list is derived and authored against each other so neither an addition nor a deletion is silent.",
   "generated_by": "tools/audit/gen_guard_state.py",
   "generated_for": "cc_instruction_phase1x_guard_visibility_and_commit.md, Task 2",
+  "one_normalization_and_why": "A commit sha in a guard's own output is replaced by 'HEAD <sha>' in the captured text. Without it this artifact is unreproducible by construction — committing it changes HEAD, so the next --check reports drift that is not drift. Narrow and by pattern; no verdict is affected.",
   "why_this_run_can_be_trusted_where_earlier_ones_could_not": "Every guard here routes its printing through tools/audit/output_encoding.py, so a findings list can no longer be truncated by a character the console cannot encode. Before that fix, a check could exit non-zero having printed a clean-looking summary and none of what it found -- which is how OPEN_ITEMS.md OI-305 went unreported.",
   "the_population": {
     "derived": [
@@ -423,7 +424,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "OK: all 38 anchors verified at HEAD 3af0e34f9c"
+        "OK: all 38 anchors verified at HEAD <sha>"
       ],
       "stderr": [],
       "what_it_checks": "the notation-seam call-path anchors are still where the artifact says"

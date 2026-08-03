@@ -152,13 +152,22 @@ def candidates() -> list[str]:
     return sorted(found)
 
 
+# A guard that stamps the current HEAD into its own output makes this artifact unreproducible BY
+# CONSTRUCTION: committing it changes HEAD, so the next --check reports drift that is not drift.
+# Caught by running --check at the tree this artifact was committed to, on the first commit that
+# carried it (`gen_callpath_facts.py`, which prints "verified at HEAD <sha>"). The sha is
+# normalized in the CAPTURED output only — narrowly, by pattern, so nothing else is touched, and
+# the reported pass/fail is untouched either way.
+HEAD_SHA = re.compile(r"\bHEAD [0-9a-f]{7,40}\b")
+
+
 def run_one(rel: str, args: list[str]) -> dict:
     proc = subprocess.run(
         [sys.executable, os.path.join(ROOT, rel), *args],
         capture_output=True, cwd=ROOT,
     )
-    out = proc.stdout.decode("utf-8", errors="replace")
-    err = proc.stderr.decode("utf-8", errors="replace")
+    out = HEAD_SHA.sub("HEAD <sha>", proc.stdout.decode("utf-8", errors="replace"))
+    err = HEAD_SHA.sub("HEAD <sha>", proc.stderr.decode("utf-8", errors="replace"))
     return {
         "tool": rel,
         "args": args,
@@ -196,6 +205,11 @@ def main(argv: list[str]) -> int:
                    "authored against each other so neither an addition nor a deletion is silent.",
         "generated_by": SELF,
         "generated_for": "cc_instruction_phase1x_guard_visibility_and_commit.md, Task 2",
+        "one_normalization_and_why": "A commit sha in a guard's own output is replaced by "
+                                     "'HEAD <sha>' in the captured text. Without it this artifact "
+                                     "is unreproducible by construction — committing it changes "
+                                     "HEAD, so the next --check reports drift that is not drift. "
+                                     "Narrow and by pattern; no verdict is affected.",
         "why_this_run_can_be_trusted_where_earlier_ones_could_not":
             "Every guard here routes its printing through tools/audit/output_encoding.py, so a "
             "findings list can no longer be truncated by a character the console cannot encode. "
