@@ -200,15 +200,24 @@ These five concepts are used throughout §5 and are defined here once so no rule
 - **A licensed (real) progression.** A **root motion** between two functions is **licensed** when it is one of the standard
   functional successions: a descending-fifth (dominant) motion, a descending-third or ascending-second functional step,
   the resolution of an applied or leading-tone chord to its tonicized target, or a cadential motion (§5.2).
-  **(§15-12 AMENDMENT — RATIFIED (user, 2026-07-03); in force in this spec, not yet in code):** the pre-amendment
+  **(★ THE GRAMMAR-COMPLETION AMENDMENT — found 2026-07-02 by the D5 consistency check; ★ RATIFIED by the user
+  2026-07-03; in force in this spec, not yet in code — the code increment is pending):** the pre-amendment
   set descended from the old scoring-bonus signals and omitted three theory-licensed motions the catalog's
   musically-correct
   entries exercise; the licensed set now **also includes**: **the ascending fifth** (tonic→dominant and plagal
   motion — I→V, IV→I), **the descending second** (the Phrygian/Andalusian step — i→♭VII, ♭VII→♭VI, ♭VI→V), and **the
-  diatonic diminished fifth** (the IV→viiᵒ link of the full circle of fifths). Implementation = its own small dormant
+  diatonic diminished fifth** (the IV→viiᵒ link of the full circle of fifths). This is **algorithmic completion per
+  theory, NOT tuning**. Implementation = its own small dormant
   increment (`isLicensedProgression` + tests, instruction pending dispatch); the consumer's D5 consistency test then
   empties its 11-motion known-gap list and tightens to the clean assert. Until that increment lands, the code
-  implements the pre-amendment set — a known, ruled spec-ahead-of-code state. A reading
+  implements the pre-amendment set — a known, ruled spec-ahead-of-code state.
+  **Evidence:** the 6-entry/**11-motion** failure table, measured, enumerated and
+  pinned in the consumer's consistency test (`EXPECT_EQ(failing.size(), 11u)`) — the earlier "12" was a Cowork
+  arithmetic error, corrected 2026-07-02 (U2); the measured 11 is authoritative.
+  *(Homed here 2026-08-03 on the user's ruling, `OPEN_ITEMS.md` OI-295: the amendment was recorded in §15's
+  open-items list, a section that records findings, while the rule it states belongs to the section it amends. The
+  enumeration half already stood here; what moved is the ratification, the completion-not-tuning characterization and
+  the evidence — moved unchanged, never rewritten, #12. Register entry **D-341**.)* A reading
   "participates in a real progression" when its function forms a licensed motion **into** the established next function.
   (Because the test is on *root motion*, a **same-root quality resolution** — e.g. an augmented chord resolving to a chord
   on the same root — is **not** a progression and is outside this test; such voice-leading events are a chord-layer /
@@ -223,7 +232,7 @@ These five concepts are used throughout §5 and are defined here once so no rule
   consistency test (`progressionrecognizer_tests.cpp`), one-way (catalog → grammar). Owner ruling: D5
   (`cowork_progression_schema_design.md` §6), user-ratified 2026-07-02; cross-commented at `functionprogression.h` and
   `harmonicvocabulary.h`. *(The §5.0 grammar as coded omits three theory-licensed motions the catalog exercises — the
-  ruled grammar gaps of §15-12, to be completed there, not in a consumer build.)*
+  ruled grammar gaps of the amendment above, to be completed there, not in a consumer build.)*
 - **A resolution (as a detected event).** A **leading-tone resolution** is detected when the leading-tone pitch sounding
   in a voice of the approach chord moves to the tonic in **that same voice** at the arrival; a **tritone resolution** is
   detected when the dominant's tritone (the fourth and seventh degrees) contracts or expands by step to the tonic's third
@@ -885,18 +894,14 @@ catalog §Sources.
     preserving the chorale behaviour where boundaries are strong. The graded profile already carries the needed
     signal; this is a consumption rule, not a new primitive. Source: `cowork_architecture_review_2026_07.md` §7/§9
     (F-11, A-5).
-12. **★ §5.0 grammar completion (found 2026-07-02 by the D5 consistency check — ★ RATIFIED by the user 2026-07-03;
-    the §5.0 enumeration is amended, the code increment is pending).** The licensed
-    root-motion set descended from the old scoring-bonus signals and omitted three theory-licensed motions the
-    catalog's
-    own musically-correct entries exercise: **ascending fifth / plagal motion** (IV→I, I→V — tonic-to-dominant!),
-    **descending second** (the Phrygian/Andalusian step), and the **diatonic diminished fifth** (the IV→viiᵒ link of
-    the full circle). The amendment: extend `isLicensedProgression` (+ this §5.0's enumeration, now done) accordingly
-    — algorithmic
-    completion per theory, NOT tuning; its own small dormant increment with tests; the consumer's consistency test
-    then tightens to the clean assert. Evidence: the 6-entry/**11-motion** failure table, measured, enumerated and
-    pinned in the consumer's consistency test (`EXPECT_EQ(failing.size(), 11u)`) — the earlier "12" was a Cowork
-    arithmetic error, corrected 2026-07-02 (U2); the measured 11 is authoritative.
+12. **★ §5.0 grammar completion — MOVED 2026-08-03 to §5.0, the section it amends.** The three added root motions,
+    the ratification, the completion-not-tuning characterization and the 6-entry/11-motion evidence now live in
+    **§5.0's licensed-progression definition**, unchanged. The rule itself is deliberately not restated here — it has
+    one home (#6) — and this entry is kept only so the
+    tracking history and the cross-references to "item 12" still resolve. *Why it moved:* the rule was recorded in this
+    open-items list — a section that records findings — while §5.0 is where the layer states the rule it amends (#7).
+    Ruled by the user 2026-08-03; finding and remedy at `OPEN_ITEMS.md` OI-295; register entry **D-341**. The code
+    increment (`isLicensedProgression` + tests, instruction pending dispatch) is still owed, and §5.0 says so.
 13. **★ Resolver preference-among-licensed motions — the precision-phase lever the completed grammar exposes
     (recorded 2026-07-03; found as the §15-12 increment's ripple).** The §5.5 share-tone/transition rules select by
     licensed-progression **uniqueness**; completing the grammar (item 12) makes more motions licensed, so fewer cases

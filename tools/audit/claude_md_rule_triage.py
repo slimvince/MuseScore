@@ -152,14 +152,21 @@ TRIAGE: dict[str, tuple[str, str]] = {
     "D-231": (KNOWLEDGE, "Which phase the work is in is a judgment."),
     "D-249": (KNOWLEDGE, "Whether the user has actually seen a surface is not a property of "
                          "any file."),
-    "D-253": (OWED, "NEW at phase 1p, and it is BUILT BUT NOT ARMED, which keeps it in the "
-                    "defect class. `tools/audit/shell_read_guard.py` is committed and "
-                    "established; arming it means one block in `.claude/settings.json`, which "
-                    "`.gitignore:112` puts OUTSIDE the record — a live control existing only "
-                    "in an untracked file is the OI-285 class. It would cover the "
-                    "TEXT-UTILITY half only, for sessions in this directory; the "
-                    "branch-tip/index half is deliberately not enforced, and coverage of the "
-                    "writing side is not established."),
+    "D-253": (OWED, "NEW at phase 1p; BUILT and ESTABLISHED then, ARMED by the user at phase "
+                    "1r, WIDENED at phase 1s. It stays in the defect class on ONE ground, and "
+                    "the ground is stated so it is not read as a backlog item: "
+                    "`tools/audit/shell_read_guard.py` binds the EXECUTING side only — the "
+                    "hook matcher names that side's shell tools and the writing side's carries "
+                    "a different name — so the rule is enforced on one side and must not be "
+                    "described as enforced. Two coverage limits closed 2026-08-03 (phase 1s, "
+                    "user ruling Y1): `git status` is now DENIED, which became affordable only "
+                    "once `tools/audit/changed_paths.py` gave a sanctioned way to enumerate "
+                    "changed paths; and the measured FALSE DENY on a quoted grep pattern is "
+                    "fixed and re-established. `git log` and `git rev-parse HEAD` remain "
+                    "deliberately unenforced — nothing replaces them, so denying them would "
+                    "fire on legitimate work. `tools/audit/guard_armed_check.py` puts the "
+                    "arming requirement in the record while `.claude/settings.json` stays out "
+                    "of it, which answers the OI-285 objection that kept it unarmed."),
     "D-254": (KNOWLEDGE, "Recognising that a step could be measured first is the judgment."),
     "D-294": (EXISTS, "PARTIAL. The variant-(b) DCML-only unit is the mechanism — the graded "
                       "surface reads the human annotation and nothing else. That no "

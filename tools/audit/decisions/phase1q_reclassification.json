@@ -20,11 +20,11 @@
       "gap": 38
     },
     "class_after": {
-      "contract-home": 98,
-      "gap": 36
+      "contract-home": 99,
+      "gap": 35
     },
-    "entries_moved": 32,
-    "moved_to_gap": 15,
+    "entries_moved": 31,
+    "moved_to_gap": 14,
     "moved_to_contract_home": 17,
     "decided_by": {
       "D-430, the section-level unit": 113,
@@ -410,7 +410,7 @@
       "moves_in": 0,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "CLAUDE.md:713",
+      "delegation_at": "CLAUDE.md:726",
       "delegation_line": "**Read `docs/scoring_model.md` at the start of any session that touches scoring",
       "sections": {
         "“Floating-point tie policy”": {
@@ -549,10 +549,9 @@
         "contract-home": 8
       },
       "after": {
-        "contract-home": 7,
-        "gap": 1
+        "contract-home": 8
       },
-      "moves_out": 1,
+      "moves_out": 0,
       "moves_in": 0,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
@@ -560,7 +559,7 @@
       "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-335…D-342 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph is the delegation the record relied on and never had.)*",
       "sections": {
         "§9": {
-          "heading_line": 611,
+          "heading_line": 620,
           "delegated": true,
           "states_rules": true,
           "entries": [
@@ -573,7 +572,7 @@
           "class_after": "contract-home"
         },
         "§7": {
-          "heading_line": 537,
+          "heading_line": 546,
           "delegated": true,
           "states_rules": true,
           "entries": [
@@ -581,17 +580,17 @@
           ],
           "class_after": "contract-home"
         },
-        "§15": {
-          "heading_line": 782,
+        "§5.0": {
+          "heading_line": 158,
           "delegated": true,
-          "states_rules": false,
+          "states_rules": true,
           "entries": [
             "D-341"
           ],
-          "class_after": "gap"
+          "class_after": "contract-home"
         },
         "§11": {
-          "heading_line": 669,
+          "heading_line": 678,
           "delegated": true,
           "states_rules": true,
           "entries": [
@@ -600,7 +599,7 @@
           "class_after": "contract-home"
         }
       },
-      "moves_in_since_phase1q": 7
+      "moves_in_since_phase1q": 8
     },
     "cowork_layer3_keymode_design.md": {
       "entries": 16,
@@ -1896,7 +1895,7 @@
       "section_heading_line": 210,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "CLAUDE.md:713",
+      "delegation_at": "CLAUDE.md:726",
       "delegation_line": "**Read `docs/scoring_model.md` at the start of any session that touches scoring",
       "section_delegated": true,
       "section_states_rules": true,
@@ -1916,7 +1915,7 @@
       "section_heading_line": 210,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "CLAUDE.md:713",
+      "delegation_at": "CLAUDE.md:726",
       "delegation_line": "**Read `docs/scoring_model.md` at the start of any session that touches scoring",
       "section_delegated": true,
       "section_states_rules": true,
@@ -1936,7 +1935,7 @@
       "section_heading_line": 246,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "CLAUDE.md:713",
+      "delegation_at": "CLAUDE.md:726",
       "delegation_line": "**Read `docs/scoring_model.md` at the start of any session that touches scoring",
       "section_delegated": true,
       "section_states_rules": true,
@@ -1956,7 +1955,7 @@
       "section_heading_line": 752,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "CLAUDE.md:713",
+      "delegation_at": "CLAUDE.md:726",
       "delegation_line": "**Read `docs/scoring_model.md` at the start of any session that touches scoring",
       "section_delegated": true,
       "section_states_rules": true,
@@ -2171,9 +2170,9 @@
       "id": "D-335",
       "title": "The function layer outputs the Roman numeral; the tonic/subdominant/dominant summary is a derived read-out, never a stored output",
       "document": "cowork_layer5_function_design.md",
-      "home": "cowork_layer5_function_design.md:612-617",
+      "home": "cowork_layer5_function_design.md:621-626",
       "section": "§9",
-      "section_heading_line": 611,
+      "section_heading_line": 620,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:1496",
@@ -2191,9 +2190,9 @@
       "id": "D-336",
       "title": "Cadence detection is key-agnostic and votes for the key rather than reading one",
       "document": "cowork_layer5_function_design.md",
-      "home": "cowork_layer5_function_design.md:618-622",
+      "home": "cowork_layer5_function_design.md:627-631",
       "section": "§9",
-      "section_heading_line": 611,
+      "section_heading_line": 620,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:1496",
@@ -2211,9 +2210,9 @@
       "id": "D-337",
       "title": "A lean toward another degree is a tonicization by default; a key change needs a confirming cadence AND persistence, expressed as a change-cost",
       "document": "cowork_layer5_function_design.md",
-      "home": "cowork_layer5_function_design.md:623-625",
+      "home": "cowork_layer5_function_design.md:632-634",
       "section": "§9",
-      "section_heading_line": 611,
+      "section_heading_line": 620,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:1496",
@@ -2231,9 +2230,9 @@
       "id": "D-338",
       "title": "The function layer selects among the chord layer's carried readings and never re-derives a chord from the notes",
       "document": "cowork_layer5_function_design.md",
-      "home": "cowork_layer5_function_design.md:627-630",
+      "home": "cowork_layer5_function_design.md:636-639",
       "section": "§9",
-      "section_heading_line": 611,
+      "section_heading_line": 620,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:1496",
@@ -2251,9 +2250,9 @@
       "id": "D-339",
       "title": "A confident earlier decision can be overturned by decisive later evidence, through ONE confidence-weighted forward-recompute mechanism — architecture-wide",
       "document": "cowork_layer5_function_design.md",
-      "home": "cowork_layer5_function_design.md:637-648",
+      "home": "cowork_layer5_function_design.md:646-657",
       "section": "§9",
-      "section_heading_line": 611,
+      "section_heading_line": 620,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:1496",
@@ -2271,9 +2270,9 @@
       "id": "D-340",
       "title": "The reading the function layer emits IS the selected source's committed identity, carried whole — never rebuilt field by field",
       "document": "cowork_layer5_function_design.md",
-      "home": "cowork_layer5_function_design.md:547-554",
+      "home": "cowork_layer5_function_design.md:556-563",
       "section": "§7",
-      "section_heading_line": 537,
+      "section_heading_line": 546,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:1496",
@@ -2291,29 +2290,29 @@
       "id": "D-341",
       "title": "The licensed root-motion set is completed by theory — the ascending fifth, the descending second and the diatonic diminished fifth are added",
       "document": "cowork_layer5_function_design.md",
-      "home": "cowork_layer5_function_design.md:888-897",
-      "section": "§15",
-      "section_heading_line": 782,
+      "home": "cowork_layer5_function_design.md:203-216",
+      "section": "§5.0",
+      "section_heading_line": 158,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:1496",
       "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-335…D-342 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph is the delegation the record relied on and never had.)*",
       "section_delegated": true,
-      "section_states_rules": false,
+      "section_states_rules": true,
       "class_before_phase1q": "contract-home",
       "class_before_phase1r": "gap",
-      "class_after": "gap",
-      "moves": true,
-      "moves_since_phase1q": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS"
+      "class_after": "contract-home",
+      "moves": false,
+      "moves_since_phase1q": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-342",
       "title": "Putting the function layer into production is DEFERRED INDEFINITELY — the posture is a dormant build with ground-truth validation",
       "document": "cowork_layer5_function_design.md",
-      "home": "cowork_layer5_function_design.md:696-698",
+      "home": "cowork_layer5_function_design.md:705-707",
       "section": "§11",
-      "section_heading_line": 669,
+      "section_heading_line": 678,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:1496",
@@ -3910,7 +3909,7 @@
   ],
   "the_phase_1r_re_run": {
     "why": "The user WROTE delegations on 2026-08-03 (the OI-293 write list) for the six documents this pass had reported losing entries. The pass therefore runs a SECOND time, over classes it had itself moved. `class_before_phase1q` still holds the state before the FIRST run, so `totals` and `by_document` below are unchanged in meaning; this block is the movement caused by the written delegations alone.",
-    "entries_moved_since_phase1q": 27,
+    "entries_moved_since_phase1q": 28,
     "moved_to_contract_home": [
       {
         "id": "D-270",
@@ -4018,6 +4017,13 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
       },
       {
+        "id": "D-341",
+        "document": "cowork_layer5_function_design.md",
+        "section": "§5.0",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
         "id": "D-342",
         "document": "cowork_layer5_function_design.md",
         "section": "§11",
@@ -4104,7 +4110,6 @@
     ],
     "moved_to_gap": [],
     "write_list_documents_that_did_not_move_in_whole": [
-      "cowork_layer5_function_design.md",
       "cowork_voiceleading_axis_design.md"
     ]
   },
@@ -4168,12 +4173,6 @@
       "document": "docs/redesign_plan.md",
       "section": "“What NOT to do first”",
       "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit"
-    },
-    {
-      "id": "D-341",
-      "document": "cowork_layer5_function_design.md",
-      "section": "§15",
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS"
     },
     {
       "id": "D-350",

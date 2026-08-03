@@ -213,10 +213,16 @@ spec for this contract is X"*, *"formalised as an independent knowledge-base com
 spec (X)"* — or **a named home with sections** — *"Criterion + build home: X §0/§5.3"*. **NOT
 ADMITTED:** a **bare appended citation** — *"Full spec: X."* — or a **provenance attribution**,
 meaning a naming inside a list of citations, or a parenthetical recording where something was
-ratified. *Why:* the canonical document distinguishes the two acts in ADJACENT LINES —
-`ARCHITECTURE.md:1482` ends *"Full spec:"* and names its target on the next line, while `:1485`
-immediately beneath is a delegation clause that names its target AND its sections. The distinction
-is `ARCHITECTURE.md`'s own, not a preference. **(i) IS APPLIED (user, 2026-08-03, at OI-291):** the
+ratified. *Why:* the canonical document distinguishes the two acts in ADJACENT LINES — one line ends
+*"Full spec:"* and names its target on the next, and the delegation clause immediately beneath it
+names its target AND the sections it owns. The distinction is `ARCHITECTURE.md`'s own, not a
+preference. *(This defense is stated as a DESCRIPTION rather than by line number on the user's ruling
+of 2026-08-03. A line number quoted inside a rule's prose is not a register anchor, so the anchor
+machinery cannot maintain it and it goes stale on the next insertion above it — as the two numbers
+formerly quoted here did, on the very act rule (i) asked for. Both lines are located and quoted from
+the file at `tools/audit/decisions/phase1p_delegation_bar.json` → `the_defense`, which is generated
+and therefore does not go stale silently. The former wording is preserved in D-432's provenance,
+#12.)* **(i) IS APPLIED (user, 2026-08-03, at OI-291):** the
 check ordered before applying it — does the bar change the verdict for any document the register
 currently classifies `contract-home`? — came back yes, and the user ruled **ONE re-classification
 pass over the whole home population**, with a **write list** for the homes the record means to keep,
@@ -226,11 +232,18 @@ hand-classified, and every entry keeps the class it carried before it (#12).
 2026-08-03).** To DELEGATE, a surface must itself be user-ratified; to BE a home, a section must be
 delegated to. A document may satisfy one and fail the other, and neither role implies the other. So
 `cowork_engage_arc_plan.md` — a user-ratified surface the criterion USES as a source of delegations
-— is not thereby a delegation TARGET: whether any section of it is a home turns on whether some
-user-ratified surface delegates a concern to it in a form (i) admits, and today none does. *Why:*
-the question was asked in exactly that form, and the two roles had been running together in the
-tracking prose; stating them apart is what keeps (i) a mechanical test rather than one with a
-case-by-case exception.
+— is not a delegation TARGET BY THAT FACT: whether any section of it is a home turns on the separate
+question of whether some user-ratified surface delegates a concern to it in a form (i) admits, which
+is answered by reading the delegations that exist and never by the document's standing as a source.
+*Why:* the question was asked in exactly that form, and the two roles had been running together in
+the tracking prose; stating them apart is what keeps (i) a mechanical test rather than one with a
+case-by-case exception. *(Corrected on the user's ruling of 2026-08-03. The clause that formerly
+closed the sentence asserted in the present tense that no such delegation existed — true when the
+ruling was made, and made untrue by the OI-293 write list, which on the user's direction wrote one
+into this very file, so a reader arriving here first read a false statement about the file in their
+hands. What is struck is the factual claim, not the rule: the arc plan became a home by BEING
+DELEGATED TO, which is (j) working rather than an exception to it. The former wording is preserved
+in D-435's provenance, #12.)*
 
 ## Project context
 

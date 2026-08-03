@@ -1,0 +1,147 @@
+{
+  "purpose": "Establishment (#19) of tools/audit/changed_paths.py: that it reports a KNOWN set of modifications correctly, and reports NOTHING when the tree is clean. Both are the conditions the phase-1s dispatch names (§2.2).",
+  "the_structural_property": {
+    "claim": "The module cannot return file content. It never opens a file for reading; every git invocation comes from the frozen ALLOWED table; every row of that table is a subcommand that emits a status code and a path and nothing else; and only those two fields reach the output.",
+    "why_diff_tree_and_not_show": "`git show <blob-sha>` prints the blob and `--name-status` does not suppress it. `diff-tree` walks commits and trees only and errors on a blob, so the content path does not exist rather than being avoided.",
+    "refused_a_ref_where_a_hash_is_required": true,
+    "refused_an_unsanctioned_enumeration": true
+  },
+  "clean_tree_reports_nothing": {
+    "before_the_modifications": {
+      "records": 0,
+      "rows": []
+    },
+    "after_committing_them": {
+      "records": 0,
+      "rows": []
+    },
+    "both_empty": true
+  },
+  "a_known_set_of_modifications": {
+    "expected_paths": [
+      "added.txt",
+      "deleted.txt",
+      "modified.txt",
+      "renamed_from.txt",
+      "renamed_to.txt",
+      "untracked.txt"
+    ],
+    "working_tree": {
+      "records": 6,
+      "rows": [
+        {
+          "code": " D",
+          "path": "deleted.txt"
+        },
+        {
+          "code": " M",
+          "path": "modified.txt"
+        },
+        {
+          "code": " D",
+          "path": "renamed_from.txt"
+        },
+        {
+          "code": "??",
+          "path": "added.txt"
+        },
+        {
+          "code": "??",
+          "path": "renamed_to.txt"
+        },
+        {
+          "code": "??",
+          "path": "untracked.txt"
+        }
+      ],
+      "paths_seen": [
+        "added.txt",
+        "deleted.txt",
+        "modified.txt",
+        "renamed_from.txt",
+        "renamed_to.txt",
+        "untracked.txt"
+      ],
+      "exact": true
+    },
+    "staged": {
+      "records": 5,
+      "rows": [
+        {
+          "code": "A",
+          "path": "added.txt"
+        },
+        {
+          "code": "D",
+          "path": "deleted.txt"
+        },
+        {
+          "code": "M",
+          "path": "modified.txt"
+        },
+        {
+          "code": "R100",
+          "path": "renamed_from.txt -> renamed_to.txt"
+        },
+        {
+          "code": "A",
+          "path": "untracked.txt"
+        }
+      ],
+      "paths_seen": [
+        "added.txt",
+        "deleted.txt",
+        "modified.txt",
+        "renamed_from.txt",
+        "renamed_to.txt",
+        "untracked.txt"
+      ],
+      "exact": true
+    },
+    "at_the_commit": {
+      "records": 6,
+      "rows": [
+        {
+          "code": "A",
+          "path": "added.txt"
+        },
+        {
+          "code": "D",
+          "path": "deleted.txt"
+        },
+        {
+          "code": "M",
+          "path": "modified.txt"
+        },
+        {
+          "code": "D",
+          "path": "renamed_from.txt"
+        },
+        {
+          "code": "A",
+          "path": "renamed_to.txt"
+        },
+        {
+          "code": "A",
+          "path": "untracked.txt"
+        }
+      ],
+      "paths_seen": [
+        "added.txt",
+        "deleted.txt",
+        "modified.txt",
+        "renamed_from.txt",
+        "renamed_to.txt",
+        "untracked.txt"
+      ],
+      "exact": true
+    }
+  },
+  "coverage_limits": [
+    "It reports what GIT reports: an ignored path is invisible to it, which is why `.claude/settings.json` appears in no enumeration here.",
+    "An untracked DIRECTORY is one record naming the directory, not one record per file inside it (git's `--untracked-files=normal`). A count of records is therefore a lower bound on a count of untracked files.",
+    "`--commit` on a MERGE commit reports nothing (diff-tree emits no records for a merge without -m/-c). An empty result on a merge is not 'touched nothing'.",
+    "It answers WHICH paths, never WHAT changed in them — reading a changed file stays the file tools' job, which is the division D-253 draws."
+  ],
+  "how_this_artifact_is_kept_fresh": "There is no --check mode, deliberately: reading the artifact back would be a read-mode open and the structural property is worth more. Regenerate with --establish and then run the enumeration — a changed artifact appears in the list."
+}

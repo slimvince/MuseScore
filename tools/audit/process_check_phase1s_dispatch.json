@@ -1,0 +1,28 @@
+{
+  "purpose": "A run of tools/audit/process_check.py over named dispatches or reports. Generated so a report cites this file rather than transcribing what the check found (D-431).",
+  "rules": [
+    "D-431 bare quantity",
+    "D-431 uncited code claim",
+    "D-434 missing self-check section"
+  ],
+  "files_scanned": [
+    "cc_instruction_phase1s_stale_rules_and_enumeration.md"
+  ],
+  "findings_total": 1,
+  "by_file": {
+    "cc_instruction_phase1s_stale_rules_and_enumeration.md": {
+      "findings": 1,
+      "rows": [
+        {
+          "file": "cc_instruction_phase1s_stale_rules_and_enumeration.md",
+          "line": 161,
+          "rule": "D-431 bare quantity",
+          "detail": "2.3",
+          "sentence": "**Task 2.3's fix reverting is an acceptable outcome** if"
+        }
+      ]
+    }
+  },
+  "clean_files": [],
+  "establishment": "tools/audit/process_check_establishment.json — the check's measured detection power and false-positive rate. Read it before reading a count here as coverage."
+}

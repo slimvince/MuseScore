@@ -2,11 +2,12 @@
   "purpose": "Establishment (#19) of tools/audit/shell_read_guard.py: its deny rate on the forms CLAUDE.md names, and its FALSE-deny rate on real commands this repository issues. A guard that fires on legitimate use gets switched off, so the false-deny rate is the figure that decides whether it may be armed.",
   "coverage_limits": [
     "Project-scoped: it binds sessions that run in this directory and read this project's settings. Whether the WRITING side does is not established, so the rule must not be described as enforced for both sides.",
-    "The text-utility half only. The branch-tip/index half of D-253 (git status, git log, git rev-parse HEAD are never trusted for what is current) is deliberately not enforced.",
+    "The text-utility half, plus `git status` since 2026-08-03. The REST of D-253's branch-tip/index half — `git log`, `git rev-parse HEAD` — is still deliberately not enforced: no tool replaces them, so denying them would fire on legitimate work, which is the ground on which `git status` was left unblocked until the enumeration tool existed.",
+    "Declared, not fired: a settings file naming the hook is evidence it is declared. `tools/audit/guard_armed_check.py` reports that much and says so.",
     "disableAllHooks and managed allowManagedHooksOnly switch it off. A guard, not a boundary."
   ],
   "sanctioned": {
-    "total": 12,
+    "total": 15,
     "false_denies": 0,
     "false_deny_rate": 0.0,
     "rows": [
@@ -69,12 +70,27 @@
         "command": "echo \"exit:$?\"",
         "denied": false,
         "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "grep -c \"^  D-\" /tmp/reaim_1r.txt",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "python tools/audit/changed_paths.py --staged",
+        "denied": false,
+        "reason": "runs the sanctioned changed-path enumeration (`tools/audit/changed_paths.py`)"
+      },
+      {
+        "command": "python tools/audit/changed_paths.py --commit 32d9b47933",
+        "denied": false,
+        "reason": "runs the sanctioned changed-path enumeration (`tools/audit/changed_paths.py`)"
       }
     ]
   },
   "forbidden": {
-    "total": 8,
-    "denied": 8,
+    "total": 12,
+    "denied": 12,
     "deny_rate": 1.0,
     "rows": [
       {
@@ -116,7 +132,49 @@
         "command": "cat C:/s/MS/DECISIONS.md",
         "denied": true,
         "reason": "`cat` is aimed at a path inside this repository (C:/s/MS/DECISIONS.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "git status --porcelain",
+        "denied": true,
+        "reason": "`git status` is not trusted for what is current — `CLAUDE.md` Conventions, register entry D-253. The sanctioned way to enumerate which paths changed is `python tools/audit/changed_paths.py` (`--staged`, or `--commit <hash>`), which reports paths and status codes and cannot return file content."
+      },
+      {
+        "command": "git status",
+        "denied": true,
+        "reason": "`git status` is not trusted for what is current — `CLAUDE.md` Conventions, register entry D-253. The sanctioned way to enumerate which paths changed is `python tools/audit/changed_paths.py` (`--staged`, or `--commit <hash>`), which reports paths and status codes and cannot return file content."
+      },
+      {
+        "command": "cd C:\\s\\MS && git status --short",
+        "denied": true,
+        "reason": "`git status` is not trusted for what is current — `CLAUDE.md` Conventions, register entry D-253. The sanctioned way to enumerate which paths changed is `python tools/audit/changed_paths.py` (`--staged`, or `--commit <hash>`), which reports paths and status codes and cannot return file content."
+      },
+      {
+        "command": "grep -n \"Full spec:\" ARCHITECTURE.md > /tmp/spec.txt",
+        "denied": true,
+        "reason": "`grep` is aimed at a path inside this repository (ARCHITECTURE.md, >). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
       }
     ]
+  },
+  "changes_2026_08_03_phase_1s": {
+    "git_status_is_now_denied": {
+      "what_changed": "`git status` in any segment is denied; `git log` and `git rev-parse HEAD` are not.",
+      "why_it_became_affordable": "Until 2026-08-03 there was no sanctioned way to answer the question `git status` was being used for, so denying it would have been the fires-on-legitimate-work failure. `tools/audit/changed_paths.py` is that way (user ruling Y1, phase 1s), and a command naming it is exempt, so the guard cannot deny the thing that makes it affordable.",
+      "the_instance_it_closes": "A `git status --porcelain` issued while the guard was armed was NOT denied — the guard behaving as designed and the rule broken anyway (`OPEN_ITEMS.md` OI-292, the phase-1r note)."
+    },
+    "the_tokenizer_fix": {
+      "what_changed": "A segment is split with `shlex` in NON-posix mode, so a quoted argument stays one token. Non-posix specifically: posix mode would eat the backslashes in a Windows path such as `C:\\s\\MS`. A malformed command falls back to `.split()` rather than raising.",
+      "the_false_deny_it_removes": "`grep -c \"^  D-\" /tmp/reaim_1r.txt` was denied: `.split()` broke the quoted pattern into two tokens and read the fragment `D-\"` as a repository path. Measured live 2026-08-03 and recorded at `OPEN_ITEMS.md` OI-292.",
+      "false_denies_on_the_sanctioned_set": {
+        "with_the_fix": 0,
+        "without_it": 1,
+        "of": 15
+      },
+      "detection_on_the_forbidden_set": {
+        "with_the_fix": 12,
+        "without_it": 12,
+        "of": 12
+      },
+      "the_revert_condition": "The dispatch says: if the fix raises false denies elsewhere, revert and report. Compare the two figures above — a rise is the condition, and it is published either way rather than inferred."
+    }
   }
 }

@@ -30,6 +30,9 @@ WHAT IT CHECKS, and what it cannot.
   * It says nothing about the WRITING side.  Whether that side runs as a session in this
     directory is not established, so an ARMED result must not be read as the rule being
     enforced for both sides.
+  * An ARMED result covers what the guard covers, which since 2026-08-03 is the text-utility
+    half plus `git status` — not `git log` or `git rev-parse HEAD`.  The guard states that
+    scope; this check does not restate it as a figure.
 
 EXPECTED STATE AT DELIVERY: **NOT ARMED**, and that is the delivered outcome, not a defect.
 Arming is the user's act on the user's machine; until it is done this check exits non-zero and
@@ -144,8 +147,8 @@ def main() -> int:
                 print(f"      {h}")
         print("ARMED — a PreToolUse hook runs the shell-read guard.")
         print("Coverage limits stand and are stated in the guard itself: the text-utility half "
-              "only, sessions in this directory only, and a declaration is not proof the hook "
-              "fired.")
+              "plus `git status`, sessions in this directory only, and a declaration is not "
+              "proof the hook fired.")
         return 0
 
     if armed_at and disabled_at:

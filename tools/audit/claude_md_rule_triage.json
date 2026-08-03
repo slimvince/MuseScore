@@ -263,7 +263,7 @@
     {
       "id": "D-191",
       "title": "The two-tier regression class policy - functional regression stops, rotation churn is tracked",
-      "home": "CLAUDE.md:527",
+      "home": "CLAUDE.md:555",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "`tools/robust_stop_diff.py` — the class-(a)/(b) split, with the class-(a) INVESTIGATE flag at its declared threshold."
@@ -271,7 +271,7 @@
     {
       "id": "D-192",
       "title": "A scoring change and its documentation land in the same commit",
-      "home": "CLAUDE.md:707",
+      "home": "CLAUDE.md:735",
       "nonspec_kind": "process",
       "class": "MECHANISABLE-AND-NOT",
       "mechanism_or_ground": "A pre-commit check: a diff that touches a scoring term in `chordanalyzer.cpp` must also touch `docs/scoring_model.md`. The rule states the condition in exactly that form, and the staleness check it names — the template count in §2 against `kTemplateCount` — is arithmetic. Nothing implements either."
@@ -279,7 +279,7 @@
     {
       "id": "D-193",
       "title": "The writing standards live in one place, and predicates must be qualified",
-      "home": "CLAUDE.md:899",
+      "home": "CLAUDE.md:927",
       "nonspec_kind": "process",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "Qualified predicates and defined terms are properties of prose."
@@ -287,7 +287,7 @@
     {
       "id": "D-194",
       "title": "No self-invented labels, abbreviations, numbering schemes or jargon",
-      "home": "CLAUDE.md:895",
+      "home": "CLAUDE.md:923",
       "nonspec_kind": "process",
       "class": "MECHANISABLE-AND-NOT",
       "mechanism_or_ground": "WEAK but real: a check for newly introduced identifiers of the shape a private numbering scheme takes, against the labels the repository already uses. It would flag candidates for a reader, not decide them."
@@ -295,7 +295,7 @@
     {
       "id": "D-195",
       "title": "Every design decision carries its defense at its home",
-      "home": "CLAUDE.md:951",
+      "home": "CLAUDE.md:979",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "The register's `rationale` field, and the generated count of decisions whose defense the record does not state — a gap that cannot be hidden because the figure is computed."
@@ -303,7 +303,7 @@
     {
       "id": "D-196",
       "title": "The self-check: re-read the diff against the principles before reporting",
-      "home": "CLAUDE.md:1059",
+      "home": "CLAUDE.md:1087",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "NEW at phase 1p, and only for the document half: `tools/audit/process_check.py` reports a missing self-check section (D-434). Whether the check was actually run over the diff is not mechanical."
@@ -311,7 +311,7 @@
     {
       "id": "D-197",
       "title": "The distribution constraint - the import-fix patch is fork-local and never goes upstream",
-      "home": "CLAUDE.md:815",
+      "home": "CLAUDE.md:843",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "BUILT at phase 1q: `tools/audit/local_patches_check.py` verifies each recorded patch is present at HEAD, deriving its patch list from `CLAUDE.md`'s own section so a newly recorded patch is covered without a code change, and STOPPING on a recorded patch it has no marker for. Established at `tools/audit/local_patches_establishment.json` by detecting deliberately unpatched content. PARTIAL for THIS entry: D-197 is the FORK-LOCAL distribution constraint on D-199's patch, not a patch of its own, and no check enforces a distribution constraint — a push is the act it forbids."
@@ -319,7 +319,7 @@
     {
       "id": "D-198",
       "title": "The Windows snap fix in the muse submodule is intentional and must not be reverted",
-      "home": "CLAUDE.md:767",
+      "home": "CLAUDE.md:795",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "See D-197 — the same check covers the recorded patches. CLAUDE.md's section carries THREE patch subsections; the four entries here include D-197, which is a disposition rather than a patch."
@@ -327,7 +327,7 @@
     {
       "id": "D-199",
       "title": "The MusicXML declared-mode import fix is intentional and must not be reverted",
-      "home": "CLAUDE.md:788",
+      "home": "CLAUDE.md:816",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "See D-197 — the same check covers the recorded patches."
@@ -335,7 +335,7 @@
     {
       "id": "D-200",
       "title": "Make it work first; compromise on performance only if performance proves a problem",
-      "home": "CLAUDE.md:984-986",
+      "home": "CLAUDE.md:1012-1014",
       "nonspec_kind": "process",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "A sequencing rule about when a trade-off may be considered."
@@ -343,7 +343,7 @@
     {
       "id": "D-203",
       "title": "Candidate admission is completion, not refinement - so #8 permits fixing it now",
-      "home": "CLAUDE.md:994-996",
+      "home": "CLAUDE.md:1022-1024",
       "nonspec_kind": "process",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "A ruling about what another rule permits."
@@ -351,7 +351,7 @@
     {
       "id": "D-204",
       "title": "One fix is designed once over the whole enumerated family, never per symptom",
-      "home": "CLAUDE.md:1005-1007",
+      "home": "CLAUDE.md:1033-1035",
       "nonspec_kind": "process",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "Whether two faults share a cause is the diagnosis itself."
@@ -359,7 +359,7 @@
     {
       "id": "D-210",
       "title": "An exotic mode is graded against its parent collection's minor key, not its own tonic triad",
-      "home": "CLAUDE.md:453-455",
+      "home": "CLAUDE.md:481-483",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "`compare_rn._our_key_tonic` — the one shared reduction every graded surface routes through."
@@ -367,7 +367,7 @@
     {
       "id": "D-211",
       "title": "Key agreement is reported against both the global home key and the local key",
-      "home": "CLAUDE.md:463-465",
+      "home": "CLAUDE.md:491-493",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "The dual key column, carried by the measurement tooling wherever the key column appears."
@@ -375,7 +375,7 @@
     {
       "id": "D-212",
       "title": "The regression stop is abstain-aware: an abstention counts as disagreement on root",
-      "home": "CLAUDE.md:468-470",
+      "home": "CLAUDE.md:496-498",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "`compare_rn._our_key_ident` for the one abstain decision, and `robust_stop_diff.py`'s flag on any rise in the abstain rate."
@@ -399,7 +399,7 @@
     {
       "id": "D-249",
       "title": "The whole decision surface is delivered as user-visible text before any choice question",
-      "home": "CLAUDE.md:1014-1026",
+      "home": "CLAUDE.md:1042-1054",
       "nonspec_kind": "process",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "Whether the user has actually seen a surface is not a property of any file."
@@ -407,15 +407,15 @@
     {
       "id": "D-253",
       "title": "Working-tree files are read with the file tools; bash is limited to git object queries by explicit hash",
-      "home": "CLAUDE.md:1028-1046",
+      "home": "CLAUDE.md:1056-1074",
       "nonspec_kind": "process",
       "class": "MECHANISABLE-AND-NOT",
-      "mechanism_or_ground": "NEW at phase 1p, and it is BUILT BUT NOT ARMED, which keeps it in the defect class. `tools/audit/shell_read_guard.py` is committed and established; arming it means one block in `.claude/settings.json`, which `.gitignore:112` puts OUTSIDE the record — a live control existing only in an untracked file is the OI-285 class. It would cover the TEXT-UTILITY half only, for sessions in this directory; the branch-tip/index half is deliberately not enforced, and coverage of the writing side is not established."
+      "mechanism_or_ground": "NEW at phase 1p; BUILT and ESTABLISHED then, ARMED by the user at phase 1r, WIDENED at phase 1s. It stays in the defect class on ONE ground, and the ground is stated so it is not read as a backlog item: `tools/audit/shell_read_guard.py` binds the EXECUTING side only — the hook matcher names that side's shell tools and the writing side's carries a different name — so the rule is enforced on one side and must not be described as enforced. Two coverage limits closed 2026-08-03 (phase 1s, user ruling Y1): `git status` is now DENIED, which became affordable only once `tools/audit/changed_paths.py` gave a sanctioned way to enumerate changed paths; and the measured FALSE DENY on a quoted grep pattern is fixed and re-established. `git log` and `git rev-parse HEAD` remain deliberately unenforced — nothing replaces them, so denying them would fire on legitimate work. `tools/audit/guard_armed_check.py` puts the arming requirement in the record while `.claude/settings.json` stays out of it, which answers the OI-285 objection that kept it unarmed."
     },
     {
       "id": "D-254",
       "title": "Investigate by default; never ask the user whether to investigate or proceed",
-      "home": "CLAUDE.md:1048-1055",
+      "home": "CLAUDE.md:1076-1083",
       "nonspec_kind": "process",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "Recognising that a step could be measured first is the judgment."
@@ -423,7 +423,7 @@
     {
       "id": "D-294",
       "title": "The only ground truth is the human annotation; the algorithmic analysis is a filter, and no self-annotation ever enters a measurement",
-      "home": "CLAUDE.md:440-442",
+      "home": "CLAUDE.md:468-470",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "PARTIAL. The variant-(b) DCML-only unit is the mechanism — the graded surface reads the human annotation and nothing else. That no self-annotation enters a measurement is not separately checked."
@@ -431,7 +431,7 @@
     {
       "id": "D-308",
       "title": "A newly acquired corpus enters as research material; the frozen regression corpus stays the gate until a deliberate re-baseline",
-      "home": "CLAUDE.md:426-428",
+      "home": "CLAUDE.md:454-456",
       "nonspec_kind": "process",
       "class": "MECHANISABLE-AND-NOT",
       "mechanism_or_ground": "The corpus manifest could carry an explicit tier, and the gate tooling could refuse to measure against material not marked gate-tier. The rule names exactly that condition, and nothing enforces it — a newly arrived corpus is kept out of the gate by discipline alone."
@@ -447,7 +447,7 @@
     {
       "id": "D-430",
       "title": "The contract-home criterion's unit is a SECTION of a document, not the document",
-      "home": "CLAUDE.md:173",
+      "home": "CLAUDE.md:181",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "`tools/audit/decisions/gen_home_classification.py --check` re-derives every entry's section home from its document's own headings, and the class the criterion gives it. (It replaced `gen_section_homes.py`, which applied this ruling to a staged subset.)"
@@ -455,7 +455,7 @@
     {
       "id": "D-432",
       "title": "What counts as a delegation, graded by form — the clause the section-level criterion did not touch",
-      "home": "CLAUDE.md:193",
+      "home": "CLAUDE.md:208",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "APPLIED at phase 1q by the same tool as D-430: the bar's per-document form grade is authored once in `tools/audit/decisions/gen_phase1p_delegation_bar.py`'s FORMS table, whose anchors are LOCATED in the delegating file on every run, so a delegation that moves or is reworded stops the pass rather than passing a stale citation."
@@ -463,7 +463,7 @@
     {
       "id": "D-433",
       "title": "A shelved section can be a home — shelving is a status, not a kind",
-      "home": "CLAUDE.md:187",
+      "home": "CLAUDE.md:202",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "Same tool as D-432; the shelving question never enters its verdict, which is what the ruling says."
@@ -471,7 +471,7 @@
     {
       "id": "D-435",
       "title": "Delegating to a document and being a home are different tests with different subjects",
-      "home": "CLAUDE.md:210",
+      "home": "CLAUDE.md:231",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "The two roles are separate inputs to the same pass and cannot be conflated by it: the DELEGATING side is the fixed list of three user-ratified surfaces the pass searches, and the TARGET side is the home document being graded. A surface being in the first list gives it no standing in the second."

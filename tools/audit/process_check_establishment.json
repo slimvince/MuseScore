@@ -82,9 +82,9 @@
     ]
   },
   "control": {
-    "total": 9,
-    "flagged": 1,
-    "false_positive_rate": 0.111,
+    "total": 10,
+    "flagged": 2,
+    "false_positive_rate": 0.2,
     "rows": [
       {
         "text": "The counts are at `tools/audit/decisions/phase1p_delegation_bar.json` → `pre_apply_check`.",
@@ -132,6 +132,13 @@
         "rules_fired": [
           "D-431 bare quantity"
         ]
+      },
+      {
+        "text": "**Task 2.3's fix reverting is an acceptable outcome** if it raises false denies.",
+        "flagged": true,
+        "rules_fired": [
+          "D-431 bare quantity"
+        ]
       }
     ]
   },
@@ -145,9 +152,9 @@
       "of": 8
     },
     "false_positives_on_the_control_set": {
-      "with_the_word_rule": 1,
-      "without_it": 0,
-      "of": 9
+      "with_the_word_rule": 2,
+      "without_it": 1,
+      "of": 10
     },
     "the_false_positive_this_change_costs": "ONE, and it is published rather than designed around. The phase-1r dispatch's own §3 sentence — 'the insertions here are at three different depths in two files' — is flagged, because `files` is in the shared unit list. It was added to the control set when the check found it, so the rate above shows the rise. JUDGMENT, recorded as one: it is KEPT. The false positive is not a class the word rule introduces — the DIGIT form `in 2 files` is flagged identically by the rule already in force, so reverting the word rule would not remove the false positive, only make the check disagree with itself about how a number is spelled. The condition the dispatch set for reverting is a MATERIAL rise; one instance, whose cause pre-dates the change, is reported as not material and is left for the user to overrule.",
     "probe": [
@@ -193,7 +200,15 @@
         "flagged": false,
         "flagged_without_the_word_rule": false
       }
-    ]
+    ],
+    "the_user_ruled_on_it_2026_08_03": "KEPT, and the ground adopted is the one given above: the DIGIT form is flagged identically, so reverting the word rule would not remove the false positive — it would only make the check disagree with itself about how a number is spelled. The rates are published either way (phase 1s, ruling Y4)."
+  },
+  "known_over_breadth_do_not_tune_it_away": {
+    "what_it_is": "The bare-quantity rule flags a STRUCTURAL DESCRIPTION that happens to carry a number and a unit noun — 'the insertions are at three different depths in two files' — as a bare quantity. The check is not wrong about it: D-431's letter makes a count with a unit a quantity, and 'two files' is one.",
+    "why_it_is_recorded_here": "So a later session does not read it as a defect and close it by adding a noun allowlist, or by removing `files` from the unit list. Either would be TUNING TO A SPECIMEN, which `what_this_measures` below forbids for the same reason in the other direction: a pattern adjusted until a particular sentence stops firing measures that sentence and nothing else.",
+    "the_user_ruled_it_ACCEPTED_2026_08_03": "The word rule is kept, both rates are published, and the one control false positive stands as a known property of the check rather than a defect to design around (phase 1s, ruling Y4). The control row is in `control` above, flagged, so the published false-positive rate INCLUDES it.",
+    "a_second_class_measured_2026_08_03": "A SECTION REFERENCE written without the section mark — `Task 2.3` — is read as a bare quantity. The mark itself is excluded by the quantity rule's lookbehind and a bare small integer is excluded by construction, so this is the one cross-reference notation that falls between them. Found by running the check over the phase-1s dispatch, added to the control set so the published rate includes it, and NOT closed by special-casing the word — for the same reason as above, in the same direction.",
+    "what_would_legitimately_change_it": "A rule change ruled on its own merits — for instance, if D-431 were amended to exempt structural descriptions from the quantity rule. That is a ruling about the RULE, not a pattern edit, and it would arrive with its own re-establishment under D-436."
   },
   "control_reclassified_during_establishment": [
     {

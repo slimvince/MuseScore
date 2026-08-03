@@ -248,6 +248,14 @@ CONTROL = [
     # a check look clean measures nothing (#19) — the same reason the row below was removed.
     "The insertions here are at three different depths in two files, so no single offset is "
     "correct anywhere.",
+    # ADDED 2026-08-03 (phase 1s), and it is a SECOND MEASURED FALSE POSITIVE, recorded on the
+    # same principle as the one above. The phase-1s dispatch's own §7 says this. `Task 2.3` is a
+    # SECTION REFERENCE in a notation the check does not recognize: the quantity rule excludes
+    # `§2.3` by its lookbehind on the section mark, and excludes a bare small integer by
+    # construction, but a decimal-numbered cross-reference written without the mark is neither.
+    # NOT closed by adding `Task` to an exclusion list — that is tuning to a specimen, which
+    # `known_over_breadth_do_not_tune_it_away` forbids for the same reason in both directions.
+    "**Task 2.3's fix reverting is an acceptable outcome** if it raises false denies.",
 ]
 
 
@@ -358,6 +366,47 @@ def establish() -> dict:
                 "pre-dates the change, is reported as not material and is left for the user to "
                 "overrule.",
             "probe": probe,
+            "the_user_ruled_on_it_2026_08_03": "KEPT, and the ground adopted is the one given "
+                "above: the DIGIT form is flagged identically, so reverting the word rule would "
+                "not remove the false positive — it would only make the check disagree with "
+                "itself about how a number is spelled. The rates are published either way "
+                "(phase 1s, ruling Y4).",
+        },
+        "known_over_breadth_do_not_tune_it_away": {
+            "what_it_is": "The bare-quantity rule flags a STRUCTURAL DESCRIPTION that happens "
+                          "to carry a number and a unit noun — 'the insertions are at three "
+                          "different depths in two files' — as a bare quantity. The check is "
+                          "not wrong about it: D-431's letter makes a count with a unit a "
+                          "quantity, and 'two files' is one.",
+            "why_it_is_recorded_here": "So a later session does not read it as a defect and "
+                                       "close it by adding a noun allowlist, or by removing "
+                                       "`files` from the unit list. Either would be TUNING TO "
+                                       "A SPECIMEN, which `what_this_measures` below forbids "
+                                       "for the same reason in the other direction: a pattern "
+                                       "adjusted until a particular sentence stops firing "
+                                       "measures that sentence and nothing else.",
+            "the_user_ruled_it_ACCEPTED_2026_08_03": "The word rule is kept, both rates are "
+                                                     "published, and the one control false "
+                                                     "positive stands as a known property of "
+                                                     "the check rather than a defect to design "
+                                                     "around (phase 1s, ruling Y4). The "
+                                                     "control row is in `control` above, "
+                                                     "flagged, so the published "
+                                                     "false-positive rate INCLUDES it.",
+            "a_second_class_measured_2026_08_03": "A SECTION REFERENCE written without the "
+                "section mark — `Task 2.3` — is read as a bare quantity. The mark itself is "
+                "excluded by the quantity rule's lookbehind and a bare small integer is "
+                "excluded by construction, so this is the one cross-reference notation that "
+                "falls between them. Found by running the check over the phase-1s dispatch, "
+                "added to the control set so the published rate includes it, and NOT closed by "
+                "special-casing the word — for the same reason as above, in the same "
+                "direction.",
+            "what_would_legitimately_change_it": "A rule change ruled on its own merits — for "
+                                                 "instance, if D-431 were amended to exempt "
+                                                 "structural descriptions from the quantity "
+                                                 "rule. That is a ruling about the RULE, not a "
+                                                 "pattern edit, and it would arrive with its "
+                                                 "own re-establishment under D-436.",
         },
         "control_reclassified_during_establishment": [
             {"text": "The register is 431 entries at "

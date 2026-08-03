@@ -502,28 +502,28 @@
         "why_this_scope": "The delegation written 2026-08-03 (ARCHITECTURE.md, the Layer-5 function section) names the DOCUMENT and no section — \"The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md`\" — so under the granularity clause of `CLAUDE.md` rule (h) it reaches every section, and the rule-stating half is then judged per section below.",
         "section_kind": [
           {
-            "heading_line": 537,
+            "heading_line": 158,
+            "heading_text": "5.0 Shared definitions (the terms the rules below stand on)",
+            "states_rules": true,
+            "why": "STATES RULES, and it is the section the moved amendment names as the one it amends. §5.0 defines the terms every §5 rule stands on and then states the rules that use them — the span family and which unit each rule reads, prevailing harmony, the progression, and the licensed root-motion set with its enumerable test (\"This is a stated, enumerable test — not a preference\") and its D5 grammar-ownership ruling. Prescription throughout; no delivery status, no findings table. ADDED 2026-08-03 (phase 1s), when D-341's amendment was moved here from §15 on the user's ruling Y3 — the judgment that made that move necessary is preserved in D-341's own provenance. Read :158-243."
+          },
+          {
+            "heading_line": 546,
             "heading_text": "7. Data design",
             "states_rules": true,
-            "why": "States the layer's data contract: what it carries per analysis unit and per region, that the structure is additive over the Layer-4 result, and what the contract to the layer above IS. Prescription, not a report of findings. Read :537-545."
+            "why": "States the layer's data contract: what it carries per analysis unit and per region, that the structure is additive over the Layer-4 result, and what the contract to the layer above IS. Prescription, not a report of findings. Read :546-554."
           },
           {
-            "heading_line": 611,
+            "heading_line": 620,
             "heading_text": "9. Architecture decisions (with the alternatives weighed)",
             "states_rules": true,
-            "why": "A section of architecture decisions with their rejected alternatives — the same shape as `cowork_voiceleading_axis_design.md` §9, already judged rule-stating at phase 1n. Read :611-668."
+            "why": "A section of architecture decisions with their rejected alternatives — the same shape as `cowork_voiceleading_axis_design.md` §9, already judged rule-stating at phase 1n. Read :620-677."
           },
           {
-            "heading_line": 669,
+            "heading_line": 678,
             "heading_text": "11. Risks & technical debt",
             "states_rules": true,
-            "why": "A JUDGMENT, recorded as one: the heading names a risk register, but every bullet PRESCRIBES the handling rather than reporting a measurement — accept lower confidence on the half cadence, treat defensible tonicization disagreements as non-errors, hold the label uncertain where spelling is absent, the layer must own one tonicization path and retire the duplicate, the forward-recompute bound must be held exactly. D-342 itself fixes a standing posture (engagement deferred indefinitely; the hard-stops apply if a switch is ever made, and are not pending work). Read :669-698."
-          },
-          {
-            "heading_line": 782,
-            "heading_text": "15. Open items & deferred refinements",
-            "states_rules": false,
-            "why": "RECORDS FINDINGS. A JUDGMENT, recorded as one, and it is the one place in this document where the criterion bites. The section is an open-items list whose body is delivery status — \"✅ RESOLVED 2026-06-26\", \"✅ BUILT (dormant) + Cowork-verified\", demotions and deferrals — which is what a tracking surface does, not what a rule-stating section does. The ground for calling it that is the user's OWN adjacent judgment: at `ARCHITECTURE.md` (the voice-leading-span criterion, widened the same day) the identically-titled §15 of the sibling design document is deliberately left out of the delegation as \"ratification asks, not rule-stating sections\". The section is nonetheless MIXED — its item 12 is a user-RATIFIED amendment to the licensed root-motion set (D-341) — so this judgment leaves a ratified rule without a home, which is reported rather than smoothed over and is the `OPEN_ITEMS.md` OI-290 class (the remedy is at the DOCUMENT, moving the rule into a rule-stating section, not at the delegation). Read :782-900."
+            "why": "A JUDGMENT, recorded as one: the heading names a risk register, but every bullet PRESCRIBES the handling rather than reporting a measurement — accept lower confidence on the half cadence, treat defensible tonicization disagreements as non-errors, hold the label uncertain where spelling is absent, the layer must own one tonicization path and retire the duplicate, the forward-recompute bound must be held exactly. D-342 itself fixes a standing posture (engagement deferred indefinitely; the hard-stops apply if a switch is ever made, and are not pending work). Read :678-707."
           }
         ]
       },
@@ -4921,7 +4921,7 @@
       "verbatim": "**Two-tier refinement (user-ratified 2026-06-22) — class-(b) functional regression vs class-(a)\nsymmetric-rotation churn.** A *new* BIR=false case is one of two classes:\n- **Class (b) — functional/key regression: UNCHANGED HARD STOP.** A new BIR=false case at a sonority\n  whose root is *pitch-class-decidable* (any non-symmetric chord — triads, dominant sevenths, etc.)\n  where the analysis now gets the root or key wrong. **Zero** new class-(b) cases on any preset, ever.\n  This is the gate's real intent and does not move.",
       "plain": "A newly wrong reading is one of two kinds. If the chord's root is decidable from the notes at all - any ordinary triad or seventh chord - and the analysis now gets the root or the key wrong, that is a functional regression and it is an absolute bar: never one more of them, on any style preset. The other kind is a sonority whose root the notes genuinely cannot decide - a symmetric diminished seventh, an augmented chord, a chord that shares all its notes with another - where no reading is more correct than another by pitch alone. Those are counted and watched, not barred.",
       "rationale": "Stated constraint, CLAUDE.md:461-463: the pitch-class analyzer is spelling-blind and cannot pick the spelling-correct rotation of a symmetric chord, so counting a rotation flip as a regression would be counting a coin-flip. Measurement bounding the split: on the robust unit the decidable-root class is about 96.5 % of root-fail time (CLAUDE.md:428-431), so the hard stop governs almost all of it. Founding evidence, verified at the score against music21 ground truth: bwv272@4320, bwv289@20160, bwv291@17760, bwv387@10560 (CLAUDE.md:477-480).",
-      "home": "CLAUDE.md:542",
+      "home": "CLAUDE.md:555",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -4943,7 +4943,7 @@
       "verbatim": "**Sync rule — mandatory:** Any commit that adds or modifies a template, bonus,\nguard, gate, or other scoring term in `chordanalyzer.cpp` **must** include a\ncorresponding update to `docs/scoring_model.md` in the same commit. The two\nmust never drift apart. Specifically:\n\n- Adding a template: update the Templates section (§2), increment the template\n  count in the array-size comment, add the guard description if applicable\n- Adding or changing a bonus/gate: update the relevant §4 or §6 entry\n- Adding a new constraint or dead end: add it to §8",
       "plain": "Any commit that adds or changes a template, bonus, guard, gate or other scoring term in the chord analyzer must carry the matching update to the scoring-model document. They may never drift apart.",
       "rationale": "Stated constraint, CLAUDE.md:625-630: violating the scoring model's invariants without reading it first has caused several failed attempts, named in the record - the leading-tone ambiguity attempt, four attempts at one bonus, and a rotation-selector bypass. The staleness check is mechanical: the template count in the document must equal the array size in the code (CLAUDE.md:642-645).",
-      "home": "CLAUDE.md:722",
+      "home": "CLAUDE.md:735",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -4964,7 +4964,7 @@
       "verbatim": "- **THE WRITING STANDARDS LIVE IN `cowork_design_doc_template.md` — read it before writing any\n  specification, design document, decision surface, or anything presented to the user.** Two\n  standards: **predicates must be qualified** (user, 2026-06-24 — every two-place word names its\n  argument; the mechanical check is to force the word to be followed by the thing it points at,\n  and a phrase the prose cannot supply is a hole), and **defined terms, plain vocabulary, no\n  shorthand** (user, 2026-07-02 — a terms table with nothing used before its row; no invented\n  synonyms; no insider compression, a jargon handle only after its rule has been stated; inherited\n  prose audited as hard as new). That file also carries the fourteen-section document structure,\n  the status-banner convention, and the implementation/test locator rule. It is the ONE home for\n  writing standards; the entry below sharpens its rule 5 and does not replace it (#6).",
       "plain": "Anything written as a specification, a design, a decision surface, or for the user follows two standards. Every word that relates two things must name the second one - the check is to force the word to be followed by the thing it points at, and a phrase the prose cannot supply is a hole in the thinking. And terms are defined before use, in plain vocabulary, with no invented synonyms and no insider shorthand.",
       "rationale": "Stated constraint, CLAUDE.md:821-819: inherited prose is audited as hard as new prose, so the standard is about the document a reader meets rather than about who wrote which sentence. The one-home rule is #6 applied to the standards themselves (CLAUDE.md:820-821).",
-      "home": "CLAUDE.md:914",
+      "home": "CLAUDE.md:927",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -4986,7 +4986,7 @@
       "verbatim": "- **No self-invented labels, abbreviations, numbering schemes, or jargon** — in documents,\n  register rows, commit messages, and conversation alike. Use the name a thing already has\n  in the repository; if it has none, describe it in plain words. (User-directed, repeatedly;\n  recorded 2026-07-11.)",
       "plain": "A thing is called by the name it already has in the repository. If it has none, it is described in plain words rather than given a coined label - in documents, rows of the open-items register, commit messages and conversation alike.",
       "rationale": null,
-      "home": "CLAUDE.md:910",
+      "home": "CLAUDE.md:923",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -5006,7 +5006,7 @@
       "verbatim": "- **EVERY DESIGN DECISION CARRIES ITS DEFENSE AT ITS HOME (user-directed, 2026-08-01, at the\n  decisions-register ratification review).** Wherever a design decision is recorded — the owning\n  layer's specification in `ARCHITECTURE.md` first — the record states WHY the decision was made:\n  the published research or algorithm adopted (#1/#2), the measurement that decided it, or the\n  constraint that forced it. Every design decision must be defendable, and its defense documented\n  where the decision lives. This generalizes `ARCHITECTURE.md` §17.2 (every non-obvious scoring\n  weight or threshold must explain its musical reasoning) from scoring values to design decisions\n  as a class. The decisions register (`DECISIONS.md`) points at the defense; where a decision's\n  derivation is not in the record, the register says **\"derivation not recorded\"** — the gap is\n  stated, never filled in retroactively from memory (a defense written after the fact without a\n  source is invention, and the never-work-from-memory rule forbids it). Founding instances of the\n  gap: the decode segment cap's value (4), the legacy 16-beats-back/8-forward window, the\n  boundary-tick-belongs-to-the-segment-it-starts convention — each recorded with no derivation.",
       "plain": "Wherever a design decision is written down - the owning layer's specification first - the record says WHY: the published research or algorithm it adopts, the measurement that decided it, or the constraint that forced it. Every design decision must be defendable and its defense written where the decision lives. Where the record has none, the decisions register says 'derivation not recorded' rather than supplying one afterwards.",
       "rationale": "Stated constraint, CLAUDE.md:869-870: this generalizes ARCHITECTURE.md §17.2 - every non-obvious scoring weight or threshold must explain its musical reasoning - from scoring values to design decisions as a class. The reason the gap is stated rather than filled: a defense written after the fact without a source is invention, which the never-work-from-memory rule forbids (CLAUDE.md:873-874).",
-      "home": "CLAUDE.md:966",
+      "home": "CLAUDE.md:979",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -5027,7 +5027,7 @@
       "verbatim": "After EVERY coding exercise — code, scripts, instruments, and document edits alike —\nand BEFORE reporting the work done: take a step back, re-read the actual diff of every\ntouched file, and check it against the guiding principles, the conventions, the gate and\nthreshold policies in this file, and the known problem types in `DEFECT_TYPES.md`. Any\nviolation found is surfaced immediately (its own `OPEN_ITEMS.md` row if it cannot be\ncorrected on the spot within the session's authorized scope), never silently shipped.\nThe check is of the work actually on disk, not of the intention — read the diff, not the\nmemory of writing it. This applies to CC sessions and Cowork sessions alike.",
       "plain": "After every piece of work and before reporting it, the actual difference on disk in every touched file is re-read and checked against the principles, the conventions, the gate policies and the known defect types. Anything found is surfaced at once, never quietly shipped.",
       "rationale": "Stated constraint, CLAUDE.md:886-887: the check is of the work actually on disk, not of the intention - read the difference, not the memory of writing it. Which is the same reasoning as the never-work-from-memory rule, applied to one's own output.",
-      "home": "CLAUDE.md:1074",
+      "home": "CLAUDE.md:1087",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -5048,7 +5048,7 @@
       "verbatim": "**★ DISTRIBUTION CONSTRAINT (user, 2026-06-15): FORK-LOCAL ONLY — NEVER merge upstream / to the\nMuseScore community.** This patch (`cfc7eb5e39`) is fine to have in the **central repo = the user's\nfork** (`origin` = `slimvince/MuseScore`) and may be pushed there, but it must **NEVER** be pushed or\nmerged to `upstream` (`musescore/MuseScore`) or otherwise contributed to the MuseScore community.\n`upstream` push is disabled in this repo; keep it so. Any future push/PR/merge that would carry\n`cfc7eb5e39` (or its content) toward `musescore/MuseScore` is a HARD STOP — surface, do not proceed.\n(The #9444 reference above is the upstream *bug report*; it does NOT authorize contributing THIS patch.)",
       "plain": "The MusicXML mode-import fix may live in the user's own fork of MuseScore and be pushed there. It must never be pushed, merged or otherwise contributed to the MuseScore project. Any action that would carry it toward the upstream repository stops work and is reported.",
       "rationale": "Stated constraint, CLAUDE.md:753: the upstream issue number cited beside the patch is the upstream BUG REPORT, and referencing it does not authorize contributing this patch. Upstream pushing is disabled in the repository and is to be kept so (:683-684).",
-      "home": "CLAUDE.md:830",
+      "home": "CLAUDE.md:843",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -5070,7 +5070,7 @@
       "verbatim": "**File:** `muse/framework/ui/internal/platform/windows/winwindowscontroller.cpp`  \n**Function:** `calculateWindowSize()`\n\nTwo lines were removed that set `ptMinTrackSize` equal to the full monitor work\narea inside the `WM_GETMINMAXINFO` handler. This told Windows the minimum\nallowed window size was the entire screen, which prevented Windows Snap from\nresizing a maximised MuseScore window into a chosen snap zone (the window\nstayed full-screen and lost its title-bar controls).\n\nThe fix: `ptMaxSize` and `ptMaxPosition` are kept (they correctly constrain the\nmaximised position); `ptMinTrackSize` is intentionally left unset.\n\nUpstream issue: musescore/MuseScore#25823 (related cousins: #21344, #16794).  \nIntroduced by upstream commit `4ad218709` (5 Aug 2025).  \n**Do not restore the `ptMinTrackSize` lines.**",
       "plain": "Two lines were removed from MuseScore's Windows window-sizing code that told Windows the smallest allowed window was the whole screen. With them in place, a maximised MuseScore window could not be snapped into a screen zone - it stayed full-screen and lost its title-bar controls. The removal is deliberate and stays.",
       "rationale": "Stated constraint, CLAUDE.md:683-709: the removed lines set the minimum window size to the full monitor work area, which is what blocked snapping; the maximised-position constraints are correct and are kept. Upstream issue musescore/MuseScore#25823, introduced by upstream commit 4ad218709 (:643-644).",
-      "home": "CLAUDE.md:782",
+      "home": "CLAUDE.md:795",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -5091,7 +5091,7 @@
       "verbatim": "The dedup guarded the `KeySig` creation on **fifths only**:\n`if (oldkey != key.key() || key.custom() || key.isAtonal())`. At score start the\nprevailing key defaults to `{C, KeyMode::UNKNOWN}` (`KeyList::key()` →\n`setConcertKey(Key::C)`), so a **0-fifths** key signature carrying an explicit\n`<mode>` (e.g. `<fifths>0</fifths><mode>minor</mode>`) matched the prevailing fifths,\nthe whole `KeySig` was dropped, and the declared `<mode>` went with it →\n`KeyMode::UNKNOWN` downstream. Export *does* write `<mode>`\n(`exportmusicxml.cpp:2473`), so this broke export/import round-trip of `<mode>` and,\nin our pipeline, dropped the declared-mode anchor on ~79 zero-signature Bach stems\n(`cc_key_emission_headroom_dossier.md` — `declaredModeOrdinal=-1`). The maintainers'\nown `// TODO only if different custom key ?` flags the dedup as known-incomplete.\n\nThe fix: fetch the prevailing `KeySigEvent` (not just the `Key` fifths) and add an\n`oldKeySig.mode() != key.mode()` term to the guard, so a mode-bearing key at matching\nfifths is retained. A key matching the prevailing one in **both** fifths and mode (and\nnot custom/atonal) still produces **no** `KeySig`, so plain mode-less C-major scores are\nunaffected. Verified isolated to empty-signature scores (exactly 79 zero-sig `.ours.json`\nchanged, 0 non-empty-signature stems); BIR gate byte-identical on all three presets\n(Baroque 57 / Jazz 23 / Default 57); key-inference S2 −378 (Default). Round-trip of\n`bwv254` (0-fifths `<mode>minor</mode>`) now preserves `<mode>`.",
       "plain": "MuseScore's importer dropped a key signature that matched the prevailing one in number of sharps or flats even when it declared a different mode - so a piece written with no sharps or flats but marked minor lost that marking on import. The fix compares the mode as well as the accidental count, so a mode-bearing key signature survives.",
       "rationale": "Measurement, CLAUDE.md:736-739: the change is verified isolated to empty-signature scores - exactly 79 zero-signature analyses changed and no non-empty-signature piece moved - the regression gate is byte-identical on all three presets, and the round-trip of a zero-signature minor piece now preserves its mode. The underlying defect is upstream-unchanged code whose own comment flags the check as known-incomplete (CLAUDE.md:729-730, :673-674).",
-      "home": "CLAUDE.md:803",
+      "home": "CLAUDE.md:816",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -5113,7 +5113,7 @@
       "verbatim": "**MAKE IT WORK FIRST; COMPROMISE ON PERFORMANCE ONLY IF PERFORMANCE PROVES TO BE A PROBLEM\n(user-directed, 2026-07-28, at the analysis-cost session).** Getting the inference right comes\nfirst. Runtime speed is traded against it only once slowness has actually turned out to be a",
       "plain": "Getting the analysis right comes first. Speed is traded against it only once slowness has actually turned out to be a problem. That does not make speed unimportant - it puts it second: anything that makes the same computation faster is free on every principle and is done first, and the settings that buy speed by giving up precision are the last resort, not the first.",
       "rationale": "Stated constraint, cowork_handoff.md:361-364: work that makes the same computation faster costs nothing on any principle axis, so it must be exhausted BEFORE anything that trades precision for speed - which is what sequences the effort dial and the analysis-extent question last rather than demoting them.",
-      "home": "CLAUDE.md:999-1001",
+      "home": "CLAUDE.md:1012-1014",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -5174,7 +5174,7 @@
       "verbatim": "**CANDIDATE ADMISSION IS COMPLETION, NOT REFINEMENT — so #8 permits fixing it now (user-ruled\n2026-07-28, at the OI-199 pass-2 session).** The rule that decides which chord classes the joint\ndecoder will even consider is a piece that was never finished, not a refinement of something already",
       "plain": "The rule that decides which chords the decoder will even consider is not a refinement of something already built - it is a piece that was never finished. So the principle that forbids chasing visible analysis errors before the structure is complete does not block fixing it.",
       "rationale": "Stated constraint, cowork_handoff.md:31-32: the design happens ONCE over the whole family, never per symptom (#6/#7) - which is why the fix is deferred until the family is enumerated even though #8 permits it. The measured family: OI-215 (the sparse member-overlap gate), OI-227 (the dense fit gate), OI-226 (admission has no ratified basis), OI-228 (the emission reads struck rather than sounding notes).",
-      "home": "CLAUDE.md:1009-1011",
+      "home": "CLAUDE.md:1022-1024",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -5195,7 +5195,7 @@
       "verbatim": "**ONE FIX IS DESIGNED ONCE OVER THE WHOLE ENUMERATED FAMILY, NEVER PER SYMPTOM (user-ruled\n2026-07-28, at the OI-199 pass-2 session).** When several observed faults turn out to share a cause,\nthe remedy is designed once for all of them together, at the layer that owns the cause; fixing",
       "plain": "When several observed faults turn out to share a cause, the remedy is designed once for all of them together. Fixing whichever one is currently visible, on its own, is the error the one-path-per-concern and layer principles exist to prevent.",
       "rationale": "Stated constraint, cowork_handoff.md:28-29 and #3: the fix is deferred BY DESIGN until the whole family is known, because designing over part of a family is the patch-per-symptom error. The instance that produced the rule: the empty-decode cliff turned out to have a sibling at the opposite end of the density spectrum (OI-227) and an emission-side twin (OI-228), neither visible from the first symptom.",
-      "home": "CLAUDE.md:1020-1022",
+      "home": "CLAUDE.md:1033-1035",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -5319,7 +5319,7 @@
       "verbatim": "**An exotic mode is graded against its PARENT COLLECTION's minor key, not against its own tonic\ntriad** (user-ruled 2026-07-13, OI-132; landed `800f1a12bf`). When our analysis emits one of the five\ndominant-family exotic modes, grading reduces it to the minor key of the collection it belongs to — an",
       "plain": "When the analysis emits one of the five dominant-family exotic modes, grading reduces it to the MINOR key of the collection it belongs to - an emitted C-sharp Phrygian dominant is graded as F-sharp minor, the key it is the dominant of - rather than to the key its own tonic triad would name.",
       "rationale": "Measurement, CLAUDE.md:359-364: on the affected duration the parent-collection reading agrees with the published annotators on 67 % of the local key column, and the tonic-triad reading on 0 %. The consolidation moved only the key columns - root, Roman numeral, every root-failing run set and the hard-stop duration were byte-identical, run-difference +0/-0 on all presets.",
-      "home": "CLAUDE.md:468-470",
+      "home": "CLAUDE.md:481-483",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -5340,7 +5340,7 @@
       "verbatim": "**Key agreement is reported against BOTH the global home key and the local key** (user-ratified\n2026-07-12, OI-143; adopted `d9b52ba969`). Both columns are carried everywhere the key column appears;\nneither replaces the other. *Why:* measured — the local percentage is lower than the home percentage, and that",
       "plain": "There are two defensible questions about a key reading - does it match the key the piece is in, and does it match the key this passage is in - and the record carries both numbers everywhere the key column appears, rather than choosing one.",
       "rationale": "Measurement, OPEN_ITEMS.md:253: the local figure is lower than the home figure, which is itself the finding - the analyzer tracks the tonal home more faithfully than it tracks momentary tonicizations - so keeping only one column would have hidden a real property of the system.",
-      "home": "CLAUDE.md:478-480",
+      "home": "CLAUDE.md:491-493",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -5361,7 +5361,7 @@
       "verbatim": "**The stop is ABSTAIN-AWARE: on the root axis an abstention counts as a DISAGREEMENT** (ruled and\nmechanically enforced 2026-07-12, OI-33). A cell where our analysis carries no root pitch class is\nscored as a root disagreement; on the key axis abstained cells are instead **excluded from the",
       "plain": "If the analysis declines to name a chord root, that counts as getting it wrong, so declining more often can never look like improving. On the key axis the declined cells are excluded from the percentage instead, and a rise in declining trips a flag in the comparison tool.",
       "rationale": "Stated constraint, OPEN_ITEMS.md:200: the metric is abstention-reducible - without the convention, a change that made the system decline more would raise the agreement figure without analysing anything better - and the convention was owed before any abstaining path could be gated on the stop at all.",
-      "home": "CLAUDE.md:483-485",
+      "home": "CLAUDE.md:496-498",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -6181,7 +6181,7 @@
       "title": "The whole decision surface is delivered as user-visible text before any choice question",
       "verbatim": "- **THE WHOLE DECISION SURFACE IS DELIVERED AS USER-VISIBLE TEXT BEFORE ANY CHOICE QUESTION (user\n  mandate 2026-07-05; homed here 2026-08-02 from `cowork_handoff.md`, `OPEN_ITEMS.md` OI-266).**\n  Never present the user with options before the entire situation has been explained in a message the\n  user has actually seen. The decision surface — what is being decided, the background, what each\n  option means, the risks both ways, and the recommendation with its reason — is delivered as\n  user-visible text FIRST, via the verbatim message channel or as the turn's final response. For a\n  **consequential** decision (a ratification, an adoption, a retirement, a checkpoint ruling) the\n  choice question goes in a SEPARATE, LATER turn: the user reads first, then is asked. **A decision\n  answered blind is voidable** — re-present the surface and re-confirm. *Why:* the mechanism is\n  stated with the rule — prose written between tool calls is summarized rather than shown verbatim,\n  so an explanation placed \"just before\" a question widget may never reach the user and the question\n  arrives blind. Its first application is on the record: the 2026-07-05 verdict-14 and 2.2c\n  ratifications were re-presented and re-confirmed.",
       "plain": "Before the user is asked to choose, the situation is explained in a message the user has actually read: what is being decided, the background, what each option means, the risks both ways, and the recommendation. For a consequential call the question comes in a later turn. A decision answered blind can be voided and re-asked.",
-      "home": "CLAUDE.md:1029-1041",
+      "home": "CLAUDE.md:1042-1054",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -6297,7 +6297,7 @@
       "title": "Working-tree files are read with the file tools; bash is limited to git object queries by explicit hash",
       "verbatim": "- **WORKING-TREE FILES ARE READ WITH THE FILE TOOLS; SHELL ACCESS IS LIMITED TO GIT OBJECT QUERIES BY\n  EXPLICIT HASH (user mandate 2026-06-21; homed here 2026-08-02 from `cowork_handoff.md`,\n  `OPEN_ITEMS.md` OI-266).** Local file content, existence, line counts and searches always go\n  through the file tools (Read / Grep / Glob), never through shell text utilities — no `cat`, `wc`,\n  `grep`, `sed`, `head`, `tail`, `git status` or `git diff` on working-tree files. Shell access is\n  permitted **only** for read-only git OBJECT queries named by an explicit commit hash taken from a\n  session's own commit report (`git show <sha>:path`, `git show --stat <sha>`, `git cat-file`,\n  `git diff <shaA> <shaB>`). A branch tip or index read — `git rev-parse HEAD`, `git status`,\n  `git log` — is never trusted for what is current. A `bad object` or missing-object error is a\n  **staleness signal: surface it, never guess around it.** *Why:* measured failure — a stale mount\n  made the shell path return wrong content and raise a false corruption alarm while the file tools\n  read the live disk correctly; the git-object exception survives because content-addressed reads are\n  self-verifying, erroring loudly rather than returning silently-wrong content. **Scope, as the\n  record states it:** this is a standing rule for the PLANNING side — it is stated under the heading\n  \"COWORK MUST NOT HALLUCINATE OR ASSUME — VERIFY AT SOURCE\", and the role-separation rule beside it\n  spells out the same restriction as one of the things \"Cowork MAY\" do. It is homed here because\n  `CLAUDE.md` is where this project's shared standing rules live, not because its scope widens: the\n  build, test and measurement commands `BUILD_AND_TEST.md` and the sections above mandate are\n  unaffected, and nothing in the record extends the file-tools restriction to them.",
       "plain": "File content, existence, line counts and searches are read through the file tools, never through shell text utilities on the working tree. Shell access is allowed only for read-only git object queries named by an explicit commit hash, which are content-addressed and fail loudly when stale. A branch tip or index read is never trusted for what is current.",
-      "home": "CLAUDE.md:1043-1061",
+      "home": "CLAUDE.md:1056-1074",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -6327,7 +6327,7 @@
       "title": "Investigate by default; never ask the user whether to investigate or proceed",
       "verbatim": "- **INVESTIGATE BY DEFAULT; NEVER ASK THE USER WHETHER TO INVESTIGATE OR PROCEED (user mandate\n  2026-06-14; homed here 2026-08-02 from `cowork_handoff.md`, `OPEN_ITEMS.md` OI-266).** Wherever a\n  step could be investigated or measured BEFORE it is committed to, it is measured first — and that\n  is not put to the user as a choice. When such a fork is reached, the read-only investigation or\n  measurement is written and run directly, byte-identical where possible. *Why:* the user's standing\n  answer to \"investigate, or go in some direction\" is always *investigate*, so asking spends a turn\n  to learn nothing; this is the never-guess rule's logical end — gather the cheap evidence before any\n  commitment — and it operationalizes principle #5 (investigate when facts may be scarce).",
       "plain": "Wherever a step could be measured before it is committed to, it is measured first, and that is not put to the user as a choice. When the planning side reaches such a fork it writes the read-only investigation instruction directly.",
-      "home": "CLAUDE.md:1063-1070",
+      "home": "CLAUDE.md:1076-1083",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -7744,7 +7744,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "CLAUDE.md:455-457",
+      "home": "CLAUDE.md:468-470",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status_source": "Recorded in `cowork_handoff_archive.md` (the corpus-audit block, as the ground-truth verdict). The human-annotation-only requirement it names was delivered as the granularity-robust unit (D-115), whose own text carries the clause \"music21 is NOT ground truth\"; the two further clauses — never describe a measurement as ground-truth agreement, and no self-annotation in any measurement — are recorded ONLY here. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]] — measurement conventions go to the gate block): written into `CLAUDE.md` gate block (A) as the FIRST of the four grading conventions the robust unit is measured under, carrying all three clauses the archive held alone. Former home preserved (#12): `cowork_handoff_archive.md:2844`, the corpus-audit block.",
@@ -8110,7 +8110,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "CLAUDE.md:441-443",
+      "home": "CLAUDE.md:454-456",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status_source": "Recorded in `STATUS_ARCHIVE.md` (session 21, at the user's ratification of the external architecture review's corpus-expansion amendment). Related but distinct from **D-225** (a corpus is regenerated before its baseline figures are updated) and from the re-baseline discipline in `CLAUDE.md` gate block (A). Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]] — measurement conventions go to the gate block): written into `CLAUDE.md` gate block (A) beside the re-baseline discipline it bounds. Former home preserved (#12): `STATUS_ARCHIVE.md:250`. The same rule is stated on the corpus side at `cowork_score_census.md`'s decision-tier block, which the homed text names.",
@@ -8566,7 +8566,7 @@
         "section": "### Floating-point tie policy",
         "label": "“Floating-point tie policy”",
         "delegated": true,
-        "delegation": "CLAUDE.md:713",
+        "delegation": "CLAUDE.md:726",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
@@ -8606,7 +8606,7 @@
         "section": "### Floating-point tie policy",
         "label": "“Floating-point tie policy”",
         "delegated": true,
-        "delegation": "CLAUDE.md:713",
+        "delegation": "CLAUDE.md:726",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
@@ -8645,7 +8645,7 @@
         "section": "### `dim7CharacteristicBonus` — `kDim7CharacteristicBonus = 0.75`",
         "label": "“`dim7CharacteristicBonus`”",
         "delegated": true,
-        "delegation": "CLAUDE.md:713",
+        "delegation": "CLAUDE.md:726",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
@@ -8685,7 +8685,7 @@
         "section": "### §6a. The unified promotion primitive `promoteToWinner()`",
         "label": "“§6a. The unified promotion primitive `promoteToWinner()`”",
         "delegated": true,
-        "delegation": "CLAUDE.md:713",
+        "delegation": "CLAUDE.md:726",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
@@ -9103,7 +9103,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "cowork_layer5_function_design.md:612-617",
+      "home": "cowork_layer5_function_design.md:621-626",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
@@ -9117,7 +9117,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 611,
+        "heading_line": 620,
         "section": "## 9. Architecture decisions (with the alternatives weighed)",
         "label": "§9",
         "delegated": true,
@@ -9142,7 +9142,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "cowork_layer5_function_design.md:618-622",
+      "home": "cowork_layer5_function_design.md:627-631",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
@@ -9156,7 +9156,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 611,
+        "heading_line": 620,
         "section": "## 9. Architecture decisions (with the alternatives weighed)",
         "label": "§9",
         "delegated": true,
@@ -9181,7 +9181,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "cowork_layer5_function_design.md:623-625",
+      "home": "cowork_layer5_function_design.md:632-634",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
@@ -9195,7 +9195,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 611,
+        "heading_line": 620,
         "section": "## 9. Architecture decisions (with the alternatives weighed)",
         "label": "§9",
         "delegated": true,
@@ -9220,7 +9220,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "cowork_layer5_function_design.md:627-630",
+      "home": "cowork_layer5_function_design.md:636-639",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
@@ -9234,7 +9234,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 611,
+        "heading_line": 620,
         "section": "## 9. Architecture decisions (with the alternatives weighed)",
         "label": "§9",
         "delegated": true,
@@ -9259,7 +9259,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "cowork_layer5_function_design.md:637-648",
+      "home": "cowork_layer5_function_design.md:646-657",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
@@ -9273,7 +9273,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 611,
+        "heading_line": 620,
         "section": "## 9. Architecture decisions (with the alternatives weighed)",
         "label": "§9",
         "delegated": true,
@@ -9298,7 +9298,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_layer5_function_design.md:547-554",
+      "home": "cowork_layer5_function_design.md:556-563",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).",
@@ -9312,7 +9312,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 537,
+        "heading_line": 546,
         "section": "## 7. Data design",
         "label": "§7",
         "delegated": true,
@@ -9329,7 +9329,7 @@
       "id": "D-341",
       "group": "H",
       "title": "The licensed root-motion set is completed by theory — the ascending fifth, the descending second and the diatonic diminished fifth are added",
-      "verbatim": "12. **★ §5.0 grammar completion (found 2026-07-02 by the D5 consistency check — ★ RATIFIED by the user 2026-07-03;\n    the §5.0 enumeration is amended, the code increment is pending).** The licensed\n    root-motion set descended from the old scoring-bonus signals and omitted three theory-licensed motions the\n    catalog's\n    own musically-correct entries exercise: **ascending fifth / plagal motion** (IV→I, I→V — tonic-to-dominant!),\n    **descending second** (the Phrygian/Andalusian step), and the **diatonic diminished fifth** (the IV→viiᵒ link of\n    the full circle). The amendment: extend `isLicensedProgression` (+ this §5.0's enumeration, now done) accordingly\n    — algorithmic\n    completion per theory, NOT tuning; its own small dormant increment with tests; the consumer's consistency test\n    then tightens to the clean assert. Evidence: the 6-entry/**11-motion** failure table, measured, enumerated and",
+      "verbatim": "  **(★ THE GRAMMAR-COMPLETION AMENDMENT — found 2026-07-02 by the D5 consistency check; ★ RATIFIED by the user\n  2026-07-03; in force in this spec, not yet in code — the code increment is pending):** the pre-amendment\n  set descended from the old scoring-bonus signals and omitted three theory-licensed motions the catalog's\n  musically-correct\n  entries exercise; the licensed set now **also includes**: **the ascending fifth** (tonic→dominant and plagal\n  motion — I→V, IV→I), **the descending second** (the Phrygian/Andalusian step — i→♭VII, ♭VII→♭VI, ♭VI→V), and **the\n  diatonic diminished fifth** (the IV→viiᵒ link of the full circle of fifths). This is **algorithmic completion per\n  theory, NOT tuning**. Implementation = its own small dormant\n  increment (`isLicensedProgression` + tests, instruction pending dispatch); the consumer's D5 consistency test then\n  empties its 11-motion known-gap list and tightens to the clean assert. Until that increment lands, the code\n  implements the pre-amendment set — a known, ruled spec-ahead-of-code state.\n  **Evidence:** the 6-entry/**11-motion** failure table, measured, enumerated and\n  pinned in the consumer's consistency test (`EXPECT_EQ(failing.size(), 11u)`) — the earlier \"12\" was a Cowork\n  arithmetic error, corrected 2026-07-02 (U2); the measured 11 is authoritative.",
       "plain": "The list of chord-to-chord root motions the analysis treats as real functional progressions was inherited from an older scoring mechanism and left out three motions that standard theory licenses and the project's own catalogue uses. They are added. This is completing an algorithm against theory, not tuning it.",
       "rationale": "Measured by the catalogue-versus-grammar consistency check: six catalogue entries exercising eleven motions failed against the grammar as coded, and the eleven are enumerated and pinned in the consumer's own test. The three missing motions are tonic-to-dominant and plagal motion, the Phrygian step, and the diminished fifth that closes the circle of fifths.",
       "status": "live",
@@ -9337,10 +9337,10 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "cowork_layer5_function_design.md:888-897",
+      "home": "cowork_layer5_function_design.md:203-216",
       "home_is_layer_spec": false,
-      "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). **HOMED IN A SECTION THAT RECORDS FINDINGS (2026-08-03, phase 1r).** The delegation the user wrote for `cowork_layer5_function_design.md` names the whole document and so reaches §15, but §15 is an open-items list and fails D-430's rule-stating half, so this entry stays `gap` while the document's other seven move. The kind judgment follows the user's own adjacent ruling of the same day, which excludes the identically-titled §15 of the sibling voice-leading design as \"ratification asks, not rule-stating sections\". Because this decision IS a ratified rule, the mismatch is a finding about the DOCUMENT, not about the entry: rowed at `OPEN_ITEMS.md` OI-295, the `OPEN_ITEMS.md` OI-290 shape at a second document. The remedy is to move the amendment into §5.0, the section it amends.",
+      "nonspec_kind": "contract-home",
+      "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). **HOMED IN A SECTION THAT RECORDS FINDINGS (2026-08-03, phase 1r).** The delegation the user wrote for `cowork_layer5_function_design.md` names the whole document and so reaches §15, but §15 is an open-items list and fails D-430's rule-stating half, so this entry stays `gap` while the document's other seven move. The kind judgment follows the user's own adjacent ruling of the same day, which excludes the identically-titled §15 of the sibling voice-leading design as \"ratification asks, not rule-stating sections\". Because this decision IS a ratified rule, the mismatch is a finding about the DOCUMENT, not about the entry: rowed at `OPEN_ITEMS.md` OI-295, the `OPEN_ITEMS.md` OI-290 shape at a second document. The remedy is to move the amendment into §5.0, the section it amends. **THE REMEDY IS EXECUTED (2026-08-03, phase 1s, on the user's ruling Y3 — fix it at the DOCUMENT, not at the classification).** The amendment now lives in §5.0's licensed-progression definition, the section its own verbatim says it amends, and §15 item 12 keeps a dated note recording that it moved and where — the tracking history preserved, the rule not duplicated (#6). **One thing the dispatch did not predict, and it changed what \"move the rule text\" meant:** §5.0 ALREADY carried the amendment's enumeration, inserted when the amendment was ratified (\"+ this §5.0's enumeration, now done\", the former verbatim). Moving the §15 text wholesale would therefore have DUPLICATED it. What moved instead is the part §15 alone carried — the ratification marker with its finding date, the completion-not-tuning characterization, and the 6-entry/11-motion evidence — moved unchanged (#12), so the section now states the rule AND carries its defense at its home. The former verbatim (the §15 item-12 text) is preserved here: \"12. **★ §5.0 grammar completion (found 2026-07-02 by the D5 consistency check — ★ RATIFIED by the user 2026-07-03; the §5.0 enumeration is amended, the code increment is pending).** The licensed root-motion set descended from the old scoring-bonus signals and omitted three theory-licensed motions the catalog's own musically-correct entries exercise: **ascending fifth / plagal motion** (IV→I, I→V — tonic-to-dominant!), **descending second** (the Phrygian/Andalusian step), and the **diatonic diminished fifth** (the IV→viiᵒ link of the full circle). The amendment: extend `isLicensedProgression` (+ this §5.0's enumeration, now done) accordingly — algorithmic completion per theory, NOT tuning; its own small dormant increment with tests; the consumer's consistency test then tightens to the clean assert. Evidence: the 6-entry/**11-motion** failure table, measured, enumerated and\", and the former home was `cowork_layer5_function_design.md:888-897`. The §15 kind judgment that produced this row's `gap` — that §15 RECORDS FINDINGS, on the user's own adjacent ruling of the same day about the identically-titled §15 of the sibling voice-leading design — is retired from the authored block because it now decides no entry, and is preserved here instead of being deleted. `OPEN_ITEMS.md` OI-295 flips.",
       "patterns": [
         "§5\\.0 grammar completion"
       ],
@@ -9351,14 +9351,14 @@
         ]
       },
       "home_section": {
-        "heading_line": 782,
-        "section": "## 15. Open items & deferred refinements",
-        "label": "§15",
+        "heading_line": 158,
+        "section": "### 5.0 Shared definitions (the terms the rules below stand on)",
+        "label": "§5.0",
         "delegated": true,
         "delegation": "ARCHITECTURE.md:1496",
-        "states_rules": false,
-        "verdict": "EXCLUDE",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS",
+        "states_rules": true,
+        "verdict": "ADMIT",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
         "class_before_phase1r": "gap"
@@ -9376,7 +9376,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_layer5_function_design.md:696-698",
+      "home": "cowork_layer5_function_design.md:705-707",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02) after the live-handling question was answered (the concern mapping now in the plain restatement); LEGACY-subject marked.",
@@ -9391,7 +9391,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 669,
+        "heading_line": 678,
         "section": "## 11. Risks & technical debt",
         "label": "§11",
         "delegated": true,
@@ -12759,7 +12759,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "User ruling of 2026-08-03 (the seventh ruling set of that date, W2 — 'grade the forms and set the bar'), homed at phase 1p as rule (i) of the decisions-register section, beside (g) and (h) which it completes. **RECORDED AT PHASE 1p, APPLIED AT PHASE 1q.** The dispatch ordered a check before applying it — *does this bar change the verdict for any document the register currently classifies `contract-home`?* — and predicted no, on the ground that the admitted set was reached on explicit delegation clauses. The check was run in a generator (`tools/audit/decisions/gen_phase1p_delegation_bar.py` → `pre_apply_check`) and the prediction is **REFUTED**: the bar excludes documents the register currently admits. Under the dispatch's own instruction that is a #13 STOP, so no entry's home class was changed and the non-conformance is rowed at `OPEN_ITEMS.md` OI-291. The generator applies nothing — it only reads the backbone. NOT RATIFIED as an ENTRY — it goes to the user in the phase-1p ratification queue. **APPLIED 2026-08-03 (phase 1q, the user's ruling of that date, option A3):** the user ruled ONE re-classification pass over the whole home population rather than a forward-only migration or a revision of the bar, with a WRITE LIST for the homes the record means to keep. The pass is `tools/audit/decisions/gen_home_classification.py` → `phase1q_reclassification.json`; its `totals` carry the movement and its `write_list` the drafted delegations, which go to the user because only the user writes one. `OPEN_ITEMS.md` OI-291 flips with that provenance. **THE WRITE LIST CAME BACK WRITTEN, 2026-08-03 (phase 1r).** The user wrote a delegation for each of the six documents the pass emitted, and the pass was re-run against them: all six move, two only in part (`tools/audit/decisions/phase1q_reclassification.json` -> `the_phase_1r_re_run`; `OPEN_ITEMS.md` OI-293 closes). The bar itself is unchanged — what changed is the wordings it reads, which is the outcome the ruling was designed to produce. The pre-apply check still reports STOP over the same three documents: four delegation grades moved today, so the grades the check was run against are frozen at `gen_phase1p_delegation_bar.py` -> `GRADE_AT_PHASE_1P` while `FORMS` stays live for the classifier (#12, and one live grade with one home, #6). **This entry's own defense now cites two line numbers that have moved** — the same act shifted `ARCHITECTURE.md`, and no tool re-aims a line number quoted inside a rule's prose; carried at `OPEN_ITEMS.md` OI-294.",
+      "status_source": "User ruling of 2026-08-03 (the seventh ruling set of that date, W2 — 'grade the forms and set the bar'), homed at phase 1p as rule (i) of the decisions-register section, beside (g) and (h) which it completes. **RECORDED AT PHASE 1p, APPLIED AT PHASE 1q.** The dispatch ordered a check before applying it — *does this bar change the verdict for any document the register currently classifies `contract-home`?* — and predicted no, on the ground that the admitted set was reached on explicit delegation clauses. The check was run in a generator (`tools/audit/decisions/gen_phase1p_delegation_bar.py` → `pre_apply_check`) and the prediction is **REFUTED**: the bar excludes documents the register currently admits. Under the dispatch's own instruction that is a #13 STOP, so no entry's home class was changed and the non-conformance is rowed at `OPEN_ITEMS.md` OI-291. The generator applies nothing — it only reads the backbone. NOT RATIFIED as an ENTRY — it goes to the user in the phase-1p ratification queue. **APPLIED 2026-08-03 (phase 1q, the user's ruling of that date, option A3):** the user ruled ONE re-classification pass over the whole home population rather than a forward-only migration or a revision of the bar, with a WRITE LIST for the homes the record means to keep. The pass is `tools/audit/decisions/gen_home_classification.py` → `phase1q_reclassification.json`; its `totals` carry the movement and its `write_list` the drafted delegations, which go to the user because only the user writes one. `OPEN_ITEMS.md` OI-291 flips with that provenance. **THE WRITE LIST CAME BACK WRITTEN, 2026-08-03 (phase 1r).** The user wrote a delegation for each of the six documents the pass emitted, and the pass was re-run against them: all six move, two only in part (`tools/audit/decisions/phase1q_reclassification.json` -> `the_phase_1r_re_run`; `OPEN_ITEMS.md` OI-293 closes). The bar itself is unchanged — what changed is the wordings it reads, which is the outcome the ruling was designed to produce. The pre-apply check still reports STOP over the same three documents: four delegation grades moved today, so the grades the check was run against are frozen at `gen_phase1p_delegation_bar.py` -> `GRADE_AT_PHASE_1P` while `FORMS` stays live for the classifier (#12, and one live grade with one home, #6). **This entry's own defense now cites two line numbers that have moved** — the same act shifted `ARCHITECTURE.md`, and no tool re-aims a line number quoted inside a rule's prose; carried at `OPEN_ITEMS.md` OI-294. **CORRECTED BY THE USER'S RULING, 2026-08-03 (phase 1s, Y2 — option 1B): the defense is CONVERTED FROM LINE NUMBERS TO A DESCRIPTION.** The rule's *Why:* clause now says that one line ends *\"Full spec:\"* and names its target on the next, and that the delegation clause immediately beneath names its target and its sections — the same evidence, stated so that nothing in it can drift. The reason is written into the rule text because it generalizes: a line number quoted inside a rule's PROSE is not a register anchor, so `reaim_home_anchors.py` cannot maintain it and it goes stale on the next insertion above it. **The FORMER wording is preserved here (#12):** \"*Why:* the canonical document distinguishes the two acts in ADJACENT LINES — `ARCHITECTURE.md:1482` ends *\\\"Full spec:\\\"* and names its target on the next line, while `:1485` immediately beneath is a delegation clause that names its target AND its sections. The distinction is `ARCHITECTURE.md`'s own, not a preference.\" **This entry's VERBATIM did not need re-taking and was not re-taken**, which is stated rather than glossed: the quoted block ends at *\"…a parenthetical recording where something was ratified.\"*, and the corrected *Why:* clause sits immediately BELOW it, outside the quote. The `rationale` field above already carried the description form (it cites `tools/audit/decisions/phase1p_delegation_bar.json` → `the_defense`, generated), so it needed no change either. `OPEN_ITEMS.md` OI-294 flips.",
       "patterns": [
         "WHAT COUNTS AS A DELEGATION, GRADED BY FORM",
         "bare appended citation",
@@ -12812,10 +12812,10 @@
       "id": "D-435",
       "group": "K",
       "title": "Delegating to a document and being a home are different tests with different subjects",
-      "verbatim": "**(j) DELEGATING TO A DOCUMENT AND BEING A HOME ARE DIFFERENT TESTS WITH DIFFERENT SUBJECTS (user,\n2026-08-03).** To DELEGATE, a surface must itself be user-ratified; to BE a home, a section must be\ndelegated to. A document may satisfy one and fail the other, and neither role implies the other. So\n`cowork_engage_arc_plan.md` — a user-ratified surface the criterion USES as a source of delegations\n— is not thereby a delegation TARGET: whether any section of it is a home turns on whether some\nuser-ratified surface delegates a concern to it in a form (i) admits, and today none does. *Why:*\nthe question was asked in exactly that form, and the two roles had been running together in the\ntracking prose; stating them apart is what keeps (i) a mechanical test rather than one with a\ncase-by-case exception.",
+      "verbatim": "**(j) DELEGATING TO A DOCUMENT AND BEING A HOME ARE DIFFERENT TESTS WITH DIFFERENT SUBJECTS (user,\n2026-08-03).** To DELEGATE, a surface must itself be user-ratified; to BE a home, a section must be\ndelegated to. A document may satisfy one and fail the other, and neither role implies the other. So\n`cowork_engage_arc_plan.md` — a user-ratified surface the criterion USES as a source of delegations\n— is not a delegation TARGET BY THAT FACT: whether any section of it is a home turns on the separate\nquestion of whether some user-ratified surface delegates a concern to it in a form (i) admits, which\nis answered by reading the delegations that exist and never by the document's standing as a source.\n*Why:* the question was asked in exactly that form, and the two roles had been running together in\nthe tracking prose; stating them apart is what keeps (i) a mechanical test rather than one with a\ncase-by-case exception.",
       "plain": "Two questions about a document are often run together and are not the same. Whether a document may DELEGATE a concern to another depends on whether the user ratified that document. Whether a document may BE the home of a decision depends on whether some user-ratified surface delegates a concern to it, in a wording the delegation bar admits. A document can pass one test and fail the other, and passing the first never confers the second.",
-      "rationale": "The question arose in exactly this form and had to be answered before the delegation bar could be applied: `cowork_engage_arc_plan.md` is one of the three user-ratified surfaces the contract-home criterion reads delegations FROM, and the bar excludes it as a delegation TARGET, because the only naming of it is inside a list of citations (`CLAUDE.md:129-130`). Stating the two roles apart is what keeps the bar a mechanical test: the alternative on the table was an exception for this one document, and a mechanical test with a case-by-case exception is not a mechanical test.",
-      "home": "CLAUDE.md:225",
+      "rationale": "The question arose in exactly this form and had to be answered before the delegation bar could be applied: `cowork_engage_arc_plan.md` is one of the three user-ratified surfaces the contract-home criterion reads delegations FROM, and the collision to resolve was whether that standing made it a delegation TARGET as well. Stating the two roles apart is what keeps the bar a mechanical test: the alternative on the table was an exception for this one document, and a mechanical test with a case-by-case exception is not a mechanical test. What the ruling settles is the SHAPE of the answer — read the delegations that exist, in the forms D-432 admits — and not any particular document's standing, which is a fact that can change and did: the user then wrote a delegation for this document (the OI-293 write list), and it became a home by being delegated to, which is the rule working rather than an exception to it.",
+      "home": "CLAUDE.md:231",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
       "status": "live",
@@ -12823,7 +12823,7 @@
       "ratified_by": [
         "user"
       ],
-      "status_source": "User ruling of 2026-08-03 (the eighth ruling set of that date, X2 — 'draft a proper delegation rather than an exception'), homed at phase 1q as rule (j) of the decisions-register section, beside (g), (h) and (i) whose interaction it fixes. It resolves the collision the phase-1p wave reported and did not settle: that wave's own §4 ordered `cowork_engage_arc_plan.md`'s three entries ADMITTED on the test *names it by name for a stated concern*, while **D-432** excludes that naming as a provenance attribution. **The bar governs and the phase-1p §4 admission is superseded on this point**, recorded rather than dropped; the remedy for the arc plan is a drafted delegation on the phase-1q write list (`tools/audit/decisions/phase1q_reclassification.json` → `write_list`), which goes to the user because only the user writes a delegation. NOT RATIFIED as an ENTRY — it goes to the user in the phase-1q ratification queue. **THIS ENTRY'S RATIONALE IS STALE AT HEAD, and is left standing rather than rewritten (2026-08-03, phase 1r).** It says the bar excludes `cowork_engage_arc_plan.md` as a delegation TARGET \"because the only naming of it is inside a list of citations (`CLAUDE.md:129-130`)\" — true when the ruling was made, and no longer true: on the user's direction the OI-293 write list wrote an explicit delegation clause into `CLAUDE.md` for exactly this document, so its three entries are now `contract-home`. **The RULING is untouched by that** — (j) says delegating and being a home are different tests, and the arc plan became a home by being delegated to, which is the rule working rather than an exception to it. What is stale is the verbatim's closing clause, *\"and today none does\"*, a factual statement inside user-ruled text that this session may not edit; it is rowed at `OPEN_ITEMS.md` OI-294 for the user.",
+      "status_source": "User ruling of 2026-08-03 (the eighth ruling set of that date, X2 — 'draft a proper delegation rather than an exception'), homed at phase 1q as rule (j) of the decisions-register section, beside (g), (h) and (i) whose interaction it fixes. It resolves the collision the phase-1p wave reported and did not settle: that wave's own §4 ordered `cowork_engage_arc_plan.md`'s three entries ADMITTED on the test *names it by name for a stated concern*, while **D-432** excludes that naming as a provenance attribution. **The bar governs and the phase-1p §4 admission is superseded on this point**, recorded rather than dropped; the remedy for the arc plan is a drafted delegation on the phase-1q write list (`tools/audit/decisions/phase1q_reclassification.json` → `write_list`), which goes to the user because only the user writes a delegation. NOT RATIFIED as an ENTRY — it goes to the user in the phase-1q ratification queue. **THIS ENTRY'S RATIONALE IS STALE AT HEAD, and is left standing rather than rewritten (2026-08-03, phase 1r).** It says the bar excludes `cowork_engage_arc_plan.md` as a delegation TARGET \"because the only naming of it is inside a list of citations (`CLAUDE.md:129-130`)\" — true when the ruling was made, and no longer true: on the user's direction the OI-293 write list wrote an explicit delegation clause into `CLAUDE.md` for exactly this document, so its three entries are now `contract-home`. **The RULING is untouched by that** — (j) says delegating and being a home are different tests, and the arc plan became a home by being delegated to, which is the rule working rather than an exception to it. What is stale is the verbatim's closing clause, *\"and today none does\"*, a factual statement inside user-ruled text that this session may not edit; it is rowed at `OPEN_ITEMS.md` OI-294 for the user. **CORRECTED BY THE USER'S RULING, 2026-08-03 (phase 1s, Y2 — option 1B).** The user ruled the stale clause struck and this rationale re-taken. The verbatim above is RE-TAKEN from the corrected rule text, which now says the arc plan is not a delegation target BY THE FACT of being a source and that the home question is answered by reading the delegations that exist — a statement of what the two tests ARE, carrying no present-tense claim about any document's current standing, so it cannot go stale the same way again. **The FORMER verbatim clause is preserved here (#12):** \"— is not thereby a delegation TARGET: whether any section of it is a home turns on whether some user-ratified surface delegates a concern to it in a form (i) admits, and today none does.\" **The FORMER rationale is preserved here (#12):** \"The question arose in exactly this form and had to be answered before the delegation bar could be applied: `cowork_engage_arc_plan.md` is one of the three user-ratified surfaces the contract-home criterion reads delegations FROM, and the bar excludes it as a delegation TARGET, because the only naming of it is inside a list of citations (`CLAUDE.md:129-130`). Stating the two roles apart is what keeps the bar a mechanical test: the alternative on the table was an exception for this one document, and a mechanical test with a case-by-case exception is not a mechanical test.\" The RULING is untouched by either correction.",
       "patterns": [
         "DELEGATING TO A DOCUMENT AND BEING A HOME ARE DIFFERENT TESTS",
         "neither role implies the other"
