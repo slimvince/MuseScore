@@ -13,9 +13,9 @@
   "the_two_stops": "The tool refuses to run if a first-cut candidate has no authored verdict, and refuses an authored verdict for a row that is not an open candidate - so the table cannot drift away from the register without failing loudly."
  },
  "population": {
-  "rows_parsed": 325,
-  "open_rows": 240,
-  "first_cut_candidates": 55,
+  "rows_parsed": 336,
+  "open_rows": 249,
+  "first_cut_candidates": 60,
   "first_cut_vocabulary": [
    "doc-sync",
    "docs /",
@@ -37,8 +37,8 @@
   ]
  },
  "totals": {
-  "non_gating": 24,
-  "gates": 31,
+  "non_gating": 27,
+  "gates": 33,
   "non_gating_ids": [
    "OI-205",
    "OI-219",
@@ -56,6 +56,9 @@
    "OI-301",
    "OI-317",
    "OI-318",
+   "OI-327",
+   "OI-329",
+   "OI-332",
    "OI-46",
    "OI-47",
    "OI-48",
@@ -82,6 +85,9 @@
     "OI-301",
     "OI-317",
     "OI-318",
+    "OI-327",
+    "OI-329",
+    "OI-332",
     "OI-46",
     "OI-47",
     "OI-48",
@@ -137,11 +143,17 @@
     "OI-239",
     "OI-57"
    ],
+   "the criterion": [
+    "OI-337"
+   ],
    "the criterion - the row's subject bears on an instrument": [
     "OI-320"
    ],
    "the criterion - the row's subject bears on the analysis": [
     "OI-322"
+   ],
+   "the criterion - the row's subject bears on the analysis's inputs": [
+    "OI-331"
    ],
    "the criterion - the row's subject bears on what the emission reads": [
     "OI-324"
@@ -579,6 +591,46 @@
    "gate_ground": "the criterion - the row's subject bears on what the emission reads"
   },
   {
+   "id": "OI-327",
+   "title": "✅ **RESOLVED** — all five drafted delegations are disposed: four written into `ARCHITECTURE.md`, one ruled NOT a delegation target",
+   "subject_column": "E — user adjudication / decisions register",
+   "verdict": "NON-GATING",
+   "reason": "Five drafted delegation clauses awaiting the user's word. The subject is WHERE a decision is recorded and which surface delegates to which document -- the decisions register's own filing apparatus, which D-438's line inside the documentation rows names on the apparatus side in terms (a pointer, an anchor, a filing decision). It bears on no analysis, no input and no instrument: the decisions the five documents hold are already registered and already readable at their homes, and what the delegations would change is the CLASS the register records for those entries, not their content. It carries no establishment obligation, so the starred clause that makes those gate whatever their subject does not reach it either.",
+   "class_basis": "tracking/documentation apparatus - the user's own phrase"
+  },
+  {
+   "id": "OI-329",
+   "title": "✅ **RESOLVED** — D-172 survives as principle #8's entry; D-557 is superseded into it with its former home and text preserved",
+   "subject_column": "E — user adjudication / decisions register",
+   "verdict": "NON-GATING",
+   "reason": "Two live register entries recording ONE rule at ONE home, after the wave's own widening of a principle that already had an entry. The subject is HOW MANY REGISTER ROWS record one rule -- the decisions register's own filing apparatus, which D-438's line inside the documentation rows names on the apparatus side in terms (a filing decision). It is on the apparatus side for the reason the line makes decisive -- WHAT IS OWED decides it, and what is owed here is a filing choice among three named treatments, not a correction to any statement about the analysis: the RULE, its width and its home are not in doubt, both entries quote it correctly and both verify at the cited lines, so no reader is misled about anything the analysis does. It bears on no analysis, no input and no measurement tool, and it carries no establishment obligation, so the starred clause that makes those gate whatever their subject does not reach it either.",
+   "class_basis": "tracking/documentation apparatus - the user's own phrase"
+  },
+  {
+   "id": "OI-331",
+   "title": "**A LIVE, USER-RATIFIED entry names a convergence proxy the build MEASURED FALSE and dropped** — **D-261**'s worked example versus **D-622**",
+   "subject_column": "F — doc-sync debt (#10) / E — user adjudication",
+   "verdict": "GATES",
+   "reason": "A LIVE, user-ratified register entry names a convergence proxy the build MEASURED FALSE and dropped, and the entry carries no annotation. The subject is a binding contract rule about HOW MUCH MUSIC THE ANALYSIS READS before it commits to a key -- the analysis's own input scope, which is the strongest form D-438's test has. A session applying the rule as written would build a stop condition already measured not to work. Nothing about it is apparatus: what is owed is not a pointer, an anchor or a filing choice but the correction of a rule, which D-438's line inside the documentation rows puts on the gating side in terms.",
+   "gate_ground": "the criterion - the row's subject bears on the analysis's inputs"
+  },
+  {
+   "id": "OI-332",
+   "title": "Three of read wave 6's documents misdescribe their OWN state — a *\"no code\"* banner over a built design, stale as-built code anchors, and a design whose approach was later falsified with no note saying so",
+   "subject_column": "F — doc-sync debt (#10)",
+   "verdict": "NON-GATING",
+   "reason": "Three documents misdescribe their OWN state: a 'no code' status banner over a design whose two operations are built, two stale as-built code line anchors, and a design carrying no note that the approach it builds toward was later falsified. D-438's line inside the documentation rows names a BANNER and an ANCHOR as apparatus in terms, and the third item is a missing cross-reference between two documents. WHAT IS OWED decides it, and what is owed here is three pointers -- not a correction to any statement about the analysis or its build state: every substantive claim these documents make was checked and holds, and what survives the falsified approach is registered separately as D-616 and D-617. It bears on no analysis, no input and no measurement tool, and it carries no establishment obligation, so the starred clause does not reach it either.",
+   "class_basis": "tracking/documentation apparatus - the user's own phrase"
+  },
+  {
+   "id": "OI-337",
+   "title": "**The uncommitted backlog is SIX waves, not the three ruling R4 names** — and the waves cannot be committed separately",
+   "subject_column": "F — doc-sync debt (#10)",
+   "verdict": "GATES",
+   "reason": "The uncommitted backlog is six waves rather than the three ruling R4 names, and the waves cannot be committed separately. The first cut proposes it because its subject column reads as documentation apparatus -- committing is filing, and filing is what D-438's line names as apparatus. WHAT IS OWED decides it, and what is owed here is not a pointer or a label: it is that a set of INSTRUMENTS exists only in a working tree. The uncommitted set includes the guard tools, the yield generators and the derivations this arc's conclusions rest on, and an instrument that exists only in a working tree cannot support a reproducibility claim (#16) -- which is a measurement matter, not a filing one. The starred clause reaches it independently: preserving an instrument so a recorded measurement can be reproduced is an establishment obligation (#19), and D-438 makes one gate whatever its subject. Recorded against the row's SUBJECT, never its remedy, as every verdict here is.",
+   "gate_ground": "the criterion"
+  },
+  {
    "id": "OI-150",
    "title": "BUILD_AND_TEST.md stale test baselines",
    "subject_column": "doc-sync",
@@ -617,6 +669,12 @@
     "class_basis_or_ground": "#19 establishment obligation",
     "reason": "Gates on the exemption, and independently on the criterion: the marked set includes D-329, complete candidate listing, which is the family design's ratified admission premise and whose marking already failed once.",
     "closed": "VERIFIED 2026-08-03 (phase 1w) - the whole marked set re-verified against the live-reachability test, 0 marks established wrong and 0 corrected, the convention not in question. Its residues opened as OI-302 (which gates), OI-303 and OI-304."
+   },
+   "OI-334": {
+    "verdict": "GATES",
+    "class_basis_or_ground": "an establishment obligation (#19) - the exemption, not the criterion",
+    "reason": "The decisions register's own published account of itself is false at HEAD in three places. The verdict is made PER INSTANCE and the row takes the strongest. The instance that decides it is the published unresolved-residual figure: its subject is the coverage measurement the OI-207 audit reports against -- the same ground OI-333 gates on -- and a figure the same generated file's own computed table contradicts is independently an establishment matter (#19), which D-438's starred clause makes gating whatever its subject. The scope statement that the per-layer design documents were not read in full is a claim about how completely the register enumerates the record, which its own text does not settle, so the declaration's own default reaches it. The third instance -- a section field the read-wave entries do not carry -- reads as apparatus on its own and does not carry the row; it is rowed as an instance rather than promoted.",
+    "closed": "RESOLVED 2026-08-04 (ruling R3) - all three statements are true at HEAD, closed by three different acts: the scope sentence corrected in prose, the residual figure made COMPUTED (a template the register generator fills, an unfilled placeholder stopping it), and the home-granularity claim made true by RUNNING the apply mode under ruling R2 after the phase-1q record was snapshotted and the snapshot established. Both former wordings preserved verbatim (#12)."
    }
   }
  },
@@ -651,6 +709,9 @@
    "OI-301",
    "OI-317",
    "OI-318",
+   "OI-327",
+   "OI-329",
+   "OI-332",
    "OI-46",
    "OI-47",
    "OI-48",

@@ -20,7 +20,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2217-2219`
+**Home.** `ARCHITECTURE.md:2240-2242`
 
 **Provenance.** ARCHITECTURE.md:2093-2119. Contradicted by the same document's §4.1b/§4.1d contextual bonuses, which score a candidate from the neighbouring chords - see OPEN_ITEMS OI-235
 
@@ -39,7 +39,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1889-1893`
+**Home.** `ARCHITECTURE.md:1912-1916`
 
 **Provenance.** ARCHITECTURE.md:1787-1795; the same policy is in CLAUDE.md 'Gate threshold and preset policy'
 
@@ -58,7 +58,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2116-2119`
+**Home.** `ARCHITECTURE.md:2139-2142`
 
 **Provenance.** ARCHITECTURE.md:2016-2019, :1816-1822; the residual coupling is recorded as debt at :2105-2112
 
@@ -76,7 +76,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1594-1596`
+**Home.** `ARCHITECTURE.md:1617-1619`
 
 **Provenance.** ARCHITECTURE.md:1485-1502. Its revisit trigger - 'Stage 3 design must state explicitly what P4 (and the bridge) consume from the decode' (:1299-1300) - has not been discharged by the joint/record design
 
@@ -94,7 +94,7 @@
 
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1657-1660`
+**Home.** `ARCHITECTURE.md:1680-1683`
 
 **Provenance.** D-003 makes inference preset-independent on the production path, so the divergence this decision manages no longer exists there; it still describes the legacy path
 
@@ -110,7 +110,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1564`
+**Home.** `ARCHITECTURE.md:1587`
 
 **Provenance.** ARCHITECTURE.md:1464-1467, restated at :1363-1366
 
@@ -125,7 +125,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2647-2648`
+**Home.** `ARCHITECTURE.md:2670-2671`
 
 **Provenance.** ARCHITECTURE.md:2546-2548, restated as the retirement rationale's 'Core principle' at :2335-2337
 
@@ -139,7 +139,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2615`
+**Home.** `ARCHITECTURE.md:2638`
 
 **Provenance.** ARCHITECTURE.md:2515, retirement rationale at :2324-2339
 
@@ -155,7 +155,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1928`
+**Home.** `ARCHITECTURE.md:1951`
 
 **Provenance.** ARCHITECTURE.md:1828
 
@@ -172,7 +172,7 @@
 
 **Status.** DEFERRED · decided 2026-04-11 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2066-2067`
+**Home.** `ARCHITECTURE.md:2089-2090`
 
 **Provenance.** ARCHITECTURE.md:1962 'Region identity modes (decided 2026-04-11)'; :1734-1736 records as-written mode deferred
 
@@ -190,7 +190,7 @@
 
 **Status.** SUPERSEDED BY D-102 · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1967-1969`
+**Home.** `ARCHITECTURE.md:1990-1992`
 
 **Provenance.** ARCHITECTURE.md:2171-2179 records Iter 46 extending the same helpers to Augmented and HalfDiminished. The §4.1b statement carries no supersession note - see OPEN_ITEMS OI-236 ★ Verbatim RE-TAKEN 2026-08-02 (the phase-1 truth-sync): the §4.1b passage now carries the supersession note it lacked, and states the constraint that actually survives at HEAD, which differs between the two helper predicates (OPEN_ITEMS OI-236 discharged). The decision's own words are preserved in place, marked 'As originally written'.
 
@@ -207,7 +207,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2278-2279`
+**Home.** `ARCHITECTURE.md:2301-2302`
 
 **Provenance.** ARCHITECTURE.md:2169-2182 (Iter 46, commit 36bf4738a8)
 
@@ -224,7 +224,7 @@
 
 **Status.** SUPERSEDED BY D-207 · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4056-4057`
+**Home.** `ARCHITECTURE.md:4079-4080`
 
 **Provenance.** ARCHITECTURE.md:3882-3917 'Status: Implemented (Session 18, master fb9a27ce9a)'. Suspended on the record arm - see D-021. SUPERSEDED BY D-207 - open_items/OI-194.md:7 records the ratified successor (user, 2026-07-26): the voice-independent pedal-point class replaces this bass-only second pass and the `isPedalPoint`/`pedalBassPc` fact it produces
 
@@ -241,7 +241,7 @@
 
 **Status.** LIVE · decided 2026-04-09 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3837-3838`
+**Home.** `ARCHITECTURE.md:3860-3861`
 
 **Provenance.** ARCHITECTURE.md:3662-3710; the failure it fixed is documented across four corpora at :3406-3419
 
@@ -256,7 +256,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1466-1467`
+**Home.** `ARCHITECTURE.md:1487-1488`
 
 **Provenance.** ARCHITECTURE.md:1368-1371. ARCHITECTURE.md:1379-1383 records the unification residual: the legacy scorer still carries its own second reader until the legacy path retires
 
@@ -273,7 +273,7 @@
 
 **Status.** DEFERRED · decided 2026-07-26 · ratified by user
 
-**Home.** `ARCHITECTURE.md:4696-4699`
+**Home.** `ARCHITECTURE.md:4719-4722`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at open_items/OI-194.md:7, sharpened at the P1 pedal-point ruling, user-ratified 2026-07-26 at the consumption-audit verification (`cowork_notation_adoption_increment.md` §7 + §10). DEFERRED: it lands with the ornament-label publication, its own increment after the notation switch; until then the record arm leaves the pedal fields empty (D-021) and the 'X ped.' annotation is a declared gap. §5.12, which specifies the superseded two-pass detector, now carries a pointer to §7.4. OPEN_ITEMS OI-237 closes on this move
 
@@ -291,7 +291,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:2732-2734`
+**Home.** `ARCHITECTURE.md:2755-2757`
 
 **Provenance.** ARCHITECTURE.md:2587 heads the section "Future: Authoritative Chord Symbol Mode"; the current rule is that written symbols are never analyzer input (register entry D-066) ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -311,7 +311,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:2743-2747`
+**Home.** `ARCHITECTURE.md:2766-2770`
 
 **Provenance.** ARCHITECTURE.md:2587 (the section is headed Future); register entry D-066 records the rule in force today ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -331,7 +331,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:2888-2892`
+**Home.** `ARCHITECTURE.md:2911-2915`
 
 **Provenance.** ARCHITECTURE.md:2735 heads the section "Phase 1b - Minimal Monophonic Fallback Without Chord Symbols"; ARCHITECTURE.md:3507-3514 records monophonic input as planned ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -354,7 +354,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:2897-2904`
+**Home.** `ARCHITECTURE.md:2920-2927`
 
 **Provenance.** ARCHITECTURE.md:2735 (the Phase 1b section heading); the stop conditions are stated with the rule ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -371,7 +371,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:2914-2915`
+**Home.** `ARCHITECTURE.md:2937-2938`
 
 **Provenance.** ARCHITECTURE.md:2735 (the Phase 1b section heading); the named parameters are listed at :2783-2790 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -388,7 +388,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:2944-2945`
+**Home.** `ARCHITECTURE.md:2967-2968`
 
 **Provenance.** ARCHITECTURE.md:2807 heads "Phase 2 - Full Monophonic Engine" ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -406,7 +406,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:2972-2974`
+**Home.** `ARCHITECTURE.md:2995-2997`
 
 **Provenance.** ARCHITECTURE.md:2824 heads "Unified Orchestration Layer", part of the provisional phased plan recorded at :3498-3503 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -468,7 +468,7 @@
 
 **Home.** `cowork_handoff_archive.md:4967`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
-**Provenance.** Recorded in `cowork_handoff_archive.md` (the failure-cluster block). This is the statement the 2026-08-02 residual pass cited as its worked example of a real ruling sitting inside the unresolved residual (`open_items/OI-207.md`, the residual-pass note), now entered. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1420 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
+**Provenance.** Recorded in `cowork_handoff_archive.md` (the failure-cluster block). This is the statement the 2026-08-02 residual pass cited as its worked example of a real ruling sitting inside the unresolved residual (`open_items/OI-207.md`, the residual-pass note), now entered. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1441 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
 
 ### D-300 — Gate M (minor read as diminished) is DEFERRED and must not be retried without a new runtime signal
 
@@ -487,7 +487,7 @@
 
 **Home.** `STATUS_ARCHIVE.md:1147`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
-**Provenance.** Recorded in `STATUS_ARCHIVE.md` (the Iter-37 carried-forward block and its fenced deferral record at `:1090-1106`). `docs/scoring_model.md` §8, the standing home for scoring dead ends, does not mention Gate M — checked, not assumed. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1420 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
+**Provenance.** Recorded in `STATUS_ARCHIVE.md` (the Iter-37 carried-forward block and its fenced deferral record at `:1090-1106`). `docs/scoring_model.md` §8, the standing home for scoring dead ends, does not mention Gate M — checked, not assumed. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1441 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
 
 ### D-301 — Gate N (major read as an inverted minor) is DEFERRED and must not be retried without a multi-region model
 
@@ -507,7 +507,7 @@
 
 **Home.** `STATUS_ARCHIVE.md:1149`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
-**Provenance.** Recorded in `STATUS_ARCHIVE.md` (the Iter-39 carried-forward block and its fenced deferral record at `:1110-1131`). Absent from `docs/scoring_model.md` §8 — checked. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1420 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
+**Provenance.** Recorded in `STATUS_ARCHIVE.md` (the Iter-39 carried-forward block and its fenced deferral record at `:1110-1131`). Absent from `docs/scoring_model.md` §8 — checked. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1441 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
 
 ### D-302 — No further local scoring fix for inversions may be attempted — the remaining divergence is not an analyzer defect
 
@@ -526,7 +526,7 @@
 
 **Home.** `STATUS_ARCHIVE.md:2779`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
-**Provenance.** Recorded in `STATUS_ARCHIVE.md` as the closing statement of the “Inversion Fix — Final Conclusion” block. Absent from `docs/scoring_model.md` §8. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1420 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
+**Provenance.** Recorded in `STATUS_ARCHIVE.md` as the closing statement of the “Inversion Fix — Final Conclusion” block. Absent from `docs/scoring_model.md` §8. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1441 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
 
 ### D-303 — Non-chord-tone detection is deferred, and if built it must be chord identification that knows about non-chord tones, never stripping after the fact
 
@@ -542,7 +542,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:1422-1424`
+**Home.** `ARCHITECTURE.md:1443-1445`
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md`'s “architectural memos retained as guardrails” list. It is load-bearing now: the non-chord-tone filter is the named lever at [[OI-55]] and [[OI-68]], and `docs/nct_detection_design.md` exists on disk. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written into the Layer-4 section of `ARCHITECTURE.md` §3.3 as a deferred capability with its shape constrained in advance. The defense stays 'derivation not recorded' — the record gives none and none was invented. Former home preserved (#12): `STATUS_ARCHIVE.md:963`, the architectural-memos list.
 
@@ -560,7 +560,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:2650-2652`
+**Home.** `ARCHITECTURE.md:2673-2675`
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md`'s “architectural memos retained as guardrails” list. It sharpens **D-066** (chord symbols written in the score are never analyzer input) from one annotation kind to a content test over all of them. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written beside D-066 in `ARCHITECTURE.md` §4.2, where the chord-symbol ban it generalizes already stood. The defense stays 'derivation not recorded'. Former home preserved (#12): `STATUS_ARCHIVE.md:961`.
 
@@ -609,7 +609,7 @@
 
 **Home section.** **“Dead end: `noteEnd <= startTickInt` → `noteEnd < startTickInt`”** — `#### Dead end: `noteEnd <= startTickInt` → `noteEnd < startTickInt` (do not retry)` (heading at line 372). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `contract-home` to `gap`; the former class is kept here rather than overwritten (#12).
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02) as a LEGACY-scoped dead end with no effect on the going solution; plain restatement rephrased at the user's direction to preclude the temporal-context misreading. ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched. **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1420 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02) as a LEGACY-scoped dead end with no effect on the going solution; plain restatement rephrased at the user's direction to preclude the temporal-context misreading. ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched. **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1441 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
 
 ### D-318 — A short-region external merger is a dead end — do not retry it
 
@@ -629,7 +629,7 @@
 
 **Home section.** **“Dead end: short-region merger trigger”** — `#### Dead end: short-region merger trigger (do not retry)` (heading at line 387). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `contract-home` to `gap`; the former class is kept here rather than overwritten (#12).
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02) as a LEGACY-scoped dead end with no effect on the going solution; plain restatement rephrased at the user's direction to preclude the temporal-context misreading. ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched. **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1420 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02) as a LEGACY-scoped dead end with no effect on the going solution; plain restatement rephrased at the user's direction to preclude the temporal-context misreading. ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched. **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1441 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
 
 ### D-319 — Re-analysing the merged aggregate is a dead end — no tone-aggregation approach fixes the arpeggio root failure
 
@@ -650,7 +650,7 @@
 
 **Home section.** **“Dead end: re-analysis of inline-merged aggregate”** — `#### Dead end: re-analysis of inline-merged aggregate (do not retry)` (heading at line 404). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `contract-home` to `gap`; the former class is kept here rather than overwritten (#12).
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched. **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1420 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched. **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1441 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
 
 ### D-320 — The absent-root guard is REVERTED and must not be retried — 'absent root means wrong reading' is false corpus-wide
 
@@ -676,7 +676,7 @@
 
 **Home section.** **“What NOT to do first”** — `## What NOT to do first` (heading at line 561). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `contract-home` to `gap`; the former class is kept here rather than overwritten (#12).
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched. **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1420 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched. **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1441 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
 
 ### D-321 — Winner selection compares candidate scores exactly, with no epsilon anywhere in the ranking
 
@@ -707,7 +707,7 @@
 
 **Home.** `docs/scoring_model.md:212-225`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **“Floating-point tie policy”** — `### Floating-point tie policy` (heading at line 210). A delegation at CLAUDE.md:726 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **“Floating-point tie policy”** — `### Floating-point tie policy` (heading at line 210). A delegation at CLAUDE.md:846 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.
 
@@ -732,7 +732,7 @@
 
 **Home.** `docs/scoring_model.md:233-238`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **“Floating-point tie policy”** — `### Floating-point tie policy` (heading at line 210). A delegation at CLAUDE.md:726 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **“Floating-point tie policy”** — `### Floating-point tie policy` (heading at line 210). A delegation at CLAUDE.md:846 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.
 
@@ -753,7 +753,7 @@
 
 **Home.** `docs/scoring_model.md:838-839`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **“§6a. The unified promotion primitive `promoteToWinner()`”** — `### §6a. The unified promotion primitive `promoteToWinner()`` (heading at line 752). A delegation at CLAUDE.md:726 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **“§6a. The unified promotion primitive `promoteToWinner()`”** — `### §6a. The unified promotion primitive `promoteToWinner()`` (heading at line 752). A delegation at CLAUDE.md:846 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.
 
@@ -852,7 +852,7 @@
 
 **Home section.** **§11** — `## 11. Acceptance-case roster — classified by what unlocks each` (heading at line 551). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/decoder_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1420 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*; the search (at line 306 on 2026-08-03), under *"Tried and closed on the search — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/decoder_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1441 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*; the search (at line 306 on 2026-08-03), under *"Tried and closed on the search — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
 
 ### D-329 — Completeness of the candidate list is the priority — a chord never listed can never be chosen
 
@@ -874,7 +874,7 @@
 
 **Home.** `cowork_layer4_chordsymbol_design.md:208-212`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§4** — `## 4. Solution strategy` (heading at line 204). A delegation at ARCHITECTURE.md:1418 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§4** — `## 4. Solution strategy` (heading at line 204). A delegation at ARCHITECTURE.md:1439 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ TRANSFER RULING (user, 2026-08-02, OI-275 reading 1-with-transfer): the PRINCIPLE binds the joint estimator's family design - candidate admission complete by default, any prune derived, measured for established loss, and ratified (the factorization's own reserve clause); the document's letter stays home to the legacy scorer. D-329 is the family design's ratified admission premise (OI-215/226/227/228/243/244).
 
@@ -896,7 +896,7 @@
 
 **Home.** `cowork_layer4_chordsymbol_design.md:394-398`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§8** — `## 8. Crosscutting concepts` (heading at line 386). A delegation at ARCHITECTURE.md:1418 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§8** — `## 8. Crosscutting concepts` (heading at line 386). A delegation at ARCHITECTURE.md:1439 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
@@ -917,7 +917,7 @@
 
 **Home.** `cowork_layer4_chordsymbol_design.md:576-579`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§15** — `## 15. Open items & deferred refinements` (heading at line 559). A delegation at ARCHITECTURE.md:1418 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§15** — `## 15. Open items & deferred refinements` (heading at line 559). A delegation at ARCHITECTURE.md:1439 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
@@ -937,7 +937,7 @@
 
 **Home.** `cowork_layer4_chordsymbol_design.md:366-368`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§7** — `## 7. Data design` (heading at line 349). A delegation at ARCHITECTURE.md:1418 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§7** — `## 7. Data design` (heading at line 349). A delegation at ARCHITECTURE.md:1439 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
@@ -956,7 +956,7 @@
 
 **Home.** `cowork_layer4_chordsymbol_design.md:606-607`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§15** — `## 15. Open items & deferred refinements` (heading at line 559). A delegation at ARCHITECTURE.md:1418 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§15** — `## 15. Open items & deferred refinements` (heading at line 559). A delegation at ARCHITECTURE.md:1439 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
@@ -977,7 +977,7 @@
 
 **Home.** `cowork_layer4_chordsymbol_design.md:617-620`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§15** — `## 15. Open items & deferred refinements` (heading at line 559). A delegation at ARCHITECTURE.md:1418 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§15** — `## 15. Open items & deferred refinements` (heading at line 559). A delegation at ARCHITECTURE.md:1439 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
@@ -1030,7 +1030,7 @@
 
 **Home.** `cowork_layer5_engagement_design.md:136-142`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **“§2.2 The exclusion tail is load-bearing and must be carried”** — `### §2.2 The exclusion tail is load-bearing and must be carried (#12)` (heading at line 135). A delegation at ARCHITECTURE.md:1498 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **“§2.2 The exclusion tail is load-bearing and must be carried”** — `### §2.2 The exclusion tail is load-bearing and must be carried (#12)` (heading at line 135). A delegation at ARCHITECTURE.md:1519 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The document's banner records `Status: DESIGN (CC, 2026-07-07)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ RE-CLASSIFIED contract-home 2026-08-02 (CC, phase 1j, under the TRANSITIVE-AUTHORITY refinement of the fifth home case, user 2026-08-02): `cowork_layer5_engagement_design.md` carries a status banner and its authority is the user's transitively — the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arc #9 to it by name (`:41`), arc #11 to it by name (`:46`), and states that the Stage-3 build inventory 'is enumerated at `cowork_layer5_engagement_design.md` §9.2' (`:53-55`). The missing `ARCHITECTURE.md` delegation pointer — the gap the ruling says a missing delegation owes — was written into the Layer-5 section in the same commit.
 
@@ -1058,7 +1058,7 @@
 
 **Home.** `cowork_layer5_engagement_design.md:164-172`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **“§2.3 Does the decoder's governed carry provide this? The distinct-root guarantee is OWED [code]”** — `### §2.3 Does the decoder's governed carry provide this? The distinct-root guarantee is OWED [code]` (heading at line 144). A delegation at ARCHITECTURE.md:1498 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **“§2.3 Does the decoder's governed carry provide this? The distinct-root guarantee is OWED [code]”** — `### §2.3 Does the decoder's governed carry provide this? The distinct-root guarantee is OWED [code]` (heading at line 144). A delegation at ARCHITECTURE.md:1519 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. Recorded as an OWED change to the chord layer's carry construction, named so that the engagement design and the later build agree on the contract, and explicitly not built in that pass. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ RE-CLASSIFIED contract-home 2026-08-02 (CC, phase 1j, under the TRANSITIVE-AUTHORITY refinement of the fifth home case, user 2026-08-02): `cowork_layer5_engagement_design.md` carries a status banner and its authority is the user's transitively — the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arc #9 to it by name (`:41`), arc #11 to it by name (`:46`), and states that the Stage-3 build inventory 'is enumerated at `cowork_layer5_engagement_design.md` §9.2' (`:53-55`). The missing `ARCHITECTURE.md` delegation pointer — the gap the ruling says a missing delegation owes — was written into the Layer-5 section in the same commit.
 
@@ -1080,7 +1080,7 @@
 
 **Home.** `cowork_layer5_engagement_design.md:410-414`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **“§6.3 Placement”** — `### §6.3 Placement (#7): a reader-over-carry producing a distinct pedal-annotated result` (heading at line 406). A delegation at ARCHITECTURE.md:1498 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **“§6.3 Placement”** — `### §6.3 Placement (#7): a reader-over-carry producing a distinct pedal-annotated result` (heading at line 406). A delegation at ARCHITECTURE.md:1519 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. Part 1 of the same document had left the home open as a hinge; Part 2 records that it decides it. The build is separately hard-gated on the owed measurement being settled on an established pedal-dense corpus ([[OI-4]]). NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ RATIFIED (user, 2026-08-02) with the plain restatement rephrased at the user's direction: the pedaled note can be a note OTHER than the bass - the voice-independent class (D-207) governs; the home decision (additive reader, never an overwriting second analysis) is unchanged by which voice holds the pedal. ★ RE-CLASSIFIED contract-home 2026-08-02 (CC, phase 1j, under the TRANSITIVE-AUTHORITY refinement of the fifth home case, user 2026-08-02): `cowork_layer5_engagement_design.md` carries a status banner and its authority is the user's transitively — the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arc #9 to it by name (`:41`), arc #11 to it by name (`:46`), and states that the Stage-3 build inventory 'is enumerated at `cowork_layer5_engagement_design.md` §9.2' (`:53-55`). The missing `ARCHITECTURE.md` delegation pointer — the gap the ruling says a missing delegation owes — was written into the Layer-5 section in the same commit.
 
@@ -1105,7 +1105,7 @@
 
 **Home.** `cowork_layer5_engagement_design.md:445-452`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **“§6.5 The diff-root need is served by the carry / FQ-1”** — `### §6.5 The diff-root need is served by the carry / FQ-1 — do NOT re-implement a 4th scan (#6)` (heading at line 444). A delegation at ARCHITECTURE.md:1498 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **“§6.5 The diff-root need is served by the carry / FQ-1”** — `### §6.5 The diff-root need is served by the carry / FQ-1 — do NOT re-implement a 4th scan (#6)` (heading at line 444). A delegation at ARCHITECTURE.md:1519 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The unification it defers to is tracked as [[OI-11]]. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ FLAG (CC, 2026-08-02, the phase-1i full read of `cowork_structural_integrity_audit.md`): the SECOND alternative this entry offers — 'through the one unified primitive' — was measured at the code NOT to exist. The four different-root scans are not one decision (divergent predicate: root-only at three sites, root+quality at the fourth; divergent element type and result-use), and the promote-to-front primitive is not the vehicle; the unification was reported as a STOP and declared for an adjudication the record does not show being made (**D-403**; rowed [[OI-278]]). The FIRST alternative — reading the margin off the carry's own ranking — is untouched. Recorded as a flag, not as a status change: the entry is not withdrawn and nothing is inferred about what replaces the second alternative. ★ ANNOTATED (user ruling 2026-08-02, OI-278): the second alternative struck (D-403's measurement); the first alternative is the decision's operative content. ★ RE-CLASSIFIED contract-home 2026-08-02 (CC, phase 1j, under the TRANSITIVE-AUTHORITY refinement of the fifth home case, user 2026-08-02): `cowork_layer5_engagement_design.md` carries a status banner and its authority is the user's transitively — the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arc #9 to it by name (`:41`), arc #11 to it by name (`:46`), and states that the Stage-3 build inventory 'is enumerated at `cowork_layer5_engagement_design.md` §9.2' (`:53-55`). The missing `ARCHITECTURE.md` delegation pointer — the gap the ruling says a missing delegation owes — was written into the Layer-5 section in the same commit.
 
@@ -1132,7 +1132,7 @@
 
 **Home section.** **§1.2** — `### 1.2 The cap→append chain — dissolution hypothesis TESTED at code (CONFIRMED)` (heading at line 69). The delegation names sections, and no delegation names this one. Decided by **D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section**.
 
-**Provenance.** Found by the phase-1i continuation wave, 2026-08-02, reading `cowork_structural_integrity_audit.md` IN FULL. The document's banner records `Status: read-only grounded catalogue (CC, 2026-07-07; Engage arc #6)` — an authored catalogue, not a ratified contract. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1i ratification queue. The same section states the consequence that keeps this from being a free edit: removing the cap changes the SERIALIZED carry, which is a behavior change on `.ours.json` bytes and therefore a ratified adoption under the robust-stop explained-diff and re-baseline discipline (`CLAUDE.md` gate block (A)). Nothing was changed. ★ RATIFIED (user, 2026-08-02, the phase-1i queue).
+**Provenance.** Found by the phase-1i continuation wave, 2026-08-02, reading `cowork_structural_integrity_audit.md` IN FULL. The document's banner records `Status: read-only grounded catalogue (CC, 2026-07-07; Engage arc #6)` — an authored catalogue, not a ratified contract. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1i ratification queue. The same section states the consequence that keeps this from being a free edit: removing the cap changes the SERIALIZED carry, which is a behavior change on `.ours.json` bytes and therefore a ratified adoption under the robust-stop explained-diff and re-baseline discipline (`CLAUDE.md` gate block (A)). Nothing was changed. ★ RATIFIED (user, 2026-08-02, the phase-1i queue). ★ NO DELEGATION IS DRAFTED OR WRITTEN FOR THIS DOCUMENT, AND THAT IS A RULING (user, 2026-08-04, ruling R3, dispatch `cc_instruction_census_delegation_and_commit.md`): this entry stays `gap` deliberately. Its home section §1.2 reports the result of a test run against the code, and the register's own `not_write_list_cases` already rules on that shape — 'A delegation cannot repair that; the remedy is the same as OI-290's — at the document, or by homing those verdicts where the concern is owned.' THE REMEDY IS AT THE DOCUMENT and is not a delegation act. NOT A DEFERRAL: no later wave owes a delegation here.
 
 ### D-403 — STOP, not forced: the four best-different-root scans are NOT one decision at code, so the one-decision-four-sites premise over-counts
 
@@ -1195,6 +1195,8 @@
 
 **Home.** `docs/layer_architecture_audit.md:65-67`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **“Finding 1”** — `## Finding 1 — Oracle temporal contamination (pre-existing, self-documented)` (heading at line 40). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
 **Provenance.** `docs/layer_architecture_audit.md` Finding 1, an audit written 2026-06-09 and marked superseded only FOR LAYER 1 by the note-model rebuild; this finding is about the chord scorer and is untouched by that supersession. Entered by the phase-1 reads wave 1. Whether the five signals are still where the audit found them was NOT re-checked at the code by this wave. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
 ### D-464 — No further progression-level signal may be added to the single-step look-around structure; it goes in the progression context instead
@@ -1213,6 +1215,8 @@
 **Entry ratified.** 2026-08-04 · by user
 
 **Home.** `docs/layer_architecture_audit.md:186-189`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **“Finding 5”** — `## Finding 5 — `ChordTemporalContext` struct boundary (architectural)` (heading at line 167). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
 
 **Provenance.** `docs/layer_architecture_audit.md` Finding 5, 2026-06-09. Entered by the phase-1 reads wave 1. Whether the four fields are still in that structure at HEAD was NOT re-checked by this wave. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
@@ -1239,6 +1243,8 @@
 
 **Home.** `docs/layer_architecture_audit.md:404-413`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **“What this means for future gate decisions”** — `### What this means for future gate decisions` (heading at line 394). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
 **Provenance.** `docs/layer_architecture_audit.md` Finding 7, added 2026-06-09 after a systematic read of every gate. Entered by the phase-1 reads wave 1. The gate population has moved since (the scoring model records Gates B/C/D as retired and subsumed, and CLAUDE.md records Gate K retired by user ruling 2026-08-02), so the POLICY is entered and none of the audit's gate inventory is; the policy's own do-not-add-more-cascade-gates conclusion stands on the same page. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
 ### D-467 — A rebuilt or re-tuned chord scoring must not rely on the held-note repetition bonus the faithful note model removed
@@ -1255,6 +1261,8 @@
 **Entry ratified.** 2026-08-04 · by user
 
 **Home.** `cowork_target_architecture.md:357-358`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **§6.2** — `### 6.2 Layer 3 — the analysis (the only place judgment lives)` (heading at line 353). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit**.
 
 **Provenance.** `cowork_target_architecture.md` §6.2, recorded 2026-06-21 and citing the Layer-1 implementation report §5.3 as its measurement. Entered by the phase-1 reads wave 1. Whether the ~4 cases have since recovered was NOT checked by this wave. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
@@ -1275,6 +1283,8 @@
 
 **Home.** `docs/symbol_input_audit.md:15-18`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **“Context”** — `## Context` (heading at line 3). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
 **Provenance.** The user's operating principle, quoted verbatim at the head of the symbol-input audit and applied as its classification criterion. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) **D-066** and **D-305** carry the production ban; this entry carries the TOOL clause, which is what the audit's categories B and C are graded against and what its category-C resolution (recorded in the audit's closing status line and registered as **D-067**) discharged by deleting the tool-side symbol paths.
 
 ### D-510 — The correct carry is the one that keeps the distinct alternative reading, not the one that appends a near-duplicate of the winner — chosen on the carry's purpose, not on which code is at HEAD
@@ -1294,6 +1304,8 @@
 
 **Home.** `cowork_gateA_unification_design.md:184-189`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **§3.1** — `### 3.1 Which carry is correct — grounded, not assumed` (heading at line 170). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
 **Provenance.** The grounded verdict of the Gate-A unification design, measured on the FULL output surface across the whole corpus. Its evidence is the enumerated affected stems and the before/after carry content, which the document nominates as the user-ratification surface under #14. The carry contract it is grounded in is **D-312**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 
 ### D-511 — One promotion primitive with a present-first dedup guard replaces the two ad-hoc promotion idioms; the append branch fires only when the target is genuinely absent
@@ -1312,6 +1324,8 @@
 **Status.** LIVE · decided 2026-07-06 · ratifier not stated
 
 **Home.** `cowork_gateA_unification_design.md:210-215`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **§3.2** — `### 3.2 The unified path` (heading at line 191). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
 
 **Provenance.** The single unified path of the same design, together with the collapse of three near-identical builder wrappers into one. It is a Layer-4 consolidation under #6 and is explicitly scoped as introducing no new cross-layer dependency. The build event itself is a separate, user-ratified commit that this document does not take. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 
@@ -1333,6 +1347,8 @@
 **Status.** LIVE · decided 2026-07-06 · ratifier not stated
 
 **Home.** `cowork_gateA_unification_design.md:233-240`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **§3.3** — `### 3.3 How Gate A becomes truly inert and removable` (heading at line 231). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
 
 **Provenance.** The retirement analysis of the same design. The binding evidence-method rule the document states for itself — inertness is measured on the full output surface, winner AND alternatives, never the winner alone — is the project's principle #15 applied here, and this case is where it earned its keep. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 
@@ -1365,6 +1381,8 @@
 
 **Home.** `docs/iter92_joint_bass_chord_scoring.md:53-68`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **“Design: JOINT”** — `## Design: JOINT (bass, chord) scoring` (heading at line 51). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
 **Provenance.** The design of iteration 92, recorded implemented and committed, and named the authoritative reference for the joint formula and its guards. ⚠ Its subject is the LEGACY chord analyzer: the production inference layer on the batch/corpus and notation surfaces is the joint estimator (**D-005**, **D-010**), and this scoring path is reached only through the dormant arm. The principle it embodies — deciding coupled quantities together rather than committing one early — is the same one **D-001** carries for the live design. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 
 ### D-537 — The completeness bonus fires ONLY for a root-position reading whose three triad tones are all present — the guard that stops it from demoting genuine slash chords
@@ -1395,6 +1413,8 @@
 
 **Home.** `docs/iter92_joint_bass_chord_scoring.md:113-127`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **“JOINT formula weights”** — `### JOINT formula weights (calibrated from empirical case data)` (heading at line 89). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
 **Provenance.** The `w_complete` guard of the same iteration-92 design. ⚠ LEGACY subject, as above. It is an early instance of the standing rule that a correction be given a STRUCTURAL entry condition rather than a widened threshold — the gate policy in `CLAUDE.md`. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 
 ### D-538 — A multi-signal scoring change lands one signal at a time, with the corpus check re-run after each step and any increase in errors a hard stop before the next
@@ -1414,5 +1434,95 @@
 
 **Home.** `docs/iter92_joint_bass_chord_scoring.md:190-193`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **“Implementation insertion point”** — `## Implementation insertion point` (heading at line 169). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
 **Provenance.** The four-step implementation and validation order of the same design. ⚠ LEGACY subject. It is an early, concrete form of the discipline the project later stated generally — one revertible provenance-stamped commit per behaviour change (#14) and a measured non-increase before proceeding (the gate block (A) hard stop). Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-560 — Voice slots and stem direction are STRUCTURAL notational metadata, not user-written analytical claims, so the analysis may read them
+
+> The structural-data approach is consistent with the analyzer's
+> existing architecture: it consumes notes + structural metadata
+> (key signature, time signature, ties, pedal) and infers analytical
+> content. Voice slots and stem direction belong in the same
+> "structural metadata" category — already in the score, not
+> user-written analytical claims.
+
+**In plain words.** Which voice a note was entered in, and which way its stem points, are part of how the music was written down — the same kind of thing as a time signature or a tie. They are not somebody's opinion about the harmony. So the analysis is allowed to read them, unlike a chord symbol the user typed.
+
+**Why.** The line it draws is the one the chord-symbol prohibition already draws (**D-501**, **D-066**): the analysis may read what the score IS, and may not read what the user has CLAIMED about it. The record places voice slots and stem direction on the first side explicitly, and notes that the existing architecture already consumes notes plus structural metadata of exactly this kind.
+
+**Status.** LIVE · decided 2026-04-26 · ratifier not stated
+
+**Entry ratified.** 2026-08-04 · by user
+
+**Home.** `docs/nct_detection_design.md:184-189`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **“Voice-leading detection”** — `## Voice-leading detection — the piano problem` (heading at line 147). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit**.
+
+**Provenance.** `docs/nct_detection_design.md`, the deferred non-chord-tone design; `ARCHITECTURE.md`:1428 names the document's existence beside **D-303**, which carries the deferral and the constraint on its shape. This clause is separate from the deferral: it settles what evidence such a detector would be ALLOWED to read, and it binds any voice-tracking work whether or not the detector is built. The record states no ratifier. Read in full by READ WAVE 4, 2026-08-04.
+
+### D-580 — Two of the twelve post-scoring gates are purely-local vertical refinements and MUST survive the dissolution; the other ten dissolve into the competition
+
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
+
+> 5. **C2 — dissolve the 10 compensation gates into the competition; PRESERVE Gates A & J [BS, BIG]**
+>    `[CC-CONFIRMED ~83%]`. Only AFTER the anchor (regions stable + key explicit) — fold the 10 context-reading
+>    gates into a competition that sees the context up front. **Gates A and J are purely-local vertical and must
+>    survive** (CC-verified); B/C/D are already dead. The bridge from "patched local decisions" to the joint
+>    formulation.
+
+**In plain words.** Most of the after-the-fact repair steps in the old chord path exist only because the decision that preceded them could not see enough context, and they disappear once that decision can. Two do not: they refine the reading from the notes alone and are not compensation for anything. Those two must be carried across, not deleted alongside the others.
+
+**Why.** Measured at the code rather than assumed from the design: of the twelve live gates, ten read context from beyond their own stretch and are therefore compensation by construction, three were already dead code, and the two named ones read nothing outside the sonority. The review records the tally as verified at HEAD.
+
+**Status.** DEFERRED · decided 2026-06-20 · ratifier not stated
+
+**Entry ratified.** 2026-08-04 · by user
+
+**Home.** `cowork_phase2_architecture_review.md:135-139`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **“§5”** — `## §5 — The structural fix-first ORDER (the phase-2 deliverable)` (heading at line 108). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
+**Provenance.** `cowork_phase2_architecture_review.md`, the phase-2 architecture review (Cowork-led, reconciled against CC's empirical pass at committed HEAD `a03c2493bb`). Read in full by READ WAVE 4, 2026-08-04. **Its subject is the LEGACY multi-pass pipeline**, which the joint estimator replaced on both surfaces. Recorded as step 5 of the review's fix-first order, gated behind the anchor (**D-579**). **The dissolution was never executed on this path**: the joint estimator replaced the pipeline instead, so the entry is recorded DEFERRED with its subject legacy-marked rather than superseded — what it says about the two gates is a fact about the legacy code that the retirement map still has to dispose of, and #12 keeps it. The record states no ratifier.
+
+### D-583 — A known deferred loss is KEPT only while it stays characterized EXACTLY, and is re-adjudicated the moment its form changes
+
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
+
+> - **U2 → KEEP, deferred to the owed joint step (O-18), ON CONDITION it stays characterized EXACTLY.** *"Keep as long as
+>   we know exactly what it is."* The exact, standing characterization: on a J-key-iii joint re-key,
+>   `region.keyModeResult` is updated but the chord + its `alternatives` are left as Pass-1 artifacts, **not re-ranked
+>   under the new key** — a stale-under-new-key chord ranking. This is the architecture-intended future consumer's job
+>   (the still-owed joint step); it stays as-is until then. **Not** a should-already gap. (If the joint step's design or
+>   this behavior ever changes such that the loss is no longer *exactly* this, re-adjudicate.)
+
+**In plain words.** One loss was left in place deliberately, because the step that will fix it is a planned later piece of work. The condition attached is that its exact shape stays written down — what is stale, under what circumstances, and what is not re-ranked. If the behaviour ever drifts so that the loss is no longer precisely that, the decision to keep it is reopened.
+
+**Why.** Stated with the user's ruling in their own words — keep it as long as we know exactly what it is — and the standing characterization is written out beside it so the condition is checkable. It is what separates a deferral from an unexamined defect: the deferral names its future owner and its exact form, so a later reader can tell whether it is still the thing that was ruled on.
+
+**Status.** LIVE · decided 2026-07-06 · ratified by user
+
+**Entry ratified.** 2026-08-04 · by user
+
+**Home.** `cowork_information_loss_audit.md:152-157`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **“The prioritized DEFECT fix-queue”** — `## The prioritized DEFECT fix-queue (each a future separate, ratified, Gate-A-style event)` (heading at line 132). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
+**Provenance.** `cowork_information_loss_audit.md`, the engage-arc-#4 information-loss catalogue (Cowork, 2026-07-06; every hit verified at code by CC). Read in full by READ WAVE 4, 2026-08-04. Recorded as the document's adjudication of its item U2, one of three the user ruled the same day (the other two being an uncapping and a queued check). **Its subject is the LEGACY chord path** — the stale-under-new-key ranking after a joint re-key — which the joint estimator replaced; the CONDITION it states is general and is what the entry records.
+
+### D-638 — The symmetric-rotation churn is a chord-layer root ambiguity SURFACED, not caused, by a key change — the proper fix is spelling-aware root selection, never a key-layer change
+
+> Root cause: the rotation churn is a **chord-layer (Layer-4) root ambiguity** *surfaced,
+>   not caused,* by a key change; the proper fix is spelling/voice-leading-aware chord-root selection
+>   (Layer 4 / Stage 5–6).
+
+**In plain words.** When a change to the key stage makes the analysis flip which note of a symmetric chord it calls the root, the fault is not in the key stage. The chord stage cannot tell those rotations apart from the pitches alone, and the key was only its tie-breaker. The repair belongs to the chord stage, using how the notes are written and how the voices move.
+
+**Why.** It follows from what makes the sonority ambiguous, which the amendment states: a symmetric chord's root is undecidable from pitch class, so the key context was serving as the tie-break and a change to it merely re-rolls a coin the chord stage was never able to call. That is why the tracked class is an interim policy rather than an accepted outcome — it retires when the chord stage can decide the rotation from spelling and voice leading.
+
+**Status.** LIVE · decided 2026-06-22 · ratified by user
+
+**Home.** `CLAUDE.md:696-698`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** `CLAUDE.md` gate block (B), the two-tier per-cell class policy, carried over unchanged to the robust unit at R10-b. Its full provenance is `cowork_gate_policy_amendment.md`, read in full by READ WAVE 6, 2026-08-04, whose root-cause-attribution section states the same finding with the four founding cases behind it. **D-191** carries the two-tier policy itself; this is the separate attribution clause it rests on — the reason the tracked class is interim and the reason no key-layer change is the remedy — which D-191's verbatim does not include. Homed at the governing document rather than at the amendment proposal, because that is where the rule binds.
 

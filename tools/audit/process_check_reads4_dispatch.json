@@ -1,0 +1,17 @@
+{
+  "purpose": "A run of tools/audit/process_check.py over named dispatches or reports. Generated so a report cites this file rather than transcribing what the check found (D-431).",
+  "rules": [
+    "D-431 bare quantity",
+    "D-431 uncited code claim",
+    "D-434 missing self-check section"
+  ],
+  "files_scanned": [
+    "cc_instruction_reads_4.md"
+  ],
+  "findings_total": 0,
+  "by_file": {},
+  "clean_files": [
+    "cc_instruction_reads_4.md"
+  ],
+  "establishment": "tools/audit/process_check_establishment.json — the check's measured detection power and false-positive rate. Read it before reading a count here as coverage."
+}

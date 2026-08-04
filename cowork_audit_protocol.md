@@ -232,6 +232,39 @@ next dispatch as fact. `OPEN_ITEMS.md` **OI-283** is the register-side instance 
 hand-typed coverage claim inside a generated file — and its remedy is now one instance of this general
 rule rather than a one-off.
 
+### A count of OUTSTANDING work is DERIVED from state, never taken from the membership of a list of asks
+
+**Ruled by the user, 2026-08-04** (dispatch `cc_instruction_phase1_delegations_and_corrections.md`,
+R4). A figure reporting how much of something is still owed is computed from the CURRENT STATE of
+each candidate, at HEAD. It is **never** taken from the length of a list that records what was asked
+for, and never from an authored disposition field written beside the row when the ask was made.
+**A list of asks carries no state**, and #12 keeps a satisfied ask in it rather than deleting it — so
+its membership counts asks EVER MADE, which is a different quantity and is always the larger one.
+
+*Why:* measured at the instance that produced the ruling. The OI-293 / OI-327 **write list** — the
+homes the record means to keep, each awaiting a delegation only the user may write — was read two
+ways at once, and both were wrong in the same direction:
+
+1. **The count was the list's length.** `tools/audit/gen_phase1_completion_inventory.py` reported
+   `documents_awaiting_a_delegation_only_the_user_may_write` as `len(write_list)`, inside the artifact
+   a phase-1 completion statement would rest on. Derived at HEAD from the delegation grades and the
+   home data, the figure is a small fraction of it — and the derivation additionally names a document
+   the write list never carried, so the list was wrong in both directions at once about WHICH
+   documents are outstanding.
+2. **The per-row state was an authored field, and a second one was appended beside it.** Each row
+   carries a `disposition_2026_08_04`; read wave 6 then answered two of those rows in a NEW field,
+   `disposition_2026_08_04_wave6`. The reader read only the first and published *"NOT WRITTEN —
+   WITHHELD"* for a document the user had since delegated to, and for one the user had ruled is not a
+   delegation target at all.
+
+**The remedy is not a status field on the list** — that is the same authored-field hazard a third
+time. The list keeps its role as the record of what was asked for, with each draft wording and each
+reason (#12), and **states in its own data that its membership is not a count of outstanding work**;
+the STATE is derived, at `tools/audit/decisions/outstanding_delegations.json`. This is the general
+form of the same shape `OPEN_ITEMS.md` **OI-283** and the figures rule above already carry: a
+recorded finding that is never marked discharged becomes a count of work that is no longer owed.
+Tracked at `OPEN_ITEMS.md` **OI-335**.
+
 ### The writing side runs the standing self-check too, before a dispatch is released
 
 **Ruled by the user, 2026-08-03.** `CLAUDE.md`'s standing self-check already binds both sides in its

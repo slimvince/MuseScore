@@ -50,13 +50,13 @@
       "entries": [
         {
           "id": "D-440",
-          "home": "ARCHITECTURE.md:6986-6989",
+          "home": "ARCHITECTURE.md:7009-7012",
           "status": "deferred",
           "title": "The language-model integration is purpose-built and does not wait for the plugin-API reform"
         },
         {
           "id": "D-441",
-          "home": "ARCHITECTURE.md:7008-7011",
+          "home": "ARCHITECTURE.md:7031-7034",
           "status": "deferred",
           "title": "Analysis and modification are phases of ONE conversation; a follow-up instruction re-uses the reasoning rather than re-analysing"
         },
@@ -301,7 +301,7 @@
       "entries": [
         {
           "id": "D-466",
-          "home": "ARCHITECTURE.md:861-863",
+          "home": "ARCHITECTURE.md:876-878",
           "status": "live",
           "title": "Forward-only is a strong DEFAULT, not dogma — a backward edge is admissible only as a deliberate, surfaced, measured, documented exception"
         },

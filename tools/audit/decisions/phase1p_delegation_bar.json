@@ -18,22 +18,22 @@
   },
   "the_defense": {
     "bare_appended_citation": {
-      "at": "ARCHITECTURE.md:1493",
+      "at": "ARCHITECTURE.md:1514",
       "line": "detector is **key-agnostic** (it votes for the key; it does not read a resolved key). Full spec:"
     },
     "explicit_delegation_clause": {
-      "at": "ARCHITECTURE.md:1498",
+      "at": "ARCHITECTURE.md:1519",
       "line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory \"is enumerated at `cowork_layer5_engagement_design.md` §9.2\" (`:53-55`)."
     }
   },
   "population": {
-    "entries": 233,
-    "documents": 45,
+    "entries": 289,
+    "documents": 76,
     "note": "the register's `contract-home` + `gap` entries — the classes the criterion reaches. `process`, `project-convention` and `unhomed` are outside it."
   },
   "verdict_totals": {
-    "ADMIT": 111,
-    "EXCLUDE": 122
+    "ADMIT": 136,
+    "EXCLUDE": 153
   },
   "documents": [
     {
@@ -74,8 +74,10 @@
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
         "ARCHITECTURE.md:326",
-        "CLAUDE.md:235",
-        "CLAUDE.md:521"
+        "ARCHITECTURE.md:334",
+        "ARCHITECTURE.md:340",
+        "CLAUDE.md:260",
+        "CLAUDE.md:581"
       ]
     },
     {
@@ -102,9 +104,9 @@
       "current_contract_home": 16,
       "current_gap": 0,
       "form": "explicit-delegation-clause",
-      "delegation_citation": "ARCHITECTURE.md:1342",
+      "delegation_citation": "ARCHITECTURE.md:1363",
       "form_now": "explicit-delegation-clause",
-      "delegation_citation_now": "ARCHITECTURE.md:1342",
+      "delegation_citation_now": "ARCHITECTURE.md:1363",
       "delegation_line_now": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "delegation_written_since_the_check": false,
       "what_the_naming_was_at_the_check": null,
@@ -114,9 +116,9 @@
       "movement": "none",
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
-        "ARCHITECTURE.md:1342",
-        "ARCHITECTURE.md:1358",
-        "ARCHITECTURE.md:1405"
+        "ARCHITECTURE.md:1363",
+        "ARCHITECTURE.md:1379",
+        "ARCHITECTURE.md:1426"
       ]
     },
     {
@@ -140,9 +142,9 @@
       "current_contract_home": 13,
       "current_gap": 0,
       "form": "named-home-with-sections",
-      "delegation_citation": "ARCHITECTURE.md:908",
+      "delegation_citation": "ARCHITECTURE.md:923",
       "form_now": "named-home-with-sections",
-      "delegation_citation_now": "ARCHITECTURE.md:908",
+      "delegation_citation_now": "ARCHITECTURE.md:923",
       "delegation_line_now": "(one span) until the §15-1 per-span measurement refines it. Criterion + build home:",
       "delegation_written_since_the_check": false,
       "what_the_naming_was_at_the_check": null,
@@ -152,9 +154,9 @@
       "movement": "none",
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
-        "ARCHITECTURE.md:909",
-        "ARCHITECTURE.md:941",
-        "ARCHITECTURE.md:1522"
+        "ARCHITECTURE.md:924",
+        "ARCHITECTURE.md:956",
+        "ARCHITECTURE.md:1545"
       ]
     },
     {
@@ -174,19 +176,21 @@
       ],
       "current_contract_home": 0,
       "current_gap": 10,
-      "form": "not-named-in-any-ratified-surface",
-      "delegation_citation": null,
-      "form_now": "not-named-in-any-ratified-surface",
-      "delegation_citation_now": null,
-      "delegation_line_now": null,
+      "form": "explicit-delegation-clause",
+      "delegation_citation": "ARCHITECTURE.md:1259",
+      "form_now": "explicit-delegation-clause",
+      "delegation_citation_now": "ARCHITECTURE.md:1259",
+      "delegation_line_now": "**Delegation pointer for the Layer-1.5 phrase-boundary primitive (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for the phrase-boundary primitive is `cowork_phrase_boundary_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-476…D-485 — which this section points at and does not restate. *(It is sited HERE, and the choice is stated rather than left to be inferred: this document defines L1.5 as \"the thin derived-view layer over the L1 note model\" and carries no section of its own for it, so the layer the primitive is a view OVER is the nearest owning section. The only other place the primitive is named is the Layer-6 section, which consumes it and does not own it — and which D-266 prohibits building until the bounded-context design is coded and regression-tested for Layers 1–5, so siting a contract pointer there would attach it to a question the user deliberately left open. Naming the document by filename also closes the prose-reference question the write list carried: the doc-governance clause's phrase \"the phrase-boundary design\" had more than one candidate in the tree.)*",
       "delegation_written_since_the_check": false,
       "what_the_naming_was_at_the_check": null,
-      "why_this_grade_now": "Named in none of the three surfaces; verified mechanically here.",
-      "verdict": "EXCLUDE",
-      "verdict_now": "EXCLUDE",
-      "movement": "none",
-      "decided_by_the_bar": false,
-      "mentions_in_ratified_surfaces": []
+      "why_this_grade_now": "★ MOVED 2026-08-04 (READ WAVE 5, ruling R4): THE USER WROTE THE DELEGATION, and naming the file BY FILENAME closed the prose-reference question rather than answering it — the doc-governance clause's phrase is no longer what points at this document, so the candidate set stops deciding anything and the bar is untouched. The bar's first named form, word for word, sited in the Layer-1 section (this document's own layer, 1.5, has no section of its own; the only other place `ARCHITECTURE.md` names the primitive is the Layer-6 section, which consumes it and which D-266 prohibits). The former grade, preserved (#12): NOT_NAMED — 'Named in none of the three surfaces; verified mechanically here. ★ THE DOC-GOVERNANCE CLAUSE CARRIES A PROSE REFERENCE, \"the phrase-boundary design\", WHICH THIS DOCUMENT IS THE OBVIOUS CANDIDATE FOR — and ruling R1 (user, 2026-08-04, OI-326) does not settle it: R1 names the GLOB and the trailing ELLIPSIS as conferring nothing and admits the members named EXPLICITLY, and a prose description is neither. Reading it in would be the extension rule (g) withholds from a session, so the grade stands and the document goes to the OI-293 write list (ruling R2). The candidate set is not a singleton in any case — `reads4_oi326_application.json` derives it from the tree.'",
+      "verdict": "ADMIT",
+      "verdict_now": "ADMIT",
+      "movement": "WOULD MOVE IN",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "ARCHITECTURE.md:1259"
+      ]
     },
     {
       "document": "cowork_layer6_grouping_design.md",
@@ -204,22 +208,23 @@
       ],
       "current_contract_home": 0,
       "current_gap": 9,
-      "form": "bare-appended-citation",
-      "delegation_citation": "ARCHITECTURE.md:1506",
-      "form_now": "bare-appended-citation",
-      "delegation_citation_now": "ARCHITECTURE.md:1506",
-      "delegation_line_now": "periods/sentences, and prolongation are out of the validatable core (verifiability contract, §2.15). Full spec:",
+      "form": "explicit-delegation-clause",
+      "delegation_citation": "ARCHITECTURE.md:1530",
+      "form_now": "explicit-delegation-clause",
+      "delegation_citation_now": "ARCHITECTURE.md:1530",
+      "delegation_line_now": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer6_grouping_design.md` (AS-BUILT, 2026-07-02 — built dormant and oracle-validated after the extension gate passed, `:3`) — D-454…D-462 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph supplements that line rather than replacing it.)* **★ WHY A CONTRACT HOME IS COHERENT FOR A LAYER THAT MAY NOT BE BUILT — the question this clause was withheld over on 2026-08-04 and which the user has now answered.** **D-611** establishes that the dormant path and its staged scaffolding are **deferred-engagement, not dead code**: their wire-or-remove verdict belongs to a named later step, and removing them is a STOP. Deferred work is therefore a state the record keeps decisions for, not an absence of them, and a contract home for it is the same posture rather than a new one — which is why **D-266**'s prohibition does not forbid this pointer. **D-266 IS UNTOUCHED:** Layer 6 may not be BUILT until the bounded-context design is coded and regression-tested for Layers 1–5. This clause records where the layer's design decisions live; it authorizes no build, no wiring, and no change to what the analysis computes.",
       "delegation_written_since_the_check": false,
       "what_the_naming_was_at_the_check": null,
-      "why_this_grade_now": "The bar's first excluded form, word for word: the line ends 'Full spec:' and names its target on the next — the same two-line shape as the ruling's own worked example at `:1493`. Its other two namings are parentheticals (`:894` 'see X §0', `:943` a citation inside a deferral clause).",
-      "verdict": "EXCLUDE",
-      "verdict_now": "EXCLUDE",
-      "movement": "none",
+      "why_this_grade_now": "★ MOVED 2026-08-04 (READ WAVE 6, ruling R5): THE USER WROTE THE DELEGATION, answering the question wave 5 withheld the write over. It is the bar's first named form, word for word, in the Layer-6 section, SUPPLEMENTING the 'Full spec:' citation rather than replacing it — so this document is now named in both an admitting and an excluded form and, under `CLAUDE.md` rule (k1), the strongest naming governs; the anchor above is the delegation's own sentence rather than the bare filename, which is no longer unique in that file (the OI-330 lesson applied at the write rather than after it). What made a contract home coherent for a layer **D-266** PROHIBITS building: **D-611** establishes the dormant path and its staged scaffolding as DEFERRED-ENGAGEMENT and not dead code, so deferred work is a state the record keeps decisions for. D-266 is untouched. The former grade, preserved (#12): BARE_CITATION — 'The bar's first excluded form, word for word: the line ends \"Full spec:\" and names its target on the next — the same two-line shape as the ruling's own worked example at `:1493`. Its other two namings are parentheticals (`:894` \"see X §0\", `:943` a citation inside a deferral clause). ★ THE DOC-GOVERNANCE GLOB `cowork_layer*_design.md` MATCHES THIS FILENAME AND CONFERS NOTHING (user, 2026-08-04, OI-326 ruling R1; `CLAUDE.md` rule (k), **D-546**), so this grade is unchanged and the document is on the OI-293 write list instead.'",
+      "verdict": "ADMIT",
+      "verdict_now": "ADMIT",
+      "movement": "WOULD MOVE IN",
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
-        "ARCHITECTURE.md:894",
-        "ARCHITECTURE.md:943",
-        "ARCHITECTURE.md:1507"
+        "ARCHITECTURE.md:909",
+        "ARCHITECTURE.md:958",
+        "ARCHITECTURE.md:1528",
+        "ARCHITECTURE.md:1530"
       ]
     },
     {
@@ -239,9 +244,9 @@
       "current_contract_home": 0,
       "current_gap": 9,
       "form": "explicit-delegation-clause",
-      "delegation_citation": "ARCHITECTURE.md:4634",
+      "delegation_citation": "ARCHITECTURE.md:4657",
       "form_now": "explicit-delegation-clause",
-      "delegation_citation_now": "ARCHITECTURE.md:4634",
+      "delegation_citation_now": "ARCHITECTURE.md:4657",
       "delegation_line_now": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "delegation_written_since_the_check": false,
       "what_the_naming_was_at_the_check": null,
@@ -251,13 +256,13 @@
       "movement": "WOULD MOVE IN",
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
-        "ARCHITECTURE.md:347",
-        "ARCHITECTURE.md:4581",
-        "ARCHITECTURE.md:4583",
-        "ARCHITECTURE.md:4589",
-        "ARCHITECTURE.md:4613",
-        "ARCHITECTURE.md:4623",
-        "ARCHITECTURE.md:4635"
+        "ARCHITECTURE.md:362",
+        "ARCHITECTURE.md:4604",
+        "ARCHITECTURE.md:4606",
+        "ARCHITECTURE.md:4612",
+        "ARCHITECTURE.md:4636",
+        "ARCHITECTURE.md:4646",
+        "ARCHITECTURE.md:4658"
       ]
     },
     {
@@ -276,9 +281,9 @@
       "current_contract_home": 8,
       "current_gap": 0,
       "form": "explicit-delegation-clause",
-      "delegation_citation": "ARCHITECTURE.md:1498",
+      "delegation_citation": "ARCHITECTURE.md:1519",
       "form_now": "explicit-delegation-clause",
-      "delegation_citation_now": "ARCHITECTURE.md:1498",
+      "delegation_citation_now": "ARCHITECTURE.md:1519",
       "delegation_line_now": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory \"is enumerated at `cowork_layer5_engagement_design.md` §9.2\" (`:53-55`).",
       "delegation_written_since_the_check": false,
       "what_the_naming_was_at_the_check": null,
@@ -288,7 +293,7 @@
       "movement": "none",
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
-        "ARCHITECTURE.md:1498",
+        "ARCHITECTURE.md:1519",
         "cowork_engage_arc_plan.md:41",
         "cowork_engage_arc_plan.md:51",
         "cowork_engage_arc_plan.md:60"
@@ -312,7 +317,7 @@
       "form": "bare-appended-citation",
       "delegation_citation": "ARCHITECTURE.md:1482",
       "form_now": "explicit-delegation-clause",
-      "delegation_citation_now": "ARCHITECTURE.md:1496",
+      "delegation_citation_now": "ARCHITECTURE.md:1517",
       "delegation_line_now": "**Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-335…D-342 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph is the delegation the record relied on and never had.)*",
       "delegation_written_since_the_check": true,
       "what_the_naming_was_at_the_check": "\"…it does not read a resolved key). Full spec:\" — the bar's first excluded form, word for word, and the line the ruling's own defense cites.",
@@ -322,8 +327,8 @@
       "movement": "WOULD MOVE OUT",
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
-        "ARCHITECTURE.md:1494",
-        "ARCHITECTURE.md:1496"
+        "ARCHITECTURE.md:1515",
+        "ARCHITECTURE.md:1517"
       ]
     },
     {
@@ -342,20 +347,20 @@
       "current_contract_home": 0,
       "current_gap": 8,
       "form": "explicit-delegation-clause",
-      "delegation_citation": "ARCHITECTURE.md:348",
+      "delegation_citation": "ARCHITECTURE.md:363",
       "form_now": "explicit-delegation-clause",
-      "delegation_citation_now": "ARCHITECTURE.md:348",
+      "delegation_citation_now": "ARCHITECTURE.md:363",
       "delegation_line_now": "> `cowork_progression_schema_design.md`, the phrase-boundary design, …) are the **authoritative detail** for their own",
       "delegation_written_since_the_check": false,
       "what_the_naming_was_at_the_check": null,
-      "why_this_grade_now": "The doc-governance hierarchy names this document BY FILENAME among the per-component design docs that 'are the authoritative detail for their own scope — the rules, the mechanisms, the per-layer decisions-with-alternatives'. Graded a delegation clause because the predicate delegates a stated concern rather than appending a pointer to a statement about something else. ★ REPORTED, NOT SETTLED: read the other way this is a naming inside a LIST, which the bar does not admit — and the same line decides a whole class of documents at once, so it is rowed at `OPEN_ITEMS.md` OI-326 rather than decided here. The document's own weaker naming, `:1514` 'Spec: <doc>.', is the bar's not-admitted example word for word.",
+      "why_this_grade_now": "The doc-governance hierarchy names this document BY FILENAME among the per-component design docs that 'are the authoritative detail for their own scope — the rules, the mechanisms, the per-layer decisions-with-alternatives'. Graded a delegation clause because the predicate delegates a stated concern rather than appending a pointer to a statement about something else. ★ SETTLED BY THE USER, 2026-08-04 (OI-326, ruling R1; `CLAUDE.md` rule (k), register **D-546**): the clause IS a delegation, and it reaches the members it names EXPLICITLY — which this document is, by filename. The competing reading (a naming inside a LIST) is what the ruling answers, and it does not reach an explicitly-named member; what the ruling withholds is the GLOB and the trailing ELLIPSIS, neither of which this grade rests on. This is the only home document in the register whose grade was made on that clause at all — measured at `reads4_oi326_application.json`. The document's own weaker naming, `:1514` 'Spec: <doc>.', is the bar's not-admitted example word for word, and under ruling R3 the stronger naming governs.",
       "verdict": "ADMIT",
       "verdict_now": "ADMIT",
       "movement": "WOULD MOVE IN",
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
-        "ARCHITECTURE.md:348",
-        "ARCHITECTURE.md:1514"
+        "ARCHITECTURE.md:363",
+        "ARCHITECTURE.md:1537"
       ]
     },
     {
@@ -401,9 +406,9 @@
       "current_contract_home": 7,
       "current_gap": 0,
       "form": "explicit-delegation-clause",
-      "delegation_citation": "ARCHITECTURE.md:923",
+      "delegation_citation": "ARCHITECTURE.md:938",
       "form_now": "explicit-delegation-clause",
-      "delegation_citation_now": "ARCHITECTURE.md:923",
+      "delegation_citation_now": "ARCHITECTURE.md:938",
       "delegation_line_now": "detailed cross-layer spec for this contract is **`cowork_bounded_context_design.md`** — the request→supply→bounded-",
       "delegation_written_since_the_check": false,
       "what_the_naming_was_at_the_check": null,
@@ -413,7 +418,7 @@
       "movement": "none",
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
-        "ARCHITECTURE.md:923"
+        "ARCHITECTURE.md:938"
       ]
     },
     {
@@ -437,7 +442,7 @@
       "delegation_line_now": "> **★★ GOVERNING DECISION (user-ratified 2026-07-17): the key/mode/chord estimator is JOINT — see",
       "delegation_written_since_the_check": false,
       "what_the_naming_was_at_the_check": null,
-      "why_this_grade_now": "The canonical document's opening banner declares a user-ratified GOVERNING DECISION and names this document as where it is read. Graded a delegation clause on the strength of what is delegated — the governing architecture decision itself — rather than on the word 'see'. ★ REPORTED: the same document's `:48` naming is 'spec: <doc>', a bare appended citation the bar excludes, so this document is named in both forms and the grade turns on which is the stronger. Same class of question as OI-326.",
+      "why_this_grade_now": "The canonical document's opening banner declares a user-ratified GOVERNING DECISION and names this document as where it is read. Graded a delegation clause on the strength of what is delegated — the governing architecture decision itself — rather than on the word 'see'. ★ SETTLED BY THE USER, 2026-08-04 (OI-326, ruling R3; `CLAUDE.md` rule (k1), recorded on **D-432**): where a document is named in BOTH an admitting and an excluded form, the STRONGEST NAMING GOVERNS — being cited elsewhere in a weaker form does not undo a delegation. So the same document's `:48` naming ('spec: <doc>', the bar's excluded example word for word) does not disturb this grade. The ruling CONFIRMS the bar rather than extending it.",
       "verdict": "ADMIT",
       "verdict_now": "ADMIT",
       "movement": "WOULD MOVE IN",
@@ -445,7 +450,7 @@
       "mentions_in_ratified_surfaces": [
         "ARCHITECTURE.md:4",
         "ARCHITECTURE.md:48",
-        "CLAUDE.md:144"
+        "CLAUDE.md:169"
       ]
     },
     {
@@ -463,9 +468,9 @@
       "current_contract_home": 0,
       "current_gap": 7,
       "form": "bare-appended-citation",
-      "delegation_citation": "ARCHITECTURE.md:6969",
+      "delegation_citation": "ARCHITECTURE.md:6992",
       "form_now": "bare-appended-citation",
-      "delegation_citation_now": "ARCHITECTURE.md:6969",
+      "delegation_citation_now": "ARCHITECTURE.md:6992",
       "delegation_line_now": "> **Full design document:** `docs/llm_integration.md`",
       "delegation_written_since_the_check": false,
       "what_the_naming_was_at_the_check": null,
@@ -475,10 +480,10 @@
       "movement": "none",
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
-        "ARCHITECTURE.md:2471",
-        "ARCHITECTURE.md:6969",
-        "ARCHITECTURE.md:7039",
-        "ARCHITECTURE.md:7050"
+        "ARCHITECTURE.md:2494",
+        "ARCHITECTURE.md:6992",
+        "ARCHITECTURE.md:7062",
+        "ARCHITECTURE.md:7073"
       ]
     },
     {
@@ -495,9 +500,9 @@
       "current_contract_home": 6,
       "current_gap": 0,
       "form": "explicit-delegation-clause",
-      "delegation_citation": "ARCHITECTURE.md:1418",
+      "delegation_citation": "ARCHITECTURE.md:1439",
       "form_now": "explicit-delegation-clause",
-      "delegation_citation_now": "ARCHITECTURE.md:1418",
+      "delegation_citation_now": "ARCHITECTURE.md:1439",
       "delegation_line_now": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer4_chordsymbol_design.md` (SIGNED, user, 2026-06-24) — D-329…D-334 — which this section points at and does not restate.",
       "delegation_written_since_the_check": false,
       "what_the_naming_was_at_the_check": null,
@@ -507,8 +512,8 @@
       "movement": "none",
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
-        "ARCHITECTURE.md:1418",
-        "ARCHITECTURE.md:1482"
+        "ARCHITECTURE.md:1439",
+        "ARCHITECTURE.md:1503"
       ]
     },
     {
@@ -594,6 +599,38 @@
       "mentions_in_ratified_surfaces": [
         "cowork_engage_arc_plan.md:4",
         "cowork_engage_arc_plan.md:145"
+      ]
+    },
+    {
+      "document": "cowork_style_taxonomy_proposal.md",
+      "entries": 5,
+      "entry_ids": [
+        "D-587",
+        "D-588",
+        "D-589",
+        "D-590",
+        "D-591"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 5,
+      "form": "bare-appended-citation",
+      "delegation_citation": "ARCHITECTURE.md:4620",
+      "form_now": "bare-appended-citation",
+      "delegation_citation_now": "ARCHITECTURE.md:4620",
+      "delegation_line_now": "Chromatic-coloristic (`cowork_style_taxonomy_proposal.md:11-30`).",
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "FIVE namings, all of one kind, and the strongest is graded per rule (k1): each is a parenthetical CITATION-WITH-LINE-RANGE supporting a statement `ARCHITECTURE.md` makes in its own voice — the five idioms, the granularity ruling, the cross-axes, the auto-detection roadmap. A citation supporting a sentence is the bar's first excluded form however precise its line range: the canonical document is RESTATING the content here, not delegating it. ★ Worth recording because it cuts the other way from the usual case: this document is named more often than most admitted ones and still excludes, which is exactly what D-432 was ruled to make mechanical.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "ARCHITECTURE.md:4611",
+        "ARCHITECTURE.md:4620",
+        "ARCHITECTURE.md:4626",
+        "ARCHITECTURE.md:4644",
+        "ARCHITECTURE.md:4647"
       ]
     },
     {
@@ -734,19 +771,21 @@
       ],
       "current_contract_home": 0,
       "current_gap": 4,
-      "form": "not-named-in-any-ratified-surface",
-      "delegation_citation": null,
-      "form_now": "not-named-in-any-ratified-surface",
-      "delegation_citation_now": null,
-      "delegation_line_now": null,
+      "form": "explicit-delegation-clause",
+      "delegation_citation": "ARCHITECTURE.md:1257",
+      "form_now": "explicit-delegation-clause",
+      "delegation_citation_now": "ARCHITECTURE.md:1257",
+      "delegation_line_now": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer1_note_model_design.md` (AS-BUILT — built, reviewed and accepted, `:3`) — D-517…D-520 — which this section points at and does not restate.",
       "delegation_written_since_the_check": false,
       "what_the_naming_was_at_the_check": null,
-      "why_this_grade_now": "Named in none of the three surfaces; verified mechanically here.",
-      "verdict": "EXCLUDE",
-      "verdict_now": "EXCLUDE",
-      "movement": "none",
-      "decided_by_the_bar": false,
-      "mentions_in_ratified_surfaces": []
+      "why_this_grade_now": "★ MOVED 2026-08-04 (READ WAVE 5, ruling R4): THE USER WROTE THE DELEGATION. It is the bar's first named form, word for word, in the Layer-1 section — the same wording the Layer-3/4/5 sections already carry. The former grade, preserved (#12): NOT_NAMED — 'Named in none of the three surfaces; verified mechanically here. ★ THE DOC-GOVERNANCE GLOB `cowork_layer*_design.md` MATCHES THIS FILENAME AND CONFERS NOTHING (user, 2026-08-04, OI-326 ruling R1; `CLAUDE.md` rule (k), **D-546**), so the grade stands and the document is on the OI-293 write list instead.' That is R2 working exactly as ruled: a delegation the user writes settles the document without touching the bar.",
+      "verdict": "ADMIT",
+      "verdict_now": "ADMIT",
+      "movement": "WOULD MOVE IN",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "ARCHITECTURE.md:1257"
+      ]
     },
     {
       "document": "cowork_sensitive_cell_probe.md",
@@ -772,6 +811,33 @@
       "movement": "none",
       "decided_by_the_bar": false,
       "mentions_in_ratified_surfaces": []
+    },
+    {
+      "document": "docs/architecture_joint_inference.md",
+      "entries": 4,
+      "entry_ids": [
+        "D-618",
+        "D-619",
+        "D-620",
+        "D-621"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 4,
+      "form": "provenance-attribution",
+      "delegation_citation": "ARCHITECTURE.md:858",
+      "form_now": "provenance-attribution",
+      "delegation_citation_now": "ARCHITECTURE.md:858",
+      "delegation_line_now": "stage. The `docs/architecture_joint_inference.md` joint-decode synthesis is **superseded** by this, retained only as",
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "The only naming, and it is not merely weak but the OPPOSITE act: the sentence records that this document's synthesis is SUPERSEDED by the ratified estimator and retained for the record. A statement about a document's standing is a provenance attribution, the bar's second excluded form — and one that could not admit even in a stronger wording, since a surface cannot delegate a concern to a document in the act of retiring it. The same shape as `cowork_target_architecture.md`'s demotion, which the phase-1p grade already records.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "ARCHITECTURE.md:858"
+      ]
     },
     {
       "document": "docs/decoder_design.md",
@@ -835,9 +901,9 @@
       "current_contract_home": 4,
       "current_gap": 0,
       "form": "bare-appended-citation",
-      "delegation_citation": "ARCHITECTURE.md:784",
+      "delegation_citation": "ARCHITECTURE.md:799",
       "form_now": "bare-appended-citation",
-      "delegation_citation_now": "ARCHITECTURE.md:784",
+      "delegation_citation_now": "ARCHITECTURE.md:799",
       "delegation_line_now": "arpeggio-resolved chord identities as input. Design reference: `docs/redesign_plan.md`",
       "delegation_written_since_the_check": false,
       "what_the_naming_was_at_the_check": null,
@@ -847,9 +913,9 @@
       "movement": "WOULD MOVE OUT",
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
-        "ARCHITECTURE.md:784",
-        "ARCHITECTURE.md:798",
-        "ARCHITECTURE.md:809"
+        "ARCHITECTURE.md:799",
+        "ARCHITECTURE.md:813",
+        "ARCHITECTURE.md:824"
       ]
     },
     {
@@ -864,9 +930,9 @@
       "current_contract_home": 4,
       "current_gap": 0,
       "form": "explicit-delegation-clause",
-      "delegation_citation": "CLAUDE.md:786",
+      "delegation_citation": "CLAUDE.md:846",
       "form_now": "explicit-delegation-clause",
-      "delegation_citation_now": "CLAUDE.md:786",
+      "delegation_citation_now": "CLAUDE.md:846",
       "delegation_line_now": "**Read `docs/scoring_model.md` at the start of any session that touches scoring",
       "delegation_written_since_the_check": false,
       "what_the_naming_was_at_the_check": null,
@@ -876,13 +942,13 @@
       "movement": "none",
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
-        "ARCHITECTURE.md:2162",
-        "CLAUDE.md:782",
-        "CLAUDE.md:784",
-        "CLAUDE.md:786",
-        "CLAUDE.md:797",
-        "CLAUDE.md:805",
-        "CLAUDE.md:824"
+        "ARCHITECTURE.md:2185",
+        "CLAUDE.md:842",
+        "CLAUDE.md:844",
+        "CLAUDE.md:846",
+        "CLAUDE.md:857",
+        "CLAUDE.md:865",
+        "CLAUDE.md:884"
       ]
     },
     {
@@ -921,9 +987,9 @@
       "current_contract_home": 3,
       "current_gap": 0,
       "form": "explicit-delegation-clause",
-      "delegation_citation": "ARCHITECTURE.md:962",
+      "delegation_citation": "ARCHITECTURE.md:977",
       "form_now": "explicit-delegation-clause",
-      "delegation_citation_now": "ARCHITECTURE.md:962",
+      "delegation_citation_now": "ARCHITECTURE.md:977",
       "delegation_line_now": "squashing rules and the declared comparison frames are stated in full in `cowork_confidence_contract.md`,",
       "delegation_written_since_the_check": false,
       "what_the_naming_was_at_the_check": null,
@@ -933,9 +999,9 @@
       "movement": "none",
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
-        "ARCHITECTURE.md:864",
-        "ARCHITECTURE.md:961",
-        "ARCHITECTURE.md:962"
+        "ARCHITECTURE.md:879",
+        "ARCHITECTURE.md:976",
+        "ARCHITECTURE.md:977"
       ]
     },
     {
@@ -951,7 +1017,7 @@
       "form": "provenance-attribution",
       "delegation_citation": "CLAUDE.md:129",
       "form_now": "explicit-delegation-clause",
-      "delegation_citation_now": "CLAUDE.md:152",
+      "delegation_citation_now": "CLAUDE.md:177",
       "delegation_line_now": "write list).** The ratified contract for the ORDER OF WORK from here to the precision phase — the",
       "delegation_written_since_the_check": true,
       "what_the_naming_was_at_the_check": "\"Companion standing rules elsewhere: … the MEASURE-BEFORE-BUILD gate (`cowork_engage_arc_plan.md`, …)\" — a naming inside a list of citations.",
@@ -961,10 +1027,10 @@
       "movement": "none",
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
-        "ARCHITECTURE.md:1498",
-        "CLAUDE.md:148",
-        "CLAUDE.md:153",
-        "CLAUDE.md:276"
+        "ARCHITECTURE.md:1519",
+        "CLAUDE.md:173",
+        "CLAUDE.md:178",
+        "CLAUDE.md:301"
       ]
     },
     {
@@ -978,20 +1044,20 @@
       "current_contract_home": 0,
       "current_gap": 3,
       "form": "explicit-delegation-clause",
-      "delegation_citation": "ARCHITECTURE.md:994",
+      "delegation_citation": "ARCHITECTURE.md:1009",
       "form_now": "explicit-delegation-clause",
-      "delegation_citation_now": "ARCHITECTURE.md:994",
+      "delegation_citation_now": "ARCHITECTURE.md:1009",
       "delegation_line_now": "it would never have thought to ask for. The catalog of what each layer discovers is",
       "delegation_written_since_the_check": false,
       "what_the_naming_was_at_the_check": null,
-      "why_this_grade_now": "A subject-is-X naming with a delegating predicate, the same shape as the bar's first admitted form, and it binds an obligation to the document (kept in step with the layer specifications as facts are adopted). ★ NOTE FOR WHOEVER APPLIES THE CLASSIFICATION: the FORM admitting does not make this a home — D-430's other half asks whether the section STATES RULES, and this document's own §9 says in terms that nothing in it is a build decision. The form is graded here; the kind half is not reached.",
+      "why_this_grade_now": "A subject-is-X naming with a delegating predicate, the same shape as the bar's first admitted form, and it binds an obligation to the document (kept in step with the layer specifications as facts are adopted). ★ CONFIRMED BY THE USER, 2026-08-04 (OI-326, ruling R4; `CLAUDE.md` rule (k2), recorded on **D-430**): the FORM admitting does not make this a home. BOTH halves are required and the KIND half is DECISIVE — a well-formed delegation to a section that RECORDS FINDINGS admits nothing — and the halves are applied form first, kind second and last. This document's own §9 says in terms that nothing in it is a build decision, so the kind half is where its entries will be decided. The form is graded here; the kind half is still not reached, because it is judged PER SECTION by the classification pass and that pass stays unrun.",
       "verdict": "ADMIT",
       "verdict_now": "ADMIT",
       "movement": "WOULD MOVE IN",
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
-        "ARCHITECTURE.md:995",
-        "CLAUDE.md:116"
+        "ARCHITECTURE.md:1010",
+        "CLAUDE.md:141"
       ]
     },
     {
@@ -1001,6 +1067,104 @@
         "D-510",
         "D-511",
         "D-512"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 3,
+      "form": "not-named-in-any-ratified-surface",
+      "delegation_citation": null,
+      "form_now": "not-named-in-any-ratified-surface",
+      "delegation_citation_now": null,
+      "delegation_line_now": null,
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "Named in none of the three surfaces; verified mechanically here.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": false,
+      "mentions_in_ratified_surfaces": []
+    },
+    {
+      "document": "cowork_idiom_discovery_findings.md",
+      "entries": 3,
+      "entry_ids": [
+        "D-554",
+        "D-555",
+        "D-556"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 3,
+      "form": "provenance-attribution",
+      "delegation_citation": "ARCHITECTURE.md:4616",
+      "form_now": "provenance-attribution",
+      "delegation_citation_now": "ARCHITECTURE.md:4616",
+      "delegation_line_now": "(`cowork_idiom_discovery_findings.md:122`, v1.5, cap-robust) found that harmony is **not organised by genre** —",
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "A parenthetical citation, by document AND line, recording where a measurement this document made is written down — 'found that harmony is not organised by genre'. The bar's second excluded form: a provenance attribution. It is the only naming.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "ARCHITECTURE.md:4616"
+      ]
+    },
+    {
+      "document": "cowork_information_loss_audit.md",
+      "entries": 3,
+      "entry_ids": [
+        "D-581",
+        "D-582",
+        "D-583"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 3,
+      "form": "not-named-in-any-ratified-surface",
+      "delegation_citation": null,
+      "form_now": "not-named-in-any-ratified-surface",
+      "delegation_citation_now": null,
+      "delegation_line_now": null,
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "Named in none of the three surfaces; verified mechanically here.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": false,
+      "mentions_in_ratified_surfaces": []
+    },
+    {
+      "document": "cowork_layer3_reachback_design.md",
+      "entries": 3,
+      "entry_ids": [
+        "D-622",
+        "D-623",
+        "D-624"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 3,
+      "form": "not-named-in-any-ratified-surface",
+      "delegation_citation": null,
+      "form_now": "not-named-in-any-ratified-surface",
+      "delegation_citation_now": null,
+      "delegation_line_now": null,
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "Named in none of the three surfaces; verified mechanically here.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": false,
+      "mentions_in_ratified_surfaces": []
+    },
+    {
+      "document": "cowork_layer5_function_methods.md",
+      "entries": 3,
+      "entry_ids": [
+        "D-584",
+        "D-585",
+        "D-586"
       ],
       "current_contract_home": 0,
       "current_gap": 3,
@@ -1029,9 +1193,9 @@
       "current_contract_home": 0,
       "current_gap": 3,
       "form": "provenance-attribution",
-      "delegation_citation": "ARCHITECTURE.md:4704",
+      "delegation_citation": "ARCHITECTURE.md:4727",
       "form_now": "provenance-attribution",
-      "delegation_citation_now": "ARCHITECTURE.md:4704",
+      "delegation_citation_now": "ARCHITECTURE.md:4727",
       "delegation_line_now": "pedal-point ruling of the notation-adoption increment (`cowork_notation_adoption_increment.md` §7 + §10).",
       "delegation_written_since_the_check": false,
       "what_the_naming_was_at_the_check": null,
@@ -1041,8 +1205,8 @@
       "movement": "none",
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
-        "ARCHITECTURE.md:4704",
-        "CLAUDE.md:146"
+        "ARCHITECTURE.md:4727",
+        "CLAUDE.md:171"
       ]
     },
     {
@@ -1145,6 +1309,102 @@
       "mentions_in_ratified_surfaces": []
     },
     {
+      "document": "cowork_adjudication_dossier.md",
+      "entries": 2,
+      "entry_ids": [
+        "D-600",
+        "D-601"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 2,
+      "form": "provenance-attribution",
+      "delegation_citation": "CLAUDE.md:138",
+      "form_now": "provenance-attribution",
+      "delegation_citation_now": "CLAUDE.md:138",
+      "delegation_line_now": "`cowork_siloed_facts_audit.md` (17 findings) + `cowork_adjudication_dossier.md` Part B.",
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "The single naming is inside the fact-publication corollary's EVIDENCE clause — 'Evidence for why this needs stating: ... + `cowork_adjudication_dossier.md` Part B' — which records where the reasoning behind a rule is written down. That is a provenance attribution, the bar's second excluded form, and it delegates no concern to the document.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "CLAUDE.md:138"
+      ]
+    },
+    {
+      "document": "cowork_eg1_premise_checks.md",
+      "entries": 2,
+      "entry_ids": [
+        "D-608",
+        "D-609"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 2,
+      "form": "not-named-in-any-ratified-surface",
+      "delegation_citation": null,
+      "form_now": "not-named-in-any-ratified-surface",
+      "delegation_citation_now": null,
+      "delegation_line_now": null,
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "Named in none of the three surfaces; verified mechanically here.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": false,
+      "mentions_in_ratified_surfaces": []
+    },
+    {
+      "document": "cowork_layer1_tone_collection_design.md",
+      "entries": 2,
+      "entry_ids": [
+        "D-569",
+        "D-570"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 2,
+      "form": "not-named-in-any-ratified-surface",
+      "delegation_citation": null,
+      "form_now": "not-named-in-any-ratified-surface",
+      "delegation_citation_now": null,
+      "delegation_line_now": null,
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "Named in none of the three surfaces; verified mechanically here. ★ SETTLED, NOT LEFT PENDING (user, 2026-08-04, READ WAVE 6, ruling R6): the user ruled this document NOT a delegation target, on the ground that the concern it designs — collecting the tones a stretch of music sounds — was ABSORBED BY THE NOTE MODEL, so a delegation would create a second home for a concern that already has one (#6). The grade therefore stays NOT_NAMED as a RULING rather than as an unanswered question, and the document's own banner now records the absorption and its historical status. Its two entries stay `gap`, which is the correct class for a decision whose concern is homed elsewhere.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": false,
+      "mentions_in_ratified_surfaces": []
+    },
+    {
+      "document": "cowork_layer2_reslice_design.md",
+      "entries": 2,
+      "entry_ids": [
+        "D-631",
+        "D-632"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 2,
+      "form": "bare-appended-citation",
+      "delegation_citation": "ARCHITECTURE.md:1315",
+      "form_now": "bare-appended-citation",
+      "delegation_citation_now": "ARCHITECTURE.md:1315",
+      "delegation_line_now": "slicing never drags outside the loaded span (Phase 2; `cowork_layer2_reslice_design.md` §2). On a",
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "A parenthetical citation appended to a sentence the canonical document states in its own voice about how the slicer clips to the loaded span. It names a SECTION, which is why it is graded rather than waved past — but the bar's admitting second form is a NAMED HOME with sections ('Criterion + build home: X §0/§5.3'), and this is a citation supporting a restatement, not a home. Bare appended citation. Distinct from the SIBLING document `cowork_layer2_slicing_design.md`, which the user delegated to by name on 2026-08-04.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "ARCHITECTURE.md:1315"
+      ]
+    },
+    {
       "document": "cowork_layer2_slicing_design.md",
       "entries": 2,
       "entry_ids": [
@@ -1153,21 +1413,45 @@
       ],
       "current_contract_home": 0,
       "current_gap": 2,
-      "form": "bare-appended-citation",
-      "delegation_citation": "ARCHITECTURE.md:1325",
-      "form_now": "bare-appended-citation",
-      "delegation_citation_now": "ARCHITECTURE.md:1325",
-      "delegation_line_now": "0/353 `.ours.json` byte-diffs on Baroque/Jazz/Default, gate unchanged at 53/24/53). See `cc_layer2_impl_report.md` (HELD), `cowork_layer2_slicing_design.md`,",
+      "form": "explicit-delegation-clause",
+      "delegation_citation": "ARCHITECTURE.md:1347",
+      "form_now": "explicit-delegation-clause",
+      "delegation_citation_now": "ARCHITECTURE.md:1347",
+      "delegation_line_now": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer2_slicing_design.md` (AS-BUILT — built, reviewed, accepted and validated on the full test corpus, `:3`) — D-540…D-541 — which this section points at and does not restate. *(The \"See …\" line above is a citation of three documents, two of them session reports; `CLAUDE.md` rule (i) distinguishes a citation from a delegation, and this paragraph supplements that line rather than replacing it.)*",
       "delegation_written_since_the_check": false,
       "what_the_naming_was_at_the_check": null,
-      "why_this_grade_now": "The only naming is inside a 'See ...' list of two documents appended to a paragraph reporting a measurement result. A bare appended citation, which the bar does not admit — and notably weaker than the sibling Layer-1 document, which is not named in any of the three surfaces at all.",
+      "why_this_grade_now": "★ MOVED 2026-08-04 (READ WAVE 5, ruling R4): THE USER WROTE THE DELEGATION. It is the bar's first named form, word for word, in the Layer-2 section, SUPPLEMENTING the 'See ...' citation rather than replacing it — which is why this document is now named TWICE in `ARCHITECTURE.md`, once in each form. Under `CLAUDE.md` rule (k1) the STRONGEST naming governs, so the weaker citation does not undo the delegation, and the anchor above is deliberately the delegation's own sentence rather than the bare filename, which is no longer unique in that file. The former grade, preserved (#12): BARE_CITATION — 'The only naming is inside a \"See ...\" list of two documents appended to a paragraph reporting a measurement result. A bare appended citation, which the bar does not admit — and notably weaker than the sibling Layer-1 document, which is not named in any of the three surfaces at all. ★ THE DOC-GOVERNANCE GLOB `cowork_layer*_design.md` MATCHES THIS FILENAME AND CONFERS NOTHING (user, 2026-08-04, OI-326 ruling R1; `CLAUDE.md` rule (k), **D-546**), so this grade is unchanged and the document is on the OI-293 write list instead.'",
+      "verdict": "ADMIT",
+      "verdict_now": "ADMIT",
+      "movement": "WOULD MOVE IN",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "ARCHITECTURE.md:1344",
+        "ARCHITECTURE.md:1347"
+      ]
+    },
+    {
+      "document": "cowork_layer3_keymode_impl_design.md",
+      "entries": 2,
+      "entry_ids": [
+        "D-603",
+        "D-604"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 2,
+      "form": "not-named-in-any-ratified-surface",
+      "delegation_citation": null,
+      "form_now": "not-named-in-any-ratified-surface",
+      "delegation_citation_now": null,
+      "delegation_line_now": null,
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "Named in none of the three surfaces; verified mechanically here.",
       "verdict": "EXCLUDE",
       "verdict_now": "EXCLUDE",
       "movement": "none",
-      "decided_by_the_bar": true,
-      "mentions_in_ratified_surfaces": [
-        "ARCHITECTURE.md:1325"
-      ]
+      "decided_by_the_bar": false,
+      "mentions_in_ratified_surfaces": []
     },
     {
       "document": "cowork_notation_output_contract.md",
@@ -1195,6 +1479,52 @@
       ]
     },
     {
+      "document": "cowork_phase2_architecture_review.md",
+      "entries": 2,
+      "entry_ids": [
+        "D-579",
+        "D-580"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 2,
+      "form": "not-named-in-any-ratified-surface",
+      "delegation_citation": null,
+      "form_now": "not-named-in-any-ratified-surface",
+      "delegation_citation_now": null,
+      "delegation_line_now": null,
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "Named in none of the three surfaces; verified mechanically here.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": false,
+      "mentions_in_ratified_surfaces": []
+    },
+    {
+      "document": "cowork_union_search_record.md",
+      "entries": 2,
+      "entry_ids": [
+        "D-613",
+        "D-614"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 2,
+      "form": "not-named-in-any-ratified-surface",
+      "delegation_citation": null,
+      "form_now": "not-named-in-any-ratified-surface",
+      "delegation_citation_now": null,
+      "delegation_line_now": null,
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "Named in none of the three surfaces; verified mechanically here.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": false,
+      "mentions_in_ratified_surfaces": []
+    },
+    {
       "document": "docs/back_half_design.md",
       "entries": 2,
       "entry_ids": [
@@ -1216,6 +1546,31 @@
       "movement": "none",
       "decided_by_the_bar": false,
       "mentions_in_ratified_surfaces": []
+    },
+    {
+      "document": "docs/iter90_bass_as_root_promotion_shelved.md",
+      "entries": 2,
+      "entry_ids": [
+        "D-594",
+        "D-595"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 2,
+      "form": "provenance-attribution",
+      "delegation_citation": "ARCHITECTURE.md:4023",
+      "form_now": "provenance-attribution",
+      "delegation_citation_now": "ARCHITECTURE.md:4023",
+      "delegation_line_now": "`docs/iter90_bass_as_root_promotion_shelved.md` for characterization and Iter 91 design).",
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "The single naming is a parenthetical pointing at where an investigation's characterization and its follow-up design are recorded. A provenance attribution, the bar's second excluded form.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "ARCHITECTURE.md:4023"
+      ]
     },
     {
       "document": "docs/iteration_path1_summary.md",
@@ -1241,6 +1596,259 @@
       "mentions_in_ratified_surfaces": []
     },
     {
+      "document": "docs/stage4b_design.md",
+      "entries": 2,
+      "entry_ids": [
+        "D-571",
+        "D-572"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 2,
+      "form": "not-named-in-any-ratified-surface",
+      "delegation_citation": null,
+      "form_now": "not-named-in-any-ratified-surface",
+      "delegation_citation_now": null,
+      "delegation_line_now": null,
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "Named in none of the three surfaces; verified mechanically here.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": false,
+      "mentions_in_ratified_surfaces": []
+    },
+    {
+      "document": "docs/stage4d_local_modulation_design.md",
+      "entries": 2,
+      "entry_ids": [
+        "D-605",
+        "D-606"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 2,
+      "form": "not-named-in-any-ratified-surface",
+      "delegation_citation": null,
+      "form_now": "not-named-in-any-ratified-surface",
+      "delegation_citation_now": null,
+      "delegation_line_now": null,
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "Named in none of the three surfaces; verified mechanically here.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": false,
+      "mentions_in_ratified_surfaces": []
+    },
+    {
+      "document": "cowork_audit_obligation_map.md",
+      "entries": 1,
+      "entry_ids": [
+        "D-568"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 1,
+      "form": "not-named-in-any-ratified-surface",
+      "delegation_citation": null,
+      "form_now": "not-named-in-any-ratified-surface",
+      "delegation_citation_now": null,
+      "delegation_line_now": null,
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "Named in none of the three surfaces; verified mechanically here.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": false,
+      "mentions_in_ratified_surfaces": []
+    },
+    {
+      "document": "cowork_delta_check_dispositions.md",
+      "entries": 1,
+      "entry_ids": [
+        "D-635"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 1,
+      "form": "not-named-in-any-ratified-surface",
+      "delegation_citation": null,
+      "form_now": "not-named-in-any-ratified-surface",
+      "delegation_citation_now": null,
+      "delegation_line_now": null,
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "Named in none of the three surfaces; verified mechanically here.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": false,
+      "mentions_in_ratified_surfaces": []
+    },
+    {
+      "document": "cowork_eg2_scoping.md",
+      "entries": 1,
+      "entry_ids": [
+        "D-564"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 1,
+      "form": "not-named-in-any-ratified-surface",
+      "delegation_citation": null,
+      "form_now": "not-named-in-any-ratified-surface",
+      "delegation_citation_now": null,
+      "delegation_line_now": null,
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "Named in none of the three surfaces; verified mechanically here.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": false,
+      "mentions_in_ratified_surfaces": []
+    },
+    {
+      "document": "cowork_joint_estimator_factorization.md",
+      "entries": 1,
+      "entry_ids": [
+        "D-565"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 1,
+      "form": "bare-appended-citation",
+      "delegation_citation": "ARCHITECTURE.md:48",
+      "form_now": "bare-appended-citation",
+      "delegation_citation_now": "ARCHITECTURE.md:48",
+      "delegation_line_now": "> spec: `cowork_joint_estimator_architecture.md`, `cowork_joint_estimator_factorization.md`; pre-fit gates",
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "The bar's first excluded form, word for word: a line opening 'spec:' and naming two documents. ★ NAMED TWICE, and graded on the STRONGEST naming per ruling R3 (user, 2026-08-04; `CLAUDE.md` rule (k1)): the other naming (`:299`, a parenthetical citation with line numbers recording where a rejected option is described) is a provenance attribution, weaker still. Both are excluded forms, so the ruling is applied and the verdict does not turn on it. Contrast the sibling architecture document, whose opening-banner naming IS graded a delegation clause.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "ARCHITECTURE.md:48",
+        "ARCHITECTURE.md:299"
+      ]
+    },
+    {
+      "document": "cowork_l1_l5_premise_debt_audit.md",
+      "entries": 1,
+      "entry_ids": [
+        "D-615"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 1,
+      "form": "provenance-attribution",
+      "delegation_citation": "cowork_engage_arc_plan.md:69",
+      "form_now": "provenance-attribution",
+      "delegation_citation_now": "cowork_engage_arc_plan.md:69",
+      "delegation_line_now": "**★ STAGE-3 ENTRY GATE (ratified 2026-07-10 with #17–#19; evidence `cowork_l1_l5_premise_debt_audit.md`).**",
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "Named TWICE in the arc plan and graded on the stronger per rule (k1); both are provenance attributions — the first a parenthetical naming the EVIDENCE behind the ratified Stage-3 entry gate, the second a parenthetical citation beside a shelving note. Naming a document as the evidence for a ruling records where the reasoning lives; it does not delegate the concern to it.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "cowork_engage_arc_plan.md:69",
+        "cowork_engage_arc_plan.md:144"
+      ]
+    },
+    {
+      "document": "cowork_layer1_extend_design.md",
+      "entries": 1,
+      "entry_ids": [
+        "D-628"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 1,
+      "form": "not-named-in-any-ratified-surface",
+      "delegation_citation": null,
+      "form_now": "not-named-in-any-ratified-surface",
+      "delegation_citation_now": null,
+      "delegation_line_now": null,
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "Named in none of the three surfaces; verified mechanically here.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": false,
+      "mentions_in_ratified_surfaces": []
+    },
+    {
+      "document": "cowork_phase5c_l5_build_plan.md",
+      "entries": 1,
+      "entry_ids": [
+        "D-602"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 1,
+      "form": "not-named-in-any-ratified-surface",
+      "delegation_citation": null,
+      "form_now": "not-named-in-any-ratified-surface",
+      "delegation_citation_now": null,
+      "delegation_line_now": null,
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "Named in none of the three surfaces; verified mechanically here.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": false,
+      "mentions_in_ratified_surfaces": []
+    },
+    {
+      "document": "cowork_phrase_boundary_methods.md",
+      "entries": 1,
+      "entry_ids": [
+        "D-607"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 1,
+      "form": "not-named-in-any-ratified-surface",
+      "delegation_citation": null,
+      "form_now": "not-named-in-any-ratified-surface",
+      "delegation_citation_now": null,
+      "delegation_line_now": null,
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "Named in none of the three surfaces; verified mechanically here.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": false,
+      "mentions_in_ratified_surfaces": []
+    },
+    {
+      "document": "cowork_style_clustering_plan.md",
+      "entries": 1,
+      "entry_ids": [
+        "D-598"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 1,
+      "form": "bare-appended-citation",
+      "delegation_citation": "ARCHITECTURE.md:4634",
+      "form_now": "bare-appended-citation",
+      "delegation_citation_now": "ARCHITECTURE.md:4634",
+      "delegation_line_now": "clustering corpora is the committed work (`cowork_style_clustering_plan.md`); the weighting itself is a joint decision",
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "Two namings, and the STRONGER is graded per `CLAUDE.md` rule (k1). The first is a parenthetical identifying which document holds a piece of committed work; the second is inside a two-document 'see' list. Both are bare appended citations at best — the bar's first excluded form — and neither delegates a stated concern to the document.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "ARCHITECTURE.md:4634",
+        "ARCHITECTURE.md:4647"
+      ]
+    },
+    {
       "document": "cowork_target_architecture.md",
       "entries": 1,
       "entry_ids": [
@@ -1249,9 +1857,9 @@
       "current_contract_home": 0,
       "current_gap": 1,
       "form": "bare-appended-citation",
-      "delegation_citation": "ARCHITECTURE.md:846",
+      "delegation_citation": "ARCHITECTURE.md:861",
       "form_now": "bare-appended-citation",
-      "delegation_citation_now": "ARCHITECTURE.md:846",
+      "delegation_citation_now": "ARCHITECTURE.md:861",
       "delegation_line_now": "### 2.15 The core principle and the cross-cutting analysis contracts (ratified; full statements in `cowork_target_architecture.md`)",
       "delegation_written_since_the_check": false,
       "what_the_naming_was_at_the_check": null,
@@ -1261,11 +1869,127 @@
       "movement": "none",
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
-        "ARCHITECTURE.md:352",
-        "ARCHITECTURE.md:366",
-        "ARCHITECTURE.md:829",
-        "ARCHITECTURE.md:846",
-        "ARCHITECTURE.md:1236"
+        "ARCHITECTURE.md:367",
+        "ARCHITECTURE.md:381",
+        "ARCHITECTURE.md:844",
+        "ARCHITECTURE.md:861",
+        "ARCHITECTURE.md:1251"
+      ]
+    },
+    {
+      "document": "cowork_tpc_capability_design.md",
+      "entries": 1,
+      "entry_ids": [
+        "D-625"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 1,
+      "form": "not-named-in-any-ratified-surface",
+      "delegation_citation": null,
+      "form_now": "not-named-in-any-ratified-surface",
+      "delegation_citation_now": null,
+      "delegation_line_now": null,
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "Named in none of the three surfaces; verified mechanically here.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": false,
+      "mentions_in_ratified_surfaces": []
+    },
+    {
+      "document": "cowork_types_header_design.md",
+      "entries": 1,
+      "entry_ids": [
+        "D-610"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 1,
+      "form": "not-named-in-any-ratified-surface",
+      "delegation_citation": null,
+      "form_now": "not-named-in-any-ratified-surface",
+      "delegation_citation_now": null,
+      "delegation_line_now": null,
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "Named in none of the three surfaces; verified mechanically here.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": false,
+      "mentions_in_ratified_surfaces": []
+    },
+    {
+      "document": "cowork_uncertain_resolver_investigation.md",
+      "entries": 1,
+      "entry_ids": [
+        "D-629"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 1,
+      "form": "provenance-attribution",
+      "delegation_citation": "CLAUDE.md:799",
+      "form_now": "provenance-attribution",
+      "delegation_citation_now": "CLAUDE.md:799",
+      "delegation_line_now": "several-fold. Measured during the O1 investigation (`cowork_uncertain_resolver_investigation.md` +",
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "A parenthetical recording where a measurement was made, inside the gate block's cross-layer-budget caveat. A provenance attribution: it attributes the figures the caveat quotes and delegates no concern. It is the only naming.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "CLAUDE.md:799"
+      ]
+    },
+    {
+      "document": "docs/key_detection_baroque_partial_signature.md",
+      "entries": 1,
+      "entry_ids": [
+        "D-575"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 1,
+      "form": "provenance-attribution",
+      "delegation_citation": "CLAUDE.md:481",
+      "form_now": "provenance-attribution",
+      "delegation_citation_now": "CLAUDE.md:481",
+      "delegation_line_now": "chord symbols and Roman numerals (`docs/key_detection_baroque_partial_signature.md`). *Why it is",
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "★ MOVED 2026-08-04 (READ WAVE 5) BY THIS WAVE'S OWN DOING, and recorded rather than absorbed. Ruling R3 wrote D-576's caveat into gate block (A) beside the figures it qualifies, and the caveat cites this document as the measurement behind it — so a document graded 'named nowhere' became named, and the tool STOPPED until the grade was authored. The naming is inside an *Evidence:* clause recording where the measurement is written down: a provenance attribution, the bar's second excluded form, which delegates no concern. The former grade, preserved (#12): NOT_NAMED — 'Named in none of the three surfaces; verified mechanically here.'",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "CLAUDE.md:481"
+      ]
+    },
+    {
+      "document": "docs/nct_detection_design.md",
+      "entries": 1,
+      "entry_ids": [
+        "D-560"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 1,
+      "form": "provenance-attribution",
+      "delegation_citation": "ARCHITECTURE.md:1449",
+      "form_now": "provenance-attribution",
+      "delegation_citation_now": "ARCHITECTURE.md:1449",
+      "delegation_line_now": "`docs/nct_detection_design.md` exists. The record states neither a date nor a ratifier.",
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "A naming inside a statement about the RECORD — the sentence says the document exists and that the record states neither a date nor a ratifier for the constraint. It attributes provenance rather than delegating a concern; the concern itself is delegated to nobody and is stated in place (D-303). It is the only naming.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": true,
+      "mentions_in_ratified_surfaces": [
+        "ARCHITECTURE.md:1449"
       ]
     },
     {
@@ -1273,6 +1997,28 @@
       "entries": 1,
       "entry_ids": [
         "D-486"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 1,
+      "form": "not-named-in-any-ratified-surface",
+      "delegation_citation": null,
+      "form_now": "not-named-in-any-ratified-surface",
+      "delegation_citation_now": null,
+      "delegation_line_now": null,
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "Named in none of the three surfaces; verified mechanically here.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": false,
+      "mentions_in_ratified_surfaces": []
+    },
+    {
+      "document": "docs/stage4c_cadence_key_design.md",
+      "entries": 1,
+      "entry_ids": [
+        "D-616"
       ],
       "current_contract_home": 0,
       "current_gap": 1,
@@ -1333,7 +2079,7 @@
         "document": "docs/redesign_plan.md",
         "entries": 4,
         "form": "bare-appended-citation",
-        "at": "ARCHITECTURE.md:784"
+        "at": "ARCHITECTURE.md:799"
       }
     ],
     "entries_affected_by_the_bar": 17,

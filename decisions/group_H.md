@@ -17,7 +17,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1488-1489`
+**Home.** `ARCHITECTURE.md:1509-1510`
 
 **Provenance.** ARCHITECTURE.md:1389-1398 (Layer 5 - Built+Dormant, design ratified)
 
@@ -31,7 +31,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1492-1493`
+**Home.** `ARCHITECTURE.md:1513-1514`
 
 **Provenance.** ARCHITECTURE.md:1389-1398
 
@@ -46,7 +46,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1492-1493`
+**Home.** `ARCHITECTURE.md:1513-1514`
 
 **Provenance.** ARCHITECTURE.md:1397. open_items/OI-166 records that the built detector is key-agnostic but CHORD-derived, not the bass-driven pre-scan specified. Defense filled 2026-08-02 by the phase-1g triage wave from `cowork_layer5_function_design.md` §9-D2/§5.2 — the act the phase-1f note named and left for the wave that reads that document; the register entry for the same decision at its design-document home is D-336
 
@@ -60,7 +60,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1504`
+**Home.** `ARCHITECTURE.md:1525`
 
 **Provenance.** ARCHITECTURE.md:1400-1407 (Layer 6 - Design-only, v1 spec)
 
@@ -75,7 +75,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1505-1506`
+**Home.** `ARCHITECTURE.md:1526-1527`
 
 **Provenance.** ARCHITECTURE.md:1400-1407, deriving from D-029
 
@@ -89,7 +89,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1511`
+**Home.** `ARCHITECTURE.md:1534`
 
 **Provenance.** ARCHITECTURE.md:1409-1414 'Scaffolding-first, deferred'
 
@@ -104,7 +104,7 @@
 
 **Status.** LIVE · decided 2026-07-03 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:937-938`
+**Home.** `ARCHITECTURE.md:952-953`
 
 **Provenance.** ARCHITECTURE.md:896-899 records the foundation BUILT (dormant). ARCHITECTURE.md:1415-1415 still says the voice-leading layer is 'not built' - see OPEN_ITEMS OI-232 ★ 2026-08-02 (the phase-1h continuation wave): the recorded defense is FILLED from `cowork_voiceleading_axis_design.md` section 9 decision D1 and section 1, read IN FULL — the entry previously read 'derivation not recorded'. Written from the document, not from memory.
 
@@ -124,7 +124,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:6208-6210`
+**Home.** `ARCHITECTURE.md:6231-6233`
 
 **Provenance.** ARCHITECTURE.md:6012-6014. Section 5.10 (ARCHITECTURE.md:3860) is the tonicization section; the memory-held backlog item is recorded in the same terms. ★ RATIFIED (user, 2026-08-02) with the revisit to be PLANNED: for the ultimate objective (maximum-precision inference) the feature may be needed — the ground truth annotates applied chords, so not producing them costs Roman-numeral agreement wherever the annotator wrote one. Row OI-267 carries the planning obligation, including the OI-53 tension (a live classifier emitting V7/x was found on the legacy path while this entry's home says not implemented). ★ SCOPE CORRECTED 2026-08-02 (CC, at the phase-1i delivery acts, on Cowork's measured probe finding B-1, user-reviewed): the entry's verbatim is a statement about the LEGACY `ChordFunction` structure, and its plain restatement wrongly generalized it to the whole system. The production joint estimator — the inference layer on both surfaces since the OI-178 adoption — DOES emit applied labels (`src/composing/analysis/joint/jointrender.h:62-63`; measured 8.62 % of scored duration, with exact matches against applied ground truth: `tools/joint_estimator/applied_chord_stake_2026_08_02/`). The OI-53 tension named above is therefore substantially ANSWERED: the joint surface emits applied labels, the legacy `ChordFunction` structure does not carry them. The decision itself is unchanged and stays DEFERRED for the surface it governs; what changed is the recorded scope.
 
@@ -165,7 +165,7 @@
 
 **Home.** `cowork_layer5_function_design.md:621-626`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§9** — `## 9. Architecture decisions (with the alternatives weighed)` (heading at line 620). A delegation at ARCHITECTURE.md:1496 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§9** — `## 9. Architecture decisions (with the alternatives weighed)` (heading at line 620). A delegation at ARCHITECTURE.md:1517 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
@@ -187,7 +187,7 @@
 
 **Home.** `cowork_layer5_function_design.md:627-631`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§9** — `## 9. Architecture decisions (with the alternatives weighed)` (heading at line 620). A delegation at ARCHITECTURE.md:1496 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§9** — `## 9. Architecture decisions (with the alternatives weighed)` (heading at line 620). A delegation at ARCHITECTURE.md:1517 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
@@ -207,7 +207,7 @@
 
 **Home.** `cowork_layer5_function_design.md:632-634`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§9** — `## 9. Architecture decisions (with the alternatives weighed)` (heading at line 620). A delegation at ARCHITECTURE.md:1496 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§9** — `## 9. Architecture decisions (with the alternatives weighed)` (heading at line 620). A delegation at ARCHITECTURE.md:1517 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
@@ -228,7 +228,7 @@
 
 **Home.** `cowork_layer5_function_design.md:636-639`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§9** — `## 9. Architecture decisions (with the alternatives weighed)` (heading at line 620). A delegation at ARCHITECTURE.md:1496 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§9** — `## 9. Architecture decisions (with the alternatives weighed)` (heading at line 620). A delegation at ARCHITECTURE.md:1517 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
@@ -253,7 +253,7 @@
 
 **Home.** `cowork_layer5_function_design.md:556-563`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§7** — `## 7. Data design` (heading at line 546). A delegation at ARCHITECTURE.md:1496 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§7** — `## 7. Data design` (heading at line 546). A delegation at ARCHITECTURE.md:1517 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
@@ -284,7 +284,7 @@
 
 **Home.** `cowork_layer5_function_design.md:203-216`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§5.0** — `### 5.0 Shared definitions (the terms the rules below stand on)` (heading at line 158). A delegation at ARCHITECTURE.md:1496 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§5.0** — `### 5.0 Shared definitions (the terms the rules below stand on)` (heading at line 158). A delegation at ARCHITECTURE.md:1517 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). **HOMED IN A SECTION THAT RECORDS FINDINGS (2026-08-03, phase 1r).** The delegation the user wrote for `cowork_layer5_function_design.md` names the whole document and so reaches §15, but §15 is an open-items list and fails D-430's rule-stating half, so this entry stays `gap` while the document's other seven move. The kind judgment follows the user's own adjacent ruling of the same day, which excludes the identically-titled §15 of the sibling voice-leading design as "ratification asks, not rule-stating sections". Because this decision IS a ratified rule, the mismatch is a finding about the DOCUMENT, not about the entry: rowed at `OPEN_ITEMS.md` OI-295, the `OPEN_ITEMS.md` OI-290 shape at a second document. The remedy is to move the amendment into §5.0, the section it amends. **THE REMEDY IS EXECUTED (2026-08-03, phase 1s, on the user's ruling Y3 — fix it at the DOCUMENT, not at the classification).** The amendment now lives in §5.0's licensed-progression definition, the section its own verbatim says it amends, and §15 item 12 keeps a dated note recording that it moved and where — the tracking history preserved, the rule not duplicated (#6). **One thing the dispatch did not predict, and it changed what "move the rule text" meant:** §5.0 ALREADY carried the amendment's enumeration, inserted when the amendment was ratified ("+ this §5.0's enumeration, now done", the former verbatim). Moving the §15 text wholesale would therefore have DUPLICATED it. What moved instead is the part §15 alone carried — the ratification marker with its finding date, the completion-not-tuning characterization, and the 6-entry/11-motion evidence — moved unchanged (#12), so the section now states the rule AND carries its defense at its home. The former verbatim (the §15 item-12 text) is preserved here: "12. **★ §5.0 grammar completion (found 2026-07-02 by the D5 consistency check — ★ RATIFIED by the user 2026-07-03; the §5.0 enumeration is amended, the code increment is pending).** The licensed root-motion set descended from the old scoring-bonus signals and omitted three theory-licensed motions the catalog's own musically-correct entries exercise: **ascending fifth / plagal motion** (IV→I, I→V — tonic-to-dominant!), **descending second** (the Phrygian/Andalusian step), and the **diatonic diminished fifth** (the IV→viiᵒ link of the full circle). The amendment: extend `isLicensedProgression` (+ this §5.0's enumeration, now done) accordingly — algorithmic completion per theory, NOT tuning; its own small dormant increment with tests; the consumer's consistency test then tightens to the clean assert. Evidence: the 6-entry/**11-motion** failure table, measured, enumerated and", and the former home was `cowork_layer5_function_design.md:888-897`. The §15 kind judgment that produced this row's `gap` — that §15 RECORDS FINDINGS, on the user's own adjacent ruling of the same day about the identically-titled §15 of the sibling voice-leading design — is retired from the authored block because it now decides no entry, and is preserved here instead of being deleted. `OPEN_ITEMS.md` OI-295 flips.
 
@@ -306,7 +306,7 @@
 
 **Home.** `cowork_layer5_function_design.md:705-707`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§11** — `## 11. Risks & technical debt` (heading at line 678). A delegation at ARCHITECTURE.md:1496 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§11** — `## 11. Risks & technical debt` (heading at line 678). A delegation at ARCHITECTURE.md:1517 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02) after the live-handling question was answered (the concern mapping now in the plain restatement); LEGACY-subject marked.
 
@@ -335,7 +335,7 @@
 
 **Home.** `cowork_layer5_engagement_design.md:187-198`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **“§3.1 The objective: select by JOINT CONSISTENCY, not by strengthening one score”** — `### §3.1 The objective: select by JOINT CONSISTENCY, not by strengthening one score` (heading at line 186). A delegation at ARCHITECTURE.md:1498 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **“§3.1 The objective: select by JOINT CONSISTENCY, not by strengthening one score”** — `### §3.1 The objective: select by JOINT CONSISTENCY, not by strengthening one score` (heading at line 186). A delegation at ARCHITECTURE.md:1519 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The document's banner records `Status: DESIGN (CC, 2026-07-07)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ RE-CLASSIFIED contract-home 2026-08-02 (CC, phase 1j, under the TRANSITIVE-AUTHORITY refinement of the fifth home case, user 2026-08-02): `cowork_layer5_engagement_design.md` carries a status banner and its authority is the user's transitively — the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arc #9 to it by name (`:41`), arc #11 to it by name (`:46`), and states that the Stage-3 build inventory 'is enumerated at `cowork_layer5_engagement_design.md` §9.2' (`:53-55`). The missing `ARCHITECTURE.md` delegation pointer — the gap the ruling says a missing delegation owes — was written into the Layer-5 section in the same commit.
 
@@ -358,7 +358,7 @@
 
 **Home.** `cowork_layer5_engagement_design.md:212-217`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **“§3.2 The evidence channels, ranked by the research”** — `### §3.2 The evidence channels, ranked by the research (load-bearing first) [research]` (heading at line 200). A delegation at ARCHITECTURE.md:1498 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **“§3.2 The evidence channels, ranked by the research”** — `### §3.2 The evidence channels, ranked by the research (load-bearing first) [research]` (heading at line 200). A delegation at ARCHITECTURE.md:1519 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The document's banner records `Status: DESIGN (CC, 2026-07-07)`; the measured basis it consumes is the separately-ratified fine-grain-override finding. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ RE-CLASSIFIED contract-home 2026-08-02 (CC, phase 1j, under the TRANSITIVE-AUTHORITY refinement of the fifth home case, user 2026-08-02): `cowork_layer5_engagement_design.md` carries a status banner and its authority is the user's transitively — the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arc #9 to it by name (`:41`), arc #11 to it by name (`:46`), and states that the Stage-3 build inventory 'is enumerated at `cowork_layer5_engagement_design.md` §9.2' (`:53-55`). The missing `ARCHITECTURE.md` delegation pointer — the gap the ruling says a missing delegation owes — was written into the Layer-5 section in the same commit.
 
@@ -379,7 +379,7 @@
 
 **Home.** `cowork_layer5_engagement_design.md:263-266`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **“§4.1 Layer boundaries”** — `### §4.1 Layer boundaries (#7) — what belongs where` (heading at line 255). A delegation at ARCHITECTURE.md:1498 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **“§4.1 Layer boundaries”** — `### §4.1 Layer boundaries (#7) — what belongs where` (heading at line 255). A delegation at ARCHITECTURE.md:1519 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The separate step this boundary reserves a place for was afterwards shelved against measurement (**D-278**); the boundary itself is a statement about what the function layer does not own and is unaffected by that shelving. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ RE-CLASSIFIED contract-home 2026-08-02 (CC, phase 1j, under the TRANSITIVE-AUTHORITY refinement of the fifth home case, user 2026-08-02): `cowork_layer5_engagement_design.md` carries a status banner and its authority is the user's transitively — the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arc #9 to it by name (`:41`), arc #11 to it by name (`:46`), and states that the Stage-3 build inventory 'is enumerated at `cowork_layer5_engagement_design.md` §9.2' (`:53-55`). The missing `ARCHITECTURE.md` delegation pointer — the gap the ruling says a missing delegation owes — was written into the Layer-5 section in the same commit.
 
@@ -412,7 +412,7 @@
 
 **Home.** `cowork_layer5_engagement_design.md:490-505`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **“§7.2 The vehicle”** — `### §7.2 The vehicle (#6, the load-bearing decision): unify the open-mark, do NOT add a parallel channel` (heading at line 468). A delegation at ARCHITECTURE.md:1498 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **“§7.2 The vehicle”** — `### §7.2 The vehicle (#6, the load-bearing decision): unify the open-mark, do NOT add a parallel channel` (heading at line 468). A delegation at ARCHITECTURE.md:1519 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The record notes it dissolves an earlier proposal for a new advisory field into an enrichment of the existing one. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ RE-CLASSIFIED contract-home 2026-08-02 (CC, phase 1j, under the TRANSITIVE-AUTHORITY refinement of the fifth home case, user 2026-08-02): `cowork_layer5_engagement_design.md` carries a status banner and its authority is the user's transitively — the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arc #9 to it by name (`:41`), arc #11 to it by name (`:46`), and states that the Stage-3 build inventory 'is enumerated at `cowork_layer5_engagement_design.md` §9.2' (`:53-55`). The missing `ARCHITECTURE.md` delegation pointer — the gap the ruling says a missing delegation owes — was written into the Layer-5 section in the same commit.
 
@@ -433,7 +433,7 @@
 
 **Home.** `cowork_voiceleading_axis_design.md:519-522`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§9** — `## 9. Architecture decisions (alternatives weighed)` (heading at line 508). A delegation at ARCHITECTURE.md:908 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§9** — `## 9. Architecture decisions (alternatives weighed)` (heading at line 508). A delegation at ARCHITECTURE.md:923 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-07-03 — asks A1–A8 ratified in full)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -453,7 +453,7 @@
 
 **Home.** `cowork_voiceleading_axis_design.md:523-525`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§9** — `## 9. Architecture decisions (alternatives weighed)` (heading at line 508). A delegation at ARCHITECTURE.md:908 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§9** — `## 9. Architecture decisions (alternatives weighed)` (heading at line 508). A delegation at ARCHITECTURE.md:923 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A3, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -474,7 +474,7 @@
 
 **Home.** `cowork_voiceleading_axis_design.md:526-529`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§9** — `## 9. Architecture decisions (alternatives weighed)` (heading at line 508). A delegation at ARCHITECTURE.md:908 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§9** — `## 9. Architecture decisions (alternatives weighed)` (heading at line 508). A delegation at ARCHITECTURE.md:923 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A4, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -500,7 +500,7 @@
 
 **Home.** `cowork_voiceleading_axis_design.md:533-541`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§9** — `## 9. Architecture decisions (alternatives weighed)` (heading at line 508). A delegation at ARCHITECTURE.md:908 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§9** — `## 9. Architecture decisions (alternatives weighed)` (heading at line 508). A delegation at ARCHITECTURE.md:923 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A8, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -520,7 +520,7 @@
 
 **Home.** `cowork_voiceleading_axis_design.md:530-532`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§9** — `## 9. Architecture decisions (alternatives weighed)` (heading at line 508). A delegation at ARCHITECTURE.md:908 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§9** — `## 9. Architecture decisions (alternatives weighed)` (heading at line 508). A delegation at ARCHITECTURE.md:923 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A2's second half, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -543,7 +543,7 @@
 
 **Home.** `cowork_voiceleading_axis_design.md:346-351`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§5.3** — `### 5.3 VL-C — texture classification (inference; the first judgment component)` (heading at line 338). A delegation at ARCHITECTURE.md:908 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§5.3** — `### 5.3 VL-C — texture classification (inference; the first judgment component)` (heading at line 338). A delegation at ARCHITECTURE.md:923 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document's banner records that this clarification was folded in BEFORE signing and that the signing ratified asks A1–A8 in full. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -565,7 +565,7 @@
 
 **Home.** `cowork_voiceleading_axis_design.md:304-308`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§5.1** — `### 5.1 VL-A — the voice-linear view (representation; facts)` (heading at line 289). A delegation at ARCHITECTURE.md:908 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§5.1** — `### 5.1 VL-A — the voice-linear view (representation; facts)` (heading at line 289). A delegation at ARCHITECTURE.md:923 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-07-03 — asks A1–A8 ratified in full)` and, separately, that the top-note default is closed as-built. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -588,7 +588,7 @@
 
 **Home.** `cowork_voiceleading_axis_design.md:376-381`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§5.3** — `### 5.3 VL-C — texture classification (inference; the first judgment component)` (heading at line 338). A delegation at ARCHITECTURE.md:908 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§5.3** — `### 5.3 VL-C — texture classification (inference; the first judgment component)` (heading at line 338). A delegation at ARCHITECTURE.md:923 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. All three floor values are recorded as precision-phase constants, not fixed here. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -608,7 +608,7 @@
 
 **Home.** `cowork_voiceleading_axis_design.md:502-504`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§8** — `## 8. Crosscutting concepts` (heading at line 484). A delegation at ARCHITECTURE.md:908 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§8** — `## 8. Crosscutting concepts` (heading at line 484). A delegation at ARCHITECTURE.md:923 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A6, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -631,7 +631,7 @@
 
 **Home section.** **§16** — `## 16. Ratification asks` (heading at line 680). The delegation names sections, and no delegation names this one. Decided by **D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `contract-home` to `gap`; the former class is kept here rather than overwritten (#12).
 
-**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A7, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A7, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ THE HOME CLASS IS SETTLED BY RULING AND IS NOT OWED WORK (user, 2026-08-04, ruling R2, dispatch `cc_instruction_census_delegation_and_commit.md`): the `ARCHITECTURE.md` delegation is NOT widened to reach §16, so this entry stays `gap` deliberately. §16 holds the ratification asks put TO the user — this entry is ask A7 — and an ask is not a rule, so forcing it a contract home would misdescribe what it is; D-430's kind half would exclude the section at the next run in any case. THIS IS A RULING, NOT A DEFERRAL: no later wave owes a delegation act here.
 
 ### D-398 — Parallel motion is judged SEMITONE-EXACT, not by generic diatonic size — a same-direction move whose semitone interval changes counts as similar motion
 
@@ -652,7 +652,7 @@
 
 **Home section.** **§15** — `## 15. Open items & deferred refinements` (heading at line 624). The delegation names sections, and no delegation names this one. Decided by **D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `contract-home` to `gap`; the former class is kept here rather than overwritten (#12).
 
-**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document records this as one of two build declarations the design owed and the build closed; the closure names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document records this as one of two build declarations the design owed and the build closed; the closure names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ THE HOME CLASS IS SETTLED BY RULING AND IS NOT OWED WORK (user, 2026-08-04, ruling R2, dispatch `cc_instruction_census_delegation_and_commit.md`): the `ARCHITECTURE.md` delegation is NOT widened to reach §15, so this entry stays `gap` deliberately. §15 is 'Open items & deferred refinements', a tracking list of what is owed or since closed — the shape the record has declined as a home elsewhere — and D-430's kind half would exclude it at the next run in any case. THIS IS A RULING, NOT A DEFERRAL: no later wave owes a delegation act here.
 
 ### D-399 — The texture feature space was decided BY MEASUREMENT among three named candidates — the standardized combination of both views won; the unstandardized combination was rejected before testing for a measured dilution
 
@@ -671,7 +671,7 @@
 
 **Home.** `cowork_voiceleading_axis_design.md:368-371`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§5.3** — `### 5.3 VL-C — texture classification (inference; the first judgment component)` (heading at line 338). A delegation at ARCHITECTURE.md:908 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§5.3** — `### 5.3 VL-C — texture classification (inference; the first judgment component)` (heading at line 338). A delegation at ARCHITECTURE.md:923 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document records this as the second of two build declarations the design owed and the build closed, decided at build by measurement rather than at design time; the closure names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -693,7 +693,7 @@
 
 **Home section.** **§16** — `## 16. Ratification asks` (heading at line 680). The delegation names sections, and no delegation names this one. Decided by **D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `contract-home` to `gap`; the former class is kept here rather than overwritten (#12).
 
-**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A5, recorded ratified in full at the banner. The propagation into the architecture document's span typology is recorded as riding the build. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
+**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A5, recorded ratified in full at the banner. The propagation into the architecture document's span typology is recorded as riding the build. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ THE HOME CLASS IS SETTLED BY RULING AND IS NOT OWED WORK (user, 2026-08-04, ruling R2, dispatch `cc_instruction_census_delegation_and_commit.md`): the `ARCHITECTURE.md` delegation is NOT widened to reach §16, so this entry stays `gap` deliberately. §16 holds the ratification asks put TO the user — this entry is ask A5 — and an ask is not a rule, so forcing it a contract home would misdescribe what it is; D-430's kind half would exclude the section at the next run in any case. THIS IS A RULING, NOT A DEFERRAL: no later wave owes a delegation act here.
 
 ### D-419 — Until the recognition consumer is built, the function layer does not touch the harmonic vocabulary
 
@@ -732,7 +732,9 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_layer6_grouping_design.md:297-301`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer6_grouping_design.md:297-301`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§6** — `## 6. The layer is exactly its assembly rules + read-through carries (the proportionality bound)` (heading at line 296). A delegation at ARCHITECTURE.md:1530 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** `cowork_layer6_grouping_design.md` §6, in a document whose banner reads "AS-BUILT (2026-07-02) — built dormant + oracle-validated" and records the Cowork ratification of the build report. Entered by the phase-1 reads wave 1. NOT user-ratified: the banner names Cowork as the ratifier of this document's sign-off, and only the items the banner marks user-ratified carry the user's authority. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
@@ -750,7 +752,9 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_layer6_grouping_design.md:345-347`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer6_grouping_design.md:345-347`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§9** — `## 9. Architecture decisions (with the alternatives weighed)` (heading at line 330). A delegation at ARCHITECTURE.md:1530 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** `cowork_layer6_grouping_design.md` §9 decision D4, with the rule stated at §5.3, in the AS-BUILT document signed off by Cowork 2026-07-02. Entered by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
@@ -772,7 +776,9 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_layer6_grouping_design.md:338-344`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer6_grouping_design.md:338-344`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§9** — `## 9. Architecture decisions (with the alternatives weighed)` (heading at line 330). A delegation at ARCHITECTURE.md:1530 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** `cowork_layer6_grouping_design.md` §9 decision D3, which names its ground as the "user-ratified verifiability contract, 2026-06-29". The verifiability contract's own user ratification is what the entry's date and ratifier record; the application to this layer sits in a document signed off by Cowork 2026-07-02. Entered by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
@@ -796,7 +802,9 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_layer6_grouping_design.md:214-222`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer6_grouping_design.md:214-222`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§5.1** — `### 5.1 Punctuation-span segmentation` (heading at line 209). A delegation at ARCHITECTURE.md:1530 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** `cowork_layer6_grouping_design.md` §5.1, marked in the document as a "Post-sign-off amendment, user-ratified 2026-07-02". Entered by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
@@ -816,6 +824,8 @@
 **Entry ratified.** 2026-08-04 · by user
 
 **Home.** `cowork_layer6_grouping_design.md:12-15`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **the opening block (above the first section heading)** — `# Layer 6 — Grouping (design)` (heading at line 1). A delegation at ARCHITECTURE.md:1530 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS**.
 
 **Provenance.** `cowork_layer6_grouping_design.md` status banner, which records the ruling as made by Cowork at ratification. Entered by the phase-1 reads wave 1. The banner is a status surface, which OI-240 establishes is not a home for a standing decision — recorded here so the ruling is findable, with the documentation-gap flag standing. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
@@ -838,7 +848,9 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_layer6_grouping_design.md:244-251`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer6_grouping_design.md:244-251`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§5.2** — `### 5.2 Key-area grouping` (heading at line 235). A delegation at ARCHITECTURE.md:1530 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** `cowork_layer6_grouping_design.md` §5.2, added at the sign-off review of 2026-07-02. Entered by the phase-1 reads wave 1. The rule is stated as conditional on a Layer-3 close-out item landing; whether that item has landed was NOT checked by this wave and nothing here asserts it. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
@@ -858,7 +870,9 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_layer6_grouping_design.md:282-286`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer6_grouping_design.md:282-286`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§5.4** — `### 5.4 Carrying the residual` (heading at line 281). A delegation at ARCHITECTURE.md:1530 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** `cowork_layer6_grouping_design.md` §5.4, in the AS-BUILT document signed off by Cowork 2026-07-02. Entered by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
@@ -876,7 +890,9 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_layer6_grouping_design.md:314-316`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer6_grouping_design.md:314-316`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§7** — `## 7. Crosscutting concepts` (heading at line 304). A delegation at ARCHITECTURE.md:1530 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** `cowork_layer6_grouping_design.md` §7, in the AS-BUILT document signed off by Cowork 2026-07-02. Entered by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
@@ -894,7 +910,9 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_layer6_grouping_design.md:359-361`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer6_grouping_design.md:359-361`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§10** — `## 10. Quality & testing — the validation strategy (the two-step oracle, user-ratified 2026-06-29)` (heading at line 352). A delegation at ARCHITECTURE.md:1530 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** `cowork_layer6_grouping_design.md` §10, whose heading records the two-step validation strategy as "user-ratified 2026-06-29". Entered by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
@@ -928,6 +946,8 @@
 
 **Home.** `docs/unified_analysis_pipeline.md:149-165`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **“Key-area detection”** — `### Key-area detection` (heading at line 147). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
 **Provenance.** Stated as the key-area detection design of the unification document. The mechanism is live at HEAD in `groupKeyAreas` (`src/composing/analysis/section/sectionanalyzer.cpp`), where the confidence test reads the stored per-region assertive-exposure flag rather than re-thresholding the confidence field. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)
 
 ### D-476 — The phrase-boundary primitive is owned by the notation-derived view layer — not by the note model, and not by the function layer that consumes it
@@ -945,7 +965,9 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_phrase_boundary_design.md:223-226`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_phrase_boundary_design.md:223-226`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§6** — `## 6. Architecture decisions (with the alternatives weighed)` (heading at line 222). A delegation at ARCHITECTURE.md:1259 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Decision D1 of a design document whose banner reads SIGNED (user, 2026-06-26). Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)
 
@@ -966,7 +988,9 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_phrase_boundary_design.md:64-69`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_phrase_boundary_design.md:64-69`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§2** — `## 2. Constraints` (heading at line 63). A delegation at ARCHITECTURE.md:1259 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** The first constraint of a design document whose banner reads SIGNED (user, 2026-06-26); its decision D3 states the same rule from the architecture side, and the banner records that the acyclicity argument was independently verified airtight. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)
 
@@ -987,7 +1011,9 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_phrase_boundary_design.md:233-238`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_phrase_boundary_design.md:233-238`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§6** — `## 6. Architecture decisions (with the alternatives weighed)` (heading at line 222). A delegation at ARCHITECTURE.md:1259 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Decision D4 of a design document whose banner reads SIGNED (user, 2026-06-26) and records the graded model as revision 2, adopted on the research in `cowork_phrase_boundary_methods.md` (user-ratified 2026-06-26). Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)
 
@@ -1009,7 +1035,9 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_phrase_boundary_design.md:239-245`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_phrase_boundary_design.md:239-245`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§6** — `## 6. Architecture decisions (with the alternatives weighed)` (heading at line 222). A delegation at ARCHITECTURE.md:1259 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Decision D5 of a design document whose banner reads SIGNED (user, 2026-06-26); the banner records this as the revision-3 change made at the user's direction, and that the rev-3 changes were independently re-reviewed with a blocking fix applied. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)
 
@@ -1031,7 +1059,9 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_phrase_boundary_design.md:276-282`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_phrase_boundary_design.md:276-282`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§8** — `## 8. Risks & technical debt` (heading at line 266). A delegation at ARCHITECTURE.md:1259 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** A user-ratified scope ruling recorded in the risks section of a design document whose banner reads SIGNED (user, 2026-06-26). Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) It is the same proportionality reasoning **D-456** records for the grouping layer, reached independently and earlier.
 
@@ -1052,7 +1082,9 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_phrase_boundary_design.md:176-181`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_phrase_boundary_design.md:176-181`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§4.4** — `### 4.4 Peak-picking` (heading at line 175). A delegation at ARCHITECTURE.md:1259 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** The as-built realisation recorded in §4.4 of a design document whose banner reads SIGNED (user, 2026-06-26); the parenthetical records it as ratified on that date and preserves the earlier wording it replaces. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)
 
@@ -1070,7 +1102,9 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_phrase_boundary_design.md:227-229`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_phrase_boundary_design.md:227-229`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§6** — `## 6. Architecture decisions (with the alternatives weighed)` (heading at line 222). A delegation at ARCHITECTURE.md:1259 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Decision D2 of a design document whose banner reads SIGNED (user, 2026-06-26); the same document's constraints state the split explicitly — the marker-only path is byte-identical, the graded model is gated on the corpus regression stop. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)
 
@@ -1090,7 +1124,9 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_phrase_boundary_design.md:254-258`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_phrase_boundary_design.md:254-258`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§7** — `## 7. Quality & testing` (heading at line 250). A delegation at ARCHITECTURE.md:1259 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** The validation rule of a design document whose banner reads SIGNED (user, 2026-06-26), naming the corpus columns it uses. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) It is the phrase-axis instance of the standing rule **D-294** — the only ground truth is the human annotation, and no self-annotation ever enters a measurement.
 
@@ -1116,6 +1152,8 @@
 
 **Home.** `cowork_phrase_boundary_design.md:23-31`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **the opening block (above the first section heading)** — `# Phrase-boundary primitive (Architectural Layer 1.5) — Architecture & Design` (heading at line 1). A delegation at ARCHITECTURE.md:1259 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS**.
+
 **Provenance.** A stance added to the design document on 2026-07-02, closing two findings of the gap-analysis v2 report; the document records it as ruled by Cowork, not by the user. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)
 
 ### D-485 — Each picked boundary should carry which cue fired and at what scope; the picked set is scope-blind today and the refinement waits for the inference phase
@@ -1136,6 +1174,8 @@
 
 **Home.** `cowork_phrase_boundary_design.md:382-386`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **§11** — `## 11. Open items` (heading at line 343). A delegation at ARCHITECTURE.md:1259 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS**.
+
 **Provenance.** Open item 5 of the design document, recorded 2026-07-01 and attributed there to the user raising it. The document records the whole item as a proper-layer refinement not built until the inference phase opens; the register carries it because a recorded refinement with a stated shape binds what a future build may do. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)
 
 ### D-490 — FALSIFIED: no threshold can make the fine-grain function override net-positive — the harm rate is flat against both quantities the threshold is built from
@@ -1155,6 +1195,8 @@
 **Entry ratified.** 2026-08-04 · by user
 
 **Home.** `cowork_fb_redesign_design.md:104-108`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **“§2.1 Test of the documented root-cause hypothesis”** — `### §2.1 Test of the documented root-cause hypothesis — CONFIRMED `[data]`` (heading at line 91). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
 
 **Provenance.** The measured verdict of the F-B redesign design pass, on 1043 ground-truth-aligned fires from the dormant decode chain, reproducing the fitting ledger's own split to the unit. It refutes the premise the confidence contract and the code comment both assert — that a fitted threshold accounts for the incumbent's missing progression term. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) ★ The mechanism's reachability at HEAD was checked on 2026-08-04 (dispatch cc_instruction_reads_3.md §4.2) and is recorded once, at D-492: it is dormant — no production surface, and not the legacy production path either — so this falsified mechanism is not running today.
 
@@ -1177,6 +1219,8 @@
 
 **Home.** `cowork_fb_redesign_design.md:160-165`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **“§2.4 The incumbent-repair premise, tested directly”** — `### §2.4 The incumbent-repair premise, tested directly — REFUTED `[data]`` (heading at line 144). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
 **Provenance.** The direct test of the documented root-cause's natural repair, measured on the same 1043-fire population. It is what removes the large-surface repair option (§3.C) from the redesign, and it is stated with its own caveat — the vertical gap uses a proxy for the committed reading's own score, and the conclusion is stated to be independent of the proxy's precision because no band drops below about 71 % harm. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)
 
 ### D-492 — The recommended redesign is to demote the override to an annotation — carrying the earlier reading unchanged and surfacing the contradiction — floored by simply disabling it
@@ -1193,6 +1237,8 @@
 **Entry ratified.** 2026-08-04 · by user
 
 **Home.** `cowork_fb_redesign_design.md:284-285`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **“§4.1 CC's evidence-based recommendation”** — `### §4.1 CC's evidence-based recommendation` (heading at line 283). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
 
 **Provenance.** The recommendation of a document whose banner records it as a DESIGN + DECISION SURFACE and states that the implementation is a separately-ratified build event. **D-387** (2026-07-07, `cowork_layer5_engagement_design.md`) records the open-mark vehicle the recommendation calls for, one day later; whether that constitutes the build event's ratification is not settled by either document and is not decided here. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) ★ PHASE-3 FIX-PLAN INPUT, NOT AN AUTHORIZATION (user, 2026-08-04, dispatch cc_instruction_reads_3.md §4.1): the recommendation — demote the override to an annotation carrying the earlier reading unchanged, floored by disabling it — is recorded as an INPUT to the ONE prioritized fix plan D-231's phase 3 assembles, and is NOT acted on. D-231 forbids the fix design and D-490's falsification does not change that sequencing; the row that owns the demotion, and carries this cross-reference on the plan's side, is OPEN_ITEMS.md OI-2. ★ AND THE ARM IS CHECKED RATHER THAN ASSUMED (dispatch §4.2; read with the file tools at HEAD, 2026-08-04): the override is NOT reachable on any production surface, and NOT on the legacy production path either. attemptFineGrainOverride has exactly one caller, resolveCarriedReadings (src/composing/analysis/function/functionresolver.cpp:530); that function's only non-test caller in the whole tree is tools/batch_analyze.cpp:3321, inside runFullSpine, which is reached only from the --dump-fullspine block at :5506 and returns at :5519 before analyzeScore or analyzeRegions runs; and functionresolver.h is included by that one tool, by its own .cpp, and by src/composing/tests/functionresolver_tests.cpp, and by nothing else. So the measured-harmful mechanism is dormant behind a return-early diagnostic dump flag and the test suites — NARROWER than the dispatch's assumption A2, which supposed the legacy production path, and narrower than 'legacy' reads: plain flag-less batch_analyze, the reachability path OI-289 established for the legacy arm generally, does NOT reach it. There is no STOP. The document's own 2026-07-06 dormancy finding (§1.1) therefore still holds at HEAD, re-established rather than carried forward.
 
@@ -1221,6 +1267,8 @@
 
 **Home.** `cowork_fb_redesign_design.md:251-262`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **“§3.D”** — `### §3.D — (re-frame) two theory-aligned alternatives to *overriding*` (heading at line 230). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
 **Provenance.** The measured verdict of engage arc #2, recorded in the F-B redesign document as a correction of its own earlier UNKNOWN, with the measurement report named. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)
 
 ### D-495 — RATIFIED AMENDMENT A-5: when the phrase-boundary profile is flat, cadence admission relaxes with vote-weight scaling instead of starving
@@ -1238,5 +1286,29 @@
 
 **Home.** `cowork_architecture_review_2026_07.md:324-325`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **§9** — `## 9. Proposed amendments (ranked; each ratification-gated; none is code)` (heading at line 307). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
 **Provenance.** Amendment A-5 of the external architecture review, in a document whose banner records amendments A-1…A-10 as RATIFIED by the user on 2026-07-02. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) ★ NOT A FRESH DECISION, stated so that nothing is counted twice (dispatch cc_instruction_reads_3.md §1.3): the amendment itself was ratified by the user at the 2026-07-02 architecture review, which is what this entry's Status line already records. Ratifying the ENTRY records only that the register transcribes that ratification correctly — it neither re-makes the decision nor adds a second ratification event to it. It binds on the phrase-boundary primitive's consumer; the primitive's own specification (`cowork_phrase_boundary_design.md`) does not carry it.
+
+### D-629 — The resolver of carried uncertain readings IS the function layer itself — there is no distinct gated box between the note layers and it
+
+> **The resolver is Architectural Layer 5 (function) itself — there is no distinct gated box between the note-layers and
+> Layer 5.** Layer 5 reads the carried alternatives and the "uncertain" marks at its **gated entry**, and resolves them
+> **as part of** assigning function: it assigns function under the carried key/chord readings and keeps the reading whose
+> functional/cadential analysis is coherent. The "gated step" language in the specs describes *Layer 5's gated entry*,
+> not a separate layer. This satisfies minimality (no new box), the `(evidence × question)` invariant (same evidence,
+> same question), and the forward-only contract (Layer 5 selects among carried alternatives; it does not re-enter L3 or
+> L4).
+
+**In plain words.** When the earlier stages cannot decide between two readings they hand both forward with a mark. The thing that then picks one is not a separate component: it is the function stage, choosing as part of naming the harmony. The wording elsewhere about a gated step describes the point at which that stage begins, not another stage.
+
+**Why.** Derived from the project's own layer-identity test and then confirmed by measurement. Every carried-ambiguity class was enumerated and each resolves on functional or cadential evidence — the share-tone pairs decisively, since naming the numeral IS choosing the reading — and the key-side classes form a circle that no fixed order discharges, which forces one joint computation. The corpus measurement then confirmed it: every separable cue the residual exposes belongs to an earlier layer, and the function-only remainder is small and structural. Two literature lineages agree, including one measured case where a standalone re-ranking layer was built and found saturated.
+
+**Status.** LIVE · decided 2026-06-24 · ratified by user
+
+**Home.** `cowork_uncertain_resolver_investigation.md:96-102`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **“Provisional verdict”** — `## Provisional verdict (gated on part 3)` (heading at line 94). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit**.
+
+**Provenance.** `cowork_uncertain_resolver_investigation.md`, the open-item O1 investigation, RESOLVED and user-ratified 2026-06-24; the document's own status block records that the corpus measurement confirmed the verdict and that the three competing names were collapsed across the Layer-3 and Layer-4 specifications. Read in full by READ WAVE 6, 2026-08-04. The verdict's cross-layer consequence — that a failing case is a work budget spread over Layers 1-5 rather than the function layer's residual — is carried at `CLAUDE.md` gate block (D) and is not re-entered here (#6). This is the applied instance of **D-033**, the one-contribution-per-layer invariant.
 

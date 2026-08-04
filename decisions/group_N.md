@@ -17,7 +17,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4759`
+**Home.** `ARCHITECTURE.md:4782`
 
 **Provenance.** ARCHITECTURE.md:4550-4572 (§8.2); the principle it realizes is D-070 (§2.1). No date or ratifier stated.
 
@@ -32,7 +32,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4928`
+**Home.** `ARCHITECTURE.md:4951`
 
 **Provenance.** ARCHITECTURE.md:4694-4733 (§9.1-§9.2). No date or ratifier stated.
 
@@ -47,7 +47,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4943`
+**Home.** `ARCHITECTURE.md:4966`
 
 **Provenance.** ARCHITECTURE.md:4745-4835 (§10.0), whose own status line reads 'Not yet started'. No date or ratifier stated.
 
@@ -63,7 +63,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:5102`
+**Home.** `ARCHITECTURE.md:5125`
 
 **Provenance.** ARCHITECTURE.md:4885-4908 (§10.2-§10.4), all three marked planned. No date or ratifier stated.
 
@@ -80,7 +80,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:5133`
+**Home.** `ARCHITECTURE.md:5156`
 
 **Provenance.** ARCHITECTURE.md:4910-4940 (§10.5), a planned component. No date or ratifier stated.
 
@@ -97,7 +97,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6991`
+**Home.** `ARCHITECTURE.md:7014`
 
 **Provenance.** ARCHITECTURE.md:6780-6790 (§19.2), a planned module; full design `docs/llm_integration.md`. No date or ratifier stated.
 
@@ -115,7 +115,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6996`
+**Home.** `ARCHITECTURE.md:7019`
 
 **Provenance.** ARCHITECTURE.md:6780-6796 (§19.2), a planned module. No date or ratifier stated.
 
@@ -133,7 +133,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:7002`
+**Home.** `ARCHITECTURE.md:7025`
 
 **Provenance.** ARCHITECTURE.md:6780-6802 (§19.2), a planned module. No date or ratifier stated.
 
@@ -151,7 +151,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:7015`
+**Home.** `ARCHITECTURE.md:7038`
 
 **Provenance.** ARCHITECTURE.md:6809-6823 (§19.3), a planned module. No date or ratifier stated.
 
@@ -168,7 +168,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:7036`
+**Home.** `ARCHITECTURE.md:7059`
 
 **Provenance.** ARCHITECTURE.md:6825-6835 (§19.4), a planned module; full argument `docs/llm_integration.md` §11. No date or ratifier stated.
 
@@ -187,7 +187,7 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `ARCHITECTURE.md:6986-6989`
+**Home.** `ARCHITECTURE.md:7009-7012`
 
 **Provenance.** Recorded in ARCHITECTURE.md §19.2, whose own section banner marks the whole LLM integration as design-phase; the design document it summarises (`docs/llm_integration.md`) carries the banner "Design phase. No code written yet." and `src/llm/` does not exist at HEAD (checked this wave). Entered by the phase-1 reads wave 1 from the full read of `docs/llm_integration.md`; the record names no ratifier and no date, and none is inferred. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
@@ -206,7 +206,7 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `ARCHITECTURE.md:7008-7011`
+**Home.** `ARCHITECTURE.md:7031-7034`
 
 **Provenance.** Recorded in ARCHITECTURE.md §19.2 alongside the other language-model decisions, all of which the register already carries as deferred (D-139…D-143). Entered by the phase-1 reads wave 1; the record names no ratifier and no date. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
@@ -224,6 +224,8 @@
 **Entry ratified.** 2026-08-04 · by user
 
 **Home.** `docs/llm_integration.md:304-305`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **§4.3** — `### 4.3 Validation Layer` (heading at line 296). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit**.
 
 **Provenance.** `docs/llm_integration.md` §4.3, read in full by the phase-1 reads wave 1. The document's banner reads "Design phase. No code written yet." and `src/llm/` does not exist at HEAD, so the record does not say whether this rule is in force; "not stated" is entered rather than a status inferred from the surrounding section's deferral. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
@@ -244,6 +246,8 @@
 
 **Home.** `docs/llm_integration.md:601-604`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **§8.1** — `### 8.1 Multi-provider abstraction` (heading at line 599). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit**.
+
 **Provenance.** `docs/llm_integration.md` §8.1, read in full by the phase-1 reads wave 1; §3.5 states the same abstraction from the other side. ARCHITECTURE.md §19.1 records the multi-provider choice but NOT the tool-use requirement or the read-only consequence, which is why this is entered rather than treated as carried. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
 ### D-444 — The core access layer is a facade over interfaces that already exist, not a redesign
@@ -261,6 +265,8 @@
 **Entry ratified.** 2026-08-04 · by user
 
 **Home.** `docs/llm_integration.md:367-369`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **§5.2** — `### 5.2 The existing interfaces already define most of this` (heading at line 363). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit**.
 
 **Provenance.** `docs/llm_integration.md` §5.2, read in full by the phase-1 reads wave 1. The layer is named in ARCHITECTURE.md §19.4 as the thing the bridge is confined to (D-143), but the facade decision and its audit are recorded only in the design document. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
@@ -281,6 +287,8 @@
 
 **Home.** `docs/llm_integration.md:418-421`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **§5.3** — `### 5.3 The information model — key design point` (heading at line 397). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit**.
+
 **Provenance.** `docs/llm_integration.md` §5.3, read in full by the phase-1 reads wave 1. D-139 carries the stateless every-call-carries-its-address half from ARCHITECTURE.md:6962; the consequence that an address is not enough is recorded only here. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
 ### D-446 — The language model resolves how the user names a passage; no index is built and the kinds of reference are not enumerated
@@ -300,6 +308,8 @@
 
 **Home.** `docs/llm_integration.md:518-521`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **§6** — `## 6. Score Addressing` (heading at line 479). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit**.
+
 **Provenance.** `docs/llm_integration.md` §6, read in full by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
 ### D-447 — The model's tool definitions are generated from the operation set, never maintained by hand
@@ -318,6 +328,8 @@
 
 **Home.** `docs/llm_integration.md:613-615`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **§8.2** — `### 8.2 Tool definitions` (heading at line 611). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit**.
+
 **Provenance.** `docs/llm_integration.md` §8.2, read in full by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
 ### D-448 — The operation set is curated from observed use, not an exposure of every editing method
@@ -335,6 +347,8 @@
 **Entry ratified.** 2026-08-04 · by user
 
 **Home.** `docs/llm_integration.md:286-288`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **§4.2** — `### 4.2 Operation Set` (heading at line 284). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit**.
 
 **Provenance.** `docs/llm_integration.md` §4.2, read in full by the phase-1 reads wave 1. ARCHITECTURE.md §19.4's phase table records the count but not the curation rule or its evidence source. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 

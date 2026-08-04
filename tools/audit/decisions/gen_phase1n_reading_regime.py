@@ -78,6 +78,46 @@ BAND_RULE = (
     "on purpose -- a narrower band would assert precision the 36-document sample does not "
     "carry.")
 
+# ── AUTHORED (3/3, added 2026-08-04) — the completed waves are FROZEN ────────
+# The greedy packing below is what waves 1-4 were actually read under, and a wave that has been
+# READ is history: re-deriving its composition under a new packing rule would destroy the record
+# of what each wave read (#12).  So the greedy pack still runs, its first COMPLETED_WAVES waves
+# are frozen as history, and only the REMAINDER is re-packed.  The freeze is not asserted -- each
+# frozen wave is CHECKED against the documents that wave's own yield artifact says it read.
+COMPLETED_WAVES = 4
+COMPLETED_WAVES_WHY = (
+    "Waves 1-4 have been read. Their composition is a fact about what happened, not a schedule to "
+    "be recomputed, so the greedy packer's first four waves are frozen and checked against the "
+    "documents each wave's own yield artifact records reading (reads1..reads4_yield.json). Only "
+    "the remainder is re-packed. Without the freeze, changing the packing rule would silently "
+    "rewrite the record of which documents wave 1 read.")
+
+# ── AUTHORED (added 2026-08-04) — WHY the remainder is re-packed ─────────────
+# This is the finding the re-pack exists to record, and it should outlive the fix.
+REPACK_WHY = (
+    "THE PROXY COULD NOT BE TESTED, BECAUSE THE QUANTITY BEING TESTED AND THE QUANTITY DOING THE "
+    "PACKING WERE THE SAME. The owed documents are ORDERED by document length -- the proxy under "
+    "test -- and the waves were then cut as CONTIGUOUS RUNS of that order at a token budget which "
+    "is itself derived from length. A contiguous run of a length-ordered list is a length "
+    "interval, so every wave fell inside one length tercile and the proxy made ONE prediction for "
+    "the whole wave. Waves 2, 3 and 4 each reported this, and each reported measured yields "
+    "differing several-fold inside that single prediction: within a wave the proxy had no "
+    "resolving power at all, and no wave could ever supply the comparison that would give it "
+    "some. The band pass those waves reported is therefore not evidence -- a band running from 0 "
+    "to its tercile maximum is close to unfalsifiable, and the informative test (do "
+    "longer-tercile documents actually out-yield shorter-tercile ones?) requires BOTH inside one "
+    "wave. The re-pack changes only the GROUPING: the same documents are read, in the same "
+    "registration, and the ordering key is untouched. The finding is not that the packing was a "
+    "mistake -- packing by token cost is the only measured capacity there is -- but that a "
+    "schedule built from the quantity under test cannot test it, which is a shape worth "
+    "recognising anywhere a proxy is graded as a by-product of the work it schedules.")
+REPACK_RULE = (
+    "STRATIFIED, not greedy-contiguous. The remaining owed documents are split by length tercile; "
+    "the wave count is DERIVED as ceil(remaining tokens / the anchor wave's measured token size); "
+    "and each tercile's documents are then dealt round-robin across that many waves in reading "
+    "order. Every wave therefore holds documents from every tercile still owed, and the token "
+    "cost is balanced across waves as a by-product of dealing rather than by a second rule.")
+
 PROXY_LABEL = (
     "STRUCTURAL PROXY STANDING IN FOR A BEHAVIOURAL QUANTITY, UNVALIDATED (#17d). Length and "
     "unresolved-cluster count measure how much text a document holds; yield measures how many "
@@ -138,6 +178,31 @@ def fisher_ci(rho: float, n: int, level: float = 0.95) -> list[float]:
     crit = 1.959963985 if abs(level - 0.95) < 1e-9 else 1.959963985
     lo, hi = z - crit * se, z + crit * se
     return [round(math.tanh(lo), 4), round(math.tanh(hi), 4)]
+
+
+def stratified_repack(remaining: list[dict], anchor_tokens: int) -> tuple[list[list[dict]], int]:
+    """THE RE-PACK RULE, and its ONE home (#6).  Given the owed rows still to read and the
+    anchor wave's measured token size, return the wave groups and the derived wave count.
+
+    Every wave holds documents from every length tercile still owed, so the proxy makes more
+    than one prediction inside a wave and the comparison between them becomes possible.  The
+    wave count is DERIVED from the token budget; the dealing balances the token cost as a
+    by-product rather than by a second rule.  Callers pass rows carrying `est_tokens`,
+    `length_tercile` and `reading_order`."""
+    if not remaining:
+        return [], 0
+    rem_tok = sum(r["est_tokens"] for r in remaining)
+    n_waves = max(1, math.ceil(rem_tok / anchor_tokens))
+    buckets: dict[str, list[dict]] = {t: [] for t in ("long", "medium", "short")}
+    for r in remaining:
+        buckets[r["length_tercile"]].append(r)
+    dealt: list[list[dict]] = [[] for _ in range(n_waves)]
+    for t in ("long", "medium", "short"):
+        for j, r in enumerate(sorted(buckets[t], key=lambda x: x["reading_order"])):
+            dealt[j % n_waves].append(r)
+    for group in dealt:
+        group.sort(key=lambda r: r["reading_order"])
+    return dealt, n_waves
 
 
 def quantile(sorted_vals: list[float], q: float) -> float:
@@ -316,17 +381,84 @@ def main() -> int:
     anchor["est_tokens"] = round(anchor["bytes"] / p1m.CHARS_PER_TOKEN)
     anchor["why"] = CAPACITY_ANCHOR_WHY
 
-    waves, cur, cur_tok = [], [], 0
+    greedy, cur, cur_tok = [], [], 0
     for r in owed_rows:
         if cur and cur_tok + r["est_tokens"] > anchor["est_tokens"]:
-            waves.append({"documents": cur, "est_tokens": cur_tok})
+            greedy.append({"documents": cur, "est_tokens": cur_tok})
             cur, cur_tok = [], 0
         cur.append(r["document"])
         cur_tok += r["est_tokens"]
     if cur:
-        waves.append({"documents": cur, "est_tokens": cur_tok})
-    for i, w in enumerate(waves, 1):
-        w["wave"] = i
+        greedy.append({"documents": cur, "est_tokens": cur_tok})
+
+    # ── the completed waves are frozen, and CHECKED against what each wave read ──
+    by_doc = {r["document"]: r for r in owed_rows}
+    waves, freeze_check = [], []
+    for i in range(COMPLETED_WAVES):
+        w = dict(greedy[i], wave=i + 1, packing="greedy-contiguous (as read)",
+                 status="READ — frozen history, not re-packed")
+        w["length_terciles"] = sorted({by_doc[d]["length_tercile"] for d in w["documents"]})
+        yield_art = os.path.join(HERE, f"reads{i + 1}_yield.json")
+        if os.path.exists(yield_art):
+            read_docs = sorted(r["document"]
+                               for r in json.loads(open(yield_art, encoding="utf-8").read())["rows"])
+            agree = read_docs == sorted(w["documents"])
+            freeze_check.append({"wave": i + 1, "yield_artifact": os.path.basename(yield_art),
+                                 "documents_the_artifact_records_reading": len(read_docs),
+                                 "documents_the_frozen_wave_holds": len(w["documents"]),
+                                 "agree": agree})
+            if not agree:
+                raise SystemExit(
+                    f"STOP — wave {i + 1}'s re-derived packing and reads{i + 1}_yield.json "
+                    "disagree about which documents that wave read, so re-deriving the schedule "
+                    "would destroy the record of what was actually read (#12). This is expected "
+                    "at HEAD and is not a bug in this run: the ORDERING KEY is the proxy with "
+                    "the highest measured correlation, and writing a delegation into a "
+                    "user-ratified surface increments `named_in_a_user_ratified_surface_count` "
+                    "for a document whose yield is already known — so the register's own homing "
+                    "work moves a feature the proxy is graded on (#20). Measured 2026-08-04: "
+                    "that proxy overtook document length by five ten-thousandths, far inside the "
+                    "interval this artifact itself records, and the key flips. The registered "
+                    "regime is therefore READ, never regenerated; the re-pack is applied to the "
+                    "registered rows by gen_reads5_repack.py, which imports the rule above. "
+                    "Tracked at OPEN_ITEMS.md OI-316 and OI-328.")
+        else:
+            freeze_check.append({"wave": i + 1, "yield_artifact": os.path.basename(yield_art),
+                                 "agree": None, "note": "no yield artifact on disk to check against"})
+        waves.append(w)
+
+    # ── the remainder is re-packed STRATIFIED so a wave spans length terciles ──
+    done = {d for w in waves for d in w["documents"]}
+    remaining = [r for r in owed_rows if r["document"] not in done]
+    rem_tok = sum(r["est_tokens"] for r in remaining)
+    terciles_remaining = sorted({r["length_tercile"] for r in remaining})
+    dealt, n_rem_waves = stratified_repack(remaining, anchor["est_tokens"])
+    for j, group in enumerate(dealt):
+        waves.append({
+            "wave": COMPLETED_WAVES + j + 1,
+            "documents": [r["document"] for r in group],
+            "est_tokens": sum(r["est_tokens"] for r in group),
+            "packing": "stratified round-robin over the length terciles still owed",
+            "status": "NOT YET READ — re-packed 2026-08-04",
+            "length_terciles": sorted({r["length_tercile"] for r in group}),
+            "documents_per_tercile": {t: sum(1 for r in group if r["length_tercile"] == t)
+                                      for t in terciles_remaining},
+            "registered_bands": [
+                {"document": r["document"], "length_tercile": r["length_tercile"],
+                 "predicted_yield_band": r["predicted_yield_band"],
+                 "predicted_yield_point": r["predicted_yield_point"]} for r in group],
+            "the_discriminating_prediction_registered_before_reading": (
+                "Registered 2026-08-04, before any document of this wave is read (#17b). Because "
+                "this wave spans more than one length tercile, the proxy makes DIFFERENT "
+                "predictions inside it, and the falsifiable claim is the comparison the previous "
+                "packing could never produce: the mean measured yield of this wave's "
+                + "/".join(f"{t}-tercile documents (predicted point "
+                           f"{next(r['predicted_yield_point'] for r in group if r['length_tercile'] == t)})"
+                           for t in terciles_remaining if any(r["length_tercile"] == t for r in group))
+                + " should fall in that same order. A wave in which the shorter-tercile documents "
+                  "out-yield the longer-tercile ones FALSIFIES the ordering the proxy asserts, "
+                  "and is a result, not a defect."),
+        })
 
     artifact = {
         "header": {
@@ -338,7 +470,7 @@ def main() -> int:
             "ruling": "User, 2026-08-03: read every owed document, bound no tail, order by the "
                       "stronger proxy, and register the predicted bands before reading so the "
                       "proxy is established out-of-sample rather than merely used.",
-            "authored_inputs": ["CAPACITY_ANCHOR_WAVE", "BAND_RULE"],
+            "authored_inputs": ["CAPACITY_ANCHOR_WAVE", "BAND_RULE", "COMPLETED_WAVES"],
             "derived_from": ["backbone_decisions.json", "gen_phase1m_measurements.py "
                              "(the read/owed partition and the file facts)",
                              "gen_phase1g_triage.py (the user-accepted exclusions)",
@@ -400,6 +532,20 @@ def main() -> int:
                 "it read, and reports it against `predicted_yield_band`. That makes the proxy "
                 "tested as a by-product of the reading rather than by a separate study, and it "
                 "is the only route by which a tail could ever become boundable."),
+            "re_registration_2026_08_04": (
+                "RE-REGISTERED for the RE-PACKED waves, before any of them is read (#17b). The "
+                "bands above were registered against the previous grouping; the user ruled they "
+                "may not simply be carried over, because a re-packed wave graded against a "
+                "prediction made for a different grouping is graded against a prediction that was "
+                "never made about it. So each re-packed wave carries its own `registered_bands` "
+                "block, listing every one of its documents with the band and point the rule above "
+                "assigns it, PLUS a `the_discriminating_prediction_registered_before_reading` "
+                "clause -- the ordering claim between terciles that the old packing could not "
+                "state. THE PER-DOCUMENT VALUES ARE UNCHANGED, and that is deliberate rather than "
+                "a shortcut: a band is a function of the document's own line count and the READ "
+                "set's tercile cuts, and the read set is untouched (OI-316), so recomputing them "
+                "would be the refit #20 forbids. What is new is the registration EVENT and what "
+                "it is attached to."),
         },
         "no_tail_is_bounded": {
             "statement": "EVERY owed document is read in full. No tail is carried, sampled or "
@@ -419,10 +565,44 @@ def main() -> int:
         },
         "schedule": {
             "capacity_anchor": anchor,
-            "packing_rule": "The ordered owed list is packed greedily into waves, each wave "
-                            "taking documents in reading order until the next one would exceed "
-                            "the anchor wave's measured token size. A single document larger "
-                            "than the anchor gets a wave of its own rather than being split.",
+            "packing_rule": "TWO RULES, and which one governs a wave is on the wave. Waves 1-"
+                            f"{COMPLETED_WAVES} were packed GREEDY-CONTIGUOUS: the ordered owed "
+                            "list taken in reading order until the next document would exceed the "
+                            "anchor wave's measured token size. They have been read, so they are "
+                            "frozen as history and checked against what each wave's own yield "
+                            "artifact records reading. Every wave after them is packed STRATIFIED "
+                            "-- see `the_repack` below.",
+            "the_repack": {
+                "ruled": "User, 2026-08-04 (READ WAVE 5, dispatch `cc_instruction_reads_5.md` "
+                         "§0a ruling R5): re-pack so a wave SPANS length terciles rather than "
+                         "falling inside one, and re-register the predicted bands for the "
+                         "re-packed waves before any of them is read.",
+                "why": REPACK_WHY,
+                "rule": REPACK_RULE,
+                "what_changed_and_what_did_not": (
+                    "CHANGED: the grouping of the documents still owed, and nothing else. "
+                    "UNCHANGED: which documents are read (all of them -- `no_tail_is_bounded` is "
+                    "untouched), the ordering key, the tercile cuts, every per-document band, the "
+                    "read set the bands are fitted on, and the capacity anchor."),
+                "frozen_completed_waves": COMPLETED_WAVES,
+                "why_frozen": COMPLETED_WAVES_WHY,
+                "freeze_check_against_each_wave_own_yield_artifact": freeze_check,
+                "documents_remaining_to_repack": len(remaining),
+                "remaining_est_tokens": rem_tok,
+                "repacked_wave_count_derived": n_rem_waves,
+                "length_terciles_still_owed": terciles_remaining,
+                "the_constraint_this_re_pack_ran_into": (
+                    "MEASURED AND REPORTED RATHER THAN WORKED AROUND: only "
+                    f"{len(terciles_remaining)} of the three length terciles are still owed "
+                    f"({', '.join(terciles_remaining)}). Every LONG-tercile document has already "
+                    "been read -- the ordering is length-descending, so the longest went first -- "
+                    "and none remains to deal into a wave. A re-packed wave can therefore span "
+                    "the terciles that remain and no more, which is the strongest form of the "
+                    "ruling that the remaining population admits. The consequence for the test is "
+                    "stated so it is not overclaimed: the discriminating comparison these waves "
+                    "can make is between the terciles listed above, not across the proxy's whole "
+                    "range, and a pass establishes correspondingly less."),
+            },
             "what_this_does_not_model": (
                 "TOKENS ONLY. The anchor measures one session that read FIVE documents totalling "
                 "its token size; packing by tokens alone therefore produces later waves holding "

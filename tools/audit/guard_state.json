@@ -14,16 +14,25 @@
       "tools/audit/decisions/gen_decisions_register.py",
       "tools/audit/decisions/gen_home_classification.py",
       "tools/audit/decisions/gen_live_prohibition_pointers.py",
+      "tools/audit/decisions/gen_outstanding_delegations.py",
       "tools/audit/decisions/gen_phase1g_triage.py",
       "tools/audit/decisions/gen_phase1m_measurements.py",
       "tools/audit/decisions/gen_phase1n_reading_regime.py",
       "tools/audit/decisions/gen_phase1p_delegation_bar.py",
+      "tools/audit/decisions/gen_phase1q_snapshot_establishment.py",
       "tools/audit/decisions/gen_phase1w_legacy_verification.py",
       "tools/audit/decisions/gen_reads1_yield.py",
       "tools/audit/decisions/gen_reads2_yield.py",
       "tools/audit/decisions/gen_reads3_yield.py",
+      "tools/audit/decisions/gen_reads4_oi326_application.py",
+      "tools/audit/decisions/gen_reads4_yield.py",
+      "tools/audit/decisions/gen_reads5_repack.py",
+      "tools/audit/decisions/gen_reads5_yield.py",
+      "tools/audit/decisions/gen_reads6_yield.py",
+      "tools/audit/decisions/gen_true_half_reach.py",
       "tools/audit/decisions/reaim_home_anchors.py",
       "tools/audit/gen_nongating_apparatus_rows.py",
+      "tools/audit/gen_phase1_completion_inventory.py",
       "tools/audit/gen_phase3_gate_partition.py",
       "tools/audit/instrument_arm_declaration_effect.py",
       "tools/audit/local_patches_check.py",
@@ -32,9 +41,14 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 33,
+    "authored_entries": 42,
     "unclassified_candidates": [],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
+    "not_a_subject_of_this_run": [
+      "tools/audit/gen_guard_classification.py",
+      "tools/audit/gen_guard_state.py"
+    ],
+    "not_a_subject_why": "Each would make this run recurse: this file cannot run itself, and the classification READS the artifact this file WRITES, so running it here would classify the previous run and then change the artifact it just read, without a fixed point. The classification is run separately, AFTER this one — the order its own STOP requires anyway.",
     "outside_tools_audit_authored_by_name": [
       "tools/notation_seams/gen_callpath_facts.py",
       "tools/open_items_split_check.py"
@@ -50,6 +64,45 @@
       "why": "NOT RUN: an applier, not a guard -- it re-aims citations and reports what it changed. Its --dry-run classifies but returns no pass/fail verdict about the tree."
     }
   ],
+  "historical_records": {
+    "ruling": "User, 2026-08-04 (READ WAVE 6, dispatch `cc_instruction_reads_6.md` §0a ruling R4): a tool that RE-DERIVES A LIVE INVARIANT belongs in the guard list; a tool that RECORDS A MEASUREMENT TAKEN AT A POINT IN TIME does not. Checked PER TOOL before any tool moved — a supposed historical recorder that turns out to assert a live invariant STAYS.",
+    "what_leaving_the_list_means_and_does_not_mean": "The artifact is PRESERVED exactly as the wave that produced it wrote it, and is marked historical. The tool is not repaired, not deleted and not excused; it is simply no longer asked to re-derive, because re-deriving it would destroy the measurement it records. Nothing here fixes OPEN_ITEMS.md OI-309 or OI-330 — those rows stay open on their own subjects.",
+    "the_per_tool_evidence_lives_at": "tools/audit/guard_classification.json (gen_guard_classification.py), which authors the verdict and its evidence for EVERY tool in this list and STOPS if its verdict set and the table here disagree in either direction (#6).",
+    "tools": [
+      {
+        "tool": "tools/audit/decisions/gen_phase1n_reading_regime.py",
+        "retired_invocation": [
+          "--check"
+        ],
+        "why": "HISTORICAL RECORD: the reading regime is a REGISTRATION — an ordering, a predicted band per owed document and a wave schedule, all recorded BEFORE the reads they govern (#17b). Its --check cannot pass again and passing would be the defect: OI-328 measured that re-deriving it flips the ordering key outright, because one of the four candidate proxies counts how often a document is named in a user-ratified surface and the register's own homing work increments that count for documents whose yield is already known (#20). The generator itself now STOPS with that reason rather than re-deriving. NO LIVE COVERAGE IS LOST: the packing RULE it owns is imported and exercised live by gen_reads5_repack.py, whose --check passes, and each wave's yield artifact re-derives against the registered bands read off this one.",
+        "what_it_checked": "the reading regime re-derives"
+      },
+      {
+        "tool": "tools/audit/decisions/gen_phase1m_measurements.py",
+        "retired_invocation": [
+          "--check"
+        ],
+        "why": "HISTORICAL RECORD: the phase-1m measurements, whose own dispatch ordered two MEASUREMENTS and forbade acting on either. Its authored KIND table is a judgment made over the home population AS IT STOOD at phase 1m, and its STOP fires because that population has since GROWN — so passing it again would mean re-authoring a historical measurement's judgment table for documents it never measured, which is restating a measurement against a changed population (the OI-330 shape). NO LIVE COVERAGE IS LOST: its delegation clauses (a)+(b) are applied live by gen_home_classification.py, which stays in the list.",
+        "what_it_checked": "the phase-1m measurements re-derive"
+      },
+      {
+        "tool": "tools/audit/decisions/gen_phase1g_triage.py",
+        "retired_invocation": [
+          "--check"
+        ],
+        "why": "HISTORICAL RECORD: the phase-1g triage table is the decision surface the user ACCEPTED on 2026-08-02 (the 41-document exclusion list), and its counts are cluster attributions that MOVE WHENEVER A DOCUMENT IS READ — the phase-1h note measured exactly that, one document moving from 23 clusters to 19 and from rank 5 to rank 11. So its --check cannot pass while reading continues, and re-deriving it would restate an accepted surface against a population the acceptance did not cover. NO LIVE COVERAGE IS LOST: it asserts nothing about the tree beyond those counts — it locates no quote and checks no anchor.",
+        "what_it_checked": "the phase-1g triage re-derives"
+      },
+      {
+        "tool": "tools/audit/decisions/gen_reads4_oi326_application.py",
+        "retired_invocation": [
+          "--check"
+        ],
+        "why": "HISTORICAL RECORD: read wave 4's measurement of the OI-326 ruling, taken BEFORE the ruling was applied on the user's own condition. OI-330 states both available repairs are inadmissible — re-pointing the anchor edits a historical measurement's tool, re-deriving restates that measurement against the population the delegation writes changed. Its failure is not a live invariant firing: the anchor became ambiguous because the USER WROTE A CORRECT DELEGATION. NO LIVE COVERAGE IS LOST: the live half it also touches — that each delegation citation still resolves in its surface — is asserted by gen_phase1p_delegation_bar.py, which locates every FORMS anchor and stops on a moved or ambiguous one, and which passes.",
+        "what_it_checked": "the OI-326 ruling's R5 measurement still re-derives — the doc-governance clause's own delegating sentence is still locatable and still says what the measurement parsed, the glob still matches the same files on disk, and no home document's grade has moved onto that clause since the ruling was applied"
+      }
+    ]
+  },
   "runs": [
     {
       "tool": "tools/audit/register_lint.py",
@@ -57,7 +110,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "REGISTER LINT: OPEN_ITEMS.md — 326 row IDs",
+        "REGISTER LINT: OPEN_ITEMS.md — 337 row IDs",
         "REGISTER LINT: PASS — every row ID is unique"
       ],
       "stderr": [],
@@ -263,10 +316,62 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "PASS: nongating_apparatus_rows.json re-derives byte-identically (24 non-gating / 31 gates of 55 candidates over 240 open rows)"
+        "PASS: nongating_apparatus_rows.json re-derives byte-identically (27 non-gating / 33 gates of 60 candidates over 249 open rows)"
       ],
       "stderr": [],
       "what_it_checks": "the non-gating apparatus-row declaration re-derives from the INDEX"
+    },
+    {
+      "tool": "tools/audit/gen_phase1_completion_inventory.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "OK: phase-1 completion inventory re-derives byte-identically."
+      ],
+      "stderr": [],
+      "what_it_checks": "the phase-1 completion inventory re-derives -- D-231's clause still locatable by its anchors, and every home class, defense gap, open-row cut and gate verdict unchanged"
+    },
+    {
+      "tool": "tools/audit/decisions/gen_outstanding_delegations.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the outstanding-delegation derivation re-derives from the files"
+      ],
+      "stderr": [],
+      "what_it_checks": "the outstanding-delegation population still derives at HEAD from the delegation grades and the home data (D-640/OI-335). Its own STOPs ride with it: a write-list member with no authored state label, a label for a non-member, and a class-C document with no authored draft each stop it, so the derived view cannot drift away from the write list in either direction"
+    },
+    {
+      "tool": "tools/audit/decisions/gen_true_half_reach.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the R1 application re-derives from the files"
+      ],
+      "stderr": [],
+      "what_it_checks": "ruling R1's application re-derives -- the ruling still locatable in CLAUDE.md by its anchor, OI-332 still carrying the three documents graded, and every verdict still naming one of the ruling's own worked examples (D-639)"
+    },
+    {
+      "tool": "tools/audit/decisions/gen_phase1q_snapshot_establishment.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the phase-1q snapshot establishment re-derives from the files"
+      ],
+      "stderr": [],
+      "what_it_checks": "the phase-1q snapshot's establishment record re-verifies. Its two moment-in-time checks are FROZEN and read back -- they are statements about the tree before the apply ran, and re-running them would make this guard fail forever after the act it licensed, which is the OI-301/OI-305 shape. What it re-verifies is that the snapshot's own bytes still hash to the established value and that it still parses and carries the fields OI-291 and D-432 cite (#19)"
     },
     {
       "tool": "tools/audit/decisions/gen_decisions_register.py",
@@ -289,10 +394,10 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "backbone decisions: 545",
+        "backbone decisions: 640",
         "cross-references resolving: ALL",
-        "verbatim quotes found at their cited home: 545/545",
-        "cited line numbers correct: 539/539   (6 cited to a file with no line number, by design)"
+        "verbatim quotes found at their cited home: 640/640",
+        "cited line numbers correct: 634/634   (6 cited to a file with no line number, by design)"
       ],
       "stderr": [],
       "what_it_checks": "every register entry's verbatim quote and cited line is found at its home"
@@ -317,12 +422,47 @@
       "args": [
         "--check"
       ],
-      "exit_code": 1,
-      "verdict": "FAIL",
-      "stdout": [],
-      "stderr": [
-        "home document(s) with no authored delegation scope: ['cowork_architecture_review_2026_07.md', 'cowork_census_full_needs_audit.md', 'cowork_evidence_inventory.md', 'cowork_fb_redesign_design.md', 'cowork_gateA_unification_design.md', 'cowork_idiom_discovery_design.md', 'cowork_joint_estimator_architecture.md', 'cowork_layer1_note_model_design.md', 'cowork_layer2_slicing_design.md', 'cowork_phrase_boundary_design.md', 'cowork_progression_schema_design.md', 'cowork_sensitive_cell_probe.md', 'cowork_term_theory_grounding.md', 'docs/back_half_design.md', 'docs/iter92_joint_bass_chord_scoring.md', 'docs/precision_metric_design.md', 'docs/symbol_input_audit.md', 'docs/unified_analysis_pipeline.md']"
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "population: 289 entries / 76 documents",
+        "  before: {'contract-home': 96, 'gap': 193}",
+        "  after:  {'contract-home': 139, 'gap': 150}",
+        "  moved:  71  (to gap 14, to contract-home 57)",
+        "    cowork_architecture_reassessment.md: −4 / +0",
+        "    cowork_engage_arc_plan.md: −0 / +3",
+        "    cowork_joint_estimator_architecture.md: −0 / +5",
+        "    cowork_joint_key_chord_design.md: −0 / +4",
+        "    cowork_layer1_note_model_design.md: −0 / +3",
+        "    cowork_layer2_slicing_design.md: −0 / +2",
+        "    cowork_layer3_keymode_design.md: −1 / +0",
+        "    cowork_layer6_grouping_design.md: −0 / +8",
+        "    cowork_phrase_boundary_design.md: −0 / +8",
+        "    cowork_progression_schema_design.md: −0 / +8",
+        "    cowork_progression_schema_dictionary.md: −0 / +9",
+        "    cowork_score_census.md: −0 / +6",
+        "    cowork_structural_integrity_audit.md: −0 / +1",
+        "    cowork_voiceleading_axis_design.md: −3 / +0",
+        "    docs/iteration_path1_summary.md: −2 / +0",
+        "    docs/redesign_plan.md: −4 / +0",
+        "  since phase 1q (the written delegations alone): 68 moved (to contract-home 68, to gap 0)",
+        "    cowork_engage_arc_plan.md: −0 / +3",
+        "    cowork_joint_estimator_architecture.md: −0 / +5",
+        "    cowork_joint_key_chord_design.md: −0 / +4",
+        "    cowork_layer1_note_model_design.md: −0 / +3",
+        "    cowork_layer2_slicing_design.md: −0 / +2",
+        "    cowork_layer5_function_design.md: −0 / +8",
+        "    cowork_layer6_grouping_design.md: −0 / +8",
+        "    cowork_notation_output_contract.md: −0 / +1",
+        "    cowork_phrase_boundary_design.md: −0 / +8",
+        "    cowork_prefit_gates.md: −0 / +5",
+        "    cowork_progression_schema_design.md: −0 / +8",
+        "    cowork_score_census.md: −0 / +6",
+        "    cowork_voiceleading_axis_design.md: −0 / +7",
+        "  write-list documents still holding a `gap` entry: cowork_layer1_note_model_design.md, cowork_layer1_tone_collection_design.md, cowork_layer6_grouping_design.md, cowork_phrase_boundary_design.md, cowork_voiceleading_axis_design.md",
+        "the home classification and its artifact re-derive from the files"
       ],
+      "stderr": [],
       "what_it_checks": "every home-section field re-derives from the documents' own headings"
     },
     {
@@ -339,43 +479,43 @@
       "what_it_checks": "the delegation-bar pre-apply record re-derives"
     },
     {
-      "tool": "tools/audit/decisions/gen_phase1n_reading_regime.py",
+      "tool": "tools/audit/decisions/gen_reads5_repack.py",
       "args": [
         "--check"
       ],
-      "exit_code": 1,
-      "verdict": "FAIL",
+      "exit_code": 0,
+      "verdict": "PASS",
       "stdout": [
-        "STALE vs the data: tools\\audit\\decisions\\phase1n_reading_regime.json"
+        "reads5_repack.json re-derives"
       ],
       "stderr": [],
-      "what_it_checks": "the reading regime re-derives"
+      "what_it_checks": "the re-packed reading schedule and its re-registered bands re-derive from the REGISTERED regime, which it reads and never regenerates"
     },
     {
-      "tool": "tools/audit/decisions/gen_phase1m_measurements.py",
+      "tool": "tools/audit/decisions/gen_reads5_yield.py",
       "args": [
         "--check"
       ],
-      "exit_code": 1,
-      "verdict": "FAIL",
-      "stdout": [],
-      "stderr": [
-        "home document(s) with no authored KIND judgment: ['cowork_architecture_review_2026_07.md', 'cowork_census_full_needs_audit.md', 'cowork_evidence_inventory.md', 'cowork_factorization_desk_simulation.md', 'cowork_fb_redesign_design.md', 'cowork_gateA_unification_design.md', 'cowork_idiom_discovery_design.md', 'cowork_joint_estimator_architecture.md', 'cowork_layer1_note_model_design.md', 'cowork_layer2_slicing_design.md', 'cowork_layer6_grouping_design.md', 'cowork_phrase_boundary_design.md', 'cowork_progression_schema_design.md', 'cowork_sensitive_cell_probe.md', 'cowork_target_architecture.md', 'cowork_term_theory_grounding.md', 'docs/back_half_design.md', 'docs/iter92_joint_bass_chord_scoring.md', 'docs/layer_architecture_audit.md', 'docs/llm_integration.md', 'docs/precision_metric_design.md', 'docs/symbol_input_audit.md', 'docs/unified_analysis_pipeline.md']"
-      ],
-      "what_it_checks": "the phase-1m measurements re-derive"
-    },
-    {
-      "tool": "tools/audit/decisions/gen_phase1g_triage.py",
-      "args": [
-        "--check"
-      ],
-      "exit_code": 1,
-      "verdict": "FAIL",
+      "exit_code": 0,
+      "verdict": "PASS",
       "stdout": [
-        "DRIFT: phase1g_triage.md differs from a fresh generation"
+        "reads5_yield.json re-derives"
       ],
       "stderr": [],
-      "what_it_checks": "the phase-1g triage re-derives"
+      "what_it_checks": "read wave 5's yield re-derives against the bands re-registered before it read"
+    },
+    {
+      "tool": "tools/audit/decisions/gen_reads6_yield.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "reads6_yield.json re-derives"
+      ],
+      "stderr": [],
+      "what_it_checks": "read wave 6's yield — the LAST owed wave — re-derives against the bands re-registered before it read, every entry it names is still in the register at the home it records, and the owed remainder it reports still derives from the regime's partition plus waves 1-5"
     },
     {
       "tool": "tools/audit/decisions/gen_decision_clusters.py",
@@ -405,7 +545,7 @@
       "exit_code": 2,
       "verdict": "FAIL",
       "stdout": [
-        "STOP: A1 (the marker is generated text): quote not at tools/audit/decisions/gen_decisions_register.py:455. It is now at line(s) [466] — re-aim the citation."
+        "STOP: A1 (the marker is generated text): quote not at tools/audit/decisions/gen_decisions_register.py:455. It is now at line(s) [514] — re-aim the citation."
       ],
       "stderr": [],
       "what_it_checks": "the legacy-mark verification re-derives, and its declared premises still hold"
@@ -450,6 +590,19 @@
       "what_it_checks": "READ WAVE 3's measured yield still matches the bands registered before the reads, every entry it names is still in the register at the home it records, and its running read count still derives from the regime's own partition plus waves 1 and 2"
     },
     {
+      "tool": "tools/audit/decisions/gen_reads4_yield.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "reads4_yield.json re-derives"
+      ],
+      "stderr": [],
+      "what_it_checks": "READ WAVE 4's measured yield still matches the bands registered before the reads, every entry it names is still in the register at the home it records, and its running read count still derives from the regime's own partition plus waves 1, 2 and 3"
+    },
+    {
       "tool": "tools/audit/decisions/reaim_home_anchors.py",
       "args": [
         "--check"
@@ -470,8 +623,8 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "  the chord layer: ARCHITECTURE.md:1420 lists 10 entry(ies)",
-        "  the key layer: ARCHITECTURE.md:1344 lists 2 entry(ies)",
+        "  the chord layer: ARCHITECTURE.md:1441 lists 10 entry(ies)",
+        "  the key layer: ARCHITECTURE.md:1365 lists 2 entry(ies)",
         "  the search: ARCHITECTURE.md:306 lists 3 entry(ies)",
         "class members (derived from the verification): 13",
         "every live-prohibition entry carries its pointer, as derived"
@@ -485,7 +638,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "living mode: index=326 detail=326 baseline=200 post-baseline=126",
+        "living mode: index=337 detail=337 baseline=200 post-baseline=137",
         "OVERALL PASS � bijection holds, no detail file carries a status of its own, and all 200 original items stay byte-verbatim (report: open_items\\register_check.json)"
       ],
       "stderr": [],
@@ -506,36 +659,12 @@
     }
   ],
   "summary": {
-    "run": 31,
-    "passing": 25,
-    "failing": 6,
+    "run": 36,
+    "passing": 34,
+    "failing": 2,
     "failing_tools": [
       {
         "tool": "tools/audit/claude_md_rule_triage.py",
-        "args": [
-          "--check"
-        ]
-      },
-      {
-        "tool": "tools/audit/decisions/gen_home_classification.py",
-        "args": [
-          "--check"
-        ]
-      },
-      {
-        "tool": "tools/audit/decisions/gen_phase1n_reading_regime.py",
-        "args": [
-          "--check"
-        ]
-      },
-      {
-        "tool": "tools/audit/decisions/gen_phase1m_measurements.py",
-        "args": [
-          "--check"
-        ]
-      },
-      {
-        "tool": "tools/audit/decisions/gen_phase1g_triage.py",
         "args": [
           "--check"
         ]
@@ -547,6 +676,7 @@
         ]
       }
     ],
-    "not_run": 2
+    "not_run": 2,
+    "historical_records": 4
   }
 }

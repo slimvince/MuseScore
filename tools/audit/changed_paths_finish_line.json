@@ -1,0 +1,409 @@
+{
+  "purpose": "A run of tools/audit/changed_paths.py. Generated so a report cites this file rather than transcribing the list (D-431).",
+  "enumeration": "worktree",
+  "commit": null,
+  "records": 100,
+  "rows": [
+    {
+      "code": " M",
+      "path": "ARCHITECTURE.md"
+    },
+    {
+      "code": " M",
+      "path": "CLAUDE.md"
+    },
+    {
+      "code": " M",
+      "path": "DECISIONS.md"
+    },
+    {
+      "code": " M",
+      "path": "OPEN_ITEMS.md"
+    },
+    {
+      "code": " M",
+      "path": "STATUS.md"
+    },
+    {
+      "code": " M",
+      "path": "cowork_audit_protocol.md"
+    },
+    {
+      "code": " M",
+      "path": "cowork_l1l3_stabilization_plan.md"
+    },
+    {
+      "code": " M",
+      "path": "cowork_layer1_tone_collection_design.md"
+    },
+    {
+      "code": " M",
+      "path": "decisions/group_A.md"
+    },
+    {
+      "code": " M",
+      "path": "decisions/group_C.md"
+    },
+    {
+      "code": " M",
+      "path": "decisions/group_D.md"
+    },
+    {
+      "code": " M",
+      "path": "decisions/group_E.md"
+    },
+    {
+      "code": " M",
+      "path": "decisions/group_F.md"
+    },
+    {
+      "code": " M",
+      "path": "decisions/group_G.md"
+    },
+    {
+      "code": " M",
+      "path": "decisions/group_H.md"
+    },
+    {
+      "code": " M",
+      "path": "decisions/group_I.md"
+    },
+    {
+      "code": " M",
+      "path": "decisions/group_J.md"
+    },
+    {
+      "code": " M",
+      "path": "decisions/group_K.md"
+    },
+    {
+      "code": " M",
+      "path": "decisions/group_L.md"
+    },
+    {
+      "code": " M",
+      "path": "decisions/group_M.md"
+    },
+    {
+      "code": " M",
+      "path": "decisions/group_N.md"
+    },
+    {
+      "code": " M",
+      "path": "decisions/group_O.md"
+    },
+    {
+      "code": " M",
+      "path": "decisions/group_P.md"
+    },
+    {
+      "code": " M",
+      "path": "decisions/group_Q.md"
+    },
+    {
+      "code": " M",
+      "path": "decisions/group_S.md"
+    },
+    {
+      "code": " M",
+      "path": "decisions/group_T.md"
+    },
+    {
+      "code": " M",
+      "path": "decisions/group_U.md"
+    },
+    {
+      "code": " M",
+      "path": "open_items/OI-207.md"
+    },
+    {
+      "code": " M",
+      "path": "open_items/OI-293.md"
+    },
+    {
+      "code": " M",
+      "path": "open_items/OI-296.md"
+    },
+    {
+      "code": " M",
+      "path": "open_items/OI-305.md"
+    },
+    {
+      "code": " M",
+      "path": "open_items/OI-316.md"
+    },
+    {
+      "code": " M",
+      "path": "open_items/OI-326.md"
+    },
+    {
+      "code": " M",
+      "path": "open_items/register_check.json"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/claude_md_rule_triage.py"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/decisions/backbone_decisions.json"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/decisions/gen_decisions_register.py"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/decisions/gen_home_classification.py"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/decisions/gen_phase1n_reading_regime.py"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/decisions/gen_phase1p_delegation_bar.py"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/decisions/phase1p_delegation_bar.json"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/decisions/phase1q_reclassification.json"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/decisions/reads1_yield.json"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/gen_guard_state.py"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/gen_nongating_apparatus_rows.py"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/gen_phase3_gate_partition.py"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/guard_state.json"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/nongating_apparatus_rows.json"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/phase3_gate_partition.json"
+    },
+    {
+      "code": "??",
+      "path": "cowork_jazz_realization_qa_instrument.md"
+    },
+    {
+      "code": "??",
+      "path": "cowork_pending_rulings_2026_08_02.md"
+    },
+    {
+      "code": "??",
+      "path": "idiom_discovery/vl_discovery_out.txt"
+    },
+    {
+      "code": "??",
+      "path": "idiom_discovery/vl_orthogonality_out.txt"
+    },
+    {
+      "code": "??",
+      "path": "open_items/OI-327.md"
+    },
+    {
+      "code": "??",
+      "path": "open_items/OI-328.md"
+    },
+    {
+      "code": "??",
+      "path": "open_items/OI-329.md"
+    },
+    {
+      "code": "??",
+      "path": "open_items/OI-330.md"
+    },
+    {
+      "code": "??",
+      "path": "open_items/OI-331.md"
+    },
+    {
+      "code": "??",
+      "path": "open_items/OI-332.md"
+    },
+    {
+      "code": "??",
+      "path": "open_items/OI-333.md"
+    },
+    {
+      "code": "??",
+      "path": "open_items/OI-334.md"
+    },
+    {
+      "code": "??",
+      "path": "open_items/OI-335.md"
+    },
+    {
+      "code": "??",
+      "path": "open_items/OI-336.md"
+    },
+    {
+      "code": "??",
+      "path": "open_items/OI-337.md"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/changed_paths_phase1_completion_inventory.json"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/decisions/gen_outstanding_delegations.py"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/decisions/gen_phase1q_snapshot_establishment.py"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/decisions/gen_reads4_oi326_application.py"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/decisions/gen_reads4_yield.py"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/decisions/gen_reads5_repack.py"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/decisions/gen_reads5_yield.py"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/decisions/gen_reads6_yield.py"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/decisions/gen_true_half_reach.py"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/decisions/outstanding_delegations.json"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/decisions/reads4_oi326_application.json"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/decisions/reads4_yield.json"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/decisions/reads5_repack.json"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/decisions/reads5_yield.json"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/decisions/reads6_yield.json"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/decisions/snapshot_2026-08-04_pre_home_classification_apply/"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/decisions/true_half_reach.json"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/gen_guard_classification.py"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/gen_phase1_completion_inventory.py"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/guard_classification.json"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/phase1_completion_inventory.json"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/process_check_census_delegation_dispatch.json"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/process_check_delegations_and_corrections_dispatch.json"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/process_check_phase1_completion_inventory_dispatch.json"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/process_check_reads4_dispatch.json"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/process_check_reads5_dispatch.json"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/process_check_reads6_dispatch.json"
+    },
+    {
+      "code": "??",
+      "path": "tools/joint_estimator/joint_posterior_slice_parity.json"
+    },
+    {
+      "code": "??",
+      "path": "tools/joint_estimator/joint_spelling_parity_cpp.json"
+    },
+    {
+      "code": "??",
+      "path": "tools/robust_stop/baroque_variant_a_root_fail_cells.txt"
+    },
+    {
+      "code": "??",
+      "path": "tools/robust_stop/baroque_variant_b_root_fail_cells.txt"
+    },
+    {
+      "code": "??",
+      "path": "tools/robust_stop/default_variant_a_root_fail_cells.txt"
+    },
+    {
+      "code": "??",
+      "path": "tools/robust_stop/default_variant_b_root_fail_cells.txt"
+    },
+    {
+      "code": "??",
+      "path": "tools/robust_stop/jazz_variant_a_root_fail_cells.txt"
+    },
+    {
+      "code": "??",
+      "path": "tools/robust_stop/jazz_variant_b_root_fail_cells.txt"
+    }
+  ],
+  "establishment": "tools/audit/changed_paths_establishment.json"
+}

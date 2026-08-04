@@ -17,7 +17,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3379-3380`
+**Home.** `ARCHITECTURE.md:3402-3403`
 
 **Provenance.** ARCHITECTURE.md:3253-3257; consistent with D-016
 
@@ -32,7 +32,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3080-3081`
+**Home.** `ARCHITECTURE.md:3103-3104`
 
 **Provenance.** ARCHITECTURE.md:2918-2958
 
@@ -47,7 +47,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4009-4010`
+**Home.** `ARCHITECTURE.md:4032-4033`
 
 **Provenance.** ARCHITECTURE.md:3850-3858; an instance of D-074
 
@@ -65,7 +65,7 @@
 
 **Status.** SUPERSEDED BY D-018 · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3694-3696`
+**Home.** `ARCHITECTURE.md:3717-3719`
 
 **Provenance.** The record arm replaces the 0.5/0.8 literals with the fitted nats constants (ARCHITECTURE.md:175-177); the literals are legacy-arm-only (sectionanalyzer.cpp::legacyKeyExposureBucket)
 
@@ -80,7 +80,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3714-3715`
+**Home.** `ARCHITECTURE.md:3737-3738`
 
 **Provenance.** ARCHITECTURE.md:3549-3601
 
@@ -95,7 +95,7 @@
 
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4025-4026`
+**Home.** `ARCHITECTURE.md:4048-4049`
 
 **Provenance.** open_items/OI-112 already records this preset-gating as stale; open_items/OI-201 records that the record arm collapses the family to a plain major triad symbol ★ Verbatim RE-TAKEN 2026-08-02 (the phase-1 truth-sync): §5.11's assertion 'Gated to Standard and Baroque presets only' was corrected, since the formatter explicitly defers that gate for want of preset context (`chordsymbolformatter.cpp:882-883`) and emits the labels under every preset (OPEN_ITEMS OI-112(c) discharged). The decision's own words survive at the home, quoted inside the correction.
 
@@ -117,7 +117,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:702-708`
+**Home.** `ARCHITECTURE.md:717-723`
 
 **Provenance.** ARCHITECTURE.md:664-674 (Rule 16), restated in the retired-session record at STATUS_ARCHIVE.md:2247 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -135,7 +135,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:6354-6356`
+**Home.** `ARCHITECTURE.md:6377-6379`
 
 **Provenance.** Recorded in `cowork_handoff_archive.md` (the standing-records block) as item E-14 of `cowork_product_tool_register.md`, with a note that a pointer into the architecture document was owed at its next edit. This pass found no such pointer in the register's own home census, so the owed act appears undischarged. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written at the head of `ARCHITECTURE.md` §12 as the governing requirement over the user interface. This also discharges the pointer-into-the-architecture-document act the archive recorded as owed at its next edit. Former home preserved (#12): `cowork_handoff_archive.md:2507`, the standing-records block, as item E-14 of `cowork_product_tool_register.md`.
 
@@ -153,7 +153,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:996-998`
+**Home.** `ARCHITECTURE.md:1011-1013`
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md`; the design memo it names, `docs/extension_stripping_policy.md`, exists on disk. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written into `ARCHITECTURE.md` §2.15 as a cross-cutting analysis contract, which is that section's declared scope. Former home preserved (#12): `STATUS_ARCHIVE.md:943`.
 
@@ -179,6 +179,8 @@
 
 **Home.** `docs/unified_analysis_pipeline.md:225-233`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **“Divergence C”** — `### Divergence C (duration gate)` (heading at line 215). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
 **Provenance.** Stated as the divergence-C decision rule of the unification design; the document's own header records divergence C as PARKED, so the rule stands undischarged. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)
 
 ### D-498 — RATIFIED AMENDMENT A-9: a product stance is owed for output that is mostly uncertain, and for music outside the tonal vocabulary altogether
@@ -197,5 +199,71 @@
 
 **Home.** `cowork_architecture_review_2026_07.md:333-335`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **§9** — `## 9. Proposed amendments (ranked; each ratification-gated; none is code)` (heading at line 307). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
 **Provenance.** Amendment A-9 of the external architecture review, in a document whose banner records amendments A-1…A-10 as RATIFIED by the user on 2026-07-02. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) ★ NOT A FRESH DECISION, stated so that nothing is counted twice (dispatch cc_instruction_reads_3.md §1.3): the amendment itself was ratified by the user at the 2026-07-02 architecture review, which is what this entry's Status line already records. Ratifying the ENTRY records only that the register transcribes that ratification correctly — it neither re-makes the decision nor adds a second ratification event to it. No register entry and no located product answers it; the review records the underlying findings as F-13 (no display policy for dense abstention) and F-15 (no explicit out-of-domain stance).
+
+### D-584 — The perfect/imperfect cadence call is made on the BASS-DERIVED inversion; the soprano arrival degree is demoted to a soft optional nudge and the tool never attempts melody identification
+
+> - **★ The "soprano arrival degree" (1̂=PAC vs 3̂=IAC) is theory-standard but implementation-fragile, so DEMOTED in the
+>   spec (user, 2026-06-26).** It needs the *structural melody*, and the **highest sounding voice is not reliably that line**
+>   (orchestral doubling; barbershop lead *below* the top). So the spec makes the perfect/imperfect call on the
+>   **bass-derived inversion** criterion and uses the top-voice arrival only as a *soft, optional* confidence nudge in
+>   homophonic textures — never the hard test. The tool does not attempt melody identification.
+
+**In plain words.** Whether a cadence is a full close or a weaker one is decided from the bass and the chord's inversion, not from which note the melody lands on. Standard theory uses the melody note, but the program cannot reliably tell which line is the melody: the highest sounding voice is often a doubling, and in some music the lead sits below the top. The top voice may nudge the confidence in a chordal texture; it never decides.
+
+**Why.** The constraint that forces it is named in the decision itself: the criterion needs the structural melody, and the highest sounding voice is not reliably that line — orchestral doubling and a lead below the top are the two cited counter-cases. The bass-derived inversion criterion is chosen because the catalog records the root-position flags as bass-derived and robust.
+
+**Status.** LIVE · decided 2026-06-26 · ratified by user
+
+**Entry ratified.** 2026-08-04 · by user
+
+**Home.** `cowork_layer5_function_methods.md:75-79`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **§3** — `## 3. Cadence detection — replace BOTH broken detectors with one correct one` (heading at line 64). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
+**Provenance.** `cowork_layer5_function_methods.md`, the research-first methods catalog that grounds the Layer-5 specification (2026-06-26). Read in full by READ WAVE 5, 2026-08-04. The record marks the demotion *user, 2026-06-26* and points at the Layer-5 specification §5.2 / §15-0 for where it lands. Distinct from **D-336** (cadence detection is key-agnostic), which governs what the detector may READ; this governs how the perfect/imperfect call is MADE.
+
+### D-585 — The bass-scale-degree / Rule-of-the-Octave prior is admitted as a SOFT prior and tie-breaker only, never a gate
+
+> The partimento Rule of the Octave maps each **bass** scale-degree to a first-choice harmony (1̂/5̂/8̂→stable 5/3;
+> 4̂/7̂→6/5,6/3; 2̂→inverted dominant-seventh; descending 6̂→applied-dominant), and functional-bass theory biases bass
+> 5̂/7̂→D, 4̂/2̂→S/predominant, 1̂/3̂→T. It is theoretically authoritative and **largely unexplored as an explicit
+> computational prior** — a defensible, **low-risk SOFT prior / tie-breaker** for L5's resolver (§5) and cadence test
+> (§3), **never a gate** (it is many-to-one, direction-dependent, overridden by sequence/cadence/applied context).
+
+**In plain words.** Which harmony a bass note usually carries — the partimento Rule of the Octave — is allowed to break a tie between readings that are otherwise equally good, and nothing more. It may never rule a reading out, because one bass note maps to several harmonies, the mapping depends on which way the bass is moving, and the surrounding progression overrides it.
+
+**Why.** Two reasons, both stated with the decision: the mapping is theoretically authoritative (the partimento tradition and functional-bass theory) but LARGELY UNEXPLORED as an explicit computational prior, so it is not established (#19); and it is structurally many-to-one and direction-dependent, which is what makes it a tie-breaker rather than a decision rule.
+
+**Status.** LIVE · decided 2026-06-26 · ratifier not stated
+
+**Entry ratified.** 2026-08-04 · by user
+
+**Home.** `cowork_layer5_function_methods.md:126-131`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **§6** — `## 6. The bass-degree / Rule-of-the-Octave prior (soft)` (heading at line 125). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
+**Provenance.** `cowork_layer5_function_methods.md`, the research-first methods catalog that grounds the Layer-5 specification (2026-06-26). Read in full by READ WAVE 5, 2026-08-04. Recorded in the catalog's §6. The record states no ratifier for this item. It sits beside **D-383**, which ranks a licensed progression as a tie-break among already-plausible readings rather than a decider — the same posture for a different evidence channel.
+
+### D-607 — Polyphonic phrase-boundary detection has NO validated deterministic rule set in the literature — the extension is engineering on monophonic cues, validated against our own corpus, and is not settled science
+
+> - **No validated deterministic rule set exists for polyphonic phrase boundaries** comparable to the monophonic
+>   canon. Treat polyphonic extension as engineering on the monophonic cues, **validated against our own chorale
+>   ground truth** — not as settled science.
+
+**In plain words.** Almost all published work on finding phrase endings is about single melodic lines. Our music has several lines at once, and nothing comparable has been established for that case. So carrying the single-line cues over to several voices is our own engineering and has to be checked against our own annotated music; it may not be presented as established method.
+
+**Why.** A stated fact of absence, established by the survey behind the catalog: the monophonic canon has a benchmarked literature and the polyphonic case has no comparable validated rule set. What DOES transfer is named rather than assumed — the gap cue generalises cleanly, because a phrase boundary in polyphony is a near-simultaneous rest or long note across all voices, which makes chorale texture an unusually easy polyphonic case; the pitch-interval cue does not transfer cleanly, because there is no single line whose leap it would measure.
+
+**Status.** LIVE · decided 2026-06-26 · ratifier not stated
+
+**Entry ratified.** 2026-08-04 · by user
+
+**Home.** `cowork_phrase_boundary_methods.md:83-85`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **§3** — `## 3. Polyphony — the real caveat (engineering on top, validate on our corpus)` (heading at line 76). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
+**Provenance.** `cowork_phrase_boundary_methods.md`, the research-first methods catalog grounding the phrase-boundary design (2026-06-26). Read in full by READ WAVE 5, 2026-08-04. Recorded in the catalog's §3. It is the ESTABLISHMENT STATUS (#19) of the mechanism **D-479** specifies — the cues run per eligible voice and aggregate to the texture — and no other home states it. The record states no ratifier.
 

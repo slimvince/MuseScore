@@ -76,7 +76,10 @@ RULE_SOURCE = {
     # it in CLAUDE.md, and the same file also carries a second insertion with a different offset.
     # Re-aimed again 2026-08-04 (phase 1z) from the generator's own drift report (1026 -> 1044),
     # per citation: the instrument record added to gate block (A) moved every line below it.
-    "expected_line": 1044,
+    # Re-aimed again 2026-08-04 (the delegations-and-corrections wave) from the same drift report
+    # (1044 -> 1149), per citation: ruling R1's qualification was written into the phase-1 clause
+    # of this same rule, immediately above the phase-2 sentence this anchor points at.
+    "expected_line": 1149,
     "quote": "**Phase 2 - issue-finding is EXHAUSTED with measured coverage:** the remaining audit partitions",
     "what_it_is": (
         "The defining source for phase 2. The user-directed three-phase rule (register entry "
@@ -539,8 +542,10 @@ ITEMS = [
         "source": {
             "file": "CLAUDE.md",
             # re-aimed 2026-08-03 from the drift report (1029 -> 1031), and again 2026-08-04
-            # at phase 1z from the same report (1031 -> 1049)
-            "expected_line": 1049,
+            # at phase 1z from the same report (1031 -> 1049); and again 2026-08-04 at the
+            # delegations-and-corrections wave (1049 -> 1154), per citation, ruling R1's
+            # qualification having been written into the phase-1 clause above this sentence
+            "expected_line": 1154,
             "quote": "each search reporting its detection power, ending in the bounded trust statement - every",
         },
         "scope_basis": (

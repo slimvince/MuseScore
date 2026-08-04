@@ -1,0 +1,586 @@
+{
+  "header": {
+    "purpose": "READ WAVE 4 Task 1 — the R5 measurement the user made a CONDITION on applying R1 (OI-326). Nothing is applied here.",
+    "generator": "tools/audit/decisions/gen_reads4_oi326_application.py",
+    "dispatch": "cc_instruction_reads_4.md",
+    "ruling": {
+      "R1": "ARCHITECTURE.md's doc-governance hierarchy clause DELEGATES, but only to the members it names EXPLICITLY. The glob `cowork_layer*_design.md` and the trailing ellipsis CONFER NOTHING — a delegation with indeterminate membership could be extended by a session, which is the authority rule (g) reserves to the user. (User, 2026-08-04, OI-326.)",
+      "R5": "Before R1 is applied, measure how many glob-matched documents are already `contract-home` on their own separate anchors. If the split moves a LARGE population, report and STOP. (User, 2026-08-04.)"
+    },
+    "what_this_tool_does_not_compute": "R1 moves a FORMS GRADE. An entry's CLASS moves only when `gen_home_classification.py` applies the criteria, and that pass stays UNRUN under OI-305 / OI-319 — and cannot run at all for the wave-2 and wave-3 home documents, which carry no authored `delegation_scope` and no section-kind judgment, so D-430's kind half (R4) has no input. Every entry figure below is the population ATTACHED to a grade, never a projected class."
+  },
+  "the_clause": {
+    "block_at": "ARCHITECTURE.md:346-354",
+    "located_by": "**Doc governance (2026-06-29) — the hierarchy.**",
+    "block_text": "> **Doc governance (2026-06-29) — the hierarchy.** This is **THE canonical architecture doc**. The **per-layer /\n> per-component design docs** (`cowork_layer*_design.md`, `cowork_progression_schema_dictionary.md`,\n> `cowork_progression_schema_design.md`, the phrase-boundary design, …) are the **authoritative detail** for their own\n> scope — the rules, the mechanisms, the per-layer decisions-with-alternatives — and are **referenced** from here. They\n> are **not** rival architecture docs: a **cross-cutting contract is stated once, here (§2.15), and never redefined in a\n> layer doc** (a layer doc may *use* the span typology or the verifiability contract, not *redefine* it).\n> `cowork_target_architecture.md` is **demoted** to the detailed-rationale reference for those contracts (the historical\n> north-star, the full statements, the supporting evidence) — not a second canonical doc. **When any doc disagrees with\n> this one, this one wins, and a new ratified decision lands here first.**",
+    "the_delegating_sentence_at": "ARCHITECTURE.md:346-349",
+    "the_delegating_sentence": "> **Doc governance (2026-06-29) — the hierarchy.** This is **THE canonical architecture doc**. The **per-layer /\n> per-component design docs** (`cowork_layer*_design.md`, `cowork_progression_schema_dictionary.md`,\n> `cowork_progression_schema_design.md`, the phrase-boundary design, …) are the **authoritative detail** for their own\n> scope — the rules, the mechanisms, the per-layer decisions-with-alternatives — and are **referenced** from here. They",
+    "the_parenthesised_list": "`cowork_layer*_design.md`, `cowork_progression_schema_dictionary.md`,\n> `cowork_progression_schema_design.md`, the phrase-boundary design, …",
+    "why_the_sentence_and_not_the_block": "The block holds more than the delegation. Two lines below the list it DEMOTES `cowork_target_architecture.md` — 'not a second canonical doc' — which is the opposite act, and a line above the demotion states a prohibition. Parsing backticked names out of the whole block admits the demoted document as an explicitly-named delegatee of a sentence that says it is not one; this tool's own first run did exactly that, which is how the span was narrowed. Membership is therefore parsed from the parenthesised list the delegating predicate governs, and the 'graded on this clause' test uses the sentence's line span."
+  },
+  "reading_A_membership": {
+    "note": "Reading A is OI-326's own first reading — the clause is a delegation clause. Its membership is parsed FROM the parenthesised list, not listed here.",
+    "explicit_filenames": [
+      "cowork_progression_schema_design.md",
+      "cowork_progression_schema_dictionary.md"
+    ],
+    "glob_patterns": [
+      "cowork_layer*_design.md"
+    ],
+    "glob_matches_on_disk": {
+      "cowork_layer*_design.md": [
+        "cowork_layer1_extend_design.md",
+        "cowork_layer1_note_model_design.md",
+        "cowork_layer1_tone_collection_design.md",
+        "cowork_layer2_reslice_design.md",
+        "cowork_layer2_slicing_design.md",
+        "cowork_layer3_keymode_design.md",
+        "cowork_layer3_keymode_impl_design.md",
+        "cowork_layer3_reachback_design.md",
+        "cowork_layer4_chordsymbol_design.md",
+        "cowork_layer5_engagement_design.md",
+        "cowork_layer5_function_design.md",
+        "cowork_layer6_grouping_design.md"
+      ]
+    },
+    "the_prose_reference": {
+      "present_in_the_clause": true,
+      "phrase": "the phrase-boundary design",
+      "filename_candidates_on_disk": [
+        "cc_instruction_phrase_boundary_build.md",
+        "cc_phrase_boundary_build_report.md",
+        "cowork_phrase_boundary_design.md",
+        "cowork_phrase_boundary_methods.md"
+      ],
+      "of_those_in_the_reading_regimes_design_document_surface": [
+        "cowork_phrase_boundary_design.md",
+        "cowork_phrase_boundary_methods.md"
+      ],
+      "why_R1_does_not_settle_it": "R1's words name the GLOB and the TRAILING ELLIPSIS as conferring nothing, and admit the members named EXPLICITLY. A prose description is neither: it names no file, and the design-document candidates derived above are more than one, so its membership is indeterminate in exactly the way R1's own defense objects to — but R1 does not say so, and reading it in is the extension rule (g) withholds from a session. Routed to R2 (the OI-293 write list) rather than decided. Nothing turns on it either way: the documents concerned are graded NOT_NAMED, which is where they stay."
+    },
+    "the_ellipsis": {
+      "present_in_the_clause": true,
+      "what_it_has_been_taken_to_cover_in_existing_grades": [],
+      "note": "Derived: a document whose FORMS grade was made on a line inside the delegating sentence and which none of the determinate routes reaches. An empty list means no existing grade rests on the ellipsis."
+    }
+  },
+  "documents": [
+    {
+      "document": "cc_instruction_phrase_boundary_build.md",
+      "membership_route": "prose-reference",
+      "what_R1_says_this_route_confers": "R1 DOES NOT SETTLE IT — see `the_prose_reference`; goes to R2",
+      "is_a_home_document_in_the_register": false,
+      "entries": 0,
+      "entry_ids": [],
+      "present_classes": {},
+      "present_contract_home_entries": 0,
+      "graded_in_FORMS": false,
+      "grade_form": null,
+      "grade_anchor_at": null,
+      "grade_anchor_line": null,
+      "grade_was_made_on_this_clause": false,
+      "grade_is_on_a_separate_anchor": false,
+      "present_verdict": null,
+      "grade_moves_under_R1": false,
+      "why": "this document's grade was not made on this clause, so R1 cannot move it"
+    },
+    {
+      "document": "cc_phrase_boundary_build_report.md",
+      "membership_route": "prose-reference",
+      "what_R1_says_this_route_confers": "R1 DOES NOT SETTLE IT — see `the_prose_reference`; goes to R2",
+      "is_a_home_document_in_the_register": false,
+      "entries": 0,
+      "entry_ids": [],
+      "present_classes": {},
+      "present_contract_home_entries": 0,
+      "graded_in_FORMS": false,
+      "grade_form": null,
+      "grade_anchor_at": null,
+      "grade_anchor_line": null,
+      "grade_was_made_on_this_clause": false,
+      "grade_is_on_a_separate_anchor": false,
+      "present_verdict": null,
+      "grade_moves_under_R1": false,
+      "why": "this document's grade was not made on this clause, so R1 cannot move it"
+    },
+    {
+      "document": "cowork_layer1_extend_design.md",
+      "membership_route": "glob-match",
+      "what_R1_says_this_route_confers": "CONFERS NOTHING — R1 names the glob",
+      "is_a_home_document_in_the_register": false,
+      "entries": 0,
+      "entry_ids": [],
+      "present_classes": {},
+      "present_contract_home_entries": 0,
+      "graded_in_FORMS": false,
+      "grade_form": null,
+      "grade_anchor_at": null,
+      "grade_anchor_line": null,
+      "grade_was_made_on_this_clause": false,
+      "grade_is_on_a_separate_anchor": false,
+      "present_verdict": null,
+      "grade_moves_under_R1": false,
+      "why": "this document's grade was not made on this clause, so R1 cannot move it"
+    },
+    {
+      "document": "cowork_layer1_note_model_design.md",
+      "membership_route": "glob-match",
+      "what_R1_says_this_route_confers": "CONFERS NOTHING — R1 names the glob",
+      "is_a_home_document_in_the_register": true,
+      "entries": 4,
+      "entry_ids": [
+        "D-517",
+        "D-518",
+        "D-519",
+        "D-520"
+      ],
+      "present_classes": {
+        "gap": 4
+      },
+      "present_contract_home_entries": 0,
+      "graded_in_FORMS": true,
+      "grade_form": "not-named-in-any-ratified-surface",
+      "grade_anchor_at": null,
+      "grade_anchor_line": null,
+      "grade_was_made_on_this_clause": false,
+      "grade_is_on_a_separate_anchor": false,
+      "present_verdict": "EXCLUDE",
+      "grade_moves_under_R1": false,
+      "why": "this document's grade was not made on this clause, so R1 cannot move it"
+    },
+    {
+      "document": "cowork_layer1_tone_collection_design.md",
+      "membership_route": "glob-match",
+      "what_R1_says_this_route_confers": "CONFERS NOTHING — R1 names the glob",
+      "is_a_home_document_in_the_register": true,
+      "entries": 2,
+      "entry_ids": [
+        "D-569",
+        "D-570"
+      ],
+      "present_classes": {
+        "gap": 2
+      },
+      "present_contract_home_entries": 0,
+      "graded_in_FORMS": true,
+      "grade_form": "not-named-in-any-ratified-surface",
+      "grade_anchor_at": null,
+      "grade_anchor_line": null,
+      "grade_was_made_on_this_clause": false,
+      "grade_is_on_a_separate_anchor": false,
+      "present_verdict": "EXCLUDE",
+      "grade_moves_under_R1": false,
+      "why": "this document's grade was not made on this clause, so R1 cannot move it"
+    },
+    {
+      "document": "cowork_layer2_reslice_design.md",
+      "membership_route": "glob-match",
+      "what_R1_says_this_route_confers": "CONFERS NOTHING — R1 names the glob",
+      "is_a_home_document_in_the_register": false,
+      "entries": 0,
+      "entry_ids": [],
+      "present_classes": {},
+      "present_contract_home_entries": 0,
+      "graded_in_FORMS": false,
+      "grade_form": null,
+      "grade_anchor_at": null,
+      "grade_anchor_line": null,
+      "grade_was_made_on_this_clause": false,
+      "grade_is_on_a_separate_anchor": false,
+      "present_verdict": null,
+      "grade_moves_under_R1": false,
+      "why": "this document's grade was not made on this clause, so R1 cannot move it"
+    },
+    {
+      "document": "cowork_layer2_slicing_design.md",
+      "membership_route": "glob-match",
+      "what_R1_says_this_route_confers": "CONFERS NOTHING — R1 names the glob",
+      "is_a_home_document_in_the_register": true,
+      "entries": 2,
+      "entry_ids": [
+        "D-540",
+        "D-541"
+      ],
+      "present_classes": {
+        "gap": 2
+      },
+      "present_contract_home_entries": 0,
+      "graded_in_FORMS": true,
+      "grade_form": "bare-appended-citation",
+      "grade_anchor_at": "ARCHITECTURE.md:1325",
+      "grade_anchor_line": "0/353 `.ours.json` byte-diffs on Baroque/Jazz/Default, gate unchanged at 53/24/53). See `cc_layer2_impl_report.md` (HELD), `cowork_layer2_slicing_design.md`,",
+      "grade_was_made_on_this_clause": false,
+      "grade_is_on_a_separate_anchor": true,
+      "present_verdict": "EXCLUDE",
+      "grade_moves_under_R1": false,
+      "why": "this document's grade was not made on this clause, so R1 cannot move it"
+    },
+    {
+      "document": "cowork_layer3_keymode_design.md",
+      "membership_route": "glob-match",
+      "what_R1_says_this_route_confers": "CONFERS NOTHING — R1 names the glob",
+      "is_a_home_document_in_the_register": true,
+      "entries": 16,
+      "entry_ids": [
+        "D-343",
+        "D-344",
+        "D-345",
+        "D-346",
+        "D-347",
+        "D-348",
+        "D-349",
+        "D-350",
+        "D-351",
+        "D-352",
+        "D-353",
+        "D-354",
+        "D-355",
+        "D-356",
+        "D-357",
+        "D-358"
+      ],
+      "present_classes": {
+        "contract-home": 15,
+        "gap": 1
+      },
+      "present_contract_home_entries": 15,
+      "graded_in_FORMS": true,
+      "grade_form": "explicit-delegation-clause",
+      "grade_anchor_at": "ARCHITECTURE.md:1342",
+      "grade_anchor_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
+      "grade_was_made_on_this_clause": false,
+      "grade_is_on_a_separate_anchor": true,
+      "present_verdict": "ADMIT",
+      "grade_moves_under_R1": false,
+      "why": "this document's grade was not made on this clause, so R1 cannot move it"
+    },
+    {
+      "document": "cowork_layer3_keymode_impl_design.md",
+      "membership_route": "glob-match",
+      "what_R1_says_this_route_confers": "CONFERS NOTHING — R1 names the glob",
+      "is_a_home_document_in_the_register": false,
+      "entries": 0,
+      "entry_ids": [],
+      "present_classes": {},
+      "present_contract_home_entries": 0,
+      "graded_in_FORMS": false,
+      "grade_form": null,
+      "grade_anchor_at": null,
+      "grade_anchor_line": null,
+      "grade_was_made_on_this_clause": false,
+      "grade_is_on_a_separate_anchor": false,
+      "present_verdict": null,
+      "grade_moves_under_R1": false,
+      "why": "this document's grade was not made on this clause, so R1 cannot move it"
+    },
+    {
+      "document": "cowork_layer3_reachback_design.md",
+      "membership_route": "glob-match",
+      "what_R1_says_this_route_confers": "CONFERS NOTHING — R1 names the glob",
+      "is_a_home_document_in_the_register": false,
+      "entries": 0,
+      "entry_ids": [],
+      "present_classes": {},
+      "present_contract_home_entries": 0,
+      "graded_in_FORMS": false,
+      "grade_form": null,
+      "grade_anchor_at": null,
+      "grade_anchor_line": null,
+      "grade_was_made_on_this_clause": false,
+      "grade_is_on_a_separate_anchor": false,
+      "present_verdict": null,
+      "grade_moves_under_R1": false,
+      "why": "this document's grade was not made on this clause, so R1 cannot move it"
+    },
+    {
+      "document": "cowork_layer4_chordsymbol_design.md",
+      "membership_route": "glob-match",
+      "what_R1_says_this_route_confers": "CONFERS NOTHING — R1 names the glob",
+      "is_a_home_document_in_the_register": true,
+      "entries": 6,
+      "entry_ids": [
+        "D-329",
+        "D-330",
+        "D-331",
+        "D-332",
+        "D-333",
+        "D-334"
+      ],
+      "present_classes": {
+        "contract-home": 6
+      },
+      "present_contract_home_entries": 6,
+      "graded_in_FORMS": true,
+      "grade_form": "explicit-delegation-clause",
+      "grade_anchor_at": "ARCHITECTURE.md:1418",
+      "grade_anchor_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer4_chordsymbol_design.md` (SIGNED, user, 2026-06-24) — D-329…D-334 — which this section points at and does not restate.",
+      "grade_was_made_on_this_clause": false,
+      "grade_is_on_a_separate_anchor": true,
+      "present_verdict": "ADMIT",
+      "grade_moves_under_R1": false,
+      "why": "this document's grade was not made on this clause, so R1 cannot move it"
+    },
+    {
+      "document": "cowork_layer5_engagement_design.md",
+      "membership_route": "glob-match",
+      "what_R1_says_this_route_confers": "CONFERS NOTHING — R1 names the glob",
+      "is_a_home_document_in_the_register": true,
+      "entries": 8,
+      "entry_ids": [
+        "D-380",
+        "D-381",
+        "D-382",
+        "D-383",
+        "D-384",
+        "D-385",
+        "D-386",
+        "D-387"
+      ],
+      "present_classes": {
+        "contract-home": 8
+      },
+      "present_contract_home_entries": 8,
+      "graded_in_FORMS": true,
+      "grade_form": "explicit-delegation-clause",
+      "grade_anchor_at": "ARCHITECTURE.md:1498",
+      "grade_anchor_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory \"is enumerated at `cowork_layer5_engagement_design.md` §9.2\" (`:53-55`).",
+      "grade_was_made_on_this_clause": false,
+      "grade_is_on_a_separate_anchor": true,
+      "present_verdict": "ADMIT",
+      "grade_moves_under_R1": false,
+      "why": "this document's grade was not made on this clause, so R1 cannot move it"
+    },
+    {
+      "document": "cowork_layer5_function_design.md",
+      "membership_route": "glob-match",
+      "what_R1_says_this_route_confers": "CONFERS NOTHING — R1 names the glob",
+      "is_a_home_document_in_the_register": true,
+      "entries": 8,
+      "entry_ids": [
+        "D-335",
+        "D-336",
+        "D-337",
+        "D-338",
+        "D-339",
+        "D-340",
+        "D-341",
+        "D-342"
+      ],
+      "present_classes": {
+        "contract-home": 8
+      },
+      "present_contract_home_entries": 8,
+      "graded_in_FORMS": true,
+      "grade_form": "explicit-delegation-clause",
+      "grade_anchor_at": "ARCHITECTURE.md:1496",
+      "grade_anchor_line": "**Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-335…D-342 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph is the delegation the record relied on and never had.)*",
+      "grade_was_made_on_this_clause": false,
+      "grade_is_on_a_separate_anchor": true,
+      "present_verdict": "ADMIT",
+      "grade_moves_under_R1": false,
+      "why": "this document's grade was not made on this clause, so R1 cannot move it"
+    },
+    {
+      "document": "cowork_layer6_grouping_design.md",
+      "membership_route": "glob-match",
+      "what_R1_says_this_route_confers": "CONFERS NOTHING — R1 names the glob",
+      "is_a_home_document_in_the_register": true,
+      "entries": 9,
+      "entry_ids": [
+        "D-454",
+        "D-455",
+        "D-456",
+        "D-457",
+        "D-458",
+        "D-459",
+        "D-460",
+        "D-461",
+        "D-462"
+      ],
+      "present_classes": {
+        "gap": 9
+      },
+      "present_contract_home_entries": 0,
+      "graded_in_FORMS": true,
+      "grade_form": "bare-appended-citation",
+      "grade_anchor_at": "ARCHITECTURE.md:1506",
+      "grade_anchor_line": "periods/sentences, and prolongation are out of the validatable core (verifiability contract, §2.15). Full spec:",
+      "grade_was_made_on_this_clause": false,
+      "grade_is_on_a_separate_anchor": true,
+      "present_verdict": "EXCLUDE",
+      "grade_moves_under_R1": false,
+      "why": "this document's grade was not made on this clause, so R1 cannot move it"
+    },
+    {
+      "document": "cowork_phrase_boundary_design.md",
+      "membership_route": "prose-reference",
+      "what_R1_says_this_route_confers": "R1 DOES NOT SETTLE IT — see `the_prose_reference`; goes to R2",
+      "is_a_home_document_in_the_register": true,
+      "entries": 10,
+      "entry_ids": [
+        "D-476",
+        "D-477",
+        "D-478",
+        "D-479",
+        "D-480",
+        "D-481",
+        "D-482",
+        "D-483",
+        "D-484",
+        "D-485"
+      ],
+      "present_classes": {
+        "gap": 10
+      },
+      "present_contract_home_entries": 0,
+      "graded_in_FORMS": true,
+      "grade_form": "not-named-in-any-ratified-surface",
+      "grade_anchor_at": null,
+      "grade_anchor_line": null,
+      "grade_was_made_on_this_clause": false,
+      "grade_is_on_a_separate_anchor": false,
+      "present_verdict": "EXCLUDE",
+      "grade_moves_under_R1": false,
+      "why": "this document's grade was not made on this clause, so R1 cannot move it"
+    },
+    {
+      "document": "cowork_phrase_boundary_methods.md",
+      "membership_route": "prose-reference",
+      "what_R1_says_this_route_confers": "R1 DOES NOT SETTLE IT — see `the_prose_reference`; goes to R2",
+      "is_a_home_document_in_the_register": false,
+      "entries": 0,
+      "entry_ids": [],
+      "present_classes": {},
+      "present_contract_home_entries": 0,
+      "graded_in_FORMS": false,
+      "grade_form": null,
+      "grade_anchor_at": null,
+      "grade_anchor_line": null,
+      "grade_was_made_on_this_clause": false,
+      "grade_is_on_a_separate_anchor": false,
+      "present_verdict": null,
+      "grade_moves_under_R1": false,
+      "why": "this document's grade was not made on this clause, so R1 cannot move it"
+    },
+    {
+      "document": "cowork_progression_schema_design.md",
+      "membership_route": "explicit-filename",
+      "what_R1_says_this_route_confers": "ADMITS ON THIS CLAUSE — R1's 'named EXPLICITLY'",
+      "is_a_home_document_in_the_register": true,
+      "entries": 8,
+      "entry_ids": [
+        "D-502",
+        "D-503",
+        "D-504",
+        "D-505",
+        "D-506",
+        "D-507",
+        "D-508",
+        "D-509"
+      ],
+      "present_classes": {
+        "gap": 8
+      },
+      "present_contract_home_entries": 0,
+      "graded_in_FORMS": true,
+      "grade_form": "explicit-delegation-clause",
+      "grade_anchor_at": "ARCHITECTURE.md:348",
+      "grade_anchor_line": "> `cowork_progression_schema_design.md`, the phrase-boundary design, …) are the **authoritative detail** for their own",
+      "grade_was_made_on_this_clause": true,
+      "grade_is_on_a_separate_anchor": false,
+      "present_verdict": "ADMIT",
+      "grade_moves_under_R1": false,
+      "why": "named EXPLICITLY in the clause, which is precisely what R1 keeps"
+    },
+    {
+      "document": "cowork_progression_schema_dictionary.md",
+      "membership_route": "explicit-filename",
+      "what_R1_says_this_route_confers": "ADMITS ON THIS CLAUSE — R1's 'named EXPLICITLY'",
+      "is_a_home_document_in_the_register": true,
+      "entries": 9,
+      "entry_ids": [
+        "D-406",
+        "D-407",
+        "D-408",
+        "D-409",
+        "D-410",
+        "D-411",
+        "D-412",
+        "D-413",
+        "D-414"
+      ],
+      "present_classes": {
+        "contract-home": 9
+      },
+      "present_contract_home_entries": 9,
+      "graded_in_FORMS": true,
+      "grade_form": "explicit-delegation-clause",
+      "grade_anchor_at": "ARCHITECTURE.md:4634",
+      "grade_anchor_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
+      "grade_was_made_on_this_clause": false,
+      "grade_is_on_a_separate_anchor": true,
+      "present_verdict": "ADMIT",
+      "grade_moves_under_R1": false,
+      "why": "this document's grade was not made on this clause, so R1 cannot move it"
+    }
+  ],
+  "the_R5_measurement": {
+    "question": "How many glob-matched documents are already `contract-home` on their own separate anchors, and how large is the population the split moves?",
+    "reading_A_members_total": 18,
+    "of_those_home_documents_in_the_register": 11,
+    "home_documents_holding_at_least_one_contract_home_entry": 5,
+    "home_documents_graded_on_a_SEPARATE_anchor_of_their_own": 7,
+    "home_documents_contract_home_ON_a_separate_anchor": [
+      {
+        "document": "cowork_layer3_keymode_design.md",
+        "route": "glob-match",
+        "contract_home_entries": 15,
+        "separate_anchor": "ARCHITECTURE.md:1342"
+      },
+      {
+        "document": "cowork_layer4_chordsymbol_design.md",
+        "route": "glob-match",
+        "contract_home_entries": 6,
+        "separate_anchor": "ARCHITECTURE.md:1418"
+      },
+      {
+        "document": "cowork_layer5_engagement_design.md",
+        "route": "glob-match",
+        "contract_home_entries": 8,
+        "separate_anchor": "ARCHITECTURE.md:1498"
+      },
+      {
+        "document": "cowork_layer5_function_design.md",
+        "route": "glob-match",
+        "contract_home_entries": 8,
+        "separate_anchor": "ARCHITECTURE.md:1496"
+      },
+      {
+        "document": "cowork_progression_schema_dictionary.md",
+        "route": "explicit-filename",
+        "contract_home_entries": 9,
+        "separate_anchor": "ARCHITECTURE.md:4634"
+      }
+    ],
+    "glob_matched_home_documents": 8,
+    "glob_matched_home_documents_already_contract_home_on_a_separate_anchor": 4,
+    "home_documents_whose_grade_rests_on_THIS_clause": [
+      {
+        "document": "cowork_progression_schema_design.md",
+        "route": "explicit-filename",
+        "entries": 8,
+        "present_classes": {
+          "gap": 8
+        }
+      }
+    ],
+    "grades_that_MOVE_under_R1": [],
+    "grades_that_move_under_R1_count": 0,
+    "entries_attached_to_a_moving_grade": 0
+  },
+  "the_R5_verdict": {
+    "verdict": "PROCEED — no grade moves under R1",
+    "why_no_threshold_is_authored": "R5 says a LARGE moving population is a stop and does not define large. This tool therefore reports the number and does not judge it (#17f, D-431): a threshold invented here would be a session deciding the condition the user attached to their own ruling. The verdict above is mechanical — it turns on whether the count is zero, which is the one reading that needs no threshold.",
+    "the_reason_the_count_is_what_it_is": "Derived above and stated so a reader need not reconstruct it: the register's existing grades were made on the STRONGEST naming each document has (the FORMS table's own rule), and for every glob-matched and prose-referenced member that strongest naming is a separate anchor — an explicit delegation clause for the four layer specifications, a bare appended citation for the rest, and no naming at all for the documents graded NOT_NAMED. Only the explicitly-named members were ever graded on this clause, and R1 keeps exactly those."
+  }
+}

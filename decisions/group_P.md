@@ -18,7 +18,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6364`
+**Home.** `ARCHITECTURE.md:6387`
 
 **Provenance.** ARCHITECTURE.md:6158-6162 (§12.1); the panels themselves are planned (§12.2-§12.5). No date or ratifier stated.
 
@@ -33,7 +33,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6368`
+**Home.** `ARCHITECTURE.md:6391`
 
 **Provenance.** ARCHITECTURE.md:6164-6165 (§12.1); listed in the Core scope at ARCHITECTURE.md:6617-6618. No date or ratifier stated.
 
@@ -48,7 +48,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6371`
+**Home.** `ARCHITECTURE.md:6394`
 
 **Provenance.** ARCHITECTURE.md:6167-6168 (§12.1); listed in the Core scope at ARCHITECTURE.md:6618. No date or ratifier stated.
 
@@ -64,7 +64,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6376-6378`
+**Home.** `ARCHITECTURE.md:6399-6401`
 
 **Provenance.** ARCHITECTURE.md:6170-6199 (§12.1a). No date or ratifier stated. ★ Verbatim RE-TAKEN 2026-08-02 (the phase-1 truth-sync): the paragraph's second half — 'It is not a performance control: analysis cost is negligible (well under 1ms) and suppressing the display does not require skipping the analysis' — is FALSE at HEAD on both clauses and is corrected in place (OPEN_ITEMS OI-242 discharged). The surviving quote is the decision proper: the preference exists for clarity. Whether it should also become a performance control is left OPEN at the home, not decided.
 
@@ -79,7 +79,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6482`
+**Home.** `ARCHITECTURE.md:6505`
 
 **Provenance.** ARCHITECTURE.md:6276-6294 (§13.1), a planned component. No date or ratifier stated.
 
@@ -95,7 +95,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6502`
+**Home.** `ARCHITECTURE.md:6525`
 
 **Provenance.** ARCHITECTURE.md:6296-6300 (§13.2), a planned component. No date or ratifier stated.
 
@@ -112,7 +112,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6545`
+**Home.** `ARCHITECTURE.md:6568`
 
 **Provenance.** ARCHITECTURE.md:6339-6356 (§14.2), a planned component. No date or ratifier stated.
 
@@ -129,7 +129,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6577`
+**Home.** `ARCHITECTURE.md:6600`
 
 **Provenance.** ARCHITECTURE.md:6358-6383 (§14, the automated annotation review), marked planned. No date or ratifier stated.
 

@@ -1,5 +1,22 @@
 # Layer 1 — TONE COLLECTION — Design Document (for user sign-off)
 
+> **★ STATUS: HISTORICAL — the concern this document designs was ABSORBED BY THE NOTE MODEL, and this
+> document is NOT a contract home (user-ruled 2026-08-04; CC, READ WAVE 6, dispatch
+> `cc_instruction_reads_6.md` §0a ruling R6, Task 5.2; `OPEN_ITEMS.md` OI-327).** The single
+> responsibility §1 states — collect every sounding note in a stretch of music, annotated, losslessly,
+> by one path — **is now the lossless note model's**, specified at `ARCHITECTURE.md`'s Layer-1 section
+> and contracted at `cowork_layer1_note_model_design.md`, which that section delegates to by name.
+> This document was put to the user for sign-off and its §7 checkboxes were never ticked; what
+> happened instead is that the design was superseded by the note model absorbing the role.
+> **Why it was ruled NOT delegated rather than delegated late:** a delegation here would create a
+> SECOND home for a concern that already has one, which principle #6 forbids — so the record states
+> the absorption and the document's historical status, and stops. **What the document is still for:**
+> the provenance of how the collection responsibility came to be separated from weighting, bass
+> selection and filtering (§1's own revision note records the user's three review comments that forced
+> the split). Read it as that record, not as a live contract. Its two register entries — D-569 and
+> D-570 — keep the class `gap`, which is the correct class for a decision whose concern is homed
+> elsewhere and whose recording surface is historical.
+>
 > **Upstream-first sweep, layer 1 of N.** This is the design/contract document for the most-upstream layer in
 > the pipeline. It (a) states the layer's intended single role, (b) describes **what the code currently does**,
 > verified at source, (c) lists **what is missing or currently not appropriate**, and (d) proposes the target

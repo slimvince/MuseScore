@@ -20,8 +20,33 @@ override convenience.
 6. **Total unification — no duplication of any code.** One path per concern.
 7. **Adhere to layers.** Enhance a layer only with algorithms/methods that belong to it,
    nothing else. Worst case, this forces a layer redesign rather than a cross-layer patch.
-8. **No inference-problem-driven coding until all methods and algorithms are implemented
-   in their correct layer.**
+8. **No inference-problem-driven coding until the refactoring, the architectural design and the
+   algorithmic completion are done.** Build-it-right comes BEFORE tune-precision, strictly. All
+   three must be finished, not the last alone: every method and algorithm implemented in its
+   correct layer, the architecture designed, and the refactoring carried out.
+   **★ WIDENED HERE 2026-08-04 ON THE USER'S RULING; THIS IS NOW THE RULE'S ONE HOME (#6).** The
+   former wording, preserved verbatim (#12), was *"No inference-problem-driven coding until all
+   methods and algorithms are implemented in their correct layer."* It was narrower than the
+   statement being applied in practice: `cowork_l1l3_stabilization_plan.md` has carried the fuller
+   three-clause form — refactoring + architectural design + algorithmic completion — user-ratified
+   2026-06-25, and that plan is **D-557**'s home no longer; it now POINTS here and does not restate
+   (#6). *Why it was widened rather than left standing beside the fuller statement:* a session
+   reading only this file would have applied the narrow width and concluded that refactoring and
+   architectural design were not among the things that must finish first — so the governing
+   document and the practice disagreed about the size of the gate, which is the one disagreement a
+   governing document may not carry.
+   **★ THIS PRINCIPLE POINTS AT ITS OPERATIONAL HALF — D-592 AND D-593 (written 2026-08-04 on the
+   user's ruling; a POINTER, never a copy, because both are already homed, #6).** The three clauses
+   above say WHEN inference work may start. They do not say when a layer counts as FINISHED, and
+   they do not say what may still be fixed while the gate holds — so the principle is not readable
+   without the two entries that do. **D-592** is the standing bar for what finished means for a
+   layer. **D-593** is the line inside the build-it-right firewall: which work is allowed now and
+   which is not. Read both at their homes; neither is restated here.
+   **★ AND THE ENTRY IS D-172, ONCE (user's ruling, 2026-08-04, `OPEN_ITEMS.md` OI-329).** The
+   widening above briefly gave this one principle two live register entries; **D-172** survives as
+   its entry and **D-557** is recorded superseded into it, its former home and text preserved (#12).
+   The widened three-clause width is not a 2026-08-04 decision — it was **user-ratified 2026-06-25**,
+   as the paragraph above records, and had been living in the wrong document until that date.
 9. **Test and measure only on corpora known to be non-stale and accurate.**
 10. **Documentation always in sync with code.**
 11. **Regression test cases always in sync with code; regression-test between iterations.**
@@ -286,6 +311,25 @@ into this very file, so a reader arriving here first read a false statement abou
 hands. What is struck is the factual claim, not the rule: the arc plan became a home by BEING
 DELEGATED TO, which is (j) working rather than an exception to it. The former wording is preserved
 in D-435's provenance, #12.)*
+**(k) A DELEGATION REACHES ONLY THE MEMBERS IT NAMES EXPLICITLY — AND TWO CONFIRMATIONS THAT CLOSE
+THE QUESTIONS ASKED WITH IT (user, 2026-08-04, at `OPEN_ITEMS.md` OI-326).** `ARCHITECTURE.md`'s
+doc-governance hierarchy clause — the one naming the per-layer and per-component design documents as
+the authoritative detail for their own scope — **IS a delegation under (i), but it delegates only to
+the members it names EXPLICITLY. A glob pattern and a trailing ellipsis CONFER NOTHING.** *Why:* a
+delegation whose membership is indeterminate could be extended by a session, and extending a
+delegation is the authority (g) reserves to the user; a glob is satisfied by any file a later commit
+happens to name that way, and an ellipsis by anything at all. **This APPLIES (i)'s logic rather than
+amending it — (i) is unchanged, and so is D-432.** Two confirmations, ruled in the same act and
+written here so that neither is asked again. **(k1) WHERE A DOCUMENT IS NAMED IN BOTH AN ADMITTING
+AND AN EXCLUDED FORM, THE STRONGEST NAMING GOVERNS**; being cited elsewhere in a weaker form does not
+undo a delegation. **(k2) (h) REQUIRES BOTH HALVES AND THE KIND HALF IS DECISIVE**: a well-formed
+delegation to a section that RECORDS FINDINGS rather than STATES RULES admits nothing, and the halves
+are applied in that order — form first, kind second and last. **What (k) leaves out is settled
+through the OI-293 WRITE LIST, never by reading the clause more generously:** a delegation the user
+writes settles that document without touching the bar. *Measured before it was applied, on the
+user's own condition:* how much of the population the split moves was measured first, and the split
+moves nothing — the enumeration, the reasoning and every count are generated at
+`tools/audit/decisions/reads4_oi326_application.json`, and no figure is restated here (#17f, D-431).
 
 ## Project context
 
@@ -424,6 +468,22 @@ hard-stop class-(b) root-disagree duration is 1,817,280 ticks per preset** (−3
 superseded OI-168 reference's 2 714 000 / 2 783 680 / 2 718 080; `robust_stop_diff` OVERALL PASS, the
 run-level set-diff large in both directions by design, every added class-(b) run enumerated/diagnosed —
 the genuine-new fifth-substitution subset is OI-192, the accepted cost side of the net trade).
+
+**★ HOW THE ROOT COLUMN MUST BE READ — IT UNDERSTATES WHAT A WRONG KEY COSTS (D-576; recorded here
+2026-08-04 on the user's ruling, READ WAVE 5).** A chord's root and its bass note are **largely
+key-independent**: both can be named correctly while the key label is wrong. So the root-agreement
+percentage barely moves when the tonality is misread — while the chord's **quality**, its **Roman
+numeral** and some of its **inversions** are all corrupted by that same misreading. The corpus
+measurement therefore reports **less damage than a reader or listener would see**, and a root figure
+above must never be read as a statement about how good the analysis looks in the score. *Evidence:*
+measured at the case that shows it — an anchor piece was systematically mis-keyed while the
+root-governed baseline did not expose it, and what did expose it were the notation tests asserting
+chord symbols and Roman numerals (`docs/key_detection_baroque_partial_signature.md`). *Why it is
+written HERE rather than only at its own home:* this block is where the figures it qualifies are
+published, and the same act was performed for the four grading conventions below — a figure and the
+thing that bounds its meaning belong together. It is also **why the RN and key columns are tracked
+beside the root** rather than instead of it (**D-115**, **D-211**): the root axis alone cannot see
+this class of error. The caveat is about how the MEASUREMENT is read; it moves no value in it.
 
 **STAGED SCOPE — CLOSED AT THE NOTATION SWITCH (user-ratified 2026-07-27).** The OI-178 adoption put the
 joint estimator on the batch/committed surface only; **THE NOTATION SWITCH now puts it on the in-app
@@ -1059,6 +1119,33 @@ Build commands via `Start-Process` are isolated from these rules (exit code not 
   ledger (supersession, shelving, the same-commit rule), never the conformance reference; and the
   specification text is corrected wherever it states something false at HEAD (the doc-sync debt),
   because a specification cannot be the compliance standard while it misdescribes the code.
+  **★ HOW FAR THE DOC-SYNC HALF REACHES INTO A DOCUMENT'S ACCOUNT OF ITSELF (user-ruled 2026-08-04;
+  D-639).** The sentence above says *"states something false at HEAD"*, and a document states things
+  about ITSELF as well as about the analysis — a status banner, an as-built marker, a code anchor, a
+  missing supersession note. **The doc-sync half reaches a document's account of itself ONLY WHERE
+  THAT ACCOUNT CHANGES HOW THE DOCUMENT'S ANALYSIS CONTENT IS READ.** The ruling's own three worked
+  examples, which are the test rather than illustrations of it: an **as-built banner over a dormant
+  mechanism — IN**; a **missing supersession note on a superseded plan — IN**; a **stale anchor or a
+  formatting artifact — OUT**. *Why the line falls there:* the clause states its own reason two lines
+  up — *because a specification cannot be the compliance standard while it misdescribes the code* —
+  so what the half exists to catch is a document that would make a reader believe something false
+  about the system; a coordinate that has drifted misleads nobody about the analysis, and D-307
+  already forbids citing code by line number in the first place. **THE FALLBACK, RULED WITH THE TEST
+  AND NOT LEFT TO A LATER SESSION:** if the test needs judgment on the first rows it meets, that is
+  the *"stable enough to be cited"* failure repeating — a criterion that reads as mechanical and
+  resolves case by case — and the fallback is **option (1A): the doc-sync half reaches only the
+  account of the ANALYSIS.** A session that finds itself arguing a case applies the fallback and says
+  so; it does not stretch the test to reach a verdict. *(First application, 2026-08-04, at
+  `OPEN_ITEMS.md` OI-332: three documents, one matching each worked example, decided without reaching
+  the fallback — the enumeration and the per-document reason are generated at
+  `tools/audit/decisions/true_half_reach.json` and no verdict is restated here, #17f, D-431.)*
+  **★ AND IT BEARS ON A GATE VERDICT — A POINTER, NOT A RULING (the question is open at
+  `OPEN_ITEMS.md` OI-336).** THIS rule decides what PHASE 1 OWES; the non-gating declaration above
+  decides what A STAGE WAITS ON. They are different tests with different subjects and neither
+  overrides the other. Applying this one at OI-332 surfaced a question about the OTHER: whether that
+  row's apparatus classification survives reading the whole of D-438's line rather than its first
+  half. **That is not settled here and nothing above settles it** — a non-gating verdict is derived
+  from a cut and never hand-added, so it is the user's. Stated and left at OI-336.
   **Phase 2 — issue-finding is EXHAUSTED with measured coverage:** the remaining audit partitions
   and the blind second pass with its seeded error rate, plus the enumerated discovery channels —
   **enumerated at `cowork_oi200_perspective_inventory.md` §4, which is the ONE home for that list

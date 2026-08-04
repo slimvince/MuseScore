@@ -1,0 +1,68 @@
+{
+  "purpose": "Establishment record for the phase-1q snapshot taken before `gen_home_classification.py`'s apply mode was run. Ruling R2, user, 2026-08-04, dispatch `cc_instruction_phase1_delegations_and_corrections.md`.",
+  "generated_by": "tools/audit/decisions/gen_phase1q_snapshot_establishment.py",
+  "the_pattern": "O-12, the outgoing-reference snapshot gate block (A) uses for a re-baseline: snapshot the outgoing reference FIRST, and establish it before anything relies on it (#19). Applied here to a record rather than to a measurement.",
+  "what_is_snapshotted": "tools/audit/decisions/phase1q_reclassification.json",
+  "why": "OI-305 states in its own words that regenerating this artifact would 'overwrite the record of what phase 1q found - the OI-301 hazard'. OI-291 and D-432 both cite that record. The apply mode rewrites it from today's inputs, so the outgoing record is preserved before the run rather than after it.",
+  "how_this_record_ages": "Checks 1 and 2 are FROZEN at the moment they were made and are read back on every later run, never recomputed; check 1b re-verifies that the snapshot's own bytes are still the established ones, and check 3 that it still reads. That is what keeps a guard over a historical record from contradicting the record - the failure mode OI-301 and OI-305 both describe.",
+  "checks": [
+    {
+      "check": "1 - byte identity to the artifact being replaced",
+      "what_was_compared": [
+        "tools/audit/decisions/phase1q_reclassification.json",
+        "tools/audit/decisions/snapshot_2026-08-04_pre_home_classification_apply/phase1q_reclassification.json"
+      ],
+      "bytes_equal": true,
+      "sha256_artifact": "4f25107ede5649e0bb50b3a2448b17b2c888e48275c31a827c34f103f706f474",
+      "sha256_snapshot": "4f25107ede5649e0bb50b3a2448b17b2c888e48275c31a827c34f103f706f474",
+      "verdict": "PASS",
+      "re_verified": false
+    },
+    {
+      "check": "2 - the artifact snapshotted is the COMMITTED one",
+      "how": "tools/audit/changed_paths.py, the sanctioned reader of the working-tree change list (D-253). The artifact must NOT appear in it.",
+      "artifact_in_the_change_list": false,
+      "changed_path_records": 87,
+      "verdict": "PASS",
+      "why_this_matters": "If the artifact were dirty, the snapshot would freeze an uncommitted intermediate and the record OI-305 protects would still be the one at the last commit.",
+      "re_verified": false
+    },
+    {
+      "check": "1b - the snapshot is UNCHANGED since the record was made",
+      "when": "re-verified on every run - this is what `--check` actually tests",
+      "why": "Checks 1 and 2 are statements about the moment before the apply ran and become false the instant the apply rewrites the artifact, which is the apply working rather than the establishment failing. Re-running them would make this guard fail forever after the act it licensed - the OI-301 / OI-305 shape. What must still be true is that the SNAPSHOT is the bytes that were established.",
+      "sha256_recorded": "4f25107ede5649e0bb50b3a2448b17b2c888e48275c31a827c34f103f706f474",
+      "sha256_now": "4f25107ede5649e0bb50b3a2448b17b2c888e48275c31a827c34f103f706f474",
+      "verdict": "PASS"
+    },
+    {
+      "check": "3 - the snapshot parses and carries the finding it exists for",
+      "when": "re-verified on every run",
+      "why": "A byte-identical copy of a corrupt file is still faithful. Faithfulness is not enough to rely on, so the fields OI-291 and D-432 cite are read out of the snapshot itself.",
+      "parses": true,
+      "the_finding_the_snapshot_carries": {
+        "population": {
+          "entries": 134,
+          "documents": 22
+        },
+        "totals_class_before": {
+          "contract-home": 96,
+          "gap": 38
+        },
+        "totals_class_after": {
+          "contract-home": 99,
+          "gap": 35
+        },
+        "totals_entries_moved": 31,
+        "the_phase_1r_re_run_entries_moved": 28,
+        "the_phase_1r_re_run_write_list_documents_that_did_not_move_in_whole": [
+          "cowork_voiceleading_axis_design.md"
+        ],
+        "moved_out": 14,
+        "moved_in": 17
+      },
+      "verdict": "PASS"
+    }
+  ],
+  "verdict": "ESTABLISHED"
+}

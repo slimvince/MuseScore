@@ -1,0 +1,562 @@
+{
+  "header": {
+    "purpose": "READ WAVE 5's re-pack of the reading regime, with the predicted bands re-registered for the re-packed waves before any of them is read, and the finding that forced the re-pack.",
+    "generator": "tools/audit/decisions/gen_reads5_repack.py",
+    "ruling": "User, 2026-08-04 (READ WAVE 5, dispatch `cc_instruction_reads_5.md` §0a ruling R5): re-pack the reading regime so a wave SPANS length terciles, and re-register the predicted bands for the re-packed waves BEFORE any of them is read. The existing bands were registered against the old ordering and may not be reused as they stand — grading a re-packed wave against a prediction made for a different grouping grades it against a prediction never made about it.",
+    "the_packing_rule_lives_in": "tools/audit/decisions/gen_phase1n_reading_regime.py -> stratified_repack(), imported here rather than copied (#6).",
+    "authored_inputs": [
+      "nothing about the schedule; the ruling text, and the prose naming the finding, which is imported from the regime generator"
+    ],
+    "derived_from": [
+      "phase1n_reading_regime.json (the REGISTRATION: every ordering, band, point and tercile, read verbatim and never recomputed)",
+      "reads1..reads4_yield.json (which documents each completed wave actually read)",
+      "backbone_decisions.json + the three user-ratified surfaces (the contamination measurement only)"
+    ]
+  },
+  "why_the_re_pack": {
+    "the_finding": "THE PROXY COULD NOT BE TESTED, BECAUSE THE QUANTITY BEING TESTED AND THE QUANTITY DOING THE PACKING WERE THE SAME. The owed documents are ORDERED by document length -- the proxy under test -- and the waves were then cut as CONTIGUOUS RUNS of that order at a token budget which is itself derived from length. A contiguous run of a length-ordered list is a length interval, so every wave fell inside one length tercile and the proxy made ONE prediction for the whole wave. Waves 2, 3 and 4 each reported this, and each reported measured yields differing several-fold inside that single prediction: within a wave the proxy had no resolving power at all, and no wave could ever supply the comparison that would give it some. The band pass those waves reported is therefore not evidence -- a band running from 0 to its tercile maximum is close to unfalsifiable, and the informative test (do longer-tercile documents actually out-yield shorter-tercile ones?) requires BOTH inside one wave. The re-pack changes only the GROUPING: the same documents are read, in the same registration, and the ordering key is untouched. The finding is not that the packing was a mistake -- packing by token cost is the only measured capacity there is -- but that a schedule built from the quantity under test cannot test it, which is a shape worth recognising anywhere a proxy is graded as a by-product of the work it schedules.",
+    "the_rule": "STRATIFIED, not greedy-contiguous. The remaining owed documents are split by length tercile; the wave count is DERIVED as ceil(remaining tokens / the anchor wave's measured token size); and each tercile's documents are then dealt round-robin across that many waves in reading order. Every wave therefore holds documents from every tercile still owed, and the token cost is balanced across waves as a by-product of dealing rather than by a second rule.",
+    "what_changed_and_what_did_not": "CHANGED: the grouping of the documents still owed. UNCHANGED: which documents are read — all of them, `no_tail_is_bounded` is untouched — the ordering key, the tercile cuts, every per-document band and point, the read set those bands are fitted on, and the measured capacity anchor.",
+    "the_evidence_in_the_completed_waves": "Below, per completed wave: the length terciles it actually spanned. Waves 2, 3 and 4 each span exactly one, which is what the ruling was made on."
+  },
+  "why_the_regime_artifact_is_read_and_not_regenerated": {
+    "what_is_measured": "Whether the regime's registered ORDERING KEY — the proxy with the highest measured correlation with yield on the 36 read documents — is still the winner when the correlations are recomputed against the files as they stand today.",
+    "registered_ordering_key": "document_length_lines",
+    "recomputed_winner": "named_in_a_user_ratified_surface_count",
+    "the_key_flips_if_the_regime_is_regenerated": true,
+    "per_proxy": {
+      "document_length_lines": {
+        "registered": 0.6859,
+        "recomputed_2026_08_04": 0.6859,
+        "moved_by": 0.0,
+        "ci95_registered": [
+          0.445,
+          0.8342
+        ]
+      },
+      "unresolved_cluster_count": {
+        "registered": 0.5647,
+        "recomputed_2026_08_04": 0.5647,
+        "moved_by": 0.0,
+        "ci95_registered": [
+          0.2711,
+          0.7622
+        ]
+      },
+      "named_in_a_user_ratified_surface_count": {
+        "registered": 0.6818,
+        "recomputed_2026_08_04": 0.702,
+        "moved_by": 0.0202,
+        "ci95_registered": [
+          0.4388,
+          0.8318
+        ]
+      },
+      "named_in_a_user_ratified_surface_boolean": {
+        "registered": 0.6682,
+        "recomputed_2026_08_04": 0.6682,
+        "moved_by": 0.0,
+        "ci95_registered": [
+          0.4185,
+          0.824
+        ]
+      }
+    },
+    "read_documents_whose_naming_count_moved_since_registration": [
+      "cowork_engage_arc_plan.md",
+      "cowork_layer5_function_design.md",
+      "cowork_prefit_gates.md",
+      "cowork_score_census.md"
+    ],
+    "why_it_moved": "Delegations WRITTEN INTO USER-RATIFIED SURFACES. `named_in_a_user_ratified_surface_count` counts the lines of `ARCHITECTURE.md`, `CLAUDE.md` and `cowork_engage_arc_plan.md` that name a document. The user wrote six delegations on 2026-08-03 (the OI-293 write list) and three more on 2026-08-04 (OI-327), and each one increments that count for the document it names.",
+    "why_this_is_a_defect_and_not_a_curiosity": "The register's own homing work EDITS A FEATURE THE PROXY IS GRADED ON, for documents whose yield is already known. That is the fit/evaluation separation #20 forbids, arriving by a route nobody designed: the feature is not being tuned, it is being moved by unrelated correct work. And the margin is far inside the uncertainty the regime artifact itself records for these figures, so under #24 the flip is not even a finding about which proxy is better — it is a coin landing the other way. What makes it consequential is that the ordering key is read off that coin, and the whole reading order, the wave schedule and the record of what each completed wave read hang from it."
+  },
+  "completed_waves": [
+    {
+      "wave": 1,
+      "yield_artifact": "reads1_yield.json",
+      "documents_read": 6,
+      "matches_the_registered_packing": true,
+      "length_terciles": [
+        "long",
+        "medium"
+      ],
+      "documents_per_tercile": {
+        "long": 2,
+        "medium": 4
+      },
+      "register_entries_produced": 28
+    },
+    {
+      "wave": 2,
+      "yield_artifact": "reads2_yield.json",
+      "documents_read": 8,
+      "matches_the_registered_packing": true,
+      "length_terciles": [
+        "medium"
+      ],
+      "documents_per_tercile": {
+        "medium": 8
+      },
+      "register_entries_produced": 33
+    },
+    {
+      "wave": 3,
+      "yield_artifact": "reads3_yield.json",
+      "documents_read": 11,
+      "matches_the_registered_packing": true,
+      "length_terciles": [
+        "medium"
+      ],
+      "documents_per_tercile": {
+        "medium": 11
+      },
+      "register_entries_produced": 44
+    },
+    {
+      "wave": 4,
+      "yield_artifact": "reads4_yield.json",
+      "documents_read": 14,
+      "matches_the_registered_packing": true,
+      "length_terciles": [
+        "medium"
+      ],
+      "documents_per_tercile": {
+        "medium": 14
+      },
+      "register_entries_produced": 37
+    }
+  ],
+  "the_remainder": {
+    "documents": 27,
+    "est_tokens": 87346,
+    "length_terciles_still_owed": [
+      "medium",
+      "short"
+    ],
+    "documents_per_tercile": {
+      "medium": 10,
+      "short": 17
+    },
+    "the_constraint_this_re_pack_ran_into": "MEASURED AND REPORTED RATHER THAN WORKED AROUND: only the terciles listed above are still owed. Every LONG-tercile document has already been read — the ordering is length-descending, so the longest went first — and none remains to deal into a wave. A re-packed wave can therefore span the terciles that remain and no more, which is the strongest form of the ruling this population admits. Stated so it is not overclaimed: the discriminating comparison these waves can make is between the terciles listed above, not across the proxy's whole range, and a pass establishes correspondingly less.",
+    "wave_count_derived": 2,
+    "how_the_wave_count_was_derived": "ceil(remaining est_tokens / the anchor wave's measured est_tokens)."
+  },
+  "repacked_waves": [
+    {
+      "wave": 5,
+      "packing": "stratified round-robin over the length terciles still owed",
+      "documents": [
+        "cowork_layer5_function_methods.md",
+        "cowork_style_taxonomy_proposal.md",
+        "cowork_l1l4_completion_ledger.md",
+        "docs/iter90_bass_as_root_promotion_shelved.md",
+        "docs/layer_audit_plan.md",
+        "cowork_style_clustering_plan.md",
+        "cowork_adjudication_dossier.md",
+        "cowork_phase5c_l5_build_plan.md",
+        "cowork_layer3_keymode_impl_design.md",
+        "docs/stage4d_local_modulation_design.md",
+        "cowork_phrase_boundary_methods.md",
+        "cowork_eg1_premise_checks.md",
+        "cowork_types_header_design.md",
+        "cowork_l1l4_review_charter.md"
+      ],
+      "document_count": 14,
+      "est_tokens": 45418,
+      "fits_the_measured_capacity": true,
+      "length_terciles": [
+        "medium",
+        "short"
+      ],
+      "documents_per_tercile": {
+        "medium": 5,
+        "short": 9
+      },
+      "registered_bands": [
+        {
+          "document": "cowork_layer5_function_methods.md",
+          "reading_order": 40,
+          "lines": 171,
+          "est_tokens": 5312,
+          "length_tercile": "medium",
+          "predicted_yield_band": [
+            0.0,
+            17.0
+          ],
+          "predicted_yield_point": 4.83
+        },
+        {
+          "document": "cowork_style_taxonomy_proposal.md",
+          "reading_order": 42,
+          "lines": 152,
+          "est_tokens": 4201,
+          "length_tercile": "medium",
+          "predicted_yield_band": [
+            0.0,
+            17.0
+          ],
+          "predicted_yield_point": 4.83
+        },
+        {
+          "document": "cowork_l1l4_completion_ledger.md",
+          "reading_order": 44,
+          "lines": 141,
+          "est_tokens": 4248,
+          "length_tercile": "medium",
+          "predicted_yield_band": [
+            0.0,
+            17.0
+          ],
+          "predicted_yield_point": 4.83
+        },
+        {
+          "document": "docs/iter90_bass_as_root_promotion_shelved.md",
+          "reading_order": 46,
+          "lines": 137,
+          "est_tokens": 1986,
+          "length_tercile": "medium",
+          "predicted_yield_band": [
+            0.0,
+            17.0
+          ],
+          "predicted_yield_point": 4.83
+        },
+        {
+          "document": "docs/layer_audit_plan.md",
+          "reading_order": 48,
+          "lines": 133,
+          "est_tokens": 3240,
+          "length_tercile": "medium",
+          "predicted_yield_band": [
+            0.0,
+            17.0
+          ],
+          "predicted_yield_point": 4.83
+        },
+        {
+          "document": "cowork_style_clustering_plan.md",
+          "reading_order": 50,
+          "lines": 130,
+          "est_tokens": 3910,
+          "length_tercile": "short",
+          "predicted_yield_band": [
+            0.0,
+            4.0
+          ],
+          "predicted_yield_point": 0.83
+        },
+        {
+          "document": "cowork_adjudication_dossier.md",
+          "reading_order": 52,
+          "lines": 128,
+          "est_tokens": 3874,
+          "length_tercile": "short",
+          "predicted_yield_band": [
+            0.0,
+            4.0
+          ],
+          "predicted_yield_point": 0.83
+        },
+        {
+          "document": "cowork_phase5c_l5_build_plan.md",
+          "reading_order": 54,
+          "lines": 126,
+          "est_tokens": 3818,
+          "length_tercile": "short",
+          "predicted_yield_band": [
+            0.0,
+            4.0
+          ],
+          "predicted_yield_point": 0.83
+        },
+        {
+          "document": "cowork_layer3_keymode_impl_design.md",
+          "reading_order": 56,
+          "lines": 119,
+          "est_tokens": 3490,
+          "length_tercile": "short",
+          "predicted_yield_band": [
+            0.0,
+            4.0
+          ],
+          "predicted_yield_point": 0.83
+        },
+        {
+          "document": "docs/stage4d_local_modulation_design.md",
+          "reading_order": 58,
+          "lines": 114,
+          "est_tokens": 2554,
+          "length_tercile": "short",
+          "predicted_yield_band": [
+            0.0,
+            4.0
+          ],
+          "predicted_yield_point": 0.83
+        },
+        {
+          "document": "cowork_phrase_boundary_methods.md",
+          "reading_order": 60,
+          "lines": 107,
+          "est_tokens": 3369,
+          "length_tercile": "short",
+          "predicted_yield_band": [
+            0.0,
+            4.0
+          ],
+          "predicted_yield_point": 0.83
+        },
+        {
+          "document": "cowork_eg1_premise_checks.md",
+          "reading_order": 62,
+          "lines": 89,
+          "est_tokens": 2025,
+          "length_tercile": "short",
+          "predicted_yield_band": [
+            0.0,
+            4.0
+          ],
+          "predicted_yield_point": 0.83
+        },
+        {
+          "document": "cowork_types_header_design.md",
+          "reading_order": 64,
+          "lines": 70,
+          "est_tokens": 1981,
+          "length_tercile": "short",
+          "predicted_yield_band": [
+            0.0,
+            4.0
+          ],
+          "predicted_yield_point": 0.83
+        },
+        {
+          "document": "cowork_l1l4_review_charter.md",
+          "reading_order": 66,
+          "lines": 52,
+          "est_tokens": 1410,
+          "length_tercile": "short",
+          "predicted_yield_band": [
+            0.0,
+            4.0
+          ],
+          "predicted_yield_point": 0.83
+        }
+      ],
+      "the_discriminating_prediction": {
+        "registered": "2026-08-04, before any document of this wave is read (#17b)",
+        "claim": "This wave spans more than one length tercile, so the proxy makes DIFFERENT predictions inside it and the ordering between them is falsifiable within a single wave — the comparison the previous packing could not produce. The registered claim: the mean measured yield of this wave's documents, grouped by tercile, falls in the same order as the point predictions below.",
+        "point_prediction_per_tercile": {
+          "medium": 4.83,
+          "short": 0.83
+        },
+        "documents_per_tercile": {
+          "medium": 5,
+          "short": 9
+        },
+        "what_would_falsify_it": "A wave in which the shorter-tercile documents out-yield the longer-tercile ones. That is a RESULT, not a defect, and it is the first real test the proxy has had."
+      }
+    },
+    {
+      "wave": 6,
+      "packing": "stratified round-robin over the length terciles still owed",
+      "documents": [
+        "cowork_union_search_record.md",
+        "cowork_l1_l5_premise_debt_audit.md",
+        "docs/stage4c_cadence_key_design.md",
+        "docs/architecture_joint_inference.md",
+        "cowork_layer3_reachback_design.md",
+        "cowork_tpc_capability_design.md",
+        "cowork_layer1_extend_design.md",
+        "cowork_uncertain_resolver_investigation.md",
+        "cowork_layer2_reslice_design.md",
+        "cowork_key_mode_inference_diagnosis.md",
+        "cowork_delta_check_dispositions.md",
+        "cowork_phase5b_l4_build_plan.md",
+        "cowork_gate_policy_amendment.md"
+      ],
+      "document_count": 13,
+      "est_tokens": 41928,
+      "fits_the_measured_capacity": true,
+      "length_terciles": [
+        "medium",
+        "short"
+      ],
+      "documents_per_tercile": {
+        "medium": 5,
+        "short": 8
+      },
+      "registered_bands": [
+        {
+          "document": "cowork_union_search_record.md",
+          "reading_order": 41,
+          "lines": 156,
+          "est_tokens": 4444,
+          "length_tercile": "medium",
+          "predicted_yield_band": [
+            0.0,
+            17.0
+          ],
+          "predicted_yield_point": 4.83
+        },
+        {
+          "document": "cowork_l1_l5_premise_debt_audit.md",
+          "reading_order": 43,
+          "lines": 143,
+          "est_tokens": 3472,
+          "length_tercile": "medium",
+          "predicted_yield_band": [
+            0.0,
+            17.0
+          ],
+          "predicted_yield_point": 4.83
+        },
+        {
+          "document": "docs/stage4c_cadence_key_design.md",
+          "reading_order": 45,
+          "lines": 141,
+          "est_tokens": 3229,
+          "length_tercile": "medium",
+          "predicted_yield_band": [
+            0.0,
+            17.0
+          ],
+          "predicted_yield_point": 4.83
+        },
+        {
+          "document": "docs/architecture_joint_inference.md",
+          "reading_order": 47,
+          "lines": 136,
+          "est_tokens": 3251,
+          "length_tercile": "medium",
+          "predicted_yield_band": [
+            0.0,
+            17.0
+          ],
+          "predicted_yield_point": 4.83
+        },
+        {
+          "document": "cowork_layer3_reachback_design.md",
+          "reading_order": 49,
+          "lines": 131,
+          "est_tokens": 4010,
+          "length_tercile": "medium",
+          "predicted_yield_band": [
+            0.0,
+            17.0
+          ],
+          "predicted_yield_point": 4.83
+        },
+        {
+          "document": "cowork_tpc_capability_design.md",
+          "reading_order": 51,
+          "lines": 130,
+          "est_tokens": 3988,
+          "length_tercile": "short",
+          "predicted_yield_band": [
+            0.0,
+            4.0
+          ],
+          "predicted_yield_point": 0.83
+        },
+        {
+          "document": "cowork_layer1_extend_design.md",
+          "reading_order": 53,
+          "lines": 127,
+          "est_tokens": 3589,
+          "length_tercile": "short",
+          "predicted_yield_band": [
+            0.0,
+            4.0
+          ],
+          "predicted_yield_point": 0.83
+        },
+        {
+          "document": "cowork_uncertain_resolver_investigation.md",
+          "reading_order": 55,
+          "lines": 122,
+          "est_tokens": 3205,
+          "length_tercile": "short",
+          "predicted_yield_band": [
+            0.0,
+            4.0
+          ],
+          "predicted_yield_point": 0.83
+        },
+        {
+          "document": "cowork_layer2_reslice_design.md",
+          "reading_order": 57,
+          "lines": 116,
+          "est_tokens": 3332,
+          "length_tercile": "short",
+          "predicted_yield_band": [
+            0.0,
+            4.0
+          ],
+          "predicted_yield_point": 0.83
+        },
+        {
+          "document": "cowork_key_mode_inference_diagnosis.md",
+          "reading_order": 59,
+          "lines": 111,
+          "est_tokens": 2327,
+          "length_tercile": "short",
+          "predicted_yield_band": [
+            0.0,
+            4.0
+          ],
+          "predicted_yield_point": 0.83
+        },
+        {
+          "document": "cowork_delta_check_dispositions.md",
+          "reading_order": 61,
+          "lines": 97,
+          "est_tokens": 2926,
+          "length_tercile": "short",
+          "predicted_yield_band": [
+            0.0,
+            4.0
+          ],
+          "predicted_yield_point": 0.83
+        },
+        {
+          "document": "cowork_phase5b_l4_build_plan.md",
+          "reading_order": 63,
+          "lines": 84,
+          "est_tokens": 2441,
+          "length_tercile": "short",
+          "predicted_yield_band": [
+            0.0,
+            4.0
+          ],
+          "predicted_yield_point": 0.83
+        },
+        {
+          "document": "cowork_gate_policy_amendment.md",
+          "reading_order": 65,
+          "lines": 68,
+          "est_tokens": 1714,
+          "length_tercile": "short",
+          "predicted_yield_band": [
+            0.0,
+            4.0
+          ],
+          "predicted_yield_point": 0.83
+        }
+      ],
+      "the_discriminating_prediction": {
+        "registered": "2026-08-04, before any document of this wave is read (#17b)",
+        "claim": "This wave spans more than one length tercile, so the proxy makes DIFFERENT predictions inside it and the ordering between them is falsifiable within a single wave — the comparison the previous packing could not produce. The registered claim: the mean measured yield of this wave's documents, grouped by tercile, falls in the same order as the point predictions below.",
+        "point_prediction_per_tercile": {
+          "medium": 4.83,
+          "short": 0.83
+        },
+        "documents_per_tercile": {
+          "medium": 5,
+          "short": 8
+        },
+        "what_would_falsify_it": "A wave in which the shorter-tercile documents out-yield the longer-tercile ones. That is a RESULT, not a defect, and it is the first real test the proxy has had."
+      }
+    }
+  ]
+}

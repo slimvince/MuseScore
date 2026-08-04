@@ -111,20 +111,24 @@
 
 **Provenance.** CLAUDE.md:21-22, the user's standing list. CLAUDE.md:120-132 records the provenance of the whole list: principles 1-11 are the user's standing list; #12-#16 were ratified by the user 2026-07-06; #17-#19 and the surprise-scope rule 2026-07-10; #20-#24 and the constrained-optimum ledger corollary 2026-07-18 at the joint-estimator plan review.
 
-### D-172 — #8 - no inference-problem-driven coding until every method sits in its correct layer
+### D-172 — #8 - no inference-problem-driven coding until the refactoring, the architectural design and the algorithmic completion are done
 
-> 8. **No inference-problem-driven coding until all methods and algorithms are implemented
->    in their correct layer.**
+> 8. **No inference-problem-driven coding until the refactoring, the architectural design and the
+>    algorithmic completion are done.** Build-it-right comes BEFORE tune-precision, strictly. All
+>    three must be finished, not the last alone: every method and algorithm implemented in its
+>    correct layer, the architecture designed, and the refactoring carried out.
 
-**In plain words.** Work is not steered by whichever analysis error is currently visible. Until the structure is built out, a fix is made at the stage that owns it, at the time that stage is being built.
+**In plain words.** Work is not steered by whichever analysis error is currently visible. Until the system is built right - the refactoring carried out, the architecture designed, and every method and algorithm finished in its correct layer - no fix is made because an analysis result is wrong. All three must be done, not the last alone.
 
 **Why.** Derivation not recorded as a separate defense. The related recorded position is that a fix at its #8-correct stage is 'never a knob-turn' - the phrase carried on the open-item rows that defer a fix for this reason (for example open_items/OI-192, OI-216, OI-217).
 
 **Status.** LIVE · date not stated · ratified by user
 
-**Home.** `CLAUDE.md:23`  — a project-wide convention with no owning layer; this is its correct home.
+**Entry ratified.** 2026-08-04 · by user
 
-**Provenance.** CLAUDE.md:23-24, the user's standing list. CLAUDE.md:120-132 records the provenance of the whole list: principles 1-11 are the user's standing list; #12-#16 were ratified by the user 2026-07-06; #17-#19 and the surprise-scope rule 2026-07-10; #20-#24 and the constrained-optimum ledger corollary 2026-07-18 at the joint-estimator plan review.
+**Home.** `CLAUDE.md:23-26`  — a project-wide convention with no owning layer; this is its correct home.
+
+**Provenance.** CLAUDE.md:23-26, the user's standing list. ★ WIDENED 2026-08-04 on the user's ruling (READ WAVE 5, dispatch `cc_instruction_reads_5.md` §0a ruling R2), which homed the build-it-right-before-tune-precision rule here in the fuller form **D-557** carried. The verbatim above is re-taken at the widened text. **THE FORMER VERBATIM, PRESERVED (#12):** "8. **No inference-problem-driven coding until all methods and algorithms are implemented    in their correct layer.**" **★ THE WIDENED RULE WAS NOT DECIDED ON 2026-08-04 — IT WAS USER-RATIFIED 2026-06-25 AND WAS LIVING IN THE WRONG DOCUMENT (carried here 2026-08-04 on the user's ruling R3, READ WAVE 6, dispatch `cc_instruction_reads_6.md` Task 3).** The date is verified at this entry's own home rather than taken from the dispatch: CLAUDE.md:30-32 states that `cowork_l1l3_stabilization_plan.md` "has carried the fuller three-clause form — refactoring + architectural design + algorithmic completion — user-ratified 2026-06-25". The 2026-08-04 act moved that already-ratified form into the governing document and widened the narrower statement standing here; it decided nothing about the rule's content. The `date` field stays "not stated" because it dates THE PRINCIPLE, which CLAUDE.md:120-132 records as part of the user's undated standing list 1-11 — the 2026-06-25 ratification is of the widened WIDTH and is recorded here, where the record can carry it without asserting a date the principle does not have. **★ THE DUPLICATION IS RESOLVED (user's ruling R3, same act; `OPEN_ITEMS.md` OI-329):** D-557 was re-homed to this same principle on 2026-08-04, so two live entries recorded one rule at one home — the duplication #6 forbids. **D-172 SURVIVES as #8's entry and D-557 is `superseded-by D-172`**, with D-557's former home (`cowork_l1l3_stabilization_plan.md:14-22`) and its former verbatim preserved in its own provenance (#12). Nothing about either DECISION changed. CLAUDE.md:120-132 records the provenance of the whole list: principles 1-11 are the user's standing list; #12-#16 were ratified by the user 2026-07-06; #17-#19 and the surprise-scope rule 2026-07-10; #20-#24 and the constrained-optimum ledger corollary 2026-07-18 at the joint-estimator plan review. **★ #8 POINTS at D-592 (what FINISHED means for a layer) and D-593 (the line inside the build-it-right firewall) as of 2026-08-04, ruling R2 — a pointer, never a copy (#6): the principle states WHEN inference work may start, D-592 states what "done" means per layer, and D-593 states what may still be fixed while the gate holds.**
 
 ### D-173 — #9 - measure only on corpora known to be non-stale and accurate
 
@@ -136,7 +140,7 @@
 
 **Status.** LIVE · date not stated · ratified by user
 
-**Home.** `CLAUDE.md:25`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:50`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:25, the user's standing list. CLAUDE.md:120-132 records the provenance of the whole list: principles 1-11 are the user's standing list; #12-#16 were ratified by the user 2026-07-06; #17-#19 and the surprise-scope rule 2026-07-10; #20-#24 and the constrained-optimum ledger corollary 2026-07-18 at the joint-estimator plan review.
 
@@ -150,7 +154,7 @@
 
 **Status.** LIVE · date not stated · ratified by user
 
-**Home.** `CLAUDE.md:26`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:51`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:26, the user's standing list. CLAUDE.md:120-132 records the provenance of the whole list: principles 1-11 are the user's standing list; #12-#16 were ratified by the user 2026-07-06; #17-#19 and the surprise-scope rule 2026-07-10; #20-#24 and the constrained-optimum ledger corollary 2026-07-18 at the joint-estimator plan review.
 
@@ -164,7 +168,7 @@
 
 **Status.** LIVE · date not stated · ratified by user
 
-**Home.** `CLAUDE.md:27`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:52`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:27, the user's standing list. CLAUDE.md:120-132 records the provenance of the whole list: principles 1-11 are the user's standing list; #12-#16 were ratified by the user 2026-07-06; #17-#19 and the surprise-scope rule 2026-07-10; #20-#24 and the constrained-optimum ledger corollary 2026-07-18 at the joint-estimator plan review.
 
@@ -178,7 +182,7 @@
 
 **Status.** LIVE · decided 2026-07-06 · ratified by user
 
-**Home.** `CLAUDE.md:31`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:56`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:31; ratified by the user 2026-07-06 (CLAUDE.md:120-122).
 
@@ -192,7 +196,7 @@
 
 **Status.** LIVE · decided 2026-07-06 · ratified by user
 
-**Home.** `CLAUDE.md:32`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:57`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:32; ratified by the user 2026-07-06 (CLAUDE.md:120-122).
 
@@ -207,7 +211,7 @@
 
 **Status.** LIVE · decided 2026-07-06 · ratified by user
 
-**Home.** `CLAUDE.md:33`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:58`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:33-34; ratified by the user 2026-07-06 (CLAUDE.md:120-122).
 
@@ -222,7 +226,7 @@
 
 **Status.** LIVE · decided 2026-07-06 · ratified by user
 
-**Home.** `CLAUDE.md:35`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:60`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:35-36; ratified by the user 2026-07-06 (CLAUDE.md:120-122).
 
@@ -249,7 +253,7 @@
 
 **Status.** LIVE · decided 2026-07-10 · ratified by user
 
-**Home.** `CLAUDE.md:37`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:62`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:37-50; ratified by the user 2026-07-10, analysis in `cowork_premise_gate_reflection.md` (CLAUDE.md:122-125).
 
@@ -264,7 +268,7 @@
 
 **Status.** LIVE · decided 2026-07-10 · ratified by user
 
-**Home.** `CLAUDE.md:51`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:76`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:51-52; ratified by the user 2026-07-10, analysis in `cowork_premise_gate_reflection.md` (CLAUDE.md:122-125).
 
@@ -281,7 +285,7 @@
 
 **Status.** LIVE · decided 2026-07-10 · ratified by user
 
-**Home.** `CLAUDE.md:53`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:78`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:53-56; ratified by the user 2026-07-10, analysis in `cowork_premise_gate_reflection.md` (CLAUDE.md:122-125).
 
@@ -298,7 +302,7 @@
 
 **Status.** LIVE · decided 2026-07-18 · ratified by user
 
-**Home.** `CLAUDE.md:57`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:82`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:57-60; ratified by the user 2026-07-18 at the joint-estimator plan review, analysis `cowork_joint_estimator_architecture.md` §6/§7 (CLAUDE.md:125-129). The ratified protocols are open_items/OI-176 and OI-177.
 
@@ -316,7 +320,7 @@
 
 **Status.** LIVE · decided 2026-07-18 · ratified by user
 
-**Home.** `CLAUDE.md:61`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:86`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:61-65; ratified by the user 2026-07-18 (CLAUDE.md:125-129). Sharpens #9.
 
@@ -334,7 +338,7 @@
 
 **Status.** LIVE · decided 2026-07-18 · ratified by user
 
-**Home.** `CLAUDE.md:84`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:109`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:66-70; ratified by the user 2026-07-18 (CLAUDE.md:125-129).
 
@@ -351,7 +355,7 @@
 
 **Status.** LIVE · decided 2026-07-18 · ratified by user
 
-**Home.** `CLAUDE.md:89`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:114`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:71-74; ratified by the user 2026-07-18 (CLAUDE.md:125-129).
 
@@ -368,7 +372,7 @@
 
 **Status.** LIVE · decided 2026-07-18 · ratified by user
 
-**Home.** `CLAUDE.md:93`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:118`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:75-78; ratified by the user 2026-07-18 (CLAUDE.md:125-129).
 
@@ -385,7 +389,7 @@
 
 **Status.** LIVE · decided 2026-07-18 · ratified by user
 
-**Home.** `CLAUDE.md:98`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:123`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:80-83; ratified with #20-#24 by the user 2026-07-18 (CLAUDE.md:125-129).
 
@@ -403,7 +407,7 @@
 
 **Status.** LIVE · decided 2026-07-10 · ratified by user
 
-**Home.** `CLAUDE.md:103`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:128`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:85-89; ratified with #17-#19 by the user 2026-07-10 (CLAUDE.md:122-125).
 
@@ -429,7 +433,7 @@
 
 **Status.** LIVE · decided 2026-07-26 · ratified by user
 
-**Home.** `CLAUDE.md:124`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:149`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:106-118; user-ratified 2026-07-26 at the notation-layer adoption increment's decision surface, analysis `cowork_notation_adoption_increment.md` §2 (CLAUDE.md:129-131).
 
@@ -445,7 +449,7 @@
 
 **Status.** LIVE · decided 2026-07-28 · ratified by user
 
-**Home.** `CLAUDE.md:1126-1128`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1213-1215`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at cowork_handoff.md (the user's rulings at the analysis-cost session, 2026-07-28), a session handoff block that ages into an archive outside the session-start read. It corrects a Cowork misreading of 'implementation efficiency is not very relevant', which meant BUILD effort, not runtime. OPEN_ITEMS OI-240 closes on this move
 
@@ -460,7 +464,7 @@
 
 **Status.** LIVE · decided 2026-07-28 · ratified by user
 
-**Home.** `ARCHITECTURE.md:1013-1014`
+**Home.** `ARCHITECTURE.md:1028-1029`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:157 (OI-209) with open_items/OI-209.md, which tracks the requirement rather than housing it. Consumed by the analysis-extent question (OI-210), the corpus onboarding (OI-38), and the architecture step-back (OI-200). The measured collision is OI-215/OI-227 - the decode returns nothing on 13 of 23 committed large scores. OPEN_ITEMS OI-240 closes on this move
 
@@ -475,7 +479,7 @@
 
 **Status.** DEFERRED · decided 2026-07-28 · ratified by user
 
-**Home.** `ARCHITECTURE.md:1021-1022`
+**Home.** `ARCHITECTURE.md:1036-1037`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:157 (OI-209). The two standing design rules the effort control must satisfy are older and are stated in ARCHITECTURE.md §2.14 (D-035). OPEN_ITEMS OI-240 closes on this move
 
@@ -491,7 +495,7 @@
 
 **Status.** LIVE · decided 2026-07-28 · ratified by user
 
-**Home.** `CLAUDE.md:1136-1138`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1223-1225`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at cowork_handoff.md, the user's ruling at the OI-199 pass-2 session, 2026-07-28. Homed beside #8 in CLAUDE.md because it is a ruling about what #8 permits; what the admission rule IS, and that it has no specified form, is in the estimator's own specification (D-098) and at OPEN_ITEMS OI-226. Cross-read with STATUS.md's earlier note that the classification 'is the user's to settle' - this row records that it was settled. OPEN_ITEMS OI-240 closes on this move
 
@@ -507,7 +511,7 @@
 
 **Status.** LIVE · decided 2026-07-28 · ratified by user
 
-**Home.** `CLAUDE.md:1147-1149`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1234-1236`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at cowork_handoff.md, recorded at the OI-199 pass-2 session, 2026-07-28. OPEN_ITEMS OI-240 closes on this move
 
@@ -523,7 +527,7 @@
 
 **Status.** LIVE · decided 2026-07-13 · ratified by user
 
-**Home.** `ARCHITECTURE.md:6802-6804`
+**Home.** `ARCHITECTURE.md:6825-6827`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at open_items/OI-56.md:7, decided by the user 2026-07-13. The when-question is tied to the corpus-onboarding event (OI-38) and the timing is itself open. OPEN_ITEMS OI-240 closes on this move
 
@@ -539,7 +543,7 @@
 
 **Status.** DEFERRED · decided 2026-07-13 · ratified by user
 
-**Home.** `ARCHITECTURE.md:5142-5144`
+**Home.** `ARCHITECTURE.md:5165-5167`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at open_items/OI-62.md:7, decided by the user 2026-07-13. The six unbuilt items are specified at ARCHITECTURE.md §11.3a-g and confirmed absent from the code in that row. OPEN_ITEMS OI-240 closes on this move
 
@@ -563,4 +567,78 @@
 **Home.** `cowork_engage_arc_plan.md:102-107`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** cowork_engage_arc_plan.md:3 records the user's ratification of this plan, dated 2026-07-07; the gate at :97-102, amended 2026-07-10 to become the middle stage of the Premise-Gate funnel (:128-130). The CLAUDE.md principles provenance paragraph names this gate, in this file, as a companion standing rule; register entry D-189 records the funnel it sits in. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
+
+### D-586 — "Function" in the machine-learning literature names the Roman-numeral components, not Riemann's function theory — and this project's own function layer is misnamed for the same confusion
+
+> friend: it means the generalized RN components, **not Riemann's *Funktionstheorie***. T/S/D, where it exists (music21's
+> `analysis.harmonicFunction`), is a **deterministic lookup from the RN**, not a prediction. This matches our own world
+> exactly: our ground truth (DCML/music21) and our output (`formatRomanNumeral`) already treat "function" as the RN
+> itself (scale-degree + quality + applied/secondary), and our `harmonicfunctionlayer` is **misnamed** — it does chord-
+> identity competition, with cadence + functional labeling marked "E4 (planned)" = L5.
+
+**In plain words.** When published research says a system predicts "function", it means the Roman numeral's parts — the degree, the quality, the applied relation — and not the three-role tonic/subdominant/dominant scheme of German function theory. The two senses are routinely confused. This project's own component named after the function layer does neither: it compares candidate chords.
+
+**Why.** Established by survey: every published autonomous Roman-numeral system the catalog names represents and evaluates the analysis as the Roman-numeral component tuple and none emits a three-role head, and one of them explicitly lists the three-role labels as future work it did not implement. The three-role labels, where they exist at all, are a deterministic lookup from the Roman numeral.
+
+**Status.** LIVE · decided 2026-06-26 · ratifier not stated
+
+**Entry ratified.** 2026-08-04 · by user
+
+**Home.** `cowork_layer5_function_methods.md:16-20`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **§0** — `## 0. The two findings that reshape L5` (heading at line 9). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
+**Provenance.** `cowork_layer5_function_methods.md`, the research-first methods catalog that grounds the Layer-5 specification (2026-06-26). Read in full by READ WAVE 5, 2026-08-04. This is the vocabulary finding behind **D-335** (the function layer outputs the Roman numeral; the three-role summary is a derived read-out). It is entered separately because it carries a second thing D-335 does not: a NAMING defect in this repository's own code, which the catalog's §9 lists as a structural step to schedule. The record states no ratifier for the naming half. The rename is unscheduled at HEAD and this entry does not schedule it; it also sits against `CLAUDE.md`'s reserved-word convention, under which a collision already in the tree is not renamed unilaterally.
+
+### D-610 — The value-type relocation is ZERO-CHURN by construction: the leaf spans both namespaces and the un-nested type keeps a member alias, so no call site changes and the move is byte-identical
+
+> - **Holds the closure, EACH IN ITS EXISTING NAMESPACE** (so every qualified name — `analysis::KeySigMode`,
+>   `function::ScoringPhase`, … — is *unchanged* → zero call-site churn):
+
+**In plain words.** When the shared value types were moved into their own dependency-free file, none of them was renamed or moved to a different namespace — the new file deliberately spans both namespaces so that every name spelled anywhere in the code still resolves. The one type that was lifted out of a class keeps an alias in its old place. So the move touches no call site and cannot change behaviour.
+
+**Why.** The constraint that forced it is the gate the refactor was held to: a pure relocation must be byte-identical, and the only way to move a type without touching its users is to leave its qualified name unchanged. The document states the cost this accepts — a value-types leaf spanning two namespaces — and accepts it explicitly as required to keep the names unchanged.
+
+**Status.** LIVE · decided 2026-06-26 · ratifier not stated
+
+**Entry ratified.** 2026-08-04 · by user
+
+**Home.** `cowork_types_header_design.md:16-17`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **“The leaf header”** — `## The leaf header` (heading at line 13). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
+**Provenance.** `cowork_types_header_design.md`, BUILT / AS-BUILT 2026-06-26. Read in full by READ WAVE 5, 2026-08-04. **D-078** already carries the decision that the cross-layer value types live in a dependency-free leaf header; this carries the separate rule about HOW they got there, which is what made the move byte-identical. The document's two ratification items — relocate only the parameter-bound types and defer the rest, and give the un-nested type a member alias rather than renaming its forty-odd uses — are both instances of it. The record states no ratifier.
+
+### D-639 — Phase 1's doc-sync half reaches a document's account of ITSELF only where that account changes how its analysis content is read — with three worked examples that are the test, and a fallback ruled with it
+
+>   **★ HOW FAR THE DOC-SYNC HALF REACHES INTO A DOCUMENT'S ACCOUNT OF ITSELF (user-ruled 2026-08-04;
+>   D-639).** The sentence above says *"states something false at HEAD"*, and a document states things
+>   about ITSELF as well as about the analysis — a status banner, an as-built marker, a code anchor, a
+>   missing supersession note. **The doc-sync half reaches a document's account of itself ONLY WHERE
+>   THAT ACCOUNT CHANGES HOW THE DOCUMENT'S ANALYSIS CONTENT IS READ.** The ruling's own three worked
+>   examples, which are the test rather than illustrations of it: an **as-built banner over a dormant
+>   mechanism — IN**; a **missing supersession note on a superseded plan — IN**; a **stale anchor or a
+>   formatting artifact — OUT**. *Why the line falls there:* the clause states its own reason two lines
+>   up — *because a specification cannot be the compliance standard while it misdescribes the code* —
+>   so what the half exists to catch is a document that would make a reader believe something false
+>   about the system; a coordinate that has drifted misleads nobody about the analysis, and D-307
+>   already forbids citing code by line number in the first place. **THE FALLBACK, RULED WITH THE TEST
+>   AND NOT LEFT TO A LATER SESSION:** if the test needs judgment on the first rows it meets, that is
+>   the *"stable enough to be cited"* failure repeating — a criterion that reads as mechanical and
+>   resolves case by case — and the fallback is **option (1A): the doc-sync half reaches only the
+>   account of the ANALYSIS.** A session that finds itself arguing a case applies the fallback and says
+>   so; it does not stretch the test to reach a verdict. *(First application, 2026-08-04, at
+>   `OPEN_ITEMS.md` OI-332: three documents, one matching each worked example, decided without reaching
+>   the fallback — the enumeration and the per-document reason are generated at
+>   `tools/audit/decisions/true_half_reach.json` and no verdict is restated here, #17f, D-431.)*
+
+**In plain words.** D-231's phase-1 rule says the specifications must be corrected wherever they state something false at HEAD. Documents also state things about themselves — a status banner, an as-built marker, a code line number, a missing note that a plan was superseded — and the user ruled how far that obligation reaches into those: only where the document's account of itself changes how a reader reads its analysis content. Three worked examples settle it rather than illustrate it: an as-built banner over a mechanism that is dormant is IN; a superseded plan with no note saying so is IN; a code anchor that has drifted, or a formatting artifact, is OUT. And if a session finds the test needs argument on the first cases it meets, it falls back to the narrow reading — the obligation covers only what a document says about the analysis — and says that it did so.
+
+**Why.** Stated with the ruling, and it is the clause's own reason two lines above it: the doc-sync half exists 'because a specification cannot be the compliance standard while it misdescribes the code', so what it catches is a document that would make a reader believe something false about the system. A drifted coordinate misleads nobody about the analysis, and D-307 already forbids citing code by line number. The FALLBACK carries its own reason: a criterion that reads as mechanical and then resolves case by case is the 'stable enough to be cited' failure, which the record has already had to retire once, so the answer for that case is ruled in advance rather than left to the session that meets it. First application at `OPEN_ITEMS.md` OI-332 — three documents, one matching each worked example, decided without reaching the fallback; the per-document reasoning is generated at `tools/audit/decisions/true_half_reach.json`.
+
+**Status.** LIVE · decided 2026-08-04 · ratified by user
+
+**Home.** `CLAUDE.md:1122-1141`  — a project-wide convention with no owning layer; this is its correct home.
+
+**Provenance.** User ruling of 2026-08-04, transmitted in the dispatch `cc_instruction_phase1_delegations_and_corrections.md` §0a as R1, which states both the test and its fallback. Homed at the D-231 phase-1 clause in `CLAUDE.md`, which is where the obligation it bounds is defined — the dispatch's own instruction was to record it 'where the TRUE half is defined, so a later row is classifiable without a fresh ruling'. The ruling ALSO moves a gate verdict (OI-332 classes itself apparatus on one half of D-438's line, whose other half makes a correction to a statement about the build state gating); that consequence is REPORTED at `tools/audit/decisions/true_half_reach.json` and rowed at `OPEN_ITEMS.md` OI-336, not applied here, because a non-gating verdict is derived from a cut and never hand-added.
 

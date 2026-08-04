@@ -70,6 +70,28 @@ TRIAGE: dict[str, tuple[str, str]] = {
                          "counts as one concern is the judgment the rule is about."),
     "D-171": (KNOWLEDGE, "Layer membership of a method is a design judgment."),
     "D-172": (KNOWLEDGE, "Whether a change is inference-problem-driven is a judgment."),
+    # Both arrived in CLAUDE.md by READ WAVE 5's own act, 2026-08-04, and are triaged here so
+    # this check's failure list does not widen by that act alone (the OI-319 shape).
+    "D-557": (KNOWLEDGE, "The same judgment as D-172, which this rule is now the widened form "
+                         "of: whether a change is inference-problem-driven, and whether the "
+                         "refactoring and the architectural design are done, are both judgments. "
+                         "(The two entries record ONE rule at ONE home after the widening, which "
+                         "is OPEN_ITEMS.md OI-329.)"),
+    "D-576": (KNOWLEDGE, "The rule governs how a reported figure is READ, not how it is "
+                         "produced. Nothing a checker can inspect distinguishes a root figure "
+                         "read with the caveat from one read without it."),
+    # Arrived in CLAUDE.md by READ WAVE 6's own act, 2026-08-04 — the gate block's root-cause
+    # attribution clause entered as its own entry — and triaged here so this check's failure
+    # list does not widen by that act alone (the OI-319 shape, as with D-557 above).
+    "D-638": (KNOWLEDGE, "An ATTRIBUTION of cause plus a prohibition on the wrong remedy: the "
+                         "rotation churn belongs to the chord layer and is only surfaced by a "
+                         "key change, so no key-layer change is the fix. Deciding that a "
+                         "particular churn is symmetric-rotation churn rather than a functional "
+                         "regression is the same judgment D-191's guardrails already place on a "
+                         "reader — verified at the score, per case, defaulting to the barred "
+                         "class on any doubt — and no mechanism can make it. What IS mechanical "
+                         "is the consequence rather than the attribution: `tools/robust_stop_"
+                         "diff.py` enforces the class-(b) non-increase this rule explains."),
     "D-173": (EXISTS, "PARTIAL. `run_bach_preset.py` exits nonzero on an incomplete corpus and "
                       "`characterise_bir_false.validate_corpus_dir` refuses a dir whose "
                       "manifest or fingerprints do not match — staleness is mechanical; "
@@ -193,6 +215,28 @@ TRIAGE: dict[str, tuple[str, str]] = {
                       "a stale citation."),
     "D-433": (EXISTS, "Same tool as D-432; the shelving question never enters its verdict, "
                       "which is what the ruling says."),
+    "D-546": (OWED, "PARTIAL, and the missing half is the one that matters. What the pass "
+                    "already does mechanically: `gen_phase1p_delegation_bar.mentions()` searches "
+                    "the three ratified surfaces for a document's BY-NAME mention and stops if a "
+                    "grade disagrees with it, and a glob is not a by-name mention, so no glob "
+                    "can silently become a delegation through that route. What NOTHING checks is "
+                    "the rule's actual subject: that a delegation's membership is DETERMINATE. A "
+                    "check exists in mechanical form -- flag any delegating clause whose named "
+                    "targets include a wildcard, an ellipsis or a prose description rather than "
+                    "a filename -- and it would have found this clause without a reading wave. "
+                    "Nothing implements it. (k1) and (k2) are confirmations of D-432 and D-430, "
+                    "so their mechanisation is those entries' and is not counted twice here."),
+    "D-639": (KNOWLEDGE,
+              "Whether a document's account of ITSELF changes how a reader reads its analysis "
+              "content is a judgment about that document's content, and the ruling settles it by "
+              "giving three worked examples rather than a predicate. A mechanical form would have "
+              "to decide, for an arbitrary banner or note, whether a reader would conclude "
+              "something false about the system — which is the point of the rule, not an "
+              "incidental difficulty. What IS mechanical is already built and is not this rule: "
+              "D-307's anchor convention removes the whole OUT class at its source, and "
+              "`gen_true_half_reach.py` refuses to record a verdict that names no worked example, "
+              "so a case the test did not decide cannot be argued into one silently — which is "
+              "how the ruling's own FALLBACK is enforced."),
     "D-435": (EXISTS, "The two roles are separate inputs to the same pass and cannot be "
                       "conflated by it: the DELEGATING side is the fixed list of three "
                       "user-ratified surfaces the pass searches, and the TARGET side is the "

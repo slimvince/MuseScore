@@ -1,0 +1,105 @@
+{
+  "purpose": "A run of tools/audit/process_check.py over named dispatches or reports. Generated so a report cites this file rather than transcribing what the check found (D-431).",
+  "rules": [
+    "D-431 bare quantity",
+    "D-431 uncited code claim",
+    "D-434 missing self-check section"
+  ],
+  "files_scanned": [
+    "cc_instruction_reads_5.md"
+  ],
+  "findings_total": 12,
+  "by_file": {
+    "cc_instruction_reads_5.md": {
+      "findings": 12,
+      "rows": [
+        {
+          "file": "cc_instruction_reads_5.md",
+          "line": 53,
+          "rule": "D-431 bare quantity",
+          "detail": "2.1",
+          "sentence": "The file has been edited many times since Cowork last read that line. → **Task 2.1**."
+        },
+        {
+          "file": "cc_instruction_reads_5.md",
+          "line": 56,
+          "rule": "D-431 bare quantity",
+          "detail": "5.1",
+          "sentence": "→ **Task 5.1**;"
+        },
+        {
+          "file": "cc_instruction_reads_5.md",
+          "line": 67,
+          "rule": "D-431 bare quantity",
+          "detail": "2.1",
+          "sentence": "**2.1** Check A1: read principle #8 at its own text and report it verbatim with its number."
+        },
+        {
+          "file": "cc_instruction_reads_5.md",
+          "line": 73,
+          "rule": "D-431 bare quantity",
+          "detail": "2.3",
+          "sentence": "**2.3** Make `cowork_l1l3_stabilization_plan.md` **point at it** rather than restate it, and re-take"
+        },
+        {
+          "file": "cc_instruction_reads_5.md",
+          "line": 76,
+          "rule": "D-431 bare quantity",
+          "detail": "2.4",
+          "sentence": "**2.4** Record the reason at the principle, briefly: the fuller statement was the one being applied in"
+        },
+        {
+          "file": "cc_instruction_reads_5.md",
+          "line": 91,
+          "rule": "D-431 bare quantity",
+          "detail": "4.1",
+          "sentence": "**4.1** Write the three delegations from the drafted wordings in the write list —"
+        },
+        {
+          "file": "cc_instruction_reads_5.md",
+          "line": 99,
+          "rule": "D-431 bare quantity",
+          "detail": "4.2",
+          "sentence": "**4.2** The other two are **not written**."
+        },
+        {
+          "file": "cc_instruction_reads_5.md",
+          "line": 112,
+          "rule": "D-431 bare quantity",
+          "detail": "5.1",
+          "sentence": "**5.1 Check A2 at the generator**: does the packer use an estimate built from length? **If it does"
+        },
+        {
+          "file": "cc_instruction_reads_5.md",
+          "line": 116,
+          "rule": "D-431 bare quantity",
+          "detail": "5.2",
+          "sentence": "**5.2** Re-pack so that **a wave spans length terciles** rather than falling inside one."
+        },
+        {
+          "file": "cc_instruction_reads_5.md",
+          "line": 119,
+          "rule": "D-431 bare quantity",
+          "detail": "5.3",
+          "sentence": "**5.3 Re-register the predicted bands for the re-packed waves BEFORE any of them is read** (#17b)."
+        },
+        {
+          "file": "cc_instruction_reads_5.md",
+          "line": 123,
+          "rule": "D-431 bare quantity",
+          "detail": "5.4",
+          "sentence": "**5.4** Record, in the regime artifact, **why** the re-pack happened: the proxy could not be tested"
+        },
+        {
+          "file": "cc_instruction_reads_5.md",
+          "line": 147,
+          "rule": "D-431 bare quantity",
+          "detail": "two documents, 4.2",
+          "sentence": "**A1 or A2 coming back different is reportable, and A2 is a STOP.** **Task 4.2 leaving two documents"
+        }
+      ]
+    }
+  },
+  "clean_files": [],
+  "establishment": "tools/audit/process_check_establishment.json — the check's measured detection power and false-positive rate. Read it before reading a count here as coverage."
+}

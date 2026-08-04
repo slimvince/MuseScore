@@ -1,0 +1,569 @@
+{
+  "header": {
+    "purpose": "READ WAVE 6's measured yield — the LAST owed wave — against the bands re-registered for the re-packed wave before it was read, per `reads5_repack.json`.",
+    "generator": "tools/audit/decisions/gen_reads6_yield.py",
+    "wave": "reads-6",
+    "dispatch": "cc_instruction_reads_6.md",
+    "authored_inputs": [
+      "WAVE_READS",
+      "LOW_YIELD_REASON",
+      "BAND_OBSERVATION",
+      "WHAT_SEPARATED_THEM",
+      "WAVE6_NOTE",
+      "THE_LAST_WAVE_NOTE"
+    ],
+    "derived_from": [
+      "reads5_repack.json (the re-packed grouping and every re-registered band, itself read verbatim off the regime)",
+      "phase1n_reading_regime.json (the partition facts only)",
+      "reads1..reads5_yield.json (the earlier read counts, and wave 5's own discriminating test, read off that artifact rather than restated)",
+      "backbone_decisions.json (every home, status, class and title)"
+    ],
+    "why_the_regime_artifact_is_not_regenerated": "Unchanged from waves 1-5: OI-316 (the update protocol cannot be followed without refitting the registered bands on the data being graded, #20) and OI-328 (a measured, sharper instance — re-running the generator flips the ordering key, because a candidate proxy counts namings in user-ratified surfaces and the register's own homing work increments it for documents whose yield is already known).",
+    "note_on_this_wave": "This wave's read half again ran after a substantial ruling half — a 28-entry ratification, a pointer written into the governing document's principle #8, a duplicate register entry resolved, a delegation written and one deliberately not written, and the guard population classified per tool. The wave-6 grouping was nonetheless taken ENTIRE, which it had to be: it is the whole remainder.",
+    "note_on_this_being_the_last_wave": "THIS IS THE LAST OWED WAVE. `reads5_repack.json` -> `the_remainder` groups the entire remaining owed set into waves 5 and 6, and wave 5 read its whole packing. So `still_owed_a_full_read` below is the programme's own answer to whether the owed set is empty, derived here rather than asserted — and it is derived the same way every wave since the first has derived it, from the regime's partition plus each completed wave's own count, because the regime artifact cannot be updated (OI-316, OI-328)."
+  },
+  "counts": {
+    "documents_read_in_full_this_wave": 13,
+    "documents_the_repack_grouped_into_wave_6": 13,
+    "register_entries_produced": 27,
+    "entries_homed_in_the_document_read": 26,
+    "entries_homed_in_the_owning_specification_instead": 1,
+    "entries_marked_legacy_subject": 0,
+    "entries_classed_process": 10,
+    "documents_yielding_zero": 0
+  },
+  "the_running_read_count": {
+    "design_document_surface": 143,
+    "user_accepted_exclusions_not_read": 41,
+    "read_in_full_before_this_wave": 89,
+    "read_in_full_after_this_wave": 102,
+    "still_owed_a_full_read": 0,
+    "the_owed_set_is_empty": true,
+    "note": "Derived here from the regime's own partition plus the five earlier waves' counts, because the regime artifact's own `partition.read_in_full` and `owed_a_full_read` cannot be updated without refitting the registered bands (OI-316) and cannot be updated at all without flipping the ordering key (OI-328). A reader comparing this block with the regime artifact will find them disagreeing BY DESIGN; this block is the current one."
+  },
+  "the_out_of_sample_test": {
+    "documents_inside_their_registered_band": 13,
+    "documents_outside_their_registered_band": 0,
+    "above_the_point_prediction": 8,
+    "below_the_point_prediction": 5,
+    "length_terciles_represented_in_this_wave": [
+      "medium",
+      "short"
+    ],
+    "what_the_band_test_is_worth": "Unchanged from waves 1-5: EVERY registered band has a minimum of 0, so `inside_the_registered_band` is close to unfalsifiable and a pass on it establishes almost nothing. The informative comparison is below.",
+    "what_wave_6_adds": "THE SECOND REAL TEST, AND IT AGREES WITH THE FIRST — which is worth exactly what two observations are worth and no more. Wave 5 was the first wave that could form the discriminating comparison at all, after ruling R5 re-packed the remainder to span terciles; this is the second and last. `the_discriminating_test` below is the informative result. The band pass beside it is NOT, for the reason every wave since the first has restated: every registered band has a minimum of 0, so a band running from 0 to its tercile maximum can only be missed by a document out-yielding every document of its tercile ever. THE SAME TWO LIMITS AS WAVE 5 STILL BIND: only two of the three terciles were still owed at the re-pack, because every long-tercile document was read in waves 1-4 under the length-descending ordering, so the comparison spans two ADJACENT bands rather than the proxy's range; and two waves are two observations, not a trend. The proxy is NOT validated by this wave and nothing rests on it (#17d).",
+    "what_separated_the_documents": "What separated the documents, stated as an observation and NOT as a re-fit — and it is the same thing wave 5 named, now visible in a population that includes three near-zero cases. The yield tracks ABSORPTION, not size. The highest-yielding document of this wave is a superseded architecture proposal whose MEASURED facts no successor carries — the signature's measured pin-wrong rate, the three reading-shaped producers' error rates — so its content was never absorbed anywhere. The lowest are documents whose content was read INTO something else and is already registered from there: an audit whose findings became the entry-gate rows, a premise-gate document that is a prediction rather than a decision, and a gate-policy proposal that was ratified into the governing document. A document that has been absorbed yields the residue its absorbing home does not carry; one that has not yields its whole content. Length predicts this only insofar as it correlates with it."
+  },
+  "the_discriminating_test": {
+    "what_it_is": "The comparison the re-pack exists to make possible, registered before this wave read anything: within ONE wave, do the documents of the longer length tercile out-yield the documents of the shorter one, in the order their registered point predictions assert?",
+    "per_tercile": {
+      "medium": {
+        "documents": 5,
+        "predicted_point": 4.83,
+        "measured_mean": 2.6,
+        "measured_min": 1,
+        "measured_max": 4,
+        "measured_yields": [
+          4,
+          3,
+          3,
+          2,
+          1
+        ]
+      },
+      "short": {
+        "documents": 8,
+        "predicted_point": 0.83,
+        "measured_mean": 1.75,
+        "measured_min": 1,
+        "measured_max": 2,
+        "measured_yields": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1,
+          1
+        ]
+      }
+    },
+    "predicted_order_high_to_low": [
+      "medium",
+      "short"
+    ],
+    "measured_order_high_to_low": [
+      "medium",
+      "short"
+    ],
+    "the_predicted_ordering_holds": true,
+    "the_second_observation_against_the_first": {
+      "wave_5_ordering_held": true,
+      "wave_5_per_tercile": {
+        "medium": {
+          "documents": 5,
+          "predicted_point": 4.83,
+          "measured_mean": 2.8,
+          "measured_min": 2,
+          "measured_max": 5,
+          "measured_yields": [
+            5,
+            3,
+            2,
+            2,
+            2
+          ]
+        },
+        "short": {
+          "documents": 9,
+          "predicted_point": 0.83,
+          "measured_mean": 1.56,
+          "measured_min": 1,
+          "measured_max": 3,
+          "measured_yields": [
+            3,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "how_to_read_the_pair": "Wave 5 found the predicted ORDER holding and BOTH MAGNITUDES wrong in OPPOSITE directions — the longer tercile below its registered point, the shorter above its own, so the measured means far closer together than the predictions. Compare the two `per_tercile` blocks directly rather than through any restatement here. WHATEVER THE AGREEMENT, THE PROXY IS NOT DESCRIBED AS VALIDATED: two observations of one comparison, both confined to the two adjacent terciles that remained owed, cannot establish a correlation whose 95 % interval on 36 documents already spanned most of the positive range (#24). It is registered as it was and unvalidated (#17d)."
+    },
+    "what_a_failure_would_mean": "A result, not a defect. The proxy stays registered as it was and unvalidated either way; nothing is re-fitted and the registered bands stand exactly as registered (#20).",
+    "the_two_limits_on_what_this_establishes": "ONE: only two of the three length terciles were still owed at the re-pack, because every long-tercile document was read in waves 1-4 under the length-descending ordering — so the comparison spans two ADJACENT bands, not the proxy's range. TWO: this is the second and LAST wave, so the comparison has two observations and will get no more from this programme."
+  },
+  "rows": [
+    {
+      "document": "cowork_union_search_record.md",
+      "reading_order": 41,
+      "lines": 156,
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 3,
+      "of_which_homed_in_this_document": 3,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "of_which_process_class": 1,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "below",
+      "entries": [
+        {
+          "id": "D-612",
+          "home": "cowork_union_search_record.md:16-18",
+          "status": "live",
+          "title": "The corpus-search convention: a NEGATIVE is recorded so it is never re-searched, and every claim is RE-VERIFIED at acquisition rather than trusted from the search"
+        },
+        {
+          "id": "D-613",
+          "home": "cowork_union_search_record.md:32-36",
+          "status": "live",
+          "title": "Ground truth for IMPLIED polyphony is confirmed ABSENT — and the voice labels that do exist come from engraved notation, which must be said at intake"
+        },
+        {
+          "id": "D-614",
+          "home": "cowork_union_search_record.md:87-90",
+          "status": "live",
+          "title": "Every real difficulty-grade label source is research-only or proprietary at origin — a commercial grading feature needs a licence path or its own labels"
+        }
+      ]
+    },
+    {
+      "document": "cowork_l1_l5_premise_debt_audit.md",
+      "reading_order": 43,
+      "lines": 143,
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 1,
+      "of_which_homed_in_this_document": 1,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "of_which_process_class": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "below",
+      "entries": [
+        {
+          "id": "D-615",
+          "home": "cowork_l1_l5_premise_debt_audit.md:63-67",
+          "status": "live",
+          "title": "Under #19 the validation basis of every Iter-era hand-set scoring magnitude is retroactively VOID — the values are unfalsified, not established"
+        }
+      ],
+      "low_yield_reason": "One entry from a 143-line audit, and the reason is ABSORPTION of the sharpest kind: this audit's own findings BECAME the Stage-3 entry gate. Its Tier-1 traps are `OPEN_ITEMS.md` OI-1 through OI-5 and its Tier-3 holes are OI-5 through OI-7 — every one already rowed, with the arc plan amended to carry the gate. What no row carries as a standing consequence is the Tier-2 statement: under #19 the validation basis of the hand-set scoring magnitudes is retroactively void."
+    },
+    {
+      "document": "docs/stage4c_cadence_key_design.md",
+      "reading_order": 45,
+      "lines": 141,
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 2,
+      "of_which_homed_in_this_document": 2,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "of_which_process_class": 1,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "below",
+      "entries": [
+        {
+          "id": "D-616",
+          "home": "docs/stage4c_cadence_key_design.md:62-70",
+          "status": "live",
+          "title": "A global tonic anchor enters key scoring at RESOLVER/SECTION scope — never as one more local term inside the window scorer, which is what re-enters the coupling that defeated the local levers"
+        },
+        {
+          "id": "D-617",
+          "home": "docs/stage4c_cadence_key_design.md:26-31",
+          "status": "live",
+          "title": "A perfect-detection CEILING is never banked — the realized fraction is measured before the mechanism is wired into production scoring"
+        }
+      ]
+    },
+    {
+      "document": "docs/architecture_joint_inference.md",
+      "reading_order": 47,
+      "lines": 136,
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 4,
+      "of_which_homed_in_this_document": 4,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "of_which_process_class": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "below",
+      "entries": [
+        {
+          "id": "D-618",
+          "home": "docs/architecture_joint_inference.md:45-51",
+          "status": "live",
+          "title": "The notated key signature is NOT a hard fact — its fifths were measured to pin wrong about one time in six, so the home key is note-derived and never signature-pinned"
+        },
+        {
+          "id": "D-619",
+          "home": "docs/architecture_joint_inference.md:83-89",
+          "status": "live",
+          "title": "Over-claiming a constraint as HARD re-creates the override failure in reverse — and a sounding note is not automatically a chord tone"
+        },
+        {
+          "id": "D-620",
+          "home": "docs/architecture_joint_inference.md:16-17",
+          "status": "live",
+          "title": "The reading-shaped evidence producers were each measured to pin WRONG and must stay SOFT — a cadence anchor, a modulation detector and a bass-is-root rule are scores, never constraints"
+        },
+        {
+          "id": "D-621",
+          "home": "docs/architecture_joint_inference.md:100-105",
+          "status": "live",
+          "title": "Hand-built versus learned is a question about the EMISSION alone — the decoding structure is decided and accommodates either"
+        }
+      ]
+    },
+    {
+      "document": "cowork_layer3_reachback_design.md",
+      "reading_order": 49,
+      "lines": 131,
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 3,
+      "of_which_homed_in_this_document": 3,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "of_which_process_class": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "below",
+      "entries": [
+        {
+          "id": "D-622",
+          "home": "cowork_layer3_reachback_design.md:76-82",
+          "status": "live",
+          "title": "The reach-back convergence PROXY was measured FALSE and dropped — the as-built tracks the leading-edge key itself and stops when it stops changing"
+        },
+        {
+          "id": "D-623",
+          "home": "cowork_layer3_reachback_design.md:29-34",
+          "status": "live",
+          "title": "A selection-aware capability is a PARAMETER on the one orchestrator, never a sibling — the capability must not duplicate the orchestration"
+        },
+        {
+          "id": "D-624",
+          "home": "cowork_layer3_reachback_design.md:83-84",
+          "status": "live",
+          "title": "The hard bound and the score start are SAFETY CAPS for a loop that never settles — never the amount of context a layer needs"
+        }
+      ]
+    },
+    {
+      "document": "cowork_tpc_capability_design.md",
+      "reading_order": 51,
+      "lines": 130,
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield": 2,
+      "of_which_homed_in_this_document": 2,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "of_which_process_class": 1,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "above",
+      "entries": [
+        {
+          "id": "D-625",
+          "home": "cowork_tpc_capability_design.md:39-43",
+          "status": "live",
+          "title": "Spelling presence is tested with the validity predicate, never with a non-negative test — the flat side of the line of fifths is negative and a non-negative guard silently drops it"
+        },
+        {
+          "id": "D-626",
+          "home": "cowork_tpc_capability_design.md:53-58",
+          "status": "live",
+          "title": "A scoring term lands together with its tuning — a dormant weight-zero term is code with no effect and no test that exercises its effect"
+        }
+      ]
+    },
+    {
+      "document": "cowork_layer1_extend_design.md",
+      "reading_order": 53,
+      "lines": 127,
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield": 2,
+      "of_which_homed_in_this_document": 2,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "of_which_process_class": 1,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "above",
+      "entries": [
+        {
+          "id": "D-627",
+          "home": "cowork_layer1_extend_design.md:50-60",
+          "status": "live",
+          "title": "The CONTRACT ships first behind a correct byte-identical interim; the efficiency is a separate deferred step that never blocks the layers above it"
+        },
+        {
+          "id": "D-628",
+          "home": "cowork_layer1_extend_design.md:32-34",
+          "status": "live",
+          "title": "The finest meaningful extension step is the change-point — within a slice the sounding set is constant, so a finer request loads no note and changes no answer"
+        }
+      ]
+    },
+    {
+      "document": "cowork_uncertain_resolver_investigation.md",
+      "reading_order": 55,
+      "lines": 122,
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield": 2,
+      "of_which_homed_in_this_document": 2,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "of_which_process_class": 1,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "above",
+      "entries": [
+        {
+          "id": "D-629",
+          "home": "cowork_uncertain_resolver_investigation.md:96-102",
+          "status": "live",
+          "title": "The resolver of carried uncertain readings IS the function layer itself — there is no distinct gated box between the note layers and it"
+        },
+        {
+          "id": "D-630",
+          "home": "cowork_uncertain_resolver_investigation.md:31-33",
+          "status": "live",
+          "title": "Minimality sets the default and the burden — do not add a component; a new one is earned only by exhibiting a residual class a separable criterion resolves"
+        }
+      ]
+    },
+    {
+      "document": "cowork_layer2_reslice_design.md",
+      "reading_order": 57,
+      "lines": 116,
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield": 2,
+      "of_which_homed_in_this_document": 2,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "of_which_process_class": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "above",
+      "entries": [
+        {
+          "id": "D-631",
+          "home": "cowork_layer2_reslice_design.md:55-65",
+          "status": "live",
+          "title": "The boundary at the loaded edge is ARTIFICIAL and vanishes on extension — so the edge slice grows, and an old-slices-byte-identical assertion is false and must not be written as a test"
+        },
+        {
+          "id": "D-632",
+          "home": "cowork_layer2_reslice_design.md:83-90",
+          "status": "live",
+          "title": "The slice stays minimal — no in-selection-or-context tag; the consumer derives it, because the slicer owns no selection semantics"
+        }
+      ]
+    },
+    {
+      "document": "cowork_key_mode_inference_diagnosis.md",
+      "reading_order": 59,
+      "lines": 111,
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield": 1,
+      "of_which_homed_in_this_document": 1,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "of_which_process_class": 1,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "above",
+      "entries": [
+        {
+          "id": "D-633",
+          "home": "cowork_key_mode_inference_diagnosis.md:87-94",
+          "status": "live",
+          "title": "A cause-classifier is established BEFORE its results are read — its totals must reconcile exactly with the established agreement column, and every failing run gets exactly one cause from a closed list"
+        }
+      ],
+      "low_yield_reason": "One entry from a document that is a registered PREDICTION rather than a decision surface — six candidate causes, each with a written quantitative range recorded before anything was measured (#17b), which is what it was written to be. A prediction is not a decision, and its facts are already registered from their own homes. The residue is the one clause that binds any future diagnostic of the same shape: establish the classifier against the established column before reading its results."
+    },
+    {
+      "document": "cowork_delta_check_dispositions.md",
+      "reading_order": 61,
+      "lines": 97,
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield": 2,
+      "of_which_homed_in_this_document": 2,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "of_which_process_class": 1,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "above",
+      "entries": [
+        {
+          "id": "D-634",
+          "home": "cowork_delta_check_dispositions.md:21-25",
+          "status": "live",
+          "title": "Where the specification and the code diverge on a music-theoretic question, THE SPECIFICATION IS THE CORRECT REFERENCE and the code goes on the build backlog"
+        },
+        {
+          "id": "D-635",
+          "home": "cowork_delta_check_dispositions.md:74-83",
+          "status": "live",
+          "title": "Reach-back is a REAL product requirement, currently MASKED by the whole-score load — it must land WITH selection-based loading or selection-edge key inference breaks"
+        }
+      ]
+    },
+    {
+      "document": "cowork_phase5b_l4_build_plan.md",
+      "reading_order": 63,
+      "lines": 84,
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield": 2,
+      "of_which_homed_in_this_document": 2,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "of_which_process_class": 2,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "above",
+      "entries": [
+        {
+          "id": "D-636",
+          "home": "cowork_phase5b_l4_build_plan.md:8-10",
+          "status": "live",
+          "title": "The per-step build method: INVESTIGATE, BUILD, VERIFY, ASSESS-FOR-AMENDMENT — no step starts before the prior step's assessment, and a surprise pauses the sequence"
+        },
+        {
+          "id": "D-637",
+          "home": "cowork_phase5b_l4_build_plan.md:18-21",
+          "status": "live",
+          "title": "Engaging a different DECOMPOSITION will move the corpus output — that movement is the gated behaviour change, not a byte-identity violation"
+        }
+      ]
+    },
+    {
+      "document": "cowork_gate_policy_amendment.md",
+      "reading_order": 65,
+      "lines": 68,
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield": 1,
+      "of_which_homed_in_this_document": 0,
+      "of_which_homed_in_the_owning_specification": 1,
+      "of_which_legacy_subject": 0,
+      "of_which_process_class": 1,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "above",
+      "entries": [
+        {
+          "id": "D-638",
+          "home": "CLAUDE.md:696-698",
+          "status": "live",
+          "title": "The symmetric-rotation churn is a chord-layer root ambiguity SURFACED, not caused, by a key change — the proper fix is spelling-aware root selection, never a key-layer change"
+        }
+      ],
+      "low_yield_reason": "One entry from the shortest document in the wave, and it is the most absorbed document the programme has read: the amendment it proposes was RATIFIED and folded into `CLAUDE.md`'s gate block, where **D-191** carries it. The residue is the root-cause attribution clause D-191's verbatim does not include — and it is entered at `CLAUDE.md`, the surface that owns the rule, not at the proposal."
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "purpose": "A run of tools/audit/process_check.py over named dispatches or reports. Generated so a report cites this file rather than transcribing what the check found (D-431).",
+  "rules": [
+    "D-431 bare quantity",
+    "D-431 uncited code claim",
+    "D-434 missing self-check section"
+  ],
+  "files_scanned": [
+    "cc_instruction_phase1_delegations_and_corrections.md"
+  ],
+  "findings_total": 12,
+  "by_file": {
+    "cc_instruction_phase1_delegations_and_corrections.md": {
+      "findings": 12,
+      "rows": [
+        {
+          "file": "cc_instruction_phase1_delegations_and_corrections.md",
+          "line": 17,
+          "rule": "D-431 uncited code claim",
+          "detail": "dormant",
+          "sentence": "\"as-built\" banner over a dormant mechanism, yes; a missing supersession note on a superseded plan,"
+        },
+        {
+          "file": "cc_instruction_phase1_delegations_and_corrections.md",
+          "line": 50,
+          "rule": "D-431 bare quantity",
+          "detail": "1.1",
+          "sentence": "from F1 and F3 together and **has not read the generator**. → **Task 1.1**."
+        },
+        {
+          "file": "cc_instruction_phase1_delegations_and_corrections.md",
+          "line": 52,
+          "rule": "D-431 bare quantity",
+          "detail": "1.2",
+          "sentence": "three at the file (F2); the rest come from wave reports.** → **Task 1.2**, per document."
+        },
+        {
+          "file": "cc_instruction_phase1_delegations_and_corrections.md",
+          "line": 56,
+          "rule": "D-431 bare quantity",
+          "detail": "1.1",
+          "sentence": "**1.1** Check A1 at the generator and report how the figure was produced."
+        },
+        {
+          "file": "cc_instruction_phase1_delegations_and_corrections.md",
+          "line": 58,
+          "rule": "D-431 bare quantity",
+          "detail": "1.2",
+          "sentence": "**1.2** Check A2 **per document**: for each write-list member, does a delegation exist at HEAD, and"
+        },
+        {
+          "file": "cc_instruction_phase1_delegations_and_corrections.md",
+          "line": 64,
+          "rule": "D-431 bare quantity",
+          "detail": "1.3",
+          "sentence": "**1.3** Then **derive, from the delegation grades and home data at HEAD**, which documents still lose"
+        },
+        {
+          "file": "cc_instruction_phase1_delegations_and_corrections.md",
+          "line": 68,
+          "rule": "D-431 bare quantity",
+          "detail": "1.4",
+          "sentence": "**1.4 Row the stale figure.** A recorded finding that is never marked discharged produced a count of"
+        },
+        {
+          "file": "cc_instruction_phase1_delegations_and_corrections.md",
+          "line": 89,
+          "rule": "D-431 bare quantity",
+          "detail": "3.2",
+          "sentence": "**3.2 Establish the snapshot as faithful BEFORE the destructive run** — verify it reproduces what the"
+        },
+        {
+          "file": "cc_instruction_phase1_delegations_and_corrections.md",
+          "line": 93,
+          "rule": "D-431 bare quantity",
+          "detail": "3.3",
+          "sentence": "**3.3** Run the apply mode."
+        },
+        {
+          "file": "cc_instruction_phase1_delegations_and_corrections.md",
+          "line": 109,
+          "rule": "D-431 bare quantity",
+          "detail": "1.4",
+          "sentence": "none beyond Tasks 1.4 and 3 where they are licensed**."
+        },
+        {
+          "file": "cc_instruction_phase1_delegations_and_corrections.md",
+          "line": 115,
+          "rule": "D-431 bare quantity",
+          "detail": "1.3",
+          "sentence": "**Task 1.3 finding the real population EMPTY is a result** — it would mean the delegation work is done"
+        },
+        {
+          "file": "cc_instruction_phase1_delegations_and_corrections.md",
+          "line": 117,
+          "rule": "D-431 bare quantity",
+          "detail": "3.2",
+          "sentence": "**Task 3.2 failing is a STOP**, and the applier does not run."
+        }
+      ]
+    }
+  },
+  "clean_files": [],
+  "establishment": "tools/audit/process_check_establishment.json — the check's measured detection power and false-positive rate. Read it before reading a count here as coverage."
+}

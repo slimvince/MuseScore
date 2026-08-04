@@ -148,13 +148,24 @@ def descendants(headings: list[tuple[int, int, str]], head_line: int) -> set[int
 
 
 # ── the pass ────────────────────────────────────────────────────────────────
+def home_population(backbone: dict) -> list[dict]:
+    """The entries the home-class criteria reach — the ONE definition of that population.
+
+    `process`, `project-convention` and `unhomed` entries, and every entry homed in a layer
+    specification, are outside it (the register's own `home_rule`).  Factored out so a reader
+    of the population — `gen_outstanding_delegations.py` — imports it rather than restating
+    the predicate (#6).
+    """
+    return [d for d in backbone["decisions"]
+            if not d.get("home_is_layer_spec")
+            and d.get("nonspec_kind") in ("contract-home", "gap")]
+
+
 def classify(backbone: dict) -> tuple[list[dict], list[dict]]:
     crit = backbone["section_home_criterion"]
     authored = crit["documents"]
 
-    population = [d for d in backbone["decisions"]
-                  if not d.get("home_is_layer_spec")
-                  and d.get("nonspec_kind") in ("contract-home", "gap")]
+    population = home_population(backbone)
 
     docs = sorted({d["home"].split(":")[0].replace("\\", "/") for d in population})
     missing = [x for x in docs if x not in authored]

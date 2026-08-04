@@ -69,6 +69,18 @@
 > preceding wave, and the riders this wave's dispatch ordered — D-492 marked a phase-3 fix-plan input
 > with the reachability of its subject checked at the code, and the D-474/D-475 consequences recorded
 > at principle #21 and on `OPEN_ITEMS.md` OI-179.
+> **Thirteenth ratification event, 2026-08-04:** the 37 READ WAVE 4 entries (D-547…D-583), ratified AS
+> DRAFTED with the statuses exactly as the record states them. The four entered **SUPERSEDED IN FACT**
+> (D-571, D-572, D-575, D-579) **stay superseded** — the ruling was explicit that they are not entered
+> LIVE and rowed for correction later, because a build that replaced what a decision governed is a fact
+> about the record and not a defect in it. **THIS EVENT SKIPS D-502…D-546, AND THE SKIP IS STATED
+> RATHER THAN LEFT TO BE INFERRED FROM THE RANGE:** the READ WAVE 3 entries and the OI-326 ruling entry
+> carry no entry ratification in their own provenance and none is recorded here, because the ruling this
+> event records names D-547…D-583 and a session may not widen a ratification to a neighbouring range.
+> Landing in the same commit and **not** entry ratifications: the build-it-right rule was widened and
+> homed at `CLAUDE.md` principle #8 (D-557 re-taken at its new home, the former verbatim preserved in
+> its provenance), D-576's caveat was recorded beside the figures it qualifies in gate block (A), and
+> three delegations were written into `ARCHITECTURE.md` on the user's ruling (`OPEN_ITEMS.md` OI-327).
 >
 > **From 2026-08-03 each entry carries its own ratification as a FIELD**, not only as prose inside
 > the provenance — see *Entry ratified* below. It is backfilled mechanically from the provenance
@@ -193,30 +205,30 @@ project's own and are defined here because they are used before any entry explai
 
 ## What is in this register, counted
 
-**545 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
+**640 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
 
 | | Count |
 |---|---|
-| Decisions recorded | **545** |
-| — of which live | 463 |
-| — of which superseded in fact | 7 |
-| — of which superseded by | 9 |
-| — of which deferred | 50 |
-| — of which shelved with evidence | 2 |
-| Decisions whose date is not stated in the record | 225 |
-| Decisions whose ratifier is not stated in the record | 311 |
-| Decisions recorded outside the specification that owns them | 341 |
-| — of which a documentation gap | 134 |
+| Decisions recorded | **640** |
+| — of which live | 551 |
+| — of which superseded in fact | 11 |
+| — of which superseded by | 10 |
+| — of which deferred | 51 |
+| — of which shelved with evidence | 3 |
+| Decisions whose date is not stated in the record | 239 |
+| Decisions whose ratifier is not stated in the record | 364 |
+| Decisions recorded outside the specification that owns them | 436 |
+| — of which a documentation gap | 150 |
 | — of which recorded only on a tracking surface, with no home at all | 11 |
-| — of which a project-wide convention, correctly homed | 35 |
-| — of which a decision about the process, correctly homed | 62 |
+| — of which a project-wide convention, correctly homed | 37 |
+| — of which a decision about the process, correctly homed | 99 |
 | Decisions whose defense the record does not state | 44 |
-| Entries whose own ratification the provenance records | 248 |
-| Entries whose home is recorded at SECTION granularity | 134 |
+| Entries whose own ratification the provenance records | 314 |
+| Entries whose home is recorded at SECTION granularity | 289 |
 
-The second-to-last row is about the DECISIONS; the last is about the ENTRIES. **248 of 545** entries carry a recorded event at which the entry itself — this quote, this restatement, this status — was reviewed and ratified. The remaining 297 do not carry one in their own provenance; the register-level ratification events listed in the preamble are the place to look for those, and nothing is inferred from them into the per-entry field.
+The second-to-last row is about the DECISIONS; the last is about the ENTRIES. **314 of 640** entries carry a recorded event at which the entry itself — this quote, this restatement, this status — was reviewed and ratified. The remaining 326 do not carry one in their own provenance; the register-level ratification events listed in the preamble are the place to look for those, and nothing is inferred from them into the per-entry field.
 
-That last row is the one meant to fall. **501 of 545** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
+That last row is the one meant to fall. **596 of 640** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
 
 Alongside the register, every one of the harvested statements about decisions in this repository has been given a recorded disposition, so that none was silently passed over:
 
@@ -249,11 +261,19 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 
 **Read in full.** ARCHITECTURE.md IN FULL (all 6,523 lines: the preamble, §1 Project Overview, §2 Architectural Principles, §3 Directory Structure including the Layer 1-6 specifications, §4 Existing Components, §5 Planned Analysis Extensions, §6 The Style System, §7 The Knowledge Base, §8 Planned Generation Components, §9 The Constraint System, §10 Visualization, §11 Intonation, §12 User Interface, §13 File Persistence, §14 ML Readiness, §15 Development Phases, §16 Scope Reference, §17 Coding Standards, §18 Contributing, §19 LLM Integration, and both appendices). Lines 1-3981 were read by the 2026-08-01 adjudication; §1 and §6-§19 plus the appendices by the 2026-08-01 completion pass. Also in full: CLAUDE.md (the guiding principles, the ratified corollaries, the gate and preset policy, the conventions, the local patches, the self-check). Targeted and cited: OPEN_ITEMS.md and its detail files, cowork_handoff.md, docs/scoring_model.md §8, DEFECT_TYPES.md, BUILD_AND_TEST.md, tools/REPRODUCIBILITY.md, cowork_confidence_contract.md, cowork_joint_estimator_factorization.md, cowork_design_doc_template.md.
 
-**Not read in full.** The per-layer and per-component design documents (cowork_layer*_design.md, cowork_progression_schema_dictionary.md, cowork_voiceleading_axis_design.md, cowork_bounded_context_design.md and their siblings), which ARCHITECTURE.md §doc-governance names as the authoritative DETAIL for their own scope; both archives (STATUS_ARCHIVE.md, cowork_handoff_archive.md); and the cc_* session reports. Each was opened where a specific citation required it and is not claimed to be swept.
+**Not read in full.** Both archives (STATUS_ARCHIVE.md, cowork_handoff_archive.md) and the cc_* session reports. Each was opened where a specific citation required it and is not claimed to be swept. ★ CORRECTED 2026-08-04: this sentence previously also named the per-layer and per-component design documents, and that half became false — the OI-207 reading programme read every one of them IN FULL, finishing with read wave 6 on 2026-08-04, and each document's yield is on the record. The enumeration, per document, is derived at `tools/audit/phase1_completion_inventory.json` -> `what_the_register_says_about_itself_that_is_no_longer_true.statement_1_not_read_in_full` and at `tools/audit/decisions/phase1n_reading_regime.json` plus the six `reads<n>_yield.json` artifacts; no list or count is restated here (D-431).
 
-**The remainder, measured.** The harvest holds 15,224 candidate statements, of which 241 are sourced to ARCHITECTURE.md - all 241 now fall inside the range read in full. 6,374 clusters carry the 'unresolved' disposition: statements the pass could not mechanically classify as either restating a register decision or not being a decision. Sampling shows that residual is genuinely mixed - real rulings, deferred designs and ordinary narrative in one population - so it bounds what this register may claim about the documents it did not read in full.
+**The remainder, measured.** The harvest holds 15,224 candidate statements, grouped into 14,460 groups of near-identical statements, and every one of those groups carries a recorded disposition, so none was silently passed over. 2,668 of them carry the 'unresolved' disposition: statements the pass could not mechanically classify as either restating a register decision or not being a decision. Sampling shows that residual is genuinely mixed — real rulings, deferred designs and ordinary narrative in one population. Every harvested statement sourced to `ARCHITECTURE.md` falls inside the range read in full, that file being read in full in its entirety (above). ★ TWO QUALIFICATIONS, and they bound what the unresolved figure may be read as. **It is the COMMITTED layer's figure**, derived at a backbone of 467 entries while this register now holds 640 — so every group that restates an entry entered since still reads 'unresolved', and the figure OVERSTATES what is unresolved at HEAD, in a known direction, by an amount only a re-derivation would give. **And the layer cannot be re-derived at HEAD** (`OPEN_ITEMS.md` OI-333), so no refreshed figure may be published and this one may not be called current. The residual is a bound on what this register may claim, not a measurement of what is unresolved today.
 
 *Why this is stated at all:* DEFECT_TYPES.md DT-26 — scope-assumed enumeration. A sweep that is complete inside its own file set reads as complete about the whole question. The scope and its measured remainder are therefore stated rather than left implicit.
+
+> **★ Corrections to this scope block, 2026-08-04.** User, 2026-08-04 (R3), dispatch `cc_instruction_phase1_delegations_and_corrections.md`: the three statements `OPEN_ITEMS.md` OI-334 records as false at HEAD are corrected, and the hand-carried residual figure is made COMPUTED rather than authored (#17f, D-431).
+>
+> - **'Not read in full'** — the design-document half was false: every per-layer and per-component design document the sentence named, literally and by glob, has since been read in full by the OI-207 reading programme. The sentence now names only what is genuinely not swept.
+> - **'The remainder, measured'** — the unresolved figure was HAND-CARRIED in an authored string that nothing regenerated, and it disagreed with the computed disposition table four sections above it in the same generated file. The field is now a TEMPLATE whose every figure the generator fills from the same computed data it renders that table from, and an unfilled placeholder stops the generator. Two qualifications the old wording did not carry are stated with it: the figure is the committed layer's, at a smaller backbone; and the layer cannot be re-derived at HEAD.
+> - **The home-granularity claim** — that every `contract-home` or `gap` entry carries a `home_section` block — was false of the entries the six read waves entered, whose only writer is `gen_home_classification.py`'s apply mode. It was NOT corrected in prose: the apply was RUN on 2026-08-04 under ruling R2, after the phase-1q record was snapshotted and the snapshot established, and the claim is true at HEAD. The check that measures it is `tools/audit/phase1_completion_inventory.json` -> `...statement_3_the_home_granularity_claim`, and it is computed rather than asserted.
+>
+> **Why the former wordings are preserved rather than replaced silently.** #12. Both sentences were true when written; what changed under them was the work — the reading programme finished, and the disposition layer moved when it was regenerated at the ratified backbone. A correction that erased them would lose the record of when the register's own scope claim stopped matching the register. Both are kept verbatim at `tools/audit/decisions/backbone_decisions.json` -> `header.scope.corrections_2026_08_04.former_wording_preserved_verbatim_12`.
 
 ---
 
@@ -283,22 +303,24 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-285 | Meta-finding: embellishment is chord-first, never a richer vocabulary - absorbed by the emission design and the ornament-label increment | SUPERSEDED BY the ratified factorization emission design (D-004 and the OI-194 increment) | — | `cowork_architecture_reassessment.md` §4 ⚠gap |
 | D-376 | The joint key-and-chord step was designed as a BOUNDED COUPLING over the two existing decoders, and the unified single-state alternative was REJECTED — the option later adopted as the production architecture | SHELVED WITH EVIDENCE ⚠LEGACY | 2026-08-02 · user | `cowork_joint_key_chord_design.md` “§1.1 The decision: a BOUNDED coupling step, NOT a unified `(key,chord)` hidden state” |
 | D-379 | Whether an alternative tonality would change the chord CANNOT be measured without re-deciding under it — the exact coupled-case condition is not computable read-only, which is why it stayed unmeasured | LIVE | 2026-08-02 · user | `cowork_joint_key_chord_design.md` “§3.1 The trigger, grounded in C3” |
-| D-449 | Factor granularity is fixed: the bass factor is evaluated per event, the missing-tone penalty per event of segment length, the emission per tone, and the boundary-family factors per boundary | LIVE | 2026-08-04 · user | `cowork_factorization_desk_simulation.md` ⚠gap |
-| D-450 | The key-signature and declared-mode prior conditions the INITIAL key state only, re-entering only at a notated signature change | LIVE | 2026-08-04 · user | `cowork_factorization_desk_simulation.md` ⚠gap |
-| D-451 | A desk simulation's table values are provisional, enter no fit, and a verdict that would flip inside a provisional value's plausible range is reported as a near-tie, never as a win | LIVE | 2026-08-04 · user | `cowork_factorization_desk_simulation.md` ⚠gap |
-| D-452 | Every desk-simulation trace runs at identity weights — the ratified ablation baseline — so the trace tests the structure and the tables, not the weighting | LIVE | 2026-08-04 · user | `cowork_factorization_desk_simulation.md` ⚠gap |
-| D-453 | The desk simulation's verdict: the ratified factorization passes nine of ten traces and no finding reopens the structure | LIVE | 2026-08-04 · user | `cowork_factorization_desk_simulation.md` ⚠gap |
-| D-524 | The joint state's mode axis is TWO modes — major and composite minor; modal and chromatic colour lives in the pitch emission, and the un-rounded reading is published | LIVE | — | `cowork_joint_estimator_architecture.md` ⚠gap |
-| D-525 | The fit is STAGED: the factor tables are counted from ground truth and frozen, and only a small vector of combination weights is fit discriminatively — with an all-weights-equal ablation arm that must be beaten | LIVE | — | `cowork_joint_estimator_architecture.md` ⚠gap |
-| D-526 | The joint state's chord axis is SCALE-DEGREE-VALUED — a Roman numeral relative to the state's own tonic and mode — and the chord symbol is a DERIVED fact published once | LIVE | — | `cowork_joint_estimator_architecture.md` ⚠gap |
-| D-527 | There is NO live non-chord-tone cleaning stage: each tone is emitted by category inside the one decode, conditioned on chord-independent melodic and metric covariates, and ornament labels are derived AFTER it | LIVE | — | `cowork_joint_estimator_architecture.md` ⚠gap |
-| D-528 | The key signature and declared mode enter as a WEAK FITTED SOFT PRIOR with no conditional gate anywhere — the probability calculus delivers 'consult it only when unsure', and the hard declared-mode wall is formally retired | LIVE | — | `cowork_joint_estimator_architecture.md` ⚠gap |
-| D-529 | The joint architecture's expected win is ASYMMETRIC — large on key and mode, modest on chord root — and the written predictions must say so, because a large root claim would itself be a surprise | LIVE | — | `cowork_joint_estimator_architecture.md` ⚠gap |
-| D-530 | The joint architecture is a CONSTRAINED optimum, not a global one: the learned shared-representation models measure better and are excluded because they are un-establishable and undiagnosable | LIVE | — | `cowork_joint_estimator_architecture.md` ⚠gap |
-| D-532 | The chord-transition table gains one pooling level that groups a secondary dominant's continuations by their RELATION to its target — restoring from counts the one behaviour that defines the chord class | LIVE | — | `cowork_sensitive_cell_probe.md` ⚠gap |
-| D-533 | A continuation too rare to have its own stored probability is scored by dividing the row's leftover in PROPORTION to each chord's overall frequency — never evenly, and never as impossible | LIVE | — | `cowork_sensitive_cell_probe.md` ⚠gap |
-| D-534 | The penalty for a chord tone that never sounds is COUNTED per chord factor — root, third, fifth, seventh — replacing one invented blanket number; the per-factor asymmetry then comes free | LIVE | — | `cowork_sensitive_cell_probe.md` ⚠gap |
-| D-535 | The checking stage's verdict: the real counted tables overturn no desk-simulation verdict, but margins moved in both directions and one margin expectation was plainly wrong | LIVE | — | `cowork_sensitive_cell_probe.md` ⚠gap |
+| D-449 | Factor granularity is fixed: the bass factor is evaluated per event, the missing-tone penalty per event of segment length, the emission per tone, and the boundary-family factors per boundary | LIVE | 2026-08-04 · user | `cowork_factorization_desk_simulation.md` §4 ⚠gap |
+| D-450 | The key-signature and declared-mode prior conditions the INITIAL key state only, re-entering only at a notated signature change | LIVE | 2026-08-04 · user | `cowork_factorization_desk_simulation.md` §4 ⚠gap |
+| D-451 | A desk simulation's table values are provisional, enter no fit, and a verdict that would flip inside a provisional value's plausible range is reported as a near-tie, never as a win | LIVE | 2026-08-04 · user | `cowork_factorization_desk_simulation.md` §0 ⚠gap |
+| D-452 | Every desk-simulation trace runs at identity weights — the ratified ablation baseline — so the trace tests the structure and the tables, not the weighting | LIVE | 2026-08-04 · user | `cowork_factorization_desk_simulation.md` §0 ⚠gap |
+| D-453 | The desk simulation's verdict: the ratified factorization passes nine of ten traces and no finding reopens the structure | LIVE | 2026-08-04 · user | `cowork_factorization_desk_simulation.md` §7 ⚠gap |
+| D-524 | The joint state's mode axis is TWO modes — major and composite minor; modal and chromatic colour lives in the pitch emission, and the un-rounded reading is published | LIVE | — | `cowork_joint_estimator_architecture.md` §5a |
+| D-525 | The fit is STAGED: the factor tables are counted from ground truth and frozen, and only a small vector of combination weights is fit discriminatively — with an all-weights-equal ablation arm that must be beaten | LIVE | — | `cowork_joint_estimator_architecture.md` §5a |
+| D-526 | The joint state's chord axis is SCALE-DEGREE-VALUED — a Roman numeral relative to the state's own tonic and mode — and the chord symbol is a DERIVED fact published once | LIVE | — | `cowork_joint_estimator_architecture.md` §5a |
+| D-527 | There is NO live non-chord-tone cleaning stage: each tone is emitted by category inside the one decode, conditioned on chord-independent melodic and metric covariates, and ornament labels are derived AFTER it | LIVE | — | `cowork_joint_estimator_architecture.md` §5a |
+| D-528 | The key signature and declared mode enter as a WEAK FITTED SOFT PRIOR with no conditional gate anywhere — the probability calculus delivers 'consult it only when unsure', and the hard declared-mode wall is formally retired | LIVE | — | `cowork_joint_estimator_architecture.md` §5a |
+| D-529 | The joint architecture's expected win is ASYMMETRIC — large on key and mode, modest on chord root — and the written predictions must say so, because a large root claim would itself be a surprise | LIVE | — | `cowork_joint_estimator_architecture.md` §6 ⚠gap |
+| D-530 | The joint architecture is a CONSTRAINED optimum, not a global one: the learned shared-representation models measure better and are excluded because they are un-establishable and undiagnosable | LIVE | — | `cowork_joint_estimator_architecture.md` §6 ⚠gap |
+| D-532 | The chord-transition table gains one pooling level that groups a secondary dominant's continuations by their RELATION to its target — restoring from counts the one behaviour that defines the chord class | LIVE | — | `cowork_sensitive_cell_probe.md` “Finding 1” ⚠gap |
+| D-533 | A continuation too rare to have its own stored probability is scored by dividing the row's leftover in PROPORTION to each chord's overall frequency — never evenly, and never as impossible | LIVE | — | `cowork_sensitive_cell_probe.md` “Finding 2. No document defines how to score a progression that sits inside a row's leftover probability.” ⚠gap |
+| D-534 | The penalty for a chord tone that never sounds is COUNTED per chord factor — root, third, fifth, seventh — replacing one invented blanket number; the per-factor asymmetry then comes free | LIVE | — | `cowork_sensitive_cell_probe.md` “Finding 3. The penalty for a chord tone that fails to sound is still a placeholder, not a counted value.” ⚠gap |
+| D-535 | The checking stage's verdict: the real counted tables overturn no desk-simulation verdict, but margins moved in both directions and one margin expectation was plainly wrong | LIVE | — | `cowork_sensitive_cell_probe.md` “For the record” ⚠gap |
+| D-565 | Exact score ties in the decode are real and are broken by a declared TOTAL ORDER on paths, implemented identically in every decoder — no epsilon, no platform dependence | LIVE | 2026-08-04 · user | `cowork_joint_estimator_factorization.md` §5 ⚠gap |
+| D-621 | Hand-built versus learned is a question about the EMISSION alone — the decoding structure is decided and accommodates either | LIVE | — | `docs/architecture_joint_inference.md` “§7” ⚠gap |
 
 ## B. The notation output surface and the record path — [full entries](decisions/group_B.md)
 
@@ -373,16 +395,34 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-422 | The jazz fit is deferred to the jazz ground-truth conversion; only the classical common-practice idiom is fitted now | DEFERRED | 2026-08-03 · user | `docs/implementation_roadmap.md` “Stage 5” ⚠gap |
 | D-466 | Forward-only is a strong DEFAULT, not dogma — a backward edge is admissible only as a deliberate, surfaced, measured, documented exception | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
 | D-468 | The pinned block-(A) instrument declares which inference arm its baselines were measured on, and refuses a corpus whose stamp disagrees | LIVE | — | `CLAUDE.md` |
-| D-474 | No published study reports per-axis inter-annotator agreement for Roman-numeral analysis of Baroque/classical symbolic music — the ground-truth ceiling principle #21 demands is unmeasured by the entire field | LIVE | 2026-08-04 · user | `cowork_term_theory_grounding.md` ⚠gap |
-| D-475 | The BCMH chorale annotations are NOT established as an instrument: the annotator is unknown, the annotations sit on a reduction, and they reached the repository through a machine translation | LIVE | 2026-08-04 · user | `cowork_term_theory_grounding.md` ⚠gap |
-| D-486 | A measurement publishes its coverage denominator and its per-corpus breakdown; a single aggregate number that hides which corpus moved is not reported | LIVE | 2026-08-04 · user | `docs/precision_metric_design.md` ⚠gap |
-| D-497 | RATIFIED AMENDMENT A-7: the empirically-unvalidated mark must be APPLIED to the Jazz preset constants and the unvalidated idioms, with the validation path named | LIVE | 2026-08-04 · user | `cowork_architecture_review_2026_07.md` ⚠gap |
-| D-500 | The user ratified CORPUS EXPANSION at the architecture review: gate-grade jazz ground truth, chromatic material of the Wagner class, and more non-Bach, non-Baroque annotation generally | LIVE | 2026-08-04 · user | `cowork_architecture_review_2026_07.md` ⚠gap |
-| D-521 | The general law of the circularity map: an abstract circle becomes acyclic in the concrete by one of four named conditions — and every alleged circle in this system fell to one of them | LIVE | — | `cowork_evidence_inventory.md` ⚠gap |
-| D-522 | Explaining an inference to the end user is a late-bound DISPLAY consumer of facts that already exist — not a new analysis | LIVE | — | `cowork_evidence_inventory.md` ⚠gap |
-| D-523 | If the algorithmic second opinion's LOCAL key is ever adopted it enters UNVALIDATED, and adopting it is a corroborator re-baseline under user ratification — not a refresh | DEFERRED | — | `cowork_evidence_inventory.md` ⚠gap |
-| D-531 | The hand-built emission is CONFIRMED and the learned replacement is NOT triggered — retained as an explicit fallback with a concrete trigger, and scoped to one repertoire with a named re-check gate | LIVE | — | `docs/back_half_design.md` ⚠gap |
-| D-539 | The standing method for every error slice: decompose it into structural, fitted and ceiling BEFORE building anything — derive, never assert | LIVE | — | `docs/back_half_design.md` ⚠gap |
+| D-474 | No published study reports per-axis inter-annotator agreement for Roman-numeral analysis of Baroque/classical symbolic music — the ground-truth ceiling principle #21 demands is unmeasured by the entire field | LIVE | 2026-08-04 · user | `cowork_term_theory_grounding.md` §2 ⚠gap |
+| D-475 | The BCMH chorale annotations are NOT established as an instrument: the annotator is unknown, the annotations sit on a reduction, and they reached the repository through a machine translation | LIVE | 2026-08-04 · user | `cowork_term_theory_grounding.md` §2 ⚠gap |
+| D-486 | A measurement publishes its coverage denominator and its per-corpus breakdown; a single aggregate number that hides which corpus moved is not reported | LIVE | 2026-08-04 · user | `docs/precision_metric_design.md` §3.3 ⚠gap |
+| D-497 | RATIFIED AMENDMENT A-7: the empirically-unvalidated mark must be APPLIED to the Jazz preset constants and the unvalidated idioms, with the validation path named | LIVE | 2026-08-04 · user | `cowork_architecture_review_2026_07.md` §9 ⚠gap |
+| D-500 | The user ratified CORPUS EXPANSION at the architecture review: gate-grade jazz ground truth, chromatic material of the Wagner class, and more non-Bach, non-Baroque annotation generally | LIVE | 2026-08-04 · user | `cowork_architecture_review_2026_07.md` the opening block (above the first section heading) ⚠gap |
+| D-521 | The general law of the circularity map: an abstract circle becomes acyclic in the concrete by one of four named conditions — and every alleged circle in this system fell to one of them | LIVE | — | `cowork_evidence_inventory.md` §8 ⚠gap |
+| D-522 | Explaining an inference to the end user is a late-bound DISPLAY consumer of facts that already exist — not a new analysis | LIVE | — | `cowork_evidence_inventory.md` §8b ⚠gap |
+| D-523 | If the algorithmic second opinion's LOCAL key is ever adopted it enters UNVALIDATED, and adopting it is a corroborator re-baseline under user ratification — not a refresh | DEFERRED | — | `cowork_evidence_inventory.md` §8c ⚠gap |
+| D-531 | The hand-built emission is CONFIRMED and the learned replacement is NOT triggered — retained as an explicit fallback with a concrete trigger, and scoped to one repertoire with a named re-check gate | LIVE | — | `docs/back_half_design.md` “§3” ⚠gap |
+| D-539 | The standing method for every error slice: decompose it into structural, fitted and ceiling BEFORE building anything — derive, never assert | LIVE | — | `docs/back_half_design.md` “§4” ⚠gap |
+| D-564 | Correction of record: the 'function-only' share of the legacy residual was overstated, because over-grabbed segmentation corrupts the BASS and not only the pitch-class window | LIVE ⚠LEGACY | 2026-08-04 · user | `cowork_eg2_scoping.md` “§5 Written predictions” ⚠gap |
+| D-568 | The two-track remedy: the chord axis is completed by hand-built rules, the key axis by soft-evidence quality and calibration — and NOT by a wider search on either | LIVE ⚠LEGACY | 2026-08-04 · user | `cowork_audit_obligation_map.md` “D. CROSS-CUTTING findings” ⚠gap |
+| D-576 | The corpus root-agreement measurement UNDERSTATES the real-world quality impact of a wrong key, because root and bass are largely key-independent | LIVE | 2026-08-04 · user | `CLAUDE.md` |
+| D-579 | The anchor obligation: compute the chord ONCE against its region's FINAL notes, with the tonality as an explicit input rather than frozen mid-pipeline | SUPERSEDED IN FACT ⚠LEGACY | 2026-08-04 · user | `cowork_phase2_architecture_review.md` “§5” ⚠gap |
+| D-581 | Information not yet consumed is NOT automatically a defect: every site is classified preserved-awaiting-consumer, lost, should-already, or unclear — and unclear is recorded for adjudication, never guessed | LIVE | 2026-08-04 · user | `cowork_information_loss_audit.md` “The central classification axis” ⚠gap |
+| D-582 | A collapse that is RECOMPUTABLE from what is kept is not information loss — not every collapse is a defect | LIVE | 2026-08-04 · user | `cowork_information_loss_audit.md` “Taxonomy coverage” ⚠gap |
+| D-600 | The quality-overwrite information-loss violation is TOLERATED until the gate-dissolution step and stays VISIBLE in the open-items register — tolerated is not forgotten | LIVE | 2026-08-04 · user | `cowork_adjudication_dossier.md` “Part A” ⚠gap |
+| D-601 | Before any constant that would make two differently-scaled confidences comparable is fitted, the premise that a fitted constant CAN do so must itself pass a premise ledger and a desk simulation | LIVE | 2026-08-04 · user | `cowork_adjudication_dossier.md` “Part A” ⚠gap |
+| D-604 | A defensible modal reading the major/minor ground truth cannot represent is a GROUND-TRUTH LIMITATION, not a defect to optimise away | LIVE | 2026-08-04 · user | `cowork_layer3_keymode_impl_design.md` “§4” ⚠gap |
+| D-608 | The symmetric-root spelling pin's entry premise was measured FALSE — it is unreachable because the scorer rarely chooses the diminished quality; the remedy is enumerated and NOT decided | LIVE | 2026-08-04 · user | `cowork_eg1_premise_checks.md` “PC-1” ⚠gap |
+| D-609 | The abstention rate rides on an arbitrary, never-fitted seed constant — a whole probe's metric-moving behaviour sat downstream of an unestablished value | LIVE | 2026-08-04 · user | `cowork_eg1_premise_checks.md` “PC-2” ⚠gap |
+| D-615 | Under #19 the validation basis of every Iter-era hand-set scoring magnitude is retroactively VOID — the values are unfalsified, not established | LIVE | — | `cowork_l1_l5_premise_debt_audit.md` “Tier 2” ⚠gap |
+| D-619 | Over-claiming a constraint as HARD re-creates the override failure in reverse — and a sounding note is not automatically a chord tone | LIVE | — | `docs/architecture_joint_inference.md` “§5” ⚠gap |
+| D-620 | The reading-shaped evidence producers were each measured to pin WRONG and must stay SOFT — a cadence anchor, a modulation detector and a bass-is-root rule are scores, never constraints | LIVE | — | `docs/architecture_joint_inference.md` the opening block (above the first section heading) ⚠gap |
+| D-624 | The hard bound and the score start are SAFETY CAPS for a loop that never settles — never the amount of context a layer needs | LIVE | — | `cowork_layer3_reachback_design.md` §3 ⚠gap |
+| D-628 | The finest meaningful extension step is the change-point — within a slice the sounding set is constant, so a finer request loads no note and changes no answer | LIVE | — | `cowork_layer1_extend_design.md` §2 ⚠gap |
+| D-630 | Minimality sets the default and the burden — do not add a component; a new one is earned only by exhibiting a residual class a separable criterion resolves | LIVE | — | `cowork_uncertain_resolver_investigation.md` |
+| D-635 | Reach-back is a REAL product requirement, currently MASKED by the whole-score load — it must land WITH selection-based loading or selection-edge key inference breaks | LIVE | — | `cowork_delta_check_dispositions.md` “L1” ⚠gap |
 
 ## D. Layer 1 — the note model — [full entries](decisions/group_D.md)
 
@@ -392,10 +432,16 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-038 | Tied notes are one event; spans are answered by overlap with no horizon | LIVE | — | `ARCHITECTURE.md` |
 | D-039 | Ineligible notes are kept and flagged, never dropped | LIVE | — | `ARCHITECTURE.md` |
 | D-040 | The tie-unresolved atoms are republished additively for the joint estimator | LIVE | — | `ARCHITECTURE.md` |
-| D-517 | The note model's span query uses a start-time-ordered list plus a running latest-end-time tree, chosen because it is the simplest structure that is fast AND returns notes in scan order | NOT STATED | — | `cowork_layer1_note_model_design.md` ⚠gap |
-| D-518 | The planned cue-note flag was specified and then REMOVED: after import a cue note cannot be told from a muted note, and the does-it-sound flag already covers both | NOT STATED | — | `cowork_layer1_note_model_design.md` ⚠gap |
-| D-519 | Only TIES join written notes into one sounding note — slurred notes stay separate, whatever their pitches | NOT STATED | — | `cowork_layer1_note_model_design.md` ⚠gap |
-| D-520 | Widening the loaded span was built DECOUPLED from the whole-score-read fix — superseding the recorded framing that the two were one coupled change | DEFERRED | — | `cowork_layer1_note_model_design.md` ⚠gap |
+| D-517 | The note model's span query uses a start-time-ordered list plus a running latest-end-time tree, chosen because it is the simplest structure that is fast AND returns notes in scan order | NOT STATED | — | `cowork_layer1_note_model_design.md` §9 |
+| D-518 | The planned cue-note flag was specified and then REMOVED: after import a cue note cannot be told from a muted note, and the does-it-sound flag already covers both | NOT STATED | — | `cowork_layer1_note_model_design.md` §13 ⚠gap |
+| D-519 | Only TIES join written notes into one sounding note — slurred notes stay separate, whatever their pitches | NOT STATED | — | `cowork_layer1_note_model_design.md` §1 |
+| D-520 | Widening the loaded span was built DECOUPLED from the whole-score-read fix — superseding the recorded framing that the two were one coupled change | DEFERRED | — | `cowork_layer1_note_model_design.md` §11 |
+| D-569 | Collecting, filtering and weighting are THREE separate responsibilities; the collection layer collects and annotates, and does nothing else | LIVE | 2026-08-04 · user | `cowork_layer1_tone_collection_design.md` the opening block (above the first section heading) ⚠gap |
+| D-570 | An upstream layer's correctness oracle is the SCORE, not the Roman-numeral ground truth | LIVE | 2026-08-04 · user | `cowork_layer1_tone_collection_design.md` “§5” ⚠gap |
+| D-594 | Bass-as-root promotion is SHELVED WITH EVIDENCE — the information that disambiguates the third-above reading is non-local, so no local discriminator can exist | SHELVED WITH EVIDENCE | 2026-08-04 · user | `docs/iter90_bass_as_root_promotion_shelved.md` “Why no local discriminator worked” ⚠gap |
+| D-595 | A chord-level change is not confined to the cases it fires on: chord identity drives boundary placement, so it produces downstream RE-SEGMENTATION artifacts in regions it never touched | LIVE | 2026-08-04 · user | `docs/iter90_bass_as_root_promotion_shelved.md` “Cascade-from-segmentation effect” ⚠gap |
+| D-606 | The binding metric for the modulation detector is modulation CORRECTNESS — explicitly not the agreement percentage, which the change under test can game | LIVE | 2026-08-04 · user | `docs/stage4d_local_modulation_design.md` “§5” ⚠gap |
+| D-625 | Spelling presence is tested with the validity predicate, never with a non-negative test — the flat side of the line of fifths is negative and a non-negative guard silently drops it | LIVE | — | `cowork_tpc_capability_design.md` §1 ⚠gap |
 
 ## E. Layer 2 — the slicer — [full entries](decisions/group_E.md)
 
@@ -411,8 +457,11 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-048 | Boundaries are necessary but not sufficient; over-grab is structurally impossible | LIVE | — | `ARCHITECTURE.md` |
 | D-049 | An interior stretch where everything rests is an explicit empty slice, not a gap | LIVE | — | `ARCHITECTURE.md` |
 | D-050 | Slicing is clipped to the loaded span and never drags outside it | LIVE | — | `ARCHITECTURE.md` |
-| D-540 | A slice is a unit of constant CONTENT, not of constant musical TIME — the layers above must never treat slices as equal-weight units, and a slice's metric extent is evidence weighted by metric structure, not by tempo | LIVE | — | `cowork_layer2_slicing_design.md` ⚠gap |
-| D-541 | The metric weight of a slice IS the beat-strength at its start tick, taken from one shared preference-free notation primitive that no consuming layer re-defines | LIVE | — | `cowork_layer2_slicing_design.md` ⚠gap |
+| D-540 | A slice is a unit of constant CONTENT, not of constant musical TIME — the layers above must never treat slices as equal-weight units, and a slice's metric extent is evidence weighted by metric structure, not by tempo | LIVE | — | `cowork_layer2_slicing_design.md` §8 |
+| D-541 | The metric weight of a slice IS the beat-strength at its start tick, taken from one shared preference-free notation primitive that no consuming layer re-defines | LIVE | — | `cowork_layer2_slicing_design.md` §8 |
+| D-605 | The local-key hypothesis derives from key-agnostic signals ONLY and never from the key-area grouping, which is a post-grouping of the resolved key — a hard design rule, not a preference | LIVE | 2026-08-04 · user | `docs/stage4d_local_modulation_design.md` “§3” ⚠gap |
+| D-631 | The boundary at the loaded edge is ARTIFICIAL and vanishes on extension — so the edge slice grows, and an old-slices-byte-identical assertion is false and must not be written as a test | LIVE | — | `cowork_layer2_reslice_design.md` §3 ⚠gap |
+| D-632 | The slice stays minimal — no in-selection-or-context tag; the consumer derives it, because the slicer owns no selection semantics | LIVE | — | `cowork_layer2_reslice_design.md` §5 ⚠gap |
 
 ## F. Layer 3 — key and mode — [full entries](decisions/group_F.md)
 
@@ -449,7 +498,19 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-357 | Reading the notated spelling as tonality evidence belongs at the function layer, where function gates it — NOT as a standalone key/mode emission patch | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_layer3_keymode_design.md` §15 |
 | D-358 | A sonority shaped like a dominant is note-level evidence for the tonality it implies, and belongs in the key/mode emission — deferred, design-first | DEFERRED ⚠LEGACY | 2026-08-02 · user | `cowork_layer3_keymode_design.md` §15 |
 | D-405 | The full ranked key resolve retained as a segmentation seed is KEPT — adjudicated load-bearing, not dead scoring work | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_structural_integrity_audit.md` §3.1 ⚠gap |
-| D-494 | RATIFIED AMENDMENT A-4: the function layer must gain key-confirmation channels that do not require a cadence, plus an enharmonic-identity rule for key spans | LIVE | 2026-08-04 · user | `cowork_architecture_review_2026_07.md` ⚠gap |
+| D-494 | RATIFIED AMENDMENT A-4: the function layer must gain key-confirmation channels that do not require a cadence, plus an enharmonic-identity rule for key spans | LIVE | 2026-08-04 · user | `cowork_architecture_review_2026_07.md` §9 ⚠gap |
+| D-571 | The declared-mode influence becomes a small additive hint, and SMALLNESS IS THE GATE — no separate confidence test is added | SUPERSEDED IN FACT ⚠LEGACY | 2026-08-04 · user | `docs/stage4b_design.md` §2.1 ⚠gap |
+| D-572 | The hard post-hoc declared-mode promotion is REMOVED OUTRIGHT rather than kept in a gated form | SUPERSEDED IN FACT ⚠LEGACY | 2026-08-04 · user | `docs/stage4b_design.md` §2.2 ⚠gap |
+| D-575 | The Baroque partial-signature convention is handled by DETECTING it and reinterpreting the signature one step, not by widening the candidate family for every score | SUPERSEDED IN FACT ⚠LEGACY | 2026-08-04 · user | `docs/key_detection_baroque_partial_signature.md` the opening block (above the first section heading) ⚠gap |
+| D-587 | A user-facing preset presents as a familiar genre-era label plus exemplars the user knows — never as an idiom name or an obscure exemplar; genre names are LABELS over mixtures, never axes | LIVE | 2026-08-04 · user | `cowork_style_taxonomy_proposal.md` §6 ⚠gap |
+| D-588 | Preset coverage beyond the analysed corpora is three tiers with NO bare guessing — measured, editorially declared with a stated theory rationale, or self-correcting by detection | LIVE | 2026-08-04 · user | `cowork_style_taxonomy_proposal.md` §6 ⚠gap |
+| D-589 | Every idiom mixture is selectable and the discovered cloud is the EVIDENCE MAP, not the boundary — each chosen point carries its evidence status | LIVE | 2026-08-04 · user | `cowork_style_taxonomy_proposal.md` §6a ⚠gap |
+| D-590 | The score's own metadata is the PRIMARY home of that score's idiom mixture, and a user-set mixture is never silently overwritten by re-detection | LIVE | 2026-08-04 · user | `cowork_style_taxonomy_proposal.md` §6a ⚠gap |
+| D-591 | The licence split for the style system: the ANCHORS are the shipped licence-constrained fitted parameters, and the mixture weights are free user configuration | LIVE | 2026-08-04 · user | `cowork_style_taxonomy_proposal.md` §6a ⚠gap |
+| D-598 | The style taxonomy and the per-style weights are ONE data-derived object; VALIDATION is a separate third thing that needs annotated scores and is not delivered by the clustering | LIVE | 2026-08-04 · user | `cowork_style_clustering_plan.md` §1 ⚠gap |
+| D-616 | A global tonic anchor enters key scoring at RESOLVER/SECTION scope — never as one more local term inside the window scorer, which is what re-enters the coupling that defeated the local levers | LIVE | — | `docs/stage4c_cadence_key_design.md` “§3” ⚠gap |
+| D-618 | The notated key signature is NOT a hard fact — its fifths were measured to pin wrong about one time in six, so the home key is note-derived and never signature-pinned | LIVE | — | `docs/architecture_joint_inference.md` “§2” ⚠gap |
+| D-622 | The reach-back convergence PROXY was measured FALSE and dropped — the as-built tracks the leading-edge key itself and stops when it stops changing | LIVE | — | `cowork_layer3_reachback_design.md` §3 ⚠gap |
 
 ## G. Layer 4 — chord identity — [full entries](decisions/group_G.md)
 
@@ -512,17 +573,21 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-402 | The inversion-append is a pure cap artifact that dissolves when the cap is removed; the below-threshold bass promotion is a targeted promotion that stays | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_structural_integrity_audit.md` §1.2 ⚠gap |
 | D-403 | STOP, not forced: the four best-different-root scans are NOT one decision at code, so the one-decision-four-sites premise over-counts | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_structural_integrity_audit.md` §3.1 ⚠gap |
 | D-423 | The gate-retirement stage is the only sanctioned way the post-scoring gates change, and three do-not rules hold through every stage | LIVE ⚠LEGACY | 2026-08-03 · user | `docs/implementation_roadmap.md` “Relationship to the existing phase roadmap” ⚠gap |
-| D-463 | The temporal signals sitting in the vertical scorer are left where they are, and the gate that depends on them must move with them | LIVE | 2026-08-04 · user | `docs/layer_architecture_audit.md` ⚠gap |
-| D-464 | No further progression-level signal may be added to the single-step look-around structure; it goes in the progression context instead | LIVE | 2026-08-04 · user | `docs/layer_architecture_audit.md` ⚠gap |
-| D-465 | The policy for judging a proposed post-scoring gate: another bias correction gets the bias fixed first, a structural condition is sound, and a cascade means the missing thing is functional context | LIVE | 2026-08-04 · user | `docs/layer_architecture_audit.md` ⚠gap |
-| D-467 | A rebuilt or re-tuned chord scoring must not rely on the held-note repetition bonus the faithful note model removed | LIVE | 2026-08-04 · user | `cowork_target_architecture.md` ⚠gap |
-| D-501 | A tool may read a written chord symbol ONLY as a comparison or ground-truth label — never as input that influences what the analyzer computes | LIVE | 2026-08-04 · user | `docs/symbol_input_audit.md` ⚠gap |
-| D-510 | The correct carry is the one that keeps the distinct alternative reading, not the one that appends a near-duplicate of the winner — chosen on the carry's purpose, not on which code is at HEAD | LIVE | — | `cowork_gateA_unification_design.md` ⚠gap |
-| D-511 | One promotion primitive with a present-first dedup guard replaces the two ad-hoc promotion idioms; the append branch fires only when the target is genuinely absent | LIVE | — | `cowork_gateA_unification_design.md` ⚠gap |
-| D-512 | Gate A becomes removable only once the unified promotion reproduces its carry byte-for-byte — that reproduction IS the retirement condition, not the winner-inertness that preceded it | LIVE | — | `cowork_gateA_unification_design.md` ⚠gap |
-| D-536 | The bass note and the chord are chosen TOGETHER — the winner is the (bass, root, template) triple — replacing the sequential commit-the-bass-then-score pipeline | LIVE ⚠LEGACY | — | `docs/iter92_joint_bass_chord_scoring.md` ⚠gap |
-| D-537 | The completeness bonus fires ONLY for a root-position reading whose three triad tones are all present — the guard that stops it from demoting genuine slash chords | LIVE ⚠LEGACY | — | `docs/iter92_joint_bass_chord_scoring.md` ⚠gap |
-| D-538 | A multi-signal scoring change lands one signal at a time, with the corpus check re-run after each step and any increase in errors a hard stop before the next | LIVE ⚠LEGACY | — | `docs/iter92_joint_bass_chord_scoring.md` ⚠gap |
+| D-463 | The temporal signals sitting in the vertical scorer are left where they are, and the gate that depends on them must move with them | LIVE | 2026-08-04 · user | `docs/layer_architecture_audit.md` “Finding 1” ⚠gap |
+| D-464 | No further progression-level signal may be added to the single-step look-around structure; it goes in the progression context instead | LIVE | 2026-08-04 · user | `docs/layer_architecture_audit.md` “Finding 5” ⚠gap |
+| D-465 | The policy for judging a proposed post-scoring gate: another bias correction gets the bias fixed first, a structural condition is sound, and a cascade means the missing thing is functional context | LIVE | 2026-08-04 · user | `docs/layer_architecture_audit.md` “What this means for future gate decisions” ⚠gap |
+| D-467 | A rebuilt or re-tuned chord scoring must not rely on the held-note repetition bonus the faithful note model removed | LIVE | 2026-08-04 · user | `cowork_target_architecture.md` §6.2 ⚠gap |
+| D-501 | A tool may read a written chord symbol ONLY as a comparison or ground-truth label — never as input that influences what the analyzer computes | LIVE | 2026-08-04 · user | `docs/symbol_input_audit.md` “Context” ⚠gap |
+| D-510 | The correct carry is the one that keeps the distinct alternative reading, not the one that appends a near-duplicate of the winner — chosen on the carry's purpose, not on which code is at HEAD | LIVE | — | `cowork_gateA_unification_design.md` §3.1 ⚠gap |
+| D-511 | One promotion primitive with a present-first dedup guard replaces the two ad-hoc promotion idioms; the append branch fires only when the target is genuinely absent | LIVE | — | `cowork_gateA_unification_design.md` §3.2 ⚠gap |
+| D-512 | Gate A becomes removable only once the unified promotion reproduces its carry byte-for-byte — that reproduction IS the retirement condition, not the winner-inertness that preceded it | LIVE | — | `cowork_gateA_unification_design.md` §3.3 ⚠gap |
+| D-536 | The bass note and the chord are chosen TOGETHER — the winner is the (bass, root, template) triple — replacing the sequential commit-the-bass-then-score pipeline | LIVE ⚠LEGACY | — | `docs/iter92_joint_bass_chord_scoring.md` “Design: JOINT” ⚠gap |
+| D-537 | The completeness bonus fires ONLY for a root-position reading whose three triad tones are all present — the guard that stops it from demoting genuine slash chords | LIVE ⚠LEGACY | — | `docs/iter92_joint_bass_chord_scoring.md` “JOINT formula weights” ⚠gap |
+| D-538 | A multi-signal scoring change lands one signal at a time, with the corpus check re-run after each step and any increase in errors a hard stop before the next | LIVE ⚠LEGACY | — | `docs/iter92_joint_bass_chord_scoring.md` “Implementation insertion point” ⚠gap |
+| D-560 | Voice slots and stem direction are STRUCTURAL notational metadata, not user-written analytical claims, so the analysis may read them | LIVE | 2026-08-04 · user | `docs/nct_detection_design.md` “Voice-leading detection” ⚠gap |
+| D-580 | Two of the twelve post-scoring gates are purely-local vertical refinements and MUST survive the dissolution; the other ten dissolve into the competition | DEFERRED ⚠LEGACY | 2026-08-04 · user | `cowork_phase2_architecture_review.md` “§5” ⚠gap |
+| D-583 | A known deferred loss is KEPT only while it stays characterized EXACTLY, and is re-adjudicated the moment its form changes | LIVE ⚠LEGACY | 2026-08-04 · user | `cowork_information_loss_audit.md` “The prioritized DEFECT fix-queue” ⚠gap |
+| D-638 | The symmetric-rotation churn is a chord-layer root ambiguity SURFACED, not caused, by a key change — the proper fix is spelling-aware root selection, never a key-layer change | LIVE | — | `CLAUDE.md` |
 
 ## H. Layer 5 and Layer 6 — function, cadence, grouping — [full entries](decisions/group_H.md)
 
@@ -562,31 +627,32 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-399 | The texture feature space was decided BY MEASUREMENT among three named candidates — the standardized combination of both views won; the unstandardized combination was rejected before testing for a measured dilution | LIVE | 2026-08-02 · user | `cowork_voiceleading_axis_design.md` §5.3 |
 | D-400 | A PER-VOICE span kind is admitted to the span typology — melodic phrases overlap across voices by construction and tile only within one voice | LIVE | 2026-08-02 · user | `cowork_voiceleading_axis_design.md` §16 ⚠gap |
 | D-419 | Until the recognition consumer is built, the function layer does not touch the harmonic vocabulary | LIVE | 2026-08-03 · user | `docs/implementation_roadmap.md` the opening block (above the first section heading) ⚠gap |
-| D-454 | The grouping layer detects nothing — it assembles what earlier layers decided, and pressure to add detection means the work belongs elsewhere | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` ⚠gap |
-| D-455 | A cadence away from a grouping boundary is surfaced as internal, never snapped to the nearest boundary and never discarded | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` ⚠gap |
-| D-456 | Sections, periods and sentences are out of the grouping layer's core for PROPORTIONALITY — not disqualified for lacking an oracle | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` ⚠gap |
-| D-457 | A group truncated by the selection edge is marked as truncated, and a group that runs off the edge unclosed carries an extension cue the grouping layer only surfaces | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` ⚠gap |
-| D-458 | The codetta refinement is read as the as-built tiling: keep the strong cut, drop the weak one, and record the codetta end as an annexe | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` ⚠gap |
-| D-459 | The key-area confidence is a declared margin-class boundary confidence, and its input is the declared key confidence — never the grading diagnostics' sigmoid | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` ⚠gap |
-| D-460 | A group counts as fully resolved exactly when no unit in it carries an unresolved mark — no confidence threshold enters the test | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` ⚠gap |
-| D-461 | The grouping layer is an explainability layer, not an accuracy requirement, and is deliberately kept thin | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` ⚠gap |
-| D-462 | Cadence validation is scoped to LOCATION; cadence TYPE is only partially attributable and is never a clean gate | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` ⚠gap |
-| D-472 | Key areas are grouped by a smoothing pass over the already-stabilized regions, and a region that disagrees without clearing the confidence test keeps its own key while being grouped into the enclosing area | LIVE | 2026-08-04 · user | `docs/unified_analysis_pipeline.md` ⚠gap |
-| D-476 | The phrase-boundary primitive is owned by the notation-derived view layer — not by the note model, and not by the function layer that consumes it | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` ⚠gap |
-| D-477 | Phrase boundaries are read from the written surface alone — never from a resolved key, chord or cadence — and the boundaries this misses are accepted, not recovered here | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` ⚠gap |
-| D-478 | A phrase boundary is a peak in a continuous boundary-strength profile, not the OR of a few binary signals | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` ⚠gap |
-| D-479 | The boundary cues run per eligible voice and aggregate to the texture, and BOTH the per-voice and the texture boundaries are published | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` ⚠gap |
-| D-480 | The phrase-boundary primitive is NOT an accuracy requirement — a competitive reference engine does no phrase segmentation at all — so it is built right but kept proportionate | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` ⚠gap |
-| D-481 | The notated markers are emitted as boundaries unconditionally; only the surface-cue strength is peak-picked | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` ⚠gap |
-| D-482 | The two hand-synchronised copies of the fermata scan retire into one owned primitive, and that retirement changes no output | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` ⚠gap |
-| D-483 | The picked boundaries are validated against the analysts' own phrase marks; a fermata-derived phrase list is inadmissible as ground truth because the primitive reads fermatas | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` ⚠gap |
-| D-484 | The phrase-boundary primitive is a derived view: it inherits the loaded span, requests no extension of its own, and publishes a per-profile max-normalised boundary confidence | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` ⚠gap |
-| D-485 | Each picked boundary should carry which cue fired and at what scope; the picked set is scope-blind today and the refinement waits for the inference phase | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` ⚠gap |
-| D-490 | FALSIFIED: no threshold can make the fine-grain function override net-positive — the harm rate is flat against both quantities the threshold is built from | LIVE | 2026-08-04 · user | `cowork_fb_redesign_design.md` ⚠gap |
-| D-491 | REFUTED: making the override's comparison vertically fair does not repair it — even where the alternative fits the notes at least as well, it is still about 71 % harmful | LIVE | 2026-08-04 · user | `cowork_fb_redesign_design.md` ⚠gap |
-| D-492 | The recommended redesign is to demote the override to an annotation — carrying the earlier reading unchanged and surfacing the contradiction — floored by simply disabling it | LIVE | 2026-08-04 · user | `cowork_fb_redesign_design.md` ⚠gap |
-| D-493 | Restricting the override to the genuinely-coupled key-and-chord minority is UN-COMPUTABLE, not merely unmeasured: its trigger is not computed anywhere and building it is the still-owed joint step | LIVE | 2026-08-04 · user | `cowork_fb_redesign_design.md` ⚠gap |
-| D-495 | RATIFIED AMENDMENT A-5: when the phrase-boundary profile is flat, cadence admission relaxes with vote-weight scaling instead of starving | LIVE | 2026-08-04 · user | `cowork_architecture_review_2026_07.md` ⚠gap |
+| D-454 | The grouping layer detects nothing — it assembles what earlier layers decided, and pressure to add detection means the work belongs elsewhere | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §6 |
+| D-455 | A cadence away from a grouping boundary is surfaced as internal, never snapped to the nearest boundary and never discarded | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §9 |
+| D-456 | Sections, periods and sentences are out of the grouping layer's core for PROPORTIONALITY — not disqualified for lacking an oracle | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §9 |
+| D-457 | A group truncated by the selection edge is marked as truncated, and a group that runs off the edge unclosed carries an extension cue the grouping layer only surfaces | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §5.1 |
+| D-458 | The codetta refinement is read as the as-built tiling: keep the strong cut, drop the weak one, and record the codetta end as an annexe | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` the opening block (above the first section heading) ⚠gap |
+| D-459 | The key-area confidence is a declared margin-class boundary confidence, and its input is the declared key confidence — never the grading diagnostics' sigmoid | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §5.2 |
+| D-460 | A group counts as fully resolved exactly when no unit in it carries an unresolved mark — no confidence threshold enters the test | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §5.4 |
+| D-461 | The grouping layer is an explainability layer, not an accuracy requirement, and is deliberately kept thin | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §7 |
+| D-462 | Cadence validation is scoped to LOCATION; cadence TYPE is only partially attributable and is never a clean gate | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §10 |
+| D-472 | Key areas are grouped by a smoothing pass over the already-stabilized regions, and a region that disagrees without clearing the confidence test keeps its own key while being grouped into the enclosing area | LIVE | 2026-08-04 · user | `docs/unified_analysis_pipeline.md` “Key-area detection” ⚠gap |
+| D-476 | The phrase-boundary primitive is owned by the notation-derived view layer — not by the note model, and not by the function layer that consumes it | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` §6 |
+| D-477 | Phrase boundaries are read from the written surface alone — never from a resolved key, chord or cadence — and the boundaries this misses are accepted, not recovered here | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` §2 |
+| D-478 | A phrase boundary is a peak in a continuous boundary-strength profile, not the OR of a few binary signals | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` §6 |
+| D-479 | The boundary cues run per eligible voice and aggregate to the texture, and BOTH the per-voice and the texture boundaries are published | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` §6 |
+| D-480 | The phrase-boundary primitive is NOT an accuracy requirement — a competitive reference engine does no phrase segmentation at all — so it is built right but kept proportionate | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` §8 |
+| D-481 | The notated markers are emitted as boundaries unconditionally; only the surface-cue strength is peak-picked | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` §4.4 |
+| D-482 | The two hand-synchronised copies of the fermata scan retire into one owned primitive, and that retirement changes no output | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` §6 |
+| D-483 | The picked boundaries are validated against the analysts' own phrase marks; a fermata-derived phrase list is inadmissible as ground truth because the primitive reads fermatas | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` §7 |
+| D-484 | The phrase-boundary primitive is a derived view: it inherits the loaded span, requests no extension of its own, and publishes a per-profile max-normalised boundary confidence | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` the opening block (above the first section heading) ⚠gap |
+| D-485 | Each picked boundary should carry which cue fired and at what scope; the picked set is scope-blind today and the refinement waits for the inference phase | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` §11 ⚠gap |
+| D-490 | FALSIFIED: no threshold can make the fine-grain function override net-positive — the harm rate is flat against both quantities the threshold is built from | LIVE | 2026-08-04 · user | `cowork_fb_redesign_design.md` “§2.1 Test of the documented root-cause hypothesis” ⚠gap |
+| D-491 | REFUTED: making the override's comparison vertically fair does not repair it — even where the alternative fits the notes at least as well, it is still about 71 % harmful | LIVE | 2026-08-04 · user | `cowork_fb_redesign_design.md` “§2.4 The incumbent-repair premise, tested directly” ⚠gap |
+| D-492 | The recommended redesign is to demote the override to an annotation — carrying the earlier reading unchanged and surfacing the contradiction — floored by simply disabling it | LIVE | 2026-08-04 · user | `cowork_fb_redesign_design.md` “§4.1 CC's evidence-based recommendation” ⚠gap |
+| D-493 | Restricting the override to the genuinely-coupled key-and-chord minority is UN-COMPUTABLE, not merely unmeasured: its trigger is not computed anywhere and building it is the still-owed joint step | LIVE | 2026-08-04 · user | `cowork_fb_redesign_design.md` “§3.D” ⚠gap |
+| D-495 | RATIFIED AMENDMENT A-5: when the phrase-boundary profile is flat, cadence admission relaxes with vote-weight scaling instead of starving | LIVE | 2026-08-04 · user | `cowork_architecture_review_2026_07.md` §9 ⚠gap |
+| D-629 | The resolver of carried uncertain readings IS the function layer itself — there is no distinct gated box between the note layers and it | LIVE | — | `cowork_uncertain_resolver_investigation.md` “Provisional verdict” ⚠gap |
 
 ## I. Module boundaries and code structure — [full entries](decisions/group_I.md)
 
@@ -615,8 +681,9 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-427 | Component (1a) of the two-deferred-refactors mandate — the physical `chordanalyzer.cpp` file split: DELIVERED 2026-06-17 | LIVE | — | `docs/implementation_roadmap.md` |
 | D-428 | Component (1b) of the two-deferred-refactors mandate — the iteration-vocabulary API renames: STILL OWED, and the subject is the LEGACY arm | DEFERRED ⚠LEGACY | — | `docs/implementation_roadmap.md` |
 | D-429 | Component (2) of the two-deferred-refactors mandate — dissolving the post-hoc gate-correction layer into fitted weights: STILL OWED, and its PRINCIPLE binds the live design | DEFERRED ⚠LEGACY | — | `docs/implementation_roadmap.md` |
-| D-469 | The tick-local path is left OUTSIDE the unified pipeline by design — its point-in-time semantics would be distorted by one shared interface | LIVE | 2026-08-04 · user | `docs/unified_analysis_pipeline.md` ⚠gap |
-| D-470 | The temporal-context extension fields are recorded during the pipeline's own analysis pass; no consumer re-runs the chord analysis to rebuild them | LIVE | 2026-08-04 · user | `docs/unified_analysis_pipeline.md` ⚠gap |
+| D-469 | The tick-local path is left OUTSIDE the unified pipeline by design — its point-in-time semantics would be distorted by one shared interface | LIVE | 2026-08-04 · user | `docs/unified_analysis_pipeline.md` “Non-goals” ⚠gap |
+| D-470 | The temporal-context extension fields are recorded during the pipeline's own analysis pass; no consumer re-runs the chord analysis to rebuild them | LIVE | 2026-08-04 · user | `docs/unified_analysis_pipeline.md` “Divergence D” ⚠gap |
+| D-623 | A selection-aware capability is a PARAMETER on the one orchestrator, never a sibling — the capability must not duplicate the orchestration | LIVE | — | `cowork_layer3_reachback_design.md` §0 ⚠gap |
 
 ## J. Presentation and output conventions — [full entries](decisions/group_J.md)
 
@@ -631,8 +698,11 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-234 | A chord symbol string must be valid under chords_std.xml; chords.xml is not relied on | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-295 | Zero information loss to the end user - every inferred object must be displayable | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-304 | The analyzer always emits its fullest reading; simplifying it happens only when comparing against a corpus, never in the product | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
-| D-471 | The sub-beat annotation duration gate is not retired on argument — it is kept or dropped on a measured observation run, with the verdict stated in advance | LIVE | 2026-08-04 · user | `docs/unified_analysis_pipeline.md` ⚠gap |
-| D-498 | RATIFIED AMENDMENT A-9: a product stance is owed for output that is mostly uncertain, and for music outside the tonal vocabulary altogether | LIVE | 2026-08-04 · user | `cowork_architecture_review_2026_07.md` ⚠gap |
+| D-471 | The sub-beat annotation duration gate is not retired on argument — it is kept or dropped on a measured observation run, with the verdict stated in advance | LIVE | 2026-08-04 · user | `docs/unified_analysis_pipeline.md` “Divergence C” ⚠gap |
+| D-498 | RATIFIED AMENDMENT A-9: a product stance is owed for output that is mostly uncertain, and for music outside the tonal vocabulary altogether | LIVE | 2026-08-04 · user | `cowork_architecture_review_2026_07.md` §9 ⚠gap |
+| D-584 | The perfect/imperfect cadence call is made on the BASS-DERIVED inversion; the soprano arrival degree is demoted to a soft optional nudge and the tool never attempts melody identification | LIVE | 2026-08-04 · user | `cowork_layer5_function_methods.md` §3 ⚠gap |
+| D-585 | The bass-scale-degree / Rule-of-the-Octave prior is admitted as a SOFT prior and tie-breaker only, never a gate | LIVE | 2026-08-04 · user | `cowork_layer5_function_methods.md` §6 ⚠gap |
+| D-607 | Polyphonic phrase-boundary detection has NO validated deterministic rule set in the literature — the extension is engineering on monophonic cues, validated against our own corpus, and is not settled science | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_methods.md` §3 ⚠gap |
 
 ## K. Documentation governance — [full entries](decisions/group_K.md)
 
@@ -664,7 +734,8 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-432 | What counts as a delegation, graded by form — the clause the section-level criterion did not touch | LIVE | — | `CLAUDE.md` |
 | D-433 | A shelved section can be a home — shelving is a status, not a kind | LIVE | — | `CLAUDE.md` |
 | D-435 | Delegating to a document and being a home are different tests with different subjects | LIVE | — | `CLAUDE.md` |
-| D-499 | RATIFIED AMENDMENT A-10: four documentation riders — a consolidated ownership page for the notation-derived views, the membership tie-breaker recorded as idiom-calibrated, and the producer-agnostic seam pinned as a design property | LIVE | 2026-08-04 · user | `cowork_architecture_review_2026_07.md` ⚠gap |
+| D-499 | RATIFIED AMENDMENT A-10: four documentation riders — a consolidated ownership page for the notation-derived views, the membership tie-breaker recorded as idiom-calibrated, and the producer-agnostic seam pinned as a design property | LIVE | 2026-08-04 · user | `cowork_architecture_review_2026_07.md` §9 ⚠gap |
+| D-546 | A delegation reaches only the members it names explicitly — a glob and a trailing ellipsis confer nothing; with the two confirmations ruled beside it | LIVE | — | `CLAUDE.md` |
 
 ## L. Licensing, contribution, and coding standards — [full entries](decisions/group_L.md)
 
@@ -685,6 +756,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-315 | A one-line fix was made to MuseScore's own chord-symbol parser and is live in the fork | LIVE | 2026-08-02 · user | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
 | D-375 | Every real source of difficulty labels is research-only or proprietary — a difficulty-grading feature needs a licence path before it can be sold | LIVE | 2026-08-02 · user | `cowork_score_census.md` §8c |
 | D-489 | The snapshot sources are hash-pinned rather than copied in-tree, because their licences make an in-tree copy incompatible with this project's licence | LIVE | 2026-08-04 · user | `docs/score_inventory.md` |
+| D-614 | Every real difficulty-grade label source is research-only or proprietary at origin — a commercial grading feature needs a licence path or its own labels | LIVE | — | `cowork_union_search_record.md` §3 ⚠gap |
 
 ## M. The style system and the knowledge base — [full entries](decisions/group_M.md)
 
@@ -706,19 +778,22 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-413 | Upper-structure and rootless VOICING substitution is outside the harmonic vocabulary — it is a voicing, not a function | LIVE | 2026-08-03 · user | `cowork_progression_schema_dictionary.md` §5.3 |
 | D-414 | The catalog is GENERATIVE where it can be and enumerated only where it must be | LIVE | 2026-08-03 · user | `cowork_progression_schema_dictionary.md` §7 |
 | D-421 | Idiom re-discovery rides every corpus wave, on research material only, and a changed cluster set is its own ratification event | LIVE | 2026-08-03 · user | `docs/implementation_roadmap.md` the opening block (above the first section heading) ⚠gap |
-| D-496 | RATIFIED AMENDMENT A-6: whether the pairwise progression grammar lives inside the harmonic vocabulary or stays a separate store is decided at the recognition-consumer build, explicitly | LIVE | 2026-08-04 · user | `cowork_architecture_review_2026_07.md` ⚠gap |
-| D-502 | The span a recognised named progression covers is called the progression-schema-span — the bare word 'sequence' is reserved for the harmonic sequence and 'progression' for the whole committed chord stream | LIVE | — | `cowork_progression_schema_design.md` ⚠gap |
-| D-503 | The idiom mixture is DISCOVERED from the score and merely SEEDED by the user's preset, in three forward-only phases | LIVE | — | `cowork_progression_schema_design.md` ⚠gap |
-| D-504 | A recognised harmonic sequence is ALWAYS emitted as key evidence — the earlier gate that emitted it only where no cadence existed threw corroboration away | LIVE | — | `cowork_progression_schema_design.md` ⚠gap |
-| D-505 | A harmonic sequence requires at least two transposed statements of the SAME recognised entry; a single internally-sequential entry emits none | LIVE | — | `cowork_progression_schema_design.md` ⚠gap |
-| D-506 | Progression recognition is ADDITIVE: the literal Roman numeral is never rewritten, and a substitution is recorded only in the annotation | LIVE | — | `cowork_progression_schema_design.md` ⚠gap |
-| D-507 | A catalog entry defined by its melodic or bass lines is recognised by its chord skeleton alone and carries a 'chords-only' mark, with its prior strength reduced | LIVE | — | `cowork_progression_schema_design.md` ⚠gap |
-| D-508 | The catalog/grammar consistency test ships scoped to the MEASURED containment — an explicit known-gap list — and tightens to a clean assertion when the grammar amendment lands | LIVE | — | `cowork_progression_schema_design.md` ⚠gap |
-| D-509 | Where the analysis already committed a chord, a recognised progression corrects it through the EXISTING override frame and may only SELECT an already-carried reading — no new comparison frame, and never a reading built from the notes | LIVE | — | `cowork_progression_schema_design.md` ⚠gap |
-| D-542 | Idiom discovery runs DISCOVER-THEN-NAME: structure is learned on a low-level encoding carrying no theory or genre labels, and theory features and genre labels are interpretation lenses applied afterwards, never clustering input | NOT STATED | — | `cowork_idiom_discovery_design.md` ⚠gap |
-| D-543 | The encoding is key-normalised tonal-pitch-class TRANSITIONS — spelled where spelling is reliable, mod-12 only where it is genuinely absent — run as two complementary views | NOT STATED | — | `cowork_idiom_discovery_design.md` ⚠gap |
-| D-544 | Confound control is a FIRST-CLASS GATE, and the source-leakage test decides validity: if the clusters are explained by which corpus a piece came from, the result is bookkeeping and not idiom | NOT STATED | — | `cowork_idiom_discovery_design.md` ⚠gap |
-| D-545 | The uniform mechanical extractor for idiom discovery is the external library, stopping at the note-and-slice front — OUR OWN key/chord/function inference must NEVER touch the extraction | NOT STATED | — | `cowork_idiom_discovery_design.md` ⚠gap |
+| D-496 | RATIFIED AMENDMENT A-6: whether the pairwise progression grammar lives inside the harmonic vocabulary or stays a separate store is decided at the recognition-consumer build, explicitly | LIVE | 2026-08-04 · user | `cowork_architecture_review_2026_07.md` §9 ⚠gap |
+| D-502 | The span a recognised named progression covers is called the progression-schema-span — the bare word 'sequence' is reserved for the harmonic sequence and 'progression' for the whole committed chord stream | LIVE | — | `cowork_progression_schema_design.md` §6 |
+| D-503 | The idiom mixture is DISCOVERED from the score and merely SEEDED by the user's preset, in three forward-only phases | LIVE | — | `cowork_progression_schema_design.md` §4.5 |
+| D-504 | A recognised harmonic sequence is ALWAYS emitted as key evidence — the earlier gate that emitted it only where no cadence existed threw corroboration away | LIVE | — | `cowork_progression_schema_design.md` §4.5 |
+| D-505 | A harmonic sequence requires at least two transposed statements of the SAME recognised entry; a single internally-sequential entry emits none | LIVE | — | `cowork_progression_schema_design.md` §4.6 |
+| D-506 | Progression recognition is ADDITIVE: the literal Roman numeral is never rewritten, and a substitution is recorded only in the annotation | LIVE | — | `cowork_progression_schema_design.md` §6 |
+| D-507 | A catalog entry defined by its melodic or bass lines is recognised by its chord skeleton alone and carries a 'chords-only' mark, with its prior strength reduced | LIVE | — | `cowork_progression_schema_design.md` §6 |
+| D-508 | The catalog/grammar consistency test ships scoped to the MEASURED containment — an explicit known-gap list — and tightens to a clean assertion when the grammar amendment lands | LIVE | — | `cowork_progression_schema_design.md` §6 |
+| D-509 | Where the analysis already committed a chord, a recognised progression corrects it through the EXISTING override frame and may only SELECT an already-carried reading — no new comparison frame, and never a reading built from the notes | LIVE | — | `cowork_progression_schema_design.md` §4.3 |
+| D-542 | Idiom discovery runs DISCOVER-THEN-NAME: structure is learned on a low-level encoding carrying no theory or genre labels, and theory features and genre labels are interpretation lenses applied afterwards, never clustering input | NOT STATED | — | `cowork_idiom_discovery_design.md` §2 ⚠gap |
+| D-543 | The encoding is key-normalised tonal-pitch-class TRANSITIONS — spelled where spelling is reliable, mod-12 only where it is genuinely absent — run as two complementary views | NOT STATED | — | `cowork_idiom_discovery_design.md` §9 ⚠gap |
+| D-544 | Confound control is a FIRST-CLASS GATE, and the source-leakage test decides validity: if the clusters are explained by which corpus a piece came from, the result is bookkeeping and not idiom | NOT STATED | — | `cowork_idiom_discovery_design.md` §5 ⚠gap |
+| D-545 | The uniform mechanical extractor for idiom discovery is the external library, stopping at the note-and-slice front — OUR OWN key/chord/function inference must NEVER touch the extraction | NOT STATED | — | `cowork_idiom_discovery_design.md` §9 ⚠gap |
+| D-554 | The voice-leading axis's independence from the harmonic axis is MEASURED, not assumed — cross-agreement between the two clusterings is at the level of statistical independence | LIVE | 2026-08-04 · user | `cowork_idiom_discovery_findings.md` “v2.0” ⚠gap |
+| D-555 | The voice-leading layer's feature set is MOTION-TYPE-led, with the interval profile a secondary descriptor, and its coverage is notated music only | LIVE | 2026-08-04 · user | `cowork_idiom_discovery_findings.md` “v2.0” ⚠gap |
+| D-556 | Texture and era are declared per-source interpretation lenses, applied after the fact and never given to the clustering as input | LIVE | 2026-08-04 · user | `cowork_idiom_discovery_findings.md` “v2.0” ⚠gap |
 
 ## N. Generation, constraints, visualization, and the LLM integration — [full entries](decisions/group_N.md)
 
@@ -736,13 +811,13 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-143 | The language-model bridge is built as a module but confined to the core access layer, so it can become a plugin | DEFERRED | — | `ARCHITECTURE.md` |
 | D-440 | The language-model integration is purpose-built and does not wait for the plugin-API reform | DEFERRED | 2026-08-04 · user | `ARCHITECTURE.md` |
 | D-441 | Analysis and modification are phases of ONE conversation; a follow-up instruction re-uses the reasoning rather than re-analysing | DEFERRED | 2026-08-04 · user | `ARCHITECTURE.md` |
-| D-442 | A validation failure goes back to the language model as a tool-call error and is never shown to the user | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` ⚠gap |
-| D-443 | Tool use is the only capability the provider abstraction requires; a provider without it is read-only | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` ⚠gap |
-| D-444 | The core access layer is a facade over interfaces that already exist, not a redesign | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` ⚠gap |
-| D-445 | A musical address does not identify a single note, so the note entity carries its own identifier | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` ⚠gap |
-| D-446 | The language model resolves how the user names a passage; no index is built and the kinds of reference are not enumerated | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` ⚠gap |
-| D-447 | The model's tool definitions are generated from the operation set, never maintained by hand | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` ⚠gap |
-| D-448 | The operation set is curated from observed use, not an exposure of every editing method | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` ⚠gap |
+| D-442 | A validation failure goes back to the language model as a tool-call error and is never shown to the user | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` §4.3 ⚠gap |
+| D-443 | Tool use is the only capability the provider abstraction requires; a provider without it is read-only | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` §8.1 ⚠gap |
+| D-444 | The core access layer is a facade over interfaces that already exist, not a redesign | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` §5.2 ⚠gap |
+| D-445 | A musical address does not identify a single note, so the note entity carries its own identifier | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` §5.3 ⚠gap |
+| D-446 | The language model resolves how the user names a passage; no index is built and the kinds of reference are not enumerated | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` §6 ⚠gap |
+| D-447 | The model's tool definitions are generated from the operation set, never maintained by hand | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` §8.2 ⚠gap |
+| D-448 | The operation set is curated from observed use, not an exposure of every editing method | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` §4.2 ⚠gap |
 
 ## O. Intonation — [full entries](decisions/group_O.md)
 
@@ -787,12 +862,12 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-308 | A newly acquired corpus enters as research material; the frozen regression corpus stays the gate until a deliberate re-baseline | LIVE | 2026-08-02 · user | `CLAUDE.md` |
 | D-309 | A corpus the analysis handles badly stays on the roadmap marked deferred; it is more valuable than one that confirms what already works | LIVE | 2026-08-02 · user | `docs/score_inventory.md` |
 | D-310 | Jazz accuracy is not measurable on the corpora held: the low agreement is missing bass and piano voicings, not a scoring failure | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
-| D-359 | Discovering a new corpus counts as a CENSUS DEFECT — the fix is to enumerate its container to closure, never to ingest the one repository | LIVE | 2026-08-02 · user | `cowork_score_census.md` §1 ⚠gap |
-| D-360 | A corpus enters the registry only with all five admission fields decided — annotation type, score alignment, format, licence class, decision tier | LIVE | 2026-08-02 · user | `cowork_score_census.md` §3 ⚠gap |
-| D-361 | Corpora are de-duplicated by WORK, not by container — and a work in the regression corpus is excluded as reference data from every other container | LIVE | 2026-08-02 · user | `cowork_score_census.md` §4 ⚠gap |
-| D-362 | What the census may claim, stated exactly: closure over the enumerated containers, a citation-closure argument for gradable harmony reference data, and a BOUNDED claim for everything else | LIVE | 2026-08-02 · user | `cowork_score_census.md` §8 ⚠gap |
-| D-363 | Four named reasons license leaving a source un-enumerated — and non-Western symbolic music is closed by RULING, not by enumeration | LIVE | 2026-08-02 · user | `cowork_score_census.md` §8 ⚠gap |
-| D-364 | Every new analysis purpose triggers its own corpus sweep BEFORE its design document is signed — having enumerated the container does not discharge the duty to ask the new question of it | LIVE | 2026-08-02 · user | `cowork_score_census.md` §8b ⚠gap |
+| D-359 | Discovering a new corpus counts as a CENSUS DEFECT — the fix is to enumerate its container to closure, never to ingest the one repository | LIVE | 2026-08-02 · user | `cowork_score_census.md` §1 |
+| D-360 | A corpus enters the registry only with all five admission fields decided — annotation type, score alignment, format, licence class, decision tier | LIVE | 2026-08-02 · user | `cowork_score_census.md` §3 |
+| D-361 | Corpora are de-duplicated by WORK, not by container — and a work in the regression corpus is excluded as reference data from every other container | LIVE | 2026-08-02 · user | `cowork_score_census.md` §4 |
+| D-362 | What the census may claim, stated exactly: closure over the enumerated containers, a citation-closure argument for gradable harmony reference data, and a BOUNDED claim for everything else | LIVE | 2026-08-02 · user | `cowork_score_census.md` §8 |
+| D-363 | Four named reasons license leaving a source un-enumerated — and non-Western symbolic music is closed by RULING, not by enumeration | LIVE | 2026-08-02 · user | `cowork_score_census.md` §8 |
+| D-364 | Every new analysis purpose triggers its own corpus sweep BEFORE its design document is signed — having enumerated the container does not discharge the duty to ask the new question of it | LIVE | 2026-08-02 · user | `cowork_score_census.md` §8b |
 | D-365 | A corpus search driven by the SUM of all needs is worth running, but it is step 3 of 3 — the needs list and the re-scoring of what is already enumerated come first | LIVE | 2026-08-02 · user | `cowork_score_census.md` §8c |
 | D-367 | A corpus found FOR one need is scored against the WHOLE needs list at intake, and every annotation layer it carries is inventoried — never tagged to the purpose that found it | LIVE | 2026-08-02 · user | `cowork_score_census.md` §8c |
 | D-368 | When new material bears on an already-settled conclusion, the rework question is settled by a recorded protocol — record, measure cheaply, then fork on whether it CONTRADICTS or merely enriches | LIVE | 2026-08-02 · user | `cowork_score_census.md` §8c |
@@ -804,10 +879,13 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-374 | The flexible multi-reading chorale annotations are RECORD-ONLY — they overlap the regression repertoire, so any use over those pieces is a future user ruling | LIVE | 2026-08-02 · user | `cowork_score_census.md` §8c |
 | D-487 | The eleven snapshot source scores are frozen and hash-pinned; changing the set or bumping a pin is a deliberate golden and gate re-baseline | LIVE | 2026-08-04 · user | `docs/score_inventory.md` |
 | D-488 | The two Bach chorale collections are independent selections, not sub- and superset — and the diff between them is not recoverable in-repo | LIVE | 2026-08-04 · user | `docs/score_inventory.md` |
-| D-513 | A corpus registry's content summary is enumeration provenance, not evidence that an annotation layer is present — per-slice presence must be measured | LIVE | — | `cowork_census_full_needs_audit.md` ⚠gap |
-| D-514 | A newly acquired annotation set whose works OVERLAP the regression corpus is RECORD-ONLY: it may not be wired to, compared against, or bulk-diffed with the gate corpus without a user ruling | LIVE | — | `cowork_census_full_needs_audit.md` ⚠gap |
-| D-515 | Pedal-point ground truth gets its OWN needs row rather than riding as a note on another — the user's reason: it can improve inference precision and nothing is lost | LIVE | — | `cowork_census_full_needs_audit.md` ⚠gap |
-| D-516 | Two ground-truth classes with named consumers but no needs row were ADOPTED at the first full-needs audit — contrapuntal/imitative structure, and marked part-writing errors | LIVE | — | `cowork_census_full_needs_audit.md` ⚠gap |
+| D-513 | A corpus registry's content summary is enumeration provenance, not evidence that an annotation layer is present — per-slice presence must be measured | LIVE | — | `cowork_census_full_needs_audit.md` §7 ⚠gap |
+| D-514 | A newly acquired annotation set whose works OVERLAP the regression corpus is RECORD-ONLY: it may not be wired to, compared against, or bulk-diffed with the gate corpus without a user ruling | LIVE | — | `cowork_census_full_needs_audit.md` §7.1 ⚠gap |
+| D-515 | Pedal-point ground truth gets its OWN needs row rather than riding as a note on another — the user's reason: it can improve inference precision and nothing is lost | LIVE | — | `cowork_census_full_needs_audit.md` §6 ⚠gap |
+| D-516 | Two ground-truth classes with named consumers but no needs row were ADOPTED at the first full-needs audit — contrapuntal/imitative structure, and marked part-writing errors | LIVE | — | `cowork_census_full_needs_audit.md` §6 ⚠gap |
+| D-553 | A reference corpus's notation convention is DISCOVERED per entry by the comparison run, never declared as an input to it | LIVE | 2026-08-04 · user | `docs/extension_stripping_policy.md` |
+| D-612 | The corpus-search convention: a NEGATIVE is recorded so it is never re-searched, and every claim is RE-VERIFIED at acquisition rather than trusted from the search | LIVE | — | `cowork_union_search_record.md` |
+| D-613 | Ground truth for IMPLIED polyphony is confirmed ABSENT — and the voice labels that do exist come from engraved notation, which must be said at intake | LIVE | — | `cowork_union_search_record.md` §1 ⚠gap |
 
 ## S. The guiding principles — [full entries](decisions/group_S.md)
 
@@ -820,7 +898,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-169 | #5 - when facts may be scarce, investigate | LIVE | — | `CLAUDE.md` |
 | D-170 | #6 - total unification: one path per concern | LIVE | — | `CLAUDE.md` |
 | D-171 | #7 - a layer is enhanced only with what belongs to it | LIVE | — | `CLAUDE.md` |
-| D-172 | #8 - no inference-problem-driven coding until every method sits in its correct layer | LIVE | — | `CLAUDE.md` |
+| D-172 | #8 - no inference-problem-driven coding until the refactoring, the architectural design and the algorithmic completion are done | LIVE | 2026-08-04 · user | `CLAUDE.md` |
 | D-173 | #9 - measure only on corpora known to be non-stale and accurate | LIVE | — | `CLAUDE.md` |
 | D-174 | #10 - documentation always in sync with code | LIVE | — | `CLAUDE.md` |
 | D-175 | #11 - regression tests in sync with code, and run between iterations | LIVE · derivation not recorded | — | `CLAUDE.md` |
@@ -847,6 +925,9 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-205 | A human acts as ground truth where no formal ground truth exists | LIVE | — | `ARCHITECTURE.md` |
 | D-206 | Intonation is held as a future feature, and is a declared future consumer of the analysis | DEFERRED | — | `ARCHITECTURE.md` |
 | D-277 | Measure before build - and a byte-identical structural refactor is exempt, because byte-identity is its prediction | LIVE | 2026-08-02 · user | `cowork_engage_arc_plan.md` |
+| D-586 | "Function" in the machine-learning literature names the Roman-numeral components, not Riemann's function theory — and this project's own function layer is misnamed for the same confusion | LIVE | 2026-08-04 · user | `cowork_layer5_function_methods.md` §0 ⚠gap |
+| D-610 | The value-type relocation is ZERO-CHURN by construction: the leaf spans both namespaces and the un-nested type keeps a member alias, so no call site changes and the move is byte-identical | LIVE | 2026-08-04 · user | `cowork_types_header_design.md` “The leaf header” ⚠gap |
+| D-639 | Phase 1's doc-sync half reaches a document's account of ITSELF only where that account changes how its analysis content is read — with three worked examples that are the test, and a fallback ruled with it | LIVE | — | `CLAUDE.md` |
 
 ## T. Standing process rules and local patches — [full entries](decisions/group_T.md)
 
@@ -880,7 +961,41 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-437 | Phase 3 waits on the phase-2 items that could find another member of the family being designed for, not on all of phase 2 | LIVE | — | `CLAUDE.md` |
 | D-438 | Open-items register rows whose subject is this project's own tracking and documentation apparatus gate nothing — but an establishment obligation always gates | LIVE | — | `CLAUDE.md` |
 | D-439 | The perspective inventory's §4 is the one home for the enumerated discovery channels, and CLAUDE.md's phase-2 clause points at it instead of listing its own subjects | LIVE | — | `CLAUDE.md` |
-| D-473 | A theory-grounding pass labels every load-bearing claim FACT / THEORY / CONJECTURE, cross-checks its central sources independently, and carries no equation out of a text it could not fetch | LIVE | 2026-08-04 · user | `cowork_term_theory_grounding.md` ⚠gap |
+| D-473 | A theory-grounding pass labels every load-bearing claim FACT / THEORY / CONJECTURE, cross-checks its central sources independently, and carries no equation out of a text it could not fetch | LIVE | 2026-08-04 · user | `cowork_term_theory_grounding.md` the opening block (above the first section heading) ⚠gap |
+| D-547 | An audit's scope is generated mechanically from the code and every row gets a disposition — the auditor never chooses what to look at | LIVE | 2026-08-04 · user | `cowork_audit_protocol.md` |
+| D-548 | The audit's verdict set is closed with no silent escape, and 'no issue' is itself a recorded claim with a stated reason | LIVE | 2026-08-04 · user | `cowork_audit_protocol.md` |
+| D-549 | An audit runs in BOTH directions — from the contract to the code as well as from the code to the reader's judgment — because an absence is findable only from the contract side | LIVE | 2026-08-04 · user | `cowork_audit_protocol.md` |
+| D-550 | Every mechanism in the audit inventory carries a MEASURED fire rate beside what it claims — reading answers what it claims, counting answers what it does | LIVE | 2026-08-04 · user | `cowork_audit_protocol.md` |
+| D-551 | The audit is itself established with a MEASURED residual-error rate; an audit whose error rate is unknown certifies nothing | LIVE | 2026-08-04 · user | `cowork_audit_protocol.md` |
+| D-552 | An audit is TWO runs in a fixed order — blind enumeration first, then the known-problem signature sweep — and certification requires both | LIVE | 2026-08-04 · user | `cowork_audit_protocol.md` |
+| D-557 | Build-it-right comes BEFORE tune-precision, strictly — no inference-problem fixing anywhere until the refactoring, the architectural design and the algorithmic completion are done | SUPERSEDED BY D-172 | 2026-08-04 · user | `CLAUDE.md` |
+| D-558 | An unhit branch is routed one of three ways, and defensive can't-happen code is ANNOTATED, never deleted — removing safety code to lift a coverage number is forbidden | LIVE | 2026-08-04 · user | `cowork_l1l3_stabilization_plan.md` |
+| D-559 | Movement in the corpus numbers is classified BY PHASE: in the foundation phases any movement at all is a bug and a STOP, in the build phases it is gated, and only the last phase tunes | LIVE | 2026-08-04 · user | `cowork_l1l3_stabilization_plan.md` |
+| D-561 | A probe arm may not carry a component already measured net-harmful — it runs with that component disabled, and the verdict declares what it therefore does not exercise | LIVE | 2026-08-04 · user | `cowork_eg2_scoping.md` |
+| D-562 | Where a measurement carries a declared handicap, the verdict is read ASYMMETRICALLY and the asymmetry is declared before the measurement runs | LIVE | 2026-08-04 · user | `cowork_eg2_scoping.md` |
+| D-563 | The funnel's stages run strictly cheapest-first, and the plan is committed with its prediction section EMPTY before any measurement exists | LIVE | 2026-08-04 · user | `cowork_eg2_scoping.md` |
+| D-566 | STRUCTURAL fixes come before correctness fixes: never tune an inference decision while a responsibility is still in the wrong place | LIVE | 2026-08-04 · user | `cowork_audit_obligation_map.md` |
+| D-567 | An audit document labels each claim TRUTH or PROVISIONAL — a claim read from the source this session stands; any quantity carried from memory of an earlier investigation does not | LIVE | 2026-08-04 · user | `cowork_audit_obligation_map.md` |
+| D-573 | A floor measurement that collapses is a FINDING, not a failure — it is reported, not papered over | LIVE | 2026-08-04 · user | `docs/stage4b_design.md` |
+| D-574 | The pass-bar for a measured change is set AFTER the baseline measurement, so the threshold is data-grounded rather than guessed | LIVE | 2026-08-04 · user | `docs/stage4b_design.md` |
+| D-577 | An audit verdict distinguishes DESIGN debt from MIGRATION debt — the wrong cut, versus the right cut whose legacy is not yet retired | LIVE | 2026-08-04 · user | `cowork_l1l4_architecture_audit.md` |
+| D-578 | An orphan claim requires a WHOLE-REPOSITORY search; a per-directory one produces false orphans | LIVE | 2026-08-04 · user | `cowork_l1l4_architecture_audit.md` |
+| D-592 | What FINISHED means for a layer, as the user's standing bar: restructured, built, dead code resolved, legacy retired, regression- and reachable-branch-tested, specs synced — nothing left | LIVE | 2026-08-04 · user | `cowork_l1l4_completion_ledger.md` |
+| D-593 | The line inside the build-it-right firewall: plain correctness bugs are allowed now, accuracy on hard cases is not — and a KNOWN WRONG ANSWER on the key axis is on the forbidden side | LIVE | 2026-08-04 · user | `cowork_l1l4_completion_ledger.md` |
+| D-596 | The north star: BEST means CORRECT — every obligation is judged against the ground-truth oracle and never against whether it passes a proxy gate | LIVE | 2026-08-04 · user | `docs/layer_audit_plan.md` |
+| D-597 | The layer audit runs in two phases in a fixed order — every layer audited ALONE first, the architecture reviewed second on the accumulated findings | LIVE | 2026-08-04 · user | `docs/layer_audit_plan.md` |
+| D-599 | Adjudication method: apply the standing principles FIRST, and only where they do not decide is there a genuine user choice — what remains for the user is ratifying the derivation, not picking an option | LIVE | 2026-08-04 · user | `cowork_adjudication_dossier.md` |
+| D-602 | A layer's measurement is judged on coverage-matched accuracy AND correct abstention, never on raw coverage — abstaining on a genuinely undecidable case is a RIGHT outcome | LIVE | 2026-08-04 · user | `cowork_phase5c_l5_build_plan.md` “The build discipline” ⚠gap |
+| D-603 | While the pipeline is being rebuilt, a behaviour-changing increment is graded DIRECTIONALLY and not against a fixed bar — meaningful comparison happens only against the fully reconstructed pipeline | LIVE | 2026-08-04 · user | `cowork_layer3_keymode_impl_design.md` “§4” ⚠gap |
+| D-611 | The tidy guardrails, in three tiers — and the dormant path and its staged scaffolding are DEFERRED-ENGAGEMENT, not dead code: removing them is a STOP | LIVE | 2026-08-04 · user | `cowork_l1l4_review_charter.md` |
+| D-617 | A perfect-detection CEILING is never banked — the realized fraction is measured before the mechanism is wired into production scoring | LIVE | — | `docs/stage4c_cadence_key_design.md` |
+| D-626 | A scoring term lands together with its tuning — a dormant weight-zero term is code with no effect and no test that exercises its effect | LIVE | — | `cowork_tpc_capability_design.md` |
+| D-627 | The CONTRACT ships first behind a correct byte-identical interim; the efficiency is a separate deferred step that never blocks the layers above it | LIVE | — | `cowork_layer1_extend_design.md` |
+| D-633 | A cause-classifier is established BEFORE its results are read — its totals must reconcile exactly with the established agreement column, and every failing run gets exactly one cause from a closed list | LIVE | — | `cowork_key_mode_inference_diagnosis.md` |
+| D-634 | Where the specification and the code diverge on a music-theoretic question, THE SPECIFICATION IS THE CORRECT REFERENCE and the code goes on the build backlog | LIVE | — | `cowork_delta_check_dispositions.md` |
+| D-636 | The per-step build method: INVESTIGATE, BUILD, VERIFY, ASSESS-FOR-AMENDMENT — no step starts before the prior step's assessment, and a surprise pauses the sequence | LIVE | — | `cowork_phase5b_l4_build_plan.md` |
+| D-637 | Engaging a different DECOMPOSITION will move the corpus output — that movement is the gated behaviour change, not a byte-identity violation | LIVE | — | `cowork_phase5b_l4_build_plan.md` |
+| D-640 | A count of outstanding work is derived from state at HEAD, never taken from the membership of a list of asks or from an authored disposition beside a row | LIVE | — | `cowork_audit_protocol.md` |
 
 ## U. The standing decision-bearing surfaces — [full entries](decisions/group_U.md)
 

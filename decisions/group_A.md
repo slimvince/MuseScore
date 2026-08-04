@@ -439,6 +439,8 @@
 
 **Home.** `cowork_factorization_desk_simulation.md:492-498`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **§4** — `## 4. Findings register (surprises recorded, diagnosed, with proposed dispositions)` (heading at line 485). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
 **Provenance.** RATIFIED by the user 2026-07-19 — the document's own banner records that the §7 asks were granted in full, naming this as "the §4.1 granularity amendment (now incorporated in `cowork_joint_estimator_factorization.md` §2/§3 with dated marks)". Entered by the phase-1 reads wave 1 from the full read of `cowork_factorization_desk_simulation.md`. The amendment's incorporated home is the factorization specification, which this wave did NOT read (it is owed at reading order 32); the entry is homed where the ratification is recorded and the incorporation is not verified here. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
 ### D-450 — The key-signature and declared-mode prior conditions the INITIAL key state only, re-entering only at a notated signature change
@@ -461,6 +463,8 @@
 
 **Home.** `cowork_factorization_desk_simulation.md:506-512`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **§4** — `## 4. Findings register (surprises recorded, diagnosed, with proposed dispositions)` (heading at line 485). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
 **Provenance.** RATIFIED by the user 2026-07-19 — the document's banner records the §7 asks granted in full, naming "the §4.2 initial-state-only prior record (incorporated at §3.10)". Entered by the phase-1 reads wave 1. As with D-449 the incorporated home is the factorization specification, unread at this wave. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
 ### D-451 — A desk simulation's table values are provisional, enter no fit, and a verdict that would flip inside a provisional value's plausible range is reported as a near-tie, never as a win
@@ -482,6 +486,8 @@
 
 **Home.** `cowork_factorization_desk_simulation.md:30-35`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **§0** — `## 0. Ground rules (declared before any trace)` (heading at line 28). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
 **Provenance.** The ground rules of `cowork_factorization_desk_simulation.md` §0, declared before any trace, in the document the user RATIFIED on 2026-07-19 (banner: the §7 asks granted in full, verdict included). Entered by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
 ### D-452 — Every desk-simulation trace runs at identity weights — the ratified ablation baseline — so the trace tests the structure and the tables, not the weighting
@@ -500,6 +506,8 @@
 
 **Home.** `cowork_factorization_desk_simulation.md:36-38`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **§0** — `## 0. Ground rules (declared before any trace)` (heading at line 28). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
 **Provenance.** The ground rules of `cowork_factorization_desk_simulation.md` §0, in the document the user RATIFIED on 2026-07-19. Entered by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
 ### D-453 — The desk simulation's verdict: the ratified factorization passes nine of ten traces and no finding reopens the structure
@@ -516,6 +524,8 @@
 **Entry ratified.** 2026-08-04 · by user
 
 **Home.** `cowork_factorization_desk_simulation.md:590-591`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **§7** — `## 7. What ratification is asked for` (heading at line 588). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
 
 **Provenance.** RATIFIED by the user 2026-07-19 — the banner records the §7 asks granted in full, of which this verdict is the first. Entered by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
@@ -543,7 +553,9 @@
 
 **Status.** LIVE · decided 2026-07-19 · ratified by user
 
-**Home.** `cowork_joint_estimator_architecture.md:89-103`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_joint_estimator_architecture.md:89-103`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§5a** — `## 5a. Design decisions ratified (the design pass, 2026-07-19 →)` (heading at line 81). A delegation at ARCHITECTURE.md:3 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** The first of the five design decisions the governing architecture document records as ratified at the design pass. It resolves the mode-vocabulary question the same document had listed as open, and the rows it settles close when the build lands. The grading convention that reduces an emitted exotic mode to its parent collection's minor key is **D-210**; the desk-simulation decisions that build on this state space are **D-449**…**D-453**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 
@@ -575,7 +587,9 @@
 
 **Status.** LIVE · decided 2026-07-19 · ratified by user
 
-**Home.** `cowork_joint_estimator_architecture.md:105-123`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_joint_estimator_architecture.md:105-123`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§5a** — `## 5a. Design decisions ratified (the design pass, 2026-07-19 →)` (heading at line 81). A delegation at ARCHITECTURE.md:3 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** The second of the five ratified design decisions, recorded with four ledger entries attached: that the staged assembly is our own synthesis and carries its own prediction; the constrained-optimum record; the fit-scope declaration made before any fit; and the named fallback if the likelihood-fit weights disagree with the reported metric. The gates that govern it are **D-270** (held-out protocol) and **D-271** (capacity budget). The ablation baseline is the one every desk-simulation trace runs at, **D-452**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 
@@ -608,7 +622,9 @@
 
 **Status.** LIVE · decided 2026-07-19 · ratified by user
 
-**Home.** `cowork_joint_estimator_architecture.md:125-144`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_joint_estimator_architecture.md:125-144`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§5a** — `## 5a. Design decisions ratified (the design pass, 2026-07-19 →)` (heading at line 81). A delegation at ARCHITECTURE.md:3 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** The third of the five ratified design decisions. It is why the robust stop's root metric is unchanged and every published baseline column stays comparable — the root is derived, not abandoned. The published-once discipline it invokes is the fact-publication corollary (**D-100**). Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 
@@ -643,7 +659,9 @@
 
 **Status.** LIVE · decided 2026-07-19 · ratified by user
 
-**Home.** `cowork_joint_estimator_architecture.md:146-167`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_joint_estimator_architecture.md:146-167`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§5a** — `## 5a. Design decisions ratified (the design pass, 2026-07-19 →)` (heading at line 81). A delegation at ARCHITECTURE.md:3 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** The fourth of the five ratified design decisions. Its named establishment resource is the second chorale annotation set, whose declared instrument status applies — which ties it to **D-475** and `OPEN_ITEMS.md` OI-179: a consumer may not put that corpus under load while it stands unestablished. The deferred detection decision it supersedes in practice is **D-303**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 
@@ -670,7 +688,9 @@
 
 **Status.** LIVE · decided 2026-07-19 · ratified by user
 
-**Home.** `cowork_joint_estimator_architecture.md:169-182`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_joint_estimator_architecture.md:169-182`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+
+**Home section.** **§5a** — `## 5a. Design decisions ratified (the design pass, 2026-07-19 →)` (heading at line 81). A delegation at ARCHITECTURE.md:3 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** The fifth of the five ratified design decisions, and the one that discharges the mid-piece signature-change deferral. It is ledgered as OUR form, with the literature's absence of any signature prior explicitly cited. Whether the prior conditions the initial state only or acts as a persistent pull was deliberately left to the desk simulation, which settled it as **D-450**. The standing rule it must not contradict is **D-056** — notes always win. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 
@@ -692,6 +712,8 @@
 
 **Home.** `cowork_joint_estimator_architecture.md:200-206`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **§6** — `## 6. Recorded assessment (Cowork, 2026-07-18) — agreement, two reservations, one refinement` (heading at line 192). A delegation at ARCHITECTURE.md:3 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS**.
+
 **Provenance.** The first of two reservations Cowork recorded at the user's request after the architecture ratification, as design-pass input. It is #3 applied in advance: the shape of the expected movement is written down so that an unexpected shape is recognisable as a failure of the premises rather than celebrated. The adoption measurement it governs is the OI-178 re-baseline recorded in `CLAUDE.md` gate block (A). Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 
 ### D-530 — The joint architecture is a CONSTRAINED optimum, not a global one: the learned shared-representation models measure better and are excluded because they are un-establishable and undiagnosable
@@ -711,6 +733,8 @@
 **Status.** LIVE · decided 2026-07-18 · ratifier not stated
 
 **Home.** `cowork_joint_estimator_architecture.md:208-214`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **§6** — `## 6. Recorded assessment (Cowork, 2026-07-18) — agreement, two reservations, one refinement` (heading at line 192). A delegation at ARCHITECTURE.md:3 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS**.
 
 **Provenance.** The second recorded reservation, and an instance of the standing ledger corollary to #17: where a design is chosen for methodology-compliance rather than raw measured performance, the record names the unconstrained best known alternative and why it is excluded, so a future reader can re-test whether the constraint still binds. The same fork was ruled on measured evidence a month earlier as **D-531**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 
@@ -734,6 +758,8 @@
 
 **Home.** `cowork_sensitive_cell_probe.md:121-129`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **“Finding 1”** — `### Finding 1 (structural). The chord-progression table cannot express that a secondary dominant resolves to its target.` (heading at line 106). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
 **Provenance.** Finding 1 of the sensitive-cell probe, ratified in the banner as option 1a. It amends a pooling ladder the user had already ratified, which is why it was brought for re-ratification rather than done. The capacity rule it must still satisfy is **D-271**; the counts are ample enough that the new cells pass it. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 
 ### D-533 — A continuation too rare to have its own stored probability is scored by dividing the row's leftover in PROPORTION to each chord's overall frequency — never evenly, and never as impossible
@@ -751,6 +777,8 @@
 **Status.** LIVE · decided 2026-07-19 · ratified by user
 
 **Home.** `cowork_sensitive_cell_probe.md:155-159`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **“Finding 2. No document defines how to score a progression that sits inside a row's leftover probability.”** — `### Finding 2. No document defines how to score a progression that sits inside a row's leftover probability.` (heading at line 147). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
 
 **Provenance.** Finding 2 of the probe, ratified as option 2a, and recorded as one sentence owed to the build specification. It was a genuine gap rather than an ambiguity: no document defined it, and the probe proceeded by computing every verdict under both provisional readings and reporting both. `CLAUDE.md` gate block (A) names this rule as part of the production decoder's configuration. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 
@@ -773,6 +801,8 @@
 
 **Home.** `cowork_sensitive_cell_probe.md:188-195`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **“Finding 3. The penalty for a chord tone that fails to sound is still a placeholder, not a counted value.”** — `### Finding 3. The penalty for a chord tone that fails to sound is still a placeholder, not a counted value.` (heading at line 171). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
 **Provenance.** Finding 3 of the probe, ratified as option 3a, with the user's per-factor sharpening incorporated. The scope limit stated with it applies to EVERY table in this fit and is part of the decision: these are Bach-chorale values, no jazz values can be counted because no jazz ground truth exists, and the limit stays declared on the artifact — the standing position **D-422**/`OPEN_ITEMS.md` OI-7. The specification requiring the penalty and charging it per event of segment length is **D-449**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 
 ### D-535 — The checking stage's verdict: the real counted tables overturn no desk-simulation verdict, but margins moved in both directions and one margin expectation was plainly wrong
@@ -789,5 +819,54 @@
 
 **Home.** `cowork_sensitive_cell_probe.md:246-248`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **“For the record”** — `### For the record (no decision needed)` (heading at line 244). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
 **Provenance.** The probe's own summary, and the discharge of item 4 of the ratified capacity protocol — recompute the value-dependent desk-simulation passages with the real tables before building. The desk simulation it checks is **D-453**; the provisional-value rule that made the check owed in the first place is **D-451**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-565 — Exact score ties in the decode are real and are broken by a declared TOTAL ORDER on paths, implemented identically in every decoder — no epsilon, no platform dependence
+
+> **The tie-break rule (user-ratified 2026-07-20 at the C++ module build's parity finding):** exact
+> score ties between candidate decodes are real (proven at 8 corpus pieces — equal-score
+> segmentations differing by one boundary on repeated-chord runs) and, unbroken, they make the
+> committed output depend on the platform's floating-point library — unacceptable for the
+> diff-based adoption measurement and regression stops (#16, reproducibility). Equal-score
+> candidates therefore resolve by a declared TOTAL order, implemented identically in every decoder
+> of this specification: fewer segments first; then the earliest boundary-tick sequence
+> (lexicographic); then the canonical class-key order of the state sequence. No epsilon, no
+> platform dependence — a pure order on paths.
+
+**In plain words.** Two different readings of a piece can come out exactly equal, and this happens in real music. Left unresolved, which one the program commits to would depend on the machine's floating-point library. So ties are settled by a fixed rule applied in the same way everywhere: prefer fewer segments; if still tied, prefer the earlier sequence of boundary positions; if still tied, prefer the canonical ordering of the states.
+
+**Why.** Measured, not assumed: exact ties were proven at eight corpus pieces, equal-score segmentations differing by one boundary on runs of a repeated chord. The consequence is stated with the rule — an unbroken tie makes the committed output platform-dependent, which is unacceptable for the difference-based adoption measurement and for the regression stops (#16, reproducibility). A tolerance would not fix it; only a total order on paths does.
+
+**Status.** LIVE · decided 2026-07-20 · ratified by user
+
+**Entry ratified.** 2026-08-04 · by user
+
+**Home.** `cowork_joint_estimator_factorization.md:149-157`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **§5** — `## 5. The decode` (heading at line 147). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit**.
+
+**Provenance.** `cowork_joint_estimator_factorization.md` §5, the user-ratified structure-design specification of 2026-07-19; this clause is marked *user-ratified 2026-07-20 at the C++ module build's parity finding*, so it entered the specification a day after the structure was ratified and on a measurement made during the build. Read in full by READ WAVE 4, 2026-08-04.
+
+### D-621 — Hand-built versus learned is a question about the EMISSION alone — the decoding structure is decided and accommodates either
+
+> The **structure** is decided: constrained joint inference. **A-vs-B lives entirely in the EMISSION** — the
+> soft scoring and the constraint definitions. Hand-built features now (explainable, no training data); a
+> learned emission later (higher ceiling, decoded by the *same* constrained-joint machinery — part-1 rec.5).
+> The architecture is agnostic to that choice and accommodates both; the §9 residual sizing tells us where a
+> learned emission would actually buy something (the soft-ambiguous + floor slice) versus where hand-built
+> constraints already suffice (the pinned majority).
+
+**In plain words.** The long-standing question of whether the analysis should be written by hand or trained from data is not a question about the machinery that searches for the best reading — that machinery is settled and works either way. It is a question only about how each candidate reading is scored. So a trained scorer could be dropped in later without rebuilding anything around it.
+
+**Why.** It follows from where the two halves sit, which the decision states: the decoder consumes scores and constraints and is indifferent to how they were produced, so replacing their producer changes no structure. The measurement that sizes the choice is named with it — the residual decomposition tells where a trained scorer would actually pay, which is the ambiguous remainder rather than the majority the constraints already pin.
+
+**Status.** LIVE · decided 2026-06-15 · ratifier not stated
+
+**Home.** `docs/architecture_joint_inference.md:100-105`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **“§7”** — `## §7 — Where A-vs-B (hand-built vs learned) lives` (heading at line 98). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit**.
+
+**Provenance.** `docs/architecture_joint_inference.md` §7. Read in full by READ WAVE 6, 2026-08-04. ⚠ The document is superseded as an architecture proposal (`ARCHITECTURE.md:843`; the ratified estimator is **D-001**), and the SHAPE it proposes was replaced — but the separation this clause states survives into the ratified estimator, whose factors are the emission and whose decode is the machinery. It sits beside the later measured verdict to keep the hand-written scorer with the learned option retained as a stated fallback. The record states no ratifier.
 

@@ -1,0 +1,77 @@
+{
+  "purpose": "A run of tools/audit/process_check.py over named dispatches or reports. Generated so a report cites this file rather than transcribing what the check found (D-431).",
+  "rules": [
+    "D-431 bare quantity",
+    "D-431 uncited code claim",
+    "D-434 missing self-check section"
+  ],
+  "files_scanned": [
+    "cc_instruction_census_delegation_and_commit.md"
+  ],
+  "findings_total": 8,
+  "by_file": {
+    "cc_instruction_census_delegation_and_commit.md": {
+      "findings": 8,
+      "rows": [
+        {
+          "file": "cc_instruction_census_delegation_and_commit.md",
+          "line": 15,
+          "rule": "D-431 bare quantity",
+          "detail": "six entries",
+          "sentence": "`cowork_score_census.md` so it names the sections the six entries sit in.** Not a document-level"
+        },
+        {
+          "file": "cc_instruction_census_delegation_and_commit.md",
+          "line": 52,
+          "rule": "D-431 bare quantity",
+          "detail": "six entries",
+          "sentence": "- **A1.** That the six entries sit **only** in the sections Cowork read."
+        },
+        {
+          "file": "cc_instruction_census_delegation_and_commit.md",
+          "line": 69,
+          "rule": "D-431 bare quantity",
+          "detail": "1.4",
+          "sentence": "**1.4** Re-run the classification and report what actually moves."
+        },
+        {
+          "file": "cc_instruction_census_delegation_and_commit.md",
+          "line": 75,
+          "rule": "D-431 bare quantity",
+          "detail": "2.1",
+          "sentence": "**2.1** Record R2 at the voice-leading document's write-list row and on the affected entries: the"
+        },
+        {
+          "file": "cc_instruction_census_delegation_and_commit.md",
+          "line": 80,
+          "rule": "D-431 bare quantity",
+          "detail": "2.2",
+          "sentence": "**2.2** Record R3 likewise: no delegation for the structural-integrity audit, on the register's"
+        },
+        {
+          "file": "cc_instruction_census_delegation_and_commit.md",
+          "line": 83,
+          "rule": "D-431 bare quantity",
+          "detail": "2.3",
+          "sentence": "**2.3** Update `outstanding_delegations.json`'s classes to reflect both rulings — **derived, not"
+        },
+        {
+          "file": "cc_instruction_census_delegation_and_commit.md",
+          "line": 104,
+          "rule": "D-431 bare quantity",
+          "detail": "1.1",
+          "sentence": "**Task 1.1 finding more sections than Cowork read is expected** — that is why A1 is an assumption."
+        },
+        {
+          "file": "cc_instruction_census_delegation_and_commit.md",
+          "line": 105,
+          "rule": "D-431 bare quantity",
+          "detail": "1.4",
+          "sentence": "**Task 1.4 moving nothing is a result**, and a finding about the census rather than a failure of the"
+        }
+      ]
+    }
+  },
+  "clean_files": [],
+  "establishment": "tools/audit/process_check_establishment.json — the check's measured detection power and false-positive rate. Read it before reading a count here as coverage."
+}

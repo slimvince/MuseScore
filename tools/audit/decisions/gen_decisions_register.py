@@ -166,6 +166,18 @@ PREAMBLE = """# DECISIONS — the decisions register
 > preceding wave, and the riders this wave's dispatch ordered — D-492 marked a phase-3 fix-plan input
 > with the reachability of its subject checked at the code, and the D-474/D-475 consequences recorded
 > at principle #21 and on `OPEN_ITEMS.md` OI-179.
+> **Thirteenth ratification event, 2026-08-04:** the 37 READ WAVE 4 entries (D-547…D-583), ratified AS
+> DRAFTED with the statuses exactly as the record states them. The four entered **SUPERSEDED IN FACT**
+> (D-571, D-572, D-575, D-579) **stay superseded** — the ruling was explicit that they are not entered
+> LIVE and rowed for correction later, because a build that replaced what a decision governed is a fact
+> about the record and not a defect in it. **THIS EVENT SKIPS D-502…D-546, AND THE SKIP IS STATED
+> RATHER THAN LEFT TO BE INFERRED FROM THE RANGE:** the READ WAVE 3 entries and the OI-326 ruling entry
+> carry no entry ratification in their own provenance and none is recorded here, because the ruling this
+> event records names D-547…D-583 and a session may not widen a ratification to a neighbouring range.
+> Landing in the same commit and **not** entry ratifications: the build-it-right rule was widened and
+> homed at `CLAUDE.md` principle #8 (D-557 re-taken at its new home, the former verbatim preserved in
+> its provenance), D-576's caveat was recorded beside the figures it qualifies in gate block (A), and
+> three delegations were written into `ARCHITECTURE.md` on the user's ruling (`OPEN_ITEMS.md` OI-327).
 >
 > **From 2026-08-03 each entry carries its own ratification as a FIELD**, not only as prose inside
 > the provenance — see *Entry ratified* below. It is backfilled mechanically from the provenance
@@ -397,10 +409,46 @@ def render(backbone: dict, disp: dict) -> str:
         out.append("")
         out.append(f"**Not read in full.** {sc['not_read_in_full']}")
         out.append("")
-        out.append(f"**The remainder, measured.** {sc['measured_remainder']}")
+        # ★ 2026-08-04 (ruling R3, OI-334): `measured_remainder` is a TEMPLATE, not a sentence.
+        # Every figure in it is filled here from the SAME computed data the coverage table above
+        # is rendered from, so a figure can no longer be hand-carried into a generated file
+        # (#17f / D-431). An unfilled or unknown placeholder is a STOP, never a silent gap.
+        remainder_figures = {
+            "occurrences_total": f"{cc['occurrences_total']:,}",
+            "clusters": f"{cc['clusters']:,}",
+            "dispositioned": f"{cc['dispositioned']:,}",
+            "unresolved": f"{dh['disposition_counts'].get('unresolved', 0):,}",
+            "backbone_decision_count":
+                f"{dh['inputs']['backbone']['decision_count']:,}",
+            "decisions_recorded": f"{len(decisions):,}",
+        }
+        try:
+            remainder = sc["measured_remainder"].format(**remainder_figures)
+        except KeyError as exc:                      # a placeholder nothing computes
+            raise SystemExit(
+                f"STOP: `header.scope.measured_remainder` names a figure this generator does not "
+                f"compute: {exc}. A figure enters this file only via a computed field (D-431)."
+            ) from exc
+        if "{" in remainder or "}" in remainder:
+            raise SystemExit("STOP: `header.scope.measured_remainder` still carries an unfilled "
+                             "placeholder after formatting.")
+        out.append(f"**The remainder, measured.** {remainder}")
         out.append("")
         out.append(f"*Why this is stated at all:* {sc['why_declared']}")
         out.append("")
+        corr = sc.get("corrections_2026_08_04")
+        if corr:
+            out.append("> **★ Corrections to this scope block, 2026-08-04.** " + corr["ruling"])
+            out.append(">")
+            for item in corr["what_changed"]:
+                out.append(f"> - {item}")
+            out.append(">")
+            out.append("> **Why the former wordings are preserved rather than replaced silently.** "
+                       + corr["why_preserved_rather_than_replaced_silently"]
+                       + " Both are kept verbatim at `tools/audit/decisions/"
+                         "backbone_decisions.json` -> `header.scope.corrections_2026_08_04."
+                         "former_wording_preserved_verbatim_12`.")
+            out.append("")
     out.append("---")
     out.append("")
 

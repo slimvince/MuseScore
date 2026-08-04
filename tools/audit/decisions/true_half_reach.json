@@ -1,0 +1,73 @@
+{
+  "purpose": "Ruling R1 applied: how far phase 1's doc-sync half reaches into a document's account of itself, tested on the three documents `OPEN_ITEMS.md` OI-332 carries.",
+  "generated_by": "tools/audit/decisions/gen_true_half_reach.py",
+  "generated_for": "cc_instruction_phase1_delegations_and_corrections.md",
+  "the_ruling": {
+    "who_and_when": "User, 2026-08-04. Homed at `CLAUDE.md`, the D-231 phase-1 clause; register entry D-639.",
+    "worked_examples_that_ARE_the_test": {
+      "as-built banner over a dormant mechanism": "IN",
+      "missing supersession note on a superseded plan": "IN",
+      "stale anchor or a formatting artifact": "OUT"
+    },
+    "located_by": "anchor string, never a line number (the OI-330 lesson)",
+    "verbatim": "**★ HOW FAR THE DOC-SYNC HALF REACHES INTO A DOCUMENT'S ACCOUNT OF ITSELF (user-ruled 2026-08-04; D-639).** The sentence above says *\"states something false at HEAD\"*, and a document states things about ITSELF as well as about the analysis — a status banner, an as-built marker, a code anchor, a missing supersession note. **The doc-sync half reaches a document's account of itself ONLY WHERE THAT ACCOUNT CHANGES HOW THE DOCUMENT'S ANALYSIS CONTENT IS READ.** The ruling's own three worked examples, which are the test rather than illustrations of it: an **as-built banner over a dormant mechanism — IN**; a **missing supersession note on a superseded plan — IN**; a **stale anchor or a formatting artifact — OUT**. *Why the line falls there:* the clause states its own reason two lines up — *because a specification cannot be the compliance standard while it misdescribes the code* — so what the half exists to catch is a document that would make a reader believe something false about the system; a coordinate that has drifted misleads nobody about the analysis, and D-307 already forbids citing code by line number in the first place. **THE FALLBACK, RULED WITH THE TEST AND NOT LEFT TO A LATER SESSION:** if the test needs judgment on the first rows it meets, that is the *\"stable enough to be cited\"* failure repeating — a criterion that reads as mechanical and resolves case by case — and the fallback is **option (1A): the doc-sync half reaches only the account of the ANALYSIS.** A session that finds itself arguing a case applies the fallback and says so; it does not stretch the test to reach a verdict. *(First application, 2026-08-04, at `OPEN_ITEMS.md` OI-332: three documents, one matching each worked example, decided without reaching the fallback — the enumeration and the per-document reason are generated at `tools/audit/decisions/true_half_reach.json` and no verdict is restated here, #17f, D-431.)*"
+  },
+  "the_fallback": {
+    "what_it_is": "Option (1A) — the doc-sync half reaches only the account of the ANALYSIS — which the ruling states as the answer if the test needs judgment on the first rows it meets, that being the \"stable enough to be cited\" failure repeating.",
+    "was_it_reached": false,
+    "how_that_is_decided_here": "DERIVED, not declared: a document matching none of the three worked examples is one the test did not decide. Each verdict below names the example it matched, so an unmatched document cannot be argued into a verdict silently.",
+    "documents_the_test_did_not_decide": []
+  },
+  "verdicts": [
+    {
+      "document": "cowork_layer1_extend_design.md",
+      "what_the_document_says_about_itself": "Its line 2 banner reads \"Status: DRAFT for sign-off. Read-only design — no code.\"",
+      "what_is_true_at_head": "Both operations it designs are built — `NoteModel::build` and `NoteModel::extend` are declared in `note_model.h`, with the overlap-retention contract the design's §4 specifies stated in the header's own comment, as OI-332 records at the object.",
+      "matched_worked_example": "as-built banner over a dormant mechanism",
+      "verdict": "IN — the doc-sync half reaches it",
+      "why": "It is the ruling's first worked example with the sign reversed, and the reversal makes it a stronger case rather than a different one: a banner that says BUILT over dormant code and a banner that says NO CODE over built code both make a reader believe something false about the system. And the belief changes how every mechanism in the document is read — as a proposal still open to change, or as a description of what runs at HEAD. That is the account of the document changing how its analysis content is read, which is the test in its own words."
+    },
+    {
+      "document": "cowork_layer3_reachback_design.md",
+      "what_the_document_says_about_itself": "Its status header cites the loop at `regionanalyzer.cpp:585–666` and its §0 cites the orchestrator at `:506` and the conditional build at `:536–538`.",
+      "what_is_true_at_head": "The same constructs sit at `:561`, `:591` and `:660`, as OI-332 records at the object. The row's own words: \"The document's substance is accurate; only its coordinates are wrong.\"",
+      "matched_worked_example": "stale anchor or a formatting artifact",
+      "verdict": "OUT — the doc-sync half does not reach it",
+      "why": "It is the ruling's third worked example word for word: a stale code anchor. Nothing a reader concludes about the analysis changes — the mechanism the document specifies and the code that implements it are both exactly as described, and only the coordinates a reader would use to find the code have moved. D-307 already forbids citing code by line number at all, so what is owed here is the D-307 fix, which the doc-sync half is not the instrument for."
+    },
+    {
+      "document": "docs/stage4c_cadence_key_design.md",
+      "what_the_document_says_about_itself": "It is banner-marked \"DRAFT — ratification-gated\" and carries one inline supersession note, on the gate figures in its §4c-ii — so it has been touched since it was written.",
+      "what_is_true_at_head": "The key-agnostic local cadence detector the document builds toward was FALSIFIED at its precision ceiling on 2026-06-15, one day after the document was written (D-290), and the document carries no note of it.",
+      "matched_worked_example": "missing supersession note on a superseded plan",
+      "verdict": "IN — the doc-sync half reaches it",
+      "why": "It is the ruling's second worked example word for word. Without the note a reader takes the detector as a live design to be built; with it, the detector is a closed approach and what survives is the §3 scope constraint and the §1 grading discipline, which OI-332 already separates out (D-616, D-617). The same text is read as two different things depending on a fact the document does not carry — which is exactly what the test asks."
+    }
+  ],
+  "counted": {
+    "documents_graded": 3,
+    "inside_the_doc_sync_half": 2,
+    "outside_it": 1,
+    "undecided_and_therefore_governed_by_the_fallback": 0
+  },
+  "the_gate_consequence_this_ruling_carries": {
+    "what_moves": "OI-332's own classification. The row classes itself APPARATUS under D-438, on the ground that \"Two of the three are pointers and a banner — the line the non-gating declaration draws explicitly names a pointer, an anchor, a label, a banner as apparatus.\" That reads one half of D-438's line. The same sentence continues: \"a correction to a statement about the analysis OR ITS BUILD STATE, or the completion of a specification, GATES.\" A banner that says a design has no code when both its operations are built is a statement about the build state.",
+    "why_it_is_reported_and_not_applied_here": "The verdict set is DERIVED, never hand-listed — `CLAUDE.md` forbids hand-adding a verdict for a row the first cut never reached, and `tools/audit/gen_nongating_apparatus_rows.py` is the one place a verdict is authored. Moving this one is a change to that tool's authored table and to a published classification, which is the user's to rule on. It is stated here so it cannot be missed, and rowed.",
+    "which_of_the_three_carries_it": [
+      {
+        "document": "cowork_layer1_extend_design.md",
+        "why": "a banner asserting NO CODE over two built operations — a statement about the build state"
+      },
+      {
+        "document": "docs/stage4c_cadence_key_design.md",
+        "why": "a design whose approach the record falsified, with no note saying so — a statement about the analysis"
+      }
+    ],
+    "which_does_not": [
+      {
+        "document": "cowork_layer3_reachback_design.md",
+        "why": "a stale code anchor, which D-438's own line names as apparatus and which R1 places outside the doc-sync half"
+      }
+    ]
+  }
+}

@@ -12,14 +12,22 @@
 > the gates**, not the build instructions.
 
 ## Ordering principle — build-it-right BEFORE tune-precision (user-ratified 2026-06-25)
-Two phases, strictly in order:
-- **Build-it-right** — refactoring + architectural design + algorithmic completion, building each layer to use **all
-  available evidence** (the **maximal-information** principle — *including the notated spelling / tpc capability*). This
-  plan's Phases 1–4, then the L4/L5/L6 algorithmic builds. **No reactive precision-chasing here.**
-- **Tune-precision (Phase B — LAST, after the whole L1–L6 stack is built)** — the reactive *"actively understand why
-  inference isn't as good as we hoped"* work: the measured key-quality levers (scale-membership), the leading-tone
-  de-brittling, the L3 tpc-weight calibration. **No inference-problem-fixing happens until all refactoring,
-  architectural design, and algorithmic completion is done.**
+
+**★ THE RULE ITSELF IS HOMED AT `CLAUDE.md` PRINCIPLE #8, AND THIS SECTION POINTS AT IT RATHER THAN
+RESTATING IT (user-ruled 2026-08-04; D-557).** The ordering principle this plan was written under —
+build-it-right BEFORE tune-precision, strictly, with all three of the refactoring, the architectural
+design and the algorithmic completion finished before any inference-problem fixing anywhere — was
+widened into `CLAUDE.md` principle #8 on that date, in the fuller form this section had carried since
+2026-06-25. One rule, one home (#6): the governing document states it, this plan applies it. The
+former wording of this section is preserved verbatim in **D-557**'s provenance (#12).
+
+What this plan adds, and what is therefore still stated here: **which of ITS OWN phases fall on each
+side of the principle.** Build-it-right covers this plan's Phases 1–4 and then the L4/L5/L6
+algorithmic builds, each layer built to use **all available evidence** (the **maximal-information**
+principle — *including the notated spelling / tpc capability*); **no reactive precision-chasing
+happens in them.** Tune-precision is **Phase B — LAST, after the whole L1–L6 stack is built** — the
+reactive *"actively understand why inference isn't as good as we hoped"* work: the measured
+key-quality levers (scale-membership), the leading-tone de-brittling, the L3 tpc-weight calibration.
 
 Within build-it-right, strict bottom-up: the **bounded-context foundation** (Phases 1–3) first; then the **tpc spelling
 capability** (Phase 4 — a *maximal-information foundation*, built early so L4 is spelling-aware from the start; **this

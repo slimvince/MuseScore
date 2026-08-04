@@ -18,7 +18,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:414`
+**Home.** `ARCHITECTURE.md:429`
 
 **Provenance.** ARCHITECTURE.md:374-378 (§1.2). No date or ratifier stated.
 
@@ -34,7 +34,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:418`
+**Home.** `ARCHITECTURE.md:433`
 
 **Provenance.** ARCHITECTURE.md:380-382 (§1.2); restated at ARCHITECTURE.md:6821-6823 (the composing module is 'intended as a future contribution'). ★ READ WITH the CLAUDE.md DISTRIBUTION CONSTRAINT (D-197): the MusicXML declared-mode import patch cfc7eb5e39 is FORK-LOCAL ONLY and must NEVER reach musescore/MuseScore. Two recorded positions - a general intent and a one-patch exception - and the record does not state how the general intent applies to the rest of the tree.
 
@@ -49,7 +49,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:424`
+**Home.** `ARCHITECTURE.md:439`
 
 **Provenance.** ARCHITECTURE.md:384-387 (§1.3). No date or ratifier stated. The per-file consequence is ARCHITECTURE.md:6654 - a GPL v3 header on every file.
 
@@ -64,7 +64,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:427`
+**Home.** `ARCHITECTURE.md:442`
 
 **Provenance.** ARCHITECTURE.md:389-390 (§1.3), restated at ARCHITECTURE.md:6750-6752 (§18.3). No date or ratifier stated.
 
@@ -82,7 +82,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6855`
+**Home.** `ARCHITECTURE.md:6878`
 
 **Provenance.** ARCHITECTURE.md:6649-6655 (§17.1). No date or ratifier stated.
 
@@ -96,7 +96,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6861`
+**Home.** `ARCHITECTURE.md:6884`
 
 **Provenance.** ARCHITECTURE.md:6649-6657 (§17.1). No date or ratifier stated.
 
@@ -114,7 +114,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6865`
+**Home.** `ARCHITECTURE.md:6888`
 
 **Provenance.** ARCHITECTURE.md:6659-6671 (§17.2). No date or ratifier stated.
 
@@ -128,7 +128,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6877`
+**Home.** `ARCHITECTURE.md:6900`
 
 **Provenance.** ARCHITECTURE.md:6673 (§17.2). No date or ratifier stated. ★ This is the rule the 2026-08-01 CLAUDE.md Conventions entry generalizes from scoring values to design decisions as a class (D-195) - and the rule this register's rationale field serves.
 
@@ -144,7 +144,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6914`
+**Home.** `ARCHITECTURE.md:6937`
 
 **Provenance.** ARCHITECTURE.md:6707-6719 (§17.3), which gives a worked example from existing code (the circle-of-fifths interval deltas). No date or ratifier stated.
 
@@ -161,7 +161,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6927`
+**Home.** `ARCHITECTURE.md:6950`
 
 **Provenance.** ARCHITECTURE.md:6721-6729 (§17.4). No date or ratifier stated.
 
@@ -177,7 +177,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6948`
+**Home.** `ARCHITECTURE.md:6971`
 
 **Provenance.** ARCHITECTURE.md:6742-6746 (§18.2). No date or ratifier stated.
 
@@ -252,4 +252,23 @@
 **Home.** `docs/score_inventory.md:93-97`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** The licence finding of the score inventory's snapshot-suite section (audit C1). Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)
+
+### D-614 — Every real difficulty-grade label source is research-only or proprietary at origin — a commercial grading feature needs a licence path or its own labels
+
+> **Negatives:** no machine-readable ABRSM/RCM/Trinity syllabus, no Henle dump, no violin/guitar grade
+> dataset. **T-32 caveat recorded:** every real label source is research-only/proprietary at origin — a
+> COMMERCIAL grading feature needs a license path or own labels; CIPI+Mikrokosmos suffice for research
+> validation.
+
+**In plain words.** Every collection that says how hard a piece is to play is either restricted to research use or belongs to somebody who sells it. So a difficulty feature in a shipped product would need either a licence agreement or labels of our own; the held material is enough to check the idea works and not enough to ship it.
+
+**Why.** Established by the same search, per source: the two open datasets carry no licence file at all, the gated one is request-access and research-only, and the largest carries a free-licence badge over research-use-only text. The consequence is not inferred but named — the research/commercial split is what the caveat records, and it is the licence-posture instance of the shipped-value constraint **D-292** applied to a feature rather than to a fitted value.
+
+**Status.** LIVE · decided 2026-07-04 · ratified by user
+
+**Home.** `cowork_union_search_record.md:87-90`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **§3** — `## 3. N14 — difficulty/grade labels: real datasets exist; license posture is the open risk` (heading at line 76). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
+**Provenance.** `cowork_union_search_record.md` §3, the union search round. Read in full by READ WAVE 6, 2026-08-04. The document's status block records the user's disposition of item 3 in terms — *"the T-32 commercial caveat recorded in the product-tool register"* — so the caveat carries the user's act while the search finding behind it names no ratifier. Distinct from **D-292**, which restricts the pool a SHIPPED FITTED VALUE may be estimated on; this restricts a shipped FEATURE whose labels are somebody else's property.
 

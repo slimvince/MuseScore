@@ -54,9 +54,15 @@ use_utf8_output()   # OI-297 — the findings must survive a non-console stdout
 
 MODE_TOKEN = re.compile(r"--(check|verify|establish)\b")
 
-# The tool that records the guard state is not a subject of it: running this file from inside
-# itself would recurse.
+# Two files are not subjects of this run, for one reason: each would make it recurse.
+#   * this file — running it from inside itself is the obvious case;
+#   * the classification (added 2026-08-04, READ WAVE 6) — it READS the artifact this file WRITES,
+#     so running it here would classify the previous run's state, and capturing its output would
+#     change the artifact it just read, and so on without a fixed point. It is run separately,
+#     after this one, which is also the order its own STOP requires: it refuses to re-derive while
+#     its verdicts and this file's HISTORICAL table disagree.
 SELF = "tools/audit/gen_guard_state.py"
+NOT_A_SUBJECT = {SELF, "tools/audit/gen_guard_classification.py"}
 
 
 class Stop(Exception):
@@ -103,6 +109,26 @@ AUTHORED = [
      "the registered phase-3 gate partition re-derives"),
     ("tools/audit/gen_nongating_apparatus_rows.py", ["--check"],
      "the non-gating apparatus-row declaration re-derives from the INDEX"),
+    ("tools/audit/gen_phase1_completion_inventory.py", ["--check"],
+     "the phase-1 completion inventory re-derives -- D-231's clause still locatable by its "
+     "anchors, and every home class, defense gap, open-row cut and gate verdict unchanged"),
+    ("tools/audit/decisions/gen_outstanding_delegations.py", ["--check"],
+     "the outstanding-delegation population still derives at HEAD from the delegation grades and "
+     "the home data (D-640/OI-335). Its own STOPs ride with it: a write-list member with no "
+     "authored state label, a label for a non-member, and a class-C document with no authored "
+     "draft each stop it, so the derived view cannot drift away from the write list in either "
+     "direction"),
+    ("tools/audit/decisions/gen_true_half_reach.py", ["--check"],
+     "ruling R1's application re-derives -- the ruling still locatable in CLAUDE.md by its anchor, "
+     "OI-332 still carrying the three documents graded, and every verdict still naming one of the "
+     "ruling's own worked examples (D-639)"),
+    ("tools/audit/decisions/gen_phase1q_snapshot_establishment.py", ["--check"],
+     "the phase-1q snapshot's establishment record re-verifies. Its two moment-in-time checks "
+     "are FROZEN and read back -- they are statements about the tree before the apply ran, and "
+     "re-running them would make this guard fail forever after the act it licensed, which is the "
+     "OI-301/OI-305 shape. What it re-verifies is that the snapshot's own bytes still hash to the "
+     "established value and that it still parses and carries the fields OI-291 and D-432 cite "
+     "(#19)"),
     ("tools/audit/gen_ratification_surface_set.py", None,
      "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its "
      "census counts files in the tree, so any wave that adds a file changes it by construction "
@@ -126,6 +152,15 @@ AUTHORED = [
      "the delegation-bar pre-apply record re-derives"),
     ("tools/audit/decisions/gen_phase1n_reading_regime.py", ["--check"],
      "the reading regime re-derives"),
+    ("tools/audit/decisions/gen_reads5_repack.py", ["--check"],
+     "the re-packed reading schedule and its re-registered bands re-derive from the "
+     "REGISTERED regime, which it reads and never regenerates"),
+    ("tools/audit/decisions/gen_reads5_yield.py", ["--check"],
+     "read wave 5's yield re-derives against the bands re-registered before it read"),
+    ("tools/audit/decisions/gen_reads6_yield.py", ["--check"],
+     "read wave 6's yield — the LAST owed wave — re-derives against the bands re-registered "
+     "before it read, every entry it names is still in the register at the home it records, and "
+     "the owed remainder it reports still derives from the regime's partition plus waves 1-5"),
     ("tools/audit/decisions/gen_phase1m_measurements.py", ["--check"],
      "the phase-1m measurements re-derive"),
     ("tools/audit/decisions/gen_phase1g_triage.py", ["--check"],
@@ -145,6 +180,15 @@ AUTHORED = [
      "READ WAVE 3's measured yield still matches the bands registered before the reads, every "
      "entry it names is still in the register at the home it records, and its running read "
      "count still derives from the regime's own partition plus waves 1 and 2"),
+    ("tools/audit/decisions/gen_reads4_yield.py", ["--check"],
+     "READ WAVE 4's measured yield still matches the bands registered before the reads, every "
+     "entry it names is still in the register at the home it records, and its running read "
+     "count still derives from the regime's own partition plus waves 1, 2 and 3"),
+    ("tools/audit/decisions/gen_reads4_oi326_application.py", ["--check"],
+     "the OI-326 ruling's R5 measurement still re-derives — the doc-governance clause's own "
+     "delegating sentence is still locatable and still says what the measurement parsed, the "
+     "glob still matches the same files on disk, and no home document's grade has moved onto "
+     "that clause since the ruling was applied"),
     ("tools/audit/decisions/reaim_home_anchors.py", ["--check"],
      "no register home anchor has drifted"),
     ("tools/audit/decisions/gen_live_prohibition_pointers.py", ["--check"],
@@ -159,6 +203,64 @@ AUTHORED = [
 ]
 
 
+# ── THE R4 CLASSIFICATION — tools whose artifact RECORDS A POINT-IN-TIME MEASUREMENT ─────────
+#
+# THE RULING (user, 2026-08-04, READ WAVE 6, dispatch `cc_instruction_reads_6.md` §0a ruling R4;
+# `OPEN_ITEMS.md` OI-330): **a tool that RE-DERIVES A LIVE INVARIANT belongs in the guard list; a
+# tool that RECORDS A MEASUREMENT TAKEN AT A POINT IN TIME does not.**  Checked PER TOOL before any
+# tool moved — a supposed historical recorder that turns out to assert a live invariant STAYS.
+#
+# WHY THIS IS NOT A WAY OF HIDING FAILURES.  A tool here is not repaired, not deleted, and not
+# excused: its artifact stays on disk exactly as the wave that produced it wrote it, and this table
+# records why re-deriving it is the wrong act rather than a pending one.  The distinction the ruling
+# draws is between a check that CAN pass forever while the tree moves on, and one that must
+# eventually fail BECAUSE the tree moved on — the second measures the clock, not the repository.
+#
+# WHY THE VERDICTS ARE NOT AUTHORED HERE.  They are authored ONCE, with their per-tool evidence, in
+# `tools/audit/gen_guard_classification.py`, which imports this table and STOPS if the two disagree
+# in either direction (#6).  What lives here is the INVOCATION consequence — that the tool is not
+# run — because this file owns the invocation table.
+HISTORICAL: dict[str, str] = {
+    "tools/audit/decisions/gen_phase1n_reading_regime.py":
+        "HISTORICAL RECORD: the reading regime is a REGISTRATION — an ordering, a predicted band "
+        "per owed document and a wave schedule, all recorded BEFORE the reads they govern (#17b). "
+        "Its --check cannot pass again and passing would be the defect: OI-328 measured that "
+        "re-deriving it flips the ordering key outright, because one of the four candidate proxies "
+        "counts how often a document is named in a user-ratified surface and the register's own "
+        "homing work increments that count for documents whose yield is already known (#20). The "
+        "generator itself now STOPS with that reason rather than re-deriving. NO LIVE COVERAGE IS "
+        "LOST: the packing RULE it owns is imported and exercised live by gen_reads5_repack.py, "
+        "whose --check passes, and each wave's yield artifact re-derives against the registered "
+        "bands read off this one.",
+    "tools/audit/decisions/gen_phase1m_measurements.py":
+        "HISTORICAL RECORD: the phase-1m measurements, whose own dispatch ordered two MEASUREMENTS "
+        "and forbade acting on either. Its authored KIND table is a judgment made over the home "
+        "population AS IT STOOD at phase 1m, and its STOP fires because that population has since "
+        "GROWN — so passing it again would mean re-authoring a historical measurement's judgment "
+        "table for documents it never measured, which is restating a measurement against a changed "
+        "population (the OI-330 shape). NO LIVE COVERAGE IS LOST: its delegation clauses (a)+(b) "
+        "are applied live by gen_home_classification.py, which stays in the list.",
+    "tools/audit/decisions/gen_phase1g_triage.py":
+        "HISTORICAL RECORD: the phase-1g triage table is the decision surface the user ACCEPTED on "
+        "2026-08-02 (the 41-document exclusion list), and its counts are cluster attributions that "
+        "MOVE WHENEVER A DOCUMENT IS READ — the phase-1h note measured exactly that, one document "
+        "moving from 23 clusters to 19 and from rank 5 to rank 11. So its --check cannot pass while "
+        "reading continues, and re-deriving it would restate an accepted surface against a "
+        "population the acceptance did not cover. NO LIVE COVERAGE IS LOST: it asserts nothing "
+        "about the tree beyond those counts — it locates no quote and checks no anchor.",
+    "tools/audit/decisions/gen_reads4_oi326_application.py":
+        "HISTORICAL RECORD: read wave 4's measurement of the OI-326 ruling, taken BEFORE the ruling "
+        "was applied on the user's own condition. OI-330 states both available repairs are "
+        "inadmissible — re-pointing the anchor edits a historical measurement's tool, re-deriving "
+        "restates that measurement against the population the delegation writes changed. Its "
+        "failure is not a live invariant firing: the anchor became ambiguous because the USER WROTE "
+        "A CORRECT DELEGATION. NO LIVE COVERAGE IS LOST: the live half it also touches — that each "
+        "delegation citation still resolves in its surface — is asserted by "
+        "gen_phase1p_delegation_bar.py, which locates every FORMS anchor and stops on a moved or "
+        "ambiguous one, and which passes.",
+}
+
+
 def candidates() -> list[str]:
     """Every *.py under tools/audit/ that carries a --check / --verify / --establish mode."""
     found = []
@@ -168,7 +270,7 @@ def candidates() -> list[str]:
                 continue
             path = os.path.join(dirpath, fn)
             rel = os.path.relpath(path, ROOT).replace("\\", "/")
-            if rel == SELF:
+            if rel in NOT_A_SUBJECT:
                 continue
             with open(path, encoding="utf-8", errors="replace") as fh:
                 if MODE_TOKEN.search(fh.read()):
@@ -212,8 +314,16 @@ def main(argv: list[str]) -> int:
 
     unclassified = sorted(p for p in derived if p not in authored_paths)
 
-    runs, not_run = [], []
+    stray = sorted(p for p in HISTORICAL if p not in authored_paths)
+    if stray:
+        raise Stop(f"HISTORICAL names a tool with no authored invocation: {stray}")
+
+    runs, not_run, historical = [], [], []
     for rel, args, why in AUTHORED:
+        if rel in HISTORICAL:
+            historical.append({"tool": rel, "retired_invocation": args,
+                               "why": HISTORICAL[rel], "what_it_checked": why})
+            continue
         if args is None:
             not_run.append({"tool": rel, "why": why})
             continue
@@ -247,10 +357,35 @@ def main(argv: list[str]) -> int:
             "unclassified_candidates": unclassified,
             "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS "
                                   "A STOP: a guard exists that this run did not cover.",
+            "not_a_subject_of_this_run": sorted(NOT_A_SUBJECT),
+            "not_a_subject_why": "Each would make this run recurse: this file cannot run itself, "
+                                 "and the classification READS the artifact this file WRITES, so "
+                                 "running it here would classify the previous run and then change "
+                                 "the artifact it just read, without a fixed point. The "
+                                 "classification is run separately, AFTER this one — the order its "
+                                 "own STOP requires anyway.",
             "outside_tools_audit_authored_by_name": sorted(
                 p for p in authored_paths if not p.startswith("tools/audit/")),
         },
         "not_run": not_run,
+        "historical_records": {
+            "ruling": "User, 2026-08-04 (READ WAVE 6, dispatch `cc_instruction_reads_6.md` §0a "
+                      "ruling R4): a tool that RE-DERIVES A LIVE INVARIANT belongs in the guard "
+                      "list; a tool that RECORDS A MEASUREMENT TAKEN AT A POINT IN TIME does not. "
+                      "Checked PER TOOL before any tool moved — a supposed historical recorder "
+                      "that turns out to assert a live invariant STAYS.",
+            "what_leaving_the_list_means_and_does_not_mean":
+                "The artifact is PRESERVED exactly as the wave that produced it wrote it, and is "
+                "marked historical. The tool is not repaired, not deleted and not excused; it is "
+                "simply no longer asked to re-derive, because re-deriving it would destroy the "
+                "measurement it records. Nothing here fixes OPEN_ITEMS.md OI-309 or OI-330 — those "
+                "rows stay open on their own subjects.",
+            "the_per_tool_evidence_lives_at":
+                "tools/audit/guard_classification.json (gen_guard_classification.py), which "
+                "authors the verdict and its evidence for EVERY tool in this list and STOPS if its "
+                "verdict set and the table here disagree in either direction (#6).",
+            "tools": historical,
+        },
         "runs": runs,
         "summary": {
             "run": len(runs),
@@ -258,6 +393,7 @@ def main(argv: list[str]) -> int:
             "failing": len(failing),
             "failing_tools": [{"tool": r["tool"], "args": r["args"]} for r in failing],
             "not_run": len(not_run),
+            "historical_records": len(historical),
         },
     }
 
@@ -280,10 +416,13 @@ def main(argv: list[str]) -> int:
         print(f"  [{r['verdict']}] {r['tool']} {' '.join(r['args'])}")
     for n in not_run:
         print(f"  [NOT RUN] {n['tool']}")
+    for h in historical:
+        print(f"  [HISTORICAL] {h['tool']}")
     if unclassified:
         print(f"STOP: derived candidate(s) with no authored invocation: {unclassified}")
         return 1
-    print(f"{len(runs)} guard(s) run, {len(failing)} failing, {len(not_run)} not run")
+    print(f"{len(runs)} guard(s) run, {len(failing)} failing, {len(not_run)} not run, "
+          f"{len(historical)} historical record(s)")
     return drift
 
 

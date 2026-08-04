@@ -17,7 +17,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6625`
+**Home.** `ARCHITECTURE.md:6648`
 
 **Provenance.** ARCHITECTURE.md:6419-6422 (§15). No date or ratifier stated.
 
@@ -34,7 +34,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6634`
+**Home.** `ARCHITECTURE.md:6657`
 
 **Provenance.** ARCHITECTURE.md:6424-6433 (§15). No date or ratifier stated.
 
@@ -51,7 +51,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6844`
+**Home.** `ARCHITECTURE.md:6867`
 
 **Provenance.** ARCHITECTURE.md:6594-6643 (§16), which sorts the whole feature set into Core / Important / Prepared / Out of scope. No date or ratifier stated.
 
@@ -69,7 +69,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `CLAUDE.md:514-516`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:574-576`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md` (session 21, at the user's ratification of the external architecture review's corpus-expansion amendment). Related but distinct from **D-225** (a corpus is regenerated before its baseline figures are updated) and from the re-baseline discipline in `CLAUDE.md` gate block (A). Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]] — measurement conventions go to the gate block): written into `CLAUDE.md` gate block (A) beside the re-baseline discipline it bounds. Former home preserved (#12): `STATUS_ARCHIVE.md:250`. The same rule is stated on the corpus side at `cowork_score_census.md`'s decision-tier block, which the homed text names.
 
@@ -105,7 +105,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:2664-2666`
+**Home.** `ARCHITECTURE.md:2687-2689`
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md` (the jazz-corpus status block). It is the standing evidence behind [[OI-7]] (establish a jazz ground-truth corpus or de-scope the Jazz correctness claims) and behind the A-7 empirically-unvalidated mark. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written into `ARCHITECTURE.md` §4.2's jazz-validation block, directly beneath the bass-injection measurement that is its defense. Former home preserved (#12): `STATUS_ARCHIVE.md:1580`, the jazz-corpus status block.
 
@@ -124,9 +124,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_score_census.md:30-33`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_score_census.md:30-33`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§1** — `## 1. Why corpora kept being "discovered" — and the method that closes it` (heading at line 13). The delegation names sections, and no delegation names this one. Decided by **D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section**.
+**Home section.** **§1** — `## 1. Why corpora kept being "discovered" — and the method that closes it` (heading at line 13). A delegation at ARCHITECTURE.md:326 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The document's banner records `Status: v1 DELIVERED (Cowork, 2026-07-02); for user disposition of the acquisition tiers (§5)` — the user disposition it names covers the acquisition tiers, not this rule. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -145,9 +145,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_score_census.md:67-70`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_score_census.md:67-70`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§3** — `## 3. Inclusion criteria (what "a corpus we can use" means)` (heading at line 65). The delegation names sections, and no delegation names this one. Decided by **D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section**.
+**Home section.** **§3** — `## 3. Inclusion criteria (what "a corpus we can use" means)` (heading at line 65). A delegation at ARCHITECTURE.md:326 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -166,9 +166,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_score_census.md:74-77`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_score_census.md:74-77`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§4** — `## 4. Overlap hazard (the accounting rule)` (heading at line 72). The delegation names sections, and no delegation names this one. Decided by **D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section**.
+**Home section.** **§4** — `## 4. Overlap hazard (the accounting rule)` (heading at line 72). A delegation at ARCHITECTURE.md:326 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -189,9 +189,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_score_census.md:119-124`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_score_census.md:119-124`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§8** — `## 8. The comprehensiveness claim, precisely stated — and the mitigation plan (added 2026-07-02, user question)` (heading at line 117). The delegation names sections, and no delegation names this one. Decided by **D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section**.
+**Home section.** **§8** — `## 8. The comprehensiveness claim, precisely stated — and the mitigation plan (added 2026-07-02, user question)` (heading at line 117). A delegation at ARCHITECTURE.md:326 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -212,9 +212,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_score_census.md:126-131`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_score_census.md:126-131`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§8** — `## 8. The comprehensiveness claim, precisely stated — and the mitigation plan (added 2026-07-02, user question)` (heading at line 117). The delegation names sections, and no delegation names this one. Decided by **D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section**.
+**Home section.** **§8** — `## 8. The comprehensiveness claim, precisely stated — and the mitigation plan (added 2026-07-02, user question)` (heading at line 117). A delegation at ARCHITECTURE.md:326 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -235,9 +235,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_score_census.md:166-171`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_score_census.md:166-171`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§8b** — `## 8b. The recurring-discovery finding, and the PURPOSE-DRIVEN sweep trigger (user observation, 2026-07-03)` (heading at line 150). The delegation names sections, and no delegation names this one. Decided by **D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section**.
+**Home section.** **§8b** — `## 8b. The recurring-discovery finding, and the PURPOSE-DRIVEN sweep trigger (user observation, 2026-07-03)` (heading at line 150). A delegation at ARCHITECTURE.md:326 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The section is headed as a user observation of 2026-07-03; the record says the trigger is instituted but does not name who instituted it. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -490,6 +490,8 @@
 
 **Home.** `cowork_census_full_needs_audit.md:256-258`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **§7** — `## 7. POST-WAVE CORRECTIONS (Wave 3 measured, 2026-07-04 — two audit claims falsified, owned)` (heading at line 240). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
 **Provenance.** Recorded as the lesson of the audit's own post-wave corrections, which the document owns in its own §7 rather than quietly amending. It is #19 applied to corpus bookkeeping: a layer is trusted after being positively established, never because a summary mentions it. The surviving measured fact about on-disk dual annotation is **D-373**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 
 ### D-514 — A newly acquired annotation set whose works OVERLAP the regression corpus is RECORD-ONLY: it may not be wired to, compared against, or bulk-diffed with the gate corpus without a user ruling
@@ -507,6 +509,8 @@
 
 **Home.** `cowork_census_full_needs_audit.md:280-283`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **§7.1** — `### 7.1 WAVE-3 ADDENDUM — the two DDMAL direct pickups (2026-07-04, `cc_wave3_addendum_report.md`)` (heading at line 260). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
 **Provenance.** Recorded at the Wave-3 addendum with the acquisition itself. It is the corpus-side companion of the de-duplication rule **D-361** (corpora are de-duplicated by WORK, not by container) and of the research-tier-on-entry rule at `CLAUDE.md` gate block (A). Bears directly on `OPEN_ITEMS.md` OI-179: it is a second annotation layer over gate-class chorales, and this is the ruling that says it may not be used as one without the user. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 
 ### D-515 — Pedal-point ground truth gets its OWN needs row rather than riding as a note on another — the user's reason: it can improve inference precision and nothing is lost
@@ -521,6 +525,8 @@
 **Status.** LIVE · decided 2026-07-04 · ratified by user
 
 **Home.** `cowork_census_full_needs_audit.md:227-228`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **§6** — `## 6. Wave-3 disposition surface (user disposes — nothing below is commissioned)` (heading at line 213). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
 
 **Provenance.** One of the four rulings the audit's banner records as taken on the day it was delivered. The material it tracks was verified at the source file in the same session. The pedal-point work it would serve is **D-103**/**D-207**/**D-385**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 
@@ -538,5 +544,63 @@
 
 **Home.** `cowork_census_full_needs_audit.md:223-225`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
+**Home section.** **§6** — `## 6. Wave-3 disposition surface (user disposes — nothing below is commissioned)` (heading at line 213). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
 **Provenance.** Two of the four rulings the audit's banner records. The part-writing half later produced its own measured verdict, **D-372** (marked part-writing errors must be BUILT, not downloaded — no public dataset exists). The intonation-scope ruling taken in the same act is **D-366**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-553 — A reference corpus's notation convention is DISCOVERED per entry by the comparison run, never declared as an input to it
+
+> Earlier drafts had each catalog declare its stripping convention
+> as test fixture setup ("this catalog uses degree=7,
+> preserveAlterations=false"). Under the progressive comparison
+> protocol, that's no longer needed — the convention is *discovered*
+> empirically from the comparison run, per entry.
+
+**In plain words.** When our analysis is compared against a published collection, the collection's habit of writing chords more plainly than we do is not declared in advance as a setting. The comparison tries each level of simplification per entry and reports which one matched — so the convention is a measured property of the run. A collection whose entries settle at different levels then shows up as mixed rather than being mis-scored.
+
+**Why.** Stated with the rule and defended by the failure of the alternative: declaring one convention per collection forces a single parameter onto a collection that may not have one, and reports the entries that disagree with the declaration as real analytical differences. Discovering it per entry also makes drift within one collection visible.
+
+**Status.** LIVE · decided 2026-04-25 · ratifier not stated
+
+**Entry ratified.** 2026-08-04 · by user
+
+**Home.** `docs/extension_stripping_policy.md:121-125`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** `docs/extension_stripping_policy.md`, the design memo `ARCHITECTURE.md`:1004 names for the test-only simplification utility; the document's own banner reads *"Direction settled."* and states no ratifier. Read in full by READ WAVE 4, 2026-08-04. **Distinct from D-304**, which is the production-side rule that the analyzer always emits its fullest reading: this is the measurement-side rule about how the comparison decides what the other side's convention IS. #19 bears on it — a comparison whose convention is asserted rather than measured is an unestablished measurement tool.
+
+### D-612 — The corpus-search convention: a NEGATIVE is recorded so it is never re-searched, and every claim is RE-VERIFIED at acquisition rather than trusted from the search
+
+> **[verified] tags are the agents' (primary page fetched)** — per the census convention, every claim is
+> re-verified at acquisition. Negatives are recorded so they are never re-searched. This doc is the
+> census-grade record; findings enter the census/registry only via a future acquisition dispatch.
+
+**In plain words.** When a search for annotated music comes back empty, the emptiness is written down as a result, so nobody spends a second session looking for the same thing. And nothing a search reports is trusted as it stands: when the material is actually fetched, every claim about it — what it contains, how big it is, how it is licensed — is checked again at the material itself.
+
+**Why.** Measured at the very next step, which is why the convention earns its place rather than being a preference: the acquisition round of the same day CORRECTED two licence claims the search had recorded — one collection graded CC-BY by its documentation site turned out to be CC-BY-NC-SA at its own licence file (and the non-commercial clause is what the shipped-value licence constraint turns on), and a second recorded as unstated turned out to be MIT. A search reads a page; an acquisition reads the object.
+
+**Status.** LIVE · decided 2026-07-04 · ratifier not stated
+
+**Home.** `cowork_union_search_record.md:16-18`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** `cowork_union_search_record.md`, the census §8c step-3 union search round, DISPOSED by the user 2026-07-04. Read in full by READ WAVE 6, 2026-08-04. The convention is stated in the document's own status block as *the census convention*; the record names no ratifier for it. It is the search-side companion of **D-372**, whose build-not-download conclusion this same document supplied, and of **D-308** (a newly acquired corpus enters as research material) — those govern what happens to a find; this governs what a search result is worth before it is checked.
+
+### D-613 — Ground truth for IMPLIED polyphony is confirmed ABSENT — and the voice labels that do exist come from engraved notation, which must be said at intake
+
+> **Negatives (do not re-search):** implied-polyphony GT over monophonic instruments — CONFIRMED ABSENT
+> (VoiSe 2005 and Gray & Bunescu's perceptual-stream pop corpus were never released; VISA excerpt sets not
+> public; Chew&Wu/Guiomard-Kagan reused notated voices). Caveat to carry: piano_svsep/vocsep labels
+> originate from engraved notation — for piano, engraving-voice ≈ the inference target (the SOTA field
+> accepts this), but say so at intake.
+
+**In plain words.** For music where several lines are implied by a single melodic instrument, no published collection of correct line assignments exists — every candidate was either never released or simply reuses the voices the engraver wrote. Where voice labels do exist, they come from the engraving rather than from a listener's judgment, which is close enough for keyboard music but is a property of the labels that has to be stated when the material is taken in.
+
+**Why.** Established by a targeted search reported per candidate, with the reason each fails named rather than summarised — two corpora never released, one excerpt set not public, and three that reuse notated voices instead of annotating heard lines. The caveat half is a statement about what the surviving labels MEASURE, which is the same distinction principle #21 makes about ground truth generally.
+
+**Status.** LIVE · decided 2026-07-04 · ratifier not stated
+
+**Home.** `cowork_union_search_record.md:32-36`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Home section.** **§1** — `## 1. N9 — stream / voice-separation GT: the GAP is now materially smaller` (heading at line 20). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+
+**Provenance.** `cowork_union_search_record.md` §1, the union search round, DISPOSED by the user 2026-07-04. Read in full by READ WAVE 6, 2026-08-04. The user's disposition of this section approves the three acquisitions and records that implied polyphony *stays a recorded gap*; the negative itself names no ratifier. A fact-of-absence of the same shape as **D-474** (no published per-axis annotator agreement for this repertoire), and recorded under the same discipline: the absence is the finding, not a reason to keep looking.
 

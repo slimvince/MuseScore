@@ -329,6 +329,21 @@
 > therefore not the non-commercial class the constraint assumed, and did not establish CC-BY-SA either; the
 > narrowed question is open at OI-271.
 >
+> **★ THAT POINTER IS WIDENED TO THE SECTIONS HOLDING THE CENSUS'S OWN STANDING RULES (written 2026-08-04 on
+> the user's ruling; the fifth home case, rule (g), user-ratified 2026-08-02 — a POINTER, never a copy, #6).**
+> Beside the licence-pool block §8c, `cowork_score_census.md` states the rules that govern the corpus census
+> itself: what counts as a census defect and the re-sweep cadence that follows from it; the five fields a
+> source must have decided before it enters the registry; the de-duplicate-by-work accounting rule, and the
+> exclusion of a gate-corpus work as reference data from every other container; what the census may and may
+> not claim, together with the grounds that license leaving a source un-enumerated; and the trigger that puts
+> a new analysis purpose's own sweep before that component's design is signed. **The ratified contract for the
+> corpus census and its admission rules is `cowork_score_census.md` §1/§3/§4/§8/§8b/§8c**, which this section
+> points at and does not restate. *What the widening settles, and what it does not:* it settles the DELEGATION
+> half alone — which sections a user-ratified surface delegates a stated concern to. Whether each named
+> section STATES RULES rather than records findings is judged **per section** under D-430's kind half at the
+> classification pass, and is **not** pre-judged by being named here; a named section that records findings
+> still admits nothing.
+>
 > **(f) Values are fitted per IDIOM, never for a user preset.** One fit event per musical idiom — a body of
 > repertoire sharing a practice — and no value is ever adjusted to make a named preset come out right. A
 > preset is a regression surface and a carrier for delivering a fitted set; which presets an end user should
@@ -1239,6 +1254,10 @@ and ratified (commits `edd33901ed` standing oracle-root metric tool, `e30bb45a4f
 `4055f89082` its coverage; pushed to the fork). Layer 2 is built as a fully-covered
 module (below) and is now **wired — L3 consumes the slicer** (`regionanalyzer.cpp:579`).
 
+**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer1_note_model_design.md` (AS-BUILT — built, reviewed and accepted, `:3`) — D-517…D-520 — which this section points at and does not restate.
+
+**Delegation pointer for the Layer-1.5 phrase-boundary primitive (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for the phrase-boundary primitive is `cowork_phrase_boundary_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-476…D-485 — which this section points at and does not restate. *(It is sited HERE, and the choice is stated rather than left to be inferred: this document defines L1.5 as "the thin derived-view layer over the L1 note model" and carries no section of its own for it, so the layer the primitive is a view OVER is the nearest owning section. The only other place the primitive is named is the Layer-6 section, which consumes it and does not own it — and which D-266 prohibits building until the bounded-context design is coded and regression-tested for Layers 1–5, so siting a contract pointer there would attach it to a question the user deliberately left open. Naming the document by filename also closes the prose-reference question the write list carried: the doc-governance clause's phrase "the phrase-boundary design" had more than one candidate in the tree.)*
+
 | Module | Responsibility |
 |--------|----------------|
 | `composing/analysis/notemodel/note_model.{h,cpp}` | **The lossless, tie-resolved NOTE MODEL — the single source of truth for "what sounds."** `NoteModel::build(score)` reads the score **once** into an annotated, tick-range-queryable set of sounding notes. Each `NoteEvent` carries 11 fields: `pitch, tpc, staff, voice, onset, release, duration, isGrace, plays, visible, staffEligible`. Tied groups are merged into **one** span/onset (via the DOM `firstTiedNote`/`lastTiedNote`/`playTicksFraction`); spans are true `[onset,release)` answered by **overlap with no horizon** (the old 4-whole-note backward cap is gone). Grace / non-playing / invisible / staff-ineligible notes are **kept and flagged, never dropped**. **Additive fact-surface extension (joint-estimator dual path, OI-180):** `notatedNotes()` republishes the tie-UNRESOLVED atoms — EVERY notated note incl. tie continuations, each with its OWN notated span, a `tieContinuation` flag, a `hasFermata` flag, and `resolvedIndex` linking to its tie-resolved `NoteEvent` — the facts the tie-resolved surface discards that the joint module's event lattice + emission covariates need. Purely additive: `notes()` and every existing consumer are byte-identical. |
@@ -1324,6 +1343,8 @@ Phase-2 clip is inert — so composing / notation / pipeline-snapshot / BIR / or
 byte-identical (composing 631/631, notation 53/53, snapshots 11/11 with no golden refresh; corpus
 0/353 `.ours.json` byte-diffs on Baroque/Jazz/Default, gate unchanged at 53/24/53). See `cc_layer2_impl_report.md` (HELD), `cowork_layer2_slicing_design.md`,
 `cc_layer2_audit_dossier.md`.
+
+**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer2_slicing_design.md` (AS-BUILT — built, reviewed, accepted and validated on the full test corpus, `:3`) — D-540…D-541 — which this section points at and does not restate. *(The "See …" line above is a citation of three documents, two of them session reports; `CLAUDE.md` rule (i) distinguishes a citation from a delegation, and this paragraph supplements that line rather than replacing it.)*
 
 #### Layer 3 — key/mode is the sequence decoder (Built+Dormant)
 
@@ -1505,6 +1526,8 @@ The grouping layer assembles the L5-labelled stream into the **flat** structure 
 the forward-only rebuild of the scattered live `detectCadences`/`detectPivotChords`/`KeyArea` machinery. Hierarchy,
 periods/sentences, and prolongation are out of the validatable core (verifiability contract, §2.15). Full spec:
 `cowork_layer6_grouping_design.md`.
+
+**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer6_grouping_design.md` (AS-BUILT, 2026-07-02 — built dormant and oracle-validated after the extension gate passed, `:3`) — D-454…D-462 — which this section points at and does not restate. *(The "Full spec:" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph supplements that line rather than replacing it.)* **★ WHY A CONTRACT HOME IS COHERENT FOR A LAYER THAT MAY NOT BE BUILT — the question this clause was withheld over on 2026-08-04 and which the user has now answered.** **D-611** establishes that the dormant path and its staged scaffolding are **deferred-engagement, not dead code**: their wire-or-remove verdict belongs to a named later step, and removing them is a STOP. Deferred work is therefore a state the record keeps decisions for, not an absence of them, and a contract home for it is the same posture rather than a new one — which is why **D-266**'s prohibition does not forbid this pointer. **D-266 IS UNTOUCHED:** Layer 6 may not be BUILT until the bounded-context design is coded and regression-tested for Layers 1–5. This clause records where the layer's design decisions live; it authorizes no build, no wiring, and no change to what the analysis computes.
 
 #### Planned analysis consumers beyond the layer stack
 

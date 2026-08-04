@@ -1,0 +1,562 @@
+{
+  "header": {
+    "purpose": "READ WAVE 5's measured yield against the bands RE-REGISTERED for the re-packed wave before it was read, per `reads5_repack.json`.",
+    "generator": "tools/audit/decisions/gen_reads5_yield.py",
+    "wave": "reads-5",
+    "dispatch": "cc_instruction_reads_5.md",
+    "authored_inputs": [
+      "WAVE_READS",
+      "LOW_YIELD_REASON",
+      "BAND_OBSERVATION",
+      "WHAT_SEPARATED_THEM",
+      "WAVE5_NOTE",
+      "THE_COLLISION_NOTE"
+    ],
+    "derived_from": [
+      "reads5_repack.json (the re-packed grouping and every re-registered band, itself read verbatim off the regime)",
+      "phase1n_reading_regime.json (the partition facts only)",
+      "reads1..reads4_yield.json (the earlier read counts)",
+      "backbone_decisions.json (every home, status, class and title)"
+    ],
+    "why_the_regime_artifact_is_not_regenerated": "Unchanged from waves 1-4 (OI-316) and now with a second, sharper reason measured this wave (OI-328): re-running the regime generator does not reproduce the registration, because the ordering key is the best-correlating proxy and one of the four candidates counts how often a document is named in a user-ratified surface — which the user's own delegation writes increment, for documents whose yield is already known.",
+    "note_on_this_wave": "This wave's read half ran after a substantial ruling half — the ratification, the re-homing of the build-it-right rule, the caveat, three delegations and the re-pack — so the read count is again what the ruling work left room for. The re-packed wave-5 grouping was taken ENTIRE nonetheless.",
+    "note_on_the_entry_that_is_not_a_yield": "One entry in this wave is NOT a read yield and is counted separately below: D-172 was RE-TAKEN, not entered, because the wave's own Task 2 widened the principle it quotes. That act produced OI-329 — two live entries recording one rule at one home — which is reported as this wave's own effect rather than absorbed."
+  },
+  "counts": {
+    "documents_read_in_full_this_wave": 14,
+    "documents_the_repack_grouped_into_wave_5": 14,
+    "register_entries_produced": 28,
+    "entries_homed_in_the_document_read": 28,
+    "entries_homed_in_the_owning_specification_instead": 0,
+    "entries_marked_legacy_subject": 0,
+    "entries_classed_process": 6,
+    "documents_yielding_zero": 0,
+    "register_entries_re_taken_not_entered": 1,
+    "what_the_re_taken_entry_is": "One entry in this wave is NOT a read yield and is counted separately below: D-172 was RE-TAKEN, not entered, because the wave's own Task 2 widened the principle it quotes. That act produced OI-329 — two live entries recording one rule at one home — which is reported as this wave's own effect rather than absorbed."
+  },
+  "the_running_read_count": {
+    "design_document_surface": 143,
+    "user_accepted_exclusions_not_read": 41,
+    "read_in_full_before_this_wave": 75,
+    "read_in_full_after_this_wave": 89,
+    "still_owed_a_full_read": 13,
+    "note": "Derived here from the regime's own partition plus the four earlier waves' counts, because the regime artifact's own `partition.read_in_full` and `owed_a_full_read` cannot be updated without refitting the registered bands (OI-316) — and, since OI-328, cannot be updated at all without flipping the ordering key. A reader comparing this block with the regime artifact will find them disagreeing BY DESIGN; this block is the current one."
+  },
+  "the_out_of_sample_test": {
+    "documents_inside_their_registered_band": 14,
+    "documents_outside_their_registered_band": 0,
+    "above_the_point_prediction": 10,
+    "below_the_point_prediction": 4,
+    "length_terciles_represented_in_this_wave": [
+      "medium",
+      "short"
+    ],
+    "what_the_band_test_is_worth": "Restated from waves 1-4 because it has not changed: EVERY registered band has a minimum of 0, so a band running from 0 to its tercile maximum can only be missed by a document out-yielding every document of its tercile ever. `inside_the_registered_band` is close to unfalsifiable and a pass on it establishes almost nothing. This wave adds the test below, which is not of that kind.",
+    "what_wave_5_adds": "★ THE FIRST WAVE THAT COULD TEST THE PROXY AT ALL. Waves 2, 3 and 4 each fell inside ONE length tercile, so the proxy made a single prediction for the whole wave and the comparison that would grade it — do longer-tercile documents actually out-yield shorter-tercile ones? — could not be formed. This wave was RE-PACKED to span the terciles still owed (ruling R5), so it holds documents carrying two DIFFERENT registered predictions and the ordering between them is falsifiable. `the_discriminating_test` below is that comparison, and it is the informative result of this wave — not the band pass, which remains close to unfalsifiable for the reason restated below. TWO LIMITS ON WHAT IT ESTABLISHES, stated rather than left to be read past: only two of the three terciles are still owed at all — every long-tercile document was read in waves 1-4, because the ordering is length-descending — so the comparison spans two adjacent bands and not the proxy's range; and one wave is one observation of that comparison, not a trend.",
+    "what_separated_the_documents": "What separated the documents, stated as an observation and NOT as a re-fit — and this wave makes the pattern the previous three reported harder to attribute to length. The highest yields are documents whose subject is a set of RULES nobody else owns: a ratified proposal for how a user-facing preset is named, derived and persisted, and a research catalog whose findings had not yet been absorbed into a specification. The lowest are documents whose content was ALREADY ABSORBED into the specification they grounded — a research catalog that did its job, a refactor design whose result is homed in the canonical document, a build plan whose steps are instructions. Absorption, not length, is what the yield tracks: a document that has been read INTO a specification yields the residue that specification does not carry, and one that has not yields its whole content."
+  },
+  "the_discriminating_test": {
+    "what_it_is": "The comparison the re-pack exists to make possible, registered before this wave read anything: within ONE wave, do the documents of the longer length tercile out-yield the documents of the shorter one, in the order their registered point predictions assert?",
+    "per_tercile": {
+      "medium": {
+        "documents": 5,
+        "predicted_point": 4.83,
+        "measured_mean": 2.8,
+        "measured_min": 2,
+        "measured_max": 5,
+        "measured_yields": [
+          5,
+          3,
+          2,
+          2,
+          2
+        ]
+      },
+      "short": {
+        "documents": 9,
+        "predicted_point": 0.83,
+        "measured_mean": 1.56,
+        "measured_min": 1,
+        "measured_max": 3,
+        "measured_yields": [
+          3,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "predicted_order_high_to_low": [
+      "medium",
+      "short"
+    ],
+    "measured_order_high_to_low": [
+      "medium",
+      "short"
+    ],
+    "the_predicted_ordering_holds": true,
+    "the_sharpest_reading_of_this_first_test": "★ THE ORDER HOLDS AND BOTH MAGNITUDES ARE WRONG, IN OPPOSITE DIRECTIONS — which is the finding, and it is stronger than either half alone. The longer tercile out-yielded the shorter one, as registered. But the longer tercile's measured mean fell BELOW its registered point and the shorter tercile's rose ABOVE its own, so the two measured means are far closer together than the two predictions are. Read plainly: the proxy gets the SIGN right and OVER-SEPARATES the magnitude — it asserts a gap several times the one that appeared. That is consistent with what every wave since the second has observed about what actually separates the documents (see `what_separated_the_documents`), and it is recorded as an observation of ONE wave's fourteen documents, NOT as a re-fit and NOT as a correction to the registered bands, which stand exactly as registered (#20).",
+    "what_a_failure_would_mean": "A result, not a defect — and the first one the proxy has been exposed to. The proxy stays registered as it was and unvalidated either way (#17d); a single wave's comparison neither validates nor falsifies it, and nothing here is re-fitted.",
+    "the_two_limits_on_what_this_establishes": "ONE: only two of the three length terciles are still owed, because every long-tercile document was read in waves 1-4 under the length-descending ordering — so the comparison spans two ADJACENT bands, not the proxy's range. TWO: this is one wave, one observation of the comparison, with the per-tercile counts below; it is not a trend and no bound may rest on it."
+  },
+  "rows": [
+    {
+      "document": "cowork_layer5_function_methods.md",
+      "reading_order": 40,
+      "lines": 171,
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 3,
+      "of_which_homed_in_this_document": 3,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "of_which_process_class": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "below",
+      "entries": [
+        {
+          "id": "D-584",
+          "home": "cowork_layer5_function_methods.md:75-79",
+          "status": "live",
+          "title": "The perfect/imperfect cadence call is made on the BASS-DERIVED inversion; the soprano arrival degree is demoted to a soft optional nudge and the tool never attempts melody identification"
+        },
+        {
+          "id": "D-585",
+          "home": "cowork_layer5_function_methods.md:126-131",
+          "status": "live",
+          "title": "The bass-scale-degree / Rule-of-the-Octave prior is admitted as a SOFT prior and tie-breaker only, never a gate"
+        },
+        {
+          "id": "D-586",
+          "home": "cowork_layer5_function_methods.md:16-20",
+          "status": "live",
+          "title": "\"Function\" in the machine-learning literature names the Roman-numeral components, not Riemann's function theory — and this project's own function layer is misnamed for the same confusion"
+        }
+      ]
+    },
+    {
+      "document": "cowork_style_taxonomy_proposal.md",
+      "reading_order": 42,
+      "lines": 152,
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 5,
+      "of_which_homed_in_this_document": 5,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "of_which_process_class": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "above",
+      "entries": [
+        {
+          "id": "D-587",
+          "home": "cowork_style_taxonomy_proposal.md:96-99",
+          "status": "live",
+          "title": "A user-facing preset presents as a familiar genre-era label plus exemplars the user knows — never as an idiom name or an obscure exemplar; genre names are LABELS over mixtures, never axes"
+        },
+        {
+          "id": "D-588",
+          "home": "cowork_style_taxonomy_proposal.md:100-109",
+          "status": "live",
+          "title": "Preset coverage beyond the analysed corpora is three tiers with NO bare guessing — measured, editorially declared with a stated theory rationale, or self-correcting by detection"
+        },
+        {
+          "id": "D-589",
+          "home": "cowork_style_taxonomy_proposal.md:128-132",
+          "status": "live",
+          "title": "Every idiom mixture is selectable and the discovered cloud is the EVIDENCE MAP, not the boundary — each chosen point carries its evidence status"
+        },
+        {
+          "id": "D-590",
+          "home": "cowork_style_taxonomy_proposal.md:140-152",
+          "status": "live",
+          "title": "The score's own metadata is the PRIMARY home of that score's idiom mixture, and a user-set mixture is never silently overwritten by re-detection"
+        },
+        {
+          "id": "D-591",
+          "home": "cowork_style_taxonomy_proposal.md:133-135",
+          "status": "live",
+          "title": "The licence split for the style system: the ANCHORS are the shipped licence-constrained fitted parameters, and the mixture weights are free user configuration"
+        }
+      ]
+    },
+    {
+      "document": "cowork_l1l4_completion_ledger.md",
+      "reading_order": 44,
+      "lines": 141,
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 2,
+      "of_which_homed_in_this_document": 2,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "of_which_process_class": 2,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "below",
+      "entries": [
+        {
+          "id": "D-592",
+          "home": "cowork_l1l4_completion_ledger.md:48-51",
+          "status": "live",
+          "title": "What FINISHED means for a layer, as the user's standing bar: restructured, built, dead code resolved, legacy retired, regression- and reachable-branch-tested, specs synced — nothing left"
+        },
+        {
+          "id": "D-593",
+          "home": "cowork_l1l4_completion_ledger.md:61-68",
+          "status": "live",
+          "title": "The line inside the build-it-right firewall: plain correctness bugs are allowed now, accuracy on hard cases is not — and a KNOWN WRONG ANSWER on the key axis is on the forbidden side"
+        }
+      ]
+    },
+    {
+      "document": "docs/iter90_bass_as_root_promotion_shelved.md",
+      "reading_order": 46,
+      "lines": 137,
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 2,
+      "of_which_homed_in_this_document": 2,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "of_which_process_class": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "below",
+      "entries": [
+        {
+          "id": "D-594",
+          "home": "docs/iter90_bass_as_root_promotion_shelved.md:65-67",
+          "status": "shelved-with-evidence",
+          "title": "Bass-as-root promotion is SHELVED WITH EVIDENCE — the information that disambiguates the third-above reading is non-local, so no local discriminator can exist"
+        },
+        {
+          "id": "D-595",
+          "home": "docs/iter90_bass_as_root_promotion_shelved.md:86-91",
+          "status": "live",
+          "title": "A chord-level change is not confined to the cases it fires on: chord identity drives boundary placement, so it produces downstream RE-SEGMENTATION artifacts in regions it never touched"
+        }
+      ]
+    },
+    {
+      "document": "docs/layer_audit_plan.md",
+      "reading_order": 48,
+      "lines": 133,
+      "length_tercile": "medium",
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 2,
+      "of_which_homed_in_this_document": 2,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "of_which_process_class": 2,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "below",
+      "entries": [
+        {
+          "id": "D-596",
+          "home": "docs/layer_audit_plan.md:11-17",
+          "status": "live",
+          "title": "The north star: BEST means CORRECT — every obligation is judged against the ground-truth oracle and never against whether it passes a proxy gate"
+        },
+        {
+          "id": "D-597",
+          "home": "docs/layer_audit_plan.md:23-29",
+          "status": "live",
+          "title": "The layer audit runs in two phases in a fixed order — every layer audited ALONE first, the architecture reviewed second on the accumulated findings"
+        }
+      ]
+    },
+    {
+      "document": "cowork_style_clustering_plan.md",
+      "reading_order": 50,
+      "lines": 130,
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield": 1,
+      "of_which_homed_in_this_document": 1,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "of_which_process_class": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "above",
+      "entries": [
+        {
+          "id": "D-598",
+          "home": "cowork_style_clustering_plan.md:16-18",
+          "status": "live",
+          "title": "The style taxonomy and the per-style weights are ONE data-derived object; VALIDATION is a separate third thing that needs annotated scores and is not delivered by the clustering"
+        }
+      ],
+      "low_yield_reason": "One entry from a document that is mostly a CORPUS SURVEY — sources, licences, what is already on disk — and a survey is not a decision. Its one licensing rule is already D-292, homed in `ARCHITECTURE.md` with its own defense, and its taxonomy content is already D-131/D-132. What no home carried is the structural claim that the taxonomy and the weights are ONE object while validation is a separate third thing."
+    },
+    {
+      "document": "cowork_adjudication_dossier.md",
+      "reading_order": 52,
+      "lines": 128,
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield": 3,
+      "of_which_homed_in_this_document": 3,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "of_which_process_class": 1,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "above",
+      "entries": [
+        {
+          "id": "D-599",
+          "home": "cowork_adjudication_dossier.md:6-9",
+          "status": "live",
+          "title": "Adjudication method: apply the standing principles FIRST, and only where they do not decide is there a genuine user choice — what remains for the user is ratifying the derivation, not picking an option"
+        },
+        {
+          "id": "D-600",
+          "home": "cowork_adjudication_dossier.md:59-60",
+          "status": "live",
+          "title": "The quality-overwrite information-loss violation is TOLERATED until the gate-dissolution step and stays VISIBLE in the open-items register — tolerated is not forgotten"
+        },
+        {
+          "id": "D-601",
+          "home": "cowork_adjudication_dossier.md:69-74",
+          "status": "live",
+          "title": "Before any constant that would make two differently-scaled confidences comparable is fitted, the premise that a fitted constant CAN do so must itself pass a premise ledger and a desk simulation"
+        }
+      ]
+    },
+    {
+      "document": "cowork_phase5c_l5_build_plan.md",
+      "reading_order": 54,
+      "lines": 126,
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield": 1,
+      "of_which_homed_in_this_document": 1,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "of_which_process_class": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "above",
+      "entries": [
+        {
+          "id": "D-602",
+          "home": "cowork_phase5c_l5_build_plan.md:27-29",
+          "status": "live",
+          "title": "A layer's measurement is judged on coverage-matched accuracy AND correct abstention, never on raw coverage — abstaining on a genuinely undecidable case is a RIGHT outcome"
+        }
+      ],
+      "low_yield_reason": "One entry from a build PLAN, and a plan's steps are instructions rather than standing decisions. Its proportionality rule is D-480, stated there for the phrase-boundary primitive and repeated here for the function layer; its reuse instructions name specific dormant components and expire with them. What no home carried is the gate criterion — coverage-matched accuracy plus correct abstention, never raw coverage."
+    },
+    {
+      "document": "cowork_layer3_keymode_impl_design.md",
+      "reading_order": 56,
+      "lines": 119,
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield": 2,
+      "of_which_homed_in_this_document": 2,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "of_which_process_class": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "above",
+      "entries": [
+        {
+          "id": "D-603",
+          "home": "cowork_layer3_keymode_impl_design.md:83-86",
+          "status": "live",
+          "title": "While the pipeline is being rebuilt, a behaviour-changing increment is graded DIRECTIONALLY and not against a fixed bar — meaningful comparison happens only against the fully reconstructed pipeline"
+        },
+        {
+          "id": "D-604",
+          "home": "cowork_layer3_keymode_impl_design.md:88-92",
+          "status": "live",
+          "title": "A defensible modal reading the major/minor ground truth cannot represent is a GROUND-TRUTH LIMITATION, not a defect to optimise away"
+        }
+      ]
+    },
+    {
+      "document": "docs/stage4d_local_modulation_design.md",
+      "reading_order": 58,
+      "lines": 114,
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield": 2,
+      "of_which_homed_in_this_document": 2,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "of_which_process_class": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "above",
+      "entries": [
+        {
+          "id": "D-605",
+          "home": "docs/stage4d_local_modulation_design.md:51-56",
+          "status": "live",
+          "title": "The local-key hypothesis derives from key-agnostic signals ONLY and never from the key-area grouping, which is a post-grouping of the resolved key — a hard design rule, not a preference"
+        },
+        {
+          "id": "D-606",
+          "home": "docs/stage4d_local_modulation_design.md:78-80",
+          "status": "live",
+          "title": "The binding metric for the modulation detector is modulation CORRECTNESS — explicitly not the agreement percentage, which the change under test can game"
+        }
+      ]
+    },
+    {
+      "document": "cowork_phrase_boundary_methods.md",
+      "reading_order": 60,
+      "lines": 107,
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield": 1,
+      "of_which_homed_in_this_document": 1,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "of_which_process_class": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "above",
+      "entries": [
+        {
+          "id": "D-607",
+          "home": "cowork_phrase_boundary_methods.md:83-85",
+          "status": "live",
+          "title": "Polyphonic phrase-boundary detection has NO validated deterministic rule set in the literature — the extension is engineering on monophonic cues, validated against our own corpus, and is not settled science"
+        }
+      ],
+      "low_yield_reason": "One entry from a research catalog whose findings were ALREADY absorbed into the design it grounds: the graded profile is D-478, the harmony-agnostic constraint and the accepted miss are D-477, the per-voice aggregation is D-479, the proportionality is D-480. That is the catalog working — it was written to be absorbed. The residue is the establishment STATUS of the polyphonic extension, which the design states as mechanism and not as evidence."
+    },
+    {
+      "document": "cowork_eg1_premise_checks.md",
+      "reading_order": 62,
+      "lines": 89,
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield": 2,
+      "of_which_homed_in_this_document": 2,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "of_which_process_class": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "above",
+      "entries": [
+        {
+          "id": "D-608",
+          "home": "cowork_eg1_premise_checks.md:21-22",
+          "status": "live",
+          "title": "The symmetric-root spelling pin's entry premise was measured FALSE — it is unreachable because the scorer rarely chooses the diminished quality; the remedy is enumerated and NOT decided"
+        },
+        {
+          "id": "D-609",
+          "home": "cowork_eg1_premise_checks.md:55-57",
+          "status": "live",
+          "title": "The abstention rate rides on an arbitrary, never-fitted seed constant — a whole probe's metric-moving behaviour sat downstream of an unestablished value"
+        }
+      ]
+    },
+    {
+      "document": "cowork_types_header_design.md",
+      "reading_order": 64,
+      "lines": 70,
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield": 1,
+      "of_which_homed_in_this_document": 1,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "of_which_process_class": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "above",
+      "entries": [
+        {
+          "id": "D-610",
+          "home": "cowork_types_header_design.md:16-17",
+          "status": "live",
+          "title": "The value-type relocation is ZERO-CHURN by construction: the leaf spans both namespaces and the un-nested type keeps a member alias, so no call site changes and the move is byte-identical"
+        }
+      ],
+      "low_yield_reason": "One entry from a refactor design whose subject decision — the value types live in a dependency-free leaf header — is already D-078, homed in `ARCHITECTURE.md`. The residue is the rule that made the move byte-identical rather than the fact that it happened."
+    },
+    {
+      "document": "cowork_l1l4_review_charter.md",
+      "reading_order": 66,
+      "lines": 52,
+      "length_tercile": "short",
+      "predicted_yield_band": [
+        0.0,
+        4.0
+      ],
+      "predicted_yield_point": 0.83,
+      "actual_yield": 1,
+      "of_which_homed_in_this_document": 1,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "of_which_process_class": 1,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "above",
+      "entries": [
+        {
+          "id": "D-611",
+          "home": "cowork_l1l4_review_charter.md:22-25",
+          "status": "live",
+          "title": "The tidy guardrails, in three tiers — and the dormant path and its staged scaffolding are DEFERRED-ENGAGEMENT, not dead code: removing them is a STOP"
+        }
+      ],
+      "low_yield_reason": "One entry from the shortest document in the wave, and a charter is mostly division of labour and scope. Its one standing rule is the tidy guardrail that a dormant staged component is not dead code."
+    }
+  ]
+}
