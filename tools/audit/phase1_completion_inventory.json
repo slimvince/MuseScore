@@ -173,12 +173,12 @@
  },
  "the_complete_half": {
   "criterion": "C1 and C2",
-  "register_population": 640,
+  "register_population": 641,
   "by_home_class": {
    "contract-home": 139,
    "gap": 150,
    "homed-in-a-layer-specification": 204,
-   "process": 99,
+   "process": 100,
    "project-convention": 37,
    "unhomed": 11
   },
@@ -895,7 +895,7 @@
     "OI-324",
     "OI-331",
     "OI-332",
-    "OI-337",
+    "OI-338",
     "OI-45",
     "OI-46",
     "OI-47",
@@ -956,7 +956,7 @@
     "OI-332",
     "OI-333",
     "OI-336",
-    "OI-337",
+    "OI-338",
     "OI-45",
     "OI-46",
     "OI-47",
@@ -1927,8 +1927,8 @@
     }
    },
    {
-    "id": "OI-337",
-    "title": "**The uncommitted backlog is SIX waves, not the three ruling R4 names** — and the waves cannot be committed separately",
+    "id": "OI-338",
+    "title": "**The phase-1 completion inventory publishes as an OPEN QUESTION one the user has since ruled** — its derived half moved with HEAD and its authored half did not, so `--check` passes over a self-contradiction",
     "subject_column": "F — doc-sync debt (#10)",
     "matched_on_the_subject_column": [
      "doc",
@@ -1938,9 +1938,9 @@
      "doc-sync"
     ],
     "gate": {
-     "verdict": "GATES",
+     "verdict": "NON-GATING",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
-     "ground": "the criterion"
+     "ground": "tracking/documentation apparatus - the user's own phrase"
     }
    }
   ]
@@ -1949,7 +1949,7 @@
   "the_test": "D-438: does the row's subject bear on the analysis, its inputs, or an instrument a measurement depends on? If yes it gates. An establishment obligation (#19) always gates, whatever its subject.",
   "applied_over": "the wide cut",
   "gates": {
-   "count": 38,
+   "count": 37,
    "ids": [
     "OI-105",
     "OI-107",
@@ -1984,7 +1984,6 @@
     "OI-331",
     "OI-333",
     "OI-336",
-    "OI-337",
     "OI-45",
     "OI-57",
     "OI-90",
@@ -1992,7 +1991,7 @@
    ]
   },
   "non_gating": {
-   "count": 20,
+   "count": 21,
    "ids": [
     "OI-205",
     "OI-229",
@@ -2008,6 +2007,7 @@
     "OI-317",
     "OI-318",
     "OI-332",
+    "OI-338",
     "OI-46",
     "OI-47",
     "OI-48",
@@ -2053,7 +2053,7 @@
     "OI-324",
     "OI-331",
     "OI-332",
-    "OI-337",
+    "OI-338",
     "OI-45",
     "OI-46",
     "OI-47",
@@ -2152,8 +2152,8 @@
    },
    {
     "fact": "Of the register's entries, the ones whose home the register's own home_rule declares CORRECT are: homed in a layer specification, contract-home, process, and project-convention.",
-    "count": 479,
-    "of": 640
+    "count": 480,
+    "of": 641
    },
    {
     "fact": "Every harvested cluster carries a recorded disposition at the committed artifact, so no harvested statement was silently passed over.",
@@ -2178,8 +2178,8 @@
   },
   "true_half": {
    "open_rows_in_the_wide_cut": 58,
-   "of_which_gate": 38,
-   "of_which_apparatus_and_therefore_non_gating": 20,
+   "of_which_gate": 37,
+   "of_which_apparatus_and_therefore_non_gating": 21,
    "rows_the_records_own_authored_classification_puts_on_specification_truth": 6
   },
   "outside_both_halves_and_owed_before_the_statement": {
@@ -2274,7 +2274,7 @@
    "OI-324",
    "OI-332",
    "OI-336",
-   "OI-337",
+   "OI-338",
    "OI-45",
    "OI-46",
    "OI-47",
@@ -2289,10 +2289,10 @@
   "how_to_read_it": "The derivation is the answer; this block measures the recollection against it. A recollected row that the derivation does not carry is not thereby wrong - it may be outstanding on a ground this cut does not search (the COMPLETE half, or an establishment obligation) - and each is stated rather than scored."
  },
  "counted": {
-  "decisions_recorded": 640,
+  "decisions_recorded": 641,
   "open_rows_in_the_index": 249,
   "true_half_wide_cut": 58,
-  "true_half_gating": 38,
+  "true_half_gating": 37,
   "complete_half_gap": 150,
   "complete_half_unhomed": 11,
   "complete_half_defense_gaps": 44

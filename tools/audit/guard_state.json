@@ -33,6 +33,7 @@
       "tools/audit/decisions/reaim_home_anchors.py",
       "tools/audit/gen_nongating_apparatus_rows.py",
       "tools/audit/gen_phase1_completion_inventory.py",
+      "tools/audit/gen_phase1_finish_line.py",
       "tools/audit/gen_phase3_gate_partition.py",
       "tools/audit/instrument_arm_declaration_effect.py",
       "tools/audit/local_patches_check.py",
@@ -41,7 +42,7 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 42,
+    "authored_entries": 43,
     "unclassified_candidates": [],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
     "not_a_subject_of_this_run": [
@@ -110,7 +111,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "REGISTER LINT: OPEN_ITEMS.md — 337 row IDs",
+        "REGISTER LINT: OPEN_ITEMS.md — 338 row IDs",
         "REGISTER LINT: PASS — every row ID is unique"
       ],
       "stderr": [],
@@ -316,7 +317,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "PASS: nongating_apparatus_rows.json re-derives byte-identically (27 non-gating / 33 gates of 60 candidates over 249 open rows)"
+        "PASS: nongating_apparatus_rows.json re-derives byte-identically (28 non-gating / 32 gates of 60 candidates over 249 open rows)"
       ],
       "stderr": [],
       "what_it_checks": "the non-gating apparatus-row declaration re-derives from the INDEX"
@@ -333,6 +334,19 @@
       ],
       "stderr": [],
       "what_it_checks": "the phase-1 completion inventory re-derives -- D-231's clause still locatable by its anchors, and every home class, defense gap, open-row cut and gate verdict unchanged"
+    },
+    {
+      "tool": "tools/audit/gen_phase1_finish_line.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "OK: the phase-1 finish line re-derives byte-identically."
+      ],
+      "stderr": [],
+      "what_it_checks": "the phase-1 FINISH LINE re-derives -- the scope ruling R2 of 2026-08-04 fixed. Its three STOPs ride with it and are the reason it is a guard rather than a report: an item carrying no closing act stops it, a row named as a user ruling that is no longer in the derived gating set stops it, and -- the one that matters -- a population NO ITEM CARRIES stops it, so the list cannot quietly stop being exhaustive as the register and the open-items index move under it"
     },
     {
       "tool": "tools/audit/decisions/gen_outstanding_delegations.py",
@@ -394,10 +408,10 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "backbone decisions: 640",
+        "backbone decisions: 641",
         "cross-references resolving: ALL",
-        "verbatim quotes found at their cited home: 640/640",
-        "cited line numbers correct: 634/634   (6 cited to a file with no line number, by design)"
+        "verbatim quotes found at their cited home: 641/641",
+        "cited line numbers correct: 635/635   (6 cited to a file with no line number, by design)"
       ],
       "stderr": [],
       "what_it_checks": "every register entry's verbatim quote and cited line is found at its home"
@@ -638,7 +652,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "living mode: index=337 detail=337 baseline=200 post-baseline=137",
+        "living mode: index=338 detail=338 baseline=200 post-baseline=138",
         "OVERALL PASS � bijection holds, no detail file carries a status of its own, and all 200 original items stay byte-verbatim (report: open_items\\register_check.json)"
       ],
       "stderr": [],
@@ -659,8 +673,8 @@
     }
   ],
   "summary": {
-    "run": 36,
-    "passing": 34,
+    "run": 37,
+    "passing": 35,
     "failing": 2,
     "failing_tools": [
       {

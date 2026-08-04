@@ -1,0 +1,84 @@
+{
+  "purpose": "A run of tools/audit/process_check.py over named dispatches or reports. Generated so a report cites this file rather than transcribing what the check found (D-431).",
+  "rules": [
+    "D-431 bare quantity",
+    "D-431 uncited code claim",
+    "D-434 missing self-check section"
+  ],
+  "files_scanned": [
+    "cc_instruction_commit_and_finish_line.md"
+  ],
+  "findings_total": 9,
+  "by_file": {
+    "cc_instruction_commit_and_finish_line.md": {
+      "findings": 9,
+      "rows": [
+        {
+          "file": "cc_instruction_commit_and_finish_line.md",
+          "line": 44,
+          "rule": "D-431 bare quantity",
+          "detail": "1.1",
+          "sentence": "Cowork has this from a session report. → **Task 1.1**."
+        },
+        {
+          "file": "cc_instruction_commit_and_finish_line.md",
+          "line": 46,
+          "rule": "D-431 bare quantity",
+          "detail": "six entries",
+          "sentence": "applier has since run and the census delegation has since moved six entries."
+        },
+        {
+          "file": "cc_instruction_commit_and_finish_line.md",
+          "line": 47,
+          "rule": "D-431 bare quantity",
+          "detail": "2.1",
+          "sentence": "be RE-DERIVED, not reused.** → **Task 2.1**."
+        },
+        {
+          "file": "cc_instruction_commit_and_finish_line.md",
+          "line": 51,
+          "rule": "D-431 bare quantity",
+          "detail": "1.1",
+          "sentence": "**1.1 Discharge A1.** Enumerate what is uncommitted through `tools/audit/changed_paths.py` and report"
+        },
+        {
+          "file": "cc_instruction_commit_and_finish_line.md",
+          "line": 55,
+          "rule": "D-431 bare quantity",
+          "detail": "1.2",
+          "sentence": "**1.2** Commit by git plumbing as one provenance-stamped commit."
+        },
+        {
+          "file": "cc_instruction_commit_and_finish_line.md",
+          "line": 65,
+          "rule": "D-431 bare quantity",
+          "detail": "2.1",
+          "sentence": "**2.1 Re-derive, do not reuse.** Compute afresh, at HEAD:"
+        },
+        {
+          "file": "cc_instruction_commit_and_finish_line.md",
+          "line": 75,
+          "rule": "D-431 bare quantity",
+          "detail": "2.2",
+          "sentence": "**2.2** Publish it as one artifact, and state per item: what it is, which half, whether it gates, and"
+        },
+        {
+          "file": "cc_instruction_commit_and_finish_line.md",
+          "line": 78,
+          "rule": "D-431 bare quantity",
+          "detail": "2.3",
+          "sentence": "**2.3 The list is the scope.** Record in the artifact that nothing outside it gets a wave, and that"
+        },
+        {
+          "file": "cc_instruction_commit_and_finish_line.md",
+          "line": 81,
+          "rule": "D-431 bare quantity",
+          "detail": "2.4",
+          "sentence": "**2.4 Do NOT write phase 1's completion statement.**"
+        }
+      ]
+    }
+  },
+  "clean_files": [],
+  "establishment": "tools/audit/process_check_establishment.json — the check's measured detection power and false-positive rate. Read it before reading a count here as coverage."
+}

@@ -1,0 +1,129 @@
+{
+  "purpose": "A run of tools/audit/changed_paths.py. Generated so a report cites this file rather than transcribing the list (D-431).",
+  "enumeration": "worktree",
+  "commit": null,
+  "records": 30,
+  "rows": [
+    {
+      "code": " M",
+      "path": "DECISIONS.md"
+    },
+    {
+      "code": " M",
+      "path": "OPEN_ITEMS.md"
+    },
+    {
+      "code": " M",
+      "path": "STATUS.md"
+    },
+    {
+      "code": " M",
+      "path": "cowork_audit_protocol.md"
+    },
+    {
+      "code": " M",
+      "path": "decisions/group_T.md"
+    },
+    {
+      "code": " M",
+      "path": "open_items/OI-337.md"
+    },
+    {
+      "code": " M",
+      "path": "open_items/register_check.json"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/decisions/backbone_decisions.json"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/gen_guard_state.py"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/gen_nongating_apparatus_rows.py"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/guard_state.json"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/nongating_apparatus_rows.json"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/phase1_completion_inventory.json"
+    },
+    {
+      "code": "??",
+      "path": "cowork_jazz_realization_qa_instrument.md"
+    },
+    {
+      "code": "??",
+      "path": "cowork_pending_rulings_2026_08_02.md"
+    },
+    {
+      "code": "??",
+      "path": "idiom_discovery/vl_discovery_out.txt"
+    },
+    {
+      "code": "??",
+      "path": "idiom_discovery/vl_orthogonality_out.txt"
+    },
+    {
+      "code": "??",
+      "path": "open_items/OI-338.md"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/gen_phase1_finish_line.py"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/phase1_finish_line.json"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/process_check_commit_and_finish_line_dispatch.json"
+    },
+    {
+      "code": "??",
+      "path": "tools/joint_estimator/joint_posterior_slice_parity.json"
+    },
+    {
+      "code": "??",
+      "path": "tools/joint_estimator/joint_spelling_parity_cpp.json"
+    },
+    {
+      "code": "??",
+      "path": "tools/robust_stop/baroque_variant_a_root_fail_cells.txt"
+    },
+    {
+      "code": "??",
+      "path": "tools/robust_stop/baroque_variant_b_root_fail_cells.txt"
+    },
+    {
+      "code": "??",
+      "path": "tools/robust_stop/default_variant_a_root_fail_cells.txt"
+    },
+    {
+      "code": "??",
+      "path": "tools/robust_stop/default_variant_b_root_fail_cells.txt"
+    },
+    {
+      "code": "??",
+      "path": "tools/robust_stop/jazz_variant_a_root_fail_cells.txt"
+    },
+    {
+      "code": "??",
+      "path": "tools/robust_stop/jazz_variant_b_root_fail_cells.txt"
+    }
+  ],
+  "establishment": "tools/audit/changed_paths_establishment.json"
+}

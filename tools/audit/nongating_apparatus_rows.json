@@ -13,7 +13,7 @@
   "the_two_stops": "The tool refuses to run if a first-cut candidate has no authored verdict, and refuses an authored verdict for a row that is not an open candidate - so the table cannot drift away from the register without failing loudly."
  },
  "population": {
-  "rows_parsed": 336,
+  "rows_parsed": 337,
   "open_rows": 249,
   "first_cut_candidates": 60,
   "first_cut_vocabulary": [
@@ -37,8 +37,8 @@
   ]
  },
  "totals": {
-  "non_gating": 27,
-  "gates": 33,
+  "non_gating": 28,
+  "gates": 32,
   "non_gating_ids": [
    "OI-205",
    "OI-219",
@@ -59,6 +59,7 @@
    "OI-327",
    "OI-329",
    "OI-332",
+   "OI-338",
    "OI-46",
    "OI-47",
    "OI-48",
@@ -88,6 +89,7 @@
     "OI-327",
     "OI-329",
     "OI-332",
+    "OI-338",
     "OI-46",
     "OI-47",
     "OI-48",
@@ -142,9 +144,6 @@
    "the analysis's inputs": [
     "OI-239",
     "OI-57"
-   ],
-   "the criterion": [
-    "OI-337"
    ],
    "the criterion - the row's subject bears on an instrument": [
     "OI-320"
@@ -623,12 +622,12 @@
    "class_basis": "tracking/documentation apparatus - the user's own phrase"
   },
   {
-   "id": "OI-337",
-   "title": "**The uncommitted backlog is SIX waves, not the three ruling R4 names** — and the waves cannot be committed separately",
+   "id": "OI-338",
+   "title": "**The phase-1 completion inventory publishes as an OPEN QUESTION one the user has since ruled** — its derived half moved with HEAD and its authored half did not, so `--check` passes over a self-contradiction",
    "subject_column": "F — doc-sync debt (#10)",
-   "verdict": "GATES",
-   "reason": "The uncommitted backlog is six waves rather than the three ruling R4 names, and the waves cannot be committed separately. The first cut proposes it because its subject column reads as documentation apparatus -- committing is filing, and filing is what D-438's line names as apparatus. WHAT IS OWED decides it, and what is owed here is not a pointer or a label: it is that a set of INSTRUMENTS exists only in a working tree. The uncommitted set includes the guard tools, the yield generators and the derivations this arc's conclusions rest on, and an instrument that exists only in a working tree cannot support a reproducibility claim (#16) -- which is a measurement matter, not a filing one. The starred clause reaches it independently: preserving an instrument so a recorded measurement can be reproduced is an establishment obligation (#19), and D-438 makes one gate whatever its subject. Recorded against the row's SUBJECT, never its remedy, as every verdict here is.",
-   "gate_ground": "the criterion"
+   "verdict": "NON-GATING",
+   "reason": "The phase-1 completion inventory publishes as an OPEN QUESTION one the user has since ruled (D-639), because its clause quote is derived and moved with HEAD while its criteria are an authored constant that did not -- so a check passes over a self-contradiction inside one file. WHAT IS OWED decides it, and what is owed is a correction to an AUDIT ARTIFACT's authored prose about the status of a ruling: apparatus in the plainest form D-438's line names, one document over from OI-332's banners and OI-334's scope sentence. It bears on no analysis, no analysis input and no instrument any measurement of the analysis depends on -- every population the inventory DERIVES is current and re-derives byte-identically, which is the half a measurement would rest on. It carries no establishment obligation (#19): nothing here is an instrument trusted without being established, so the starred clause that makes those gate whatever their subject does not reach it. Recorded against the row's SUBJECT, never its remedy -- and the remedy is deliberately open, since a re-wording and a structural fix are both available and neither is proposed.",
+   "class_basis": "tracking/documentation apparatus - the user's own phrase"
   },
   {
    "id": "OI-150",
@@ -675,6 +674,12 @@
     "class_basis_or_ground": "an establishment obligation (#19) - the exemption, not the criterion",
     "reason": "The decisions register's own published account of itself is false at HEAD in three places. The verdict is made PER INSTANCE and the row takes the strongest. The instance that decides it is the published unresolved-residual figure: its subject is the coverage measurement the OI-207 audit reports against -- the same ground OI-333 gates on -- and a figure the same generated file's own computed table contradicts is independently an establishment matter (#19), which D-438's starred clause makes gating whatever its subject. The scope statement that the per-layer design documents were not read in full is a claim about how completely the register enumerates the record, which its own text does not settle, so the declaration's own default reaches it. The third instance -- a section field the read-wave entries do not carry -- reads as apparatus on its own and does not carry the row; it is rowed as an instance rather than promoted.",
     "closed": "RESOLVED 2026-08-04 (ruling R3) - all three statements are true at HEAD, closed by three different acts: the scope sentence corrected in prose, the residual figure made COMPUTED (a template the register generator fills, an unfilled placeholder stopping it), and the home-granularity claim made true by RUNNING the apply mode under ruling R2 after the phase-1q record was snapshotted and the snapshot established. Both former wordings preserved verbatim (#12)."
+   },
+   "OI-337": {
+    "verdict": "GATES",
+    "class_basis_or_ground": "the criterion",
+    "reason": "The uncommitted backlog is six waves rather than the three ruling R4 names, and the waves cannot be committed separately. The first cut proposes it because its subject column reads as documentation apparatus -- committing is filing, and filing is what D-438's line names as apparatus. WHAT IS OWED decides it, and what is owed here is not a pointer or a label: it is that a set of INSTRUMENTS exists only in a working tree. The uncommitted set includes the guard tools, the yield generators and the derivations this arc's conclusions rest on, and an instrument that exists only in a working tree cannot support a reproducibility claim (#16) -- which is a measurement matter, not a filing one. The starred clause reaches it independently: preserving an instrument so a recorded measurement can be reproduced is an establishment obligation (#19), and D-438 makes one gate whatever its subject. Recorded against the row's SUBJECT, never its remedy, as every verdict here is.",
+    "closed": "RESOLVED 2026-08-04 (ruling R1) - disposition (a) taken: one provenance-stamped commit covering all six waves, `e10479a09f`, with the six-wave figure re-derived before the act rather than carried from the row, the non-wave paths deliberately not swept in, and every guard re-run explicitly at the committed tree because a plumbing commit bypasses hooks. The gating verdict is what it was: the instruments are now committed, which is the reproducibility exposure discharged rather than re-classified."
    }
   }
  },
@@ -712,6 +717,7 @@
    "OI-327",
    "OI-329",
    "OI-332",
+   "OI-338",
    "OI-46",
    "OI-47",
    "OI-48",

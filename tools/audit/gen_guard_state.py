@@ -112,6 +112,13 @@ AUTHORED = [
     ("tools/audit/gen_phase1_completion_inventory.py", ["--check"],
      "the phase-1 completion inventory re-derives -- D-231's clause still locatable by its "
      "anchors, and every home class, defense gap, open-row cut and gate verdict unchanged"),
+    ("tools/audit/gen_phase1_finish_line.py", ["--check"],
+     "the phase-1 FINISH LINE re-derives -- the scope ruling R2 of 2026-08-04 fixed. Its three "
+     "STOPs ride with it and are the reason it is a guard rather than a report: an item carrying "
+     "no closing act stops it, a row named as a user ruling that is no longer in the derived "
+     "gating set stops it, and -- the one that matters -- a population NO ITEM CARRIES stops it, "
+     "so the list cannot quietly stop being exhaustive as the register and the open-items index "
+     "move under it"),
     ("tools/audit/decisions/gen_outstanding_delegations.py", ["--check"],
      "the outstanding-delegation population still derives at HEAD from the delegation grades and "
      "the home data (D-640/OI-335). Its own STOPs ride with it: a write-list member with no "
