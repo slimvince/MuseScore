@@ -69,7 +69,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `CLAUDE.md:496-498`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:514-516`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md` (session 21, at the user's ratification of the external architecture review's corpus-expansion amendment). Related but distinct from **D-225** (a corpus is regenerated before its baseline figures are updated) and from the re-baseline discipline in `CLAUDE.md` gate block (A). Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]] — measurement conventions go to the gate block): written into `CLAUDE.md` gate block (A) beside the re-baseline discipline it bounds. Former home preserved (#12): `STATUS_ARCHIVE.md:250`. The same rule is stated on the corpus side at `cowork_score_census.md`'s decision-tier block, which the homed text names.
 
@@ -445,9 +445,11 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
+**Entry ratified.** 2026-08-04 · by user
+
 **Home.** `docs/score_inventory.md:344-347`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** Hard rule 2 of the score inventory, the document `CLAUDE.md` directs every score-touching task to read first. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. It is the snapshot-corpus counterpart of **D-226** (the music21 export is version-pinned; regenerating it is a deliberate re-baseline) and of the block-(A) re-baseline discipline.
+**Provenance.** Hard rule 2 of the score inventory, the document `CLAUDE.md` directs every score-touching task to read first. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) It is the snapshot-corpus counterpart of **D-226** (the music21 export is version-pinned; regenerating it is a deliberate re-baseline) and of the block-(A) re-baseline discipline.
 
 ### D-488 — The two Bach chorale collections are independent selections, not sub- and superset — and the diff between them is not recoverable in-repo
 
@@ -468,7 +470,73 @@
 
 **Status.** LIVE · decided 2026-06-11 · ratifier not stated
 
+**Entry ratified.** 2026-08-04 · by user
+
 **Home.** `docs/score_inventory.md:180-189`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** The chorale-selection provenance finding of the score inventory (audit C3), restated as its hard rule 4; the document is the one `CLAUDE.md` directs every score-touching task to read first. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+**Provenance.** The chorale-selection provenance finding of the score inventory (audit C3), restated as its hard rule 4; the document is the one `CLAUDE.md` directs every score-touching task to read first. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)
+
+### D-513 — A corpus registry's content summary is enumeration provenance, not evidence that an annotation layer is present — per-slice presence must be measured
+
+> Lesson recorded: a registry `content` summary is enumeration provenance, not presence-of-layers evidence —
+> per-slice presence must be measured (which is exactly what the wave's Task 5 was for). The census §8c
+> N2/N5 state columns carry the corrections.
+
+**In plain words.** A one-line description of what a corpus contains records where the corpus came from. It does not establish that a particular kind of annotation is actually in it. Whether a layer is present is a measurement, made file by file.
+
+**Why.** The lesson is drawn from two of the audit's own claims being falsified by measurement in the same week — a supposed pair of overlapping annotation sets that do not co-occur at all, and a textbook corpus that turned out to hold scores and no analyses at the pinned commit. Both were sourced from a registry content field and treated as stronger than they were.
+
+**Status.** LIVE · decided 2026-07-04 · ratifier not stated
+
+**Home.** `cowork_census_full_needs_audit.md:256-258`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Recorded as the lesson of the audit's own post-wave corrections, which the document owns in its own §7 rather than quietly amending. It is #19 applied to corpus bookkeeping: a layer is trusted after being positively established, never because a summary mentions it. The surviving measured fact about on-disk dual annotation is **D-373**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-514 — A newly acquired annotation set whose works OVERLAP the regression corpus is RECORD-ONLY: it may not be wired to, compared against, or bulk-diffed with the gate corpus without a user ruling
+
+>    spine. GPLv3. **⚠ RECORD-ONLY this dispatch:** its 371 Bach chorales overlap the gate repertoire (Breitkopf/Dörffel
+>    371 Four-Part Chorales, KernScores lineage = the music21 gate corpus's works); it must NOT be wired to /
+>    compared against / bulk-diffed with the gate corpus — any use over gate pieces is a future **user** ruling
+>    (census §4 dedupe / the M3 contamination lesson). The 200 Praetorius chorales are new and outside the gate.
+
+**In plain words.** One acquired collection of chorale analyses covers the same works the accuracy gate is measured on. It is recorded and left alone: it may not be connected to the analysis, compared against the gate corpus, or diffed against it in bulk. Using it over those pieces at all is a decision for the user. The part of it that covers other repertoire is outside the gate and unaffected.
+
+**Why.** Grounded in the contamination lesson the corpus discipline already carries: a work that is in the regression corpus cannot also be a free-standing check on it, because the two uses are not independent. The document also records what the walk actually found — the analyses ship as a packaged binary and the score files carry no analysis spine — so the constraint is stated together with the reason the material is not usable as-is anyway.
+
+**Status.** LIVE · decided 2026-07-04 · ratifier not stated
+
+**Home.** `cowork_census_full_needs_audit.md:280-283`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Recorded at the Wave-3 addendum with the acquisition itself. It is the corpus-side companion of the de-duplication rule **D-361** (corpora are de-duplicated by WORK, not by container) and of the research-tier-on-entry rule at `CLAUDE.md` gate block (A). Bears directly on `OPEN_ITEMS.md` OI-179: it is a second annotation layer over gate-class chorales, and this is the ruling that says it may not be used as one without the user. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-515 — Pedal-point ground truth gets its OWN needs row rather than riding as a note on another — the user's reason: it can improve inference precision and nothing is lost
+
+> 4. Pedal-point GT: N4-family note (default) or its own needs row? → **OWN ROW (N20)** — user: can improve
+>    inference precision AND no information loss; also completes the §2.15 span-kind↔needs mapping.
+
+**In plain words.** Every corpus in one large held collection carries a column marking pedal points. Rather than mentioning that in passing under a neighbouring need, it becomes a tracked need of its own.
+
+**Why.** The user's own rationale is recorded with the ruling and has two parts: the material can improve inference precision, and giving it a row loses no information — the no-information-loss principle applied to the tracking surface itself. The document adds that it also completes the mapping between the span kinds the architecture names and the needs list.
+
+**Status.** LIVE · decided 2026-07-04 · ratified by user
+
+**Home.** `cowork_census_full_needs_audit.md:227-228`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** One of the four rulings the audit's banner records as taken on the day it was delivered. The material it tracks was verified at the source file in the same session. The pedal-point work it would serve is **D-103**/**D-207**/**D-385**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-516 — Two ground-truth classes with named consumers but no needs row were ADOPTED at the first full-needs audit — contrapuntal/imitative structure, and marked part-writing errors
+
+> **C. Rulings sought from the user — ★ ALL RULED (2026-07-04, see status banner):**
+> 1. Adopt **N18** (contrapuntal/imitative structure GT)? Candidates already enumerated. → **ADOPTED.**
+> 2. Adopt **N19** (part-writing error/exercise GT)? Would join the union search. → **ADOPTED.**
+
+**In plain words.** Scanning the list of things the project intends to build against the list of ground truth it tracks turned up two kinds of annotation that a named future tool needs and nothing was tracking: analyses of fugal and imitative structure, and graded exercises with their mistakes marked.
+
+**Why.** The gap was found by the mechanism rather than by intuition — the audit's first step is a currency check that scans the consumer registers against the needs vector — and each proposal is recorded with whether the enumeration already holds a candidate: one does, one does not and therefore joins the search round.
+
+**Status.** LIVE · decided 2026-07-04 · ratified by user
+
+**Home.** `cowork_census_full_needs_audit.md:223-225`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Two of the four rulings the audit's banner records. The part-writing half later produced its own measured verdict, **D-372** (marked part-writing errors must be BUILT, not downloaded — no public dataset exists). The intonation-scope ruling taken in the same act is **D-366**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 

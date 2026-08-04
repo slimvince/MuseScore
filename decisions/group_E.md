@@ -154,3 +154,48 @@
 
 **Provenance.** ARCHITECTURE.md:1220-1227; cites cowork_layer2_reslice_design.md §2
 
+### D-540 — A slice is a unit of constant CONTENT, not of constant musical TIME — the layers above must never treat slices as equal-weight units, and a slice's metric extent is evidence weighted by metric structure, not by tempo
+
+>   one is a ten-measure held chord and the other a passing sixteenth — but they carry very different inferential weight,
+>   so the layers above must **never treat slices as equal-weight units**. A slice's **metric extent** — its **duration**
+>   (`end − start`, directly on the slice) and its **metric position/weight** (the metric-weight derived view over
+>   Architectural Layer 1's score, from the time signature) — is **evidence**, and it is weighted by metric structure,
+>   **not by tempo**: the harmonic reading (and the human ground truth) keys off beat strength and notated duration in
+>   beats/measures, not absolute clock time. Architectural Layer 2 keeps the slice **minimal** (`[start, end)` only); the
+>   duration and metric weight are **derived on demand** by the consuming layers (Architectural Layer 3 emission,
+>   Architectural Layer 4 membership), not stored here. *(How well the inference weights the extremes — a very long held
+>   chord, a very short embellishment slice — is an Architectural Layer 3 / 4 weighting concern; the metadata to do it
+>   is available here.)*
+
+**In plain words.** Two slices are each one slice whether one is a ten-measure held chord and the other a passing sixteenth, but they are not equally informative. How long a slice is and how strong its metrical position is are evidence. That evidence is weighted by the notated metre, not by clock time. The slice itself stores only its start and end; the rest is derived on demand by whoever needs it.
+
+**Why.** The weighting basis is grounded in what the analysis and the human ground truth actually key off — beat strength and notated duration in beats and measures, not absolute clock time — which is why tempo is excluded. Keeping the slice minimal and deriving the extent is the same layer discipline that keeps the slicer free of judgement: the metadata is available here, and how well the extremes are weighted is the consuming layers' concern.
+
+**Status.** LIVE · date not stated · ratifier not stated
+
+**Home.** `cowork_layer2_slicing_design.md:130-139`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** A crosscutting concept of the as-built Layer-2 specification, stated as a warning to the layers above. It is the qualification that makes the atomic-unit decision safe: **D-023** makes the constant-sonority slice the analysis unit, and this says what may not be concluded from that. The factor granularity that eventually consumes it is **D-449**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-541 — The metric weight of a slice IS the beat-strength at its start tick, taken from one shared preference-free notation primitive that no consuming layer re-defines
+
+>   - **★ Metric-weight contract (resolved 2026-06-26; the function layer's prerequisite (i)).** "Derived on demand by the
+>     consuming layers" is made concrete: the **metric weight of a slice = the beat-strength at the slice's start tick**,
+>     computed by the **`scoreharvest/metricweights` primitive** (`regionMetricWeightForOnsetTick(score, slice.start)`) — a
+>     **preference-free** (independent of any user setting), key-/chord-agnostic notation-derived value in `[0.5, 1.0]`
+>     (downbeat 1.0 → subbeat 0.5), already consumed
+>     by Architectural Layer 4. It is owned there (a **Layer-1.5** notation view, §0, beside the bass/spelling/phrase-
+>     boundary views), **not** re-defined by any consuming layer. The function layer (Architectural Layer 5) reads it
+>     through this same accessor; this contract sentence is the whole of that prerequisite — prerequisite (i) of the
+>     function-layer spec's input list, `cowork_layer5_function_design.md` §15-0 — no new code.
+
+**In plain words.** The vague instruction 'derived on demand by the consumer' was made concrete. A slice's metric weight is the beat strength at the moment it begins, computed by one shared routine over the notated metre. It depends on no user setting and knows nothing of keys or chords, and every layer that wants it reads it through that same routine.
+
+**Why.** The properties are stated as the reason for the choice: preference-free and key- and chord-agnostic is what lets the same value serve layers that must not influence one another, and single ownership is what stops a consuming layer from re-deriving a second, subtly different definition of the same quantity — the one-path-per-concern rule applied to a derived view.
+
+**Status.** LIVE · decided 2026-06-26 · ratifier not stated
+
+**Home.** `cowork_layer2_slicing_design.md:140-148`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Recorded as resolving prerequisite (i) of the function layer's input list, with the note that the whole prerequisite is this contract sentence and no new code. It places the primitive in the shared notation-derived-view tier beside the bass, spelling and phrase-boundary views. The phrase-boundary member of that same tier is **D-476**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+

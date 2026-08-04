@@ -297,7 +297,7 @@
 
 **Status.** LIVE · decided 2026-06-22 · ratified by user
 
-**Home.** `CLAUDE.md:597`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:615`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:443-486, block (B), carried over unchanged to the robust unit at R10-b. Full provenance `cowork_gate_policy_amendment.md`. The four guardrails that make the tracked class conditional - verified at the score per case, default to the barred class on any doubt, the barred class non-increasing, case identities recorded - are at CLAUDE.md:464-473.
 
@@ -313,7 +313,7 @@
 
 **Status.** LIVE · decided 2026-07-13 · ratified by user
 
-**Home.** `CLAUDE.md:523-525`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:541-543`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:239 (OI-132), ruled by the user 2026-07-13 and landed at 800f1a12bf. The adjudication probe is `cc_mode_grading_adjudication_probe_report.md`; the re-baseline record is `cc_key_grading_and_calibration_rebaseline_report.md`. It is implemented in ONE shared reduction, `compare_rn._our_key_tonic`, onto which the second key parser was folded (#6). OPEN_ITEMS OI-240 closes on this move
 
@@ -329,7 +329,7 @@
 
 **Status.** LIVE · decided 2026-07-12 · ratified by user
 
-**Home.** `CLAUDE.md:533-535`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:551-553`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:270 (OI-143), adopted at d9b52ba969. The current values are in the CLAUDE.md gate block (A): key-agree against the home key 56.14 %, against the local key 78.42 %. OPEN_ITEMS OI-240 closes on this move
 
@@ -345,7 +345,7 @@
 
 **Status.** LIVE · decided 2026-07-12 · ratified by user
 
-**Home.** `CLAUDE.md:538-540`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:556-558`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:217 (OI-33), resolved 2026-07-12 in the key-layer readiness wave 1. Its current reading on the production arm is D-114 - the decoder commits its best path, so the abstain counter reads zero. OPEN_ITEMS OI-240 closes on this move
 
@@ -752,7 +752,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `CLAUDE.md:510-512`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:528-530`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Recorded in `cowork_handoff_archive.md` (the corpus-audit block, as the ground-truth verdict). The human-annotation-only requirement it names was delivered as the granularity-robust unit (D-115), whose own text carries the clause "music21 is NOT ground truth"; the two further clauses — never describe a measurement as ground-truth agreement, and no self-annotation in any measurement — are recorded ONLY here. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]] — measurement conventions go to the gate block): written into `CLAUDE.md` gate block (A) as the FIRST of the four grading conventions the robust unit is measured under, carrying all three clauses the archive held alone. Former home preserved (#12): `cowork_handoff_archive.md:2844`, the corpus-audit block.
 
@@ -893,7 +893,7 @@
 
 **Status.** LIVE · decided 2026-08-03 · ratified by user
 
-**Home.** `CLAUDE.md:376-377`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:394-395`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Built 2026-08-03 (CC, phase 1y, dispatch cc_instruction_phase1y_corpus_arm_stamping.md) as the manifest half of OPEN_ITEMS.md OI-307, and flagged there as a judgment call for the user rather than buried; recorded at gate block (A) 2026-08-04 (phase 1z, dispatch cc_instruction_phase1z_commit_and_instrument_record.md Task 2.3), the block that pins the instrument being where a change to it belongs (#7). ★ RATIFIED BY THE USER, 2026-08-03, in session — presented as three options with the third recommended, ratify AND record, and agreed. The ruling is transmitted in the read-wave-2 dispatch cc_instruction_reads_2.md §0a, whose ruling ledger records why this field read otherwise for a day: the phase-1z re-issue dropped the sentence carrying the ratification, so phase 1z executed the recording half of the ruling and not the ratifying half, and this entry stated 'ratifier not stated' about a decision the user had made. ★ The former provenance sentence — 'THE USER HAS NOT RULED ON IT: recording is not ratifying, and no ratifier is inferred from the dispatch that ordered the record.' — is preserved here rather than deleted (#12), and it was the correct thing to write on what phase 1z was given: what was missing was the transmission, not the ruling, and inferring a ratifier from a dispatch that named none would have been the worse error. The two measurements it rests on are generated, and no value of either is restated in the record (#17f, D-431): that the declaration moves nothing is at tools/audit/instrument_arm_declaration_effect.json, which runs gate block (A)'s own two commands at HEAD over the production corpus and diffs against the committed tools/robust_stop/ reference; that it detects a wrong-arm corpus, admits a right-arm one and leaves an undeclared caller alone is at tools/audit/corpus_arm_establishment.json, probes 2, 3 and 4. Reversal is one default (EXPECT_ARM_DEFAULT set to 'any').
 
@@ -911,9 +911,11 @@
 
 **Status.** LIVE · decided 2026-07-19 · ratifier not stated
 
+**Entry ratified.** 2026-08-04 · by user
+
 **Home.** `cowork_term_theory_grounding.md:258-262`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** The central finding of the theory-grounding audit's ground-truth section, reached by a dedicated search and recorded with the corpora checked (TAVERN, ABC, the Mozart sonatas, When in Rome, Dilemmadata). Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. It is the literature half of the obligation **D-184** (principle #21) creates and is tracked at `OPEN_ITEMS.md` OI-179.
+**Provenance.** The central finding of the theory-grounding audit's ground-truth section, reached by a dedicated search and recorded with the corpora checked (TAVERN, ABC, the Mozart sonatas, When in Rome, Dilemmadata). Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) It is the literature half of the obligation **D-184** (principle #21) creates and is tracked at `OPEN_ITEMS.md` OI-179.
 
 ### D-475 — The BCMH chorale annotations are NOT established as an instrument: the annotator is unknown, the annotations sit on a reduction, and they reached the repository through a machine translation
 
@@ -930,9 +932,11 @@
 
 **Status.** LIVE · decided 2026-07-19 · ratifier not stated
 
+**Entry ratified.** 2026-08-04 · by user
+
 **Home.** `cowork_term_theory_grounding.md:274-279`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** The theory-grounding audit's verdict on the BCMH corpus, with the three establishment steps it names. The audit's own dated update of 2026-07-19 records that the first step came back NEGATIVE at the files — no annotator record in any of them — and its source register adds that the 2023 Method section names no annotator and no validation either. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. ★ This is an ESTABLISHMENT statement under #19: a consumer may not put this corpus under load while it stands.
+**Provenance.** The theory-grounding audit's verdict on the BCMH corpus, with the three establishment steps it names. The audit's own dated update of 2026-07-19 records that the first step came back NEGATIVE at the files — no annotator record in any of them — and its source register adds that the 2023 Method section names no annotator and no validation either. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) ★ This is an ESTABLISHMENT statement under #19: a consumer may not put this corpus under load while it stands.
 
 ### D-486 — A measurement publishes its coverage denominator and its per-corpus breakdown; a single aggregate number that hides which corpus moved is not reported
 
@@ -946,9 +950,11 @@
 
 **Status.** LIVE · decided 2026-06-13 · ratifier not stated
 
+**Entry ratified.** 2026-08-04 · by user
+
 **Home.** `docs/precision_metric_design.md:291-293`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** A rule of the Stage-5 objective section of a metric design document whose banner reads DRAFT — UNCOMMITTED and which closes 'awaiting Cowork/user ratification before any metric is built'. The metric it designs WAS subsequently built and ratified — the granularity-robust unit of `CLAUDE.md` gate block (A), R10-b, 2026-07-06 — and that block reports its coverage as 326/352 in exactly this form, so the rule is honoured at HEAD while the document that states it still presents itself as an unratified draft (see `OPEN_ITEMS.md`). Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+**Provenance.** A rule of the Stage-5 objective section of a metric design document whose banner reads DRAFT — UNCOMMITTED and which closes 'awaiting Cowork/user ratification before any metric is built'. The metric it designs WAS subsequently built and ratified — the granularity-robust unit of `CLAUDE.md` gate block (A), R10-b, 2026-07-06 — and that block reports its coverage as 326/352 in exactly this form, so the rule is honoured at HEAD while the document that states it still presents itself as an unratified draft (see `OPEN_ITEMS.md`). Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)
 
 ### D-497 — RATIFIED AMENDMENT A-7: the empirically-unvalidated mark must be APPLIED to the Jazz preset constants and the unvalidated idioms, with the validation path named
 
@@ -961,9 +967,11 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
+**Entry ratified.** 2026-08-04 · by user
+
 **Home.** `cowork_architecture_review_2026_07.md:328-329`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Amendment A-7 of the external architecture review, in a document whose banner records amendments A-1…A-10 as RATIFIED by the user on 2026-07-02. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. It is the APPLICATION half of the verifiability contract **D-029** — the mark exists in the specification and the review found it unapplied — and it is adjacent to **D-310**, which records that jazz accuracy is not measurable on the corpora held.
+**Provenance.** Amendment A-7 of the external architecture review, in a document whose banner records amendments A-1…A-10 as RATIFIED by the user on 2026-07-02. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) ★ NOT A FRESH DECISION, stated so that nothing is counted twice (dispatch cc_instruction_reads_3.md §1.3): the amendment itself was ratified by the user at the 2026-07-02 architecture review, which is what this entry's Status line already records. Ratifying the ENTRY records only that the register transcribes that ratification correctly — it neither re-makes the decision nor adds a second ratification event to it. It is the APPLICATION half of the verifiability contract **D-029** — the mark exists in the specification and the review found it unapplied — and it is adjacent to **D-310**, which records that jazz accuracy is not measurable on the corpora held.
 
 ### D-500 — The user ratified CORPUS EXPANSION at the architecture review: gate-grade jazz ground truth, chromatic material of the Wagner class, and more non-Bach, non-Baroque annotation generally
 
@@ -976,7 +984,114 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
+**Entry ratified.** 2026-08-04 · by user
+
 **Home.** `cowork_architecture_review_2026_07.md:4-5`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Recorded in the banner of the external architecture review as a user ratification additional to amendments A-1…A-10, folded into A-7/A-8 and recorded in the implementation roadmap. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. It is the ratification the corpus waves that follow it execute; the standing rule on the other side — a newly acquired corpus enters as research material and the frozen corpus stays the gate until a deliberate re-baseline — is `CLAUDE.md` gate block (A) and is not weakened by it.
+**Provenance.** Recorded in the banner of the external architecture review as a user ratification additional to amendments A-1…A-10, folded into A-7/A-8 and recorded in the implementation roadmap. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) ★ NOT A FRESH DECISION, stated so that nothing is counted twice (dispatch cc_instruction_reads_3.md §1.3): the amendment itself was ratified by the user at the 2026-07-02 architecture review, which is what this entry's Status line already records. Ratifying the ENTRY records only that the register transcribes that ratification correctly — it neither re-makes the decision nor adds a second ratification event to it. It is the ratification the corpus waves that follow it execute; the standing rule on the other side — a newly acquired corpus enters as research material and the frozen corpus stays the gate until a deliberate re-baseline — is `CLAUDE.md` gate block (A) and is not weakened by it.
+
+### D-521 — The general law of the circularity map: an abstract circle becomes acyclic in the concrete by one of four named conditions — and every alleged circle in this system fell to one of them
+
+> **The general law all five instances obey:** a circle in the ABSTRACT ("A needs B,
+> B needs A") becomes acyclic in the CONCRETE when one of: the score already contains
+> one side (spelling, signatures, fermatas, annotations); a key-agnostic form of the
+> evidence exists (tonic votes, dominant shapes, bass skeletons); the dependency is on
+> a COARSER fact that is already stable (the collection, not the tonic); or the
+> ratified forward-override/joint-minority patterns cover the measured-rare remainder.
+> Every alleged circle above fell to one of these. None survived as a true blocker —
+> which is the answer to the user's worry: the circularity challenge, named
+> completely, stops nothing.
+
+**In plain words.** The worry that key, chord, cadence and non-chord tones each need one another turns out not to block anything once the cases are named. A circle dissolves when the score already contains one side of it, when a form of the evidence exists that does not need the other side, when the real dependency is on a coarser fact that is already settled, or when the rare remainder is covered by the ratified forward-recompute pattern.
+
+**Why.** Established case by case rather than argued in general: the five alleged circles are each named, and each is shown to fall to one of the four conditions — spelling is input because we read notated scores; the cadence machinery votes for a tonic without reading one; the chord layer needs the collection far more than the tonic, which our own measurement shows; grammaticality is scored per candidate key, so the key is a hypothesis index rather than an input.
+
+**Status.** LIVE · decided 2026-07-12 · ratifier not stated
+
+**Home.** `cowork_evidence_inventory.md:196-204`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The conclusion of the evidence inventory the user directed, and the answer to a worry the user raised. It is the general form of the standing forward-only rule (**D-025**, **D-466**) and of the forbidden back-edge (**D-377**): those say what is not allowed, this says why the prohibition is affordable. The one measured premise it leans on — chord roots are key-invariant under collection siblings — is the reason the collection/tonic split is named the inventory's headline unpublished fact. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-522 — Explaining an inference to the end user is a late-bound DISPLAY consumer of facts that already exist — not a new analysis
+
+> **Explainability (user, 2026-07-13): the end user may want to know HOW a mode, chord,
+> or function was inferred.** If the evidence trail behind every inference is published
+> — which pitch classes drove the key, which cadence vote confirmed the modulation,
+> which margin separated the winner from the runner-up, why the analyzer abstained —
+> then "show me why" is a late-bound DISPLAY consumer of facts that already exist, not
+> a new analysis. Much of the raw material exists today as internal diagnostics (the
+> chord-diagnosis replay, the dormant function machinery's structured open marks and
+> ambiguity kinds, the ranked-candidates-plus-margins confidence contract); the gap is
+> publication, which is wave 3's job anyway. A register row for the feature follows at
+> the next free number (numbers are in flight in the current CC session).
+
+**In plain words.** If the evidence behind each inference is published — which pitch classes drove the key, which cadence confirmed the change, how far ahead the winner was, why the analyzer declined to decide — then answering 'show me why' is a matter of displaying what is already there, not of analysing anything again.
+
+**Why.** Grounded in an inventory of what already exists: most of the raw material is present today as internal diagnostics — the chord-diagnosis replay, the structured open marks and ambiguity kinds of the dormant function machinery, and the ranked-candidates-plus-margins confidence contract — so the gap is publication rather than computation.
+
+**Status.** LIVE · decided 2026-07-13 · ratified by user
+
+**Home.** `cowork_evidence_inventory.md:215-224`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Named by the user at the evidence-inventory discussion, in the same conversation that produced the publish-broadly amendment to the fact-publication corollary in `CLAUDE.md`. It is the second declared future consumer recorded there, beside the intonation feature; both are instances of the rationale for publishing evidence without a named consumer — a visible menu lets a future design recognise facts it would never have thought to request. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-523 — If the algorithmic second opinion's LOCAL key is ever adopted it enters UNVALIDATED, and adopting it is a corroborator re-baseline under user ratification — not a refresh
+
+> **Status if it is ever adopted:** it enters as an **unvalidated** field and stays
+> unvalidated until positively established (#19 — a consumer may not put it under load
+> before then), and music21 is **not** ground truth (DCML/When-in-Rome is; music21 only
+> corroborates). Activating it changes the committed `.music21.json`, so adoption is a
+> **corroborator re-baseline** under the user's ratification (#16), not a refresh.
+>
+> **Gate:** the key-layer design conversation. Carried on **OI-158**; the dead-code half
+> of that row is closed, this half stays open.
+
+**In plain words.** Whether to consult the second-opinion library for a local, moving key rather than only a single key for the whole piece is left open. If it is ever taken up, the field arrives explicitly unvalidated and no consumer may lean on it until it is established. Turning it on changes the committed second-opinion files, so it is a deliberate re-baseline the user ratifies.
+
+**Why.** Both halves are grounded in standing rules rather than chosen here: a fact is trusted only after being positively established (#19), and the algorithmic analysis is a corroborator and never ground truth, so its output is a pinned artifact whose regeneration is a re-baseline (#16). The document also records that the machinery which appeared to do this never ran at all — the class it named does not exist in the pinned version — and that removing the dead code was proven byte-identical and deliberately does not decide the question.
+
+**Status.** DEFERRED · decided 2026-07-13 · ratifier not stated
+
+**Home.** `cowork_evidence_inventory.md:241-248`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Filed OPEN in the inventory and carried on `OPEN_ITEMS.md` OI-158, whose dead-code half is closed and whose question half stays open, gated on the key-layer design conversation. The pinning rule it invokes is **D-226**; the ground-truth rule is **D-294**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-531 — The hand-built emission is CONFIRMED and the learned replacement is NOT triggered — retained as an explicit fallback with a concrete trigger, and scoped to one repertoire with a named re-check gate
+
+> **OQ-1 RATIFIED 2026-06-14 — A confirmed, scoped to Bach (user decision).** The functional
+> root-error mass — the one slice §3 left undecomposed — is now decomposed on the *corrected*
+> metric (`cc_functional_residual_dossier.md`): the buggy parser had inflated the "functional"
+> residual with 365 already-correct artifacts + 75 mis-attributed vertical cases; the cleaner
+> 2153-region residual splits into rule-reachable + ambiguity/noise with an **empty
+> needs-a-learned-model bucket (B2 = 0/44 sampled; corpus upper bound ~7%)**. music21's vertical
+> RN analyzer fails the same functional roots (0/4) → it is a functional-*layer* problem (= A),
+> not a vertical-scorer ceiling. So **A is confirmed on the functional axis too, B is not
+> triggered.**
+
+**In plain words.** The open question was whether to keep improving the hand-written scorer or replace it with a trained model. The measured answer is to keep the hand-written one: the error mass decomposes into causes that are fixable within it, and the bucket that would need a learned model came back empty on the sample. The learned option is kept as a stated fallback, to be reconsidered for any slice later shown to be a genuine ceiling.
+
+**Why.** Decided on measurement, and the measurement's own limits are stated with it: the corrected metric showed the residual had been inflated by already-correct artifacts and mis-attributed cases, the empty bucket is a sample with a stated corpus upper bound, and the algorithmic second opinion fails the same functional roots — which makes it a missing-layer problem rather than a scorer ceiling. The scope limit is explicit: the decomposition is one repertoire only, the fallback's advantage is concentrated on harder chromatic music that was not decomposed, and the question is formally re-openable at a named gate.
+
+**Status.** LIVE · decided 2026-06-14 · ratified by user
+
+**Home.** `docs/back_half_design.md:108-116`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The ratified answer to the back-half re-grounding's first open question. The prerequisite recorded with it — the corrected metric must be COMMITTED before any fitting, or the fitter optimises against phantom cases — is part of the ruling. The measurement-substitutability interface that keeps the fallback a drop-in is **D-075**. The convergent finding this document derives the whole back half from is registered as **D-289**, whose only recorded home is a session-handoff archive while its full derivation is here. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-539 — The standing method for every error slice: decompose it into structural, fitted and ceiling BEFORE building anything — derive, never assert
+
+> **Method, standing for every slice (the lesson that paid off thrice): scope the cause
+> before building.** Decompose the slice structural / fitted / ceiling (the key-emission
+> probe is the template); build the structural lever; route fitted to Stage 5; route
+> ceiling to accepted-ambiguity or flag it as a possible B-trigger. Derive, don't assert.
+
+**In plain words.** Before work is done on a class of errors, the class is broken into three parts: what a structural fix reaches, what belongs to the fitting step, and what is a genuine ceiling. The structural part is built, the fitted part is routed to the fitter, and the ceiling is either accepted as ambiguity or flagged as evidence for the fallback.
+
+**Why.** Presented as the lesson that had already paid three times in one session: three separate investigations each tested a structural fix on a different slice and each falsified it for the same reason, and the one probe that decomposed its slice found the bulk specific and recoverable. The method is what turned a pessimistic reading into an actionable one.
+
+**Status.** LIVE · decided 2026-06-13 · ratifier not stated
+
+**Home.** `docs/back_half_design.md:147-150`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The standing method of the back-half re-grounding, stated for every slice. It is the ancestor of the MEASURE-BEFORE-BUILD gate (**D-277**) and of the #17 funnel's staging — desk-simulate, then probe read-only, then build — and the reason the document gives for re-deriving the plan rather than amending it is the accumulating-amendment smell the architecture principles name. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 

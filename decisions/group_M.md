@@ -334,7 +334,230 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
+**Entry ratified.** 2026-08-04 · by user
+
 **Home.** `cowork_architecture_review_2026_07.md:326-327`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Amendment A-6 of the external architecture review, in a document whose banner records amendments A-1…A-10 as RATIFIED by the user on 2026-07-02. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. Related but distinct: **D-133** rules that the vocabulary is a queried reference component rather than a layer, and **D-419** that the function layer does not touch it until the consumer is built; neither answers which store owns the pairwise motions.
+**Provenance.** Amendment A-6 of the external architecture review, in a document whose banner records amendments A-1…A-10 as RATIFIED by the user on 2026-07-02. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) ★ NOT A FRESH DECISION, stated so that nothing is counted twice (dispatch cc_instruction_reads_3.md §1.3): the amendment itself was ratified by the user at the 2026-07-02 architecture review, which is what this entry's Status line already records. Ratifying the ENTRY records only that the register transcribes that ratification correctly — it neither re-makes the decision nor adds a second ratification event to it. Related but distinct: **D-133** rules that the vocabulary is a queried reference component rather than a layer, and **D-419** that the function layer does not touch it until the consumer is built; neither answers which store owns the pairwise motions.
+
+### D-502 — The span a recognised named progression covers is called the progression-schema-span — the bare word 'sequence' is reserved for the harmonic sequence and 'progression' for the whole committed chord stream
+
+> - **D6 — what to NAME the span a recognised progression covers — RESOLVED BY PREFIXING (user direction, 2026-07-02):
+>   `progression-schema-span`.** The prefix answers the last collision standing: bare "schema" reads as *data* schema
+>   to any coder, while **"progression schema" is already this component family's own name** (this design and the
+
+**In plain words.** The stretch of music covered by a recognised named progression needed a name. It is called the progression-schema-span. The two shorter names were rejected because each already means something else here: a *sequence* is a progression repeated at rising or falling transpositions, and *the progression* is the entire analysed chord stream.
+
+**Why.** Stated with the ruling and decided against the alternatives in the same block: 'sequence-span' collides permanently with the music-theory sense the same document uses correctly, and 'progression-span' reads as 'any span of the committed progression', which every span is — so neither name says the one thing it must, a RECOGNISED NAMED progression. The prefix resolves it because 'progression schema' is already this component family's own name.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Home.** `cowork_progression_schema_design.md:245-247`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** One of the ratification asks the document's banner records as settled in full. It is the span typology's latent 'sequence-span' finally instantiated, and it carries a propagation rider to `ARCHITECTURE.md` §2.15's latent list and the Layer-6 specification. Directly adjacent to `OPEN_ITEMS.md` OI-318, which records that the Layer-6 section of `ARCHITECTURE.md` still uses a reserved word for a different span. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-503 — The idiom mixture is DISCOVERED from the score and merely SEEDED by the user's preset, in three forward-only phases
+
+> The consumer holds a weight vector `w` with one weight per idiom. **`w` is DISCOVERED from the score, seeded by the
+> user's preference (user-ratified model, 2026-07-02), in three phases — forward-only, no loop:**
+
+**In plain words.** How much weight each harmonic idiom carries is worked out from the music itself. The user's chosen preset only supplies the starting point, and the estimate moves away from it as recognised evidence accumulates. It runs in three passes that only ever feed forward, so nothing loops.
+
+**Why.** The loop-freedom is argued at the mechanism rather than asserted: the recognition pass does not depend on the weights at all in this version, so the weight estimate is computed from recognition output only and never from its own downstream use. The document also records what happens when partial matching arrives and that dependence appears — estimation stays on the exact-match subset — so the property is preserved by a declared resolution rather than by luck.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Home.** `cowork_progression_schema_design.md:135-136`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Ratification ask §4.5, recorded APPROVED in the banner in the user's own words. The prior strength of one recognition is the match score times the MAXIMUM of the idiom weights over the entry's idiom set — the maximum and not the sum, so that an entry tagged with several idioms is not thereby advantaged. Distinct from **D-293** (values are fitted per idiom, never per preset), which governs fitting; this governs a per-score estimate made at recognition time. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-504 — A recognised harmonic sequence is ALWAYS emitted as key evidence — the earlier gate that emitted it only where no cadence existed threw corroboration away
+
+> ### 4.6 Harmonic sequences as evidence of the local key (the Layer-5 §5.3 channel; review A-4)
+> A recognised harmonic sequence implies **motion of the local key** (the tonality — see the §0 "key" row). The consumer exposes each as a typed output
+> `{progression, transposition step, span, number of repetitions, prior strength}`. **U1 ruling (2026-07-02): a sequence requires ≥2 transposed statements of the SAME recognised entry** — that is
+> what "repeated at successive transpositions" (§0) means; a run's `repetitions` counts the matched windows, and the
+> evidence weight scales with it (more repetitions → stronger; direction fixed, values Stage-5). A **single**
+> recognition of an internally-sequential entry (circle-of-fifths, Monte, Fonte) emits **no** §4.6 sequence — its
+> key-motion implication is already carried by its schema-span (the entry's internal transposition structure is
+> catalog knowledge, readable by the F-C consumer when that wiring is designed; recorded in §9 so it is decided
+> there, not lost). **The consumer ALWAYS emits it —
+> evidence is never discarded** (the no-information-loss and use-every-clue principles; user-directed correction
+> 2026-07-02, replacing an earlier "only where no cadence exists" gate that threw corroboration away). Layer 5 §5.3
+> uses it in two roles: **(i) corroboration, always** — sequence evidence agreeing with a confirming cadence raises
+> the candidate key's vote, disagreeing tempers it; **(ii) the substitute confirming channel** for condition (a)
+> **only where no authentic cadence confirms the candidate key**, at a weight **below** the cadence channel's
+> (ordering fixed; values Stage-5) — the cadence remains the stronger confirmation wherever it exists, by weight, not
+> by suppressing the other evidence. **Frame obligation:** comparing sequence evidence against the home-key
+> confidence is a NEW comparison; it must be declared in the confidence contract §4 (frame **F-C**) **before** the
+> §5.3 wiring is built. The consumer's own build (the annotation + the §5.5 feature) does not need it.
+
+**In plain words.** When the same progression is recognised at successive transpositions, that is evidence about where the tonality is going. It is now always published. It corroborates a cadence that agrees with it and tempers one that disagrees, and it stands in as the confirming channel only where no authentic cadence confirms the candidate tonality — always at a weight below the cadence's.
+
+**Why.** The user's own correction, stated with the rule: the replaced gate emitted the evidence only where no cadence existed, which discarded the corroborating case entirely — against the no-information-loss and use-every-clue principles. The cadence keeps its precedence BY WEIGHT rather than by suppressing the other evidence, which is what lets both be used at once.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Home.** `cowork_progression_schema_design.md:161-178`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Ratification ask §4.6, recorded settled in the banner as 'always-emit corroboration + substitute channel'. It carries a FRAME OBLIGATION that is part of the decision: comparing sequence evidence against the home-key confidence is a new comparison and must be declared in the confidence contract §4 as frame F-C BEFORE the wiring is built — the consumer's own build does not need it. See **D-269** (the frame table is the one home of the override arithmetic). Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-505 — A harmonic sequence requires at least two transposed statements of the SAME recognised entry; a single internally-sequential entry emits none
+
+> A recognised harmonic sequence implies **motion of the local key** (the tonality — see the §0 "key" row). The consumer exposes each as a typed output
+> `{progression, transposition step, span, number of repetitions, prior strength}`. **U1 ruling (2026-07-02): a sequence requires ≥2 transposed statements of the SAME recognised entry** — that is
+> what "repeated at successive transpositions" (§0) means; a run's `repetitions` counts the matched windows, and the
+> evidence weight scales with it (more repetitions → stronger; direction fixed, values Stage-5). A **single**
+> recognition of an internally-sequential entry (circle-of-fifths, Monte, Fonte) emits **no** §4.6 sequence — its
+
+**In plain words.** A recognised progression that is itself built out of transpositions — a circle of fifths, a Monte, a Fonte — does not by itself count as a sequence. Two or more transposed statements of the same catalog entry do. A single internally-sequential recognition publishes its own span instead, and its transposition structure stays where it belongs, in the catalog.
+
+**Why.** Derived from the definition rather than chosen: the document's own terms table defines a harmonic sequence as the same progression repeated at successive transpositions, so counting one internally-sequential entry as a sequence would contradict the definition the same document gives. The evidence weight grows with the number of matched windows, which is why the count has to mean something.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Home.** `cowork_progression_schema_design.md:162-166`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The U1 ruling, taken with the §4.6 settlement. It also records where the un-emitted implication goes rather than dropping it — the entry's internal transposition structure is catalog knowledge readable by the F-C consumer when that wiring is designed — which is #12 applied to a decision not to emit. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-506 — Progression recognition is ADDITIVE: the literal Roman numeral is never rewritten, and a substitution is recorded only in the annotation
+
+> - **D4 — Additive; the literal Roman numeral is never changed.** *Alternatives weighed and rejected:* rewriting the numeral to the
+>   substituted-for function — it loses the literal label the ground truth scores.
+
+**In plain words.** When the recogniser sees that a chord is standing in for another — a tritone substitute doing a dominant's job — it says so in the annotation and leaves the Roman numeral exactly as the analysis committed it.
+
+**Why.** Stated with the decision and weighed against its alternative: rewriting the numeral to the substituted-for function loses the literal label the ground truth scores against, so the recogniser would improve its own story at the cost of the measurement.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Home.** `cowork_progression_schema_design.md:193-194`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Decision D4 of the design's architecture-decision list, inside the document the banner records as fully ratified. It is the recognition consumer's instance of the standing additive discipline; the catalog side of the same seam is **D-406**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-507 — A catalog entry defined by its melodic or bass lines is recognised by its chord skeleton alone and carries a 'chords-only' mark, with its prior strength reduced
+
+> - **D7 — line-defined entries carry the "chords-only" mark** (§4.5) — the verifiability contract's explicit-mark
+>   path; the mark retires per entry when the voice-leading layer supplies the other half.
+
+**In plain words.** Some named patterns are defined by their melody and bass lines as much as by their chords. This consumer can only see the chords, so it recognises such a pattern by its chord skeleton, marks the recognition as chords-only, and trusts it less. The mark comes off, per entry, when the voice-leading work supplies the other half.
+
+**Why.** Stated with the decision: an entry defined by its lines is under-identified by its chords alone, so the reduced weight states a real limit rather than a preference. The mark is the verifiability contract's explicit-mark path, which is what makes the limit visible to a consumer instead of silently absorbed.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Home.** `cowork_progression_schema_design.md:272-273`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Decision D7 of the same ratified list. The vocabulary side of the same boundary is **D-408** (voice-leading is a different dimension and is not held in the harmonic vocabulary). Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-508 — The catalog/grammar consistency test ships scoped to the MEASURED containment — an explicit known-gap list — and tightens to a clean assertion when the grammar amendment lands
+
+>   silently un-license legitimate grammar). The **consistency test** ships scoped to the TRUE containment: every
+>   pair is licensed OR on the explicit 6-entry known-gap list (any 7th failure = red); when the grammar amendment
+>   lands, the list empties and the test tightens to the clean assert.
+
+**In plain words.** The premise that every adjacent chord pair inside every catalog entry is licensed by the analysis's own grammar was checked and turned out to be false: a handful of entries exercise musically correct motions the grammar did not license. The test therefore ships allowing exactly those, and any further failure is an error. When the grammar is completed the allowance list empties and the test becomes the plain assertion it was meant to be.
+
+**Why.** The scoping is forced by a measurement that falsified the premise on first contact, and the document records the diagnosis rather than the count alone: what is narrow is the licensed set, which descends from the old scoring-bonus signals rather than from a complete functional grammar. Deriving the grammar FROM the catalog stays rejected for the stated reason — the catalog is enumerative and incomplete while the grammar is generative, so a missing entry would silently un-license legitimate motion.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Home.** `cowork_progression_schema_design.md:242-244`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The measured correction of Cowork's own premise, recorded inside the ratified document with the earlier arithmetic error owned in the same sentence. The grammar completion it waits on is **D-341**, ratified by the user 2026-07-03 and recorded as in force in the specification and not yet in code. The one-owner ruling this test is the sole coupling of is **D-406**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-509 — Where the analysis already committed a chord, a recognised progression corrects it through the EXISTING override frame and may only SELECT an already-carried reading — no new comparison frame, and never a reading built from the notes
+
+> - **Where Layer 4 committed:** if an admitted recognised progression's member position demands a **different root
+>   or quality** than the committed reading, the recognition's prior strength enters the **same contradiction
+>   quantity frame F-B already compares** (the functional-plausibility difference), and the committed reading is
+>   overridden **if and only if** that quantity exceeds the §8 threshold scaled to the committed reading's composite
+>   confidence — the same threshold rule, the same tie-holds-the-incumbent rule, and the same
+>   overridden-at-most-once-per-pass rule as every other F-B firing (§0). The correction **selects** an existing
+>   reading (a ranked candidate, or the recognised member's realisation where it is one) — never a reading built from
+>   the notes. No new comparison frame is introduced.
+
+**In plain words.** If a recognised progression demands a different chord than the one already committed, the recogniser does not invent a chord from the notes. It puts its evidence into the comparison the correction mechanism already makes, under the same threshold, the same tie rule and the same once-per-pass rule, and it can only pick a reading that was already on the table.
+
+**Why.** Stated with the rule and grounded in the architecture it rides: reusing the existing frame is what keeps the recogniser from introducing a second correction mechanism, and restricting it to selection is what keeps it from becoming a second chord identifier. Both are the one-path-per-concern discipline applied to a consumer rather than to a layer.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Home.** `cowork_progression_schema_design.md:121-128`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The second half of §4.3, inside the fully-ratified document. The frame it rides is F-B, whose measured behaviour is now **D-490**/**D-491**/**D-492** — a reader of this decision should read those beside it, because the mechanism this consumer was designed to ride is the one measured net-harmful and recommended for demotion. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-542 — Idiom discovery runs DISCOVER-THEN-NAME: structure is learned on a low-level encoding carrying no theory or genre labels, and theory features and genre labels are interpretation lenses applied afterwards, never clustering input
+
+> The governing order is **discover → then name**: learn structure on a low-level encoding carrying **no** theory or
+> genre labels; only afterward hold the emergent structure up against theory features **and** genre labels, both as
+> **interpretation lenses, never as clustering input**.
+
+**In plain words.** The grouping of music into harmonic idioms is learned from a plain, label-free encoding of the notes and chords. Only afterwards is the result held up against theory terms and against genre labels to see what the emergent groups correspond to. Neither is ever fed in.
+
+**Why.** The governing reason is stated as a refusal rather than a preference: there is no zero-prejudice method, so the discipline is to push the unavoidable priors to the lowest, most theory-neutral level and interpret afterwards — never to pretend they are absent. Feeding theory features in could only rediscover the priors already encoded, which is the alternative the decision list rejects by name.
+
+**Status.** NOT STATED · decided 2026-06-30 · ratifier not stated
+
+**Home.** `cowork_idiom_discovery_design.md:28-30`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The core principle of the idiom-discovery design, which the document's own banner marks a research/analysis component and not a runtime layer. Its output feeds the style tags and weights of the harmonic vocabulary and ultimately the presets. The standing rule that idiom re-discovery rides every corpus wave on research material only is **D-421**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-543 — The encoding is key-normalised tonal-pitch-class TRANSITIONS — spelled where spelling is reliable, mod-12 only where it is genuinely absent — run as two complementary views
+
+> - **D2 — minimal low-level encoding: key-normalized tonal-pitch-class transitions** (line-of-fifths where spelling is
+>   reliable — classical scores + trusted lead-sheet symbols — else mod-12), run as two views (progression + vocabulary,
+>   §3). *Rejected:* high-level functional features (prejudges the answer); raw audio/MIDI (timbre/instrumentation/
+>   performance confounds swamp harmony — Mauch's lesson); bare mod-12 pitch classes everywhere (discards the
+>   line-of-fifths structure that made Moss's topics interpretable).
+
+**In plain words.** Pieces are encoded as sequences of chord-to-chord moves with every piece transposed to a common tonic, using the written note names wherever the source spells them. Where no spelling exists at all, plain pitch classes are used. A second, order-free view of the same material runs alongside as a cross-check.
+
+**Why.** Grounded in the prior art the design adopts: the line-of-fifths encoding is what made the published topics interpretable, and it stays low-prejudice because it is the raw written note rather than a functional label. Three alternatives are rejected with reasons — high-level functional features prejudge the answer, audio or raw performance data lets timbre and instrumentation swamp harmony (the lesson of one of the cited studies), and bare pitch classes everywhere discard the very structure that made the published result readable.
+
+**Status.** NOT STATED · decided 2026-06-30 · ratifier not stated
+
+**Home.** `cowork_idiom_discovery_design.md:158-162`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Decision D2 of the design, with the lead-sheet trust ruling folded in — chord symbols on lead sheets are trusted for the features clustered on. The transition view is deliberately the axis the closest published precedent discards, which is the document's own answer to why the study is re-run rather than cited. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-544 — Confound control is a FIRST-CLASS GATE, and the source-leakage test decides validity: if the clusters are explained by which corpus a piece came from, the result is bookkeeping and not idiom
+
+> The dominant failure mode: naive clustering discovers **which corpus a piece came from, what key it is in, how long it
+> is, instrumentation, or encoding quirks** *before* it ever reaches "idiom." So this is a first-class gate, not a
+> footnote:
+> - **key-normalize** (§3); **length-normalize** (rate features, fixed-length windows); **balance/stratify** sources;
+>   **de-duplicate**; **exclude** melody-only sources; **audit** chordify extraction noise on a labeled subset.
+> - **The source-leakage test (mandatory):** hold out the **source label** and test whether the clusters are explained
+>   by source/key/length. **If clusters ≈ source, we found bookkeeping, not idiom** — back to the encoding.
+> A discovered structure earns the word "idiom" only **after** it survives these.
+
+**In plain words.** The dominant way this kind of study fails is by discovering which collection a piece came from, or what key it is in, or how long it is, and calling that a style. So the source label is held out and the clusters are tested against it. If they are explained by it, the encoding goes back to the drawing board. A discovered structure earns the word idiom only after surviving this.
+
+**Why.** The failure mode is named concretely and the controls are matched to it one by one — key-normalise, length-normalise, balance and stratify sources, de-duplicate, exclude melody-only material, and audit the extraction noise on a labelled subset. Stating it as a gate rather than a footnote is the point: the alternative rejected by name is naive clustering, which finds bookkeeping and calls it style.
+
+**Status.** NOT STATED · decided 2026-06-30 · ratifier not stated
+
+**Home.** `cowork_idiom_discovery_design.md:119-126`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Decision D4 of the design, and the criterion its §5 exists to enforce. It is #19 in the discovery setting: a cluster set is trusted after being positively established against the confound, never because nothing has yet contradicted it. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-545 — The uniform mechanical extractor for idiom discovery is the external library, stopping at the note-and-slice front — OUR OWN key/chord/function inference must NEVER touch the extraction
+
+> - **D6 — music21 as the uniform mechanical extractor; extraction stops at the L1/L2 (mechanical) front; our L3+
+>   analyzer never used.** *Rejected:* our own L1/L2 as the extractor (cleaner change-point slicing, and it's our audited
+>   code — but it can't ingest ABC/kern, so it would force a *mix* of extractors correlated with source, a §5 confound);
+>   our full analyzer for extraction (Baroque-tuned bias that correlates with genre — the worst confound for a
+>   genre-vs-not study). music21 is chosen for **uniform** format coverage, **cross-validated** against our L1/L2 on a
+>   shared MusicXML subset to bank the trust.
+
+**In plain words.** Turning every corpus into chords for this study is done by one external library applied identically to every source, and only as far as reading notes and cutting them into simultaneities. Our own analyzer is deliberately not used for it.
+
+**Why.** Chosen against our own cleaner slicer for a stated reason, and the reason is the study's own validity: our slicer cannot ingest every corpus format, so using it would force a MIX of extractors correlated with source — precisely the confound the gate forbids. Using the full analyzer would be worse: it is tuned on one repertoire, would rediscover our own priors, and would inject genre-correlated error into a study about whether the grouping is genre. The trust is banked rather than assumed — a shared subset is run through both and the verticality streams compared.
+
+**Status.** NOT STATED · decided 2026-06-30 · ratifier not stated
+
+**Home.** `cowork_idiom_discovery_design.md:168-173`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Decision D6 of the design, resolving one of its open items. The distinction it rests on is stated with it: reading notes and slicing them is mechanical, so an error there is a bug rather than a misinference, while everything above is inference and would carry our priors. It is also careful to say that mechanical means unbiased and not clean — the raw simultaneities still contain passing tones, which is correct output. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 

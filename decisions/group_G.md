@@ -1271,7 +1271,148 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
+**Entry ratified.** 2026-08-04 · by user
+
 **Home.** `docs/symbol_input_audit.md:15-18`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** The user's operating principle, quoted verbatim at the head of the symbol-input audit and applied as its classification criterion. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. **D-066** and **D-305** carry the production ban; this entry carries the TOOL clause, which is what the audit's categories B and C are graded against and what its category-C resolution (recorded in the audit's closing status line and registered as **D-067**) discharged by deleting the tool-side symbol paths.
+**Provenance.** The user's operating principle, quoted verbatim at the head of the symbol-input audit and applied as its classification criterion. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) **D-066** and **D-305** carry the production ban; this entry carries the TOOL clause, which is what the audit's categories B and C are graded against and what its category-C resolution (recorded in the audit's closing status line and registered as **D-067**) discharged by deleting the tool-side symbol paths.
+
+### D-510 — The correct carry is the one that keeps the distinct alternative reading, not the one that appends a near-duplicate of the winner — chosen on the carry's purpose, not on which code is at HEAD
+
+> **Grounded verdict: C_HEAD is the correct carry.** It is the same principle the code already applies at the
+> Gate G-E raw-pull, where a non-promoting pull is popped so it *"does not pollute results[]"*
+> (`postscoringgates.cpp:388-392`). The correct unification reproduces C_HEAD — it does **not** adopt the
+> FM2-append form. (This is not "pick Gate A's idiom because Gate A is at HEAD"; it is "pick the carry that
+> preserves the distinct readings the contract requires, which the swap idiom produces and the append idiom
+> destroys.")
+
+**In plain words.** Two ways of promoting a chord to winner were in use. One swaps an alternative already on the list to the front and leaves the displaced reading in place; the other builds a fresh copy and appends it. Measured, the second injects a near-copy of the winner into the alternatives and pushes out the genuinely different reading. The first is therefore the correct behaviour to unify on.
+
+**Why.** Argued from the carry's stated purpose rather than from incumbency, and the document says so in terms: the alternatives exist so that the later layer can select among the DISTINCT readings, and a copy of the winner is not a distinct reading — its presence loses the partner reading, which is an information-loss regression under #12. The same principle is already applied elsewhere in the code, where a non-promoting raw pull is popped so it does not pollute the list.
+
+**Status.** LIVE · decided 2026-07-06 · ratifier not stated
+
+**Home.** `cowork_gateA_unification_design.md:184-189`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The grounded verdict of the Gate-A unification design, measured on the FULL output surface across the whole corpus. Its evidence is the enumerated affected stems and the before/after carry content, which the document nominates as the user-ratification surface under #14. The carry contract it is grounded in is **D-312**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-511 — One promotion primitive with a present-first dedup guard replaces the two ad-hoc promotion idioms; the append branch fires only when the target is genuinely absent
+
+> The **present-first dedup guard** is the whole fix: it makes the append branch fire **only** when the target is
+> genuinely absent, so an already-carried partner is *swapped* (clean, Idiom A) rather than *appended* (duplicate,
+> Idiom B). For the enharmonic flip specifically, the caller already computes the in-`results[]` partner index
+> (`bestAltIdx`, from the clean-quality bestAlt loop, `postscoringgates.cpp:136-187`); the primitive swaps that
+> exact index — so the produced permutation is **byte-identical to Gate A's `std::swap(results[0],
+> results[bestAltIdx])`**.
+
+**In plain words.** Promoting a chord to winner becomes a single shared operation. If the reading is already among the alternatives it is swapped to the front; only if it is genuinely absent is a fresh one built and appended. That ordering is the whole fix, and it reproduces the existing behaviour exactly where the reading is already present.
+
+**Why.** The design shows the equivalence rather than claiming it: the caller already computes the index of the present partner, so the primitive swaps that exact index and the produced ordering is byte-identical to the behaviour it replaces — which is what makes the retirement of the separate rule a no-op on the output rather than a change to be argued about.
+
+**Status.** LIVE · decided 2026-07-06 · ratifier not stated
+
+**Home.** `cowork_gateA_unification_design.md:210-215`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The single unified path of the same design, together with the collapse of three near-identical builder wrappers into one. It is a Layer-4 consolidation under #6 and is explicitly scoped as introducing no new cross-layer dependency. The build event itself is a separate, user-ratified commit that this document does not take. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-512 — Gate A becomes removable only once the unified promotion reproduces its carry byte-for-byte — that reproduction IS the retirement condition, not the winner-inertness that preceded it
+
+> Once the flip is one `promoteToWinner` call with present-first branching, **Gate A (the "partner present" half)
+> and FM2 (the "partner absent" half) are the two internal branches of the same promotion.** The separate `GateA`
+> rule — its `PostScoringRule::GateA` enum member (`paramoverride.h:75`), its `ruleOff(GateA)` guard
+> (`postscoringgates.cpp:214`), its name-map entry, and its dedicated fixtures — is redundant: the unified
+> promotion *is* the flip. Because the primitive reproduces Gate A's swap **byte-for-byte** on the "present"
+> branch (same `bestAltIdx`, same `std::swap`), removing the `GateA` rule leaves **winner AND carry
+> byte-identical to HEAD**. That is the condition O-11 named for retirement: *"It retires when the promotion
+> machinery unifies (one promotion path producing one carry)."* Gate A is then inert on the **full** surface
+
+**In plain words.** The rule could not simply be deleted: deleting it left the winner unchanged but changed the alternatives on a number of scores. It is removable once the shared promotion produces exactly the same alternatives, at which point exactly one rule name survives for the flip.
+
+**Why.** The condition is quoted from the earlier ruling it discharges — the rule retires when the promotion machinery unifies into one path producing one carry — and the design shows why the earlier winner-only inertness was not enough: the removal was inert on the winner across the whole corpus while changing the carry on a named subset. That gap is the reason the full-surface evidence rule exists.
+
+**Status.** LIVE · decided 2026-07-06 · ratifier not stated
+
+**Home.** `cowork_gateA_unification_design.md:233-240`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The retirement analysis of the same design. The binding evidence-method rule the document states for itself — inertness is measured on the full output surface, winner AND alternatives, never the winner alone — is the project's principle #15 applied here, and this case is where it earned its keep. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-536 — The bass note and the chord are chosen TOGETHER — the winner is the (bass, root, template) triple — replacing the sequential commit-the-bass-then-score pipeline
+
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
+
+> Replace the sequential two-step with a joint enumeration:
+>
+> ```
+> for each bass_candidate in bass_register_tones:
+>     for each (root, template) in 12×16:
+>         score = base_score(pcWeights, root, template)   // bass-independent matrix
+>                 + bass_delta(bass_candidate, root, template)  // 3 of 7 components
+>                 + w_complete * complete_bonus(bass_candidate, root, template)
+>                 + w_onset   * onset_signal(bass_candidate)
+>                 + w_passing * passing_penalty(bass_candidate)
+>                 + w_stepIn  * stepIn_bonus(bass_candidate, previousBassPc)
+>                 + w_stepOut * stepOut_bonus(bass_candidate, nextBassPc)
+>         track best (bass_candidate, root, template) triple
+> ```
+>
+> The winner is the (bass, root, template) triple with highest composite score.
+
+**In plain words.** The analyzer used to pick the bass note first and only then score chords against it. Two confirmed misreadings both came from that order. It now enumerates the plausible bass notes and the chord candidates together and takes the best combination.
+
+**Why.** Both defects are diagnosed to the same cause and named: a passing note that happens to be lower wins the bass on absolute pitch regardless of when it entered, flipping the chord root; and an incomplete slash chord beats a complete root-position triad because root-position completeness earned no advantage. Neither is reachable while the bass is committed before the chord is scored. The cost is stated too — a few times the scoring loop, which the document judges acceptable.
+
+**Status.** LIVE · decided 2026-05-16 · ratifier not stated
+
+**Home.** `docs/iter92_joint_bass_chord_scoring.md:53-68`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The design of iteration 92, recorded implemented and committed, and named the authoritative reference for the joint formula and its guards. ⚠ Its subject is the LEGACY chord analyzer: the production inference layer on the batch/corpus and notation surfaces is the joint estimator (**D-005**, **D-010**), and this scoring path is reached only through the dormant arm. The principle it embodies — deciding coupled quantities together rather than committing one early — is the same one **D-001** carries for the live design. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-537 — The completeness bonus fires ONLY for a root-position reading whose three triad tones are all present — the guard that stops it from demoting genuine slash chords
+
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
+
+> ### w_complete guard (prevents Iter 90-style regressions)
+>
+> The Iter 90 unconditional iii/III flip caused +12/+22 regressions because it promoted
+> cases where the "complete" triad was genuinely Em/C (correct slash chord) rather than
+> C major. The `w_complete` guard is more restrictive:
+>
+> ```
+> complete_bonus applies when:
+>     distinctPcs >= 3
+>     AND pcWeight[triad_root] > extensionThreshold
+>     AND pcWeight[triad_3rd]  > extensionThreshold
+>     AND pcWeight[triad_5th]  > extensionThreshold
+>     AND bass_candidate.pc == triad_root
+>         (root-position reading only — not for slash chord candidates)
+> ```
+
+**In plain words.** The bonus that rewards a chord for having all of its notes present applies only when the candidate bass IS the chord's root and all three tones are above threshold. A genuine slash chord therefore neither gains it nor is beaten by a reading that gains it wrongly.
+
+**Why.** The guard is derived from a measured failure rather than chosen: the previous unconditional version of the same idea caused large regressions because it promoted cases where the slash-chord reading was the correct one. The document works the guard through the exact case that failed and shows that a genuine slash chord with its own fifth present does not get the root-position bonus for the rival reading.
+
+**Status.** LIVE · decided 2026-05-16 · ratifier not stated
+
+**Home.** `docs/iter92_joint_bass_chord_scoring.md:113-127`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The `w_complete` guard of the same iteration-92 design. ⚠ LEGACY subject, as above. It is an early instance of the standing rule that a correction be given a STRUCTURAL entry condition rather than a widened threshold — the gate policy in `CLAUDE.md`. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-538 — A multi-signal scoring change lands one signal at a time, with the corpus check re-run after each step and any increase in errors a hard stop before the next
+
+⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
+
+> ## Four-step implementation and validation order
+>
+> Run corpus check after each step. Each step must not increase total BIR errors before
+> proceeding.
+
+**In plain words.** The change was not landed as a whole. Each new signal was added on its own, the corpus was re-measured, and the next signal was only added if the error count had not risen.
+
+**Why.** Stated with the plan and tied to the specific risk it manages: the same document's guard exists because an earlier unconditional version of one signal caused regressions, so the staging is what makes a regression attributable to the signal that caused it rather than to the change as a whole.
+
+**Status.** LIVE · decided 2026-05-16 · ratifier not stated
+
+**Home.** `docs/iter92_joint_bass_chord_scoring.md:190-193`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The four-step implementation and validation order of the same design. ⚠ LEGACY subject. It is an early, concrete form of the discipline the project later stated generally — one revertible provenance-stamped commit per behaviour change (#14) and a measured non-increase before proceeding (the gate block (A) hard stop). Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 

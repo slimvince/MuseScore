@@ -21,6 +21,7 @@
       "tools/audit/decisions/gen_phase1w_legacy_verification.py",
       "tools/audit/decisions/gen_reads1_yield.py",
       "tools/audit/decisions/gen_reads2_yield.py",
+      "tools/audit/decisions/gen_reads3_yield.py",
       "tools/audit/decisions/reaim_home_anchors.py",
       "tools/audit/gen_nongating_apparatus_rows.py",
       "tools/audit/gen_phase3_gate_partition.py",
@@ -31,7 +32,7 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 32,
+    "authored_entries": 33,
     "unclassified_candidates": [],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
     "outside_tools_audit_authored_by_name": [
@@ -56,7 +57,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "REGISTER LINT: OPEN_ITEMS.md — 324 row IDs",
+        "REGISTER LINT: OPEN_ITEMS.md — 326 row IDs",
         "REGISTER LINT: PASS — every row ID is unique"
       ],
       "stderr": [],
@@ -262,7 +263,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "PASS: nongating_apparatus_rows.json re-derives byte-identically (24 non-gating / 31 gates of 55 candidates over 238 open rows)"
+        "PASS: nongating_apparatus_rows.json re-derives byte-identically (24 non-gating / 31 gates of 55 candidates over 240 open rows)"
       ],
       "stderr": [],
       "what_it_checks": "the non-gating apparatus-row declaration re-derives from the INDEX"
@@ -288,10 +289,10 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "backbone decisions: 501",
+        "backbone decisions: 545",
         "cross-references resolving: ALL",
-        "verbatim quotes found at their cited home: 501/501",
-        "cited line numbers correct: 495/495   (6 cited to a file with no line number, by design)"
+        "verbatim quotes found at their cited home: 545/545",
+        "cited line numbers correct: 539/539   (6 cited to a file with no line number, by design)"
       ],
       "stderr": [],
       "what_it_checks": "every register entry's verbatim quote and cited line is found at its home"
@@ -320,7 +321,7 @@
       "verdict": "FAIL",
       "stdout": [],
       "stderr": [
-        "home document(s) with no authored delegation scope: ['cowork_architecture_review_2026_07.md', 'cowork_fb_redesign_design.md', 'cowork_phrase_boundary_design.md', 'cowork_term_theory_grounding.md', 'docs/precision_metric_design.md', 'docs/symbol_input_audit.md', 'docs/unified_analysis_pipeline.md']"
+        "home document(s) with no authored delegation scope: ['cowork_architecture_review_2026_07.md', 'cowork_census_full_needs_audit.md', 'cowork_evidence_inventory.md', 'cowork_fb_redesign_design.md', 'cowork_gateA_unification_design.md', 'cowork_idiom_discovery_design.md', 'cowork_joint_estimator_architecture.md', 'cowork_layer1_note_model_design.md', 'cowork_layer2_slicing_design.md', 'cowork_phrase_boundary_design.md', 'cowork_progression_schema_design.md', 'cowork_sensitive_cell_probe.md', 'cowork_term_theory_grounding.md', 'docs/back_half_design.md', 'docs/iter92_joint_bass_chord_scoring.md', 'docs/precision_metric_design.md', 'docs/symbol_input_audit.md', 'docs/unified_analysis_pipeline.md']"
       ],
       "what_it_checks": "every home-section field re-derives from the documents' own headings"
     },
@@ -329,10 +330,10 @@
       "args": [
         "--check"
       ],
-      "exit_code": 1,
-      "verdict": "FAIL",
+      "exit_code": 0,
+      "verdict": "PASS",
       "stdout": [
-        "STALE vs the files: phase1p_delegation_bar.json does not re-derive"
+        "the phase-1p delegation-bar artifact re-derives from the files"
       ],
       "stderr": [],
       "what_it_checks": "the delegation-bar pre-apply record re-derives"
@@ -359,7 +360,7 @@
       "verdict": "FAIL",
       "stdout": [],
       "stderr": [
-        "home document(s) with no authored KIND judgment: ['cowork_architecture_review_2026_07.md', 'cowork_factorization_desk_simulation.md', 'cowork_fb_redesign_design.md', 'cowork_layer6_grouping_design.md', 'cowork_phrase_boundary_design.md', 'cowork_target_architecture.md', 'cowork_term_theory_grounding.md', 'docs/layer_architecture_audit.md', 'docs/llm_integration.md', 'docs/precision_metric_design.md', 'docs/symbol_input_audit.md', 'docs/unified_analysis_pipeline.md']"
+        "home document(s) with no authored KIND judgment: ['cowork_architecture_review_2026_07.md', 'cowork_census_full_needs_audit.md', 'cowork_evidence_inventory.md', 'cowork_factorization_desk_simulation.md', 'cowork_fb_redesign_design.md', 'cowork_gateA_unification_design.md', 'cowork_idiom_discovery_design.md', 'cowork_joint_estimator_architecture.md', 'cowork_layer1_note_model_design.md', 'cowork_layer2_slicing_design.md', 'cowork_layer6_grouping_design.md', 'cowork_phrase_boundary_design.md', 'cowork_progression_schema_design.md', 'cowork_sensitive_cell_probe.md', 'cowork_target_architecture.md', 'cowork_term_theory_grounding.md', 'docs/back_half_design.md', 'docs/iter92_joint_bass_chord_scoring.md', 'docs/layer_architecture_audit.md', 'docs/llm_integration.md', 'docs/precision_metric_design.md', 'docs/symbol_input_audit.md', 'docs/unified_analysis_pipeline.md']"
       ],
       "what_it_checks": "the phase-1m measurements re-derive"
     },
@@ -401,10 +402,10 @@
       "args": [
         "--check"
       ],
-      "exit_code": 0,
-      "verdict": "PASS",
+      "exit_code": 2,
+      "verdict": "FAIL",
       "stdout": [
-        "phase1w: A1 held; 81 entries derived; 34 anchors located; 5 recorded figures located"
+        "STOP: A1 (the marker is generated text): quote not at tools/audit/decisions/gen_decisions_register.py:455. It is now at line(s) [466] — re-aim the citation."
       ],
       "stderr": [],
       "what_it_checks": "the legacy-mark verification re-derives, and its declared premises still hold"
@@ -434,6 +435,19 @@
       ],
       "stderr": [],
       "what_it_checks": "READ WAVE 2's measured yield still matches the bands registered before the reads, every entry it names is still in the register at the home it records, and its running read count still derives from the regime's own partition plus wave 1's count"
+    },
+    {
+      "tool": "tools/audit/decisions/gen_reads3_yield.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "reads3_yield.json re-derives"
+      ],
+      "stderr": [],
+      "what_it_checks": "READ WAVE 3's measured yield still matches the bands registered before the reads, every entry it names is still in the register at the home it records, and its running read count still derives from the regime's own partition plus waves 1 and 2"
     },
     {
       "tool": "tools/audit/decisions/reaim_home_anchors.py",
@@ -471,8 +485,8 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "living mode: index=324 detail=324 baseline=200 post-baseline=124",
-        "OVERALL PASS — bijection holds, no detail file carries a status of its own, and all 200 original items stay byte-verbatim (report: open_items\\register_check.json)"
+        "living mode: index=326 detail=326 baseline=200 post-baseline=126",
+        "OVERALL PASS � bijection holds, no detail file carries a status of its own, and all 200 original items stay byte-verbatim (report: open_items\\register_check.json)"
       ],
       "stderr": [],
       "what_it_checks": "the open-items index/detail bijection, and the original items still byte-verbatim"
@@ -492,8 +506,8 @@
     }
   ],
   "summary": {
-    "run": 30,
-    "passing": 24,
+    "run": 31,
+    "passing": 25,
     "failing": 6,
     "failing_tools": [
       {
@@ -504,12 +518,6 @@
       },
       {
         "tool": "tools/audit/decisions/gen_home_classification.py",
-        "args": [
-          "--check"
-        ]
-      },
-      {
-        "tool": "tools/audit/decisions/gen_phase1p_delegation_bar.py",
         "args": [
           "--check"
         ]
@@ -528,6 +536,12 @@
       },
       {
         "tool": "tools/audit/decisions/gen_phase1g_triage.py",
+        "args": [
+          "--check"
+        ]
+      },
+      {
+        "tool": "tools/audit/decisions/gen_phase1w_legacy_verification.py",
         "args": [
           "--check"
         ]

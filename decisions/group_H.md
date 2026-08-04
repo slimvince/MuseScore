@@ -924,9 +924,11 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
+**Entry ratified.** 2026-08-04 · by user
+
 **Home.** `docs/unified_analysis_pipeline.md:149-165`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Stated as the key-area detection design of the unification document. The mechanism is live at HEAD in `groupKeyAreas` (`src/composing/analysis/section/sectionanalyzer.cpp`), where the confidence test reads the stored per-region assertive-exposure flag rather than re-thresholding the confidence field. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+**Provenance.** Stated as the key-area detection design of the unification document. The mechanism is live at HEAD in `groupKeyAreas` (`src/composing/analysis/section/sectionanalyzer.cpp`), where the confidence test reads the stored per-region assertive-exposure flag rather than re-thresholding the confidence field. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)
 
 ### D-476 — The phrase-boundary primitive is owned by the notation-derived view layer — not by the note model, and not by the function layer that consumes it
 
@@ -941,9 +943,11 @@
 
 **Status.** LIVE · decided 2026-06-26 · ratified by user
 
+**Entry ratified.** 2026-08-04 · by user
+
 **Home.** `cowork_phrase_boundary_design.md:223-226`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Decision D1 of a design document whose banner reads SIGNED (user, 2026-06-26). Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+**Provenance.** Decision D1 of a design document whose banner reads SIGNED (user, 2026-06-26). Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)
 
 ### D-477 — Phrase boundaries are read from the written surface alone — never from a resolved key, chord or cadence — and the boundaries this misses are accepted, not recovered here
 
@@ -960,9 +964,11 @@
 
 **Status.** LIVE · decided 2026-06-26 · ratified by user
 
+**Entry ratified.** 2026-08-04 · by user
+
 **Home.** `cowork_phrase_boundary_design.md:64-69`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** The first constraint of a design document whose banner reads SIGNED (user, 2026-06-26); its decision D3 states the same rule from the architecture side, and the banner records that the acyclicity argument was independently verified airtight. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+**Provenance.** The first constraint of a design document whose banner reads SIGNED (user, 2026-06-26); its decision D3 states the same rule from the architecture side, and the banner records that the acyclicity argument was independently verified airtight. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)
 
 ### D-478 — A phrase boundary is a peak in a continuous boundary-strength profile, not the OR of a few binary signals
 
@@ -979,9 +985,11 @@
 
 **Status.** LIVE · decided 2026-06-26 · ratified by user
 
+**Entry ratified.** 2026-08-04 · by user
+
 **Home.** `cowork_phrase_boundary_design.md:233-238`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Decision D4 of a design document whose banner reads SIGNED (user, 2026-06-26) and records the graded model as revision 2, adopted on the research in `cowork_phrase_boundary_methods.md` (user-ratified 2026-06-26). Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+**Provenance.** Decision D4 of a design document whose banner reads SIGNED (user, 2026-06-26) and records the graded model as revision 2, adopted on the research in `cowork_phrase_boundary_methods.md` (user-ratified 2026-06-26). Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)
 
 ### D-479 — The boundary cues run per eligible voice and aggregate to the texture, and BOTH the per-voice and the texture boundaries are published
 
@@ -999,9 +1007,11 @@
 
 **Status.** LIVE · decided 2026-06-26 · ratified by user
 
+**Entry ratified.** 2026-08-04 · by user
+
 **Home.** `cowork_phrase_boundary_design.md:239-245`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Decision D5 of a design document whose banner reads SIGNED (user, 2026-06-26); the banner records this as the revision-3 change made at the user's direction, and that the rev-3 changes were independently re-reviewed with a blocking fix applied. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+**Provenance.** Decision D5 of a design document whose banner reads SIGNED (user, 2026-06-26); the banner records this as the revision-3 change made at the user's direction, and that the rev-3 changes were independently re-reviewed with a blocking fix applied. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)
 
 ### D-480 — The phrase-boundary primitive is NOT an accuracy requirement — a competitive reference engine does no phrase segmentation at all — so it is built right but kept proportionate
 
@@ -1019,9 +1029,11 @@
 
 **Status.** LIVE · decided 2026-06-26 · ratified by user
 
+**Entry ratified.** 2026-08-04 · by user
+
 **Home.** `cowork_phrase_boundary_design.md:276-282`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** A user-ratified scope ruling recorded in the risks section of a design document whose banner reads SIGNED (user, 2026-06-26). Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. It is the same proportionality reasoning **D-456** records for the grouping layer, reached independently and earlier.
+**Provenance.** A user-ratified scope ruling recorded in the risks section of a design document whose banner reads SIGNED (user, 2026-06-26). Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) It is the same proportionality reasoning **D-456** records for the grouping layer, reached independently and earlier.
 
 ### D-481 — The notated markers are emitted as boundaries unconditionally; only the surface-cue strength is peak-picked
 
@@ -1038,9 +1050,11 @@
 
 **Status.** LIVE · decided 2026-06-26 · ratified by user
 
+**Entry ratified.** 2026-08-04 · by user
+
 **Home.** `cowork_phrase_boundary_design.md:176-181`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** The as-built realisation recorded in §4.4 of a design document whose banner reads SIGNED (user, 2026-06-26); the parenthetical records it as ratified on that date and preserves the earlier wording it replaces. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+**Provenance.** The as-built realisation recorded in §4.4 of a design document whose banner reads SIGNED (user, 2026-06-26); the parenthetical records it as ratified on that date and preserves the earlier wording it replaces. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)
 
 ### D-482 — The two hand-synchronised copies of the fermata scan retire into one owned primitive, and that retirement changes no output
 
@@ -1054,9 +1068,11 @@
 
 **Status.** LIVE · decided 2026-06-26 · ratified by user
 
+**Entry ratified.** 2026-08-04 · by user
+
 **Home.** `cowork_phrase_boundary_design.md:227-229`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Decision D2 of a design document whose banner reads SIGNED (user, 2026-06-26); the same document's constraints state the split explicitly — the marker-only path is byte-identical, the graded model is gated on the corpus regression stop. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+**Provenance.** Decision D2 of a design document whose banner reads SIGNED (user, 2026-06-26); the same document's constraints state the split explicitly — the marker-only path is byte-identical, the graded model is gated on the corpus regression stop. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)
 
 ### D-483 — The picked boundaries are validated against the analysts' own phrase marks; a fermata-derived phrase list is inadmissible as ground truth because the primitive reads fermatas
 
@@ -1072,9 +1088,11 @@
 
 **Status.** LIVE · decided 2026-06-26 · ratified by user
 
+**Entry ratified.** 2026-08-04 · by user
+
 **Home.** `cowork_phrase_boundary_design.md:254-258`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** The validation rule of a design document whose banner reads SIGNED (user, 2026-06-26), naming the corpus columns it uses. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. It is the phrase-axis instance of the standing rule **D-294** — the only ground truth is the human annotation, and no self-annotation ever enters a measurement.
+**Provenance.** The validation rule of a design document whose banner reads SIGNED (user, 2026-06-26), naming the corpus columns it uses. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) It is the phrase-axis instance of the standing rule **D-294** — the only ground truth is the human annotation, and no self-annotation ever enters a measurement.
 
 ### D-484 — The phrase-boundary primitive is a derived view: it inherits the loaded span, requests no extension of its own, and publishes a per-profile max-normalised boundary confidence
 
@@ -1094,9 +1112,11 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by Cowork
 
+**Entry ratified.** 2026-08-04 · by user
+
 **Home.** `cowork_phrase_boundary_design.md:23-31`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** A stance added to the design document on 2026-07-02, closing two findings of the gap-analysis v2 report; the document records it as ruled by Cowork, not by the user. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+**Provenance.** A stance added to the design document on 2026-07-02, closing two findings of the gap-analysis v2 report; the document records it as ruled by Cowork, not by the user. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)
 
 ### D-485 — Each picked boundary should carry which cue fired and at what scope; the picked set is scope-blind today and the refinement waits for the inference phase
 
@@ -1112,9 +1132,11 @@
 
 **Status.** LIVE · decided 2026-07-01 · ratifier not stated
 
+**Entry ratified.** 2026-08-04 · by user
+
 **Home.** `cowork_phrase_boundary_design.md:382-386`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Open item 5 of the design document, recorded 2026-07-01 and attributed there to the user raising it. The document records the whole item as a proper-layer refinement not built until the inference phase opens; the register carries it because a recorded refinement with a stated shape binds what a future build may do. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+**Provenance.** Open item 5 of the design document, recorded 2026-07-01 and attributed there to the user raising it. The document records the whole item as a proper-layer refinement not built until the inference phase opens; the register carries it because a recorded refinement with a stated shape binds what a future build may do. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)
 
 ### D-490 — FALSIFIED: no threshold can make the fine-grain function override net-positive — the harm rate is flat against both quantities the threshold is built from
 
@@ -1130,9 +1152,11 @@
 
 **Status.** LIVE · decided 2026-07-06 · ratifier not stated
 
+**Entry ratified.** 2026-08-04 · by user
+
 **Home.** `cowork_fb_redesign_design.md:104-108`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** The measured verdict of the F-B redesign design pass, on 1043 ground-truth-aligned fires from the dormant decode chain, reproducing the fitting ledger's own split to the unit. It refutes the premise the confidence contract and the code comment both assert — that a fitted threshold accounts for the incumbent's missing progression term. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+**Provenance.** The measured verdict of the F-B redesign design pass, on 1043 ground-truth-aligned fires from the dormant decode chain, reproducing the fitting ledger's own split to the unit. It refutes the premise the confidence contract and the code comment both assert — that a fitted threshold accounts for the incumbent's missing progression term. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) ★ The mechanism's reachability at HEAD was checked on 2026-08-04 (dispatch cc_instruction_reads_3.md §4.2) and is recorded once, at D-492: it is dormant — no production surface, and not the legacy production path either — so this falsified mechanism is not running today.
 
 ### D-491 — REFUTED: making the override's comparison vertically fair does not repair it — even where the alternative fits the notes at least as well, it is still about 71 % harmful
 
@@ -1149,9 +1173,11 @@
 
 **Status.** LIVE · decided 2026-07-06 · ratifier not stated
 
+**Entry ratified.** 2026-08-04 · by user
+
 **Home.** `cowork_fb_redesign_design.md:160-165`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** The direct test of the documented root-cause's natural repair, measured on the same 1043-fire population. It is what removes the large-surface repair option (§3.C) from the redesign, and it is stated with its own caveat — the vertical gap uses a proxy for the committed reading's own score, and the conclusion is stated to be independent of the proxy's precision because no band drops below about 71 % harm. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+**Provenance.** The direct test of the documented root-cause's natural repair, measured on the same 1043-fire population. It is what removes the large-surface repair option (§3.C) from the redesign, and it is stated with its own caveat — the vertical gap uses a proxy for the committed reading's own score, and the conclusion is stated to be independent of the proxy's precision because no band drops below about 71 % harm. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)
 
 ### D-492 — The recommended redesign is to demote the override to an annotation — carrying the earlier reading unchanged and surfacing the contradiction — floored by simply disabling it
 
@@ -1164,9 +1190,11 @@
 
 **Status.** LIVE · decided 2026-07-06 · ratifier not stated
 
+**Entry ratified.** 2026-08-04 · by user
+
 **Home.** `cowork_fb_redesign_design.md:284-285`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** The recommendation of a document whose banner records it as a DESIGN + DECISION SURFACE and states that the implementation is a separately-ratified build event. **D-387** (2026-07-07, `cowork_layer5_engagement_design.md`) records the open-mark vehicle the recommendation calls for, one day later; whether that constitutes the build event's ratification is not settled by either document and is not decided here. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+**Provenance.** The recommendation of a document whose banner records it as a DESIGN + DECISION SURFACE and states that the implementation is a separately-ratified build event. **D-387** (2026-07-07, `cowork_layer5_engagement_design.md`) records the open-mark vehicle the recommendation calls for, one day later; whether that constitutes the build event's ratification is not settled by either document and is not decided here. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) ★ PHASE-3 FIX-PLAN INPUT, NOT AN AUTHORIZATION (user, 2026-08-04, dispatch cc_instruction_reads_3.md §4.1): the recommendation — demote the override to an annotation carrying the earlier reading unchanged, floored by disabling it — is recorded as an INPUT to the ONE prioritized fix plan D-231's phase 3 assembles, and is NOT acted on. D-231 forbids the fix design and D-490's falsification does not change that sequencing; the row that owns the demotion, and carries this cross-reference on the plan's side, is OPEN_ITEMS.md OI-2. ★ AND THE ARM IS CHECKED RATHER THAN ASSUMED (dispatch §4.2; read with the file tools at HEAD, 2026-08-04): the override is NOT reachable on any production surface, and NOT on the legacy production path either. attemptFineGrainOverride has exactly one caller, resolveCarriedReadings (src/composing/analysis/function/functionresolver.cpp:530); that function's only non-test caller in the whole tree is tools/batch_analyze.cpp:3321, inside runFullSpine, which is reached only from the --dump-fullspine block at :5506 and returns at :5519 before analyzeScore or analyzeRegions runs; and functionresolver.h is included by that one tool, by its own .cpp, and by src/composing/tests/functionresolver_tests.cpp, and by nothing else. So the measured-harmful mechanism is dormant behind a return-early diagnostic dump flag and the test suites — NARROWER than the dispatch's assumption A2, which supposed the legacy production path, and narrower than 'legacy' reads: plain flag-less batch_analyze, the reachability path OI-289 established for the legacy arm generally, does NOT reach it. There is no STOP. The document's own 2026-07-06 dormancy finding (§1.1) therefore still holds at HEAD, re-established rather than carried forward.
 
 ### D-493 — Restricting the override to the genuinely-coupled key-and-chord minority is UN-COMPUTABLE, not merely unmeasured: its trigger is not computed anywhere and building it is the still-owed joint step
 
@@ -1189,9 +1217,11 @@
 
 **Status.** LIVE · decided 2026-07-06 · ratifier not stated
 
+**Entry ratified.** 2026-08-04 · by user
+
 **Home.** `cowork_fb_redesign_design.md:251-262`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** The measured verdict of engage arc #2, recorded in the F-B redesign document as a correction of its own earlier UNKNOWN, with the measurement report named. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+**Provenance.** The measured verdict of engage arc #2, recorded in the F-B redesign document as a correction of its own earlier UNKNOWN, with the measurement report named. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)
 
 ### D-495 — RATIFIED AMENDMENT A-5: when the phrase-boundary profile is flat, cadence admission relaxes with vote-weight scaling instead of starving
 
@@ -1204,7 +1234,9 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
+**Entry ratified.** 2026-08-04 · by user
+
 **Home.** `cowork_architecture_review_2026_07.md:324-325`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** Amendment A-5 of the external architecture review, in a document whose banner records amendments A-1…A-10 as RATIFIED by the user on 2026-07-02. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. It binds on the phrase-boundary primitive's consumer; the primitive's own specification (`cowork_phrase_boundary_design.md`) does not carry it.
+**Provenance.** Amendment A-5 of the external architecture review, in a document whose banner records amendments A-1…A-10 as RATIFIED by the user on 2026-07-02. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) ★ NOT A FRESH DECISION, stated so that nothing is counted twice (dispatch cc_instruction_reads_3.md §1.3): the amendment itself was ratified by the user at the 2026-07-02 architecture review, which is what this entry's Status line already records. Ratifying the ENTRY records only that the register transcribes that ratification correctly — it neither re-makes the decision nor adds a second ratification event to it. It binds on the phrase-boundary primitive's consumer; the primitive's own specification (`cowork_phrase_boundary_design.md`) does not carry it.
 

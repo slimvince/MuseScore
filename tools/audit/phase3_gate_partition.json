@@ -513,10 +513,16 @@
     "quote": "each search reporting its detection power, ending in the bounded trust statement - every",
     "expected_line": 1049,
     "found_lines": [
-     1049
+     1067
     ],
     "found": true,
-    "anchor_ok": true
+    "anchor_ok": false,
+    "drift": {
+     "expected": 1049,
+     "actual": [
+      1067
+     ]
+    }
    },
    "the_check": {
     "has_run": false,
@@ -824,17 +830,56 @@
   "checked": 20,
   "located": 20,
   "unlocated": [],
-  "anchor_drift": [],
+  "anchor_drift": [
+   {
+    "file": "CLAUDE.md",
+    "quote": "**Phase 2 - issue-finding is EXHAUSTED with measured coverage:** the remaining audit partitions",
+    "expected_line": 1044,
+    "found_lines": [
+     1062
+    ],
+    "found": true,
+    "anchor_ok": false,
+    "drift": {
+     "expected": 1044,
+     "actual": [
+      1062
+     ]
+    }
+   },
+   {
+    "file": "CLAUDE.md",
+    "quote": "each search reporting its detection power, ending in the bounded trust statement - every",
+    "expected_line": 1049,
+    "found_lines": [
+     1067
+    ],
+    "found": true,
+    "anchor_ok": false,
+    "drift": {
+     "expected": 1049,
+     "actual": [
+      1067
+     ]
+    }
+   }
+  ],
   "records": [
    {
     "file": "CLAUDE.md",
     "quote": "**Phase 2 - issue-finding is EXHAUSTED with measured coverage:** the remaining audit partitions",
     "expected_line": 1044,
     "found_lines": [
-     1044
+     1062
     ],
     "found": true,
-    "anchor_ok": true
+    "anchor_ok": false,
+    "drift": {
+     "expected": 1044,
+     "actual": [
+      1062
+     ]
+    }
    },
    {
     "file": "cowork_oi200_perspective_inventory.md",
@@ -991,10 +1036,16 @@
     "quote": "each search reporting its detection power, ending in the bounded trust statement - every",
     "expected_line": 1049,
     "found_lines": [
-     1049
+     1067
     ],
     "found": true,
-    "anchor_ok": true
+    "anchor_ok": false,
+    "drift": {
+     "expected": 1049,
+     "actual": [
+      1067
+     ]
+    }
    },
    {
     "file": "open_items/OI-288.md",

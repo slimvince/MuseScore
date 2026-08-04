@@ -155,6 +155,17 @@ PREAMBLE = """# DECISIONS — the decisions register
 > shortcut — removed from the code on 2026-06-14 and specified in the present tense until this wave,
 > `OPEN_ITEMS.md` OI-315), and **D-468** was entered (the pinned block-(A) instrument's declared
 > inference arm, recorded but **not** user-ruled — see that entry's provenance).
+> **Twelfth ratification event, 2026-08-04:** the 33 READ WAVE 2 entries (D-469…D-501), ratified AS
+> DRAFTED with the statuses exactly as the record states them — several of them "not stated", and
+> left that way. Two things this event is explicitly not. It is **not a conformance finding**: what
+> is ratified is that the register records each decision correctly, never that the code obeys it.
+> And for **D-494…D-500** it is **not a second ratification of the decision** — those entries carry
+> amendments the user ratified at the 2026-07-02 architecture review, so ratifying the ENTRY records
+> only that the register transcribes that event correctly, and nothing is counted twice. Landing in
+> the same commit and **not** entry ratifications: **D-468**'s ratifier correction was made in the
+> preceding wave, and the riders this wave's dispatch ordered — D-492 marked a phase-3 fix-plan input
+> with the reachability of its subject checked at the code, and the D-474/D-475 consequences recorded
+> at principle #21 and on `OPEN_ITEMS.md` OI-179.
 >
 > **From 2026-08-03 each entry carries its own ratification as a FIELD**, not only as prose inside
 > the provenance — see *Entry ratified* below. It is backfilled mechanically from the provenance

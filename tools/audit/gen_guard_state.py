@@ -141,6 +141,10 @@ AUTHORED = [
      "READ WAVE 2's measured yield still matches the bands registered before the reads, every "
      "entry it names is still in the register at the home it records, and its running read "
      "count still derives from the regime's own partition plus wave 1's count"),
+    ("tools/audit/decisions/gen_reads3_yield.py", ["--check"],
+     "READ WAVE 3's measured yield still matches the bands registered before the reads, every "
+     "entry it names is still in the register at the home it records, and its running read "
+     "count still derives from the regime's own partition plus waves 1 and 2"),
     ("tools/audit/decisions/reaim_home_anchors.py", ["--check"],
      "no register home anchor has drifted"),
     ("tools/audit/decisions/gen_live_prohibition_pointers.py", ["--check"],

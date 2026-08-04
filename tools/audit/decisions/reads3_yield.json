@@ -1,0 +1,537 @@
+{
+  "header": {
+    "purpose": "READ WAVE 3's measured yield against the bands registered before the reads, per `phase1n_reading_regime.json` -> bands.registration.",
+    "generator": "tools/audit/decisions/gen_reads3_yield.py",
+    "wave": "reads-3",
+    "dispatch": "cc_instruction_reads_3.md",
+    "authored_inputs": [
+      "WAVE_READS",
+      "LOW_YIELD_REASON",
+      "BAND_OBSERVATION",
+      "WHAT_SEPARATED_THEM"
+    ],
+    "derived_from": [
+      "phase1n_reading_regime.json (every band, point, size and partition fact)",
+      "reads1_yield.json + reads2_yield.json (the earlier read counts)",
+      "backbone_decisions.json (every home, status and title)"
+    ],
+    "why_the_regime_artifact_is_not_regenerated": "Unchanged from waves 1 and 2 and rowed at OI-316: the generator recomputes the registered bands from the terciles of the READ set, so following the regime's own update protocol would refit the prediction on the documents being graded (#20) and lose the registered value (#12)."
+  },
+  "counts": {
+    "documents_read_in_full_this_wave": 11,
+    "documents_the_schedule_packed_into_wave_3": 11,
+    "register_entries_produced": 44,
+    "entries_homed_in_the_document_read": 44,
+    "entries_homed_in_the_owning_specification_instead": 0,
+    "entries_marked_legacy_subject": 3,
+    "documents_yielding_zero": 0
+  },
+  "the_running_read_count": {
+    "design_document_surface": 143,
+    "user_accepted_exclusions_not_read": 41,
+    "read_in_full_before_this_wave": 50,
+    "read_in_full_after_this_wave": 61,
+    "still_owed_a_full_read": 41,
+    "note": "Derived here from the regime's own partition plus the two earlier waves' counts, because the regime artifact's own `partition.read_in_full` and `owed_a_full_read` cannot be updated without refitting the registered bands (OI-316). A reader comparing this block with the regime artifact will find them disagreeing BY DESIGN; this block is the current one."
+  },
+  "the_out_of_sample_test": {
+    "documents_inside_their_registered_band": 11,
+    "documents_outside_their_registered_band": 0,
+    "above_the_point_prediction": 2,
+    "below_the_point_prediction": 9,
+    "length_terciles_represented_in_this_wave": [
+      "medium"
+    ],
+    "what_the_band_test_is_worth": "Restated from waves 1 and 2 because it has not changed and a reader of this artifact alone would otherwise read a clean pass as evidence: EVERY registered band has a minimum of 0, so a band running from 0 to its tercile maximum can only be missed by a document out-yielding every document of its tercile ever. `inside_the_registered_band` is therefore close to unfalsifiable and a pass on it establishes almost nothing. The informative comparison is the point prediction, reported beside it — and BOTH are reported here, per the wave dispatch's own instruction not to describe a band pass as validating the proxy.",
+    "what_wave_3_adds": "All eleven of this wave's documents fall in ONE length tercile, exactly as all eight of wave 2's did — so for the second consecutive wave the proxy makes a SINGLE prediction for the whole packing while the measured yields differ by a factor of four. Within this wave the length proxy again has no resolving power at all. Reported as an observation about these eleven observations and explicitly NOT as a re-fit: the proxy stays registered as it was and unvalidated (#17d).",
+    "what_separated_the_documents": "What separated them, stated as an observation and not as a model: the two highest yields are a FULLY RATIFIED component specification and the GOVERNING architecture document, both of which state ratified rules densely; the two lowest are a document whose headline finding is already registered from another home, and a layer specification the register already covers well. Neither is a length effect. This is the same shape wave 2 reported and it is now seen twice, which is worth recording and is still not a fit."
+  },
+  "rows": [
+    {
+      "document": "cowork_progression_schema_design.md",
+      "reading_order": 15,
+      "lines": 332,
+      "length_tercile": "medium",
+      "unresolved_clusters_at_registration": 16,
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 8,
+      "of_which_homed_in_this_document": 8,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "above",
+      "entries": [
+        {
+          "id": "D-502",
+          "home": "cowork_progression_schema_design.md:245-247",
+          "status": "live",
+          "title": "The span a recognised named progression covers is called the progression-schema-span — the bare word 'sequence' is reserved for the harmonic sequence and 'progression' for the whole committed chord stream"
+        },
+        {
+          "id": "D-503",
+          "home": "cowork_progression_schema_design.md:135-136",
+          "status": "live",
+          "title": "The idiom mixture is DISCOVERED from the score and merely SEEDED by the user's preset, in three forward-only phases"
+        },
+        {
+          "id": "D-504",
+          "home": "cowork_progression_schema_design.md:161-178",
+          "status": "live",
+          "title": "A recognised harmonic sequence is ALWAYS emitted as key evidence — the earlier gate that emitted it only where no cadence existed threw corroboration away"
+        },
+        {
+          "id": "D-505",
+          "home": "cowork_progression_schema_design.md:162-166",
+          "status": "live",
+          "title": "A harmonic sequence requires at least two transposed statements of the SAME recognised entry; a single internally-sequential entry emits none"
+        },
+        {
+          "id": "D-506",
+          "home": "cowork_progression_schema_design.md:193-194",
+          "status": "live",
+          "title": "Progression recognition is ADDITIVE: the literal Roman numeral is never rewritten, and a substitution is recorded only in the annotation"
+        },
+        {
+          "id": "D-507",
+          "home": "cowork_progression_schema_design.md:272-273",
+          "status": "live",
+          "title": "A catalog entry defined by its melodic or bass lines is recognised by its chord skeleton alone and carries a 'chords-only' mark, with its prior strength reduced"
+        },
+        {
+          "id": "D-508",
+          "home": "cowork_progression_schema_design.md:242-244",
+          "status": "live",
+          "title": "The catalog/grammar consistency test ships scoped to the MEASURED containment — an explicit known-gap list — and tightens to a clean assertion when the grammar amendment lands"
+        },
+        {
+          "id": "D-509",
+          "home": "cowork_progression_schema_design.md:121-128",
+          "status": "live",
+          "title": "Where the analysis already committed a chord, a recognised progression corrects it through the EXISTING override frame and may only SELECT an already-carried reading — no new comparison frame, and never a reading built from the notes"
+        }
+      ]
+    },
+    {
+      "document": "cowork_gateA_unification_design.md",
+      "reading_order": 16,
+      "lines": 308,
+      "length_tercile": "medium",
+      "unresolved_clusters_at_registration": 10,
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 3,
+      "of_which_homed_in_this_document": 3,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "below",
+      "entries": [
+        {
+          "id": "D-510",
+          "home": "cowork_gateA_unification_design.md:184-189",
+          "status": "live",
+          "title": "The correct carry is the one that keeps the distinct alternative reading, not the one that appends a near-duplicate of the winner — chosen on the carry's purpose, not on which code is at HEAD"
+        },
+        {
+          "id": "D-511",
+          "home": "cowork_gateA_unification_design.md:210-215",
+          "status": "live",
+          "title": "One promotion primitive with a present-first dedup guard replaces the two ad-hoc promotion idioms; the append branch fires only when the target is genuinely absent"
+        },
+        {
+          "id": "D-512",
+          "home": "cowork_gateA_unification_design.md:233-240",
+          "status": "live",
+          "title": "Gate A becomes removable only once the unified promotion reproduces its carry byte-for-byte — that reproduction IS the retirement condition, not the winner-inertness that preceded it"
+        }
+      ]
+    },
+    {
+      "document": "cowork_census_full_needs_audit.md",
+      "reading_order": 17,
+      "lines": 287,
+      "length_tercile": "medium",
+      "unresolved_clusters_at_registration": 11,
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 4,
+      "of_which_homed_in_this_document": 4,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "below",
+      "entries": [
+        {
+          "id": "D-513",
+          "home": "cowork_census_full_needs_audit.md:256-258",
+          "status": "live",
+          "title": "A corpus registry's content summary is enumeration provenance, not evidence that an annotation layer is present — per-slice presence must be measured"
+        },
+        {
+          "id": "D-514",
+          "home": "cowork_census_full_needs_audit.md:280-283",
+          "status": "live",
+          "title": "A newly acquired annotation set whose works OVERLAP the regression corpus is RECORD-ONLY: it may not be wired to, compared against, or bulk-diffed with the gate corpus without a user ruling"
+        },
+        {
+          "id": "D-515",
+          "home": "cowork_census_full_needs_audit.md:227-228",
+          "status": "live",
+          "title": "Pedal-point ground truth gets its OWN needs row rather than riding as a note on another — the user's reason: it can improve inference precision and nothing is lost"
+        },
+        {
+          "id": "D-516",
+          "home": "cowork_census_full_needs_audit.md:223-225",
+          "status": "live",
+          "title": "Two ground-truth classes with named consumers but no needs row were ADOPTED at the first full-needs audit — contrapuntal/imitative structure, and marked part-writing errors"
+        }
+      ]
+    },
+    {
+      "document": "cowork_layer1_note_model_design.md",
+      "reading_order": 18,
+      "lines": 278,
+      "length_tercile": "medium",
+      "unresolved_clusters_at_registration": 15,
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 4,
+      "of_which_homed_in_this_document": 4,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "below",
+      "entries": [
+        {
+          "id": "D-517",
+          "home": "cowork_layer1_note_model_design.md:204-206",
+          "status": "not stated",
+          "title": "The note model's span query uses a start-time-ordered list plus a running latest-end-time tree, chosen because it is the simplest structure that is fast AND returns notes in scan order"
+        },
+        {
+          "id": "D-518",
+          "home": "cowork_layer1_note_model_design.md:261-263",
+          "status": "not stated",
+          "title": "The planned cue-note flag was specified and then REMOVED: after import a cue note cannot be told from a muted note, and the does-it-sound flag already covers both"
+        },
+        {
+          "id": "D-519",
+          "home": "cowork_layer1_note_model_design.md:43-47",
+          "status": "not stated",
+          "title": "Only TIES join written notes into one sounding note — slurred notes stay separate, whatever their pitches"
+        },
+        {
+          "id": "D-520",
+          "home": "cowork_layer1_note_model_design.md:230-238",
+          "status": "deferred",
+          "title": "Widening the loaded span was built DECOUPLED from the whole-score-read fix — superseding the recorded framing that the two were one coupled change"
+        }
+      ]
+    },
+    {
+      "document": "cowork_evidence_inventory.md",
+      "reading_order": 19,
+      "lines": 267,
+      "length_tercile": "medium",
+      "unresolved_clusters_at_registration": 10,
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 3,
+      "of_which_homed_in_this_document": 3,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "below",
+      "entries": [
+        {
+          "id": "D-521",
+          "home": "cowork_evidence_inventory.md:196-204",
+          "status": "live",
+          "title": "The general law of the circularity map: an abstract circle becomes acyclic in the concrete by one of four named conditions — and every alleged circle in this system fell to one of them"
+        },
+        {
+          "id": "D-522",
+          "home": "cowork_evidence_inventory.md:215-224",
+          "status": "live",
+          "title": "Explaining an inference to the end user is a late-bound DISPLAY consumer of facts that already exist — not a new analysis"
+        },
+        {
+          "id": "D-523",
+          "home": "cowork_evidence_inventory.md:241-248",
+          "status": "deferred",
+          "title": "If the algorithmic second opinion's LOCAL key is ever adopted it enters UNVALIDATED, and adopting it is a corroborator re-baseline under user ratification — not a refresh"
+        }
+      ]
+    },
+    {
+      "document": "cowork_joint_estimator_architecture.md",
+      "reading_order": 20,
+      "lines": 258,
+      "length_tercile": "medium",
+      "unresolved_clusters_at_registration": 7,
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 7,
+      "of_which_homed_in_this_document": 7,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "above",
+      "entries": [
+        {
+          "id": "D-524",
+          "home": "cowork_joint_estimator_architecture.md:89-103",
+          "status": "live",
+          "title": "The joint state's mode axis is TWO modes — major and composite minor; modal and chromatic colour lives in the pitch emission, and the un-rounded reading is published"
+        },
+        {
+          "id": "D-525",
+          "home": "cowork_joint_estimator_architecture.md:105-123",
+          "status": "live",
+          "title": "The fit is STAGED: the factor tables are counted from ground truth and frozen, and only a small vector of combination weights is fit discriminatively — with an all-weights-equal ablation arm that must be beaten"
+        },
+        {
+          "id": "D-526",
+          "home": "cowork_joint_estimator_architecture.md:125-144",
+          "status": "live",
+          "title": "The joint state's chord axis is SCALE-DEGREE-VALUED — a Roman numeral relative to the state's own tonic and mode — and the chord symbol is a DERIVED fact published once"
+        },
+        {
+          "id": "D-527",
+          "home": "cowork_joint_estimator_architecture.md:146-167",
+          "status": "live",
+          "title": "There is NO live non-chord-tone cleaning stage: each tone is emitted by category inside the one decode, conditioned on chord-independent melodic and metric covariates, and ornament labels are derived AFTER it"
+        },
+        {
+          "id": "D-528",
+          "home": "cowork_joint_estimator_architecture.md:169-182",
+          "status": "live",
+          "title": "The key signature and declared mode enter as a WEAK FITTED SOFT PRIOR with no conditional gate anywhere — the probability calculus delivers 'consult it only when unsure', and the hard declared-mode wall is formally retired"
+        },
+        {
+          "id": "D-529",
+          "home": "cowork_joint_estimator_architecture.md:200-206",
+          "status": "live",
+          "title": "The joint architecture's expected win is ASYMMETRIC — large on key and mode, modest on chord root — and the written predictions must say so, because a large root claim would itself be a surprise"
+        },
+        {
+          "id": "D-530",
+          "home": "cowork_joint_estimator_architecture.md:208-214",
+          "status": "live",
+          "title": "The joint architecture is a CONSTRAINED optimum, not a global one: the learned shared-representation models measure better and are excluded because they are un-establishable and undiagnosable"
+        }
+      ]
+    },
+    {
+      "document": "cowork_sensitive_cell_probe.md",
+      "reading_order": 21,
+      "lines": 258,
+      "length_tercile": "medium",
+      "unresolved_clusters_at_registration": 10,
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 4,
+      "of_which_homed_in_this_document": 4,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "below",
+      "entries": [
+        {
+          "id": "D-532",
+          "home": "cowork_sensitive_cell_probe.md:121-129",
+          "status": "live",
+          "title": "The chord-transition table gains one pooling level that groups a secondary dominant's continuations by their RELATION to its target — restoring from counts the one behaviour that defines the chord class"
+        },
+        {
+          "id": "D-533",
+          "home": "cowork_sensitive_cell_probe.md:155-159",
+          "status": "live",
+          "title": "A continuation too rare to have its own stored probability is scored by dividing the row's leftover in PROPORTION to each chord's overall frequency — never evenly, and never as impossible"
+        },
+        {
+          "id": "D-534",
+          "home": "cowork_sensitive_cell_probe.md:188-195",
+          "status": "live",
+          "title": "The penalty for a chord tone that never sounds is COUNTED per chord factor — root, third, fifth, seventh — replacing one invented blanket number; the per-factor asymmetry then comes free"
+        },
+        {
+          "id": "D-535",
+          "home": "cowork_sensitive_cell_probe.md:246-248",
+          "status": "live",
+          "title": "The checking stage's verdict: the real counted tables overturn no desk-simulation verdict, but margins moved in both directions and one margin expectation was plainly wrong"
+        }
+      ]
+    },
+    {
+      "document": "docs/iter92_joint_bass_chord_scoring.md",
+      "reading_order": 22,
+      "lines": 243,
+      "length_tercile": "medium",
+      "unresolved_clusters_at_registration": 4,
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 3,
+      "of_which_homed_in_this_document": 3,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 3,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "below",
+      "entries": [
+        {
+          "id": "D-536",
+          "home": "docs/iter92_joint_bass_chord_scoring.md:53-68",
+          "status": "live",
+          "title": "The bass note and the chord are chosen TOGETHER — the winner is the (bass, root, template) triple — replacing the sequential commit-the-bass-then-score pipeline"
+        },
+        {
+          "id": "D-537",
+          "home": "docs/iter92_joint_bass_chord_scoring.md:113-127",
+          "status": "live",
+          "title": "The completeness bonus fires ONLY for a root-position reading whose three triad tones are all present — the guard that stops it from demoting genuine slash chords"
+        },
+        {
+          "id": "D-538",
+          "home": "docs/iter92_joint_bass_chord_scoring.md:190-193",
+          "status": "live",
+          "title": "A multi-signal scoring change lands one signal at a time, with the corpus check re-run after each step and any increase in errors a hard stop before the next"
+        }
+      ]
+    },
+    {
+      "document": "docs/back_half_design.md",
+      "reading_order": 23,
+      "lines": 242,
+      "length_tercile": "medium",
+      "unresolved_clusters_at_registration": 9,
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 2,
+      "of_which_homed_in_this_document": 2,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "below",
+      "entries": [
+        {
+          "id": "D-531",
+          "home": "docs/back_half_design.md:108-116",
+          "status": "live",
+          "title": "The hand-built emission is CONFIRMED and the learned replacement is NOT triggered — retained as an explicit fallback with a concrete trigger, and scoped to one repertoire with a named re-check gate"
+        },
+        {
+          "id": "D-539",
+          "home": "docs/back_half_design.md:147-150",
+          "status": "live",
+          "title": "The standing method for every error slice: decompose it into structural, fitted and ceiling BEFORE building anything — derive, never assert"
+        }
+      ],
+      "low_yield_reason": "Two entries from 242 lines, and the reason is that this document's headline finding is ALREADY REGISTERED from a weaker home. Its convergent finding — that inference structure cannot move an error the emission model consistently prefers, so precision lives in the emission and the functional labelling — is D-289, whose only recorded home is a session-handoff archive while its full derivation is here. The wave did not duplicate it; it recorded the better home as an OI-296-class observation. What is left is the ratified fork resolution and the standing decompose-before-building method."
+    },
+    {
+      "document": "cowork_layer2_slicing_design.md",
+      "reading_order": 24,
+      "lines": 239,
+      "length_tercile": "medium",
+      "unresolved_clusters_at_registration": 14,
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 2,
+      "of_which_homed_in_this_document": 2,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "below",
+      "entries": [
+        {
+          "id": "D-540",
+          "home": "cowork_layer2_slicing_design.md:130-139",
+          "status": "live",
+          "title": "A slice is a unit of constant CONTENT, not of constant musical TIME — the layers above must never treat slices as equal-weight units, and a slice's metric extent is evidence weighted by metric structure, not by tempo"
+        },
+        {
+          "id": "D-541",
+          "home": "cowork_layer2_slicing_design.md:140-148",
+          "status": "live",
+          "title": "The metric weight of a slice IS the beat-strength at its start tick, taken from one shared preference-free notation primitive that no consuming layer re-defines"
+        }
+      ],
+      "low_yield_reason": "Two entries from 239 lines, and the reason is that this layer is the register's best-covered: D-041 through D-050 already carry the slicer's founding decisions, including the two the document's own decision list leads with (a boundary at every onset AND every release; explicit empty slices). What was NOT carried is the pair entered here — the warning that slices are not equal-weight units, and the metric-weight contract that made 'derived on demand' concrete."
+    },
+    {
+      "document": "cowork_idiom_discovery_design.md",
+      "reading_order": 25,
+      "lines": 235,
+      "length_tercile": "medium",
+      "unresolved_clusters_at_registration": 15,
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 4,
+      "of_which_homed_in_this_document": 4,
+      "of_which_homed_in_the_owning_specification": 0,
+      "of_which_legacy_subject": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "below",
+      "entries": [
+        {
+          "id": "D-542",
+          "home": "cowork_idiom_discovery_design.md:28-30",
+          "status": "not stated",
+          "title": "Idiom discovery runs DISCOVER-THEN-NAME: structure is learned on a low-level encoding carrying no theory or genre labels, and theory features and genre labels are interpretation lenses applied afterwards, never clustering input"
+        },
+        {
+          "id": "D-543",
+          "home": "cowork_idiom_discovery_design.md:158-162",
+          "status": "not stated",
+          "title": "The encoding is key-normalised tonal-pitch-class TRANSITIONS — spelled where spelling is reliable, mod-12 only where it is genuinely absent — run as two complementary views"
+        },
+        {
+          "id": "D-544",
+          "home": "cowork_idiom_discovery_design.md:119-126",
+          "status": "not stated",
+          "title": "Confound control is a FIRST-CLASS GATE, and the source-leakage test decides validity: if the clusters are explained by which corpus a piece came from, the result is bookkeeping and not idiom"
+        },
+        {
+          "id": "D-545",
+          "home": "cowork_idiom_discovery_design.md:168-173",
+          "status": "not stated",
+          "title": "The uniform mechanical extractor for idiom discovery is the external library, stopping at the note-and-slice front — OUR OWN key/chord/function inference must NEVER touch the extraction"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "purpose": "A run of tools/audit/process_check.py over named dispatches or reports. Generated so a report cites this file rather than transcribing what the check found (D-431).",
+  "rules": [
+    "D-431 bare quantity",
+    "D-431 uncited code claim",
+    "D-434 missing self-check section"
+  ],
+  "files_scanned": [
+    "cc_instruction_reads_3.md"
+  ],
+  "findings_total": 11,
+  "by_file": {
+    "cc_instruction_reads_3.md": {
+      "findings": 11,
+      "rows": [
+        {
+          "file": "cc_instruction_reads_3.md",
+          "line": 51,
+          "rule": "D-431 bare quantity",
+          "detail": "1.1",
+          "sentence": "unexamined. → **Task 1.1**, before the ratification includes it."
+        },
+        {
+          "file": "cc_instruction_reads_3.md",
+          "line": 52,
+          "rule": "D-431 uncited code claim",
+          "detail": "reachable",
+          "sentence": "- **A2.** That the fine-grain function override is on the **legacy** path rather than reachable on a"
+        },
+        {
+          "file": "cc_instruction_reads_3.md",
+          "line": 54,
+          "rule": "D-431 bare quantity",
+          "detail": "4.2",
+          "sentence": "read fact.** → **Task 4.2**."
+        },
+        {
+          "file": "cc_instruction_reads_3.md",
+          "line": 56,
+          "rule": "D-431 bare quantity",
+          "detail": "2.1",
+          "sentence": "`CLAUDE.md` has been edited repeatedly since. → **Task 2.1**."
+        },
+        {
+          "file": "cc_instruction_reads_3.md",
+          "line": 75,
+          "rule": "D-431 bare quantity",
+          "detail": "2.1",
+          "sentence": "**2.1** Check A3 — locate the ground-truth-ceiling principle at its own text and confirm its number."
+        },
+        {
+          "file": "cc_instruction_reads_3.md",
+          "line": 77,
+          "rule": "D-431 bare quantity",
+          "detail": "2.2",
+          "sentence": "**2.2** Record, at that principle: **the ceiling cannot be cited from the published literature (F1)"
+        },
+        {
+          "file": "cc_instruction_reads_3.md",
+          "line": 83,
+          "rule": "D-431 bare quantity",
+          "detail": "2.3",
+          "sentence": "**2.3** Update the ground-truth-ceiling row accordingly: it is not \"a measurement not yet built\" but"
+        },
+        {
+          "file": "cc_instruction_reads_3.md",
+          "line": 105,
+          "rule": "D-431 bare quantity",
+          "detail": "4.2",
+          "sentence": "**4.2 Check A2 at the code**: is the fine-grain function override on the legacy path, or reachable on"
+        },
+        {
+          "file": "cc_instruction_reads_3.md",
+          "line": 105,
+          "rule": "D-431 uncited code claim",
+          "detail": "reachable",
+          "sentence": "**4.2 Check A2 at the code**: is the fine-grain function override on the legacy path, or reachable on"
+        },
+        {
+          "file": "cc_instruction_reads_3.md",
+          "line": 110,
+          "rule": "D-431 uncited code claim",
+          "detail": "reachable",
+          "sentence": "**If it is reachable on production, STOP and report** before continuing — that would be a measured"
+        },
+        {
+          "file": "cc_instruction_reads_3.md",
+          "line": 148,
+          "rule": "D-431 uncited code claim",
+          "detail": "reachable",
+          "sentence": "**A2 coming back \"production-reachable\" is a STOP** and"
+        }
+      ]
+    }
+  },
+  "clean_files": [],
+  "establishment": "tools/audit/process_check_establishment.json — the check's measured detection power and false-positive rate. Read it before reading a count here as coverage."
+}

@@ -63,6 +63,24 @@ override convenience.
     Every precision target and every "irreducible residual" verdict is interpreted against
     that measured ceiling; without it, structural error and annotator disagreement are
     indistinguishable in the residual.
+    **★ THE CEILING CANNOT BE CITED FROM THE LITERATURE; MEASURING IT HERE IS THE ONLY ROUTE
+    (recorded 2026-08-04 on the user's ruling with the read-wave-3 ratification; D-474).** A
+    dedicated search established a FACT-of-absence: no published study reports per-axis
+    inter-annotator agreement for Roman-numeral or key annotation of Baroque/classical symbolic
+    music. TAVERN released duplicate annotations but published no such number; ABC split its pieces
+    between annotators with no overlap by design; the Mozart-sonatas corpus is consensus-built, so
+    agreement cannot be recovered after the fact; *When in Rome* states in its own words that the
+    variance is unmeasured; Dilemmadata (2026) identifies dual-annotated pieces and computes
+    nothing. **So a session may not satisfy this principle by citation — there is nothing to cite.**
+    The obligation is tracked at `OPEN_ITEMS.md` OI-179, which is therefore not "a measurement not
+    yet built" among others but **the only available route to the quantity this principle demands**.
+    *Why this belongs at the principle rather than only on that row:* the principle's own sentence
+    above is that without the ceiling, structural error and annotator disagreement are
+    indistinguishable in the residual — so the absence of a citable number bears on what may be
+    claimed about ANY residual, on any axis, not on one open item. The quantified agreement bounds
+    that do exist are off-domain (rock symbolic-by-ear; pop audio) and are recorded with D-474; they
+    are **not** a ceiling for this repertoire and may not be used as one, however convenient the
+    invariant they share.
 22. **Every hard gate carries a pre-declared protocol for the largest change it will face.**
     A gate written only for incremental change must not be amended under the pressure of a
     live diff — the exceptional-event variant (e.g. architecture-scale adoption: aggregate

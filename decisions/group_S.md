@@ -334,7 +334,7 @@
 
 **Status.** LIVE · decided 2026-07-18 · ratified by user
 
-**Home.** `CLAUDE.md:66`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:84`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:66-70; ratified by the user 2026-07-18 (CLAUDE.md:125-129).
 
@@ -351,7 +351,7 @@
 
 **Status.** LIVE · decided 2026-07-18 · ratified by user
 
-**Home.** `CLAUDE.md:71`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:89`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:71-74; ratified by the user 2026-07-18 (CLAUDE.md:125-129).
 
@@ -368,7 +368,7 @@
 
 **Status.** LIVE · decided 2026-07-18 · ratified by user
 
-**Home.** `CLAUDE.md:75`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:93`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:75-78; ratified by the user 2026-07-18 (CLAUDE.md:125-129).
 
@@ -385,7 +385,7 @@
 
 **Status.** LIVE · decided 2026-07-18 · ratified by user
 
-**Home.** `CLAUDE.md:80`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:98`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:80-83; ratified with #20-#24 by the user 2026-07-18 (CLAUDE.md:125-129).
 
@@ -403,7 +403,7 @@
 
 **Status.** LIVE · decided 2026-07-10 · ratified by user
 
-**Home.** `CLAUDE.md:85`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:103`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:85-89; ratified with #17-#19 by the user 2026-07-10 (CLAUDE.md:122-125).
 
@@ -429,7 +429,7 @@
 
 **Status.** LIVE · decided 2026-07-26 · ratified by user
 
-**Home.** `CLAUDE.md:106`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:124`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:106-118; user-ratified 2026-07-26 at the notation-layer adoption increment's decision surface, analysis `cowork_notation_adoption_increment.md` §2 (CLAUDE.md:129-131).
 
@@ -445,7 +445,7 @@
 
 **Status.** LIVE · decided 2026-07-28 · ratified by user
 
-**Home.** `CLAUDE.md:1108-1110`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1126-1128`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at cowork_handoff.md (the user's rulings at the analysis-cost session, 2026-07-28), a session handoff block that ages into an archive outside the session-start read. It corrects a Cowork misreading of 'implementation efficiency is not very relevant', which meant BUILD effort, not runtime. OPEN_ITEMS OI-240 closes on this move
 
@@ -491,7 +491,7 @@
 
 **Status.** LIVE · decided 2026-07-28 · ratified by user
 
-**Home.** `CLAUDE.md:1118-1120`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1136-1138`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at cowork_handoff.md, the user's ruling at the OI-199 pass-2 session, 2026-07-28. Homed beside #8 in CLAUDE.md because it is a ruling about what #8 permits; what the admission rule IS, and that it has no specified form, is in the estimator's own specification (D-098) and at OPEN_ITEMS OI-226. Cross-read with STATUS.md's earlier note that the classification 'is the user's to settle' - this row records that it was settled. OPEN_ITEMS OI-240 closes on this move
 
@@ -507,7 +507,7 @@
 
 **Status.** LIVE · decided 2026-07-28 · ratified by user
 
-**Home.** `CLAUDE.md:1129-1131`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1147-1149`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at cowork_handoff.md, recorded at the OI-199 pass-2 session, 2026-07-28. OPEN_ITEMS OI-240 closes on this move
 

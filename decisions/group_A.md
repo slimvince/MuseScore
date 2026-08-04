@@ -519,3 +519,275 @@
 
 **Provenance.** RATIFIED by the user 2026-07-19 — the banner records the §7 asks granted in full, of which this verdict is the first. Entered by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
+### D-524 — The joint state's mode axis is TWO modes — major and composite minor; modal and chromatic colour lives in the pitch emission, and the un-rounded reading is published
+
+> **Mode vocabulary (user-ratified 2026-07-19).** The joint state's mode axis is **{major, minor}** —
+> minor meaning the composite minor practice (natural/harmonic/melodic as one key with variable sixth and
+> seventh degrees). **Modal and chromatic color is modeled in the pitch-emission factor**, not the state:
+> the first build carries the minor-scale variants (raised sixth and seventh) only; church-mode variants
+> (Dorian sixth, Mixolydian seventh, Phrygian second, …) enter later only through their own premise-ledger
+> entries (#17); the dominant-family exotic scales are **excluded from the state space** (constrained-
+> optimum ledger record: the 21-mode state space is excluded because its states are ungradable against any
+> ground truth we possess — #19/#20 — and OI-174 measured them harming inference). **User's condition,
+> part of the decision: the un-rounded reading is preserved and published.** The emission factor's
+> modal-variant evidence is published as a derived fact on the output surface, so the presentation layer
+> can show the end-user that a passage decoded as, say, D minor would — without the rounding to
+> major/minor — be called D Dorian, and can choose whether/how to display that by user preference (the
+> eventual preset ↔ mode-prior mapping is a presentation/preference concern, not an inference state).
+> Inference states stay two-mode under every preset. This resolves the OI-174/OI-132/OI-147 mode-
+> vocabulary question at the design level; the rows close when the build lands.
+
+**In plain words.** The estimator's tonality has only two characters, major and minor, with minor meaning the ordinary minor practice whose sixth and seventh degrees vary. Everything more colourful — Dorian, Mixolydian, the altered scales — is handled as evidence about which notes are likely, not as a separate tonality to decide between. The finer reading is not thrown away: it is published, so the display can tell the user that a passage read as D minor would, unrounded, be called D Dorian.
+
+**Why.** The exclusion is recorded as a constrained optimum with its reason: the larger mode vocabulary's states cannot be graded against any ground truth we hold (#19/#20) and were measured harming inference. The publication half is the user's own condition attached to the decision, and it is what keeps the reduction from being information loss (#12) — the rounding happens for inference, not in the record.
+
+**Status.** LIVE · decided 2026-07-19 · ratified by user
+
+**Home.** `cowork_joint_estimator_architecture.md:89-103`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The first of the five design decisions the governing architecture document records as ratified at the design pass. It resolves the mode-vocabulary question the same document had listed as open, and the rows it settles close when the build lands. The grading convention that reduces an emitted exotic mode to its parent collection's minor key is **D-210**; the desk-simulation decisions that build on this state space are **D-449**…**D-453**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-525 — The fit is STAGED: the factor tables are counted from ground truth and frozen, and only a small vector of combination weights is fit discriminatively — with an all-weights-equal ablation arm that must be beaten
+
+> **Fitting parameterization (user-ratified 2026-07-19).** The staged form: **the factor TABLES are fit
+> generatively from ground-truth counts and frozen** (each table established on its own — the
+> key-conditioned chord-transition table, the bass-note-given-chord-and-inversion table, the tone-category
+> emission tables, the key-change table — every entry a musically meaningful probability, per the
+> published forms); **the small vector of COMBINATION WEIGHTS over the factors is fit discriminatively by
+> convex conditional likelihood** (the semi-Markov conditional-random-field objective with the logarithms
+> of the frozen tables as features; L2 penalty; the OI-176 held-out gate and OI-177 capacity budget
+> govern). **Mandatory ablation arm:** all-weights-equal-one IS the pure generative model, so the weight
+> layer's contribution is measured on held-out data inside the same machinery, never assumed — its
+> adoption is gated on winning that comparison. **Ledger entries attached to the decision:** (a) the
+> staged ASSEMBLY is our synthesis (each stage established separately in the literature; the combination
+> is an assumption with its own #17b prediction); (b) constrained-optimum record — the unconstrained
+> alternative is the fully joint discriminative fit with rich free features (possibly a higher ceiling),
+> excluded because fully joint weights sacrifice the modular diagnosability (#3/#19) the error-correction
+> loop runs on; re-test if that constraint stops binding; (c) fit-scope declaration (the Noland &
+> Sandler lesson): which components may be re-fit is declared before any fit — tables from counts, once,
+> frozen; only the combination weights move; (d) the direct-metric few-weight search (the minimum-error-
+> rate protocol with bootstrap confidence intervals) is the established fallback if the likelihood-fit
+> weights measurably disagree with the reported metric.
+
+**In plain words.** Each table of probabilities is counted from the annotated corpus and then frozen. On top of them sits a short list of weights saying how much each kind of evidence counts, and only those are trained. Because setting every weight to one is exactly the untrained model, the trained weights have to beat that on held-out music before they are adopted at all.
+
+**Why.** The ablation arm is what makes the weight layer's contribution measured rather than assumed, and the document says so: all-weights-one IS the pure generative model, so the comparison runs inside the same machinery. The excluded alternative is recorded as a constrained optimum — a fully joint discriminative fit with rich free features may have a higher ceiling and is excluded because it sacrifices the modular diagnosability the error-correction loop depends on, to be re-tested if that constraint stops binding.
+
+**Status.** LIVE · decided 2026-07-19 · ratified by user
+
+**Home.** `cowork_joint_estimator_architecture.md:105-123`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The second of the five ratified design decisions, recorded with four ledger entries attached: that the staged assembly is our own synthesis and carries its own prediction; the constrained-optimum record; the fit-scope declaration made before any fit; and the named fallback if the likelihood-fit weights disagree with the reported metric. The gates that govern it are **D-270** (held-out protocol) and **D-271** (capacity budget). The ablation baseline is the one every desk-simulation trace runs at, **D-452**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-526 — The joint state's chord axis is SCALE-DEGREE-VALUED — a Roman numeral relative to the state's own tonic and mode — and the chord symbol is a DERIVED fact published once
+
+> **Chord state is scale-degree-valued (user-ratified 2026-07-19).** The joint state's chord axis is a
+> **Roman numeral — scale degree, quality, inversion — relative to the state's tonic and mode** (the
+> Raphael-Stoddard / Harasim structure). Consequences, all structural: (a) the tonic/degree coupling
+> terms (the diatonic-root bonus, `buildChordResult`'s degree, Gate G-E's degree condition,
+> `applyTonicPriorToSparseChord`, the segmenter's head-gap tonic prior — the gap map's group 1) dissolve
+> by construction — a degree is key-relative by definition; (b) **transposition invariance**: the chord-
+> transition table pools all keys' evidence (twelvefold counts per cell — the decisive capacity device on
+> a 326-piece corpus); (c) the ground truth is natively degree-valued, so tables fit from counts with no
+> conversion layer, and the OI-173 defect class (four inequivalent `diatonicToKey` definitions, two of
+> `degree`) is never rebuilt. **The chord symbol (root pitch class, quality, bass) is a DERIVED fact,
+> published once** (root = tonic + the degree's interval) — the robust stop's root metric is unchanged
+> and every baseline column stays comparable. **Tonicization is applied-degree classes** (the secondary
+> dominant V/x, applied leading-tone chords, and the standard chromatic classes — Neapolitan sixth,
+> augmented-sixth chords — per the ground truth's own vocabulary; this also matches jazz analytical
+> practice, where the secondary dominant, and later the substitute dominant and extended dominant chains,
+> are applied-degree devices — jazz-specific classes enter only under the OI-7 jazz-ground-truth gate).
+> **Excluded alternatives recorded:** root-valued chord state (forfeits transposition tying and
+> structurally preserves the ad-hoc key coupling the audits condemned); momentary modulation for
+> tonicization (fits Bach acceptably but shreds jazz tonicization chains into micro-keys and departs from
+> the ground truth's labeling convention).
+
+**In plain words.** The estimator decides chords as scale degrees within the tonality it is considering, not as absolute chord roots. The ordinary chord name is then worked out from the degree and published once. Two things follow by construction: the terms that used to couple a chord to a key dissolve, because a degree is key-relative already; and evidence from every key pools into the same table, which is what makes counting on a corpus of this size possible.
+
+**Why.** Three grounded consequences are stated with the decision, and the excluded alternatives with theirs: a root-valued state forfeits the transposition pooling and structurally preserves the ad-hoc key coupling the audits condemned; treating tonicization as momentary modulation fits one repertoire acceptably but shreds jazz tonicization chains into micro-keys and departs from the ground truth's own labelling convention. The ground truth is natively degree-valued, so the tables are counted with no conversion layer and the defect class of several inequivalent degree definitions is never rebuilt.
+
+**Status.** LIVE · decided 2026-07-19 · ratified by user
+
+**Home.** `cowork_joint_estimator_architecture.md:125-144`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The third of the five ratified design decisions. It is why the robust stop's root metric is unchanged and every published baseline column stays comparable — the root is derived, not abandoned. The published-once discipline it invokes is the fact-publication corollary (**D-100**). Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-527 — There is NO live non-chord-tone cleaning stage: each tone is emitted by category inside the one decode, conditioned on chord-independent melodic and metric covariates, and ornament labels are derived AFTER it
+
+> **Non-chord-tone handling (user-ratified 2026-07-19).** **No live cleaning stage exists.** Non-chord
+> tones live INSIDE the pitch-emission factor: each tone is emitted by category (chord member vs
+> within-scale non-chord tone vs outside-scale tone — the Raphael-Stoddard structure), with the emission
+> probability conditioned on **chord-independent melodic and metric covariates** — stepwise approach and
+> departure, chromatic-neighbor motion, metric weakness, the tied-over/syncopated preparation (the
+> figuration-feature forms Masada & Bunescu fit on chorales; every covariate computable without knowing
+> the chord, so no circularity). Chord identity and tone status are decided together in the one decode
+> (#12 — no ornament verdict is ever committed early). **Ornament labels (passing tone, neighbor tone,
+> suspension, appoggiatura, pedal point) are derived AFTER the decode** from the committed chord by the
+> standard definitions and published as a derived fact for the presentation layer — the same pattern as
+> the modal-color publication. **Style adaptation is values-only:** the chord-tone boundary shift in jazz
+> (tensions as chord members) is a VOCABULARY matter handled by the degree-valued quality classes; the
+> changed ornamental/metric conventions (enclosures, anticipations) are covariate TABLE VALUES refit per
+> preset — same structure, no per-style rule code; jazz-specific covariate additions enter only under the
+> OI-7 jazz-ground-truth gate with their own ledger entries. **Establishment resource:** the BCMH
+> reduction is the chorales with non-chord tones removed — aligning the 87 overlapping full-texture
+> stems against their reductions yields empirically labeled chord-tone/ornament data for fitting and
+> validating these emission tables (BCMH's declared instrument status applies). **Excluded alternatives
+> recorded:** a live pre-cleaning stage (the published cleaners' ~28 % error rate would be hard-committed
+> upstream, violating #12, and the suspension's chord-relative definition makes pre-cleaning circular);
+> pure category emission without melodic covariates (discards the established voice-leading evidence —
+> the strongest ornament discriminator).
+
+**In plain words.** The estimator does not first decide which notes are decoration and then read the chord from what is left. Every sounding note is scored by what kind of tone it would be under the chord being considered, using only facts computable without knowing the chord — how it is approached and left, how weak its metrical position is, whether it is tied over. Chord and tone status are settled together, and the ornament names are worked out afterwards from the committed chord.
+
+**Why.** The excluded alternatives carry the argument: a live pre-cleaning stage would hard-commit the published cleaners' error rate upstream, against #12, and the suspension's definition is chord-relative, which makes pre-cleaning circular; while pure category emission without the melodic covariates discards the established voice-leading evidence that is the strongest ornament discriminator. Style adaptation is values-only — the same table structure with re-counted values — so no per-style rule code enters.
+
+**Status.** LIVE · decided 2026-07-19 · ratified by user
+
+**Home.** `cowork_joint_estimator_architecture.md:146-167`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The fourth of the five ratified design decisions. Its named establishment resource is the second chorale annotation set, whose declared instrument status applies — which ties it to **D-475** and `OPEN_ITEMS.md` OI-179: a consumer may not put that corpus under load while it stands unestablished. The deferred detection decision it supersedes in practice is **D-303**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-528 — The key signature and declared mode enter as a WEAK FITTED SOFT PRIOR with no conditional gate anywhere — the probability calculus delivers 'consult it only when unsure', and the hard declared-mode wall is formally retired
+
+> **The key-signature and declared-mode prior (user-ratified 2026-07-19).** A **weak, fitted,
+> transposition-invariant soft prior on (tonic, mode)** from the notated signature — a small categorical
+> table (local-key tonic distance from the signature's relative pair on the circle of fifths, by mode)
+> counted from ground truth; the declared mode, where the score carries one, is a second conditioning
+> input with its own fitted strength. **No conditional gate and no threshold anywhere:** the user's
+> intent — the signature consulted only where the analysis is otherwise unsure — is delivered by the
+> probability calculus itself (a weak prior is negligible where the content likelihood is decisive and
+> tips the scale only where the evidence is ambiguous), never by an "if uncertain" code path. Bach's
+> modal notation practice (the Dorian chorale written one flat short) is handled statistically as
+> measured mass one fifth away in minor — no special case. A mid-piece signature change re-anchors the
+> prior (discharging the OI-94(a) deferral). **The signature-influence rate is measured by ablation and
+> published at every fit** (the fraction of committed keys the signature factor changed), with the
+> recorded expectation that it is SMALL — a large fitted weight or influence rate is a #3 finding to
+> investigate, not to ship. **The declared-mode wall (the −7 hard penalty) is formally retired.**
+
+**In plain words.** The written key signature is used as a gentle nudge whose strength is counted from the corpus, not as a rule and not behind an 'if the analysis is unsure' branch. A weak prior is negligible where the notes are decisive and tips the balance only where they are not, which is exactly the intended behaviour without any threshold. The old hard penalty for contradicting the declared mode is retired.
+
+**Why.** Every alternative is excluded with its reason: a hard signature constraint is factually false three ways and is the known wall-defect pattern; no prior at all discards free information and is contradicted by the project's own measurement; and the literal 'consult only when uncertain' branch reintroduces the threshold gate the soft prior makes unnecessary. The composer's modal notation practice is handled statistically as measured mass one fifth away rather than as a special case, and the signature's influence rate is measured by ablation and published at every fit — with the recorded expectation that it is small and that a large one is a finding to investigate.
+
+**Status.** LIVE · decided 2026-07-19 · ratified by user
+
+**Home.** `cowork_joint_estimator_architecture.md:169-182`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The fifth of the five ratified design decisions, and the one that discharges the mid-piece signature-change deferral. It is ledgered as OUR form, with the literature's absence of any signature prior explicitly cited. Whether the prior conditions the initial state only or acts as a persistent pull was deliberately left to the desk simulation, which settled it as **D-450**. The standing rule it must not contradict is **D-056** — notes always win. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-529 — The joint architecture's expected win is ASYMMETRIC — large on key and mode, modest on chord root — and the written predictions must say so, because a large root claim would itself be a surprise
+
+> **Reservation 1 — the joint win is asymmetric (grounding doc §2b/§2c), and the predictions must say so.**
+> Ni et al.: key ~77→84 %, chord +≈1 pp. Wu et al.: key +3.5 pp, chord ≈flat. RNBERT: explicit joint-decoding
+> machinery gave a small degradation. A is the established route to **mode/key** precision; on the **chord
+> root** it buys coherence more than accuracy. The root-agree residual (~34 %) is more plausibly dominated by
+> emission quality, segmentation, and GT-granularity noise than by missing coupling. The #17b written
+> predictions for A's adoption must reflect this asymmetry — large movement expected on the key columns,
+> modest on root; a large root claim would itself be a surprise (#3).
+
+**In plain words.** The published results this architecture is grounded in improve tonality substantially and chord identity barely. The predictions written before its adoption must reflect that. If the chord-root number moved a lot, that would be a warning rather than a success.
+
+**Why.** Read off the primary sources rather than hoped for: two of the three cited studies report a large key gain with a flat or near-flat chord gain, and the third records that explicit joint-decoding machinery gave a small degradation. The document draws the further consequence for our own residual — the root disagreement is more plausibly dominated by emission quality, segmentation and ground-truth granularity than by missing coupling.
+
+**Status.** LIVE · decided 2026-07-18 · ratifier not stated
+
+**Home.** `cowork_joint_estimator_architecture.md:200-206`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The first of two reservations Cowork recorded at the user's request after the architecture ratification, as design-pass input. It is #3 applied in advance: the shape of the expected movement is written down so that an unexpected shape is recognisable as a failure of the premises rather than celebrated. The adoption measurement it governs is the OI-178 re-baseline recorded in `CLAUDE.md` gate block (A). Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-530 — The joint architecture is a CONSTRAINED optimum, not a global one: the learned shared-representation models measure better and are excluded because they are un-establishable and undiagnosable
+
+> **Reservation 2 — A is a constrained optimum, not a global one (stated for honesty of the record).** On
+> pure measured precision the published state of the art for symbolic Roman-numeral analysis is the learned
+> shared-representation models (AugmentedNet, RNBERT, AnalysisGNN — grounding doc §2c), trained on the same
+> DCML corpora used here as ground truth, so "data we lack" is only partially true. A is chosen because those
+> models are un-establishable and undiagnosable under #1/#18/#19 — and because their absolute RN accuracy
+> (~45–50 %) leaves the gap plausibly small on this domain. The decision stands; its basis is the
+> methodology, not a claim that A out-measures the learned systems.
+
+**In plain words.** On measured accuracy alone the best published systems for this task are learned models trained on the same annotated corpora we grade against. They are not chosen. The reason is that they cannot be established or diagnosed under this project's own rules, not that they perform worse.
+
+**Why.** Stated for honesty of the record, with the counter-argument to our own earlier justification included: those models are trained on the very corpora used here as ground truth, so 'data we lack' is only partially true. The remaining ground for the choice is the methodology — #1, #18 and #19 — together with the observation that their absolute accuracy leaves the gap plausibly small on this domain.
+
+**Status.** LIVE · decided 2026-07-18 · ratifier not stated
+
+**Home.** `cowork_joint_estimator_architecture.md:208-214`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The second recorded reservation, and an instance of the standing ledger corollary to #17: where a design is chosen for methodology-compliance rather than raw measured performance, the record names the unconstrained best known alternative and why it is excluded, so a future reader can re-test whether the constraint still binds. The same fork was ruled on measured evidence a month earlier as **D-531**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-532 — The chord-transition table gains one pooling level that groups a secondary dominant's continuations by their RELATION to its target — restoring from counts the one behaviour that defines the chord class
+
+> **Option 1a — add one pooling level that groups secondary-dominant progressions by their RELATION
+> to the target (resolves to the chord it is the dominant of / moves elsewhere), pooled across all
+> targets; then re-run the counting.** Pros: restores the defining regularity from real counts, with
+> no hand-chosen number (guiding principle 1, fact-based only); reuses the pooling idea the table
+> design already rests on — counting the same pattern across transpositions — so no new kind of
+> machinery (principle 6, one path per concern); the counts are ample, so the two or three new cells
+> pass the reliability rule easily (the ratified capacity budget stays satisfied). Cons: it amends a
+> pooling ladder you ratified, so it needs your re-ratification (that is why it is brought here and
+> was not just done); it adds a small number of parameters.
+
+**In plain words.** As counted, every secondary dominant was too rare on its own to keep its own row, so all its continuations were merged into the general chord-frequency list. The consequence is that 'the dominant of X moving to X' and 'the dominant of X moving anywhere else' read the same probability — the table is blind to what makes the chord a secondary dominant at all. One extra grouping level, pooled across all targets, restores the distinction from real counts.
+
+**Why.** The defect was verified directly in the table and its cost measured in one of the three checked passages, where the blindness taxed the correct reading. The fix is chosen against two alternatives with their reasons: leaving it to the weight layer cannot work, because a weight can only scale what a table says and cannot restore a distinction the table does not contain — which the ratified premise ledger states explicitly; and hand-setting a resolution probability would recreate the class of unestablished constants the whole fitting effort exists to eliminate.
+
+**Status.** LIVE · decided 2026-07-19 · ratified by user
+
+**Home.** `cowork_sensitive_cell_probe.md:121-129`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Finding 1 of the sensitive-cell probe, ratified in the banner as option 1a. It amends a pooling ladder the user had already ratified, which is why it was brought for re-ratification rather than done. The capacity rule it must still satisfy is **D-271**; the counts are ample enough that the new cells pass it. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-533 — A continuation too rare to have its own stored probability is scored by dividing the row's leftover in PROPORTION to each chord's overall frequency — never evenly, and never as impossible
+
+> **Option 2a — divide the leftover in proportion to each chord's overall frequency in that mode.**
+> Pros: uses information we already hold — a common chord is genuinely a likelier unseen continuation
+> than a rare one (principle 12, no information loss); this is the standard construction in published
+> back-off models of sequences (principle 1, established method). Cons: none of substance; a little
+> more arithmetic per lookup.
+
+**In plain words.** Each row of the transition table ends with one pooled probability covering everything too rare to store on its own. When the decoder meets one specific rare continuation it must turn that pooled value into a number for that continuation. It does so in proportion to how common the chord is generally.
+
+**Why.** The chosen rule is the standard construction in published back-off models of sequences, and it uses information already held — a common chord is genuinely a likelier unseen continuation than a rare one (#12). Both alternatives are excluded on facts: dividing evenly asserts that a rare and a common chord are equally likely, which the corpus counts contradict; and treating unseen continuations as impossible is factually wrong on a corpus of this size and technically fatal, because a zero destroys any path through it.
+
+**Status.** LIVE · decided 2026-07-19 · ratified by user
+
+**Home.** `cowork_sensitive_cell_probe.md:155-159`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Finding 2 of the probe, ratified as option 2a, and recorded as one sentence owed to the build specification. It was a genuine gap rather than an ambiguity: no document defined it, and the probe proceeded by computing every verdict under both provisional readings and reporting both. `CLAUDE.md` gate block (A) names this rule as part of the production decoder's configuration. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-534 — The penalty for a chord tone that never sounds is COUNTED per chord factor — root, third, fifth, seventh — replacing one invented blanket number; the per-factor asymmetry then comes free
+
+> **Option 3a — count it, from data already on disk.** The note-extraction work committed earlier
+> today recorded, for every one of the ~18,000 humanly-labeled chord segments in the 326 chorales,
+> which notes sound in it; and the label itself names the chord's factors (root, third, fifth, and
+> seventh where the label is a seventh chord). So the counting is direct: across all segments
+> labeled with a triad or seventh chord, in what fraction does the ROOT actually sound among the
+> segment's notes? In what fraction the THIRD? The FIFTH? The SEVENTH? Four frequencies per chord
+> family (triad versus seventh chord — at most a dozen numbers), each backed by thousands of
+> observations in THIS corpus.
+
+**In plain words.** Judging a candidate chord means weighing notes that sound but do not belong to it AND chord notes that never sound at all. The second direction was answered by a number invented for a paper walkthrough. It is replaced by counting, for every humanly labelled chord segment in the corpus, how often each of the chord's own factors actually sounds.
+
+**Why.** The counting is direct because the data is already on disk, and the musical point is the user's: the factors are not symmetric and the counts encode that automatically — a seventh is what earns a seventh-chord label, so a silent seventh will be near-prohibitive; the fifth is the factor four-part writing routinely omits, so its penalty will be mild; the third sits between. One invented blanket number cannot express any of that. The invented value demonstrably carried load: one checked passage's margin moves with it.
+
+**Status.** LIVE · decided 2026-07-19 · ratified by user
+
+**Home.** `cowork_sensitive_cell_probe.md:188-195`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Finding 3 of the probe, ratified as option 3a, with the user's per-factor sharpening incorporated. The scope limit stated with it applies to EVERY table in this fit and is part of the decision: these are Bach-chorale values, no jazz values can be counted because no jazz ground truth exists, and the limit stays declared on the artifact — the standing position **D-422**/`OPEN_ITEMS.md` OI-7. The specification requiring the penalty and charging it per event of segment length is **D-449**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-535 — The checking stage's verdict: the real counted tables overturn no desk-simulation verdict, but margins moved in both directions and one margin expectation was plainly wrong
+
+> Across the three passages, no desk-simulation verdict is overturned by the real counted values, but
+> margins moved by 1.5–3.5 (log difference) in both directions, and one margin expectation was
+> plainly wrong. Catching exactly this — before any code exists — is what this checking stage is for.
+
+**In plain words.** The three passages whose paper outcomes depended most on placeholder numbers were recomputed with the real counted ones. Every verdict held. The margins did not: they moved appreciably in both directions, and one prediction about a margin was simply wrong.
+
+**Why.** The value of the result is stated with it: catching exactly this before any code exists is what the checking stage is for. The expectations were written down before any number was looked up, which is what makes a wrong expectation detectable as one rather than absorbed.
+
+**Status.** LIVE · decided 2026-07-19 · ratified by user
+
+**Home.** `cowork_sensitive_cell_probe.md:246-248`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The probe's own summary, and the discharge of item 4 of the ratified capacity protocol — recompute the value-dependent desk-simulation passages with the real tables before building. The desk simulation it checks is **D-453**; the provisional-value rule that made the check owed in the first place is **D-451**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+

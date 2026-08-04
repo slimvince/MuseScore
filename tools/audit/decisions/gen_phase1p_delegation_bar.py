@@ -266,6 +266,70 @@ FORMS: dict[str, tuple[str, str, str, str]] = {
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
     "docs/symbol_input_audit.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+
+    # ------------------------------------------------------------------
+    # Graded 2026-08-04 by the phase-1 reads WAVE 3, when these eleven documents FIRST became
+    # somebody's home.  Seven come out NOT_NAMED, re-verified mechanically below.  FOUR are
+    # named, and unlike wave 2's population they therefore needed a READING judgment, which is
+    # recorded per row with the naming it was made on.  Nothing in this wave promotes an entry:
+    # every wave-3 entry is entered `gap`, and the class an admitting grade would imply is
+    # produced by `gen_home_classification.py`'s apply mode, which stays UNRUN under OI-305 /
+    # OI-319.  The one judgment this wave declines to make is rowed rather than taken: whether
+    # the doc-governance hierarchy clause is itself a delegation under D-432 decides a whole
+    # CLASS of per-component design documents at once, and that is a ruling (OI-326).
+    # ------------------------------------------------------------------
+    "cowork_progression_schema_design.md": (
+        CLAUSE, "ARCHITECTURE.md",
+        "are the **authoritative detail** for their own",
+        "The doc-governance hierarchy names this document BY FILENAME among the per-component "
+        "design docs that 'are the authoritative detail for their own scope — the rules, the "
+        "mechanisms, the per-layer decisions-with-alternatives'. Graded a delegation clause "
+        "because the predicate delegates a stated concern rather than appending a pointer to a "
+        "statement about something else. ★ REPORTED, NOT SETTLED: read the other way this is a "
+        "naming inside a LIST, which the bar does not admit — and the same line decides a whole "
+        "class of documents at once, so it is rowed at `OPEN_ITEMS.md` OI-326 rather than "
+        "decided here. The document's own weaker naming, `:1514` 'Spec: <doc>.', is the bar's "
+        "not-admitted example word for word."),
+    "cowork_joint_estimator_architecture.md": (
+        CLAUSE, "ARCHITECTURE.md",
+        "the key/mode/chord estimator is JOINT — see",
+        "The canonical document's opening banner declares a user-ratified GOVERNING DECISION "
+        "and names this document as where it is read. Graded a delegation clause on the "
+        "strength of what is delegated — the governing architecture decision itself — rather "
+        "than on the word 'see'. ★ REPORTED: the same document's `:48` naming is 'spec: <doc>', "
+        "a bare appended citation the bar excludes, so this document is named in both forms and "
+        "the grade turns on which is the stronger. Same class of question as OI-326."),
+    "cowork_evidence_inventory.md": (
+        CLAUSE, "ARCHITECTURE.md",
+        "The catalog of what each layer discovers is",
+        "A subject-is-X naming with a delegating predicate, the same shape as the bar's first "
+        "admitted form, and it binds an obligation to the document (kept in step with the layer "
+        "specifications as facts are adopted). ★ NOTE FOR WHOEVER APPLIES THE CLASSIFICATION: "
+        "the FORM admitting does not make this a home — D-430's other half asks whether the "
+        "section STATES RULES, and this document's own §9 says in terms that nothing in it is "
+        "a build decision. The form is graded here; the kind half is not reached."),
+    "cowork_layer2_slicing_design.md": (
+        BARE_CITATION, "ARCHITECTURE.md",
+        "`cowork_layer2_slicing_design.md`",
+        "The only naming is inside a 'See ...' list of two documents appended to a paragraph "
+        "reporting a measurement result. A bare appended citation, which the bar does not "
+        "admit — and notably weaker than the sibling Layer-1 document, which is not named in "
+        "any of the three surfaces at all."),
+
+    "cowork_census_full_needs_audit.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "cowork_gateA_unification_design.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "cowork_idiom_discovery_design.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "cowork_layer1_note_model_design.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "cowork_sensitive_cell_probe.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "docs/back_half_design.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "docs/iter92_joint_bass_chord_scoring.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
     # ------------------------------------------------------------------
     # (the four regraded rows above are the ONLY ones whose grade has moved since phase 1p;
     #  GRADE_AT_PHASE_1P below records what they were, and is what the pre-apply check reads)

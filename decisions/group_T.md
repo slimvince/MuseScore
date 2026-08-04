@@ -23,7 +23,7 @@
 
 **Status.** LIVE · decided 2026-07-11 · ratified by user
 
-**Home.** `CLAUDE.md:1183`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1201`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:878-887, user-directed 2026-07-11. Binds Claude Code and Cowork sessions alike.
 
@@ -43,7 +43,7 @@
 
 **Status.** LIVE · decided 2026-06-15 · ratified by user
 
-**Home.** `CLAUDE.md:885`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:903`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:737-753, user-directed 2026-06-15. ★ READ WITH the general contribution intent at ARCHITECTURE.md:380-382 - two recorded positions, a general intent to contribute and a named one-patch exception; the record does not state how the general intent applies to the rest of the tree.
 
@@ -71,7 +71,7 @@
 
 **Status.** LIVE · decided 2026-05-14 · ratified by user
 
-**Home.** `CLAUDE.md:837`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:855`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:678-713, applied 2026-05-14. Unrelated to the composing module; recorded so a dependency update does not silently overwrite it.
 
@@ -104,7 +104,7 @@
 
 **Status.** LIVE · decided 2026-06-14 · ratified by user
 
-**Home.** `CLAUDE.md:858`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:876`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:715-745, applied 2026-06-14, commit cfc7eb5e39. ★ Carries the distribution constraint above: fork-local only, never upstream.
 
@@ -180,7 +180,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `CLAUDE.md:1138-1150`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1156-1168`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1589-1598, under the standing-rule heading 'FULL DECISION SURFACE BEFORE ANY CHOICE QUESTION' at cowork_handoff.md:1587 ('user mandate 2026-07-05'), with the instituting record at STATUS_ARCHIVE.md:202 - a session handoff block, which is a place for tracking a handover and not a home for a standing rule. Homed in the CLAUDE.md Conventions section, where this project's standing session-method rules live. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -281,7 +281,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `CLAUDE.md:1152-1170`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1170-1188`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1669-1680, under the standing-rule heading 'COWORK MUST NOT HALLUCINATE OR ASSUME - VERIFY AT SOURCE (user mandate 2026-06-21)' at cowork_handoff.md:1642 - a session handoff block. Homed in the CLAUDE.md Conventions section. Its scope is taken FROM THE RECORD, not decided here: that heading and D-252's own text ('Cowork MAY: read source files via the file tools - NOT bash') both state it as a planning-side rule, so the homed entry says so and says the mandated build, test and measurement commands are unaffected. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -304,7 +304,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `CLAUDE.md:1172-1179`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1190-1197`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1792-1796, under the standing-rule heading 'INVESTIGATE BY DEFAULT - NEVER ASK investigate vs proceed (user mandate 2026-06-14)' at cowork_handoff.md:1790 - a session handoff block. Homed in the CLAUDE.md Conventions section, beside principle #5, which it operationalizes. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -553,7 +553,7 @@
 
 **Status.** LIVE · decided 2026-08-03 · ratified by user
 
-**Home.** `CLAUDE.md:1055-1073`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1073-1091`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** User ruling 2026-08-03, transmitted in the phase-1o dispatch cc_instruction_phase1o_gate_partition_and_probe_rerun.md §2.1; applied and homed at CLAUDE.md's D-231 entry in the recording commit per D-230. The partition itself is generated at tools/audit/phase3_gate_partition.json. **★ THE PER-ITEM VERDICTS WERE ACCEPTED BY THE USER 2026-08-03 (the eleventh ruling set, AA1) — accepted AS GENERATED, with the accounting of what the ruling's measured effect actually was recorded beside them.** That accounting is a block of the artifact, `what_the_partition_measured`, and no figure of it is restated here (#17f, D-431); its structural counts read fields rather than prose, and the one judgment a text test could not make honestly is carried as quoted sentences for the reader instead of as a number. **In plain words: most items GATE, several of them because their search space has ALREADY produced a member of the family rather than on the doubt default, and the narrowing bites in exactly one place** — the family design need not wait for phase 2's bounded trust statement to be WRITTEN, only for the gating searches to have RUN. **★ THE PLANNING PREDICTION THAT RECOMMENDED THIS RULING IS REFUTED AND IS RECORDED AS SUCH** (#17b applied to a planning claim): Cowork's decision surface said the option *"removes the largest share of the blocking for the smallest loss of rigor"*, and the second half holds while the first does not. **The RULING stands** — it was ruled by the user on its own terms and is not disturbed by its advocate's forecast being wrong; what the record must not do is let a later session inherit the expectation instead of the result. Full statement at the artifact's `what_the_partition_measured.the_refuted_planning_prediction`. **A second premise of the same wave was checked at the document and came back different too**: the claim about which of the four channels the phase-2 clause omits actually matter is not what the inventory supports, and the inventory's own statement that history mining is "run to completion" is not true at HEAD — both at `assumption_A1_of_the_phase1u_dispatch`. No verdict moved on either finding.
 
@@ -568,7 +568,7 @@
 
 **Status.** LIVE · decided 2026-08-03 · ratified by user
 
-**Home.** `CLAUDE.md:160-181`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:178-199`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** User ruling 2026-08-03, transmitted in the phase-1o dispatch cc_instruction_phase1o_gate_partition_and_probe_rerun.md §3; applied and homed at CLAUDE.md's open-items register section, qualifying rule (b), in the recording commit per D-230. The derived set is generated at tools/audit/nongating_apparatus_rows.json.
 
@@ -583,7 +583,7 @@
 
 **Status.** LIVE · decided 2026-08-03 · ratified by user
 
-**Home.** `CLAUDE.md:1077-1089`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1095-1107`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** User ruling 2026-08-03 (the twelfth ruling set: option C with option B's correction folded in), transmitted in the phase-1v dispatch cc_instruction_phase1v_channel_ratification.md §1 and §4; the reading surface the ruling was taken from is ratification_surfaces/cowork_perspective_inventory_ratification.md §5. Applied and homed at CLAUDE.md's phase-2 clause and its note, in the recording commit per D-230; the enumeration and the scope ruling themselves live at cowork_oi200_perspective_inventory.md §4, which that clause now delegates to by name. **★ THE CHANNEL-9 CORRECTION WAS MADE FIRST, DELIBERATELY.** The inventory's channel 9 said of history mining *"none new — the adjudication is this channel run to completion"*; that was untrue of both faces of the OI-207 adjudication at HEAD — its residual second pass ran on 2026-08-02, the unresolved cluster residual is live at tools/audit/decisions/disposition_manifest.json → disposition_counts.unresolved, and the owed full document reads are tracked on the OPEN_ITEMS.md OI-207 row. Both were established at those objects before this entry was written. Ruling the channel's scope while its own text said the work was finished would have ratified a contradiction, which is why the user's ruling folds the correction into the ratifying act rather than following it. The former wording is preserved verbatim at the inventory's own dated correction note (#12), as is the former CLAUDE.md note that recorded the gap while it stood. **★ WHAT IT DOES NOT DECIDE, stated because a later reader would otherwise assume more:** the §6 program is NOT adopted in whole or in part; OI-200 is not pulled forward and the inventory's §9 request — adopt, amend or reject that program — stays open and untaken; no probe, fix, design or inference change is authorized; and phase 1 is not complete. **★ WHAT IT RETIRES:** the stated workaround tools/audit/phase3_gate_partition.json carried about its structural source being an unratified draft — preserved verbatim in that artifact's `the_channel_enumeration_source.status_of_this_source.what_this_retires` and NOT deleted (#12). **No verdict of that partition moves**, and none was re-stated on the new authority: the verdicts were recorded as a prediction before the classified items ran, which is what makes them falsifiable. One consequence is reported rather than silently corrected — the partition's per-item `kind` field labels channel 10 a discovery channel, which this ruling supersedes; the field is left standing and the supersession is recorded beside it at that artifact's `the_channel_enumeration_source.the_scope_ruling`, because a registered prediction is not re-touched after the fact.
 
@@ -602,7 +602,9 @@
 
 **Status.** LIVE · decided 2026-07-19 · ratifier not stated
 
+**Entry ratified.** 2026-08-04 · by user
+
 **Home.** `cowork_term_theory_grounding.md:6-11`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Provenance.** The stated method of the term-level theory-grounding audit, in a document whose banner records it as written at the user's direction. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. It sharpens principle #17(a) rather than restating it: #17(a) requires the FACT / THEORY / ASSUMPTION labels, and the unfetched-source rule and the independent cross-extraction are this document's additions.
+**Provenance.** The stated method of the term-level theory-grounding audit, in a document whose banner records it as written at the user's direction. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) It sharpens principle #17(a) rather than restating it: #17(a) requires the FACT / THEORY / ASSUMPTION labels, and the unfetched-source rule and the independent cross-extraction are this document's additions.
 
