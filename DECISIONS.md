@@ -49,7 +49,15 @@
 > criteria govern engaging the dormant spine, not the joint estimator's adoption) and the OI-285
 > ruling committing the ratification surfaces. **D-416's disposition was NOT written**: the check the
 > ruling depended on did not confirm its premise, and the STOP is recorded in that entry's provenance
-> and at `OPEN_ITEMS.md` OI-286.
+> and at `OPEN_ITEMS.md` OI-286. **Eleventh ratification event, 2026-08-04:** the 28 READ WAVE 1
+> entries (D-440…D-467), ratified AS DRAFTED with the statuses exactly as the record states them —
+> several of them "not stated", and left that way. What a ratification of an ENTRY settles is that
+> the register records the decision correctly; it is not a judgment that the decision is good, and it
+> supplies no date and no ratifier the original record never had. Two acts landed in the same commit
+> and are **not** entry ratifications: **D-058** moved to *superseded in fact* (the piece-start
+> shortcut — removed from the code on 2026-06-14 and specified in the present tense until this wave,
+> `OPEN_ITEMS.md` OI-315), and **D-468** was entered (the pinned block-(A) instrument's declared
+> inference arm, recorded but **not** user-ruled — see that entry's provenance).
 >
 > **From 2026-08-03 each entry carries its own ratification as a FIELD**, not only as prose inside
 > the provenance — see *Entry ratified* below. It is backfilled mechanically from the provenance
@@ -174,30 +182,30 @@ project's own and are defined here because they are used before any entry explai
 
 ## What is in this register, counted
 
-**439 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
+**468 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
 
 | | Count |
 |---|---|
-| Decisions recorded | **439** |
-| — of which live | 376 |
-| — of which superseded in fact | 6 |
+| Decisions recorded | **468** |
+| — of which live | 395 |
+| — of which superseded in fact | 7 |
 | — of which superseded by | 9 |
-| — of which deferred | 46 |
+| — of which deferred | 48 |
 | — of which shelved with evidence | 2 |
-| Decisions whose date is not stated in the record | 205 |
-| Decisions whose ratifier is not stated in the record | 258 |
-| Decisions recorded outside the specification that owns them | 238 |
-| — of which a documentation gap | 35 |
+| Decisions whose date is not stated in the record | 214 |
+| Decisions whose ratifier is not stated in the record | 272 |
+| Decisions recorded outside the specification that owns them | 264 |
+| — of which a documentation gap | 60 |
 | — of which recorded only on a tracking surface, with no home at all | 11 |
 | — of which a project-wide convention, correctly homed | 35 |
-| — of which a decision about the process, correctly homed | 58 |
+| — of which a decision about the process, correctly homed | 59 |
 | Decisions whose defense the record does not state | 44 |
-| Entries whose own ratification the provenance records | 187 |
+| Entries whose own ratification the provenance records | 215 |
 | Entries whose home is recorded at SECTION granularity | 134 |
 
-The second-to-last row is about the DECISIONS; the last is about the ENTRIES. **187 of 439** entries carry a recorded event at which the entry itself — this quote, this restatement, this status — was reviewed and ratified. The remaining 252 do not carry one in their own provenance; the register-level ratification events listed in the preamble are the place to look for those, and nothing is inferred from them into the per-entry field.
+The second-to-last row is about the DECISIONS; the last is about the ENTRIES. **215 of 468** entries carry a recorded event at which the entry itself — this quote, this restatement, this status — was reviewed and ratified. The remaining 253 do not carry one in their own provenance; the register-level ratification events listed in the preamble are the place to look for those, and nothing is inferred from them into the per-entry field.
 
-That last row is the one meant to fall. **395 of 439** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
+That last row is the one meant to fall. **424 of 468** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
 
 Alongside the register, every one of the harvested statements about decisions in this repository has been given a recorded disposition, so that none was silently passed over:
 
@@ -264,6 +272,11 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-285 | Meta-finding: embellishment is chord-first, never a richer vocabulary - absorbed by the emission design and the ornament-label increment | SUPERSEDED BY the ratified factorization emission design (D-004 and the OI-194 increment) | — | `cowork_architecture_reassessment.md` §4 ⚠gap |
 | D-376 | The joint key-and-chord step was designed as a BOUNDED COUPLING over the two existing decoders, and the unified single-state alternative was REJECTED — the option later adopted as the production architecture | SHELVED WITH EVIDENCE ⚠LEGACY | 2026-08-02 · user | `cowork_joint_key_chord_design.md` “§1.1 The decision: a BOUNDED coupling step, NOT a unified `(key,chord)` hidden state” |
 | D-379 | Whether an alternative tonality would change the chord CANNOT be measured without re-deciding under it — the exact coupled-case condition is not computable read-only, which is why it stayed unmeasured | LIVE | 2026-08-02 · user | `cowork_joint_key_chord_design.md` “§3.1 The trigger, grounded in C3” |
+| D-449 | Factor granularity is fixed: the bass factor is evaluated per event, the missing-tone penalty per event of segment length, the emission per tone, and the boundary-family factors per boundary | LIVE | 2026-08-04 · user | `cowork_factorization_desk_simulation.md` ⚠gap |
+| D-450 | The key-signature and declared-mode prior conditions the INITIAL key state only, re-entering only at a notated signature change | LIVE | 2026-08-04 · user | `cowork_factorization_desk_simulation.md` ⚠gap |
+| D-451 | A desk simulation's table values are provisional, enter no fit, and a verdict that would flip inside a provisional value's plausible range is reported as a near-tie, never as a win | LIVE | 2026-08-04 · user | `cowork_factorization_desk_simulation.md` ⚠gap |
+| D-452 | Every desk-simulation trace runs at identity weights — the ratified ablation baseline — so the trace tests the structure and the tables, not the weighting | LIVE | 2026-08-04 · user | `cowork_factorization_desk_simulation.md` ⚠gap |
+| D-453 | The desk simulation's verdict: the ratified factorization passes nine of ten traces and no finding reopens the structure | LIVE | 2026-08-04 · user | `cowork_factorization_desk_simulation.md` ⚠gap |
 
 ## B. The notation output surface and the record path — [full entries](decisions/group_B.md)
 
@@ -336,6 +349,8 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-339 | A confident earlier decision can be overturned by decisive later evidence, through ONE confidence-weighted forward-recompute mechanism — architecture-wide | LIVE | 2026-08-02 · user | `cowork_layer5_function_design.md` §9 |
 | D-377 | The forbidden back-edge, stated concretely: a chord decision may NOT write into the committed tonality and re-run the tonality decode — a coupled decision is OWNED by its own bounded box, never patched backward | LIVE | 2026-08-02 · user | `cowork_joint_key_chord_design.md` “§1.3 How it avoids re-introducing a cross-layer cycle” |
 | D-422 | The jazz fit is deferred to the jazz ground-truth conversion; only the classical common-practice idiom is fitted now | DEFERRED | 2026-08-03 · user | `docs/implementation_roadmap.md` “Stage 5” ⚠gap |
+| D-466 | Forward-only is a strong DEFAULT, not dogma — a backward edge is admissible only as a deliberate, surfaced, measured, documented exception | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
+| D-468 | The pinned block-(A) instrument declares which inference arm its baselines were measured on, and refuses a corpus whose stamp disagrees | LIVE | — | `CLAUDE.md` |
 
 ## D. Layer 1 — the note model — [full entries](decisions/group_D.md)
 
@@ -372,7 +387,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-055 | The 21 mode priors are independent and user-configurable | LIVE ⚠LEGACY · derivation not recorded | — | `ARCHITECTURE.md` |
 | D-056 | Notes always win - the notated key signature is a weak hint, not a bypass | LIVE | — | `ARCHITECTURE.md` |
 | D-057 | The priority of evidence - actual sounding notes are the strongest evidence | LIVE | — | `ARCHITECTURE.md` |
-| D-058 | The piece-start shortcut | LIVE ⚠LEGACY · derivation not recorded | — | `ARCHITECTURE.md` |
+| D-058 | The piece-start shortcut | SUPERSEDED IN FACT ⚠LEGACY · derivation not recorded | — | `ARCHITECTURE.md` |
 | D-059 | The temporal window - 16 beats back, 8 beats forward, decayed | LIVE ⚠LEGACY · derivation not recorded | — | `ARCHITECTURE.md` |
 | D-235 | Tonal-centre disambiguation may break a close tie but may not overturn a stronger raw winner | LIVE ⚠LEGACY | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-287 | Key-as-distribution is SHELVED - its motivating case was already fixed and no live target was found | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_handoff_archive.md` ⚠tracking-surface-only |
@@ -458,6 +473,10 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-402 | The inversion-append is a pure cap artifact that dissolves when the cap is removed; the below-threshold bass promotion is a targeted promotion that stays | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_structural_integrity_audit.md` §1.2 ⚠gap |
 | D-403 | STOP, not forced: the four best-different-root scans are NOT one decision at code, so the one-decision-four-sites premise over-counts | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_structural_integrity_audit.md` §3.1 ⚠gap |
 | D-423 | The gate-retirement stage is the only sanctioned way the post-scoring gates change, and three do-not rules hold through every stage | LIVE ⚠LEGACY | 2026-08-03 · user | `docs/implementation_roadmap.md` “Relationship to the existing phase roadmap” ⚠gap |
+| D-463 | The temporal signals sitting in the vertical scorer are left where they are, and the gate that depends on them must move with them | LIVE | 2026-08-04 · user | `docs/layer_architecture_audit.md` ⚠gap |
+| D-464 | No further progression-level signal may be added to the single-step look-around structure; it goes in the progression context instead | LIVE | 2026-08-04 · user | `docs/layer_architecture_audit.md` ⚠gap |
+| D-465 | The policy for judging a proposed post-scoring gate: another bias correction gets the bias fixed first, a structural condition is sound, and a cascade means the missing thing is functional context | LIVE | 2026-08-04 · user | `docs/layer_architecture_audit.md` ⚠gap |
+| D-467 | A rebuilt or re-tuned chord scoring must not rely on the held-note repetition bonus the faithful note model removed | LIVE | 2026-08-04 · user | `cowork_target_architecture.md` ⚠gap |
 
 ## H. Layer 5 and Layer 6 — function, cadence, grouping — [full entries](decisions/group_H.md)
 
@@ -497,6 +516,15 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-399 | The texture feature space was decided BY MEASUREMENT among three named candidates — the standardized combination of both views won; the unstandardized combination was rejected before testing for a measured dilution | LIVE | 2026-08-02 · user | `cowork_voiceleading_axis_design.md` §5.3 |
 | D-400 | A PER-VOICE span kind is admitted to the span typology — melodic phrases overlap across voices by construction and tile only within one voice | LIVE | 2026-08-02 · user | `cowork_voiceleading_axis_design.md` §16 ⚠gap |
 | D-419 | Until the recognition consumer is built, the function layer does not touch the harmonic vocabulary | LIVE | 2026-08-03 · user | `docs/implementation_roadmap.md` the opening block (above the first section heading) ⚠gap |
+| D-454 | The grouping layer detects nothing — it assembles what earlier layers decided, and pressure to add detection means the work belongs elsewhere | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` ⚠gap |
+| D-455 | A cadence away from a grouping boundary is surfaced as internal, never snapped to the nearest boundary and never discarded | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` ⚠gap |
+| D-456 | Sections, periods and sentences are out of the grouping layer's core for PROPORTIONALITY — not disqualified for lacking an oracle | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` ⚠gap |
+| D-457 | A group truncated by the selection edge is marked as truncated, and a group that runs off the edge unclosed carries an extension cue the grouping layer only surfaces | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` ⚠gap |
+| D-458 | The codetta refinement is read as the as-built tiling: keep the strong cut, drop the weak one, and record the codetta end as an annexe | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` ⚠gap |
+| D-459 | The key-area confidence is a declared margin-class boundary confidence, and its input is the declared key confidence — never the grading diagnostics' sigmoid | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` ⚠gap |
+| D-460 | A group counts as fully resolved exactly when no unit in it carries an unresolved mark — no confidence threshold enters the test | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` ⚠gap |
+| D-461 | The grouping layer is an explainability layer, not an accuracy requirement, and is deliberately kept thin | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` ⚠gap |
+| D-462 | Cadence validation is scoped to LOCATION; cadence TYPE is only partially attributable and is never a clean gate | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` ⚠gap |
 
 ## I. Module boundaries and code structure — [full entries](decisions/group_I.md)
 
@@ -625,6 +653,15 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-141 | The language model sees what the user set, not what the engraving engine derived | DEFERRED | — | `ARCHITECTURE.md` |
 | D-142 | The composing module is the language model's context provider; the model never re-derives harmony | DEFERRED | — | `ARCHITECTURE.md` |
 | D-143 | The language-model bridge is built as a module but confined to the core access layer, so it can become a plugin | DEFERRED | — | `ARCHITECTURE.md` |
+| D-440 | The language-model integration is purpose-built and does not wait for the plugin-API reform | DEFERRED | 2026-08-04 · user | `ARCHITECTURE.md` |
+| D-441 | Analysis and modification are phases of ONE conversation; a follow-up instruction re-uses the reasoning rather than re-analysing | DEFERRED | 2026-08-04 · user | `ARCHITECTURE.md` |
+| D-442 | A validation failure goes back to the language model as a tool-call error and is never shown to the user | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` ⚠gap |
+| D-443 | Tool use is the only capability the provider abstraction requires; a provider without it is read-only | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` ⚠gap |
+| D-444 | The core access layer is a facade over interfaces that already exist, not a redesign | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` ⚠gap |
+| D-445 | A musical address does not identify a single note, so the note entity carries its own identifier | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` ⚠gap |
+| D-446 | The language model resolves how the user names a passage; no index is built and the kinds of reference are not enumerated | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` ⚠gap |
+| D-447 | The model's tool definitions are generated from the operation set, never maintained by hand | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` ⚠gap |
+| D-448 | The operation set is curated from observed use, not an exposure of every editing method | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` ⚠gap |
 
 ## O. Intonation — [full entries](decisions/group_O.md)
 
@@ -780,8 +817,8 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 ## Provenance of this register
 
 - Adjudication: the OI-207 decision-conformance adjudication, 2026-08-01, at commit `58dea6702ac8aa9d5ef8b89244b94d587a75f7a5`.
-- Coverage figures above regenerated at commit `d5f3181beaf2425ab42c1ca66c3a1a34acd41b19`.
-- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `d0fb05cee790623f…`).
+- Coverage figures above regenerated at commit `0f311091c147a6200e6ddd96702fc5c63507799d`.
+- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `38ec4aa4dfc1d2c1…`).
 - Harvest: `tools/audit/decisions/decision_candidates.json` (sha256 `51850440b315e6e9…`).
 - Clustering: `tools/audit/decisions/decision_clusters.json` (sha256 `0615b1e61bf10332…`).
 - Shape: `open_items/OI-208.md` (user-ratified 2026-07-28).

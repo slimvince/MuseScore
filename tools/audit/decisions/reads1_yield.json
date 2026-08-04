@@ -1,0 +1,317 @@
+{
+  "header": {
+    "purpose": "READ WAVE 1's measured yield against the bands registered before the reads, per `phase1n_reading_regime.json` -> bands.registration.",
+    "generator": "tools/audit/decisions/gen_reads1_yield.py",
+    "wave": "reads-1",
+    "dispatch": "cc_instruction_reads_1.md",
+    "authored_inputs": [
+      "WAVE_READS",
+      "ZERO_YIELD_REASON"
+    ],
+    "derived_from": [
+      "phase1n_reading_regime.json (every band, point and size fact)",
+      "backbone_decisions.json (every home, status and title)"
+    ],
+    "why_the_regime_artifact_is_not_regenerated": "Its generator recomputes the registered bands from the terciles of the READ set, which a read wave changes. Regenerating after a read would replace the registered prediction with one fitted on data including the documents being graded, destroying the registration (#12, #20). Rowed at OI-316."
+  },
+  "counts": {
+    "documents_read_in_full_this_wave": 6,
+    "documents_the_schedule_packed_into_wave_1": 6,
+    "register_entries_produced": 28,
+    "entries_homed_in_the_document_read": 25,
+    "entries_homed_in_the_owning_specification_instead": 3,
+    "documents_yielding_zero": 1
+  },
+  "the_out_of_sample_test": {
+    "documents_inside_their_registered_band": 6,
+    "documents_outside_their_registered_band": 0,
+    "above_the_point_prediction": 2,
+    "below_the_point_prediction": 4,
+    "what_the_band_test_is_worth": "Stated rather than left for a reader to infer: EVERY registered band has a minimum of 0, because every length tercile of the read set contains at least one zero-yield document. A band running from 0 to its tercile maximum can only be missed by a document yielding MORE than any document of its tercile ever has, so `inside_the_registered_band` is close to unfalsifiable and a pass on it establishes almost nothing. The informative comparison is against `predicted_yield_point`, reported beside it. The band rule was registered as deliberately wide (`bands.rule`); this is what that width costs when the prediction is finally graded.",
+    "the_proxy_is_not_established_by_this_wave": "Six documents, of which five sit in two adjacent terciles, is not a test that settles a correlation whose 95% interval on 36 documents already spanned 0.44 to 0.83 (#24). What this wave contributes is six out-of-sample observations recorded against a prediction registered before them; no bound rests on the proxy and `no_tail_is_bounded` is untouched."
+  },
+  "rows": [
+    {
+      "document": "docs/llm_integration.md",
+      "reading_order": 1,
+      "lines": 786,
+      "length_tercile": "long",
+      "unresolved_clusters_at_registration": 13,
+      "predicted_yield_band": [
+        0.0,
+        16.0
+      ],
+      "predicted_yield_point": 7.67,
+      "actual_yield": 9,
+      "of_which_homed_in_this_document": 7,
+      "of_which_homed_in_the_owning_specification": 2,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "above",
+      "entries": [
+        {
+          "id": "D-440",
+          "home": "ARCHITECTURE.md:6986-6989",
+          "status": "deferred",
+          "title": "The language-model integration is purpose-built and does not wait for the plugin-API reform"
+        },
+        {
+          "id": "D-441",
+          "home": "ARCHITECTURE.md:7008-7011",
+          "status": "deferred",
+          "title": "Analysis and modification are phases of ONE conversation; a follow-up instruction re-uses the reasoning rather than re-analysing"
+        },
+        {
+          "id": "D-442",
+          "home": "docs/llm_integration.md:304-305",
+          "status": "not stated",
+          "title": "A validation failure goes back to the language model as a tool-call error and is never shown to the user"
+        },
+        {
+          "id": "D-443",
+          "home": "docs/llm_integration.md:601-604",
+          "status": "not stated",
+          "title": "Tool use is the only capability the provider abstraction requires; a provider without it is read-only"
+        },
+        {
+          "id": "D-444",
+          "home": "docs/llm_integration.md:367-369",
+          "status": "not stated",
+          "title": "The core access layer is a facade over interfaces that already exist, not a redesign"
+        },
+        {
+          "id": "D-445",
+          "home": "docs/llm_integration.md:418-421",
+          "status": "not stated",
+          "title": "A musical address does not identify a single note, so the note entity carries its own identifier"
+        },
+        {
+          "id": "D-446",
+          "home": "docs/llm_integration.md:518-521",
+          "status": "not stated",
+          "title": "The language model resolves how the user names a passage; no index is built and the kinds of reference are not enumerated"
+        },
+        {
+          "id": "D-447",
+          "home": "docs/llm_integration.md:613-615",
+          "status": "not stated",
+          "title": "The model's tool definitions are generated from the operation set, never maintained by hand"
+        },
+        {
+          "id": "D-448",
+          "home": "docs/llm_integration.md:286-288",
+          "status": "not stated",
+          "title": "The operation set is curated from observed use, not an exposure of every editing method"
+        }
+      ]
+    },
+    {
+      "document": "cowork_factorization_desk_simulation.md",
+      "reading_order": 2,
+      "lines": 607,
+      "length_tercile": "long",
+      "unresolved_clusters_at_registration": 7,
+      "predicted_yield_band": [
+        0.0,
+        16.0
+      ],
+      "predicted_yield_point": 7.67,
+      "actual_yield": 5,
+      "of_which_homed_in_this_document": 5,
+      "of_which_homed_in_the_owning_specification": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "below",
+      "entries": [
+        {
+          "id": "D-449",
+          "home": "cowork_factorization_desk_simulation.md:492-498",
+          "status": "live",
+          "title": "Factor granularity is fixed: the bass factor is evaluated per event, the missing-tone penalty per event of segment length, the emission per tone, and the boundary-family factors per boundary"
+        },
+        {
+          "id": "D-450",
+          "home": "cowork_factorization_desk_simulation.md:506-512",
+          "status": "live",
+          "title": "The key-signature and declared-mode prior conditions the INITIAL key state only, re-entering only at a notated signature change"
+        },
+        {
+          "id": "D-451",
+          "home": "cowork_factorization_desk_simulation.md:30-35",
+          "status": "live",
+          "title": "A desk simulation's table values are provisional, enter no fit, and a verdict that would flip inside a provisional value's plausible range is reported as a near-tie, never as a win"
+        },
+        {
+          "id": "D-452",
+          "home": "cowork_factorization_desk_simulation.md:36-38",
+          "status": "live",
+          "title": "Every desk-simulation trace runs at identity weights — the ratified ablation baseline — so the trace tests the structure and the tables, not the weighting"
+        },
+        {
+          "id": "D-453",
+          "home": "cowork_factorization_desk_simulation.md:590-591",
+          "status": "live",
+          "title": "The desk simulation's verdict: the ratified factorization passes nine of ten traces and no finding reopens the structure"
+        }
+      ]
+    },
+    {
+      "document": "docs/key_path_design.md",
+      "reading_order": 3,
+      "lines": 480,
+      "length_tercile": "medium",
+      "unresolved_clusters_at_registration": 17,
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 0,
+      "of_which_homed_in_this_document": 0,
+      "of_which_homed_in_the_owning_specification": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "below",
+      "entries": [],
+      "zero_yield_reason": "Read in full and yielded nothing. The document is an unratified DRAFT whose own banner puts it under a ratification hold, and its content is a proposal — a key HMM, its measurement plan, and four open questions put to the user — not a record of anything decided. Its one load-bearing finding (a path fixes about a tenth of the target class; the bulk is a consistently-wrong emission that stickiness entrenches rather than fixes) is already carried by D-283/D-284/D-289 as the same result reached from three other directions. Its statements of past decisions belong to other homes, and one of them is the wave's largest finding rather than an entry (OI-315). This matches the read set's own pattern: every DRAFT-bannered document read so far has yielded zero."
+    },
+    {
+      "document": "cowork_layer6_grouping_design.md",
+      "reading_order": 4,
+      "lines": 459,
+      "length_tercile": "medium",
+      "unresolved_clusters_at_registration": 10,
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 9,
+      "of_which_homed_in_this_document": 9,
+      "of_which_homed_in_the_owning_specification": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "above",
+      "entries": [
+        {
+          "id": "D-454",
+          "home": "cowork_layer6_grouping_design.md:297-301",
+          "status": "live",
+          "title": "The grouping layer detects nothing — it assembles what earlier layers decided, and pressure to add detection means the work belongs elsewhere"
+        },
+        {
+          "id": "D-455",
+          "home": "cowork_layer6_grouping_design.md:345-347",
+          "status": "live",
+          "title": "A cadence away from a grouping boundary is surfaced as internal, never snapped to the nearest boundary and never discarded"
+        },
+        {
+          "id": "D-456",
+          "home": "cowork_layer6_grouping_design.md:338-344",
+          "status": "live",
+          "title": "Sections, periods and sentences are out of the grouping layer's core for PROPORTIONALITY — not disqualified for lacking an oracle"
+        },
+        {
+          "id": "D-457",
+          "home": "cowork_layer6_grouping_design.md:214-222",
+          "status": "live",
+          "title": "A group truncated by the selection edge is marked as truncated, and a group that runs off the edge unclosed carries an extension cue the grouping layer only surfaces"
+        },
+        {
+          "id": "D-458",
+          "home": "cowork_layer6_grouping_design.md:12-15",
+          "status": "live",
+          "title": "The codetta refinement is read as the as-built tiling: keep the strong cut, drop the weak one, and record the codetta end as an annexe"
+        },
+        {
+          "id": "D-459",
+          "home": "cowork_layer6_grouping_design.md:244-251",
+          "status": "live",
+          "title": "The key-area confidence is a declared margin-class boundary confidence, and its input is the declared key confidence — never the grading diagnostics' sigmoid"
+        },
+        {
+          "id": "D-460",
+          "home": "cowork_layer6_grouping_design.md:282-286",
+          "status": "live",
+          "title": "A group counts as fully resolved exactly when no unit in it carries an unresolved mark — no confidence threshold enters the test"
+        },
+        {
+          "id": "D-461",
+          "home": "cowork_layer6_grouping_design.md:314-316",
+          "status": "live",
+          "title": "The grouping layer is an explainability layer, not an accuracy requirement, and is deliberately kept thin"
+        },
+        {
+          "id": "D-462",
+          "home": "cowork_layer6_grouping_design.md:359-361",
+          "status": "live",
+          "title": "Cadence validation is scoped to LOCATION; cadence TYPE is only partially attributable and is never a clean gate"
+        }
+      ]
+    },
+    {
+      "document": "docs/layer_architecture_audit.md",
+      "reading_order": 5,
+      "lines": 438,
+      "length_tercile": "medium",
+      "unresolved_clusters_at_registration": 12,
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 3,
+      "of_which_homed_in_this_document": 3,
+      "of_which_homed_in_the_owning_specification": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "below",
+      "entries": [
+        {
+          "id": "D-463",
+          "home": "docs/layer_architecture_audit.md:65-67",
+          "status": "live",
+          "title": "The temporal signals sitting in the vertical scorer are left where they are, and the gate that depends on them must move with them"
+        },
+        {
+          "id": "D-464",
+          "home": "docs/layer_architecture_audit.md:186-189",
+          "status": "live",
+          "title": "No further progression-level signal may be added to the single-step look-around structure; it goes in the progression context instead"
+        },
+        {
+          "id": "D-465",
+          "home": "docs/layer_architecture_audit.md:404-413",
+          "status": "live",
+          "title": "The policy for judging a proposed post-scoring gate: another bias correction gets the bias fixed first, a structural condition is sound, and a cascade means the missing thing is functional context"
+        }
+      ]
+    },
+    {
+      "document": "cowork_target_architecture.md",
+      "reading_order": 6,
+      "lines": 418,
+      "length_tercile": "medium",
+      "unresolved_clusters_at_registration": 14,
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 2,
+      "of_which_homed_in_this_document": 1,
+      "of_which_homed_in_the_owning_specification": 1,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "below",
+      "entries": [
+        {
+          "id": "D-466",
+          "home": "ARCHITECTURE.md:861-863",
+          "status": "live",
+          "title": "Forward-only is a strong DEFAULT, not dogma — a backward edge is admissible only as a deliberate, surfaced, measured, documented exception"
+        },
+        {
+          "id": "D-467",
+          "home": "cowork_target_architecture.md:357-358",
+          "status": "live",
+          "title": "A rebuilt or re-tuned chord scoring must not rely on the held-note repetition bonus the faithful note model removed"
+        }
+      ]
+    }
+  ]
+}

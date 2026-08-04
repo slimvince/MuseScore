@@ -187,11 +187,29 @@ system than the one those sets describe.
 `tools/a8_rebaseline_measure.py` reads for the block-(A) hard stop (`:290-294`, default corpus
 root `tools/corpus`). Running the commands below **as written replaces the joint-estimator corpus
 with legacy output** — after which any robust-stop measurement compares the legacy pipeline
-against a joint-estimator reference, and says nothing about a regression. **The manifest does not
-catch it:** `tools/corpus/baroque/corpus_manifest.json` records the binary, the score
-fingerprints and `git_hash` (today `d615152c51`, the OI-178 adoption) but carries **no field
-saying which inference arm produced the corpus**, so the contamination guard validates a swapped
-corpus without complaint. Tracked at `OPEN_ITEMS.md` OI-307.
+against a joint-estimator reference, and says nothing about a regression. Tracked at
+`OPEN_ITEMS.md` OI-307; the destination is still the one below, and redirecting it is a ruling
+(OI-312).
+
+**★ THE MANIFEST NOW CATCHES IT (corrected 2026-08-03; this block previously said it did not).**
+`corpus_manifest.json` is at **schema 2** and carries `inference_arm` — `joint`, `legacy`,
+`mixed` or `unknown` — alongside the two sources it was derived from: `inference_arm_requested`
+(what the invocation asked for) and `inference_arm_observed` (what the produced files say, read
+from each `.ours.json`'s `analysisPath`; `tools/batch_analyze.cpp:4695` writes `"joint"`, the
+standard writer at `:1448` writes `"batch"`). `characterise_bir_false.validate_corpus_dir` gains
+an `expect_arm` argument, and `a8_rebaseline_measure.py` declares `joint` by default — so running
+the commands below and then measuring the block-(A) hard stop is now **refused**, rather than
+reported as a regression. Two states are deliberately not fatal: a manifest predating the field
+reports **ARM-UNKNOWN** loudly (the declared, bounded transition, #23 — retirement condition in
+`characterise_bir_false.ARM_UNKNOWN_IS_FATAL`), and a caller that declares no expectation is
+unaffected. Measured, both directions, at
+`tools/audit/corpus_arm_establishment.json`; the arm of every corpus directory on disk at
+`tools/audit/corpus_arm_backstamp.json`. Inspect or re-establish with:
+
+```
+python tools/audit/corpus_arm_stamp.py --scan     # every corpus dir and the arm its files report
+python tools/audit/corpus_arm_stamp.py --check    # the guard: the gate corpora are the joint arm
+```
 
 **The commands below are UNCHANGED** — they are the procedure of record, and CLAUDE.md gate block
 (C) carries the same two pairs. **Redirecting them to a scratch dir would fix the hazard, and it
@@ -219,10 +237,15 @@ cd C:\s\MS && python tools/run_bach_preset.py --preset Default --output-dir tool
 
 **Stage 2.2a (M3 fix):** each preset now has its own dir under `tools/corpus/` and a
 `corpus_manifest.json`. `run_bach_preset.py` clean-slates the dir before a regen and
-**exits nonzero** unless the corpus is 353/353 complete; `characterise_bir_false.py`
-**refuses** to measure a dir whose manifest is missing/incomplete or whose `.ours.json`
+**exits nonzero** unless every source score produced output — **352/352 at HEAD**, the expected
+count being derived from the source `.xml` files and not hard-coded (*corrected 2026-08-03: this
+line read `353/353`, the figure from the 2026-06-15-era regens; measured at HEAD the `.xml`
+population is 352 and all three gate manifests record `expected_count` 352. `CLAUDE.md` gate
+block (C) already states it this way*). `characterise_bir_false.py`
+**refuses** to measure a dir whose manifest is missing/incomplete, whose `.ours.json`
 fingerprints don't match the manifest (the old shared-`tools/corpus` contamination is
-now structurally impossible and loudly detected). Gate on **case identity** (not the
+now structurally impossible and loudly detected), or — since 2026-08-03 — whose recorded
+inference arm is not the one the measurement declared. Gate on **case identity** (not the
 bare integer):
 **Re-baselined 2026-06-13 (corrected GT parser): Baroque 53 / Jazz 24 / Default 53** — a
 strict superset of the old 13/7/14 (0 lost, oracle-verified); the L3-wiring delta (−4 / +1 / −4,

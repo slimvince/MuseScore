@@ -146,7 +146,15 @@ PREAMBLE = """# DECISIONS — the decisions register
 > criteria govern engaging the dormant spine, not the joint estimator's adoption) and the OI-285
 > ruling committing the ratification surfaces. **D-416's disposition was NOT written**: the check the
 > ruling depended on did not confirm its premise, and the STOP is recorded in that entry's provenance
-> and at `OPEN_ITEMS.md` OI-286.
+> and at `OPEN_ITEMS.md` OI-286. **Eleventh ratification event, 2026-08-04:** the 28 READ WAVE 1
+> entries (D-440…D-467), ratified AS DRAFTED with the statuses exactly as the record states them —
+> several of them "not stated", and left that way. What a ratification of an ENTRY settles is that
+> the register records the decision correctly; it is not a judgment that the decision is good, and it
+> supplies no date and no ratifier the original record never had. Two acts landed in the same commit
+> and are **not** entry ratifications: **D-058** moved to *superseded in fact* (the piece-start
+> shortcut — removed from the code on 2026-06-14 and specified in the present tense until this wave,
+> `OPEN_ITEMS.md` OI-315), and **D-468** was entered (the pinned block-(A) instrument's declared
+> inference arm, recorded but **not** user-ruled — see that entry's provenance).
 >
 > **From 2026-08-03 each entry carries its own ratification as a FIELD**, not only as prose inside
 > the provenance — see *Entry ratified* below. It is backfilled mechanically from the provenance

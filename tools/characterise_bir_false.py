@@ -35,6 +35,32 @@ _WIR_DIR    = _ROOT / "tools" / "dcml" / "when_in_rome"
 # Kept in sync with run_bach_preset.MANIFEST_NAME.
 MANIFEST_NAME = "corpus_manifest.json"
 
+# ── THE INFERENCE ARM (OPEN_ITEMS.md OI-307) ─────────────────────────────────────────────
+# Kept in sync with run_bach_preset's block of the same name, which is where the derivation
+# and the two evidence sources are written down.
+ARM_JOINT = "joint"
+ARM_LEGACY = "legacy"
+ARM_MIXED = "mixed"
+ARM_UNKNOWN = "unknown"
+
+# The first manifest schema that carries `inference_arm`. Kept in sync with
+# run_bach_preset.MANIFEST_SCHEMA.
+MANIFEST_SCHEMA_WITH_ARM = 2
+
+# ── THE DECLARED, BOUNDED TRANSITION (#23) ───────────────────────────────────────────────
+# A manifest written before 2026-08-03 carries no arm, and there is no way to infer one from
+# it. Such a corpus reports ARM-UNKNOWN: named in the output, never silent, and NOT a hard
+# failure — because failing hard on it would refuse every corpus in the tree on the day the
+# field was added, and because what those corpora actually are is a question to be ANSWERED
+# (tools/audit/corpus_arm_stamp.py --apply back-stamps the ones whose arm is establishable
+# from their own files) rather than assumed either way.
+#
+# RETIREMENT CONDITION, stated here and on the OI-307 row: once every corpus directory a
+# measurement reads carries an established arm, ARM-UNKNOWN becomes a hard failure — set
+# ARM_UNKNOWN_IS_FATAL below and the two probes in corpus_arm_stamp.py's establishment move
+# with it. This is a migration state, not a permanent tolerance.
+ARM_UNKNOWN_IS_FATAL = False
+
 sys.path.insert(0, str(_ROOT / "tools"))
 import compare_analyses as cmp
 import dcml_parser as dcml
@@ -47,13 +73,41 @@ class CorpusValidationError(Exception):
     off a mixed/partial corpus."""
 
 
-def validate_corpus_dir(corpus_dir: Path) -> dict:
+def corpus_arm(manifest: dict) -> tuple[str, str]:
+    """(arm, state) for a parsed manifest, without judging whether the arm is the wanted one.
+
+    state is 'RECORDED' when the manifest names an arm this reader can act on, and
+    'ARM-UNKNOWN' when it does not — either because the manifest predates the field
+    (schema < MANIFEST_SCHEMA_WITH_ARM) or because the run that wrote it could not tell.
+    """
+    if manifest.get("schema", 1) < MANIFEST_SCHEMA_WITH_ARM:
+        return ARM_UNKNOWN, "ARM-UNKNOWN"
+    arm = manifest.get("inference_arm")
+    if arm is None:
+        # A manifest AT the arm schema that omits the field is malformed, not old. Reported
+        # as unknown here; validate_corpus_dir turns it into a hard failure, because the one
+        # thing the schema number promises is that this field is present.
+        return ARM_UNKNOWN, "MALFORMED"
+    if arm == ARM_UNKNOWN:
+        return ARM_UNKNOWN, "ARM-UNKNOWN"
+    return arm, "RECORDED"
+
+
+def validate_corpus_dir(corpus_dir: Path, expect_arm: str | None = None) -> dict:
     """Validate that corpus_dir is a single-preset, complete, uncontaminated corpus.
 
     Returns the parsed manifest on success. Raises CorpusValidationError otherwise.
     Checks, in order: manifest present & parseable; corpus marked complete with
     ours_count == expected_count; every OK score's {stem}.ours.json present and
-    sha256-matching the manifest; no extra *.ours.json beyond the OK set.
+    sha256-matching the manifest; no extra *.ours.json beyond the OK set; and — OI-307 —
+    the recorded INFERENCE ARM.
+
+    expect_arm is the arm the CALLER's measurement is about: ARM_JOINT, ARM_LEGACY, or None
+    / 'any' to make no demand. A recorded arm that differs from a stated expectation is a
+    hard failure: the two pipelines produce the same file shape, so a measurement taken off
+    the wrong one reports a number about a system nobody asked about, and every other check
+    here passes on it (a wholesale regeneration writes the files and their manifest
+    together, so a swapped-arm corpus is internally consistent).
     """
     manifest_path = corpus_dir / MANIFEST_NAME
     if not manifest_path.exists():
@@ -110,6 +164,37 @@ def validate_corpus_dir(corpus_dir: Path) -> dict:
                 raise CorpusValidationError(
                     f"CONTAMINATION: {stem}.music21.json GROUND TRUTH fingerprint differs from "
                     f"the {preset} manifest (stale / foreign / music21-version-mismatched export)")
+
+    # ── OI-307: the inference arm ────────────────────────────────────────────────────────
+    arm, state = corpus_arm(manifest)
+    if state == "MALFORMED":
+        raise CorpusValidationError(
+            # ASCII only (OI-297), as with the two arm messages below.
+            f"{manifest_path} declares schema {manifest.get('schema')} but carries no "
+            f"'inference_arm' field: a manifest at the arm schema must name its arm")
+    if arm == ARM_MIXED:
+        raise CorpusValidationError(
+            f"CONTAMINATION: {corpus_dir} mixes inference arms "
+            f"({manifest.get('analysis_path_values')}): the .ours.json files did not all "
+            f"come from one pipeline; regenerate the whole dir")
+    if state == "ARM-UNKNOWN":
+        msg = (f"ARM-UNKNOWN: {corpus_dir} carries no established inference arm "
+               f"(manifest schema {manifest.get('schema', 1)}). It cannot be told apart from "
+               f"a corpus produced by the other pipeline. See OPEN_ITEMS.md OI-307; "
+               f"tools/audit/corpus_arm_stamp.py --apply establishes it where the files "
+               f"themselves say.")
+        if ARM_UNKNOWN_IS_FATAL:
+            raise CorpusValidationError(msg)
+        print(f"  !! {msg}", file=sys.stderr)
+    elif expect_arm not in (None, "any") and arm != expect_arm:
+        raise CorpusValidationError(
+            # ASCII only, deliberately: this module reconfigures stdout (:27) and NOT stderr,
+            # and a raised message reaches stderr through the traceback. OI-297.
+            f"WRONG INFERENCE ARM: {corpus_dir} was produced by the {arm} pipeline and this "
+            f"measurement is about the {expect_arm} one. Every other check here passes on it "
+            f"(the files and their manifest were written together), so nothing but this field "
+            f"can tell them apart. Regenerate with the {expect_arm} arm, or pass the arm this "
+            f"measurement is actually about.")
     return manifest
 
 PC_NAMES = ["C", "C#", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"]

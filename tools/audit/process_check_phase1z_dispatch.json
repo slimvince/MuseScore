@@ -1,0 +1,98 @@
+{
+  "purpose": "A run of tools/audit/process_check.py over named dispatches or reports. Generated so a report cites this file rather than transcribing what the check found (D-431).",
+  "rules": [
+    "D-431 bare quantity",
+    "D-431 uncited code claim",
+    "D-434 missing self-check section"
+  ],
+  "files_scanned": [
+    "cc_instruction_phase1z_commit_and_instrument_record.md"
+  ],
+  "findings_total": 11,
+  "by_file": {
+    "cc_instruction_phase1z_commit_and_instrument_record.md": {
+      "findings": 11,
+      "rows": [
+        {
+          "file": "cc_instruction_phase1z_commit_and_instrument_record.md",
+          "line": 37,
+          "rule": "D-431 bare quantity",
+          "detail": "2.1",
+          "sentence": "The block has been edited since Cowork last read it. → **Task 2.1**."
+        },
+        {
+          "file": "cc_instruction_phase1z_commit_and_instrument_record.md",
+          "line": 39,
+          "rule": "D-431 bare quantity",
+          "detail": "2.2",
+          "sentence": "report. → **Task 2.2**; if absent, generate one before the record cites it."
+        },
+        {
+          "file": "cc_instruction_phase1z_commit_and_instrument_record.md",
+          "line": 41,
+          "rule": "D-431 bare quantity",
+          "detail": "3.1",
+          "sentence": "Cowork read that quotation in the row, not the document. → **Task 3.1**."
+        },
+        {
+          "file": "cc_instruction_phase1z_commit_and_instrument_record.md",
+          "line": 44,
+          "rule": "D-431 bare quantity",
+          "detail": "3.2",
+          "sentence": "paragraph needs its own. → **Task 3.2**."
+        },
+        {
+          "file": "cc_instruction_phase1z_commit_and_instrument_record.md",
+          "line": 55,
+          "rule": "D-431 bare quantity",
+          "detail": "2.1",
+          "sentence": "**2.1** Check A1 and report what block (A) says about the pinned instrument."
+        },
+        {
+          "file": "cc_instruction_phase1z_commit_and_instrument_record.md",
+          "line": 56,
+          "rule": "D-431 bare quantity",
+          "detail": "2.2",
+          "sentence": "**2.2** Check A2 and cite the artifact."
+        },
+        {
+          "file": "cc_instruction_phase1z_commit_and_instrument_record.md",
+          "line": 58,
+          "rule": "D-431 bare quantity",
+          "detail": "2.3",
+          "sentence": "**2.3** Write the record into block (A)'s provenance — the block that pins the instrument is where a"
+        },
+        {
+          "file": "cc_instruction_phase1z_commit_and_instrument_record.md",
+          "line": 67,
+          "rule": "D-431 bare quantity",
+          "detail": "3.1",
+          "sentence": "**3.1** Check A3 at `docs/key_path_design.md` itself."
+        },
+        {
+          "file": "cc_instruction_phase1z_commit_and_instrument_record.md",
+          "line": 69,
+          "rule": "D-431 bare quantity",
+          "detail": "3.2",
+          "sentence": "**3.2** Check A4 at the section around F1."
+        },
+        {
+          "file": "cc_instruction_phase1z_commit_and_instrument_record.md",
+          "line": 71,
+          "rule": "D-431 bare quantity",
+          "detail": "3.3",
+          "sentence": "**3.3 Correct the specification.** Replace the false paragraph with a statement of what the opening"
+        },
+        {
+          "file": "cc_instruction_phase1z_commit_and_instrument_record.md",
+          "line": 131,
+          "rule": "D-431 bare quantity",
+          "detail": "5.2",
+          "sentence": "recorded as tried-and-closed. #15 — 5.2 names the reading-the-object lesson for the next session."
+        }
+      ]
+    }
+  },
+  "clean_files": [],
+  "establishment": "tools/audit/process_check_establishment.json — the check's measured detection power and false-positive rate. Read it before reading a count here as coverage."
+}

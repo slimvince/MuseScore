@@ -22,7 +22,7 @@
  },
  "the_enumeration_source": {
   "file": "CLAUDE.md",
-  "expected_line": 1026,
+  "expected_line": 1044,
   "quote": "**Phase 2 - issue-finding is EXHAUSTED with measured coverage:** the remaining audit partitions",
   "what_it_is": "The defining source for phase 2. The user-directed three-phase rule (register entry D-231), Conventions section, 2026-08-02. Its phase-2 clause names, in order: the remaining audit partitions; the blind second pass with its seeded error rate; the enumerated discovery channels; the per-search detection-power report; and the bounded trust statement.",
   "how_the_channel_half_reads_at_HEAD": "CHANGED 2026-08-03 BY THE RATIFICATION, and stated here because this partition was recorded against the earlier wording. The clause formerly listed six channel subjects of its own - populations, oracles, invariants, residual decomposition, concept gaps, requirement side - and now POINTS at cowork_oi200_perspective_inventory.md section 4 instead, that section being the ratified one home for the list (D-439). The per-item fields named_by_the_rule and rule_phrase below therefore describe the clause AS IT STOOD WHEN THIS PREDICTION WAS RECORDED, which is what they are for; they are preserved rather than rewritten, because a prediction's record of its own basis is not re-touched after the fact. The six subjects map onto channels 1, 2, 3, 5, 6 and 7."
@@ -501,7 +501,7 @@
    "rule_phrase": "each search reporting its detection power, ending in the bounded trust statement",
    "source": {
     "file": "CLAUDE.md",
-    "expected_line": 1031,
+    "expected_line": 1049,
     "quote": "each search reporting its detection power, ending in the bounded trust statement - every"
    },
    "scope_basis": "An accounting act OVER the channels: each search's miss rate, each declared envelope, and the statement that bounds what the whole program can claim.",
@@ -511,9 +511,9 @@
    "source_verification": {
     "file": "CLAUDE.md",
     "quote": "each search reporting its detection power, ending in the bounded trust statement - every",
-    "expected_line": 1031,
+    "expected_line": 1049,
     "found_lines": [
-     1031
+     1049
     ],
     "found": true,
     "anchor_ok": true
@@ -829,9 +829,9 @@
    {
     "file": "CLAUDE.md",
     "quote": "**Phase 2 - issue-finding is EXHAUSTED with measured coverage:** the remaining audit partitions",
-    "expected_line": 1026,
+    "expected_line": 1044,
     "found_lines": [
-     1026
+     1044
     ],
     "found": true,
     "anchor_ok": true
@@ -989,9 +989,9 @@
    {
     "file": "CLAUDE.md",
     "quote": "each search reporting its detection power, ending in the bounded trust statement - every",
-    "expected_line": 1031,
+    "expected_line": 1049,
     "found_lines": [
-     1031
+     1049
     ],
     "found": true,
     "anchor_ok": true

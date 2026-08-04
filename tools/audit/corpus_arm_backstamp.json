@@ -1,0 +1,666 @@
+{
+  "purpose": "The record of one act: which corpus directories had their inference arm ESTABLISHED and back-stamped, from what evidence, and which were left ARM-UNKNOWN because their own files do not settle it.",
+  "generated_by": "tools/audit/corpus_arm_stamp.py --apply",
+  "generated_for": "cc_instruction_phase1y_corpus_arm_stamping.md, Task 3",
+  "this_is_a_record_of_an_act_not_a_derivation": "It is written once, by the act it records. It is NOT re-derived by --check and must not be regenerated to see whether it still reproduces: the directories it describes are gitignored working-tree state, so a later run describes a later tree. --check asserts the PROPERTY instead (the gate corpora carry an established joint arm), which is stable and machine-independent.",
+  "scope": "every corpus directory under tools/corpus/ carrying a manifest",
+  "the_corpus_is_not_under_version_control": ".gitignore:26 ignores /tools/corpus/. There is no commit that produced these directories and no git object to compare them against; their manifest is the whole of their provenance record.",
+  "established": [
+    {
+      "dir": "tools/corpus/baroque",
+      "preset": "Baroque",
+      "schema_before": 1,
+      "ours_files": 352,
+      "analysis_path_values": {
+        "joint": 352
+      },
+      "observed_arm": "joint",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "joint"
+    },
+    {
+      "dir": "tools/corpus/jazz",
+      "preset": "Jazz",
+      "schema_before": 1,
+      "ours_files": 352,
+      "analysis_path_values": {
+        "joint": 352
+      },
+      "observed_arm": "joint",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "joint"
+    },
+    {
+      "dir": "tools/corpus/default",
+      "preset": "Default",
+      "schema_before": 1,
+      "ours_files": 352,
+      "analysis_path_values": {
+        "joint": 352
+      },
+      "observed_arm": "joint",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "joint"
+    },
+    {
+      "dir": "tools/corpus/baroque_4bi",
+      "preset": "Baroque",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/baroque_4bi_abs",
+      "preset": "Baroque",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/baroque_4ciii_bir",
+      "preset": "Baroque",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/baroque_4di",
+      "preset": "Baroque",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/baroque_b2chk",
+      "preset": "Baroque",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/baroque_jki",
+      "preset": "Baroque",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/baroque_jki_re",
+      "preset": "Baroque",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/baroque_jkii",
+      "preset": "Baroque",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/baroque_jkiii",
+      "preset": "Baroque",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/baroque_jkiii_all",
+      "preset": "Baroque",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/baroque_kma_abs",
+      "preset": "Baroque",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/baroque_l5m",
+      "preset": "Baroque",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/baroque_reduxs1",
+      "preset": "Baroque",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/default_4bi",
+      "preset": "Default",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/default_4bi_abs",
+      "preset": "Default",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/default_4ci",
+      "preset": "Default",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/default_4ci_abs",
+      "preset": "Default",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/default_4ciii",
+      "preset": "Default",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/default_4ciii_abs",
+      "preset": "Default",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/default_4di",
+      "preset": "Default",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/default_6tonic",
+      "preset": "Default",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/default_b2chk",
+      "preset": "Default",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/default_jki",
+      "preset": "Default",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/default_jki_re",
+      "preset": "Default",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/default_jkii",
+      "preset": "Default",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/default_jkiii",
+      "preset": "Default",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/default_kma_abs",
+      "preset": "Default",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/default_l5m",
+      "preset": "Default",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/default_mod",
+      "preset": "Default",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/default_mod_b2",
+      "preset": "Default",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/default_modcad",
+      "preset": "Default",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/default_reduxs1",
+      "preset": "Default",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/jazz_4bi",
+      "preset": "Jazz",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/jazz_4bi_abs",
+      "preset": "Jazz",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/jazz_4ciii_bir",
+      "preset": "Jazz",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/jazz_4di",
+      "preset": "Jazz",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/jazz_b2chk",
+      "preset": "Jazz",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/jazz_jki",
+      "preset": "Jazz",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/jazz_jki_re",
+      "preset": "Jazz",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/jazz_jkii",
+      "preset": "Jazz",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/jazz_jkiii",
+      "preset": "Jazz",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/jazz_kma_abs",
+      "preset": "Jazz",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/jazz_l5m",
+      "preset": "Jazz",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    },
+    {
+      "dir": "tools/corpus/jazz_reduxs1",
+      "preset": "Jazz",
+      "schema_before": 1,
+      "ours_files": 353,
+      "analysis_path_values": {
+        "batch": 353
+      },
+      "observed_arm": "legacy",
+      "arm_before": null,
+      "outcome": "ESTABLISHED",
+      "arm_after": "legacy"
+    }
+  ],
+  "not_established": [
+    {
+      "dir": "tools/corpus/fullspine_baroque",
+      "preset": "Baroque",
+      "schema_before": 1,
+      "ours_files": 352,
+      "analysis_path_values": {
+        "fullspine": 352
+      },
+      "observed_arm": "unknown",
+      "arm_before": null,
+      "outcome": "NOT ESTABLISHED",
+      "why": "the files do not settle it (observed unknown). Left ARM-UNKNOWN rather than guessed, and NOT regenerated to find out -- regenerating to learn what a corpus was is the re-baseline this is forbidden to perform."
+    },
+    {
+      "dir": "tools/corpus/fullspine_default",
+      "preset": "Default",
+      "schema_before": 1,
+      "ours_files": 352,
+      "analysis_path_values": {
+        "fullspine": 352
+      },
+      "observed_arm": "unknown",
+      "arm_before": null,
+      "outcome": "NOT ESTABLISHED",
+      "why": "the files do not settle it (observed unknown). Left ARM-UNKNOWN rather than guessed, and NOT regenerated to find out -- regenerating to learn what a corpus was is the re-baseline this is forbidden to perform."
+    },
+    {
+      "dir": "tools/corpus/fullspine_jazz",
+      "preset": "Jazz",
+      "schema_before": 1,
+      "ours_files": 352,
+      "analysis_path_values": {
+        "fullspine": 352
+      },
+      "observed_arm": "unknown",
+      "arm_before": null,
+      "outcome": "NOT ESTABLISHED",
+      "why": "the files do not settle it (observed unknown). Left ARM-UNKNOWN rather than guessed, and NOT regenerated to find out -- regenerating to learn what a corpus was is the re-baseline this is forbidden to perform."
+    }
+  ],
+  "counts": {
+    "established": 47,
+    "not_established": 3
+  }
+}

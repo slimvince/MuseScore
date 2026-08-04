@@ -250,13 +250,13 @@
 
 **In plain words.** The measurement scripts read files produced by an earlier run. Updating a recorded baseline without regenerating those files first produces a number that silently describes an older state of the system.
 
-**Why.** Stated constraint, BUILD_AND_TEST.md:336-337: the script reads existing analysis files and will silently report stale numbers if they are not current - silently being the operative word, since nothing about the output reveals it.
+**Why.** Stated constraint, BUILD_AND_TEST.md:359-360: the script reads existing analysis files and will silently report stale numbers if they are not current - silently being the operative word, since nothing about the output reveals it.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `BUILD_AND_TEST.md:335`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `BUILD_AND_TEST.md:358`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** BUILD_AND_TEST.md:335-339. The mechanical enforcement is the per-preset corpus manifest: the regeneration script exits nonzero on an incomplete corpus and the measurement refuses a directory whose manifest is missing or whose fingerprints do not match (CLAUDE.md:514-525).
+**Provenance.** BUILD_AND_TEST.md:358-362. The mechanical enforcement is the per-preset corpus manifest: the regeneration script exits nonzero on an incomplete corpus and the measurement refuses a directory whose manifest is missing or whose fingerprints do not match (CLAUDE.md:514-525).
 
 ### D-226 — The music21 export is version-pinned; regenerating it is a deliberate re-baseline
 

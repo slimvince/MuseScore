@@ -224,7 +224,7 @@
 
 **Status.** SUPERSEDED BY D-207 · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4027-4028`
+**Home.** `ARCHITECTURE.md:4056-4057`
 
 **Provenance.** ARCHITECTURE.md:3882-3917 'Status: Implemented (Session 18, master fb9a27ce9a)'. Suspended on the record arm - see D-021. SUPERSEDED BY D-207 - open_items/OI-194.md:7 records the ratified successor (user, 2026-07-26): the voice-independent pedal-point class replaces this bass-only second pass and the `isPedalPoint`/`pedalBassPc` fact it produces
 
@@ -241,7 +241,7 @@
 
 **Status.** LIVE · decided 2026-04-09 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3808-3809`
+**Home.** `ARCHITECTURE.md:3837-3838`
 
 **Provenance.** ARCHITECTURE.md:3662-3710; the failure it fixed is documented across four corpora at :3406-3419
 
@@ -273,7 +273,7 @@
 
 **Status.** DEFERRED · decided 2026-07-26 · ratified by user
 
-**Home.** `ARCHITECTURE.md:4667-4670`
+**Home.** `ARCHITECTURE.md:4696-4699`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at open_items/OI-194.md:7, sharpened at the P1 pedal-point ruling, user-ratified 2026-07-26 at the consumption-audit verification (`cowork_notation_adoption_increment.md` §7 + §10). DEFERRED: it lands with the ornament-label publication, its own increment after the notation switch; until then the record arm leaves the pedal fields empty (D-021) and the 'X ped.' annotation is a declared gap. §5.12, which specifies the superseded two-pass detector, now carries a pointer to §7.4. OPEN_ITEMS OI-237 closes on this move
 
@@ -1178,4 +1178,83 @@
 **Home section.** **“Relationship to the existing phase roadmap”** — `## Relationship to the existing phase roadmap (COWORK_HANDOFF "Roadmap")` (heading at line 602). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
 
 **Provenance.** `docs/implementation_roadmap.md`:520-521, in the closing section relating the roadmap to the earlier phase plan, stated as remaining "in force through all stages". No date or ratifier is stated. Its subject is the legacy vertical scorer's post-scoring gate layer, dormant on both production surfaces since 2026-07-26/27, hence the LEGACY mark; the three underlying prohibitions (D-036, D-061, D-215) carry their own scopes. The natural home is `docs/scoring_model.md` §8, where the other standing constraints and dead ends on that layer live, hence the documentation-gap flag. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+
+### D-463 — The temporal signals sitting in the vertical scorer are left where they are, and the gate that depends on them must move with them
+
+> **Recommendation:** This debt is stable, documented, and will not be removed until a
+> scoring stabilisation phase. Do not attempt to move these signals now. When they do
+> migrate, Gate R needs to move or adapt simultaneously.
+
+**In plain words.** Five signals that look backward or forward in time are computed inside the part of the scorer that is supposed to judge only what sounds at one moment. They are known debt and are not to be moved yet. When they are eventually moved, the gate whose test depends on one of them has to be changed at the same time.
+
+**Why.** Stated with the recommendation and grounded in the mechanism the audit traced: the gate's test uses a score component as a stand-in for "this chord has a sounding third", and it only carries that meaning because one of the five signals is computed where it is. Removing the debt without touching the gate would silently change what the gate tests — a cross-layer dependency invisible to anyone reading the gate's own file.
+
+**Status.** LIVE · decided 2026-06-09 · ratifier not stated
+
+**Entry ratified.** 2026-08-04 · by user
+
+**Home.** `docs/layer_architecture_audit.md:65-67`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** `docs/layer_architecture_audit.md` Finding 1, an audit written 2026-06-09 and marked superseded only FOR LAYER 1 by the note-model rebuild; this finding is about the chord scorer and is untouched by that supersession. Entered by the phase-1 reads wave 1. Whether the five signals are still where the audit found them was NOT re-checked at the code by this wave. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+
+### D-464 — No further progression-level signal may be added to the single-step look-around structure; it goes in the progression context instead
+
+> **Recommendation:** At the start of Phase E (when `ProgressionAnalyzer` design begins),
+> plan the migration of these four Step 2 fields from `ChordTemporalContext` to the new
+> `TemporalContext` explicitly. Do not add further progression-level signals to
+> `ChordTemporalContext`; put them in `TemporalContext` directly.
+
+**In plain words.** The structure that carries a chord's immediate neighbours was designed as a one-step look-around, and four fields describing the previous winner's competition outcome were added to it that belong to a planned progression-level structure instead. Nothing further of that kind goes in, and the migration of the four is to be planned explicitly when the progression analyzer's design begins.
+
+**Why.** Stated with the recommendation, and the ground is the canonical specification's own instruction that the two structures are to be kept distinct — the audit's finding is that one has been growing into the other with no migration plan written down.
+
+**Status.** LIVE · decided 2026-06-09 · ratifier not stated
+
+**Entry ratified.** 2026-08-04 · by user
+
+**Home.** `docs/layer_architecture_audit.md:186-189`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** `docs/layer_architecture_audit.md` Finding 5, 2026-06-09. Entered by the phase-1 reads wave 1. Whether the four fields are still in that structure at HEAD was NOT re-checked by this wave. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+
+### D-465 — The policy for judging a proposed post-scoring gate: another bias correction gets the bias fixed first, a structural condition is sound, and a cascade means the missing thing is functional context
+
+> **The policy for new gate decisions:**
+> 1. If a proposed gate is another variant of the bass-as-root bias correction (e.g. a
+>    new enharmonic pair, a new interval relationship) — consider whether the bias itself
+>    can be reduced first, or whether Phase E can provide the functional context that
+>    removes the ambiguity. Only add the gate if the fix is genuinely local.
+> 2. If a proposed gate has a structural condition like Gate J or Gate R (specific
+>    pitch-class arithmetic + presence constraint, not temporal evidence) — it is likely
+>    architecturally sound.
+> 3. If a proposed gate requires the cascade pattern (temporal B-style → C-style → D-style)
+>    — this is a strong signal that the underlying problem is missing Phase E context.
+
+**In plain words.** Three tests decide whether a proposed gate should be added. If it is one more variant of correcting the scorer's pull toward reading the bass as the root, first ask whether the pull itself can be reduced or whether functional context would remove the ambiguity — add the gate only if the fix really is local. If it turns on pitch arithmetic and what is present rather than on what came before or after, it is likely sound. And if it needs the whole three-step cascade shape, that is a strong sign the real problem is missing functional context.
+
+**Why.** Derived from the audit's own catalogue: two thirds of the post-scoring gates are solving one problem, the scorer's bass-as-root pull, and three separate cascades were each built up step by step for the same shape of failure — which the canonical specification already names as a warning sign that accumulating gates signals an unresolved architectural problem. The two gates the audit calls architecturally healthier both turn on structural conditions rather than compensating for the bias, which is where test two comes from.
+
+**Status.** LIVE · decided 2026-06-09 · ratifier not stated
+
+**Entry ratified.** 2026-08-04 · by user
+
+**Home.** `docs/layer_architecture_audit.md:404-413`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** `docs/layer_architecture_audit.md` Finding 7, added 2026-06-09 after a systematic read of every gate. Entered by the phase-1 reads wave 1. The gate population has moved since (the scoring model records Gates B/C/D as retired and subsumed, and CLAUDE.md records Gate K retired by user ruling 2026-08-02), so the POLICY is entered and none of the audit's gate inventory is; the policy's own do-not-add-more-cascade-gates conclusion stands on the same page. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+
+### D-467 — A rebuilt or re-tuned chord scoring must not rely on the held-note repetition bonus the faithful note model removed
+
+> **When layer-3 scoring is rebuilt/
+>   re-tuned, do NOT rely on the held-note repetition bonus**
+
+**In plain words.** Before the note reader was rebuilt, a note held across a tie was counted more than once, and that spurious extra weight happened to push a handful of ambiguous sonorities toward the right root. The faithful note model removed it. Whatever replaces or re-tunes the chord scoring must not lean on that boost to get those cases right.
+
+**Why.** Measured and recorded when it surfaced: removing the inflation moved a small number of cases the wrong way while the key axis stayed flat, which is what identified those cases as having been carried by an artefact rather than by evidence. The document names this as exactly the hidden dependency the upstream-first sweep exists to surface — a correct re-calibration is expected to recover them.
+
+**Status.** LIVE · decided 2026-06-21 · ratifier not stated
+
+**Entry ratified.** 2026-08-04 · by user
+
+**Home.** `cowork_target_architecture.md:357-358`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** `cowork_target_architecture.md` §6.2, recorded 2026-06-21 and citing the Layer-1 implementation report §5.3 as its measurement. Entered by the phase-1 reads wave 1. Whether the ~4 cases have since recovered was NOT checked by this wave. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 

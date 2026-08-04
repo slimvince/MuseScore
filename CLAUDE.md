@@ -373,6 +373,24 @@ never hand-typed** (#17f): `tools/robust_stop_restamp.py` regenerates every reco
 candidate `summary.json`, and is established by reproducing the outgoing manifest exactly. A frozen
 snapshot of the superseded batch sets lives at `tools/robust_stop/batch_stop_frozen_history.json` (block (C)).
 
+**★ THE PINNED INSTRUMENT NOW DECLARES WHICH INFERENCE ARM ITS BASELINES WERE MEASURED ON, AND REFUSES
+A CORPUS WHOSE STAMP DISAGREES (2026-08-03, phase 1y; recorded here 2026-08-04, phase 1z; `OPEN_ITEMS.md`
+OI-307, D-468).** `tools/a8_rebaseline_measure.py` carries an expected arm, **defaulting to the joint arm
+— the one every baseline in this block was measured on** — and a corpus whose `corpus_manifest.json`
+records the other pipeline is refused rather than measured. `--expect-arm` states a different intent
+explicitly. **It cannot move a measured value; it can only refuse** — run at HEAD over the production
+corpus by this block's own two commands and diffed against the committed reference, the candidate is
+indistinguishable from that reference on every preset and at every value the diff reports, in both
+directions of the run-level set-diff (`tools/audit/instrument_arm_declaration_effect.json`; the refusal
+half — a wrong-arm corpus detected, a right-arm one admitted, a caller declaring nothing unaffected —
+at `tools/audit/corpus_arm_establishment.json`, probes 2, 3 and 4). *Why the default rather than an
+opt-in:* **the defect was that an opt-in flag created an undetectable hole** — `--joint-inference` is
+opt-in, so a regeneration that omits it silently fills the directory this instrument reads with the
+other pipeline's output — **and an opt-in detector would reproduce that hole's shape exactly**, being
+absent from precisely the invocation that most needs it. **Reversal is one default:** set
+`EXPECT_ARM_DEFAULT` to `"any"` and the field is inert again. This is a change to a PINNED instrument
+and is recorded here because this block is what pins it (#7).
+
 **★ Ratified baselines — RE-BASELINED AT THE OI-178 JOINT-ESTIMATOR ADOPTION, 2026-07-26 (user-ratified,
 option 1; measurement provenance `d615152c51`; report `cc_adoption_measurement_report.md`, record
 `tools/joint_estimator/adoption_record.json`).** The joint estimator is now the **PRODUCTION inference

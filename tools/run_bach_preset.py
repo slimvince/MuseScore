@@ -22,6 +22,7 @@ import io
 import json
 import multiprocessing
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -48,11 +49,75 @@ MANIFEST_NAME = "corpus_manifest.json"
 # batch_analyze.cpp applyPreset()/chordPrefs handling.
 PRESET_CHOICES = ["Standard", "Baroque", "Modal", "Jazz", "Contemporary", "Default"]
 
+# ── THE INFERENCE ARM (OPEN_ITEMS.md OI-307) ─────────────────────────────────────────────
+# batch_analyze produces the same .ours.json SHAPE from either of two pipelines: the joint
+# estimator (--joint-inference; the production inference layer on the batch/corpus surface,
+# CLAUDE.md gate block (A)) or the legacy analyzeScore path. The flag is opt-in —
+# jointInferenceDir is initialised empty at tools/batch_analyze.cpp:4917 and the joint path
+# runs only under `if (!jointInferenceDir.empty())` at :5590 — so ONE binary produces either
+# arm depending on how it was invoked.
+#
+# Until 2026-08-03 this manifest stamped the BINARY (path/size/mtime) and not its invocation,
+# so two corpora produced by different pipelines were indistinguishable in the record. That
+# matters here and not somewhere harmless: tools/corpus/<preset> is the directory
+# tools/a8_rebaseline_measure.py reads for the block-(A) hard stop, and this script
+# clean-slates its output directory before regenerating.
+#
+# The arm is recorded TWICE, because the two answer different questions:
+#   requested — what the INVOCATION asked for (intent, from the flag actually passed);
+#   observed  — what the produced files SAY (fact). Both writers stamp "analysisPath":
+#               batch_analyze.cpp:4695 writes "joint", the standard writer at :1448 writes
+#               "batch". Verifying at the object rather than at the assertion is #15, and it
+#               is what lets a disagreement between the two be DETECTED rather than assumed
+#               impossible.
+ARM_JOINT = "joint"
+ARM_LEGACY = "legacy"
+ARM_MIXED = "mixed"
+ARM_UNKNOWN = "unknown"
 
-def _file_fingerprint(path: Path) -> dict:
+# The manifest schema that carries the arm. A manifest below it cannot be read as if it did.
+MANIFEST_SCHEMA = 2
+
+# analysisPath is the 4th line of every .ours.json; 4 KiB is far past it and bounds the scan.
+_ANALYSIS_PATH_RE = re.compile(rb'"analysisPath"\s*:\s*"([^"]*)"')
+
+# The two analysisPath values a CORPUS can legitimately carry. Any other value (the
+# --dump-* diagnostics write "fullspine", "fanout", "joint-probe", ... ; the notation dump
+# writes "notation") is not a corpus arm and is reported as itself rather than mapped.
+_ARM_BY_ANALYSIS_PATH = {"joint": ARM_JOINT, "batch": ARM_LEGACY}
+
+
+def _analysis_path_of(data: bytes) -> str | None:
+    """The analysisPath value a .ours.json stamps on itself, or None if it carries none."""
+    m = _ANALYSIS_PATH_RE.search(data[:4096])
+    return m.group(1).decode("utf-8", "replace") if m else None
+
+
+def _observed_arm(analysis_path_values: dict) -> str:
+    """The arm the PRODUCED FILES say they came from.
+
+    analysis_path_values maps each distinct analysisPath value seen (None for a file that
+    carries none) to its count. More than one distinct value means the directory does not
+    hold the output of a single run — reported as MIXED rather than resolved by majority,
+    because a majority reading would hide exactly the contamination this field exists to
+    catch.
+    """
+    if not analysis_path_values:
+        return ARM_UNKNOWN
+    if len(analysis_path_values) > 1:
+        return ARM_MIXED
+    only = next(iter(analysis_path_values))
+    return _ARM_BY_ANALYSIS_PATH.get(only, ARM_UNKNOWN)
+
+
+def _file_fingerprint(path: Path, data: bytes | None = None) -> dict:
     """Size + sha256 of a file's bytes — the per-score identity recorded in the
-    manifest and re-checked by characterise_bir_false at measurement time."""
-    data = path.read_bytes()
+    manifest and re-checked by characterise_bir_false at measurement time.
+
+    `data` lets a caller that has already read the bytes pass them in rather than read the
+    file twice; None keeps the historical single-argument behaviour."""
+    if data is None:
+        data = path.read_bytes()
     return {"size": len(data), "sha256": hashlib.sha256(data).hexdigest()}
 
 
@@ -62,7 +127,6 @@ def _detect_music21_version(corpus_dir: Path) -> str | None:
     the first source score so the manifest records which music21 produced the
     ground-truth `.music21.json`. Purely informational — validate_corpus_dir does
     NOT enforce it; a None just means the version could not be read."""
-    import re
     for xml in sorted(corpus_dir.glob("*.xml")):
         try:
             head = xml.read_text(encoding="utf-8", errors="replace")[:4000]
@@ -76,22 +140,37 @@ def _detect_music21_version(corpus_dir: Path) -> str | None:
 
 def _write_manifest(out_dir: Path, preset: str, score_status: dict,
                     expected_count: int, git_hash: str, timestamp: str,
-                    exe: Path | None, music21_version: str | None = None) -> dict:
+                    exe: Path | None, music21_version: str | None = None,
+                    requested_arm: str | None = None,
+                    joint_inference_dir: str | None = None) -> dict:
     """Write corpus_manifest.json into out_dir and return it.
 
     score_status maps stem -> status string ('OK', 'FAILED', ...). For every 'OK'
     score the matching {stem}.ours.json must exist in out_dir; its fingerprint is
     recorded. The corpus is 'complete' iff every expected score is 'OK' and the OK
     count equals expected_count.
+
+    requested_arm / joint_inference_dir record the INVOCATION (ARM_JOINT when
+    --joint-inference was passed, ARM_LEGACY when it was not, None when the caller makes no
+    claim — a --skip-cpp or --resume run does not regenerate every file, so what this
+    invocation asked for says nothing about the files it left alone). The arm the files
+    themselves report is read alongside and the two are both recorded; see the OI-307 block
+    above for why one of them is not enough.
     """
     scores = {}
     ok_count = 0
+    analysis_path_values: dict = {}      # analysisPath value (None if absent) -> count
+    analysis_path_stems: dict = {}       # the same, value -> stems (the contamination evidence)
     for stem, status in sorted(score_status.items()):
         entry = {"status": status}
         if status == "OK":
             ours = out_dir / f"{stem}.ours.json"
             if ours.exists():
-                entry.update(_file_fingerprint(ours))   # size + sha256 (the .ours.json identity)
+                data = ours.read_bytes()
+                entry.update(_file_fingerprint(ours, data))  # size + sha256 (the .ours.json identity)
+                ap = _analysis_path_of(data)
+                analysis_path_values[ap] = analysis_path_values.get(ap, 0) + 1
+                analysis_path_stems.setdefault(ap, []).append(stem)
                 ok_count += 1
                 # OI-124: fingerprint the paired .music21.json GROUND TRUTH too. An OK score
                 # went through compare_files, so its .music21.json exists and is parseable; record
@@ -116,8 +195,20 @@ def _write_manifest(out_dir: Path, preset: str, score_status: dict,
         st = Path(exe).stat()
         exe_id = {"path": str(exe), "size": st.st_size, "mtime": int(st.st_mtime)}
 
+    observed_arm = _observed_arm(analysis_path_values)
+    if observed_arm in (ARM_JOINT, ARM_LEGACY):
+        arm, arm_source = observed_arm, "the produced .ours.json files (their analysisPath)"
+    elif observed_arm == ARM_MIXED:
+        arm, arm_source = ARM_MIXED, "the produced .ours.json files (their analysisPath)"
+    elif requested_arm in (ARM_JOINT, ARM_LEGACY):
+        # No file said anything (a corpus of outputs that carry no analysisPath). The
+        # invocation is then the only evidence there is, and the source field says so.
+        arm, arm_source = requested_arm, "the invocation (no produced file carries an analysisPath)"
+    else:
+        arm, arm_source = ARM_UNKNOWN, "neither the invocation nor the produced files say"
+
     manifest = {
-        "schema": 1,
+        "schema": MANIFEST_SCHEMA,
         "corpus": "Bach chorales",
         "preset": preset,
         "timestamp": timestamp,
@@ -125,12 +216,29 @@ def _write_manifest(out_dir: Path, preset: str, score_status: dict,
         "expected_count": expected_count,
         "ours_count": ok_count,
         "complete": complete,
+        # OI-307: which inference pipeline produced these outputs. `inference_arm` is the
+        # value of record; the three fields under it are the evidence it was derived from,
+        # kept so a reader can see WHICH of the two sources answered and whether they agreed.
+        "inference_arm": arm,
+        "inference_arm_source": arm_source,
+        "inference_arm_requested": requested_arm,
+        "inference_arm_observed": observed_arm,
+        "joint_inference_dir": joint_inference_dir,
+        "analysis_path_values": {(k if k is not None else "<absent>"): v
+                                 for k, v in sorted(analysis_path_values.items(),
+                                                    key=lambda kv: (kv[0] is None, kv[0]))},
         # Informational provenance copy-through (audit C2): which music21 produced
         # the ground-truth .music21.json. NOT enforced by validate_corpus_dir.
         "music21_version": music21_version,
         "batch_analyze": exe_id,
         "scores": scores,
     }
+    if observed_arm == ARM_MIXED:
+        # Only on a mixed corpus, where the per-value stem lists ARE the finding. On a clean
+        # corpus they would be 352 stems of no information.
+        manifest["analysis_path_stems"] = {
+            (k if k is not None else "<absent>"): sorted(v)
+            for k, v in sorted(analysis_path_stems.items(), key=lambda kv: (kv[0] is None, kv[0]))}
     (out_dir / MANIFEST_NAME).write_text(
         json.dumps(manifest, indent=2, sort_keys=True), encoding="utf-8")
     return manifest
@@ -525,13 +633,49 @@ def main():
         print(f"Diagnostic stderr written to {args.diag_out}")
 
     # ── Manifest stamp + fail-loud completeness check (Stage 2.2a) ────────────
+    # OI-307: the invocation makes a claim about the arm only when it regenerated everything.
+    # --skip-cpp and --resume both keep files this run did not produce, so this run's flags
+    # say nothing about them; the claim is then withheld and the files are the only evidence.
+    requested_arm = None
+    if not args.skip_cpp and not args.resume:
+        requested_arm = ARM_JOINT if args.joint_inference else ARM_LEGACY
+
     manifest = _write_manifest(out_dir, args.preset, score_status,
                                expected_count=total, git_hash=_get_git_hash(),
                                timestamp=timestamp, exe=exe,
-                               music21_version=_detect_music21_version(corpus_dir))
+                               music21_version=_detect_music21_version(corpus_dir),
+                               requested_arm=requested_arm,
+                               joint_inference_dir=args.joint_inference)
     print(f"Manifest written to {out_dir / MANIFEST_NAME}  "
           f"(preset={args.preset}, complete={manifest['complete']}, "
-          f"{manifest['ours_count']}/{total})")
+          f"{manifest['ours_count']}/{total}, arm={manifest['inference_arm']})")
+
+    # ── OI-307: the arm the invocation asked for and the arm the files report must agree ──
+    # This cannot fire on a normal run; it fires when the directory holds output from more
+    # than one pipeline, or when the flag and the output disagree. Both are states in which
+    # any figure measured off this corpus describes a system nobody named, so it is a stop
+    # rather than a warning.
+    arm_faults = []
+    if manifest["inference_arm"] == ARM_MIXED:
+        arm_faults.append(
+            f"the directory mixes analysisPath values: {manifest['analysis_path_values']}")
+    if (requested_arm in (ARM_JOINT, ARM_LEGACY)
+            and manifest["inference_arm_observed"] in (ARM_JOINT, ARM_LEGACY)
+            and requested_arm != manifest["inference_arm_observed"]):
+        arm_faults.append(
+            f"the invocation asked for the {requested_arm} arm and the produced files report "
+            f"the {manifest['inference_arm_observed']} arm")
+    if arm_faults:
+        print("\n" + "!" * 65, file=sys.stderr)
+        # ASCII only (OI-297): this module reconfigures stdout (:30) and NOT stderr, and
+        # every line of this block goes to stderr.
+        print(f"!! INFERENCE-ARM FAULT: preset={args.preset}", file=sys.stderr)
+        for f in arm_faults:
+            print(f"!!   {f}", file=sys.stderr)
+        print("!!   This corpus is NOT safe to measure; see OPEN_ITEMS.md OI-307.",
+              file=sys.stderr)
+        print("!" * 65, file=sys.stderr)
+        sys.exit(1)
 
     if not manifest['complete']:
         bad = sorted(s for s, st in score_status.items() if st != 'OK')

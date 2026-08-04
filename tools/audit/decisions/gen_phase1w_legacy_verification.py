@@ -62,8 +62,11 @@ class Stop(Exception):
 A1_GENERATOR_QUOTES = [
     (70, 'LEGACY_MARK = ('),
     (81, 'LEGACY_TRANSFER_MARK = ('),
-    (447, "if d.get(\"legacy_subject\"):"),
-    (449, 'else LEGACY_MARK)'),
+    # Re-aimed 2026-08-04 (phase 1z) from this generator's own STOP message (447 -> 455), per
+    # citation: the phase-1z ratification event added lines to the register generator's PREAMBLE,
+    # above these two and below the first two, which is why only these two move.
+    (455, "if d.get(\"legacy_subject\"):"),
+    (457, 'else LEGACY_MARK)'),
 ]
 
 # ── The recorded figures this wave reports as not matching the derived count ─────────────

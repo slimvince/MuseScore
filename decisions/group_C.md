@@ -297,7 +297,7 @@
 
 **Status.** LIVE · decided 2026-06-22 · ratified by user
 
-**Home.** `CLAUDE.md:579`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:597`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:443-486, block (B), carried over unchanged to the robust unit at R10-b. Full provenance `cowork_gate_policy_amendment.md`. The four guardrails that make the tracked class conditional - verified at the score per case, default to the barred class on any doubt, the barred class non-increasing, case identities recorded - are at CLAUDE.md:464-473.
 
@@ -313,7 +313,7 @@
 
 **Status.** LIVE · decided 2026-07-13 · ratified by user
 
-**Home.** `CLAUDE.md:505-507`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:523-525`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:239 (OI-132), ruled by the user 2026-07-13 and landed at 800f1a12bf. The adjudication probe is `cc_mode_grading_adjudication_probe_report.md`; the re-baseline record is `cc_key_grading_and_calibration_rebaseline_report.md`. It is implemented in ONE shared reduction, `compare_rn._our_key_tonic`, onto which the second key parser was folded (#6). OPEN_ITEMS OI-240 closes on this move
 
@@ -329,7 +329,7 @@
 
 **Status.** LIVE · decided 2026-07-12 · ratified by user
 
-**Home.** `CLAUDE.md:515-517`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:533-535`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:270 (OI-143), adopted at d9b52ba969. The current values are in the CLAUDE.md gate block (A): key-agree against the home key 56.14 %, against the local key 78.42 %. OPEN_ITEMS OI-240 closes on this move
 
@@ -345,7 +345,7 @@
 
 **Status.** LIVE · decided 2026-07-12 · ratified by user
 
-**Home.** `CLAUDE.md:520-522`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:538-540`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:217 (OI-33), resolved 2026-07-12 in the key-layer readiness wave 1. Its current reading on the production arm is D-114 - the decoder commits its best path, so the abstain counter reads zero. OPEN_ITEMS OI-240 closes on this move
 
@@ -371,7 +371,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:3690-3698`
+**Home.** `ARCHITECTURE.md:3719-3727`
 
 **Provenance.** The band is stated at ARCHITECTURE.md:3567-3575. The governing measurement surface is now the robust unit ratified at R10-b (CLAUDE.md gate block (A)), whose figures are reported per preset on a different unit; no ruling names this band as replaced. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -752,7 +752,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `CLAUDE.md:492-494`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:510-512`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Recorded in `cowork_handoff_archive.md` (the corpus-audit block, as the ground-truth verdict). The human-annotation-only requirement it names was delivered as the granularity-robust unit (D-115), whose own text carries the clause "music21 is NOT ground truth"; the two further clauses — never describe a measurement as ground-truth agreement, and no self-annotation in any measurement — are recorded ONLY here. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]] — measurement conventions go to the gate block): written into `CLAUDE.md` gate block (A) as the FIRST of the four grading conventions the robust unit is measured under, carrying all three clauses the archive held alone. Former home preserved (#12): `cowork_handoff_archive.md:2844`, the corpus-audit block.
 
@@ -863,4 +863,37 @@
 **Home section.** **“Stage 5”** — `## Stage 5 — Fit the weights *(stop hand-tuning)*` (heading at line 532). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
 
 **Provenance.** `docs/implementation_roadmap.md`:460-461, recorded at the Stage-5 fitter design's signing: "Stage-5 design SIGNED 2026-07-04 … A-3 ruled = Jazz fit deferred to the jazz-GT conversion". The document states the DESIGN was signed that day but does not say who ruled A-3, so the ratifier is NOT STATED. A-3 is one of the ten external-review amendments the record marks user-ratified 2026-07-02 at `:148-151`, but that ratification is of the amendment, not of this later disposition of it. Beside D-310 (jazz accuracy not measurable) and `OPEN_ITEMS.md` OI-7 (establish a jazz ground truth or de-scope the jazz claims). Recorded in a plan rather than in the fitter's own specification, hence the documentation-gap flag. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+
+### D-466 — Forward-only is a strong DEFAULT, not dogma — a backward edge is admissible only as a deliberate, surfaced, measured, documented exception
+
+> **Forward-only is a strong *default*, not dogma:** a sanctioned backward edge is admissible
+>   only as a deliberate, surfaced, measured, documented exception (justified by a plateau, scoped, gated,
+>   convergence-bounded, recorded).
+
+**In plain words.** The rule that each stage passes its work forward and never reaches back may be relaxed if it genuinely gets in the way of being right. But only deliberately and in the open: the case must be justified by evidence that the forward-only path has stopped improving, confined to the cases that need it, gated so it does not fire on the ordinary majority, bounded so an iterative one cannot run away, and recorded as an architecture decision. A silent cycle is never admissible.
+
+**Why.** Stated with the rule in the target-architecture document read in full this wave: the bar is high precisely because a backward edge trades away the acyclic guarantee — which is what makes the pipeline deterministic and removes any convergence question — but the rule exists so that the guarantee is a chosen default rather than an unexaminable commitment.
+
+**Status.** LIVE · decided 2026-06-22 · ratified by user
+
+**Entry ratified.** 2026-08-04 · by user
+
+**Home.** `ARCHITECTURE.md:861-863`
+
+**Provenance.** Carried in ARCHITECTURE.md §2.15's confidence-weighted-override bullet, whose full statement is `cowork_target_architecture.md` §2, read in full by the phase-1 reads wave 1 — where the clause is marked "user, 2026-06-22" and states the five conditions in full. D-025 carries the forward-only rule itself and its two scoped escapes; the revision clause is entered here because no register entry carried it. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+
+### D-468 — The pinned block-(A) instrument declares which inference arm its baselines were measured on, and refuses a corpus whose stamp disagrees
+
+> **★ THE PINNED INSTRUMENT NOW DECLARES WHICH INFERENCE ARM ITS BASELINES WERE MEASURED ON, AND REFUSES
+> A CORPUS WHOSE STAMP DISAGREES
+
+**In plain words.** The measurement tool that produces every baseline in the hard-stop block now says out loud which of the two analysis pipelines those baselines came from, and it declines to measure a corpus whose own record says it came from the other one. It cannot change any measured value; it can only decline.
+
+**Why.** Stated with the decision at its home: the defect being closed is that --joint-inference is opt-in, so a regeneration that omits it silently fills the directory this instrument reads with the other pipeline's output, and an opt-in DETECTOR would reproduce that hole's shape exactly — absent from precisely the invocation that most needs it. Hence a declared default rather than a flag. The instrument is one CLAUDE.md gate block (A) calls pinned, so the narrow claim that it can only refuse and can move no measured value is itself measured rather than asserted (#19).
+
+**Status.** LIVE · decided 2026-08-03 · ratifier not stated
+
+**Home.** `CLAUDE.md:376-377`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** Built 2026-08-03 (CC, phase 1y, dispatch cc_instruction_phase1y_corpus_arm_stamping.md) as the manifest half of OPEN_ITEMS.md OI-307, and flagged there as a judgment call for the user rather than buried; recorded at gate block (A) 2026-08-04 (phase 1z, dispatch cc_instruction_phase1z_commit_and_instrument_record.md Task 2.3), the block that pins the instrument being where a change to it belongs (#7). ★ THE USER HAS NOT RULED ON IT: recording is not ratifying, and no ratifier is inferred from the dispatch that ordered the record. The two measurements it rests on are generated, and no value of either is restated in the record (#17f, D-431): that the declaration moves nothing is at tools/audit/instrument_arm_declaration_effect.json, which runs gate block (A)'s own two commands at HEAD over the production corpus and diffs against the committed tools/robust_stop/ reference; that it detects a wrong-arm corpus, admits a right-arm one and leaves an undeclared caller alone is at tools/audit/corpus_arm_establishment.json, probes 2, 3 and 4. Reversal is one default (EXPECT_ARM_DEFAULT set to 'any').
 

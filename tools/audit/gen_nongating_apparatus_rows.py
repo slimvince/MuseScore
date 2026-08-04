@@ -251,7 +251,29 @@ V = {
                "and the exemption is what makes the classification easy: an establishment "
                "obligation always gates whatever its subject, because backgrounding one is how "
                "it never happens. The apparatus test is not reached and is not applied."),
+    # OI-316 and OI-319 (rowed 2026-08-04, READ WAVE 1) are NOT first-cut candidates -- the
+    # over-inclusive vocabulary does not reach their subject columns -- so no verdict is authored
+    # for them here, on the OI-305/OI-306 precedent four rows above. Both therefore carry the
+    # default, which is that they GATE. OI-319 reads as apparatus (a section-pointer field) and
+    # its own text says so; that is not enough, and the row records why.
+    "OI-317": (NON_GATING, "user",
+               "A document's STATUS BANNER says the file is uncommitted and under a commit hold; "
+               "it is committed. D-438's line inside the documentation rows names a banner as "
+               "apparatus in terms. The substantive half of the same document's staleness -- what "
+               "it says about the piece-start shortcut -- is a separate row, OI-315, which gates."),
+    "OI-318": (NON_GATING, "user",
+               "Two LABELS in the canonical document: the Layer-6 section still calls the grouping "
+               "unit a 'phrase' after the ratified rename reserved that word, and one section "
+               "number is used twice. D-438's line names a label and an anchor as apparatus, and "
+               "item (1) is already sequenced as its own scoped terminology work item under "
+               "OI-229. Neither states anything false about what the analysis does."),
     # ---------------------------------------------------------------------- GATES
+    "OI-315": (GATES, "a statement about the analysis's build state",
+               "The canonical specification describes a key-layer behaviour in the present tense "
+               "that the code removed on 2026-06-14, and register entry D-058 carries it LIVE. "
+               "D-438's line inside the documentation rows makes a correction to a statement about "
+               "the analysis or its BUILD STATE gating, and this is one with a live register entry "
+               "riding on it -- the same clause as OI-303 and OI-304, one surface further in."),
     "OI-45": (GATES, "specification completeness",
               "Half of it is stale anchors, which would be apparatus - but the other half is a "
               "scoring constant with no entry in the scoring specification at all, and phase 1 "

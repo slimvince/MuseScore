@@ -1,0 +1,84 @@
+{
+  "purpose": "A run of tools/audit/process_check.py over named dispatches or reports. Generated so a report cites this file rather than transcribing what the check found (D-431).",
+  "rules": [
+    "D-431 bare quantity",
+    "D-431 uncited code claim",
+    "D-434 missing self-check section"
+  ],
+  "files_scanned": [
+    "cc_instruction_phase1y_corpus_arm_stamping.md"
+  ],
+  "findings_total": 9,
+  "by_file": {
+    "cc_instruction_phase1y_corpus_arm_stamping.md": {
+      "findings": 9,
+      "rows": [
+        {
+          "file": "cc_instruction_phase1y_corpus_arm_stamping.md",
+          "line": 48,
+          "rule": "D-431 bare quantity",
+          "detail": "2.1",
+          "sentence": "`characterise_bir_false.py` and `tools/a8_rebaseline_measure.py` both route through it. → **Task 2.1**."
+        },
+        {
+          "file": "cc_instruction_phase1y_corpus_arm_stamping.md",
+          "line": 51,
+          "rule": "D-431 bare quantity",
+          "detail": "4.1",
+          "sentence": "block; whether the block reads as Cowork last saw it is unchecked. → **Task 4.1**."
+        },
+        {
+          "file": "cc_instruction_phase1y_corpus_arm_stamping.md",
+          "line": 64,
+          "rule": "D-431 bare quantity",
+          "detail": "2.1",
+          "sentence": "**2.1 Check A2** — establish which function enforces the manifest and which measurement tools route"
+        },
+        {
+          "file": "cc_instruction_phase1y_corpus_arm_stamping.md",
+          "line": 68,
+          "rule": "D-431 bare quantity",
+          "detail": "2.2",
+          "sentence": "**2.2 The new check.** A manifest at the new schema must carry the arm, and a mismatch between the"
+        },
+        {
+          "file": "cc_instruction_phase1y_corpus_arm_stamping.md",
+          "line": 71,
+          "rule": "D-431 bare quantity",
+          "detail": "2.3",
+          "sentence": "**2.3 The transition, declared and bounded.** Manifests at the **old** schema carry no arm and must"
+        },
+        {
+          "file": "cc_instruction_phase1y_corpus_arm_stamping.md",
+          "line": 94,
+          "rule": "D-431 uncited code claim",
+          "detail": "dormant",
+          "sentence": "STOP** — it would mean the hard stop has been reading a corpus from the dormant pipeline, and nothing"
+        },
+        {
+          "file": "cc_instruction_phase1y_corpus_arm_stamping.md",
+          "line": 99,
+          "rule": "D-431 bare quantity",
+          "detail": "4.1",
+          "sentence": "**4.1 Check A3** at `CLAUDE.md` gate block (C)'s own text."
+        },
+        {
+          "file": "cc_instruction_phase1y_corpus_arm_stamping.md",
+          "line": 101,
+          "rule": "D-431 bare quantity",
+          "detail": "4.2",
+          "sentence": "**4.2 Do NOT redirect the procedure.** Block (C)'s commands write into the directory block (A) reads,"
+        },
+        {
+          "file": "cc_instruction_phase1y_corpus_arm_stamping.md",
+          "line": 106,
+          "rule": "D-431 bare quantity",
+          "detail": "4.3",
+          "sentence": "**4.3 Row the residue** — that block (C)'s documented procedure clean-slates the hard stop's corpus"
+        }
+      ]
+    }
+  },
+  "clean_files": [],
+  "establishment": "tools/audit/process_check_establishment.json — the check's measured detection power and false-positive rate. Read it before reading a count here as coverage."
+}

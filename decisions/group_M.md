@@ -18,7 +18,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4417`
+**Home.** `ARCHITECTURE.md:4446`
 
 **Provenance.** ARCHITECTURE.md:4292-4296 (§6.1); the principle it realizes is D-070 (§2.1). No date or ratifier stated.
 
@@ -35,7 +35,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4461`
+**Home.** `ARCHITECTURE.md:4490`
 
 **Provenance.** ARCHITECTURE.md:4338-4341 (§6.2). No date or ratifier stated.
 
@@ -50,7 +50,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4497`
+**Home.** `ARCHITECTURE.md:4526`
 
 **Provenance.** ARCHITECTURE.md:4372-4375 (§6.4); the principle it realizes is D-070 (§2.1/§2.4). No date or ratifier stated.
 
@@ -69,7 +69,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4545`
+**Home.** `ARCHITECTURE.md:4574`
 
 **Provenance.** `ARCHITECTURE.md`:4528-4579 (§6.7). The SUBJECT is unchanged — one shared style taxonomy, not two parallel vocabularies — and the property it records survived the taxonomy's replacement intact. ★ VERBATIM RE-TAKEN 2026-08-03 (CC, phase 1k) from the corrected §6.7, on the user's OI-279 ruling of the same date (option (a): order the doc-sync correction, the genre list retained as marked historical context). The FORMER verbatim, preserved here under #12, quoted the retired hand-made genre taxonomy: "The style vocabulary the presets select on is **one shared, hierarchical taxonomy** (common-practice / jazz / vernacular families — Baroque, Classical/galant, Romantic; trad, swing/songbook, bebop, hard-bop, cool, modal; blues, ragtime, gospel-soul, rock, pop, folk, barbershop) — the **same** set the Harmonic Vocabulary (§7) tags its entries with, not two parallel vocabularies. Inclusion rule: a style is listed iff it has a **distinct functional-harmonic vocabulary** (free jazz / atonal excluded)." That list was superseded by the five-idiom set, ratified by the user 2026-06-30 and encoded (`cowork_progression_schema_dictionary.md:317-330`); the old inclusion rule belonged to the genre list and is retired with it, NOT carried across to the idioms — the idioms' own admission basis is the discovery study's cap-robustness check (`cowork_style_taxonomy_proposal.md:58-61`), now stated in §6.7. No date or ratifier is stated for the shared-taxonomy decision itself.
 
@@ -88,7 +88,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4580`
+**Home.** `ARCHITECTURE.md:4609`
 
 **Provenance.** `ARCHITECTURE.md`:4565-4570 (§6.7). ★ NARROWED and VERBATIM RE-TAKEN 2026-08-03 (CC, phase 1k) on the user's OI-279 ruling of the same date, sub-ruling (i): DEFERRED over the **per-preset weights alone**; the CLUSTERS half is SUPERSEDED BY the five-idiom ratification of 2026-06-30 (`cowork_style_taxonomy_proposal.md:3-9`; the encoded `enum class Idiom` + `IdiomSet`). The FORMER verbatim, preserved here under #12, made no such split: "It is a **theory-based v1**; **empirically grounding** it — deriving the clusters *and* the per-style weights by clustering corpora — is committed future work (`cowork_style_clustering_plan.md`)" — whose "theory-based v1" characterization was itself false in the other direction, the five idioms being empirically discovered. The former scope was therefore undifferentiated over two halves of which one was already delivered. No date or ratifier is stated for the original deferral; the narrowing is the user's, 2026-08-03. Note: `cowork_style_clustering_plan.md` itself still presents BOTH halves as future work and carries no annotation of the delivery — rowed as `OPEN_ITEMS.md` OI-282.
 
@@ -104,7 +104,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4611`
+**Home.** `ARCHITECTURE.md:4640`
 
 **Provenance.** ARCHITECTURE.md:4437-4451 (§7); own specification `cowork_progression_schema_dictionary.md`. No date or ratifier stated.
 

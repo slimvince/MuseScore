@@ -198,6 +198,14 @@ TRIAGE: dict[str, tuple[str, str]] = {
                       "user-ratified surfaces the pass searches, and the TARGET side is the "
                       "home document being graded. A surface being in the first list gives it "
                       "no standing in the second."),
+    "D-468": (EXISTS, "The rule IS a mechanism: `tools/a8_rebaseline_measure.py` carries the "
+                      "declared arm and `characterise_bir_false.validate_corpus_dir` refuses a "
+                      "mismatch, with no human step. Its detection and its non-interference are "
+                      "both measured -- `tools/audit/corpus_arm_establishment.json` (a wrong-arm "
+                      "corpus refused, a right-arm one admitted, an undeclared caller "
+                      "unaffected) and `tools/audit/instrument_arm_declaration_effect.json` (the "
+                      "declaration moves no measured value). What it does NOT do is prevent the "
+                      "corpus being destroyed, which is why OPEN_ITEMS.md OI-312 stays open."),
 }
 
 

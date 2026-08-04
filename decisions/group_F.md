@@ -119,7 +119,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3523`
+**Home.** `ARCHITECTURE.md:3549`
 
 **Provenance.** ARCHITECTURE.md:3396-3403. Cited by open_items/OI-228 as the primary source the joint emission departs from. NOT catchable by the harvest's signature net - the reason this adjudication had to read the specifications in full
 
@@ -127,21 +127,18 @@
 
 ⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
-> when the
-> analysis tick is within the first 16 quarter-note beats (a separate constant from the 16-beat lookback window below —
-> they coincide in value, not by design), no prior result exists (`prevResult == nullptr`),
-> and the key signature carries an explicit mode, the function returns the declared mode
-> immediately (confidence 0.5) rather than waiting for pitch evidence that cannot yet exist.
+> **There is no piece-start exception — the opening is note-based.** At piece start
+> `resolveKeyAndModeRanked()` runs its ordinary path.
 
 **In plain words.** At the very start of a piece there is not yet enough music to judge the key, so if the score declares major or minor the program simply believes it, marked as a middling-confidence answer.
 
 **Why.** derivation not recorded.
 
-**Status.** LIVE · date not stated · ratifier not stated
+**Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3510-3514`
+**Home.** `ARCHITECTURE.md:3525-3526`
 
-**Provenance.** ARCHITECTURE.md:3387-3392 calls it 'a deliberate pragmatic choice for the score opening, not a general bypass'. NOT catchable by the harvest's signature net
+**Provenance.** ARCHITECTURE.md:3387-3392 calls it 'a deliberate pragmatic choice for the score opening, not a general bypass'. NOT catchable by the harvest's signature net ★ SUPERSEDED IN FACT — recorded 2026-08-04 (phase 1z, dispatch cc_instruction_phase1z_commit_and_instrument_record.md Task 3.4; OPEN_ITEMS.md OI-315). The mechanism this decision records was REMOVED from the code in Stage 4b-i on 2026-06-14: src/composing/analysis/key/keyresolver.cpp:291-301 states the removal in its own comment, and docs/key_path_design.md:65-73 dates it and names the re-targeted pins (Composing_KeyresolverTests.PieceStartOpening_NoteBased_DeclaredMinor/_DeclaredMajor). It is NOT falsified: nothing showed the decision wrong, a later BUILD replaced what it governs without a ruling that names it — which is what this register's status vocabulary calls superseded-in-fact. The ⚠ LEGACY mark STAYS: the subject is still the legacy key path, and the mark states what the decision is ABOUT. ★ Verbatim RE-TAKEN 2026-08-04 from the corrected specification text. The sentence this entry quoted — 'when the analysis tick is within the first 16 quarter-note beats (a separate constant from the 16-beat lookback window below — they coincide in value, not by design), no prior result exists (`prevResult == nullptr`), and the key signature carries an explicit mode, the function returns the declared mode immediately (confidence 0.5) rather than waiting for pitch evidence that cannot yet exist.' — was false at HEAD and is corrected in place at ARCHITECTURE.md §5.2, which now states that there is no piece-start exception, that the opening is note-based, and that the removal is tried and closed; the former wording is preserved here rather than deleted (#12). What did NOT change: the decision's own date and ratifier remain 'not stated', and no defense is supplied that the record never had.
 
 ### D-059 — The temporal window - 16 beats back, 8 beats forward, decayed
 
@@ -155,7 +152,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3548`
+**Home.** `ARCHITECTURE.md:3577`
 
 **Provenance.** ARCHITECTURE.md:3423-3435; legacy-arm only since the switch (D-010). Derivation not recorded: the only stated basis for 16 and 8 is the in-code gloss '~4 measures in 4/4' / '~2 measures ahead' (ARCHITECTURE.md:3428-3429) - no theory citation and no measurement
 

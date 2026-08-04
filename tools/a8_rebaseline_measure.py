@@ -73,6 +73,20 @@ WIR_DIR = _ROOT / "tools" / "dcml" / "when_in_rome"
 
 PRESETS = ["baroque", "jazz", "default"]
 
+# ── THE INFERENCE ARM THIS INSTRUMENT'S NUMBERS ARE ABOUT (OPEN_ITEMS.md OI-307) ─────────
+# Every baseline this instrument produces for CLAUDE.md gate block (A) was measured on the
+# JOINT estimator's output — the OI-178 adoption made it the production inference layer on
+# the batch/corpus surface (user-ratified 2026-07-26). The legacy analyzeScore pipeline
+# writes the same file shape into the same directory, and every other check in
+# validate_corpus_dir passes on it, so without this declaration the hard stop can be run
+# against the dormant pipeline and report a regression that is not one.
+#
+# This changes no measured figure. It can only REFUSE, and only when the corpus says it came
+# from the other pipeline. `--expect-arm legacy|any` states a different intent explicitly;
+# a corpus whose manifest predates the field reports ARM-UNKNOWN and is not refused (the
+# declared transition in characterise_bir_false).
+EXPECT_ARM_DEFAULT = cbf.ARM_JOINT
+
 RN_CATEGORIES = crn.RN_CATEGORIES  # (exact, partial, key_disagree, quality_disagree, root_err)
 
 
@@ -282,14 +296,15 @@ def batch_gate_cases(ours_regions, m21_regions, wir_regions):
     return cases
 
 
-def measure_preset(preset, out_dir, corpus_root=None, scores=None):
+def measure_preset(preset, out_dir, corpus_root=None, scores=None, expect_arm=EXPECT_ARM_DEFAULT):
     # corpus_root: the dir holding the per-preset corpus subdirs (<root>/<preset>).
     # Default = tools/corpus (the frozen corpus). The Stage-5 fitter passes a scratch
     # root so a fitted regen is measured WITHOUT touching the frozen corpus. Default
     # (None) is byte-identical to the historical hardcoded path.
     corpus_root = Path(corpus_root) if corpus_root else (_ROOT / "tools" / "corpus")
     corpus_dir = corpus_root / preset
-    cbf.validate_corpus_dir(corpus_dir)   # manifest / no-contamination gate (raises on fail)
+    # manifest / no-contamination / INFERENCE-ARM gate (raises on fail); see EXPECT_ARM_DEFAULT.
+    cbf.validate_corpus_dir(corpus_dir, expect_arm=expect_arm)
 
     ours_files = sorted(corpus_dir.glob("*.ours.json"))
     # Stage-5 fitter: optional stem filter (the fitting/held-out split). None => all
@@ -615,6 +630,13 @@ def main():
                     help="Path to a newline-separated stem list; restrict the measured "
                          "objective to exactly those scores (the fitting/held-out split). "
                          "Default: all scores (byte-identical to the historical run).")
+    ap.add_argument("--expect-arm", default=EXPECT_ARM_DEFAULT,
+                    choices=[cbf.ARM_JOINT, cbf.ARM_LEGACY, "any"],
+                    help="OI-307: the inference arm this measurement is about. Default "
+                         "'joint' — the arm every gate block (A) baseline was measured on. "
+                         "A corpus recorded as the other arm is REFUSED; one whose manifest "
+                         "predates the field reports ARM-UNKNOWN and is not refused. Changes "
+                         "no figure; it can only refuse.")
     args = ap.parse_args()
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -628,7 +650,8 @@ def main():
     for preset in presets:
         res, a_runs, b_runs, batch_cases = measure_preset(preset, out_dir,
                                                           corpus_root=args.corpus_root,
-                                                          scores=scores)
+                                                          scores=scores,
+                                                          expect_arm=args.expect_arm)
         summary[preset] = res
         print(f"[{preset}] validated grid==oracle OK; "
               f"batch_gate={res['batch_gate_count']} "

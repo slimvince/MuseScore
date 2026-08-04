@@ -74,7 +74,9 @@ RULE_SOURCE = {
     # Re-aimed 2026-08-03 from the generator's own drift report (1002 -> 1026), per citation and
     # never by an assumed shift: this session's register-section insertion moved every line below
     # it in CLAUDE.md, and the same file also carries a second insertion with a different offset.
-    "expected_line": 1026,
+    # Re-aimed again 2026-08-04 (phase 1z) from the generator's own drift report (1026 -> 1044),
+    # per citation: the instrument record added to gate block (A) moved every line below it.
+    "expected_line": 1044,
     "quote": "**Phase 2 - issue-finding is EXHAUSTED with measured coverage:** the remaining audit partitions",
     "what_it_is": (
         "The defining source for phase 2. The user-directed three-phase rule (register entry "
@@ -536,7 +538,9 @@ ITEMS = [
         "rule_phrase": "each search reporting its detection power, ending in the bounded trust statement",
         "source": {
             "file": "CLAUDE.md",
-            "expected_line": 1031,   # re-aimed 2026-08-03 from the drift report (1029 -> 1031)
+            # re-aimed 2026-08-03 from the drift report (1029 -> 1031), and again 2026-08-04
+            # at phase 1z from the same report (1031 -> 1049)
+            "expected_line": 1049,
             "quote": "each search reporting its detection power, ending in the bounded trust statement - every",
         },
         "scope_basis": (

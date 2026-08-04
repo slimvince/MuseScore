@@ -1,0 +1,218 @@
+{
+  "purpose": "The measured effect, on the CLAUDE.md gate block (A) hard stop, of the pinned instrument declaring which inference arm its baselines were measured on: it moves no measured value, and can only refuse.",
+  "generated_by": "tools/audit/instrument_arm_declaration_effect.py",
+  "generated_for": "cc_instruction_phase1z_commit_and_instrument_record.md, Task 2.2 -- the dispatch's assumption A2 (that this result was already in a committed artifact) came back ABSENT, and its accepted-outcomes section says the measurement is generated into an artifact before the record cites it.",
+  "the_claim_it_establishes": "The instrument change recorded in CLAUDE.md gate block (A)'s provenance CANNOT MOVE A MEASURED VALUE, ONLY REFUSE. The refusal half is measured elsewhere and is not repeated here.",
+  "what_is_measured_elsewhere": "That a wrong-arm corpus is detected, that a right-arm one is not refused, and that a caller declaring nothing is unaffected: tools/audit/corpus_arm_establishment.json, probes 2, 3 and 4.",
+  "why_this_is_a_run_and_not_a_reading_of_the_source": "The instrument at HEAD is executed over the production corpus by gate block (A)'s own two commands, and its output is compared with the committed tools/robust_stop/ reference by the diff tool that block names. Nothing is inferred from reading the arm code.",
+  "one_normalization_and_why": "Both commands print the candidate out-dir, which is a fresh temporary directory on every run; it is replaced by '<candidate-out-dir>' in the captured text and in the recorded command lines. Without it this artifact would be unreproducible by construction. Narrow, and no verdict is affected.",
+  "the_procedure": [
+    "python tools/a8_rebaseline_measure.py --out-dir <candidate-out-dir>",
+    "python tools/robust_stop_diff.py --candidate <candidate-out-dir>"
+  ],
+  "the_reference_it_is_diffed_against": "tools/robust_stop/ -- the committed diff base CLAUDE.md gate block (A) names, unmoved by this run and by the wave that recorded it.",
+  "runs": {
+    "the_measurement": {
+      "command": "python tools/a8_rebaseline_measure.py --out-dir <candidate-out-dir>",
+      "exit_code": 0,
+      "stdout": [
+        "[baroque] validated grid==oracle OK; batch_gate=515 grid_a_cells=1524 grid_a_runs=1468 grid_b_cells=4980",
+        "[jazz] validated grid==oracle OK; batch_gate=515 grid_a_cells=1524 grid_a_runs=1468 grid_b_cells=4980",
+        "[default] validated grid==oracle OK; batch_gate=515 grid_a_cells=1524 grid_a_runs=1468 grid_b_cells=4980",
+        "",
+        "Wrote summary.json + per-preset enumerations to <candidate-out-dir>"
+      ],
+      "stderr": []
+    },
+    "the_diff_against_the_committed_reference": {
+      "command": "python tools/robust_stop_diff.py --candidate <candidate-out-dir>",
+      "exit_code": 0,
+      "stdout": [
+        "=== baroque ===",
+        "  runs: reference=4547 candidate=4547  (+0 / -0)",
+        "  WiR COVERAGE: reference=326 candidate=326  -> OK",
+        "  (a) HARD STOP class-(b) root-disagree dur: ref=1817280 cand=1817280 delta=+0  -> PASS",
+        "  (c) TRACKED  class-(a) root-disagree dur: ref=89040 cand=89040 delta=+0",
+        "  (—) KEY-AGREE home:  ref=56.1427% cand=56.1427%    local: ref=78.4161% cand=78.4161%",
+        "  (—) KEY-ABSTAIN (OI-33; excluded from the key-agree denominator): ref=0.0000% cand=0.0000%",
+        "  (b) DIAGNOSTIC ADDED (candidate not in reference): 0 runs (class-b 0 / class-a 0)",
+        "  (b) DIAGNOSTIC REMOVED (reference not in candidate): 0 runs (class-b 0 / class-a 0)",
+        "=== jazz ===",
+        "  runs: reference=4547 candidate=4547  (+0 / -0)",
+        "  WiR COVERAGE: reference=326 candidate=326  -> OK",
+        "  (a) HARD STOP class-(b) root-disagree dur: ref=1817280 cand=1817280 delta=+0  -> PASS",
+        "  (c) TRACKED  class-(a) root-disagree dur: ref=89040 cand=89040 delta=+0",
+        "  (—) KEY-AGREE home:  ref=56.1427% cand=56.1427%    local: ref=78.4161% cand=78.4161%",
+        "  (—) KEY-ABSTAIN (OI-33; excluded from the key-agree denominator): ref=0.0000% cand=0.0000%",
+        "  (b) DIAGNOSTIC ADDED (candidate not in reference): 0 runs (class-b 0 / class-a 0)",
+        "  (b) DIAGNOSTIC REMOVED (reference not in candidate): 0 runs (class-b 0 / class-a 0)",
+        "=== default ===",
+        "  runs: reference=4547 candidate=4547  (+0 / -0)",
+        "  WiR COVERAGE: reference=326 candidate=326  -> OK",
+        "  (a) HARD STOP class-(b) root-disagree dur: ref=1817280 cand=1817280 delta=+0  -> PASS",
+        "  (c) TRACKED  class-(a) root-disagree dur: ref=89040 cand=89040 delta=+0",
+        "  (—) KEY-AGREE home:  ref=56.1427% cand=56.1427%    local: ref=78.4161% cand=78.4161%",
+        "  (—) KEY-ABSTAIN (OI-33; excluded from the key-agree denominator): ref=0.0000% cand=0.0000%",
+        "  (b) DIAGNOSTIC ADDED (candidate not in reference): 0 runs (class-b 0 / class-a 0)",
+        "  (b) DIAGNOSTIC REMOVED (reference not in candidate): 0 runs (class-b 0 / class-a 0)",
+        "",
+        "OVERALL: PASS (hard stop = class-(b) duration non-increase + WiR coverage non-shrink, all presets)"
+      ],
+      "stderr": []
+    }
+  },
+  "per_preset": {
+    "baroque": {
+      "runs": {
+        "reference": 4547,
+        "candidate": 4547,
+        "added": 0,
+        "removed": 0
+      },
+      "wir_coverage": {
+        "reference": 326,
+        "candidate": 326,
+        "verdict": "OK"
+      },
+      "hard_stop_class_b_duration": {
+        "reference": 1817280,
+        "candidate": 1817280,
+        "delta": 0,
+        "verdict": "PASS"
+      },
+      "tracked_class_a_duration": {
+        "reference": 89040,
+        "candidate": 89040,
+        "delta": 0
+      },
+      "key_agree_percent": {
+        "home": {
+          "reference": "56.1427",
+          "candidate": "56.1427"
+        },
+        "local": {
+          "reference": "78.4161",
+          "candidate": "78.4161"
+        }
+      },
+      "key_abstain_percent": {
+        "reference": "0.0000",
+        "candidate": "0.0000"
+      },
+      "added_runs": {
+        "total": 0,
+        "class_b": 0,
+        "class_a": 0
+      },
+      "removed_runs": {
+        "total": 0,
+        "class_b": 0,
+        "class_a": 0
+      }
+    },
+    "jazz": {
+      "runs": {
+        "reference": 4547,
+        "candidate": 4547,
+        "added": 0,
+        "removed": 0
+      },
+      "wir_coverage": {
+        "reference": 326,
+        "candidate": 326,
+        "verdict": "OK"
+      },
+      "hard_stop_class_b_duration": {
+        "reference": 1817280,
+        "candidate": 1817280,
+        "delta": 0,
+        "verdict": "PASS"
+      },
+      "tracked_class_a_duration": {
+        "reference": 89040,
+        "candidate": 89040,
+        "delta": 0
+      },
+      "key_agree_percent": {
+        "home": {
+          "reference": "56.1427",
+          "candidate": "56.1427"
+        },
+        "local": {
+          "reference": "78.4161",
+          "candidate": "78.4161"
+        }
+      },
+      "key_abstain_percent": {
+        "reference": "0.0000",
+        "candidate": "0.0000"
+      },
+      "added_runs": {
+        "total": 0,
+        "class_b": 0,
+        "class_a": 0
+      },
+      "removed_runs": {
+        "total": 0,
+        "class_b": 0,
+        "class_a": 0
+      }
+    },
+    "default": {
+      "runs": {
+        "reference": 4547,
+        "candidate": 4547,
+        "added": 0,
+        "removed": 0
+      },
+      "wir_coverage": {
+        "reference": 326,
+        "candidate": 326,
+        "verdict": "OK"
+      },
+      "hard_stop_class_b_duration": {
+        "reference": 1817280,
+        "candidate": 1817280,
+        "delta": 0,
+        "verdict": "PASS"
+      },
+      "tracked_class_a_duration": {
+        "reference": 89040,
+        "candidate": 89040,
+        "delta": 0
+      },
+      "key_agree_percent": {
+        "home": {
+          "reference": "56.1427",
+          "candidate": "56.1427"
+        },
+        "local": {
+          "reference": "78.4161",
+          "candidate": "78.4161"
+        }
+      },
+      "key_abstain_percent": {
+        "reference": "0.0000",
+        "candidate": "0.0000"
+      },
+      "added_runs": {
+        "total": 0,
+        "class_b": 0,
+        "class_a": 0
+      },
+      "removed_runs": {
+        "total": 0,
+        "class_b": 0,
+        "class_a": 0
+      }
+    }
+  },
+  "per_preset_verdicts": {
+    "baroque": "MOVED NOTHING",
+    "jazz": "MOVED NOTHING",
+    "default": "MOVED NOTHING"
+  },
+  "overall_from_the_diff": "PASS",
+  "verdict_rule": "MOVED NOTHING requires more than the hard stop passing: the candidate and the reference must be indistinguishable at every value the diff reports, in both directions of the run-level set-diff.",
+  "established": true
+}

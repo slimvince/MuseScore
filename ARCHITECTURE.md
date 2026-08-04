@@ -3507,14 +3507,40 @@ The key/mode inferrer always runs. The notated key signature's `KeyMode` enum
 (`declaredMode`) to `analyzeKeyMode()` and influences the scoring prior but does not
 skip the inferrer.
 
-The only exception is a **piece-start shortcut** in `resolveKeyAndMode()`: when the
-analysis tick is within the first 16 quarter-note beats (a separate constant from the 16-beat lookback window below —
-they coincide in value, not by design), no prior result exists (`prevResult == nullptr`),
-and the key signature carries an explicit mode, the function returns the declared mode
-immediately (confidence 0.5) rather than waiting for pitch evidence that cannot yet exist.
-This is a deliberate pragmatic choice for the score opening, not a general bypass.
+**★ WHICH PATH THIS SECTION DESCRIBES (scoping sentence added 2026-08-04; §5.2 carried none, so
+the correction below carries its own).** §5.2 describes the **LEGACY key path** — the bridge helper
+`resolveKeyAndMode()` (`notationcomposingbridgehelpers.cpp:140`) and the shared
+`resolveKeyAndModeRanked()` it delegates to (`src/composing/analysis/key/keyresolver.cpp:255`).
+That path is **compiled and dormant on the shipped notation surface**, selected only by an explicit
+`useJointNotationRecord = false` (default `true`, `src/composing/composingconfiguration.cpp:178`),
+and it is still what plain `batch_analyze` runs when `--joint-inference` is not passed. **It is NOT
+the production key path**, which is the joint estimator's decode (§3.3; register entry D-051).
+Nothing in §5.2 describes what the shipped analysis does on the key axis.
 
-Outside the piece-start shortcut, the priority of evidence is:
+**★ CORRECTED 2026-08-04 (phase 1z; `OPEN_ITEMS.md` OI-315, register entry D-058). The paragraph
+this replaces specified a piece-start shortcut in the present tense. The code removed that
+short-circuit in Stage 4b-i on 2026-06-14 and this document went on asserting it.** What the
+opening does at HEAD, read at the code:
+
+**There is no piece-start exception — the opening is note-based.** At piece start
+`resolveKeyAndModeRanked()` runs its ordinary path. The lookback window start clamps to tick 0
+when the analysis tick is inside the lookback span (`keyresolver.cpp:286-289`); the
+dynamic-lookahead loop runs exactly as it does anywhere else (`:303-326`); and the hysteresis block
+is simply skipped at the opening, because it guards on `prevResult != nullptr` (`:340`). The key
+signature's declared mode reaches the opening **only** as the same small hint `analyzeKeyMode()`
+applies at every tick — the former hard "strong declared-mode prior" promotion, which moved a
+declared-compatible candidate to the front regardless of the candidate-score gap, was removed in
+the same increment (`:358-367`). The removal's own reason is recorded in the code beside it: the
+short-circuit returned a declared anchor at piece start **regardless of the opening note evidence**,
+which is incompatible with notes-always-win above. The pins are
+`Composing_KeyresolverTests.PieceStartOpening_NoteBased_DeclaredMinor` and
+`_DeclaredMajor` (`src/composing/tests/regionanalysis_tests.cpp:122`, `:144`).
+
+**Tried and closed on the key opening — do not retry; the register carries it with its evidence:
+D-058 (the declared-mode piece-start shortcut, superseded in fact by the Stage 4b-i note-based
+opening; the removal is dated and its re-targeted pins named at `docs/key_path_design.md:65-73`).**
+
+The priority of evidence, which now has no exception, is:
 
 **Priority of evidence:**
 
@@ -3533,15 +3559,18 @@ The `declaredMode` from the key signature is passed to `analyzeKeyMode()` as an 
 hint — it shifts the prior weight for that mode but does not prevent other modes from
 winning.
 
-The inferrer output is used for all but two narrow fallback cases:
-- **Piece-start shortcut:** tick < 16 beats, no prior result, explicit key-sig mode →
-  return declared mode at confidence 0.5 (no pitch evidence to analyze yet)
-- **Insufficient data:** `modeResults.empty() || distinctPitchClasses(ctx) < 3` →
+The inferrer output is used for all but **one** narrow fallback case (**corrected 2026-08-04,
+phase 1z, `OPEN_ITEMS.md` OI-315: the list read "two" and named the removed piece-start shortcut
+as the first of them**):
+- **Insufficient data:** `results.empty() || distinctPitchClasses(ctx) < 3` →
   fall back to key signature enum (Aeolian for MINOR, Ionian for all other explicit or
-  unknown modes)
+  unknown modes), at confidence 0.0 (`keyresolver.cpp:328-332`; pinned by
+  `Composing_KeyresolverTests.InsufficientPitchClasses_FallbackConfidenceZero`,
+  `regionanalysis_tests.cpp:164`). It fires at any tick, the opening included; it is not a
+  piece-start rule.
 
 The `KeyMode` enum (`MAJOR`, `MINOR`, `IONIAN`, `AEOLIAN` etc.) is only a factor in
-these two fallback paths — when pitch data is genuinely insufficient.
+that one fallback path — when pitch data is genuinely insufficient.
 
 **Expanded Temporal Window — Implemented**
 

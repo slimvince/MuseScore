@@ -124,7 +124,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:6179-6181`
+**Home.** `ARCHITECTURE.md:6208-6210`
 
 **Provenance.** ARCHITECTURE.md:6012-6014. Section 5.10 (ARCHITECTURE.md:3860) is the tonicization section; the memory-held backlog item is recorded in the same terms. ★ RATIFIED (user, 2026-08-02) with the revisit to be PLANNED: for the ultimate objective (maximum-precision inference) the feature may be needed — the ground truth annotates applied chords, so not producing them costs Roman-numeral agreement wherever the annotator wrote one. Row OI-267 carries the planning obligation, including the OI-53 tension (a live classifier emitting V7/x was found on the legacy path while this entry's home says not implemented). ★ SCOPE CORRECTED 2026-08-02 (CC, at the phase-1i delivery acts, on Cowork's measured probe finding B-1, user-reviewed): the entry's verbatim is a statement about the LEGACY `ChordFunction` structure, and its plain restatement wrongly generalized it to the whole system. The production joint estimator — the inference layer on both surfaces since the OI-178 adoption — DOES emit applied labels (`src/composing/analysis/joint/jointrender.h:62-63`; measured 8.62 % of scored duration, with exact matches against applied ground truth: `tools/joint_estimator/applied_chord_stake_2026_08_02/`). The OI-53 tension named above is therefore substantially ANSWERED: the joint surface emits applied labels, the legacy `ChordFunction` structure does not carry them. The decision itself is unchanged and stays DEFERRED for the surface it governs; what changed is the recorded scope.
 
@@ -715,4 +715,186 @@
 **Home section.** **the opening block (above the first section heading)** — `# Consolidated Implementation Roadmap — Reviews → Plan` (heading at line 1). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
 
 **Provenance.** `docs/implementation_roadmap.md`:59-62, inside the forward increment sequence whose header (`:54`) calls the order "ratified" — encyclopedia, then L6, then wire the consumer — without naming who ratified it or when; the surrounding block is dated 2026-06-30 at `:36`. The date recorded here is that block's date and the ratifier is NOT STATED, because the text asserts ratification without attributing it. The constraint governs Layer 5 and is recorded in a plan rather than in the Layer-5 specification, hence the documentation-gap flag. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+
+### D-454 — The grouping layer detects nothing — it assembles what earlier layers decided, and pressure to add detection means the work belongs elsewhere
+
+> Layer 6 defines **no detection of its own**: it assembles §5.1–§5.3 (punctuation-span segmentation, key-area grouping,
+> cadence alignment) and hosts the **read-through carries** — §5.4 the Layer-5 residual and §5.5 the consumer's schema
+> annotations, both carried verbatim, neither *detected* here. There is no additional *detection* rule and no hierarchy.
+> Pressure to add detection is a signal to check whether the work belongs in an **earlier** layer (a detection that should be
+> a primitive) or is an **out-of-scope extension** (§9-D3) — not a new Layer-6 mechanism.
+
+**In plain words.** The grouping stage adds no detector of its own. It puts together the boundaries, cadences, keys and unresolved marks the earlier stages produced. If it starts to feel as though grouping needs to detect something, that is a sign the work belongs to an earlier stage or is out of scope — not that grouping needs a new mechanism.
+
+**Why.** Stated with the rule, and it is the same reasoning as the rebuild itself: a second detector here would duplicate the boundary, cadence and key machinery the layers already own and reintroduce exactly the divergence the rebuild exists to remove (the document's decision D2). D-082 carries the additive-and-read-only half from the canonical specification; the no-detection prohibition and its warning sign are recorded only here.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by Cowork
+
+**Entry ratified.** 2026-08-04 · by user
+
+**Home.** `cowork_layer6_grouping_design.md:297-301`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** `cowork_layer6_grouping_design.md` §6, in a document whose banner reads "AS-BUILT (2026-07-02) — built dormant + oracle-validated" and records the Cowork ratification of the build report. Entered by the phase-1 reads wave 1. NOT user-ratified: the banner names Cowork as the ratifier of this document's sign-off, and only the items the banner marks user-ratified carry the user's authority. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+
+### D-455 — A cadence away from a grouping boundary is surfaced as internal, never snapped to the nearest boundary and never discarded
+
+> - **D4 — Cadences align to punctuation-spans, asymmetrically; an off-boundary cadence is surfaced, not snapped (§5.3).**
+>   *Rejected:* forcing every punctuation-span to end with a cadence (contradicts the ground truth) and snapping a stray
+>   cadence to the nearest boundary (hides a real tension signal and would be a covert upstream override).
+
+**In plain words.** A cadence usually lands where a grouping span ends, but a span may end with no cadence at all, so the relation runs one way only. A cadence that lands nowhere near a boundary is marked as falling inside a span and shown as such. It is not dragged to the nearest boundary and it is not thrown away.
+
+**Why.** Stated with the decision, both alternatives rejected for named reasons: requiring every span to close with a cadence contradicts the ground truth, and snapping a stray cadence hides a real signal — an off-boundary cadence means either a missed boundary or an over-eager cadence — and would amount to overriding an upstream decision from the grouping stage, which the forward-only contract forbids.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by Cowork
+
+**Entry ratified.** 2026-08-04 · by user
+
+**Home.** `cowork_layer6_grouping_design.md:345-347`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** `cowork_layer6_grouping_design.md` §9 decision D4, with the rule stated at §5.3, in the AS-BUILT document signed off by Cowork 2026-07-02. Entered by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+
+### D-456 — Sections, periods and sentences are out of the grouping layer's core for PROPORTIONALITY — not disqualified for lacking an oracle
+
+> - **D3 — Sections / periods / sentences are out of L6's *core* for PROPORTIONALITY — NOT disqualified for lack of an
+>   oracle (user-ratified verifiability contract, 2026-06-29).** They are sound theory and *do* lack an oracle in our
+>   corpus, but the contract is explicit that **lack of ground truth is not a disqualifier.** They stay out of the thin core
+>   because L6 is the *flat-grouping assembly* layer and forms/sections are a larger, *higher*-layer structure — and they are
+>   **buildable via a chosen alternative-confidence path** (a form-annotated corpus, or theory-rules-as-oracle) with an
+>   "empirically-unvalidated" mark, when a need arises. The core is punctuation-spans + key-areas + cadence alignment + the
+>   hosted schema spans.
+
+**In plain words.** Larger formal structures — sections, periods, sentences — are left out of the grouping stage's core because that stage assembles the flat grouping and formal structure is a bigger thing belonging higher up. They are NOT rejected for being uncheckable against our annotated music: the standing contract says that alone never disqualifies sound theory. They may be built when a need arises, with a chosen way of gaining confidence in them and an explicit mark that they are empirically unchecked.
+
+**Why.** Stated with the decision and grounded in the user-ratified verifiability contract of 2026-06-29 (D-029), which this entry is the layer-level application of. It matters that the two grounds are kept apart: D-083 records these structures as out of the validatable core, which reads as the oracle-absence ground the contract explicitly rejects as a disqualifier — this entry records the ground the design document actually gives.
+
+**Status.** LIVE · decided 2026-06-29 · ratified by user
+
+**Entry ratified.** 2026-08-04 · by user
+
+**Home.** `cowork_layer6_grouping_design.md:338-344`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** `cowork_layer6_grouping_design.md` §9 decision D3, which names its ground as the "user-ratified verifiability contract, 2026-06-29". The verifiability contract's own user ratification is what the entry's date and ratifier record; the application to this layer sits in a document signed off by Cowork 2026-07-02. Entered by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+
+### D-457 — A group truncated by the selection edge is marked as truncated, and a group that runs off the edge unclosed carries an extension cue the grouping layer only surfaces
+
+> An edge group whose opening/closing tick is the **selection edge rather than a musical boundary** carries the provenance
+> `clipped-by-selection-edge` (the same principle as the §3 marker-scope provenance and L2's artificial-clip-boundary
+> distinction) — a truncated group is never presented as a complete one; the same mark applies to an edge **key-area**
+> (§5.2). And an edge span that reaches the selection edge with **no closing boundary and no cadence** is surfaced with an
+> `extension-cue` tag — the signal that widening the selection would complete it. Per the forward-only contract L6 only
+> **surfaces** the cue (like the §5.3 internal-cadence tension tag); acting on it — invoking L1's `extend` and re-running —
+> is the decision of the **orchestrator** (the pipeline driver that sequences the layers — the region analyzer of the
+> bounded-context contract, `cowork_bounded_context_design.md` §6) under the §2.15 bounded-context contract (stop
+> condition + hard bound), never L6's.
+
+**In plain words.** When a group begins or ends only because the user's selection stops there, it is marked as clipped by the selection edge, so a cut-off group is never presented as a complete one; the same mark applies to a key area at the edge. When a group reaches the edge with neither a closing boundary nor a cadence, it carries a cue saying that widening the selection would complete it. The grouping stage only shows the cue — deciding to act on it, by asking for more music and re-running, belongs to whatever drives the pipeline.
+
+**Why.** Stated with the amendment: it applies the same principle as the boundary-scope provenance and the slicer's artificial-clip-boundary distinction — a truncated thing is never presented as complete — and the division of labour follows from the forward-only contract, since acting on the cue means invoking the extension machinery and re-running, which is the orchestrator's call under the bounded-context contract's stop condition and hard bound.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Entry ratified.** 2026-08-04 · by user
+
+**Home.** `cowork_layer6_grouping_design.md:214-222`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** `cowork_layer6_grouping_design.md` §5.1, marked in the document as a "Post-sign-off amendment, user-ratified 2026-07-02". Entered by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+
+### D-458 — The codetta refinement is read as the as-built tiling: keep the strong cut, drop the weak one, and record the codetta end as an annexe
+
+> **§5.1-a codetta interpretation RULED (Cowork, at ratification):** the
+> as-built tiling reading (keep the strong-peak cut, drop the weak cut, record `codettaEndTick` as an annexe) is
+> canonical — it is the only reading preserving the §5.1 flat/total partition law; inert under default settings
+> (changes no output unless explicitly enabled).
+
+**In plain words.** Where a strong grouping cut is followed closely by a weak one, the span ends at the strong cut and the stretch after it is recorded as a trailing annexe rather than opening a group of its own. This reading was ruled canonical at ratification.
+
+**Why.** Stated with the ruling: it is the only reading that preserves the rule that groups tile the analysed stretch completely and without nesting — a second cut opening its own group would break the partition the layer is defined by. The ruling also records that it is inert under default settings, changing no output unless explicitly enabled.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by Cowork
+
+**Entry ratified.** 2026-08-04 · by user
+
+**Home.** `cowork_layer6_grouping_design.md:12-15`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** `cowork_layer6_grouping_design.md` status banner, which records the ruling as made by Cowork at ratification. Entered by the phase-1 reads wave 1. The banner is a status surface, which OI-240 establishes is not a home for a standing decision — recorded here so the ruling is findable, with the documentation-gap flag standing. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+
+### D-459 — The key-area confidence is a declared margin-class boundary confidence, and its input is the declared key confidence — never the grading diagnostics' sigmoid
+
+> *(Contract compliance, added at sign-off review 2026-07-02: any confidence L6 publishes — the key-area
+> confidence, a span-level aggregate — is a **boundary confidence under the cross-layer confidence contract**
+> (`cowork_confidence_contract.md` U2): [0,1], declared in the contract's **Class M** (a margin-family quantity, not a
+> calibrated probability), with its combiner and inputs named; and its **input** is
+> each unit's DECLARED boundary key confidence per that contract — i.e. once the **D-L3a close-out** (the Layer-3
+> boundary-confidence declaration item of `cowork_confidence_contract.md` §3) lands, the one declared
+> L3/L5 number, not the **diagnostic sigmoid** (the Layer-3 emission-scale confidence squash used by the grading
+> diagnostics, named in the Layer-3 spec banner as the C1 fidelity fix).)*
+
+**In plain words.** The confidence the grouping stage publishes for a key area is a quantity crossing a stage boundary, so it obeys the cross-layer confidence rules: it sits between zero and one, it is declared as a margin rather than a calibrated probability, and it names how it was combined and from what. What it is combined FROM is the declared key confidence, not the squashed number the grading diagnostics use.
+
+**Why.** Stated with the rule and grounded in the ratified cross-layer confidence contract (D-032): a boundary quantity must declare its class, and feeding an aggregate from the diagnostic squash instead of the declared number would compare quantities from two different frames, which the contract forbids. The entry also carries the direction fixed here — the area's confidence is non-increasing in its weakest unit's — while the exact combiner is left to the precision phase.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by Cowork
+
+**Entry ratified.** 2026-08-04 · by user
+
+**Home.** `cowork_layer6_grouping_design.md:244-251`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** `cowork_layer6_grouping_design.md` §5.2, added at the sign-off review of 2026-07-02. Entered by the phase-1 reads wave 1. The rule is stated as conditional on a Layer-3 close-out item landing; whether that item has landed was NOT checked by this wave and nothing here asserts it. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+
+### D-460 — A group counts as fully resolved exactly when no unit in it carries an unresolved mark — no confidence threshold enters the test
+
+> A Layer-5 open mark on a unit is surfaced on the punctuation-span and key-area that contain that unit (the group is
+> reported as carrying an unresolved reading at that location). L6 **never** resolves an open mark — it has no evidence Layer
+> 5 lacked. A punctuation-span composed entirely of units carrying **no open mark** (that is the whole test — no
+> confidence threshold is involved) is reported as fully resolved; one containing an
+> open mark is reported with the residual visible.
+
+**In plain words.** Where an earlier stage left a reading unresolved, that mark is shown on the group and the key area containing it. The grouping stage never resolves it — it has no evidence the earlier stage lacked. A group is reported as fully resolved when, and only when, none of its units carries such a mark; no confidence number is consulted.
+
+**Why.** Stated with the rule, and the parenthesis is doing the work: naming the test as the whole test forecloses a threshold creeping in, which would turn an honest carried residual into a judgment the grouping stage is not entitled to make. It is #12 (no information loss) at the assembly stage — the residual stays visible rather than being averaged away.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by Cowork
+
+**Entry ratified.** 2026-08-04 · by user
+
+**Home.** `cowork_layer6_grouping_design.md:282-286`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** `cowork_layer6_grouping_design.md` §5.4, in the AS-BUILT document signed off by Cowork 2026-07-02. Entered by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+
+### D-461 — The grouping layer is an explainability layer, not an accuracy requirement, and is deliberately kept thin
+
+> - **Proportionality.** The SOTA reaches competitive Roman-numeral accuracy with **no** explicit grouping layer (grouping
+>   falls out of stable key runs — `contrapunctus_findings.md`). L6 is a deliberate **explainability** layer, not an
+>   accuracy requirement; it stays the thin assembly layer specified here and does not grow detection of its own.
+
+**In plain words.** The best published systems reach competitive Roman-numeral accuracy with no grouping stage at all — grouping falls out of stable key runs. Ours exists to make the analysis explainable, not to make it more accurate, and it is held to the thin assembly job on that basis.
+
+**Why.** Measured against the published state of the art and cited to the research findings the claim rests on: since the accuracy case for the layer does not exist, the layer's justification is explainability, and that is exactly what bounds how much it may grow. This is the reasoning behind the no-detection prohibition rather than a restatement of it.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by Cowork
+
+**Entry ratified.** 2026-08-04 · by user
+
+**Home.** `cowork_layer6_grouping_design.md:314-316`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** `cowork_layer6_grouping_design.md` §7, in the AS-BUILT document signed off by Cowork 2026-07-02. Entered by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+
+### D-462 — Cadence validation is scoped to LOCATION; cadence TYPE is only partially attributable and is never a clean gate
+
+> - **Cadence alignment → the DCML-TSV `|cadence` oracle, scoped to LOCATION** (robust to Roman-numeral errors; cadence
+>   *type* is harmony-dependent and only partially attributable on the harder repertoire — measured, caveated, not a clean
+>   gate).
+
+**In plain words.** Cadences are checked against the annotated corpus for WHERE they fall, because that check survives a wrong Roman numeral. WHAT KIND of cadence it is depends on the harmony being right, so on the harder repertoire that can only partly be attributed — it is measured and reported with that caveat, and it never becomes a pass-or-fail gate.
+
+**Why.** Stated with the rule: cadence type is harmony-dependent, so a type mismatch cannot be attributed to the cadence detector rather than to the chord reading upstream — which is what disqualifies it as a gate, while location remains attributable and therefore gate-worthy. This is #19 applied to an oracle: the measurement unit is trusted only for what it can actually be shown to measure.
+
+**Status.** LIVE · decided 2026-06-29 · ratified by user
+
+**Entry ratified.** 2026-08-04 · by user
+
+**Home.** `cowork_layer6_grouping_design.md:359-361`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** `cowork_layer6_grouping_design.md` §10, whose heading records the two-step validation strategy as "user-ratified 2026-06-29". Entered by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 

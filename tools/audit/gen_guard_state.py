@@ -86,6 +86,19 @@ AUTHORED = [
      "mode, and writes its establishment artifact on every run"),
     ("tools/audit/claude_md_rule_triage.py", ["--check"],
      "every CLAUDE.md rule carries an authored mechanisation triage"),
+    ("tools/audit/corpus_arm_stamp.py", ["--check"],
+     "every corpus directory the block-(A) hard stop reads carries an established inference "
+     "arm, and it is the joint arm the baselines were measured on"),
+    ("tools/audit/corpus_arm_stamp.py", ["--establish", "--check"],
+     "the corpus arm stamp's own establishment re-derives -- a wrong-arm corpus is detected, a "
+     "right-arm one is not refused, and nothing that used to be refused now passes"),
+    ("tools/audit/instrument_arm_declaration_effect.py", ["--check"],
+     "the block-(A) instrument's arm declaration still moves no measured value -- it re-runs "
+     "that block's own two commands over the production corpus and re-diffs against the "
+     "committed reference. The slowest guard here by a wide margin, and authored with --check "
+     "rather than dropped because the claim it carries is about a PINNED instrument: a value "
+     "moving without anyone noticing is exactly what the block's provenance now says cannot "
+     "happen. With no corpus on disk it reports CORPUS-ABSENT and passes"),
     ("tools/audit/gen_phase3_gate_partition.py", ["--check"],
      "the registered phase-3 gate partition re-derives"),
     ("tools/audit/gen_nongating_apparatus_rows.py", ["--check"],
@@ -121,6 +134,9 @@ AUTHORED = [
      "the decision clusters re-derive"),
     ("tools/audit/decisions/gen_phase1w_legacy_verification.py", ["--check"],
      "the legacy-mark verification re-derives, and its declared premises still hold"),
+    ("tools/audit/decisions/gen_reads1_yield.py", ["--check"],
+     "READ WAVE 1's measured yield still matches the bands registered before the reads, and "
+     "every entry it names is still in the register at the home it records"),
     ("tools/audit/decisions/reaim_home_anchors.py", ["--check"],
      "no register home anchor has drifted"),
     ("tools/audit/decisions/gen_live_prohibition_pointers.py", ["--check"],

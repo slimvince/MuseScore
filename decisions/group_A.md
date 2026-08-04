@@ -419,3 +419,103 @@
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step the document designs is shelved (**D-278**); this statement is about what is and is not measurable, and stands independently of it — the same document records the shelving probe's own fire-rate as a structural proxy rather than the exact condition. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
+### D-449 — Factor granularity is fixed: the bass factor is evaluated per event, the missing-tone penalty per event of segment length, the emission per tone, and the boundary-family factors per boundary
+
+> **Proposed specification amendment (a #17e
+> sharpening within the ratified structure, brought for ratification per #13/#22):** (a) the pitch
+> emission is per tone (already the ratified text); (b) the BASS factor is evaluated per event — each
+> event's sounding bass against the segment's chord — which is Ni's published per-frame form (F9), not a
+> new invention; (c) the missing-tone penalty is normalized per event of segment length (a segment
+> missing its third pays in proportion to how long it fails to sound it); (d) transition, entry, and
+> key-change factors remain per boundary (correct as written).
+
+**In plain words.** The scoring form is written as a term per segment, which left open whether each term is counted once for the whole segment or once for each event inside it. That is now fixed: the bass evidence is judged at every event against the segment's chord, a missing chord tone is charged in proportion to how long it fails to sound, each sounding pitch is judged on its own, and the terms that belong to a boundary stay at the boundary.
+
+**Why.** Measured, on a real case, and the finding is why the amendment exists: under per-segment bookkeeping a longer segment pays the bass and missing-tone terms once where a split pays them twice, so merging harvests a discount unrelated to the music — the classic semi-Markov length bias. On `bwv10.7@36000` that bookkeeping alone decided merge-against-split by about 6.6 nats AGAINST the ground truth; with the bass factor evaluated per event the gap closes to 1.3 nats and the remainder rides two fittable values rather than the structure. The per-event bass form is not an invention — it is Ni's published per-frame form (the F9 derivation).
+
+**Status.** LIVE · decided 2026-07-19 · ratified by user
+
+**Entry ratified.** 2026-08-04 · by user
+
+**Home.** `cowork_factorization_desk_simulation.md:492-498`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** RATIFIED by the user 2026-07-19 — the document's own banner records that the §7 asks were granted in full, naming this as "the §4.1 granularity amendment (now incorporated in `cowork_joint_estimator_factorization.md` §2/§3 with dated marks)". Entered by the phase-1 reads wave 1 from the full read of `cowork_factorization_desk_simulation.md`. The amendment's incorporated home is the factorization specification, which this wave did NOT read (it is owed at reading order 32); the entry is homed where the ratification is recorded and the incorporation is not verified here. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+
+### D-450 — The key-signature and declared-mode prior conditions the INITIAL key state only, re-entering only at a notated signature change
+
+> **4.2 The §5a open question SETTLED by trace (S3, concurred by C5): the signature/declared-mode prior
+> conditions the INITIAL key state only,** re-entering only at a notated mid-piece signature change (the
+> OI-94(a) discharge moment). The persistent-pull variant imposes a linearly growing tax on
+> away-from-signature keys with no theory basis (F2: the literature has no signature prior at all) and
+> softly re-introduces the OI-174 signature-pull bias in exactly the accidental-free stretches where the
+> prior should be silent. Brought for ratification as the §7 record; the factorization doc §7 already
+> names this as settled-by-desk-sim.
+
+**In plain words.** What the written key signature and any declared major/minor say about the key is used once, to set the starting key, and then not again — unless the score itself changes signature part way through, which is new written evidence and re-anchors it. The alternative, a pull toward the signature at every point, is rejected.
+
+**Why.** Measured by trace and stated with the decision: a persistent pull taxes every away-from-signature key by roughly 1.7 to 2.0 nats per segment, growing without bound, with no basis in the literature — the published work carries no signature prior at all — and it re-introduces the signature-pull bias an earlier measurement condemned, in soft form, in exactly the accidental-free stretches where the prior should be silent. Two traces settle it (a Dorian-notated opening and a genuinely modal piece), and the initial-state form pays the tax once and lets the music govern thereafter.
+
+**Status.** LIVE · decided 2026-07-19 · ratified by user
+
+**Entry ratified.** 2026-08-04 · by user
+
+**Home.** `cowork_factorization_desk_simulation.md:506-512`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** RATIFIED by the user 2026-07-19 — the document's banner records the §7 asks granted in full, naming "the §4.2 initial-state-only prior record (incorporated at §3.10)". Entered by the phase-1 reads wave 1. As with D-449 the incorporated home is the factorization specification, unread at this wave. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+
+### D-451 — A desk simulation's table values are provisional, enter no fit, and a verdict that would flip inside a provisional value's plausible range is reported as a near-tie, never as a win
+
+> 1. **All table values are PROVISIONAL** — declared here (§1) before use, each labeled with its
+>    provenance class: the FORM is from the ratified specification and the derived forms in
+>    `cowork_term_theory_grounding.md` §1 (F1–F10); the VALUES are hand-declared stand-ins whose only job
+>    is to let the mechanism be traced. No value here survives into any fit; fitting happens only under
+>    the OI-176/OI-177 gates. A verdict that would flip within the plausible range of a provisional value
+>    is reported as a NEAR-TIE with the sensitive cell named — never as a win.
+
+**In plain words.** When a mechanism is traced by hand, the numbers used are stand-ins declared up front whose only job is to let the mechanism be followed. None of them may become a fitted value later. And if a trace's answer would change had a stand-in been chosen differently within its believable range, the trace reports a near-tie and names the deciding cell rather than claiming a winner.
+
+**Why.** Stated with the rule and visible in the traces that follow it: several verdicts are reported with their sensitive cells named rather than as wins, and the cells so named are carried forward to the capacity and pooling gate. Without the rule a hand-declared number would silently become an instrument, which is the defect the catalog names DT-2.
+
+**Status.** LIVE · decided 2026-07-19 · ratified by user
+
+**Entry ratified.** 2026-08-04 · by user
+
+**Home.** `cowork_factorization_desk_simulation.md:30-35`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The ground rules of `cowork_factorization_desk_simulation.md` §0, declared before any trace, in the document the user RATIFIED on 2026-07-19 (banner: the §7 asks granted in full, verdict included). Entered by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+
+### D-452 — Every desk-simulation trace runs at identity weights — the ratified ablation baseline — so the trace tests the structure and the tables, not the weighting
+
+> 2. **Identity weights.** Every trace runs the generative product (all `w = 1`) — exactly the ratified
+>    mandatory ablation baseline. The desk simulation therefore tests the structure and the tables, not
+>    the weight layer.
+
+**In plain words.** Each hand trace is run with every weight set to one, which is the baseline the design already requires be measured. That way what the trace checks is whether the shape of the model and its tables behave, and not whether a weighting was chosen well.
+
+**Why.** Stated with the rule: identity weights ARE the mandatory ablation baseline the ratified design already carries, so the choice imports no new premise, and running at anything else would confound a structural verdict with a weighting one.
+
+**Status.** LIVE · decided 2026-07-19 · ratified by user
+
+**Entry ratified.** 2026-08-04 · by user
+
+**Home.** `cowork_factorization_desk_simulation.md:36-38`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The ground rules of `cowork_factorization_desk_simulation.md` §0, in the document the user RATIFIED on 2026-07-19. Entered by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+
+### D-453 — The desk simulation's verdict: the ratified factorization passes nine of ten traces and no finding reopens the structure
+
+> 1. **The verdict:** the ratified factorization passes nine of ten traces as specified; no finding
+>    requires re-ratifying the STRUCTURE (variables, factors, decode).
+
+**In plain words.** Ten cases were traced by hand against the agreed model. Nine behaved as the model says they should. The tenth exposed one thing the model had not settled — how finely each term is counted — and that was fixed by sharpening the model rather than by changing what the model is made of. So the variables, the factors and the decoding stay as ratified.
+
+**Why.** This is the outcome of the desk-simulation stage of the premise gate (#17c) run on ten real cases, five constructed and five taken from the corpus with every fact verified at a cited committed source. The one surprise was surfaced as a stop and brought for ratification rather than built around (#13), which is the stage doing its job.
+
+**Status.** LIVE · decided 2026-07-19 · ratified by user
+
+**Entry ratified.** 2026-08-04 · by user
+
+**Home.** `cowork_factorization_desk_simulation.md:590-591`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** RATIFIED by the user 2026-07-19 — the banner records the §7 asks granted in full, of which this verdict is the first. Entered by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+

@@ -206,6 +206,40 @@ FORMS: dict[str, tuple[str, str, str, str]] = {
         "two bullets away already used. Until then the naming was a parenthetical inside a "
         "bulleted list of arcs, naming no section — a provenance attribution."),
 
+    # ------------------------------------------------------------------
+    # Graded 2026-08-04 by the phase-1 reads wave 1, when these documents FIRST became
+    # somebody's home (the wave read them in full and entered what no other home carried).
+    # Each grade was made by reading the located line in place, exactly as the phase-1p
+    # grades were.  All five come out EXCLUDE, so no section-kind judgment is reached.
+    # ------------------------------------------------------------------
+    "docs/llm_integration.md": (
+        BARE_CITATION, "ARCHITECTURE.md",
+        "**Full design document:** `docs/llm_integration.md`",
+        "The bar's first excluded form. The line names the document and nothing else; the "
+        "sentence after it — that §19 is a summary and the full document must be read before "
+        "writing LLM code — is an instruction to the reader, not a delegation of a stated "
+        "concern to a named section. Its two other namings (`:7010`, `:7021`) are 'See X §n' "
+        "citations, weaker still."),
+    "cowork_layer6_grouping_design.md": (
+        BARE_CITATION, "ARCHITECTURE.md",
+        "periods/sentences, and prolongation are out of the validatable core",
+        "The bar's first excluded form, word for word: the line ends 'Full spec:' and names "
+        "its target on the next — the same two-line shape as the ruling's own worked example "
+        "at `:1493`. Its other two namings are parentheticals (`:894` 'see X §0', `:943` a "
+        "citation inside a deferral clause)."),
+    "cowork_target_architecture.md": (
+        BARE_CITATION, "ARCHITECTURE.md",
+        "full statements in `cowork_target_architecture.md`",
+        "A bare appended citation, inside a section heading's parenthesis. It is the "
+        "strongest of four namings and it still does not admit; the canonical document also "
+        "states at `:352` that this document is DEMOTED and is 'not a second canonical doc', "
+        "so the surface that would have to delegate says the opposite. Its other namings "
+        "(`:829`, `:1236`) are provenance attributions."),
+    "cowork_factorization_desk_simulation.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "docs/layer_architecture_audit.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+
     "cowork_architecture_reassessment.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
     # ------------------------------------------------------------------
