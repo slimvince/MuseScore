@@ -1,0 +1,396 @@
+{
+  "header": {
+    "purpose": "READ WAVE 2's measured yield against the bands registered before the reads, per `phase1n_reading_regime.json` -> bands.registration.",
+    "generator": "tools/audit/decisions/gen_reads2_yield.py",
+    "wave": "reads-2",
+    "dispatch": "cc_instruction_reads_2.md",
+    "authored_inputs": [
+      "WAVE_READS",
+      "LOW_YIELD_REASON"
+    ],
+    "derived_from": [
+      "phase1n_reading_regime.json (every band, point, size and partition fact)",
+      "reads1_yield.json (wave 1's read count)",
+      "backbone_decisions.json (every home, status and title)"
+    ],
+    "why_the_regime_artifact_is_not_regenerated": "Unchanged from wave 1 and rowed at OI-316: the generator recomputes the registered bands from the terciles of the READ set, so following the regime's own update protocol would refit the prediction on the documents being graded (#20) and lose the registered value (#12)."
+  },
+  "counts": {
+    "documents_read_in_full_this_wave": 8,
+    "documents_the_schedule_packed_into_wave_2": 8,
+    "register_entries_produced": 33,
+    "entries_homed_in_the_document_read": 33,
+    "entries_homed_in_the_owning_specification_instead": 0,
+    "documents_yielding_zero": 0
+  },
+  "the_running_read_count": {
+    "design_document_surface": 143,
+    "user_accepted_exclusions_not_read": 41,
+    "read_in_full_before_this_wave": 42,
+    "read_in_full_after_this_wave": 50,
+    "still_owed_a_full_read": 52,
+    "note": "Derived here from the regime's own partition plus wave 1's count, because the regime artifact's own `partition.read_in_full` and `owed_a_full_read` cannot be updated without refitting the registered bands (OI-316). A reader comparing this block with the regime artifact will find them disagreeing BY DESIGN; this block is the current one."
+  },
+  "the_out_of_sample_test": {
+    "documents_inside_their_registered_band": 8,
+    "documents_outside_their_registered_band": 0,
+    "above_the_point_prediction": 2,
+    "below_the_point_prediction": 6,
+    "what_the_band_test_is_worth": "Restated from wave 1 because it has not changed and a reader of this artifact alone would otherwise read a clean pass: EVERY registered band has a minimum of 0, so a band running from 0 to its tercile maximum can only be missed by a document out-yielding every document of its tercile ever. `inside_the_registered_band` is therefore close to unfalsifiable and a pass on it establishes almost nothing. The informative comparison is the point prediction, reported beside it.",
+    "what_wave_2_adds_that_wave_1_could_not": "All eight of this wave's documents fall in ONE length tercile (medium), so every one carries the same registered band and the same point prediction while their measured yields differ by an order of magnitude. Within this wave, therefore, the length proxy has no resolving power AT ALL — it makes one prediction for eight documents — and what actually separated them is visible in the rows: a SIGNED layer specification and a ratified amendment list yielded most of the entries, while an unratified draft and an audit whose findings were already registered yielded one each. That is a statement about this wave's own eight observations and is NOT a re-fit of the proxy, which stays registered as it was and unvalidated (#17d)."
+  },
+  "rows": [
+    {
+      "document": "docs/unified_analysis_pipeline.md",
+      "reading_order": 7,
+      "lines": 397,
+      "length_tercile": "medium",
+      "unresolved_clusters_at_registration": 9,
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 4,
+      "of_which_homed_in_this_document": 4,
+      "of_which_homed_in_the_owning_specification": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "below",
+      "entries": [
+        {
+          "id": "D-469",
+          "home": "docs/unified_analysis_pipeline.md:59-61",
+          "status": "live",
+          "title": "The tick-local path is left OUTSIDE the unified pipeline by design — its point-in-time semantics would be distorted by one shared interface"
+        },
+        {
+          "id": "D-470",
+          "home": "docs/unified_analysis_pipeline.md:237-240",
+          "status": "live",
+          "title": "The temporal-context extension fields are recorded during the pipeline's own analysis pass; no consumer re-runs the chord analysis to rebuild them"
+        },
+        {
+          "id": "D-471",
+          "home": "docs/unified_analysis_pipeline.md:225-233",
+          "status": "live",
+          "title": "The sub-beat annotation duration gate is not retired on argument — it is kept or dropped on a measured observation run, with the verdict stated in advance"
+        },
+        {
+          "id": "D-472",
+          "home": "docs/unified_analysis_pipeline.md:149-165",
+          "status": "live",
+          "title": "Key areas are grouped by a smoothing pass over the already-stabilized regions, and a region that disagrees without clearing the confidence test keeps its own key while being grouped into the enclosing area"
+        }
+      ]
+    },
+    {
+      "document": "cowork_term_theory_grounding.md",
+      "reading_order": 8,
+      "lines": 392,
+      "length_tercile": "medium",
+      "unresolved_clusters_at_registration": 10,
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 3,
+      "of_which_homed_in_this_document": 3,
+      "of_which_homed_in_the_owning_specification": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "below",
+      "entries": [
+        {
+          "id": "D-473",
+          "home": "cowork_term_theory_grounding.md:6-11",
+          "status": "live",
+          "title": "A theory-grounding pass labels every load-bearing claim FACT / THEORY / CONJECTURE, cross-checks its central sources independently, and carries no equation out of a text it could not fetch"
+        },
+        {
+          "id": "D-474",
+          "home": "cowork_term_theory_grounding.md:258-262",
+          "status": "live",
+          "title": "No published study reports per-axis inter-annotator agreement for Roman-numeral analysis of Baroque/classical symbolic music — the ground-truth ceiling principle #21 demands is unmeasured by the entire field"
+        },
+        {
+          "id": "D-475",
+          "home": "cowork_term_theory_grounding.md:274-279",
+          "status": "live",
+          "title": "The BCMH chorale annotations are NOT established as an instrument: the annotator is unknown, the annotations sit on a reduction, and they reached the repository through a machine translation"
+        }
+      ]
+    },
+    {
+      "document": "cowork_phrase_boundary_design.md",
+      "reading_order": 9,
+      "lines": 386,
+      "length_tercile": "medium",
+      "unresolved_clusters_at_registration": 17,
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 10,
+      "of_which_homed_in_this_document": 10,
+      "of_which_homed_in_the_owning_specification": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "above",
+      "entries": [
+        {
+          "id": "D-476",
+          "home": "cowork_phrase_boundary_design.md:223-226",
+          "status": "live",
+          "title": "The phrase-boundary primitive is owned by the notation-derived view layer — not by the note model, and not by the function layer that consumes it"
+        },
+        {
+          "id": "D-477",
+          "home": "cowork_phrase_boundary_design.md:64-69",
+          "status": "live",
+          "title": "Phrase boundaries are read from the written surface alone — never from a resolved key, chord or cadence — and the boundaries this misses are accepted, not recovered here"
+        },
+        {
+          "id": "D-478",
+          "home": "cowork_phrase_boundary_design.md:233-238",
+          "status": "live",
+          "title": "A phrase boundary is a peak in a continuous boundary-strength profile, not the OR of a few binary signals"
+        },
+        {
+          "id": "D-479",
+          "home": "cowork_phrase_boundary_design.md:239-245",
+          "status": "live",
+          "title": "The boundary cues run per eligible voice and aggregate to the texture, and BOTH the per-voice and the texture boundaries are published"
+        },
+        {
+          "id": "D-480",
+          "home": "cowork_phrase_boundary_design.md:276-282",
+          "status": "live",
+          "title": "The phrase-boundary primitive is NOT an accuracy requirement — a competitive reference engine does no phrase segmentation at all — so it is built right but kept proportionate"
+        },
+        {
+          "id": "D-481",
+          "home": "cowork_phrase_boundary_design.md:176-181",
+          "status": "live",
+          "title": "The notated markers are emitted as boundaries unconditionally; only the surface-cue strength is peak-picked"
+        },
+        {
+          "id": "D-482",
+          "home": "cowork_phrase_boundary_design.md:227-229",
+          "status": "live",
+          "title": "The two hand-synchronised copies of the fermata scan retire into one owned primitive, and that retirement changes no output"
+        },
+        {
+          "id": "D-483",
+          "home": "cowork_phrase_boundary_design.md:254-258",
+          "status": "live",
+          "title": "The picked boundaries are validated against the analysts' own phrase marks; a fermata-derived phrase list is inadmissible as ground truth because the primitive reads fermatas"
+        },
+        {
+          "id": "D-484",
+          "home": "cowork_phrase_boundary_design.md:23-31",
+          "status": "live",
+          "title": "The phrase-boundary primitive is a derived view: it inherits the loaded span, requests no extension of its own, and publishes a per-profile max-normalised boundary confidence"
+        },
+        {
+          "id": "D-485",
+          "home": "cowork_phrase_boundary_design.md:382-386",
+          "status": "live",
+          "title": "Each picked boundary should carry which cue fired and at what scope; the picked set is scope-blind today and the refinement waits for the inference phase"
+        }
+      ]
+    },
+    {
+      "document": "docs/precision_metric_design.md",
+      "reading_order": 10,
+      "lines": 383,
+      "length_tercile": "medium",
+      "unresolved_clusters_at_registration": 8,
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 1,
+      "of_which_homed_in_this_document": 1,
+      "of_which_homed_in_the_owning_specification": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "below",
+      "entries": [
+        {
+          "id": "D-486",
+          "home": "docs/precision_metric_design.md:291-293",
+          "status": "live",
+          "title": "A measurement publishes its coverage denominator and its per-corpus breakdown; a single aggregate number that hides which corpus moved is not reported"
+        }
+      ],
+      "low_yield_reason": "One entry from 383 lines, and the reason is the read set's own DRAFT pattern with one exception. The document is an unratified draft whose banner reads 'DRAFT — UNCOMMITTED' and which closes 'awaiting Cowork/user ratification before any metric is built' — and wave 1 recorded that every DRAFT-bannered document read so far had yielded zero. This one does not, because unlike those its central design was subsequently BUILT and RATIFIED elsewhere: the fixed-grid duration-weighted union-of-boundaries unit it designs is the governing hard stop of `CLAUDE.md` gate block (A) (R10-b, 2026-07-06), and its recommended grid choice (union-of-boundaries, exact) is the one adopted. So almost everything decision-bearing in it is REGISTERED ALREADY at that block, and what is left is the one reporting rule the block honours but never states as a rule."
+    },
+    {
+      "document": "docs/score_inventory.md",
+      "reading_order": 11,
+      "lines": 377,
+      "length_tercile": "medium",
+      "unresolved_clusters_at_registration": 13,
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 3,
+      "of_which_homed_in_this_document": 3,
+      "of_which_homed_in_the_owning_specification": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "below",
+      "entries": [
+        {
+          "id": "D-487",
+          "home": "docs/score_inventory.md:344-347",
+          "status": "live",
+          "title": "The eleven snapshot source scores are frozen and hash-pinned; changing the set or bumping a pin is a deliberate golden and gate re-baseline"
+        },
+        {
+          "id": "D-488",
+          "home": "docs/score_inventory.md:180-189",
+          "status": "live",
+          "title": "The two Bach chorale collections are independent selections, not sub- and superset — and the diff between them is not recoverable in-repo"
+        },
+        {
+          "id": "D-489",
+          "home": "docs/score_inventory.md:93-97",
+          "status": "live",
+          "title": "The snapshot sources are hash-pinned rather than copied in-tree, because their licences make an in-tree copy incompatible with this project's licence"
+        }
+      ]
+    },
+    {
+      "document": "cowork_fb_redesign_design.md",
+      "reading_order": 12,
+      "lines": 355,
+      "length_tercile": "medium",
+      "unresolved_clusters_at_registration": 15,
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 4,
+      "of_which_homed_in_this_document": 4,
+      "of_which_homed_in_the_owning_specification": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "below",
+      "entries": [
+        {
+          "id": "D-490",
+          "home": "cowork_fb_redesign_design.md:104-108",
+          "status": "live",
+          "title": "FALSIFIED: no threshold can make the fine-grain function override net-positive — the harm rate is flat against both quantities the threshold is built from"
+        },
+        {
+          "id": "D-491",
+          "home": "cowork_fb_redesign_design.md:160-165",
+          "status": "live",
+          "title": "REFUTED: making the override's comparison vertically fair does not repair it — even where the alternative fits the notes at least as well, it is still about 71 % harmful"
+        },
+        {
+          "id": "D-492",
+          "home": "cowork_fb_redesign_design.md:284-285",
+          "status": "live",
+          "title": "The recommended redesign is to demote the override to an annotation — carrying the earlier reading unchanged and surfacing the contradiction — floored by simply disabling it"
+        },
+        {
+          "id": "D-493",
+          "home": "cowork_fb_redesign_design.md:251-262",
+          "status": "live",
+          "title": "Restricting the override to the genuinely-coupled key-and-chord minority is UN-COMPUTABLE, not merely unmeasured: its trigger is not computed anywhere and building it is the still-owed joint step"
+        }
+      ]
+    },
+    {
+      "document": "cowork_architecture_review_2026_07.md",
+      "reading_order": 13,
+      "lines": 350,
+      "length_tercile": "medium",
+      "unresolved_clusters_at_registration": 9,
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 7,
+      "of_which_homed_in_this_document": 7,
+      "of_which_homed_in_the_owning_specification": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "above",
+      "entries": [
+        {
+          "id": "D-494",
+          "home": "cowork_architecture_review_2026_07.md:320-323",
+          "status": "live",
+          "title": "RATIFIED AMENDMENT A-4: the function layer must gain key-confirmation channels that do not require a cadence, plus an enharmonic-identity rule for key spans"
+        },
+        {
+          "id": "D-495",
+          "home": "cowork_architecture_review_2026_07.md:324-325",
+          "status": "live",
+          "title": "RATIFIED AMENDMENT A-5: when the phrase-boundary profile is flat, cadence admission relaxes with vote-weight scaling instead of starving"
+        },
+        {
+          "id": "D-496",
+          "home": "cowork_architecture_review_2026_07.md:326-327",
+          "status": "live",
+          "title": "RATIFIED AMENDMENT A-6: whether the pairwise progression grammar lives inside the harmonic vocabulary or stays a separate store is decided at the recognition-consumer build, explicitly"
+        },
+        {
+          "id": "D-497",
+          "home": "cowork_architecture_review_2026_07.md:328-329",
+          "status": "live",
+          "title": "RATIFIED AMENDMENT A-7: the empirically-unvalidated mark must be APPLIED to the Jazz preset constants and the unvalidated idioms, with the validation path named"
+        },
+        {
+          "id": "D-498",
+          "home": "cowork_architecture_review_2026_07.md:333-335",
+          "status": "live",
+          "title": "RATIFIED AMENDMENT A-9: a product stance is owed for output that is mostly uncertain, and for music outside the tonal vocabulary altogether"
+        },
+        {
+          "id": "D-499",
+          "home": "cowork_architecture_review_2026_07.md:336-338",
+          "status": "live",
+          "title": "RATIFIED AMENDMENT A-10: four documentation riders — a consolidated ownership page for the notation-derived views, the membership tie-breaker recorded as idiom-calibrated, and the producer-agnostic seam pinned as a design property"
+        },
+        {
+          "id": "D-500",
+          "home": "cowork_architecture_review_2026_07.md:4-5",
+          "status": "live",
+          "title": "The user ratified CORPUS EXPANSION at the architecture review: gate-grade jazz ground truth, chromatic material of the Wagner class, and more non-Bach, non-Baroque annotation generally"
+        }
+      ]
+    },
+    {
+      "document": "docs/symbol_input_audit.md",
+      "reading_order": 14,
+      "lines": 346,
+      "length_tercile": "medium",
+      "unresolved_clusters_at_registration": 6,
+      "predicted_yield_band": [
+        0.0,
+        17.0
+      ],
+      "predicted_yield_point": 4.83,
+      "actual_yield": 1,
+      "of_which_homed_in_this_document": 1,
+      "of_which_homed_in_the_owning_specification": 0,
+      "inside_the_registered_band": true,
+      "against_the_point_prediction": "below",
+      "entries": [
+        {
+          "id": "D-501",
+          "home": "docs/symbol_input_audit.md:15-18",
+          "status": "live",
+          "title": "A tool may read a written chord symbol ONLY as a comparison or ground-truth label — never as input that influences what the analyzer computes"
+        }
+      ],
+      "low_yield_reason": "One entry from 346 lines. The audit's operating principle is the user's, and its production half is already registered twice (D-066, D-305); its findings are a classification of call sites rather than decisions; and its three outstanding questions were all resolved by DELETION, which D-067 already records. What the register did not carry is the principle's TOOL clause, which is what the audit's own categories are graded against."
+    }
+  ]
+}

@@ -891,9 +891,92 @@
 
 **Why.** Stated with the decision at its home: the defect being closed is that --joint-inference is opt-in, so a regeneration that omits it silently fills the directory this instrument reads with the other pipeline's output, and an opt-in DETECTOR would reproduce that hole's shape exactly — absent from precisely the invocation that most needs it. Hence a declared default rather than a flag. The instrument is one CLAUDE.md gate block (A) calls pinned, so the narrow claim that it can only refuse and can move no measured value is itself measured rather than asserted (#19).
 
-**Status.** LIVE · decided 2026-08-03 · ratifier not stated
+**Status.** LIVE · decided 2026-08-03 · ratified by user
 
 **Home.** `CLAUDE.md:376-377`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** Built 2026-08-03 (CC, phase 1y, dispatch cc_instruction_phase1y_corpus_arm_stamping.md) as the manifest half of OPEN_ITEMS.md OI-307, and flagged there as a judgment call for the user rather than buried; recorded at gate block (A) 2026-08-04 (phase 1z, dispatch cc_instruction_phase1z_commit_and_instrument_record.md Task 2.3), the block that pins the instrument being where a change to it belongs (#7). ★ THE USER HAS NOT RULED ON IT: recording is not ratifying, and no ratifier is inferred from the dispatch that ordered the record. The two measurements it rests on are generated, and no value of either is restated in the record (#17f, D-431): that the declaration moves nothing is at tools/audit/instrument_arm_declaration_effect.json, which runs gate block (A)'s own two commands at HEAD over the production corpus and diffs against the committed tools/robust_stop/ reference; that it detects a wrong-arm corpus, admits a right-arm one and leaves an undeclared caller alone is at tools/audit/corpus_arm_establishment.json, probes 2, 3 and 4. Reversal is one default (EXPECT_ARM_DEFAULT set to 'any').
+**Provenance.** Built 2026-08-03 (CC, phase 1y, dispatch cc_instruction_phase1y_corpus_arm_stamping.md) as the manifest half of OPEN_ITEMS.md OI-307, and flagged there as a judgment call for the user rather than buried; recorded at gate block (A) 2026-08-04 (phase 1z, dispatch cc_instruction_phase1z_commit_and_instrument_record.md Task 2.3), the block that pins the instrument being where a change to it belongs (#7). ★ RATIFIED BY THE USER, 2026-08-03, in session — presented as three options with the third recommended, ratify AND record, and agreed. The ruling is transmitted in the read-wave-2 dispatch cc_instruction_reads_2.md §0a, whose ruling ledger records why this field read otherwise for a day: the phase-1z re-issue dropped the sentence carrying the ratification, so phase 1z executed the recording half of the ruling and not the ratifying half, and this entry stated 'ratifier not stated' about a decision the user had made. ★ The former provenance sentence — 'THE USER HAS NOT RULED ON IT: recording is not ratifying, and no ratifier is inferred from the dispatch that ordered the record.' — is preserved here rather than deleted (#12), and it was the correct thing to write on what phase 1z was given: what was missing was the transmission, not the ruling, and inferring a ratifier from a dispatch that named none would have been the worse error. The two measurements it rests on are generated, and no value of either is restated in the record (#17f, D-431): that the declaration moves nothing is at tools/audit/instrument_arm_declaration_effect.json, which runs gate block (A)'s own two commands at HEAD over the production corpus and diffs against the committed tools/robust_stop/ reference; that it detects a wrong-arm corpus, admits a right-arm one and leaves an undeclared caller alone is at tools/audit/corpus_arm_establishment.json, probes 2, 3 and 4. Reversal is one default (EXPECT_ARM_DEFAULT set to 'any').
+
+### D-474 — No published study reports per-axis inter-annotator agreement for Roman-numeral analysis of Baroque/classical symbolic music — the ground-truth ceiling principle #21 demands is unmeasured by the entire field
+
+> **FACT-of-absence (the central finding):** no published study reports per-axis inter-annotator agreement
+> for RN/key annotation of Baroque/classical symbolic music. TAVERN has duplicate annotations but
+> published no number; ABC split pieces between annotators (no overlap by design); the Mozart sonatas
+> corpus is consensus-built (agreement unmeasurable post hoc); When in Rome 2020/2023 states the variance
+> is unmeasured; Dilemmadata (2026) identifies 84 dual-annotated pieces and computes nothing yet.
+
+**In plain words.** Principle #21 says the accuracy of the human annotation is itself something to measure, so that an error we cannot fix is told apart from two experts simply disagreeing. Searching the literature found that nobody has published such a figure for this repertoire — so the ceiling cannot be cited from anywhere and would have to be measured here.
+
+**Why.** Measured by search rather than asserted: each candidate corpus is named with the reason it yields no figure — duplicate annotations published without a number, pieces split between annotators by design, consensus-built annotation whose agreement cannot be recovered after the fact. The quantified bounds that DO exist are recorded beside it, from other domains (rock symbolic by ear; pop audio), together with the invariant they share — root and key agree far better than the full label, inversion always costs about five points, quality is the most subjective axis.
+
+**Status.** LIVE · decided 2026-07-19 · ratifier not stated
+
+**Home.** `cowork_term_theory_grounding.md:258-262`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The central finding of the theory-grounding audit's ground-truth section, reached by a dedicated search and recorded with the corpora checked (TAVERN, ABC, the Mozart sonatas, When in Rome, Dilemmadata). Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. It is the literature half of the obligation **D-184** (principle #21) creates and is tracked at `OPEN_ITEMS.md` OI-179.
+
+### D-475 — The BCMH chorale annotations are NOT established as an instrument: the annotator is unknown, the annotations sit on a reduction, and they reached the repository through a machine translation
+
+> content to any existing analysis). **Unestablished as an instrument (#19):** annotator count/identity
+> and validation are UNKNOWN (the JEP:HPP Method section and the dataset zip's headers are the two places
+> that would settle it — the zip is fetch-blocked in this environment but downloadable on the user's
+> machine); the annotations sit on a homorhythmic REDUCTION (unit mismatch with our full-texture grading
+> must be handled in the measurement design); they reached the repo through a machine translation into
+> rntxt (Nápoles López), whose noise would be part of any measured disagreement. **Consequence:** the
+
+**In plain words.** A second set of human chorale analyses is held, and it would be the natural way to measure how far two annotators disagree. It cannot be trusted yet: nothing in the dataset says who made the annotations or whether they were checked, the analyses describe a simplified version of the music rather than the full texture, and they were converted automatically into our format, so the conversion's own errors would show up as disagreement.
+
+**Why.** Measured at the objects, not assumed: the dataset was downloaded and read file by file, and the only editor records found are the note-encoding provenance of the underlying score collection. The independence half is a FACT the source states in its own words ('we encoded'), which is what makes the corpus worth establishing rather than discarding.
+
+**Status.** LIVE · decided 2026-07-19 · ratifier not stated
+
+**Home.** `cowork_term_theory_grounding.md:274-279`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The theory-grounding audit's verdict on the BCMH corpus, with the three establishment steps it names. The audit's own dated update of 2026-07-19 records that the first step came back NEGATIVE at the files — no annotator record in any of them — and its source register adds that the 2023 Method section names no annotator and no validation either. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. ★ This is an ESTABLISHMENT statement under #19: a consumer may not put this corpus under load while it stands.
+
+### D-486 — A measurement publishes its coverage denominator and its per-corpus breakdown; a single aggregate number that hides which corpus moved is not reported
+
+> - **Coverage honesty:** report the 326/353 WiR denominator and per-corpus breakdown; never aggregate a
+>   single number that hides which corpus moved (the cross-corpus root_err ranges corelli 55%→dvorak 41%
+>   [doc, dossier §1.4] — a scalar would let a fit win on chorales while losing on Corelli).
+
+**In plain words.** When accuracy is reported, the number of pieces it was actually measured on is stated, never the number of pieces held. And the corpora are reported separately, because one combined figure lets an improvement on one repertoire pay for a loss on another without anyone seeing it.
+
+**Why.** Stated with the rule and evidenced in the same sentence: only 326 of the 353 gate chorales resolve to a human annotation at all, so dividing by 353 reports an accuracy the measurement never had; and the cross-corpus root-error rate ranges from about 41 % to about 55 % across corpora, so a scalar objective would let a fit win on chorales while losing on Corelli.
+
+**Status.** LIVE · decided 2026-06-13 · ratifier not stated
+
+**Home.** `docs/precision_metric_design.md:291-293`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** A rule of the Stage-5 objective section of a metric design document whose banner reads DRAFT — UNCOMMITTED and which closes 'awaiting Cowork/user ratification before any metric is built'. The metric it designs WAS subsequently built and ratified — the granularity-robust unit of `CLAUDE.md` gate block (A), R10-b, 2026-07-06 — and that block reports its coverage as 326/352 in exactly this form, so the rule is honoured at HEAD while the document that states it still presents itself as an unratified draft (see `OPEN_ITEMS.md`). Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-497 — RATIFIED AMENDMENT A-7: the empirically-unvalidated mark must be APPLIED to the Jazz preset constants and the unvalidated idioms, with the validation path named
+
+> - **A-7 (from F-7). Apply the "empirically-unvalidated" mark** to the Jazz preset constants and idioms 3–5 in the
+>   affected docs; name the validation path (JHT/McGill-class corpora already inventoried by the idiom study).
+
+**In plain words.** The rule that says an unvalidated value must be marked as such already exists. The review found it was not actually applied to the constants only Baroque data has ever calibrated. The amendment requires the mark to be put on them, and the corpus that would validate each to be named alongside.
+
+**Why.** Measured by the review: calibration and validation are Baroque- and Bach-heavy, the jazz preset and the non-classical idioms have no gate-grade ground truth, and the contract's own mark is present in the specification but absent from the affected constants and presets — so the gap is between a stated rule and its application, not in the rule.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Home.** `cowork_architecture_review_2026_07.md:328-329`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Amendment A-7 of the external architecture review, in a document whose banner records amendments A-1…A-10 as RATIFIED by the user on 2026-07-02. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. It is the APPLICATION half of the verifiability contract **D-029** — the mark exists in the specification and the review found it unapplied — and it is adjacent to **D-310**, which records that jazz accuracy is not measurable on the corpora held.
+
+### D-500 — The user ratified CORPUS EXPANSION at the architecture review: gate-grade jazz ground truth, chromatic material of the Wagner class, and more non-Bach, non-Baroque annotation generally
+
+> additionally ratified **corpus expansion** — gate-grade jazz GT and Wagner-class (and similar) DCML material; in
+> general more non-Bach, non-Baroque ground truth (folded into A-7/A-8; recorded in `docs/implementation_roadmap.md`).
+
+**In plain words.** At the same review the user approved widening the material the program is measured against: real ground truth for jazz, hard chromatic repertoire, and in general more annotated music that is neither Bach nor Baroque.
+
+**Why.** Derived from the review's own findings F-7 and F-8: calibration and validation are Baroque- and Bach-heavy with no gate-grade ground truth for the jazz preset or the non-classical idioms, and the review names a chromatic stress corpus as the measurement bed for the capability amendments.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Home.** `cowork_architecture_review_2026_07.md:4-5`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Recorded in the banner of the external architecture review as a user ratification additional to amendments A-1…A-10, folded into A-7/A-8 and recorded in the implementation roadmap. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. It is the ratification the corpus waves that follow it execute; the standing rule on the other side — a newly acquired corpus enters as research material and the frozen corpus stays the gate until a deliberate re-baseline — is `CLAUDE.md` gate block (A) and is not weakened by it.
 

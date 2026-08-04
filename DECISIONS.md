@@ -182,30 +182,30 @@ project's own and are defined here because they are used before any entry explai
 
 ## What is in this register, counted
 
-**468 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
+**501 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
 
 | | Count |
 |---|---|
-| Decisions recorded | **468** |
-| — of which live | 395 |
+| Decisions recorded | **501** |
+| — of which live | 428 |
 | — of which superseded in fact | 7 |
 | — of which superseded by | 9 |
 | — of which deferred | 48 |
 | — of which shelved with evidence | 2 |
-| Decisions whose date is not stated in the record | 214 |
-| Decisions whose ratifier is not stated in the record | 272 |
-| Decisions recorded outside the specification that owns them | 264 |
-| — of which a documentation gap | 60 |
+| Decisions whose date is not stated in the record | 220 |
+| Decisions whose ratifier is not stated in the record | 288 |
+| Decisions recorded outside the specification that owns them | 297 |
+| — of which a documentation gap | 90 |
 | — of which recorded only on a tracking surface, with no home at all | 11 |
 | — of which a project-wide convention, correctly homed | 35 |
-| — of which a decision about the process, correctly homed | 59 |
+| — of which a decision about the process, correctly homed | 62 |
 | Decisions whose defense the record does not state | 44 |
 | Entries whose own ratification the provenance records | 215 |
 | Entries whose home is recorded at SECTION granularity | 134 |
 
-The second-to-last row is about the DECISIONS; the last is about the ENTRIES. **215 of 468** entries carry a recorded event at which the entry itself — this quote, this restatement, this status — was reviewed and ratified. The remaining 253 do not carry one in their own provenance; the register-level ratification events listed in the preamble are the place to look for those, and nothing is inferred from them into the per-entry field.
+The second-to-last row is about the DECISIONS; the last is about the ENTRIES. **215 of 501** entries carry a recorded event at which the entry itself — this quote, this restatement, this status — was reviewed and ratified. The remaining 286 do not carry one in their own provenance; the register-level ratification events listed in the preamble are the place to look for those, and nothing is inferred from them into the per-entry field.
 
-That last row is the one meant to fall. **424 of 468** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
+That last row is the one meant to fall. **457 of 501** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
 
 Alongside the register, every one of the harvested statements about decisions in this repository has been given a recorded disposition, so that none was silently passed over:
 
@@ -351,6 +351,11 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-422 | The jazz fit is deferred to the jazz ground-truth conversion; only the classical common-practice idiom is fitted now | DEFERRED | 2026-08-03 · user | `docs/implementation_roadmap.md` “Stage 5” ⚠gap |
 | D-466 | Forward-only is a strong DEFAULT, not dogma — a backward edge is admissible only as a deliberate, surfaced, measured, documented exception | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
 | D-468 | The pinned block-(A) instrument declares which inference arm its baselines were measured on, and refuses a corpus whose stamp disagrees | LIVE | — | `CLAUDE.md` |
+| D-474 | No published study reports per-axis inter-annotator agreement for Roman-numeral analysis of Baroque/classical symbolic music — the ground-truth ceiling principle #21 demands is unmeasured by the entire field | LIVE | — | `cowork_term_theory_grounding.md` ⚠gap |
+| D-475 | The BCMH chorale annotations are NOT established as an instrument: the annotator is unknown, the annotations sit on a reduction, and they reached the repository through a machine translation | LIVE | — | `cowork_term_theory_grounding.md` ⚠gap |
+| D-486 | A measurement publishes its coverage denominator and its per-corpus breakdown; a single aggregate number that hides which corpus moved is not reported | LIVE | — | `docs/precision_metric_design.md` ⚠gap |
+| D-497 | RATIFIED AMENDMENT A-7: the empirically-unvalidated mark must be APPLIED to the Jazz preset constants and the unvalidated idioms, with the validation path named | LIVE | — | `cowork_architecture_review_2026_07.md` ⚠gap |
+| D-500 | The user ratified CORPUS EXPANSION at the architecture review: gate-grade jazz ground truth, chromatic material of the Wagner class, and more non-Bach, non-Baroque annotation generally | LIVE | — | `cowork_architecture_review_2026_07.md` ⚠gap |
 
 ## D. Layer 1 — the note model — [full entries](decisions/group_D.md)
 
@@ -411,6 +416,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-357 | Reading the notated spelling as tonality evidence belongs at the function layer, where function gates it — NOT as a standalone key/mode emission patch | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_layer3_keymode_design.md` §15 |
 | D-358 | A sonority shaped like a dominant is note-level evidence for the tonality it implies, and belongs in the key/mode emission — deferred, design-first | DEFERRED ⚠LEGACY | 2026-08-02 · user | `cowork_layer3_keymode_design.md` §15 |
 | D-405 | The full ranked key resolve retained as a segmentation seed is KEPT — adjudicated load-bearing, not dead scoring work | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_structural_integrity_audit.md` §3.1 ⚠gap |
+| D-494 | RATIFIED AMENDMENT A-4: the function layer must gain key-confirmation channels that do not require a cadence, plus an enharmonic-identity rule for key spans | LIVE | — | `cowork_architecture_review_2026_07.md` ⚠gap |
 
 ## G. Layer 4 — chord identity — [full entries](decisions/group_G.md)
 
@@ -477,6 +483,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-464 | No further progression-level signal may be added to the single-step look-around structure; it goes in the progression context instead | LIVE | 2026-08-04 · user | `docs/layer_architecture_audit.md` ⚠gap |
 | D-465 | The policy for judging a proposed post-scoring gate: another bias correction gets the bias fixed first, a structural condition is sound, and a cascade means the missing thing is functional context | LIVE | 2026-08-04 · user | `docs/layer_architecture_audit.md` ⚠gap |
 | D-467 | A rebuilt or re-tuned chord scoring must not rely on the held-note repetition bonus the faithful note model removed | LIVE | 2026-08-04 · user | `cowork_target_architecture.md` ⚠gap |
+| D-501 | A tool may read a written chord symbol ONLY as a comparison or ground-truth label — never as input that influences what the analyzer computes | LIVE | — | `docs/symbol_input_audit.md` ⚠gap |
 
 ## H. Layer 5 and Layer 6 — function, cadence, grouping — [full entries](decisions/group_H.md)
 
@@ -525,6 +532,22 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-460 | A group counts as fully resolved exactly when no unit in it carries an unresolved mark — no confidence threshold enters the test | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` ⚠gap |
 | D-461 | The grouping layer is an explainability layer, not an accuracy requirement, and is deliberately kept thin | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` ⚠gap |
 | D-462 | Cadence validation is scoped to LOCATION; cadence TYPE is only partially attributable and is never a clean gate | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` ⚠gap |
+| D-472 | Key areas are grouped by a smoothing pass over the already-stabilized regions, and a region that disagrees without clearing the confidence test keeps its own key while being grouped into the enclosing area | LIVE | — | `docs/unified_analysis_pipeline.md` ⚠gap |
+| D-476 | The phrase-boundary primitive is owned by the notation-derived view layer — not by the note model, and not by the function layer that consumes it | LIVE | — | `cowork_phrase_boundary_design.md` ⚠gap |
+| D-477 | Phrase boundaries are read from the written surface alone — never from a resolved key, chord or cadence — and the boundaries this misses are accepted, not recovered here | LIVE | — | `cowork_phrase_boundary_design.md` ⚠gap |
+| D-478 | A phrase boundary is a peak in a continuous boundary-strength profile, not the OR of a few binary signals | LIVE | — | `cowork_phrase_boundary_design.md` ⚠gap |
+| D-479 | The boundary cues run per eligible voice and aggregate to the texture, and BOTH the per-voice and the texture boundaries are published | LIVE | — | `cowork_phrase_boundary_design.md` ⚠gap |
+| D-480 | The phrase-boundary primitive is NOT an accuracy requirement — a competitive reference engine does no phrase segmentation at all — so it is built right but kept proportionate | LIVE | — | `cowork_phrase_boundary_design.md` ⚠gap |
+| D-481 | The notated markers are emitted as boundaries unconditionally; only the surface-cue strength is peak-picked | LIVE | — | `cowork_phrase_boundary_design.md` ⚠gap |
+| D-482 | The two hand-synchronised copies of the fermata scan retire into one owned primitive, and that retirement changes no output | LIVE | — | `cowork_phrase_boundary_design.md` ⚠gap |
+| D-483 | The picked boundaries are validated against the analysts' own phrase marks; a fermata-derived phrase list is inadmissible as ground truth because the primitive reads fermatas | LIVE | — | `cowork_phrase_boundary_design.md` ⚠gap |
+| D-484 | The phrase-boundary primitive is a derived view: it inherits the loaded span, requests no extension of its own, and publishes a per-profile max-normalised boundary confidence | LIVE | — | `cowork_phrase_boundary_design.md` ⚠gap |
+| D-485 | Each picked boundary should carry which cue fired and at what scope; the picked set is scope-blind today and the refinement waits for the inference phase | LIVE | — | `cowork_phrase_boundary_design.md` ⚠gap |
+| D-490 | FALSIFIED: no threshold can make the fine-grain function override net-positive — the harm rate is flat against both quantities the threshold is built from | LIVE | — | `cowork_fb_redesign_design.md` ⚠gap |
+| D-491 | REFUTED: making the override's comparison vertically fair does not repair it — even where the alternative fits the notes at least as well, it is still about 71 % harmful | LIVE | — | `cowork_fb_redesign_design.md` ⚠gap |
+| D-492 | The recommended redesign is to demote the override to an annotation — carrying the earlier reading unchanged and surfacing the contradiction — floored by simply disabling it | LIVE | — | `cowork_fb_redesign_design.md` ⚠gap |
+| D-493 | Restricting the override to the genuinely-coupled key-and-chord minority is UN-COMPUTABLE, not merely unmeasured: its trigger is not computed anywhere and building it is the still-owed joint step | LIVE | — | `cowork_fb_redesign_design.md` ⚠gap |
+| D-495 | RATIFIED AMENDMENT A-5: when the phrase-boundary profile is flat, cadence admission relaxes with vote-weight scaling instead of starving | LIVE | — | `cowork_architecture_review_2026_07.md` ⚠gap |
 
 ## I. Module boundaries and code structure — [full entries](decisions/group_I.md)
 
@@ -553,6 +576,8 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-427 | Component (1a) of the two-deferred-refactors mandate — the physical `chordanalyzer.cpp` file split: DELIVERED 2026-06-17 | LIVE | — | `docs/implementation_roadmap.md` |
 | D-428 | Component (1b) of the two-deferred-refactors mandate — the iteration-vocabulary API renames: STILL OWED, and the subject is the LEGACY arm | DEFERRED ⚠LEGACY | — | `docs/implementation_roadmap.md` |
 | D-429 | Component (2) of the two-deferred-refactors mandate — dissolving the post-hoc gate-correction layer into fitted weights: STILL OWED, and its PRINCIPLE binds the live design | DEFERRED ⚠LEGACY | — | `docs/implementation_roadmap.md` |
+| D-469 | The tick-local path is left OUTSIDE the unified pipeline by design — its point-in-time semantics would be distorted by one shared interface | LIVE | — | `docs/unified_analysis_pipeline.md` ⚠gap |
+| D-470 | The temporal-context extension fields are recorded during the pipeline's own analysis pass; no consumer re-runs the chord analysis to rebuild them | LIVE | — | `docs/unified_analysis_pipeline.md` ⚠gap |
 
 ## J. Presentation and output conventions — [full entries](decisions/group_J.md)
 
@@ -567,6 +592,8 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-234 | A chord symbol string must be valid under chords_std.xml; chords.xml is not relied on | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-295 | Zero information loss to the end user - every inferred object must be displayable | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-304 | The analyzer always emits its fullest reading; simplifying it happens only when comparing against a corpus, never in the product | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
+| D-471 | The sub-beat annotation duration gate is not retired on argument — it is kept or dropped on a measured observation run, with the verdict stated in advance | LIVE | — | `docs/unified_analysis_pipeline.md` ⚠gap |
+| D-498 | RATIFIED AMENDMENT A-9: a product stance is owed for output that is mostly uncertain, and for music outside the tonal vocabulary altogether | LIVE | — | `cowork_architecture_review_2026_07.md` ⚠gap |
 
 ## K. Documentation governance — [full entries](decisions/group_K.md)
 
@@ -598,6 +625,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-432 | What counts as a delegation, graded by form — the clause the section-level criterion did not touch | LIVE | — | `CLAUDE.md` |
 | D-433 | A shelved section can be a home — shelving is a status, not a kind | LIVE | — | `CLAUDE.md` |
 | D-435 | Delegating to a document and being a home are different tests with different subjects | LIVE | — | `CLAUDE.md` |
+| D-499 | RATIFIED AMENDMENT A-10: four documentation riders — a consolidated ownership page for the notation-derived views, the membership tie-breaker recorded as idiom-calibrated, and the producer-agnostic seam pinned as a design property | LIVE | — | `cowork_architecture_review_2026_07.md` ⚠gap |
 
 ## L. Licensing, contribution, and coding standards — [full entries](decisions/group_L.md)
 
@@ -617,6 +645,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-292 | The fitting-pool licence constraint - values that ship are fitted only on freely-licensed music | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-315 | A one-line fix was made to MuseScore's own chord-symbol parser and is live in the fork | LIVE | 2026-08-02 · user | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
 | D-375 | Every real source of difficulty labels is research-only or proprietary — a difficulty-grading feature needs a licence path before it can be sold | LIVE | 2026-08-02 · user | `cowork_score_census.md` §8c |
+| D-489 | The snapshot sources are hash-pinned rather than copied in-tree, because their licences make an in-tree copy incompatible with this project's licence | LIVE | — | `docs/score_inventory.md` |
 
 ## M. The style system and the knowledge base — [full entries](decisions/group_M.md)
 
@@ -638,6 +667,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-413 | Upper-structure and rootless VOICING substitution is outside the harmonic vocabulary — it is a voicing, not a function | LIVE | 2026-08-03 · user | `cowork_progression_schema_dictionary.md` §5.3 |
 | D-414 | The catalog is GENERATIVE where it can be and enumerated only where it must be | LIVE | 2026-08-03 · user | `cowork_progression_schema_dictionary.md` §7 |
 | D-421 | Idiom re-discovery rides every corpus wave, on research material only, and a changed cluster set is its own ratification event | LIVE | 2026-08-03 · user | `docs/implementation_roadmap.md` the opening block (above the first section heading) ⚠gap |
+| D-496 | RATIFIED AMENDMENT A-6: whether the pairwise progression grammar lives inside the harmonic vocabulary or stays a separate store is decided at the recognition-consumer build, explicitly | LIVE | — | `cowork_architecture_review_2026_07.md` ⚠gap |
 
 ## N. Generation, constraints, visualization, and the LLM integration — [full entries](decisions/group_N.md)
 
@@ -721,6 +751,8 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-372 | Marked part-writing errors must be BUILT, not downloaded — no public dataset exists and the two commercial holders keep theirs closed | LIVE | 2026-08-02 · user | `cowork_score_census.md` §8c |
 | D-373 | The only dual-annotator reference data actually on disk is the 27 TAVERN A/B pairs — the assumed second source was measured to have ZERO overlap | LIVE | 2026-08-02 · user | `cowork_score_census.md` §8c |
 | D-374 | The flexible multi-reading chorale annotations are RECORD-ONLY — they overlap the regression repertoire, so any use over those pieces is a future user ruling | LIVE | 2026-08-02 · user | `cowork_score_census.md` §8c |
+| D-487 | The eleven snapshot source scores are frozen and hash-pinned; changing the set or bumping a pin is a deliberate golden and gate re-baseline | LIVE | — | `docs/score_inventory.md` |
+| D-488 | The two Bach chorale collections are independent selections, not sub- and superset — and the diff between them is not recoverable in-repo | LIVE | — | `docs/score_inventory.md` |
 
 ## S. The guiding principles — [full entries](decisions/group_S.md)
 
@@ -793,6 +825,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-437 | Phase 3 waits on the phase-2 items that could find another member of the family being designed for, not on all of phase 2 | LIVE | — | `CLAUDE.md` |
 | D-438 | Open-items register rows whose subject is this project's own tracking and documentation apparatus gate nothing — but an establishment obligation always gates | LIVE | — | `CLAUDE.md` |
 | D-439 | The perspective inventory's §4 is the one home for the enumerated discovery channels, and CLAUDE.md's phase-2 clause points at it instead of listing its own subjects | LIVE | — | `CLAUDE.md` |
+| D-473 | A theory-grounding pass labels every load-bearing claim FACT / THEORY / CONJECTURE, cross-checks its central sources independently, and carries no equation out of a text it could not fetch | LIVE | — | `cowork_term_theory_grounding.md` ⚠gap |
 
 ## U. The standing decision-bearing surfaces — [full entries](decisions/group_U.md)
 

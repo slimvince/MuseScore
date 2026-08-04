@@ -1,0 +1,77 @@
+{
+  "purpose": "A run of tools/audit/process_check.py over named dispatches or reports. Generated so a report cites this file rather than transcribing what the check found (D-431).",
+  "rules": [
+    "D-431 bare quantity",
+    "D-431 uncited code claim",
+    "D-434 missing self-check section"
+  ],
+  "files_scanned": [
+    "cc_instruction_reads_2.md"
+  ],
+  "findings_total": 8,
+  "by_file": {
+    "cc_instruction_reads_2.md": {
+      "findings": 8,
+      "rows": [
+        {
+          "file": "cc_instruction_reads_2.md",
+          "line": 52,
+          "rule": "D-431 bare quantity",
+          "detail": "1.1",
+          "sentence": "**1.1** Confirm A2 and report the arrangement."
+        },
+        {
+          "file": "cc_instruction_reads_2.md",
+          "line": 57,
+          "rule": "D-431 bare quantity",
+          "detail": "1.2",
+          "sentence": "**1.2** Read documents **in the regime's order**, in full, for as many as capacity allows."
+        },
+        {
+          "file": "cc_instruction_reads_2.md",
+          "line": 73,
+          "rule": "D-431 bare quantity",
+          "detail": "2.1",
+          "sentence": "**2.1** Identify, from the adjudication's own record, the **three** decisions it names as invisible to"
+        },
+        {
+          "file": "cc_instruction_reads_2.md",
+          "line": 80,
+          "rule": "D-431 bare quantity",
+          "detail": "2.3",
+          "sentence": "**2.3 Row what you find."
+        },
+        {
+          "file": "cc_instruction_reads_2.md",
+          "line": 98,
+          "rule": "D-431 bare quantity",
+          "detail": "five documents",
+          "sentence": "A wave that reads five documents and fixes three things is the pattern that consumed the"
+        },
+        {
+          "file": "cc_instruction_reads_2.md",
+          "line": 131,
+          "rule": "D-431 bare quantity",
+          "detail": "three documents",
+          "sentence": "**A short wave is acceptable; a wave that read three documents and repaired four tools is not.**"
+        },
+        {
+          "file": "cc_instruction_reads_2.md",
+          "line": 145,
+          "rule": "D-431 bare quantity",
+          "detail": "1.1",
+          "sentence": "- **Principles.** #12 findings rowed, nothing corrected away. #20 — Task 1.1 refuses the yield"
+        },
+        {
+          "file": "cc_instruction_reads_2.md",
+          "line": 148,
+          "rule": "D-431 bare quantity",
+          "detail": "one entry",
+          "sentence": "- **Scope.** Task 3 is one field on one entry, and it is named as a transmission repair rather than"
+        }
+      ]
+    }
+  },
+  "clean_files": [],
+  "establishment": "tools/audit/process_check_establishment.json — the check's measured detection power and false-positive rate. Read it before reading a count here as coverage."
+}

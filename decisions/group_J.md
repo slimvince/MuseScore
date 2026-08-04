@@ -157,3 +157,41 @@
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md`; the design memo it names, `docs/extension_stripping_policy.md`, exists on disk. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written into `ARCHITECTURE.md` §2.15 as a cross-cutting analysis contract, which is that section's declared scope. Former home preserved (#12): `STATUS_ARCHIVE.md:943`.
 
+### D-471 — The sub-beat annotation duration gate is not retired on argument — it is kept or dropped on a measured observation run, with the verdict stated in advance
+
+> Decision rule:
+>
+> - If the gate measurably reduces clutter or false annotations without
+>   suppressing correct ones → keep as documented emitter option (default
+>   0.5, settable).
+> - If the gate suppresses equally many correct and incorrect annotations
+>   → retire, either immediately in Phase 3b or folded into Phase 5.
+>   `minimumDisplayDurationBeats` becomes `std::nullopt` default and the
+>   option is removed in follow-up cleanup.
+
+**In plain words.** A rule hides very short chords from the Roman-numeral annotation. Whether to keep it was not settled by opinion: the decision was written down in advance as a comparison — run the annotation with and without it on real scores, and keep it only if it removes clutter without also removing correct labels.
+
+**Why.** Stated with the rule: the gate silently drops sub-beat regions from Roman-numeral annotation while the chord track and the status bar still show them, so the question is whether it removes clutter or removes correct labels — which is a measurement, not a preference. The rule fixes the verdict before the measurement, which is the pattern the premise gate (#17b) later made general.
+
+**Status.** LIVE · date not stated · ratifier not stated
+
+**Home.** `docs/unified_analysis_pipeline.md:225-233`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Stated as the divergence-C decision rule of the unification design; the document's own header records divergence C as PARKED, so the rule stands undischarged. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-498 — RATIFIED AMENDMENT A-9: a product stance is owed for output that is mostly uncertain, and for music outside the tonal vocabulary altogether
+
+> - **A-9 (from F-13, F-15). Write the product stance for dense abstention and out-of-domain input** (what the user
+>   sees; when the system says "this is outside my tonal vocabulary"). Product-level, small, prevents the honest-marks
+>   design from becoming a UX failure.
+
+**In plain words.** The design deliberately says 'uncertain' rather than guessing. Nobody has decided what the user should see when most of a passage comes back uncertain, or what the program should say about music that is not tonal at all — where the right answer is to state that plainly rather than to produce a confident reading. The amendment requires that stance to be written.
+
+**Why.** Derived from the review's stress simulation, which produced both halves concretely: in suspension-chain textures the anchor a reading depends on is itself uncertain, so the honest marks cascade and the output can be dominated by them; and on music that breaks the tonal model class the confidence collapses correctly but nothing INTERPRETS the collapse. The review's own framing is that this is what prevents an honest design from becoming a usability failure.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Home.** `cowork_architecture_review_2026_07.md:333-335`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Amendment A-9 of the external architecture review, in a document whose banner records amendments A-1…A-10 as RATIFIED by the user on 2026-07-02. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. No register entry and no located product answers it; the review records the underlying findings as F-13 (no display policy for dense abstention) and F-15 (no explicit out-of-domain stance).
+

@@ -242,6 +242,30 @@ FORMS: dict[str, tuple[str, str, str, str]] = {
 
     "cowork_architecture_reassessment.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+
+    # ------------------------------------------------------------------
+    # Graded 2026-08-04 by the phase-1 reads WAVE 2, when these documents FIRST became
+    # somebody's home.  All seven come out NOT_NAMED, which the check below re-verifies
+    # mechanically against the three surfaces, so no reading judgment is involved and no
+    # section-kind judgment is reached.  (`docs/score_inventory.md` is the wave's eighth
+    # home document and is NOT here: its entries are process rules, so it does not enter
+    # this artifact's population — the one place the wave would have had to grade a
+    # naming, `CLAUDE.md`'s mandatory-read instruction, is therefore not reached.)
+    # ------------------------------------------------------------------
+    "docs/unified_analysis_pipeline.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "cowork_term_theory_grounding.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "cowork_phrase_boundary_design.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "docs/precision_metric_design.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "cowork_fb_redesign_design.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "cowork_architecture_review_2026_07.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "docs/symbol_input_audit.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
     # ------------------------------------------------------------------
     # (the four regraded rows above are the ONLY ones whose grade has moved since phase 1p;
     #  GRADE_AT_PHASE_1P below records what they were, and is what the pre-apply check reads)

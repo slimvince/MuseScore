@@ -703,3 +703,20 @@
 
 **Provenance.** Found by the phase-1i continuation wave, 2026-08-02, reading `cowork_structural_integrity_audit.md` IN FULL. The document's banner records `Status: read-only grounded catalogue (CC, 2026-07-07; Engage arc #6)` — an authored catalogue, not a ratified contract. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1i ratification queue. Recorded in the Stage-1 build-status section beside the resolved constant-sourcing item; the byte-identity of that stage is stated in the same section (0-diff `.ours.json` 352x3, robust stop PASS, the batch case-identity sets 52/24/52). ★ RATIFIED (user, 2026-08-02, the phase-1i queue).
 
+### D-494 — RATIFIED AMENDMENT A-4: the function layer must gain key-confirmation channels that do not require a cadence, plus an enharmonic-identity rule for key spans
+
+> - **A-4 (from F-10, F-14). Specify cadence-less key-confirmation channels in §5.3** — sustained dominant emphasis
+>   (arrival-denied dominants), recognized transposition sequences (the recognition consumer as a §5.3 input — synergy
+>   with the already-planned consumer), and an enharmonic-identity rule for key-spans. Design-only now; Tristan-class
+>   corpus as the measurement bed.
+
+**In plain words.** The program only accepts a change of key when a cadence confirms it. Music that deliberately avoids cadences — a sustained dominant that never resolves, a sequence that transposes step by step — therefore keeps being read in the old key. The amendment requires channels that confirm a key without a cadence, and a rule for deciding whether a span is written in one spelling of a key or its enharmonic twin.
+
+**Why.** Derived from the review's own stress simulation and stated with it: on resolution-denying music the cadence-confirmed modulation gate almost never fires, so the default keeps the home key across genuinely modulating spans and the Roman numerals are computed against wrong keys; and enharmonic reinterpretation is handled at the single-chord level while no rule addresses enharmonic identity at the key-span level.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Home.** `cowork_architecture_review_2026_07.md:320-323`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Amendment A-4 of the external architecture review, in a document whose banner records amendments A-1…A-10 as RATIFIED by the user on 2026-07-02. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. Its sibling A-3 is already registered as **D-358** (deferred); this amendment has no register entry and no product located by this wave.
+

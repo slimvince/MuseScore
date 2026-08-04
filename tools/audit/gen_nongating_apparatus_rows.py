@@ -378,6 +378,33 @@ V = {
                "would carry) and a third guards the local patches to MuseScore's own code. Those "
                "bear on instruments and on the system, so the default applies to the row as a "
                "whole rather than splitting a row the register keeps as one."),
+    # ---- rowed 2026-08-04 by READ WAVE 2 -------------------------------------------------
+    # OI-321 and OI-323 are NOT first-cut candidates -- the over-inclusive vocabulary does not
+    # reach their subject columns -- so no verdict is authored for them, on the OI-305/OI-306
+    # precedent, and both carry the default, which is that they GATE. That is the right answer
+    # for both on the criterion anyway: OI-321 is statements about the analysis's build state,
+    # and OI-323 is an establishment obligation.
+    "OI-320": (GATES, "the criterion - the row's subject bears on an instrument",
+               "A corpus/score inventory names the SUPERSEDED batch case-identity sets as the "
+               "current acceptance gate, three times, and tells the reader the granularity-robust "
+               "metric does not exist yet. That is a statement about an instrument a measurement "
+               "depends on and about the analysis's build state, which D-438's line inside the "
+               "documentation rows puts on the gating side; and the document is the one CLAUDE.md "
+               "makes a mandatory first read for any task that touches scores, so a session is "
+               "pointed at the retired gate before it reads anything else."),
+    "OI-322": (GATES, "the criterion - the row's subject bears on the analysis",
+               "A completed audit describes five pieces of analysis-tool code in the present tense "
+               "-- with call-site line citations and three open questions -- that its own last line "
+               "says were deleted. The subject is what the code does and whether a symbol may reach "
+               "the analyzer, not a banner or a label: D-438's apparatus line does not reach it. "
+               "(The document's FILING -- re-banner as a historical record or rewrite -- is "
+               "apparatus, but it is the remedy's shape, not the row's subject.)"),
+    "OI-324": (GATES, "the criterion - the row's subject bears on what the emission reads",
+               "Whether the priority-of-evidence ranking binds the production emission or only the "
+               "legacy key path is a question about the evidential contract the joint emission is "
+               "measured against -- OI-228 puts that very premise under load. Nothing about it is "
+               "apparatus. The row's smaller second half (an unqualified predicate in the same "
+               "paragraph pair) would be apparatus on its own and does not lift the row."),
 }
 
 # The dispatch's assumption A3, recorded so the difference is reported rather than reconciled.

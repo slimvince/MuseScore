@@ -13,9 +13,9 @@
   "the_two_stops": "The tool refuses to run if a first-cut candidate has no authored verdict, and refuses an authored verdict for a row that is not an open candidate - so the table cannot drift away from the register without failing loudly."
  },
  "population": {
-  "rows_parsed": 319,
-  "open_rows": 234,
-  "first_cut_candidates": 52,
+  "rows_parsed": 323,
+  "open_rows": 238,
+  "first_cut_candidates": 55,
   "first_cut_vocabulary": [
    "doc-sync",
    "docs /",
@@ -38,7 +38,7 @@
  },
  "totals": {
   "non_gating": 24,
-  "gates": 28,
+  "gates": 31,
   "non_gating_ids": [
    "OI-205",
    "OI-219",
@@ -136,6 +136,15 @@
    "the analysis's inputs": [
     "OI-239",
     "OI-57"
+   ],
+   "the criterion - the row's subject bears on an instrument": [
+    "OI-320"
+   ],
+   "the criterion - the row's subject bears on the analysis": [
+    "OI-322"
+   ],
+   "the criterion - the row's subject bears on what the emission reads": [
+    "OI-324"
    ],
    "the default - out of the declared class": [
     "OI-154"
@@ -544,6 +553,30 @@
    "verdict": "NON-GATING",
    "reason": "Two LABELS in the canonical document: the Layer-6 section still calls the grouping unit a 'phrase' after the ratified rename reserved that word, and one section number is used twice. D-438's line names a label and an anchor as apparatus, and item (1) is already sequenced as its own scoped terminology work item under OI-229. Neither states anything false about what the analysis does.",
    "class_basis": "tracking/documentation apparatus - the user's own phrase"
+  },
+  {
+   "id": "OI-320",
+   "title": "`docs/score_inventory.md` — the document `CLAUDE.md` sends every score-touching task to FIRST — states the SUPERSEDED batch case-identity gate as the current gate, three times, and tells the reader the granularity-robust metric does not exist yet",
+   "subject_column": "F — doc-sync debt (#10)",
+   "verdict": "GATES",
+   "reason": "A corpus/score inventory names the SUPERSEDED batch case-identity sets as the current acceptance gate, three times, and tells the reader the granularity-robust metric does not exist yet. That is a statement about an instrument a measurement depends on and about the analysis's build state, which D-438's line inside the documentation rows puts on the gating side; and the document is the one CLAUDE.md makes a mandatory first read for any task that touches scores, so a session is pointed at the retired gate before it reads anything else.",
+   "gate_ground": "the criterion - the row's subject bears on an instrument"
+  },
+  {
+   "id": "OI-322",
+   "title": "`docs/symbol_input_audit.md` describes throughout, in the present tense, code its own closing line says was deleted — a reader who stops before the last line is told the opposite of HEAD",
+   "subject_column": "F — doc-sync debt (#10)",
+   "verdict": "GATES",
+   "reason": "A completed audit describes five pieces of analysis-tool code in the present tense -- with call-site line citations and three open questions -- that its own last line says were deleted. The subject is what the code does and whether a symbol may reach the analyzer, not a banner or a label: D-438's apparatus line does not reach it. (The document's FILING -- re-banner as a historical record or rewrite -- is apparatus, but it is the remedy's shape, not the row's subject.)",
+   "gate_ground": "the criterion - the row's subject bears on the analysis"
+  },
+  {
+   "id": "OI-324",
+   "title": "**D-057**'s binding scope is now unstated: the priority-of-evidence table's home section was scoped to the LEGACY key path, while the open item that rests on it is about the PRODUCTION emission",
+   "subject_column": "F — doc-sync debt (#10) / E — user adjudication",
+   "verdict": "GATES",
+   "reason": "Whether the priority-of-evidence ranking binds the production emission or only the legacy key path is a question about the evidential contract the joint emission is measured against -- OI-228 puts that very premise under load. Nothing about it is apparatus. The row's smaller second half (an unqualified predicate in the same paragraph pair) would be apparatus on its own and does not lift the row.",
+   "gate_ground": "the criterion - the row's subject bears on what the emission reads"
   },
   {
    "id": "OI-150",

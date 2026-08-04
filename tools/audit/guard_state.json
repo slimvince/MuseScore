@@ -20,6 +20,7 @@
       "tools/audit/decisions/gen_phase1p_delegation_bar.py",
       "tools/audit/decisions/gen_phase1w_legacy_verification.py",
       "tools/audit/decisions/gen_reads1_yield.py",
+      "tools/audit/decisions/gen_reads2_yield.py",
       "tools/audit/decisions/reaim_home_anchors.py",
       "tools/audit/gen_nongating_apparatus_rows.py",
       "tools/audit/gen_phase3_gate_partition.py",
@@ -30,7 +31,7 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 31,
+    "authored_entries": 32,
     "unclassified_candidates": [],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
     "outside_tools_audit_authored_by_name": [
@@ -55,7 +56,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "REGISTER LINT: OPEN_ITEMS.md — 319 row IDs",
+        "REGISTER LINT: OPEN_ITEMS.md — 324 row IDs",
         "REGISTER LINT: PASS — every row ID is unique"
       ],
       "stderr": [],
@@ -261,7 +262,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "PASS: nongating_apparatus_rows.json re-derives byte-identically (24 non-gating / 28 gates of 52 candidates over 234 open rows)"
+        "PASS: nongating_apparatus_rows.json re-derives byte-identically (24 non-gating / 31 gates of 55 candidates over 238 open rows)"
       ],
       "stderr": [],
       "what_it_checks": "the non-gating apparatus-row declaration re-derives from the INDEX"
@@ -287,10 +288,10 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "backbone decisions: 468",
+        "backbone decisions: 501",
         "cross-references resolving: ALL",
-        "verbatim quotes found at their cited home: 468/468",
-        "cited line numbers correct: 462/462   (6 cited to a file with no line number, by design)"
+        "verbatim quotes found at their cited home: 501/501",
+        "cited line numbers correct: 495/495   (6 cited to a file with no line number, by design)"
       ],
       "stderr": [],
       "what_it_checks": "every register entry's verbatim quote and cited line is found at its home"
@@ -317,72 +318,10 @@
       ],
       "exit_code": 1,
       "verdict": "FAIL",
-      "stdout": [
-        "population: 159 entries / 27 documents",
-        "  before: {'contract-home': 96, 'gap': 63}",
-        "  after:  {'contract-home': 99, 'gap': 60}",
-        "  moved:  31  (to gap 14, to contract-home 17)",
-        "    cowork_architecture_reassessment.md: −4 / +0",
-        "    cowork_engage_arc_plan.md: −0 / +3",
-        "    cowork_joint_key_chord_design.md: −0 / +4",
-        "    cowork_layer3_keymode_design.md: −1 / +0",
-        "    cowork_progression_schema_dictionary.md: −0 / +9",
-        "    cowork_structural_integrity_audit.md: −0 / +1",
-        "    cowork_voiceleading_axis_design.md: −3 / +0",
-        "    docs/iteration_path1_summary.md: −2 / +0",
-        "    docs/redesign_plan.md: −4 / +0",
-        "  since phase 1q (the written delegations alone): 28 moved (to contract-home 28, to gap 0)",
-        "    cowork_engage_arc_plan.md: −0 / +3",
-        "    cowork_joint_key_chord_design.md: −0 / +4",
-        "    cowork_layer5_function_design.md: −0 / +8",
-        "    cowork_notation_output_contract.md: −0 / +1",
-        "    cowork_prefit_gates.md: −0 / +5",
-        "    cowork_voiceleading_axis_design.md: −0 / +7",
-        "  write-list documents still holding a `gap` entry: cowork_voiceleading_axis_design.md",
-        "STALE vs the files: 41 classification field(s) do not re-derive",
-        "   {\"id\": \"D-321\", \"what\": \"home_section\", \"to\": \"“Floating-point tie policy”\"}",
-        "   {\"id\": \"D-322\", \"what\": \"home_section\", \"to\": \"“Floating-point tie policy”\"}",
-        "   {\"id\": \"D-323\", \"what\": \"home_section\", \"to\": \"“`dim7CharacteristicBonus`”\"}",
-        "   {\"id\": \"D-324\", \"what\": \"home_section\", \"to\": \"“§6a. The unified promotion primitive `promoteToWinner()`”\"}",
-        "   {\"id\": \"D-406\", \"what\": \"home_section\", \"to\": \"§1\"}",
-        "   {\"id\": \"D-407\", \"what\": \"home_section\", \"to\": \"§2\"}",
-        "   {\"id\": \"D-408\", \"what\": \"home_section\", \"to\": \"§2\"}",
-        "   {\"id\": \"D-409\", \"what\": \"home_section\", \"to\": \"§4\"}",
-        "   {\"id\": \"D-410\", \"what\": \"home_section\", \"to\": \"§4\"}",
-        "   {\"id\": \"D-411\", \"what\": \"home_section\", \"to\": \"§5.2\"}",
-        "   {\"id\": \"D-412\", \"what\": \"home_section\", \"to\": \"§5.2\"}",
-        "   {\"id\": \"D-413\", \"what\": \"home_section\", \"to\": \"§5.3\"}",
-        "   {\"id\": \"D-414\", \"what\": \"home_section\", \"to\": \"§7\"}",
-        "   {\"id\": \"D-424\", \"what\": \"home_section\", \"to\": \"the opening block (above the first section heading)\"}",
-        "   {\"id\": \"D-425\", \"what\": \"home_section\", \"to\": \"§4\"}",
-        "   {\"id\": \"D-426\", \"what\": \"home_section\", \"to\": \"§7\"}",
-        "   {\"id\": \"D-442\", \"what\": \"home_section\", \"to\": \"§4.3\"}",
-        "   {\"id\": \"D-443\", \"what\": \"home_section\", \"to\": \"§8.1\"}",
-        "   {\"id\": \"D-444\", \"what\": \"home_section\", \"to\": \"§5.2\"}",
-        "   {\"id\": \"D-445\", \"what\": \"home_section\", \"to\": \"§5.3\"}",
-        "   {\"id\": \"D-446\", \"what\": \"home_section\", \"to\": \"§6\"}",
-        "   {\"id\": \"D-447\", \"what\": \"home_section\", \"to\": \"§8.2\"}",
-        "   {\"id\": \"D-448\", \"what\": \"home_section\", \"to\": \"§4.2\"}",
-        "   {\"id\": \"D-449\", \"what\": \"home_section\", \"to\": \"§4\"}",
-        "   {\"id\": \"D-450\", \"what\": \"home_section\", \"to\": \"§4\"}",
-        "   {\"id\": \"D-451\", \"what\": \"home_section\", \"to\": \"§0\"}",
-        "   {\"id\": \"D-452\", \"what\": \"home_section\", \"to\": \"§0\"}",
-        "   {\"id\": \"D-453\", \"what\": \"home_section\", \"to\": \"§7\"}",
-        "   {\"id\": \"D-454\", \"what\": \"home_section\", \"to\": \"§6\"}",
-        "   {\"id\": \"D-455\", \"what\": \"home_section\", \"to\": \"§9\"}",
-        "   {\"id\": \"D-456\", \"what\": \"home_section\", \"to\": \"§9\"}",
-        "   {\"id\": \"D-457\", \"what\": \"home_section\", \"to\": \"§5.1\"}",
-        "   {\"id\": \"D-458\", \"what\": \"home_section\", \"to\": \"the opening block (above the first section heading)\"}",
-        "   {\"id\": \"D-459\", \"what\": \"home_section\", \"to\": \"§5.2\"}",
-        "   {\"id\": \"D-460\", \"what\": \"home_section\", \"to\": \"§5.4\"}",
-        "   {\"id\": \"D-461\", \"what\": \"home_section\", \"to\": \"§7\"}",
-        "   {\"id\": \"D-462\", \"what\": \"home_section\", \"to\": \"§10\"}",
-        "   {\"id\": \"D-463\", \"what\": \"home_section\", \"to\": \"“Finding 1”\"}",
-        "   {\"id\": \"D-464\", \"what\": \"home_section\", \"to\": \"“Finding 5”\"}",
-        "   {\"id\": \"D-465\", \"what\": \"home_section\", \"to\": \"“What this means for future gate decisions”\"}",
-        "STALE vs the files: phase1q_reclassification.json does not re-derive"
+      "stdout": [],
+      "stderr": [
+        "home document(s) with no authored delegation scope: ['cowork_architecture_review_2026_07.md', 'cowork_fb_redesign_design.md', 'cowork_phrase_boundary_design.md', 'cowork_term_theory_grounding.md', 'docs/precision_metric_design.md', 'docs/symbol_input_audit.md', 'docs/unified_analysis_pipeline.md']"
       ],
-      "stderr": [],
       "what_it_checks": "every home-section field re-derives from the documents' own headings"
     },
     {
@@ -420,7 +359,7 @@
       "verdict": "FAIL",
       "stdout": [],
       "stderr": [
-        "home document(s) with no authored KIND judgment: ['cowork_factorization_desk_simulation.md', 'cowork_layer6_grouping_design.md', 'cowork_target_architecture.md', 'docs/layer_architecture_audit.md', 'docs/llm_integration.md']"
+        "home document(s) with no authored KIND judgment: ['cowork_architecture_review_2026_07.md', 'cowork_factorization_desk_simulation.md', 'cowork_fb_redesign_design.md', 'cowork_layer6_grouping_design.md', 'cowork_phrase_boundary_design.md', 'cowork_target_architecture.md', 'cowork_term_theory_grounding.md', 'docs/layer_architecture_audit.md', 'docs/llm_integration.md', 'docs/precision_metric_design.md', 'docs/symbol_input_audit.md', 'docs/unified_analysis_pipeline.md']"
       ],
       "what_it_checks": "the phase-1m measurements re-derive"
     },
@@ -484,6 +423,19 @@
       "what_it_checks": "READ WAVE 1's measured yield still matches the bands registered before the reads, and every entry it names is still in the register at the home it records"
     },
     {
+      "tool": "tools/audit/decisions/gen_reads2_yield.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "reads2_yield.json re-derives"
+      ],
+      "stderr": [],
+      "what_it_checks": "READ WAVE 2's measured yield still matches the bands registered before the reads, every entry it names is still in the register at the home it records, and its running read count still derives from the regime's own partition plus wave 1's count"
+    },
+    {
       "tool": "tools/audit/decisions/reaim_home_anchors.py",
       "args": [
         "--check"
@@ -519,7 +471,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "living mode: index=319 detail=319 baseline=200 post-baseline=119",
+        "living mode: index=324 detail=324 baseline=200 post-baseline=124",
         "OVERALL PASS — bijection holds, no detail file carries a status of its own, and all 200 original items stay byte-verbatim (report: open_items\\register_check.json)"
       ],
       "stderr": [],
@@ -540,8 +492,8 @@
     }
   ],
   "summary": {
-    "run": 29,
-    "passing": 23,
+    "run": 30,
+    "passing": 24,
     "failing": 6,
     "failing_tools": [
       {

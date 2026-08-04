@@ -432,3 +432,43 @@
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL, in the Wave-3 addendum text of the dual-annotator row. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
+### D-487 — The eleven snapshot source scores are frozen and hash-pinned; changing the set or bumping a pin is a deliberate golden and gate re-baseline
+
+> 2. **Do NOT add/remove the 11 snapshot sources** (in `tools/dcml/*/MS3/`, listed
+>    above) or bump their clone pins without coordinating — they are the snapshot
+>    baseline and are hash-pinned in `tools/snapshot_sources_manifest.json`. A pin
+>    bump is a deliberate golden + BIR re-baseline.
+
+**In plain words.** Eleven scores are the fixed input to the refactor-safety test. They are recorded by content hash and by the exact upstream version they came from. Adding, removing or updating one is not maintenance — it changes what the test compares against, and counts as deliberately re-setting the baseline.
+
+**Why.** Stated with the rule and grounded in the mechanism beside it: the sources live in unpinned, gitignored clones, so the goldens are byte-meaningful only against the manifest's recorded commits — which makes a pin bump a change to the comparison, not to the material.
+
+**Status.** LIVE · date not stated · ratifier not stated
+
+**Home.** `docs/score_inventory.md:344-347`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** Hard rule 2 of the score inventory, the document `CLAUDE.md` directs every score-touching task to read first. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. It is the snapshot-corpus counterpart of **D-226** (the music21 export is version-pinned; regenerating it is a deliberate re-baseline) and of the block-(A) re-baseline discipline.
+
+### D-488 — The two Bach chorale collections are independent selections, not sub- and superset — and the diff between them is not recoverable in-repo
+
+> The 353 are music21's bach corpus filtered by `_is_bach_chorale` (has `bwv`, not a
+> variant suffix, not a non-chorale BWV, exactly 4 SATB parts) — the `410 → 353`
+> filter. (`corpus_registry.json` records an earlier "352 genuine SATB from 410"; the
+> current filter yields 353. The +1 is not separately logged.) **These are NOT a
+> subset of DCML `bach_chorales/MS3` (361):** they use music21 **BWV** identifiers
+> (`bwv10.7`), DCML uses **Riemenschneider** numbers with no BWV in its
+> `metadata.tsv`. A stem-level diff is **not recoverable in-repo** without an
+> external BWV↔Riemenschneider concordance — the two are independent selections, not
+> super/subset. Corpus-expansion / cross-validation is a Stage-5 decision; do not
+> silently treat one as a superset of the other.
+
+**In plain words.** The chorales the gate measures and the chorales the annotated corpus holds are two different selections of Bach's chorales, picked by different criteria and named by two incompatible numbering systems. Which pieces they share cannot be worked out from anything in the repository. Neither may be treated as containing the other.
+
+**Why.** Established by reading the two selections' own identifiers rather than assumed: one keys pieces by BWV number, the other by Riemenschneider number with no BWV anywhere in its metadata, so a stem-level diff would need an external concordance the repository does not hold. The consequence is stated with it — corpus expansion and cross-validation across the two is a Stage-5 decision, not a silent identification.
+
+**Status.** LIVE · decided 2026-06-11 · ratifier not stated
+
+**Home.** `docs/score_inventory.md:180-189`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** The chorale-selection provenance finding of the score inventory (audit C3), restated as its hard rule 4; the document is the one `CLAUDE.md` directs every score-touching task to read first. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+

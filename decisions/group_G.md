@@ -1258,3 +1258,20 @@
 
 **Provenance.** `cowork_target_architecture.md` §6.2, recorded 2026-06-21 and citing the Layer-1 implementation report §5.3 as its measurement. Entered by the phase-1 reads wave 1. Whether the ~4 cases have since recovered was NOT checked by this wave. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
+### D-501 — A tool may read a written chord symbol ONLY as a comparison or ground-truth label — never as input that influences what the analyzer computes
+
+> Symbols are instructions written by the user, not analysis results.
+> Production paths must not read them as input to analysis. Tools may
+> read them only as comparison/ground-truth labels — never as input that
+> influences what the analyzer computes.
+
+**In plain words.** Chord symbols printed in a score are instructions the user wrote, not results. Production analysis may not read them at all. A measurement tool may put them beside the program's own answer to see how far the two agree, but it may not let them change what the program computes.
+
+**Why.** Stated with the principle: a symbol is user content and may be wrong, so reading it as input makes the analysis agree with the user rather than with the music — and in a measurement tool it additionally destroys the measurement, because the tool would then be comparing the annotation with itself.
+
+**Status.** LIVE · date not stated · ratifier not stated
+
+**Home.** `docs/symbol_input_audit.md:15-18`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The user's operating principle, quoted verbatim at the head of the symbol-input audit and applied as its classification criterion. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. **D-066** and **D-305** carry the production ban; this entry carries the TOOL clause, which is what the audit's categories B and C are graded against and what its category-C resolution (recorded in the audit's closing status line and registered as **D-067**) discharged by deleting the tool-side symbol paths.
+

@@ -13599,12 +13599,606 @@
       "status": "live",
       "date": "2026-08-03",
       "ratified_by": [
-        "not stated"
+        "user"
       ],
-      "status_source": "Built 2026-08-03 (CC, phase 1y, dispatch cc_instruction_phase1y_corpus_arm_stamping.md) as the manifest half of OPEN_ITEMS.md OI-307, and flagged there as a judgment call for the user rather than buried; recorded at gate block (A) 2026-08-04 (phase 1z, dispatch cc_instruction_phase1z_commit_and_instrument_record.md Task 2.3), the block that pins the instrument being where a change to it belongs (#7). ★ THE USER HAS NOT RULED ON IT: recording is not ratifying, and no ratifier is inferred from the dispatch that ordered the record. The two measurements it rests on are generated, and no value of either is restated in the record (#17f, D-431): that the declaration moves nothing is at tools/audit/instrument_arm_declaration_effect.json, which runs gate block (A)'s own two commands at HEAD over the production corpus and diffs against the committed tools/robust_stop/ reference; that it detects a wrong-arm corpus, admits a right-arm one and leaves an undeclared caller alone is at tools/audit/corpus_arm_establishment.json, probes 2, 3 and 4. Reversal is one default (EXPECT_ARM_DEFAULT set to 'any').",
+      "status_source": "Built 2026-08-03 (CC, phase 1y, dispatch cc_instruction_phase1y_corpus_arm_stamping.md) as the manifest half of OPEN_ITEMS.md OI-307, and flagged there as a judgment call for the user rather than buried; recorded at gate block (A) 2026-08-04 (phase 1z, dispatch cc_instruction_phase1z_commit_and_instrument_record.md Task 2.3), the block that pins the instrument being where a change to it belongs (#7). ★ RATIFIED BY THE USER, 2026-08-03, in session — presented as three options with the third recommended, ratify AND record, and agreed. The ruling is transmitted in the read-wave-2 dispatch cc_instruction_reads_2.md §0a, whose ruling ledger records why this field read otherwise for a day: the phase-1z re-issue dropped the sentence carrying the ratification, so phase 1z executed the recording half of the ruling and not the ratifying half, and this entry stated 'ratifier not stated' about a decision the user had made. ★ The former provenance sentence — 'THE USER HAS NOT RULED ON IT: recording is not ratifying, and no ratifier is inferred from the dispatch that ordered the record.' — is preserved here rather than deleted (#12), and it was the correct thing to write on what phase 1z was given: what was missing was the transmission, not the ruling, and inferring a ratifier from a dispatch that named none would have been the worse error. The two measurements it rests on are generated, and no value of either is restated in the record (#17f, D-431): that the declaration moves nothing is at tools/audit/instrument_arm_declaration_effect.json, which runs gate block (A)'s own two commands at HEAD over the production corpus and diffs against the committed tools/robust_stop/ reference; that it detects a wrong-arm corpus, admits a right-arm one and leaves an undeclared caller alone is at tools/audit/corpus_arm_establishment.json, probes 2, 3 and 4. Reversal is one default (EXPECT_ARM_DEFAULT set to 'any').",
       "patterns": [],
       "rationale": "Stated with the decision at its home: the defect being closed is that --joint-inference is opt-in, so a regeneration that omits it silently fills the directory this instrument reads with the other pipeline's output, and an opt-in DETECTOR would reproduce that hole's shape exactly — absent from precisely the invocation that most needs it. Hence a declared default rather than a flag. The instrument is one CLAUDE.md gate block (A) calls pinned, so the narrow claim that it can only refuse and can move no measured value is itself measured rather than asserted (#19).",
       "nonspec_kind": "process"
+    },
+    {
+      "id": "D-469",
+      "group": "I",
+      "title": "The tick-local path is left OUTSIDE the unified pipeline by design — its point-in-time semantics would be distorted by one shared interface",
+      "verbatim": "- P4 (tick-local) is left parallel. Its point-in-time semantics differ\n  too much from region-based analysis to force a single API without\n  distortion. Two modules, documented relationship.",
+      "plain": "Three of the four ways the program produces harmony were merged into one shared pipeline. The fourth — the one that answers 'what chord is under this note, right here' — was deliberately left separate, because forcing it through a pipeline built around stretches of music would bend what it means.",
+      "home": "docs/unified_analysis_pipeline.md:59-61",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "Stated as a non-goal of the unification design, in a document whose header records the refactor as structurally complete. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. Distinct from **D-053**, which rules that the tick-local path keeps the OLDER RESOLVER, and from **D-063**, which accepts its cold context: this is the prior decision that the path stays a separate module at all.",
+      "patterns": [],
+      "rationale": "Stated with the decision: the point-in-time semantics differ too much from region-based analysis to force a single API without distortion — so the cost of unification here is a distorted interface, not a saved duplication.",
+      "nonspec_kind": "gap"
+    },
+    {
+      "id": "D-470",
+      "group": "I",
+      "title": "The temporal-context extension fields are recorded during the pipeline's own analysis pass; no consumer re-runs the chord analysis to rebuild them",
+      "verbatim": "Closed by construction: `AnalyzedRegion::temporalExtensions` is\npopulated during the pipeline's own `analyzeChord` invocation per\nregion, using the already-built region list as context. P3 reads the\nfield directly; no second `analyzeChord` call.",
+      "plain": "What the chord analysis saw around each stretch of music is written down while the analysis runs. A consumer that needs it reads what was recorded, instead of analysing the passage a second time with a freshly built context — which is how the two paths used to disagree.",
+      "home": "docs/unified_analysis_pipeline.md:237-240",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "Stated as the resolution of the design's divergence D, in a document whose header records the refactor as structurally complete and divergence D as closed. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.",
+      "patterns": [],
+      "rationale": "Stated with the decision: a second analysis with a display-time context can populate the extension fields differently from what the annotation pass saw, so the two user-facing paths drift apart. Recording once and reading the record removes the second computation rather than trying to keep the two in step.",
+      "nonspec_kind": "gap"
+    },
+    {
+      "id": "D-471",
+      "group": "J",
+      "title": "The sub-beat annotation duration gate is not retired on argument — it is kept or dropped on a measured observation run, with the verdict stated in advance",
+      "verbatim": "Decision rule:\n\n- If the gate measurably reduces clutter or false annotations without\n  suppressing correct ones → keep as documented emitter option (default\n  0.5, settable).\n- If the gate suppresses equally many correct and incorrect annotations\n  → retire, either immediately in Phase 3b or folded into Phase 5.\n  `minimumDisplayDurationBeats` becomes `std::nullopt` default and the\n  option is removed in follow-up cleanup.",
+      "plain": "A rule hides very short chords from the Roman-numeral annotation. Whether to keep it was not settled by opinion: the decision was written down in advance as a comparison — run the annotation with and without it on real scores, and keep it only if it removes clutter without also removing correct labels.",
+      "home": "docs/unified_analysis_pipeline.md:225-233",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "Stated as the divergence-C decision rule of the unification design; the document's own header records divergence C as PARKED, so the rule stands undischarged. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.",
+      "patterns": [],
+      "rationale": "Stated with the rule: the gate silently drops sub-beat regions from Roman-numeral annotation while the chord track and the status bar still show them, so the question is whether it removes clutter or removes correct labels — which is a measurement, not a preference. The rule fixes the verdict before the measurement, which is the pattern the premise gate (#17b) later made general.",
+      "nonspec_kind": "gap"
+    },
+    {
+      "id": "D-472",
+      "group": "H",
+      "title": "Key areas are grouped by a smoothing pass over the already-stabilized regions, and a region that disagrees without clearing the confidence test keeps its own key while being grouped into the enclosing area",
+      "verbatim": "Runs after Pass 4 (`stabilizeHarmonicRegionsForDisplay`) on the smoothed\nregion list. Algorithm:\n\n1. Walk regions in order. A key area opens at the first region.\n2. Close the current key area and open a new one when the next region's\n   `(keyFifths, mode)` differs from the current key area's key AND the\n   next region's `keyModeResult.normalizedConfidence` meets a threshold\n   (initial proposal: 0.8, reusing the assertive-confidence constant).\n3. Regions whose key disagrees with the enclosing area but don't clear\n   the threshold retain their own `keyModeResult` (status-bar display\n   still accurate) but are grouped into the enclosing area via\n   `keyAreaId` (so the annotation emitter writes Roman numerals\n   relative to the enclosing area's key, not the transient local\n   disagreement).\n\nThis is a smoothing pass, not a new analyzer. It leverages existing\n`keyModeResult` fields and the stabilization already done in Pass 4.",
+      "plain": "Neighbouring stretches in the same key are collected into one key area. A stretch that reads a different key but is not confident enough to open a new area keeps its own reading for display, yet is counted inside the surrounding area — so the Roman numerals are written against the key that actually governs the passage rather than against a momentary wobble.",
+      "home": "docs/unified_analysis_pipeline.md:149-165",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "Stated as the key-area detection design of the unification document. The mechanism is live at HEAD in `groupKeyAreas` (`src/composing/analysis/section/sectionanalyzer.cpp`), where the confidence test reads the stored per-region assertive-exposure flag rather than re-thresholding the confidence field. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.",
+      "patterns": [],
+      "rationale": "Stated with the design: it leverages the key/mode fields and the stabilization Pass 4 already performed, so it adds a grouping rule rather than a second key analysis — the same not-a-new-detector reasoning **D-454** later states for the grouping layer.",
+      "nonspec_kind": "gap"
+    },
+    {
+      "id": "D-473",
+      "group": "T",
+      "title": "A theory-grounding pass labels every load-bearing claim FACT / THEORY / CONJECTURE, cross-checks its central sources independently, and carries no equation out of a text it could not fetch",
+      "verbatim": "`tools/term_inventory/term_inventory.csv` (95 terms, 80 live). **Method:** five parallel deep-research\npasses with primary-source fetch (2026-07-19); every load-bearing claim labeled **FACT** (stated/measured\nin a fetched paper), **THEORY** (established published theory), or **CONJECTURE**, per #1. Verification:\nthe central sources (Raphael-Stoddard, Ni et al., Temperley, Masada & Bunescu) were extracted\nindependently by 2–3 agents each and cross-checked for agreement; unfetchable sources are flagged and no\nequation is carried from an unfetched text. **Nothing here decides anything** — the keep/fix/drop rows are",
+      "plain": "When published research is used to justify a design, each claim is marked as either measured in a paper that was actually read, established theory, or a guess. The main papers are read by more than one pass and the readings compared. If a paper could not be obtained, nothing is copied from it — the gap is stated instead.",
+      "home": "cowork_term_theory_grounding.md:6-11",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-07-19",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "The stated method of the term-level theory-grounding audit, in a document whose banner records it as written at the user's direction. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. It sharpens principle #17(a) rather than restating it: #17(a) requires the FACT / THEORY / ASSUMPTION labels, and the unfetched-source rule and the independent cross-extraction are this document's additions.",
+      "patterns": [],
+      "rationale": "Stated with the method and derivable from #1: a citation to a paper nobody read is not a fact basis, and an equation reconstructed from a snippet is an assumption wearing a citation. The document applies the rule to itself — its own source register carries a 'still unfetched/unverified (no equation carried)' list.",
+      "nonspec_kind": "gap"
+    },
+    {
+      "id": "D-474",
+      "group": "C",
+      "title": "No published study reports per-axis inter-annotator agreement for Roman-numeral analysis of Baroque/classical symbolic music — the ground-truth ceiling principle #21 demands is unmeasured by the entire field",
+      "verbatim": "**FACT-of-absence (the central finding):** no published study reports per-axis inter-annotator agreement\nfor RN/key annotation of Baroque/classical symbolic music. TAVERN has duplicate annotations but\npublished no number; ABC split pieces between annotators (no overlap by design); the Mozart sonatas\ncorpus is consensus-built (agreement unmeasurable post hoc); When in Rome 2020/2023 states the variance\nis unmeasured; Dilemmadata (2026) identifies 84 dual-annotated pieces and computes nothing yet.",
+      "plain": "Principle #21 says the accuracy of the human annotation is itself something to measure, so that an error we cannot fix is told apart from two experts simply disagreeing. Searching the literature found that nobody has published such a figure for this repertoire — so the ceiling cannot be cited from anywhere and would have to be measured here.",
+      "home": "cowork_term_theory_grounding.md:258-262",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-07-19",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "The central finding of the theory-grounding audit's ground-truth section, reached by a dedicated search and recorded with the corpora checked (TAVERN, ABC, the Mozart sonatas, When in Rome, Dilemmadata). Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. It is the literature half of the obligation **D-184** (principle #21) creates and is tracked at `OPEN_ITEMS.md` OI-179.",
+      "patterns": [],
+      "rationale": "Measured by search rather than asserted: each candidate corpus is named with the reason it yields no figure — duplicate annotations published without a number, pieces split between annotators by design, consensus-built annotation whose agreement cannot be recovered after the fact. The quantified bounds that DO exist are recorded beside it, from other domains (rock symbolic by ear; pop audio), together with the invariant they share — root and key agree far better than the full label, inversion always costs about five points, quality is the most subjective axis.",
+      "nonspec_kind": "gap"
+    },
+    {
+      "id": "D-475",
+      "group": "C",
+      "title": "The BCMH chorale annotations are NOT established as an instrument: the annotator is unknown, the annotations sit on a reduction, and they reached the repository through a machine translation",
+      "verbatim": "content to any existing analysis). **Unestablished as an instrument (#19):** annotator count/identity\nand validation are UNKNOWN (the JEP:HPP Method section and the dataset zip's headers are the two places\nthat would settle it — the zip is fetch-blocked in this environment but downloadable on the user's\nmachine); the annotations sit on a homorhythmic REDUCTION (unit mismatch with our full-texture grading\nmust be handled in the measurement design); they reached the repo through a machine translation into\nrntxt (Nápoles López), whose noise would be part of any measured disagreement. **Consequence:** the",
+      "plain": "A second set of human chorale analyses is held, and it would be the natural way to measure how far two annotators disagree. It cannot be trusted yet: nothing in the dataset says who made the annotations or whether they were checked, the analyses describe a simplified version of the music rather than the full texture, and they were converted automatically into our format, so the conversion's own errors would show up as disagreement.",
+      "home": "cowork_term_theory_grounding.md:274-279",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-07-19",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "The theory-grounding audit's verdict on the BCMH corpus, with the three establishment steps it names. The audit's own dated update of 2026-07-19 records that the first step came back NEGATIVE at the files — no annotator record in any of them — and its source register adds that the 2023 Method section names no annotator and no validation either. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. ★ This is an ESTABLISHMENT statement under #19: a consumer may not put this corpus under load while it stands.",
+      "patterns": [],
+      "rationale": "Measured at the objects, not assumed: the dataset was downloaded and read file by file, and the only editor records found are the note-encoding provenance of the underlying score collection. The independence half is a FACT the source states in its own words ('we encoded'), which is what makes the corpus worth establishing rather than discarding.",
+      "nonspec_kind": "gap"
+    },
+    {
+      "id": "D-476",
+      "group": "H",
+      "title": "The phrase-boundary primitive is owned by the notation-derived view layer — not by the note model, and not by the function layer that consumes it",
+      "verbatim": "- **D1 — Owner: Architectural Layer 1.5 (the notation-derived views).** The primitive is a notation-derived view, the same\n  kind as the bass, top-voice, and spelling views, reading the same notated surface. *Rejected:* the Layer-1 note model\n  (deliberately narrow — it records notes, it does not derive phrase structure) and the function layer (it consumes phrase\n  boundaries; it cannot own them).",
+      "plain": "Working out where a musical phrase ends is done by the same kind of component that reads the bass line or the written spelling off the page. It is not part of the plain record of the notes, and it is not part of the stage that detects cadences — because that stage uses phrase ends as input and cannot also produce them.",
+      "home": "cowork_phrase_boundary_design.md:223-226",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-06-26",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "Decision D1 of a design document whose banner reads SIGNED (user, 2026-06-26). Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.",
+      "patterns": [],
+      "rationale": "Stated with the decision, and both alternatives are named with their reason: the note model is deliberately narrow — it records notes and derives no phrase structure — and the function layer consumes phrase boundaries, so owning them would be circular.",
+      "nonspec_kind": "gap"
+    },
+    {
+      "id": "D-477",
+      "group": "H",
+      "title": "Phrase boundaries are read from the written surface alone — never from a resolved key, chord or cadence — and the boundaries this misses are accepted, not recovered here",
+      "verbatim": "- **Notation-only — key-, chord-, and function-agnostic.** A phrase boundary is read from the written surface (rests,\n  durations, pitch intervals, metric position, annotations, barlines), never from a resolved key, a chord reading, or a\n  cadence. This is structural: the function layer's cadence detection *consumes* phrase boundaries, so a boundary that\n  depended on cadence would be circular. Cadence-based phrase refinement therefore stays a **function-layer** concern,\n  downstream of this primitive (§6-D3). A known consequence (accepted): a surface-only primitive **systematically misses\n  boundaries marked only harmonically** — a cadence with no surface gap — which the function layer recovers downstream.",
+      "plain": "Phrase ends are found from what is printed: rests, note lengths, leaps, metric position, marks and barlines. Nothing about the key or the chords may enter, because the stage that detects cadences uses phrase ends, so a phrase end that depended on a cadence would be circular. The cost is accepted and stated: a phrase that is marked only by its harmony, with no gap in the surface, is missed here and picked up later.",
+      "home": "cowork_phrase_boundary_design.md:64-69",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-06-26",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "The first constraint of a design document whose banner reads SIGNED (user, 2026-06-26); its decision D3 states the same rule from the architecture side, and the banner records that the acyclicity argument was independently verified airtight. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.",
+      "patterns": [],
+      "rationale": "Stated with the constraint: the dependency must stay acyclic because the function layer's cadence detection consumes phrase boundaries. The accepted consequence is stated in the same breath rather than left for a reader to discover — a surface-only primitive systematically misses harmonically-marked boundaries.",
+      "nonspec_kind": "gap"
+    },
+    {
+      "id": "D-478",
+      "group": "H",
+      "title": "A phrase boundary is a peak in a continuous boundary-strength profile, not the OR of a few binary signals",
+      "verbatim": "- **D4 — A graded boundary-strength model, not a binary union (user-ratified 2026-06-26).** The boundary is a peak in a\n  continuous strength profile, not the OR of a few binary signals. *Rejected:* the binary union — a degenerate special\n  case that cannot express \"a gap larger than its neighbours,\" inflates recall, and wrecks precision (per the research: a\n  weighted combination measurably beats any single cue and beats a naive union; the leading harmony-free models all\n  compute graded strength + peaks). The cost — per-cue normalisation, the weight vector, the peak threshold — is modest\n  and the constants are precision-phase.",
+      "plain": "Rather than declaring a phrase end wherever any one signal fires, the program computes how strongly each moment is marked as an ending and then picks the peaks. The all-or-nothing version is the special case that cannot express 'a bigger gap than its neighbours', and it finds too many endings.",
+      "home": "cowork_phrase_boundary_design.md:233-238",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-06-26",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "Decision D4 of a design document whose banner reads SIGNED (user, 2026-06-26) and records the graded model as revision 2, adopted on the research in `cowork_phrase_boundary_methods.md` (user-ratified 2026-06-26). Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.",
+      "patterns": [],
+      "rationale": "Published research, cited with the decision: the leading harmony-free segmentation models all compute a continuous boundary strength and pick peaks, a weighted combination measurably beats any single cue and beats a naive union, and the binary union is a degenerate lower-precision special case of the graded form. The cost is named and accepted — per-cue normalisation, a weight vector and a peak threshold, all deferred to the precision phase.",
+      "nonspec_kind": "gap"
+    },
+    {
+      "id": "D-479",
+      "group": "H",
+      "title": "The boundary cues run per eligible voice and aggregate to the texture, and BOTH the per-voice and the texture boundaries are published",
+      "verbatim": "- **D5 — Per-voice cues aggregated to the texture (both per-voice and polyphonic), not a top-voice/whole-texture\n  reduction.** The cues run **per eligible voice** and aggregate by **voice-coincidence** into the texture strength,\n  exposing **both** the per-voice boundaries and the texture boundaries (§4.3). *Rejected:* (a) a whole-texture reduction\n  with **top-voice-only pitch** — it discards every inner voice's pitch cue and yields no per-voice phrasing; (b) running\n  the cues on one arbitrary voice — ill-defined in polyphony. Per-voice-then-aggregate is the principled form (the\n  local-change cues are defined per line) and produces both outputs. Since the literature's cues are validated only\n  monophonically, the aggregation is validated on our own corpus (§7).",
+      "plain": "The signals that mark a phrase end are properties of a single melodic line, so they are computed for every voice separately and then added up across the voices. Where many voices phrase together the total is high; where one inner voice alone pauses it is low. Both answers are published: each voice's own phrasing and the whole texture's.",
+      "home": "cowork_phrase_boundary_design.md:239-245",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-06-26",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "Decision D5 of a design document whose banner reads SIGNED (user, 2026-06-26); the banner records this as the revision-3 change made at the user's direction, and that the rev-3 changes were independently re-reviewed with a blocking fix applied. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.",
+      "patterns": [],
+      "rationale": "Stated with the decision: the local-change cues are defined per melodic line, so per-voice-then-aggregate is the principled form, and it is the only form that produces the per-voice output at all. Both rejected alternatives are named — a whole-texture reduction with top-voice-only pitch discards every inner voice's pitch cue, and running the cues on one arbitrary voice is ill-defined in polyphony. The honesty clause is stated with it: the literature validates these cues monophonically only, so the aggregation is validated on this project's own corpus.",
+      "nonspec_kind": "gap"
+    },
+    {
+      "id": "D-480",
+      "group": "H",
+      "title": "The phrase-boundary primitive is NOT an accuracy requirement — a competitive reference engine does no phrase segmentation at all — so it is built right but kept proportionate",
+      "verbatim": "- **★ Proportionality (scope discipline, user-ratified 2026-06-26).** The state-of-the-art-competitive reference\n  engine (Contrapunctus) does **no** explicit phrase segmentation or cadence detection and is still competitive at Roman-numeral\n  analysis (it captures phrase structure implicitly via stable key runs). So this primitive is **not** an accuracy\n  requirement — it is load-bearing for *our* cadence mechanism (a means to key/function), a deliberate bet for an\n  explainable, decomposed pipeline. **Build the graded model right, but keep it proportionate — do not let it balloon.**\n  If the explicit phrase/cadence path proves hard, there is a proven implicit fallback (phrase-alignment via stable key\n  runs). See `contrapunctus_findings.md` addendum and `cowork_phrase_boundary_methods.md`.",
+      "plain": "A comparable system that performs as well as ours at Roman-numeral analysis has no phrase detection whatsoever; it picks up phrase structure indirectly. So this component is not what accuracy depends on. It is a deliberate bet on an explainable, decomposed design — worth building properly, not worth letting grow without limit, and there is a proven fallback if the explicit route proves hard.",
+      "home": "cowork_phrase_boundary_design.md:276-282",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-06-26",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "A user-ratified scope ruling recorded in the risks section of a design document whose banner reads SIGNED (user, 2026-06-26). Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. It is the same proportionality reasoning **D-456** records for the grouping layer, reached independently and earlier.",
+      "patterns": [],
+      "rationale": "Evidence cited with the ruling: the state-of-the-art-competitive reference engine (Contrapunctus) does no explicit phrase segmentation or cadence detection and is still competitive at Roman-numeral analysis, capturing phrase structure implicitly via stable key runs — recorded in `contrapunctus_findings.md` and the methods catalog. That same finding supplies the named fallback if the explicit path proves hard.",
+      "nonspec_kind": "gap"
+    },
+    {
+      "id": "D-481",
+      "group": "H",
+      "title": "The notated markers are emitted as boundaries unconditionally; only the surface-cue strength is peak-picked",
+      "verbatim": "The picked-boundary set is **the surface-cue peaks UNION every notated marker** — because the §4.2 markers are\n**deterministic facts** (a fermata/barline/etc. *is* a phrase boundary), they are emitted **unconditionally**, not\nsubjected to the threshold; only the **surface-cue** strength is peak-picked. *(As-built realisation, ratified 2026-06-26:\nthe earlier wording \"peak-pick the combined profile\" put the markers through the local-maximum test, which a strict\ngreater-than rule drops for two **adjacent equal-height markers** — e.g. a final fermata abutting the closing barline.\nEmitting markers directly is the faithful reading of their \"deterministic / dominate wherever they occur\" status.)*",
+      "plain": "A fermata, a breath mark, a structural barline and the other written signs are facts, not evidence to be weighed — so each one is reported as a phrase end directly. Only the computed strength has to clear a local-maximum test and a threshold.",
+      "home": "cowork_phrase_boundary_design.md:176-181",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-06-26",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "The as-built realisation recorded in §4.4 of a design document whose banner reads SIGNED (user, 2026-06-26); the parenthetical records it as ratified on that date and preserves the earlier wording it replaces. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.",
+      "patterns": [],
+      "rationale": "Measured against the rule it replaces, and the case is stated: putting the markers through the local-maximum test drops two adjacent equal-height markers under a strict greater-than rule — a final fermata abutting the closing barline. Emitting them directly is the faithful reading of the deterministic status the markers already carry.",
+      "nonspec_kind": "gap"
+    },
+    {
+      "id": "D-482",
+      "group": "H",
+      "title": "The two hand-synchronised copies of the fermata scan retire into one owned primitive, and that retirement changes no output",
+      "verbatim": "- **D2 — One unified primitive replaces the two duplicated fermata scans.** The fermata logic exists today in two\n  hand-synchronised copies; they are retired into the single owned primitive and every consumer re-points at it. The\n  retirement is byte-identical.",
+      "plain": "The same fermata-finding code existed twice, kept in step by hand. Both copies are replaced by the single owned component and every consumer re-pointed at it. Because the marker-only behaviour is unchanged, the swap produces identical results — the new behaviour is a separate, measured step.",
+      "home": "cowork_phrase_boundary_design.md:227-229",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-06-26",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "Decision D2 of a design document whose banner reads SIGNED (user, 2026-06-26); the same document's constraints state the split explicitly — the marker-only path is byte-identical, the graded model is gated on the corpus regression stop. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.",
+      "patterns": [],
+      "rationale": "Stated with the decision and required by #6 (one path per concern): two hand-synchronised copies drift independently. Splitting the change into a byte-identical unification and a separately-gated behaviour change is the project's standing discipline, applied here so the unification cannot hide an output movement.",
+      "nonspec_kind": "gap"
+    },
+    {
+      "id": "D-483",
+      "group": "H",
+      "title": "The picked boundaries are validated against the analysts' own phrase marks; a fermata-derived phrase list is inadmissible as ground truth because the primitive reads fermatas",
+      "verbatim": "- **Validation on the chorale corpus** (the per-voice aggregation, D5) — the picked texture boundaries are checked\n  against the corpus's **analyst-annotated phrase markers** (the DCML corpora's `{}` / `phraseend` annotations, parsed\n  corpus-wide since the TSV-oracle infrastructure landed) — an **independent** ground truth: the markers are supplied\n  by the human analyst, not derived from fermatas, so validating the fermata marker against them is not circular. A\n  fermata-derived phrase list would be inadmissible as ground truth here, for exactly that circularity. A per-voice",
+      "plain": "To check whether the phrase ends are right, they are compared with the phrase marks the human analysts wrote in the annotated corpora. A list of phrases derived from fermatas could not be used, because the program reads fermatas itself — it would be marking its own homework.",
+      "home": "cowork_phrase_boundary_design.md:254-258",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-06-26",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "The validation rule of a design document whose banner reads SIGNED (user, 2026-06-26), naming the corpus columns it uses. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. It is the phrase-axis instance of the standing rule **D-294** — the only ground truth is the human annotation, and no self-annotation ever enters a measurement.",
+      "patterns": [],
+      "rationale": "Stated with the rule: the markers are supplied by the human analyst and are not derived from fermatas, so validating the fermata marker against them is not circular — and the document states the converse in the same sentence rather than leaving it implied.",
+      "nonspec_kind": "gap"
+    },
+    {
+      "id": "D-484",
+      "group": "H",
+      "title": "The phrase-boundary primitive is a derived view: it inherits the loaded span, requests no extension of its own, and publishes a per-profile max-normalised boundary confidence",
+      "verbatim": "> **Bounded-context stance (added 2026-07-02, closing gap-analysis v2 finding A-2, `cc_gap_analysis_v2_report.md` —\n> ruled by Cowork):** this primitive is a\n> **derived view** over the Layer-1/Layer-2 outputs: it **inherits the loaded span and requests no extension of its\n> own** (its profile simply ends where the loaded span ends; a consumer wanting boundary evidence beyond the loaded\n> span extends via ITS own bounded-context obligation, and this primitive recomputes over the enlarged span — the\n> standard re-run, per `cowork_bounded_context_design.md` §4). Its published boundary strength is a **Class-M\n> boundary confidence** under the cross-layer confidence contract (`cowork_confidence_contract.md`: [0,1] per-profile\n> max-normalised salience, comparable within one score's profile only; it participates in no override frame) —\n> closing gap A-3 of the same v2 report for this spec.",
+      "plain": "When only part of a score is loaded, this component does not ask for more music. Its profile simply ends where the loaded stretch ends; a consumer that wants boundary evidence further out asks for the extension itself and this component recomputes. Its published strength is comparable only within one score's own profile — it never overrides another layer's answer.",
+      "home": "cowork_phrase_boundary_design.md:23-31",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-07-02",
+      "ratified_by": [
+        "Cowork"
+      ],
+      "status_source": "A stance added to the design document on 2026-07-02, closing two findings of the gap-analysis v2 report; the document records it as ruled by Cowork, not by the user. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.",
+      "patterns": [],
+      "rationale": "Stated with the stance and derived from the two contracts it cites: the bounded-context design's standard re-run rule for derived views, and the cross-layer confidence contract's Class-M boundary confidence, which fixes the range, the comparability and the fact that it participates in no override frame.",
+      "nonspec_kind": "gap"
+    },
+    {
+      "id": "D-485",
+      "group": "H",
+      "title": "Each picked boundary should carry which cue fired and at what scope; the picked set is scope-blind today and the refinement waits for the inference phase",
+      "verbatim": "   - **Provenance (the information-loss fix).** Each picked boundary — texture *and* per-voice — should carry **which\n     cue/marker fired and at what scope** (global, or per-voice with which / how-many voices coincided), so a downstream\n     consumer (Layer 6's punctuation-span annotation) does not lose that a boundary was a *local breath* versus a *global\n     barline*. The picked set is scope-blind today. Recorded as a proper-layer refinement; per the standing rule, not\n     built until the inference phase opens; validate on a non-chorale corpus (§8).",
+      "plain": "The markers that produce a phrase end are of two kinds: some apply to the whole ensemble by notation (a structural barline), and some are written on one instrument (a breath mark). Today both are treated as whole-texture endings, so a local breath is promoted to a global boundary and the fact that it was local is lost. A boundary should record which signal produced it and at what scope — recorded as owed, and deliberately not built yet.",
+      "home": "cowork_phrase_boundary_design.md:382-386",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-07-01",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "Open item 5 of the design document, recorded 2026-07-01 and attributed there to the user raising it. The document records the whole item as a proper-layer refinement not built until the inference phase opens; the register carries it because a recorded refinement with a stated shape binds what a future build may do. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.",
+      "patterns": [],
+      "rationale": "Stated with the item and grounded in #12 (no information loss): spiking a per-part marker onto the texture profile discards the locality, and the principled form is for it to reach a texture boundary only through the same voice-coincidence aggregation as the graded cues. The refinement is chorale-inert by construction — in the chorale convention all voices hold together — so it changes nothing on the gate repertoire and matters only for orchestral and contrapuntal textures.",
+      "nonspec_kind": "gap"
+    },
+    {
+      "id": "D-486",
+      "group": "C",
+      "title": "A measurement publishes its coverage denominator and its per-corpus breakdown; a single aggregate number that hides which corpus moved is not reported",
+      "verbatim": "- **Coverage honesty:** report the 326/353 WiR denominator and per-corpus breakdown; never aggregate a\n  single number that hides which corpus moved (the cross-corpus root_err ranges corelli 55%→dvorak 41%\n  [doc, dossier §1.4] — a scalar would let a fit win on chorales while losing on Corelli).",
+      "plain": "When accuracy is reported, the number of pieces it was actually measured on is stated, never the number of pieces held. And the corpora are reported separately, because one combined figure lets an improvement on one repertoire pay for a loss on another without anyone seeing it.",
+      "home": "docs/precision_metric_design.md:291-293",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-06-13",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "A rule of the Stage-5 objective section of a metric design document whose banner reads DRAFT — UNCOMMITTED and which closes 'awaiting Cowork/user ratification before any metric is built'. The metric it designs WAS subsequently built and ratified — the granularity-robust unit of `CLAUDE.md` gate block (A), R10-b, 2026-07-06 — and that block reports its coverage as 326/352 in exactly this form, so the rule is honoured at HEAD while the document that states it still presents itself as an unratified draft (see `OPEN_ITEMS.md`). Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.",
+      "patterns": [],
+      "rationale": "Stated with the rule and evidenced in the same sentence: only 326 of the 353 gate chorales resolve to a human annotation at all, so dividing by 353 reports an accuracy the measurement never had; and the cross-corpus root-error rate ranges from about 41 % to about 55 % across corpora, so a scalar objective would let a fit win on chorales while losing on Corelli.",
+      "nonspec_kind": "gap"
+    },
+    {
+      "id": "D-487",
+      "group": "Q",
+      "title": "The eleven snapshot source scores are frozen and hash-pinned; changing the set or bumping a pin is a deliberate golden and gate re-baseline",
+      "verbatim": "2. **Do NOT add/remove the 11 snapshot sources** (in `tools/dcml/*/MS3/`, listed\n   above) or bump their clone pins without coordinating — they are the snapshot\n   baseline and are hash-pinned in `tools/snapshot_sources_manifest.json`. A pin\n   bump is a deliberate golden + BIR re-baseline.",
+      "plain": "Eleven scores are the fixed input to the refactor-safety test. They are recorded by content hash and by the exact upstream version they came from. Adding, removing or updating one is not maintenance — it changes what the test compares against, and counts as deliberately re-setting the baseline.",
+      "home": "docs/score_inventory.md:344-347",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "Hard rule 2 of the score inventory, the document `CLAUDE.md` directs every score-touching task to read first. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. It is the snapshot-corpus counterpart of **D-226** (the music21 export is version-pinned; regenerating it is a deliberate re-baseline) and of the block-(A) re-baseline discipline.",
+      "patterns": [],
+      "rationale": "Stated with the rule and grounded in the mechanism beside it: the sources live in unpinned, gitignored clones, so the goldens are byte-meaningful only against the manifest's recorded commits — which makes a pin bump a change to the comparison, not to the material.",
+      "nonspec_kind": "process"
+    },
+    {
+      "id": "D-488",
+      "group": "Q",
+      "title": "The two Bach chorale collections are independent selections, not sub- and superset — and the diff between them is not recoverable in-repo",
+      "verbatim": "The 353 are music21's bach corpus filtered by `_is_bach_chorale` (has `bwv`, not a\nvariant suffix, not a non-chorale BWV, exactly 4 SATB parts) — the `410 → 353`\nfilter. (`corpus_registry.json` records an earlier \"352 genuine SATB from 410\"; the\ncurrent filter yields 353. The +1 is not separately logged.) **These are NOT a\nsubset of DCML `bach_chorales/MS3` (361):** they use music21 **BWV** identifiers\n(`bwv10.7`), DCML uses **Riemenschneider** numbers with no BWV in its\n`metadata.tsv`. A stem-level diff is **not recoverable in-repo** without an\nexternal BWV↔Riemenschneider concordance — the two are independent selections, not\nsuper/subset. Corpus-expansion / cross-validation is a Stage-5 decision; do not\nsilently treat one as a superset of the other.",
+      "plain": "The chorales the gate measures and the chorales the annotated corpus holds are two different selections of Bach's chorales, picked by different criteria and named by two incompatible numbering systems. Which pieces they share cannot be worked out from anything in the repository. Neither may be treated as containing the other.",
+      "home": "docs/score_inventory.md:180-189",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-06-11",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "The chorale-selection provenance finding of the score inventory (audit C3), restated as its hard rule 4; the document is the one `CLAUDE.md` directs every score-touching task to read first. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.",
+      "patterns": [],
+      "rationale": "Established by reading the two selections' own identifiers rather than assumed: one keys pieces by BWV number, the other by Riemenschneider number with no BWV anywhere in its metadata, so a stem-level diff would need an external concordance the repository does not hold. The consequence is stated with it — corpus expansion and cross-validation across the two is a Stage-5 decision, not a silent identification.",
+      "nonspec_kind": "process"
+    },
+    {
+      "id": "D-489",
+      "group": "L",
+      "title": "The snapshot sources are hash-pinned rather than copied in-tree, because their licences make an in-tree copy incompatible with this project's licence",
+      "verbatim": "Because these live in unpinned, gitignored clones, the goldens are byte-meaningful\nonly against the manifest's recorded commits. **License:** the four CC BY-NC-SA 4.0\nrepos (mozart/chopin/corelli/schumann) plus the no-LICENSE repos\n(bach_chorales/bach_en_fr_suites) make an in-tree copy **GPL-incompatible** —\nhash-pinning (not copying) is the chosen mechanism (audit C1 license check).",
+      "plain": "The scores the snapshot test uses are not committed. They are referenced by content hash and fetched from their own repositories, because four of them are licensed in a way that conflicts with this project's licence and two carry no licence at all — so keeping copies here would be a licensing violation, while recording their hashes is not.",
+      "home": "docs/score_inventory.md:93-97",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-06-11",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "The licence finding of the score inventory's snapshot-suite section (audit C1). Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.",
+      "patterns": [],
+      "rationale": "Stated with the decision and derived from the licences read per repository: four are CC BY-NC-SA 4.0 and two carry no LICENSE file, which together make an in-tree copy incompatible with the project's own licence — so the mechanism is chosen by the constraint, not by preference.",
+      "nonspec_kind": "process"
+    },
+    {
+      "id": "D-490",
+      "group": "H",
+      "title": "FALSIFIED: no threshold can make the fine-grain function override net-positive — the harm rate is flat against both quantities the threshold is built from",
+      "verbatim": "The incumbent-confidence band and the contradiction value are **both** flat against correctness. Because the\noverride's *only* tunable knob is `bar = baseBar + confidenceScale·C`, and harm does not fall as `C` falls,\n**no θ can carve corrections from harms** — the code-grounded proof of Phase 3's \"best measurable θ disables\nit\" (theta_fit: the corr−harm-maximizing measurable bar drops fires to 0 at corr−harm 0, vs −571 on the\nfitting split at the current bar). `[data]`",
+      "plain": "A late correction pass overturns a committed chord when the surrounding progression argues against it. Whether it helps or hurts turns out to be unrelated to either quantity its trigger is made of — how confident the earlier reading was, and how strongly the progression contradicts it. So no setting of the trigger separates the cases it fixes from the cases it breaks, and the best available setting simply switches the pass off.",
+      "home": "cowork_fb_redesign_design.md:104-108",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-07-06",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "The measured verdict of the F-B redesign design pass, on 1043 ground-truth-aligned fires from the dormant decode chain, reproducing the fitting ledger's own split to the unit. It refutes the premise the confidence contract and the code comment both assert — that a fitted threshold accounts for the incumbent's missing progression term. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.",
+      "patterns": [],
+      "rationale": "Measured and stratified rather than argued: the harm rate is about 78 % at the weaker contradiction value and about 76 % at the stronger, and it RISES with the earlier reading's confidence — about 81 % in the highest confidence band against about 72 % in the lowest — so the one available lever, scaling the bar by that confidence, pushes the wrong way. The mechanism of the harm is named too: fourth- and fifth-related root moves, exactly what the progression score rewards, are 55 % of the fires and 58 % of the harms.",
+      "nonspec_kind": "gap"
+    },
+    {
+      "id": "D-491",
+      "group": "H",
+      "title": "REFUTED: making the override's comparison vertically fair does not repair it — even where the alternative fits the notes at least as well, it is still about 71 % harmful",
+      "verbatim": "Even in the **vertically-fair** band (`g ≤ 0` — the alternative is at least as vertically supported as the\ncommitted reading) the override is still **70.8 %** harm (corr−harm −163). So repairing the vertical\nasymmetry does **not** reach net-positive: the problem is not merely that the incumbent lacks a progression\nterm; it is that the progression contradiction is **uncorrelated with root-correctness** at these committed\nslices. L4's vertical commit is a far better predictor of the DCML root than F-B's progression re-pick, even\nwhen the alternative is vertically its equal. `[data]`",
+      "plain": "The obvious repair was to let the pass overturn a chord only when the replacement fits the sounding notes at least as well as the reading it displaces. Measured, that band is still wrong about seven times in ten. The problem is not that the comparison was unfair; it is that the progression argument does not predict which root is correct at these moments.",
+      "home": "cowork_fb_redesign_design.md:160-165",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-07-06",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "The direct test of the documented root-cause's natural repair, measured on the same 1043-fire population. It is what removes the large-surface repair option (§3.C) from the redesign, and it is stated with its own caveat — the vertical gap uses a proxy for the committed reading's own score, and the conclusion is stated to be independent of the proxy's precision because no band drops below about 71 % harm. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.",
+      "patterns": [],
+      "rationale": "Measured across five bands of the vertical gap, every one of them net-negative, with the count and the harm rate per band; the conclusion drawn is the one the numbers support and no more — the earlier layer's vertical commit is a better predictor of the annotated root than the progression re-pick, even when the alternative is its vertical equal.",
+      "nonspec_kind": "gap"
+    },
+    {
+      "id": "D-492",
+      "group": "H",
+      "title": "The recommended redesign is to demote the override to an annotation — carrying the earlier reading unchanged and surfacing the contradiction — floored by simply disabling it",
+      "verbatim": "**Adopt §3.D-1 (demote to annotation) as the redesign, with §3.A (disable the override action) as its\naccuracy-equivalent floor; reject §3.B and §3.C as measured net-negative.** Rationale, all `[data]`-grounded:",
+      "plain": "Instead of overturning the committed chord, the pass should record that the surrounding progression disagrees and leave the chord alone. That matches simply switching the pass off on accuracy, while keeping the disagreement as information a later stage can use. Tightening the trigger and repairing the comparison are both rejected: they were measured and both lose.",
+      "home": "cowork_fb_redesign_design.md:284-285",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-07-06",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "The recommendation of a document whose banner records it as a DESIGN + DECISION SURFACE and states that the implementation is a separately-ratified build event. **D-387** (2026-07-07, `cowork_layer5_engagement_design.md`) records the open-mark vehicle the recommendation calls for, one day later; whether that constitutes the build event's ratification is not settled by either document and is not decided here. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.",
+      "patterns": [],
+      "rationale": "Every clause is measured and cited: the override is net-harmful by 756 root decisions and no threshold repairs it; no structural gate on the available features beats disabling it, the best carve still losing by 163; the vertically-fair repair is refuted; and disabling and annotating tie on accuracy while annotating additionally preserves 1043 contradiction signals as calibrated uncertainty. The stated loss is 53 corrections, kept in view rather than netted away.",
+      "nonspec_kind": "gap"
+    },
+    {
+      "id": "D-493",
+      "group": "H",
+      "title": "Restricting the override to the genuinely-coupled key-and-chord minority is UN-COMPUTABLE, not merely unmeasured: its trigger is not computed anywhere and building it is the still-owed joint step",
+      "verbatim": "- **Projected split:** ~~UNKNOWN~~ → **UN-COMPUTABLE (engage arc #2 measured, 2026-07-06;\n  `cc_engage_c3_measurement_report.md`).** The C3 trigger is **not computed anywhere** — VERDICT 3 (not\n  read-only measurable, not surfaceable by additive default-off telemetry). The binding blocker is component\n  **(b)** (\"a different carried KEY alternative flips the chord reading\"): the per-key chord re-decode it\n  requires **is the gated joint key-and-chord step the contract §6-C3 says is \"still owed at Stage 5\"**\n  ([keymodesequence.h:70-72](src/composing/analysis/key/keymodesequence.h#L70)), and even the closest\n  mechanism — the J-key-iii joint re-key pass — **explicitly leaves the chord unchanged** (\"the chord-axis\n  side-effect … is DEFERRED to a faithful mechanism\", [regionanalyzer.cpp:369-375](src/composing/analysis/region/regionanalyzer.cpp#L369)).\n  Component (a) is likewise absent from the F-B fullspine chain (which uses `inferLocalKey(...)[0]` + a\n  score-global `homeConf` sigmoid, not the per-slice L3 sequence margin; D-L3a's \"no sequence-margin\n  substrate on that path\"). Surfacing (b) would mean **building** the joint step (forbidden by #6/#7/#8) —\n  there is no already-computed signal to dump. `[code]` `[flag]`",
+      "plain": "The principled home for this correction is the small set of moments where the key and the chord genuinely depend on each other. That set cannot be measured today, and not for want of a dump: half of the trigger requires re-deciding the chord under a different candidate key, which is precisely the joint step the project has not built. So this option is a long-run successor, not a near-term choice.",
+      "home": "cowork_fb_redesign_design.md:251-262",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-07-06",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "The measured verdict of engage arc #2, recorded in the F-B redesign document as a correction of its own earlier UNKNOWN, with the measurement report named. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.",
+      "patterns": [],
+      "rationale": "Established at the code, both components separately: the binding blocker is the per-key chord re-decode, which the confidence contract itself says is still owed at Stage 5, and the closest existing mechanism — the joint re-key pass — explicitly leaves the chord unchanged; the other component is absent from this chain, which uses a score-global confidence rather than the per-slice sequence margin. Surfacing the trigger would therefore mean BUILDING the joint step, which #6/#7/#8 forbid at this stage — so the verdict is un-computable rather than unmeasured.",
+      "nonspec_kind": "gap"
+    },
+    {
+      "id": "D-494",
+      "group": "F",
+      "title": "RATIFIED AMENDMENT A-4: the function layer must gain key-confirmation channels that do not require a cadence, plus an enharmonic-identity rule for key spans",
+      "verbatim": "- **A-4 (from F-10, F-14). Specify cadence-less key-confirmation channels in §5.3** — sustained dominant emphasis\n  (arrival-denied dominants), recognized transposition sequences (the recognition consumer as a §5.3 input — synergy\n  with the already-planned consumer), and an enharmonic-identity rule for key-spans. Design-only now; Tristan-class\n  corpus as the measurement bed.",
+      "plain": "The program only accepts a change of key when a cadence confirms it. Music that deliberately avoids cadences — a sustained dominant that never resolves, a sequence that transposes step by step — therefore keeps being read in the old key. The amendment requires channels that confirm a key without a cadence, and a rule for deciding whether a span is written in one spelling of a key or its enharmonic twin.",
+      "home": "cowork_architecture_review_2026_07.md:320-323",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-07-02",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "Amendment A-4 of the external architecture review, in a document whose banner records amendments A-1…A-10 as RATIFIED by the user on 2026-07-02. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. Its sibling A-3 is already registered as **D-358** (deferred); this amendment has no register entry and no product located by this wave.",
+      "patterns": [],
+      "rationale": "Derived from the review's own stress simulation and stated with it: on resolution-denying music the cadence-confirmed modulation gate almost never fires, so the default keeps the home key across genuinely modulating spans and the Roman numerals are computed against wrong keys; and enharmonic reinterpretation is handled at the single-chord level while no rule addresses enharmonic identity at the key-span level.",
+      "nonspec_kind": "gap"
+    },
+    {
+      "id": "D-495",
+      "group": "H",
+      "title": "RATIFIED AMENDMENT A-5: when the phrase-boundary profile is flat, cadence admission relaxes with vote-weight scaling instead of starving",
+      "verbatim": "- **A-5 (from F-11). Specify the phrase-gate fallback** for flat boundary profiles (relax admission with vote-weight\n  scaling instead of starving; the graded profile already carries the needed signal).",
+      "plain": "Cadences are only looked for at phrase ends. In music with almost no surface punctuation the phrase-end signal goes flat, and everything that depends on it gets nothing to work with. The amendment requires a specified fallback: admit cadences more freely there but weight their votes down, using the graded strength that is already computed.",
+      "home": "cowork_architecture_review_2026_07.md:324-325",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-07-02",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "Amendment A-5 of the external architecture review, in a document whose banner records amendments A-1…A-10 as RATIFIED by the user on 2026-07-02. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. It binds on the phrase-boundary primitive's consumer; the primitive's own specification (`cowork_phrase_boundary_design.md`) does not carry it.",
+      "patterns": [],
+      "rationale": "Derived from the review's stress simulation: in a punctuation-poor texture the fermatas, rests and structural barlines are deliberately absent, the graded profile goes flat, and everything gated on phrase boundaries starves — while the graded profile the design already produces still carries the relative signal the fallback needs.",
+      "nonspec_kind": "gap"
+    },
+    {
+      "id": "D-496",
+      "group": "M",
+      "title": "RATIFIED AMENDMENT A-6: whether the pairwise progression grammar lives inside the harmonic vocabulary or stays a separate store is decided at the recognition-consumer build, explicitly",
+      "verbatim": "- **A-6 (from F-6). Decide the progression-knowledge store question** at the recognition-consumer build (fold §5.0\n  pairwise motions into the Vocabulary, or two stores by declared design).",
+      "plain": "Knowledge about which chord may follow which is held in two places: a pairwise rule set inside the function layer, and a catalog of longer patterns. Whether these become one store or stay two is not to be settled by drift — the amendment requires the choice to be made, and made when the component that queries the catalog is built.",
+      "home": "cowork_architecture_review_2026_07.md:326-327",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-07-02",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "Amendment A-6 of the external architecture review, in a document whose banner records amendments A-1…A-10 as RATIFIED by the user on 2026-07-02. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. Related but distinct: **D-133** rules that the vocabulary is a queried reference component rather than a layer, and **D-419** that the function layer does not touch it until the consumer is built; neither answers which store owns the pairwise motions.",
+      "patterns": [],
+      "rationale": "Stated with the finding it comes from: the consumer design asserts that the vocabulary extends the pairwise grammar, but the single-store-or-two decision is unmade — which is a total-unification (#6) question and is exactly the kind of coexistence the review's own criterion says must be decided rather than tolerated.",
+      "nonspec_kind": "gap"
+    },
+    {
+      "id": "D-497",
+      "group": "C",
+      "title": "RATIFIED AMENDMENT A-7: the empirically-unvalidated mark must be APPLIED to the Jazz preset constants and the unvalidated idioms, with the validation path named",
+      "verbatim": "- **A-7 (from F-7). Apply the \"empirically-unvalidated\" mark** to the Jazz preset constants and idioms 3–5 in the\n  affected docs; name the validation path (JHT/McGill-class corpora already inventoried by the idiom study).",
+      "plain": "The rule that says an unvalidated value must be marked as such already exists. The review found it was not actually applied to the constants only Baroque data has ever calibrated. The amendment requires the mark to be put on them, and the corpus that would validate each to be named alongside.",
+      "home": "cowork_architecture_review_2026_07.md:328-329",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-07-02",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "Amendment A-7 of the external architecture review, in a document whose banner records amendments A-1…A-10 as RATIFIED by the user on 2026-07-02. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. It is the APPLICATION half of the verifiability contract **D-029** — the mark exists in the specification and the review found it unapplied — and it is adjacent to **D-310**, which records that jazz accuracy is not measurable on the corpora held.",
+      "patterns": [],
+      "rationale": "Measured by the review: calibration and validation are Baroque- and Bach-heavy, the jazz preset and the non-classical idioms have no gate-grade ground truth, and the contract's own mark is present in the specification but absent from the affected constants and presets — so the gap is between a stated rule and its application, not in the rule.",
+      "nonspec_kind": "gap"
+    },
+    {
+      "id": "D-498",
+      "group": "J",
+      "title": "RATIFIED AMENDMENT A-9: a product stance is owed for output that is mostly uncertain, and for music outside the tonal vocabulary altogether",
+      "verbatim": "- **A-9 (from F-13, F-15). Write the product stance for dense abstention and out-of-domain input** (what the user\n  sees; when the system says \"this is outside my tonal vocabulary\"). Product-level, small, prevents the honest-marks\n  design from becoming a UX failure.",
+      "plain": "The design deliberately says 'uncertain' rather than guessing. Nobody has decided what the user should see when most of a passage comes back uncertain, or what the program should say about music that is not tonal at all — where the right answer is to state that plainly rather than to produce a confident reading. The amendment requires that stance to be written.",
+      "home": "cowork_architecture_review_2026_07.md:333-335",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-07-02",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "Amendment A-9 of the external architecture review, in a document whose banner records amendments A-1…A-10 as RATIFIED by the user on 2026-07-02. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. No register entry and no located product answers it; the review records the underlying findings as F-13 (no display policy for dense abstention) and F-15 (no explicit out-of-domain stance).",
+      "patterns": [],
+      "rationale": "Derived from the review's stress simulation, which produced both halves concretely: in suspension-chain textures the anchor a reading depends on is itself uncertain, so the honest marks cascade and the output can be dominated by them; and on music that breaks the tonal model class the confidence collapses correctly but nothing INTERPRETS the collapse. The review's own framing is that this is what prevents an honest design from becoming a usability failure.",
+      "nonspec_kind": "gap"
+    },
+    {
+      "id": "D-499",
+      "group": "K",
+      "title": "RATIFIED AMENDMENT A-10: four documentation riders — a consolidated ownership page for the notation-derived views, the membership tie-breaker recorded as idiom-calibrated, and the producer-agnostic seam pinned as a design property",
+      "verbatim": "- **A-10 (from F-4, F-12, F-17, F-18). Doc riders**: L1.5 consolidated ownership page; record the membership\n  tie-breaker as an idiom-calibrated constant; pin B-swap readiness as a design property; (optional) STATUS entry\n  header schema.",
+      "plain": "Four small documentation debts, ratified together: the notation-derived view layer owns several things and has no one page saying so; the rule that breaks a tie about whether a note belongs to the chord is calibrated to one style and is not recorded as such; the property that a learned component could be dropped in where the hand-built one sits is currently true but written down nowhere; and the status file's entry format is hard to read.",
+      "home": "cowork_architecture_review_2026_07.md:336-338",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-07-02",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "Amendment A-10 of the external architecture review, in a document whose banner records amendments A-1…A-10 as RATIFIED by the user on 2026-07-02; the review marks the fourth rider optional. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.",
+      "patterns": [],
+      "rationale": "Each rider is stated with the finding that produced it: the notation-derived view layer is described across three documents with no consolidated statement (F-4); the one-sided membership tie-breaker inverts between the chorale convention and appoggiatura-normative styles, so it is a per-idiom constant rather than a universal rule (F-12); the producer-agnostic seams that keep a learned emission swappable hold today and are pinned nowhere, so nothing prevents a future change from closing them (F-18).",
+      "nonspec_kind": "gap"
+    },
+    {
+      "id": "D-500",
+      "group": "C",
+      "title": "The user ratified CORPUS EXPANSION at the architecture review: gate-grade jazz ground truth, chromatic material of the Wagner class, and more non-Bach, non-Baroque annotation generally",
+      "verbatim": "> additionally ratified **corpus expansion** — gate-grade jazz GT and Wagner-class (and similar) DCML material; in\n> general more non-Bach, non-Baroque ground truth (folded into A-7/A-8; recorded in `docs/implementation_roadmap.md`).",
+      "plain": "At the same review the user approved widening the material the program is measured against: real ground truth for jazz, hard chromatic repertoire, and in general more annotated music that is neither Bach nor Baroque.",
+      "home": "cowork_architecture_review_2026_07.md:4-5",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "2026-07-02",
+      "ratified_by": [
+        "user"
+      ],
+      "status_source": "Recorded in the banner of the external architecture review as a user ratification additional to amendments A-1…A-10, folded into A-7/A-8 and recorded in the implementation roadmap. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. It is the ratification the corpus waves that follow it execute; the standing rule on the other side — a newly acquired corpus enters as research material and the frozen corpus stays the gate until a deliberate re-baseline — is `CLAUDE.md` gate block (A) and is not weakened by it.",
+      "patterns": [],
+      "rationale": "Derived from the review's own findings F-7 and F-8: calibration and validation are Baroque- and Bach-heavy with no gate-grade ground truth for the jazz preset or the non-classical idioms, and the review names a chromatic stress corpus as the measurement bed for the capability amendments.",
+      "nonspec_kind": "gap"
+    },
+    {
+      "id": "D-501",
+      "group": "G",
+      "title": "A tool may read a written chord symbol ONLY as a comparison or ground-truth label — never as input that influences what the analyzer computes",
+      "verbatim": "> Symbols are instructions written by the user, not analysis results.\n> Production paths must not read them as input to analysis. Tools may\n> read them only as comparison/ground-truth labels — never as input that\n> influences what the analyzer computes.",
+      "plain": "Chord symbols printed in a score are instructions the user wrote, not results. Production analysis may not read them at all. A measurement tool may put them beside the program's own answer to see how far the two agree, but it may not let them change what the program computes.",
+      "home": "docs/symbol_input_audit.md:15-18",
+      "home_is_layer_spec": false,
+      "status": "live",
+      "date": "not stated",
+      "ratified_by": [
+        "not stated"
+      ],
+      "status_source": "The user's operating principle, quoted verbatim at the head of the symbol-input audit and applied as its classification criterion. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. **D-066** and **D-305** carry the production ban; this entry carries the TOOL clause, which is what the audit's categories B and C are graded against and what its category-C resolution (recorded in the audit's closing status line and registered as **D-067**) discharged by deleting the tool-side symbol paths.",
+      "patterns": [],
+      "rationale": "Stated with the principle: a symbol is user content and may be wrong, so reading it as input makes the analysis agree with the user rather than with the music — and in a measurement tool it additionally destroys the measurement, because the tool would then be comparing the annotation with itself.",
+      "nonspec_kind": "gap"
     }
   ]
 }

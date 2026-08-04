@@ -898,3 +898,313 @@
 
 **Provenance.** `cowork_layer6_grouping_design.md` §10, whose heading records the two-step validation strategy as "user-ratified 2026-06-29". Entered by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
+### D-472 — Key areas are grouped by a smoothing pass over the already-stabilized regions, and a region that disagrees without clearing the confidence test keeps its own key while being grouped into the enclosing area
+
+> Runs after Pass 4 (`stabilizeHarmonicRegionsForDisplay`) on the smoothed
+> region list. Algorithm:
+>
+> 1. Walk regions in order. A key area opens at the first region.
+> 2. Close the current key area and open a new one when the next region's
+>    `(keyFifths, mode)` differs from the current key area's key AND the
+>    next region's `keyModeResult.normalizedConfidence` meets a threshold
+>    (initial proposal: 0.8, reusing the assertive-confidence constant).
+> 3. Regions whose key disagrees with the enclosing area but don't clear
+>    the threshold retain their own `keyModeResult` (status-bar display
+>    still accurate) but are grouped into the enclosing area via
+>    `keyAreaId` (so the annotation emitter writes Roman numerals
+>    relative to the enclosing area's key, not the transient local
+>    disagreement).
+>
+> This is a smoothing pass, not a new analyzer. It leverages existing
+> `keyModeResult` fields and the stabilization already done in Pass 4.
+
+**In plain words.** Neighbouring stretches in the same key are collected into one key area. A stretch that reads a different key but is not confident enough to open a new area keeps its own reading for display, yet is counted inside the surrounding area — so the Roman numerals are written against the key that actually governs the passage rather than against a momentary wobble.
+
+**Why.** Stated with the design: it leverages the key/mode fields and the stabilization Pass 4 already performed, so it adds a grouping rule rather than a second key analysis — the same not-a-new-detector reasoning **D-454** later states for the grouping layer.
+
+**Status.** LIVE · date not stated · ratifier not stated
+
+**Home.** `docs/unified_analysis_pipeline.md:149-165`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Stated as the key-area detection design of the unification document. The mechanism is live at HEAD in `groupKeyAreas` (`src/composing/analysis/section/sectionanalyzer.cpp`), where the confidence test reads the stored per-region assertive-exposure flag rather than re-thresholding the confidence field. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-476 — The phrase-boundary primitive is owned by the notation-derived view layer — not by the note model, and not by the function layer that consumes it
+
+> - **D1 — Owner: Architectural Layer 1.5 (the notation-derived views).** The primitive is a notation-derived view, the same
+>   kind as the bass, top-voice, and spelling views, reading the same notated surface. *Rejected:* the Layer-1 note model
+>   (deliberately narrow — it records notes, it does not derive phrase structure) and the function layer (it consumes phrase
+>   boundaries; it cannot own them).
+
+**In plain words.** Working out where a musical phrase ends is done by the same kind of component that reads the bass line or the written spelling off the page. It is not part of the plain record of the notes, and it is not part of the stage that detects cadences — because that stage uses phrase ends as input and cannot also produce them.
+
+**Why.** Stated with the decision, and both alternatives are named with their reason: the note model is deliberately narrow — it records notes and derives no phrase structure — and the function layer consumes phrase boundaries, so owning them would be circular.
+
+**Status.** LIVE · decided 2026-06-26 · ratified by user
+
+**Home.** `cowork_phrase_boundary_design.md:223-226`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Decision D1 of a design document whose banner reads SIGNED (user, 2026-06-26). Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-477 — Phrase boundaries are read from the written surface alone — never from a resolved key, chord or cadence — and the boundaries this misses are accepted, not recovered here
+
+> - **Notation-only — key-, chord-, and function-agnostic.** A phrase boundary is read from the written surface (rests,
+>   durations, pitch intervals, metric position, annotations, barlines), never from a resolved key, a chord reading, or a
+>   cadence. This is structural: the function layer's cadence detection *consumes* phrase boundaries, so a boundary that
+>   depended on cadence would be circular. Cadence-based phrase refinement therefore stays a **function-layer** concern,
+>   downstream of this primitive (§6-D3). A known consequence (accepted): a surface-only primitive **systematically misses
+>   boundaries marked only harmonically** — a cadence with no surface gap — which the function layer recovers downstream.
+
+**In plain words.** Phrase ends are found from what is printed: rests, note lengths, leaps, metric position, marks and barlines. Nothing about the key or the chords may enter, because the stage that detects cadences uses phrase ends, so a phrase end that depended on a cadence would be circular. The cost is accepted and stated: a phrase that is marked only by its harmony, with no gap in the surface, is missed here and picked up later.
+
+**Why.** Stated with the constraint: the dependency must stay acyclic because the function layer's cadence detection consumes phrase boundaries. The accepted consequence is stated in the same breath rather than left for a reader to discover — a surface-only primitive systematically misses harmonically-marked boundaries.
+
+**Status.** LIVE · decided 2026-06-26 · ratified by user
+
+**Home.** `cowork_phrase_boundary_design.md:64-69`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The first constraint of a design document whose banner reads SIGNED (user, 2026-06-26); its decision D3 states the same rule from the architecture side, and the banner records that the acyclicity argument was independently verified airtight. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-478 — A phrase boundary is a peak in a continuous boundary-strength profile, not the OR of a few binary signals
+
+> - **D4 — A graded boundary-strength model, not a binary union (user-ratified 2026-06-26).** The boundary is a peak in a
+>   continuous strength profile, not the OR of a few binary signals. *Rejected:* the binary union — a degenerate special
+>   case that cannot express "a gap larger than its neighbours," inflates recall, and wrecks precision (per the research: a
+>   weighted combination measurably beats any single cue and beats a naive union; the leading harmony-free models all
+>   compute graded strength + peaks). The cost — per-cue normalisation, the weight vector, the peak threshold — is modest
+>   and the constants are precision-phase.
+
+**In plain words.** Rather than declaring a phrase end wherever any one signal fires, the program computes how strongly each moment is marked as an ending and then picks the peaks. The all-or-nothing version is the special case that cannot express 'a bigger gap than its neighbours', and it finds too many endings.
+
+**Why.** Published research, cited with the decision: the leading harmony-free segmentation models all compute a continuous boundary strength and pick peaks, a weighted combination measurably beats any single cue and beats a naive union, and the binary union is a degenerate lower-precision special case of the graded form. The cost is named and accepted — per-cue normalisation, a weight vector and a peak threshold, all deferred to the precision phase.
+
+**Status.** LIVE · decided 2026-06-26 · ratified by user
+
+**Home.** `cowork_phrase_boundary_design.md:233-238`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Decision D4 of a design document whose banner reads SIGNED (user, 2026-06-26) and records the graded model as revision 2, adopted on the research in `cowork_phrase_boundary_methods.md` (user-ratified 2026-06-26). Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-479 — The boundary cues run per eligible voice and aggregate to the texture, and BOTH the per-voice and the texture boundaries are published
+
+> - **D5 — Per-voice cues aggregated to the texture (both per-voice and polyphonic), not a top-voice/whole-texture
+>   reduction.** The cues run **per eligible voice** and aggregate by **voice-coincidence** into the texture strength,
+>   exposing **both** the per-voice boundaries and the texture boundaries (§4.3). *Rejected:* (a) a whole-texture reduction
+>   with **top-voice-only pitch** — it discards every inner voice's pitch cue and yields no per-voice phrasing; (b) running
+>   the cues on one arbitrary voice — ill-defined in polyphony. Per-voice-then-aggregate is the principled form (the
+>   local-change cues are defined per line) and produces both outputs. Since the literature's cues are validated only
+>   monophonically, the aggregation is validated on our own corpus (§7).
+
+**In plain words.** The signals that mark a phrase end are properties of a single melodic line, so they are computed for every voice separately and then added up across the voices. Where many voices phrase together the total is high; where one inner voice alone pauses it is low. Both answers are published: each voice's own phrasing and the whole texture's.
+
+**Why.** Stated with the decision: the local-change cues are defined per melodic line, so per-voice-then-aggregate is the principled form, and it is the only form that produces the per-voice output at all. Both rejected alternatives are named — a whole-texture reduction with top-voice-only pitch discards every inner voice's pitch cue, and running the cues on one arbitrary voice is ill-defined in polyphony. The honesty clause is stated with it: the literature validates these cues monophonically only, so the aggregation is validated on this project's own corpus.
+
+**Status.** LIVE · decided 2026-06-26 · ratified by user
+
+**Home.** `cowork_phrase_boundary_design.md:239-245`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Decision D5 of a design document whose banner reads SIGNED (user, 2026-06-26); the banner records this as the revision-3 change made at the user's direction, and that the rev-3 changes were independently re-reviewed with a blocking fix applied. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-480 — The phrase-boundary primitive is NOT an accuracy requirement — a competitive reference engine does no phrase segmentation at all — so it is built right but kept proportionate
+
+> - **★ Proportionality (scope discipline, user-ratified 2026-06-26).** The state-of-the-art-competitive reference
+>   engine (Contrapunctus) does **no** explicit phrase segmentation or cadence detection and is still competitive at Roman-numeral
+>   analysis (it captures phrase structure implicitly via stable key runs). So this primitive is **not** an accuracy
+>   requirement — it is load-bearing for *our* cadence mechanism (a means to key/function), a deliberate bet for an
+>   explainable, decomposed pipeline. **Build the graded model right, but keep it proportionate — do not let it balloon.**
+>   If the explicit phrase/cadence path proves hard, there is a proven implicit fallback (phrase-alignment via stable key
+>   runs). See `contrapunctus_findings.md` addendum and `cowork_phrase_boundary_methods.md`.
+
+**In plain words.** A comparable system that performs as well as ours at Roman-numeral analysis has no phrase detection whatsoever; it picks up phrase structure indirectly. So this component is not what accuracy depends on. It is a deliberate bet on an explainable, decomposed design — worth building properly, not worth letting grow without limit, and there is a proven fallback if the explicit route proves hard.
+
+**Why.** Evidence cited with the ruling: the state-of-the-art-competitive reference engine (Contrapunctus) does no explicit phrase segmentation or cadence detection and is still competitive at Roman-numeral analysis, capturing phrase structure implicitly via stable key runs — recorded in `contrapunctus_findings.md` and the methods catalog. That same finding supplies the named fallback if the explicit path proves hard.
+
+**Status.** LIVE · decided 2026-06-26 · ratified by user
+
+**Home.** `cowork_phrase_boundary_design.md:276-282`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** A user-ratified scope ruling recorded in the risks section of a design document whose banner reads SIGNED (user, 2026-06-26). Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. It is the same proportionality reasoning **D-456** records for the grouping layer, reached independently and earlier.
+
+### D-481 — The notated markers are emitted as boundaries unconditionally; only the surface-cue strength is peak-picked
+
+> The picked-boundary set is **the surface-cue peaks UNION every notated marker** — because the §4.2 markers are
+> **deterministic facts** (a fermata/barline/etc. *is* a phrase boundary), they are emitted **unconditionally**, not
+> subjected to the threshold; only the **surface-cue** strength is peak-picked. *(As-built realisation, ratified 2026-06-26:
+> the earlier wording "peak-pick the combined profile" put the markers through the local-maximum test, which a strict
+> greater-than rule drops for two **adjacent equal-height markers** — e.g. a final fermata abutting the closing barline.
+> Emitting markers directly is the faithful reading of their "deterministic / dominate wherever they occur" status.)*
+
+**In plain words.** A fermata, a breath mark, a structural barline and the other written signs are facts, not evidence to be weighed — so each one is reported as a phrase end directly. Only the computed strength has to clear a local-maximum test and a threshold.
+
+**Why.** Measured against the rule it replaces, and the case is stated: putting the markers through the local-maximum test drops two adjacent equal-height markers under a strict greater-than rule — a final fermata abutting the closing barline. Emitting them directly is the faithful reading of the deterministic status the markers already carry.
+
+**Status.** LIVE · decided 2026-06-26 · ratified by user
+
+**Home.** `cowork_phrase_boundary_design.md:176-181`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The as-built realisation recorded in §4.4 of a design document whose banner reads SIGNED (user, 2026-06-26); the parenthetical records it as ratified on that date and preserves the earlier wording it replaces. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-482 — The two hand-synchronised copies of the fermata scan retire into one owned primitive, and that retirement changes no output
+
+> - **D2 — One unified primitive replaces the two duplicated fermata scans.** The fermata logic exists today in two
+>   hand-synchronised copies; they are retired into the single owned primitive and every consumer re-points at it. The
+>   retirement is byte-identical.
+
+**In plain words.** The same fermata-finding code existed twice, kept in step by hand. Both copies are replaced by the single owned component and every consumer re-pointed at it. Because the marker-only behaviour is unchanged, the swap produces identical results — the new behaviour is a separate, measured step.
+
+**Why.** Stated with the decision and required by #6 (one path per concern): two hand-synchronised copies drift independently. Splitting the change into a byte-identical unification and a separately-gated behaviour change is the project's standing discipline, applied here so the unification cannot hide an output movement.
+
+**Status.** LIVE · decided 2026-06-26 · ratified by user
+
+**Home.** `cowork_phrase_boundary_design.md:227-229`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Decision D2 of a design document whose banner reads SIGNED (user, 2026-06-26); the same document's constraints state the split explicitly — the marker-only path is byte-identical, the graded model is gated on the corpus regression stop. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-483 — The picked boundaries are validated against the analysts' own phrase marks; a fermata-derived phrase list is inadmissible as ground truth because the primitive reads fermatas
+
+> - **Validation on the chorale corpus** (the per-voice aggregation, D5) — the picked texture boundaries are checked
+>   against the corpus's **analyst-annotated phrase markers** (the DCML corpora's `{}` / `phraseend` annotations, parsed
+>   corpus-wide since the TSV-oracle infrastructure landed) — an **independent** ground truth: the markers are supplied
+>   by the human analyst, not derived from fermatas, so validating the fermata marker against them is not circular. A
+>   fermata-derived phrase list would be inadmissible as ground truth here, for exactly that circularity. A per-voice
+
+**In plain words.** To check whether the phrase ends are right, they are compared with the phrase marks the human analysts wrote in the annotated corpora. A list of phrases derived from fermatas could not be used, because the program reads fermatas itself — it would be marking its own homework.
+
+**Why.** Stated with the rule: the markers are supplied by the human analyst and are not derived from fermatas, so validating the fermata marker against them is not circular — and the document states the converse in the same sentence rather than leaving it implied.
+
+**Status.** LIVE · decided 2026-06-26 · ratified by user
+
+**Home.** `cowork_phrase_boundary_design.md:254-258`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The validation rule of a design document whose banner reads SIGNED (user, 2026-06-26), naming the corpus columns it uses. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. It is the phrase-axis instance of the standing rule **D-294** — the only ground truth is the human annotation, and no self-annotation ever enters a measurement.
+
+### D-484 — The phrase-boundary primitive is a derived view: it inherits the loaded span, requests no extension of its own, and publishes a per-profile max-normalised boundary confidence
+
+> **Bounded-context stance (added 2026-07-02, closing gap-analysis v2 finding A-2, `cc_gap_analysis_v2_report.md` —
+> ruled by Cowork):** this primitive is a
+> **derived view** over the Layer-1/Layer-2 outputs: it **inherits the loaded span and requests no extension of its
+> own** (its profile simply ends where the loaded span ends; a consumer wanting boundary evidence beyond the loaded
+> span extends via ITS own bounded-context obligation, and this primitive recomputes over the enlarged span — the
+> standard re-run, per `cowork_bounded_context_design.md` §4). Its published boundary strength is a **Class-M
+> boundary confidence** under the cross-layer confidence contract (`cowork_confidence_contract.md`: [0,1] per-profile
+> max-normalised salience, comparable within one score's profile only; it participates in no override frame) —
+> closing gap A-3 of the same v2 report for this spec.
+
+**In plain words.** When only part of a score is loaded, this component does not ask for more music. Its profile simply ends where the loaded stretch ends; a consumer that wants boundary evidence further out asks for the extension itself and this component recomputes. Its published strength is comparable only within one score's own profile — it never overrides another layer's answer.
+
+**Why.** Stated with the stance and derived from the two contracts it cites: the bounded-context design's standard re-run rule for derived views, and the cross-layer confidence contract's Class-M boundary confidence, which fixes the range, the comparability and the fact that it participates in no override frame.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by Cowork
+
+**Home.** `cowork_phrase_boundary_design.md:23-31`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** A stance added to the design document on 2026-07-02, closing two findings of the gap-analysis v2 report; the document records it as ruled by Cowork, not by the user. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-485 — Each picked boundary should carry which cue fired and at what scope; the picked set is scope-blind today and the refinement waits for the inference phase
+
+>    - **Provenance (the information-loss fix).** Each picked boundary — texture *and* per-voice — should carry **which
+>      cue/marker fired and at what scope** (global, or per-voice with which / how-many voices coincided), so a downstream
+>      consumer (Layer 6's punctuation-span annotation) does not lose that a boundary was a *local breath* versus a *global
+>      barline*. The picked set is scope-blind today. Recorded as a proper-layer refinement; per the standing rule, not
+>      built until the inference phase opens; validate on a non-chorale corpus (§8).
+
+**In plain words.** The markers that produce a phrase end are of two kinds: some apply to the whole ensemble by notation (a structural barline), and some are written on one instrument (a breath mark). Today both are treated as whole-texture endings, so a local breath is promoted to a global boundary and the fact that it was local is lost. A boundary should record which signal produced it and at what scope — recorded as owed, and deliberately not built yet.
+
+**Why.** Stated with the item and grounded in #12 (no information loss): spiking a per-part marker onto the texture profile discards the locality, and the principled form is for it to reach a texture boundary only through the same voice-coincidence aggregation as the graded cues. The refinement is chorale-inert by construction — in the chorale convention all voices hold together — so it changes nothing on the gate repertoire and matters only for orchestral and contrapuntal textures.
+
+**Status.** LIVE · decided 2026-07-01 · ratifier not stated
+
+**Home.** `cowork_phrase_boundary_design.md:382-386`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Open item 5 of the design document, recorded 2026-07-01 and attributed there to the user raising it. The document records the whole item as a proper-layer refinement not built until the inference phase opens; the register carries it because a recorded refinement with a stated shape binds what a future build may do. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-490 — FALSIFIED: no threshold can make the fine-grain function override net-positive — the harm rate is flat against both quantities the threshold is built from
+
+> The incumbent-confidence band and the contradiction value are **both** flat against correctness. Because the
+> override's *only* tunable knob is `bar = baseBar + confidenceScale·C`, and harm does not fall as `C` falls,
+> **no θ can carve corrections from harms** — the code-grounded proof of Phase 3's "best measurable θ disables
+> it" (theta_fit: the corr−harm-maximizing measurable bar drops fires to 0 at corr−harm 0, vs −571 on the
+> fitting split at the current bar). `[data]`
+
+**In plain words.** A late correction pass overturns a committed chord when the surrounding progression argues against it. Whether it helps or hurts turns out to be unrelated to either quantity its trigger is made of — how confident the earlier reading was, and how strongly the progression contradicts it. So no setting of the trigger separates the cases it fixes from the cases it breaks, and the best available setting simply switches the pass off.
+
+**Why.** Measured and stratified rather than argued: the harm rate is about 78 % at the weaker contradiction value and about 76 % at the stronger, and it RISES with the earlier reading's confidence — about 81 % in the highest confidence band against about 72 % in the lowest — so the one available lever, scaling the bar by that confidence, pushes the wrong way. The mechanism of the harm is named too: fourth- and fifth-related root moves, exactly what the progression score rewards, are 55 % of the fires and 58 % of the harms.
+
+**Status.** LIVE · decided 2026-07-06 · ratifier not stated
+
+**Home.** `cowork_fb_redesign_design.md:104-108`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The measured verdict of the F-B redesign design pass, on 1043 ground-truth-aligned fires from the dormant decode chain, reproducing the fitting ledger's own split to the unit. It refutes the premise the confidence contract and the code comment both assert — that a fitted threshold accounts for the incumbent's missing progression term. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-491 — REFUTED: making the override's comparison vertically fair does not repair it — even where the alternative fits the notes at least as well, it is still about 71 % harmful
+
+> Even in the **vertically-fair** band (`g ≤ 0` — the alternative is at least as vertically supported as the
+> committed reading) the override is still **70.8 %** harm (corr−harm −163). So repairing the vertical
+> asymmetry does **not** reach net-positive: the problem is not merely that the incumbent lacks a progression
+> term; it is that the progression contradiction is **uncorrelated with root-correctness** at these committed
+> slices. L4's vertical commit is a far better predictor of the DCML root than F-B's progression re-pick, even
+> when the alternative is vertically its equal. `[data]`
+
+**In plain words.** The obvious repair was to let the pass overturn a chord only when the replacement fits the sounding notes at least as well as the reading it displaces. Measured, that band is still wrong about seven times in ten. The problem is not that the comparison was unfair; it is that the progression argument does not predict which root is correct at these moments.
+
+**Why.** Measured across five bands of the vertical gap, every one of them net-negative, with the count and the harm rate per band; the conclusion drawn is the one the numbers support and no more — the earlier layer's vertical commit is a better predictor of the annotated root than the progression re-pick, even when the alternative is its vertical equal.
+
+**Status.** LIVE · decided 2026-07-06 · ratifier not stated
+
+**Home.** `cowork_fb_redesign_design.md:160-165`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The direct test of the documented root-cause's natural repair, measured on the same 1043-fire population. It is what removes the large-surface repair option (§3.C) from the redesign, and it is stated with its own caveat — the vertical gap uses a proxy for the committed reading's own score, and the conclusion is stated to be independent of the proxy's precision because no band drops below about 71 % harm. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-492 — The recommended redesign is to demote the override to an annotation — carrying the earlier reading unchanged and surfacing the contradiction — floored by simply disabling it
+
+> **Adopt §3.D-1 (demote to annotation) as the redesign, with §3.A (disable the override action) as its
+> accuracy-equivalent floor; reject §3.B and §3.C as measured net-negative.** Rationale, all `[data]`-grounded:
+
+**In plain words.** Instead of overturning the committed chord, the pass should record that the surrounding progression disagrees and leave the chord alone. That matches simply switching the pass off on accuracy, while keeping the disagreement as information a later stage can use. Tightening the trigger and repairing the comparison are both rejected: they were measured and both lose.
+
+**Why.** Every clause is measured and cited: the override is net-harmful by 756 root decisions and no threshold repairs it; no structural gate on the available features beats disabling it, the best carve still losing by 163; the vertically-fair repair is refuted; and disabling and annotating tie on accuracy while annotating additionally preserves 1043 contradiction signals as calibrated uncertainty. The stated loss is 53 corrections, kept in view rather than netted away.
+
+**Status.** LIVE · decided 2026-07-06 · ratifier not stated
+
+**Home.** `cowork_fb_redesign_design.md:284-285`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The recommendation of a document whose banner records it as a DESIGN + DECISION SURFACE and states that the implementation is a separately-ratified build event. **D-387** (2026-07-07, `cowork_layer5_engagement_design.md`) records the open-mark vehicle the recommendation calls for, one day later; whether that constitutes the build event's ratification is not settled by either document and is not decided here. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-493 — Restricting the override to the genuinely-coupled key-and-chord minority is UN-COMPUTABLE, not merely unmeasured: its trigger is not computed anywhere and building it is the still-owed joint step
+
+> - **Projected split:** ~~UNKNOWN~~ → **UN-COMPUTABLE (engage arc #2 measured, 2026-07-06;
+>   `cc_engage_c3_measurement_report.md`).** The C3 trigger is **not computed anywhere** — VERDICT 3 (not
+>   read-only measurable, not surfaceable by additive default-off telemetry). The binding blocker is component
+>   **(b)** ("a different carried KEY alternative flips the chord reading"): the per-key chord re-decode it
+>   requires **is the gated joint key-and-chord step the contract §6-C3 says is "still owed at Stage 5"**
+>   ([keymodesequence.h:70-72](src/composing/analysis/key/keymodesequence.h#L70)), and even the closest
+>   mechanism — the J-key-iii joint re-key pass — **explicitly leaves the chord unchanged** ("the chord-axis
+>   side-effect … is DEFERRED to a faithful mechanism", [regionanalyzer.cpp:369-375](src/composing/analysis/region/regionanalyzer.cpp#L369)).
+>   Component (a) is likewise absent from the F-B fullspine chain (which uses `inferLocalKey(...)[0]` + a
+>   score-global `homeConf` sigmoid, not the per-slice L3 sequence margin; D-L3a's "no sequence-margin
+>   substrate on that path"). Surfacing (b) would mean **building** the joint step (forbidden by #6/#7/#8) —
+>   there is no already-computed signal to dump. `[code]` `[flag]`
+
+**In plain words.** The principled home for this correction is the small set of moments where the key and the chord genuinely depend on each other. That set cannot be measured today, and not for want of a dump: half of the trigger requires re-deciding the chord under a different candidate key, which is precisely the joint step the project has not built. So this option is a long-run successor, not a near-term choice.
+
+**Why.** Established at the code, both components separately: the binding blocker is the per-key chord re-decode, which the confidence contract itself says is still owed at Stage 5, and the closest existing mechanism — the joint re-key pass — explicitly leaves the chord unchanged; the other component is absent from this chain, which uses a score-global confidence rather than the per-slice sequence margin. Surfacing the trigger would therefore mean BUILDING the joint step, which #6/#7/#8 forbid at this stage — so the verdict is un-computable rather than unmeasured.
+
+**Status.** LIVE · decided 2026-07-06 · ratifier not stated
+
+**Home.** `cowork_fb_redesign_design.md:251-262`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** The measured verdict of engage arc #2, recorded in the F-B redesign document as a correction of its own earlier UNKNOWN, with the measurement report named. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
+### D-495 — RATIFIED AMENDMENT A-5: when the phrase-boundary profile is flat, cadence admission relaxes with vote-weight scaling instead of starving
+
+> - **A-5 (from F-11). Specify the phrase-gate fallback** for flat boundary profiles (relax admission with vote-weight
+>   scaling instead of starving; the graded profile already carries the needed signal).
+
+**In plain words.** Cadences are only looked for at phrase ends. In music with almost no surface punctuation the phrase-end signal goes flat, and everything that depends on it gets nothing to work with. The amendment requires a specified fallback: admit cadences more freely there but weight their votes down, using the graded strength that is already computed.
+
+**Why.** Derived from the review's stress simulation: in a punctuation-poor texture the fermatas, rests and structural barlines are deliberately absent, the graded profile goes flat, and everything gated on phrase boundaries starves — while the graded profile the design already produces still carries the relative signal the fallback needs.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Home.** `cowork_architecture_review_2026_07.md:324-325`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Amendment A-5 of the external architecture review, in a document whose banner records amendments A-1…A-10 as RATIFIED by the user on 2026-07-02. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. It binds on the phrase-boundary primitive's consumer; the primitive's own specification (`cowork_phrase_boundary_design.md`) does not carry it.
+

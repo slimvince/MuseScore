@@ -323,3 +323,18 @@
 
 **Provenance.** `docs/implementation_roadmap.md`:183-191, recorded as a standing trigger of the user, 2026-07-02, beside the census's own standing rule that discovering a new corpus is a census defect (register entry D-359). It governs the style taxonomy that `ARCHITECTURE.md` §6.7 owns and is recorded in a plan rather than at that home, hence the documentation-gap flag. Load-bearing for the 2026-08-03 §6.7 restatement: the five idioms are stated there as empirically discovered, and this is the rule that keeps that claim current. The record notes two corpus waves executed and ratified (2026-07-02, 2026-07-03), the second checking the trigger and finding it NOT fired. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
+### D-496 — RATIFIED AMENDMENT A-6: whether the pairwise progression grammar lives inside the harmonic vocabulary or stays a separate store is decided at the recognition-consumer build, explicitly
+
+> - **A-6 (from F-6). Decide the progression-knowledge store question** at the recognition-consumer build (fold §5.0
+>   pairwise motions into the Vocabulary, or two stores by declared design).
+
+**In plain words.** Knowledge about which chord may follow which is held in two places: a pairwise rule set inside the function layer, and a catalog of longer patterns. Whether these become one store or stay two is not to be settled by drift — the amendment requires the choice to be made, and made when the component that queries the catalog is built.
+
+**Why.** Stated with the finding it comes from: the consumer design asserts that the vocabulary extends the pairwise grammar, but the single-store-or-two decision is unmade — which is a total-unification (#6) question and is exactly the kind of coexistence the review's own criterion says must be decided rather than tolerated.
+
+**Status.** LIVE · decided 2026-07-02 · ratified by user
+
+**Home.** `cowork_architecture_review_2026_07.md:326-327`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+
+**Provenance.** Amendment A-6 of the external architecture review, in a document whose banner records amendments A-1…A-10 as RATIFIED by the user on 2026-07-02. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. Related but distinct: **D-133** rules that the vocabulary is a queried reference component rather than a layer, and **D-419** that the function layer does not touch it until the consumer is built; neither answers which store owns the pairwise motions.
+

@@ -233,3 +233,21 @@
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
+### D-489 — The snapshot sources are hash-pinned rather than copied in-tree, because their licences make an in-tree copy incompatible with this project's licence
+
+> Because these live in unpinned, gitignored clones, the goldens are byte-meaningful
+> only against the manifest's recorded commits. **License:** the four CC BY-NC-SA 4.0
+> repos (mozart/chopin/corelli/schumann) plus the no-LICENSE repos
+> (bach_chorales/bach_en_fr_suites) make an in-tree copy **GPL-incompatible** —
+> hash-pinning (not copying) is the chosen mechanism (audit C1 license check).
+
+**In plain words.** The scores the snapshot test uses are not committed. They are referenced by content hash and fetched from their own repositories, because four of them are licensed in a way that conflicts with this project's licence and two carry no licence at all — so keeping copies here would be a licensing violation, while recording their hashes is not.
+
+**Why.** Stated with the decision and derived from the licences read per repository: four are CC BY-NC-SA 4.0 and two carry no LICENSE file, which together make an in-tree copy incompatible with the project's own licence — so the mechanism is chosen by the constraint, not by preference.
+
+**Status.** LIVE · decided 2026-06-11 · ratifier not stated
+
+**Home.** `docs/score_inventory.md:93-97`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** The licence finding of the score inventory's snapshot-suite section (audit C1). Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+
