@@ -16,7 +16,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1300`
+**Home.** `ARCHITECTURE.md:1324`
 
 **Provenance.** ARCHITECTURE.md:1200-1210 (Layer 2 - Built+Live)
 
@@ -30,7 +30,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1300`
+**Home.** `ARCHITECTURE.md:1324`
 
 **Provenance.** ARCHITECTURE.md:1210. Cited by open_items/OI-228 as the primary source the joint emission departs from
 
@@ -45,7 +45,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1307-1308`
+**Home.** `ARCHITECTURE.md:1331-1332`
 
 **Provenance.** ARCHITECTURE.md:1217-1218. The joint decoder's per-event note set is ONSET-only (jointdecoder.h:67) - open_items/OI-228
 
@@ -61,7 +61,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1304-1306`
+**Home.** `ARCHITECTURE.md:1328-1330`
 
 **Provenance.** ARCHITECTURE.md:1212-1218
 
@@ -75,7 +75,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1302`
+**Home.** `ARCHITECTURE.md:1326`
 
 **Provenance.** ARCHITECTURE.md:1212-1214
 
@@ -90,7 +90,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1327-1329`
+**Home.** `ARCHITECTURE.md:1351-1353`
 
 **Provenance.** ARCHITECTURE.md:1237-1245
 
@@ -105,7 +105,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1328-1330`
+**Home.** `ARCHITECTURE.md:1352-1354`
 
 **Provenance.** ARCHITECTURE.md:1237-1242
 
@@ -121,7 +121,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1332-1334`
+**Home.** `ARCHITECTURE.md:1356-1358`
 
 **Provenance.** ARCHITECTURE.md:1242-1245
 
@@ -136,7 +136,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1318-1320`
+**Home.** `ARCHITECTURE.md:1342-1344`
 
 **Provenance.** ARCHITECTURE.md:1220-1231
 
@@ -150,7 +150,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1315`
+**Home.** `ARCHITECTURE.md:1339`
 
 **Provenance.** ARCHITECTURE.md:1220-1227; cites cowork_layer2_reslice_design.md §2
 
@@ -175,7 +175,7 @@
 
 **Home.** `cowork_layer2_slicing_design.md:130-139`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§8** — `## 8. Crosscutting concepts` (heading at line 121). A delegation at ARCHITECTURE.md:1347 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
+**Home section.** **§8** — `## 8. Crosscutting concepts` (heading at line 121). A delegation at ARCHITECTURE.md:1371 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** A crosscutting concept of the as-built Layer-2 specification, stated as a warning to the layers above. It is the qualification that makes the atomic-unit decision safe: **D-023** makes the constant-sonority slice the analysis unit, and this says what may not be concluded from that. The factor granularity that eventually consumes it is **D-449**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 
@@ -199,7 +199,7 @@
 
 **Home.** `cowork_layer2_slicing_design.md:140-148`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§8** — `## 8. Crosscutting concepts` (heading at line 121). A delegation at ARCHITECTURE.md:1347 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
+**Home section.** **§8** — `## 8. Crosscutting concepts` (heading at line 121). A delegation at ARCHITECTURE.md:1371 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Recorded as resolving prerequisite (i) of the function layer's input list, with the note that the whole prerequisite is this contract sentence and no new code. It places the primitive in the shared notation-derived-view tier beside the bass, spelling and phrase-boundary views. The phrase-boundary member of that same tier is **D-476**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 

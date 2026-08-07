@@ -8,8 +8,8 @@
     "A_no_delegation_exists": {
       "what_it_is": "Entries whose home document is named in NONE of the three user-ratified surfaces.",
       "the_criterion_that_decides_it": "clause (a), the fifth home case (OI-268) — the document is named in none of the three user-ratified surfaces, so there is no delegation to grade",
-      "entries": 94,
-      "documents": 37,
+      "entries": 83,
+      "documents": 32,
       "by_document": {
         "cowork_architecture_reassessment.md": [
           "D-282",
@@ -34,13 +34,6 @@
           "D-514",
           "D-515",
           "D-516"
-        ],
-        "cowork_delta_check_dispositions.md": [
-          "D-635"
-        ],
-        "cowork_eg1_premise_checks.md": [
-          "D-608",
-          "D-609"
         ],
         "cowork_eg2_scoping.md": [
           "D-564"
@@ -74,9 +67,6 @@
           "D-582",
           "D-583"
         ],
-        "cowork_layer1_extend_design.md": [
-          "D-628"
-        ],
         "cowork_layer1_tone_collection_design.md": [
           "D-569",
           "D-570"
@@ -86,14 +76,7 @@
           "D-604"
         ],
         "cowork_layer3_reachback_design.md": [
-          "D-622",
-          "D-623",
-          "D-624"
-        ],
-        "cowork_layer5_function_methods.md": [
-          "D-584",
-          "D-585",
-          "D-586"
+          "D-622"
         ],
         "cowork_phase2_architecture_review.md": [
           "D-579",
@@ -101,9 +84,6 @@
         ],
         "cowork_phase5c_l5_build_plan.md": [
           "D-602"
-        ],
-        "cowork_phrase_boundary_methods.md": [
-          "D-607"
         ],
         "cowork_sensitive_cell_probe.md": [
           "D-532",
@@ -160,8 +140,7 @@
           "D-486"
         ],
         "docs/stage4b_design.md": [
-          "D-571",
-          "D-572"
+          "D-571"
         ],
         "docs/stage4c_cadence_key_design.md": [
           "D-616"
@@ -601,8 +580,8 @@
   },
   "what_is_NOT_proposed_as_a_delegation_and_why": {
     "class_A": {
-      "entries": 94,
-      "documents": 37,
+      "entries": 83,
+      "documents": 32,
       "why_no_draft_is_offered": "The register's own `not_write_list_cases` rules on exactly this shape: 'A delegation drafted for them would be a new decision about where a concern is owned, not the repair of a wording — so the remedy is the OI-272 per-kind homing act into the specification that owns each decision, which is already the standing scheme.' Drafting delegations for this class would be proposing that many new decisions."
     },
     "class_B": {
@@ -623,7 +602,7 @@
         "document": "cowork_layer5_function_design.md",
         "state_at_head": "WRITTEN — CLOSED",
         "why": "The user wrote an explicit delegation clause on 2026-08-03 and every entry of the document is `contract-home`. Nothing is outstanding.",
-        "delegation_at_head": "ARCHITECTURE.md:1517",
+        "delegation_at_head": "ARCHITECTURE.md:1593",
         "delegation_form_at_head": "explicit-delegation-clause",
         "entries_in_the_home_population": 8,
         "by_class": {
@@ -713,7 +692,7 @@
         "document": "cowork_layer2_slicing_design.md",
         "state_at_head": "WRITTEN — CLOSED",
         "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 5). Both entries are `contract-home` as of this wave's classification run.",
-        "delegation_at_head": "ARCHITECTURE.md:1347",
+        "delegation_at_head": "ARCHITECTURE.md:1371",
         "delegation_form_at_head": "explicit-delegation-clause",
         "entries_in_the_home_population": 2,
         "by_class": {
@@ -725,7 +704,7 @@
         "document": "cowork_layer6_grouping_design.md",
         "state_at_head": "WRITTEN — CLOSED ON THE DELEGATION QUESTION",
         "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 6, ruling R5). Eight of the nine entries are `contract-home`; the ninth (D-458) stays `gap` on the KIND half — it is homed in the document's STATUS BANNER. Not a delegation matter.",
-        "delegation_at_head": "ARCHITECTURE.md:1530",
+        "delegation_at_head": "ARCHITECTURE.md:1637",
         "delegation_form_at_head": "explicit-delegation-clause",
         "entries_in_the_home_population": 9,
         "by_class": {
@@ -770,9 +749,9 @@
     }
   },
   "counted": {
-    "home_population_entries": 289,
-    "home_population_documents": 76,
-    "lost_for_want_of_a_delegation": 137,
+    "home_population_entries": 278,
+    "home_population_documents": 71,
+    "lost_for_want_of_a_delegation": 126,
     "of_which_a_widening_would_move": 4,
     "outstanding_set_documents": 2,
     "write_list_members": 11,

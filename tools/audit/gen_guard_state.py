@@ -191,6 +191,20 @@ AUTHORED = [
      "READ WAVE 4's measured yield still matches the bands registered before the reads, every "
      "entry it names is still in the register at the home it records, and its running read "
      "count still derives from the regime's own partition plus waves 1, 2 and 3"),
+    ("tools/audit/decisions/gen_finish_line_item1_routes.py", ["--check"],
+     "every entry of finish-line item 1 still carries an authored closing route, no route names "
+     "an entry the item no longer carries other than the ones this wave re-homed, and the route "
+     "population still re-derives from the finish line rather than from a stored list"),
+    ("tools/audit/decisions/gen_item1_rehome_blocker.py", ["--check"],
+     "what actually blocks finish-line item 1's re-home class still re-derives — the standing "
+     "autonomous-operation authorization still locatable in CLAUDE.md by its anchor, every open "
+     "re-home row's owning specification still naming at least one file, and every row's blocker "
+     "still cut from that row's own recorded reason rather than from a stored verdict"),
+    ("tools/audit/decisions/gen_r1_superseded_reach.py", ["--check"],
+     "ruling R1's application re-derives — every member of item 1's NO-HOME class still carries an "
+     "authored successor record, no successor record names an entry the class no longer carries, "
+     "every authored successor is still NAMED IN THE SUPERSEDED ENTRY'S OWN TEXT, and every one "
+     "that resolves to a register identifier still resolves to an entry the register holds"),
     ("tools/audit/decisions/gen_reads4_oi326_application.py", ["--check"],
      "the OI-326 ruling's R5 measurement still re-derives — the doc-governance clause's own "
      "delegating sentence is still locatable and still says what the measurement parsed, the "
@@ -237,8 +251,12 @@ HISTORICAL: dict[str, str] = {
         "homing work increments that count for documents whose yield is already known (#20). The "
         "generator itself now STOPS with that reason rather than re-deriving. NO LIVE COVERAGE IS "
         "LOST: the packing RULE it owns is imported and exercised live by gen_reads5_repack.py, "
-        "whose --check passes, and each wave's yield artifact re-derives against the registered "
-        "bands read off this one.",
+        "whose --check passes. (The second half of this reason formerly added 'and each wave's "
+        "yield artifact re-derives against the registered bands read off this one'. That was "
+        "already false at HEAD when the six yield artifacts were re-classified on 2026-08-04 — "
+        "three of them did not re-derive — and it is false by construction now that all six are "
+        "historical records themselves. Struck rather than rewritten around: a reason string that "
+        "names a check nothing performs is the same defect this table exists to prevent.)",
     "tools/audit/decisions/gen_phase1m_measurements.py":
         "HISTORICAL RECORD: the phase-1m measurements, whose own dispatch ordered two MEASUREMENTS "
         "and forbade acting on either. Its authored KIND table is a judgment made over the home "
@@ -265,6 +283,52 @@ HISTORICAL: dict[str, str] = {
         "delegation citation still resolves in its surface — is asserted by "
         "gen_phase1p_delegation_bar.py, which locates every FORMS anchor and stops on a moved or "
         "ambiguous one, and which passes.",
+
+    # ── THE READ-WAVE YIELD FAMILY — six tools, re-classified together 2026-08-04 ──────────────
+    # Dispatch `cc_instruction_finish_line_item1b.md`, ruling R2. The earlier classification put
+    # this family on the LIVE side, crediting each with the assertion that every entry its wave
+    # names is still in the register AT THE HOME IT RECORDS. That is not a live invariant: phase
+    # 1's criterion C1 OBLIGES entries to be written into their owning specification, so the check
+    # must eventually fail because the tree moved on correctly — the ruling's own definition of a
+    # check that measures the clock. Measured, not argued: the previous wave re-homed ten entries
+    # and six of the family's members name them. The per-tool evidence is in the classification.
+    "tools/audit/decisions/gen_reads1_yield.py":
+        "HISTORICAL RECORD: read wave 1's measured yield, graded against bands registered BEFORE "
+        "the reads (#17b) — a completed instalment of an out-of-sample test, not a statement about "
+        "today. It fails at HEAD on the narrower of the family's two causes: both entries it names "
+        "are still homed in ARCHITECTURE.md and only the LINE RANGE moved, drifted by the "
+        "insertions the previous wave's homing act made above them. NO LIVE COVERAGE IS LOST: that "
+        "every entry still exists with a resolving reference and a verbatim quote at its home is "
+        "asserted by gen_decisions_register.py --check and register_lint.py, and that no register "
+        "home anchor has drifted by reaim_home_anchors.py --check — all three live and passing.",
+    "tools/audit/decisions/gen_reads2_yield.py":
+        "HISTORICAL RECORD: read wave 2's measured yield, the same construction as wave 1's. It "
+        "PASSES at the committed tree, and that is a fact about which entries the previous wave's "
+        "ten re-homings touched rather than a difference in kind — so it is retired with its "
+        "siblings instead of being left to fail at the next homing wave. NO LIVE COVERAGE IS LOST, "
+        "on the same three live guards named at wave 1's entry.",
+    "tools/audit/decisions/gen_reads3_yield.py":
+        "HISTORICAL RECORD: read wave 3's measured yield, the same construction and the same "
+        "ground as wave 2's. NO LIVE COVERAGE IS LOST, on the same three live guards.",
+    "tools/audit/decisions/gen_reads4_yield.py":
+        "HISTORICAL RECORD: read wave 4's measured yield, the same construction and the same "
+        "ground as wave 2's. NO LIVE COVERAGE IS LOST, on the same three live guards.",
+    "tools/audit/decisions/gen_reads5_yield.py":
+        "HISTORICAL RECORD: read wave 5's measured yield — one of the two members where the "
+        "mechanism is visible rather than argued: SIX of the ten entries the previous wave re-homed "
+        "into ARCHITECTURE.md are named by this wave, so the home strings frozen in its artifact no "
+        "longer match the register. The check fails because the homing act phase 1 requires was "
+        "performed, and re-deriving it would restate a historical measurement against the "
+        "population that act changed — the OI-330 refusal. NO LIVE COVERAGE IS LOST, on the same "
+        "three live guards named at wave 1's entry.",
+    "tools/audit/decisions/gen_reads6_yield.py":
+        "HISTORICAL RECORD: read wave 6's measured yield — the other visible member, FOUR of the "
+        "previous wave's ten re-homed entries being named here. Its further assertion, that the "
+        "owed remainder derives from the regime's partition plus every completed wave's own count, "
+        "does not keep it live: every input to that derivation is frozen (a registration recorded "
+        "before the reads, and each wave's authored read list), so it re-computes a closed sum and "
+        "cannot detect a change in the tree. NO LIVE COVERAGE IS LOST, on the same three live "
+        "guards named at wave 1's entry.",
 }
 
 

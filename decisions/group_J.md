@@ -17,7 +17,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3402-3403`
+**Home.** `ARCHITECTURE.md:3509-3510`
 
 **Provenance.** ARCHITECTURE.md:3253-3257; consistent with D-016
 
@@ -32,7 +32,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3103-3104`
+**Home.** `ARCHITECTURE.md:3210-3211`
 
 **Provenance.** ARCHITECTURE.md:2918-2958
 
@@ -47,7 +47,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4032-4033`
+**Home.** `ARCHITECTURE.md:4150-4151`
 
 **Provenance.** ARCHITECTURE.md:3850-3858; an instance of D-074
 
@@ -65,7 +65,7 @@
 
 **Status.** SUPERSEDED BY D-018 · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3717-3719`
+**Home.** `ARCHITECTURE.md:3835-3837`
 
 **Provenance.** The record arm replaces the 0.5/0.8 literals with the fitted nats constants (ARCHITECTURE.md:175-177); the literals are legacy-arm-only (sectionanalyzer.cpp::legacyKeyExposureBucket)
 
@@ -80,7 +80,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3737-3738`
+**Home.** `ARCHITECTURE.md:3855-3856`
 
 **Provenance.** ARCHITECTURE.md:3549-3601
 
@@ -95,7 +95,7 @@
 
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4048-4049`
+**Home.** `ARCHITECTURE.md:4166-4167`
 
 **Provenance.** open_items/OI-112 already records this preset-gating as stale; open_items/OI-201 records that the record arm collapses the family to a plain major triad symbol ★ Verbatim RE-TAKEN 2026-08-02 (the phase-1 truth-sync): §5.11's assertion 'Gated to Standard and Baroque presets only' was corrected, since the formatter explicitly defers that gate for want of preset context (`chordsymbolformatter.cpp:882-883`) and emits the labels under every preset (OPEN_ITEMS OI-112(c) discharged). The decision's own words survive at the home, quoted inside the correction.
 
@@ -135,7 +135,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:6377-6379`
+**Home.** `ARCHITECTURE.md:6495-6497`
 
 **Provenance.** Recorded in `cowork_handoff_archive.md` (the standing-records block) as item E-14 of `cowork_product_tool_register.md`, with a note that a pointer into the architecture document was owed at its next edit. This pass found no such pointer in the register's own home census, so the owed act appears undischarged. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written at the head of `ARCHITECTURE.md` §12 as the governing requirement over the user interface. This also discharges the pointer-into-the-architecture-document act the archive recorded as owed at its next edit. Former home preserved (#12): `cowork_handoff_archive.md:2507`, the standing-records block, as item E-14 of `cowork_product_tool_register.md`.
 
@@ -205,11 +205,14 @@
 
 ### D-584 — The perfect/imperfect cadence call is made on the BASS-DERIVED inversion; the soprano arrival degree is demoted to a soft optional nudge and the tool never attempts melody identification
 
-> - **★ The "soprano arrival degree" (1̂=PAC vs 3̂=IAC) is theory-standard but implementation-fragile, so DEMOTED in the
->   spec (user, 2026-06-26).** It needs the *structural melody*, and the **highest sounding voice is not reliably that line**
->   (orchestral doubling; barbershop lead *below* the top). So the spec makes the perfect/imperfect call on the
->   **bass-derived inversion** criterion and uses the top-voice arrival only as a *soft, optional* confidence nudge in
->   homophonic textures — never the hard test. The tool does not attempt melody identification.
+> - **The perfect/imperfect cadence call is made on the BASS-DERIVED INVERSION; the soprano arrival
+>   degree is a soft optional nudge and this layer never attempts melody identification (D-584).**
+>   Standard theory decides a full close from the melody note, and this layer may not: the highest
+>   sounding voice is often a doubling, and in some textures the lead sits below the top, so the
+>   structural melody the criterion needs is not reliably recoverable. The top voice may nudge the
+>   confidence in a chordal texture; it never decides. *Why:* the constraint that forces it is the
+>   unavailability of the structural melody — orchestral doubling and a lead below the top are the two
+>   cited counter-cases — and the bass-derived inversion criterion is chosen because the catalog
 
 **In plain words.** Whether a cadence is a full close or a weaker one is decided from the bass and the chord's inversion, not from which note the melody lands on. Standard theory uses the melody note, but the program cannot reliably tell which line is the melody: the highest sounding voice is often a doubling, and in some music the lead sits below the top. The top voice may nudge the confidence in a chordal texture; it never decides.
 
@@ -219,19 +222,22 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_layer5_function_methods.md:75-79`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:1600-1607`
 
-**Home section.** **§3** — `## 3. Cadence detection — replace BOTH broken detectors with one correct one` (heading at line 64). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** `cowork_layer5_function_methods.md`, the research-first methods catalog that grounds the Layer-5 specification (2026-06-26). Read in full by READ WAVE 5, 2026-08-04. The record marks the demotion *user, 2026-06-26* and points at the Layer-5 specification §5.2 / §15-0 for where it lands. Distinct from **D-336** (cadence detection is key-agnostic), which governs what the detector may READ; this governs how the perfect/imperfect call is MADE.
+**Provenance.** ★ RE-HOMED 2026-08-04 (CC, dispatch `cc_instruction_finish_line_item1.md`, Task 3.3, ruling R3): written into the OWNING LAYER SPECIFICATION in that section's own voice, with its defense. Register rule (e) prefers this route in terms, and D-231's purposive clause (criterion C4) is why it is preferred over a delegation: at completion the specifications must suffice to measure conformance against WITHOUT consulting the register, and a decision reachable only by following a pointer satisfies C1's letter and defeats C4. The classification that selected this entry, with its reason and the whole 94-entry population, is `tools/audit/decisions/finish_line_item1_routes.json`. Its former home class was `gap` — a decision governing a layer but not findable from that layer's section — which is precisely what the re-homing discharges; the field is cleared because a layer-specification home is not a non-specification home. **THE FORMER HOME, CLASS AND VERBATIM, PRESERVED (#12)** — former home `cowork_layer5_function_methods.md:75-79`; former verbatim: “- **★ The "soprano arrival degree" (1̂=PAC vs 3̂=IAC) is theory-standard but implementation-fragile, so DEMOTED in the
+  spec (user, 2026-06-26).** It needs the *structural melody*, and the **highest sounding voice is not reliably that line**
+  (orchestral doubling; barbershop lead *below* the top). So the spec makes the perfect/imperfect call on the
+  **bass-derived inversion** criterion and uses the top-voice arrival only as a *soft, optional* confidence nudge in
+  homophonic textures — never the hard test. The tool does not attempt melody identification.” — `cowork_layer5_function_methods.md`, the research-first methods catalog that grounds the Layer-5 specification (2026-06-26). Read in full by READ WAVE 5, 2026-08-04. The record marks the demotion *user, 2026-06-26* and points at the Layer-5 specification §5.2 / §15-0 for where it lands. Distinct from **D-336** (cadence detection is key-agnostic), which governs what the detector may READ; this governs how the perfect/imperfect call is MADE.
 
 ### D-585 — The bass-scale-degree / Rule-of-the-Octave prior is admitted as a SOFT prior and tie-breaker only, never a gate
 
-> The partimento Rule of the Octave maps each **bass** scale-degree to a first-choice harmony (1̂/5̂/8̂→stable 5/3;
-> 4̂/7̂→6/5,6/3; 2̂→inverted dominant-seventh; descending 6̂→applied-dominant), and functional-bass theory biases bass
-> 5̂/7̂→D, 4̂/2̂→S/predominant, 1̂/3̂→T. It is theoretically authoritative and **largely unexplored as an explicit
-> computational prior** — a defensible, **low-risk SOFT prior / tie-breaker** for L5's resolver (§5) and cadence test
-> (§3), **never a gate** (it is many-to-one, direction-dependent, overridden by sequence/cadence/applied context).
+> - **The bass-scale-degree / Rule-of-the-Octave prior is admitted as a SOFT prior and TIE-BREAKER
+>   only, never a gate (D-585).** Which harmony a bass degree usually carries may break a tie between
+>   otherwise equally good readings and may never rule a reading out. *Why:* two reasons, both
+>   load-bearing — the mapping is theoretically authoritative (the partimento tradition and
+>   functional-bass theory) but **largely unexplored as an explicit computational prior**, so it is not
+>   established (#19); and it is structurally many-to-one and direction-dependent, with the surrounding
 
 **In plain words.** Which harmony a bass note usually carries — the partimento Rule of the Octave — is allowed to break a tie between readings that are otherwise equally good, and nothing more. It may never rule a reading out, because one bass note maps to several harmonies, the mapping depends on which way the bass is moving, and the surrounding progression overrides it.
 
@@ -241,17 +247,29 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_layer5_function_methods.md:126-131`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:1609-1614`
 
-**Home section.** **§6** — `## 6. The bass-degree / Rule-of-the-Octave prior (soft)` (heading at line 125). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** `cowork_layer5_function_methods.md`, the research-first methods catalog that grounds the Layer-5 specification (2026-06-26). Read in full by READ WAVE 5, 2026-08-04. Recorded in the catalog's §6. The record states no ratifier for this item. It sits beside **D-383**, which ranks a licensed progression as a tie-break among already-plausible readings rather than a decider — the same posture for a different evidence channel.
+**Provenance.** ★ RE-HOMED 2026-08-04 (CC, dispatch `cc_instruction_finish_line_item1.md`, Task 3.3, ruling R3): written into the OWNING LAYER SPECIFICATION in that section's own voice, with its defense. Register rule (e) prefers this route in terms, and D-231's purposive clause (criterion C4) is why it is preferred over a delegation: at completion the specifications must suffice to measure conformance against WITHOUT consulting the register, and a decision reachable only by following a pointer satisfies C1's letter and defeats C4. The classification that selected this entry, with its reason and the whole 94-entry population, is `tools/audit/decisions/finish_line_item1_routes.json`. Its former home class was `gap` — a decision governing a layer but not findable from that layer's section — which is precisely what the re-homing discharges; the field is cleared because a layer-specification home is not a non-specification home. **THE FORMER HOME, CLASS AND VERBATIM, PRESERVED (#12)** — former home `cowork_layer5_function_methods.md:126-131`; former verbatim: “The partimento Rule of the Octave maps each **bass** scale-degree to a first-choice harmony (1̂/5̂/8̂→stable 5/3;
+4̂/7̂→6/5,6/3; 2̂→inverted dominant-seventh; descending 6̂→applied-dominant), and functional-bass theory biases bass
+5̂/7̂→D, 4̂/2̂→S/predominant, 1̂/3̂→T. It is theoretically authoritative and **largely unexplored as an explicit
+computational prior** — a defensible, **low-risk SOFT prior / tie-breaker** for L5's resolver (§5) and cadence test
+(§3), **never a gate** (it is many-to-one, direction-dependent, overridden by sequence/cadence/applied context).” — `cowork_layer5_function_methods.md`, the research-first methods catalog that grounds the Layer-5 specification (2026-06-26). Read in full by READ WAVE 5, 2026-08-04. Recorded in the catalog's §6. The record states no ratifier for this item. It sits beside **D-383**, which ranks a licensed progression as a tie-break among already-plausible readings rather than a decider — the same posture for a different evidence channel.
 
 ### D-607 — Polyphonic phrase-boundary detection has NO validated deterministic rule set in the literature — the extension is engineering on monophonic cues, validated against our own corpus, and is not settled science
 
-> - **No validated deterministic rule set exists for polyphonic phrase boundaries** comparable to the monophonic
->   canon. Treat polyphonic extension as engineering on the monophonic cues, **validated against our own chorale
->   ground truth** — not as settled science.
+> **Polyphonic phrase-boundary detection has NO validated deterministic rule set in the literature —
+> the L1.5 primitive is our own engineering and may not be presented as established method (D-607;
+> re-homed into this specification 2026-08-04 from the methods document that formerly carried it).** Almost
+> all published work on locating phrase endings addresses a single melodic line; for several
+> simultaneous voices nothing comparable has been established. Carrying the monophonic cues over to
+> polyphony is therefore engineering of ours, and it is validated against our own annotated corpus
+> rather than cited. *Why:* a stated **fact of absence**, established by the survey behind the method
+> catalog — the monophonic canon has a benchmarked literature and the polyphonic case has no
+> comparable validated rule set. What DOES transfer is named rather than assumed: the **gap cue**
+> generalizes cleanly, because a phrase boundary in polyphony is a near-simultaneous rest or long note
+> across all voices — which is what makes chorale texture an unusually favourable case and is a reason
+> to distrust a figure measured only there. (This bounds what the primitive whose contract is
+> delegated two paragraphs above may claim; it does not change what that contract specifies.)
 
 **In plain words.** Almost all published work on finding phrase endings is about single melodic lines. Our music has several lines at once, and nothing comparable has been established for that case. So carrying the single-line cues over to several voices is our own engineering and has to be checked against our own annotated music; it may not be presented as established method.
 
@@ -261,9 +279,9 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_phrase_boundary_methods.md:83-85`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:1300-1312`
 
-**Home section.** **§3** — `## 3. Polyphony — the real caveat (engineering on top, validate on our corpus)` (heading at line 76). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** `cowork_phrase_boundary_methods.md`, the research-first methods catalog grounding the phrase-boundary design (2026-06-26). Read in full by READ WAVE 5, 2026-08-04. Recorded in the catalog's §3. It is the ESTABLISHMENT STATUS (#19) of the mechanism **D-479** specifies — the cues run per eligible voice and aggregate to the texture — and no other home states it. The record states no ratifier.
+**Provenance.** ★ RE-HOMED 2026-08-04 (CC, dispatch `cc_instruction_finish_line_item1.md`, Task 3.3, ruling R3): written into the OWNING LAYER SPECIFICATION in that section's own voice, with its defense. Register rule (e) prefers this route in terms, and D-231's purposive clause (criterion C4) is why it is preferred over a delegation: at completion the specifications must suffice to measure conformance against WITHOUT consulting the register, and a decision reachable only by following a pointer satisfies C1's letter and defeats C4. The classification that selected this entry, with its reason and the whole 94-entry population, is `tools/audit/decisions/finish_line_item1_routes.json`. Its former home class was `gap` — a decision governing a layer but not findable from that layer's section — which is precisely what the re-homing discharges; the field is cleared because a layer-specification home is not a non-specification home. **THE FORMER HOME, CLASS AND VERBATIM, PRESERVED (#12)** — former home `cowork_phrase_boundary_methods.md:83-85`; former verbatim: “- **No validated deterministic rule set exists for polyphonic phrase boundaries** comparable to the monophonic
+  canon. Treat polyphonic extension as engineering on the monophonic cues, **validated against our own chorale
+  ground truth** — not as settled science.” — `cowork_phrase_boundary_methods.md`, the research-first methods catalog grounding the phrase-boundary design (2026-06-26). Read in full by READ WAVE 5, 2026-08-04. Recorded in the catalog's §3. It is the ESTABLISHMENT STATUS (#19) of the mechanism **D-479** specifies — the cues run per eligible voice and aggregate to the texture — and no other home states it. The record states no ratifier.
 

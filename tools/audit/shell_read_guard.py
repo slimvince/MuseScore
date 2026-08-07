@@ -62,6 +62,14 @@ this session actually issued, plus the forbidden forms `CLAUDE.md` itself names 
 the deny rate on the forbidden set and the false-deny rate on the sanctioned set.  The artifact
 is `tools/audit/shell_read_guard_establishment.json`.
 
+  ★ THE CORPUS IS EXTENDED BEFORE ANY RATE IS REPUBLISHED (user ruling R1, 2026-08-04).  A
+  measured rate is only as wide as the corpus it was measured on, so a shape that defeats the
+  guard goes into the corpus FIRST and the rates are then re-measured against it.  Re-establishing
+  a repaired guard against the corpus that failed to catch the defect repeats the error being
+  fixed: the check passes precisely because the shape is absent.  Both figures are published for
+  every change, measured on the SAME corpus, so what is reported is the change's effect and not
+  the widening's.
+
 Run:
     echo '{"tool_input":{"command":"cat CLAUDE.md"}}' | python tools/audit/shell_read_guard.py
     python tools/audit/shell_read_guard.py --establish [--check]
@@ -146,8 +154,85 @@ def outside_repo(token: str) -> bool:
 
 
 def split_segments(command: str) -> list[str]:
-    """Pipeline and list segments, keeping the pipeline they came from for the git exemption."""
+    """SUPERSEDED 2026-08-04. The raw-text segment split, kept ONLY for --establish's comparison.
+
+    It cut the command into segments BEFORE anything was tokenized, so a separator inside a
+    quoted argument was read as a real one. See `lex_command` below for the defect and the fix.
+    """
     return [s for s in re.split(r"\|\||&&|[;|\n]", command) if s.strip()]
+
+
+# ── segmentation, corrected 2026-08-04 (`OPEN_ITEMS.md` OI-343, user ruling R1) ───────────────
+# THE DEFECT, measured at this module's own decision function and never reasoned from its source:
+# the segment split above ran over the RAW command text while `tokenize()` applied `shlex` PER
+# SEGMENT. A `|` inside a QUOTED pattern was therefore taken for a pipeline separator, the command
+# was shredded at the alternation, and the segment carrying the repository path no longer began
+# with the text utility — so the utility test never saw the path. `grep -n "alpha|beta"
+# src/composing/analysis/key/keyresolver.cpp` was ADMITTED while the identical command without the
+# pipe was DENIED.
+#
+# It is the OI-292/OI-300 lesson — a raw split splits inside quotes — ONE FUNCTION UPSTREAM of the
+# one that was fixed, and it fails in the opposite direction: that remedy stopped the guard denying
+# legitimate work, this one stops it admitting forbidden work.
+#
+# THE FIX IS THE ORDER, not a wider pattern. The whole command is lexed ONCE, with the shell's own
+# list and pipeline operators recognised as tokens in their own right, and the segments are cut at
+# those TOKENS. A quoted argument is a single token before any cut is made, so no separator inside
+# one can be mistaken for a separator between commands.
+#
+# WHY THE PUNCTUATION SET IS `;|&\n` RATHER THAN shlex's default `();<>|&`: the default also turns
+# every redirection into its own token (`2>&1` becomes `2`, `>&`, `1`), which changes which token
+# the guard classifies as the aimed path — a SECOND behaviour change, on OI-300's shape (5), that
+# this act is not authorized to make. The set here is exactly the characters the superseded regex
+# cut on, so the only behaviour that moves is WHERE the segment boundaries fall.
+SEGMENT_PUNCTUATION = ";|&\n"
+
+# A separator token is one composed only of the operators the superseded regex treated as
+# separators: `||`, `&&`, `;`, `|`, newline. A LONE `&` is deliberately NOT one — the superseded
+# regex did not treat it as one either, and treating it so would cut `2>&1` in half.
+SEPARATOR_TOKEN = re.compile(r"(?:\|\||&&|[;|\n])+")
+
+
+def lex_command(command: str) -> list[str] | None:
+    """Every token of the WHOLE command, quotes respected, operators kept as their own tokens.
+
+    Returns None for a command `shlex` cannot lex (an unbalanced quote), so the caller falls back
+    to the superseded raw split rather than raising: a guard that crashes on a strange command is
+    a guard that stops guarding — the same reason `tokenize()` carries its own fallback.
+    """
+    lex = shlex.shlex(command, posix=False, punctuation_chars=SEGMENT_PUNCTUATION)
+    lex.whitespace_split = True
+    # `\n` is deliberately NOT whitespace here: a newline separates commands, so it has to reach
+    # the punctuation test rather than be eaten as a space — the superseded regex split on it too.
+    lex.whitespace = " \t\r"
+    # A `#` inside a command is data, never a comment. `shlex.split` clears this for the same
+    # reason; constructing the lexer directly does not, so it is cleared explicitly.
+    lex.commenters = ""
+    try:
+        return list(lex)
+    except ValueError:
+        return None
+
+
+def segments(command: str, group_quotes: bool = True,
+             token_first: bool = True) -> list[list[str]]:
+    """The command's segments, each as a token list."""
+    if token_first:
+        tokens = lex_command(command)
+        if tokens is not None:
+            out: list[list[str]] = []
+            cur: list[str] = []
+            for tok in tokens:
+                if SEPARATOR_TOKEN.fullmatch(tok):
+                    if cur:
+                        out.append(cur)
+                    cur = []
+                else:
+                    cur.append(tok)
+            if cur:
+                out.append(cur)
+            return out
+    return [tokenize(s, group_quotes) for s in split_segments(command)]
 
 
 def tokenize(segment: str, group_quotes: bool = True) -> list[str]:
@@ -171,21 +256,21 @@ def tokenize(segment: str, group_quotes: bool = True) -> list[str]:
         return segment.split()
 
 
-def decide(command: str, group_quotes: bool = True) -> tuple[bool, str]:
+def decide(command: str, group_quotes: bool = True,
+           token_first: bool = True) -> tuple[bool, str]:
     """(deny, reason). A command is denied when a text utility names a repository path."""
     if GIT_OBJECT_READ.search(command):
         # The whole command is a git-object pipeline; a text utility downstream of it is
         # formatting object output, not reading the working tree.
         return False, "reads a git object by explicit hash — the sanctioned exemption"
     exempt = False
-    for seg in split_segments(command):
+    for tokens in segments(command, group_quotes, token_first):
         # The enumeration exemption is judged PER SEGMENT, never over the whole command: a
         # whole-command exemption would let `cat CLAUDE.md; python …/changed_paths.py` through
         # on the strength of its second half.
-        if ENUMERATION_TOOL in seg:
+        if any(ENUMERATION_TOOL in t for t in tokens):
             exempt = True
             continue
-        tokens = tokenize(seg, group_quotes)
         i = 0
         while i < len(tokens) and ENV_ASSIGN.match(tokens[i]):
             i += 1
@@ -249,6 +334,37 @@ SANCTIONED = [
     "git commit -q -m 'the `git status` denial is now affordable'",
     "git commit -q -F -",
     "echo 'denying `git status` costs nothing now' > /tmp/note.txt",
+    # ── ADDED 2026-08-04 (`cc_instruction_guard_fix_and_item1d.md`, Task 1.2, user ruling R1) ──
+    # THE CORPUS IS EXTENDED BEFORE ANY RATE IS RE-MEASURED, and the reason is R1's own: the
+    # committed `--establish --check` passed precisely BECAUSE the corpus omitted the shape that
+    # defeats the guard, so the published rates did not bound what they appeared to bound.
+    # Re-establishing against the same corpus would repeat the error being fixed.
+    #
+    # (a) THE CONTROL FOR THE FIX. The same quoted-pipe shape aimed OUTSIDE the tree. The
+    # segmentation fix must not turn a miss into a false deny here.
+    "grep -nE \"alpha|beta\" /tmp/scratch.txt",
+    "grep -n \"D-642\\|D-643\" /tmp/reaim_1r.txt",
+    # (b) OI-300's OWN SHAPES, each a MEASURED false deny recorded on that row and NOT fixed here.
+    # They are in the corpus so the published false-deny rate REPORTS them instead of being
+    # silent about them; the fix's effect is read as the with/without delta on this same corpus.
+    # Shape (2) — an unexpanded shell variable pointing outside the working tree.
+    "tail \"$SC/guards1.txt\"",
+    # Shape (5) — a redirection token taken for the aimed path, beside an out-of-tree argument.
+    "cat \"$SC/tasks/abc.output\" 2>/dev/null | tail -20",
+    # Shape (4) — a heredoc BODY line that begins with a forbidden word and is not a command.
+    "python - <<'PYEOF'\nhead = old[:k]\nPYEOF",
+    # Redirections beside out-of-tree arguments, the forms OI-300 names.
+    "head -20 /tmp/out.txt 2>/dev/null",
+    "tail -5 /tmp/out.txt 2>&1",
+    "cat /tmp/a.txt >> /tmp/b.txt",
+    # (c) THE HASH-BEARING GIT FORMS D-253 EXPLICITLY PERMITS, which no fix may start denying.
+    "git cat-file -p 4a9c0d4827",
+    "git show 4a9c0d4827:cowork_audit_protocol.md",
+    # (d) BUILD, TEST AND MEASUREMENT COMMANDS `BUILD_AND_TEST.md` MANDATES. They are not reads at
+    # all, and a guard that denied one would stop the work the rule exists to protect.
+    "python tools/audit/gen_guard_state.py --check",
+    "cd C:\\s\\MS\\ninja_build_rel && ./composing_tests.exe",
+    "python tools/a8_rebaseline_measure.py --out-dir /tmp/cand",
 ]
 
 # FORBIDDEN: the forms `CLAUDE.md` itself names as the rule's target.
@@ -274,6 +390,27 @@ FORBIDDEN = [
     # instead of per segment. Found by re-reading the diff before committing, not by a report.
     "cat CLAUDE.md; python tools/audit/changed_paths.py --staged",
     "python tools/audit/changed_paths.py --staged && head -50 ARCHITECTURE.md",
+    # ── ADDED 2026-08-04 (`cc_instruction_guard_fix_and_item1d.md`, Task 1.2, user ruling R1) ──
+    # THE SHAPE THAT DEFEATED THE GUARD, in the forms it was measured in. The first is Cowork's
+    # own run against the guard's decision path (the dispatch's fact F1); the four that follow are
+    # commands the preceding session ACTUALLY ISSUED and the guard ADMITTED (`OPEN_ITEMS.md`
+    # OI-343). Every one is the read D-253 forbids.
+    "grep -n \"alpha|beta\" src/composing/analysis/key/keyresolver.cpp",
+    "grep -nE \"summaris|recognis\" tools/audit/gen_guard_state.py cowork_audit_protocol.md",
+    "grep -nEi \"carrier|successors s\" tools/audit/gen_phase1_completion_inventory.py",
+    "grep -n \"carrier\\|carries the live content\" STATUS.md",
+    "grep -n \"D-642\\|D-643\" DECISIONS.md",
+    # The same shape inside a REAL pipeline: a fix must protect the quoted pipe AND still cut the
+    # command at the genuine one, so the second segment is decided rather than swallowed.
+    "grep -n \"a|b\" ARCHITECTURE.md | head -5",
+    "python tools/audit/changed_paths.py --staged | grep -n \"a|b\" ARCHITECTURE.md",
+    # A REAL forbidden read inside a heredoc body that IS executed as shell. OI-300 asks for this
+    # explicitly: a future body-skipping fix for shape (4) must not pass by discarding bodies
+    # wholesale.
+    "bash <<'SH'\ncat CLAUDE.md\nSH",
+    # A working-tree read whose target is written AFTER a redirection — so a future fix that
+    # strips redirections (OI-300 shape 5) cannot pass by discarding too much.
+    "grep -n \"pattern\" > /tmp/hits.txt ARCHITECTURE.md",
 ]
 
 
@@ -286,8 +423,20 @@ def establish() -> dict:
     # RE-established rather than asserted: the same two sets are run with quote grouping off
     # and on, and both figures are published. The dispatch's condition for reverting it is a
     # rise in false denies elsewhere, so that figure must be visible and not inferred.
-    old_false = sum(1 for c in SANCTIONED if decide(c, group_quotes=False)[0])
-    old_caught = sum(1 for c in FORBIDDEN if decide(c, group_quotes=False)[0])
+    # `token_first=False` is REQUIRED here, not incidental: the 2026-08-04 segmentation change
+    # made `group_quotes` unreachable on the default path, so without it this comparison would
+    # silently compare the current guard against itself and publish a difference of zero.
+    old_false = sum(1 for c in SANCTIONED
+                    if decide(c, group_quotes=False, token_first=False)[0])
+    old_caught = sum(1 for c in FORBIDDEN
+                     if decide(c, group_quotes=False, token_first=False)[0])
+    # The 2026-08-04 SEGMENTATION change, measured the same way and on the SAME extended corpus,
+    # so the delta reported is the fix's and not the corpus widening's (D-436).
+    pre_false = sum(1 for c in SANCTIONED if decide(c, token_first=False)[0])
+    pre_caught = sum(1 for c in FORBIDDEN if decide(c, token_first=False)[0])
+    pre_missed = [c for c in FORBIDDEN if not decide(c, token_first=False)[0]]
+    still_missed = [r["command"] for r in forb if not r["denied"]]
+    still_false = [r["command"] for r in san if r["denied"]]
     return {
         "purpose": "Establishment (#19) of tools/audit/shell_read_guard.py: its deny rate on "
                    "the forms CLAUDE.md names, and its FALSE-deny rate on real commands this "
@@ -340,7 +489,12 @@ def establish() -> dict:
                                              "repository path. Measured live 2026-08-03 and "
                                              "recorded at `OPEN_ITEMS.md` OI-292.",
                 "false_denies_on_the_sanctioned_set": {
-                    "with_the_fix": false_denies, "without_it": old_false, "of": len(san)},
+                    "with_the_fix": false_denies, "without_it": old_false, "of": len(san),
+                    "read_this_as": "`without_it` is the guard with NEITHER the 2026-08-03 "
+                                    "tokenizer nor the 2026-08-04 segmentation — the state before "
+                                    "this line of maintenance began. It is measured on the corpus "
+                                    "as it stands today, so it is not the figure phase 1s "
+                                    "published against the corpus of that date."},
                 "detection_on_the_forbidden_set": {
                     "with_the_fix": caught, "without_it": old_caught, "of": len(forb)},
                 "the_revert_condition": "The dispatch says: if the fix raises false denies "
@@ -348,6 +502,79 @@ def establish() -> dict:
                                         "above — a rise is the condition, and it is published "
                                         "either way rather than inferred.",
             },
+        },
+        "★_the_2026_08_04_segmentation_fix_and_the_corpus_it_is_measured_on": {
+            "the_ruling": (
+                "User, 2026-08-04 (R1, `cc_instruction_guard_fix_and_item1d.md`): fix the "
+                "shell-read guard, and EXTEND ITS ESTABLISHMENT CORPUS WITH THE SHAPES THAT "
+                "DEFEAT IT BEFORE ANY RATE IS REPUBLISHED."
+            ),
+            "why_the_corpus_came_first": (
+                "The ruling states its own reason: re-establishing against the same corpus would "
+                "repeat the error being fixed. The committed `--establish --check` passed "
+                "PRECISELY BECAUSE the corpus omitted the defeating shape, so the published "
+                "false-negative rate was not a bound on the true one. A measured rate is only as "
+                "wide as the corpus it was measured on (#19)."
+            ),
+            "what_changed": (
+                "The ORDER, not the pattern. The whole command is lexed ONCE with the shell's "
+                "list and pipeline operators recognised as tokens in their own right, and the "
+                "segments are cut at those TOKENS. Previously the command was cut into segments "
+                "over RAW TEXT and each segment was tokenized afterwards, so a `|` inside a "
+                "quoted pattern was read as a pipeline separator. The punctuation set is exactly "
+                "the characters the superseded regex cut on, so the only behaviour that moves is "
+                "where the segment boundaries fall."
+            ),
+            "the_miss_it_removes": (
+                "`grep -n \"alpha|beta\" src/composing/analysis/key/keyresolver.cpp` was "
+                "ADMITTED while the identical command without the pipe was DENIED. Found by the "
+                "guard denying one command after admitting four of the same kind, and MEASURED "
+                "at this module's own decision function over the commands the preceding session "
+                "actually issued — never reasoned from the source (`OPEN_ITEMS.md` OI-343)."
+            ),
+            "★_what_the_PREVIOUS_published_rates_did_and_did_not_bound": (
+                "The rates published before 2026-08-04 are NOT WITHDRAWN AS WRONG (#12): they "
+                "were correct for the corpus they were measured on, and they re-derived exactly. "
+                "What they did not do is bound the guard's behaviour on the pipe-in-a-quoted-"
+                "argument shape, because that shape was not in either corpus. They are recorded "
+                "here as not bounding what they appeared to bound, which is a different "
+                "statement from being incorrect."
+            ),
+            "detection_on_the_forbidden_set_SAME_corpus": {
+                "with_the_fix": caught, "without_it": pre_caught, "of": len(forb),
+                "what_the_fix_newly_catches": sorted(
+                    c for c in pre_missed if c not in still_missed),
+                "what_is_STILL_missed_and_is_not_this_fix_s_subject": still_missed,
+            },
+            "false_denies_on_the_sanctioned_set_SAME_corpus": {
+                "with_the_fix": false_denies, "without_it": pre_false, "of": len(san),
+                "the_revert_condition": (
+                    "The dispatch says: if the fix raises false denials materially, revert and "
+                    "report — a guard that blocks correct commands gets disarmed, which is worse "
+                    "than one with a known gap. Both figures are measured on the SAME extended "
+                    "corpus, so the comparison is of the fix and not of the corpus widening."
+                ),
+                "the_false_denies_that_remain": still_false,
+                "what_they_are": (
+                    "Every one is a shape `OPEN_ITEMS.md` OI-300 already records as a MEASURED "
+                    "false deny owed a fix — an unexpanded shell variable pointing outside the "
+                    "tree (shape 2), a redirection token taken for the aimed path (shape 5), and "
+                    "a heredoc BODY line that is not a command at all (shape 4). They are in the "
+                    "corpus so the published rate REPORTS them; none is fixed here, because each "
+                    "is a further behaviour change that owes its own establishment, and D-436 "
+                    "makes changing a mechanism the user's ruling rather than a session's."
+                ),
+            },
+            "what_this_fix_deliberately_does_NOT_touch": [
+                "OI-300 shape (1) — `ls <repository path>`, an existence read outside the "
+                "TEXT-UTILITY set the guard covers.",
+                "OI-300 shape (2) — an unexpanded shell variable read literally.",
+                "OI-300 shape (3) — a hashless `git diff` on a working-tree path.",
+                "OI-300 shape (4) — a heredoc body read as though it were a command.",
+                "OI-300 shape (5) — a redirection token classified as the aimed path.",
+                "Each changes WHAT the guard denies rather than WHERE it cuts the command, and "
+                "each owes its own measured rate in both directions before it lands (D-436).",
+            ],
         },
     }
 

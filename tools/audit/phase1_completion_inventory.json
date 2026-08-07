@@ -20,7 +20,49 @@
     "id": "C1",
     "half": "COMPLETE",
     "clause": "every recorded decision is written into its owning specification",
-    "what_it_obliges": "Every entry of the decisions register is recorded in the specification that owns its subject. The register's own home_rule makes the outstanding classes explicit: `gap` (governs a layer, not findable from that layer's section) and `unhomed` (recorded only on a tracking surface, no home at all). `process` and `project-convention` are declared CORRECTLY homed and are not outstanding; `contract-home` is the fifth home case, admitted by D-430/D-432/D-546."
+    "what_it_obliges": "Every entry of the decisions register is recorded in the specification that owns its subject. The register's own home_rule makes the outstanding classes explicit: `gap` (governs a layer, not findable from that layer's section) and `unhomed` (recorded only on a tracking surface, no home at all). `process` and `project-convention` are declared CORRECTLY homed and are not outstanding; `contract-home` is the fifth home case, admitted by D-430/D-432/D-546.",
+    "★_the_reach_of_C1_over_SUPERSEDED_entries": {
+     "the_ruling_quoted_IN_FULL_from_its_home": "### Criterion C1 reaches every decision whose content is LIVE — a superseded entry's obligation moves to its successor **Ruled by the user, 2026-08-04** (dispatch `cc_instruction_c1_ruling_and_item1c.md`, §0a R1). **Criterion C1 — D-231's phase-1 obligation that every recorded decision is written into its owning specification — reaches every decision whose content is LIVE.** A superseded decision's live content lives in its **successor**; C1 is satisfied for that content **when the successor is homed**, and the superseded entry itself is recorded in the register, which D-231 makes the status ledger for supersession. **Where the successor is NOT homed, C1 is defeated and the owed act is homing the SUCCESSOR — not the superseded entry.** **The basis, at D-231's own clause.** The clause assigns two things to two places in one sentence: *\"the decisions register remains the status ledger (supersession, shelving, the same-commit rule), never the conformance reference\"*. Supersession and shelving are named there as two distinct things the register is the ledger OF, and conformance is assigned to the specifications — so a superseded decision is not something conformance is measured against. The clause is quoted **entire**, derived at HEAD, at `tools/audit/phase1_completion_inventory.json` → `the_requirement.phase_1_verbatim`, which is what the rule immediately below requires of a citation like this one. **★ THE BASIS PREVIOUSLY CLAIMED IS WITHDRAWN, AND THE WITHDRAWAL IS PART OF THE RULING.** The preceding dispatch (`cc_instruction_finish_line_item1b.md`) presented this ruling as an APPLICATION of `OPEN_ITEMS.md` OI-272's per-kind home scheme to the superseded kind, and declared that reading as an assumption with an instruction to STOP rather than stretch the scheme. The check came back negative and **the reading is withdrawn**: the scheme partitions by what a decision IS rather than by what its STATUS is, and applied at its own text it routes the affected entries the OPPOSITE way. The four grounds that refuted it live at `open_items/OI-340.md` and are not restated here (#6) — a wrong basis retracted is evidence (#12), and the row that produced the refutation is where that evidence belongs. **Where it is applied, and what it does not authorize.** The ruling is recorded against criterion C1 itself — `tools/audit/phase1_completion_inventory.json` → `the_requirement.criteria` → C1 — and applied per entry over finish-line item 1's no-home class at `tools/audit/decisions/r1_superseded_reach.json`; no verdict or count is restated here (**D-431**). It authorizes no fix to the analysis, no design, no inference change, and no re-classification of any entry's home class. It decides which entries criterion C1 reaches, and nothing else.",
+     "its_home": "cowork_audit_protocol.md, the dispatch-protocol section, beside D-431, D-434, D-436, D-640 and D-641. Located by heading and quoted whole on every run — the branch of a ruling that supports a claim is never quoted alone (the rule ruled in the same act).",
+     "what_it_changes_about_C1": "C1's population. C1 obliges every RECORDED decision to be written into its owning specification; R1 reads that as every decision whose CONTENT IS LIVE. A superseded entry is not thereby exempt - the obligation moves to the successor that carries its live content, and is discharged only where that successor is itself homed.",
+     "the_clause_it_rests_on": {
+      "the_sentence": "the decisions register remains the status ledger (supersession, shelving, the same-commit rule), never the conformance reference",
+      "located_in": "the derived quote at `the_requirement.phase_1_verbatim`, which carries D-231's phase-1 clause ENTIRE at HEAD - including the half that does not support R1. Nothing is quoted here in a shorter form than the clause has.",
+      "what_R1_takes_from_it": "The clause assigns SUPERSESSION to the register and CONFORMANCE to the specifications, and names supersession and shelving as two distinct things the register is the ledger OF. A superseded decision is therefore not something conformance is measured against.",
+      "what_the_sentence_does_NOT_settle": "It says nothing about an entry whose supersession names no successor, and nothing about one whose successor is itself unhomed. R1 answers the second and is silent on the first; where the register names no carrier, the application reports that and proposes nothing."
+     },
+     "★_the_WITHDRAWN_basis_and_why_it_was_withdrawn": {
+      "what_was_claimed": "The preceding dispatch (`cc_instruction_finish_line_item1b.md`) presented R1 as an APPLICATION of OI-272's per-kind home scheme to the superseded kind, and declared that reading as its assumption A2 with an instruction to STOP if the scheme would not carry it.",
+      "the_status_of_that_claim": "WITHDRAWN by the user, 2026-08-04, in the ruling that replaces it. R1's substance is unchanged; its basis is D-231's own clause above and no longer OI-272.",
+      "why_the_withdrawal_is_recorded_rather_than_dropped": "A wrong basis retracted is evidence (#12), and the four grounds below are what a later session would otherwise re-derive. They are read off the row that made them rather than restated here.",
+      "CCs_four_grounds_preserved": [
+       "**The scheme partitions by WHAT A DECISION IS, not by WHAT ITS STATUS IS — and applied at its own text it routes these four entries the OPPOSITE way.** *Superseded* is a status; the kinds are constraint, shelving, process rule, measurement convention. D-282 (*the oracle/tier metric, never a bare proxy*), D-283 (*never learn keys*), D-284 (*selection is saturated, stop adding re-ranking gates*) and D-285 (*embellishment is chord-first*) are by kind **standing constraints/policies** — OI-270's own row calls them *\"meta-findings to institutionalize\"*, that is, proposed doctrine. Class 1 is the class they fall in, and class 1 says **home them into the owning specification** — the act R1 exists to forbid.",
+       "**The prescribed home is not the same home.** Class 2's is *the register + the evidence document*; R1's is *the register + the successor's home*. For D-283 those are different documents — its own record sits in `cowork_architecture_reassessment.md`, its successors D-001/D-096 are homed in `ARCHITECTURE.md`.",
+       "**Class 2's pointer half would state something false.** It prescribes *a one-line tried-and-closed pointer*. None of these four was tried and closed: each was **superseded by a later, more explicit, user-ratified decision on the same subject**. Writing *tried and closed* over them puts a false statement into a specification, which is exactly what phase 1's TRUE half exists to remove.",
+       "**R1 carries a CONDITION the scheme has none of.** R1 applies only *where the live content is carried by a homed successor*; class 2 applies unconditionally. A rule turning on a fact its claimed source never mentions is a new rule, not an application of that one."
+      ],
+      "grounds_source": "open_items/OI-340.md, the section 'The reading, at the ruling's own text', parsed on every run"
+     },
+     "what_R1_does_NOT_authorize": "No fix to the analysis, no design, no inference change, and no re-classification of any entry's home CLASS. It decides which entries criterion C1 reaches and nothing else.",
+     "where_it_is_applied": "tools/audit/decisions/r1_superseded_reach.json, over finish-line item 1's NO-HOME class. No verdict or count is restated here (D-431)."
+    },
+    "★_the_reach_of_C1_over_a_superseded_entry_whose_content_is_a_REMOVAL": {
+     "the_ruling_quoted_IN_FULL_from_its_home": "### Where a superseded decision's content is a REMOVAL, the specification states the current behaviour and records the removal as a tried-and-closed line **Ruled by the user, 2026-08-04** (dispatch `cc_instruction_guard_fix_and_item1d.md`, §0a R2). **Where a superseded decision's content is a REMOVAL, the owning specification STATES THE CURRENT BEHAVIOUR and RECORDS THE REMOVAL AS A TRIED-AND-CLOSED LINE; the register holds the status.** **This is PRECEDENT, not a new rule.** It is what was already done at `ARCHITECTURE.md` §5.2 for the declared-mode piece-start shortcut (`OPEN_ITEMS.md` OI-315, register entry **D-058**), and the ruling names that act as its own source. The precedent is quoted **in full**, located by its own anchors and re-read from `ARCHITECTURE.md` on every run, at `tools/audit/phase1_completion_inventory.json` → `the_requirement.criteria` → C1 → the removal block; it is deliberately not restated here (#6), and a rewording of it STOPS the derivation rather than leaving a stale account of it standing. **What the precedent shows, and why it answers a question D-642 leaves open.** D-642 moves a superseded entry's obligation to its **successor**. A removal has no successor: nothing later states the rule, because the rule is that the mechanism is gone. Read without this ruling, such an entry falls through — the register records it superseded, no specification carries it, and criterion C1 has no closing act to name. The precedent supplies one, and it is two acts rather than one: the specification is made TRUE about HEAD (there the specification had gone on asserting the removed mechanism in the present tense, which is exactly D-231's doc-sync half), and the removal is recorded where a later reader will meet it before retrying it. **Neither half alone is sufficient** — stating the current behaviour without the tried-and-closed line loses the information that the alternative was tried (#12), and recording the closed line without correcting the text leaves the specification misdescribing the code. **What it does not authorize.** No fix to the analysis, no design, no inference change, and no re-classification of any entry's home class. It says what the owning specification owes for one shape of entry, and nothing else.",
+     "its_home": "cowork_audit_protocol.md, the dispatch-protocol section, beside D-431, D-434, D-436, D-640, D-641, D-642 and D-643. Register entry D-644. Located by heading and quoted whole on every run (D-643).",
+     "why_it_is_recorded_HERE_beside_R1": "R1/D-642 moves a superseded entry's obligation to its SUCCESSOR. A removal has no successor — nothing later states the rule, because the rule is that the mechanism is gone — so such an entry falls through D-642 entirely: the register records it superseded, no specification carries it, and criterion C1 has no closing act to name. R2 supplies the closing act, so it belongs where C1's reach is recorded.",
+     "what_it_obliges_and_it_is_TWO_acts": "(1) the owning specification STATES THE CURRENT BEHAVIOUR — which is D-231's doc-sync half, since a specification that goes on asserting a removed mechanism in the present tense misdescribes the code; and (2) it RECORDS THE REMOVAL AS A TRIED-AND-CLOSED LINE, so a later reader meets it before retrying. Neither half alone suffices: (1) without (2) loses the information that the alternative was tried (#12), and (2) without (1) leaves the specification false at HEAD.",
+     "★_it_is_PRECEDENT_not_a_new_rule": {
+      "located_in": "ARCHITECTURE.md §5.2, by anchor string — never by line number",
+      "why_never_by_line_number": "The dispatch that transmitted R2 cited this block as `ARCHITECTURE.md:3510-3525`, and that range had already drifted past it: the preceding wave's homing insertions moved the block down. The citation was to the right block and the wrong coordinate, which is the D-307 failure exactly — a line number quoted in prose is not a register anchor, so nothing maintains it. Reported rather than silently corrected, and the block is re-located by its own words on every run.",
+      "the_precedent_quoted_IN_FULL": "**★ CORRECTED 2026-08-04 (phase 1z; `OPEN_ITEMS.md` OI-315, register entry D-058). The paragraph this replaces specified a piece-start shortcut in the present tense. The code removed that short-circuit in Stage 4b-i on 2026-06-14 and this document went on asserting it.** What the opening does at HEAD, read at the code: **There is no piece-start exception — the opening is note-based.** At piece start `resolveKeyAndModeRanked()` runs its ordinary path. The lookback window start clamps to tick 0 when the analysis tick is inside the lookback span (`keyresolver.cpp:286-289`); the dynamic-lookahead loop runs exactly as it does anywhere else (`:303-326`); and the hysteresis block is simply skipped at the opening, because it guards on `prevResult != nullptr` (`:340`). The key signature's declared mode reaches the opening **only** as the same small hint `analyzeKeyMode()` applies at every tick — the former hard \"strong declared-mode prior\" promotion, which moved a declared-compatible candidate to the front regardless of the candidate-score gap, was removed in the same increment (`:358-367`). The removal's own reason is recorded in the code beside it: the short-circuit returned a declared anchor at piece start **regardless of the opening note evidence**, which is incompatible with notes-always-win above. The pins are `Composing_KeyresolverTests.PieceStartOpening_NoteBased_DeclaredMinor` and `_DeclaredMajor` (`src/composing/tests/regionanalysis_tests.cpp:122`, `:144`). **Tried and closed on the key opening — do not retry; the register carries it with its evidence: D-058 (the declared-mode piece-start shortcut, superseded in fact by the Stage 4b-i note-based opening; the removal is dated and its re-targeted pins named at `docs/key_path_design.md:65-73`).**",
+      "the_two_halves_it_demonstrates": {
+       "states_the_current_behaviour": "**There is no piece-start exception — the opening is note-based.**",
+       "records_the_removal_as_tried_and_closed": "**Tried and closed on the key opening …"
+      }
+     },
+     "what_R2_does_NOT_authorize": "No fix to the analysis, no design, no inference change, and no re-classification of any entry's home CLASS. It says what the owning specification owes for one shape of entry, and nothing else.",
+     "where_it_is_applied": "tools/audit/decisions/r1_superseded_reach.json, over the member of item 1's NO-HOME class whose content is a removal. No verdict or count is restated here (D-431)."
+    }
    },
    {
     "id": "C2",
@@ -173,18 +215,18 @@
  },
  "the_complete_half": {
   "criterion": "C1 and C2",
-  "register_population": 641,
+  "register_population": 644,
   "by_home_class": {
    "contract-home": 139,
-   "gap": 150,
-   "homed-in-a-layer-specification": 204,
-   "process": 100,
+   "gap": 139,
+   "homed-in-a-layer-specification": 215,
+   "process": 103,
    "project-convention": 37,
    "unhomed": 11
   },
   "class_1_documentation_gap": {
    "what_it_is": "The register's own home_rule: a decision that governs a layer and is not findable from that layer's section - a documentation gap carrying an OPEN_ITEMS.md row. This is C1's outstanding population.",
-   "count": 150,
+   "count": 139,
    "by_home_document": {
     "cowork_architecture_review_2026_07.md": 7,
     "docs/llm_integration.md": 7,
@@ -205,15 +247,12 @@
     "cowork_gateA_unification_design.md": 3,
     "cowork_idiom_discovery_findings.md": 3,
     "cowork_information_loss_audit.md": 3,
-    "cowork_layer3_reachback_design.md": 3,
-    "cowork_layer5_function_methods.md": 3,
     "cowork_notation_adoption_increment.md": 3,
     "cowork_term_theory_grounding.md": 3,
     "cowork_voiceleading_axis_design.md": 3,
     "docs/iter92_joint_bass_chord_scoring.md": 3,
     "docs/layer_architecture_audit.md": 3,
     "cowork_adjudication_dossier.md": 2,
-    "cowork_eg1_premise_checks.md": 2,
     "cowork_joint_estimator_architecture.md": 2,
     "cowork_layer1_tone_collection_design.md": 2,
     "cowork_layer2_reslice_design.md": 2,
@@ -224,19 +263,16 @@
     "docs/back_half_design.md": 2,
     "docs/iter90_bass_as_root_promotion_shelved.md": 2,
     "docs/iteration_path1_summary.md": 2,
-    "docs/stage4b_design.md": 2,
     "docs/stage4d_local_modulation_design.md": 2,
     "cowork_audit_obligation_map.md": 1,
-    "cowork_delta_check_dispositions.md": 1,
     "cowork_eg2_scoping.md": 1,
     "cowork_joint_estimator_factorization.md": 1,
     "cowork_l1_l5_premise_debt_audit.md": 1,
-    "cowork_layer1_extend_design.md": 1,
     "cowork_layer1_note_model_design.md": 1,
     "cowork_layer3_keymode_design.md": 1,
+    "cowork_layer3_reachback_design.md": 1,
     "cowork_layer6_grouping_design.md": 1,
     "cowork_phase5c_l5_build_plan.md": 1,
-    "cowork_phrase_boundary_methods.md": 1,
     "cowork_style_clustering_plan.md": 1,
     "cowork_target_architecture.md": 1,
     "cowork_tpc_capability_design.md": 1,
@@ -245,6 +281,7 @@
     "docs/key_detection_baroque_partial_signature.md": 1,
     "docs/nct_detection_design.md": 1,
     "docs/precision_metric_design.md": 1,
+    "docs/stage4b_design.md": 1,
     "docs/stage4c_cadence_key_design.md": 1,
     "docs/symbol_input_audit.md": 1
    },
@@ -353,16 +390,12 @@
     "D-569",
     "D-570",
     "D-571",
-    "D-572",
     "D-575",
     "D-579",
     "D-580",
     "D-581",
     "D-582",
     "D-583",
-    "D-584",
-    "D-585",
-    "D-586",
     "D-587",
     "D-588",
     "D-589",
@@ -378,9 +411,6 @@
     "D-604",
     "D-605",
     "D-606",
-    "D-607",
-    "D-608",
-    "D-609",
     "D-610",
     "D-613",
     "D-614",
@@ -391,19 +421,15 @@
     "D-620",
     "D-621",
     "D-622",
-    "D-623",
-    "D-624",
     "D-625",
-    "D-628",
     "D-629",
     "D-631",
-    "D-632",
-    "D-635"
+    "D-632"
    ]
   },
   "class_1a_gap_whose_home_FAILS_the_section_criterion": {
    "what_it_is": "Entries carrying a home_section block whose verdict is EXCLUDE: the home document exists and was graded, and the criteria in force (clause (a), D-432, D-430) reject it. These are gaps WITH a measured reason.",
-   "count": 150,
+   "count": 139,
    "by_reason": {
     "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section": {
      "count": 4,
@@ -482,7 +508,7 @@
      ]
     },
     "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade": {
-     "count": 94,
+     "count": 83,
      "ids": [
       "D-280",
       "D-281",
@@ -551,33 +577,22 @@
       "D-569",
       "D-570",
       "D-571",
-      "D-572",
       "D-579",
       "D-580",
       "D-581",
       "D-582",
       "D-583",
-      "D-584",
-      "D-585",
-      "D-586",
       "D-602",
       "D-603",
       "D-604",
       "D-605",
       "D-606",
-      "D-607",
-      "D-608",
-      "D-609",
       "D-610",
       "D-613",
       "D-614",
       "D-616",
       "D-622",
-      "D-623",
-      "D-624",
-      "D-625",
-      "D-628",
-      "D-635"
+      "D-625"
      ]
     }
    }
@@ -695,7 +710,7 @@
      "document": "cowork_layer5_function_design.md",
      "state_at_head": "WRITTEN — CLOSED",
      "why": "The user wrote an explicit delegation clause on 2026-08-03 and every entry of the document is `contract-home`. Nothing is outstanding.",
-     "delegation_at_head": "ARCHITECTURE.md:1517",
+     "delegation_at_head": "ARCHITECTURE.md:1593",
      "delegation_form_at_head": "explicit-delegation-clause",
      "entries_in_the_home_population": 8,
      "by_class": {
@@ -785,7 +800,7 @@
      "document": "cowork_layer2_slicing_design.md",
      "state_at_head": "WRITTEN — CLOSED",
      "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 5). Both entries are `contract-home` as of this wave's classification run.",
-     "delegation_at_head": "ARCHITECTURE.md:1347",
+     "delegation_at_head": "ARCHITECTURE.md:1371",
      "delegation_form_at_head": "explicit-delegation-clause",
      "entries_in_the_home_population": 2,
      "by_class": {
@@ -797,7 +812,7 @@
      "document": "cowork_layer6_grouping_design.md",
      "state_at_head": "WRITTEN — CLOSED ON THE DELEGATION QUESTION",
      "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 6, ruling R5). Eight of the nine entries are `contract-home`; the ninth (D-458) stays `gap` on the KIND half — it is homed in the document's STATUS BANNER. Not a delegation matter.",
-     "delegation_at_head": "ARCHITECTURE.md:1530",
+     "delegation_at_head": "ARCHITECTURE.md:1637",
      "delegation_form_at_head": "explicit-delegation-clause",
      "entries_in_the_home_population": 9,
      "by_class": {
@@ -907,7 +922,7 @@
   },
   "the_wide_cut": {
    "what_it_is": "The narrow cut UNION every open row whose own text carries a specification-falsity signal. Deliberately over-inclusive: an over-included row simply carries its own gate verdict and is judged nowhere here.",
-   "count": 58,
+   "count": 59,
    "ids": [
     "OI-105",
     "OI-107",
@@ -957,6 +972,7 @@
     "OI-333",
     "OI-336",
     "OI-338",
+    "OI-341",
     "OI-45",
     "OI-46",
     "OI-47",
@@ -984,6 +1000,7 @@
     "OI-319",
     "OI-333",
     "OI-336",
+    "OI-341",
     "OI-57",
     "OI-90",
     "OI-95"
@@ -1942,6 +1959,20 @@
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "tracking/documentation apparatus - the user's own phrase"
     }
+   },
+   {
+    "id": "OI-341",
+    "title": "**A guard dates its line number as an observation and then requires it to equal today's** — so it reports its whole class stale on any insertion above the sections it points at",
+    "subject_column": "D — instrument / measurement layer (the audit's own guard apparatus)",
+    "matched_on_the_subject_column": [],
+    "matched_falsity_signals": [
+     "stale"
+    ],
+    "gate": {
+     "verdict": "GATES",
+     "source": "D-438's default",
+     "ground": "the row's own text does not settle it, so it gates"
+    }
    }
   ]
  },
@@ -1949,7 +1980,7 @@
   "the_test": "D-438: does the row's subject bear on the analysis, its inputs, or an instrument a measurement depends on? If yes it gates. An establishment obligation (#19) always gates, whatever its subject.",
   "applied_over": "the wide cut",
   "gates": {
-   "count": 37,
+   "count": 38,
    "ids": [
     "OI-105",
     "OI-107",
@@ -1984,6 +2015,7 @@
     "OI-331",
     "OI-333",
     "OI-336",
+    "OI-341",
     "OI-45",
     "OI-57",
     "OI-90",
@@ -2079,6 +2111,7 @@
     "OI-141",
     "OI-224",
     "OI-249",
+    "OI-341",
     "OI-90"
    ]
   }
@@ -2152,8 +2185,8 @@
    },
    {
     "fact": "Of the register's entries, the ones whose home the register's own home_rule declares CORRECT are: homed in a layer specification, contract-home, process, and project-convention.",
-    "count": 480,
-    "of": 641
+    "count": 494,
+    "of": 644
    },
    {
     "fact": "Every harvested cluster carries a recorded disposition at the committed artifact, so no harvested statement was silently passed over.",
@@ -2168,17 +2201,17 @@
  "the_shape_of_what_remains": {
   "note": "Derived from the blocks above; every figure is computed, none transcribed.",
   "complete_half": {
-   "entries_not_homed_in_a_specification_that_owns_them": 161,
+   "entries_not_homed_in_a_specification_that_owns_them": 150,
    "of_which_never_graded_against_the_criteria_in_force": 0,
    "entries_whose_defense_the_record_does_not_state": 44,
    "documents_awaiting_a_delegation_only_the_user_may_write": 2,
    "★_that_figure_is_now_DERIVED_not_the_write_lists_membership": "It is the count of documents that still lose entries to the DELEGATION HALF where an admitting delegation already exists - the only class a delegation the user writes would move. Derived at `tools/audit/decisions/outstanding_delegations.json`; the full partition, including the classes for which a delegation is NOT the remedy, is there and is not restated here (D-431). OI-335.",
-   "entries_lost_for_want_of_a_delegation_all_classes": 137,
+   "entries_lost_for_want_of_a_delegation_all_classes": 126,
    "of_which_a_widening_would_move": 4
   },
   "true_half": {
-   "open_rows_in_the_wide_cut": 58,
-   "of_which_gate": 37,
+   "open_rows_in_the_wide_cut": 59,
+   "of_which_gate": 38,
    "of_which_apparatus_and_therefore_non_gating": 21,
    "rows_the_records_own_authored_classification_puts_on_specification_truth": 6
   },
@@ -2275,6 +2308,7 @@
    "OI-332",
    "OI-336",
    "OI-338",
+   "OI-341",
    "OI-45",
    "OI-46",
    "OI-47",
@@ -2289,11 +2323,11 @@
   "how_to_read_it": "The derivation is the answer; this block measures the recollection against it. A recollected row that the derivation does not carry is not thereby wrong - it may be outstanding on a ground this cut does not search (the COMPLETE half, or an establishment obligation) - and each is stated rather than scored."
  },
  "counted": {
-  "decisions_recorded": 641,
-  "open_rows_in_the_index": 249,
-  "true_half_wide_cut": 58,
-  "true_half_gating": 37,
-  "complete_half_gap": 150,
+  "decisions_recorded": 644,
+  "open_rows_in_the_index": 252,
+  "true_half_wide_cut": 59,
+  "true_half_gating": 38,
+  "complete_half_gap": 139,
   "complete_half_unhomed": 11,
   "complete_half_defense_gaps": 44
  }

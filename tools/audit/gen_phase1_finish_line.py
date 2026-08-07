@@ -54,6 +54,69 @@ use_utf8_output()   # OI-297 — the findings must survive a non-console stdout
 ROOT = Path(__file__).resolve().parent.parent.parent
 OUT = ROOT / "tools" / "audit" / "phase1_finish_line.json"
 
+# The committed application of the entry-level rulings, READ AS A FILE rather than imported: the
+# generator that produces it imports the route table, which imports THIS module, so importing it
+# back would be a cycle. Reading the committed artifact is the same pattern the completion
+# inventory already uses for the apparatus declaration, and it carries the same kind of STOP.
+R1_APPLICATION = ROOT / "tools" / "audit" / "decisions" / "r1_superseded_reach.json"
+
+
+# ────────────────────────────────────────────── the ENTRY-LEVEL re-cut (user ruling R3, 2026-08-04)
+#
+# THE RULING: 'Re-cut the finish line at ENTRY granularity. C1 is a statement about decisions, not
+# documents; the document cut was a convenience and now misreports the work.'
+#
+# WHAT WAS WRONG WITH THE DOCUMENT CUT. Items 1–4 take their populations from the DELEGATION
+# partition, which classifies by the entry's HOME DOCUMENT — is that document named in a
+# user-ratified surface, and in what form. That is the right cut for the question *does a
+# delegation exist*, and the wrong one for the question criterion C1 actually asks, which is per
+# DECISION. An entry whose obligation an entry-level ruling has already discharged still sits in
+# the document cut, because its home document's delegation state has not moved — so the item
+# over-reports the work.
+#
+# RE-CUTTING AN EXISTING ITEM IS NOT ADDING ONE. The scope rule reserves ADDING an item to the
+# user; it says in its own words that populations move when the record moves, and it is
+# regenerated rather than maintained. This changes what an existing item's population IS, on the
+# user's own ruling, and adds no item.
+THE_ENTRY_LEVEL_RE_CUT_RULING = (
+    "User, 2026-08-04 (R3), dispatch `cc_instruction_guard_fix_and_item1d.md`: 'Re-cut the finish "
+    "line at ENTRY granularity. C1 is a statement about decisions, not documents; the document cut "
+    "was a convenience and now misreports the work.'"
+)
+
+
+def entry_level_discharges() -> dict:
+    """Entries criterion C1 no longer reaches, read off the COMMITTED application of the rulings.
+
+    Nothing is judged here. The dispositions were derived, per entry, against the register's own
+    text, by the generator that owns that derivation (#6 — imported in substance, never repeated).
+    """
+    if not R1_APPLICATION.exists():
+        raise SystemExit(
+            "STOP: the entry-level re-cut needs the committed application of ruling R1 at "
+            f"{R1_APPLICATION}, and it is not there. The re-cut may not fall back to a document "
+            "cut silently, and it may not re-derive the dispositions here (#6).")
+    app = json.loads(R1_APPLICATION.read_text(encoding="utf-8"))
+    counted = app["counted"]
+    rows = {r["id"]: r for r in app["rows"]}
+    return {
+        "ids": list(counted["ids_that_leave"]),
+        "ground_per_id": {
+            i: rows[i]["disposition_ground"] for i in counted["ids_that_leave"] if i in rows},
+        "source": "tools/audit/decisions/r1_superseded_reach.json → counted.ids_that_leave",
+        "the_ruling_that_discharges_them": (
+            "D-642 (user, 2026-08-04): criterion C1 reaches every decision whose content is LIVE; a "
+            "superseded entry's obligation moves to its successor and is discharged where that "
+            "successor is homed. Quoted in full at its home and at "
+            "`tools/audit/phase1_completion_inventory.json` → the_requirement.criteria → C1."
+        ),
+        "what_is_NOT_discharged_and_why": {
+            "route_changed_rather_than_discharged": list(counted["ids_whose_route_changes"]),
+            "why": "At least one successor is itself unhomed, so C1 is defeated and the owed act "
+                   "moves to the successor. The entry stays in the population.",
+        },
+    }
+
 
 # ─────────────────────────────────────────────────────────── authored: the re-reading of the clause
 #
@@ -145,7 +208,44 @@ THE_CONDITION_NOT_AN_ITEM = {
 # Each entry names its population by a FUNCTION over the derived data, never by a literal.  The
 # `name` fields are plain descriptions rather than codes, per the standing convention forbidding
 # self-invented labels and numbering schemes.
-def build_items(inv: dict, deleg: dict) -> list[dict]:
+def recut(cls: dict, discharged: set[str]) -> dict:
+    """A homing class's population at ENTRY granularity (user ruling R3).
+
+    The document cut is PRESERVED beside it rather than replaced (#12): a reader comparing this
+    artifact with an earlier one must be able to see which figure moved and by how much.
+    """
+    by_doc_all = cls["by_document"]
+    by_doc: dict[str, list[str]] = {}
+    dropped: dict[str, list[str]] = {}
+    for doc, ids in by_doc_all.items():
+        keep = [i for i in ids if i not in discharged]
+        gone = [i for i in ids if i in discharged]
+        if keep:
+            by_doc[doc] = keep
+        if gone:
+            dropped[doc] = gone
+    kept_entries = sum(len(v) for v in by_doc.values())
+    return {
+        "entries": kept_entries,
+        "documents": len(by_doc),
+        "entry_ids_by_document": by_doc,
+        "★_this_is_the_ENTRY_level_cut": (
+            "The population criterion C1 still reaches, per DECISION. Entries an entry-level "
+            "ruling has already discharged are subtracted, and are listed below rather than "
+            "silently absent."
+        ),
+        "at_document_granularity_before_the_re_cut": {
+            "entries": cls["entries"],
+            "documents": cls["documents"],
+            "why_it_is_kept": "So the movement is visible rather than inferred (#12). It is the "
+                              "figure this item published before ruling R3.",
+        },
+        "discharged_by_an_entry_level_ruling": dropped,
+        "entries_discharged": sum(len(v) for v in dropped.values()),
+    }
+
+
+def build_items(inv: dict, deleg: dict, discharged: set[str]) -> list[dict]:
     part = deleg["the_partition"]
     comp = inv["the_complete_half"]
     true_half = inv["the_true_half"]
@@ -177,11 +277,7 @@ def build_items(inv: dict, deleg: dict) -> list[dict]:
         "name": "Register entries whose home document is named in NO user-ratified surface",
         "half": "COMPLETE",
         "criterion": "C1 — every recorded decision written into its owning specification",
-        "population": {
-            "entries": part["A_no_delegation_exists"]["entries"],
-            "documents": part["A_no_delegation_exists"]["documents"],
-            "entry_ids_by_document": part["A_no_delegation_exists"]["by_document"],
-        },
+        "population": recut(part["A_no_delegation_exists"], discharged),
         "why_it_is_outstanding": part["A_no_delegation_exists"]["the_criterion_that_decides_it"],
         "gate": gap_gate,
         "closing_act": (
@@ -200,12 +296,7 @@ def build_items(inv: dict, deleg: dict) -> list[dict]:
                 "excludes",
         "half": "COMPLETE",
         "criterion": "C1",
-        "population": {
-            "entries": part["B_naming_exists_but_the_bar_excludes_its_form"]["entries"],
-            "documents": part["B_naming_exists_but_the_bar_excludes_its_form"]["documents"],
-            "entry_ids_by_document":
-                part["B_naming_exists_but_the_bar_excludes_its_form"]["by_document"],
-        },
+        "population": recut(part["B_naming_exists_but_the_bar_excludes_its_form"], discharged),
         "why_it_is_outstanding":
             part["B_naming_exists_but_the_bar_excludes_its_form"]["the_criterion_that_decides_it"],
         "gate": gap_gate,
@@ -226,12 +317,7 @@ def build_items(inv: dict, deleg: dict) -> list[dict]:
         "name": "Register entries whose admitting delegation does not reach the section they sit in",
         "half": "COMPLETE",
         "criterion": "C1",
-        "population": {
-            "entries": part["C_admitting_delegation_does_not_name_this_section"]["entries"],
-            "documents": part["C_admitting_delegation_does_not_name_this_section"]["documents"],
-            "entry_ids_by_document":
-                part["C_admitting_delegation_does_not_name_this_section"]["by_document"],
-        },
+        "population": recut(part["C_admitting_delegation_does_not_name_this_section"], discharged),
         "why_it_is_outstanding":
             part["C_admitting_delegation_does_not_name_this_section"]
             ["the_criterion_that_decides_it"],
@@ -265,11 +351,7 @@ def build_items(inv: dict, deleg: dict) -> list[dict]:
                 "rather than stating rules",
         "half": "COMPLETE",
         "criterion": "C1",
-        "population": {
-            "entries": part["E_reached_and_the_kind_half_decides"]["entries"],
-            "documents": part["E_reached_and_the_kind_half_decides"]["documents"],
-            "entry_ids_by_document": part["E_reached_and_the_kind_half_decides"]["by_document"],
-        },
+        "population": recut(part["E_reached_and_the_kind_half_decides"], discharged),
         "why_it_is_outstanding":
             part["E_reached_and_the_kind_half_decides"]["the_criterion_that_decides_it"],
         "gate": gap_gate,
@@ -491,7 +573,9 @@ THE_SCOPE_RULE = {
 def build() -> dict:
     inv = build_inventory()
     deleg = build_delegations()
-    items = build_items(inv, deleg)
+    disch = entry_level_discharges()
+    discharged = set(disch["ids"])
+    items = build_items(inv, deleg, discharged)
 
     # ── STOP 1: an item with no closing act is not an item ───────────────────────────────────
     for it in items:
@@ -517,6 +601,29 @@ def build() -> dict:
             "documentation-gap class. A population no item carries means this list is not a finish "
             "line." % (homing_covered, gap_total))
 
+    # ── STOP 2b: the ENTRY-level re-cut must ACCOUNT for every entry the document cut carried ──
+    # Subtracting a population is only safe if every subtracted entry is named with its ground.
+    # An entry that vanishes from the items without appearing among the discharged is a silent
+    # narrowing of the scope, which is the one thing the scope rule reserves to the user.
+    homing_items = [i for i in items if i["criterion"].startswith("C1")
+                    and "entry_ids_by_document" in i["population"]]
+    entry_covered = sum(i["population"]["entries"] for i in homing_items)
+    entry_discharged = sum(i["population"]["entries_discharged"] for i in homing_items)
+    if entry_covered + entry_discharged != gap_total:
+        raise SystemExit(
+            "STOP: the entry-level re-cut accounts for %d + %d entries but the documentation-gap "
+            "class holds %d. Every entry the document cut carried must be either still on the "
+            "finish line or named as discharged, with its ground."
+            % (entry_covered, entry_discharged, gap_total))
+    accounted = {i for it in homing_items
+                 for ids in it["population"]["discharged_by_an_entry_level_ruling"].values()
+                 for i in ids}
+    unaccounted = sorted(discharged - accounted)
+    if entry_discharged != len(accounted):
+        raise SystemExit(
+            "STOP: the discharged count and the discharged identifiers disagree — %d against %d."
+            % (entry_discharged, len(accounted)))
+
     rows_covered = split["gates"]["count"] + split["non_gating"]["count"]
     wide_total = inv["the_true_half"]["the_wide_cut"]["count"]
     if rows_covered != wide_total:
@@ -531,7 +638,7 @@ def build() -> dict:
             "STOP: rows named as user rulings are not in the gating set at HEAD: "
             + ", ".join(stray) + " — the authored list has drifted from the derived one.")
 
-    total_entries = homing_covered + unhomed_total
+    total_entries = entry_covered + unhomed_total
     defense_total = comp["class_3_defense_not_recorded"][
         "entries_with_no_rationale_at_all"]["count"]
 
@@ -563,6 +670,74 @@ def build() -> dict:
             ),
         },
         "the_requirement": inv["the_requirement"],
+        "★_the_entry_level_re_cut": {
+            "the_ruling": THE_ENTRY_LEVEL_RE_CUT_RULING,
+            "★_re_cutting_an_existing_item_is_NOT_adding_one": (
+                "Stated here so a later reader does not mistake this for a scope change. The scope "
+                "rule reserves ADDING an item to the user, and says in its own words that this list "
+                "is regenerated rather than maintained and that 'an item's size moves when the "
+                "record moves'. R3 changes what an existing item's population IS. No item is added, "
+                "none is removed, and every closing act is unchanged."
+            ),
+            "what_was_wrong_with_the_document_cut": (
+                "The four homing items took their populations from the DELEGATION partition, which "
+                "classifies by the entry's HOME DOCUMENT — is that document named in a "
+                "user-ratified surface, and in what form. That is the right cut for the question "
+                "*does a delegation exist* and the wrong one for the question criterion C1 asks, "
+                "which is per DECISION. An entry whose obligation an entry-level ruling has already "
+                "discharged stayed in the count, because its home document's delegation state had "
+                "not moved."
+            ),
+            "direction_1_entries_the_entry_cut_DROPS": {
+                "count": entry_discharged,
+                "ids_by_item": {
+                    it["name"]: it["population"]["discharged_by_an_entry_level_ruling"]
+                    for it in homing_items
+                    if it["population"]["discharged_by_an_entry_level_ruling"]},
+                "the_ruling_that_discharges_them": disch["the_ruling_that_discharges_them"],
+                "ground_per_entry": disch["ground_per_id"],
+                "read_off": disch["source"],
+                "discharged_but_NOT_found_in_any_item": unaccounted,
+                "what_that_field_means_if_it_is_non_empty": (
+                    "The ruling discharged an entry the document cut no longer carries at all — it "
+                    "left the gap class by some other act. Reported rather than stopped: it is not "
+                    "a disagreement, it is the same entry leaving by two routes."
+                ),
+            },
+            "direction_2_what_the_entry_cut_SURFACES_that_the_document_cut_cannot_carry": {
+                "the_finding": (
+                    "One owed act has no register entry to hang on, so no register-derived "
+                    "population can carry it. R1's application records it: one supersession names "
+                    "its successor as an INCREMENT by its open-items row rather than as a decision "
+                    "by its identifier, so there is no home field to read and the act owed FIRST is "
+                    "a NAMING — which recorded decision carries that content — before any homing "
+                    "question can be put."
+                ),
+                "where_it_is_recorded": (
+                    "tools/audit/decisions/r1_superseded_reach.json → "
+                    "★_what_discharging_the_dispatch_ASSUMPTION_found → "
+                    "3_a_successor_can_be_named_by_something_that_is_not_a_register_entry, and the "
+                    "entry's own row note. No identifier is nominated there and none is nominated "
+                    "here — the tool's own STOP forbids naming a successor the record does not."
+                ),
+                "★_it_is_NOT_added_as_an_item": (
+                    "Adding an item to this list requires a USER RULING, by the scope rule's own "
+                    "terms, and R3 authorized a re-cut rather than an addition. It is surfaced here "
+                    "and left."
+                ),
+                "the_other_half_of_direction_2_checked_and_empty": (
+                    "No entry-level ruling ADDS a register entry to the homing population: both "
+                    "rulings in force (D-642, D-644) discharge or re-route, and neither creates an "
+                    "obligation for an entry the gap class does not already hold. Checked rather "
+                    "than assumed — the re-cut's own STOP would fire if the two cuts failed to "
+                    "account for each other."
+                ),
+            },
+            "what_the_re_cut_does_NOT_move": (
+                "No entry's home, class or status; no closing act; no gate verdict; and not the "
+                "TRUE half, whose population is open-items ROWS and was never cut by document."
+            ),
+        },
         "the_re_reading_of_the_clause": THE_RE_READING,
         "the_requirement_that_is_a_condition_rather_than_an_item": THE_CONDITION_NOT_AN_ITEM,
         "THE_FINISH_LINE": items,
@@ -605,8 +780,17 @@ def build() -> dict:
                 "the user alone can close. Items offering a user route and a session route are in "
                 "it, because a reader deciding what to commission needs to see them."
             ),
+            "register_entries_owed_a_home_at_document_granularity": homing_covered + unhomed_total,
+            "register_entries_discharged_by_an_entry_level_ruling": entry_discharged,
+            "★_which_of_those_two_figures_is_the_finish_line": (
+                "The entry-level one, on ruling R3. The document-granularity figure is kept beside "
+                "it so the movement is visible rather than inferred (#12), and it is the figure "
+                "this artifact published before the re-cut."
+            ),
             "reconciliation": {
                 "homing_items_cover_the_documentation_gap_class": homing_covered == gap_total,
+                "entry_cut_plus_discharged_covers_the_documentation_gap_class":
+                    entry_covered + entry_discharged == gap_total,
                 "true_half_items_cover_the_wide_cut": rows_covered == wide_total,
                 "every_item_carries_a_closing_act": True,
             },

@@ -82,7 +82,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6878`
+**Home.** `ARCHITECTURE.md:6996`
 
 **Provenance.** ARCHITECTURE.md:6649-6655 (§17.1). No date or ratifier stated.
 
@@ -96,7 +96,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6884`
+**Home.** `ARCHITECTURE.md:7002`
 
 **Provenance.** ARCHITECTURE.md:6649-6657 (§17.1). No date or ratifier stated.
 
@@ -114,7 +114,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6888`
+**Home.** `ARCHITECTURE.md:7006`
 
 **Provenance.** ARCHITECTURE.md:6659-6671 (§17.2). No date or ratifier stated.
 
@@ -128,7 +128,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6900`
+**Home.** `ARCHITECTURE.md:7018`
 
 **Provenance.** ARCHITECTURE.md:6673 (§17.2). No date or ratifier stated. ★ This is the rule the 2026-08-01 CLAUDE.md Conventions entry generalizes from scoring values to design decisions as a class (D-195) - and the rule this register's rationale field serves.
 
@@ -144,7 +144,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6937`
+**Home.** `ARCHITECTURE.md:7055`
 
 **Provenance.** ARCHITECTURE.md:6707-6719 (§17.3), which gives a worked example from existing code (the circle-of-fifths interval deltas). No date or ratifier stated.
 
@@ -161,7 +161,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6950`
+**Home.** `ARCHITECTURE.md:7068`
 
 **Provenance.** ARCHITECTURE.md:6721-6729 (§17.4). No date or ratifier stated.
 
@@ -177,7 +177,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6971`
+**Home.** `ARCHITECTURE.md:7089`
 
 **Provenance.** ARCHITECTURE.md:6742-6746 (§18.2). No date or ratifier stated.
 

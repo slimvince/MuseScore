@@ -391,3 +391,92 @@ mandatory, and the open-items register's rule (c) still requires the row and its
 commit that records the discovery. It is not a claim that apparatus defects are harmless. And it
 does not decide what PHASE 1 OWES: D-231's clause and D-639 decide that, and D-639 says in terms
 that what a stage waits on and what phase 1 owes are different tests with different subjects.
+
+### Criterion C1 reaches every decision whose content is LIVE — a superseded entry's obligation moves to its successor
+
+**Ruled by the user, 2026-08-04** (dispatch `cc_instruction_c1_ruling_and_item1c.md`, §0a R1).
+**Criterion C1 — D-231's phase-1 obligation that every recorded decision is written into its owning
+specification — reaches every decision whose content is LIVE.** A superseded decision's live content
+lives in its **successor**; C1 is satisfied for that content **when the successor is homed**, and the
+superseded entry itself is recorded in the register, which D-231 makes the status ledger for
+supersession. **Where the successor is NOT homed, C1 is defeated and the owed act is homing the
+SUCCESSOR — not the superseded entry.**
+
+**The basis, at D-231's own clause.** The clause assigns two things to two places in one sentence:
+*"the decisions register remains the status ledger (supersession, shelving, the same-commit rule),
+never the conformance reference"*. Supersession and shelving are named there as two distinct things
+the register is the ledger OF, and conformance is assigned to the specifications — so a superseded
+decision is not something conformance is measured against. The clause is quoted **entire**, derived
+at HEAD, at `tools/audit/phase1_completion_inventory.json` → `the_requirement.phase_1_verbatim`,
+which is what the rule immediately below requires of a citation like this one.
+
+**★ THE BASIS PREVIOUSLY CLAIMED IS WITHDRAWN, AND THE WITHDRAWAL IS PART OF THE RULING.** The
+preceding dispatch (`cc_instruction_finish_line_item1b.md`) presented this ruling as an APPLICATION
+of `OPEN_ITEMS.md` OI-272's per-kind home scheme to the superseded kind, and declared that reading as
+an assumption with an instruction to STOP rather than stretch the scheme. The check came back
+negative and **the reading is withdrawn**: the scheme partitions by what a decision IS rather than by
+what its STATUS is, and applied at its own text it routes the affected entries the OPPOSITE way. The
+four grounds that refuted it live at `open_items/OI-340.md` and are not restated here (#6) — a wrong
+basis retracted is evidence (#12), and the row that produced the refutation is where that evidence
+belongs.
+
+**Where it is applied, and what it does not authorize.** The ruling is recorded against criterion C1
+itself — `tools/audit/phase1_completion_inventory.json` → `the_requirement.criteria` → C1 — and
+applied per entry over finish-line item 1's no-home class at
+`tools/audit/decisions/r1_superseded_reach.json`; no verdict or count is restated here (**D-431**).
+It authorizes no fix to the analysis, no design, no inference change, and no re-classification of any
+entry's home class. It decides which entries criterion C1 reaches, and nothing else.
+
+### A claim that invokes a ruling AS AN APPLICATION quotes that ruling in full, not the branch that supports the claim
+
+**Ruled by the user, 2026-08-04** (dispatch `cc_instruction_c1_ruling_and_item1c.md`, §0a R2). **A
+claim that invokes a ruling as an application of it must QUOTE THAT RULING IN FULL, not the branch of
+it that supports the claim.**
+
+*Why, at the instance that produced the ruling:* the withdrawn reading above cited OI-272's class
+about shelvings, falsifications and dead ends — and **never put class 1 on the page.** Class 1 is the
+branch that decided the case the other way: the entries at issue are, by kind, standing constraints,
+so class 1 claims them, and class 1 prescribes homing them into the owning specification — the very
+act the invoking ruling exists to forbid. Quoting the helpful branch is not a weaker citation of a
+ruling; it is a citation of a different ruling, and the reader cannot see that it is one. *(The
+scheme itself is quoted in full — all four of its classes — at `open_items/OI-340.md`, so this
+paragraph's account of it is checkable at a primary source rather than taken from here, which is what
+the rule it states would require of it.)*
+
+**How it composes with D-431, which it does not amend.** D-431 requires a premise to be cited to the
+primary source it can be checked at. This rule governs what the citation must then CARRY: the whole
+of the ruling, including the parts that cut against the claim being made. **A citation that is
+correctly sourced and selectively quoted satisfies D-431 and fails this one** — which is why it needs
+stating separately rather than being read into D-431.
+
+**Both sides are bound**, the writing side's dispatches and the executing side's reports alike, on
+the same ground D-431 gives: a dispatch's premise becomes the next session's starting assumption.
+
+### Where a superseded decision's content is a REMOVAL, the specification states the current behaviour and records the removal as a tried-and-closed line
+
+**Ruled by the user, 2026-08-04** (dispatch `cc_instruction_guard_fix_and_item1d.md`, §0a R2).
+**Where a superseded decision's content is a REMOVAL, the owning specification STATES THE CURRENT
+BEHAVIOUR and RECORDS THE REMOVAL AS A TRIED-AND-CLOSED LINE; the register holds the status.**
+
+**This is PRECEDENT, not a new rule.** It is what was already done at `ARCHITECTURE.md` §5.2 for the
+declared-mode piece-start shortcut (`OPEN_ITEMS.md` OI-315, register entry **D-058**), and the ruling
+names that act as its own source. The precedent is quoted **in full**, located by its own anchors and
+re-read from `ARCHITECTURE.md` on every run, at `tools/audit/phase1_completion_inventory.json` →
+`the_requirement.criteria` → C1 → the removal block; it is deliberately not restated here (#6), and a
+rewording of it STOPS the derivation rather than leaving a stale account of it standing.
+
+**What the precedent shows, and why it answers a question D-642 leaves open.** D-642 moves a
+superseded entry's obligation to its **successor**. A removal has no successor: nothing later states
+the rule, because the rule is that the mechanism is gone. Read without this ruling, such an entry
+falls through — the register records it superseded, no specification carries it, and criterion C1 has
+no closing act to name. The precedent supplies one, and it is two acts rather than one: the
+specification is made TRUE about HEAD (there the specification had gone on asserting the removed
+mechanism in the present tense, which is exactly D-231's doc-sync half), and the removal is recorded
+where a later reader will meet it before retrying it. **Neither half alone is sufficient** — stating
+the current behaviour without the tried-and-closed line loses the information that the alternative
+was tried (#12), and recording the closed line without correcting the text leaves the specification
+misdescribing the code.
+
+**What it does not authorize.** No fix to the analysis, no design, no inference change, and no
+re-classification of any entry's home class. It says what the owning specification owes for one shape
+of entry, and nothing else.

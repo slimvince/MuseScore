@@ -1,0 +1,84 @@
+{
+  "purpose": "A run of tools/audit/process_check.py over named dispatches or reports. Generated so a report cites this file rather than transcribing what the check found (D-431).",
+  "rules": [
+    "D-431 bare quantity",
+    "D-431 uncited code claim",
+    "D-434 missing self-check section"
+  ],
+  "files_scanned": [
+    "cc_instruction_finish_line_item1.md"
+  ],
+  "findings_total": 9,
+  "by_file": {
+    "cc_instruction_finish_line_item1.md": {
+      "findings": 9,
+      "rows": [
+        {
+          "file": "cc_instruction_finish_line_item1.md",
+          "line": 48,
+          "rule": "D-431 bare quantity",
+          "detail": "1.1",
+          "sentence": "**Cowork checked one consumer, not both.** → **Task 1.1**; if it globs, **STOP**"
+        },
+        {
+          "file": "cc_instruction_finish_line_item1.md",
+          "line": 51,
+          "rule": "D-431 bare quantity",
+          "detail": "3.1",
+          "sentence": "Cowork has this from the report table, **not from the artifact.** → **Task 3.1**."
+        },
+        {
+          "file": "cc_instruction_finish_line_item1.md",
+          "line": 55,
+          "rule": "D-431 bare quantity",
+          "detail": "1.1",
+          "sentence": "**1.1 Discharge A1.** Establish how **every** consumer of `tools/robust_stop/` reads it — by name or"
+        },
+        {
+          "file": "cc_instruction_finish_line_item1.md",
+          "line": 59,
+          "rule": "D-431 bare quantity",
+          "detail": "1.2",
+          "sentence": "**1.2** Move the six `*_root_fail_cells.txt` files out of the directory, preserving them."
+        },
+        {
+          "file": "cc_instruction_finish_line_item1.md",
+          "line": 74,
+          "rule": "D-431 bare quantity",
+          "detail": "3.1",
+          "sentence": "**3.1 Discharge A2** at `tools/audit/phase1_finish_line.json`: report item 1's actual definition and"
+        },
+        {
+          "file": "cc_instruction_finish_line_item1.md",
+          "line": 77,
+          "rule": "D-431 bare quantity",
+          "detail": "3.2",
+          "sentence": "**3.2 Classify every entry in item 1 by the route that would close it**, from the entry and its"
+        },
+        {
+          "file": "cc_instruction_finish_line_item1.md",
+          "line": 83,
+          "rule": "D-431 uncited code claim",
+          "detail": "reachable",
+          "sentence": "A decision reachable only by following a pointer satisfies the letter and defeats the"
+        },
+        {
+          "file": "cc_instruction_finish_line_item1.md",
+          "line": 92,
+          "rule": "D-431 bare quantity",
+          "detail": "3.3",
+          "sentence": "**3.3 Execute the RE-HOME class**, where the owning specification is unambiguous."
+        },
+        {
+          "file": "cc_instruction_finish_line_item1.md",
+          "line": 98,
+          "rule": "D-431 bare quantity",
+          "detail": "3.4",
+          "sentence": "**3.4** Report the residue by class."
+        }
+      ]
+    }
+  },
+  "clean_files": [],
+  "establishment": "tools/audit/process_check_establishment.json — the check's measured detection power and false-positive rate. Read it before reading a count here as coverage."
+}

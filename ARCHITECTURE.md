@@ -1287,6 +1287,30 @@ layer 3 and is **not** an unexplained regression (proven: a legacy reproduction 
 the prior oracle set byte-exactly). **Next: layer 3 (per-slice analysis).** See
 `cc_layer1_impl_report.md` / `cc_layer1_coverage_report.md` (HELD).
 
+**The finest meaningful extension step is the CHANGE-POINT — a finer request loads no note and can
+move no answer (D-628; re-homed into this specification 2026-08-04 from the design document that formerly
+carried it — the register records which).** When a consumer asks this model to reach further into the
+score, the smallest request worth making is one that reaches the next change-point. *Why:* it
+follows from what a Layer-2 slice **is** — the stretch over which the eligible sounding-note set is
+constant — so a request that ends inside a slice is *provably* a no-op rather than merely a small
+one: no note enters the model and no downstream answer can differ. That makes the granularity bound
+a **fact about the representation**, not a tuning choice, and it is what bounds the step-size
+question the requesting layer owns.
+
+**Polyphonic phrase-boundary detection has NO validated deterministic rule set in the literature —
+the L1.5 primitive is our own engineering and may not be presented as established method (D-607;
+re-homed into this specification 2026-08-04 from the methods document that formerly carried it).** Almost
+all published work on locating phrase endings addresses a single melodic line; for several
+simultaneous voices nothing comparable has been established. Carrying the monophonic cues over to
+polyphony is therefore engineering of ours, and it is validated against our own annotated corpus
+rather than cited. *Why:* a stated **fact of absence**, established by the survey behind the method
+catalog — the monophonic canon has a benchmarked literature and the polyphonic case has no
+comparable validated rule set. What DOES transfer is named rather than assumed: the **gap cue**
+generalizes cleanly, because a phrase boundary in polyphony is a near-simultaneous rest or long note
+across all voices — which is what makes chorale texture an unusually favourable case and is a reason
+to distrust a figure measured only there. (This bounds what the primitive whose contract is
+delegated two paragraphs above may claim; it does not change what that contract specifies.)
+
 #### Layer 2 — the deterministic change-point slicer (Built+Live — consumed by L3)
 
 The **constant-(tonal-)sonority slicer** — layer 2 of the rebuild. A pure, deterministic FACT
@@ -1372,6 +1396,36 @@ showed the designed effect is material (roughly 35–45 % of interior range quer
 them anchoring the leading key), but the timing comparison was confounded, one arm cold and the other
 warm, so the evidence needed to justify switching it on — interleaved timing plus an adjudicated sample of
 the changed outputs — was named and has not been gathered. Decided by the user 2026-07-02.
+
+**The hard bound and the score start are SAFETY CAPS for a loop that never settles — never the
+amount of context this layer needed (D-624; re-homed into this specification 2026-08-04 from the
+design document that formerly carried it — the register records which).** The backward loop has two stops that are not answers: a
+maximum distance, and the beginning of the piece. Neither reports how much context the analysis
+required; each only terminates a loop that would otherwise not terminate, and a cap that fired may
+never be read as the discovered amount. *Why:* the amount of context a layer needs is **discovered
+by convergence and never chosen**, so this distinction is what keeps that rule intact — without it a
+cap would silently become the answer in exactly the cases where the loop failed to settle.
+
+**Reach-back is a REAL product requirement, currently MASKED by the whole-score load — it must land
+WITH selection-based loading (D-635; re-homed into this specification 2026-08-04 from the
+disposition record that formerly carried it).** The shipped program analyses the stretch a user has
+selected; the whole-score path exists for offline measurement. Reading backwards before the
+selection begins is therefore genuinely needed, and the only reason its absence costs nothing today
+is that the note model still loads the whole score anyway. **Narrowing Layer 1 to load only the
+selection WITHOUT also engaging this facility would break key inference at the start of every
+selection** — the two changes are one change. *Why:* derived rather than asserted — a selection is a
+subset in time, so the evidence establishing the key at its opening lies *before* it, and the
+efficiency fix removes exactly that evidence. This corrects an earlier reading that called the
+requirement moot; that reading described the current whole-score stopgap rather than the design.
+
+**A selection-aware capability is a PARAMETER on the one orchestrator, never a sibling (D-623;
+re-homed into this specification 2026-08-04, from the same document as D-624).** The capability was built as an option on the existing
+driver rather than as a second driver beside it, so there remains **one** path that builds the note
+model, slices it and decodes — the seam specified below. The option is off by default, so shipped
+behaviour and every measurement are unchanged. *Why:* it is one-path-per-concern applied to
+orchestration — a second driver would be a second place where build, slice and decode are sequenced,
+and the two would drift. Both admissible forms were stated, and the build's choice was gated on
+byte-identity plus an explicit unification ledger, so the resolution is evidenced rather than asserted.
 
 **The production region key/mode path is the decoder, not the per-region resolver.** Step-1 wiring
 replaced the per-region `resolveKeyAndModeRanked` call with a single whole-score decode of
@@ -1503,6 +1557,28 @@ dormancy. Built with `decode_chord_tests.cpp` (scorer-independent + note-model t
 `cowork_layer4_chordsymbol_design.md`, `cowork_phase5b_l4_build_plan.md`, the Phase-5b commits
 `f21273ce3b`..`1e74f21ea4`.
 
+**Two premises this decoder carries were MEASURED, and both came back against it. Recorded here
+because this section is what specifies the two mechanisms (re-homed into this specification
+2026-08-04 from the premise-check record that formerly carried them).**
+
+- **The G4/C1 symmetric-root spelling-pin's ENTRY PREMISE is false — it is effectively unreachable,
+  and the remedy is enumerated and NOT decided (D-608).** The pin only runs once the scorer has
+  already called the sonority diminished. On the great majority of diminished-seventh sonorities it
+  has not: the scorer either declines to commit or names the chord something else, so the mechanism
+  almost never fires. That it would fire was an assumption and was never written down as one.
+  *Why:* measured at the probe and traced at the code — of the diminished-seventh sonorities in the
+  primary corpus most abstain, and of those that commit the scorer chooses major or minor far more
+  often than diminished. A contributing fact is recorded with it: the four-note diminished-seventh
+  type is deferred, so the diminished reading competes as a triad-plus-bonus against complete triads
+  with bass support.
+- **The abstention rate rides on an arbitrary, never-fitted SEED CONSTANT (D-609).** How often G1
+  declines to commit is governed by one number set by hand as a starting value and never fitted, so
+  every quantity measured downstream of the ladder depends on an unestablished value (#19). *Why:*
+  established at the code — the constant is a seed in the decoder's own header, and the control flow
+  was traced to show that everything not committed and not inherited abstains, including a case that
+  is sufficient but falls under the margin; the consequence was then measured, a substantial share of
+  scored duration abstaining under it.
+
 #### Layer 5 — the function/cadence layer (Built+Dormant — design ratified; consumed by L6)
 
 The function layer reads the L4 chord **in** the L3 key and produces the **Roman numeral** (the precise superset of a
@@ -1517,6 +1593,37 @@ detector is **key-agnostic** (it votes for the key; it does not read a resolved 
 **Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-335…D-342 — which this section points at and does not restate. *(The "Full spec:" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph is the delegation the record relied on and never had.)*
 
 **Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory "is enumerated at `cowork_layer5_engagement_design.md` §9.2" (`:53-55`).
+
+**Three standing constraints on this layer's methods (re-homed into this specification 2026-08-04 from
+the methods document that formerly carried them).**
+
+- **The perfect/imperfect cadence call is made on the BASS-DERIVED INVERSION; the soprano arrival
+  degree is a soft optional nudge and this layer never attempts melody identification (D-584).**
+  Standard theory decides a full close from the melody note, and this layer may not: the highest
+  sounding voice is often a doubling, and in some textures the lead sits below the top, so the
+  structural melody the criterion needs is not reliably recoverable. The top voice may nudge the
+  confidence in a chordal texture; it never decides. *Why:* the constraint that forces it is the
+  unavailability of the structural melody — orchestral doubling and a lead below the top are the two
+  cited counter-cases — and the bass-derived inversion criterion is chosen because the catalog
+  records the root-position flags as bass-derived and robust.
+- **The bass-scale-degree / Rule-of-the-Octave prior is admitted as a SOFT prior and TIE-BREAKER
+  only, never a gate (D-585).** Which harmony a bass degree usually carries may break a tie between
+  otherwise equally good readings and may never rule a reading out. *Why:* two reasons, both
+  load-bearing — the mapping is theoretically authoritative (the partimento tradition and
+  functional-bass theory) but **largely unexplored as an explicit computational prior**, so it is not
+  established (#19); and it is structurally many-to-one and direction-dependent, with the surrounding
+  progression overriding it, which is what makes it a tie-breaker rather than a decision rule.
+- **"Function" in the machine-learning literature names the ROMAN-NUMERAL COMPONENTS, not Riemann's
+  function theory — and this project's own component named after this layer does neither (D-586).**
+  When published research says a system predicts "function" it means the Roman numeral's parts (the
+  degree, the quality, the applied relation), not the three-role tonic/subdominant/dominant scheme;
+  the two senses are routinely confused, and the legacy component carrying the name compares
+  candidate chords instead. *Why:* established by survey — every published autonomous Roman-numeral
+  system the catalog names represents and evaluates the analysis as the Roman-numeral component
+  tuple and none emits a three-role head, one of them listing the three-role labels explicitly as
+  unimplemented future work; where the three-role labels exist at all they are a deterministic lookup
+  from the Roman numeral. This is why the layer's output is specified above as the Roman numeral (the
+  precise superset of a T/S/D summary) rather than as a function label.
 
 #### Layer 6 — the grouping layer (Design-only — v1 spec)
 
@@ -3562,6 +3669,17 @@ which is incompatible with notes-always-win above. The pins are
 **Tried and closed on the key opening — do not retry; the register carries it with its evidence:
 D-058 (the declared-mode piece-start shortcut, superseded in fact by the Stage 4b-i note-based
 opening; the removal is dated and its re-targeted pins named at `docs/key_path_design.md:65-73`).**
+
+**Tried and closed on the declared mode's weight, and it is a SECOND removal at the same increment
+— do not retry; the register carries it with its evidence: D-572 (the hard post-hoc "strong
+declared-mode prior" promotion, which moved the highest-ranked declared-compatible result to the
+front REGARDLESS of the candidate-score gap, REMOVED OUTRIGHT rather than kept in a gated form).**
+*Why outright rather than gated,* the defense recorded with the change: a veto is incompatible with
+note-based inference being primary — the priority table below has actual sounding notes strongest
+and the `KeyMode` enum weakest — and a gated version would have made the accompanying demotion of
+the declared mode a **no-op in exactly the cases the demotion was made for**, namely wherever note
+inference had already out-scored the declared mode and was then vetoed here. What remains of the
+declared mode's influence is only the small hint stated above, applied at every tick.
 
 The priority of evidence, which now has no exception, is:
 

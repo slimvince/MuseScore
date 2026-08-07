@@ -1,0 +1,9 @@
+{
+ "tool": "tools/batch_analyze.cpp --joint-posterior-slice",
+ "reference": "posterior_slice_ref.json",
+ "weight_arm": "selected",
+ "pieces": 326, "segments_compared": 13063, "candidates_compared": 1672064,
+ "divergences": 0, "first_divergence": "none",
+ "wall_seconds": 1543.45,
+ "overall_pass": true
+}

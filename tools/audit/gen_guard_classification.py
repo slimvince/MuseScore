@@ -143,6 +143,44 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "they stand today, and a verdict naming a row the index no longer carries open is a STOP. "
         "Nothing in it is a measurement taken at a point in time — a later wave that homes an entry "
         "or closes a row SHOULD move its output, and the check is what makes that movement visible."),
+    "tools/audit/gen_phase1_finish_line.py": (
+        LIVE, "gen_phase1_finish_line.py:18-34",
+        "Authored 2026-08-04 in answer to this tool's own per-tool STOP — it entered the guard "
+        "population two waves ago and had never been classified. It IMPORTS both populations "
+        "rather than storing them, locates D-231's clause by anchor at HEAD, and carries a STOP "
+        "that is a live demand in the strongest form the population has: a population that grows "
+        "WITHOUT AN ITEM TO CARRY IT stops the tool, which is what makes the list a finish line "
+        "rather than a selection. It re-derives as the record moves under it, and it passes."),
+    "tools/audit/decisions/gen_finish_line_item1_routes.py": (
+        LIVE, "gen_finish_line_item1_routes.py:8-17",
+        "Authored 2026-08-04 in answer to the same STOP. Its population is IMPORTED from the "
+        "finish-line generator and never re-listed (#6), so it shrinks as entries are homed; and "
+        "it REFUSES to run if any entry has no authored route or if a route names an entry the "
+        "population no longer carries — in its own words, 'so the register moving under the table "
+        "is a STOP rather than a silent partial answer'. That is a demand about today, not a dated "
+        "reading: the AUTHORED half is the route per entry, and the tool will not let that half go "
+        "stale silently. It passes at the committed tree."),
+    "tools/audit/decisions/gen_r1_superseded_reach.py": (
+        LIVE, "gen_r1_superseded_reach.py:22-38",
+        "Authored 2026-08-04 with the tool, so R4's per-tool condition was a design input. It "
+        "IMPORTS its population from the route table rather than storing one, and re-reads the "
+        "register on every run for each entry's status and each successor's home CLASS — so the "
+        "HOMED verdict and the disposition move the day a successor is homed, which is exactly "
+        "the event the ruling makes the owed act. Its sharpest STOP is a live demand on the "
+        "record rather than on the tree's history: every AUTHORED successor must still be NAMED "
+        "IN THE SUPERSEDED ENTRY'S OWN TEXT, so a session cannot nominate one the register does "
+        "not name, and a reworded supersession stops the tool instead of silently keeping a "
+        "verdict the record no longer supports. It re-derives and it passes."),
+    "tools/audit/decisions/gen_item1_rehome_blocker.py": (
+        LIVE, "gen_item1_rehome_blocker.py:32-42",
+        "Authored 2026-08-04 with the tool, so R4's per-tool condition was a design input. Every "
+        "half of it is a demand about TODAY: the population is IMPORTED from the route table and "
+        "shrinks as entries are homed; each row's blocker is re-cut from that row's own recorded "
+        "reason on every run, so a reworded reason moves the verdict instead of leaving a stale one "
+        "standing; and the STANDING AUTHORIZATION it compares against is located in `CLAUDE.md` BY "
+        "ANCHOR and quoted at HEAD, with a STOP if it cannot be found — so a change to what a "
+        "session may edit moves this artifact rather than being silently outrun by it. It stores no "
+        "dated reading of anything."),
     "tools/audit/decisions/gen_outstanding_delegations.py": (
         LIVE, "gen_outstanding_delegations.py:36-46",
         "It RE-DERIVES the whole partition on every run, from the delegation grades it IMPORTS "
@@ -234,33 +272,57 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "assertion that the re-pack still follows from the registration — and it passes and can "
         "keep passing."),
     "tools/audit/decisions/gen_reads1_yield.py": (
-        LIVE, "gen_reads1_yield.py:11-21",
-        "Each wave's yield artifact records a measurement, but its --check asserts something LIVE "
-        "and worth guarding: that every entry the wave names is STILL IN THE REGISTER AT THE HOME "
-        "IT RECORDS. An entry silently vanishing or changing home is a real defect, and this is "
-        "what would catch it. Its other inputs are frozen, so it can pass indefinitely — and does."),
+        POINT, "gen_reads1_yield.py:2-9 (its own subject line), :11-21, :23-28",
+        "★ RE-CLASSIFIED 2026-08-04 (dispatch `cc_instruction_finish_line_item1b.md`, ruling R2) — "
+        "THE EARLIER VERDICT PUT THIS FAMILY ON THE WRONG SIDE, and the tool's own words say so: "
+        "its subject is \"READ WAVE 1's measured yield, graded against the bands registered BEFORE "
+        "the reads\", a completed instalment of an out-of-sample test whose bands are frozen "
+        "precisely because re-deriving them would destroy the registration (:11-21). The live half "
+        "it was credited with — that every entry the wave names is still in the register AT THE "
+        "HOME IT RECORDS — IS NOT A LIVE INVARIANT: phase 1's own criterion C1 OBLIGES entries to "
+        "be written into their owning specification, so a check that fails when an entry's home "
+        "moves must eventually fail BECAUSE the tree moved on correctly, which is this ruling's "
+        "own definition of measuring the clock. It fails at HEAD for the narrower of the two "
+        "reasons: both entries it names are still homed in `ARCHITECTURE.md` and only the LINE "
+        "RANGE moved, drifted by the insertions the previous wave's homing act made above them. "
+        "NO LIVE COVERAGE IS LOST: that every entry still exists with a resolving reference and a "
+        "verbatim quote at its home is asserted by `gen_decisions_register.py --check` (the "
+        "register's own rule (d) guard) and `register_lint.py`, and that no register home anchor "
+        "has drifted by `reaim_home_anchors.py --check` — all three live, all three passing."),
     "tools/audit/decisions/gen_reads2_yield.py": (
-        LIVE, "gen_reads2_yield.py (the same shape as wave 1's); guard_state.json → runs",
-        "Same verdict, same ground: the entries it names must still be in the register at their "
-        "recorded homes, and its running read count must still derive from the regime's partition "
-        "plus the earlier waves. It passes at the committed tree."),
+        POINT, "gen_reads2_yield.py:2-8 (the same construction as wave 1's); guard_state.json → runs",
+        "Same verdict and same ground as wave 1's, and the same tool by construction: an "
+        "instalment of the registered out-of-sample test, with the entry homes frozen as they "
+        "stood when the wave ran. It PASSES at the committed tree today — and that is a fact about "
+        "WHICH entries the previous wave's ten re-homings touched, not a difference in kind. "
+        "Classified with its siblings rather than left to fail at the next homing wave, because a "
+        "verdict is made on the tool's own text and this tool's text is theirs."),
     "tools/audit/decisions/gen_reads3_yield.py": (
-        LIVE, "gen_reads3_yield.py (the same shape as wave 1's); guard_state.json → runs",
-        "Same verdict, same ground. It passes at the committed tree."),
+        POINT, "gen_reads3_yield.py:2-8 (the same construction as wave 1's); guard_state.json → runs",
+        "Same verdict, same ground, same construction. It passes at the committed tree for the "
+        "same reason wave 2's does."),
     "tools/audit/decisions/gen_reads4_yield.py": (
-        LIVE, "gen_reads4_yield.py (the same shape as wave 1's); guard_state.json → runs",
-        "Same verdict, same ground. It passes at the committed tree."),
+        POINT, "gen_reads4_yield.py:2-8 (the same construction as wave 1's); guard_state.json → runs",
+        "Same verdict, same ground, same construction. It passes at the committed tree for the "
+        "same reason wave 2's does."),
     "tools/audit/decisions/gen_reads5_yield.py": (
-        LIVE, "gen_reads5_yield.py:11-15",
-        "Same verdict, same ground, and it additionally reads its bands off the re-pack artifact "
-        "rather than recomputing them. It passes at the committed tree."),
+        POINT, "gen_reads5_yield.py:2-15; finish_line_item1_routes.json → executed_this_wave",
+        "★ RE-CLASSIFIED with wave 1's, and this is one of the two members where the mechanism is "
+        "VISIBLE rather than argued: SIX of the ten entries the previous wave re-homed into "
+        "`ARCHITECTURE.md` are named by this wave, so the home strings frozen in its artifact no "
+        "longer match the register — the check fails because the homing act phase 1 requires was "
+        "performed. Re-deriving it would restate a historical measurement against a population "
+        "that act changed, which `OPEN_ITEMS.md` OI-330 refused. NO LIVE COVERAGE IS LOST, on the "
+        "same three live guards named at wave 1's verdict."),
     "tools/audit/decisions/gen_reads6_yield.py": (
-        LIVE, "gen_reads6_yield.py:14-18",
-        "Same verdict and same ground as the five before it — the entries it names must still be "
-        "in the register at their recorded homes — with one addition that is itself a live "
-        "assertion: it DERIVES the owed remainder from the regime's partition plus every completed "
-        "wave's own count, so the claim that the owed set is empty is re-checked on every run "
-        "rather than recorded once."),
+        POINT, "gen_reads6_yield.py:2-25; finish_line_item1_routes.json → executed_this_wave",
+        "★ RE-CLASSIFIED with wave 1's; the other member where the mechanism is visible — FOUR of "
+        "the previous wave's ten re-homed entries are named here. Its one further assertion, that "
+        "the owed remainder derives from the regime's partition plus every completed wave's own "
+        "count, does not make it live: every input to that derivation is frozen (a registration "
+        "recorded before the reads, and each wave's own authored read list), so it cannot detect "
+        "a change in the tree either — it re-computes a closed sum. NO LIVE COVERAGE IS LOST, on "
+        "the same three live guards named at wave 1's verdict."),
     "tools/audit/decisions/gen_phase1m_measurements.py": (
         POINT, "gen_phase1m_measurements.py:4-19, :27-33",
         "Its own docstring says the dispatch \"orders two MEASUREMENTS and forbids acting on "
@@ -423,6 +485,51 @@ def build() -> dict:
             "in its surface, stopping on a moved or ambiguous one); and it PASSES at the committed "
             "tree. It stays. The other three of OI-309's four are point-in-time and move. One tool "
             "OUTSIDE OI-309's four also moves — OI-330's — which A1 did not cover."),
+        "★_the_2026_08_04_re_classification_of_the_read_wave_yield_FAMILY": {
+            "ordered_by": "`cc_instruction_finish_line_item1b.md`, ruling R2 — the read-wave yield "
+                          "artifacts are checked against R4's test before the re-homing continues. "
+                          "Its assumption A1 held that the three FAILING members are point-in-time "
+                          "measurements sitting on R4's live side.",
+            "what_happened_to_that_assumption": "CONFIRMED for all three, and the check found the "
+                "family is larger than the failing set. The earlier classification put all six "
+                "read-wave yield tools on the LIVE side, crediting each with one assertion: that "
+                "every entry its wave names is STILL IN THE REGISTER AT THE HOME IT RECORDS, on "
+                "the ground that 'an entry silently vanishing or changing home is a real defect'.",
+            "why_that_was_the_wrong_side": "CHANGING HOME IS NOT A DEFECT — it is the act phase 1's "
+                "criterion C1 requires, performed under a dispatch and recorded in the register "
+                "with its provenance (#12). So the check must eventually fail BECAUSE the tree "
+                "moved on correctly, which is this ruling's own definition of a check that "
+                "measures the clock. The tool cannot separate the two cases: its --check is "
+                "whole-artifact equality, so a correctly re-homed entry and a vanished one are "
+                "indistinguishable to it.",
+            "measured_rather_than_argued": "The previous wave re-homed ten entries into "
+                "`ARCHITECTURE.md` (`finish_line_item1_routes.json` → `executed_this_wave`). Six "
+                "of them are named by read wave 5 and four by read wave 6, and both artifacts now "
+                "fail on exactly those home strings. Read wave 1 fails on the narrower cause — its "
+                "entries never left `ARCHITECTURE.md` and only the LINE RANGE drifted under the "
+                "same insertions. Waves 2, 3 and 4 pass, and that is a fact about which entries "
+                "the ten touched, not a difference in kind.",
+            "why_the_three_that_PASS_moved_with_them": "A verdict is made on the tool's own text "
+                "(#19), and their text is their siblings'. Classifying identical tools onto "
+                "opposite sides would author a verdict the evidence contradicts, and would leave "
+                "three known false alarms armed for the next homing wave.",
+            "no_live_coverage_is_lost": "The live half the family was credited with is asserted by "
+                "three live guards that pass at the committed tree: `gen_decisions_register.py "
+                "--check` (the register's own rule (d) guard — drift, quote fidelity, reference "
+                "resolution), `register_lint.py`, and `reaim_home_anchors.py --check` (no register "
+                "home anchor has drifted).",
+            "the_scaling_fact_this_classification_buys": "Item 1's remaining re-homings move more "
+                "entries, and every entry moved breaks every frozen artifact that names it at its "
+                "old home. Left live, this family would have produced a fresh permanent failure "
+                "per wave for the rest of the item — the failure mode R4 exists to prevent, where "
+                "a list whose failures are permanent and meaningless teaches a reader to ignore "
+                "it. This is what makes the rest of item 1 affordable without accumulating "
+                "failures.",
+            "what_this_does_NOT_do": "It repairs nothing and discharges nothing. The six artifacts "
+                "stay on disk exactly as their waves wrote them; the registered bands and every "
+                "measured yield are preserved (#12); `OPEN_ITEMS.md` OI-309 and OI-330 stay open "
+                "on their own subjects.",
+        },
         "counts": {
             "tools_classified": len(rows),
             "re_derives_a_live_invariant": sum(1 for r in rows if r["verdict"] == LIVE),

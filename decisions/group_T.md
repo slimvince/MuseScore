@@ -1393,3 +1393,128 @@
 
 **Provenance.** User ruling of 2026-08-04, transmitted in the dispatch `cc_instruction_commit_and_finish_line.md` §0a as R3 — 'A finding whose subject bears on the analysis, its inputs, or an instrument a measurement depends on — D-438's own test — is SURFACED to the user for decision, whatever its size. A finding that does not is rowed and left: no wave, no dispatch, no surface.' Homed in `cowork_audit_protocol.md`'s dispatch-protocol section beside D-431, D-434, D-436 and D-640, as the dispatch's Task 3 directs; `nonspec_kind` is `process` because its subject is how the work is sorted and reported, not the system. It composes with ruling R2 of the same act, the derived finish line at `tools/audit/phase1_finish_line.json`, which R3 never adds to.
 
+### D-642 — Criterion C1 reaches every decision whose content is LIVE — a superseded entry's obligation moves to its successor, and is discharged only where that successor is homed
+
+> ### Criterion C1 reaches every decision whose content is LIVE — a superseded entry's obligation moves to its successor
+>
+> **Ruled by the user, 2026-08-04** (dispatch `cc_instruction_c1_ruling_and_item1c.md`, §0a R1).
+> **Criterion C1 — D-231's phase-1 obligation that every recorded decision is written into its owning
+> specification — reaches every decision whose content is LIVE.** A superseded decision's live content
+> lives in its **successor**; C1 is satisfied for that content **when the successor is homed**, and the
+> superseded entry itself is recorded in the register, which D-231 makes the status ledger for
+> supersession. **Where the successor is NOT homed, C1 is defeated and the owed act is homing the
+> SUCCESSOR — not the superseded entry.**
+>
+> **The basis, at D-231's own clause.** The clause assigns two things to two places in one sentence:
+> *"the decisions register remains the status ledger (supersession, shelving, the same-commit rule),
+> never the conformance reference"*. Supersession and shelving are named there as two distinct things
+> the register is the ledger OF, and conformance is assigned to the specifications — so a superseded
+> decision is not something conformance is measured against. The clause is quoted **entire**, derived
+> at HEAD, at `tools/audit/phase1_completion_inventory.json` → `the_requirement.phase_1_verbatim`,
+> which is what the rule immediately below requires of a citation like this one.
+>
+> **★ THE BASIS PREVIOUSLY CLAIMED IS WITHDRAWN, AND THE WITHDRAWAL IS PART OF THE RULING.** The
+> preceding dispatch (`cc_instruction_finish_line_item1b.md`) presented this ruling as an APPLICATION
+> of `OPEN_ITEMS.md` OI-272's per-kind home scheme to the superseded kind, and declared that reading as
+> an assumption with an instruction to STOP rather than stretch the scheme. The check came back
+> negative and **the reading is withdrawn**: the scheme partitions by what a decision IS rather than by
+> what its STATUS is, and applied at its own text it routes the affected entries the OPPOSITE way. The
+> four grounds that refuted it live at `open_items/OI-340.md` and are not restated here (#6) — a wrong
+> basis retracted is evidence (#12), and the row that produced the refutation is where that evidence
+> belongs.
+>
+> **Where it is applied, and what it does not authorize.** The ruling is recorded against criterion C1
+> itself — `tools/audit/phase1_completion_inventory.json` → `the_requirement.criteria` → C1 — and
+> applied per entry over finish-line item 1's no-home class at
+> `tools/audit/decisions/r1_superseded_reach.json`; no verdict or count is restated here (**D-431**).
+> It authorizes no fix to the analysis, no design, no inference change, and no re-classification of any
+> entry's home class. It decides which entries criterion C1 reaches, and nothing else.
+
+**In plain words.** Phase 1's requirement that every recorded decision be written into the specification that owns it applies to decisions whose content is still in force. Where a decision has been superseded, the thing still in force is its successor, so the requirement is met once that successor is written into its own specification; the superseded entry stays in the register, which is what D-231 makes the register for. If the successor has NOT been written in, the requirement is not met — and what is owed is writing in the successor, not the superseded entry.
+
+**Why.** D-231's phase-1 clause assigns two things to two places in one sentence: 'the decisions register remains the status ledger (supersession, shelving, the same-commit rule), never the conformance reference'. Supersession and shelving are named there as two distinct things the register is the ledger OF, and conformance is assigned to the specifications — so a superseded decision is not something conformance is measured against. The basis previously claimed for the same ruling, that it applied OI-272's per-kind home scheme to the superseded kind, is WITHDRAWN in the ruling that replaces it: the scheme partitions by what a decision IS rather than by its STATUS, and at its own text routes the affected entries the opposite way. The four grounds are preserved at `open_items/OI-340.md` (#12) and are not restated at the home (#6).
+
+**Status.** LIVE · decided 2026-08-04 · ratified by user
+
+**Home.** `cowork_audit_protocol.md:395-428`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** User ruling of 2026-08-04, transmitted in the dispatch `cc_instruction_c1_ruling_and_item1c.md` §0a as R1, which carries its own withdrawal of the basis previously claimed for it. Homed in `cowork_audit_protocol.md`'s dispatch-protocol section beside D-431, D-434, D-436, D-640 and D-641; `nonspec_kind` is `process` because its subject is how the record's own completion criterion is applied, not the system. It is RECORDED against criterion C1 itself, at `tools/audit/phase1_completion_inventory.json` → `the_requirement.criteria` → C1, where the ruling is quoted in full from this home rather than restated (#6), and APPLIED per entry at `tools/audit/decisions/r1_superseded_reach.json`. The application's own assumption check came back REFUTED IN PART and the artifact records what it found; no verdict or count is carried here (D-431). Cross-ref D-231 (the clause), D-639 (the sibling ruling bounding the same clause's other half), `OPEN_ITEMS.md` OI-340 (the row that refuted the withdrawn basis).
+
+### D-643 — A claim that invokes a ruling as an application of it quotes that ruling in full, never the branch of it that supports the claim
+
+> ### A claim that invokes a ruling AS AN APPLICATION quotes that ruling in full, not the branch that supports the claim
+>
+> **Ruled by the user, 2026-08-04** (dispatch `cc_instruction_c1_ruling_and_item1c.md`, §0a R2). **A
+> claim that invokes a ruling as an application of it must QUOTE THAT RULING IN FULL, not the branch of
+> it that supports the claim.**
+>
+> *Why, at the instance that produced the ruling:* the withdrawn reading above cited OI-272's class
+> about shelvings, falsifications and dead ends — and **never put class 1 on the page.** Class 1 is the
+> branch that decided the case the other way: the entries at issue are, by kind, standing constraints,
+> so class 1 claims them, and class 1 prescribes homing them into the owning specification — the very
+> act the invoking ruling exists to forbid. Quoting the helpful branch is not a weaker citation of a
+> ruling; it is a citation of a different ruling, and the reader cannot see that it is one. *(The
+> scheme itself is quoted in full — all four of its classes — at `open_items/OI-340.md`, so this
+> paragraph's account of it is checkable at a primary source rather than taken from here, which is what
+> the rule it states would require of it.)*
+>
+> **How it composes with D-431, which it does not amend.** D-431 requires a premise to be cited to the
+> primary source it can be checked at. This rule governs what the citation must then CARRY: the whole
+> of the ruling, including the parts that cut against the claim being made. **A citation that is
+> correctly sourced and selectively quoted satisfies D-431 and fails this one** — which is why it needs
+> stating separately rather than being read into D-431.
+>
+> **Both sides are bound**, the writing side's dispatches and the executing side's reports alike, on
+> the same ground D-431 gives: a dispatch's premise becomes the next session's starting assumption.
+
+**In plain words.** When a dispatch or a report says that some rule follows from an existing ruling, it must quote the whole of that ruling — including the parts that argue against the point being made — and not only the part that helps. Quoting the helpful part is not a shorter citation of the ruling; it is a citation of a different ruling, and a reader cannot tell that it is one.
+
+**Why.** Measured at the instance that produced it: a dispatch invoked OI-272's per-kind home scheme as the basis for the ruling recorded at D-642, quoted the class about shelvings, falsifications and dead ends, and never put class 1 on the page — and class 1 is the branch that decided the case the other way, claiming the entries at issue as standing constraints and prescribing the very act the invoking ruling exists to forbid. It ADDS to D-431 rather than amending it: D-431 governs where a premise is cited FROM, this governs what the citation must then carry, so a citation that is correctly sourced and selectively quoted satisfies D-431 and fails this rule.
+
+**Status.** LIVE · decided 2026-08-04 · ratified by user
+
+**Home.** `cowork_audit_protocol.md:430-453`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** User ruling of 2026-08-04, transmitted in the dispatch `cc_instruction_c1_ruling_and_item1c.md` §0a as R2 — 'A claim that invokes a ruling as an application must quote that ruling in full, not the branch that supports the claim' — with its measured instance stated in the same act. Homed in `cowork_audit_protocol.md`'s dispatch-protocol section as the dispatch's Task 1.3 directs, beside D-431, D-434, D-436, D-640 and D-641; `nonspec_kind` is `process` because its subject is how a dispatch and a report cite, not the system. Binds both sides, on D-431's own ground. Cross-ref D-431 (the figures-and-premises rule it composes with), D-642 (the ruling whose withdrawn basis is its measured instance).
+
+### D-644 — Where a superseded decision's content is a REMOVAL, the owning specification states the current behaviour and records the removal as a tried-and-closed line
+
+> ### Where a superseded decision's content is a REMOVAL, the specification states the current behaviour and records the removal as a tried-and-closed line
+>
+> **Ruled by the user, 2026-08-04** (dispatch `cc_instruction_guard_fix_and_item1d.md`, §0a R2).
+> **Where a superseded decision's content is a REMOVAL, the owning specification STATES THE CURRENT
+> BEHAVIOUR and RECORDS THE REMOVAL AS A TRIED-AND-CLOSED LINE; the register holds the status.**
+>
+> **This is PRECEDENT, not a new rule.** It is what was already done at `ARCHITECTURE.md` §5.2 for the
+> declared-mode piece-start shortcut (`OPEN_ITEMS.md` OI-315, register entry **D-058**), and the ruling
+> names that act as its own source. The precedent is quoted **in full**, located by its own anchors and
+> re-read from `ARCHITECTURE.md` on every run, at `tools/audit/phase1_completion_inventory.json` →
+> `the_requirement.criteria` → C1 → the removal block; it is deliberately not restated here (#6), and a
+> rewording of it STOPS the derivation rather than leaving a stale account of it standing.
+>
+> **What the precedent shows, and why it answers a question D-642 leaves open.** D-642 moves a
+> superseded entry's obligation to its **successor**. A removal has no successor: nothing later states
+> the rule, because the rule is that the mechanism is gone. Read without this ruling, such an entry
+> falls through — the register records it superseded, no specification carries it, and criterion C1 has
+> no closing act to name. The precedent supplies one, and it is two acts rather than one: the
+> specification is made TRUE about HEAD (there the specification had gone on asserting the removed
+> mechanism in the present tense, which is exactly D-231's doc-sync half), and the removal is recorded
+> where a later reader will meet it before retrying it. **Neither half alone is sufficient** — stating
+> the current behaviour without the tried-and-closed line loses the information that the alternative
+> was tried (#12), and recording the closed line without correcting the text leaves the specification
+> misdescribing the code.
+>
+> **What it does not authorize.** No fix to the analysis, no design, no inference change, and no
+> re-classification of any entry's home class. It says what the owning specification owes for one shape
+> of entry, and nothing else.
+
+**In plain words.** Some superseded decisions were not replaced by a later decision — what happened is that a mechanism was taken out. For those, the specification that owns the subject says what the code does now, and adds a short line recording that the removed mechanism was tried and closed so nobody retries it. The register goes on holding the status. Both halves are required: the current-behaviour statement alone would lose the fact that the alternative was tried, and the tried-and-closed line alone would leave the specification describing code that no longer exists.
+
+**Why.** It is precedent rather than a new rule: the act it prescribes was already performed at `ARCHITECTURE.md` §5.2 for the declared-mode piece-start shortcut (D-058, `OPEN_ITEMS.md` OI-315), where the specification had gone on asserting the removed short-circuit in the present tense and was corrected to state the note-based opening, with a tried-and-closed pointer beside it. It answers a shape D-642 leaves open: D-642 moves a superseded entry's obligation to its successor, and a removal has no successor, so without this the entry has no closing act criterion C1 could name. The precedent is quoted in full from `ARCHITECTURE.md` by anchor, on every run, at `tools/audit/phase1_completion_inventory.json` (D-643, #17f).
+
+**Status.** LIVE · decided 2026-08-04 · ratified by user
+
+**Home.** `cowork_audit_protocol.md:455-482`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** User ruling of 2026-08-04, transmitted in the dispatch `cc_instruction_guard_fix_and_item1d.md` §0a as R2, which states in the same act that it is precedent and names the precedent's location. Homed in `cowork_audit_protocol.md`'s dispatch-protocol section beside D-431, D-434, D-436, D-640, D-641, D-642 and D-643; `nonspec_kind` is `process` because its subject is what the record's own completion criterion obliges for one shape of entry, not the system. RECORDED against criterion C1 itself at `tools/audit/phase1_completion_inventory.json` → `the_requirement.criteria` → C1, beside D-642's block, where the PRECEDENT is located by anchor in `ARCHITECTURE.md` and quoted in full on every run rather than paraphrased (D-643). Cross-ref D-642 (the ruling whose open shape this closes), D-058 (the precedent's own entry), D-231 (the clause both bound), `OPEN_ITEMS.md` OI-315 (the row the precedent was performed under).
+

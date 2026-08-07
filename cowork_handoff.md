@@ -1,7 +1,111 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE 2026-08-02/03 (EIGHTH) — PHASE 1 IS DEEP IN ITS FINAL READS (38/143; the register at 414, 405 USER-RATIFIED across eight events); EVERY RULED CONSTRAINT IS HOMED; A PENDING-RATIFICATION PACKET AWAITS THE USER. THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE 2026-08-04 (NINTH) — THE OI-207 READS ARE **DONE**; THE WORK IS NOW BOUNDED BY A DERIVED **FINISH LINE**; A FREEZE AND A SURFACING RULE GOVERN WHAT MAY BECOME A WAVE. THE CURRENT ENTRY POINT.
+
+**You (the next session) start clueless — this block is the entire handover.** **No figure appears in
+this block by design (D-431)** — this surface has twice supplied stale counts that later waves carried
+into dispatches. Every quantity is named as an artifact and a field; go and read it.
+
+**Read, in order:** (1) **`CLAUDE.md` IN FULL.** Since the eighth block it gained: **#8 widened** to
+the fuller three-clause gate — refactoring + architectural design + algorithmic completion — which is
+now the rule's ONE home, entry **D-172**, pointing at **D-592** (what FINISHED means for a layer) and
+**D-593** (what may still be fixed while the gate holds); **#21** gained the ★ clause that the
+ground-truth ceiling **cannot be cited from the literature** (**D-474**), so OI-179 is the only route
+to it; the decisions-register section gained rules **(i)** the delegation bar, **(j)** delegating and
+being a home are different tests, **(k)** a delegation reaches only the members it names explicitly —
+a glob and an ellipsis confer nothing; the open-items section gained the **non-gating declaration**
+(**D-438**) with its test and its #19 exception; gate block (A) gained **D-576**'s caveat (the
+root-agreement measurement UNDERSTATES what a wrong key costs) and the pinned instrument's
+**arm declaration** (**D-468**). (2) **`DECISIONS.md`** (the INDEX; entries under `decisions/group_*.md`).
+(3) **`OPEN_ITEMS.md`** (the INDEX — status authoritative THERE ONLY). (4) **★
+`tools/audit/phase1_finish_line.json` — THIS IS THE SCOPE.** Nine items, each with the act that would
+close it; it is a guard, not a report, and it STOPS if a population appears no item carries.
+**Nothing outside it gets a wave, and adding an item needs a user ruling.** (5) `STATUS.md`'s top
+entries. (6) The active dispatch named below.
+
+**★ WHERE THE PROJECT STANDS.** The **OI-207 reading programme is COMPLETE** — the owed set is empty,
+derived on every run at `tools/audit/decisions/reads6_yield.json` → `the_running_read_count`. The
+register and the open-items register are both far larger than the eighth block records; read their
+indexes, do not carry a count. **Phase 1 is NOT complete**: its two halves are specifications made
+COMPLETE (every recorded decision written into its owning specification, with its defense) and TRUE
+(the text corrected where it states something false at HEAD) — and D-231's clause carries two further
+criteria the earlier framing missed: **C4**, that conformance must thereafter be measurable against
+the specifications *without consulting the register*, and **C5**, whose reason names *the code*.
+Item 1 (home document named in no user-ratified surface) is in progress; items 2–9 are not started.
+**Phase 1's completion statement is not written, drafted, or partially written**, and no dispatch has
+authorized it. After the finish line: **phase 2's GATING channels** (the partition is at
+`tools/audit/phase3_gate_partition.json`, registered as a prediction with a #13 STOP if a NON-GATING
+channel yields a family member), and only then **the struck-versus-sounding family design** — the
+first work in this whole arc that would change what the analysis computes.
+
+**★★ THE THREE RULES THAT GOVERN WHAT MAY BECOME A WAVE — READ THESE BEFORE PLANNING ANYTHING.**
+(a) **THE FREEZE:** the mechanism set is frozen. A tool defect is **rowed and left**, not fixed,
+unless it blocks the work — the one exception exercised so far was licensed explicitly in a ruling
+ledger. (b) **D-641, the surfacing rule:** a finding whose subject bears on **the analysis, its
+inputs, or an instrument a measurement depends on** is **SURFACED to the user for decision, whatever
+its size**; anything else is **rowed and left — no wave, no dispatch, no surface**. **An establishment
+obligation (#19) always gates and is therefore always surfaced.** (c) **ONE DISPATCH AT A TIME**,
+written only when the previous returns. A backlog of three queued dispatches and six uncommitted waves
+is on the record; both were the user's correction. *Why these exist:* the apparatus is now large
+enough to generate its own defect stream indefinitely, and fifteen waves were spent on it while every
+finding that bears on the objective came from **reads and probes**, never from apparatus repair.
+
+**★ THE DISPATCH DISCIPLINE (all of it is measured, none of it is style).** Every dispatch carries a
+**RULING LEDGER** — the rulings it applies, verbatim, because a re-issue once dropped a ratification
+and the register then recorded a decision the user had made as unratified — and a **PREMISE LEDGER**
+(#17a): every load-bearing claim is **FACT** with a citation **to the object the claim is about**, or
+**ASSUMPTION** with an ordered check that runs **before** the act resting on it. A citation to a row
+or a register entry is a **secondary** source for a claim about the code. **D-643, the full-quote
+rule:** a claim invoking a ruling **as an application** must quote that ruling **in full**, not the
+branch that supports it. **D-431:** figures enter by citation to a generated artifact, never
+transcribed — this binds reports too. **D-434:** run the standing self-check on the dispatch before
+release. **D-599:** apply the principles first; only where they do not decide is there a genuine user
+choice — do not dress a derivation as a menu. Choices that ARE genuine go to the user in **FULL
+PROSE**, each pro and con naming its principle and rated against the ultimate objective; the
+option-widget compression was rejected repeatedly and is not used.
+
+**★ WHAT ACTUALLY CATCHES ERRORS — the measured answer, keep doing it.** **Declared STOPs in
+dispatches have caught every premise error this side has made; Cowork's own reading has caught almost
+none.** So: make every load-bearing claim an assumption with a stop, **especially the ones you are
+most confident about**, and treat confidence as a reason to check rather than a reason not to. The
+recurring failure modes, each with instances on the record: carrying a figure or a claim from a
+**secondary surface**; reading a **code fragment** and inferring the control flow around it; **fitting
+a justification to a conclusion** already reached (the OI-272 case — quote the whole partition, not
+the branch that helps); and **not applying to oneself** the rule one is writing into a dispatch.
+Verify every CC report **at the objects** — run the guards yourself, read the cited lines yourself.
+**Never bash to read working-tree files** (D-253); the shell-read guard is armed but has a measured
+false-negative — any pipe inside a quoted argument defeats it (**OI-343**, being fixed now).
+
+**★ THE ACTIVE DISPATCH is `cc_instruction_guard_fix_and_item1d.md`** — fix the shell-read guard with
+its establishment corpus extended **before** any rate is republished; record and apply **R2** (a
+superseded decision whose content is a REMOVAL: the owning specification states current behaviour and
+records the removal as tried-and-closed, the precedent being `ARCHITECTURE.md` §5.2 / D-058); re-cut
+the finish line at **entry** granularity; and report what edit surface item 1's re-home class actually
+needs. **Its work is uncommitted when it returns** — commits happen only when the user asks, and a
+commit-only dispatch cannot record its own commit, so the record goes in the next wave's STATUS entry.
+**Verify its report at the objects before accepting any of it.**
+
+**★ OWED AND NOT IN ANY DISPATCH:** the finish line's items 2–9; item 1's delegation-route residue
+(only the user writes a delegation — rule (g)); the two entries whose route is "home the successor";
+**OI-336** — whether OI-332's own non-gating verdict survives reading **D-438's whole sentence**, whose
+second half says *a correction to a statement about the analysis **or its build state** … GATES*, and a
+banner reading "no code" over two built operations is a build-state statement; reported and
+deliberately **not applied**, because a non-gating verdict is derived from a cut and never hand-added.
+*(Distinct from the C5-reach question, which IS ruled — the TRUE half reaches a document's account of
+itself only where that account changes how its analysis content is read, with the fallback that if the
+test needs judgment on the first rows it meets, the half reaches only the account of the analysis.)*
+Also owed: OI-331, OI-333, OI-337, OI-338, OI-340, OI-342, OI-343; the phase-2 gating
+channels; and the family design. **The struck-versus-sounding family rows are OI-215, OI-226, OI-227,
+OI-228, OI-243, OI-244, OI-246, OI-277** — OI-243 and OI-244 are now ESTABLISHED (the repository-side
+probe re-run reproduced, and the defensible enharmonic share is a small minority of the
+non-equivariance; boundary movement is the overwhelming majority).
+
+*(The eighth block below is the previous entry point — kept for provenance. Its figures are stale by
+design; do not carry them.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE 2026-08-02/03 (EIGHTH) — PHASE 1 IS DEEP IN ITS FINAL READS (38/143; the register at 414, 405 USER-RATIFIED across eight events); EVERY RULED CONSTRAINT IS HOMED; A PENDING-RATIFICATION PACKET AWAITS THE USER. (SUPERSEDED as the entry point by the block above.)
 
 **You (the next session) start clueless — this block is the entire handover.** Read, in order:
 (1) `CLAUDE.md` IN FULL — since the seventh block it gained: the decisions-register section's

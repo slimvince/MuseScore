@@ -56,6 +56,7 @@ APPARATUS = ROOT / "tools" / "audit" / "nongating_apparatus_rows.json"
 DISPOSITION_MANIFEST = ROOT / "tools" / "audit" / "decisions" / "disposition_manifest.json"
 REGIME = ROOT / "tools" / "audit" / "decisions" / "phase1n_reading_regime.json"
 READS = [ROOT / "tools" / "audit" / "decisions" / f"reads{n}_yield.json" for n in range(1, 7)]
+OI340 = ROOT / "open_items" / "OI-340.md"
 OUT = ROOT / "tools" / "audit" / "phase1_completion_inventory.json"
 
 # --------------------------------------------------------------------------- anchors (not lines)
@@ -236,6 +237,264 @@ def locate_clause() -> dict:
         "phase_1_verbatim": span(p1, p2),
         "phase_2_verbatim": span(p2, p3),
         "phase_3_verbatim": span(p3, p4),
+    }
+
+
+# --------------------------------------------------------- R1: C1's reach over SUPERSEDED entries
+#
+# The ruling's ONE authored home is `cowork_audit_protocol.md`'s dispatch-protocol section (#6).
+# It is QUOTED HERE IN FULL and located by anchor, never restated - which is also what the rule
+# ruled in the same act requires of a citation that invokes a ruling.
+PROTOCOL_MD = ROOT / "cowork_audit_protocol.md"
+R1_SECTION_ANCHOR = ("### Criterion C1 reaches every decision whose content is LIVE — a superseded "
+                     "entry's obligation moves to its successor")
+
+# R2 (user, 2026-08-04, `cc_instruction_guard_fix_and_item1d.md`): the shape D-642 leaves open — a
+# superseded entry whose content is a REMOVAL, which has no successor to move the obligation to.
+# Its ONE authored home is the same protocol section, and it is quoted from there in full (D-643).
+ARCHITECTURE_MD = ROOT / "ARCHITECTURE.md"
+R2_SECTION_ANCHOR = ("### Where a superseded decision's content is a REMOVAL, the specification "
+                     "states the current behaviour and records the removal as a tried-and-closed "
+                     "line")
+
+# The PRECEDENT R2 rests on, located in `ARCHITECTURE.md` by its own anchors and quoted whole.
+# NEVER by line number: the dispatch that transmitted R2 cited this block by a line range that had
+# already drifted past it, which is the D-307 failure the anchor machinery exists to prevent.
+R2_PRECEDENT_START = ("**★ CORRECTED 2026-08-04 (phase 1z; `OPEN_ITEMS.md` OI-315, register entry "
+                      "D-058)")
+R2_PRECEDENT_CURRENT_BEHAVIOUR = "**There is no piece-start exception — the opening is note-based.**"
+R2_PRECEDENT_TRIED_AND_CLOSED = "**Tried and closed on the key opening"
+
+# The sentence of D-231's phase-1 clause R1 rests on.  LOCATED inside the derived quote of the
+# clause rather than typed here as the record of it - if the clause is reworded, this STOPS.
+R1_OPERATIVE_SENTENCE = (
+    "the decisions register remains the status ledger (supersession, shelving, the same-commit "
+    "rule), never the conformance reference"
+)
+
+
+def r1_ruling_verbatim() -> str:
+    """Quote R1's section from its home IN FULL, located by its own heading."""
+    text = read(PROTOCOL_MD)
+    i = text.find(R1_SECTION_ANCHOR)
+    if i < 0:
+        raise SystemExit(
+            "STOP: R1's section could not be located in cowork_audit_protocol.md by its heading. "
+            "A ruling this file invokes must be quoted from its home in full, and a quote that "
+            "cannot be located may not be published from anywhere else.")
+    j = text.find("\n### ", i + len(R1_SECTION_ANCHOR))
+    if j < 0:
+        j = len(text)
+    return re.sub(r"\s+", " ", text[i:j]).strip()
+
+
+def r2_ruling_verbatim() -> str:
+    """Quote R2's section from its home IN FULL, located by its own heading (D-643)."""
+    text = read(PROTOCOL_MD)
+    i = text.find(R2_SECTION_ANCHOR)
+    if i < 0:
+        raise SystemExit(
+            "STOP: R2's section could not be located in cowork_audit_protocol.md by its heading. "
+            "A ruling this file invokes must be quoted from its home in full, and a quote that "
+            "cannot be located may not be published from anywhere else.")
+    j = text.find("\n### ", i + len(R2_SECTION_ANCHOR))
+    if j < 0:
+        j = len(text)
+    return re.sub(r"\s+", " ", text[i:j]).strip()
+
+
+def r2_precedent_verbatim() -> dict:
+    """The precedent R2 names, quoted WHOLE out of ARCHITECTURE.md and located by its anchors.
+
+    The dispatch that transmitted R2 cited this block by a LINE RANGE, and that range had already
+    drifted past it — the previous wave's homing insertions moved it. Quoting it by anchor is what
+    keeps the citation from going stale silently, and a rewording STOPS this derivation rather
+    than leaving a paraphrase of a precedent nobody re-read standing in the record.
+    """
+    text = read(ARCHITECTURE_MD)
+    i = text.find(R2_PRECEDENT_START)
+    if i < 0:
+        raise SystemExit(
+            "STOP: the precedent R2 rests on could not be located in ARCHITECTURE.md by its "
+            "correction anchor. R2 is stated to BE that precedent, so it may not be published "
+            "against a block this tool did not read.")
+    k = text.find(R2_PRECEDENT_TRIED_AND_CLOSED, i)
+    if k < 0:
+        raise SystemExit(
+            "STOP: the precedent's tried-and-closed line is no longer present after its "
+            "correction anchor. R2's second half is the half that line demonstrates, and a "
+            "precedent missing it is not the precedent the ruling names.")
+    if R2_PRECEDENT_CURRENT_BEHAVIOUR not in text[i:k]:
+        raise SystemExit(
+            "STOP: the precedent's current-behaviour statement is no longer present between its "
+            "correction anchor and its tried-and-closed line. R2's first half is the half that "
+            "statement demonstrates.")
+    end = text.find("\n\n", k)
+    if end < 0:
+        end = len(text)
+    return {
+        "located_in": "ARCHITECTURE.md §5.2, by anchor string — never by line number",
+        "why_never_by_line_number": (
+            "The dispatch that transmitted R2 cited this block as `ARCHITECTURE.md:3510-3525`, and "
+            "that range had already drifted past it: the preceding wave's homing insertions moved "
+            "the block down. The citation was to the right block and the wrong coordinate, which "
+            "is the D-307 failure exactly — a line number quoted in prose is not a register anchor, "
+            "so nothing maintains it. Reported rather than silently corrected, and the block is "
+            "re-located by its own words on every run."
+        ),
+        "the_precedent_quoted_IN_FULL": re.sub(r"\s+", " ", text[i:end]).strip(),
+        "the_two_halves_it_demonstrates": {
+            "states_the_current_behaviour": R2_PRECEDENT_CURRENT_BEHAVIOUR,
+            "records_the_removal_as_tried_and_closed": R2_PRECEDENT_TRIED_AND_CLOSED + " …",
+        },
+    }
+
+
+def c1_reach_over_a_removal() -> dict:
+    """R2, recorded beside R1's block because it bounds the same criterion's reach."""
+    return {
+        "the_ruling_quoted_IN_FULL_from_its_home": r2_ruling_verbatim(),
+        "its_home": "cowork_audit_protocol.md, the dispatch-protocol section, beside D-431, D-434, "
+                    "D-436, D-640, D-641, D-642 and D-643. Register entry D-644. Located by "
+                    "heading and quoted whole on every run (D-643).",
+        "why_it_is_recorded_HERE_beside_R1": (
+            "R1/D-642 moves a superseded entry's obligation to its SUCCESSOR. A removal has no "
+            "successor — nothing later states the rule, because the rule is that the mechanism is "
+            "gone — so such an entry falls through D-642 entirely: the register records it "
+            "superseded, no specification carries it, and criterion C1 has no closing act to "
+            "name. R2 supplies the closing act, so it belongs where C1's reach is recorded."
+        ),
+        "what_it_obliges_and_it_is_TWO_acts": (
+            "(1) the owning specification STATES THE CURRENT BEHAVIOUR — which is D-231's doc-sync "
+            "half, since a specification that goes on asserting a removed mechanism in the present "
+            "tense misdescribes the code; and (2) it RECORDS THE REMOVAL AS A TRIED-AND-CLOSED "
+            "LINE, so a later reader meets it before retrying. Neither half alone suffices: (1) "
+            "without (2) loses the information that the alternative was tried (#12), and (2) "
+            "without (1) leaves the specification false at HEAD."
+        ),
+        "★_it_is_PRECEDENT_not_a_new_rule": r2_precedent_verbatim(),
+        "what_R2_does_NOT_authorize": (
+            "No fix to the analysis, no design, no inference change, and no re-classification of "
+            "any entry's home CLASS. It says what the owning specification owes for one shape of "
+            "entry, and nothing else."
+        ),
+        "where_it_is_applied": (
+            "tools/audit/decisions/r1_superseded_reach.json, over the member of item 1's NO-HOME "
+            "class whose content is a removal. No verdict or count is restated here (D-431)."
+        ),
+    }
+
+
+WITHDRAWN_BASIS_HEADING = "## The reading, at the ruling's own text"
+WITHDRAWN_BASIS_END = "## What this row does NOT say"
+
+
+def withdrawn_basis_grounds() -> list[str]:
+    """CC's four grounds against the WITHDRAWN basis, read off OPEN_ITEMS.md's OI-340 detail file.
+
+    Derived rather than restated so the preservation obligation (#12) cannot go stale silently:
+    if the row is reworded or its list changes length, this STOPS instead of publishing a
+    paraphrase of a refutation that no longer reads that way.
+    """
+    text = read(OI340)
+    i = text.find(WITHDRAWN_BASIS_HEADING)
+    j = text.find(WITHDRAWN_BASIS_END)
+    if i < 0 or j < 0 or j <= i:
+        raise SystemExit(
+            "STOP: OI-340's reading section could not be located by its own headings. The "
+            "withdrawn basis's four grounds are preserved BY DERIVATION (#12) and may not be "
+            "restated from anywhere else.")
+    grounds, cur = [], None
+    for line in text[i:j].splitlines():
+        m = re.match(r"^(\d+)\.\s+(.*)$", line)
+        if m:
+            if cur is not None:
+                grounds.append(cur)
+            cur = m.group(2).strip()
+        elif cur is not None:
+            if line.strip():
+                cur += " " + line.strip()
+            else:
+                grounds.append(cur)
+                cur = None
+    if cur is not None:
+        grounds.append(cur)
+    grounds = [re.sub(r"\s+", " ", g).strip() for g in grounds]
+    if len(grounds) != 4:
+        raise SystemExit(
+            f"STOP: OI-340's refutation is recorded as {len(grounds)} ground(s), not the four the "
+            "withdrawal preserves. A count that has moved means the row was rewritten, and the "
+            "preserved grounds may not be published from a stale reading of it.")
+    return grounds
+
+
+def c1_reach_over_superseded(clause: dict) -> dict:
+    """R1, recorded where the C1 criteria live, with the clause it rests on quoted from HEAD."""
+    p1 = clause["phase_1_verbatim"]
+    if R1_OPERATIVE_SENTENCE not in p1:
+        raise SystemExit(
+            "STOP: the sentence R1 rests on is not present in D-231's phase-1 clause at HEAD. A "
+            "ruling recorded against a clause that no longer says what it was read out of may not "
+            "be published as an application of it.")
+    return {
+        "the_ruling_quoted_IN_FULL_from_its_home": r1_ruling_verbatim(),
+        "its_home": "cowork_audit_protocol.md, the dispatch-protocol section, beside D-431, D-434, "
+                    "D-436, D-640 and D-641. Located by heading and quoted whole on every run — "
+                    "the branch of a ruling that supports a claim is never quoted alone (the rule "
+                    "ruled in the same act).",
+        "what_it_changes_about_C1": (
+            "C1's population. C1 obliges every RECORDED decision to be written into its owning "
+            "specification; R1 reads that as every decision whose CONTENT IS LIVE. A superseded "
+            "entry is not thereby exempt - the obligation moves to the successor that carries its "
+            "live content, and is discharged only where that successor is itself homed."
+        ),
+        "the_clause_it_rests_on": {
+            "the_sentence": R1_OPERATIVE_SENTENCE,
+            "located_in": "the derived quote at `the_requirement.phase_1_verbatim`, which carries "
+                          "D-231's phase-1 clause ENTIRE at HEAD - including the half that does "
+                          "not support R1. Nothing is quoted here in a shorter form than the "
+                          "clause has.",
+            "what_R1_takes_from_it": (
+                "The clause assigns SUPERSESSION to the register and CONFORMANCE to the "
+                "specifications, and names supersession and shelving as two distinct things the "
+                "register is the ledger OF. A superseded decision is therefore not something "
+                "conformance is measured against."
+            ),
+            "what_the_sentence_does_NOT_settle": (
+                "It says nothing about an entry whose supersession names no successor, and "
+                "nothing about one whose successor is itself unhomed. R1 answers the second and "
+                "is silent on the first; where the register names no carrier, the application "
+                "reports that and proposes nothing."
+            ),
+        },
+        "★_the_WITHDRAWN_basis_and_why_it_was_withdrawn": {
+            "what_was_claimed": (
+                "The preceding dispatch (`cc_instruction_finish_line_item1b.md`) presented R1 as "
+                "an APPLICATION of OI-272's per-kind home scheme to the superseded kind, and "
+                "declared that reading as its assumption A2 with an instruction to STOP if the "
+                "scheme would not carry it."
+            ),
+            "the_status_of_that_claim": "WITHDRAWN by the user, 2026-08-04, in the ruling that "
+                                        "replaces it. R1's substance is unchanged; its basis is "
+                                        "D-231's own clause above and no longer OI-272.",
+            "why_the_withdrawal_is_recorded_rather_than_dropped": (
+                "A wrong basis retracted is evidence (#12), and the four grounds below are what "
+                "a later session would otherwise re-derive. They are read off the row that made "
+                "them rather than restated here."
+            ),
+            "CCs_four_grounds_preserved": withdrawn_basis_grounds(),
+            "grounds_source": "open_items/OI-340.md, the section '"
+                              + WITHDRAWN_BASIS_HEADING.lstrip('# ') + "', parsed on every run",
+        },
+        "what_R1_does_NOT_authorize": (
+            "No fix to the analysis, no design, no inference change, and no re-classification of "
+            "any entry's home CLASS. It decides which entries criterion C1 reaches and nothing "
+            "else."
+        ),
+        "where_it_is_applied": (
+            "tools/audit/decisions/r1_superseded_reach.json, over finish-line item 1's NO-HOME "
+            "class. No verdict or count is restated here (D-431)."
+        ),
     }
 
 
@@ -481,6 +740,17 @@ def classify_gate(row: dict, authored: dict) -> dict:
 
 def build() -> dict:
     clause = locate_clause()
+    # R1 (user, 2026-08-04) is recorded ON criterion C1, which is where a reader meets the
+    # obligation it bounds. CRITERIA stays the authored constant; the ruling is attached at build
+    # time because the clause it rests on and the withdrawn basis's grounds are both DERIVED.
+    criteria = [dict(c) for c in CRITERIA]
+    c1 = [c for c in criteria if c["id"] == "C1"]
+    if len(c1) != 1:
+        raise SystemExit("STOP: the criteria list does not carry exactly one C1 - the ruling that "
+                         "bounds C1's reach has no unambiguous place to be recorded.")
+    c1[0]["★_the_reach_of_C1_over_SUPERSEDED_entries"] = c1_reach_over_superseded(clause)
+    c1[0]["★_the_reach_of_C1_over_a_superseded_entry_whose_content_is_a_REMOVAL"] = \
+        c1_reach_over_a_removal()
     reg = register_facts()
     reads = reads_facts()
     scope = scope_block_facts(reads, reg)
@@ -570,7 +840,7 @@ def build() -> dict:
         "the_requirement": {
             "source": "CLAUDE.md, the Conventions section; register entry D-231",
             **clause,
-            "criteria": CRITERIA,
+            "criteria": criteria,
         },
         "a1_does_the_completion_statement_rest_on_the_disposition_layer": A1,
         "the_reads_are_done": reads,

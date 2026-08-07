@@ -13,8 +13,8 @@
   "the_two_stops": "The tool refuses to run if a first-cut candidate has no authored verdict, and refuses an authored verdict for a row that is not an open candidate - so the table cannot drift away from the register without failing loudly."
  },
  "population": {
-  "rows_parsed": 337,
-  "open_rows": 249,
+  "rows_parsed": 342,
+  "open_rows": 252,
   "first_cut_candidates": 60,
   "first_cut_vocabulary": [
    "doc-sync",
@@ -680,6 +680,12 @@
     "class_basis_or_ground": "the criterion",
     "reason": "The uncommitted backlog is six waves rather than the three ruling R4 names, and the waves cannot be committed separately. The first cut proposes it because its subject column reads as documentation apparatus -- committing is filing, and filing is what D-438's line names as apparatus. WHAT IS OWED decides it, and what is owed here is not a pointer or a label: it is that a set of INSTRUMENTS exists only in a working tree. The uncommitted set includes the guard tools, the yield generators and the derivations this arc's conclusions rest on, and an instrument that exists only in a working tree cannot support a reproducibility claim (#16) -- which is a measurement matter, not a filing one. The starred clause reaches it independently: preserving an instrument so a recorded measurement can be reproduced is an establishment obligation (#19), and D-438 makes one gate whatever its subject. Recorded against the row's SUBJECT, never its remedy, as every verdict here is.",
     "closed": "RESOLVED 2026-08-04 (ruling R1) - disposition (a) taken: one provenance-stamped commit covering all six waves, `e10479a09f`, with the six-wave figure re-derived before the act rather than carried from the row, the non-wave paths deliberately not swept in, and every guard re-run explicitly at the committed tree because a plumbing commit bypasses hooks. The gating verdict is what it was: the instruments are now committed, which is the reproducibility exposure discharged rather than re-classified."
+   },
+   "OI-340": {
+    "verdict": "GATES",
+    "class_basis_or_ground": "the criterion - D-438's line puts specification completion on the gating side",
+    "reason": "Whether criterion C1 reaches SUPERSEDED register entries is unruled: the per-kind scheme said to settle it does not carry that kind, and read at its own text it routes those entries the OPPOSITE way -- into the owning specification, the very act the ruling exists to forbid. WHAT IS OWED decides it, and what is owed here is not a pointer, an anchor, a label, a banner or a filing choice: it is WHICH DECISIONS PHASE 1 MUST WRITE INTO A SPECIFICATION. D-438's line names that side explicitly -- 'the completion of a specification GATES, because the phase-1 rule in Conventions makes specifications COMPLETE and TRUE the thing that precedes everything else.' The reach is not one entry: item 1's whole NO-HOME class has no closing act until it is ruled, so the finish line cannot report that item as dischargeable. Recorded against the row's SUBJECT, never its remedy.",
+    "closed": "RESOLVED 2026-08-04 - the user ruled the question the row put (D-642), on the basis the row itself named. The verdict was correct while it stood and is kept whole (#12); it is retired because the row closed, never because it was wrong."
    }
   }
  },

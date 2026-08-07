@@ -24,7 +24,49 @@
     "id": "C1",
     "half": "COMPLETE",
     "clause": "every recorded decision is written into its owning specification",
-    "what_it_obliges": "Every entry of the decisions register is recorded in the specification that owns its subject. The register's own home_rule makes the outstanding classes explicit: `gap` (governs a layer, not findable from that layer's section) and `unhomed` (recorded only on a tracking surface, no home at all). `process` and `project-convention` are declared CORRECTLY homed and are not outstanding; `contract-home` is the fifth home case, admitted by D-430/D-432/D-546."
+    "what_it_obliges": "Every entry of the decisions register is recorded in the specification that owns its subject. The register's own home_rule makes the outstanding classes explicit: `gap` (governs a layer, not findable from that layer's section) and `unhomed` (recorded only on a tracking surface, no home at all). `process` and `project-convention` are declared CORRECTLY homed and are not outstanding; `contract-home` is the fifth home case, admitted by D-430/D-432/D-546.",
+    "★_the_reach_of_C1_over_SUPERSEDED_entries": {
+     "the_ruling_quoted_IN_FULL_from_its_home": "### Criterion C1 reaches every decision whose content is LIVE — a superseded entry's obligation moves to its successor **Ruled by the user, 2026-08-04** (dispatch `cc_instruction_c1_ruling_and_item1c.md`, §0a R1). **Criterion C1 — D-231's phase-1 obligation that every recorded decision is written into its owning specification — reaches every decision whose content is LIVE.** A superseded decision's live content lives in its **successor**; C1 is satisfied for that content **when the successor is homed**, and the superseded entry itself is recorded in the register, which D-231 makes the status ledger for supersession. **Where the successor is NOT homed, C1 is defeated and the owed act is homing the SUCCESSOR — not the superseded entry.** **The basis, at D-231's own clause.** The clause assigns two things to two places in one sentence: *\"the decisions register remains the status ledger (supersession, shelving, the same-commit rule), never the conformance reference\"*. Supersession and shelving are named there as two distinct things the register is the ledger OF, and conformance is assigned to the specifications — so a superseded decision is not something conformance is measured against. The clause is quoted **entire**, derived at HEAD, at `tools/audit/phase1_completion_inventory.json` → `the_requirement.phase_1_verbatim`, which is what the rule immediately below requires of a citation like this one. **★ THE BASIS PREVIOUSLY CLAIMED IS WITHDRAWN, AND THE WITHDRAWAL IS PART OF THE RULING.** The preceding dispatch (`cc_instruction_finish_line_item1b.md`) presented this ruling as an APPLICATION of `OPEN_ITEMS.md` OI-272's per-kind home scheme to the superseded kind, and declared that reading as an assumption with an instruction to STOP rather than stretch the scheme. The check came back negative and **the reading is withdrawn**: the scheme partitions by what a decision IS rather than by what its STATUS is, and applied at its own text it routes the affected entries the OPPOSITE way. The four grounds that refuted it live at `open_items/OI-340.md` and are not restated here (#6) — a wrong basis retracted is evidence (#12), and the row that produced the refutation is where that evidence belongs. **Where it is applied, and what it does not authorize.** The ruling is recorded against criterion C1 itself — `tools/audit/phase1_completion_inventory.json` → `the_requirement.criteria` → C1 — and applied per entry over finish-line item 1's no-home class at `tools/audit/decisions/r1_superseded_reach.json`; no verdict or count is restated here (**D-431**). It authorizes no fix to the analysis, no design, no inference change, and no re-classification of any entry's home class. It decides which entries criterion C1 reaches, and nothing else.",
+     "its_home": "cowork_audit_protocol.md, the dispatch-protocol section, beside D-431, D-434, D-436, D-640 and D-641. Located by heading and quoted whole on every run — the branch of a ruling that supports a claim is never quoted alone (the rule ruled in the same act).",
+     "what_it_changes_about_C1": "C1's population. C1 obliges every RECORDED decision to be written into its owning specification; R1 reads that as every decision whose CONTENT IS LIVE. A superseded entry is not thereby exempt - the obligation moves to the successor that carries its live content, and is discharged only where that successor is itself homed.",
+     "the_clause_it_rests_on": {
+      "the_sentence": "the decisions register remains the status ledger (supersession, shelving, the same-commit rule), never the conformance reference",
+      "located_in": "the derived quote at `the_requirement.phase_1_verbatim`, which carries D-231's phase-1 clause ENTIRE at HEAD - including the half that does not support R1. Nothing is quoted here in a shorter form than the clause has.",
+      "what_R1_takes_from_it": "The clause assigns SUPERSESSION to the register and CONFORMANCE to the specifications, and names supersession and shelving as two distinct things the register is the ledger OF. A superseded decision is therefore not something conformance is measured against.",
+      "what_the_sentence_does_NOT_settle": "It says nothing about an entry whose supersession names no successor, and nothing about one whose successor is itself unhomed. R1 answers the second and is silent on the first; where the register names no carrier, the application reports that and proposes nothing."
+     },
+     "★_the_WITHDRAWN_basis_and_why_it_was_withdrawn": {
+      "what_was_claimed": "The preceding dispatch (`cc_instruction_finish_line_item1b.md`) presented R1 as an APPLICATION of OI-272's per-kind home scheme to the superseded kind, and declared that reading as its assumption A2 with an instruction to STOP if the scheme would not carry it.",
+      "the_status_of_that_claim": "WITHDRAWN by the user, 2026-08-04, in the ruling that replaces it. R1's substance is unchanged; its basis is D-231's own clause above and no longer OI-272.",
+      "why_the_withdrawal_is_recorded_rather_than_dropped": "A wrong basis retracted is evidence (#12), and the four grounds below are what a later session would otherwise re-derive. They are read off the row that made them rather than restated here.",
+      "CCs_four_grounds_preserved": [
+       "**The scheme partitions by WHAT A DECISION IS, not by WHAT ITS STATUS IS — and applied at its own text it routes these four entries the OPPOSITE way.** *Superseded* is a status; the kinds are constraint, shelving, process rule, measurement convention. D-282 (*the oracle/tier metric, never a bare proxy*), D-283 (*never learn keys*), D-284 (*selection is saturated, stop adding re-ranking gates*) and D-285 (*embellishment is chord-first*) are by kind **standing constraints/policies** — OI-270's own row calls them *\"meta-findings to institutionalize\"*, that is, proposed doctrine. Class 1 is the class they fall in, and class 1 says **home them into the owning specification** — the act R1 exists to forbid.",
+       "**The prescribed home is not the same home.** Class 2's is *the register + the evidence document*; R1's is *the register + the successor's home*. For D-283 those are different documents — its own record sits in `cowork_architecture_reassessment.md`, its successors D-001/D-096 are homed in `ARCHITECTURE.md`.",
+       "**Class 2's pointer half would state something false.** It prescribes *a one-line tried-and-closed pointer*. None of these four was tried and closed: each was **superseded by a later, more explicit, user-ratified decision on the same subject**. Writing *tried and closed* over them puts a false statement into a specification, which is exactly what phase 1's TRUE half exists to remove.",
+       "**R1 carries a CONDITION the scheme has none of.** R1 applies only *where the live content is carried by a homed successor*; class 2 applies unconditionally. A rule turning on a fact its claimed source never mentions is a new rule, not an application of that one."
+      ],
+      "grounds_source": "open_items/OI-340.md, the section 'The reading, at the ruling's own text', parsed on every run"
+     },
+     "what_R1_does_NOT_authorize": "No fix to the analysis, no design, no inference change, and no re-classification of any entry's home CLASS. It decides which entries criterion C1 reaches and nothing else.",
+     "where_it_is_applied": "tools/audit/decisions/r1_superseded_reach.json, over finish-line item 1's NO-HOME class. No verdict or count is restated here (D-431)."
+    },
+    "★_the_reach_of_C1_over_a_superseded_entry_whose_content_is_a_REMOVAL": {
+     "the_ruling_quoted_IN_FULL_from_its_home": "### Where a superseded decision's content is a REMOVAL, the specification states the current behaviour and records the removal as a tried-and-closed line **Ruled by the user, 2026-08-04** (dispatch `cc_instruction_guard_fix_and_item1d.md`, §0a R2). **Where a superseded decision's content is a REMOVAL, the owning specification STATES THE CURRENT BEHAVIOUR and RECORDS THE REMOVAL AS A TRIED-AND-CLOSED LINE; the register holds the status.** **This is PRECEDENT, not a new rule.** It is what was already done at `ARCHITECTURE.md` §5.2 for the declared-mode piece-start shortcut (`OPEN_ITEMS.md` OI-315, register entry **D-058**), and the ruling names that act as its own source. The precedent is quoted **in full**, located by its own anchors and re-read from `ARCHITECTURE.md` on every run, at `tools/audit/phase1_completion_inventory.json` → `the_requirement.criteria` → C1 → the removal block; it is deliberately not restated here (#6), and a rewording of it STOPS the derivation rather than leaving a stale account of it standing. **What the precedent shows, and why it answers a question D-642 leaves open.** D-642 moves a superseded entry's obligation to its **successor**. A removal has no successor: nothing later states the rule, because the rule is that the mechanism is gone. Read without this ruling, such an entry falls through — the register records it superseded, no specification carries it, and criterion C1 has no closing act to name. The precedent supplies one, and it is two acts rather than one: the specification is made TRUE about HEAD (there the specification had gone on asserting the removed mechanism in the present tense, which is exactly D-231's doc-sync half), and the removal is recorded where a later reader will meet it before retrying it. **Neither half alone is sufficient** — stating the current behaviour without the tried-and-closed line loses the information that the alternative was tried (#12), and recording the closed line without correcting the text leaves the specification misdescribing the code. **What it does not authorize.** No fix to the analysis, no design, no inference change, and no re-classification of any entry's home class. It says what the owning specification owes for one shape of entry, and nothing else.",
+     "its_home": "cowork_audit_protocol.md, the dispatch-protocol section, beside D-431, D-434, D-436, D-640, D-641, D-642 and D-643. Register entry D-644. Located by heading and quoted whole on every run (D-643).",
+     "why_it_is_recorded_HERE_beside_R1": "R1/D-642 moves a superseded entry's obligation to its SUCCESSOR. A removal has no successor — nothing later states the rule, because the rule is that the mechanism is gone — so such an entry falls through D-642 entirely: the register records it superseded, no specification carries it, and criterion C1 has no closing act to name. R2 supplies the closing act, so it belongs where C1's reach is recorded.",
+     "what_it_obliges_and_it_is_TWO_acts": "(1) the owning specification STATES THE CURRENT BEHAVIOUR — which is D-231's doc-sync half, since a specification that goes on asserting a removed mechanism in the present tense misdescribes the code; and (2) it RECORDS THE REMOVAL AS A TRIED-AND-CLOSED LINE, so a later reader meets it before retrying. Neither half alone suffices: (1) without (2) loses the information that the alternative was tried (#12), and (2) without (1) leaves the specification false at HEAD.",
+     "★_it_is_PRECEDENT_not_a_new_rule": {
+      "located_in": "ARCHITECTURE.md §5.2, by anchor string — never by line number",
+      "why_never_by_line_number": "The dispatch that transmitted R2 cited this block as `ARCHITECTURE.md:3510-3525`, and that range had already drifted past it: the preceding wave's homing insertions moved the block down. The citation was to the right block and the wrong coordinate, which is the D-307 failure exactly — a line number quoted in prose is not a register anchor, so nothing maintains it. Reported rather than silently corrected, and the block is re-located by its own words on every run.",
+      "the_precedent_quoted_IN_FULL": "**★ CORRECTED 2026-08-04 (phase 1z; `OPEN_ITEMS.md` OI-315, register entry D-058). The paragraph this replaces specified a piece-start shortcut in the present tense. The code removed that short-circuit in Stage 4b-i on 2026-06-14 and this document went on asserting it.** What the opening does at HEAD, read at the code: **There is no piece-start exception — the opening is note-based.** At piece start `resolveKeyAndModeRanked()` runs its ordinary path. The lookback window start clamps to tick 0 when the analysis tick is inside the lookback span (`keyresolver.cpp:286-289`); the dynamic-lookahead loop runs exactly as it does anywhere else (`:303-326`); and the hysteresis block is simply skipped at the opening, because it guards on `prevResult != nullptr` (`:340`). The key signature's declared mode reaches the opening **only** as the same small hint `analyzeKeyMode()` applies at every tick — the former hard \"strong declared-mode prior\" promotion, which moved a declared-compatible candidate to the front regardless of the candidate-score gap, was removed in the same increment (`:358-367`). The removal's own reason is recorded in the code beside it: the short-circuit returned a declared anchor at piece start **regardless of the opening note evidence**, which is incompatible with notes-always-win above. The pins are `Composing_KeyresolverTests.PieceStartOpening_NoteBased_DeclaredMinor` and `_DeclaredMajor` (`src/composing/tests/regionanalysis_tests.cpp:122`, `:144`). **Tried and closed on the key opening — do not retry; the register carries it with its evidence: D-058 (the declared-mode piece-start shortcut, superseded in fact by the Stage 4b-i note-based opening; the removal is dated and its re-targeted pins named at `docs/key_path_design.md:65-73`).**",
+      "the_two_halves_it_demonstrates": {
+       "states_the_current_behaviour": "**There is no piece-start exception — the opening is note-based.**",
+       "records_the_removal_as_tried_and_closed": "**Tried and closed on the key opening …"
+      }
+     },
+     "what_R2_does_NOT_authorize": "No fix to the analysis, no design, no inference change, and no re-classification of any entry's home CLASS. It says what the owning specification owes for one shape of entry, and nothing else.",
+     "where_it_is_applied": "tools/audit/decisions/r1_superseded_reach.json, over the member of item 1's NO-HOME class whose content is a removal. No verdict or count is restated here (D-431)."
+    }
    },
    {
     "id": "C2",
@@ -52,6 +94,43 @@
    }
   ]
  },
+ "★_the_entry_level_re_cut": {
+  "the_ruling": "User, 2026-08-04 (R3), dispatch `cc_instruction_guard_fix_and_item1d.md`: 'Re-cut the finish line at ENTRY granularity. C1 is a statement about decisions, not documents; the document cut was a convenience and now misreports the work.'",
+  "★_re_cutting_an_existing_item_is_NOT_adding_one": "Stated here so a later reader does not mistake this for a scope change. The scope rule reserves ADDING an item to the user, and says in its own words that this list is regenerated rather than maintained and that 'an item's size moves when the record moves'. R3 changes what an existing item's population IS. No item is added, none is removed, and every closing act is unchanged.",
+  "what_was_wrong_with_the_document_cut": "The four homing items took their populations from the DELEGATION partition, which classifies by the entry's HOME DOCUMENT — is that document named in a user-ratified surface, and in what form. That is the right cut for the question *does a delegation exist* and the wrong one for the question criterion C1 asks, which is per DECISION. An entry whose obligation an entry-level ruling has already discharged stayed in the count, because its home document's delegation state had not moved.",
+  "direction_1_entries_the_entry_cut_DROPS": {
+   "count": 4,
+   "ids_by_item": {
+    "Register entries whose home document is named in NO user-ratified surface": {
+     "cowork_architecture_reassessment.md": [
+      "D-282",
+      "D-283",
+      "D-284"
+     ],
+     "cowork_phase2_architecture_review.md": [
+      "D-579"
+     ]
+    }
+   },
+   "the_ruling_that_discharges_them": "D-642 (user, 2026-08-04): criterion C1 reaches every decision whose content is LIVE; a superseded entry's obligation moves to its successor and is discharged where that successor is homed. Quoted in full at its home and at `tools/audit/phase1_completion_inventory.json` → the_requirement.criteria → C1.",
+   "ground_per_entry": {
+    "D-282": "Every successor the record names is homed, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
+    "D-283": "Every successor the record names is homed, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
+    "D-284": "Every successor the record names is homed, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
+    "D-579": "Every successor the record names is homed, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register."
+   },
+   "read_off": "tools/audit/decisions/r1_superseded_reach.json → counted.ids_that_leave",
+   "discharged_but_NOT_found_in_any_item": [],
+   "what_that_field_means_if_it_is_non_empty": "The ruling discharged an entry the document cut no longer carries at all — it left the gap class by some other act. Reported rather than stopped: it is not a disagreement, it is the same entry leaving by two routes."
+  },
+  "direction_2_what_the_entry_cut_SURFACES_that_the_document_cut_cannot_carry": {
+   "the_finding": "One owed act has no register entry to hang on, so no register-derived population can carry it. R1's application records it: one supersession names its successor as an INCREMENT by its open-items row rather than as a decision by its identifier, so there is no home field to read and the act owed FIRST is a NAMING — which recorded decision carries that content — before any homing question can be put.",
+   "where_it_is_recorded": "tools/audit/decisions/r1_superseded_reach.json → ★_what_discharging_the_dispatch_ASSUMPTION_found → 3_a_successor_can_be_named_by_something_that_is_not_a_register_entry, and the entry's own row note. No identifier is nominated there and none is nominated here — the tool's own STOP forbids naming a successor the record does not.",
+   "★_it_is_NOT_added_as_an_item": "Adding an item to this list requires a USER RULING, by the scope rule's own terms, and R3 authorized a re-cut rather than an addition. It is surfaced here and left.",
+   "the_other_half_of_direction_2_checked_and_empty": "No entry-level ruling ADDS a register entry to the homing population: both rulings in force (D-642, D-644) discharge or re-route, and neither creates an obligation for an entry the gap class does not already hold. Checked rather than assumed — the re-cut's own STOP would fire if the two cuts failed to account for each other."
+  },
+  "what_the_re_cut_does_NOT_move": "No entry's home, class or status; no closing act; no gate verdict; and not the TRUE half, whose population is open-items ROWS and was never cut by document."
+ },
  "the_re_reading_of_the_clause": {
   "instruction": "Dispatch `cc_instruction_commit_and_finish_line.md`, Task 2.1: 'anything D-231's clause requires that neither half carries — read the clause again rather than reusing the earlier reading of it.'",
   "what_the_re_reading_confirms": [
@@ -78,13 +157,10 @@
    "half": "COMPLETE",
    "criterion": "C1 — every recorded decision written into its owning specification",
    "population": {
-    "entries": 94,
-    "documents": 37,
+    "entries": 79,
+    "documents": 32,
     "entry_ids_by_document": {
      "cowork_architecture_reassessment.md": [
-      "D-282",
-      "D-283",
-      "D-284",
       "D-285"
      ],
      "cowork_architecture_review_2026_07.md": [
@@ -104,13 +180,6 @@
       "D-514",
       "D-515",
       "D-516"
-     ],
-     "cowork_delta_check_dispositions.md": [
-      "D-635"
-     ],
-     "cowork_eg1_premise_checks.md": [
-      "D-608",
-      "D-609"
      ],
      "cowork_eg2_scoping.md": [
       "D-564"
@@ -144,9 +213,6 @@
       "D-582",
       "D-583"
      ],
-     "cowork_layer1_extend_design.md": [
-      "D-628"
-     ],
      "cowork_layer1_tone_collection_design.md": [
       "D-569",
       "D-570"
@@ -156,24 +222,13 @@
       "D-604"
      ],
      "cowork_layer3_reachback_design.md": [
-      "D-622",
-      "D-623",
-      "D-624"
-     ],
-     "cowork_layer5_function_methods.md": [
-      "D-584",
-      "D-585",
-      "D-586"
+      "D-622"
      ],
      "cowork_phase2_architecture_review.md": [
-      "D-579",
       "D-580"
      ],
      "cowork_phase5c_l5_build_plan.md": [
       "D-602"
-     ],
-     "cowork_phrase_boundary_methods.md": [
-      "D-607"
      ],
      "cowork_sensitive_cell_probe.md": [
       "D-532",
@@ -230,8 +285,7 @@
       "D-486"
      ],
      "docs/stage4b_design.md": [
-      "D-571",
-      "D-572"
+      "D-571"
      ],
      "docs/stage4c_cadence_key_design.md": [
       "D-616"
@@ -249,7 +303,24 @@
       "D-471",
       "D-472"
      ]
-    }
+    },
+    "★_this_is_the_ENTRY_level_cut": "The population criterion C1 still reaches, per DECISION. Entries an entry-level ruling has already discharged are subtracted, and are listed below rather than silently absent.",
+    "at_document_granularity_before_the_re_cut": {
+     "entries": 83,
+     "documents": 32,
+     "why_it_is_kept": "So the movement is visible rather than inferred (#12). It is the figure this item published before ruling R3."
+    },
+    "discharged_by_an_entry_level_ruling": {
+     "cowork_architecture_reassessment.md": [
+      "D-282",
+      "D-283",
+      "D-284"
+     ],
+     "cowork_phase2_architecture_review.md": [
+      "D-579"
+     ]
+    },
+    "entries_discharged": 4
    },
    "why_it_is_outstanding": "clause (a), the fifth home case (OI-268) — the document is named in none of the three user-ratified surfaces, so there is no delegation to grade",
    "gate": {
@@ -340,7 +411,15 @@
       "D-319",
       "D-320"
      ]
-    }
+    },
+    "★_this_is_the_ENTRY_level_cut": "The population criterion C1 still reaches, per DECISION. Entries an entry-level ruling has already discharged are subtracted, and are listed below rather than silently absent.",
+    "at_document_granularity_before_the_re_cut": {
+     "entries": 39,
+     "documents": 16,
+     "why_it_is_kept": "So the movement is visible rather than inferred (#12). It is the figure this item published before ruling R3."
+    },
+    "discharged_by_an_entry_level_ruling": {},
+    "entries_discharged": 0
    },
    "why_it_is_outstanding": "D-432, the delegation bar — the strongest naming is a bare-appended-citation, which the bar does not admit",
    "gate": {
@@ -368,7 +447,15 @@
       "D-398",
       "D-400"
      ]
-    }
+    },
+    "★_this_is_the_ENTRY_level_cut": "The population criterion C1 still reaches, per DECISION. Entries an entry-level ruling has already discharged are subtracted, and are listed below rather than silently absent.",
+    "at_document_granularity_before_the_re_cut": {
+     "entries": 4,
+     "documents": 2,
+     "why_it_is_kept": "So the movement is visible rather than inferred (#12). It is the figure this item published before ruling R3."
+    },
+    "discharged_by_an_entry_level_ruling": {},
+    "entries_discharged": 0
    },
    "why_it_is_outstanding": "D-430's delegation half — the delegation names sections and this entry's section is not among them",
    "gate": {
@@ -417,7 +504,15 @@
       "D-404",
       "D-405"
      ]
-    }
+    },
+    "★_this_is_the_ENTRY_level_cut": "The population criterion C1 still reaches, per DECISION. Entries an entry-level ruling has already discharged are subtracted, and are listed below rather than silently absent.",
+    "at_document_granularity_before_the_re_cut": {
+     "entries": 13,
+     "documents": 7,
+     "why_it_is_kept": "So the movement is visible rather than inferred (#12). It is the figure this item published before ruling R3."
+    },
+    "discharged_by_an_entry_level_ruling": {},
+    "entries_discharged": 0
    },
    "why_it_is_outstanding": "D-430's kind half — the delegation reaches this section and the section records findings; not a delegation matter",
    "gate": {
@@ -527,7 +622,7 @@
    "half": "TRUE",
    "criterion": "C3 — the specification text corrected wherever it states something false",
    "population": {
-    "rows": 37,
+    "rows": 38,
     "row_ids": [
      "OI-105",
      "OI-107",
@@ -562,6 +657,7 @@
      "OI-331",
      "OI-333",
      "OI-336",
+     "OI-341",
      "OI-45",
      "OI-57",
      "OI-90",
@@ -637,6 +733,7 @@
      "OI-141",
      "OI-224",
      "OI-249",
+     "OI-341",
      "OI-90"
     ]
    },
@@ -740,14 +837,18 @@
  "counted": {
   "items_on_the_finish_line": 9,
   "items_that_gate": 8,
-  "register_entries_owed_a_home": 161,
+  "register_entries_owed_a_home": 146,
   "register_entries_owed_a_defense": 44,
-  "open_rows_owed_on_the_true_half_that_gate": 37,
+  "open_rows_owed_on_the_true_half_that_gate": 38,
   "open_rows_owed_a_reach_verdict": 21,
   "items_with_a_closing_route_only_the_user_may_take": 3,
   "★_that_count_is_items_not_acts": "It counts items at least ONE of whose closing routes is the user's — not items the user alone can close. Items offering a user route and a session route are in it, because a reader deciding what to commission needs to see them.",
+  "register_entries_owed_a_home_at_document_granularity": 150,
+  "register_entries_discharged_by_an_entry_level_ruling": 4,
+  "★_which_of_those_two_figures_is_the_finish_line": "The entry-level one, on ruling R3. The document-granularity figure is kept beside it so the movement is visible rather than inferred (#12), and it is the figure this artifact published before the re-cut.",
   "reconciliation": {
    "homing_items_cover_the_documentation_gap_class": true,
+   "entry_cut_plus_discharged_covers_the_documentation_gap_class": true,
    "true_half_items_cover_the_wide_cut": true,
    "every_item_carries_a_closing_act": true
   }

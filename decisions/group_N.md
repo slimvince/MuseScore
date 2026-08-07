@@ -17,7 +17,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4782`
+**Home.** `ARCHITECTURE.md:4900`
 
 **Provenance.** ARCHITECTURE.md:4550-4572 (§8.2); the principle it realizes is D-070 (§2.1). No date or ratifier stated.
 
@@ -32,7 +32,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4951`
+**Home.** `ARCHITECTURE.md:5069`
 
 **Provenance.** ARCHITECTURE.md:4694-4733 (§9.1-§9.2). No date or ratifier stated.
 
@@ -47,7 +47,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4966`
+**Home.** `ARCHITECTURE.md:5084`
 
 **Provenance.** ARCHITECTURE.md:4745-4835 (§10.0), whose own status line reads 'Not yet started'. No date or ratifier stated.
 
@@ -63,7 +63,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:5125`
+**Home.** `ARCHITECTURE.md:5243`
 
 **Provenance.** ARCHITECTURE.md:4885-4908 (§10.2-§10.4), all three marked planned. No date or ratifier stated.
 
@@ -80,7 +80,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:5156`
+**Home.** `ARCHITECTURE.md:5274`
 
 **Provenance.** ARCHITECTURE.md:4910-4940 (§10.5), a planned component. No date or ratifier stated.
 
@@ -97,7 +97,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:7014`
+**Home.** `ARCHITECTURE.md:7132`
 
 **Provenance.** ARCHITECTURE.md:6780-6790 (§19.2), a planned module; full design `docs/llm_integration.md`. No date or ratifier stated.
 
@@ -115,7 +115,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:7019`
+**Home.** `ARCHITECTURE.md:7137`
 
 **Provenance.** ARCHITECTURE.md:6780-6796 (§19.2), a planned module. No date or ratifier stated.
 
@@ -133,7 +133,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:7025`
+**Home.** `ARCHITECTURE.md:7143`
 
 **Provenance.** ARCHITECTURE.md:6780-6802 (§19.2), a planned module. No date or ratifier stated.
 
@@ -151,7 +151,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:7038`
+**Home.** `ARCHITECTURE.md:7156`
 
 **Provenance.** ARCHITECTURE.md:6809-6823 (§19.3), a planned module. No date or ratifier stated.
 
@@ -168,7 +168,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:7059`
+**Home.** `ARCHITECTURE.md:7177`
 
 **Provenance.** ARCHITECTURE.md:6825-6835 (§19.4), a planned module; full argument `docs/llm_integration.md` §11. No date or ratifier stated.
 
@@ -187,7 +187,7 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `ARCHITECTURE.md:7009-7012`
+**Home.** `ARCHITECTURE.md:7127-7130`
 
 **Provenance.** Recorded in ARCHITECTURE.md §19.2, whose own section banner marks the whole LLM integration as design-phase; the design document it summarises (`docs/llm_integration.md`) carries the banner "Design phase. No code written yet." and `src/llm/` does not exist at HEAD (checked this wave). Entered by the phase-1 reads wave 1 from the full read of `docs/llm_integration.md`; the record names no ratifier and no date, and none is inferred. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 
@@ -206,7 +206,7 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `ARCHITECTURE.md:7031-7034`
+**Home.** `ARCHITECTURE.md:7149-7152`
 
 **Provenance.** Recorded in ARCHITECTURE.md §19.2 alongside the other language-model decisions, all of which the register already carries as deferred (D-139…D-143). Entered by the phase-1 reads wave 1; the record names no ratifier and no date. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
 

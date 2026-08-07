@@ -1,0 +1,70 @@
+{
+  "purpose": "A run of tools/audit/process_check.py over named dispatches or reports. Generated so a report cites this file rather than transcribing what the check found (D-431).",
+  "rules": [
+    "D-431 bare quantity",
+    "D-431 uncited code claim",
+    "D-434 missing self-check section"
+  ],
+  "files_scanned": [
+    "cc_instruction_c1_ruling_and_item1c.md"
+  ],
+  "findings_total": 7,
+  "by_file": {
+    "cc_instruction_c1_ruling_and_item1c.md": {
+      "findings": 7,
+      "rows": [
+        {
+          "file": "cc_instruction_c1_ruling_and_item1c.md",
+          "line": 64,
+          "rule": "D-431 bare quantity",
+          "detail": "2.1",
+          "sentence": "**R1's application turns on it per entry.** → **Task 2.1**, and an entry whose successor is unhomed"
+        },
+        {
+          "file": "cc_instruction_c1_ruling_and_item1c.md",
+          "line": 71,
+          "rule": "D-431 bare quantity",
+          "detail": "1.2",
+          "sentence": "**1.2** Record R1 where the C1 criteria live, quoting F1's clause rather than paraphrasing it."
+        },
+        {
+          "file": "cc_instruction_c1_ruling_and_item1c.md",
+          "line": 80,
+          "rule": "D-431 bare quantity",
+          "detail": "2.1",
+          "sentence": "**2.1 Discharge A2 per entry.** For each superseded member: name its successor, and establish"
+        },
+        {
+          "file": "cc_instruction_c1_ruling_and_item1c.md",
+          "line": 83,
+          "rule": "D-431 bare quantity",
+          "detail": "2.2",
+          "sentence": "**2.2** An entry whose successor **is homed** is **correctly homed already** — register plus the"
+        },
+        {
+          "file": "cc_instruction_c1_ruling_and_item1c.md",
+          "line": 86,
+          "rule": "D-431 bare quantity",
+          "detail": "2.3",
+          "sentence": "**2.3** An entry whose successor is **NOT homed** stays in item 1, **with its route changed to"
+        },
+        {
+          "file": "cc_instruction_c1_ruling_and_item1c.md",
+          "line": 89,
+          "rule": "D-431 bare quantity",
+          "detail": "2.4",
+          "sentence": "**2.4** Report how many entries leave, how many change route, and how many neither."
+        },
+        {
+          "file": "cc_instruction_c1_ruling_and_item1c.md",
+          "line": 126,
+          "rule": "D-431 bare quantity",
+          "detail": "four entries",
+          "sentence": "cites, A2 because Cowork read four entries of a class and R1's application turns on all of them."
+        }
+      ]
+    }
+  },
+  "clean_files": [],
+  "establishment": "tools/audit/process_check_establishment.json — the check's measured detection power and false-positive rate. Read it before reading a count here as coverage."
+}

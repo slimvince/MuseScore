@@ -1,0 +1,77 @@
+{
+  "purpose": "A run of tools/audit/process_check.py over named dispatches or reports. Generated so a report cites this file rather than transcribing what the check found (D-431).",
+  "rules": [
+    "D-431 bare quantity",
+    "D-431 uncited code claim",
+    "D-434 missing self-check section"
+  ],
+  "files_scanned": [
+    "cc_instruction_finish_line_item1b.md"
+  ],
+  "findings_total": 8,
+  "by_file": {
+    "cc_instruction_finish_line_item1b.md": {
+      "findings": 8,
+      "rows": [
+        {
+          "file": "cc_instruction_finish_line_item1b.md",
+          "line": 51,
+          "rule": "D-431 bare quantity",
+          "detail": "2.1",
+          "sentence": "Cowork has this from a session report plus its own inference. → **Task 2.1**."
+        },
+        {
+          "file": "cc_instruction_finish_line_item1b.md",
+          "line": 54,
+          "rule": "D-431 bare quantity",
+          "detail": "1.1",
+          "sentence": "user and agreed.** → **Task 1.1**: verify the ruling's own text and, **if it will not carry the"
+        },
+        {
+          "file": "cc_instruction_finish_line_item1b.md",
+          "line": 62,
+          "rule": "D-431 bare quantity",
+          "detail": "1.2",
+          "sentence": "**1.2** Apply R1 to item 1's **no-home** class: an entry whose live content is carried by a **homed**"
+        },
+        {
+          "file": "cc_instruction_finish_line_item1b.md",
+          "line": 66,
+          "rule": "D-431 bare quantity",
+          "detail": "1.3",
+          "sentence": "**1.3** Where the owning specification would benefit, note the **one-line tried-and-closed pointer**"
+        },
+        {
+          "file": "cc_instruction_finish_line_item1b.md",
+          "line": 70,
+          "rule": "D-431 bare quantity",
+          "detail": "1.4",
+          "sentence": "**1.4** Report how many entries move out of item 1 under R1, and how many remain."
+        },
+        {
+          "file": "cc_instruction_finish_line_item1b.md",
+          "line": 74,
+          "rule": "D-431 bare quantity",
+          "detail": "2.1",
+          "sentence": "**2.1** For each guard failing on this wave's or the previous wave's homings, determine from the tool"
+        },
+        {
+          "file": "cc_instruction_finish_line_item1b.md",
+          "line": 79,
+          "rule": "D-431 bare quantity",
+          "detail": "2.2",
+          "sentence": "**2.2** Move the point-in-time ones out of the live guard list, artifact preserved and marked"
+        },
+        {
+          "file": "cc_instruction_finish_line_item1b.md",
+          "line": 82,
+          "rule": "D-431 bare quantity",
+          "detail": "2.3",
+          "sentence": "**2.3** State the scaling fact plainly for the record: item 1's remaining re-homings will move more"
+        }
+      ]
+    }
+  },
+  "clean_files": [],
+  "establishment": "tools/audit/process_check_establishment.json — the check's measured detection power and false-positive rate. Read it before reading a count here as coverage."
+}

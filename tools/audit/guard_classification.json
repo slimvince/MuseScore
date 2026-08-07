@@ -15,21 +15,40 @@
   },
   "the_operational_form_of_the_test": "Can this check pass forever while the tree moves on correctly, or must it eventually fail BECAUSE the tree moved on? The second kind measures the clock, not the repository. Two corollaries the population exercised: a tool whose POPULATION is derived from the tree (the CLAUDE.md rule triage, the home classification) is live even when it fails, because its failure is a demand about today; and a tool that LOCATES its citations in the files (the phase-1w verification, the delegation bar) is live even when its artifact carries a frozen finding, because a drifted anchor is a real event.",
   "the_assumption_this_task_was_given_and_what_happened_to_it": "The dispatch declared assumption A1 — that OPEN_ITEMS.md OI-309's four failing tools are ALL point-in-time wave measurements — and said in terms that it came from filenames and a session report rather than from reading the tools, which is why R4 required the per-tool check. **A1 IS REFUTED IN PART, and the refuting member is the one OI-309 itself called 'the clearest candidate' for the historical reading**: `gen_phase1p_delegation_bar.py`. Its frozen half was already solved by reading each entry's pre-apply class rather than its current one; its live half is load-bearing (the home classifier imports its grade table, and it locates every delegation anchor in its surface, stopping on a moved or ambiguous one); and it PASSES at the committed tree. It stays. The other three of OI-309's four are point-in-time and move. One tool OUTSIDE OI-309's four also moves — OI-330's — which A1 did not cover.",
+  "★_the_2026_08_04_re_classification_of_the_read_wave_yield_FAMILY": {
+    "ordered_by": "`cc_instruction_finish_line_item1b.md`, ruling R2 — the read-wave yield artifacts are checked against R4's test before the re-homing continues. Its assumption A1 held that the three FAILING members are point-in-time measurements sitting on R4's live side.",
+    "what_happened_to_that_assumption": "CONFIRMED for all three, and the check found the family is larger than the failing set. The earlier classification put all six read-wave yield tools on the LIVE side, crediting each with one assertion: that every entry its wave names is STILL IN THE REGISTER AT THE HOME IT RECORDS, on the ground that 'an entry silently vanishing or changing home is a real defect'.",
+    "why_that_was_the_wrong_side": "CHANGING HOME IS NOT A DEFECT — it is the act phase 1's criterion C1 requires, performed under a dispatch and recorded in the register with its provenance (#12). So the check must eventually fail BECAUSE the tree moved on correctly, which is this ruling's own definition of a check that measures the clock. The tool cannot separate the two cases: its --check is whole-artifact equality, so a correctly re-homed entry and a vanished one are indistinguishable to it.",
+    "measured_rather_than_argued": "The previous wave re-homed ten entries into `ARCHITECTURE.md` (`finish_line_item1_routes.json` → `executed_this_wave`). Six of them are named by read wave 5 and four by read wave 6, and both artifacts now fail on exactly those home strings. Read wave 1 fails on the narrower cause — its entries never left `ARCHITECTURE.md` and only the LINE RANGE drifted under the same insertions. Waves 2, 3 and 4 pass, and that is a fact about which entries the ten touched, not a difference in kind.",
+    "why_the_three_that_PASS_moved_with_them": "A verdict is made on the tool's own text (#19), and their text is their siblings'. Classifying identical tools onto opposite sides would author a verdict the evidence contradicts, and would leave three known false alarms armed for the next homing wave.",
+    "no_live_coverage_is_lost": "The live half the family was credited with is asserted by three live guards that pass at the committed tree: `gen_decisions_register.py --check` (the register's own rule (d) guard — drift, quote fidelity, reference resolution), `register_lint.py`, and `reaim_home_anchors.py --check` (no register home anchor has drifted).",
+    "the_scaling_fact_this_classification_buys": "Item 1's remaining re-homings move more entries, and every entry moved breaks every frozen artifact that names it at its old home. Left live, this family would have produced a fresh permanent failure per wave for the rest of the item — the failure mode R4 exists to prevent, where a list whose failures are permanent and meaningless teaches a reader to ignore it. This is what makes the rest of item 1 affordable without accumulating failures.",
+    "what_this_does_NOT_do": "It repairs nothing and discharges nothing. The six artifacts stay on disk exactly as their waves wrote them; the registered bands and every measured yield are preserved (#12); `OPEN_ITEMS.md` OI-309 and OI-330 stay open on their own subjects."
+  },
   "counts": {
-    "tools_classified": 39,
-    "re_derives_a_live_invariant": 34,
-    "records_a_point_in_time_measurement": 4,
+    "tools_classified": 43,
+    "re_derives_a_live_invariant": 32,
+    "records_a_point_in_time_measurement": 10,
     "neither_not_a_guard": 1,
-    "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 2
+    "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 5
   },
   "tools_that_leave_the_live_guard_list": [
     "tools/audit/decisions/gen_phase1g_triage.py",
     "tools/audit/decisions/gen_phase1m_measurements.py",
     "tools/audit/decisions/gen_phase1n_reading_regime.py",
-    "tools/audit/decisions/gen_reads4_oi326_application.py"
+    "tools/audit/decisions/gen_reads1_yield.py",
+    "tools/audit/decisions/gen_reads2_yield.py",
+    "tools/audit/decisions/gen_reads3_yield.py",
+    "tools/audit/decisions/gen_reads4_oi326_application.py",
+    "tools/audit/decisions/gen_reads4_yield.py",
+    "tools/audit/decisions/gen_reads5_yield.py",
+    "tools/audit/decisions/gen_reads6_yield.py"
   ],
   "live_tools_that_fail_and_stay": [
     "tools/audit/claude_md_rule_triage.py",
+    "tools/audit/decisions/gen_home_classification.py",
+    "tools/audit/decisions/gen_live_prohibition_pointers.py",
+    "tools/audit/decisions/gen_phase1p_delegation_bar.py",
     "tools/audit/decisions/gen_phase1w_legacy_verification.py"
   ],
   "rows": [
@@ -82,10 +101,26 @@
       "state_at_the_committed_tree": "PASS"
     },
     {
+      "tool": "tools/audit/decisions/gen_finish_line_item1_routes.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_finish_line_item1_routes.py:8-17",
+      "why": "Authored 2026-08-04 in answer to the same STOP. Its population is IMPORTED from the finish-line generator and never re-listed (#6), so it shrinks as entries are homed; and it REFUSES to run if any entry has no authored route or if a route names an entry the population no longer carries — in its own words, 'so the register moving under the table is a STOP rather than a silent partial answer'. That is a demand about today, not a dated reading: the AUTHORED half is the route per entry, and the tool will not let that half go stale silently. It passes at the committed tree.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
       "tool": "tools/audit/decisions/gen_home_classification.py",
       "verdict": "re-derives-a-live-invariant",
       "evidence": "gen_home_classification.py:35-49",
       "why": "★ CLASSIFIED LIVE DESPITE FAILING. It APPLIES the criteria in force to the WHOLE current home population and writes each entry's class; `--check` re-derives both the classification and its artifact. Its STOP — home documents with no authored delegation scope — fires because the population grows as waves enter entries, which is the tool asking for the authored input it refuses to guess. That is a live demand about today's register, not a dated reading. It stays, failing.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "FAIL"
+    },
+    {
+      "tool": "tools/audit/decisions/gen_item1_rehome_blocker.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_item1_rehome_blocker.py:32-42",
+      "why": "Authored 2026-08-04 with the tool, so R4's per-tool condition was a design input. Every half of it is a demand about TODAY: the population is IMPORTED from the route table and shrinks as entries are homed; each row's blocker is re-cut from that row's own recorded reason on every run, so a reworded reason moves the verdict instead of leaving a stale one standing; and the STANDING AUTHORIZATION it compares against is located in `CLAUDE.md` BY ANCHOR and quoted at HEAD, with a STOP if it cannot be found — so a change to what a session may edit moves this artifact rather than being silently outrun by it. It stores no dated reading of anything.",
       "in_the_live_guard_list_after_this_classification": true,
       "state_at_the_committed_tree": "PASS"
     },
@@ -95,7 +130,7 @@
       "evidence": "gen_live_prohibition_pointers.py:23-27",
       "why": "Its class membership is DERIVED from the phase-1w verification artifact and its pointers are checked against the live specification sections they name, quoting each section's own words rather than a line number precisely so the citation survives insertions. A live assertion that every entry in the class still carries its pointer.",
       "in_the_live_guard_list_after_this_classification": true,
-      "state_at_the_committed_tree": "PASS"
+      "state_at_the_committed_tree": "FAIL"
     },
     {
       "tool": "tools/audit/decisions/gen_outstanding_delegations.py",
@@ -135,7 +170,7 @@
       "evidence": "gen_phase1p_delegation_bar.py:22-27, :39-49",
       "why": "★ THE CASE THAT REFUTES THE ASSUMPTION THIS TASK WAS GIVEN, and the clearest demonstration of why R4 required a per-tool check. `OPEN_ITEMS.md` OI-309 names it \"the clearest candidate\" for the historical reading, on its own docstring's words — \"THIS ARTIFACT IS A PRE-APPLY RECORD, AND IT STAYS ONE\". But the frozen half was ALREADY SOLVED, by reading each entry's `class_before_phase1q` rather than its current class; and the LIVE half is load-bearing — the FORMS table is imported by `gen_home_classification.py` to classify against the delegations that exist TODAY, and every anchor is LOCATED in its surface, with a moved, missing or ambiguous one stopping the tool. It asserts a live invariant, it PASSES at the committed tree, and it stays.",
       "in_the_live_guard_list_after_this_classification": true,
-      "state_at_the_committed_tree": "PASS"
+      "state_at_the_committed_tree": "FAIL"
     },
     {
       "tool": "tools/audit/decisions/gen_phase1q_snapshot_establishment.py",
@@ -154,28 +189,36 @@
       "state_at_the_committed_tree": "FAIL"
     },
     {
-      "tool": "tools/audit/decisions/gen_reads1_yield.py",
+      "tool": "tools/audit/decisions/gen_r1_superseded_reach.py",
       "verdict": "re-derives-a-live-invariant",
-      "evidence": "gen_reads1_yield.py:11-21",
-      "why": "Each wave's yield artifact records a measurement, but its --check asserts something LIVE and worth guarding: that every entry the wave names is STILL IN THE REGISTER AT THE HOME IT RECORDS. An entry silently vanishing or changing home is a real defect, and this is what would catch it. Its other inputs are frozen, so it can pass indefinitely — and does.",
+      "evidence": "gen_r1_superseded_reach.py:22-38",
+      "why": "Authored 2026-08-04 with the tool, so R4's per-tool condition was a design input. It IMPORTS its population from the route table rather than storing one, and re-reads the register on every run for each entry's status and each successor's home CLASS — so the HOMED verdict and the disposition move the day a successor is homed, which is exactly the event the ruling makes the owed act. Its sharpest STOP is a live demand on the record rather than on the tree's history: every AUTHORED successor must still be NAMED IN THE SUPERSEDED ENTRY'S OWN TEXT, so a session cannot nominate one the register does not name, and a reworded supersession stops the tool instead of silently keeping a verdict the record no longer supports. It re-derives and it passes.",
       "in_the_live_guard_list_after_this_classification": true,
       "state_at_the_committed_tree": "PASS"
+    },
+    {
+      "tool": "tools/audit/decisions/gen_reads1_yield.py",
+      "verdict": "records-a-point-in-time-measurement",
+      "evidence": "gen_reads1_yield.py:2-9 (its own subject line), :11-21, :23-28",
+      "why": "★ RE-CLASSIFIED 2026-08-04 (dispatch `cc_instruction_finish_line_item1b.md`, ruling R2) — THE EARLIER VERDICT PUT THIS FAMILY ON THE WRONG SIDE, and the tool's own words say so: its subject is \"READ WAVE 1's measured yield, graded against the bands registered BEFORE the reads\", a completed instalment of an out-of-sample test whose bands are frozen precisely because re-deriving them would destroy the registration (:11-21). The live half it was credited with — that every entry the wave names is still in the register AT THE HOME IT RECORDS — IS NOT A LIVE INVARIANT: phase 1's own criterion C1 OBLIGES entries to be written into their owning specification, so a check that fails when an entry's home moves must eventually fail BECAUSE the tree moved on correctly, which is this ruling's own definition of measuring the clock. It fails at HEAD for the narrower of the two reasons: both entries it names are still homed in `ARCHITECTURE.md` and only the LINE RANGE moved, drifted by the insertions the previous wave's homing act made above them. NO LIVE COVERAGE IS LOST: that every entry still exists with a resolving reference and a verbatim quote at its home is asserted by `gen_decisions_register.py --check` (the register's own rule (d) guard) and `register_lint.py`, and that no register home anchor has drifted by `reaim_home_anchors.py --check` — all three live, all three passing.",
+      "in_the_live_guard_list_after_this_classification": false,
+      "state_at_the_committed_tree": "HISTORICAL"
     },
     {
       "tool": "tools/audit/decisions/gen_reads2_yield.py",
-      "verdict": "re-derives-a-live-invariant",
-      "evidence": "gen_reads2_yield.py (the same shape as wave 1's); guard_state.json → runs",
-      "why": "Same verdict, same ground: the entries it names must still be in the register at their recorded homes, and its running read count must still derive from the regime's partition plus the earlier waves. It passes at the committed tree.",
-      "in_the_live_guard_list_after_this_classification": true,
-      "state_at_the_committed_tree": "PASS"
+      "verdict": "records-a-point-in-time-measurement",
+      "evidence": "gen_reads2_yield.py:2-8 (the same construction as wave 1's); guard_state.json → runs",
+      "why": "Same verdict and same ground as wave 1's, and the same tool by construction: an instalment of the registered out-of-sample test, with the entry homes frozen as they stood when the wave ran. It PASSES at the committed tree today — and that is a fact about WHICH entries the previous wave's ten re-homings touched, not a difference in kind. Classified with its siblings rather than left to fail at the next homing wave, because a verdict is made on the tool's own text and this tool's text is theirs.",
+      "in_the_live_guard_list_after_this_classification": false,
+      "state_at_the_committed_tree": "HISTORICAL"
     },
     {
       "tool": "tools/audit/decisions/gen_reads3_yield.py",
-      "verdict": "re-derives-a-live-invariant",
-      "evidence": "gen_reads3_yield.py (the same shape as wave 1's); guard_state.json → runs",
-      "why": "Same verdict, same ground. It passes at the committed tree.",
-      "in_the_live_guard_list_after_this_classification": true,
-      "state_at_the_committed_tree": "PASS"
+      "verdict": "records-a-point-in-time-measurement",
+      "evidence": "gen_reads3_yield.py:2-8 (the same construction as wave 1's); guard_state.json → runs",
+      "why": "Same verdict, same ground, same construction. It passes at the committed tree for the same reason wave 2's does.",
+      "in_the_live_guard_list_after_this_classification": false,
+      "state_at_the_committed_tree": "HISTORICAL"
     },
     {
       "tool": "tools/audit/decisions/gen_reads4_oi326_application.py",
@@ -187,11 +230,11 @@
     },
     {
       "tool": "tools/audit/decisions/gen_reads4_yield.py",
-      "verdict": "re-derives-a-live-invariant",
-      "evidence": "gen_reads4_yield.py (the same shape as wave 1's); guard_state.json → runs",
-      "why": "Same verdict, same ground. It passes at the committed tree.",
-      "in_the_live_guard_list_after_this_classification": true,
-      "state_at_the_committed_tree": "PASS"
+      "verdict": "records-a-point-in-time-measurement",
+      "evidence": "gen_reads4_yield.py:2-8 (the same construction as wave 1's); guard_state.json → runs",
+      "why": "Same verdict, same ground, same construction. It passes at the committed tree for the same reason wave 2's does.",
+      "in_the_live_guard_list_after_this_classification": false,
+      "state_at_the_committed_tree": "HISTORICAL"
     },
     {
       "tool": "tools/audit/decisions/gen_reads5_repack.py",
@@ -203,19 +246,19 @@
     },
     {
       "tool": "tools/audit/decisions/gen_reads5_yield.py",
-      "verdict": "re-derives-a-live-invariant",
-      "evidence": "gen_reads5_yield.py:11-15",
-      "why": "Same verdict, same ground, and it additionally reads its bands off the re-pack artifact rather than recomputing them. It passes at the committed tree.",
-      "in_the_live_guard_list_after_this_classification": true,
-      "state_at_the_committed_tree": "PASS"
+      "verdict": "records-a-point-in-time-measurement",
+      "evidence": "gen_reads5_yield.py:2-15; finish_line_item1_routes.json → executed_this_wave",
+      "why": "★ RE-CLASSIFIED with wave 1's, and this is one of the two members where the mechanism is VISIBLE rather than argued: SIX of the ten entries the previous wave re-homed into `ARCHITECTURE.md` are named by this wave, so the home strings frozen in its artifact no longer match the register — the check fails because the homing act phase 1 requires was performed. Re-deriving it would restate a historical measurement against a population that act changed, which `OPEN_ITEMS.md` OI-330 refused. NO LIVE COVERAGE IS LOST, on the same three live guards named at wave 1's verdict.",
+      "in_the_live_guard_list_after_this_classification": false,
+      "state_at_the_committed_tree": "HISTORICAL"
     },
     {
       "tool": "tools/audit/decisions/gen_reads6_yield.py",
-      "verdict": "re-derives-a-live-invariant",
-      "evidence": "gen_reads6_yield.py:14-18",
-      "why": "Same verdict and same ground as the five before it — the entries it names must still be in the register at their recorded homes — with one addition that is itself a live assertion: it DERIVES the owed remainder from the regime's partition plus every completed wave's own count, so the claim that the owed set is empty is re-checked on every run rather than recorded once.",
-      "in_the_live_guard_list_after_this_classification": true,
-      "state_at_the_committed_tree": "PASS"
+      "verdict": "records-a-point-in-time-measurement",
+      "evidence": "gen_reads6_yield.py:2-25; finish_line_item1_routes.json → executed_this_wave",
+      "why": "★ RE-CLASSIFIED with wave 1's; the other member where the mechanism is visible — FOUR of the previous wave's ten re-homed entries are named here. Its one further assertion, that the owed remainder derives from the regime's partition plus every completed wave's own count, does not make it live: every input to that derivation is frozen (a registration recorded before the reads, and each wave's own authored read list), so it cannot detect a change in the tree either — it re-computes a closed sum. NO LIVE COVERAGE IS LOST, on the same three live guards named at wave 1's verdict.",
+      "in_the_live_guard_list_after_this_classification": false,
+      "state_at_the_committed_tree": "HISTORICAL"
     },
     {
       "tool": "tools/audit/decisions/gen_true_half_reach.py",
@@ -246,6 +289,14 @@
       "verdict": "re-derives-a-live-invariant",
       "evidence": "gen_phase1_completion_inventory.py:11-26",
       "why": "It RE-DERIVES on every run: D-231's clause is located in `CLAUDE.md` by anchor string and must still be findable or the tool STOPS; every home class, defense gap and section-criterion verdict is read off the register as it stands; the open-row population and each row's gate verdict come from `OPEN_ITEMS.md` and the apparatus declaration as they stand today, and a verdict naming a row the index no longer carries open is a STOP. Nothing in it is a measurement taken at a point in time — a later wave that homes an entry or closes a row SHOULD move its output, and the check is what makes that movement visible.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
+      "tool": "tools/audit/gen_phase1_finish_line.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_phase1_finish_line.py:18-34",
+      "why": "Authored 2026-08-04 in answer to this tool's own per-tool STOP — it entered the guard population two waves ago and had never been classified. It IMPORTS both populations rather than storing them, locates D-231's clause by anchor at HEAD, and carries a STOP that is a live demand in the strongest form the population has: a population that grows WITHOUT AN ITEM TO CARRY IT stops the tool, which is what makes the list a finish line rather than a selection. It re-derives as the record moves under it, and it passes.",
       "in_the_live_guard_list_after_this_classification": true,
       "state_at_the_committed_tree": "PASS"
     },

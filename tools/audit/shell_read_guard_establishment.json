@@ -7,9 +7,9 @@
     "disableAllHooks and managed allowManagedHooksOnly switch it off. A guard, not a boundary."
   ],
   "sanctioned": {
-    "total": 18,
-    "false_denies": 0,
-    "false_deny_rate": 0.0,
+    "total": 31,
+    "false_denies": 6,
+    "false_deny_rate": 0.194,
     "rows": [
       {
         "command": "python tools/audit/decisions/gen_phase1p_delegation_bar.py",
@@ -100,12 +100,77 @@
         "command": "echo 'denying `git status` costs nothing now' > /tmp/note.txt",
         "denied": false,
         "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "grep -nE \"alpha|beta\" /tmp/scratch.txt",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "grep -n \"D-642\\|D-643\" /tmp/reaim_1r.txt",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "tail \"$SC/guards1.txt\"",
+        "denied": true,
+        "reason": "`tail` is aimed at a path inside this repository (\"$SC/guards1.txt\"). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "cat \"$SC/tasks/abc.output\" 2>/dev/null | tail -20",
+        "denied": true,
+        "reason": "`cat` is aimed at a path inside this repository (\"$SC/tasks/abc.output\", 2>/dev/null). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "python - <<'PYEOF'\nhead = old[:k]\nPYEOF",
+        "denied": true,
+        "reason": "`head` is aimed at a path inside this repository (=, old[:k]). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "head -20 /tmp/out.txt 2>/dev/null",
+        "denied": true,
+        "reason": "`head` is aimed at a path inside this repository (2>/dev/null). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "tail -5 /tmp/out.txt 2>&1",
+        "denied": true,
+        "reason": "`tail` is aimed at a path inside this repository (2>, &, 1). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "cat /tmp/a.txt >> /tmp/b.txt",
+        "denied": true,
+        "reason": "`cat` is aimed at a path inside this repository (>>). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "git cat-file -p 4a9c0d4827",
+        "denied": false,
+        "reason": "reads a git object by explicit hash — the sanctioned exemption"
+      },
+      {
+        "command": "git show 4a9c0d4827:cowork_audit_protocol.md",
+        "denied": false,
+        "reason": "reads a git object by explicit hash — the sanctioned exemption"
+      },
+      {
+        "command": "python tools/audit/gen_guard_state.py --check",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "cd C:\\s\\MS\\ninja_build_rel && ./composing_tests.exe",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "python tools/a8_rebaseline_measure.py --out-dir /tmp/cand",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
       }
     ]
   },
   "forbidden": {
-    "total": 14,
-    "denied": 14,
+    "total": 23,
+    "denied": 23,
     "deny_rate": 1.0,
     "rows": [
       {
@@ -177,6 +242,51 @@
         "command": "python tools/audit/changed_paths.py --staged && head -50 ARCHITECTURE.md",
         "denied": true,
         "reason": "`head` is aimed at a path inside this repository (ARCHITECTURE.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "grep -n \"alpha|beta\" src/composing/analysis/key/keyresolver.cpp",
+        "denied": true,
+        "reason": "`grep` is aimed at a path inside this repository (src/composing/analysis/key/keyresolver.cpp). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "grep -nE \"summaris|recognis\" tools/audit/gen_guard_state.py cowork_audit_protocol.md",
+        "denied": true,
+        "reason": "`grep` is aimed at a path inside this repository (tools/audit/gen_guard_state.py, cowork_audit_protocol.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "grep -nEi \"carrier|successors s\" tools/audit/gen_phase1_completion_inventory.py",
+        "denied": true,
+        "reason": "`grep` is aimed at a path inside this repository (tools/audit/gen_phase1_completion_inventory.py). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "grep -n \"carrier\\|carries the live content\" STATUS.md",
+        "denied": true,
+        "reason": "`grep` is aimed at a path inside this repository (STATUS.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "grep -n \"D-642\\|D-643\" DECISIONS.md",
+        "denied": true,
+        "reason": "`grep` is aimed at a path inside this repository (DECISIONS.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "grep -n \"a|b\" ARCHITECTURE.md | head -5",
+        "denied": true,
+        "reason": "`grep` is aimed at a path inside this repository (ARCHITECTURE.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "python tools/audit/changed_paths.py --staged | grep -n \"a|b\" ARCHITECTURE.md",
+        "denied": true,
+        "reason": "`grep` is aimed at a path inside this repository (ARCHITECTURE.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "bash <<'SH'\ncat CLAUDE.md\nSH",
+        "denied": true,
+        "reason": "`cat` is aimed at a path inside this repository (CLAUDE.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "grep -n \"pattern\" > /tmp/hits.txt ARCHITECTURE.md",
+        "denied": true,
+        "reason": "`grep` is aimed at a path inside this repository (>, ARCHITECTURE.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
       }
     ]
   },
@@ -190,16 +300,62 @@
       "what_changed": "A segment is split with `shlex` in NON-posix mode, so a quoted argument stays one token. Non-posix specifically: posix mode would eat the backslashes in a Windows path such as `C:\\s\\MS`. A malformed command falls back to `.split()` rather than raising.",
       "the_false_deny_it_removes": "`grep -c \"^  D-\" /tmp/reaim_1r.txt` was denied: `.split()` broke the quoted pattern into two tokens and read the fragment `D-\"` as a repository path. Measured live 2026-08-03 and recorded at `OPEN_ITEMS.md` OI-292.",
       "false_denies_on_the_sanctioned_set": {
-        "with_the_fix": 0,
-        "without_it": 1,
-        "of": 18
+        "with_the_fix": 6,
+        "without_it": 7,
+        "of": 31,
+        "read_this_as": "`without_it` is the guard with NEITHER the 2026-08-03 tokenizer nor the 2026-08-04 segmentation — the state before this line of maintenance began. It is measured on the corpus as it stands today, so it is not the figure phase 1s published against the corpus of that date."
       },
       "detection_on_the_forbidden_set": {
-        "with_the_fix": 14,
-        "without_it": 14,
-        "of": 14
+        "with_the_fix": 23,
+        "without_it": 16,
+        "of": 23
       },
       "the_revert_condition": "The dispatch says: if the fix raises false denies elsewhere, revert and report. Compare the two figures above — a rise is the condition, and it is published either way rather than inferred."
     }
+  },
+  "★_the_2026_08_04_segmentation_fix_and_the_corpus_it_is_measured_on": {
+    "the_ruling": "User, 2026-08-04 (R1, `cc_instruction_guard_fix_and_item1d.md`): fix the shell-read guard, and EXTEND ITS ESTABLISHMENT CORPUS WITH THE SHAPES THAT DEFEAT IT BEFORE ANY RATE IS REPUBLISHED.",
+    "why_the_corpus_came_first": "The ruling states its own reason: re-establishing against the same corpus would repeat the error being fixed. The committed `--establish --check` passed PRECISELY BECAUSE the corpus omitted the defeating shape, so the published false-negative rate was not a bound on the true one. A measured rate is only as wide as the corpus it was measured on (#19).",
+    "what_changed": "The ORDER, not the pattern. The whole command is lexed ONCE with the shell's list and pipeline operators recognised as tokens in their own right, and the segments are cut at those TOKENS. Previously the command was cut into segments over RAW TEXT and each segment was tokenized afterwards, so a `|` inside a quoted pattern was read as a pipeline separator. The punctuation set is exactly the characters the superseded regex cut on, so the only behaviour that moves is where the segment boundaries fall.",
+    "the_miss_it_removes": "`grep -n \"alpha|beta\" src/composing/analysis/key/keyresolver.cpp` was ADMITTED while the identical command without the pipe was DENIED. Found by the guard denying one command after admitting four of the same kind, and MEASURED at this module's own decision function over the commands the preceding session actually issued — never reasoned from the source (`OPEN_ITEMS.md` OI-343).",
+    "★_what_the_PREVIOUS_published_rates_did_and_did_not_bound": "The rates published before 2026-08-04 are NOT WITHDRAWN AS WRONG (#12): they were correct for the corpus they were measured on, and they re-derived exactly. What they did not do is bound the guard's behaviour on the pipe-in-a-quoted-argument shape, because that shape was not in either corpus. They are recorded here as not bounding what they appeared to bound, which is a different statement from being incorrect.",
+    "detection_on_the_forbidden_set_SAME_corpus": {
+      "with_the_fix": 23,
+      "without_it": 16,
+      "of": 23,
+      "what_the_fix_newly_catches": [
+        "grep -n \"D-642\\|D-643\" DECISIONS.md",
+        "grep -n \"alpha|beta\" src/composing/analysis/key/keyresolver.cpp",
+        "grep -n \"a|b\" ARCHITECTURE.md | head -5",
+        "grep -n \"carrier\\|carries the live content\" STATUS.md",
+        "grep -nE \"summaris|recognis\" tools/audit/gen_guard_state.py cowork_audit_protocol.md",
+        "grep -nEi \"carrier|successors s\" tools/audit/gen_phase1_completion_inventory.py",
+        "python tools/audit/changed_paths.py --staged | grep -n \"a|b\" ARCHITECTURE.md"
+      ],
+      "what_is_STILL_missed_and_is_not_this_fix_s_subject": []
+    },
+    "false_denies_on_the_sanctioned_set_SAME_corpus": {
+      "with_the_fix": 6,
+      "without_it": 6,
+      "of": 31,
+      "the_revert_condition": "The dispatch says: if the fix raises false denials materially, revert and report — a guard that blocks correct commands gets disarmed, which is worse than one with a known gap. Both figures are measured on the SAME extended corpus, so the comparison is of the fix and not of the corpus widening.",
+      "the_false_denies_that_remain": [
+        "tail \"$SC/guards1.txt\"",
+        "cat \"$SC/tasks/abc.output\" 2>/dev/null | tail -20",
+        "python - <<'PYEOF'\nhead = old[:k]\nPYEOF",
+        "head -20 /tmp/out.txt 2>/dev/null",
+        "tail -5 /tmp/out.txt 2>&1",
+        "cat /tmp/a.txt >> /tmp/b.txt"
+      ],
+      "what_they_are": "Every one is a shape `OPEN_ITEMS.md` OI-300 already records as a MEASURED false deny owed a fix — an unexpanded shell variable pointing outside the tree (shape 2), a redirection token taken for the aimed path (shape 5), and a heredoc BODY line that is not a command at all (shape 4). They are in the corpus so the published rate REPORTS them; none is fixed here, because each is a further behaviour change that owes its own establishment, and D-436 makes changing a mechanism the user's ruling rather than a session's."
+    },
+    "what_this_fix_deliberately_does_NOT_touch": [
+      "OI-300 shape (1) — `ls <repository path>`, an existence read outside the TEXT-UTILITY set the guard covers.",
+      "OI-300 shape (2) — an unexpanded shell variable read literally.",
+      "OI-300 shape (3) — a hashless `git diff` on a working-tree path.",
+      "OI-300 shape (4) — a heredoc body read as though it were a command.",
+      "OI-300 shape (5) — a redirection token classified as the aimed path.",
+      "Each changes WHAT the guard denies rather than WHERE it cuts the command, and each owes its own measured rate in both directions before it lands (D-436)."
+    ]
   }
 }

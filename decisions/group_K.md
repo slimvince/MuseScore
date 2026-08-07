@@ -47,7 +47,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3510-3511`
+**Home.** `ARCHITECTURE.md:3617-3618`
 
 **Provenance.** ARCHITECTURE.md:3363-3365, consistent with :251-254
 
@@ -157,7 +157,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:6983`
+**Home.** `ARCHITECTURE.md:7101`
 
 **Provenance.** ARCHITECTURE.md:6754-6759 (§18.4); the standing principle is CLAUDE.md #10 (D-174). No date or ratifier stated.
 

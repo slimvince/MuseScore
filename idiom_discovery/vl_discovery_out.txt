@@ -1,0 +1,270 @@
+  +dcml ABC                            classical  chamber      70  (3s)
+  +dcml bach_chorales                  baroque    chorale     361  (6s)
+  +dcml bach_en_fr_suites              baroque    keyboard     89  (7s)
+  +dcml bach_solo                      baroque    keyboard     68  (8s)
+  +dcml bartok_bagatelles              modern     keyboard     14  (8s)
+  +dcml beethoven_piano_sonatas        classical  keyboard     91  (10s)
+  +dcml c_schumann_lieder              romantic   vocal        12  (11s)
+  +dcml chopin_mazurkas                romantic   keyboard     56  (11s)
+  +dcml corelli                        baroque    chamber     149  (12s)
+  +dcml couperin_clavecin              baroque    keyboard      9  (13s)
+  +dcml couperin_concerts              baroque    chamber      91  (13s)
+  +dcml cpe_bach_keyboard              classical  keyboard     66  (14s)
+  +dcml debussy_suite_bergamasque      modern     keyboard      4  (14s)
+  +dcml dvorak_silhouettes             romantic   keyboard     12  (15s)
+  +dcml frescobaldi_fiori_musicali     renaissance keyboard     47  (15s)
+  +dcml grieg_lyric_pieces             romantic   keyboard     66  (16s)
+  +dcml handel_keyboard                baroque    keyboard      6  (16s)
+  +dcml jc_bach_sonatas                classical  keyboard     29  (16s)
+  +dcml kleine_geistliche_konzerte     renaissance vocal        56  (17s)
+  +dcml kozeluh_sonatas                classical  keyboard     49  (18s)
+  +dcml liszt_pelerinage               romantic   keyboard     19  (19s)
+  +dcml mahler_kindertotenlieder       romantic   vocal         5  (19s)
+  +dcml medtner_tales                  romantic   keyboard     19  (19s)
+  +dcml mendelssohn_quartets           romantic   chamber      24  (20s)
+  +dcml monteverdi_madrigals           renaissance vocal        19  (20s)
+  +dcml mozart_piano_sonatas           classical  keyboard     54  (22s)
+  +dcml pergolesi_stabat_mater         baroque    vocal        12  (22s)
+  +dcml peri_euridice                  renaissance vocal         6  (22s)
+  +dcml pleyel_quartets                classical  chamber       6  (22s)
+  +dcml poulenc_mouvements_perpetuels  modern     keyboard      3  (22s)
+  +dcml rachmaninoff_piano             romantic   keyboard     22  (22s)
+  +dcml ravel_piano                    modern     keyboard      5  (22s)
+  +dcml scarlatti_sonatas              classical  keyboard     69  (23s)
+  +dcml schubert_winterreise           romantic   vocal        24  (24s)
+  +dcml schulhoff_suite_dansante_en_jazz modern     keyboard      6  (24s)
+  +dcml schumann_kinderszenen          romantic   keyboard     13  (24s)
+  +dcml schumann_liederkreis           romantic   vocal        12  (24s)
+  +dcml sweelinck_keyboard             renaissance keyboard      1  (24s)
+  +dcml tchaikovsky_seasons            romantic   keyboard     12  (24s)
+  +dcml wagner_overtures               romantic   orchestral    2  (24s)
+  +dcml wf_bach_sonatas                baroque    keyboard      9  (24s)
+  +m21_chorale (full)                               368  (48s)
+  +curated steely_dan                 pop          22  (58s)
+  +curated piazzolla                  tango         6  (60s)
+  +curated hiromi                     jazz         19  (67s)
+TOTAL 2102 records in 67s (cached -> C:\Users\vince\AppData\Local\Temp\vl_records.pkl)
+
+=== per-source coverage (view-usable counts) ===
+  ABC                            pieces=  70  A=  70  B=  70
+  bach_chorales                  pieces= 361  A= 361  B= 361
+  bach_en_fr_suites              pieces=  89  A=  89  B=  89
+  bach_solo                      pieces=  68  A=  68  B=  44
+  bartok_bagatelles              pieces=  14  A=  14  B=  14
+  beethoven_piano_sonatas        pieces=  91  A=  91  B=  91
+  c_schumann_lieder              pieces=  12  A=  12  B=  12
+  chopin_mazurkas                pieces=  56  A=  56  B=  56
+  corelli                        pieces= 149  A= 149  B= 149
+  couperin_clavecin              pieces=   9  A=   9  B=   9
+  couperin_concerts              pieces=  91  A=  91  B=  91
+  cpe_bach_keyboard              pieces=  66  A=  66  B=  66
+  debussy_suite_bergamasque      pieces=   4  A=   4  B=   4
+  dvorak_silhouettes             pieces=  12  A=  12  B=  12
+  frescobaldi_fiori_musicali     pieces=  47  A=  47  B=  47
+  grieg_lyric_pieces             pieces=  66  A=  66  B=  66
+  handel_keyboard                pieces=   6  A=   6  B=   6
+  hiromi                         pieces=  19  A=  19  B=  19
+  jc_bach_sonatas                pieces=  29  A=  29  B=  29
+  kleine_geistliche_konzerte     pieces=  56  A=  56  B=  56
+  kozeluh_sonatas                pieces=  49  A=  49  B=  49
+  liszt_pelerinage               pieces=  19  A=  19  B=  19
+  m21_chorale                    pieces= 368  A= 368  B= 368
+  mahler_kindertotenlieder       pieces=   5  A=   5  B=   5
+  medtner_tales                  pieces=  19  A=  19  B=  19
+  mendelssohn_quartets           pieces=  24  A=  24  B=  24
+  monteverdi_madrigals           pieces=  19  A=  19  B=  19
+  mozart_piano_sonatas           pieces=  54  A=  54  B=  54
+  pergolesi_stabat_mater         pieces=  12  A=  12  B=  12
+  peri_euridice                  pieces=   6  A=   6  B=   6
+  piazzolla                      pieces=   6  A=   6  B=   6
+  pleyel_quartets                pieces=   6  A=   6  B=   6
+  poulenc_mouvements_perpetuels  pieces=   3  A=   3  B=   3
+  rachmaninoff_piano             pieces=  22  A=  22  B=  22
+  ravel_piano                    pieces=   5  A=   5  B=   5
+  scarlatti_sonatas              pieces=  69  A=  69  B=  69
+  schubert_winterreise           pieces=  24  A=  24  B=  24
+  schulhoff_suite_dansante_en_jazz pieces=   6  A=   6  B=   6
+  schumann_kinderszenen          pieces=  13  A=  13  B=  13
+  schumann_liederkreis           pieces=  12  A=  12  B=  12
+  steely_dan                     pieces=  22  A=  22  B=  22
+  sweelinck_keyboard             pieces=   1  A=   1  B=   1
+  tchaikovsky_seasons            pieces=  12  A=  12  B=  12
+  wagner_overtures               pieces=   2  A=   2  B=   2
+  wf_bach_sonatas                pieces=   9  A=   9  B=   9
+  TOTAL sources=45 pieces=2102
+
+=== pilot replication (chorale vs keyboard-quartet subset, View A) ===
+  full chorale(368) vs keyboard/quartet(193): VL-cluster ARI = 0.821
+    chorale   step(1-2)=64% leap(>2)=21% repeat=15%
+    keyboard  step(1-2)=40% leap(>2)=49% repeat=11%
+
+=== stability — view A  (ARI vs texture ; self-stability across 5 seeds) ===
+  cap    K   texture-ARI mean±sd    source-ARI    self-stab
+  --- cap=40  (n=992 pieces) ---
+        2   0.141 ± 0.001         0.043        0.998
+        3   0.179 ± 0.002         0.060        0.992
+        4   0.154 ± 0.000         0.086        0.996
+        5   0.129 ± 0.002         0.090        0.974
+        6   0.122 ± 0.006         0.094        0.807
+        7   0.120 ± 0.004         0.100        0.958
+        8   0.121 ± 0.005         0.105        0.882
+  --- cap=80  (n=1433 pieces) ---
+        2   0.157 ± 0.001         0.052        0.997
+        3   0.142 ± 0.002         0.076        0.980
+        4   0.155 ± 0.001         0.096        0.985
+        5   0.145 ± 0.004         0.102        0.877
+        6   0.128 ± 0.003         0.111        0.947
+        7   0.136 ± 0.001         0.116        0.979
+        8   0.138 ± 0.001         0.117        0.968
+  --- cap=150  (n=1673 pieces) ---
+        2   0.165 ± 0.000         0.063        1.000
+        3   0.184 ± 0.000         0.097        1.000
+        4   0.179 ± 0.000         0.115        0.993
+        5   0.195 ± 0.000         0.136        1.000
+        6   0.167 ± 0.001         0.145        0.976
+        7   0.177 ± 0.000         0.154        0.995
+        8   0.161 ± 0.000         0.135        0.986
+
+=== stability — view B  (ARI vs texture ; self-stability across 5 seeds) ===
+  cap    K   texture-ARI mean±sd    source-ARI    self-stab
+  --- cap=40  (n=979 pieces) ---
+        2   0.367 ± 0.000         0.027        1.000
+        3   0.384 ± 0.000         0.043        1.000
+        4   0.295 ± 0.001         0.053        0.997
+        5   0.289 ± 0.006         0.055        0.924
+        6   0.266 ± 0.002         0.054        0.977
+        7   0.257 ± 0.019         0.054        0.821
+        8   0.190 ± 0.003         0.062        0.881
+  --- cap=80  (n=1409 pieces) ---
+        2   0.383 ± 0.000         0.037        1.000
+        3   0.418 ± 0.000         0.061        1.000
+        4   0.321 ± 0.001         0.072        0.990
+        5   0.292 ± 0.001         0.076        0.993
+        6   0.295 ± 0.003         0.075        0.968
+        7   0.294 ± 0.001         0.077        0.987
+        8   0.212 ± 0.001         0.091        0.945
+  --- cap=150  (n=1649 pieces) ---
+        2   0.403 ± 0.000         0.064        1.000
+        3   0.458 ± 0.001         0.084        0.982
+        4   0.372 ± 0.001         0.097        0.992
+        5   0.363 ± 0.009         0.116        0.927
+        6   0.323 ± 0.000         0.105        0.993
+        7   0.282 ± 0.021         0.116        0.821
+        8   0.275 ± 0.002         0.117        0.928
+
+=== stability — view AB  (ARI vs texture ; self-stability across 5 seeds) ===
+  cap    K   texture-ARI mean±sd    source-ARI    self-stab
+  --- cap=40  (n=979 pieces) ---
+        2   0.204 ± 0.000         0.047        1.000
+        3   0.205 ± 0.000         0.064        0.994
+        4   0.172 ± 0.000         0.092        1.000
+        5   0.210 ± 0.000         0.104        1.000
+        6   0.236 ± 0.001         0.113        0.971
+        7   0.192 ± 0.002         0.118        0.981
+        8   0.182 ± 0.002         0.127        0.957
+  --- cap=80  (n=1409 pieces) ---
+        2   0.222 ± 0.000         0.058        0.997
+        3   0.231 ± 0.000         0.083        0.999
+        4   0.184 ± 0.000         0.105        0.995
+        5   0.230 ± 0.000         0.129        0.996
+        6   0.257 ± 0.002         0.138        0.985
+        7   0.212 ± 0.000         0.147        1.000
+        8   0.200 ± 0.001         0.155        0.917
+  --- cap=150  (n=1649 pieces) ---
+        2   0.254 ± 0.000         0.073        1.000
+        3   0.267 ± 0.000         0.112        0.997
+        4   0.227 ± 0.001         0.139        0.991
+        5   0.263 ± 0.000         0.167        1.000
+        6   0.302 ± 0.002         0.195        0.978
+        7   0.264 ± 0.001         0.213        0.970
+        8   0.248 ± 0.002         0.198        0.975
+
+=== stability — view ABz  (ARI vs texture ; self-stability across 5 seeds) ===
+  cap    K   texture-ARI mean±sd    source-ARI    self-stab
+  --- cap=40  (n=979 pieces) ---
+        2   0.233 ± 0.000         0.048        1.000
+        3   0.278 ± 0.007         0.059        0.965
+        4   0.208 ± 0.001         0.089        0.988
+        5   0.221 ± 0.000         0.101        0.997
+        6   0.181 ± 0.003         0.111        0.968
+        7   0.165 ± 0.009         0.114        0.850
+        8   0.187 ± 0.016         0.134        0.778
+  --- cap=80  (n=1409 pieces) ---
+        2   0.248 ± 0.000         0.060        1.000
+        3   0.308 ± 0.000         0.084        0.996
+        4   0.258 ± 0.000         0.104        0.992
+        5   0.240 ± 0.001         0.128        0.972
+        6   0.190 ± 0.002         0.141        0.919
+        7   0.213 ± 0.004         0.156        0.883
+        8   0.175 ± 0.005         0.166        0.871
+  --- cap=150  (n=1649 pieces) ---
+        2   0.252 ± 0.000         0.073        1.000
+        3   0.333 ± 0.000         0.117        0.999
+        4   0.272 ± 0.010         0.134        0.930
+        5   0.268 ± 0.001         0.167        0.989
+        6   0.298 ± 0.001         0.194        0.982
+        7   0.266 ± 0.000         0.213        0.951
+        8   0.228 ± 0.002         0.230        0.939
+
+=== confound gate — view A, K=4, cap=80 (n=1433) : ARI/AMI of clusters vs each covariate ===
+  source      ARI=+0.096  AMI=+0.284
+  texture     ARI=+0.154  AMI=+0.229
+  era         ARI=+0.285  AMI=+0.291
+  voice-count  ARI=+0.046  AMI=+0.051
+  piece-length  ARI=+0.131  AMI=+0.135
+
+=== confound gate — view B, K=4, cap=80 (n=1409) : ARI/AMI of clusters vs each covariate ===
+  source      ARI=+0.073  AMI=+0.232
+  texture     ARI=+0.321  AMI=+0.314
+  era         ARI=+0.133  AMI=+0.169
+  voice-count  ARI=+0.037  AMI=+0.086
+  piece-length  ARI=+0.091  AMI=+0.121
+
+=== confound gate — view AB, K=4, cap=80 (n=1409) : ARI/AMI of clusters vs each covariate ===
+  source      ARI=+0.105  AMI=+0.304
+  texture     ARI=+0.184  AMI=+0.268
+  era         ARI=+0.264  AMI=+0.310
+  voice-count  ARI=+0.034  AMI=+0.066
+  piece-length  ARI=+0.120  AMI=+0.147
+
+=== idiom table — view AB, K=4, cap=80 ===
+  c0 n=360  texture{keyboard:154 chamber:114 vocal:67 arrangement:20}
+       sources{ABC:53 bach_en_fr_suites:50 kleine_geistliche_konzerte:39 frescobaldi_fiori_musicali:35}
+       elevated: step(+0.08) repeat(+0.07) P|iv|=0(+0.07) P|iv|=2(+0.05) | low: leap(-0.15) P|iv|>=12(-0.04)
+  c1 n=329  texture{keyboard:280 vocal:42 arrangement:5 chamber:1}
+       sources{beethoven_piano_sonatas:49 grieg_lyric_pieces:49 chopin_mazurkas:37 schubert_winterreise:19}
+       elevated: leap(+0.28) oblique(+0.08) P|iv|>=12(+0.07) P|iv|=3(+0.04) | low: step(-0.23) P|iv|=2(-0.14)
+  c2 n=395  texture{keyboard:325 chamber:27 arrangement:22 vocal:20}
+       sources{mozart_piano_sonatas:49 scarlatti_sonatas:45 cpe_bach_keyboard:42 kozeluh_sonatas:34}
+       elevated: oblique(+0.10) leap(+0.08) P|iv|=3(+0.03) P|iv|=4(+0.01) | low: step(-0.05) contrary(-0.05)
+  c3 n=325  texture{chorale:155 chamber:118 keyboard:35 vocal:17}
+       sources{m21_chorale:79 bach_chorales:76 couperin_concerts:58 corelli:56}
+       elevated: step(+0.21) P|iv|=2(+0.14) contrary(+0.11) similar(+0.08) | low: oblique(-0.23) leap(-0.21)
+
+=== idiom table — view A, K=4, cap=80 ===
+  c0 n=354  texture{keyboard:302 vocal:44 arrangement:6 chamber:1}
+       sources{beethoven_piano_sonatas:53 grieg_lyric_pieces:51 chopin_mazurkas:39 schubert_winterreise:20}
+       elevated: leap(+0.28) P|iv|>=12(+0.07) P|iv|=3(+0.04) P|iv|=4(+0.04) | low: step(-0.23) P|iv|=2(-0.14)
+  c1 n=455  texture{chorale:150 keyboard:150 chamber:129 vocal:26}
+       sources{m21_chorale:76 bach_chorales:74 couperin_concerts:72 bach_en_fr_suites:52}
+       elevated: step(+0.21) P|iv|=2(+0.14) P|iv|=1(+0.08) repeat(+-0.00) | low: leap(-0.21) P|iv|=3(-0.05)
+  c2 n=214  texture{chamber:83 vocal:59 keyboard:35 arrangement:27}
+       sources{ABC:50 kleine_geistliche_konzerte:33 steely_dan:18 mendelssohn_quartets:15}
+       elevated: repeat(+0.15) P|iv|=0(+0.15) P|iv|=1(+0.00) P|iv|=11(+-0.00) | low: leap(-0.14) P|iv|>=12(-0.03)
+  c3 n=410  texture{keyboard:331 chamber:47 vocal:17 arrangement:14}
+       sources{scarlatti_sonatas:51 mozart_piano_sonatas:43 cpe_bach_keyboard:38 bach_solo:36}
+       elevated: leap(+0.07) P|iv|=3(+0.03) P|iv|=4(+0.02) P|iv|>=12(+0.01) | low: step(-0.03) P|iv|=0(-0.03)
+
+=== idiom table — view B, K=4, cap=80 ===
+  c0 n=260  texture{chamber:134 vocal:57 keyboard:47 chorale:20}
+       sources{corelli:46 ABC:44 kleine_geistliche_konzerte:36 couperin_concerts:23}
+       elevated: contrary(+0.04) parallel(+0.04) similar(+0.04) oblique(+-0.12) | low: oblique(-0.12) similar(0.04)
+  c1 n=232  texture{chorale:140 chamber:65 keyboard:22 vocal:5}
+       sources{m21_chorale:71 bach_chorales:69 couperin_concerts:34 corelli:30}
+       elevated: contrary(+0.14) similar(+0.10) parallel(+0.04) oblique(+-0.28) | low: oblique(-0.28) parallel(0.04)
+  c2 n=553  texture{keyboard:494 vocal:33 arrangement:15 chamber:9}
+       sources{beethoven_piano_sonatas:63 cpe_bach_keyboard:59 mozart_piano_sonatas:47 kozeluh_sonatas:43}
+       elevated: oblique(+0.15) parallel(+-0.03) similar(+-0.05) contrary(+-0.07) | low: contrary(-0.07) similar(-0.05)
+  c3 n=364  texture{keyboard:231 chamber:52 vocal:51 arrangement:30}
+       sources{frescobaldi_fiori_musicali:42 grieg_lyric_pieces:28 chopin_mazurkas:27 ABC:22}
+       elevated: oblique(+0.04) parallel(+-0.01) similar(+-0.01) contrary(+-0.02) | low: contrary(-0.02) similar(-0.01)

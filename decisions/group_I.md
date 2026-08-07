@@ -122,7 +122,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1728`
+**Home.** `ARCHITECTURE.md:1835`
 
 **Provenance.** ARCHITECTURE.md:1595-1607, restated at :2967-2978
 
@@ -136,7 +136,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1562`
+**Home.** `ARCHITECTURE.md:1669`
 
 **Provenance.** ARCHITECTURE.md:1439-1447
 
@@ -442,12 +442,14 @@
 
 ### D-623 — A selection-aware capability is a PARAMETER on the one orchestrator, never a sibling — the capability must not duplicate the orchestration
 
-> **Phase-3 scope (user-ratified, option A):** build reach-back **as a tested capability** — a **selection-aware
-> orchestration path** (build over the selection → slice → decode → reach-back loop → output-filter) — with the
-> **production `analyzeRegions` left untouched at whole-score**, so the build is **byte-identical on every gate** and the
-> new behaviour is exercised only by partial-selection fixtures. The capability must not **duplicate** the orchestration
-> (unification): either a parameter on `analyzeRegions` defaulting to whole-score (production path unchanged) or a thin
-> sibling that shares the build/slice/decode calls — the build decides, gated on byte-identity + the unification ledger.
+> **A selection-aware capability is a PARAMETER on the one orchestrator, never a sibling (D-623;
+> re-homed into this specification 2026-08-04, from the same document as D-624).** The capability was built as an option on the existing
+> driver rather than as a second driver beside it, so there remains **one** path that builds the note
+> model, slices it and decodes — the seam specified below. The option is off by default, so shipped
+> behaviour and every measurement are unchanged. *Why:* it is one-path-per-concern applied to
+> orchestration — a second driver would be a second place where build, slice and decode are sequenced,
+> and the two would drift. Both admissible forms were stated, and the build's choice was gated on
+> byte-identity plus an explicit unification ledger, so the resolution is evidenced rather than asserted.
 
 **In plain words.** A new way of driving the analysis over part of a score was built as an option on the existing driver rather than as a second driver beside it, so there is still one path that builds the note model, cuts it into slices and decodes them. The option is off by default, so the shipped behaviour and every measurement are unchanged.
 
@@ -455,9 +457,12 @@
 
 **Status.** LIVE · date not stated · ratified by user
 
-**Home.** `cowork_layer3_reachback_design.md:29-34`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:1421-1428`
 
-**Home section.** **§0** — `## 0. CORRECTION after §7 verification (production is whole-score today — read this first)` (heading at line 16). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** `cowork_layer3_reachback_design.md` §0, the Layer-3 reach-back detail design. Read in full by READ WAVE 6, 2026-08-04. The scope is marked *user-ratified, option A* in the record; the document's own status header records the resolution as the parameter form — `AnalyzeRegionsOptions::reachBack`, default false — and states that unification is thereby preserved. Confirmed at the code: `src/composing/analysis/region/regionanalyzer.cpp:660` gates the whole loop on `opts.reachBack.enabled`. The record states no date for the ratification.
+**Provenance.** ★ RE-HOMED 2026-08-04 (CC, dispatch `cc_instruction_finish_line_item1.md`, Task 3.3, ruling R3): written into the OWNING LAYER SPECIFICATION in that section's own voice, with its defense. Register rule (e) prefers this route in terms, and D-231's purposive clause (criterion C4) is why it is preferred over a delegation: at completion the specifications must suffice to measure conformance against WITHOUT consulting the register, and a decision reachable only by following a pointer satisfies C1's letter and defeats C4. The classification that selected this entry, with its reason and the whole 94-entry population, is `tools/audit/decisions/finish_line_item1_routes.json`. Its former home class was `gap` — a decision governing a layer but not findable from that layer's section — which is precisely what the re-homing discharges; the field is cleared because a layer-specification home is not a non-specification home. **THE FORMER HOME, CLASS AND VERBATIM, PRESERVED (#12)** — former home `cowork_layer3_reachback_design.md:29-34`; former verbatim: “**Phase-3 scope (user-ratified, option A):** build reach-back **as a tested capability** — a **selection-aware
+orchestration path** (build over the selection → slice → decode → reach-back loop → output-filter) — with the
+**production `analyzeRegions` left untouched at whole-score**, so the build is **byte-identical on every gate** and the
+new behaviour is exercised only by partial-selection fixtures. The capability must not **duplicate** the orchestration
+(unification): either a parameter on `analyzeRegions` defaulting to whole-score (production path unchanged) or a thin
+sibling that shares the build/slice/decode calls — the build decides, gated on byte-identity + the unification ledger.” — `cowork_layer3_reachback_design.md` §0, the Layer-3 reach-back detail design. Read in full by READ WAVE 6, 2026-08-04. The scope is marked *user-ratified, option A* in the record; the document's own status header records the resolution as the parameter form — `AnalyzeRegionsOptions::reachBack`, default false — and states that unification is thereby preserved. Confirmed at the code: `src/composing/analysis/region/regionanalyzer.cpp:660` gates the whole loop on `opts.reachBack.enabled`. The record states no date for the ratification.
 

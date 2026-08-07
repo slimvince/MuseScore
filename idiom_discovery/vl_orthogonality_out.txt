@@ -1,0 +1,29 @@
+VL records (A&B usable): 2078
+harmonic-view Pieces (DCML harmonies): 1307
+
+=== INTERSECTION (both a VL vector and a harmonic vector): 1283 pieces ===
+
+=== the orthogonality number ===
+  cross-ARI(VL clusters, harmonic clusters) = 0.030
+  cross-AMI(VL clusters, harmonic clusters) = 0.055
+  (for reference, on the SAME intersection pieces:)
+  VL clusters vs texture   ARI=0.195  vs era ARI=0.225  vs source ARI=0.115
+  Harm clusters vs texture ARI=0.024  vs era ARI=0.121  vs source ARI=0.045
+
+=== contingency: VL cluster (rows) x harmonic cluster (cols) ===
+          H0   H1   H2   H3    | row
+   VL0    53   42   95  135   |  325
+   VL1   164    0   77  136   |  377
+   VL2    31   45   73  109   |  258
+   VL3   101    7   81  134   |  323
+   col    349   94  326  514 
+
+=== curated probe — one harmonic idiom (v1.6); split by VL? ===
+  curated pieces: 47  (VL-clustered into 3)
+    steely_dan  n=22 VL-cluster spread={np.int32(0): 10, np.int32(1): 9, np.int32(2): 3}  step=25% leap=44% contrary=7% oblique=79%
+    piazzolla   n= 6 VL-cluster spread={np.int32(1): 5, np.int32(2): 1}  step=39% leap=31% contrary=5% oblique=82%
+    hiromi      n=19 VL-cluster spread={np.int32(2): 16, np.int32(1): 2, np.int32(0): 1}  step=36% leap=48% contrary=5% oblique=86%
+
+=== chorale projection — VL-tight? (fuller coverage) ===
+  m21_chorale    n=368  dominant VL cluster c1 holds 98%  (spread c1:361 c2:7)
+  bach_chorales  n=361  dominant VL cluster c1 holds 98%  (spread c1:353 c2:8)

@@ -527,7 +527,7 @@
 
 **Status.** LIVE · decided 2026-07-13 · ratified by user
 
-**Home.** `ARCHITECTURE.md:6825-6827`
+**Home.** `ARCHITECTURE.md:6943-6945`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at open_items/OI-56.md:7, decided by the user 2026-07-13. The when-question is tied to the corpus-onboarding event (OI-38) and the timing is itself open. OPEN_ITEMS OI-240 closes on this move
 
@@ -543,7 +543,7 @@
 
 **Status.** DEFERRED · decided 2026-07-13 · ratified by user
 
-**Home.** `ARCHITECTURE.md:5165-5167`
+**Home.** `ARCHITECTURE.md:5283-5285`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at open_items/OI-62.md:7, decided by the user 2026-07-13. The six unbuilt items are specified at ARCHITECTURE.md §11.3a-g and confirmed absent from the code in that row. OPEN_ITEMS OI-240 closes on this move
 
@@ -570,11 +570,17 @@
 
 ### D-586 — "Function" in the machine-learning literature names the Roman-numeral components, not Riemann's function theory — and this project's own function layer is misnamed for the same confusion
 
-> friend: it means the generalized RN components, **not Riemann's *Funktionstheorie***. T/S/D, where it exists (music21's
-> `analysis.harmonicFunction`), is a **deterministic lookup from the RN**, not a prediction. This matches our own world
-> exactly: our ground truth (DCML/music21) and our output (`formatRomanNumeral`) already treat "function" as the RN
-> itself (scale-degree + quality + applied/secondary), and our `harmonicfunctionlayer` is **misnamed** — it does chord-
-> identity competition, with cadence + functional labeling marked "E4 (planned)" = L5.
+> - **"Function" in the machine-learning literature names the ROMAN-NUMERAL COMPONENTS, not Riemann's
+>   function theory — and this project's own component named after this layer does neither (D-586).**
+>   When published research says a system predicts "function" it means the Roman numeral's parts (the
+>   degree, the quality, the applied relation), not the three-role tonic/subdominant/dominant scheme;
+>   the two senses are routinely confused, and the legacy component carrying the name compares
+>   candidate chords instead. *Why:* established by survey — every published autonomous Roman-numeral
+>   system the catalog names represents and evaluates the analysis as the Roman-numeral component
+>   tuple and none emits a three-role head, one of them listing the three-role labels explicitly as
+>   unimplemented future work; where the three-role labels exist at all they are a deterministic lookup
+>   from the Roman numeral. This is why the layer's output is specified above as the Roman numeral (the
+>   precise superset of a T/S/D summary) rather than as a function label.
 
 **In plain words.** When published research says a system predicts "function", it means the Roman numeral's parts — the degree, the quality, the applied relation — and not the three-role tonic/subdominant/dominant scheme of German function theory. The two senses are routinely confused. This project's own component named after the function layer does neither: it compares candidate chords.
 
@@ -584,11 +590,13 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_layer5_function_methods.md:16-20`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:1616-1626`
 
-**Home section.** **§0** — `## 0. The two findings that reshape L5` (heading at line 9). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** `cowork_layer5_function_methods.md`, the research-first methods catalog that grounds the Layer-5 specification (2026-06-26). Read in full by READ WAVE 5, 2026-08-04. This is the vocabulary finding behind **D-335** (the function layer outputs the Roman numeral; the three-role summary is a derived read-out). It is entered separately because it carries a second thing D-335 does not: a NAMING defect in this repository's own code, which the catalog's §9 lists as a structural step to schedule. The record states no ratifier for the naming half. The rename is unscheduled at HEAD and this entry does not schedule it; it also sits against `CLAUDE.md`'s reserved-word convention, under which a collision already in the tree is not renamed unilaterally.
+**Provenance.** ★ RE-HOMED 2026-08-04 (CC, dispatch `cc_instruction_finish_line_item1.md`, Task 3.3, ruling R3): written into the OWNING LAYER SPECIFICATION in that section's own voice, with its defense. Register rule (e) prefers this route in terms, and D-231's purposive clause (criterion C4) is why it is preferred over a delegation: at completion the specifications must suffice to measure conformance against WITHOUT consulting the register, and a decision reachable only by following a pointer satisfies C1's letter and defeats C4. The classification that selected this entry, with its reason and the whole 94-entry population, is `tools/audit/decisions/finish_line_item1_routes.json`. Its former home class was `gap` — a decision governing a layer but not findable from that layer's section — which is precisely what the re-homing discharges; the field is cleared because a layer-specification home is not a non-specification home. **THE FORMER HOME, CLASS AND VERBATIM, PRESERVED (#12)** — former home `cowork_layer5_function_methods.md:16-20`; former verbatim: “friend: it means the generalized RN components, **not Riemann's *Funktionstheorie***. T/S/D, where it exists (music21's
+`analysis.harmonicFunction`), is a **deterministic lookup from the RN**, not a prediction. This matches our own world
+exactly: our ground truth (DCML/music21) and our output (`formatRomanNumeral`) already treat "function" as the RN
+itself (scale-degree + quality + applied/secondary), and our `harmonicfunctionlayer` is **misnamed** — it does chord-
+identity competition, with cadence + functional labeling marked "E4 (planned)" = L5.” — `cowork_layer5_function_methods.md`, the research-first methods catalog that grounds the Layer-5 specification (2026-06-26). Read in full by READ WAVE 5, 2026-08-04. This is the vocabulary finding behind **D-335** (the function layer outputs the Roman numeral; the three-role summary is a derived read-out). It is entered separately because it carries a second thing D-335 does not: a NAMING defect in this repository's own code, which the catalog's §9 lists as a structural step to schedule. The record states no ratifier for the naming half. The rename is unscheduled at HEAD and this entry does not schedule it; it also sits against `CLAUDE.md`'s reserved-word convention, under which a collision already in the tree is not renamed unilaterally.
 
 ### D-610 — The value-type relocation is ZERO-CHURN by construction: the leaf spans both namespaces and the un-nested type keeps a member alias, so no call site changes and the move is byte-identical
 

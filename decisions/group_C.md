@@ -371,7 +371,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:3742-3750`
+**Home.** `ARCHITECTURE.md:3860-3868`
 
 **Provenance.** The band is stated at ARCHITECTURE.md:3567-3575. The governing measurement surface is now the robust unit ratified at R10-b (CLAUDE.md gate block (A)), whose figures are reported per preset on a different unit; no ruling names this band as replaced. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -819,7 +819,7 @@
 
 **Home.** `cowork_layer5_function_design.md:646-657`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§9** — `## 9. Architecture decisions (with the alternatives weighed)` (heading at line 620). A delegation at ARCHITECTURE.md:1517 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§9** — `## 9. Architecture decisions (with the alternatives weighed)` (heading at line 620). A delegation at ARCHITECTURE.md:1593 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
@@ -1324,8 +1324,15 @@
 
 ### D-608 — The symmetric-root spelling pin's entry premise was measured FALSE — it is unreachable because the scorer rarely chooses the diminished quality; the remedy is enumerated and NOT decided
 
-> **Gate 1 is the blocker.** The design premise — *"on a symmetric dim7 sonority the scorer's
-> chosen quality is Diminished"* — was an unlabeled ASSUMPTION, and the probe measured it FALSE:
+> - **The G4/C1 symmetric-root spelling-pin's ENTRY PREMISE is false — it is effectively unreachable,
+>   and the remedy is enumerated and NOT decided (D-608).** The pin only runs once the scorer has
+>   already called the sonority diminished. On the great majority of diminished-seventh sonorities it
+>   has not: the scorer either declines to commit or names the chord something else, so the mechanism
+>   almost never fires. That it would fire was an assumption and was never written down as one.
+>   *Why:* measured at the probe and traced at the code — of the diminished-seventh sonorities in the
+>   primary corpus most abstain, and of those that commit the scorer chooses major or minor far more
+>   often than diminished. A contributing fact is recorded with it: the four-note diminished-seventh
+>   type is deferred, so the diminished reading competes as a triad-plus-bonus against complete triads
 
 **In plain words.** The mechanism that picks the correctly-spelled rotation of a symmetric diminished-seventh chord only runs if the scorer has already called the chord diminished. It usually has not — on the great majority of such sonorities the scorer either declines to commit or calls the chord something else — so the mechanism almost never runs. The assumption that it would was never written down as one.
 
@@ -1335,17 +1342,20 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_eg1_premise_checks.md:21-22`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:1564-1572`
 
-**Home section.** **“PC-1”** — `## PC-1 — WHY the dim7 spelling-pin never fires: ROOT CAUSE ESTABLISHED` (heading at line 9). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** `cowork_eg1_premise_checks.md`, the read-only at-code premise checks written before the EG-1 build (2026-07-10). Read in full by READ WAVE 5, 2026-08-04. Recorded as premise check PC-1. Its own text marks the remedy ENUMERATED, NOT DECIDED and assigns it to the owning layer, with three named options each owing its own premise ledger and desk simulation. ⚠ The mechanism is in the dormant Layer-4 decoder, not in the joint estimator that now runs; whether the production arm has the same shape is NOT stated here and is not asserted. The record states no ratifier. This is a founding case for `CLAUDE.md` #17(a): the premise was load-bearing, checkable and unlabelled.
+**Provenance.** ★ RE-HOMED 2026-08-04 (CC, dispatch `cc_instruction_finish_line_item1.md`, Task 3.3, ruling R3): written into the OWNING LAYER SPECIFICATION in that section's own voice, with its defense. Register rule (e) prefers this route in terms, and D-231's purposive clause (criterion C4) is why it is preferred over a delegation: at completion the specifications must suffice to measure conformance against WITHOUT consulting the register, and a decision reachable only by following a pointer satisfies C1's letter and defeats C4. The classification that selected this entry, with its reason and the whole 94-entry population, is `tools/audit/decisions/finish_line_item1_routes.json`. Its former home class was `gap` — a decision governing a layer but not findable from that layer's section — which is precisely what the re-homing discharges; the field is cleared because a layer-specification home is not a non-specification home. **THE FORMER HOME, CLASS AND VERBATIM, PRESERVED (#12)** — former home `cowork_eg1_premise_checks.md:21-22`; former verbatim: “**Gate 1 is the blocker.** The design premise — *"on a symmetric dim7 sonority the scorer's
+chosen quality is Diminished"* — was an unlabeled ASSUMPTION, and the probe measured it FALSE:” — `cowork_eg1_premise_checks.md`, the read-only at-code premise checks written before the EG-1 build (2026-07-10). Read in full by READ WAVE 5, 2026-08-04. Recorded as premise check PC-1. Its own text marks the remedy ENUMERATED, NOT DECIDED and assigns it to the owning layer, with three named options each owing its own premise ledger and desk simulation. ⚠ The mechanism is in the dormant Layer-4 decoder, not in the joint estimator that now runs; whether the production arm has the same shape is NOT stated here and is not asserted. The record states no ratifier. This is a founding case for `CLAUDE.md` #17(a): the premise was load-bearing, checkable and unlabelled.
 
 ### D-609 — The abstention rate rides on an arbitrary, never-fitted seed constant — a whole probe's metric-moving behaviour sat downstream of an unestablished value
 
-> 1. The abstain rate rides on **`uncertaintyMargin` = 0.5 — an arbitrary, never-fit Tier-3 seed**
->    (`chordslicedecoder.h:174`). The metric-moving behavior of the whole EG-2 probe sits
->    downstream of an unestablished constant.
+> - **The abstention rate rides on an arbitrary, never-fitted SEED CONSTANT (D-609).** How often G1
+>   declines to commit is governed by one number set by hand as a starting value and never fitted, so
+>   every quantity measured downstream of the ladder depends on an unestablished value (#19). *Why:*
+>   established at the code — the constant is a seed in the decoder's own header, and the control flow
+>   was traced to show that everything not committed and not inherited abstains, including a case that
+>   is sufficient but falls under the margin; the consequence was then measured, a substantial share of
+>   scored duration abstaining under it.
 
 **In plain words.** How often the chord stage declines to commit is governed by one number that was set by hand as a starting value and never fitted to anything. Everything the probe measured therefore depends on a value nobody has established.
 
@@ -1355,11 +1365,11 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_eg1_premise_checks.md:55-57`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:1574-1580`
 
-**Home section.** **“PC-2”** — `## PC-2 — the abstention control flow: ESTABLISHED` (heading at line 43). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** `cowork_eg1_premise_checks.md`, the read-only at-code premise checks written before the EG-1 build (2026-07-10). Read in full by READ WAVE 5, 2026-08-04. Recorded as the first of three ledger facts under premise check PC-2. ⚠ The constant is in the DORMANT Layer-4 decoder. The third fact recorded beside it — that a ratified abstain-aware stop convention was owed before any abstaining path could be adoption-gated — is **D-212**, ruled and enforced two days later, and is not re-entered here (#6). The record states no ratifier.
+**Provenance.** ★ RE-HOMED 2026-08-04 (CC, dispatch `cc_instruction_finish_line_item1.md`, Task 3.3, ruling R3): written into the OWNING LAYER SPECIFICATION in that section's own voice, with its defense. Register rule (e) prefers this route in terms, and D-231's purposive clause (criterion C4) is why it is preferred over a delegation: at completion the specifications must suffice to measure conformance against WITHOUT consulting the register, and a decision reachable only by following a pointer satisfies C1's letter and defeats C4. The classification that selected this entry, with its reason and the whole 94-entry population, is `tools/audit/decisions/finish_line_item1_routes.json`. Its former home class was `gap` — a decision governing a layer but not findable from that layer's section — which is precisely what the re-homing discharges; the field is cleared because a layer-specification home is not a non-specification home. **THE FORMER HOME, CLASS AND VERBATIM, PRESERVED (#12)** — former home `cowork_eg1_premise_checks.md:55-57`; former verbatim: “1. The abstain rate rides on **`uncertaintyMargin` = 0.5 — an arbitrary, never-fit Tier-3 seed**
+   (`chordslicedecoder.h:174`). The metric-moving behavior of the whole EG-2 probe sits
+   downstream of an unestablished constant.” — `cowork_eg1_premise_checks.md`, the read-only at-code premise checks written before the EG-1 build (2026-07-10). Read in full by READ WAVE 5, 2026-08-04. Recorded as the first of three ledger facts under premise check PC-2. ⚠ The constant is in the DORMANT Layer-4 decoder. The third fact recorded beside it — that a ratified abstain-aware stop convention was owed before any abstaining path could be adoption-gated — is **D-212**, ruled and enforced two days later, and is not re-entered here (#6). The record states no ratifier.
 
 ### D-615 — Under #19 the validation basis of every Iter-era hand-set scoring magnitude is retroactively VOID — the values are unfalsified, not established
 
@@ -1420,8 +1430,14 @@
 
 ### D-624 — The hard bound and the score start are SAFETY CAPS for a loop that never settles — never the amount of context a layer needs
 
-> - **Hard bound + score start:** a maximum reach (a small number of measures — a setting) and the score's first tick
->   both terminate the loop. These are **safety caps for "never settles," not the needed amount.**
+> **The hard bound and the score start are SAFETY CAPS for a loop that never settles — never the
+> amount of context this layer needed (D-624; re-homed into this specification 2026-08-04 from the
+> design document that formerly carried it — the register records which).** The backward loop has two stops that are not answers: a
+> maximum distance, and the beginning of the piece. Neither reports how much context the analysis
+> required; each only terminates a loop that would otherwise not terminate, and a cap that fired may
+> never be read as the discovered amount. *Why:* the amount of context a layer needs is **discovered
+> by convergence and never chosen**, so this distinction is what keeps that rule intact — without it a
+> cap would silently become the answer in exactly the cases where the loop failed to settle.
 
 **In plain words.** The loop that reads backwards for context has two stops that are not answers: a maximum distance, and the beginning of the piece. Neither of them says how much context the analysis needed — they only stop a loop that would otherwise not stop.
 
@@ -1429,17 +1445,22 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `cowork_layer3_reachback_design.md:83-84`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:1400-1407`
 
-**Home section.** **§3** — `## 3. The trigger and the convergence stop (no amount-guessing)` (heading at line 68). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** `cowork_layer3_reachback_design.md` §3. Read in full by READ WAVE 6, 2026-08-04. It guards **D-261**'s no-guessing rule at the one place a guess could re-enter — a terminating cap read as the needed amount — and it is why the loop reports the boundary rather than silently truncating (the L1 contract's `boundaryReached`). The record states no ratifier.
+**Provenance.** ★ RE-HOMED 2026-08-04 (CC, dispatch `cc_instruction_finish_line_item1.md`, Task 3.3, ruling R3): written into the OWNING LAYER SPECIFICATION in that section's own voice, with its defense. Register rule (e) prefers this route in terms, and D-231's purposive clause (criterion C4) is why it is preferred over a delegation: at completion the specifications must suffice to measure conformance against WITHOUT consulting the register, and a decision reachable only by following a pointer satisfies C1's letter and defeats C4. The classification that selected this entry, with its reason and the whole 94-entry population, is `tools/audit/decisions/finish_line_item1_routes.json`. Its former home class was `gap` — a decision governing a layer but not findable from that layer's section — which is precisely what the re-homing discharges; the field is cleared because a layer-specification home is not a non-specification home. **THE FORMER HOME, CLASS AND VERBATIM, PRESERVED (#12)** — former home `cowork_layer3_reachback_design.md:83-84`; former verbatim: “- **Hard bound + score start:** a maximum reach (a small number of measures — a setting) and the score's first tick
+  both terminate the loop. These are **safety caps for "never settles," not the needed amount.**” — `cowork_layer3_reachback_design.md` §3. Read in full by READ WAVE 6, 2026-08-04. It guards **D-261**'s no-guessing rule at the one place a guess could re-enter — a terminating cap read as the needed amount — and it is why the loop reports the boundary rather than silently truncating (the L1 contract's `boundaryReached`). The record states no ratifier.
 
 ### D-628 — The finest meaningful extension step is the change-point — within a slice the sounding set is constant, so a finer request loads no note and changes no answer
 
-> The **finest meaningful step is the change-point/slice**: within a slice the sounding set is
->   constant, so a sub-change-point (beat/tick) extension loads no new note and changes no analysis — requesters never
->   ask finer than that.
+> **The finest meaningful extension step is the CHANGE-POINT — a finer request loads no note and can
+> move no answer (D-628; re-homed into this specification 2026-08-04 from the design document that formerly
+> carried it — the register records which).** When a consumer asks this model to reach further into the
+> score, the smallest request worth making is one that reaches the next change-point. *Why:* it
+> follows from what a Layer-2 slice **is** — the stretch over which the eligible sounding-note set is
+> constant — so a request that ends inside a slice is *provably* a no-op rather than merely a small
+> one: no note enters the model and no downstream answer can differ. That makes the granularity bound
+> a **fact about the representation**, not a tuning choice, and it is what bounds the step-size
+> question the requesting layer owns.
 
 **In plain words.** Between two points where the sounding notes change, nothing about the music changes, so asking to load a little more music that stops inside such a stretch brings in no new notes and can move no answer. The smallest request worth making therefore reaches the next point of change.
 
@@ -1447,11 +1468,11 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `cowork_layer1_extend_design.md:32-34`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:1290-1298`
 
-**Home section.** **§2** — `## 2. The API change (the contract)` (heading at line 23). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** `cowork_layer1_extend_design.md` §2. Read in full by READ WAVE 6, 2026-08-04. It bounds **D-262**, which puts the increment size in the requesting layer's hands in its own natural scale: this says the scale has a floor below which no request can matter. The record states neither a date nor a ratifier.
+**Provenance.** ★ RE-HOMED 2026-08-04 (CC, dispatch `cc_instruction_finish_line_item1.md`, Task 3.3, ruling R3): written into the OWNING LAYER SPECIFICATION in that section's own voice, with its defense. Register rule (e) prefers this route in terms, and D-231's purposive clause (criterion C4) is why it is preferred over a delegation: at completion the specifications must suffice to measure conformance against WITHOUT consulting the register, and a decision reachable only by following a pointer satisfies C1's letter and defeats C4. The classification that selected this entry, with its reason and the whole 94-entry population, is `tools/audit/decisions/finish_line_item1_routes.json`. Its former home class was `gap` — a decision governing a layer but not findable from that layer's section — which is precisely what the re-homing discharges; the field is cleared because a layer-specification home is not a non-specification home. **THE FORMER HOME, CLASS AND VERBATIM, PRESERVED (#12)** — former home `cowork_layer1_extend_design.md:32-34`; former verbatim: “The **finest meaningful step is the change-point/slice**: within a slice the sounding set is
+  constant, so a sub-change-point (beat/tick) extension loads no new note and changes no analysis — requesters never
+  ask finer than that.” — `cowork_layer1_extend_design.md` §2. Read in full by READ WAVE 6, 2026-08-04. It bounds **D-262**, which puts the increment size in the requesting layer's hands in its own natural scale: this says the scale has a floor below which no request can matter. The record states neither a date nor a ratifier.
 
 ### D-630 — Minimality sets the default and the burden — do not add a component; a new one is earned only by exhibiting a residual class a separable criterion resolves
 
@@ -1471,15 +1492,17 @@
 
 ### D-635 — Reach-back is a REAL product requirement, currently MASKED by the whole-score load — it must land WITH selection-based loading or selection-edge key inference breaks
 
-> - **Widen / reach-back — a REAL product requirement, currently unbuilt and currently masked (corrected
->   2026-06-24).** The shipped product is **selection-based**: it analyses the user's selected range, never the whole
->   score (the whole-score path is only the offline batch-testing harness). A selection is a temporal **subset**, so L3
->   genuinely needs to **reach back before the selection's start** to read the established key at the leading edge
->   (analyse measures 20–40 and the key at m.20 needs the context before m.20). So widen is **needed by design**, not
->   speculative. It is currently **unbuilt**, and currently **masked** only because L1 still loads the whole score (the
->   §11 inefficiency) — so the pre-selection context happens to be in memory and reach-back is not yet exercised. When
->   L1 is fixed to load only the selection (the §11 efficiency fix / selection-based working model), **reach-back must
->   land with it**, or selection-edge key inference breaks.
+> **Reach-back is a REAL product requirement, currently MASKED by the whole-score load — it must land
+> WITH selection-based loading (D-635; re-homed into this specification 2026-08-04 from the
+> disposition record that formerly carried it).** The shipped program analyses the stretch a user has
+> selected; the whole-score path exists for offline measurement. Reading backwards before the
+> selection begins is therefore genuinely needed, and the only reason its absence costs nothing today
+> is that the note model still loads the whole score anyway. **Narrowing Layer 1 to load only the
+> selection WITHOUT also engaging this facility would break key inference at the start of every
+> selection** — the two changes are one change. *Why:* derived rather than asserted — a selection is a
+> subset in time, so the evidence establishing the key at its opening lies *before* it, and the
+> efficiency fix removes exactly that evidence. This corrects an earlier reading that called the
+> requirement moot; that reading described the current whole-score stopgap rather than the design.
 
 **In plain words.** The shipped program analyses the stretch of music a user has selected, not the whole piece; the whole-piece path exists only for offline measurement. Reading backwards before the selection begins is therefore genuinely needed, and the only reason its absence causes no trouble today is that the note reader still loads everything anyway. Making the note reader load only the selection without also building the backwards read would break key inference at the start of every selection.
 
@@ -1487,9 +1510,15 @@
 
 **Status.** LIVE · decided 2026-06-24 · ratifier not stated
 
-**Home.** `cowork_delta_check_dispositions.md:74-83`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:1409-1419`
 
-**Home section.** **“L1”** — `### L1 — note model (thoroughly re-verified by Cowork; CC's light pass had missed the widen gap)` (heading at line 69). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** `cowork_delta_check_dispositions.md`, the Layer-1 disposition, verified at the source by Cowork directly. Read in full by READ WAVE 6, 2026-08-04. The capability has since been BUILT and gated off by default (**D-623**), so what remains owed is the coupling this entry names: the two must be switched together. ⚠ Whether the joint estimator's own production path carries the same dependency is NOT stated here and is not asserted. The record states no ratifier.
+**Provenance.** ★ RE-HOMED 2026-08-04 (CC, dispatch `cc_instruction_finish_line_item1.md`, Task 3.3, ruling R3): written into the OWNING LAYER SPECIFICATION in that section's own voice, with its defense. Register rule (e) prefers this route in terms, and D-231's purposive clause (criterion C4) is why it is preferred over a delegation: at completion the specifications must suffice to measure conformance against WITHOUT consulting the register, and a decision reachable only by following a pointer satisfies C1's letter and defeats C4. The classification that selected this entry, with its reason and the whole 94-entry population, is `tools/audit/decisions/finish_line_item1_routes.json`. Its former home class was `gap` — a decision governing a layer but not findable from that layer's section — which is precisely what the re-homing discharges; the field is cleared because a layer-specification home is not a non-specification home. **THE FORMER HOME, CLASS AND VERBATIM, PRESERVED (#12)** — former home `cowork_delta_check_dispositions.md:74-83`; former verbatim: “- **Widen / reach-back — a REAL product requirement, currently unbuilt and currently masked (corrected
+  2026-06-24).** The shipped product is **selection-based**: it analyses the user's selected range, never the whole
+  score (the whole-score path is only the offline batch-testing harness). A selection is a temporal **subset**, so L3
+  genuinely needs to **reach back before the selection's start** to read the established key at the leading edge
+  (analyse measures 20–40 and the key at m.20 needs the context before m.20). So widen is **needed by design**, not
+  speculative. It is currently **unbuilt**, and currently **masked** only because L1 still loads the whole score (the
+  §11 inefficiency) — so the pre-selection context happens to be in memory and reach-back is not yet exercised. When
+  L1 is fixed to load only the selection (the §11 efficiency fix / selection-based working model), **reach-back must
+  land with it**, or selection-edge key inference breaks.” — `cowork_delta_check_dispositions.md`, the Layer-1 disposition, verified at the source by Cowork directly. Read in full by READ WAVE 6, 2026-08-04. The capability has since been BUILT and gated off by default (**D-623**), so what remains owed is the coupling this entry names: the two must be switched together. ⚠ Whether the joint estimator's own production path carries the same dependency is NOT stated here and is not asserted. The record states no ratifier.
 

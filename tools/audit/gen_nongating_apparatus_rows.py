@@ -93,6 +93,21 @@ FIRST_CUT_VOCAB = [
 # unnoticed resolution. But deleting the reasoning would lose it (#12), so a closed row's
 # verdict moves here: preserved, carried into the artifact as history, and never counted.
 RETIRED_VERDICTS = {
+    "OI-340": (GATES, "the criterion - D-438's line puts specification completion on the gating side",
+               "Whether criterion C1 reaches SUPERSEDED register entries is unruled: the per-kind "
+               "scheme said to settle it does not carry that kind, and read at its own text it "
+               "routes those entries the OPPOSITE way -- into the owning specification, the very "
+               "act the ruling exists to forbid. WHAT IS OWED decides it, and what is owed here is "
+               "not a pointer, an anchor, a label, a banner or a filing choice: it is WHICH "
+               "DECISIONS PHASE 1 MUST WRITE INTO A SPECIFICATION. D-438's line names that side "
+               "explicitly -- 'the completion of a specification GATES, because the phase-1 rule in "
+               "Conventions makes specifications COMPLETE and TRUE the thing that precedes "
+               "everything else.' The reach is not one entry: item 1's whole NO-HOME class has no "
+               "closing act until it is ruled, so the finish line cannot report that item as "
+               "dischargeable. Recorded against the row's SUBJECT, never its remedy.",
+               "RESOLVED 2026-08-04 - the user ruled the question the row put (D-642), on the "
+               "basis the row itself named. The verdict was correct while it stood and is kept "
+               "whole (#12); it is retired because the row closed, never because it was wrong."),
     "OI-287": (NON_GATING, "user",
                "Where the ratification surfaces and the dispatches are filed, and how cited "
                "paths are re-aimed when they move. Repository organization; the files are "
@@ -496,7 +511,9 @@ V = {
                "the falsified approach is registered separately as D-616 and D-617. It bears on no "
                "analysis, no input and no measurement tool, and it carries no establishment "
                "obligation, so the starred clause does not reach it either."),
-    # ---- rowed 2026-08-04 by the commit-and-finish-line wave ------------------------------
+    # ---- rowed 2026-08-04 by the finish-line item-1b wave ---------------------------------
+    # OI-340's verdict moved to RETIRED_VERDICTS on 2026-08-04 when the user ruled the question.
+    # ---------------------------------------------------------------------- NON-GATING
     "OI-338": (NON_GATING, "user",
                "The phase-1 completion inventory publishes as an OPEN QUESTION one the user has "
                "since ruled (D-639), because its clause quote is derived and moved with HEAD while "

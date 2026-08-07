@@ -11,24 +11,24 @@
   ],
   "the_reading_of_a_whole_document_delegation": "A delegation that names a DOCUMENT and no section reaches EVERY section of it; a delegation that names SECTIONS reaches those sections and their subsections and no others; and the rule-stating half is judged PER SECTION in both cases. **THIS IS NOW PART OF THE RULE, NOT AN INTERPRETATION OF IT (user, 2026-08-03, phase 1r).** At phase 1q it was this pass's reading of D-430's \"delegates a stated concern to that section BY NAME\", taken on the record's own precedent rather than a preference — `OPEN_ITEMS.md` OI-290 states in terms that \"`ARCHITECTURE.md:1331` delegates 'this layer' and admits all sixteen of that document's entries\" — and the strict alternative was recorded as available to the user. The user then WROTE the reading into `CLAUDE.md` rule (h) itself as the GRANULARITY clause, so D-430's verbatim now carries it and the strict alternative is CLOSED. Its defense, stated with it: the strict reading would evict every document delegated as a whole, signed layer specifications among them, on the accident of how a pointer happens to be phrased, making the rule retroactively destructive rather than refining. THE STRICT ALTERNATIVE, PRESERVED (#12): read literally, a whole-document delegation names no section, so no section of it would be admitted and the seven whole-document homes would lose every entry between them.",
   "population": {
-    "entries": 289,
-    "documents": 76
+    "entries": 279,
+    "documents": 71
   },
   "totals": {
     "class_before": {
       "contract-home": 96,
-      "gap": 193
+      "gap": 183
     },
     "class_after": {
       "contract-home": 139,
-      "gap": 150
+      "gap": 140
     },
     "entries_moved": 71,
     "moved_to_gap": 14,
     "moved_to_contract_home": 57,
     "decided_by": {
       "D-430, the section-level unit": 156,
-      "clause (a), the fifth home case (OI-268)": 94,
+      "clause (a), the fifth home case (OI-268)": 84,
       "D-432, the delegation bar": 39
     }
   },
@@ -500,7 +500,7 @@
       "moves_in": 0,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1439",
+      "delegation_at": "ARCHITECTURE.md:1493",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer4_chordsymbol_design.md` (SIGNED, user, 2026-06-24) — D-329…D-334 — which this section points at and does not restate.",
       "sections": {
         "§4": {
@@ -555,7 +555,7 @@
       "moves_in": 0,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1517",
+      "delegation_at": "ARCHITECTURE.md:1593",
       "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-335…D-342 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph is the delegation the record relied on and never had.)*",
       "sections": {
         "§9": {
@@ -614,7 +614,7 @@
       "moves_in": 0,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1363",
+      "delegation_at": "ARCHITECTURE.md:1387",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "sections": {
         "§1": {
@@ -857,7 +857,7 @@
       "moves_in": 0,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:1519",
+      "delegation_at": "ARCHITECTURE.md:1595",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory \"is enumerated at `cowork_layer5_engagement_design.md` §9.2\" (`:53-55`).",
       "sections": {
         "“§2.2 The exclusion tail is load-bearing and must be carried”": {
@@ -1073,7 +1073,7 @@
       "moves_in": 9,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:4657",
+      "delegation_at": "ARCHITECTURE.md:4764",
       "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "sections": {
         "§1": {
@@ -1192,7 +1192,7 @@
       "moves_in": 0,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4727",
+      "delegation_at": "ARCHITECTURE.md:4834",
       "delegation_line": "pedal-point ruling of the notation-adoption increment (`cowork_notation_adoption_increment.md` §7 + §10).",
       "sections": {
         "the opening block (above the first section heading)": {
@@ -1236,7 +1236,7 @@
       "moves_in": 0,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:6992",
+      "delegation_at": "ARCHITECTURE.md:7099",
       "delegation_line": "> **Full design document:** `docs/llm_integration.md`",
       "sections": {
         "§4.3": {
@@ -1363,7 +1363,7 @@
       "moves_in": 8,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1530",
+      "delegation_at": "ARCHITECTURE.md:1637",
       "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer6_grouping_design.md` (AS-BUILT, 2026-07-02 — built dormant and oracle-validated after the extension gate passed, `:3`) — D-454…D-462 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph supplements that line rather than replacing it.)* **★ WHY A CONTRACT HOME IS COHERENT FOR A LAYER THAT MAY NOT BE BUILT — the question this clause was withheld over on 2026-08-04 and which the user has now answered.** **D-611** establishes that the dormant path and its staged scaffolding are **deferred-engagement, not dead code**: their wire-or-remove verdict belongs to a named later step, and removing them is a STOP. Deferred work is therefore a state the record keeps decisions for, not an absence of them, and a contract home for it is the same posture rather than a new one — which is why **D-266**'s prohibition does not forbid this pointer. **D-266 IS UNTOUCHED:** Layer 6 may not be BUILT until the bounded-context design is coded and regression-tested for Layers 1–5. This clause records where the layer's design decisions live; it authorizes no build, no wiring, and no change to what the analysis computes.",
       "sections": {
         "§6": {
@@ -2263,7 +2263,7 @@
       "moves_in": 2,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1347",
+      "delegation_at": "ARCHITECTURE.md:1371",
       "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer2_slicing_design.md` (AS-BUILT — built, reviewed, accepted and validated on the full test corpus, `:3`) — D-540…D-541 — which this section points at and does not restate. *(The \"See …\" line above is a citation of three documents, two of them session reports; `CLAUDE.md` rule (i) distinguishes a citation from a delegation, and this paragraph supplements that line rather than replacing it.)*",
       "sections": {
         "§8": {
@@ -2336,7 +2336,7 @@
       "moves_in": 0,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4616",
+      "delegation_at": "ARCHITECTURE.md:4723",
       "delegation_line": "(`cowork_idiom_discovery_findings.md:122`, v1.5, cap-robust) found that harmony is **not organised by genre** —",
       "sections": {
         "“v2.0”": {
@@ -2364,7 +2364,7 @@
       "moves_in": 0,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:1449",
+      "delegation_at": "ARCHITECTURE.md:1503",
       "delegation_line": "`docs/nct_detection_design.md` exists. The record states neither a date nor a ratifier.",
       "sections": {
         "“Voice-leading detection”": {
@@ -2623,50 +2623,6 @@
         }
       }
     },
-    "cowork_layer5_function_methods.md": {
-      "entries": 3,
-      "before": {
-        "gap": 3
-      },
-      "after": {
-        "gap": 3
-      },
-      "moves_out": 0,
-      "moves_in": 0,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "sections": {
-        "§3": {
-          "heading_line": 64,
-          "delegated": null,
-          "states_rules": null,
-          "entries": [
-            "D-584"
-          ],
-          "class_after": "gap"
-        },
-        "§6": {
-          "heading_line": 125,
-          "delegated": null,
-          "states_rules": null,
-          "entries": [
-            "D-585"
-          ],
-          "class_after": "gap"
-        },
-        "§0": {
-          "heading_line": 9,
-          "delegated": null,
-          "states_rules": null,
-          "entries": [
-            "D-586"
-          ],
-          "class_after": "gap"
-        }
-      }
-    },
     "cowork_style_taxonomy_proposal.md": {
       "entries": 5,
       "before": {
@@ -2679,7 +2635,7 @@
       "moves_in": 0,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4620",
+      "delegation_at": "ARCHITECTURE.md:4727",
       "delegation_line": "Chromatic-coloristic (`cowork_style_taxonomy_proposal.md:11-30`).",
       "sections": {
         "§6": {
@@ -2717,7 +2673,7 @@
       "moves_in": 0,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4023",
+      "delegation_at": "ARCHITECTURE.md:4130",
       "delegation_line": "`docs/iter90_bass_as_root_promotion_shelved.md` for characterization and Iter 91 design).",
       "sections": {
         "“Why no local discriminator worked”": {
@@ -2752,7 +2708,7 @@
       "moves_in": 0,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4634",
+      "delegation_at": "ARCHITECTURE.md:4741",
       "delegation_line": "clustering corpora is the committed work (`cowork_style_clustering_plan.md`); the weighting itself is a joint decision",
       "sections": {
         "§1": {
@@ -2876,67 +2832,6 @@
           "states_rules": null,
           "entries": [
             "D-606"
-          ],
-          "class_after": "gap"
-        }
-      }
-    },
-    "cowork_phrase_boundary_methods.md": {
-      "entries": 1,
-      "before": {
-        "gap": 1
-      },
-      "after": {
-        "gap": 1
-      },
-      "moves_out": 0,
-      "moves_in": 0,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "sections": {
-        "§3": {
-          "heading_line": 76,
-          "delegated": null,
-          "states_rules": null,
-          "entries": [
-            "D-607"
-          ],
-          "class_after": "gap"
-        }
-      }
-    },
-    "cowork_eg1_premise_checks.md": {
-      "entries": 2,
-      "before": {
-        "gap": 2
-      },
-      "after": {
-        "gap": 2
-      },
-      "moves_out": 0,
-      "moves_in": 0,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "sections": {
-        "“PC-1”": {
-          "heading_line": 9,
-          "delegated": null,
-          "states_rules": null,
-          "entries": [
-            "D-608"
-          ],
-          "class_after": "gap"
-        },
-        "“PC-2”": {
-          "heading_line": 43,
-          "delegated": null,
-          "states_rules": null,
-          "entries": [
-            "D-609"
           ],
           "class_after": "gap"
         }
@@ -3109,12 +3004,12 @@
       }
     },
     "cowork_layer3_reachback_design.md": {
-      "entries": 3,
+      "entries": 1,
       "before": {
-        "gap": 3
+        "gap": 1
       },
       "after": {
-        "gap": 3
+        "gap": 1
       },
       "moves_out": 0,
       "moves_in": 0,
@@ -3128,17 +3023,7 @@
           "delegated": null,
           "states_rules": null,
           "entries": [
-            "D-622",
-            "D-624"
-          ],
-          "class_after": "gap"
-        },
-        "§0": {
-          "heading_line": 16,
-          "delegated": null,
-          "states_rules": null,
-          "entries": [
-            "D-623"
+            "D-622"
           ],
           "class_after": "gap"
         }
@@ -3165,32 +3050,6 @@
           "states_rules": null,
           "entries": [
             "D-625"
-          ],
-          "class_after": "gap"
-        }
-      }
-    },
-    "cowork_layer1_extend_design.md": {
-      "entries": 1,
-      "before": {
-        "gap": 1
-      },
-      "after": {
-        "gap": 1
-      },
-      "moves_out": 0,
-      "moves_in": 0,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "sections": {
-        "§2": {
-          "heading_line": 23,
-          "delegated": null,
-          "states_rules": null,
-          "entries": [
-            "D-628"
           ],
           "class_after": "gap"
         }
@@ -3234,7 +3093,7 @@
       "moves_in": 0,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:1315",
+      "delegation_at": "ARCHITECTURE.md:1339",
       "delegation_line": "slicing never drags outside the loaded span (Phase 2; `cowork_layer2_reslice_design.md` §2). On a",
       "sections": {
         "§3": {
@@ -3252,32 +3111,6 @@
           "states_rules": null,
           "entries": [
             "D-632"
-          ],
-          "class_after": "gap"
-        }
-      }
-    },
-    "cowork_delta_check_dispositions.md": {
-      "entries": 1,
-      "before": {
-        "gap": 1
-      },
-      "after": {
-        "gap": 1
-      },
-      "moves_out": 0,
-      "moves_in": 0,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "sections": {
-        "“L1”": {
-          "heading_line": 69,
-          "delegated": null,
-          "states_rules": null,
-          "entries": [
-            "D-635"
           ],
           "class_after": "gap"
         }
@@ -4114,7 +3947,7 @@
       "section_heading_line": 204,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1439",
+      "delegation_at": "ARCHITECTURE.md:1493",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer4_chordsymbol_design.md` (SIGNED, user, 2026-06-24) — D-329…D-334 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
@@ -4134,7 +3967,7 @@
       "section_heading_line": 386,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1439",
+      "delegation_at": "ARCHITECTURE.md:1493",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer4_chordsymbol_design.md` (SIGNED, user, 2026-06-24) — D-329…D-334 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
@@ -4154,7 +3987,7 @@
       "section_heading_line": 559,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1439",
+      "delegation_at": "ARCHITECTURE.md:1493",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer4_chordsymbol_design.md` (SIGNED, user, 2026-06-24) — D-329…D-334 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
@@ -4174,7 +4007,7 @@
       "section_heading_line": 349,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1439",
+      "delegation_at": "ARCHITECTURE.md:1493",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer4_chordsymbol_design.md` (SIGNED, user, 2026-06-24) — D-329…D-334 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
@@ -4194,7 +4027,7 @@
       "section_heading_line": 559,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1439",
+      "delegation_at": "ARCHITECTURE.md:1493",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer4_chordsymbol_design.md` (SIGNED, user, 2026-06-24) — D-329…D-334 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
@@ -4214,7 +4047,7 @@
       "section_heading_line": 559,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1439",
+      "delegation_at": "ARCHITECTURE.md:1493",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer4_chordsymbol_design.md` (SIGNED, user, 2026-06-24) — D-329…D-334 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
@@ -4234,7 +4067,7 @@
       "section_heading_line": 620,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1517",
+      "delegation_at": "ARCHITECTURE.md:1593",
       "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-335…D-342 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph is the delegation the record relied on and never had.)*",
       "section_delegated": true,
       "section_states_rules": true,
@@ -4254,7 +4087,7 @@
       "section_heading_line": 620,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1517",
+      "delegation_at": "ARCHITECTURE.md:1593",
       "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-335…D-342 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph is the delegation the record relied on and never had.)*",
       "section_delegated": true,
       "section_states_rules": true,
@@ -4274,7 +4107,7 @@
       "section_heading_line": 620,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1517",
+      "delegation_at": "ARCHITECTURE.md:1593",
       "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-335…D-342 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph is the delegation the record relied on and never had.)*",
       "section_delegated": true,
       "section_states_rules": true,
@@ -4294,7 +4127,7 @@
       "section_heading_line": 620,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1517",
+      "delegation_at": "ARCHITECTURE.md:1593",
       "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-335…D-342 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph is the delegation the record relied on and never had.)*",
       "section_delegated": true,
       "section_states_rules": true,
@@ -4314,7 +4147,7 @@
       "section_heading_line": 620,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1517",
+      "delegation_at": "ARCHITECTURE.md:1593",
       "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-335…D-342 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph is the delegation the record relied on and never had.)*",
       "section_delegated": true,
       "section_states_rules": true,
@@ -4334,7 +4167,7 @@
       "section_heading_line": 546,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1517",
+      "delegation_at": "ARCHITECTURE.md:1593",
       "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-335…D-342 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph is the delegation the record relied on and never had.)*",
       "section_delegated": true,
       "section_states_rules": true,
@@ -4354,7 +4187,7 @@
       "section_heading_line": 158,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1517",
+      "delegation_at": "ARCHITECTURE.md:1593",
       "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-335…D-342 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph is the delegation the record relied on and never had.)*",
       "section_delegated": true,
       "section_states_rules": true,
@@ -4374,7 +4207,7 @@
       "section_heading_line": 678,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1517",
+      "delegation_at": "ARCHITECTURE.md:1593",
       "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-335…D-342 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph is the delegation the record relied on and never had.)*",
       "section_delegated": true,
       "section_states_rules": true,
@@ -4394,7 +4227,7 @@
       "section_heading_line": 52,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1363",
+      "delegation_at": "ARCHITECTURE.md:1387",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
@@ -4414,7 +4247,7 @@
       "section_heading_line": 52,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1363",
+      "delegation_at": "ARCHITECTURE.md:1387",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
@@ -4434,7 +4267,7 @@
       "section_heading_line": 138,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1363",
+      "delegation_at": "ARCHITECTURE.md:1387",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
@@ -4454,7 +4287,7 @@
       "section_heading_line": 224,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1363",
+      "delegation_at": "ARCHITECTURE.md:1387",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
@@ -4474,7 +4307,7 @@
       "section_heading_line": 295,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1363",
+      "delegation_at": "ARCHITECTURE.md:1387",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
@@ -4494,7 +4327,7 @@
       "section_heading_line": 206,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1363",
+      "delegation_at": "ARCHITECTURE.md:1387",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
@@ -4514,7 +4347,7 @@
       "section_heading_line": 295,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1363",
+      "delegation_at": "ARCHITECTURE.md:1387",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
@@ -4534,7 +4367,7 @@
       "section_heading_line": 1,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1363",
+      "delegation_at": "ARCHITECTURE.md:1387",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": false,
@@ -4554,7 +4387,7 @@
       "section_heading_line": 295,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1363",
+      "delegation_at": "ARCHITECTURE.md:1387",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
@@ -4574,7 +4407,7 @@
       "section_heading_line": 317,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1363",
+      "delegation_at": "ARCHITECTURE.md:1387",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
@@ -4594,7 +4427,7 @@
       "section_heading_line": 317,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1363",
+      "delegation_at": "ARCHITECTURE.md:1387",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
@@ -4614,7 +4447,7 @@
       "section_heading_line": 349,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1363",
+      "delegation_at": "ARCHITECTURE.md:1387",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
@@ -4634,7 +4467,7 @@
       "section_heading_line": 349,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1363",
+      "delegation_at": "ARCHITECTURE.md:1387",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
@@ -4654,7 +4487,7 @@
       "section_heading_line": 349,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1363",
+      "delegation_at": "ARCHITECTURE.md:1387",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
@@ -4674,7 +4507,7 @@
       "section_heading_line": 480,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1363",
+      "delegation_at": "ARCHITECTURE.md:1387",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
@@ -4694,7 +4527,7 @@
       "section_heading_line": 480,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1363",
+      "delegation_at": "ARCHITECTURE.md:1387",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
       "section_states_rules": true,
@@ -5134,7 +4967,7 @@
       "section_heading_line": 135,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:1519",
+      "delegation_at": "ARCHITECTURE.md:1595",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory \"is enumerated at `cowork_layer5_engagement_design.md` §9.2\" (`:53-55`).",
       "section_delegated": true,
       "section_states_rules": true,
@@ -5154,7 +4987,7 @@
       "section_heading_line": 144,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:1519",
+      "delegation_at": "ARCHITECTURE.md:1595",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory \"is enumerated at `cowork_layer5_engagement_design.md` §9.2\" (`:53-55`).",
       "section_delegated": true,
       "section_states_rules": true,
@@ -5174,7 +5007,7 @@
       "section_heading_line": 186,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:1519",
+      "delegation_at": "ARCHITECTURE.md:1595",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory \"is enumerated at `cowork_layer5_engagement_design.md` §9.2\" (`:53-55`).",
       "section_delegated": true,
       "section_states_rules": true,
@@ -5194,7 +5027,7 @@
       "section_heading_line": 200,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:1519",
+      "delegation_at": "ARCHITECTURE.md:1595",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory \"is enumerated at `cowork_layer5_engagement_design.md` §9.2\" (`:53-55`).",
       "section_delegated": true,
       "section_states_rules": true,
@@ -5214,7 +5047,7 @@
       "section_heading_line": 255,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:1519",
+      "delegation_at": "ARCHITECTURE.md:1595",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory \"is enumerated at `cowork_layer5_engagement_design.md` §9.2\" (`:53-55`).",
       "section_delegated": true,
       "section_states_rules": true,
@@ -5234,7 +5067,7 @@
       "section_heading_line": 406,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:1519",
+      "delegation_at": "ARCHITECTURE.md:1595",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory \"is enumerated at `cowork_layer5_engagement_design.md` §9.2\" (`:53-55`).",
       "section_delegated": true,
       "section_states_rules": true,
@@ -5254,7 +5087,7 @@
       "section_heading_line": 444,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:1519",
+      "delegation_at": "ARCHITECTURE.md:1595",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory \"is enumerated at `cowork_layer5_engagement_design.md` §9.2\" (`:53-55`).",
       "section_delegated": true,
       "section_states_rules": true,
@@ -5274,7 +5107,7 @@
       "section_heading_line": 468,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "sections",
-      "delegation_at": "ARCHITECTURE.md:1519",
+      "delegation_at": "ARCHITECTURE.md:1595",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory \"is enumerated at `cowork_layer5_engagement_design.md` §9.2\" (`:53-55`).",
       "section_delegated": true,
       "section_states_rules": true,
@@ -5654,7 +5487,7 @@
       "section_heading_line": 21,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:4657",
+      "delegation_at": "ARCHITECTURE.md:4764",
       "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "section_delegated": true,
       "section_states_rules": true,
@@ -5674,7 +5507,7 @@
       "section_heading_line": 48,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:4657",
+      "delegation_at": "ARCHITECTURE.md:4764",
       "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "section_delegated": true,
       "section_states_rules": true,
@@ -5694,7 +5527,7 @@
       "section_heading_line": 48,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:4657",
+      "delegation_at": "ARCHITECTURE.md:4764",
       "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "section_delegated": true,
       "section_states_rules": true,
@@ -5714,7 +5547,7 @@
       "section_heading_line": 84,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:4657",
+      "delegation_at": "ARCHITECTURE.md:4764",
       "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "section_delegated": true,
       "section_states_rules": true,
@@ -5734,7 +5567,7 @@
       "section_heading_line": 84,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:4657",
+      "delegation_at": "ARCHITECTURE.md:4764",
       "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "section_delegated": true,
       "section_states_rules": true,
@@ -5754,7 +5587,7 @@
       "section_heading_line": 168,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:4657",
+      "delegation_at": "ARCHITECTURE.md:4764",
       "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "section_delegated": true,
       "section_states_rules": true,
@@ -5774,7 +5607,7 @@
       "section_heading_line": 168,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:4657",
+      "delegation_at": "ARCHITECTURE.md:4764",
       "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "section_delegated": true,
       "section_states_rules": true,
@@ -5794,7 +5627,7 @@
       "section_heading_line": 200,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:4657",
+      "delegation_at": "ARCHITECTURE.md:4764",
       "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "section_delegated": true,
       "section_states_rules": true,
@@ -5814,7 +5647,7 @@
       "section_heading_line": 248,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:4657",
+      "delegation_at": "ARCHITECTURE.md:4764",
       "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "section_delegated": true,
       "section_states_rules": true,
@@ -5914,7 +5747,7 @@
       "section_heading_line": 1,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4727",
+      "delegation_at": "ARCHITECTURE.md:4834",
       "delegation_line": "pedal-point ruling of the notation-adoption increment (`cowork_notation_adoption_increment.md` §7 + §10).",
       "section_delegated": null,
       "section_states_rules": null,
@@ -5934,7 +5767,7 @@
       "section_heading_line": 215,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4727",
+      "delegation_at": "ARCHITECTURE.md:4834",
       "delegation_line": "pedal-point ruling of the notation-adoption increment (`cowork_notation_adoption_increment.md` §7 + §10).",
       "section_delegated": null,
       "section_states_rules": null,
@@ -5954,7 +5787,7 @@
       "section_heading_line": 394,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4727",
+      "delegation_at": "ARCHITECTURE.md:4834",
       "delegation_line": "pedal-point ruling of the notation-adoption increment (`cowork_notation_adoption_increment.md` §7 + §10).",
       "section_delegated": null,
       "section_states_rules": null,
@@ -5974,7 +5807,7 @@
       "section_heading_line": 296,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:6992",
+      "delegation_at": "ARCHITECTURE.md:7099",
       "delegation_line": "> **Full design document:** `docs/llm_integration.md`",
       "section_delegated": null,
       "section_states_rules": null,
@@ -5994,7 +5827,7 @@
       "section_heading_line": 599,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:6992",
+      "delegation_at": "ARCHITECTURE.md:7099",
       "delegation_line": "> **Full design document:** `docs/llm_integration.md`",
       "section_delegated": null,
       "section_states_rules": null,
@@ -6014,7 +5847,7 @@
       "section_heading_line": 363,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:6992",
+      "delegation_at": "ARCHITECTURE.md:7099",
       "delegation_line": "> **Full design document:** `docs/llm_integration.md`",
       "section_delegated": null,
       "section_states_rules": null,
@@ -6034,7 +5867,7 @@
       "section_heading_line": 397,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:6992",
+      "delegation_at": "ARCHITECTURE.md:7099",
       "delegation_line": "> **Full design document:** `docs/llm_integration.md`",
       "section_delegated": null,
       "section_states_rules": null,
@@ -6054,7 +5887,7 @@
       "section_heading_line": 479,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:6992",
+      "delegation_at": "ARCHITECTURE.md:7099",
       "delegation_line": "> **Full design document:** `docs/llm_integration.md`",
       "section_delegated": null,
       "section_states_rules": null,
@@ -6074,7 +5907,7 @@
       "section_heading_line": 611,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:6992",
+      "delegation_at": "ARCHITECTURE.md:7099",
       "delegation_line": "> **Full design document:** `docs/llm_integration.md`",
       "section_delegated": null,
       "section_states_rules": null,
@@ -6094,7 +5927,7 @@
       "section_heading_line": 284,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:6992",
+      "delegation_at": "ARCHITECTURE.md:7099",
       "delegation_line": "> **Full design document:** `docs/llm_integration.md`",
       "section_delegated": null,
       "section_states_rules": null,
@@ -6214,7 +6047,7 @@
       "section_heading_line": 296,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1530",
+      "delegation_at": "ARCHITECTURE.md:1637",
       "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer6_grouping_design.md` (AS-BUILT, 2026-07-02 — built dormant and oracle-validated after the extension gate passed, `:3`) — D-454…D-462 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph supplements that line rather than replacing it.)* **★ WHY A CONTRACT HOME IS COHERENT FOR A LAYER THAT MAY NOT BE BUILT — the question this clause was withheld over on 2026-08-04 and which the user has now answered.** **D-611** establishes that the dormant path and its staged scaffolding are **deferred-engagement, not dead code**: their wire-or-remove verdict belongs to a named later step, and removing them is a STOP. Deferred work is therefore a state the record keeps decisions for, not an absence of them, and a contract home for it is the same posture rather than a new one — which is why **D-266**'s prohibition does not forbid this pointer. **D-266 IS UNTOUCHED:** Layer 6 may not be BUILT until the bounded-context design is coded and regression-tested for Layers 1–5. This clause records where the layer's design decisions live; it authorizes no build, no wiring, and no change to what the analysis computes.",
       "section_delegated": true,
       "section_states_rules": true,
@@ -6234,7 +6067,7 @@
       "section_heading_line": 330,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1530",
+      "delegation_at": "ARCHITECTURE.md:1637",
       "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer6_grouping_design.md` (AS-BUILT, 2026-07-02 — built dormant and oracle-validated after the extension gate passed, `:3`) — D-454…D-462 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph supplements that line rather than replacing it.)* **★ WHY A CONTRACT HOME IS COHERENT FOR A LAYER THAT MAY NOT BE BUILT — the question this clause was withheld over on 2026-08-04 and which the user has now answered.** **D-611** establishes that the dormant path and its staged scaffolding are **deferred-engagement, not dead code**: their wire-or-remove verdict belongs to a named later step, and removing them is a STOP. Deferred work is therefore a state the record keeps decisions for, not an absence of them, and a contract home for it is the same posture rather than a new one — which is why **D-266**'s prohibition does not forbid this pointer. **D-266 IS UNTOUCHED:** Layer 6 may not be BUILT until the bounded-context design is coded and regression-tested for Layers 1–5. This clause records where the layer's design decisions live; it authorizes no build, no wiring, and no change to what the analysis computes.",
       "section_delegated": true,
       "section_states_rules": true,
@@ -6254,7 +6087,7 @@
       "section_heading_line": 330,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1530",
+      "delegation_at": "ARCHITECTURE.md:1637",
       "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer6_grouping_design.md` (AS-BUILT, 2026-07-02 — built dormant and oracle-validated after the extension gate passed, `:3`) — D-454…D-462 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph supplements that line rather than replacing it.)* **★ WHY A CONTRACT HOME IS COHERENT FOR A LAYER THAT MAY NOT BE BUILT — the question this clause was withheld over on 2026-08-04 and which the user has now answered.** **D-611** establishes that the dormant path and its staged scaffolding are **deferred-engagement, not dead code**: their wire-or-remove verdict belongs to a named later step, and removing them is a STOP. Deferred work is therefore a state the record keeps decisions for, not an absence of them, and a contract home for it is the same posture rather than a new one — which is why **D-266**'s prohibition does not forbid this pointer. **D-266 IS UNTOUCHED:** Layer 6 may not be BUILT until the bounded-context design is coded and regression-tested for Layers 1–5. This clause records where the layer's design decisions live; it authorizes no build, no wiring, and no change to what the analysis computes.",
       "section_delegated": true,
       "section_states_rules": true,
@@ -6274,7 +6107,7 @@
       "section_heading_line": 209,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1530",
+      "delegation_at": "ARCHITECTURE.md:1637",
       "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer6_grouping_design.md` (AS-BUILT, 2026-07-02 — built dormant and oracle-validated after the extension gate passed, `:3`) — D-454…D-462 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph supplements that line rather than replacing it.)* **★ WHY A CONTRACT HOME IS COHERENT FOR A LAYER THAT MAY NOT BE BUILT — the question this clause was withheld over on 2026-08-04 and which the user has now answered.** **D-611** establishes that the dormant path and its staged scaffolding are **deferred-engagement, not dead code**: their wire-or-remove verdict belongs to a named later step, and removing them is a STOP. Deferred work is therefore a state the record keeps decisions for, not an absence of them, and a contract home for it is the same posture rather than a new one — which is why **D-266**'s prohibition does not forbid this pointer. **D-266 IS UNTOUCHED:** Layer 6 may not be BUILT until the bounded-context design is coded and regression-tested for Layers 1–5. This clause records where the layer's design decisions live; it authorizes no build, no wiring, and no change to what the analysis computes.",
       "section_delegated": true,
       "section_states_rules": true,
@@ -6294,7 +6127,7 @@
       "section_heading_line": 1,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1530",
+      "delegation_at": "ARCHITECTURE.md:1637",
       "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer6_grouping_design.md` (AS-BUILT, 2026-07-02 — built dormant and oracle-validated after the extension gate passed, `:3`) — D-454…D-462 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph supplements that line rather than replacing it.)* **★ WHY A CONTRACT HOME IS COHERENT FOR A LAYER THAT MAY NOT BE BUILT — the question this clause was withheld over on 2026-08-04 and which the user has now answered.** **D-611** establishes that the dormant path and its staged scaffolding are **deferred-engagement, not dead code**: their wire-or-remove verdict belongs to a named later step, and removing them is a STOP. Deferred work is therefore a state the record keeps decisions for, not an absence of them, and a contract home for it is the same posture rather than a new one — which is why **D-266**'s prohibition does not forbid this pointer. **D-266 IS UNTOUCHED:** Layer 6 may not be BUILT until the bounded-context design is coded and regression-tested for Layers 1–5. This clause records where the layer's design decisions live; it authorizes no build, no wiring, and no change to what the analysis computes.",
       "section_delegated": true,
       "section_states_rules": false,
@@ -6314,7 +6147,7 @@
       "section_heading_line": 235,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1530",
+      "delegation_at": "ARCHITECTURE.md:1637",
       "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer6_grouping_design.md` (AS-BUILT, 2026-07-02 — built dormant and oracle-validated after the extension gate passed, `:3`) — D-454…D-462 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph supplements that line rather than replacing it.)* **★ WHY A CONTRACT HOME IS COHERENT FOR A LAYER THAT MAY NOT BE BUILT — the question this clause was withheld over on 2026-08-04 and which the user has now answered.** **D-611** establishes that the dormant path and its staged scaffolding are **deferred-engagement, not dead code**: their wire-or-remove verdict belongs to a named later step, and removing them is a STOP. Deferred work is therefore a state the record keeps decisions for, not an absence of them, and a contract home for it is the same posture rather than a new one — which is why **D-266**'s prohibition does not forbid this pointer. **D-266 IS UNTOUCHED:** Layer 6 may not be BUILT until the bounded-context design is coded and regression-tested for Layers 1–5. This clause records where the layer's design decisions live; it authorizes no build, no wiring, and no change to what the analysis computes.",
       "section_delegated": true,
       "section_states_rules": true,
@@ -6334,7 +6167,7 @@
       "section_heading_line": 281,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1530",
+      "delegation_at": "ARCHITECTURE.md:1637",
       "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer6_grouping_design.md` (AS-BUILT, 2026-07-02 — built dormant and oracle-validated after the extension gate passed, `:3`) — D-454…D-462 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph supplements that line rather than replacing it.)* **★ WHY A CONTRACT HOME IS COHERENT FOR A LAYER THAT MAY NOT BE BUILT — the question this clause was withheld over on 2026-08-04 and which the user has now answered.** **D-611** establishes that the dormant path and its staged scaffolding are **deferred-engagement, not dead code**: their wire-or-remove verdict belongs to a named later step, and removing them is a STOP. Deferred work is therefore a state the record keeps decisions for, not an absence of them, and a contract home for it is the same posture rather than a new one — which is why **D-266**'s prohibition does not forbid this pointer. **D-266 IS UNTOUCHED:** Layer 6 may not be BUILT until the bounded-context design is coded and regression-tested for Layers 1–5. This clause records where the layer's design decisions live; it authorizes no build, no wiring, and no change to what the analysis computes.",
       "section_delegated": true,
       "section_states_rules": true,
@@ -6354,7 +6187,7 @@
       "section_heading_line": 304,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1530",
+      "delegation_at": "ARCHITECTURE.md:1637",
       "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer6_grouping_design.md` (AS-BUILT, 2026-07-02 — built dormant and oracle-validated after the extension gate passed, `:3`) — D-454…D-462 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph supplements that line rather than replacing it.)* **★ WHY A CONTRACT HOME IS COHERENT FOR A LAYER THAT MAY NOT BE BUILT — the question this clause was withheld over on 2026-08-04 and which the user has now answered.** **D-611** establishes that the dormant path and its staged scaffolding are **deferred-engagement, not dead code**: their wire-or-remove verdict belongs to a named later step, and removing them is a STOP. Deferred work is therefore a state the record keeps decisions for, not an absence of them, and a contract home for it is the same posture rather than a new one — which is why **D-266**'s prohibition does not forbid this pointer. **D-266 IS UNTOUCHED:** Layer 6 may not be BUILT until the bounded-context design is coded and regression-tested for Layers 1–5. This clause records where the layer's design decisions live; it authorizes no build, no wiring, and no change to what the analysis computes.",
       "section_delegated": true,
       "section_states_rules": true,
@@ -6374,7 +6207,7 @@
       "section_heading_line": 352,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1530",
+      "delegation_at": "ARCHITECTURE.md:1637",
       "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer6_grouping_design.md` (AS-BUILT, 2026-07-02 — built dormant and oracle-validated after the extension gate passed, `:3`) — D-454…D-462 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph supplements that line rather than replacing it.)* **★ WHY A CONTRACT HOME IS COHERENT FOR A LAYER THAT MAY NOT BE BUILT — the question this clause was withheld over on 2026-08-04 and which the user has now answered.** **D-611** establishes that the dormant path and its staged scaffolding are **deferred-engagement, not dead code**: their wire-or-remove verdict belongs to a named later step, and removing them is a STOP. Deferred work is therefore a state the record keeps decisions for, not an absence of them, and a contract home for it is the same posture rather than a new one — which is why **D-266**'s prohibition does not forbid this pointer. **D-266 IS UNTOUCHED:** Layer 6 may not be BUILT until the bounded-context design is coded and regression-tested for Layers 1–5. This clause records where the layer's design decisions live; it authorizes no build, no wiring, and no change to what the analysis computes.",
       "section_delegated": true,
       "section_states_rules": true,
@@ -7834,7 +7667,7 @@
       "section_heading_line": 121,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1347",
+      "delegation_at": "ARCHITECTURE.md:1371",
       "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer2_slicing_design.md` (AS-BUILT — built, reviewed, accepted and validated on the full test corpus, `:3`) — D-540…D-541 — which this section points at and does not restate. *(The \"See …\" line above is a citation of three documents, two of them session reports; `CLAUDE.md` rule (i) distinguishes a citation from a delegation, and this paragraph supplements that line rather than replacing it.)*",
       "section_delegated": true,
       "section_states_rules": true,
@@ -7854,7 +7687,7 @@
       "section_heading_line": 121,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1347",
+      "delegation_at": "ARCHITECTURE.md:1371",
       "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer2_slicing_design.md` (AS-BUILT — built, reviewed, accepted and validated on the full test corpus, `:3`) — D-540…D-541 — which this section points at and does not restate. *(The \"See …\" line above is a citation of three documents, two of them session reports; `CLAUDE.md` rule (i) distinguishes a citation from a delegation, and this paragraph supplements that line rather than replacing it.)*",
       "section_delegated": true,
       "section_states_rules": true,
@@ -7954,7 +7787,7 @@
       "section_heading_line": 190,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4616",
+      "delegation_at": "ARCHITECTURE.md:4723",
       "delegation_line": "(`cowork_idiom_discovery_findings.md:122`, v1.5, cap-robust) found that harmony is **not organised by genre** —",
       "section_delegated": null,
       "section_states_rules": null,
@@ -7974,7 +7807,7 @@
       "section_heading_line": 190,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4616",
+      "delegation_at": "ARCHITECTURE.md:4723",
       "delegation_line": "(`cowork_idiom_discovery_findings.md:122`, v1.5, cap-robust) found that harmony is **not organised by genre** —",
       "section_delegated": null,
       "section_states_rules": null,
@@ -7994,7 +7827,7 @@
       "section_heading_line": 190,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4616",
+      "delegation_at": "ARCHITECTURE.md:4723",
       "delegation_line": "(`cowork_idiom_discovery_findings.md:122`, v1.5, cap-robust) found that harmony is **not organised by genre** —",
       "section_delegated": null,
       "section_states_rules": null,
@@ -8014,7 +7847,7 @@
       "section_heading_line": 147,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:1449",
+      "delegation_at": "ARCHITECTURE.md:1503",
       "delegation_line": "`docs/nct_detection_design.md` exists. The record states neither a date nor a ratifier.",
       "section_delegated": null,
       "section_states_rules": null,
@@ -8286,66 +8119,6 @@
       "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
     },
     {
-      "id": "D-584",
-      "title": "The perfect/imperfect cadence call is made on the BASS-DERIVED inversion; the soprano arrival degree is demoted to a soft optional nudge and the tool never attempts melody identification",
-      "document": "cowork_layer5_function_methods.md",
-      "home": "cowork_layer5_function_methods.md:75-79",
-      "section": "§3",
-      "section_heading_line": 64,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "section_delegated": null,
-      "section_states_rules": null,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
-    },
-    {
-      "id": "D-585",
-      "title": "The bass-scale-degree / Rule-of-the-Octave prior is admitted as a SOFT prior and tie-breaker only, never a gate",
-      "document": "cowork_layer5_function_methods.md",
-      "home": "cowork_layer5_function_methods.md:126-131",
-      "section": "§6",
-      "section_heading_line": 125,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "section_delegated": null,
-      "section_states_rules": null,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
-    },
-    {
-      "id": "D-586",
-      "title": "\"Function\" in the machine-learning literature names the Roman-numeral components, not Riemann's function theory — and this project's own function layer is misnamed for the same confusion",
-      "document": "cowork_layer5_function_methods.md",
-      "home": "cowork_layer5_function_methods.md:16-20",
-      "section": "§0",
-      "section_heading_line": 9,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "section_delegated": null,
-      "section_states_rules": null,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
-    },
-    {
       "id": "D-587",
       "title": "A user-facing preset presents as a familiar genre-era label plus exemplars the user knows — never as an idiom name or an obscure exemplar; genre names are LABELS over mixtures, never axes",
       "document": "cowork_style_taxonomy_proposal.md",
@@ -8354,7 +8127,7 @@
       "section_heading_line": 87,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4620",
+      "delegation_at": "ARCHITECTURE.md:4727",
       "delegation_line": "Chromatic-coloristic (`cowork_style_taxonomy_proposal.md:11-30`).",
       "section_delegated": null,
       "section_states_rules": null,
@@ -8374,7 +8147,7 @@
       "section_heading_line": 87,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4620",
+      "delegation_at": "ARCHITECTURE.md:4727",
       "delegation_line": "Chromatic-coloristic (`cowork_style_taxonomy_proposal.md:11-30`).",
       "section_delegated": null,
       "section_states_rules": null,
@@ -8394,7 +8167,7 @@
       "section_heading_line": 122,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4620",
+      "delegation_at": "ARCHITECTURE.md:4727",
       "delegation_line": "Chromatic-coloristic (`cowork_style_taxonomy_proposal.md:11-30`).",
       "section_delegated": null,
       "section_states_rules": null,
@@ -8414,7 +8187,7 @@
       "section_heading_line": 122,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4620",
+      "delegation_at": "ARCHITECTURE.md:4727",
       "delegation_line": "Chromatic-coloristic (`cowork_style_taxonomy_proposal.md:11-30`).",
       "section_delegated": null,
       "section_states_rules": null,
@@ -8434,7 +8207,7 @@
       "section_heading_line": 122,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4620",
+      "delegation_at": "ARCHITECTURE.md:4727",
       "delegation_line": "Chromatic-coloristic (`cowork_style_taxonomy_proposal.md:11-30`).",
       "section_delegated": null,
       "section_states_rules": null,
@@ -8454,7 +8227,7 @@
       "section_heading_line": 58,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4023",
+      "delegation_at": "ARCHITECTURE.md:4130",
       "delegation_line": "`docs/iter90_bass_as_root_promotion_shelved.md` for characterization and Iter 91 design).",
       "section_delegated": null,
       "section_states_rules": null,
@@ -8474,7 +8247,7 @@
       "section_heading_line": 84,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4023",
+      "delegation_at": "ARCHITECTURE.md:4130",
       "delegation_line": "`docs/iter90_bass_as_root_promotion_shelved.md` for characterization and Iter 91 design).",
       "section_delegated": null,
       "section_states_rules": null,
@@ -8494,7 +8267,7 @@
       "section_heading_line": 9,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4634",
+      "delegation_at": "ARCHITECTURE.md:4741",
       "delegation_line": "clustering corpora is the committed work (`cowork_style_clustering_plan.md`); the weighting itself is a joint decision",
       "section_delegated": null,
       "section_states_rules": null,
@@ -8632,66 +8405,6 @@
       "home": "docs/stage4d_local_modulation_design.md:78-80",
       "section": "“§5”",
       "section_heading_line": 74,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "section_delegated": null,
-      "section_states_rules": null,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
-    },
-    {
-      "id": "D-607",
-      "title": "Polyphonic phrase-boundary detection has NO validated deterministic rule set in the literature — the extension is engineering on monophonic cues, validated against our own corpus, and is not settled science",
-      "document": "cowork_phrase_boundary_methods.md",
-      "home": "cowork_phrase_boundary_methods.md:83-85",
-      "section": "§3",
-      "section_heading_line": 76,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "section_delegated": null,
-      "section_states_rules": null,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
-    },
-    {
-      "id": "D-608",
-      "title": "The symmetric-root spelling pin's entry premise was measured FALSE — it is unreachable because the scorer rarely chooses the diminished quality; the remedy is enumerated and NOT decided",
-      "document": "cowork_eg1_premise_checks.md",
-      "home": "cowork_eg1_premise_checks.md:21-22",
-      "section": "“PC-1”",
-      "section_heading_line": 9,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "section_delegated": null,
-      "section_states_rules": null,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
-    },
-    {
-      "id": "D-609",
-      "title": "The abstention rate rides on an arbitrary, never-fitted seed constant — a whole probe's metric-moving behaviour sat downstream of an unestablished value",
-      "document": "cowork_eg1_premise_checks.md",
-      "home": "cowork_eg1_premise_checks.md:55-57",
-      "section": "“PC-2”",
-      "section_heading_line": 43,
       "delegation_form": "not-named-in-any-ratified-surface",
       "delegation_scope": "none",
       "delegation_at": null,
@@ -8906,72 +8619,12 @@
       "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
     },
     {
-      "id": "D-623",
-      "title": "A selection-aware capability is a PARAMETER on the one orchestrator, never a sibling — the capability must not duplicate the orchestration",
-      "document": "cowork_layer3_reachback_design.md",
-      "home": "cowork_layer3_reachback_design.md:29-34",
-      "section": "§0",
-      "section_heading_line": 16,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "section_delegated": null,
-      "section_states_rules": null,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
-    },
-    {
-      "id": "D-624",
-      "title": "The hard bound and the score start are SAFETY CAPS for a loop that never settles — never the amount of context a layer needs",
-      "document": "cowork_layer3_reachback_design.md",
-      "home": "cowork_layer3_reachback_design.md:83-84",
-      "section": "§3",
-      "section_heading_line": 68,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "section_delegated": null,
-      "section_states_rules": null,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
-    },
-    {
       "id": "D-625",
       "title": "Spelling presence is tested with the validity predicate, never with a non-negative test — the flat side of the line of fifths is negative and a non-negative guard silently drops it",
       "document": "cowork_tpc_capability_design.md",
       "home": "cowork_tpc_capability_design.md:39-43",
       "section": "§1",
       "section_heading_line": 20,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "section_delegated": null,
-      "section_states_rules": null,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
-    },
-    {
-      "id": "D-628",
-      "title": "The finest meaningful extension step is the change-point — within a slice the sounding set is constant, so a finer request loads no note and changes no answer",
-      "document": "cowork_layer1_extend_design.md",
-      "home": "cowork_layer1_extend_design.md:32-34",
-      "section": "§2",
-      "section_heading_line": 23,
       "delegation_form": "not-named-in-any-ratified-surface",
       "delegation_scope": "none",
       "delegation_at": null,
@@ -9014,7 +8667,7 @@
       "section_heading_line": 53,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:1315",
+      "delegation_at": "ARCHITECTURE.md:1339",
       "delegation_line": "slicing never drags outside the loaded span (Phase 2; `cowork_layer2_reslice_design.md` §2). On a",
       "section_delegated": null,
       "section_states_rules": null,
@@ -9034,7 +8687,7 @@
       "section_heading_line": 82,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:1315",
+      "delegation_at": "ARCHITECTURE.md:1339",
       "delegation_line": "slicing never drags outside the loaded span (Phase 2; `cowork_layer2_reslice_design.md` §2). On a",
       "section_delegated": null,
       "section_states_rules": null,
@@ -9044,26 +8697,6 @@
       "moves": false,
       "moves_since_phase1q": false,
       "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit"
-    },
-    {
-      "id": "D-635",
-      "title": "Reach-back is a REAL product requirement, currently MASKED by the whole-score load — it must land WITH selection-based loading or selection-edge key inference breaks",
-      "document": "cowork_delta_check_dispositions.md",
-      "home": "cowork_delta_check_dispositions.md:74-83",
-      "section": "“L1”",
-      "section_heading_line": 69,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "section_delegated": null,
-      "section_states_rules": null,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
     }
   ],
   "the_phase_1r_re_run": {
