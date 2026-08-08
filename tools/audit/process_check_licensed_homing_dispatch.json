@@ -1,0 +1,112 @@
+{
+  "purpose": "A run of tools/audit/process_check.py over named dispatches or reports. Generated so a report cites this file rather than transcribing what the check found (D-431).",
+  "rules": [
+    "D-431 bare quantity",
+    "D-431 uncited code claim",
+    "D-434 missing self-check section"
+  ],
+  "files_scanned": [
+    "cc_instruction_licensed_homing_and_oi344.md"
+  ],
+  "findings_total": 13,
+  "by_file": {
+    "cc_instruction_licensed_homing_and_oi344.md": {
+      "findings": 13,
+      "rows": [
+        {
+          "file": "cc_instruction_licensed_homing_and_oi344.md",
+          "line": 80,
+          "rule": "D-431 bare quantity",
+          "detail": "three files",
+          "sentence": "acts only, no other edit of the three files."
+        },
+        {
+          "file": "cc_instruction_licensed_homing_and_oi344.md",
+          "line": 85,
+          "rule": "D-431 bare quantity",
+          "detail": "2.1",
+          "sentence": "file. → Task 2.1, per entry, before writing anything: an entry whose owner is soft does not"
+        },
+        {
+          "file": "cc_instruction_licensed_homing_and_oi344.md",
+          "line": 93,
+          "rule": "D-431 bare quantity",
+          "detail": "3.2",
+          "sentence": "re-deriving exactly as before. → Task 3.2: field-by-field comparison of the artifact before"
+        },
+        {
+          "file": "cc_instruction_licensed_homing_and_oi344.md",
+          "line": 104,
+          "rule": "D-431 bare quantity",
+          "detail": "1.2",
+          "sentence": "**1.2** Where the register's own"
+        },
+        {
+          "file": "cc_instruction_licensed_homing_and_oi344.md",
+          "line": 112,
+          "rule": "D-431 bare quantity",
+          "detail": "2.1",
+          "sentence": "**2.1** Derive the licensing class at HEAD (F1's artifact regenerated if the register moved);"
+        },
+        {
+          "file": "cc_instruction_licensed_homing_and_oi344.md",
+          "line": 113,
+          "rule": "D-431 bare quantity",
+          "detail": "2.2",
+          "sentence": "**2.2** Home each entry: the decision written into its owning section"
+        },
+        {
+          "file": "cc_instruction_licensed_homing_and_oi344.md",
+          "line": 116,
+          "rule": "D-431 bare quantity",
+          "detail": "2.3",
+          "sentence": "**2.3** Discharge A2 (the per-file diff) and A4 (the scoring-model staleness check)."
+        },
+        {
+          "file": "cc_instruction_licensed_homing_and_oi344.md",
+          "line": 117,
+          "rule": "D-431 bare quantity",
+          "detail": "2.4",
+          "sentence": "**2.4** Regenerate what follows the register — the blocker artifact, the routes artifact, the"
+        },
+        {
+          "file": "cc_instruction_licensed_homing_and_oi344.md",
+          "line": 118,
+          "rule": "D-431 bare quantity",
+          "detail": "2.5",
+          "sentence": "**2.5** Re-aim any"
+        },
+        {
+          "file": "cc_instruction_licensed_homing_and_oi344.md",
+          "line": 119,
+          "rule": "D-431 bare quantity",
+          "detail": "2.6",
+          "sentence": "**2.6** Run `tools/audit/claude_md_rule_triage.py`; report its"
+        },
+        {
+          "file": "cc_instruction_licensed_homing_and_oi344.md",
+          "line": 124,
+          "rule": "D-431 bare quantity",
+          "detail": "3.1",
+          "sentence": "**3.1** Change `gen_reads5_repack.py`: the dated proxy figure and its companion frozen in the"
+        },
+        {
+          "file": "cc_instruction_licensed_homing_and_oi344.md",
+          "line": 128,
+          "rule": "D-431 bare quantity",
+          "detail": "3.2",
+          "sentence": "**3.2** Discharge A3 (the field diff)."
+        },
+        {
+          "file": "cc_instruction_licensed_homing_and_oi344.md",
+          "line": 128,
+          "rule": "D-431 bare quantity",
+          "detail": "3.3",
+          "sentence": "**3.3** The"
+        }
+      ]
+    }
+  },
+  "clean_files": [],
+  "establishment": "tools/audit/process_check_establishment.json — the check's measured detection power and false-positive rate. Read it before reading a count here as coverage."
+}

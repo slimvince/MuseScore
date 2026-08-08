@@ -422,6 +422,20 @@ A Dim continuation with foreign bass + sounding third but no stepwise bass earns
 swing. Reading the reconstructed credit avoids this gap entirely. See
 `docs/decoder_design.md` §6 amendment and `cc_stage3_3_report.md` §1.
 
+**★ THE DECISION, STATED AS SUCH — the RECONSTRUCTED-CREDIT read is the ratified form of this
+guard, and the originally designed literal sounding-third test is NOT what shipped (re-homed into
+this specification 2026-08-07 on the user's ruling). ⚠ LEGACY subject — the vertical scorer this
+guard belongs to is dormant on both production surfaces.** Gate R asks whether the candidate earned
+**any inversion credit at all**; it does not test directly whether the candidate's third is
+sounding. *Why:* the derivation is the paragraph immediately above and is not repeated (#6) — the
+two tests are provably equivalent everywhere except on Diminished, where the direct test would be
+wrong because the only credit a Dim candidate can earn additionally requires stepwise-bass
+evidence, a temporal condition no vertical test can see. Reading the pipeline's own reconstructed
+credit is therefore the faithful execution of the redesign's intent rather than a compromise, and
+it is what closes the cross-layer dependency the redesign set out to remove. The originally
+designed mechanism text is retained above **for the record**, and a future reader must not mistake
+it for the shipped behaviour.
+
 **Why the phase guard.** `rootContinuityBonus` is deliberately **not**
 suppressed during `greedyExpandSegmentation` exploration (unlike `w_seq` / `w_dim` /
 step bonuses), so segmentation boundary selection already depends on rcb. If Gate R
@@ -478,6 +492,18 @@ Reward: root-position complete triads outrank slash-chord readings of the
 same PC set (closes Bug 2 — bwv310 m8 b3 Em/C vs C major). Iter 90's
 regression mode (slash chord with missing fifth) is excluded because an
 absent tone has `pcWeight == 0` which fails the presence check.
+
+**★ THE GUARD IS THE DECISION, AND IT IS STRUCTURAL RATHER THAN A THRESHOLD (re-homed into this
+specification 2026-08-07 on the user's ruling). ⚠ LEGACY subject.** The completeness bonus fires
+**only** for a **root-position** reading — the candidate bass IS the triad root — whose three triad
+tones are all present above the presence threshold. A genuine slash chord therefore neither gains
+the bonus nor is beaten by a rival reading that gains it wrongly. *Why:* derived from a measured
+failure rather than chosen. The previous, unconditional version of the same idea caused large
+regressions in both directions because it promoted cases where the slash-chord reading was the
+correct one; the design works the guard through the exact case that failed and shows that a genuine
+slash chord with its own fifth present does not collect the root-position bonus for the rival
+reading. It is an early instance of the standing rule that a correction is given a **structural
+entry condition** rather than a widened threshold (`CLAUDE.md`, the gate and preset policy).
 
 ### `w_stepIn` / `w_stepOut` — `kWStepIn` per-carrier (Baroque/Default **0.125**, Jazz/others 0.10); `kWStepOut = 0.10`
 
@@ -709,6 +735,21 @@ vertical) plus the two eligibility flags. The cap is a safety net against runawa
 stacking; it is non-binding at current values (bonus sums 1.85 / 0.75 Jazz vs the 2.0
 default — see the §4 note).
 
+**★ THE DECISION THIS SECTION RECORDS, STATED AS A RULE — the bass and the chord are chosen
+TOGETHER, as one (bass, root, template) triple (re-homed into this specification 2026-08-07 on the
+user's ruling). ⚠ LEGACY subject — this scorer is dormant on both production surfaces.** The
+analyzer does **not** commit to a bass and then score chords against it. It enumerates the
+plausible bass candidates and the whole root × template grid against each, and the winner is the
+best **(bass, root, template)** triple under the composite score. *Why:* both defects that forced
+it are diagnosed to the same cause and named with it — a passing note that happens to be the
+absolute lowest pitch wins bass selection over the beat-onset bass a step above it, flipping the
+chord root; and an incomplete slash-chord reading beats a complete root-position triad because
+root-position completeness earned no advantage. **Neither is reachable while the bass is committed
+before the chord is scored**, which is what makes this a structural decision rather than a
+weighting one. The cost is stated with it and judged acceptable: a few times the scoring loop. It
+is the same principle the production estimator carries on its own terms — coupled quantities are
+decided together rather than one being committed early.
+
 ---
 
 ## 6. Post-scoring gates (A–L)
@@ -717,6 +758,13 @@ These run after `results[]` is populated and the optional guaranteed-
 inversion-alternative is appended. They modify ranking via `std::swap` and
 `std::stable_sort` — they do not change the underlying scores in
 `rawCandidates`.
+
+**★ POINTER — WHAT A GATE MAY READ IS FIXED AT THE INFERENCE/PRESENTATION BOUNDARY, NOT HERE (added
+2026-08-07 on the user's homing ruling; the rule is published once, at `ARCHITECTURE.md` §3.3, #6).**
+A gate or scoring rule reads **structured fields only** — no chord-symbol string parsing and no
+Roman-numeral inference, in any gate, any scoring term, or any future change to either. It binds
+every rule in this section and every rule §4 documents. Read it at its home; this line points at it
+and does not restate it.
 
 **E3 (2026-06-06): execution location.** Gates A–L are implemented in
 `applyPostScoringGates()` (declared in `chordanalyzer.h`, defined in
@@ -775,6 +823,41 @@ initial score-ordered build in `applyHarmonicFunction()` now calls `buildChordRe
 directly. The unification is byte-identical to the former separate gates on the full output
 surface (winner AND `alternatives[]`) across all 352 scores × 3 presets — see
 `cowork_gateA_unification_design.md`.
+
+**★ THREE DECISIONS THIS PRIMITIVE RESTS ON, re-homed into this specification 2026-08-07 on the
+user's ruling. ⚠ LEGACY subject — this gate layer is dormant on both production surfaces, and its
+disposition belongs to the retirement map.**
+
+- **Which carry is correct is decided on the carry's PURPOSE, not on which code happened to be at
+  HEAD: the correct carry is the one that KEEPS the distinct alternative reading.** Two promotion
+  idioms were in use — one swaps a reading already carried in `results[]` to the front, leaving the
+  displaced reading in place; the other builds a fresh copy and appends it. The swap idiom is
+  correct. *Why:* argued from what the carry is FOR, and the design says so in terms — the
+  alternatives exist so the later layer can select among the **distinct** readings, and a copy of
+  the winner is not a distinct reading. Measured on the full output surface across the whole
+  corpus, the append idiom injects that near-copy and displaces the genuinely different partner,
+  which is an information-loss regression under #12. The same principle is already applied
+  elsewhere in this layer, where a non-promoting raw pull is popped so it does not pollute the
+  list. This is explicitly **not** "prefer the idiom that is at HEAD".
+- **ONE promotion primitive, with a PRESENT-FIRST dedup guard — the append branch fires only when
+  the target is genuinely absent.** The ordering is the whole fix: present-first makes an
+  already-carried partner *swapped* rather than *appended*, so no duplicate can enter. *Why:* the
+  design shows the equivalence rather than claiming it — for the enharmonic flip the caller has
+  already computed the in-`results[]` partner index, and the primitive swaps that exact index, so
+  the produced permutation is byte-identical to the behaviour it replaces. That is what makes
+  retiring the separate rule a no-op on the output rather than a change to be argued about.
+- **The retirement condition for the separate Gate A rule is BYTE-FOR-BYTE REPRODUCTION OF ITS
+  CARRY — not the winner-inertness that preceded it.** Once the flip is one promotion call with
+  present-first branching, the former "partner present" and "partner absent" rules are two branches
+  of the same promotion and the separate rule — its enum member, its guard, its name-map entry and
+  its dedicated fixtures — is redundant. It is removable **because** the primitive reproduces the
+  swap byte-for-byte on the present branch, which leaves winner AND carry byte-identical. *Why:*
+  the condition is quoted from the earlier ruling it discharges — the rule retires when the
+  promotion machinery unifies into one path producing one carry — and the design shows why the
+  earlier winner-only inertness was **not** enough: the naive removal was inert on the winner
+  across the whole corpus while changing the carry on a named subset of scores. That gap is exactly
+  why this document's evidence rule is inertness on the **full** output surface, winner AND
+  alternatives, and never the winner alone (#15).
 
 **Stage-5 dissolution audit — per-rule disable (measurement-only).** Each §6 rule (the
 bias correction, FM2, and Gates E/G-E/G-D/H/I/L/J) is individually disable-able via a
@@ -978,6 +1061,127 @@ risk regressions documented in `COWORK_HANDOFF.md` / `STATUS.md`.
   fires only when at least one tone has `onsetAtRegionStart == true` or
   `distinctMetricPositions > 0` (i.e. came from `collectRegionTones`).
   Single-tick / status-bar / unit-test paths use the legacy single-bass path.
+
+**★ SIX FURTHER STANDING CONSTRAINTS AND DEAD ENDS, re-homed into this section 2026-08-07 on the
+user's ruling. All six have this scorer and its gate layer as their subject, which is dormant on
+both production surfaces; their status as constraints on what a future change may attempt is
+unaffected by that (⚠ LEGACY subject, live constraint).**
+
+- **A correction rule that can change a committed chord's IDENTITY is retired or folded in BEFORE
+  the search is widened past it.** Where a later rule can change which root, quality or bass was
+  committed, that rule is removed or absorbed into the scoring first; only then may the search be
+  allowed to consider more alternatives. *Why:* stated with the decision — a rule that mutates
+  root, quality or bass feeds the backward-looking evidence, so it cannot be cleanly separated from
+  a wider-beam decode; a wider search would be reading a predecessor a later step is still going to
+  change. The alternative — searching against uncorrected identities with a documented re-decision
+  — was considered and not taken.
+
+- **A WIDER SEARCH CANNOT FIX THE ARPEGGIO ROOT FAILURE — the wrong reading IS the global optimum.
+  Recorded dead end; do not retry.** On the arpeggiated-harmony failures the locally wrong reading
+  is not a weak transient a broader search would discard: it is the best-scoring node, so a broader
+  search finds exactly what the narrow one found. Only **re-weighting** or a **different
+  segmentation** can reach it. *Why:* derived from the search lattice and verified three times,
+  including against an independent earlier derivation — on the founding score the continued-root
+  path outscores the correct path, the gap being the root-continuity reward minus the margin, and
+  the premise the earlier verdict rested on (that the transient scores low) is **measured false**.
+  This is the dead end the two *tried and closed — do not retry* lists in `ARCHITECTURE.md` name;
+  they point here and the rule is published once (#6).
+
+- **Three prohibitions hold through every stage, and the per-gate RETIREMENT STAGE is the only
+  sanctioned way these gates change:** no new gates, no threshold widening, no gating of the
+  root-continuity bonus. *Why:* each prohibition carries its own defense elsewhere — accumulating
+  gates are a warning sign and the answer is iteration rather than more gates; gate thresholds are
+  Baroque-calibrated and are not loosened for another style; gating the root-continuity bonus on a
+  sparse predecessor was measured a dead end (the bullet above). What this constraint adds is the
+  **single sanctioned channel** — the retirement stage's per-gate differential proof obligation —
+  which is what stops the gate layer changing by accretion.
+
+- **The temporal signals sitting inside the vertical scorer STAY WHERE THEY ARE, and the gate that
+  depends on one MOVES WITH THEM.** Several signals that look backward or forward in time are
+  computed inside the part of the scorer that is supposed to judge only what sounds at one moment.
+  They are known, documented debt and are **not** to be moved before a scoring-stabilisation phase;
+  when they do migrate, Gate R has to move or adapt **simultaneously**. *Why:* stated with the
+  recommendation and grounded in the mechanism — Gate R's test uses a score component as a stand-in
+  for *this candidate has a sounding third*, and it carries that meaning only because one of those
+  signals is computed where it is. Removing the debt without touching the gate would silently
+  change what the gate tests: a cross-layer dependency invisible to anyone reading the gate's own
+  file.
+
+- **The policy for judging a PROPOSED post-scoring gate — three tests.** (1) If the proposal is
+  another variant of correcting the bass-as-root bias, first ask whether the bias itself can be
+  reduced, or whether functional context would remove the ambiguity; add the gate only if the fix
+  is genuinely local. (2) If it turns on a **structural** condition — pitch-class arithmetic plus a
+  presence constraint, not temporal evidence — it is likely architecturally sound. (3) If it needs
+  the three-step cascade shape, that is a strong signal that the real problem is missing functional
+  context, and the gate is the wrong answer. *Why:* derived from a systematic read of the whole
+  gate population — two thirds of the gates were solving one problem, the scorer's bass-as-root
+  pull, and three separate cascades were each built up step by step for the same shape of failure,
+  which the canonical specification already names as the warning sign that accumulating gates
+  signal an unresolved architectural problem. The two gates that read came out architecturally
+  healthier both turn on structural conditions rather than compensating for the bias, which is
+  where test (2) comes from.
+
+- **Two of the post-scoring gates are PURELY-LOCAL VERTICAL refinements and must SURVIVE the
+  dissolution; the others dissolve into the competition. Recorded DEFERRED.** Most of the
+  after-the-fact repair steps exist only because the decision preceding them could not see enough
+  context, and they disappear once that decision can. Two do not: they refine the reading from the
+  notes alone and compensate for nothing, so they are carried across rather than deleted alongside
+  the others. *Why:* measured at the code rather than assumed from the design — of the live gates,
+  ten read context from beyond their own stretch and are compensation by construction, three were
+  already dead code, and the two named ones read nothing outside the sonority. **The dissolution
+  was never executed on this path** — the production estimator replaced the pipeline instead — so
+  the constraint stands DEFERRED and what it says about those two gates is a fact about this code
+  that the retirement map still has to dispose of (#12). One bookkeeping fact a reader needs: the
+  *partner-present* half of one of the two named gates has since been unified into the single
+  promotion primitive (§6a), so the surviving rule name for that flip is FM2; the unification did
+  not perform the dissolution and does not discharge this constraint.
+
+### The fine-grain function override — falsified, its repair refuted, its principled restriction un-computable, and a redesign recommended but NOT adopted
+
+**★ Four findings re-homed into this section 2026-08-07 on the user's ruling, kept together because
+they are one evidence record about one mechanism.** The mechanism is the late correction pass that
+overturns a committed chord when the surrounding progression argues against it. ⚠ **LEGACY subject,
+and narrower than "legacy" reads:** checked at the code, it is **not reachable on any production
+surface, and not on the plain legacy batch path either** — it survives behind a return-early
+diagnostic dump flag and the test suites. Nothing below is running today.
+
+- **FALSIFIED — no threshold can make the override net-positive.** Whether a fire helps or hurts is
+  unrelated to either quantity its trigger is built from: the incumbent reading's confidence and
+  the strength of the progression contradiction. Since the only tunable knob scales the bar by that
+  confidence, **no setting separates the cases it fixes from the cases it breaks**, and the best
+  measurable setting simply switches the pass off. *Why:* measured and stratified rather than
+  argued, on a ground-truth-aligned population of fires — the harm rate is essentially flat across
+  the contradiction value and **rises** with the incumbent's confidence, so the one available lever
+  pushes the wrong way; the mechanism of the harm is named too, the fourth- and fifth-related root
+  moves the progression score rewards accounting for most of both the fires and the harms.
+- **REFUTED — making the comparison vertically fair does not repair it.** The obvious repair is to
+  let the pass overturn a reading only when the replacement fits the sounding notes at least as
+  well. Measured, that band is still overwhelmingly harmful. The problem is not that the comparison
+  was unfair; it is that **the progression contradiction does not predict which root is correct at
+  these moments**. *Why:* measured across bands of the vertical gap, every one net-negative, with
+  the count and harm rate per band; the conclusion drawn is the one the numbers support and no more
+  — the earlier layer's vertical commit is a better predictor of the annotated root than the
+  progression re-pick, even where the alternative is its vertical equal.
+- **UN-COMPUTABLE, not merely unmeasured — the principled restriction cannot be built today.**
+  Restricting the override to the genuinely coupled key-and-chord minority is the principled form,
+  and its trigger **is not computed anywhere**. The binding blocker is the component that asks
+  whether a different carried KEY alternative flips the chord reading: that needs a per-key chord
+  re-decode, which **is** the joint key-and-chord step the record says is still owed, and the
+  closest existing mechanism explicitly leaves the chord unchanged. *Why:* established at the code,
+  both components separately; surfacing the trigger would mean **building** the joint step, which
+  the standing sequencing rules forbid at this stage. So the verdict is un-computable rather than
+  unmeasured, and this option is a long-run successor rather than a near-term choice.
+- **RECOMMENDED AND NOT ADOPTED — demote the override to an ANNOTATION.** The recommendation on the
+  evidence above is to stop overturning the committed chord and instead **record that the
+  surrounding progression disagrees**, leaving the chord alone — accuracy-equivalent to simply
+  disabling the pass, while keeping the disagreement as calibrated uncertainty a later stage can
+  use. Tightening the trigger and repairing the comparison are both rejected as measured
+  net-negative. **This is a PROPOSAL, not a specification of this document: it is NOT adopted, and
+  no reader may implement it from this paragraph.** It is recorded as an INPUT to the one
+  prioritized fix plan, and the row that owns the demotion carries the cross-reference on the
+  plan's side. *Why:* every clause of the recommendation is measured and cited in the bullets
+  above; the loss it accepts — a modest number of genuine corrections given up — is stated and kept
+  in view rather than netted away.
 
 ---
 

@@ -153,7 +153,7 @@
 
 **Status.** LIVE · decided 2026-07-17 · ratified by user
 
-**Home.** `ARCHITECTURE.md:271-272`
+**Home.** `ARCHITECTURE.md:273-274`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:15-26, the governing architecture decision banner (user-ratified 2026-07-17), which tracks work and is not a specification home. OPEN_ITEMS OI-237 closes on this move
 
@@ -168,7 +168,7 @@
 
 **Status.** LIVE · decided 2026-07-19 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:280-281`
+**Home.** `ARCHITECTURE.md:282-283`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:123 (open_items/OI-176 and OI-177, PROTOCOL RATIFIED 2026-07-19, protocols in `cowork_prefit_gates.md`). The standing principle is CLAUDE.md #20. OPEN_ITEMS OI-237 closes on this move
 
@@ -183,7 +183,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:294-295`
+**Home.** `ARCHITECTURE.md:296-297`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:211 (open_items/OI-188, OPEN - 'bounds every ceiling claim'); the admission rule actually in production still has no ratified basis (open_items/OI-226). OPEN_ITEMS OI-237 closes on this move
 
@@ -198,7 +198,7 @@
 
 **Status.** LIVE · decided 2026-07-26 · ratified by user
 
-**Home.** `ARCHITECTURE.md:308-309`
+**Home.** `ARCHITECTURE.md:310-311`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only in the CLAUDE.md gate block (A), the OI-178 adoption baselines (user-ratified 2026-07-26). The tension with D-090 (calibrated abstention, ARCHITECTURE.md §5.7a) is NAMED at the new home and deliberately NOT resolved there - resolving it is later work. OPEN_ITEMS OI-237 closes on this move
 
@@ -348,13 +348,13 @@
 
 **Why.** Absorbed by ratified successors: the factorization’s emission categories (D-004’s ground-truth-derived compact vocabulary + the per-tone emission’s membership categories) and the OI-194 ornament-label increment. Ruled bindingly BEFORE the phase-3 family design so the struck-versus-sounding emission fix keeps non-chord-tone handling in the emission’s categories rather than solving its problems by vocabulary inflation.
 
-**Status.** SUPERSEDED BY the ratified factorization emission design (D-004 and the OI-194 increment) · date not stated · ratifier not stated
+**Status.** SUPERSEDED BY the ratified factorization emission design (D-004 and D-426, the OI-194 ornament-label increment) · date not stated · ratifier not stated
 
 **Home.** `cowork_architecture_reassessment.md:110`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
 **Home section.** **§4** — `## 4. Meta-findings to institutionalize (cross-cutting)` (heading at line 104). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `contract-home` to `gap`; the former class is kept here rather than overwritten (#12).
 
-**Provenance.** Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommendations adopted): SUPERSEDED BY the named later ratified decisions — the governing status derives from the record's dates and explicitness, not from resolving the original statement's ambiguity. The second-partition read of the archives is instructed to flag anything refining these. ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.
+**Provenance.** Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's remainder). ★ RULED by the user 2026-08-02 (the OI-270 split, all four recommendations adopted): SUPERSEDED BY the named later ratified decisions — the governing status derives from the record's dates and explicitness, not from resolving the original statement's ambiguity. The second-partition read of the archives is instructed to flag anything refining these. ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched. ★ THE SECOND SUCCESSOR IS NAMED — D-426, by the user's ruling of 2026-08-07 (dispatch `cc_instruction_five_rulings.md` §0a R2). The `superseded_by` field named the second successor as an INCREMENT by its open-items row rather than by a register identifier, so no derivation could read its home and criterion C1 could not be discharged for that half of this entry's content (the finding is at `tools/audit/decisions/r1_superseded_reach.json`, whose D-285 record reported the gap as a NAMING gap rather than an absent successor). The user names D-426 — the decision that the ornament labels get their own increment, with the tracking row created at ruling time — as the recorded decision that carries it. The field formerly read, verbatim: `the ratified factorization emission design (D-004 and the OI-194 increment)` (#12). CONSEQUENCE, stated with the ruling rather than derived after it: D-426 is itself unhomed — its home document's strongest naming is a form the delegation bar excludes — so C1 is still defeated for this entry and the owed act is homing D-426, which is where D-642 puts it and which finish-line item 1 already carries.
 
 ### D-376 — The joint key-and-chord step was designed as a BOUNDED COUPLING over the two existing decoders, and the unified single-state alternative was REJECTED — the option later adopted as the production architecture
 
@@ -421,13 +421,18 @@
 
 ### D-449 — Factor granularity is fixed: the bass factor is evaluated per event, the missing-tone penalty per event of segment length, the emission per tone, and the boundary-family factors per boundary
 
-> **Proposed specification amendment (a #17e
-> sharpening within the ratified structure, brought for ratification per #13/#22):** (a) the pitch
-> emission is per tone (already the ratified text); (b) the BASS factor is evaluated per event — each
-> event's sounding bass against the segment's chord — which is Ni's published per-frame form (F9), not a
-> new invention; (c) the missing-tone penalty is normalized per event of segment length (a segment
-> missing its third pays in proportion to how long it fails to sound it); (d) transition, entry, and
-> key-change factors remain per boundary (correct as written).
+> **Factor granularity is fixed, per factor.** The pitch emission is scored **per tone**. The **bass
+> factor is evaluated per event** — each event's sounding bass judged against the segment's chord.
+> The **missing-tone penalty is normalized per event of segment length**, so a segment missing its
+> third pays in proportion to how long it fails to sound it. The **transition, entry and key-change
+> factors stay per boundary**. *Why:* measured on a real corpus case, and the measurement is why the
+> granularity is fixed at all — under per-segment bookkeeping a longer segment pays the bass and
+> missing-tone terms once where a split pays them twice, so merging harvests a discount unrelated to
+> the music, which is the classic semi-Markov length bias. On the case that exposed it the
+> bookkeeping alone decided merge against split, against the ground truth; with the bass factor
+> evaluated per event the remaining gap is small enough to ride two fittable values rather than the
+> structure. The per-event bass form is not an invention: it is the published per-frame form of the
+> work this factorization is grounded in.
 
 **In plain words.** The scoring form is written as a term per segment, which left open whether each term is counted once for the whole segment or once for each event inside it. That is now fixed: the bass evidence is judged at every event against the segment's chord, a missing chord tone is charged in proportion to how long it fails to sound, each sounding pitch is judged on its own, and the terms that belong to a boundary stay at the boundary.
 
@@ -437,21 +442,28 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_factorization_desk_simulation.md:492-498`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:365-376`
 
-**Home section.** **§4** — `## 4. Findings register (surprises recorded, diagnosed, with proposed dispositions)` (heading at line 485). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** RATIFIED by the user 2026-07-19 — the document's own banner records that the §7 asks were granted in full, naming this as "the §4.1 granularity amendment (now incorporated in `cowork_joint_estimator_factorization.md` §2/§3 with dated marks)". Entered by the phase-1 reads wave 1 from the full read of `cowork_factorization_desk_simulation.md`. The amendment's incorporated home is the factorization specification, which this wave did NOT read (it is owed at reading order 32); the entry is homed where the ratification is recorded and the incorporation is not verified here. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+**Provenance.** RATIFIED by the user 2026-07-19 — the document's own banner records that the §7 asks were granted in full, naming this as "the §4.1 granularity amendment (now incorporated in `cowork_joint_estimator_factorization.md` §2/§3 with dated marks)". Entered by the phase-1 reads wave 1 from the full read of `cowork_factorization_desk_simulation.md`. The amendment's incorporated home is the factorization specification, which this wave did NOT read (it is owed at reading order 32); the entry is homed where the ratification is recorded and the incorporation is not verified here. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.) ★ HOMED 2026-08-07 (CC, the owner-rulings homing wave, executing the user's ruling of 2026-08-07 recorded at `cowork_owner_rulings_2026_08_07.md`). The owner question this entry carried was that the joint estimator is specified in the document's OPENING BANNER rather than in a section a decision can be sited inside. The user ruled that `ARCHITECTURE.md` GAINS A DEDICATED JOINT-ESTIMATOR SECTION, and it does: the existing standing-rules block was CONVERTED into a headed section by adding a heading above it, with NO existing text moved and none reworded (the minimal structural act the dispatch's assumption A4 prefers). A second heading was added below the block to bound the section, because three unrelated preamble blocks follow it and would otherwise read as part of the estimator's specification; that too is an addition and moves nothing. This entry is written into a subsection of that new section, in the specification's own voice and with its defense, beside the four other decisions about what the decode counts. Assumption A1 discharged before writing: the destination exists and STATES RULES. FORMER HOME, PRESERVED (#12): `cowork_factorization_desk_simulation.md:492-498`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 485, "section": "## 4. Findings register (surprises recorded, diagnosed, with proposed dispositions)", "label": "§4", "delegated": null, "delegation": "named in no user-ratified surface", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "**Proposed specification amendment (a #17e
+sharpening within the ratified structure, brought for ratification per #13/#22):** (a) the pitch
+emission is per tone (already the ratified text); (b) the BASS factor is evaluated per event — each
+event's sounding bass against the segment's chord — which is Ni's published per-frame form (F9), not a
+new invention; (c) the missing-tone penalty is normalized per event of segment length (a segment
+missing its third pays in proportion to how long it fails to sound it); (d) transition, entry, and
+key-change factors remain per boundary (correct as written)." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance — the wave and its dispatch — is recorded in this field and NOT in the specification text, on the ruling record's own instruction: a file name written into a governing document reads as a new naming and moves a measured population (the OI-330 / OI-328 lesson).
 
 ### D-450 — The key-signature and declared-mode prior conditions the INITIAL key state only, re-entering only at a notated signature change
 
-> **4.2 The §5a open question SETTLED by trace (S3, concurred by C5): the signature/declared-mode prior
-> conditions the INITIAL key state only,** re-entering only at a notated mid-piece signature change (the
-> OI-94(a) discharge moment). The persistent-pull variant imposes a linearly growing tax on
-> away-from-signature keys with no theory basis (F2: the literature has no signature prior at all) and
-> softly re-introduces the OI-174 signature-pull bias in exactly the accidental-free stretches where the
-> prior should be silent. Brought for ratification as the §7 record; the factorization doc §7 already
-> names this as settled-by-desk-sim.
+> **The key-signature and declared-mode prior conditions the INITIAL key state ONLY.** What the
+> written key signature and any declared major/minor say about the key sets the starting key state
+> and is not applied again — **except at a notated mid-piece signature change**, which is new written
+> evidence and re-anchors it. The alternative form, a persistent pull toward the signature at every
+> step, is **rejected**. *Why:* traced and settled by desk simulation on a Dorian-notated opening and
+> a genuinely modal piece. A persistent pull taxes every away-from-signature key at every segment,
+> without bound, and it has no basis in the literature — the published work carries no signature
+> prior at all; it also re-introduces, in soft form, the signature-pull bias an earlier measurement
+> condemned, in exactly the accidental-free stretches where the prior should be silent. The
+> initial-state form pays the tax once and lets the music govern thereafter.
 
 **In plain words.** What the written key signature and any declared major/minor say about the key is used once, to set the starting key, and then not again — unless the score itself changes signature part way through, which is new written evidence and re-anchors it. The alternative, a pull toward the signature at every point, is rejected.
 
@@ -461,20 +473,21 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_factorization_desk_simulation.md:506-512`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:378-387`
 
-**Home section.** **§4** — `## 4. Findings register (surprises recorded, diagnosed, with proposed dispositions)` (heading at line 485). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** RATIFIED by the user 2026-07-19 — the document's banner records the §7 asks granted in full, naming "the §4.2 initial-state-only prior record (incorporated at §3.10)". Entered by the phase-1 reads wave 1. As with D-449 the incorporated home is the factorization specification, unread at this wave. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+**Provenance.** RATIFIED by the user 2026-07-19 — the document's banner records the §7 asks granted in full, naming "the §4.2 initial-state-only prior record (incorporated at §3.10)". Entered by the phase-1 reads wave 1. As with D-449 the incorporated home is the factorization specification, unread at this wave. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.) ★ HOMED 2026-08-07 (CC, the owner-rulings homing wave, executing the user's ruling of 2026-08-07 recorded at `cowork_owner_rulings_2026_08_07.md`). Same owner question and same answer as D-449 — the ruling record routes it to the joint-estimator section the same act created — and it is written there beside D-449, in the specification's own voice and with its defense. Assumption A1 discharged before writing. FORMER HOME, PRESERVED (#12): `cowork_factorization_desk_simulation.md:506-512`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 485, "section": "## 4. Findings register (surprises recorded, diagnosed, with proposed dispositions)", "label": "§4", "delegated": null, "delegation": "named in no user-ratified surface", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "**4.2 The §5a open question SETTLED by trace (S3, concurred by C5): the signature/declared-mode prior
+conditions the INITIAL key state only,** re-entering only at a notated mid-piece signature change (the
+OI-94(a) discharge moment). The persistent-pull variant imposes a linearly growing tax on
+away-from-signature keys with no theory basis (F2: the literature has no signature prior at all) and
+softly re-introduces the OI-174 signature-pull bias in exactly the accidental-free stretches where the
+prior should be silent. Brought for ratification as the §7 record; the factorization doc §7 already
+names this as settled-by-desk-sim." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance — the wave and its dispatch — is recorded in this field and NOT in the specification text, on the ruling record's own instruction: a file name written into a governing document reads as a new naming and moves a measured population (the OI-330 / OI-328 lesson).
 
 ### D-451 — A desk simulation's table values are provisional, enter no fit, and a verdict that would flip inside a provisional value's plausible range is reported as a near-tie, never as a win
 
-> 1. **All table values are PROVISIONAL** — declared here (§1) before use, each labeled with its
->    provenance class: the FORM is from the ratified specification and the derived forms in
->    `cowork_term_theory_grounding.md` §1 (F1–F10); the VALUES are hand-declared stand-ins whose only job
->    is to let the mechanism be traced. No value here survives into any fit; fitting happens only under
->    the OI-176/OI-177 gates. A verdict that would flip within the plausible range of a provisional value
->    is reported as a NEAR-TIE with the sensitive cell named — never as a win.
+>     **★ WHAT A DESK SIMULATION'S TABLE VALUES ARE, AND WHAT THEY MAY NEVER BECOME (user-ratified
+>     2026-07-19).** Every table value a desk simulation under (c) uses is **PROVISIONAL** — declared
+>     before use, each labeled with its provenance class, and hand-declared stand-ins whose only job
 
 **In plain words.** When a mechanism is traced by hand, the numbers used are stand-ins declared up front whose only job is to let the mechanism be followed. None of them may become a fitted value later. And if a trace's answer would change had a stand-in been chosen differently within its believable range, the trace reports a near-tie and names the deciding cell rather than claiming a winner.
 
@@ -484,17 +497,15 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_factorization_desk_simulation.md:30-35`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `CLAUDE.md:86-88`  — a project-wide convention with no owning layer; this is its correct home.
 
-**Home section.** **§0** — `## 0. Ground rules (declared before any trace)` (heading at line 28). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** The ground rules of `cowork_factorization_desk_simulation.md` §0, declared before any trace, in the document the user RATIFIED on 2026-07-19 (banner: the §7 asks granted in full, verdict included). Entered by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+**Provenance.** The ground rules of `cowork_factorization_desk_simulation.md` §0, declared before any trace, in the document the user RATIFIED on 2026-07-19 (banner: the §7 asks granted in full, verdict included). Entered by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.) ★ HOMED 2026-08-07 (CC, the licensed homing wave, executing the user's ruling R2 of 2026-08-07, dispatch `cc_instruction_licensed_homing_and_oi344.md` §0a — the LICENSING class of finish-line item 1's re-home set, homed under the edit-surface licence the user ruled on the same date). Written into `CLAUDE.md` principle #17(c), as the rule stating what a desk simulation's table values are and what they may never become, in that section's own voice and with its defense. The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. FORMER HOME, PRESERVED (#12): `cowork_factorization_desk_simulation.md:30-35`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — it is removed because the home-class criteria do not reach a `project-convention` entry (the register's own home rule): section "## 0. Ground rules (declared before any trace)", label "§0", verdict EXCLUDE, decided by "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"; former_class gap, class_before_phase1q gap, class_before_phase1r gap. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "1. **All table values are PROVISIONAL** — declared here (§1) before use, each labeled with its\n   provenance class: the FORM is from the ratified specification and the derived forms in\n   `cowork_term_theory_grounding.md` §1 (F1–F10); the VALUES are hand-declared stand-ins whose only job\n   is to let the mechanism be traced. No value here survives into any fit; fitting happens only under\n   the OI-176/OI-177 gates. A verdict that would flip within the plausible range of a provisional value\n   is reported as a NEAR-TIE with the sensitive cell named — never as a win.". Provenance is recorded in this field and NOT in the specification text, on the ruling's own instruction: a file name written into a governing document reads as a new naming and moves a measured population (the OI-330 / OI-328 lesson). What the specification text carries is the rule, its date and its ratifier where the record states one, and its defense.
 
 ### D-452 — Every desk-simulation trace runs at identity weights — the ratified ablation baseline — so the trace tests the structure and the tables, not the weighting
 
-> 2. **Identity weights.** Every trace runs the generative product (all `w = 1`) — exactly the ratified
->    mandatory ablation baseline. The desk simulation therefore tests the structure and the tables, not
->    the weight layer.
+>     **★ EVERY DESK-SIMULATION TRACE RUNS AT IDENTITY WEIGHTS (user-ratified 2026-07-19).** A trace
+>     under (c) runs the generative product with every weight at one — exactly the mandatory ablation
+>     baseline the design already carries. The desk simulation therefore tests the structure and the
 
 **In plain words.** Each hand trace is run with every weight set to one, which is the baseline the design already requires be measured. That way what the trace checks is whether the shape of the model and its tables behave, and not whether a weighting was chosen well.
 
@@ -504,11 +515,9 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_factorization_desk_simulation.md:36-38`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `CLAUDE.md:96-98`  — a project-wide convention with no owning layer; this is its correct home.
 
-**Home section.** **§0** — `## 0. Ground rules (declared before any trace)` (heading at line 28). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** The ground rules of `cowork_factorization_desk_simulation.md` §0, in the document the user RATIFIED on 2026-07-19. Entered by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+**Provenance.** The ground rules of `cowork_factorization_desk_simulation.md` §0, in the document the user RATIFIED on 2026-07-19. Entered by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.) ★ HOMED 2026-08-07 (CC, the licensed homing wave, executing the user's ruling R2 of 2026-08-07, dispatch `cc_instruction_licensed_homing_and_oi344.md` §0a — the LICENSING class of finish-line item 1's re-home set, homed under the edit-surface licence the user ruled on the same date). Written into `CLAUDE.md` principle #17(c), as the rule that every desk-simulation trace runs at identity weights, in that section's own voice and with its defense. The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. FORMER HOME, PRESERVED (#12): `cowork_factorization_desk_simulation.md:36-38`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — it is removed because the home-class criteria do not reach a `project-convention` entry (the register's own home rule): section "## 0. Ground rules (declared before any trace)", label "§0", verdict EXCLUDE, decided by "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"; former_class gap, class_before_phase1q gap, class_before_phase1r gap. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "2. **Identity weights.** Every trace runs the generative product (all `w = 1`) — exactly the ratified\n   mandatory ablation baseline. The desk simulation therefore tests the structure and the tables, not\n   the weight layer.". Provenance is recorded in this field and NOT in the specification text, on the ruling's own instruction: a file name written into a governing document reads as a new naming and moves a measured population (the OI-330 / OI-328 lesson). What the specification text carries is the rule, its date and its ratifier where the record states one, and its defense.
 
 ### D-453 — The desk simulation's verdict: the ratified factorization passes nine of ten traces and no finding reopens the structure
 
@@ -740,15 +749,21 @@
 
 ### D-532 — The chord-transition table gains one pooling level that groups a secondary dominant's continuations by their RELATION to its target — restoring from counts the one behaviour that defines the chord class
 
-> **Option 1a — add one pooling level that groups secondary-dominant progressions by their RELATION
-> to the target (resolves to the chord it is the dominant of / moves elsewhere), pooled across all
-> targets; then re-run the counting.** Pros: restores the defining regularity from real counts, with
-> no hand-chosen number (guiding principle 1, fact-based only); reuses the pooling idea the table
-> design already rests on — counting the same pattern across transpositions — so no new kind of
-> machinery (principle 6, one path per concern); the counts are ample, so the two or three new cells
-> pass the reliability rule easily (the ratified capacity budget stays satisfied). Cons: it amends a
-> pooling ladder you ratified, so it needs your re-ratification (that is why it is brought here and
-> was not just done); it adds a small number of parameters.
+> **The chord-transition table carries one pooling level for a secondary dominant's continuations,
+> grouped by their RELATION to the target.** A secondary dominant's continuations are pooled across
+> all targets as *resolves to the chord it is the dominant of* versus *moves elsewhere*, and the
+> counting is re-run at that level. *Why:* as counted without it, every secondary dominant is too
+> rare on its own to hold a row, so its continuations fall into the general chord-frequency list and
+> the table reads the same probability for resolving to the target as for going anywhere else — it is
+> blind to the one behaviour that defines the chord class. The defect was verified directly in the
+> table and its cost measured in a checked passage, where the blindness taxed the correct reading.
+> Two alternatives are excluded on stated grounds: leaving it to the weight layer cannot work,
+> because a weight can only scale what a table says and cannot restore a distinction the table does
+> not contain; and hand-setting a resolution probability would recreate exactly the class of
+> unestablished constants the fit exists to eliminate. The pooling reuses the mechanism the table
+> design already rests on — counting the same pattern across transpositions — so it adds no new kind
+> of machinery (#6), and the counts are ample enough that the added cells satisfy the ratified
+> capacity budget.
 
 **In plain words.** As counted, every secondary dominant was too rare on its own to keep its own row, so all its continuations were merged into the general chord-frequency list. The consequence is that 'the dominant of X moving to X' and 'the dominant of X moving anywhere else' read the same probability — the table is blind to what makes the chord a secondary dominant at all. One extra grouping level, pooled across all targets, restores the distinction from real counts.
 
@@ -756,19 +771,31 @@
 
 **Status.** LIVE · decided 2026-07-19 · ratified by user
 
-**Home.** `cowork_sensitive_cell_probe.md:121-129`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:389-403`
 
-**Home section.** **“Finding 1”** — `### Finding 1 (structural). The chord-progression table cannot express that a secondary dominant resolves to its target.` (heading at line 106). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** Finding 1 of the sensitive-cell probe, ratified in the banner as option 1a. It amends a pooling ladder the user had already ratified, which is why it was brought for re-ratification rather than done. The capacity rule it must still satisfy is **D-271**; the counts are ample enough that the new cells pass it. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+**Provenance.** Finding 1 of the sensitive-cell probe, ratified in the banner as option 1a. It amends a pooling ladder the user had already ratified, which is why it was brought for re-ratification rather than done. The capacity rule it must still satisfy is **D-271**; the counts are ample enough that the new cells pass it. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. ★ HOMED 2026-08-07 (CC, the owner-rulings homing wave, executing the user's ruling of 2026-08-07 recorded at `cowork_owner_rulings_2026_08_07.md`). Routed to the joint-estimator section the same act created — the section the pooling ladder this amends belongs to — in the specification's own voice, with its defense and with both excluded alternatives (leave it to the weight layer; hand-set a resolution probability) recorded as the record states them. Assumption A1 discharged before writing. FORMER HOME, PRESERVED (#12): `cowork_sensitive_cell_probe.md:121-129`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 106, "section": "### Finding 1 (structural). The chord-progression table cannot express that a secondary dominant resolves to its target.", "label": "“Finding 1”", "delegated": null, "delegation": "named in no user-ratified surface", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "**Option 1a — add one pooling level that groups secondary-dominant progressions by their RELATION
+to the target (resolves to the chord it is the dominant of / moves elsewhere), pooled across all
+targets; then re-run the counting.** Pros: restores the defining regularity from real counts, with
+no hand-chosen number (guiding principle 1, fact-based only); reuses the pooling idea the table
+design already rests on — counting the same pattern across transpositions — so no new kind of
+machinery (principle 6, one path per concern); the counts are ample, so the two or three new cells
+pass the reliability rule easily (the ratified capacity budget stays satisfied). Cons: it amends a
+pooling ladder you ratified, so it needs your re-ratification (that is why it is brought here and
+was not just done); it adds a small number of parameters." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance — the wave and its dispatch — is recorded in this field and NOT in the specification text, on the ruling record's own instruction: a file name written into a governing document reads as a new naming and moves a measured population (the OI-330 / OI-328 lesson).
 
 ### D-533 — A continuation too rare to have its own stored probability is scored by dividing the row's leftover in PROPORTION to each chord's overall frequency — never evenly, and never as impossible
 
-> **Option 2a — divide the leftover in proportion to each chord's overall frequency in that mode.**
-> Pros: uses information we already hold — a common chord is genuinely a likelier unseen continuation
-> than a rare one (principle 12, no information loss); this is the standard construction in published
-> back-off models of sequences (principle 1, established method). Cons: none of substance; a little
-> more arithmetic per lookup.
+> **A continuation too rare to have its own stored probability is scored by dividing the row's
+> leftover in PROPORTION to each chord's overall frequency in that mode — never evenly, and never as
+> impossible.** Each row of the transition table ends in one pooled probability covering everything
+> too rare to store; when the decode meets a specific rare continuation it turns that pooled value
+> into a number for that continuation in proportion to how common the chord is generally. *Why:* it
+> is the standard construction in published back-off models of sequences (#1), and it uses
+> information already held — a common chord is genuinely a likelier unseen continuation than a rare
+> one (#12). Both alternatives are excluded on facts: dividing evenly asserts that a rare and a
+> common chord are equally likely, which the corpus counts contradict; and treating an unseen
+> continuation as impossible is factually wrong on a corpus of this size and technically fatal, since
+> a zero destroys any path through it.
 
 **In plain words.** Each row of the transition table ends with one pooled probability covering everything too rare to store on its own. When the decoder meets one specific rare continuation it must turn that pooled value into a number for that continuation. It does so in proportion to how common the chord is generally.
 
@@ -776,22 +803,30 @@
 
 **Status.** LIVE · decided 2026-07-19 · ratified by user
 
-**Home.** `cowork_sensitive_cell_probe.md:155-159`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:405-415`
 
-**Home section.** **“Finding 2. No document defines how to score a progression that sits inside a row's leftover probability.”** — `### Finding 2. No document defines how to score a progression that sits inside a row's leftover probability.` (heading at line 147). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** Finding 2 of the probe, ratified as option 2a, and recorded as one sentence owed to the build specification. It was a genuine gap rather than an ambiguity: no document defined it, and the probe proceeded by computing every verdict under both provisional readings and reporting both. `CLAUDE.md` gate block (A) names this rule as part of the production decoder's configuration. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+**Provenance.** Finding 2 of the probe, ratified as option 2a, and recorded as one sentence owed to the build specification. It was a genuine gap rather than an ambiguity: no document defined it, and the probe proceeded by computing every verdict under both provisional readings and reporting both. `CLAUDE.md` gate block (A) names this rule as part of the production decoder's configuration. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. ★ HOMED 2026-08-07 (CC, the owner-rulings homing wave, executing the user's ruling of 2026-08-07 recorded at `cowork_owner_rulings_2026_08_07.md`). Routed to the joint-estimator section the same act created, beside D-532, in the specification's own voice, with its defense and with both excluded alternatives (divide evenly; treat an unseen continuation as impossible) recorded as the record states them. Assumption A1 discharged before writing. FORMER HOME, PRESERVED (#12): `cowork_sensitive_cell_probe.md:155-159`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 147, "section": "### Finding 2. No document defines how to score a progression that sits inside a row's leftover probability.", "label": "“Finding 2. No document defines how to score a progression that sits inside a row's leftover probability.”", "delegated": null, "delegation": "named in no user-ratified surface", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "**Option 2a — divide the leftover in proportion to each chord's overall frequency in that mode.**
+Pros: uses information we already hold — a common chord is genuinely a likelier unseen continuation
+than a rare one (principle 12, no information loss); this is the standard construction in published
+back-off models of sequences (principle 1, established method). Cons: none of substance; a little
+more arithmetic per lookup." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance — the wave and its dispatch — is recorded in this field and NOT in the specification text, on the ruling record's own instruction: a file name written into a governing document reads as a new naming and moves a measured population (the OI-330 / OI-328 lesson).
 
 ### D-534 — The penalty for a chord tone that never sounds is COUNTED per chord factor — root, third, fifth, seventh — replacing one invented blanket number; the per-factor asymmetry then comes free
 
-> **Option 3a — count it, from data already on disk.** The note-extraction work committed earlier
-> today recorded, for every one of the ~18,000 humanly-labeled chord segments in the 326 chorales,
-> which notes sound in it; and the label itself names the chord's factors (root, third, fifth, and
-> seventh where the label is a seventh chord). So the counting is direct: across all segments
-> labeled with a triad or seventh chord, in what fraction does the ROOT actually sound among the
-> segment's notes? In what fraction the THIRD? The FIFTH? The SEVENTH? Four frequencies per chord
-> family (triad versus seventh chord — at most a dozen numbers), each backed by thousands of
-> observations in THIS corpus.
+> **The penalty for a chord tone that never sounds is COUNTED PER CHORD FACTOR — root, third, fifth,
+> seventh — and not carried as one blanket value.** Across every humanly labelled chord segment in
+> the ground-truth corpus, the fraction in which each of the chord's own factors actually sounds is
+> counted, per chord family (triad versus seventh chord). *Why:* the data is already on disk — the
+> labelled segments record which notes sound, and the label itself names the chord's factors — so the
+> counting is direct rather than inferred, which replaces a value invented for a worked example with
+> an established one (#19). The musical point is what makes per-factor counting the right shape: the
+> factors are not symmetric and the counts encode that automatically — a seventh is what earns a
+> seventh-chord label, so a silent seventh is near-prohibitive; the fifth is the factor four-part
+> writing routinely omits, so its penalty is mild; the third sits between. One blanket number cannot
+> express any of that, and the invented value demonstrably carried load — a checked passage's margin
+> moves with it. **The scope limit rides with the values and is part of the decision:** these are
+> Bach-chorale counts, no jazz values can be counted because no jazz ground truth exists, and that
+> limit stays declared on the artifact.
 
 **In plain words.** Judging a candidate chord means weighing notes that sound but do not belong to it AND chord notes that never sound at all. The second direction was answered by a number invented for a paper walkthrough. It is replaced by counting, for every humanly labelled chord segment in the corpus, how often each of the chord's own factors actually sounds.
 
@@ -799,11 +834,16 @@
 
 **Status.** LIVE · decided 2026-07-19 · ratified by user
 
-**Home.** `cowork_sensitive_cell_probe.md:188-195`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:417-430`
 
-**Home section.** **“Finding 3. The penalty for a chord tone that fails to sound is still a placeholder, not a counted value.”** — `### Finding 3. The penalty for a chord tone that fails to sound is still a placeholder, not a counted value.` (heading at line 171). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** Finding 3 of the probe, ratified as option 3a, with the user's per-factor sharpening incorporated. The scope limit stated with it applies to EVERY table in this fit and is part of the decision: these are Bach-chorale values, no jazz values can be counted because no jazz ground truth exists, and the limit stays declared on the artifact — the standing position **D-422**/`OPEN_ITEMS.md` OI-7. The specification requiring the penalty and charging it per event of segment length is **D-449**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+**Provenance.** Finding 3 of the probe, ratified as option 3a, with the user's per-factor sharpening incorporated. The scope limit stated with it applies to EVERY table in this fit and is part of the decision: these are Bach-chorale values, no jazz values can be counted because no jazz ground truth exists, and the limit stays declared on the artifact — the standing position **D-422**/`OPEN_ITEMS.md` OI-7. The specification requiring the penalty and charging it per event of segment length is **D-449**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. ★ HOMED 2026-08-07 (CC, the owner-rulings homing wave, executing the user's ruling of 2026-08-07 recorded at `cowork_owner_rulings_2026_08_07.md`). Routed to the joint-estimator section the same act created, in the specification's own voice and with its defense. The scope limit the record states with the decision — Bach-chorale counts, no jazz values countable, the limit declared on the artifact — is carried into the home text as part of the decision rather than dropped. Assumption A1 discharged before writing. FORMER HOME, PRESERVED (#12): `cowork_sensitive_cell_probe.md:188-195`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 171, "section": "### Finding 3. The penalty for a chord tone that fails to sound is still a placeholder, not a counted value.", "label": "“Finding 3. The penalty for a chord tone that fails to sound is still a placeholder, not a counted value.”", "delegated": null, "delegation": "named in no user-ratified surface", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "**Option 3a — count it, from data already on disk.** The note-extraction work committed earlier
+today recorded, for every one of the ~18,000 humanly-labeled chord segments in the 326 chorales,
+which notes sound in it; and the label itself names the chord's factors (root, third, fifth, and
+seventh where the label is a seventh chord). So the counting is direct: across all segments
+labeled with a triad or seventh chord, in what fraction does the ROOT actually sound among the
+segment's notes? In what fraction the THIRD? The FIFTH? The SEVENTH? Four frequencies per chord
+family (triad versus seventh chord — at most a dozen numbers), each backed by thousands of
+observations in THIS corpus." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance — the wave and its dispatch — is recorded in this field and NOT in the specification text, on the ruling record's own instruction: a file name written into a governing document reads as a new naming and moves a measured population (the OI-330 / OI-328 lesson).
 
 ### D-535 — The checking stage's verdict: the real counted tables overturn no desk-simulation verdict, but margins moved in both directions and one margin expectation was plainly wrong
 

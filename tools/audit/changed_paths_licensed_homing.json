@@ -1,0 +1,1265 @@
+{
+  "purpose": "A run of tools/audit/changed_paths.py. Generated so a report cites this file rather than transcribing the list (D-431).",
+  "enumeration": "worktree",
+  "commit": null,
+  "records": 314,
+  "rows": [
+    {
+      "code": " M",
+      "path": "CLAUDE.md"
+    },
+    {
+      "code": " M",
+      "path": "DECISIONS.md"
+    },
+    {
+      "code": " M",
+      "path": "OPEN_ITEMS.md"
+    },
+    {
+      "code": " M",
+      "path": "STATUS.md"
+    },
+    {
+      "code": " M",
+      "path": "cowork_audit_protocol.md"
+    },
+    {
+      "code": " M",
+      "path": "cowork_bounded_context_design.md"
+    },
+    {
+      "code": " M",
+      "path": "decisions/group_A.md"
+    },
+    {
+      "code": " M",
+      "path": "decisions/group_C.md"
+    },
+    {
+      "code": " M",
+      "path": "decisions/group_F.md"
+    },
+    {
+      "code": " M",
+      "path": "decisions/group_G.md"
+    },
+    {
+      "code": " M",
+      "path": "decisions/group_I.md"
+    },
+    {
+      "code": " M",
+      "path": "decisions/group_K.md"
+    },
+    {
+      "code": " M",
+      "path": "decisions/group_M.md"
+    },
+    {
+      "code": " M",
+      "path": "decisions/group_Q.md"
+    },
+    {
+      "code": " M",
+      "path": "decisions/group_S.md"
+    },
+    {
+      "code": " M",
+      "path": "decisions/group_T.md"
+    },
+    {
+      "code": " M",
+      "path": "open_items/OI-331.md"
+    },
+    {
+      "code": " M",
+      "path": "open_items/OI-333.md"
+    },
+    {
+      "code": " M",
+      "path": "open_items/OI-336.md"
+    },
+    {
+      "code": " M",
+      "path": "open_items/register_check.json"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/decisions/backbone_decisions.json"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/decisions/cluster_dispositions.csv"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/decisions/cluster_dispositions.json"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/decisions/disposition_manifest.json"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/decisions/finish_line_item1_routes.json"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/decisions/gen_cluster_dispositions.py"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/decisions/gen_finish_line_item1_routes.py"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/decisions/gen_r1_superseded_reach.py"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/decisions/gen_reads5_repack.py"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/decisions/item1_rehome_blocker.json"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/decisions/outstanding_delegations.json"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/decisions/phase1q_reclassification.json"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/decisions/r1_superseded_reach.json"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/decisions/reads5_repack.json"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/gen_guard_classification.py"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/gen_guard_state.py"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/gen_nongating_apparatus_rows.py"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/gen_phase1_finish_line.py"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/guard_classification.json"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/guard_state.json"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/nongating_apparatus_rows.json"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/phase1_completion_inventory.json"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/phase1_finish_line.json"
+    },
+    {
+      "code": " M",
+      "path": "tools/audit/phase3_gate_partition.json"
+    },
+    {
+      "code": "??",
+      "path": "open_items/OI-344.md"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/baseline_composing.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/baseline_notation.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/baseline_snapshot.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/baseline_table.md"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/batch_analyze.both.bak"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/batchreg.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/bir_after_baroque.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/bir_after_default.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/bir_after_jazz.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/bir_baroque.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/bir_baroque.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/bir_default.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/bir_default.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/bir_jazz.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/bir_jazz.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_backfill.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_backfill2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_backfill2_err.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_backfill_err.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_dbg.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_final.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_g1.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_g2.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_g2b.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_iso.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_out.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_revert.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_revert_err.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_step1.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_step1b.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_step1c.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_step2.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_stepM.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_stepM2.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_stepM_err.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_task1.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_task2.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/cadence_tests.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/cc_collect.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/ccc_collect2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/ccc_log.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/ccc_notation.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/ccc_path.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/char_baroque.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/char_baroque_l5m.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/char_default.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/char_default_l5m.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/char_jazz.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/char_jazz_l5m.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/claude_baroque.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/claude_baroque_sorted.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/claude_default.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/claude_default_sorted.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/claude_jazz.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/claude_jazz_sorted.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_algomusdata.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_asap.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_batch1.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_batch2.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_batch3.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_batik.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_bcfb.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_cocopops.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_figbass.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_lieder.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_mcma.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_mikrokosmos.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_openewld.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_piano_svsep.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_protovoice.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_schenker41.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_sq.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_vocsep.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/cmp_manifest_sha.py"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/commit1_msg.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/commit1_out.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/commit2_msg.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/commit2_out.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/commit_msg_step2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/comp_run.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/comp_run2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/comp_run3.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/comp_run4.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/comp_step1.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/comp_step1c.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/composing.cobertura.xml"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/composing_final_out.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/composing_full.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/composing_new_out.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/composing_test.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/composing_test2.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/composing_tests_out.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/corpus_decode_chord_g1/"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/corpus_decode_chord_g2/"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/corpus_decode_chord_g2iso/"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/corpus_decode_chord_g6/"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/corpus_decode_chord_step2final_A/"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/corpus_decode_chord_step2final_B/"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/corpus_decode_chord_stepM/"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/corpus_ours_check/"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/corpus_ours_check_g2/"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/cov_after.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/cov_after2.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/cov_final.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/cov_final2.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/coverage/"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/coverage_merged.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/coverage_report.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/curation_worksheet.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decode_baroque_step0.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decode_default_step0.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decode_g1_baroque.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decode_g1_baroque2.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decode_g1_default2.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decode_g1_driver.py"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decode_g2_baroque.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decode_g2_default.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decode_g2iso.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decode_step0_run.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decode_stepM_baroque.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decode_stepM_default.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decompose_g1_after.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decompose_g1_before.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decompose_g2_after.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decompose_g2_before.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decompose_g2iso.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decompose_step0.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/dlc_baseline_run.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/dlc_pins.json"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/driver_smoke.err"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/e0dp_cap_decomp.py"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/e0prime_grader.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/e0prime_supp.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/e0prime_supp.py"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/filter_hunks.py"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/fs_regen_baroque.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/fs_regen_default.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/fs_regen_driver.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/fs_regen_jazz.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/g1_composing.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/g1_decode_tests.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/g1_notation.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/g1_one_decode.err"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/g1_one_decode.json"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/g1_snapshots.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/g2_composing.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/g2_decode_tests.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/g2_notation.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/g2_snap.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/gate_after_baroque.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/gate_after_default.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/gate_after_jazz.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/gate_baroque.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/gate_before_baroque.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/gate_before_default.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/gate_before_jazz.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/gate_check.py"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/gate_setdiff.py"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/grade_g1_after.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/grade_g1_before.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/grade_g2_after.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/grade_g2_before.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/grade_g2iso.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/grade_step0.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/guitarset_curl_err.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/guitarset_dl_err.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/guitarset_zenodo.json"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/harvest_final.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/harvest_final2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/harvest_final3.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/harvest_run1.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/harvest_run2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/harvest_run3.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/hd_LIST.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/hd_branch.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/hd_dl.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/hd_err.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/hd_lists.json"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/hd_repo.json"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/hd_repos.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/hd_repos_final.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/hd_root.json"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/hd_tree.json"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/humdrum_data_closure_71repos.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/humdrum_gitmodules.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/humdrum_gitmodules2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/keyparse_probe.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/l4.err"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/l4.patch"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/l5.err"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/l5.patch"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/l5_smoke.err"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/l5_smoke.json"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/line_hits.py"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/ninja_direct.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/notation.cobertura.xml"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/notation_after.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/notation_final.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/notation_full.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/notation_run.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/notation_step1.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/notation_test.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/notation_test2.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/notation_tests_out.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/ours_A/"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/ours_B/"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/ours_check_baroque.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/parse_cov.py"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/parse_merge.py"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/pdmx_inspect.py"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/pipeline_snapshot_tests_out.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/quote_verify.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/quote_verify2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/reg_A.json"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/reg_B.json"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/reg_pre_acq.json"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/reg_run1.json"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/reg_run1.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/reg_run2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/regen_baroque.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/regen_baroque_l5.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/regen_default.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/regen_default_l5.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/regen_driver.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/regen_g2_baroque.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/regen_jazz.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/regen_jazz_l5.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/rel_tests.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/repro30.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/repro_block.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/repro_check/"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/s5_2b_task1_tables.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/set_baroque.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/set_default.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/set_jazz.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/setdiff.py"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/sm_comp.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/sm_notation.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/sm_snap.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/smoke.err"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/smoke.json"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/smoke_and_cadence.py"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/snap_after.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/snap_final.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/snap_full.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/snap_run.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/snap_step1.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/snap_test.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/snap_test2.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/snapshot_full.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/stepM_analysis_all.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/stepM_analysis_test.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/stepM_analyze.py"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/stepM_l5_measure.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/taskB_run.sh"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/u1_byteid/"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/u1_composing_tests.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/u1_pipeline_snap.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/v2_composing.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/v2_notation.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/v2_snap.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/wjd_curl_err.txt"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/changed_paths_five_rulings.json"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/changed_paths_licensed_homing.json"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/decisions/gen_oi333_repair.py"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/decisions/oi333_repair.json"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/decisions/snapshot_2026-08-07_pre_oi333_repair/"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/process_check_five_rulings_dispatch.json"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/process_check_licensed_homing_dispatch.json"
+    }
+  ],
+  "establishment": "tools/audit/changed_paths_establishment.json"
+}

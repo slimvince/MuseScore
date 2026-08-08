@@ -2,14 +2,15 @@
   "purpose": "Establishment (#19) of tools/audit/shell_read_guard.py: its deny rate on the forms CLAUDE.md names, and its FALSE-deny rate on real commands this repository issues. A guard that fires on legitimate use gets switched off, so the false-deny rate is the figure that decides whether it may be armed.",
   "coverage_limits": [
     "Project-scoped: it binds sessions that run in this directory and read this project's settings. Whether the WRITING side does is not established, so the rule must not be described as enforced for both sides.",
+    "The text-utility half in BOTH dialects the hook is armed on — POSIX from the start, PowerShell since 2026-08-08 (OI-345). A command carried inside a quoted argument (`powershell.exe -Command \"…\"`) is still admitted: a name set cannot reach inside one, it is in the corpus, and it is rowed.",
     "The text-utility half, plus `git status` since 2026-08-03. The REST of D-253's branch-tip/index half — `git log`, `git rev-parse HEAD` — is still deliberately not enforced: no tool replaces them, so denying them would fire on legitimate work, which is the ground on which `git status` was left unblocked until the enumeration tool existed.",
     "Declared, not fired: a settings file naming the hook is evidence it is declared. `tools/audit/guard_armed_check.py` reports that much and says so.",
     "disableAllHooks and managed allowManagedHooksOnly switch it off. A guard, not a boundary."
   ],
   "sanctioned": {
-    "total": 31,
+    "total": 49,
     "false_denies": 6,
-    "false_deny_rate": 0.194,
+    "false_deny_rate": 0.122,
     "rows": [
       {
         "command": "python tools/audit/decisions/gen_phase1p_delegation_bar.py",
@@ -165,13 +166,103 @@
         "command": "python tools/a8_rebaseline_measure.py --out-dir /tmp/cand",
         "denied": false,
         "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "Get-Content C:\\tmp\\snap_out.txt -TotalCount 20",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "Get-Content \"C:/Users/vince/AppData/Local/Temp/claude/c--s-MS/x/scratchpad/est.txt\"",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "Select-String -Path C:\\tmp\\guards.txt -Pattern 'FAIL'",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "Get-ChildItem C:\\tmp\\cand",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "Get-ChildItem C:\\tmp -Filter *.json",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "Test-Path C:\\tmp\\cand\\summary.json",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "Get-Content C:\\tmp\\out.txt | Measure-Object -Line",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "gc /tmp/split_1p.txt",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "sls -Path /tmp/snap_out.txt -Pattern 'FAILED'",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "dir C:\\tmp",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "ls /tmp/out.txt",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "gi C:\\tmp\\out.txt",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "rvpa C:\\tmp",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "Select-String -Pattern 'FAIL'",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "Measure-Object -Line",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "git show 4a9c0d4827:CLAUDE.md | Select-String -Pattern 'D-253'",
+        "denied": false,
+        "reason": "reads a git object by explicit hash — the sanctioned exemption"
+      },
+      {
+        "command": "git cat-file -p bd3a608fec | Measure-Object -Line",
+        "denied": false,
+        "reason": "reads a git object by explicit hash — the sanctioned exemption"
+      },
+      {
+        "command": "Get-Alias -Definition Get-Content",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
       }
     ]
   },
   "forbidden": {
-    "total": 23,
-    "denied": 23,
-    "deny_rate": 1.0,
+    "total": 46,
+    "denied": 42,
+    "deny_rate": 0.913,
     "rows": [
       {
         "command": "cat CLAUDE.md",
@@ -287,6 +378,121 @@
         "command": "grep -n \"pattern\" > /tmp/hits.txt ARCHITECTURE.md",
         "denied": true,
         "reason": "`grep` is aimed at a path inside this repository (>, ARCHITECTURE.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "Get-Content C:\\s\\MS\\STATUS.md -TotalCount 20",
+        "denied": true,
+        "reason": "`get-content` is aimed at a path inside this repository (C:\\s\\MS\\STATUS.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "Select-String -Path C:\\s\\MS\\CLAUDE.md -Pattern 'D-253'",
+        "denied": true,
+        "reason": "`select-string` is aimed at a path inside this repository (C:\\s\\MS\\CLAUDE.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "Test-Path C:\\s\\MS\\CLAUDE.md",
+        "denied": true,
+        "reason": "`test-path` is aimed at a path inside this repository (C:\\s\\MS\\CLAUDE.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "Get-ChildItem C:\\s\\MS\\open_items",
+        "denied": true,
+        "reason": "`get-childitem` is aimed at a path inside this repository (C:\\s\\MS\\open_items). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "Get-Item C:\\s\\MS\\OPEN_ITEMS.md",
+        "denied": true,
+        "reason": "`get-item` is aimed at a path inside this repository (C:\\s\\MS\\OPEN_ITEMS.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "Resolve-Path C:\\s\\MS\\DECISIONS.md",
+        "denied": true,
+        "reason": "`resolve-path` is aimed at a path inside this repository (C:\\s\\MS\\DECISIONS.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "Import-Csv C:\\s\\MS\\tools\\audit\\decisions\\cluster_dispositions.csv",
+        "denied": true,
+        "reason": "`import-csv` is aimed at a path inside this repository (C:\\s\\MS\\tools\\audit\\decisions\\cluster_dispositions.csv). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "Get-Content STATUS.md",
+        "denied": true,
+        "reason": "`get-content` is aimed at a path inside this repository (STATUS.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "gc C:\\s\\MS\\STATUS.md",
+        "denied": true,
+        "reason": "`gc` is aimed at a path inside this repository (C:\\s\\MS\\STATUS.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "sls -Path C:\\s\\MS\\DECISIONS.md -Pattern 'D-436'",
+        "denied": true,
+        "reason": "`sls` is aimed at a path inside this repository (C:\\s\\MS\\DECISIONS.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "gci C:\\s\\MS\\tools\\audit",
+        "denied": true,
+        "reason": "`gci` is aimed at a path inside this repository (C:\\s\\MS\\tools\\audit). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "dir C:\\s\\MS\\open_items",
+        "denied": true,
+        "reason": "`dir` is aimed at a path inside this repository (C:\\s\\MS\\open_items). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "gi C:\\s\\MS\\OPEN_ITEMS.md",
+        "denied": true,
+        "reason": "`gi` is aimed at a path inside this repository (C:\\s\\MS\\OPEN_ITEMS.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "rvpa C:\\s\\MS\\DECISIONS.md",
+        "denied": true,
+        "reason": "`rvpa` is aimed at a path inside this repository (C:\\s\\MS\\DECISIONS.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "ipcsv C:\\s\\MS\\tools\\audit\\decisions\\cluster_dispositions.csv",
+        "denied": true,
+        "reason": "`ipcsv` is aimed at a path inside this repository (C:\\s\\MS\\tools\\audit\\decisions\\cluster_dispositions.csv). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "ls C:\\s\\MS\\ARCHITECTURE.md",
+        "denied": true,
+        "reason": "`ls` is aimed at a path inside this repository (C:\\s\\MS\\ARCHITECTURE.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "Get-Content C:\\s\\MS\\STATUS.md | Measure-Object -Line",
+        "denied": true,
+        "reason": "`get-content` is aimed at a path inside this repository (C:\\s\\MS\\STATUS.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "Get-ChildItem C:\\tmp | Out-Null; Get-Content C:\\s\\MS\\CLAUDE.md",
+        "denied": true,
+        "reason": "`get-content` is aimed at a path inside this repository (C:\\s\\MS\\CLAUDE.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "Select-String -Path C:\\s\\MS\\DECISIONS.md -Pattern 'D-642|D-643'",
+        "denied": true,
+        "reason": "`select-string` is aimed at a path inside this repository (C:\\s\\MS\\DECISIONS.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "powershell.exe -NoProfile -Command \"(Get-Content 'C:\\s\\MS\\STATUS.md' | Measure-Object -Line).Lines\"",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "powershell.exe -NoProfile -Command \"Get-ChildItem 'C:\\s\\MS\\BUILD_AND_TEST.md' | Select-Object Name,Length\"",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "powershell.exe -NoProfile -Command \"Select-String -Path 'C:\\s\\MS\\DECISIONS.md' -Pattern 'delegation' | Measure-Object\"",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "python -c \"print(sum(1 for _ in open(r'C:/s/MS/STATUS.md')))\"",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
       }
     ]
   },
@@ -302,13 +508,14 @@
       "false_denies_on_the_sanctioned_set": {
         "with_the_fix": 6,
         "without_it": 7,
-        "of": 31,
-        "read_this_as": "`without_it` is the guard with NEITHER the 2026-08-03 tokenizer nor the 2026-08-04 segmentation — the state before this line of maintenance began. It is measured on the corpus as it stands today, so it is not the figure phase 1s published against the corpus of that date."
+        "of": 49,
+        "read_this_as": "`without_it` is the guard with NEITHER the 2026-08-03 tokenizer nor the 2026-08-04 segmentation — the state before this line of maintenance began. It is measured on the corpus as it stands today, so it is not the figure phase 1s published against the corpus of that date.",
+        "★_corrected_2026_08_08": "The sentence above is preserved as written (#12) and one clause of it is no longer true: `without_it` is NOT the guard as it stood before this line of maintenance began, because the 2026-08-08 PowerShell utility set is present in BOTH arms. It is held constant on purpose — that is what keeps the DIFFERENCE attributable to the tokenizer and the segmentation — so the delta is unaffected and only the description of the absolute value was wrong."
       },
       "detection_on_the_forbidden_set": {
-        "with_the_fix": 23,
-        "without_it": 16,
-        "of": 23
+        "with_the_fix": 42,
+        "without_it": 35,
+        "of": 46
       },
       "the_revert_condition": "The dispatch says: if the fix raises false denies elsewhere, revert and report. Compare the two figures above — a rise is the condition, and it is published either way rather than inferred."
     }
@@ -320,9 +527,9 @@
     "the_miss_it_removes": "`grep -n \"alpha|beta\" src/composing/analysis/key/keyresolver.cpp` was ADMITTED while the identical command without the pipe was DENIED. Found by the guard denying one command after admitting four of the same kind, and MEASURED at this module's own decision function over the commands the preceding session actually issued — never reasoned from the source (`OPEN_ITEMS.md` OI-343).",
     "★_what_the_PREVIOUS_published_rates_did_and_did_not_bound": "The rates published before 2026-08-04 are NOT WITHDRAWN AS WRONG (#12): they were correct for the corpus they were measured on, and they re-derived exactly. What they did not do is bound the guard's behaviour on the pipe-in-a-quoted-argument shape, because that shape was not in either corpus. They are recorded here as not bounding what they appeared to bound, which is a different statement from being incorrect.",
     "detection_on_the_forbidden_set_SAME_corpus": {
-      "with_the_fix": 23,
-      "without_it": 16,
-      "of": 23,
+      "with_the_fix": 42,
+      "without_it": 35,
+      "of": 46,
       "what_the_fix_newly_catches": [
         "grep -n \"D-642\\|D-643\" DECISIONS.md",
         "grep -n \"alpha|beta\" src/composing/analysis/key/keyresolver.cpp",
@@ -332,12 +539,18 @@
         "grep -nEi \"carrier|successors s\" tools/audit/gen_phase1_completion_inventory.py",
         "python tools/audit/changed_paths.py --staged | grep -n \"a|b\" ARCHITECTURE.md"
       ],
-      "what_is_STILL_missed_and_is_not_this_fix_s_subject": []
+      "what_is_STILL_missed_and_is_not_this_fix_s_subject": [
+        "powershell.exe -NoProfile -Command \"(Get-Content 'C:\\s\\MS\\STATUS.md' | Measure-Object -Line).Lines\"",
+        "powershell.exe -NoProfile -Command \"Get-ChildItem 'C:\\s\\MS\\BUILD_AND_TEST.md' | Select-Object Name,Length\"",
+        "powershell.exe -NoProfile -Command \"Select-String -Path 'C:\\s\\MS\\DECISIONS.md' -Pattern 'delegation' | Measure-Object\"",
+        "python -c \"print(sum(1 for _ in open(r'C:/s/MS/STATUS.md')))\""
+      ],
+      "★_corrected_2026_08_08": "Both arms now also carry the 2026-08-08 PowerShell utility set, held constant so the difference stays attributable to the segmentation change alone. The absolute values therefore differ from those published on 2026-08-04; the delta does not, and neither list above is a reconstruction of the guard as it stood on any date."
     },
     "false_denies_on_the_sanctioned_set_SAME_corpus": {
       "with_the_fix": 6,
       "without_it": 6,
-      "of": 31,
+      "of": 49,
       "the_revert_condition": "The dispatch says: if the fix raises false denials materially, revert and report — a guard that blocks correct commands gets disarmed, which is worse than one with a known gap. Both figures are measured on the SAME extended corpus, so the comparison is of the fix and not of the corpus widening.",
       "the_false_denies_that_remain": [
         "tail \"$SC/guards1.txt\"",
@@ -349,6 +562,7 @@
       ],
       "what_they_are": "Every one is a shape `OPEN_ITEMS.md` OI-300 already records as a MEASURED false deny owed a fix — an unexpanded shell variable pointing outside the tree (shape 2), a redirection token taken for the aimed path (shape 5), and a heredoc BODY line that is not a command at all (shape 4). They are in the corpus so the published rate REPORTS them; none is fixed here, because each is a further behaviour change that owes its own establishment, and D-436 makes changing a mechanism the user's ruling rather than a session's."
     },
+    "★_superseded_in_part_on_2026_08_08": "The first line of `what_this_fix_deliberately_does_NOT_touch` below — OI-300's shape (1), `ls <repository path>` — is no longer true of the guard, and it is left standing rather than edited because it is the record of what the 2026-08-04 act did (#12). `ls` is an enumerated alias of `Get-ChildItem`, so the 2026-08-08 dialect widening brought it into the utility set; that is reported at `★_the_2026_08_08_powershell_dialect_widening…` and is NOT a claim that OI-300 is closed. Its shapes (2), (3), (4) and (5) are untouched and remain that row's owed establishment run.",
     "what_this_fix_deliberately_does_NOT_touch": [
       "OI-300 shape (1) — `ls <repository path>`, an existence read outside the TEXT-UTILITY set the guard covers.",
       "OI-300 shape (2) — an unexpanded shell variable read literally.",
@@ -356,6 +570,108 @@
       "OI-300 shape (4) — a heredoc body read as though it were a command.",
       "OI-300 shape (5) — a redirection token classified as the aimed path.",
       "Each changes WHAT the guard denies rather than WHERE it cuts the command, and each owes its own measured rate in both directions before it lands (D-436)."
+    ]
+  },
+  "★_the_2026_08_08_powershell_dialect_widening_and_the_corpus_it_is_measured_on": {
+    "the_ruling": "User, 2026-08-07 (ruling 1 of `cowork_rulings_oi345_oi342_2026_08_07.md`, applied by `cc_instruction_guard_dialect_close_and_push.md`): the shell-read guard's PowerShell blindness is FIXED, CORPUS FIRST. Extend the establishment corpus with the PowerShell family and its aliases, sanctioned and forbidden forms both; THEN widen the utility set; publish both rates against the extended corpus; the revert condition — a material rise in false denials — governs as before. The mechanism change is licensed by that ruling (D-436).",
+    "the_defect_it_answers": "The guard is armed on the PowerShell tool BY DESIGN — the hook block in this module's docstring carries the matcher `\"Bash|PowerShell\"` — while its utility set was POSIX-only. Measured at this module's own `decide()` and never reasoned from its source, `Get-Content`, `Select-String`, `Get-ChildItem` and `Test-Path` aimed at repository paths were ALLOWED where `cat` on the same path was DENIED, and the reason string returned for them — \"no text utility is aimed at a repository path\" — was true of the set the guard carried and false of the command it read (`OPEN_ITEMS.md` OI-345).",
+    "why_the_corpus_came_first": "Neither list held a single member of the dialect, so `--establish --check` re-derived the recorded deny and false-deny rates EXACTLY while blind to the whole of it — current, reproducible and silent, which is the condition #19 exists to refuse. Widening first and re-establishing against that same corpus would have repeated the error being fixed.",
+    "★_the_blindness_MEASURED_before_the_widening": {
+      "what_was_run": "Every row added to the corpus, decided at the UNWIDENED guard — the committed POSIX-only utility set, with the extended corpus in place. This is what the old rates could not show.",
+      "new_forbidden_rows_missed": 23,
+      "new_forbidden_rows": 23,
+      "new_sanctioned_rows_falsely_denied": 0,
+      "new_sanctioned_rows": 18,
+      "read_this_as": "Every forbidden form of the dialect was admitted and no sanctioned form of it was denied — the guard was not wrong about this family, it could not see it at all."
+    },
+    "where_the_vocabulary_came_from": {
+      "the_cmdlets": "The PowerShell commands that perform one of the four acts D-253 itself names — content, existence, line counts, searches — on a path argument. Stated as a rule so the set is derivable rather than authored until the corpus passes, which is the vocabulary-assembled-until-it-works failure this act must avoid.",
+      "the_aliases": "Read out of PowerShell's OWN alias table, never recalled: `Get-Alias -Definition <cmdlet>`.",
+      "the_version_it_was_read_on": "Windows PowerShell 5.1.26100.8875, Desktop edition, on Windows NT 10.0.26200.0.",
+      "why_the_version_is_pinned": "The alias table is a property of the host, not of the language, so the enumeration is only as wide as the version it was read on. PowerShell 7 is NOT installed on this machine, so its table could not be enumerated and no claim is made about it; the sourcing command is recorded so a session on another version can re-run it. Carrying a name that some other host does not alias costs detection nothing — it simply never matches.",
+      "the_utility_names_added": [
+        "dir",
+        "gc",
+        "gci",
+        "get-childitem",
+        "get-content",
+        "get-item",
+        "gi",
+        "import-clixml",
+        "import-csv",
+        "ipcsv",
+        "ls",
+        "measure",
+        "measure-object",
+        "resolve-path",
+        "rvpa",
+        "select-string",
+        "sls",
+        "test-path"
+      ],
+      "the_candidate_selection_rule": "Within this family a path is bound either as the value of `-Path` / `-LiteralPath` / `-FilePath` or as the FIRST positional argument, never both, so those are the only two places examined. `Select-String` and `Measure-Object` have their first positional dropped, being a pattern and a property name — the same special case the POSIX branch already makes for `grep`, and what keeps a pipeline-fed `Select-String -Pattern 'FAIL'` from being read as a repository path."
+    },
+    "detection_on_the_forbidden_set_SAME_corpus": {
+      "with_the_widening": 42,
+      "posix_set_only": 23,
+      "of": 46,
+      "what_the_widening_newly_catches": [
+        "Get-ChildItem C:\\s\\MS\\open_items",
+        "Get-ChildItem C:\\tmp | Out-Null; Get-Content C:\\s\\MS\\CLAUDE.md",
+        "Get-Content C:\\s\\MS\\STATUS.md -TotalCount 20",
+        "Get-Content C:\\s\\MS\\STATUS.md | Measure-Object -Line",
+        "Get-Content STATUS.md",
+        "Get-Item C:\\s\\MS\\OPEN_ITEMS.md",
+        "Import-Csv C:\\s\\MS\\tools\\audit\\decisions\\cluster_dispositions.csv",
+        "Resolve-Path C:\\s\\MS\\DECISIONS.md",
+        "Select-String -Path C:\\s\\MS\\CLAUDE.md -Pattern 'D-253'",
+        "Select-String -Path C:\\s\\MS\\DECISIONS.md -Pattern 'D-642|D-643'",
+        "Test-Path C:\\s\\MS\\CLAUDE.md",
+        "dir C:\\s\\MS\\open_items",
+        "gc C:\\s\\MS\\STATUS.md",
+        "gci C:\\s\\MS\\tools\\audit",
+        "gi C:\\s\\MS\\OPEN_ITEMS.md",
+        "ipcsv C:\\s\\MS\\tools\\audit\\decisions\\cluster_dispositions.csv",
+        "ls C:\\s\\MS\\ARCHITECTURE.md",
+        "rvpa C:\\s\\MS\\DECISIONS.md",
+        "sls -Path C:\\s\\MS\\DECISIONS.md -Pattern 'D-436'"
+      ],
+      "what_is_STILL_missed_and_is_not_this_act_s_subject": [
+        "powershell.exe -NoProfile -Command \"(Get-Content 'C:\\s\\MS\\STATUS.md' | Measure-Object -Line).Lines\"",
+        "powershell.exe -NoProfile -Command \"Get-ChildItem 'C:\\s\\MS\\BUILD_AND_TEST.md' | Select-Object Name,Length\"",
+        "powershell.exe -NoProfile -Command \"Select-String -Path 'C:\\s\\MS\\DECISIONS.md' -Pattern 'delegation' | Measure-Object\"",
+        "python -c \"print(sum(1 for _ in open(r'C:/s/MS/STATUS.md')))\""
+      ]
+    },
+    "false_denies_on_the_sanctioned_set_SAME_corpus": {
+      "with_the_widening": 6,
+      "posix_set_only": 6,
+      "of": 49,
+      "the_revert_condition": "The ruling says: a material rise in false denials governs — revert and report. Both values are measured on the SAME extended corpus, so the comparison is of the widening and not of the corpus rows added with it.",
+      "the_false_denies_that_remain": [
+        "tail \"$SC/guards1.txt\"",
+        "cat \"$SC/tasks/abc.output\" 2>/dev/null | tail -20",
+        "python - <<'PYEOF'\nhead = old[:k]\nPYEOF",
+        "head -20 /tmp/out.txt 2>/dev/null",
+        "tail -5 /tmp/out.txt 2>&1",
+        "cat /tmp/a.txt >> /tmp/b.txt"
+      ]
+    },
+    "★_assumption_A2_the_POSIX_side_is_untouched": {
+      "what_was_checked": "Every row the corpus carried BEFORE this act, decided with the POSIX-only set and again with the dialect, and any row whose verdict moved named. The dispatch makes a moved verdict a STOP.",
+      "rows_checked": 54,
+      "verdicts_that_moved": []
+    },
+    "★_what_the_PREVIOUS_published_rates_did_and_did_not_bound": "The rates published before 2026-08-08 are NOT WITHDRAWN AS WRONG (#12): they were correct for the corpus they were measured on and they re-derived exactly. What they did not do is bound the guard's behaviour on the PowerShell dialect, because no member of it was in either list. THEY WERE BLIND, NOT WRONG — a different statement, and the reason #19 asks for positive establishment rather than for a check that has not yet failed.",
+    "★_two_consequences_reported_rather_than_claimed": [
+      "OI-300's shape (1) — `ls` aimed at a repository path — is now DENIED, because `ls` is an enumerated alias of `Get-ChildItem` and the guard has no model of which shell handed it the command. The same spelling denies the same act in both dialects. This is REPORTED as a measured consequence of the licensed act; it is NOT a claim that OI-300 is closed, and its shapes (2), (3), (4) and (5) are untouched.",
+      "The WRAPPER form — `powershell.exe -Command \"<cmdlet> <repository path>\"` — is still ADMITTED, and it is the form the three commands OI-345 records were actually issued in. Widening a name set cannot reach inside a quoted `-Command` argument; recursing into one is a SECOND behaviour change, which D-436 reserves to the user. It is in the corpus so the published rate reports it rather than being silent about it, and it is rowed."
+    ],
+    "what_this_widening_deliberately_does_NOT_touch": [
+      "The wrapper form above, and any other command that carries a shell command inside a quoted argument.",
+      "An interpreter-mediated read — a `python -c` that opens a working-tree file. It is in the corpus, measured as missed, and reachable by no name set.",
+      "OI-300's shapes (2), (3), (4) and (5), which remain that row's owed run.",
+      "The POSIX branch's own candidate selection, which is unchanged (assumption A2)."
     ]
   }
 }

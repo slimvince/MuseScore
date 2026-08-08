@@ -168,12 +168,19 @@ THE_RE_READING = {
         ),
         "the_ruling_it_reads": "D-639, at CLAUDE.md's phase-1 clause; the fallback is option (1A).",
     },
-    "the_clause_also_carries_a_pointer_to_an_UNRULED_question": (
+    "the_clause_also_carries_a_pointer_to_a_question_that_HAS_NOW_BEEN_RULED": (
         "D-639's own closing paragraph points at `OPEN_ITEMS.md` OI-336 — whether OI-332's "
         "apparatus classification survives reading the whole of D-438's line rather than its first "
-        "half — and says in terms that nothing in the clause settles it. It is the user's. It is "
-        "carried below as an item because it has a nameable closing act (a ruling), and because a "
-        "gate verdict it moves would move which items here gate."
+        "half — and said in terms that nothing in the clause settles it. ★ THE USER RULED IT on "
+        "2026-08-07 (dispatch `cc_instruction_five_rulings.md` §0a, R5): the classification does "
+        "NOT survive, OI-332 is re-classed GATING on the second half of D-438's line, and OI-336 "
+        "closes. The authored verdict was corrected with its former verdict preserved, and the "
+        "derived set and the populations below follow. The pointer is kept rather than deleted "
+        "(#12) because D-639's clause still carries it, and a reader arriving from that clause "
+        "needs to be told the question is answered. This key formerly read "
+        "`the_clause_also_carries_a_pointer_to_an_UNRULED_question` and ended: 'It is the user's. "
+        "It is carried below as an item because it has a nameable closing act (a ruling), and "
+        "because a gate verdict it moves would move which items here gate.'"
     ),
 }
 
@@ -498,14 +505,23 @@ def build_items(inv: dict, deleg: dict, discharged: set[str]) -> list[dict]:
         },
         "closing_act": (
             "Once every item above is closed: write the statement, resting it on the "
-            "specifications rather than on the register (C4), and stating what it may NOT claim — "
-            "in particular that no CURRENT unresolved residual may be published while the "
-            "cluster-disposition layer cannot be re-derived at HEAD (OPEN_ITEMS.md OI-333), which "
-            "is a bound on what may be said and not a blocked derivation."
+            "specifications rather than on the register (C4), and stating what it may NOT claim."
+        ),
+        "★_one_bound_on_this_item_is_LIFTED_and_is_recorded_rather_than_dropped": (
+            "This act formerly carried a bound, in these words: 'in particular that no CURRENT "
+            "unresolved residual may be published while the cluster-disposition layer cannot be "
+            "re-derived at HEAD (OPEN_ITEMS.md OI-333), which is a bound on what may be said and "
+            "not a blocked derivation.' ★ IT NO LONGER APPLIES: the user ruled OI-333 on "
+            "2026-08-07 (R4), the six uncompilable register patterns are escaped, and the "
+            "disposition layer re-derives at the register's current backbone — so a current "
+            "residual is derivable. The former wording is kept (#12) because the bound was real "
+            "while it stood and a reader comparing artifacts must see why it went. What the "
+            "repair's own diff did NOT settle rides with it: whether the regenerated layer "
+            "supersedes the committed one is the user's, and both are on disk "
+            "(`tools/audit/decisions/oi333_repair.json`)."
         ),
         "who_may_perform_it": "the user commissions it; a working session writes it.",
-        "authored": "the closing act. The bound it must state is derived from the inventory's own "
-                    "A1 settlement.",
+        "authored": "the closing act, and the record of the bound that has been lifted.",
     })
 
     return items
@@ -518,23 +534,68 @@ ROWS_THAT_ARE_USER_RULINGS = {
         "named because a finish line that reads as session work end to end would mis-state who is "
         "blocked on what."
     ),
-    "rows": {
-        "OI-331": "Which of two register entries the record keeps, where a LIVE user-ratified "
-                  "entry names a convergence proxy the build measured false and dropped. All three "
-                  "candidate remedies change a user-ratified entry.",
-        "OI-336": "Whether OI-332's apparatus classification survives reading the whole of D-438's "
-                  "line rather than its first half. A non-gating verdict is derived from a cut and "
-                  "never hand-added, so it is the user's. D-639's own closing paragraph points "
-                  "here.",
-        "OI-333": "Whether the disposition check should re-derive rather than re-read, and what "
-                  "becomes of the six patterns that stop the layer regenerating. The row also "
-                  "bounds what the terminal item may claim.",
-    },
+    "rows": {},
     "how_this_list_was_made": (
         "AUTHORED, from the rows' own recorded dispositions as the status entries state them. It "
         "is not a derived partition of the gating set and is not offered as one — it names the "
         "rows a reader would otherwise mistake for session work."
     ),
+    "the_list_is_EMPTY_at_HEAD_and_that_is_a_result": (
+        "Every row this list carried was RULED by the user on 2026-08-07, in one act (dispatch "
+        "`cc_instruction_five_rulings.md` §0a), and each closed. An empty list here does not mean "
+        "the gating item is now all session work in general — it means no row currently inside it "
+        "is waiting on a ruling. The three that were are kept whole below."
+    ),
+    "★_rows_whose_ruling_has_been_MADE": {
+        "what_this_is": (
+            "Rows this list carried until the user ruled them. They are kept rather than deleted "
+            "(#12): the list's own value is that it names who is blocked on what, and a reader "
+            "comparing this artifact with an earlier one must be able to see that a row left "
+            "because it was ANSWERED rather than because it was dropped. The tool STOPS if one of "
+            "them is still in the derived gating set, or is also named live above."
+        ),
+        "rows": {
+            "OI-331": {
+                "what_it_was_owed_a_ruling_FOR": (
+                    "Which of two register entries the record keeps, where a LIVE user-ratified "
+                    "entry names a convergence proxy the build measured false and dropped. All "
+                    "three candidate remedies change a user-ratified entry."
+                ),
+                "ruled": (
+                    "2026-08-07, R3: the proxy clause and its worked example are struck from the "
+                    "signed contract, which now states the current behaviour and records the "
+                    "struck clause as tried and closed with D-622 superseding it; D-261's "
+                    "headline rule and ratified status stand unchanged."
+                ),
+            },
+            "OI-336": {
+                "what_it_was_owed_a_ruling_FOR": (
+                    "Whether OI-332's apparatus classification survives reading the whole of "
+                    "D-438's line rather than its first half. A non-gating verdict is derived "
+                    "from a cut and never hand-added, so it is the user's. D-639's own closing "
+                    "paragraph points here."
+                ),
+                "ruled": (
+                    "2026-08-07, R5: it does not survive. OI-332 is re-classed GATING on the "
+                    "second half of D-438's line, the authored verdict corrected with the former "
+                    "verdict preserved, and the derived populations follow."
+                ),
+            },
+            "OI-333": {
+                "what_it_was_owed_a_ruling_FOR": (
+                    "Whether the disposition check should re-derive rather than re-read, and what "
+                    "becomes of the six patterns that stop the layer regenerating. The row also "
+                    "bounds what the terminal item may claim."
+                ),
+                "ruled": (
+                    "2026-08-07, R4: one bounded repair wave — snapshot first, escape the six, "
+                    "regenerate, diff and explain every moved cluster, and add a NARROW "
+                    "producibility mode rather than widening the coverage check. The bound on the "
+                    "terminal item is lifted: the layer re-derives at HEAD."
+                ),
+            },
+        },
+    },
 }
 
 THE_SCOPE_RULE = {
@@ -637,6 +698,20 @@ def build() -> dict:
         raise SystemExit(
             "STOP: rows named as user rulings are not in the gating set at HEAD: "
             + ", ".join(stray) + " — the authored list has drifted from the derived one.")
+    # A row whose ruling HAS been made must have left the gating set, and must not also be named
+    # live above. Both directions, so the ruled table can neither become a second live list nor a
+    # place a still-open row is quietly filed in.
+    ruled = set(ROWS_THAT_ARE_USER_RULINGS["★_rows_whose_ruling_has_been_MADE"]["rows"])
+    back = sorted(ruled & set(split["gates"]["ids"]))
+    if back:
+        raise SystemExit(
+            "STOP: row(s) recorded as RULED are still in the derived gating set: "
+            + ", ".join(back) + " — a row that is still owed work needs a live entry, not a "
+            "record that it was answered.")
+    both = sorted(ruled & ruling_rows)
+    if both:
+        raise SystemExit(
+            "STOP: row(s) named both as awaiting a ruling and as ruled: " + ", ".join(both) + ".")
 
     total_entries = entry_covered + unhomed_total
     defense_total = comp["class_3_defense_not_recorded"][

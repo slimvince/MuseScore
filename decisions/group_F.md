@@ -18,7 +18,7 @@
 
 **Status.** SUPERSEDED BY D-001 · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1430`
+**Home.** `ARCHITECTURE.md:1553`
 
 **Provenance.** The joint estimator now decides key on both surfaces (D-005, D-010). The Layer-3 section still reads 'Built+Live' - see OPEN_ITEMS OI-232
 
@@ -37,7 +37,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1452-1455`
+**Home.** `ARCHITECTURE.md:1575-1578`
 
 **Provenance.** ARCHITECTURE.md:1291-1296
 
@@ -54,7 +54,7 @@
 
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1466-1467`
+**Home.** `ARCHITECTURE.md:1589-1590`
 
 **Provenance.** On the switched build the note-seam funnel returns from the record arm before this fallback is reachable (notationcomposingbridge.cpp:728-738). The D-P4 revisit trigger (D-063) was never discharged
 
@@ -72,7 +72,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2690-2692`
+**Home.** `ARCHITECTURE.md:2920-2922`
 
 **Provenance.** ARCHITECTURE.md:2394-2395 (21 modes), :2213-2217 (harmonic major deferred)
 
@@ -89,7 +89,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2638-2639`
+**Home.** `ARCHITECTURE.md:2868-2869`
 
 **Provenance.** ARCHITECTURE.md:2408-2410, :3020-3073. Superseded on the production path by D-003 (inference is preset-independent)
 
@@ -105,7 +105,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3635-3637`
+**Home.** `ARCHITECTURE.md:3865-3867`
 
 **Provenance.** ARCHITECTURE.md:3380-3392
 
@@ -119,7 +119,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3690`
+**Home.** `ARCHITECTURE.md:3920`
 
 **Provenance.** ARCHITECTURE.md:3396-3403. Cited by open_items/OI-228 as the primary source the joint emission departs from. NOT catchable by the harvest's signature net - the reason this adjudication had to read the specifications in full
 
@@ -136,7 +136,7 @@
 
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3655-3656`
+**Home.** `ARCHITECTURE.md:3885-3886`
 
 **Provenance.** ARCHITECTURE.md:3387-3392 calls it 'a deliberate pragmatic choice for the score opening, not a general bypass'. NOT catchable by the harvest's signature net ★ SUPERSEDED IN FACT — recorded 2026-08-04 (phase 1z, dispatch cc_instruction_phase1z_commit_and_instrument_record.md Task 3.4; OPEN_ITEMS.md OI-315). The mechanism this decision records was REMOVED from the code in Stage 4b-i on 2026-06-14: src/composing/analysis/key/keyresolver.cpp:291-301 states the removal in its own comment, and docs/key_path_design.md:65-73 dates it and names the re-targeted pins (Composing_KeyresolverTests.PieceStartOpening_NoteBased_DeclaredMinor/_DeclaredMajor). It is NOT falsified: nothing showed the decision wrong, a later BUILD replaced what it governs without a ruling that names it — which is what this register's status vocabulary calls superseded-in-fact. The ⚠ LEGACY mark STAYS: the subject is still the legacy key path, and the mark states what the decision is ABOUT. ★ Verbatim RE-TAKEN 2026-08-04 from the corrected specification text. The sentence this entry quoted — 'when the analysis tick is within the first 16 quarter-note beats (a separate constant from the 16-beat lookback window below — they coincide in value, not by design), no prior result exists (`prevResult == nullptr`), and the key signature carries an explicit mode, the function returns the declared mode immediately (confidence 0.5) rather than waiting for pitch evidence that cannot yet exist.' — was false at HEAD and is corrected in place at ARCHITECTURE.md §5.2, which now states that there is no piece-start exception, that the opening is note-based, and that the removal is tried and closed; the former wording is preserved here rather than deleted (#12). What did NOT change: the decision's own date and ratifier remain 'not stated', and no defense is supplied that the record never had.
 
@@ -152,7 +152,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3718`
+**Home.** `ARCHITECTURE.md:3948`
 
 **Provenance.** ARCHITECTURE.md:3423-3435; legacy-arm only since the switch (D-010). Derivation not recorded: the only stated basis for 16 and 8 is the in-code gloss '~4 measures in 4/4' / '~2 measures ahead' (ARCHITECTURE.md:3428-3429) - no theory citation and no measurement
 
@@ -174,7 +174,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:2644-2648`
+**Home.** `ARCHITECTURE.md:2874-2878`
 
 **Provenance.** ARCHITECTURE.md:2414-2418; the same guard is listed among the key-path scoring terms at :2480-2482 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -232,7 +232,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:1391-1393`
+**Home.** `ARCHITECTURE.md:1514-1516`
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md` (session 21j). The Layer-3 specification records the reach-back facility but not this shipped-default ruling. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written into the Layer-3 section of `ARCHITECTURE.md` §3.3, whose description of the dormant pipeline is the frame this ruling belongs in — the specification recorded the reach-back facility and not the shipped-default ruling, which is the gap the phase-1h note identified. Former home preserved (#12): `STATUS_ARCHIVE.md:232`, session 21j.
 
@@ -254,7 +254,7 @@
 
 **Home.** `docs/scoring_model.md:303-307`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **“`dim7CharacteristicBonus`”** — `### `dim7CharacteristicBonus` — `kDim7CharacteristicBonus = 0.75`` (heading at line 246). A delegation at CLAUDE.md:846 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **“`dim7CharacteristicBonus`”** — `### `dim7CharacteristicBonus` — `kDim7CharacteristicBonus = 0.75`` (heading at line 246). A delegation at CLAUDE.md:931 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.
 
@@ -705,10 +705,15 @@
 
 ### D-494 — RATIFIED AMENDMENT A-4: the function layer must gain key-confirmation channels that do not require a cadence, plus an enharmonic-identity rule for key spans
 
-> - **A-4 (from F-10, F-14). Specify cadence-less key-confirmation channels in §5.3** — sustained dominant emphasis
->   (arrival-denied dominants), recognized transposition sequences (the recognition consumer as a §5.3 input — synergy
->   with the already-planned consumer), and an enharmonic-identity rule for key-spans. Design-only now; Tristan-class
->   corpus as the measurement bed.
+> - **The layer needs KEY-CONFIRMATION CHANNELS THAT DO NOT REQUIRE A CADENCE (the Layer-5 half of
+>   the ratified amendment whose other half — an enharmonic-identity rule for key spans — is at
+>   Layer 3; the two cross-point).** Named channels: **sustained dominant emphasis**
+>   (arrival-denied dominants) and **recognized transposition sequences**, the latter entering as an
+>   input from the recognition consumer this layer is already planned to gain. *Why:* derived from
+>   the review's stress simulation and stated with it — on resolution-denying music the
+>   cadence-confirmed modulation gate almost never fires, so the default keeps the home key across
+>   genuinely modulating spans and every Roman numeral in them is computed against the wrong key. The
+>   measurement bed named with the amendment is a resolution-denying repertoire.
 
 **In plain words.** The program only accepts a change of key when a cadence confirms it. Music that deliberately avoids cadences — a sustained dominant that never resolves, a sequence that transposes step by step — therefore keeps being read in the old key. The amendment requires channels that confirm a key without a cadence, and a rule for deciding whether a span is written in one spelling of a key or its enharmonic twin.
 
@@ -718,11 +723,12 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_architecture_review_2026_07.md:320-323`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:1848-1856`
 
-**Home section.** **§9** — `## 9. Proposed amendments (ranked; each ratification-gated; none is code)` (heading at line 307). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** Amendment A-4 of the external architecture review, in a document whose banner records amendments A-1…A-10 as RATIFIED by the user on 2026-07-02. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) ★ NOT A FRESH DECISION, stated so that nothing is counted twice (dispatch cc_instruction_reads_3.md §1.3): the amendment itself was ratified by the user at the 2026-07-02 architecture review, which is what this entry's Status line already records. Ratifying the ENTRY records only that the register transcribes that ratification correctly — it neither re-makes the decision nor adds a second ratification event to it. Its sibling A-3 is already registered as **D-358** (deferred); this amendment has no register entry and no product located by this wave.
+**Provenance.** Amendment A-4 of the external architecture review, in a document whose banner records amendments A-1…A-10 as RATIFIED by the user on 2026-07-02. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) ★ NOT A FRESH DECISION, stated so that nothing is counted twice (dispatch cc_instruction_reads_3.md §1.3): the amendment itself was ratified by the user at the 2026-07-02 architecture review, which is what this entry's Status line already records. Ratifying the ENTRY records only that the register transcribes that ratification correctly — it neither re-makes the decision nor adds a second ratification event to it. Its sibling A-3 is already registered as **D-358** (deferred); this amendment has no register entry and no product located by this wave. ★ HOMED 2026-08-07 (CC, the owner-rulings homing wave, executing the user's ruling of 2026-08-07 recorded at `cowork_owner_rulings_2026_08_07.md`) — SPLIT ACROSS TWO HOMES, on the user's ruling that A-4's two separable obligations each sit at their own layer and cross-point. ★ BOTH HOMES ARE RECORDED HERE, which is what the ruling requires of the register entry: (1) the cadence-less key-confirmation channels are written into the `ARCHITECTURE.md` LAYER-5 section, and that is the home the `home` field anchors, because the amendment's headline obligation is Layer 5's; (2) the enharmonic-identity rule for key spans is written into the `ARCHITECTURE.md` LAYER-3 section, in the block of four Layer-3 rules this wave added, and each of the two blocks names the other so a reader arriving at either finds both. The `home` field carries ONE parseable anchor because the register's own machinery parses it as `file:line-line`; the second home is recorded in this field rather than in a second anchor, and the two blocks' cross-pointing is what keeps the split findable from the specification (criterion C4). Both halves are DESIGN-ONLY and are written as obligations the layers owe, never as mechanisms they have. Assumption A1 discharged for both destinations before writing. FORMER HOME, PRESERVED (#12): `cowork_architecture_review_2026_07.md:320-323`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 307, "section": "## 9. Proposed amendments (ranked; each ratification-gated; none is code)", "label": "§9", "delegated": null, "delegation": "named in no user-ratified surface", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "- **A-4 (from F-10, F-14). Specify cadence-less key-confirmation channels in §5.3** — sustained dominant emphasis
+  (arrival-denied dominants), recognized transposition sequences (the recognition consumer as a §5.3 input — synergy
+  with the already-planned consumer), and an enharmonic-identity rule for key-spans. Design-only now; Tristan-class
+  corpus as the measurement bed." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance — the wave and its dispatch — is recorded in this field and NOT in the specification text, on the ruling record's own instruction: a file name written into a governing document reads as a new naming and moves a measured population (the OI-330 / OI-328 lesson).
 
 ### D-571 — The declared-mode influence becomes a small additive hint, and SMALLNESS IS THE GATE — no separate confidence test is added
 
@@ -765,7 +771,7 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `ARCHITECTURE.md:3673-3682`
+**Home.** `ARCHITECTURE.md:3903-3912`
 
 **Provenance.** ★ HOMED 2026-08-04 (CC, dispatch `cc_instruction_guard_fix_and_item1d.md`, Task 2.2) UNDER RULING R2 / register entry **D-644**: where a superseded decision's content is a REMOVAL there is no successor to move the obligation to (D-642's condition cannot be met), so the owning specification STATES THE CURRENT BEHAVIOUR and RECORDS THE REMOVAL AS A TRIED-AND-CLOSED LINE. **This is the precedent's own act, performed for the sibling removal that landed at the same increment:** D-058 was corrected in `ARCHITECTURE.md` §5.2 at phase 1z in exactly this form. Both halves are now present there — §5.2 already stated the current behaviour (the promotion 'was removed in the same increment', with the declared mode reaching the analysis only as a small hint at every tick), written when D-058 was corrected; what this act adds is the tried-and-closed line, in that section's own voice and WITH ITS DEFENSE. The verbatim is RE-TAKEN from that line. **THE FORMER HOME, CLASS AND VERBATIM, PRESERVED (#12)** — former home `docs/stage4b_design.md:57-63`, §2.2 'The hard post-hoc promotion → REMOVED (OQ1)'; former class `gap`, cleared because a layer-specification home is not a non-specification home; former verbatim: "- **Current** [code]: `keyresolver.cpp:344-367` (\"Strong declared-mode prior\") promotes the highest-ranked declared-compatible result to the front **regardless of score gap** — a hard veto (\"the composer's intent overrides note-content inference\").\n- **Change:** **remove it outright.** It is incompatible with \"note-based primary.\" Leaving it would make §2.1's demotion a no-op wherever note inference already out-scored the declared mode but got vetoed here. The residual declared influence is now *only* the small hint in §2.1." — from `docs/stage4b_design.md`, the Stage-4b design implementing the user's ratified Stage-4 redirect; the staged approach was chosen by the user 2026-06-14, and the document was read in full by READ WAVE 4, 2026-08-04. **What did NOT change: the STATUS.** It remains `superseded-in-fact`, exactly as D-058's did through the identical act — R2 says what the specification owes, not what the register records. **Its subject is the LEGACY key path** (`keymodeanalyzer` / `keyresolver`), which the joint estimator replaced on both surfaces; the ⚠ LEGACY mark stays, because it states what the decision is ABOUT. Landed at the same event as **D-571**. The piece-start shortcut removed alongside it is **D-058**, already recorded *superseded in fact* (`OPEN_ITEMS.md` OI-315) — the Stage-4b design is a second, independent source for that removal and dates it the same way.
 
@@ -942,12 +948,21 @@
 
 ### D-616 — A global tonic anchor enters key scoring at RESOLVER/SECTION scope — never as one more local term inside the window scorer, which is what re-enters the coupling that defeated the local levers
 
-> The anchor must act like the declared mode did — a **section/piece-scoped global prior** on tonic+mode that
-> breaks the relative-pair tie — **NOT** a per-candidate local-salience term inside `analyzeKeyMode`'s
-> 252-candidate window scoring. If it is added as just another local term, it re-enters the coupling and
-> fails like 4b-ii's levers. Concretely: apply a cadence-anchor bonus at the **resolver / section level**
-> (the scope the removed declared anchor occupied), gating the relative-pair choice; keep `analyzeKeyMode`'s
-> per-window scoring unchanged.
+> - **A global tonic anchor enters key scoring at RESOLVER / SECTION scope — never as one more local
+>   term inside the window scorer. ⚠ LEGACY: both mechanisms it names are legacy-scoped.** Evidence
+>   about which key a whole section or piece is in is applied where the section is decided — the
+>   scope the removed declared anchor occupied — gating the relative-major/minor choice; the
+>   per-window candidate scoring is left unchanged. *Why:* measured, at the attempt that failed —
+>   local reweighting was shown unable to carry the relative-major/minor decision, because that floor
+>   is made of near-ties and any local term strong enough to win them without the mode present also
+>   overrides the correct reading when it is present. Adding the anchor as one more local term
+>   re-enters exactly that coupling. The design attaches a proof obligation to the rule: show that
+>   the anchor reinforces the mode-present cases rather than regressing them. **The LEGACY mark
+>   follows a check at the code, not the decision's age:** the window scorer this rule excludes
+>   (`KeyModeAnalyzer::analyzeKeyMode`) is reached only through the legacy resolver and this layer's
+>   dormant sequence decoder, and the resolver is retired from the production region path — so
+>   neither named mechanism is on an arm that runs. The rule about WHERE a section-scoped prior is
+>   applied binds any such prior the key axis later gains.
 
 **In plain words.** Evidence about which key a whole passage is in is applied where the passage is decided, not inside the per-window scoring that ranks candidate keys note by note. Adding it as one more local term is what failed before: any local term strong enough to settle a near-tie when the mode is unknown also overrides the correct answer when the mode IS known.
 
@@ -955,11 +970,14 @@
 
 **Status.** LIVE · decided 2026-06-14 · ratifier not stated
 
-**Home.** `docs/stage4c_cadence_key_design.md:62-70`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:1622-1636`
 
-**Home section.** **“§3”** — `## §3 — Feeding key scoring WITHOUT re-entering the §4 coupling (the load-bearing constraint)` (heading at line 60). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** `docs/stage4c_cadence_key_design.md` §3, the Stage-4c cadence-to-key design, DRAFT and ratification-gated, 2026-06-14. Read in full by READ WAVE 6, 2026-08-04. Its own §7 puts this scope constraint to the user for approval and the record does not state that the ratification happened, so no ratifier is recorded. ⚠ The mechanism is on the LEGACY key path and the local key-agnostic cadence approach was later FALSIFIED at its precision ceiling (**D-290**) — but this entry is about WHERE a global prior is applied, not about that detector, and the same constraint binds any section-scoped evidence the key axis gains.
+**Provenance.** `docs/stage4c_cadence_key_design.md` §3, the Stage-4c cadence-to-key design, DRAFT and ratification-gated, 2026-06-14. Read in full by READ WAVE 6, 2026-08-04. Its own §7 puts this scope constraint to the user for approval and the record does not state that the ratification happened, so no ratifier is recorded. ⚠ The mechanism is on the LEGACY key path and the local key-agnostic cadence approach was later FALSIFIED at its precision ceiling (**D-290**) — but this entry is about WHERE a global prior is applied, not about that detector, and the same constraint binds any section-scoped evidence the key axis gains. ★ HOMED 2026-08-07 (CC, the owner-rulings homing wave, executing the user's ruling of 2026-08-07 recorded at `cowork_owner_rulings_2026_08_07.md`). Routed to the Layer-3 section, and the ruling requires the LEGACY mark to follow an ARM CHECK AT THE CODE rather than the entry's age (dispatch assumption A5). ★ THE CHECK WAS RUN BEFORE THE HOME TEXT WAS WRITTEN, and both named mechanisms come back LEGACY-SCOPED: the window scorer the rule excludes, `KeyModeAnalyzer::analyzeKeyMode`, has exactly two non-test callers — the legacy resolver (`src/composing/analysis/key/keyresolver.cpp:314`) and this layer's dormant sequence decoder (`src/composing/analysis/key/keymodesequence.cpp:147`) — and the resolver end, `resolveKeyAndModeRanked`, is retired from the production region path, its remaining production call sites being the legacy arms (`src/composing/analysis/region/regionanalyzer.cpp:443` and `:606`, `src/notation/internal/notationcomposingbridgehelpers.cpp:186`). So the LEGACY mark is written into the home text WITH the check that produced it, and the arm is not mixed. What is NOT legacy-scoped is stated beside it: the rule about WHERE a section-scoped prior is applied binds any such prior the key axis later gains. FORMER HOME, PRESERVED (#12): `docs/stage4c_cadence_key_design.md:62-70`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 60, "section": "## §3 — Feeding key scoring WITHOUT re-entering the §4 coupling (the load-bearing constraint)", "label": "“§3”", "delegated": null, "delegation": "named in no user-ratified surface", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "The anchor must act like the declared mode did — a **section/piece-scoped global prior** on tonic+mode that
+breaks the relative-pair tie — **NOT** a per-candidate local-salience term inside `analyzeKeyMode`'s
+252-candidate window scoring. If it is added as just another local term, it re-enters the coupling and
+fails like 4b-ii's levers. Concretely: apply a cadence-anchor bonus at the **resolver / section level**
+(the scope the removed declared anchor occupied), gating the relative-pair choice; keep `analyzeKeyMode`'s
+per-window scoring unchanged." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance — the wave and its dispatch — is recorded in this field and NOT in the specification text, on the ruling record's own instruction: a file name written into a governing document reads as a new naming and moves a measured population (the OI-330 / OI-328 lesson).
 
 ### D-618 — The notated key signature is NOT a hard fact — its fifths were measured to pin wrong about one time in six, so the home key is note-derived and never signature-pinned
 
@@ -985,12 +1003,18 @@
 
 ### D-622 — The reach-back convergence PROXY was measured FALSE and dropped — the as-built tracks the leading-edge key itself and stops when it stops changing
 
-> - **Proxy REJECTED by measurement (as-built uses the headline criterion directly).** The earlier draft proposed a
->   cheaper proxy — *"a settled, stable prevailing key is in view in the reached-back region"* — "validated once in
->   design." Phase-3 measurement **disproved** it: one settled *context* measure does **not** anchor the leading edge;
->   the leading-edge key flips only once a confident earlier key is established over a **run** (e.g. a V–I two measures
->   back). So the as-built tracks the **leading-edge key across iterations and stops when *it* stops changing** — the
->   headline criterion itself, no proxy.
+> - **The reach-back convergence PROXY was measured FALSE and is dropped; the as-built tracks the
+>   leading-edge key itself and stops when that stops changing.** The cheaper stopping rule proposed
+>   in design — *a settled, stable prevailing key is in view in the reached-back region* — was
+>   measured and disproved: one settled indication of context does not anchor the leading edge, which flips
+>   only once a confident earlier key is established over a **run**. So the facility uses the
+>   headline criterion directly and no proxy. *Why:* measured at the build, and the methodological
+>   reading is recorded with the result — the proxy was an unlabelled assumption, it was measured, it
+>   was false, and it was dropped; a determinism test over extension step size is what validates the
+>   criterion that replaced it. This is the finding that supersedes the proxy clause of the
+>   bounded-context contract's convergence item; that contract now records the clause as tried and
+>   closed, and its headline rule — reach back until the answer stops changing, never by a chosen
+>   amount — is unchanged.
 
 **In plain words.** When the analysis has to read backwards for context, it needs a rule for when it has read far enough. The cheap rule proposed in design — stop once a settled key appears anywhere in the material read back — was measured and found to stop too early: one settled measure does not fix the key at the edge of the selection, which only settles once a confident earlier key is established over a stretch. So the built code checks the thing that actually matters and stops when that stops moving.
 
@@ -998,9 +1022,12 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `cowork_layer3_reachback_design.md:76-82`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:1637-1648`
 
-**Home section.** **§3** — `## 3. The trigger and the convergence stop (no amount-guessing)` (heading at line 68). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** `cowork_layer3_reachback_design.md` §3, the Layer-3 reach-back detail design, BUILT as a capability gated off by default. Read in full by READ WAVE 6, 2026-08-04. ★ **THIS ENTRY CONTRADICTS A LIVE, USER-RATIFIED ENTRY: D-261**, whose verbatim names this same proxy as the worked example of a domain proxy and states that *"the proxy is validated once, in design, to imply convergence"* — a clause the measurement above refuted before D-261 was ratified on 2026-08-02, and which carries no annotation. Verified at the code rather than taken from the design: `src/composing/analysis/region/regionanalyzer.cpp:653-659` records the proxy as found to stop PREMATURELY and implements the headline criterion directly. Tracked at `OPEN_ITEMS.md` OI-331; NOT resolved here, because which of the two the record means to keep is a ruling. The record states neither a date nor a ratifier for this item.
+**Provenance.** `cowork_layer3_reachback_design.md` §3, the Layer-3 reach-back detail design, BUILT as a capability gated off by default. Read in full by READ WAVE 6, 2026-08-04. Verified at the code rather than taken from the design: the production source records the proxy as found to stop PREMATURELY at the convergence note above the reach-back loop, and implements the headline criterion directly. The record states neither a date nor a ratifier for this item. ★ **THIS ENTRY IS RECORDED AS SUPERSEDING THE PROXY CLAUSE OF D-261, on the user's ruling of 2026-08-07** (dispatch `cc_instruction_five_rulings.md` §0a R3; `OPEN_ITEMS.md` OI-331, which flips on it). The clause is STRUCK from `cowork_bounded_context_design.md` §3 item 6 and recorded there as tried and closed with this measurement as its evidence; D-261's verbatim is re-taken from the edited home with its former verbatim preserved in its own provenance (#12), and D-261's headline rule and ratified status are unchanged. ★ THE CONTRADICTION THIS ENTRY FORMERLY RECORDED IS RESOLVED, and what it said is kept (#12): '★ **THIS ENTRY CONTRADICTS A LIVE, USER-RATIFIED ENTRY: D-261**, whose verbatim names this same proxy as the worked example of a domain proxy and states that *"the proxy is validated once, in design, to imply convergence"* — a clause the measurement above refuted before D-261 was ratified on 2026-08-02, and which carries no annotation. … Tracked at `OPEN_ITEMS.md` OI-331; NOT resolved here, because which of the two the record means to keep is a ruling.' The user ruled the third of the three remedies that row put: strike the clause and record this entry as superseding it, the rule itself standing. ★ HOMED 2026-08-07 (CC, the owner-rulings homing wave, executing the user's ruling of 2026-08-07 recorded at `cowork_owner_rulings_2026_08_07.md`). The SITE was never in doubt — the Layer-3 section owns the mechanism — and what held the entry back was the OPEN user ruling at `OPEN_ITEMS.md` OI-331. THE HOLD IS LIFTED BY THE USER'S RULING, which this act carries out: the entry is written into the Layer-3 section in that section's own voice, with its defense, and the bounded-context contract's annotation points at it, each surface stating its own concern. The supersession this entry records is unchanged and is not re-decided here. FORMER HOME, PRESERVED (#12): `cowork_layer3_reachback_design.md:76-82`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 68, "section": "## 3. The trigger and the convergence stop (no amount-guessing)", "label": "§3", "delegated": null, "delegation": "named in no user-ratified surface", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "- **Proxy REJECTED by measurement (as-built uses the headline criterion directly).** The earlier draft proposed a
+  cheaper proxy — *"a settled, stable prevailing key is in view in the reached-back region"* — "validated once in
+  design." Phase-3 measurement **disproved** it: one settled *context* measure does **not** anchor the leading edge;
+  the leading-edge key flips only once a confident earlier key is established over a **run** (e.g. a V–I two measures
+  back). So the as-built tracks the **leading-edge key across iterations and stops when *it* stops changing** — the
+  headline criterion itself, no proxy." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance — the wave and its dispatch — is recorded in this field and NOT in the specification text, on the ruling record's own instruction: a file name written into a governing document reads as a new naming and moves a measured population (the OI-330 / OI-328 lesson).
 

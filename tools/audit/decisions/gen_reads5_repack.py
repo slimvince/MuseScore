@@ -26,13 +26,58 @@ different key and destroy the record of which documents each completed wave read
 regime generator now STOPS instead, loudly, with that reason; this file applies the re-pack to the
 REGISTERED rows, read verbatim.
 
+★ THE DATED RECOMPUTATION IS FROZEN AND READ BACK, NOT RECOMPUTED (user's ruling, 2026-08-07;
+`OPEN_ITEMS.md` OI-344).  The contamination measurement above is stored under a key that DATES it --
+`recomputed_2026_08_04` -- together with its companion `moved_by`.  Until this change both were
+recomputed on every run, against the cluster-disposition layer as it stood at the time of the run.
+The general lesson the row states, kept here because this is the tool it was measured on:
+
+  A LIVE GUARD WHOSE ARTIFACT CONTAINS A DATED RECOMPUTATION CANNOT STAY GREEN ACROSS A LEGITIMATE
+  REFRESH OF WHAT IT RECOMPUTES AGAINST.
+
+Refreshing the disposition layer -- which the user ruled and which is correct work -- moved the
+`unresolved_cluster_count` proxy's correlation, and the whole-artifact equality `--check` failed.
+The two available repairs were a regeneration, which would write a 2026-08-07 figure under a key
+dating it 2026-08-04 (the OI-330 / OI-301 refusal: a historical measurement destroyed by the
+regeneration meant to maintain it), and this one.  So the two dated fields are now WRITTEN ONCE and
+thereafter READ BACK out of the artifact, which is the shape
+`gen_phase1q_snapshot_establishment.py` already uses for its own two moment-in-time checks (#6).
+
+WHAT THE FREEZE COVERS AND WHY IT IS THE WHOLE DATED BLOCK RATHER THAN THE ONE ENTRY THAT MOVED.
+All four proxies carry the same dated key, and all four are computed from the same `yield` vector --
+the count of register entries homed at each of the 36 read documents.  A homing act, which is
+exactly what phase 1's criterion C1 requires, moves that vector and therefore moves ALL FOUR
+correlations at once, not only the one the disposition refresh moved.  Freezing a single entry
+would leave three fields labelled `recomputed_2026_08_04` that are in fact recomputed today, which
+is the same false statement the row objects to.
+
+  MEASURED RATHER THAN ARGUED, and the measurement corrected the first version of this paragraph:
+  recomputing all four at the tree of 2026-08-07 reproduces the three non-disposition proxies
+  EXACTLY and moves only `unresolved_cluster_count`.  So a NARROW freeze would still have held at
+  the wave that made this change -- none of the eight entries homed there had a former home among
+  the 36 read documents, so that wave moved no yield count.  What makes the width right is the NEXT
+  act rather than that one: entries whose home IS one of the 36 remain in the re-home population
+  (D-281's own home is one), and homing any of them moves all four correlations together.
+
+WHAT IS NOT FROZEN, STATED SO IT IS NOT MISTAKEN FOR COVERED.  Every other field keeps the
+semantics it had.  `read_documents_whose_naming_count_moved_since_registration` is still computed
+live against the three user-ratified surfaces on every run: it carries no date, and a document
+newly NAMED in one of those surfaces is a fact about today.  It can therefore still move -- a
+delegation or a homing act that writes a read document's file name into a governing document would
+move it -- which is why a homing act records its provenance in the register's own fields and never
+in the specification text.
+
 WHAT IS AUTHORED AND WHAT IS DERIVED.
   authored : nothing about the schedule.  The ruling text, and the prose naming what the finding
              is -- both imported from the regime generator, where the rule lives.
   derived  : which documents are already read (from each completed wave's own yield artifact);
              the remainder; the wave count; the dealing; every band and point (read VERBATIM off
              the registration, never recomputed); the tercile composition of every wave, completed
-             and re-packed; and the correlation measurement above.
+             and re-packed; and, of the correlation measurement above, the proxy vectors and the
+             list of read documents whose naming count has moved.
+  frozen   : the two DATED fields of that correlation measurement -- `recomputed_2026_08_04` and
+             `moved_by`, per proxy -- written once and read back thereafter, together with the
+             winner and the flip verdict that are read off them (the block above).
 
 Run:  python tools/audit/decisions/gen_reads5_repack.py [--check]
 """
@@ -73,6 +118,26 @@ def load(path: str) -> dict:
         return json.load(fh)
 
 
+# The two fields of the contamination measurement that carry a DATE in their own key, and are
+# therefore statements about a moment rather than about today.  Written once, read back thereafter.
+FROZEN_FIELDS = ("recomputed_2026_08_04", "moved_by")
+
+
+def frozen_per_proxy() -> dict | None:
+    """The dated recomputation as first written, if the artifact exists (see the docstring).
+
+    Read back, never recomputed. Returns None only when there is no artifact to read -- the first
+    run, where the measurement is MADE."""
+    if not os.path.exists(OUT):
+        return None
+    art = load(OUT)
+    block = art.get("why_the_regime_artifact_is_read_and_not_regenerated")
+    if not isinstance(block, dict):
+        return None
+    per_proxy = block.get("per_proxy")
+    return per_proxy if isinstance(per_proxy, dict) else None
+
+
 def measure_the_proxy_contamination(regime: dict) -> dict:
     """The measurement this file's own premise rests on, computed here so it is reproducible
     (#17f, D-431): re-derive the four proxy correlations on today's files and report whether the
@@ -105,12 +170,19 @@ def measure_the_proxy_contamination(regime: dict) -> dict:
         "named_in_a_user_ratified_surface_boolean": [1.0 if r["named"] else 0.0 for r in rows],
     }
     registered = regime["proxy"]["correlations_with_yield_on_the_read_set"]
+    frozen = frozen_per_proxy()
     now = {}
     for name, xs in proxies.items():
-        rho = round(regime_gen.spearman(xs, ys, "average"), 4)
         was = registered[name]["spearman_rho_average_ties"]
+        if frozen is not None and name in frozen:
+            # READ BACK, never recomputed — the key dates this figure (see the docstring).
+            rho = frozen[name]["recomputed_2026_08_04"]
+            moved = frozen[name]["moved_by"]
+        else:
+            rho = round(regime_gen.spearman(xs, ys, "average"), 4)
+            moved = round(rho - was, 4)
         now[name] = {"registered": was, "recomputed_2026_08_04": rho,
-                     "moved_by": round(rho - was, 4),
+                     "moved_by": moved,
                      "ci95_registered": registered[name]["ci95_on_the_average_ties_figure"]}
     winner = max(now, key=lambda k: now[k]["recomputed_2026_08_04"])
     registered_key = regime["proxy"]["strongest"]
@@ -127,6 +199,30 @@ def measure_the_proxy_contamination(regime: dict) -> dict:
         "recomputed_winner": winner,
         "the_key_flips_if_the_regime_is_regenerated": winner != registered_key,
         "per_proxy": now,
+        "★_the_dated_figures_are_FROZEN_and_read_back": {
+            "which_fields": list(FROZEN_FIELDS),
+            "where": "every entry of `per_proxy` above; `recomputed_winner` and "
+                     "`the_key_flips_if_the_regime_is_regenerated` are read off them and are "
+                     "frozen with them",
+            "the_ruling": (
+                "User, 2026-08-07 (dispatch `cc_instruction_licensed_homing_and_oi344.md` §0a, "
+                "R3): the dated proxy figure and its companion are stored once and read back by "
+                "`--check` rather than recomputed on every run."),
+            "why": (
+                "The key DATES the figure. Recomputing it on every run means the artifact asserts "
+                "a 2026-08-04 measurement and carries today's, so any legitimate refresh of what "
+                "it is computed against turns the guard red — measuring the clock rather than the "
+                "repository. The excluded repair is recorded with the taken one: regenerating "
+                "would write today's figure under the 2026-08-04 key, which is the OI-330 / "
+                "OI-301 refusal."),
+            "the_shape_is_not_new_here": (
+                "tools/audit/decisions/gen_phase1q_snapshot_establishment.py already writes its "
+                "two moment-in-time checks once and reads them back (#6)."),
+            "what_is_NOT_frozen": (
+                "`read_documents_whose_naming_count_moved_since_registration`, which carries no "
+                "date and is a statement about the surfaces as they stand today. It is still "
+                "computed live on every run and can still move."),
+        },
         "read_documents_whose_naming_count_moved_since_registration": moved_docs,
         "why_it_moved": (
             "Delegations WRITTEN INTO USER-RATIFIED SURFACES. `named_in_a_user_ratified_surface_"

@@ -106,20 +106,53 @@ SUCCESSORS: dict[str, dict] = {
     "D-285": {
         "successors": [
             {"register_id": "D-004", "named_as": "D-004"},
-            {"register_id": None, "named_as": "the OI-194 increment"},
+            {"register_id": "D-426", "named_as": "D-426"},
         ],
-        "why": "`superseded_by` reads 'the ratified factorization emission design (D-004 and the "
-               "OI-194 increment)'. The first successor is a register entry and is homed; the second "
-               "is named by its OPEN-ITEMS row, not by a register identifier, so its home cannot "
-               "be derived and R1's condition is not discharged for the whole of this entry's "
-               "content.",
-        "note": "A search of the register finds ONE entry whose subject is that increment — the "
-                "one recording that the ornament labels get their own increment with the tracking "
-                "row created at ruling time. It is NOT named here as the successor and does NOT "
-                "drive the disposition: identifying it would be this session nominating a "
-                "successor the record does not name, which STOP 3 exists to prevent. Reported so "
-                "the next reader does not re-derive it, and so that whoever rules can see that the "
-                "gap is a NAMING gap rather than an absent successor.",
+        "why": "`superseded_by` reads 'the ratified factorization emission design (D-004 and D-426, "
+               "the OI-194 ornament-label increment)'. BOTH successors are register entries the "
+               "record names, so STOP 3 is satisfied for each: D-004 is homed in a layer "
+               "specification, and D-426 — named by the USER on 2026-08-07 as the recorded decision "
+               "carrying the increment half — is not, so R1's condition is still not discharged for "
+               "the whole of this entry's content and the owed act is homing D-426.",
+        "note": "★ THE NAMING GAP THIS RECORD REPORTED IS CLOSED BY A USER RULING, AND WHAT THE "
+                "RECORD FORMERLY SAID IS KEPT WHOLE (#12). The user ruled on 2026-08-07 (dispatch "
+                "`cc_instruction_five_rulings.md` §0a R2) that D-426 is the recorded decision "
+                "carrying 'the OI-194 increment', and the register's `superseded_by` now names it — "
+                "so the successor is derivable and no session had to nominate one. Before that "
+                "ruling this record read, verbatim: \"A search of the register finds ONE entry whose "
+                "subject is that increment — the one recording that the ornament labels get their "
+                "own increment with the tracking row created at ruling time. It is NOT named here as "
+                "the successor and does NOT drive the disposition: identifying it would be this "
+                "session nominating a successor the record does not name, which STOP 3 exists to "
+                "prevent. Reported so the next reader does not re-derive it, and so that whoever "
+                "rules can see that the gap is a NAMING gap rather than an absent successor.\" The "
+                "candidate that record declined to name is the one the user has now named, which is "
+                "the STOP working rather than being circumvented: the search was reported, the "
+                "naming was left to the user, and the ruling supplied it. WHAT THE RULING DID NOT "
+                "CHANGE: the disposition. D-426 is unhomed, so this entry still STAYS IN ITEM 1 with "
+                "its route on the successor side — what moved is that the act owed first is no "
+                "longer a naming but the homing of a named entry.",
+    },
+
+    # ---- ruled superseded 2026-08-07, successors named in `superseded_by` ---------------------
+    "D-538": {
+        "successors": [{"register_id": "D-177", "named_as": "D-177"},
+                     {"register_id": "D-115", "named_as": "D-115"}],
+        "why": "Ratified and ruled SUPERSEDED in the same act (user, 2026-08-07, ruling R2). The "
+               "register names both successors in its own `superseded_by` field, 'D-177 and "
+               "D-115', and — the reason a session had nothing to nominate — the entry's "
+               "status_source had already named exactly these two in prose, BEFORE the ruling: "
+               "'an early, concrete form of the discipline the project later stated generally — "
+               "one revertible provenance-stamped commit per behaviour change (#14) and a "
+               "measured non-increase before proceeding (the gate block (A) hard stop)'.",
+        "note": "⚠ LEGACY SUBJECT, and the mark is what makes the excluded alternative matter. "
+                "The user's ruling records why this entry is NOT homed beside gate block (A): "
+                "that would put a second copy of in-force discipline into a live specification "
+                "(#6), under a LEGACY subject a reader could misapply to the live solution. So "
+                "the early concrete form stays in the register verbatim (#12) and the obligation "
+                "moves to the successors under D-642 — which is this file's own construction, "
+                "arrived at here by a RULING rather than by a supersession the record already "
+                "carried.",
     },
 
     # ---- superseded-in-fact: `superseded_by` is empty by construction, and the record names the
@@ -434,10 +467,16 @@ def build() -> dict:
                 "there is homing the successor, and the successor is already in the same item."
             ),
             "3_a_successor_can_be_named_by_something_that_is_not_a_register_entry": (
-                "One entry's supersession names an INCREMENT by its open-items row rather than a "
-                "decision by its identifier, so its home cannot be derived at all. R1's condition "
-                "turns on the successor being HOMED, and a successor that is not a register entry "
-                "has no home field to read."
+                "One entry's supersession named an INCREMENT by its open-items row rather than a "
+                "decision by its identifier, so its home could not be derived at all. R1's "
+                "condition turns on the successor being HOMED, and a successor that is not a "
+                "register entry has no home field to read. ★ THE USER RULED IT on 2026-08-07 "
+                "(dispatch `cc_instruction_five_rulings.md` §0a R2): D-426 is the recorded decision "
+                "carrying that increment, and the register's `superseded_by` now names it, so the "
+                "successor is derivable. The finding stands as the reason a naming was owed at all; "
+                "what it reported is preserved in that entry's own note (#12). It did NOT change "
+                "the disposition — the newly named successor is itself unhomed, so the entry keeps "
+                "its route on the successor side."
             ),
             "4_a_superseded_entry_can_have_no_successor_because_the_content_is_not_live": (
                 "One entry records a REMOVAL. Nothing later states the rule it states, because "

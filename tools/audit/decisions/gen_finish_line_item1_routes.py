@@ -43,10 +43,128 @@ REHOME = "RE-HOME"
 DELEGATION = "NEEDS A DELEGATION"
 NO_HOME = "NO HOME EXISTS"
 
-# The edit surface THIS dispatch authorizes. An entry whose owning specification lies outside it
-# is classified but NOT executed -- stated so that a small executed set is read as a scope bound
+# The edit surface a homing dispatch authorizes. An entry whose owning specification lies outside
+# it is classified but NOT executed -- stated so that a small executed set is read as a scope bound
 # rather than as a judgment that the remaining entries have no owner.
-EXECUTABLE_OWNER_PREFIX = "ARCHITECTURE.md"
+#
+# ★ WIDENED 2026-08-07 (user's ruling, dispatch `cc_instruction_five_rulings.md` §0a R1, recorded
+# in `cowork_audit_protocol.md`): a HOMING dispatch may also touch `docs/scoring_model.md`,
+# `CLAUDE.md` and `BUILD_AND_TEST.md`, SCOPED TO HOMING ACTS ALONE.  The former value, preserved
+# (#12): EXECUTABLE_OWNER_PREFIX = "ARCHITECTURE.md" -- the standing autonomous-operation
+# authorization and nothing else.
+EXECUTABLE_OWNER_PREFIXES = ("ARCHITECTURE.md", "CLAUDE.md", "docs/scoring_model.md",
+                             "BUILD_AND_TEST.md")
+
+# ★ THE OWNER-DETERMINACY VERDICT FOR THE LICENSING CLASS, AUTHORED 2026-08-07, AND WHY IT IS A
+# SEPARATE FIELD RATHER THAN A REWRITE OF THE `unambiguous` COLUMN.
+#
+# `OPEN_ITEMS.md` OI-342 measured that the `unambiguous` column below carries the answer to a
+# DIFFERENT question for the rows whose recorded reason names only the edit surface -- those rows
+# name a determinate site and then say it was out of reach -- and that row declines to re-author
+# another wave's judgment table, on the ground that re-authoring is not a reading act.  So the
+# column is left exactly as it stands and this verdict is recorded beside it.
+#
+# It is the discharge of the homing dispatch's own assumption A1 ("every licensing-class entry's
+# recorded owner names a DETERMINATE section of its file"), taken per entry against the RECORD's
+# own reading rather than a fresh judgment: OI-342 enumerates the three members of that class whose
+# owner is genuinely soft INDEPENDENT of the surface -- D-539 ("the principles"), D-538 ("the
+# project's standing rules") and D-281 (two candidate homes, in two different files) -- and states
+# that every other member names a determinate site.  A1 is therefore REFUTED FOR THOSE THREE, which
+# the dispatch names as a result rather than a failure: they are not homed, they stay in item 1,
+# and they return to the user with the owner question.  Nothing here guesses a section.
+A1_OWNER_IS_DETERMINATE = {
+    "D-451", "D-452", "D-473", "D-486", "D-564", "D-582", "D-602", "D-603",
+}
+
+# ★ THE THREE OWNER RULINGS OF 2026-08-07, AND WHY THEY ARE A TABLE OF THEIR OWN.
+#
+# The A1 verdict above RETURNED three entries to the user with the owner question, which is what
+# it was for.  The user answered all three on the same date (dispatch
+# `cc_instruction_three_owner_rulings.md` §0a, rulings R1-R3).  The answers are recorded here
+# rather than folded into the set above, because the two record different acts: that set records
+# what a session could NOT settle, this one records what the user did settle.  Widening the first
+# would erase the refusal that produced the question.
+#
+# Two of the three are HOMED and leave item 1.  The third, D-538, is ratified and ruled SUPERSEDED
+# in the same act, which discharges it by a different route entirely -- its route below becomes
+# NO HOME EXISTS and its disposition is DERIVED in `gen_r1_superseded_reach.py`, never authored
+# here.  So it is deliberately absent from this table.
+#
+# WHY `EXECUTABLE_OWNER_PREFIXES` IS NOT WIDENED FOR D-539.  Its ruled home,
+# `cowork_engage_arc_plan.md`, is a ratified contract document outside every standing licence, and
+# the user's ruling is the authorization for THAT ONE EDIT rather than for a standing surface.
+# Writing the file into the prefix table would convert a one-edit authorization into a licence,
+# which is the act rule (g) reserves to the user.  The ruling therefore admits the entry directly.
+OWNER_RULED_2026_08_07 = {
+    "D-281": "BUILD_AND_TEST.md (re-homed 2026-08-07 on the user's ruling R1 — no longer in item 1)",
+    "D-539": "cowork_engage_arc_plan.md (re-homed 2026-08-07 on the user's ruling R3 — no longer in "
+             "item 1)",
+}
+
+# ★ THE FORTY-EIGHT OWNER RULINGS OF 2026-08-07 (the homing wave), AND WHY THEY ARE A THIRD TABLE.
+#
+# The two tables above record, in order, what a session could NOT settle (the A1 verdict) and what
+# the user settled for the three entries that verdict returned.  This table records a LATER and
+# LARGER act by the same user on the same date: the ruling record `cowork_owner_rulings_2026_08_07.md`
+# rules the owner for the whole remaining population of item 1's re-home class -- the forty
+# owner-not-determinate entries and the eight no-blocker entries -- entry by entry, on four decision
+# surfaces.  It is kept separate for the same reason the second table is: merging it into the A1
+# verdict would erase the refusal that produced the question, and merging it into the three-ruling
+# table would date two different rulings to one act.
+#
+# EACH VALUE IS THE DESTINATION FILE the ruling names.  The destinations themselves are not
+# re-authored here: they are the ruling record's own table, read whole (D-643), and the homing act
+# that carried them out wrote each decision into the named section with its defense.
+#
+# ★ D-472 IS DELIBERATELY ABSENT, AND ITS ABSENCE IS A RESULT RATHER THAN AN OMISSION.  The ruling
+# routes it to the Layer-6 section and makes the LEGACY mark conditional on an arm check at the code
+# (the homing dispatch's assumption A5).  The check came back MIXED -- the grouping rule the entry
+# specifies is SHARED and reached on the production record arm, while the stabilization pass its own
+# text names as the precondition is legacy-arm-only -- and a mixed arm is the dispatch's stated
+# outcome for holding an entry and returning it to the user.  So it was NOT homed, it stays in item
+# 1, and its route row below records the ruling and the hold together.
+OWNER_RULED_2026_08_07_HOMING = {
+    # the joint-estimator section (created by the same act, by converting the standing-rules block)
+    "D-449": "ARCHITECTURE.md", "D-450": "ARCHITECTURE.md",
+    "D-532": "ARCHITECTURE.md", "D-533": "ARCHITECTURE.md", "D-534": "ARCHITECTURE.md",
+    # the ARCHITECTURE.md section groups
+    "D-280": "ARCHITECTURE.md", "D-501": "ARCHITECTURE.md",
+    "D-419": "ARCHITECTURE.md", "D-496": "ARCHITECTURE.md",
+    "D-421": "ARCHITECTURE.md", "D-542": "ARCHITECTURE.md", "D-543": "ARCHITECTURE.md",
+    "D-544": "ARCHITECTURE.md", "D-545": "ARCHITECTURE.md",
+    "D-464": "ARCHITECTURE.md", "D-470": "ARCHITECTURE.md",
+    "D-469": "ARCHITECTURE.md", "D-471": "ARCHITECTURE.md",
+    "D-531": "ARCHITECTURE.md", "D-497": "ARCHITECTURE.md",
+    "D-326": "ARCHITECTURE.md", "D-625": "ARCHITECTURE.md",
+    "D-494": "ARCHITECTURE.md", "D-495": "ARCHITECTURE.md",
+    "D-605": "ARCHITECTURE.md", "D-616": "ARCHITECTURE.md", "D-622": "ARCHITECTURE.md",
+    # the scoring-surface rule
+    "D-325": "docs/scoring_model.md", "D-327": "docs/scoring_model.md",
+    "D-328": "docs/scoring_model.md", "D-423": "docs/scoring_model.md",
+    "D-463": "docs/scoring_model.md", "D-465": "docs/scoring_model.md",
+    "D-490": "docs/scoring_model.md", "D-491": "docs/scoring_model.md",
+    "D-492": "docs/scoring_model.md", "D-493": "docs/scoring_model.md",
+    "D-510": "docs/scoring_model.md", "D-511": "docs/scoring_model.md",
+    "D-512": "docs/scoring_model.md", "D-536": "docs/scoring_model.md",
+    "D-537": "docs/scoring_model.md", "D-580": "docs/scoring_model.md",
+    # the gate block and the principle
+    "D-604": "CLAUDE.md", "D-606": "CLAUDE.md", "D-474": "CLAUDE.md",
+    # the arc plan, under the same one-edit authorization the D-539 ruling carried
+    "D-568": "cowork_engage_arc_plan.md",
+}
+
+
+def closed_row_home(entry_id: str) -> str:
+    """Where an executed entry went, and in which wave -- so one hardcoded date cannot stand for
+    every wave (#12)."""
+    if entry_id in OWNER_RULED_2026_08_07_HOMING:
+        return (f"{OWNER_RULED_2026_08_07_HOMING[entry_id]} (re-homed 2026-08-07 on the user's "
+                "owner ruling, the homing wave — no longer in item 1)")
+    if entry_id in OWNER_RULED_2026_08_07:
+        return OWNER_RULED_2026_08_07[entry_id]
+    if entry_id in A1_OWNER_IS_DETERMINATE:
+        return "CLAUDE.md (re-homed 2026-08-07 under the homing licence — no longer in item 1)"
+    return "ARCHITECTURE.md (re-homed 2026-08-04 — no longer in item 1)"
 
 # ---------------------------------------------------------------------------------------------
 # The authored routes. (route, owning_specification_or_None, unambiguous, reason)
@@ -331,9 +449,19 @@ ROUTES = {
               "The hand-built emission is confirmed and the learned replacement is not triggered, retained "
               "as a fallback with a concrete trigger. §2.2 owns the substitutability property; whether it "
               "also owns a standing not-yet-triggered verdict is not settled by the record."),
-    "D-539": (REHOME, "CLAUDE.md (the standing method rules)", False,
-              "Decompose every error slice into structural, fitted and ceiling BEFORE building. A standing "
-              "method rule whose home is the principles, outside this dispatch's edit surface."),
+    "D-539": (REHOME, "cowork_engage_arc_plan.md, beside the MEASURE-BEFORE-BUILD gate", True,
+              "Decompose every error slice into structural, fitted and ceiling BEFORE building. "
+              "RULED 2026-08-07 (user, R3): it is an ORDER-OF-WORK rule, and the arc plan is the "
+              "ratified contract for the order of work that CLAUDE.md's principles section "
+              "delegates to and does not restate (#6); D-277, the method's recorded descendant, "
+              "already lives there. The excluded alternative is CLAUDE.md beside the #17 funnel, "
+              "which would begin restating what the governing file delegates. The ruling is itself "
+              "the authorization for that one edit of a ratified contract document, and no "
+              "standing edit surface is widened by it. THE FORMER OWNER AND REASON, PRESERVED "
+              "(#12): 'CLAUDE.md (the standing method rules)', owner_is_unambiguous False, reason "
+              "'Decompose every error slice into structural, fitted and ceiling BEFORE building. A "
+              "standing method rule whose home is the principles, outside this dispatch's edit "
+              "surface.'"),
 
     # ---- docs/decoder_design.md --------------------------------------------------------------
     "D-325": (REHOME, "ARCHITECTURE.md Layer 4 (the per-slice chord decoder)", False,
@@ -376,18 +504,40 @@ ROUTES = {
               "The completeness bonus fires only for a root-position reading with all three tones present. "
               "A legacy scoring bonus with a guard; the scoring model's §4 is the nearest owner, but "
               "ARCHITECTURE.md §4.1 also specifies the scorer."),
-    "D-538": (REHOME, "CLAUDE.md (the staging discipline for a multi-signal change)", False,
-              "One signal at a time with the corpus re-measured between. A landing discipline rather than "
-              "a scoring rule; its home is the project's standing rules, outside this dispatch's edit surface."),
+    "D-538": (NO_HOME, None, False,
+              "RULED 2026-08-07 (user, R2): the entry is ratified as correctly recorded AND its "
+              "content is ruled superseded in the same act — by principle #14 (D-177) and by gate "
+              "block (A)'s measured non-increase (D-115), the two successors this entry's own "
+              "record already named before the ruling. Both are homed, so writing its early "
+              "concrete form into a specification would put a second copy of a homed rule, which "
+              "#6 forbids — and would put in-force discipline into a live specification under a "
+              "LEGACY subject a reader could misapply to the live solution. Its disposition under "
+              "D-642 is DERIVED at tools/audit/decisions/r1_superseded_reach.json and is not "
+              "authored here. THE FORMER ROUTE, OWNER AND REASON, PRESERVED (#12): RE-HOME, "
+              "'CLAUDE.md (the staging discipline for a multi-signal change)', "
+              "owner_is_unambiguous False, reason 'One signal at a time with the corpus re-measured "
+              "between. A landing discipline rather than a scoring rule; its home is the project's "
+              "standing rules, outside this dispatch's edit surface.'"),
 
     # ---- docs/iteration_path1_summary.md -----------------------------------------------------
     "D-280": (REHOME, "ARCHITECTURE.md §3.3 (the inference/presentation boundary)", False,
               "Gates read structured fields only, never a chord symbol string or a Roman numeral. §3.3 "
               "states the boundary this restricts, but the entry is an INPUT restriction on scoring, which "
               "docs/scoring_model.md also governs; the owner is not determinate."),
-    "D-281": (REHOME, "CLAUDE.md gate block (C) / BUILD_AND_TEST.md (the measurement procedure)", False,
-              "The batch tool must emit the structured fields on every alternative or the corpus figures "
-              "silently revert. Its owner is the measurement procedure, outside this dispatch's edit surface."),
+    "D-281": (REHOME,
+              "BUILD_AND_TEST.md §2, the Corpus Regression Check (the measurement procedure)", True,
+              "The batch measurement tool must emit the structured fields on every alternative or a "
+              "corpus measurement silently reverts. RULED 2026-08-07 (user, R1): its owner is the "
+              "measurement procedure, and BUILD_AND_TEST.md is the authoritative document for the "
+              "measurement tools, which is the proper layer (#7). The excluded alternative is "
+              "CLAUDE.md gate block (A), which governs how the recorded numbers are READ and "
+              "already delegates commands and tooling to that document, so homing the schema floor "
+              "there would blur the layer and restate what is pointed at (#6); a pointer from the "
+              "gate block is permitted, a copy is not. THE FORMER OWNER AND REASON, PRESERVED "
+              "(#12): 'CLAUDE.md gate block (C) / BUILD_AND_TEST.md (the measurement procedure)', "
+              "owner_is_unambiguous False, reason 'The batch tool must emit the structured fields "
+              "on every alternative or the corpus figures silently revert. Its owner is the "
+              "measurement procedure, outside this dispatch's edit surface.'"),
 
     # ---- docs/layer_architecture_audit.md ----------------------------------------------------
     "D-463": (REHOME, "docs/scoring_model.md / ARCHITECTURE.md §4.1", False,
@@ -463,10 +613,32 @@ ROUTES = {
               "The sub-beat annotation duration gate is kept or dropped on a measured observation run with "
               "the verdict stated in advance. The annotation layers block sits in §11.5, but what is "
               "recorded is a measurement protocol rather than a rule; the owner is not determinate."),
-    "D-472": (REHOME, "ARCHITECTURE.md §11.5 (Region Analysis and the Chord Track)", False,
-              "Key areas are grouped by a smoothing pass over stabilized regions. The key-area grouping is "
-              "described both there and in the Layer-6 section, which owns key-areas in the target "
-              "architecture; the owner is not determinate."),
+    # ★ RULED 2026-08-07 AND HELD ON THE ARM CHECK — the one member of the homing wave's population
+    # that was NOT homed. The user ruled the owner: the Layer-6 section, which owns key-areas in the
+    # target architecture, with §11.5 pointing — and made the LEGACY mark conditional on CC checking
+    # at the code which arm reaches the smoothing pass. The check came back MIXED, which the homing
+    # dispatch names as the outcome that holds an entry: the grouping rule this entry specifies is
+    # SHARED and is reached on the PRODUCTION record arm (`groupKeyAreas`, called from
+    # `sectionrecordadapter.cpp:360` as well as `sectionanalyzer.cpp:763`), while the Pass-4
+    # stabilization its own text names as the precondition — `stabilizeHarmonicRegionsForDisplay` —
+    # has exactly one call site, inside the legacy `analyzeSection` (`sectionanalyzer.cpp:750`),
+    # under a comment that calls the block beneath it "the ONE legacy-arm set site". So one end of
+    # the decision is live and the other is legacy, and writing it into either section would state
+    # something false about the other end. It stays in item 1 and returns to the user.
+    "D-472": (REHOME, "ARCHITECTURE.md Layer 6 (the grouping layer), §11.5 pointing", False,
+              "Key areas are grouped by a smoothing pass over stabilized regions. RULED 2026-08-07 "
+              "(user, the owner-rulings homing wave): the owner is the Layer-6 section, which owns "
+              "key-areas in the target architecture, with §11.5 pointing — and the LEGACY mark "
+              "follows an arm check at the code. HELD, NOT HOMED: the arm check came back MIXED. "
+              "The grouping rule is shared and runs on the production record arm; the Pass-4 "
+              "stabilization the entry names as its precondition is legacy-arm-only. A mixed arm is "
+              "the dispatch's stated outcome for holding an entry and returning it to the user, so "
+              "no home text was written and the entry stays in item 1. THE FORMER OWNER AND REASON, "
+              "PRESERVED (#12): 'ARCHITECTURE.md §11.5 (Region Analysis and the Chord Track)', "
+              "owner_is_unambiguous False, reason 'Key areas are grouped by a smoothing pass over "
+              "stabilized regions. The key-area grouping is described both there and in the Layer-6 "
+              "section, which owns key-areas in the target architecture; the owner is not "
+              "determinate.'"),
 }
 
 
@@ -479,7 +651,9 @@ ROUTES = {
 EDIT_SURFACE_PHRASE = "outside this dispatch's edit surface"
 DETERMINATE_PHRASE = "determinate"
 NOT_DETERMINATE_PHRASE = "not determinate"
-EXECUTABLE_OWNER_SUBSTRING = "ARCHITECTURE.md"
+# Follows the licensed surface rather than restating it (#6). Former value, preserved (#12):
+# EXECUTABLE_OWNER_SUBSTRING = "ARCHITECTURE.md", correct while that was the whole surface.
+EXECUTABLE_OWNER_PREFIXES_FOR_READING = EXECUTABLE_OWNER_PREFIXES
 
 
 def _owner_judgment_reading(rows: list[dict]) -> dict:
@@ -490,7 +664,8 @@ def _owner_judgment_reading(rows: list[dict]) -> dict:
                    if DETERMINATE_PHRASE in r["reason"]
                    and NOT_DETERMINATE_PHRASE not in r["reason"]]
     on_surface = [r for r in open_rehome
-                  if EXECUTABLE_OWNER_SUBSTRING in (r["owning_specification"] or "")]
+                  if (r["owning_specification"] or "").startswith(
+                      EXECUTABLE_OWNER_PREFIXES_FOR_READING)]
     column_true = [r for r in open_rehome if r["owner_is_unambiguous"]]
 
     return {
@@ -537,9 +712,17 @@ def _owner_judgment_reading(rows: list[dict]) -> dict:
             "of_those_whose_reason_names_only_the_edit_surface": [
                 r["id"] for r in on_surface if EDIT_SURFACE_PHRASE in r["reason"]],
             "consequence_for_this_wave": (
-                "The disagreement OI-342 records is confined to rows whose owner is NOT on the "
-                "editable surface, so it moves nothing this wave could execute. What it moves is "
-                "what the column MEANS to a reader deciding how much of item 1 is closeable."
+                "★ CORRECTED 2026-08-07, because the widening made the former statement false. IT "
+                "FORMERLY READ (#12): 'The disagreement OI-342 records is confined to rows whose "
+                "owner is NOT on the editable surface, so it moves nothing this wave could "
+                "execute. What it moves is what the column MEANS to a reader deciding how much of "
+                "item 1 is closeable.' That was true while the surface was ARCHITECTURE.md alone. "
+                "The user widened it to the three further files on 2026-08-07, SCOPED TO HOMING "
+                "ACTS, and the disagreement then moved EXACTLY the rows the homing wave executed: "
+                "eight entries whose column says ambiguous and whose recorded reason names a "
+                "determinate CLAUDE.md site and then says it was out of reach. They were homed. "
+                "The column is still untouched -- what carries the determinacy verdict is the "
+                "separate A1 field, for the reason OI-342 gives."
             ),
         },
         "the_executable_set_at_HEAD": {
@@ -555,9 +738,23 @@ def _owner_judgment_reading(rows: list[dict]) -> dict:
 
 
 def _was_executed(entry_id: str) -> bool:
-    """A RE-HOME whose owner is unambiguous AND lies inside this dispatch's edit surface."""
+    """A RE-HOME whose owner is determinate AND lies inside the licensed edit surface.
+
+    Determinacy is read from the `unambiguous` column OR, for the licensing class, from the
+    A1 verdict recorded beside it — see that table for why the column is not rewritten.
+
+    A THIRD CASE: the user RULED the owner (2026-08-07). A ruling settles determinacy and carries
+    its own authorization for the edit it names, so it admits the entry DIRECTLY rather than
+    through the prefix table — see `OWNER_RULED_2026_08_07` for why that table is not widened.
+    The ROUTE is still required to be a re-home: the ruling settled where the entry belongs, not
+    that any route whatever discharges it, and a later wave that re-routed one of these must not
+    inherit the ruling's answer to a question it no longer asks."""
     route, owner, unambig, _ = ROUTES[entry_id]
-    return bool(route == REHOME and unambig and owner and owner.startswith(EXECUTABLE_OWNER_PREFIX))
+    if entry_id in OWNER_RULED_2026_08_07 or entry_id in OWNER_RULED_2026_08_07_HOMING:
+        return route == REHOME
+    determinate = bool(unambig) or entry_id in A1_OWNER_IS_DETERMINATE
+    return bool(route == REHOME and determinate and owner
+                and owner.startswith(EXECUTABLE_OWNER_PREFIXES))
 
 
 def build() -> dict:
@@ -611,7 +808,7 @@ def build() -> dict:
         route, owner, unambig, reason = ROUTES[i]
         rows.append({
             "id": i,
-            "home_document": "ARCHITECTURE.md (re-homed 2026-08-04 — no longer in item 1)",
+            "home_document": closed_row_home(i),
             "route": route,
             "owning_specification": owner,
             "owner_is_unambiguous": unambig,
@@ -665,14 +862,82 @@ def build() -> dict:
             "suffice to measure conformance against WITHOUT consulting the register -- so a decision "
             "reachable only by following a pointer satisfies C1's letter and defeats C4."
         ),
-        "what_this_dispatch_may_execute": {
-            "surface": "ARCHITECTURE.md only",
+        "what_a_homing_dispatch_may_execute": {
+            "surface": list(EXECUTABLE_OWNER_PREFIXES),
             "why": "The standing authorization covers src/composing/, notationaccessibility.cpp and "
-                   "ARCHITECTURE.md. Entries whose owning specification is CLAUDE.md, "
-                   "docs/scoring_model.md or BUILD_AND_TEST.md are classified here and NOT executed.",
+                   "ARCHITECTURE.md. ★ WIDENED 2026-08-07 by the user's ruling: a HOMING dispatch "
+                   "may also touch docs/scoring_model.md, CLAUDE.md and BUILD_AND_TEST.md, SCOPED "
+                   "TO HOMING ACTS ALONE and to no other edit of those files.",
+            "the_former_statement_preserved_12": (
+                "'surface': 'ARCHITECTURE.md only'; 'why': 'The standing authorization covers "
+                "src/composing/, notationaccessibility.cpp and ARCHITECTURE.md. Entries whose "
+                "owning specification is CLAUDE.md, docs/scoring_model.md or BUILD_AND_TEST.md are "
+                "classified here and NOT executed.' True until the widening; false after it."),
             "consequence_stated_plainly": "A small executed set is a SCOPE BOUND, not a verdict that "
                                           "the remaining entries have no owner. The route column says "
                                           "which do.",
+        },
+        "★_assumption_A1_of_the_2026_08_07_homing_wave": {
+            "the_assumption": (
+                "That every licensing-class entry's recorded owner names a DETERMINATE section of "
+                "its file. Checked PER ENTRY before anything was written, with a STOP for any "
+                "entry it fails: that entry is not homed, it stays in item 1, and it returns to "
+                "the user with the owner question rather than to a guessed section."),
+            "verdict": (
+                "REFUTED FOR THREE OF THE ELEVEN, which the dispatch names as a result and not a "
+                "failure — the class was cut by phrase and the cut can be wrong per entry."),
+            "determinate_and_homed": sorted(A1_OWNER_IS_DETERMINATE),
+            "soft_owner_NOT_homed_and_returned_to_the_user": ["D-281", "D-538", "D-539"],
+            "how_the_three_were_identified": (
+                "Not by a fresh judgment. `OPEN_ITEMS.md` OI-342 enumerates, in its own words, the "
+                "members of this class whose owner is genuinely soft INDEPENDENT of the edit "
+                "surface — D-539 ('the principles'), D-538 ('the project's standing rules') and "
+                "D-281 (two candidate homes, in two different files) — and states that every other "
+                "member names a determinate site. Each of the three is also soft on the face of "
+                "its own recorded owner string: two name no section at all, and one names two "
+                "sections in two files joined by a slash."),
+            "what_is_NOT_claimed": (
+                "That the three have no owner, or that any corrected count is proposed for OI-342 "
+                "— that row declines to propose one and nothing here proposes one either. What is "
+                "claimed is only that the record does not settle WHICH section each of the three "
+                "belongs in, and that a session may not settle it."),
+            "★_and_the_user_RULED_ALL_THREE_on_2026_08_07": {
+                "what_happened": (
+                    "The refusal above did the one thing it was for: the question went to the user "
+                    "and the user answered it, in three rulings on the same date (dispatch "
+                    "`cc_instruction_three_owner_rulings.md` §0a). Recorded here BESIDE the verdict "
+                    "rather than in place of it (#12) — the verdict is what a session could not "
+                    "settle, these are what the user settled, and collapsing the two would erase "
+                    "the refusal that produced the answer."),
+                "R1_D_281": (
+                    "HOMED in BUILD_AND_TEST.md §2, the Corpus Regression Check. The schema floor "
+                    "is a contract of the measurement tools and that document is the authoritative "
+                    "one for them (#7). Excluded alternative: CLAUDE.md gate block (A), which "
+                    "governs how the recorded numbers are read and already delegates tooling to "
+                    "that document (#6)."),
+                "R2_D_538": (
+                    "RATIFIED AND RULED SUPERSEDED in the same act, by principle #14 (D-177) and "
+                    "gate block (A)'s measured non-increase (D-115). No specification is edited "
+                    "for it, which is the ruling's point; its route below is NO HOME EXISTS and "
+                    "its disposition is derived under D-642 in the R1 application. Excluded "
+                    "alternative: homing it beside the gate block would put a second copy of "
+                    "in-force discipline into a live specification under a LEGACY subject."),
+                "R3_D_539": (
+                    "HOMED in cowork_engage_arc_plan.md, beside the MEASURE-BEFORE-BUILD gate — an "
+                    "order-of-work rule in the ratified contract for the order of work, where "
+                    "D-277, its recorded descendant, already lives. Excluded alternative: "
+                    "CLAUDE.md beside the #17 funnel, which would begin restating what the "
+                    "governing file delegates. The ruling is itself the authorization for that one "
+                    "edit; no standing edit surface is widened, which is why the entry is admitted "
+                    "by `OWNER_RULED_2026_08_07` and not by the prefix table."),
+                "what_the_rulings_did_NOT_do": (
+                    "They settled the OWNER question for these three and nothing else. R1 and R3 "
+                    "do not ratify their entries as correctly recorded — D-539's record still "
+                    "reads NOT ratified and it stays in the ratification queue; D-281 was already "
+                    "ratified on 2026-08-02, before this question arose. No fix to the analysis, "
+                    "no design and no inference change is authorized by any of the three, and "
+                    "nothing here proposes a corrected count for OI-342."),
+            },
         },
         "★_findings_the_classification_produced": {
             "1_C1_reaches_entries_whose_re_homing_#6_would_FORBID": (

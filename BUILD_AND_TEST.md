@@ -320,6 +320,31 @@ was originally lost to a git reset and re-recovered at **commit `5df8421114`**
 (~700 BIR=false); the 21/128 baseline depends on both `36bf4738a8` and
 `5df8421114` being present.
 
+**★ THE OUTPUT-SCHEMA FLOOR FOR THE BATCH MEASUREMENT TOOL — BELOW IT A CORPUS MEASUREMENT
+SILENTLY REVERTS (homed here 2026-08-07 on the user's ruling; the record states no date and no
+ratifier for the decision itself).** `batch_analyze.cpp` must emit `rootPitchClass`,
+`bassPitchClass`, `quality` and `bassIsRoot` on **every alternative entry**, not on the winner
+alone. Those four fields are what activates the `_matches_alternative` reclassification in
+`compare_analyses.py`, and they are the **floor below which a corpus measurement taken by this
+procedure silently reverts to the pre-Iter-36 counts the paragraph above records** — and reports
+them as though nothing had changed. **A measurement produced by a binary that does not emit all
+four is not the measurement it claims to be, whatever value it prints**, so the emission is
+confirmed before a recorded baseline is updated and not after. *Why it is stated as a standing
+floor rather than left to that paragraph, which records the same event as history:* the failure is
+on the record — the change was lost to a hard reset and the loss went undetected for three weeks,
+and what made it visible at all was a stale binary still holding the documented baseline. It is
+principle #19 applied to a measurement tool: a value produced without these fields is not
+established, however reproducibly it was produced.
+
+**★ POINTER — WHAT A MEASUREMENT TOOL MAY DO WITH A WRITTEN CHORD SYMBOL IS FIXED AT THE
+INFERENCE/PRESENTATION BOUNDARY, NOT HERE (added 2026-08-07 on the user's homing ruling; the rule is
+published once, at `ARCHITECTURE.md` §3.3, #6).** That boundary invariant binds **every** reader,
+measurement tools included: a chord symbol written in a score may be read **only** as a comparison or
+ground-truth label, and **never** as input that influences what the analyzer computes; production
+paths may not read one at all. A tool that let a written symbol reach the analysis would not merely
+break the boundary — it would destroy its own measurement, because it would then be comparing the
+annotation with itself. Read the rule at its home; this line points at it and does not restate it.
+
 **Jazz baseline (Iteration 54 binary, validated 2026-05-11) — hard stop reference:**
 - 3-way genuine BIR=false: 12  ← hard stop: must remain ≤ 75 for any gate
 - Commit: f92a4f1a3b

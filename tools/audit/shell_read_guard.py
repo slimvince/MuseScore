@@ -26,7 +26,13 @@ and not in place is worse than none (#19):
     rule binds both the writing side and the executing side; whether the writing side runs as a
     session in this directory is NOT established here, so **the rule must not be described as
     enforced for both sides**.
-  * It covers the TEXT-UTILITY half, and — since 2026-08-03 — `git status`.  The rest of the
+  * It covers the TEXT-UTILITY half in BOTH shell dialects it is armed on — POSIX from the
+    start, and PowerShell since 2026-08-08 (`OPEN_ITEMS.md` OI-345, user ruling R1 of
+    2026-08-07).  Until that date the utility set was POSIX-only while the hook matcher named
+    both tools, so the PowerShell spelling of the same read was admitted.  What a name set
+    cannot reach is a command carried INSIDE a quoted argument — `powershell.exe -Command
+    "<cmdlet> <repository path>"` is still admitted, is in the corpus, and is rowed.
+  * It covers — since 2026-08-03 — `git status`.  The rest of the
     rule's other half, `git log` and `git rev-parse HEAD`, is still deliberately NOT enforced.
     Blocking those would fire on ordinary git use that the rule's own scope note leaves to
     judgment, and a control that fires on legitimate use gets switched off, which is the worst
@@ -62,7 +68,8 @@ this session actually issued, plus the forbidden forms `CLAUDE.md` itself names 
 the deny rate on the forbidden set and the false-deny rate on the sanctioned set.  The artifact
 is `tools/audit/shell_read_guard_establishment.json`.
 
-  ★ THE CORPUS IS EXTENDED BEFORE ANY RATE IS REPUBLISHED (user ruling R1, 2026-08-04).  A
+  ★ THE CORPUS IS EXTENDED BEFORE ANY RATE IS REPUBLISHED (user ruling R1, 2026-08-04; the same
+  order ruled again for the PowerShell dialect on 2026-08-07 and applied 2026-08-08).  A
   measured rate is only as wide as the corpus it was measured on, so a shape that defeats the
   guard goes into the corpus FIRST and the rates are then re-measured against it.  Re-establishing
   a repaired guard against the corpus that failed to catch the defect repeats the error being
@@ -97,6 +104,77 @@ TEXT_UTILITIES = {
     "cat", "head", "tail", "sed", "awk", "grep", "egrep", "fgrep", "rg", "wc",
     "less", "more", "nl", "cut", "sort", "uniq", "strings", "od", "xxd", "tac", "type",
 }
+
+# ── the PowerShell dialect, added 2026-08-08 (`OPEN_ITEMS.md` OI-345, user ruling R1) ─────────
+# The set above is POSIX-only, and the guard is armed on the PowerShell tool by design. The
+# membership rule is the same one that built the set above: the commands that perform one of the
+# four acts D-253 names — content, existence, line counts, searches — on a path argument. The
+# aliases are read out of PowerShell's own alias table (`Get-Alias -Definition <cmdlet>`); the
+# sourcing command, the version it was run on and why the version is pinned are recorded with the
+# corpus rows below, once (#6).
+#
+# `cat` and `type` are aliases of `Get-Content` and are NOT repeated here: they are already in
+# the POSIX set under the same spelling, and a name in both sets would have to pick one of the
+# two candidate-selection paths below for no gain.
+POWERSHELL_UTILITIES = {
+    "get-content", "gc",
+    "select-string", "sls",
+    "get-childitem", "gci", "ls", "dir",
+    "get-item", "gi",
+    "test-path",
+    "resolve-path", "rvpa",
+    "measure-object", "measure",
+    "import-csv", "ipcsv",
+    "import-clixml",
+}
+
+# The parameters that NAME a path in this family. PowerShell binds a path either by one of these
+# or positionally, never both at once, which is what makes the selection below decidable.
+PS_PATH_PARAMETERS = {"-path", "-literalpath", "-filepath"}
+
+# The two members whose FIRST positional argument is not a path: `Select-String`'s is the pattern
+# and `Measure-Object`'s is the property name. This is the same special case the POSIX branch
+# already makes for `grep` and its siblings, and it is what keeps a pipeline-fed
+# `Select-String -Pattern 'FAIL'` from being read as a read of a repository file named `FAIL` —
+# the OI-292 false-deny shape, which this dialect would otherwise reproduce.
+PS_FIRST_POSITIONAL_IS_NOT_A_PATH = {"select-string", "sls", "measure-object", "measure"}
+
+
+def powershell_targets(util: str, rest: list[str]) -> list[str]:
+    """The tokens of a PowerShell reading command that could be a path, and no others.
+
+    DERIVED FROM THE CMDLETS' DOCUMENTED PARAMETER POSITIONS, not from what makes the corpus
+    pass: every member of the family takes its path either as the value of `-Path` /
+    `-LiteralPath` / `-FilePath` or as its FIRST positional argument, so those are the only two
+    places a path can be. Everything else is a named parameter's value — `-TotalCount 20`,
+    `-Filter *.md`, `-Pattern 'FAIL'` — and reading one of those as a path is the false deny that
+    gets a guard switched off.
+
+    THE LIMIT, STATED RATHER THAN LEFT TO BE FOUND: only the first positional argument is
+    considered, so a second working-tree path in a multi-path form (`Get-Content a.md, b.md`) is
+    covered only through the first. The verdict is the same for the shapes this corpus carries;
+    a form whose ONLY repository path is a later positional argument would be missed.
+    """
+    named: list[str] = []
+    positional: list[str] = []
+    i = 0
+    while i < len(rest):
+        tok = rest[i]
+        if OPTION.match(tok):
+            if tok.lower() in PS_PATH_PARAMETERS and i + 1 < len(rest) \
+                    and not OPTION.match(rest[i + 1]):
+                named.append(rest[i + 1])
+                i += 2
+                continue
+            i += 1
+            continue
+        positional.append(tok)
+        i += 1
+    if named:                       # a named path was given; positional binding cannot also apply
+        return named
+    if util in PS_FIRST_POSITIONAL_IS_NOT_A_PATH:
+        positional = positional[1:]
+    return positional[:1]
 
 # A read of a git OBJECT by explicit hash is self-verifying — it errors loudly rather than
 # returning silently-wrong content — which is exactly why the rule exempts it.
@@ -256,9 +334,14 @@ def tokenize(segment: str, group_quotes: bool = True) -> list[str]:
         return segment.split()
 
 
-def decide(command: str, group_quotes: bool = True,
-           token_first: bool = True) -> tuple[bool, str]:
-    """(deny, reason). A command is denied when a text utility names a repository path."""
+def decide(command: str, group_quotes: bool = True, token_first: bool = True,
+           dialect: bool = True) -> tuple[bool, str]:
+    """(deny, reason). A command is denied when a text utility names a repository path.
+
+    `dialect=False` restores the POSIX-only utility set the guard carried before 2026-08-08. It
+    exists so `--establish` can publish both arms on the SAME corpus, which is the only way the
+    widening's effect is separable from the corpus extension's (D-436).
+    """
     if GIT_OBJECT_READ.search(command):
         # The whole command is a git-object pipeline; a text utility downstream of it is
         # formatting object output, not reading the working tree.
@@ -285,12 +368,17 @@ def decide(command: str, group_quotes: bool = True,
                           "which paths changed is `python tools/audit/changed_paths.py` "
                           "(`--staged`, or `--commit <hash>`), which reports paths and status "
                           "codes and cannot return file content.")
-        if util not in TEXT_UTILITIES:
+        if dialect and util in POWERSHELL_UTILITIES:
+            # The PowerShell branch selects candidates by that dialect's own parameter model;
+            # the POSIX branch below is untouched by it (the dispatch's assumption A2).
+            targets = powershell_targets(util, tokens[i + 1:])
+        elif util in TEXT_UTILITIES:
+            targets = [t for t in tokens[i + 1:] if not OPTION.match(t)]
+            # `grep PATTERN file` — the first non-option token is the pattern, not a path.
+            if util in ("grep", "egrep", "fgrep", "rg") and targets:
+                targets = targets[1:]
+        else:
             continue
-        targets = [t for t in tokens[i + 1:] if not OPTION.match(t)]
-        # `grep PATTERN file` — the first non-option token is the pattern, not a path.
-        if util in ("grep", "egrep", "fgrep", "rg") and targets:
-            targets = targets[1:]
         inside = [t for t in targets if not outside_repo(t)]
         if inside:
             return True, (f"`{util}` is aimed at a path inside this repository "
@@ -413,6 +501,128 @@ FORBIDDEN = [
     "grep -n \"pattern\" > /tmp/hits.txt ARCHITECTURE.md",
 ]
 
+# ── THE CORPUS AS IT STOOD BEFORE THE POWERSHELL DIALECT ENTERED IT (2026-08-08) ──────────────
+# Frozen here so the dispatch's assumption A2 — that widening the utility set leaves the POSIX
+# side's behaviour untouched — is DISCHARGED BY MEASUREMENT rather than asserted: every row
+# below is decided with the dialect on and with it off, and any verdict that moves is a STOP.
+SANCTIONED_BEFORE_THE_DIALECT = tuple(SANCTIONED)
+FORBIDDEN_BEFORE_THE_DIALECT = tuple(FORBIDDEN)
+
+# ── ADDED 2026-08-08 (`cc_instruction_guard_dialect_close_and_push.md`, Task 1.1) ─────────────
+# THE POWERSHELL DIALECT, WHICH NEITHER LIST HELD A SINGLE MEMBER OF.
+#
+# The guard is armed on the PowerShell tool BY DESIGN — the hook block in this module's own
+# docstring carries the matcher `"Bash|PowerShell"` — while the utility set above is POSIX-only.
+# So a line count, an existence-and-size listing and a search of working-tree files were all
+# ADMITTED where `cat` aimed at the same path was DENIED, and the reason string the guard returned
+# for them, *"no text utility is aimed at a repository path"*, was true of the set it carried and
+# false of the command it read (`OPEN_ITEMS.md` OI-345).
+#
+# THE CORPUS GOES IN FIRST, AT THE UNWIDENED GUARD, on user ruling R1 of 2026-08-07
+# (`cowork_rulings_oi345_oi342_2026_08_07.md`) — the same order that ruling's predecessor fixed
+# for OI-343, and for the reason it states in its own words: the committed `--establish --check`
+# passed PRECISELY BECAUSE no member of this dialect was in either list, so the published rates
+# re-derived exactly while blind to the whole of it. Re-establishing a widened guard against the
+# corpus that could not see the defect repeats the error being fixed.
+#
+# WHERE THE NAMES COME FROM, so the list is sourced and not authored until it works. The cmdlets
+# are the PowerShell commands that perform one of the four acts D-253 itself names — content,
+# existence, line counts, searches — on a path argument. Their aliases are read out of
+# PowerShell's OWN alias table, not recalled: `Get-Alias -Definition <cmdlet>`, run on
+# Windows PowerShell 5.1.26100.8875 (Desktop edition, Windows NT 10.0.26200.0), which returns
+#   Get-Content : cat gc type      Get-ChildItem : dir gci ls     Select-String : sls
+#   Get-Item    : gi               Resolve-Path  : rvpa           Measure-Object : measure
+#   Import-Csv  : ipcsv            Test-Path     : (no alias)     Import-Clixml  : (no alias)
+# The version is pinned because the alias table is a property of the host: PowerShell 7 is not
+# installed on this machine, so its table could not be enumerated and NO claim is made about it —
+# the sourcing command is recorded here so a session on another version can re-run it.
+#
+# `cat` and `type` are PowerShell aliases too and are deliberately NOT repeated below: both are
+# already in the POSIX set under the same spelling, `cat CLAUDE.md` is already a forbidden row,
+# and a second entry would measure the same name twice.
+POWERSHELL_SANCTIONED = [
+    # (a) THE SAME COMMANDS AIMED OUTSIDE THE TREE — the control the widening must not break.
+    "Get-Content C:\\tmp\\snap_out.txt -TotalCount 20",
+    "Get-Content \"C:/Users/vince/AppData/Local/Temp/claude/c--s-MS/x/scratchpad/est.txt\"",
+    "Select-String -Path C:\\tmp\\guards.txt -Pattern 'FAIL'",
+    "Get-ChildItem C:\\tmp\\cand",
+    "Get-ChildItem C:\\tmp -Filter *.json",
+    "Test-Path C:\\tmp\\cand\\summary.json",
+    "Get-Content C:\\tmp\\out.txt | Measure-Object -Line",
+    # (b) THE ALIASES, aimed outside the tree.
+    "gc /tmp/split_1p.txt",
+    "sls -Path /tmp/snap_out.txt -Pattern 'FAILED'",
+    "dir C:\\tmp",
+    "ls /tmp/out.txt",
+    "gi C:\\tmp\\out.txt",
+    "rvpa C:\\tmp",
+    # (c) THE PATH-LESS FORMS, which are the ones a widening most easily turns into false denies:
+    # a search and a line count fed from a PIPELINE read nothing off disk at all, and their one
+    # bare argument is a PATTERN or a property name that a naive path test reads as a path — the
+    # OI-292 defect in this dialect. They are the reason the false-deny arm is published.
+    "Select-String -Pattern 'FAIL'",
+    "Measure-Object -Line",
+    # (d) THE GIT-OBJECT FORMS D-253 EXPLICITLY PERMITS, spelled in this dialect.
+    "git show 4a9c0d4827:CLAUDE.md | Select-String -Pattern 'D-253'",
+    "git cat-file -p bd3a608fec | Measure-Object -Line",
+    # (e) THE COMMAND THAT SOURCED THIS WIDENING. It reads PowerShell's alias table, not the
+    # working tree, and a guard that denied it would deny its own provenance.
+    "Get-Alias -Definition Get-Content",
+]
+
+POWERSHELL_FORBIDDEN = [
+    # (a) THE BARE CMDLET FORMS, each measured at this module's own `decide()` and recorded on
+    # `OPEN_ITEMS.md` OI-345 as ADMITTED. Every one is a read D-253 forbids.
+    "Get-Content C:\\s\\MS\\STATUS.md -TotalCount 20",
+    "Select-String -Path C:\\s\\MS\\CLAUDE.md -Pattern 'D-253'",
+    "Test-Path C:\\s\\MS\\CLAUDE.md",
+    "Get-ChildItem C:\\s\\MS\\open_items",
+    "Get-Item C:\\s\\MS\\OPEN_ITEMS.md",
+    "Resolve-Path C:\\s\\MS\\DECISIONS.md",
+    "Import-Csv C:\\s\\MS\\tools\\audit\\decisions\\cluster_dispositions.csv",
+    # The RELATIVE form, which is how the PowerShell tool arrives: it starts in the project
+    # directory, so a bare file name is a working-tree read with no absolute path in sight.
+    "Get-Content STATUS.md",
+    # (b) THE ALIASES aimed at repository paths — the half the collision question is about.
+    "gc C:\\s\\MS\\STATUS.md",
+    "sls -Path C:\\s\\MS\\DECISIONS.md -Pattern 'D-436'",
+    "gci C:\\s\\MS\\tools\\audit",
+    "dir C:\\s\\MS\\open_items",
+    "gi C:\\s\\MS\\OPEN_ITEMS.md",
+    "rvpa C:\\s\\MS\\DECISIONS.md",
+    "ipcsv C:\\s\\MS\\tools\\audit\\decisions\\cluster_dispositions.csv",
+    # `ls` aimed at a repository path is BOTH a Get-ChildItem alias and OI-300's shape (1), which
+    # the 2026-08-04 act named as deliberately untouched. It is one row, not two: the same
+    # spelling denies the same act in both dialects, and the guard has no model of which shell it
+    # was handed. What that means for OI-300 is reported, never claimed as closing it.
+    "ls C:\\s\\MS\\ARCHITECTURE.md",
+    # (c) PIPELINES — so the 2026-08-04 segmentation fix is exercised in this dialect too: the
+    # line count OI-345 records, a forbidden read in the SECOND segment, and a quoted pipe inside
+    # a pattern, which is OI-343's own defeating shape one dialect over.
+    "Get-Content C:\\s\\MS\\STATUS.md | Measure-Object -Line",
+    "Get-ChildItem C:\\tmp | Out-Null; Get-Content C:\\s\\MS\\CLAUDE.md",
+    "Select-String -Path C:\\s\\MS\\DECISIONS.md -Pattern 'D-642|D-643'",
+    # (d) THE WRAPPER FORM — the three commands the OI-345 session ACTUALLY ISSUED, each through
+    # `powershell.exe -Command "…"` from the other shell. They are in the corpus so the published
+    # rate REPORTS them; widening a name set cannot reach inside a quoted `-Command` argument, and
+    # doing so would be a second behaviour change that D-436 reserves to the user.
+    "powershell.exe -NoProfile -Command \"(Get-Content 'C:\\s\\MS\\STATUS.md' | "
+    "Measure-Object -Line).Lines\"",
+    "powershell.exe -NoProfile -Command \"Get-ChildItem 'C:\\s\\MS\\BUILD_AND_TEST.md' | "
+    "Select-Object Name,Length\"",
+    "powershell.exe -NoProfile -Command \"Select-String -Path 'C:\\s\\MS\\DECISIONS.md' "
+    "-Pattern 'delegation' | Measure-Object\"",
+    # (e) AN INTERPRETER-MEDIATED READ, issued live by the session that performed this widening:
+    # a line count of a working-tree file obtained through `python -c`. It is neither dialect's
+    # vocabulary and no name set reaches it. It is in the corpus for the reason #19 gives — a
+    # corpus chosen to make a guard look clean measures nothing — and it is reported as missed
+    # rather than fixed here.
+    "python -c \"print(sum(1 for _ in open(r'C:/s/MS/STATUS.md')))\"",
+]
+
+SANCTIONED += POWERSHELL_SANCTIONED
+FORBIDDEN += POWERSHELL_FORBIDDEN
+
 
 def establish() -> dict:
     san = [{"command": c, "denied": decide(c)[0], "reason": decide(c)[1]} for c in SANCTIONED]
@@ -437,6 +647,22 @@ def establish() -> dict:
     pre_missed = [c for c in FORBIDDEN if not decide(c, token_first=False)[0]]
     still_missed = [r["command"] for r in forb if not r["denied"]]
     still_false = [r["command"] for r in san if r["denied"]]
+
+    # The 2026-08-08 POWERSHELL DIALECT widening, measured the same way and on the SAME extended
+    # corpus, so the delta reported is the widening's and not the corpus extension's (D-436).
+    posix_false = sum(1 for c in SANCTIONED if decide(c, dialect=False)[0])
+    posix_caught = sum(1 for c in FORBIDDEN if decide(c, dialect=False)[0])
+    posix_missed = [c for c in FORBIDDEN if not decide(c, dialect=False)[0]]
+    # ASSUMPTION A2, DISCHARGED BY MEASUREMENT: every row that was in the corpus BEFORE the
+    # dialect entered it is decided both ways, and any row whose verdict moves is named. A
+    # non-empty list is the dispatch's STOP.
+    a2_moved = [
+        {"command": c,
+         "posix_only": "DENY" if decide(c, dialect=False)[0] else "allow",
+         "with_the_dialect": "DENY" if decide(c)[0] else "allow"}
+        for c in list(SANCTIONED_BEFORE_THE_DIALECT) + list(FORBIDDEN_BEFORE_THE_DIALECT)
+        if decide(c, dialect=False)[0] != decide(c)[0]
+    ]
     return {
         "purpose": "Establishment (#19) of tools/audit/shell_read_guard.py: its deny rate on "
                    "the forms CLAUDE.md names, and its FALSE-deny rate on real commands this "
@@ -446,6 +672,10 @@ def establish() -> dict:
             "Project-scoped: it binds sessions that run in this directory and read this "
             "project's settings. Whether the WRITING side does is not established, so the rule "
             "must not be described as enforced for both sides.",
+            "The text-utility half in BOTH dialects the hook is armed on — POSIX from the "
+            "start, PowerShell since 2026-08-08 (OI-345). A command carried inside a quoted "
+            "argument (`powershell.exe -Command \"…\"`) is still admitted: a name set cannot "
+            "reach inside one, it is in the corpus, and it is rowed.",
             "The text-utility half, plus `git status` since 2026-08-03. The REST of D-253's "
             "branch-tip/index half — `git log`, `git rev-parse HEAD` — is still deliberately "
             "not enforced: no tool replaces them, so denying them would fire on legitimate "
@@ -494,7 +724,17 @@ def establish() -> dict:
                                     "tokenizer nor the 2026-08-04 segmentation — the state before "
                                     "this line of maintenance began. It is measured on the corpus "
                                     "as it stands today, so it is not the figure phase 1s "
-                                    "published against the corpus of that date."},
+                                    "published against the corpus of that date.",
+                    "★_corrected_2026_08_08": "The sentence above is preserved as written (#12) "
+                                              "and one clause of it is no longer true: `without_it` "
+                                              "is NOT the guard as it stood before this line of "
+                                              "maintenance began, because the 2026-08-08 "
+                                              "PowerShell utility set is present in BOTH arms. It "
+                                              "is held constant on purpose — that is what keeps "
+                                              "the DIFFERENCE attributable to the tokenizer and "
+                                              "the segmentation — so the delta is unaffected and "
+                                              "only the description of the absolute value was "
+                                              "wrong."},
                 "detection_on_the_forbidden_set": {
                     "with_the_fix": caught, "without_it": old_caught, "of": len(forb)},
                 "the_revert_condition": "The dispatch says: if the fix raises false denies "
@@ -545,6 +785,13 @@ def establish() -> dict:
                 "what_the_fix_newly_catches": sorted(
                     c for c in pre_missed if c not in still_missed),
                 "what_is_STILL_missed_and_is_not_this_fix_s_subject": still_missed,
+                "★_corrected_2026_08_08": "Both arms now also carry the 2026-08-08 PowerShell "
+                                          "utility set, held constant so the difference stays "
+                                          "attributable to the segmentation change alone. The "
+                                          "absolute values therefore differ from those published "
+                                          "on 2026-08-04; the delta does not, and neither list "
+                                          "above is a reconstruction of the guard as it stood on "
+                                          "any date.",
             },
             "false_denies_on_the_sanctioned_set_SAME_corpus": {
                 "with_the_fix": false_denies, "without_it": pre_false, "of": len(san),
@@ -565,6 +812,16 @@ def establish() -> dict:
                     "makes changing a mechanism the user's ruling rather than a session's."
                 ),
             },
+            "★_superseded_in_part_on_2026_08_08": (
+                "The first line of `what_this_fix_deliberately_does_NOT_touch` below — OI-300's "
+                "shape (1), `ls <repository path>` — is no longer true of the guard, and it is "
+                "left standing rather than edited because it is the record of what the 2026-08-04 "
+                "act did (#12). `ls` is an enumerated alias of `Get-ChildItem`, so the 2026-08-08 "
+                "dialect widening brought it into the utility set; that is reported at "
+                "`★_the_2026_08_08_powershell_dialect_widening…` and is NOT a claim that OI-300 "
+                "is closed. Its shapes (2), (3), (4) and (5) are untouched and remain that row's "
+                "owed establishment run."
+            ),
             "what_this_fix_deliberately_does_NOT_touch": [
                 "OI-300 shape (1) — `ls <repository path>`, an existence read outside the "
                 "TEXT-UTILITY set the guard covers.",
@@ -574,6 +831,135 @@ def establish() -> dict:
                 "OI-300 shape (5) — a redirection token classified as the aimed path.",
                 "Each changes WHAT the guard denies rather than WHERE it cuts the command, and "
                 "each owes its own measured rate in both directions before it lands (D-436).",
+            ],
+        },
+        "★_the_2026_08_08_powershell_dialect_widening_and_the_corpus_it_is_measured_on": {
+            "the_ruling": (
+                "User, 2026-08-07 (ruling 1 of `cowork_rulings_oi345_oi342_2026_08_07.md`, "
+                "applied by `cc_instruction_guard_dialect_close_and_push.md`): the shell-read "
+                "guard's PowerShell blindness is FIXED, CORPUS FIRST. Extend the establishment "
+                "corpus with the PowerShell family and its aliases, sanctioned and forbidden "
+                "forms both; THEN widen the utility set; publish both rates against the extended "
+                "corpus; the revert condition — a material rise in false denials — governs as "
+                "before. The mechanism change is licensed by that ruling (D-436)."
+            ),
+            "the_defect_it_answers": (
+                "The guard is armed on the PowerShell tool BY DESIGN — the hook block in this "
+                "module's docstring carries the matcher `\"Bash|PowerShell\"` — while its utility "
+                "set was POSIX-only. Measured at this module's own `decide()` and never reasoned "
+                "from its source, `Get-Content`, `Select-String`, `Get-ChildItem` and `Test-Path` "
+                "aimed at repository paths were ALLOWED where `cat` on the same path was DENIED, "
+                "and the reason string returned for them — \"no text utility is aimed at a "
+                "repository path\" — was true of the set the guard carried and false of the "
+                "command it read (`OPEN_ITEMS.md` OI-345)."
+            ),
+            "why_the_corpus_came_first": (
+                "Neither list held a single member of the dialect, so `--establish --check` "
+                "re-derived the recorded deny and false-deny rates EXACTLY while blind to the "
+                "whole of it — current, reproducible and silent, which is the condition #19 "
+                "exists to refuse. Widening first and re-establishing against that same corpus "
+                "would have repeated the error being fixed."
+            ),
+            "★_the_blindness_MEASURED_before_the_widening": {
+                "what_was_run": "Every row added to the corpus, decided at the UNWIDENED guard "
+                                "— the committed POSIX-only utility set, with the extended "
+                                "corpus in place. This is what the old rates could not show.",
+                "new_forbidden_rows_missed": len(POWERSHELL_FORBIDDEN) - sum(
+                    1 for c in POWERSHELL_FORBIDDEN if decide(c, dialect=False)[0]),
+                "new_forbidden_rows": len(POWERSHELL_FORBIDDEN),
+                "new_sanctioned_rows_falsely_denied": sum(
+                    1 for c in POWERSHELL_SANCTIONED if decide(c, dialect=False)[0]),
+                "new_sanctioned_rows": len(POWERSHELL_SANCTIONED),
+                "read_this_as": "Every forbidden form of the dialect was admitted and no "
+                                "sanctioned form of it was denied — the guard was not wrong "
+                                "about this family, it could not see it at all.",
+            },
+            "where_the_vocabulary_came_from": {
+                "the_cmdlets": "The PowerShell commands that perform one of the four acts D-253 "
+                               "itself names — content, existence, line counts, searches — on a "
+                               "path argument. Stated as a rule so the set is derivable rather "
+                               "than authored until the corpus passes, which is the "
+                               "vocabulary-assembled-until-it-works failure this act must avoid.",
+                "the_aliases": "Read out of PowerShell's OWN alias table, never recalled: "
+                               "`Get-Alias -Definition <cmdlet>`.",
+                "the_version_it_was_read_on": "Windows PowerShell 5.1.26100.8875, Desktop "
+                                              "edition, on Windows NT 10.0.26200.0.",
+                "why_the_version_is_pinned": "The alias table is a property of the host, not of "
+                                             "the language, so the enumeration is only as wide "
+                                             "as the version it was read on. PowerShell 7 is NOT "
+                                             "installed on this machine, so its table could not "
+                                             "be enumerated and no claim is made about it; the "
+                                             "sourcing command is recorded so a session on "
+                                             "another version can re-run it. Carrying a name "
+                                             "that some other host does not alias costs "
+                                             "detection nothing — it simply never matches.",
+                "the_utility_names_added": sorted(POWERSHELL_UTILITIES),
+                "the_candidate_selection_rule": "Within this family a path is bound either as "
+                                                "the value of `-Path` / `-LiteralPath` / "
+                                                "`-FilePath` or as the FIRST positional "
+                                                "argument, never both, so those are the only two "
+                                                "places examined. `Select-String` and "
+                                                "`Measure-Object` have their first positional "
+                                                "dropped, being a pattern and a property name — "
+                                                "the same special case the POSIX branch already "
+                                                "makes for `grep`, and what keeps a "
+                                                "pipeline-fed `Select-String -Pattern 'FAIL'` "
+                                                "from being read as a repository path.",
+            },
+            "detection_on_the_forbidden_set_SAME_corpus": {
+                "with_the_widening": caught, "posix_set_only": posix_caught, "of": len(forb),
+                "what_the_widening_newly_catches": sorted(
+                    c for c in posix_missed if c not in still_missed),
+                "what_is_STILL_missed_and_is_not_this_act_s_subject": still_missed,
+            },
+            "false_denies_on_the_sanctioned_set_SAME_corpus": {
+                "with_the_widening": false_denies, "posix_set_only": posix_false,
+                "of": len(san),
+                "the_revert_condition": (
+                    "The ruling says: a material rise in false denials governs — revert and "
+                    "report. Both values are measured on the SAME extended corpus, so the "
+                    "comparison is of the widening and not of the corpus rows added with it."
+                ),
+                "the_false_denies_that_remain": still_false,
+            },
+            "★_assumption_A2_the_POSIX_side_is_untouched": {
+                "what_was_checked": "Every row the corpus carried BEFORE this act, decided with "
+                                    "the POSIX-only set and again with the dialect, and any row "
+                                    "whose verdict moved named. The dispatch makes a moved "
+                                    "verdict a STOP.",
+                "rows_checked": len(SANCTIONED_BEFORE_THE_DIALECT)
+                                + len(FORBIDDEN_BEFORE_THE_DIALECT),
+                "verdicts_that_moved": a2_moved,
+            },
+            "★_what_the_PREVIOUS_published_rates_did_and_did_not_bound": (
+                "The rates published before 2026-08-08 are NOT WITHDRAWN AS WRONG (#12): they "
+                "were correct for the corpus they were measured on and they re-derived exactly. "
+                "What they did not do is bound the guard's behaviour on the PowerShell dialect, "
+                "because no member of it was in either list. THEY WERE BLIND, NOT WRONG — a "
+                "different statement, and the reason #19 asks for positive establishment rather "
+                "than for a check that has not yet failed."
+            ),
+            "★_two_consequences_reported_rather_than_claimed": [
+                "OI-300's shape (1) — `ls` aimed at a repository path — is now DENIED, because "
+                "`ls` is an enumerated alias of `Get-ChildItem` and the guard has no model of "
+                "which shell handed it the command. The same spelling denies the same act in "
+                "both dialects. This is REPORTED as a measured consequence of the licensed act; "
+                "it is NOT a claim that OI-300 is closed, and its shapes (2), (3), (4) and (5) "
+                "are untouched.",
+                "The WRAPPER form — `powershell.exe -Command \"<cmdlet> <repository path>\"` — "
+                "is still ADMITTED, and it is the form the three commands OI-345 records were "
+                "actually issued in. Widening a name set cannot reach inside a quoted `-Command` "
+                "argument; recursing into one is a SECOND behaviour change, which D-436 reserves "
+                "to the user. It is in the corpus so the published rate reports it rather than "
+                "being silent about it, and it is rowed.",
+            ],
+            "what_this_widening_deliberately_does_NOT_touch": [
+                "The wrapper form above, and any other command that carries a shell command "
+                "inside a quoted argument.",
+                "An interpreter-mediated read — a `python -c` that opens a working-tree file. It "
+                "is in the corpus, measured as missed, and reachable by no name set.",
+                "OI-300's shapes (2), (3), (4) and (5), which remain that row's owed run.",
+                "The POSIX branch's own candidate selection, which is unchanged (assumption A2).",
             ],
         },
     }

@@ -1,0 +1,189 @@
+{
+ "instrument": "tools/audit/decisions/gen_cluster_dispositions.py",
+ "purpose": "OI-207 adjudication Task 3 — one recorded disposition per harvested cluster, by numbered bulk rule. NO cluster is left without one.",
+ "inputs": {
+  "candidates": {
+   "file": "tools/audit/decisions/decision_candidates.json",
+   "sha256": "51850440b315e6e96c750798e5202aa6c2f5aa388fd7a37bcc13d9b37c73b94d",
+   "total_candidates": 15224
+  },
+  "clusters": {
+   "file": "tools/audit/decisions/decision_clusters.json",
+   "sha256": "0615b1e61bf10332bbaa763c24304328814727936cc606bb32e9073e4675759c",
+   "cluster_count": 14460
+  },
+  "backbone": {
+   "file": "tools/audit/decisions/backbone_decisions.json",
+   "sha256": "38ec4aa4dfc1d2c1e2e433d0c58cdf0c841eabe3c74ff9ed0d0af47e52e4abea",
+   "decision_count": 467
+  }
+ },
+ "head_commit": "0f311091c147a6200e6ddd96702fc5c63507799d",
+ "disposition_vocabulary": [
+  "restates",
+  "not-a-decision",
+  "boilerplate",
+  "no-spec-home",
+  "unresolved"
+ ],
+ "ruling_vocabulary_exempting_BR11_BR12_BR13": [
+  "\\bratified\\b",
+  "\\bratification\\b",
+  "\\bshelved\\b",
+  "\\bfalsifie[sd]\\b",
+  "\\bdead end\\b",
+  "\\bdo not (re-?attempt|retry|re-?try|pursue|add|use|revert|remove)\\b",
+  "\\bDECIDED\\b",
+  "\\bDECISION\\b",
+  "\\bthe rule is\\b",
+  "\\bmust not\\b",
+  "\\bforbidden\\b",
+  "\\bnever (add|use|read|be|do|widen|assume)\\b",
+  "\\buser[- ](ruled|directed|ratified|decision|mandate)\\b",
+  "\\brejected\\b",
+  "\\bwithdrawn\\b",
+  "\\boverturned\\b",
+  "\\bsuperseded by\\b",
+  "\\bretired\\b",
+  "\\bdeferred (to|until|indefinitely)\\b",
+  "\\bstanding rule\\b",
+  "\\bpolicy\\b",
+  "\\bconvention\\b"
+ ],
+ "rules": [
+  {
+   "id": "BR-1",
+   "rule": "The clustering layer already labelled this cluster boilerplate (a recurring heading, table header row, or standing dispatch instruction line). Confirmed, not re-judged.",
+   "clusters": 74
+  },
+  {
+   "id": "BR-2",
+   "rule": "Every occurrence in the cluster is a section HEADING. A heading names a subject; it does not state a decision.",
+   "clusters": 1099
+  },
+  {
+   "id": "BR-3",
+   "rule": "The cluster's text matches at least one backbone decision whose home IS a layer specification. Recorded as restating that decision (named).",
+   "clusters": 5515
+  },
+  {
+   "id": "BR-4",
+   "rule": "The cluster's text matches one or more backbone decisions, ALL of which are recorded outside any layer specification. Recorded as a decision with no layer-specification home (named) — the Task-4 documentation-gap class.",
+   "clusters": 651
+  },
+  {
+   "id": "BR-5",
+   "rule": "The text is an instruction to a working session or dispatch scaffolding (a read-only / no-src-change banner, a push or commit instruction, a session-start reading instruction, a build-and-test instruction), not a decision about the system.",
+   "clusters": 168
+  },
+  {
+   "id": "BR-6",
+   "rule": "A Claude Code session report or dispatch whose text is a measurement or delivery narrative (it carries a figure, a test count, a commit hash, or a delivery/verification verb) and matches no backbone decision. A report of work done, not a ruling.",
+   "clusters": 1586
+  },
+  {
+   "id": "BR-7",
+   "rule": "A table row admitted by the harvest's BROAD signature tier only — an inventory or status cell, not a stated decision.",
+   "clusters": 296
+  },
+  {
+   "id": "BR-9",
+   "rule": "The unit is a list lead-in: with markdown stripped its text ends in a colon and contains no sentence-ending period before it, so it introduces a list whose items are separate units. Like a heading (BR-2) it names a subject and states nothing.",
+   "clusters": 156
+  },
+  {
+   "id": "BR-10",
+   "rule": "The unit is a row, or a section header, of the OPEN-ITEMS REGISTER (`OPEN_ITEMS.md` or `open_items/OI-*.md`). That register records issues, their status and their provenance; the ratified ruling 1 on `open_items/OI-208.md` puts decisions in the decisions register and non-conformance here. A row of it is a tracked issue.",
+   "clusters": 28
+  },
+  {
+   "id": "BR-11",
+   "rule": "The unit is in a Claude Code DISPATCH (`cc_instruction_*.md`) and carries none of the stated ruling words (RULING_VOCABULARY below). A dispatch is an instruction to a working session — scope, task, stop condition, reporting requirement. The ratified decisions-register rules make a dispatch a CITER of decisions (rule (b)) and put a new ratification in the register in the commit that records it (rule (c)), so a dispatch is never a home of record.",
+   "clusters": 886
+  },
+  {
+   "id": "BR-12",
+   "rule": "The unit is in a Claude Code session REPORT (`cc_*.md` that is not a dispatch) and carries none of the stated ruling words. A report records work done. Same register-rule reasoning as BR-11. This is BR-6 widened from its narrative-pattern test to the whole report class, minus the ruling vocabulary.",
+   "clusters": 989
+  },
+  {
+   "id": "BR-13",
+   "rule": "The unit is a comment in a TEST file (`src/**/tests/**`) and carries none of the stated ruling words. A test comment states what the test pins; the decision it pins is stated in the specification, which is where BR-3 finds it.",
+   "clusters": 163
+  },
+  {
+   "id": "BR-14",
+   "rule": "The unit is narrative prose of the OPEN-ITEMS register (`OPEN_ITEMS.md` or `open_items/OI-*.md`) that is not a row or a section header, and carries none of the stated ruling words. BR-10's reasoning, widened from the rows to the prose around them: a detail file carries narrative and provenance only and is never a status of record (its own standing banner), so its prose tracks an issue.",
+   "clusters": 17
+  },
+  {
+   "id": "BR-15",
+   "rule": "The unit is in the SESSION HANDOFF (`cowork_handoff.md`) and carries none of the stated ruling words. A handoff block hands a session over; `OPEN_ITEMS.md` OI-240 and OI-266 establish that it tracks work and is not a home for a standing decision, and the six standing rules that were recorded there are now homed (D-249…D-254). Same register-rule reasoning as BR-11/BR-12.",
+   "clusters": 14
+  },
+  {
+   "id": "BR-16",
+   "rule": "The unit is a row of the defect-type catalog (`DEFECT_TYPES.md`). The catalog itself is register entry D-213; a row of it is a catalogued problem TYPE with its detection signature, which is a diagnostic aid, not a decision about the system.",
+   "clusters": 2
+  },
+  {
+   "id": "BR-17",
+   "rule": "The unit is in the SESSION-HANDOFF ARCHIVE (`cowork_handoff_archive.md`) and carries none of the stated ruling words. BR-15's reasoning, and ONLY because the phase-1e second-partition wave READ THIS FILE IN FULL (all 5,704 lines, 2026-08-02): the archive is the handoff's own superseded blocks moved verbatim, and `OPEN_ITEMS.md` OI-240/OI-266 establish that a handoff block tracks work and is not a home for a standing decision. The archives are swept by no rule until they are read — the founding case of this audit lived in one of them.",
+   "clusters": 79
+  },
+  {
+   "id": "BR-18",
+   "rule": "The unit is in the STATUS ARCHIVE (`STATUS_ARCHIVE.md`) and carries none of the stated ruling words. BR-17's rule one file over, and ONLY because the file is now READ IN FULL — the phase-1e wave read lines 1-118 and 301-929, the phase-1f wave read the measured remainder (lines 119-300 and 930-3,861, 2026-08-02). Until then this surface deliberately carried NO rule and its residual share was marked UNREAD rather than judged. A superseded dated STATUS entry hands a session over and reports work done; `OPEN_ITEMS.md` OI-240/OI-266 establish that a tracking surface is not a home for a standing decision, and `STATUS.md:5-6` declares this file reference-only. The read is what licenses the rule, and the ruling-vocabulary exemption still holds every statement that carries a ruling word back for a reader.",
+   "clusters": 69
+  },
+  {
+   "id": "BR-8",
+   "rule": "Residual: none of the above applies. Recorded UNRESOLVED — the honest outcome, and the count is a finding about the record's legibility.",
+   "clusters": 2668
+  }
+ ],
+ "disposition_counts": {
+  "restates": 5515,
+  "not-a-decision": 5552,
+  "boilerplate": 74,
+  "no-spec-home": 651,
+  "unresolved": 2668
+ },
+ "unresolved_partition_by_surface": {
+  "cowork_* design documents": 823,
+  "docs/ design documents": 396,
+  "cc_* session reports": 316,
+  "tools/ script comments": 295,
+  "cc_instruction_* dispatches": 289,
+  "src production comments": 275,
+  "the two archives": 93,
+  "src test comments": 76,
+  "governing: ARCHITECTURE.md": 55,
+  "the open-items register": 17,
+  "governing: CLAUDE.md": 12,
+  "the session handoff": 12,
+  "mixed sources": 9
+ },
+ "unresolved_reservation_by_surface": {
+  "cowork_* design documents": "A MEASURED PARTITION, still open. **27 of the 143 documents on this surface and the `docs/` one are read IN FULL** — 21 by the phase-1d wave (whose note does not split them between the two surfaces, so neither does this one), `cowork_stage5_fitter_design.md` (its single largest holder at 55 clusters) by phase-1f, and five by the phase-1g triage wave (`cowork_layer4_chordsymbol_design.md`, `cowork_layer5_function_design.md`, `docs/decoder_design.md`, `docs/scoring_model.md`, `docs/redesign_plan.md`). **116 are unread.** Correction of record carried by phase 1g: `docs/beam_widening_design.md` appears in BOTH the phase-1d and the phase-1f read lists, so the pre-1g distinct count was 22, not the 23 the record stated, and the pre-1g unread population was 121, not 120. NO BULK RULE is written over this surface even where a document HAS been read in full, and that is deliberate: BR-17/BR-18's reasoning is that a tracking surface is not a home for a standing decision, and a ratified design document is exactly the opposite — OI-268 records the standing decisions living on this surface. A read design document therefore yields entries, not a sweep. The per-file classification of the whole unread population is `tools/audit/decisions/phase1g_triage.md`.",
+  "docs/ design documents": "Same treatment as the `cowork_*` surface, and the same reason for having no bulk rule. `docs/beam_widening_design.md` was read in full by phase-1d and again by phase-1f; `docs/decoder_design.md`, `docs/scoring_model.md` and `docs/redesign_plan.md` by phase-1g. The per-file classification of the unread remainder is `tools/audit/decisions/phase1g_triage.md`.",
+  "cc_* session reports": "The BR-12 EXEMPTION SET — units the sweep refused because they carry a ruling word. Already judged once; each needs a reader.",
+  "tools/ script comments": "RESERVED for the sealed measurement-tools partition (the second partition of the OI-199 review, Cowork's ordering amendment). These scripts ARE the subject of that review, and register entry D-281 — found by this wave — shows the surface carries real decisions, so a bulk sweep here would both pre-empt the review and be the blind class sweep the ruling-vocabulary guardrail exists to forbid.",
+  "cc_instruction_* dispatches": "The BR-11 EXEMPTION SET — units the sweep refused because they carry a ruling word. Each needs a reader.",
+  "src production comments": "RESERVED for a reading against `docs/scoring_model.md` §4/§8. These are largely the musical-reasoning comments register entry D-123 REQUIRES at every non-obvious scoring weight, so they state design decisions with their defense (D-195) and cannot be swept as narrative; settling each means comparing it with the scoring model's own §4 term table and §8 constraint list, which is a reading this wave did not reach.",
+  "the two archives": "BOTH ARE NOW READ IN FULL — `cowork_handoff_archive.md` (5,704 lines) by the phase-1e second-partition wave, `STATUS_ARCHIVE.md` (3,861 lines) across phase-1e (lines 1-118 and 301-929) and phase-1f (the measured remainder, lines 119-300 and 930-3,861), all 2026-08-02. That is what licenses BR-17 and BR-18 over their non-ruling prose. What survives here is the two rules' EXEMPTION SET: units that carry a ruling word, held back by the guardrail for a reader rather than swept. The archives are never swept before being read — the founding case of this audit (the Stage-3.1b shelving, now register entry D-286) lived in one of them, and so do the two standing 'do not retry' gate deferrals this wave entered (D-300, D-301) and the third MuseScore-core edit (D-315, rowed OI-273).",
+  "src test comments": "The BR-13 EXEMPTION SET — units the sweep refused because they carry a ruling word. Each needs a reader.",
+  "governing: ARCHITECTURE.md": "Already READ IN FULL by the 2026-08-01 completion pass; this residue is prose that reading judged not to state a distinct decision. Judged, not unread.",
+  "the open-items register": "The BR-14 exemption set — open-items prose carrying a ruling word, which is where a non-conformance row quotes the decision it violates. Each needs a reader.",
+  "governing: CLAUDE.md": "Already READ IN FULL by the 2026-08-01 completion pass; same character as the ARCHITECTURE.md residue.",
+  "the session handoff": "The BR-15 exemption set — handoff prose carrying a ruling word.",
+  "mixed sources": "Clusters whose occurrences span more than one surface. No bulk rule ever sweeps one, by construction."
+ },
+ "completeness_check": {
+  "clusters": 14460,
+  "dispositioned": 14460,
+  "occurrences_covered": 15224,
+  "occurrences_total": 15224,
+  "complete": true
+ }
+}

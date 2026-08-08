@@ -262,6 +262,8 @@
 > publication), OI-203 (the record-cache increment — the latency is now on the default path), and OI-201 (the aug-sixth
 > display-symbol completeness gap).
 
+## The joint estimator — the standing rules of the production inference layer
+
 > **★★ THE JOINT ESTIMATOR'S STANDING RULES — fitting, held-out evaluation, the search, the key axis, and
 > what the fitting pool may contain.**
 > Six rules govern the estimator described above. Each was ratified on the date given; all six were until
@@ -352,6 +354,82 @@
 > fitting design; it is the fitting-side statement of the same separation the adopted estimator makes on the
 > inference side (inference is preset-independent, presets are presentation concerns — stated at the head of
 > this document). Ratified by the user; the record does not date the mandate.
+
+### The decode's own counted quantities — factor granularity, the signature prior, transition pooling, the leftover back-off, and the missing-tone penalty
+
+Five decisions about **what the decode counts, and at what granularity**. They sit beside the six
+standing rules above rather than among them: the six govern how values are fitted, evaluated,
+searched and pooled, while these fix the quantities the decode is scoring in the first place. Each
+is stated with its defense; where the record gives none, the entry says so.
+
+**Factor granularity is fixed, per factor.** The pitch emission is scored **per tone**. The **bass
+factor is evaluated per event** — each event's sounding bass judged against the segment's chord.
+The **missing-tone penalty is normalized per event of segment length**, so a segment missing its
+third pays in proportion to how long it fails to sound it. The **transition, entry and key-change
+factors stay per boundary**. *Why:* measured on a real corpus case, and the measurement is why the
+granularity is fixed at all — under per-segment bookkeeping a longer segment pays the bass and
+missing-tone terms once where a split pays them twice, so merging harvests a discount unrelated to
+the music, which is the classic semi-Markov length bias. On the case that exposed it the
+bookkeeping alone decided merge against split, against the ground truth; with the bass factor
+evaluated per event the remaining gap is small enough to ride two fittable values rather than the
+structure. The per-event bass form is not an invention: it is the published per-frame form of the
+work this factorization is grounded in.
+
+**The key-signature and declared-mode prior conditions the INITIAL key state ONLY.** What the
+written key signature and any declared major/minor say about the key sets the starting key state
+and is not applied again — **except at a notated mid-piece signature change**, which is new written
+evidence and re-anchors it. The alternative form, a persistent pull toward the signature at every
+step, is **rejected**. *Why:* traced and settled by desk simulation on a Dorian-notated opening and
+a genuinely modal piece. A persistent pull taxes every away-from-signature key at every segment,
+without bound, and it has no basis in the literature — the published work carries no signature
+prior at all; it also re-introduces, in soft form, the signature-pull bias an earlier measurement
+condemned, in exactly the accidental-free stretches where the prior should be silent. The
+initial-state form pays the tax once and lets the music govern thereafter.
+
+**The chord-transition table carries one pooling level for a secondary dominant's continuations,
+grouped by their RELATION to the target.** A secondary dominant's continuations are pooled across
+all targets as *resolves to the chord it is the dominant of* versus *moves elsewhere*, and the
+counting is re-run at that level. *Why:* as counted without it, every secondary dominant is too
+rare on its own to hold a row, so its continuations fall into the general chord-frequency list and
+the table reads the same probability for resolving to the target as for going anywhere else — it is
+blind to the one behaviour that defines the chord class. The defect was verified directly in the
+table and its cost measured in a checked passage, where the blindness taxed the correct reading.
+Two alternatives are excluded on stated grounds: leaving it to the weight layer cannot work,
+because a weight can only scale what a table says and cannot restore a distinction the table does
+not contain; and hand-setting a resolution probability would recreate exactly the class of
+unestablished constants the fit exists to eliminate. The pooling reuses the mechanism the table
+design already rests on — counting the same pattern across transpositions — so it adds no new kind
+of machinery (#6), and the counts are ample enough that the added cells satisfy the ratified
+capacity budget.
+
+**A continuation too rare to have its own stored probability is scored by dividing the row's
+leftover in PROPORTION to each chord's overall frequency in that mode — never evenly, and never as
+impossible.** Each row of the transition table ends in one pooled probability covering everything
+too rare to store; when the decode meets a specific rare continuation it turns that pooled value
+into a number for that continuation in proportion to how common the chord is generally. *Why:* it
+is the standard construction in published back-off models of sequences (#1), and it uses
+information already held — a common chord is genuinely a likelier unseen continuation than a rare
+one (#12). Both alternatives are excluded on facts: dividing evenly asserts that a rare and a
+common chord are equally likely, which the corpus counts contradict; and treating an unseen
+continuation as impossible is factually wrong on a corpus of this size and technically fatal, since
+a zero destroys any path through it.
+
+**The penalty for a chord tone that never sounds is COUNTED PER CHORD FACTOR — root, third, fifth,
+seventh — and not carried as one blanket value.** Across every humanly labelled chord segment in
+the ground-truth corpus, the fraction in which each of the chord's own factors actually sounds is
+counted, per chord family (triad versus seventh chord). *Why:* the data is already on disk — the
+labelled segments record which notes sound, and the label itself names the chord's factors — so the
+counting is direct rather than inferred, which replaces a value invented for a worked example with
+an established one (#19). The musical point is what makes per-factor counting the right shape: the
+factors are not symmetric and the counts encode that automatically — a seventh is what earns a
+seventh-chord label, so a silent seventh is near-prohibitive; the fifth is the factor four-part
+writing routinely omits, so its penalty is mild; the third sits between. One blanket number cannot
+express any of that, and the invented value demonstrably carried load — a checked passage's margin
+moves with it. **The scope limit rides with the values and is part of the decision:** these are
+Bach-chorale counts, no jazz values can be counted because no jazz ground truth exists, and that
+limit stays declared on the artifact.
+
+## Document governance and the standing architecture notes
 
 > **Living design document.** Read this AND STATUS.md at the start of every development
 > session. ARCHITECTURE.md contains stable design decisions. STATUS.md contains current
@@ -530,6 +608,23 @@ public:
     ) = 0;
 };
 ```
+
+**The standing verdict on this principle's own live case: the hand-built analysis is CONFIRMED and
+the learned replacement is NOT TRIGGERED — it is retained behind this interface as the explicit
+fallback, with a concrete trigger.** The substitution this section exists to keep possible was put
+to a measured test on the analysis front — go on improving the hand-built scorer, or replace it
+with a trained model. The measured answer is to keep the hand-built one: the error mass decomposes
+into causes reachable within it, and the bucket that would genuinely need a learned model came back
+empty on the sample. The learned option is **not withdrawn**; it stays a drop-in behind the
+interface, and it re-opens for **any slice later established as a genuine ceiling**. *Why:* decided
+on measurement, with the measurement's own limits stated as part of the decision — the corrected
+metric showed the residual had been inflated by already-correct artifacts and by mis-attributed
+cases, the empty bucket is a sample carrying a stated corpus upper bound, and the algorithmic
+second opinion fails the same functional roots, which makes it a missing-layer problem rather than
+a ceiling of the vertical scorer. **Two limits ride with the verdict and are part of it:** the
+decomposition covers one repertoire only, and the fallback's advantage is concentrated on the
+harder chromatic material that was not decomposed; and the corrected metric must be **committed
+before any fitting**, or the fitter optimises against cases that do not exist.
 
 ### 2.3 Analysis Layer Is Display-Agnostic
 
@@ -1205,6 +1300,34 @@ downstream of the facts, and analysis consuming it is a layer inversion and the 
 class the input-scoping work guarded against; the per-instance patch ratification preserves #14
 and reconciles the §1.2 contribution intent with the fork-local patch constraint.*
 
+#### The rendered form never crosses back — two boundary invariants that bind every reader
+
+The boundary this section states runs one way: the analysis produces structured facts, and the
+presentation layer renders them. Two standing invariants keep the rendered form from crossing back
+into the analysis. They are stated **here**, at the boundary's own section, because they bind
+every reader on both sides of it — the scorer, the gates, the bridges, and the measurement tools
+alike; other documents point at them and do not copy them (#6).
+
+1. **A gate or scoring rule reads STRUCTURED FIELDS ONLY — never a chord-symbol string, never a
+   Roman numeral.** No chord-symbol string parsing and no Roman-numeral inference anywhere in a
+   gate, a scoring term, or any future change to either. *Why:* stated with the rule — signals
+   derived from a symbol or a Roman numeral are lossy and entangled with the formatter, so they are
+   not reliable inputs to chord classification; and reading the rendered form back in would make
+   the analysis depend on its own presentation layer, which is the one direction this boundary
+   forbids.
+2. **A written chord symbol in the score may be read ONLY as a comparison or ground-truth label.**
+   Symbols are instructions the user wrote, not analysis results. **Production paths must not read
+   them as input to analysis at all.** A measurement tool may set them beside the analysis to see
+   how far the two agree, and may **never** let them influence what the analyzer computes. *Why:*
+   stated with the principle — a symbol is user content and may be wrong, so reading it as input
+   makes the analysis agree with the user rather than with the music; and in a measurement tool it
+   additionally destroys the measurement, because the tool would then be comparing the annotation
+   with itself.
+
+The first invariant restricts what a scoring change may READ; the second restricts what any path,
+production or tool, may read a written symbol AS. They are separate rules with separate subjects
+and neither implies the other.
+
 #### Why This Matters
 
 The `composing` module is a pure C++ music theory library. It can be unit-tested in complete isolation from MuseScore's engraving model — no score, no staves, no UI, just pitch classes and algorithms. This isolation is what makes the test suite (`composing_tests.exe`) fast and reliable.
@@ -1479,6 +1602,61 @@ threshold and preset policy"); it retires when Layer 4 (function/cadence) pins t
 key moves with **P4 untouched**. Full provenance: `cc_layer3_wiring_report.md` (HELD),
 `cowork_layer3_keymode_design.md`.
 
+**Four standing rules of this layer, re-homed into this specification 2026-08-07 on the user's
+ruling. Each states what the layer may READ and at what SCOPE — questions this section owns
+wherever the mechanism that asks them happens to live.**
+
+- **A local-key hypothesis derives from KEY-AGNOSTIC signals only, and NEVER from the key-area
+  grouping — a hard design rule, not a preference.** Deciding that a passage has moved to another
+  key may use the cadence detector, which is key-agnostic by construction, and the raw region
+  structure — root motion, diatonic-collection consistency. It may **not** read the key-area
+  grouping, which is a downstream post-grouping of the already-resolved key. The flow stays
+  strictly feed-forward: chords → key-agnostic cadence → local-key hypothesis → re-keyed key path →
+  key areas, rebuilt downstream. *Why:* named in the decision as the load-bearing soundness
+  property, and the circularity is concrete rather than argued — the grouping is built FROM the
+  resolved key, so a detector reading it would find the key it was given. It is the same discipline
+  that made the cadence detector usable, applied to the local-key hypothesis and naming the exact
+  surface that would make it circular. **Scope:** the mechanism this rule was written for sits on
+  the legacy key path, but what it constrains is *what evidence a modulation decision may read*,
+  which binds any such decision on any arm.
+- **A global tonic anchor enters key scoring at RESOLVER / SECTION scope — never as one more local
+  term inside the window scorer. ⚠ LEGACY: both mechanisms it names are legacy-scoped.** Evidence
+  about which key a whole section or piece is in is applied where the section is decided — the
+  scope the removed declared anchor occupied — gating the relative-major/minor choice; the
+  per-window candidate scoring is left unchanged. *Why:* measured, at the attempt that failed —
+  local reweighting was shown unable to carry the relative-major/minor decision, because that floor
+  is made of near-ties and any local term strong enough to win them without the mode present also
+  overrides the correct reading when it is present. Adding the anchor as one more local term
+  re-enters exactly that coupling. The design attaches a proof obligation to the rule: show that
+  the anchor reinforces the mode-present cases rather than regressing them. **The LEGACY mark
+  follows a check at the code, not the decision's age:** the window scorer this rule excludes
+  (`KeyModeAnalyzer::analyzeKeyMode`) is reached only through the legacy resolver and this layer's
+  dormant sequence decoder, and the resolver is retired from the production region path — so
+  neither named mechanism is on an arm that runs. The rule about WHERE a section-scoped prior is
+  applied binds any such prior the key axis later gains.
+- **The reach-back convergence PROXY was measured FALSE and is dropped; the as-built tracks the
+  leading-edge key itself and stops when that stops changing.** The cheaper stopping rule proposed
+  in design — *a settled, stable prevailing key is in view in the reached-back region* — was
+  measured and disproved: one settled indication of context does not anchor the leading edge, which flips
+  only once a confident earlier key is established over a **run**. So the facility uses the
+  headline criterion directly and no proxy. *Why:* measured at the build, and the methodological
+  reading is recorded with the result — the proxy was an unlabelled assumption, it was measured, it
+  was false, and it was dropped; a determinism test over extension step size is what validates the
+  criterion that replaced it. This is the finding that supersedes the proxy clause of the
+  bounded-context contract's convergence item; that contract now records the clause as tried and
+  closed, and its headline rule — reach back until the answer stops changing, never by a chosen
+  amount — is unchanged.
+- **A key SPAN needs an enharmonic-identity rule, and it does not have one (the Layer-3 half of the
+  ratified cadence-less-confirmation amendment; the Layer-5 half is at that layer, and the two
+  cross-point).** Enharmonic reinterpretation is handled at the single-chord level; nothing decides
+  whether a span is written in one spelling of a key or in its enharmonic twin, so the amendment
+  requires such a rule for key spans. **Design-only: this records an obligation of this layer, not
+  a mechanism it has.** *Why:* derived from the review's own stress simulation on
+  resolution-denying music, where spans genuinely modulate and the analysis keeps computing Roman
+  numerals against the key it never left — the enharmonic-identity gap is the second half of the
+  same failure and is stated as its own obligation because it is separable from the confirmation
+  channels.
+
 #### Layer 4 — the per-slice chord-symbol decoder (Built+Dormant — not wired)
 
 **Plan correction, 2026-08-02 (`OPEN_ITEMS.md` OI-232 item 3; the heading read "engages with L5", which
@@ -1579,6 +1757,33 @@ because this section is what specifies the two mechanisms (re-homed into this sp
   is sufficient but falls under the margin; the consequence was then measured, a substantial share of
   scored duration abstaining under it.
 
+**Two further decisions of this layer, re-homed into this specification 2026-08-07 on the user's
+ruling — one the search's output-surface contract, one the shared spelling primitive's presence
+test.**
+
+- **The chord-path search emits the WHOLE PATH with every stretch's alternatives and its margins —
+  not the committed reading alone. ⚠ LEGACY / DORMANT, and the dormancy is stated with the rule
+  rather than left to be inferred.** The search hands forward, per node, the chosen reading
+  together with the readings it beat and by how much. *Why:* it is the evidence-forwarding
+  principle applied to the search's own output surface — the function layer above **consumes the
+  alternatives**, so a search that published only its winner would make that selection impossible;
+  the committed reading is the first element of the path by construction, so nothing is lost by
+  publishing the rest. **The mechanism it governs is the dormant staging described above** — the
+  search is not wired, and what becomes of this decoder is open at the retirement map. The rule is
+  recorded here because this section specifies the carry the search would publish into, and a
+  shelved mechanism's rules still belong at the section that owns the mechanism.
+- **Spelling presence is tested with the VALIDITY PREDICATE, never with a non-negative test.** The
+  shared line-of-fifths primitive the spelling-pin above reads — the one interpreter, not a
+  per-layer copy — represents a spelling as a signed position on the line of fifths, and its
+  presence test is `tpcIsValid()`, **never** `tpc >= 0` and never `tpc != -1`. *Why:* established
+  at the source rather than asserted — the flat side of the line of fifths is **negative** (down to
+  the triple-flat spellings), so a non-negative guard silently discards every heavily flattened
+  spelling; and the value a `!= -1` guard treats as absent is itself a **legitimate** spelling. The
+  honest bound is recorded with the rule: the validity test cannot tell a real flattest spelling
+  from a default-initialised field, and what actually keeps an absent value out is the build-path
+  invariant, not this predicate. §5.14, which specifies the enharmonic disambiguation this
+  primitive serves, points here and does not restate it (#6).
+
 #### Layer 5 — the function/cadence layer (Built+Dormant — design ratified; consumed by L6)
 
 The function layer reads the L4 chord **in** the L3 key and produces the **Roman numeral** (the precise superset of a
@@ -1624,6 +1829,31 @@ the methods document that formerly carried them).**
   unimplemented future work; where the three-role labels exist at all they are a deterministic lookup
   from the Roman numeral. This is why the layer's output is specified above as the Roman numeral (the
   precise superset of a T/S/D summary) rather than as a function label.
+
+**Two ratified obligations this layer owes, re-homed into this specification 2026-08-07 on the
+user's ruling. Both are DESIGN-ONLY — they record work this layer is required to specify, not
+mechanisms it has.**
+
+- **Cadence admission needs a stated FALLBACK for a FEATURELESS phrase-boundary profile: relax admission
+  and scale the vote weight down, rather than starve.** Cadences are looked for at phrase ends,
+  which this layer reads as a published L1.5 fact — the graded phrase-boundary profile. In music
+  with almost no surface punctuation that profile goes featureless and everything gated on it gets nothing
+  to work with. The required fallback admits cadences more freely there and weights their votes
+  down by the graded strength the profile already carries. *Why:* derived from the review's stress
+  simulation — in a punctuation-poor texture the fermatas, rests and structural barlines are
+  deliberately absent, so the profile loses its contour and every phrase-gated consumer starves, while the
+  graded profile still carries the relative signal a scaled admission needs. **The obligation is
+  cadence admission's and therefore this layer's**; the profile it reads is the primitive's
+  published output and the primitive's own contract is unchanged by it.
+- **The layer needs KEY-CONFIRMATION CHANNELS THAT DO NOT REQUIRE A CADENCE (the Layer-5 half of
+  the ratified amendment whose other half — an enharmonic-identity rule for key spans — is at
+  Layer 3; the two cross-point).** Named channels: **sustained dominant emphasis**
+  (arrival-denied dominants) and **recognized transposition sequences**, the latter entering as an
+  input from the recognition consumer this layer is already planned to gain. *Why:* derived from
+  the review's stress simulation and stated with it — on resolution-denying music the
+  cadence-confirmed modulation gate almost never fires, so the default keeps the home key across
+  genuinely modulating spans and every Roman numeral in them is computed against the wrong key. The
+  measurement bed named with the amendment is a resolution-denying repertoire.
 
 #### Layer 6 — the grouping layer (Design-only — v1 spec)
 
@@ -3785,6 +4015,31 @@ struct TemporalContext {
 4. Add duration sensitivity for short events
 5. Add pattern recognition — most complex, built on 1-4 being stable
 
+**Two standing rules on this structure, re-homed into this specification 2026-08-07 on the user's
+ruling — one on what may ENTER it, one on who may REBUILD what it publishes.**
+
+- **No further PROGRESSION-LEVEL signal may be added to the single-step look-around structure; a
+  progression-level signal goes into the progression-level structure directly.** The struct
+  specified above is a one-step look-around — the immediate previous and next harmonic positions.
+  Four fields describing the previous winner's competition outcome were added to it that belong to
+  the planned progression-level structure instead; **nothing further of that kind goes in**, and
+  the migration of those four is planned **explicitly** when the progression analyzer's design
+  begins, not left to happen. *Why:* stated with the recommendation and grounded in this
+  document's own instruction that the two structures are kept distinct — the finding is that one
+  had been growing into the other with no migration plan written down, which is how a boundary
+  disappears without a decision.
+- **The temporal-context EXTENSION FIELDS are recorded during the analysis pass that computes
+  them; a consumer READS what was recorded and never re-runs the chord analysis to rebuild them.**
+  The fields are populated on each analyzed region during the pipeline's own per-region analysis,
+  using the already-built region list as context; a consumer that needs them reads the field. *Why:*
+  stated with the decision — a second analysis run with a display-time context can populate the
+  same fields differently from what the annotation pass saw, so the two user-facing paths drift
+  apart. Recording once and reading the record removes the second computation instead of trying to
+  keep two computations in step, which is the fact-publication corollary applied here: the field is
+  published by its producer and consumers read, never re-derive. **This rule is stated at the
+  producing surface**, which is this section; the consumer sections point at it and do not restate
+  it (#6).
+
 ### 5.4 Modal Extension — Implemented
 
 All 7 diatonic modes (Ionian, Dorian, Phrygian, Lydian, Mixolydian, Aeolian,
@@ -4302,6 +4557,13 @@ governs nothing on the shipped product, and the `tickLocal` golden section — w
 reconciliation reported byte-identical — is measuring a path production no longer takes. Its
 coverage must not be over-read. **What to do about either fact is OPEN** and is not settled here.
 
+**Pointer — why the tick-local path is a separate module at all is decided at §11.5, not here
+(#6).** This table records that the tick-local path EXISTS and what runs on it. The decision that
+it is deliberately left OUTSIDE the unified region pipeline — its point-in-time semantics differ
+too much from region-based analysis to force one interface without distortion — is a statement
+about that pipeline's scope, and it is stated once, at §11.5. This section points at it and does
+not restate it.
+
 #### Order-of-annotation safety
 
 Because there is no Jazz path and no symbol-reading gate, order of annotation has no
@@ -4327,6 +4589,13 @@ This ensures Roman numeral annotations are written even for bare-fifth regions.
 ### §5.14 Enharmonic Root Spelling — TPC-Guided Disambiguation
 
 **Status: Implemented (2026-04-20, Session 24).**
+
+**Pointer — how a spelling's PRESENCE is tested is decided at the Layer-4 section, not here (#6).**
+This section specifies the enharmonic disambiguation. The rule for testing whether a spelling is
+present at all — the validity predicate, never a non-negative test, because the flat side of the
+line of fifths is negative — belongs to the shared line-of-fifths primitive, and is stated once at
+the Layer-4 section (§3.3) that specifies that primitive. This section points at it and does not
+restate it.
 
 #### Problem
 
@@ -4710,6 +4979,24 @@ A `StylePrior` connection point is planned in `ChordAnalyzerPreferences`
 the analyzer's preferences — affecting which chord types are considered idiomatic,
 what extensions are expected, and how scoring weights are adjusted.
 
+**Every style constant and every idiom that no ground truth has calibrated CARRIES THE
+EMPIRICALLY-UNVALIDATED MARK, and the corpus that would validate it is named beside it (re-homed
+into this specification 2026-08-07 on the user's ruling).** The verifiability contract already
+defines that mark; this states where it must appear and what must accompany it. It applies to the
+**Jazz preset constants** and to the **idioms of the §6.7 taxonomy for which no gate-grade ground
+truth exists**, and the mark is not decorative: beside each marked value the record names **the
+validation path** — the corpus class that would establish it. **Maintenance is part of the rule:**
+a value keeps the mark until an established corpus measures it, and it loses the mark only in the
+act that records that measurement, never by a value being changed or a preset being renamed.
+*Why:* measured by the architecture review — calibration and validation are Baroque- and
+Bach-heavy, the jazz preset and the non-classical idioms have no gate-grade ground truth, and the
+mark defined in the specification was found absent from exactly those constants and presets. The
+gap is therefore between a stated rule and its application, not in the rule, which is why what is
+written here is the rule and its maintenance rather than a new criterion. **What this clause does
+NOT claim:** that the mark is applied at HEAD. It is not; applying it, constant by constant and
+idiom by idiom with the validating corpus named, is owed work and is tracked in the open-items
+register.
+
 ### 6.7 The canonical style taxonomy (shared with the Harmonic Vocabulary)
 
 The style vocabulary the presets select on is **one shared taxonomy** — the **five idioms**: *Diatonic-functional* ·
@@ -4764,6 +5051,74 @@ structure (`cowork_style_taxonomy_proposal.md:87-99`).
 Full proposal + the surveyed corpora: `cowork_progression_schema_dictionary.md` §6/§12,
 `cowork_style_taxonomy_proposal.md`, `cowork_style_clustering_plan.md`.
 
+**★ THE METHOD THAT PRODUCES AND RE-PRODUCES THIS TAXONOMY LIVES HERE TOO (re-homed into this
+section 2026-08-07 on the user's ruling).** The paragraphs above state that the five idioms are
+empirically discovered rather than theory-derived, which makes the discovery study's protocol part
+of what this section owns: a maintained object and the method that maintains it belong together,
+because a reader who may not re-derive the object the same way cannot check the claim that it is
+discovered. Five rules follow, each with its defense.
+
+- **The governing order is DISCOVER, THEN NAME.** Structure is learned on a **low-level encoding
+  carrying no theory and no genre labels**; only afterwards is the emergent structure held up
+  against theory features **and** genre labels, both as **interpretation lenses, never as
+  clustering input**. *Why:* stated as a refusal rather than a preference — there is no
+  zero-prejudice method, so the discipline is to push the unavoidable priors down to the lowest,
+  most theory-neutral level and interpret afterwards, never to pretend they are absent. Feeding
+  theory features in could only rediscover the priors already encoded, which is the alternative the
+  design rejects by name.
+- **The encoding is KEY-NORMALIZED TONAL-PITCH-CLASS TRANSITIONS — spelled where spelling is
+  reliable, plain pitch classes only where no spelling exists — run as TWO complementary views.**
+  Every piece is transposed to a common tonic and encoded as chord-to-chord moves, using the
+  written note names wherever the source spells them (classical scores and trusted lead-sheet
+  symbols); a second, order-free vocabulary view of the same material runs alongside as a
+  cross-check. *Why:* grounded in the prior art the design adopts — the line-of-fifths encoding is
+  what made the published topics interpretable, and it stays low-prejudice because it is the raw
+  written note rather than a functional label. Three alternatives are rejected with their reasons:
+  high-level functional features prejudge the answer; audio or raw performance data lets timbre and
+  instrumentation swamp harmony; bare pitch classes everywhere discard the very structure that made
+  the published result readable.
+- **Confound control is a FIRST-CLASS VALIDITY GATE, and the source-leakage test decides
+  validity.** The dominant failure mode of this kind of study is discovering **which corpus a piece
+  came from**, what key it is in, how long it is, its instrumentation or its encoding quirks —
+  before it ever reaches idiom. So the controls are mandatory and matched to it one by one:
+  key-normalize, length-normalize, balance and stratify sources, de-duplicate, exclude melody-only
+  sources, audit extraction noise on a labelled subset. **The source-leakage test is mandatory:**
+  hold out the source label and test whether the clusters are explained by source, key or length.
+  **If the clusters approximate the source, the study found bookkeeping and not idiom** — back to
+  the encoding. A discovered structure earns the word *idiom* only after surviving these. *Why:*
+  stated as a gate rather than a footnote precisely because the alternative — naive clustering —
+  finds bookkeeping and calls it style; it is #19 in the discovery setting, where a cluster set is
+  trusted after being positively established against the confound and never because nothing has
+  contradicted it.
+- **The uniform mechanical extractor is the EXTERNAL library, and extraction stops at the
+  note-and-slice front: OUR OWN key/chord/function inference never touches it.** One external tool
+  (music21) is applied identically to every source, and only as far as reading notes and cutting
+  them into simultaneities; our own analyzer is deliberately not used for the extraction, and its
+  trust is **banked rather than assumed** — a shared subset is run through both and the streams
+  compared. *Why:* chosen against our own cleaner slicer for a stated reason that is the study's
+  own validity — our slicer cannot ingest every corpus format, so using it would force a **mix** of
+  extractors correlated with source, which is exactly the confound the gate above forbids. Using
+  the full analyzer would be worse: it is tuned on one repertoire, it would rediscover our own
+  priors, and it would inject genre-correlated error into a study about whether the grouping is
+  genre. The distinction the rule rests on is stated with it — reading notes and slicing them is
+  mechanical, so an error there is a bug rather than a misinference, while everything above is
+  inference and would carry our priors. *Mechanical* means unbiased, not clean: the raw
+  simultaneities still contain passing tones, which is correct output.
+- **Idiom re-discovery RIDES EVERY CORPUS WAVE, on research material only, and a changed cluster
+  set is its own ratification event.** After each material corpus change the discovery pipeline is
+  re-run under the protocol above, on the **development set and outside research corpora only** —
+  held-out material excluded — asking first whether the five idioms **reproduce**. **A changed
+  cluster set is a ratified taxonomy-revision event**: it propagates to the style-tag values and to
+  the vocabulary's per-entry mapping, so once those tags are encoded it is a migration and not a
+  relabel. *Why:* the held-out exclusion is #20 applied to an unsupervised study — discovery
+  outputs become shipped parameters, so material used to discover them can never also measure them.
+  The re-run itself is the standing consequence of the finding this section rests on, that the
+  categories are empirical rather than asserted, which means new music can falsify them; the record
+  names the falsifiable edges in advance — whether the chromatic-coloristic idiom splits under new
+  chromatic mass, where the high-chromaticism composers land, and whether early modal material
+  separates or folds in — and naming them in advance is what makes the trigger a test rather than a
+  formality.
+
 ---
 
 ## 7. The Knowledge Base
@@ -4786,6 +5141,31 @@ not dominant-only — it operates on every functional family (tonic, pre-dominan
 is dominant-specific. **Relationship to §7.1–§7.3:** those dictionaries are the static *data*; the Harmonic Vocabulary is
 the *queried component* over the progression-and-substitution part of it — it subsumes §7.3's Substitution Network as the
 query surface, drawing on it as the underlying dictionary.
+
+**★ THE VOCABULARY'S DORMANCY IS DECLARED, AND ITS ONE OPEN STRUCTURAL QUESTION IS STATED WITH THE
+TRIGGER THAT DECIDES IT (both re-homed into this section 2026-08-07 on the user's ruling).**
+
+- **Until the RECOGNITION CONSUMER is built, the function layer does not touch this vocabulary —
+  and the connection is absent, not partial.** The consumer is the separate, named piece of work
+  that makes this catalog the function layer's multi-chord disambiguation prior and the grouping
+  layer's sequence-span annotation; it is also where the §6.7 idioms first do any work, by
+  weighting which entries count. Until it exists the function layer makes **no** use of the catalog
+  at all. *Why:* it follows from the ratified build order — vocabulary, then the grouping layer,
+  then wire the consumer — and from this component's own contract that it supplies **ranked
+  candidates and decides nothing**: with no consumer there is nothing to receive the candidates, so
+  a partial connection would be a consumer built by accident and unratified. This is the
+  declared-dormancy form the fact-publication corollary requires: the component is published with
+  its future consumer **named**, rather than left to look like waste.
+- **Whether the pairwise progression grammar folds INTO this vocabulary or stays a SECOND store is
+  a decision that is OWED, and its trigger is the recognition-consumer build.** Knowledge about
+  which chord may follow which is currently held in two places — a pairwise rule set inside the
+  function layer, and this catalog of longer patterns. The choice between one store and two by
+  declared design **is not to be settled by drift**: it is made, explicitly, when the component
+  that queries this catalog is built. *Why:* the consumer design already asserts that this
+  vocabulary extends the pairwise grammar while the single-store-or-two decision is unmade, which
+  is a total-unification question (#6) and exactly the kind of coexistence the review's own
+  criterion says must be **decided** rather than tolerated. Stating the trigger rather than the
+  answer is the point: no section can yet state a rule here, and what is owed is the choice.
 
 ### 7.1 Chord Dictionary
 
@@ -6402,6 +6782,41 @@ rhythm density, making acceleration toward cadences immediately visible.
 **Actual bass line overlay** — optional display of the original score's bass voice rather
 than just the chord root, revealing bass line character (walking bass, pedal point, chromatic
 descent).
+
+#### The scope of this pipeline, and the one gate whose keep-or-drop is pre-declared
+
+Two decisions re-homed into this section 2026-08-07 on the user's ruling. The first fixes what this
+pipeline covers; the second fixes how one of its display gates will be decided.
+
+**The point-in-time (tick-local) path is left OUTSIDE this pipeline BY DESIGN — two modules with a
+documented relationship, not an unfinished unification.** This section's opening states the scope:
+single-note analysis is the foundation and region analysis extends it to a time range. Three of the
+four ways the program produces harmony were unified onto that region pipeline; the fourth — the one
+that answers *what chord is under this note, right here* — was **deliberately left parallel**.
+*Why:* stated with the decision — its point-in-time semantics differ too much from region-based
+analysis to force a single interface without distortion, so the cost of unifying here is a
+distorted interface rather than a saved duplication. **This is the pipeline's own scope statement
+and it is stated once, here**; §5.13, which tabulates the tick-local entry points, points at it and
+does not restate it (#6). Distinct from the two later decisions about that path — that it keeps the
+older resolver, and that its cold context is accepted: this is the prior decision that it stays a
+separate module at all.
+
+**The sub-beat annotation duration gate is KEPT OR DROPPED ON A MEASURED OBSERVATION RUN, and the
+verdict is fixed in advance.** A gate hides very short chords from the Roman-numeral annotation
+while the chord track and the status bar still show them. Whether it survives is **not** settled by
+argument; the decision rule is written down before the measurement and is binding:
+
+- if the gate **measurably reduces clutter or false annotations without suppressing correct ones**
+  → it is KEPT, as a documented emitter option with its current default, settable;
+- if it **suppresses equally many correct and incorrect annotations** → it is RETIRED, the duration
+  parameter's default becomes *no gate*, and the option is removed in the follow-up cleanup.
+
+*Why:* stated with the rule — the question is whether the gate removes clutter or removes correct
+labels, which is a measurement and not a preference; and fixing the verdict **before** the
+measurement is what stops a live result from being argued into whichever reading suits it. It is
+the pre-declared-protocol discipline (#22) applied to a display gate, and it is the pattern the
+premise gate (#17b) later made general. **The gate is undischarged at HEAD:** the observation run
+has not been made, so neither branch has fired.
 
 ### 11.6 Region Intonation
 

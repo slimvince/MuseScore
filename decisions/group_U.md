@@ -39,7 +39,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:923`
+**Home.** `docs/scoring_model.md:1006`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
@@ -57,7 +57,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:926`
+**Home.** `docs/scoring_model.md:1009`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry. **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1441 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
 
@@ -76,7 +76,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:930`
+**Home.** `docs/scoring_model.md:1013`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
@@ -97,7 +97,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:936`
+**Home.** `docs/scoring_model.md:1019`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
@@ -119,7 +119,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:943`
+**Home.** `docs/scoring_model.md:1026`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
@@ -148,7 +148,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:951`
+**Home.** `docs/scoring_model.md:1034`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
@@ -165,7 +165,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:966`
+**Home.** `docs/scoring_model.md:1049`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
@@ -181,7 +181,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:975`
+**Home.** `docs/scoring_model.md:1058`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
@@ -199,7 +199,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:978`
+**Home.** `docs/scoring_model.md:1061`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
@@ -217,7 +217,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:982`
+**Home.** `docs/scoring_model.md:1186`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
@@ -236,7 +236,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:986`
+**Home.** `docs/scoring_model.md:1190`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
@@ -254,7 +254,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `BUILD_AND_TEST.md:358`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `BUILD_AND_TEST.md:383`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** BUILD_AND_TEST.md:358-362. The mechanical enforcement is the per-preset corpus manifest: the regeneration script exits nonzero on an incomplete corpus and the measurement refuses a directory whose manifest is missing or whose fingerprints do not match (CLAUDE.md:514-525).
 
@@ -281,13 +281,11 @@
 
 ### D-281 — The batch measurement tool must emit the structured fields on every alternative, or the corpus figures silently revert
 
-> 3. **batch_analyze output schema**: `batch_analyze.cpp` must emit
->    `rootPitchClass`, `bassPitchClass`, `quality`, `bassIsRoot` on every
->    alternative entry. This activates the previously-dormant
->    `_matches_alternative` reclassification in `compare_analyses.py` and is the
->    floor below which corpus measurements revert to pre-Iter-36 counts (~700
->    BIR=false). Committed in Iter 36 (recovered in `5df8421114` after a git
->    reset lost the original commit).
+> **★ THE OUTPUT-SCHEMA FLOOR FOR THE BATCH MEASUREMENT TOOL — BELOW IT A CORPUS MEASUREMENT
+> SILENTLY REVERTS (homed here 2026-08-07 on the user's ruling; the record states no date and no
+> ratifier for the decision itself).** `batch_analyze.cpp` must emit `rootPitchClass`,
+> `bassPitchClass`, `quality` and `bassIsRoot` on **every alternative entry**, not on the winner
+> alone.
 
 **In plain words.** The batch analysis tool emits root pitch class, bass pitch class, quality and bass-is-root on every alternative entry, not only on the winner. Those fields activate the comparison script's reclassification of readings where the corroborating source matches our second or third candidate; without them the corpus measurement silently reverts to its earlier counts.
 
@@ -297,9 +295,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `docs/iteration_path1_summary.md:79-85`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `BUILD_AND_TEST.md:323-327`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Home section.** **“Architecture decisions made during this path”** — `## Architecture decisions made during this path` (heading at line 64). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `contract-home` to `gap`; the former class is kept here rather than overwritten (#12).
-
-**Provenance.** docs/iteration_path1_summary.md:66-72, recorded among the architecture decisions of the completed iteration path; no date or ratifier is stated at this home. A decision about a MEASUREMENT TOOL and its floor, reported separately by the phase-1d enumeration wave (2026-08-02) so that the sealed measurement-tools partition can account for it. ★ RATIFIED (user, 2026-08-02, the phase-1d queue). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.
+**Provenance.** docs/iteration_path1_summary.md:66-72, recorded among the architecture decisions of the completed iteration path; no date or ratifier is stated at this home. A decision about a MEASUREMENT TOOL and its floor, reported separately by the phase-1d enumeration wave (2026-08-02) so that the sealed measurement-tools partition can account for it. ★ RATIFIED (user, 2026-08-02, the phase-1d queue). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched. ★ HOMED 2026-08-07 (CC, the three-owner-rulings wave, executing the user's ruling R1 of 2026-08-07). This is one of the three entries the licensed homing wave of the same date did NOT home: its recorded owner named two candidate sites in two different files, assumption A1 came back refuted for it, and it was returned to the user with the owner question rather than written into a guessed section. The user answered it. Written into `BUILD_AND_TEST.md` §2, the Corpus Regression Check — the measurement procedure the entry's own recorded owner names, and the section that already carried the four fields, the reclassification they activate and the reversion, as history — in that section's own voice and with its defense. THE EXCLUDED ALTERNATIVE, RECORDED WITH THE RULING (#12): `CLAUDE.md` gate block (A), which governs how the recorded numbers are READ and already delegates commands and tooling to `BUILD_AND_TEST.md`; homing the schema floor there would blur the layer (#7) and restate what is pointed at (#6). One home only — a pointer from the gate block is permitted, a copy is not. The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. The edit is ADD-ONLY: no existing line of `BUILD_AND_TEST.md` is modified or deleted. FORMER HOME, PRESERVED (#12): `docs/iteration_path1_summary.md:79-85`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — it is removed because the home-class criteria do not reach a `process` entry (the register's own home rule): heading line 64, section "## Architecture decisions made during this path", label "“Architecture decisions made during this path”", delegated null, delegation "named in no user-ratified surface", states_rules null, verdict EXCLUDE, decided by "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"; former_class contract-home, class_before_phase1q contract-home, class_before_phase1r gap. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "3. **batch_analyze output schema**: `batch_analyze.cpp` must emit\n   `rootPitchClass`, `bassPitchClass`, `quality`, `bassIsRoot` on every\n   alternative entry. This activates the previously-dormant\n   `_matches_alternative` reclassification in `compare_analyses.py` and is the\n   floor below which corpus measurements revert to pre-Iter-36 counts (~700\n   BIR=false). Committed in Iter 36 (recovered in `5df8421114` after a git\n   reset lost the original commit)." Provenance — the wave and its dispatch — is recorded in this field and NOT in the specification text, on the ruling's own instruction: a file name written into a governing document reads as a new naming and moves a measured population (the OI-330 / OI-328 lesson). What the specification text carries is the rule, the date it was homed, that the user ruled it, and its defense.
 

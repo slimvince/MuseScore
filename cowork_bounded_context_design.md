@@ -62,11 +62,32 @@ score" is simply the special case "selection = score." This is what keeps the ba
    principled condition**; the amount is **discovered, not chosen**.
 6. The principled stop is **convergence**: extend until the layer's **in-selection output stops changing** with
    further context. This is self-validating — you have enough context exactly when adding more does not change the
-   answer — and it is what keeps the result independent of the extension step size (the equivalence invariant, §4). In
-   practice a layer uses a **domain proxy that *implies* convergence** rather than re-checking its whole output each
-   step (Architectural Layer 3 reach-back: *"a settled, stable prevailing key is in view"* — once a confident earlier
-   key is established, the change-cost/decay means reaching further back will not move the selection's leading-edge
-   key). The proxy is validated **once, in design**, to imply convergence.
+   answer — and it is what keeps the result independent of the extension step size (the equivalence invariant, §4).
+   **A layer applies that criterion DIRECTLY, on the in-selection quantity the extension was requested for**: it
+   re-infers over the enlarged span, compares that quantity step against step, and stops when it repeats. The
+   as-built Architectural Layer 3 reach-back does exactly this — it tracks the **leading-edge settled key across
+   iterations and stops when it repeats**, which is the criterion itself and not a stand-in for it (the convergence
+   note above the reach-back loop in `regionanalyzer.cpp` states it in the code's own words). §7's safety caps are
+   the only other way out of the loop, and a cap that fired is never the discovered amount.
+
+   > **★ Dated annotation (user ruling, 2026-08-07; register entry D-622 supersedes the struck clause).**
+   > **TRIED AND CLOSED — a cheaper domain proxy standing in for the convergence test.** This item formerly
+   > ended with a clause licensing a layer to substitute such a proxy, and that clause is struck. It read,
+   > verbatim (#12): *"In practice a layer uses a **domain proxy that implies convergence** rather than
+   > re-checking its whole output each step (Architectural Layer 3 reach-back: "a settled, stable prevailing
+   > key is in view" — once a confident earlier key is established, the change-cost/decay means reaching
+   > further back will not move the selection's leading-edge key). The proxy is validated **once, in design**,
+   > to imply convergence."* **The one time it was exercised, measurement disproved it.** The Phase-3
+   > measurement found that one settled *context* measure does **not** anchor the leading edge: the
+   > leading-edge key flips only once a confident earlier key is established over a **run** — a V–I two
+   > measures back, say — so the proxy stops PREMATURELY. Evidence: `cowork_layer3_reachback_design.md` §3
+   > and the phase-3 report it cites; the as-built consequence is verified in the production source at the
+   > reach-back loop's own convergence note. **Why the strike reaches the general clause and not only its
+   > worked example:** the example was the clause's single exercise, and it produced a proxy validated once
+   > in design that build then measured false — which is the unvalidated structural-proxy substitution
+   > principle #17(d) forbids, and the establishment gap #19 exists against. **What is UNCHANGED: item 5's
+   > headline rule** — a layer never guesses how much context it needs; the amount is discovered, not chosen —
+   > **which keeps its ratified status and is what the as-built implements.**
 7. Every extension also carries a **hard bound** (a maximum reach) and terminates at the **score boundary** — these are
    **safety caps for the pathological "never converges," not the needed amount**, with a no-oscillation guard.
 8. The **increment size** — how much to load per step before re-checking convergence — is **chosen by the requesting
@@ -135,7 +156,11 @@ score" is simply the special case "selection = score." This is what keeps the ba
   the **newly loaded region**, preserving complete coverage and slice identity over the larger span. Slices that fall
   in the context span are usable as evidence but are **not** output.
 - **Architectural Layer 3 — the main consumer today (reach-back).** Reach-back **is** an extension request: direction
-  = earlier, stop = *"the prevailing key before the selection is in view"*, bound = a maximum reach. Its per-slice
+  = earlier, stop = *"the leading-edge settled key repeats across iterations"*, bound = a maximum reach. *(Struck with
+  the §3 item-6 proxy clause on the same ruling, 2026-08-07, and for the same measurement: the stop formerly read
+  "the prevailing key before the selection is in view" — the proxy, not the criterion. It is corrected here rather
+  than left standing, because a reader reaching §5 first would build the stop condition the strike exists to remove.
+  Former wording preserved (#12).)* Its per-slice
   evidence window (± a few beats) at the **leading edge** of the selection requests extension, or truncates at the
   score start. The whole-run decode then runs over selection slices **plus** context slices; the context slices
   **anchor the carried-in key**, and output is emitted only for the selection slices.
@@ -246,8 +271,10 @@ batch-testing path).
   explicit **interim** behind the build-selection + extend contract; the old "widen" operation is this *extend*,
   designed in full.
 - **Architectural Layer 2:** re-slice the newly loaded region on extend; context slices are evidence, not output.
-- **Architectural Layer 3:** reach-back framed as an extension request (direction = earlier, stop = prevailing key in
-  view, hard bound); leading-edge window behaviour (request-or-truncate).
+- **Architectural Layer 3:** reach-back framed as an extension request (direction = earlier, stop = the leading-edge
+  settled key repeats across iterations, hard bound); leading-edge window behaviour (request-or-truncate). *(Same
+  correction and same ruling as the §5 bullet, 2026-08-07: this line formerly read "stop = prevailing key in view".
+  Former wording preserved (#12).)*
 - **Architectural Layer 4:** the window/edge contract — at a selection edge, request extension or recognise the score
   boundary; never assume the neighbour slice exists. (Added to the already-rewritten spec.)
 - **Architectural Layers 5–6:** a forward note that they obey the same contract (functional context at the selection

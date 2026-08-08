@@ -99,7 +99,7 @@
   "★_re_cutting_an_existing_item_is_NOT_adding_one": "Stated here so a later reader does not mistake this for a scope change. The scope rule reserves ADDING an item to the user, and says in its own words that this list is regenerated rather than maintained and that 'an item's size moves when the record moves'. R3 changes what an existing item's population IS. No item is added, none is removed, and every closing act is unchanged.",
   "what_was_wrong_with_the_document_cut": "The four homing items took their populations from the DELEGATION partition, which classifies by the entry's HOME DOCUMENT — is that document named in a user-ratified surface, and in what form. That is the right cut for the question *does a delegation exist* and the wrong one for the question criterion C1 asks, which is per DECISION. An entry whose obligation an entry-level ruling has already discharged stayed in the count, because its home document's delegation state had not moved.",
   "direction_1_entries_the_entry_cut_DROPS": {
-   "count": 4,
+   "count": 6,
    "ids_by_item": {
     "Register entries whose home document is named in NO user-ratified surface": {
      "cowork_architecture_reassessment.md": [
@@ -109,6 +109,12 @@
      ],
      "cowork_phase2_architecture_review.md": [
       "D-579"
+     ],
+     "docs/iter92_joint_bass_chord_scoring.md": [
+      "D-538"
+     ],
+     "docs/stage4b_design.md": [
+      "D-571"
      ]
     }
    },
@@ -117,6 +123,8 @@
     "D-282": "Every successor the record names is homed, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
     "D-283": "Every successor the record names is homed, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
     "D-284": "Every successor the record names is homed, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
+    "D-538": "Every successor the record names is homed, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
+    "D-571": "Every successor the record names is homed, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
     "D-579": "Every successor the record names is homed, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register."
    },
    "read_off": "tools/audit/decisions/r1_superseded_reach.json → counted.ids_that_leave",
@@ -143,7 +151,7 @@
    "what_this_file_does_about_it": "Carries the corrected reading, which is the act the dispatch ordered. It does NOT fix the inventory — the dispatch forbids fixing anything found (header) — and the finding is rowed under ruling R3, whose test it does not meet: the subject is an authored field in an audit artifact, not the analysis, its inputs, or an instrument any measurement of the analysis depends on.",
    "the_ruling_it_reads": "D-639, at CLAUDE.md's phase-1 clause; the fallback is option (1A)."
   },
-  "the_clause_also_carries_a_pointer_to_an_UNRULED_question": "D-639's own closing paragraph points at `OPEN_ITEMS.md` OI-336 — whether OI-332's apparatus classification survives reading the whole of D-438's line rather than its first half — and says in terms that nothing in the clause settles it. It is the user's. It is carried below as an item because it has a nameable closing act (a ruling), and because a gate verdict it moves would move which items here gate."
+  "the_clause_also_carries_a_pointer_to_a_question_that_HAS_NOW_BEEN_RULED": "D-639's own closing paragraph points at `OPEN_ITEMS.md` OI-336 — whether OI-332's apparatus classification survives reading the whole of D-438's line rather than its first half — and said in terms that nothing in the clause settles it. ★ THE USER RULED IT on 2026-08-07 (dispatch `cc_instruction_five_rulings.md` §0a, R5): the classification does NOT survive, OI-332 is re-classed GATING on the second half of D-438's line, and OI-336 closes. The authored verdict was corrected with its former verdict preserved, and the derived set and the populations below follow. The pointer is kept rather than deleted (#12) because D-639's clause still carries it, and a reader arriving from that clause needs to be told the question is answered. This key formerly read `the_clause_also_carries_a_pointer_to_an_UNRULED_question` and ended: 'It is the user's. It is carried below as an item because it has a nameable closing act (a ruling), and because a gate verdict it moves would move which items here gate.'"
  },
  "the_requirement_that_is_a_condition_rather_than_an_item": {
   "which_requirement": "C4, the purposive clause: 'so that conformance is thereafter measured against the specifications themselves — the decisions register remains the status ledger (supersession, shelving, the same-commit rule), never the conformance reference'.",
@@ -157,23 +165,16 @@
    "half": "COMPLETE",
    "criterion": "C1 — every recorded decision written into its owning specification",
    "population": {
-    "entries": 79,
-    "documents": 32,
+    "entries": 20,
+    "documents": 12,
     "entry_ids_by_document": {
      "cowork_architecture_reassessment.md": [
       "D-285"
      ],
      "cowork_architecture_review_2026_07.md": [
-      "D-494",
-      "D-495",
-      "D-496",
-      "D-497",
       "D-498",
       "D-499",
       "D-500"
-     ],
-     "cowork_audit_obligation_map.md": [
-      "D-568"
      ],
      "cowork_census_full_needs_audit.md": [
       "D-513",
@@ -181,68 +182,22 @@
       "D-515",
       "D-516"
      ],
-     "cowork_eg2_scoping.md": [
-      "D-564"
-     ],
      "cowork_factorization_desk_simulation.md": [
-      "D-449",
-      "D-450",
-      "D-451",
-      "D-452",
       "D-453"
-     ],
-     "cowork_fb_redesign_design.md": [
-      "D-490",
-      "D-491",
-      "D-492",
-      "D-493"
-     ],
-     "cowork_gateA_unification_design.md": [
-      "D-510",
-      "D-511",
-      "D-512"
-     ],
-     "cowork_idiom_discovery_design.md": [
-      "D-542",
-      "D-543",
-      "D-544",
-      "D-545"
      ],
      "cowork_information_loss_audit.md": [
       "D-581",
-      "D-582",
       "D-583"
      ],
      "cowork_layer1_tone_collection_design.md": [
       "D-569",
       "D-570"
      ],
-     "cowork_layer3_keymode_impl_design.md": [
-      "D-603",
-      "D-604"
-     ],
-     "cowork_layer3_reachback_design.md": [
-      "D-622"
-     ],
-     "cowork_phase2_architecture_review.md": [
-      "D-580"
-     ],
-     "cowork_phase5c_l5_build_plan.md": [
-      "D-602"
-     ],
      "cowork_sensitive_cell_probe.md": [
-      "D-532",
-      "D-533",
-      "D-534",
       "D-535"
      ],
      "cowork_term_theory_grounding.md": [
-      "D-473",
-      "D-474",
       "D-475"
-     ],
-     "cowork_tpc_capability_design.md": [
-      "D-625"
      ],
      "cowork_types_header_design.md": [
       "D-610"
@@ -251,63 +206,17 @@
       "D-613",
       "D-614"
      ],
-     "docs/back_half_design.md": [
-      "D-531",
-      "D-539"
-     ],
-     "docs/decoder_design.md": [
-      "D-325",
-      "D-326",
-      "D-327",
-      "D-328"
-     ],
      "docs/implementation_roadmap.md": [
-      "D-419",
-      "D-421",
-      "D-422",
-      "D-423"
-     ],
-     "docs/iter92_joint_bass_chord_scoring.md": [
-      "D-536",
-      "D-537",
-      "D-538"
-     ],
-     "docs/iteration_path1_summary.md": [
-      "D-280",
-      "D-281"
-     ],
-     "docs/layer_architecture_audit.md": [
-      "D-463",
-      "D-464",
-      "D-465"
-     ],
-     "docs/precision_metric_design.md": [
-      "D-486"
-     ],
-     "docs/stage4b_design.md": [
-      "D-571"
-     ],
-     "docs/stage4c_cadence_key_design.md": [
-      "D-616"
-     ],
-     "docs/stage4d_local_modulation_design.md": [
-      "D-605",
-      "D-606"
-     ],
-     "docs/symbol_input_audit.md": [
-      "D-501"
+      "D-422"
      ],
      "docs/unified_analysis_pipeline.md": [
-      "D-469",
-      "D-470",
-      "D-471",
       "D-472"
      ]
     },
     "★_this_is_the_ENTRY_level_cut": "The population criterion C1 still reaches, per DECISION. Entries an entry-level ruling has already discharged are subtracted, and are listed below rather than silently absent.",
     "at_document_granularity_before_the_re_cut": {
-     "entries": 83,
-     "documents": 32,
+     "entries": 26,
+     "documents": 15,
      "why_it_is_kept": "So the movement is visible rather than inferred (#12). It is the figure this item published before ruling R3."
     },
     "discharged_by_an_entry_level_ruling": {
@@ -318,9 +227,15 @@
      ],
      "cowork_phase2_architecture_review.md": [
       "D-579"
+     ],
+     "docs/iter92_joint_bass_chord_scoring.md": [
+      "D-538"
+     ],
+     "docs/stage4b_design.md": [
+      "D-571"
      ]
     },
-    "entries_discharged": 4
+    "entries_discharged": 6
    },
    "why_it_is_outstanding": "clause (a), the fifth home case (OI-268) — the document is named in none of the three user-ratified surfaces, so there is no delegation to grade",
    "gate": {
@@ -622,7 +537,7 @@
    "half": "TRUE",
    "criterion": "C3 — the specification text corrected wherever it states something false",
    "population": {
-    "rows": 38,
+    "rows": 36,
     "row_ids": [
      "OI-105",
      "OI-107",
@@ -654,9 +569,7 @@
      "OI-320",
      "OI-322",
      "OI-324",
-     "OI-331",
-     "OI-333",
-     "OI-336",
+     "OI-332",
      "OI-341",
      "OI-45",
      "OI-57",
@@ -705,9 +618,10 @@
      "OI-320",
      "OI-322",
      "OI-324",
-     "OI-331",
      "OI-332",
      "OI-338",
+     "OI-346",
+     "OI-347",
      "OI-45",
      "OI-46",
      "OI-47",
@@ -722,9 +636,7 @@
      "OI-305",
      "OI-309",
      "OI-311",
-     "OI-319",
-     "OI-333",
-     "OI-336"
+     "OI-319"
     ],
     "D-438's default": [
      "OI-109",
@@ -746,7 +658,7 @@
    "half": "TRUE",
    "criterion": "C3, bounded by C5 and D-639",
    "population": {
-    "rows": 21,
+    "rows": 22,
     "row_ids": [
      "OI-205",
      "OI-229",
@@ -761,8 +673,9 @@
      "OI-299",
      "OI-317",
      "OI-318",
-     "OI-332",
      "OI-338",
+     "OI-346",
+     "OI-347",
      "OI-46",
      "OI-47",
      "OI-48",
@@ -795,19 +708,34 @@
     "ground": "D-231's own words: three phases, STRICTLY ORDERED. Phase 2 does not open and phase 3 does not begin until phase 1 is complete.",
     "derived_from": "D-231's clause, quoted at `the_requirement`"
    },
-   "closing_act": "Once every item above is closed: write the statement, resting it on the specifications rather than on the register (C4), and stating what it may NOT claim — in particular that no CURRENT unresolved residual may be published while the cluster-disposition layer cannot be re-derived at HEAD (OPEN_ITEMS.md OI-333), which is a bound on what may be said and not a blocked derivation.",
+   "closing_act": "Once every item above is closed: write the statement, resting it on the specifications rather than on the register (C4), and stating what it may NOT claim.",
+   "★_one_bound_on_this_item_is_LIFTED_and_is_recorded_rather_than_dropped": "This act formerly carried a bound, in these words: 'in particular that no CURRENT unresolved residual may be published while the cluster-disposition layer cannot be re-derived at HEAD (OPEN_ITEMS.md OI-333), which is a bound on what may be said and not a blocked derivation.' ★ IT NO LONGER APPLIES: the user ruled OI-333 on 2026-08-07 (R4), the six uncompilable register patterns are escaped, and the disposition layer re-derives at the register's current backbone — so a current residual is derivable. The former wording is kept (#12) because the bound was real while it stood and a reader comparing artifacts must see why it went. What the repair's own diff did NOT settle rides with it: whether the regenerated layer supersedes the committed one is the user's, and both are on disk (`tools/audit/decisions/oi333_repair.json`).",
    "who_may_perform_it": "the user commissions it; a working session writes it.",
-   "authored": "the closing act. The bound it must state is derived from the inventory's own A1 settlement."
+   "authored": "the closing act, and the record of the bound that has been lifted."
   }
  ],
  "the_rows_that_are_user_rulings": {
   "what_this_is": "Rows inside the gating item whose closing act is a RULING and not session work. They are named because a finish line that reads as session work end to end would mis-state who is blocked on what.",
-  "rows": {
-   "OI-331": "Which of two register entries the record keeps, where a LIVE user-ratified entry names a convergence proxy the build measured false and dropped. All three candidate remedies change a user-ratified entry.",
-   "OI-336": "Whether OI-332's apparatus classification survives reading the whole of D-438's line rather than its first half. A non-gating verdict is derived from a cut and never hand-added, so it is the user's. D-639's own closing paragraph points here.",
-   "OI-333": "Whether the disposition check should re-derive rather than re-read, and what becomes of the six patterns that stop the layer regenerating. The row also bounds what the terminal item may claim."
-  },
-  "how_this_list_was_made": "AUTHORED, from the rows' own recorded dispositions as the status entries state them. It is not a derived partition of the gating set and is not offered as one — it names the rows a reader would otherwise mistake for session work."
+  "rows": {},
+  "how_this_list_was_made": "AUTHORED, from the rows' own recorded dispositions as the status entries state them. It is not a derived partition of the gating set and is not offered as one — it names the rows a reader would otherwise mistake for session work.",
+  "the_list_is_EMPTY_at_HEAD_and_that_is_a_result": "Every row this list carried was RULED by the user on 2026-08-07, in one act (dispatch `cc_instruction_five_rulings.md` §0a), and each closed. An empty list here does not mean the gating item is now all session work in general — it means no row currently inside it is waiting on a ruling. The three that were are kept whole below.",
+  "★_rows_whose_ruling_has_been_MADE": {
+   "what_this_is": "Rows this list carried until the user ruled them. They are kept rather than deleted (#12): the list's own value is that it names who is blocked on what, and a reader comparing this artifact with an earlier one must be able to see that a row left because it was ANSWERED rather than because it was dropped. The tool STOPS if one of them is still in the derived gating set, or is also named live above.",
+   "rows": {
+    "OI-331": {
+     "what_it_was_owed_a_ruling_FOR": "Which of two register entries the record keeps, where a LIVE user-ratified entry names a convergence proxy the build measured false and dropped. All three candidate remedies change a user-ratified entry.",
+     "ruled": "2026-08-07, R3: the proxy clause and its worked example are struck from the signed contract, which now states the current behaviour and records the struck clause as tried and closed with D-622 superseding it; D-261's headline rule and ratified status stand unchanged."
+    },
+    "OI-336": {
+     "what_it_was_owed_a_ruling_FOR": "Whether OI-332's apparatus classification survives reading the whole of D-438's line rather than its first half. A non-gating verdict is derived from a cut and never hand-added, so it is the user's. D-639's own closing paragraph points here.",
+     "ruled": "2026-08-07, R5: it does not survive. OI-332 is re-classed GATING on the second half of D-438's line, the authored verdict corrected with the former verdict preserved, and the derived populations follow."
+    },
+    "OI-333": {
+     "what_it_was_owed_a_ruling_FOR": "Whether the disposition check should re-derive rather than re-read, and what becomes of the six patterns that stop the layer regenerating. The row also bounds what the terminal item may claim.",
+     "ruled": "2026-08-07, R4: one bounded repair wave — snapshot first, escape the six, regenerate, diff and explain every moved cluster, and add a NARROW producibility mode rather than widening the coverage check. The bound on the terminal item is lifted: the layer re-derives at HEAD."
+    }
+   }
+  }
  },
  "the_scope_rule": {
   "the_ruling": "User, 2026-08-04 (R2), dispatch `cc_instruction_commit_and_finish_line.md`: 'Derive the finish line: one statement, freshly computed, of exactly what phase 1 still requires. That list is then the scope. Nothing outside it gets a wave.'",
@@ -837,14 +765,14 @@
  "counted": {
   "items_on_the_finish_line": 9,
   "items_that_gate": 8,
-  "register_entries_owed_a_home": 146,
+  "register_entries_owed_a_home": 87,
   "register_entries_owed_a_defense": 44,
-  "open_rows_owed_on_the_true_half_that_gate": 38,
-  "open_rows_owed_a_reach_verdict": 21,
+  "open_rows_owed_on_the_true_half_that_gate": 36,
+  "open_rows_owed_a_reach_verdict": 22,
   "items_with_a_closing_route_only_the_user_may_take": 3,
   "★_that_count_is_items_not_acts": "It counts items at least ONE of whose closing routes is the user's — not items the user alone can close. Items offering a user route and a session route are in it, because a reader deciding what to commission needs to see them.",
-  "register_entries_owed_a_home_at_document_granularity": 150,
-  "register_entries_discharged_by_an_entry_level_ruling": 4,
+  "register_entries_owed_a_home_at_document_granularity": 93,
+  "register_entries_discharged_by_an_entry_level_ruling": 6,
   "★_which_of_those_two_figures_is_the_finish_line": "The entry-level one, on ruling R3. The document-granularity figure is kept beside it so the movement is visible rather than inferred (#12), and it is the figure this artifact published before the re-cut.",
   "reconciliation": {
    "homing_items_cover_the_documentation_gap_class": true,

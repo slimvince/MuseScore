@@ -53,6 +53,16 @@ override convenience.
 12. **No information loss.** Negative/exclusion evidence is information ("finding by exclusion") —
     carry a ruled-out possibility at low confidence rather than dropping it, unless the exclusion is
     recomputable from what is kept.
+    **★ THE RECOMPUTABLE CLAUSE ABOVE REACHES EVERY COLLAPSE, NOT ONLY AN EXCLUSION (2026-07-06;
+    the record states no ratifier).** The *unless* is written for exclusion evidence; it holds for
+    **any** collapse of several values into one. A collapse is a loss only when the several cannot
+    be got back: where the collapsed value is derived deterministically from something still
+    carried, or is regenerable from it, nothing has gone and the collapse is not a defect. *Why
+    this is stated rather than left to the reader:* it is the guard against over-flagging, and
+    without it a sweep conducted under this principle reports every summary as a fault, which is
+    the opposite of what the principle is for. It was established on two cases of exactly that
+    shape — a confidence squashed through a fixed function whose input is carried, and a boolean
+    that is exactly a comparison of a carried number against a threshold.
 13. **Surface a surprise as a STOP before building around it** (the operational form of #3).
 14. **Every behavior change is user-ratified as one revertible, provenance-stamped commit.**
 15. **Verify at objects/data on the full output surface, never at assertion** (winner *and*
@@ -73,6 +83,22 @@ override convenience.
     quantity unvalidated); (e) every **insulation claim** ("X cannot affect Y") must enumerate
     the false-negative path explicitly; (f) **no hand-transcribed measurement numbers** —
     figures enter docs only via generated artifacts (the `manifest.json` pattern).
+    **★ WHAT A DESK SIMULATION'S TABLE VALUES ARE, AND WHAT THEY MAY NEVER BECOME (user-ratified
+    2026-07-19).** Every table value a desk simulation under (c) uses is **PROVISIONAL** — declared
+    before use, each labeled with its provenance class, and hand-declared stand-ins whose only job
+    is to let the mechanism be traced. **No value declared that way survives into any fit**;
+    fitting happens only under the fit gates, which are a separate act. And a verdict that would
+    flip within the plausible range of a provisional value is reported as a **NEAR-TIE with the
+    sensitive cell named**, never as a win. *Why:* visible in the traces the rule governs — several
+    verdicts are reported with their sensitive cells named rather than as wins, and those cells are
+    carried forward to the capacity and pooling gate. Without the rule a hand-declared number
+    silently becomes a measurement tool, which is the defect the catalog names DT-2.
+    **★ EVERY DESK-SIMULATION TRACE RUNS AT IDENTITY WEIGHTS (user-ratified 2026-07-19).** A trace
+    under (c) runs the generative product with every weight at one — exactly the mandatory ablation
+    baseline the design already carries. The desk simulation therefore tests the structure and the
+    tables, not the weight layer. *Why:* identity weights ARE that ablation baseline, so the choice
+    imports no new premise, and running at anything else would confound a structural verdict with a
+    weighting one.
 18. **Unverified causal premises are FORBIDDEN (Class A).** No design may carry load on a
     causal claim about our own system or data that is checkable but unchecked.
 19. **Unestablished instruments are FORBIDDEN (Class B).** An instrument, corpus, gate, or
@@ -159,6 +185,18 @@ exactly as before. The best-possible-inference design is chosen first; what exis
 serves it or retires. (This does not weaken #6 — one path per concern is an END-STATE structural
 principle, not a preservation claim for the existing path; nor #19 — establishment must still
 exist before trust.)
+
+*Theory-grounding corollary to #1/#2 (2026-07-19; the record states no ratifier):* where published
+research is used to justify a design, **every load-bearing claim is labeled FACT** (stated or
+measured in a paper actually fetched and read), **THEORY** (established published theory), or
+**CONJECTURE**. The central sources are extracted **independently by two or three passes each and
+cross-checked** for agreement, and **a source that could not be fetched is flagged with no equation
+carried out of it** — the gap is stated instead of filled. *Why:* it follows from #1 itself. A
+citation to a paper nobody read is not a fact basis, and an equation reconstructed from a snippet is
+an assumption wearing a citation. This SHARPENS #17(a) rather than restating it: #17(a) requires the
+FACT / THEORY / ASSUMPTION labels on a design's own premises; the unfetched-source rule and the
+independent cross-extraction are what this adds, and they bind on the reading of the literature
+rather than on the ledger.
 
 *Provenance: principles 1–11 are the user's standing list; #12 (no information loss) and
 #13–16 were ratified by the user on 2026-07-06; #17–19 (the Premise Gate + the Class-A/Class-B
@@ -625,6 +663,69 @@ standing convention).** Every number in this block depends on all four.
   as an abstention. On the production arm the decoder never abstains on the key axis, so the counter reads
   zero (the joint estimator's standing rules (d), `ARCHITECTURE.md`).
 
+**★ THREE FURTHER MEASUREMENT CONVENTIONS, HOMED HERE 2026-08-07 ON THE USER'S HOMING RULING.** They
+sit BESIDE the four above and not among them: the four were ruled together as the set the robust unit
+is measured under, and each of these three was ruled separately and earlier. Every one of them binds
+on any measurement this block publishes.
+
+- **A measurement publishes its COVERAGE DENOMINATOR and its PER-CORPUS breakdown; a single aggregate
+  number that hides which corpus moved is not reported** (2026-06-13; the record states no ratifier).
+  The denominator published is the number of pieces the measurement actually resolved to a human
+  annotation, never the number of pieces held — which is why every baseline above is stated at its
+  coverage rather than over the whole corpus. *Why:* stated with the rule and evidenced in the same
+  sentence — only some of the gate chorales resolve to a human annotation at all, so dividing by the
+  whole set reports an accuracy the measurement never had; and the root-error rate ranges widely
+  across corpora, so a single scalar objective would let a fit win on chorales while losing on another
+  repertoire, with nothing in the reported number showing it.
+- **A layer's measurement is judged on COVERAGE-MATCHED ACCURACY and CORRECT ABSTENTION, never on raw
+  coverage** (2026-06-26; the record states no ratifier). Two things are reported together: how
+  accurate the layer is over the cases it answered, and whether the cases it declined were ones it
+  should have declined. Abstaining on a genuinely undecidable case is a RIGHT outcome, not a gap.
+  *Why:* recorded as the lesson of a completed layer build, where the decoder measured materially
+  better than the path it replaced WHERE IT COMMITS and most of its abstention was established as
+  genuinely undecidable at that layer — which raw coverage would have read as a failure. It is also
+  the reason the stop above is abstain-aware: an agreement percentage that ignores abstention is
+  reducible by declining more often.
+- **While the pipeline is being rebuilt, a behaviour-changing increment is graded DIRECTIONALLY and
+  not against a fixed bar** (user, 2026-06-22). Both the baseline numbers AND the metric definitions
+  move as the layers around an increment are reconstructed, so a rebuild step is judged on whether it
+  moved the specific defects it was meant to move, in the right direction; the comparison that means
+  something is against the fully reconstructed pipeline, not increment by increment. *Why:* stated
+  with the decision — a fixed bar set during a rebuild is a bar against a measurement that no longer
+  exists by the time it is tested. It is the reasoning #16 and #24 apply to reproducibility and to
+  sampling noise, applied to a measurement whose definition is still in motion. It settles WHETHER a
+  fixed bar is admissible during a rebuild; how a bar is set once one is set at all is the separate
+  standing rule that a pass-bar is fixed only after the baseline is measured.
+
+**★ TWO MORE GRADING CONVENTIONS, HOMED HERE 2026-08-07 ON THE USER'S HOMING RULING.** They sit
+beside the seven above and were each ruled separately. Both bind on how a disagreement this block's
+figures contain is READ; neither moves a value in them.
+
+- **A DEFENSIBLE MODAL READING THE MAJOR/MINOR GROUND TRUTH CANNOT REPRESENT IS A GROUND-TRUTH
+  LIMITATION, NOT A DEFECT TO OPTIMIZE AWAY** (user, 2026-06-22). Where our analysis emits a mode
+  the published human annotation has no way of writing down — the annotation records major and
+  minor only — a resulting disagreement is a limit of the ground truth, not an error of the analysis.
+  **Do not chase the major/minor ground truth on a modal reading**, and do not tune such a case
+  away: doing so makes the analysis worse in order to match a notation limit. *Why:* measured on
+  the affected population — the large majority of the jazz key misses are perfect-fifth
+  displacements where our reading is a defensible modal one, which places them inside the layer's
+  own done-criterion (defensible-or-flagged on an ambiguous case) and inside the stated scope
+  caveat that the ground truth is major/minor only. **Distinct from the exotic-mode convention
+  above**, which decides how a modal emission is SCORED; this decides what a REMAINING disagreement
+  means. Distinct also from the separate rule governing what the key layer may EMIT. It is
+  principle #21 applied at the point of reading: the ground truth is an instrument, and a
+  disagreement it cannot represent is not evidence about us.
+- **THE BINDING METRIC FOR A MODULATION DETECTOR IS MODULATION CORRECTNESS — explicitly NOT the
+  agreement percentage** (2026-06-14; the record states no ratifier). A change that decides where
+  the music changes key is judged on whether the key changes it commits are real ones (precision)
+  and whether it finds the real ones (recall) — the track rate together with the de-masked partial
+  split — and never on the overall agreement percentage. *Why:* stated with the decision — the
+  agreement percentage is **gameable by the change under test**, so it cannot be that change's own
+  bar. It is the same defect the abstain-aware convention above exists against on the root axis: an
+  agreement percentage a behaviour change can move without analysing anything better is not a
+  measurement of that change. The honesty measurement named with it is the de-masking diagnostic,
+  which exposes a committed home-key label being credited against a ground-truth local key.
+
 **★ A-8 DUAL-TRACK (MEASURED + RATIFIED, user, 2026-07-03; `cc_a8_rebaseline_measure_report.md`).** The
 **primary reported metric AND the Stage-5 fitting-objective basis** is the robust unit above: root
 governs, RN + key(home,local) tracked beside. **★ Ratified baselines — RE-BASELINED AT THE OI-178
@@ -805,6 +906,19 @@ scale `C-D-E♭-F-G` over-grabbed across two GT chords `i43`/`iv532`, Cowork-ver
 (`bwv352` Am6↔F♯ø7; Jazz `bwv291` Eø7↔Gm6) on the chord side, and the **note-identical** key-disagreement class
 (relative major/minor, tonicization-vs-modulation) on the key side. So a BIR=false count is read as cross-layer work,
 not as any one layer's accuracy. (O1 resolved: the resolver of "uncertain" is Layer 5 itself, no separate box.)
+
+**★ CORRECTION OF RECORD TO THE CAVEAT ABOVE — THE FUNCTION-ONLY SHARE IS OVERSTATED, BECAUSE
+OVER-GRABBED SEGMENTATION CORRUPTS THE BASS AND NOT ONLY THE PITCH-CLASS WINDOW (2026-07-10; the
+record states no ratifier).** The apportionment above books a share-tone class as function-only on
+the ground that the competing readings contain the same pitch classes and so cannot be separated
+earlier. A desk simulation refuted that on its own named case: an over-grabbed stretch picks up a
+**bass** note that does not sound where the error is, and the bass is exactly what separates the two
+readings — so some of what this caveat books as reaching Architectural Layer 5 is resolvable at the
+segmentation layer. *Why it is recorded here:* this block is where the apportionment is published,
+and a reader of the apportionment must meet its correction. *Why it is evidence and not a
+surprise-at-build (#13):* it was found at the desk-simulation stage, before any measurement was
+built — the prior was written down, traced by hand at the score and refuted cheaply, which is what
+the explorational stage exists for under the scope clause at #17–#19.
 
 **Granularity caveat (Stage 2.2-i) — ✅ RESOLVED at R10-b (2026-07-06).** The mandate this caveat raised — "a
 granularity-robust metric is mandatory at Stage 5" — is **delivered**: the block-(A) robust-unit stop is the
@@ -1273,6 +1387,21 @@ Build commands via `Start-Process` are isolated from these rules (exit code not 
   `CLAUDE.md` is where this project's shared standing rules live, not because its scope widens: the
   build, test and measurement commands `BUILD_AND_TEST.md` and the sections above mandate are
   unaffected, and nothing in the record extends the file-tools restriction to them.
+  **★ THE RULE COVERS EVERY READ MECHANISM AND EVERY DIALECT (recorded 2026-08-08 on the user's
+  direction, at the third measured instance family).** The restriction is on WHAT is read —
+  working-tree content through a shell — not on which utility spells the read. A PowerShell
+  `Get-Content` / `Select-String` / `Get-ChildItem` aimed at a repository path (the OI-345
+  family, CC, 2026-08-07) and a `python -c "open(...)"` in the Cowork sandbox (Cowork,
+  2026-08-07/08, self-reported at the user's challenge after repeated use for row statuses,
+  guard summaries and artifact fields) are the same violation as `cat`. **No guard watches
+  either surface** — the shell-read guard is armed on specific tools and dialects, and its
+  silence on an unwatched surface is not compliance (#19). The sandbox instance carries the
+  rule's own founding hazard undiminished: sandbox reads go through the same mount whose
+  measured stale-content failure created this rule, so a sandbox read can be stale in exactly
+  the way the rule exists to prevent. The Cowork instance's reads were re-verified through the
+  file tools on 2026-08-08 and all reproduced — recorded so the outcome is not mistaken for
+  the defense; "it happened to be right" is the argument the never-work-from-memory rule
+  already rejects.
 
 - **INVESTIGATE BY DEFAULT; NEVER ASK THE USER WHETHER TO INVESTIGATE OR PROCEED (user mandate
   2026-06-14; homed here 2026-08-02 from `cowork_handoff.md`, `OPEN_ITEMS.md` OI-266).** Wherever a

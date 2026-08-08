@@ -61,6 +61,10 @@ OUT = HERE / "item1_rehome_blocker.json"
 LICENSING_PHRASE = "outside this dispatch's edit surface"
 INDETERMINACY_PHRASES = ("not determinate", "does not settle")
 
+# The marker a route row uses when it keeps a superseded reason beside the current one (#12). It is
+# a LOCATOR for the derived staleness flag below, never a fourth classification phrase.
+PRESERVATION_MARKER = "PRESERVED (#12)"
+
 LICENSING = "EDIT-SURFACE LICENSING — the owner is named and the file was outside the surface"
 SOFT = "OWNER NOT DETERMINATE — the recorded reason says so in its own words"
 NEITHER = "NEITHER PHRASE — no blocker is stated in the recorded reason, and none is authored here"
@@ -125,6 +129,18 @@ def build() -> dict:
             cls, matched = NEITHER, None
         backref = next((m.group(1) for rx in BACKREF_RX
                         for m in [rx.search(reason)] if m), None)
+        # ── DERIVED, not authored: does the phrase that classified this row occur ONLY inside the
+        # row's own PRESERVED FORMER reason?  A wave that re-rules a row keeps the former reason in
+        # the same field under #12, so a formula the ruling has superseded can go on matching. The
+        # test is positional and mechanical — every occurrence of the matched phrase falling after
+        # the row's own preservation marker — and it AUTHORS NO VERDICT: the class is untouched and
+        # the reason is published verbatim beside it, exactly as before.
+        stale_match = None
+        if matched:
+            k = reason.find(PRESERVATION_MARKER)
+            if k >= 0:
+                first = reason.find(matched)
+                stale_match = first > k
         rec = {
             "id": r["id"],
             "home_document": r["home_document"],
@@ -133,6 +149,7 @@ def build() -> dict:
             "every_named_file_is_already_licensed": all(f in licensed_docs for f in files),
             "blocker": cls,
             "matched_phrase": matched,
+            "the_matched_phrase_falls_only_inside_this_row_preserved_former_reason": stale_match,
             "points_at_another_entry_for_its_owner_question": backref,
             "the_recorded_reason_verbatim": reason,
         }
@@ -207,6 +224,16 @@ def build() -> dict:
                 "formula in the passive voice. Adding it to the phrase list would sweep the row in "
                 "— and assembling a vocabulary until the answer comes out right is precisely the "
                 "failure OI-342 declined to commit. It is left in the residual."
+            ),
+            "★_a_phrase_may_match_a_row_own_PRESERVED_FORMER_reason_and_that_is_flagged": (
+                "A wave that re-rules a row keeps the former reason in the SAME field under #12, so "
+                "a formula the ruling has superseded can go on matching. Every row therefore "
+                "carries a DERIVED flag — "
+                "`the_matched_phrase_falls_only_inside_this_row_preserved_former_reason` — computed "
+                "positionally against the row's own preservation marker. It authors no verdict and "
+                "moves no class: where it is true the blocker class states what the SUPERSEDED "
+                "reason said, and the current one is in the verbatim reason published beside it. "
+                "The flag is null where a row carries no matched phrase or no preservation marker."
             ),
             "why_the_cut_is_by_exact_phrase": (
                 "OI-342 measured that the route table's `owner_is_unambiguous` column carries the "

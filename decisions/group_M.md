@@ -18,7 +18,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4587`
+**Home.** `ARCHITECTURE.md:4856`
 
 **Provenance.** ARCHITECTURE.md:4292-4296 (§6.1); the principle it realizes is D-070 (§2.1). No date or ratifier stated.
 
@@ -35,7 +35,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4631`
+**Home.** `ARCHITECTURE.md:4900`
 
 **Provenance.** ARCHITECTURE.md:4338-4341 (§6.2). No date or ratifier stated.
 
@@ -50,7 +50,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4667`
+**Home.** `ARCHITECTURE.md:4936`
 
 **Provenance.** ARCHITECTURE.md:4372-4375 (§6.4); the principle it realizes is D-070 (§2.1/§2.4). No date or ratifier stated.
 
@@ -69,7 +69,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4715`
+**Home.** `ARCHITECTURE.md:5002`
 
 **Provenance.** `ARCHITECTURE.md`:4528-4579 (§6.7). The SUBJECT is unchanged — one shared style taxonomy, not two parallel vocabularies — and the property it records survived the taxonomy's replacement intact. ★ VERBATIM RE-TAKEN 2026-08-03 (CC, phase 1k) from the corrected §6.7, on the user's OI-279 ruling of the same date (option (a): order the doc-sync correction, the genre list retained as marked historical context). The FORMER verbatim, preserved here under #12, quoted the retired hand-made genre taxonomy: "The style vocabulary the presets select on is **one shared, hierarchical taxonomy** (common-practice / jazz / vernacular families — Baroque, Classical/galant, Romantic; trad, swing/songbook, bebop, hard-bop, cool, modal; blues, ragtime, gospel-soul, rock, pop, folk, barbershop) — the **same** set the Harmonic Vocabulary (§7) tags its entries with, not two parallel vocabularies. Inclusion rule: a style is listed iff it has a **distinct functional-harmonic vocabulary** (free jazz / atonal excluded)." That list was superseded by the five-idiom set, ratified by the user 2026-06-30 and encoded (`cowork_progression_schema_dictionary.md:317-330`); the old inclusion rule belonged to the genre list and is retired with it, NOT carried across to the idioms — the idioms' own admission basis is the discovery study's cap-robustness check (`cowork_style_taxonomy_proposal.md:58-61`), now stated in §6.7. No date or ratifier is stated for the shared-taxonomy decision itself.
 
@@ -88,7 +88,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4750`
+**Home.** `ARCHITECTURE.md:5037`
 
 **Provenance.** `ARCHITECTURE.md`:4565-4570 (§6.7). ★ NARROWED and VERBATIM RE-TAKEN 2026-08-03 (CC, phase 1k) on the user's OI-279 ruling of the same date, sub-ruling (i): DEFERRED over the **per-preset weights alone**; the CLUSTERS half is SUPERSEDED BY the five-idiom ratification of 2026-06-30 (`cowork_style_taxonomy_proposal.md:3-9`; the encoded `enum class Idiom` + `IdiomSet`). The FORMER verbatim, preserved here under #12, made no such split: "It is a **theory-based v1**; **empirically grounding** it — deriving the clusters *and* the per-style weights by clustering corpora — is committed future work (`cowork_style_clustering_plan.md`)" — whose "theory-based v1" characterization was itself false in the other direction, the five idioms being empirically discovered. The former scope was therefore undifferentiated over two halves of which one was already delivered. No date or ratifier is stated for the original deferral; the narrowing is the user's, 2026-08-03. Note: `cowork_style_clustering_plan.md` itself still presents BOTH halves as future work and carries no annotation of the delivery — rowed as `OPEN_ITEMS.md` OI-282.
 
@@ -104,7 +104,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4781`
+**Home.** `ARCHITECTURE.md:5136`
 
 **Provenance.** ARCHITECTURE.md:4437-4451 (§7); own specification `cowork_progression_schema_dictionary.md`. No date or ratifier stated.
 
@@ -128,7 +128,7 @@
 
 **Home.** `cowork_progression_schema_dictionary.md:35-41`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§1** — `## 1. What this component is` (heading at line 21). A delegation at ARCHITECTURE.md:4764 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
+**Home section.** **§1** — `## 1. What this component is` (heading at line 21). A delegation at ARCHITECTURE.md:4775 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** `cowork_progression_schema_dictionary.md`:41-46 records the owner ruling as D5 of `cowork_progression_schema_design.md` §6, user-ratified 2026-07-02, with the cross-referencing comment blocks at `functionprogression.h` and `harmonicvocabulary.h` and the test at `progressionrecognizer_tests.cpp`. Beside D-341, which is the grammar-completion amendment this ruling's consistency test produced. NOTE: this document uses the label 'D5' for TWO different decisions — this ownership ruling (§1) and the harmonic-scope component decision (§7, entered as D-408) — which is a collision in the document's own local labelling, not in this register. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1j queue presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §2 — the ratification is of the RULE itself, with the status exactly as the record states it; it does not supply a date or a ratifier the original record never had, and the 'not stated' facts above stand unchanged (#12). The `gap` home flag also stands: the dictionary's banner still reads 'component spec, v1 draft (2026-06-29)', so the fifth home case's banner half is unmet — that is the open question rowed as `OPEN_ITEMS.md` OI-281, deliberately NOT resolved by editing this document's banner.)
 
@@ -147,7 +147,7 @@
 
 **Home.** `cowork_progression_schema_dictionary.md:53-54`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§2** — `## 2. What it does, and does not do` (heading at line 48). A delegation at ARCHITECTURE.md:4764 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
+**Home section.** **§2** — `## 2. What it does, and does not do` (heading at line 48). A delegation at ARCHITECTURE.md:4775 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** `cowork_progression_schema_dictionary.md`:52-54 (§2, what it does not do), with the firewall line at :244-246 (§6). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1j queue presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §2 — the ratification is of the RULE itself, with the status exactly as the record states it; it does not supply a date or a ratifier the original record never had, and the 'not stated' facts above stand unchanged (#12). The `gap` home flag also stands: the dictionary's banner still reads 'component spec, v1 draft (2026-06-29)', so the fifth home case's banner half is unmet — that is the open question rowed as `OPEN_ITEMS.md` OI-281, deliberately NOT resolved by editing this document's banner.)
 
@@ -169,7 +169,7 @@
 
 **Home.** `cowork_progression_schema_dictionary.md:55-59`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§2** — `## 2. What it does, and does not do` (heading at line 48). A delegation at ARCHITECTURE.md:4764 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
+**Home section.** **§2** — `## 2. What it does, and does not do` (heading at line 48). A delegation at ARCHITECTURE.md:4775 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** `cowork_progression_schema_dictionary.md`:55-59 (§2), restated as component decision D5 at :261-263 (§7) with its rejected alternative, and carried as a risk at :279-280 (§9). Consistent with `ARCHITECTURE.md` §7, which states the same exclusion. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1j queue presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §2 — the ratification is of the RULE itself, with the status exactly as the record states it; it does not supply a date or a ratifier the original record never had, and the 'not stated' facts above stand unchanged (#12). The `gap` home flag also stands: the dictionary's banner still reads 'component spec, v1 draft (2026-06-29)', so the fifth home case's banner half is unmet — that is the open question rowed as `OPEN_ITEMS.md` OI-281, deliberately NOT resolved by editing this document's banner.)
 
@@ -190,7 +190,7 @@
 
 **Home.** `cowork_progression_schema_dictionary.md:121-124`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§4** — `## 4. The query interface — what a consumer supplies, and gets back` (heading at line 84). A delegation at ARCHITECTURE.md:4764 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
+**Home section.** **§4** — `## 4. The query interface — what a consumer supplies, and gets back` (heading at line 84). A delegation at ARCHITECTURE.md:4775 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** `cowork_progression_schema_dictionary.md`:114-124 (§4). Beside D-027, the cross-cutting contract that every layer emits ranked candidates plus a confidence rather than a forced point estimate. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1j queue presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §2 — the ratification is of the RULE itself, with the status exactly as the record states it; it does not supply a date or a ratifier the original record never had, and the 'not stated' facts above stand unchanged (#12). The `gap` home flag also stands: the dictionary's banner still reads 'component spec, v1 draft (2026-06-29)', so the fifth home case's banner half is unmet — that is the open question rowed as `OPEN_ITEMS.md` OI-281, deliberately NOT resolved by editing this document's banner.)
 
@@ -212,7 +212,7 @@
 
 **Home.** `cowork_progression_schema_dictionary.md:102-106`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§4** — `## 4. The query interface — what a consumer supplies, and gets back` (heading at line 84). A delegation at ARCHITECTURE.md:4764 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
+**Home section.** **§4** — `## 4. The query interface — what a consumer supplies, and gets back` (heading at line 84). A delegation at ARCHITECTURE.md:4775 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** `cowork_progression_schema_dictionary.md`:96-106 (§4 recognise) and :114-118 (the match score under the partial matcher). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1j queue presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §2 — the ratification is of the RULE itself, with the status exactly as the record states it; it does not supply a date or a ratifier the original record never had, and the 'not stated' facts above stand unchanged (#12). The `gap` home flag also stands: the dictionary's banner still reads 'component spec, v1 draft (2026-06-29)', so the fifth home case's banner half is unmet — that is the open question rowed as `OPEN_ITEMS.md` OI-281, deliberately NOT resolved by editing this document's banner.)
 
@@ -233,7 +233,7 @@
 
 **Home.** `cowork_progression_schema_dictionary.md:185-188`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§5.2** — `### 5.2 Named progressions & schemas` (heading at line 168). A delegation at ARCHITECTURE.md:4764 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
+**Home section.** **§5.2** — `### 5.2 Named progressions & schemas` (heading at line 168). A delegation at ARCHITECTURE.md:4775 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** `cowork_progression_schema_dictionary.md`:185-188 (§5.2, the bass-line and pop loops). Same class as the circle-of-fifths entry-point rule (D-412): both fix what a realisation of one entry is allowed to look like. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1j queue presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §2 — the ratification is of the RULE itself, with the status exactly as the record states it; it does not supply a date or a ratifier the original record never had, and the 'not stated' facts above stand unchanged (#12). The `gap` home flag also stands: the dictionary's banner still reads 'component spec, v1 draft (2026-06-29)', so the fifth home case's banner half is unmet — that is the open question rowed as `OPEN_ITEMS.md` OI-281, deliberately NOT resolved by editing this document's banner.)
 
@@ -253,7 +253,7 @@
 
 **Home.** `cowork_progression_schema_dictionary.md:179-181`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§5.2** — `### 5.2 Named progressions & schemas` (heading at line 168). A delegation at ARCHITECTURE.md:4764 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
+**Home section.** **§5.2** — `### 5.2 Named progressions & schemas` (heading at line 168). A delegation at ARCHITECTURE.md:4775 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** `cowork_progression_schema_dictionary.md`:179-181 (§5.2, sequences). The descending-thirds entry beside it carries the same kind of rule, stated as a continuation rule rather than an ellipsis. Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1j queue presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §2 — the ratification is of the RULE itself, with the status exactly as the record states it; it does not supply a date or a ratifier the original record never had, and the 'not stated' facts above stand unchanged (#12). The `gap` home flag also stands: the dictionary's banner still reads 'component spec, v1 draft (2026-06-29)', so the fifth home case's banner half is unmet — that is the open question rowed as `OPEN_ITEMS.md` OI-281, deliberately NOT resolved by editing this document's banner.)
 
@@ -273,7 +273,7 @@
 
 **Home.** `cowork_progression_schema_dictionary.md:220-222`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§5.3** — `### 5.3 Substitution operations` (heading at line 200). A delegation at ARCHITECTURE.md:4764 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
+**Home section.** **§5.3** — `### 5.3 Substitution operations` (heading at line 200). A delegation at ARCHITECTURE.md:4775 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** `cowork_progression_schema_dictionary.md`:220-222 (§5.3, the substitution operations). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1j queue presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §2 — the ratification is of the RULE itself, with the status exactly as the record states it; it does not supply a date or a ratifier the original record never had, and the 'not stated' facts above stand unchanged (#12). The `gap` home flag also stands: the dictionary's banner still reads 'component spec, v1 draft (2026-06-29)', so the fifth home case's banner half is unmet — that is the open question rowed as `OPEN_ITEMS.md` OI-281, deliberately NOT resolved by editing this document's banner.)
 
@@ -293,21 +293,26 @@
 
 **Home.** `cowork_progression_schema_dictionary.md:255-257`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§7** — `## 7. Component decisions (with the alternatives weighed)` (heading at line 248). A delegation at ARCHITECTURE.md:4764 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
+**Home section.** **§7** — `## 7. Component decisions (with the alternatives weighed)` (heading at line 248). A delegation at ARCHITECTURE.md:4775 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** `cowork_progression_schema_dictionary.md`:255-257 (§7, component decision D3), with the organisation it produces at :136-139 (§5) and the generative spine at :141-166 (§5.1). Found by the phase-1j continuation wave, 2026-08-02, reading `cowork_progression_schema_dictionary.md` IN FULL. The document is NOT a contract home: its banner reads 'component spec, v1 draft (2026-06-29)' — a draft names no ratifier — although `ARCHITECTURE.md` §7 does point at it, so the delegation half of the fifth-home-case criterion is satisfied and the ratification half is not. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1j ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1j queue presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §2 — the ratification is of the RULE itself, with the status exactly as the record states it; it does not supply a date or a ratifier the original record never had, and the 'not stated' facts above stand unchanged (#12). The `gap` home flag also stands: the dictionary's banner still reads 'component spec, v1 draft (2026-06-29)', so the fifth home case's banner half is unmet — that is the open question rowed as `OPEN_ITEMS.md` OI-281, deliberately NOT resolved by editing this document's banner.)
 
 ### D-421 — Idiom re-discovery rides every corpus wave, on research material only, and a changed cluster set is its own ratification event
 
->   **★ Standing trigger (user, 2026-07-02): idiom re-discovery rides each corpus wave.** After each material corpus
->   change (each wave; the yearly census re-sweep), re-run the `idiom_discovery/` pipeline under the v1 protocol
->   (multi-seed stability, cap-robustness, source-leakage/ARI confound test) on the **dev set + external research
->   corpora only** (held-out material excluded — discovery outputs become shipped parameters). Primary question:
->   do the five ratified idioms **reproduce**? Falsifiable v2 edges: does #5 Chromatic-coloristic split (the K=6
->   candidate) under the new chromatic mass; where do Wagner/Liszt land (#2 vs #5 — the era≠axis re-test); does
->   early-modal material (Monteverdi/Sweelinck) separate or fold into #4. A changed cluster set is a **ratified
->   taxonomy-revision event** (it propagates to StyleTag values + the vocabulary entry mapping — post-swap it is a
->   migration, not a relabel). Plan line only — the instruction is written just-in-time after the triggering wave.
+> - **Idiom re-discovery RIDES EVERY CORPUS WAVE, on research material only, and a changed cluster
+>   set is its own ratification event.** After each material corpus change the discovery pipeline is
+>   re-run under the protocol above, on the **development set and outside research corpora only** —
+>   held-out material excluded — asking first whether the five idioms **reproduce**. **A changed
+>   cluster set is a ratified taxonomy-revision event**: it propagates to the style-tag values and to
+>   the vocabulary's per-entry mapping, so once those tags are encoded it is a migration and not a
+>   relabel. *Why:* the held-out exclusion is #20 applied to an unsupervised study — discovery
+>   outputs become shipped parameters, so material used to discover them can never also measure them.
+>   The re-run itself is the standing consequence of the finding this section rests on, that the
+>   categories are empirical rather than asserted, which means new music can falsify them; the record
+>   names the falsifiable edges in advance — whether the chromatic-coloristic idiom splits under new
+>   chromatic mass, where the high-chromaticism composers land, and whether early modal material
+>   separates or folds in — and naming them in advance is what makes the trigger a test rather than a
+>   formality.
 
 **In plain words.** Whenever the body of music the project holds changes materially, the study that discovered the five idioms is re-run under the same protocol, to ask whether the five reproduce. It is run only on the development set and outside research corpora, never on the music held back for evaluation, because what the study produces becomes a shipped parameter. If the clusters come out different, that is a taxonomy revision and needs its own ratification — it changes the tags on every catalog entry, so after the tags were encoded it is a migration, not a relabel.
 
@@ -317,16 +322,30 @@
 
 **Entry ratified.** 2026-08-03 · by user
 
-**Home.** `docs/implementation_roadmap.md:259`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:5107-5120`
 
-**Home section.** **the opening block (above the first section heading)** — `# Consolidated Implementation Roadmap — Reviews → Plan` (heading at line 1). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** `docs/implementation_roadmap.md`:183-191, recorded as a standing trigger of the user, 2026-07-02, beside the census's own standing rule that discovering a new corpus is a census defect (register entry D-359). It governs the style taxonomy that `ARCHITECTURE.md` §6.7 owns and is recorded in a plan rather than at that home, hence the documentation-gap flag. Load-bearing for the 2026-08-03 §6.7 restatement: the five idioms are stated there as empirically discovered, and this is the rule that keeps that claim current. The record notes two corpus waves executed and ratified (2026-07-02, 2026-07-03), the second checking the trigger and finding it NOT fired. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)
+**Provenance.** `docs/implementation_roadmap.md`:183-191, recorded as a standing trigger of the user, 2026-07-02, beside the census's own standing rule that discovering a new corpus is a census defect (register entry D-359). It governs the style taxonomy that `ARCHITECTURE.md` §6.7 owns and is recorded in a plan rather than at that home, hence the documentation-gap flag. Load-bearing for the 2026-08-03 §6.7 restatement: the five idioms are stated there as empirically discovered, and this is the rule that keeps that claim current. The record notes two corpus waves executed and ratified (2026-07-02, 2026-07-03), the second checking the trigger and finding it NOT fired. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.) ★ HOMED 2026-08-07 (CC, the owner-rulings homing wave, executing the user's ruling of 2026-08-07 recorded at `cowork_owner_rulings_2026_08_07.md`). Routed to §6.7 under the maintained-object rule — the re-discovery protocol, and that a changed cluster set is its own ratification event — in that section's own voice and with its defense. It is the rule that keeps §6.7's own claim current, that the five idioms are empirically discovered rather than theory-derived. Assumption A1 discharged before writing. FORMER HOME, PRESERVED (#12): `docs/implementation_roadmap.md:259`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 1, "section": "# Consolidated Implementation Roadmap — Reviews → Plan", "label": "the opening block (above the first section heading)", "delegated": null, "delegation": "named in no user-ratified surface", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "  **★ Standing trigger (user, 2026-07-02): idiom re-discovery rides each corpus wave.** After each material corpus
+  change (each wave; the yearly census re-sweep), re-run the `idiom_discovery/` pipeline under the v1 protocol
+  (multi-seed stability, cap-robustness, source-leakage/ARI confound test) on the **dev set + external research
+  corpora only** (held-out material excluded — discovery outputs become shipped parameters). Primary question:
+  do the five ratified idioms **reproduce**? Falsifiable v2 edges: does #5 Chromatic-coloristic split (the K=6
+  candidate) under the new chromatic mass; where do Wagner/Liszt land (#2 vs #5 — the era≠axis re-test); does
+  early-modal material (Monteverdi/Sweelinck) separate or fold into #4. A changed cluster set is a **ratified
+  taxonomy-revision event** (it propagates to StyleTag values + the vocabulary entry mapping — post-swap it is a
+  migration, not a relabel). Plan line only — the instruction is written just-in-time after the triggering wave." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance — the wave and its dispatch — is recorded in this field and NOT in the specification text, on the ruling record's own instruction: a file name written into a governing document reads as a new naming and moves a measured population (the OI-330 / OI-328 lesson).
 
 ### D-496 — RATIFIED AMENDMENT A-6: whether the pairwise progression grammar lives inside the harmonic vocabulary or stays a separate store is decided at the recognition-consumer build, explicitly
 
-> - **A-6 (from F-6). Decide the progression-knowledge store question** at the recognition-consumer build (fold §5.0
->   pairwise motions into the Vocabulary, or two stores by declared design).
+> - **Whether the pairwise progression grammar folds INTO this vocabulary or stays a SECOND store is
+>   a decision that is OWED, and its trigger is the recognition-consumer build.** Knowledge about
+>   which chord may follow which is currently held in two places — a pairwise rule set inside the
+>   function layer, and this catalog of longer patterns. The choice between one store and two by
+>   declared design **is not to be settled by drift**: it is made, explicitly, when the component
+>   that queries this catalog is built. *Why:* the consumer design already asserts that this
+>   vocabulary extends the pairwise grammar while the single-store-or-two decision is unmade, which
+>   is a total-unification question (#6) and exactly the kind of coexistence the review's own
+>   criterion says must be **decided** rather than tolerated. Stating the trigger rather than the
+>   answer is the point: no section can yet state a rule here, and what is owed is the choice.
 
 **In plain words.** Knowledge about which chord may follow which is held in two places: a pairwise rule set inside the function layer, and a catalog of longer patterns. Whether these become one store or stay two is not to be settled by drift — the amendment requires the choice to be made, and made when the component that queries the catalog is built.
 
@@ -336,11 +355,10 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_architecture_review_2026_07.md:326-327`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:5159-5168`
 
-**Home section.** **§9** — `## 9. Proposed amendments (ranked; each ratification-gated; none is code)` (heading at line 307). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** Amendment A-6 of the external architecture review, in a document whose banner records amendments A-1…A-10 as RATIFIED by the user on 2026-07-02. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) ★ NOT A FRESH DECISION, stated so that nothing is counted twice (dispatch cc_instruction_reads_3.md §1.3): the amendment itself was ratified by the user at the 2026-07-02 architecture review, which is what this entry's Status line already records. Ratifying the ENTRY records only that the register transcribes that ratification correctly — it neither re-makes the decision nor adds a second ratification event to it. Related but distinct: **D-133** rules that the vocabulary is a queried reference component rather than a layer, and **D-419** that the function layer does not touch it until the consumer is built; neither answers which store owns the pairwise motions.
+**Provenance.** Amendment A-6 of the external architecture review, in a document whose banner records amendments A-1…A-10 as RATIFIED by the user on 2026-07-02. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) ★ NOT A FRESH DECISION, stated so that nothing is counted twice (dispatch cc_instruction_reads_3.md §1.3): the amendment itself was ratified by the user at the 2026-07-02 architecture review, which is what this entry's Status line already records. Ratifying the ENTRY records only that the register transcribes that ratification correctly — it neither re-makes the decision nor adds a second ratification event to it. Related but distinct: **D-133** rules that the vocabulary is a queried reference component rather than a layer, and **D-419** that the function layer does not touch it until the consumer is built; neither answers which store owns the pairwise motions. ★ HOMED 2026-08-07 (CC, the owner-rulings homing wave, executing the user's ruling of 2026-08-07 recorded at `cowork_owner_rulings_2026_08_07.md`). The recorded reason was that the amendment DEFERS the decision, so no section can yet state it as a rule. The user ruled the D-419 SHAPE: a deferred decision is stated at §7 WITH ITS TRIGGER — the recognition-consumer build — so what the specification carries is that a choice is owed and when it is made. Written into §7 beside D-419, in that section's own voice and with its defense. Assumption A1 discharged before writing. FORMER HOME, PRESERVED (#12): `cowork_architecture_review_2026_07.md:326-327`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 307, "section": "## 9. Proposed amendments (ranked; each ratification-gated; none is code)", "label": "§9", "delegated": null, "delegation": "named in no user-ratified surface", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "- **A-6 (from F-6). Decide the progression-knowledge store question** at the recognition-consumer build (fold §5.0
+  pairwise motions into the Vocabulary, or two stores by declared design)." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance — the wave and its dispatch — is recorded in this field and NOT in the specification text, on the ruling record's own instruction: a file name written into a governing document reads as a new naming and moves a measured population (the OI-330 / OI-328 lesson).
 
 ### D-502 — The span a recognised named progression covers is called the progression-schema-span — the bare word 'sequence' is reserved for the harmonic sequence and 'progression' for the whole committed chord stream
 
@@ -507,9 +525,14 @@
 
 ### D-542 — Idiom discovery runs DISCOVER-THEN-NAME: structure is learned on a low-level encoding carrying no theory or genre labels, and theory features and genre labels are interpretation lenses applied afterwards, never clustering input
 
-> The governing order is **discover → then name**: learn structure on a low-level encoding carrying **no** theory or
-> genre labels; only afterward hold the emergent structure up against theory features **and** genre labels, both as
-> **interpretation lenses, never as clustering input**.
+> - **The governing order is DISCOVER, THEN NAME.** Structure is learned on a **low-level encoding
+>   carrying no theory and no genre labels**; only afterwards is the emergent structure held up
+>   against theory features **and** genre labels, both as **interpretation lenses, never as
+>   clustering input**. *Why:* stated as a refusal rather than a preference — there is no
+>   zero-prejudice method, so the discipline is to push the unavoidable priors down to the lowest,
+>   most theory-neutral level and interpret afterwards, never to pretend they are absent. Feeding
+>   theory features in could only rediscover the priors already encoded, which is the alternative the
+>   design rejects by name.
 
 **In plain words.** The grouping of music into harmonic idioms is learned from a plain, label-free encoding of the notes and chords. Only afterwards is the result held up against theory terms and against genre labels to see what the emergent groups correspond to. Neither is ever fed in.
 
@@ -517,19 +540,25 @@
 
 **Status.** NOT STATED · decided 2026-06-30 · ratifier not stated
 
-**Home.** `cowork_idiom_discovery_design.md:28-30`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:5061-5068`
 
-**Home section.** **§2** — `## 2. The core principle — minimal prejudice, not zero` (heading at line 23). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** The core principle of the idiom-discovery design, which the document's own banner marks a research/analysis component and not a runtime layer. Its output feeds the style tags and weights of the harmonic vocabulary and ultimately the presets. The standing rule that idiom re-discovery rides every corpus wave on research material only is **D-421**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+**Provenance.** The core principle of the idiom-discovery design, which the document's own banner marks a research/analysis component and not a runtime layer. Its output feeds the style tags and weights of the harmonic vocabulary and ultimately the presets. The standing rule that idiom re-discovery rides every corpus wave on research material only is **D-421**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. ★ HOMED 2026-08-07 (CC, the owner-rulings homing wave, executing the user's ruling of 2026-08-07 recorded at `cowork_owner_rulings_2026_08_07.md`). The recorded owner question was that §6.7 owns the taxonomy but not the method that discovers it. The user ruled THE MAINTAINED-OBJECT RULE: a maintained object and its maintenance or discovery method belong together, so §6.7 owns BOTH the canonical style taxonomy and the protocols and method that produce and re-produce it. Written into §6.7 in that section's own voice, with its defense and with the rejected alternative the record names. Assumption A1 discharged before writing. FORMER HOME, PRESERVED (#12): `cowork_idiom_discovery_design.md:28-30`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 23, "section": "## 2. The core principle — minimal prejudice, not zero", "label": "§2", "delegated": null, "delegation": "named in no user-ratified surface", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "The governing order is **discover → then name**: learn structure on a low-level encoding carrying **no** theory or
+genre labels; only afterward hold the emergent structure up against theory features **and** genre labels, both as
+**interpretation lenses, never as clustering input**." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance — the wave and its dispatch — is recorded in this field and NOT in the specification text, on the ruling record's own instruction: a file name written into a governing document reads as a new naming and moves a measured population (the OI-330 / OI-328 lesson).
 
 ### D-543 — The encoding is key-normalised tonal-pitch-class TRANSITIONS — spelled where spelling is reliable, mod-12 only where it is genuinely absent — run as two complementary views
 
-> - **D2 — minimal low-level encoding: key-normalized tonal-pitch-class transitions** (line-of-fifths where spelling is
->   reliable — classical scores + trusted lead-sheet symbols — else mod-12), run as two views (progression + vocabulary,
->   §3). *Rejected:* high-level functional features (prejudges the answer); raw audio/MIDI (timbre/instrumentation/
->   performance confounds swamp harmony — Mauch's lesson); bare mod-12 pitch classes everywhere (discards the
->   line-of-fifths structure that made Moss's topics interpretable).
+> - **The encoding is KEY-NORMALIZED TONAL-PITCH-CLASS TRANSITIONS — spelled where spelling is
+>   reliable, plain pitch classes only where no spelling exists — run as TWO complementary views.**
+>   Every piece is transposed to a common tonic and encoded as chord-to-chord moves, using the
+>   written note names wherever the source spells them (classical scores and trusted lead-sheet
+>   symbols); a second, order-free vocabulary view of the same material runs alongside as a
+>   cross-check. *Why:* grounded in the prior art the design adopts — the line-of-fifths encoding is
+>   what made the published topics interpretable, and it stays low-prejudice because it is the raw
+>   written note rather than a functional label. Three alternatives are rejected with their reasons:
+>   high-level functional features prejudge the answer; audio or raw performance data lets timbre and
+>   instrumentation swamp harmony; bare pitch classes everywhere discard the very structure that made
+>   the published result readable.
 
 **In plain words.** Pieces are encoded as sequences of chord-to-chord moves with every piece transposed to a common tonic, using the written note names wherever the source spells them. Where no spelling exists at all, plain pitch classes are used. A second, order-free view of the same material runs alongside as a cross-check.
 
@@ -537,22 +566,29 @@
 
 **Status.** NOT STATED · decided 2026-06-30 · ratifier not stated
 
-**Home.** `cowork_idiom_discovery_design.md:158-162`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:5069-5079`
 
-**Home section.** **§9** — `## 9. Decisions (with alternatives weighed)` (heading at line 155). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** Decision D2 of the design, with the lead-sheet trust ruling folded in — chord symbols on lead sheets are trusted for the features clustered on. The transition view is deliberately the axis the closest published precedent discards, which is the document's own answer to why the study is re-run rather than cited. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+**Provenance.** Decision D2 of the design, with the lead-sheet trust ruling folded in — chord symbols on lead sheets are trusted for the features clustered on. The transition view is deliberately the axis the closest published precedent discards, which is the document's own answer to why the study is re-run rather than cited. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. ★ HOMED 2026-08-07 (CC, the owner-rulings homing wave, executing the user's ruling of 2026-08-07 recorded at `cowork_owner_rulings_2026_08_07.md`). Routed to §6.7 under the maintained-object rule, beside D-542, in that section's own voice, with its defense and with the three rejected alternatives the record names. Assumption A1 discharged before writing. FORMER HOME, PRESERVED (#12): `cowork_idiom_discovery_design.md:158-162`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 155, "section": "## 9. Decisions (with alternatives weighed)", "label": "§9", "delegated": null, "delegation": "named in no user-ratified surface", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "- **D2 — minimal low-level encoding: key-normalized tonal-pitch-class transitions** (line-of-fifths where spelling is
+  reliable — classical scores + trusted lead-sheet symbols — else mod-12), run as two views (progression + vocabulary,
+  §3). *Rejected:* high-level functional features (prejudges the answer); raw audio/MIDI (timbre/instrumentation/
+  performance confounds swamp harmony — Mauch's lesson); bare mod-12 pitch classes everywhere (discards the
+  line-of-fifths structure that made Moss's topics interpretable)." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance — the wave and its dispatch — is recorded in this field and NOT in the specification text, on the ruling record's own instruction: a file name written into a governing document reads as a new naming and moves a measured population (the OI-330 / OI-328 lesson).
 
 ### D-544 — Confound control is a FIRST-CLASS GATE, and the source-leakage test decides validity: if the clusters are explained by which corpus a piece came from, the result is bookkeeping and not idiom
 
-> The dominant failure mode: naive clustering discovers **which corpus a piece came from, what key it is in, how long it
-> is, instrumentation, or encoding quirks** *before* it ever reaches "idiom." So this is a first-class gate, not a
-> footnote:
-> - **key-normalize** (§3); **length-normalize** (rate features, fixed-length windows); **balance/stratify** sources;
->   **de-duplicate**; **exclude** melody-only sources; **audit** chordify extraction noise on a labeled subset.
-> - **The source-leakage test (mandatory):** hold out the **source label** and test whether the clusters are explained
->   by source/key/length. **If clusters ≈ source, we found bookkeeping, not idiom** — back to the encoding.
-> A discovered structure earns the word "idiom" only **after** it survives these.
+> - **Confound control is a FIRST-CLASS VALIDITY GATE, and the source-leakage test decides
+>   validity.** The dominant failure mode of this kind of study is discovering **which corpus a piece
+>   came from**, what key it is in, how long it is, its instrumentation or its encoding quirks —
+>   before it ever reaches idiom. So the controls are mandatory and matched to it one by one:
+>   key-normalize, length-normalize, balance and stratify sources, de-duplicate, exclude melody-only
+>   sources, audit extraction noise on a labelled subset. **The source-leakage test is mandatory:**
+>   hold out the source label and test whether the clusters are explained by source, key or length.
+>   **If the clusters approximate the source, the study found bookkeeping and not idiom** — back to
+>   the encoding. A discovered structure earns the word *idiom* only after surviving these. *Why:*
+>   stated as a gate rather than a footnote precisely because the alternative — naive clustering —
+>   finds bookkeeping and calls it style; it is #19 in the discovery setting, where a cluster set is
+>   trusted after being positively established against the confound and never because nothing has
+>   contradicted it.
 
 **In plain words.** The dominant way this kind of study fails is by discovering which collection a piece came from, or what key it is in, or how long it is, and calling that a style. So the source label is held out and the clusters are tested against it. If they are explained by it, the encoding goes back to the drawing board. A discovered structure earns the word idiom only after surviving this.
 
@@ -560,20 +596,33 @@
 
 **Status.** NOT STATED · decided 2026-06-30 · ratifier not stated
 
-**Home.** `cowork_idiom_discovery_design.md:119-126`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:5080-5092`
 
-**Home section.** **§5** — `## 5. Confound control (the part that actually decides validity)` (heading at line 118). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** Decision D4 of the design, and the criterion its §5 exists to enforce. It is #19 in the discovery setting: a cluster set is trusted after being positively established against the confound, never because nothing has yet contradicted it. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+**Provenance.** Decision D4 of the design, and the criterion its §5 exists to enforce. It is #19 in the discovery setting: a cluster set is trusted after being positively established against the confound, never because nothing has yet contradicted it. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. ★ HOMED 2026-08-07 (CC, the owner-rulings homing wave, executing the user's ruling of 2026-08-07 recorded at `cowork_owner_rulings_2026_08_07.md`). Routed to §6.7 under the maintained-object rule — confound control as a first-class validity gate — in that section's own voice and with its defense, the mandatory source-leakage test stated with the verdict it forces. Assumption A1 discharged before writing. FORMER HOME, PRESERVED (#12): `cowork_idiom_discovery_design.md:119-126`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 118, "section": "## 5. Confound control (the part that actually decides validity)", "label": "§5", "delegated": null, "delegation": "named in no user-ratified surface", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "The dominant failure mode: naive clustering discovers **which corpus a piece came from, what key it is in, how long it
+is, instrumentation, or encoding quirks** *before* it ever reaches "idiom." So this is a first-class gate, not a
+footnote:
+- **key-normalize** (§3); **length-normalize** (rate features, fixed-length windows); **balance/stratify** sources;
+  **de-duplicate**; **exclude** melody-only sources; **audit** chordify extraction noise on a labeled subset.
+- **The source-leakage test (mandatory):** hold out the **source label** and test whether the clusters are explained
+  by source/key/length. **If clusters ≈ source, we found bookkeeping, not idiom** — back to the encoding.
+A discovered structure earns the word "idiom" only **after** it survives these." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance — the wave and its dispatch — is recorded in this field and NOT in the specification text, on the ruling record's own instruction: a file name written into a governing document reads as a new naming and moves a measured population (the OI-330 / OI-328 lesson).
 
 ### D-545 — The uniform mechanical extractor for idiom discovery is the external library, stopping at the note-and-slice front — OUR OWN key/chord/function inference must NEVER touch the extraction
 
-> - **D6 — music21 as the uniform mechanical extractor; extraction stops at the L1/L2 (mechanical) front; our L3+
->   analyzer never used.** *Rejected:* our own L1/L2 as the extractor (cleaner change-point slicing, and it's our audited
->   code — but it can't ingest ABC/kern, so it would force a *mix* of extractors correlated with source, a §5 confound);
->   our full analyzer for extraction (Baroque-tuned bias that correlates with genre — the worst confound for a
->   genre-vs-not study). music21 is chosen for **uniform** format coverage, **cross-validated** against our L1/L2 on a
->   shared MusicXML subset to bank the trust.
+> - **The uniform mechanical extractor is the EXTERNAL library, and extraction stops at the
+>   note-and-slice front: OUR OWN key/chord/function inference never touches it.** One external tool
+>   (music21) is applied identically to every source, and only as far as reading notes and cutting
+>   them into simultaneities; our own analyzer is deliberately not used for the extraction, and its
+>   trust is **banked rather than assumed** — a shared subset is run through both and the streams
+>   compared. *Why:* chosen against our own cleaner slicer for a stated reason that is the study's
+>   own validity — our slicer cannot ingest every corpus format, so using it would force a **mix** of
+>   extractors correlated with source, which is exactly the confound the gate above forbids. Using
+>   the full analyzer would be worse: it is tuned on one repertoire, it would rediscover our own
+>   priors, and it would inject genre-correlated error into a study about whether the grouping is
+>   genre. The distinction the rule rests on is stated with it — reading notes and slicing them is
+>   mechanical, so an error there is a bug rather than a misinference, while everything above is
+>   inference and would carry our priors. *Mechanical* means unbiased, not clean: the raw
+>   simultaneities still contain passing tones, which is correct output.
 
 **In plain words.** Turning every corpus into chords for this study is done by one external library applied identically to every source, and only as far as reading notes and cutting them into simultaneities. Our own analyzer is deliberately not used for it.
 
@@ -581,11 +630,14 @@
 
 **Status.** NOT STATED · decided 2026-06-30 · ratifier not stated
 
-**Home.** `cowork_idiom_discovery_design.md:168-173`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:5093-5106`
 
-**Home section.** **§9** — `## 9. Decisions (with alternatives weighed)` (heading at line 155). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** Decision D6 of the design, resolving one of its open items. The distinction it rests on is stated with it: reading notes and slicing them is mechanical, so an error there is a bug rather than a misinference, while everything above is inference and would carry our priors. It is also careful to say that mechanical means unbiased and not clean — the raw simultaneities still contain passing tones, which is correct output. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+**Provenance.** Decision D6 of the design, resolving one of its open items. The distinction it rests on is stated with it: reading notes and slicing them is mechanical, so an error there is a bug rather than a misinference, while everything above is inference and would carry our priors. It is also careful to say that mechanical means unbiased and not clean — the raw simultaneities still contain passing tones, which is correct output. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. ★ HOMED 2026-08-07 (CC, the owner-rulings homing wave, executing the user's ruling of 2026-08-07 recorded at `cowork_owner_rulings_2026_08_07.md`). Routed to §6.7 under the maintained-object rule — the external extractor and the prohibition on our own inference touching it — in that section's own voice, with its defense, both rejected alternatives, and the mechanical-means-unbiased-not-clean qualification the record states. Assumption A1 discharged before writing. FORMER HOME, PRESERVED (#12): `cowork_idiom_discovery_design.md:168-173`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 155, "section": "## 9. Decisions (with alternatives weighed)", "label": "§9", "delegated": null, "delegation": "named in no user-ratified surface", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "- **D6 — music21 as the uniform mechanical extractor; extraction stops at the L1/L2 (mechanical) front; our L3+
+  analyzer never used.** *Rejected:* our own L1/L2 as the extractor (cleaner change-point slicing, and it's our audited
+  code — but it can't ingest ABC/kern, so it would force a *mix* of extractors correlated with source, a §5 confound);
+  our full analyzer for extraction (Baroque-tuned bias that correlates with genre — the worst confound for a
+  genre-vs-not study). music21 is chosen for **uniform** format coverage, **cross-validated** against our L1/L2 on a
+  shared MusicXML subset to bank the trust." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance — the wave and its dispatch — is recorded in this field and NOT in the specification text, on the ruling record's own instruction: a file name written into a governing document reads as a new naming and moves a measured population (the OI-330 / OI-328 lesson).
 
 ### D-554 — The voice-leading axis's independence from the harmonic axis is MEASURED, not assumed — cross-agreement between the two clusterings is at the level of statistical independence
 

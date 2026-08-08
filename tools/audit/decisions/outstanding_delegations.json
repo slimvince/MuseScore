@@ -8,8 +8,8 @@
     "A_no_delegation_exists": {
       "what_it_is": "Entries whose home document is named in NONE of the three user-ratified surfaces.",
       "the_criterion_that_decides_it": "clause (a), the fifth home case (OI-268) — the document is named in none of the three user-ratified surfaces, so there is no delegation to grade",
-      "entries": 83,
-      "documents": 32,
+      "entries": 26,
+      "documents": 15,
       "by_document": {
         "cowork_architecture_reassessment.md": [
           "D-282",
@@ -18,16 +18,9 @@
           "D-285"
         ],
         "cowork_architecture_review_2026_07.md": [
-          "D-494",
-          "D-495",
-          "D-496",
-          "D-497",
           "D-498",
           "D-499",
           "D-500"
-        ],
-        "cowork_audit_obligation_map.md": [
-          "D-568"
         ],
         "cowork_census_full_needs_audit.md": [
           "D-513",
@@ -35,69 +28,25 @@
           "D-515",
           "D-516"
         ],
-        "cowork_eg2_scoping.md": [
-          "D-564"
-        ],
         "cowork_factorization_desk_simulation.md": [
-          "D-449",
-          "D-450",
-          "D-451",
-          "D-452",
           "D-453"
-        ],
-        "cowork_fb_redesign_design.md": [
-          "D-490",
-          "D-491",
-          "D-492",
-          "D-493"
-        ],
-        "cowork_gateA_unification_design.md": [
-          "D-510",
-          "D-511",
-          "D-512"
-        ],
-        "cowork_idiom_discovery_design.md": [
-          "D-542",
-          "D-543",
-          "D-544",
-          "D-545"
         ],
         "cowork_information_loss_audit.md": [
           "D-581",
-          "D-582",
           "D-583"
         ],
         "cowork_layer1_tone_collection_design.md": [
           "D-569",
           "D-570"
         ],
-        "cowork_layer3_keymode_impl_design.md": [
-          "D-603",
-          "D-604"
-        ],
-        "cowork_layer3_reachback_design.md": [
-          "D-622"
-        ],
         "cowork_phase2_architecture_review.md": [
-          "D-579",
-          "D-580"
-        ],
-        "cowork_phase5c_l5_build_plan.md": [
-          "D-602"
+          "D-579"
         ],
         "cowork_sensitive_cell_probe.md": [
-          "D-532",
-          "D-533",
-          "D-534",
           "D-535"
         ],
         "cowork_term_theory_grounding.md": [
-          "D-473",
-          "D-474",
           "D-475"
-        ],
-        "cowork_tpc_capability_design.md": [
-          "D-625"
         ],
         "cowork_types_header_design.md": [
           "D-610"
@@ -106,56 +55,16 @@
           "D-613",
           "D-614"
         ],
-        "docs/back_half_design.md": [
-          "D-531",
-          "D-539"
-        ],
-        "docs/decoder_design.md": [
-          "D-325",
-          "D-326",
-          "D-327",
-          "D-328"
-        ],
         "docs/implementation_roadmap.md": [
-          "D-419",
-          "D-421",
-          "D-422",
-          "D-423"
+          "D-422"
         ],
         "docs/iter92_joint_bass_chord_scoring.md": [
-          "D-536",
-          "D-537",
           "D-538"
-        ],
-        "docs/iteration_path1_summary.md": [
-          "D-280",
-          "D-281"
-        ],
-        "docs/layer_architecture_audit.md": [
-          "D-463",
-          "D-464",
-          "D-465"
-        ],
-        "docs/precision_metric_design.md": [
-          "D-486"
         ],
         "docs/stage4b_design.md": [
           "D-571"
         ],
-        "docs/stage4c_cadence_key_design.md": [
-          "D-616"
-        ],
-        "docs/stage4d_local_modulation_design.md": [
-          "D-605",
-          "D-606"
-        ],
-        "docs/symbol_input_audit.md": [
-          "D-501"
-        ],
         "docs/unified_analysis_pipeline.md": [
-          "D-469",
-          "D-470",
-          "D-471",
           "D-472"
         ]
       }
@@ -537,7 +446,7 @@
           }
         },
         "the_delegation_that_exists": {
-          "at": "ARCHITECTURE.md:923",
+          "at": "ARCHITECTURE.md:1018",
           "line": "(one span) until the §15-1 per-span measurement refines it. Criterion + build home:"
         },
         "current_delegation_names": "§0, §5.1, §5.3, §8, §9",
@@ -567,7 +476,7 @@
           "§8c"
         ],
         "the_delegation_this_document_is_graded_from": {
-          "at": "ARCHITECTURE.md:326",
+          "at": "ARCHITECTURE.md:328",
           "line": "> own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c. **Which class"
         },
         "the_ruling": "★ RULING R1, user, 2026-08-04, dispatch `cc_instruction_census_delegation_and_commit.md`: widen the existing `ARCHITECTURE.md` §8c pointer so it names the sections the six entries sit in. Explicitly NOT a document-level delegation — the census is a findings document with a few rule-stating blocks, and naming the sections says exactly that, while a document-level delegation would assert the whole census is the authoritative detail for its scope, which is a stronger claim than the record makes.",
@@ -580,8 +489,8 @@
   },
   "what_is_NOT_proposed_as_a_delegation_and_why": {
     "class_A": {
-      "entries": 83,
-      "documents": 32,
+      "entries": 26,
+      "documents": 15,
       "why_no_draft_is_offered": "The register's own `not_write_list_cases` rules on exactly this shape: 'A delegation drafted for them would be a new decision about where a concern is owned, not the repair of a wording — so the remedy is the OI-272 per-kind homing act into the specification that owns each decision, which is already the standing scheme.' Drafting delegations for this class would be proposing that many new decisions."
     },
     "class_B": {
@@ -602,7 +511,7 @@
         "document": "cowork_layer5_function_design.md",
         "state_at_head": "WRITTEN — CLOSED",
         "why": "The user wrote an explicit delegation clause on 2026-08-03 and every entry of the document is `contract-home`. Nothing is outstanding.",
-        "delegation_at_head": "ARCHITECTURE.md:1593",
+        "delegation_at_head": "ARCHITECTURE.md:1798",
         "delegation_form_at_head": "explicit-delegation-clause",
         "entries_in_the_home_population": 8,
         "by_class": {
@@ -626,7 +535,7 @@
         "document": "cowork_engage_arc_plan.md",
         "state_at_head": "WRITTEN — CLOSED",
         "why": "The user wrote an explicit delegation clause into `CLAUDE.md` on 2026-08-03 and all three entries of the home population are `contract-home`. The document's fourth entry is `process`, which the home-class criteria do not reach at all.",
-        "delegation_at_head": "CLAUDE.md:177",
+        "delegation_at_head": "CLAUDE.md:215",
         "delegation_form_at_head": "explicit-delegation-clause",
         "entries_in_the_home_population": 3,
         "by_class": {
@@ -650,7 +559,7 @@
         "document": "cowork_voiceleading_axis_design.md",
         "state_at_head": "RULED NOT WIDENED — SETTLED BY RULING, NOT DEFERRED",
         "why": "The delegation was widened on 2026-08-03 from §0/§5.3 to §0/§5.1/§5.3/§8/§9, which moved seven entries in. Three remain outside the named sections: D-398 in §15 and D-397/D-400 in §16, and the 2026-08-03 widening excluded those two sections deliberately. ★ THE USER RULED ON 2026-08-04 (ruling R2, dispatch `cc_instruction_census_delegation_and_commit.md`) THAT THE DELEGATION IS NOT WIDENED TO REACH THEM. D-397 and D-400 ARE §16's ratification asks A7 and A5 — asks put TO the user — and D-398 sits in §15, a tracking list; an ask is not a rule, and forcing either a contract home would misdescribe what it is. The three entries stay `gap` as the ruling intends, and the kind half would exclude both sections at the next run in any case, so a widening would be a wording change that closes nothing. THIS IS A RULING AND NOT A DEFERRAL: the document is not awaiting an act and no later wave owes one here.",
-        "delegation_at_head": "ARCHITECTURE.md:923",
+        "delegation_at_head": "ARCHITECTURE.md:1018",
         "delegation_form_at_head": "named-home-with-sections",
         "entries_in_the_home_population": 13,
         "by_class": {
@@ -679,7 +588,7 @@
         "document": "cowork_layer1_note_model_design.md",
         "state_at_head": "WRITTEN — CLOSED ON THE DELEGATION QUESTION",
         "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 5) and it reaches every section. Three of the four entries are `contract-home`; the fourth (D-518) stays `gap` on the KIND half — its home section is §13, whose own heading ends '(NOT needed to understand the layer)'. That is not a delegation matter and no delegation would move it.",
-        "delegation_at_head": "ARCHITECTURE.md:1257",
+        "delegation_at_head": "ARCHITECTURE.md:1380",
         "delegation_form_at_head": "explicit-delegation-clause",
         "entries_in_the_home_population": 4,
         "by_class": {
@@ -692,7 +601,7 @@
         "document": "cowork_layer2_slicing_design.md",
         "state_at_head": "WRITTEN — CLOSED",
         "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 5). Both entries are `contract-home` as of this wave's classification run.",
-        "delegation_at_head": "ARCHITECTURE.md:1371",
+        "delegation_at_head": "ARCHITECTURE.md:1494",
         "delegation_form_at_head": "explicit-delegation-clause",
         "entries_in_the_home_population": 2,
         "by_class": {
@@ -704,7 +613,7 @@
         "document": "cowork_layer6_grouping_design.md",
         "state_at_head": "WRITTEN — CLOSED ON THE DELEGATION QUESTION",
         "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 6, ruling R5). Eight of the nine entries are `contract-home`; the ninth (D-458) stays `gap` on the KIND half — it is homed in the document's STATUS BANNER. Not a delegation matter.",
-        "delegation_at_head": "ARCHITECTURE.md:1637",
+        "delegation_at_head": "ARCHITECTURE.md:1867",
         "delegation_form_at_head": "explicit-delegation-clause",
         "entries_in_the_home_population": 9,
         "by_class": {
@@ -717,7 +626,7 @@
         "document": "cowork_phrase_boundary_design.md",
         "state_at_head": "WRITTEN — CLOSED ON THE DELEGATION QUESTION",
         "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 5, ruling R4). Eight of the ten entries are `contract-home`; two (D-484, D-485) stay `gap` on the KIND half — the document's opening block and its §11 'Open items'. Not a delegation matter.",
-        "delegation_at_head": "ARCHITECTURE.md:1259",
+        "delegation_at_head": "ARCHITECTURE.md:1382",
         "delegation_form_at_head": "explicit-delegation-clause",
         "entries_in_the_home_population": 10,
         "by_class": {
@@ -749,9 +658,9 @@
     }
   },
   "counted": {
-    "home_population_entries": 278,
-    "home_population_documents": 71,
-    "lost_for_want_of_a_delegation": 126,
+    "home_population_entries": 221,
+    "home_population_documents": 54,
+    "lost_for_want_of_a_delegation": 69,
     "of_which_a_widening_would_move": 4,
     "outstanding_set_documents": 2,
     "write_list_members": 11,

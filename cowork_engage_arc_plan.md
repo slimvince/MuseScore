@@ -128,12 +128,49 @@ truth? — the go/no-go on the whole engagement, before E4 is built.
 > one generative decode over a joint state space, not a re-ranking of legacy candidates. Register
 > entry D-278 carries this scoping.
 
+**★ AND AN ERROR SLICE IS DECOMPOSED BEFORE ANYTHING IS BUILT FOR IT — STRUCTURAL / FITTED /
+CEILING (homed here 2026-08-07 on the user's ruling; decided 2026-06-13, the record states no
+ratifier).**
+MEASURE-BEFORE-BUILD above says that a precision claim is measured before it is built. This says
+what the measurement is OF, and it is the standing method for every error slice: **decompose the
+slice three ways — what a STRUCTURAL lever reaches, what belongs to the FITTED step, and what is a
+genuine CEILING — before anything is built for it.** Then build the structural lever; route the
+fitted share to Stage 5; route the ceiling share to accepted ambiguity, or flag it as a possible
+B-trigger. **Derive, never assert.** *Why:* the lesson had already been paid three times over in
+the session that stated it — three separate investigations each tested a structural lever on a
+different slice and each was falsified for the same reason, while the one probe that decomposed
+its slice first found the bulk of that slice specific and recoverable. Decomposing first is what
+turned a pessimistic reading of the remaining error into an actionable one. It stands BESIDE the
+gate above rather than inside it, and the difference is worth stating: the funnel fixes WHEN a
+build may open, this fixes what must be known about the error class before the go/no-go question
+is even well posed.
+
 **Stage 4 — R9: the `chordanalyzer.cpp` file split (OWED #1), LAST.** "Split once," after the E4 removals.
 
 **Stage 5 — the moratorium lifts (#8): the PRECISION work (#4).** Recover the corrections the fine-grain
 override gave up (bass/spelling/joint-consistency, per the research), wire the calibration maps + θ, the
 remaining calibration items (L1.5 texture, cadence). Everything deliberately gated behind finishing the
 architecture.
+
+**★ AND WHEN THAT PRECISION WORK OPENS, THE TWO AXES TAKE DIFFERENT MEDICINE — AND NEITHER TAKES A
+WIDER SEARCH (homed here 2026-08-07 on the user's ruling; decided 2026-06-20, the record states no
+ratifier). ⚠ LEGACY subject — the two-axis pipeline this was derived on is superseded on both axes by
+the joint estimator; the rule is recorded as the work-programme statement it is, not as a description
+of what runs.**
+The stages above fix the ORDER of work. This fixes what KIND of work each axis gets when the order
+reaches it. **The CHORD axis is hand-buildable:** finish the competition rules that decide between
+competing readings, and dissolve the compensation gates into that competition. **The KEY axis is
+soft-evidence QUALITY plus CALIBRATION, and is not hand-buildable:** raise the precision of the
+evidence fed in — the cadence channel first, because it is the highest-leverage input and feeds
+several layers — then let the joint combination's SOFT integration resolve what remains, with
+calibration and possibly a learned emission for the residual floors. **Neither axis is improved by a
+fancier lattice or a wider search.** *Why:* measured on both sides. On the key side the scoped joint
+search was measured to move a fraction of a percent of stretches and to come out slightly negative
+overall, which is what located the value of the joint combination in its evidence integration rather
+than in its search — the same finding the shelving above records, from its other end. On the chord
+side the residual was re-attributed by measurement and most of it turned out to need a candidate that
+was never surfaced at all, which is a rules problem and not a re-weighting one. The structural and
+cross-cutting findings that sat beside this verdict fed the architecture review rather than this plan.
 
 ## Standing habits (throughout)
 Surface a surprise as a STOP before building around it (#13); investigate rather than assume when facts are

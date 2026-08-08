@@ -1,8 +1,8 @@
 {
  "mode": "living",
  "baseline_commit": "cb246a7580",
- "index_item_count": 343,
- "detail_file_count": 343,
+ "index_item_count": 348,
+ "detail_file_count": 348,
  "baseline_item_count": 200,
  "post_baseline_ids": [
   "OI-201",
@@ -147,7 +147,12 @@
   "OI-340",
   "OI-341",
   "OI-342",
-  "OI-343"
+  "OI-343",
+  "OI-344",
+  "OI-345",
+  "OI-346",
+  "OI-347",
+  "OI-348"
  ],
  "bijection_ok": true,
  "index_duplicate_ids": [],
@@ -3579,6 +3584,56 @@
   },
   {
    "id": "OI-343",
+   "post_baseline": true,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": null,
+   "ok": true
+  },
+  {
+   "id": "OI-344",
+   "post_baseline": true,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": null,
+   "ok": true
+  },
+  {
+   "id": "OI-345",
+   "post_baseline": true,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": null,
+   "ok": true
+  },
+  {
+   "id": "OI-346",
+   "post_baseline": true,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": null,
+   "ok": true
+  },
+  {
+   "id": "OI-347",
+   "post_baseline": true,
+   "index_present": true,
+   "detail_present": true,
+   "status_discipline_ok": true,
+   "status_violations": [],
+   "baseline_verbatim_ok": null,
+   "ok": true
+  },
+  {
+   "id": "OI-348",
    "post_baseline": true,
    "index_present": true,
    "detail_present": true,

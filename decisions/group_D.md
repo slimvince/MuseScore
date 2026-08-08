@@ -16,7 +16,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1263`
+**Home.** `ARCHITECTURE.md:1386`
 
 **Provenance.** ARCHITECTURE.md:1162-1173 (Layer 1 - Built+Live)
 
@@ -30,7 +30,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1263`
+**Home.** `ARCHITECTURE.md:1386`
 
 **Provenance.** ARCHITECTURE.md:1173; the behaviour change it caused is the ratified trade-off at :1026-1032
 
@@ -44,7 +44,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1263`
+**Home.** `ARCHITECTURE.md:1386`
 
 **Provenance.** ARCHITECTURE.md:1173; the standing no-information-loss principle is CLAUDE.md #12
 
@@ -58,7 +58,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1263`
+**Home.** `ARCHITECTURE.md:1386`
 
 **Provenance.** ARCHITECTURE.md:1173 records it as 'Purely additive' under the OI-180 dual-path sanction
 
@@ -240,9 +240,16 @@
 
 ### D-606 — The binding metric for the modulation detector is modulation CORRECTNESS — explicitly not the agreement percentage, which the change under test can game
 
-> **The binding metric is modulation
->   CORRECTNESS (track-rate + the de-masked partial split), NOT the gameable rn_agree** — a span we commit
->   must be a real DCML modulation (precision) without missing the real ones (recall).
+> - **THE BINDING METRIC FOR A MODULATION DETECTOR IS MODULATION CORRECTNESS — explicitly NOT the
+>   agreement percentage** (2026-06-14; the record states no ratifier). A change that decides where
+>   the music changes key is judged on whether the key changes it commits are real ones (precision)
+>   and whether it finds the real ones (recall) — the track rate together with the de-masked partial
+>   split — and never on the overall agreement percentage. *Why:* stated with the decision — the
+>   agreement percentage is **gameable by the change under test**, so it cannot be that change's own
+>   bar. It is the same defect the abstain-aware convention above exists against on the root axis: an
+>   agreement percentage a behaviour change can move without analysing anything better is not a
+>   measurement of that change. The honesty measurement named with it is the de-masking diagnostic,
+>   which exposes a committed home-key label being credited against a ground-truth local key.
 
 **In plain words.** A detector that decides where the music changes key is judged on whether the key changes it commits are real ones and whether it finds the real ones — not on the overall agreement percentage, which a detector can raise without detecting anything better.
 
@@ -252,19 +259,25 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `docs/stage4d_local_modulation_design.md:78-80`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `CLAUDE.md:718-727`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Home section.** **“§5”** — `## §5 — Staged build (measure-first, per discipline)` (heading at line 74). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** `docs/stage4d_local_modulation_design.md`, the Stage-4d local-modulation design, DRAFT and ratification-gated, 2026-06-14. Read in full by READ WAVE 5, 2026-08-04. Recorded in the staged-build section, which also names the de-masking diagnostic as the honesty measurement — it exposes a committed home-key label credited against a ground-truth local key. ⚠ The detector is on the LEGACY key path and the staged build described was never carried past its own gate on the arm that now runs; the rule about which metric may bind is not legacy-scoped. The record states no ratifier.
+**Provenance.** `docs/stage4d_local_modulation_design.md`, the Stage-4d local-modulation design, DRAFT and ratification-gated, 2026-06-14. Read in full by READ WAVE 5, 2026-08-04. Recorded in the staged-build section, which also names the de-masking diagnostic as the honesty measurement — it exposes a committed home-key label credited against a ground-truth local key. ⚠ The detector is on the LEGACY key path and the staged build described was never carried past its own gate on the arm that now runs; the rule about which metric may bind is not legacy-scoped. The record states no ratifier. ★ HOMED 2026-08-07 (CC, the owner-rulings homing wave, executing the user's ruling of 2026-08-07 recorded at `cowork_owner_rulings_2026_08_07.md`). Ruled a GRADING CONVENTION — the binding metric for a modulation detector is modulation correctness — and homed in `CLAUDE.md` gate block (A) beside D-604, where the abstain-aware convention it cites already lives; the home text cites that convention rather than restating it (#6). Written in the gate block's own voice and with its defense. The D-645 licence covers `CLAUDE.md` for homing acts. The edit is ADD-ONLY. FORMER HOME, PRESERVED (#12): `docs/stage4d_local_modulation_design.md:78-80`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 74, "section": "## §5 — Staged build (measure-first, per discipline)", "label": "“§5”", "delegated": null, "delegation": "named in no user-ratified surface", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "**The binding metric is modulation
+  CORRECTNESS (track-rate + the de-masked partial split), NOT the gameable rn_agree** — a span we commit
+  must be a real DCML modulation (precision) without missing the real ones (recall)." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance — the wave and its dispatch — is recorded in this field and NOT in the specification text, on the ruling record's own instruction: a file name written into a governing document reads as a new naming and moves a measured population (the OI-330 / OI-328 lesson).
 
 ### D-625 — Spelling presence is tested with the validity predicate, never with a non-negative test — the flat side of the line of fifths is negative and a non-negative guard silently drops it
 
-> **Validity & mapping (verified at source, 2026-06-26).** Line-of-fifths position = `tpc − TPC_C` with `TPC_C = 14`
-> (+1 tpc = +1 fifth; `pitchspelling.h`). Sharp/flat sense = the sign of that offset. **The primitive must test presence
-> with `tpcIsValid()` (= `−8 ≤ tpc ≤ 40`), never `tpc >= 0` / `tpc != −1`:** the flat side of the line of fifths is
-> **negative** (`TPC_F_BB = −1`, down to `TPC_F_BBB = −8`), so a `>= 0` guard silently drops every double-flat-ish
-> spelling — and `−1` is a *legitimate* spelling (Fbb), not "absent."
+> - **Spelling presence is tested with the VALIDITY PREDICATE, never with a non-negative test.** The
+>   shared line-of-fifths primitive the spelling-pin above reads — the one interpreter, not a
+>   per-layer copy — represents a spelling as a signed position on the line of fifths, and its
+>   presence test is `tpcIsValid()`, **never** `tpc >= 0` and never `tpc != -1`. *Why:* established
+>   at the source rather than asserted — the flat side of the line of fifths is **negative** (down to
+>   the triple-flat spellings), so a non-negative guard silently discards every heavily flattened
+>   spelling; and the value a `!= -1` guard treats as absent is itself a **legitimate** spelling. The
+>   honest bound is recorded with the rule: the validity test cannot tell a real flattest spelling
+>   from a default-initialised field, and what actually keeps an absent value out is the build-path
+>   invariant, not this predicate. §5.14, which specifies the enharmonic disambiguation this
+>   primitive serves, points here and does not restate it (#6).
 
 **In plain words.** How a note is spelt is stored as a position on the line of fifths, and that position is negative for the flattest spellings. Code that checks whether a spelling is present by testing for a non-negative number therefore throws away every heavily-flattened spelling — including one that happens to share its number with the field's empty value. The validity test is the correct check.
 
@@ -272,9 +285,11 @@
 
 **Status.** LIVE · decided 2026-06-26 · ratifier not stated
 
-**Home.** `cowork_tpc_capability_design.md:39-43`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:1775-1785`
 
-**Home section.** **§1** — `## 1. The shared tpc-interpretation primitive (the capability)` (heading at line 20). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** `cowork_tpc_capability_design.md` §1, the shared spelling primitive's detail design, BUILT as a capability with no production consumer. Read in full by READ WAVE 6, 2026-08-04. The same section records that the chord scorer's existing inline spelling reads carry the wrong guard and that correcting them rides the fold into the primitive — an open unification question the document flags rather than closes. The record states no ratifier.
+**Provenance.** `cowork_tpc_capability_design.md` §1, the shared spelling primitive's detail design, BUILT as a capability with no production consumer. Read in full by READ WAVE 6, 2026-08-04. The same section records that the chord scorer's existing inline spelling reads carry the wrong guard and that correcting them rides the fold into the primitive — an open unification question the document flags rather than closes. The record states no ratifier. ★ HOMED 2026-08-07 (CC, the owner-rulings homing wave, executing the user's ruling of 2026-08-07 recorded at `cowork_owner_rulings_2026_08_07.md`). The ruling routes it to THE SECTION SPECIFYING THE SHARED LINE-OF-FIFTHS PRIMITIVE — the Layer-4 section per the record — with §5.14 pointing, and it carries a STOP: STOP IF THE PRIMITIVE IS SPECIFIED ELSEWHERE. ★ THE STOP WAS DISCHARGED BEFORE WRITING AND DID NOT FIRE: `ARCHITECTURE.md` names the primitive in exactly three places and specifies it in none — §3.3's terminology note DEFINES the term Layer 1.5 and lists the primitive among its two views; the Layer-4 section names it as the interpreter the symmetric-root spelling-pin reads through and states the one-interpreter rule about it; and Layer 1's own derived-views list does not mention it at all. Written into the Layer-4 section in that section's own voice, with its defense and with the honest bound the record states (the validity test cannot tell a real flattest spelling from a default-initialised field). §5.14 gains a POINTER, never a copy (#6). ★ AN ADJACENT FACT THE STOP SURFACED IS ROWED AND LEFT, not acted on: the sibling Layer-1.5 primitive is sited at Layer 1 with its reason stated in full, so the two Layer-1.5 primitives sit in different sections — `OPEN_ITEMS.md` OI-347. FORMER HOME, PRESERVED (#12): `cowork_tpc_capability_design.md:39-43`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 20, "section": "## 1. The shared tpc-interpretation primitive (the capability)", "label": "§1", "delegated": null, "delegation": "named in no user-ratified surface", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "**Validity & mapping (verified at source, 2026-06-26).** Line-of-fifths position = `tpc − TPC_C` with `TPC_C = 14`
+(+1 tpc = +1 fifth; `pitchspelling.h`). Sharp/flat sense = the sign of that offset. **The primitive must test presence
+with `tpcIsValid()` (= `−8 ≤ tpc ≤ 40`), never `tpc >= 0` / `tpc != −1`:** the flat side of the line of fifths is
+**negative** (`TPC_F_BB = −1`, down to `TPC_F_BBB = −8`), so a `>= 0` guard silently drops every double-flat-ish
+spelling — and `−1` is a *legitimate* spelling (Fbb), not "absent."" The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance — the wave and its dispatch — is recorded in this field and NOT in the specification text, on the ruling record's own instruction: a file name written into a governing document reads as a new naming and moves a measured population (the OI-330 / OI-328 lesson).
 

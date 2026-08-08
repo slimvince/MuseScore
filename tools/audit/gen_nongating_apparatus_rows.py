@@ -108,6 +108,22 @@ RETIRED_VERDICTS = {
                "RESOLVED 2026-08-04 - the user ruled the question the row put (D-642), on the "
                "basis the row itself named. The verdict was correct while it stood and is kept "
                "whole (#12); it is retired because the row closed, never because it was wrong."),
+    "OI-331": (GATES, "the criterion - the row's subject bears on the analysis's inputs",
+               "A LIVE, user-ratified register entry names a convergence proxy the build MEASURED "
+               "FALSE and dropped, and the entry carries no annotation. The subject is a binding "
+               "contract rule about HOW MUCH MUSIC THE ANALYSIS READS before it commits to a key "
+               "-- the analysis's own input scope, which is the strongest form D-438's test has. "
+               "A session applying the rule as written would build a stop condition already "
+               "measured not to work. Nothing about it is apparatus: what is owed is not a "
+               "pointer, an anchor or a filing choice but the correction of a rule, which "
+               "D-438's line inside the documentation rows puts on the gating side in terms.",
+               "RESOLVED 2026-08-07 (ruling R3) - the user struck the proxy clause and its worked "
+               "example from the signed contract document, which now states the current behaviour "
+               "in its own voice and records the struck clause as tried and closed with D-622 "
+               "named as superseding it; D-261's headline rule, its home and its ratified status "
+               "are unchanged and its verbatim is re-taken from the edited home with the former "
+               "verbatim preserved (#12). The verdict was correct while it stood and is kept whole; "
+               "it is retired because the row closed, never because it was wrong."),
     "OI-287": (NON_GATING, "user",
                "Where the ratification surfaces and the dispatches are filed, and how cited "
                "paths are re-aimed when they move. Repository organization; the files are "
@@ -160,6 +176,32 @@ RETIRED_VERDICTS = {
                "plumbing commit bypasses hooks. The gating verdict is what it was: the instruments "
                "are now committed, which is the reproducibility exposure discharged rather than "
                "re-classified."),
+}
+
+# Verdicts a USER RULING has RE-CLASSED. Distinct from RETIRED_VERDICTS in both directions: there
+# the row CLOSED and left the population, here the row stays open and stays a first-cut candidate
+# while the answer changes. The live verdict is in V; the verdict that stood before it is kept whole
+# here (#12) with the ruling that replaced it, because a verdict overwritten in place is a reasoning
+# the next session re-derives -- the same ground the retired table gives for itself.
+SUPERSEDED_VERDICTS = {
+    "OI-332": (NON_GATING, "user",
+               "Three documents misdescribe their OWN state: a 'no code' status banner over a "
+               "design whose two operations are built, two stale as-built code line anchors, and a "
+               "design carrying no note that the approach it builds toward was later falsified. "
+               "D-438's line inside the documentation rows names a BANNER and an ANCHOR as "
+               "apparatus in terms, and the third item is a missing cross-reference between two "
+               "documents. WHAT IS OWED decides it, and what is owed here is three pointers -- not "
+               "a correction to any statement about the analysis or its build state: every "
+               "substantive claim these documents make was checked and holds, and what survives "
+               "the falsified approach is registered separately as D-616 and D-617. It bears on no "
+               "analysis, no input and no measurement tool, and it carries no establishment "
+               "obligation, so the starred clause does not reach it either.",
+               "RE-CLASSED GATES 2026-08-07 by the user's ruling (dispatch "
+               "`cc_instruction_five_rulings.md` §0a, R5), on the ground [[OI-336]] recorded: this "
+               "verdict was cut from the FIRST HALF of D-438's line and the same sentence continues "
+               "past it. The verdict was not wrong about what it read -- a banner and an anchor ARE "
+               "named as apparatus -- and it is kept whole for that reason; what it did not read is "
+               "the clause that decides two of the three documents."),
 }
 
 V = {
@@ -486,31 +528,30 @@ V = {
                "tool, and it carries no establishment obligation, so the starred clause that "
                "makes those gate whatever their subject does not reach it either."),
     # ---- rowed 2026-08-04 by READ WAVE 6 -------------------------------------------------
-    # Two rows, and they fall on opposite sides -- which is the criterion doing its job rather
+    # Two rows, and they fell on opposite sides -- which was the criterion doing its job rather
     # than a close call. Both verdicts are made against the row's SUBJECT, never its remedy.
+    # OI-331's verdict moved to RETIRED_VERDICTS on 2026-08-07, when the user ruled the row (R3)
+    # and it closed. OI-332's was RE-CLASSED on the same day (R5) and its former verdict is kept
+    # at SUPERSEDED_VERDICTS -- the two tables are different acts and are deliberately separate.
     # ---------------------------------------------------------------------- GATES
-    "OI-331": (GATES, "the criterion - the row's subject bears on the analysis's inputs",
-               "A LIVE, user-ratified register entry names a convergence proxy the build MEASURED "
-               "FALSE and dropped, and the entry carries no annotation. The subject is a binding "
-               "contract rule about HOW MUCH MUSIC THE ANALYSIS READS before it commits to a key "
-               "-- the analysis's own input scope, which is the strongest form D-438's test has. "
-               "A session applying the rule as written would build a stop condition already "
-               "measured not to work. Nothing about it is apparatus: what is owed is not a "
-               "pointer, an anchor or a filing choice but the correction of a rule, which "
-               "D-438's line inside the documentation rows puts on the gating side in terms."),
-    # ---------------------------------------------------------------------- NON-GATING
-    "OI-332": (NON_GATING, "user",
-               "Three documents misdescribe their OWN state: a 'no code' status banner over a "
-               "design whose two operations are built, two stale as-built code line anchors, and a "
-               "design carrying no note that the approach it builds toward was later falsified. "
-               "D-438's line inside the documentation rows names a BANNER and an ANCHOR as "
-               "apparatus in terms, and the third item is a missing cross-reference between two "
-               "documents. WHAT IS OWED decides it, and what is owed here is three pointers -- not "
-               "a correction to any statement about the analysis or its build state: every "
-               "substantive claim these documents make was checked and holds, and what survives "
-               "the falsified approach is registered separately as D-616 and D-617. It bears on no "
-               "analysis, no input and no measurement tool, and it carries no establishment "
-               "obligation, so the starred clause does not reach it either."),
+    "OI-332": (GATES, "a statement about the analysis's build state",
+               "★ RE-CLASSED 2026-08-07 by the user's ruling (dispatch "
+               "`cc_instruction_five_rulings.md` §0a, R5); the former NON-GATING verdict is "
+               "preserved whole at `superseded_verdicts` (#12), and the row that found the defect "
+               "is [[OI-336]], which closes on this act. The row cut its own class from the FIRST "
+               "HALF of D-438's line -- the half naming a pointer, an anchor, a label and a banner "
+               "as apparatus. THE SAME SENTENCE CONTINUES: 'a correction to a statement about the "
+               "analysis OR ITS BUILD STATE, or the completion of a specification, GATES' -- and "
+               "that half reaches two of the three documents. `cowork_layer1_extend_design.md` "
+               "carries a 'Read-only design -- no code' banner over two operations the row itself "
+               "verified BUILT at the header: a banner asserting that a design has no code, over "
+               "code that exists, IS a statement about the build state, and the fact that a banner "
+               "is the vehicle does not change what it states. `docs/stage4c_cadence_key_design.md` "
+               "carries no note that the approach it builds toward was falsified (D-290), which is "
+               "a statement about the analysis. The third item, a drifted code anchor, is apparatus "
+               "on both halves and carries the row neither way. The row takes the STRONGEST of its "
+               "instances, as OI-334's verdict does. Recorded against the row's SUBJECT, never its "
+               "remedy."),
     # ---- rowed 2026-08-04 by the finish-line item-1b wave ---------------------------------
     # OI-340's verdict moved to RETIRED_VERDICTS on 2026-08-04 when the user ruled the question.
     # ---------------------------------------------------------------------- NON-GATING
@@ -535,6 +576,43 @@ V = {
     # answer on the criterion (an instrument a measurement depends on, and independently an
     # establishment obligation). The same is true of [[OI-328]] and [[OI-330]]. Recorded here
     # because the tool STOPPED on a verdict for a non-candidate, which is how it was confirmed.
+    # ---- rowed 2026-08-07 by the owner-rulings homing wave --------------------------- NON-GATING
+    "OI-346": (NON_GATING, "user",
+               "The empirically-unvalidated mark is specified but not applied: the Jazz preset "
+               "constants and the ground-truth-less idioms carry no mark and name no validating "
+               "corpus. WHAT IS OWED decides it, and what is owed is a MARK on a value together "
+               "with the name of the corpus that would validate it -- a LABEL, which D-438's line "
+               "names on the apparatus side in that word. It states nothing false about the "
+               "analysis: no constant moves, no measurement moves, and the fact the mark would "
+               "declare -- that those values rest on no gate-grade ground truth -- is already "
+               "stated in the specification, in the rule this wave homed at ARCHITECTURE.md 6 and "
+               "in that rule's own sentence that the mark is NOT applied at HEAD. The row's own "
+               "text settles its subject, so the default does not reach it. "
+               "THE ESTABLISHMENT QUESTION (#19) WAS PUT RATHER THAN ASSUMED, and it is the one "
+               "clause that would flip this: an establishment obligation always gates whatever its "
+               "subject. This row is NOT one. Establishing the jazz values is the separate "
+               "obligation [[OI-7]] carries -- acquire a jazz ground-truth corpus or de-scope the "
+               "claims -- and that row GATES the Stage-3 entry gate in its own right. This row is "
+               "the honest DECLARATION of that non-establishment, which is the opposite act: it "
+               "asks for the absence of evidence to be visible where a reader meets the values, "
+               "not for the evidence to be produced. Recorded against the row's SUBJECT, never its "
+               "remedy."),
+    "OI-347": (NON_GATING, "user",
+               "The two Layer-1.5 primitives are sited in different sections of the canonical "
+               "architecture document, and only one of the two sitings states its reason. WHAT IS "
+               "OWED decides it, and what is owed is a FILING DECISION and a SECTION BOUNDARY -- "
+               "where a specification paragraph should sit -- which D-438's line names on the "
+               "apparatus side in those words. Nothing false about the analysis is stated by the "
+               "present arrangement: the rule at issue is PUBLISHED, once, at the Layer-4 section, "
+               "with 5.14 pointing at it, and this wave's own STOP check established that no "
+               "section specifies the primitive twice, so there is no contradiction to correct and "
+               "no specification left incomplete by it. It bears on no analysis, no analysis input "
+               "and no instrument any measurement depends on -- the primitive's behaviour is "
+               "untouched either way. It carries no establishment obligation (#19): nothing here is "
+               "an instrument trusted without being established. Recorded against the row's "
+               "SUBJECT, never its remedy -- and the remedy is deliberately open, since re-siting "
+               "the spelling primitive and completing Layer 1's derived-views list are both "
+               "available and neither is proposed."),
 }
 
 # The dispatch's assumption A3, recorded so the difference is reported rather than reconciled.
@@ -593,6 +671,20 @@ def build():
         raise SystemExit("STOP: authored verdicts for rows that are not open first-cut "
                          "candidates (the register moved under the table): "
                          + ", ".join(sorted(stray)))
+    # A SUPERSEDED verdict must name a row that still carries a LIVE verdict here, and that live
+    # verdict must actually differ from it -- otherwise the table is either a graveyard for rows
+    # that left (which is what RETIRED_VERDICTS is for) or a duplicate of a verdict nothing
+    # replaced, which is the drift both stops above exist to prevent.
+    orphan_superseded = [i for i in SUPERSEDED_VERDICTS if i not in V]
+    if orphan_superseded:
+        raise SystemExit("STOP: superseded verdicts for rows with no live verdict here: "
+                         + ", ".join(sorted(orphan_superseded))
+                         + ". A row that left the population belongs in RETIRED_VERDICTS.")
+    unchanged_superseded = [i for i, s in SUPERSEDED_VERDICTS.items() if V[i][0] == s[0]]
+    if unchanged_superseded:
+        raise SystemExit("STOP: superseded verdict(s) whose live verdict carries the same class: "
+                         + ", ".join(sorted(unchanged_superseded))
+                         + ". Nothing was re-classed, so nothing was superseded.")
 
     items = []
     for rid in cut_ids:
@@ -675,6 +767,22 @@ def build():
             },
         },
         "items": items,
+        "superseded_verdicts": {
+            "what_this_is": (
+                "Verdicts a USER RULING has RE-CLASSED. The row is still open and still a first-cut "
+                "candidate, so its live verdict is in the items above; what is kept here is the "
+                "verdict that stood before it, whole, with the ruling that replaced it (#12). "
+                "Distinct from `retired_verdicts` in both directions: there the row CLOSED and left "
+                "the population, here the row stayed and the answer changed. Two STOPs guard it - a "
+                "superseded verdict naming a row with no live verdict, and a superseded verdict "
+                "whose live verdict carries the same class, each stop the tool."
+            ),
+            "entries": {
+                rid: {"former_verdict": v, "former_class_basis_or_ground": g,
+                      "former_reason": reason, "re_classed": ruling}
+                for rid, (v, g, reason, ruling) in sorted(SUPERSEDED_VERDICTS.items())
+            },
+        },
         "retired_verdicts": {
             "what_this_is": (
                 "Verdicts for rows that have since CLOSED. The tool stops on a live verdict "

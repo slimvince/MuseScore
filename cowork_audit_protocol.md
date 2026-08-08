@@ -480,3 +480,34 @@ misdescribing the code.
 **What it does not authorize.** No fix to the analysis, no design, no inference change, and no
 re-classification of any entry's home class. It says what the owning specification owes for one shape
 of entry, and nothing else.
+
+### A homing dispatch may edit three further files, and the license is scoped to homing acts alone
+
+**Ruled by the user, 2026-08-07** (dispatch `cc_instruction_five_rulings.md`, §0a R1). **The edit
+surface a HOMING dispatch may touch is widened to `docs/scoring_model.md`, `CLAUDE.md` and
+`BUILD_AND_TEST.md`, SCOPED TO HOMING ACTS ONLY** — writing a register entry's decision into its
+owning specification, in that section's own voice, with its defense, and with the entry's former
+home, its former class and its former verbatim preserved (#12). **The license does not extend to any
+other edit of those three files.**
+
+**What the license is a license FOR.** Criterion C1 — D-231's phase-1 obligation that every recorded
+decision is written into its owning specification — names an owning specification per entry, and for
+part of finish-line item 1 that specification is a section of one of these three files. Until this
+ruling a session could identify the owed act and not perform it, because the file lay outside the
+standing authorization, which names `src/composing/`, `notationaccessibility.cpp` and
+`ARCHITECTURE.md` and no other document. The widening removes that obstruction and removes nothing
+else: a homing act writes a decision the register already holds into the section that owns its
+subject, and every other edit of these files remains outside what a dispatch may take.
+
+**The context the ruling was taken on, and the half it deliberately does not reach.** The blocker for
+item 1's re-home class is partitioned at `tools/audit/decisions/item1_rehome_blocker.json`, derived
+per entry from each row's own recorded reason. **Edit-surface licensing is the MINORITY** of that
+class; the majority record an owner the record itself calls not determinate, and a widening moves
+none of them. **That half is untouched by this ruling and returns to the user per entry.** No
+population, identifier or count is restated here (**D-431**) — the artifact carries them.
+
+**What it does not authorize.** No fix to the analysis, no design, no inference change, no
+re-classification of any entry's home class, and no edit of these three files for any purpose other
+than a homing act. **The dispatch that records the license performs no homing under it**: the ruling
+and its first exercise are deliberately separate acts, so that what the license permits is on the
+record before anything is written under it.

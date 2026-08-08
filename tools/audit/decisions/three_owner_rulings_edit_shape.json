@@ -1,0 +1,70 @@
+{
+ "purpose": "The measured SHAPE of the two homing edits of 2026-08-07 (rulings R1 and R3): how many lines each inserted, and whether any existing line was deleted or replaced. NOT a judgment about the text written, and not an authorization for any fix, design or inference change.",
+ "generated_by": "tools/audit/decisions/gen_homing_edit_shape.py",
+ "generated_for": "cc_instruction_three_owner_rulings.md (Tasks 1 and 3, the ADD-ONLY requirement each states in its own words)",
+ "the_before_side": {
+  "commit": "bd3a608fec",
+  "read_as": "a git OBJECT by explicit hash — the one shell form D-253 admits, because a content-addressed read errors loudly rather than returning silently-wrong content",
+  "why_this_commit": "It is the last commit the session's own start-of-session report recorded, and neither file appeared among the modified paths in that report — so what is measured is this wave's homing edit and nothing else.",
+  "and_the_result_corroborates_that_rather_than_resting_on_it": "Each file comes back with exactly ONE changed region. Had either carried an earlier uncommitted change, the diff would report a second region — so the shape of the answer is itself evidence for the premise the answer was read under, and the reader does not have to take the clean-at-HEAD claim on trust."
+ },
+ "what_add_only_means_here": "Zero lines deleted and zero existing lines replaced. A pure insertion: every line that was in the file before is still there, unchanged, in the same order.",
+ "★_this_is_a_POINT_IN_TIME_RECORD": "It compares the worktree against a NAMED COMMIT, so it stops agreeing the moment this work is committed. Under the user's ruling R4 of 2026-08-04 that makes it a recorder rather than a guard, and it deliberately carries no re-derivation mode — which is also what keeps it out of the derived guard-candidate population instead of sitting there unclassified.",
+ "counted": {
+  "files": 2,
+  "files_that_are_add_only": 2,
+  "total_lines_inserted": 33,
+  "total_lines_deleted": 0,
+  "total_existing_lines_replaced": 0
+ },
+ "files": [
+  {
+   "file": "BUILD_AND_TEST.md",
+   "what_was_written": "Ruling R1 — D-281's schema floor, written into §2, the Corpus Regression Check.",
+   "lines_at_the_before_commit": 496,
+   "lines_in_the_worktree": 512,
+   "changed_regions": 1,
+   "lines_inserted": 16,
+   "lines_deleted": 0,
+   "existing_lines_replaced": 0,
+   "add_only": true,
+   "regions": [
+    {
+     "operation": "insert",
+     "at_the_before_commit": [
+      323,
+      322
+     ],
+     "in_the_worktree": [
+      323,
+      338
+     ]
+    }
+   ]
+  },
+  {
+   "file": "cowork_engage_arc_plan.md",
+   "what_was_written": "Ruling R3 — D-539's decomposition method, written beside the MEASURE-BEFORE-BUILD gate.",
+   "lines_at_the_before_commit": 148,
+   "lines_in_the_worktree": 165,
+   "changed_regions": 1,
+   "lines_inserted": 17,
+   "lines_deleted": 0,
+   "existing_lines_replaced": 0,
+   "add_only": true,
+   "regions": [
+    {
+     "operation": "insert",
+     "at_the_before_commit": [
+      131,
+      130
+     ],
+     "in_the_worktree": [
+      131,
+      147
+     ]
+    }
+   ]
+  }
+ ]
+}

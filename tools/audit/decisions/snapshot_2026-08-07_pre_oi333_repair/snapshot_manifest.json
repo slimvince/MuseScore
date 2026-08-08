@@ -1,0 +1,21 @@
+{
+ "purpose": "The OUTGOING disposition layer, snapshotted BEFORE the OI-333 repair regenerated it (the O-12 pattern, principle #16). It is the last successful derivation of that layer and the diff base ruling R4 requires.",
+ "taken_by": "CC, 2026-08-07, dispatch cc_instruction_five_rulings.md Task 5.2 (ruling R4)",
+ "head_commit_at_snapshot": "bd3a608fecf82c446f959432b13e0a5944093cd2",
+ "why_it_is_taken": "The repair escapes six invalid register patterns, which changes what the matchers match — a measured surface. R4 requires the regenerated layer to be diffed against this snapshot and every moved cluster explained, and a diff needs a base that cannot move under it.",
+ "what_is_here": "The three emitted files of the disposition layer, byte-identical to the copies this wave found on disk.",
+ "files": {
+  "cluster_dispositions.json": {
+   "sha256": "e151b8ef768e3d27d184b4f3892148978edbd52dbeeb113b0883c9178823df66",
+   "bytes": 5077129
+  },
+  "cluster_dispositions.csv": {
+   "sha256": "68e3a8a62f3691542a17f2fad744d907e8b91807442f8fd3ce9217846daa0ed1",
+   "bytes": 1281577
+  },
+  "disposition_manifest.json": {
+   "sha256": "2d7d14da87acf9b6a8eeceb901c4ba66d0f468221e0107ea91ca5e8f611c3a68",
+   "bytes": 13531
+  }
+ }
+}

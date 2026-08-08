@@ -18,7 +18,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:493-495`
+**Home.** `ARCHITECTURE.md:571-573`
 
 **Provenance.** ARCHITECTURE.md:433-436 states the §2 principles are 'hard constraints, not guidelines'; restated at §2.4 :435-438
 
@@ -33,7 +33,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:536-537`
+**Home.** `ARCHITECTURE.md:631-632`
 
 **Provenance.** ARCHITECTURE.md:481-485; mechanically guarded for the joint module by D-017
 
@@ -47,7 +47,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1169`
+**Home.** `ARCHITECTURE.md:1264`
 
 **Provenance.** ARCHITECTURE.md:1079-1137, checklist at :1424-1431
 
@@ -63,7 +63,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:589-591`
+**Home.** `ARCHITECTURE.md:684-686`
 
 **Provenance.** ARCHITECTURE.md:534-567; the standing project-wide form is CLAUDE.md #6 (total unification)
 
@@ -78,7 +78,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:580-582`
+**Home.** `ARCHITECTURE.md:675-677`
 
 **Provenance.** ARCHITECTURE.md:525-532
 
@@ -93,7 +93,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:511-512`
+**Home.** `ARCHITECTURE.md:589-590`
 
 **Provenance.** ARCHITECTURE.md:456-479; the substitution points are listed at §14.1
 
@@ -108,7 +108,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:649-650`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `ARCHITECTURE.md:744-745`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** ARCHITECTURE.md:569-597
 
@@ -122,7 +122,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1835`
+**Home.** `ARCHITECTURE.md:2065`
 
 **Provenance.** ARCHITECTURE.md:1595-1607, restated at :2967-2978
 
@@ -136,7 +136,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1669`
+**Home.** `ARCHITECTURE.md:1899`
 
 **Provenance.** ARCHITECTURE.md:1439-1447
 
@@ -150,7 +150,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:547`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `ARCHITECTURE.md:642`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** ARCHITECTURE.md:492-502; restated in CLAUDE.md Conventions
 
@@ -165,7 +165,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:731-732`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `ARCHITECTURE.md:826-827`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** ARCHITECTURE.md:676-682
 
@@ -181,7 +181,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:574`
+**Home.** `ARCHITECTURE.md:669`
 
 **Provenance.** ARCHITECTURE.md:519-523 (§2.8). No date or ratifier stated. This is the GENERAL form of the relationship to existing MuseScore code; the two scoped forms are D-072 (the analysis library depends on no engraving type) and D-073 (shared logic has one implementation). What none of the three states is which MuseScore interfaces our bridge code may call - see OPEN_ITEMS OI-241.
 
@@ -201,7 +201,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1217`
+**Home.** `ARCHITECTURE.md:1340`
 
 **Provenance.** ARCHITECTURE.md:1129-1140 (§3.3, the bridge pattern), with the enforcement statement at :955 (D-072) - any code that would invert the dependency order must be moved to the bridge layer. The bridge file inventory at :977-985 is the as-built list. No date or ratifier stated.
 
@@ -228,7 +228,7 @@
 
 **Status.** LIVE · decided 2026-08-02 · ratified by user
 
-**Home.** `ARCHITECTURE.md:1176-1189`
+**Home.** `ARCHITECTURE.md:1271-1284`
 
 **Provenance.** User ruling 2026-08-02 at the OI-241 adjudication (all recommendations adopted); written into ARCHITECTURE.md §3.3 in the same commit (the register's same-commit rule, D-230). open_items/OI-241.md records the gap this closes.
 
@@ -246,7 +246,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:676-678`
+**Home.** `ARCHITECTURE.md:771-773`
 
 **Provenance.** ARCHITECTURE.md:623-625 (Rule 14) and :649 (the one-run-one-result statement) ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -264,7 +264,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:1190-1192`
+**Home.** `ARCHITECTURE.md:1285-1287`
 
 **Provenance.** Recorded in `cowork_handoff_archive.md` (the 2026-06-14 Stage-4c block) as a standing lesson. Bears directly on D-229, the general MuseScore-dependency rule the user adopted 2026-08-02: this is the EDIT-versus-READ half, stated a month and a half earlier and consistent with it. D-229 adds what the bridge may read (the score model through the bridge pattern, never layout-derived state) and when an edit to MuseScore's own code is admissible. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written as clause 4 of the MuseScore-Dependency Rule in `ARCHITECTURE.md` §3.3, beside D-229 — the home this row's own text named. Former home preserved (#12): `cowork_handoff_archive.md:3732`, the 2026-06-14 Stage-4c block.
 
@@ -280,9 +280,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_engage_arc_plan.md:131`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_engage_arc_plan.md:148`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **“The stages”** — `## The stages (in principle order)` (heading at line 19). A delegation at CLAUDE.md:177 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
+**Home section.** **“The stages”** — `## The stages (in principle order)` (heading at line 19). A delegation at CLAUDE.md:215 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md` (session 22i, the Stage-5 planning checkpoint) as a ruling read off the ratified retirement map. It is load-bearing now beyond its original subject: [[OI-205]] half (b) cites it as “the ratified Stage-3.5 file-split lesson (restructure ONCE, after the boundaries stabilize)” to time the `ARCHITECTURE.md` restructure. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOME MOVED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]) — NO specification text was written, because the rule already stands verbatim in a user-ratified document that owns the concern: `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) is 'the standing reference for the order of work', and its Stage 4 states the split is last and why. Former home preserved (#12): `STATUS_ARCHIVE.md:166`, session 22i. The arc plan is NOT a contract home (it is a plan, not a contract for a layer — the phase-1i criterion), so the classification stays 'gap'; what changes is that the decision is no longer recorded ONLY on a tracking surface. D-401 restates the same sequencing at the 2026-08-02 structural audit; the two are consistent and neither supersedes the other. ★ RESTATED 2026-08-03 (user ruling on `OPEN_ITEMS.md` OI-286, applied at phase 1m). **Former title, preserved (#12):** “The chord-analyzer file split happens once, after the retirements have settled — not before”. **Former status, preserved (#12): DEFERRED** — stale, because the act it defers was performed on 2026-06-17 as commit `41f7c65f63` (verified at the object; register entry **D-427**), before this ruling was even read off the retirement map at the 2026-07-03 Stage-5 checkpoint. The new status is **SUPERSEDED IN FACT** in the register's exact sense: a later BUILD performed what this decision governs, and no ruling names it — it is deliberately not upgraded to “superseded by”. **The verbatim and its home are unchanged**, because `cowork_engage_arc_plan.md` still says what it says and a ratified surface is annotated, never rewritten. **What does NOT lapse:** the once-only lesson, which `OPEN_ITEMS.md` OI-205 half (b) cites as “the ratified Stage-3.5 file-split lesson (restructure ONCE, after the boundaries stabilize)” to time the `ARCHITECTURE.md` restructure; that citation stands and is unaffected by this entry's status. **The LEGACY mark is REMOVED from this entry**, not by a sweep but on established evidence: its subject is `chordanalyzer.cpp`, which `STATUS_ARCHIVE.md`:114 records as surviving the engagement (“R9 *splits* `chordanalyzer.cpp`, does not delete it”), and one of the five translation units the split produced, `chordsymbolformatter.cpp`, is run by the record arm at `notationimplodebridge.cpp`:1170. This entry is one of the two demonstrated errors that caused the LEGACY marker's wording to be weakened on the same date; the other is D-329, and the re-verification of the whole marked set is `OPEN_ITEMS.md` OI-289. The renames half of OWED refactor #1, which this entry never covered, is **D-428**.
 
@@ -401,9 +401,18 @@
 
 ### D-469 — The tick-local path is left OUTSIDE the unified pipeline by design — its point-in-time semantics would be distorted by one shared interface
 
-> - P4 (tick-local) is left parallel. Its point-in-time semantics differ
->   too much from region-based analysis to force a single API without
->   distortion. Two modules, documented relationship.
+> **The point-in-time (tick-local) path is left OUTSIDE this pipeline BY DESIGN — two modules with a
+> documented relationship, not an unfinished unification.** This section's opening states the scope:
+> single-note analysis is the foundation and region analysis extends it to a time range. Three of the
+> four ways the program produces harmony were unified onto that region pipeline; the fourth — the one
+> that answers *what chord is under this note, right here* — was **deliberately left parallel**.
+> *Why:* stated with the decision — its point-in-time semantics differ too much from region-based
+> analysis to force a single interface without distortion, so the cost of unifying here is a
+> distorted interface rather than a saved duplication. **This is the pipeline's own scope statement
+> and it is stated once, here**; §5.13, which tabulates the tick-local entry points, points at it and
+> does not restate it (#6). Distinct from the two later decisions about that path — that it keeps the
+> older resolver, and that its cold context is accepted: this is the prior decision that it stays a
+> separate module at all.
 
 **In plain words.** Three of the four ways the program produces harmony were merged into one shared pipeline. The fourth — the one that answers 'what chord is under this note, right here' — was deliberately left separate, because forcing it through a pipeline built around stretches of music would bend what it means.
 
@@ -413,18 +422,24 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `docs/unified_analysis_pipeline.md:59-61`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:6791-6802`
 
-**Home section.** **“Non-goals”** — `## Non-goals` (heading at line 57). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** Stated as a non-goal of the unification design, in a document whose header records the refactor as structurally complete. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) Distinct from **D-053**, which rules that the tick-local path keeps the OLDER RESOLVER, and from **D-063**, which accepts its cold context: this is the prior decision that the path stays a separate module at all.
+**Provenance.** Stated as a non-goal of the unification design, in a document whose header records the refactor as structurally complete. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) Distinct from **D-053**, which rules that the tick-local path keeps the OLDER RESOLVER, and from **D-063**, which accepts its cold context: this is the prior decision that the path stays a separate module at all. ★ HOMED 2026-08-07 (CC, the owner-rulings homing wave, executing the user's ruling of 2026-08-07 recorded at `cowork_owner_rulings_2026_08_07.md`). The ruling routes it to §11.5 — THE PIPELINE'S SCOPE OWNS THE EXCLUSION, with §5.13 pointing — and carries a STOP: STOP IF §11.5 DOES NOT STATE THE SCOPE IN RULE FORM. ★ THE STOP WAS DISCHARGED BEFORE WRITING AND DID NOT FIRE. §11.5 states its scope in rule form in its own opening — *"Single-note analysis (status bar display, single-chord tuning) is the foundation. Region analysis extends this to a time range"* — and states further scope rules of the same kind beneath it (the target staff is excluded from the analysis input because it is the output, not a source; the scan covers all non-hidden tonal staves within the selected range). The exclusion is written as a continuation of that scope statement and cites it. §5.13 gains a POINTER, never a copy (#6). FORMER HOME, PRESERVED (#12): `docs/unified_analysis_pipeline.md:59-61`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 57, "section": "## Non-goals", "label": "“Non-goals”", "delegated": null, "delegation": "named in no user-ratified surface", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "- P4 (tick-local) is left parallel. Its point-in-time semantics differ
+  too much from region-based analysis to force a single API without
+  distortion. Two modules, documented relationship." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance — the wave and its dispatch — is recorded in this field and NOT in the specification text, on the ruling record's own instruction: a file name written into a governing document reads as a new naming and moves a measured population (the OI-330 / OI-328 lesson).
 
 ### D-470 — The temporal-context extension fields are recorded during the pipeline's own analysis pass; no consumer re-runs the chord analysis to rebuild them
 
-> Closed by construction: `AnalyzedRegion::temporalExtensions` is
-> populated during the pipeline's own `analyzeChord` invocation per
-> region, using the already-built region list as context. P3 reads the
-> field directly; no second `analyzeChord` call.
+> - **The temporal-context EXTENSION FIELDS are recorded during the analysis pass that computes
+>   them; a consumer READS what was recorded and never re-runs the chord analysis to rebuild them.**
+>   The fields are populated on each analyzed region during the pipeline's own per-region analysis,
+>   using the already-built region list as context; a consumer that needs them reads the field. *Why:*
+>   stated with the decision — a second analysis run with a display-time context can populate the
+>   same fields differently from what the annotation pass saw, so the two user-facing paths drift
+>   apart. Recording once and reading the record removes the second computation instead of trying to
+>   keep two computations in step, which is the fact-publication corollary applied here: the field is
+>   published by its producer and consumers read, never re-derive. **This rule is stated at the
+>   producing surface**, which is this section; the consumer sections point at it and do not restate
 
 **In plain words.** What the chord analysis saw around each stretch of music is written down while the analysis runs. A consumer that needs it reads what was recorded, instead of analysing the passage a second time with a freshly built context — which is how the two paths used to disagree.
 
@@ -434,11 +449,12 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `docs/unified_analysis_pipeline.md:237-240`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:4031-4040`
 
-**Home section.** **“Divergence D”** — `### Divergence D (post-pipeline re-analysis)` (heading at line 235). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** Stated as the resolution of the design's divergence D, in a document whose header records the refactor as structurally complete and divergence D as closed. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)
+**Provenance.** Stated as the resolution of the design's divergence D, in a document whose header records the refactor as structurally complete and divergence D as closed. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) ★ HOMED 2026-08-07 (CC, the owner-rulings homing wave, executing the user's ruling of 2026-08-07 recorded at `cowork_owner_rulings_2026_08_07.md`). The recorded owner question was that the rule binds the CONSUMERS, which §11.5 describes. The user ruled the PRODUCER-SIDE PUBLICATION RULE: a published-fact invariant homes with the producer's output-surface specification — the fact-publication corollary — and consumer sections point. Written into §5.3, the producing surface, in that section's own voice and with its defense, and the rule states in its own text that it is published there once. Assumption A1 discharged before writing. FORMER HOME, PRESERVED (#12): `docs/unified_analysis_pipeline.md:237-240`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 235, "section": "### Divergence D (post-pipeline re-analysis)", "label": "“Divergence D”", "delegated": null, "delegation": "named in no user-ratified surface", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "Closed by construction: `AnalyzedRegion::temporalExtensions` is
+populated during the pipeline's own `analyzeChord` invocation per
+region, using the already-built region list as context. P3 reads the
+field directly; no second `analyzeChord` call." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance — the wave and its dispatch — is recorded in this field and NOT in the specification text, on the ruling record's own instruction: a file name written into a governing document reads as a new naming and moves a measured population (the OI-330 / OI-328 lesson).
 
 ### D-623 — A selection-aware capability is a PARAMETER on the one orchestrator, never a sibling — the capability must not duplicate the orchestration
 
@@ -457,7 +473,7 @@
 
 **Status.** LIVE · date not stated · ratified by user
 
-**Home.** `ARCHITECTURE.md:1421-1428`
+**Home.** `ARCHITECTURE.md:1544-1551`
 
 **Provenance.** ★ RE-HOMED 2026-08-04 (CC, dispatch `cc_instruction_finish_line_item1.md`, Task 3.3, ruling R3): written into the OWNING LAYER SPECIFICATION in that section's own voice, with its defense. Register rule (e) prefers this route in terms, and D-231's purposive clause (criterion C4) is why it is preferred over a delegation: at completion the specifications must suffice to measure conformance against WITHOUT consulting the register, and a decision reachable only by following a pointer satisfies C1's letter and defeats C4. The classification that selected this entry, with its reason and the whole 94-entry population, is `tools/audit/decisions/finish_line_item1_routes.json`. Its former home class was `gap` — a decision governing a layer but not findable from that layer's section — which is precisely what the re-homing discharges; the field is cleared because a layer-specification home is not a non-specification home. **THE FORMER HOME, CLASS AND VERBATIM, PRESERVED (#12)** — former home `cowork_layer3_reachback_design.md:29-34`; former verbatim: “**Phase-3 scope (user-ratified, option A):** build reach-back **as a tested capability** — a **selection-aware
 orchestration path** (build over the selection → slice → decode → reach-back loop → output-filter) — with the

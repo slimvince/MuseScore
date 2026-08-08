@@ -11,24 +11,24 @@
   ],
   "the_reading_of_a_whole_document_delegation": "A delegation that names a DOCUMENT and no section reaches EVERY section of it; a delegation that names SECTIONS reaches those sections and their subsections and no others; and the rule-stating half is judged PER SECTION in both cases. **THIS IS NOW PART OF THE RULE, NOT AN INTERPRETATION OF IT (user, 2026-08-03, phase 1r).** At phase 1q it was this pass's reading of D-430's \"delegates a stated concern to that section BY NAME\", taken on the record's own precedent rather than a preference — `OPEN_ITEMS.md` OI-290 states in terms that \"`ARCHITECTURE.md:1331` delegates 'this layer' and admits all sixteen of that document's entries\" — and the strict alternative was recorded as available to the user. The user then WROTE the reading into `CLAUDE.md` rule (h) itself as the GRANULARITY clause, so D-430's verbatim now carries it and the strict alternative is CLOSED. Its defense, stated with it: the strict reading would evict every document delegated as a whole, signed layer specifications among them, on the accident of how a pointer happens to be phrased, making the rule retroactively destructive rather than refining. THE STRICT ALTERNATIVE, PRESERVED (#12): read literally, a whole-document delegation names no section, so no section of it would be admitted and the seven whole-document homes would lose every entry between them.",
   "population": {
-    "entries": 279,
-    "documents": 71
+    "entries": 268,
+    "documents": 68
   },
   "totals": {
     "class_before": {
-      "contract-home": 96,
-      "gap": 183
+      "contract-home": 95,
+      "gap": 173
     },
     "class_after": {
       "contract-home": 139,
-      "gap": 140
+      "gap": 129
     },
-    "entries_moved": 71,
-    "moved_to_gap": 14,
+    "entries_moved": 70,
+    "moved_to_gap": 13,
     "moved_to_contract_home": 57,
     "decided_by": {
       "D-430, the section-level unit": 156,
-      "clause (a), the fifth home case (OI-268)": 84,
+      "clause (a), the fifth home case (OI-268)": 73,
       "D-432, the delegation bar": 39
     }
   },
@@ -69,7 +69,7 @@
           "class_after": "contract-home"
         },
         "§4": {
-          "heading_line": 96,
+          "heading_line": 117,
           "delegated": true,
           "states_rules": true,
           "entries": [
@@ -79,7 +79,7 @@
           "class_after": "contract-home"
         },
         "§8": {
-          "heading_line": 193,
+          "heading_line": 218,
           "delegated": true,
           "states_rules": true,
           "entries": [
@@ -236,7 +236,7 @@
       "moves_in": 3,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "CLAUDE.md:177",
+      "delegation_at": "CLAUDE.md:215",
       "delegation_line": "write list).** The ratified contract for the ORDER OF WORK from here to the precision phase — the",
       "sections": {
         "“The stages”": {
@@ -254,14 +254,14 @@
       "moves_in_since_phase1q": 3
     },
     "docs/iteration_path1_summary.md": {
-      "entries": 2,
+      "entries": 1,
       "before": {
-        "contract-home": 2
+        "contract-home": 1
       },
       "after": {
-        "gap": 2
+        "gap": 1
       },
-      "moves_out": 2,
+      "moves_out": 1,
       "moves_in": 0,
       "delegation_form": "not-named-in-any-ratified-surface",
       "delegation_scope": "none",
@@ -273,8 +273,7 @@
           "delegated": null,
           "states_rules": null,
           "entries": [
-            "D-280",
-            "D-281"
+            "D-280"
           ],
           "class_after": "gap"
         }
@@ -410,7 +409,7 @@
       "moves_in": 0,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "CLAUDE.md:846",
+      "delegation_at": "CLAUDE.md:931",
       "delegation_line": "**Read `docs/scoring_model.md` at the start of any session that touches scoring",
       "sections": {
         "“Floating-point tie policy”": {
@@ -1073,7 +1072,7 @@
       "moves_in": 9,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:4764",
+      "delegation_at": "ARCHITECTURE.md:4775",
       "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "sections": {
         "§1": {
@@ -1192,7 +1191,7 @@
       "moves_in": 0,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4834",
+      "delegation_at": "ARCHITECTURE.md:4845",
       "delegation_line": "pedal-point ruling of the notation-adoption increment (`cowork_notation_adoption_increment.md` §7 + §10).",
       "sections": {
         "the opening block (above the first section heading)": {
@@ -1236,7 +1235,7 @@
       "moves_in": 0,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:7099",
+      "delegation_at": "ARCHITECTURE.md:7110",
       "delegation_line": "> **Full design document:** `docs/llm_integration.md`",
       "sections": {
         "§4.3": {
@@ -1305,12 +1304,12 @@
       }
     },
     "cowork_factorization_desk_simulation.md": {
-      "entries": 5,
+      "entries": 3,
       "before": {
-        "gap": 5
+        "gap": 3
       },
       "after": {
-        "gap": 5
+        "gap": 3
       },
       "moves_out": 0,
       "moves_in": 0,
@@ -1326,16 +1325,6 @@
           "entries": [
             "D-449",
             "D-450"
-          ],
-          "class_after": "gap"
-        },
-        "§0": {
-          "heading_line": 28,
-          "delegated": null,
-          "states_rules": null,
-          "entries": [
-            "D-451",
-            "D-452"
           ],
           "class_after": "gap"
         },
@@ -1566,12 +1555,12 @@
       }
     },
     "cowork_term_theory_grounding.md": {
-      "entries": 3,
+      "entries": 2,
       "before": {
-        "gap": 3
+        "gap": 2
       },
       "after": {
-        "gap": 3
+        "gap": 2
       },
       "moves_out": 0,
       "moves_in": 0,
@@ -1580,15 +1569,6 @@
       "delegation_at": null,
       "delegation_line": null,
       "sections": {
-        "the opening block (above the first section heading)": {
-          "heading_line": 1,
-          "delegated": null,
-          "states_rules": null,
-          "entries": [
-            "D-473"
-          ],
-          "class_after": "gap"
-        },
         "§2": {
           "heading_line": 256,
           "delegated": null,
@@ -1685,32 +1665,6 @@
         }
       },
       "moves_in_since_phase1q": 8
-    },
-    "docs/precision_metric_design.md": {
-      "entries": 1,
-      "before": {
-        "gap": 1
-      },
-      "after": {
-        "gap": 1
-      },
-      "moves_out": 0,
-      "moves_in": 0,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "sections": {
-        "§3.3": {
-          "heading_line": 277,
-          "delegated": null,
-          "states_rules": null,
-          "entries": [
-            "D-486"
-          ],
-          "class_after": "gap"
-        }
-      }
     },
     "cowork_fb_redesign_design.md": {
       "entries": 4,
@@ -2120,12 +2074,12 @@
       "moves_in_since_phase1q": 5
     },
     "docs/back_half_design.md": {
-      "entries": 2,
+      "entries": 1,
       "before": {
-        "gap": 2
+        "gap": 1
       },
       "after": {
-        "gap": 2
+        "gap": 1
       },
       "moves_out": 0,
       "moves_in": 0,
@@ -2140,15 +2094,6 @@
           "states_rules": null,
           "entries": [
             "D-531"
-          ],
-          "class_after": "gap"
-        },
-        "“§4”": {
-          "heading_line": 129,
-          "delegated": null,
-          "states_rules": null,
-          "entries": [
-            "D-539"
           ],
           "class_after": "gap"
         }
@@ -2336,7 +2281,7 @@
       "moves_in": 0,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4723",
+      "delegation_at": "ARCHITECTURE.md:4734",
       "delegation_line": "(`cowork_idiom_discovery_findings.md:122`, v1.5, cap-robust) found that harmony is **not organised by genre** —",
       "sections": {
         "“v2.0”": {
@@ -2373,32 +2318,6 @@
           "states_rules": null,
           "entries": [
             "D-560"
-          ],
-          "class_after": "gap"
-        }
-      }
-    },
-    "cowork_eg2_scoping.md": {
-      "entries": 1,
-      "before": {
-        "gap": 1
-      },
-      "after": {
-        "gap": 1
-      },
-      "moves_out": 0,
-      "moves_in": 0,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "sections": {
-        "“§5 Written predictions”": {
-          "heading_line": 109,
-          "delegated": null,
-          "states_rules": null,
-          "entries": [
-            "D-564"
           ],
           "class_after": "gap"
         }
@@ -2492,12 +2411,12 @@
       }
     },
     "docs/stage4b_design.md": {
-      "entries": 2,
+      "entries": 1,
       "before": {
-        "gap": 2
+        "gap": 1
       },
       "after": {
-        "gap": 2
+        "gap": 1
       },
       "moves_out": 0,
       "moves_in": 0,
@@ -2512,15 +2431,6 @@
           "states_rules": null,
           "entries": [
             "D-571"
-          ],
-          "class_after": "gap"
-        },
-        "§2.2": {
-          "heading_line": 56,
-          "delegated": null,
-          "states_rules": null,
-          "entries": [
-            "D-572"
           ],
           "class_after": "gap"
         }
@@ -2538,7 +2448,7 @@
       "moves_in": 0,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "CLAUDE.md:481",
+      "delegation_at": "CLAUDE.md:519",
       "delegation_line": "chord symbols and Roman numerals (`docs/key_detection_baroque_partial_signature.md`). *Why it is",
       "sections": {
         "the opening block (above the first section heading)": {
@@ -2580,12 +2490,12 @@
       }
     },
     "cowork_information_loss_audit.md": {
-      "entries": 3,
+      "entries": 2,
       "before": {
-        "gap": 3
+        "gap": 2
       },
       "after": {
-        "gap": 3
+        "gap": 2
       },
       "moves_out": 0,
       "moves_in": 0,
@@ -2600,15 +2510,6 @@
           "states_rules": null,
           "entries": [
             "D-581"
-          ],
-          "class_after": "gap"
-        },
-        "“Taxonomy coverage”": {
-          "heading_line": 113,
-          "delegated": null,
-          "states_rules": null,
-          "entries": [
-            "D-582"
           ],
           "class_after": "gap"
         },
@@ -2635,7 +2536,7 @@
       "moves_in": 0,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4727",
+      "delegation_at": "ARCHITECTURE.md:4738",
       "delegation_line": "Chromatic-coloristic (`cowork_style_taxonomy_proposal.md:11-30`).",
       "sections": {
         "§6": {
@@ -2673,7 +2574,7 @@
       "moves_in": 0,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4130",
+      "delegation_at": "ARCHITECTURE.md:4141",
       "delegation_line": "`docs/iter90_bass_as_root_promotion_shelved.md` for characterization and Iter 91 design).",
       "sections": {
         "“Why no local discriminator worked”": {
@@ -2708,7 +2609,7 @@
       "moves_in": 0,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4741",
+      "delegation_at": "ARCHITECTURE.md:4752",
       "delegation_line": "clustering corpora is the committed work (`cowork_style_clustering_plan.md`); the weighting itself is a joint decision",
       "sections": {
         "§1": {
@@ -2734,7 +2635,7 @@
       "moves_in": 0,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "CLAUDE.md:138",
+      "delegation_at": "CLAUDE.md:164",
       "delegation_line": "`cowork_siloed_facts_audit.md` (17 findings) + `cowork_adjudication_dossier.md` Part B.",
       "sections": {
         "“Part A”": {
@@ -2749,7 +2650,7 @@
         }
       }
     },
-    "cowork_phase5c_l5_build_plan.md": {
+    "cowork_layer3_keymode_impl_design.md": {
       "entries": 1,
       "before": {
         "gap": 1
@@ -2764,38 +2665,11 @@
       "delegation_at": null,
       "delegation_line": null,
       "sections": {
-        "“The build discipline”": {
-          "heading_line": 16,
-          "delegated": null,
-          "states_rules": null,
-          "entries": [
-            "D-602"
-          ],
-          "class_after": "gap"
-        }
-      }
-    },
-    "cowork_layer3_keymode_impl_design.md": {
-      "entries": 2,
-      "before": {
-        "gap": 2
-      },
-      "after": {
-        "gap": 2
-      },
-      "moves_out": 0,
-      "moves_in": 0,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "sections": {
         "“§4”": {
           "heading_line": 82,
           "delegated": null,
           "states_rules": null,
           "entries": [
-            "D-603",
             "D-604"
           ],
           "class_after": "gap"
@@ -3067,7 +2941,7 @@
       "moves_in": 0,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "CLAUDE.md:799",
+      "delegation_at": "CLAUDE.md:871",
       "delegation_line": "several-fold. Measured during the O1 investigation (`cowork_uncertain_resolver_investigation.md` +",
       "sections": {
         "“Provisional verdict”": {
@@ -3142,7 +3016,7 @@
       "id": "D-261",
       "title": "A layer never guesses how much context it needs - the amount is discovered by convergence",
       "document": "cowork_bounded_context_design.md",
-      "home": "cowork_bounded_context_design.md:57-69",
+      "home": "cowork_bounded_context_design.md:57-71",
       "section": "§3",
       "section_heading_line": 51,
       "delegation_form": "explicit-delegation-clause",
@@ -3162,7 +3036,7 @@
       "id": "D-262",
       "title": "The extension increment is chosen by the requesting layer, not by the layer that supplies the notes",
       "document": "cowork_bounded_context_design.md",
-      "home": "cowork_bounded_context_design.md:73-81",
+      "home": "cowork_bounded_context_design.md:94-102",
       "section": "§3",
       "section_heading_line": 51,
       "delegation_form": "explicit-delegation-clause",
@@ -3182,7 +3056,7 @@
       "id": "D-263",
       "title": "A refused or truncated extension is marked on the output, never silently absorbed",
       "document": "cowork_bounded_context_design.md",
-      "home": "cowork_bounded_context_design.md:82-86",
+      "home": "cowork_bounded_context_design.md:103-107",
       "section": "§3",
       "section_heading_line": 51,
       "delegation_form": "explicit-delegation-clause",
@@ -3202,9 +3076,9 @@
       "id": "D-264",
       "title": "Extension is an optimisation of load-more-then-rerun: any sequence of extensions equals one fresh run",
       "document": "cowork_bounded_context_design.md",
-      "home": "cowork_bounded_context_design.md:121-126",
+      "home": "cowork_bounded_context_design.md:142-147",
       "section": "§4",
-      "section_heading_line": 96,
+      "section_heading_line": 117,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:938",
@@ -3222,9 +3096,9 @@
       "id": "D-265",
       "title": "Asking a lower layer for more notes is a data-supply call, not a backward inference edge",
       "document": "cowork_bounded_context_design.md",
-      "home": "cowork_bounded_context_design.md:115-120",
+      "home": "cowork_bounded_context_design.md:136-141",
       "section": "§4",
-      "section_heading_line": 96,
+      "section_heading_line": 117,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:938",
@@ -3242,9 +3116,9 @@
       "id": "D-266",
       "title": "Layer 6 is prohibited until the bounded-context design is coded and regression-tested for Layers 1 to 5",
       "document": "cowork_bounded_context_design.md",
-      "home": "cowork_bounded_context_design.md:213-217",
+      "home": "cowork_bounded_context_design.md:238-242",
       "section": "§8",
-      "section_heading_line": 193,
+      "section_heading_line": 218,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:938",
@@ -3467,7 +3341,7 @@
       "section_heading_line": 19,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "CLAUDE.md:177",
+      "delegation_at": "CLAUDE.md:215",
       "delegation_line": "write list).** The ratified contract for the ORDER OF WORK from here to the precision phase — the",
       "section_delegated": true,
       "section_states_rules": true,
@@ -3487,7 +3361,7 @@
       "section_heading_line": 19,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "CLAUDE.md:177",
+      "delegation_at": "CLAUDE.md:215",
       "delegation_line": "write list).** The ratified contract for the ORDER OF WORK from here to the precision phase — the",
       "section_delegated": true,
       "section_states_rules": true,
@@ -3503,26 +3377,6 @@
       "title": "Gates read structured fields only - never a chord symbol string and never a Roman numeral",
       "document": "docs/iteration_path1_summary.md",
       "home": "docs/iteration_path1_summary.md:87-91",
-      "section": "“Architecture decisions made during this path”",
-      "section_heading_line": 64,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "section_delegated": null,
-      "section_states_rules": null,
-      "class_before_phase1q": "contract-home",
-      "class_before_phase1r": "gap",
-      "class_after": "gap",
-      "moves": true,
-      "moves_since_phase1q": false,
-      "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
-    },
-    {
-      "id": "D-281",
-      "title": "The batch measurement tool must emit the structured fields on every alternative, or the corpus figures silently revert",
-      "document": "docs/iteration_path1_summary.md",
-      "home": "docs/iteration_path1_summary.md:79-85",
       "section": "“Architecture decisions made during this path”",
       "section_heading_line": 64,
       "delegation_form": "not-named-in-any-ratified-surface",
@@ -3622,12 +3476,12 @@
       "id": "D-311",
       "title": "The chord-analyzer file split happens once — the SEQUENCING is spent (the split happened first, not last); the once-only LESSON is what carries forward",
       "document": "cowork_engage_arc_plan.md",
-      "home": "cowork_engage_arc_plan.md:131",
+      "home": "cowork_engage_arc_plan.md:148",
       "section": "“The stages”",
       "section_heading_line": 19,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "CLAUDE.md:177",
+      "delegation_at": "CLAUDE.md:215",
       "delegation_line": "write list).** The ratified contract for the ORDER OF WORK from here to the precision phase — the",
       "section_delegated": true,
       "section_states_rules": true,
@@ -3787,7 +3641,7 @@
       "section_heading_line": 210,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "CLAUDE.md:846",
+      "delegation_at": "CLAUDE.md:931",
       "delegation_line": "**Read `docs/scoring_model.md` at the start of any session that touches scoring",
       "section_delegated": true,
       "section_states_rules": true,
@@ -3807,7 +3661,7 @@
       "section_heading_line": 210,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "CLAUDE.md:846",
+      "delegation_at": "CLAUDE.md:931",
       "delegation_line": "**Read `docs/scoring_model.md` at the start of any session that touches scoring",
       "section_delegated": true,
       "section_states_rules": true,
@@ -3827,7 +3681,7 @@
       "section_heading_line": 246,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "CLAUDE.md:846",
+      "delegation_at": "CLAUDE.md:931",
       "delegation_line": "**Read `docs/scoring_model.md` at the start of any session that touches scoring",
       "section_delegated": true,
       "section_states_rules": true,
@@ -3847,7 +3701,7 @@
       "section_heading_line": 752,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "CLAUDE.md:846",
+      "delegation_at": "CLAUDE.md:931",
       "delegation_line": "**Read `docs/scoring_model.md` at the start of any session that touches scoring",
       "section_delegated": true,
       "section_states_rules": true,
@@ -5487,7 +5341,7 @@
       "section_heading_line": 21,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:4764",
+      "delegation_at": "ARCHITECTURE.md:4775",
       "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "section_delegated": true,
       "section_states_rules": true,
@@ -5507,7 +5361,7 @@
       "section_heading_line": 48,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:4764",
+      "delegation_at": "ARCHITECTURE.md:4775",
       "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "section_delegated": true,
       "section_states_rules": true,
@@ -5527,7 +5381,7 @@
       "section_heading_line": 48,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:4764",
+      "delegation_at": "ARCHITECTURE.md:4775",
       "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "section_delegated": true,
       "section_states_rules": true,
@@ -5547,7 +5401,7 @@
       "section_heading_line": 84,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:4764",
+      "delegation_at": "ARCHITECTURE.md:4775",
       "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "section_delegated": true,
       "section_states_rules": true,
@@ -5567,7 +5421,7 @@
       "section_heading_line": 84,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:4764",
+      "delegation_at": "ARCHITECTURE.md:4775",
       "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "section_delegated": true,
       "section_states_rules": true,
@@ -5587,7 +5441,7 @@
       "section_heading_line": 168,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:4764",
+      "delegation_at": "ARCHITECTURE.md:4775",
       "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "section_delegated": true,
       "section_states_rules": true,
@@ -5607,7 +5461,7 @@
       "section_heading_line": 168,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:4764",
+      "delegation_at": "ARCHITECTURE.md:4775",
       "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "section_delegated": true,
       "section_states_rules": true,
@@ -5627,7 +5481,7 @@
       "section_heading_line": 200,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:4764",
+      "delegation_at": "ARCHITECTURE.md:4775",
       "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "section_delegated": true,
       "section_states_rules": true,
@@ -5647,7 +5501,7 @@
       "section_heading_line": 248,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:4764",
+      "delegation_at": "ARCHITECTURE.md:4775",
       "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "section_delegated": true,
       "section_states_rules": true,
@@ -5747,7 +5601,7 @@
       "section_heading_line": 1,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4834",
+      "delegation_at": "ARCHITECTURE.md:4845",
       "delegation_line": "pedal-point ruling of the notation-adoption increment (`cowork_notation_adoption_increment.md` §7 + §10).",
       "section_delegated": null,
       "section_states_rules": null,
@@ -5767,7 +5621,7 @@
       "section_heading_line": 215,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4834",
+      "delegation_at": "ARCHITECTURE.md:4845",
       "delegation_line": "pedal-point ruling of the notation-adoption increment (`cowork_notation_adoption_increment.md` §7 + §10).",
       "section_delegated": null,
       "section_states_rules": null,
@@ -5787,7 +5641,7 @@
       "section_heading_line": 394,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4834",
+      "delegation_at": "ARCHITECTURE.md:4845",
       "delegation_line": "pedal-point ruling of the notation-adoption increment (`cowork_notation_adoption_increment.md` §7 + §10).",
       "section_delegated": null,
       "section_states_rules": null,
@@ -5807,7 +5661,7 @@
       "section_heading_line": 296,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:7099",
+      "delegation_at": "ARCHITECTURE.md:7110",
       "delegation_line": "> **Full design document:** `docs/llm_integration.md`",
       "section_delegated": null,
       "section_states_rules": null,
@@ -5827,7 +5681,7 @@
       "section_heading_line": 599,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:7099",
+      "delegation_at": "ARCHITECTURE.md:7110",
       "delegation_line": "> **Full design document:** `docs/llm_integration.md`",
       "section_delegated": null,
       "section_states_rules": null,
@@ -5847,7 +5701,7 @@
       "section_heading_line": 363,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:7099",
+      "delegation_at": "ARCHITECTURE.md:7110",
       "delegation_line": "> **Full design document:** `docs/llm_integration.md`",
       "section_delegated": null,
       "section_states_rules": null,
@@ -5867,7 +5721,7 @@
       "section_heading_line": 397,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:7099",
+      "delegation_at": "ARCHITECTURE.md:7110",
       "delegation_line": "> **Full design document:** `docs/llm_integration.md`",
       "section_delegated": null,
       "section_states_rules": null,
@@ -5887,7 +5741,7 @@
       "section_heading_line": 479,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:7099",
+      "delegation_at": "ARCHITECTURE.md:7110",
       "delegation_line": "> **Full design document:** `docs/llm_integration.md`",
       "section_delegated": null,
       "section_states_rules": null,
@@ -5907,7 +5761,7 @@
       "section_heading_line": 611,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:7099",
+      "delegation_at": "ARCHITECTURE.md:7110",
       "delegation_line": "> **Full design document:** `docs/llm_integration.md`",
       "section_delegated": null,
       "section_states_rules": null,
@@ -5927,7 +5781,7 @@
       "section_heading_line": 284,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:7099",
+      "delegation_at": "ARCHITECTURE.md:7110",
       "delegation_line": "> **Full design document:** `docs/llm_integration.md`",
       "section_delegated": null,
       "section_states_rules": null,
@@ -5965,46 +5819,6 @@
       "home": "cowork_factorization_desk_simulation.md:506-512",
       "section": "§4",
       "section_heading_line": 485,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "section_delegated": null,
-      "section_states_rules": null,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
-    },
-    {
-      "id": "D-451",
-      "title": "A desk simulation's table values are provisional, enter no fit, and a verdict that would flip inside a provisional value's plausible range is reported as a near-tie, never as a win",
-      "document": "cowork_factorization_desk_simulation.md",
-      "home": "cowork_factorization_desk_simulation.md:30-35",
-      "section": "§0",
-      "section_heading_line": 28,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "section_delegated": null,
-      "section_states_rules": null,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
-    },
-    {
-      "id": "D-452",
-      "title": "Every desk-simulation trace runs at identity weights — the ratified ablation baseline — so the trace tests the structure and the tables, not the weighting",
-      "document": "cowork_factorization_desk_simulation.md",
-      "home": "cowork_factorization_desk_simulation.md:36-38",
-      "section": "§0",
-      "section_heading_line": 28,
       "delegation_form": "not-named-in-any-ratified-surface",
       "delegation_scope": "none",
       "delegation_at": null,
@@ -6379,26 +6193,6 @@
       "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
     },
     {
-      "id": "D-473",
-      "title": "A theory-grounding pass labels every load-bearing claim FACT / THEORY / CONJECTURE, cross-checks its central sources independently, and carries no equation out of a text it could not fetch",
-      "document": "cowork_term_theory_grounding.md",
-      "home": "cowork_term_theory_grounding.md:6-11",
-      "section": "the opening block (above the first section heading)",
-      "section_heading_line": 1,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "section_delegated": null,
-      "section_states_rules": null,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
-    },
-    {
       "id": "D-474",
       "title": "No published study reports per-axis inter-annotator agreement for Roman-numeral analysis of Baroque/classical symbolic music — the ground-truth ceiling principle #21 demands is unmeasured by the entire field",
       "document": "cowork_term_theory_grounding.md",
@@ -6637,26 +6431,6 @@
       "moves": false,
       "moves_since_phase1q": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS"
-    },
-    {
-      "id": "D-486",
-      "title": "A measurement publishes its coverage denominator and its per-corpus breakdown; a single aggregate number that hides which corpus moved is not reported",
-      "document": "docs/precision_metric_design.md",
-      "home": "docs/precision_metric_design.md:291-293",
-      "section": "§3.3",
-      "section_heading_line": 277,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "section_delegated": null,
-      "section_states_rules": null,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
     },
     {
       "id": "D-490",
@@ -7639,26 +7413,6 @@
       "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
     },
     {
-      "id": "D-539",
-      "title": "The standing method for every error slice: decompose it into structural, fitted and ceiling BEFORE building anything — derive, never assert",
-      "document": "docs/back_half_design.md",
-      "home": "docs/back_half_design.md:147-150",
-      "section": "“§4”",
-      "section_heading_line": 129,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "section_delegated": null,
-      "section_states_rules": null,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
-    },
-    {
       "id": "D-540",
       "title": "A slice is a unit of constant CONTENT, not of constant musical TIME — the layers above must never treat slices as equal-weight units, and a slice's metric extent is evidence weighted by metric structure, not by tempo",
       "document": "cowork_layer2_slicing_design.md",
@@ -7787,7 +7541,7 @@
       "section_heading_line": 190,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4723",
+      "delegation_at": "ARCHITECTURE.md:4734",
       "delegation_line": "(`cowork_idiom_discovery_findings.md:122`, v1.5, cap-robust) found that harmony is **not organised by genre** —",
       "section_delegated": null,
       "section_states_rules": null,
@@ -7807,7 +7561,7 @@
       "section_heading_line": 190,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4723",
+      "delegation_at": "ARCHITECTURE.md:4734",
       "delegation_line": "(`cowork_idiom_discovery_findings.md:122`, v1.5, cap-robust) found that harmony is **not organised by genre** —",
       "section_delegated": null,
       "section_states_rules": null,
@@ -7827,7 +7581,7 @@
       "section_heading_line": 190,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4723",
+      "delegation_at": "ARCHITECTURE.md:4734",
       "delegation_line": "(`cowork_idiom_discovery_findings.md:122`, v1.5, cap-robust) found that harmony is **not organised by genre** —",
       "section_delegated": null,
       "section_states_rules": null,
@@ -7857,26 +7611,6 @@
       "moves": false,
       "moves_since_phase1q": false,
       "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit"
-    },
-    {
-      "id": "D-564",
-      "title": "Correction of record: the 'function-only' share of the legacy residual was overstated, because over-grabbed segmentation corrupts the BASS and not only the pitch-class window",
-      "document": "cowork_eg2_scoping.md",
-      "home": "cowork_eg2_scoping.md:138-143",
-      "section": "“§5 Written predictions”",
-      "section_heading_line": 109,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "section_delegated": null,
-      "section_states_rules": null,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
     },
     {
       "id": "D-565",
@@ -7979,26 +7713,6 @@
       "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
     },
     {
-      "id": "D-572",
-      "title": "The hard post-hoc declared-mode promotion is REMOVED OUTRIGHT rather than kept in a gated form",
-      "document": "docs/stage4b_design.md",
-      "home": "docs/stage4b_design.md:57-63",
-      "section": "§2.2",
-      "section_heading_line": 56,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "section_delegated": null,
-      "section_states_rules": null,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
-    },
-    {
       "id": "D-575",
       "title": "The Baroque partial-signature convention is handled by DETECTING it and reinterpreting the signature one step, not by widening the candidate family for every score",
       "document": "docs/key_detection_baroque_partial_signature.md",
@@ -8007,7 +7721,7 @@
       "section_heading_line": 1,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "CLAUDE.md:481",
+      "delegation_at": "CLAUDE.md:519",
       "delegation_line": "chord symbols and Roman numerals (`docs/key_detection_baroque_partial_signature.md`). *Why it is",
       "section_delegated": null,
       "section_states_rules": null,
@@ -8079,26 +7793,6 @@
       "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
     },
     {
-      "id": "D-582",
-      "title": "A collapse that is RECOMPUTABLE from what is kept is not information loss — not every collapse is a defect",
-      "document": "cowork_information_loss_audit.md",
-      "home": "cowork_information_loss_audit.md:127",
-      "section": "“Taxonomy coverage”",
-      "section_heading_line": 113,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "section_delegated": null,
-      "section_states_rules": null,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
-    },
-    {
       "id": "D-583",
       "title": "A known deferred loss is KEPT only while it stays characterized EXACTLY, and is re-adjudicated the moment its form changes",
       "document": "cowork_information_loss_audit.md",
@@ -8127,7 +7821,7 @@
       "section_heading_line": 87,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4727",
+      "delegation_at": "ARCHITECTURE.md:4738",
       "delegation_line": "Chromatic-coloristic (`cowork_style_taxonomy_proposal.md:11-30`).",
       "section_delegated": null,
       "section_states_rules": null,
@@ -8147,7 +7841,7 @@
       "section_heading_line": 87,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4727",
+      "delegation_at": "ARCHITECTURE.md:4738",
       "delegation_line": "Chromatic-coloristic (`cowork_style_taxonomy_proposal.md:11-30`).",
       "section_delegated": null,
       "section_states_rules": null,
@@ -8167,7 +7861,7 @@
       "section_heading_line": 122,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4727",
+      "delegation_at": "ARCHITECTURE.md:4738",
       "delegation_line": "Chromatic-coloristic (`cowork_style_taxonomy_proposal.md:11-30`).",
       "section_delegated": null,
       "section_states_rules": null,
@@ -8187,7 +7881,7 @@
       "section_heading_line": 122,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4727",
+      "delegation_at": "ARCHITECTURE.md:4738",
       "delegation_line": "Chromatic-coloristic (`cowork_style_taxonomy_proposal.md:11-30`).",
       "section_delegated": null,
       "section_states_rules": null,
@@ -8207,7 +7901,7 @@
       "section_heading_line": 122,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4727",
+      "delegation_at": "ARCHITECTURE.md:4738",
       "delegation_line": "Chromatic-coloristic (`cowork_style_taxonomy_proposal.md:11-30`).",
       "section_delegated": null,
       "section_states_rules": null,
@@ -8227,7 +7921,7 @@
       "section_heading_line": 58,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4130",
+      "delegation_at": "ARCHITECTURE.md:4141",
       "delegation_line": "`docs/iter90_bass_as_root_promotion_shelved.md` for characterization and Iter 91 design).",
       "section_delegated": null,
       "section_states_rules": null,
@@ -8247,7 +7941,7 @@
       "section_heading_line": 84,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4130",
+      "delegation_at": "ARCHITECTURE.md:4141",
       "delegation_line": "`docs/iter90_bass_as_root_promotion_shelved.md` for characterization and Iter 91 design).",
       "section_delegated": null,
       "section_states_rules": null,
@@ -8267,7 +7961,7 @@
       "section_heading_line": 9,
       "delegation_form": "bare-appended-citation",
       "delegation_scope": "none",
-      "delegation_at": "ARCHITECTURE.md:4741",
+      "delegation_at": "ARCHITECTURE.md:4752",
       "delegation_line": "clustering corpora is the committed work (`cowork_style_clustering_plan.md`); the weighting itself is a joint decision",
       "section_delegated": null,
       "section_states_rules": null,
@@ -8287,7 +7981,7 @@
       "section_heading_line": 14,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "CLAUDE.md:138",
+      "delegation_at": "CLAUDE.md:164",
       "delegation_line": "`cowork_siloed_facts_audit.md` (17 findings) + `cowork_adjudication_dossier.md` Part B.",
       "section_delegated": null,
       "section_states_rules": null,
@@ -8307,7 +8001,7 @@
       "section_heading_line": 14,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "CLAUDE.md:138",
+      "delegation_at": "CLAUDE.md:164",
       "delegation_line": "`cowork_siloed_facts_audit.md` (17 findings) + `cowork_adjudication_dossier.md` Part B.",
       "section_delegated": null,
       "section_states_rules": null,
@@ -8317,46 +8011,6 @@
       "moves": false,
       "moves_since_phase1q": false,
       "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit"
-    },
-    {
-      "id": "D-602",
-      "title": "A layer's measurement is judged on coverage-matched accuracy AND correct abstention, never on raw coverage — abstaining on a genuinely undecidable case is a RIGHT outcome",
-      "document": "cowork_phase5c_l5_build_plan.md",
-      "home": "cowork_phase5c_l5_build_plan.md:27-29",
-      "section": "“The build discipline”",
-      "section_heading_line": 16,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "section_delegated": null,
-      "section_states_rules": null,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
-    },
-    {
-      "id": "D-603",
-      "title": "While the pipeline is being rebuilt, a behaviour-changing increment is graded DIRECTIONALLY and not against a fixed bar — meaningful comparison happens only against the fully reconstructed pipeline",
-      "document": "cowork_layer3_keymode_impl_design.md",
-      "home": "cowork_layer3_keymode_impl_design.md:83-86",
-      "section": "“§4”",
-      "section_heading_line": 82,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "section_delegated": null,
-      "section_states_rules": null,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
     },
     {
       "id": "D-604",
@@ -8647,7 +8301,7 @@
       "section_heading_line": 94,
       "delegation_form": "provenance-attribution",
       "delegation_scope": "none",
-      "delegation_at": "CLAUDE.md:799",
+      "delegation_at": "CLAUDE.md:871",
       "delegation_line": "several-fold. Measured during the O1 investigation (`cowork_uncertain_resolver_investigation.md` +",
       "section_delegated": null,
       "section_states_rules": null,
@@ -9192,12 +8846,6 @@
   "moved_out": [
     {
       "id": "D-280",
-      "document": "docs/iteration_path1_summary.md",
-      "section": "“Architecture decisions made during this path”",
-      "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
-    },
-    {
-      "id": "D-281",
       "document": "docs/iteration_path1_summary.md",
       "section": "“Architecture decisions made during this path”",
       "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"

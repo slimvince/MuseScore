@@ -1,0 +1,4204 @@
+{
+ "purpose": "The OI-333 repair, recorded: what the escape of six invalid register patterns changed in the cluster-disposition layer, measured against a snapshot of the committed layer taken before the repair. NOT a completion statement, and not an authorization for any fix, design or inference change.",
+ "generated_by": "tools/audit/decisions/gen_oi333_repair.py",
+ "generated_for": "cc_instruction_five_rulings.md (Task 5, ruling R4)",
+ "the_ruling": "User, 2026-08-07 (dispatch `cc_instruction_five_rulings.md` §0a, R4): OI-333 is resolved by one bounded repair wave — snapshot the committed disposition layer first (the O-12 pattern, #16); escape the six patterns; regenerate the disposition layer at the register's current backbone; diff against the snapshot and explain every cluster that moves; and add a narrow producibility mode to `gen_cluster_dispositions.py` so this failure class fails a guard in future.",
+ "what_is_authored_and_what_is_derived": {
+  "authored": "the six FORMER pattern strings (#12); the dispatch's two assumptions as it stated them; and the one note recording where the escape did more than escape markdown emphasis, with its evidence",
+  "derived": "every pattern's compile result at HEAD; the snapshot's own recorded hashes; the whole cluster-level diff, its per-cluster cause attribution, and every count"
+ },
+ "the_snapshot": {
+  "where": "tools/audit/decisions/snapshot_2026-08-07_pre_oi333_repair/",
+  "why": "The repair escapes six invalid register patterns, which changes what the matchers match — a measured surface. R4 requires the regenerated layer to be diffed against this snapshot and every moved cluster explained, and a diff needs a base that cannot move under it.",
+  "taken_at_head": "bd3a608fecf82c446f959432b13e0a5944093cd2",
+  "files": {
+   "cluster_dispositions.json": {
+    "sha256": "e151b8ef768e3d27d184b4f3892148978edbd52dbeeb113b0883c9178823df66",
+    "bytes": 5077129
+   },
+   "cluster_dispositions.csv": {
+    "sha256": "68e3a8a62f3691542a17f2fad744d907e8b91807442f8fd3ce9217846daa0ed1",
+    "bytes": 1281577
+   },
+   "disposition_manifest.json": {
+    "sha256": "2d7d14da87acf9b6a8eeceb901c4ba66d0f468221e0107ea91ca5e8f611c3a68",
+    "bytes": 13531
+   }
+  },
+  "backbone_it_was_derived_at": {
+   "decision_count": 467,
+   "sha256": "38ec4aa4dfc1d2c1e2e433d0c58cdf0c841eabe3c74ff9ed0d0af47e52e4abea",
+   "head_commit": "0f311091c147a6200e6ddd96702fc5c63507799d"
+  }
+ },
+ "the_regenerated_layer": {
+  "backbone_it_is_derived_at": {
+   "decision_count": 645,
+   "sha256": "73c2e12ce81a681454e8ece18199d3dd1adf00bb7b5b4edf9566ee55246e7d02",
+   "head_commit": "bd3a608fecf82c446f959432b13e0a5944093cd2"
+  },
+  "completeness_check": {
+   "clusters": 14460,
+   "dispositioned": 14460,
+   "occurrences_covered": 15224,
+   "occurrences_total": 15224,
+   "complete": true
+  },
+  "disposition_counts": {
+   "restates": 5526,
+   "not-a-decision": 5535,
+   "boilerplate": 74,
+   "no-spec-home": 688,
+   "unresolved": 2637
+  }
+ },
+ "★_assumption_A1": {
+  "as_the_dispatch_states_it": "That the six `patterns` strings in `tools/audit/decisions/backbone_decisions.json` (entries D-555, D-570, D-576, D-577, D-578, D-581) are exactly as OI-333's table lists them, and are the ONLY patterns that fail to compile.",
+  "how_it_was_checked": "Every pattern in the register was compiled BEFORE any was edited, as the dispatch orders — not the six the row names.",
+  "verdict": "CONFIRMED. Compiling every pattern in the register found a failing set identical to the one OI-333's table names, in both membership and size, and no other pattern failed.",
+  "failing_set_before_the_repair": [
+   "D-555",
+   "D-570",
+   "D-576",
+   "D-577",
+   "D-578",
+   "D-581"
+  ],
+  "failing_set_after_the_repair": [],
+  "patterns_compiled_at_head": 1226,
+  "failing_at_head": 0
+ },
+ "the_six_patterns": {
+  "how_to_read_this": "`former` is preserved verbatim (#12); `current` is read off the register at HEAD. The change in five of the six is exactly one substitution — a literal `**` escaped so the regular-expression compiler reads it as two asterisks rather than as a repeat applied to a repeat. The sixth is named below it.",
+  "entries": {
+   "D-555": {
+    "former": "a **motion-type-led** feature set",
+    "current": [
+     "a \\*\\*motion-type-led\\*\\* feature set",
+     "coverage is notated-music only"
+    ],
+    "title": "The voice-leading layer's feature set is MOTION-TYPE-led, with the interval profile a secondary descriptor, and its coverage is notated music only"
+   },
+   "D-570": {
+    "former": "judged against the **score**",
+    "current": [
+     "Correctness oracle for this layer",
+     "judged against the \\*\\*score\\*\\*"
+    ],
+    "title": "An upstream layer's correctness oracle is the SCORE, not the Roman-numeral ground truth"
+   },
+   "D-576": {
+    "former": "is largely **key-independent**",
+    "current": [
+     "is largely \\*\\*key-independent\\*\\*",
+     "understates the real-world quality impact"
+    ],
+    "title": "The corpus root-agreement measurement UNDERSTATES the real-world quality impact of a wrong key, because root and bass are largely key-independent"
+   },
+   "D-577": {
+    "former": "design debt** (wrong cut) from **migration debt",
+    "current": [
+     "design debt\\*\\* \\(wrong cut\\) from \\*\\*migration debt",
+     "almost everything here is the latter"
+    ],
+    "title": "An audit verdict distinguishes DESIGN debt from MIGRATION debt — the wrong cut, versus the right cut whose legacy is not yet retired"
+   },
+   "D-578": {
+    "former": "orphan claims need a **whole-repo** grep",
+    "current": [
+     "orphan claims need a \\*\\*whole-repo\\*\\* grep",
+     "not a per-dir one"
+    ],
+    "title": "An orphan claim requires a WHOLE-REPOSITORY search; a per-directory one produces false orphans"
+   },
+   "D-581": {
+    "former": "Not-yet-consumed information is **NOT automatically a defect",
+    "current": [
+     "Not-yet-consumed information is \\*\\*NOT automatically a defect",
+     "UNCLEAR — consumer-status"
+    ],
+    "title": "Information not yet consumed is NOT automatically a defect: every site is classified preserved-awaiting-consumer, lost, should-already, or unclear — and unclear is recorded for adjudication, never guessed"
+   }
+  },
+  "★_the_one_place_the_escape_did_more_than_escape_emphasis": {
+   "entry": "D-577",
+   "what": "The parentheses around `wrong cut` were escaped as well as the emphasis.",
+   "why_it_is_the_literal_the_author_meant": "Unescaped, `(wrong cut)` is a regular-expression GROUP, so the pattern would have required the text `design debt** wrong cut from **migration debt` — WITHOUT the parentheses. The entry's own text carries them: the phrase occurs, with its parentheses, in this entry's verbatim. So the group reading matched a string the record does not contain, and escaping is what makes the matcher match what the author wrote.",
+   "why_it_is_recorded_rather_than_folded_in": "Every other change in this repair is mechanical — a literal `**` escaped to `\\*\\*` — and this one is a judgment about intent. It is named so a reviewer can disagree with it in one place rather than having to re-derive which of six changes was not mechanical."
+  }
+ },
+ "★_assumption_A3_AND_THE_STOP_IT_FIRED": {
+  "as_the_dispatch_states_it": "That the disposition regeneration, after the escape fix, completes and its movement is confined to `unresolved` → `restates`. The ruling's own words: 'expected movement is `unresolved` → `restates` for entries entered since the last successful derivation; ANY other movement is a STOP (#13)'.",
+  "how_it_was_checked": "The regenerated layer was diffed against the snapshot cluster by cluster, on all three fields that carry a judgment — the disposition, the bulk rule that fired, and the decisions named.",
+  "verdict": "REFUTED. The movement is NOT confined to `unresolved` → `restates`, so the ruling's own STOP (#13) fires and this artifact is the report it requires. Every moved cluster is named below with its cause.",
+  "predicted_transition": "unresolved -> restates",
+  "clusters_that_moved": 122,
+  "transitions_observed": {
+   "restates -> restates": 73,
+   "unresolved -> no-spec-home": 23,
+   "not-a-decision -> no-spec-home": 14,
+   "unresolved -> restates": 8,
+   "not-a-decision -> restates": 3,
+   "no-spec-home -> no-spec-home": 1
+  },
+  "transitions_outside_the_prediction": {
+   "restates -> restates": 73,
+   "unresolved -> no-spec-home": 23,
+   "not-a-decision -> no-spec-home": 14,
+   "not-a-decision -> restates": 3,
+   "no-spec-home -> no-spec-home": 1
+  },
+  "rule_transitions_observed": {
+   "BR-3 -> BR-3": 73,
+   "BR-8 -> BR-4": 23,
+   "BR-6 -> BR-4": 8,
+   "BR-8 -> BR-3": 8,
+   "BR-5 -> BR-4": 3,
+   "BR-12 -> BR-4": 2,
+   "BR-4 -> BR-4": 1,
+   "BR-11 -> BR-4": 1,
+   "BR-11 -> BR-3": 1,
+   "BR-7 -> BR-3": 1,
+   "BR-13 -> BR-3": 1
+  },
+  "cause_attribution": {
+   "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation": 122
+  },
+  "what_the_prediction_got_RIGHT": "The MECHANISM. Every moved cluster moved because a decision newly named on it was entered into the register after the snapshot's derivation — which is the prediction's own stated cause, 'entries entered since the last successful derivation'. No cluster lost a naming, in either direction.",
+  "what_the_prediction_got_WRONG": "The SHAPE, in two ways, and both follow from the disposition pass's own rule ORDER rather than from anything about the escape. (1) The destination is not always `restates`: BR-3 fires when a matching decision is homed in a layer specification and BR-4 when every matching decision is homed outside one, so a newly matching entry whose home is not a layer specification lands in `no-spec-home`. (2) The source is not always `unresolved`: BR-3 and BR-4 run BEFORE the sweep rules BR-5 to BR-18, so a cluster a sweep had called `not-a-decision` moves the moment any backbone pattern matches it. A prediction naming one source and one destination could not have held for a backbone that grew by any entry homed outside a layer specification.",
+  "what_is_NOT_claimed": "That the regenerated layer is correct, or that its unresolved residual may now be published as the current one. This artifact records what MOVED and why; whether the regenerated layer supersedes the committed one is the user's, and both are on disk. No figure from either is restated in any prose surface (D-431).",
+  "attributable_to_the_six_escaped_patterns": [
+   "DC-01998",
+   "DC-02014",
+   "DC-02213",
+   "DC-06870"
+  ],
+  "note_on_the_six": "The clusters the escape itself moved are a small subset, and they would have moved on backbone growth alone had their patterns compiled — the six entries were all entered after the snapshot's derivation. The escape did not move any cluster that growth would not have reached; it made three of the six able to match at all."
+ },
+ "newly_named_decisions_by_cluster_count": {
+  "D-596": 16,
+  "D-585": 9,
+  "D-611": 7,
+  "D-584": 6,
+  "D-617": 5,
+  "D-565": 4,
+  "D-615": 4,
+  "D-550": 3,
+  "D-568": 3,
+  "D-582": 3,
+  "D-583": 3,
+  "D-623": 3,
+  "D-548": 2,
+  "D-566": 2,
+  "D-573": 2,
+  "D-581": 2,
+  "D-624": 2,
+  "D-625": 2,
+  "D-547": 1,
+  "D-554": 1,
+  "D-555": 1,
+  "D-556": 1,
+  "D-558": 1,
+  "D-559": 1,
+  "D-561": 1,
+  "D-562": 1,
+  "D-563": 1,
+  "D-564": 1,
+  "D-567": 1,
+  "D-569": 1,
+  "D-574": 1,
+  "D-575": 1,
+  "D-577": 1,
+  "D-580": 1,
+  "D-586": 1,
+  "D-587": 1,
+  "D-588": 1,
+  "D-589": 1,
+  "D-590": 1,
+  "D-592": 1,
+  "D-593": 1,
+  "D-595": 1,
+  "D-599": 1,
+  "D-600": 1,
+  "D-601": 1,
+  "D-602": 1,
+  "D-603": 1,
+  "D-604": 1,
+  "D-608": 1,
+  "D-609": 1,
+  "D-612": 1,
+  "D-613": 1,
+  "D-616": 1,
+  "D-619": 1,
+  "D-620": 1,
+  "D-621": 1,
+  "D-622": 1,
+  "D-626": 1,
+  "D-627": 1,
+  "D-628": 1,
+  "D-630": 1,
+  "D-632": 1,
+  "D-635": 1,
+  "D-636": 1,
+  "D-638": 1
+ },
+ "moved_clusters": [
+  {
+   "cluster_id": "DC-02230",
+   "disposition": {
+    "before": "no-spec-home",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-4",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [
+     "D-107"
+    ],
+    "after": [
+     "D-107",
+     "D-592",
+     "D-593"
+    ]
+   },
+   "decisions_gained": [
+    "D-592",
+    "D-593"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-592",
+    "D-593"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_l1l4_completion_ledger.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-04954",
+   "disposition": {
+    "before": "not-a-decision",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-6",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-596"
+    ]
+   },
+   "decisions_gained": [
+    "D-596"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-596"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_audit_jointkeydecision_report.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-06139",
+   "disposition": {
+    "before": "not-a-decision",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-5",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-596"
+    ]
+   },
+   "decisions_gained": [
+    "D-596"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-596"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_instruction_anchor_design_investigation.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-06172",
+   "disposition": {
+    "before": "not-a-decision",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-5",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-596"
+    ]
+   },
+   "decisions_gained": [
+    "D-596"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-596"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_instruction_anchor_redesign_investigation.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-06203",
+   "disposition": {
+    "before": "not-a-decision",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-5",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-596"
+    ]
+   },
+   "decisions_gained": [
+    "D-596"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-596"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_instruction_audit_chordanalyzer_oracle.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-06214",
+   "disposition": {
+    "before": "not-a-decision",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-6",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-596"
+    ]
+   },
+   "decisions_gained": [
+    "D-596"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-596"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_instruction_audit_jointkeydecision.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-06244",
+   "disposition": {
+    "before": "not-a-decision",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-6",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-583"
+    ]
+   },
+   "decisions_gained": [
+    "D-583"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-583"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_instruction_b2_subdominant_guard_build.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-06806",
+   "disposition": {
+    "before": "not-a-decision",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-6",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-561"
+    ]
+   },
+   "decisions_gained": [
+    "D-561"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-561"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_instruction_eg2_establish_and_probe.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-07363",
+   "disposition": {
+    "before": "not-a-decision",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-6",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-550"
+    ]
+   },
+   "decisions_gained": [
+    "D-550"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-550"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_instruction_l1_l2_audit_pass1.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-07400",
+   "disposition": {
+    "before": "not-a-decision",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-11",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-611"
+    ]
+   },
+   "decisions_gained": [
+    "D-611"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-611"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_instruction_l1l4_review_tidy.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-07416",
+   "disposition": {
+    "before": "not-a-decision",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-6",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-550"
+    ]
+   },
+   "decisions_gained": [
+    "D-550"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-550"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_instruction_l3_audit_pass1.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-08402",
+   "disposition": {
+    "before": "not-a-decision",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-11",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-584"
+    ]
+   },
+   "decisions_gained": [
+    "D-584"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-584"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_instruction_phase5c_step2.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-09079",
+   "disposition": {
+    "before": "not-a-decision",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-6",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-617"
+    ]
+   },
+   "decisions_gained": [
+    "D-617"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-617"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_instruction_stage4c_i_cadence_detector_measure.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-09988",
+   "disposition": {
+    "before": "not-a-decision",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-12",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-611"
+    ]
+   },
+   "decisions_gained": [
+    "D-611"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-611"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_l1l4_review_report.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-10377",
+   "disposition": {
+    "before": "not-a-decision",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-7",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-585"
+    ]
+   },
+   "decisions_gained": [
+    "D-585"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-585"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_l5_audit_pass1_resolver_report.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-10951",
+   "disposition": {
+    "before": "not-a-decision",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-6",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-596"
+    ]
+   },
+   "decisions_gained": [
+    "D-596"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-596"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_metric_build_report.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-12751",
+   "disposition": {
+    "before": "not-a-decision",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-12",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-625"
+    ]
+   },
+   "decisions_gained": [
+    "D-625"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-625"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_tpc_capability_build_report.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-13666",
+   "disposition": {
+    "before": "not-a-decision",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-13",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-585"
+    ]
+   },
+   "decisions_gained": [
+    "D-585"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-585"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "src/composing/tests/functionresolver_tests.cpp"
+   ]
+  },
+  {
+   "cluster_id": "DC-00446",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-115",
+     "D-119",
+     "D-181",
+     "D-191"
+    ],
+    "after": [
+     "D-115",
+     "D-119",
+     "D-181",
+     "D-191",
+     "D-638"
+    ]
+   },
+   "decisions_gained": [
+    "D-638"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-638"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "CLAUDE.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-00707",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-025",
+     "D-032",
+     "D-097",
+     "D-099",
+     "D-105",
+     "D-114",
+     "D-115",
+     "D-119",
+     "D-180",
+     "D-181",
+     "D-182",
+     "D-183",
+     "D-189",
+     "D-277",
+     "D-279",
+     "D-387"
+    ],
+    "after": [
+     "D-025",
+     "D-032",
+     "D-097",
+     "D-099",
+     "D-105",
+     "D-114",
+     "D-115",
+     "D-119",
+     "D-180",
+     "D-181",
+     "D-182",
+     "D-183",
+     "D-189",
+     "D-277",
+     "D-279",
+     "D-387",
+     "D-615"
+    ]
+   },
+   "decisions_gained": [
+    "D-615"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-615"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "STATUS_ARCHIVE.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-00714",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-032",
+     "D-094",
+     "D-099",
+     "D-105",
+     "D-114",
+     "D-115",
+     "D-119"
+    ],
+    "after": [
+     "D-032",
+     "D-094",
+     "D-099",
+     "D-105",
+     "D-114",
+     "D-115",
+     "D-119",
+     "D-582"
+    ]
+   },
+   "decisions_gained": [
+    "D-582"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-582"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "STATUS_ARCHIVE.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-00719",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-085",
+     "D-098",
+     "D-119"
+    ],
+    "after": [
+     "D-085",
+     "D-098",
+     "D-119",
+     "D-554"
+    ]
+   },
+   "decisions_gained": [
+    "D-554"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-554"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "STATUS_ARCHIVE.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-00775",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-025",
+     "D-027",
+     "D-080",
+     "D-114",
+     "D-119"
+    ],
+    "after": [
+     "D-025",
+     "D-027",
+     "D-080",
+     "D-114",
+     "D-119",
+     "D-585"
+    ]
+   },
+   "decisions_gained": [
+    "D-585"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-585"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "STATUS_ARCHIVE.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-00776",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-025",
+     "D-081",
+     "D-119"
+    ],
+    "after": [
+     "D-025",
+     "D-081",
+     "D-119",
+     "D-584"
+    ]
+   },
+   "decisions_gained": [
+    "D-584"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-584"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "STATUS_ARCHIVE.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-00779",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-041",
+     "D-080",
+     "D-097",
+     "D-105",
+     "D-114",
+     "D-119",
+     "D-183"
+    ],
+    "after": [
+     "D-041",
+     "D-080",
+     "D-097",
+     "D-105",
+     "D-114",
+     "D-119",
+     "D-183",
+     "D-611"
+    ]
+   },
+   "decisions_gained": [
+    "D-611"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-611"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "STATUS_ARCHIVE.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-01056",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-001",
+     "D-003",
+     "D-005",
+     "D-018",
+     "D-040",
+     "D-095",
+     "D-114",
+     "D-115",
+     "D-119",
+     "D-184",
+     "D-186"
+    ],
+    "after": [
+     "D-001",
+     "D-003",
+     "D-005",
+     "D-018",
+     "D-040",
+     "D-095",
+     "D-114",
+     "D-115",
+     "D-119",
+     "D-184",
+     "D-186",
+     "D-565"
+    ]
+   },
+   "decisions_gained": [
+    "D-565"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-565"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_handoff.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-01273",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-032",
+     "D-114"
+    ],
+    "after": [
+     "D-032",
+     "D-114",
+     "D-582"
+    ]
+   },
+   "decisions_gained": [
+    "D-582"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-582"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_handoff_archive.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-01397",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-081",
+     "D-119"
+    ],
+    "after": [
+     "D-081",
+     "D-119",
+     "D-617"
+    ]
+   },
+   "decisions_gained": [
+    "D-617"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-617"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_handoff_archive.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-01400",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-081",
+     "D-119"
+    ],
+    "after": [
+     "D-081",
+     "D-119",
+     "D-617"
+    ]
+   },
+   "decisions_gained": [
+    "D-617"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-617"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_handoff_archive.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-01401",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-081",
+     "D-119"
+    ],
+    "after": [
+     "D-081",
+     "D-119",
+     "D-617"
+    ]
+   },
+   "decisions_gained": [
+    "D-617"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-617"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_handoff_archive.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-01520",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-099",
+     "D-100",
+     "D-119"
+    ],
+    "after": [
+     "D-099",
+     "D-100",
+     "D-119",
+     "D-599"
+    ]
+   },
+   "decisions_gained": [
+    "D-599"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-599"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_adjudication_dossier.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-01523",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-095",
+     "D-119",
+     "D-186"
+    ],
+    "after": [
+     "D-095",
+     "D-119",
+     "D-186",
+     "D-615"
+    ]
+   },
+   "decisions_gained": [
+    "D-615"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-615"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_adjudication_dossier.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-01524",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-099"
+    ],
+    "after": [
+     "D-099",
+     "D-600"
+    ]
+   },
+   "decisions_gained": [
+    "D-600"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-600"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_adjudication_dossier.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-01620",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-119"
+    ],
+    "after": [
+     "D-119",
+     "D-567"
+    ]
+   },
+   "decisions_gained": [
+    "D-567"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-567"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_audit_obligation_map.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-01622",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-006"
+    ],
+    "after": [
+     "D-006",
+     "D-596"
+    ]
+   },
+   "decisions_gained": [
+    "D-596"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-596"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_audit_obligation_map.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-01637",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-026"
+    ],
+    "after": [
+     "D-026",
+     "D-568"
+    ]
+   },
+   "decisions_gained": [
+    "D-568"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-568"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_audit_obligation_map.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-01649",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-119"
+    ],
+    "after": [
+     "D-119",
+     "D-548"
+    ]
+   },
+   "decisions_gained": [
+    "D-548"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-548"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_audit_protocol.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-01650",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-119"
+    ],
+    "after": [
+     "D-119",
+     "D-550"
+    ]
+   },
+   "decisions_gained": [
+    "D-550"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-550"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_audit_protocol.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-01789",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-114"
+    ],
+    "after": [
+     "D-114",
+     "D-608"
+    ]
+   },
+   "decisions_gained": [
+    "D-608"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-608"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_eg1_premise_checks.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-01793",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-114"
+    ],
+    "after": [
+     "D-114",
+     "D-609"
+    ]
+   },
+   "decisions_gained": [
+    "D-609"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-609"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_eg1_premise_checks.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-01801",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-119"
+    ],
+    "after": [
+     "D-119",
+     "D-562"
+    ]
+   },
+   "decisions_gained": [
+    "D-562"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-562"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_eg2_scoping.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-01814",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-048",
+     "D-104"
+    ],
+    "after": [
+     "D-048",
+     "D-104",
+     "D-564"
+    ]
+   },
+   "decisions_gained": [
+    "D-564"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-564"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_eg2_scoping.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-01996",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-085",
+     "D-119"
+    ],
+    "after": [
+     "D-085",
+     "D-119",
+     "D-556"
+    ]
+   },
+   "decisions_gained": [
+    "D-556"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-556"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_idiom_discovery_findings.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-01998",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-119"
+    ],
+    "after": [
+     "D-119",
+     "D-555"
+    ]
+   },
+   "decisions_gained": [
+    "D-555"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-555"
+   ],
+   "gained_entries_among_the_six_escaped": [
+    "D-555"
+   ],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_idiom_discovery_findings.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02035",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-032"
+    ],
+    "after": [
+     "D-032",
+     "D-583"
+    ]
+   },
+   "decisions_gained": [
+    "D-583"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-583"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_information_loss_audit.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02081",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-119",
+     "D-179"
+    ],
+    "after": [
+     "D-119",
+     "D-179",
+     "D-565"
+    ]
+   },
+   "decisions_gained": [
+    "D-565"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-565"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_joint_estimator_factorization.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02211",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-107",
+     "D-115",
+     "D-119",
+     "D-191"
+    ],
+    "after": [
+     "D-107",
+     "D-115",
+     "D-119",
+     "D-191",
+     "D-559"
+    ]
+   },
+   "decisions_gained": [
+    "D-559"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-559"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_l1l3_stabilization_plan.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02213",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-025",
+     "D-037",
+     "D-119"
+    ],
+    "after": [
+     "D-025",
+     "D-037",
+     "D-119",
+     "D-577",
+     "D-611"
+    ]
+   },
+   "decisions_gained": [
+    "D-577",
+    "D-611"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-577",
+    "D-611"
+   ],
+   "gained_entries_among_the_six_escaped": [
+    "D-577"
+   ],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_l1l4_architecture_audit.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02258",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-050",
+     "D-119"
+    ],
+    "after": [
+     "D-050",
+     "D-119",
+     "D-628"
+    ]
+   },
+   "decisions_gained": [
+    "D-628"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-628"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_layer1_extend_design.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02260",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-050",
+     "D-107"
+    ],
+    "after": [
+     "D-050",
+     "D-107",
+     "D-627"
+    ]
+   },
+   "decisions_gained": [
+    "D-627"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-627"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_layer1_extend_design.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02297",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-119"
+    ],
+    "after": [
+     "D-119",
+     "D-569"
+    ]
+   },
+   "decisions_gained": [
+    "D-569"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-569"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_layer1_tone_collection_design.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02405",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-097",
+     "D-183"
+    ],
+    "after": [
+     "D-097",
+     "D-183",
+     "D-603",
+     "D-604"
+    ]
+   },
+   "decisions_gained": [
+    "D-603",
+    "D-604"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-603",
+    "D-604"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_layer3_keymode_impl_design.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02412",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-001",
+     "D-051",
+     "D-107"
+    ],
+    "after": [
+     "D-001",
+     "D-051",
+     "D-107",
+     "D-623"
+    ]
+   },
+   "decisions_gained": [
+    "D-623"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-623"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_layer3_reachback_design.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02414",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-033"
+    ],
+    "after": [
+     "D-033",
+     "D-623"
+    ]
+   },
+   "decisions_gained": [
+    "D-623"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-623"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_layer3_reachback_design.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02598",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-119"
+    ],
+    "after": [
+     "D-119",
+     "D-584"
+    ]
+   },
+   "decisions_gained": [
+    "D-584"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-584"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_layer5_function_design.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02622",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-081"
+    ],
+    "after": [
+     "D-081",
+     "D-584"
+    ]
+   },
+   "decisions_gained": [
+    "D-584"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-584"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_layer5_function_design.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02679",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-022",
+     "D-087",
+     "D-119"
+    ],
+    "after": [
+     "D-022",
+     "D-087",
+     "D-119",
+     "D-586"
+    ]
+   },
+   "decisions_gained": [
+    "D-586"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-586"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_layer5_function_methods.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02860",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-119"
+    ],
+    "after": [
+     "D-119",
+     "D-566"
+    ]
+   },
+   "decisions_gained": [
+    "D-566"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-566"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_phase2_architecture_review.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02895",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-107",
+     "D-115",
+     "D-119",
+     "D-191"
+    ],
+    "after": [
+     "D-107",
+     "D-115",
+     "D-119",
+     "D-191",
+     "D-636"
+    ]
+   },
+   "decisions_gained": [
+    "D-636"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-636"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_phase5b_l4_build_plan.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02910",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-114"
+    ],
+    "after": [
+     "D-114",
+     "D-602"
+    ]
+   },
+   "decisions_gained": [
+    "D-602"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-602"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_phase5c_l5_build_plan.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02913",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-081"
+    ],
+    "after": [
+     "D-081",
+     "D-584"
+    ]
+   },
+   "decisions_gained": [
+    "D-584"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-584"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_phase5c_l5_build_plan.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-03404",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-032",
+     "D-094",
+     "D-099",
+     "D-105",
+     "D-114",
+     "D-119"
+    ],
+    "after": [
+     "D-032",
+     "D-094",
+     "D-099",
+     "D-105",
+     "D-114",
+     "D-119",
+     "D-582"
+    ]
+   },
+   "decisions_gained": [
+    "D-582"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-582"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_stage5_fitter_design.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-03473",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-119"
+    ],
+    "after": [
+     "D-119",
+     "D-587"
+    ]
+   },
+   "decisions_gained": [
+    "D-587"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-587"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_style_taxonomy_proposal.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-03475",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-119"
+    ],
+    "after": [
+     "D-119",
+     "D-588"
+    ]
+   },
+   "decisions_gained": [
+    "D-588"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-588"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_style_taxonomy_proposal.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-03478",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-029"
+    ],
+    "after": [
+     "D-029",
+     "D-589"
+    ]
+   },
+   "decisions_gained": [
+    "D-589"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-589"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_style_taxonomy_proposal.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-03559",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-105"
+    ],
+    "after": [
+     "D-105",
+     "D-625"
+    ]
+   },
+   "decisions_gained": [
+    "D-625"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-625"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_tpc_capability_design.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-03562",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-105"
+    ],
+    "after": [
+     "D-105",
+     "D-626"
+    ]
+   },
+   "decisions_gained": [
+    "D-626"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-626"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_tpc_capability_design.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-03579",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-033",
+     "D-119"
+    ],
+    "after": [
+     "D-033",
+     "D-119",
+     "D-630"
+    ]
+   },
+   "decisions_gained": [
+    "D-630"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-630"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_uncertain_resolver_investigation.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-03590",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-119"
+    ],
+    "after": [
+     "D-119",
+     "D-612"
+    ]
+   },
+   "decisions_gained": [
+    "D-612"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-612"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_union_search_record.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-03677",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-103"
+    ],
+    "after": [
+     "D-103",
+     "D-620"
+    ]
+   },
+   "decisions_gained": [
+    "D-620"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-620"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "docs/architecture_joint_inference.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-04329",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-081"
+    ],
+    "after": [
+     "D-081",
+     "D-617"
+    ]
+   },
+   "decisions_gained": [
+    "D-617"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-617"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "docs/stage4c_cadence_key_design.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-04333",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-119"
+    ],
+    "after": [
+     "D-119",
+     "D-616"
+    ]
+   },
+   "decisions_gained": [
+    "D-616"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-616"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "docs/stage4c_cadence_key_design.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-05037",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-001"
+    ],
+    "after": [
+     "D-001",
+     "D-583"
+    ]
+   },
+   "decisions_gained": [
+    "D-583"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-583"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_b_guard_scoping_dossier.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-06154",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-001"
+    ],
+    "after": [
+     "D-001",
+     "D-596"
+    ]
+   },
+   "decisions_gained": [
+    "D-596"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-596"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_instruction_anchor_recompute_impl.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-06870",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-099",
+     "D-119"
+    ],
+    "after": [
+     "D-099",
+     "D-119",
+     "D-581"
+    ]
+   },
+   "decisions_gained": [
+    "D-581"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-581"
+   ],
+   "gained_entries_among_the_six_escaped": [
+    "D-581"
+   ],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_instruction_engage_information_loss_audit.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-07279",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-119"
+    ],
+    "after": [
+     "D-119",
+     "D-565"
+    ]
+   },
+   "decisions_gained": [
+    "D-565"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-565"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_instruction_joint_input_parity.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-07592",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-037"
+    ],
+    "after": [
+     "D-037",
+     "D-596"
+    ]
+   },
+   "decisions_gained": [
+    "D-596"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-596"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_instruction_layer1_implementation.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-07792",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-041",
+     "D-051"
+    ],
+    "after": [
+     "D-041",
+     "D-051",
+     "D-623"
+    ]
+   },
+   "decisions_gained": [
+    "D-623"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-623"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_instruction_layer3_phase3_build.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-07965",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-048"
+    ],
+    "after": [
+     "D-048",
+     "D-596"
+    ]
+   },
+   "decisions_gained": [
+    "D-596"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-596"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_instruction_metric_build.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-07991",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-028",
+     "D-048"
+    ],
+    "after": [
+     "D-028",
+     "D-048",
+     "D-596"
+    ]
+   },
+   "decisions_gained": [
+    "D-596"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-596"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_instruction_metric_decomposition.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-08320",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-119"
+    ],
+    "after": [
+     "D-119",
+     "D-596"
+    ]
+   },
+   "decisions_gained": [
+    "D-596"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-596"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_instruction_phase2_architecture_support.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-09748",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-119"
+    ],
+    "after": [
+     "D-119",
+     "D-619"
+    ]
+   },
+   "decisions_gained": [
+    "D-619"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-619"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_joint_architecture_dossier.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-10002",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-105",
+     "D-107"
+    ],
+    "after": [
+     "D-105",
+     "D-107",
+     "D-611"
+    ]
+   },
+   "decisions_gained": [
+    "D-611"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-611"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_l1l4_review_report.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-11287",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-119"
+    ],
+    "after": [
+     "D-119",
+     "D-615"
+    ]
+   },
+   "decisions_gained": [
+    "D-615"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-615"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_oi167_collection_tonic_report.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-11432",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-112",
+     "D-119"
+    ],
+    "after": [
+     "D-112",
+     "D-119",
+     "D-596"
+    ]
+   },
+   "decisions_gained": [
+    "D-596"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-596"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_phase2_architecture_support_report.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-11660",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-032",
+     "D-119"
+    ],
+    "after": [
+     "D-032",
+     "D-119",
+     "D-585"
+    ]
+   },
+   "decisions_gained": [
+    "D-585"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-585"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_phase5c_step3_report.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-13196",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-032",
+     "D-119"
+    ],
+    "after": [
+     "D-032",
+     "D-119",
+     "D-585"
+    ]
+   },
+   "decisions_gained": [
+    "D-585"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-585"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "src/composing/analysis/function/functionresolver.cpp"
+   ]
+  },
+  {
+   "cluster_id": "DC-13271",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-119"
+    ],
+    "after": [
+     "D-119",
+     "D-565"
+    ]
+   },
+   "decisions_gained": [
+    "D-565"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-565"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "src/composing/analysis/joint/jointdecoder.cpp"
+   ]
+  },
+  {
+   "cluster_id": "DC-13717",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-037",
+     "D-038",
+     "D-039"
+    ],
+    "after": [
+     "D-037",
+     "D-038",
+     "D-039",
+     "D-596"
+    ]
+   },
+   "decisions_gained": [
+    "D-596"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-596"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "src/composing/tests/note_model_tests.cpp"
+   ]
+  },
+  {
+   "cluster_id": "DC-13990",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-119"
+    ],
+    "after": [
+     "D-119",
+     "D-548"
+    ]
+   },
+   "decisions_gained": [
+    "D-548"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-548"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "tools/audit/l5/gen_instruments_core_dispositions.py"
+   ]
+  },
+  {
+   "cluster_id": "DC-14371",
+   "disposition": {
+    "before": "restates",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-3",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [
+     "D-048",
+     "D-119"
+    ],
+    "after": [
+     "D-048",
+     "D-119",
+     "D-596"
+    ]
+   },
+   "decisions_gained": [
+    "D-596"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-596"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "tools/oracle_root_metric.py"
+   ]
+  },
+  {
+   "cluster_id": "DC-01526",
+   "disposition": {
+    "before": "unresolved",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-601"
+    ]
+   },
+   "decisions_gained": [
+    "D-601"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-601"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_adjudication_dossier.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-01621",
+   "disposition": {
+    "before": "unresolved",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-566"
+    ]
+   },
+   "decisions_gained": [
+    "D-566"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-566"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_audit_obligation_map.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-01647",
+   "disposition": {
+    "before": "unresolved",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-547"
+    ]
+   },
+   "decisions_gained": [
+    "D-547"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-547"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_audit_protocol.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-01670",
+   "disposition": {
+    "before": "unresolved",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-624"
+    ]
+   },
+   "decisions_gained": [
+    "D-624"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-624"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_bounded_context_design.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-01774",
+   "disposition": {
+    "before": "unresolved",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-635"
+    ]
+   },
+   "decisions_gained": [
+    "D-635"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-635"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_delta_check_dispositions.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-01812",
+   "disposition": {
+    "before": "unresolved",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-563"
+    ]
+   },
+   "decisions_gained": [
+    "D-563"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-563"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_eg2_scoping.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02014",
+   "disposition": {
+    "before": "unresolved",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-581"
+    ]
+   },
+   "decisions_gained": [
+    "D-581"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-581"
+   ],
+   "gained_entries_among_the_six_escaped": [
+    "D-581"
+   ],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_information_loss_audit.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02175",
+   "disposition": {
+    "before": "unresolved",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-615"
+    ]
+   },
+   "decisions_gained": [
+    "D-615"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-615"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_l1_l5_premise_debt_audit.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02203",
+   "disposition": {
+    "before": "unresolved",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-558"
+    ]
+   },
+   "decisions_gained": [
+    "D-558"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-558"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_l1l3_stabilization_plan.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02248",
+   "disposition": {
+    "before": "unresolved",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-611"
+    ]
+   },
+   "decisions_gained": [
+    "D-611"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-611"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_l1l4_review_charter.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02321",
+   "disposition": {
+    "before": "unresolved",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-632"
+    ]
+   },
+   "decisions_gained": [
+    "D-632"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-632"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_layer2_reslice_design.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02419",
+   "disposition": {
+    "before": "unresolved",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-622"
+    ]
+   },
+   "decisions_gained": [
+    "D-622"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-622"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_layer3_reachback_design.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02420",
+   "disposition": {
+    "before": "unresolved",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-624"
+    ]
+   },
+   "decisions_gained": [
+    "D-624"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-624"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_layer3_reachback_design.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02641",
+   "disposition": {
+    "before": "unresolved",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-585"
+    ]
+   },
+   "decisions_gained": [
+    "D-585"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-585"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_layer5_function_design.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02654",
+   "disposition": {
+    "before": "unresolved",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-585"
+    ]
+   },
+   "decisions_gained": [
+    "D-585"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-585"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_layer5_function_design.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02684",
+   "disposition": {
+    "before": "unresolved",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-584"
+    ]
+   },
+   "decisions_gained": [
+    "D-584"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-584"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_layer5_function_methods.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02691",
+   "disposition": {
+    "before": "unresolved",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-585"
+    ]
+   },
+   "decisions_gained": [
+    "D-585"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-585"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_layer5_function_methods.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02862",
+   "disposition": {
+    "before": "unresolved",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-568"
+    ]
+   },
+   "decisions_gained": [
+    "D-568"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-568"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_phase2_architecture_review.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02874",
+   "disposition": {
+    "before": "unresolved",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-580"
+    ]
+   },
+   "decisions_gained": [
+    "D-580"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-580"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_phase2_architecture_review.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-02877",
+   "disposition": {
+    "before": "unresolved",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-568"
+    ]
+   },
+   "decisions_gained": [
+    "D-568"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-568"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_phase2_architecture_review.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-03479",
+   "disposition": {
+    "before": "unresolved",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-590"
+    ]
+   },
+   "decisions_gained": [
+    "D-590"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-590"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_style_taxonomy_proposal.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-03593",
+   "disposition": {
+    "before": "unresolved",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-613"
+    ]
+   },
+   "decisions_gained": [
+    "D-613"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-613"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cowork_union_search_record.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-03682",
+   "disposition": {
+    "before": "unresolved",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-621"
+    ]
+   },
+   "decisions_gained": [
+    "D-621"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-621"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "docs/architecture_joint_inference.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-03707",
+   "disposition": {
+    "before": "unresolved",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-573"
+    ]
+   },
+   "decisions_gained": [
+    "D-573"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-573"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "docs/beam_widening_design.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-03919",
+   "disposition": {
+    "before": "unresolved",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-595"
+    ]
+   },
+   "decisions_gained": [
+    "D-595"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-595"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "docs/iter90_bass_as_root_promotion_shelved.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-03955",
+   "disposition": {
+    "before": "unresolved",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-575"
+    ]
+   },
+   "decisions_gained": [
+    "D-575"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-575"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "docs/key_detection_baroque_partial_signature.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-04018",
+   "disposition": {
+    "before": "unresolved",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-596"
+    ]
+   },
+   "decisions_gained": [
+    "D-596"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-596"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "docs/layer_audit_plan.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-04311",
+   "disposition": {
+    "before": "unresolved",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-574"
+    ]
+   },
+   "decisions_gained": [
+    "D-574"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-574"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "docs/stage4b_design.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-04326",
+   "disposition": {
+    "before": "unresolved",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-573"
+    ]
+   },
+   "decisions_gained": [
+    "D-573"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-573"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "docs/stage4b_design.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-07403",
+   "disposition": {
+    "before": "unresolved",
+    "after": "no-spec-home"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-4"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-611"
+    ]
+   },
+   "decisions_gained": [
+    "D-611"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-611"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "cc_instruction_l1l4_review_tidy.md"
+   ]
+  },
+  {
+   "cluster_id": "DC-13220",
+   "disposition": {
+    "before": "unresolved",
+    "after": "restates"
+   },
+   "rule": {
+    "before": "BR-8",
+    "after": "BR-3"
+   },
+   "decisions": {
+    "before": [],
+    "after": [
+     "D-585"
+    ]
+   },
+   "decisions_gained": [
+    "D-585"
+   ],
+   "decisions_lost": [],
+   "gained_entries_entered_after_the_snapshot": [
+    "D-585"
+   ],
+   "gained_entries_among_the_six_escaped": [],
+   "cause": "BACKBONE GROWTH — every decision newly named on this cluster was entered AFTER the snapshot's derivation",
+   "files": [
+    "src/composing/analysis/function/functionresolver.h"
+   ]
+  }
+ ]
+}

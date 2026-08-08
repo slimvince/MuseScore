@@ -11,10 +11,44 @@
   "why_it_matters": "A route is a judgment about what work would discharge an entry. It is marked authored on every row so no reader takes it for a measured quantity (D-431)."
  },
  "why_re_home_is_preferred": "Register rule (e): a decision belongs, wherever possible, in the OWNING LAYER'S SPECIFICATION, and the register is 'the index and pointer, never a substitute home'. D-231's purposive clause (criterion C4) requires that at completion the SPECIFICATIONS suffice to measure conformance against WITHOUT consulting the register -- so a decision reachable only by following a pointer satisfies C1's letter and defeats C4.",
- "what_this_dispatch_may_execute": {
-  "surface": "ARCHITECTURE.md only",
-  "why": "The standing authorization covers src/composing/, notationaccessibility.cpp and ARCHITECTURE.md. Entries whose owning specification is CLAUDE.md, docs/scoring_model.md or BUILD_AND_TEST.md are classified here and NOT executed.",
+ "what_a_homing_dispatch_may_execute": {
+  "surface": [
+   "ARCHITECTURE.md",
+   "CLAUDE.md",
+   "docs/scoring_model.md",
+   "BUILD_AND_TEST.md"
+  ],
+  "why": "The standing authorization covers src/composing/, notationaccessibility.cpp and ARCHITECTURE.md. ★ WIDENED 2026-08-07 by the user's ruling: a HOMING dispatch may also touch docs/scoring_model.md, CLAUDE.md and BUILD_AND_TEST.md, SCOPED TO HOMING ACTS ALONE and to no other edit of those files.",
+  "the_former_statement_preserved_12": "'surface': 'ARCHITECTURE.md only'; 'why': 'The standing authorization covers src/composing/, notationaccessibility.cpp and ARCHITECTURE.md. Entries whose owning specification is CLAUDE.md, docs/scoring_model.md or BUILD_AND_TEST.md are classified here and NOT executed.' True until the widening; false after it.",
   "consequence_stated_plainly": "A small executed set is a SCOPE BOUND, not a verdict that the remaining entries have no owner. The route column says which do."
+ },
+ "★_assumption_A1_of_the_2026_08_07_homing_wave": {
+  "the_assumption": "That every licensing-class entry's recorded owner names a DETERMINATE section of its file. Checked PER ENTRY before anything was written, with a STOP for any entry it fails: that entry is not homed, it stays in item 1, and it returns to the user with the owner question rather than to a guessed section.",
+  "verdict": "REFUTED FOR THREE OF THE ELEVEN, which the dispatch names as a result and not a failure — the class was cut by phrase and the cut can be wrong per entry.",
+  "determinate_and_homed": [
+   "D-451",
+   "D-452",
+   "D-473",
+   "D-486",
+   "D-564",
+   "D-582",
+   "D-602",
+   "D-603"
+  ],
+  "soft_owner_NOT_homed_and_returned_to_the_user": [
+   "D-281",
+   "D-538",
+   "D-539"
+  ],
+  "how_the_three_were_identified": "Not by a fresh judgment. `OPEN_ITEMS.md` OI-342 enumerates, in its own words, the members of this class whose owner is genuinely soft INDEPENDENT of the edit surface — D-539 ('the principles'), D-538 ('the project's standing rules') and D-281 (two candidate homes, in two different files) — and states that every other member names a determinate site. Each of the three is also soft on the face of its own recorded owner string: two name no section at all, and one names two sections in two files joined by a slash.",
+  "what_is_NOT_claimed": "That the three have no owner, or that any corrected count is proposed for OI-342 — that row declines to propose one and nothing here proposes one either. What is claimed is only that the record does not settle WHICH section each of the three belongs in, and that a session may not settle it.",
+  "★_and_the_user_RULED_ALL_THREE_on_2026_08_07": {
+   "what_happened": "The refusal above did the one thing it was for: the question went to the user and the user answered it, in three rulings on the same date (dispatch `cc_instruction_three_owner_rulings.md` §0a). Recorded here BESIDE the verdict rather than in place of it (#12) — the verdict is what a session could not settle, these are what the user settled, and collapsing the two would erase the refusal that produced the answer.",
+   "R1_D_281": "HOMED in BUILD_AND_TEST.md §2, the Corpus Regression Check. The schema floor is a contract of the measurement tools and that document is the authoritative one for them (#7). Excluded alternative: CLAUDE.md gate block (A), which governs how the recorded numbers are read and already delegates tooling to that document (#6).",
+   "R2_D_538": "RATIFIED AND RULED SUPERSEDED in the same act, by principle #14 (D-177) and gate block (A)'s measured non-increase (D-115). No specification is edited for it, which is the ruling's point; its route below is NO HOME EXISTS and its disposition is derived under D-642 in the R1 application. Excluded alternative: homing it beside the gate block would put a second copy of in-force discipline into a live specification under a LEGACY subject.",
+   "R3_D_539": "HOMED in cowork_engage_arc_plan.md, beside the MEASURE-BEFORE-BUILD gate — an order-of-work rule in the ratified contract for the order of work, where D-277, its recorded descendant, already lives. Excluded alternative: CLAUDE.md beside the #17 funnel, which would begin restating what the governing file delegates. The ruling is itself the authorization for that one edit; no standing edit surface is widened, which is why the entry is admitted by `OWNER_RULED_2026_08_07` and not by the prefix table.",
+   "what_the_rulings_did_NOT_do": "They settled the OWNER question for these three and nothing else. R1 and R3 do not ratify their entries as correctly recorded — D-539's record still reads NOT ratified and it stays in the ratification queue; D-281 was already ratified on 2026-08-02, before this question arose. No fix to the analysis, no design and no inference change is authorized by any of the three, and nothing here proposes a corrected count for OI-342."
+  }
  },
  "★_findings_the_classification_produced": {
   "1_C1_reaches_entries_whose_re_homing_#6_would_FORBID": "Several entries are recorded superseded or absorbed, and their live content is carried by named successors that ARE homed. Writing them into a specification would put a second copy of a homed rule, which #6 forbids. So criterion C1, read literally over the whole register, obliges an act the principles prohibit for part of its population. Reported, not resolved -- whether C1 reaches superseded entries is the user's, and nothing here assumes an answer.",
@@ -26,36 +60,23 @@
  "★_the_owner_judgment_read_rather_than_the_column": {
   "what_this_is": "OPEN_ITEMS.md OI-342 records that the `owner_is_unambiguous` column carries the EDIT-SURFACE answer for part of this population, although the row already has a separate field for that. This block reads the owner JUDGMENT -- the recorded reason -- instead of the column, and reports where the two disagree. It CORRECTS NOTHING: the column is untouched and no count in it is re-authored.",
   "how_each_set_is_cut": "By an exact phrase the authored reasons already contain, never by a vocabulary assembled until the answer came out right. `disagreement` is the reasons containing \"outside this dispatch's edit surface\"; `asserts_a_determinate_site` is the reasons containing 'determinate' and not 'not determinate'.",
-  "open_re_home_rows": 59,
+  "open_re_home_rows": 1,
   "disagreement_column_says_ambiguous_reason_names_only_the_edit_surface": {
-   "count": 10,
-   "ids": [
-    "D-564",
-    "D-451",
-    "D-582",
-    "D-603",
-    "D-602",
-    "D-473",
-    "D-539",
-    "D-538",
-    "D-281",
-    "D-486"
-   ],
+   "count": 0,
+   "ids": [],
    "what_it_means": "For each of these the recorded reason names a determinate site and then says it lies outside the edit surface. The column and the judgment disagree, and the artifact's own `executable_under_this_dispatch` field is what was supposed to carry the second answer.",
    "what_is_NOT_claimed": "That all of them have a determinate owner. OI-342 states in terms that three of them have a genuinely soft owner independent of the surface, and declines to propose a corrected count; nothing here proposes one either."
   },
   "asserts_a_determinate_site_although_the_column_says_otherwise": {
-   "count": 1,
-   "ids": [
-    "D-622"
-   ],
+   "count": 0,
+   "ids": [],
    "why_it_is_still_not_executable": "The same reason states the blocker: the entry is the subject of an OPEN user ruling, so writing it into the specification would settle that ruling by fiat."
   },
   "rows_whose_owner_names_the_editable_surface": {
-   "count": 38,
+   "count": 1,
    "column_says_unambiguous": [],
    "of_those_whose_reason_names_only_the_edit_surface": [],
-   "consequence_for_this_wave": "The disagreement OI-342 records is confined to rows whose owner is NOT on the editable surface, so it moves nothing this wave could execute. What it moves is what the column MEANS to a reader deciding how much of item 1 is closeable."
+   "consequence_for_this_wave": "★ CORRECTED 2026-08-07, because the widening made the former statement false. IT FORMERLY READ (#12): 'The disagreement OI-342 records is confined to rows whose owner is NOT on the editable surface, so it moves nothing this wave could execute. What it moves is what the column MEANS to a reader deciding how much of item 1 is closeable.' That was true while the surface was ARCHITECTURE.md alone. The user widened it to the three further files on 2026-08-07, SCOPED TO HOMING ACTS, and the disagreement then moved EXACTLY the rows the homing wave executed: eight entries whose column says ambiguous and whose recorded reason names a determinate CLAUDE.md site and then says it was out of reach. They were homed. The column is still untouched -- what carries the determinacy verdict is the separate A1 field, for the reason OI-342 gives."
   },
   "the_executable_set_at_HEAD": {
    "count": 0,
@@ -66,25 +87,82 @@
  "the_NO_HOME_class_is_dispositioned_under_ruling_R1_elsewhere": "tools/audit/decisions/r1_superseded_reach.json applies the user's ruling R1 of 2026-08-04 to every member of this table's NO-HOME class: the successor the record names for each entry's live content, whether that successor is homed, and the disposition that follows. The route column here is UNCHANGED and no disposition or count is restated (D-431, #6).",
  "counted": {
   "entries": 94,
-  "documents": 32,
-  "route_RE_HOME": 70,
+  "documents": 12,
+  "route_RE_HOME": 69,
   "route_NEEDS_A_DELEGATION": 11,
-  "route_NO_HOME_EXISTS": 13,
-  "re_home_with_an_unambiguous_owner": 11,
-  "executable_under_this_dispatch": 11,
-  "closed_by_this_wave_and_no_longer_in_item_1": 11,
-  "still_open_in_item_1_at_HEAD": 83
+  "route_NO_HOME_EXISTS": 14,
+  "re_home_with_an_unambiguous_owner": 13,
+  "executable_under_this_dispatch": 68,
+  "closed_by_this_wave_and_no_longer_in_item_1": 68,
+  "still_open_in_item_1_at_HEAD": 26
  },
  "executed_this_wave": [
+  "D-280",
+  "D-281",
+  "D-325",
+  "D-326",
+  "D-327",
+  "D-328",
+  "D-419",
+  "D-421",
+  "D-423",
+  "D-449",
+  "D-450",
+  "D-451",
+  "D-452",
+  "D-463",
+  "D-464",
+  "D-465",
+  "D-469",
+  "D-470",
+  "D-471",
+  "D-473",
+  "D-474",
+  "D-486",
+  "D-490",
+  "D-491",
+  "D-492",
+  "D-493",
+  "D-494",
+  "D-495",
+  "D-496",
+  "D-497",
+  "D-501",
+  "D-510",
+  "D-511",
+  "D-512",
+  "D-531",
+  "D-532",
+  "D-533",
+  "D-534",
+  "D-536",
+  "D-537",
+  "D-539",
+  "D-542",
+  "D-543",
+  "D-544",
+  "D-545",
+  "D-564",
+  "D-568",
   "D-572",
+  "D-580",
+  "D-582",
   "D-584",
   "D-585",
   "D-586",
+  "D-602",
+  "D-603",
+  "D-604",
+  "D-605",
+  "D-606",
   "D-607",
   "D-608",
   "D-609",
+  "D-616",
+  "D-622",
   "D-623",
   "D-624",
+  "D-625",
   "D-628",
   "D-635"
  ],
@@ -126,6 +204,30 @@
    "authored": "the route, the owner, the unambiguity verdict and the reason"
   },
   {
+   "id": "D-538",
+   "home_document": "docs/iter92_joint_bass_chord_scoring.md",
+   "route": "NO HOME EXISTS",
+   "owning_specification": null,
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": false,
+   "closed_by_this_wave": false,
+   "discharged_by_the_entry_level_re_cut": true,
+   "reason": "RULED 2026-08-07 (user, R2): the entry is ratified as correctly recorded AND its content is ruled superseded in the same act — by principle #14 (D-177) and by gate block (A)'s measured non-increase (D-115), the two successors this entry's own record already named before the ruling. Both are homed, so writing its early concrete form into a specification would put a second copy of a homed rule, which #6 forbids — and would put in-force discipline into a live specification under a LEGACY subject a reader could misapply to the live solution. Its disposition under D-642 is DERIVED at tools/audit/decisions/r1_superseded_reach.json and is not authored here. THE FORMER ROUTE, OWNER AND REASON, PRESERVED (#12): RE-HOME, 'CLAUDE.md (the staging discipline for a multi-signal change)', owner_is_unambiguous False, reason 'One signal at a time with the corpus re-measured between. A landing discipline rather than a scoring rule; its home is the project's standing rules, outside this dispatch's edit surface.'",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-571",
+   "home_document": "docs/stage4b_design.md",
+   "route": "NO HOME EXISTS",
+   "owning_specification": null,
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": false,
+   "closed_by_this_wave": false,
+   "discharged_by_the_entry_level_re_cut": true,
+   "reason": "Recorded SUPERSEDED-IN-FACT: a scoring change on the legacy key path, which the production arm no longer runs. No live specification owns a term on a superseded path.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
    "id": "D-579",
    "home_document": "cowork_phase2_architecture_review.md",
    "route": "NO HOME EXISTS",
@@ -138,6 +240,523 @@
    "authored": "the route, the owner, the unambiguity verdict and the reason"
   },
   {
+   "id": "D-280",
+   "home_document": "ARCHITECTURE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "ARCHITECTURE.md §3.3 (the inference/presentation boundary)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "Gates read structured fields only, never a chord symbol string or a Roman numeral. §3.3 states the boundary this restricts, but the entry is an INPUT restriction on scoring, which docs/scoring_model.md also governs; the owner is not determinate.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-281",
+   "home_document": "BUILD_AND_TEST.md (re-homed 2026-08-07 on the user's ruling R1 — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "BUILD_AND_TEST.md §2, the Corpus Regression Check (the measurement procedure)",
+   "owner_is_unambiguous": true,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "The batch measurement tool must emit the structured fields on every alternative or a corpus measurement silently reverts. RULED 2026-08-07 (user, R1): its owner is the measurement procedure, and BUILD_AND_TEST.md is the authoritative document for the measurement tools, which is the proper layer (#7). The excluded alternative is CLAUDE.md gate block (A), which governs how the recorded numbers are READ and already delegates commands and tooling to that document, so homing the schema floor there would blur the layer and restate what is pointed at (#6); a pointer from the gate block is permitted, a copy is not. THE FORMER OWNER AND REASON, PRESERVED (#12): 'CLAUDE.md gate block (C) / BUILD_AND_TEST.md (the measurement procedure)', owner_is_unambiguous False, reason 'The batch tool must emit the structured fields on every alternative or the corpus figures silently revert. Its owner is the measurement procedure, outside this dispatch's edit surface.'",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-325",
+   "home_document": "docs/scoring_model.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "ARCHITECTURE.md Layer 4 (the per-slice chord decoder)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "An ordering constraint between a correction rule and widening the search. It governs the legacy correction surface AND the decoder's search, and the record does not settle which of the two sections carries a rule about their interaction.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-326",
+   "home_document": "ARCHITECTURE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "ARCHITECTURE.md Layer 4 (the per-slice chord decoder)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "The search emits the whole path with alternatives and margins. The Layer-4 section specifies the carry, but this entry's subject is the SEARCH, which that section describes as dormant staging; which surface owns it is not determinate.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-327",
+   "home_document": "docs/scoring_model.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "docs/scoring_model.md (the root-continuity guard)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "The guard reads reconstructed inversion credit rather than testing a sounding third. A legacy scoring term, with the same two-candidate owner question as D-490.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-328",
+   "home_document": "docs/scoring_model.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "docs/scoring_model.md §8 (constraints and dead ends)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "A wider search cannot fix the arpeggio root failure. It is a recorded dead end for the legacy scorer, and §8 of the scoring model is where dead ends are collected -- but the finding is about the decoder's search, so the owner is not determinate.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-419",
+   "home_document": "ARCHITECTURE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "ARCHITECTURE.md §7 (The Knowledge Base) / the planned consumers block",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "Until the recognition consumer is built, the function layer does not touch the vocabulary. The planned-consumers block names that consumer, but a build-ORDER rule is not a statement either section makes, so the owner is not determinate.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-421",
+   "home_document": "ARCHITECTURE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "ARCHITECTURE.md §6.7 (the canonical style taxonomy)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "Idiom re-discovery rides every corpus wave on research material only, and a changed cluster set is its own ratification event. §6.7 owns the taxonomy; whether it owns the re-run protocol is the same question as D-542.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-423",
+   "home_document": "docs/scoring_model.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "docs/scoring_model.md §8 / ARCHITECTURE.md §4.1",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "Three standing prohibitions over the LEGACY post-scoring gates plus the retirement stage. Explicitly legacy-scoped; the same two-candidate owner question as D-490.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-449",
+   "home_document": "ARCHITECTURE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "the joint estimator's specification in ARCHITECTURE.md",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "Factor granularity for the ratified factorization. The joint estimator is specified in the document's OPENING BANNER rather than in a section of its own, and a banner is not a section a decision can be sited inside; the owner is therefore not determinate.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-450",
+   "home_document": "ARCHITECTURE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "the joint estimator's specification in ARCHITECTURE.md",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "The key-signature/declared-mode prior conditions the initial key state only. Same owner and same indeterminacy as D-449.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-451",
+   "home_document": "CLAUDE.md (re-homed 2026-08-07 under the homing licence — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "CLAUDE.md principle #17(c), the desk-simulation stage",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "A standing rule about what a desk simulation's table values may and may not become. Its owner is the premise gate in CLAUDE.md, outside this dispatch's edit surface.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-452",
+   "home_document": "CLAUDE.md (re-homed 2026-08-07 under the homing licence — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "CLAUDE.md principle #17(c), the desk-simulation stage",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "A standing rule that every desk-simulation trace runs at identity weights. Same owner as D-451.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-463",
+   "home_document": "docs/scoring_model.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "docs/scoring_model.md / ARCHITECTURE.md §4.1",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "Temporal signals inside the vertical scorer stay put, and the gate depending on one must move with them. Legacy-surface debt with the same two-candidate owner question as D-490.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-464",
+   "home_document": "ARCHITECTURE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "ARCHITECTURE.md §5.3 (TemporalContext)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "No further progression-level signal may enter the single-step look-around structure. §5.3 specifies that structure, but the rule's other half concerns a planned progression-level structure that has no section, so the owner is not determinate.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-465",
+   "home_document": "docs/scoring_model.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "docs/scoring_model.md §8 / ARCHITECTURE.md §4.1",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "The three-test policy for judging a proposed post-scoring gate. Legacy-surface policy with the same two-candidate owner question as D-490.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-469",
+   "home_document": "ARCHITECTURE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "ARCHITECTURE.md §5.13 (Analyze-at-Tick Path Table)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "The tick-local path is left outside the unified pipeline by design. §5.13 tabulates that path, but the decision is about the pipeline's scope, which §11.5 and §3.3 also describe; the owner is not determinate.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-470",
+   "home_document": "ARCHITECTURE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "ARCHITECTURE.md §5.3 (TemporalContext)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "The temporal-context extension fields are recorded during the analysis pass and never rebuilt by a consumer. §5.3 specifies those fields, but the rule binds the CONSUMERS, which §11.5 describes; the owner is not determinate.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-471",
+   "home_document": "ARCHITECTURE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "ARCHITECTURE.md §11.5 (Region Analysis and the Chord Track)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "The sub-beat annotation duration gate is kept or dropped on a measured observation run with the verdict stated in advance. The annotation layers block sits in §11.5, but what is recorded is a measurement protocol rather than a rule; the owner is not determinate.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-473",
+   "home_document": "CLAUDE.md (re-homed 2026-08-07 under the homing licence — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "CLAUDE.md principle #1/#2 (the fact- and theory-basis rules)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "The labelling and cross-checking method for a theory-grounding pass. Its owner is the principle it operationalizes, outside this dispatch's edit surface.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-474",
+   "home_document": "CLAUDE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "CLAUDE.md principle #21",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "★ The one entry whose content is ALREADY WRITTEN into its owning specification: principle #21 carries the fact-of-absence and names D-474 in terms. What is outstanding is the register's HOME field, which still points at the findings document. The route is a re-home, and it is a field correction rather than a piece of writing.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-486",
+   "home_document": "CLAUDE.md (re-homed 2026-08-07 under the homing licence — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "CLAUDE.md gate block (A), the grading conventions",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "A measurement publishes its coverage denominator and its per-corpus breakdown. A grading convention belonging beside the four the gate block already states -- outside this dispatch's edit surface.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-490",
+   "home_document": "docs/scoring_model.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "docs/scoring_model.md or ARCHITECTURE.md §4.1 (ChordAnalyzer)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "A falsification of the fine-grain function override, on the LEGACY scorer awaiting deletion. Both surfaces describe that scorer and the record does not settle which owns a post-scoring override's retirement evidence.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-491",
+   "home_document": "docs/scoring_model.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "docs/scoring_model.md or ARCHITECTURE.md §4.1 (ChordAnalyzer)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "A refutation of the vertically-fair repair of the same override. Same owner question as D-490.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-492",
+   "home_document": "docs/scoring_model.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "docs/scoring_model.md or ARCHITECTURE.md §4.1 (ChordAnalyzer)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "The recommended redesign of the same override. Same owner question as D-490, and the recommendation is not adopted, so what a section would state is a proposal.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-493",
+   "home_document": "docs/scoring_model.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "docs/scoring_model.md or ARCHITECTURE.md §4.1 (ChordAnalyzer)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "Records that the principled restriction is UN-COMPUTABLE today. Same owner question as D-490.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-494",
+   "home_document": "ARCHITECTURE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "ARCHITECTURE.md Layer 5 (function/cadence) AND the Layer-3 key section",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "One entry places obligations on TWO layers -- key-confirmation channels that do not need a cadence (Layer 5) and an enharmonic-identity rule for key spans (Layer 3). Which section carries a single amendment spanning both is not determinate.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-495",
+   "home_document": "ARCHITECTURE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "ARCHITECTURE.md Layer 5 (cadence admission)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "The obligation is on cadence admission, which Layer 5 owns, but its trigger is the L1.5 phrase-boundary profile whose contract is delegated elsewhere. Which of the two carries a fallback rule spanning both is not determinate.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-496",
+   "home_document": "ARCHITECTURE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "ARCHITECTURE.md §7 (The Knowledge Base)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "The one-store-or-two question is about the Harmonic Vocabulary's relation to the function layer's pairwise grammar. The amendment DEFERS the decision to the recognition-consumer build, so no section can yet state it as a rule -- what would be written is that a choice is owed.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-497",
+   "home_document": "ARCHITECTURE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "ARCHITECTURE.md §6 (The Style System) / the preset constants",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "The amendment requires an existing mark to be APPLIED to named constants and idioms, and the validating corpus named beside each. That is an obligation over a constant table rather than a rule a specification section states.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-501",
+   "home_document": "ARCHITECTURE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "ARCHITECTURE.md §3.3 (the inference/presentation boundary)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "A written chord symbol may be read only as a comparison or ground-truth label. §3.3 states the boundary, but the rule also binds MEASUREMENT TOOLS, which no ARCHITECTURE.md section governs; the owner is not determinate.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-510",
+   "home_document": "docs/scoring_model.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "docs/scoring_model.md (the gates and post-scoring passes)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "Which promotion carry is correct, on the legacy scorer. docs/scoring_model.md is the authoritative reference for scoring terms and gates, but ARCHITECTURE.md §4.1 also describes the same surface; the record does not settle which owns a promotion primitive.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-511",
+   "home_document": "docs/scoring_model.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "docs/scoring_model.md (the gates and post-scoring passes)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "One promotion primitive with a present-first dedup guard. Same owner question as D-510.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-512",
+   "home_document": "docs/scoring_model.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "docs/scoring_model.md (the gates and post-scoring passes)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "Gate A's retirement condition. Same owner question as D-510.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-531",
+   "home_document": "ARCHITECTURE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "ARCHITECTURE.md §2.2 (Interface-Based Design for ML Substitutability)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "The hand-built emission is confirmed and the learned replacement is not triggered, retained as a fallback with a concrete trigger. §2.2 owns the substitutability property; whether it also owns a standing not-yet-triggered verdict is not settled by the record.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-532",
+   "home_document": "ARCHITECTURE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "the joint estimator's specification in ARCHITECTURE.md",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "A pooling level added to the chord-transition table. The joint estimator is specified in the opening banner rather than a section, so the owner is not determinate (as D-449).",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-533",
+   "home_document": "ARCHITECTURE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "the joint estimator's specification in ARCHITECTURE.md",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "The back-off rule for a continuation too rare to store. Same owner question as D-532.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-534",
+   "home_document": "ARCHITECTURE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "the joint estimator's specification in ARCHITECTURE.md",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "The missing-chord-tone penalty counted per chord factor. Same owner question as D-532.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-536",
+   "home_document": "docs/scoring_model.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "docs/scoring_model.md (the bass/chord joint selection)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "The bass and chord are chosen together as a triple. A legacy-scorer change; same two-candidate owner question as D-490.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-537",
+   "home_document": "docs/scoring_model.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "docs/scoring_model.md (§4 bonuses)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "The completeness bonus fires only for a root-position reading with all three tones present. A legacy scoring bonus with a guard; the scoring model's §4 is the nearest owner, but ARCHITECTURE.md §4.1 also specifies the scorer.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-539",
+   "home_document": "cowork_engage_arc_plan.md (re-homed 2026-08-07 on the user's ruling R3 — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "cowork_engage_arc_plan.md, beside the MEASURE-BEFORE-BUILD gate",
+   "owner_is_unambiguous": true,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "Decompose every error slice into structural, fitted and ceiling BEFORE building. RULED 2026-08-07 (user, R3): it is an ORDER-OF-WORK rule, and the arc plan is the ratified contract for the order of work that CLAUDE.md's principles section delegates to and does not restate (#6); D-277, the method's recorded descendant, already lives there. The excluded alternative is CLAUDE.md beside the #17 funnel, which would begin restating what the governing file delegates. The ruling is itself the authorization for that one edit of a ratified contract document, and no standing edit surface is widened by it. THE FORMER OWNER AND REASON, PRESERVED (#12): 'CLAUDE.md (the standing method rules)', owner_is_unambiguous False, reason 'Decompose every error slice into structural, fitted and ceiling BEFORE building. A standing method rule whose home is the principles, outside this dispatch's edit surface.'",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-542",
+   "home_document": "ARCHITECTURE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "ARCHITECTURE.md §6.7 (the canonical style taxonomy)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "The discover-then-name protocol for the study that produces the taxonomy. §6.7 owns the taxonomy, not the method that discovers it, so the owning section is not determinate.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-543",
+   "home_document": "ARCHITECTURE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "ARCHITECTURE.md §6.7 (the canonical style taxonomy)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "The encoding the study uses. Same owner question as D-542.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-544",
+   "home_document": "ARCHITECTURE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "ARCHITECTURE.md §6.7 (the canonical style taxonomy)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "Confound control as a first-class validity gate for the study. Same owner question as D-542.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-545",
+   "home_document": "ARCHITECTURE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "ARCHITECTURE.md §6.7 (the canonical style taxonomy)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "The extraction tool the study may use, and the prohibition on our own inference touching it. Same owner question as D-542.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-564",
+   "home_document": "CLAUDE.md (re-homed 2026-08-07 under the homing licence — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "CLAUDE.md gate block (D), the cross-layer-budget caveat",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "A correction of record to the caveat that apportions the residual across layers -- the over-grabbed-segmentation case corrupts the BASS and not only the pitch-class window. Its owner is a CLAUDE.md caveat block, which lies outside this dispatch's edit surface.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-568",
+   "home_document": "cowork_engage_arc_plan.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "ARCHITECTURE.md §2.14 (Layered AND Iterative Inference)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "A strategy statement about where precision work goes on each of two axes. It governs no single layer, and §2.14 states the inference shape rather than a work programme, so the owning section is not determinate.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
    "id": "D-572",
    "home_document": "ARCHITECTURE.md (re-homed 2026-08-04 — no longer in item 1)",
    "route": "RE-HOME",
@@ -146,6 +765,28 @@
    "executable_under_this_dispatch": true,
    "closed_by_this_wave": true,
    "reason": "Recorded SUPERSEDED-IN-FACT on the legacy key path, and its content is a REMOVAL: the hard post-hoc declared-mode promotion was taken out outright rather than kept in a gated form. Under D-644 the owning specification states the current behaviour and records the removal as a tried-and-closed line — which is exactly what §5.2 already does for D-058, the piece-start shortcut removed at the same increment.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-580",
+   "home_document": "docs/scoring_model.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "docs/scoring_model.md or ARCHITECTURE.md §4.1 (ChordAnalyzer)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "Which of the legacy post-scoring gates must survive the dissolution. Recorded DEFERRED, on the legacy surface, with the same two-candidate owner question as D-490.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-582",
+   "home_document": "CLAUDE.md (re-homed 2026-08-07 under the homing licence — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "CLAUDE.md principle #12",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "A recomputable collapse is not information loss -- which is the qualification principle #12 already carries in its own text. The owner is CLAUDE.md, outside this dispatch's edit surface.",
    "authored": "the route, the owner, the unambiguity verdict and the reason"
   },
   {
@@ -182,6 +823,61 @@
    "authored": "the route, the owner, the unambiguity verdict and the reason"
   },
   {
+   "id": "D-602",
+   "home_document": "CLAUDE.md (re-homed 2026-08-07 under the homing licence — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "CLAUDE.md gate block (A), the grading conventions",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "A layer is judged on coverage-matched accuracy AND correct abstention, never on raw coverage. A measurement convention whose home is the gate block -- outside this dispatch's edit surface, and the abstain-aware convention it cites already lives there.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-603",
+   "home_document": "CLAUDE.md (re-homed 2026-08-07 under the homing licence — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "CLAUDE.md gate block (A) / the measurement conventions",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "How a behaviour-changing increment is graded while the pipeline is being rebuilt. A measurement convention, whose home is the gate block that publishes the conventions -- outside this dispatch's edit surface.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-604",
+   "home_document": "CLAUDE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "CLAUDE.md gate block (A), the grading conventions",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "A defensible modal reading the ground truth cannot represent is a ground-truth limitation. That is a GRADING convention and belongs beside the four the gate block already states.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-605",
+   "home_document": "ARCHITECTURE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "ARCHITECTURE.md Layer 3 (local key) / the key-area grouping",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "The local-key hypothesis derives from key-agnostic signals only and never from the key-area grouping. The rule's two ends sit in different sections -- Layer 3 for the hypothesis and the key-area grouping for what it may not read -- so the owner is not determinate.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-606",
+   "home_document": "CLAUDE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "CLAUDE.md gate block (A), the grading conventions",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "The binding metric for the modulation detector is modulation correctness, not the agreement percentage. A grading convention, and the entry itself cites the abstain-aware convention that already lives in the gate block.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
    "id": "D-607",
    "home_document": "ARCHITECTURE.md (re-homed 2026-08-04 — no longer in item 1)",
    "route": "RE-HOME",
@@ -215,6 +911,28 @@
    "authored": "the route, the owner, the unambiguity verdict and the reason"
   },
   {
+   "id": "D-616",
+   "home_document": "ARCHITECTURE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "ARCHITECTURE.md Layer 3 (key scoring) or the resolver/section scope",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "A global tonic anchor enters key scoring at RESOLVER/SECTION scope and never inside the window scorer. The scope it names spans the decoder and the resolver, and the resolver is retired from the production region path, so which section owns the rule is not determinate.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-622",
+   "home_document": "ARCHITECTURE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "ARCHITECTURE.md Layer 3 (the backward re-reading facility)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "The section owns the mechanism, so the SITE is determinate -- but the entry is the subject of an OPEN user ruling (OPEN_ITEMS.md OI-331): a live user-ratified entry, D-261, names the very proxy this one records as measured false, and all three candidate remedies change a user-ratified entry. Writing it into the specification would settle that by fiat.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
    "id": "D-623",
    "home_document": "ARCHITECTURE.md (re-homed 2026-08-04 — no longer in item 1)",
    "route": "RE-HOME",
@@ -234,6 +952,17 @@
    "executable_under_this_dispatch": true,
    "closed_by_this_wave": true,
    "reason": "The hard bound and the score start are safety caps for a loop that never settles, never the amount of context a layer needs. It qualifies the reach-back facility the Layer-3 section already carries.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-625",
+   "home_document": "ARCHITECTURE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "ARCHITECTURE.md §5.14 (Enharmonic Root Spelling) or the Layer-1.5 spelling view",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "How spelling presence is tested. Two sections describe the spelling surface -- §5.14 the enharmonic disambiguation and the Layer-4 section the shared line-of-fifths primitive -- and the record does not settle which owns the predicate.",
    "authored": "the route, the owner, the unambiguity verdict and the reason"
   },
   {
@@ -270,50 +999,6 @@
    "authored": "the route, the owner, the unambiguity verdict and the reason"
   },
   {
-   "id": "D-494",
-   "home_document": "cowork_architecture_review_2026_07.md",
-   "route": "RE-HOME",
-   "owning_specification": "ARCHITECTURE.md Layer 5 (function/cadence) AND the Layer-3 key section",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "One entry places obligations on TWO layers -- key-confirmation channels that do not need a cadence (Layer 5) and an enharmonic-identity rule for key spans (Layer 3). Which section carries a single amendment spanning both is not determinate.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-495",
-   "home_document": "cowork_architecture_review_2026_07.md",
-   "route": "RE-HOME",
-   "owning_specification": "ARCHITECTURE.md Layer 5 (cadence admission)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "The obligation is on cadence admission, which Layer 5 owns, but its trigger is the L1.5 phrase-boundary profile whose contract is delegated elsewhere. Which of the two carries a fallback rule spanning both is not determinate.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-496",
-   "home_document": "cowork_architecture_review_2026_07.md",
-   "route": "RE-HOME",
-   "owning_specification": "ARCHITECTURE.md §7 (The Knowledge Base)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "The one-store-or-two question is about the Harmonic Vocabulary's relation to the function layer's pairwise grammar. The amendment DEFERS the decision to the recognition-consumer build, so no section can yet state it as a rule -- what would be written is that a choice is owed.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-497",
-   "home_document": "cowork_architecture_review_2026_07.md",
-   "route": "RE-HOME",
-   "owning_specification": "ARCHITECTURE.md §6 (The Style System) / the preset constants",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "The amendment requires an existing mark to be APPLIED to named constants and idioms, and the validating corpus named beside each. That is an obligation over a constant table rather than a rule a specification section states.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
    "id": "D-498",
    "home_document": "cowork_architecture_review_2026_07.md",
    "route": "NO HOME EXISTS",
@@ -344,17 +1029,6 @@
    "executable_under_this_dispatch": false,
    "closed_by_this_wave": false,
    "reason": "A ratified widening of the material the analysis is measured against. Its owner is the corpus census, whose delegation today reaches §8c only; widening a delegation is the act rule (g) reserves to the user.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-568",
-   "home_document": "cowork_audit_obligation_map.md",
-   "route": "RE-HOME",
-   "owning_specification": "ARCHITECTURE.md §2.14 (Layered AND Iterative Inference)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "A strategy statement about where precision work goes on each of two axes. It governs no single layer, and §2.14 states the inference shape rather than a work programme, so the owning section is not determinate.",
    "authored": "the route, the owner, the unambiguity verdict and the reason"
   },
   {
@@ -402,61 +1076,6 @@
    "authored": "the route, the owner, the unambiguity verdict and the reason"
   },
   {
-   "id": "D-564",
-   "home_document": "cowork_eg2_scoping.md",
-   "route": "RE-HOME",
-   "owning_specification": "CLAUDE.md gate block (D), the cross-layer-budget caveat",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "A correction of record to the caveat that apportions the residual across layers -- the over-grabbed-segmentation case corrupts the BASS and not only the pitch-class window. Its owner is a CLAUDE.md caveat block, which lies outside this dispatch's edit surface.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-449",
-   "home_document": "cowork_factorization_desk_simulation.md",
-   "route": "RE-HOME",
-   "owning_specification": "the joint estimator's specification in ARCHITECTURE.md",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "Factor granularity for the ratified factorization. The joint estimator is specified in the document's OPENING BANNER rather than in a section of its own, and a banner is not a section a decision can be sited inside; the owner is therefore not determinate.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-450",
-   "home_document": "cowork_factorization_desk_simulation.md",
-   "route": "RE-HOME",
-   "owning_specification": "the joint estimator's specification in ARCHITECTURE.md",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "The key-signature/declared-mode prior conditions the initial key state only. Same owner and same indeterminacy as D-449.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-451",
-   "home_document": "cowork_factorization_desk_simulation.md",
-   "route": "RE-HOME",
-   "owning_specification": "CLAUDE.md principle #17(c), the desk-simulation stage",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "A standing rule about what a desk simulation's table values may and may not become. Its owner is the premise gate in CLAUDE.md, outside this dispatch's edit surface.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-452",
-   "home_document": "cowork_factorization_desk_simulation.md",
-   "route": "RE-HOME",
-   "owning_specification": "CLAUDE.md principle #17(c), the desk-simulation stage",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "A standing rule that every desk-simulation trace runs at identity weights. Same owner as D-451.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
    "id": "D-453",
    "home_document": "cowork_factorization_desk_simulation.md",
    "route": "NO HOME EXISTS",
@@ -468,127 +1087,6 @@
    "authored": "the route, the owner, the unambiguity verdict and the reason"
   },
   {
-   "id": "D-490",
-   "home_document": "cowork_fb_redesign_design.md",
-   "route": "RE-HOME",
-   "owning_specification": "docs/scoring_model.md or ARCHITECTURE.md §4.1 (ChordAnalyzer)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "A falsification of the fine-grain function override, on the LEGACY scorer awaiting deletion. Both surfaces describe that scorer and the record does not settle which owns a post-scoring override's retirement evidence.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-491",
-   "home_document": "cowork_fb_redesign_design.md",
-   "route": "RE-HOME",
-   "owning_specification": "docs/scoring_model.md or ARCHITECTURE.md §4.1 (ChordAnalyzer)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "A refutation of the vertically-fair repair of the same override. Same owner question as D-490.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-492",
-   "home_document": "cowork_fb_redesign_design.md",
-   "route": "RE-HOME",
-   "owning_specification": "docs/scoring_model.md or ARCHITECTURE.md §4.1 (ChordAnalyzer)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "The recommended redesign of the same override. Same owner question as D-490, and the recommendation is not adopted, so what a section would state is a proposal.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-493",
-   "home_document": "cowork_fb_redesign_design.md",
-   "route": "RE-HOME",
-   "owning_specification": "docs/scoring_model.md or ARCHITECTURE.md §4.1 (ChordAnalyzer)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "Records that the principled restriction is UN-COMPUTABLE today. Same owner question as D-490.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-510",
-   "home_document": "cowork_gateA_unification_design.md",
-   "route": "RE-HOME",
-   "owning_specification": "docs/scoring_model.md (the gates and post-scoring passes)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "Which promotion carry is correct, on the legacy scorer. docs/scoring_model.md is the authoritative reference for scoring terms and gates, but ARCHITECTURE.md §4.1 also describes the same surface; the record does not settle which owns a promotion primitive.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-511",
-   "home_document": "cowork_gateA_unification_design.md",
-   "route": "RE-HOME",
-   "owning_specification": "docs/scoring_model.md (the gates and post-scoring passes)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "One promotion primitive with a present-first dedup guard. Same owner question as D-510.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-512",
-   "home_document": "cowork_gateA_unification_design.md",
-   "route": "RE-HOME",
-   "owning_specification": "docs/scoring_model.md (the gates and post-scoring passes)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "Gate A's retirement condition. Same owner question as D-510.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-542",
-   "home_document": "cowork_idiom_discovery_design.md",
-   "route": "RE-HOME",
-   "owning_specification": "ARCHITECTURE.md §6.7 (the canonical style taxonomy)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "The discover-then-name protocol for the study that produces the taxonomy. §6.7 owns the taxonomy, not the method that discovers it, so the owning section is not determinate.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-543",
-   "home_document": "cowork_idiom_discovery_design.md",
-   "route": "RE-HOME",
-   "owning_specification": "ARCHITECTURE.md §6.7 (the canonical style taxonomy)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "The encoding the study uses. Same owner question as D-542.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-544",
-   "home_document": "cowork_idiom_discovery_design.md",
-   "route": "RE-HOME",
-   "owning_specification": "ARCHITECTURE.md §6.7 (the canonical style taxonomy)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "Confound control as a first-class validity gate for the study. Same owner question as D-542.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-545",
-   "home_document": "cowork_idiom_discovery_design.md",
-   "route": "RE-HOME",
-   "owning_specification": "ARCHITECTURE.md §6.7 (the canonical style taxonomy)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "The extraction tool the study may use, and the prohibition on our own inference touching it. Same owner question as D-542.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
    "id": "D-581",
    "home_document": "cowork_information_loss_audit.md",
    "route": "NEEDS A DELEGATION",
@@ -597,17 +1095,6 @@
    "executable_under_this_dispatch": false,
    "closed_by_this_wave": false,
    "reason": "A four-verdict classification rule for an information-loss sweep. Its subject is audit method, which the audit protocol document homes (D-431, D-434, D-436, D-640, D-641); that document is itself named in no user-ratified surface, so the route runs through a delegation.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-582",
-   "home_document": "cowork_information_loss_audit.md",
-   "route": "RE-HOME",
-   "owning_specification": "CLAUDE.md principle #12",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "A recomputable collapse is not information loss -- which is the qualification principle #12 already carries in its own text. The owner is CLAUDE.md, outside this dispatch's edit surface.",
    "authored": "the route, the owner, the unambiguity verdict and the reason"
   },
   {
@@ -644,94 +1131,6 @@
    "authored": "the route, the owner, the unambiguity verdict and the reason"
   },
   {
-   "id": "D-603",
-   "home_document": "cowork_layer3_keymode_impl_design.md",
-   "route": "RE-HOME",
-   "owning_specification": "CLAUDE.md gate block (A) / the measurement conventions",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "How a behaviour-changing increment is graded while the pipeline is being rebuilt. A measurement convention, whose home is the gate block that publishes the conventions -- outside this dispatch's edit surface.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-604",
-   "home_document": "cowork_layer3_keymode_impl_design.md",
-   "route": "RE-HOME",
-   "owning_specification": "CLAUDE.md gate block (A), the grading conventions",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "A defensible modal reading the ground truth cannot represent is a ground-truth limitation. That is a GRADING convention and belongs beside the four the gate block already states.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-622",
-   "home_document": "cowork_layer3_reachback_design.md",
-   "route": "RE-HOME",
-   "owning_specification": "ARCHITECTURE.md Layer 3 (the backward re-reading facility)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "The section owns the mechanism, so the SITE is determinate -- but the entry is the subject of an OPEN user ruling (OPEN_ITEMS.md OI-331): a live user-ratified entry, D-261, names the very proxy this one records as measured false, and all three candidate remedies change a user-ratified entry. Writing it into the specification would settle that by fiat.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-580",
-   "home_document": "cowork_phase2_architecture_review.md",
-   "route": "RE-HOME",
-   "owning_specification": "docs/scoring_model.md or ARCHITECTURE.md §4.1 (ChordAnalyzer)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "Which of the legacy post-scoring gates must survive the dissolution. Recorded DEFERRED, on the legacy surface, with the same two-candidate owner question as D-490.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-602",
-   "home_document": "cowork_phase5c_l5_build_plan.md",
-   "route": "RE-HOME",
-   "owning_specification": "CLAUDE.md gate block (A), the grading conventions",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "A layer is judged on coverage-matched accuracy AND correct abstention, never on raw coverage. A measurement convention whose home is the gate block -- outside this dispatch's edit surface, and the abstain-aware convention it cites already lives there.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-532",
-   "home_document": "cowork_sensitive_cell_probe.md",
-   "route": "RE-HOME",
-   "owning_specification": "the joint estimator's specification in ARCHITECTURE.md",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "A pooling level added to the chord-transition table. The joint estimator is specified in the opening banner rather than a section, so the owner is not determinate (as D-449).",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-533",
-   "home_document": "cowork_sensitive_cell_probe.md",
-   "route": "RE-HOME",
-   "owning_specification": "the joint estimator's specification in ARCHITECTURE.md",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "The back-off rule for a continuation too rare to store. Same owner question as D-532.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-534",
-   "home_document": "cowork_sensitive_cell_probe.md",
-   "route": "RE-HOME",
-   "owning_specification": "the joint estimator's specification in ARCHITECTURE.md",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "The missing-chord-tone penalty counted per chord factor. Same owner question as D-532.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
    "id": "D-535",
    "home_document": "cowork_sensitive_cell_probe.md",
    "route": "NO HOME EXISTS",
@@ -743,28 +1142,6 @@
    "authored": "the route, the owner, the unambiguity verdict and the reason"
   },
   {
-   "id": "D-473",
-   "home_document": "cowork_term_theory_grounding.md",
-   "route": "RE-HOME",
-   "owning_specification": "CLAUDE.md principle #1/#2 (the fact- and theory-basis rules)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "The labelling and cross-checking method for a theory-grounding pass. Its owner is the principle it operationalizes, outside this dispatch's edit surface.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-474",
-   "home_document": "cowork_term_theory_grounding.md",
-   "route": "RE-HOME",
-   "owning_specification": "CLAUDE.md principle #21",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "★ The one entry whose content is ALREADY WRITTEN into its owning specification: principle #21 carries the fact-of-absence and names D-474 in terms. What is outstanding is the register's HOME field, which still points at the findings document. The route is a re-home, and it is a field correction rather than a piece of writing.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
    "id": "D-475",
    "home_document": "cowork_term_theory_grounding.md",
    "route": "NEEDS A DELEGATION",
@@ -773,17 +1150,6 @@
    "executable_under_this_dispatch": false,
    "closed_by_this_wave": false,
    "reason": "That a held annotation set is not established as an instrument. Its subject is corpus establishment, which the census owns; the delegation does not reach it.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-625",
-   "home_document": "cowork_tpc_capability_design.md",
-   "route": "RE-HOME",
-   "owning_specification": "ARCHITECTURE.md §5.14 (Enharmonic Root Spelling) or the Layer-1.5 spelling view",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "How spelling presence is tested. Two sections describe the spelling surface -- §5.14 the enharmonic disambiguation and the Layer-4 section the shared line-of-fifths primitive -- and the record does not settle which owns the predicate.",
    "authored": "the route, the owner, the unambiguity verdict and the reason"
   },
   {
@@ -820,94 +1186,6 @@
    "authored": "the route, the owner, the unambiguity verdict and the reason"
   },
   {
-   "id": "D-531",
-   "home_document": "docs/back_half_design.md",
-   "route": "RE-HOME",
-   "owning_specification": "ARCHITECTURE.md §2.2 (Interface-Based Design for ML Substitutability)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "The hand-built emission is confirmed and the learned replacement is not triggered, retained as a fallback with a concrete trigger. §2.2 owns the substitutability property; whether it also owns a standing not-yet-triggered verdict is not settled by the record.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-539",
-   "home_document": "docs/back_half_design.md",
-   "route": "RE-HOME",
-   "owning_specification": "CLAUDE.md (the standing method rules)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "Decompose every error slice into structural, fitted and ceiling BEFORE building. A standing method rule whose home is the principles, outside this dispatch's edit surface.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-325",
-   "home_document": "docs/decoder_design.md",
-   "route": "RE-HOME",
-   "owning_specification": "ARCHITECTURE.md Layer 4 (the per-slice chord decoder)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "An ordering constraint between a correction rule and widening the search. It governs the legacy correction surface AND the decoder's search, and the record does not settle which of the two sections carries a rule about their interaction.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-326",
-   "home_document": "docs/decoder_design.md",
-   "route": "RE-HOME",
-   "owning_specification": "ARCHITECTURE.md Layer 4 (the per-slice chord decoder)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "The search emits the whole path with alternatives and margins. The Layer-4 section specifies the carry, but this entry's subject is the SEARCH, which that section describes as dormant staging; which surface owns it is not determinate.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-327",
-   "home_document": "docs/decoder_design.md",
-   "route": "RE-HOME",
-   "owning_specification": "docs/scoring_model.md (the root-continuity guard)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "The guard reads reconstructed inversion credit rather than testing a sounding third. A legacy scoring term, with the same two-candidate owner question as D-490.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-328",
-   "home_document": "docs/decoder_design.md",
-   "route": "RE-HOME",
-   "owning_specification": "docs/scoring_model.md §8 (constraints and dead ends)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "A wider search cannot fix the arpeggio root failure. It is a recorded dead end for the legacy scorer, and §8 of the scoring model is where dead ends are collected -- but the finding is about the decoder's search, so the owner is not determinate.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-419",
-   "home_document": "docs/implementation_roadmap.md",
-   "route": "RE-HOME",
-   "owning_specification": "ARCHITECTURE.md §7 (The Knowledge Base) / the planned consumers block",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "Until the recognition consumer is built, the function layer does not touch the vocabulary. The planned-consumers block names that consumer, but a build-ORDER rule is not a statement either section makes, so the owner is not determinate.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-421",
-   "home_document": "docs/implementation_roadmap.md",
-   "route": "RE-HOME",
-   "owning_specification": "ARCHITECTURE.md §6.7 (the canonical style taxonomy)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "Idiom re-discovery rides every corpus wave on research material only, and a changed cluster set is its own ratification event. §6.7 owns the taxonomy; whether it owns the re-run protocol is the same question as D-542.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
    "id": "D-422",
    "home_document": "docs/implementation_roadmap.md",
    "route": "NEEDS A DELEGATION",
@@ -919,212 +1197,14 @@
    "authored": "the route, the owner, the unambiguity verdict and the reason"
   },
   {
-   "id": "D-423",
-   "home_document": "docs/implementation_roadmap.md",
-   "route": "RE-HOME",
-   "owning_specification": "docs/scoring_model.md §8 / ARCHITECTURE.md §4.1",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "Three standing prohibitions over the LEGACY post-scoring gates plus the retirement stage. Explicitly legacy-scoped; the same two-candidate owner question as D-490.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-536",
-   "home_document": "docs/iter92_joint_bass_chord_scoring.md",
-   "route": "RE-HOME",
-   "owning_specification": "docs/scoring_model.md (the bass/chord joint selection)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "The bass and chord are chosen together as a triple. A legacy-scorer change; same two-candidate owner question as D-490.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-537",
-   "home_document": "docs/iter92_joint_bass_chord_scoring.md",
-   "route": "RE-HOME",
-   "owning_specification": "docs/scoring_model.md (§4 bonuses)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "The completeness bonus fires only for a root-position reading with all three tones present. A legacy scoring bonus with a guard; the scoring model's §4 is the nearest owner, but ARCHITECTURE.md §4.1 also specifies the scorer.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-538",
-   "home_document": "docs/iter92_joint_bass_chord_scoring.md",
-   "route": "RE-HOME",
-   "owning_specification": "CLAUDE.md (the staging discipline for a multi-signal change)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "One signal at a time with the corpus re-measured between. A landing discipline rather than a scoring rule; its home is the project's standing rules, outside this dispatch's edit surface.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-280",
-   "home_document": "docs/iteration_path1_summary.md",
-   "route": "RE-HOME",
-   "owning_specification": "ARCHITECTURE.md §3.3 (the inference/presentation boundary)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "Gates read structured fields only, never a chord symbol string or a Roman numeral. §3.3 states the boundary this restricts, but the entry is an INPUT restriction on scoring, which docs/scoring_model.md also governs; the owner is not determinate.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-281",
-   "home_document": "docs/iteration_path1_summary.md",
-   "route": "RE-HOME",
-   "owning_specification": "CLAUDE.md gate block (C) / BUILD_AND_TEST.md (the measurement procedure)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "The batch tool must emit the structured fields on every alternative or the corpus figures silently revert. Its owner is the measurement procedure, outside this dispatch's edit surface.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-463",
-   "home_document": "docs/layer_architecture_audit.md",
-   "route": "RE-HOME",
-   "owning_specification": "docs/scoring_model.md / ARCHITECTURE.md §4.1",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "Temporal signals inside the vertical scorer stay put, and the gate depending on one must move with them. Legacy-surface debt with the same two-candidate owner question as D-490.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-464",
-   "home_document": "docs/layer_architecture_audit.md",
-   "route": "RE-HOME",
-   "owning_specification": "ARCHITECTURE.md §5.3 (TemporalContext)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "No further progression-level signal may enter the single-step look-around structure. §5.3 specifies that structure, but the rule's other half concerns a planned progression-level structure that has no section, so the owner is not determinate.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-465",
-   "home_document": "docs/layer_architecture_audit.md",
-   "route": "RE-HOME",
-   "owning_specification": "docs/scoring_model.md §8 / ARCHITECTURE.md §4.1",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "The three-test policy for judging a proposed post-scoring gate. Legacy-surface policy with the same two-candidate owner question as D-490.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-486",
-   "home_document": "docs/precision_metric_design.md",
-   "route": "RE-HOME",
-   "owning_specification": "CLAUDE.md gate block (A), the grading conventions",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "A measurement publishes its coverage denominator and its per-corpus breakdown. A grading convention belonging beside the four the gate block already states -- outside this dispatch's edit surface.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-571",
-   "home_document": "docs/stage4b_design.md",
-   "route": "NO HOME EXISTS",
-   "owning_specification": null,
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "Recorded SUPERSEDED-IN-FACT: a scoring change on the legacy key path, which the production arm no longer runs. No live specification owns a term on a superseded path.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-616",
-   "home_document": "docs/stage4c_cadence_key_design.md",
-   "route": "RE-HOME",
-   "owning_specification": "ARCHITECTURE.md Layer 3 (key scoring) or the resolver/section scope",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "A global tonic anchor enters key scoring at RESOLVER/SECTION scope and never inside the window scorer. The scope it names spans the decoder and the resolver, and the resolver is retired from the production region path, so which section owns the rule is not determinate.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-605",
-   "home_document": "docs/stage4d_local_modulation_design.md",
-   "route": "RE-HOME",
-   "owning_specification": "ARCHITECTURE.md Layer 3 (local key) / the key-area grouping",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "The local-key hypothesis derives from key-agnostic signals only and never from the key-area grouping. The rule's two ends sit in different sections -- Layer 3 for the hypothesis and the key-area grouping for what it may not read -- so the owner is not determinate.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-606",
-   "home_document": "docs/stage4d_local_modulation_design.md",
-   "route": "RE-HOME",
-   "owning_specification": "CLAUDE.md gate block (A), the grading conventions",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "The binding metric for the modulation detector is modulation correctness, not the agreement percentage. A grading convention, and the entry itself cites the abstain-aware convention that already lives in the gate block.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-501",
-   "home_document": "docs/symbol_input_audit.md",
-   "route": "RE-HOME",
-   "owning_specification": "ARCHITECTURE.md §3.3 (the inference/presentation boundary)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "A written chord symbol may be read only as a comparison or ground-truth label. §3.3 states the boundary, but the rule also binds MEASUREMENT TOOLS, which no ARCHITECTURE.md section governs; the owner is not determinate.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-469",
-   "home_document": "docs/unified_analysis_pipeline.md",
-   "route": "RE-HOME",
-   "owning_specification": "ARCHITECTURE.md §5.13 (Analyze-at-Tick Path Table)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "The tick-local path is left outside the unified pipeline by design. §5.13 tabulates that path, but the decision is about the pipeline's scope, which §11.5 and §3.3 also describe; the owner is not determinate.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-470",
-   "home_document": "docs/unified_analysis_pipeline.md",
-   "route": "RE-HOME",
-   "owning_specification": "ARCHITECTURE.md §5.3 (TemporalContext)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "The temporal-context extension fields are recorded during the analysis pass and never rebuilt by a consumer. §5.3 specifies those fields, but the rule binds the CONSUMERS, which §11.5 describes; the owner is not determinate.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-471",
-   "home_document": "docs/unified_analysis_pipeline.md",
-   "route": "RE-HOME",
-   "owning_specification": "ARCHITECTURE.md §11.5 (Region Analysis and the Chord Track)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "The sub-beat annotation duration gate is kept or dropped on a measured observation run with the verdict stated in advance. The annotation layers block sits in §11.5, but what is recorded is a measurement protocol rather than a rule; the owner is not determinate.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
    "id": "D-472",
    "home_document": "docs/unified_analysis_pipeline.md",
    "route": "RE-HOME",
-   "owning_specification": "ARCHITECTURE.md §11.5 (Region Analysis and the Chord Track)",
+   "owning_specification": "ARCHITECTURE.md Layer 6 (the grouping layer), §11.5 pointing",
    "owner_is_unambiguous": false,
    "executable_under_this_dispatch": false,
    "closed_by_this_wave": false,
-   "reason": "Key areas are grouped by a smoothing pass over stabilized regions. The key-area grouping is described both there and in the Layer-6 section, which owns key-areas in the target architecture; the owner is not determinate.",
+   "reason": "Key areas are grouped by a smoothing pass over stabilized regions. RULED 2026-08-07 (user, the owner-rulings homing wave): the owner is the Layer-6 section, which owns key-areas in the target architecture, with §11.5 pointing — and the LEGACY mark follows an arm check at the code. HELD, NOT HOMED: the arm check came back MIXED. The grouping rule is shared and runs on the production record arm; the Pass-4 stabilization the entry names as its precondition is legacy-arm-only. A mixed arm is the dispatch's stated outcome for holding an entry and returning it to the user, so no home text was written and the entry stays in item 1. THE FORMER OWNER AND REASON, PRESERVED (#12): 'ARCHITECTURE.md §11.5 (Region Analysis and the Chord Track)', owner_is_unambiguous False, reason 'Key areas are grouped by a smoothing pass over stabilized regions. The key-area grouping is described both there and in the Layer-6 section, which owns key-areas in the target architecture; the owner is not determinate.'",
    "authored": "the route, the owner, the unambiguity verdict and the reason"
   }
  ]

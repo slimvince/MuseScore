@@ -233,11 +233,23 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "files. \"The rendered register matches its source data\" is true or false of the tree at "
         "any moment, and an edit to either side is caught at once."),
     "tools/audit/decisions/gen_cluster_dispositions.py": (
-        LIVE, "gen_cluster_dispositions.py:28-30",
-        "Both invocations are live. `--verify` locates every backbone verbatim IN THE FILE IT IS "
-        "CITED TO and checks the cited START LINE — the drift check every home-document edit "
-        "exercises, this wave included. `--check` re-derives the dispositions from the current "
-        "backbone and proves the bijection over all clusters."),
+        LIVE, "gen_cluster_dispositions.py:28-41 (the Usage block), :43-56 (why producibility is "
+        "separate from --check)",
+        "ALL THREE invocations are live. `--verify` locates every backbone verbatim IN THE FILE IT "
+        "IS CITED TO and checks the cited START LINE — the drift check every home-document edit "
+        "exercises. `--check` RE-READS the emitted artifacts and proves the coverage bijection over "
+        "all clusters; it is live because that bijection is a property of the artifacts as they "
+        "stand. `--producible` (authored 2026-08-07 on the user's ruling, `OPEN_ITEMS.md` OI-333) "
+        "compiles every register pattern and runs the whole derivation in memory, writing nothing — "
+        "a demand about the register as it stands today, since a pattern entered tomorrow that does "
+        "not compile fails it tomorrow. Its detection was measured before it was authored here: on "
+        "the clean tree it passes, and with one OI-333-shaped pattern re-introduced it names the "
+        "entry and exits non-zero. ★ THE EVIDENCE STRING FORMERLY READ, in part: *'`--check` "
+        "re-derives the dispositions from the current backbone and proves the bijection over all "
+        "clusters'* — which was wrong about the first half in exactly the way OI-333 records, since "
+        "`--check` re-reads and never re-derives. Corrected here with the former wording preserved "
+        "(#12), because a classification's own evidence may not restate the error the row it "
+        "classifies is about."),
     "tools/audit/decisions/gen_home_classification.py": (
         LIVE, "gen_home_classification.py:35-49",
         "★ CLASSIFIED LIVE DESPITE FAILING. It APPLIES the criteria in force to the WHOLE current "
@@ -266,11 +278,25 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "The generator now STOPS with that reason. NO LIVE COVERAGE IS LOST — the packing rule it "
         "owns is imported and exercised by `gen_reads5_repack.py`, which passes."),
     "tools/audit/decisions/gen_reads5_repack.py": (
-        LIVE, "gen_reads5_repack.py:9-13, :29-35",
+        LIVE, "gen_reads5_repack.py:9-27, :29-60, :70-81",
         "It reads the REGISTERED regime verbatim and never regenerates it, and imports the packing "
-        "rule rather than copying it. Its inputs are frozen artifacts, so its --check is a live "
-        "assertion that the re-pack still follows from the registration — and it passes and can "
-        "keep passing."),
+        "rule rather than copying it, so its --check is a live assertion that the re-pack still "
+        "follows from the registration. ★ THE REASON IS CORRECTED 2026-08-07 (user's ruling R3, "
+        "dispatch `cc_instruction_licensed_homing_and_oi344.md`; `OPEN_ITEMS.md` OI-344), because "
+        "the clause it formerly carried was the claim the row refuted. THE FORMER REASON, "
+        "PRESERVED (#12): \"It reads the REGISTERED regime verbatim and never regenerates it, and "
+        "imports the packing rule rather than copying it. Its inputs are frozen artifacts, so its "
+        "--check is a live assertion that the re-pack still follows from the registration — and it "
+        "passes and can keep passing.\" Its inputs were NOT all frozen artifacts: the contamination "
+        "measurement recomputed a rank correlation against the cluster-disposition layer on every "
+        "run and stored it under a key DATING it 2026-08-04, so refreshing that layer — correct "
+        "work — turned the check red. The two dated fields are now written once and read back "
+        "(the tool's own docstring, and `reads5_repack.json` → "
+        "`★_the_dated_figures_are_FROZEN_and_read_back`). THE VERDICT DOES NOT MOVE and the tool "
+        "stays in the guard list: what it asserts is a live invariant — that the re-pack still "
+        "follows from the registration, and that no read document's naming count in the "
+        "user-ratified surfaces has moved since registration — and it now passes and can keep "
+        "passing, which is what the classification turns on."),
     "tools/audit/decisions/gen_reads1_yield.py": (
         POINT, "gen_reads1_yield.py:2-9 (its own subject line), :11-21, :23-28",
         "★ RE-CLASSIFIED 2026-08-04 (dispatch `cc_instruction_finish_line_item1b.md`, ruling R2) — "

@@ -34,6 +34,23 @@ Usage
 
     python tools/audit/decisions/gen_cluster_dispositions.py --check
         Re-reads the emitted artifacts and proves the coverage guarantee.
+
+    python tools/audit/decisions/gen_cluster_dispositions.py --producible
+        PRODUCIBILITY pass: compiles every register pattern and runs the whole
+        derivation in memory, writing nothing.  Exits nonzero if the layer could
+        not be produced at all.
+
+WHY PRODUCIBILITY IS A SEPARATE CHECK FROM `--check` (added 2026-08-07 on the user's
+ruling; `OPEN_ITEMS.md` OI-333).  `--check` RE-READS the emitted artifacts; the write
+path RE-DERIVES them, and the two share no code path.  So `--check` proves that the
+committed artifact covers every cluster exactly once — which was true throughout — and
+is structurally incapable of noticing that the artifact can no longer be PRODUCED.  It
+did not notice: six register patterns carried unescaped markdown emphasis, the write
+mode died with an uncaught `re.PatternError`, and the check went on passing at every
+tree.  `--producible` is the missing half and is deliberately NARROW.  `--check`'s
+re-read semantics are UNCHANGED: a coverage proof and a producibility proof are
+different concerns, and making one check do both would make the coverage guarantee fail
+for every reason a regeneration can fail (#6 — two narrow checks, not one broad one).
 """
 
 from __future__ import annotations
@@ -597,6 +614,45 @@ def disposition_pass(candidates, clusters, backbone):
     return rows, rule_counts, disp_counts
 
 
+# ── Producibility: can this layer still be DERIVED at all? ───────────────────
+#
+# The half `--check` cannot see, because `--check` re-reads what was emitted and the write path
+# re-derives it.  Two stages, in the order a regeneration meets them:
+#   1. every register pattern COMPILES — the failure that produced OI-333, where six patterns
+#      carried unescaped markdown emphasis and the write mode died before writing anything;
+#   2. the whole derivation RUNS to completion over the current harvest and clustering, covering
+#      every cluster and every occurrence — in memory, writing nothing.
+# Nothing is emitted, so this can be run at any tree without touching a committed artifact.
+
+def producible(backbone: dict) -> int:
+    bad = []
+    total = 0
+    for d in backbone["decisions"]:
+        for p in d.get("patterns", []):
+            total += 1
+            try:
+                re.compile(p, re.IGNORECASE)
+            except re.error as exc:
+                bad.append((d["id"], p, str(exc)))
+    for did, pat, why in bad:
+        print(f"  UNCOMPILABLE {did}: {pat!r} — {why}")
+    print(f"register patterns compiling: {total - len(bad)}/{total}")
+    if bad:
+        print(f"FAIL: the disposition layer CANNOT BE PRODUCED — {len(bad)} register pattern(s) "
+              "are not valid regular expressions")
+        return 1
+
+    candidates = json.loads(CANDIDATES.read_text(encoding="utf-8"))["candidates"]
+    clusters = json.loads(CLUSTERS.read_text(encoding="utf-8"))["clusters"]
+    rows, _rules, _disp = disposition_pass(candidates, clusters, backbone)
+    covered = sum(r["size"] for r in rows)
+    ok = len(rows) == len(clusters) and covered == len(candidates)
+    print(f"derivation dry-run: {len(rows)}/{len(clusters)} clusters, "
+          f"{covered}/{len(candidates)} occurrences — nothing written")
+    print("OVERALL " + ("PASS" if ok else "FAIL"))
+    return 0 if ok else 1
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--verify", action="store_true",
@@ -604,12 +660,18 @@ def main() -> int:
                          "at its cited home")
     ap.add_argument("--check", action="store_true",
                     help="re-read the emitted artifacts and prove the coverage guarantee")
+    ap.add_argument("--producible", action="store_true",
+                    help="producibility pass: compile every register pattern and run the whole "
+                         "derivation in memory, writing nothing")
     args = ap.parse_args()
 
     backbone = json.loads(BACKBONE.read_text(encoding="utf-8"))
 
     if args.verify:
         return verify_backbone(backbone)
+
+    if args.producible:
+        return producible(backbone)
 
     if args.check:
         data = json.loads(OUT_JSON.read_text(encoding="utf-8"))

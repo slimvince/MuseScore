@@ -152,7 +152,14 @@ AUTHORED = [
     ("tools/audit/decisions/gen_cluster_dispositions.py", ["--verify"],
      "every register entry's verbatim quote and cited line is found at its home"),
     ("tools/audit/decisions/gen_cluster_dispositions.py", ["--check"],
-     "the cluster dispositions re-derive"),
+     "the committed cluster-disposition artifacts cover every cluster exactly once -- a re-READ of "
+     "what was emitted, which is all this mode has ever proved"),
+    ("tools/audit/decisions/gen_cluster_dispositions.py", ["--producible"],
+     "the disposition layer can still be PRODUCED at all -- every register pattern compiles and "
+     "the whole derivation runs to completion in memory, writing nothing. Authored 2026-08-07 on "
+     "the user's ruling (OI-333): --check re-reads the emitted artifacts while the write path "
+     "re-derives them, so no failure of the derivation could ever make --check fail, and six "
+     "uncompilable patterns went unreported at every tree while it passed"),
     ("tools/audit/decisions/gen_home_classification.py", ["--check"],
      "every home-section field re-derives from the documents' own headings"),
     ("tools/audit/decisions/gen_phase1p_delegation_bar.py", ["--check"],

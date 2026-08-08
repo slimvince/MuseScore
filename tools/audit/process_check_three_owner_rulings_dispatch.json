@@ -1,0 +1,35 @@
+{
+  "purpose": "A run of tools/audit/process_check.py over named dispatches or reports. Generated so a report cites this file rather than transcribing what the check found (D-431).",
+  "rules": [
+    "D-431 bare quantity",
+    "D-431 uncited code claim",
+    "D-434 missing self-check section"
+  ],
+  "files_scanned": [
+    "cc_instruction_three_owner_rulings.md"
+  ],
+  "findings_total": 2,
+  "by_file": {
+    "cc_instruction_three_owner_rulings.md": {
+      "findings": 2,
+      "rows": [
+        {
+          "file": "cc_instruction_three_owner_rulings.md",
+          "line": 38,
+          "rule": "D-431 uncited code claim",
+          "detail": "dormant",
+          "sentence": "the dormant pipeline's four-step staged landing with a corpus check per step) is ratified as"
+        },
+        {
+          "file": "cc_instruction_three_owner_rulings.md",
+          "line": 68,
+          "rule": "D-431 bare quantity",
+          "detail": "three entries",
+          "sentence": "- **F3.** The three entries re-derive as the licensing class's residue:"
+        }
+      ]
+    }
+  },
+  "clean_files": [],
+  "establishment": "tools/audit/process_check_establishment.json — the check's measured detection power and false-positive rate. Read it before reading a count here as coverage."
+}

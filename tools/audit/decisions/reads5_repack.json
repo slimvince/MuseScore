@@ -62,6 +62,17 @@
         ]
       }
     },
+    "★_the_dated_figures_are_FROZEN_and_read_back": {
+      "which_fields": [
+        "recomputed_2026_08_04",
+        "moved_by"
+      ],
+      "where": "every entry of `per_proxy` above; `recomputed_winner` and `the_key_flips_if_the_regime_is_regenerated` are read off them and are frozen with them",
+      "the_ruling": "User, 2026-08-07 (dispatch `cc_instruction_licensed_homing_and_oi344.md` §0a, R3): the dated proxy figure and its companion are stored once and read back by `--check` rather than recomputed on every run.",
+      "why": "The key DATES the figure. Recomputing it on every run means the artifact asserts a 2026-08-04 measurement and carries today's, so any legitimate refresh of what it is computed against turns the guard red — measuring the clock rather than the repository. The excluded repair is recorded with the taken one: regenerating would write today's figure under the 2026-08-04 key, which is the OI-330 / OI-301 refusal.",
+      "the_shape_is_not_new_here": "tools/audit/decisions/gen_phase1q_snapshot_establishment.py already writes its two moment-in-time checks once and reads them back (#6).",
+      "what_is_NOT_frozen": "`read_documents_whose_naming_count_moved_since_registration`, which carries no date and is a statement about the surfaces as they stand today. It is still computed live on every run and can still move."
+    },
     "read_documents_whose_naming_count_moved_since_registration": [
       "cowork_engage_arc_plan.md",
       "cowork_layer5_function_design.md",

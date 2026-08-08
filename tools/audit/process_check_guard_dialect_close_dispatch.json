@@ -1,0 +1,91 @@
+{
+  "purpose": "A run of tools/audit/process_check.py over named dispatches or reports. Generated so a report cites this file rather than transcribing what the check found (D-431).",
+  "rules": [
+    "D-431 bare quantity",
+    "D-431 uncited code claim",
+    "D-434 missing self-check section"
+  ],
+  "files_scanned": [
+    "cc_instruction_guard_dialect_close_and_push.md"
+  ],
+  "findings_total": 10,
+  "by_file": {
+    "cc_instruction_guard_dialect_close_and_push.md": {
+      "findings": 10,
+      "rows": [
+        {
+          "file": "cc_instruction_guard_dialect_close_and_push.md",
+          "line": 82,
+          "rule": "D-431 bare quantity",
+          "detail": "1.1",
+          "sentence": "**1.1** Discharge A1; extend the establishment corpus with the family — sanctioned forms (the"
+        },
+        {
+          "file": "cc_instruction_guard_dialect_close_and_push.md",
+          "line": 84,
+          "rule": "D-431 bare quantity",
+          "detail": "1.2",
+          "sentence": "**1.2** Re-run `--establish --check` at the UNWIDENED guard and record"
+        },
+        {
+          "file": "cc_instruction_guard_dialect_close_and_push.md",
+          "line": 86,
+          "rule": "D-431 bare quantity",
+          "detail": "1.3",
+          "sentence": "**1.3** Widen the utility set."
+        },
+        {
+          "file": "cc_instruction_guard_dialect_close_and_push.md",
+          "line": 86,
+          "rule": "D-431 bare quantity",
+          "detail": "1.4",
+          "sentence": "**1.4** Publish both rates against the extended"
+        },
+        {
+          "file": "cc_instruction_guard_dialect_close_and_push.md",
+          "line": 97,
+          "rule": "D-431 bare quantity",
+          "detail": "3.1",
+          "sentence": "**3.1** Regenerate what this wave's edits make stale; re-aim any drifted anchors per citation;"
+        },
+        {
+          "file": "cc_instruction_guard_dialect_close_and_push.md",
+          "line": 98,
+          "rule": "D-431 bare quantity",
+          "detail": "3.2",
+          "sentence": "**3.2** Record the worktree enumeration to a"
+        },
+        {
+          "file": "cc_instruction_guard_dialect_close_and_push.md",
+          "line": 99,
+          "rule": "D-431 bare quantity",
+          "detail": "3.3",
+          "sentence": "**3.3** `STATUS.md` gains"
+        },
+        {
+          "file": "cc_instruction_guard_dialect_close_and_push.md",
+          "line": 100,
+          "rule": "D-431 bare quantity",
+          "detail": "3.4",
+          "sentence": "**3.4** Discharge A3;"
+        },
+        {
+          "file": "cc_instruction_guard_dialect_close_and_push.md",
+          "line": 102,
+          "rule": "D-431 bare quantity",
+          "detail": "3.5",
+          "sentence": "**3.5** `git push origin master` under R3's hard stop."
+        },
+        {
+          "file": "cc_instruction_guard_dialect_close_and_push.md",
+          "line": 102,
+          "rule": "D-431 bare quantity",
+          "detail": "3.6",
+          "sentence": "**3.6** Report the"
+        }
+      ]
+    }
+  },
+  "clean_files": [],
+  "establishment": "tools/audit/process_check_establishment.json — the check's measured detection power and false-positive rate. Read it before reading a count here as coverage."
+}
