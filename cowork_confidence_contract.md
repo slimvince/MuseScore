@@ -84,6 +84,19 @@ The two built instances, as frames:
 the recognition consumer's schema-contradiction override, `cowork_progression_schema_design.md` §2) must add its
 frame row to this section before build — an undeclared cross-layer comparison is a contract violation.
 
+**★ BEFORE ANY CONVERSION CONSTANT IS FITTED, THE PREMISE THAT A FITTED CONSTANT CAN MAKE TWO DIFFERENTLY-SCALED
+CONFIDENCES COMMENSURABLE MUST ITSELF PASS A PREMISE LEDGER AND A DESK SIMULATION (user-ratified 2026-07-10;
+re-homed into this section 2026-08-08 under a one-edit authorization for this act alone).** The `conversion`
+element of a frame is where two numbers on different scales are made comparable — one bounded, one an unbounded
+sum — and fitting the constants that perform it is **hard-gated**: the premise *"a fitted constant CAN make these
+scales commensurable"* is itself a load-bearing causal claim and goes through the #17 ledger and desk simulation
+BEFORE the fit, not as part of it. *Why the gate is on the PREMISE and not on the fit:* the one calibration
+attempted so far failed, and it failed **non-monotonically** — which is evidence against the premise itself
+rather than against the particular constant, since a monotone relationship is exactly what a single conversion
+factor would have to express. **Where this sits relative to §6:** the calibration obligations there say what must
+be re-expressed once the fitted maps exist; this says what must be established before anyone fits the conversion
+at all, and it binds first.
+
 ## 5. Combination and squashing rules
 
 - **R4 (composites).** A composite confidence declares its components, each component's decision and class, and a

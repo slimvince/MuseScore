@@ -249,23 +249,19 @@
    "half": "COMPLETE",
    "criterion": "C1",
    "population": {
-    "entries": 1,
-    "documents": 1,
-    "entry_ids_by_document": {
-     "cowork_adjudication_dossier.md": [
-      "D-601"
-     ]
-    },
+    "entries": 0,
+    "documents": 0,
+    "entry_ids_by_document": {},
     "★_this_is_the_ENTRY_level_cut": "The population criterion C1 still reaches, per DECISION. Entries an entry-level ruling has already discharged are subtracted, and are listed below rather than silently absent.",
     "at_document_granularity_before_the_re_cut": {
-     "entries": 1,
-     "documents": 1,
+     "entries": 0,
+     "documents": 0,
      "why_it_is_kept": "So the movement is visible rather than inferred (#12). It is the figure this item published before ruling R3."
     },
     "discharged_by_an_entry_level_ruling": {},
     "entries_discharged": 0
    },
-   "why_it_is_outstanding": "D-432, the delegation bar — the strongest naming is a provenance-attribution, which the bar does not admit",
+   "why_it_is_outstanding": null,
    "gate": {
     "gates": true,
     "ground": "D-438's own line, quoted at CLAUDE.md: '… or the completion of a specification, GATES, because the phase-1 rule in Conventions makes specifications COMPLETE and TRUE the thing that precedes everything else.' Every item of the COMPLETE half is the completion of a specification.",
@@ -373,19 +369,11 @@
    "half": "COMPLETE",
    "criterion": "C1",
    "population": {
-    "entries": 11,
+    "entries": 3,
     "entry_ids_and_current_homes": {
      "D-286": "cowork_handoff_archive.md:2964",
-     "D-287": "cowork_handoff_archive.md:5272",
-     "D-288": "cowork_handoff_archive.md:3029",
      "D-289": "cowork_handoff_archive.md:3082",
-     "D-290": "cowork_handoff_archive.md:3896",
-     "D-291": "cowork_handoff_archive.md:3833",
-     "D-299": "cowork_handoff_archive.md:4967",
-     "D-300": "STATUS_ARCHIVE.md:1147",
-     "D-301": "STATUS_ARCHIVE.md:1149",
-     "D-302": "STATUS_ARCHIVE.md:2779",
-     "D-315": "STATUS_ARCHIVE.md:2262"
+     "D-291": "cowork_handoff_archive.md:3833"
     }
    },
    "why_it_is_outstanding": "The register's `unhomed` class: no home at all - the decision is recorded only on a session handoff block or a superseded status archive.",
@@ -692,13 +680,13 @@
  "counted": {
   "items_on_the_finish_line": 9,
   "items_that_gate": 8,
-  "register_entries_owed_a_home": 47,
+  "register_entries_owed_a_home": 38,
   "register_entries_owed_a_defense": 44,
   "open_rows_owed_on_the_true_half_that_gate": 35,
   "open_rows_owed_a_reach_verdict": 22,
   "items_with_a_closing_route_only_the_user_may_take": 3,
   "★_that_count_is_items_not_acts": "It counts items at least ONE of whose closing routes is the user's — not items the user alone can close. Items offering a user route and a session route are in it, because a reader deciding what to commission needs to see them.",
-  "register_entries_owed_a_home_at_document_granularity": 54,
+  "register_entries_owed_a_home_at_document_granularity": 45,
   "register_entries_discharged_by_an_entry_level_ruling": 7,
   "★_which_of_those_two_figures_is_the_finish_line": "The entry-level one, on ruling R3. The document-granularity figure is kept beside it so the movement is visible rather than inferred (#12), and it is the figure this artifact published before the re-cut.",
   "reconciliation": {

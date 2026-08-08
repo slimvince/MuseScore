@@ -17,7 +17,7 @@
 
 **Status.** LIVE · decided 2026-06-29 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:503-504`
+**Home.** `ARCHITECTURE.md:517-518`
 
 **Provenance.** ARCHITECTURE.md:308-316 'Doc governance (2026-06-29) - the hierarchy'
 
@@ -32,7 +32,7 @@
 
 **Status.** LIVE · decided 2026-06-29 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:500-501`
+**Home.** `ARCHITECTURE.md:514-515`
 
 **Provenance.** ARCHITECTURE.md:308-316
 
@@ -47,7 +47,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4022-4023`
+**Home.** `ARCHITECTURE.md:4061-4062`
 
 **Provenance.** ARCHITECTURE.md:3363-3365, consistent with :251-254
 
@@ -63,7 +63,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1417-1419`
+**Home.** `ARCHITECTURE.md:1431-1433`
 
 **Provenance.** ARCHITECTURE.md:1151-1154. Three layer tags and two prose statements are stale after the switch - see OPEN_ITEMS OI-232
 
@@ -157,7 +157,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:7799`
+**Home.** `ARCHITECTURE.md:7838`
 
 **Provenance.** ARCHITECTURE.md:6754-6759 (§18.4); the standing principle is CLAUDE.md #10 (D-174). No date or ratifier stated.
 
@@ -202,7 +202,7 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `CLAUDE.md:1161`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1167`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:821-821; predicate qualification user-directed 2026-06-24, defined terms user-directed 2026-07-02. The ONE home is `cowork_design_doc_template.md`, which also carries the fourteen-section document structure, the status-banner convention and the implementation/test locator rule. Conformance of the existing tree is open at OPEN_ITEMS OI-230.
 
@@ -219,7 +219,7 @@
 
 **Status.** LIVE · decided 2026-07-11 · ratified by user
 
-**Home.** `CLAUDE.md:1157`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1163`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:817-811, user-directed repeatedly and recorded 2026-07-11.
 
@@ -245,7 +245,7 @@
 
 **Status.** LIVE · decided 2026-08-01 · ratified by user
 
-**Home.** `CLAUDE.md:1213`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1219`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:873-876, user-directed 2026-08-01 at the decisions-register ratification review. The register's rationale field is what serves it; the founding instances the entry names are D-004's segment-cap value, D-059's window and D-015's boundary-tick convention.
 
@@ -278,7 +278,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:806-808`
+**Home.** `ARCHITECTURE.md:820-822`
 
 **Provenance.** ARCHITECTURE.md:601-603 (stated as a standing reading instruction in the document itself) ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -400,7 +400,7 @@
 
 **Home.** `cowork_notation_adoption_increment.md:18`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **the opening block (above the first section heading)** — `# The notation-layer adoption increment — decision surface (★ USER-RATIFIED 2026-07-26)` (heading at line 1). A delegation at ARCHITECTURE.md:6772 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
+**Home section.** **the opening block (above the first section heading)** — `# The notation-layer adoption increment — decision surface (★ USER-RATIFIED 2026-07-26)` (heading at line 1). A delegation at ARCHITECTURE.md:6811 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** `cowork_notation_adoption_increment.md`:17-20, the first of three rulings the document records the user making at its drafting, each dated 2026-07-26 and each given as a correction to a prior writing. Rulings 2 and 3 of the same list were codified as the decision-neutrality corollary and are registered as D-190, homed in `CLAUDE.md`; ruling 1 was not, and is registered here. Its natural home is `cowork_design_doc_template.md`, which `CLAUDE.md` Conventions makes the ONE home for the writing standards (the same reasoning that placed D-307 there), hence the documentation-gap flag. Found by the phase-1l continuation wave, 2026-08-03, reading `cowork_notation_adoption_increment.md` IN FULL (the OI-207 reading list's next document, 17 unresolved clusters). The document carries a status banner and is user-ratified 2026-07-26, but NO user-ratified surface names it — it is absent from `ARCHITECTURE.md`, `CLAUDE.md` and `cowork_engage_arc_plan.md` alike (measured this session at Task 7) — so it is not a contract home under either the phase-1i criterion or the delegation-specificity criterion the user ruled 2026-08-03. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1l ratification queue.
 

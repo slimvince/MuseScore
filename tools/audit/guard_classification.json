@@ -30,7 +30,7 @@
     "re_derives_a_live_invariant": 32,
     "records_a_point_in_time_measurement": 10,
     "neither_not_a_guard": 1,
-    "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 4
+    "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 3
   },
   "tools_that_leave_the_live_guard_list": [
     "tools/audit/decisions/gen_phase1g_triage.py",
@@ -46,7 +46,6 @@
   ],
   "live_tools_that_fail_and_stay": [
     "tools/audit/claude_md_rule_triage.py",
-    "tools/audit/decisions/gen_live_prohibition_pointers.py",
     "tools/audit/decisions/gen_phase1p_delegation_bar.py",
     "tools/audit/decisions/gen_phase1w_legacy_verification.py"
   ],
@@ -129,7 +128,7 @@
       "evidence": "gen_live_prohibition_pointers.py:23-27",
       "why": "Its class membership is DERIVED from the phase-1w verification artifact and its pointers are checked against the live specification sections they name, quoting each section's own words rather than a line number precisely so the citation survives insertions. A live assertion that every entry in the class still carries its pointer.",
       "in_the_live_guard_list_after_this_classification": true,
-      "state_at_the_committed_tree": "FAIL"
+      "state_at_the_committed_tree": "PASS"
     },
     {
       "tool": "tools/audit/decisions/gen_outstanding_delegations.py",

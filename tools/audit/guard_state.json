@@ -286,7 +286,7 @@
       "verdict": "FAIL",
       "stdout": [],
       "stderr": [
-        "CLAUDE.md rule(s) with no authored triage: ['D-437', 'D-438', 'D-439', 'D-451', 'D-452', 'D-473', 'D-474', 'D-486', 'D-564', 'D-582', 'D-602', 'D-603', 'D-604', 'D-606']"
+        "CLAUDE.md rule(s) with no authored triage: ['D-315', 'D-437', 'D-438', 'D-439', 'D-451', 'D-452', 'D-473', 'D-474', 'D-486', 'D-564', 'D-582', 'D-602', 'D-603', 'D-604', 'D-606']"
       ],
       "what_it_checks": "every CLAUDE.md rule carries an authored mechanisation triage"
     },
@@ -490,7 +490,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "register patterns compiling: 1226/1226",
+        "register patterns compiling: 1223/1223",
         "derivation dry-run: 14460/14460 clusters, 15224/15224 occurrences — nothing written",
         "OVERALL PASS"
       ],
@@ -505,11 +505,12 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "population: 193 entries / 41 documents",
+        "population: 193 entries / 40 documents",
         "  before: {'contract-home': 90, 'gap': 103}",
-        "  after:  {'contract-home': 150, 'gap': 43}",
-        "  moved:  76  (to gap 8, to contract-home 68)",
+        "  after:  {'contract-home': 151, 'gap': 42}",
+        "  moved:  77  (to gap 8, to contract-home 69)",
         "    cowork_architecture_reassessment.md: −4 / +0",
+        "    cowork_confidence_contract.md: −0 / +1",
         "    cowork_engage_arc_plan.md: −0 / +3",
         "    cowork_joint_estimator_architecture.md: −0 / +5",
         "    cowork_joint_estimator_factorization.md: −0 / +1",
@@ -526,7 +527,8 @@
         "    cowork_structural_integrity_audit.md: −0 / +1",
         "    cowork_voiceleading_axis_design.md: −3 / +0",
         "    docs/llm_integration.md: −0 / +7",
-        "  since phase 1q (the written delegations alone): 79 moved (to contract-home 79, to gap 0)",
+        "  since phase 1q (the written delegations alone): 80 moved (to contract-home 80, to gap 0)",
+        "    cowork_confidence_contract.md: −0 / +1",
         "    cowork_engage_arc_plan.md: −0 / +3",
         "    cowork_joint_estimator_architecture.md: −0 / +5",
         "    cowork_joint_estimator_factorization.md: −0 / +1",
@@ -544,7 +546,7 @@
         "    cowork_voiceleading_axis_design.md: −0 / +7",
         "    docs/llm_integration.md: −0 / +7",
         "  write-list documents still holding a `gap` entry: cowork_layer1_note_model_design.md, cowork_layer1_tone_collection_design.md, cowork_layer6_grouping_design.md, cowork_phrase_boundary_design.md, cowork_voiceleading_axis_design.md",
-        "  since phase 1r (the 2026-08-08 apply): 11 moved (to contract-home 11, to gap 0)",
+        "  since phase 1r (the 2026-08-08 apply): 12 moved (to contract-home 12, to gap 0)",
         "the home classification and its artifact re-derive from the files"
       ],
       "stderr": [],
@@ -559,7 +561,7 @@
       "verdict": "FAIL",
       "stdout": [],
       "stderr": [
-        "FORM judgment for a document that is nobody's home: ['cowork_audit_obligation_map.md', 'cowork_delta_check_dispositions.md', 'cowork_eg1_premise_checks.md', 'cowork_eg2_scoping.md', 'cowork_fb_redesign_design.md', 'cowork_gateA_unification_design.md', 'cowork_idiom_discovery_design.md', 'cowork_idiom_discovery_findings.md', 'cowork_l1_l5_premise_debt_audit.md', 'cowork_layer1_extend_design.md', 'cowork_layer2_reslice_design.md', 'cowork_layer3_keymode_impl_design.md', 'cowork_layer3_reachback_design.md', 'cowork_layer5_function_methods.md', 'cowork_phase5c_l5_build_plan.md', 'cowork_phrase_boundary_methods.md', 'cowork_style_clustering_plan.md', 'cowork_style_taxonomy_proposal.md', 'cowork_target_architecture.md', 'cowork_tpc_capability_design.md', 'cowork_uncertain_resolver_investigation.md', 'docs/architecture_joint_inference.md', 'docs/back_half_design.md', 'docs/decoder_design.md', 'docs/iter90_bass_as_root_promotion_shelved.md', 'docs/iteration_path1_summary.md', 'docs/key_detection_baroque_partial_signature.md', 'docs/layer_architecture_audit.md', 'docs/nct_detection_design.md', 'docs/precision_metric_design.md', 'docs/redesign_plan.md', 'docs/stage4c_cadence_key_design.md', 'docs/stage4d_local_modulation_design.md', 'docs/symbol_input_audit.md', 'docs/unified_analysis_pipeline.md']"
+        "FORM judgment for a document that is nobody's home: ['cowork_adjudication_dossier.md', 'cowork_audit_obligation_map.md', 'cowork_delta_check_dispositions.md', 'cowork_eg1_premise_checks.md', 'cowork_eg2_scoping.md', 'cowork_fb_redesign_design.md', 'cowork_gateA_unification_design.md', 'cowork_idiom_discovery_design.md', 'cowork_idiom_discovery_findings.md', 'cowork_l1_l5_premise_debt_audit.md', 'cowork_layer1_extend_design.md', 'cowork_layer2_reslice_design.md', 'cowork_layer3_keymode_impl_design.md', 'cowork_layer3_reachback_design.md', 'cowork_layer5_function_methods.md', 'cowork_phase5c_l5_build_plan.md', 'cowork_phrase_boundary_methods.md', 'cowork_style_clustering_plan.md', 'cowork_style_taxonomy_proposal.md', 'cowork_target_architecture.md', 'cowork_tpc_capability_design.md', 'cowork_uncertain_resolver_investigation.md', 'docs/architecture_joint_inference.md', 'docs/back_half_design.md', 'docs/decoder_design.md', 'docs/iter90_bass_as_root_promotion_shelved.md', 'docs/iteration_path1_summary.md', 'docs/key_detection_baroque_partial_signature.md', 'docs/layer_architecture_audit.md', 'docs/nct_detection_design.md', 'docs/precision_metric_design.md', 'docs/redesign_plan.md', 'docs/stage4c_cadence_key_design.md', 'docs/stage4d_local_modulation_design.md', 'docs/symbol_input_audit.md', 'docs/unified_analysis_pipeline.md']"
       ],
       "what_it_checks": "the delegation-bar pre-apply record re-derives"
     },
@@ -666,14 +668,14 @@
       "args": [
         "--check"
       ],
-      "exit_code": 1,
-      "verdict": "FAIL",
+      "exit_code": 0,
+      "verdict": "PASS",
       "stdout": [
-        "  the chord layer: ARCHITECTURE.md:1791 lists 10 entry(ies)",
-        "  the key layer: ARCHITECTURE.md:1612 lists 2 entry(ies)",
+        "  the chord layer: ARCHITECTURE.md:1830 lists 10 entry(ies)",
+        "  the key layer: ARCHITECTURE.md:1626 lists 2 entry(ies)",
         "  the search: ARCHITECTURE.md:315 lists 3 entry(ies)",
         "class members (derived from the verification): 13",
-        "STALE vs the files: 13 entry(ies) do not carry the pointer as derived"
+        "every live-prohibition entry carries its pointer, as derived"
       ],
       "stderr": [],
       "what_it_checks": "every entry the phase-1w verification puts in the live-prohibition class carries its pointer to the specification section that restates it as binding"
@@ -706,8 +708,8 @@
   ],
   "summary": {
     "run": 35,
-    "passing": 31,
-    "failing": 4,
+    "passing": 32,
+    "failing": 3,
     "failing_tools": [
       {
         "tool": "tools/audit/claude_md_rule_triage.py",
@@ -723,12 +725,6 @@
       },
       {
         "tool": "tools/audit/decisions/gen_phase1w_legacy_verification.py",
-        "args": [
-          "--check"
-        ]
-      },
-      {
-        "tool": "tools/audit/decisions/gen_live_prohibition_pointers.py",
         "args": [
           "--check"
         ]

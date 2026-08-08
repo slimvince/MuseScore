@@ -1270,6 +1270,46 @@ decided live capability specified elsewhere.
   stretch reads, so its effect cascades into regions it never judged. The counts are in the record
   and are not restated here (D-431).
 
+### Four archive-only dead ends of the chord-scoring path — do not retry any of them
+
+**Re-homed into this section 2026-08-08; every ⚠ LEGACY mark intact.** Until now these four lived
+ONLY in a session-handoff archive or a superseded status archive — surfaces that are not among the
+session-start reads and are not a home for a standing decision — while three of them recorded,
+in their own provenance, that this section *"does not mention"* them, **checked and not assumed**.
+`ARCHITECTURE.md`'s chord layer names them in its *"Tried and closed"* line; what it does not do is
+say what they are, which is what a reader meeting the scoring surface needs. ⚠ **All four are
+LEGACY-SCOPED:** their subject is this document's scoring surface and the gate machinery awaiting
+deletion. Each is a prohibition on re-attempting a specific mechanism, and none of them says
+anything about what a rebuilt scoring layer may do on evidence none of them had.
+
+- **Do not add a negative-margin guard.** A rule refusing to let a later correction step overturn
+  the leading reading when the margin against it is negative must not be added. *Why:* structural,
+  and stated with the mechanism — the correction steps that exist promote a reading that was BEHIND
+  on the raw candidate score, so a guard keyed on that margin removes their reason to exist. It
+  would disable every intentional backward-swap gate at once.
+- **Do not retry reading a minor chord as a diminished one on the same root** unless some new
+  evidence becomes available while the music is being analysed. *Why:* measured — a handful of
+  genuine cases against several times as many wrong firings, and the record states that no field or
+  combination of fields available at analysis time separates them: the genuine cases split into two
+  groups, each sharing an identical structural profile with a large wrong-firing cluster, and the
+  leading-tone hypothesis was tested and falsified on all of them. The counts are in the archive
+  that measured them and are not restated here (D-431).
+- **Do not retry reading a root-position major chord as the first inversion of a minor one** without
+  a model that reads several stretches together. *Why:* measured and then diagnosed, which is what
+  closes it rather than merely discouraging it — the pattern is architecturally endemic, because the
+  submediant in first inversion always scores close to the tonic in any major key, so it recurs
+  across a large fraction of the corpus; and neither a diatonic-root check, a key-mode guard nor a
+  tighter margin reduces the wrong firings.
+- **Do not attempt any further LOCAL scoring fix for inversions.** Correcting which note of a chord
+  is treated as its root by adjusting the numbers a single sonority earns in isolation is closed as
+  a line of work. *Why:* six weeks of investigation across four corpora and six attempts, with five
+  stated conclusions — the overwhelming majority of the genuine cases are bare three-note triads for
+  which bass-as-root is the statistically correct default; the four-note cases already score
+  correctly; the added-sixth against seventh-chord ambiguity is a data impossibility; **no
+  spelling-bonus window exists**, a bonus large enough to correct the triads breaking every
+  sixth-chord convention; and the remainder is a legitimate divergence between reading a sonority
+  vertically and reading it by its role, **which is not an analyzer defect at all**.
+
 ### The validation basis of every hand-set scoring magnitude on this surface is retroactively VOID
 
 **Re-homed into this section 2026-08-08 on the user's ruling.** ⚠ **LEGACY SUBJECT:** the magnitudes

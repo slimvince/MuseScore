@@ -1099,7 +1099,13 @@ distribution disposition).
 defect fix with no fork-specific content; contributing it to `musescore/MuseScore` is permitted
 and consistent with the §1.2 contribution intent (contrast the MusicXML mode-import patch above,
 which stays fork-local). **Do not revert; do not let dependency updates overwrite without
-approval.** Register entry D-316.
+approval.** Register entries **D-315** — the fix itself, that it was made and is live in this fork
+— and **D-316**, its distribution disposition. *(D-315 homed here 2026-08-08: until then it was
+recorded ONLY in `STATUS_ARCHIVE.md`, which is reference-only and not among the session-start
+reads, while the record that a live edit to MuseScore's own code exists is exactly what this section
+is for. Its own provenance said this section carried two subsections and not this one — true when
+written, and closed by the subsection above, which was added the same day it was found. The archive
+is untouched.)*
 
 ## VS Code extension — bash command rules (MANDATORY, every session)
 

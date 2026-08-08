@@ -314,6 +314,20 @@
 >
 > *Tried and closed on the search — do not retry; the register carries each with its measurement: D-288 (beam widening, shelved), D-328 (a wider search over the same scoring, refuted), D-278 (the joint key-and-chord step over the two legacy decoders, shelved).*
 >
+> **★ WHAT D-288 IS, re-homed into this specification 2026-08-08; ⚠ LEGACY-SCOPED (its subject is the
+> segmenter and scorer awaiting deletion).** Until now it lived ONLY in a session-handoff archive, a
+> surface that is not among the session-start reads, so the naming above could not be resolved by a
+> reader. **Do not retry widening the search to consider more candidate readings in parallel.** *Why:*
+> derived and then cross-checked against independent earlier measurements — the failure it was proposed for
+> is not a search failure at all. **The wrong reading is the highest-scoring one**, so examining more
+> readings finds the same wrong answer; only changing how readings are scored, or cutting the music
+> differently, can move it. A consequence was recorded with it and is what closed the build rather than
+> merely discouraging it: for every OTHER motivated use, a width-one search substitutes for the wider
+> one, so nothing else justified building it. **This bounds a mechanism, not an evidence surface** —
+> see (c) above, where the same lesson is stated from the other side: a later measurement re-grounded
+> "search is about zero" as having been measured over a FIXED NARROW evidence surface, which is why
+> broad-evidence integration is the joint estimator's value and is not what this closes.
+>
 > **(d) On the key axis the decoder commits its maximum-a-posteriori path; it never abstains.** The estimator
 > always names a key for every committed segment, so the abstention counter the regression stop reads is
 > zero on the production arm. Recorded at the OI-178 adoption, user-ratified 2026-07-26 (`CLAUDE.md` gate
@@ -1610,6 +1624,31 @@ the record of what that pipeline does; it is no longer a description of what run
 **Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.
 
 **Tried and closed on this layer — do not retry; the register carries each with its evidence: D-287 (key-as-distribution, shelved), D-290 (the key-agnostic local cadence approach, falsified).**
+
+**★ WHAT THOSE TWO ARE, re-homed into this specification 2026-08-08; both ⚠ LEGACY-SCOPED (their
+subject is this layer's dormant pipeline).** Until now each lived ONLY in a session-handoff archive
+— a surface that is not among the session-start reads and is not a home for a standing decision —
+so the line above named them without a reader being able to learn what they were.
+
+- **Do not revive carrying a ranked distribution of key candidates forward instead of one committed
+  key.** *Why:* measured and cited in the record — the one failure it was designed to fix had
+  already been fixed another way, the resolver returns the correct key at the top rank for every
+  stretch of it, and no case was found anywhere in the corpus where the correct key sits at the
+  second or third rank. A second reason rides with it and is structural: the confidence field it
+  would have been weighted by is **re-ranked without being recomputed**, so it reads anywhere across
+  its whole range on a single correctly-keyed piece and cannot scale anything. **The shelving names
+  its own re-open condition** — a confirmed case with the correct key at rank one or two — so it is
+  a shelving with a stated trigger, not a permanent exclusion. *For a reader arriving from the
+  joint estimator:* that design carries a full posterior by construction, so the concern this
+  shelving withdrew is met by a different design rather than by reviving this one.
+- **Do not retry deciding the key from cadences found without knowing the key, one cadence at a
+  time.** *Why:* measured to its limit with a byte-matched re-implementation, which is what makes
+  the ceiling a measurement rather than an estimate — the chromatic-leading-tone gate is orthogonal
+  to correctness, since about as many true modulations as false ones carry a diatonic leading tone,
+  and the relative-pair signals were already spent by the existing aggregation. The approach sits
+  below the bar the wiring step required, and what the remaining errors need is a long-range key
+  decision or a different kind of model, not a better local cadence rule. **Its scope is stated
+  with it:** measured on the Bach ground-truth corpus; other repertoires unmeasured.
 
 **The backward re-reading facility stays SWITCHED OFF in the shipped configuration.** This layer carries a
 facility for returning to an earlier stretch and re-reading it once later evidence has arrived

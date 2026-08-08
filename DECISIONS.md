@@ -217,11 +217,11 @@ project's own and are defined here because they are used before any entry explai
 | — of which shelved with evidence | 3 |
 | Decisions whose date is not stated in the record | 239 |
 | Decisions whose ratifier is not stated in the record | 364 |
-| Decisions recorded outside the specification that owns them | 359 |
-| — of which a documentation gap | 43 |
-| — of which recorded only on a tracking surface, with no home at all | 11 |
+| Decisions recorded outside the specification that owns them | 352 |
+| — of which a documentation gap | 42 |
+| — of which recorded only on a tracking surface, with no home at all | 3 |
 | — of which a project-wide convention, correctly homed | 42 |
-| — of which a decision about the process, correctly homed | 113 |
+| — of which a decision about the process, correctly homed | 114 |
 | Decisions whose defense the record does not state | 44 |
 | Entries whose own ratification the provenance records | 315 |
 | Entries whose home is recorded at SECTION granularity | 193 |
@@ -384,7 +384,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-278 | The joint key-and-chord step is SHELVED - measured not to pay | SHELVED WITH EVIDENCE ⚠LEGACY | 2026-08-02 · user | `cowork_engage_arc_plan.md` “The stages” |
 | D-282 | Meta-finding: the oracle/tier metric, never a bare proxy - superseded by the robust-unit stop and the two-tier policy | SUPERSEDED BY D-115 and D-191 | — | `cowork_architecture_reassessment.md` §4 ⚠gap |
 | D-286 | Whole-score interactive analysis was SHELVED WITH EVIDENCE; the bounded window is the ratified reading | LIVE | 2026-08-02 · user | `cowork_handoff_archive.md` ⚠tracking-surface-only |
-| D-288 | Beam widening is SHELVED - a wider search cannot fix the failure class it was proposed for | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_handoff_archive.md` ⚠tracking-surface-only |
+| D-288 | Beam widening is SHELVED - a wider search cannot fix the failure class it was proposed for | LIVE ⚠LEGACY | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-289 | Meta-principle: precision lives in the evidence and the functional labelling, not in the search | LIVE | 2026-08-02 · user | `cowork_handoff_archive.md` ⚠tracking-surface-only |
 | D-293 | Fitted values are fitted per IDIOM, never for a user preset; presets are regression surfaces and delivery carriers | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-294 | The only ground truth is the human annotation; the algorithmic analysis is a filter, and no self-annotation ever enters a measurement | LIVE | 2026-08-02 · user | `CLAUDE.md` |
@@ -412,7 +412,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-581 | Information not yet consumed is NOT automatically a defect: every site is classified preserved-awaiting-consumer, lost, should-already, or unclear — and unclear is recorded for adjudication, never guessed | LIVE | 2026-08-04 · user | `cowork_information_loss_audit.md` “The central classification axis” ⚠gap |
 | D-582 | A collapse that is RECOMPUTABLE from what is kept is not information loss — not every collapse is a defect | LIVE | 2026-08-04 · user | `CLAUDE.md` |
 | D-600 | The quality-overwrite information-loss violation is TOLERATED until the gate-dissolution step and stays VISIBLE in the open-items register — tolerated is not forgotten | LIVE | 2026-08-04 · user | `docs/scoring_model.md` |
-| D-601 | Before any constant that would make two differently-scaled confidences comparable is fitted, the premise that a fitted constant CAN do so must itself pass a premise ledger and a desk simulation | LIVE | 2026-08-04 · user | `cowork_adjudication_dossier.md` “Part A” ⚠gap |
+| D-601 | Before any constant that would make two differently-scaled confidences comparable is fitted, the premise that a fitted constant CAN do so must itself pass a premise ledger and a desk simulation | LIVE | 2026-08-04 · user | `cowork_confidence_contract.md` §4 |
 | D-604 | A defensible modal reading the major/minor ground truth cannot represent is a GROUND-TRUTH LIMITATION, not a defect to optimise away | LIVE | 2026-08-04 · user | `CLAUDE.md` |
 | D-608 | The symmetric-root spelling pin's entry premise was measured FALSE — it is unreachable because the scorer rarely chooses the diminished quality; the remedy is enumerated and NOT decided | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
 | D-609 | The abstention rate rides on an arbitrary, never-fitted seed constant — a whole probe's metric-moving behaviour sat downstream of an unestablished value | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
@@ -477,8 +477,8 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-058 | The piece-start shortcut | SUPERSEDED IN FACT ⚠LEGACY · derivation not recorded | — | `ARCHITECTURE.md` |
 | D-059 | The temporal window - 16 beats back, 8 beats forward, decayed | LIVE ⚠LEGACY · derivation not recorded | — | `ARCHITECTURE.md` |
 | D-235 | Tonal-centre disambiguation may break a close tie but may not overturn a stronger raw winner | LIVE ⚠LEGACY | 2026-08-02 · user | `ARCHITECTURE.md` |
-| D-287 | Key-as-distribution is SHELVED - its motivating case was already fixed and no live target was found | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_handoff_archive.md` ⚠tracking-surface-only |
-| D-290 | The key-agnostic local cadence approach is FALSIFIED at its precision ceiling | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_handoff_archive.md` ⚠tracking-surface-only |
+| D-287 | Key-as-distribution is SHELVED - its motivating case was already fixed and no live target was found | LIVE ⚠LEGACY | 2026-08-02 · user | `ARCHITECTURE.md` |
+| D-290 | The key-agnostic local cadence approach is FALSIFIED at its precision ceiling | LIVE ⚠LEGACY | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-306 | The key layer's backward re-reading stays switched off in the shipped configuration | LIVE ⚠LEGACY | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-323 | Asking whether a pitch belongs to the key is a question about the collection, never about the tonic — the tonic-anchored form must not return | LIVE | 2026-08-02 · user | `docs/scoring_model.md` “`dim7CharacteristicBonus`” |
 | D-343 | The key/mode layer owns the candidate space and the note-evidence model outright; the residual is SELECTED from its carried alternatives, never re-scored | LIVE | 2026-08-02 · user | `cowork_layer3_keymode_design.md` §1 |
@@ -541,10 +541,10 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-242 | Vertical and monophonic raw scores are never compared directly | DEFERRED | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-280 | Gates read structured fields only - never a chord symbol string and never a Roman numeral | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-284 | Meta-finding: selection/competition is saturated, stop adding re-ranking gates - superseded by the gates doctrine and the adoption | SUPERSEDED BY D-036 with D-001/D-010 ⚠LEGACY | — | `cowork_architecture_reassessment.md` §4 ⚠gap |
-| D-299 | No negative-margin guard may be added - it would break every intentional backward-swap gate | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_handoff_archive.md` ⚠tracking-surface-only |
-| D-300 | Gate M (minor read as diminished) is DEFERRED and must not be retried without a new runtime signal | DEFERRED ⚠LEGACY | 2026-08-02 · user | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
-| D-301 | Gate N (major read as an inverted minor) is DEFERRED and must not be retried without a multi-region model | DEFERRED ⚠LEGACY | 2026-08-02 · user | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
-| D-302 | No further local scoring fix for inversions may be attempted — the remaining divergence is not an analyzer defect | LIVE ⚠LEGACY | 2026-08-02 · user | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
+| D-299 | No negative-margin guard may be added - it would break every intentional backward-swap gate | LIVE ⚠LEGACY | 2026-08-02 · user | `docs/scoring_model.md` |
+| D-300 | Gate M (minor read as diminished) is DEFERRED and must not be retried without a new runtime signal | DEFERRED ⚠LEGACY | 2026-08-02 · user | `docs/scoring_model.md` |
+| D-301 | Gate N (major read as an inverted minor) is DEFERRED and must not be retried without a multi-region model | DEFERRED ⚠LEGACY | 2026-08-02 · user | `docs/scoring_model.md` |
+| D-302 | No further local scoring fix for inversions may be attempted — the remaining divergence is not an analyzer defect | LIVE ⚠LEGACY | 2026-08-02 · user | `docs/scoring_model.md` |
 | D-303 | Non-chord-tone detection is deferred, and if built it must be chord identification that knows about non-chord tones, never stripping after the fact | DEFERRED | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-305 | The ban on reading written harmony as analyzer input is decided by what an annotation says, not by how it is stored | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-312 | The carried alternative readings are inside the byte-identity acceptance contract — same winner with different alternatives is a behavior change | LIVE | 2026-08-02 · user | `cowork_stage5_fitter_design.md` “§15 Open items & ratification asks” |
@@ -753,7 +753,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-125 | Every test documents the musical situation, the expected result, and what a failure means | LIVE | — | `ARCHITECTURE.md` |
 | D-126 | One coherent piece of functionality per pull request | LIVE | — | `ARCHITECTURE.md` |
 | D-292 | The fitting-pool licence constraint - values that ship are fitted only on freely-licensed music | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
-| D-315 | A one-line fix was made to MuseScore's own chord-symbol parser and is live in the fork | LIVE | 2026-08-02 · user | `STATUS_ARCHIVE.md` ⚠tracking-surface-only |
+| D-315 | A one-line fix was made to MuseScore's own chord-symbol parser and is live in the fork | LIVE | 2026-08-02 · user | `CLAUDE.md` |
 | D-375 | Every real source of difficulty labels is research-only or proprietary — a difficulty-grading feature needs a licence path before it can be sold | LIVE | 2026-08-02 · user | `cowork_score_census.md` §8c |
 | D-489 | The snapshot sources are hash-pinned rather than copied in-tree, because their licences make an in-tree copy incompatible with this project's licence | LIVE | 2026-08-04 · user | `docs/score_inventory.md` |
 | D-614 | Every real difficulty-grade label source is research-only or proprietary at origin — a commercial grading feature needs a licence path or its own labels | LIVE | — | `cowork_union_search_record.md` §3 ⚠gap |

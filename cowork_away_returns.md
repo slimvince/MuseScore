@@ -263,6 +263,111 @@ change is the ruled one.
 **No value is restated here (D-431)** — every rate, count and identity lives in
 `tools/audit/shell_read_guard_establishment.json`.
 
+### Task 2 — COMPLETE. Nine of the eleven homed, plus D-601; three held, each with the reason and the candidate named
+
+**Nine entries left the archives for the specification that owns them, and the archives are
+untouched (#12).** Four chord-scoring dead ends into `docs/scoring_model.md` §8 — which three of
+them named, in their own provenance, as the standing home for scoring dead ends that *"does not
+mention"* them, checked and not assumed; that gap is what closed. Two key-layer dead ends and one
+search dead end into the `ARCHITECTURE.md` sections that already NAMED them in a *"Tried and
+closed"* line without saying what they were, so a reader met an identifier and could not learn the
+rule. And the MuseScore chord-symbol parser patch into `CLAUDE.md`'s local-patches section beside
+its own distribution disposition.
+
+**D-601 is homed under Ruling 2's one licensed edit**, into the confidence contract's frame table
+at the `conversion` element — the exact place two scales are made comparable. **The hold was a
+licence and not a judgment, and nothing about WHERE was re-decided**: the owner was already
+determinate and recorded; what changed is that the surface became writable. The edit is that one
+section and nothing else in the file.
+
+**★ WHAT RODE ALONG RATHER THAN BEING DROPPED, because a prohibition carried without it reads wider
+than it was measured to be.** Each homing carried the parts that qualify it: a shelving's stated
+RE-OPEN CONDITION and the note that the joint estimator meets its concern by a different design; a
+falsification's SCOPE (measured on one corpus, others unmeasured) and its statement of what the
+remaining errors DO need; the structural second reason that a confidence field is re-ranked without
+being recomputed; and, for the search dead end, a pointer to the later re-grounding — *"search is
+about zero"* was measured over a fixed narrow evidence surface — without which a reader could take
+the prohibition for a bar on the joint estimator's own ground. **One homed wording deliberately
+narrows its former text:** the inversion dead end now says LOCAL in terms, because its old first
+sentence asserted that the then-current baseline was the correct production one, and that baseline
+has been re-based twice since — carrying it into a live specification would have written a stale
+claim onto the compliance surface. **No measured value was carried into any specification (D-431):**
+every count, ratio, percentage and commit identifier stays in the record that measured it, and each
+homing says so.
+
+**Three are HELD, and each is held because the act it needs is not a filing act:**
+
+- **D-286** (whole-score interactive analysis shelved) — **three sections have a claim and none
+  settles it**: the region-analysis section states the extent question in its own opening, the
+  analyze-at-tick path table is what the bounded-window cache belongs to, and `CLAUDE.md` names the
+  effort-control section as where the analysis-extent question sits. A second and stronger reason:
+  the record says a later build specified whole-score interactive analysis **without meeting this
+  shelving**, so writing it into a live specification would either state a rule the implementation
+  contradicts or require a conformance judgment — which is about the analysis, not about filing.
+- **D-289** (the meta-principle that precision lives in the evidence and the labelling, not the
+  search) — its own provenance calls it an earlier, independently-derived statement of a decision
+  that sits in the NO-HOME class precisely because re-homing it would duplicate rules its
+  successors already state (#6). Whether what survives is a doctrine needing a home or live content
+  already carried elsewhere is a **supersession** ruling. The candidate home is named so it is one
+  act to settle.
+- **D-291** (the tonicization labeller left unwired, and the metric not changed to credit it) —
+  **it is two decisions with two owners**: a build decision belonging to a layer, and a measurement
+  convention belonging to gate block (A). **And the second half looks already homed** — gate block
+  (A) carries a grading convention of the SAME DATE stating the same masking argument in the same
+  words. Whether that is one decision recorded twice is the user's to settle.
+
+**One authored input was maintained**, the third instance of that shape in this batch: homing D-601
+emptied its document, and the classifier STOPPED until the judgment was moved whole into its retired
+block (#12) — which the 2026-08-08 route wave's own record anticipated in terms, having said that
+document was not retired *because* D-601 was held.
+
+**A standing guard failure cleared as a consequence rather than by repair:** the live-prohibition
+pointer check now passes, because the entries it tracks now point at sections that state their rules
+rather than at a tracking surface. **And one guard went red mid-task and was measured rather than
+assumed:** the phase-3 gate partition records LOCATED line anchors for quotes in `CLAUDE.md`, and
+this task's insertion there shifted them. Its verdicts are authored and its located lines derived,
+so regenerating it is completing an edit and not repairing a finding — and the anchor drift it
+reports was already in the committed artifact before this task touched anything.
+
+**Holds:** the three above. **Surfacings:** none new bearing on the analysis. **Freeze respected:**
+no `src/` change, no golden, no corpus of scores, no `tools/robust_stop/` movement, no behaviour
+change to the analysis, no fix to inference, no design. **No value is restated here (D-431).**
+
+### ★ WHERE THE BATCH STOOD WHEN THIS SESSION ENDED
+
+**Tasks 0, 1 and 2 are COMPLETE, committed and pushed** — three commits, each its own task
+boundary, each with its guard run, its enumeration and its `STATUS.md` pointer entry. **Tasks 3
+through 8 are NOT STARTED.** That is a capacity stop at a clean task boundary, not a halt on a
+finding: no STOP note was written, no analysis-bearing surface halted the batch, and nothing is
+left half-edited — the working tree at session end carries no uncommitted work of this batch's own.
+
+**What a continuing session should know before starting Task 3.** Its population is the 44 register
+entries the completion inventory lists under `entries_with_no_rationale_at_all`, and **the shape of
+the owed act is narrower than it looks**: the register already DISPLAYS *"derivation not recorded"*
+for all 44, because the renderer substitutes that phrase for an empty `rationale` field — so the
+surface currently asserts an established gap for entries where **no search was ever performed**.
+That is the defect Task 3 closes, and it closes per entry by SEARCHING and then recording either the
+defense the record holds or the established gap.
+
+**Eight of the 44 were searched during this session's reading** — read-only, with nothing written,
+because the searches were done while a guard run held the tree. Recorded here so the work is not
+repeated: **D-004, D-015, D-059 and D-114 already carry the completed search in their own provenance
+or home text** (each states in terms that the record holds no derivation, and D-059 names the only
+gloss that exists); **D-058** likewise, with a stated pragmatic ground but no derivation; and **two
+of the eight turn out to HAVE a defense the empty field misrepresents** — **D-052**, whose home text
+states the reason as a consequence (*"so no signature/partial-correction logic is duplicated"*,
+which is #6), and **D-003**, whose home states the constraint that forced it (*"presets are
+presentation concerns"*). **D-019** was searched and the record holds no reason — what it holds
+instead is a recorded CONFLICT with the confidence contract. **None of these was written into the
+register**: recording them is Task 3's act and Task 3 was not opened.
+
+**The three failing guards at session end are the standing set** — the `CLAUDE.md` rule triage, the
+delegation bar, and the legacy-mark verification. Every verdict is at
+`tools/audit/guard_state.json` → `summary` (D-431). **The delegation bar's failure is worth a
+continuing session's attention:** it is the same shape Task 0 fixed one construct out — it STOPS on
+a long list of documents that are nobody's home any more, accumulated by every re-homing wave, and
+this batch's own homings will have added to it.
+
 ---
 
 ## 4. The batch's start state, recorded before any act
