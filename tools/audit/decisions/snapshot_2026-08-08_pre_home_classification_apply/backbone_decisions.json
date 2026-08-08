@@ -1029,6 +1029,9 @@
       },
       "docs/stage4b_design.md": {
         "delegation_scope": "none"
+      },
+      "docs/unified_analysis_pipeline.md": {
+        "delegation_scope": "none"
       }
     },
     "whole_document_reading": "A delegation that names a DOCUMENT and no section reaches EVERY section of it; a delegation that names SECTIONS reaches those sections and their subsections and no others; and the rule-stating half is judged PER SECTION in both cases. **THIS IS NOW PART OF THE RULE, NOT AN INTERPRETATION OF IT (user, 2026-08-03, phase 1r).** At phase 1q it was this pass's reading of D-430's \"delegates a stated concern to that section BY NAME\", taken on the record's own precedent rather than a preference — `OPEN_ITEMS.md` OI-290 states in terms that \"`ARCHITECTURE.md:1331` delegates 'this layer' and admits all sixteen of that document's entries\" — and the strict alternative was recorded as available to the user. The user then WROTE the reading into `CLAUDE.md` rule (h) itself as the GRANULARITY clause, so D-430's verbatim now carries it and the strict alternative is CLOSED. Its defense, stated with it: the strict reading would evict every document delegated as a whole, signed layer specifications among them, on the accident of how a pointer happens to be phrased, making the rule retroactively destructive rather than refining. THE STRICT ALTERNATIVE, PRESERVED (#12): read literally, a whole-document delegation names no section, so no section of it would be admitted and the seven whole-document homes would lose every entry between them.",
@@ -1261,12 +1264,6 @@
           "delegation_scope": "none"
         },
         "cowork_target_architecture.md": {
-          "delegation_scope": "none"
-        }
-      },
-      "retired_2026_08_08_the_away_batch": "CC, dispatch `cc_instruction_away_execution.md` Task 0. ONE document, and it is a MISSED RETIREMENT rather than a new one: `docs/unified_analysis_pipeline.md` was emptied on 2026-08-07 by the owner-rulings homing wave, which re-homed its four entries (D-053's neighbour among them) into `ARCHITECTURE.md` §11.5 and §5.13 and retired three other emptied documents but not this one. The judgment was `{\"delegation_scope\": \"none\"}` and is moved here whole rather than deleted (#12). ★ WHAT THE MISS COST, recorded because it is larger than the miss: from 2026-08-07 until this retirement `gen_home_classification.py` STOPPED on it before classifying anything, so every run of that check since — including the one in the committed guard state — exited on this STOP and never reached the stale-field report it exists for. `OPEN_ITEMS.md` OI-350's account of the same check re-deriving the three route-(i) documents' eleven entries as `contract-home` therefore cannot have come from a clean run at the committed tree; that finding is surfaced rather than corrected here, because what the check says once it runs is a measurement and not this batch's to assert. The STOP is the guard working, exactly as the three earlier retirement notes above say.",
-      "judgments_retired_2026_08_08_the_away_batch": {
-        "docs/unified_analysis_pipeline.md": {
           "delegation_scope": "none"
         }
       }
@@ -7082,14 +7079,13 @@
         "section": "## 2. The three spans (the core distinction)",
         "label": "§2",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1090",
+        "delegation": "ARCHITECTURE.md:938",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -7125,14 +7121,13 @@
         "section": "## 3. The bounded-context contract (what every layer obeys)",
         "label": "§3",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1090",
+        "delegation": "ARCHITECTURE.md:938",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -7167,14 +7162,13 @@
         "section": "## 3. The bounded-context contract (what every layer obeys)",
         "label": "§3",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1090",
+        "delegation": "ARCHITECTURE.md:938",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -7210,14 +7204,13 @@
         "section": "## 3. The bounded-context contract (what every layer obeys)",
         "label": "§3",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1090",
+        "delegation": "ARCHITECTURE.md:938",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -7252,14 +7245,13 @@
         "section": "## 4. The protocol — request → supply → bounded recompute",
         "label": "§4",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1090",
+        "delegation": "ARCHITECTURE.md:938",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -7294,14 +7286,13 @@
         "section": "## 4. The protocol — request → supply → bounded recompute",
         "label": "§4",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1090",
+        "delegation": "ARCHITECTURE.md:938",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -7336,14 +7327,13 @@
         "section": "## 8. Risks & the non-trivial parts",
         "label": "§8",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1090",
+        "delegation": "ARCHITECTURE.md:938",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -7380,14 +7370,13 @@
         "section": "## 2. Definitions — the two admissible confidence classes",
         "label": "§2",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1129",
+        "delegation": "ARCHITECTURE.md:977",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -7423,14 +7412,13 @@
         "section": "## 2. Definitions — the two admissible confidence classes",
         "label": "§2",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1129",
+        "delegation": "ARCHITECTURE.md:977",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -7465,14 +7453,13 @@
         "section": "## 4. The comparison frames (the §8 override arithmetic, stated once)",
         "label": "§4",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1129",
+        "delegation": "ARCHITECTURE.md:977",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -7513,8 +7500,7 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -7555,8 +7541,7 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -7597,8 +7582,7 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -7640,8 +7624,7 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -7682,8 +7665,7 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -7724,8 +7706,7 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -7766,8 +7747,7 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -7837,8 +7817,7 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -7879,8 +7858,7 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -7968,8 +7946,7 @@
         "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -8001,8 +7978,7 @@
         "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -8035,8 +8011,7 @@
         "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -8068,8 +8043,7 @@
         "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -8768,8 +8742,7 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -8802,14 +8775,13 @@
         "section": "## §15 Open items & ratification asks",
         "label": "“§15 Open items & ratification asks”",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:301",
+        "delegation": "ARCHITECTURE.md:292",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -8842,14 +8814,13 @@
         "section": "## 9. Architecture decisions",
         "label": "§9",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:301",
+        "delegation": "ARCHITECTURE.md:292",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -8882,14 +8853,13 @@
         "section": "## §15 Open items & ratification asks",
         "label": "“§15 Open items & ratification asks”",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:301",
+        "delegation": "ARCHITECTURE.md:292",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -9079,14 +9049,13 @@
         "section": "### Floating-point tie policy",
         "label": "“Floating-point tie policy”",
         "delegated": true,
-        "delegation": "CLAUDE.md:960",
+        "delegation": "CLAUDE.md:931",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -9120,14 +9089,13 @@
         "section": "### Floating-point tie policy",
         "label": "“Floating-point tie policy”",
         "delegated": true,
-        "delegation": "CLAUDE.md:960",
+        "delegation": "CLAUDE.md:931",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -9160,14 +9128,13 @@
         "section": "### `dim7CharacteristicBonus` — `kDim7CharacteristicBonus = 0.75`",
         "label": "“`dim7CharacteristicBonus`”",
         "delegated": true,
-        "delegation": "CLAUDE.md:960",
+        "delegation": "CLAUDE.md:931",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -9197,18 +9164,17 @@
         ]
       },
       "home_section": {
-        "heading_line": 800,
+        "heading_line": 752,
         "section": "### §6a. The unified promotion primitive `promoteToWinner()`",
         "label": "“§6a. The unified promotion primitive `promoteToWinner()`”",
         "delegated": true,
-        "delegation": "CLAUDE.md:960",
+        "delegation": "CLAUDE.md:931",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -9352,14 +9318,13 @@
         "section": "## 4. Solution strategy",
         "label": "§4",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1789",
+        "delegation": "ARCHITECTURE.md:1493",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -9392,14 +9357,13 @@
         "section": "## 8. Crosscutting concepts",
         "label": "§8",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1789",
+        "delegation": "ARCHITECTURE.md:1493",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -9432,14 +9396,13 @@
         "section": "## 15. Open items & deferred refinements",
         "label": "§15",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1789",
+        "delegation": "ARCHITECTURE.md:1493",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -9472,14 +9435,13 @@
         "section": "## 7. Data design",
         "label": "§7",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1789",
+        "delegation": "ARCHITECTURE.md:1493",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -9512,14 +9474,13 @@
         "section": "## 15. Open items & deferred refinements",
         "label": "§15",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1789",
+        "delegation": "ARCHITECTURE.md:1493",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -9552,14 +9513,13 @@
         "section": "## 15. Open items & deferred refinements",
         "label": "§15",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1789",
+        "delegation": "ARCHITECTURE.md:1493",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -9592,14 +9552,13 @@
         "section": "## 9. Architecture decisions (with the alternatives weighed)",
         "label": "§9",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1929",
+        "delegation": "ARCHITECTURE.md:1593",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -9632,14 +9591,13 @@
         "section": "## 9. Architecture decisions (with the alternatives weighed)",
         "label": "§9",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1929",
+        "delegation": "ARCHITECTURE.md:1593",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -9672,14 +9630,13 @@
         "section": "## 9. Architecture decisions (with the alternatives weighed)",
         "label": "§9",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1929",
+        "delegation": "ARCHITECTURE.md:1593",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -9712,14 +9669,13 @@
         "section": "## 9. Architecture decisions (with the alternatives weighed)",
         "label": "§9",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1929",
+        "delegation": "ARCHITECTURE.md:1593",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -9752,14 +9708,13 @@
         "section": "## 9. Architecture decisions (with the alternatives weighed)",
         "label": "§9",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1929",
+        "delegation": "ARCHITECTURE.md:1593",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -9792,14 +9747,13 @@
         "section": "## 7. Data design",
         "label": "§7",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1929",
+        "delegation": "ARCHITECTURE.md:1593",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -9832,14 +9786,13 @@
         "section": "### 5.0 Shared definitions (the terms the rules below stand on)",
         "label": "§5.0",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1929",
+        "delegation": "ARCHITECTURE.md:1593",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -9873,14 +9826,13 @@
         "section": "## 11. Risks & technical debt",
         "label": "§11",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1929",
+        "delegation": "ARCHITECTURE.md:1593",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -9913,14 +9865,13 @@
         "section": "## 1. Introduction & purpose",
         "label": "§1",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1610",
+        "delegation": "ARCHITECTURE.md:1387",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -9954,14 +9905,13 @@
         "section": "## 1. Introduction & purpose",
         "label": "§1",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1610",
+        "delegation": "ARCHITECTURE.md:1387",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -9995,14 +9945,13 @@
         "section": "## 2. Constraints",
         "label": "§2",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1610",
+        "delegation": "ARCHITECTURE.md:1387",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -10036,14 +9985,13 @@
         "section": "## 5. Building-block view (static / internal structure)",
         "label": "§5",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1610",
+        "delegation": "ARCHITECTURE.md:1387",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -10077,14 +10025,13 @@
         "section": "## 9. Architecture decisions (with the alternatives we weighed)",
         "label": "§9",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1610",
+        "delegation": "ARCHITECTURE.md:1387",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -10119,14 +10066,13 @@
         "section": "## 4. Solution strategy",
         "label": "§4",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1610",
+        "delegation": "ARCHITECTURE.md:1387",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -10160,14 +10106,13 @@
         "section": "## 9. Architecture decisions (with the alternatives we weighed)",
         "label": "§9",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1610",
+        "delegation": "ARCHITECTURE.md:1387",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -10201,14 +10146,13 @@
         "section": "# Architectural Layer 3 — KEY/MODE — Architecture & Design",
         "label": "the opening block (above the first section heading)",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1610",
+        "delegation": "ARCHITECTURE.md:1387",
         "states_rules": false,
         "verdict": "EXCLUDE",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -10242,14 +10186,13 @@
         "section": "## 9. Architecture decisions (with the alternatives we weighed)",
         "label": "§9",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1610",
+        "delegation": "ARCHITECTURE.md:1387",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -10282,14 +10225,13 @@
         "section": "## 10. Quality & testing",
         "label": "§10",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1610",
+        "delegation": "ARCHITECTURE.md:1387",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -10322,14 +10264,13 @@
         "section": "## 10. Quality & testing",
         "label": "§10",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1610",
+        "delegation": "ARCHITECTURE.md:1387",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -10363,14 +10304,13 @@
         "section": "## 11. Risks & technical debt",
         "label": "§11",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1610",
+        "delegation": "ARCHITECTURE.md:1387",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -10404,14 +10344,13 @@
         "section": "## 11. Risks & technical debt",
         "label": "§11",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1610",
+        "delegation": "ARCHITECTURE.md:1387",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -10445,14 +10384,13 @@
         "section": "## 11. Risks & technical debt",
         "label": "§11",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1610",
+        "delegation": "ARCHITECTURE.md:1387",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -10486,14 +10424,13 @@
         "section": "## 15. To do — deferred enhancements (this layer is built; these are revisions on record)",
         "label": "§15",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1610",
+        "delegation": "ARCHITECTURE.md:1387",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -10527,14 +10464,13 @@
         "section": "## 15. To do — deferred enhancements (this layer is built; these are revisions on record)",
         "label": "§15",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1610",
+        "delegation": "ARCHITECTURE.md:1387",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -10567,14 +10503,13 @@
         "section": "## 1. Why corpora kept being \"discovered\" — and the method that closes it",
         "label": "§1",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:335",
+        "delegation": "ARCHITECTURE.md:326",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -10607,14 +10542,13 @@
         "section": "## 3. Inclusion criteria (what \"a corpus we can use\" means)",
         "label": "§3",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:335",
+        "delegation": "ARCHITECTURE.md:326",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -10647,14 +10581,13 @@
         "section": "## 4. Overlap hazard (the accounting rule)",
         "label": "§4",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:335",
+        "delegation": "ARCHITECTURE.md:326",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -10687,14 +10620,13 @@
         "section": "## 8. The comprehensiveness claim, precisely stated — and the mitigation plan (added 2026-07-02, user question)",
         "label": "§8",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:335",
+        "delegation": "ARCHITECTURE.md:326",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -10727,14 +10659,13 @@
         "section": "## 8. The comprehensiveness claim, precisely stated — and the mitigation plan (added 2026-07-02, user question)",
         "label": "§8",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:335",
+        "delegation": "ARCHITECTURE.md:326",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -10767,14 +10698,13 @@
         "section": "## 8b. The recurring-discovery finding, and the PURPOSE-DRIVEN sweep trigger (user observation, 2026-07-03)",
         "label": "§8b",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:335",
+        "delegation": "ARCHITECTURE.md:326",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -10807,14 +10737,13 @@
         "section": "## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)",
         "label": "§8c",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:335",
+        "delegation": "ARCHITECTURE.md:326",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -10847,14 +10776,13 @@
         "section": "## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)",
         "label": "§8c",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:335",
+        "delegation": "ARCHITECTURE.md:326",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -10887,14 +10815,13 @@
         "section": "## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)",
         "label": "§8c",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:335",
+        "delegation": "ARCHITECTURE.md:326",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -10927,14 +10854,13 @@
         "section": "## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)",
         "label": "§8c",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:335",
+        "delegation": "ARCHITECTURE.md:326",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -10967,14 +10893,13 @@
         "section": "## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)",
         "label": "§8c",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:335",
+        "delegation": "ARCHITECTURE.md:326",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -11007,14 +10932,13 @@
         "section": "## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)",
         "label": "§8c",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:335",
+        "delegation": "ARCHITECTURE.md:326",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -11047,14 +10971,13 @@
         "section": "## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)",
         "label": "§8c",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:335",
+        "delegation": "ARCHITECTURE.md:326",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -11087,14 +11010,13 @@
         "section": "## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)",
         "label": "§8c",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:335",
+        "delegation": "ARCHITECTURE.md:326",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -11127,14 +11049,13 @@
         "section": "## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)",
         "label": "§8c",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:335",
+        "delegation": "ARCHITECTURE.md:326",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -11167,14 +11088,13 @@
         "section": "## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)",
         "label": "§8c",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:335",
+        "delegation": "ARCHITECTURE.md:326",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -11207,14 +11127,13 @@
         "section": "## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)",
         "label": "§8c",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:335",
+        "delegation": "ARCHITECTURE.md:326",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -11254,8 +11173,7 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -11294,8 +11212,7 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -11335,8 +11252,7 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -11375,8 +11291,7 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -11410,14 +11325,13 @@
         "section": "### §2.2 The exclusion tail is load-bearing and must be carried (#12)",
         "label": "“§2.2 The exclusion tail is load-bearing and must be carried”",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1949",
+        "delegation": "ARCHITECTURE.md:1595",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -11451,14 +11365,13 @@
         "section": "### §2.3 Does the decoder's governed carry provide this? The distinct-root guarantee is OWED [code]",
         "label": "“§2.3 Does the decoder's governed carry provide this? The distinct-root guarantee is OWED [code]”",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1949",
+        "delegation": "ARCHITECTURE.md:1595",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -11491,14 +11404,13 @@
         "section": "### §3.1 The objective: select by JOINT CONSISTENCY, not by strengthening one score",
         "label": "“§3.1 The objective: select by JOINT CONSISTENCY, not by strengthening one score”",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1949",
+        "delegation": "ARCHITECTURE.md:1595",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -11531,14 +11443,13 @@
         "section": "### §3.2 The evidence channels, ranked by the research (load-bearing first) [research]",
         "label": "“§3.2 The evidence channels, ranked by the research”",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1949",
+        "delegation": "ARCHITECTURE.md:1595",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -11571,14 +11482,13 @@
         "section": "### §4.1 Layer boundaries (#7) — what belongs where",
         "label": "“§4.1 Layer boundaries”",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1949",
+        "delegation": "ARCHITECTURE.md:1595",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -11611,14 +11521,13 @@
         "section": "### §6.3 Placement (#7): a reader-over-carry producing a distinct pedal-annotated result",
         "label": "“§6.3 Placement”",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1949",
+        "delegation": "ARCHITECTURE.md:1595",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -11651,14 +11560,13 @@
         "section": "### §6.5 The diff-root need is served by the carry / FQ-1 — do NOT re-implement a 4th scan (#6)",
         "label": "“§6.5 The diff-root need is served by the carry / FQ-1”",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1949",
+        "delegation": "ARCHITECTURE.md:1595",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -11691,14 +11599,13 @@
         "section": "### §7.2 The vehicle (#6, the load-bearing decision): unify the open-mark, do NOT add a parallel channel",
         "label": "“§7.2 The vehicle”",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1949",
+        "delegation": "ARCHITECTURE.md:1595",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -11731,14 +11638,13 @@
         "section": "## 9. Architecture decisions (alternatives weighed)",
         "label": "§9",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1075",
+        "delegation": "ARCHITECTURE.md:923",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -11771,14 +11677,13 @@
         "section": "## 9. Architecture decisions (alternatives weighed)",
         "label": "§9",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1075",
+        "delegation": "ARCHITECTURE.md:923",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -11811,14 +11716,13 @@
         "section": "## 9. Architecture decisions (alternatives weighed)",
         "label": "§9",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1075",
+        "delegation": "ARCHITECTURE.md:923",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -11851,14 +11755,13 @@
         "section": "## 9. Architecture decisions (alternatives weighed)",
         "label": "§9",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1075",
+        "delegation": "ARCHITECTURE.md:923",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -11891,14 +11794,13 @@
         "section": "## 9. Architecture decisions (alternatives weighed)",
         "label": "§9",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1075",
+        "delegation": "ARCHITECTURE.md:923",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -11931,14 +11833,13 @@
         "section": "### 5.3 VL-C — texture classification (inference; the first judgment component)",
         "label": "§5.3",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1075",
+        "delegation": "ARCHITECTURE.md:923",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -11971,14 +11872,13 @@
         "section": "### 5.1 VL-A — the voice-linear view (representation; facts)",
         "label": "§5.1",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1075",
+        "delegation": "ARCHITECTURE.md:923",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -12011,14 +11911,13 @@
         "section": "### 5.3 VL-C — texture classification (inference; the first judgment component)",
         "label": "§5.3",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1075",
+        "delegation": "ARCHITECTURE.md:923",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -12051,14 +11950,13 @@
         "section": "## 8. Crosscutting concepts",
         "label": "§8",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1075",
+        "delegation": "ARCHITECTURE.md:923",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -12091,14 +11989,13 @@
         "section": "## 16. Ratification asks",
         "label": "§16",
         "delegated": false,
-        "delegation": "ARCHITECTURE.md:1075",
+        "delegation": "ARCHITECTURE.md:923",
         "states_rules": null,
         "verdict": "EXCLUDE",
         "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -12131,14 +12028,13 @@
         "section": "## 15. Open items & deferred refinements",
         "label": "§15",
         "delegated": false,
-        "delegation": "ARCHITECTURE.md:1075",
+        "delegation": "ARCHITECTURE.md:923",
         "states_rules": null,
         "verdict": "EXCLUDE",
         "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -12171,14 +12067,13 @@
         "section": "### 5.3 VL-C — texture classification (inference; the first judgment component)",
         "label": "§5.3",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1075",
+        "delegation": "ARCHITECTURE.md:923",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -12211,14 +12106,13 @@
         "section": "## 16. Ratification asks",
         "label": "§16",
         "delegated": false,
-        "delegation": "ARCHITECTURE.md:1075",
+        "delegation": "ARCHITECTURE.md:923",
         "states_rules": null,
         "verdict": "EXCLUDE",
         "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -12258,8 +12152,7 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -12299,8 +12192,7 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -12340,8 +12232,7 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -12381,8 +12272,7 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -12422,8 +12312,7 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -12458,14 +12347,13 @@
         "section": "## 1. What this component is",
         "label": "§1",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:5405",
+        "delegation": "ARCHITECTURE.md:4775",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -12499,14 +12387,13 @@
         "section": "## 2. What it does, and does not do",
         "label": "§2",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:5405",
+        "delegation": "ARCHITECTURE.md:4775",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -12540,14 +12427,13 @@
         "section": "## 2. What it does, and does not do",
         "label": "§2",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:5405",
+        "delegation": "ARCHITECTURE.md:4775",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -12581,14 +12467,13 @@
         "section": "## 4. The query interface — what a consumer supplies, and gets back",
         "label": "§4",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:5405",
+        "delegation": "ARCHITECTURE.md:4775",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -12622,14 +12507,13 @@
         "section": "## 4. The query interface — what a consumer supplies, and gets back",
         "label": "§4",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:5405",
+        "delegation": "ARCHITECTURE.md:4775",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -12663,14 +12547,13 @@
         "section": "### 5.2 Named progressions & schemas",
         "label": "§5.2",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:5405",
+        "delegation": "ARCHITECTURE.md:4775",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -12704,14 +12587,13 @@
         "section": "### 5.2 Named progressions & schemas",
         "label": "§5.2",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:5405",
+        "delegation": "ARCHITECTURE.md:4775",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -12745,14 +12627,13 @@
         "section": "### 5.3 Substitution operations",
         "label": "§5.3",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:5405",
+        "delegation": "ARCHITECTURE.md:4775",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -12786,14 +12667,13 @@
         "section": "## 7. Component decisions (with the alternatives weighed)",
         "label": "§7",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:5405",
+        "delegation": "ARCHITECTURE.md:4775",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "contract-home",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "contract-home"
       }
     },
     {
@@ -13019,8 +12899,7 @@
         "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -13059,7 +12938,7 @@
       "rationale": "The reason is the correction that produced it: the document's SECOND writing had to be rewritten because its pros and cons rested on grounds the surface never named, and unnamed grounds cannot be checked against the principles. It is the `CLAUDE.md` rule *every design decision carries its defense at its home* applied one step earlier — to the surface on which a decision is still being MADE — and the second axis exists because a design can satisfy every guardrail and still not be the one that analyses music best (#4), which is the axis the guardrails do not measure.",
       "home": "cowork_notation_adoption_increment.md:18",
       "home_is_layer_spec": false,
-      "nonspec_kind": "contract-home",
+      "nonspec_kind": "gap",
       "status": "live",
       "date": "2026-07-26",
       "ratified_by": [
@@ -13074,15 +12953,14 @@
         "heading_line": 1,
         "section": "# The notation-layer adoption increment — decision surface (★ USER-RATIFIED 2026-07-26)",
         "label": "the opening block (above the first section heading)",
-        "delegated": true,
-        "delegation": "ARCHITECTURE.md:6772",
-        "states_rules": true,
-        "verdict": "ADMIT",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
+        "delegated": null,
+        "delegation": "ARCHITECTURE.md:4845",
+        "states_rules": null,
+        "verdict": "EXCLUDE",
+        "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -13094,7 +12972,7 @@
       "rationale": "Three recorded grounds point the same way and are given with the decision. The ratified decode plan already requires it — \"the full posterior (not only the best path) is retained for the published alternatives and the uncertainty surface\" — so delivering less would re-ratify away a ratified clause. The evidence-publication amendment (`CLAUDE.md`, the fact-publication corollary as amended 2026-07-12) says evidence-class facts are published broadly EVEN WITHOUT a named consumer, which answers the \"wait for a consumer\" deferral directly. And the named information loss is specific rather than general: a local slice hides the mass that lies across segmentations, so a passage whose boundaries are ambiguous looks artificially certain (#17e, the false-negative path stated). The document also records that the previous writing recommended the slice and that the recommendation was VOID, because its basis was the slice's ready-made checking tool — reuse value, which the decision-neutrality corollary (D-190) ranks secondary.",
       "home": "cowork_notation_adoption_increment.md:282",
       "home_is_layer_spec": false,
-      "nonspec_kind": "contract-home",
+      "nonspec_kind": "gap",
       "status": "live",
       "date": "2026-07-26",
       "ratified_by": [
@@ -13109,15 +12987,14 @@
         "heading_line": 215,
         "section": "## 4. Decision B — what the published posterior IS (the uncertainty surface)",
         "label": "§4",
-        "delegated": true,
-        "delegation": "ARCHITECTURE.md:6772",
-        "states_rules": true,
-        "verdict": "ADMIT",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
+        "delegated": null,
+        "delegation": "ARCHITECTURE.md:4845",
+        "states_rules": null,
+        "verdict": "EXCLUDE",
+        "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -13129,7 +13006,7 @@
       "rationale": "The two halves are split on a stated establishment difference, not on size. The modal reading is computed from emission quantities that are already fitted and already established, so nothing blocks it. The ornament labels' independent validation resource is a dataset the record names and that is NOT on disk (verified at the OI-185/OI-179 rows), so publishing them now would be lawful only marked unvalidated — and attaching an open establishment question to the ONE commit whose verification has to be airtight would weaken exactly the event that must not be weakened (#22/#13/#15). The drop-out risk the split creates is answered by the register mechanism itself: the row is opened at ruling time (the decisions register's rule (c)), which makes it a declared and bounded migration state (#23) with a named exit rather than an item that quietly disappears.",
       "home": "cowork_notation_adoption_increment.md:436",
       "home_is_layer_spec": false,
-      "nonspec_kind": "contract-home",
+      "nonspec_kind": "gap",
       "status": "live",
       "date": "2026-07-26",
       "ratified_by": [
@@ -13144,15 +13021,14 @@
         "heading_line": 394,
         "section": "## 7. Decision E — scheduling the two ratified presentation publications",
         "label": "§7",
-        "delegated": true,
-        "delegation": "ARCHITECTURE.md:6772",
-        "states_rules": true,
-        "verdict": "ADMIT",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
+        "delegated": null,
+        "delegation": "ARCHITECTURE.md:4845",
+        "states_rules": null,
+        "verdict": "EXCLUDE",
+        "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -13482,7 +13358,7 @@
       "status_source": "`docs/llm_integration.md` §4.3, read in full by the phase-1 reads wave 1. The document's banner reads \"Design phase. No code written yet.\" and `src/llm/` does not exist at HEAD, so the record does not say whether this rule is in force; \"not stated\" is entered rather than a status inferred from the surrounding section's deferral. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)",
       "patterns": [],
       "rationale": "derivation not recorded — the design document states the rule and the retry loop, but gives no reason for hiding the failed attempt from the user rather than surfacing it.",
-      "nonspec_kind": "contract-home",
+      "nonspec_kind": "gap",
       "entry_ratified": {
         "date": "2026-08-04",
         "by": [
@@ -13493,15 +13369,14 @@
         "heading_line": 296,
         "section": "### 4.3 Validation Layer",
         "label": "§4.3",
-        "delegated": true,
-        "delegation": "ARCHITECTURE.md:7814",
-        "states_rules": true,
-        "verdict": "ADMIT",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
+        "delegated": null,
+        "delegation": "ARCHITECTURE.md:7110",
+        "states_rules": null,
+        "verdict": "EXCLUDE",
+        "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -13520,7 +13395,7 @@
       "status_source": "`docs/llm_integration.md` §8.1, read in full by the phase-1 reads wave 1; §3.5 states the same abstraction from the other side. ARCHITECTURE.md §19.1 records the multi-provider choice but NOT the tool-use requirement or the read-only consequence, which is why this is entered rather than treated as carried. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)",
       "patterns": [],
       "rationale": "Stated with the decision: the modification path is built entirely out of tool calls (`docs/llm_integration.md` §3.2, §8.2), so a provider that cannot call tools has no way to express a change — the restriction follows from the stateless tool-call model rather than being an added policy.",
-      "nonspec_kind": "contract-home",
+      "nonspec_kind": "gap",
       "entry_ratified": {
         "date": "2026-08-04",
         "by": [
@@ -13531,15 +13406,14 @@
         "heading_line": 599,
         "section": "### 8.1 Multi-provider abstraction",
         "label": "§8.1",
-        "delegated": true,
-        "delegation": "ARCHITECTURE.md:7814",
-        "states_rules": true,
-        "verdict": "ADMIT",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
+        "delegated": null,
+        "delegation": "ARCHITECTURE.md:7110",
+        "states_rules": null,
+        "verdict": "EXCLUDE",
+        "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -13558,7 +13432,7 @@
       "status_source": "`docs/llm_integration.md` §5.2, read in full by the phase-1 reads wave 1. The layer is named in ARCHITECTURE.md §19.4 as the thing the bridge is confined to (D-143), but the facade decision and its audit are recorded only in the design document. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)",
       "patterns": [],
       "rationale": "Stated with the decision: `docs/llm_integration.md` §5.2 tabulates sixteen existing interfaces against what the core access layer needs, and §5.4 names the only three gaps (query methods shaped for an external consumer, a transaction scope, and change descriptions carrying musical addresses rather than raw pointers). This is D-227's rule — read how MuseScore already does it and never invent parallel infrastructure — applied to a whole layer.",
-      "nonspec_kind": "contract-home",
+      "nonspec_kind": "gap",
       "entry_ratified": {
         "date": "2026-08-04",
         "by": [
@@ -13569,15 +13443,14 @@
         "heading_line": 363,
         "section": "### 5.2 The existing interfaces already define most of this",
         "label": "§5.2",
-        "delegated": true,
-        "delegation": "ARCHITECTURE.md:7814",
-        "states_rules": true,
-        "verdict": "ADMIT",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
+        "delegated": null,
+        "delegation": "ARCHITECTURE.md:7110",
+        "states_rules": null,
+        "verdict": "EXCLUDE",
+        "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -13596,7 +13469,7 @@
       "status_source": "`docs/llm_integration.md` §5.3, read in full by the phase-1 reads wave 1. D-139 carries the stateless every-call-carries-its-address half from ARCHITECTURE.md:6962; the consequence that an address is not enough is recorded only here. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)",
       "patterns": [],
       "rationale": "Stated with the decision: §5.3 derives it from the information model it has just set out — the musical address is the sole locator and there are no object references, which makes queries pure filtering rather than graph walking, and the same property is what leaves a single note unaddressable without an identifier.",
-      "nonspec_kind": "contract-home",
+      "nonspec_kind": "gap",
       "entry_ratified": {
         "date": "2026-08-04",
         "by": [
@@ -13607,15 +13480,14 @@
         "heading_line": 397,
         "section": "### 5.3 The information model — key design point",
         "label": "§5.3",
-        "delegated": true,
-        "delegation": "ARCHITECTURE.md:7814",
-        "states_rules": true,
-        "verdict": "ADMIT",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
+        "delegated": null,
+        "delegation": "ARCHITECTURE.md:7110",
+        "states_rules": null,
+        "verdict": "EXCLUDE",
+        "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -13634,7 +13506,7 @@
       "status_source": "`docs/llm_integration.md` §6, read in full by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)",
       "patterns": [],
       "rationale": "Stated with the decision: the space of references is open-ended, so an enumeration would be incomplete by construction; §6 lists five families of reference precisely to show that the list does not close.",
-      "nonspec_kind": "contract-home",
+      "nonspec_kind": "gap",
       "entry_ratified": {
         "date": "2026-08-04",
         "by": [
@@ -13645,15 +13517,14 @@
         "heading_line": 479,
         "section": "## 6. Score Addressing",
         "label": "§6",
-        "delegated": true,
-        "delegation": "ARCHITECTURE.md:7814",
-        "states_rules": true,
-        "verdict": "ADMIT",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
+        "delegated": null,
+        "delegation": "ARCHITECTURE.md:7110",
+        "states_rules": null,
+        "verdict": "EXCLUDE",
+        "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -13672,7 +13543,7 @@
       "status_source": "`docs/llm_integration.md` §8.2, read in full by the phase-1 reads wave 1. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)",
       "patterns": [],
       "rationale": "Stated with the decision — no manual maintenance, so the two cannot drift. This is #6 (one path per concern) applied to the tool surface: a hand-kept second list is the duplication that goes stale.",
-      "nonspec_kind": "contract-home",
+      "nonspec_kind": "gap",
       "entry_ratified": {
         "date": "2026-08-04",
         "by": [
@@ -13683,15 +13554,14 @@
         "heading_line": 611,
         "section": "### 8.2 Tool definitions",
         "label": "§8.2",
-        "delegated": true,
-        "delegation": "ARCHITECTURE.md:7814",
-        "states_rules": true,
-        "verdict": "ADMIT",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
+        "delegated": null,
+        "delegation": "ARCHITECTURE.md:7110",
+        "states_rules": null,
+        "verdict": "EXCLUDE",
+        "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -13710,7 +13580,7 @@
       "status_source": "`docs/llm_integration.md` §4.2, read in full by the phase-1 reads wave 1. ARCHITECTURE.md §19.4's phase table records the count but not the curation rule or its evidence source. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)",
       "patterns": [],
       "rationale": "Stated with the decision: the set is chosen by observing real use in the two earlier read-only phases, so the curation has an evidence source rather than being a guess at what will be needed.",
-      "nonspec_kind": "contract-home",
+      "nonspec_kind": "gap",
       "entry_ratified": {
         "date": "2026-08-04",
         "by": [
@@ -13721,15 +13591,14 @@
         "heading_line": 284,
         "section": "### 4.2 Operation Set",
         "label": "§4.2",
-        "delegated": true,
-        "delegation": "ARCHITECTURE.md:7814",
-        "states_rules": true,
-        "verdict": "ADMIT",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
+        "delegated": null,
+        "delegation": "ARCHITECTURE.md:7110",
+        "states_rules": null,
+        "verdict": "EXCLUDE",
+        "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -13862,8 +13731,7 @@
         "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -13894,14 +13762,13 @@
         "section": "## 6. The layer is exactly its assembly rules + read-through carries (the proportionality bound)",
         "label": "§6",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:2016",
+        "delegation": "ARCHITECTURE.md:1637",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -13932,14 +13799,13 @@
         "section": "## 9. Architecture decisions (with the alternatives weighed)",
         "label": "§9",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:2016",
+        "delegation": "ARCHITECTURE.md:1637",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -13970,14 +13836,13 @@
         "section": "## 9. Architecture decisions (with the alternatives weighed)",
         "label": "§9",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:2016",
+        "delegation": "ARCHITECTURE.md:1637",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -14008,14 +13873,13 @@
         "section": "### 5.1 Punctuation-span segmentation",
         "label": "§5.1",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:2016",
+        "delegation": "ARCHITECTURE.md:1637",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -14046,14 +13910,13 @@
         "section": "# Layer 6 — Grouping (design)",
         "label": "the opening block (above the first section heading)",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:2016",
+        "delegation": "ARCHITECTURE.md:1637",
         "states_rules": false,
         "verdict": "EXCLUDE",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -14084,14 +13947,13 @@
         "section": "### 5.2 Key-area grouping",
         "label": "§5.2",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:2016",
+        "delegation": "ARCHITECTURE.md:1637",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -14122,14 +13984,13 @@
         "section": "### 5.4 Carrying the residual",
         "label": "§5.4",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:2016",
+        "delegation": "ARCHITECTURE.md:1637",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -14160,14 +14021,13 @@
         "section": "## 7. Crosscutting concepts",
         "label": "§7",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:2016",
+        "delegation": "ARCHITECTURE.md:1637",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -14198,14 +14058,13 @@
         "section": "## 10. Quality & testing — the validation strategy (the two-step oracle, user-ratified 2026-06-29)",
         "label": "§10",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:2016",
+        "delegation": "ARCHITECTURE.md:1637",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -14523,8 +14382,7 @@
         "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -14555,14 +14413,13 @@
         "section": "## 6. Architecture decisions (with the alternatives weighed)",
         "label": "§6",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1439",
+        "delegation": "ARCHITECTURE.md:1259",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -14593,14 +14450,13 @@
         "section": "## 2. Constraints",
         "label": "§2",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1439",
+        "delegation": "ARCHITECTURE.md:1259",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -14631,14 +14487,13 @@
         "section": "## 6. Architecture decisions (with the alternatives weighed)",
         "label": "§6",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1439",
+        "delegation": "ARCHITECTURE.md:1259",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -14669,14 +14524,13 @@
         "section": "## 6. Architecture decisions (with the alternatives weighed)",
         "label": "§6",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1439",
+        "delegation": "ARCHITECTURE.md:1259",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -14707,14 +14561,13 @@
         "section": "## 8. Risks & technical debt",
         "label": "§8",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1439",
+        "delegation": "ARCHITECTURE.md:1259",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -14745,14 +14598,13 @@
         "section": "### 4.4 Peak-picking",
         "label": "§4.4",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1439",
+        "delegation": "ARCHITECTURE.md:1259",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -14783,14 +14635,13 @@
         "section": "## 6. Architecture decisions (with the alternatives weighed)",
         "label": "§6",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1439",
+        "delegation": "ARCHITECTURE.md:1259",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -14821,14 +14672,13 @@
         "section": "## 7. Quality & testing",
         "label": "§7",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1439",
+        "delegation": "ARCHITECTURE.md:1259",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -14859,14 +14709,13 @@
         "section": "# Phrase-boundary primitive (Architectural Layer 1.5) — Architecture & Design",
         "label": "the opening block (above the first section heading)",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1439",
+        "delegation": "ARCHITECTURE.md:1259",
         "states_rules": false,
         "verdict": "EXCLUDE",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -14897,14 +14746,13 @@
         "section": "## 11. Open items",
         "label": "§11",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1439",
+        "delegation": "ARCHITECTURE.md:1259",
         "states_rules": false,
         "verdict": "EXCLUDE",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -15229,8 +15077,7 @@
         "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -15267,8 +15114,7 @@
         "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -15305,8 +15151,7 @@
         "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -15355,14 +15200,13 @@
         "section": "## 6. Architecture decisions (with the alternatives weighed)",
         "label": "§6",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:498",
+        "delegation": "ARCHITECTURE.md:363",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -15387,14 +15231,13 @@
         "section": "### 4.5 The idiom-mixture weighting (structure and directions fixed here; every value Stage-5)",
         "label": "§4.5",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:498",
+        "delegation": "ARCHITECTURE.md:363",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -15419,14 +15262,13 @@
         "section": "### 4.5 The idiom-mixture weighting (structure and directions fixed here; every value Stage-5)",
         "label": "§4.5",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:498",
+        "delegation": "ARCHITECTURE.md:363",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -15451,14 +15293,13 @@
         "section": "### 4.6 Harmonic sequences as evidence of the local key (the Layer-5 §5.3 channel; review A-4)",
         "label": "§4.6",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:498",
+        "delegation": "ARCHITECTURE.md:363",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -15483,14 +15324,13 @@
         "section": "## 6. Architecture decisions (with the alternatives weighed)",
         "label": "§6",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:498",
+        "delegation": "ARCHITECTURE.md:363",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -15515,14 +15355,13 @@
         "section": "## 6. Architecture decisions (with the alternatives weighed)",
         "label": "§6",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:498",
+        "delegation": "ARCHITECTURE.md:363",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -15547,14 +15386,13 @@
         "section": "## 6. Architecture decisions (with the alternatives weighed)",
         "label": "§6",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:498",
+        "delegation": "ARCHITECTURE.md:363",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -15579,14 +15417,13 @@
         "section": "### 4.3 The evidence contribution (both conditions fully stated)",
         "label": "§4.3",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:498",
+        "delegation": "ARCHITECTURE.md:363",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -15671,8 +15508,7 @@
         "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -15703,8 +15539,7 @@
         "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -15735,8 +15570,7 @@
         "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -15767,8 +15601,7 @@
         "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -15793,14 +15626,13 @@
         "section": "## 9. Architecture decisions (with the alternatives we weighed)",
         "label": "§9",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1437",
+        "delegation": "ARCHITECTURE.md:1257",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -15825,14 +15657,13 @@
         "section": "## 13. Background: what Architectural Layer 1 replaces, and corrections on record (NOT needed to understand the layer)",
         "label": "§13",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1437",
+        "delegation": "ARCHITECTURE.md:1257",
         "states_rules": false,
         "verdict": "EXCLUDE",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -15857,14 +15688,13 @@
         "section": "## 1. Introduction & purpose",
         "label": "§1",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1437",
+        "delegation": "ARCHITECTURE.md:1257",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -15889,14 +15719,13 @@
         "section": "## 11. Risks & technical debt",
         "label": "§11",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1437",
+        "delegation": "ARCHITECTURE.md:1257",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -15921,14 +15750,13 @@
         "section": "## 8. Which of it the KEY layer wants — and the circularity map, faced honestly",
         "label": "§8",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1161",
+        "delegation": "ARCHITECTURE.md:1009",
         "states_rules": false,
         "verdict": "EXCLUDE",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -15953,14 +15781,13 @@
         "section": "## 8b. Declared future consumers, named by the user (2026-07-13)",
         "label": "§8b",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1161",
+        "delegation": "ARCHITECTURE.md:1009",
         "states_rules": false,
         "verdict": "EXCLUDE",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -15985,14 +15812,13 @@
         "section": "## 8c. An external evidence source, filed OPEN — music21's local key (OI-158)",
         "label": "§8c",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1161",
+        "delegation": "ARCHITECTURE.md:1009",
         "states_rules": false,
         "verdict": "EXCLUDE",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -16023,8 +15849,7 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -16055,8 +15880,7 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -16087,8 +15911,7 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -16119,8 +15942,7 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -16151,8 +15973,7 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -16183,8 +16004,7 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -16215,8 +16035,7 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -16319,8 +16138,7 @@
         "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -16397,8 +16215,7 @@
         "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -16441,14 +16258,13 @@
         "section": "## 8. Crosscutting concepts",
         "label": "§8",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1563",
+        "delegation": "ARCHITECTURE.md:1371",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -16473,14 +16289,13 @@
         "section": "## 8. Crosscutting concepts",
         "label": "§8",
         "delegated": true,
-        "delegation": "ARCHITECTURE.md:1563",
+        "delegation": "ARCHITECTURE.md:1371",
         "states_rules": true,
         "verdict": "ADMIT",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "contract-home"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -17082,7 +16897,7 @@
         "The tie-break rule",
         "resolve by a declared TOTAL order"
       ],
-      "nonspec_kind": "contract-home",
+      "nonspec_kind": "gap",
       "entry_ratified": {
         "date": "2026-08-04",
         "by": [
@@ -17093,15 +16908,14 @@
         "heading_line": 147,
         "section": "## 5. The decode",
         "label": "§5",
-        "delegated": true,
-        "delegation": "ARCHITECTURE.md:276",
-        "states_rules": true,
-        "verdict": "ADMIT",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
+        "delegated": null,
+        "delegation": "ARCHITECTURE.md:48",
+        "states_rules": null,
+        "verdict": "EXCLUDE",
+        "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -17223,8 +17037,7 @@
         "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -17264,8 +17077,7 @@
         "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -17306,8 +17118,7 @@
         "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -17553,8 +17364,7 @@
         "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -17622,8 +17432,7 @@
         "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -17691,8 +17500,7 @@
         "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -18190,8 +17998,7 @@
         "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -18447,8 +18254,7 @@
         "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -18532,8 +18338,7 @@
         "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {
@@ -18568,8 +18373,7 @@
         "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade",
         "former_class": "gap",
         "class_before_phase1q": "gap",
-        "class_before_phase1r": "gap",
-        "class_before_the_2026_08_08_apply": "gap"
+        "class_before_phase1r": "gap"
       }
     },
     {

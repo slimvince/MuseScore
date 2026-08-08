@@ -60,8 +60,8 @@
  },
  "counted": {
   "no_home_class_population": 14,
-  "entries_that_LEAVE_item_1": 6,
-  "entries_whose_ROUTE_CHANGES_to_home_the_successor": 1,
+  "entries_that_LEAVE_item_1": 7,
+  "entries_whose_ROUTE_CHANGES_to_home_the_successor": 0,
   "entries_that_do_NEITHER": 7,
   "of_which_R1_does_not_reach_because_the_status_is_live": 7,
   "of_which_superseded_with_no_successor_the_record_names": 0,
@@ -69,13 +69,12 @@
    "D-282",
    "D-283",
    "D-284",
+   "D-285",
    "D-538",
    "D-571",
    "D-579"
   ],
-  "ids_whose_route_changes": [
-   "D-285"
-  ]
+  "ids_whose_route_changes": []
  },
  "★_the_one_thing_this_application_does_NOT_move": {
   "what": "The DERIVED population of finish-line item 1 at `tools/audit/phase1_finish_line.json`, which still carries every entry above.",
@@ -146,7 +145,7 @@
      "named_as": "D-096",
      "register_id": "D-096",
      "named_in": "superseded_by",
-     "home": "ARCHITECTURE.md:273-274",
+     "home": "ARCHITECTURE.md:280-281",
      "home_class": "homed-in-a-layer-specification",
      "status": "live",
      "homed": true,
@@ -171,7 +170,7 @@
      "named_as": "D-036",
      "register_id": "D-036",
      "named_in": "superseded_by",
-     "home": "ARCHITECTURE.md:857-859",
+     "home": "ARCHITECTURE.md:914-916",
      "home_class": "homed-in-a-layer-specification",
      "status": "live",
      "homed": true,
@@ -202,6 +201,42 @@
    "disposition_ground": "Every successor the record names is homed, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
    "why_these_successors": "`superseded_by` reads 'D-036 with D-001/D-010' — D-036 carries the standing doctrine, and the other two retired the mechanism the finding warned about.",
    "authored": "the successor list and its reason. The status, every successor's home and home class, the HOMED verdict and the disposition are derived."
+  },
+  {
+   "id": "D-285",
+   "title": "Meta-finding: embellishment is chord-first, never a richer vocabulary - absorbed by the emission design and the ornament-label increment",
+   "status": "superseded-by",
+   "home_at_HEAD": "cowork_architecture_reassessment.md:110",
+   "home_class": "gap",
+   "route_before_R1": "NO HOME EXISTS",
+   "superseded_by_field": "the ratified factorization emission design (D-004 and D-426, the OI-194 ornament-label increment)",
+   "successors": [
+    {
+     "named_as": "D-004",
+     "register_id": "D-004",
+     "named_in": "superseded_by",
+     "home": "ARCHITECTURE.md:31-33",
+     "home_class": "homed-in-a-layer-specification",
+     "status": "live",
+     "homed": true,
+     "because": "home_is_layer_spec — written into a layer specification"
+    },
+    {
+     "named_as": "D-426",
+     "register_id": "D-426",
+     "named_in": "superseded_by",
+     "home": "cowork_notation_adoption_increment.md:436",
+     "home_class": "contract-home",
+     "status": "live",
+     "homed": true,
+     "because": "home class `contract-home` — declared correctly homed by the C1 criterion"
+    }
+   ],
+   "disposition": "LEAVES ITEM 1 — correctly homed already (the register plus the successor's home)",
+   "disposition_ground": "Every successor the record names is homed, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
+   "why_these_successors": "`superseded_by` reads 'the ratified factorization emission design (D-004 and D-426, the OI-194 ornament-label increment)'. BOTH successors are register entries the record names, so STOP 3 is satisfied for each: D-004 is homed in a layer specification, and D-426 — named by the USER on 2026-08-07 as the recorded decision carrying the increment half — is not, so R1's condition is still not discharged for the whole of this entry's content and the owed act is homing D-426.",
+   "authored": "the successor list and its reason. The status, every successor's home and home class, the HOMED verdict and the disposition are derived.",
+   "note": "★ THE NAMING GAP THIS RECORD REPORTED IS CLOSED BY A USER RULING, AND WHAT THE RECORD FORMERLY SAID IS KEPT WHOLE (#12). The user ruled on 2026-08-07 (dispatch `cc_instruction_five_rulings.md` §0a R2) that D-426 is the recorded decision carrying 'the OI-194 increment', and the register's `superseded_by` now names it — so the successor is derivable and no session had to nominate one. Before that ruling this record read, verbatim: \"A search of the register finds ONE entry whose subject is that increment — the one recording that the ornament labels get their own increment with the tracking row created at ruling time. It is NOT named here as the successor and does NOT drive the disposition: identifying it would be this session nominating a successor the record does not name, which STOP 3 exists to prevent. Reported so the next reader does not re-derive it, and so that whoever rules can see that the gap is a NAMING gap rather than an absent successor.\" The candidate that record declined to name is the one the user has now named, which is the STOP working rather than being circumvented: the search was reported, the naming was left to the user, and the ruling supplied it. WHAT THE RULING DID NOT CHANGE: the disposition. D-426 is unhomed, so this entry still STAYS IN ITEM 1 with its route on the successor side — what moved is that the act owed first is no longer a naming but the homing of a named entry."
   },
   {
    "id": "D-538",
@@ -262,7 +297,7 @@
      "named_as": "D-450",
      "register_id": "D-450",
      "named_in": "the entry's own rationale / status_source prose",
-     "home": "ARCHITECTURE.md:378-387",
+     "home": "ARCHITECTURE.md:385-394",
      "home_class": "homed-in-a-layer-specification",
      "status": "live",
      "homed": true,
@@ -299,42 +334,6 @@
    "disposition_ground": "Every successor the record names is homed, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
    "why_these_successors": "Recorded superseded-in-fact, so no ruling names a successor and `superseded_by` is empty. The register's own status_source names the successor in terms: 'The obligation was met by replacement rather than by repair: the production arm is now one joint decode over key, mode, chord and segmentation together (D-001), which is the ordering this step asked for arrived at by a different route.'",
    "authored": "the successor list and its reason. The status, every successor's home and home class, the HOMED verdict and the disposition are derived."
-  },
-  {
-   "id": "D-285",
-   "title": "Meta-finding: embellishment is chord-first, never a richer vocabulary - absorbed by the emission design and the ornament-label increment",
-   "status": "superseded-by",
-   "home_at_HEAD": "cowork_architecture_reassessment.md:110",
-   "home_class": "gap",
-   "route_before_R1": "NO HOME EXISTS",
-   "superseded_by_field": "the ratified factorization emission design (D-004 and D-426, the OI-194 ornament-label increment)",
-   "successors": [
-    {
-     "named_as": "D-004",
-     "register_id": "D-004",
-     "named_in": "superseded_by",
-     "home": "ARCHITECTURE.md:31-33",
-     "home_class": "homed-in-a-layer-specification",
-     "status": "live",
-     "homed": true,
-     "because": "home_is_layer_spec — written into a layer specification"
-    },
-    {
-     "named_as": "D-426",
-     "register_id": "D-426",
-     "named_in": "superseded_by",
-     "home": "cowork_notation_adoption_increment.md:436",
-     "home_class": "gap",
-     "status": "live",
-     "homed": false,
-     "because": "home class `gap` — C1's own outstanding population"
-    }
-   ],
-   "disposition": "STAYS IN ITEM 1, ROUTE CHANGED — the owed act is homing the SUCCESSOR",
-   "disposition_ground": "At least one successor is NOT homed, so C1 is defeated and the owed act is on the SUCCESSOR side rather than on this entry. Home the successor: D-426.",
-   "why_these_successors": "`superseded_by` reads 'the ratified factorization emission design (D-004 and D-426, the OI-194 ornament-label increment)'. BOTH successors are register entries the record names, so STOP 3 is satisfied for each: D-004 is homed in a layer specification, and D-426 — named by the USER on 2026-08-07 as the recorded decision carrying the increment half — is not, so R1's condition is still not discharged for the whole of this entry's content and the owed act is homing D-426.",
-   "authored": "the successor list and its reason. The status, every successor's home and home class, the HOMED verdict and the disposition are derived.",
-   "note": "★ THE NAMING GAP THIS RECORD REPORTED IS CLOSED BY A USER RULING, AND WHAT THE RECORD FORMERLY SAID IS KEPT WHOLE (#12). The user ruled on 2026-08-07 (dispatch `cc_instruction_five_rulings.md` §0a R2) that D-426 is the recorded decision carrying 'the OI-194 increment', and the register's `superseded_by` now names it — so the successor is derivable and no session had to nominate one. Before that ruling this record read, verbatim: \"A search of the register finds ONE entry whose subject is that increment — the one recording that the ornament labels get their own increment with the tracking row created at ruling time. It is NOT named here as the successor and does NOT drive the disposition: identifying it would be this session nominating a successor the record does not name, which STOP 3 exists to prevent. Reported so the next reader does not re-derive it, and so that whoever rules can see that the gap is a NAMING gap rather than an absent successor.\" The candidate that record declined to name is the one the user has now named, which is the STOP working rather than being circumvented: the search was reported, the naming was left to the user, and the ruling supplied it. WHAT THE RULING DID NOT CHANGE: the disposition. D-426 is unhomed, so this entry still STAYS IN ITEM 1 with its route on the successor side — what moved is that the act owed first is no longer a naming but the homing of a named entry."
   },
   {
    "id": "D-498",

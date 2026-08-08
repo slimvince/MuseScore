@@ -270,6 +270,13 @@
 > 2026-08-02 recorded only on tracking surfaces or in `CLAUDE.md`, which is why they are stated here — this
 > specification is where a reader looks for how the estimator must behave.
 >
+> *Delegation pointer (the fifth home case, rule (g), user-ratified 2026-08-02; this delegation written
+> 2026-08-08 on the user's ruling — a POINTER, never a copy, #6).* **The ratified contract for the estimator's
+> factor structure — the factor set, the per-factor granularity, the emission design and the §5 decode plan —
+> is `cowork_joint_estimator_factorization.md`, which this section points at and does not restate.** *The six
+> rules below govern how the estimator's values are fitted, evaluated and searched; the structure those values
+> attach to is that contract's, and rule (c) below reads it directly.*
+>
 > **(a) Factor FORMS come from theory; factor VALUES are fit ONCE against ground truth and are never tuned
 > per case.** Every factor's shape is derived from established music theory before any number is attached to
 > it, and the numbers are then estimated in one fit event against the DCML ground truth — never adjusted
@@ -428,6 +435,56 @@ express any of that, and the invented value demonstrably carried load — a chec
 moves with it. **The scope limit rides with the values and is part of the decision:** these are
 Bach-chorale counts, no jazz values can be counted because no jazz ground truth exists, and that
 limit stays declared on the artifact.
+
+### The hard/soft line the evidence classification rests on, and where the hand-built/learned choice lives
+
+**Re-homed into this section 2026-08-08 on the user's ruling.** Four statements come from the
+back-half constrained-joint-inference direction of 2026-06-15. **That direction is SUPERSEDED as an
+architecture proposal — §2.14 records the joint-decode synthesis as superseded by the effort-preset
+design and retained only as history, and the ratified estimator is the one specified above — and
+nothing of the superseded proposal's SHAPE is carried here.** What is carried is what survives it:
+one rule about classifying evidence, two measurements that classified specific producers, and one
+separation the ratified estimator inherits. **No measured value is restated (D-431); each rate lives
+in the record that measured it.**
+
+- **Over-claiming a constraint as HARD re-creates the override failure in reverse, and a sounding
+  tone is not automatically a chord tone.** Evidence splits into constraints that disqualify
+  readings outright and scores that only lean. A hard constraint is safe precisely because no amount
+  of soft evidence can overturn it — which is exactly what makes a mis-declared one unrecoverable, a
+  wrong certainty forcing a wrong answer. Whether a sounding pitch belongs to the chord is therefore
+  never a raw fact: the same four sounding pitches may be one chord with an added fourth or a chord
+  with a suspension that resolves away, so chord membership is decided inside the analysis rather
+  than before it. *Why:* it follows from what the split is FOR, and the worked case is the defense —
+  a sounding set that admits two readings cannot be a constraint on either.
+- **The notated key signature is NOT a hard fact, so the home key is derived from the notes and is
+  never signature-pinned.** The signature's fifths were measured against the true home key and pin
+  the wrong one on a substantial minority of the material, concentrated in modal and partial
+  signatures; the signature is therefore soft evidence that leans. *Why:* this is the rule above
+  working rather than an exception to it — a candidate hard constraint measured to pin a wrong
+  answer is demoted to a score. The measured rate is in the record that produced it and is not
+  restated (D-431). **Scope, stated because it decides how the finding is read:** it is a property
+  of the written music and its human analyses, not of any one of our pipelines, so it survives the
+  arm change; the mis-keying case that shows it in the score is recorded with the legacy key path
+  and carries its own ⚠ LEGACY mark there.
+- **Three reading-shaped producers were each measured to pin WRONG and must stay SOFT: a
+  cadence-based tonic anchor, a modulation detector, and the rule that the lowest sounding pitch is
+  the chord's root.** Each was tested for how often the reading it would force is the wrong one, and
+  all three came back with error rates that disqualify them from ruling anything out. *Why:* the
+  classification of an evidence source as decisive or merely suggestive is measured against the
+  ground truth rather than assumed from how authoritative the source sounds — which is the rule
+  above run over the candidate set. The rates are in the record that measured them (D-431).
+  **⚠ LEGACY SCOPE:** the three producers named are legacy-era mechanisms, so the measurements are
+  of those producers and are not claims about the estimator specified above; what carries forward is
+  the verdict that a reading-shaped producer is a score and never a constraint.
+- **Hand-built versus learned is a question about the EMISSION alone; the decoding structure is
+  decided and accommodates either.** The machinery that searches for the best reading consumes
+  scores and constraints and is indifferent to how they were produced, so a learned scorer could
+  replace a hand-built one without rebuilding anything around it. *Why:* it follows from where the
+  two halves sit — replacing a producer changes no structure — and the choice is sized by
+  measurement rather than preference: a learned emission pays on the ambiguous remainder, not on the
+  majority the constraints already pin. **This separation survives the supersession** and is the one
+  the ratified estimator makes in its own terms, its factors being the emission and its exact decode
+  the machinery.
 
 ## Document governance and the standing architecture notes
 
@@ -1434,6 +1491,18 @@ across all voices — which is what makes chorale texture an unusually favourabl
 to distrust a figure measured only there. (This bounds what the primitive whose contract is
 delegated two paragraphs above may claim; it does not change what that contract specifies.)
 
+**★ VOICE SLOTS AND STEM DIRECTION ARE STRUCTURAL NOTATIONAL METADATA, NOT USER-WRITTEN ANALYTICAL
+CLAIMS — SO THIS LAYER MAY READ THEM (re-homed into this specification 2026-08-08 on the user's
+ruling).** Which voice a note was entered in, and which way its stem points, belong to how the
+music was written down — the same category as the key signature, the time signature, a tie or a
+pedal marking, all of which this layer already reads. They are not somebody's claim about the
+harmony. **The analysis may therefore consume them.** *Why:* it is the line the chord-symbol
+prohibition already draws, applied to a new pair of fields — the analysis may read what the score IS
+and may not read what a user has CLAIMED about it — and voice slot and stem direction fall on the
+first side. The rule binds any voice-tracking work whether or not the non-chord-tone detector that
+raised the question is ever built; it decides what such a detector would be ALLOWED to read and
+settles nothing about whether it is built, which is a separate deferral recorded at the chord layer.
+
 #### Layer 2 — the deterministic change-point slicer (Built+Live — consumed by L3)
 
 The **constant-(tonal-)sonority slicer** — layer 2 of the rebuild. A pure, deterministic FACT
@@ -1492,6 +1561,37 @@ byte-identical (composing 631/631, notation 53/53, snapshots 11/11 with no golde
 `cc_layer2_audit_dossier.md`.
 
 **Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer2_slicing_design.md` (AS-BUILT — built, reviewed, accepted and validated on the full test corpus, `:3`) — D-540…D-541 — which this section points at and does not restate. *(The "See …" line above is a citation of three documents, two of them session reports; `CLAUDE.md` rule (i) distinguishes a citation from a delegation, and this paragraph supplements that line rather than replacing it.)*
+
+**★ WHAT MAY BE ASSERTED ACROSS AN EXTENSION, AND WHAT A SLICE CARRIES (re-homed into this section
+2026-08-08 on the user's ruling).** Two decisions about this layer's output that no other home
+carried.
+
+- **The boundary at the loaded edge is ARTIFICIAL and VANISHES on extension, so the edge slice
+  GROWS — and an "old slices stay byte-identical" assertion is FALSE and must never be written as a
+  test.** The clip injects a boundary at the loaded start that is not a change-point at all: a
+  sustained-in note sounds on both sides of it, and it exists only because the far side was not
+  loaded. Extend earlier and it disappears, so the edge slice extends outward rather than being
+  preserved with a new slice prepended. **What does hold is two things: (a)** every *real*
+  change-point inside the previously loaded region is byte-stable, because extending earlier can add
+  only notes whose release is at or before the old start, so no new real boundary can appear inside
+  it; **(b)** the edge slice abutting the clip extends into the newly loaded context, its content
+  over the original span unchanged. Symmetric on extend-later, at the trailing edge. *Why the
+  prohibition is written as one:* the claim was corrected against a counterexample the design states
+  in full — a single eligible note spanning the loaded start, one slice before the extension and one
+  after, with the edge slice demonstrably grown — so the naive assertion is not merely imprecise, it
+  is false, and it would pass by accident on the cases that do not exercise the edge. **This breaks
+  no correctness:** Layer 3 re-infers fresh over the new slices under the forward-only contract, and
+  the edge extension is exactly the additional leading-edge context the bounded-context contract's
+  convergence rule exists to absorb.
+- **The slice stays MINIMAL — it carries start and end and nothing else; whether a slice is inside
+  the user's selection or is only surrounding context is derived by the consumer.** This layer
+  produces slices for the whole loaded span while the OUTPUT is only the selection, so the slices
+  outside it are context and evidence rather than output. The distinction is a thin annotation and
+  it is deliberately not stored here. *Why:* this layer owns no selection semantics — cutting the
+  music where the sounding set changes involves no judgment about what the user selected — so a
+  selection tag would keep another component's concern in this one's output. The alternative,
+  tagging each slice at the slicer from the model's selection span, was weighed and named rather
+  than passed over, and the minimal form was taken at the build.
 
 #### Layer 3 — key/mode is the sequence decoder (Built+Dormant)
 
@@ -1657,6 +1757,24 @@ wherever the mechanism that asks them happens to live.**
   same failure and is stated as its own obligation because it is separable from the confirmation
   channels.
 
+**★ THE BAROQUE PARTIAL-SIGNATURE CONVENTION IS HANDLED BY DETECTING IT AND REINTERPRETING THE
+SIGNATURE ONE STEP, NEVER BY WIDENING THE CANDIDATE FAMILY FOR EVERY SCORE (re-homed into this
+specification 2026-08-08 on the user's ruling). ⚠ LEGACY, AND SUPERSEDED IN FACT: the correction is
+applied inside the legacy resolver, which the production arm no longer runs; no ruling superseded
+it, a later build replaced what it governs. Whether the joint estimator handles the convention AT
+ALL is NOT settled by this entry and is not asserted here.** Baroque scores are often notated with
+one accidental fewer than the modern convention, so the sounding key sits one step to the sharp side
+of anything a signature-faithful reading could name. The adopted handling DETECTS that situation —
+the flattened sixth degree pervasive across the sounding weight and dominating its natural form —
+and reinterprets the written signature one step toward the missing accidental for the whole
+resolution. *Why this rather than the alternatives, which are recorded with their risks:* letting
+every score choose between two signature families adds a rival to correctly-notated music as well
+and could destabilize it; a cadence-based determination is the most defensible musicologically and
+is also the largest change; reading the published annotation fixes the test corpus and generalizes
+to nothing. **The discriminator must test the specific degree rather than the presence of any
+accidental** — in minor the leading note is always an accidental, so an accidental-counting test
+cannot separate the two cases. The thresholds themselves are not restated here (D-431).
+
 #### Layer 4 — the per-slice chord-symbol decoder (Built+Dormant — not wired)
 
 **Plan correction, 2026-08-02 (`OPEN_ITEMS.md` OI-232 item 3; the heading read "engages with L5", which
@@ -1671,6 +1789,19 @@ OI-180 retirement map.
 **Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer4_chordsymbol_design.md` (SIGNED, user, 2026-06-24) — D-329…D-334 — which this section points at and does not restate.
 
 **Tried and closed on the chord layer — do not retry; the register carries each with its measurement: D-215, D-299, D-300, D-301, D-302, D-317, D-318, D-319, D-320, D-328.**
+
+**★ A REBUILT OR RE-TUNED CHORD SCORING MUST NOT RELY ON THE HELD-NOTE REPETITION BONUS THE FAITHFUL
+NOTE MODEL REMOVED (re-homed into this specification 2026-08-08 on the user's ruling).** Before the
+note reader was rebuilt, a note held across a tie was counted more than once, and that spurious extra
+weight happened to push a handful of ambiguous sonorities toward the correct root. The faithful note
+model removed the duplication. **Whatever replaces or re-tunes this layer's scoring must not lean on
+that boost to get those cases right.** *Why:* measured when it surfaced — removing the inflation
+moved a small number of cases the wrong way while the key axis stayed flat, which is what identified
+those cases as having been carried by an artifact rather than by evidence; a correct re-calibration
+is expected to recover them on real evidence. It is exactly the hidden dependency the upstream-first
+rebuild exists to surface. **Whether those cases have since recovered is NOT stated here and was not
+checked** — the constraint binds regardless, because it forbids leaning on the artifact rather than
+asserting anything about the current count.
 
 **Deciding which sounding notes do not belong to the chord is DEFERRED — and when it is built, the
 knowledge enters the chord decision itself, never a removal afterwards.** Non-chord-tone detection waits
@@ -1797,6 +1928,24 @@ detector is **key-agnostic** (it votes for the key; it does not read a resolved 
 
 **Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-335…D-342 — which this section points at and does not restate. *(The "Full spec:" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph is the delegation the record relied on and never had.)*
 
+**★ THE RESOLVER OF CARRIED UNCERTAIN READINGS IS THIS LAYER ITSELF — THERE IS NO DISTINCT GATED BOX
+BETWEEN THE NOTE LAYERS AND IT (re-homed into this specification 2026-08-08 on the user's ruling).**
+When the earlier layers cannot decide between two readings they carry both forward with an
+uncertainty mark. **What resolves them is this layer, as part of assigning function**: it reads the
+carried alternatives and the marks at its gated entry, assigns function under each carried
+key/chord reading, and keeps the reading whose functional and cadential analysis is coherent. The
+"gated step" language elsewhere in the specifications describes **this layer's gated entry**, not a
+separate layer. *Why:* derived from the layer-identity test and then confirmed by measurement. Every
+carried-ambiguity class was enumerated and each resolves on functional or cadential evidence — for
+the share-tone pairs decisively, since naming the numeral IS choosing the reading — while the
+key-side classes form a circle no fixed order discharges, which forces one joint computation. The
+corpus measurement agreed: every separable cue the residual exposes belongs to an earlier layer, and
+the function-only remainder is small and structural. Two published lineages point the same way,
+including one measured case where a standalone re-ranking layer was built and found saturated.
+**It satisfies the three tests that would otherwise admit a new component:** minimality (no new
+box), the one-contribution-per-layer invariant (same evidence, same question), and the forward-only
+contract (this layer SELECTS among carried alternatives and never re-enters the key or chord layer).
+
 **Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory "is enumerated at `cowork_layer5_engagement_design.md` §9.2" (`:53-55`).
 
 **Three standing constraints on this layer's methods (re-homed into this specification 2026-08-04 from
@@ -1865,6 +2014,32 @@ periods/sentences, and prolongation are out of the validatable core (verifiabili
 `cowork_layer6_grouping_design.md`.
 
 **Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer6_grouping_design.md` (AS-BUILT, 2026-07-02 — built dormant and oracle-validated after the extension gate passed, `:3`) — D-454…D-462 — which this section points at and does not restate. *(The "Full spec:" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph supplements that line rather than replacing it.)* **★ WHY A CONTRACT HOME IS COHERENT FOR A LAYER THAT MAY NOT BE BUILT — the question this clause was withheld over on 2026-08-04 and which the user has now answered.** **D-611** establishes that the dormant path and its staged scaffolding are **deferred-engagement, not dead code**: their wire-or-remove verdict belongs to a named later step, and removing them is a STOP. Deferred work is therefore a state the record keeps decisions for, not an absence of them, and a contract home for it is the same posture rather than a new one — which is why **D-266**'s prohibition does not forbid this pointer. **D-266 IS UNTOUCHED:** Layer 6 may not be BUILT until the bounded-context design is coded and regression-tested for Layers 1–5. This clause records where the layer's design decisions live; it authorizes no build, no wiring, and no change to what the analysis computes.
+
+**★ KEY AREAS ARE GROUPED BY A SMOOTHING PASS OVER STABILIZED REGIONS, AND A REGION THAT DISAGREES
+WITHOUT CLEARING THE CONFIDENCE TEST KEEPS ITS OWN KEY WHILE BEING GROUPED INTO THE ENCLOSING AREA
+(re-homed into this specification 2026-08-08 on the user's ruling — the owning layer in the target
+architecture, with §11.5 pointing).** Neighbouring regions in the same key are collected into one key
+area. A key area opens at the first region and closes when the next region's key differs from the
+current area's **and** that region clears a confidence test; a region whose key disagrees but does
+not clear the test **keeps its own key reading** — so the status bar stays accurate for that
+region — while being grouped into the enclosing area, so the annotation emitter writes Roman numerals
+against the key that actually governs the passage rather than against a momentary wobble. *Why:* it
+is a grouping rule and not a second key analysis — it reads the key fields the earlier layers already
+published rather than re-deciding them, which is the same not-a-new-detector reasoning this layer's
+contract states for grouping generally.
+
+> **⚠ THE TWO ENDS OF THIS DECISION SIT ON DIFFERENT ARMS, AND THE SPLIT IS STATED RATHER THAN
+> SMOOTHED OVER (user-ruled 2026-08-08 after an arm check at the code; #12).** **The grouping rule
+> above is LIVE:** the pass that performs it is shared and is reached on the production record arm
+> (`sectionrecordadapter.cpp:360`), where the confidence test reads the stored per-region
+> exposure flag rather than re-thresholding a confidence field. **⚠ LEGACY — the stabilization pass
+> the decision names as the grouping's PRECONDITION is not:** the smoothing-and-stabilization step
+> the rule is specified to run *after* has a single call site, and that call site is inside the
+> legacy arm (`sectionanalyzer.cpp:750`). **Whether the record arm satisfies that precondition by
+> other means, or the live path runs the grouping on input this specification says must be
+> stabilized first, is an OPEN QUESTION** — it is not settled here, it bears on the analysis, and it
+> is tracked in the open-items register. Nothing in this paragraph changes what the analysis
+> computes.
 
 #### Planned analysis consumers beyond the layer stack
 
@@ -5119,6 +5294,106 @@ discovered. Five rules follow, each with its defense.
   separates or folds in — and naming them in advance is what makes the trigger a test rather than a
   formality.
 
+**★ WHAT THE TAXONOMY AND ITS WEIGHTS ARE AS AN OBJECT, AND WHAT THE STUDY BEHIND THIS SECTION
+ESTABLISHED (re-homed into this section 2026-08-08 on the user's ruling).** The section above rests
+on a discovery study and states that the idioms are empirical. Four further statements belong with
+the object that study produced — one about what the object IS, three about the second axis it
+found — each with its defense. No measured value is restated here; every number lives in the
+study's own record.
+
+- **The taxonomy and the per-style weights are ONE data-derived object; VALIDATION is a separate
+  third thing the clustering does not deliver.** Discovering which idioms exist and estimating how
+  strongly each one weighs are not two derivations: the clusters and their feature distributions
+  are the same object read two ways. Measuring whether the analysis actually improves when it uses
+  an idiom is a THIRD job, and it needs annotated music — notes together with a published human
+  analysis — which the clustering does not supply. *Why:* it follows from what a cluster is, so no
+  second derivation produces the weights; and the separation is forced by what validation measures,
+  the analysis's USE of an idiom, which cannot be observed without a human analysis to compare
+  against.
+- **The voice-leading axis's independence from the harmonic axis is MEASURED, not assumed.** On the
+  pieces carrying both views the two groupings agree at the level of statistical independence — the
+  joint table is close to the product of its margins — with the harmonic groupings barely tracking
+  texture while the voice-leading groupings do. The full style structure is therefore at least
+  two-dimensional: harmonic idiom and voice-leading idiom, with the two cross-attributes beside
+  them. *Why:* the decision that the voice-leading axis is separate is recorded elsewhere; this is
+  the evidence for it — a formal independence test at full note-level coverage rather than a pilot's
+  impression — and the confound gate below is measured beside it, so the grouping is not an artifact
+  of how many voices a piece carries or which collection it came from.
+- **The voice-leading layer's feature set is MOTION-TYPE-LED, the interval profile is a secondary
+  descriptor, and its coverage is notated music only.** What discriminates one way of writing voices
+  from another is how the voices move together — parallel, similar, contrary, oblique — with the
+  size-of-leap profile kept as a secondary description of melodic complexity, over a texture
+  taxonomy of contrapuntal, homophonic-classical, homophonic-pianistic and mixed. The axis applies
+  only to music notated in voices: a lead sheet has none to compare. *Why:* measured by ablation —
+  the motion-type view alone recovers texture far better than the leap-profile view alone, and
+  combining them raw lets the larger leap feature set outvote the smaller motion-type one. The
+  caveat is honored in the same place: the leap view's era signal is partly an encoding artifact, so
+  the primary finding rests on the view that carries no such artifact.
+- **The texture and era covariates are declared PER SOURCE and read only after the grouping exists.**
+  This is the discover-then-name bullet above applied to the second axis, and it is not restated
+  (#6): what is added is that the lens labels are attached per source in advance, and that the
+  confound gate was run against voice count and against source and the grouping tracks neither.
+  *Why:* it is what makes the covariate agreement a finding rather than a tautology — a grouping
+  that had been given the texture label would of course recover it.
+
+### 6.8 The user-facing preset layer — naming, coverage, the mixture contract and the licence split
+
+**Status: RECORDED and DEFERRED product work** (user, 2026-07-05; re-homed into this section
+2026-08-08 on the user's ruling). §6.7 says what the idioms are and how they were discovered; this
+section says what a user-facing preset built over them may be and how a chosen mixture is carried.
+Nothing here is built at HEAD, and the deferral rides with the rules rather than being dropped.
+
+- **A preset presents as a familiar genre-era label plus exemplars the user knows — never as an
+  idiom name and never as an obscure exemplar; genre names are LABELS over mixtures, never axes.**
+  A preset is named after a period and style a user recognises, anchored by musicians they know
+  ("60s pop — The Beatles"); it is never named after one of the five idioms, and never after an
+  exemplar most people have not heard of. *Why:* the second half is measured and is §6.7's own
+  result — harmony is not organised by genre, and Baroque, galant and Classical share one idiom —
+  so a genre name cannot be an axis without asserting a structure the data denies. The exemplar half
+  is the user's own reason: an exemplar nobody recognises conveys nothing.
+- **Coverage beyond the analysed music is three tiers with NO bare guessing — measured, editorially
+  declared with a stated theory rationale, or self-correcting by detection.** A style we hold
+  annotated music for gets its mixture measured from that music. A style we hold none for gets a
+  mixture written down deliberately with its theory reason stated, and validated when data arrives.
+  Either way the analysis moves away from the starting mixture as it reads the actual music. *Why:*
+  the third tier is what licenses the second — because a preset is only a cold-start prior the music
+  itself refines, a declared mixture that is somewhat wrong degrades gracefully; without the
+  self-correction the declared tier would be an unvalidated shipped value (#19).
+- **Every idiom mixture is selectable, and the discovered cloud is the EVIDENCE MAP rather than the
+  boundary — each chosen point carries its evidence status.** Named presets are cluster centroids
+  for progressive disclosure; a custom selector admits any point in the mixture space. Where the
+  chosen point sits relative to the music actually measured decides what may be claimed about it:
+  inside a discovered cluster it is validated, between clusters it is an interpolation, outside the
+  cloud it is still selectable but marked empirically unvalidated. *Why:* two standing rules
+  combined — no information loss (#12), since restricting the user to the discovered centroids would
+  discard every point between them, and the empirically-unvalidated mark, which lets a value outside
+  the measured range be offered without being presented as established (#19).
+- **The music's own metadata is the PRIMARY home of that piece's idiom mixture, and a user-set
+  mixture is never silently overwritten by re-detection.** The mixture is stored in the score's own
+  user-defined properties, the mechanism MuseScore already saves beside title and composer, so it
+  travels with the file and a later analysis starts warm rather than cold. The stored value records
+  its provenance — auto-detected, with the analyzer version and date, or user-set: a user-set
+  mixture is never silently replaced, an auto-detected one may be refreshed, and an edit after
+  detection marks the stored mixture refreshable. *Why:* storing it with the music removes the need
+  for a separate registry for per-piece behaviour and turns re-analysis into a warm start; the
+  no-silent-overwrite half is the no-surprise rule. **Two things are recorded rather than assumed
+  away:** custom properties survive the native format but their MusicXML round-trip is only partial
+  and needs its own check before the feature relies on it; and the property layout is an
+  implementation decision at build time. **This sits against §13.1's rule that our data lives in
+  separate files inside the archive and the score file is never touched** — the two are not in
+  conflict on their own terms, since this uses MuseScore's existing property mechanism rather than
+  extending the file's own schema, but a build must reconcile them explicitly and neither record
+  does.
+- **The licence split: the ANCHORS are the shipped licence-constrained fitted parameters, and the
+  mixture weights are free user configuration.** The constraint that a value which SHIPS may be
+  fitted only on freely-licensed music reaches the per-idiom anchors, not the mixture a user chooses
+  over them; a user's own mixture carries no constraint at all, and only the mixtures we ship as
+  named preset defaults must be derived from a licensed pool or editorially declared. *Why:* it
+  follows from what each half is — an anchor is a fitted parameter compiled into the product, so the
+  fitting-pool constraint reaches it, while a mixture weight the user selects is configuration
+  derived from no corpus at all. This REFINES the fitting-pool constraint by saying which half of
+  the style system it reaches; it does not weaken it.
+
 ---
 
 ## 7. The Knowledge Base
@@ -6491,6 +6766,14 @@ Region analysis extends this to a time range, producing a complete harmonic anal
 with chord symbols, roman numerals, and an optional note reduction across an entire
 passage.
 
+*Delegation pointer (the fifth home case, rule (g), user-ratified 2026-08-02; this delegation
+written 2026-08-08 on the user's ruling — a POINTER, never a copy, #6).* **The ratified contract
+for the notation-surface adoption increment — its scope, its increments and their tracking — is
+`cowork_notation_adoption_increment.md`, which this section points at and does not restate.** *That
+increment is the work that put the record path on this surface; what it decided about its own
+scope, its constituent increments and how they are tracked stays there. This section states the
+pipeline the increment produced, which is a different concern.*
+
 #### User interaction — selection-based targeting
 
 There is no dedicated staff type or property for the chord track.  The user's
@@ -7525,6 +7808,12 @@ a session changes an architectural decision.
 > **Full design document:** `docs/llm_integration.md`  
 > This section is a summary and entry point. Read the full document before
 > working on any LLM integration code.
+>
+> *Delegation pointer (the fifth home case, rule (g), user-ratified 2026-08-02; this delegation
+> written 2026-08-08 on the user's ruling — a POINTER, never a copy, #6).* **The ONE detailed design
+> for this section's scope is `docs/llm_integration.md`, which this section points at and does not
+> restate.** *The subsections below are the summary the line above promises; the detail — the tool
+> surface, the serialization design, the provider abstraction and the phasing — is not restated here.*
 
 ### 19.1 Vision
 

@@ -162,7 +162,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "REGISTER LINT: OPEN_ITEMS.md — 348 row IDs",
+        "REGISTER LINT: OPEN_ITEMS.md — 351 row IDs",
         "REGISTER LINT: PASS — every row ID is unique"
       ],
       "stderr": [],
@@ -368,7 +368,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "PASS: nongating_apparatus_rows.json re-derives byte-identically (29 non-gating / 32 gates of 61 candidates over 251 open rows)"
+        "PASS: nongating_apparatus_rows.json re-derives byte-identically (29 non-gating / 32 gates of 61 candidates over 252 open rows)"
       ],
       "stderr": [],
       "what_it_checks": "the non-gating apparatus-row declaration re-derives from the INDEX"
@@ -502,85 +502,50 @@
       "args": [
         "--check"
       ],
-      "exit_code": 1,
-      "verdict": "FAIL",
+      "exit_code": 0,
+      "verdict": "PASS",
       "stdout": [
-        "population: 221 entries / 54 documents",
-        "  before: {'contract-home': 94, 'gap': 127}",
-        "  after:  {'contract-home': 139, 'gap': 82}",
-        "  moved:  69  (to gap 12, to contract-home 57)",
+        "population: 193 entries / 41 documents",
+        "  before: {'contract-home': 90, 'gap': 103}",
+        "  after:  {'contract-home': 150, 'gap': 43}",
+        "  moved:  76  (to gap 8, to contract-home 68)",
         "    cowork_architecture_reassessment.md: −4 / +0",
         "    cowork_engage_arc_plan.md: −0 / +3",
         "    cowork_joint_estimator_architecture.md: −0 / +5",
+        "    cowork_joint_estimator_factorization.md: −0 / +1",
         "    cowork_joint_key_chord_design.md: −0 / +4",
         "    cowork_layer1_note_model_design.md: −0 / +3",
         "    cowork_layer2_slicing_design.md: −0 / +2",
         "    cowork_layer3_keymode_design.md: −1 / +0",
         "    cowork_layer6_grouping_design.md: −0 / +8",
+        "    cowork_notation_adoption_increment.md: −0 / +3",
         "    cowork_phrase_boundary_design.md: −0 / +8",
         "    cowork_progression_schema_design.md: −0 / +8",
         "    cowork_progression_schema_dictionary.md: −0 / +9",
         "    cowork_score_census.md: −0 / +6",
         "    cowork_structural_integrity_audit.md: −0 / +1",
         "    cowork_voiceleading_axis_design.md: −3 / +0",
-        "    docs/redesign_plan.md: −4 / +0",
-        "  since phase 1q (the written delegations alone): 68 moved (to contract-home 68, to gap 0)",
+        "    docs/llm_integration.md: −0 / +7",
+        "  since phase 1q (the written delegations alone): 79 moved (to contract-home 79, to gap 0)",
         "    cowork_engage_arc_plan.md: −0 / +3",
         "    cowork_joint_estimator_architecture.md: −0 / +5",
+        "    cowork_joint_estimator_factorization.md: −0 / +1",
         "    cowork_joint_key_chord_design.md: −0 / +4",
         "    cowork_layer1_note_model_design.md: −0 / +3",
         "    cowork_layer2_slicing_design.md: −0 / +2",
         "    cowork_layer5_function_design.md: −0 / +8",
         "    cowork_layer6_grouping_design.md: −0 / +8",
+        "    cowork_notation_adoption_increment.md: −0 / +3",
         "    cowork_notation_output_contract.md: −0 / +1",
         "    cowork_phrase_boundary_design.md: −0 / +8",
         "    cowork_prefit_gates.md: −0 / +5",
         "    cowork_progression_schema_design.md: −0 / +8",
         "    cowork_score_census.md: −0 / +6",
         "    cowork_voiceleading_axis_design.md: −0 / +7",
+        "    docs/llm_integration.md: −0 / +7",
         "  write-list documents still holding a `gap` entry: cowork_layer1_note_model_design.md, cowork_layer1_tone_collection_design.md, cowork_layer6_grouping_design.md, cowork_phrase_boundary_design.md, cowork_voiceleading_axis_design.md",
-        "STALE vs the files: 164 classification field(s) do not re-derive",
-        "   {\"id\": \"D-260\", \"what\": \"home_section\", \"to\": \"§2\"}",
-        "   {\"id\": \"D-261\", \"what\": \"home_section\", \"to\": \"§3\"}",
-        "   {\"id\": \"D-262\", \"what\": \"home_section\", \"to\": \"§3\"}",
-        "   {\"id\": \"D-263\", \"what\": \"home_section\", \"to\": \"§3\"}",
-        "   {\"id\": \"D-264\", \"what\": \"home_section\", \"to\": \"§4\"}",
-        "   {\"id\": \"D-265\", \"what\": \"home_section\", \"to\": \"§4\"}",
-        "   {\"id\": \"D-266\", \"what\": \"home_section\", \"to\": \"§8\"}",
-        "   {\"id\": \"D-267\", \"what\": \"home_section\", \"to\": \"§2\"}",
-        "   {\"id\": \"D-268\", \"what\": \"home_section\", \"to\": \"§2\"}",
-        "   {\"id\": \"D-269\", \"what\": \"home_section\", \"to\": \"§4\"}",
-        "   {\"id\": \"D-312\", \"what\": \"home_section\", \"to\": \"“§15 Open items & ratification asks”\"}",
-        "   {\"id\": \"D-313\", \"what\": \"home_section\", \"to\": \"§9\"}",
-        "   {\"id\": \"D-314\", \"what\": \"home_section\", \"to\": \"“§15 Open items & ratification asks”\"}",
-        "   {\"id\": \"D-317\", \"what\": \"home_section\", \"to\": \"“Dead end: `noteEnd <= startTickInt` → `noteEnd < startTickInt`”\"}",
-        "   {\"id\": \"D-318\", \"what\": \"home_section\", \"to\": \"“Dead end: short-region merger trigger”\"}",
-        "   {\"id\": \"D-319\", \"what\": \"home_section\", \"to\": \"“Dead end: re-analysis of inline-merged aggregate”\"}",
-        "   {\"id\": \"D-320\", \"what\": \"home_section\", \"to\": \"“What NOT to do first”\"}",
-        "   {\"id\": \"D-321\", \"what\": \"home_section\", \"to\": \"“Floating-point tie policy”\"}",
-        "   {\"id\": \"D-322\", \"what\": \"home_section\", \"to\": \"“Floating-point tie policy”\"}",
-        "   {\"id\": \"D-323\", \"what\": \"home_section\", \"to\": \"“`dim7CharacteristicBonus`”\"}",
-        "   {\"id\": \"D-324\", \"what\": \"home_section\", \"to\": \"“§6a. The unified promotion primitive `promoteToWinner()`”\"}",
-        "   {\"id\": \"D-329\", \"what\": \"home_section\", \"to\": \"§4\"}",
-        "   {\"id\": \"D-330\", \"what\": \"home_section\", \"to\": \"§8\"}",
-        "   {\"id\": \"D-331\", \"what\": \"home_section\", \"to\": \"§15\"}",
-        "   {\"id\": \"D-332\", \"what\": \"home_section\", \"to\": \"§7\"}",
-        "   {\"id\": \"D-333\", \"what\": \"home_section\", \"to\": \"§15\"}",
-        "   {\"id\": \"D-334\", \"what\": \"home_section\", \"to\": \"§15\"}",
-        "   {\"id\": \"D-335\", \"what\": \"home_section\", \"to\": \"§9\"}",
-        "   {\"id\": \"D-336\", \"what\": \"home_section\", \"to\": \"§9\"}",
-        "   {\"id\": \"D-337\", \"what\": \"home_section\", \"to\": \"§9\"}",
-        "   {\"id\": \"D-338\", \"what\": \"home_section\", \"to\": \"§9\"}",
-        "   {\"id\": \"D-339\", \"what\": \"home_section\", \"to\": \"§9\"}",
-        "   {\"id\": \"D-340\", \"what\": \"home_section\", \"to\": \"§7\"}",
-        "   {\"id\": \"D-341\", \"what\": \"home_section\", \"to\": \"§5.0\"}",
-        "   {\"id\": \"D-342\", \"what\": \"home_section\", \"to\": \"§11\"}",
-        "   {\"id\": \"D-343\", \"what\": \"home_section\", \"to\": \"§1\"}",
-        "   {\"id\": \"D-344\", \"what\": \"home_section\", \"to\": \"§1\"}",
-        "   {\"id\": \"D-345\", \"what\": \"home_section\", \"to\": \"§2\"}",
-        "   {\"id\": \"D-346\", \"what\": \"home_section\", \"to\": \"§5\"}",
-        "   {\"id\": \"D-347\", \"what\": \"home_section\", \"to\": \"§9\"}",
-        "STALE vs the files: phase1q_reclassification.json does not re-derive"
+        "  since phase 1r (the 2026-08-08 apply): 11 moved (to contract-home 11, to gap 0)",
+        "the home classification and its artifact re-derive from the files"
       ],
       "stderr": [],
       "what_it_checks": "every home-section field re-derives from the documents' own headings"
@@ -594,7 +559,7 @@
       "verdict": "FAIL",
       "stdout": [],
       "stderr": [
-        "FORM judgment for a document that is nobody's home: ['cowork_audit_obligation_map.md', 'cowork_delta_check_dispositions.md', 'cowork_eg1_premise_checks.md', 'cowork_eg2_scoping.md', 'cowork_fb_redesign_design.md', 'cowork_gateA_unification_design.md', 'cowork_idiom_discovery_design.md', 'cowork_layer1_extend_design.md', 'cowork_layer3_keymode_impl_design.md', 'cowork_layer3_reachback_design.md', 'cowork_layer5_function_methods.md', 'cowork_phase5c_l5_build_plan.md', 'cowork_phrase_boundary_methods.md', 'cowork_tpc_capability_design.md', 'docs/back_half_design.md', 'docs/decoder_design.md', 'docs/iteration_path1_summary.md', 'docs/layer_architecture_audit.md', 'docs/precision_metric_design.md', 'docs/stage4c_cadence_key_design.md', 'docs/stage4d_local_modulation_design.md', 'docs/symbol_input_audit.md']"
+        "FORM judgment for a document that is nobody's home: ['cowork_audit_obligation_map.md', 'cowork_delta_check_dispositions.md', 'cowork_eg1_premise_checks.md', 'cowork_eg2_scoping.md', 'cowork_fb_redesign_design.md', 'cowork_gateA_unification_design.md', 'cowork_idiom_discovery_design.md', 'cowork_idiom_discovery_findings.md', 'cowork_l1_l5_premise_debt_audit.md', 'cowork_layer1_extend_design.md', 'cowork_layer2_reslice_design.md', 'cowork_layer3_keymode_impl_design.md', 'cowork_layer3_reachback_design.md', 'cowork_layer5_function_methods.md', 'cowork_phase5c_l5_build_plan.md', 'cowork_phrase_boundary_methods.md', 'cowork_style_clustering_plan.md', 'cowork_style_taxonomy_proposal.md', 'cowork_target_architecture.md', 'cowork_tpc_capability_design.md', 'cowork_uncertain_resolver_investigation.md', 'docs/architecture_joint_inference.md', 'docs/back_half_design.md', 'docs/decoder_design.md', 'docs/iter90_bass_as_root_promotion_shelved.md', 'docs/iteration_path1_summary.md', 'docs/key_detection_baroque_partial_signature.md', 'docs/layer_architecture_audit.md', 'docs/nct_detection_design.md', 'docs/precision_metric_design.md', 'docs/redesign_plan.md', 'docs/stage4c_cadence_key_design.md', 'docs/stage4d_local_modulation_design.md', 'docs/symbol_input_audit.md', 'docs/unified_analysis_pipeline.md']"
       ],
       "what_it_checks": "the delegation-bar pre-apply record re-derives"
     },
@@ -652,7 +617,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "PASS: finish_line_item1_routes.json re-derives byte-identically (94 entries over 12 documents; 69 re-home / 11 delegation / 14 no-home)"
+        "PASS: finish_line_item1_routes.json re-derives byte-identically (94 entries over 10 documents; 69 re-home / 11 delegation / 14 no-home)"
       ],
       "stderr": [],
       "what_it_checks": "every entry of finish-line item 1 still carries an authored closing route, no route names an entry the item no longer carries other than the ones this wave re-homed, and the route population still re-derives from the finish line rather than from a stored list"
@@ -665,7 +630,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "PASS: item1_rehome_blocker.json re-derives byte-identically (1 open re-home rows)"
+        "PASS: item1_rehome_blocker.json re-derives byte-identically (0 open re-home rows)"
       ],
       "stderr": [],
       "what_it_checks": "what actually blocks finish-line item 1's re-home class still re-derives — the standing autonomous-operation authorization still locatable in CLAUDE.md by its anchor, every open re-home row's owning specification still naming at least one file, and every row's blocker still cut from that row's own recorded reason rather than from a stored verdict"
@@ -678,7 +643,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "PASS: r1_superseded_reach.json re-derives byte-identically (14 entries; 6 leave / 1 route-changed / 7 neither)"
+        "PASS: r1_superseded_reach.json re-derives byte-identically (14 entries; 7 leave / 0 route-changed / 7 neither)"
       ],
       "stderr": [],
       "what_it_checks": "ruling R1's application re-derives — every member of item 1's NO-HOME class still carries an authored successor record, no successor record names an entry the class no longer carries, every authored successor is still NAMED IN THE SUPERSEDED ENTRY'S OWN TEXT, and every one that resolves to a register identifier still resolves to an entry the register holds"
@@ -704,9 +669,9 @@
       "exit_code": 1,
       "verdict": "FAIL",
       "stdout": [
-        "  the chord layer: ARCHITECTURE.md:1673 lists 10 entry(ies)",
-        "  the key layer: ARCHITECTURE.md:1512 lists 2 entry(ies)",
-        "  the search: ARCHITECTURE.md:308 lists 3 entry(ies)",
+        "  the chord layer: ARCHITECTURE.md:1791 lists 10 entry(ies)",
+        "  the key layer: ARCHITECTURE.md:1612 lists 2 entry(ies)",
+        "  the search: ARCHITECTURE.md:315 lists 3 entry(ies)",
         "class members (derived from the verification): 13",
         "STALE vs the files: 13 entry(ies) do not carry the pointer as derived"
       ],
@@ -719,7 +684,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "living mode: index=348 detail=348 baseline=200 post-baseline=148",
+        "living mode: index=351 detail=351 baseline=200 post-baseline=151",
         "OVERALL PASS � bijection holds, no detail file carries a status of its own, and all 200 original items stay byte-verbatim (report: open_items\\register_check.json)"
       ],
       "stderr": [],
@@ -741,17 +706,11 @@
   ],
   "summary": {
     "run": 35,
-    "passing": 30,
-    "failing": 5,
+    "passing": 31,
+    "failing": 4,
     "failing_tools": [
       {
         "tool": "tools/audit/claude_md_rule_triage.py",
-        "args": [
-          "--check"
-        ]
-      },
-      {
-        "tool": "tools/audit/decisions/gen_home_classification.py",
         "args": [
           "--check"
         ]

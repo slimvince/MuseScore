@@ -184,10 +184,20 @@ FORMS: dict[str, tuple[str, str, str, str]] = {
         "— the document inside a list of citations, and a parenthetical recording where "
         "the protocols were ratified. Both of those namings are retained."),
     "cowork_notation_adoption_increment.md": (
-        PROVENANCE, "ARCHITECTURE.md",
-        "pedal-point ruling of the notation-adoption increment",
-        "A parenthetical recording where a ruling was made. Its `CLAUDE.md` naming "
-        "('analysis in `…` §2') is the same form."),
+        CLAUSE, "ARCHITECTURE.md",
+        "`cowork_notation_adoption_increment.md`, which this section points at",
+        "★ MOVED 2026-08-08 (the document-route rulings of 2026-08-08, route (i)): THE USER "
+        "RULED THE DELEGATION and this session wrote it, per the OI-293 precedent. It is the "
+        "bar's first named form — 'The ratified contract for the notation-surface adoption "
+        "increment … is X, which this section points at and does not restate' — sited in §11.5, "
+        "the section whose own status line states it runs the record path since the notation "
+        "switch. It SUPPLEMENTS the two provenance attributions rather than replacing them, so "
+        "the document is now named in both an admitting and an excluded form and rule (k1) "
+        "governs: the strongest naming decides. The anchor is the delegation's own clause rather "
+        "than the bare filename, which is no longer unique in that file. The former grade, "
+        "preserved (#12): PROVENANCE at 'pedal-point ruling of the notation-adoption increment' — "
+        "'A parenthetical recording where a ruling was made. Its `CLAUDE.md` naming "
+        "(\"analysis in `…` §2\") is the same form.'"),
     "cowork_engage_arc_plan.md": (
         CLAUSE, "CLAUDE.md",
         "The ratified contract for the ORDER OF WORK from here to the precision phase",
@@ -213,13 +223,21 @@ FORMS: dict[str, tuple[str, str, str, str]] = {
     # grades were.  All five come out EXCLUDE, so no section-kind judgment is reached.
     # ------------------------------------------------------------------
     "docs/llm_integration.md": (
-        BARE_CITATION, "ARCHITECTURE.md",
-        "**Full design document:** `docs/llm_integration.md`",
-        "The bar's first excluded form. The line names the document and nothing else; the "
-        "sentence after it — that §19 is a summary and the full document must be read before "
-        "writing LLM code — is an instruction to the reader, not a delegation of a stated "
-        "concern to a named section. Its two other namings (`:7010`, `:7021`) are 'See X §n' "
-        "citations, weaker still."),
+        CLAUSE, "ARCHITECTURE.md",
+        "for this section's scope is `docs/llm_integration.md`",
+        "★ MOVED 2026-08-08 (the document-route rulings of 2026-08-08, route (i)): THE USER "
+        "RULED THE DELEGATION and this session wrote it, per the OI-293 precedent. It is the "
+        "bar's second named form of clause — 'The ONE detailed design for this section's scope "
+        "is X, which this section points at and does not restate' — the same shape as the "
+        "bounded-context delegation the bar admits word for word, sited in §19, whose scope it "
+        "delegates. It SUPPLEMENTS the 'Full design document:' line rather than replacing it, so "
+        "rule (k1) governs and the strongest naming decides. The former grade, preserved (#12): "
+        "BARE_CITATION at '**Full design document:** `docs/llm_integration.md`' — 'The bar's "
+        "first excluded form. The line names the document and nothing else; the sentence after "
+        "it — that §19 is a summary and the full document must be read before writing LLM code — "
+        "is an instruction to the reader, not a delegation of a stated concern to a named "
+        "section. Its two other namings (`:7010`, `:7021`) are \"See X §n\" citations, weaker "
+        "still.'"),
     "cowork_layer6_grouping_design.md": (
         CLAUSE, "ARCHITECTURE.md",
         "The ratified contract for this layer is `cowork_layer6_grouping_design.md`",
@@ -472,15 +490,24 @@ FORMS: dict[str, tuple[str, str, str, str]] = {
         "attributes provenance rather than delegating a concern; the concern itself is "
         "delegated to nobody and is stated in place (D-303). It is the only naming."),
     "cowork_joint_estimator_factorization.md": (
-        BARE_CITATION, "ARCHITECTURE.md",
-        "spec: `cowork_joint_estimator_architecture.md`, `cowork_joint_estimator_factorization.md`",
-        "The bar's first excluded form, word for word: a line opening 'spec:' and naming two "
-        "documents. ★ NAMED TWICE, and graded on the STRONGEST naming per ruling R3 (user, "
-        "2026-08-04; `CLAUDE.md` rule (k1)): the other naming (`:299`, a parenthetical citation "
-        "with line numbers recording where a rejected option is described) is a provenance "
-        "attribution, weaker still. Both are excluded forms, so the ruling is applied and the "
-        "verdict does not turn on it. Contrast the sibling architecture document, whose "
-        "opening-banner naming IS graded a delegation clause."),
+        CLAUSE, "ARCHITECTURE.md",
+        "is `cowork_joint_estimator_factorization.md`, which this section points at",
+        "★ MOVED 2026-08-08 (the document-route rulings of 2026-08-08, route (i)): THE USER "
+        "RULED THE DELEGATION and this session wrote it, per the OI-293 precedent. It is the "
+        "bar's first named form — 'The ratified contract for the estimator's factor structure … "
+        "is X, which this section points at and does not restate' — sited in the joint-estimator "
+        "section, which owns the production inference layer's standing rules and whose rule (c) "
+        "already reads this document. It SUPPLEMENTS the two excluded namings rather than "
+        "replacing them, so rule (k1) governs and the strongest naming decides. The former "
+        "grade, preserved (#12): BARE_CITATION at 'spec: `cowork_joint_estimator_architecture."
+        "md`, `cowork_joint_estimator_factorization.md`' — 'The bar's first excluded form, word "
+        "for word: a line opening \"spec:\" and naming two documents. ★ NAMED TWICE, and graded "
+        "on the STRONGEST naming per ruling R3 (user, 2026-08-04; `CLAUDE.md` rule (k1)): the "
+        "other naming (`:299`, a parenthetical citation with line numbers recording where a "
+        "rejected option is described) is a provenance attribution, weaker still. Both are "
+        "excluded forms, so the ruling is applied and the verdict does not turn on it. Contrast "
+        "the sibling architecture document, whose opening-banner naming IS graded a delegation "
+        "clause.'"),
 
     "cowork_audit_obligation_map.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),

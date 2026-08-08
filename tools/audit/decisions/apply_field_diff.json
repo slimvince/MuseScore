@@ -1,0 +1,2425 @@
+{
+  "purpose": "ASSUMPTION A1 of the 2026-08-08 away dispatch, discharged by measurement: the home-classification applying run leaves every field outside its intended writes byte-stable. Not a judgment about whether any class is correct, and not an authorization for any fix, design or inference change.",
+  "generated_by": "tools/audit/decisions/gen_apply_field_diff.py",
+  "generated_for": "cc_instruction_away_execution.md, Task 0 (the epoch treatment ruled by the user on 2026-08-08, Ruling 1 of `cowork_rulings_2026_08_08_pre_away.md`)",
+  "the_before_side": {
+    "path": "tools/audit/decisions/snapshot_2026-08-08_pre_home_classification_apply/backbone_decisions.json",
+    "what_it_is": "the register data as it stood immediately before the applying run, snapshotted into the repository first (the O-12 pattern)",
+    "why_not_a_git_object": "the register data was already modified in the working tree by the uncommitted document-route wave, so the last commit is not the state this apply starts from"
+  },
+  "the_intended_writes": [
+    "home_section",
+    "nonspec_kind"
+  ],
+  "what_intended_means_here": "The classifier's own docstring states what it writes: `nonspec_kind` and `home_section` on every entry of the home population, plus the removal of a stale `home_section` from an entry outside that population. Every other field of every entry, and every top-level map key of the register data, is outside the intended writes.",
+  "★_a_field_outside_the_intended_writes_is_a_STOP_not_a_remark": "The applying run re-serializes the whole file rather than patching it, so a defect in it would move data nobody was looking at. That is why this is measured rather than asserted, and why a non-empty list below halts the batch.",
+  "★_a_top_level_map_key_that_moved_is_reported_with_the_act_that_moved_it_or_it_is_a_STOP": "The applying run writes no top-level map key at all, so one that moved was moved by something else. This batch made one such edit before the run and declares it rather than letting the diff absorb it: the account is authored, the movement is derived, and each stops the run if the other is absent. A movement with no account halts the batch; an account for a movement that did not happen halts it too.",
+  "counted": {
+    "entries_before": 645,
+    "entries_after": 645,
+    "entries_with_any_field_moved": 193,
+    "nonspec_kind_moved": 11,
+    "home_section_moved": 193,
+    "home_section_written_for_the_first_time": 0,
+    "home_section_removed": 0,
+    "entries_with_a_field_outside_the_intended_writes_moved": 0,
+    "top_level_map_keys_moved": 1,
+    "top_level_map_keys_moved_with_no_declared_act_to_account_for_them": 0
+  },
+  "fields_outside_the_intended_writes_that_moved": [],
+  "top_level_map_keys_that_moved": [
+    {
+      "map_key": "section_home_criterion",
+      "present_before": true,
+      "present_after": true,
+      "accounted_for": true,
+      "by_what": "Moved by a DECLARED EDIT of this batch, made before the applying run and not by it: `docs/unified_analysis_pipeline.md`'s authored delegation-scope judgment was moved from `documents` into `documents_retired_when_their_last_entry_was_re_homed`, because the 2026-08-07 owner-rulings wave re-homed its last four entries and retired three other emptied documents but not this one. Until that was completed the classifier STOPPED on it before classifying anything — the STOP is that guard working, and the same act the three earlier retirement records in that block already say. The judgment is moved whole rather than deleted (#12)."
+    }
+  ],
+  "top_level_map_keys_that_moved_with_no_declared_act": [],
+  "entries": [
+    {
+      "id": "D-260",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-261",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-262",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-263",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-264",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-265",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-266",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-267",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-268",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-269",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-270",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-271",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-272",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-273",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-274",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-275",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-276",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-278",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-279",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-282",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-283",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-284",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-285",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-311",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-312",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-313",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-314",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-321",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-322",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-323",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-324",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-329",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-330",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-331",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-332",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-333",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-334",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-335",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-336",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-337",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-338",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-339",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-340",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-341",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-342",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-343",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-344",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-345",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-346",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-347",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-348",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-349",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-350",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-351",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-352",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-353",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-354",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-355",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-356",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-357",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-358",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-359",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-360",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-361",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-362",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-363",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-364",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-365",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-366",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-367",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-368",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-369",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-370",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-371",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-372",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-373",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-374",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-375",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-376",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-377",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-378",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-379",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-380",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-381",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-382",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-383",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-384",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-385",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-386",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-387",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-388",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-389",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-390",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-391",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-392",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-393",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-394",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-395",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-396",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-397",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-398",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-399",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-400",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-401",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-402",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-403",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-404",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-405",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-406",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-407",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-408",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-409",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-410",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-411",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-412",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-413",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-414",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-422",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-424",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        },
+        {
+          "field": "nonspec_kind",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-425",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        },
+        {
+          "field": "nonspec_kind",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-426",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        },
+        {
+          "field": "nonspec_kind",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-442",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        },
+        {
+          "field": "nonspec_kind",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-443",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        },
+        {
+          "field": "nonspec_kind",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-444",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        },
+        {
+          "field": "nonspec_kind",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-445",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        },
+        {
+          "field": "nonspec_kind",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-446",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        },
+        {
+          "field": "nonspec_kind",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-447",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        },
+        {
+          "field": "nonspec_kind",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-448",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        },
+        {
+          "field": "nonspec_kind",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-453",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-454",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-455",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-456",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-457",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-458",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-459",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-460",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-461",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-462",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-475",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-476",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-477",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-478",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-479",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-480",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-481",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-482",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-483",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-484",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-485",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-498",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-499",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-500",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-502",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-503",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-504",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-505",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-506",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-507",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-508",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-509",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-513",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-514",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-515",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-516",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-517",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-518",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-519",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-520",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-521",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-522",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-523",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-524",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-525",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-526",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-527",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-528",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-529",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-530",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-535",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-538",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-540",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-541",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-565",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        },
+        {
+          "field": "nonspec_kind",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-569",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-570",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-571",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-579",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-581",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-583",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-601",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-610",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-613",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    },
+    {
+      "id": "D-614",
+      "what": "FIELDS MOVED",
+      "moved": [
+        {
+          "field": "home_section",
+          "present_before": true,
+          "present_after": true,
+          "intended": true
+        }
+      ]
+    }
+  ],
+  "verdict": "A1 HOLDS"
+}

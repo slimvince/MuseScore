@@ -30,7 +30,7 @@
     "re_derives_a_live_invariant": 32,
     "records_a_point_in_time_measurement": 10,
     "neither_not_a_guard": 1,
-    "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 5
+    "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 4
   },
   "tools_that_leave_the_live_guard_list": [
     "tools/audit/decisions/gen_phase1g_triage.py",
@@ -46,7 +46,6 @@
   ],
   "live_tools_that_fail_and_stay": [
     "tools/audit/claude_md_rule_triage.py",
-    "tools/audit/decisions/gen_home_classification.py",
     "tools/audit/decisions/gen_live_prohibition_pointers.py",
     "tools/audit/decisions/gen_phase1p_delegation_bar.py",
     "tools/audit/decisions/gen_phase1w_legacy_verification.py"
@@ -114,7 +113,7 @@
       "evidence": "gen_home_classification.py:35-49",
       "why": "★ CLASSIFIED LIVE DESPITE FAILING. It APPLIES the criteria in force to the WHOLE current home population and writes each entry's class; `--check` re-derives both the classification and its artifact. Its STOP — home documents with no authored delegation scope — fires because the population grows as waves enter entries, which is the tool asking for the authored input it refuses to guess. That is a live demand about today's register, not a dated reading. It stays, failing.",
       "in_the_live_guard_list_after_this_classification": true,
-      "state_at_the_committed_tree": "FAIL"
+      "state_at_the_committed_tree": "PASS"
     },
     {
       "tool": "tools/audit/decisions/gen_item1_rehome_blocker.py",

@@ -99,13 +99,14 @@
   "★_re_cutting_an_existing_item_is_NOT_adding_one": "Stated here so a later reader does not mistake this for a scope change. The scope rule reserves ADDING an item to the user, and says in its own words that this list is regenerated rather than maintained and that 'an item's size moves when the record moves'. R3 changes what an existing item's population IS. No item is added, none is removed, and every closing act is unchanged.",
   "what_was_wrong_with_the_document_cut": "The four homing items took their populations from the DELEGATION partition, which classifies by the entry's HOME DOCUMENT — is that document named in a user-ratified surface, and in what form. That is the right cut for the question *does a delegation exist* and the wrong one for the question criterion C1 asks, which is per DECISION. An entry whose obligation an entry-level ruling has already discharged stayed in the count, because its home document's delegation state had not moved.",
   "direction_1_entries_the_entry_cut_DROPS": {
-   "count": 6,
+   "count": 7,
    "ids_by_item": {
     "Register entries whose home document is named in NO user-ratified surface": {
      "cowork_architecture_reassessment.md": [
       "D-282",
       "D-283",
-      "D-284"
+      "D-284",
+      "D-285"
      ],
      "cowork_phase2_architecture_review.md": [
       "D-579"
@@ -123,6 +124,7 @@
     "D-282": "Every successor the record names is homed, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
     "D-283": "Every successor the record names is homed, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
     "D-284": "Every successor the record names is homed, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
+    "D-285": "Every successor the record names is homed, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
     "D-538": "Every successor the record names is homed, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
     "D-571": "Every successor the record names is homed, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
     "D-579": "Every successor the record names is homed, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register."
@@ -165,12 +167,9 @@
    "half": "COMPLETE",
    "criterion": "C1 — every recorded decision written into its owning specification",
    "population": {
-    "entries": 20,
-    "documents": 12,
+    "entries": 18,
+    "documents": 10,
     "entry_ids_by_document": {
-     "cowork_architecture_reassessment.md": [
-      "D-285"
-     ],
      "cowork_architecture_review_2026_07.md": [
       "D-498",
       "D-499",
@@ -208,22 +207,20 @@
      ],
      "docs/implementation_roadmap.md": [
       "D-422"
-     ],
-     "docs/unified_analysis_pipeline.md": [
-      "D-472"
      ]
     },
     "★_this_is_the_ENTRY_level_cut": "The population criterion C1 still reaches, per DECISION. Entries an entry-level ruling has already discharged are subtracted, and are listed below rather than silently absent.",
     "at_document_granularity_before_the_re_cut": {
-     "entries": 26,
-     "documents": 15,
+     "entries": 25,
+     "documents": 14,
      "why_it_is_kept": "So the movement is visible rather than inferred (#12). It is the figure this item published before ruling R3."
     },
     "discharged_by_an_entry_level_ruling": {
      "cowork_architecture_reassessment.md": [
       "D-282",
       "D-283",
-      "D-284"
+      "D-284",
+      "D-285"
      ],
      "cowork_phase2_architecture_review.md": [
       "D-579"
@@ -235,7 +232,7 @@
       "D-571"
      ]
     },
-    "entries_discharged": 6
+    "entries_discharged": 7
    },
    "why_it_is_outstanding": "clause (a), the fifth home case (OI-268) — the document is named in none of the three user-ratified surfaces, so there is no delegation to grade",
    "gate": {
@@ -252,91 +249,23 @@
    "half": "COMPLETE",
    "criterion": "C1",
    "population": {
-    "entries": 39,
-    "documents": 16,
+    "entries": 1,
+    "documents": 1,
     "entry_ids_by_document": {
      "cowork_adjudication_dossier.md": [
-      "D-600",
       "D-601"
-     ],
-     "cowork_idiom_discovery_findings.md": [
-      "D-554",
-      "D-555",
-      "D-556"
-     ],
-     "cowork_joint_estimator_factorization.md": [
-      "D-565"
-     ],
-     "cowork_l1_l5_premise_debt_audit.md": [
-      "D-615"
-     ],
-     "cowork_layer2_reslice_design.md": [
-      "D-631",
-      "D-632"
-     ],
-     "cowork_notation_adoption_increment.md": [
-      "D-424",
-      "D-425",
-      "D-426"
-     ],
-     "cowork_style_clustering_plan.md": [
-      "D-598"
-     ],
-     "cowork_style_taxonomy_proposal.md": [
-      "D-587",
-      "D-588",
-      "D-589",
-      "D-590",
-      "D-591"
-     ],
-     "cowork_target_architecture.md": [
-      "D-467"
-     ],
-     "cowork_uncertain_resolver_investigation.md": [
-      "D-629"
-     ],
-     "docs/architecture_joint_inference.md": [
-      "D-618",
-      "D-619",
-      "D-620",
-      "D-621"
-     ],
-     "docs/iter90_bass_as_root_promotion_shelved.md": [
-      "D-594",
-      "D-595"
-     ],
-     "docs/key_detection_baroque_partial_signature.md": [
-      "D-575"
-     ],
-     "docs/llm_integration.md": [
-      "D-442",
-      "D-443",
-      "D-444",
-      "D-445",
-      "D-446",
-      "D-447",
-      "D-448"
-     ],
-     "docs/nct_detection_design.md": [
-      "D-560"
-     ],
-     "docs/redesign_plan.md": [
-      "D-317",
-      "D-318",
-      "D-319",
-      "D-320"
      ]
     },
     "★_this_is_the_ENTRY_level_cut": "The population criterion C1 still reaches, per DECISION. Entries an entry-level ruling has already discharged are subtracted, and are listed below rather than silently absent.",
     "at_document_granularity_before_the_re_cut": {
-     "entries": 39,
-     "documents": 16,
+     "entries": 1,
+     "documents": 1,
      "why_it_is_kept": "So the movement is visible rather than inferred (#12). It is the figure this item published before ruling R3."
     },
     "discharged_by_an_entry_level_ruling": {},
     "entries_discharged": 0
    },
-   "why_it_is_outstanding": "D-432, the delegation bar — the strongest naming is a bare-appended-citation, which the bar does not admit",
+   "why_it_is_outstanding": "D-432, the delegation bar — the strongest naming is a provenance-attribution, which the bar does not admit",
    "gate": {
     "gates": true,
     "ground": "D-438's own line, quoted at CLAUDE.md: '… or the completion of a specification, GATES, because the phase-1 rule in Conventions makes specifications COMPLETE and TRUE the thing that precedes everything else.' Every item of the COMPLETE half is the completion of a specification.",
@@ -537,7 +466,7 @@
    "half": "TRUE",
    "criterion": "C3 — the specification text corrected wherever it states something false",
    "population": {
-    "rows": 36,
+    "rows": 35,
     "row_ids": [
      "OI-105",
      "OI-107",
@@ -561,7 +490,6 @@
      "OI-292",
      "OI-303",
      "OI-304",
-     "OI-305",
      "OI-309",
      "OI-311",
      "OI-315",
@@ -633,7 +561,6 @@
      "OI-99"
     ],
     "the row's own recorded words": [
-     "OI-305",
      "OI-309",
      "OI-311",
      "OI-319"
@@ -765,14 +692,14 @@
  "counted": {
   "items_on_the_finish_line": 9,
   "items_that_gate": 8,
-  "register_entries_owed_a_home": 87,
+  "register_entries_owed_a_home": 47,
   "register_entries_owed_a_defense": 44,
-  "open_rows_owed_on_the_true_half_that_gate": 36,
+  "open_rows_owed_on_the_true_half_that_gate": 35,
   "open_rows_owed_a_reach_verdict": 22,
   "items_with_a_closing_route_only_the_user_may_take": 3,
   "★_that_count_is_items_not_acts": "It counts items at least ONE of whose closing routes is the user's — not items the user alone can close. Items offering a user route and a session route are in it, because a reader deciding what to commission needs to see them.",
-  "register_entries_owed_a_home_at_document_granularity": 93,
-  "register_entries_discharged_by_an_entry_level_ruling": 6,
+  "register_entries_owed_a_home_at_document_granularity": 54,
+  "register_entries_discharged_by_an_entry_level_ruling": 7,
   "★_which_of_those_two_figures_is_the_finish_line": "The entry-level one, on ruling R3. The document-granularity figure is kept beside it so the movement is visible rather than inferred (#12), and it is the figure this artifact published before the re-cut.",
   "reconciliation": {
    "homing_items_cover_the_documentation_gap_class": true,

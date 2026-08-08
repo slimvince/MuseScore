@@ -1,0 +1,28 @@
+{
+  "purpose": "A run of tools/audit/process_check.py over named dispatches or reports. Generated so a report cites this file rather than transcribing what the check found (D-431).",
+  "rules": [
+    "D-431 bare quantity",
+    "D-431 uncited code claim",
+    "D-434 missing self-check section"
+  ],
+  "files_scanned": [
+    "cc_instruction_document_routes_and_d472.md"
+  ],
+  "findings_total": 1,
+  "by_file": {
+    "cc_instruction_document_routes_and_d472.md": {
+      "findings": 1,
+      "rows": [
+        {
+          "file": "cc_instruction_document_routes_and_d472.md",
+          "line": 53,
+          "rule": "D-431 bare quantity",
+          "detail": "sixteen documents",
+          "sentence": "- **F2.** The bar-excluded population at HEAD (sixteen documents, their entry lists):"
+        }
+      ]
+    }
+  },
+  "clean_files": [],
+  "establishment": "tools/audit/process_check_establishment.json — the check's measured detection power and false-positive rate. Read it before reading a count here as coverage."
+}

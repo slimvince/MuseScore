@@ -18,7 +18,7 @@
 
 **Status.** SUPERSEDED BY D-001 · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1553`
+**Home.** `ARCHITECTURE.md:1653`
 
 **Provenance.** The joint estimator now decides key on both surfaces (D-005, D-010). The Layer-3 section still reads 'Built+Live' - see OPEN_ITEMS OI-232
 
@@ -37,7 +37,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1575-1578`
+**Home.** `ARCHITECTURE.md:1675-1678`
 
 **Provenance.** ARCHITECTURE.md:1291-1296
 
@@ -54,7 +54,7 @@
 
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1589-1590`
+**Home.** `ARCHITECTURE.md:1689-1690`
 
 **Provenance.** On the switched build the note-seam funnel returns from the record arm before this fallback is reachable (notationcomposingbridge.cpp:728-738). The D-P4 revisit trigger (D-063) was never discharged
 
@@ -72,7 +72,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2920-2922`
+**Home.** `ARCHITECTURE.md:3095-3097`
 
 **Provenance.** ARCHITECTURE.md:2394-2395 (21 modes), :2213-2217 (harmonic major deferred)
 
@@ -89,7 +89,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:2868-2869`
+**Home.** `ARCHITECTURE.md:3043-3044`
 
 **Provenance.** ARCHITECTURE.md:2408-2410, :3020-3073. Superseded on the production path by D-003 (inference is preset-independent)
 
@@ -105,7 +105,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3865-3867`
+**Home.** `ARCHITECTURE.md:4040-4042`
 
 **Provenance.** ARCHITECTURE.md:3380-3392
 
@@ -119,7 +119,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3920`
+**Home.** `ARCHITECTURE.md:4095`
 
 **Provenance.** ARCHITECTURE.md:3396-3403. Cited by open_items/OI-228 as the primary source the joint emission departs from. NOT catchable by the harvest's signature net - the reason this adjudication had to read the specifications in full
 
@@ -136,7 +136,7 @@
 
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3885-3886`
+**Home.** `ARCHITECTURE.md:4060-4061`
 
 **Provenance.** ARCHITECTURE.md:3387-3392 calls it 'a deliberate pragmatic choice for the score opening, not a general bypass'. NOT catchable by the harvest's signature net ★ SUPERSEDED IN FACT — recorded 2026-08-04 (phase 1z, dispatch cc_instruction_phase1z_commit_and_instrument_record.md Task 3.4; OPEN_ITEMS.md OI-315). The mechanism this decision records was REMOVED from the code in Stage 4b-i on 2026-06-14: src/composing/analysis/key/keyresolver.cpp:291-301 states the removal in its own comment, and docs/key_path_design.md:65-73 dates it and names the re-targeted pins (Composing_KeyresolverTests.PieceStartOpening_NoteBased_DeclaredMinor/_DeclaredMajor). It is NOT falsified: nothing showed the decision wrong, a later BUILD replaced what it governs without a ruling that names it — which is what this register's status vocabulary calls superseded-in-fact. The ⚠ LEGACY mark STAYS: the subject is still the legacy key path, and the mark states what the decision is ABOUT. ★ Verbatim RE-TAKEN 2026-08-04 from the corrected specification text. The sentence this entry quoted — 'when the analysis tick is within the first 16 quarter-note beats (a separate constant from the 16-beat lookback window below — they coincide in value, not by design), no prior result exists (`prevResult == nullptr`), and the key signature carries an explicit mode, the function returns the declared mode immediately (confidence 0.5) rather than waiting for pitch evidence that cannot yet exist.' — was false at HEAD and is corrected in place at ARCHITECTURE.md §5.2, which now states that there is no piece-start exception, that the opening is note-based, and that the removal is tried and closed; the former wording is preserved here rather than deleted (#12). What did NOT change: the decision's own date and ratifier remain 'not stated', and no defense is supplied that the record never had.
 
@@ -152,7 +152,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3948`
+**Home.** `ARCHITECTURE.md:4123`
 
 **Provenance.** ARCHITECTURE.md:3423-3435; legacy-arm only since the switch (D-010). Derivation not recorded: the only stated basis for 16 and 8 is the in-code gloss '~4 measures in 4/4' / '~2 measures ahead' (ARCHITECTURE.md:3428-3429) - no theory citation and no measurement
 
@@ -174,7 +174,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:2874-2878`
+**Home.** `ARCHITECTURE.md:3049-3053`
 
 **Provenance.** ARCHITECTURE.md:2414-2418; the same guard is listed among the key-path scoring terms at :2480-2482 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -232,7 +232,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:1514-1516`
+**Home.** `ARCHITECTURE.md:1614-1616`
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md` (session 21j). The Layer-3 specification records the reach-back facility but not this shipped-default ruling. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written into the Layer-3 section of `ARCHITECTURE.md` §3.3, whose description of the dormant pipeline is the frame this ruling belongs in — the specification recorded the reach-back facility and not the shipped-default ruling, which is the gap the phase-1h note identified. Former home preserved (#12): `STATUS_ARCHIVE.md:232`, session 21j.
 
@@ -254,7 +254,7 @@
 
 **Home.** `docs/scoring_model.md:303-307`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **“`dim7CharacteristicBonus`”** — `### `dim7CharacteristicBonus` — `kDim7CharacteristicBonus = 0.75`` (heading at line 246). A delegation at CLAUDE.md:931 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **“`dim7CharacteristicBonus`”** — `### `dim7CharacteristicBonus` — `kDim7CharacteristicBonus = 0.75`` (heading at line 246). A delegation at CLAUDE.md:960 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.
 
@@ -284,7 +284,7 @@
 
 **Home.** `cowork_layer3_keymode_design.md:60-72`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§1** — `## 1. Introduction & purpose` (heading at line 52). A delegation at ARCHITECTURE.md:1387 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§1** — `## 1. Introduction & purpose` (heading at line 52). A delegation at ARCHITECTURE.md:1610 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -308,7 +308,7 @@
 
 **Home.** `cowork_layer3_keymode_design.md:129-133`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§1** — `## 1. Introduction & purpose` (heading at line 52). A delegation at ARCHITECTURE.md:1387 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§1** — `## 1. Introduction & purpose` (heading at line 52). A delegation at ARCHITECTURE.md:1610 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`, and the banner adds that the conditional sign-off was met by stating the recognized mode vocabulary explicitly — this passage is the other half of that statement. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -334,7 +334,7 @@
 
 **Home.** `cowork_layer3_keymode_design.md:153-159`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§2** — `## 2. Constraints` (heading at line 138). A delegation at ARCHITECTURE.md:1387 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§2** — `## 2. Constraints` (heading at line 138). A delegation at ARCHITECTURE.md:1610 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. **Flagged in the phase-1h report as an instance of the [[OI-275]] question** — it sits against **D-003** (inference is preset-independent; presets are presentation concerns), and the record contains no ruling that names either statement against the other. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ RATIFIED (user, 2026-08-02) UNDER THE OI-275 TRANSFER TREATMENT, as offered with the queue and adopted in the blanket ratification: the letter (the preset as a weak mode prior) stays home to the LEGACY Layer-3 path, LEGACY-marked; the live estimator is governed by D-003's measured preset-independence. The second instance of the OI-275 governing question, treated identically.
 
@@ -363,7 +363,7 @@
 
 **Home.** `cowork_layer3_keymode_design.md:230-239`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§5** — `## 5. Building-block view (static / internal structure)` (heading at line 224). A delegation at ARCHITECTURE.md:1387 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§5** — `## 5. Building-block view (static / internal structure)` (heading at line 224). A delegation at ARCHITECTURE.md:1610 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The date given is the date of the recorded ruling that the narrower alternative is to be settled by measurement and that the pooled rule is normative until then; the pooled rule itself is recorded as as-built and is not dated in the record. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -386,7 +386,7 @@
 
 **Home.** `cowork_layer3_keymode_design.md:307-310`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§9** — `## 9. Architecture decisions (with the alternatives we weighed)` (heading at line 295). A delegation at ARCHITECTURE.md:1387 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§9** — `## 9. Architecture decisions (with the alternatives we weighed)` (heading at line 295). A delegation at ARCHITECTURE.md:1610 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -414,7 +414,7 @@
 
 **Home.** `cowork_layer3_keymode_design.md:212-220`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§4** — `## 4. Solution strategy` (heading at line 206). A delegation at ARCHITECTURE.md:1387 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§4** — `## 4. Solution strategy` (heading at line 206). A delegation at ARCHITECTURE.md:1610 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -436,7 +436,7 @@
 
 **Home.** `cowork_layer3_keymode_design.md:311-313`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§9** — `## 9. Architecture decisions (with the alternatives we weighed)` (heading at line 295). A delegation at ARCHITECTURE.md:1387 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§9** — `## 9. Architecture decisions (with the alternatives we weighed)` (heading at line 295). A delegation at ARCHITECTURE.md:1610 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -458,7 +458,7 @@
 
 **Home.** `cowork_layer3_keymode_design.md:16-18`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Home section.** **the opening block (above the first section heading)** — `# Architectural Layer 3 — KEY/MODE — Architecture & Design` (heading at line 1). A delegation at ARCHITECTURE.md:1387 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `contract-home` to `gap`; the former class is kept here rather than overwritten (#12).
+**Home section.** **the opening block (above the first section heading)** — `# Architectural Layer 3 — KEY/MODE — Architecture & Design` (heading at line 1). A delegation at ARCHITECTURE.md:1610 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `contract-home` to `gap`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The record labels the closure `D-L3a` — a label from the document's own design-decision series, not a register identifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -479,7 +479,7 @@
 
 **Home.** `cowork_layer3_keymode_design.md:314-315`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§9** — `## 9. Architecture decisions (with the alternatives we weighed)` (heading at line 295). A delegation at ARCHITECTURE.md:1387 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§9** — `## 9. Architecture decisions (with the alternatives we weighed)` (heading at line 295). A delegation at ARCHITECTURE.md:1610 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -503,7 +503,7 @@
 
 **Home.** `cowork_layer3_keymode_design.md:321-327`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§10** — `## 10. Quality & testing` (heading at line 317). A delegation at ARCHITECTURE.md:1387 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§10** — `## 10. Quality & testing` (heading at line 317). A delegation at ARCHITECTURE.md:1610 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -526,7 +526,7 @@
 
 **Home.** `cowork_layer3_keymode_design.md:337-342`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§10** — `## 10. Quality & testing` (heading at line 317). A delegation at ARCHITECTURE.md:1387 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§10** — `## 10. Quality & testing` (heading at line 317). A delegation at ARCHITECTURE.md:1610 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -554,7 +554,7 @@
 
 **Home.** `cowork_layer3_keymode_design.md:402-410`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§11** — `## 11. Risks & technical debt` (heading at line 349). A delegation at ARCHITECTURE.md:1387 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§11** — `## 11. Risks & technical debt` (heading at line 349). A delegation at ARCHITECTURE.md:1610 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -581,7 +581,7 @@
 
 **Home.** `cowork_layer3_keymode_design.md:411-418`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§11** — `## 11. Risks & technical debt` (heading at line 349). A delegation at ARCHITECTURE.md:1387 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§11** — `## 11. Risks & technical debt` (heading at line 349). A delegation at ARCHITECTURE.md:1610 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -615,7 +615,7 @@
 
 **Home.** `cowork_layer3_keymode_design.md:383-397`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§11** — `## 11. Risks & technical debt` (heading at line 349). A delegation at ARCHITECTURE.md:1387 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§11** — `## 11. Risks & technical debt` (heading at line 349). A delegation at ARCHITECTURE.md:1610 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -644,7 +644,7 @@
 
 **Home.** `cowork_layer3_keymode_design.md:497-506`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§15** — `## 15. To do — deferred enhancements (this layer is built; these are revisions on record)` (heading at line 480). A delegation at ARCHITECTURE.md:1387 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§15** — `## 15. To do — deferred enhancements (this layer is built; these are revisions on record)` (heading at line 480). A delegation at ARCHITECTURE.md:1610 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The surrounding deferred-enhancement entry is recorded per the user, 2026-06-22; the measured placement conclusion quoted here names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -677,7 +677,7 @@
 
 **Home.** `cowork_layer3_keymode_design.md:507-520`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§15** — `## 15. To do — deferred enhancements (this layer is built; these are revisions on record)` (heading at line 480). A delegation at ARCHITECTURE.md:1387 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§15** — `## 15. To do — deferred enhancements (this layer is built; these are revisions on record)` (heading at line 480). A delegation at ARCHITECTURE.md:1610 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The record states the amendment (A-3) was ratified 2026-07-02 but does not name the ratifier at this home; the amendment set's own document banner is quoted in the phase-1g triage as `AMENDMENTS A-1…A-10 RATIFIED (user, 2026-07-02)`, and that document is in the phase-1h full-read set. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -723,7 +723,7 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `ARCHITECTURE.md:1848-1856`
+**Home.** `ARCHITECTURE.md:1997-2005`
 
 **Provenance.** Amendment A-4 of the external architecture review, in a document whose banner records amendments A-1…A-10 as RATIFIED by the user on 2026-07-02. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) ★ NOT A FRESH DECISION, stated so that nothing is counted twice (dispatch cc_instruction_reads_3.md §1.3): the amendment itself was ratified by the user at the 2026-07-02 architecture review, which is what this entry's Status line already records. Ratifying the ENTRY records only that the register transcribes that ratification correctly — it neither re-makes the decision nor adds a second ratification event to it. Its sibling A-3 is already registered as **D-358** (deferred); this amendment has no register entry and no product located by this wave. ★ HOMED 2026-08-07 (CC, the owner-rulings homing wave, executing the user's ruling of 2026-08-07 recorded at `cowork_owner_rulings_2026_08_07.md`) — SPLIT ACROSS TWO HOMES, on the user's ruling that A-4's two separable obligations each sit at their own layer and cross-point. ★ BOTH HOMES ARE RECORDED HERE, which is what the ruling requires of the register entry: (1) the cadence-less key-confirmation channels are written into the `ARCHITECTURE.md` LAYER-5 section, and that is the home the `home` field anchors, because the amendment's headline obligation is Layer 5's; (2) the enharmonic-identity rule for key spans is written into the `ARCHITECTURE.md` LAYER-3 section, in the block of four Layer-3 rules this wave added, and each of the two blocks names the other so a reader arriving at either finds both. The `home` field carries ONE parseable anchor because the register's own machinery parses it as `file:line-line`; the second home is recorded in this field rather than in a second anchor, and the two blocks' cross-pointing is what keeps the split findable from the specification (criterion C4). Both halves are DESIGN-ONLY and are written as obligations the layers owe, never as mechanisms they have. Assumption A1 discharged for both destinations before writing. FORMER HOME, PRESERVED (#12): `cowork_architecture_review_2026_07.md:320-323`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 307, "section": "## 9. Proposed amendments (ranked; each ratification-gated; none is code)", "label": "§9", "delegated": null, "delegation": "named in no user-ratified surface", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "- **A-4 (from F-10, F-14). Specify cadence-less key-confirmation channels in §5.3** — sustained dominant emphasis
   (arrival-denied dominants), recognized transposition sequences (the recognition consumer as a §5.3 input — synergy
@@ -771,7 +771,7 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `ARCHITECTURE.md:3903-3912`
+**Home.** `ARCHITECTURE.md:4078-4087`
 
 **Provenance.** ★ HOMED 2026-08-04 (CC, dispatch `cc_instruction_guard_fix_and_item1d.md`, Task 2.2) UNDER RULING R2 / register entry **D-644**: where a superseded decision's content is a REMOVAL there is no successor to move the obligation to (D-642's condition cannot be met), so the owning specification STATES THE CURRENT BEHAVIOUR and RECORDS THE REMOVAL AS A TRIED-AND-CLOSED LINE. **This is the precedent's own act, performed for the sibling removal that landed at the same increment:** D-058 was corrected in `ARCHITECTURE.md` §5.2 at phase 1z in exactly this form. Both halves are now present there — §5.2 already stated the current behaviour (the promotion 'was removed in the same increment', with the declared mode reaching the analysis only as a small hint at every tick), written when D-058 was corrected; what this act adds is the tried-and-closed line, in that section's own voice and WITH ITS DEFENSE. The verbatim is RE-TAKEN from that line. **THE FORMER HOME, CLASS AND VERBATIM, PRESERVED (#12)** — former home `docs/stage4b_design.md:57-63`, §2.2 'The hard post-hoc promotion → REMOVED (OQ1)'; former class `gap`, cleared because a layer-specification home is not a non-specification home; former verbatim: "- **Current** [code]: `keyresolver.cpp:344-367` (\"Strong declared-mode prior\") promotes the highest-ranked declared-compatible result to the front **regardless of score gap** — a hard veto (\"the composer's intent overrides note-content inference\").\n- **Change:** **remove it outright.** It is incompatible with \"note-based primary.\" Leaving it would make §2.1's demotion a no-op wherever note inference already out-scored the declared mode but got vetoed here. The residual declared influence is now *only* the small hint in §2.1." — from `docs/stage4b_design.md`, the Stage-4b design implementing the user's ratified Stage-4 redirect; the staged approach was chosen by the user 2026-06-14, and the document was read in full by READ WAVE 4, 2026-08-04. **What did NOT change: the STATUS.** It remains `superseded-in-fact`, exactly as D-058's did through the identical act — R2 says what the specification owes, not what the register records. **Its subject is the LEGACY key path** (`keymodeanalyzer` / `keyresolver`), which the joint estimator replaced on both surfaces; the ⚠ LEGACY mark stays, because it states what the decision is ABOUT. Landed at the same event as **D-571**. The piece-start shortcut removed alongside it is **D-058**, already recorded *superseded in fact* (`OPEN_ITEMS.md` OI-315) — the Stage-4b design is a second, independent source for that removal and dates it the same way.
 
@@ -779,18 +779,17 @@
 
 ⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
-> **RESOLVED 2026-06-03 by commit `81978321e3` (`fix(keyresolver): Option B
-> Baroque partial-signature correction`), in HEAD.** Option B from §4 below was
-> implemented: the resolver now detects the partial-signature convention (♭6
-> pervasive ≥3% of sounding weight AND dominating ♮6 by ≥2×) and reinterprets the
-> signature one step toward the missing accidental (minor −1 flat / major +1 sharp)
-> for the whole of `resolveKeyAndModeRanked`. Corelli `op01n08d` is now detected as
-> **C minor at rank 0 for every region** (verified live 2026-06-08,
-> `cc_step3_key_investigation_report.md` Part C); G minor no longer appears at any
-> rank. The body below documents the **pre-fix** state and is retained for history.
-> The residual `op01n08d` test symptoms (§"three remaining symptoms") are
-> quality / inversion / segmentation issues, **not** key detection — see the commit
-> message of `81978321e3` for the post-fix status of each.
+> **★ THE BAROQUE PARTIAL-SIGNATURE CONVENTION IS HANDLED BY DETECTING IT AND REINTERPRETING THE
+> SIGNATURE ONE STEP, NEVER BY WIDENING THE CANDIDATE FAMILY FOR EVERY SCORE (re-homed into this
+> specification 2026-08-08 on the user's ruling). ⚠ LEGACY, AND SUPERSEDED IN FACT: the correction is
+> applied inside the legacy resolver, which the production arm no longer runs; no ruling superseded
+> it, a later build replaced what it governs. Whether the joint estimator handles the convention AT
+> ALL is NOT settled by this entry and is not asserted here.** Baroque scores are often notated with
+> one accidental fewer than the modern convention, so the sounding key sits one step to the sharp side
+> of anything a signature-faithful reading could name. The adopted handling DETECTS that situation —
+> the flattened sixth degree pervasive across the sounding weight and dominating its natural form —
+> and reinterprets the written signature one step toward the missing accidental for the whole
+> resolution.
 
 **In plain words.** Baroque scores are often written with one accidental fewer than the modern convention, so the true key sits one step to the sharp side of anything the analysis could name. The fix adopted detects that situation — the flattened sixth degree being pervasive and dominating its natural form — and reinterprets the written signature accordingly. The alternative considered and not taken was to let every score choose from two signature families, which would have added a competitor to correctly-written music as well.
 
@@ -800,18 +799,31 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `docs/key_detection_baroque_partial_signature.md:3-14`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:1760-1776`
 
-**Home section.** **the opening block (above the first section heading)** — `# Key/Mode Detection — Baroque Partial-Signature Weakness` (heading at line 1). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit**.
-
-**Provenance.** `docs/key_detection_baroque_partial_signature.md`, the 2026-05-23 read-only investigation and its resolution banner. Read in full by READ WAVE 4, 2026-08-04. The banner records the fix as landed at commit `81978321e3` and verified live on the anchor case. **Its subject is the LEGACY key path** — the correction is applied inside `resolveKeyAndModeRanked`, which the production arm no longer runs. Recorded *superseded in fact*: no ruling names it; a later build replaced what it governs. Whether the joint estimator handles the partial-signature convention at all is NOT settled by this entry and is not asserted here. The record states no ratifier.
+**Provenance.** `docs/key_detection_baroque_partial_signature.md`, the 2026-05-23 read-only investigation and its resolution banner. Read in full by READ WAVE 4, 2026-08-04. The banner records the fix as landed at commit `81978321e3` and verified live on the anchor case. **Its subject is the LEGACY key path** — the correction is applied inside `resolveKeyAndModeRanked`, which the production arm no longer runs. Recorded *superseded in fact*: no ruling names it; a later build replaced what it governs. Whether the joint estimator handles the partial-signature convention at all is NOT settled by this entry and is not asserted here. The record states no ratifier. ★ HOMED 2026-08-08 (CC, executing the user's document-route ruling of 2026-08-08, route (ii), which routes it to *its legacy family's home, superseded-in-fact status and ⚠ LEGACY mark intact*). That family's home is the Layer-3 section of `ARCHITECTURE.md`, where the 2026-08-07 wave homed **D-616** under the same treatment — a legacy key-path decision written into the key layer's specification with the arm mark on it. BOTH MARKS ARE WRITTEN INTO THE HOME TEXT rather than left in this field: the ⚠ LEGACY scope and the superseded-in-fact status, together with the not-asserted clause about the joint estimator, so a reader of the specification meets them with the rule. THE COMMIT HASH AND THE ANCHOR CASE ARE NOT CARRIED ACROSS — D-307 forbids pinning a specification to a code coordinate, and the thresholds are values, so both stay in the record (D-431). FORMER HOME, PRESERVED (#12): `docs/key_detection_baroque_partial_signature.md:3-14`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 1, "section": "# Key/Mode Detection — Baroque Partial-Signature Weakness", "label": "the opening block (above the first section heading)", "delegated": null, "delegation": "CLAUDE.md:519", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "> **RESOLVED 2026-06-03 by commit `81978321e3` (`fix(keyresolver): Option B
+> Baroque partial-signature correction`), in HEAD.** Option B from §4 below was
+> implemented: the resolver now detects the partial-signature convention (♭6
+> pervasive ≥3% of sounding weight AND dominating ♮6 by ≥2×) and reinterprets the
+> signature one step toward the missing accidental (minor −1 flat / major +1 sharp)
+> for the whole of `resolveKeyAndModeRanked`. Corelli `op01n08d` is now detected as
+> **C minor at rank 0 for every region** (verified live 2026-06-08,
+> `cc_step3_key_investigation_report.md` Part C); G minor no longer appears at any
+> rank. The body below documents the **pre-fix** state and is retained for history.
+> The residual `op01n08d` test symptoms (§\"three remaining symptoms\") are
+> quality / inversion / segmentation issues, **not** key detection — see the commit
+> message of `81978321e3` for the post-fix status of each." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance is recorded in this field and NOT in the specification text (the OI-330 / OI-328 lesson).
 
 ### D-587 — A user-facing preset presents as a familiar genre-era label plus exemplars the user knows — never as an idiom name or an obscure exemplar; genre names are LABELS over mixtures, never axes
 
-> 2. **Naming: exemplar anchoring, genre-era labels.** A preset presents as a familiar label + exemplars users
->    know ("60s pop — The Beatles"), never as an idiom name or an obscure exemplar ("Hiromi means nothing to most
->    people" — user). Genre names are LABELS over mixtures, never axes (the study's own result: era/genre is not
->    the structure — Baroque/galant/Classical share idiom #2).
+> - **A preset presents as a familiar genre-era label plus exemplars the user knows — never as an
+>   idiom name and never as an obscure exemplar; genre names are LABELS over mixtures, never axes.**
+>   A preset is named after a period and style a user recognises, anchored by musicians they know
+>   ("60s pop — The Beatles"); it is never named after one of the five idioms, and never after an
+>   exemplar most people have not heard of. *Why:* the second half is measured and is §6.7's own
+>   result — harmony is not organised by genre, and Baroque, galant and Classical share one idiom —
+>   so a genre name cannot be an axis without asserting a structure the data denies. The exemplar half
+>   is the user's own reason: an exemplar nobody recognises conveys nothing.
 
 **In plain words.** What a user picks is named after a period and style they recognise, anchored by musicians they know. It is never named after one of the five structural idioms, and never after an exemplar most people have not heard of. The genre name is only a label for a blend of idioms — genre is not one of the things the analysis is organised by.
 
@@ -821,24 +833,23 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_style_taxonomy_proposal.md:96-99`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:5346-5353`
 
-**Home section.** **§6** — `## 6. The user-facing preset layer — the EXEMPLAR/GENRE proposal (user, 2026-07-05; RECORDED, deferred product work)` (heading at line 87). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit**.
-
-**Provenance.** `cowork_style_taxonomy_proposal.md`, RATIFIED 2026-06-30 and EXECUTED at the StyleTag swap 2026-07-02. Read in full by READ WAVE 5, 2026-08-04. Recorded in §6, the user's EXEMPLAR/GENRE proposal of 2026-07-05, marked RECORDED and DEFERRED product work. **D-131** already carries the five-idiom taxonomy itself; this is the separate rule for how a preset built over it is NAMED, which no other home carries.
+**Provenance.** `cowork_style_taxonomy_proposal.md`, RATIFIED 2026-06-30 and EXECUTED at the StyleTag swap 2026-07-02. Read in full by READ WAVE 5, 2026-08-04. Recorded in §6, the user's EXEMPLAR/GENRE proposal of 2026-07-05, marked RECORDED and DEFERRED product work. **D-131** already carries the five-idiom taxonomy itself; this is the separate rule for how a preset built over it is NAMED, which no other home carries. ★ HOMED 2026-08-08 (CC, executing the user's document-route ruling of 2026-08-08, route (ii)). Routed into the style-system family: `ARCHITECTURE.md` §6 gains a section for the user-facing preset layer, §6.8, which is where the five preset-layer decisions now live together. THE RECORDED/DEFERRED STATUS RIDES ALONG and is stated in that section's own status line, so no reader takes a deferred product decision for a built one. FORMER HOME, PRESERVED (#12): `cowork_style_taxonomy_proposal.md:96-99`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 87, "section": "## 6. The user-facing preset layer — the EXEMPLAR/GENRE proposal (user, 2026-07-05; RECORDED, deferred product work)", "label": "§6", "delegated": null, "delegation": "ARCHITECTURE.md:4738", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "2. **Naming: exemplar anchoring, genre-era labels.** A preset presents as a familiar label + exemplars users
+   know (\"60s pop — The Beatles\"), never as an idiom name or an obscure exemplar (\"Hiromi means nothing to most
+   people\" — user). Genre names are LABELS over mixtures, never axes (the study's own result: era/genre is not
+   the structure — Baroque/galant/Classical share idiom #2)." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance is recorded in this field and NOT in the specification text (the OI-330 / OI-328 lesson).
 
 ### D-588 — Preset coverage beyond the analysed corpora is three tiers with NO bare guessing — measured, editorially declared with a stated theory rationale, or self-correcting by detection
 
-> 3. **Coverage beyond the analyzed set — three tiers, no bare guessing:**
->    - **Measured:** the held research corpora already cover much of the user's example list — CoCoPops =
->      Billboard charts (60s pop, disco); HookTheory = modern pop; the WJD carries per-solo style tags
->      (dixieland/swing/bebop/postbop); iRb = the standards/crooner book. Per-genre mixtures are computable
->      from existing tags.
->    - **Declared:** genres with no held data (metal, shoegaze, grunge, hiphop, funk…) get an EDITORIALLY
->      DECLARED mixture with a stated theory rationale (e.g. metal ≈ triadic-modal with high power-chord
->      admissibility — the L4 §15 O4 constant is the metal-facing knob), validated when data arrives.
->    - **Self-correcting:** the §4-4 auto-detection makes any preset a cold-start prior the score itself
->      refines — mis-picked presets degrade gracefully, which is what makes declared mixtures shippable.
+> - **Coverage beyond the analysed music is three tiers with NO bare guessing — measured, editorially
+>   declared with a stated theory rationale, or self-correcting by detection.** A style we hold
+>   annotated music for gets its mixture measured from that music. A style we hold none for gets a
+>   mixture written down deliberately with its theory reason stated, and validated when data arrives.
+>   Either way the analysis moves away from the starting mixture as it reads the actual music. *Why:*
+>   the third tier is what licenses the second — because a preset is only a cold-start prior the music
+>   itself refines, a declared mixture that is somewhat wrong degrades gracefully; without the
+>   self-correction the declared tier would be an unvalidated shipped value (#19).
 
 **In plain words.** A style we hold annotated music for gets its blend measured from that music. A style we hold none for gets a blend written down deliberately, with the theory reason for it stated, and checked when data arrives. Either way the analysis moves away from the starting blend as it reads the actual score, so a badly chosen preset degrades gently rather than being wrong throughout.
 
@@ -848,19 +859,30 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_style_taxonomy_proposal.md:100-109`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:5354-5361`
 
-**Home section.** **§6** — `## 6. The user-facing preset layer — the EXEMPLAR/GENRE proposal (user, 2026-07-05; RECORDED, deferred product work)` (heading at line 87). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit**.
-
-**Provenance.** `cowork_style_taxonomy_proposal.md`, RATIFIED 2026-06-30 and EXECUTED at the StyleTag swap 2026-07-02. Read in full by READ WAVE 5, 2026-08-04. Recorded in §6-3 of the user's 2026-07-05 proposal, RECORDED and deferred as product work.
+**Provenance.** `cowork_style_taxonomy_proposal.md`, RATIFIED 2026-06-30 and EXECUTED at the StyleTag swap 2026-07-02. Read in full by READ WAVE 5, 2026-08-04. Recorded in §6-3 of the user's 2026-07-05 proposal, RECORDED and deferred as product work. ★ HOMED 2026-08-08 (CC, executing the user's document-route ruling of 2026-08-08, route (ii)) into `ARCHITECTURE.md` §6.8, the new preset-layer section of the style-system family, with the RECORDED/DEFERRED status stated in that section's own status line. THE NAMED CORPORA AND THE NAMED GENRES ARE NOT CARRIED ACROSS: the rule is what is homed, and a list of which held corpora happen to cover which genre today is a state of the holdings rather than a rule (it stays in the proposal, #12). FORMER HOME, PRESERVED (#12): `cowork_style_taxonomy_proposal.md:100-109`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 87, "section": "## 6. The user-facing preset layer — the EXEMPLAR/GENRE proposal (user, 2026-07-05; RECORDED, deferred product work)", "label": "§6", "delegated": null, "delegation": "ARCHITECTURE.md:4738", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "3. **Coverage beyond the analyzed set — three tiers, no bare guessing:**
+   - **Measured:** the held research corpora already cover much of the user's example list — CoCoPops =
+     Billboard charts (60s pop, disco); HookTheory = modern pop; the WJD carries per-solo style tags
+     (dixieland/swing/bebop/postbop); iRb = the standards/crooner book. Per-genre mixtures are computable
+     from existing tags.
+   - **Declared:** genres with no held data (metal, shoegaze, grunge, hiphop, funk…) get an EDITORIALLY
+     DECLARED mixture with a stated theory rationale (e.g. metal ≈ triadic-modal with high power-chord
+     admissibility — the L4 §15 O4 constant is the metal-facing knob), validated when data arrives.
+   - **Self-correcting:** the §4-4 auto-detection makes any preset a cold-start prior the score itself
+     refines — mis-picked presets degrade gracefully, which is what makes declared mixtures shippable." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance is recorded in this field and NOT in the specification text (the OI-330 / OI-328 lesson).
 
 ### D-589 — Every idiom mixture is selectable and the discovered cloud is the EVIDENCE MAP, not the boundary — each chosen point carries its evidence status
 
-> - **Backward — every mixture is selectable; the discovered cloud is the EVIDENCE MAP, not the boundary.**
->   Named presets = cluster centroids (progressive disclosure); a custom selector admits ANY simplex point
->   (E-14 zero information loss). Each chosen point carries an evidence status: inside a discovered cluster
->   (validated) · between clusters (interpolation) · outside the cloud (extrapolation — selectable, marked
->   empirically-unvalidated; the A-7-mark pattern generalized to mixture space).
+> - **Every idiom mixture is selectable, and the discovered cloud is the EVIDENCE MAP rather than the
+>   boundary — each chosen point carries its evidence status.** Named presets are cluster centroids
+>   for progressive disclosure; a custom selector admits any point in the mixture space. Where the
+>   chosen point sits relative to the music actually measured decides what may be claimed about it:
+>   inside a discovered cluster it is validated, between clusters it is an interpolation, outside the
+>   cloud it is still selectable but marked empirically unvalidated. *Why:* two standing rules
+>   combined — no information loss (#12), since restricting the user to the discovered centroids would
+>   discard every point between them, and the empirically-unvalidated mark, which lets a value outside
+>   the measured range be offered without being presented as established (#19).
 
 **In plain words.** A user may set any blend of the five idioms, not only the named ones. Where the chosen blend sits relative to the music we actually measured decides what may be claimed about it: inside a measured cluster it is validated, between clusters it is an interpolation, and outside everything measured it is still selectable but is marked as never having been checked against real music.
 
@@ -870,27 +892,32 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_style_taxonomy_proposal.md:128-132`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:5362-5370`
 
-**Home section.** **§6a** — `### 6a. The bidirectional preset⇄mixture contract (user, 2026-07-05; RECORDED with §6)` (heading at line 122). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit**.
-
-**Provenance.** `cowork_style_taxonomy_proposal.md`, RATIFIED 2026-06-30 and EXECUTED at the StyleTag swap 2026-07-02. Read in full by READ WAVE 5, 2026-08-04. Recorded in §6a, the bidirectional preset-to-mixture contract, user 2026-07-05. The marking pattern it generalises is **D-497** (the empirically-unvalidated mark applied to the Jazz preset constants).
+**Provenance.** `cowork_style_taxonomy_proposal.md`, RATIFIED 2026-06-30 and EXECUTED at the StyleTag swap 2026-07-02. Read in full by READ WAVE 5, 2026-08-04. Recorded in §6a, the bidirectional preset-to-mixture contract, user 2026-07-05. The marking pattern it generalises is **D-497** (the empirically-unvalidated mark applied to the Jazz preset constants). ★ HOMED 2026-08-08 (CC, executing the user's document-route ruling of 2026-08-08, route (ii)) into `ARCHITECTURE.md` §6.8, with the RECORDED/DEFERRED status stated in that section's own status line. FORMER HOME, PRESERVED (#12): `cowork_style_taxonomy_proposal.md:128-132`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 122, "section": "### 6a. The bidirectional preset⇄mixture contract (user, 2026-07-05; RECORDED with §6)", "label": "§6a", "delegated": null, "delegation": "ARCHITECTURE.md:4738", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "- **Backward — every mixture is selectable; the discovered cloud is the EVIDENCE MAP, not the boundary.**
+  Named presets = cluster centroids (progressive disclosure); a custom selector admits ANY simplex point
+  (E-14 zero information loss). Each chosen point carries an evidence status: inside a discovered cluster
+  (validated) · between clusters (interpolation) · outside the cloud (extrapolation — selectable, marked
+  empirically-unvalidated; the A-7-mark pattern generalized to mixture space)." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance is recorded in this field and NOT in the specification text (the OI-330 / OI-328 lesson).
 
 ### D-590 — The score's own metadata is the PRIMARY home of that score's idiom mixture, and a user-set mixture is never silently overwritten by re-detection
 
-> - **The mixture's PRIMARY persistence home = the score itself (user, 2026-07-05).** Store the score's
->   idiom mixture in the score's own metadata — MuseScore already supports user-defined score properties
->   alongside title/composer (the metaTag mechanism, saved inside .mscz/.mscx). Consequences: the mixture
->   TRAVELS with the file (no separate registry needed for per-score behavior); re-analysis seeds from it
->   (the §4-4 cold-start prior becomes a warm start); "save as named preset" then reads FROM the score
->   property (per-score setting vs reusable preset = two homes for the same mixture object, score-first).
->   Requirements recorded now: (1) **provenance on the stored value** — auto-detected (analyzer
->   version + date) vs user-set; a USER-set mixture is never silently overwritten by re-detection (the
->   no-surprise rule), an auto-detected one may be refreshed; (2) **staleness** — a score edited after
->   detection marks the stored mixture refreshable; (3) **interchange caveat** — user-defined properties
->   survive the native format; MusicXML round-trip of custom metadata is partial and needs its own check
->   before the feature relies on it; (4) the property schema (one namespaced JSON-valued tag vs several
->   tags) is an implementation decision at build time, not now.
+> - **The music's own metadata is the PRIMARY home of that piece's idiom mixture, and a user-set
+>   mixture is never silently overwritten by re-detection.** The mixture is stored in the score's own
+>   user-defined properties, the mechanism MuseScore already saves beside title and composer, so it
+>   travels with the file and a later analysis starts warm rather than cold. The stored value records
+>   its provenance — auto-detected, with the analyzer version and date, or user-set: a user-set
+>   mixture is never silently replaced, an auto-detected one may be refreshed, and an edit after
+>   detection marks the stored mixture refreshable. *Why:* storing it with the music removes the need
+>   for a separate registry for per-piece behaviour and turns re-analysis into a warm start; the
+>   no-silent-overwrite half is the no-surprise rule. **Two things are recorded rather than assumed
+>   away:** custom properties survive the native format but their MusicXML round-trip is only partial
+>   and needs its own check before the feature relies on it; and the property layout is an
+>   implementation decision at build time. **This sits against §13.1's rule that our data lives in
+>   separate files inside the archive and the score file is never touched** — the two are not in
+>   conflict on their own terms, since this uses MuseScore's existing property mechanism rather than
+>   extending the file's own schema, but a build must reconcile them explicitly and neither record
+>   does.
 
 **In plain words.** A piece's blend of idioms is stored inside the piece's own file, using the score properties MuseScore already saves beside title and composer. So it travels with the file and a later analysis starts warm instead of cold. The stored value records whether a person set it or the program detected it: a person's setting is never quietly replaced, a detected one may be refreshed, and editing the score marks it as due for refresh.
 
@@ -900,17 +927,33 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_style_taxonomy_proposal.md:140-152`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:5371-5386`
 
-**Home section.** **§6a** — `### 6a. The bidirectional preset⇄mixture contract (user, 2026-07-05; RECORDED with §6)` (heading at line 122). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit**.
-
-**Provenance.** `cowork_style_taxonomy_proposal.md`, RATIFIED 2026-06-30 and EXECUTED at the StyleTag swap 2026-07-02. Read in full by READ WAVE 5, 2026-08-04. Recorded in §6a, user 2026-07-05, as RECORDED and deferred product work. It sits against **D-158**, which rules that OUR data lives in separate files inside the score archive and the score file is never touched — the two are not in conflict on their own terms (this uses MuseScore's OWN existing score-property mechanism rather than adding to the score file's schema), but a build would have to reconcile them explicitly and neither record does.
+**Provenance.** `cowork_style_taxonomy_proposal.md`, RATIFIED 2026-06-30 and EXECUTED at the StyleTag swap 2026-07-02. Read in full by READ WAVE 5, 2026-08-04. Recorded in §6a, user 2026-07-05, as RECORDED and deferred product work. It sits against **D-158**, which rules that OUR data lives in separate files inside the score archive and the score file is never touched — the two are not in conflict on their own terms (this uses MuseScore's OWN existing score-property mechanism rather than adding to the score file's schema), but a build would have to reconcile them explicitly and neither record does. ★ HOMED 2026-08-08 (CC, executing the user's document-route ruling of 2026-08-08, route (ii)) into `ARCHITECTURE.md` §6.8, with the RECORDED/DEFERRED status stated in that section's own status line. THE TENSION WITH D-158 IS CARRIED INTO THE HOME TEXT rather than left in this field alone, because a reader of the rule needs to meet it (#12); it is stated as a pointer to §13.1, which is D-158's home, and not as a second copy of that rule (#6). FORMER HOME, PRESERVED (#12): `cowork_style_taxonomy_proposal.md:140-152`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 122, "section": "### 6a. The bidirectional preset⇄mixture contract (user, 2026-07-05; RECORDED with §6)", "label": "§6a", "delegated": null, "delegation": "ARCHITECTURE.md:4738", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "- **The mixture's PRIMARY persistence home = the score itself (user, 2026-07-05).** Store the score's
+  idiom mixture in the score's own metadata — MuseScore already supports user-defined score properties
+  alongside title/composer (the metaTag mechanism, saved inside .mscz/.mscx). Consequences: the mixture
+  TRAVELS with the file (no separate registry needed for per-score behavior); re-analysis seeds from it
+  (the §4-4 cold-start prior becomes a warm start); \"save as named preset\" then reads FROM the score
+  property (per-score setting vs reusable preset = two homes for the same mixture object, score-first).
+  Requirements recorded now: (1) **provenance on the stored value** — auto-detected (analyzer
+  version + date) vs user-set; a USER-set mixture is never silently overwritten by re-detection (the
+  no-surprise rule), an auto-detected one may be refreshed; (2) **staleness** — a score edited after
+  detection marks the stored mixture refreshable; (3) **interchange caveat** — user-defined properties
+  survive the native format; MusicXML round-trip of custom metadata is partial and needs its own check
+  before the feature relies on it; (4) the property schema (one namespaced JSON-valued tag vs several
+  tags) is an implementation decision at build time, not now." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance is recorded in this field and NOT in the specification text (the OI-330 / OI-328 lesson).
 
 ### D-591 — The licence split for the style system: the ANCHORS are the shipped licence-constrained fitted parameters, and the mixture weights are free user configuration
 
-> - **License split, resolved cleanly:** the ANCHORS are the shipped license-constrained fitted parameters;
->   MIXTURE WEIGHTS are user configuration (free); only OUR shipped named-preset defaults carry the §6-4
->   derivation constraint (licensed-pool-derived or editorially declared, NC-validated).
+> - **The licence split: the ANCHORS are the shipped licence-constrained fitted parameters, and the
+>   mixture weights are free user configuration.** The constraint that a value which SHIPS may be
+>   fitted only on freely-licensed music reaches the per-idiom anchors, not the mixture a user chooses
+>   over them; a user's own mixture carries no constraint at all, and only the mixtures we ship as
+>   named preset defaults must be derived from a licensed pool or editorially declared. *Why:* it
+>   follows from what each half is — an anchor is a fitted parameter compiled into the product, so the
+>   fitting-pool constraint reaches it, while a mixture weight the user selects is configuration
+>   derived from no corpus at all. This REFINES the fitting-pool constraint by saying which half of
+>   the style system it reaches; it does not weaken it.
 
 **In plain words.** The licensing rule that limits which music our shipped numbers may be fitted on applies to the per-idiom reference values, not to the blend a user chooses over them. A user's own blend carries no constraint at all; only the blends we ship as named defaults must come from freely-licensed music or be declared editorially.
 
@@ -920,17 +963,23 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_style_taxonomy_proposal.md:133-135`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:5387-5395`
 
-**Home section.** **§6a** — `### 6a. The bidirectional preset⇄mixture contract (user, 2026-07-05; RECORDED with §6)` (heading at line 122). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit**.
-
-**Provenance.** `cowork_style_taxonomy_proposal.md`, RATIFIED 2026-06-30 and EXECUTED at the StyleTag swap 2026-07-02. Read in full by READ WAVE 5, 2026-08-04. Recorded in §6a. It REFINES **D-292** (the fitting-pool licence constraint — values that ship are fitted only on freely-licensed music) by saying which half of the style system that constraint reaches; it does not weaken it.
+**Provenance.** `cowork_style_taxonomy_proposal.md`, RATIFIED 2026-06-30 and EXECUTED at the StyleTag swap 2026-07-02. Read in full by READ WAVE 5, 2026-08-04. Recorded in §6a. It REFINES **D-292** (the fitting-pool licence constraint — values that ship are fitted only on freely-licensed music) by saying which half of the style system that constraint reaches; it does not weaken it. ★ HOMED 2026-08-08 (CC, executing the user's document-route ruling of 2026-08-08, route (ii)) into `ARCHITECTURE.md` §6.8, with the RECORDED/DEFERRED status stated in that section's own status line. The fitting-pool constraint itself is NOT restated at the new home (#6) — it is stated once at the joint estimator's standing rule (e) — and the refinement is written as a refinement. FORMER HOME, PRESERVED (#12): `cowork_style_taxonomy_proposal.md:133-135`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 122, "section": "### 6a. The bidirectional preset⇄mixture contract (user, 2026-07-05; RECORDED with §6)", "label": "§6a", "delegated": null, "delegation": "ARCHITECTURE.md:4738", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "- **License split, resolved cleanly:** the ANCHORS are the shipped license-constrained fitted parameters;
+  MIXTURE WEIGHTS are user configuration (free); only OUR shipped named-preset defaults carry the §6-4
+  derivation constraint (licensed-pool-derived or editorially declared, NC-validated)." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance is recorded in this field and NOT in the specification text (the OI-330 / OI-328 lesson).
 
 ### D-598 — The style taxonomy and the per-style weights are ONE data-derived object; VALIDATION is a separate third thing that needs annotated scores and is not delivered by the clustering
 
-> The **taxonomy and the weights are one data-derived object** (the clusters and their distributions). **Validation** —
-> measuring our analyzer's *use* of a style — is a **separate third thing** that needs annotated *scores* (notes + a
-> ground-truth analysis), not the clustering.
+> - **The taxonomy and the per-style weights are ONE data-derived object; VALIDATION is a separate
+>   third thing the clustering does not deliver.** Discovering which idioms exist and estimating how
+>   strongly each one weighs are not two derivations: the clusters and their feature distributions
+>   are the same object read two ways. Measuring whether the analysis actually improves when it uses
+>   an idiom is a THIRD job, and it needs annotated music — notes together with a published human
+>   analysis — which the clustering does not supply. *Why:* it follows from what a cluster is, so no
+>   second derivation produces the weights; and the separation is forced by what validation measures,
+>   the analysis's USE of an idiom, which cannot be observed without a human analysis to compare
+>   against.
 
 **In plain words.** Discovering which styles exist and measuring how strongly each one weighs are not two jobs — they are the clusters and their distributions, one result. Checking whether the analysis actually gets better when it uses a style is a third, separate job, and it needs music with both the notes and a published human analysis, which the clustering does not supply.
 
@@ -940,11 +989,11 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_style_clustering_plan.md:16-18`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:5304-5312`
 
-**Home section.** **§1** — `## 1. What it is` (heading at line 9). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit**.
-
-**Provenance.** `cowork_style_clustering_plan.md`, committed future direction, user-ratified 2026-06-29. Read in full by READ WAVE 5, 2026-08-04. It is why **D-132** records the weights half as the REMAINING empirical grounding after the five-idiom set was ratified: the same clustering delivers both, and only the second is still owed. The document's licensing rule is **D-292** and is not re-entered here (#6).
+**Provenance.** `cowork_style_clustering_plan.md`, committed future direction, user-ratified 2026-06-29. Read in full by READ WAVE 5, 2026-08-04. It is why **D-132** records the weights half as the REMAINING empirical grounding after the five-idiom set was ratified: the same clustering delivers both, and only the second is still owed. The document's licensing rule is **D-292** and is not re-entered here (#6). ★ HOMED 2026-08-08 (CC, executing the user's document-route ruling of 2026-08-08, route (ii)). Routed to `ARCHITECTURE.md` §6.7, the section that owns the taxonomy this decision is about, in that section's own voice and with its defense. FORMER HOME, PRESERVED (#12): `cowork_style_clustering_plan.md:16-18`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 9, "section": "## 1. What it is", "label": "§1", "delegated": null, "delegation": "ARCHITECTURE.md:4752", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "The **taxonomy and the weights are one data-derived object** (the clusters and their distributions). **Validation** —
+measuring our analyzer's *use* of a style — is a **separate third thing** that needs annotated *scores* (notes + a
+ground-truth analysis), not the clustering." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance is recorded in this field and NOT in the specification text (the OI-330 / OI-328 lesson).
 
 ### D-616 — A global tonic anchor enters key scoring at RESOLVER/SECTION scope — never as one more local term inside the window scorer, which is what re-enters the coupling that defeated the local levers
 
@@ -970,7 +1019,7 @@
 
 **Status.** LIVE · decided 2026-06-14 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1622-1636`
+**Home.** `ARCHITECTURE.md:1722-1736`
 
 **Provenance.** `docs/stage4c_cadence_key_design.md` §3, the Stage-4c cadence-to-key design, DRAFT and ratification-gated, 2026-06-14. Read in full by READ WAVE 6, 2026-08-04. Its own §7 puts this scope constraint to the user for approval and the record does not state that the ratification happened, so no ratifier is recorded. ⚠ The mechanism is on the LEGACY key path and the local key-agnostic cadence approach was later FALSIFIED at its precision ceiling (**D-290**) — but this entry is about WHERE a global prior is applied, not about that detector, and the same constraint binds any section-scoped evidence the key axis gains. ★ HOMED 2026-08-07 (CC, the owner-rulings homing wave, executing the user's ruling of 2026-08-07 recorded at `cowork_owner_rulings_2026_08_07.md`). Routed to the Layer-3 section, and the ruling requires the LEGACY mark to follow an ARM CHECK AT THE CODE rather than the entry's age (dispatch assumption A5). ★ THE CHECK WAS RUN BEFORE THE HOME TEXT WAS WRITTEN, and both named mechanisms come back LEGACY-SCOPED: the window scorer the rule excludes, `KeyModeAnalyzer::analyzeKeyMode`, has exactly two non-test callers — the legacy resolver (`src/composing/analysis/key/keyresolver.cpp:314`) and this layer's dormant sequence decoder (`src/composing/analysis/key/keymodesequence.cpp:147`) — and the resolver end, `resolveKeyAndModeRanked`, is retired from the production region path, its remaining production call sites being the legacy arms (`src/composing/analysis/region/regionanalyzer.cpp:443` and `:606`, `src/notation/internal/notationcomposingbridgehelpers.cpp:186`). So the LEGACY mark is written into the home text WITH the check that produced it, and the arm is not mixed. What is NOT legacy-scoped is stated beside it: the rule about WHERE a section-scoped prior is applied binds any such prior the key axis later gains. FORMER HOME, PRESERVED (#12): `docs/stage4c_cadence_key_design.md:62-70`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 60, "section": "## §3 — Feeding key scoring WITHOUT re-entering the §4 coupling (the load-bearing constraint)", "label": "“§3”", "delegated": null, "delegation": "named in no user-ratified surface", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "The anchor must act like the declared mode did — a **section/piece-scoped global prior** on tonic+mode that
 breaks the relative-pair tie — **NOT** a per-candidate local-salience term inside `analyzeKeyMode`'s
@@ -981,13 +1030,16 @@ per-window scoring unchanged." The verbatim above is RE-TAKEN from the new home,
 
 ### D-618 — The notated key signature is NOT a hard fact — its fifths were measured to pin wrong about one time in six, so the home key is note-derived and never signature-pinned
 
-> - **Hard constraints** — decisive evidence that **disqualifies** alternatives outright or **pins** a
->   solution: "this IS C major, whatever the soft hints say." These are the **raw facts** (which pitches
->   sound, when, with what duration / metric weight / bass) plus the genuinely-unambiguous analyses (a
->   complete clear triad on a strong beat). They **prune** the hypothesis space. **⚠ Note (J-key-i,
->   2026-06-15): the notated key signature is NOT among the hard facts** — its fifths were measured to pin
->   wrong ~17% (modal/partial signatures), so the home key is soft / note-based, not signature-pinned. The
->   safety gate doing its job: a candidate hard constraint that pins wrong is demoted to soft (§5).
+> - **The notated key signature is NOT a hard fact, so the home key is derived from the notes and is
+>   never signature-pinned.** The signature's fifths were measured against the true home key and pin
+>   the wrong one on a substantial minority of the material, concentrated in modal and partial
+>   signatures; the signature is therefore soft evidence that leans. *Why:* this is the rule above
+>   working rather than an exception to it — a candidate hard constraint measured to pin a wrong
+>   answer is demoted to a score. The measured rate is in the record that produced it and is not
+>   restated (D-431). **Scope, stated because it decides how the finding is read:** it is a property
+>   of the written music and its human analyses, not of any one of our pipelines, so it survives the
+>   arm change; the mis-keying case that shows it in the score is recorded with the legacy key path
+>   and carries its own ⚠ LEGACY mark there.
 
 **In plain words.** Some evidence is decisive enough to rule readings out outright — which pitches sound, when, how long, and a complete unambiguous triad on a strong beat. The written key signature is not in that class: it names the wrong home key about one time in six, mostly in modal and partial signatures. So the home key is worked out from the notes, and the signature only leans.
 
@@ -995,11 +1047,15 @@ per-window scoring unchanged." The verbatim above is RE-TAKEN from the new home,
 
 **Status.** LIVE · decided 2026-06-15 · ratifier not stated
 
-**Home.** `docs/architecture_joint_inference.md:45-51`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:459-468`
 
-**Home section.** **“§2”** — `## §2 — The structure: CONSTRAINED joint inference (hard constraints + soft scores)` (heading at line 41). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit**.
-
-**Provenance.** `docs/architecture_joint_inference.md` §2, the constrained-joint-inference architecture direction, investigation-confirmed 2026-06-15 and marked ratifiable-but-not-built. Read in full by READ WAVE 6, 2026-08-04. ⚠ The DOCUMENT is superseded as an architecture proposal — `ARCHITECTURE.md:843` records the joint-decode synthesis as superseded by the ratified joint estimator (**D-001**) and retained for the record — but this measured fact about the key signature is not a proposal and is carried by no other home. It is the same class of finding as **D-575**/the partial-signature mis-keying record. The record states no ratifier.
+**Provenance.** `docs/architecture_joint_inference.md` §2, the constrained-joint-inference architecture direction, investigation-confirmed 2026-06-15 and marked ratifiable-but-not-built. Read in full by READ WAVE 6, 2026-08-04. ⚠ The DOCUMENT is superseded as an architecture proposal — `ARCHITECTURE.md` §2.14 records the joint-decode synthesis as superseded by the effort-preset design and retained only as history, and the ratified estimator is **D-001** — but this measured fact about the key signature is not a proposal and is carried by no other home. It is the same class of finding as **D-575**/the partial-signature mis-keying record. The record states no ratifier. ★ HOMED 2026-08-08 (CC, executing the user's document-route ruling of 2026-08-08, route (ii)). ★ ASSUMPTION A4 DISCHARGED BY READING, NOT ASSUMED: the supersession was read at `ARCHITECTURE.md:960-961` — *"The `docs/architecture_joint_inference.md` joint-decode synthesis is **superseded** by this, retained only as history"* — and it reaches the PROPOSAL's shape, not this measurement. The content is therefore LIVE and is homed; the supersession is stated at the new home so no reader takes the surrounding proposal for a specification. Routed to the joint-estimator section of `ARCHITECTURE.md`, in a subsection of its own, with the general rule it is an instance of (D-619) beside it. THE MEASURED RATE IS NOT CARRIED ACROSS (D-431) — the direction and the concentrated class are stated and the number stays in the record. FORMER HOME, PRESERVED (#12): `docs/architecture_joint_inference.md:45-51`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 41, "section": "## §2 — The structure: CONSTRAINED joint inference (hard constraints + soft scores)", "label": "“§2”", "delegated": null, "delegation": "ARCHITECTURE.md:858", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "- **Hard constraints** — decisive evidence that **disqualifies** alternatives outright or **pins** a
+  solution: \"this IS C major, whatever the soft hints say.\" These are the **raw facts** (which pitches
+  sound, when, with what duration / metric weight / bass) plus the genuinely-unambiguous analyses (a
+  complete clear triad on a strong beat). They **prune** the hypothesis space. **⚠ Note (J-key-i,
+  2026-06-15): the notated key signature is NOT among the hard facts** — its fifths were measured to pin
+  wrong ~17% (modal/partial signatures), so the home key is soft / note-based, not signature-pinned. The
+  safety gate doing its job: a candidate hard constraint that pins wrong is demoted to soft (§5)." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance is recorded in this field and NOT in the specification text (the OI-330 / OI-328 lesson).
 
 ### D-622 — The reach-back convergence PROXY was measured FALSE and dropped — the as-built tracks the leading-edge key itself and stops when it stops changing
 
@@ -1022,7 +1078,7 @@ per-window scoring unchanged." The verbatim above is RE-TAKEN from the new home,
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1637-1648`
+**Home.** `ARCHITECTURE.md:1737-1748`
 
 **Provenance.** `cowork_layer3_reachback_design.md` §3, the Layer-3 reach-back detail design, BUILT as a capability gated off by default. Read in full by READ WAVE 6, 2026-08-04. Verified at the code rather than taken from the design: the production source records the proxy as found to stop PREMATURELY at the convergence note above the reach-back loop, and implements the headline criterion directly. The record states neither a date nor a ratifier for this item. ★ **THIS ENTRY IS RECORDED AS SUPERSEDING THE PROXY CLAUSE OF D-261, on the user's ruling of 2026-08-07** (dispatch `cc_instruction_five_rulings.md` §0a R3; `OPEN_ITEMS.md` OI-331, which flips on it). The clause is STRUCK from `cowork_bounded_context_design.md` §3 item 6 and recorded there as tried and closed with this measurement as its evidence; D-261's verbatim is re-taken from the edited home with its former verbatim preserved in its own provenance (#12), and D-261's headline rule and ratified status are unchanged. ★ THE CONTRADICTION THIS ENTRY FORMERLY RECORDED IS RESOLVED, and what it said is kept (#12): '★ **THIS ENTRY CONTRADICTS A LIVE, USER-RATIFIED ENTRY: D-261**, whose verbatim names this same proxy as the worked example of a domain proxy and states that *"the proxy is validated once, in design, to imply convergence"* — a clause the measurement above refuted before D-261 was ratified on 2026-08-02, and which carries no annotation. … Tracked at `OPEN_ITEMS.md` OI-331; NOT resolved here, because which of the two the record means to keep is a ruling.' The user ruled the third of the three remedies that row put: strike the clause and record this entry as superseding it, the rule itself standing. ★ HOMED 2026-08-07 (CC, the owner-rulings homing wave, executing the user's ruling of 2026-08-07 recorded at `cowork_owner_rulings_2026_08_07.md`). The SITE was never in doubt — the Layer-3 section owns the mechanism — and what held the entry back was the OPEN user ruling at `OPEN_ITEMS.md` OI-331. THE HOLD IS LIFTED BY THE USER'S RULING, which this act carries out: the entry is written into the Layer-3 section in that section's own voice, with its defense, and the bounded-context contract's annotation points at it, each surface stating its own concern. The supersession this entry records is unchanged and is not re-decided here. FORMER HOME, PRESERVED (#12): `cowork_layer3_reachback_design.md:76-82`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 68, "section": "## 3. The trigger and the convergence stop (no amount-guessing)", "label": "§3", "delegated": null, "delegation": "named in no user-ratified surface", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "- **Proxy REJECTED by measurement (as-built uses the headline criterion directly).** The earlier draft proposed a
   cheaper proxy — *"a settled, stable prevailing key is in view in the reached-back region"* — "validated once in

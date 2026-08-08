@@ -60,7 +60,7 @@
  "★_the_owner_judgment_read_rather_than_the_column": {
   "what_this_is": "OPEN_ITEMS.md OI-342 records that the `owner_is_unambiguous` column carries the EDIT-SURFACE answer for part of this population, although the row already has a separate field for that. This block reads the owner JUDGMENT -- the recorded reason -- instead of the column, and reports where the two disagree. It CORRECTS NOTHING: the column is untouched and no count in it is re-authored.",
   "how_each_set_is_cut": "By an exact phrase the authored reasons already contain, never by a vocabulary assembled until the answer came out right. `disagreement` is the reasons containing \"outside this dispatch's edit surface\"; `asserts_a_determinate_site` is the reasons containing 'determinate' and not 'not determinate'.",
-  "open_re_home_rows": 1,
+  "open_re_home_rows": 0,
   "disagreement_column_says_ambiguous_reason_names_only_the_edit_surface": {
    "count": 0,
    "ids": [],
@@ -73,7 +73,7 @@
    "why_it_is_still_not_executable": "The same reason states the blocker: the entry is the subject of an OPEN user ruling, so writing it into the specification would settle that ruling by fiat."
   },
   "rows_whose_owner_names_the_editable_surface": {
-   "count": 1,
+   "count": 0,
    "column_says_unambiguous": [],
    "of_those_whose_reason_names_only_the_edit_surface": [],
    "consequence_for_this_wave": "★ CORRECTED 2026-08-07, because the widening made the former statement false. IT FORMERLY READ (#12): 'The disagreement OI-342 records is confined to rows whose owner is NOT on the editable surface, so it moves nothing this wave could execute. What it moves is what the column MEANS to a reader deciding how much of item 1 is closeable.' That was true while the surface was ARCHITECTURE.md alone. The user widened it to the three further files on 2026-08-07, SCOPED TO HOMING ACTS, and the disagreement then moved EXACTLY the rows the homing wave executed: eight entries whose column says ambiguous and whose recorded reason names a determinate CLAUDE.md site and then says it was out of reach. They were homed. The column is still untouched -- what carries the determinacy verdict is the separate A1 field, for the reason OI-342 gives."
@@ -87,14 +87,14 @@
  "the_NO_HOME_class_is_dispositioned_under_ruling_R1_elsewhere": "tools/audit/decisions/r1_superseded_reach.json applies the user's ruling R1 of 2026-08-04 to every member of this table's NO-HOME class: the successor the record names for each entry's live content, whether that successor is homed, and the disposition that follows. The route column here is UNCHANGED and no disposition or count is restated (D-431, #6).",
  "counted": {
   "entries": 94,
-  "documents": 12,
+  "documents": 10,
   "route_RE_HOME": 69,
   "route_NEEDS_A_DELEGATION": 11,
   "route_NO_HOME_EXISTS": 14,
   "re_home_with_an_unambiguous_owner": 13,
-  "executable_under_this_dispatch": 68,
-  "closed_by_this_wave_and_no_longer_in_item_1": 68,
-  "still_open_in_item_1_at_HEAD": 26
+  "executable_under_this_dispatch": 69,
+  "closed_by_this_wave_and_no_longer_in_item_1": 69,
+  "still_open_in_item_1_at_HEAD": 25
  },
  "executed_this_wave": [
   "D-280",
@@ -116,6 +116,7 @@
   "D-469",
   "D-470",
   "D-471",
+  "D-472",
   "D-473",
   "D-474",
   "D-486",
@@ -201,6 +202,18 @@
    "closed_by_this_wave": false,
    "discharged_by_the_entry_level_re_cut": true,
    "reason": "Superseded meta-finding; D-036 carries the standing doctrine and D-001/D-010 retired the mechanism it warned about. Re-homing would duplicate a homed rule (#6).",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-285",
+   "home_document": "cowork_architecture_reassessment.md",
+   "route": "NO HOME EXISTS",
+   "owning_specification": null,
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": false,
+   "closed_by_this_wave": false,
+   "discharged_by_the_entry_level_re_cut": true,
+   "reason": "Superseded meta-finding, absorbed by the ratified factorization's emission categories and the ornament-label increment. Re-homing would duplicate them (#6).",
    "authored": "the route, the owner, the unambiguity verdict and the reason"
   },
   {
@@ -446,6 +459,17 @@
    "executable_under_this_dispatch": true,
    "closed_by_this_wave": true,
    "reason": "The sub-beat annotation duration gate is kept or dropped on a measured observation run with the verdict stated in advance. The annotation layers block sits in §11.5, but what is recorded is a measurement protocol rather than a rule; the owner is not determinate.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-472",
+   "home_document": "ARCHITECTURE.md Layer 6 (re-homed 2026-08-08 on the user's ruling of that date, with both ends of the arm split visible and the conformance question rowed at OI-349 — no longer in item 1)",
+   "route": "RE-HOME",
+   "owning_specification": "ARCHITECTURE.md Layer 6 (the grouping layer), §11.5 pointing",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "Key areas are grouped by a smoothing pass over stabilized regions. RULED 2026-08-07 (user, the owner-rulings homing wave): the owner is the Layer-6 section, which owns key-areas in the target architecture, with §11.5 pointing — and the LEGACY mark follows an arm check at the code. The arm check came back MIXED: the grouping rule is shared and runs on the production record arm; the Pass-4 stabilization the entry names as its precondition is legacy-arm-only. ★ RULED AGAIN 2026-08-08 (user, Option A) AND HOMED: the grouping rule is specified as LIVE on the production record arm and the stabilization sits beside it marked ⚠ LEGACY, each end carrying its citation — one home, both halves visible (#12) — and the conformance question, whether the record arm satisfies the stated precondition by other means or the live path groups un-stabilized regions, is ROWED as `OPEN_ITEMS.md` OI-349, which GATES. Neither answer is asserted. THE HOLD, PRESERVED (#12) — it was a result and not a gap: 'A mixed arm is the dispatch's stated outcome for holding an entry and returning it to the user, so no home text was written and the entry stays in item 1.' THE FORMER OWNER AND REASON, PRESERVED (#12): 'ARCHITECTURE.md §11.5 (Region Analysis and the Chord Track)', owner_is_unambiguous False, reason 'Key areas are grouped by a smoothing pass over stabilized regions. The key-area grouping is described both there and in the Layer-6 section, which owns key-areas in the target architecture; the owner is not determinate.'",
    "authored": "the route, the owner, the unambiguity verdict and the reason"
   },
   {
@@ -988,17 +1012,6 @@
    "authored": "the route, the owner, the unambiguity verdict and the reason"
   },
   {
-   "id": "D-285",
-   "home_document": "cowork_architecture_reassessment.md",
-   "route": "NO HOME EXISTS",
-   "owning_specification": null,
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "Superseded meta-finding, absorbed by the ratified factorization's emission categories and the ornament-label increment. Re-homing would duplicate them (#6).",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
    "id": "D-498",
    "home_document": "cowork_architecture_review_2026_07.md",
    "route": "NO HOME EXISTS",
@@ -1194,17 +1207,6 @@
    "executable_under_this_dispatch": false,
    "closed_by_this_wave": false,
    "reason": "The jazz fit waits on jazz ground truth. Recorded DEFERRED; its binding fact is a corpus fact, so the census is the owner and the delegation does not reach it.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
-  },
-  {
-   "id": "D-472",
-   "home_document": "docs/unified_analysis_pipeline.md",
-   "route": "RE-HOME",
-   "owning_specification": "ARCHITECTURE.md Layer 6 (the grouping layer), §11.5 pointing",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "Key areas are grouped by a smoothing pass over stabilized regions. RULED 2026-08-07 (user, the owner-rulings homing wave): the owner is the Layer-6 section, which owns key-areas in the target architecture, with §11.5 pointing — and the LEGACY mark follows an arm check at the code. HELD, NOT HOMED: the arm check came back MIXED. The grouping rule is shared and runs on the production record arm; the Pass-4 stabilization the entry names as its precondition is legacy-arm-only. A mixed arm is the dispatch's stated outcome for holding an entry and returning it to the user, so no home text was written and the entry stays in item 1. THE FORMER OWNER AND REASON, PRESERVED (#12): 'ARCHITECTURE.md §11.5 (Region Analysis and the Chord Track)', owner_is_unambiguous False, reason 'Key areas are grouped by a smoothing pass over stabilized regions. The key-area grouping is described both there and in the Layer-6 section, which owns key-areas in the target architecture; the owner is not determinate.'",
    "authored": "the route, the owner, the unambiguity verdict and the reason"
   }
  ]

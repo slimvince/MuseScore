@@ -1183,6 +1183,109 @@ diagnostic dump flag and the test suites. Nothing below is running today.
   above; the loss it accepts — a modest number of genuine corrections given up — is stated and kept
   in view rather than netted away.
 
+### Bass-as-root promotion — SHELVED WITH EVIDENCE, and the cascade the attempt exposed
+
+**Re-homed into this section 2026-08-08 on the user's ruling; the shelving and its evidence are
+intact.** ⚠ **LEGACY SUBJECT:** both statements are about this document's scoring surface and its
+greedy-expand segmenter. Whether the joint estimator's modelled segmentation shows the same coupling
+is **not stated here and is not asserted.**
+
+- **The information that disambiguates the third-above reading is NON-LOCAL, so no local
+  discriminator can exist — the approach is shelved, the problem is not.** Where C-E-G may be a C
+  chord or an E-minor chord inside something larger, and A-C-E likewise, nothing this scorer can see
+  at the moment of scoring — the sounding pitch classes, their weights, the templates, the key —
+  separates the two readings. What separates them is the surrounding music: the following chord's
+  root, the preceding chord's identity, and whether the bass falls on a strong beat. *Why the
+  shelving is with evidence rather than on argument:* two discriminators were built and both
+  regressed — a simple stack raised the wrong-root count on the primary corpus and a more elaborate
+  one raised it further, its wider margin overpowering its own added tightenings — and the cases
+  where the third-above reading is CORRECT proved indistinguishable from the cases where it is wrong
+  on local evidence, with a sample of the regressions flipping one wrong answer into a different
+  wrong answer. No code change was committed. **What is shelved is the LOCAL-GATE approach, not the
+  problem**; the two future angles the record names — a pass that reads the surrounding regions'
+  roots, or a temporal-context gate keyed on the neighbouring roots — are neither scheduled nor
+  endorsed here.
+- **A chord-level change is NOT confined to the cases it fires on: chord identity drives boundary
+  placement, so it produces downstream RE-SEGMENTATION artifacts in regions it never touched.**
+  Where one region ends and the next begins depends partly on what the chords are, so changing one
+  chord's identity — even changing it correctly — makes the adjacent regions re-merge differently,
+  and readings that were right can become wrong where the change never looked. **Counting only the
+  cases a change fires on therefore understates its effect, and this is structural rather than a
+  condition that can be tightened away.** *Why it is stated here as a standing constraint:* it was
+  measured at the attempt above, where some of the regressions were not gate fires at all; and it is
+  the reason the governing regression stop is an EXPLAINED PER-RUN DIFF rather than a count — an
+  effect outside the cases a change fires on is exactly what an enumeration of added and removed
+  runs catches and a count does not.
+
+### The quality-overwrite information loss is TOLERATED until the gate-dissolution step — tolerated is not forgotten
+
+**Re-homed into this section 2026-08-08 on the user's ruling.** ⚠ **LEGACY SUBJECT:** the passes
+this governs are this document's post-scoring passes on the legacy chord path; the joint estimator
+that produces the committed reading does not run them. **Whether the acceptance still has a subject
+at HEAD is not stated here and is not asserted.**
+
+Two post-scoring passes change the chord quality the scorer committed and keep no record of what
+they replaced, which is an information-loss violation (#12). **The verdict is to TOLERATE it until
+the gate-dissolution step, with the violation kept VISIBLE in the open-items register — tolerated is
+not forgotten.** *Why, as a derivation from three principles rather than a preference:* removing the
+overwrites now would be a production behaviour change with no replacement owner, since no component
+yet owns deciding quality from the key — which is the cross-layer patch layer adherence forbids
+(#7); and #8 puts the structural work first. Deferring to the step that gives the concern a single
+home makes the removal ONE ratified, revertible change under the regression stop (#14/#15). The
+alternative — ripping the overwrites out now — was considered and rejected on exactly that ground.
+**The open-items register row is the mechanism that makes this an acceptance rather than an
+oversight**, and it gates the dissolution.
+
+### Four measured dead ends of the segmentation-and-root path — do not retry any of them
+
+**Re-homed into this section 2026-08-08 on the user's ruling; every ⚠ LEGACY mark intact.** ⚠ **All
+four are LEGACY-SCOPED:** their subject is this document's scoring surface and the segmenter awaiting
+deletion. Each was measured, and each is a prohibition on re-attempting a specific mechanism —
+**none of them says anything about extending the temporal context the analysis reads**, which is a
+decided live capability specified elsewhere.
+
+- **Do not retry the backward-walk boundary change.** Counting notes that stop exactly where a
+  stretch begins as belonging to that stretch was tried, in the hope of recovering a missing chord
+  root. *Why it is closed:* measured — the notes touching the boundary are OTHER chord tones and the
+  root attacks later, so the change would add the wrong pitches and still not add the missing one;
+  and the same backward walk serves a dozen call sites, several of them notation display, where
+  excluding the previous chord's terminal notes is the correct behaviour. **This is a
+  boundary-membership dead end ONLY.**
+- **Do not retry a short-region external merger.** A proposed after-the-fact pass merging very short
+  neighbouring stretches was tried and closed. *Why:* measured — the trigger never fires, because
+  the same-root merge already inside the first pass has combined those stretches before any external
+  pass could see them. It was dead code.
+- **Do not retry any tone-aggregation approach to the arpeggio root failure.** Pooling an arpeggio's
+  notes and re-reading the chord from the pool was implemented, measured and reverted. *Why:*
+  pooling makes the answer worse — the aggregate is duration-weighted and the wrong pitch sounds
+  longer than the right one, so the wrong root still wins the pooled reading, and the run regressed
+  both presets. **The evidence was never the problem:** the vertical scorer already prefers the
+  correct root over the stretch where that root actually sounds; what is wrong is the predecessor
+  signal.
+- **Do not retry the absent-root guard.** A rule rejecting any chord whose own root is not sounding
+  was built, measured and reverted entirely. *Why:* it fixed fewer cases than it broke, and two of
+  the cases it broke are readings the published human analysis itself makes with an absent root — so
+  **the premise "an absent root means a wrong reading" is false corpus-wide.** A second, structural
+  reason rides with it: any guard that changes a committed root changes the predecessor every later
+  stretch reads, so its effect cascades into regions it never judged. The counts are in the record
+  and are not restated here (D-431).
+
+### The validation basis of every hand-set scoring magnitude on this surface is retroactively VOID
+
+**Re-homed into this section 2026-08-08 on the user's ruling.** ⚠ **LEGACY SUBJECT:** the magnitudes
+are this document's own; the joint estimator is the production inference layer, and **whether its
+fitted tables inherit the same standing is NOT stated here and is not asserted.**
+
+**Nearly every live scoring magnitude on this surface was hand-set, and the only check that ever
+validated it was a regression gate later proven to under-count true per-onset root error by a large
+factor and to have been reading a then-buggy ground-truth parser. Under #19 the validation basis of
+these values is therefore retroactively void: they are UNFALSIFIED, NOT ESTABLISHED.** *Why the
+reading is "unestablished" rather than "wrong", which is a different claim and the record supports
+only the first:* the same audit measured a third of the reachable constants inert at the root
+objective, and both high-leverage re-fit candidates regressed held out. So nothing here says the
+values are bad; what it says is that nothing in the record shows they are good. The under-count
+factor and the inert fraction are in the audit that measured them and are not restated (D-431).
+
 ---
 
 ## 9. How to add a new template safely (checklist)

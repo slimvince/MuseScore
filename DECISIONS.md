@@ -217,14 +217,14 @@ project's own and are defined here because they are used before any entry explai
 | — of which shelved with evidence | 3 |
 | Decisions whose date is not stated in the record | 239 |
 | Decisions whose ratifier is not stated in the record | 364 |
-| Decisions recorded outside the specification that owns them | 387 |
-| — of which a documentation gap | 82 |
+| Decisions recorded outside the specification that owns them | 359 |
+| — of which a documentation gap | 43 |
 | — of which recorded only on a tracking surface, with no home at all | 11 |
 | — of which a project-wide convention, correctly homed | 42 |
 | — of which a decision about the process, correctly homed | 113 |
 | Decisions whose defense the record does not state | 44 |
 | Entries whose own ratification the provenance records | 315 |
-| Entries whose home is recorded at SECTION granularity | 221 |
+| Entries whose home is recorded at SECTION granularity | 193 |
 
 The second-to-last row is about the DECISIONS; the last is about the ENTRIES. **315 of 645** entries carry a recorded event at which the entry itself — this quote, this restatement, this status — was reviewed and ratified. The remaining 330 do not carry one in their own provenance; the register-level ratification events listed in the preamble are the place to look for those, and nothing is inferred from them into the per-entry field.
 
@@ -237,10 +237,10 @@ Alongside the register, every one of the harvested statements about decisions in
 | Harvested statements | **15224** |
 | Groups of near-identical statements ("clusters") | **14460** |
 | Clusters carrying a recorded disposition | **14460** |
-| — restates | 5526 |
+| — restates | 5545 |
 | — not-a-decision | 5535 |
 | — boilerplate | 74 |
-| — no-spec-home | 688 |
+| — no-spec-home | 669 |
 | — unresolved | 2637 |
 
 The full disposition table, and the numbered rule behind each one, are in `tools/audit/decisions/cluster_dispositions.csv` and `tools/audit/decisions/disposition_manifest.json`.
@@ -319,8 +319,8 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-533 | A continuation too rare to have its own stored probability is scored by dividing the row's leftover in PROPORTION to each chord's overall frequency — never evenly, and never as impossible | LIVE | — | `ARCHITECTURE.md` |
 | D-534 | The penalty for a chord tone that never sounds is COUNTED per chord factor — root, third, fifth, seventh — replacing one invented blanket number; the per-factor asymmetry then comes free | LIVE | — | `ARCHITECTURE.md` |
 | D-535 | The checking stage's verdict: the real counted tables overturn no desk-simulation verdict, but margins moved in both directions and one margin expectation was plainly wrong | LIVE | — | `cowork_sensitive_cell_probe.md` “For the record” ⚠gap |
-| D-565 | Exact score ties in the decode are real and are broken by a declared TOTAL ORDER on paths, implemented identically in every decoder — no epsilon, no platform dependence | LIVE | 2026-08-04 · user | `cowork_joint_estimator_factorization.md` §5 ⚠gap |
-| D-621 | Hand-built versus learned is a question about the EMISSION alone — the decoding structure is decided and accommodates either | LIVE | — | `docs/architecture_joint_inference.md` “§7” ⚠gap |
+| D-565 | Exact score ties in the decode are real and are broken by a declared TOTAL ORDER on paths, implemented identically in every decoder — no epsilon, no platform dependence | LIVE | 2026-08-04 · user | `cowork_joint_estimator_factorization.md` §5 |
+| D-621 | Hand-built versus learned is a question about the EMISSION alone — the decoding structure is decided and accommodates either | LIVE | — | `ARCHITECTURE.md` |
 
 ## B. The notation output surface and the record path — [full entries](decisions/group_B.md)
 
@@ -341,8 +341,8 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-021 | The pedal-point fields are suspended on the record arm | DEFERRED | — | `ARCHITECTURE.md` |
 | D-275 | Every published record carries its own instrument provenance; a provenance-less analysis cannot exist | LIVE | 2026-08-02 · user | `cowork_notation_output_contract.md` §2 |
 | D-276 | Modal colour is published as un-rounded per-degree counts; no mode label is inferred or published anywhere | LIVE | 2026-08-02 · user | `cowork_notation_output_contract.md` §3.4 |
-| D-425 | The uncertainty surface's contract IS the full posterior; the local slice is the first delivered step, and the completion is a named step, never an indefinite upgrade | LIVE | — | `cowork_notation_adoption_increment.md` §4 ⚠gap |
-| D-426 | The modal reading lands inside the notation increment; the ornament labels get their own increment, with the tracking row created at ruling time | LIVE | — | `cowork_notation_adoption_increment.md` §7 ⚠gap |
+| D-425 | The uncertainty surface's contract IS the full posterior; the local slice is the first delivered step, and the completion is a named step, never an indefinite upgrade | LIVE | — | `cowork_notation_adoption_increment.md` §4 |
+| D-426 | The modal reading lands inside the notation increment; the ornament labels get their own increment, with the tracking row created at ruling time | LIVE | — | `cowork_notation_adoption_increment.md` §7 |
 
 ## C. Cross-cutting analysis contracts — [full entries](decisions/group_C.md)
 
@@ -411,14 +411,14 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-579 | The anchor obligation: compute the chord ONCE against its region's FINAL notes, with the tonality as an explicit input rather than frozen mid-pipeline | SUPERSEDED IN FACT ⚠LEGACY | 2026-08-04 · user | `cowork_phase2_architecture_review.md` “§5” ⚠gap |
 | D-581 | Information not yet consumed is NOT automatically a defect: every site is classified preserved-awaiting-consumer, lost, should-already, or unclear — and unclear is recorded for adjudication, never guessed | LIVE | 2026-08-04 · user | `cowork_information_loss_audit.md` “The central classification axis” ⚠gap |
 | D-582 | A collapse that is RECOMPUTABLE from what is kept is not information loss — not every collapse is a defect | LIVE | 2026-08-04 · user | `CLAUDE.md` |
-| D-600 | The quality-overwrite information-loss violation is TOLERATED until the gate-dissolution step and stays VISIBLE in the open-items register — tolerated is not forgotten | LIVE | 2026-08-04 · user | `cowork_adjudication_dossier.md` “Part A” ⚠gap |
+| D-600 | The quality-overwrite information-loss violation is TOLERATED until the gate-dissolution step and stays VISIBLE in the open-items register — tolerated is not forgotten | LIVE | 2026-08-04 · user | `docs/scoring_model.md` |
 | D-601 | Before any constant that would make two differently-scaled confidences comparable is fitted, the premise that a fitted constant CAN do so must itself pass a premise ledger and a desk simulation | LIVE | 2026-08-04 · user | `cowork_adjudication_dossier.md` “Part A” ⚠gap |
 | D-604 | A defensible modal reading the major/minor ground truth cannot represent is a GROUND-TRUTH LIMITATION, not a defect to optimise away | LIVE | 2026-08-04 · user | `CLAUDE.md` |
 | D-608 | The symmetric-root spelling pin's entry premise was measured FALSE — it is unreachable because the scorer rarely chooses the diminished quality; the remedy is enumerated and NOT decided | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
 | D-609 | The abstention rate rides on an arbitrary, never-fitted seed constant — a whole probe's metric-moving behaviour sat downstream of an unestablished value | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
-| D-615 | Under #19 the validation basis of every Iter-era hand-set scoring magnitude is retroactively VOID — the values are unfalsified, not established | LIVE | — | `cowork_l1_l5_premise_debt_audit.md` “Tier 2” ⚠gap |
-| D-619 | Over-claiming a constraint as HARD re-creates the override failure in reverse — and a sounding note is not automatically a chord tone | LIVE | — | `docs/architecture_joint_inference.md` “§5” ⚠gap |
-| D-620 | The reading-shaped evidence producers were each measured to pin WRONG and must stay SOFT — a cadence anchor, a modulation detector and a bass-is-root rule are scores, never constraints | LIVE | — | `docs/architecture_joint_inference.md` the opening block (above the first section heading) ⚠gap |
+| D-615 | Under #19 the validation basis of every Iter-era hand-set scoring magnitude is retroactively VOID — the values are unfalsified, not established | LIVE | — | `docs/scoring_model.md` |
+| D-619 | Over-claiming a constraint as HARD re-creates the override failure in reverse — and a sounding note is not automatically a chord tone | LIVE | — | `ARCHITECTURE.md` |
+| D-620 | The reading-shaped evidence producers were each measured to pin WRONG and must stay SOFT — a cadence anchor, a modulation detector and a bass-is-root rule are scores, never constraints | LIVE | — | `ARCHITECTURE.md` |
 | D-624 | The hard bound and the score start are SAFETY CAPS for a loop that never settles — never the amount of context a layer needs | LIVE | — | `ARCHITECTURE.md` |
 | D-628 | The finest meaningful extension step is the change-point — within a slice the sounding set is constant, so a finer request loads no note and changes no answer | LIVE | — | `ARCHITECTURE.md` |
 | D-630 | Minimality sets the default and the burden — do not add a component; a new one is earned only by exhibiting a residual class a separable criterion resolves | LIVE | — | `cowork_uncertain_resolver_investigation.md` |
@@ -438,8 +438,8 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-520 | Widening the loaded span was built DECOUPLED from the whole-score-read fix — superseding the recorded framing that the two were one coupled change | DEFERRED | — | `cowork_layer1_note_model_design.md` §11 |
 | D-569 | Collecting, filtering and weighting are THREE separate responsibilities; the collection layer collects and annotates, and does nothing else | LIVE | 2026-08-04 · user | `cowork_layer1_tone_collection_design.md` the opening block (above the first section heading) ⚠gap |
 | D-570 | An upstream layer's correctness oracle is the SCORE, not the Roman-numeral ground truth | LIVE | 2026-08-04 · user | `cowork_layer1_tone_collection_design.md` “§5” ⚠gap |
-| D-594 | Bass-as-root promotion is SHELVED WITH EVIDENCE — the information that disambiguates the third-above reading is non-local, so no local discriminator can exist | SHELVED WITH EVIDENCE | 2026-08-04 · user | `docs/iter90_bass_as_root_promotion_shelved.md` “Why no local discriminator worked” ⚠gap |
-| D-595 | A chord-level change is not confined to the cases it fires on: chord identity drives boundary placement, so it produces downstream RE-SEGMENTATION artifacts in regions it never touched | LIVE | 2026-08-04 · user | `docs/iter90_bass_as_root_promotion_shelved.md` “Cascade-from-segmentation effect” ⚠gap |
+| D-594 | Bass-as-root promotion is SHELVED WITH EVIDENCE — the information that disambiguates the third-above reading is non-local, so no local discriminator can exist | SHELVED WITH EVIDENCE | 2026-08-04 · user | `docs/scoring_model.md` |
+| D-595 | A chord-level change is not confined to the cases it fires on: chord identity drives boundary placement, so it produces downstream RE-SEGMENTATION artifacts in regions it never touched | LIVE | 2026-08-04 · user | `docs/scoring_model.md` |
 | D-606 | The binding metric for the modulation detector is modulation CORRECTNESS — explicitly not the agreement percentage, which the change under test can game | LIVE | 2026-08-04 · user | `CLAUDE.md` |
 | D-625 | Spelling presence is tested with the validity predicate, never with a non-negative test — the flat side of the line of fifths is negative and a non-negative guard silently drops it | LIVE | — | `ARCHITECTURE.md` |
 
@@ -460,8 +460,8 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-540 | A slice is a unit of constant CONTENT, not of constant musical TIME — the layers above must never treat slices as equal-weight units, and a slice's metric extent is evidence weighted by metric structure, not by tempo | LIVE | — | `cowork_layer2_slicing_design.md` §8 |
 | D-541 | The metric weight of a slice IS the beat-strength at its start tick, taken from one shared preference-free notation primitive that no consuming layer re-defines | LIVE | — | `cowork_layer2_slicing_design.md` §8 |
 | D-605 | The local-key hypothesis derives from key-agnostic signals ONLY and never from the key-area grouping, which is a post-grouping of the resolved key — a hard design rule, not a preference | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
-| D-631 | The boundary at the loaded edge is ARTIFICIAL and vanishes on extension — so the edge slice grows, and an old-slices-byte-identical assertion is false and must not be written as a test | LIVE | — | `cowork_layer2_reslice_design.md` §3 ⚠gap |
-| D-632 | The slice stays minimal — no in-selection-or-context tag; the consumer derives it, because the slicer owns no selection semantics | LIVE | — | `cowork_layer2_reslice_design.md` §5 ⚠gap |
+| D-631 | The boundary at the loaded edge is ARTIFICIAL and vanishes on extension — so the edge slice grows, and an old-slices-byte-identical assertion is false and must not be written as a test | LIVE | — | `ARCHITECTURE.md` |
+| D-632 | The slice stays minimal — no in-selection-or-context tag; the consumer derives it, because the slicer owns no selection semantics | LIVE | — | `ARCHITECTURE.md` |
 
 ## F. Layer 3 — key and mode — [full entries](decisions/group_F.md)
 
@@ -501,15 +501,15 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-494 | RATIFIED AMENDMENT A-4: the function layer must gain key-confirmation channels that do not require a cadence, plus an enharmonic-identity rule for key spans | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
 | D-571 | The declared-mode influence becomes a small additive hint, and SMALLNESS IS THE GATE — no separate confidence test is added | SUPERSEDED IN FACT ⚠LEGACY | 2026-08-04 · user | `docs/stage4b_design.md` §2.1 ⚠gap |
 | D-572 | The hard post-hoc declared-mode promotion is REMOVED OUTRIGHT rather than kept in a gated form | SUPERSEDED IN FACT ⚠LEGACY | 2026-08-04 · user | `ARCHITECTURE.md` |
-| D-575 | The Baroque partial-signature convention is handled by DETECTING it and reinterpreting the signature one step, not by widening the candidate family for every score | SUPERSEDED IN FACT ⚠LEGACY | 2026-08-04 · user | `docs/key_detection_baroque_partial_signature.md` the opening block (above the first section heading) ⚠gap |
-| D-587 | A user-facing preset presents as a familiar genre-era label plus exemplars the user knows — never as an idiom name or an obscure exemplar; genre names are LABELS over mixtures, never axes | LIVE | 2026-08-04 · user | `cowork_style_taxonomy_proposal.md` §6 ⚠gap |
-| D-588 | Preset coverage beyond the analysed corpora is three tiers with NO bare guessing — measured, editorially declared with a stated theory rationale, or self-correcting by detection | LIVE | 2026-08-04 · user | `cowork_style_taxonomy_proposal.md` §6 ⚠gap |
-| D-589 | Every idiom mixture is selectable and the discovered cloud is the EVIDENCE MAP, not the boundary — each chosen point carries its evidence status | LIVE | 2026-08-04 · user | `cowork_style_taxonomy_proposal.md` §6a ⚠gap |
-| D-590 | The score's own metadata is the PRIMARY home of that score's idiom mixture, and a user-set mixture is never silently overwritten by re-detection | LIVE | 2026-08-04 · user | `cowork_style_taxonomy_proposal.md` §6a ⚠gap |
-| D-591 | The licence split for the style system: the ANCHORS are the shipped licence-constrained fitted parameters, and the mixture weights are free user configuration | LIVE | 2026-08-04 · user | `cowork_style_taxonomy_proposal.md` §6a ⚠gap |
-| D-598 | The style taxonomy and the per-style weights are ONE data-derived object; VALIDATION is a separate third thing that needs annotated scores and is not delivered by the clustering | LIVE | 2026-08-04 · user | `cowork_style_clustering_plan.md` §1 ⚠gap |
+| D-575 | The Baroque partial-signature convention is handled by DETECTING it and reinterpreting the signature one step, not by widening the candidate family for every score | SUPERSEDED IN FACT ⚠LEGACY | 2026-08-04 · user | `ARCHITECTURE.md` |
+| D-587 | A user-facing preset presents as a familiar genre-era label plus exemplars the user knows — never as an idiom name or an obscure exemplar; genre names are LABELS over mixtures, never axes | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
+| D-588 | Preset coverage beyond the analysed corpora is three tiers with NO bare guessing — measured, editorially declared with a stated theory rationale, or self-correcting by detection | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
+| D-589 | Every idiom mixture is selectable and the discovered cloud is the EVIDENCE MAP, not the boundary — each chosen point carries its evidence status | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
+| D-590 | The score's own metadata is the PRIMARY home of that score's idiom mixture, and a user-set mixture is never silently overwritten by re-detection | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
+| D-591 | The licence split for the style system: the ANCHORS are the shipped licence-constrained fitted parameters, and the mixture weights are free user configuration | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
+| D-598 | The style taxonomy and the per-style weights are ONE data-derived object; VALIDATION is a separate third thing that needs annotated scores and is not delivered by the clustering | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
 | D-616 | A global tonic anchor enters key scoring at RESOLVER/SECTION scope — never as one more local term inside the window scorer, which is what re-enters the coupling that defeated the local levers | LIVE | — | `ARCHITECTURE.md` |
-| D-618 | The notated key signature is NOT a hard fact — its fifths were measured to pin wrong about one time in six, so the home key is note-derived and never signature-pinned | LIVE | — | `docs/architecture_joint_inference.md` “§2” ⚠gap |
+| D-618 | The notated key signature is NOT a hard fact — its fifths were measured to pin wrong about one time in six, so the home key is note-derived and never signature-pinned | LIVE | — | `ARCHITECTURE.md` |
 | D-622 | The reach-back convergence PROXY was measured FALSE and dropped — the as-built tracks the leading-edge key itself and stops when it stops changing | LIVE | — | `ARCHITECTURE.md` |
 
 ## G. Layer 4 — chord identity — [full entries](decisions/group_G.md)
@@ -548,10 +548,10 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-303 | Non-chord-tone detection is deferred, and if built it must be chord identification that knows about non-chord tones, never stripping after the fact | DEFERRED | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-305 | The ban on reading written harmony as analyzer input is decided by what an annotation says, not by how it is stored | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-312 | The carried alternative readings are inside the byte-identity acceptance contract — same winner with different alternatives is a behavior change | LIVE | 2026-08-02 · user | `cowork_stage5_fitter_design.md` “§15 Open items & ratification asks” |
-| D-317 | The backward-walk boundary change is a dead end — do not retry it | LIVE ⚠LEGACY | 2026-08-02 · user | `docs/redesign_plan.md` “Dead end: `noteEnd <= startTickInt` → `noteEnd < startTickInt`” ⚠gap |
-| D-318 | A short-region external merger is a dead end — do not retry it | LIVE ⚠LEGACY | 2026-08-02 · user | `docs/redesign_plan.md` “Dead end: short-region merger trigger” ⚠gap |
-| D-319 | Re-analysing the merged aggregate is a dead end — no tone-aggregation approach fixes the arpeggio root failure | LIVE ⚠LEGACY | 2026-08-02 · user | `docs/redesign_plan.md` “Dead end: re-analysis of inline-merged aggregate” ⚠gap |
-| D-320 | The absent-root guard is REVERTED and must not be retried — 'absent root means wrong reading' is false corpus-wide | LIVE ⚠LEGACY | 2026-08-02 · user | `docs/redesign_plan.md` “What NOT to do first” ⚠gap |
+| D-317 | The backward-walk boundary change is a dead end — do not retry it | LIVE ⚠LEGACY | 2026-08-02 · user | `docs/scoring_model.md` |
+| D-318 | A short-region external merger is a dead end — do not retry it | LIVE ⚠LEGACY | 2026-08-02 · user | `docs/scoring_model.md` |
+| D-319 | Re-analysing the merged aggregate is a dead end — no tone-aggregation approach fixes the arpeggio root failure | LIVE ⚠LEGACY | 2026-08-02 · user | `docs/scoring_model.md` |
+| D-320 | The absent-root guard is REVERTED and must not be retried — 'absent root means wrong reading' is false corpus-wide | LIVE ⚠LEGACY | 2026-08-02 · user | `docs/scoring_model.md` |
 | D-321 | Winner selection compares candidate scores exactly, with no epsilon anywhere in the ranking | LIVE ⚠LEGACY | 2026-08-02 · user | `docs/scoring_model.md` “Floating-point tie policy” |
 | D-322 | Any change to optimization flags or to the order of the scoring arithmetic requires a full corpus A/B on both presets | LIVE ⚠LEGACY | 2026-08-02 · user | `docs/scoring_model.md` “Floating-point tie policy” |
 | D-324 | Retirement of a post-scoring rule is global — a rule still doing work on any one preset is retained for all | LIVE ⚠LEGACY | 2026-08-02 · user | `docs/scoring_model.md` “§6a. The unified promotion primitive `promoteToWinner()`” |
@@ -576,7 +576,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-463 | The temporal signals sitting in the vertical scorer are left where they are, and the gate that depends on them must move with them | LIVE | 2026-08-04 · user | `docs/scoring_model.md` |
 | D-464 | No further progression-level signal may be added to the single-step look-around structure; it goes in the progression context instead | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
 | D-465 | The policy for judging a proposed post-scoring gate: another bias correction gets the bias fixed first, a structural condition is sound, and a cascade means the missing thing is functional context | LIVE | 2026-08-04 · user | `docs/scoring_model.md` |
-| D-467 | A rebuilt or re-tuned chord scoring must not rely on the held-note repetition bonus the faithful note model removed | LIVE | 2026-08-04 · user | `cowork_target_architecture.md` §6.2 ⚠gap |
+| D-467 | A rebuilt or re-tuned chord scoring must not rely on the held-note repetition bonus the faithful note model removed | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
 | D-501 | A tool may read a written chord symbol ONLY as a comparison or ground-truth label — never as input that influences what the analyzer computes | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
 | D-510 | The correct carry is the one that keeps the distinct alternative reading, not the one that appends a near-duplicate of the winner — chosen on the carry's purpose, not on which code is at HEAD | LIVE | — | `docs/scoring_model.md` |
 | D-511 | One promotion primitive with a present-first dedup guard replaces the two ad-hoc promotion idioms; the append branch fires only when the target is genuinely absent | LIVE | — | `docs/scoring_model.md` |
@@ -584,7 +584,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-536 | The bass note and the chord are chosen TOGETHER — the winner is the (bass, root, template) triple — replacing the sequential commit-the-bass-then-score pipeline | LIVE ⚠LEGACY | — | `docs/scoring_model.md` |
 | D-537 | The completeness bonus fires ONLY for a root-position reading whose three triad tones are all present — the guard that stops it from demoting genuine slash chords | LIVE ⚠LEGACY | — | `docs/scoring_model.md` |
 | D-538 | A multi-signal scoring change lands one signal at a time, with the corpus check re-run after each step and any increase in errors a hard stop before the next | SUPERSEDED BY D-177 and D-115 ⚠LEGACY | 2026-08-07 · user | `docs/iter92_joint_bass_chord_scoring.md` “Implementation insertion point” ⚠gap |
-| D-560 | Voice slots and stem direction are STRUCTURAL notational metadata, not user-written analytical claims, so the analysis may read them | LIVE | 2026-08-04 · user | `docs/nct_detection_design.md` “Voice-leading detection” ⚠gap |
+| D-560 | Voice slots and stem direction are STRUCTURAL notational metadata, not user-written analytical claims, so the analysis may read them | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
 | D-580 | Two of the twelve post-scoring gates are purely-local vertical refinements and MUST survive the dissolution; the other ten dissolve into the competition | DEFERRED ⚠LEGACY | 2026-08-04 · user | `docs/scoring_model.md` |
 | D-583 | A known deferred loss is KEPT only while it stays characterized EXACTLY, and is re-adjudicated the moment its form changes | LIVE ⚠LEGACY | 2026-08-04 · user | `cowork_information_loss_audit.md` “The prioritized DEFECT fix-queue” ⚠gap |
 | D-638 | The symmetric-rotation churn is a chord-layer root ambiguity SURFACED, not caused, by a key change — the proper fix is spelling-aware root selection, never a key-layer change | LIVE | — | `CLAUDE.md` |
@@ -636,7 +636,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-460 | A group counts as fully resolved exactly when no unit in it carries an unresolved mark — no confidence threshold enters the test | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §5.4 |
 | D-461 | The grouping layer is an explainability layer, not an accuracy requirement, and is deliberately kept thin | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §7 |
 | D-462 | Cadence validation is scoped to LOCATION; cadence TYPE is only partially attributable and is never a clean gate | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §10 |
-| D-472 | Key areas are grouped by a smoothing pass over the already-stabilized regions, and a region that disagrees without clearing the confidence test keeps its own key while being grouped into the enclosing area | LIVE | 2026-08-04 · user | `docs/unified_analysis_pipeline.md` “Key-area detection” ⚠gap |
+| D-472 | Key areas are grouped by a smoothing pass over the already-stabilized regions, and a region that disagrees without clearing the confidence test keeps its own key while being grouped into the enclosing area | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
 | D-476 | The phrase-boundary primitive is owned by the notation-derived view layer — not by the note model, and not by the function layer that consumes it | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` §6 |
 | D-477 | Phrase boundaries are read from the written surface alone — never from a resolved key, chord or cadence — and the boundaries this misses are accepted, not recovered here | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` §2 |
 | D-478 | A phrase boundary is a peak in a continuous boundary-strength profile, not the OR of a few binary signals | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` §6 |
@@ -652,7 +652,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-492 | The recommended redesign is to demote the override to an annotation — carrying the earlier reading unchanged and surfacing the contradiction — floored by simply disabling it | LIVE | 2026-08-04 · user | `docs/scoring_model.md` |
 | D-493 | Restricting the override to the genuinely-coupled key-and-chord minority is UN-COMPUTABLE, not merely unmeasured: its trigger is not computed anywhere and building it is the still-owed joint step | LIVE | 2026-08-04 · user | `docs/scoring_model.md` |
 | D-495 | RATIFIED AMENDMENT A-5: when the phrase-boundary profile is flat, cadence admission relaxes with vote-weight scaling instead of starving | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
-| D-629 | The resolver of carried uncertain readings IS the function layer itself — there is no distinct gated box between the note layers and it | LIVE | — | `cowork_uncertain_resolver_investigation.md` “Provisional verdict” ⚠gap |
+| D-629 | The resolver of carried uncertain readings IS the function layer itself — there is no distinct gated box between the note layers and it | LIVE | — | `ARCHITECTURE.md` |
 
 ## I. Module boundaries and code structure — [full entries](decisions/group_I.md)
 
@@ -729,7 +729,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-257 | A specification carries a locator to its code and tests; code mechanics never do the explaining | LIVE | 2026-08-02 · user | `cowork_design_doc_template.md` |
 | D-307 | A specification cites code by function or section anchor, never by raw line number | LIVE | 2026-08-02 · user | `cowork_design_doc_template.md` |
 | D-420 | One cross-layer extension specification, and the duplicate written the same day is killed into it | LIVE | 2026-08-03 · user | `docs/implementation_roadmap.md` |
-| D-424 | A decision surface names the principle behind every pro and con, and rates every option on two axes | LIVE | — | `cowork_notation_adoption_increment.md` the opening block (above the first section heading) ⚠gap |
+| D-424 | A decision surface names the principle behind every pro and con, and rates every option on two axes | LIVE | — | `cowork_notation_adoption_increment.md` the opening block (above the first section heading) |
 | D-430 | The contract-home criterion's unit is a SECTION of a document, not the document | LIVE | — | `CLAUDE.md` |
 | D-432 | What counts as a delegation, graded by form — the clause the section-level criterion did not touch | LIVE | — | `CLAUDE.md` |
 | D-433 | A shelved section can be a home — shelving is a status, not a kind | LIVE | — | `CLAUDE.md` |
@@ -791,9 +791,9 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-543 | The encoding is key-normalised tonal-pitch-class TRANSITIONS — spelled where spelling is reliable, mod-12 only where it is genuinely absent — run as two complementary views | NOT STATED | — | `ARCHITECTURE.md` |
 | D-544 | Confound control is a FIRST-CLASS GATE, and the source-leakage test decides validity: if the clusters are explained by which corpus a piece came from, the result is bookkeeping and not idiom | NOT STATED | — | `ARCHITECTURE.md` |
 | D-545 | The uniform mechanical extractor for idiom discovery is the external library, stopping at the note-and-slice front — OUR OWN key/chord/function inference must NEVER touch the extraction | NOT STATED | — | `ARCHITECTURE.md` |
-| D-554 | The voice-leading axis's independence from the harmonic axis is MEASURED, not assumed — cross-agreement between the two clusterings is at the level of statistical independence | LIVE | 2026-08-04 · user | `cowork_idiom_discovery_findings.md` “v2.0” ⚠gap |
-| D-555 | The voice-leading layer's feature set is MOTION-TYPE-led, with the interval profile a secondary descriptor, and its coverage is notated music only | LIVE | 2026-08-04 · user | `cowork_idiom_discovery_findings.md` “v2.0” ⚠gap |
-| D-556 | Texture and era are declared per-source interpretation lenses, applied after the fact and never given to the clustering as input | LIVE | 2026-08-04 · user | `cowork_idiom_discovery_findings.md` “v2.0” ⚠gap |
+| D-554 | The voice-leading axis's independence from the harmonic axis is MEASURED, not assumed — cross-agreement between the two clusterings is at the level of statistical independence | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
+| D-555 | The voice-leading layer's feature set is MOTION-TYPE-led, with the interval profile a secondary descriptor, and its coverage is notated music only | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
+| D-556 | Texture and era are declared per-source interpretation lenses, applied after the fact and never given to the clustering as input | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
 
 ## N. Generation, constraints, visualization, and the LLM integration — [full entries](decisions/group_N.md)
 
@@ -811,13 +811,13 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-143 | The language-model bridge is built as a module but confined to the core access layer, so it can become a plugin | DEFERRED | — | `ARCHITECTURE.md` |
 | D-440 | The language-model integration is purpose-built and does not wait for the plugin-API reform | DEFERRED | 2026-08-04 · user | `ARCHITECTURE.md` |
 | D-441 | Analysis and modification are phases of ONE conversation; a follow-up instruction re-uses the reasoning rather than re-analysing | DEFERRED | 2026-08-04 · user | `ARCHITECTURE.md` |
-| D-442 | A validation failure goes back to the language model as a tool-call error and is never shown to the user | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` §4.3 ⚠gap |
-| D-443 | Tool use is the only capability the provider abstraction requires; a provider without it is read-only | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` §8.1 ⚠gap |
-| D-444 | The core access layer is a facade over interfaces that already exist, not a redesign | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` §5.2 ⚠gap |
-| D-445 | A musical address does not identify a single note, so the note entity carries its own identifier | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` §5.3 ⚠gap |
-| D-446 | The language model resolves how the user names a passage; no index is built and the kinds of reference are not enumerated | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` §6 ⚠gap |
-| D-447 | The model's tool definitions are generated from the operation set, never maintained by hand | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` §8.2 ⚠gap |
-| D-448 | The operation set is curated from observed use, not an exposure of every editing method | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` §4.2 ⚠gap |
+| D-442 | A validation failure goes back to the language model as a tool-call error and is never shown to the user | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` §4.3 |
+| D-443 | Tool use is the only capability the provider abstraction requires; a provider without it is read-only | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` §8.1 |
+| D-444 | The core access layer is a facade over interfaces that already exist, not a redesign | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` §5.2 |
+| D-445 | A musical address does not identify a single note, so the note entity carries its own identifier | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` §5.3 |
+| D-446 | The language model resolves how the user names a passage; no index is built and the kinds of reference are not enumerated | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` §6 |
+| D-447 | The model's tool definitions are generated from the operation set, never maintained by hand | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` §8.2 |
+| D-448 | The operation set is curated from observed use, not an exposure of every editing method | NOT STATED | 2026-08-04 · user | `docs/llm_integration.md` §4.2 |
 
 ## O. Intonation — [full entries](decisions/group_O.md)
 
@@ -1025,8 +1025,8 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 ## Provenance of this register
 
 - Adjudication: the OI-207 decision-conformance adjudication, 2026-08-01, at commit `58dea6702ac8aa9d5ef8b89244b94d587a75f7a5`.
-- Coverage figures above regenerated at commit `bd3a608fecf82c446f959432b13e0a5944093cd2`.
-- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `73c2e12ce81a6814…`).
+- Coverage figures above regenerated at commit `03bce02e4bdbea97b64a9d1abe90976c470e75f4`.
+- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `920ed0c1ea4d63ba…`).
 - Harvest: `tools/audit/decisions/decision_candidates.json` (sha256 `51850440b315e6e9…`).
 - Clustering: `tools/audit/decisions/decision_clusters.json` (sha256 `0615b1e61bf10332…`).
 - Shape: `open_items/OI-208.md` (user-ratified 2026-07-28).

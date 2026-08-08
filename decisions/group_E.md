@@ -16,7 +16,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1447`
+**Home.** `ARCHITECTURE.md:1516`
 
 **Provenance.** ARCHITECTURE.md:1200-1210 (Layer 2 - Built+Live)
 
@@ -30,7 +30,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1447`
+**Home.** `ARCHITECTURE.md:1516`
 
 **Provenance.** ARCHITECTURE.md:1210. Cited by open_items/OI-228 as the primary source the joint emission departs from
 
@@ -45,7 +45,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1454-1455`
+**Home.** `ARCHITECTURE.md:1523-1524`
 
 **Provenance.** ARCHITECTURE.md:1217-1218. The joint decoder's per-event note set is ONSET-only (jointdecoder.h:67) - open_items/OI-228
 
@@ -61,7 +61,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1451-1453`
+**Home.** `ARCHITECTURE.md:1520-1522`
 
 **Provenance.** ARCHITECTURE.md:1212-1218
 
@@ -75,7 +75,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1449`
+**Home.** `ARCHITECTURE.md:1518`
 
 **Provenance.** ARCHITECTURE.md:1212-1214
 
@@ -90,7 +90,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1474-1476`
+**Home.** `ARCHITECTURE.md:1543-1545`
 
 **Provenance.** ARCHITECTURE.md:1237-1245
 
@@ -105,7 +105,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1475-1477`
+**Home.** `ARCHITECTURE.md:1544-1546`
 
 **Provenance.** ARCHITECTURE.md:1237-1242
 
@@ -121,7 +121,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1479-1481`
+**Home.** `ARCHITECTURE.md:1548-1550`
 
 **Provenance.** ARCHITECTURE.md:1242-1245
 
@@ -136,7 +136,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1465-1467`
+**Home.** `ARCHITECTURE.md:1534-1536`
 
 **Provenance.** ARCHITECTURE.md:1220-1231
 
@@ -150,7 +150,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1462`
+**Home.** `ARCHITECTURE.md:1531`
 
 **Provenance.** ARCHITECTURE.md:1220-1227; cites cowork_layer2_reslice_design.md §2
 
@@ -175,7 +175,7 @@
 
 **Home.** `cowork_layer2_slicing_design.md:130-139`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§8** — `## 8. Crosscutting concepts` (heading at line 121). A delegation at ARCHITECTURE.md:1371 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
+**Home section.** **§8** — `## 8. Crosscutting concepts` (heading at line 121). A delegation at ARCHITECTURE.md:1563 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** A crosscutting concept of the as-built Layer-2 specification, stated as a warning to the layers above. It is the qualification that makes the atomic-unit decision safe: **D-023** makes the constant-sonority slice the analysis unit, and this says what may not be concluded from that. The factor granularity that eventually consumes it is **D-449**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 
@@ -199,7 +199,7 @@
 
 **Home.** `cowork_layer2_slicing_design.md:140-148`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§8** — `## 8. Crosscutting concepts` (heading at line 121). A delegation at ARCHITECTURE.md:1371 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
+**Home section.** **§8** — `## 8. Crosscutting concepts` (heading at line 121). A delegation at ARCHITECTURE.md:1563 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Recorded as resolving prerequisite (i) of the function layer's input list, with the note that the whole prerequisite is this contract sentence and no new code. It places the primitive in the shared notation-derived-view tier beside the bass, spelling and phrase-boundary views. The phrase-boundary member of that same tier is **D-476**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 
@@ -227,7 +227,7 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `ARCHITECTURE.md:1609-1621`
+**Home.** `ARCHITECTURE.md:1709-1721`
 
 **Provenance.** `docs/stage4d_local_modulation_design.md`, the Stage-4d local-modulation design, DRAFT and ratification-gated, 2026-06-14. Read in full by READ WAVE 5, 2026-08-04. The document's banner marks it DRAFT and ratification-gated, and its §7 lists this rule as item 2 for user ratification; the record does not state that the ratification happened, so no ratifier is recorded here. ⚠ The MECHANISM this rule governs is on the LEGACY key path — the joint estimator decides key and segmentation together and is the production inference layer (**D-001**, **D-005**) — but the RULE is about what evidence a modulation decision may read, which binds any such decision. It is the same principle **D-336**/**D-081** state for the cadence detector, applied to the local-key hypothesis and naming the specific surface that would make it circular. ★ HOMED 2026-08-07 (CC, the owner-rulings homing wave, executing the user's ruling of 2026-08-07 recorded at `cowork_owner_rulings_2026_08_07.md`). The recorded owner question was that the rule's two ends sit in different sections — Layer 3 for the hypothesis, the key-area grouping for what it may not read. The user ruled that THE INPUT RULE BINDS THE HYPOTHESIS'S DERIVATION, so Layer 3 owns it and the grouping section points. Written into the Layer-3 section in that section's own voice, with its defense and with the scope statement the record carries: the mechanism it was written for is on the legacy key path, while what the rule constrains — what evidence a modulation decision may read — binds any such decision on any arm. Assumption A1 discharged before writing. FORMER HOME, PRESERVED (#12): `docs/stage4d_local_modulation_design.md:51-56`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 49, "section": "## §3 — No circularity / key-agnosticism (the architecture constraint)", "label": "“§3”", "delegated": null, "delegation": "named in no user-ratified surface", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "**The local-key hypothesis MUST derive from key-agnostic signals — the cadence instrument (key-agnostic by
 construction) + raw region structure (root motion, diatonic-collection consistency) — NOT from the current
@@ -238,17 +238,23 @@ made the cadence detector usable; it is the load-bearing soundness property and 
 
 ### D-631 — The boundary at the loaded edge is ARTIFICIAL and vanishes on extension — so the edge slice grows, and an old-slices-byte-identical assertion is false and must not be written as a test
 
-> - **Stability — seam-aware (the earlier "old slices byte-identical" claim was wrong).** The clip injects an
->   **artificial boundary at `loadedStart`** — *not* a real change-point (a sustained-in note sounds on both sides; the
->   boundary is there only because the far side was unloaded). Extend earlier and that artificial boundary **vanishes**,
->   so the **edge slice grows outward**. (Counterexample: one eligible note A `[100,1000)`; old span `[500,1000)` → one
->   slice `[500,1000)`; extend to `[100,1000)` → one slice `[100,1000)` — the edge slice *grew*, it was not "preserved +
->   a new slice prepended.") What actually holds: **(a)** interior **real** change-points within the old region are
->   **byte-stable** (extend-earlier only adds notes with `release ≤ oldStart`, so no new real boundary appears
->   `> oldStart`); **(b)** the **edge slice abutting the clip extends** into the newly-loaded context, its content over
->   the original span unchanged. Symmetric on extend-later (trailing edge). **This breaks no correctness:** L3 re-infers
->   fresh over the new slices (forward-only contract), and the edge extension is precisely the "more context at the
->   leading edge" that **convergence** (`cowork_bounded_context_design.md` §3.6) is built to absorb.
+> - **The boundary at the loaded edge is ARTIFICIAL and VANISHES on extension, so the edge slice
+>   GROWS — and an "old slices stay byte-identical" assertion is FALSE and must never be written as a
+>   test.** The clip injects a boundary at the loaded start that is not a change-point at all: a
+>   sustained-in note sounds on both sides of it, and it exists only because the far side was not
+>   loaded. Extend earlier and it disappears, so the edge slice extends outward rather than being
+>   preserved with a new slice prepended. **What does hold is two things: (a)** every *real*
+>   change-point inside the previously loaded region is byte-stable, because extending earlier can add
+>   only notes whose release is at or before the old start, so no new real boundary can appear inside
+>   it; **(b)** the edge slice abutting the clip extends into the newly loaded context, its content
+>   over the original span unchanged. Symmetric on extend-later, at the trailing edge. *Why the
+>   prohibition is written as one:* the claim was corrected against a counterexample the design states
+>   in full — a single eligible note spanning the loaded start, one slice before the extension and one
+>   after, with the edge slice demonstrably grown — so the naive assertion is not merely imprecise, it
+>   is false, and it would pass by accident on the cases that do not exercise the edge. **This breaks
+>   no correctness:** Layer 3 re-infers fresh over the new slices under the forward-only contract, and
+>   the edge extension is exactly the additional leading-edge context the bounded-context contract's
+>   convergence rule exists to absorb.
 
 **In plain words.** When the music is cut into stretches, the cut at the edge of what has been loaded is not a real change in the sounding notes — it is there only because nothing beyond it was loaded. Load more and that cut disappears, so the stretch at the edge gets longer rather than staying as it was. What does stay identical is every real cut inside the region already loaded.
 
@@ -256,22 +262,31 @@ made the cadence detector usable; it is the load-bearing soundness property and 
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `cowork_layer2_reslice_design.md:55-65`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:1569-1585`
 
-**Home section.** **§3** — `## 3. What holds under extend (corrected after CC's read-only verification)` (heading at line 53). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit**.
-
-**Provenance.** `cowork_layer2_reslice_design.md` §3, the Layer-2 slicing-under-bounded-context detail design, BUILT. Read in full by READ WAVE 6, 2026-08-04. The correction is marked in the document as made after a read-only verification. **D-050** already carries the clip rule and the re-slice-equivalence invariant that makes widening lawful, and cites this document's §2 for it; this is the separate finding about what does and does not stay stable across an extension, which no other home carries and which the §6 test list turns into a written prohibition. The record states neither a date nor a ratifier.
+**Provenance.** `cowork_layer2_reslice_design.md` §3, the Layer-2 slicing-under-bounded-context detail design, BUILT. Read in full by READ WAVE 6, 2026-08-04. The correction is marked in the document as made after a read-only verification. **D-050** already carries the clip rule and the re-slice-equivalence invariant that makes widening lawful, and cites this document's §2 for it; this is the separate finding about what does and does not stay stable across an extension, which no other home carries and which the §6 test list turns into a written prohibition. The record states neither a date nor a ratifier. ★ HOMED 2026-08-08 (CC, executing the user's document-route ruling of 2026-08-08, route (ii)). Routed to the Layer-2 section of `ARCHITECTURE.md`, in that section's own voice and with the counterexample that produced the correction. THE COUNTEREXAMPLE'S TICK VALUES ARE NOT CARRIED ACROSS (D-431): its SHAPE is what makes the prohibition binding — one eligible note spanning the loaded start — and the arithmetic stays in the design document. FORMER HOME, PRESERVED (#12): `cowork_layer2_reslice_design.md:55-65`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 53, "section": "## 3. What holds under extend (corrected after CC's read-only verification)", "label": "§3", "delegated": null, "delegation": "ARCHITECTURE.md:1339", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "- **Stability — seam-aware (the earlier \"old slices byte-identical\" claim was wrong).** The clip injects an
+  **artificial boundary at `loadedStart`** — *not* a real change-point (a sustained-in note sounds on both sides; the
+  boundary is there only because the far side was unloaded). Extend earlier and that artificial boundary **vanishes**,
+  so the **edge slice grows outward**. (Counterexample: one eligible note A `[100,1000)`; old span `[500,1000)` → one
+  slice `[500,1000)`; extend to `[100,1000)` → one slice `[100,1000)` — the edge slice *grew*, it was not \"preserved +
+  a new slice prepended.\") What actually holds: **(a)** interior **real** change-points within the old region are
+  **byte-stable** (extend-earlier only adds notes with `release ≤ oldStart`, so no new real boundary appears
+  `> oldStart`); **(b)** the **edge slice abutting the clip extends** into the newly-loaded context, its content over
+  the original span unchanged. Symmetric on extend-later (trailing edge). **This breaks no correctness:** L3 re-infers
+  fresh over the new slices (forward-only contract), and the edge extension is precisely the \"more context at the
+  leading edge\" that **convergence** (`cowork_bounded_context_design.md` §3.6) is built to absorb." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance is recorded in this field and NOT in the specification text (the OI-330 / OI-328 lesson).
 
 ### D-632 — The slice stays minimal — no in-selection-or-context tag; the consumer derives it, because the slicer owns no selection semantics
 
-> L2 produces slices for the **loaded** span; the **output** is only the **selection**. The slices in
-> `[loadedStart, selectionStart)` ∪ `[selectionEnd, loadedEnd)` are **context (evidence), not output**. L2 itself makes
-> no analysis judgement — it just slices — so the selection-vs-context distinction is a **thin annotation**: either tag
-> each slice in-selection/context from the model's selection span, or leave it to the consumer to compute from
-> `selectionStart/End`. Recommended: compute it at the consuming layer (keep the `Slice` minimal — `[start,end)` only,
-> per the L2 spec), since L2 owns no selection semantics. **Decision taken at build: the `Slice` is minimal
-> (`struct Slice { int start; int end; }`) — no in-selection/context tag; the consumer derives it from the model's
-> selection span.**
+> - **The slice stays MINIMAL — it carries start and end and nothing else; whether a slice is inside
+>   the user's selection or is only surrounding context is derived by the consumer.** This layer
+>   produces slices for the whole loaded span while the OUTPUT is only the selection, so the slices
+>   outside it are context and evidence rather than output. The distinction is a thin annotation and
+>   it is deliberately not stored here. *Why:* this layer owns no selection semantics — cutting the
+>   music where the sounding set changes involves no judgment about what the user selected — so a
+>   selection tag would keep another component's concern in this one's output. The alternative,
+>   tagging each slice at the slicer from the model's selection span, was weighed and named rather
+>   than passed over, and the minimal form was taken at the build.
 
 **In plain words.** A slice records only where it starts and where it ends. Whether it falls inside the part of the score the user asked about, or is only surrounding context, is worked out by whoever consumes it — the slicer makes no judgment about selections, so it carries no mark about them.
 
@@ -279,9 +294,14 @@ made the cadence detector usable; it is the load-bearing soundness property and 
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `cowork_layer2_reslice_design.md:83-90`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `ARCHITECTURE.md:1586-1594`
 
-**Home section.** **§5** — `## 5. Output vs context (the selection boundary)` (heading at line 82). Not reached: the document's delegation is graded before any section question arises. Decided by **D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit**.
-
-**Provenance.** `cowork_layer2_reslice_design.md` §5, BUILT; the document's own status block confirms the decision was taken at build. Read in full by READ WAVE 6, 2026-08-04. It is the data-shape consequence of the bounded-context rule that output is the selection while extended context is evidence, and of **D-033**'s one-contribution-per-layer invariant. The record states neither a date nor a ratifier.
+**Provenance.** `cowork_layer2_reslice_design.md` §5, BUILT; the document's own status block confirms the decision was taken at build. Read in full by READ WAVE 6, 2026-08-04. It is the data-shape consequence of the bounded-context rule that output is the selection while extended context is evidence, and of **D-033**'s one-contribution-per-layer invariant. The record states neither a date nor a ratifier. ★ HOMED 2026-08-08 (CC, executing the user's document-route ruling of 2026-08-08, route (ii)) into the Layer-2 section of `ARCHITECTURE.md`, in that section's own voice, with the alternative that was weighed named rather than dropped and with the defense stated as the layer's own ownership boundary. THE C++ STRUCT LITERAL IS NOT CARRIED ACROSS: the decision is what a slice carries, and D-307 forbids pinning a specification to code text. FORMER HOME, PRESERVED (#12): `cowork_layer2_reslice_design.md:83-90`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 82, "section": "## 5. Output vs context (the selection boundary)", "label": "§5", "delegated": null, "delegation": "ARCHITECTURE.md:1339", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "L2 produces slices for the **loaded** span; the **output** is only the **selection**. The slices in
+`[loadedStart, selectionStart)` ∪ `[selectionEnd, loadedEnd)` are **context (evidence), not output**. L2 itself makes
+no analysis judgement — it just slices — so the selection-vs-context distinction is a **thin annotation**: either tag
+each slice in-selection/context from the model's selection span, or leave it to the consumer to compute from
+`selectionStart/End`. Recommended: compute it at the consuming layer (keep the `Slice` minimal — `[start,end)` only,
+per the L2 spec), since L2 owns no selection semantics. **Decision taken at build: the `Slice` is minimal
+(`struct Slice { int start; int end; }`) — no in-selection/context tag; the consumer derives it from the model's
+selection span.**" The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance is recorded in this field and NOT in the specification text (the OI-330 / OI-328 lesson).
 

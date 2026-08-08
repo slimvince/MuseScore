@@ -116,13 +116,19 @@ OWNER_RULED_2026_08_07 = {
 # re-authored here: they are the ruling record's own table, read whole (D-643), and the homing act
 # that carried them out wrote each decision into the named section with its defense.
 #
-# ★ D-472 IS DELIBERATELY ABSENT, AND ITS ABSENCE IS A RESULT RATHER THAN AN OMISSION.  The ruling
-# routes it to the Layer-6 section and makes the LEGACY mark conditional on an arm check at the code
-# (the homing dispatch's assumption A5).  The check came back MIXED -- the grouping rule the entry
-# specifies is SHARED and reached on the production record arm, while the stabilization pass its own
-# text names as the precondition is legacy-arm-only -- and a mixed arm is the dispatch's stated
-# outcome for holding an entry and returning it to the user.  So it was NOT homed, it stays in item
-# 1, and its route row below records the ruling and the hold together.
+# ★ D-472 IS ABSENT FROM THIS TABLE AND SITS IN THE 2026-08-08 ONE BELOW.  The 2026-08-07 ruling
+# routed it to the Layer-6 section and made the LEGACY mark conditional on an arm check at the code
+# (the homing dispatch's assumption A5); the check came back MIXED, so it was HELD and returned to
+# the user, which is why it never entered this table.  The user then ruled it on 2026-08-08 and it
+# was homed in the ruled form, so its record is the next table, not this one.  FORMER TEXT OF THIS
+# BLOCK, PRESERVED (#12) -- true when it was written, and superseded by the later ruling rather than
+# wrong: "★ D-472 IS DELIBERATELY ABSENT, AND ITS ABSENCE IS A RESULT RATHER THAN AN OMISSION.  The
+# ruling routes it to the Layer-6 section and makes the LEGACY mark conditional on an arm check at
+# the code (the homing dispatch's assumption A5).  The check came back MIXED -- the grouping rule the
+# entry specifies is SHARED and reached on the production record arm, while the stabilization pass
+# its own text names as the precondition is legacy-arm-only -- and a mixed arm is the dispatch's
+# stated outcome for holding an entry and returning it to the user.  So it was NOT homed, it stays
+# in item 1, and its route row below records the ruling and the hold together."
 OWNER_RULED_2026_08_07_HOMING = {
     # the joint-estimator section (created by the same act, by converting the standing-rules block)
     "D-449": "ARCHITECTURE.md", "D-450": "ARCHITECTURE.md",
@@ -153,10 +159,37 @@ OWNER_RULED_2026_08_07_HOMING = {
     "D-568": "cowork_engage_arc_plan.md",
 }
 
+# ★ THE 2026-08-08 RULING — ONE ENTRY, AND A FOURTH TABLE FOR THE SAME REASON THE THIRD IS SEPARATE.
+#
+# D-472 was HELD by the 2026-08-07 homing wave because the arm check its own ruling ordered came back
+# MIXED.  The user then ruled it on 2026-08-08 (Option A, recorded in the dated 2026-08-08 amendment
+# to `cowork_owner_rulings_2026_08_07.md` and applied by `cc_instruction_document_routes_and_d472.md`):
+# it is homed at the Layer-6 section in a form that shows BOTH ENDS OF THE SPLIT -- the grouping rule
+# specified as LIVE on the production record arm, and the Pass-4 stabilization its own text names as
+# the precondition beside it marked ⚠ LEGACY, each carrying its citation (#12) -- and the conformance
+# question is rowed as `OPEN_ITEMS.md` OI-349, which GATES.
+#
+# WHY IT IS NOT MERGED INTO THE 2026-08-07 TABLE.  For the reason that table gives for not merging
+# into the two above it: merging would date two different rulings to one act, and it would erase the
+# HOLD, which is the thing that produced the second ruling.  The hold is a result, not a gap.
+#
+# WHY THE TABLE IS ADDED HERE RATHER THAN THE ENTRY BEING QUIETLY DROPPED.  Without it this generator
+# STOPS -- "authored routes for entries item 1 does not carry" -- because the homing removed D-472
+# from item 1's population while the table still expected it there.  That STOP is the guard working:
+# it refuses to run while an authored route and the register disagree, and what it wants is the act
+# recorded, not the route deleted.
+RULED_2026_08_08 = {
+    "D-472": "ARCHITECTURE.md",
+}
+
 
 def closed_row_home(entry_id: str) -> str:
     """Where an executed entry went, and in which wave -- so one hardcoded date cannot stand for
     every wave (#12)."""
+    if entry_id in RULED_2026_08_08:
+        return (f"{RULED_2026_08_08[entry_id]} Layer 6 (re-homed 2026-08-08 on the user's ruling "
+                "of that date, with both ends of the arm split visible and the conformance "
+                "question rowed at OI-349 — no longer in item 1)")
     if entry_id in OWNER_RULED_2026_08_07_HOMING:
         return (f"{OWNER_RULED_2026_08_07_HOMING[entry_id]} (re-homed 2026-08-07 on the user's "
                 "owner ruling, the homing wave — no longer in item 1)")
@@ -613,32 +646,32 @@ ROUTES = {
               "The sub-beat annotation duration gate is kept or dropped on a measured observation run with "
               "the verdict stated in advance. The annotation layers block sits in §11.5, but what is "
               "recorded is a measurement protocol rather than a rule; the owner is not determinate."),
-    # ★ RULED 2026-08-07 AND HELD ON THE ARM CHECK — the one member of the homing wave's population
-    # that was NOT homed. The user ruled the owner: the Layer-6 section, which owns key-areas in the
-    # target architecture, with §11.5 pointing — and made the LEGACY mark conditional on CC checking
-    # at the code which arm reaches the smoothing pass. The check came back MIXED, which the homing
-    # dispatch names as the outcome that holds an entry: the grouping rule this entry specifies is
-    # SHARED and is reached on the PRODUCTION record arm (`groupKeyAreas`, called from
-    # `sectionrecordadapter.cpp:360` as well as `sectionanalyzer.cpp:763`), while the Pass-4
-    # stabilization its own text names as the precondition — `stabilizeHarmonicRegionsForDisplay` —
-    # has exactly one call site, inside the legacy `analyzeSection` (`sectionanalyzer.cpp:750`),
-    # under a comment that calls the block beneath it "the ONE legacy-arm set site". So one end of
-    # the decision is live and the other is legacy, and writing it into either section would state
-    # something false about the other end. It stays in item 1 and returns to the user.
+    # ★ RULED TWICE, HELD ONCE, AND HOMED ON THE SECOND RULING. The 2026-08-07 ruling routed it to
+    # the Layer-6 section with §11.5 pointing and made the LEGACY mark conditional on an arm check at
+    # the code; that check came back MIXED, which the homing dispatch names as the outcome that HOLDS
+    # an entry. The user then ruled on 2026-08-08 (Option A) that it is homed in a form showing BOTH
+    # ENDS of the split, and the conformance question is rowed rather than answered. It is therefore
+    # no longer in item 1, and its membership of `RULED_2026_08_08` is what says so.
     "D-472": (REHOME, "ARCHITECTURE.md Layer 6 (the grouping layer), §11.5 pointing", False,
               "Key areas are grouped by a smoothing pass over stabilized regions. RULED 2026-08-07 "
               "(user, the owner-rulings homing wave): the owner is the Layer-6 section, which owns "
               "key-areas in the target architecture, with §11.5 pointing — and the LEGACY mark "
-              "follows an arm check at the code. HELD, NOT HOMED: the arm check came back MIXED. "
-              "The grouping rule is shared and runs on the production record arm; the Pass-4 "
-              "stabilization the entry names as its precondition is legacy-arm-only. A mixed arm is "
-              "the dispatch's stated outcome for holding an entry and returning it to the user, so "
-              "no home text was written and the entry stays in item 1. THE FORMER OWNER AND REASON, "
-              "PRESERVED (#12): 'ARCHITECTURE.md §11.5 (Region Analysis and the Chord Track)', "
-              "owner_is_unambiguous False, reason 'Key areas are grouped by a smoothing pass over "
-              "stabilized regions. The key-area grouping is described both there and in the Layer-6 "
-              "section, which owns key-areas in the target architecture; the owner is not "
-              "determinate.'"),
+              "follows an arm check at the code. The arm check came back MIXED: the grouping rule "
+              "is shared and runs on the production record arm; the Pass-4 stabilization the entry "
+              "names as its precondition is legacy-arm-only. ★ RULED AGAIN 2026-08-08 (user, Option "
+              "A) AND HOMED: the grouping rule is specified as LIVE on the production record arm "
+              "and the stabilization sits beside it marked ⚠ LEGACY, each end carrying its citation "
+              "— one home, both halves visible (#12) — and the conformance question, whether the "
+              "record arm satisfies the stated precondition by other means or the live path groups "
+              "un-stabilized regions, is ROWED as `OPEN_ITEMS.md` OI-349, which GATES. Neither "
+              "answer is asserted. THE HOLD, PRESERVED (#12) — it was a result and not a gap: 'A "
+              "mixed arm is the dispatch's stated outcome for holding an entry and returning it to "
+              "the user, so no home text was written and the entry stays in item 1.' THE FORMER "
+              "OWNER AND REASON, PRESERVED (#12): 'ARCHITECTURE.md §11.5 (Region Analysis and the "
+              "Chord Track)', owner_is_unambiguous False, reason 'Key areas are grouped by a "
+              "smoothing pass over stabilized regions. The key-area grouping is described both "
+              "there and in the Layer-6 section, which owns key-areas in the target architecture; "
+              "the owner is not determinate.'"),
 }
 
 
@@ -750,7 +783,8 @@ def _was_executed(entry_id: str) -> bool:
     that any route whatever discharges it, and a later wave that re-routed one of these must not
     inherit the ruling's answer to a question it no longer asks."""
     route, owner, unambig, _ = ROUTES[entry_id]
-    if entry_id in OWNER_RULED_2026_08_07 or entry_id in OWNER_RULED_2026_08_07_HOMING:
+    if (entry_id in OWNER_RULED_2026_08_07 or entry_id in OWNER_RULED_2026_08_07_HOMING
+            or entry_id in RULED_2026_08_08):
         return route == REHOME
     determinate = bool(unambig) or entry_id in A1_OWNER_IS_DETERMINATE
     return bool(route == REHOME and determinate and owner

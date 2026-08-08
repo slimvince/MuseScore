@@ -1,0 +1,205 @@
+{
+  "purpose": "The measured SHAPE of the 2026-08-08 document-route edits: how many lines each file gained, and whether any existing line was deleted or replaced. NOT a judgment about the text written, and not an authorization for any fix, design or inference change.",
+  "generated_by": "tools/audit/decisions/gen_route_homing_edit_shape.py",
+  "generated_for": "cc_instruction_document_routes_and_d472.md (Tasks 1 and 2, whose ruling record requires each clause written adds-only and each homing act to preserve what it moves)",
+  "the_before_side": {
+    "commit": "03bce02e4b",
+    "read_as": "a git OBJECT by explicit hash — the one shell form D-253 admits, because a content-addressed read errors loudly rather than returning silently-wrong content",
+    "why_this_commit": "It is the last commit the session's own start-of-session report recorded, and that report listed no tracked file as modified — the preceding wave having committed and pushed its accumulated work as one — so what is measured is this wave's own editing and nothing else."
+  },
+  "what_add_only_means_here": "Zero lines deleted and zero existing lines replaced. A pure insertion: every line that was in the file before is still there, unchanged, in the same order.",
+  "★_a_file_that_is_NOT_add_only_is_REPORTED_rather_than_excused": "The three delegation clauses and every homing block are insertions, but the wave also CORRECTED two reserved-word collisions in its own new text and, at §11.5 and §19, wrote each clause beside an existing naming rather than replacing it. Where a file comes back not add-only, the `regions` list below says exactly where, and the report states it — a replaced line is not a defect on its own, but it must not be reported as an insertion.",
+  "★_this_is_a_POINT_IN_TIME_RECORD": "It compares the worktree against a NAMED COMMIT, so it stops agreeing the moment this work is committed. Under the user's ruling R4 of 2026-08-04 that makes it a recorder rather than a guard, and it deliberately carries no re-derivation mode — which is also what keeps it out of the derived guard-candidate population instead of sitting there unclassified.",
+  "counted": {
+    "files": 3,
+    "files_that_are_add_only": 3,
+    "files_that_are_not_add_only": [],
+    "total_lines_inserted": 395,
+    "total_lines_deleted": 0,
+    "total_existing_lines_replaced": 0
+  },
+  "files": [
+    {
+      "file": "ARCHITECTURE.md",
+      "what_was_written": "Route (i): three delegation clauses (the joint-estimator section, §11.5, §19). Route (ii): the homing blocks at §6.7, the new §6.8, the joint-estimator section, and the Layer-1, Layer-2, Layer-3, Layer-4, Layer-5 and Layer-6 sections.",
+      "lines_at_the_before_commit": 7689,
+      "lines_in_the_worktree": 7978,
+      "changed_regions": 11,
+      "lines_inserted": 289,
+      "lines_deleted": 0,
+      "existing_lines_replaced": 0,
+      "add_only": true,
+      "regions": [
+        {
+          "operation": "insert",
+          "at_the_before_commit": [
+            273,
+            272
+          ],
+          "in_the_worktree": [
+            273,
+            279
+          ]
+        },
+        {
+          "operation": "insert",
+          "at_the_before_commit": [
+            431,
+            430
+          ],
+          "in_the_worktree": [
+            438,
+            487
+          ]
+        },
+        {
+          "operation": "insert",
+          "at_the_before_commit": [
+            1437,
+            1436
+          ],
+          "in_the_worktree": [
+            1494,
+            1505
+          ]
+        },
+        {
+          "operation": "insert",
+          "at_the_before_commit": [
+            1495,
+            1494
+          ],
+          "in_the_worktree": [
+            1564,
+            1594
+          ]
+        },
+        {
+          "operation": "insert",
+          "at_the_before_commit": [
+            1660,
+            1659
+          ],
+          "in_the_worktree": [
+            1760,
+            1777
+          ]
+        },
+        {
+          "operation": "insert",
+          "at_the_before_commit": [
+            1674,
+            1673
+          ],
+          "in_the_worktree": [
+            1792,
+            1804
+          ]
+        },
+        {
+          "operation": "insert",
+          "at_the_before_commit": [
+            1800,
+            1799
+          ],
+          "in_the_worktree": [
+            1931,
+            1948
+          ]
+        },
+        {
+          "operation": "insert",
+          "at_the_before_commit": [
+            1868,
+            1867
+          ],
+          "in_the_worktree": [
+            2017,
+            2042
+          ]
+        },
+        {
+          "operation": "insert",
+          "at_the_before_commit": [
+            5122,
+            5121
+          ],
+          "in_the_worktree": [
+            5297,
+            5396
+          ]
+        },
+        {
+          "operation": "insert",
+          "at_the_before_commit": [
+            6494,
+            6493
+          ],
+          "in_the_worktree": [
+            6769,
+            6776
+          ]
+        },
+        {
+          "operation": "insert",
+          "at_the_before_commit": [
+            7528,
+            7527
+          ],
+          "in_the_worktree": [
+            7811,
+            7816
+          ]
+        }
+      ]
+    },
+    {
+      "file": "docs/scoring_model.md",
+      "what_was_written": "Route (ii): the §8 homing blocks — the shelved bass-as-root pair, the tolerated quality-overwrite acceptance, the four legacy dead ends, and the voided validation basis.",
+      "lines_at_the_before_commit": 1457,
+      "lines_in_the_worktree": 1560,
+      "changed_regions": 1,
+      "lines_inserted": 103,
+      "lines_deleted": 0,
+      "existing_lines_replaced": 0,
+      "add_only": true,
+      "regions": [
+        {
+          "operation": "insert",
+          "at_the_before_commit": [
+            1186,
+            1185
+          ],
+          "in_the_worktree": [
+            1186,
+            1288
+          ]
+        }
+      ]
+    },
+    {
+      "file": "OPEN_ITEMS.md",
+      "what_was_written": "Three new index rows: the D-472 conformance question, the blocked-route finding, and the admitted-`ls` observation.",
+      "lines_at_the_before_commit": 435,
+      "lines_in_the_worktree": 438,
+      "changed_regions": 1,
+      "lines_inserted": 3,
+      "lines_deleted": 0,
+      "existing_lines_replaced": 0,
+      "add_only": true,
+      "regions": [
+        {
+          "operation": "insert",
+          "at_the_before_commit": [
+            378,
+            377
+          ],
+          "in_the_worktree": [
+            378,
+            380
+          ]
+        }
+      ]
+    }
+  ]
+}

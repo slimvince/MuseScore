@@ -15,11 +15,11 @@
    },
    "backbone": {
     "file": "tools/audit/decisions/backbone_decisions.json",
-    "sha256": "73c2e12ce81a681454e8ece18199d3dd1adf00bb7b5b4edf9566ee55246e7d02",
+    "sha256": "920ed0c1ea4d63ba52f229dae598fb9aa959a941ad3ccbb9531bd28809aa2851",
     "decision_count": 645
    }
   },
-  "head_commit": "bd3a608fecf82c446f959432b13e0a5944093cd2",
+  "head_commit": "03bce02e4bdbea97b64a9d1abe90976c470e75f4",
   "disposition_vocabulary": [
    "restates",
    "not-a-decision",
@@ -65,12 +65,12 @@
    {
     "id": "BR-3",
     "rule": "The cluster's text matches at least one backbone decision whose home IS a layer specification. Recorded as restating that decision (named).",
-    "clusters": 5526
+    "clusters": 5545
    },
    {
     "id": "BR-4",
     "rule": "The cluster's text matches one or more backbone decisions, ALL of which are recorded outside any layer specification. Recorded as a decision with no layer-specification home (named) — the Task-4 documentation-gap class.",
-    "clusters": 688
+    "clusters": 669
    },
    {
     "id": "BR-5",
@@ -144,10 +144,10 @@
    }
   ],
   "disposition_counts": {
-   "restates": 5526,
+   "restates": 5545,
    "not-a-decision": 5535,
    "boilerplate": 74,
-   "no-spec-home": 688,
+   "no-spec-home": 669,
    "unresolved": 2637
   },
   "unresolved_partition_by_surface": {
@@ -31756,8 +31756,8 @@
   {
    "cluster_id": "DC-01464",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
+   "disposition": "restates",
+   "rule": "BR-3",
    "decisions": [
     "D-317"
    ],
@@ -46190,8 +46190,8 @@
   {
    "cluster_id": "DC-02175",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
+   "disposition": "restates",
+   "rule": "BR-3",
    "decisions": [
     "D-615"
    ],
@@ -49183,8 +49183,8 @@
   {
    "cluster_id": "DC-02321",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
+   "disposition": "restates",
+   "rule": "BR-3",
    "decisions": [
     "D-632"
    ],
@@ -51203,8 +51203,8 @@
   {
    "cluster_id": "DC-02419",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
+   "disposition": "restates",
+   "rule": "BR-3",
    "decisions": [
     "D-622"
    ],
@@ -60548,8 +60548,8 @@
   {
    "cluster_id": "DC-02874",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
+   "disposition": "restates",
+   "rule": "BR-3",
    "decisions": [
     "D-580"
    ],
@@ -72909,8 +72909,8 @@
   {
    "cluster_id": "DC-03479",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
+   "disposition": "restates",
+   "rule": "BR-3",
    "decisions": [
     "D-590"
    ],
@@ -77094,8 +77094,8 @@
   {
    "cluster_id": "DC-03682",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
+   "disposition": "restates",
+   "rule": "BR-3",
    "decisions": [
     "D-621"
    ],
@@ -79049,8 +79049,8 @@
   {
    "cluster_id": "DC-03781",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
+   "disposition": "restates",
+   "rule": "BR-3",
    "decisions": [
     "D-327"
    ],
@@ -79781,8 +79781,8 @@
   {
    "cluster_id": "DC-03818",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
+   "disposition": "restates",
+   "rule": "BR-3",
    "decisions": [
     "D-325"
    ],
@@ -79821,8 +79821,8 @@
   {
    "cluster_id": "DC-03820",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
+   "disposition": "restates",
+   "rule": "BR-3",
    "decisions": [
     "D-326"
    ],
@@ -81797,8 +81797,8 @@
   {
    "cluster_id": "DC-03916",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
+   "disposition": "restates",
+   "rule": "BR-3",
    "decisions": [
     "D-423"
    ],
@@ -81856,8 +81856,8 @@
   {
    "cluster_id": "DC-03919",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
+   "disposition": "restates",
+   "rule": "BR-3",
    "decisions": [
     "D-595"
    ],
@@ -82552,8 +82552,8 @@
   {
    "cluster_id": "DC-03955",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
+   "disposition": "restates",
+   "rule": "BR-3",
    "decisions": [
     "D-575"
    ],
@@ -86747,8 +86747,8 @@
   {
    "cluster_id": "DC-04169",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
+   "disposition": "restates",
+   "rule": "BR-3",
    "decisions": [
     "D-317"
    ],
@@ -86806,8 +86806,8 @@
   {
    "cluster_id": "DC-04172",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
+   "disposition": "restates",
+   "rule": "BR-3",
    "decisions": [
     "D-318"
    ],
@@ -86865,8 +86865,8 @@
   {
    "cluster_id": "DC-04175",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
+   "disposition": "restates",
+   "rule": "BR-3",
    "decisions": [
     "D-319"
    ],
@@ -87004,8 +87004,8 @@
   {
    "cluster_id": "DC-04182",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
+   "disposition": "restates",
+   "rule": "BR-3",
    "decisions": [
     "D-320"
    ],
@@ -183696,8 +183696,8 @@
   {
    "cluster_id": "DC-09004",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
+   "disposition": "restates",
+   "rule": "BR-3",
    "decisions": [
     "D-325"
    ],
@@ -258520,8 +258520,8 @@
   {
    "cluster_id": "DC-12751",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
+   "disposition": "restates",
+   "rule": "BR-3",
    "decisions": [
     "D-625"
    ],
